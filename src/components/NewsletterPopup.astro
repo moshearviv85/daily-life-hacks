@@ -86,11 +86,12 @@ const popupImages = allArticles
 
                 <!-- Form -->
                 <form
+                    id="popup-form"
                     class="space-y-4"
-                    onsubmit="event.preventDefault(); document.getElementById('popup-success').classList.remove('hidden'); this.classList.add('hidden');"
                 >
                     <div>
                         <input
+                            id="popup-email"
                             type="email"
                             placeholder="Enter your email"
                             required
@@ -99,6 +100,7 @@ const popupImages = allArticles
                         />
                     </div>
                     <button
+                        id="popup-submit-btn"
                         type="submit"
                         class="w-full py-3 px-4 font-bold text-white rounded-lg transition-transform hover:scale-[1.02] shadow-md"
                         style="background-color: #F29B30;"
@@ -256,11 +258,55 @@ const popupImages = allArticles
             document.addEventListener("mouseleave", handleExitIntent);
         }
 
+        const BEEHIIV_PUB_ID = "99ff482f-ae3d-436b-b0b9-637220faa120";
+
+        async function handleSubscribe(e: SubmitEvent) {
+            e.preventDefault();
+            const emailInput = document.getElementById("popup-email") as HTMLInputElement;
+            const submitBtn = document.getElementById("popup-submit-btn") as HTMLButtonElement;
+            const form = document.getElementById("popup-form") as HTMLFormElement;
+            const successEl = document.getElementById("popup-success");
+
+            if (!emailInput || !emailInput.value) return;
+
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Subscribing...";
+
+            try {
+                const res = await fetch(
+                    `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUB_ID}/subscriptions`,
+                    {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            email: emailInput.value,
+                            send_welcome_email: true,
+                        }),
+                    }
+                );
+
+                if (res.ok || res.status === 409) {
+                    // 409 = already subscribed, still show success
+                    form.classList.add("hidden");
+                    successEl?.classList.remove("hidden");
+                } else {
+                    submitBtn.innerText = "Try Again";
+                    submitBtn.disabled = false;
+                }
+            } catch {
+                submitBtn.innerText = "Try Again";
+                submitBtn.disabled = false;
+            }
+        }
+
         function setupPopup() {
             queryElements();
 
             if (closeBtn) closeBtn.addEventListener("click", closePopup);
             if (overlay) overlay.addEventListener("click", closePopup);
+
+            const form = document.getElementById("popup-form");
+            if (form) form.addEventListener("submit", handleSubscribe);
 
             clearTimeout(showTimeout);
             document.removeEventListener("mouseleave", handleExitIntent);

@@ -1,5 +1,5 @@
 ---
-const BEEHIIV_PUB_ID = "YOUR_PUBLICATION_ID";
+const BEEHIIV_PUB_ID = "99ff482f-ae3d-436b-b0b9-637220faa120";
 ---
 
 <section
@@ -23,34 +23,13 @@ const BEEHIIV_PUB_ID = "YOUR_PUBLICATION_ID";
       Unsubscribe anytime.
     </p>
 
-    {
-      BEEHIIV_PUB_ID === "YOUR_PUBLICATION_ID" ? (
-        <div class="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-          <input
-            type="email"
-            placeholder="your@email.com"
-            class="flex-1 px-4 py-3 rounded-lg text-sm focus:outline-none transition-colors duration-200"
-            style="background-color: var(--card-bg); color: var(--text-color); border: 1px solid var(--border-color);"
-            onfocus="this.style.borderColor='#F29B30';"
-            onblur="this.style.borderColor='var(--border-color)';"
-          />
-          <button
-            class="w-full sm:w-auto px-6 py-3 rounded-lg font-bold text-white text-sm hover:opacity-90 transition-opacity duration-200"
-            style="background-color: #F29B30;"
-          >
-            Get Weekly Tips
-          </button>
-        </div>
-      ) : (
-        <iframe
-          src={`https://embeds.beehiiv.com/subscribe/form/${BEEHIIV_PUB_ID}`}
-          data-test-id="beehiiv-embed"
-          width="100%"
-          height="320"
-          style="border-radius: 12px; border: 0; overflow: hidden;"
-        />
-      )
-    }
+    <iframe
+      src={`https://embeds.beehiiv.com/subscribe/form/${BEEHIIV_PUB_ID}`}
+      data-test-id="beehiiv-embed"
+      width="100%"
+      height="320"
+      style="border-radius: 12px; border: 0; overflow: hidden;"
+    />
 
     <!-- Pinterest Follow Button -->
     <div class="flex justify-center pt-5">
