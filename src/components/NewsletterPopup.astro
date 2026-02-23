@@ -258,8 +258,6 @@ const popupImages = allArticles
             document.addEventListener("mouseleave", handleExitIntent);
         }
 
-        const BEEHIIV_PUB_ID = "99ff482f-ae3d-436b-b0b9-637220faa120";
-
         async function handleSubscribe(e: SubmitEvent) {
             e.preventDefault();
             const emailInput = document.getElementById("popup-email") as HTMLInputElement;
@@ -273,20 +271,13 @@ const popupImages = allArticles
             submitBtn.innerText = "Subscribing...";
 
             try {
-                const res = await fetch(
-                    `https://api.beehiiv.com/v2/publications/${BEEHIIV_PUB_ID}/subscriptions`,
-                    {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            email: emailInput.value,
-                            send_welcome_email: true,
-                        }),
-                    }
-                );
+                const res = await fetch("/api/subscribe", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email: emailInput.value }),
+                });
 
-                if (res.ok || res.status === 409) {
-                    // 409 = already subscribed, still show success
+                if (res.ok) {
                     form.classList.add("hidden");
                     successEl?.classList.remove("hidden");
                 } else {

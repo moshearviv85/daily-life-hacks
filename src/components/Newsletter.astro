@@ -1,5 +1,4 @@
 ---
-const BEEHIIV_PUB_ID = "99ff482f-ae3d-436b-b0b9-637220faa120";
 ---
 
 <section
@@ -23,13 +22,36 @@ const BEEHIIV_PUB_ID = "99ff482f-ae3d-436b-b0b9-637220faa120";
       Unsubscribe anytime.
     </p>
 
-    <iframe
-      src={`https://embeds.beehiiv.com/subscribe/form/${BEEHIIV_PUB_ID}`}
-      data-test-id="beehiiv-embed"
-      width="100%"
-      height="320"
-      style="border-radius: 12px; border: 0; overflow: hidden;"
-    />
+    <!-- Subscribe Form -->
+    <form id="footer-newsletter-form" class="max-w-md mx-auto space-y-3">
+      <input
+        id="footer-email"
+        type="email"
+        placeholder="Enter your email"
+        required
+        class="w-full px-5 py-3.5 rounded-xl text-base focus:ring-2 focus:ring-[#F29B30] outline-none transition-all"
+        style="color: var(--text-color); background-color: var(--input-bg); border: 1px solid var(--border-color);"
+      />
+      <button
+        id="footer-submit-btn"
+        type="submit"
+        class="w-full py-3.5 px-6 font-bold text-white rounded-xl transition-transform hover:scale-[1.02] shadow-md text-base"
+        style="background-color: #F29B30;"
+      >
+        Subscribe Free
+      </button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="footer-success" class="hidden max-w-md mx-auto py-6">
+      <div class="inline-flex items-center justify-center w-12 h-12 mb-3 rounded-full bg-green-100 text-green-500">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <p class="text-xl font-bold" style="color: var(--heading-color);">You're in!</p>
+      <p class="text-sm" style="color: var(--muted-color);">Check your inbox for a welcome surprise.</p>
+    </div>
 
     <!-- Pinterest Follow Button -->
     <div class="flex justify-center pt-5">
@@ -52,3 +74,43 @@ const BEEHIIV_PUB_ID = "99ff482f-ae3d-436b-b0b9-637220faa120";
     </div>
   </div>
 </section>
+
+<script>
+  function setupFooterForm() {
+    const form = document.getElementById("footer-newsletter-form");
+    const emailInput = document.getElementById("footer-email") as HTMLInputElement;
+    const submitBtn = document.getElementById("footer-submit-btn") as HTMLButtonElement;
+    const successEl = document.getElementById("footer-success");
+
+    if (!form) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!emailInput || !emailInput.value) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Subscribing...";
+
+      try {
+        const res = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: emailInput.value }),
+        });
+
+        if (res.ok) {
+          form.classList.add("hidden");
+          successEl?.classList.remove("hidden");
+        } else {
+          submitBtn.innerText = "Try Again";
+          submitBtn.disabled = false;
+        }
+      } catch {
+        submitBtn.innerText = "Try Again";
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
+  document.addEventListener("astro:page-load", setupFooterForm);
+</script>
