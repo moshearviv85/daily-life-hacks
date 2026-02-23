@@ -1,0 +1,62 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import { getCollection } from "astro:content";
+
+const allArticles = await getCollection("articles");
+const nutritionArticles = allArticles
+    .filter((article) => article.data.category === "nutrition")
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const title = "Nutrition Tips & Science-Backed Advice | Daily Life Hacks";
+const description =
+    "Explore our latest nutrition tips, science-backed advice, and healthy eating guides to fuel your body and mind.";
+---
+
+<BaseLayout title={title} description={description}>
+    <Header />
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <header class="mb-12 text-center">
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-4 text-[var(--heading-color)]"
+            >
+                Nutrition
+            </h1>
+            <p
+                class="text-xl max-w-2xl mx-auto"
+                style="color: var(--muted-color);"
+            >
+                {description}
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {
+                nutritionArticles.map((article) => (
+                    <ArticleCard
+                        title={article.data.title}
+                        excerpt={article.data.excerpt}
+                        image={article.data.image}
+                        imageAlt={article.data.imageAlt}
+                        category={article.data.category}
+                        slug={article.id}
+                        date={article.data.date}
+                    />
+                ))
+            }
+        </div>
+
+        {
+            nutritionArticles.length === 0 && (
+                <div class="text-center py-12">
+                    <p class="text-lg" style="color: var(--label-color);">
+                        No nutrition articles found yet. Check back soon!
+                    </p>
+                </div>
+            )
+        }
+    </div>
+    <Footer />
+</BaseLayout>

@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Disclaimer | Daily Life Hacks";
+const description = "Medical and Nutrition Disclaimer for Daily Life Hacks.";
+---
+
+<BaseLayout title={title} description={description}>
+    <Header />
+    <div class="max-w-4xl mx-auto px-4 py-12 prose prose-lg">
+        <h1>Disclaimer</h1>
+        <p>Last updated: {new Date().toLocaleDateString()}</p>
+
+        <div
+            class="p-6 my-8 rounded-r-lg"
+            style="background-color: var(--input-bg); border-left: 4px solid #F29B30;"
+        >
+            <p
+                class="font-bold text-lg mb-2"
+                style="color: var(--heading-color);"
+            >
+                Important Notice
+            </p>
+            <p class="italic" style="color: var(--text-color);">
+                The information on this site is not intended or implied to be a
+                substitute for professional financial and/or medical advice. All
+                content, including text, graphics, images and information,
+                contained on or available through this web site is for general
+                information purposes only. The information and materials
+                contained in these pages and the terms, conditions and
+                descriptions that appear, are subject to change without notice.
+            </p>
+        </div>
+
+        <h2>1. General Information</h2>
+        <p>
+            The content provided on Daily Life Hacks is for informational and
+            educational purposes only. It is not intended to be a substitute for
+            professional medical advice, diagnosis, or treatment. We do not
+            provide diagnoses, treatments, or medical services.
+        </p>
+
+        <h2>2. No Doctor-Patient Relationship</h2>
+        <p>
+            Accessing or using this website does not create a doctor-patient or
+            professional-client relationship between you and Daily Life Hacks or
+            its authors. The authors of this website are not licensed medical
+            professionals, and the information shared is based on personal
+            research, experience, or general knowledge.
+        </p>
+
+        <h2>3. Medical Disclaimer</h2>
+        <p>
+            Always seek the advice of your physician, registered dietitian, or
+            other qualified health provider with any questions you may have
+            regarding a medical condition, dietary changes, or supplement use.
+            Never disregard professional medical advice or delay in seeking it
+            because of something you have read on this website.
+        </p>
+        <p>
+            If you think you may have a medical emergency, call your doctor or
+            emergency services immediately. Reliance on any information provided
+            by Daily Life Hacks is solely at your own risk.
+        </p>
+
+        <h2>4. Financial Disclaimer</h2>
+        <p>
+            The financial information provided on Daily Life Hacks is for
+            informational and educational purposes only and does not constitute
+            financial advice, investment advice, trading advice, or any other
+            type of advice. We are not financial advisors.
+        </p>
+        <p>
+            You should not make any financial decisions based solely on the
+            information presented here without consulting a qualified financial
+            professional who is aware of your specific financial situation.
+        </p>
+
+        <h2>5. Affiliate Disclosure</h2>
+        <p>
+            Some of the links on this website may be "affiliate links." This
+            means if you click on the link and purchase an item, Daily Life
+            Hacks may receive an affiliate commission. This comes at no extra
+            cost to you. We disclose this in accordance with the Federal Trade
+            Commission's guidelines.
+        </p>
+
+        <h2>6. Errors and Omissions</h2>
+        <p>
+            While we strive to provide accurate and up-to-date information, the
+            fields of nutrition, medicine, and finance are constantly evolving.
+            We cannot guarantee that all information on this website is
+            complete, accurate, or current. We are not responsible for any
+            errors or omissions, or for the results obtained from the use of
+            this information.
+        </p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>
+            By using this website, you agree to absolve Daily Life Hacks of any
+            liability or loss that you or any other person may incur from use of
+            the information, products, or materials that you request or receive
+            through or on our website.
+        </p>
+
+        <h2>8. Consent</h2>
+        <p>
+            By using our website, you hereby consent to our disclaimer and agree
+            to its terms.
+        </p>
+    </div>
+    <Footer />
+</BaseLayout>

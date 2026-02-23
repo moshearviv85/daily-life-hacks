@@ -1,0 +1,99 @@
+---
+interface Props {
+  title: string;
+  excerpt: string;
+  image: string;
+  imageAlt: string;
+  category: string;
+  slug: string;
+  size?: "sm" | "md" | "lg";
+  date?: Date;
+  fillHeight?: boolean;
+}
+
+const {
+  title,
+  excerpt,
+  image,
+  imageAlt,
+  category,
+  slug,
+  size = "md",
+  date,
+  fillHeight = false,
+} = Astro.props;
+
+const formatDate = (d: Date) =>
+  d?.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+
+const badgeColor = category === "recipes" ? "#e07b10" : "#F29B30";
+---
+
+<article
+  class={`group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg ${fillHeight ? "h-full flex flex-col" : ""}`}
+  style="background-color: var(--card-bg); box-shadow: 0 1px 3px rgba(0,0,0,0.08);"
+>
+  <a
+    href={`/${slug}`}
+    class={`block ${fillHeight ? "flex-1 flex flex-col" : ""}`}
+  >
+    <!-- Image -->
+    <div
+      class={`relative overflow-hidden shrink-0 bg-gray-200 ${size === "lg" ? "aspect-video" : size === "sm" ? "aspect-[4/3]" : "aspect-video"}`}
+
+    >
+      <img
+        src={image}
+        alt={imageAlt}
+        data-pin-url={new URL("/" + slug, Astro.site || Astro.url.origin).href}
+        data-pin-media={new URL(image, Astro.site || Astro.url.origin).href}
+        data-pin-description={`${title} - ${excerpt} | Daily Life Hacks`}
+        class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Content -->
+    <div
+      class={`${size === "sm" ? "p-3" : "p-5"} ${fillHeight ? "flex-1 flex flex-col" : ""}`}
+    >
+      <span
+        class="inline-block px-2 py-0.5 text-xs font-bold rounded uppercase tracking-wider mb-2 text-white"
+        style={`background-color: ${badgeColor};`}
+      >
+        {category}
+      </span>
+
+      <h3
+        class={`font-bold leading-snug transition-colors duration-200 group-hover:text-[#F29B30]
+          ${size === "lg" ? "text-2xl mb-3" : size === "sm" ? "text-sm mb-1" : "text-base mb-2"}`}
+        style="color: var(--heading-color);"
+      >
+        {title}
+      </h3>
+
+      {
+        size !== "sm" && (
+          <p
+            class="text-sm line-clamp-2 leading-relaxed"
+            style="color: var(--muted-color);"
+          >
+            {excerpt}
+          </p>
+        )
+      }
+
+      {
+        date && (
+          <p class="text-xs mt-2" style="color: var(--label-color);">
+            {formatDate(date)}
+          </p>
+        )
+      }
+    </div>
+  </a>
+</article>

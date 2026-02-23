@@ -1,0 +1,11 @@
+🚀 Running test-ais.py: Generating 4 variations per item...
+
+📝 Testing Item: easy-high-fiber-breakfast-ideas-for-gut-health (nutrition)
+  🤖 Requesting claude...
+    ✅ Saved to src/data/articles/test-claude-easy-high-fiber-breakfast-ideas-for-gut-health.md
+
+📝 Testing Item: high-fiber-meals-for-constipation-relief (recipes)
+  🤖 Requesting claude...
+    ✅ Saved to src/data/articles/test-claude-high-fiber-meals-for-constipation-relief.md
+
+🎉 Test generation complete. Start `npm run dev` and navigate to /test-ai_name-slug to compare!

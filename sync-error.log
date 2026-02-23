@@ -1,0 +1,14 @@
+[2m19:06:43[22m [34m[content][39m Syncing content
+[31m[InvalidContentEntryDataError][39m [1marticles → high-fiber-gluten-free-bread-recipe[22m data does not match collection schema.
+
+  [1mcalories**: **calories[22m: Expected type `"number"`, received `"string"`
+
+  [1mHint:[22m
+[33m    See [4mhttps://docs.astro.build/en/guides/content-collections/[24m for more information on content schemas.[39m
+  [1mError reference:[22m
+    [36m[4mhttps://docs.astro.build/en/reference/errors/invalid-content-entry-data-error/[24m[39m
+  [1mLocation:[22m
+    [4mC:\Users\USER\OneDrive\Documents\pinterest\dlh-fresh\src\data\articles\high-fiber-gluten-free-bread-recipe.md:0:0[24m
+  [1mStack trace:[22m
+[2m    at getEntryDataAndImages (file:///C:/Users/USER/OneDrive/Documents/pinterest/dlh-fresh/node_modules/astro/dist/content/utils.js:168:26)
+    at async syncData (C:/Users/USER/OneDrive/Documents/pinterest/dlh-fresh/node_modules/astro/dist/content/loaders/glob.js:97:28)[22m

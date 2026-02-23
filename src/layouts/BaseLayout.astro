@@ -1,0 +1,139 @@
+---
+import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import NewsletterPopup from "../components/NewsletterPopup.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  jsonLd?: object;
+}
+
+const {
+  title,
+  description = "Daily Life Hacks — Practical nutrition tips and recipes for a healthier, happier life.",
+  image = "/logo.png",
+  canonicalURL = Astro.url.href,
+  jsonLd,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Daily Life Hacks</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <ClientRouter />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Daily Life Hacks" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Pinterest -->
+    <meta name="pinterest-rich-pin" content="true" />
+
+    <!-- Prevent white flash in dark mode -->
+    <script is:inline>
+      const getTheme = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        return "light"; // default
+      };
+
+      const setTheme = () => {
+        const theme = getTheme();
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      };
+
+      // Set on initial load
+      setTheme();
+
+      // Set on navigation
+      document.addEventListener("astro:after-swap", setTheme);
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- JSON-LD Schema -->
+    {
+      jsonLd && (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify(jsonLd)}
+        />
+      )
+    }
+  </head>
+  <body
+    class="min-h-screen"
+    style="background-color: var(--page-bg); color: var(--text-color);"
+  >
+    <slot />
+    <NewsletterPopup />
+
+    <!-- Pinterest Save Button SDK -->
+    <script is:inline>
+      function loadPinterestSDK() {
+        // Clear old Pinterest tracking elements
+        document.querySelectorAll("[data-pin-log]").forEach(function (el) {
+          el.remove();
+        });
+
+        var old = document.getElementById("pinterest-sdk");
+        if (old) old.remove();
+
+        // Reset the globals to force full re-initialization
+        window.PinUtils = null;
+        window.PIN_XXXX = null;
+        for (var key in window) {
+          if (key.startsWith("PIN_")) {
+            window[key] = null;
+          }
+        }
+
+        var s = document.createElement("script");
+        s.id = "pinterest-sdk";
+        s.async = true;
+        s.src = "https://assets.pinterest.com/js/pinit.js";
+        s.setAttribute("data-pin-hover", "true");
+        s.setAttribute("data-pin-tall", "true");
+        s.setAttribute("data-pin-round", "true");
+        document.body.appendChild(s);
+      }
+
+      document.addEventListener("astro:page-load", function () {
+        // Small timeout allows DOM to settle before Pinterest scans it
+        setTimeout(loadPinterestSDK, 150);
+      });
+    </script>
+  </body>
+</html>

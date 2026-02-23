@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import HeroSection from '../components/HeroSection.astro';
+
+import Newsletter from '../components/Newsletter.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Daily Life Hacks',
+  url: 'https://www.daily-life-hacks.com',
+  description: 'Science-backed nutrition tips and easy, healthy recipes for everyday wellness.',
+  logo: 'https://www.daily-life-hacks.com/logo.png',
+  sameAs: [
+    'https://pinterest.com'
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'Customer Support',
+    url: 'https://www.daily-life-hacks.com/contact'
+  }
+};
+
+const allArticles = await getCollection('articles');
+type Article = CollectionEntry<'articles'>;
+const sorted = allArticles.sort((a: Article, b: Article) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const featured  = sorted.find((a: Article) => a.data.featured) ?? sorted[0];
+// Take all articles except the featured one, show 5 in Must Read sidebar
+const mustReads = sorted.filter((a: Article) => a.id !== featured?.id).slice(0, 5);
+
+// Exactly 16 cards for the 4×4 grid
+const moreToRead = [...sorted, ...sorted, ...sorted, ...sorted].slice(0, 16);
+
+const badgeColor = (cat: string) => cat === 'recipes' ? '#e07b10' : '#F29B30';
+---
+
+<BaseLayout
+  title="Healthy Recipes & Nutrition Tips | Daily Life Hacks"
+  description="Discover science-backed nutrition tips and easy, healthy recipes. Join 2,500+ readers for weekly wellness insights and meal prep guides."
+  jsonLd={organizationSchema}
+>
+  <Header />
+  <main class="pb-8">
+
+    <!-- SEO: Main H1 Heading -->
+    <div class="sr-only">
+      <h1>Healthy Recipes & Nutrition Tips for a Better You</h1>
+    </div>
+
+    <!-- Mobile-only Category Quick Nav (Sticky-like) -->
+    <nav class="lg:hidden flex justify-center gap-3 py-4 px-4 sticky top-[60px] z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-orange-100 dark:border-orange-900/20 mb-2 overflow-x-auto whitespace-nowrap">
+      <a href="/nutrition" class="px-4 py-2 rounded-full text-sm font-bold shadow-sm transition-all active:scale-95 bg-[#F29B30] text-white">Nutrition</a>
+      <a href="/recipes" class="px-4 py-2 rounded-full text-sm font-bold shadow-sm transition-all active:scale-95 border-2 border-[#e07b10] text-[#e07b10]">Healthy Recipes</a>
+    </nav>
+
+    <!-- Hero: Featured article + Must Read sidebar -->
+    <HeroSection featured={featured} mustReads={mustReads} />
+
+    <!-- 4×4 Grid: More to Read -->
+    <section class="w-full max-w-6xl mx-auto px-4 py-8">
+      <div class="flex items-center gap-3 mb-4">
+        <h2 class="text-xl font-bold uppercase tracking-wide shrink-0" style="color: var(--heading-color);">More to Read</h2>
+        <div class="flex-1 h-px" style="background-color: var(--border-color);"></div>
+        <div class="w-10 h-0.5 shrink-0" style="background-color: #F29B30;"></div>
+      </div>
+      <!-- Adaptive grid: 1 col mobile, 2 columns from 640px (tablet), 4 columns desktop -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {moreToRead.map((article: Article) => (
+          <a
+            href={`/${article.id}`}
+            class="group overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-lg flex flex-row sm:flex-col sm:aspect-[4/3] w-full"
+            style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+          >
+            <!-- Image Area: Proportional increase of 15% to image, shrink text -->
+            <div class="overflow-hidden relative w-[45%] aspect-video sm:w-full sm:h-auto sm:aspect-auto sm:flex-[7.7] shrink-0">
+              <img
+                src={article.data.image}
+                alt={article.data.imageAlt}
+                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                data-pin-nopin="true"
+              />
+              <!-- Category badge overlaid on image -->
+              <span
+                class="absolute bottom-2 left-2 px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider text-white leading-none z-10"
+                style={`background-color: ${badgeColor(article.data.category)};`}
+              >
+                {article.data.category}
+              </span>
+            </div>
+            <!-- Text area: Shrink to 2.3 flex (total 10) -->
+            <div class="p-2 sm:p-1.5 flex-1 flex flex-col justify-center sm:flex-[2.3] min-w-0">
+              <h3
+                class="font-semibold leading-tight group-hover:text-[#F29B30] transition-colors duration-200 text-left sm:text-center text-[0.9rem] sm:text-[0.88rem] line-clamp-none sm:line-clamp-3 w-full"
+                style="color: var(--heading-color);"
+              >
+                {article.data.title}
+              </h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Newsletter just above footer -->
+  <Newsletter />
+  <Footer />
+</BaseLayout>

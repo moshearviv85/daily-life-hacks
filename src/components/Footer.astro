@@ -1,0 +1,81 @@
+---
+const year = new Date().getFullYear();
+---
+
+<!-- Minimal Footer - no gap from newsletter -->
+<footer
+  class="py-2 text-center"
+  style="border-top: 1px solid var(--border-color); background-color: var(--newsletter-bg);"
+>
+  <div class="max-w-6xl mx-auto px-4 space-y-1.5">
+    <div
+      class="flex flex-col md:flex-row items-center justify-center gap-6 mb-6"
+    >
+      <a
+        href="/"
+        class="shrink-0 w-full max-w-[280px] md:max-w-[460px] flex justify-center"
+      >
+        <img
+          src="/logo.png"
+          alt="Daily Life Hacks"
+          data-pin-nopin="true"
+          class="w-full h-auto"
+        />
+      </a>
+      <p
+        class="text-base md:text-lg leading-relaxed text-center md:text-left max-w-md"
+        style="color: var(--muted-color);"
+      >
+        Practical nutrition tips and easy recipes for a healthier, happier
+        everyday life.
+      </p>
+    </div>
+    <nav
+      class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4 md:gap-6 text-base"
+    >
+      <a
+        href="/contact"
+        class="transition-colors duration-200"
+        style="color: var(--muted-color);"
+        onmouseover="this.style.color='#F29B30';"
+        onmouseout="this.style.color='var(--muted-color)';">Contact</a
+      >
+      <a
+        href="/terms"
+        class="transition-colors duration-200"
+        style="color: var(--muted-color);"
+        onmouseover="this.style.color='#F29B30';"
+        onmouseout="this.style.color='var(--muted-color)';">Terms of Use</a
+      >
+      <a
+        href="/disclaimer"
+        class="transition-colors duration-200"
+        style="color: var(--muted-color);"
+        onmouseover="this.style.color='#F29B30';"
+        onmouseout="this.style.color='var(--muted-color)';">Disclaimer</a
+      >
+      <a
+        href="/privacy"
+        class="transition-colors duration-200"
+        style="color: var(--muted-color);"
+        onmouseover="this.style.color='#F29B30';"
+        onmouseout="this.style.color='var(--muted-color)';">Privacy Policy</a
+      >
+    </nav>
+    <p
+      class="mx-auto opacity-75"
+      style="color: var(--label-color); font-size: 13px; line-height: 1.5; max-width: 1152px;"
+    >
+      Disclaimer: The information on this site is not intended or implied to be
+      a substitute for professional financial and/or medical advice. All
+      content, including text, graphics, images and information, contained on or
+      available through this web site is for general information purposes only.
+      The information and materials contained in these pages and the terms,
+      conditions and descriptions that appear, are subject to change without
+      notice.
+    </p>
+    <p class="text-sm" style="color: var(--label-color);">
+      © {year} Daily Life Hacks. All rights reserved.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,100 @@
+---
+import ArticleCard from './ArticleCard.astro';
+
+interface Props {
+  featured: any;
+  mustReads: any[];
+}
+
+const { featured, mustReads } = Astro.props;
+
+const badgeColor = (cat: string) => cat === 'recipes' ? '#e07b10' : '#F29B30';
+---
+
+<section class="w-full max-w-6xl mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" style="align-items: stretch;">
+
+    <!-- Featured Article — left 2/3 -->
+    {featured && (
+      <div class="lg:col-span-2 min-w-0 flex flex-col">
+        <p class="text-xs font-bold uppercase tracking-widest mb-3 pb-2 border-b-2" style="color: var(--label-color); border-color: #F29B30;">
+          Latest Article
+        </p>
+        <ArticleCard
+          title={featured.data.title}
+          excerpt={featured.data.excerpt}
+          image={featured.data.image}
+          imageAlt={featured.data.imageAlt}
+          category={featured.data.category}
+          slug={featured.id}
+          size="lg"
+          date={featured.data.date}
+        />
+      </div>
+    )}
+
+    <!-- Must Read Sidebar — right 1/3 -->
+    <div class="min-w-0 flex flex-col h-full">
+      <p class="text-xs font-bold uppercase tracking-widest mb-3 pb-2 border-b-2 shrink-0" style="color: var(--label-color); border-color: #F29B30;">
+        Must Read
+      </p>
+
+      <div
+        class="flex-1 rounded-xl overflow-hidden flex flex-col lg:grid lg:grid-cols-1 lg:min-h-0"
+        style="grid-template-rows: repeat(5, 1fr); border: 1px solid var(--border-color); background-color: var(--sidebar-bg);"
+      >
+        {mustReads.map((article: any, i: number) => (
+          <a
+            href={`/${article.id}`}
+            class="group relative flex flex-row items-center overflow-hidden transition-colors duration-200 px-2 h-full w-full hover:bg-black/5 dark:hover:bg-white/5"
+            style={i < mustReads.length - 1 ? 'border-bottom: 1px solid var(--border-color);' : ''}
+          >
+            <!-- Image: Locked width (53%) and aspect ratio -->
+            <div class="relative w-[53%] aspect-video rounded-xl overflow-hidden shrink-0">
+              <img
+                src={article.data.image}
+                alt={article.data.imageAlt}
+                class="absolute inset-0 w-full h-full object-cover object-left rounded-xl group-hover:scale-105 transition-transform duration-500"
+                data-pin-nopin="true"
+                loading="lazy"
+              />
+              <span
+                class="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 text-[9px] font-bold rounded uppercase tracking-wider text-white leading-none z-10"
+                style={`background-color: ${badgeColor(article.data.category)};`}
+              >
+                {article.data.category}
+              </span>
+            </div>
+
+            <!-- Title Area -->
+            <div class="pl-3 py-3 lg:py-1 flex-1 flex items-center justify-center overflow-hidden h-full">
+              <h3
+                class="sidebar-title font-medium leading-tight group-hover:text-[#F29B30] transition-colors duration-200 text-center w-full line-clamp-none lg:line-clamp-5"
+                style="color: var(--heading-color); overflow: hidden;"
+              >
+                {article.data.title}
+              </h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .sidebar-title {
+    /* Responsive font for mobile/tablet list view (smaller on narrow phones) */
+    font-size: clamp(0.85rem, 4vw, 1.1rem);
+    line-height: 1.25;
+  }
+
+  @media (min-width: 1024px) {
+    .sidebar-title {
+      /* Compact size for the desktop sidebar layout */
+      font-size: clamp(0.725rem, 0.9vw, 0.9rem);
+      line-height: 1.15;
+    }
+  }
+</style>

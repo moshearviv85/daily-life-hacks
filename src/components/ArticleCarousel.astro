@@ -1,0 +1,114 @@
+---
+import ArticleCard from "./ArticleCard.astro";
+
+interface Props {
+  title: string;
+  articles: any[];
+  id: string;
+}
+
+const { title, articles, id } = Astro.props;
+---
+
+<section class="w-full max-w-6xl mx-auto px-4 py-8">
+  <!-- Section header -->
+  <div class="flex items-center justify-between mb-5">
+    <div class="flex items-center gap-3">
+      <h2
+        class="text-xl font-bold uppercase tracking-wide"
+        style="color: var(--heading-color);"
+      >
+        {title}
+      </h2>
+      <div class="h-px w-20 hidden sm:block" style="background-color: #F29B30;">
+      </div>
+    </div>
+    <!-- Arrow buttons -->
+    <div class="flex items-center gap-2">
+      <button
+        data-carousel={id}
+        data-dir="left"
+        class="carousel-btn flex items-center justify-center w-9 h-9 rounded-full border-2 hover:border-[#F29B30] hover:text-[#F29B30] transition-all duration-200 shadow-sm"
+        style="border-color: var(--border-color); background-color: var(--card-bg); color: var(--muted-color);"
+        aria-label="Scroll left"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <button
+        data-carousel={id}
+        data-dir="right"
+        class="carousel-btn flex items-center justify-center w-9 h-9 rounded-full border-2 hover:border-[#F29B30] hover:text-[#F29B30] transition-all duration-200 shadow-sm"
+        style="border-color: var(--border-color); background-color: var(--card-bg); color: var(--muted-color);"
+        aria-label="Scroll right"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2.5"
+            d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Scrollable track -->
+  <div
+    id={id}
+    class="flex gap-5 overflow-x-auto scroll-smooth pb-3"
+    style="scrollbar-width: thin; scrollbar-color: #F29B30 var(--input-bg);"
+  >
+    {
+      articles.map((article) => (
+        <div class="shrink-0 w-64 sm:w-72">
+          <ArticleCard
+            title={article.data.title}
+            excerpt={article.data.excerpt}
+            image={article.data.image}
+            imageAlt={article.data.imageAlt}
+            category={article.data.category}
+            slug={article.id}
+            size="md"
+            date={article.data.date}
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  document
+    .querySelectorAll<HTMLButtonElement>(".carousel-btn")
+    .forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const carouselId = btn.dataset.carousel!;
+        const dir = btn.dataset.dir as "left" | "right";
+        const track = document.getElementById(carouselId);
+        if (track) {
+          track.scrollBy({
+            left: dir === "right" ? 300 : -300,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+</script>

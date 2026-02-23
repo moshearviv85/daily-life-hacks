@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #F29B30;
+  --color-primary-dark: #d4861a;
+  --color-primary-light: #fef3e2;
+}
+
+/* ── Light theme (default) ── */
+:root {
+  --page-bg: #f9fafb;
+  --card-bg: #ffffff;
+  --header-bg: #ffffff;
+  --header-border: #e5e7eb;
+  --heading-color: #111827;
+  --text-color: #374151;
+  --muted-color: #6b7280;
+  --label-color: #9ca3af;
+  --border-color: #e5e7eb;
+  --newsletter-bg: #f9fafb;
+  --newsletter-border: #dcdfe4;
+  --input-bg: #f3f4f6;
+  --sidebar-bg: #F1F5F9;
+}
+
+/* ── Dark theme ── */
+html.dark {
+  --page-bg: #0f172a;
+  --card-bg: #1e293b;
+  --header-bg: #1e293b;
+  --header-border: #334155;
+  --heading-color: #f1f5f9;
+  --text-color: #cbd5e1;
+  --muted-color: #94a3b8;
+  --label-color: #64748b;
+  --border-color: #334155;
+  --newsletter-bg: #1e293b;
+  --newsletter-border: #334155;
+  --input-bg: #334155;
+  --sidebar-bg: #1e293b;
+}
+
+/* ── Theme toggle icons (no-flash) ── */
+.theme-icon-sun {
+  display: none;
+}
+
+.theme-icon-moon {
+  display: block;
+}
+
+html.dark .theme-icon-sun {
+  display: block;
+}
+
+html.dark .theme-icon-moon {
+  display: none;
+}
+
+/* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--page-bg);
+  color: var(--heading-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Article content ── */
+.article-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  color: var(--heading-color);
+}
+
+.article-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: var(--heading-color);
+}
+
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--heading-color);
+}
+
+.article-content p {
+  margin: 1rem 0;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.article-content ul,
+.article-content ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.article-content ul {
+  list-style: disc;
+}
+
+.article-content ol {
+  list-style: decimal;
+}
+
+.article-content li {
+  margin: 0.4rem 0;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+.article-content strong {
+  color: var(--heading-color);
+}
+
+.article-content a {
+  color: #F29B30;
+  text-decoration: underline;
+}
+
+.article-content blockquote {
+  border-left: 4px solid #F29B30;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--muted-color);
+  font-style: italic;
+}

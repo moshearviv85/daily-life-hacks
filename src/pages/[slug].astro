@@ -1,0 +1,395 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getCollection, render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("articles");
+  return articles.map((article: CollectionEntry<"articles">) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+interface Props {
+  article: CollectionEntry<"articles">;
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+
+const isRecipe =
+  article.data.category === "recipes" &&
+  article.data.ingredients &&
+  article.data.steps;
+
+const jsonLd = isRecipe
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Recipe",
+      name: article.data.title,
+      description: article.data.excerpt,
+      image: article.data.image,
+      datePublished: article.data.date.toISOString(),
+      prepTime: article.data.prepTime
+        ? `PT${article.data.prepTime.replace(/\s*minutes?\s*/i, "M").replace(/\s*hours?\s*/i, "H")}`
+        : undefined,
+      cookTime: article.data.cookTime
+        ? `PT${article.data.cookTime.replace(/\s*minutes?\s*/i, "M").replace(/\s*hours?\s*/i, "H")}`
+        : undefined,
+      totalTime: article.data.totalTime
+        ? `PT${article.data.totalTime.replace(/\s*minutes?\s*/i, "M").replace(/\s*hours?\s*/i, "H")}`
+        : undefined,
+      recipeYield: article.data.servings
+        ? `${article.data.servings} servings`
+        : undefined,
+      recipeCategory: "Healthy",
+      recipeCuisine: "American",
+      nutrition: article.data.calories
+        ? {
+            "@type": "NutritionInformation",
+            calories: `${article.data.calories} calories`,
+          }
+        : undefined,
+      recipeIngredient: article.data.ingredients,
+      recipeInstructions: article.data.steps?.map(
+        (step: string, i: number) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          text: step,
+        }),
+      ),
+      author: {
+        "@type": "Organization",
+        name: "Daily Life Hacks",
+        url: "https://www.daily-life-hacks.com",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Daily Life Hacks",
+        url: "https://www.daily-life-hacks.com",
+      },
+    }
+  : {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: article.data.title,
+      description: article.data.excerpt,
+      image: article.data.image,
+      datePublished: article.data.date.toISOString(),
+      publisher: {
+        "@type": "Organization",
+        name: "Daily Life Hacks",
+        url: "https://www.daily-life-hacks.com",
+      },
+    };
+---
+
+<BaseLayout
+  title={article.data.title}
+  description={article.data.excerpt}
+  image={article.data.image}
+  jsonLd={jsonLd}
+>
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 py-10">
+    <!-- Mobile Back Button & Breadcrumb -->
+    <nav class="mb-6 flex flex-col gap-4 relative z-10">
+      <!-- Visual Back Button (Mobile Only) -->
+      <button
+        onclick="history.back()"
+        class="md:hidden flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all w-fit"
+        style="background-color: var(--input-bg); color: var(--heading-color); border: 1px solid var(--border-color);"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+        </svg>
+        Back
+      </button>
+
+      <div
+        class="text-sm flex items-center gap-1 flex-wrap"
+        style="color: var(--muted-color);"
+      >
+        <a href="/" class="hover:text-[#F29B30] transition-colors">Home</a>
+        <span>/</span>
+        <a
+          href={`/${article.data.category}`}
+          class="hover:text-[#F29B30] capitalize transition-colors"
+          >{article.data.category}</a
+        >
+        <span>/</span>
+        <span
+          class="truncate max-w-[200px] md:max-w-none"
+          style="color: var(--text-color);">{article.data.title}</span
+        >
+      </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="mb-8">
+      <span
+        class="inline-block px-3 py-1 text-xs font-bold rounded uppercase tracking-widest mb-4 text-white"
+        style="background-color: #F29B30;"
+      >
+        {article.data.category}
+      </span>
+      <h1
+        class="text-3xl md:text-4xl font-bold leading-tight mb-4"
+        style="color: var(--heading-color);"
+      >
+        {article.data.title}
+      </h1>
+      <p class="text-lg leading-relaxed" style="color: var(--muted-color);">
+        {article.data.excerpt}
+      </p>
+      <p
+        class="text-sm mt-3 flex items-center gap-2"
+        style="color: var(--label-color);"
+      >
+        {
+          article.data.author && (
+            <>
+              <span class="font-medium text-[var(--text-color)]">
+                {article.data.author}
+              </span>
+              <span>•</span>
+            </>
+          )
+        }
+        <span>
+          {
+            article.data.date.toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })
+          }
+        </span>
+      </p>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="relative mb-10 group rounded-2xl overflow-hidden shadow-md">
+      <img
+        src={article.data.image}
+        alt={article.data.imageAlt}
+        data-pin-description={`${article.data.title} - ${article.data.excerpt} | Daily Life Hacks`}
+        data-pin-url={new URL(
+          Astro.url.pathname,
+          Astro.site || Astro.url.origin,
+        ).href}
+        data-pin-media={new URL(
+          article.data.image,
+          Astro.site || Astro.url.origin,
+        ).href}
+        class="w-full aspect-video object-cover"
+      />
+    </div>
+
+    <!-- Recipe Card -->
+    {
+      isRecipe && (
+        <div class="mb-10 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
+          {/* Top Bar */}
+          <div class="bg-[#F29B30] p-4 text-white grid grid-cols-2 md:grid-cols-3 gap-4 text-sm font-medium">
+            <div class="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </>
+              </svg>
+              <span>Prep: {article.data.prepTime}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
+                  <path d="M10 2h4" />
+                  <path d="m19 11-2-2-1.5 1.5" />
+                  <path d="M6.5 7.5 5 9l2 2" />
+                </>
+              </svg>
+              <span>Cook: {article.data.cookTime}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12" />
+                </>
+              </svg>
+              <span>Total: {article.data.totalTime}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </>
+              </svg>
+              <span>Serves: {article.data.servings}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.1.2-2.2.5-3.3.3-1.1 1-2.2 3-2.2z" />
+              </svg>
+              <span>{article.data.calories} kcal</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+                  <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                  <path d="M12 2v2" />
+                  <path d="M12 22v-2" />
+                  <path d="m17 17-1.4-1.4" />
+                  <path d="m17 7-1.4 1.4" />
+                  <path d="m7 17 1.4-1.4" />
+                  <path d="m7 7 1.4 1.4" />
+                </>
+              </svg>
+              <span>{article.data.difficulty}</span>
+            </div>
+          </div>
+
+          <div class="p-6 md:p-8 grid md:grid-cols-2 gap-8">
+            {/* Ingredients */}
+            <div>
+              <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
+                <span class="text-[#F29B30]">●</span> Ingredients
+              </h3>
+              <ul class="space-y-2">
+                {article.data.ingredients?.map((ingredient: string) => (
+                  <li class="flex items-start gap-2 text-[var(--text-color)]">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#F29B30] flex-shrink-0" />
+                    <span>{ingredient}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Instructions */}
+            <div>
+              <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
+                <span class="text-[#F29B30]">●</span> Instructions
+              </h3>
+              <ol class="space-y-4">
+                {article.data.steps?.map((step: string, index: number) => (
+                  <li class="flex gap-3 text-[var(--text-color)]">
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[#F29B30] text-white flex items-center justify-center text-sm font-bold">
+                      {index + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+    <!-- Article Content -->
+    <div class="article-content">
+      <Content />
+    </div>
+
+    <!-- Tags -->
+    {
+      article.data.tags.length > 0 && (
+        <div class="mt-10 flex flex-wrap gap-2">
+          {article.data.tags.map((tag: string) => (
+            <span
+              class="px-3 py-1 text-sm rounded-full"
+              style="background-color: var(--input-bg); color: var(--muted-color);"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )
+    }
+
+    <!-- Disclaimer -->
+    <div
+      class="mt-10 p-5 rounded-xl text-sm leading-relaxed"
+      style="background-color: var(--input-bg); border: 1px solid var(--border-color); color: var(--muted-color);"
+    >
+      <strong style="color: var(--heading-color);">Disclaimer:</strong> The information
+      in this article is for educational purposes only and does not constitute professional
+      medical or nutritional advice. Always consult a qualified healthcare provider
+      before making dietary changes.
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

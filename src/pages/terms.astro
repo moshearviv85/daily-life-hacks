@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Terms of Use | Daily Life Hacks";
+const description = "Terms of Use and Service Agreement for Daily Life Hacks.";
+---
+
+<BaseLayout title={title} description={description}>
+    <Header />
+    <div class="max-w-4xl mx-auto px-4 py-12 prose prose-lg">
+        <h1>Terms of Use</h1>
+        <p>Last updated: {new Date().toLocaleDateString()}</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+            By accessing and using Daily Life Hacks (the "Website"), you accept
+            and agree to be bound by the terms and provision of this agreement.
+            In addition, when using this Website's particular services, you
+            shall be subject to any posted guidelines or rules applicable to
+            such services.
+        </p>
+
+        <h2>2. Intellectual Property</h2>
+        <p>
+            The Website and its original content, features, and functionality
+            are owned by Daily Life Hacks and are protected by international
+            copyright, trademark, patent, trade secret, and other intellectual
+            property or proprietary rights laws.
+        </p>
+
+        <h2>3. User Conduct</h2>
+        <p>
+            You agree to use the Website only for lawful purposes. You agree not
+            to take any action that might compromise the security of the
+            Website, render the Website inaccessible to others, or otherwise
+            cause damage to the Website or the Content. You agree not to add to,
+            subtract from, or otherwise modify the Content, or to attempt to
+            access any Content that is not intended for you.
+        </p>
+
+        <h2>4. Disclaimer of Warranties</h2>
+        <p>
+            The Website is provided "as is". Daily Life Hacks and its suppliers
+            and licensors hereby disclaim all warranties of any kind, express or
+            implied, including, without limitation, the warranties of
+            merchantability, fitness for a particular purpose and
+            non-infringement. Find out more in our <a href="/disclaimer"
+                >Disclaimer</a
+            >.
+        </p>
+
+        <h2>5. Limitation of Liability</h2>
+        <p>
+            In no event will Daily Life Hacks, or its suppliers or licensors, be
+            liable with respect to any subject matter of this agreement under
+            any contract, negligence, strict liability or other legal or
+            equitable theory for: (i) any special, incidental or consequential
+            damages; (ii) the cost of procurement for substitute products or
+            services; (iii) for interruption of use or loss or corruption of
+            data.
+        </p>
+
+        <h2>6. External Links</h2>
+        <p>
+            Daily Life Hacks may contain links to third-party web sites or
+            services that are not owned or controlled by Daily Life Hacks. Daily
+            Life Hacks has no control over, and assumes no responsibility for,
+            the content, privacy policies, or practices of any third-party web
+            sites or services.
+        </p>
+
+        <h2>7. Changes to Terms</h2>
+        <p>
+            Daily Life Hacks reserves the right, at its sole discretion, to
+            modify or replace these Terms at any time. What constitutes a
+            material change will be determined at our sole discretion. By
+            continuing to access or use our Website after those revisions become
+            effective, you agree to be bound by the revised terms.
+        </p>
+
+        <h2>8. Contact Us</h2>
+        <p>
+            If you have any questions about these Terms, please contact us at: <a
+                href="mailto:hello@daily-life-hacks.com"
+                >hello@daily-life-hacks.com</a
+            >.
+        </p>
+    </div>
+    <Footer />
+</BaseLayout>

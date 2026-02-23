@@ -1,0 +1,11 @@
+🚀 Running test-ais.py: Generating 4 variations per item...
+
+📝 Testing Item: easy-high-fiber-breakfast-ideas-for-gut-health (nutrition)
+  🤖 Requesting claude...
+    ❌ Failed: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20240620'}, 'request_id': 'req_011CYLhQuDiZtGwoCTmdQ1Ss'}
+
+📝 Testing Item: high-fiber-meals-for-constipation-relief (recipes)
+  🤖 Requesting claude...
+    ❌ Failed: Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-3-5-sonnet-20240620'}, 'request_id': 'req_011CYLhQw4MEfs3CuFioRkty'}
+
+🎉 Test generation complete. Start `npm run dev` and navigate to /test-ai_name-slug to compare!

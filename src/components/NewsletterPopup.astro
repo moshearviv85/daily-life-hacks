@@ -1,0 +1,274 @@
+---
+import { getCollection } from "astro:content";
+
+const allArticles = await getCollection("articles");
+const popupImages = allArticles
+    .map((article) => article.data.image)
+    .filter(Boolean);
+---
+
+<div
+    id="newsletter-popup"
+    class="fixed inset-0 z-50 flex items-end sm:items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300"
+    aria-hidden="true"
+>
+    <!-- Overlay -->
+    <div
+        class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300"
+        id="popup-overlay"
+    >
+    </div>
+
+    <!-- Popup Content -->
+    <div
+        class="relative z-10 w-full max-w-xl rounded-t-2xl sm:rounded-2xl shadow-2xl transform translate-y-full sm:translate-y-0 sm:scale-95 transition-all duration-300 overflow-hidden mx-4 sm:mx-0 mb-0 sm:mb-8"
+        style="background-color: var(--card-bg);"
+        id="popup-content"
+    >
+        <div class="flex flex-col sm:flex-row items-stretch">
+            <!-- Image Side (Desktop only) -->
+            <div
+                class="hidden sm:block sm:w-2/5 relative overflow-hidden flex-shrink-0 bg-[var(--input-bg)] bg-cover bg-center"
+                data-images={JSON.stringify(popupImages)}
+                id="popup-dynamic-image"
+                style="background-image: url('/popup-image.jpg');"
+            >
+                <!-- Fallback will be covered implicitly since we only set valid urls -->
+            </div>
+
+            <!-- Content Side -->
+            <div
+                class="relative w-full sm:w-3/5 p-6 sm:p-10 flex flex-col justify-center text-center sm:text-left"
+            >
+                <button
+                    id="popup-close"
+                    class="absolute top-3 right-3 p-2 transition-colors z-20"
+                    style="color: var(--label-color);"
+                    aria-label="Close popup"
+                >
+                    <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+
+                <span
+                    id="popup-tag"
+                    class="inline-block self-center sm:self-start px-3 py-1 mb-4 text-xs font-bold uppercase tracking-wider text-white rounded-full bg-[#F29B30]"
+                >
+                    Free Resource
+                </span>
+
+                <h3
+                    id="popup-title"
+                    class="text-2xl sm:text-3xl font-bold mb-3 leading-tight"
+                    style="color: var(--heading-color);"
+                >
+                    Unlock Your Weekly Meal Plan
+                </h3>
+
+                <p
+                    id="popup-description"
+                    class="mb-8 text-sm sm:text-base leading-relaxed"
+                    style="color: var(--muted-color);"
+                >
+                    Join 2,500+ subscribers and get nutrition tips, healthy
+                    recipes, and a free 7-day meal plan.
+                </p>
+
+                <!-- Form -->
+                <form
+                    class="space-y-4"
+                    onsubmit="event.preventDefault(); document.getElementById('popup-success').classList.remove('hidden'); this.classList.add('hidden');"
+                >
+                    <div>
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            required
+                            class="w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-[#F29B30] outline-none transition-all"
+                            style="color: var(--text-color); background-color: var(--input-bg); border: 1px solid var(--border-color);"
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full py-3 px-4 font-bold text-white rounded-lg transition-transform hover:scale-[1.02] shadow-md"
+                        style="background-color: #F29B30;"
+                    >
+                        Get My Free Plan
+                    </button>
+                    <p
+                        class="text-[10px] text-center mt-2 uppercase tracking-widest"
+                        style="color: var(--label-color);"
+                    >
+                        No spam • Unsubscribe anytime
+                    </p>
+                </form>
+
+                <!-- Success Message -->
+                <div
+                    id="popup-success"
+                    class="hidden text-center py-6 animate-fade-in"
+                >
+                    <div
+                        class="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-green-100 text-green-500"
+                    >
+                        <svg
+                            class="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <p
+                        class="text-xl font-bold"
+                        style="color: var(--heading-color);"
+                    >
+                        You're in!
+                    </p>
+                    <p class="text-sm" style="color: var(--muted-color);">
+                        Check your inbox for your free plan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Logic to show/hide popup
+        const POPUP_DELAY = 20000; // 20 seconds
+        const SUPPRESS_DAYS = 7; // Don't show again for 7 days if closed
+
+        let popup: HTMLElement | null;
+        let popupContent: HTMLElement | null;
+        let overlay: HTMLElement | null;
+        let closeBtn: HTMLElement | null;
+        let titleEl: HTMLElement | null;
+        let descEl: HTMLElement | null;
+        let tagEl: HTMLElement | null;
+        let showTimeout: ReturnType<typeof setTimeout>;
+
+        function queryElements() {
+            popup = document.getElementById("newsletter-popup");
+            popupContent = document.getElementById("popup-content");
+            overlay = document.getElementById("popup-overlay");
+            closeBtn = document.getElementById("popup-close");
+            titleEl = document.getElementById("popup-title");
+            descEl = document.getElementById("popup-description");
+            tagEl = document.getElementById("popup-tag");
+        }
+
+        function shouldSuppressPopup() {
+            const expiry = localStorage.getItem("newsletter_popup_closed");
+            if (expiry && new Date().getTime() < parseInt(expiry)) {
+                return true;
+            }
+            return false;
+        }
+
+        function showPopup() {
+            if (!popup || !popupContent) return;
+            popup.classList.remove("pointer-events-none", "opacity-0");
+            popupContent.classList.remove("translate-y-full", "scale-95");
+        }
+
+        function closePopup() {
+            if (!popup || !popupContent) return;
+            popup.classList.add("pointer-events-none", "opacity-0");
+            popupContent.classList.add("translate-y-full", "sm:scale-95");
+
+            const expiry =
+                new Date().getTime() + SUPPRESS_DAYS * 24 * 60 * 60 * 1000;
+            localStorage.setItem("newsletter_popup_closed", expiry.toString());
+        }
+
+        function handleExitIntent(e: MouseEvent) {
+            if (e.clientY <= 0) {
+                if (!shouldSuppressPopup()) {
+                    showPopup();
+                    document.removeEventListener(
+                        "mouseleave",
+                        handleExitIntent,
+                    );
+                    clearTimeout(showTimeout);
+                }
+            }
+        }
+
+        function customizeForRecipe() {
+            if (titleEl) titleEl.innerText = "Cook Dinner in 15 Minutes";
+            if (descEl)
+                descEl.innerText =
+                    "Get our top 10 quick & healthy recipes delivered to your inbox instantly.";
+            if (tagEl) tagEl.innerText = "Free Recipe Book";
+        }
+
+        function customizeForNutrition() {
+            if (titleEl) titleEl.innerText = "Your Weekly Nutrition Plan";
+            if (descEl)
+                descEl.innerText =
+                    "Stop guessing. Get a science-backed meal plan and shopping list every week.";
+            if (tagEl) tagEl.innerText = "Free Meal Plan";
+        }
+
+        function initPopup() {
+            if (shouldSuppressPopup()) return;
+
+            // Set a random image
+            const imgDiv = document.getElementById("popup-dynamic-image");
+            if (imgDiv) {
+                try {
+                    const imagesStr =
+                        imgDiv.getAttribute("data-images") || "[]";
+                    const images = JSON.parse(imagesStr);
+                    if (images.length > 0) {
+                        const randomImg =
+                            images[Math.floor(Math.random() * images.length)];
+                        imgDiv.style.backgroundImage = `url('${randomImg}')`;
+                    }
+                } catch (e) {
+                    // Ignore
+                }
+            }
+
+            const path = window.location.pathname;
+            if (path.includes("recipe") || path.includes("recipes")) {
+                customizeForRecipe();
+            } else if (path.includes("nutrition")) {
+                customizeForNutrition();
+            }
+
+            showTimeout = setTimeout(showPopup, POPUP_DELAY);
+            document.addEventListener("mouseleave", handleExitIntent);
+        }
+
+        function setupPopup() {
+            queryElements();
+
+            if (closeBtn) closeBtn.addEventListener("click", closePopup);
+            if (overlay) overlay.addEventListener("click", closePopup);
+
+            clearTimeout(showTimeout);
+            document.removeEventListener("mouseleave", handleExitIntent);
+
+            initPopup();
+        }
+
+        // Run on every page load (first load + View Transitions navigations)
+        document.addEventListener("astro:page-load", setupPopup);
+    </script>
+</div>
