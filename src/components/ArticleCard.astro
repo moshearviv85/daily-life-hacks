@@ -48,6 +48,8 @@ const badgeColor = category === "recipes" ? "#e07b10" : "#F29B30";
       <img
         src={image}
         alt={imageAlt}
+        width="640"
+        height={size === "sm" ? "480" : "360"}
         data-pin-url={new URL("/" + slug, Astro.site || Astro.url.origin).href}
         data-pin-media={new URL(image, Astro.site || Astro.url.origin).href}
         data-pin-description={`${title} - ${excerpt} | Daily Life Hacks`}

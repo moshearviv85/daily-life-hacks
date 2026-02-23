@@ -8,7 +8,7 @@ interface Props {
   description?: string;
   image?: string;
   canonicalURL?: string;
-  jsonLd?: object;
+  jsonLd?: object | object[];
 }
 
 const {
@@ -84,14 +84,25 @@ const {
 
     <!-- JSON-LD Schema -->
     {
-      jsonLd && (
-        <script
-          is:inline
-          type="application/ld+json"
-          set:html={JSON.stringify(jsonLd)}
-        />
-      )
+      jsonLd && Array.isArray(jsonLd)
+        ? jsonLd.map((schema) => (
+            <script
+              is:inline
+              type="application/ld+json"
+              set:html={JSON.stringify(schema)}
+            />
+          ))
+        : jsonLd && (
+            <script
+              is:inline
+              type="application/ld+json"
+              set:html={JSON.stringify(jsonLd)}
+            />
+          )
     }
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   </head>
   <body
     class="min-h-screen"

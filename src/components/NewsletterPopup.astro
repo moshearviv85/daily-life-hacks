@@ -64,7 +64,7 @@ const popupImages = allArticles
                     id="popup-tag"
                     class="inline-block self-center sm:self-start px-3 py-1 mb-4 text-xs font-bold uppercase tracking-wider text-white rounded-full bg-[#F29B30]"
                 >
-                    Free Resource
+                    Weekly Newsletter
                 </span>
 
                 <h3
@@ -72,7 +72,7 @@ const popupImages = allArticles
                     class="text-2xl sm:text-3xl font-bold mb-3 leading-tight"
                     style="color: var(--heading-color);"
                 >
-                    Unlock Your Weekly Meal Plan
+                    Get Healthy Recipes Weekly
                 </h3>
 
                 <p
@@ -80,8 +80,8 @@ const popupImages = allArticles
                     class="mb-8 text-sm sm:text-base leading-relaxed"
                     style="color: var(--muted-color);"
                 >
-                    Join 2,500+ subscribers and get nutrition tips, healthy
-                    recipes, and a free 7-day meal plan.
+                    Join our community and get weekly nutrition tips, easy
+                    healthy recipes, and practical wellness advice.
                 </p>
 
                 <!-- Form -->
@@ -103,7 +103,7 @@ const popupImages = allArticles
                         class="w-full py-3 px-4 font-bold text-white rounded-lg transition-transform hover:scale-[1.02] shadow-md"
                         style="background-color: #F29B30;"
                     >
-                        Get My Free Plan
+                        Subscribe Free
                     </button>
                     <p
                         class="text-[10px] text-center mt-2 uppercase tracking-widest"
@@ -141,7 +141,7 @@ const popupImages = allArticles
                         You're in!
                     </p>
                     <p class="text-sm" style="color: var(--muted-color);">
-                        Check your inbox for your free plan.
+                        Check your inbox for a welcome surprise.
                     </p>
                 </div>
             </div>
@@ -210,19 +210,19 @@ const popupImages = allArticles
         }
 
         function customizeForRecipe() {
-            if (titleEl) titleEl.innerText = "Cook Dinner in 15 Minutes";
+            if (titleEl) titleEl.innerText = "Love Healthy Recipes?";
             if (descEl)
                 descEl.innerText =
-                    "Get our top 10 quick & healthy recipes delivered to your inbox instantly.";
-            if (tagEl) tagEl.innerText = "Free Recipe Book";
+                    "Get new easy, healthy recipes delivered to your inbox every week. Quick meals the whole family will enjoy.";
+            if (tagEl) tagEl.innerText = "Weekly Recipes";
         }
 
         function customizeForNutrition() {
-            if (titleEl) titleEl.innerText = "Your Weekly Nutrition Plan";
+            if (titleEl) titleEl.innerText = "Level Up Your Nutrition";
             if (descEl)
                 descEl.innerText =
-                    "Stop guessing. Get a science-backed meal plan and shopping list every week.";
-            if (tagEl) tagEl.innerText = "Free Meal Plan";
+                    "Get weekly science-backed nutrition tips and practical advice for a healthier lifestyle.";
+            if (tagEl) tagEl.innerText = "Nutrition Tips";
         }
 
         function initPopup() {

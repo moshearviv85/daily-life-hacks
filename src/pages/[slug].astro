@@ -25,14 +25,29 @@ const isRecipe =
   article.data.ingredients &&
   article.data.steps;
 
+const siteUrl = "https://www.daily-life-hacks.com";
+const articleUrl = `${siteUrl}/${article.id}`;
+const imageUrl = article.data.image.startsWith("http") ? article.data.image : `${siteUrl}${article.data.image}`;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: article.data.category === "recipes" ? "Recipes" : "Nutrition", item: `${siteUrl}/${article.data.category}` },
+    { "@type": "ListItem", position: 3, name: article.data.title, item: articleUrl },
+  ],
+};
+
 const jsonLd = isRecipe
   ? {
       "@context": "https://schema.org",
       "@type": "Recipe",
       name: article.data.title,
       description: article.data.excerpt,
-      image: article.data.image,
+      image: [imageUrl],
       datePublished: article.data.date.toISOString(),
+      dateModified: article.data.date.toISOString(),
       prepTime: article.data.prepTime
         ? `PT${article.data.prepTime.replace(/\s*minutes?\s*/i, "M").replace(/\s*hours?\s*/i, "H")}`
         : undefined,
@@ -77,21 +92,29 @@ const jsonLd = isRecipe
       "@type": "Article",
       headline: article.data.title,
       description: article.data.excerpt,
-      image: article.data.image,
+      image: [imageUrl],
       datePublished: article.data.date.toISOString(),
+      dateModified: article.data.date.toISOString(),
+      author: {
+        "@type": "Organization",
+        name: "Daily Life Hacks",
+        url: siteUrl,
+      },
       publisher: {
         "@type": "Organization",
         name: "Daily Life Hacks",
-        url: "https://www.daily-life-hacks.com",
+        url: siteUrl,
       },
     };
+
+const allSchemas = [jsonLd, breadcrumbSchema];
 ---
 
 <BaseLayout
   title={article.data.title}
   description={article.data.excerpt}
   image={article.data.image}
-  jsonLd={jsonLd}
+  jsonLd={allSchemas}
 >
   <Header />
   <main class="max-w-3xl mx-auto px-4 py-10">
@@ -186,6 +209,9 @@ const jsonLd = isRecipe
       <img
         src={article.data.image}
         alt={article.data.imageAlt}
+        width="768"
+        height="432"
+        fetchpriority="high"
         data-pin-description={`${article.data.title} - ${article.data.excerpt} | Daily Life Hacks`}
         data-pin-url={new URL(
           Astro.url.pathname,
