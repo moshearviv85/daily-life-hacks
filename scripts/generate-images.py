@@ -1,5 +1,6 @@
 """
 Image Generation Script - Daily Life Hacks
+Uses Nano Banana Pro (Gemini 3 Pro Image) for all images.
 Generates 5 images per article:
   - 1 web image (16:9, no text)
   - 4 Pinterest pins (3:4, with title text overlay)
@@ -12,6 +13,7 @@ import base64
 import io
 import time
 import csv
+import random
 from datetime import datetime
 from PIL import Image
 
@@ -21,13 +23,14 @@ from PIL import Image
 from dotenv import load_dotenv
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY", "")
-MODEL_NAME = "imagen-4.0-ultra-generate-001"
+MODEL_NAME = "nano-banana-pro-preview"
 PINS_PER_ARTICLE = 4
 SITE_URL = "https://www.daily-life-hacks.com"
 
 # Paths
 PROJECT_DIR = "."
 TRACKER_FILE = os.path.join(PROJECT_DIR, "pipeline-data", "content-tracker.json")
+SCENES_FILE = os.path.join(PROJECT_DIR, "pipeline-data", "image-scenes.json")
 SAVE_DIR_WEB = os.path.join(PROJECT_DIR, "public", "images")
 SAVE_DIR_PINS = os.path.join(PROJECT_DIR, "public", "images", "pins")
 EXPORT_CSV = os.path.join(PROJECT_DIR, "pipeline-data", "pins-export.csv")
@@ -37,30 +40,37 @@ LIMIT = 0
 # ==========================================
 
 
-def call_imagen_api(prompt, file_path, aspect_ratio="3:4"):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:predict?key={API_KEY}"
+def call_api(prompt, file_path, aspect_ratio="3:4"):
+    """Generate image via Nano Banana Pro (Gemini 3 Pro Image) API"""
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL_NAME}:generateContent?key={API_KEY}"
     payload = {
-        "instances": [{"prompt": prompt}],
-        "parameters": {"sampleCount": 1, "aspectRatio": aspect_ratio}
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "responseModalities": ["IMAGE", "TEXT"],
+            "temperature": 2.0,
+            "imageConfig": {
+                "aspectRatio": aspect_ratio
+            }
+        }
     }
 
     try:
-        res = requests.post(url, json=payload, timeout=90)
+        res = requests.post(url, json=payload, timeout=120)
         if res.status_code == 200:
             data = res.json()
-            if 'predictions' in data:
-                b64 = data['predictions'][0]['bytesBase64Encoded']
-            elif 'generatedImages' in data:
-                b64 = data['generatedImages'][0]['image']['imageBytes']
-            else:
-                print(f"   Unexpected response format: {list(data.keys())}")
-                return "ERROR"
-
-            img = Image.open(io.BytesIO(base64.b64decode(b64)))
-            if img.mode == 'RGBA':
-                img = img.convert('RGB')
-            img.save(file_path, quality=95)
-            return "SUCCESS"
+            candidates = data.get('candidates', [])
+            if candidates:
+                parts = candidates[0].get('content', {}).get('parts', [])
+                for part in parts:
+                    if 'inlineData' in part:
+                        b64 = part['inlineData']['data']
+                        img = Image.open(io.BytesIO(base64.b64decode(b64)))
+                        if img.mode == 'RGBA':
+                            img = img.convert('RGB')
+                        img.save(file_path, quality=95)
+                        return "SUCCESS"
+            print(f"   No image in response: {json.dumps(data, indent=2)[:200]}")
+            return "ERROR"
         elif res.status_code == 429:
             return "QUOTA_LIMIT"
         else:
@@ -78,8 +88,13 @@ def main():
     with open(TRACKER_FILE, 'r', encoding='utf-8') as f:
         tracker = json.load(f)
 
-    # Filter: articles that have drafts (ignore tracker status, check actual files)
-    items = [item for item in tracker if item.get('slug')]
+    with open(SCENES_FILE, 'r', encoding='utf-8') as f:
+        scenes = json.load(f)
+
+    # Filter: only articles that are actually published on the site
+    ARTICLES_DIR = os.path.join(PROJECT_DIR, "src", "data", "articles")
+    items = [item for item in tracker if item.get('slug')
+             and os.path.exists(os.path.join(ARTICLES_DIR, f"{item['slug']}.md"))]
 
     if not items:
         print("No articles found. Nothing to generate.")
@@ -89,8 +104,8 @@ def main():
         items = items[:LIMIT]
 
     print(f"\n{'='*50}")
-    print(f"  Image Generation - {len(items)} articles")
-    print(f"  {len(items) * 5} total images ({len(items)} web + {len(items) * 4} pins)")
+    print(f"  Image Generation ({MODEL_NAME})")
+    print(f"  {len(items)} articles, {len(items) * 5} total images")
     print(f"{'='*50}\n")
 
     quota_hit = False
@@ -117,13 +132,11 @@ def main():
         web_path = os.path.join(SAVE_DIR_WEB, web_filename)
 
         if not os.path.exists(web_path):
-            prompt_web = f"""Create a high-quality, professional image for a food and nutrition blog.
-CONTENT TOPIC: {description}
-DESIGN REQUIREMENTS: Horizontal 16:9 aspect ratio. Modern food photography with professional lighting. Warm, inviting colors.
-CRITICAL INSTRUCTION: ABSOLUTELY NO TEXT, NO WORDS, NO LETTERS on the image. Clean composition only."""
+            scene = random.choice(scenes)
+            prompt_web = f"{title}, {scene}. Realistic food photography. No text on the image."
 
-            print(f"  -> Web image (16:9)...")
-            status = call_imagen_api(prompt_web, web_path, aspect_ratio="16:9")
+            print(f"  -> Web image (16:9) [{scene[:40]}]...")
+            status = call_api(prompt_web, web_path, aspect_ratio="16:9")
             if status == "QUOTA_LIMIT":
                 print("  QUOTA LIMIT - stopping.")
                 quota_hit = True
@@ -146,38 +159,41 @@ CRITICAL INSTRUCTION: ABSOLUTELY NO TEXT, NO WORDS, NO LETTERS on the image. Cle
             pin_path = os.path.join(SAVE_DIR_PINS, pin_filename)
 
             if not os.path.exists(pin_path):
-                prompt_pin = f"""Create a high-quality, professional Pinterest pin image for food and nutrition.
-CONTENT TOPIC: {description}
-DESIGN REQUIREMENTS: Vertical 3:4 aspect ratio. Modern food photography with professional lighting.
-TEXT OVERLAY: Display ONLY the exact text "{title}" on the image in an elegant, bold, readable font. Do NOT add any other text, subtitles, descriptions, hashtags, or captions. ONLY the title above."""
+                scene = random.choice(scenes)
+                prompt_pin = f"""{title}, {scene}. Realistic food photography.
+Write ONLY the text "{title}" on the image in a bold, readable font. No other text."""
 
-                print(f"  -> Pin v{v}/{PINS_PER_ARTICLE}...")
-                status = call_imagen_api(prompt_pin, pin_path, aspect_ratio="3:4")
+                print(f"  -> Pin v{v}/{PINS_PER_ARTICLE} [{scene[:40]}]...")
+                status = call_api(prompt_pin, pin_path, aspect_ratio="3:4")
                 if status == "QUOTA_LIMIT":
                     print("  QUOTA LIMIT - stopping.")
                     quota_hit = True
                     break
                 elif status == "SUCCESS":
                     generated_count += 1
+                elif status == "ERROR":
+                    print(f"  -> Pin v{v} failed, continuing to next version.")
                 time.sleep(4)
             else:
                 print(f"  -> Pin v{v} exists, skipping.")
 
-            pin_paths.append(f"public/images/pins/{pin_filename}")
+            # Only add to export if file exists on disk
+            if os.path.exists(pin_path):
+                pin_paths.append(f"public/images/pins/{pin_filename}")
 
-            # Add to pin export
-            hashtag_str = " ".join([f"#{h}" for h in hashtags]) if isinstance(hashtags, list) else str(hashtags)
-            destination_url = f"{SITE_URL}/{slug}?utm_content=v{v}"
-            board = "Healthy Recipes" if category == "recipes" else "Nutrition Tips"
+                # Add to pin export
+                hashtag_str = " ".join([f"#{h}" for h in hashtags]) if isinstance(hashtags, list) else str(hashtags)
+                destination_url = f"{SITE_URL}/{slug}?utm_content=v{v}"
+                board = "Healthy Recipes" if category == "recipes" else "Nutrition Tips"
 
-            pin_export_rows.append({
-                "image_filename": pin_filename,
-                "pin_title": title,
-                "description": f"{description} {hashtag_str}",
-                "destination_url": destination_url,
-                "board": board,
-                "alt_text": alt_text
-            })
+                pin_export_rows.append({
+                    "image_filename": pin_filename,
+                    "pin_title": title,
+                    "description": f"{description} {hashtag_str}",
+                    "destination_url": destination_url,
+                    "board": board,
+                    "alt_text": alt_text
+                })
 
         if not quota_hit:
             item['image_pins'] = pin_paths

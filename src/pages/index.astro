@@ -33,8 +33,10 @@ const featured  = sorted.find((a: Article) => a.data.featured) ?? sorted[0];
 // Take all articles except the featured one, show 5 in Must Read sidebar
 const mustReads = sorted.filter((a: Article) => a.id !== featured?.id).slice(0, 5);
 
-// Exactly 16 cards for the 4×4 grid
-const moreToRead = [...sorted, ...sorted, ...sorted, ...sorted].slice(0, 16);
+// Grid: exclude featured + sidebar articles to avoid duplicates
+const sidebarIds = new Set([featured?.id, ...mustReads.map((a: Article) => a.id)]);
+const remaining = sorted.filter((a: Article) => !sidebarIds.has(a.id));
+const moreToRead = remaining.slice(0, 16);
 
 const badgeColor = (cat: string) => cat === 'recipes' ? '#e07b10' : '#F29B30';
 ---

@@ -43,8 +43,7 @@ const badgeColor = category === "recipes" ? "#e07b10" : "#F29B30";
   >
     <!-- Image -->
     <div
-      class={`relative overflow-hidden shrink-0 bg-gray-200 ${size === "lg" ? "aspect-video" : size === "sm" ? "aspect-[4/3]" : "aspect-video"}`}
-
+      class={`overflow-hidden shrink-0 ${size === "lg" ? "aspect-video" : size === "sm" ? "aspect-[4/3]" : "aspect-video"}`}
     >
       <img
         src={image}
@@ -52,7 +51,7 @@ const badgeColor = category === "recipes" ? "#e07b10" : "#F29B30";
         data-pin-url={new URL("/" + slug, Astro.site || Astro.url.origin).href}
         data-pin-media={new URL(image, Astro.site || Astro.url.origin).href}
         data-pin-description={`${title} - ${excerpt} | Daily Life Hacks`}
-        class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         loading="lazy"
       />
     </div>
