@@ -14,7 +14,7 @@ export async function onRequestPost(context) {
   }
 
   try {
-    const { email } = await request.json();
+    const { email, source, page } = await request.json();
 
     if (!email || !email.includes("@")) {
       return new Response(
@@ -48,14 +48,27 @@ export async function onRequestPost(context) {
       }
     );
 
-    if (res.ok || res.status === 409) {
+    const status = (res.ok || res.status === 409) ? "success" : "failed";
+    const referrer = request.headers.get("Referer") || "";
+
+    // Log to D1 if available
+    if (env.DB) {
+      try {
+        await env.DB.prepare(
+          "INSERT INTO subscriptions (email, source, page, referrer, status) VALUES (?, ?, ?, ?, ?)"
+        ).bind(email, source || "unknown", page || "", referrer, status).run();
+      } catch (dbErr) {
+        // Don't block subscription if tracking fails
+      }
+    }
+
+    if (status === "success") {
       return new Response(
         JSON.stringify({ success: true }),
         { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
-    const errorData = await res.text();
     return new Response(
       JSON.stringify({ error: "Subscription failed" }),
       { status: res.status, headers: { ...corsHeaders, "Content-Type": "application/json" } }

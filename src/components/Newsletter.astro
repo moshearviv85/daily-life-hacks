@@ -95,7 +95,11 @@
         const res = await fetch("/api/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: emailInput.value }),
+          body: JSON.stringify({
+            email: emailInput.value,
+            source: "footer",
+            page: window.location.pathname,
+          }),
         });
 
         if (res.ok) {

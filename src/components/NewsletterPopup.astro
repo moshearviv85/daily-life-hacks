@@ -274,7 +274,11 @@ const popupImages = allArticles
                 const res = await fetch("/api/subscribe", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ email: emailInput.value }),
+                    body: JSON.stringify({
+                        email: emailInput.value,
+                        source: "popup",
+                        page: window.location.pathname,
+                    }),
                 });
 
                 if (res.ok) {
