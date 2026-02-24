@@ -24,7 +24,7 @@ export async function onRequestPost(context) {
     }
 
     const BEEHIIV_API_KEY = env.BEEHIIV_API_KEY;
-    const BEEHIIV_PUB_ID = env.BEEHIIV_PUB_ID || "99ff482f-ae3d-436b-b0b9-637220faa120";
+    const BEEHIIV_PUB_ID = env.BEEHIIV_PUB_ID || "pub_99ff482f-ae3d-436b-b0b9-637220faa120";
 
     if (!BEEHIIV_API_KEY) {
       return new Response(
