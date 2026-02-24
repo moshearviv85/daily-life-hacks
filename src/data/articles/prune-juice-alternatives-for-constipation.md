@@ -13,7 +13,7 @@ whatsHot: false
 mustRead: false
 ---
 
-I mean, seriously, who *actually* enjoys prune juice? It’s one of those things, you know, like trying to assemble IKEA furniture with just the pictures, or getting stuck in traffic when you’re already late—utterly necessary sometimes, sure, but never, ever pleasant. The taste, the color, the whole vibe of it, it just screams "medicinal." And when you’re already feeling, shall we say, a bit *backed up*, the last thing you want is another thing that makes you feel gross.
+I mean, seriously, who *actually* enjoys prune juice? It’s one of those things, you know, like trying to assemble IKEA furniture with just the pictures, or getting stuck in traffic when you’re already late-utterly necessary sometimes, sure, but never, ever pleasant. The taste, the color, the whole vibe of it, it just screams "medicinal." And when you’re already feeling, shall we say, a bit *backed up*, the last thing you want is another thing that makes you feel gross.
 
 So, if you’re nodding your head vigorously right now (and maybe a little green around the gills just thinking about it), then welcome, my friend. We’re in this together. The good news? You absolutely do not have to subject yourself to that dark, syrupy liquid anymore to encourage a bit of digestive harmony. There are other players in the game, some real MVPs, that can help get things moving without making you question all your life choices.
 
@@ -52,7 +52,7 @@ Alright, if you want to bring out the big guns, but still keep it delicious and 
 
 ## Kiwi's Dynamic Duo: Fiber and Actinidin
 
-Kiwis are ridiculously high in fiber—seriously, one medium kiwi has about 2.5 grams. That’s a good chunk of your daily intake right there, and they contain both soluble and insoluble fiber, which is the dream team for gut health. But here’s the *extra* cool part: kiwis also contain an enzyme called actinidin. This enzyme is known to help break down proteins, and some research suggests it can actually improve digestion and gut motility. It’s like a tiny, natural digestive helper inside every kiwi. (Wild, right?)
+Kiwis are ridiculously high in fiber-seriously, one medium kiwi has about 2.5 grams. That’s a good chunk of your daily intake right there, and they contain both soluble and insoluble fiber, which is the dream team for gut health. But here’s the *extra* cool part: kiwis also contain an enzyme called actinidin. This enzyme is known to help break down proteins, and some research suggests it can actually improve digestion and gut motility. It’s like a tiny, natural digestive helper inside every kiwi. (Wild, right?)
 
 Making a kiwi smoothie is super simple and totally customizable. I usually throw two or three peeled kiwis into my blender (yes, you can eat the skin, it has extra fiber, but I personally don't love the texture in a smoothie), maybe half a cup of water or unsweetened almond milk, a handful of spinach (you won’t taste it, I promise!), and a small banana for creaminess and extra potassium. Blend until smooth. Sometimes I'll add a teaspoon of chia seeds too for even *more* fiber, which swell up and help move things along. It’s vibrant, tangy, and actually feels like a manage, not a chore. This one, for me, is the true (oops, almost used a banned word there, ha!) for consistently happy bowels.
 

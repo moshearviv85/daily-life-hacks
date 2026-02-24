@@ -19,7 +19,7 @@ This isn't some deep philosophical rumination on the nature of carbohydrates, pr
 
 ## Empty Carbs: What Even Are They, Dude?
 
-Okay, so "empty carbs" — it sounds a bit judgy, doesn't it? Like, who called them that? They're not literally empty; they have calories, right? Of course they do. What people really mean when they say "empty carbs" (and yeah, I'm guilty of using the term too, it’s just convenient shorthand) is that they provide energy, sure, but not a whole lot else in the way of beneficial micronutrients or, more importantly for our pasta discussion today, fiber.
+Okay, so "empty carbs" - it sounds a bit judgy, doesn't it? Like, who called them that? They're not literally empty; they have calories, right? Of course they do. What people really mean when they say "empty carbs" (and yeah, I'm guilty of using the term too, it’s just convenient shorthand) is that they provide energy, sure, but not a whole lot else in the way of beneficial micronutrients or, more importantly for our pasta discussion today, fiber.
 
 Think of it like this: you're fueling your car. You can put in regular gas, which works fine, or you can put in premium gas that has extra cleaners and stuff that helps your engine run smoother and last longer. White pasta is kinda like the regular gas. It gets you where you're going (energy!), but it's missing the "extra cleaners" – the fiber, the B vitamins, the iron – that whole wheat pasta brings to the party. The refining process that turns whole grains into white flour strips away the bran and germ, which are where most of those good things live. It’s a bummer, really.
 

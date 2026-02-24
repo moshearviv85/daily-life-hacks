@@ -41,7 +41,7 @@ Okay, so I used to be that person, right? Grabbing whatever bottle was on sale. 
 
 ## The Glorious Gloop: Tahini's Magic
 
-So, here's the deal with tahini. It's basically ground sesame seeds. Sounds simple, right? It is. But oh, the magic it brings. It's creamy, it's nutty (but not *too* nutty, if you know what I mean), and it's got this rich, slightly bitter undertone that just plays so well with lemon. And for real, it's packed. I mean, seriously packed. You're looking at healthy fats—the monounsaturated and polyunsaturated kinds—which are like, good for your heart and stuff. And fiber. Hello, fiber! Important for digestion, helps you feel full, keeps things moving. Plus, protein! A decent amount for a seed paste. It's an unsung hero of the pantry, often just chilling there until hummus time, but it's so much more versatile.
+So, here's the deal with tahini. It's basically ground sesame seeds. Sounds simple, right? It is. But oh, the magic it brings. It's creamy, it's nutty (but not *too* nutty, if you know what I mean), and it's got this rich, slightly bitter undertone that just plays so well with lemon. And for real, it's packed. I mean, seriously packed. You're looking at healthy fats-the monounsaturated and polyunsaturated kinds-which are like, good for your heart and stuff. And fiber. Hello, fiber! Important for digestion, helps you feel full, keeps things moving. Plus, protein! A decent amount for a seed paste. It's an unsung hero of the pantry, often just chilling there until hummus time, but it's so much more versatile.
 
 ## Whipping Up Your Own Vibe
 

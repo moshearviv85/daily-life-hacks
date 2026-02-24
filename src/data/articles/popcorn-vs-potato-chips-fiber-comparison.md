@@ -35,7 +35,7 @@ So, making popcorn the undeniable winner in this fiber showdown isn’t just abo
 
 ### Seasoning Secrets (Because Plain Can Be... Plain)
 
-Now, plain air-popped popcorn can be a bit bland for some, I get it. This is where you get creative, though. You can sprinkle it with a tiny dash of salt (way less than on chips!), or if you want a cheesy flavor without the actual cheese or weird powdered stuff, try nutritional yeast. It’s got a savory, umami vibe and even some B vitamins. Garlic powder, onion powder, smoked paprika, chili powder—all amazing options. A little spritz of olive oil spray, then your seasoning, helps it stick. Seriously, play around! My current obsession is a sprinkle of dill and a touch of black pepper. It’s weirdly good.
+Now, plain air-popped popcorn can be a bit bland for some, I get it. This is where you get creative, though. You can sprinkle it with a tiny dash of salt (way less than on chips!), or if you want a cheesy flavor without the actual cheese or weird powdered stuff, try nutritional yeast. It’s got a savory, umami vibe and even some B vitamins. Garlic powder, onion powder, smoked paprika, chili powder-all amazing options. A little spritz of olive oil spray, then your seasoning, helps it stick. Seriously, play around! My current obsession is a sprinkle of dill and a touch of black pepper. It’s weirdly good.
 
 ## But What About The Chip Craving? (We've All Been There)
 

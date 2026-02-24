@@ -24,7 +24,7 @@ Fiber is kind of like a sponge. It absorbs water. This absorption is exactly wha
 
 ### Why Your Body's Internal Plumbing Needs a Refill
 
-Your body is mostly water, right? We've all heard that statistic—something like 60% or 70%, depending on who you ask (and probably how much water they drank that day, ha). This water isn't just for showing off; it's vital for practically every bodily function, including, you guessed it, digestion. Water helps dissolve fats and soluble fiber, allowing them to pass through your system more easily. It also ensures the muscles in your intestines stay lubricated and can contract effectively, pushing waste along.
+Your body is mostly water, right? We've all heard that statistic-something like 60% or 70%, depending on who you ask (and probably how much water they drank that day, ha). This water isn't just for showing off; it's vital for practically every bodily function, including, you guessed it, digestion. Water helps dissolve fats and soluble fiber, allowing them to pass through your system more easily. It also ensures the muscles in your intestines stay lubricated and can contract effectively, pushing waste along.
 
 Think about it like a slippery slide. If there’s no water, you just kind of… stick. Not fun. Not efficient. Hydration makes everything slide, metaphorically speaking, but also quite literally, through your gut. It’s not just about avoiding constipation; proper hydration may also help support nutrient absorption and overall gut health, ensuring your body gets the most out out of those carefully chosen fibrous foods.
 
@@ -41,7 +41,7 @@ Okay, so how do we actually do this without feeling like we’re constantly chug
 *   **Start the day strong:** A big glass of water first thing in the morning, even before coffee, is a total vibe. It kickstarts your system after hours of not drinking anything.
 *   **Water with every meal:** Simple, yet often forgotten. Make it a habit.
 *   **Keep a water bottle handy:** If it’s right there, you’ll drink it. It's like, a basic human truth. A nice reusable one you actually *like* using can make a difference.
-*   **Eat water-rich foods:** This is sneaky hydration! Cucumbers, watermelon, oranges, celery, lettuce, bell peppers—they're all mostly water and come with bonus fiber. It’s a win-win, really.
+*   **Eat water-rich foods:** This is sneaky hydration! Cucumbers, watermelon, oranges, celery, lettuce, bell peppers-they're all mostly water and come with bonus fiber. It’s a win-win, really.
 *   **Herbal teas count:** Not coffee (which can be a diuretic, kind of counterproductive if you're already dry), but herbal teas are a lovely way to add hydration without feeling like you're just drinking plain water all day.
 *   **Listen to your body:** Thirst is a late sign of dehydration. If you’re thirsty, you’re already behind. Try to drink proactively.
 

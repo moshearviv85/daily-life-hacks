@@ -19,7 +19,7 @@ I was watching this old movie the other day, you know, the one where the protago
 
 Here's a little brain-bender for your next trivia night: popcorn. Yes, the fluffy, airy stuff you shovel into your face at the cinema (or, let's be honest, on your couch). It's a whole grain. Wild, right? I remember the first time someone told me that, I almost dropped my (then butter-laden) bowl. It means it's packed with fiber, which is just fantastic for digestion, keeps you feeling full, and helps keep your blood sugar levels steady. This isn't just some fluffy snack food; it's got real, honest-to-goodness nutritional chops. Of course, that's before we drown it in a gallon of fake butter and enough salt to preserve a small fish.
 
-So, the goal here isn't to demonize popcorn—far from it! It’s about rescuing it from the butter bath and elevating it to its rightful place as a genuinely satisfying, incredibly versatile, and oh-so-healthy snack. We want to maximize those inherent benefits, you know, the fiber, the antioxidants (yes, popcorn has polyphenols, which are antioxidants!), without adding a bunch of stuff that kind of, well, defeats the purpose.
+So, the goal here isn't to demonize popcorn-far from it! It’s about rescuing it from the butter bath and elevating it to its rightful place as a genuinely satisfying, incredibly versatile, and oh-so-healthy snack. We want to maximize those inherent benefits, you know, the fiber, the antioxidants (yes, popcorn has polyphenols, which are antioxidants!), without adding a bunch of stuff that kind of, well, defeats the purpose.
 
 ## Ditch the Butter, Embrace the Zest
 
@@ -28,7 +28,7 @@ Okay, so the butter. Let's talk about it. It’s a habit, a tradition, a deeply 
 
 ## The Magic Dust: Nutritional Yeast
 
-First up, my absolute ride-or-die popcorn topping: nutritional yeast. If you haven’t met "nooch" yet, you’re about to have your world changed. It’s got this ridiculously cheesy, savory flavor—but it’s dairy-free! It’s a deactivated yeast, usually comes in flakes, and is often fortified with B vitamins, including B12, which is particularly cool for those following plant-based diets.
+First up, my absolute ride-or-die popcorn topping: nutritional yeast. If you haven’t met "nooch" yet, you’re about to have your world changed. It’s got this ridiculously cheesy, savory flavor-but it’s dairy-free! It’s a deactivated yeast, usually comes in flakes, and is often fortified with B vitamins, including B12, which is particularly cool for those following plant-based diets.
 
 You just sprinkle it on. Generously. I mean, go for it. It sticks really well to warm popcorn, and suddenly you have this incredibly umami, cheesy-tasting snack that has next to no fat, a decent amount of protein, and, well, it just tastes *good*. It’s a textural thing too, those tiny flakes, they sort of melt a little, then you get that slight crunch. I usually just pop my corn, dump it in a big bowl, and then just go to town shaking the nutritional yeast over it, giving the bowl a good toss to distribute. Sometimes I even add a tiny pinch of garlic powder or onion powder with it, just to really pump up the savory vibes. It’s like, whoa, where did this flavor come from?
 
@@ -48,7 +48,7 @@ For this, you'll want ground cinnamon and maybe a tiny, tiny sprinkle of brown s
 
 ## How to Pop Your Kernels Right
 
-To really nail these high-fiber popcorn toppings, you gotta start with good, plain popcorn. Forget those microwave bags—they often have weird chemicals and too much butter flavor. Go for plain kernels.
+To really nail these high-fiber popcorn toppings, you gotta start with good, plain popcorn. Forget those microwave bags-they often have weird chemicals and too much butter flavor. Go for plain kernels.
 
 * **Air Popper:** This is probably the easiest and cleanest method. Just measure your kernels, dump them in, plug it in, and let it do its thing. No oil needed.
 * **Stovetop (Oil-Free or Minimal Oil):** Grab a heavy-bottomed pot with a lid. Put 2-3 kernels in with a *tiny* splash of high-smoke point oil (like avocado oil, or even just a teaspoon for a whole batch, or honestly, I sometimes just skip the oil entirely and dry pop it on medium heat, shaking the pot constantly until they start popping). Heat on medium-high until those test kernels pop. Remove from heat, add the rest of your kernels, let it sit for about 30 seconds (this brings all kernels to temperature), then return to medium heat. Keep shaking the pot (with the lid on, duh, unless you want popcorn confetti everywhere) until the popping slows to a few seconds between pops. Immediately remove from heat and dump into your serving bowl. Don't leave it in the hot pot, or it'll steam and get soggy.
