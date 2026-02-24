@@ -99,6 +99,18 @@ const popupImages = allArticles
                             style="color: var(--text-color); background-color: var(--input-bg); border: 1px solid var(--border-color);"
                         />
                     </div>
+                    <label class="flex items-start gap-2 text-left cursor-pointer">
+                        <input
+                            id="popup-consent"
+                            type="checkbox"
+                            required
+                            class="mt-0.5 accent-[#F29B30] shrink-0"
+                        />
+                        <span class="text-[11px] leading-snug" style="color: var(--muted-color);">
+                            I agree to receive email newsletters and accept the
+                            <a href="/privacy" class="underline hover:text-[#F29B30]">Privacy Policy</a>.
+                        </span>
+                    </label>
                     <button
                         id="popup-submit-btn"
                         type="submit"

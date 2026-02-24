@@ -32,6 +32,19 @@
         class="w-full px-5 py-3.5 rounded-xl text-base focus:ring-2 focus:ring-[#F29B30] outline-none transition-all"
         style="color: var(--text-color); background-color: var(--input-bg); border: 1px solid var(--border-color);"
       />
+      <label class="flex items-start gap-2 text-left cursor-pointer">
+        <input
+          id="footer-consent"
+          type="checkbox"
+          required
+          class="mt-1 accent-[#F29B30] shrink-0"
+        />
+        <span class="text-xs leading-snug" style="color: var(--muted-color);">
+          I agree to receive email newsletters and accept the
+          <a href="/privacy" class="underline hover:text-[#F29B30]">Privacy Policy</a>.
+          You can unsubscribe at any time.
+        </span>
+      </label>
       <button
         id="footer-submit-btn"
         type="submit"
