@@ -43,7 +43,10 @@ export async function onRequestPost(context) {
         },
         body: JSON.stringify({
           email,
+          reactivate_existing: false,
           send_welcome_email: true,
+          utm_source: "website",
+          referring_site: "https://www.daily-life-hacks.com",
         }),
       }
     );
@@ -69,8 +72,9 @@ export async function onRequestPost(context) {
       );
     }
 
+    const errorBody = await res.text();
     return new Response(
-      JSON.stringify({ error: "Subscription failed" }),
+      JSON.stringify({ error: "Subscription failed", detail: errorBody }),
       { status: res.status, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (err) {
