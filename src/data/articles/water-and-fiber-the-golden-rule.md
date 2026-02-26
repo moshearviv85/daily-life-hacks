@@ -24,7 +24,7 @@ Fiber is kind of like a sponge. It absorbs water. This absorption is exactly wha
 
 ### Why Your Body's Internal Plumbing Needs a Refill
 
-Your body is mostly water, right? We've all heard that statistic-something like 60% or 70%, depending on who you ask (and probably how much water they drank that day, ha). This water isn't just for showing off; it's vital for practically every bodily function, including, you guessed it, digestion. Water helps dissolve fats and soluble fiber, allowing them to pass through your system more easily. It also ensures the muscles in your intestines stay lubricated and can contract effectively, pushing waste along.
+Your body is mostly water, right? We've all heard that statistic-something like 60% or 70%, depending on who you ask (and probably how much water they drank that day, ha). This water isn't just for showing off; it's vital for practically every bodily function, including, you guessed it, digestion. Water may help dissolve fats and soluble fiber, allowing them to pass through your system more easily. It could also help keep things in your intestines moving along more smoothly.
 
 Think about it like a slippery slide. If there’s no water, you just kind of… stick. Not fun. Not efficient. Hydration makes everything slide, metaphorically speaking, but also quite literally, through your gut. It’s not just about avoiding constipation; proper hydration may also help support nutrient absorption and overall gut health, ensuring your body gets the most out out of those carefully chosen fibrous foods.
 

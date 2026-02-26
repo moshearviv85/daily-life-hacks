@@ -19,7 +19,7 @@ So, if you’re nodding your head vigorously right now (and maybe a little green
 
 ## Why Does Prune Juice Even Work, Anyway?
 
-Okay, first things first, let’s give prunes their due, begrudgingly. They’re effective. Why? Well, they’re packed with fiber, obviously, both soluble and insoluble, which is pretty neat. But the secret sauce (literally, in this case) is sorbitol. This little sugar alcohol, when consumed in enough quantity, acts like an osmotic laxative, drawing water into your large intestine. This softens things up, making it easier for them to, you know, make their grand exit. Plus, they’ve got phenolic compounds that are thought to stimulate gut contractions. So, yeah, effective. But also… prune juice. Yuck.
+Okay, first things first, let’s give prunes their due, begrudgingly. They’re effective. Why? Well, they’re packed with fiber, obviously, both soluble and insoluble, which is pretty neat. But the secret sauce (literally, in this case) is sorbitol. This little sugar alcohol, when consumed in enough quantity, is thought to work similarly to an osmotic laxative, potentially drawing water into your large intestine. This softens things up, making it easier for them to, you know, make their grand exit. Plus, they’ve got phenolic compounds that are thought to stimulate gut contractions. So, yeah, effective. But also… prune juice. Yuck.
 
 Now, let's talk about the delicious ways you can actually make peace with your digestive system.
 

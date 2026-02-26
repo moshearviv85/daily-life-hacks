@@ -13,13 +13,13 @@ whatsHot: false
 mustRead: false
 ---
 
-I swear, my youngest thinks anything green is basically a monster trying to get him. A little stalk of broccoli? Nope. A pea? Absolutely not. It’s a battlefield, dinner time, every single night. And as a parent, you’re just trying to make sure they, you know, grow properly and get all the good stuff their little bodies need, like fiber, which is *so* important for digestive health and keeping things moving along, if you catch my drift.
+I swear, my youngest thinks anything green is basically a monster trying to get him. A little stalk of broccoli? Nope. A pea? Absolutely not. It’s a battlefield, dinner time, every single night. And as a parent, you’re just trying to make sure they, you know, grow properly and get all the good stuff their little bodies need, like fiber, which could be really helpful for digestive health and keeping things moving along, if you catch my drift.
 
 One day, I just stared at a bunch of spinach in the fridge. And then at a banana. And then at my kid, who was currently attempting to feed a perfectly good carrot stick to the dog under the table. Lightbulb moment. Smoothies. But not just any smoothie; a truly deceptive, delicious smoothie where the veggies practically vanish. We need high fiber smoothies for kids picky eaters. This is the way.
 
 ## Why Fiber is, Like, a Huge Deal for Little Humans
 
-Okay, fiber. It’s not just for grown-ups reading cereal boxes. Kids need it too! It helps them feel full (so maybe fewer requests for snacks five minutes after lunch, a mom can dream), keeps their digestive system happy and regular (which is a relief for everyone involved, am I right?), and can even assist in maintaining steady blood sugar levels throughout the day, preventing those wild sugar crashes and subsequent meltdowns that nobody signed up for. Most kids don't get enough. A lot of kids, actually. So finding fun ways to sneak it in, well, that's just good parenting.
+Okay, fiber. It’s not just for grown-ups reading cereal boxes. Kids need it too! It helps them feel full (so maybe fewer requests for snacks five minutes after lunch, a mom can dream), keeps their digestive system happy and regular (which is a relief for everyone involved, am I right?), and may even help with steadier blood sugar levels throughout the day, which could mean fewer of those wild sugar crashes and subsequent meltdowns that nobody signed up for. Most kids don't get enough. A lot of kids, actually. So finding fun ways to sneak it in, well, that's just good parenting.
 
 And veggies, like spinach? They're packed with it, alongside a bunch of other vital nutrients. But how do you get a kid who'd rather eat dirt (and sometimes does, let's be honest) to consume a leafy green? Blend it till it's unrecognizable and tastes like a milkshake. Genius.
 

@@ -1,6 +1,6 @@
 ---
 title: "Steamed Artichoke Magic: An Artichoke Recipe for Gut Health"
-excerpt: "Discover the humble artichoke, a fiber champion, transformed into a delicious, gut-friendly meal with a zesty lemon-garlic dip. Seriously, your insides will throw a party."
+excerpt: "Discover the humble artichoke, a fiber champion, transformed into a delicious, gut-friendly meal with a zesty lemon-garlic dip. Seriously, your insides might just thank you."
 category: "recipes"
 tags: ["Artichoke", "FiberRich", "GutHealth", "VegetarianDinner", "HealthyEats"]
 image: "/images/artichoke-recipes-for-gut-health-main.jpg"
@@ -42,7 +42,7 @@ Okay, so who else looks at an artichoke and thinks, "What even *is* that alien v
 
 &#x20;
 
-For real, the artichoke is kinda a big deal for gut health. We're talking about one of the highest-fiber vegetables out there. That's right, those fuzzy chokes and meaty leaves are just packed with prebiotics, which are basically like gourmet meals for the good bacteria hanging out in your gut. Your gut biome (that's all the tiny critters living in your digestive system, a whole city in there) absolutely thrives on this stuff, and when they're happy, you feel better, often less bloated, and just generally more... balanced. It's not just about, you know, regularity; a healthy gut biome has all these ripple effects on your whole vibe, affecting everything from mood to immunity.
+For real, the artichoke is kinda a big deal for gut health. We're talking about one of the highest-fiber vegetables out there. That's right, those fuzzy chokes and meaty leaves are just packed with prebiotics, which are basically like gourmet meals for the good bacteria hanging out in your gut. Your gut biome (that's all the tiny critters living in your digestive system, a whole city in there) seems to really like this stuff, and when they're happy, you might feel better, perhaps less bloated, and just generally more... balanced. It's not just about, you know, regularity; a healthy gut biome could have all these ripple effects on your whole vibe, potentially affecting everything from mood to immunity.
 
 &#x20;
 

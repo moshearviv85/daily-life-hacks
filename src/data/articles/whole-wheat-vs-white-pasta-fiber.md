@@ -1,6 +1,6 @@
 ---
 title: "Whole Wheat vs White Pasta Fiber: Simple Swap for Weight Loss"
-excerpt: "Ditch the empty carbs and discover the significant fiber difference between whole wheat and white pasta. This easy kitchen swap can really help manage your weight goals."
+excerpt: "Ditch the empty carbs and discover the significant fiber difference between whole wheat and white pasta. This easy kitchen swap could support your overall wellness goals."
 category: "nutrition"
 tags: ["HealthySwaps", "WholeGrains", "HighFiber", "PastaLover", "WeightLossTips"]
 image: "/images/whole-wheat-vs-white-pasta-fiber-main.jpg"
@@ -33,7 +33,7 @@ Typically, a serving of white pasta might contain around 2-3 grams of dietary fi
 
 ### Whole Wheat Pasta: The Steady Does It
 
-Now, swing over to whole wheat pasta. For the same serving size, you're usually looking at anywhere from 5 to 7 grams of fiber. See that? Five to seven! That's literally double, sometimes even triple, the fiber of its paler cousin. This isn't just some random number; this extra fiber, my friends, is why you feel fuller, for longer. It slows down digestion. It keeps your blood sugar levels more stable, preventing those annoying energy dips and the subsequent ravenous hunger that sabotages even the best intentions. It’s genuinely a big difference.
+Now, swing over to whole wheat pasta. For the same serving size, you're usually looking at anywhere from 5 to 7 grams of fiber. See that? Five to seven! That's literally double, sometimes even triple, the fiber of its paler cousin. This isn't just some random number; this extra fiber, my friends, could be why you feel fuller, for longer. It may slow down digestion. It might help keep your blood sugar levels more stable, potentially reducing those annoying energy dips and the subsequent ravenous hunger that sabotages even the best intentions. It’s genuinely a big difference.
 
 ## Why Fiber is Your Weight-Loss Buddy (Seriously)
 

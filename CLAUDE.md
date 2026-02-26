@@ -122,14 +122,19 @@ schema.sql              - D1 database schema for subscriptions table
 - **Naming convention:** image = `{slug}_v{variant}.jpg`, URL = `https://www.daily-life-hacks.com/{slug}?utm_content=v{variant}`
 
 ## Content Status
-- **25 articles published** (currently all high-fiber topics - need to diversify in next batch)
+- **25 articles published** (removed hormone-balance YMYL article, replaced with high-protein-high-fiber-meals-for-weight-loss)
 - **82 article topics** in pins.json (57 recipes, 25 nutrition)
 - Every article goes through review before publishing
 - **Removed 18 topics:** YMYL/medical (IBS, diabetes, cholesterol, hormones, supplements), pseudo-science (detox, colon cleanse, ACV), risky (100g fiber challenge, kids content)
 
 ## Content Rules (for Gemini prompts)
+- **NO em dashes** - never use the long dash character. Use regular hyphens sparingly, or rewrite the sentence instead
+- **NO emojis** - never use emojis in articles or site content (rare exception: one wink in casual email context)
 - **NO disclaimer in articles** - site already has a dedicated /disclaimer page
-- **NO medical claims** - avoid "cure", "treat", "heal", "relieve" - use "may support", "could help"
+- **NO medical claims** - avoid "cure", "treat", "heal", "relieve", "prevents", "fights", "combats" - use "may support", "could help", "might improve", "is thought to"
+- **NO absolute health statements** - never say "is good for your gut" or "helps regulate blood sugar" - always hedge with "could", "may", "might"
+- **NO detox/cleanse language** - never use "detox", "cleanses", "reset your system" - use "refresh", "feel refreshed"
+- **ALWAYS use contractions** - never "it is", "do not", "they are" - always "it's", "don't", "they're"
 - **NO "Conclusion" heading** - AI giveaway, use natural closing instead
 - **NO double endings** - one natural closing paragraph, no "Happy eating!" type sign-offs
 - **Include long-tail keywords** naturally in headings and body text
@@ -181,6 +186,11 @@ schema.sql              - D1 database schema for subscriptions table
 26. D1 subscription tracking - source/page analytics
 27. Stats endpoint - /api/stats with key protection
 28. Site deployed to Cloudflare Pages
+29. Medical claims audit - softened 34 health claims across 17 articles
+30. Removed hormone-balance article (YMYL) - replaced with high-protein-high-fiber-meals-for-weight-loss
+31. Tabbouleh article - removed "Detox"/"cleanses" from title/excerpt/tags
+32. Gemini article instructions prepared (pipeline-data/gemini-article-instructions.md)
+33. Topics list prepared for Gemini (pipeline-data/topics-to-write.md)
 
 ## Pending Tasks (priority order)
 1. **Beehiiv API key** - User needs to complete identity verification in Beehiiv to get Full Access API key, then update in Cloudflare env vars

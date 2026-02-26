@@ -28,12 +28,12 @@ For ages, these two have been the unsung heroes of settling upset tummies. Serio
 
 ## Peppermint: The Cool Operator
 
-Peppermint isn't just for freshening your breath. The magic compound in peppermint, menthol, has this really cool (pun intended?) antispasmodic effect on the smooth muscles of the digestive tract. What does that mean for you? It can help relax those muscles, which in turn may help alleviate spasms that contribute to gas and bloating. Think of it as your internal chill pill, helping things move along without all the cramps and discomfort. It's truly amazing how something so simple can have such a noticeable effect on your comfort levels after a big plate of pasta. Or, you know, any plate of food.
+Peppermint isn't just for freshening your breath. The magic compound in peppermint, menthol, is thought to have a soothing effect on the smooth muscles of the digestive tract. What does that mean for you? It may help relax those muscles, which in turn could ease some of the spasms that contribute to gas and bloating. Think of it as your internal chill pill, helping things move along without all the cramps and discomfort. It's kind of cool how something so simple could have a noticeable effect on your comfort levels after a big plate of pasta. Or, you know, any plate of food.
 
 
 ## Ginger: The Warm Soother
 
-Then there's ginger. This spicy root is practically synonymous with soothing nausea and aiding digestion. Its active compounds, gingerols and shogaols, are believed to stimulate digestive juices and enzymes, potentially speeding up the emptying of the stomach. So, if your meal is just kinda sitting there, like a guest who won't leave, ginger might encourage it to get a move on. It also has anti-inflammatory properties, which is just a bonus for overall gut happiness. Plus, the warmth of a ginger drink alone feels incredibly comforting when your stomach is doing the cha-cha slide. This gut health tea peppermint ginger combo is, like, a dream team.
+Then there's ginger. This spicy root is practically synonymous with soothing nausea and aiding digestion. Its active compounds, gingerols and shogaols, are believed to stimulate digestive juices and enzymes, potentially speeding up the emptying of the stomach. So, if your meal is just kinda sitting there, like a guest who won't leave, ginger might encourage it to get a move on. It's also thought to have anti-inflammatory properties, which could be a bonus for overall gut happiness. Plus, the warmth of a ginger drink alone feels incredibly comforting when your stomach is doing the cha-cha slide. This gut health tea peppermint ginger combo is, like, a dream team.
 
 ## Whip Up Your Own Gut Health Tea: Peppermint & Ginger Recipe
 

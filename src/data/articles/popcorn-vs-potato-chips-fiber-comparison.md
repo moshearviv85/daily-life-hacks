@@ -27,7 +27,7 @@ Now, let's talk about popcorn. Specifically, the air-popped kind. None of that b
 
 Okay, so why does fiber even matter beyond, you know, keeping things moving? (And yes, that's important too!) Fiber is a rockstar for feeling full. Think of it like this: when you eat something high in fiber, especially the soluble kind, it forms this gel-like substance in your digestive system. This slows down digestion. It makes you feel fuller, for longer.
 
-This is huge for weight management because it means you're less likely to be rummaging through the fridge an hour later. You know that gnawing feeling that drives you to overeat? Fiber helps put a lid on that. It also helps stabilize blood sugar levels, preventing those crazy spikes and crashes that can leave you feeling sluggish and craving *more* sugary, easy-to-digest stuff. Chips, on the other hand, are often rapidly digested, leading to those quick energy boosts followed by an equally rapid slump. Your body's like, "Where'd it all go? I need more fuel!" And then you eat more chips. It’s a vicious cycle.
+This is huge for weight management because it means you're less likely to be rummaging through the fridge an hour later. You know that gnawing feeling that drives you to overeat? Fiber helps put a lid on that. It may also help with blood sugar levels, potentially reducing those crazy spikes and crashes that can leave you feeling sluggish and craving *more* sugary, easy-to-digest stuff. Chips, on the other hand, are often rapidly digested, leading to those quick energy boosts followed by an equally rapid slump. Your body's like, "Where'd it all go? I need more fuel!" And then you eat more chips. It’s a vicious cycle.
 
 ## Crafting the Champion: How to Pop It Right
 

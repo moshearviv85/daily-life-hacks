@@ -62,7 +62,7 @@ This fiber rich soup for weight loss cabbage recipe is, like, a nutritional rock
 
 * **Fiber:** Obviously, it's in the title! Cabbage, carrots, celery, and especially those cannellini beans are absolutely loaded. Fiber is key for digestive health, helps slow down sugar absorption (no wild blood sugar spikes, yay!), and contributes significantly to that "I'm not hungry anymore" feeling.
 * **Vitamins and Minerals:** You're getting a ton of Vitamin K and C from the cabbage, Vitamin A from the carrots, and a whole spectrum of B vitamins, potassium, and iron from the beans and other veggies. It’s a nutrient dense meal without a huge calorie count.
-* **Antioxidants:** Cabbage, especially, is packed with antioxidants and anti-inflammatory compounds. Good for fighting off all sorts of cellular stress, you know? Keeping your body happy.
+* **Antioxidants:** Cabbage, especially, is packed with antioxidants and anti-inflammatory compounds. Thought to help with all sorts of cellular stress, you know? Keeping your body happy.
 * **Hydration:** It's a soup! Broth-based means you're getting a good dose of hydration, which is often overlooked but so important for metabolism and just feeling generally good.
 
 

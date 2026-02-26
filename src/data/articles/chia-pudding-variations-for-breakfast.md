@@ -35,7 +35,7 @@ Whisk it all together in a jar or a bowl. Seriously, whisk well. You want to bre
 
 ## 1. Velvet Chocolate Dream
 
-Who says you can't have chocolate for breakfast? Not me. This one feels decadent but it's actually just doing good things for your body. I'm a chocoholic, so this is my go-to when I need a little pick-me-up.
+Who says you can't have chocolate for breakfast? Not me. This one feels decadent but it could actually be doing good things for your body. I'm a chocoholic, so this is my go-to when I need a little pick-me-up.
 
 * **What you need:**
  * 1/4 cup chia seeds

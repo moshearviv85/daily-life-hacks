@@ -1,16 +1,16 @@
 # Welcome Email for Beehiiv Automation
 
-## Subject Line
-Welcome! Your First Exclusive Recipe Is Inside
-
-## Preview Text
-Plus: what to expect from Daily Life Hacks (spoiler: no spam, ever)
+## Beehiiv Setup
+- **Automation type:** Welcome Sequence
+- **Trigger:** New Subscriber
+- **Delay:** Send immediately
+- **From name:** Daily Life Hacks
+- **Subject:** Welcome! Your First Exclusive Recipe Is Inside
+- **Preview text:** Plus: what to expect from Daily Life Hacks (spoiler: no spam, ever)
 
 ---
 
-## Email Body
-
-### (Copy everything below into Beehiiv email editor)
+## Email Body (copy below into Beehiiv editor)
 
 ---
 
@@ -24,27 +24,29 @@ We started this newsletter because we believe eating healthy shouldn't feel like
 
 **Here's what you can expect:**
 
-**One email a day** -a new recipe or a quick nutrition tip. That's it. Short, useful, and hopefully a little fun to read.
+**One email a day.** A new recipe or a quick nutrition tip. Short, useful, and hopefully a little fun to read.
 
-**Your email is safe** -we will never share, sell, or give your email address to anyone. Period.
+**Your email is safe.** We will never share, sell, or give your email address to anyone. Period.
 
-**Zero spam** -if it ever feels like too much, you can unsubscribe with one click at the bottom of any email. No hard feelings.
+**Zero spam.** If it ever feels like too much, you can unsubscribe with one click at the bottom of any email. No hard feelings.
 
-**Exclusive content** -many of our email recipes won't appear on the website, so your inbox is the only place to get them.
-
----
-
-**The whole idea is simple:** we want to help you break out of the "what should I cook tonight?" rut. Fresh ideas, easy recipes, and a little inspiration to keep your meals interesting -because when food is exciting, eating healthy stops feeling like a sacrifice.
+**Exclusive content.** Many of our email recipes won't appear on the website, so your inbox is the only place to get them.
 
 ---
 
-## Your First Recipe: Overnight Chocolate Chia Pudding
+**The whole idea is simple:** we want to help you break out of the "what should I cook tonight?" rut. Fresh ideas, easy recipes, and a little inspiration to keep your meals interesting. Because when food is exciting, eating healthy stops feeling like a sacrifice.
+
+And since we promised you a recipe, here's your first one.
+
+---
+
+## Overnight Chocolate Chia Pudding
 
 *5 minutes prep, zero cooking, and it tastes like dessert for breakfast.*
 
 **What you need:**
 - 3 tablespoons chia seeds
-- 1 cup milk (any kind -oat, almond, regular, whatever you like)
+- 1 cup milk (any kind: oat, almond, regular, whatever you like)
 - 1 tablespoon cocoa powder
 - 1 teaspoon maple syrup or honey
 - A pinch of vanilla extract
@@ -56,24 +58,13 @@ We started this newsletter because we believe eating healthy shouldn't feel like
 
 **That's it.** Five minutes last night, zero effort this morning, and you've got a breakfast packed with fiber and omega-3s that actually keeps you full until lunch.
 
-*Want more variations? We've got mango, berry, and vanilla versions on the site:*
+Want more variations? We've got mango, berry, and vanilla versions on the site:
 
-**[See All 4 Chia Pudding Variations →](https://www.daily-life-hacks.com/chia-pudding-variations-for-breakfast?utm_source=welcome_email&utm_medium=email)**
+**[See All 4 Chia Pudding Variations](https://www.daily-life-hacks.com/chia-pudding-variations-for-breakfast?utm_source=welcome_email&utm_medium=email)**
 
 ---
 
 Talk soon,
 **The Daily Life Hacks Team**
 
-P.S. -Got a recipe you'd love a healthier version of? Just hit reply and tell us. We actually read every email.
-
----
-
-## Beehiiv Settings for This Email
-
-- **Automation type:** Welcome Sequence
-- **Trigger:** When someone subscribes
-- **Delay:** Send immediately (0 minutes)
-- **From name:** Daily Life Hacks
-- **Subject:** Welcome! Your First Exclusive Recipe Is Inside
-- **Preview text:** Plus: what to expect from Daily Life Hacks (spoiler: no spam, ever)
+P.S. Got a recipe you'd love a healthier version of? Just hit reply and tell us. We actually read every email.

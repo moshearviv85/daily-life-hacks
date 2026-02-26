@@ -1,6 +1,6 @@
 ---
 title: "Budget Bliss: Split Pea Soup Recipe, High Fiber (16g!)"
-excerpt: "Forget the fancy stuff. This split pea soup recipe is pure, old-school comfort, packing 16g of fiber per bowl. It's cheap, easy, and just the thing your soul is craving on a chilly day."
+excerpt: "Forget the fancy stuff. This split pea soup recipe is pure, old-school comfort, packing 16g of fiber per bowl. It's cheap, easy, and exactly what your soul needs on a chilly day."
 category: "recipes"
 tags: ["SoupSeason", "HighFiber", "ComfortFood", "BudgetCooking", "HealthyDinner"]
 image: "/images/split-pea-soup-recipe-high-fiber-main.jpg"

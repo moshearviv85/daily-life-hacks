@@ -19,7 +19,7 @@ See, somewhere along the line, someone figured out how to make **high fiber bran
 
 ## Why Your Gut Will Send You a Thank You Card
 
-So, fiber. It's not just a word your doctor throws around. It's actually a pretty big deal for your insides. Specifically, dietary fiber, which bran is just absolutely loaded with. Think of it like the tiny, diligent scrub brushes for your digestive tract. It adds bulk to your stool (glamorous, I know, but important!), which helps things move along smoothly and regularly. Nobody likes to feel, shall we say, "backed up." It's uncomfortable, it's frustrating, and it can just make you feel sluggish all day.
+So, fiber. It's not just a word your doctor throws around. It's actually a pretty big deal for your insides. Specifically, dietary fiber, which bran is just absolutely loaded with. Think of it like tiny helpers that could support your digestive tract. It adds bulk to your stool (glamorous, I know, but important!), which helps things move along smoothly and regularly. Nobody likes to feel, shall we say, "backed up." It's uncomfortable, it's frustrating, and it can just make you feel sluggish all day.
 
 These muffins, with their generous dose of wheat bran, oat bran, and even some whole wheat flour (for extra oomph, obviously), can be a really gentle, natural way to support daily regularity. Plus, a diet rich in fiber can contribute to a feeling of fullness, which might just keep those mid-morning snack attacks at bay. It's not a magic pill, no, but it’s a pretty smart breakfast choice, if you ask me. Especially when it’s delicious.
 
