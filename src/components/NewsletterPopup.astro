@@ -200,13 +200,16 @@ const popupImages = allArticles
         }
 
         function shouldSuppressPopup() {
-            // We removed the 7-day restriction. So it will NEVER suppress it
-            // completely. It will pop up when criteria are met on every page visit.
-            return false;
+            // Check if shown in this browser session
+            return sessionStorage.getItem("newsletter_popup_shown") === "true";
         }
 
         function showPopup() {
             if (!popup || !popupContent) return;
+
+            // Mark as shown for the rest of this browser session
+            sessionStorage.setItem("newsletter_popup_shown", "true");
+
             popup.classList.remove("pointer-events-none", "opacity-0");
             popupContent.classList.remove("translate-y-full", "sm:scale-95");
             popupContent.classList.add("translate-y-0", "sm:scale-100");
