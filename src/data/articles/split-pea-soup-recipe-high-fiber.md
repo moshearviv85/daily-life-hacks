@@ -5,7 +5,7 @@ category: "recipes"
 tags: ["SoupSeason", "HighFiber", "ComfortFood", "BudgetCooking", "HealthyDinner"]
 image: "/images/split-pea-soup-recipe-high-fiber-main.jpg"
 imageAlt: "Split Pea Soup Recipe High Fiber - appetizing bowl with colorful ingredients for natural nutrition"
-date: 2025-12-26
+date: 2026-01-16
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

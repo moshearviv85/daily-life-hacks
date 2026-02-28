@@ -5,7 +5,7 @@ category: "recipes"
 tags: ["Tabbouleh", "HealthyLunch", "PowerLunch", "HighFiber", "VeganRecipes"]
 image: "/images/tabbouleh-salad-high-fiber-bulgur-main.jpg"
 imageAlt: "Tabbouleh Salad High Fiber Bulgur - appetizing bowl with colorful ingredients for natural nutrition"
-date: 2026-02-06
+date: 2026-01-14
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

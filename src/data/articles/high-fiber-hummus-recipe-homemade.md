@@ -5,7 +5,7 @@ category: "recipes"
 tags: ["Hummus", "HealthySnack", "PlantBased", "HighFiber", "MediterraneanFood"]
 image: "/images/high-fiber-hummus-recipe-homemade-main.jpg"
 imageAlt: "High Fiber Hummus Recipe Homemade - professionally plated meal with fresh vegetables, chickpeas for healthy snacking"
-date: 2025-12-20
+date: 2026-01-08
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import HeroSection from '../components/HeroSection.astro';
+import { Image } from 'astro:assets';
 
 import Newsletter from '../components/Newsletter.astro';
 import Footer from '../components/Footer.astro';
@@ -36,7 +37,22 @@ const mustReads = sorted.filter((a: Article) => a.id !== featured?.id).slice(0, 
 // Grid: exclude featured + sidebar articles to avoid duplicates
 const sidebarIds = new Set([featured?.id, ...mustReads.map((a: Article) => a.id)]);
 const remaining = sorted.filter((a: Article) => !sidebarIds.has(a.id));
-const moreToRead = remaining.slice(0, 16);
+
+// 1) Filter into specific categories
+const nutritionArticles = remaining.filter((a: Article) => a.data.category === 'nutrition');
+const recipesArticles = remaining.filter((a: Article) => a.data.category === 'recipes');
+const tipsArticles = remaining.filter((a: Article) => a.data.category === 'tips');
+
+// 2) Shuffle function (seeded by request/build time)
+const shuffle = <T,>(array: T[]): T[] => [...array].sort(() => Math.random() - 0.5);
+
+// 3) Select 4 random articles from each
+const selectedNutrition = shuffle(nutritionArticles).slice(0, 4);
+const selectedRecipes = shuffle(recipesArticles).slice(0, 4);
+const selectedTips = shuffle(tipsArticles).slice(0, 4);
+
+// 4) Combine and shuffle the final 12 articles
+const moreToRead = shuffle([...selectedNutrition, ...selectedRecipes, ...selectedTips]);
 
 const badgeColor = (cat: string) => cat === 'recipes' ? '#e07b10' : '#F29B30';
 ---
@@ -56,8 +72,9 @@ const badgeColor = (cat: string) => cat === 'recipes' ? '#e07b10' : '#F29B30';
 
     <!-- Mobile-only Category Quick Nav (Sticky-like) -->
     <nav class="lg:hidden flex justify-center gap-3 py-4 px-4 sticky top-[60px] z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-orange-100 dark:border-orange-900/20 mb-2 overflow-x-auto whitespace-nowrap">
-      <a href="/nutrition" class="px-4 py-2 rounded-full text-sm font-bold shadow-sm transition-all active:scale-95 bg-[#F29B30] text-white">Nutrition</a>
-      <a href="/recipes" class="px-4 py-2 rounded-full text-sm font-bold shadow-sm transition-all active:scale-95 border-2 border-[#e07b10] text-[#e07b10]">Healthy Recipes</a>
+      <a href="/nutrition/1" class="px-4 py-2 rounded-full text-sm font-bold shadow-sm transition-all active:scale-95 bg-[#F29B30] text-white">Nutrition</a>
+      <a href="/recipes/1" class="px-4 py-2 rounded-full text-sm font-bold shadow-sm transition-all active:scale-95 border-2 border-[#e07b10] text-[#e07b10] bg-white dark:bg-slate-900">Recipes</a>
+      <a href="/tips/1" class="px-4 py-2 rounded-full text-sm font-bold shadow-sm transition-all active:scale-95 border-2 border-[#F29B30] text-[#F29B30] bg-white dark:bg-slate-900">Tips</a>
     </nav>
 
     <!-- Hero: Featured article + Must Read sidebar -->
@@ -80,13 +97,15 @@ const badgeColor = (cat: string) => cat === 'recipes' ? '#e07b10' : '#F29B30';
           >
             <!-- Image Area: Proportional increase of 15% to image, shrink text -->
             <div class="overflow-hidden relative w-[45%] aspect-video sm:w-full sm:h-auto sm:aspect-auto sm:flex-[7.7] shrink-0">
-              <img
+              <Image
                 src={article.data.image}
                 alt={article.data.imageAlt}
-                width="320"
-                height="180"
+                width={320}
+                height={180}
                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
+                decoding="async"
+                inferSize={true}
                 data-pin-nopin="true"
               />
               <!-- Category badge overlaid on image -->

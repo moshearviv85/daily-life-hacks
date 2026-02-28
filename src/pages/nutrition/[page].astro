@@ -3,13 +3,21 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
+import Pagination from "../../components/Pagination.astro";
 import { getCollection } from "astro:content";
 
-const allArticles = await getCollection("articles");
-const nutritionArticles = allArticles
-    .filter((article) => article.data.category === "nutrition")
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+export async function getStaticPaths({ paginate }: any) {
+    const allArticles = await getCollection("articles");
+    const nutritionArticles = allArticles
+        .filter((article: any) => article.data.category === "nutrition")
+        .sort(
+            (a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf(),
+        );
 
+    return paginate(nutritionArticles, { pageSize: 12 });
+}
+
+const { page } = Astro.props as { page: any };
 const title = "Nutrition Tips & Science-Backed Advice | Daily Life Hacks";
 const description =
     "Explore our latest nutrition tips, science-backed advice, and healthy eating guides to fuel your body and mind.";
@@ -32,9 +40,9 @@ const description =
             </p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {
-                nutritionArticles.map((article) => (
+                page.data.map((article: any) => (
                     <ArticleCard
                         title={article.data.title}
                         excerpt={article.data.excerpt}
@@ -48,8 +56,10 @@ const description =
             }
         </div>
 
+        <Pagination page={page} />
+
         {
-            nutritionArticles.length === 0 && (
+            page.data.length === 0 && (
                 <div class="text-center py-12">
                     <p class="text-lg" style="color: var(--label-color);">
                         No nutrition articles found yet. Check back soon!

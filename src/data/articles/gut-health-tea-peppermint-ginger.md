@@ -5,7 +5,7 @@ category: "nutrition"
 tags: ["HerbalTea", "GutRelief", "NaturalRemedy", "Digestion", "Bloating"]
 image: "/images/gut-health-tea-peppermint-ginger-main.jpg"
 imageAlt: "Gut Health Tea Peppermint Ginger - fresh meal in glass containers for digestive comfort"
-date: 2026-02-07
+date: 2026-02-28
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

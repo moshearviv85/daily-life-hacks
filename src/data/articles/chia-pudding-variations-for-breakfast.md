@@ -5,7 +5,7 @@ category: "nutrition"
 tags: ["ChiaSeeds", "HealthyBreakfast", "MealPrep", "HighFiber", "GutHealth"]
 image: "/images/chia-pudding-variations-for-breakfast-main.jpg"
 imageAlt: "Chia Pudding Variations for Breakfast - overhead view of prepared meal with chia seeds for a healthy morning"
-date: 2026-02-16
+date: 2026-02-23
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

@@ -1,0 +1,64 @@
+---
+interface Props {
+    page: {
+        url: {
+            prev: string | undefined;
+            next: string | undefined;
+        };
+        currentPage: number;
+        lastPage: number;
+    };
+}
+
+const { page } = Astro.props;
+---
+
+{
+    page.lastPage > 1 && (
+        <nav
+            class="flex items-center justify-center gap-4 mt-8"
+            aria-label="Pagination"
+        >
+            {page.url.prev ? (
+                <a
+                    href={page.url.prev}
+                    class="px-4 py-2 rounded-lg font-medium transition-colors"
+                    style="background-color: var(--input-bg); color: var(--heading-color); border: 1px solid var(--border-color);"
+                >
+                    &larr; Previous
+                </a>
+            ) : (
+                <span
+                    class="px-4 py-2 rounded-lg font-medium opacity-50 cursor-not-allowed"
+                    style="background-color: var(--input-bg); color: var(--muted-color); border: 1px solid var(--border-color);"
+                >
+                    &larr; Previous
+                </span>
+            )}
+
+            <span
+                class="text-sm font-medium"
+                style="color: var(--muted-color);"
+            >
+                Page {page.currentPage} of {page.lastPage}
+            </span>
+
+            {page.url.next ? (
+                <a
+                    href={page.url.next}
+                    class="px-4 py-2 rounded-lg font-medium transition-colors"
+                    style="background-color: var(--input-bg); color: var(--heading-color); border: 1px solid var(--border-color);"
+                >
+                    Next &rarr;
+                </a>
+            ) : (
+                <span
+                    class="px-4 py-2 rounded-lg font-medium opacity-50 cursor-not-allowed"
+                    style="background-color: var(--input-bg); color: var(--muted-color); border: 1px solid var(--border-color);"
+                >
+                    Next &rarr;
+                </span>
+            )}
+        </nav>
+    )
+}

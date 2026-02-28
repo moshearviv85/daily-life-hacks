@@ -5,7 +5,7 @@ category: "nutrition"
 tags: ["BranMuffins", "BreakfastIdeas", "HighFiber", "GutHealth", "Baking"]
 image: "/images/high-fiber-bran-muffins-that-taste-good-main.jpg"
 imageAlt: "High Fiber Bran Muffins That Taste Good - appetizing food presentation for natural digestive relief"
-date: 2026-01-20
+date: 2025-12-28
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

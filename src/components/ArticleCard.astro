@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
   title: string;
   excerpt: string;
@@ -9,6 +11,7 @@ interface Props {
   size?: "sm" | "md" | "lg";
   date?: Date;
   fillHeight?: boolean;
+  loading?: "lazy" | "eager";
 }
 
 const {
@@ -21,6 +24,7 @@ const {
   size = "md",
   date,
   fillHeight = false,
+  loading = "lazy",
 } = Astro.props;
 
 const formatDate = (d: Date) =>
@@ -45,16 +49,18 @@ const badgeColor = category === "recipes" ? "#e07b10" : "#F29B30";
     <div
       class={`overflow-hidden shrink-0 ${size === "lg" ? "aspect-video" : size === "sm" ? "aspect-[4/3]" : "aspect-video"}`}
     >
-      <img
+      <Image
         src={image}
         alt={imageAlt}
-        width="640"
-        height={size === "sm" ? "480" : "360"}
+        width={640}
+        height={size === "sm" ? 480 : 360}
         data-pin-url={new URL("/" + slug, Astro.site || Astro.url.origin).href}
         data-pin-media={new URL(image, Astro.site || Astro.url.origin).href}
         data-pin-description={`${title} - ${excerpt} | Daily Life Hacks`}
         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-        loading="lazy"
+        loading={loading}
+        decoding={loading === "lazy" ? "async" : "sync"}
+        inferSize={true}
       />
     </div>
 

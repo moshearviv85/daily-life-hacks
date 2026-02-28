@@ -5,7 +5,7 @@ category: "nutrition"
 tags: ["HealthySwaps", "WholeGrains", "HighFiber", "PastaLover", "WeightLossTips"]
 image: "/images/whole-wheat-vs-white-pasta-fiber-main.jpg"
 imageAlt: "Whole Wheat vs White Pasta Fiber - detailed close-up shot for healthy weight management"
-date: 2026-02-14
+date: 2026-01-03
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

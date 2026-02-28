@@ -5,7 +5,7 @@ category: "recipes"
 tags: ["HealthyPizza", "CauliflowerCrust", "HighFiber", "GuiltFree", "DinnerIdeas"]
 image: "/images/high-fiber-pizza-crust-cauliflower-main.jpg"
 imageAlt: "High Fiber Pizza Crust Cauliflower - appetizing food presentation for natural nutrition"
-date: 2026-01-08
+date: 2026-01-02
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

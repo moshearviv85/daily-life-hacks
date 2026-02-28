@@ -5,7 +5,7 @@ category: "recipes"
 tags: ["HealthyDressing", "Tahini", "HighFiber", "SaladInspo", "CleanEating"]
 image: "/images/high-fiber-salad-dressings-homemade-main.jpg"
 imageAlt: "High Fiber Salad Dressings Homemade - fresh meal in glass containers for natural nutrition"
-date: 2026-01-28
+date: 2026-02-22
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

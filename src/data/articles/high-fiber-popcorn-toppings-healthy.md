@@ -5,7 +5,7 @@ category: "nutrition"
 tags: ["Popcorn", "HealthySnacks", "HighFiber", "MovieNightSnack", "WholeGrain"]
 image: "/images/high-fiber-popcorn-toppings-healthy-main.jpg"
 imageAlt: "High Fiber Popcorn Toppings Healthy - appetizing bowl with colorful ingredients for healthy snacking"
-date: 2025-12-23
+date: 2026-02-01
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

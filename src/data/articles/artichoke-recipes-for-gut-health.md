@@ -5,7 +5,7 @@ category: "recipes"
 tags: ["Artichoke", "FiberRich", "GutHealth", "VegetarianDinner", "HealthyEats"]
 image: "/images/artichoke-recipes-for-gut-health-main.jpg"
 imageAlt: "Artichoke Recipes for Gut Health - appetizing bowl with colorful ingredients with fresh vegetables for natural nutrition"
-date: 2026-02-16
+date: 2026-01-22
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

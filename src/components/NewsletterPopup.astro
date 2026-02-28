@@ -85,10 +85,7 @@ const popupImages = allArticles
                 </p>
 
                 <!-- Form -->
-                <form
-                    id="popup-form"
-                    class="space-y-4"
-                >
+                <form id="popup-form" class="space-y-4">
                     <div>
                         <input
                             id="popup-email"
@@ -99,17 +96,32 @@ const popupImages = allArticles
                             style="color: var(--text-color); background-color: var(--input-bg); border: 1px solid var(--border-color);"
                         />
                     </div>
-                    <label class="flex items-start gap-2 text-left cursor-pointer">
+                    <label
+                        class="flex items-start gap-2 text-left cursor-pointer"
+                    >
                         <input
                             id="popup-consent"
                             type="checkbox"
                             required
                             class="mt-0.5 accent-[#F29B30] shrink-0"
                         />
-                        <span class="text-[11px] leading-snug" style="color: var(--muted-color);">
+                        <span
+                            class="text-[11px] leading-snug"
+                            style="color: var(--muted-color);"
+                        >
                             I agree to receive email newsletters and accept the
-                            <a href="/privacy" class="underline hover:text-[#F29B30]">Privacy Policy</a> and
-                            <a href="https://www.beehiiv.com/privacy" target="_blank" rel="noopener noreferrer" class="underline hover:text-[#F29B30]">beehiiv's Privacy Policy</a>.
+                            <a
+                                href="/privacy"
+                                class="underline hover:text-[#F29B30]"
+                                >Privacy Policy</a
+                            > and
+                            <a
+                                href="https://www.beehiiv.com/privacy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="underline hover:text-[#F29B30]"
+                                >beehiiv's Privacy Policy</a
+                            >.
                         </span>
                     </label>
                     <button
@@ -165,7 +177,7 @@ const popupImages = allArticles
 
     <script>
         // Logic to show/hide popup
-        const POPUP_DELAY = 20000; // 20 seconds
+        const POPUP_DELAY = 12000; // 12 seconds
         const SUPPRESS_DAYS = 7; // Don't show again for 7 days if closed
 
         let popup: HTMLElement | null;
@@ -188,39 +200,34 @@ const popupImages = allArticles
         }
 
         function shouldSuppressPopup() {
-            const expiry = localStorage.getItem("newsletter_popup_closed");
-            if (expiry && new Date().getTime() < parseInt(expiry)) {
-                return true;
-            }
+            // We removed the 7-day restriction. So it will NEVER suppress it
+            // completely. It will pop up when criteria are met on every page visit.
             return false;
         }
 
         function showPopup() {
             if (!popup || !popupContent) return;
             popup.classList.remove("pointer-events-none", "opacity-0");
-            popupContent.classList.remove("translate-y-full", "scale-95");
+            popupContent.classList.remove("translate-y-full", "sm:scale-95");
+            popupContent.classList.add("translate-y-0", "sm:scale-100");
         }
 
         function closePopup() {
             if (!popup || !popupContent) return;
             popup.classList.add("pointer-events-none", "opacity-0");
+            popupContent.classList.remove("translate-y-0", "sm:scale-100");
             popupContent.classList.add("translate-y-full", "sm:scale-95");
 
-            const expiry =
-                new Date().getTime() + SUPPRESS_DAYS * 24 * 60 * 60 * 1000;
-            localStorage.setItem("newsletter_popup_closed", expiry.toString());
+            // We no longer set a 7-day restriction.
+            // The popup will show again on the next visit.
         }
 
         function handleExitIntent(e: MouseEvent) {
             if (e.clientY <= 0) {
-                if (!shouldSuppressPopup()) {
-                    showPopup();
-                    document.removeEventListener(
-                        "mouseleave",
-                        handleExitIntent,
-                    );
-                    clearTimeout(showTimeout);
-                }
+                // If they move cursor up, always show popup instead of checking suppression
+                showPopup();
+                document.removeEventListener("mouseleave", handleExitIntent);
+                clearTimeout(showTimeout);
             }
         }
 
@@ -273,9 +280,15 @@ const popupImages = allArticles
 
         async function handleSubscribe(e: SubmitEvent) {
             e.preventDefault();
-            const emailInput = document.getElementById("popup-email") as HTMLInputElement;
-            const submitBtn = document.getElementById("popup-submit-btn") as HTMLButtonElement;
-            const form = document.getElementById("popup-form") as HTMLFormElement;
+            const emailInput = document.getElementById(
+                "popup-email",
+            ) as HTMLInputElement;
+            const submitBtn = document.getElementById(
+                "popup-submit-btn",
+            ) as HTMLButtonElement;
+            const form = document.getElementById(
+                "popup-form",
+            ) as HTMLFormElement;
             const successEl = document.getElementById("popup-success");
 
             if (!emailInput || !emailInput.value) return;

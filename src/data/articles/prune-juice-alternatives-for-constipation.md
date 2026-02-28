@@ -5,7 +5,7 @@ category: "nutrition"
 tags: ["ConstipationRelief", "NaturalRemedy", "GutHealth", "FruitJuice", "HighFiber"]
 image: "/images/prune-juice-alternatives-for-constipation-main.jpg"
 imageAlt: "Prune Juice Alternatives for Constipation - fresh meal in glass containers for natural digestive relief"
-date: 2026-01-20
+date: 2026-02-05
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false

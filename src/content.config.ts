@@ -6,7 +6,7 @@ const articles = defineCollection({
   schema: z.object({
     title: z.string(),
     excerpt: z.string(),
-    category: z.enum(['nutrition', 'recipes']),
+    category: z.enum(['nutrition', 'recipes', 'tips']),
     tags: z.array(z.string()),
     image: z.string(),
     imageAlt: z.string(),

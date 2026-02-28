@@ -5,7 +5,7 @@ category: "recipes"
 tags: ["CauliflowerRice", "LowCarb", "HighFiber", "KetoDinner", "VeggieLoaded"]
 image: "/images/high-fiber-cauliflower-rice-recipes-main.jpg"
 imageAlt: "High Fiber Cauliflower Rice Recipes - dynamic cooking action shot for natural nutrition"
-date: 2026-01-10
+date: 2026-02-27
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false
