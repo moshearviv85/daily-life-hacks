@@ -15,7 +15,12 @@ const {
   title,
   description = "Daily Life Hacks - Practical nutrition tips and recipes for a healthier, happier life.",
   image = "/logo.png",
-  canonicalURL = Astro.url.href,
+  canonicalURL = (() => {
+    const base = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
+    base.pathname = base.pathname.replace(/-v\d+\/?$/, '');
+    if (base.pathname !== '/') base.pathname = base.pathname.replace(/\/$/, '');
+    return base.href;
+  })(),
   jsonLd,
 } = Astro.props;
 ---
