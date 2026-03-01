@@ -122,7 +122,7 @@ schema.sql              - D1 database schema for subscriptions table
 - **Naming convention:** image = `{slug}_v{variant}.jpg`, URL = `https://www.daily-life-hacks.com/{slug}?utm_content=v{variant}`
 
 ## Content Status
-- **25 articles published** (removed hormone-balance YMYL article, replaced with high-protein-high-fiber-meals-for-weight-loss)
+- **43 articles published** (17 nutrition, 12 recipes, 14 tips)
 - **82 article topics** in pins.json (57 recipes, 25 nutrition)
 - Every article goes through review before publishing
 - **Removed 18 topics:** YMYL/medical (IBS, diabetes, cholesterol, hormones, supplements), pseudo-science (detox, colon cleanse, ACV), risky (100g fiber challenge, kids content)

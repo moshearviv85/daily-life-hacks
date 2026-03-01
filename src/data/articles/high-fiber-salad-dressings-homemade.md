@@ -24,16 +24,16 @@ ingredients:
   - "1 small clove garlic, minced super fine or grated"
   - "1/2 teaspoon sea salt, fine grain"
   - "1/4 teaspoon black pepper, freshly ground is best"
-  - "Optional: a pinch of smoked paprika for a little extra somethin’"
+  - "Optional: a pinch of smoked paprika for a little extra somethin'"
 steps:
   - "In a medium bowl, seriously, grab a good one, whisk together the tahini, fresh lemon juice, and the minced garlic. It might seize up a bit, turning thick. Don't panic."
   - "Gradually, I mean slowly, add the warm water, whisking continuously. See? It's loosening up. Keep adding until you get that smooth, pourable, creamy consistency you're aiming for. It's like magic, almost."
   - "Stir in the sea salt, black pepper, and if you're feeling a little adventurous, that smoked paprika. Taste it. Adjust seasoning as needed. Maybe a little more lemon? A bit more salt? Your call."
   - "Serve immediately over your favorite salad or store it. It's good to go, no cooking required, obviously."
 ---
-You know how sometimes you meticulously build this really fresh, vibrant salad? Like, all the good stuff: crunchy greens, maybe some roasted chickpeas, those little sweet cherry tomatoes, perhaps some avocado slices (because, duh). And then you reach for the dressing. The store-bought kind. And suddenly, it's just... sweet. Like, why is my salad dessert now? It’s truly wild how much hidden sugar lurks in those seemingly innocuous bottles, making your perfectly healthy meal a bit of a sugar bomb. Just stop.
+You know how sometimes you meticulously build this really fresh, vibrant salad? Like, all the good stuff: crunchy greens, maybe some roasted chickpeas, those little sweet cherry tomatoes, perhaps some avocado slices (because, duh). And then you reach for the dressing. The store-bought kind. And suddenly, it's just... sweet. Like, why is my salad dessert now? It's truly wild how much hidden sugar lurks in those seemingly innocuous bottles, making your perfectly healthy meal a bit of a sugar bomb. Just stop.
 
-This isn't about being a total health nut, it's about actually tasting your food, you dig? Not masking it with weird, high-fructose corn syrup-laden goop. That's why I'm always banging on about making your own stuff, especially for things like salad dressings. It’s so simple, honestly, and the difference? Yeah, huge. Especially if you're after high fiber salad dressings homemade style, which is kinda the whole point here.
+This isn't about being a total health nut, it's about actually tasting your food, you dig? Not masking it with weird, high-fructose corn syrup-laden goop. That's why I'm always banging on about making your own stuff, especially for things like salad dressings. It's so simple, honestly, and the difference? Yeah, huge. Especially if you're after high fiber salad dressings homemade style, which is kinda the whole point here.
 
 ## Why Bottled Dressings Are Sus, BTW
 
@@ -45,7 +45,7 @@ So, here's the deal with tahini. It's basically ground sesame seeds. Sounds simp
 
 ## Whipping Up Your Own Vibe
 
-Making this dressing is less a "recipe" and more a "vibe," honestly. You basically just whisk stuff together. That’s it. No cooking, no fancy equipment. You get this incredibly creamy, luscious dressing that coats your greens beautifully, without all the added sweeteners or questionable oils. It takes literally five minutes. Maybe ten if you’re, like, easily distracted (which I am, frequently, when a good song comes on). The key? Warm water. Don't skip that. It helps everything emulsify properly, preventing that weird, clumpy texture tahini can sometimes get when it first meets liquid. It's like a little handshake between ingredients.
+Making this dressing is less a "recipe" and more a "vibe," honestly. You basically just whisk stuff together. That's it. No cooking, no fancy equipment. You get this incredibly creamy, luscious dressing that coats your greens beautifully, without all the added sweeteners or questionable oils. It takes literally five minutes. Maybe ten if you're, like, easily distracted (which I am, frequently, when a good song comes on). The key? Warm water. Don't skip that. It helps everything emulsify properly, preventing that weird, clumpy texture tahini can sometimes get when it first meets liquid. It's like a little handshake between ingredients.
 
 ## Nutritional Nitty-Gritty, For Real
 
@@ -61,4 +61,4 @@ So, you've got the basic tahini-lemon dressing down. But don't stop there! This 
 
 ## Keepin' It Fresh (No, Seriously)
 
-Once you've made your dressing, you can totally keep it in the fridge. A sealed jar or container is best. It'll stay good for about 5-7 days. Sometimes it thickens up a bit in the cold, which is totally normal. Just give it a good shake or a quick whisk, and if it's too thick for your liking, add a tiny splash of water (or lemon juice if you want more tang) to thin it out again. It’s perfect for meal prepping, just make a batch on Sunday and you're golden for the week. No more sad, naked salads.
+Once you've made your dressing, you can totally keep it in the fridge. A sealed jar or container is best. It'll stay good for about 5-7 days. Sometimes it thickens up a bit in the cold, which is totally normal. Just give it a good shake or a quick whisk, and if it's too thick for your liking, add a tiny splash of water (or lemon juice if you want more tang) to thin it out again. It's perfect for meal prepping, just make a batch on Sunday and you're golden for the week. No more sad, naked salads.

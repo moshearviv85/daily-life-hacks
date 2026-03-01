@@ -28,7 +28,7 @@ Soft herbs are the ones with tender green stems. Think cilantro, parsley, basil,
 
 ## The Hard Herbs (The Damp Towel Method)
 
-Hard herbs have tough, woody stems. This includes rosemary, thyme, sage, and oregano. These do not need a jar of water; in fact, too much moisture will ruin them. 
+Hard herbs have tough, woody stems. This includes rosemary, thyme, sage, and oregano. These don't need a jar of water; in fact, too much moisture will ruin them. 
 
 1. **The Wrap:** Take a single paper towel runs it under the tap, and squeeze out as much water as you physically can. It should feel barely damp, not wet.
 2. **The Roll:** Lay the woody herbs flat on the damp paper towel and roll them up gently like a little burrito. 

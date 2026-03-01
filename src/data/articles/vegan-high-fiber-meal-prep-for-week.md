@@ -1,6 +1,6 @@
 ---
 title: "5 Days of Vegan High-Fiber Bliss: Tofu, Quinoa & Roasted Veggies"
-excerpt: "Whip up five days of cheap, easy, and incredibly satisfying vegan lunches. Think crispy tofu, fluffy quinoa, and vibrant roasted veggies – all prepped in under an hour for maximum chill time later."
+excerpt: "Whip up five days of cheap, easy, and incredibly satisfying vegan lunches. Think crispy tofu, fluffy quinoa, and vibrant roasted veggies - all prepped in under an hour for maximum chill time later."
 category: "recipes"
 tags: ["VeganPrep", "MealPrepSunday", "HighFiber", "PlantPower", "HealthyLunch"]
 image: "/images/vegan-high-fiber-meal-prep-for-week-main.jpg"
@@ -41,21 +41,21 @@ steps:
   - "Bake: Place both baking sheets in the preheated oven. Roast for 20-25 minutes, flipping the tofu and stirring the vegetables halfway through, until tofu is golden and slightly crispy, and vegetables are tender-crisp. (You might need to swap shelves halfway through for even cooking.)"
   - "Assemble: Divide the cooked quinoa, roasted vegetables, and crispy tofu evenly among 5 meal prep containers. Garnish with sesame seeds and fresh cilantro if desired. Allow to cool completely before sealing and refrigerating."
 ---
-One time, I tried to "wing it" for lunch all week, right? Like, just, you know, *see what happens*. It was an epic fail. By Wednesday, I was staring into an empty fridge, contemplating eating a stale cracker, or maybe, like, a piece of dry bread. My brain was just not making good decisions, nutritional or otherwise. That's why this whole *vegan high fiber meal prep for week* thing actually matters. It’s not just about health; it’s about not losing your marbles during the midday slump.
+One time, I tried to "wing it" for lunch all week, right? Like, just, you know, *see what happens*. It was an epic fail. By Wednesday, I was staring into an empty fridge, contemplating eating a stale cracker, or maybe, like, a piece of dry bread. My brain was just not making good decisions, nutritional or otherwise. That's why this whole *vegan high fiber meal prep for week* thing actually matters. It's not just about health; it's about not losing your marbles during the midday slump.
 
-This isn't some gourmet chef situation, okay? We're talking basic, real-life food that actually tastes good and keeps you from getting hangry. Tofu, quinoa, roasted veggies – a classic combo, but for good reason. It’s cheap. It’s cheerful. And it’s, like, actually really good for you, fiber-wise.
+This isn't some gourmet chef situation, okay? We're talking basic, real-life food that actually tastes good and keeps you from getting hangry. Tofu, quinoa, roasted veggies - a classic combo, but for good reason. It's cheap. It's cheerful. And it's, like, actually really good for you, fiber-wise.
 
 
 ## Why Bother with High-Fiber Vegan Lunches?
 
-Alright, so, fiber. It's not the sexiest topic at the dinner table, I'll give you that. But oh my goodness, it’s a lifesaver. Keeps things, um, moving along in your digestive system, if you catch my drift. Beyond that, it helps you feel fuller for longer periods, which means fewer snack attacks before dinner (always a win in my book). Also, plant-based diets, when done right, tend to be naturally higher in fiber anyway. It’s just, like, a bonus feature of eating all the good stuff. Plus, fiber may help support gut health, which is a whole buzzword these days, but it’s true, a happy gut is a happy human.
+Alright, so, fiber. It's not the sexiest topic at the dinner table, I'll give you that. But oh my goodness, it's a lifesaver. Keeps things, um, moving along in your digestive system, if you catch my drift. Beyond that, it helps you feel fuller for longer periods, which means fewer snack attacks before dinner (always a win in my book). Also, plant-based diets, when done right, tend to be naturally higher in fiber anyway. It's just, like, a bonus feature of eating all the good stuff. Plus, fiber may help support gut health, which is a whole buzzword these days, but it's true, a happy gut is a happy human.
 
-The thing is, getting enough fiber can be kinda tricky if you’re just grabbing whatever. This meal prep recipe? It’s designed to hit those fiber goals without you even thinking about it. You're just eating delicious food. Boom.
+The thing is, getting enough fiber can be kinda tricky if you're just grabbing whatever. This meal prep recipe? It's designed to hit those fiber goals without you even thinking about it. You're just eating delicious food. Boom.
 
 
 ## My Personal Take on Tofu (It's Not Scary, Promise)
 
-Okay, so maybe you're thinking, "Tofu? Meh." I get it. It can be a little… squishy. But here’s the deal: pressing it is key. Like, seriously, game-changing. (Oops, almost used a banned word there, ha!) No, but really, it makes *all* the difference. All that extra water gets squeezed out, and then when you marinate it, it actually absorbs the flavors, instead of just sitting there being a watery blob. Then you roast it, and it gets these gnarly little crispy bits. So good. Seriously. Don't knock it till you've tried it properly pressed and roasted. It's giving delicious, savory vibes.
+Okay, so maybe you're thinking, "Tofu? Meh." I get it. It can be a little... squishy. But here's the deal: pressing it's key. Like, seriously, game-changing. (Oops, almost used a banned word there, ha!) No, but really, it makes *all* the difference. All that extra water gets squeezed out, and then when you marinate it, it actually absorbs the flavors, instead of just sitting there being a watery blob. Then you roast it, and it gets these gnarly little crispy bits. So good. Seriously. Don't knock it till you've tried it properly pressed and roasted. It's giving delicious, savory vibes.
 
 
 ## Meal Prep Tips for the Win
@@ -73,7 +73,7 @@ This meal is packed. I mean, seriously. Each serving delivers a hefty dose of di
 
 ## Variations for When You Get Bored (Because It Happens)
 
-Look, I know eating the same thing for five days might sound… daunting. But it's also efficient! Still, if you want to mix it up, here are some ideas:
+Look, I know eating the same thing for five days might sound... daunting. But it's also efficient! Still, if you want to mix it up, here are some ideas:
 
 *   **Veggie Swap:** Not a fan of broccoli? No worries. Try cauliflower, Brussels sprouts, sweet potatoes, or zucchini. Whatever's in season or on sale!
 *   **Spice It Up:** Instead of the soy sauce marinade, try a peanut sauce (peanut butter, lime, ginger, soy sauce) or a spicy sriracha-lime dressing. Or just add some chili flakes to the roasting veggies.

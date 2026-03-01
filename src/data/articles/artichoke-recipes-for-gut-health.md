@@ -34,7 +34,7 @@ steps:
   - "While artichokes steam, prepare the dip: In a small bowl, whisk together the mayonnaise (or Greek yogurt), minced garlic, fresh lemon juice, chopped parsley, and Dijon mustard. Season with salt and pepper to your liking."
   - "Once cooked, carefully remove the artichokes from the steamer. Let them cool for a few minutes before serving. Serve warm with the lemon-garlic dip on the side."
 ---
-Okay, so who else looks at an artichoke and thinks, "What even *is* that alien vegetable?" Seriously, it's like something from a Dr. Seuss book. All spiky, green, and a bit… prehistoric. But, yo, once you get past its intimidating exterior, you're in for a treat, a truly spectacular, fiber-packed experience for your insides, especially if you're trying to keep things moving along smoothly (if you catch my drift).
+Okay, so who else looks at an artichoke and thinks, "What even *is* that alien vegetable?" Seriously, it's like something from a Dr. Seuss book. All spiky, green, and a bit... prehistoric. But, yo, once you get past its intimidating exterior, you're in for a treat, a truly spectacular, fiber-packed experience for your insides, especially if you're trying to keep things moving along smoothly (if you catch my drift).
 
 &#x20;
 
@@ -66,7 +66,7 @@ The fiber in artichokes, particularly a type called inulin, is a fantastic prebi
 
 &#x20;
 
-Okay, so you've steamed your artichoke, and it's all warm and ready. But what about the dip? The lemon-garlic dip listed in the recipe is legit. The brightness of the lemon cuts through the slight bitterness of the artichoke, and garlic, well, garlic just makes everything better, doesn't it? (Plus, garlic has its own gut-friendly properties, so it's a double whammy!) The dipping ritual itself is part of the fun – pulling off a leaf, scraping the tender, fleshy part with your teeth, dipping it, and then discarding the rest. It's mindful eating, almost.
+Okay, so you've steamed your artichoke, and it's all warm and ready. But what about the dip? The lemon-garlic dip listed in the recipe is legit. The brightness of the lemon cuts through the slight bitterness of the artichoke, and garlic, well, garlic just makes everything better, doesn't it? (Plus, garlic has its own gut-friendly properties, so it's a double whammy!) The dipping ritual itself is part of the fun - pulling off a leaf, scraping the tender, fleshy part with your teeth, dipping it, and then discarding the rest. It's mindful eating, almost.
 
 &#x20;
 
@@ -82,7 +82,7 @@ While steamed artichoke with a zesty dip is classic for a reason, you're not stu
 
 &#x20;
 
-If you happen to have any leftover steamed artichoke (which, let's be honest, is rare), you can store it in an airtight container in the fridge for up to 3 days. The dip, too, keeps well in a sealed container in the fridge for about 5 days. You can reheat the artichoke gently in the microwave or enjoy it cold; it’s surprisingly good in salads or just as a chilled snack.
+If you happen to have any leftover steamed artichoke (which, let's be honest, is rare), you can store it in an airtight container in the fridge for up to 3 days. The dip, too, keeps well in a sealed container in the fridge for about 5 days. You can reheat the artichoke gently in the microwave or enjoy it cold; it's surprisingly good in salads or just as a chilled snack.
 
 &#x20;
 

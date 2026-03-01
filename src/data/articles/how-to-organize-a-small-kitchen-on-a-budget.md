@@ -15,7 +15,7 @@ mustRead: false
 
 I once lived in an apartment where the kitchen was essentially a narrow hallway. I had barely two feet of usable counter space, three tiny cabinets that didn't actually line up evenly, and zero pantry closet. Cooking anything more complicated than toast felt like performing an aggressive juggling act. 
 
-When you have a kitchen that small, every single square inch matters. The problem is that searching for organization solutions usually leads you down a rabbit hole of ridiculously expensive custom shelving or $40 clear acrylic containers that you definitely do not need. 
+When you have a kitchen that small, every single square inch matters. The problem is that searching for organization solutions usually leads you down a rabbit hole of ridiculously expensive custom shelving or $40 clear acrylic containers that you definitely don't need. 
 
 If you want to know how to organize a small kitchen on a budget, you have to completely rethink vertical space and start utilizing the doors. 
 
@@ -33,7 +33,7 @@ Suddenly, you have entirely freed up the entire bottom floor of that cabinet to 
 Those massive, heavy wooden knife blocks that sit on your counter are stealing the most valuable real estate in your kitchen. 
 1. Get rid of the block immediately. 
 2. Buy a highly rated magnetic knife strip online (they usually run about $15 to $20). 
-3. Mount it directly to the wall or the tile backsplash right above your cutting board area using heavy-duty double-sided mounting tape if you are renting and cannot screw into the wall. 
+3. Mount it directly to the wall or the tile backsplash right above your cutting board area using heavy-duty double-sided mounting tape if you're renting and can't screw into the wall. 
 
 Your knives are now safely suspended in thin air, completely freeing up a massive square of counter space for actual food prep. 
 

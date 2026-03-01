@@ -29,12 +29,12 @@ When you eat this, that thick gel acts practically like a soft, incredibly gentl
 
 ## The Power of Warm, Roasted Vegetables
 
-If you are actively struggling, do not suddenly run out and eat a massive bowl of raw kale. Raw, intensely fibrous vegetables can sometimes actually make a sluggish digestive tract feel entirely worse if your body isn't totally used to them. It forces your stomach to completely aggressively work overtime to break down those extremely tough plant walls. 
+If you're actively struggling, don't suddenly run out and eat a massive bowl of raw kale. Raw, intensely fibrous vegetables can sometimes actually make a sluggish digestive tract feel entirely worse if your body isn't totally used to them. It forces your stomach to completely aggressively work overtime to break down those extremely tough plant walls. 
 
-Instead, you absolutely must cook your vegetables until they are practically buttery soft. 
+Instead, you absolutely must cook your vegetables until they're practically buttery soft. 
 
 *   Take a massive sheet pan and cover it entirely with chopped sweet potatoes (leave the skin on, the skin holds the absolute majority of the fiber!), totally thick broccoli crowns, and large chunks of ordinary red onion. 
 *   Drizzle everything extremely heavily with quality olive oil (the healthy fat actually effectively acts as a natural lubricant for your entire intestines). 
-*   Roast them at a scorching 400°F until they are entirely caramelized and soft. 
+*   Roast them at a scorching 400°F until they're entirely caramelized and soft. 
 
 Eating this massive platter over a tiny bed of soft brown rice is incredibly soothing to an inflamed, heavily sluggish gut. Learning precisely which high fiber meals for constipation relief truly work is basically an absolute mandatory life skill!

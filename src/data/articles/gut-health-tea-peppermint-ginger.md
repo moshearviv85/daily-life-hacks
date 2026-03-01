@@ -19,7 +19,7 @@ Most nights, after I've eaten a little too enthusiastically (or, let's be honest
 
 ## The Lowdown on Post-Meal Bloat: Why Does It Even Happen?
 
-Okay, so, bloating. It's pretty common, which doesn't make it any less annoying. It’s often caused by gas building up in your digestive system, sometimes from eating too fast (guilty!), gulping down fizzy drinks, or even certain foods being a bit hard for your body to break down easily. Stress totally plays a role too, because our guts are, like, the second brain, constantly chatting with our actual brain. Sometimes it just feels like your system's a bit sluggish, not moving things along as smoothly as it should, leaving you feeling stuffed and uncomfortable.
+Okay, so, bloating. It's pretty common, which doesn't make it any less annoying. It's often caused by gas building up in your digestive system, sometimes from eating too fast (guilty!), gulping down fizzy drinks, or even certain foods being a bit hard for your body to break down easily. Stress totally plays a role too, because our guts are, like, the second brain, constantly chatting with our actual brain. Sometimes it just feels like your system's a bit sluggish, not moving things along as smoothly as it should, leaving you feeling stuffed and uncomfortable.
 
 ##  Dynamic Duo: Peppermint and Ginger
 

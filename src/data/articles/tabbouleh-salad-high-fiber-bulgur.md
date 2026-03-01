@@ -42,13 +42,13 @@ Okay, so you know how sometimes you just *feel* it, right? Like your insides are
 
 Honestly, I used to think parsley was just for garnishing plates, like those little curly bits you'd push aside at a diner, but then I discovered its true calling in this vibrant, herbaceous salad that transforms bulgur wheat into something truly magical and surprisingly filling without being heavy at all, which is kind of the whole point of a good refresh salad, isn't it? It's a revelation. This isn't your grandma's side dish, unless your grandma was exceptionally cool and ahead of her time with Mediterranean food, which, shout out to her if she was. This is *the* deal for when you want something fresh, zesty, and genuinely good for you without feeling like you're eating rabbit food.
 
-It’s got this incredible textural play, you know? The slight chew of the bulgur, the crisp pop of cucumber, the juicy burst of tomato, and then all that fresh, bright herby goodness from the parsley and mint. Like, it’s legit good. And that lemon dressing? Dude, it ties it all together so perfectly, a real little burst of sunshine in every forkful.
+It's got this incredible textural play, you know? The slight chew of the bulgur, the crisp pop of cucumber, the juicy burst of tomato, and then all that fresh, bright herby goodness from the parsley and mint. Like, it's legit good. And that lemon dressing? Dude, it ties it all together so perfectly, a real little burst of sunshine in every forkful.
 
 ## Why This Salad Isn't Just "Another Salad"
 
-This isn't just about throwing some green stuff in a bowl and calling it a day. Nah. We're talking about a whole culinary experience that also happens to be a fantastic way to feel refreshed (you get me?). It’s one of those recipes that kinda makes you feel like you're doing something really nice for your body without, like, going all out on some crazy restrictive diet thing. The bulgur, especially, it’s just so satisfying and keeps you full for ages. Seriously, try skipping that 3 PM snack after this. You probably won't even think about it.
+This isn't just about throwing some green stuff in a bowl and calling it a day. Nah. We're talking about a whole culinary experience that also happens to be a fantastic way to feel refreshed (you get me?). It's one of those recipes that kinda makes you feel like you're doing something really nice for your body without, like, going all out on some crazy restrictive diet thing. The bulgur, especially, it's just so satisfying and keeps you full for ages. Seriously, try skipping that 3 PM snack after this. You probably won't even think about it.
 
-It’s also surprisingly simple, even with all the chopping. Just put on some tunes, maybe a podcast (I'm really into true crime podcasts while chopping, don't ask), and get into that flow state. Before you know it, you've got this beautiful, vibrant bowl of goodness ready to go. The aroma alone is enough to cheer you up on a dreary Tuesday.
+It's also surprisingly simple, even with all the chopping. Just put on some tunes, maybe a podcast (I'm really into true crime podcasts while chopping, don't ask), and get into that flow state. Before you know it, you've got this beautiful, vibrant bowl of goodness ready to go. The aroma alone is enough to cheer you up on a dreary Tuesday.
 
 ## The Green Dream: Nutritional Breakdown
 

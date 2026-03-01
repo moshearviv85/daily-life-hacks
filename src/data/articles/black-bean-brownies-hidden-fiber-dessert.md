@@ -14,7 +14,7 @@ mustRead: false
 ---
 Okay, so I had this bag of black beans in the pantry, right? Just sitting there, probably judging my life choices (mostly involving instant ramen), and then this crazy idea popped into my head, like a little lightbulb flashing "brownies!" (I know, wild). My friend Brenda, she always says I'm a mad scientist in the kitchen, and you know what, sometimes she's not wrong about that particular assessment of my culinary endeavors, especially when it involves legumes in desserts. It's a whole vibe.
 
-Making brownies with black beans sounds totally bonkers to most people, I get it. The skepticism is understandable. You picture a bean-y flavored chocolate square, which, let's be honest, doesn't exactly scream "delicious treat." But trust me on this one. These brownies? They’re fudgy beyond belief, deeply chocolatey, and if you didn't tell anyone, they'd never guess the secret ingredient. Like, *never*. I’ve watched people devour them, ask for the recipe, and then literally gasp when I tell them about the beans. It’s pretty satisfying, actually, seeing their minds get blown.
+Making brownies with black beans sounds totally bonkers to most people, I get it. The skepticism is understandable. You picture a bean-y flavored chocolate square, which, let's be honest, doesn't exactly scream "delicious treat." But trust me on this one. These brownies? They're fudgy beyond belief, deeply chocolatey, and if you didn't tell anyone, they'd never guess the secret ingredient. Like, *never*. I've watched people devour them, ask for the recipe, and then literally gasp when I tell them about the beans. It's pretty satisfying, actually, seeing their minds get blown.
 
 ## The Unconventional Beginning of a Delicious Discovery
 

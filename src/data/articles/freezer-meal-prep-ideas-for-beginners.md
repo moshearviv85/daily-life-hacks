@@ -15,7 +15,7 @@ mustRead: false
 
 We've all had those absolutely brutal days. You work nine hours, commute home in horrible traffic, walk through the door utterly exhausted, and realize with a sinking feeling that you still have to figure out dinner. The temptation to just order takeout or eat a bowl of cereal is overwhelmingly strong. 
 
-But what if you could just open your freezer, grab a perfectly portioned bag, and have a completely home-cooked meal ready in the time it takes to boil water or heat up an oven? That is the absolute magic of a frozen stash. If you are entirely new to this, diving into freezer meal prep ideas for beginners is the single best favor you can do for your future, exhausted self.
+But what if you could just open your freezer, grab a perfectly portioned bag, and have a completely home-cooked meal ready in the time it takes to boil water or heat up an oven? That's the absolute magic of a frozen stash. If you're entirely new to this, diving into freezer meal prep ideas for beginners is the single best favor you can do for your future, exhausted self.
 
 ## The Secret to Success: "Dump Bags"
 
@@ -47,4 +47,4 @@ This isn't a slow cooker meal; this is for incredibly fast, sizzling stovetop di
 *   Massage the bag heavily so the oil and spices coat all the raw chicken and veggies perfectly. 
 *   **To cook:** Dump the frozen contents directly into a ripping hot cast-iron skillet. The ice immediately starts to melt and steam, the fajitas cook perfectly in roughly 15 minutes, and the sauce naturally thickens around the meat. 
 
-These freezer meal prep ideas for beginners completely eliminate the 5 PM dinner panic. You are practically outsourcing your stress to your freezer!
+These freezer meal prep ideas for beginners completely eliminate the 5 PM dinner panic. You're practically outsourcing your stress to your freezer!

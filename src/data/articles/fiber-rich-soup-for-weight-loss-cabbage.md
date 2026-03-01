@@ -43,13 +43,13 @@ steps:
 
 Remember that whole cabbage soup thing? Yeah, *that* cabbage soup. For a while, it felt like everyone and their dog (metaphorically, of course, please don't feed your dog a lot of cabbage soup) was trying to lose weight with it, mostly by suffering through something that tasted suspiciously like sad, boiled water with a side of regret. Rough times.
 
-But here’s the thing, the *idea* wasn't terrible, just the execution. Cabbage, hello, is actually amazing. Like, really good for you. Super fibrous. And fiber? Oh, fiber is the unsung hero, the MVP of feeling full and keeping things, shall we say, moving along. So, I figured, why not take that ancient, slightly traumatic concept and give it a serious glow-up? This isn't a "lose 10 pounds by Friday" kind of deal, which, you know, isn't sustainable anyway. This is about making a genuinely delicious, hearty, fiber rich soup for weight loss cabbage style that you'd actually *want* to eat. Not just *tolerate*. Big difference.
+But here's the thing, the *idea* wasn't terrible, just the execution. Cabbage, hello, is actually amazing. Like, really good for you. Super fibrous. And fiber? Oh, fiber is the unsung hero, the MVP of feeling full and keeping things, shall we say, moving along. So, I figured, why not take that ancient, slightly traumatic concept and give it a serious glow-up? This isn't a "lose 10 pounds by Friday" kind of deal, which, you know, isn't sustainable anyway. This is about making a genuinely delicious, hearty, fiber rich soup for weight loss cabbage style that you'd actually *want* to eat. Not just *tolerate*. Big difference.
 
-My version? It’s got depth. Actual flavor. It’s comforting, warm, and seriously, surprisingly satisfying. You won’t feel like you’re on a penalty diet. Promise.
+My version? It's got depth. Actual flavor. It's comforting, warm, and seriously, surprisingly satisfying. You won't feel like you're on a penalty diet. Promise.
 
 ## Why This Isn't Your Aunt Mildred's Cabbage Soup
 
-Okay, so Aunt Mildred (bless her heart) probably meant well, but her soup was, let's just say, nutritionally sparse and flavor-challenged. My twist, however, leans into robust ingredients. We’re talking rich tomatoes, aromatic garlic and onion (essential, right?), and a medley of earthy herbs that transform plain cabbage into something rather lovely. The beans are a addition here. They bulk it up, add plant-based protein, and, more importantly, a hefty dose of soluble and insoluble fiber. Soluble fiber helps stabilize blood sugar, while insoluble fiber adds volume, helping you feel satiated. It’s less about deprivation and more about giving your body good stuff that helps it function optimally, potentially aiding in weight management.
+Okay, so Aunt Mildred (bless her heart) probably meant well, but her soup was, let's just say, nutritionally sparse and flavor-challenged. My twist, however, leans into robust ingredients. We're talking rich tomatoes, aromatic garlic and onion (essential, right?), and a medley of earthy herbs that transform plain cabbage into something rather lovely. The beans are a addition here. They bulk it up, add plant-based protein, and, more importantly, a hefty dose of soluble and insoluble fiber. Soluble fiber helps stabilize blood sugar, while insoluble fiber adds volume, helping you feel satiated. It's less about deprivation and more about giving your body good stuff that helps it function optimally, potentially aiding in weight management.
 
 
 ## Getting Smart About Your Serving
@@ -61,7 +61,7 @@ Listen, portion control is always a thing, even with healthy stuff. While this s
 This fiber rich soup for weight loss cabbage recipe is, like, a nutritional rockstar.
 
 * **Fiber:** Obviously, it's in the title! Cabbage, carrots, celery, and especially those cannellini beans are absolutely loaded. Fiber is key for digestive health, helps slow down sugar absorption (no wild blood sugar spikes, yay!), and contributes significantly to that "I'm not hungry anymore" feeling.
-* **Vitamins and Minerals:** You're getting a ton of Vitamin K and C from the cabbage, Vitamin A from the carrots, and a whole spectrum of B vitamins, potassium, and iron from the beans and other veggies. It’s a nutrient dense meal without a huge calorie count.
+* **Vitamins and Minerals:** You're getting a ton of Vitamin K and C from the cabbage, Vitamin A from the carrots, and a whole spectrum of B vitamins, potassium, and iron from the beans and other veggies. It's a nutrient dense meal without a huge calorie count.
 * **Antioxidants:** Cabbage, especially, is packed with antioxidants and anti-inflammatory compounds. Thought to help with all sorts of cellular stress, you know? Keeping your body happy.
 * **Hydration:** It's a soup! Broth-based means you're getting a good dose of hydration, which is often overlooked but so important for metabolism and just feeling generally good.
 
@@ -70,7 +70,7 @@ This fiber rich soup for weight loss cabbage recipe is, like, a nutritional rock
 
 Sometimes you want to switch it up, right? This soup is super adaptable.
 
-* **Spice It Up:** If you’re into heat, a pinch more red pepper flakes, or even a dash of your favorite hot sauce at the end, totally works.
+* **Spice It Up:** If you're into heat, a pinch more red pepper flakes, or even a dash of your favorite hot sauce at the end, totally works.
 * **Add More Veggies:** Spinach or kale stirred in at the very end (they wilt super fast) adds even more greens. Diced bell peppers or zucchini can go in with the carrots and celery.
 * **Protein Boost:** For non-vegetarian options, a handful of shredded cooked chicken (rotisserie chicken works, just saying) or lean ground turkey cooked with the onions could be stirred in towards the end. Or, if you want to keep it plant-based but want more oomph, a scoop of lentils (cooked separately or added with the beans if using canned) would be stellar.
 * **Herbaceous Heaven:** Fresh dill or bay leaves added during simmering can give it a different flavor profile. Just remember to remove the bay leaves before serving.
@@ -79,6 +79,6 @@ Sometimes you want to switch it up, right? This soup is super adaptable.
 
 This soup is, like, prime meal prep material. Seriously. It actually tastes *better* the next day, once all those flavors have had a chance to really get to know each other.
 
-To store it, just let the soup cool completely first. You don’t want to put hot soup into the fridge because it, um, raises the temperature of everything else in there. Spoon it into airtight containers. It’ll keep beautifully in the refrigerator for up to 4-5 days.
+To store it, just let the soup cool completely first. You don't want to put hot soup into the fridge because it, um, raises the temperature of everything else in there. Spoon it into airtight containers. It'll keep beautifully in the refrigerator for up to 4-5 days.
 
-Freezing? Oh yeah, it freezes like a champ. Portion it out into freezer-safe containers or heavy-duty freezer bags (lay them flat to save space, pro tip). It’ll be good in the freezer for up to 3 months. When you’re ready for a bowl, just thaw it overnight in the fridge or gently reheat it on the stovetop from frozen, adding a splash of extra broth or water if it seems too thick. It’s perfect for those busy weeknights when you want something healthy but have zero energy to cook from scratch. You'll thank your past self, trust me.
+Freezing? Oh yeah, it freezes like a champ. Portion it out into freezer-safe containers or heavy-duty freezer bags (lay them flat to save space, pro tip). It'll be good in the freezer for up to 3 months. When you're ready for a bowl, just thaw it overnight in the fridge or gently reheat it on the stovetop from frozen, adding a splash of extra broth or water if it seems too thick. It's perfect for those busy weeknights when you want something healthy but have zero energy to cook from scratch. You'll thank your past self, trust me.
