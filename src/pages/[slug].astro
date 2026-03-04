@@ -125,7 +125,22 @@ const jsonLd = isRecipe
       },
     };
 
-const allSchemas = [jsonLd, breadcrumbSchema];
+const allSchemas: any[] = [jsonLd, breadcrumbSchema];
+
+if (article.data.faq && article.data.faq.length > 0) {
+  allSchemas.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: article.data.faq.map((item: any) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  });
+}
 ---
 
 <BaseLayout
@@ -424,6 +439,32 @@ const allSchemas = [jsonLd, breadcrumbSchema];
             </span>
           ))}
         </div>
+      )
+    }
+
+    <!-- FAQ Section -->
+    {
+      article.data.faq && article.data.faq.length > 0 && (
+        <section class="mt-12 mb-8 border-t border-[var(--border-color)] pt-8">
+          <h2 class="text-2xl font-bold mb-6 text-[var(--heading-color)] flex items-center gap-2">
+            <span class="text-[#F29B30]">●</span> Frequently Asked Questions
+          </h2>
+          <div class="space-y-4">
+            {article.data.faq.map((item: any) => (
+              <details class="group rounded-xl border border-[var(--border-color)] bg-[var(--card-bg)] overflow-hidden">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-[var(--heading-color)] hover:bg-[var(--input-bg)] transition-colors">
+                  <span>{item.question}</span>
+                  <span class="transition group-open:rotate-180 text-gray-500">
+                    <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+                </summary>
+                <div class="p-5 pt-0 text-[var(--text-color)] leading-relaxed">
+                  {item.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
       )
     }
 

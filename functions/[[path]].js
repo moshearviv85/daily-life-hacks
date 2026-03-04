@@ -1,7 +1,7 @@
 /**
  * Pinterest Smart Router - Catch-all Cloudflare Pages Function
  *
- * Intercepts versioned URLs (e.g., /slug-v1, /slug-v2) from Pinterest pins.
+ * Intercepts keyword URLs and versioned URLs from Pinterest pins.
  * Routes to internal article content or external affiliate links based on KV config.
  * Logs every hit to D1 for analytics.
  */
@@ -10,7 +10,7 @@ export async function onRequest(context) {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/$/, "") || "/";
 
-  // --- GUARD: Skip static assets and API routes ---
+  // --- 1. GUARD: Skip static assets and API routes ---
   const skipPatterns = [
     /^\/(api|_astro|_image)\//,
     /\.(css|js|png|jpg|jpeg|gif|svg|ico|webp|avif|woff2?|ttf|eot|xml|json|txt|webmanifest)$/,
@@ -22,31 +22,40 @@ export async function onRequest(context) {
     }
   }
 
-  // --- VERSION DETECTION ---
-  const versionMatch = path.match(/^(.+)-v(\d+)$/);
-
-  if (!versionMatch) {
-    return env.ASSETS.fetch(request);
-  }
-
-  const fullVersionedSlug = path.slice(1); // "/slug-v1" -> "slug-v1"
-  const baseSlug = versionMatch[1].slice(1); // "/slug" -> "slug"
-  const version = versionMatch[2];
-
-  // --- KV LOOKUP ---
+  const fullPathSlug = path.slice(1); // Remove leading slash
   let routeConfig = null;
-  if (env.ROUTES_KV) {
+  let version = null;
+  let baseSlug = null;
+  let isKvMatch = false;
+
+  // --- 2. KV LOOKUP (runs for ALL paths) ---
+  if (env.ROUTES_KV && fullPathSlug) {
     try {
-      const raw = await env.ROUTES_KV.get(fullVersionedSlug);
+      const raw = await env.ROUTES_KV.get(fullPathSlug);
       if (raw) {
         routeConfig = JSON.parse(raw);
+        isKvMatch = true;
+        baseSlug = routeConfig.base_slug;
       }
     } catch (e) {
-      // KV failure - fall through to default internal proxy
+      // KV parsing error
     }
   }
 
-  // --- ANALYTICS LOGGING (non-blocking) ---
+  // --- 3. FALLBACK: -v{n} PATTERN (backward compat) ---
+  if (!isKvMatch) {
+    const versionMatch = path.match(/^(.+)-v(\d+)$/);
+    if (versionMatch) {
+      baseSlug = versionMatch[1].slice(1); // "/slug" -> "slug"
+      version = versionMatch[2];
+      routeConfig = { type: "internal", base_slug: baseSlug };
+    } else {
+      // --- 4. PASS THROUGH ---
+      return env.ASSETS.fetch(request);
+    }
+  }
+
+  // --- 5. ANALYTICS LOGGING (non-blocking) ---
   if (env.DB) {
     const logPromise = env.DB
       .prepare(
@@ -55,10 +64,10 @@ export async function onRequest(context) {
          VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
       )
       .bind(
-        fullVersionedSlug,
-        routeConfig?.base_slug || baseSlug,
+        fullPathSlug,
+        baseSlug,
         routeConfig?.type || "internal",
-        version,
+        version, // null if it's a keyword URL, or the number if fallback
         url.search || null,
         request.headers.get("Referer") || null,
         request.headers.get("User-Agent") || null,
@@ -66,10 +75,10 @@ export async function onRequest(context) {
       )
       .run();
 
-    waitUntil(logPromise.catch(() => {}));
+    waitUntil(logPromise.catch(() => { }));
   }
 
-  // --- ROUTING DECISION ---
+  // --- 6. ROUTING DECISION ---
   if (routeConfig?.type === "external" && routeConfig.external_url) {
     return new Response(null, {
       status: 302,

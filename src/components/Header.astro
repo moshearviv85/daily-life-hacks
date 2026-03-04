@@ -98,6 +98,7 @@ const currentPath = Astro.url.pathname;
           </span>
           <input
             type="text"
+            id="desktop-search"
             placeholder="Search articles..."
             class="pl-9 pr-4 py-1.5 text-sm rounded-lg outline-none transition-all duration-200 w-44 focus:w-52"
             style="background-color: var(--input-bg); color: var(--text-color); border: 1px solid var(--border-color);"
@@ -203,6 +204,7 @@ const currentPath = Astro.url.pathname;
       </span>
       <input
         type="text"
+        id="mobile-search"
         placeholder="Search articles..."
         class="w-full pl-9 pr-4 py-2 text-sm rounded-lg"
         style="background-color: var(--input-bg); color: var(--text-color); border: 1px solid var(--border-color);"
@@ -242,5 +244,22 @@ const currentPath = Astro.url.pathname;
         localStorage.setItem("theme", isDark ? "dark" : "light");
       });
     }
+
+    // ── Search functionality ──
+    const desktopSearch = document.getElementById("desktop-search");
+    const mobileSearch = document.getElementById("mobile-search");
+    
+    function attachSearchListener(inputEl) {
+      if (inputEl) {
+        inputEl.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" && e.target.value.trim() !== "") {
+            window.location.href = `/search?q=${encodeURIComponent(e.target.value.trim())}`;
+          }
+        });
+      }
+    }
+    
+    attachSearchListener(desktopSearch);
+    attachSearchListener(mobileSearch);
   });
 </script>

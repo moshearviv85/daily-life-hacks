@@ -31,6 +31,7 @@ SITE_URL = "https://www.daily-life-hacks.com"
 PROJECT_DIR = "."
 TRACKER_FILE = os.path.join(PROJECT_DIR, "pipeline-data", "content-tracker.json")
 SCENES_FILE = os.path.join(PROJECT_DIR, "pipeline-data", "image-scenes.json")
+ROUTER_MAPPING_FILE = os.path.join(PROJECT_DIR, "pipeline-data", "router-mapping.json")
 SAVE_DIR_WEB = os.path.join(PROJECT_DIR, "public", "images")
 SAVE_DIR_PINS = os.path.join(PROJECT_DIR, "public", "images", "pins")
 EXPORT_CSV = os.path.join(PROJECT_DIR, "pipeline-data", "pins-export.csv")
@@ -90,6 +91,14 @@ def main():
 
     with open(SCENES_FILE, 'r', encoding='utf-8') as f:
         scenes = json.load(f)
+
+    router_mapping = {}
+    if os.path.exists(ROUTER_MAPPING_FILE):
+        with open(ROUTER_MAPPING_FILE, 'r', encoding='utf-8') as f:
+            try:
+                router_mapping = json.load(f)
+            except json.JSONDecodeError:
+                pass
 
     # Filter: only articles that are actually published on the site
     ARTICLES_DIR = os.path.join(PROJECT_DIR, "src", "data", "articles")
@@ -158,10 +167,15 @@ def main():
             pin_filename = f"{slug}_v{v}.jpg"
             pin_path = os.path.join(SAVE_DIR_PINS, pin_filename)
 
+            variant_key = f"v{v}"
+            variant_title = title
+            if slug in router_mapping and variant_key in router_mapping[slug]:
+                variant_title = router_mapping[slug][variant_key]
+
             if not os.path.exists(pin_path):
                 scene = random.choice(scenes)
-                prompt_pin = f"""{title}, {scene}. Realistic food photography.
-Write ONLY the text "{title}" on the image in a bold, readable font. No other text."""
+                prompt_pin = f"""{variant_title}, {scene}. Realistic food photography.
+Write ONLY the text "{variant_title}" on the image in a bold, readable font. No other text."""
 
                 print(f"  -> Pin v{v}/{PINS_PER_ARTICLE} [{scene[:40]}]...")
                 status = call_api(prompt_pin, pin_path, aspect_ratio="3:4")
@@ -183,12 +197,12 @@ Write ONLY the text "{title}" on the image in a bold, readable font. No other te
 
                 # Add to pin export
                 hashtag_str = " ".join([f"#{h}" for h in hashtags]) if isinstance(hashtags, list) else str(hashtags)
-                destination_url = f"{SITE_URL}/{slug}?utm_content=v{v}"
+                destination_url = f"{SITE_URL}/{slug}-v{v}"
                 board = "Healthy Recipes" if category == "recipes" else "Nutrition Tips"
 
                 pin_export_rows.append({
                     "image_filename": pin_filename,
-                    "pin_title": title,
+                    "pin_title": variant_title,
                     "description": f"{description} {hashtag_str}",
                     "destination_url": destination_url,
                     "board": board,

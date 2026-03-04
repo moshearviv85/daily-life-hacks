@@ -25,6 +25,10 @@ const articles = defineCollection({
     difficulty: z.enum(['Easy', 'Medium', 'Hard']).optional(),
     ingredients: z.array(z.string()).optional(),
     steps: z.array(z.string()).optional(),
+    faq: z.array(z.object({
+      question: z.string(),
+      answer: z.string()
+    })).optional(),
   }),
 });
 
