@@ -146,7 +146,7 @@ def main():
         if os.path.exists(tmp_csv):
             os.remove(tmp_csv)
             
-    print(f"\nExport complete: {len(csv_rows)} pins → pipeline-data/pins-export.csv")
+    print(f"\nExport complete: {len(csv_rows)} pins -> pipeline-data/pins-export.csv")
     print(f"  Boards: Dinner/Gut: {board_counts['High Fiber Dinner and Gut Health Recipes']} | Breakfast: {board_counts['Healthy Breakfast, Smoothies and Snacks']} | Nutrition: {board_counts['Gut Health Tips and Nutrition Charts']}")
     print(f"  Articles: {included_articles} included, {skipped_articles} skipped")
 

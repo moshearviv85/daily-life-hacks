@@ -1,8 +1,8 @@
 ---
-title: "Budget Bliss: Split Pea Soup Recipe, High Fiber (16g!)"
+title: "How Much Fiber in a Cup of Split Pea Soup"
 excerpt: "Forget the fancy stuff. This split pea soup recipe is pure, old-school comfort, packing 16g of fiber per bowl. It's cheap, easy, and just the thing your soul is craving on a chilly day."
 category: "recipes"
-tags: ["SoupSeason", "HighFiber", "ComfortFood", "BudgetCooking", "HealthyDinner"]
+tags: ["HowMuchFiberInACupOfSplitPeaSoup", "HowMuchFiberInABowlOfSplitPeaSoup", "HighFiberSplitPeaSoupRecipe", "IsThereALotOfFiberInSplitPeaSoup"]
 image: "/images/split-pea-soup-recipe-high-fiber-main.jpg"
 imageAlt: "Split Pea Soup Recipe High Fiber - appetizing bowl with colorful ingredients for natural nutrition"
 date: 2026-01-16
@@ -36,6 +36,17 @@ steps:
   - "Bring the soup to a boil, then reduce heat to low, cover, and simmer for 25-30 minutes, or until peas are tender and the soup has thickened to your liking. Stir occasionally to prevent sticking."
   - "Season with salt and black pepper."
   - "Ladle into bowls, garnish with fresh parsley, and serve hot."
+faq:
+  - question: "Is there a lot of fiber in split pea soup?"
+    answer: "Yes, split peas are naturally packed with dietary fiber. A hearty high fiber split pea soup recipe is one of the easiest ways to boost your daily intake. Plus, it's incredibly filling and might help keep you satisfied until your next meal."
+  - question: "How much fiber in a cup of split pea soup?"
+    answer: "You can generally expect about 8 to 10 grams of fiber in a standard one-cup serving. The exact amount depends on the specific ingredients and thickness of your soup. Adding extra vegetables like carrots and celery can bump up those numbers even more."
+  - question: "How much fiber in a bowl of split pea soup?"
+    answer: "Since a typical bowl holds around two cups, you're looking at roughly 16 to 20 grams of fiber per bowl. That's a significant portion of your recommended daily fiber goal in just one sitting. It's a great choice if you're trying to add more plant-based nutrition to your diet."
+  - question: "What makes a high fiber split pea soup recipe so good for you?"
+    answer: "A high fiber split pea soup recipe relies on legumes, which are fantastic sources of both complex carbohydrates and plant-based protein. The rich fiber content may support healthy digestion and could help maintain steady energy levels throughout the day. It's also easy to customize with your favorite veggies for an extra nutritional boost."
+  - question: "How can I add even more fiber to my split pea soup?"
+    answer: "You can easily increase the fiber by tossing in extra root vegetables, leafy greens, or even some whole grains like barley. We don't recommend overcomplicating it, as a simple mix of carrots, onions, and celery already works wonders. It's a versatile dish, so feel free to experiment with whatever veggies you have in the fridge."
 ---
 Sometimes, you just need a big ol' bowl of something warm. You know? Not some trendy smoothie or a super green kale-whatever. Just, like, *real* food.
 

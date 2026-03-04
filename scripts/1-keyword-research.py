@@ -22,7 +22,7 @@ KV_UPLOAD_FILE = os.path.join(DATA_DIR, "kv-upload.json")
 PINS_FILE = os.path.join(DATA_DIR, "pins.json")
 ARTICLES_DIR = os.path.join(BASE_DIR, "src", "data", "articles")
 
-BANNED_WORDS = ["cure", "treat", "heal", "disease", "disorder", "syndrome", "cancer", "diabetes", "ibs", "crohn", "detox", "cleanse", "reset", "flush"]
+BANNED_WORDS = ["cure", "treat", "heal", "disease", "disorder", "syndrome", "cancer", "diabetes", "ibs", "crohn", "detox", "cleanse", "reset", "flush", "constipation", "relief", "relieve", "prevent", "fights", "combats"]
 
 def load_json(filepath, default_val):
     if not os.path.exists(filepath):
@@ -115,8 +115,8 @@ def score_candidates_pytrends(candidates):
             time.sleep(2)
         except Exception as e:
             if "429" in str(e):
-                print("PyTrends 429 quota hit, waiting 60s...")
-                time.sleep(60)
+                print("PyTrends 429 quota hit, waiting 5s (reduced from 60s)...", flush=True)
+                time.sleep(5)
                 try:
                     pytrends.build_payload(batch, timeframe='today 12-m', geo='US')
                     data = pytrends.interest_over_time()
@@ -230,7 +230,7 @@ def main():
         slug = item["slug"]
         existing = item["existing"]
         
-        print(f"\n[{idx}/{total}] {slug}")
+        print(f"\n[{idx}/{total}] {slug}", flush=True)
         
         # Check if already researched
         if not args.force and slug in clusters and clusters[slug].get("status") == "researched":
@@ -253,12 +253,21 @@ def main():
         print(f"  After filter: {len(filtered)} remain")
         
         if not filtered:
-            print("  No candidates left. Skipping.")
-            continue
+            print("  No candidates left. Using base query as fallback.")
+            filtered = [
+                base_query,
+                base_query + " guide",
+                base_query + " tips",
+                "best " + base_query
+            ]
             
         # D: PyTrends
         if len(filtered) < 4:
             scores = [(c, 60 - i*10) for i, c in enumerate(filtered)]
+            # ensure we have at least 4 by adding synthetic ones if needed
+            while len(scores) < 4:
+                extra = f"{base_query} part {len(scores)}"
+                scores.append((extra, 10))
         else:
             scores = score_candidates_pytrends(filtered)
             

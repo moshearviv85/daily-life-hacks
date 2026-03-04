@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 # ==========================================
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY", "")
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-3.1-pro-preview"
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "pipeline-data")

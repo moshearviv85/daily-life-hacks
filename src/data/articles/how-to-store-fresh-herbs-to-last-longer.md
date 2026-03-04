@@ -1,8 +1,8 @@
 ---
-title: "Stop the Slime: How to Store Fresh Herbs to Last Longer"
+title: "How to Store Fresh Herbs for Long Time"
 excerpt: "Tired of throwing away slimy parsley? Learn the exact method for how to store fresh herbs to last longer and save serious money on your grocery bill."
 category: "tips"
-tags: ["FoodStorage", "KitchenHacks", "FreshHerbs", "MoneySaving", "ZeroWaste"]
+tags: ["HowToStoreFreshHerbsForLongTime", "HowToStoreHerbsToKeepThemFresh", "HowToStoreFreshHerbsSoTheyLastLonger", "HowToMakeFreshHerbsLastLonger"]
 image: "/images/how-to-store-fresh-herbs-to-last-longer-main.jpg"
 imageAlt: "How to Store Fresh Herbs to Last Longer - fresh cilantro standing upright in a glass jar of water"
 date: 2026-02-18
@@ -11,6 +11,17 @@ featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
+faq:
+  - question: "How do you store fresh herbs so they last longer in the fridge?"
+    answer: "To make your fresh herbs last longer, treat them like a bouquet of flowers. Snip the stem ends, place them in a glass with an inch of water, and loosely cover the leafy tops with a plastic bag. This method works perfectly for soft herbs like parsley, cilantro, and mint."
+  - question: "Can I freeze fresh herbs to keep them fresh for a long time?"
+    answer: "Yes, freezing is a fantastic way to store fresh herbs for a long time. You can chop them up, place them in an ice cube tray, and cover them with olive oil or water before freezing. Once they're frozen solid, just pop the cubes into a freezer bag for easy cooking later."
+  - question: "How should I store woody herbs like rosemary and thyme?"
+    answer: "Woody herbs don't need a water glass to stay fresh in the fridge. Instead, wrap them loosely in a slightly damp paper towel and place them inside a resealable plastic bag or airtight container. Store them in your fridge's crisper drawer to keep them vibrant for a few weeks."
+  - question: "Why do my fresh herbs get slimy in the fridge, and how can I stop it?"
+    answer: "Herbs usually get slimy because of excess moisture and a lack of proper airflow. To prevent this, make sure they're completely dry before you put them away. Wrapping them in a dry paper towel inside their storage container helps absorb extra dampness so they don't spoil quickly."
+  - question: "Is it better to wash fresh herbs before storing them?"
+    answer: "It's generally best to wait and wash your herbs right before you plan to use them. Washing them beforehand introduces extra moisture, which can cause them to rot or wilt faster in the fridge. If you really want to wash them early, use a salad spinner to ensure they're thoroughly dried first."
 ---
 
 I used to just buy a bunch of cilantro, toss it directly into the crisper drawer in its little plastic produce bag, and then act completely shocked when it turned into a puddle of green slime three days later. Honestly, I must have thrown away hundreds of dollars in ruined herbs before I finally figured out the right way to handle them. 

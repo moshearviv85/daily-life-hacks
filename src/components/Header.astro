@@ -78,13 +78,15 @@ const currentPath = Astro.url.pathname;
       <!-- Search bar - hidden on very small mobile -->
       <div class="relative hidden sm:flex items-center gap-1">
         <div class="relative">
-          <span
-            class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
+          <button
+            class="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer z-10"
             style="color: var(--muted-color);"
+            onclick="const el = document.getElementById('desktop-search'); if(el.value.trim()){ window.location.href='/search?q=' + encodeURIComponent(el.value.trim()); }"
+            aria-label="Search"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
+              class="h-4 w-4 hover:text-[#F29B30] transition-colors"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -95,7 +97,7 @@ const currentPath = Astro.url.pathname;
                 stroke-width="2"
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
-          </span>
+          </button>
           <input
             type="text"
             id="desktop-search"
@@ -184,13 +186,15 @@ const currentPath = Astro.url.pathname;
   >
     <!-- Mobile search -->
     <div class="relative mb-3">
-      <span
-        class="absolute left-3 top-1/2 -translate-y-1/2"
+      <button
+        class="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer z-10"
         style="color: var(--muted-color);"
+        onclick="const el = document.getElementById('mobile-search'); if(el.value.trim()){ window.location.href='/search?q=' + encodeURIComponent(el.value.trim()); }"
+        aria-label="Search"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4"
+          class="h-4 w-4 hover:text-[#F29B30] transition-colors"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -201,7 +205,7 @@ const currentPath = Astro.url.pathname;
             stroke-width="2"
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
         </svg>
-      </span>
+      </button>
       <input
         type="text"
         id="mobile-search"
@@ -246,14 +250,17 @@ const currentPath = Astro.url.pathname;
     }
 
     // ── Search functionality ──
+    /** @type {HTMLInputElement | null} */
     const desktopSearch = document.getElementById("desktop-search");
+    /** @type {HTMLInputElement | null} */
     const mobileSearch = document.getElementById("mobile-search");
     
+    /** @param {HTMLInputElement | null} inputEl */
     function attachSearchListener(inputEl) {
       if (inputEl) {
-        inputEl.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" && e.target.value.trim() !== "") {
-            window.location.href = `/search?q=${encodeURIComponent(e.target.value.trim())}`;
+        inputEl.addEventListener("keydown", (/** @type {KeyboardEvent} */ e) => {
+          if (e.key === "Enter" && inputEl.value.trim() !== "") {
+            window.location.href = `/search?q=${encodeURIComponent(inputEl.value.trim())}`;
           }
         });
       }
