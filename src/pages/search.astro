@@ -90,141 +90,81 @@ const searchIndexData = allArticles.map((article) => ({
 <script>
   import lunr from "lunr";
 
-  function initSearch() {
-    const inputEL = document.getElementById("search-page-input");
-    const resultsContainer = document.getElementById("search-results");
-    const placeholder = document.getElementById("search-placeholder");
-    const dataEl = document.getElementById("search-data");
-    const topicBtns = document.querySelectorAll(".topic-btn");
+  const dataEl = document.getElementById("search-data");
+  const inputEL = document.getElementById("search-page-input") as HTMLInputElement;
+  const resultsContainer = document.getElementById("search-results");
 
-    if (!inputEL || !dataEl) return;
+  if (!dataEl || !inputEL || !resultsContainer) throw new Error("Search elements missing");
 
-    let searchIndexData = [];
-    try {
-      searchIndexData = JSON.parse(dataEl.dataset.index);
-    } catch (e) {
-      console.error("Failed to parse search data", e);
+  const searchIndexData: { title: string; slug: string; excerpt: string; image: string; category: string }[] =
+    JSON.parse(dataEl.dataset.index || "[]");
+
+  const idx = lunr(function () {
+    this.ref("slug");
+    this.field("title", { boost: 10 });
+    this.field("excerpt", { boost: 5 });
+    this.field("category");
+    searchIndexData.forEach(function (doc) { this.add(doc); }, this);
+  });
+
+  function renderResults(searchTerm: string) {
+    const term = searchTerm.trim();
+
+    if (term.length < 2) {
+      resultsContainer.innerHTML = `<div class="col-span-full text-center py-10"><p style="color: var(--muted-color);">Type above to start searching...</p></div>`;
       return;
     }
 
-    // 1. Build the index
-    const idx = lunr(function () {
-      this.ref("slug");
-      this.field("title", { boost: 10 });
-      this.field("excerpt", { boost: 5 });
-      this.field("category");
-
-      searchIndexData.forEach(function (doc) {
-        this.add(doc);
-      }, this);
-    });
-
-    // 2. Perform search logic
-    function performSearch(searchTerm) {
-      if (!searchTerm || searchTerm.trim().length < 2) {
-          resultsContainer.innerHTML = '';
-          resultsContainer.appendChild(placeholder);
-          placeholder.innerHTML = '<p style="color: var(--muted-color);">Type above to start searching...</p>';
-          return;
-      }
-
-      const cleanTerm = searchTerm.trim().split(/\s+/).join(" ");
-      // Search with lunr (fuzzy match on each word)
-      // If we have multiple words, lunr implicitly does OR, we adjust to make wildcards
-      let queryStr = cleanTerm.split(" ").map(word => `${word}*`).join(" ");
-      
-      let searchResults = [];
-      try {
-        searchResults = idx.search(queryStr);
-      } catch (e) {
-        // Fallback or exact match if user typed something that breaks lunr (like hyphens)
-        try {
-          searchResults = idx.search(cleanTerm);
-        } catch(err) {
-          searchResults = [];
-        }
-      }
-
-      if (searchResults.length === 0) {
-          resultsContainer.innerHTML = `<div class="col-span-full text-center py-10"><p style="color: var(--muted-color); font-size: 1.125rem;">No results found for "<b>${cleanTerm}</b>".</p></div>`;
-          return;
-      }
-
-      // Render results
-      resultsContainer.innerHTML = ''; // clear
-
-      searchResults.forEach((result) => {
-          const doc = searchIndexData.find((a) => a.slug === result.ref);
-          if (!doc) return;
-
-          const categoryBadge = doc.category === 'recipes' 
-            ? '<span class="px-2 py-0.5 mt-2 inline-block rounded text-xs font-semibold bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100">Recipe</span>'
-            : '<span class="px-2 py-0.5 mt-2 inline-block rounded text-xs font-semibold bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100">Nutrition</span>';
-
-          const cardHtml = `
-            <a href="/${doc.slug}" class="group flex flex-col md:flex-row rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border" style="background-color: var(--card-bg); border-color: var(--border-color);">
-              <div class="h-48 md:h-auto md:w-1/3 shrink-0 overflow-hidden relative">
-                <img src="${doc.image || '/images/default-thumbnail.jpg'}" alt="${doc.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              </div>
-              <div class="p-5 md:p-6 flex flex-col justify-center w-full">
-                <h3 class="text-xl font-bold mb-2 group-hover:text-[#F29B30] transition-colors line-clamp-2" style="color: var(--heading-color);">
-                  ${doc.title}
-                </h3>
-                <p class="text-sm line-clamp-2 mb-2" style="color: var(--muted-color);">
-                  ${doc.excerpt || ''}
-                </p>
-                <div>${categoryBadge}</div>
-              </div>
-            </a>
-          `;
-          
-          const tempDiv = document.createElement('div');
-          tempDiv.className = "col-span-full";
-          tempDiv.innerHTML = cardHtml;
-          resultsContainer.appendChild(tempDiv);
-      });
+    let results: lunr.Index.Result[] = [];
+    try {
+      results = idx.search(term.split(/\s+/).map(w => w + "*").join(" "));
+    } catch {
+      try { results = idx.search(term); } catch { results = []; }
     }
 
-    // Handle immediate search from header
-    const urlParams = new URLSearchParams(window.location.search);
-    const query = urlParams.get('q');
-    if (query) {
-      inputEL.value = query;
-      performSearch(query);
+    if (results.length === 0) {
+      resultsContainer.innerHTML = `<div class="col-span-full text-center py-10"><p style="color: var(--muted-color); font-size: 1.125rem;">No results found for "<b>${term}</b>".</p></div>`;
+      return;
     }
 
-    // Topic buttons listener
-    topicBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const topic = btn.dataset.topic;
-        inputEL.value = topic;
-        performSearch(topic);
-        updateUrlParams(topic);
-      });
-    });
-
-    // Handle live typing
-    inputEL.addEventListener("input", (e) => {
-      performSearch(e.target.value);
-      updateUrlParams(e.target.value);
-    });
-    
-    function updateUrlParams(val) {
-      const newUrl = new URL(window.location);
-      if (val) {
-          newUrl.searchParams.set("q", val);
-      } else {
-          newUrl.searchParams.delete("q");
-      }
-      window.history.replaceState({}, "", newUrl);
-    }
+    resultsContainer.innerHTML = results.map((r) => {
+      const doc = searchIndexData.find(a => a.slug === r.ref);
+      if (!doc) return "";
+      const badge = doc.category === "recipes"
+        ? `<span class="px-2 py-0.5 mt-2 inline-block rounded text-xs font-semibold bg-green-100 text-green-800">Recipe</span>`
+        : `<span class="px-2 py-0.5 mt-2 inline-block rounded text-xs font-semibold bg-blue-100 text-blue-800">Nutrition</span>`;
+      return `<div class="col-span-full">
+        <a href="/${doc.slug}" class="group flex flex-col md:flex-row rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border" style="background-color: var(--card-bg); border-color: var(--border-color);">
+          <div class="h-48 md:h-auto md:w-1/3 shrink-0 overflow-hidden">
+            <img src="${doc.image || '/logo.png'}" alt="${doc.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="p-5 md:p-6 flex flex-col justify-center">
+            <h3 class="text-xl font-bold mb-2 group-hover:text-[#F29B30] transition-colors line-clamp-2" style="color: var(--heading-color);">${doc.title}</h3>
+            <p class="text-sm line-clamp-2 mb-2" style="color: var(--muted-color);">${doc.excerpt || ""}</p>
+            ${badge}
+          </div>
+        </a>
+      </div>`;
+    }).join("");
   }
 
-  document.addEventListener("astro:page-load", initSearch);
-  // Also run on first load in case astro:page-load already fired
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initSearch);
-  } else {
-    initSearch();
+  function setQuery(val: string) {
+    inputEL.value = val;
+    renderResults(val);
+    const url = new URL(window.location.href);
+    val ? url.searchParams.set("q", val) : url.searchParams.delete("q");
+    window.history.replaceState({}, "", url);
   }
+
+  // Run search from URL param on load
+  const q = new URLSearchParams(window.location.search).get("q") || "";
+  if (q) setQuery(q);
+
+  // Live typing
+  inputEL.addEventListener("input", (e) => setQuery((e.target as HTMLInputElement).value));
+
+  // Topic buttons
+  document.querySelectorAll<HTMLButtonElement>(".topic-btn").forEach(btn => {
+    btn.addEventListener("click", () => setQuery(btn.dataset.topic || ""));
+  });
 </script>
