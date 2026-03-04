@@ -78,15 +78,13 @@ const currentPath = Astro.url.pathname;
       <!-- Search bar - hidden on very small mobile -->
       <div class="relative hidden sm:flex items-center gap-1">
         <div class="relative">
-          <button
-            class="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer z-10"
+          <span
+            class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
             style="color: var(--muted-color);"
-            onclick="const el = document.getElementById('desktop-search'); if(el.value.trim()){ window.location.href='/search?q=' + encodeURIComponent(el.value.trim()); }"
-            aria-label="Search"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 hover:text-[#F29B30] transition-colors"
+              class="h-4 w-4"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -97,12 +95,12 @@ const currentPath = Astro.url.pathname;
                 stroke-width="2"
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
-          </button>
+          </span>
           <input
             type="text"
             id="desktop-search"
             placeholder="Search articles..."
-            class="pl-9 pr-4 py-1.5 text-sm rounded-lg outline-none transition-all duration-200 w-44 focus:w-52"
+            class="pl-9 pr-4 py-1.5 text-sm rounded-lg outline-none w-48"
             style="background-color: var(--input-bg); color: var(--text-color); border: 1px solid var(--border-color);"
             onfocus="this.style.borderColor='#F29B30';"
             onblur="this.style.borderColor='var(--border-color)';"
@@ -186,15 +184,13 @@ const currentPath = Astro.url.pathname;
   >
     <!-- Mobile search -->
     <div class="relative mb-3">
-      <button
-        class="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer z-10"
+      <span
+        class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"
         style="color: var(--muted-color);"
-        onclick="const el = document.getElementById('mobile-search'); if(el.value.trim()){ window.location.href='/search?q=' + encodeURIComponent(el.value.trim()); }"
-        aria-label="Search"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4 hover:text-[#F29B30] transition-colors"
+          class="h-4 w-4"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -205,7 +201,7 @@ const currentPath = Astro.url.pathname;
             stroke-width="2"
             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
         </svg>
-      </button>
+      </span>
       <input
         type="text"
         id="mobile-search"

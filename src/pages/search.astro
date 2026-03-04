@@ -29,8 +29,9 @@ const searchIndexData = allArticles.map((article) => ({
 
     <!-- Quick Topics (Autocomplete suggestions) -->
     <div class="flex flex-wrap justify-center gap-2 mb-12">
-      {["Gut Health", "High Fiber", "Breakfast", "Meal Prep", "Avocado", "Detox", "Snacks"].map((topic) => (
+      {["Gut Health", "High Fiber", "Breakfast", "Meal Prep", "Avocado", "Smoothie", "Snacks", "Storage"].map((topic) => (
         <button
+          type="button"
           class="topic-btn px-4 py-1.5 rounded-full text-sm font-medium transition-colors border"
           style="background-color: var(--card-bg); color: var(--text-color); border-color: var(--border-color);"
           data-topic={topic}
@@ -89,7 +90,7 @@ const searchIndexData = allArticles.map((article) => ({
 <script>
   import lunr from "lunr";
 
-  document.addEventListener("astro:page-load", () => {
+  function initSearch() {
     const inputEL = document.getElementById("search-page-input");
     const resultsContainer = document.getElementById("search-results");
     const placeholder = document.getElementById("search-placeholder");
@@ -217,5 +218,13 @@ const searchIndexData = allArticles.map((article) => ({
       }
       window.history.replaceState({}, "", newUrl);
     }
-  });
+  }
+
+  document.addEventListener("astro:page-load", initSearch);
+  // Also run on first load in case astro:page-load already fired
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSearch);
+  } else {
+    initSearch();
+  }
 </script>
