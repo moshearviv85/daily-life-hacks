@@ -254,7 +254,7 @@ export async function onRequestPost(context) {
     };
 
     let providerResult;
-    if (env.KIT_API_KEY && env.KIT_FORM_ID) {
+    if (env.KIT_API_KEY) {
       providerResult = await subscribeWithKit(env, providerPayload);
     } else if (env.BEEHIIV_API_KEY) {
       providerResult = await subscribeWithBeehiiv(env, providerPayload);
