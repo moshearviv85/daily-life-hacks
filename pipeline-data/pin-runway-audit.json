@@ -1,0 +1,10 @@
+{
+  "rows_before": 153,
+  "rows_after": 146,
+  "rows_dropped": 7,
+  "router_changes": 0,
+  "dropped_reasons": {
+    "risky-weight-loss-language": 6,
+    "risky-destination": 1
+  }
+}

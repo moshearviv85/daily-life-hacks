@@ -114,13 +114,6 @@ const popupImages = allArticles
                                 href="/privacy"
                                 class="underline hover:text-[#F29B30]"
                                 >Privacy Policy</a
-                            > and
-                            <a
-                                href="https://www.beehiiv.com/privacy"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="underline hover:text-[#F29B30]"
-                                >beehiiv's Privacy Policy</a
                             >.
                         </span>
                     </label>
@@ -188,6 +181,48 @@ const popupImages = allArticles
         let descEl: HTMLElement | null;
         let tagEl: HTMLElement | null;
         let showTimeout: ReturnType<typeof setTimeout>;
+
+        interface SignupContext {
+            category?: string;
+            base_slug?: string;
+            variant_slug?: string;
+            email_segment?: string;
+        }
+
+        function getStoredSignupContext() {
+            try {
+                const raw = sessionStorage.getItem("newsletter_signup_context");
+                if (!raw) return {};
+
+                const parsed = JSON.parse(raw);
+                if (parsed.page && parsed.page !== window.location.pathname) {
+                    return {};
+                }
+
+                return {
+                    category: parsed.category || "",
+                    base_slug: parsed.base_slug || "",
+                    variant_slug: parsed.variant_slug || "",
+                    email_segment: parsed.email_segment || "",
+                };
+            } catch {
+                return {};
+            }
+        }
+
+        function redirectToThankYou(source: string, context: SignupContext) {
+            const params = new URLSearchParams({ source });
+            if (context.category) params.set("category", context.category);
+            if (context.email_segment) params.set("segment", context.email_segment);
+
+            try {
+                sessionStorage.removeItem("newsletter_signup_context");
+            } catch {
+                // Ignore storage cleanup failures.
+            }
+
+            window.location.href = `/thank-you?${params.toString()}`;
+        }
 
         function queryElements() {
             popup = document.getElementById("newsletter-popup");
@@ -300,6 +335,20 @@ const popupImages = allArticles
             submitBtn.innerText = "Subscribing...";
 
             try {
+                fetch("/api/event", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        event_type: "signup_started",
+                        source: "popup",
+                        page: window.location.pathname,
+                        metadata: {
+                            location: "newsletter-popup",
+                        },
+                    }),
+                }).catch(() => {});
+
+                const signupContext = getStoredSignupContext();
                 const res = await fetch("/api/subscribe", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -307,12 +356,14 @@ const popupImages = allArticles
                         email: emailInput.value,
                         source: "popup",
                         page: window.location.pathname,
+                        ...signupContext,
                     }),
                 });
 
                 if (res.ok) {
                     form.classList.add("hidden");
                     successEl?.classList.remove("hidden");
+                    setTimeout(() => redirectToThankYou("popup", signupContext), 250);
                 } else {
                     submitBtn.innerText = "Try Again";
                     submitBtn.disabled = false;

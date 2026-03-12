@@ -42,15 +42,8 @@
         />
         <span class="text-xs leading-snug" style="color: var(--muted-color);">
           I agree to receive email newsletters and accept the
-          <a href="/privacy" class="underline hover:text-[#F29B30]"
-            >Privacy Policy</a
-          > and
-          <a
-            href="https://www.beehiiv.com/privacy"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="underline hover:text-[#F29B30]">beehiiv's Privacy Policy</a
-          >. You can unsubscribe at any time.
+          <a href="/privacy" class="underline hover:text-[#F29B30]">Privacy Policy</a>.
+          You can unsubscribe at any time.
         </span>
       </label>
       <button
@@ -112,6 +105,48 @@
 </section>
 
 <script>
+  interface SignupContext {
+    category?: string;
+    base_slug?: string;
+    variant_slug?: string;
+    email_segment?: string;
+  }
+
+  function getStoredSignupContext() {
+    try {
+      const raw = sessionStorage.getItem("newsletter_signup_context");
+      if (!raw) return {};
+
+      const parsed = JSON.parse(raw);
+      if (parsed.page && parsed.page !== window.location.pathname) {
+        return {};
+      }
+
+      return {
+        category: parsed.category || "",
+        base_slug: parsed.base_slug || "",
+        variant_slug: parsed.variant_slug || "",
+        email_segment: parsed.email_segment || "",
+      };
+    } catch {
+      return {};
+    }
+  }
+
+  function redirectToThankYou(source: string, context: SignupContext) {
+    const params = new URLSearchParams({ source });
+    if (context.category) params.set("category", context.category);
+    if (context.email_segment) params.set("segment", context.email_segment);
+
+    try {
+      sessionStorage.removeItem("newsletter_signup_context");
+    } catch {
+      // Ignore storage cleanup failures.
+    }
+
+    window.location.href = `/thank-you?${params.toString()}`;
+  }
+
   function setupFooterForm() {
     const form = document.getElementById("footer-newsletter-form");
     const emailInput = document.getElementById(
@@ -132,6 +167,20 @@
       submitBtn.innerText = "Subscribing...";
 
       try {
+        fetch("/api/event", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            event_type: "signup_started",
+            source: "footer",
+            page: window.location.pathname,
+            metadata: {
+              location: "footer-newsletter",
+            },
+          }),
+        }).catch(() => {});
+
+        const signupContext = getStoredSignupContext();
         const res = await fetch("/api/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -139,12 +188,14 @@
             email: emailInput.value,
             source: "footer",
             page: window.location.pathname,
+            ...signupContext,
           }),
         });
 
         if (res.ok) {
           form.classList.add("hidden");
           successEl?.classList.remove("hidden");
+          setTimeout(() => redirectToThankYou("footer", signupContext), 250);
         } else {
           submitBtn.innerText = "Try Again";
           submitBtn.disabled = false;

@@ -1,0 +1,441 @@
+{
+  "summary": {
+    "articles": 43,
+    "variants": 172,
+    "publish_ready_variants": 150,
+    "blocked_variants": 22,
+    "final_csv_rows": 146,
+    "risky_scheduled_rows": 0
+  },
+  "issues": [
+    {
+      "type": "article-risk",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "message": "Article marked high legal risk."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v1",
+      "blocked_reasons": [
+        "risky-medical-angle"
+      ]
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v1",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v1",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v2",
+      "blocked_reasons": [
+        "risky-medical-angle"
+      ]
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v2",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v2",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v3",
+      "blocked_reasons": [
+        "risky-medical-angle"
+      ]
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v3",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v3",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v4",
+      "blocked_reasons": [
+        "risky-medical-angle"
+      ]
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v4",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "high-fiber-meals-for-constipation-relief",
+      "variant_id": "v4",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "article-risk",
+      "base_slug": "high-protein-high-fiber-meals-for-weight-loss",
+      "message": "Article marked high legal risk."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "high-protein-high-fiber-meals-for-weight-loss",
+      "variant_id": "v2",
+      "blocked_reasons": [
+        "risky-weight-loss-language"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "high-protein-high-fiber-meals-for-weight-loss",
+      "variant_id": "v2",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "high-protein-high-fiber-meals-for-weight-loss",
+      "variant_id": "v3",
+      "blocked_reasons": [
+        "risky-weight-loss-language"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "high-protein-high-fiber-meals-for-weight-loss",
+      "variant_id": "v3",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "article-risk",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "message": "Article marked high legal risk."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v1",
+      "blocked_reasons": [
+        "risky-medical-angle"
+      ]
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v1",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v1",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v2",
+      "blocked_reasons": [
+        "risky-medical-angle"
+      ]
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v2",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v2",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v3",
+      "blocked_reasons": [
+        "risky-medical-angle"
+      ]
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v3",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v3",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v4",
+      "blocked_reasons": [
+        "risky-medical-angle"
+      ]
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v4",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "prune-juice-alternatives-for-constipation",
+      "variant_id": "v4",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "freezer-meal-prep-ideas-for-beginners",
+      "variant_id": "v2",
+      "blocked_reasons": [
+        "risky-kids-angle"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "freezer-meal-prep-ideas-for-beginners",
+      "variant_id": "v2",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "freezer-meal-prep-ideas-for-beginners",
+      "variant_id": "v3",
+      "blocked_reasons": [
+        "risky-kids-angle"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "freezer-meal-prep-ideas-for-beginners",
+      "variant_id": "v3",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "how-to-read-nutrition-labels-for-beginners",
+      "variant_id": "v2",
+      "blocked_reasons": [
+        "risky-medical-angle"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "how-to-read-nutrition-labels-for-beginners",
+      "variant_id": "v2",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "how-to-read-nutrition-labels-for-beginners",
+      "variant_id": "v4",
+      "blocked_reasons": [
+        "risky-weight-loss-language"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "how-to-read-nutrition-labels-for-beginners",
+      "variant_id": "v4",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
+      "variant_id": "v1",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
+      "variant_id": "v1",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
+      "variant_id": "v2",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
+      "variant_id": "v2",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
+      "variant_id": "v3",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
+      "variant_id": "v3",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "missing-description",
+      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
+      "variant_id": "v4",
+      "message": "Variant is missing description text."
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
+      "variant_id": "v4",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "article-risk",
+      "base_slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "message": "Article marked high legal risk."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "variant_id": "v1",
+      "blocked_reasons": [
+        "risky-weight-loss-language"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "variant_id": "v1",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "variant_id": "v2",
+      "blocked_reasons": [
+        "risky-weight-loss-language"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "variant_id": "v2",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "variant_id": "v3",
+      "blocked_reasons": [
+        "risky-weight-loss-language"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "variant_id": "v3",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "variant_id": "v4",
+      "blocked_reasons": [
+        "risky-weight-loss-language"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "variant_id": "v4",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "article-risk",
+      "base_slug": "high-fiber-smoothies-for-kids-picky-eaters",
+      "message": "Article marked high legal risk."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "high-fiber-smoothies-for-kids-picky-eaters",
+      "variant_id": "v1",
+      "blocked_reasons": [
+        "risky-kids-angle"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "high-fiber-smoothies-for-kids-picky-eaters",
+      "variant_id": "v1",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "high-fiber-smoothies-for-kids-picky-eaters",
+      "variant_id": "v2",
+      "blocked_reasons": [
+        "risky-kids-angle"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "high-fiber-smoothies-for-kids-picky-eaters",
+      "variant_id": "v2",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "high-fiber-smoothies-for-kids-picky-eaters",
+      "variant_id": "v3",
+      "blocked_reasons": [
+        "risky-kids-angle"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "high-fiber-smoothies-for-kids-picky-eaters",
+      "variant_id": "v3",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    },
+    {
+      "type": "variant-blocked",
+      "base_slug": "high-fiber-smoothies-for-kids-picky-eaters",
+      "variant_id": "v4",
+      "blocked_reasons": [
+        "risky-kids-angle"
+      ]
+    },
+    {
+      "type": "unscheduled-variant",
+      "base_slug": "high-fiber-smoothies-for-kids-picky-eaters",
+      "variant_id": "v4",
+      "message": "Variant exists in registry but is not scheduled in final Publer CSV."
+    }
+  ]
+}

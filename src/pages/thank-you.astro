@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const source = Astro.url.searchParams.get("source") || "newsletter";
+const category = Astro.url.searchParams.get("category") || "";
+const segment = Astro.url.searchParams.get("segment") || "";
+
+const title = "Thank You";
+const description = "Thanks for joining the Daily Life Hacks newsletter.";
+
+const nextLink =
+  category === "recipes"
+    ? "/recipes"
+    : category === "nutrition"
+      ? "/nutrition"
+      : category === "tips"
+        ? "/tips"
+        : "/";
+
+const nextLabel =
+  category === "recipes"
+    ? "Browse Recipes"
+    : category === "nutrition"
+      ? "Browse Nutrition Guides"
+      : category === "tips"
+        ? "Browse Kitchen Tips"
+        : "Back to Homepage";
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+
+  <main class="max-w-3xl mx-auto px-4 py-16">
+    <section
+      class="rounded-3xl p-8 md:p-12 text-center"
+      style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+    >
+      <div
+        class="inline-flex items-center justify-center w-14 h-14 rounded-full text-white mb-5"
+        style="background-color: #F29B30;"
+      >
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+
+      <p class="text-sm font-bold uppercase tracking-[0.2em] mb-3" style="color: #F29B30;">
+        You're In
+      </p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+        Thanks for joining the newsletter
+      </h1>
+      <p class="text-lg mb-6" style="color: var(--muted-color);">
+        Your signup came through from the {source}. Check your inbox for the welcome email,
+        and if it doesn't show up soon, take a quick look in Promotions or Spam.
+      </p>
+
+      {
+        segment && (
+          <p class="text-sm mb-6" style="color: var(--muted-color);">
+            We saved your interest in <strong style="color: var(--heading-color);">{segment.replace(/-/g, " ")}</strong>
+            so future emails can stay more relevant.
+          </p>
+        )
+      }
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a
+          href={nextLink}
+          class="inline-flex items-center justify-center rounded-xl px-6 py-3 font-bold text-white"
+          style="background-color: #F29B30;"
+        >
+          {nextLabel}
+        </a>
+        <a
+          href="/"
+          class="inline-flex items-center justify-center rounded-xl px-6 py-3 font-bold"
+          style="color: var(--heading-color); background-color: var(--input-bg); border: 1px solid var(--border-color);"
+        >
+          Read More Articles
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

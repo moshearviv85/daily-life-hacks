@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
+import { formatReleaseDate } from "../content/release";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -20,6 +21,13 @@ interface Props {
 
 const { article } = Astro.props;
 const { Content } = await render(article);
+const releaseDate = article.data.publishAt ?? article.data.date;
+const hasScheduledRelease = Boolean(article.data.publishAt);
+const releaseIso = article.data.publishAt?.toISOString();
+const formattedReleaseDate = article.data.publishAt
+  ? formatReleaseDate(article.data.publishAt)
+  : null;
+const publishedDate = releaseDate.toISOString();
 
 const isRecipe =
   article.data.category === "recipes" &&
@@ -64,8 +72,8 @@ const jsonLd = isRecipe
       name: article.data.title,
       description: article.data.excerpt,
       image: [imageUrl],
-      datePublished: article.data.date.toISOString(),
-      dateModified: article.data.date.toISOString(),
+      datePublished: publishedDate,
+      dateModified: publishedDate,
       prepTime: article.data.prepTime
         ? `PT${article.data.prepTime.replace(/\s*minutes?\s*/i, "M").replace(/\s*hours?\s*/i, "H")}`
         : undefined,
@@ -111,8 +119,8 @@ const jsonLd = isRecipe
       headline: article.data.title,
       description: article.data.excerpt,
       image: [imageUrl],
-      datePublished: article.data.date.toISOString(),
-      dateModified: article.data.date.toISOString(),
+      datePublished: publishedDate,
+      dateModified: publishedDate,
       author: {
         "@type": "Organization",
         name: "Daily Life Hacks",
@@ -150,7 +158,12 @@ if (article.data.faq && article.data.faq.length > 0) {
   jsonLd={allSchemas}
 >
   <Header />
-  <main class="max-w-3xl mx-auto px-4 py-10">
+  <main
+    class="max-w-3xl mx-auto px-4 py-10"
+    data-base-slug={article.id}
+    data-release-root={hasScheduledRelease ? "true" : "false"}
+    data-release-at={releaseIso}
+  >
     <!-- Mobile Back Button & Breadcrumb -->
     <nav class="mb-6 flex flex-col gap-4 relative z-10">
       <!-- Visual Back Button (Mobile Only) -->
@@ -194,6 +207,27 @@ if (article.data.faq && article.data.faq.length > 0) {
       </div>
     </nav>
 
+    {
+      hasScheduledRelease && (
+        <section
+          id="release-notice"
+          class="mb-8 rounded-2xl border p-5"
+          style="background-color: var(--card-bg); border-color: var(--border-color);"
+        >
+          <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #F29B30;">
+            Scheduled Release
+          </p>
+          <h2 class="text-2xl font-bold mb-2" style="color: var(--heading-color);">
+            This post unlocks on {formattedReleaseDate}
+          </h2>
+          <p class="text-sm leading-relaxed" style="color: var(--muted-color);">
+            The page is already prepared. It will become visible automatically on the release date.
+          </p>
+        </section>
+      )
+    }
+
+    <div id="release-content" style={hasScheduledRelease ? "display: none;" : undefined}>
     <!-- Article Header -->
     <header class="mb-8">
       <span
@@ -260,6 +294,56 @@ if (article.data.faq && article.data.faq.length > 0) {
         class="w-full aspect-video object-cover"
       />
     </div>
+
+    <section
+      id="variant-experience"
+      class="hidden mb-10 rounded-2xl border p-6"
+      style="background-color: var(--card-bg); border-color: var(--border-color);"
+    >
+      <p
+        id="variant-intent-label"
+        class="mb-2 text-xs font-bold uppercase tracking-widest"
+        style="color: #F29B30;"
+      ></p>
+      <h2
+        id="variant-title"
+        class="text-2xl font-bold mb-3"
+        style="color: var(--heading-color);"
+      ></h2>
+      <p
+        id="variant-intro"
+        class="text-base leading-relaxed mb-3"
+        style="color: var(--text-color);"
+      ></p>
+      <p
+        id="variant-description"
+        class="text-sm leading-relaxed mb-5"
+        style="color: var(--muted-color);"
+      ></p>
+      <div
+        class="rounded-xl p-4"
+        style="background-color: var(--input-bg); border: 1px solid var(--border-color);"
+      >
+        <p
+          id="variant-cta-headline"
+          class="text-lg font-bold mb-2"
+          style="color: var(--heading-color);"
+        ></p>
+        <p
+          id="variant-cta-copy"
+          class="text-sm leading-relaxed mb-4"
+          style="color: var(--muted-color);"
+        ></p>
+        <a
+          id="variant-cta-link"
+          href="#footer-newsletter-form"
+          class="inline-flex items-center rounded-lg px-4 py-2 font-bold text-white"
+          style="background-color: #F29B30;"
+        >
+          Join Free
+        </a>
+      </div>
+    </section>
 
     <!-- Recipe Card -->
     {
@@ -478,6 +562,120 @@ if (article.data.faq && article.data.faq.length > 0) {
       medical or nutritional advice. Always consult a qualified healthcare provider
       before making dietary changes.
     </div>
+    </div>
   </main>
   <Footer />
+
+  <script is:inline>
+    function setupReleaseGate() {
+      const main = document.querySelector("main[data-release-root='true']");
+      const releaseContent = document.getElementById("release-content");
+      const releaseNotice = document.getElementById("release-notice");
+      const releaseAt = main?.getAttribute("data-release-at");
+
+      if (!main || !releaseContent || !releaseAt) return;
+
+      if (Date.now() >= new Date(releaseAt).getTime()) {
+        releaseContent.style.display = "";
+        releaseNotice?.classList.add("hidden");
+      } else {
+        releaseContent.style.display = "none";
+        releaseNotice?.classList.remove("hidden");
+      }
+    }
+
+    async function setupVariantExperience() {
+      const container = document.getElementById("variant-experience");
+      const main = document.querySelector("main[data-base-slug]");
+      if (!container || !main) return;
+
+      const currentPath = window.location.pathname.replace(/^\/|\/$/g, "");
+      const baseSlug = main.getAttribute("data-base-slug");
+      if (!currentPath || !baseSlug || currentPath === baseSlug) return;
+
+      try {
+        const res = await fetch("/data/content-registry.json");
+        if (!res.ok) return;
+
+        const registry = await res.json();
+        const articleData = registry.articles?.[baseSlug];
+        if (!articleData?.variants) return;
+
+        const variant = Object.values(articleData.variants).find(
+          (item) => item.url_slug === currentPath,
+        );
+        if (!variant || variant.publish_ready === false) return;
+
+        const offer = registry.offers?.[articleData.article.offer_id];
+        document.getElementById("variant-intent-label").innerText =
+          variant.audience_angle.replace(/-/g, " ");
+        document.getElementById("variant-title").innerText = variant.title;
+        document.getElementById("variant-intro").innerText =
+          variant.intro_paragraph;
+        document.getElementById("variant-description").innerText =
+          variant.description || articleData.article.excerpt;
+        document.getElementById("variant-cta-headline").innerText =
+          offer?.cta_headline || variant.cta_variant || "Join the newsletter";
+        document.getElementById("variant-cta-copy").innerText =
+          offer?.cta_copy ||
+          "Get practical ideas, easy recipes, and better weekly content delivered by email.";
+        container.classList.remove("hidden");
+
+        fetch("/api/event", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            event_type: "variant_view",
+            page: window.location.pathname,
+            base_slug: baseSlug,
+            variant_slug: currentPath,
+            category: articleData.article.category,
+            cta_variant: variant.cta_variant,
+            email_segment: variant.email_segment,
+            metadata: {
+              board: variant.board,
+              search_intent: variant.search_intent,
+            },
+          }),
+        }).catch(() => {});
+
+        const ctaLink = document.getElementById("variant-cta-link");
+        ctaLink?.addEventListener("click", () => {
+          try {
+            sessionStorage.setItem(
+              "newsletter_signup_context",
+              JSON.stringify({
+                page: window.location.pathname,
+                base_slug: baseSlug,
+                variant_slug: currentPath,
+                category: articleData.article.category,
+                email_segment: variant.email_segment,
+              }),
+            );
+          } catch {
+            // Ignore storage failures and keep the CTA working.
+          }
+
+          fetch("/api/event", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              event_type: "variant_cta_click",
+              page: window.location.pathname,
+              base_slug: baseSlug,
+              variant_slug: currentPath,
+              category: articleData.article.category,
+              cta_variant: variant.cta_variant,
+              email_segment: variant.email_segment,
+            }),
+          }).catch(() => {});
+        });
+      } catch {
+        // Fail silently - variant experience is additive.
+      }
+    }
+
+    document.addEventListener("astro:page-load", setupReleaseGate);
+    document.addEventListener("astro:page-load", setupVariantExperience);
+  </script>
 </BaseLayout>
