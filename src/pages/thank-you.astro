@@ -34,80 +34,80 @@ const interestLabel = segment ? segment.replace(/-/g, " ") : "";
 <BaseLayout title={title} description={description}>
   <Header />
 
-  <main class="max-w-3xl mx-auto px-4 py-16">
-    <section
-      class="rounded-3xl p-8 md:p-12 text-center"
-      style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
-    >
-      <div
-        class="inline-flex items-center justify-center w-14 h-14 rounded-full text-white mb-5"
-        style="background-color: #F29B30;"
-      >
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+  <main class="max-w-4xl mx-auto px-4 py-16 md:py-24">
+    <section class="text-center mb-16">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full text-white mb-6" style="background-color: #F29B30; box-shadow: 0 4px 14px rgba(242, 155, 48, 0.4);">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
         </svg>
       </div>
 
-      <p class="text-sm font-bold uppercase tracking-[0.2em] mb-3" style="color: #F29B30;">
+      <p class="text-sm md:text-base font-bold uppercase tracking-[0.2em] mb-4" style="color: #F29B30;">
         You're In
       </p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
-        You're officially on the list
+      <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight" style="color: var(--heading-color); line-height: 1.1;">
+        Welcome to the club.
       </h1>
-      <p class="text-lg mb-6" style="color: var(--muted-color);">
-        Thanks for signing up through the {source}. We'll send simple recipes, practical
-        nutrition ideas, and smart kitchen tips that are actually useful in real life.
+      <p class="text-xl md:text-2xl font-medium max-w-2xl mx-auto" style="color: var(--muted-color); line-height: 1.5;">
+        Thanks for joining us. We'll send simple recipes, practical
+        nutrition ideas, and smart kitchen tips that actually make a difference.
       </p>
+      
+      {segment && (
+        <p class="text-sm md:text-base font-medium mt-6 inline-block px-4 py-2 rounded-full" style="background-color: var(--input-bg); color: var(--text-color); border: 1px solid var(--border-color);">
+          We saved your interest in <strong style="color: var(--heading-color);">{interestLabel}</strong>.
+        </p>
+      )}
+    </section>
 
-      {
-        segment && (
-          <p class="text-sm mb-6" style="color: var(--muted-color);">
-            We saved your interest in <strong style="color: var(--heading-color);">{interestLabel}</strong>
-            so future emails can feel a little more relevant and a lot less random.
-          </p>
-        )
-      }
-
-      <div
-        class="grid gap-3 md:grid-cols-3 text-left mb-8"
-      >
-        <div class="rounded-2xl p-4" style="background-color: var(--input-bg); border: 1px solid var(--border-color);">
-          <p class="text-sm font-bold mb-2" style="color: var(--heading-color);">Easy ideas</p>
-          <p class="text-sm" style="color: var(--muted-color);">
-            The kind of recipes and kitchen wins you can actually use on a busy week.
+    <!-- The Game Plan Section -->
+    <section class="rounded-[2rem] p-8 md:p-12 mb-12 shadow-sm" style="background-color: var(--card-bg); border: 1px solid var(--border-color);">
+      <h2 class="text-2xl md:text-3xl font-black mb-8" style="color: var(--heading-color); letter-spacing: -0.02em;">Here is exactly what happens next:</h2>
+      
+      <div class="grid gap-8 md:grid-cols-3">
+        <div>
+          <div class="text-4xl mb-4 font-black" style="color: #F29B30;">1</div>
+          <h3 class="text-xl font-bold mb-2" style="color: var(--heading-color);">One email a day</h3>
+          <p class="text-base" style="color: var(--muted-color); line-height: 1.6;">
+            A brand new recipe, nutrition guide, or tip sent directly to you before it hits the site.
           </p>
         </div>
-        <div class="rounded-2xl p-4" style="background-color: var(--input-bg); border: 1px solid var(--border-color);">
-          <p class="text-sm font-bold mb-2" style="color: var(--heading-color);">No fluff</p>
-          <p class="text-sm" style="color: var(--muted-color);">
-            Clear, practical content without turning every meal into a complicated project.
+        <div>
+          <div class="text-4xl mb-4 font-black" style="color: #10b981;">2</div>
+          <h3 class="text-xl font-bold mb-2" style="color: var(--heading-color);">Exclusive stuff</h3>
+          <p class="text-base" style="color: var(--muted-color); line-height: 1.6;">
+            Subscriber-only content, like our weekly meal prep systems and shortcut guides.
           </p>
         </div>
-        <div class="rounded-2xl p-4" style="background-color: var(--input-bg); border: 1px solid var(--border-color);">
-          <p class="text-sm font-bold mb-2" style="color: var(--heading-color);">Good place to start</p>
-          <p class="text-sm" style="color: var(--muted-color);">
-            While you're here, jump into the section that matches what brought you in.
+        <div>
+          <div class="text-4xl mb-4 font-black" style="color: #ec4899;">3</div>
+          <h3 class="text-xl font-bold mb-2" style="color: var(--heading-color);">Zero spam</h3>
+          <p class="text-base" style="color: var(--muted-color); line-height: 1.6;">
+            We hate it. If you ever get bored, unsubscribe. We'll cry a little, but we'll get it.
           </p>
         </div>
-      </div>
-
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a
-          href={nextLink}
-          class="inline-flex items-center justify-center rounded-xl px-6 py-3 font-bold text-white"
-          style="background-color: #F29B30;"
-        >
-          {nextLabel}
-        </a>
-        <a
-          href="/"
-          class="inline-flex items-center justify-center rounded-xl px-6 py-3 font-bold"
-          style="color: var(--heading-color); background-color: var(--input-bg); border: 1px solid var(--border-color);"
-        >
-          Keep Reading
-        </a>
       </div>
     </section>
+
+    <!-- Actions -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a
+        href={nextLink}
+        class="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-bold text-white transition-transform hover:-translate-y-1 w-full sm:w-auto"
+        style="background-color: #F29B30; box-shadow: 0 4px 14px rgba(242, 155, 48, 0.3);"
+      >
+        {nextLabel}
+      </a>
+      <a
+        href="/"
+        class="inline-flex items-center justify-center rounded-xl px-8 py-4 text-lg font-bold transition-colors w-full sm:w-auto"
+        style="color: var(--heading-color); background-color: transparent; border: 2px solid var(--border-color);"
+        onmouseover="this.style.backgroundColor='var(--input-bg)'"
+        onmouseout="this.style.backgroundColor='transparent'"
+      >
+        Back to Homepage
+      </a>
+    </div>
   </main>
 
   <Footer />
