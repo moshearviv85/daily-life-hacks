@@ -1,5 +1,5 @@
 const SITE_URL = "https://www.daily-life-hacks.com";
-const DEFAULT_KIT_FORM_ID = 9195643;
+const DEFAULT_KIT_FORM_ID = 9202679;
 const DEFAULT_KIT_TAG_IDS = {
   recipes: 17453985,
   nutrition: 17453986,
