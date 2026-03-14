@@ -5,7 +5,13 @@ export async function onRequestGet(context) {
 
   // Simple auth - set STATS_KEY in Cloudflare env vars
   if (!env.STATS_KEY || key !== env.STATS_KEY) {
-    return new Response("Unauthorized", { status: 401 });
+    return new Response(
+      JSON.stringify({
+        error: "Unauthorized",
+        hint: "Set STATS_KEY in Cloudflare Pages → Settings → Environment variables (Production), then redeploy. Call with ?key=YOUR_STATS_KEY",
+      }),
+      { status: 401, headers: { "Content-Type": "application/json" } }
+    );
   }
 
   if (!env.DB) {
