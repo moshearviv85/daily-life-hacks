@@ -1,0 +1,38 @@
+{
+  "recipes-breakfast": {
+    "category": "recipes",
+    "trigger_terms": ["breakfast", "smoothie", "oat", "chia", "parfait"],
+    "primary_offer": "recipe-pack",
+    "welcome_sequence": "recipe-weekly"
+  },
+  "recipes-main": {
+    "category": "recipes",
+    "trigger_terms": ["dinner", "meal", "recipe", "soup", "salad"],
+    "primary_offer": "recipe-pack",
+    "welcome_sequence": "recipe-weekly"
+  },
+  "nutrition-foundations": {
+    "category": "nutrition",
+    "trigger_terms": ["fiber", "foods", "guide", "nutrition"],
+    "primary_offer": "fiber-guide",
+    "welcome_sequence": "fiber-foundations"
+  },
+  "nutrition-comparisons": {
+    "category": "nutrition",
+    "trigger_terms": ["vs", "comparison", "better", "what is"],
+    "primary_offer": "fiber-guide",
+    "welcome_sequence": "fiber-foundations"
+  },
+  "tips-storage": {
+    "category": "tips",
+    "trigger_terms": ["store", "freeze", "fresh", "mold", "browning"],
+    "primary_offer": "kitchen-checklist",
+    "welcome_sequence": "kitchen-systems"
+  },
+  "tips-systems": {
+    "category": "tips",
+    "trigger_terms": ["meal prep", "budget", "organize", "shopping", "waste"],
+    "primary_offer": "kitchen-checklist",
+    "welcome_sequence": "kitchen-systems"
+  }
+}

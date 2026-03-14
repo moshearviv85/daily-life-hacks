@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Daily Life Hacks</title>
+  </head>
+  <body style="margin:0; padding:0; background-color:#f9fafb; font-family:Arial, Helvetica, sans-serif; color:#1f2937;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#f9fafb; margin:0; padding:40px 0;">
+      <tr>
+        <td align="center">
+          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="max-width:600px; background-color:#ffffff; border-radius:16px; overflow:hidden; border: 1px solid #e5e7eb;">
+            <!-- Header with Logo -->
+            <tr>
+              <td align="center" style="padding:40px 32px 20px;">
+                <a href="https://www.daily-life-hacks.com" target="_blank">
+                  <img src="https://www.daily-life-hacks.com/logo.png" alt="Daily Life Hacks" width="240" style="display:block; border:0; max-width:100%; height:auto;" />
+                </a>
+              </td>
+            </tr>
+
+            <!-- Main Content -->
+            <tr>
+              <td style="padding:10px 40px 30px;">
+                <p style="margin:0 0 20px; font-size:17px; line-height:1.6; color:#374151;">
+                  Hi {{ subscriber.first_name | strip | default: 'there' }},
+                </p>
+                <p style="margin:0 0 20px; font-size:17px; line-height:1.6; color:#374151;">
+                  I'm really glad you're here.
+                </p>
+                <p style="margin:0 0 20px; font-size:17px; line-height:1.6; color:#374151;">
+                  We started this newsletter because eating healthy shouldn't feel like a homework assignment. No complicated ingredient lists, no guilt trips, and no lectures about eating kale seven times a day. Just real, practical food that happens to be good for you.
+                </p>
+                <p style="margin:0 0 24px; font-size:17px; line-height:1.6; color:#374151;">
+                  Here's what you can expect from us:
+                </p>
+
+                <!-- Feature Blocks -->
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-bottom:28px;">
+                  <tr>
+                    <td style="padding-bottom:16px;">
+                      <p style="margin:0 0 4px; font-size:16px; font-weight:700; color:#111827;">
+                        <span style="color:#F29B30; margin-right:6px;">●</span> Simple recipes
+                      </p>
+                      <p style="margin:0; font-size:16px; line-height:1.5; color:#4b5563; padding-left:20px;">
+                        Meals that don't turn into a whole project.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom:16px;">
+                      <p style="margin:0 0 4px; font-size:16px; font-weight:700; color:#111827;">
+                        <span style="color:#F29B30; margin-right:6px;">●</span> No fluff
+                      </p>
+                      <p style="margin:0; font-size:16px; line-height:1.5; color:#4b5563; padding-left:20px;">
+                        Clear nutrition guides without the hype.
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom:16px;">
+                      <p style="margin:0 0 4px; font-size:16px; font-weight:700; color:#111827;">
+                        <span style="color:#F29B30; margin-right:6px;">●</span> Kitchen shortcuts
+                      </p>
+                      <p style="margin:0; font-size:16px; line-height:1.5; color:#4b5563; padding-left:20px;">
+                        Tips for food storage and meal prep that actually save you time.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+
+                <p style="margin:0 0 28px; font-size:17px; line-height:1.6; color:#374151;">
+                  We want to help you break out of the weeknight dinner rut. Fresh ideas and a little inspiration make the kitchen a lot more manageable.
+                </p>
+
+                <!-- CTA Section -->
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#f9fafb; border:1px solid #e5e7eb; border-radius:12px; margin-bottom:28px;">
+                  <tr>
+                    <td align="center" style="padding:24px;">
+                      <p style="margin:0 0 20px; font-size:16px; font-weight:bold; color:#111827;">
+                        If you want a good place to start today, pick the section that matches what you need most right now.
+                      </p>
+                      <a href="https://www.daily-life-hacks.com/recipes?utm_source=kit&utm_medium=email&utm_campaign=welcome" style="display:inline-block; background-color:#F29B30; color:#ffffff; text-decoration:none; font-size:15px; font-weight:bold; padding:12px 20px; border-radius:8px; margin:0 4px 10px;">
+                        Browse Recipes
+                      </a>
+                      <a href="https://www.daily-life-hacks.com/nutrition?utm_source=kit&utm_medium=email&utm_campaign=welcome" style="display:inline-block; background-color:#F29B30; color:#ffffff; text-decoration:none; font-size:15px; font-weight:bold; padding:12px 20px; border-radius:8px; margin:0 4px 10px;">
+                        Explore Nutrition
+                      </a>
+                      <a href="https://www.daily-life-hacks.com/tips?utm_source=kit&utm_medium=email&utm_campaign=welcome" style="display:inline-block; background-color:#F29B30; color:#ffffff; text-decoration:none; font-size:15px; font-weight:bold; padding:12px 20px; border-radius:8px; margin:0 4px 10px;">
+                        See Kitchen Tips
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <p style="margin:0 0 10px; font-size:17px; line-height:1.6; color:#374151;">
+                  Talk soon,
+                </p>
+                <p style="margin:0; font-size:17px; font-weight:bold; color:#111827;">
+                  The Daily Life Hacks Team
+                </p>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td style="padding:24px 40px; background-color:#f9fafb; border-top:1px solid #e5e7eb; text-align:center;">
+                <p style="margin:0 0 8px; font-size:12px; line-height:1.5; color:#6b7280;">
+                  You're receiving this email because you signed up at Daily Life Hacks.
+                </p>
+                <p style="margin:0; font-size:12px; line-height:1.5; color:#6b7280;">
+                  <a href="https://www.daily-life-hacks.com/" style="color:#6b7280; text-decoration:underline;">Daily Life Hacks</a> · 
+                  <a href="https://www.daily-life-hacks.com/privacy" style="color:#6b7280; text-decoration:underline;">Privacy Policy</a> ·
+                  <a href="{{ unsubscribe_url }}" style="color:#6b7280; text-decoration:underline;">Unsubscribe</a>
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

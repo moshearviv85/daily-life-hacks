@@ -1,0 +1,26 @@
+{
+  "fiber-guide": {
+    "label": "Fiber Starter Guide",
+    "category_fit": ["nutrition"],
+    "cta_headline": "Get the fiber starter guide",
+    "cta_copy": "A practical quick-start guide with easy swaps, simple meal ideas, and beginner-friendly fiber habits.",
+    "delivery_type": "lead_magnet",
+    "email_sequence": "fiber-foundations"
+  },
+  "recipe-pack": {
+    "label": "High Fiber Recipe Pack",
+    "category_fit": ["recipes"],
+    "cta_headline": "Get the recipe pack",
+    "cta_copy": "A simple collection of easy, repeatable meals for busy weeks, built around high-fiber ingredients.",
+    "delivery_type": "lead_magnet",
+    "email_sequence": "recipe-weekly"
+  },
+  "kitchen-checklist": {
+    "label": "Kitchen Reset Checklist",
+    "category_fit": ["tips"],
+    "cta_headline": "Get the kitchen checklist",
+    "cta_copy": "A printable checklist for meal prep, food storage, and simple kitchen systems that save time and money.",
+    "delivery_type": "lead_magnet",
+    "email_sequence": "kitchen-systems"
+  }
+}

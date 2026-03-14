@@ -1,0 +1,12 @@
+---
+description: Keep AGENT-MEMORY.md updated with current decisions, priorities, blockers, and verified project state.
+alwaysApply: true
+---
+# Agent Memory Workflow
+
+- At the start of substantial work, read `AGENT-MEMORY.md` after reading any core project memory files.
+- Use `AGENT-MEMORY.md` as the current working memory for active priorities and recent decisions.
+- After major audits, scope changes, blocker discoveries, or user decisions, update `AGENT-MEMORY.md`.
+- Record verified facts, open risks, and current priorities clearly and concisely.
+- Do not let `AGENT-MEMORY.md` replace `CLAUDE.md`; it is the current working layer, not the full project history.
+- When a conflict appears, flag it and update memory after resolving it.

@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DLH Content Registry",
+  "type": "object",
+  "required": ["generated_at", "articles", "offers"],
+  "properties": {
+    "generated_at": {
+      "type": "string"
+    },
+    "offers": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["label", "cta_headline", "cta_copy", "delivery_type", "email_sequence"],
+        "properties": {
+          "label": { "type": "string" },
+          "category_fit": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "cta_headline": { "type": "string" },
+          "cta_copy": { "type": "string" },
+          "delivery_type": { "type": "string" },
+          "email_sequence": { "type": "string" }
+        }
+      }
+    },
+    "articles": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["article", "variants"],
+        "properties": {
+          "article": {
+            "type": "object",
+            "required": ["base_slug", "category", "canonical_url", "content_path", "image"],
+            "properties": {
+              "base_slug": { "type": "string" },
+              "category": { "type": "string" },
+              "canonical_url": { "type": "string" },
+              "content_path": { "type": "string" },
+              "image": { "type": "string" },
+              "image_alt": { "type": "string" },
+              "title": { "type": "string" },
+              "excerpt": { "type": "string" },
+              "status": { "type": "string" },
+              "legal_risk_level": { "type": "string" },
+              "offer_id": { "type": "string" }
+            }
+          },
+          "variants": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "variant_id",
+                "url_slug",
+                "title",
+                "description",
+                "intro_paragraph",
+                "search_intent",
+                "audience_angle",
+                "cta_variant",
+                "email_segment",
+                "board",
+                "pin_image",
+                "publish_ready"
+              ],
+              "properties": {
+                "variant_id": { "type": "string" },
+                "url_slug": { "type": "string" },
+                "title": { "type": "string" },
+                "description": { "type": "string" },
+                "intro_paragraph": { "type": "string" },
+                "search_intent": { "type": "string" },
+                "audience_angle": { "type": "string" },
+                "cta_variant": { "type": "string" },
+                "email_segment": { "type": "string" },
+                "board": { "type": "string" },
+                "pin_image": { "type": "string" },
+                "destination_url": { "type": "string" },
+                "scheduled_count": { "type": "integer" },
+                "publish_ready": { "type": "boolean" },
+                "blocked_reasons": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,3 +2,5 @@ requests
 Pillow
 pytrends
 python-dotenv
+openpyxl
+pyyaml

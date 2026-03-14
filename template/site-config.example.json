@@ -1,0 +1,26 @@
+{
+  "brand_name": "Daily Life Hacks",
+  "domain": "https://www.daily-life-hacks.com",
+  "content_categories": ["recipes", "nutrition", "tips"],
+  "board_taxonomy": [
+    "High Fiber Recipes",
+    "Gut Health & Nutrition Tips",
+    "Healthy Meal Prep & Kitchen Tips"
+  ],
+  "blacklist_terms": [
+    "cure",
+    "heal",
+    "treat",
+    "detox",
+    "cleanse",
+    "fat burning",
+    "cholesterol",
+    "toddlers",
+    "kid friendly"
+  ],
+  "default_offers": {
+    "recipes": "recipe-pack",
+    "nutrition": "fiber-guide",
+    "tips": "kitchen-checklist"
+  }
+}

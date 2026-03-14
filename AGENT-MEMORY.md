@@ -16,9 +16,26 @@
 - Target: secure 2 to 3 weeks of publishable runway for Publer bulk scheduling.
 - Publishing cadence confirmed by user: 5 pins per day.
 - A second active priority now exists: build an automatic daily content reveal layer for `nutrition`, `recipes`, and `tips`.
+- A third active priority now exists: get the live Kit signup flow working end-to-end and start the first welcome email system.
 - Runway target:
   - 14 days = 70 pins
   - 21 days = 105 pins
+
+## User Working Preferences
+- Communicate with the user in Hebrew.
+- The user wants the assistant to act as project manager, not just a code executor.
+- The user currently has very low bandwidth and low cognitive capacity because of intense real-life stress and physical work.
+- Keep asks minimal, explicit, and low-friction.
+- Prefer 1 to 2 concrete tasks over long option lists.
+- Default to realism and momentum over elegant architecture.
+- Avoid over-engineering and avoid speculative systems that are not immediately useful.
+- The user wants proactive management, parallel workstreams, and clear next actions.
+- When possible, operate in parallel across:
+  - infra / funnel
+  - email engine
+  - content engine
+- The user responds best to short, decisive guidance, not long abstract framing.
+- Preserve trust by being direct about what is verified, what is uncertain, and what is still blocked.
 
 ## Confirmed Operational Decisions
 - The final bulk publishing file is `pipeline-data/pins-publer-final.csv`.
@@ -68,6 +85,15 @@
 - Newsletter signup now redirects to `/thank-you` from `src/components/Newsletter.astro` and `src/components/NewsletterPopup.astro`.
 - Newsletter signup context now passes `category`, `base_slug`, `variant_slug`, and `email_segment` through `functions/api/subscribe.js`.
 - `functions/api/subscribe.js` now supports Kit-first signup handling with Beehiiv fallback if only Beehiiv credentials exist.
+- A production bug was found in the Kit routing condition:
+  - the code required both `KIT_API_KEY` and `KIT_FORM_ID`
+  - but the intended design was to allow `KIT_API_KEY` alone and fall back to the default form ID
+  - this was fixed in commit `2098906`
+- Cloudflare Pages deploy for commit `2098906` completed successfully.
+- The current production code should now:
+  - route signups through Kit when `KIT_API_KEY` is present
+  - redirect to `/thank-you`
+  - use refreshed signup success copy that does not promise an immediate welcome email
 - Kit API access is now verified.
 - Active Kit embed forms currently available:
   - `Creator Profile` = `9195643`
@@ -94,10 +120,20 @@
 - The final Publer runway was sanitized and rescheduled in `pipeline-data/pins-publer-final.csv`.
 - `scripts/reschedule-publer-final.py` now exists to re-date the live Publer CSV quickly.
 - `pipeline-data/pin-runway-audit.json` now records the latest cleanup results for the live runway file.
+- A first square Kit logo asset was generated at:
+  - `C:\Users\offic\.cursor\projects\c-Users-offic-Desktop-dlh-fresh\assets\kit-logo-square-800.png`
+
+## Verified Email State
+- Kit account setup exists and the API key works.
+- Custom fields and tags were created successfully through the Kit API.
+- No welcome email or visual automation is configured yet in Kit.
+- When the user tested signup before the production Kit routing fix, Kit showed `0 subscribers`.
+- The missing welcome email was not a sending bug by itself; it was also true that no welcome flow existed yet.
+- The thank-you page and signup success text were rewritten to stop promising an immediate inbox message.
 
 ## Verified Gaps
 - Search is not implemented in the live checked-in frontend.
-- Kit migration is prepared in code, but production still needs `KIT_API_KEY` in the deployment environment before it is switched live.
+- Kit migration is prepared in code and production now has `KIT_API_KEY`, but live end-to-end signup still needs to be re-tested after commit `2098906`.
 - The final live publishing file is still manually curated, but we now also have a code-generated output at `pipeline-data/pins-publer-final.generated.csv`.
 - The variant data model now exists in the registry, but the edge/router still does not perform HTML rewriting.
 - There is not yet enough truly new, image-ready content to auto-release one new `nutrition` + one new `recipe` + one new `tip` per day.
@@ -107,8 +143,32 @@
   - 0 unpublished ready nutrition posts
   - 1 unpublished draft nutrition post, but it is a hormone-balance topic and should be treated as risky
 - The 2 unpublished ready tips currently do not have matching web images in `public/images/`.
-- Publer import is still blocked on the user upgrading Publer and confirming import behavior.
-- Kit activation is now blocked only on production environment wiring and one live signup test.
+- Publer setup is operational and the user confirmed that imported pins are publishing on schedule.
+- Kit activation is now blocked on:
+  - one successful live signup test after commit `2098906`
+  - creation of the first welcome email / automation in Kit UI
+
+## Parallel Workstreams
+- `Infra / Funnel`
+  - Publer publishing is operational
+  - Cloudflare deploy issue was fixed
+  - Kit routing bug was fixed in `functions/api/subscribe.js`
+  - next check is live signup verification
+- `Email Engine`
+  - first-pass welcome email strategy has been drafted
+  - lean Kit automation architecture has been defined
+  - next step is to create one simple form-triggered welcome flow in Kit
+- `Content Engine`
+  - current sprint: 12 articles (4 recipes, 4 nutrition, 4 tips) defined in `pipeline-data/content-sprint-12.md`
+  - avoid over-concentration on fiber; avoid risky YMYL framing; match site tone (practical, no drama)
+
+## Current Content Sprint (12 articles)
+- **Source of truth:** `pipeline-data/content-sprint-12.md`
+- **Mix:** 4 recipes, 4 nutrition, 4 tips. No overlap with existing 43 articles.
+- **Recipes:** easy-one-pot-chicken-and-rice-dinner, healthy-turkey-meatballs-meal-prep, sheet-pan-salmon-and-vegetables-30-minutes, easy-black-bean-tacos-weeknight-dinner. Accessible, weeknight-friendly, not silly or overcomplicated.
+- **Nutrition:** how-much-protein-do-you-need-per-day, plant-based-protein-sources-complete-guide, healthy-fats-list-foods-to-eat-daily, best-breakfast-foods-for-sustained-energy. Real value; diversify away from fiber-heavy skew.
+- **Tips:** kitchen-tools-that-save-time-and-money, how-to-use-leftover-rice-creative-ideas, how-to-cook-dried-beans-from-scratch, how-to-season-cast-iron-skillet-properly. Practical, no duplicate of existing storage/meal-prep/organize content.
+- **Tone (all 12):** Site language (About page): practical, slightly cynical, no drama, no medical claims, no detox/cleanse, contractions, no em dashes/emojis. Recipes: realistic quantities and times. Writer: Gemini; format per `pipeline-data/gemini-article-instructions.md`.
 
 ## Publishing Recovery Sprint
 - First mission:
@@ -149,13 +209,12 @@
 - When priorities change, update this file before continuing execution.
 
 ## Next Likely Work Order
-1. Decide whether to adopt `pins-publer-final.generated.csv` as the next operational publishing file.
-2. Build the thank-you page and first lead magnet delivery flow.
-3. Switch from Beehiiv to Kit when forms, tags, and sequences are ready.
-4. Add deeper event capture for lead magnets and affiliate clicks.
-5. Continue cleanup on blocked variants and high-risk topics.
-6. After runway is secured, resume longer-term work:
-   - thank-you page
-   - Kit migration
-   - lead magnet
-   - data unification
+1. Re-test live signup from production and confirm that a subscriber appears in Kit.
+2. Build one lean Kit welcome flow:
+   - one trigger on form `9195643`
+   - one universal welcome email
+   - optional branching by existing segment/category tags
+3. Confirm the refreshed `/thank-you` page is live and feels on-brand.
+4. Keep monitoring Publer until at least one live pin confirms board placement and normal publish flow.
+5. Execute the 12-article content sprint (drafts → edit → approve → images → publish); track in `pipeline-data/content-sprint-12.md`.
+6. Continue cleanup on blocked variants and high-risk topics.

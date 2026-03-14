@@ -1,0 +1,32 @@
+{
+  "principles": [
+    "Value before pitch",
+    "No medical claims",
+    "No aggressive selling above the fold",
+    "Affiliate offers must feel native to the article"
+  ],
+  "pillars": {
+    "recipes": [
+      "meal prep containers",
+      "sheet pans",
+      "blenders",
+      "pantry staples"
+    ],
+    "nutrition": [
+      "printable guides",
+      "food journals",
+      "non-medical educational products"
+    ],
+    "tips": [
+      "organizers",
+      "storage containers",
+      "kitchen tools",
+      "budget planning printables"
+    ]
+  },
+  "placement_rules": {
+    "recipes": "Introduce offers after the first useful section or inside a later meal-prep section.",
+    "nutrition": "Use soft offers after authority-building content, not in the first screen.",
+    "tips": "Offers can appear earlier if they solve the exact operational problem in the article."
+  }
+}
