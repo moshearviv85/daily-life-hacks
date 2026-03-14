@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "About | Daily Life Hacks";
+const description = "Who's behind Daily Life Hacks. No drama, no miracle stories. Just practical food and a guy who's done with 14-step recipes.";
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 py-12 md:py-16">
+    <h1 class="text-4xl md:text-5xl font-bold mb-8" style="color: var(--heading-color);">
+      About Daily Life Hacks
+    </h1>
+
+    <div class="article-content space-y-6 text-lg" style="color: var(--text-color); line-height: 1.7;">
+      <p>
+        Hi, I'm David Miller.
+      </p>
+      <p>
+        If you're looking for a dramatic story about how I discovered myself through quinoa, this probably isn't the site for you.
+      </p>
+      <p>
+        I started Daily Life Hacks for a much simpler reason: I was hungry, tired, and completely done with recipes that use three mixing bowls, two blenders, and one ingredient you can only find in a specific corner of one specific health store.
+      </p>
+      <p>
+        Cooking at home is already enough work. It doesn't need a plot twist.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">What you'll find here</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Simple recipes you can actually repeat on a Tuesday night, not just "save for later" on Pinterest and forget about.</li>
+        <li>Nutrition guides that talk like a normal person. No magic foods, no miracle claims. Just enough information so you can make a decent decision at the grocery store.</li>
+        <li>Kitchen tips that solve annoying problems: food waste, storage, "what do I do with this leftover rice", not how to plate avocado roses.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">What you won't find here</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>No 40-step recipes that expect you to "chill overnight" when you're already starving.</li>
+        <li>No perfect meal plans that assume you live inside a photoshoot.</li>
+        <li>No lectures. No guilt. No "if you really cared about your health you would…". Life is complicated enough.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">How I think about food</h2>
+      <p>
+        Food is allowed to be a bit messy, sometimes repetitive, and often very simple. If a recipe makes your life harder instead of easier, it probably doesn't belong in your regular rotation. I'd rather have five boring, reliable dinners that actually happen than twenty genius ideas that never leave the notes app.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Who this site is for</h2>
+      <p>
+        You're busy, but you still want to eat something that feels like real food. You don't want to track macros, points, or anything that requires a calculator. You like learning small, practical things that make the kitchen less annoying. If that sounds like you, you're in the right place.
+      </p>
+      <p>
+        Come hang out in the <a href="/recipes/1" class="underline" style="color: #F29B30;">recipes</a>, <a href="/nutrition/1" class="underline" style="color: #F29B30;">nutrition</a>, and <a href="/tips/1" class="underline" style="color: #F29B30;">tips</a> sections, or join the newsletter and get the new stuff before it even hits the site.
+      </p>
+
+      <p class="mt-10">Thanks for being here,</p>
+      <p class="font-semibold text-xl" style="color: var(--heading-color);">David Miller</p>
+      <p class="text-sm italic mt-2" style="color: var(--muted-color);">
+        ↪ Just kidding. I'm not nearly serious enough to actually sign this.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
