@@ -7,11 +7,13 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const key = url.searchParams.get("key");
 
-  if (!env.STATS_KEY || key !== env.STATS_KEY) {
+  const keyIsSet = typeof env.STATS_KEY === "string" && env.STATS_KEY.length > 0;
+  if (!keyIsSet || key !== env.STATS_KEY) {
     return new Response(
       JSON.stringify({
         error: "Unauthorized",
         hint: "Set STATS_KEY in Cloudflare Pages → Settings → Environment variables (Production), then redeploy. Call with ?key=YOUR_STATS_KEY",
+        debug: "STATS_KEY_reached_function: " + keyIsSet,
       }),
       { status: 401, headers: { "Content-Type": "application/json" } }
     );
