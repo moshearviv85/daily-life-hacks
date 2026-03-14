@@ -2,12 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import HeroSection from '../components/HeroSection.astro';
+import FreshToday from '../components/FreshToday.astro';
 import { Image } from 'astro:assets';
 
 import Newsletter from '../components/Newsletter.astro';
 import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { isReleased, getReleaseTimestamp } from '../content/release';
 
 const organizationSchema = {
   '@context': 'https://schema.org',
@@ -28,7 +30,22 @@ const organizationSchema = {
 
 const allArticles = await getCollection('articles');
 type Article = CollectionEntry<'articles'>;
-const sorted = allArticles.sort((a: Article, b: Article) => b.data.date.valueOf() - a.data.date.valueOf());
+const releasedArticles = allArticles.filter((article: Article) => isReleased(article));
+const sorted = releasedArticles.sort((a: Article, b: Article) => b.data.date.valueOf() - a.data.date.valueOf());
+const releaseFeed = allArticles
+  .map((article: Article) => ({
+    slug: article.id,
+    title: article.data.title,
+    excerpt: article.data.excerpt,
+    image: article.data.image,
+    imageAlt: article.data.imageAlt,
+    category: article.data.category,
+    date: article.data.date.toISOString(),
+    publishAt: article.data.publishAt?.toISOString(),
+    releaseTime: getReleaseTimestamp(article),
+  }))
+  .sort((a, b) => b.releaseTime - a.releaseTime)
+  .map(({ releaseTime, ...article }) => article);
 
 const featured  = sorted.find((a: Article) => a.data.featured) ?? sorted[0];
 // Take all articles except the featured one, show 5 in Must Read sidebar
@@ -79,6 +96,8 @@ const badgeColor = (cat: string) => cat === 'recipes' ? '#e07b10' : '#F29B30';
 
     <!-- Hero: Featured article + Must Read sidebar -->
     <HeroSection featured={featured} mustReads={mustReads} />
+
+    <FreshToday articles={releaseFeed} />
 
     <!-- 4×4 Grid: More to Read -->
     <section class="w-full max-w-6xl mx-auto px-4 py-8">
@@ -133,6 +152,8 @@ const badgeColor = (cat: string) => cat === 'recipes' ? '#e07b10' : '#F29B30';
   </main>
 
   <!-- Newsletter just above footer -->
-  <Newsletter />
+  <section id="newsletter">
+    <Newsletter />
+  </section>
   <Footer />
 </BaseLayout>
