@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    /* Reset & Typography */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f9fafb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .email-wrapper {
+      width: 100%;
+      background-color: #f9fafb;
+      padding: 20px 0;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    /* Header */
+    .header {
+      padding: 30px 20px 20px 20px;
+      text-align: center;
+      border-bottom: 3px solid #F29B30;
+    }
+    .header img {
+      max-width: 160px;
+      height: auto;
+    }
+
+    /* Main Content injected by Kit */
+    .content {
+      padding: 40px 20px;
+      font-size: 16px;
+      color: #374151;
+      line-height: 1.6;
+    }
+    
+    /* Global link styling inside content */
+    .content a {
+      color: #F29B30;
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 30px 20px;
+      text-align: center;
+      background-color: #f3f4f6;
+      color: #6b7280;
+      font-size: 13px;
+      line-height: 1.5;
+      border-top: 1px solid #e5e7eb;
+    }
+    .footer a {
+      color: #6b7280;
+      text-decoration: underline;
+    }
+    .address {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-wrapper">
+    <div class="email-container">
+      
+      <!-- Brand Header -->
+      <div class="header">
+        <a href="https://www.daily-life-hacks.com">
+          <img src="https://www.daily-life-hacks.com/logo.png" alt="Daily Life Hacks" />
+        </a>
+      </div>
+      
+      <!-- Kit dynamically injects the broadcast content here -->
+      <div class="content">
+        {{ message_content }}
+      </div>
+      
+      <!-- Legal Footer -->
+      <div class="footer">
+        <p>Daily Life Hacks &copy; {{ 'now' | date: '%Y' }}</p>
+        <p>You're receiving this because you signed up for the newsletter.</p>
+        <p>
+          No longer want to receive these emails? 
+          <a href="{{ unsubscribe_url }}">Unsubscribe</a>
+        </p>
+        <div class="address">
+          {{ address }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

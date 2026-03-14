@@ -3,6 +3,10 @@ import os
 import sys
 import datetime
 import random
+from dotenv import load_dotenv
+
+# Load env variables from .env file
+load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env'))
 
 # --- CONFIGURATION ---
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -13,7 +17,7 @@ SITE_URL = "https://www.daily-life-hacks.com"
 # You grab that Template ID. When you send a Broadcast via API, you send the `content` (HTML) 
 # and tell Kit which `template_id` to wrap it in.
 KIT_API_SECRET = os.environ.get('KIT_API_SECRET', '') 
-KIT_TEMPLATE_ID = "" # e.g., '1234567'
+KIT_TEMPLATE_ID = "5055804"
 
 # --- TONE-ACCURATE CONTENT BANKS (NO EM DASHES) ---
 INTROS = [
@@ -131,13 +135,14 @@ def schedule_broadcast_in_kit(subject, html_content, publish_date):
         "api_secret": KIT_API_SECRET,
         "content": html_content,
         "subject": subject,
-        "published_at": publish_date.strftime("%Y-%m-%dT10:00:00Z")
+        "email_layout_template": "daily_mail_v1"
     }
     
-    # If using a specific visual template in Kit, add it to payload
-    if KIT_TEMPLATE_ID:
-        payload["template_id"] = KIT_TEMPLATE_ID
-        
+    # In API v3, Kit requires a slightly specific format for send_at. 
+    # Usually ISO 8601 like 2026-03-16T10:00:00Z
+    # We will pass it exactly like that to schedule it.
+    payload["send_at"] = publish_date.strftime("%Y-%m-%dT10:00:00Z")
+    
     try:
         response = requests.post(url, json=payload)
         response.raise_for_status()
