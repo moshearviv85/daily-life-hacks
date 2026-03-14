@@ -1,0 +1,106 @@
+---
+interface ArticleSummary {
+  slug: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  imageAlt: string;
+  category: "nutrition" | "recipes" | "tips";
+  date: string;
+  publishAt?: string;
+}
+
+interface Props {
+  articles: ArticleSummary[];
+}
+
+const { articles } = Astro.props;
+const articlesJson = JSON.stringify(articles);
+---
+
+<section class="w-full max-w-6xl mx-auto px-4 py-4" data-fresh-today-root>
+  <div class="flex items-center gap-3 mb-4">
+    <h2 class="text-xl font-bold uppercase tracking-wide shrink-0" style="color: var(--heading-color);">Fresh Today</h2>
+    <div class="flex-1 h-px" style="background-color: var(--border-color);"></div>
+    <div class="w-10 h-0.5 shrink-0" style="background-color: #F29B30;"></div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="fresh-today-grid">
+    <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
+      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #F29B30;">Nutrition</p>
+      <p class="text-sm" style="color: var(--muted-color);">Loading latest nutrition post...</p>
+    </div>
+    <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
+      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #e07b10;">Recipes</p>
+      <p class="text-sm" style="color: var(--muted-color);">Loading latest recipe...</p>
+    </div>
+    <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
+      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #F29B30;">Tips</p>
+      <p class="text-sm" style="color: var(--muted-color);">Loading latest tip...</p>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ articlesJson }}>
+  const categories = ["nutrition", "recipes", "tips"];
+  const articles = JSON.parse(articlesJson);
+  const grid = document.getElementById("fresh-today-grid");
+
+  function formatDate(value) {
+    return new Date(value).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  }
+
+  function getReleaseTime(article) {
+    return new Date(article.publishAt || article.date).getTime();
+  }
+
+  function buildCard(category, article) {
+    const label = category === "recipes" ? "Recipe" : category === "tips" ? "Tip" : "Nutrition";
+
+    if (!article) {
+      return `
+        <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
+          <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: ${category === "recipes" ? "#e07b10" : "#F29B30"};">${label}</p>
+          <p class="text-sm" style="color: var(--muted-color);">No scheduled ${category} release yet.</p>
+        </div>
+      `;
+    }
+
+    return `
+      <a href="/${article.slug}" class="group block overflow-hidden rounded-xl border transition-shadow duration-300 hover:shadow-lg" style="border-color: var(--border-color); background-color: var(--card-bg);">
+        <div class="aspect-video overflow-hidden">
+          <img src="${article.image}" alt="${article.imageAlt}" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
+        </div>
+        <div class="p-4">
+          <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: ${category === "recipes" ? "#e07b10" : "#F29B30"};">${label}</p>
+          <h3 class="text-lg font-bold leading-snug mb-2" style="color: var(--heading-color);">${article.title}</h3>
+          <p class="text-sm leading-relaxed mb-3" style="color: var(--muted-color);">${article.excerpt}</p>
+          <p class="text-xs" style="color: var(--label-color);">Released ${formatDate(article.publishAt || article.date)}</p>
+        </div>
+      </a>
+    `;
+  }
+
+  function renderFreshToday() {
+    if (!grid) return;
+
+    const now = Date.now();
+    const cards = categories.map((category) => {
+      const latestReleased = articles
+        .filter((article) => article.category === category)
+        .filter((article) => getReleaseTime(article) <= now)
+        .sort((a, b) => getReleaseTime(b) - getReleaseTime(a))[0];
+
+      return buildCard(category, latestReleased);
+    });
+
+    grid.innerHTML = cards.join("");
+  }
+
+  renderFreshToday();
+  document.addEventListener("astro:page-load", renderFreshToday);
+</script>
