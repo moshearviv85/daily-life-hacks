@@ -173,6 +173,8 @@ const currentPath = Astro.url.pathname;
     if (menuBtn && menu) {
       menuBtn.addEventListener("click", () => {
         menu.classList.toggle("hidden");
+        const menuIsOpen = !menu.classList.contains("hidden");
+        document.body.classList.toggle("mobile-menu-open", menuIsOpen);
       });
     }
 

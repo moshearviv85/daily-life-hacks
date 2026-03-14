@@ -70,6 +70,11 @@ body {
   width: 100%;
 }
 
+/* Hide floating Pinterest button when mobile menu is open */
+body.mobile-menu-open [data-pin-log] {
+  display: none !important;
+}
+
 body {
   font-family: system-ui, -apple-system, sans-serif;
   background-color: var(--page-bg);
