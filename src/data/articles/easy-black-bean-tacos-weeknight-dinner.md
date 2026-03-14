@@ -31,11 +31,11 @@ steps:
   - "Spoon bean mixture into tortillas and add toppings as you like. Serve with lime wedges."
 faq:
   - question: "Why do I need to mash the black beans?"
-    - answer: "Mashing about half of the beans is the trick to a great easy black bean tacos weeknight dinner. It creates a thicker, creamier texture so the beans actually stay inside the tortilla instead of rolling out onto your plate."
+    answer: "Mashing about half of the beans is the trick to a great easy black bean tacos weeknight dinner. It creates a thicker, creamier texture so the beans actually stay inside the tortilla instead of rolling out onto your plate."
   - question: "Can I use dried beans instead of canned?"
-    - answer: "You can, but you'll need to cook them thoroughly first. Using canned beans is what keeps this recipe under 15 minutes for a fast and reliable dinner."
+    answer: "You can, but you'll need to cook them thoroughly first. Using canned beans is what keeps this recipe under 15 minutes for a fast and reliable dinner."
   - question: "Are these black bean tacos considered healthy?"
-    - answer: "Yes, black beans are a fantastic source of plant-based protein and dietary fiber, which may help support digestion and keep you feeling full without feeling heavy."
+    answer: "Yes, black beans are a fantastic source of plant-based protein and dietary fiber, which may help support digestion and keep you feeling full without feeling heavy."
 ---
 
 Tacos don't have to automatically mean browning ground beef or chopping a mountain of ingredients. Sometimes you just need food to be ready immediately. These easy black bean tacos are explicitly built for those tired weeknights. 

@@ -34,11 +34,11 @@ steps:
   - "Roast 10–12 minutes until salmon flakes easily with a fork and veggies are tender and lightly charred. Serve with lemon wedges."
 faq:
   - question: "Can I use frozen salmon for this sheet pan dinner?"
-    - answer: "It's best to thaw it first. Using a sheet pan salmon and vegetables 30 minutes recipe works perfectly when the fish is thawed. Frozen fillets will release too much water and throw off the roasting time for the vegetables."
+    answer: "It's best to thaw it first. Using a sheet pan salmon and vegetables 30 minutes recipe works perfectly when the fish is thawed. Frozen fillets will release too much water and throw off the roasting time for the vegetables."
   - question: "Do I have to use these specific vegetables?"
-    - answer: "Not at all. You can swap in asparagus, green beans, or bell peppers. Just avoid super dense root vegetables like potatoes unless you plan to give them a much longer head start in the oven."
+    answer: "Not at all. You can swap in asparagus, green beans, or bell peppers. Just avoid super dense root vegetables like potatoes unless you plan to give them a much longer head start in the oven."
   - question: "How do I know when the salmon is fully cooked?"
-    - answer: "The salmon is done when it easily flakes apart if you press a fork into the thickest part. If you have a meat thermometer, you're aiming for an internal temperature of 145°F."
+    answer: "The salmon is done when it easily flakes apart if you press a fork into the thickest part. If you have a meat thermometer, you're aiming for an internal temperature of 145°F."
 ---
 
 Sheet pan dinners are wildly popular for a very good reason. You put your entire meal on a single metal tray, slide it into a hot oven, and when the timer rings, you have dinner ready and exactly one pan to scrub. 
