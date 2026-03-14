@@ -21,24 +21,21 @@ KIT_TEMPLATE_ID = "5055804"
 
 # --- TONE-ACCURATE CONTENT BANKS (NO EM DASHES) ---
 INTROS = [
-    "Another day, another attempt to figure out what is for dinner without losing your mind.",
-    "I survived another trip to the grocery store. Here is what we are actually cooking this week.",
-    "You have to eat today. Might as well make it something that does not taste like cardboard.",
-    "Welcome to today's edition of 'what is in the fridge and how do I make it edible'.",
-    "Nobody wants to spend three hours cooking on a Tuesday. We fixed that.",
-    "Good morning. Let us talk about food that does not require a spiritual journey to prepare.",
-    "Cooking at home is already a project. We are keeping it extremely simple today.",
-    "We skipped the five page backstory today. Here is what you need to know."
+    "Hey, it is David.<br><br>You have to eat today anyway, so we might as well make it slightly less annoying. Below is what just went live on the site, and what is waiting for you tomorrow before it shows up for everyone else.",
+    "Hey, it is David from Daily Life Hacks.<br><br>Consider this your little nudge to figure out what is for dinner before you are already starving. I pulled together today’s post and tomorrow’s early access for you in one place.",
+    "Hi, it is David.<br><br>If your brain is already tired, the food situation does not need to be. Here is the new thing on the site right now, plus what is coming tomorrow if you want to be ahead of the crowd.",
+    "Hey, it is David checking in from the land of people who do not have three free hours to cook on a Tuesday.<br><br>Below you have today’s recipe and a sneak peek at tomorrow’s post so you can decide what actually fits your week.",
+    "Hi, it is David.<br><br>Think of this as the useful part of food content, without the five page backstory. One thing you can make today, and one thing waiting for you tomorrow.",
+    "Hey, it is David.<br><br>You do not need a spiritual journey, you just need something decent on a plate. Start with what is live now, bookmark what is coming tomorrow, and keep the whole thing low drama.",
+    "Hi from Daily Life Hacks.<br><br>No detoxes, no food guilt, just ideas that actually work on weeknights. I put today’s post and tomorrow’s early access together so you do not have to go digging.",
+    "Hey, it is David.<br><br>Let us keep dinner simple enough that you do not need a spreadsheet to pull it off. Here is what is up on the site, and what is waiting for you a day early."
 ]
 
 OUTROS = [
-    "If you made it this far, you have more patience than I do. See you tomorrow.",
-    "Go eat something good. Do not overthink it.",
-    "That is all for today. Try not to burn the garlic.",
-    "I am going to go clean the one pan I used for this. Talk tomorrow.",
-    "Keep it simple, keep it sane. Have a decent day.",
-    "Do not let anyone tell you that you need twenty ingredients for a good meal. Catch you tomorrow.",
-    "Save the complicated stuff for a restaurant. Go make this instead."
+    "That is enough food talk for today. I will send you the next round tomorrow.",
+    "Alright, that is what I have for you today. We will keep building this out one small, useful thing at a time.",
+    "That is it from me for now. Tomorrow’s post is already waiting for you up there.",
+    "Okay, I will let you get back to your day. The rest is between you and your stove."
 ]
 
 def load_json(path):
@@ -67,7 +64,7 @@ def build_email_content(today_art, tomorrow_art):
     t_img = today_art.get('image_web', '')
     t_img_url = f"{SITE_URL}{t_img}" if t_img.startswith('/') else f"{SITE_URL}/{t_img}"
 
-    # Tomorrow's data
+    # Tomorrow's data (shown first in the email)
     tom_url = f"{SITE_URL}/{tomorrow_art['slug']}?utm_source=kit_newsletter&utm_medium=email&utm_campaign=early_access"
     tom_title = clean_text(tomorrow_art.get('title', tomorrow_art.get('pin_title', 'Upcoming Article')))
     tom_teaser = clean_text(tomorrow_art.get('email_teaser', ''))
@@ -75,48 +72,63 @@ def build_email_content(today_art, tomorrow_art):
     tom_img_url = f"{SITE_URL}{tom_img}" if tom_img.startswith('/') else f"{SITE_URL}/{tom_img}"
 
     html = f"""
-<p style="font-size: 16px; color: #374151; line-height: 1.6; font-family: sans-serif;">{intro}</p>
+<p style="font-size: 17px; color: #374151; line-height: 1.7; font-family: sans-serif;">{intro}</p>
 
-<h2 style="margin-top: 24px; margin-bottom: 12px; font-family: sans-serif;">
-  <a href="{t_url}" style="color: #F29B30; text-decoration: none;">{t_title}</a>
+<!-- Tomorrow Section FIRST -->
+<p style="font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; font-family: sans-serif; margin: 28px 0 8px 0;">
+  Coming Tomorrow (Early Access):
+  </p>
+
+<h2 style="margin-top: 0; margin-bottom: 10px; font-size: 20px; font-family: sans-serif;">
+  <a href="{tom_url}" style="color: #111827; text-decoration: none;">{tom_title}</a>
 </h2>
 
-<a href="{t_url}" style="display: block; margin-bottom: 16px;">
-  <img src="{t_img_url}" alt="{t_title}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; display: block;">
-</a>
-
-<p style="font-size: 16px; color: #374151; line-height: 1.6; font-family: sans-serif; margin-bottom: 16px;">
-  {t_teaser}
-</p>
-
-<p style="margin-bottom: 40px; font-family: sans-serif;">
-  <a href="{t_url}" style="font-weight: bold; color: #F29B30; text-decoration: none; font-size: 16px;">Read the full post &rarr;</a>
-</p>
-
-<!-- Divider -->
-<hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 32px 0;">
-
-<!-- Tomorrow Section -->
-<p style="font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; font-family: sans-serif; margin-bottom: 8px;">
-  Coming Tomorrow (Early Access):
-</p>
-
-<h3 style="margin-top: 0; margin-bottom: 12px; font-size: 18px; font-family: sans-serif;">
-  <a href="{tom_url}" style="color: #111827; text-decoration: none;">{tom_title}</a>
-</h3>
-
 <a href="{tom_url}" style="display: block; margin-bottom: 12px;">
-  <img src="{tom_img_url}" alt="{tom_title}" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; display: block;">
+  <img src="{tom_img_url}" alt="{tom_title}" style="width: 100%; max-width: 480px; height: auto; border-radius: 8px; display: block; margin: 0 auto;">
 </a>
 
-<p style="font-size: 14px; color: #4b5563; line-height: 1.5; font-family: sans-serif; margin-bottom: 32px;">
+<p style="font-size: 15px; color: #4b5563; line-height: 1.6; font-family: sans-serif; margin-bottom: 16px;">
   {tom_teaser}
 </p>
 
-<!-- Divider -->
-<hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 32px 0;">
+<p style="margin-bottom: 28px; font-family: sans-serif;">
+  <a href="{tom_url}" style="font-weight: bold; color: #F29B30; text-decoration: none; font-size: 16px;">Read the full post &rarr;</a>
+</p>
 
-<p style="font-size: 16px; color: #374151; font-style: italic; font-family: sans-serif;">{outro}</p>
+<!-- Divider -->
+<hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 28px 0;">
+
+<p style="font-size: 16px; color: #6b7280; line-height: 1.6; font-family: sans-serif; margin: 0 0 12px 0;">
+  If you just want something to cook right now, this is what is already live on the site:
+</p>
+
+<!-- Today's post SECOND -->
+<p style="font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; font-family: sans-serif; margin-bottom: 8px;">
+  Live on the site today:
+</p>
+
+<h3 style="margin-top: 0; margin-bottom: 10px; font-size: 19px; font-family: sans-serif;">
+  <a href="{t_url}" style="color: #F29B30; text-decoration: none;">{t_title}</a>
+</h3>
+
+<a href="{t_url}" style="display: block; margin-bottom: 12px;">
+  <img src="{t_img_url}" alt="{t_title}" style="width: 100%; max-width: 480px; height: auto; border-radius: 8px; display: block; margin: 0 auto;">
+</a>
+
+<p style="font-size: 15px; color: #374151; line-height: 1.6; font-family: sans-serif; margin-bottom: 18px;">
+  {t_teaser}
+</p>
+
+<p style="margin-bottom: 24px; font-family: sans-serif;">
+  <a href="{t_url}" style="font-weight: bold; color: #F29B30; text-decoration: none; font-size: 16px;">Read the full post &rarr;</a>
+</p>
+
+<p style="font-size: 16px; color: #374151; line-height: 1.6; font-family: sans-serif; margin: 16px 0 4px 0;">
+  {outro}
+</p>
+<p style="font-size: 16px; color: #374151; font-family: sans-serif; margin-top: 0;">
+  David Miller
+</p>
 """
     return html
 
@@ -125,7 +137,7 @@ def schedule_broadcast_in_kit(subject, html_content, publish_date):
     Sends the broadcast to Kit via API.
     """
     if not KIT_API_SECRET:
-        print(f"[DRY RUN] Would schedule: '{subject}' for {publish_date.strftime('%Y-%m-%d 10:00')}")
+        print(f"[DRY RUN] Would schedule: '{subject}' for {publish_date.strftime('%Y-%m-%d 06:00')}")
         return
 
     import requests
@@ -139,9 +151,8 @@ def schedule_broadcast_in_kit(subject, html_content, publish_date):
     }
     
     # In API v3, Kit requires a slightly specific format for send_at. 
-    # Usually ISO 8601 like 2026-03-16T10:00:00Z
-    # We will pass it exactly like that to schedule it.
-    payload["send_at"] = publish_date.strftime("%Y-%m-%dT10:00:00Z")
+    # 04:00 UTC = 06:00 Israel (UTC+2). Adjust if your timezone differs.
+    payload["send_at"] = publish_date.strftime("%Y-%m-%dT04:00:00Z")
     
     try:
         response = requests.post(url, json=payload)
@@ -165,12 +176,21 @@ def main():
     # Start scheduling for tomorrow
     start_date = datetime.datetime.now() + datetime.timedelta(days=1)
     
-    print(f"Generating and scheduling {len(articles)-1} emails to Kit...")
+    total_emails = len(articles) - 1
+    # Allow limiting the number of emails via env var (for testing a single email)
+    max_emails_env = os.environ.get("KIT_MAX_EMAILS")
+    if max_emails_env:
+        try:
+            total_emails = min(total_emails, int(max_emails_env))
+        except ValueError:
+            pass
+
+    print(f"Generating and scheduling {total_emails} emails to Kit...")
     if not KIT_API_SECRET:
         print("DRY-RUN MODE: No KIT_API_SECRET found. (printing only).")
         print("Set KIT_API_SECRET environment variable to actually upload.\n")
 
-    for i in range(len(articles) - 1):
+    for i in range(total_emails):
         today_art = articles[i]
         tomorrow_art = articles[i+1]
         
