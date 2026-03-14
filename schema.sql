@@ -29,3 +29,24 @@ CREATE INDEX IF NOT EXISTS idx_ph_versioned_slug ON pinterest_hits(versioned_slu
 CREATE INDEX IF NOT EXISTS idx_ph_base_slug ON pinterest_hits(base_slug);
 CREATE INDEX IF NOT EXISTS idx_ph_created_at ON pinterest_hits(created_at);
 CREATE INDEX IF NOT EXISTS idx_ph_route_type ON pinterest_hits(route_type);
+
+-- Funnel and attribution events
+CREATE TABLE IF NOT EXISTS funnel_events (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  event_type TEXT NOT NULL,
+  page TEXT,
+  base_slug TEXT,
+  variant_slug TEXT,
+  category TEXT,
+  source TEXT,
+  cta_variant TEXT,
+  email_segment TEXT,
+  metadata TEXT,
+  created_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_fe_event_type ON funnel_events(event_type);
+CREATE INDEX IF NOT EXISTS idx_fe_page ON funnel_events(page);
+CREATE INDEX IF NOT EXISTS idx_fe_base_slug ON funnel_events(base_slug);
+CREATE INDEX IF NOT EXISTS idx_fe_variant_slug ON funnel_events(variant_slug);
+CREATE INDEX IF NOT EXISTS idx_fe_created_at ON funnel_events(created_at);

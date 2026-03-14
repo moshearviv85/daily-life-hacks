@@ -1,0 +1,65 @@
+{
+  "summary": {
+    "live_articles": 43,
+    "ready_articles": 2,
+    "ready_unpublished": 2,
+    "draft_articles": 25,
+    "draft_unpublished": 1,
+    "draft_duplicates_with_live": 24
+  },
+  "counts": {
+    "live_by_category": {
+      "nutrition": 17,
+      "recipes": 12,
+      "tips": 14
+    },
+    "ready_by_category": {
+      "nutrition": 0,
+      "recipes": 0,
+      "tips": 2
+    },
+    "ready_unpublished_by_category": {
+      "nutrition": 0,
+      "recipes": 0,
+      "tips": 2
+    },
+    "draft_by_category": {
+      "nutrition": 14,
+      "recipes": 11,
+      "tips": 0
+    },
+    "draft_unpublished_by_category": {
+      "nutrition": 1,
+      "recipes": 0,
+      "tips": 0
+    }
+  },
+  "ready_unpublished": [
+    {
+      "slug": "how-to-use-leftover-rice-creative-ideas",
+      "path": "src/data/ready-articles/tips/how-to-use-leftover-rice-creative-ideas.md",
+      "category": "tips",
+      "title": "Beyond the Bowl: How to Use Leftover Rice with Creative Ideas",
+      "image": "/images/how-to-use-leftover-rice-creative-ideas-main.jpg",
+      "image_exists": false
+    },
+    {
+      "slug": "kitchen-tools-that-save-time-and-money",
+      "path": "src/data/ready-articles/tips/kitchen-tools-that-save-time-and-money.md",
+      "category": "tips",
+      "title": "Smart Gadgets: Kitchen Tools That Save Time and Money",
+      "image": "/images/kitchen-tools-that-save-time-and-money-main.jpg",
+      "image_exists": false
+    }
+  ],
+  "draft_unpublished": [
+    {
+      "slug": "high-fiber-foods-for-hormone-balance",
+      "path": "pipeline-data/drafts/high-fiber-foods-for-hormone-balance.md",
+      "category": "nutrition",
+      "title": "Fiber's Role: High Fiber Foods for Hormone Balance",
+      "image": "/images/high-fiber-foods-for-hormone-balance-main.jpg",
+      "image_exists": false
+    }
+  ]
+}

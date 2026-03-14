@@ -5,17 +5,19 @@ import Footer from "../../components/Footer.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import Pagination from "../../components/Pagination.astro";
 import { getCollection } from "astro:content";
+import { isReleased } from "../../content/release";
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }: any) {
     const allArticles = await getCollection("articles");
     const recipeArticles = allArticles
-        .filter((article) => article.data.category === "recipes")
-        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+        .filter((article: any) => isReleased(article))
+        .filter((article: any) => article.data.category === "recipes")
+        .sort((a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf());
 
     return paginate(recipeArticles, { pageSize: 12 });
 }
 
-const { page } = Astro.props;
+const { page } = Astro.props as { page: any };
 const title = "Healthy Recipes & Meal Prep Ideas | Daily Life Hacks";
 const description =
     "Discover easy, healthy recipes and meal prep ideas that fit your busy lifestyle without sacrificing flavor.";
@@ -40,7 +42,7 @@ const description =
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {
-                page.data.map((article) => (
+                page.data.map((article: any) => (
                     <ArticleCard
                         title={article.data.title}
                         excerpt={article.data.excerpt}
