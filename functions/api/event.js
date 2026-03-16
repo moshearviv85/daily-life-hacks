@@ -1,8 +1,16 @@
 export async function onRequestPost(context) {
   const { request, env } = context;
 
+  const origin = request.headers.get("Origin");
+  const allowedOrigins = new Set([
+    "https://www.daily-life-hacks.com",
+    "https://daily-life-hacks.pages.dev",
+  ]);
+
   const corsHeaders = {
-    "Access-Control-Allow-Origin": "https://www.daily-life-hacks.com",
+    "Access-Control-Allow-Origin": origin && allowedOrigins.has(origin)
+      ? origin
+      : "https://www.daily-life-hacks.com",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
   };

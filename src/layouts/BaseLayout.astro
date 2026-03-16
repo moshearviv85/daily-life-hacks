@@ -152,5 +152,44 @@ const {
         setTimeout(loadPinterestSDK, 150);
       });
     </script>
+
+    <!-- Page view tracking (client-side) -->
+    <script is:inline>
+      function sendPageView() {
+        try {
+          var path =
+            typeof window !== "undefined" && window.location
+              ? window.location.pathname
+              : "";
+          if (!path) return;
+
+          // Prevent spamming duplicates on the same path in one tab/session.
+          var key = "pv_sent:" + path;
+          try {
+            if (sessionStorage.getItem(key) === "1") return;
+            sessionStorage.setItem(key, "1");
+          } catch (e) {}
+
+          fetch("/api/event", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              event_type: "page_view",
+              page: path,
+              source: "website",
+            }),
+            keepalive: true,
+          }).catch(function () {});
+        } catch (e) {}
+      }
+
+      // Send immediately when this script runs.
+      sendPageView();
+
+      // Also send on initial page load and on Astro navigations.
+      window.addEventListener("load", sendPageView);
+      document.addEventListener("astro:page-load", sendPageView);
+      document.addEventListener("astro:after-swap", sendPageView);
+    </script>
   </body>
 </html>

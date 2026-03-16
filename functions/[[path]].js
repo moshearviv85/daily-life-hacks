@@ -50,7 +50,16 @@ export async function onRequest(context) {
       version = versionMatch[2];
       routeConfig = { type: "internal", base_slug: baseSlug };
     } else {
-      // --- 4. PASS THROUGH ---
+      // --- 4. PASS THROUGH: log page_view to funnel_events (server-side, no JS needed) ---
+      if (env.DB && request.method === "GET") {
+        const pagePath = path || "/";
+        const pageViewPromise = env.DB.prepare(
+          `INSERT INTO funnel_events (event_type, page, source) VALUES (?, ?, ?)`
+        )
+          .bind("page_view", pagePath, "website")
+          .run();
+        waitUntil(pageViewPromise.catch(() => {}));
+      }
       return env.ASSETS.fetch(request);
     }
   }

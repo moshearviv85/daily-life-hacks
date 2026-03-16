@@ -3,12 +3,12 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const key = url.searchParams.get("key");
 
-  // Simple auth - set STATS_KEY in Cloudflare env vars
+  // Auth: STATS_KEY must be in Variables and Secrets (runtime), not Build env vars
   if (!env.STATS_KEY || key !== env.STATS_KEY) {
     return new Response(
       JSON.stringify({
         error: "Unauthorized",
-        hint: "Set STATS_KEY in Cloudflare Pages → Settings → Environment variables (Production), then redeploy. Call with ?key=YOUR_STATS_KEY",
+        hint: "STATS_KEY must be set for Functions: Workers & Pages → project → Settings → Variables and Secrets → Add (or Encrypt). Not in Build → Environment variables. Then redeploy. Call with ?key=YOUR_STATS_KEY",
       }),
       { status: 401, headers: { "Content-Type": "application/json" } }
     );

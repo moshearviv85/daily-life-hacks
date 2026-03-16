@@ -12,8 +12,8 @@ export async function onRequestGet(context) {
     return new Response(
       JSON.stringify({
         error: "Unauthorized",
-        hint: "Set STATS_KEY in Cloudflare Pages → Settings → Environment variables (Production), then redeploy. Call with ?key=YOUR_STATS_KEY",
-        debug: "STATS_KEY_reached_function: " + keyIsSet,
+        hint: "STATS_KEY must be set for Functions runtime: Workers & Pages → your project → Settings → Variables and Secrets → Add (or Encrypt for secret). Name: STATS_KEY. Not in Build → Environment variables. Then redeploy. Call with ?key=YOUR_STATS_KEY",
+        debug: "STATS_KEY_available_at_runtime: " + keyIsSet,
       }),
       { status: 401, headers: { "Content-Type": "application/json" } }
     );

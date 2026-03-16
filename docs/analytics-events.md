@@ -6,6 +6,7 @@
 - `funnel_events`
 
 ## Event Types
+- `page_view` – כניסת גולש לדף (נשלח מ-BaseLayout בכל טעינת דף)
 - `variant_view`
 - `variant_cta_click`
 - `signup_started`
