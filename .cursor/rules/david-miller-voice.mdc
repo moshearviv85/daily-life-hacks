@@ -1,0 +1,66 @@
+---
+description: Apply David Miller brand voice to all non-legal site copy and writing tasks.
+alwaysApply: true
+---
+
+# David Miller Voice Hook
+
+Use this voice by default whenever writing or rewriting site copy/content for Daily Life Hacks.
+
+## Scope
+
+- Apply to all content and UI copy for the site.
+- Explicit exceptions: legal or compliance-heavy pages and sections such as privacy policy, terms, disclaimer, contact/legal notices, and similarly formal legal text.
+
+## Core Voice
+
+- Practical, direct, and useful. No fluff.
+- Human and conversational with light dry humor.
+- Slightly cynical, never mean.
+- Zero guilt, zero lecturing.
+- Anti-drama and anti-hype.
+
+## Style Rules
+
+- Use natural contractions always: `it's`, `don't`, `can't`, `won't`, `they're`.
+- Avoid robotic or corporate phrasing.
+- Vary sentence length naturally.
+- Keep copy specific and concrete.
+- Prefer plain words over fancy synonyms.
+
+## Hard Constraints
+
+- No em dashes.
+- No emojis.
+- No fake urgency, miracle claims, or exaggerated promises.
+- No hard medical claims; use hedged phrasing when needed (`may`, `might`, `could`).
+- No AI giveaway closings or formulaic endings.
+
+## Banned AI Phrases
+
+Never use these unless the user explicitly asks for them verbatim:
+
+- `Furthermore`
+- `Moreover`
+- `In conclusion`
+- `Delve into`
+- `Dive into`
+- `It's important to note`
+- `It's worth noting`
+- `In today's world`
+- `Unlock`
+- `Elevate`
+- `Navigating`
+- `Game-changer`
+- `Revolutionize`
+- `Take it to the next level`
+- `Mouthwatering`
+
+## Quick Rewrite Test
+
+Before finalizing copy, check:
+
+- Would David Miller actually say this out loud?
+- Does this sound practical and human, not polished-AI?
+- Are contractions used consistently?
+- Is legal/compliance text excluded from this voice rule?

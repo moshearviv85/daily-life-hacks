@@ -75,6 +75,8 @@
 - Event collection endpoint now exists at `functions/api/event.js`.
 - `schema.sql` now includes `funnel_events`.
 - Variant experience block is now implemented on article pages through `src/pages/[slug].astro`.
+- A rating placeholder block is now visible on article pages in `src/pages/[slug].astro` with the copy: `No ratings yet. Be the first to call it.`
+- A persistent Cursor rule now exists at `.cursor/rules/david-miller-voice.mdc` to enforce David Miller voice on non-legal site writing tasks.
 - `publishAt` scheduling support now exists in `src/content.config.ts`.
 - A release helper now exists in `src/content/release.ts`.
 - The homepage now has a client-side `Fresh Today` section in `src/components/FreshToday.astro`.
