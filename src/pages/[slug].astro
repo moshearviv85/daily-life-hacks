@@ -273,29 +273,49 @@ if (article.data.faq && article.data.faq.length > 0) {
 
     <!-- Rating Preview -->
     <section
+      id="rating-widget"
       class="mb-8 rounded-xl border p-4"
       style="background-color: var(--card-bg); border-color: var(--border-color);"
       aria-label="Article rating"
+      data-slug={article.id}
     >
-      <div class="flex items-center gap-3">
-        <div class="flex items-center gap-1 text-[#F29B30]" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
-          </svg>
+      <div class="flex flex-col gap-3">
+        <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1 text-[#F29B30]" role="group" aria-label="Rate this article">
+            <button type="button" class="rating-star p-0.5" data-value="1" aria-label="Rate 1 star">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
+              </svg>
+            </button>
+            <button type="button" class="rating-star p-0.5" data-value="2" aria-label="Rate 2 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
+              </svg>
+            </button>
+            <button type="button" class="rating-star p-0.5" data-value="3" aria-label="Rate 3 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
+              </svg>
+            </button>
+            <button type="button" class="rating-star p-0.5" data-value="4" aria-label="Rate 4 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
+              </svg>
+            </button>
+            <button type="button" class="rating-star p-0.5" data-value="5" aria-label="Rate 5 stars">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
+              </svg>
+            </button>
+          </div>
+          <span id="rating-average" class="text-sm font-semibold" style="color: var(--heading-color);"></span>
+          <span id="rating-count" class="text-xs font-medium" style="color: var(--muted-color);"></span>
         </div>
-        <p class="text-sm font-medium leading-relaxed" style="color: var(--muted-color);">
+        <p
+          id="rating-copy"
+          class="text-sm font-medium leading-relaxed"
+          style="color: var(--muted-color);"
+        >
           Yeah, this is a little awkward. No ratings yet. People probably rushed to make this and forgot to come back. Do us a solid, drop a quick rating, and help the next hungry person skip the guesswork.
         </p>
       </div>
@@ -705,7 +725,91 @@ if (article.data.faq && article.data.faq.length > 0) {
       }
     }
 
+    function setupRatingWidget() {
+      const widget = document.getElementById("rating-widget");
+      if (!widget) return;
+
+      const slug = widget.getAttribute("data-slug");
+      if (!slug) return;
+
+      const stars = Array.from(widget.querySelectorAll(".rating-star"));
+      const copy = document.getElementById("rating-copy");
+      const average = document.getElementById("rating-average");
+      const countLabel = document.getElementById("rating-count");
+      const storeKey = `dlh_rating_${slug}`;
+
+      const paintStars = (value) => {
+        stars.forEach((star, index) => {
+          const active = index < value;
+          star.style.color = active ? "#F29B30" : "var(--border-color)";
+        });
+      };
+
+      const refresh = () => {
+        let data = null;
+        try {
+          data = JSON.parse(localStorage.getItem(storeKey) || "null");
+        } catch {
+          data = null;
+        }
+
+        if (!data || !data.count) {
+          paintStars(0);
+          if (average) average.textContent = "";
+          if (countLabel) countLabel.textContent = "";
+          if (copy) {
+            copy.style.display = "";
+            copy.textContent =
+              "Yeah, this is a little awkward. No ratings yet. People probably rushed to make this and forgot to come back. Do us a solid, drop a quick rating, and help the next hungry person skip the guesswork.";
+          }
+          return;
+        }
+
+        const avg = data.total / data.count;
+        paintStars(Math.round(avg));
+        if (average) average.textContent = `${avg.toFixed(1)} (${data.count})`;
+        if (countLabel) {
+          countLabel.textContent = `${data.count} rating${data.count === 1 ? "" : "s"}`;
+        }
+
+        if (copy) {
+          copy.style.display = "none";
+        }
+      };
+
+      stars.forEach((star) => {
+        star.addEventListener("click", () => {
+          const value = Number(star.getAttribute("data-value"));
+          if (!Number.isFinite(value) || value < 1 || value > 5) return;
+
+          let data = null;
+          try {
+            data = JSON.parse(localStorage.getItem(storeKey) || "null");
+          } catch {
+            data = null;
+          }
+
+          if (!data) data = { total: 0, count: 0, mine: null };
+
+          if (data.mine) {
+            data.total = data.total - data.mine + value;
+            data.mine = value;
+          } else {
+            data.total += value;
+            data.count += 1;
+            data.mine = value;
+          }
+
+          localStorage.setItem(storeKey, JSON.stringify(data));
+          refresh();
+        });
+      });
+
+      refresh();
+    }
+
     document.addEventListener("astro:page-load", setupReleaseGate);
     document.addEventListener("astro:page-load", setupVariantExperience);
+    document.addEventListener("astro:page-load", setupRatingWidget);
   </script>
 </BaseLayout>
