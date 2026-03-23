@@ -736,8 +736,9 @@ if (article.data.faq && article.data.faq.length > 0) {
       const copy = document.getElementById("rating-copy");
       const average = document.getElementById("rating-average");
       const countLabel = document.getElementById("rating-count");
-      const storeKey = `dlh_rating_${slug}`;
+      const identityKey = "dlh_rating_user_key";
       let committedDisplay = 0;
+      let userKey = "";
 
       const paintStars = (value) => {
         stars.forEach((star, index) => {
@@ -746,15 +747,28 @@ if (article.data.faq && article.data.faq.length > 0) {
         });
       };
 
-      const refresh = () => {
-        let data = null;
+      const getOrCreateUserKey = () => {
         try {
-          data = JSON.parse(localStorage.getItem(storeKey) || "null");
-        } catch {
-          data = null;
-        }
+          const existing = localStorage.getItem(identityKey);
+          if (existing) return existing;
 
-        if (!data || !data.count) {
+          const generated = typeof crypto !== "undefined" && crypto.randomUUID
+            ? crypto.randomUUID()
+            : `${Date.now()}_${Math.random().toString(36).slice(2)}`;
+          localStorage.setItem(identityKey, generated);
+          return generated;
+        } catch {
+          return `anon_${Date.now()}`;
+        }
+      };
+
+      const renderSnapshot = (snapshot) => {
+        const count = Number(snapshot?.count ?? 0);
+        const avg = Number(snapshot?.average ?? 0);
+        const userRating = Number(snapshot?.userRating ?? 0);
+        const hasRatings = count > 0;
+
+        if (!hasRatings) {
           committedDisplay = 0;
           paintStars(0);
           if (average) average.textContent = "";
@@ -767,16 +781,56 @@ if (article.data.faq && article.data.faq.length > 0) {
           return;
         }
 
-        const avg = data.total / data.count;
-        committedDisplay = Math.round(avg);
-        paintStars(Math.round(avg));
-        if (average) average.textContent = `${avg.toFixed(1)} (${data.count})`;
+        committedDisplay = userRating > 0 ? userRating : Math.round(avg);
+        paintStars(committedDisplay);
+        if (average) average.textContent = avg.toFixed(1);
         if (countLabel) {
-          countLabel.textContent = `${data.count} rating${data.count === 1 ? "" : "s"}`;
+          countLabel.textContent = `${count} rating${count === 1 ? "" : "s"}`;
         }
 
         if (copy) {
           copy.style.display = "none";
+        }
+      };
+
+      const loadSnapshot = async () => {
+        try {
+          const res = await fetch(
+            `/api/rating?slug=${encodeURIComponent(slug)}&user_key=${encodeURIComponent(userKey)}`,
+          );
+          if (!res.ok) throw new Error("Failed loading rating");
+          const payload = await res.json();
+          renderSnapshot(payload);
+        } catch {
+          renderSnapshot({ count: 0, average: 0, userRating: 0 });
+          if (copy) {
+            copy.style.display = "";
+            copy.textContent =
+              "We could not load ratings right now. You can still browse, and we will try again on refresh.";
+          }
+        }
+      };
+
+      const submitRating = async (value) => {
+        try {
+          const res = await fetch("/api/rating", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              slug,
+              user_key: userKey,
+              rating: value,
+            }),
+          });
+          if (!res.ok) throw new Error("Failed saving rating");
+          const payload = await res.json();
+          renderSnapshot(payload);
+        } catch {
+          if (copy) {
+            copy.style.display = "";
+            copy.textContent =
+              "Your vote did not save this time. Please try once more.";
+          }
         }
       };
 
@@ -801,27 +855,7 @@ if (article.data.faq && article.data.faq.length > 0) {
         star.addEventListener("click", () => {
           const value = Number(star.getAttribute("data-value"));
           if (!Number.isFinite(value) || value < 1 || value > 5) return;
-
-          let data = null;
-          try {
-            data = JSON.parse(localStorage.getItem(storeKey) || "null");
-          } catch {
-            data = null;
-          }
-
-          if (!data) data = { total: 0, count: 0, mine: null };
-
-          if (data.mine) {
-            data.total = data.total - data.mine + value;
-            data.mine = value;
-          } else {
-            data.total += value;
-            data.count += 1;
-            data.mine = value;
-          }
-
-          localStorage.setItem(storeKey, JSON.stringify(data));
-          refresh();
+          submitRating(value);
         });
       });
 
@@ -829,7 +863,8 @@ if (article.data.faq && article.data.faq.length > 0) {
         paintStars(committedDisplay);
       });
 
-      refresh();
+      userKey = getOrCreateUserKey();
+      loadSnapshot();
     }
 
     document.addEventListener("astro:page-load", setupReleaseGate);
