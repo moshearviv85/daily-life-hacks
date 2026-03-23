@@ -737,6 +737,7 @@ if (article.data.faq && article.data.faq.length > 0) {
       const average = document.getElementById("rating-average");
       const countLabel = document.getElementById("rating-count");
       const storeKey = `dlh_rating_${slug}`;
+      let committedDisplay = 0;
 
       const paintStars = (value) => {
         stars.forEach((star, index) => {
@@ -754,6 +755,7 @@ if (article.data.faq && article.data.faq.length > 0) {
         }
 
         if (!data || !data.count) {
+          committedDisplay = 0;
           paintStars(0);
           if (average) average.textContent = "";
           if (countLabel) countLabel.textContent = "";
@@ -766,6 +768,7 @@ if (article.data.faq && article.data.faq.length > 0) {
         }
 
         const avg = data.total / data.count;
+        committedDisplay = Math.round(avg);
         paintStars(Math.round(avg));
         if (average) average.textContent = `${avg.toFixed(1)} (${data.count})`;
         if (countLabel) {
@@ -778,6 +781,23 @@ if (article.data.faq && article.data.faq.length > 0) {
       };
 
       stars.forEach((star) => {
+        const preview = () => {
+          const value = Number(star.getAttribute("data-value"));
+          if (!Number.isFinite(value) || value < 1 || value > 5) return;
+          paintStars(value);
+        };
+
+        star.addEventListener("mouseenter", preview);
+        star.addEventListener("focus", preview);
+
+        star.addEventListener("mouseleave", () => {
+          paintStars(committedDisplay);
+        });
+
+        star.addEventListener("blur", () => {
+          paintStars(committedDisplay);
+        });
+
         star.addEventListener("click", () => {
           const value = Number(star.getAttribute("data-value"));
           if (!Number.isFinite(value) || value < 1 || value > 5) return;
@@ -803,6 +823,10 @@ if (article.data.faq && article.data.faq.length > 0) {
           localStorage.setItem(storeKey, JSON.stringify(data));
           refresh();
         });
+      });
+
+      widget.addEventListener("mouseleave", () => {
+        paintStars(committedDisplay);
       });
 
       refresh();
