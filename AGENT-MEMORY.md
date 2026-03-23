@@ -124,6 +124,9 @@
 - `pipeline-data/pin-runway-audit.json` now records the latest cleanup results for the live runway file.
 - A first square Kit logo asset was generated at:
   - `C:\Users\offic\.cursor\projects\c-Users-offic-Desktop-dlh-fresh\assets\kit-logo-square-800.png`
+- Direct manual deploy via Wrangler CLI is verified for `daily-life-hacks` and can bypass intermittent Cloudflare Pages Git publish failures.
+- `package.json` now includes `deploy:prod` (`build` + direct `wrangler pages deploy`) and `release:prod` (`git push` + `deploy:prod`) scripts for one-command operational flow.
+- A persistent Cursor execution policy now exists at `.cursor/rules/execution-first.mdc` to enforce an action-first workflow with minimal manual handoff.
 
 ## Verified Email State
 - Kit account setup exists and the API key works.

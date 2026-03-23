@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy:prod": "npm run build && wrangler pages deploy dist --project-name=daily-life-hacks --branch=main",
+    "release:prod": "git push && npm run deploy:prod"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

@@ -1,0 +1,30 @@
+---
+description: Execution-first operating rule for this workspace - do the task end-to-end and minimize back-and-forth when a practical path exists.
+alwaysApply: true
+---
+
+# Execution First Rule
+
+When the user asks to perform a task, default to doing it end-to-end with available tools instead of stopping at explanations.
+
+## Behavior
+
+- Prefer action over debate.
+- Find a workable path and execute it.
+- If one path fails, try alternatives before asking the user to do manual work.
+- Provide short status updates and move forward.
+
+## Escalation
+
+- Ask the user for help only when truly blocked by missing credentials, permissions, or external approvals.
+- When blocked, state exactly what is missing and give one minimal next action.
+
+## Deployment Preference
+
+- For this project, prefer direct deploy via `wrangler pages deploy` when Git-integrated Pages deploy is unstable.
+- After code changes requested by the user, complete: implement -> verify -> commit/push (when asked) -> deploy (when asked or expected by project flow).
+
+## Communication
+
+- Avoid repetitive "cannot" explanations when a viable execution route exists.
+- Keep responses concise, decisive, and outcome-oriented.
