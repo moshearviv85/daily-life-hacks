@@ -278,6 +278,9 @@ if (article.data.faq && article.data.faq.length > 0) {
       style="background-color: var(--card-bg); border-color: var(--border-color);"
       aria-label="Article rating"
       data-slug={article.id}
+      data-article-url={articleUrl}
+      data-article-title={article.data.title}
+      data-schema-type={isRecipe ? "Recipe" : "Article"}
     >
       <div class="flex flex-col gap-3">
         <div class="flex items-center gap-2">
@@ -762,6 +765,49 @@ if (article.data.faq && article.data.faq.length > 0) {
         }
       };
 
+      const MIN_RATING_COUNT_FOR_JSONLD = 5;
+      const JSONLD_SCRIPT_ID = "dlh-aggregate-rating-jsonld";
+
+      const syncAggregateRatingJsonLd = (snapshot) => {
+        const existing = document.getElementById(JSONLD_SCRIPT_ID);
+        if (existing) existing.remove();
+
+        const count = Number(snapshot?.count ?? 0);
+        const avg = Number(snapshot?.average ?? 0);
+        const pageUrl = widget.getAttribute("data-article-url") || "";
+        const title = widget.getAttribute("data-article-title") || "";
+        const schemaType = widget.getAttribute("data-schema-type") || "Article";
+
+        if (
+          count < MIN_RATING_COUNT_FOR_JSONLD ||
+          !pageUrl ||
+          !title ||
+          !Number.isFinite(avg)
+        ) {
+          return;
+        }
+
+        const node = {
+          "@context": "https://schema.org",
+          "@type": schemaType,
+          url: pageUrl,
+          name: title,
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: Math.round(avg * 100) / 100,
+            ratingCount: count,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        };
+
+        const script = document.createElement("script");
+        script.id = JSONLD_SCRIPT_ID;
+        script.type = "application/ld+json";
+        script.textContent = JSON.stringify(node);
+        document.head.appendChild(script);
+      };
+
       const renderSnapshot = (snapshot) => {
         const count = Number(snapshot?.count ?? 0);
         const avg = Number(snapshot?.average ?? 0);
@@ -773,6 +819,8 @@ if (article.data.faq && article.data.faq.length > 0) {
           paintStars(0);
           if (average) average.textContent = "";
           if (countLabel) countLabel.textContent = "";
+          const orphan = document.getElementById(JSONLD_SCRIPT_ID);
+          if (orphan) orphan.remove();
           if (copy) {
             copy.style.display = "";
             copy.textContent =
@@ -791,6 +839,8 @@ if (article.data.faq && article.data.faq.length > 0) {
         if (copy) {
           copy.style.display = "none";
         }
+
+        syncAggregateRatingJsonLd(snapshot);
       };
 
       const loadSnapshot = async () => {
