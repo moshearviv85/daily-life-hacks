@@ -73,7 +73,18 @@ export async function onRequestGet(context) {
   });
 
   if (!token) {
-    return htmlPage("Pinterest OAuth Error", "<h1>Token exchange failed</h1><p>Check Pinterest app credentials, redirect URI, and scopes.</p>", 400);
+    // Re-run to capture the actual error for debugging
+    const debugResult = await debugTokenExchange({ appId, appSecret, redirectUri, code, scopes: scope });
+    return htmlPage("Pinterest OAuth Error",
+      `<h1>Token exchange failed</h1>
+       <p>Pinterest returned an error. Details:</p>
+       <pre style="background:#f5f5f5;padding:10px;border-radius:8px;white-space:pre-wrap;word-break:break-all">${htmlEscape(JSON.stringify(debugResult, null, 2))}</pre>
+       <p style="margin-top:12px;color:#555;font-size:13px">
+         Make sure <code>https://www.daily-life-hacks.com/api/pinterest-demo-callback</code>
+         is added as a Redirect URI in your Pinterest app settings.
+       </p>`,
+      400
+    );
   }
 
   // Signed token cookie.
@@ -93,5 +104,30 @@ export async function onRequestGet(context) {
 
 function htmlEscape(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+async function debugTokenExchange({ appId, appSecret, redirectUri, code, scopes }) {
+  const results = {};
+  for (const base of ["https://api.pinterest.com", "https://api-sandbox.pinterest.com"]) {
+    const tokenUrl = `${base}/oauth/token`;
+    const basic = btoa(`${appId}:${appSecret}`);
+    const body = new URLSearchParams();
+    body.set("grant_type", "authorization_code");
+    body.set("code", code);
+    body.set("redirect_uri", redirectUri);
+    if (scopes) body.set("scope", scopes);
+    try {
+      const res = await fetch(tokenUrl, {
+        method: "POST",
+        headers: { Authorization: `Basic ${basic}`, "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+      const data = await res.json().catch(() => ({}));
+      results[base] = { status: res.status, data };
+    } catch (e) {
+      results[base] = { error: String(e) };
+    }
+  }
+  return results;
 }
 
