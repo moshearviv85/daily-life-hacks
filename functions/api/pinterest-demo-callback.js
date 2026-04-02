@@ -6,8 +6,8 @@ import {
   verifySignedCookie,
 } from "./pinterest-demo-lib.js";
 
-function htmlPage(title, bodyHtml) {
-  return `<!doctype html>
+function htmlPage(title, bodyHtml, status = 200) {
+  const html = `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -26,6 +26,10 @@ function htmlPage(title, bodyHtml) {
   </div>
 </body>
 </html>`;
+  return new Response(html, {
+    status,
+    headers: { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" },
+  });
 }
 
 export async function onRequestGet(context) {
@@ -35,9 +39,7 @@ export async function onRequestGet(context) {
   const state = url.searchParams.get("state");
 
   if (!code) {
-    return new Response(htmlPage("Pinterest OAuth Callback Error", `<h1>Missing code</h1><pre>${htmlEscape(url.href)}</pre>`), {
-      status: 400,
-    });
+    return htmlPage("Pinterest OAuth Callback Error", `<h1>Missing code</h1><pre>${htmlEscape(url.href)}</pre>`, 400);
   }
 
   const redirectBase = "https://www.daily-life-hacks.com";
@@ -50,10 +52,7 @@ export async function onRequestGet(context) {
   const expectedState = decodedState ? decodedState.state : null;
 
   if (!expectedState || expectedState !== state) {
-    return new Response(
-      htmlPage("Pinterest OAuth Callback Error", `<h1>State mismatch</h1><p>Expected and received state differ.</p>`),
-      { status: 400 }
-    );
+    return htmlPage("Pinterest OAuth Callback Error", `<h1>State mismatch</h1><p>Expected and received state differ.</p>`, 400);
   }
 
   const appId = env.PINTEREST_APP_ID;
@@ -62,7 +61,7 @@ export async function onRequestGet(context) {
   const scope = env.PINTEREST_DEMO_SCOPES || pinterestScopes();
 
   if (!appId || !appSecret) {
-    return new Response(htmlPage("Server Error", "<h1>Missing Pinterest env vars</h1>"), { status: 500 });
+    return htmlPage("Server Error", "<h1>Missing Pinterest env vars</h1>", 500);
   }
 
   const token = await exchangeAuthCodeForToken({
@@ -74,9 +73,7 @@ export async function onRequestGet(context) {
   });
 
   if (!token) {
-    return new Response(htmlPage("Pinterest OAuth Error", "<h1>Token exchange failed</h1><p>Check Pinterest app credentials, redirect URI, and scopes.</p>"), {
-      status: 400,
-    });
+    return htmlPage("Pinterest OAuth Error", "<h1>Token exchange failed</h1><p>Check Pinterest app credentials, redirect URI, and scopes.</p>", 400);
   }
 
   // Signed token cookie.

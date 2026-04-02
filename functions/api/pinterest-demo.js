@@ -7,8 +7,8 @@ import {
   verifySignedCookie,
 } from "./pinterest-demo-lib.js";
 
-function htmlPage(title, bodyHtml) {
-  return `<!doctype html>
+function htmlPage(title, bodyHtml, status = 200, extraHeaders = {}) {
+  const html = `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -30,6 +30,15 @@ function htmlPage(title, bodyHtml) {
   </div>
 </body>
 </html>`;
+  return new Response(html, {
+    status,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
+      "Pragma": "no-cache",
+      ...extraHeaders,
+    },
+  });
 }
 
 export async function onRequestGet(context) {
@@ -92,6 +101,7 @@ export async function onRequestGet(context) {
         status: 200,
         headers: {
           "Set-Cookie": `pinterest_demo_access=${encodeURIComponent(signedAccessValue)}; Domain=.daily-life-hacks.com; Path=/; HttpOnly; Secure; SameSite=Lax`,
+          "Content-Type": "text/html; charset=utf-8",
           "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
           "Pragma": "no-cache",
         },
@@ -100,30 +110,19 @@ export async function onRequestGet(context) {
   }
 
   if (!cookieSecret) {
-    return new Response(htmlPage("Pinterest Demo Error", `<h1>Server env missing</h1><p>Need <code>PINTEREST_DEMO_COOKIE_SECRET</code>.</p>`), {
-      status: 500,
-    });
+    return htmlPage("Pinterest Demo Error", `<h1>Server env missing</h1><p>Need <code>PINTEREST_DEMO_COOKIE_SECRET</code>.</p>`, 500);
   }
 
   if (accessKeySecret && !hasAccess) {
-    return new Response(
-      htmlPage(
-        "Restricted demo",
-        `<h1 style="margin:0 0 10px;font-size:20px">Restricted demo</h1>
-         <div class="warn">This demo is private. Enter the access key.</div>
-         <form method="GET" action="${redirectBase}/api/pinterest-demo" style="margin-top:12px">
-           <label style="display:block;color:#333;font-weight:700">Access key</label>
-           <input name="key" type="password" style="margin-top:6px;width:100%;padding:10px 12px;border-radius:10px;border:1px solid #ddd" />
-           <button class="btn" type="submit" style="display:inline-block;margin-top:10px">Unlock</button>
-         </form>`
-      ),
-      {
-        status: 200,
-        headers: {
-          "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
-          "Pragma": "no-cache",
-        },
-      }
+    return htmlPage(
+      "Restricted demo",
+      `<h1 style="margin:0 0 10px;font-size:20px">Restricted demo</h1>
+       <div class="warn">This demo is private. Enter the access key.</div>
+       <form method="GET" action="${redirectBase}/api/pinterest-demo" style="margin-top:12px">
+         <label style="display:block;color:#333;font-weight:700">Access key</label>
+         <input name="key" type="password" style="margin-top:6px;width:100%;padding:10px 12px;border-radius:10px;border:1px solid #ddd" />
+         <button class="btn" type="submit" style="display:inline-block;margin-top:10px">Unlock</button>
+       </form>`
     );
   }
 
@@ -134,21 +133,12 @@ export async function onRequestGet(context) {
 
   if (!token || !token.access_token) {
     const connectUrl = `${redirectBase}/api/pinterest-demo-connect`;
-    return new Response(
-      htmlPage(
-        "Pinterest OAuth Demo",
-        `<h1 style="margin:0 0 10px;font-size:20px">Pinterest OAuth Demo</h1>
-         <p style="margin:0 0 12px;color:#444;line-height:1.4">This demo shows the full OAuth consent flow and then lets you publish exactly one selected Pin via the API.</p>
-         <div class="warn"><strong>Not connected.</strong><br/>Click connect to see Pinterest consent, then come back.</div>
-         <a class="btn" href="${connectUrl}">Connect Pinterest OAuth</a>`
-      ),
-      {
-        status: 200,
-        headers: {
-          "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
-          "Pragma": "no-cache",
-        },
-      }
+    return htmlPage(
+      "Pinterest OAuth Demo",
+      `<h1 style="margin:0 0 10px;font-size:20px">Pinterest OAuth Demo</h1>
+       <p style="margin:0 0 12px;color:#444;line-height:1.4">This demo shows the full OAuth consent flow and then lets you publish exactly one selected Pin via the API.</p>
+       <div class="warn"><strong>Not connected.</strong><br/>Click connect to see Pinterest consent, then come back.</div>
+       <a class="btn" href="${connectUrl}">Connect Pinterest OAuth</a>`
     );
   }
 
@@ -185,39 +175,28 @@ export async function onRequestGet(context) {
   const connectScopes = pinterestScopes();
   const publishUrl = `${redirectBase}/api/pinterest-demo-publish`;
 
-  return new Response(
-    htmlPage(
-      "Pinterest Demo - Connected",
-      `<h1 style="margin:0 0 10px;font-size:20px">Pinterest is connected</h1>
-       <p style="margin:0 0 12px;color:#444;line-height:1.4">Choose exactly one demo Pin from the dropdown, then publish it. This manual selection is intentional.</p>
-       ${statusBadge}
-       <form method="POST" action="${publishUrl}">
-         <label style="display:block;color:#333;font-weight:700">Select 1 demo Pin</label>
-         <select name="pinKey" required>
-           ${pinKeys
-             .map((k) => `<option value="${k}">${catalog[k].display}</option>`)
-             .join("")}
-         </select>
-         <button class="btn" type="submit">Publish selected Pin</button>
-       </form>
-       <p style="margin-top:12px;color:#666;font-size:12px">Requested scopes: <code>${connectScopes}</code></p>
-       <div style="margin-top:12px">
-         <details>
-           <summary>Debug (optional)</summary>
-           <h3 style="margin:8px 0 4px;font-size:14px">Sandbox /user_account</h3>
-           ${showJson(sandboxRes)}
-           <h3 style="margin:12px 0 4px;font-size:14px">Production /user_account</h3>
-           ${showJson(prodRes)}
-         </details>
-       </div>`
-    ),
-    {
-      status: 200,
-      headers: {
-        "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
-        "Pragma": "no-cache",
-      },
-    }
+  return htmlPage(
+    "Pinterest Demo - Connected",
+    `<h1 style="margin:0 0 10px;font-size:20px">Pinterest is connected</h1>
+     <p style="margin:0 0 12px;color:#444;line-height:1.4">Choose exactly one demo Pin from the dropdown, then publish it. This manual selection is intentional.</p>
+     ${statusBadge}
+     <form method="POST" action="${publishUrl}">
+       <label style="display:block;color:#333;font-weight:700">Select 1 demo Pin</label>
+       <select name="pinKey" required>
+         ${pinKeys.map((k) => `<option value="${k}">${catalog[k].display}</option>`).join("")}
+       </select>
+       <button class="btn" type="submit">Publish selected Pin</button>
+     </form>
+     <p style="margin-top:12px;color:#666;font-size:12px">Requested scopes: <code>${connectScopes}</code></p>
+     <div style="margin-top:12px">
+       <details>
+         <summary>Debug (optional)</summary>
+         <h3 style="margin:8px 0 4px;font-size:14px">Sandbox /user_account</h3>
+         ${showJson(sandboxRes)}
+         <h3 style="margin:12px 0 4px;font-size:14px">Production /user_account</h3>
+         ${showJson(prodRes)}
+       </details>
+     </div>`
   );
 }
 
