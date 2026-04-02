@@ -1,8 +1,7 @@
 {
   "version": 1,
-  "include": ["/*"],
+  "include": ["/api/*"],
   "exclude": [
-    "/api/*",
     "/_astro/*",
     "/_image/*",
     "/images/*",
@@ -13,20 +12,3 @@
     "/sitemap*"
   ]
 }
-
-{
-  "version": 1,
-  "include": ["/*"],
-  "exclude": [
-    "/api/*",
-    "/_astro/*",
-    "/_image/*",
-    "/images/*",
-    "/favicon.*",
-    "/favicon.ico",
-    "/logo.png",
-    "/robots.txt",
-    "/sitemap*"
-  ]
-}
-
