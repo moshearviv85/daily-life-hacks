@@ -57,6 +57,17 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const providedKey = (url.searchParams.get("key") || url.searchParams.get("accessKey") || "").trim();
 
+  // ?disconnect=1 — clear token cookie and redirect back
+  if (url.searchParams.get("disconnect") === "1") {
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: `${redirectBase}/api/pinterest-demo`,
+        "Set-Cookie": `pinterest_demo_token=; Domain=.daily-life-hacks.com; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`,
+      },
+    });
+  }
+
   let hasAccess = false;
   if (cookieSecret && signedAccess) {
     const accessPayload = await verifySignedCookie(cookieSecret, signedAccess);
@@ -175,6 +186,8 @@ export async function onRequestGet(context) {
   const connectScopes = pinterestScopes();
   const publishUrl = `${redirectBase}/api/pinterest-demo-publish`;
 
+  const disconnectUrl = `${redirectBase}/api/pinterest-demo?disconnect=1`;
+
   return htmlPage(
     "Pinterest Demo - Connected",
     `<h1 style="margin:0 0 10px;font-size:20px">Pinterest is connected</h1>
@@ -188,6 +201,7 @@ export async function onRequestGet(context) {
        <button class="btn" type="submit">Publish selected Pin</button>
      </form>
      <p style="margin-top:12px;color:#666;font-size:12px">Requested scopes: <code>${connectScopes}</code></p>
+     <p style="margin-top:8px"><a href="${disconnectUrl}" style="color:#999;font-size:12px">Disconnect &amp; reconnect with a different account</a></p>
      <div style="margin-top:12px">
        <details>
          <summary>Debug (optional)</summary>
