@@ -79,29 +79,58 @@ export function getSignedCookiePayload(cookie, cookieName) {
 
 
 export function buildPinCatalog() {
-  // Important: For the approval demo we keep pins "manual intent" by requiring
-  // user selection before we publish. The pin content is a small static catalog
-  // using real published articles from daily-life-hacks.com.
+  // Manual-intent catalog for the API approval demo.
+  // All pins link to real published articles on daily-life-hacks.com.
   return {
-    fiber_fruits_v1: {
-      display: "Best High Fiber Fruits for Weight Loss (v1)",
-      title: "Best High Fiber Fruits for Weight Loss",
+    energy_balls_v1: {
+      display: "No-Bake High Fiber Energy Balls Recipe",
+      title: "No-Bake High Fiber Energy Balls Recipe",
       description:
-        "Some fruits pack way more fiber than you'd think. Here's a quick list of the best high fiber fruits that could support your weight loss goals. #HighFiber #WeightLoss #HealthyEating",
-      link: "https://www.daily-life-hacks.com/best-high-fiber-fruits-for-weight-loss-list",
-      alt_text: "Assortment of high fiber fruits including berries pears and apples arranged on a white surface",
+        "These no-bake energy balls take about 10 minutes to put together and keep well in the fridge all week. A genuinely easy high fiber snack. #HighFiber #HealthySnacks #MealPrep",
+      link: "https://www.daily-life-hacks.com/no-bake-high-fiber-energy-balls-recipe",
+      alt_text: "No-bake high fiber energy balls rolled in oats and seeds arranged on a wooden board",
       media_source_url:
-        "https://www.daily-life-hacks.com/images/pins/best-high-fiber-fruits-for-weight-loss-list_v1.jpg",
+        "https://www.daily-life-hacks.com/images/pins/no-bake-high-fiber-energy-balls-recipe_v1.jpg",
     },
-    quinoa_salad_v1: {
-      display: "High Fiber Quinoa Salad for Lunch Prep (v1)",
-      title: "High Fiber Quinoa Salad for Lunch Prep",
+    chickpeas_v1: {
+      display: "Crispy Roasted Chickpeas High Fiber Snack",
+      title: "Crispy Roasted Chickpeas — the Best High Fiber Snack",
       description:
-        "This quinoa salad comes together fast and holds up well in the fridge all week. Great for high fiber lunch prep that doesn't get soggy. #MealPrep #QuinoaSalad #HighFiber",
-      link: "https://www.daily-life-hacks.com/high-fiber-quinoa-salad-for-lunch-prep",
-      alt_text: "High fiber quinoa salad with chickpeas cucumber tomatoes and fresh herbs in a glass bowl",
+        "Roasted chickpeas are crunchy, filling, and pack around 6g of fiber per half cup. Here's how to get them actually crispy. #HighFiber #HealthySnacks #PlantBased",
+      link: "https://www.daily-life-hacks.com/crispy-roasted-chickpeas-high-fiber-snack",
+      alt_text: "Crispy golden roasted chickpeas in a small bowl with seasoning on a light background",
       media_source_url:
-        "https://www.daily-life-hacks.com/images/pins/high-fiber-quinoa-salad-for-lunch-prep_v1.jpg",
+        "https://www.daily-life-hacks.com/images/pins/crispy-roasted-chickpeas-high-fiber-snack_v1.jpg",
+    },
+    avocado_toast_v1: {
+      display: "High Fiber Avocado Toast Variations",
+      title: "High Fiber Avocado Toast Variations Worth Trying",
+      description:
+        "Avocado toast is already a solid breakfast, but the right toppings push it into genuinely high fiber territory. Here are a few variations we keep coming back to. #AvocadoToast #HighFiber #HealthyBreakfast",
+      link: "https://www.daily-life-hacks.com/high-fiber-avocado-toast-variations",
+      alt_text: "Avocado toast on whole grain bread topped with seeds eggs and microgreens on a white plate",
+      media_source_url:
+        "https://www.daily-life-hacks.com/images/pins/high-fiber-avocado-toast-variations_v1.jpg",
+    },
+    smoothies_v1: {
+      display: "Gut-Friendly High Fiber Smoothies for Daily Wellness",
+      title: "Gut-Friendly High Fiber Smoothies for Daily Wellness",
+      description:
+        "These smoothies use whole fruits, flax, and oats to get real fiber into your morning without tasting like a health supplement. #GutHealth #HighFiber #SmoothieRecipes",
+      link: "https://www.daily-life-hacks.com/gut-friendly-high-fiber-smoothies-for-daily-wellness",
+      alt_text: "Two tall glasses of colorful high fiber smoothies with berries and seeds on a bright kitchen counter",
+      media_source_url:
+        "https://www.daily-life-hacks.com/images/pins/gut-friendly-high-fiber-smoothies-for-daily-wellness_v1.jpg",
+    },
+    meal_prep_v1: {
+      display: "High Fiber Meal Prep Ideas for Busy Weeks",
+      title: "High Fiber Meal Prep Ideas for Busy Weeks (2026)",
+      description:
+        "A full week of high fiber meals you can prep on Sunday. Covers breakfast, lunch, and dinner with realistic times and portion sizes. #MealPrep #HighFiber #HealthyEating",
+      link: "https://www.daily-life-hacks.com/high-fiber-meal-prep-ideas-for-busy-weeks-2026",
+      alt_text: "Meal prep containers filled with high fiber grains vegetables and proteins arranged neatly on a counter",
+      media_source_url:
+        "https://www.daily-life-hacks.com/images/pins/high-fiber-meal-prep-ideas-for-busy-weeks-2026_v1.jpg",
     },
   };
 }
