@@ -312,7 +312,11 @@ if (article.data.faq && article.data.faq.length > 0) {
             </button>
           </div>
           <span id="rating-average" class="text-sm font-semibold" style="color: var(--heading-color);"></span>
-          <span id="rating-count" class="text-xs font-medium" style="color: var(--muted-color);"></span>
+          <span
+            id="rating-count"
+            class="text-xs font-semibold"
+            style="color: var(--heading-color); white-space: nowrap;"
+          ></span>
         </div>
         <p
           id="rating-copy"
@@ -833,7 +837,7 @@ if (article.data.faq && article.data.faq.length > 0) {
         paintStars(committedDisplay);
         if (average) average.textContent = avg.toFixed(1);
         if (countLabel) {
-          countLabel.textContent = `${count} rating${count === 1 ? "" : "s"}`;
+          countLabel.textContent = `from ${count} rating${count === 1 ? "" : "s"}`;
         }
 
         if (copy) {
