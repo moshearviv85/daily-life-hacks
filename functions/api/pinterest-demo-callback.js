@@ -109,7 +109,7 @@ function htmlEscape(s) {
 async function debugTokenExchange({ appId, appSecret, redirectUri, code, scopes }) {
   const results = {};
   for (const base of ["https://api.pinterest.com", "https://api-sandbox.pinterest.com"]) {
-    const tokenUrl = `${base}/oauth/token`;
+    const tokenUrl = `${base}/v5/oauth/token`;
     const basic = btoa(`${appId}:${appSecret}`);
     const body = new URLSearchParams();
     body.set("grant_type", "authorization_code");

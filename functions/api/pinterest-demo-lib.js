@@ -141,7 +141,7 @@ export function pinterestScopes() {
 
 async function tryTokenExchange({ appId, appSecret, redirectUri, code, scopes, tokenBase }) {
   // tokenBase is the host base, for example: https://api.pinterest.com
-  const tokenUrl = `${tokenBase}/oauth/token`;
+  const tokenUrl = `${tokenBase}/v5/oauth/token`;
   const basic = btoa(`${appId}:${appSecret}`);
 
   const body = new URLSearchParams();
@@ -219,7 +219,7 @@ export async function refreshAccessToken({ appId, appSecret, token, scopes }) {
   if (scopes) body.set("scope", scopes);
   if (redirectUriIgnored) body.set("redirect_uri", redirectUriIgnored);
 
-  const refreshUrls = ["https://api.pinterest.com/oauth/token", "https://api-sandbox.pinterest.com/oauth/token"];
+  const refreshUrls = ["https://api.pinterest.com/v5/oauth/token", "https://api-sandbox.pinterest.com/v5/oauth/token"];
   for (const url of refreshUrls) {
     const res = await fetch(url, {
       method: "POST",
