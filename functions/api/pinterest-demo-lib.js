@@ -186,18 +186,8 @@ export async function exchangeAuthCodeForToken({
   code,
   scopes,
 }) {
-  // First try production token endpoint; if it fails in edge cases, fallback to sandbox.
-  const primary = await tryTokenExchange({
-    appId,
-    appSecret,
-    redirectUri,
-    code,
-    scopes,
-    tokenBase: "https://api.pinterest.com",
-  });
-  if (primary.ok) return primary.token;
-
-  const fallback = await tryTokenExchange({
+  // Trial access apps must use sandbox. Try sandbox first, fallback to production.
+  const sandbox = await tryTokenExchange({
     appId,
     appSecret,
     redirectUri,
@@ -205,7 +195,17 @@ export async function exchangeAuthCodeForToken({
     scopes,
     tokenBase: "https://api-sandbox.pinterest.com",
   });
-  if (fallback.ok) return fallback.token;
+  if (sandbox.ok) return { ...sandbox.token, _env: "sandbox" };
+
+  const prod = await tryTokenExchange({
+    appId,
+    appSecret,
+    redirectUri,
+    code,
+    scopes,
+    tokenBase: "https://api.pinterest.com",
+  });
+  if (prod.ok) return { ...prod.token, _env: "production" };
 
   return null;
 }

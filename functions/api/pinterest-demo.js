@@ -142,7 +142,7 @@ export async function onRequestGet(context) {
     );
   }
 
-  // Token exists; try to verify it by reading user_account (sandbox + production).
+  // Verify token — try sandbox first (Trial access), fallback to production (Standard access).
   const sandboxRes = await pinterestApiFetch({
     url: "https://api-sandbox.pinterest.com/v5/user_account",
     token,
@@ -167,9 +167,9 @@ export async function onRequestGet(context) {
     : "(unknown)";
 
   const statusBadge = sandboxOk
-    ? `<div class="ok"><strong>OAuth OK.</strong><br/>Sandbox user: <code>${who}</code></div>`
+    ? `<div class="ok"><strong>OAuth OK (Sandbox).</strong><br/>User: <code>${who}</code></div>`
     : prodOk
-    ? `<div class="ok"><strong>OAuth OK.</strong><br/>Production user: <code>${who}</code></div>`
+    ? `<div class="ok"><strong>OAuth OK (Production).</strong><br/>User: <code>${who}</code> &mdash; <em>Pin creation will use sandbox (Trial access)</em></div>`
     : `<div class="warn"><strong>Token exists but API rejected it.</strong><br/>Sandbox: HTTP ${sandboxRes.status}; Production: HTTP ${prodRes.status}</div>`;
 
   const connectScopes = pinterestScopes();

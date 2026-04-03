@@ -103,38 +103,33 @@ export async function onRequestPost(context) {
     activeToken = refreshed;
   }
 
-  // Try sandbox first; fallback to production if sandbox has no boards.
-  const apiSandboxBase = "https://api-sandbox.pinterest.com/v5";
-  const apiProdBase    = "https://api.pinterest.com/v5";
+  // Trial access requires sandbox API for write operations.
+  const apiBase = "https://api-sandbox.pinterest.com/v5";
 
-  async function getBoardId(apiBase) {
-    const res = await pinterestApiFetch({
-      url: `${apiBase}/boards?page_size=10`,
-      token: activeToken,
-      method: "GET",
-    });
-    const items = res.data?.items || res.data?.boards || res.data?.results || [];
-    const first = Array.isArray(items) && items.length ? items[0] : null;
-    return first?.id ? { id: String(first.id), apiBase, res } : null;
-  }
+  const boardsRes = await pinterestApiFetch({
+    url: `${apiBase}/boards?page_size=10`,
+    token: activeToken,
+    method: "GET",
+  });
 
-  let boardResult = await getBoardId(apiSandboxBase);
-  if (!boardResult) {
-    boardResult = await getBoardId(apiProdBase);
-  }
+  const items = boardsRes.data?.items || boardsRes.data?.boards || boardsRes.data?.results || [];
+  const firstBoard = Array.isArray(items) && items.length ? items[0] : null;
+  const boardId = firstBoard?.id ? String(firstBoard.id) : "";
 
-  if (!boardResult) {
+  if (!boardId) {
     return htmlPage(
-      "Cannot publish (no boards found)",
-      `<div class="warn"><strong>No boards found in sandbox or production.</strong><br/>
-       Create at least one board on your Pinterest account, then try again.</div>
+      "Cannot publish (no sandbox boards)",
+      `<div class="warn">
+         <strong>No boards found in sandbox.</strong><br/>
+         Sandbox HTTP ${boardsRes.status}<br/>
+         <pre style="margin-top:8px;font-size:11px">${JSON.stringify(boardsRes.data||{},null,2).slice(0,600)}</pre>
+       </div>
        <p><a class="btn" href="${redirectBase}/api/pinterest-demo">Back</a></p>`,
       500
     );
   }
 
-  const { id: boardId, apiBase: activeApiBase } = boardResult;
-  const apiPinsUrl = `${activeApiBase}/pins`;
+  const apiPinsUrl = `${apiBase}/pins`;
 
   const pin = catalog[pinKey];
   const pinPayload = buildPinPayload(pin, boardId);
@@ -148,7 +143,7 @@ export async function onRequestPost(context) {
 
   const ok = createRes.ok && createRes.data && (createRes.data.id || createRes.data.pin_id);
   const pinId = createRes.data?.id || createRes.data?.pin_id || "";
-  const envLabel = activeApiBase.includes("sandbox") ? "Sandbox" : "Production";
+  const envLabel = "Sandbox";
 
   return htmlPage(
     ok ? "Pin published" : "Publish error",
