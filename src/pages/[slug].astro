@@ -6,13 +6,30 @@ import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import { formatReleaseDate } from "../content/release";
+import routerMapping from "../../pipeline-data/router-mapping.json";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
-  return articles.map((article: CollectionEntry<"articles">) => ({
-    params: { slug: article.id },
-    props: { article },
-  }));
+  const paths: { params: { slug: string }; props: { article: CollectionEntry<"articles"> } }[] = [];
+
+  for (const article of articles) {
+    // Base slug (canonical page)
+    paths.push({ params: { slug: article.id }, props: { article } });
+
+    // Variant slugs (Pinterest/SEO routing) that should render the same base content.
+    const mappingForArticle = (routerMapping as Record<string, Record<string, { url_slug?: string }>>)[
+      article.id
+    ];
+    if (!mappingForArticle) continue;
+
+    for (const variant of Object.values(mappingForArticle)) {
+      const slug = variant?.url_slug;
+      if (!slug || slug === article.id) continue;
+      paths.push({ params: { slug }, props: { article } });
+    }
+  }
+
+  return paths;
 }
 
 interface Props {
@@ -155,6 +172,7 @@ if (article.data.faq && article.data.faq.length > 0) {
   title={article.data.title}
   description={article.data.excerpt}
   image={article.data.image}
+  canonicalURL={articleUrl}
   jsonLd={allSchemas}
 >
   <Header />
@@ -284,32 +302,38 @@ if (article.data.faq && article.data.faq.length > 0) {
     >
       <div class="flex flex-col gap-3">
         <div class="flex items-center gap-2">
-          <div class="flex items-center gap-1 text-[#F29B30]" role="group" aria-label="Rate this article">
-            <button type="button" class="rating-star p-0.5" data-value="1" aria-label="Rate 1 star">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
-              </svg>
-            </button>
-            <button type="button" class="rating-star p-0.5" data-value="2" aria-label="Rate 2 stars">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
-              </svg>
-            </button>
-            <button type="button" class="rating-star p-0.5" data-value="3" aria-label="Rate 3 stars">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
-              </svg>
-            </button>
-            <button type="button" class="rating-star p-0.5" data-value="4" aria-label="Rate 4 stars">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
-              </svg>
-            </button>
-            <button type="button" class="rating-star p-0.5" data-value="5" aria-label="Rate 5 stars">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
-              </svg>
-            </button>
+          <div class="flex items-center gap-1" role="group" aria-label="Rate this article">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <button
+                type="button"
+                class="rating-star p-0.5"
+                data-value={String(i + 1)}
+                aria-label={`Rate ${i + 1} ${i === 0 ? "star" : "stars"}`}
+              >
+                <span class="relative block h-5 w-5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="absolute inset-0 h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--border-color)"
+                    stroke-width="1.8"
+                  >
+                    <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
+                  </svg>
+                  <span class="rating-fill absolute inset-0 overflow-hidden" style="width: 0%;">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      viewBox="0 0 24 24"
+                      fill="#F29B30"
+                    >
+                      <path d="m12 3.5 2.78 5.63 6.22.9-4.5 4.38 1.06 6.19L12 17.8 6.44 20.6l1.06-6.19L3 10.03l6.22-.9L12 3.5z" />
+                    </svg>
+                  </span>
+                </span>
+              </button>
+            ))}
           </div>
           <span id="rating-average" class="text-sm font-semibold" style="color: var(--heading-color);"></span>
           <span
@@ -748,9 +772,11 @@ if (article.data.faq && article.data.faq.length > 0) {
       let userKey = "";
 
       const paintStars = (value) => {
+        const v = Number(value) || 0;
         stars.forEach((star, index) => {
-          const active = index < value;
-          star.style.color = active ? "#F29B30" : "var(--border-color)";
+          const portion = Math.max(0, Math.min(1, v - index));
+          const fill = star.querySelector(".rating-fill");
+          if (fill) fill.style.width = `${portion * 100}%`;
         });
       };
 
@@ -833,9 +859,10 @@ if (article.data.faq && article.data.faq.length > 0) {
           return;
         }
 
-        committedDisplay = userRating > 0 ? userRating : Math.round(avg);
+        const roundedAvg = Math.round(avg * 2) / 2;
+        committedDisplay = userRating > 0 ? userRating : roundedAvg;
         paintStars(committedDisplay);
-        if (average) average.textContent = avg.toFixed(1);
+        if (average) average.textContent = `${roundedAvg.toFixed(1)} / 5`;
         if (countLabel) {
           countLabel.textContent = `from ${count} rating${count === 1 ? "" : "s"}`;
         }
