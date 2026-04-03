@@ -1,5 +1,11 @@
 # Daily Life Hacks - Project Memory
 
+## Autonomy
+Run tasks end-to-end without stopping for confirmation. Only pause if:
+- Destructive action (delete files, drop DB, force push to main)
+- External action visible to others (send email, publish to social media)
+- Genuinely blocked and need information only the user has
+
 ## About
 - **Site:** Daily Life Hacks (daily-life-hacks.com)
 - **Stack:** Astro 5 + Tailwind CSS v4, deployed on **Cloudflare Pages**
@@ -8,6 +14,11 @@
 - **Communication:** Hebrew with user
 - **Brand color:** #F29B30 (orange)
 - **Workflow:** Claude Code = project manager (plans, reviews, data). Gemini Pro 3 = executor (writes site code). Instructions for Gemini go in `INSTRUCTIONS-*.md` files at project root. Instructions should be managerial (what/why), NOT full code.
+
+## Skills — Active
+When the user asks about videos, shorts, kinetic, TikTok, YouTube Shorts, Reels, script, קינטיק, סרטון, or anything related to video creation:
+→ **IMMEDIATELY read `.cursor/skills/kinetic-video/SKILL.md` before responding.**
+This skill contains mandatory approval rules, script-writing standards, full workflow, API keys, and the complete topic list. Do not start any video work without reading it first.
 
 ## Team & Content Decisions
 - **Content writer:** Gemini (won comparison test against Claude Chat and GPT-4o)
