@@ -106,27 +106,36 @@ export async function onRequestPost(context) {
   // Trial access requires sandbox API for write operations.
   const apiBase = "https://api-sandbox.pinterest.com/v5";
 
+  // Get or create a sandbox board
   const boardsRes = await pinterestApiFetch({
     url: `${apiBase}/boards?page_size=10`,
     token: activeToken,
     method: "GET",
   });
 
-  const items = boardsRes.data?.items || boardsRes.data?.boards || boardsRes.data?.results || [];
-  const firstBoard = Array.isArray(items) && items.length ? items[0] : null;
-  const boardId = firstBoard?.id ? String(firstBoard.id) : "";
+  const items = boardsRes.data?.items || [];
+  let boardId = Array.isArray(items) && items.length ? String(items[0].id) : "";
 
+  // Sandbox has no boards — create one automatically
   if (!boardId) {
-    return htmlPage(
-      "Cannot publish (no sandbox boards)",
-      `<div class="warn">
-         <strong>No boards found in sandbox.</strong><br/>
-         Sandbox HTTP ${boardsRes.status}<br/>
-         <pre style="margin-top:8px;font-size:11px">${JSON.stringify(boardsRes.data||{},null,2).slice(0,600)}</pre>
-       </div>
-       <p><a class="btn" href="${redirectBase}/api/pinterest-demo">Back</a></p>`,
-      500
-    );
+    const createBoardRes = await pinterestApiFetch({
+      url: `${apiBase}/boards`,
+      token: activeToken,
+      method: "POST",
+      bodyJson: { name: "Daily Life Hacks Demo", description: "Demo board for API approval", privacy: "PUBLIC" },
+    });
+    boardId = createBoardRes.data?.id ? String(createBoardRes.data.id) : "";
+    if (!boardId) {
+      return htmlPage(
+        "Cannot publish",
+        `<div class="warn"><strong>Could not create sandbox board.</strong><br/>
+         HTTP ${createBoardRes.status}<br/>
+         <pre style="font-size:11px;margin-top:8px">${escapeHtml(JSON.stringify(createBoardRes.data||{},null,2).slice(0,600))}</pre>
+        </div>
+        <p><a class="btn" href="${redirectBase}/api/pinterest-demo">Back</a></p>`,
+        500
+      );
+    }
   }
 
   const apiPinsUrl = `${apiBase}/pins`;
