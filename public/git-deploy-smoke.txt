@@ -1,0 +1,2 @@
+Smoke file for Git push -> GitHub Actions -> Cloudflare Pages deploy.
+Safe to delete after you confirm CI works.
