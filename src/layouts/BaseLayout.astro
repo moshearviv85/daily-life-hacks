@@ -9,7 +9,12 @@ interface Props {
   image?: string;
   canonicalURL?: string;
   jsonLd?: object | object[];
+  /** Defaults to indexable; use `noindex, follow` for pages not ready for Search (must match build-time policy). */
+  robots?: string;
 }
+
+const DEFAULT_ROBOTS =
+  "index, follow, max-image-preview:large, max-snippet:-1";
 
 const {
   title,
@@ -22,6 +27,7 @@ const {
     return base.href;
   })(),
   jsonLd,
+  robots = DEFAULT_ROBOTS,
 } = Astro.props;
 ---
 
@@ -108,7 +114,25 @@ const {
     }
 
     <!-- Robots -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="robots" content={robots} />
+
+    <!-- Microsoft Clarity (session replays / heatmaps) -->
+    <script is:inline>
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + i;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", "w40uh6kjsh");
+    </script>
+    <!-- Impact Affiliate Verification -->
+    <meta name="impact-site-verification" value="2f93537c-72d5-4c10-a770-22a38d0fd42f" />
   </head>
   <body
     class="min-h-screen"
