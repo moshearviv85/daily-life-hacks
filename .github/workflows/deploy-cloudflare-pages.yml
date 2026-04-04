@@ -1,5 +1,9 @@
 # Build + deploy to Cloudflare Pages via Wrangler (bypasses fragile Git integration UI).
 # Required GitHub repo secret: CLOUDFLARE_API_TOKEN (Permissions: Cloudflare Pages — Edit)
+#
+# Daily run: rebuilds from origin/main. At build time, publishAt / isReleased() and sitemap
+# filtering apply — scheduled articles become indexable without a new commit (content must
+# already be on main).
 
 name: Deploy Cloudflare Pages
 
@@ -7,9 +11,12 @@ on:
   push:
     branches: [main]
   schedule:
-    # Daily — picks up publishAt / noindex flips without a new commit (~06:15 UTC)
+    # Daily ~06:15 UTC (morning IL / early US). Adjust if you want midnight in a specific TZ.
     - cron: "15 6 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 concurrency:
   group: cloudflare-pages-deploy
