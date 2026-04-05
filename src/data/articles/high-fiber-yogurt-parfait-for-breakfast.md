@@ -34,7 +34,7 @@ Okay, so let's talk about fiber for a sec, because it's not just for, well, *old
 
 This particular concoction, this specific **high fiber yogurt parfait for breakfast**, it's got a lot going for it beyond just the fiber. You're layering Greek yogurt, which is usually packed with protein, keeping you satiated. Think about it: protein + fiber? That's a combo that's designed to keep hunger pangs at bay for hours. No more stomach grumbles distracting you during that important morning meeting, or while you're trying to focus on literally anything else.
 
-Then you throw in the berries. Oh, the berries! Not only do they add a natural sweetness that (for me, anyway) means I don't need to dump a ton of extra sugar in there, but they're also little tiny bombs of good stuff. Vitamins, minerals, some of those things called antioxidants that everyone says are good for you, (I'm not entirely sure *what* they do, but hey, sign me up). This whole situation is just a good vibe for your insides, helping support your energy levels and general well-being.
+Then you throw in the berries. Oh, the berries! Not only do they add a natural sweetness that (for me, anyway) means I don't need to dump a ton of extra sugar in there, but they're also little tiny bombs of good stuff. Vitamins, minerals, some of those things called antioxidants that everyone says are good for you, (I'm not sure *what* they do, but hey, sign me up). This whole situation is just a good vibe for your insides, helping support your energy levels and general well-being.
 
 ### Building Your Masterpiece: The 15g Fiber Parfait Recipe
 
@@ -43,7 +43,7 @@ Right, so you're probably thinking, "Okay, cool, but how do I actually *make* th
 **Ingredients you'll want to snag:**
 
 * 1 cup plain Greek yogurt (full-fat or 2%, whatever your jam is, just not the super sugary stuff, we're aiming for health here, remember?)
-* 1/2 cup high-fiber granola (read the labels here, folks, some granolas are basically disguised cookies. We're talking granola with like, 5g or more fiber per serving. Oats, nuts, seeds, the works.)
+* 1/2 cup high-fiber granola (read the labels here, folks, some granolas are disguised cookies. We're talking granola with like, 5g or more fiber per serving. Oats, nuts, seeds, the works.)
 * 1/2 cup mixed berries (fresh or frozen, whatever's in season or on sale. Blueberries, raspberries, blackberries, strawberries, get wild!)
 * (Optional, but really recommended) 1 tablespoon chia seeds or ground flaxseeds (for that extra fiber boost, you know?)
 * (Optional) A drizzle of maple syrup or honey if you need a touch more sweetness, but try it without first!
@@ -69,7 +69,7 @@ For your granola layer, sometimes I swap in some chopped almonds or walnuts alon
 
 ### Meal Prep Pro-Tip: The Overnight Parfait Life
 
-This is where this breakfast really shines for those of us who basically stumble out of bed. You can totally prep these little guys the night before. Seriously. It's a for chaotic mornings.
+This is where this breakfast really shines for those of us who stumble out of bed. You can prep these little guys the night before. Seriously. It's a for chaotic mornings.
 
 Just assemble your parfaits in glass jars with tight-fitting lids. I usually do about three at a time on Sunday night, and they're good to go for Monday, Tuesday, and Wednesday. The only trick is, if your granola tends to get super soggy, you might want to layer it in the morning. But honestly, I don't mind a slightly softened granola; it's still got that chew. For the best crunch, just add the granola and the very top layer of berries right before you eat it. Stash them in the fridge, and boom, breakfast is handled.
 

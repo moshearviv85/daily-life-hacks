@@ -70,9 +70,9 @@ I remember one winter (it was a particularly gnarly one, snow up to my knees, no
 
 <br>
 
-Okay, so we already talked about the fiber. Sixteen grams. That's a lot, dude. Fiber is your friend, especially for keeping things moving along (if you catch my drift) and helping you feel full and satisfied. This soup is practically a fiber delivery system.
+Okay, so we already talked about the fiber. Sixteen grams. That's a lot, dude. Fiber is your friend, especially for keeping things moving along (if you catch my drift) and helping you feel full and satisfied. This soup is a fiber delivery system.
 
-Beyond that, peas are packed with protein. So while this recipe is completely vegetarian (if you use veggie broth, which, hello, I did), it's still quite substantial. You're getting a decent amount of plant-based protein, which is neat. We're talking about vitamins too, like some B vitamins and a bit of iron. The carrots bring their vitamin A party to the pot, and the celery and onions add their own little nutritional contributions. It's a well-rounded meal hiding in a simple bowl, honestly. Pretty sneaky.
+Beyond that, peas are packed with protein. So while this recipe is vegetarian (if you use veggie broth, which, hello, I did), it's still quite substantial. You're getting a decent amount of plant-based protein, which is neat. We're talking about vitamins too, like some B vitamins and a bit of iron. The carrots bring their vitamin A party to the pot, and the celery and onions add their own little nutritional contributions. It's a well-rounded meal hiding in a simple bowl, honestly. Pretty sneaky.
 
 It may help support a balanced diet, you know, when you're not eating only instant noodles. (No judgment, we've all been there.)
 
@@ -86,7 +86,7 @@ This is where this soup truly shines for busy folks. Seriously. This stuff store
 
 Once your soup cools down (like, *really* cool, don't put hot stuff in the fridge, bad idea), spoon it into airtight containers. It'll hang out happily in the refrigerator for about 3-4 days. It actually tastes even better the next day, after all those flavors have had a proper chance to get to know each other.
 
-Freezing? Oh, absolutely. This soup freezes beautifully. Portion it out into freezer-safe containers or even heavy-duty freezer bags (lay them flat to save space, that's a pro tip). It'll keep for up to 3 months. When you're ready to eat, just thaw it in the fridge overnight or gently reheat it on the stove, adding a splash of broth or water if it's too thick. A cold winter night emergency meal, just waiting for you.
+Freezing? Oh,. This soup freezes beautifully. Portion it out into freezer-safe containers or even heavy-duty freezer bags (lay them flat to save space, that's a pro tip). It'll keep for up to 3 months. When you're ready to eat, just thaw it in the fridge overnight or gently reheat it on the stove, adding a splash of broth or water if it's too thick. A cold winter night emergency meal, just waiting for you.
 
 <br>
 
@@ -98,7 +98,7 @@ While the classic version is, in my humble opinion, perfect, sometimes you just 
 
 *   **Smoked Goodness:** If you're not vegetarian, a diced ham hock or some cooked, crumbled bacon added in at the end can bring a whole new layer of smoky, salty goodness. My dad used to throw in a smoked turkey leg sometimes.
 *   **Spicy Kick:** A pinch of red pepper flakes with the garlic can give it a nice little warmth. Don't go crazy unless you're a heat fiend.
-*   **Herb Garden Party:** Besides thyme, a bay leaf while simmering (remember to fish it out!), or a sprinkle of fresh rosemary or sage with the parsley, can totally change the vibe.
+*   **Herb Garden Party:** Besides thyme, a bay leaf while simmering (remember to fish it out!), or a sprinkle of fresh rosemary or sage with the parsley, can change the vibe.
 *   **Veggie Boost:** Got some spinach wilting in the fridge? Toss it in during the last few minutes of cooking. It'll disappear right into the soup, adding more nutrients. Zucchini works too.
 *   **Creamy Dreamy:** A tiny swirl of full-fat coconut milk (the canned kind, not the carton stuff for coffee) right before serving can make it extra luxurious. Don't knock it till you try it.
 

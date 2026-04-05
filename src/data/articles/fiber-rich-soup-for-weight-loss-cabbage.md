@@ -71,7 +71,7 @@ Listen, portion control is always a thing, even with healthy stuff. While this s
 
 This fiber rich soup for weight loss cabbage recipe is, like, a nutritional rockstar.
 
-* **Fiber:** Obviously, it's in the title! Cabbage, carrots, celery, and especially those cannellini beans are absolutely loaded. Fiber is key for digestive health, helps slow down sugar absorption (no wild blood sugar spikes, yay!), and contributes significantly to that "I'm not hungry anymore" feeling.
+* **Fiber:** Obviously, it's in the title! Cabbage, carrots, celery, and especially those cannellini beans are loaded. Fiber is key for digestive health, helps slow down sugar absorption (no wild blood sugar spikes, yay!), and contributes significantly to that "I'm not hungry anymore" feeling.
 * **Vitamins and Minerals:** You're getting a ton of Vitamin K and C from the cabbage, Vitamin A from the carrots, and a whole spectrum of B vitamins, potassium, and iron from the beans and other veggies. It's a nutrient dense meal without a huge calorie count.
 * **Antioxidants:** Cabbage, especially, is packed with antioxidants and anti-inflammatory compounds. Thought to help with all sorts of cellular stress, you know? Keeping your body happy.
 * **Hydration:** It's a soup! Broth-based means you're getting a good dose of hydration, which is often overlooked but so important for metabolism and just feeling generally good.
@@ -81,7 +81,7 @@ This fiber rich soup for weight loss cabbage recipe is, like, a nutritional rock
 
 Sometimes you want to switch it up, right? This soup is super adaptable.
 
-* **Spice It Up:** If you're into heat, a pinch more red pepper flakes, or even a dash of your favorite hot sauce at the end, totally works.
+* **Spice It Up:** If you're into heat, a pinch more red pepper flakes, or even a dash of your favorite hot sauce at the end, works.
 * **Add More Veggies:** Spinach or kale stirred in at the very end (they wilt super fast) adds even more greens. Diced bell peppers or zucchini can go in with the carrots and celery.
 * **Protein Boost:** For non-vegetarian options, a handful of shredded cooked chicken (rotisserie chicken works, just saying) or lean ground turkey cooked with the onions could be stirred in towards the end. Or, if you want to keep it plant-based but want more oomph, a scoop of lentils (cooked separately or added with the beans if using canned) would be stellar.
 * **Herbaceous Heaven:** Fresh dill or bay leaves added during simmering can give it a different flavor profile. Just remember to remove the bay leaves before serving.
@@ -90,6 +90,6 @@ Sometimes you want to switch it up, right? This soup is super adaptable.
 
 This soup is, like, prime meal prep material. Seriously. It actually tastes *better* the next day, once all those flavors have had a chance to really get to know each other.
 
-To store it, just let the soup cool completely first. You don't want to put hot soup into the fridge because it, um, raises the temperature of everything else in there. Spoon it into airtight containers. It'll keep beautifully in the refrigerator for up to 4-5 days.
+To store it, just let the soup cool first. You don't want to put hot soup into the fridge because it, um, raises the temperature of everything else in there. Spoon it into airtight containers. It'll keep beautifully in the refrigerator for up to 4-5 days.
 
 Freezing? Oh yeah, it freezes like a champ. Portion it out into freezer-safe containers or heavy-duty freezer bags (lay them flat to save space, pro tip). It'll be good in the freezer for up to 3 months. When you're ready for a bowl, just thaw it overnight in the fridge or gently reheat it on the stovetop from frozen, adding a splash of extra broth or water if it seems too thick. It's perfect for those busy weeknights when you want something healthy but have zero energy to cook from scratch. You'll thank your past self, trust me.

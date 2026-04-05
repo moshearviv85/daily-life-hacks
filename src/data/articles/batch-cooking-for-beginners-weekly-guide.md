@@ -26,9 +26,9 @@ faq:
 
 There's exactly one reason why people give up on eating healthy: it requires an absurd amount of daily effort. If your strategy relies on coming home from work at 6:00 PM, chopping vegetables, boiling water, and managing three different pans on the stove every single night, you're going to burn out by Wednesday. When you're exhausted, the drive-thru window suddenly looks like the most logical choice in the world. 
 
-The secret to actually maintaining a healthy diet without losing your mind is moving all the hard work to the one day of the week when you actually have energy. Following a batch cooking for beginners weekly guide completely transforms your Monday through Friday. 
+The secret to actually maintaining a healthy diet without losing your mind is moving all the hard work to the one day of the week when you actually have energy. Following a batch cooking for beginners weekly guide transforms your Monday through Friday. 
 
-Batch cooking is different from traditional "meal prep." You're not making ten identical, sad containers of chicken and rice. Instead, you're aggressively prepping core ingredients in bulk on Sunday afternoon, so weeknight dinners become an assembly project that takes exactly five minutes. 
+Batch cooking is different from traditional "meal prep." You're not making ten identical, sad containers of chicken and rice. Instead, you're prepping core ingredients in bulk on Sunday afternoon, so weeknight dinners become an assembly project that takes exactly five minutes. 
 
 Here is the master blueprint for taking back your evenings.
 
@@ -59,7 +59,7 @@ This is what prevents you from getting incredibly bored by Thursday. While the v
 You just spent 90 minutes working hard. The payoff is that from Monday to Friday, "cooking" dinner essentially just means opening the refrigerator and using your microwave. 
 
 *   **Monday (The Mediterranean Bowl):** Grab a handful of the pre-cooked rice. Top it with the roasted broccoli and a piece of chicken. Drizzle heavily with the lemon-mustard dressing. Microwave for two minutes. 
-*   **Tuesday (The Quick Stir-Fry):** Take some rice, toss in the roasted sweet potatoes and peppers, add a handful of chopped tofu or chicken, and absolutely douse it in the peanut sauce. Heat it until hot. 
-*   **Wednesday (The Wrap Trick):** Tired of eating out of a bowl? Take a large whole wheat tortilla. Spread some hummus inside. Add exactly the same chicken and roasted vegetables from Tuesday, wrap it tightly, and eat it cold. It tastes entirely different. 
+*   **Tuesday (The Quick Stir-Fry):** Take some rice, toss in the roasted sweet potatoes and peppers, add a handful of chopped tofu or chicken, and douse it in the peanut sauce. Heat it until hot. 
+*   **Wednesday (The Wrap Trick):** Tired of eating out of a bowl? Take a large whole wheat tortilla. Spread some hummus inside. Add exactly the same chicken and roasted vegetables from Tuesday, wrap it tightly, and eat it cold. It tastes different. 
 
 The brilliance of a solid batch cooking for beginners weekly guide is that it removes all decision fatigue. You never have to stare blankly into the fridge at 7:00 PM wondering what to make, because the ingredients are already perfectly cooked and staring right back at you. You just combine them, heat them, and enjoy your evening.

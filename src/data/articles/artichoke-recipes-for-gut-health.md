@@ -53,7 +53,7 @@ Okay, so who else looks at an artichoke and thinks, "What even *is* that alien v
 
 &#x20;
 
-For real, the artichoke is kinda a big deal for gut health. We're talking about one of the highest-fiber vegetables out there. That's right, those fuzzy chokes and meaty leaves are just packed with prebiotics, which are basically like gourmet meals for the good bacteria hanging out in your gut. Your gut biome (that's all the tiny critters living in your digestive system, a whole city in there) seems to really like this stuff, and when they're happy, you might feel better, perhaps less bloated, and just generally more... balanced. It's not just about, you know, regularity; a healthy gut biome could have all these ripple effects on your whole vibe, potentially affecting everything from mood to immunity.
+For real, the artichoke is kinda a big deal for gut health. We're talking about one of the highest-fiber vegetables out there. That's right, those fuzzy chokes and meaty leaves are just packed with prebiotics, which are like gourmet meals for the good bacteria hanging out in your gut. Your gut biome (that's all the tiny critters living in your digestive system, a whole city in there) seems to really like this stuff, and when they're happy, you might feel better, perhaps less bloated, and just generally more... balanced. It's not just about, you know, regularity; a healthy gut biome could have all these ripple effects on your whole vibe, potentially affecting everything from mood to immunity.
 
 &#x20;
 
@@ -61,7 +61,7 @@ For real, the artichoke is kinda a big deal for gut health. We're talking about 
 
 &#x20;
 
-Choosing a good artichoke isn't rocket science, but there are a few pro-tips. You want one that feels heavy for its size. The leaves should be tightly closed and have a vibrant green color (sometimes a bit of purple at the tips, which is totally fine). Avoid any that look dry, have widespread browning, or feel light and squishy. A little squeak when you squeeze it? That's a sign of freshness. The stem should also be firm. Don't be afraid to give 'em a good squeeze; they're tougher than they look.
+Choosing a good artichoke isn't rocket science, but there are a few pro-tips. You want one that feels heavy for its size. The leaves should be tightly closed and have a vibrant green color (sometimes a bit of purple at the tips, which is fine). Avoid any that look dry, have widespread browning, or feel light and squishy. A little squeak when you squeeze it? That's a sign of freshness. The stem should also be firm. Don't be afraid to give 'em a good squeeze; they're tougher than they look.
 
 &#x20;
 

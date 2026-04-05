@@ -30,7 +30,7 @@ Most nights, after I've eaten a little too enthusiastically (or, let's be honest
 
 ## The Lowdown on Post-Meal Bloat: Why Does It Even Happen?
 
-Okay, so, bloating. It's pretty common, which doesn't make it any less annoying. It's often caused by gas building up in your digestive system, sometimes from eating too fast (guilty!), gulping down fizzy drinks, or even certain foods being a bit hard for your body to break down easily. Stress totally plays a role too, because our guts are, like, the second brain, constantly chatting with our actual brain. Sometimes it just feels like your system's a bit sluggish, not moving things along as smoothly as it should, leaving you feeling stuffed and uncomfortable.
+Okay, so, bloating. It's pretty common, which doesn't make it any less annoying. It's often caused by gas building up in your digestive system, sometimes from eating too fast (guilty!), gulping down fizzy drinks, or even certain foods being a bit hard for your body to break down easily. Stress plays a role too, because our guts are, like, the second brain, constantly chatting with our actual brain. Sometimes it just feels like your system's a bit sluggish, not moving things along as smoothly as it should, leaving you feeling stuffed and uncomfortable.
 
 ##  Dynamic Duo: Peppermint and Ginger
 
@@ -44,7 +44,7 @@ Peppermint isn't just for freshening your breath. The magic compound in peppermi
 
 ## Ginger: The Warm Soother
 
-Then there's ginger. This spicy root is practically synonymous with soothing nausea and aiding digestion. Its active compounds, gingerols and shogaols, are believed to stimulate digestive juices and enzymes, potentially speeding up the emptying of the stomach. So, if your meal is just kinda sitting there, like a guest who won't leave, ginger might encourage it to get a move on. It's also thought to have anti-inflammatory properties, which could be a bonus for overall gut happiness. Plus, the warmth of a ginger drink alone feels incredibly comforting when your stomach is doing the cha-cha slide. This gut health tea peppermint ginger combo is, like, a dream team.
+Then there's ginger. This spicy root is synonymous with soothing nausea and aiding digestion. Its active compounds, gingerols and shogaols, are believed to stimulate digestive juices and enzymes, potentially speeding up the emptying of the stomach. So, if your meal is just kinda sitting there, like a guest who won't leave, ginger might encourage it to get a move on. It's also thought to have anti-inflammatory properties, which could be a bonus for overall gut happiness. Plus, the warmth of a ginger drink alone feels incredibly comforting when your stomach is doing the cha-cha slide. This gut health tea peppermint ginger combo is, like, a dream team.
 
 ## Whip Up Your Own Gut Health Tea: Peppermint & Ginger Recipe
 
@@ -77,7 +77,7 @@ Beyond chugging this fantastic tea, there are a few other little adjustments you
 
 ## Chew Your Food! Seriously.
 
-I know, I know. Obvious, right? But how many times do we scarf down lunch while scrolling through TikTok? Digestion actually starts in your mouth. Chewing thoroughly breaks down food into smaller pieces, making it easier for your stomach enzymes to do their job. Plus, it slows you down, which can help help avoid swallowing excess air (less gas, yay!).
+I know, I know. Obvious, right? But how many times do we scarf down lunch while scrolling through TikTok? Digestion actually starts in your mouth. Chewing breaks down food into smaller pieces, making it easier for your stomach enzymes to do their job. Plus, it slows you down, which can help help avoid swallowing excess air (less gas, yay!).
 
 
 ## Hydrate, Hydrate, Hydrate
@@ -91,4 +91,4 @@ Try to eat in a relaxed environment. When you're stressed or rushed, your body d
 
 ## Storing Your Herbal Brew
 
-So, you've made a batch of this lovely gut health tea peppermint ginger blend and you're thinking, "Can I save some for later?" Absolutely! You can make a larger batch and store it. Just let the tea cool completely to room temperature. Then, pour it into an airtight container or a glass jar. Keep it in the fridge. It's usually good for about 2-3 days. When you want to drink it, you can either enjoy it cold (super refreshing on a hot day!) or gently reheat it on the stovetop or in the microwave. I often make a bigger batch on a Sunday to have ready for the week. It's a real lifesaver, especially on those days where you know you're heading for a food coma.
+So, you've made a batch of this lovely gut health tea peppermint ginger blend and you're thinking, "Can I save some for later?"! You can make a larger batch and store it. Just let the tea cool to room temperature. Then, pour it into an airtight container or a glass jar. Keep it in the fridge. It's usually good for about 2-3 days. When you want to drink it, you can either enjoy it cold (super refreshing on a hot day!) or gently reheat it on the stovetop or in the microwave. I often make a bigger batch on a Sunday to have ready for the week. It's a real lifesaver, especially on those days where you know you're heading for a food coma.

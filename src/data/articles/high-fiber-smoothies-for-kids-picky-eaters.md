@@ -24,9 +24,9 @@ faq:
     answer: "It's usually best to start small, adding just a teaspoon of chia seeds or a few florets of cauliflower to avoid upsetting their stomach. Once they're used to the taste and texture, you can slowly bump up the amount. A good high fiber smoothies for kids picky eaters guide suggests aiming for just a few grams per serving to keep it gentle and delicious."
 ---
 
-I swear, my youngest thinks anything green is basically a monster trying to get him. A little stalk of broccoli? Nope. A pea? Absolutely not. It's a battlefield, dinner time, every single night. And as a parent, you're just trying to make sure they, you know, grow properly and get all the good stuff their little bodies need, like fiber, which could be really helpful for digestive health and keeping things moving along, if you catch my drift.
+I swear, my youngest thinks anything green is a monster trying to get him. A little stalk of broccoli? Nope. A pea? not. It's a battlefield, dinner time, every single night. And as a parent, you're just trying to make sure they, you know, grow properly and get all the good stuff their little bodies need, like fiber, which could be really helpful for digestive health and keeping things moving along, if you catch my drift.
 
-One day, I just stared at a bunch of spinach in the fridge. And then at a banana. And then at my kid, who was currently attempting to feed a perfectly good carrot stick to the dog under the table. Lightbulb moment. Smoothies. But not just any smoothie; a truly deceptive, delicious smoothie where the veggies practically vanish. We need high fiber smoothies for kids picky eaters. This is the way.
+One day, I just stared at a bunch of spinach in the fridge. And then at a banana. And then at my kid, who was currently attempting to feed a perfectly good carrot stick to the dog under the table. Lightbulb moment. Smoothies. But not just any smoothie; a truly deceptive, delicious smoothie where the veggies vanish. We need high fiber smoothies for kids picky eaters. This is the way.
 
 ## Why Fiber is, Like, a Huge Deal for Little Humans
 
@@ -44,11 +44,11 @@ Before we get to the recipes, a few pro-tips from someone who has battled many a
 
 **A Liquid Base That Works:** Almond milk, oat milk, or even regular dairy milk if that's your jam. Sometimes a little fruit juice (100%, no added sugar) can help, but don't overdo it. Water works too, but it's less creamy.
 
-**The Green of Choice:** Spinach is king here. It has a mild flavor and blends down to nothing. Kale is a bit stronger, so maybe save that for when they're totally hooked. You can really pile it in without much notice.
+**The Green of Choice:** Spinach is king here. It has a mild flavor and blends down to nothing. Kale is a bit stronger, so maybe save that for when they're hooked. You can really pile it in without much notice.
 
 ### Blend It Like You Mean It
 
-A good blender is key. You want absolutely no flecks of green. None. Zip. If you see green bits, blend more. Keep blending. Your kid will spot it. They have radar for that stuff.
+A good blender is key. You want no flecks of green. None. Zip. If you see green bits, blend more. Keep blending. Your kid will spot it. They have radar for that stuff.
 
 ### Presentation Matters (Sort Of)
 
@@ -67,7 +67,7 @@ This is where it all began for us. A true classic. It's sweet, it's pink, and it
 * Optional: a tiny dash of vanilla extract (really helps with the flavor profile)
 
 **Instructions:**
-1. Toss the spinach and milk into your blender first. Blend until the spinach is totally gone. No green bits. This is.
+1. Toss the spinach and milk into your blender first. Blend until the spinach is gone. No green bits. This is.
 2. Add the banana, frozen strawberries, and any optional ingredients.
 3. Blend again until super smooth and creamy. If it's too thick, add a tiny bit more milk, a tablespoon at a time, until it reaches your desired consistency.
 4. Pour and serve immediately. Watch them slurp it down.
@@ -105,12 +105,12 @@ This one has a bit of a tropical vibe, thanks to the pineapple. Pineapple is als
 **Instructions:**
 1. Yep, you guessed it: spinach and your chosen milk go in first. Blend until it's a green liquid.
 2. Add the banana, frozen strawberries, frozen pineapple, and any optional orange juice.
-3. Blend until completely smooth, like a tropical dream. Adjust liquid if needed.
+3. Blend until smooth, like a tropical dream. Adjust liquid if needed.
 4. Hand it over. They'll be thinking beach vacation, not spinach.
 
 ## Smoothie Prep and Storage Shenanigans
 
-You can absolutely prep these ahead of time. I often make big batches.
+You can prep these ahead of time. I often make big batches.
 
 ### Meal Prep Tips
 

@@ -52,11 +52,11 @@ Okay, so I used to be that person, right? Grabbing whatever bottle was on sale. 
 
 ## The Glorious Gloop: Tahini's Magic
 
-So, here's the deal with tahini. It's basically ground sesame seeds. Sounds simple, right? It is. But oh, the magic it brings. It's creamy, it's nutty (but not *too* nutty, if you know what I mean), and it's got this rich, slightly bitter undertone that just plays so well with lemon. And for real, it's packed. I mean, seriously packed. You're looking at healthy fats-the monounsaturated and polyunsaturated kinds-which are like, good for your heart and stuff. And fiber. Hello, fiber! Important for digestion, helps you feel full, keeps things moving. Plus, protein! A decent amount for a seed paste. It's an unsung hero of the pantry, often just chilling there until hummus time, but it's so much more versatile.
+So, here's the deal with tahini. It's ground sesame seeds. Sounds simple, right? It is. But oh, the magic it brings. It's creamy, it's nutty (but not *too* nutty, if you know what I mean), and it's got this rich, slightly bitter undertone that just plays so well with lemon. And for real, it's packed. I mean, seriously packed. You're looking at healthy fats-the monounsaturated and polyunsaturated kinds-which are like, good for your heart and stuff. And fiber. Hello, fiber! Important for digestion, helps you feel full, keeps things moving. Plus, protein! A decent amount for a seed paste. It's an unsung hero of the pantry, often just chilling there until hummus time, but it's so much more versatile.
 
 ## Whipping Up Your Own Vibe
 
-Making this dressing is less a "recipe" and more a "vibe," honestly. You basically just whisk stuff together. That's it. No cooking, no fancy equipment. You get this incredibly creamy, luscious dressing that coats your greens beautifully, without all the added sweeteners or questionable oils. It takes literally five minutes. Maybe ten if you're, like, easily distracted (which I am, frequently, when a good song comes on). The key? Warm water. Don't skip that. It helps everything emulsify properly, preventing that weird, clumpy texture tahini can sometimes get when it first meets liquid. It's like a little handshake between ingredients.
+Making this dressing is less a "recipe" and more a "vibe," honestly. You just whisk stuff together. That's it. No cooking, no fancy equipment. You get this incredibly creamy, luscious dressing that coats your greens beautifully, without all the added sweeteners or questionable oils. It takes literally five minutes. Maybe ten if you're, like, easily distracted (which I am, frequently, when a good song comes on). The key? Warm water. Don't skip that. It helps everything emulsify properly, preventing that weird, clumpy texture tahini can sometimes get when it first meets liquid. It's like a little handshake between ingredients.
 
 ## Nutritional Nitty-Gritty, For Real
 
@@ -66,10 +66,10 @@ Let's talk about what this dressing is actually bringing to the party. Tahini, a
 
 So, you've got the basic tahini-lemon dressing down. But don't stop there! This is just a jumping-off point.
 *   **Spicy Kick**: Add a pinch of cayenne pepper or a dash of your favorite hot sauce. Sriracha works, or even some chili flakes.
-*   **Herbalicious**: Fresh herbs are your friend. A tablespoon of finely chopped parsley, cilantro, dill, or mint can totally change the profile. Think a Mediterranean vibe with dill and a touch more lemon.
+*   **Herbalicious**: Fresh herbs are your friend. A tablespoon of finely chopped parsley, cilantro, dill, or mint can change the profile. Think a Mediterranean vibe with dill and a touch more lemon.
 *   **Sweet-ish (but still no sugar!)**: If you *really* miss a hint of sweetness, try a tiny bit of date paste or a minuscule drizzle of maple syrup. Like, a quarter teaspoon. Just enough to balance, not to make it dessert.
 *   **Umami Bomb**: A splash of tamari (gluten-free soy sauce) can add a deep, savory note. Start small, maybe half a teaspoon, and taste.
 
 ## Keepin' It Fresh (No, Seriously)
 
-Once you've made your dressing, you can totally keep it in the fridge. A sealed jar or container is best. It'll stay good for about 5-7 days. Sometimes it thickens up a bit in the cold, which is totally normal. Just give it a good shake or a quick whisk, and if it's too thick for your liking, add a tiny splash of water (or lemon juice if you want more tang) to thin it out again. It's perfect for meal prepping, just make a batch on Sunday and you're golden for the week. No more sad, naked salads.
+Once you've made your dressing, you can keep it in the fridge. A sealed jar or container is best. It'll stay good for about 5-7 days. Sometimes it thickens up a bit in the cold, which is normal. Just give it a good shake or a quick whisk, and if it's too thick for your liking, add a tiny splash of water (or lemon juice if you want more tang) to thin it out again. It's perfect for meal prepping, just make a batch on Sunday and you're golden for the week. No more sad, naked salads.

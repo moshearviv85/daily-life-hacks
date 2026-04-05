@@ -72,7 +72,7 @@ Okay, so maybe you're thinking, "Tofu? Meh." I get it. It can be a little... squ
 ## Meal Prep Tips for the Win
 
 *   **Containers are Your BFF:** Get yourself some decent airtight containers. Glass ones are my fave because they don't stain, and you can microwave right in them. Plus, they look kinda fancy even when your lunch is just, well, lunch.
-*   **Cool It Down:** Always, *always* let your food cool down completely before you put the lids on and stick it in the fridge. If you trap hot steam, it makes everything soggy and sad. Nobody wants soggy tofu. That's an epic fail right there.
+*   **Cool It Down:** Always, *always* let your food cool down before you put the lids on and stick it in the fridge. If you trap hot steam, it makes everything soggy and sad. Nobody wants soggy tofu. That's an epic fail right there.
 *   **Assembly Line Style:** Once everything is cooked, line up your containers, scoop in the quinoa, then the veggies, then the tofu. It's like a little factory, and it makes the whole process go super quick. Put on some tunes, get in the zone.
 *   **Don't Forget the Garnish (If You're Feeling Fancy):** A sprinkle of sesame seeds or some fresh cilantro right before you eat it can really make it feel like a fresh meal, even if it's day four. Presentation matters, even for a Tuesday lunch that nobody else will see.
 
@@ -88,7 +88,7 @@ Look, I know eating the same thing for five days might sound... daunting. But it
 
 *   **Veggie Swap:** Not a fan of broccoli? No worries. Try cauliflower, Brussels sprouts, sweet potatoes, or zucchini. Whatever's in season or on sale!
 *   **Spice It Up:** Instead of the soy sauce marinade, try a peanut sauce (peanut butter, lime, ginger, soy sauce) or a spicy sriracha-lime dressing. Or just add some chili flakes to the roasting veggies.
-*   **Grain Change-Up:** Brown rice or farro could totally sub in for quinoa. Just adjust cooking times accordingly.
+*   **Grain Change-Up:** Brown rice or farro could sub in for quinoa. Just adjust cooking times accordingly.
 *   **Add-Ins:** Throw in some edamame or chickpeas for extra protein and fiber. A sprinkle of nutritional yeast can give it a cheesy flavor if you're into that.
 
 So yeah, this whole *vegan high fiber meal prep for week* thing? It's genuinely a lifesaver. You make it once, and then you're done for the week. Your future self will be sending you thank you notes, trust me. Just keep those containers sealed tight in the fridge for up to five days.

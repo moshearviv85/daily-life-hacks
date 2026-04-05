@@ -1,7 +1,7 @@
 ---
 title: "High Fiber Bran Muffins That Taste Good"
 excerpt: "Discover how these surprisingly delicious high fiber bran muffins can become your gut's best friend without sacrificing flavor. Perfect for breakfast and regularity!"
-category: "nutrition"
+category: "recipes"
 tags: ["HighFiberBranMuffinsThatTasteGood", "HighFiberBranMuffinsThatTasteGoodGuide", "BestHighFiberBranMuffinsThatTasteGood", "HighFiberBranMuffinsThatTasteGoodTips"]
 image: "/images/high-fiber-bran-muffins-that-taste-good-main.jpg"
 imageAlt: "High Fiber Bran Muffins That Taste Good - appetizing food presentation for natural digestive relief"
@@ -11,6 +11,34 @@ featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
+prepTime: "15 minutes"
+cookTime: "20 minutes"
+totalTime: "35 minutes"
+servings: 12
+calories: 220
+difficulty: "Easy"
+ingredients:
+  - "1 ½ cups wheat bran"
+  - "½ cup oat bran"
+  - "1 ½ cups all-purpose flour (or whole wheat flour)"
+  - "½ cup granulated sugar"
+  - "2 teaspoons baking soda"
+  - "½ teaspoon salt"
+  - "1 teaspoon ground cinnamon (optional)"
+  - "1 ½ cups buttermilk (or milk + 1 tablespoon lemon juice or vinegar, rested 5 minutes)"
+  - "½ cup honey"
+  - "½ cup vegetable oil (or melted coconut oil, cooled)"
+  - "2 large eggs, lightly beaten"
+  - "1 teaspoon vanilla extract"
+  - "1 cup raisins (or other dried fruit)"
+steps:
+  - "Preheat oven to 400°F (200°C). Line a 12-cup muffin tin with paper liners or grease well."
+  - "In a large bowl, whisk together wheat bran, oat bran, flour, sugar, baking soda, salt, and cinnamon (if using)."
+  - "In a separate bowl, whisk together buttermilk, honey, oil, eggs, and vanilla."
+  - "Pour wet ingredients into dry ingredients and add raisins. Stir just until combined. Don't overmix."
+  - "Divide batter evenly among muffin cups (they'll be fairly full)."
+  - "Bake 18-22 minutes, until a toothpick inserted in the center comes out clean."
+  - "Cool in the pan for a few minutes, then move to a wire rack."
 faq:
   - question: "How do I make high fiber bran muffins that taste good instead of like cardboard?"
     answer: "The secret to the best high fiber bran muffins that taste good is balancing the dry bran with plenty of moisture. Adding ingredients like applesauce, mashed bananas, or Greek yogurt can keep them incredibly soft and tender. You might also want to try soaking the bran in milk for about ten minutes before mixing it into the batter."
@@ -30,7 +58,7 @@ See, somewhere along the line, someone figured out how to make **high fiber bran
 
 ## Why Your Gut Will Send You a Thank You Card
 
-So, fiber. It's not just a word your doctor throws around. It's actually a pretty big deal for your insides. Specifically, dietary fiber, which bran is just absolutely loaded with. Think of it like tiny helpers that could support your digestive tract. It adds bulk to your stool (glamorous, I know, but important!), which helps things move along smoothly and regularly. Nobody likes to feel, shall we say, "backed up." It's uncomfortable, it's frustrating, and it can just make you feel sluggish all day.
+So, fiber. It's not just a word your doctor throws around. It's actually a pretty big deal for your insides. Specifically, dietary fiber, which bran is just loaded with. Think of it like tiny helpers that could support your digestive tract. It adds bulk to your stool (glamorous, I know, but important!), which helps things move along smoothly and regularly. Nobody likes to feel, shall we say, "backed up." It's uncomfortable, it's frustrating, and it can just make you feel sluggish all day.
 
 These muffins, with their generous dose of wheat bran, oat bran, and even some whole wheat flour (for extra oomph, obviously), can be a really gentle, natural way to support daily regularity. Plus, a diet rich in fiber can contribute to a feeling of fullness, which might just keep those mid-morning snack attacks at bay. It's not a magic pill, no, but it's a pretty smart breakfast choice, if you ask me. Especially when it's delicious.
 
@@ -68,10 +96,10 @@ This recipe makes about 12 glorious muffins. You might want to double it. Just s
 1. **Preheat and Prep:** Crank that oven to 400°F (200°C). Line a 12-cup muffin tin with paper liners or grease it really well. Nobody likes a stuck muffin.
 2. **Mix the Dry:** In a large bowl, whisk together the wheat bran, oat bran, flour, sugar, baking soda, salt, and cinnamon (if using). Just get it all nice and combined.
 3. **Mix the Wet:** In a separate, medium bowl, whisk together the buttermilk, honey, oil, eggs, and vanilla extract. This is where all the magical moisture starts.
-4. **Combine (Gently!):** Pour the wet ingredients into the dry ingredients. Add the raisins. Now, here's the part: **DON'T OVERMIX.** Stir with a spoon or spatula *just* until the dry ingredients are moistened. A few lumps are totally fine. Overmixing is the enemy of moist, tender muffins. It makes them tough. Like cardboard, maybe. We don't want cardboard.
+4. **Combine (Gently!):** Pour the wet ingredients into the dry ingredients. Add the raisins. Now, here's the part: **DON'T OVERMIX.** Stir with a spoon or spatula *just* until the dry ingredients are moistened. A few lumps are fine. Overmixing is the enemy of moist, tender muffins. It makes them tough. Like cardboard, maybe. We don't want cardboard.
 5. **Fill 'em Up:** Divide the batter evenly among the prepared muffin cups. They'll be pretty full.
 6. **Bake:** Pop 'em in the oven for 18-22 minutes, or until a wooden skewer inserted into the center comes out clean. The tops should be beautifully golden brown.
-7. **Cool:** Let them cool in the muffin tin for a few minutes before transferring them to a wire rack to cool completely. Or, you know, eat one warm. I won't tell.
+7. **Cool:** Let them cool in the muffin tin for a few minutes before transferring them to a wire rack to cool. Or, you know, eat one warm. I won't tell.
 
 ## Meal Prep Tips & How to Store Your Muffin Stash
 

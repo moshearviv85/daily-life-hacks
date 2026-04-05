@@ -25,11 +25,11 @@ faq:
 ---
 You know that feeling, right? Like you're cruising along, minding your business, and then *BAM*-the hunger monster strikes, and suddenly every single road sign is just screaming "TAKE-OUT!" It's a real vibe killer when you're trying to, you know, eat somewhat decently, but all that's around is a glowing golden arch or a siren-song drive-thru menu. Especially when you're craving something that doesn't feel like a lead balloon in your stomach an hour later, something with, say, actual *fiber*. Rough stuff.
 
-But hey, plot twist! Even in the land of quick eats, there are ways to sneak in that glorious, gut-loving fiber. It's not always obvious, it takes a little bit of strategic thinking-almost like you're a secret agent of nutrition, infiltrating the fast-food industrial complex-but it's totally doable. This isn't about, like, *perfect* eating, because who even does that? This is about making a slightly less regrettable choice when your options are limited, for real.
+But hey, plot twist! Even in the land of quick eats, there are ways to sneak in that glorious, gut-loving fiber. It's not always obvious, it takes a little bit of strategic thinking-almost like you're a secret agent of nutrition, infiltrating the fast-food industrial complex-but it's doable. This isn't about, like, *perfect* eating, because who even does that? This is about making a slightly less regrettable choice when your options are limited, for real.
 
 ## Subway: The Sandwich Architect's Fiber Playground
 
-Okay, Subway. So many choices, right? It's basically a build-your-own situation, which is, honestly, the best kind of fast food for fiber fiends. You have a lot of control here.
+Okay, Subway. So many choices, right? It's a build-your-own situation, which is, honestly, the best kind of fast food for fiber fiends. You have a lot of control here.
 
 First things first, bread. This is where most folks just grab whatever, but *no*. Six-inch wheat bread. Or even the foot-long, if you're feeling extra peckish, but wheat is where it's at for that fundamental fiber base. It makes a difference, trust me. Skip the white or Italian herb and cheese (delicious, yes, but not our mission today).
 
@@ -39,7 +39,7 @@ For protein, turkey or chicken breast are solid, lean options. They won't add fi
 
 ## Chipotle: Your High-Fiber Bowl Bestie
 
-Chipotle. Oh, Chipotle. This place is practically *made* for fiber, if you play your cards right. It's all about the bowl, people. The bowl is your canvas.
+Chipotle. Oh, Chipotle. This place is *made* for fiber, if you play your cards right. It's all about the bowl, people. The bowl is your canvas.
 
 Start with brown rice. Not white. Brown. It's right there, begging to be chosen. Then, the beans. This is where the magic happens. Pinto beans *and* black beans? Yes, please! A glorious double whammy of legume-derived fiber. You could literally just get rice and beans and call it a day, honestly, and you'd be doing pretty good.
 

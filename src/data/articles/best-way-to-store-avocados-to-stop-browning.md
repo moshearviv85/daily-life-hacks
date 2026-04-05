@@ -24,13 +24,13 @@ faq:
     answer: "Yes, you can absolutely freeze avocados if you don't want them to go bad. It's best to mash them with a little lime or lemon juice first, then place the puree in an airtight freezer bag. While the texture might change slightly once thawed, they're still perfectly delicious for smoothies or homemade guacamole."
 ---
 
-Avocados are practically a luxury item these days. You spend decent money on them, nurture them on the counter for three days waiting for that exact perfect moment of ripeness, and then you cut one open only to eat half. You wrap the other half in plastic wrap, put it in the fridge, and by the next morning? It looks like literal brown mush. 
+Avocados are a luxury item these days. You spend decent money on them, nurture them on the counter for three days waiting for that exact perfect moment of ripeness, and then you cut one open only to eat half. You wrap the other half in plastic wrap, put it in the fridge, and by the next morning? It looks like literal brown mush. 
 
 The oxidation process of an avocado is ruthless. As soon as the flesh hits the air, it starts breaking down. Luckily, there are a few genuinely effective tricks, and I am going to show you the absolute best way to store avocados to stop browning.
 
 ## Trick #1: The Onion Method (The Best Option)
 
-This sounds absolutely bizarre, but it's scientifically the most effective method I have ever tried. Onions naturally emit sulfur gases, and those specific gases are incredibly good at halting the oxidation process in avocados. 
+This sounds bizarre, but it's scientifically the most effective method I have ever tried. Onions naturally emit sulfur gases, and those specific gases are incredibly good at halting the oxidation process in avocados. 
 
 1. Take the leftover half of your avocado (leave the pit inside if you can, it helps protect the flesh underneath).
 2. Take a glass airtight container (like a Pyrex or Tupperware). 
@@ -54,7 +54,7 @@ If you have already mashed the avocado up to make guacamole, the onion trick won
 
 1. Squeeze a generous amount of fresh lemon or lime juice directly over the top of the guacamole. 
 2. Don't mix it in yet; leave the juice sitting as a visible puddle on the surface. 
-3. Press plastic wrap entirely flat against the surface of the guac, forcing out any air. 
+3. Press plastic wrap flat against the surface of the guac, forcing out any air. 
 4. When you're ready to eat it the next day, simply pour off the excess juice from the top and give it a quick stir. You will have perfectly bright green guacamole. 
 
-Finding the best way to store avocados to stop browning is going to completely change your lunch game. No more scraping off the sad brown layers before you make your morning toast!
+Finding the best way to store avocados to stop browning is going to change your lunch game. No more scraping off the sad brown layers before you make your morning toast!

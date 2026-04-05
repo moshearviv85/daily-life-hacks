@@ -1,41 +1,61 @@
----
-title: "Easy Black Bean Tacos for a Weeknight Dinner"
-excerpt: "Black bean tacos that come together in minutes. No long simmering, no fancy ingredients. Just a solid, repeatable weeknight dinner that everyone can customize."
-category: "recipes"
-tags: ["black bean tacos", "weeknight dinner", "vegetarian tacos", "easy recipes", "quick dinner"]
-image: "/images/easy-black-bean-tacos-weeknight-dinner-main.jpg"
-imageAlt: "Black bean tacos on corn tortillas with toppings"
+---title: Easy Black Bean Tacos for a Weeknight Dinner
+excerpt: Black bean tacos that come together in minutes. No long simmering, no fancy
+  ingredients. Just a solid, repeatable weeknight dinner that everyone can customize.
+category: recipes
+tags:
+  - black bean tacos
+  - weeknight dinner
+  - vegetarian tacos
+  - easy recipes
+  - quick dinner
+image: /images/easy-black-bean-tacos-weeknight-dinner-main.jpg
+imageAlt: Black bean tacos on corn tortillas with toppings
 date: 2026-03-15
-author: "Daily Life Hacks Team"
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-prepTime: "5 minutes"
-cookTime: "10 minutes"
-totalTime: "15 minutes"
+prepTime: 5 minutes
+cookTime: 10 minutes
+totalTime: 15 minutes
 servings: 4
 calories: 320
-difficulty: "Easy"
+difficulty: Easy
 ingredients:
-  - "2 (15 oz) cans black beans, drained and rinsed"
-  - "1/2 tsp ground cumin"
-  - "1/2 tsp chili powder"
-  - "1/4 tsp garlic powder"
-  - "2 tbsp water or lime juice"
-  - "8–12 corn or flour tortillas, warmed"
-  - "Toppings: shredded cabbage or lettuce, salsa, lime wedges, cilantro, avocado or crema (optional)"
+  - 2 (15 oz) cans black beans, drained and rinsed
+  - 1/2 tsp ground cumin
+  - 1/2 tsp chili powder
+  - 1/4 tsp garlic powder
+  - 2 tbsp water or lime juice
+  - 8–12 corn or flour tortillas, warmed
+  - 'Toppings: shredded cabbage or lettuce, salsa, lime wedges, cilantro, avocado
+    or crema (optional)'
 steps:
-  - "In a medium skillet over medium heat, add the black beans, cumin, chili powder, garlic powder, and water or lime juice. Mash about half the beans with the back of a fork and stir. Cook 5–7 minutes until heated through and slightly thickened."
-  - "Warm tortillas in a dry skillet or wrapped in a damp towel in the microwave."
-  - "Spoon bean mixture into tortillas and add toppings as you like. Serve with lime wedges."
+  - In a medium skillet over medium heat, add the black beans, cumin, chili powder,
+    garlic powder, and water or lime juice. Mash about half the beans with the back
+    of a fork and stir. Cook 5–7 minutes until heated through and slightly thickened.
+  - Warm tortillas in a dry skillet or wrapped in a damp towel in the microwave.
+  - Spoon bean mixture into tortillas and add toppings as you like. Serve with lime
+    wedges.
 faq:
-  - question: "Why do I need to mash the black beans?"
-    answer: "Mashing about half of the beans is the trick to a great easy black bean tacos weeknight dinner. It creates a thicker, creamier texture so the beans actually stay inside the tortilla instead of rolling out onto your plate."
-  - question: "Can I use dried beans instead of canned?"
-    answer: "You can, but you'll need to cook them thoroughly first. Using canned beans is what keeps this recipe under 15 minutes for a fast and reliable dinner."
-  - question: "Are these black bean tacos considered healthy?"
-    answer: "Yes, black beans are a fantastic source of plant-based protein and dietary fiber, which may help support digestion and keep you feeling full without feeling heavy."
+  - question: Why do I need to mash the black beans?
+    answer: Mashing about half of the beans is the trick to a great easy black bean
+      tacos weeknight dinner. It creates a thicker, creamier texture so the beans
+      actually stay inside the tortilla instead of rolling out onto your plate.
+  - question: Can I use dried beans instead of canned?
+    answer: You can, but you'll need to cook them thoroughly first. Using canned beans
+      is what keeps this recipe under 15 minutes for a fast and reliable dinner.
+  - question: Are these black bean tacos considered healthy?
+    answer: Yes, black beans are a fantastic source of plant-based protein and dietary
+      fiber, which may help support digestion and keep you feeling full without feeling
+      heavy.
+  - question: Is this approach suitable for beginners?
+    answer: Yes, it is designed to be accessible. You can start small and gradually
+      incorporate more changes as you feel comfortable.
+  - question: How long does it take to see results?
+    answer: Everyone is different, but many people notice positive changes within
+      a few weeks of consistent habits.
 ---
 
 Tacos don't have to automatically mean browning ground beef or chopping a mountain of ingredients. Sometimes you just need food to be ready immediately. These easy black bean tacos are explicitly built for those tired weeknights. 
@@ -46,7 +66,7 @@ You open a couple of cans, warm the beans with a few standard pantry spices, and
 
 ## Why Black Beans Belong in Tacos
 
-Black beans are an unsung hero of the pantry. They are incredibly cheap, completely shelf-stable, and bring a heavy dose of both protein and fiber to the table. 
+Black beans are an unsung hero of the pantry. They are incredibly cheap, shelf-stable, and bring a heavy dose of both protein and fiber to the table. 
 
 The real trick here is mashing about half of the beans right in the skillet while they heat up. This gives you a mixture that is thick and creamy enough to actually stay inside the tortilla, but still has enough whole beans to provide texture. You aren't trying to make authentic, slow-cooked refried beans from scratch; you're just heating and seasoning them quickly. The cumin and chili powder do all the heavy lifting for the flavor profile.
 
@@ -54,9 +74,9 @@ The real trick here is mashing about half of the beans right in the skillet whil
 
 ## Keeping the Meal Flexible
 
-The beauty of a taco night is that you don't have to plate anything. You can use corn or flour tortillas—whatever you already have sitting in the fridge. 
+The beauty of a taco night is that you don't have to plate anything. You can use corn or flour tortillas-whatever you already have sitting in the fridge. 
 
-The toppings are entirely up to what you feel like digging out of the crisper drawer. Shredded cabbage or romaine lettuce for crunch, a spoonful of jarred salsa, a squeeze of fresh lime, or maybe a little avocado if you're feeling fancy. If you want to throw on some shredded cheese or leftover pickled onions, go for it. The bean base remains the same, and everyone at the table can construct the taco they actually want to eat.
+The toppings are up to what you feel like digging out of the crisper drawer. Shredded cabbage or romaine lettuce for crunch, a spoonful of jarred salsa, a squeeze of fresh lime, or maybe a little avocado if you're feeling fancy. If you want to throw on some shredded cheese or leftover pickled onions, go for it. The bean base remains the same, and everyone at the table can construct the taco they actually want to eat.
 
 <br>
 

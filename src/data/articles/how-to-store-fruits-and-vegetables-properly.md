@@ -24,32 +24,32 @@ faq:
     answer: "Some produce actually loses its flavor and ideal texture when kept in the cold. You shouldn't refrigerate tomatoes, potatoes, onions, garlic, or uncut melons. Bananas and avocados should also stay on the counter until they're fully ripe, though you can move avocados to the fridge to pause the ripening process once they're soft."
 ---
 
-We're all incredibly guilty of the "dump and run" grocery routine. You get home from the supermarket, absolutely exhausted, and you just start shoving things wherever they fit into the refrigerator or tossing them randomly into a fruit bowl on the counter. 
+We're all incredibly guilty of the "dump and run" grocery routine. You get home from the supermarket, exhausted, and you just start shoving things wherever they fit into the refrigerator or tossing them randomly into a fruit bowl on the counter. 
 
-That chaos is exactly why your tomatoes taste like grainy mush the next day, and why your apples turn soft and wrinkly before Wednesday. Produce is essentially alive. Different fruits and vegetables require entirely different ecosystems to survive. Some desperately need high humidity, some require bone-dry environments, and some literally emit invisible gases that actively murder the other vegetables sitting next to them. 
+That chaos is exactly why your tomatoes taste like grainy mush the next day, and why your apples turn soft and wrinkly before Wednesday. Produce is essentially alive. Different fruits and vegetables require different ecosystems to survive. Some desperately need high humidity, some require bone-dry environments, and some literally emit invisible gases that actively murder the other vegetables sitting next to them. 
 
 If you complain that fresh produce is too expensive, you can't afford to store it incorrectly. Figuring out how to store fruits and vegetables properly usually doubles the lifespan of your groceries, saving you hundreds of dollars a year. Here is the absolute master list of what goes where. 
 
 ## The Refrigerator Rule Breakers
 
-Before we organize the fridge, we have to talk about what absolutely doesn't belong in there. The cold deeply damages the cellular structure of certain crops, ruining both their texture and their flavor. 
+Before we organize the fridge, we have to talk about what doesn't belong in there. The cold deeply damages the cellular structure of certain crops, ruining both their texture and their flavor. 
 
-1.  **Tomatoes:** Never put a tomato in the fridge. The cold halts the ripening process completely and breaks down the cell walls, resulting in that incredibly depressing, mealy texture. Keep them on the counter, out of direct sunlight, sitting stem-side down. 
-2.  **Onions and Garlic:** These need a cool, totally dark, and well-ventilated space like a pantry floor or a dark cabinet. If you put them in the fridge, the high humidity will cause them to sprout green shoots and turn mushy very quickly. 
+1.  **Tomatoes:** Never put a tomato in the fridge. The cold halts the ripening process and breaks down the cell walls, resulting in that incredibly depressing, mealy texture. Keep them on the counter, out of direct sunlight, sitting stem-side down. 
+2.  **Onions and Garlic:** These need a cool, dark, and well-ventilated space like a pantry floor or a dark cabinet. If you put them in the fridge, the high humidity will cause them to sprout green shoots and turn mushy very quickly. 
 3.  **Potatoes:** If a potato gets too cold, its complex starches immediately convert to simple sugars. If you cook a refrigerated potato, it will taste bizarrely sweet and the texture will be strangely gritty. Store them exactly like onions: cool, dark, and dry. 
 
 ## The Deadly Gas Exception: The Onion and Potato War
 
-There's a very crucial warning here. While onions and potatoes both need the exact same dark, dry storage environment, they must absolutely never be stored next to each other. 
+There's a very crucial warning here. While onions and potatoes both need the exact same dark, dry storage environment, they must never be stored next to each other. 
 
-Onions naturally emit high amounts of ethylene gas. If you put a bag of onions next to a bag of potatoes in a dark cabinet, the gas from the onions will force the potatoes to sprout and rot at an incredibly accelerated rate. Store them on completely opposite sides of your pantry. 
+Onions naturally emit high amounts of ethylene gas. If you put a bag of onions next to a bag of potatoes in a dark cabinet, the gas from the onions will force the potatoes to sprout and rot at an incredibly accelerated rate. Store them on opposite sides of your pantry. 
 
 ## The Crisper Drawer Strategy
 
 Your refrigerator usually has two drawers at the bottom. These are not just random bins; they're actually humidity-controlled zones. If your drawers have little sliding vents on them, here is exactly how to use them.
 
 ### 1. The High-Humidity Drawer (The Vent Closed)
-When you close the vent, you trap moisture inside the drawer. This environment is specifically designed for anything that wilts easily. The goal is to keep the moisture entirely locked inside the plant. 
+When you close the vent, you trap moisture inside the drawer. This environment is specifically designed for anything that wilts easily. The goal is to keep the moisture locked inside the plant. 
 *   **What goes inside:** All leafy greens (spinach, kale, lettuce), fresh herbs, broccoli, cauliflower, carrots, and celery. 
 *   **The Hack:** Don't wash these items before putting them in! Excess water sitting on the leaves will cause them to turn to slime. Wash them right when you pull them out to eat them. 
 

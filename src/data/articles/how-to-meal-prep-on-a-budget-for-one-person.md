@@ -24,7 +24,7 @@ faq:
     answer: "Some of the most budget-friendly meals rely on cheap, filling staples like oats, lentils, eggs, and pasta. For instance, overnight oats are incredibly cheap for breakfast, while a hearty lentil stew or bean chili might easily stretch across several lunches. Buying seasonal produce can also lower your grocery costs and make these simple dishes taste amazing."
 ---
 
-I used to passionately hate meal prep. The entire concept sounded like sheer torture to me. You're supposed to spend your entire Sunday afternoon cooking massive vats of chicken, broccoli, and brown rice, only to eat that exact same bleak, flavorless combination every single day until Friday. By Wednesday, I was always so violently bored that I would just order a $20 burrito out of pure spite, completely destroying my grocery budget. 
+I used to passionately hate meal prep. The entire concept sounded like sheer torture to me. You're supposed to spend your entire Sunday afternoon cooking massive vats of chicken, broccoli, and brown rice, only to eat that exact same bleak, flavorless combination every single day until Friday. By Wednesday, I was always so violently bored that I would just order a $20 burrito out of pure spite, destroying my grocery budget. 
 
 But cooking fresh dinners every single night for one person is equally terrible. Buying "single portions" at the grocery store is outrageously expensive, and cooking full family-sized recipes just leaves you drowning in endless leftovers that eventually go bad anyway. 
 
@@ -32,7 +32,7 @@ If you want to know how to meal prep on a budget for one person without hating y
 
 ## The Component Prep Method (The Only Way)
 
-Instead of building complete, identical Tupperware boxes, you're going to cook three massive batches of versatile ingredients. This completely eliminates the "boring leftover" problem. 
+Instead of building complete, identical Tupperware boxes, you're going to cook three massive batches of versatile ingredients. This eliminates the "boring leftover" problem. 
 
 1. **The Core Carb:** Pick one extremely cheap, filling base. I usually rotate between a massive pot of quinoa, brown rice, or roasted sweet potatoes. Cook at least four cups of it on Sunday. 
 2. **The Blank Canvas Protein:** Buy the cheapest bulk protein available that week. Maybe it's a family pack of chicken thighs, or a giant block of firm tofu, or three cans of chickpeas. Cook it as plainly as possible. A little salt, pepper, and olive oil. *Don't heavily sauce it yet.*
@@ -40,7 +40,7 @@ Instead of building complete, identical Tupperware boxes, you're going to cook t
 
 ## The Sauce Box Hack
 
-This is where the actual magic happens. The reason meal prep for one person fails is a lack of variety. You're going to create variety entirely through different sauces, which cost practically nothing to make. 
+This is where the actual magic happens. The reason meal prep for one person fails is a lack of variety. You're going to create variety through different sauces, which cost nothing to make. 
 
 *   On Sunday, quickly whisk together Two or three wildly different dressings in tiny glass jars. 
 *   **Jar 1:** A heavy peanut-lime dressing (peanut butter, soy sauce, lime juice, sriracha). 
@@ -55,4 +55,4 @@ Now, every night for dinner (or every morning to pack for lunch), you just assem
 *   **Tuesday:** Sweet potatoes, plain chicken, roasted veggies, covered in lemon-tahini. It's a Mediterranean feast. 
 *   **Wednesday:** Heat up the leftovers in a skillet, throw an egg on top, and use the sriracha. 
 
-Learning how to meal prep on a budget for one person is entirely about mastering the illusion of variety. You're technically eating the exact same incredibly cheap base ingredients, but your brain genuinely thinks you're having three totally different cuisines. It saves your wallet and your sanity!
+Learning how to meal prep on a budget for one person is about mastering the illusion of variety. You're technically eating the exact same incredibly cheap base ingredients, but your brain genuinely thinks you're having three different cuisines. It saves your wallet and your sanity!

@@ -28,7 +28,7 @@ Honestly, sometimes I just stare into the fridge in the morning, right? It's lik
 
 I used to think chia seeds were just for those fancy health gurus, but nah. They're actually pretty chill. They swell up and make this thick, creamy pudding situation, and what's really cool is how much fiber they pack in there. Seriously, a couple of tablespoons (which is what you'd use for a serving) can give you a decent chunk of your daily fiber goals. Fiber is, like, super important for your gut (it's true, ask anyone who's ever felt "off"), and it also helps keep you feeling full so you're not raiding the snack cupboard an hour later. Plus, omegas, always good for the ol' noggin.
 
-Anyway, the real trick to not getting bored, which is my ultimate breakfast goal, is to mix it up. Don't just make vanilla every single time. Where's the fun in that? We're going to four different, ridiculously simple **chia pudding variations for breakfast** that you can totally prep on a Sunday and sail through your week feeling like a breakfast boss.
+Anyway, the real trick to not getting bored, which is my ultimate breakfast goal, is to mix it up. Don't just make vanilla every single time. Where's the fun in that? We're going to four different, ridiculously simple **chia pudding variations for breakfast** that you can prep on a Sunday and sail through your week feeling like a breakfast boss.
 
 ## The Basic Chia Pudding Blueprint (It's Easy, Trust Me)
 
@@ -102,6 +102,6 @@ The whole point of these **chia pudding variations for breakfast** is to make yo
 * **Batch it up:** Make 2-3 of each flavor (or just your favorites) on a Sunday night. That's a week of breakfasts sorted. I usually make them in individual wide-mouth mason jars. (They're just so cute, right?)
 * **Layer it up:** If you're adding fresh fruit or granola as a topping, add it right before you eat it. This keeps the granola from getting soggy and the fruit looking fresh. You can pack the toppings in a separate small container if you're taking it on the go.
 * **Sweetener strategy:** Start with less sweetener than you think you need. You can always add more right before eating, but you can't take it out. Tastes change, you know? One day you want it sweeter, the next, not so much.
-* **Texture adjustments:** If your pudding is too thick after chilling, stir in a tiny splash more milk until it's just right. If it's too thin, well, that's usually a sign you didn't use enough chia seeds or whisked thoroughly enough the first time, but you can let it sit a little longer or add a *tiny* pinch more chia.
+* **Texture adjustments:** If your pudding is too thick after chilling, stir in a tiny splash more milk until it's just right. If it's too thin, well, that's usually a sign you didn't use enough chia seeds or whisked enough the first time, but you can let it sit a little longer or add a *tiny* pinch more chia.
 
 You can keep these ready-made puddings in the fridge for up to 4-5 days. Just make sure the jars are sealed tight. I mean, nobody wants a fridge full of funky smells. It's pretty awesome to just grab one and go, especially on those days when you're already running late and can't find your keys (again).

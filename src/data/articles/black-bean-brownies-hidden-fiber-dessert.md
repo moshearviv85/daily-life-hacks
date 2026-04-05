@@ -25,7 +25,7 @@ faq:
 ---
 Okay, so I had this bag of black beans in the pantry, right? Just sitting there, probably judging my life choices (mostly involving instant ramen), and then this crazy idea popped into my head, like a little lightbulb flashing "brownies!" (I know, wild). My friend Brenda, she always says I'm a mad scientist in the kitchen, and you know what, sometimes she's not wrong about that particular assessment of my culinary endeavors, especially when it involves legumes in desserts. It's a whole vibe.
 
-Making brownies with black beans sounds totally bonkers to most people, I get it. The skepticism is understandable. You picture a bean-y flavored chocolate square, which, let's be honest, doesn't exactly scream "delicious treat." But trust me on this one. These brownies? They're fudgy beyond belief, deeply chocolatey, and if you didn't tell anyone, they'd never guess the secret ingredient. Like, *never*. I've watched people devour them, ask for the recipe, and then literally gasp when I tell them about the beans. It's pretty satisfying, actually, seeing their minds get blown.
+Making brownies with black beans sounds bonkers to most people, I get it. The skepticism is understandable. You picture a bean-y flavored chocolate square, which, let's be honest, doesn't exactly scream "delicious treat." But trust me on this one. These brownies? They're fudgy beyond belief, deeply chocolatey, and if you didn't tell anyone, they'd never guess the secret ingredient. Like, *never*. I've watched people devour them, ask for the recipe, and then literally gasp when I tell them about the beans. It's pretty satisfying, actually, seeing their minds get blown.
 
 ## The Unconventional Beginning of a Delicious Discovery
 
@@ -39,7 +39,7 @@ Fiber. Protein. That's the short answer. Black beans are kind of amazing. They c
 
 Gathering the stuff for these is pretty straightforward. You probably have most of it already hanging out in your kitchen.
 
-*   **One 15-ounce can of black beans:** Rinsed *really* well. Like, rinse them until the water runs completely clear. This is key to avoiding any bean-y taste.
+*   **One 15-ounce can of black beans:** Rinsed *really* well. Like, rinse them until the water runs clear. This is key to avoiding any bean-y taste.
 *   **½ cup unsweetened cocoa powder:** The good stuff makes a difference. Don't skimp here.
 *   **½ cup maple syrup or agave nectar:** For that natural sweetness.
 *   **¼ cup melted coconut oil:** Or a neutral oil like avocado oil.
@@ -55,11 +55,11 @@ Gathering the stuff for these is pretty straightforward. You probably have most 
 This part is super easy. If you can use a blender, you can make these.
 
 1.  **Preheat & Prep:** Get your oven to 350°F (175°C). Grab an 8x8 inch baking pan and line it with parchment paper, letting the edges hang over a bit. This makes it super easy to lift out later. Grease it lightly too, just to be extra careful.
-2.  **Blend It Up:** Toss the rinsed black beans, cocoa powder, maple syrup, melted coconut oil, eggs, vanilla, baking powder, and salt into your trusty blender or food processor. Blend until it's completely smooth. You want absolutely no bean chunks. Scrape down the sides a few times to make sure everything gets incorporated. It should look like a thick, glossy chocolate batter.
+2.  **Blend It Up:** Toss the rinsed black beans, cocoa powder, maple syrup, melted coconut oil, eggs, vanilla, baking powder, and salt into your trusty blender or food processor. Blend until it's smooth. You want no bean chunks. Scrape down the sides a few times to make sure everything gets incorporated. It should look like a thick, glossy chocolate batter.
 3.  **Fold in the Chips:** Pour the glorious batter into a bowl and gently fold in the chocolate chips. Don't overmix! Just combine them.
 4.  **Bake Away:** Pour the batter into your prepared baking pan, smoothing the top with a spatula. If you're using flaky sea salt, sprinkle it on now. Pop it into the preheated oven for about 20-25 minutes.
 5.  **Check for Doneness:** You'll know they're ready when a toothpick inserted into the center comes out with moist crumbs, but not wet batter. The edges will look set. Don't overbake them; that's how you lose the fudginess.
-6.  **Cool Down:** This is the hardest part. Let them cool completely in the pan on a wire rack. I know, I know. Patience is a virtue, especially when warm brownies are calling your name. But cooling really helps them set up and achieve that perfect dense, fudgy texture. If you cut them too soon, they might be a bit crumbly.
+6.  **Cool Down:** This is the hardest part. Let them cool in the pan on a wire rack. I know, I know. Patience is a virtue, especially when warm brownies are calling your name. But cooling really helps them set up and achieve that perfect dense, fudgy texture. If you cut them too soon, they might be a bit crumbly.
 
 ## Nailing the Perfect Fudginess: Tips and Tricks
 
@@ -73,7 +73,7 @@ So, getting these *just right* is mostly about that texture. The fudginess is wh
 *   **Extra Choc:** If you're a true chocolate fiend (who isn't?), stir in some extra chopped dark chocolate chunks with the chocolate chips. More is more, sometimes.
 *   **Flavor Boost:** A tiny bit of orange zest, maybe half a teaspoon, can brighten up the chocolate in a really unexpected, delightful way.
 
-Okay, back to the fudginess thing. Seriously, don't overbake. That's rule number one. Everyone wants to make sure brownies are "done," but with these, if they look *too* done, they're probably dry. A little gooeyness in the center, not raw batter mind you, but moist crumbs, means perfection. Also, using good quality cocoa powder makes a difference in the depth of chocolate flavor, so don't grab the cheapest stuff on the shelf if you can help it. The better the chocolate, the better the chocolate experience. And rinsing the beans until the water is absolutely clear? Non-negotiable. Seriously. Any lingering bean-y starch will mess with the flavor, and we're trying to fool people here into thinking this is just a regular brownie, albeit a particularly amazing one. Don't forget the salt; it's the unsung hero of all sweet things, making everything taste more intensely what it's supposed to taste like.
+Okay, back to the fudginess thing. Seriously, don't overbake. That's rule number one. Everyone wants to make sure brownies are "done," but with these, if they look *too* done, they're probably dry. A little gooeyness in the center, not raw batter mind you, but moist crumbs, means perfection. Also, using good quality cocoa powder makes a difference in the depth of chocolate flavor, so don't grab the cheapest stuff on the shelf if you can help it. The better the chocolate, the better the chocolate experience. And rinsing the beans until the water is clear? Non-negotiable. Seriously. Any lingering bean-y starch will mess with the flavor, and we're trying to fool people here into thinking this is just a regular brownie, albeit a particularly amazing one. Don't forget the salt; it's the unsung hero of all sweet things, making everything taste more intensely what it's supposed to taste like.
 
 ## Keeping Those Brownies Fresh and Fab
 

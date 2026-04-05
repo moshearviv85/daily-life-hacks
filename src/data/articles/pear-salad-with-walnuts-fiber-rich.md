@@ -65,15 +65,13 @@ Let's quickly chat about what this salad brings to the table, besides just pure 
 *   **Pears:** We already touched on the fiber, but they also bring a decent amount of Vitamin C and K. Antioxidants, too, which are generally good for you.
 *   **Walnuts:** These are little brain-shaped health bombs, honestly. They contain omega-3 fatty acids, which many folks don't get enough of, and they're a good source of protein and healthy fats. Plus, that crunch is just necessary.
 *   **Blue Cheese:** Okay, it's cheese, so moderation is key, but it does offer calcium and some protein. And the flavor, oh man, the flavor. It's intense, so a little goes a long way.
-*   **Mixed Greens:** Your leafy bases are always winners. Usually loaded with vitamins A, C, K, folate, and various other good-for-you bits. Keep it varied, sometimes spinach, sometimes arugula, sometimes romaine (if I'm feeling extra basic).
-
-Basically, this isn't just a pretty plate; it's got some decent nutritional cred, helping to support a balanced diet, you know?
+*   **Mixed Greens:** Your leafy bases are always winners. Usually loaded with vitamins A, C, K, folate, and various other good-for-you bits. Keep it varied, sometimes spinach, sometimes arugula, sometimes romaine (if I'm feeling extra basic)., this isn't just a pretty plate; it's got some decent nutritional cred, helping to support a balanced diet, you know?
 
 ---
 
 ## Making It Your Own: Variations on a Theme
 
-The beauty of a salad like this is its flexibility. You can totally make it your own, which is kinda the vibe of my whole cooking philosophy.
+The beauty of a salad like this is its flexibility. You can make it your own, which is kinda the vibe of my whole cooking philosophy.
 
 *   **Cheese Swap:** Not a blue cheese fan? No worries, fam. Try crumbled goat cheese for a milder tang, or even some shaved Parmesan for a saltier kick. Feta could also work if you're feeling adventurous (though it changes the profile quite a bit, obvi).
 *   **Nutty Alternatives:** Pecans, candied almonds, or even pistachios can step in for walnuts. Just make sure to toast them for that extra depth of flavor. Raw nuts are fine too, but toasted? *Chef's kiss* again.
@@ -88,7 +86,7 @@ Don't be afraid to experiment. That's where the real magic happens, when you fin
 
 So, this pear salad with walnuts fiber rich recipe is best eaten fresh, like, right after you make it. Pears, bless their hearts, tend to brown once sliced and exposed to air. If you're prepping ahead (because who isn't trying to save time?), here's the lowdown:
 
-*   **Pears:** Slice them just before serving. If you absolutely MUST pre-slice, toss them gently in a tiny bit of lemon juice to slow down the browning, but honestly, it's still best fresh.
+*   **Pears:** Slice them just before serving. If you MUST pre-slice, toss them gently in a tiny bit of lemon juice to slow down the browning, but honestly, it's still best fresh.
 *   **Walnuts:** Toast and cool them, then store in an airtight container at room temp for a few days. They'll stay crunchy.
 *   **Dressing:** Whisk the vinaigrette ingredients together and keep it in a sealed jar in the fridge for up to a week. Give it a good shake before drizzling.
 *   **Greens & Cheese:** Keep these separate until you're ready to assemble. The greens will stay crispier that way, and the blue cheese doesn't need to be mingling with the other ingredients for too long.

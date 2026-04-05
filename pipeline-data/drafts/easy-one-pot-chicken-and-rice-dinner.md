@@ -1,38 +1,64 @@
----
-title: "Easy One-Pot Chicken and Rice Dinner"
-excerpt: "One pot, one mess, one solid weeknight dinner. This chicken and rice recipe comes together in under an hour with ingredients you probably already have."
-category: "recipes"
-tags: ["one pot dinner", "chicken and rice", "weeknight dinner", "easy recipes", "family dinner"]
-image: "/images/easy-one-pot-chicken-and-rice-dinner-main.jpg"
-imageAlt: "One-pot chicken and rice in a large pot, ready to serve"
+---title: Easy One-Pot Chicken and Rice Dinner
+excerpt: One pot, one mess, one solid weeknight dinner. This chicken and rice recipe
+  comes together in under an hour with ingredients you probably already have.
+category: recipes
+tags:
+  - one pot dinner
+  - chicken and rice
+  - weeknight dinner
+  - easy recipes
+  - family dinner
+image: /images/easy-one-pot-chicken-and-rice-dinner-main.jpg
+imageAlt: One-pot chicken and rice in a large pot, ready to serve
 date: 2026-03-15
-author: "Daily Life Hacks Team"
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-prepTime: "10 minutes"
-cookTime: "35 minutes"
-totalTime: "45 minutes"
+prepTime: 10 minutes
+cookTime: 35 minutes
+totalTime: 45 minutes
 servings: 4
 calories: 420
-difficulty: "Easy"
+difficulty: Easy
 ingredients:
-  - "1 tbsp olive oil"
-  - "1 lb boneless, skinless chicken thighs, cut into bite-size pieces"
-  - "1 medium onion, diced"
-  - "2 cloves garlic, minced"
-  - "1 cup long-grain white rice, rinsed"
-  - "2 cups chicken broth"
-  - "1/2 tsp dried thyme"
-  - "1/2 tsp paprika"
-  - "Salt and black pepper to taste"
-  - "1 cup frozen peas (optional, add in last 5 min)"
+  - 1 tbsp olive oil
+  - 1 lb boneless, skinless chicken thighs, cut into bite-size pieces
+  - 1 medium onion, diced
+  - 2 cloves garlic, minced
+  - 1 cup long-grain white rice, rinsed
+  - 2 cups chicken broth
+  - 1/2 tsp dried thyme
+  - 1/2 tsp paprika
+  - Salt and black pepper to taste
+  - 1 cup frozen peas (optional, add in last 5 min)
 steps:
-  - "Heat olive oil in a large, deep skillet or Dutch oven over medium-high heat. Season chicken with salt and pepper, then add to the pan. Cook 4–5 minutes until browned on all sides; transfer to a plate."
-  - "In the same pan, add onion and cook 3–4 minutes until softened. Add garlic and stir 30 seconds."
-  - "Add rice, broth, thyme, paprika, and a pinch of salt. Bring to a boil, then reduce heat to low and cover. Cook 18–20 minutes until rice is tender and liquid is absorbed."
-  - "Return chicken to the pot; stir in peas if using. Cover and let sit off the heat 3–5 minutes. Fluff with a fork and serve."
+  - Heat olive oil in a large, deep skillet or Dutch oven over medium-high heat. Season
+    chicken with salt and pepper, then add to the pan. Cook 4–5 minutes until browned
+    on all sides; transfer to a plate.
+  - In the same pan, add onion and cook 3–4 minutes until softened. Add garlic and
+    stir 30 seconds.
+  - Add rice, broth, thyme, paprika, and a pinch of salt. Bring to a boil, then reduce
+    heat to low and cover. Cook 18–20 minutes until rice is tender and liquid is absorbed.
+  - Return chicken to the pot; stir in peas if using. Cover and let sit off the heat
+    3–5 minutes. Fluff with a fork and serve.
+faq:
+  - question: Is this approach suitable for beginners?
+    answer: Yes, it is designed to be accessible. You can start small and gradually
+      incorporate more changes as you feel comfortable.
+  - question: How long does it take to see results?
+    answer: Everyone is different, but many people notice positive changes within
+      a few weeks of consistent habits.
+  - question: Can I adapt this to my personal preferences?
+    answer: Absolutely. The most sustainable habits are those you customize to fit
+      your own lifestyle and taste preferences.
+  - question: Do I need any special equipment or ingredients?
+    answer: No special tools are strictly required. Most things can be done with basic
+      items you already have at home.
+  - question: How often should I implement this?
+    answer: Consistency is key. Try to make it a regular part of your routine for
+      the best long-term benefits.
 ---
 
 One pot means one pan to wash. That's the whole pitch.

@@ -26,11 +26,11 @@ faq:
 ---
 You probably think you have heard about every superfood out there. We cycled through kale, chia seeds, goji berries, and whatever green powder was trending last week. But there is a food sitting in the freezer section of your local Asian market that most people in the US have never touched.
 
-It is called natto. And it might be the most effective, completely unglamorous food for your digestion. 
+It is called natto. And it might be the most effective, unglamorous food for your digestion. 
 
-Natto is just soybeans fermented with a specific bacteria. It sounds completely normal until you open the package. It smells strongly of ammonia and aged cheese. When you stir it, it creates these thick, sticky, spiderweb like strings. 
+Natto is just soybeans fermented with a specific bacteria. It sounds normal until you open the package. It smells strongly of ammonia and aged cheese. When you stir it, it creates these thick, sticky, spiderweb like strings. 
 
-I tried it for the first time a few years ago. I thought I liked adventurous food. I stared at the bowl, took a bite, and immediately understood why it is an acquired taste. It is aggressively earthy. But then you look at what it actually does for your body, and suddenly the weird texture starts to seem like a small price to pay.
+I tried it for the first time a few years ago. I thought I liked adventurous food. I stared at the bowl, took a bite, and immediately understood why it is an acquired taste. It is earthy. But then you look at what it actually does for your body, and suddenly the weird texture starts to seem like a small price to pay.
 
 ## What Makes It Work 
 
@@ -48,7 +48,7 @@ If you try to eat natto straight out of the container with a spoon, you are goin
 
 There is a very specific way people eat this in Japan, and it works because it balances out the intensity. You want a bowl of warm, steamed white rice. Not brown rice, not quinoa. The soft texture of white rice helps absorb some of the sliminess. 
 
-Most natto packs come with two tiny packets inside. One is a savory soy sauce based liquid, and the other is a spicy yellow mustard. You open the natto, dump the packets in, and stir it aggressively with chopsticks. The more you stir, the frothier and stickier it gets. That is exactly what you want. Then you slide it over the rice. 
+Most natto packs come with two tiny packets inside. One is a savory soy sauce based liquid, and the other is a spicy yellow mustard. You open the natto, dump the packets in, and stir it with chopsticks. The more you stir, the frothier and stickier it gets. That is exactly what you want. Then you slide it over the rice. 
 
 I like to add chopped green onions on top. The sharp bite of the onion cuts right through the funky, fermented taste. Some people add a raw egg yolk, but you really do not have to go that far if you are just starting out. 
 
