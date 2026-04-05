@@ -231,7 +231,7 @@ export async function onRequestGet(context) {
             result.cloudflareAnalytics.topCountries = Object.entries(countryMap)
               .map(([country, requests]) => ({ country, requests }))
               .sort((a, b) => b.requests - a.requests);
-            result.cloudflareAnalytics.countryNote = "Last 24h (Cloudflare free plan limit)";
+            result.cloudflareAnalytics.countryNote = "Today UTC (matches Cloudflare Dashboard)";
           }
         } catch { /* country data is optional */ }
       }
