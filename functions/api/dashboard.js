@@ -218,6 +218,7 @@ export async function onRequestGet(context) {
             body: JSON.stringify({ query: countryQuery }),
           });
           const countryJson = await countryRes.json();
+          result.cloudflareAnalytics.countryDebug = countryJson?.errors ?? 'no errors';
           if (!countryJson?.errors?.length) {
             const rows = countryJson?.data?.viewer?.zones?.[0]?.httpRequestsAdaptiveGroups ?? [];
             // Aggregate by country (adaptive groups may return multiple rows per country)
@@ -230,7 +231,7 @@ export async function onRequestGet(context) {
               .map(([country, requests]) => ({ country, requests }))
               .sort((a, b) => b.requests - a.requests);
           }
-        } catch { /* country data is optional */ }
+        } catch (ce) { result.cloudflareAnalytics.countryError = ce.message; }
       }
     } catch (e) {
       result.cloudflareAnalytics = { error: e.message, byDay: [], totals: { pageViews: 0, requests: 0, uniques: 0 }, topCountries: [] };
