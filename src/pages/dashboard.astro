@@ -1224,12 +1224,11 @@ function openModal(type) {
 
     case 'pageviews':
     case 'visitors':
-      const isVisitors = type === 'visitors';
       const countries = liveData?.cloudflareAnalytics?.topCountries ?? [];
-      title.innerHTML = `${isVisitors ? 'Visitors' : 'Pageviews'} by Country <span class="modal-count">(${countries.length} countries)</span>`;
+      title.innerHTML = `Traffic by Country <span class="modal-count">(${countries.length} countries)</span>`;
       body.innerHTML = countries.length === 0
-        ? '<div class="empty">No country data available yet.</div>'
-        : renderCountriesTable(countries, isVisitors);
+        ? '<div class="empty">No country data available yet. Make sure the Analytics token has Zone:Analytics:Read permission.</div>'
+        : renderCountriesTable(countries);
       break;
   }
 
@@ -1355,20 +1354,17 @@ function renderSubsTable(rows) {
   </table>`;
 }
 
-function renderCountriesTable(rows, byVisitors) {
-  const sorted = [...rows].sort((a, b) => byVisitors ? b.uniques - a.uniques : b.pageViews - a.pageViews);
-  const maxVal = sorted[0] ? (byVisitors ? sorted[0].uniques : sorted[0].pageViews) : 1;
+function renderCountriesTable(rows) {
+  const sorted = [...rows].sort((a, b) => b.requests - a.requests);
+  const maxVal = sorted[0]?.requests || 1;
   return `<table class="data-table">
-    <thead><tr><th>#</th><th>Country</th><th>${byVisitors ? 'Visitors' : 'Pageviews'}</th><th style="width:35%"></th></tr></thead>
-    <tbody>${sorted.map((c, i) => {
-      const val = byVisitors ? c.uniques : c.pageViews;
-      return `<tr>
-        <td style="color:var(--muted)">${i+1}</td>
-        <td><strong>${c.country}</strong></td>
-        <td><strong>${fmt(val)}</strong></td>
-        <td><div style="background:var(--border);border-radius:99px;height:6px"><div style="background:var(--orange);height:6px;border-radius:99px;width:${Math.round(val/maxVal*100)}%"></div></div></td>
-      </tr>`;
-    }).join('')}</tbody>
+    <thead><tr><th>#</th><th>Country</th><th>Requests</th><th style="width:35%"></th></tr></thead>
+    <tbody>${sorted.map((c, i) => `<tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td><strong>${c.country}</strong></td>
+      <td><strong>${fmt(c.requests)}</strong></td>
+      <td><div style="background:var(--border);border-radius:99px;height:6px"><div style="background:var(--orange);height:6px;border-radius:99px;width:${Math.round(c.requests/maxVal*100)}%"></div></div></td>
+    </tr>`).join('')}</tbody>
   </table>`;
 }
 

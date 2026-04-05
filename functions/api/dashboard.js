@@ -194,19 +194,20 @@ export async function onRequestGet(context) {
           topCountries: [],
         };
 
-        // Country breakdown (separate query, non-critical)
+        // Country breakdown via httpRequestsAdaptiveGroups (non-critical)
         try {
+          const sinceISO = since.toISOString().replace(/\.\d{3}Z$/, "Z");
+          const untilISO = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
           const countryQuery = `{
             viewer {
               zones(filter: {zoneTag: "${cfZone}"}) {
-                httpRequests1dByCountryGroups(
+                httpRequestsAdaptiveGroups(
                   limit: 50
-                  filter: {date_geq: "${sinceStr}", date_leq: "${untilStr}"}
-                  orderBy: [sum_requests_DESC]
+                  filter: {datetime_geq: "${sinceISO}", datetime_lt: "${untilISO}"}
+                  orderBy: [count_DESC]
                 ) {
+                  count
                   dimensions { clientCountryName }
-                  sum { pageViews requests }
-                  uniq { uniques }
                 }
               }
             }
@@ -218,12 +219,16 @@ export async function onRequestGet(context) {
           });
           const countryJson = await countryRes.json();
           if (!countryJson?.errors?.length) {
-            const rows = countryJson?.data?.viewer?.zones?.[0]?.httpRequests1dByCountryGroups ?? [];
-            result.cloudflareAnalytics.topCountries = rows.map((c) => ({
-              country: c.dimensions.clientCountryName || "Unknown",
-              pageViews: c.sum.pageViews || 0,
-              uniques: c.uniq?.uniques ?? 0,
-            }));
+            const rows = countryJson?.data?.viewer?.zones?.[0]?.httpRequestsAdaptiveGroups ?? [];
+            // Aggregate by country (adaptive groups may return multiple rows per country)
+            const countryMap = {};
+            for (const r of rows) {
+              const name = r.dimensions.clientCountryName || "Unknown";
+              countryMap[name] = (countryMap[name] || 0) + (r.count || 0);
+            }
+            result.cloudflareAnalytics.topCountries = Object.entries(countryMap)
+              .map(([country, requests]) => ({ country, requests }))
+              .sort((a, b) => b.requests - a.requests);
           }
         } catch { /* country data is optional */ }
       }
