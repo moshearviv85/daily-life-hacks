@@ -161,22 +161,34 @@ export async function onRequestGet(context) {
       });
 
       const cfJson = await cfRes.json();
-      const groups = cfJson?.data?.viewer?.zones?.[0]?.httpRequests1dGroups ?? [];
 
-      result.cloudflareAnalytics = {
-        byDay: groups.map((g) => ({
-          day: g.dimensions.date,
-          pageViews: g.sum.pageViews,
-          requests: g.sum.requests,
-          uniques: g.uniq.uniques,
-        })),
-        totals: {
-          pageViews: groups.reduce((s, g) => s + (g.sum.pageViews || 0), 0),
-          requests: groups.reduce((s, g) => s + (g.sum.requests || 0), 0),
-          uniques: groups.reduce((s, g) => s + (g.uniq.uniques || 0), 0),
-        },
-        errors: cfJson?.errors ?? null,
-      };
+      // Surface GraphQL-level permission/auth errors clearly
+      if (cfJson?.errors?.length) {
+        const msg = cfJson.errors[0]?.message ?? "Unknown GraphQL error";
+        const isPermission = msg.includes("does not have permission") || msg.includes("authz");
+        result.cloudflareAnalytics = {
+          error: isPermission
+            ? "Token missing Zone:Analytics:Read permission. Create a new token in Cloudflare Dashboard → My Profile → API Tokens → Create Token → Zone Analytics template."
+            : msg,
+          byDay: [],
+          totals: { pageViews: 0, requests: 0, uniques: 0 },
+        };
+      } else {
+        const groups = cfJson?.data?.viewer?.zones?.[0]?.httpRequests1dGroups ?? [];
+        result.cloudflareAnalytics = {
+          byDay: groups.map((g) => ({
+            day: g.dimensions.date,
+            pageViews: g.sum.pageViews,
+            requests: g.sum.requests,
+            uniques: g.uniq.uniques,
+          })),
+          totals: {
+            pageViews: groups.reduce((s, g) => s + (g.sum.pageViews || 0), 0),
+            requests: groups.reduce((s, g) => s + (g.sum.requests || 0), 0),
+            uniques: groups.reduce((s, g) => s + (g.uniq.uniques || 0), 0),
+          },
+        };
+      }
     } catch (e) {
       result.cloudflareAnalytics = { error: e.message, byDay: [], totals: { pageViews: 0, requests: 0, uniques: 0 } };
     }
