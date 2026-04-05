@@ -442,12 +442,12 @@ const BUILD = {
         <div class="stat-value" id="s-subs">—</div>
         <div class="stat-sub" id="s-subs-sub">loading...</div>
       </div>
-      <div class="stat-card blue clickable" onclick="openModal('pageviews')" title="Click to see countries breakdown">
+      <div class="stat-card blue clickable" onclick="openModal('pageviews')" title="Click to see requests by country (note: different metric)">
         <div class="stat-label">Pageviews</div>
         <div class="stat-value" id="s-pv">—</div>
         <div class="stat-sub" id="s-pv-sub">loading...</div>
       </div>
-      <div class="stat-card purple clickable" onclick="openModal('visitors')" title="Click to see countries breakdown">
+      <div class="stat-card purple clickable" onclick="openModal('visitors')" title="Click to see requests by country (note: different metric)">
         <div class="stat-label">Visitors</div>
         <div class="stat-value" id="s-uv">—</div>
         <div class="stat-sub" id="s-uv-sub">loading...</div>
@@ -1223,14 +1223,20 @@ function openModal(type) {
       break;
 
     case 'pageviews':
-    case 'visitors':
+    case 'visitors': {
       const countries = liveData?.cloudflareAnalytics?.topCountries ?? [];
       const countryNote = liveData?.cloudflareAnalytics?.countryNote ?? '';
-      title.innerHTML = `Traffic by Country <span class="modal-count">(${countries.length} countries)</span>`;
+      title.innerHTML = `Requests by Country <span class="modal-count">(${countries.length} countries)</span>`;
+      const disclaimer = `<div style="font-size:.75rem;color:var(--muted);margin-bottom:.75rem;line-height:1.5">
+        ⚠️ <strong>Note:</strong> This breakdown counts all HTTP <em>requests</em> (including images, CSS, API calls) — not PageViews or Unique Visitors.
+        It will always be higher than the daily totals above, which measure only HTML page views and deduplicated visitors.
+        ${countryNote ? `<br>📅 ${countryNote}` : ''}
+      </div>`;
       body.innerHTML = countries.length === 0
         ? '<div class="empty">No country data available yet.</div>'
-        : (countryNote ? `<div style="font-size:.75rem;color:var(--muted);margin-bottom:.75rem">⚠️ ${countryNote}</div>` : '') + renderCountriesTable(countries);
+        : disclaimer + renderCountriesTable(countries);
       break;
+    }
   }
 
   overlay.classList.add('open');
