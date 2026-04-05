@@ -1,52 +1,70 @@
 ---
-title: "Quick 20 Minute Bean & Rice Meals for Busy Days"
-excerpt: "When the clock is screaming, you still deserve a real dinner. These 20-minute bean-and-rice skillet meals are simple, filling, and easy to clean up."
-category: "recipes"
-tags: ["quick dinner", "high fiber", "weeknight meals", "busy days", "plant forward"]
-image: "/images/quick-20-minute-high-fiber-meals-for-busy-days-main.jpg"
-imageAlt: "Colorful skillet meal with beans and vegetables on a wooden table"
+title: Quick 20 Minute Bean & Rice Meals for Busy Days
+excerpt: When the clock is screaming, you still deserve a real dinner. These 20-minute
+  bean-and-rice skillet meals are simple, filling, and easy to clean up.
+category: recipes
+tags:
+- quick dinner
+- high fiber
+- weeknight meals
+- busy days
+- plant forward
+image: /images/quick-20-minute-high-fiber-meals-for-busy-days-main.jpg
+imageAlt: Colorful skillet meal with beans and vegetables on a wooden table
 date: 2026-03-30
-publishAt: 2026-04-02T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-02 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-prepTime: "5 minutes"
-cookTime: "15 minutes"
-totalTime: "20 minutes"
+prepTime: 5 minutes
+cookTime: 15 minutes
+totalTime: 20 minutes
 servings: 4
 calories: 340
-difficulty: "Easy"
+difficulty: Easy
 ingredients:
-  - "1 tbsp olive oil"
-  - "1 small onion, diced"
-  - "2 cloves garlic, minced"
-  - "1 red bell pepper, chopped"
-  - "1 (15 oz) can black beans, drained and rinsed"
-  - "1 cup cooked brown rice or microwave pouch brown rice"
-  - "1 tsp ground cumin"
-  - "1/2 tsp smoked paprika"
-  - "2 cups baby spinach"
-  - "Salt and black pepper to taste"
-  - "Optional: lime wedges, salsa, shredded cheese"
+- 1 tbsp olive oil
+- 1 small onion, diced
+- 2 cloves garlic, minced
+- 1 red bell pepper, chopped
+- 1 (15 oz) can black beans, drained and rinsed
+- 1 cup cooked brown rice or microwave pouch brown rice
+- 1 tsp ground cumin
+- 1/2 tsp smoked paprika
+- 2 cups baby spinach
+- Salt and black pepper to taste
+- 'Optional: lime wedges, salsa, shredded cheese'
 steps:
-  - "Heat oil in a large skillet over medium heat. Add onion and cook 3 minutes until soft."
-  - "Stir in garlic and bell pepper. Cook 4 minutes, stirring occasionally."
-  - "Add beans, rice, cumin, and paprika. Stir and cook 5 minutes until heated through."
-  - "Fold in spinach until wilted, about 1 minute. Season with salt and pepper."
-  - "Serve with lime, salsa, or cheese if you like."
+- Heat oil in a large skillet over medium heat. Add onion and cook 3 minutes until
+  soft.
+- Stir in garlic and bell pepper. Cook 4 minutes, stirring occasionally.
+- Add beans, rice, cumin, and paprika. Stir and cook 5 minutes until heated through.
+- Fold in spinach until wilted, about 1 minute. Season with salt and pepper.
+- Serve with lime, salsa, or cheese if you like.
 faq:
-  - question: "Why is this considered a quick 20 minute high fiber meal for busy days?"
-    answer: "It uses canned beans plus cooked brown rice, so you are not stuck doing a long simmer while everyone gets louder. Beans and whole grains add fiber and protein to the same plate, which can help you feel more satisfied without turning dinner into a project."
-  - question: "Can I swap the beans?"
-    answer: "Yes. Pinto and kidney beans work great. If you use chickpeas, let them heat in the spices for an extra minute so they pick up the flavor."
-  - question: "How much fiber is in a serving?"
-    answer: "It depends on brands and toppings, so do not treat it like a medical measurement. As a practical goal, this style of meal often lands around a solid chunk of daily fiber when you use beans plus whole grains plus vegetables."
-  - question: "How can I make it lower-carb or lower-calorie?"
-    answer: "Use less rice and more vegetables. Cauliflower rice is an easy swap if you want fewer carbs, and you can also do a half-and-half approach: half cauliflower rice, half cooked brown rice. Keep added oil modest and lean on lemon, salsa, and spices for flavor."
-  - question: "Is this vegan or dairy-free?"
-    answer: "It can be. The base is vegetarian and plant-forward. Skip cheese if you want dairy-free, and if you miss a savory “cheesy” vibe, try a pinch of nutritional yeast or extra spices."
+- question: Why is this considered a quick 20 minute high fiber meal for busy days?
+  answer: It uses canned beans plus cooked brown rice, so you are not stuck doing
+    a long simmer while everyone gets louder. Beans and whole grains add fiber and
+    protein to the same plate, which can help you feel more satisfied without turning
+    dinner into a project.
+- question: Can I swap the beans?
+  answer: Yes. Pinto and kidney beans work great. If you use chickpeas, let them heat
+    in the spices for an extra minute so they pick up the flavor.
+- question: How much fiber is in a serving?
+  answer: It depends on brands and toppings, so do not treat it like a medical measurement.
+    As a practical goal, this style of meal often lands around a solid chunk of daily
+    fiber when you use beans plus whole grains plus vegetables.
+- question: How can I make it lower-carb or lower-calorie?
+  answer: 'Use less rice and more vegetables. Cauliflower rice is an easy swap if
+    you want fewer carbs, and you can also do a half-and-half approach: half cauliflower
+    rice, half cooked brown rice. Keep added oil modest and lean on lemon, salsa,
+    and spices for flavor.'
+- question: Is this vegan or dairy-free?
+  answer: It can be. The base is vegetarian and plant-forward. Skip cheese if you
+    want dairy-free, and if you miss a savory “cheesy” vibe, try a pinch of nutritional
+    yeast or extra spices.
 ---
 
 Some nights you do not have a zen hour to chop a rainbow. You have twenty minutes, a hungry household, and a sink that is already half full. That is when a one skillet bean and rice situation saves you without feeling like a sad compromise.

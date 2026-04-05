@@ -1,28 +1,42 @@
 ---
-title: "Pasta Alternatives That Still Feel Like Dinner"
-excerpt: "Chickpea pasta, lentil pasta, and whole wheat pasta are not the same swap. Here is how to pick pasta alternatives and cook them so they still taste like dinner."
-category: "nutrition"
-tags: ["pasta alternatives", "whole grain", "legume pasta", "fiber", "cooking tips"]
-image: "/images/high-fiber-pasta-alternatives-main.jpg"
-imageAlt: "Bowls of pasta with vegetables and tomato sauce"
+title: Pasta Alternatives That Still Feel Like Dinner
+excerpt: Chickpea pasta, lentil pasta, and whole wheat pasta are not the same swap.
+  Here is how to pick pasta alternatives and cook them so they still taste like dinner.
+category: nutrition
+tags:
+- pasta alternatives
+- whole grain
+- legume pasta
+- fiber
+- cooking tips
+image: /images/high-fiber-pasta-alternatives-main.jpg
+imageAlt: Bowls of pasta with vegetables and tomato sauce
 date: 2026-03-30
-publishAt: 2026-04-11T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-11 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: "Is chickpea pasta higher in fiber than regular pasta?"
-    answer: "Usually yes. Chickpea flour typically brings more fiber and protein than refined wheat pasta, but brands vary. Always check the label so you know what you are actually getting."
-  - question: "Why does lentil pasta fall apart sometimes?"
-    answer: "Legume pastas can go from firm to mush fast. Use a timer, stir gently, and taste early. If you are tossing it in sauce, undercook a minute so it finishes in the pan."
-  - question: "Is whole wheat pasta a good middle ground?"
-    answer: "For many people, yes. Whole wheat pasta usually has a more familiar bite than legume pastas, and it typically has more fiber than white pasta."
-  - question: "Is chickpea or lentil pasta gluten free?"
-    answer: "Many are, but not all. Check the package label for gluten free if that matters for you, because “plant based” does not automatically mean gluten free."
-  - question: "How do I prevent the gluey mess?"
-    answer: "Cook until just done, drain well, and sauce immediately. If your pasta turns sticky, rinse only when the brand suggests it, and do not overcook. Also, do not keep pasta sitting in a pot with water while you “deal with life.”"
+- question: Is chickpea pasta higher in fiber than regular pasta?
+  answer: Usually yes. Chickpea flour typically brings more fiber and protein than
+    refined wheat pasta, but brands vary. Always check the label so you know what
+    you are actually getting.
+- question: Why does lentil pasta fall apart sometimes?
+  answer: Legume pastas can go from firm to mush fast. Use a timer, stir gently, and
+    taste early. If you are tossing it in sauce, undercook a minute so it finishes
+    in the pan.
+- question: Is whole wheat pasta a good middle ground?
+  answer: For many people, yes. Whole wheat pasta usually has a more familiar bite
+    than legume pastas, and it typically has more fiber than white pasta.
+- question: Is chickpea or lentil pasta gluten free?
+  answer: Many are, but not all. Check the package label for gluten free if that matters
+    for you, because “plant based” does not automatically mean gluten free.
+- question: How do I prevent the gluey mess?
+  answer: Cook until just done, drain well, and sauce immediately. If your pasta turns
+    sticky, rinse only when the brand suggests it, and do not overcook. Also, do not
+    keep pasta sitting in a pot with water while you “deal with life.”
 ---
 
 If you want more fiber but you still want a fork and a red sauce situation, pasta is the emotional comfort food you do not want to negotiate with. The good news is you have real options that are not just salad pretending to be spaghetti.

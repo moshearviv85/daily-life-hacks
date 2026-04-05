@@ -1,28 +1,44 @@
 ---
-title: "Fiber-Rich Fruits for Feeling Full"
-excerpt: "No fruit melts anything on its own. These fiber-rich options help snacks feel more satisfying when you pay attention to portions and build better patterns."
-category: "nutrition"
-tags: ["high fiber fruits", "snacking", "portion control", "fiber", "fruit"]
-image: "/images/best-high-fiber-fruits-for-weight-loss-list-main.jpg"
-imageAlt: "Assorted berries pears and apples on a wooden board"
+title: Fiber-Rich Fruits for Feeling Full
+excerpt: No fruit melts anything on its own. These fiber-rich options help snacks
+  feel more satisfying when you pay attention to portions and build better patterns.
+category: nutrition
+tags:
+- high fiber fruits
+- snacking
+- portion control
+- fiber
+- fruit
+image: /images/best-high-fiber-fruits-for-weight-loss-list-main.jpg
+imageAlt: Assorted berries pears and apples on a wooden board
 date: 2026-03-30
-publishAt: 2026-04-10T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-10 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: "Can high fiber fruits help with weight loss?"
-    answer: "They can support weight management by adding volume and fiber to meals and snacks, which may help you feel satisfied. Actual weight change still depends on your overall eating pattern, portion sizes, and activity."
-  - question: "Which fruits are usually higher in fiber?"
-    answer: "Berries, pears with skin, apples with skin, kiwi, and oranges are common picks. Exact fiber numbers vary by size and variety, so treat this as a starting point, not a lab report."
-  - question: "Should I avoid bananas?"
-    answer: "Bananas are not the enemy. They are just easy to overshoot when they turn into a smoothie. Whole fruit portions are usually easier to keep reasonable than blended piles."
-  - question: "Are dried fruit or fruit juice okay?"
-    answer: "Whole fruit is usually the better choice because it has more fiber per calorie. Dried fruit and juice are more concentrated, so it is easier to accidentally eat more sugar without noticing. If you do choose them, keep portions small."
-  - question: "What’s a sensible portion size?"
-    answer: "For most people, a sensible starting portion is about one medium fruit or around one cup of berries. If you are adding fruit to a meal, use a smaller portion and lean on protein or yogurt on the side."
+- question: Can high fiber fruits help with weight loss?
+  answer: They can support weight management by adding volume and fiber to meals and
+    snacks, which may help you feel satisfied. Actual weight change still depends
+    on your overall eating pattern, portion sizes, and activity.
+- question: Which fruits are usually higher in fiber?
+  answer: Berries, pears with skin, apples with skin, kiwi, and oranges are common
+    picks. Exact fiber numbers vary by size and variety, so treat this as a starting
+    point, not a lab report.
+- question: Should I avoid bananas?
+  answer: Bananas are not the enemy. They are just easy to overshoot when they turn
+    into a smoothie. Whole fruit portions are usually easier to keep reasonable than
+    blended piles.
+- question: Are dried fruit or fruit juice okay?
+  answer: Whole fruit is usually the better choice because it has more fiber per calorie.
+    Dried fruit and juice are more concentrated, so it is easier to accidentally eat
+    more sugar without noticing. If you do choose them, keep portions small.
+- question: What’s a sensible portion size?
+  answer: For most people, a sensible starting portion is about one medium fruit or
+    around one cup of berries. If you are adding fruit to a meal, use a smaller portion
+    and lean on protein or yogurt on the side.
 ---
 
 If you are trying to lose weight, fruit can be your friend or your sneaky sugar source depending on how you use it. Fiber is the part that often helps you feel full without turning lunch into dessert.

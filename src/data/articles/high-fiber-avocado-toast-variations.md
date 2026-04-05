@@ -1,48 +1,63 @@
 ---
-title: "Avocado Toast Variations With Beans & Seeds"
-excerpt: "Avocado toast does not have to be the same photo on repeat. These variations add beans, seeds, and crunch without a long ingredient list."
-category: "recipes"
-tags: ["avocado toast", "breakfast", "whole grain", "high fiber", "easy breakfast"]
-image: "/images/high-fiber-avocado-toast-variations-main.jpg"
-imageAlt: "Avocado toast on whole grain bread with seeds and tomatoes"
+title: Avocado Toast Variations With Beans & Seeds
+excerpt: Avocado toast does not have to be the same photo on repeat. These variations
+  add beans, seeds, and crunch without a long ingredient list.
+category: recipes
+tags:
+- avocado toast
+- breakfast
+- whole grain
+- high fiber
+- easy breakfast
+image: /images/high-fiber-avocado-toast-variations-main.jpg
+imageAlt: Avocado toast on whole grain bread with seeds and tomatoes
 date: 2026-03-30
-publishAt: 2026-04-05T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-05 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-prepTime: "10 minutes"
-cookTime: "5 minutes"
-totalTime: "15 minutes"
+prepTime: 10 minutes
+cookTime: 5 minutes
+totalTime: 15 minutes
 servings: 2
 calories: 310
-difficulty: "Easy"
+difficulty: Easy
 ingredients:
-  - "2 slices whole grain or sprouted bread"
-  - "1 ripe avocado"
-  - "1/2 tsp salt"
-  - "1/2 tsp black pepper"
-  - "1/2 cup canned black beans, rinsed and lightly mashed"
-  - "2 tbsp hemp seeds or pumpkin seeds"
-  - "1/2 cup cherry tomatoes, halved"
-  - "Optional: red pepper flakes, lime juice"
+- 2 slices whole grain or sprouted bread
+- 1 ripe avocado
+- 1/2 tsp salt
+- 1/2 tsp black pepper
+- 1/2 cup canned black beans, rinsed and lightly mashed
+- 2 tbsp hemp seeds or pumpkin seeds
+- 1/2 cup cherry tomatoes, halved
+- 'Optional: red pepper flakes, lime juice'
 steps:
-  - "Toast bread until crisp."
-  - "Mash avocado with salt and pepper. Spread evenly on toast."
-  - "Top one slice with mashed beans and a squeeze of lime. Top the other with tomatoes and seeds."
-  - "Add red pepper flakes if you want heat. Serve immediately."
+- Toast bread until crisp.
+- Mash avocado with salt and pepper. Spread evenly on toast.
+- Top one slice with mashed beans and a squeeze of lime. Top the other with tomatoes
+  and seeds.
+- Add red pepper flakes if you want heat. Serve immediately.
 faq:
-  - question: "How does avocado toast become high fiber?"
-    answer: "Avocado brings some fiber, but the real jump comes from stacking the right three moves: whole grain bread, beans, and seeds. That combo turns a snacky breakfast into something more “meal-like” without making it complicated."
-  - question: "Can I make this gluten free?"
-    answer: "Yes. Use a high fiber gluten free bread you like. Texture varies by brand, so toast it well so it stays crisp under the toppings."
-  - question: "What is a simple third variation?"
-    answer: "Try a thin layer of hummus under the avocado, then cucumber slices and everything bagel seasoning. It is fast, crunchy, and easy to repeat."
-  - question: "How do I keep the toast from getting soggy?"
-    answer: "Assemble right before you eat. Use a sturdier bread, and keep wet toppings (like tomato or extra lime juice) as “just enough,” not swimming. If you meal prep, pack tomato separately."
-  - question: "Can I make this lower-calorie without losing flavor?"
-    answer: "Absolutely. Use 1/2 avocado (or thinly spread), add more beans and veggies for volume, and rely on lemon/lime, garlic powder, and seeds for punch. Skip cheese if you want it lighter."
+- question: How does avocado toast become high fiber?
+  answer: 'Avocado brings some fiber, but the real jump comes from stacking the right
+    three moves: whole grain bread, beans, and seeds. That combo turns a snacky breakfast
+    into something more “meal-like” without making it complicated.'
+- question: Can I make this gluten free?
+  answer: Yes. Use a high fiber gluten free bread you like. Texture varies by brand,
+    so toast it well so it stays crisp under the toppings.
+- question: What is a simple third variation?
+  answer: Try a thin layer of hummus under the avocado, then cucumber slices and everything
+    bagel seasoning. It is fast, crunchy, and easy to repeat.
+- question: How do I keep the toast from getting soggy?
+  answer: Assemble right before you eat. Use a sturdier bread, and keep wet toppings
+    (like tomato or extra lime juice) as “just enough,” not swimming. If you meal
+    prep, pack tomato separately.
+- question: Can I make this lower-calorie without losing flavor?
+  answer: Absolutely. Use 1/2 avocado (or thinly spread), add more beans and veggies
+    for volume, and rely on lemon/lime, garlic powder, and seeds for punch. Skip cheese
+    if you want it lighter.
 ---
 
 Avocado toast became a cliché because it photographs well and takes almost no skill. That is not an insult. It is a feature.

@@ -1,13 +1,14 @@
----title: How to Cook Dried Beans From Scratch
+---
+title: How to Cook Dried Beans From Scratch
 excerpt: Cooking dried beans from scratch is cheaper and simpler than it sounds. Soak,
   simmer, and season. Here's a straightforward method that works for most beans.
 category: tips
 tags:
-  - dried beans
-  - cooking beans
-  - from scratch
-  - budget cooking
-  - meal prep
+- dried beans
+- cooking beans
+- from scratch
+- budget cooking
+- meal prep
 image: /images/how-to-cook-dried-beans-from-scratch-main.jpg
 imageAlt: Pot of cooked beans with herbs
 date: 2026-03-15
@@ -17,28 +18,27 @@ editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: Do you absolutely have to soak dried beans before cooking them?
-    answer: No, you don't have to soak them, but doing so significantly reduces the
-      cooking time and often helps them cook more evenly. If you skip soaking, just
-      plan to leave them simmering on the stove for an extra hour or two.
-  - question: When is the best time to add salt when learning how to cook dried beans
-      from scratch?
-    answer: The best time to add salt is when the beans are almost fully tender. Salting
-      the water right at the beginning can sometimes prevent the skins from softening
-      properly, leaving you with tough beans.
-  - question: How long do cooked beans last in the fridge?
-    answer: Once cooked, beans stored in an airtight container with a little of their
-      cooking liquid will stay fresh in the refrigerator for about 4 to 5 days. They
-      also freeze exceptionally well.
-  - question: Is this approach suitable for beginners?
-    answer: Yes, it is designed to be accessible. You can start small and gradually
-      incorporate more changes as you feel comfortable.
-  - question: How long does it take to see results?
-    answer: Everyone is different, but many people notice positive changes within
-      a few weeks of consistent habits.
----
-
-Canned beans are undeniably convenient, but buying a bag of dried beans costs significantly less money and allows you to control exactly how mushy they get and how much salt goes into them. 
+- question: Do you absolutely have to soak dried beans before cooking them?
+  answer: No, you don't have to soak them, but doing so significantly reduces the
+    cooking time and often helps them cook more evenly. If you skip soaking, just
+    plan to leave them simmering on the stove for an extra hour or two.
+- question: When is the best time to add salt when learning how to cook dried beans
+    from scratch?
+  answer: The best time to add salt is when the beans are almost fully tender. Salting
+    the water right at the beginning can sometimes prevent the skins from softening
+    properly, leaving you with tough beans.
+- question: How long do cooked beans last in the fridge?
+  answer: Once cooked, beans stored in an airtight container with a little of their
+    cooking liquid will stay fresh in the refrigerator for about 4 to 5 days. They
+    also freeze exceptionally well.
+- question: Is this approach suitable for beginners?
+  answer: Yes, it is designed to be accessible. You can start small and gradually
+    incorporate more changes as you feel comfortable.
+- question: How long does it take to see results?
+  answer: Everyone is different, but many people notice positive changes within a
+    few weeks of consistent habits.
+publishAt: '2026-03-15T00:00:00.000Z'
+---Canned beans are undeniably convenient, but buying a bag of dried beans costs significantly less money and allows you to control exactly how mushy they get and how much salt goes into them. 
 
 Cooking them from scratch sounds like a homesteading chore, but it isn't actually complicated. You do exactly three things: you soak, you simmer, and you season. Once you've done it a couple of times, it becomes as brainless as boiling a pot of pasta. Here is a very straightforward method that works reliably for black beans, pinto beans, chickpeas, and most standard legumes.
 
@@ -73,3 +73,11 @@ Once the beans are perfectly soft to your liking, add a generous amount of salt 
 If you plan to use these beans in a recipe that is already heavily seasoned (like a spicy chili), you can just leave the beans plain and season them later. 
 
 You will get significantly more food out of a $2 bag of dried beans than you ever will from $2 worth of cans. You can cook a massive batch on a Sunday afternoon while you're doing other things around the house, stick them in the fridge, and use them all week in tacos, soups, and quick salads. It's one of those minor kitchen skills that pays off constantly.
+
+## Before you buy another gadget
+
+Most kitchen wins come from a sharp knife, a big cutting board, and a pan that does not warp. If a tool promises to replace skill, be skeptical. If it removes a step you hate every day, it might be worth it.
+
+## When a hack fails, check the boring variables
+
+Temperature, time, and moisture ruin more projects than talent does. If something worked once and never again, something in the environment changed. Write down what you did the time it worked. Yes, it feels silly. It also works.

@@ -1,51 +1,70 @@
 ---
-title: "Meal Prep Bowls for Busy Weeks (2026)"
-excerpt: "Meal prep does not have to mean identical boxes of sadness. This lentil-quinoa-veg plan stays flexible when your week goes sideways."
-category: "recipes"
-tags: ["meal prep", "high fiber", "batch cooking", "lunch ideas", "week planning"]
-image: "/images/high-fiber-meal-prep-ideas-for-busy-weeks-2026-main.jpg"
-imageAlt: "Glass meal prep containers with quinoa, vegetables, and beans"
+title: Meal Prep Bowls for Busy Weeks (2026)
+excerpt: Meal prep does not have to mean identical boxes of sadness. This lentil-quinoa-veg
+  plan stays flexible when your week goes sideways.
+category: recipes
+tags:
+- meal prep
+- high fiber
+- batch cooking
+- lunch ideas
+- week planning
+image: /images/high-fiber-meal-prep-ideas-for-busy-weeks-2026-main.jpg
+imageAlt: Glass meal prep containers with quinoa, vegetables, and beans
 date: 2026-03-30
-publishAt: 2026-04-03T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-03 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-prepTime: "25 minutes"
-cookTime: "35 minutes"
-totalTime: "60 minutes"
+prepTime: 25 minutes
+cookTime: 35 minutes
+totalTime: 60 minutes
 servings: 6
 calories: 380
-difficulty: "Easy"
+difficulty: Easy
 ingredients:
-  - "2 cups dry lentils, rinsed"
-  - "1 tbsp olive oil"
-  - "1 onion, diced"
-  - "3 carrots, diced"
-  - "2 celery stalks, diced"
-  - "4 cups low sodium vegetable broth"
-  - "1 tsp dried thyme"
-  - "1 bay leaf"
-  - "Salt and pepper to taste"
-  - "3 cups cooked quinoa (from about 1 cup dry)"
-  - "4 cups mixed roasted vegetables (broccoli, peppers, zucchini)"
+- 2 cups dry lentils, rinsed
+- 1 tbsp olive oil
+- 1 onion, diced
+- 3 carrots, diced
+- 2 celery stalks, diced
+- 4 cups low sodium vegetable broth
+- 1 tsp dried thyme
+- 1 bay leaf
+- Salt and pepper to taste
+- 3 cups cooked quinoa (from about 1 cup dry)
+- 4 cups mixed roasted vegetables (broccoli, peppers, zucchini)
 steps:
-  - "Heat oil in a pot over medium heat. Sauté onion, carrot, and celery for 6 to 8 minutes."
-  - "Add lentils, broth, thyme, and bay leaf. Bring to a boil, then simmer 25 to 30 minutes until lentils are tender."
-  - "Season lentil stew and divide among containers with quinoa and roasted vegetables."
-  - "Cool slightly before sealing lids. Refrigerate up to 4 days or freeze portions for later."
+- Heat oil in a pot over medium heat. Sauté onion, carrot, and celery for 6 to 8 minutes.
+- Add lentils, broth, thyme, and bay leaf. Bring to a boil, then simmer 25 to 30 minutes
+  until lentils are tender.
+- Season lentil stew and divide among containers with quinoa and roasted vegetables.
+- Cool slightly before sealing lids. Refrigerate up to 4 days or freeze portions for
+  later.
 faq:
-  - question: "What makes these high fiber meal prep ideas work for busy weeks?"
-    answer: "You batch cook the building blocks once, then remix them through the week. Lentils and quinoa keep the base satisfying, while roasted vegetables and simple sauces prevent the “same meal forever” feeling."
-  - question: "Can I use canned lentils to save time?"
-    answer: "Yes. Drain and rinse canned lentils, then warm them with sautéed vegetables and a little broth. You still get a fiber-rich base, and your prep time drops a lot."
-  - question: "How do I keep vegetables from getting soggy?"
-    answer: "Pack with a little strategy: store dressing separately, keep extra juicy veggies separate if you can, and lean on sturdier roasted vegetables like broccoli and peppers when you need texture after refrigeration."
-  - question: "How long does this meal prep keep in the fridge?"
-    answer: "Plan for about 3 to 4 days in the fridge for best quality. If you are packing several components together, taste and smell before eating. When in doubt, toss it. Food safety is not the place to gamble."
-  - question: "Can I freeze portions?"
-    answer: "Yes. Freeze the lentil portion and the roasted vegetables separately when possible, then thaw in the fridge overnight and reheat. Quinoa is also freezer-friendly, but the texture can soften a bit, so treat it as ‘still good’ not ‘exactly the same as day one.’"
+- question: What makes these high fiber meal prep ideas work for busy weeks?
+  answer: You batch cook the building blocks once, then remix them through the week.
+    Lentils and quinoa keep the base satisfying, while roasted vegetables and simple
+    sauces prevent the “same meal forever” feeling.
+- question: Can I use canned lentils to save time?
+  answer: Yes. Drain and rinse canned lentils, then warm them with sautéed vegetables
+    and a little broth. You still get a fiber-rich base, and your prep time drops
+    a lot.
+- question: How do I keep vegetables from getting soggy?
+  answer: 'Pack with a little strategy: store dressing separately, keep extra juicy
+    veggies separate if you can, and lean on sturdier roasted vegetables like broccoli
+    and peppers when you need texture after refrigeration.'
+- question: How long does this meal prep keep in the fridge?
+  answer: Plan for about 3 to 4 days in the fridge for best quality. If you are packing
+    several components together, taste and smell before eating. When in doubt, toss
+    it. Food safety is not the place to gamble.
+- question: Can I freeze portions?
+  answer: Yes. Freeze the lentil portion and the roasted vegetables separately when
+    possible, then thaw in the fridge overnight and reheat. Quinoa is also freezer-friendly,
+    but the texture can soften a bit, so treat it as ‘still good’ not ‘exactly the
+    same as day one.’
 ---
 
 If your week looks like a spreadsheet with a bad attitude, meal prep is not about perfection. It is about having three decent options ready so you do not end up eating crackers for dinner while standing in front of the fridge.

@@ -1,47 +1,62 @@
 ---
-title: "Crispy Roasted Chickpeas for Crunchy Snacking"
-excerpt: "Roasted chickpeas are cheap, crunchy, and easy to season. Dry them well, spread them out, and you get chip-style crunch without the guesswork."
-category: "recipes"
-tags: ["chickpeas", "roasted chickpeas", "high fiber snack", "oven snack", "plant protein"]
-image: "/images/crispy-roasted-chickpeas-high-fiber-snack-main.jpg"
-imageAlt: "Bowl of golden roasted chickpeas with spices"
+title: Crispy Roasted Chickpeas for Crunchy Snacking
+excerpt: Roasted chickpeas are cheap, crunchy, and easy to season. Dry them well,
+  spread them out, and you get chip-style crunch without the guesswork.
+category: recipes
+tags:
+- chickpeas
+- roasted chickpeas
+- high fiber snack
+- oven snack
+- plant protein
+image: /images/crispy-roasted-chickpeas-high-fiber-snack-main.jpg
+imageAlt: Bowl of golden roasted chickpeas with spices
 date: 2026-03-30
-publishAt: 2026-04-07T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-07 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-prepTime: "10 minutes"
-cookTime: "30 minutes"
-totalTime: "40 minutes"
+prepTime: 10 minutes
+cookTime: 30 minutes
+totalTime: 40 minutes
 servings: 4
 calories: 130
-difficulty: "Easy"
+difficulty: Easy
 ingredients:
-  - "2 (15 oz) cans chickpeas, drained and rinsed"
-  - "2 tbsp olive oil"
-  - "1 tsp smoked paprika"
-  - "1/2 tsp garlic powder"
-  - "1/2 tsp salt"
-  - "1/4 tsp black pepper"
-  - "Optional: pinch cayenne, lime zest"
+- 2 (15 oz) cans chickpeas, drained and rinsed
+- 2 tbsp olive oil
+- 1 tsp smoked paprika
+- 1/2 tsp garlic powder
+- 1/2 tsp salt
+- 1/4 tsp black pepper
+- 'Optional: pinch cayenne, lime zest'
 steps:
-  - "Preheat oven to 400°F. Spread chickpeas on a towel and pat very dry. Remove loose skins if you have patience."
-  - "Toss chickpeas with oil and spices on a sheet pan. Spread in a single layer."
-  - "Roast 25 to 35 minutes, shaking the pan once or twice, until crisp and golden."
-  - "Cool 5 minutes before eating. They crisp more as they cool."
+- Preheat oven to 400°F. Spread chickpeas on a towel and pat very dry. Remove loose
+  skins if you have patience.
+- Toss chickpeas with oil and spices on a sheet pan. Spread in a single layer.
+- Roast 25 to 35 minutes, shaking the pan once or twice, until crisp and golden.
+- Cool 5 minutes before eating. They crisp more as they cool.
 faq:
-  - question: "Why are my roasted chickpeas chewy instead of crispy?"
-    answer: "Almost always moisture. Dry the chickpeas aggressively after rinsing, spread them in a single layer, and do not overcrowd. Steam is the enemy of crunch."
-  - question: "How much fiber is in roasted chickpeas?"
-    answer: "Fiber varies by brand and serving size, so do not treat it like a medical measurement. Chickpeas are one of the higher fiber pantry staples, and compared with many packaged snacks they usually bring a lot more fiber per bite."
-  - question: "How long do they stay crispy?"
-    answer: "Best the same day. If you store them, use an airtight container but keep it slightly vented if you can. They soften overnight, though they are still good as a crunchy topping or salad side."
-  - question: "Can I make them in an air fryer?"
-    answer: "Yes. Air fry at about 380°F to 400°F and cook around 10 to 15 minutes, shaking once halfway. Check for golden edges and stop once they look crisp, not just “dry.”"
-  - question: "Can I use dry chickpeas instead of canned?"
-    answer: "You can, but you have to cook them fully first. Cook until tender, then drain and dry thoroughly before seasoning. After that, roast the same way. The texture depends on how dry they are when they go in."
+- question: Why are my roasted chickpeas chewy instead of crispy?
+  answer: Almost always moisture. Dry the chickpeas aggressively after rinsing, spread
+    them in a single layer, and do not overcrowd. Steam is the enemy of crunch.
+- question: How much fiber is in roasted chickpeas?
+  answer: Fiber varies by brand and serving size, so do not treat it like a medical
+    measurement. Chickpeas are one of the higher fiber pantry staples, and compared
+    with many packaged snacks they usually bring a lot more fiber per bite.
+- question: How long do they stay crispy?
+  answer: Best the same day. If you store them, use an airtight container but keep
+    it slightly vented if you can. They soften overnight, though they are still good
+    as a crunchy topping or salad side.
+- question: Can I make them in an air fryer?
+  answer: Yes. Air fry at about 380°F to 400°F and cook around 10 to 15 minutes, shaking
+    once halfway. Check for golden edges and stop once they look crisp, not just “dry.”
+- question: Can I use dry chickpeas instead of canned?
+  answer: You can, but you have to cook them fully first. Cook until tender, then
+    drain and dry thoroughly before seasoning. After that, roast the same way. The
+    texture depends on how dry they are when they go in.
 ---
 
 If you want a high fiber snack that feels like junk food cosplay, roasted chickpeas are the move. They crunch, they carry spice, and they do not require a culinary degree.

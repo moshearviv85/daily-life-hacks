@@ -1,28 +1,45 @@
 ---
-title: "Natto Gut Health: Why This Weird Fermented Soybean Is Worth Trying"
-excerpt: "Natto is a Japanese fermented soybean dish that is incredibly high in fiber and probiotics. Here is why this acquired taste might be the ultimate hack for your digestion."
-category: "nutrition"
-tags: ["GutHealth", "FermentedFoods", "HighFiber", "JapaneseFood", "HealthyEating"]
-image: "/images/natto-japanese-fermented-soybeans-gut-health-main.jpg"
-imageAlt: "A bowl of natto, sticky fermented Japanese soybeans, over rice"
+title: 'Natto Gut Health: Why This Weird Fermented Soybean Is Worth Trying'
+excerpt: Natto is a Japanese fermented soybean dish that is incredibly high in fiber
+  and probiotics. Here is why this acquired taste might be the ultimate hack for your
+  digestion.
+category: nutrition
+tags:
+- GutHealth
+- FermentedFoods
+- HighFiber
+- JapaneseFood
+- HealthyEating
+image: /images/natto-japanese-fermented-soybeans-gut-health-main.jpg
+imageAlt: A bowl of natto, sticky fermented Japanese soybeans, over rice
 date: 2026-04-04
-publishAt: 2026-04-04T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-04 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: "What exactly is natto?"
-    answer: "Natto is a traditional Japanese food made by fermenting soybeans with a specific bacteria called Bacillus subtilis. It is known for its sticky, slimy texture and a very strong, pungent smell that reminds some people of aged cheese."
-  - question: "Why is natto so good for gut health?"
-    answer: "It is packed with both fiber and live probiotics. The fermentation process creates a massive amount of beneficial bacteria that can survive the trip to your digestive system. A single serving also gives you around 5 grams of fiber."
-  - question: "How are you supposed to eat natto?"
-    answer: "In Japan, people usually eat it over a bowl of hot white rice, often mixed with a little soy sauce, spicy mustard, or chopped green onions. The toppings help cut through the strong flavor and balance the sliminess."
-  - question: "Where can I buy natto in the US?"
-    answer: "You will almost never find it in a regular American grocery store. Check the frozen section of a local Asian or Japanese market. It is sold in small styrofoam multipacks."
-  - question: "Can I cook natto?"
-    answer: "You should not heat it to high temperatures if you want to keep the probiotics alive. High heat kills the beneficial bacteria. Eat it at room temperature, or mix it into warm rice right before eating."
+- question: What exactly is natto?
+  answer: Natto is a traditional Japanese food made by fermenting soybeans with a
+    specific bacteria called Bacillus subtilis. It is known for its sticky, slimy
+    texture and a very strong, pungent smell that reminds some people of aged cheese.
+- question: Why is natto so good for gut health?
+  answer: It is packed with both fiber and live probiotics. The fermentation process
+    creates a massive amount of beneficial bacteria that can survive the trip to your
+    digestive system. A single serving also gives you around 5 grams of fiber.
+- question: How are you supposed to eat natto?
+  answer: In Japan, people usually eat it over a bowl of hot white rice, often mixed
+    with a little soy sauce, spicy mustard, or chopped green onions. The toppings
+    help cut through the strong flavor and balance the sliminess.
+- question: Where can I buy natto in the US?
+  answer: You will almost never find it in a regular American grocery store. Check
+    the frozen section of a local Asian or Japanese market. It is sold in small styrofoam
+    multipacks.
+- question: Can I cook natto?
+  answer: You should not heat it to high temperatures if you want to keep the probiotics
+    alive. High heat kills the beneficial bacteria. Eat it at room temperature, or
+    mix it into warm rice right before eating.
 ---
 You probably think you have heard about every superfood out there. We cycled through kale, chia seeds, goji berries, and whatever green powder was trending last week. But there is a food sitting in the freezer section of your local Asian market that most people in the US have never touched.
 

@@ -1,28 +1,43 @@
 ---
-title: "How to Add More Fiber Without Gas"
-excerpt: "If fiber makes you bloated, you might be ramping too fast or skipping water. Here is how to add more fiber comfortably with simple, everyday steps."
-category: "nutrition"
-tags: ["fiber", "digestion", "bloating", "gradual change", "hydration"]
-image: "/images/how-to-increase-fiber-intake-without-gas-main.jpg"
-imageAlt: "Bowl of oats with fruit and nuts on a kitchen counter"
+title: How to Add More Fiber Without Gas
+excerpt: If fiber makes you bloated, you might be ramping too fast or skipping water.
+  Here is how to add more fiber comfortably with simple, everyday steps.
+category: nutrition
+tags:
+- fiber
+- digestion
+- bloating
+- gradual change
+- hydration
+image: /images/how-to-increase-fiber-intake-without-gas-main.jpg
+imageAlt: Bowl of oats with fruit and nuts on a kitchen counter
 date: 2026-03-30
-publishAt: 2026-04-09T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-09 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: "Why does fiber sometimes cause gas?"
-    answer: "When you increase fiber fast, your gut bacteria start fermenting more food than they are used to. That can produce gas and bloating, especially if hydration is low."
-  - question: "How fast should I add fiber?"
-    answer: "Go slow. A practical approach is small increases every few days, not a full overhaul in one meal. Your comfort level is the best feedback, because your digestion is the reality check."
-  - question: "Does cooking fiber foods help?"
-    answer: "Sometimes. Cooking can soften plant cell walls and make some foods easier to tolerate, especially beans and tougher vegetables."
-  - question: "Which fiber foods are usually gentler for beginners?"
-    answer: "Cooked foods often feel easier at first: oats, berries, cooked vegetables, and well cooked lentils. If beans are too intense right away, try smaller portions and build up gradually."
-  - question: "What should I do if I feel worse after increasing fiber?"
-    answer: "Scale back to the last amount that felt okay. Give it a few days, then increase slowly again. If symptoms are sharp, persistent, or scary, do not guess and ask a qualified clinician."
+- question: Why does fiber sometimes cause gas?
+  answer: When you increase fiber fast, your gut bacteria start fermenting more food
+    than they are used to. That can produce gas and bloating, especially if hydration
+    is low.
+- question: How fast should I add fiber?
+  answer: Go slow. A practical approach is small increases every few days, not a full
+    overhaul in one meal. Your comfort level is the best feedback, because your digestion
+    is the reality check.
+- question: Does cooking fiber foods help?
+  answer: Sometimes. Cooking can soften plant cell walls and make some foods easier
+    to tolerate, especially beans and tougher vegetables.
+- question: Which fiber foods are usually gentler for beginners?
+  answer: 'Cooked foods often feel easier at first: oats, berries, cooked vegetables,
+    and well cooked lentils. If beans are too intense right away, try smaller portions
+    and build up gradually.'
+- question: What should I do if I feel worse after increasing fiber?
+  answer: Scale back to the last amount that felt okay. Give it a few days, then increase
+    slowly again. If symptoms are sharp, persistent, or scary, do not guess and ask
+    a qualified clinician.
 ---
 
 Fiber is one of those nutrients that sounds wholesome until your stomach files a complaint. If you want more fiber with less drama, you need a boring plan: gradual change, consistent water, and fewer heroic one day leaps.

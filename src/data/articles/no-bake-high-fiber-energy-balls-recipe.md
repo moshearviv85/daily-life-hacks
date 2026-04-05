@@ -1,48 +1,64 @@
 ---
-title: "No-Bake Oat & Flax Energy Balls"
-excerpt: "These no-bake energy balls take one bowl and a few fridge ingredients. They are sweet enough to feel like a treat without a full baking project."
-category: "recipes"
-tags: ["energy balls", "no bake", "oats", "snack", "meal prep snack"]
-image: "/images/no-bake-high-fiber-energy-balls-recipe-main.jpg"
-imageAlt: "Stack of oat energy balls on a plate with a napkin"
+title: No-Bake Oat & Flax Energy Balls
+excerpt: These no-bake energy balls take one bowl and a few fridge ingredients. They
+  are sweet enough to feel like a treat without a full baking project.
+category: recipes
+tags:
+- energy balls
+- no bake
+- oats
+- snack
+- meal prep snack
+image: /images/no-bake-high-fiber-energy-balls-recipe-main.jpg
+imageAlt: Stack of oat energy balls on a plate with a napkin
 date: 2026-03-30
-publishAt: 2026-04-04T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-04 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-prepTime: "15 minutes"
-cookTime: "0 minutes"
-totalTime: "15 minutes"
+prepTime: 15 minutes
+cookTime: 0 minutes
+totalTime: 15 minutes
 servings: 16
 calories: 120
-difficulty: "Easy"
+difficulty: Easy
 ingredients:
-  - "2 cups rolled oats"
-  - "1/2 cup natural peanut butter or almond butter"
-  - "1/3 cup ground flaxseed"
-  - "1/3 cup honey or maple syrup"
-  - "1/4 cup mini dark chocolate chips (optional)"
-  - "1 tsp vanilla extract"
-  - "1/4 tsp salt"
-  - "2 to 4 tbsp water, as needed"
+- 2 cups rolled oats
+- 1/2 cup natural peanut butter or almond butter
+- 1/3 cup ground flaxseed
+- 1/3 cup honey or maple syrup
+- 1/4 cup mini dark chocolate chips (optional)
+- 1 tsp vanilla extract
+- 1/4 tsp salt
+- 2 to 4 tbsp water, as needed
 steps:
-  - "Stir oats, nut butter, flaxseed, sweetener, vanilla, and salt in a bowl until combined."
-  - "Fold in chocolate chips if using. Add water one tablespoon at a time until the mixture holds together when squeezed."
-  - "Roll into 16 balls about 1 inch wide."
-  - "Chill at least 30 minutes in the fridge before eating. Store in an airtight container up to 7 days."
+- Stir oats, nut butter, flaxseed, sweetener, vanilla, and salt in a bowl until combined.
+- Fold in chocolate chips if using. Add water one tablespoon at a time until the mixture
+  holds together when squeezed.
+- Roll into 16 balls about 1 inch wide.
+- Chill at least 30 minutes in the fridge before eating. Store in an airtight container
+  up to 7 days.
 faq:
-  - question: "Why are these called high fiber energy balls?"
-    answer: "Rolled oats and ground flaxseed bring fiber into the mix, which helps these feel more filling than a straight candy-style snack. Fiber content varies by brands and portion size, so think “higher fiber snack,” not a precision health claim."
-  - question: "Can I make them nut free?"
-    answer: "Yes. Sunflower seed butter works as a 1:1 swap for peanut or almond butter. It tastes a little more earthy, but the texture holds up."
-  - question: "Do I have to use chocolate chips?"
-    answer: "No. Skip them or swap them. Chopped dried cherries, raisins, or unsweetened shredded coconut can add flavor without relying on chocolate."
-  - question: "How do I store them so they stay firm?"
-    answer: "Keep them in an airtight container. In the fridge they usually stay firm for several days. If you want them extra set, freezing is fine too, just thaw at room temperature for a few minutes before you eat."
-  - question: "How can I make them less sweet?"
-    answer: "Use a smaller amount of honey or maple syrup and add vanilla plus cinnamon to boost flavor. You can also increase oats slightly if your mixture feels too loose."
+- question: Why are these called high fiber energy balls?
+  answer: Rolled oats and ground flaxseed bring fiber into the mix, which helps these
+    feel more filling than a straight candy-style snack. Fiber content varies by brands
+    and portion size, so think “higher fiber snack,” not a precision health claim.
+- question: Can I make them nut free?
+  answer: Yes. Sunflower seed butter works as a 1:1 swap for peanut or almond butter.
+    It tastes a little more earthy, but the texture holds up.
+- question: Do I have to use chocolate chips?
+  answer: No. Skip them or swap them. Chopped dried cherries, raisins, or unsweetened
+    shredded coconut can add flavor without relying on chocolate.
+- question: How do I store them so they stay firm?
+  answer: Keep them in an airtight container. In the fridge they usually stay firm
+    for several days. If you want them extra set, freezing is fine too, just thaw
+    at room temperature for a few minutes before you eat.
+- question: How can I make them less sweet?
+  answer: Use a smaller amount of honey or maple syrup and add vanilla plus cinnamon
+    to boost flavor. You can also increase oats slightly if your mixture feels too
+    loose.
 ---
 
 Energy balls are socially acceptable cookie dough that you admit in public. The no bake version is for people who do not want to preheat an oven, wash a mixer, or pretend they have patience.

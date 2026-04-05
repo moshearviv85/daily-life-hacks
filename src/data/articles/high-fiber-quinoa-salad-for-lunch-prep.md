@@ -1,53 +1,68 @@
 ---
-title: "Quinoa Lunch Salad That Stays Fresh"
-excerpt: "This quinoa salad holds up in the fridge, travels well, and does not turn into a sad mush by Wednesday. Lemon, chickpeas, and crunch do the work."
-category: "recipes"
-tags: ["quinoa salad", "meal prep lunch", "high fiber", "vegetarian lunch", "work lunch"]
-image: "/images/high-fiber-quinoa-salad-for-lunch-prep-main.jpg"
-imageAlt: "Quinoa salad with vegetables in a meal prep container"
+title: Quinoa Lunch Salad That Stays Fresh
+excerpt: This quinoa salad holds up in the fridge, travels well, and does not turn
+  into a sad mush by Wednesday. Lemon, chickpeas, and crunch do the work.
+category: recipes
+tags:
+- quinoa salad
+- meal prep lunch
+- high fiber
+- vegetarian lunch
+- work lunch
+image: /images/high-fiber-quinoa-salad-for-lunch-prep-main.jpg
+imageAlt: Quinoa salad with vegetables in a meal prep container
 date: 2026-03-30
-publishAt: 2026-04-06T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-06 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-prepTime: "20 minutes"
-cookTime: "15 minutes"
-totalTime: "35 minutes"
+prepTime: 20 minutes
+cookTime: 15 minutes
+totalTime: 35 minutes
 servings: 4
 calories: 360
-difficulty: "Easy"
+difficulty: Easy
 ingredients:
-  - "1 cup dry quinoa, rinsed"
-  - "2 cups water"
-  - "1 (15 oz) can chickpeas, drained and rinsed"
-  - "1 cucumber, diced"
-  - "1 pint cherry tomatoes, halved"
-  - "1/2 red onion, finely diced"
-  - "1/2 cup feta cheese, crumbled (optional)"
-  - "1/4 cup olive oil"
-  - "3 tbsp lemon juice"
-  - "1 tsp Dijon mustard"
-  - "1/2 tsp salt"
-  - "1/4 tsp black pepper"
-  - "1/4 cup fresh parsley, chopped"
+- 1 cup dry quinoa, rinsed
+- 2 cups water
+- 1 (15 oz) can chickpeas, drained and rinsed
+- 1 cucumber, diced
+- 1 pint cherry tomatoes, halved
+- 1/2 red onion, finely diced
+- 1/2 cup feta cheese, crumbled (optional)
+- 1/4 cup olive oil
+- 3 tbsp lemon juice
+- 1 tsp Dijon mustard
+- 1/2 tsp salt
+- 1/4 tsp black pepper
+- 1/4 cup fresh parsley, chopped
 steps:
-  - "Bring quinoa and water to a boil, reduce heat, cover, and simmer 15 minutes until fluffy. Cool."
-  - "Whisk olive oil, lemon juice, mustard, salt, and pepper."
-  - "Combine quinoa, chickpeas, cucumber, tomatoes, onion, and parsley in a large bowl."
-  - "Toss with dressing. Fold in feta if using. Chill and divide into containers."
+- Bring quinoa and water to a boil, reduce heat, cover, and simmer 15 minutes until
+  fluffy. Cool.
+- Whisk olive oil, lemon juice, mustard, salt, and pepper.
+- Combine quinoa, chickpeas, cucumber, tomatoes, onion, and parsley in a large bowl.
+- Toss with dressing. Fold in feta if using. Chill and divide into containers.
 faq:
-  - question: "Why quinoa for a high fiber lunch prep salad?"
-    answer: "Quinoa is a whole grain that brings more fiber than refined grains, and it holds up in the fridge. Chickpeas add extra fiber and protein, so your lunch feels like a real meal instead of a sad container of lettuce."
-  - question: "How long does it last?"
-    answer: "About four days in the fridge in airtight containers. For maximum crunch, add cucumber right before you eat, and keep dressing separate until then."
-  - question: "Can I make it vegan?"
-    answer: "Yes. Skip feta or use a plant based feta-style cheese. The lemon dressing, olive oil, and herbs are doing most of the heavy flavor lifting."
-  - question: "Can I make this lighter (reduced carbs or reduced calories)?"
-    answer: "You can. Use a smaller quinoa portion and add extra vegetables (peppers, cucumber, tomatoes, even roasted zucchini). If you want it lower-carb, try replacing a portion of quinoa with cauliflower rice and keep the chickpeas modest."
-  - question: "How do I keep it from getting soggy in the lunchbox?"
-    answer: "Layer smart. Keep cucumber and tomatoes toward the top, pack dressing in a separate container, and use a slightly thicker container with a tight lid. If you are meal prepping, dry cucumbers well before mixing."
+- question: Why quinoa for a high fiber lunch prep salad?
+  answer: Quinoa is a whole grain that brings more fiber than refined grains, and
+    it holds up in the fridge. Chickpeas add extra fiber and protein, so your lunch
+    feels like a real meal instead of a sad container of lettuce.
+- question: How long does it last?
+  answer: About four days in the fridge in airtight containers. For maximum crunch,
+    add cucumber right before you eat, and keep dressing separate until then.
+- question: Can I make it vegan?
+  answer: Yes. Skip feta or use a plant based feta-style cheese. The lemon dressing,
+    olive oil, and herbs are doing most of the heavy flavor lifting.
+- question: Can I make this lighter (reduced carbs or reduced calories)?
+  answer: You can. Use a smaller quinoa portion and add extra vegetables (peppers,
+    cucumber, tomatoes, even roasted zucchini). If you want it lower-carb, try replacing
+    a portion of quinoa with cauliflower rice and keep the chickpeas modest.
+- question: How do I keep it from getting soggy in the lunchbox?
+  answer: Layer smart. Keep cucumber and tomatoes toward the top, pack dressing in
+    a separate container, and use a slightly thicker container with a tight lid. If
+    you are meal prepping, dry cucumbers well before mixing.
 ---
 
 Quinoa salad is one of those recipes that sounds like it belongs on a wellness poster, but it is really just a sturdy grain bowl that tolerates commuting.

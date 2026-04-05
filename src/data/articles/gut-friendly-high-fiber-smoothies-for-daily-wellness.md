@@ -1,28 +1,45 @@
 ---
-title: "Gut-Friendly Smoothie Blends for Daily Wellness"
-excerpt: "Smoothies are not magic potions, but they are a fast way to stack fiber-friendly ingredients from fruit, oats, and seeds. These blends stay thick, not weirdly gritty."
-category: "nutrition"
-tags: ["smoothies", "gut health", "fiber", "breakfast drinks", "chia"]
-image: "/images/gut-friendly-high-fiber-smoothies-for-daily-wellness-main.jpg"
-imageAlt: "Blender jar with purple berry smoothie and fresh fruit nearby"
+title: Gut-Friendly Smoothie Blends for Daily Wellness
+excerpt: Smoothies are not magic potions, but they are a fast way to stack fiber-friendly
+  ingredients from fruit, oats, and seeds. These blends stay thick, not weirdly gritty.
+category: nutrition
+tags:
+- smoothies
+- gut health
+- fiber
+- breakfast drinks
+- chia
+image: /images/gut-friendly-high-fiber-smoothies-for-daily-wellness-main.jpg
+imageAlt: Blender jar with purple berry smoothie and fresh fruit nearby
 date: 2026-03-30
-publishAt: 2026-04-08T00:00:00.000Z
-author: "Daily Life Hacks Team"
+publishAt: 2026-04-08 00:00:00+00:00
+author: Daily Life Hacks Team
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: "What makes a smoothie gut friendly and high fiber?"
-    answer: "It is the ingredient mix. Whole fruits, oats, chia, and flax are the fiber part. Liquid does not erase fiber, but very sweet extras can push the smoothie toward dessert. When you add some protein too, the drink can feel more satisfying and less “snacky.”"
-  - question: "Why does my smoothie separate?"
-    answer: "Fiber and liquid settle over time. A quick re stir fixes it. For fewer separation issues, use frozen fruit and a spoon of oats or a small amount of chia so the texture stays thicker."
-  - question: "Can smoothies replace vegetables at dinner?"
-    answer: "They can add produce to your day, but they are usually a supplement, not a full replacement. Whole vegetables give you chewing time and different textures, which matters for most people."
-  - question: "How do I make a smoothie thicker?"
-    answer: "Use less liquid than you think (start with 1/2 cup and adjust). Add frozen fruit, then add either oats or chia. If you want it thick fast, use frozen fruit and blend a little longer."
-  - question: "Can I make it vegan?"
-    answer: "Yes. Use plant yogurt, silken tofu, or a vegan protein powder instead of dairy yogurt. The key is keeping fiber ingredients (fruit, oats, chia, greens) consistent so it stays a real smoothie, not just juice."
+- question: What makes a smoothie gut friendly and high fiber?
+  answer: It is the ingredient mix. Whole fruits, oats, chia, and flax are the fiber
+    part. Liquid does not erase fiber, but very sweet extras can push the smoothie
+    toward dessert. When you add some protein too, the drink can feel more satisfying
+    and less “snacky.”
+- question: Why does my smoothie separate?
+  answer: Fiber and liquid settle over time. A quick re stir fixes it. For fewer separation
+    issues, use frozen fruit and a spoon of oats or a small amount of chia so the
+    texture stays thicker.
+- question: Can smoothies replace vegetables at dinner?
+  answer: They can add produce to your day, but they are usually a supplement, not
+    a full replacement. Whole vegetables give you chewing time and different textures,
+    which matters for most people.
+- question: How do I make a smoothie thicker?
+  answer: Use less liquid than you think (start with 1/2 cup and adjust). Add frozen
+    fruit, then add either oats or chia. If you want it thick fast, use frozen fruit
+    and blend a little longer.
+- question: Can I make it vegan?
+  answer: Yes. Use plant yogurt, silken tofu, or a vegan protein powder instead of
+    dairy yogurt. The key is keeping fiber ingredients (fruit, oats, chia, greens)
+    consistent so it stays a real smoothie, not just juice.
 ---
 
 A smoothie is a fast way to eat fruit without admitting you are late. If you want fiber in the mix, you need ingredients that actually bring fiber, not just a pretty color.

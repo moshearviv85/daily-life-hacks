@@ -24,6 +24,18 @@ This is the most critical check to prevent the "aggressively massive" bug. For t
 2. **Run-on Sentences:** Flag any sentence longer than 40 words that lacks punctuation or consists of strung-together adjectives (e.g., "The absolute essential completely total practically fundamental deeply total entirely secret...").
 3. **Ingredient/Step Weirdness:** In recipes, ingredients and steps must be plain instructions. Flag if they contain emotional adjectives (e.g., "heavily minced", "aggressively dump", "intense heat").
 
+## Phase 3A: Writing Guide (gemini-article-instructions.md) — MANDATORY WITH THIS AUDIT
+
+The agent must apply **both** this file and `pipeline-data/gemini-article-instructions.md`. Treat them as one gate.
+
+1. **Article body length (after frontmatter):** Count words in the Markdown body only (everything after the closing `---` of the YAML block). Target **700–850 words** for every article (all categories: recipes, nutrition, tips).  
+   - Flag if **below 700** or **above 850**.  
+   - Fix together with other violations: expand thin posts with substantive sections; tighten long posts by removing redundant sections while staying within range and keeping usefulness.
+2. **`publishAt`:** Frontmatter should include `publishAt` in ISO UTC (`YYYY-MM-DDT00:00:00.000Z`), aligned with the daily drip schedule. Flag if missing on new or scheduled posts; add or correct when fixing.
+3. **`tags`:** Expect **4–5** tags (PascalCase style per house style). Flag if fewer than 4 or more than 5; fix when batching edits.
+
+**Keyword frequency (3–5 natural uses in body):** Spot-check during expansion or trim passes; do not rely on a dumb counter alone if the title already contains the phrase.
+
 ## Phase 3: Content & Tone Rules (David Miller Voice)
 Scan the article body for these strict rule violations:
 
@@ -53,7 +65,9 @@ The Agent should not fix the files automatically unless explicitly asked. Instea
 ```
 
 **Instructions for the Agent:** 
-"Read `pipeline-data/gemini-article-instructions.md` and `.cursor/skills/david-miller-voice/SKILL.md` for context. Then, scan all articles against the rules above. Provide a summary report of all flagged files."
+"Read `pipeline-data/gemini-article-instructions.md` and `.cursor/skills/david-miller-voice/SKILL.md` for context. Scan all articles against **Phase 1–3A–3** (schema, length 700–850, writing guide, hallucinations, tone). When the user asks for fixes, **fix in the same pass** (do not only report). After fixes, re-run the audit until clean."
+
+**Canonical files for the live site:** `src/data/articles/` (Astro content collection). Keep `pipeline-data/drafts/` in sync for the same slug when both exist.
 
 ## Phase 5: Dashboard Scan Log (MANDATORY — run at the END of every audit)
 
