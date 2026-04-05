@@ -22,7 +22,7 @@ export async function onRequestGet(context) {
   // ── 1. Newsletter subscriptions ──────────────────────────────────────────
   if (env.DB) {
     try {
-      const [total, period, today, bySource, byDay] = await Promise.all([
+      const [total, period, today, bySource, byDay, allSubscribers] = await Promise.all([
         env.DB.prepare("SELECT COUNT(*) as count FROM subscriptions").first(),
         env.DB.prepare(
           `SELECT COUNT(*) as count FROM subscriptions WHERE created_at >= datetime('now', '-${days} days')`
@@ -38,6 +38,9 @@ export async function onRequestGet(context) {
            WHERE created_at >= datetime('now', '-${days} days')
            GROUP BY date(created_at) ORDER BY day ASC`
         ).all(),
+        env.DB.prepare(
+          "SELECT email, source, page, status, created_at FROM subscriptions ORDER BY created_at DESC LIMIT 500"
+        ).all(),
       ]);
 
       result.subscriptions = {
@@ -46,6 +49,7 @@ export async function onRequestGet(context) {
         today: today?.count ?? 0,
         bySource: bySource?.results ?? [],
         byDay: byDay?.results ?? [],
+        list: allSubscribers?.results ?? [],
       };
     } catch (e) {
       result.subscriptions = { error: e.message, total: 0, period: 0, today: 0, bySource: [], byDay: [] };
