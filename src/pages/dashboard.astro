@@ -321,8 +321,8 @@ const BUILD = {
       <span id="refresh-status">Loading live data<span class="loading-dots"></span></span>
     </span>
     <div class="toggle-group">
-      <button class="toggle-btn active" id="btn-7" onclick="setPeriod(7)">7 days</button>
-      <button class="toggle-btn" id="btn-30" onclick="setPeriod(30)">30 days</button>
+      <button class="toggle-btn" id="btn-7" onclick="setPeriod(7)">7 days</button>
+      <button class="toggle-btn active" id="btn-30" onclick="setPeriod(30)">30 days</button>
     </div>
     <button class="logout-btn" onclick="logout()">Logout</button>
   </div>
@@ -1053,6 +1053,13 @@ function copySubEmails() {
     setTimeout(() => btn.textContent = orig, 2000);
   });
 }
+
+// ── Expose to global scope (needed for inline onclick attributes) ──────────
+window.setPeriod      = setPeriod;
+window.logout         = logout;
+window.toggleCollapse = toggleCollapse;
+window.filterSubs     = filterSubs;
+window.copySubEmails  = copySubEmails;
 </script>
 
 </body>
