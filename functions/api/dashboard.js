@@ -195,9 +195,11 @@ export async function onRequestGet(context) {
         };
 
         // Country breakdown via httpRequestsAdaptiveGroups — max 1d on free plan
+        // Use UTC midnight-to-now to match Cloudflare Dashboard's "today" view
         try {
-          const since24h = new Date(); since24h.setHours(since24h.getHours() - 24);
-          const sinceISO = since24h.toISOString().replace(/\.\d{3}Z$/, "Z");
+          const todayUTC = new Date();
+          todayUTC.setUTCHours(0, 0, 0, 0); // midnight UTC = same as CF dashboard
+          const sinceISO = todayUTC.toISOString().replace(/\.\d{3}Z$/, "Z");
           const untilISO = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
           const countryQuery = `{
             viewer {
