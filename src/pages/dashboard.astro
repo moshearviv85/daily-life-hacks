@@ -226,6 +226,15 @@ const BUILD = {
       border-radius: 6px; font-size: .8rem; cursor: pointer; color: var(--muted);
     }
     .logout-btn:hover { border-color: var(--red); color: var(--red); }
+    .refresh-btn {
+      padding: .35rem .65rem; border: 1.5px solid var(--border); background: var(--card);
+      border-radius: 6px; font-size: 1rem; cursor: pointer; color: var(--muted);
+      transition: transform .3s, border-color .15s;
+      line-height: 1;
+    }
+    .refresh-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .refresh-btn.spinning { animation: spin .6s linear infinite; border-color: var(--orange); color: var(--orange); }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     /* ── Content ──────────────────────────────────── */
     main { padding: 1.25rem 1.5rem; max-width: 1400px; margin: 0 auto; }
@@ -391,9 +400,11 @@ const BUILD = {
       <span id="refresh-status">Loading live data<span class="loading-dots"></span></span>
     </span>
     <div class="toggle-group">
+      <button class="toggle-btn" id="btn-1" onclick="setPeriod(1)">24h</button>
       <button class="toggle-btn" id="btn-7" onclick="setPeriod(7)">7 days</button>
       <button class="toggle-btn active" id="btn-30" onclick="setPeriod(30)">30 days</button>
     </div>
+    <button class="refresh-btn" id="refresh-btn" onclick="refreshData()" title="Refresh live data">↻</button>
     <button class="logout-btn" onclick="logout()">Logout</button>
   </div>
 
@@ -707,10 +718,17 @@ async function loadDashboard() {
 // ── Period toggle ──────────────────────────────────────────────────────────
 function setPeriod(days) {
   currentPeriod = days;
+  document.getElementById('btn-1').classList.toggle('active', days === 1);
   document.getElementById('btn-7').classList.toggle('active', days === 7);
   document.getElementById('btn-30').classList.toggle('active', days === 30);
-  document.querySelectorAll('.period-label').forEach(el => el.textContent = days);
+  document.querySelectorAll('.period-label').forEach(el => el.textContent = days === 1 ? '24h' : days);
   fetchLive(days);
+}
+
+function refreshData() {
+  const btn = document.getElementById('refresh-btn');
+  btn.classList.add('spinning');
+  fetchLive(currentPeriod).finally(() => btn.classList.remove('spinning'));
 }
 
 // ── Load Chart.js dynamically (Astro strips CDN script tags) ─────────────
@@ -1356,6 +1374,7 @@ function renderCountriesTable(rows, byVisitors) {
 
 // ── Expose to global scope (needed for inline onclick attributes) ──────────
 window.setPeriod        = setPeriod;
+window.refreshData      = refreshData;
 window.logout           = logout;
 window.toggleCollapse   = toggleCollapse;
 window.filterSubs       = filterSubs;
