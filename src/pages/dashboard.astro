@@ -1,0 +1,981 @@
+---
+/**
+ * /dashboard — password-protected site dashboard.
+ * Build-time: reads local markdown + JSON for content stats.
+ * Runtime:    fetches live data (subs, analytics, agent scans) from /api/dashboard.
+ * Password:   DASHBOARD_PASSWORD env var (Cloudflare Pages → Variables and Secrets).
+ */
+import { getCollection } from 'astro:content';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const root = join(__dirname, '../..');
+const now = new Date();
+
+// ── Articles ──────────────────────────────────────────────────────────────
+const articles = await getCollection('articles');
+
+function isPub(a) {
+  return !a.data.publishAt || new Date(a.data.publishAt) <= now;
+}
+const published  = articles.filter(isPub);
+const scheduled  = articles.filter(a => !isPub(a));
+
+const sortedPub = [...published].sort((a,b) =>
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+const lastPub = sortedPub[0];
+
+const cats = ['nutrition','recipes','tips'] as const;
+const byCategory: Record<string,number>     = {};
+const pubByCategory: Record<string,number>  = {};
+for (const c of cats) {
+  byCategory[c]   = articles.filter(a => a.data.category === c).length;
+  pubByCategory[c]= published.filter(a => a.data.category === c).length;
+}
+
+const scheduledList = scheduled
+  .map(a => ({
+    slug: a.id,
+    title: a.data.title,
+    category: a.data.category,
+    publishAt: a.data.publishAt?.toISOString().split('T')[0] ?? null,
+  }))
+  .sort((a,b) => new Date(a.publishAt!).getTime() - new Date(b.publishAt!).getTime());
+
+// ── Images ────────────────────────────────────────────────────────────────
+const imgDir  = join(root,'public/images');
+const pinDir  = join(root,'public/images/pins');
+
+const webFiles = readdirSync(imgDir).filter(f => f.endsWith('-main.jpg'));
+const pinFiles = readdirSync(pinDir).filter(f => /\.jpg$/i.test(f));
+
+const webSlugs = new Set(webFiles.map(f => f.replace('-main.jpg','')));
+const pinSlugs = new Set(pinFiles.map(f => f.replace(/_v\d+\.jpg$/,'')));
+
+const missingWeb = articles
+  .filter(a => !webSlugs.has(a.id))
+  .map(a => ({ slug: a.id, title: a.data.title, category: a.data.category, pub: isPub(a) }));
+
+const missingPin = articles
+  .filter(a => !pinSlugs.has(a.id))
+  .map(a => ({ slug: a.id, title: a.data.title, category: a.data.category, pub: isPub(a) }));
+
+// ── Pins ──────────────────────────────────────────────────────────────────
+const pins = JSON.parse(readFileSync(join(root,'pipeline-data/pins.json'),'utf8')) as any[];
+const pinByCat: Record<string,number>    = {};
+const pinByBoard: Record<string,number>  = {};
+const pinByStatus: Record<string,number> = {};
+for (const p of pins) {
+  pinByCat[p.category]   = (pinByCat[p.category]   || 0) + 1;
+  pinByBoard[p.board]    = (pinByBoard[p.board]     || 0) + 1;
+  pinByStatus[p.status]  = (pinByStatus[p.status]   || 0) + 1;
+}
+
+// ── Content tracker ───────────────────────────────────────────────────────
+const tracker = JSON.parse(readFileSync(join(root,'pipeline-data/content-tracker.json'),'utf8')) as any[];
+const trkByStatus: Record<string,number>   = {};
+const trkByCat: Record<string,number>      = {};
+for (const t of tracker) {
+  trkByStatus[t.status]   = (trkByStatus[t.status]   || 0) + 1;
+  trkByCat[t.category]    = (trkByCat[t.category]    || 0) + 1;
+}
+
+// ── Final build-time bundle ───────────────────────────────────────────────
+const BUILD = {
+  buildTime: now.toISOString(),
+  articles: {
+    total: articles.length,
+    published: published.length,
+    scheduled: scheduled.length,
+    byCategory,
+    pubByCategory,
+    lastPub: lastPub ? {
+      title:    lastPub.data.title,
+      date:     lastPub.data.date?.toISOString().split('T')[0],
+      slug:     lastPub.id,
+      category: lastPub.data.category,
+    } : null,
+    scheduledList,
+  },
+  images: {
+    webCount:     webFiles.length,
+    pinCount:     pinFiles.length,
+    pinSlugsCount: pinSlugs.size,
+    withWeb:      articles.length - missingWeb.length,
+    withPins:     articles.length - missingPin.length,
+    missingWeb,
+    missingPin,
+  },
+  pins: {
+    total:    pins.length,
+    byCat:    pinByCat,
+    byBoard:  pinByBoard,
+    byStatus: pinByStatus,
+  },
+  tracker: {
+    total:    tracker.length,
+    byStatus: trkByStatus,
+    byCat:    trkByCat,
+  },
+};
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Daily Life Hacks</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange:   #F29B30;
+      --orange-d: #d97706;
+      --bg:       #f1f5f9;
+      --card:     #ffffff;
+      --border:   #e2e8f0;
+      --text:     #1e293b;
+      --muted:    #64748b;
+      --green:    #10b981;
+      --red:      #ef4444;
+      --blue:     #3b82f6;
+      --purple:   #8b5cf6;
+      --radius:   10px;
+      --shadow:   0 1px 4px rgba(0,0,0,.08);
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: var(--bg); color: var(--text); min-height: 100vh; }
+
+    /* ── Login ────────────────────────────────────── */
+    #login-screen {
+      display: flex; align-items: center; justify-content: center;
+      min-height: 100vh; padding: 1rem;
+    }
+    .login-card {
+      background: var(--card); border-radius: var(--radius);
+      box-shadow: 0 4px 24px rgba(0,0,0,.12);
+      padding: 2.5rem; width: 100%; max-width: 380px; text-align: center;
+    }
+    .login-logo { font-size: 2.5rem; margin-bottom: .5rem; }
+    .login-title { font-size: 1.25rem; font-weight: 700; margin-bottom: .25rem; }
+    .login-sub   { color: var(--muted); font-size: .875rem; margin-bottom: 1.75rem; }
+    .login-input {
+      width: 100%; padding: .75rem 1rem; border: 1.5px solid var(--border);
+      border-radius: 8px; font-size: 1rem; outline: none;
+      transition: border-color .2s;
+    }
+    .login-input:focus { border-color: var(--orange); }
+    .login-btn {
+      width: 100%; padding: .75rem; background: var(--orange); color: #fff;
+      border: none; border-radius: 8px; font-size: 1rem; font-weight: 600;
+      cursor: pointer; margin-top: .75rem; transition: background .2s;
+    }
+    .login-btn:hover { background: var(--orange-d); }
+    .login-error { color: var(--red); font-size: .85rem; margin-top: .75rem; display: none; }
+
+    /* ── App shell ────────────────────────────────── */
+    #app { display: none; }
+    .topbar {
+      background: var(--card); border-bottom: 1px solid var(--border);
+      padding: .75rem 1.5rem; display: flex; align-items: center;
+      gap: 1rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100;
+    }
+    .topbar-logo { font-size: 1.1rem; font-weight: 800; color: var(--orange); }
+    .topbar-meta { color: var(--muted); font-size: .8rem; flex: 1; }
+    .toggle-group { display: flex; gap: .25rem; }
+    .toggle-btn {
+      padding: .35rem .9rem; border: 1.5px solid var(--border); background: var(--card);
+      border-radius: 6px; font-size: .8rem; cursor: pointer; font-weight: 600;
+      transition: all .15s; color: var(--muted);
+    }
+    .toggle-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
+    .logout-btn {
+      padding: .35rem .9rem; border: 1.5px solid var(--border); background: var(--card);
+      border-radius: 6px; font-size: .8rem; cursor: pointer; color: var(--muted);
+    }
+    .logout-btn:hover { border-color: var(--red); color: var(--red); }
+
+    /* ── Content ──────────────────────────────────── */
+    main { padding: 1.25rem 1.5rem; max-width: 1400px; margin: 0 auto; }
+    .section-title {
+      font-size: .7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--muted); margin-bottom: .75rem;
+    }
+
+    /* ── Stat cards ───────────────────────────────── */
+    .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
+    .stat-card {
+      background: var(--card); border-radius: var(--radius); padding: 1.1rem 1.25rem;
+      box-shadow: var(--shadow); border-left: 4px solid var(--orange);
+    }
+    .stat-card.green  { border-left-color: var(--green); }
+    .stat-card.blue   { border-left-color: var(--blue); }
+    .stat-card.purple { border-left-color: var(--purple); }
+    .stat-card.red    { border-left-color: var(--red); }
+    .stat-label { font-size: .75rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+    .stat-value { font-size: 2rem; font-weight: 800; line-height: 1.1; margin: .2rem 0 .15rem; }
+    .stat-sub   { font-size: .78rem; color: var(--muted); }
+
+    /* ── Grid layouts ─────────────────────────────── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+    .grid-12 { display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 1.25rem; }
+    .grid-21 { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+    @media (max-width: 900px) { .grid-2,.grid-3,.grid-12,.grid-21 { grid-template-columns: 1fr; } }
+
+    /* ── Card ─────────────────────────────────────── */
+    .card {
+      background: var(--card); border-radius: var(--radius);
+      padding: 1.25rem; box-shadow: var(--shadow);
+    }
+    .card-title { font-size: .8rem; font-weight: 700; text-transform: uppercase;
+                  letter-spacing: .07em; color: var(--muted); margin-bottom: 1rem; }
+
+    /* ── Category bars ────────────────────────────── */
+    .cat-row { display: flex; align-items: center; gap: .75rem; margin-bottom: .65rem; }
+    .cat-label { font-size: .85rem; font-weight: 600; min-width: 80px; }
+    .cat-bar-wrap { flex: 1; background: var(--border); border-radius: 99px; height: 8px; }
+    .cat-bar { height: 8px; border-radius: 99px; background: var(--orange); }
+    .cat-count { font-size: .8rem; font-weight: 700; min-width: 30px; text-align: right; }
+
+    /* ── Table ────────────────────────────────────── */
+    .data-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+    .data-table th { text-align: left; padding: .5rem .6rem; font-weight: 700;
+                     font-size: .72rem; text-transform: uppercase; letter-spacing: .05em;
+                     color: var(--muted); border-bottom: 1.5px solid var(--border); }
+    .data-table td { padding: .55rem .6rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: #f8fafc; }
+
+    /* ── Badges ───────────────────────────────────── */
+    .badge {
+      display: inline-block; padding: .15rem .55rem; border-radius: 99px;
+      font-size: .7rem; font-weight: 700; text-transform: uppercase;
+    }
+    .badge-green  { background: #d1fae5; color: #065f46; }
+    .badge-orange { background: #fef3c7; color: #92400e; }
+    .badge-blue   { background: #dbeafe; color: #1e40af; }
+    .badge-red    { background: #fee2e2; color: #991b1b; }
+    .badge-gray   { background: #f1f5f9; color: var(--muted); }
+
+    /* ── Chart container ──────────────────────────── */
+    .chart-wrap { position: relative; height: 220px; }
+
+    /* ── Empty / loading ──────────────────────────── */
+    .empty { color: var(--muted); font-size: .85rem; padding: 1rem 0; text-align: center; }
+    .loading-dots::after { content: '...'; animation: dots 1.2s infinite; }
+    @keyframes dots { 0%,20%{content:'.'} 40%,60%{content:'..'} 80%,100%{content:'...'} }
+
+    /* ── Collapsible ──────────────────────────────── */
+    .collapse-btn {
+      background: none; border: none; cursor: pointer; font-size: .8rem;
+      color: var(--orange); font-weight: 700; padding: 0; margin-top: .5rem;
+    }
+    .collapsible { overflow: hidden; transition: max-height .3s ease; max-height: 0; }
+    .collapsible.open { max-height: 9999px; }
+
+    /* ── Scan log ─────────────────────────────────── */
+    .scan-item { padding: .75rem 0; border-bottom: 1px solid var(--border); }
+    .scan-item:last-child { border-bottom: none; }
+    .scan-time { font-size: .75rem; color: var(--muted); }
+    .scan-notes { font-size: .85rem; margin: .25rem 0; }
+    .scan-meta { display: flex; gap: .75rem; font-size: .75rem; }
+
+    /* ── Divider row ──────────────────────────────── */
+    .section-gap { margin-bottom: 1.5rem; }
+
+    /* ── Refresh indicator ────────────────────────── */
+    #refresh-status { font-size: .75rem; color: var(--muted); }
+    #refresh-status.ok   { color: var(--green); }
+    #refresh-status.err  { color: var(--red); }
+
+    /* ── Pinterest boards short label ────────────── */
+    .board-short { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════ LOGIN ═══════════════════════════════════ -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">🍊</div>
+    <div class="login-title">Daily Life Hacks</div>
+    <div class="login-sub">Enter dashboard password to continue</div>
+    <input id="pw-input" class="login-input" type="password" placeholder="Password" autocomplete="current-password" />
+    <button class="login-btn" id="login-btn">Enter Dashboard</button>
+    <div class="login-error" id="login-error">Wrong password. Try again.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════ APP ══════════════════════════════════════ -->
+<div id="app">
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <span class="topbar-logo">🍊 DLH Dashboard</span>
+    <span class="topbar-meta">
+      Build: <span id="build-time">—</span> &nbsp;|&nbsp;
+      <span id="refresh-status">Loading live data<span class="loading-dots"></span></span>
+    </span>
+    <div class="toggle-group">
+      <button class="toggle-btn active" id="btn-7" onclick="setPeriod(7)">7 days</button>
+      <button class="toggle-btn" id="btn-30" onclick="setPeriod(30)">30 days</button>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <main>
+
+    <!-- ── TOP STATS ──────────────────────────────────────────────────────── -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Articles</div>
+        <div class="stat-value" id="s-articles">—</div>
+        <div class="stat-sub" id="s-articles-sub">loading...</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-label">Published</div>
+        <div class="stat-value" id="s-published">—</div>
+        <div class="stat-sub" id="s-last-pub">last: —</div>
+      </div>
+      <div class="stat-card blue">
+        <div class="stat-label">Scheduled</div>
+        <div class="stat-value" id="s-scheduled">—</div>
+        <div class="stat-sub" id="s-next-pub">next: —</div>
+      </div>
+      <div class="stat-card purple">
+        <div class="stat-label">Pins</div>
+        <div class="stat-value" id="s-pins">—</div>
+        <div class="stat-sub" id="s-pins-sub">—</div>
+      </div>
+      <div class="stat-card orange">
+        <div class="stat-label">Images</div>
+        <div class="stat-value" id="s-images">—</div>
+        <div class="stat-sub" id="s-images-sub">—</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-label">Subscribers</div>
+        <div class="stat-value" id="s-subs">—</div>
+        <div class="stat-sub" id="s-subs-sub">loading...</div>
+      </div>
+      <div class="stat-card blue">
+        <div class="stat-label">Pageviews</div>
+        <div class="stat-value" id="s-pv">—</div>
+        <div class="stat-sub" id="s-pv-sub">loading...</div>
+      </div>
+      <div class="stat-card purple">
+        <div class="stat-label">Visitors</div>
+        <div class="stat-value" id="s-uv">—</div>
+        <div class="stat-sub" id="s-uv-sub">loading...</div>
+      </div>
+    </div>
+
+    <!-- ── TRAFFIC CHART ──────────────────────────────────────────────────── -->
+    <div class="card section-gap">
+      <div class="card-title">Traffic — Cloudflare Analytics</div>
+      <div class="chart-wrap">
+        <canvas id="traffic-chart"></canvas>
+      </div>
+      <div id="traffic-error" class="empty" style="display:none"></div>
+    </div>
+
+    <!-- ── ARTICLES + CONTENT PIPELINE ───────────────────────────────────── -->
+    <div class="grid-2">
+
+      <!-- Articles by category -->
+      <div class="card">
+        <div class="card-title">Articles by Category</div>
+        <div id="cat-bars">
+          <div class="cat-row">
+            <span class="cat-label">Nutrition</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="bar-nutrition" style="width:0%"></div></div>
+            <span class="cat-count" id="cnt-nutrition">—</span>
+          </div>
+          <div class="cat-row">
+            <span class="cat-label">Recipes</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="bar-recipes" style="width:0%;background:var(--green)"></div></div>
+            <span class="cat-count" id="cnt-recipes">—</span>
+          </div>
+          <div class="cat-row">
+            <span class="cat-label">Tips</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="bar-tips" style="width:0%;background:var(--purple)"></div></div>
+            <span class="cat-count" id="cnt-tips">—</span>
+          </div>
+        </div>
+        <div style="margin-top:1rem">
+          <div class="card-title">Published vs Total</div>
+          <div class="cat-row">
+            <span class="cat-label">Nutrition</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="pbar-nutrition" style="width:0%"></div></div>
+            <span class="cat-count" id="pcnt-nutrition">—</span>
+          </div>
+          <div class="cat-row">
+            <span class="cat-label">Recipes</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="pbar-recipes" style="width:0%;background:var(--green)"></div></div>
+            <span class="cat-count" id="pcnt-recipes">—</span>
+          </div>
+          <div class="cat-row">
+            <span class="cat-label">Tips</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="pbar-tips" style="width:0%;background:var(--purple)"></div></div>
+            <span class="cat-count" id="pcnt-tips">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content pipeline -->
+      <div class="card">
+        <div class="card-title">Content Pipeline (Tracker)</div>
+        <div id="pipeline-bars"></div>
+        <div style="margin-top:1.25rem">
+          <div class="card-title">Pins by Category</div>
+          <div id="pins-cat-bars"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── IMAGES STATUS + PINS BOARDS ───────────────────────────────────── -->
+    <div class="grid-2">
+
+      <!-- Images status -->
+      <div class="card">
+        <div class="card-title">Images Status</div>
+        <table class="data-table">
+          <thead><tr><th>Type</th><th>Have</th><th>Missing</th></tr></thead>
+          <tbody>
+            <tr><td>Web images (main)</td><td id="img-have-web">—</td><td id="img-miss-web">—</td></tr>
+            <tr><td>Pin images</td><td id="img-have-pin">—</td><td id="img-miss-pin">—</td></tr>
+            <tr><td>Total web files</td><td id="img-total-web">—</td><td>—</td></tr>
+            <tr><td>Total pin files</td><td id="img-total-pin">—</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <button class="collapse-btn" onclick="toggleCollapse('missing-web-list')">
+          Show articles missing web image ▾
+        </button>
+        <div class="collapsible" id="missing-web-list">
+          <table class="data-table" style="margin-top:.5rem">
+            <thead><tr><th>Slug</th><th>Category</th><th>Status</th></tr></thead>
+            <tbody id="missing-web-tbody"></tbody>
+          </table>
+        </div>
+        <button class="collapse-btn" onclick="toggleCollapse('missing-pin-list')" style="margin-top:.75rem">
+          Show articles missing pin images ▾
+        </button>
+        <div class="collapsible" id="missing-pin-list">
+          <table class="data-table" style="margin-top:.5rem">
+            <thead><tr><th>Slug</th><th>Category</th><th>Status</th></tr></thead>
+            <tbody id="missing-pin-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Pins breakdown -->
+      <div class="card">
+        <div class="card-title">Pinterest Boards</div>
+        <div id="pins-board-list"></div>
+        <div style="margin-top:1.25rem">
+          <div class="card-title">Pins by Status</div>
+          <div id="pins-status-list"></div>
+        </div>
+        <div style="margin-top:1.25rem">
+          <div class="card-title">Pin Clicks from Site (D1) — last <span class="period-label">30</span> days</div>
+          <div id="pinterest-hits-info"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── SCHEDULED ARTICLES ─────────────────────────────────────────────── -->
+    <div class="card section-gap">
+      <div class="card-title">Scheduled Articles (publishAt in future)</div>
+      <div id="scheduled-empty" class="empty" style="display:none">No scheduled articles — all articles are live.</div>
+      <table class="data-table" id="scheduled-table">
+        <thead><tr><th>Title</th><th>Category</th><th>Publish Date</th><th>Days Left</th></tr></thead>
+        <tbody id="scheduled-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- ── NEWSLETTER + AGENT SCANS ──────────────────────────────────────── -->
+    <div class="grid-2">
+
+      <!-- Newsletter -->
+      <div class="card">
+        <div class="card-title">Newsletter — Beehiiv / D1</div>
+        <div class="stats-row" style="grid-template-columns:repeat(3,1fr);margin-bottom:.75rem">
+          <div>
+            <div class="stat-label">Total</div>
+            <div class="stat-value" style="font-size:1.5rem" id="nl-total">—</div>
+          </div>
+          <div>
+            <div class="stat-label">Period</div>
+            <div class="stat-value" style="font-size:1.5rem" id="nl-period">—</div>
+            <div class="stat-sub">last <span class="period-label">30</span>d</div>
+          </div>
+          <div>
+            <div class="stat-label">Today</div>
+            <div class="stat-value" style="font-size:1.5rem" id="nl-today">—</div>
+          </div>
+        </div>
+        <div class="card-title">By Source</div>
+        <div id="nl-by-source"></div>
+        <div class="card-title" style="margin-top:1rem">Daily (last <span class="period-label">30</span>d)</div>
+        <div class="chart-wrap" style="height:140px">
+          <canvas id="subs-chart"></canvas>
+        </div>
+      </div>
+
+      <!-- Agent scan log -->
+      <div class="card">
+        <div class="card-title">Agent Scan Log</div>
+        <div id="scan-log-empty" class="empty" style="display:none">No scans recorded yet.</div>
+        <div id="scan-log-list"></div>
+      </div>
+
+    </div>
+
+    <!-- ── TOP PAGES (funnel events) ─────────────────────────────────────── -->
+    <div class="card section-gap">
+      <div class="card-title">Top Pages — Site Events (D1) — last <span class="period-label">30</span> days</div>
+      <div id="top-pages-empty" class="empty" style="display:none">No page events tracked yet.</div>
+      <table class="data-table" id="top-pages-table">
+        <thead><tr><th>Page</th><th>Events</th></tr></thead>
+        <tbody id="top-pages-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- ── LAST PUBLISHED ARTICLE ─────────────────────────────────────────── -->
+    <div class="card section-gap" id="last-pub-card">
+      <div class="card-title">Last Published Article</div>
+      <div id="last-pub-info"></div>
+    </div>
+
+  </main>
+</div><!-- #app -->
+
+<script define:vars={{ BUILD }}>
+// ═══════════════════════════════════════════════════════════════════════════
+//  Client-side dashboard logic
+// ═══════════════════════════════════════════════════════════════════════════
+
+let currentPeriod = 30;
+let pw = '';
+let trafficChart = null;
+let subsChart = null;
+
+// ── Login ──────────────────────────────────────────────────────────────────
+document.getElementById('pw-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') attemptLogin();
+});
+document.getElementById('login-btn').addEventListener('click', attemptLogin);
+
+function attemptLogin() {
+  const val = document.getElementById('pw-input').value.trim();
+  if (!val) return;
+  pw = val;
+  loadDashboard();
+}
+
+function logout() {
+  sessionStorage.removeItem('dlh_pw');
+  pw = '';
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('pw-input').value = '';
+  document.getElementById('login-error').style.display = 'none';
+}
+
+// Check sessionStorage on load
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = sessionStorage.getItem('dlh_pw');
+  if (saved) { pw = saved; loadDashboard(); }
+});
+
+// ── Load dashboard ─────────────────────────────────────────────────────────
+async function loadDashboard() {
+  // Show app shell
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+
+  // Render build-time data immediately
+  renderBuildData();
+
+  // Fetch live data
+  await fetchLive(currentPeriod);
+}
+
+// ── Period toggle ──────────────────────────────────────────────────────────
+function setPeriod(days) {
+  currentPeriod = days;
+  document.getElementById('btn-7').classList.toggle('active', days === 7);
+  document.getElementById('btn-30').classList.toggle('active', days === 30);
+  document.querySelectorAll('.period-label').forEach(el => el.textContent = days);
+  fetchLive(days);
+}
+
+// ── Fetch live data ────────────────────────────────────────────────────────
+async function fetchLive(days) {
+  setRefreshStatus('loading');
+  try {
+    const res = await fetch(`/api/dashboard?key=${encodeURIComponent(pw)}&days=${days}`);
+    if (res.status === 401) {
+      document.getElementById('login-error').style.display = 'block';
+      document.getElementById('app').style.display = 'none';
+      document.getElementById('login-screen').style.display = 'flex';
+      setRefreshStatus('error', 'Unauthorized');
+      return;
+    }
+    const data = await res.json();
+    sessionStorage.setItem('dlh_pw', pw);
+    renderLiveData(data, days);
+    setRefreshStatus('ok', `Refreshed ${new Date().toLocaleTimeString()}`);
+  } catch (e) {
+    setRefreshStatus('error', 'Network error: ' + e.message);
+  }
+}
+
+function setRefreshStatus(state, msg) {
+  const el = document.getElementById('refresh-status');
+  el.className = state === 'ok' ? 'ok' : state === 'error' ? 'err' : '';
+  if (state === 'loading') {
+    el.innerHTML = 'Loading live data<span class="loading-dots"></span>';
+  } else {
+    el.textContent = msg || '';
+  }
+}
+
+// ── Render build-time data ─────────────────────────────────────────────────
+function renderBuildData() {
+  const d = BUILD;
+
+  // Build time
+  document.getElementById('build-time').textContent =
+    new Date(d.buildTime).toLocaleString('en-US', { month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' });
+
+  // Articles top stats
+  document.getElementById('s-articles').textContent = d.articles.total;
+  document.getElementById('s-articles-sub').textContent =
+    `${d.articles.byCategory.nutrition || 0} nut · ${d.articles.byCategory.recipes || 0} rec · ${d.articles.byCategory.tips || 0} tip`;
+
+  document.getElementById('s-published').textContent = d.articles.published;
+  if (d.articles.lastPub) {
+    document.getElementById('s-last-pub').textContent = `last: ${d.articles.lastPub.date}`;
+  }
+
+  document.getElementById('s-scheduled').textContent = d.articles.scheduled;
+  if (d.articles.scheduledList.length > 0) {
+    document.getElementById('s-next-pub').textContent = `next: ${d.articles.scheduledList[0].publishAt}`;
+  } else {
+    document.getElementById('s-next-pub').textContent = 'none scheduled';
+  }
+
+  document.getElementById('s-pins').textContent = d.pins.total;
+  document.getElementById('s-pins-sub').textContent =
+    Object.entries(d.pins.byCat).map(([k,v]) => `${v} ${k}`).join(' · ');
+
+  document.getElementById('s-images').textContent = d.images.webCount;
+  document.getElementById('s-images-sub').textContent =
+    `${d.images.pinCount} pin files · ${d.images.pinSlugsCount} articles`;
+
+  // Category bars
+  const total = d.articles.total || 1;
+  const cats = ['nutrition','recipes','tips'];
+  for (const c of cats) {
+    const n = d.articles.byCategory[c] || 0;
+    const p = d.articles.pubByCategory[c] || 0;
+    el(`bar-${c}`).style.width = pct(n, total) + '%';
+    el(`cnt-${c}`).textContent = n;
+    el(`pbar-${c}`).style.width = pct(p, n || 1) + '%';
+    el(`pcnt-${c}`).textContent = `${p}/${n}`;
+  }
+
+  // Pipeline
+  const pipelineColors = { PUBLISHED:'var(--green)', IMAGES_READY:'var(--orange)', IDEATED:'var(--blue)', default:'var(--muted)' };
+  const trkTotal = d.tracker.total || 1;
+  let pHtml = '';
+  for (const [s, count] of Object.entries(d.tracker.byStatus)) {
+    const color = pipelineColors[s] || pipelineColors.default;
+    pHtml += `<div class="cat-row">
+      <span class="cat-label" style="font-size:.78rem">${s}</span>
+      <div class="cat-bar-wrap"><div class="cat-bar" style="width:${pct(count,trkTotal)}%;background:${color}"></div></div>
+      <span class="cat-count">${count}</span>
+    </div>`;
+  }
+  el('pipeline-bars').innerHTML = pHtml || '<div class="empty">No tracker data</div>';
+
+  // Pins by category
+  const pinTotal = d.pins.total || 1;
+  let pinCatHtml = '';
+  for (const [c, count] of Object.entries(d.pins.byCat)) {
+    pinCatHtml += `<div class="cat-row">
+      <span class="cat-label">${c}</span>
+      <div class="cat-bar-wrap"><div class="cat-bar" style="width:${pct(count,pinTotal)}%"></div></div>
+      <span class="cat-count">${count}</span>
+    </div>`;
+  }
+  el('pins-cat-bars').innerHTML = pinCatHtml;
+
+  // Pinterest boards
+  let boardHtml = '';
+  for (const [b, count] of Object.entries(d.pins.byBoard)) {
+    boardHtml += `<div style="margin-bottom:.5rem">
+      <div style="display:flex;justify-content:space-between;font-size:.82rem">
+        <span class="board-short" title="${b}">${b}</span>
+        <strong>${count}</strong>
+      </div>
+    </div>`;
+  }
+  el('pins-board-list').innerHTML = boardHtml || '<div class="empty">—</div>';
+
+  // Pins by status
+  let statusHtml = '';
+  for (const [s, count] of Object.entries(d.pins.byStatus)) {
+    statusHtml += `<span class="badge badge-gray" style="margin:.15rem">${s}: ${count}</span>`;
+  }
+  el('pins-status-list').innerHTML = statusHtml || '<div class="empty">—</div>';
+
+  // Images table
+  el('img-have-web').textContent = d.images.withWeb;
+  el('img-miss-web').innerHTML = badge(d.images.missingWeb.length, d.images.missingWeb.length > 0 ? 'red' : 'green');
+  el('img-have-pin').textContent = d.images.withPins;
+  el('img-miss-pin').innerHTML = badge(d.images.missingPin.length, d.images.missingPin.length > 0 ? 'orange' : 'green');
+  el('img-total-web').textContent = d.images.webCount;
+  el('img-total-pin').textContent = d.images.pinCount;
+
+  // Missing web image table
+  el('missing-web-tbody').innerHTML = d.images.missingWeb.map(a =>
+    `<tr><td><a href="/${a.slug}" target="_blank" style="color:var(--orange);text-decoration:none">${a.slug}</a></td>
+     <td>${a.category}</td><td>${a.pub ? '<span class="badge badge-green">LIVE</span>' : '<span class="badge badge-gray">draft</span>'}</td></tr>`
+  ).join('') || '<tr><td colspan="3" class="empty">None missing!</td></tr>';
+
+  // Missing pin image table
+  el('missing-pin-tbody').innerHTML = d.images.missingPin.map(a =>
+    `<tr><td><a href="/${a.slug}" target="_blank" style="color:var(--orange);text-decoration:none">${a.slug}</a></td>
+     <td>${a.category}</td><td>${a.pub ? '<span class="badge badge-green">LIVE</span>' : '<span class="badge badge-gray">draft</span>'}</td></tr>`
+  ).join('') || '<tr><td colspan="3" class="empty">None missing!</td></tr>';
+
+  // Scheduled articles
+  const sl = d.articles.scheduledList;
+  if (sl.length === 0) {
+    el('scheduled-table').style.display = 'none';
+    el('scheduled-empty').style.display = 'block';
+  } else {
+    const today = new Date(); today.setHours(0,0,0,0);
+    el('scheduled-tbody').innerHTML = sl.map(a => {
+      const pub = new Date(a.publishAt + 'T00:00:00');
+      const daysLeft = Math.round((pub - today) / 86400000);
+      return `<tr>
+        <td><a href="/${a.slug}" target="_blank" style="color:var(--orange);text-decoration:none">${a.title}</a></td>
+        <td>${a.category}</td>
+        <td><strong>${a.publishAt}</strong></td>
+        <td><span class="badge ${daysLeft <= 3 ? 'badge-red' : daysLeft <= 7 ? 'badge-orange' : 'badge-blue'}">${daysLeft}d</span></td>
+      </tr>`;
+    }).join('');
+  }
+
+  // Last published article
+  if (d.articles.lastPub) {
+    const lp = d.articles.lastPub;
+    el('last-pub-info').innerHTML = `
+      <strong><a href="/${lp.slug}" target="_blank" style="color:var(--orange);text-decoration:none">${lp.title}</a></strong>
+      <span style="margin-left:.75rem" class="badge badge-blue">${lp.category}</span>
+      <span style="margin-left:.75rem;color:var(--muted);font-size:.85rem">${lp.date}</span>`;
+  }
+}
+
+// ── Render live data ───────────────────────────────────────────────────────
+function renderLiveData(data, days) {
+  // Subscriptions
+  if (data.subscriptions && !data.subscriptions.error) {
+    const s = data.subscriptions;
+    el('s-subs').textContent = fmt(s.total);
+    el('s-subs-sub').textContent = `+${s.period} last ${days}d · +${s.today} today`;
+    el('nl-total').textContent  = fmt(s.total);
+    el('nl-period').textContent = fmt(s.period);
+    el('nl-today').textContent  = fmt(s.today);
+
+    // By source
+    el('nl-by-source').innerHTML = s.bySource.map(r =>
+      `<div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
+        <span>${r.source || 'unknown'}</span><strong>${r.count}</strong>
+      </div>`
+    ).join('') || '<div class="empty">No source data</div>';
+
+    // Subs chart
+    renderSubsChart(s.byDay, days);
+  } else {
+    el('s-subs').textContent = '—';
+    el('s-subs-sub').textContent = data.subscriptions?.error || 'DB not connected';
+  }
+
+  // Cloudflare Analytics
+  if (data.cloudflareAnalytics && !data.cloudflareAnalytics.error) {
+    const cf = data.cloudflareAnalytics;
+    el('s-pv').textContent = fmt(cf.totals.pageViews);
+    el('s-pv-sub').textContent = `last ${days}d`;
+    el('s-uv').textContent = fmt(cf.totals.uniques);
+    el('s-uv-sub').textContent = `unique visitors`;
+    renderTrafficChart(cf.byDay, days);
+    el('traffic-error').style.display = 'none';
+  } else {
+    el('s-pv').textContent = '—';
+    el('s-uv').textContent = '—';
+    const errMsg = data.cloudflareAnalytics?.error || 'No data';
+    el('traffic-error').textContent = 'Cloudflare Analytics: ' + errMsg;
+    el('traffic-error').style.display = 'block';
+    // Fall back to funnel events chart
+    if (data.funnelEvents && data.funnelEvents.byDay?.length > 0) {
+      renderTrafficChart(data.funnelEvents.byDay.map(d => ({
+        day: d.day, pageViews: d.count, requests: d.count, uniques: 0
+      })), days);
+      el('traffic-error').textContent += ' — showing D1 events as fallback';
+    }
+  }
+
+  // Top pages
+  const tp = data.funnelEvents?.topPages ?? [];
+  if (tp.length === 0) {
+    el('top-pages-table').style.display = 'none';
+    el('top-pages-empty').style.display = 'block';
+  } else {
+    el('top-pages-tbody').innerHTML = tp.map(r =>
+      `<tr><td><a href="${r.page}" target="_blank" style="color:var(--orange);text-decoration:none;font-size:.8rem">${r.page}</a></td>
+       <td><strong>${r.count}</strong></td></tr>`
+    ).join('');
+  }
+
+  // Pinterest hits
+  if (data.pinterestHits) {
+    const ph = data.pinterestHits;
+    el('pinterest-hits-info').innerHTML = ph.total > 0
+      ? `<strong>${fmt(ph.total)}</strong> pin clicks tracked in D1` +
+        (ph.topPins.length > 0 ? '<br><small style="color:var(--muted)">' + ph.topPins.slice(0,3).map(p => `${p.base_slug} (${p.count})`).join(', ') + '</small>' : '')
+      : '<span class="empty">No Pinterest click data yet</span>';
+  }
+
+  // Agent scan log
+  const scans = data.agentScans ?? [];
+  if (scans.length === 0) {
+    el('scan-log-empty').style.display = 'block';
+    el('scan-log-list').innerHTML = '';
+  } else {
+    el('scan-log-empty').style.display = 'none';
+    el('scan-log-list').innerHTML = scans.map(s => `
+      <div class="scan-item">
+        <div class="scan-time">${formatDate(s.scanned_at)} &nbsp;<span class="badge badge-gray">${s.scan_type}</span></div>
+        <div class="scan-notes">${s.notes || '(no notes)'}</div>
+        <div class="scan-meta">
+          <span style="color:var(--red)">Found: ${s.issues_found}</span>
+          <span style="color:var(--green)">Fixed: ${s.issues_fixed}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+}
+
+// ── Charts ─────────────────────────────────────────────────────────────────
+function renderTrafficChart(byDay, days) {
+  const ctx = document.getElementById('traffic-chart').getContext('2d');
+  if (trafficChart) trafficChart.destroy();
+
+  const filledDays = fillDays(byDay, days);
+  trafficChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: filledDays.map(d => shortDate(d.day)),
+      datasets: [{
+        label: 'Page Views',
+        data: filledDays.map(d => d.pageViews || 0),
+        backgroundColor: 'rgba(242,155,48,0.75)',
+        borderColor: '#F29B30',
+        borderWidth: 1,
+        borderRadius: 3,
+      }, {
+        label: 'Unique Visitors',
+        data: filledDays.map(d => d.uniques || 0),
+        backgroundColor: 'rgba(59,130,246,0.5)',
+        borderColor: '#3b82f6',
+        borderWidth: 1,
+        borderRadius: 3,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'top', labels: { font: { size: 11 } } } },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxTicksLimit: 15 } },
+        y: { beginAtZero: true, ticks: { font: { size: 10 } } },
+      },
+    },
+  });
+}
+
+function renderSubsChart(byDay, days) {
+  const ctx = document.getElementById('subs-chart').getContext('2d');
+  if (subsChart) subsChart.destroy();
+
+  const filledDays = fillDays(byDay.map(d => ({ day: d.day, pageViews: d.count, uniques: 0 })), days);
+  subsChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: filledDays.map(d => shortDate(d.day)),
+      datasets: [{
+        label: 'New Subscribers',
+        data: filledDays.map(d => d.pageViews || 0),
+        backgroundColor: 'rgba(16,185,129,0.7)',
+        borderColor: '#10b981',
+        borderWidth: 1,
+        borderRadius: 3,
+      }],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 9 }, maxTicksLimit: 10 } },
+        y: { beginAtZero: true, ticks: { font: { size: 9 }, stepSize: 1 } },
+      },
+    },
+  });
+}
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+function el(id) { return document.getElementById(id); }
+function fmt(n) { return Number(n).toLocaleString('en-US'); }
+function pct(n, total) { return Math.round((n / total) * 100); }
+function badge(n, color) { return `<span class="badge badge-${color}">${n}</span>`; }
+function shortDate(d) {
+  if (!d) return '';
+  const dt = new Date(d + 'T00:00:00');
+  return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+function formatDate(d) {
+  if (!d) return '—';
+  return new Date(d).toLocaleString('en-US', { month:'short', day:'numeric', year:'numeric', hour:'2-digit', minute:'2-digit' });
+}
+
+function fillDays(data, days) {
+  const map = {};
+  for (const d of data) map[d.day] = d;
+  const result = [];
+  const today = new Date(); today.setHours(0,0,0,0);
+  for (let i = days - 1; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const key = d.toISOString().split('T')[0];
+    result.push(map[key] || { day: key, pageViews: 0, uniques: 0 });
+  }
+  return result;
+}
+
+function toggleCollapse(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

@@ -64,3 +64,16 @@ CREATE TABLE IF NOT EXISTS article_ratings (
 
 CREATE INDEX IF NOT EXISTS idx_ar_slug ON article_ratings(slug);
 CREATE INDEX IF NOT EXISTS idx_ar_updated_at ON article_ratings(updated_at);
+
+-- Agent scan audit log
+CREATE TABLE IF NOT EXISTS agent_scans (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  scanned_at TEXT NOT NULL DEFAULT (datetime('now')),
+  scan_type TEXT DEFAULT 'general',
+  notes TEXT,
+  issues_found INTEGER DEFAULT 0,
+  issues_fixed INTEGER DEFAULT 0,
+  details TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_as_scanned_at ON agent_scans(scanned_at);
