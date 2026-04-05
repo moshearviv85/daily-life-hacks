@@ -454,6 +454,60 @@ const BUILD = {
       </div>
     </div>
 
+    <!-- ── CLARITY ANALYTICS ────────────────────────────────────────────────── -->
+    <div class="card section-gap" id="clarity-section">
+      <div class="card-title">Microsoft Clarity — Last 24h (Real Users, Bots Excluded)</div>
+      <div id="clarity-loading" class="empty">Loading Clarity data...</div>
+      <div id="clarity-error" class="empty" style="display:none"></div>
+      <div id="clarity-content" style="display:none">
+        <!-- KPI row -->
+        <div class="stats-grid" style="margin-bottom:1.25rem">
+          <div class="stat-card blue clickable" onclick="openModal('clarity-countries')" title="Click for country breakdown">
+            <div class="stat-label">Sessions</div>
+            <div class="stat-value" id="c-sessions">—</div>
+            <div class="stat-sub" id="c-sessions-sub">real users only</div>
+          </div>
+          <div class="stat-card green clickable" onclick="openModal('clarity-countries')" title="Click for country breakdown">
+            <div class="stat-label">Unique Users</div>
+            <div class="stat-value" id="c-users">—</div>
+            <div class="stat-sub" id="c-users-sub">distinct visitors</div>
+          </div>
+          <div class="stat-card purple">
+            <div class="stat-label">Pages / Session</div>
+            <div class="stat-value" id="c-pps">—</div>
+            <div class="stat-sub">avg pages viewed</div>
+          </div>
+          <div class="stat-card orange">
+            <div class="stat-label">Avg Scroll Depth</div>
+            <div class="stat-value" id="c-scroll">—</div>
+            <div class="stat-sub">how far users scroll</div>
+          </div>
+        </div>
+        <!-- Two-column: countries + pages -->
+        <div class="grid-2">
+          <div>
+            <div style="font-weight:600;margin-bottom:.6rem;font-size:.875rem">Top Countries</div>
+            <div id="c-countries"></div>
+          </div>
+          <div>
+            <div style="font-weight:600;margin-bottom:.6rem;font-size:.875rem">Top Pages</div>
+            <div id="c-pages"></div>
+          </div>
+        </div>
+        <!-- Devices + Browsers row -->
+        <div class="grid-2" style="margin-top:1rem">
+          <div>
+            <div style="font-weight:600;margin-bottom:.6rem;font-size:.875rem">Devices</div>
+            <div id="c-devices"></div>
+          </div>
+          <div>
+            <div style="font-weight:600;margin-bottom:.6rem;font-size:.875rem">Browsers</div>
+            <div id="c-browsers"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- ── TRAFFIC CHART ──────────────────────────────────────────────────── -->
     <div class="card section-gap">
       <div class="card-title">Traffic — Cloudflare Analytics</div>
@@ -988,6 +1042,54 @@ function renderLiveData(data, days) {
       : '<span class="empty">No Pinterest click data yet</span>';
   }
 
+  // ── Clarity Analytics ──────────────────────────────────────────────────────
+  const cl = data.clarity;
+  if (cl && !cl.error) {
+    el('clarity-loading').style.display = 'none';
+    el('clarity-content').style.display = 'block';
+
+    el('c-sessions').textContent     = fmt(cl.sessions);
+    el('c-sessions-sub').textContent = `${cl.botSessions} bots filtered`;
+    el('c-users').textContent        = fmt(cl.users);
+    el('c-users-sub').textContent    = `${cl.pagesPerSession} pages/session`;
+    el('c-pps').textContent          = cl.pagesPerSession;
+    el('c-scroll').textContent       = cl.avgScrollDepth + '%';
+
+    // Countries
+    el('c-countries').innerHTML = cl.countries.length === 0
+      ? '<div class="empty">No data</div>'
+      : cl.countries.slice(0, 8).map(c => `
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
+            <span>${c.country}</span>
+            <strong>${c.sessions} sessions</strong>
+          </div>`).join('');
+
+    // Top pages
+    el('c-pages').innerHTML = cl.topPages.length === 0
+      ? '<div class="empty">No data</div>'
+      : cl.topPages.slice(0, 8).map(p => `
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.82rem">
+            <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%">${p.title}</span>
+            <strong style="white-space:nowrap;margin-left:.5rem">${p.sessions}</strong>
+          </div>`).join('');
+
+    // Devices
+    el('c-devices').innerHTML = cl.devices.map(d => `
+      <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
+        <span>${d.name}</span><strong>${d.sessions}</strong>
+      </div>`).join('');
+
+    // Browsers
+    el('c-browsers').innerHTML = cl.browsers.map(b => `
+      <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
+        <span>${b.name}</span><strong>${b.sessions}</strong>
+      </div>`).join('');
+  } else {
+    el('clarity-loading').style.display = 'none';
+    el('clarity-error').style.display = 'block';
+    el('clarity-error').textContent = 'Clarity: ' + (cl?.error || 'not configured');
+  }
+
   // Agent scan log
   const scans = data.agentScans ?? [];
   if (scans.length === 0) {
@@ -1228,13 +1330,37 @@ function openModal(type) {
       const countryNote = liveData?.cloudflareAnalytics?.countryNote ?? '';
       title.innerHTML = `Requests by Country <span class="modal-count">(${countries.length} countries)</span>`;
       const disclaimer = `<div style="font-size:.75rem;color:var(--muted);margin-bottom:.75rem;line-height:1.5">
-        ⚠️ <strong>Note:</strong> This breakdown counts all HTTP <em>requests</em> (including images, CSS, API calls) — not PageViews or Unique Visitors.
-        It will always be higher than the daily totals above, which measure only HTML page views and deduplicated visitors.
+        ⚠️ <strong>Note:</strong> This counts all HTTP <em>requests</em> (images, CSS, API) — not PageViews or Unique Visitors.
+        For accurate visitor data, see the Clarity section below.
         ${countryNote ? `<br>📅 ${countryNote}` : ''}
       </div>`;
       body.innerHTML = countries.length === 0
         ? '<div class="empty">No country data available yet.</div>'
         : disclaimer + renderCountriesTable(countries);
+      break;
+    }
+
+    case 'clarity-countries': {
+      const cl = liveData?.clarity ?? {};
+      const countries = cl.countries ?? [];
+      title.innerHTML = `Sessions by Country — Clarity <span class="modal-count">(${countries.length} countries)</span>`;
+      const note = `<div style="font-size:.75rem;color:var(--muted);margin-bottom:.75rem">
+        ✅ Real human sessions only — bots already filtered by Clarity. Last 24h.
+      </div>`;
+      body.innerHTML = countries.length === 0
+        ? '<div class="empty">No country data.</div>'
+        : note + `<table class="data-table">
+            <thead><tr><th>#</th><th>Country</th><th>Sessions</th><th style="width:35%"></th></tr></thead>
+            <tbody>${countries.map((c, i) => {
+              const pct = Math.round(c.sessions / (countries[0]?.sessions || 1) * 100);
+              return `<tr>
+                <td style="color:var(--muted)">${i+1}</td>
+                <td><strong>${c.country}</strong></td>
+                <td><strong>${c.sessions}</strong></td>
+                <td><div style="background:var(--border);border-radius:99px;height:6px"><div style="background:#0078d4;height:6px;border-radius:99px;width:${pct}%"></div></div></td>
+              </tr>`;
+            }).join('')}</tbody>
+          </table>`;
       break;
     }
   }

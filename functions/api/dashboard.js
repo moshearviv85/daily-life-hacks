@@ -242,6 +242,61 @@ export async function onRequestGet(context) {
     result.cloudflareAnalytics = { error: "CF_API_TOKEN or CF_ZONE_ID not configured", byDay: [], totals: { pageViews: 0, requests: 0, uniques: 0 } };
   }
 
+  // ── 6. Microsoft Clarity Analytics ─────────────────────────────────────────
+  const clarityToken = env.CLARITY_API_TOKEN;
+  if (clarityToken) {
+    try {
+      const clarityRes = await fetch(
+        "https://www.clarity.ms/export-data/api/v1/project-live-insights?numOfDays=1&dimension1=Country%2FRegion",
+        {
+          headers: {
+            Authorization: `Bearer ${clarityToken}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (!clarityRes.ok) {
+        result.clarity = { error: `Clarity API ${clarityRes.status}` };
+      } else {
+        const data = await clarityRes.json();
+        const find = (name) => data.find((m) => m.metricName === name);
+
+        const traffic = find("Traffic")?.information?.[0] ?? {};
+        const scroll = find("ScrollDepth")?.information?.[0] ?? {};
+        const engagement = find("EngagementTime")?.information?.[0] ?? {};
+        const countries = (find("Country")?.information ?? [])
+          .map((c) => ({ country: c.name, sessions: parseInt(c.sessionsCount) || 0 }))
+          .sort((a, b) => b.sessions - a.sessions);
+        const pages = (find("PageTitle")?.information ?? [])
+          .map((p) => ({ title: p.name.replace(" | Daily Life Hacks", ""), sessions: parseInt(p.sessionsCount) || 0 }));
+        const devices = (find("Device")?.information ?? [])
+          .map((d) => ({ name: d.name, sessions: parseInt(d.sessionsCount) || 0 }));
+        const browsers = (find("Browser")?.information ?? [])
+          .map((b) => ({ name: b.name, sessions: parseInt(b.sessionsCount) || 0 }));
+
+        result.clarity = {
+          sessions: parseInt(traffic.totalSessionCount) || 0,
+          botSessions: parseInt(traffic.totalBotSessionCount) || 0,
+          users: parseInt(traffic.distinctUserCount) || 0,
+          pagesPerSession: parseFloat(traffic.pagesPerSessionPercentage?.toFixed(2)) || 0,
+          avgScrollDepth: parseFloat(scroll.averageScrollDepth?.toFixed(1)) || 0,
+          totalEngagementSec: parseInt(engagement.totalTime) || 0,
+          activeEngagementSec: parseInt(engagement.activeTime) || 0,
+          countries,
+          topPages: pages.slice(0, 10),
+          devices,
+          browsers,
+          note: "Last 24h (Clarity)",
+        };
+      }
+    } catch (e) {
+      result.clarity = { error: e.message };
+    }
+  } else {
+    result.clarity = { error: "CLARITY_API_TOKEN not configured" };
+  }
+
   return new Response(JSON.stringify(result), {
     headers: {
       "Content-Type": "application/json",
