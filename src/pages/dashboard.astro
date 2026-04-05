@@ -129,7 +129,6 @@ const BUILD = {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard — Daily Life Hacks</title>
   <meta name="robots" content="noindex, nofollow" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -616,9 +615,22 @@ function setPeriod(days) {
   fetchLive(days);
 }
 
+// ── Load Chart.js dynamically (Astro strips CDN script tags) ─────────────
+async function loadChartJs() {
+  if (window.Chart) return;
+  await new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js';
+    s.onload = resolve;
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+
 // ── Fetch live data ────────────────────────────────────────────────────────
 async function fetchLive(days) {
   setRefreshStatus('loading');
+  await loadChartJs();
   try {
     const res = await fetch(`/api/dashboard?key=${encodeURIComponent(pw)}&days=${days}`);
     if (res.status === 401) {
