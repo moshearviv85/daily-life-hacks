@@ -31,7 +31,9 @@ const organizationSchema = {
 const allArticles = await getCollection('articles');
 type Article = CollectionEntry<'articles'>;
 const releasedArticles = allArticles.filter((article: Article) => isReleased(article));
-const sorted = releasedArticles.sort((a: Article, b: Article) => b.data.date.valueOf() - a.data.date.valueOf());
+const sorted = releasedArticles.sort(
+  (a: Article, b: Article) => getReleaseTimestamp(b) - getReleaseTimestamp(a),
+);
 const releaseFeed = allArticles
   .map((article: Article) => ({
     slug: article.id,

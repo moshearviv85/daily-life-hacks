@@ -36,6 +36,7 @@
   - content engine
 - The user responds best to short, decisive guidance, not long abstract framing.
 - Preserve trust by being direct about what is verified, what is uncertain, and what is still blocked.
+- The user explicitly wants proactive "full-picture" thinking on every request, including hidden-gap detection before implementation and before deploy.
 
 ## Confirmed Operational Decisions
 - The final bulk publishing file is `pipeline-data/pins-publer-final.csv`.
@@ -76,7 +77,8 @@
 - `schema.sql` now includes `funnel_events`.
 - Variant experience block is now implemented on article pages through `src/pages/[slug].astro`.
 - A rating placeholder block is now visible on article pages in `src/pages/[slug].astro` with the copy: `No ratings yet. Be the first to call it.`
-- A persistent Cursor rule now exists at `.cursor/rules/david-miller-voice.mdc` to enforce David Miller voice on non-legal site writing tasks.
+- A project skill now exists at `.cursor/skills/david-miller-voice/SKILL.md` as the source of truth for David Miller voice on non-legal site writing tasks.
+- `.cursor/rules/david-miller-voice.mdc` is now a thin wrapper that points to the skill to avoid rule/skill drift.
 - `publishAt` scheduling support now exists in `src/content.config.ts`.
 - A release helper now exists in `src/content/release.ts`.
 - The homepage now has a client-side `Fresh Today` section in `src/components/FreshToday.astro`.
@@ -127,6 +129,10 @@
 - Direct manual deploy via Wrangler CLI is verified for `daily-life-hacks` and can bypass intermittent Cloudflare Pages Git publish failures.
 - `package.json` now includes `deploy:prod` (`build` + direct `wrangler pages deploy`) and `release:prod` (`git push` + `deploy:prod`) scripts for one-command operational flow.
 - A persistent Cursor execution policy now exists at `.cursor/rules/execution-first.mdc` to enforce an action-first workflow with minimal manual handoff.
+- Global article rating infrastructure now exists:
+  - D1 table `article_ratings` in `dlh-subscriptions`
+  - endpoint `functions/api/rating.js` for GET/POST snapshot + vote upsert
+  - article page rating widget now reads/writes global data instead of local-only aggregation
 
 ## Verified Email State
 - Kit account setup exists and the API key works.
@@ -174,6 +180,14 @@
 - **Nutrition:** how-much-protein-do-you-need-per-day, plant-based-protein-sources-complete-guide, healthy-fats-list-foods-to-eat-daily, best-breakfast-foods-for-sustained-energy. Real value; diversify away from fiber-heavy skew.
 - **Tips:** kitchen-tools-that-save-time-and-money, how-to-use-leftover-rice-creative-ideas, how-to-cook-dried-beans-from-scratch, how-to-season-cast-iron-skillet-properly. Practical, no duplicate of existing storage/meal-prep/organize content.
 - **Tone (all 12):** Site language (About page): practical, slightly cynical, no drama, no medical claims, no detox/cleanse, contractions, no em dashes/emojis. Recipes: realistic quantities and times. Writer: Gemini; format per `pipeline-data/gemini-article-instructions.md`.
+
+## Planned 60-article batch (balanced categories)
+- **Goal:** 60 new posts: **20 recipes + 20 nutrition + 20 tips**, diverse cuisines and angles (not fiber-only), David Miller voice via `.cursor/skills/david-miller-voice/SKILL.md` and format per `pipeline-data/gemini-article-instructions.md`.
+- **Source of truth (slugs + publishAt + image paths):** `pipeline-data/content-batch-60.json`
+- **Scheduling:** `publishAt` starts **2026-04-12** UTC (day after latest existing `publishAt` on articles that had it, currently max **2026-04-11**). One article per day through the batch; categories rotate recipe → nutrition → tip.
+- **Deduping:** Slugs were checked against existing `src/data/articles/*.md` and against all slugs listed in `pipeline-data/topics-to-write.md` so this batch does not collide with on-site files or the backlog list.
+- **Operations workbook (Excel):** `pipeline-data/content-inventory-2026.xlsx` — sheets for on-site articles, Publer runway from `pins-publer-final.csv`, pin summary, new batch export, and Pinterest URL notes (query params do not break routing).
+- **Regenerator:** `scripts/build_content_batch_60_workbook.py`
 
 ## Publishing Recovery Sprint
 - First mission:

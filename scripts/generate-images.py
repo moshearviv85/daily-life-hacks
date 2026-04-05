@@ -32,12 +32,15 @@ PROJECT_DIR = "."
 TRACKER_FILE = os.path.join(PROJECT_DIR, "pipeline-data", "content-tracker.json")
 SCENES_FILE = os.path.join(PROJECT_DIR, "pipeline-data", "image-scenes.json")
 ROUTER_MAPPING_FILE = os.path.join(PROJECT_DIR, "pipeline-data", "router-mapping.json")
+DRAFTS_DIR = os.path.join(PROJECT_DIR, "pipeline-data", "drafts")
 SAVE_DIR_WEB = os.path.join(PROJECT_DIR, "public", "images")
 SAVE_DIR_PINS = os.path.join(PROJECT_DIR, "public", "images", "pins")
 EXPORT_CSV = os.path.join(PROJECT_DIR, "pipeline-data", "pins-export.csv")
 
 # Limit (set to 0 for all, or N for test run)
 LIMIT = 0
+# Comma-separated slugs, e.g. SET GENERATE_IMAGES_ONLY=slug-a,slug-b
+# If set, only those slugs are processed (must exist in tracker + on disk).
 # ==========================================
 
 
@@ -100,14 +103,26 @@ def main():
             except json.JSONDecodeError:
                 pass
 
-    # Filter: only articles that are actually published on the site
+    # Filter: site articles or pipeline drafts (same slug .md must exist on disk)
     ARTICLES_DIR = os.path.join(PROJECT_DIR, "src", "data", "articles")
-    items = [item for item in tracker if item.get('slug')
-             and os.path.exists(os.path.join(ARTICLES_DIR, f"{item['slug']}.md"))]
+
+    def slug_has_markdown_source(slug):
+        if not slug:
+            return False
+        return os.path.exists(os.path.join(ARTICLES_DIR, f"{slug}.md")) or os.path.exists(
+            os.path.join(DRAFTS_DIR, f"{slug}.md")
+        )
+
+    items = [item for item in tracker if item.get("slug") and slug_has_markdown_source(item["slug"])]
 
     if not items:
         print("No articles found. Nothing to generate.")
         return
+
+    only = [s.strip() for s in os.getenv("GENERATE_IMAGES_ONLY", "").split(",") if s.strip()]
+    if only:
+        want = set(only)
+        items = [item for item in items if item.get("slug") in want]
 
     if LIMIT > 0:
         items = items[:LIMIT]

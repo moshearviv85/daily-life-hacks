@@ -666,5 +666,37 @@
   {
     "key": "best-batch-cooking-for-beginners-weekly-guide",
     "value": "{\"type\": \"internal\", \"base_slug\": \"batch-cooking-for-beginners-weekly-guide\"}"
+  },
+  {
+    "key": "tuscan-white-bean-kale-soup-stovetop-v1",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"tuscan-white-bean-kale-soup-stovetop\"}"
+  },
+  {
+    "key": "tuscan-white-bean-kale-soup-stovetop-v2",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"tuscan-white-bean-kale-soup-stovetop\"}"
+  },
+  {
+    "key": "tuscan-white-bean-kale-soup-stovetop-v3",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"tuscan-white-bean-kale-soup-stovetop\"}"
+  },
+  {
+    "key": "tuscan-white-bean-kale-soup-stovetop-v4",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"tuscan-white-bean-kale-soup-stovetop\"}"
+  },
+  {
+    "key": "zinc-containing-foods-weekly-meals-v1",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"zinc-containing-foods-weekly-meals\"}"
+  },
+  {
+    "key": "zinc-containing-foods-weekly-meals-v2",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"zinc-containing-foods-weekly-meals\"}"
+  },
+  {
+    "key": "zinc-containing-foods-weekly-meals-v3",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"zinc-containing-foods-weekly-meals\"}"
+  },
+  {
+    "key": "zinc-containing-foods-weekly-meals-v4",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"zinc-containing-foods-weekly-meals\"}"
   }
 ]

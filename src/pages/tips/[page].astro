@@ -5,7 +5,7 @@ import Footer from "../../components/Footer.astro";
 import ArticleCard from "../../components/ArticleCard.astro";
 import Pagination from "../../components/Pagination.astro";
 import { getCollection } from "astro:content";
-import { isReleased } from "../../content/release";
+import { isReleased, getReleaseTimestamp } from "../../content/release";
 
 export async function getStaticPaths({ paginate }: any) {
     const allArticles = await getCollection("articles");
@@ -13,7 +13,7 @@ export async function getStaticPaths({ paginate }: any) {
         .filter((article: any) => isReleased(article))
         .filter((article: any) => article.data.category === "tips")
         .sort(
-            (a: any, b: any) => b.data.date.valueOf() - a.data.date.valueOf(),
+            (a: any, b: any) => getReleaseTimestamp(b) - getReleaseTimestamp(a),
         );
 
     return paginate(tipsArticles, { pageSize: 12 });

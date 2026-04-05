@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "verify:routing": "node scripts/verify-routing.mjs",
+    "build:checked": "npm run build && npm run verify:routing",
+    "audit:recipes": "node scripts/audit-recipes.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "deploy:prod": "npm run build && wrangler pages deploy dist --project-name=daily-life-hacks --branch=main",

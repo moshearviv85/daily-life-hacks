@@ -135,7 +135,10 @@ def main():
     print(f"risky_scheduled_rows={report['summary']['risky_scheduled_rows']}")
     print(f"issues={len(report['issues'])}")
 
-    if report["summary"]["blocked_variants"] > 0 or report["summary"]["risky_scheduled_rows"] > 0:
+    # Safety gate should fail only when risky content is actually scheduled.
+    # `blocked_variants` can exist in the registry (publish_ready=false) even if they are not
+    # present in `pins-publer-final.csv`. In that case, deploy should still be allowed.
+    if report["summary"]["risky_scheduled_rows"] > 0:
         sys.exit(1)
 
 

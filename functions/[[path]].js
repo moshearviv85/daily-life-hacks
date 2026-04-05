@@ -34,8 +34,32 @@ export async function onRequest(context) {
       const raw = await env.ROUTES_KV.get(fullPathSlug);
       if (raw) {
         routeConfig = JSON.parse(raw);
-        isKvMatch = true;
-        baseSlug = routeConfig.base_slug;
+        // Only treat as a match if the payload is actually usable.
+        // Bad/partial KV entries must not hijack normal static routing.
+        const candidateType = routeConfig?.type;
+        const candidateBase = typeof routeConfig?.base_slug === "string"
+          ? routeConfig.base_slug.trim()
+          : "";
+        const candidateExternal = typeof routeConfig?.external_url === "string"
+          ? routeConfig.external_url.trim()
+          : "";
+
+        const isValidExternal = candidateType === "external" && Boolean(candidateExternal);
+        const isValidInternal =
+          (candidateType === "internal" || !candidateType) && Boolean(candidateBase);
+
+        if (isValidExternal || isValidInternal) {
+          isKvMatch = true;
+          baseSlug = candidateBase;
+          if (candidateType) routeConfig.type = candidateType;
+          if (candidateExternal) routeConfig.external_url = candidateExternal;
+          routeConfig.base_slug = candidateBase;
+        } else {
+          // Ignore unusable KV values and let static files handle the request.
+          routeConfig = null;
+          isKvMatch = false;
+          baseSlug = null;
+        }
       }
     } catch (e) {
       // KV parsing error

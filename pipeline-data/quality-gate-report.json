@@ -22,12 +22,6 @@
       ]
     },
     {
-      "type": "missing-description",
-      "base_slug": "high-fiber-meals-for-constipation-relief",
-      "variant_id": "v1",
-      "message": "Variant is missing description text."
-    },
-    {
       "type": "unscheduled-variant",
       "base_slug": "high-fiber-meals-for-constipation-relief",
       "variant_id": "v1",
@@ -42,12 +36,6 @@
       ]
     },
     {
-      "type": "missing-description",
-      "base_slug": "high-fiber-meals-for-constipation-relief",
-      "variant_id": "v2",
-      "message": "Variant is missing description text."
-    },
-    {
       "type": "unscheduled-variant",
       "base_slug": "high-fiber-meals-for-constipation-relief",
       "variant_id": "v2",
@@ -62,12 +50,6 @@
       ]
     },
     {
-      "type": "missing-description",
-      "base_slug": "high-fiber-meals-for-constipation-relief",
-      "variant_id": "v3",
-      "message": "Variant is missing description text."
-    },
-    {
       "type": "unscheduled-variant",
       "base_slug": "high-fiber-meals-for-constipation-relief",
       "variant_id": "v3",
@@ -80,12 +62,6 @@
       "blocked_reasons": [
         "risky-medical-angle"
       ]
-    },
-    {
-      "type": "missing-description",
-      "base_slug": "high-fiber-meals-for-constipation-relief",
-      "variant_id": "v4",
-      "message": "Variant is missing description text."
     },
     {
       "type": "unscheduled-variant",
@@ -268,22 +244,10 @@
       "message": "Variant exists in registry but is not scheduled in final Publer CSV."
     },
     {
-      "type": "missing-description",
-      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
-      "variant_id": "v1",
-      "message": "Variant is missing description text."
-    },
-    {
       "type": "unscheduled-variant",
       "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
       "variant_id": "v1",
       "message": "Variant exists in registry but is not scheduled in final Publer CSV."
-    },
-    {
-      "type": "missing-description",
-      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
-      "variant_id": "v2",
-      "message": "Variant is missing description text."
     },
     {
       "type": "unscheduled-variant",
@@ -292,22 +256,10 @@
       "message": "Variant exists in registry but is not scheduled in final Publer CSV."
     },
     {
-      "type": "missing-description",
-      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
-      "variant_id": "v3",
-      "message": "Variant is missing description text."
-    },
-    {
       "type": "unscheduled-variant",
       "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
       "variant_id": "v3",
       "message": "Variant exists in registry but is not scheduled in final Publer CSV."
-    },
-    {
-      "type": "missing-description",
-      "base_slug": "vegetarian-high-fiber-dinners-for-natural-relief",
-      "variant_id": "v4",
-      "message": "Variant is missing description text."
     },
     {
       "type": "unscheduled-variant",

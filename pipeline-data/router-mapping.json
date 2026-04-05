@@ -772,5 +772,41 @@
       "url_slug": "best-batch-cooking-for-beginners-weekly-guide",
       "title": "Best Batch Cooking for Beginners Weekly Guide"
     }
+  },
+  "tuscan-white-bean-kale-soup-stovetop": {
+    "v1": {
+      "url_slug": "tuscan-white-bean-kale-soup-stovetop-v1",
+      "title": "Tuscan White Bean and Kale Soup (Stovetop, ~50 Minutes)"
+    },
+    "v2": {
+      "url_slug": "tuscan-white-bean-kale-soup-stovetop-v2",
+      "title": "One-Pot Soup: Thick Broth Without a Blender or Roux"
+    },
+    "v3": {
+      "url_slug": "tuscan-white-bean-kale-soup-stovetop-v3",
+      "title": "Only Have Cans and Kale? This Stovetop Soup Delivers"
+    },
+    "v4": {
+      "url_slug": "tuscan-white-bean-kale-soup-stovetop-v4",
+      "title": "Skip the Blender: Mash Beans to Thicken This Tuscan Soup"
+    }
+  },
+  "zinc-containing-foods-weekly-meals": {
+    "v1": {
+      "url_slug": "zinc-containing-foods-weekly-meals-v1",
+      "title": "Zinc-Containing Foods to Rotate Into Weekly Meals"
+    },
+    "v2": {
+      "url_slug": "zinc-containing-foods-weekly-meals-v2",
+      "title": "Simple Weekly Rotation for Zinc-Rich Foods (No Spreadsheet)"
+    },
+    "v3": {
+      "url_slug": "zinc-containing-foods-weekly-meals-v3",
+      "title": "Tired of Only Thinking About Protein and Fiber?"
+    },
+    "v4": {
+      "url_slug": "zinc-containing-foods-weekly-meals-v4",
+      "title": "You Don't Need Oysters or a Pill to Vary Zinc Sources"
+    }
   }
 }
