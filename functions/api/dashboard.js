@@ -191,10 +191,44 @@ export async function onRequestGet(context) {
             requests: groups.reduce((s, g) => s + (g.sum.requests || 0), 0),
             uniques: groups.reduce((s, g) => s + (g.uniq.uniques || 0), 0),
           },
+          topCountries: [],
         };
+
+        // Country breakdown (separate query, non-critical)
+        try {
+          const countryQuery = `{
+            viewer {
+              zones(filter: {zoneTag: "${cfZone}"}) {
+                httpRequests1dByCountryGroups(
+                  limit: 50
+                  filter: {date_geq: "${sinceStr}", date_leq: "${untilStr}"}
+                  orderBy: [sum_requests_DESC]
+                ) {
+                  dimensions { clientCountryName }
+                  sum { pageViews requests }
+                  uniq { uniques }
+                }
+              }
+            }
+          }`;
+          const countryRes = await fetch("https://api.cloudflare.com/client/v4/graphql", {
+            method: "POST",
+            headers: { Authorization: `Bearer ${cfToken}`, "Content-Type": "application/json" },
+            body: JSON.stringify({ query: countryQuery }),
+          });
+          const countryJson = await countryRes.json();
+          if (!countryJson?.errors?.length) {
+            const rows = countryJson?.data?.viewer?.zones?.[0]?.httpRequests1dByCountryGroups ?? [];
+            result.cloudflareAnalytics.topCountries = rows.map((c) => ({
+              country: c.dimensions.clientCountryName || "Unknown",
+              pageViews: c.sum.pageViews || 0,
+              uniques: c.uniq?.uniques ?? 0,
+            }));
+          }
+        } catch { /* country data is optional */ }
       }
     } catch (e) {
-      result.cloudflareAnalytics = { error: e.message, byDay: [], totals: { pageViews: 0, requests: 0, uniques: 0 } };
+      result.cloudflareAnalytics = { error: e.message, byDay: [], totals: { pageViews: 0, requests: 0, uniques: 0 }, topCountries: [] };
     }
   } else {
     result.cloudflareAnalytics = { error: "CF_API_TOKEN or CF_ZONE_ID not configured", byDay: [], totals: { pageViews: 0, requests: 0, uniques: 0 } };

@@ -120,6 +120,35 @@ const BUILD = {
     byStatus: trkByStatus,
     byCat:    trkByCat,
   },
+  // ── Full lists for detail modals ──────────────────────────────────────
+  articlesList: articles
+    .map(a => ({
+      slug:      a.id,
+      title:     a.data.title,
+      category:  a.data.category,
+      date:      a.data.date?.toISOString().split('T')[0] ?? null,
+      publishAt: a.data.publishAt?.toISOString().split('T')[0] ?? null,
+      pub:       isPub(a),
+    }))
+    .sort((a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime()),
+  imagesList: articles
+    .map(a => ({
+      slug:     a.id,
+      title:    a.data.title,
+      category: a.data.category,
+      hasWeb:   webSlugs.has(a.id),
+      webPath:  webSlugs.has(a.id) ? `/images/${a.id}-main.jpg` : null,
+      pinCount: pinFiles.filter(f => f.startsWith(a.id + '_v')).length,
+    }))
+    .sort((a, b) => a.slug.localeCompare(b.slug)),
+  pinsList: pins.map((p: any) => ({
+    title:    p.pin_title,
+    category: p.category,
+    board:    p.board,
+    slug:     p.slug,
+    status:   p.status,
+    variant:  p.variant,
+  })),
 };
 ---
 <!DOCTYPE html>
@@ -294,6 +323,47 @@ const BUILD = {
 
     /* ── Pinterest boards short label ────────────── */
     .board-short { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* ── Clickable stat cards ─────────────────────────────────────────── */
+    .stat-card.clickable { cursor: pointer; transition: transform .12s, box-shadow .12s; }
+    .stat-card.clickable:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.13); }
+    .stat-card.clickable::after { content: '↗'; position: absolute; top: .5rem; right: .6rem; font-size: .7rem; color: var(--muted); opacity: .6; }
+    .stat-card { position: relative; }
+
+    /* ── Detail modal (slide-in panel) ───────────────────────────────── */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,.45);
+      z-index: 500; opacity: 0; pointer-events: none;
+      transition: opacity .2s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-panel {
+      position: absolute; right: 0; top: 0; bottom: 0;
+      width: min(640px, 96vw); background: var(--card);
+      display: flex; flex-direction: column;
+      transform: translateX(100%); transition: transform .25s ease;
+      box-shadow: -6px 0 32px rgba(0,0,0,.18);
+    }
+    .modal-overlay.open .modal-panel { transform: translateX(0); }
+    .modal-header {
+      padding: 1rem 1.25rem; border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-shrink: 0; gap: .75rem;
+    }
+    .modal-title { font-size: 1rem; font-weight: 800; }
+    .modal-close {
+      width: 30px; height: 30px; border-radius: 6px; border: none;
+      background: var(--bg); cursor: pointer; font-size: 1rem; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; color: var(--muted);
+    }
+    .modal-close:hover { background: var(--border); }
+    .modal-search {
+      padding: .35rem .75rem; border: 1.5px solid var(--border); border-radius: 6px;
+      font-size: .82rem; outline: none; flex: 1; max-width: 220px;
+    }
+    .modal-search:focus { border-color: var(--orange); }
+    .modal-body { padding: 1rem 1.25rem; overflow-y: auto; flex: 1; font-size: .82rem; }
+    .modal-count { font-size: .75rem; color: var(--muted); margin-left: .5rem; font-weight: normal; }
   </style>
 </head>
 <body>
@@ -331,42 +401,42 @@ const BUILD = {
 
     <!-- ── TOP STATS ──────────────────────────────────────────────────────── -->
     <div class="stats-row">
-      <div class="stat-card">
+      <div class="stat-card clickable" onclick="openModal('articles')" title="Click to see all articles">
         <div class="stat-label">Articles</div>
         <div class="stat-value" id="s-articles">—</div>
         <div class="stat-sub" id="s-articles-sub">loading...</div>
       </div>
-      <div class="stat-card green">
+      <div class="stat-card green clickable" onclick="openModal('published')" title="Click to see published articles">
         <div class="stat-label">Published</div>
         <div class="stat-value" id="s-published">—</div>
         <div class="stat-sub" id="s-last-pub">last: —</div>
       </div>
-      <div class="stat-card blue">
+      <div class="stat-card blue clickable" onclick="openModal('scheduled')" title="Click to see scheduled articles">
         <div class="stat-label">Scheduled</div>
         <div class="stat-value" id="s-scheduled">—</div>
         <div class="stat-sub" id="s-next-pub">next: —</div>
       </div>
-      <div class="stat-card purple">
+      <div class="stat-card purple clickable" onclick="openModal('pins')" title="Click to see all pins">
         <div class="stat-label">Pins</div>
         <div class="stat-value" id="s-pins">—</div>
         <div class="stat-sub" id="s-pins-sub">—</div>
       </div>
-      <div class="stat-card orange">
+      <div class="stat-card orange clickable" onclick="openModal('images')" title="Click to see images list">
         <div class="stat-label">Images</div>
         <div class="stat-value" id="s-images">—</div>
         <div class="stat-sub" id="s-images-sub">—</div>
       </div>
-      <div class="stat-card green">
+      <div class="stat-card green clickable" onclick="openModal('subscribers')" title="Click to see subscriber list">
         <div class="stat-label">Subscribers</div>
         <div class="stat-value" id="s-subs">—</div>
         <div class="stat-sub" id="s-subs-sub">loading...</div>
       </div>
-      <div class="stat-card blue">
+      <div class="stat-card blue clickable" onclick="openModal('pageviews')" title="Click to see countries breakdown">
         <div class="stat-label">Pageviews</div>
         <div class="stat-value" id="s-pv">—</div>
         <div class="stat-sub" id="s-pv-sub">loading...</div>
       </div>
-      <div class="stat-card purple">
+      <div class="stat-card purple clickable" onclick="openModal('visitors')" title="Click to see countries breakdown">
         <div class="stat-label">Visitors</div>
         <div class="stat-value" id="s-uv">—</div>
         <div class="stat-sub" id="s-uv-sub">loading...</div>
@@ -570,6 +640,18 @@ const BUILD = {
 
   </main>
 </div><!-- #app -->
+
+<!-- ═══════════════════════════════════ MODAL ══════════════════════════════════ -->
+<div class="modal-overlay" id="detail-modal" onclick="handleModalClick(event)">
+  <div class="modal-panel">
+    <div class="modal-header">
+      <span class="modal-title" id="modal-title">Detail</span>
+      <input class="modal-search" id="modal-search" type="text" placeholder="Search..." oninput="modalSearch()" style="display:none" />
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
 
 <script define:vars={{ BUILD }}>
 // ═══════════════════════════════════════════════════════════════════════════
@@ -816,6 +898,7 @@ function renderBuildData() {
 
 // ── Render live data ───────────────────────────────────────────────────────
 function renderLiveData(data, days) {
+  liveData = data; // store for modal use
   // Subscriptions
   if (data.subscriptions && !data.subscriptions.error) {
     const s = data.subscriptions;
@@ -1054,12 +1137,233 @@ function copySubEmails() {
   });
 }
 
+// ── Detail modal ───────────────────────────────────────────────────────────
+let liveData = null;
+let modalRows = [];
+let modalSearchKey = '';
+
+function openModal(type) {
+  const overlay = document.getElementById('detail-modal');
+  const title   = document.getElementById('modal-title');
+  const body    = document.getElementById('modal-body');
+  const search  = document.getElementById('modal-search');
+
+  modalRows = [];
+  modalSearchKey = type;
+  search.style.display = 'none';
+  search.value = '';
+
+  switch (type) {
+    case 'articles':
+      title.innerHTML = `All Articles <span class="modal-count">(${BUILD.articlesList.length})</span>`;
+      modalRows = BUILD.articlesList;
+      search.style.display = '';
+      search.placeholder = 'Search articles...';
+      body.innerHTML = renderArticlesTable(BUILD.articlesList);
+      break;
+
+    case 'published':
+      const pub = BUILD.articlesList.filter(a => a.pub);
+      title.innerHTML = `Published Articles <span class="modal-count">(${pub.length})</span>`;
+      modalRows = pub;
+      search.style.display = '';
+      search.placeholder = 'Search articles...';
+      body.innerHTML = renderArticlesTable(pub);
+      break;
+
+    case 'scheduled':
+      const sch = BUILD.articlesList.filter(a => !a.pub && a.publishAt);
+      title.innerHTML = `Scheduled Articles <span class="modal-count">(${sch.length})</span>`;
+      body.innerHTML = sch.length === 0
+        ? '<div class="empty">No scheduled articles.</div>'
+        : renderScheduledTable(sch);
+      break;
+
+    case 'pins':
+      title.innerHTML = `All Pins <span class="modal-count">(${BUILD.pinsList.length})</span>`;
+      modalRows = BUILD.pinsList;
+      search.style.display = '';
+      search.placeholder = 'Search pins...';
+      body.innerHTML = renderPinsTable(BUILD.pinsList);
+      break;
+
+    case 'images':
+      title.innerHTML = `Images Status <span class="modal-count">(${BUILD.imagesList.length} articles)</span>`;
+      modalRows = BUILD.imagesList;
+      search.style.display = '';
+      search.placeholder = 'Search slug...';
+      body.innerHTML = renderImagesTable(BUILD.imagesList);
+      break;
+
+    case 'subscribers':
+      const subs = liveData?.subscriptions?.list ?? [];
+      title.innerHTML = `Subscribers <span class="modal-count">(${subs.length})</span>`;
+      modalRows = subs;
+      search.style.display = '';
+      search.placeholder = 'Search email...';
+      body.innerHTML = renderSubsTable(subs);
+      break;
+
+    case 'pageviews':
+    case 'visitors':
+      const isVisitors = type === 'visitors';
+      const countries = liveData?.cloudflareAnalytics?.topCountries ?? [];
+      title.innerHTML = `${isVisitors ? 'Visitors' : 'Pageviews'} by Country <span class="modal-count">(${countries.length} countries)</span>`;
+      body.innerHTML = countries.length === 0
+        ? '<div class="empty">No country data available yet.</div>'
+        : renderCountriesTable(countries, isVisitors);
+      break;
+  }
+
+  overlay.classList.add('open');
+  document.addEventListener('keydown', escClose);
+}
+
+function closeModal() {
+  document.getElementById('detail-modal').classList.remove('open');
+  document.removeEventListener('keydown', escClose);
+}
+
+function handleModalClick(e) {
+  if (e.target === document.getElementById('detail-modal')) closeModal();
+}
+
+function escClose(e) { if (e.key === 'Escape') closeModal(); }
+
+function modalSearch() {
+  const q = document.getElementById('modal-search').value.trim().toLowerCase();
+  const body = document.getElementById('modal-body');
+  switch (modalSearchKey) {
+    case 'articles':
+    case 'published': {
+      const rows = modalRows.filter(a => a.title.toLowerCase().includes(q) || a.slug.toLowerCase().includes(q));
+      body.innerHTML = renderArticlesTable(rows);
+      break;
+    }
+    case 'pins': {
+      const rows = modalRows.filter(p => p.title.toLowerCase().includes(q) || p.slug.toLowerCase().includes(q));
+      body.innerHTML = renderPinsTable(rows);
+      break;
+    }
+    case 'images': {
+      const rows = modalRows.filter(i => i.slug.toLowerCase().includes(q) || i.title.toLowerCase().includes(q));
+      body.innerHTML = renderImagesTable(rows);
+      break;
+    }
+    case 'subscribers': {
+      const rows = modalRows.filter(s => s.email.toLowerCase().includes(q));
+      body.innerHTML = renderSubsTable(rows);
+      break;
+    }
+  }
+}
+
+// ── Modal table renderers ──────────────────────────────────────────────────
+function renderArticlesTable(rows) {
+  if (!rows.length) return '<div class="empty">No articles.</div>';
+  return `<table class="data-table">
+    <thead><tr><th>#</th><th>Title</th><th>Category</th><th>Date</th><th>Status</th></tr></thead>
+    <tbody>${rows.map((a, i) => `<tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td><a href="/${a.slug}" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600">${a.title}</a></td>
+      <td><span class="badge badge-gray">${a.category}</span></td>
+      <td style="white-space:nowrap;color:var(--muted)">${a.date ?? '—'}</td>
+      <td>${a.pub ? '<span class="badge badge-green">LIVE</span>' : a.publishAt ? `<span class="badge badge-orange">📅 ${a.publishAt}</span>` : '<span class="badge badge-gray">draft</span>'}</td>
+    </tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function renderScheduledTable(rows) {
+  const today = new Date(); today.setHours(0,0,0,0);
+  return `<table class="data-table">
+    <thead><tr><th>Title</th><th>Category</th><th>Publish Date</th><th>Days</th></tr></thead>
+    <tbody>${rows.map(a => {
+      const d = new Date(a.publishAt + 'T00:00:00');
+      const dl = Math.round((d - today) / 86400000);
+      return `<tr>
+        <td><a href="/${a.slug}" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600">${a.title}</a></td>
+        <td><span class="badge badge-gray">${a.category}</span></td>
+        <td><strong>${a.publishAt}</strong></td>
+        <td><span class="badge ${dl<=3?'badge-red':dl<=7?'badge-orange':'badge-blue'}">${dl}d</span></td>
+      </tr>`;
+    }).join('')}</tbody>
+  </table>`;
+}
+
+function renderPinsTable(rows) {
+  if (!rows.length) return '<div class="empty">No pins.</div>';
+  return `<table class="data-table">
+    <thead><tr><th>#</th><th>Title</th><th>Category</th><th>Board</th><th>Slug</th><th>Status</th></tr></thead>
+    <tbody>${rows.map((p, i) => `<tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td style="font-weight:600;max-width:180px">${p.title}</td>
+      <td><span class="badge badge-gray">${p.category}</span></td>
+      <td style="font-size:.72rem;color:var(--muted);max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${p.board}">${p.board}</td>
+      <td><a href="/${p.slug}" target="_blank" style="color:var(--orange);text-decoration:none;font-size:.75rem">${p.slug}</a></td>
+      <td><span class="badge badge-gray">${p.status}</span></td>
+    </tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function renderImagesTable(rows) {
+  if (!rows.length) return '<div class="empty">No articles.</div>';
+  return `<table class="data-table">
+    <thead><tr><th>#</th><th>Article</th><th>Web Image</th><th>Pin Images</th></tr></thead>
+    <tbody>${rows.map((img, i) => `<tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td><a href="/${img.slug}" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600;font-size:.8rem">${img.title}</a>
+        <div style="font-size:.7rem;color:var(--muted)">${img.slug}</div></td>
+      <td>${img.hasWeb
+        ? `<a href="${img.webPath}" target="_blank" style="color:var(--green);font-size:.8rem">✅ view</a>`
+        : '<span class="badge badge-red">❌ missing</span>'}</td>
+      <td>${img.pinCount > 0
+        ? `<span class="badge badge-green">${img.pinCount} files</span>`
+        : '<span class="badge badge-red">❌ missing</span>'}</td>
+    </tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function renderSubsTable(rows) {
+  if (!rows.length) return '<div class="empty">No subscribers yet.</div>';
+  return `<table class="data-table">
+    <thead><tr><th>#</th><th>Email</th><th>Source</th><th>Status</th><th>Date</th></tr></thead>
+    <tbody>${rows.map((s, i) => `<tr>
+      <td style="color:var(--muted)">${i+1}</td>
+      <td><strong>${s.email}</strong></td>
+      <td><span class="badge ${s.source==='footer'?'badge-blue':'badge-orange'}">${s.source||'—'}</span></td>
+      <td><span class="badge ${s.status==='success'?'badge-green':'badge-red'}">${s.status||'—'}</span></td>
+      <td style="color:var(--muted);white-space:nowrap;font-size:.75rem">${formatDate(s.created_at)}</td>
+    </tr>`).join('')}</tbody>
+  </table>`;
+}
+
+function renderCountriesTable(rows, byVisitors) {
+  const sorted = [...rows].sort((a, b) => byVisitors ? b.uniques - a.uniques : b.pageViews - a.pageViews);
+  const maxVal = sorted[0] ? (byVisitors ? sorted[0].uniques : sorted[0].pageViews) : 1;
+  return `<table class="data-table">
+    <thead><tr><th>#</th><th>Country</th><th>${byVisitors ? 'Visitors' : 'Pageviews'}</th><th style="width:35%"></th></tr></thead>
+    <tbody>${sorted.map((c, i) => {
+      const val = byVisitors ? c.uniques : c.pageViews;
+      return `<tr>
+        <td style="color:var(--muted)">${i+1}</td>
+        <td><strong>${c.country}</strong></td>
+        <td><strong>${fmt(val)}</strong></td>
+        <td><div style="background:var(--border);border-radius:99px;height:6px"><div style="background:var(--orange);height:6px;border-radius:99px;width:${Math.round(val/maxVal*100)}%"></div></div></td>
+      </tr>`;
+    }).join('')}</tbody>
+  </table>`;
+}
+
 // ── Expose to global scope (needed for inline onclick attributes) ──────────
-window.setPeriod      = setPeriod;
-window.logout         = logout;
-window.toggleCollapse = toggleCollapse;
-window.filterSubs     = filterSubs;
-window.copySubEmails  = copySubEmails;
+window.setPeriod        = setPeriod;
+window.logout           = logout;
+window.toggleCollapse   = toggleCollapse;
+window.filterSubs       = filterSubs;
+window.copySubEmails    = copySubEmails;
+window.openModal        = openModal;
+window.closeModal       = closeModal;
+window.handleModalClick = handleModalClick;
+window.modalSearch      = modalSearch;
 </script>
 
 </body>
