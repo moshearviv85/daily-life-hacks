@@ -1225,10 +1225,11 @@ function openModal(type) {
     case 'pageviews':
     case 'visitors':
       const countries = liveData?.cloudflareAnalytics?.topCountries ?? [];
+      const countryNote = liveData?.cloudflareAnalytics?.countryNote ?? '';
       title.innerHTML = `Traffic by Country <span class="modal-count">(${countries.length} countries)</span>`;
       body.innerHTML = countries.length === 0
-        ? '<div class="empty">No country data available yet. Make sure the Analytics token has Zone:Analytics:Read permission.</div>'
-        : renderCountriesTable(countries);
+        ? '<div class="empty">No country data available yet.</div>'
+        : (countryNote ? `<div style="font-size:.75rem;color:var(--muted);margin-bottom:.75rem">⚠️ ${countryNote}</div>` : '') + renderCountriesTable(countries);
       break;
   }
 

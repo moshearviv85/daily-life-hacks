@@ -194,9 +194,10 @@ export async function onRequestGet(context) {
           topCountries: [],
         };
 
-        // Country breakdown via httpRequestsAdaptiveGroups (non-critical)
+        // Country breakdown via httpRequestsAdaptiveGroups — max 1d on free plan
         try {
-          const sinceISO = since.toISOString().replace(/\.\d{3}Z$/, "Z");
+          const since24h = new Date(); since24h.setHours(since24h.getHours() - 24);
+          const sinceISO = since24h.toISOString().replace(/\.\d{3}Z$/, "Z");
           const untilISO = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
           const countryQuery = `{
             viewer {
@@ -218,10 +219,8 @@ export async function onRequestGet(context) {
             body: JSON.stringify({ query: countryQuery }),
           });
           const countryJson = await countryRes.json();
-          result.cloudflareAnalytics.countryDebug = countryJson?.errors ?? 'no errors';
           if (!countryJson?.errors?.length) {
             const rows = countryJson?.data?.viewer?.zones?.[0]?.httpRequestsAdaptiveGroups ?? [];
-            // Aggregate by country (adaptive groups may return multiple rows per country)
             const countryMap = {};
             for (const r of rows) {
               const name = r.dimensions.clientCountryName || "Unknown";
@@ -230,8 +229,9 @@ export async function onRequestGet(context) {
             result.cloudflareAnalytics.topCountries = Object.entries(countryMap)
               .map(([country, requests]) => ({ country, requests }))
               .sort((a, b) => b.requests - a.requests);
+            result.cloudflareAnalytics.countryNote = "Last 24h (Cloudflare free plan limit)";
           }
-        } catch (ce) { result.cloudflareAnalytics.countryError = ce.message; }
+        } catch { /* country data is optional */ }
       }
     } catch (e) {
       result.cloudflareAnalytics = { error: e.message, byDay: [], totals: { pageViews: 0, requests: 0, uniques: 0 }, topCountries: [] };
