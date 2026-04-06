@@ -77,3 +77,10 @@ CREATE TABLE IF NOT EXISTS agent_scans (
 );
 
 CREATE INDEX IF NOT EXISTS idx_as_scanned_at ON agent_scans(scanned_at);
+
+-- Clarity API response cache (single-row, updated on each fetch)
+CREATE TABLE IF NOT EXISTS clarity_cache (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  data TEXT NOT NULL,
+  cached_at TEXT NOT NULL DEFAULT (datetime('now'))
+);

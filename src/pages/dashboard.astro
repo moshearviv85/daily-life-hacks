@@ -457,7 +457,10 @@ const BUILD = {
     <!-- ── CLARITY ANALYTICS ────────────────────────────────────────────────── -->
     <div class="card section-gap" id="clarity-section">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem">
-        <div class="card-title" style="margin-bottom:0">Microsoft Clarity — Last 24h (Real Users, Bots Excluded)</div>
+        <div>
+          <div class="card-title" style="margin-bottom:0">Microsoft Clarity — Last 24h (Real Users, Bots Excluded)</div>
+          <div id="clarity-cache-note" style="font-size:.72rem;color:var(--muted);margin-top:.2rem"></div>
+        </div>
         <button id="clarity-refresh-btn" onclick="fetchClarity()"
           style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer;white-space:nowrap">
           ↻ Load Clarity Data
@@ -1104,6 +1107,17 @@ function renderClarityData(cl) {
   }
   el('clarity-loading').style.display = 'none';
   el('clarity-content').style.display = 'block';
+
+  // Cache note
+  const cacheNote = el('clarity-cache-note');
+  if (cl.stale) {
+    cacheNote.textContent = `⚠️ Showing stale data from ${cl.cachedAt ? new Date(cl.cachedAt + 'Z').toLocaleString() : 'cache'} — API rate limit reached`;
+    cacheNote.style.color = 'var(--red, #e55)';
+  } else if (cl.fromCache) {
+    cacheNote.textContent = `Cached at ${cl.cachedAt ? new Date(cl.cachedAt + 'Z').toLocaleString() : '—'}`;
+  } else {
+    cacheNote.textContent = `Live data fetched at ${new Date().toLocaleTimeString()}`;
+  }
 
   el('c-sessions').textContent     = fmt(cl.sessions);
   el('c-sessions-sub').textContent = `${cl.botSessions} bots filtered`;
