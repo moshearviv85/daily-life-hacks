@@ -456,8 +456,14 @@ const BUILD = {
 
     <!-- ── CLARITY ANALYTICS ────────────────────────────────────────────────── -->
     <div class="card section-gap" id="clarity-section">
-      <div class="card-title">Microsoft Clarity — Last 24h (Real Users, Bots Excluded)</div>
-      <div id="clarity-loading" class="empty">Loading Clarity data...</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem">
+        <div class="card-title" style="margin-bottom:0">Microsoft Clarity — Last 24h (Real Users, Bots Excluded)</div>
+        <button id="clarity-refresh-btn" onclick="fetchClarity()"
+          style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer;white-space:nowrap">
+          ↻ Load Clarity Data
+        </button>
+      </div>
+      <div id="clarity-loading" class="empty" style="display:none"></div>
       <div id="clarity-error" class="empty" style="display:none"></div>
       <div id="clarity-content" style="display:none">
         <!-- KPI row -->
@@ -802,7 +808,7 @@ async function fetchLive(days) {
   setRefreshStatus('loading');
   await loadChartJs();
   try {
-    const res = await fetch(`/api/dashboard?key=${encodeURIComponent(pw)}&days=${days}`);
+    const res = await fetch(`/api/dashboard?key=${encodeURIComponent(pw)}&days=${days}&noClarity=1`);
     if (res.status === 401) {
       document.getElementById('login-error').style.display = 'block';
       document.getElementById('app').style.display = 'none';
@@ -816,6 +822,32 @@ async function fetchLive(days) {
     setRefreshStatus('ok', `Refreshed ${new Date().toLocaleTimeString()}`);
   } catch (e) {
     setRefreshStatus('error', 'Network error: ' + e.message);
+  }
+}
+
+async function fetchClarity() {
+  const btn = document.getElementById('clarity-refresh-btn');
+  btn.disabled = true;
+  btn.textContent = 'Loading...';
+  el('clarity-loading').style.display = 'block';
+  el('clarity-loading').textContent = 'Fetching from Clarity API...';
+  el('clarity-content').style.display = 'none';
+  el('clarity-error').style.display = 'none';
+  try {
+    const res = await fetch(`/api/dashboard?key=${encodeURIComponent(pw)}&days=1&clarityOnly=1`);
+    const data = await res.json();
+    if (data.clarity) {
+      liveData = { ...liveData, clarity: data.clarity };
+      renderClarityData(data.clarity);
+    }
+    btn.textContent = `↻ Refresh Clarity (last: ${new Date().toLocaleTimeString()})`;
+  } catch (e) {
+    el('clarity-loading').style.display = 'none';
+    el('clarity-error').style.display = 'block';
+    el('clarity-error').textContent = 'Error: ' + e.message;
+    btn.textContent = '↻ Refresh Clarity';
+  } finally {
+    btn.disabled = false;
   }
 }
 
@@ -1042,54 +1074,6 @@ function renderLiveData(data, days) {
       : '<span class="empty">No Pinterest click data yet</span>';
   }
 
-  // ── Clarity Analytics ──────────────────────────────────────────────────────
-  const cl = data.clarity;
-  if (cl && !cl.error) {
-    el('clarity-loading').style.display = 'none';
-    el('clarity-content').style.display = 'block';
-
-    el('c-sessions').textContent     = fmt(cl.sessions);
-    el('c-sessions-sub').textContent = `${cl.botSessions} bots filtered`;
-    el('c-users').textContent        = fmt(cl.users);
-    el('c-users-sub').textContent    = `${cl.pagesPerSession} pages/session`;
-    el('c-pps').textContent          = cl.pagesPerSession;
-    el('c-scroll').textContent       = cl.avgScrollDepth + '%';
-
-    // Countries
-    el('c-countries').innerHTML = cl.countries.length === 0
-      ? '<div class="empty">No data</div>'
-      : cl.countries.slice(0, 8).map(c => `
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
-            <span>${c.country}</span>
-            <strong>${c.sessions} sessions</strong>
-          </div>`).join('');
-
-    // Top pages
-    el('c-pages').innerHTML = cl.topPages.length === 0
-      ? '<div class="empty">No data</div>'
-      : cl.topPages.slice(0, 8).map(p => `
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.82rem">
-            <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%">${p.title}</span>
-            <strong style="white-space:nowrap;margin-left:.5rem">${p.sessions}</strong>
-          </div>`).join('');
-
-    // Devices
-    el('c-devices').innerHTML = cl.devices.map(d => `
-      <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
-        <span>${d.name}</span><strong>${d.sessions}</strong>
-      </div>`).join('');
-
-    // Browsers
-    el('c-browsers').innerHTML = cl.browsers.map(b => `
-      <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
-        <span>${b.name}</span><strong>${b.sessions}</strong>
-      </div>`).join('');
-  } else {
-    el('clarity-loading').style.display = 'none';
-    el('clarity-error').style.display = 'block';
-    el('clarity-error').textContent = 'Clarity: ' + (cl?.error || 'not configured');
-  }
-
   // Agent scan log
   const scans = data.agentScans ?? [];
   if (scans.length === 0) {
@@ -1108,6 +1092,50 @@ function renderLiveData(data, days) {
       </div>
     `).join('');
   }
+}
+
+// ── Clarity render (standalone, called by fetchClarity) ────────────────────
+function renderClarityData(cl) {
+  if (!cl || cl.error) {
+    el('clarity-loading').style.display = 'none';
+    el('clarity-error').style.display = 'block';
+    el('clarity-error').textContent = 'Clarity: ' + (cl?.error || 'not configured');
+    return;
+  }
+  el('clarity-loading').style.display = 'none';
+  el('clarity-content').style.display = 'block';
+
+  el('c-sessions').textContent     = fmt(cl.sessions);
+  el('c-sessions-sub').textContent = `${cl.botSessions} bots filtered`;
+  el('c-users').textContent        = fmt(cl.users);
+  el('c-users-sub').textContent    = `${cl.pagesPerSession} pages/session`;
+  el('c-pps').textContent          = cl.pagesPerSession;
+  el('c-scroll').textContent       = cl.avgScrollDepth + '%';
+
+  el('c-countries').innerHTML = cl.countries.length === 0
+    ? '<div class="empty">No data</div>'
+    : cl.countries.slice(0, 8).map(c => `
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
+          <span>${c.country}</span><strong>${c.sessions} sessions</strong>
+        </div>`).join('');
+
+  el('c-pages').innerHTML = cl.topPages.length === 0
+    ? '<div class="empty">No data</div>'
+    : cl.topPages.slice(0, 8).map(p => `
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.82rem">
+          <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%">${p.title}</span>
+          <strong style="white-space:nowrap;margin-left:.5rem">${p.sessions}</strong>
+        </div>`).join('');
+
+  el('c-devices').innerHTML = cl.devices.map(d => `
+    <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
+      <span>${d.name}</span><strong>${d.sessions}</strong>
+    </div>`).join('');
+
+  el('c-browsers').innerHTML = cl.browsers.map(b => `
+    <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
+      <span>${b.name}</span><strong>${b.sessions}</strong>
+    </div>`).join('');
 }
 
 // ── Charts ─────────────────────────────────────────────────────────────────
@@ -1509,6 +1537,7 @@ window.toggleCollapse   = toggleCollapse;
 window.filterSubs       = filterSubs;
 window.copySubEmails    = copySubEmails;
 window.openModal        = openModal;
+window.fetchClarity     = fetchClarity;
 window.closeModal       = closeModal;
 window.handleModalClick = handleModalClick;
 window.modalSearch      = modalSearch;

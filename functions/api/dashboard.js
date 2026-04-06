@@ -8,6 +8,8 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const key = url.searchParams.get("key");
   const days = Math.min(Math.max(parseInt(url.searchParams.get("days") || "30", 10), 1), 90);
+  const noClarity = url.searchParams.get("noClarity") === "1";
+  const clarityOnly = url.searchParams.get("clarityOnly") === "1";
 
   // Auth
   if (!env.DASHBOARD_PASSWORD || key !== env.DASHBOARD_PASSWORD) {
@@ -19,6 +21,7 @@ export async function onRequestGet(context) {
 
   const result = { days };
 
+  if (!clarityOnly) {
   // ── 1. Newsletter subscriptions ──────────────────────────────────────────
   if (env.DB) {
     try {
@@ -242,7 +245,10 @@ export async function onRequestGet(context) {
     result.cloudflareAnalytics = { error: "CF_API_TOKEN or CF_ZONE_ID not configured", byDay: [], totals: { pageViews: 0, requests: 0, uniques: 0 } };
   }
 
+  } // end !clarityOnly
+
   // ── 6. Microsoft Clarity Analytics ─────────────────────────────────────────
+  if (!noClarity) {
   const clarityToken = env.CLARITY_API_TOKEN;
   if (clarityToken) {
     try {
@@ -296,6 +302,7 @@ export async function onRequestGet(context) {
   } else {
     result.clarity = { error: "CLARITY_API_TOKEN not configured" };
   }
+  } // end !noClarity
 
   return new Response(JSON.stringify(result), {
     headers: {
