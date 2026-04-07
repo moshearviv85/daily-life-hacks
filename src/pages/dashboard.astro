@@ -1009,9 +1009,12 @@ function renderLiveData(data, days) {
   // Subscriptions
   if (data.subscriptions && !data.subscriptions.error) {
     const s = data.subscriptions;
-    el('s-subs').textContent = fmt(s.total);
-    el('s-subs-sub').textContent = `+${s.period} last ${days}d · +${s.today} today`;
-    el('nl-total').textContent  = fmt(s.total);
+    const displayTotal = s.kitTotal ?? s.total;
+    el('s-subs').textContent = fmt(displayTotal);
+    el('s-subs-sub').textContent = s.kitTotal
+      ? `Kit total · +${s.today} today via site`
+      : `+${s.period} last ${days}d · +${s.today} today`;
+    el('nl-total').textContent  = fmt(displayTotal);
     el('nl-period').textContent = fmt(s.period);
     el('nl-today').textContent  = fmt(s.today);
 

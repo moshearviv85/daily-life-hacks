@@ -61,6 +61,35 @@ export async function onRequestGet(context) {
     result.subscriptions = { error: "DB not bound", total: 0, period: 0, today: 0, bySource: [], byDay: [] };
   }
 
+  // ── 1b. Kit subscriber list (authoritative — replaces D1 list) ───────────
+  const kitKey = env.KIT_API_KEY || env.KIT_API_SECRET;
+  if (kitKey) {
+    try {
+      // Fetch up to 1000 subscribers from Kit (sorted newest first)
+      const kitRes = await fetch(
+        "https://api.kit.com/v4/subscribers?sort_order=desc&sort_field=created_at&per_page=1000",
+        { headers: { "X-Kit-Api-Key": kitKey, "Content-Type": "application/json" } }
+      );
+      if (kitRes.ok) {
+        const kitJson = await kitRes.json();
+        const kitSubs = (kitJson.subscribers ?? []).map((s) => ({
+          email: s.email_address,
+          source: s.fields?.Source || "kit",
+          page: s.fields?.Page || "",
+          status: s.state,
+          created_at: s.created_at,
+        }));
+        // Override list and total with Kit data; keep D1 byDay/bySource charts
+        if (result.subscriptions) {
+          result.subscriptions.list = kitSubs;
+          result.subscriptions.kitTotal = kitSubs.length;
+        } else {
+          result.subscriptions = { total: kitSubs.length, kitTotal: kitSubs.length, period: 0, today: 0, bySource: [], byDay: [], list: kitSubs };
+        }
+      }
+    } catch { /* Kit list is optional — don't break the rest */ }
+  }
+
   // ── 2. Funnel events / page views ────────────────────────────────────────
   if (env.DB) {
     try {
