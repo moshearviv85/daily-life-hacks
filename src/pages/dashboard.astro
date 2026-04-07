@@ -74,6 +74,28 @@ for (const p of pins) {
   pinByStatus[p.status]  = (pinByStatus[p.status]   || 0) + 1;
 }
 
+// ── Pins schedule (auto-poster) ───────────────────────────────────────────
+let pinsSchedule: any[] = [];
+try {
+  const csvText = readFileSync(join(root,'pipeline-data/pins-schedule.csv'),'utf8');
+  const lines = csvText.trim().split('\n').filter(l => l.trim());
+  const headers = lines[0].split(',').map(h => h.trim());
+  pinsSchedule = lines.slice(1).map(line => {
+    const vals: string[] = [];
+    let cur = '', inQ = false;
+    for (const ch of line) {
+      if (ch === '"') inQ = !inQ;
+      else if (ch === ',' && !inQ) { vals.push(cur); cur = ''; }
+      else cur += ch;
+    }
+    vals.push(cur);
+    return Object.fromEntries(headers.map((h, i) => [h, (vals[i] || '').trim()]));
+  });
+} catch(_) {}
+const schedPosted  = pinsSchedule.filter((r: any) => r.status === 'POSTED');
+const schedPending = pinsSchedule.filter((r: any) => r.status === 'PENDING');
+const nextPin = [...schedPending].sort((a: any,b: any) => a.scheduled_date.localeCompare(b.scheduled_date))[0] ?? null;
+
 // ── Content tracker ───────────────────────────────────────────────────────
 const tracker = JSON.parse(readFileSync(join(root,'pipeline-data/content-tracker.json'),'utf8')) as any[];
 const trkByStatus: Record<string,number>   = {};
@@ -630,6 +652,47 @@ const BUILD = {
         </div>
       </div>
 
+    </div>
+
+    <!-- ── PINTEREST AUTO-POSTER ──────────────────────────────────────────── -->
+    <div class="card section-gap">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+        <div class="card-title" style="margin:0">Pinterest Auto-Poster</div>
+        <a href="/api/pinterest-demo-token" target="_blank"
+           style="font-size:.78rem;background:var(--orange);color:#fff;padding:.35rem .8rem;border-radius:8px;text-decoration:none;font-weight:700">
+          Get Token →
+        </a>
+      </div>
+      <div class="stats-row" style="grid-template-columns:repeat(3,1fr);margin-bottom:1rem">
+        <div>
+          <div class="stat-label">Total Scheduled</div>
+          <div class="stat-value" style="font-size:1.6rem">{pinsSchedule.length}</div>
+        </div>
+        <div>
+          <div class="stat-label">Posted</div>
+          <div class="stat-value" style="font-size:1.6rem;color:#16a34a">{schedPosted.length}</div>
+        </div>
+        <div>
+          <div class="stat-label">Pending</div>
+          <div class="stat-value" style="font-size:1.6rem">{schedPending.length}</div>
+        </div>
+      </div>
+      {nextPin && (
+        <div style="background:var(--input-bg);border:1px solid var(--border);border-radius:10px;padding:.75rem 1rem;font-size:.8rem">
+          <span style="color:var(--muted);font-weight:600">Next pin:</span>
+          <span style="color:var(--orange);font-weight:700;margin:0 .4rem">{nextPin.scheduled_date}</span>
+          <span style="color:var(--text)">{nextPin.pin_title}</span>
+        </div>
+      )}
+      {schedPending.length === 0 && pinsSchedule.length > 0 && (
+        <div style="font-size:.8rem;color:var(--muted)">All pins posted. Add more rows to pins-schedule.csv.</div>
+      )}
+      {pinsSchedule.length === 0 && (
+        <div style="font-size:.8rem;color:var(--muted)">pins-schedule.csv not found or empty.</div>
+      )}
+      <div style="margin-top:.75rem;font-size:.72rem;color:var(--muted)">
+        Runs via GitHub Actions every 2h. Token refresh: AdsPower Profile 77 → /api/pinterest-demo-token
+      </div>
     </div>
 
     <!-- ── SCHEDULED ARTICLES ─────────────────────────────────────────────── -->
