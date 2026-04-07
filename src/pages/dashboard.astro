@@ -1457,7 +1457,7 @@ function renderArticlesTable(rows) {
     <thead><tr><th>#</th><th>Title</th><th>Category</th><th>Date</th><th>Status</th></tr></thead>
     <tbody>${rows.map((a, i) => `<tr>
       <td style="color:var(--muted)">${i+1}</td>
-      <td><a href="/${a.slug}" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600">${a.title}</a></td>
+      <td><a href="/${a.slug}${a.pub ? '' : '?preview=moshiko1985!'}" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600">${a.title}</a></td>
       <td><span class="badge badge-gray">${a.category}</span></td>
       <td style="white-space:nowrap;color:var(--muted)">${a.date ?? '—'}</td>
       <td>${a.pub ? '<span class="badge badge-green">LIVE</span>' : a.publishAt ? `<span class="badge badge-orange">📅 ${a.publishAt}</span>` : '<span class="badge badge-gray">draft</span>'}</td>
