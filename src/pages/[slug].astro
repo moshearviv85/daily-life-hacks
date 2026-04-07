@@ -612,6 +612,17 @@ const robotsMeta = released ? undefined : "noindex, follow";
 
       if (!main || !releaseContent || !releaseAt) return;
 
+      // Preview mode: ?preview=PASSWORD bypasses the date gate
+      const previewParam = new URLSearchParams(window.location.search).get("preview");
+      if (previewParam === "moshiko1985!") {
+        releaseContent.style.display = "";
+        if (releaseNotice) {
+          releaseNotice.innerHTML = '<p style="font-size:.8rem;color:#F29B30;font-weight:600">🔓 Preview mode — not yet published</p>';
+          releaseNotice.style.padding = ".4rem .75rem";
+        }
+        return;
+      }
+
       if (Date.now() >= new Date(releaseAt).getTime()) {
         releaseContent.style.display = "";
         releaseNotice?.classList.add("hidden");
