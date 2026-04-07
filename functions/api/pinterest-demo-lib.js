@@ -215,17 +215,7 @@ export async function exchangeAuthCodeForToken({
   code,
   scopes,
 }) {
-  // Trial access apps must use sandbox. Try sandbox first, fallback to production.
-  const sandbox = await tryTokenExchange({
-    appId,
-    appSecret,
-    redirectUri,
-    code,
-    scopes,
-    tokenBase: "https://api-sandbox.pinterest.com",
-  });
-  if (sandbox.ok) return { ...sandbox.token, _env: "sandbox" };
-
+  // Standard access — use production API only.
   const prod = await tryTokenExchange({
     appId,
     appSecret,
@@ -248,7 +238,7 @@ export async function refreshAccessToken({ appId, appSecret, token, scopes }) {
   if (scopes) body.set("scope", scopes);
   if (redirectUriIgnored) body.set("redirect_uri", redirectUriIgnored);
 
-  const refreshUrls = ["https://api.pinterest.com/v5/oauth/token", "https://api-sandbox.pinterest.com/v5/oauth/token"];
+  const refreshUrls = ["https://api.pinterest.com/v5/oauth/token"];
   for (const url of refreshUrls) {
     const res = await fetch(url, {
       method: "POST",
