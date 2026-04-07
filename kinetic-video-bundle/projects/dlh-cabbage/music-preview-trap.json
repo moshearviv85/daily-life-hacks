@@ -1,0 +1,17 @@
+{
+  "duration_ms": 20000,
+  "instrumental": true,
+  "positive_global_styles": ["trap", "modern hip-hop", "rhythmic", "punchy", "bass-forward", "energetic"],
+  "negative_global_styles": ["slow", "ambient", "acoustic", "jazz", "lo-fi", "cinematic", "mellow"],
+  "sections": [
+    { "section_name": "Hard Drop", "duration_ms": 5000,
+      "positive_local_styles": ["hard drop", "trap drums", "bold", "punchy bass", "immediate energy"],
+      "negative_local_styles": ["soft", "gentle", "build-up"], "lines": [] },
+    { "section_name": "Rhythm Drive", "duration_ms": 12000,
+      "positive_local_styles": ["driving trap beat", "syncopated rhythm", "forward energy", "crisp hi-hats"],
+      "negative_local_styles": ["chaotic", "boring", "slow"], "lines": [] },
+    { "section_name": "Exit", "duration_ms": 3000,
+      "positive_local_styles": ["clean fade", "decisive"],
+      "negative_local_styles": ["lingering", "abrupt"], "lines": [] }
+  ]
+}

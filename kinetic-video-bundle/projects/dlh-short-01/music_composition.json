@@ -1,0 +1,36 @@
+{
+  "duration_ms": 55000,
+  "instrumental": true,
+  "positive_global_styles": ["cinematic", "modern electronic", "uplifting", "clean"],
+  "negative_global_styles": ["aggressive", "sad", "chaotic", "heavy"],
+  "sections": [
+    {
+      "section_name": "Hook - Mysterious",
+      "duration_ms": 10000,
+      "positive_local_styles": ["atmospheric", "suspenseful", "sparse synths", "soft"],
+      "negative_local_styles": ["loud", "fast", "drums"],
+      "lines": []
+    },
+    {
+      "section_name": "Build - Rising",
+      "duration_ms": 20000,
+      "positive_local_styles": ["building momentum", "hopeful", "subtle beat enters"],
+      "negative_local_styles": ["slow", "mellow"],
+      "lines": []
+    },
+    {
+      "section_name": "Peak - Energetic",
+      "duration_ms": 15000,
+      "positive_local_styles": ["driving beat", "uplifting", "energetic", "synth melody"],
+      "negative_local_styles": ["quiet", "slow"],
+      "lines": []
+    },
+    {
+      "section_name": "Resolve - Warm CTA",
+      "duration_ms": 10000,
+      "positive_local_styles": ["warm", "hopeful fade", "gentle resolution"],
+      "negative_local_styles": ["intense", "building"],
+      "lines": []
+    }
+  ]
+}

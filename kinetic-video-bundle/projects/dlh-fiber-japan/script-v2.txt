@@ -1,0 +1,24 @@
+[emphatic] Three Japanese foods.
+[faster] Most people skip all of them.
+
+[emphatic] Edamame.
+[matter-of-fact] Eight grams of fiber. One cup.
+[pause] That's it. Done.
+
+[emphatic] Natto.
+[matter-of-fact] Fermented soybeans. Five grams per serving.
+[faster] Also probiotics. Also protein. Overachiever.
+
+[emphatic] Burdock root.
+[matter-of-fact] Six grams per half cup.
+[pause] You've never ordered it. You should.
+
+[building] Meanwhile you're eating sashimi.
+[emphatic] Great protein. Zero fiber.
+[matter-of-fact] That's fine. That's a trade-off.
+
+[faster] But if you want the fiber?
+[emphatic] These three.
+[matter-of-fact] That's the whole list.
+
+[warm] Recipes at daily-life-hacks.com

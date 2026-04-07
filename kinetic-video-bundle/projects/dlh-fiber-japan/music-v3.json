@@ -1,0 +1,36 @@
+{
+  "duration_ms": 65000,
+  "instrumental": true,
+  "positive_global_styles": ["cinematic", "storytelling", "warm", "inspiring"],
+  "negative_global_styles": ["aggressive", "chaotic", "lo-fi"],
+  "sections": [
+    {
+      "section_name": "Scene Set",
+      "duration_ms": 12000,
+      "positive_local_styles": ["atmospheric", "gentle piano", "scene-setting", "quiet anticipation"],
+      "negative_local_styles": ["loud", "energetic"],
+      "lines": []
+    },
+    {
+      "section_name": "Reveal Build",
+      "duration_ms": 25000,
+      "positive_local_styles": ["building warmth", "strings", "hopeful", "growing momentum"],
+      "negative_local_styles": ["dramatic", "intense"],
+      "lines": []
+    },
+    {
+      "section_name": "Insight Peak",
+      "duration_ms": 18000,
+      "positive_local_styles": ["uplifting", "orchestral", "emotional peak", "satisfying"],
+      "negative_local_styles": ["chaotic"],
+      "lines": []
+    },
+    {
+      "section_name": "Warm Close",
+      "duration_ms": 10000,
+      "positive_local_styles": ["warm fade", "gentle resolution", "hopeful ending"],
+      "negative_local_styles": ["abrupt", "dramatic"],
+      "lines": []
+    }
+  ]
+}

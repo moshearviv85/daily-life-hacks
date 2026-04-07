@@ -1,0 +1,1292 @@
+{
+  "text": "You walk past the same vegetable every week at the grocery store. It's a dollar fifty a head, and it's doing what a forty dollar probiotic can't. The gut food you've been ignoring costs a dollar fifty. Cabbage is packed with insoluble fiber, the kind that moves things through your gut and feeds your bacteria. One cup cooked, that's four grams of fiber, barely any calories, and almost zero prep time. Roast it with olive oil and it caramelizes, gets almost sweet, or ferment it into sauerkraut. Now you've got fiber and live bacteria in one bite. If you're spending twelve dollars on kombucha, the cheapest thing in produce might be doing the same job. Three recipes, one ingredient, all under twenty minutes. Recipes at dailylifehacks.com. Free every week.",
+  "words": [
+    {
+      "word": "You",
+      "start": 0.159,
+      "end": 0.219
+    },
+    {
+      "word": " ",
+      "start": 0.219,
+      "end": 0.28
+    },
+    {
+      "word": "walk",
+      "start": 0.28,
+      "end": 0.5
+    },
+    {
+      "word": " ",
+      "start": 0.5,
+      "end": 0.62
+    },
+    {
+      "word": "past",
+      "start": 0.62,
+      "end": 0.899
+    },
+    {
+      "word": " ",
+      "start": 0.899,
+      "end": 0.919
+    },
+    {
+      "word": "the",
+      "start": 0.919,
+      "end": 1.079
+    },
+    {
+      "word": " ",
+      "start": 1.079,
+      "end": 1.159
+    },
+    {
+      "word": "same",
+      "start": 1.159,
+      "end": 1.339
+    },
+    {
+      "word": " ",
+      "start": 1.339,
+      "end": 1.419
+    },
+    {
+      "word": "vegetable",
+      "start": 1.419,
+      "end": 2.039
+    },
+    {
+      "word": " ",
+      "start": 2.039,
+      "end": 2.139
+    },
+    {
+      "word": "every",
+      "start": 2.139,
+      "end": 2.359
+    },
+    {
+      "word": " ",
+      "start": 2.359,
+      "end": 2.479
+    },
+    {
+      "word": "week",
+      "start": 2.48,
+      "end": 2.639
+    },
+    {
+      "word": " ",
+      "start": 2.639,
+      "end": 2.699
+    },
+    {
+      "word": "at",
+      "start": 2.7,
+      "end": 2.779
+    },
+    {
+      "word": " ",
+      "start": 2.779,
+      "end": 2.819
+    },
+    {
+      "word": "the",
+      "start": 2.819,
+      "end": 2.859
+    },
+    {
+      "word": " ",
+      "start": 2.859,
+      "end": 2.939
+    },
+    {
+      "word": "grocery",
+      "start": 2.939,
+      "end": 3.279
+    },
+    {
+      "word": " ",
+      "start": 3.279,
+      "end": 3.379
+    },
+    {
+      "word": "store.",
+      "start": 3.379,
+      "end": 3.74
+    },
+    {
+      "word": " ",
+      "start": 3.74,
+      "end": 4.4
+    },
+    {
+      "word": "It's",
+      "start": 4.4,
+      "end": 4.539
+    },
+    {
+      "word": " ",
+      "start": 4.539,
+      "end": 4.579
+    },
+    {
+      "word": "a",
+      "start": 4.579,
+      "end": 4.619
+    },
+    {
+      "word": " ",
+      "start": 4.619,
+      "end": 4.719
+    },
+    {
+      "word": "dollar",
+      "start": 4.719,
+      "end": 5.059
+    },
+    {
+      "word": " ",
+      "start": 5.059,
+      "end": 5.099
+    },
+    {
+      "word": "fifty",
+      "start": 5.099,
+      "end": 5.359
+    },
+    {
+      "word": " ",
+      "start": 5.359,
+      "end": 5.439
+    },
+    {
+      "word": "a",
+      "start": 5.44,
+      "end": 5.5
+    },
+    {
+      "word": " ",
+      "start": 5.5,
+      "end": 5.559
+    },
+    {
+      "word": "head,",
+      "start": 5.559,
+      "end": 5.859
+    },
+    {
+      "word": " ",
+      "start": 5.859,
+      "end": 6.459
+    },
+    {
+      "word": "and",
+      "start": 6.46,
+      "end": 6.539
+    },
+    {
+      "word": " ",
+      "start": 6.539,
+      "end": 6.599
+    },
+    {
+      "word": "it's",
+      "start": 6.599,
+      "end": 6.799
+    },
+    {
+      "word": " ",
+      "start": 6.799,
+      "end": 6.859
+    },
+    {
+      "word": "doing",
+      "start": 6.859,
+      "end": 7.139
+    },
+    {
+      "word": " ",
+      "start": 7.139,
+      "end": 7.199
+    },
+    {
+      "word": "what",
+      "start": 7.199,
+      "end": 7.299
+    },
+    {
+      "word": " ",
+      "start": 7.299,
+      "end": 7.359
+    },
+    {
+      "word": "a",
+      "start": 7.359,
+      "end": 7.459
+    },
+    {
+      "word": " ",
+      "start": 7.459,
+      "end": 7.559
+    },
+    {
+      "word": "forty",
+      "start": 7.559,
+      "end": 7.779
+    },
+    {
+      "word": " ",
+      "start": 7.779,
+      "end": 7.879
+    },
+    {
+      "word": "dollar",
+      "start": 7.879,
+      "end": 8.059
+    },
+    {
+      "word": " ",
+      "start": 8.059,
+      "end": 8.179
+    },
+    {
+      "word": "probiotic",
+      "start": 8.179,
+      "end": 8.899
+    },
+    {
+      "word": " ",
+      "start": 8.899,
+      "end": 9
+    },
+    {
+      "word": "can't.",
+      "start": 9,
+      "end": 9.46
+    },
+    {
+      "word": " ",
+      "start": 9.46,
+      "end": 10.319
+    },
+    {
+      "word": "The",
+      "start": 10.319,
+      "end": 10.38
+    },
+    {
+      "word": " ",
+      "start": 10.38,
+      "end": 10.519
+    },
+    {
+      "word": "gut",
+      "start": 10.519,
+      "end": 10.659
+    },
+    {
+      "word": " ",
+      "start": 10.659,
+      "end": 10.8
+    },
+    {
+      "word": "food",
+      "start": 10.8,
+      "end": 11.019
+    },
+    {
+      "word": " ",
+      "start": 11.019,
+      "end": 11.099
+    },
+    {
+      "word": "you've",
+      "start": 11.099,
+      "end": 11.26
+    },
+    {
+      "word": " ",
+      "start": 11.26,
+      "end": 11.3
+    },
+    {
+      "word": "been",
+      "start": 11.3,
+      "end": 11.4
+    },
+    {
+      "word": " ",
+      "start": 11.4,
+      "end": 11.479
+    },
+    {
+      "word": "ignoring",
+      "start": 11.479,
+      "end": 11.939
+    },
+    {
+      "word": " ",
+      "start": 11.939,
+      "end": 12.059
+    },
+    {
+      "word": "costs",
+      "start": 12.059,
+      "end": 12.279
+    },
+    {
+      "word": " ",
+      "start": 12.279,
+      "end": 12.319
+    },
+    {
+      "word": "a",
+      "start": 12.319,
+      "end": 12.359
+    },
+    {
+      "word": " ",
+      "start": 12.359,
+      "end": 12.5
+    },
+    {
+      "word": "dollar",
+      "start": 12.5,
+      "end": 12.859
+    },
+    {
+      "word": " ",
+      "start": 12.859,
+      "end": 12.92
+    },
+    {
+      "word": "fifty.",
+      "start": 12.92,
+      "end": 13.339
+    },
+    {
+      "word": " ",
+      "start": 13.339,
+      "end": 14.079
+    },
+    {
+      "word": "Cabbage",
+      "start": 14.079,
+      "end": 14.399
+    },
+    {
+      "word": " ",
+      "start": 14.399,
+      "end": 14.439
+    },
+    {
+      "word": "is",
+      "start": 14.439,
+      "end": 14.579
+    },
+    {
+      "word": " ",
+      "start": 14.579,
+      "end": 14.659
+    },
+    {
+      "word": "packed",
+      "start": 14.659,
+      "end": 14.96
+    },
+    {
+      "word": " ",
+      "start": 14.96,
+      "end": 15.019
+    },
+    {
+      "word": "with",
+      "start": 15.019,
+      "end": 15.199
+    },
+    {
+      "word": " ",
+      "start": 15.199,
+      "end": 15.299
+    },
+    {
+      "word": "insoluble",
+      "start": 15.299,
+      "end": 15.88
+    },
+    {
+      "word": " ",
+      "start": 15.88,
+      "end": 16
+    },
+    {
+      "word": "fiber,",
+      "start": 16,
+      "end": 16.319
+    },
+    {
+      "word": " ",
+      "start": 16.319,
+      "end": 16.799
+    },
+    {
+      "word": "the",
+      "start": 16.799,
+      "end": 16.879
+    },
+    {
+      "word": " ",
+      "start": 16.879,
+      "end": 16.939
+    },
+    {
+      "word": "kind",
+      "start": 16.94,
+      "end": 17.119
+    },
+    {
+      "word": " ",
+      "start": 17.119,
+      "end": 17.159
+    },
+    {
+      "word": "that",
+      "start": 17.159,
+      "end": 17.26
+    },
+    {
+      "word": " ",
+      "start": 17.26,
+      "end": 17.399
+    },
+    {
+      "word": "moves",
+      "start": 17.399,
+      "end": 17.639
+    },
+    {
+      "word": " ",
+      "start": 17.639,
+      "end": 17.719
+    },
+    {
+      "word": "things",
+      "start": 17.719,
+      "end": 17.899
+    },
+    {
+      "word": " ",
+      "start": 17.899,
+      "end": 17.959
+    },
+    {
+      "word": "through",
+      "start": 17.959,
+      "end": 18.1
+    },
+    {
+      "word": " ",
+      "start": 18.1,
+      "end": 18.159
+    },
+    {
+      "word": "your",
+      "start": 18.159,
+      "end": 18.26
+    },
+    {
+      "word": " ",
+      "start": 18.26,
+      "end": 18.34
+    },
+    {
+      "word": "gut",
+      "start": 18.34,
+      "end": 18.659
+    },
+    {
+      "word": " ",
+      "start": 18.659,
+      "end": 18.719
+    },
+    {
+      "word": "and",
+      "start": 18.719,
+      "end": 18.819
+    },
+    {
+      "word": " ",
+      "start": 18.819,
+      "end": 18.979
+    },
+    {
+      "word": "feeds",
+      "start": 18.979,
+      "end": 19.219
+    },
+    {
+      "word": " ",
+      "start": 19.219,
+      "end": 19.26
+    },
+    {
+      "word": "your",
+      "start": 19.26,
+      "end": 19.319
+    },
+    {
+      "word": " ",
+      "start": 19.319,
+      "end": 19.379
+    },
+    {
+      "word": "bacteria.",
+      "start": 19.379,
+      "end": 20.039
+    },
+    {
+      "word": " ",
+      "start": 20.039,
+      "end": 20.839
+    },
+    {
+      "word": "One",
+      "start": 20.84,
+      "end": 20.979
+    },
+    {
+      "word": " ",
+      "start": 20.979,
+      "end": 21.1
+    },
+    {
+      "word": "cup",
+      "start": 21.1,
+      "end": 21.34
+    },
+    {
+      "word": " ",
+      "start": 21.34,
+      "end": 21.42
+    },
+    {
+      "word": "cooked,",
+      "start": 21.42,
+      "end": 21.719
+    },
+    {
+      "word": " ",
+      "start": 21.719,
+      "end": 22.1
+    },
+    {
+      "word": "that's",
+      "start": 22.1,
+      "end": 22.42
+    },
+    {
+      "word": " ",
+      "start": 22.42,
+      "end": 22.5
+    },
+    {
+      "word": "four",
+      "start": 22.5,
+      "end": 22.739
+    },
+    {
+      "word": " ",
+      "start": 22.739,
+      "end": 22.779
+    },
+    {
+      "word": "grams",
+      "start": 22.779,
+      "end": 23.059
+    },
+    {
+      "word": " ",
+      "start": 23.059,
+      "end": 23.1
+    },
+    {
+      "word": "of",
+      "start": 23.1,
+      "end": 23.199
+    },
+    {
+      "word": " ",
+      "start": 23.199,
+      "end": 23.279
+    },
+    {
+      "word": "fiber,",
+      "start": 23.279,
+      "end": 23.659
+    },
+    {
+      "word": " ",
+      "start": 23.659,
+      "end": 24.1
+    },
+    {
+      "word": "barely",
+      "start": 24.1,
+      "end": 24.519
+    },
+    {
+      "word": " ",
+      "start": 24.519,
+      "end": 24.619
+    },
+    {
+      "word": "any",
+      "start": 24.619,
+      "end": 24.799
+    },
+    {
+      "word": " ",
+      "start": 24.799,
+      "end": 24.879
+    },
+    {
+      "word": "calories,",
+      "start": 24.879,
+      "end": 25.379
+    },
+    {
+      "word": " ",
+      "start": 25.379,
+      "end": 25.5
+    },
+    {
+      "word": "and",
+      "start": 25.5,
+      "end": 25.639
+    },
+    {
+      "word": " ",
+      "start": 25.639,
+      "end": 25.719
+    },
+    {
+      "word": "almost",
+      "start": 25.719,
+      "end": 26.019
+    },
+    {
+      "word": " ",
+      "start": 26.019,
+      "end": 26.199
+    },
+    {
+      "word": "zero",
+      "start": 26.199,
+      "end": 26.479
+    },
+    {
+      "word": " ",
+      "start": 26.479,
+      "end": 26.619
+    },
+    {
+      "word": "prep",
+      "start": 26.619,
+      "end": 26.839
+    },
+    {
+      "word": " ",
+      "start": 26.839,
+      "end": 26.899
+    },
+    {
+      "word": "time.",
+      "start": 26.899,
+      "end": 27.299
+    },
+    {
+      "word": " ",
+      "start": 27.299,
+      "end": 27.959
+    },
+    {
+      "word": "Roast",
+      "start": 27.959,
+      "end": 28.219
+    },
+    {
+      "word": " ",
+      "start": 28.219,
+      "end": 28.26
+    },
+    {
+      "word": "it",
+      "start": 28.26,
+      "end": 28.319
+    },
+    {
+      "word": " ",
+      "start": 28.319,
+      "end": 28.379
+    },
+    {
+      "word": "with",
+      "start": 28.379,
+      "end": 28.519
+    },
+    {
+      "word": " ",
+      "start": 28.519,
+      "end": 28.619
+    },
+    {
+      "word": "olive",
+      "start": 28.619,
+      "end": 28.84
+    },
+    {
+      "word": " ",
+      "start": 28.84,
+      "end": 28.939
+    },
+    {
+      "word": "oil",
+      "start": 28.939,
+      "end": 29.159
+    },
+    {
+      "word": " ",
+      "start": 29.159,
+      "end": 29.199
+    },
+    {
+      "word": "and",
+      "start": 29.199,
+      "end": 29.28
+    },
+    {
+      "word": " ",
+      "start": 29.28,
+      "end": 29.299
+    },
+    {
+      "word": "it",
+      "start": 29.299,
+      "end": 29.42
+    },
+    {
+      "word": " ",
+      "start": 29.42,
+      "end": 29.5
+    },
+    {
+      "word": "caramelizes,",
+      "start": 29.5,
+      "end": 30.299
+    },
+    {
+      "word": " ",
+      "start": 30.299,
+      "end": 30.719
+    },
+    {
+      "word": "gets",
+      "start": 30.719,
+      "end": 30.979
+    },
+    {
+      "word": " ",
+      "start": 30.979,
+      "end": 31.079
+    },
+    {
+      "word": "almost",
+      "start": 31.079,
+      "end": 31.5
+    },
+    {
+      "word": " ",
+      "start": 31.5,
+      "end": 31.579
+    },
+    {
+      "word": "sweet,",
+      "start": 31.579,
+      "end": 31.979
+    },
+    {
+      "word": " ",
+      "start": 31.979,
+      "end": 32.54
+    },
+    {
+      "word": "or",
+      "start": 32.54,
+      "end": 32.619
+    },
+    {
+      "word": " ",
+      "start": 32.619,
+      "end": 32.739
+    },
+    {
+      "word": "ferment",
+      "start": 32.739,
+      "end": 33.159
+    },
+    {
+      "word": " ",
+      "start": 33.159,
+      "end": 33.219
+    },
+    {
+      "word": "it",
+      "start": 33.219,
+      "end": 33.359
+    },
+    {
+      "word": " ",
+      "start": 33.359,
+      "end": 33.419
+    },
+    {
+      "word": "into",
+      "start": 33.419,
+      "end": 33.579
+    },
+    {
+      "word": " ",
+      "start": 33.579,
+      "end": 33.739
+    },
+    {
+      "word": "sauerkraut.",
+      "start": 33.739,
+      "end": 34.5
+    },
+    {
+      "word": " ",
+      "start": 34.5,
+      "end": 35.02
+    },
+    {
+      "word": "Now",
+      "start": 35.02,
+      "end": 35.2
+    },
+    {
+      "word": " ",
+      "start": 35.2,
+      "end": 35.239
+    },
+    {
+      "word": "you've",
+      "start": 35.239,
+      "end": 35.38
+    },
+    {
+      "word": " ",
+      "start": 35.38,
+      "end": 35.419
+    },
+    {
+      "word": "got",
+      "start": 35.419,
+      "end": 35.599
+    },
+    {
+      "word": " ",
+      "start": 35.599,
+      "end": 35.699
+    },
+    {
+      "word": "fiber",
+      "start": 35.7,
+      "end": 36.239
+    },
+    {
+      "word": " ",
+      "start": 36.239,
+      "end": 36.359
+    },
+    {
+      "word": "and",
+      "start": 36.36,
+      "end": 36.579
+    },
+    {
+      "word": " ",
+      "start": 36.579,
+      "end": 36.699
+    },
+    {
+      "word": "live",
+      "start": 36.7,
+      "end": 36.899
+    },
+    {
+      "word": " ",
+      "start": 36.899,
+      "end": 36.939
+    },
+    {
+      "word": "bacteria",
+      "start": 36.939,
+      "end": 37.559
+    },
+    {
+      "word": " ",
+      "start": 37.559,
+      "end": 37.619
+    },
+    {
+      "word": "in",
+      "start": 37.619,
+      "end": 37.84
+    },
+    {
+      "word": " ",
+      "start": 37.84,
+      "end": 37.959
+    },
+    {
+      "word": "one",
+      "start": 37.959,
+      "end": 38.139
+    },
+    {
+      "word": " ",
+      "start": 38.139,
+      "end": 38.219
+    },
+    {
+      "word": "bite.",
+      "start": 38.219,
+      "end": 38.54
+    },
+    {
+      "word": " ",
+      "start": 38.54,
+      "end": 39.199
+    },
+    {
+      "word": "If",
+      "start": 39.2,
+      "end": 39.299
+    },
+    {
+      "word": " ",
+      "start": 39.299,
+      "end": 39.379
+    },
+    {
+      "word": "you're",
+      "start": 39.379,
+      "end": 39.54
+    },
+    {
+      "word": " ",
+      "start": 39.54,
+      "end": 39.579
+    },
+    {
+      "word": "spending",
+      "start": 39.579,
+      "end": 40.02
+    },
+    {
+      "word": " ",
+      "start": 40.02,
+      "end": 40.139
+    },
+    {
+      "word": "twelve",
+      "start": 40.139,
+      "end": 40.4
+    },
+    {
+      "word": " ",
+      "start": 40.4,
+      "end": 40.559
+    },
+    {
+      "word": "dollars",
+      "start": 40.559,
+      "end": 40.879
+    },
+    {
+      "word": " ",
+      "start": 40.879,
+      "end": 40.919
+    },
+    {
+      "word": "on",
+      "start": 40.919,
+      "end": 41
+    },
+    {
+      "word": " ",
+      "start": 41,
+      "end": 41.099
+    },
+    {
+      "word": "kombucha,",
+      "start": 41.099,
+      "end": 41.639
+    },
+    {
+      "word": " ",
+      "start": 41.639,
+      "end": 42.099
+    },
+    {
+      "word": "the",
+      "start": 42.099,
+      "end": 42.219
+    },
+    {
+      "word": " ",
+      "start": 42.219,
+      "end": 42.299
+    },
+    {
+      "word": "cheapest",
+      "start": 42.299,
+      "end": 42.619
+    },
+    {
+      "word": " ",
+      "start": 42.619,
+      "end": 42.659
+    },
+    {
+      "word": "thing",
+      "start": 42.659,
+      "end": 42.759
+    },
+    {
+      "word": " ",
+      "start": 42.759,
+      "end": 42.799
+    },
+    {
+      "word": "in",
+      "start": 42.799,
+      "end": 42.899
+    },
+    {
+      "word": " ",
+      "start": 42.899,
+      "end": 42.959
+    },
+    {
+      "word": "produce",
+      "start": 42.959,
+      "end": 43.379
+    },
+    {
+      "word": " ",
+      "start": 43.379,
+      "end": 43.579
+    },
+    {
+      "word": "might",
+      "start": 43.579,
+      "end": 43.819
+    },
+    {
+      "word": " ",
+      "start": 43.819,
+      "end": 43.86
+    },
+    {
+      "word": "be",
+      "start": 43.86,
+      "end": 43.939
+    },
+    {
+      "word": " ",
+      "start": 43.939,
+      "end": 44
+    },
+    {
+      "word": "doing",
+      "start": 44,
+      "end": 44.2
+    },
+    {
+      "word": " ",
+      "start": 44.2,
+      "end": 44.239
+    },
+    {
+      "word": "the",
+      "start": 44.239,
+      "end": 44.379
+    },
+    {
+      "word": " ",
+      "start": 44.379,
+      "end": 44.459
+    },
+    {
+      "word": "same",
+      "start": 44.459,
+      "end": 44.719
+    },
+    {
+      "word": " ",
+      "start": 44.719,
+      "end": 44.799
+    },
+    {
+      "word": "job.",
+      "start": 44.799,
+      "end": 45.18
+    },
+    {
+      "word": " ",
+      "start": 45.18,
+      "end": 45.939
+    },
+    {
+      "word": "Three",
+      "start": 45.939,
+      "end": 46.18
+    },
+    {
+      "word": " ",
+      "start": 46.18,
+      "end": 46.219
+    },
+    {
+      "word": "recipes,",
+      "start": 46.219,
+      "end": 46.819
+    },
+    {
+      "word": " ",
+      "start": 46.819,
+      "end": 47.2
+    },
+    {
+      "word": "one",
+      "start": 47.2,
+      "end": 47.319
+    },
+    {
+      "word": " ",
+      "start": 47.319,
+      "end": 47.36
+    },
+    {
+      "word": "ingredient,",
+      "start": 47.36,
+      "end": 47.939
+    },
+    {
+      "word": " ",
+      "start": 47.939,
+      "end": 48.379
+    },
+    {
+      "word": "all",
+      "start": 48.379,
+      "end": 48.639
+    },
+    {
+      "word": " ",
+      "start": 48.639,
+      "end": 48.7
+    },
+    {
+      "word": "under",
+      "start": 48.7,
+      "end": 48.919
+    },
+    {
+      "word": " ",
+      "start": 48.919,
+      "end": 49
+    },
+    {
+      "word": "twenty",
+      "start": 49,
+      "end": 49.259
+    },
+    {
+      "word": " ",
+      "start": 49.259,
+      "end": 49.299
+    },
+    {
+      "word": "minutes.",
+      "start": 49.299,
+      "end": 49.719
+    },
+    {
+      "word": " ",
+      "start": 49.719,
+      "end": 50.259
+    },
+    {
+      "word": "Recipes",
+      "start": 50.259,
+      "end": 50.84
+    },
+    {
+      "word": " ",
+      "start": 50.84,
+      "end": 50.899
+    },
+    {
+      "word": "at",
+      "start": 50.899,
+      "end": 51.04
+    },
+    {
+      "word": " ",
+      "start": 51.04,
+      "end": 51.079
+    },
+    {
+      "word": "dailylifehacks.com.",
+      "start": 51.079,
+      "end": 52.639
+    },
+    {
+      "word": " ",
+      "start": 52.639,
+      "end": 53.219
+    },
+    {
+      "word": "Free",
+      "start": 53.219,
+      "end": 53.939
+    },
+    {
+      "word": " ",
+      "start": 53.939,
+      "end": 54.039
+    },
+    {
+      "word": "every",
+      "start": 54.039,
+      "end": 54.319
+    },
+    {
+      "word": " ",
+      "start": 54.319,
+      "end": 54.379
+    },
+    {
+      "word": "week.",
+      "start": 54.379,
+      "end": 54.599
+    }
+  ],
+  "duration": 54.599,
+  "language": "eng"
+}

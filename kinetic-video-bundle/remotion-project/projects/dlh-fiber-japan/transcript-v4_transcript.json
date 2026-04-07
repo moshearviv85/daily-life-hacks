@@ -1,0 +1,632 @@
+{
+  "text": "Japan. Longest lives on the planet. Their secret? Not a pill. Not a diet plan. Three foods. Edamame, eight grams of fiber, one cup. Natto, fermented soy, probiotic hit. Burdock root, six grams, one serving. Most people eat sashimi and call it healthy. Great protein, zero fiber. Swap one thing every single day. Small move, real shift. Recipes at www.dailylifehacks.com. Free every week.",
+  "words": [
+    {
+      "word": "Japan.",
+      "start": 0.14,
+      "end": 0.659
+    },
+    {
+      "word": " ",
+      "start": 0.659,
+      "end": 1.139
+    },
+    {
+      "word": "Longest",
+      "start": 1.139,
+      "end": 1.539
+    },
+    {
+      "word": " ",
+      "start": 1.539,
+      "end": 1.62
+    },
+    {
+      "word": "lives",
+      "start": 1.62,
+      "end": 1.919
+    },
+    {
+      "word": " ",
+      "start": 1.919,
+      "end": 2.019
+    },
+    {
+      "word": "on",
+      "start": 2.019,
+      "end": 2.079
+    },
+    {
+      "word": " ",
+      "start": 2.079,
+      "end": 2.119
+    },
+    {
+      "word": "the",
+      "start": 2.119,
+      "end": 2.159
+    },
+    {
+      "word": " ",
+      "start": 2.159,
+      "end": 2.259
+    },
+    {
+      "word": "planet.",
+      "start": 2.259,
+      "end": 2.679
+    },
+    {
+      "word": " ",
+      "start": 2.679,
+      "end": 3.319
+    },
+    {
+      "word": "Their",
+      "start": 3.319,
+      "end": 3.439
+    },
+    {
+      "word": " ",
+      "start": 3.439,
+      "end": 3.559
+    },
+    {
+      "word": "secret?",
+      "start": 3.559,
+      "end": 3.939
+    },
+    {
+      "word": " ",
+      "start": 3.939,
+      "end": 4.519
+    },
+    {
+      "word": "Not",
+      "start": 4.519,
+      "end": 4.619
+    },
+    {
+      "word": " ",
+      "start": 4.619,
+      "end": 4.679
+    },
+    {
+      "word": "a",
+      "start": 4.679,
+      "end": 4.699
+    },
+    {
+      "word": " ",
+      "start": 4.699,
+      "end": 4.819
+    },
+    {
+      "word": "pill.",
+      "start": 4.819,
+      "end": 5.099
+    },
+    {
+      "word": " ",
+      "start": 5.099,
+      "end": 5.48
+    },
+    {
+      "word": "Not",
+      "start": 5.48,
+      "end": 5.599
+    },
+    {
+      "word": " ",
+      "start": 5.599,
+      "end": 5.659
+    },
+    {
+      "word": "a",
+      "start": 5.659,
+      "end": 5.679
+    },
+    {
+      "word": " ",
+      "start": 5.679,
+      "end": 5.799
+    },
+    {
+      "word": "diet",
+      "start": 5.799,
+      "end": 6.019
+    },
+    {
+      "word": " ",
+      "start": 6.019,
+      "end": 6.119
+    },
+    {
+      "word": "plan.",
+      "start": 6.119,
+      "end": 6.459
+    },
+    {
+      "word": " ",
+      "start": 6.459,
+      "end": 6.819
+    },
+    {
+      "word": "Three",
+      "start": 6.819,
+      "end": 7.079
+    },
+    {
+      "word": " ",
+      "start": 7.079,
+      "end": 7.259
+    },
+    {
+      "word": "foods.",
+      "start": 7.259,
+      "end": 7.699
+    },
+    {
+      "word": " ",
+      "start": 7.699,
+      "end": 8.639
+    },
+    {
+      "word": "Edamame,",
+      "start": 8.639,
+      "end": 9.219
+    },
+    {
+      "word": " ",
+      "start": 9.219,
+      "end": 9.76
+    },
+    {
+      "word": "eight",
+      "start": 9.76,
+      "end": 9.899
+    },
+    {
+      "word": " ",
+      "start": 9.899,
+      "end": 9.979
+    },
+    {
+      "word": "grams",
+      "start": 9.979,
+      "end": 10.239
+    },
+    {
+      "word": " ",
+      "start": 10.239,
+      "end": 10.279
+    },
+    {
+      "word": "of",
+      "start": 10.279,
+      "end": 10.359
+    },
+    {
+      "word": " ",
+      "start": 10.359,
+      "end": 10.46
+    },
+    {
+      "word": "fiber,",
+      "start": 10.46,
+      "end": 10.76
+    },
+    {
+      "word": " ",
+      "start": 10.76,
+      "end": 11.039
+    },
+    {
+      "word": "one",
+      "start": 11.039,
+      "end": 11.179
+    },
+    {
+      "word": " ",
+      "start": 11.179,
+      "end": 11.259
+    },
+    {
+      "word": "cup.",
+      "start": 11.259,
+      "end": 11.5
+    },
+    {
+      "word": " ",
+      "start": 11.5,
+      "end": 11.5
+    },
+    {
+      "word": "Natto,",
+      "start": 12.519,
+      "end": 13
+    },
+    {
+      "word": " ",
+      "start": 13,
+      "end": 13.299
+    },
+    {
+      "word": "fermented",
+      "start": 13.299,
+      "end": 13.719
+    },
+    {
+      "word": " ",
+      "start": 13.719,
+      "end": 13.839
+    },
+    {
+      "word": "soy,",
+      "start": 13.84,
+      "end": 14.119
+    },
+    {
+      "word": " ",
+      "start": 14.119,
+      "end": 14.539
+    },
+    {
+      "word": "probiotic",
+      "start": 14.539,
+      "end": 15.159
+    },
+    {
+      "word": " ",
+      "start": 15.159,
+      "end": 15.199
+    },
+    {
+      "word": "hit.",
+      "start": 15.199,
+      "end": 15.439
+    },
+    {
+      "word": " ",
+      "start": 15.439,
+      "end": 15.439
+    },
+    {
+      "word": "Burdock",
+      "start": 16.479,
+      "end": 16.879
+    },
+    {
+      "word": " ",
+      "start": 16.879,
+      "end": 16.959
+    },
+    {
+      "word": "root,",
+      "start": 16.959,
+      "end": 17.159
+    },
+    {
+      "word": " ",
+      "start": 17.159,
+      "end": 17.619
+    },
+    {
+      "word": "six",
+      "start": 17.619,
+      "end": 17.879
+    },
+    {
+      "word": " ",
+      "start": 17.879,
+      "end": 17.939
+    },
+    {
+      "word": "grams,",
+      "start": 17.94,
+      "end": 18.399
+    },
+    {
+      "word": " ",
+      "start": 18.399,
+      "end": 18.699
+    },
+    {
+      "word": "one",
+      "start": 18.699,
+      "end": 18.859
+    },
+    {
+      "word": " ",
+      "start": 18.859,
+      "end": 18.939
+    },
+    {
+      "word": "serving.",
+      "start": 18.939,
+      "end": 19.319
+    },
+    {
+      "word": " ",
+      "start": 19.319,
+      "end": 20.139
+    },
+    {
+      "word": "Most",
+      "start": 20.139,
+      "end": 20.34
+    },
+    {
+      "word": " ",
+      "start": 20.34,
+      "end": 20.399
+    },
+    {
+      "word": "people",
+      "start": 20.399,
+      "end": 20.639
+    },
+    {
+      "word": " ",
+      "start": 20.639,
+      "end": 20.679
+    },
+    {
+      "word": "eat",
+      "start": 20.68,
+      "end": 20.819
+    },
+    {
+      "word": " ",
+      "start": 20.819,
+      "end": 20.899
+    },
+    {
+      "word": "sashimi",
+      "start": 20.899,
+      "end": 21.379
+    },
+    {
+      "word": " ",
+      "start": 21.379,
+      "end": 21.42
+    },
+    {
+      "word": "and",
+      "start": 21.42,
+      "end": 21.52
+    },
+    {
+      "word": " ",
+      "start": 21.52,
+      "end": 21.639
+    },
+    {
+      "word": "call",
+      "start": 21.639,
+      "end": 21.78
+    },
+    {
+      "word": " ",
+      "start": 21.78,
+      "end": 21.819
+    },
+    {
+      "word": "it",
+      "start": 21.819,
+      "end": 21.879
+    },
+    {
+      "word": " ",
+      "start": 21.879,
+      "end": 21.939
+    },
+    {
+      "word": "healthy.",
+      "start": 21.939,
+      "end": 22.299
+    },
+    {
+      "word": " ",
+      "start": 22.299,
+      "end": 22.68
+    },
+    {
+      "word": "Great",
+      "start": 22.68,
+      "end": 22.84
+    },
+    {
+      "word": " ",
+      "start": 22.84,
+      "end": 22.979
+    },
+    {
+      "word": "protein,",
+      "start": 22.979,
+      "end": 23.459
+    },
+    {
+      "word": " ",
+      "start": 23.459,
+      "end": 23.92
+    },
+    {
+      "word": "zero",
+      "start": 23.92,
+      "end": 24.299
+    },
+    {
+      "word": " ",
+      "start": 24.299,
+      "end": 24.379
+    },
+    {
+      "word": "fiber.",
+      "start": 24.379,
+      "end": 24.739
+    },
+    {
+      "word": " ",
+      "start": 24.739,
+      "end": 24.739
+    },
+    {
+      "word": "Swap",
+      "start": 25.779,
+      "end": 26.079
+    },
+    {
+      "word": " ",
+      "start": 26.079,
+      "end": 26.199
+    },
+    {
+      "word": "one",
+      "start": 26.199,
+      "end": 26.399
+    },
+    {
+      "word": " ",
+      "start": 26.399,
+      "end": 26.479
+    },
+    {
+      "word": "thing",
+      "start": 26.479,
+      "end": 27
+    },
+    {
+      "word": " ",
+      "start": 27,
+      "end": 27.099
+    },
+    {
+      "word": "every",
+      "start": 27.099,
+      "end": 27.359
+    },
+    {
+      "word": " ",
+      "start": 27.359,
+      "end": 27.419
+    },
+    {
+      "word": "single",
+      "start": 27.42,
+      "end": 27.679
+    },
+    {
+      "word": " ",
+      "start": 27.679,
+      "end": 27.739
+    },
+    {
+      "word": "day.",
+      "start": 27.739,
+      "end": 27.999
+    },
+    {
+      "word": " ",
+      "start": 27.999,
+      "end": 28.399
+    },
+    {
+      "word": "Small",
+      "start": 28.399,
+      "end": 28.639
+    },
+    {
+      "word": " ",
+      "start": 28.639,
+      "end": 28.76
+    },
+    {
+      "word": "move,",
+      "start": 28.76,
+      "end": 29.079
+    },
+    {
+      "word": " ",
+      "start": 29.079,
+      "end": 29.479
+    },
+    {
+      "word": "real",
+      "start": 29.479,
+      "end": 29.819
+    },
+    {
+      "word": " ",
+      "start": 29.819,
+      "end": 29.879
+    },
+    {
+      "word": "shift.",
+      "start": 29.879,
+      "end": 30.279
+    },
+    {
+      "word": " ",
+      "start": 30.279,
+      "end": 31.279
+    },
+    {
+      "word": "Recipes",
+      "start": 31.279,
+      "end": 31.799
+    },
+    {
+      "word": " ",
+      "start": 31.799,
+      "end": 31.859
+    },
+    {
+      "word": "at",
+      "start": 31.859,
+      "end": 32
+    },
+    {
+      "word": " ",
+      "start": 32,
+      "end": 32.38
+    },
+    {
+      "word": "www.dailylifehacks.com.",
+      "start": 32.38,
+      "end": 35.119
+    },
+    {
+      "word": " ",
+      "start": 35.119,
+      "end": 35.5
+    },
+    {
+      "word": "Free",
+      "start": 35.5,
+      "end": 35.799
+    },
+    {
+      "word": " ",
+      "start": 35.799,
+      "end": 36.139
+    },
+    {
+      "word": "every",
+      "start": 36.139,
+      "end": 36.399
+    },
+    {
+      "word": " ",
+      "start": 36.399,
+      "end": 36.459
+    },
+    {
+      "word": "week.",
+      "start": 36.459,
+      "end": 36.739
+    }
+  ],
+  "duration": 36.739,
+  "language": "eng"
+}

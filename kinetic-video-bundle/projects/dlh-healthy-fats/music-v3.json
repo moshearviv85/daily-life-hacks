@@ -1,0 +1,36 @@
+{
+  "duration_ms": 55000,
+  "instrumental": true,
+  "positive_global_styles": ["lo-fi", "chill", "warm", "laid-back", "understated"],
+  "negative_global_styles": ["aggressive", "dramatic", "epic", "trap", "loud", "chaotic"],
+  "sections": [
+    {
+      "section_name": "Opener",
+      "duration_ms": 12000,
+      "positive_local_styles": ["sparse", "minimal", "quiet piano", "subtle"],
+      "negative_local_styles": ["energetic", "loud", "busy"],
+      "lines": []
+    },
+    {
+      "section_name": "Groove",
+      "duration_ms": 28000,
+      "positive_local_styles": ["lo-fi beat", "warm bass", "light percussion", "background groove"],
+      "negative_local_styles": ["heavy", "intense", "prominent"],
+      "lines": []
+    },
+    {
+      "section_name": "Settle",
+      "duration_ms": 10000,
+      "positive_local_styles": ["chill", "warm", "resolve", "soft"],
+      "negative_local_styles": ["dramatic", "building"],
+      "lines": []
+    },
+    {
+      "section_name": "Fade",
+      "duration_ms": 5000,
+      "positive_local_styles": ["gentle fade", "soft ending"],
+      "negative_local_styles": ["abrupt", "loud"],
+      "lines": []
+    }
+  ]
+}

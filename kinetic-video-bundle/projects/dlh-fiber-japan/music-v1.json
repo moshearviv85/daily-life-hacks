@@ -1,0 +1,36 @@
+{
+  "duration_ms": 60000,
+  "instrumental": true,
+  "positive_global_styles": ["lo-fi", "chill", "jazz", "laid-back"],
+  "negative_global_styles": ["aggressive", "chaotic", "epic", "dramatic"],
+  "sections": [
+    {
+      "section_name": "Dry Opener",
+      "duration_ms": 12000,
+      "positive_local_styles": ["sparse", "minimal", "quirky piano"],
+      "negative_local_styles": ["loud", "energetic"],
+      "lines": []
+    },
+    {
+      "section_name": "Casual Build",
+      "duration_ms": 25000,
+      "positive_local_styles": ["lo-fi beat", "warm", "conversational groove"],
+      "negative_local_styles": ["heavy", "intense"],
+      "lines": []
+    },
+    {
+      "section_name": "Dry Reveal",
+      "duration_ms": 15000,
+      "positive_local_styles": ["slightly playful", "light percussion", "chill"],
+      "negative_local_styles": ["loud", "dramatic"],
+      "lines": []
+    },
+    {
+      "section_name": "Chill CTA",
+      "duration_ms": 8000,
+      "positive_local_styles": ["warm fade", "soft", "resolution"],
+      "negative_local_styles": ["abrupt"],
+      "lines": []
+    }
+  ]
+}

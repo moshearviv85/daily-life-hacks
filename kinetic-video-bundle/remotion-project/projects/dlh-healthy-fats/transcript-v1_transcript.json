@@ -1,0 +1,552 @@
+{
+  "text": "Fat was the villain. Thirty years, they were wrong. Avocado, monounsaturated fat keeps you full. Olive oil, drizzle it, cook with it daily. Walnuts, one handful, omega-3 hit. Salmon, twice a week. That's the whole plan. Fat doesn't make you fat. The wrong kind does. Start with these four. Recipes at www.daily-life-hacks.com. Free every week",
+  "words": [
+    {
+      "word": "Fat",
+      "start": 0.079,
+      "end": 0.319
+    },
+    {
+      "word": " ",
+      "start": 0.319,
+      "end": 0.399
+    },
+    {
+      "word": "was",
+      "start": 0.399,
+      "end": 0.539
+    },
+    {
+      "word": " ",
+      "start": 0.539,
+      "end": 0.599
+    },
+    {
+      "word": "the",
+      "start": 0.599,
+      "end": 0.639
+    },
+    {
+      "word": " ",
+      "start": 0.639,
+      "end": 0.719
+    },
+    {
+      "word": "villain.",
+      "start": 0.719,
+      "end": 1.039
+    },
+    {
+      "word": " ",
+      "start": 1.039,
+      "end": 1.039
+    },
+    {
+      "word": "Thirty",
+      "start": 2.279,
+      "end": 2.559
+    },
+    {
+      "word": " ",
+      "start": 2.559,
+      "end": 2.679
+    },
+    {
+      "word": "years,",
+      "start": 2.679,
+      "end": 3.099
+    },
+    {
+      "word": " ",
+      "start": 3.099,
+      "end": 3.979
+    },
+    {
+      "word": "they",
+      "start": 3.98,
+      "end": 4.079
+    },
+    {
+      "word": " ",
+      "start": 4.079,
+      "end": 4.139
+    },
+    {
+      "word": "were",
+      "start": 4.139,
+      "end": 4.219
+    },
+    {
+      "word": " ",
+      "start": 4.219,
+      "end": 4.319
+    },
+    {
+      "word": "wrong.",
+      "start": 4.319,
+      "end": 4.719
+    },
+    {
+      "word": " ",
+      "start": 4.719,
+      "end": 4.719
+    },
+    {
+      "word": "Avocado,",
+      "start": 6.359,
+      "end": 6.96
+    },
+    {
+      "word": " ",
+      "start": 6.96,
+      "end": 7.679
+    },
+    {
+      "word": "monounsaturated",
+      "start": 7.679,
+      "end": 8.76
+    },
+    {
+      "word": " ",
+      "start": 8.76,
+      "end": 8.88
+    },
+    {
+      "word": "fat",
+      "start": 8.88,
+      "end": 9.179
+    },
+    {
+      "word": " ",
+      "start": 9.179,
+      "end": 9.379
+    },
+    {
+      "word": "keeps",
+      "start": 9.38,
+      "end": 9.559
+    },
+    {
+      "word": " ",
+      "start": 9.559,
+      "end": 9.599
+    },
+    {
+      "word": "you",
+      "start": 9.599,
+      "end": 9.719
+    },
+    {
+      "word": " ",
+      "start": 9.719,
+      "end": 9.799
+    },
+    {
+      "word": "full.",
+      "start": 9.8,
+      "end": 10.059
+    },
+    {
+      "word": " ",
+      "start": 10.059,
+      "end": 10.059
+    },
+    {
+      "word": "Olive",
+      "start": 11.199,
+      "end": 11.42
+    },
+    {
+      "word": " ",
+      "start": 11.42,
+      "end": 11.519
+    },
+    {
+      "word": "oil,",
+      "start": 11.519,
+      "end": 11.719
+    },
+    {
+      "word": " ",
+      "start": 11.719,
+      "end": 12.279
+    },
+    {
+      "word": "drizzle",
+      "start": 12.279,
+      "end": 12.579
+    },
+    {
+      "word": " ",
+      "start": 12.579,
+      "end": 12.639
+    },
+    {
+      "word": "it,",
+      "start": 12.639,
+      "end": 12.759
+    },
+    {
+      "word": " ",
+      "start": 12.759,
+      "end": 13.239
+    },
+    {
+      "word": "cook",
+      "start": 13.239,
+      "end": 13.399
+    },
+    {
+      "word": " ",
+      "start": 13.399,
+      "end": 13.46
+    },
+    {
+      "word": "with",
+      "start": 13.46,
+      "end": 13.579
+    },
+    {
+      "word": " ",
+      "start": 13.579,
+      "end": 13.639
+    },
+    {
+      "word": "it",
+      "start": 13.639,
+      "end": 13.739
+    },
+    {
+      "word": " ",
+      "start": 13.739,
+      "end": 14.199
+    },
+    {
+      "word": "daily.",
+      "start": 14.199,
+      "end": 14.579
+    },
+    {
+      "word": " ",
+      "start": 14.579,
+      "end": 14.579
+    },
+    {
+      "word": "Walnuts,",
+      "start": 15.939,
+      "end": 16.52
+    },
+    {
+      "word": " ",
+      "start": 16.52,
+      "end": 17.059
+    },
+    {
+      "word": "one",
+      "start": 17.059,
+      "end": 17.18
+    },
+    {
+      "word": " ",
+      "start": 17.18,
+      "end": 17.26
+    },
+    {
+      "word": "handful,",
+      "start": 17.26,
+      "end": 17.739
+    },
+    {
+      "word": " ",
+      "start": 17.739,
+      "end": 18.26
+    },
+    {
+      "word": "omega-3",
+      "start": 18.26,
+      "end": 18.899
+    },
+    {
+      "word": " ",
+      "start": 18.899,
+      "end": 19.02
+    },
+    {
+      "word": "hit.",
+      "start": 19.02,
+      "end": 19.259
+    },
+    {
+      "word": " ",
+      "start": 19.259,
+      "end": 19.259
+    },
+    {
+      "word": "Salmon,",
+      "start": 20.439,
+      "end": 20.84
+    },
+    {
+      "word": " ",
+      "start": 20.84,
+      "end": 21.359
+    },
+    {
+      "word": "twice",
+      "start": 21.359,
+      "end": 21.62
+    },
+    {
+      "word": " ",
+      "start": 21.62,
+      "end": 21.659
+    },
+    {
+      "word": "a",
+      "start": 21.659,
+      "end": 21.719
+    },
+    {
+      "word": " ",
+      "start": 21.719,
+      "end": 21.76
+    },
+    {
+      "word": "week.",
+      "start": 21.76,
+      "end": 21.999
+    },
+    {
+      "word": " ",
+      "start": 21.999,
+      "end": 22.559
+    },
+    {
+      "word": "That's",
+      "start": 22.559,
+      "end": 22.78
+    },
+    {
+      "word": " ",
+      "start": 22.78,
+      "end": 22.819
+    },
+    {
+      "word": "the",
+      "start": 22.819,
+      "end": 22.859
+    },
+    {
+      "word": " ",
+      "start": 22.859,
+      "end": 22.939
+    },
+    {
+      "word": "whole",
+      "start": 22.939,
+      "end": 23.1
+    },
+    {
+      "word": " ",
+      "start": 23.1,
+      "end": 23.159
+    },
+    {
+      "word": "plan.",
+      "start": 23.159,
+      "end": 23.559
+    },
+    {
+      "word": " ",
+      "start": 23.559,
+      "end": 23.559
+    },
+    {
+      "word": "Fat",
+      "start": 25.199,
+      "end": 25.619
+    },
+    {
+      "word": " ",
+      "start": 25.619,
+      "end": 25.679
+    },
+    {
+      "word": "doesn't",
+      "start": 25.68,
+      "end": 25.959
+    },
+    {
+      "word": " ",
+      "start": 25.959,
+      "end": 26.019
+    },
+    {
+      "word": "make",
+      "start": 26.019,
+      "end": 26.159
+    },
+    {
+      "word": " ",
+      "start": 26.159,
+      "end": 26.219
+    },
+    {
+      "word": "you",
+      "start": 26.219,
+      "end": 26.359
+    },
+    {
+      "word": " ",
+      "start": 26.359,
+      "end": 26.419
+    },
+    {
+      "word": "fat.",
+      "start": 26.42,
+      "end": 26.739
+    },
+    {
+      "word": " ",
+      "start": 26.739,
+      "end": 27.319
+    },
+    {
+      "word": "The",
+      "start": 27.319,
+      "end": 27.38
+    },
+    {
+      "word": " ",
+      "start": 27.38,
+      "end": 27.439
+    },
+    {
+      "word": "wrong",
+      "start": 27.439,
+      "end": 27.719
+    },
+    {
+      "word": " ",
+      "start": 27.719,
+      "end": 27.799
+    },
+    {
+      "word": "kind",
+      "start": 27.799,
+      "end": 28.079
+    },
+    {
+      "word": " ",
+      "start": 28.079,
+      "end": 28.139
+    },
+    {
+      "word": "does.",
+      "start": 28.139,
+      "end": 28.479
+    },
+    {
+      "word": " ",
+      "start": 28.479,
+      "end": 29.399
+    },
+    {
+      "word": "Start",
+      "start": 29.399,
+      "end": 29.659
+    },
+    {
+      "word": " ",
+      "start": 29.659,
+      "end": 29.719
+    },
+    {
+      "word": "with",
+      "start": 29.719,
+      "end": 29.84
+    },
+    {
+      "word": " ",
+      "start": 29.84,
+      "end": 29.899
+    },
+    {
+      "word": "these",
+      "start": 29.899,
+      "end": 30.119
+    },
+    {
+      "word": " ",
+      "start": 30.119,
+      "end": 30.219
+    },
+    {
+      "word": "four.",
+      "start": 30.219,
+      "end": 30.539
+    },
+    {
+      "word": " ",
+      "start": 30.539,
+      "end": 30.539
+    },
+    {
+      "word": "Recipes",
+      "start": 31.559,
+      "end": 32.299
+    },
+    {
+      "word": " ",
+      "start": 32.299,
+      "end": 32.38
+    },
+    {
+      "word": "at",
+      "start": 32.38,
+      "end": 32.52
+    },
+    {
+      "word": " ",
+      "start": 32.52,
+      "end": 32.899
+    },
+    {
+      "word": "www.daily-life-hacks.com.",
+      "start": 32.899,
+      "end": 37.279
+    },
+    {
+      "word": " ",
+      "start": 37.279,
+      "end": 38.059
+    },
+    {
+      "word": "Free",
+      "start": 38.059,
+      "end": 38.399
+    },
+    {
+      "word": " ",
+      "start": 38.399,
+      "end": 38.999
+    },
+    {
+      "word": "every",
+      "start": 39,
+      "end": 39.319
+    },
+    {
+      "word": " ",
+      "start": 39.319,
+      "end": 39.439
+    },
+    {
+      "word": "week",
+      "start": 39.439,
+      "end": 39.68
+    }
+  ],
+  "duration": 39.68,
+  "language": "eng"
+}

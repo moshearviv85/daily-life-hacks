@@ -1,0 +1,24 @@
+[matter-of-fact] Japan.
+[emphatic] Longest lives on the planet.
+[pause]
+[matter-of-fact] Their secret?
+[building] Not a pill. Not a diet plan.
+[emphatic] Three foods.
+[pause]
+[emphatic] Edamame.
+[matter-of-fact] Eight grams of fiber. One cup.
+[emphatic] Natto.
+[matter-of-fact] Fermented soy. Probiotic hit.
+[emphatic] Burdock root.
+[matter-of-fact] Six grams. One serving.
+[pause]
+[matter-of-fact] Most people eat sashimi and call it healthy.
+[emphatic] Great protein.
+[matter-of-fact] Zero fiber.
+[pause]
+[building] Swap one thing.
+[emphatic] Every single day.
+[matter-of-fact] Small move. Real shift.
+[pause]
+[warm] Recipes at www.daily-life-hacks.com
+[emphatic] Free. Every week.

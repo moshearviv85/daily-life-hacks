@@ -1,0 +1,29 @@
+{
+  "duration_ms": 55000,
+  "instrumental": true,
+  "positive_global_styles": ["acoustic", "warm", "intimate", "understated", "natural", "organic"],
+  "negative_global_styles": ["lo-fi", "electronic", "trap", "phonk", "heavy", "dramatic"],
+  "sections": [
+    {
+      "section_name": "Opener",
+      "duration_ms": 10000,
+      "positive_local_styles": ["sparse acoustic guitar", "minimal", "single note picking"],
+      "negative_local_styles": ["loud", "busy", "drums"],
+      "lines": []
+    },
+    {
+      "section_name": "Groove",
+      "duration_ms": 30000,
+      "positive_local_styles": ["warm acoustic guitar", "soft fingerpicking", "subtle percussion"],
+      "negative_local_styles": ["electronic", "heavy", "dramatic"],
+      "lines": []
+    },
+    {
+      "section_name": "Outro",
+      "duration_ms": 15000,
+      "positive_local_styles": ["gentle fade", "minimal", "warm resolution"],
+      "negative_local_styles": ["abrupt", "loud"],
+      "lines": []
+    }
+  ]
+}

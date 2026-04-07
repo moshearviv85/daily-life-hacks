@@ -1,0 +1,549 @@
+{
+  "name": "DLH - Pinterest OAuth Minimal Demo (Manual)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "dlh/pinterest/oauth-demo",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook_get",
+      "name": "OAuth Demo Page (GET)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1200,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.pinterest.com/v5/user_account",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {
+          "ignoreResponseCode": true,
+          "fullResponse": false
+        }
+      },
+      "id": "pinterest_auth_check_get",
+      "name": "Pinterest Auth Check (GET)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -980,
+        0
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "",
+          "name": "Pinterest OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "auth_ok",
+              "leftValue": "={{ $json.username || $json.id || $json.account_type || $json.profile_image }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if_connected_get",
+      "name": "Is Pinterest Connected? (GET)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -760,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><title>DLH Pinterest OAuth Demo</title><style>body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:24px}.card{max-width:820px;border:1px solid #ddd;border-radius:12px;padding:18px}.warn{background:#fff7ed;border:1px solid #fed7aa;padding:12px;border-radius:10px;color:#7c2d12;margin-top:12px}.ok{background:#f0fdf4;border:1px solid #bbf7d0;padding:12px;border-radius:10px;color:#166534;margin-top:12px}.btn{display:inline-block;margin-top:12px;background:#F29B30;color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:800}code{background:#f5f5f5;padding:2px 6px;border-radius:6px}</style></head><body><div class=\"card\"><h1 style=\"margin:0 0 10px;font-size:20px\">DLH Pinterest OAuth Demo</h1><p style=\"margin:0 0 10px;color:#444;line-height:1.4\">This page proves the full OAuth flow + a real API call. If you're not connected yet, connect the Pinterest OAuth credential in n8n (Consent screen → Allow), then refresh this page.</p><div class=\"warn\"><strong>Not connected.</strong><br/>Step 1: n8n → Credentials → Pinterest → <code>Connect</code><br/>Step 2: Pinterest consent screen → <code>Allow access</code><br/>Step 3: Come back here and refresh</div></div></body></html>",
+        "options": {
+          "responseCode": 401,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=utf-8"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond_not_connected",
+      "name": "Respond Not Connected (HTML)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ (() => { const u = $json || {}; const who = (u.username || u.id || '').toString(); const acct = (u.account_type || '').toString(); const esc = (s) => String(s ?? '').replace(/[&<>\"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c])); const req = $('OAuth Demo Page (GET)').first().json || {}; const currentUrl = String(req.url || ''); let publishUrl = 'oauth-demo/publish'; if (currentUrl) publishUrl = currentUrl.replace(/\\/dlh\\/pinterest\\/oauth-demo\\/?$/, '/dlh/pinterest/oauth-demo/publish'); return `<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><title>Connected</title><style>body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:24px}.card{max-width:820px;border:1px solid #ddd;border-radius:12px;padding:18px}.ok{background:#f0fdf4;border:1px solid #bbf7d0;padding:12px;border-radius:10px;color:#166534;margin-top:12px}.btn{display:inline-block;margin-top:12px;background:#F29B30;color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:800;border:0;cursor:pointer}code{background:#f5f5f5;padding:2px 6px;border-radius:6px;word-break:break-all}select{margin-top:10px;padding:10px 12px;border-radius:10px;border:1px solid #ddd;min-width:320px}</style></head><body><div class=\"card\"><h1 style=\"margin:0 0 10px;font-size:20px\">Pinterest is connected</h1><div class=\"ok\"><strong>OAuth OK.</strong><br/>Account: <code>${esc(who || '(hidden)')}</code>${acct ? `<br/>Type: <code>${esc(acct)}</code>` : ''}</div><p style=\"margin:12px 0;color:#444;line-height:1.4\">Choose exactly one Pin (manual selection), then publish it via the API.</p><form method=\"POST\" action=\"${esc(publishUrl)}\"><label style=\"display:block;color:#333;font-weight:700\">Select 1 demo Pin</label><select name=\"pinKey\" required><option value=\"herbs_v1\">How to Store Fresh Herbs (v1)</option><option value=\"oats_v1\">Chia Pudding Variations (v1)</option></select><br/><button class=\"btn\" type=\"submit\">Publish selected Pin</button></form><p style=\"margin-top:12px;color:#666;font-size:12px\">Tip: don’t show secrets/tokens in the recording.</p></div></body></html>`; })() }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=utf-8"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond_connected",
+      "name": "Respond Connected (HTML)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "dlh/pinterest/oauth-demo/publish",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook_post",
+      "name": "Publish Demo Pin (POST)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1200,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.pinterest.com/v5/user_account",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {
+          "ignoreResponseCode": true,
+          "fullResponse": false
+        }
+      },
+      "id": "pinterest_auth_check_post",
+      "name": "Pinterest Auth Check (POST)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -980,
+        320
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "",
+          "name": "Pinterest OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "auth_ok_post",
+              "leftValue": "={{ $json.username || $json.id || $json.account_type || $json.profile_image }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if_connected_post",
+      "name": "Is Pinterest Connected? (POST)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -760,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ (() => { const req = $('Publish Demo Pin (POST)').first().json || {}; const currentUrl = String(req.url || ''); let backUrl = 'oauth-demo'; if (currentUrl) backUrl = currentUrl.replace(/\\/dlh\\/pinterest\\/oauth-demo\\/publish\\/?$/, '/dlh/pinterest/oauth-demo'); const esc = (s) => String(s ?? '').replace(/[&<>\"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c])); return `<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><title>Not connected</title><style>body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:24px}.card{max-width:820px;border:1px solid #ddd;border-radius:12px;padding:18px}.warn{background:#fff7ed;border:1px solid #fed7aa;padding:12px;border-radius:10px;color:#7c2d12;margin-top:12px}.btn{display:inline-block;margin-top:12px;background:#F29B30;color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:800}</style></head><body><div class=\"card\"><h1 style=\"margin:0 0 10px;font-size:20px\">Pinterest is not connected</h1><div class=\"warn\">Connect OAuth in n8n Credentials first, then go back.</div><a class=\"btn\" href=\"${esc(backUrl)}\">Back</a></div></body></html>`; })() }}",
+        "options": {
+          "responseCode": 401,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=utf-8"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond_not_connected_post",
+      "name": "Respond Not Connected (POST)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api-sandbox.pinterest.com/v5/boards?page_size=10",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "options": {
+          "ignoreResponseCode": true,
+          "fullResponse": false
+        }
+      },
+      "id": "list_boards_sandbox",
+      "name": "List Sandbox Boards",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        -520,
+        320
+      ],
+      "credentials": {
+        "oAuth2Api": {
+          "id": "",
+          "name": "Pinterest OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Build payload without relying on Set node (import/export can wipe Set fields in some n8n Cloud versions).\n// Read user selection from Webhook POST: $json.body.pinKey or $json.query.pinKey\nconst req = $('Publish Demo Pin (POST)').first().json || {};\nconst body = (req.body && typeof req.body === 'object') ? req.body : {};\nconst query = (req.query && typeof req.query === 'object') ? req.query : {};\nconst pinKey = String(body.pinKey || query.pinKey || 'herbs_v1').trim();\n\n// Prefer a board_id returned by Sandbox /v5/boards (production board IDs often fail on api-sandbox with 401).\nlet sandboxBoardId = '';\ntry {\n  const b = $('List Sandbox Boards').first().json || {};\n  if (Array.isArray(b.items) && b.items.length && b.items[0].id) {\n    sandboxBoardId = String(b.items[0].id).trim();\n  }\n} catch (e) {}\n\n// Demo pins catalog (single-user private demo)\nconst PINS = {\n  herbs_v1: {\n    BOARD_ID: '1124140825679184034',\n    IMAGE_URL: 'https://www.daily-life-hacks.com/images/pins/how-to-store-fresh-herbs-to-last-longer_v1.jpg',\n    LINK_URL: 'https://www.daily-life-hacks.com/how-to-store-fresh-herbs-to-last-longer',\n    PIN_TITLE: 'How to Store Fresh Herbs So They Last Longer',\n    PIN_DESCRIPTION: 'Keep herbs fresh longer with a simple storage method that helps reduce waste and saves money. #KitchenTips #FoodStorage #MealPrep',\n    ALT_TEXT: 'Fresh parsley cilantro and dill stored upright in jars with water in a home kitchen'\n  },\n  oats_v1: {\n    BOARD_ID: '1124140825679184034',\n    IMAGE_URL: 'https://www.daily-life-hacks.com/images/pins/chia-pudding-variations-for-breakfast_v1.jpg',\n    LINK_URL: 'https://www.daily-life-hacks.com/chia-pudding-variations-for-breakfast',\n    PIN_TITLE: 'Chia Pudding Variations for Breakfast',\n    PIN_DESCRIPTION: 'Simple chia pudding variations you can prep ahead for busy mornings. #HealthyBreakfast #MealPrep #HighFiber',\n    ALT_TEXT: 'Three chia pudding jars with berries nuts and cocoa toppings on a kitchen counter'\n  }\n};\n\nconst chosen = PINS[pinKey] || null;\nif (!chosen) {\n  return [{ json: { ok: false, errors: ['Unknown pinKey'], message: 'Unknown pinKey' } }];\n}\n\nconst BOARD_ID = String(sandboxBoardId || chosen.BOARD_ID || '').trim();\nconst IMAGE_URL = String(chosen.IMAGE_URL || '').trim();\nconst LINK_URL = String(chosen.LINK_URL || '').trim();\nconst PIN_TITLE = String(chosen.PIN_TITLE || '').trim();\nconst PIN_DESCRIPTION = String(chosen.PIN_DESCRIPTION || '').trim();\nconst ALT_TEXT = String(chosen.ALT_TEXT || '').trim();\n\nconst errors = [];\nif (!BOARD_ID) errors.push('BOARD_ID missing (could not list sandbox boards; check OAuth scopes include boards:read and reconnect)');\nif (!IMAGE_URL) errors.push('IMAGE_URL missing');\nif (!LINK_URL) errors.push('LINK_URL missing');\nif (!PIN_TITLE) errors.push('PIN_TITLE missing');\nif (!PIN_DESCRIPTION) errors.push('PIN_DESCRIPTION missing');\nif (!ALT_TEXT) errors.push('ALT_TEXT missing');\n\nif (errors.length) {\n  return [{ json: { ok: false, errors, message: errors.join('; ') } }];\n}\n\nreturn [{\n  json: {\n    ok: true,\n    pinKey,\n    board_id_source: sandboxBoardId ? 'sandbox_boards_list' : 'catalog_fallback',\n    pinPayload: {\n      title: PIN_TITLE,\n      description: PIN_DESCRIPTION,\n      link: LINK_URL,\n      alt_text: ALT_TEXT,\n      board_id: BOARD_ID,\n      media_source: { source_type: 'image_url', url: IMAGE_URL }\n    }\n  }\n}];"
+      },
+      "id": "build_payload",
+      "name": "Build Pin Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -300,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "payload_ok",
+              "leftValue": "={{ $json.ok }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if_payload_ok",
+      "name": "Payload Valid?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -80,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api-sandbox.pinterest.com/v5/pins",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "oAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.pinPayload }}",
+        "options": {}
+      },
+      "id": "create_pin",
+      "name": "Create Pinterest Pin",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [
+        160,
+        260
+      ],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "oAuth2Api": {
+          "id": "",
+          "name": "Pinterest OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const api = $input.first().json || {};\n\nif (api && api.id) {\n  return [{ json: { status: 'PUBLISHED', pin_id: api.id, pinterest_response: JSON.stringify(api).slice(0, 500) } }];\n}\n\nreturn [{ json: { status: 'ERROR', pin_id: '', pinterest_response: JSON.stringify(api || { message: 'Unknown API error' }).slice(0, 500) } }];"
+      },
+      "id": "check_result",
+      "name": "Check Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        380,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const r = $input.first().json || {};\nconst ok = String(r.status || '') === 'PUBLISHED';\nconst pinId = String(r.pin_id || '');\nconst msg = String(r.pinterest_response || '');\n\nconst esc = (s) => String(s ?? '').replace(/[&<>\"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]));\n\nconst title = ok ? 'Published' : 'Error';\nconst color = ok ? '#166534' : '#7c2d12';\nconst bg = ok ? '#f0fdf4' : '#fff7ed';\n\nconst req = $('Publish Demo Pin (POST)').first().json || {};\nconst currentUrl = String(req.url || '');\nlet backUrl = 'oauth-demo';\nif (currentUrl) backUrl = currentUrl.replace(/\\/dlh\\/pinterest\\/oauth-demo\\/publish\\/?$/, '/dlh/pinterest/oauth-demo');\n\nconst html = `<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <title>${title}</title>\n  <style>\n    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:24px}\n    .card{max-width:820px;border:1px solid #ddd;border-radius:12px;padding:18px}\n    h1{margin:0 0 10px;font-size:20px}\n    .box{background:${bg};border:1px solid #ddd;padding:12px;border-radius:10px;color:${color};line-height:1.5}\n    code{background:#f5f5f5;padding:2px 6px;border-radius:6px;word-break:break-all}\n    a{color:#F29B30;font-weight:800}\n  </style>\n</head>\n<body>\n  <div class=\"card\">\n    <h1>${title}</h1>\n    <div class=\"box\">\n      Status: <code>${esc(r.status || '')}</code>\n      ${pinId ? `<br/>Pin ID: <code>${esc(pinId)}</code>` : ''}\n    </div>\n    ${msg ? `<p style=\"margin-top:12px;color:#444\">${esc(msg).slice(0, 400)}</p>` : ''}\n    <p style=\"margin-top:12px\"><a href=\"${esc(backUrl)}\">Back to demo page</a></p>\n  </div>\n</body>\n</html>`;\n\nreturn [{ json: { html } }];"
+      },
+      "id": "build_result_html",
+      "name": "Build Result HTML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        600,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=utf-8"
+              }
+            ]
+          }
+        }
+      },
+      "id": "respond_result",
+      "name": "Respond Result (HTML)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        820,
+        260
+      ]
+    }
+  ],
+  "connections": {
+    "OAuth Demo Page (GET)": {
+      "main": [
+        [
+          {
+            "node": "Pinterest Auth Check (GET)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinterest Auth Check (GET)": {
+      "main": [
+        [
+          {
+            "node": "Is Pinterest Connected? (GET)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Pinterest Connected? (GET)": {
+      "main": [
+        [
+          {
+            "node": "Respond Connected (HTML)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond Not Connected (HTML)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish Demo Pin (POST)": {
+      "main": [
+        [
+          {
+            "node": "Pinterest Auth Check (POST)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pinterest Auth Check (POST)": {
+      "main": [
+        [
+          {
+            "node": "Is Pinterest Connected? (POST)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Pinterest Connected? (POST)": {
+      "main": [
+        [
+          {
+            "node": "List Sandbox Boards",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond Not Connected (POST)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Sandbox Boards": {
+      "main": [
+        [
+          {
+            "node": "Build Pin Payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Pin Payload": {
+      "main": [
+        [
+          {
+            "node": "Payload Valid?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Payload Valid?": {
+      "main": [
+        [
+          {
+            "node": "Create Pinterest Pin",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Build Result HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Pinterest Pin": {
+      "main": [
+        [
+          {
+            "node": "Check Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Result": {
+      "main": [
+        [
+          {
+            "node": "Build Result HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Result HTML": {
+      "main": [
+        [
+          {
+            "node": "Respond Result (HTML)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
+

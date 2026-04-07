@@ -1,0 +1,923 @@
+{
+  "last_audit_date": "2026-04-05T17:27:29Z",
+  "summary": {
+    "total_draft_articles": 37,
+    "total_web_images": 66,
+    "total_pin_images": 260,
+    "total_topics_waiting": 84,
+    "total_published_articles": 66
+  },
+  "articles": {
+    "30-day-high-fiber-challenge-meal-plan": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "7-day-sugar-detox-plan-high-fiber": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "air-fryer-chicken-thighs-crispy-healthy": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "apple-cider-vinegar-for-bloating-relief": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "apples-with-peanut-butter-snack": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "artichoke-recipes-for-gut-health": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "baked-sweet-potato-fries-crispy-oven": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "batch-cooking-for-beginners-weekly-guide": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "beans-and-rice-complete-protein-meal": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "berry-spinach-smoothie-for-colon-cleanse": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "best-anti-inflammatory-foods-list": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "best-breakfast-foods-for-sustained-energy": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "best-fiber-supplements-review": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "best-foods-for-gut-health-beginners-guide": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "best-foods-to-eat-before-a-workout": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "best-high-fiber-cereal-brands": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "best-high-fiber-fruits-for-weight-loss-list": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "best-high-fiber-vegetables-for-gut-health-chart": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "best-way-to-store-avocados-to-stop-browning": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "black-bean-brownies-hidden-fiber-dessert": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "broccoli-stalk-recipes-waste-free": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "bulgur-wheat-benefits-vs-rice": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "calcium-rich-foods-for-people-who-hate-milk": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "chia-pudding-variations-for-breakfast": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "chia-seed-water-for-bloating-relief": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "crispy-roasted-chickpeas-high-fiber-snack": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "dragon-fruit-benefits-for-digestion": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "easy-black-bean-tacos-weeknight-dinner": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "easy-egg-muffins-meal-prep-breakfast": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "easy-high-fiber-breakfast-ideas-for-gut-health": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "easy-homemade-vegetable-stir-fry": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "easy-one-pot-chicken-and-rice-dinner": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "easy-shrimp-and-broccoli-garlic-sauce": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "edamame-beans-high-fiber-snack": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "fermented-foods-list-for-gut-flora": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "fiber-and-cholesterol-lowering-diet": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "fiber-and-hydration-tracking-journal": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "fiber-and-weight-loss-science-explained": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "fiber-for-clear-skin-acne-diet": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "fiber-for-diabetes-blood-sugar-control": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "fiber-rich-soup-for-weight-loss-cabbage": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "flaxseed-benefits-for-digestion-and-hormones": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "freezer-meal-prep-ideas-for-beginners": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "greek-yogurt-chicken-salad-recipe": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "grocery-shopping-list-for-healthy-eating-on-a-budget": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "ground-turkey-stuffed-bell-peppers": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "guava-high-fiber-superfruit": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "gut-friendly-high-fiber-smoothies-for-daily-wellness": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "gut-healing-bone-broth-recipe": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "gut-health-tea-peppermint-ginger": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "healthy-banana-oat-pancakes-no-flour": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "healthy-fats-list-foods-to-eat-daily": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "healthy-snacks-that-keep-you-full-longer": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "healthy-turkey-meatballs-meal-prep": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "healthy-zucchini-noodles-with-pesto": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-avocado-toast-variations": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-baked-potato-toppings": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-barley-soup-recipe": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-bran-muffins-that-taste-good": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-breakfast-burrito-recipe": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-burrito-bowl-meal-prep": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-cabbage-recipes-the-2026-superfood-trend": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-cauliflower-rice-recipes": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-coconut-flour-recipes": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-coleslaw-recipe-no-mayo": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-dark-chocolate-benefits": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-diet-for-ibs-sufferers": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-fast-food-options-guide": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-figs-benefits-fresh-vs-dried": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-foods-for-hormone-balance": {
+      "status": "draft",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-fruit-salad-recipe": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-gluten-free-bread-recipe": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-hummus-recipe-homemade": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-indian-food-options": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-japanese-food-sashimi": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-keto-bread-recipe": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-lentil-soup-for-detox": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-meal-prep-ideas-for-busy-weeks-2026": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-meals-for-constipation-relief": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-pasta-alternatives": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-pizza-crust-cauliflower": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-popcorn-toppings-healthy": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-pumpkin-seeds-benefits": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-quinoa-salad-for-lunch-prep": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-raspberry-jam-recipe-chia": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-salad-dressings-homemade": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-sandwich-ideas-work-lunch": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-side-dishes-for-steak": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-smoothie-bowl-acai-recipe": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-smoothies-for-kids-picky-eaters": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-stir-fry-vegetables": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-fiber-sweet-potato-recipes-for-dinner": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-vegan-burger-recipe": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-whole-wheat-waffles": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "high-fiber-yogurt-parfait-for-breakfast": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "high-protein-high-fiber-meals-for-weight-loss": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-much-protein-do-you-need-per-day": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-cook-dried-beans-from-scratch": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-eat-more-vegetables-without-noticing": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "how-to-freeze-bananas-for-smoothies": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-increase-fiber-intake-without-gas": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-keep-bread-fresh-longer-without-mold": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-make-grocery-shopping-cheaper": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-meal-prep-on-a-budget-for-one-person": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-organize-a-small-kitchen-on-a-budget": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-read-nutrition-labels-for-beginners": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-reduce-food-waste-at-home-easy-tips": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-revive-wilted-lettuce-and-greens": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-season-cast-iron-skillet-properly": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-store-fresh-herbs-to-last-longer": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-store-fruits-and-vegetables-properly": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "how-to-use-leftover-rice-creative-ideas": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "iron-rich-foods-for-low-energy-and-fatigue": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "keto-granola-high-fiber-recipe": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "kitchen-tools-that-save-time-and-money": {
+      "status": "published",
+      "category": "tips",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "lentil-curry-high-fiber-vegan-dinner": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "low-calorie-high-fiber-snacks-under-100-cal": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "magnesium-rich-foods-for-better-sleep": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "mason-jar-salads-for-work-lunch-prep": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "mediterranean-diet-high-fiber-meal-plan": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "natto-japanese-fermented-soybeans-gut-health": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": true
+    },
+    "no-bake-high-fiber-energy-balls-recipe": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "oatmeal-vs-grits-fiber-content": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "omega-3-foods-list-besides-fish": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "one-pot-pasta-primavera-20-minutes": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "overnight-oats-for-weight-loss-meal-prep": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "pear-salad-with-walnuts-fiber-rich": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "plant-based-protein-sources-complete-guide": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "popcorn-vs-potato-chips-fiber-comparison": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "potassium-rich-foods-for-muscle-cramps": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "prebiotic-vs-probiotic-foods-chart": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "prune-juice-alternatives-for-constipation": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "psyllium-husk-benefits-for-constipation": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "quick-20-minute-high-fiber-meals-for-busy-days": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "raspberry-vs-strawberry-fiber-content": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "roasted-root-vegetables-high-fiber": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "seasonal-eating-guide-what-to-buy-each-month": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "sheet-pan-salmon-and-vegetables-30-minutes": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "slow-cooker-chicken-tortilla-soup": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "split-pea-soup-recipe-high-fiber": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "sunflower-seeds-benefits-for-skin-and-gut": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "tabbouleh-salad-high-fiber-bulgur": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "the-100g-fiber-challenge-can-you-do-it": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "top-5-high-fiber-nuts-for-snacking": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "ultimate-high-fiber-foods-list-for-constipation-relief": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "vegan-high-fiber-meal-prep-for-week": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "vegetarian-high-fiber-dinners-for-natural-relief": {
+      "status": "published",
+      "category": "recipes",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "vitamin-d-rich-foods-for-winter": {
+      "status": "topic_only",
+      "category": "nutrition",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "warm-oatmeal-bowl-for-winter-weight-loss": {
+      "status": "topic_only",
+      "category": "recipes",
+      "pin_image_count": 0,
+      "has_web_image": false
+    },
+    "water-and-fiber-the-golden-rule": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    },
+    "whole-wheat-vs-white-pasta-fiber": {
+      "status": "published",
+      "category": "nutrition",
+      "pin_image_count": 4,
+      "has_web_image": true
+    }
+  },
+  "missing_assets": [
+    "high-fiber-foods-for-hormone-balance is missing web image",
+    "high-fiber-foods-for-hormone-balance only has 0 pin images (expected 4)",
+    "natto-japanese-fermented-soybeans-gut-health only has 0 pin images (expected 4)"
+  ]
+}

@@ -1,0 +1,822 @@
+{
+  "text": "Bloated every time you eat healthy. So you quit your diet. Makes sense. Wrong move. Most people think bloating means something's wrong. It means your gut is alive. Dead guts don't bloat. Your bacteria just hit a flood of fiber they weren't ready for. They went into overdrive. Don't blame the broccoli. That apple sitting in your fridge, that bowl of oatmeal in the morning, start there, one thing at a time. Four weeks, then decide. Recipes at dailylifehacks.com. Free every week.",
+  "words": [
+    {
+      "word": "Bloated",
+      "start": 0.099,
+      "end": 0.62
+    },
+    {
+      "word": " ",
+      "start": 0.62,
+      "end": 1.24
+    },
+    {
+      "word": "every",
+      "start": 1.24,
+      "end": 1.419
+    },
+    {
+      "word": " ",
+      "start": 1.419,
+      "end": 1.539
+    },
+    {
+      "word": "time",
+      "start": 1.539,
+      "end": 1.959
+    },
+    {
+      "word": " ",
+      "start": 1.959,
+      "end": 2.039
+    },
+    {
+      "word": "you",
+      "start": 2.039,
+      "end": 2.139
+    },
+    {
+      "word": " ",
+      "start": 2.139,
+      "end": 2.199
+    },
+    {
+      "word": "eat",
+      "start": 2.2,
+      "end": 2.379
+    },
+    {
+      "word": " ",
+      "start": 2.379,
+      "end": 2.439
+    },
+    {
+      "word": "healthy.",
+      "start": 2.44,
+      "end": 2.839
+    },
+    {
+      "word": " ",
+      "start": 2.839,
+      "end": 3.739
+    },
+    {
+      "word": "So",
+      "start": 3.74,
+      "end": 3.899
+    },
+    {
+      "word": " ",
+      "start": 3.899,
+      "end": 4.099
+    },
+    {
+      "word": "you",
+      "start": 4.099,
+      "end": 4.199
+    },
+    {
+      "word": " ",
+      "start": 4.199,
+      "end": 4.259
+    },
+    {
+      "word": "quit",
+      "start": 4.259,
+      "end": 4.4
+    },
+    {
+      "word": " ",
+      "start": 4.4,
+      "end": 4.48
+    },
+    {
+      "word": "your",
+      "start": 4.48,
+      "end": 4.559
+    },
+    {
+      "word": " ",
+      "start": 4.559,
+      "end": 4.639
+    },
+    {
+      "word": "diet.",
+      "start": 4.639,
+      "end": 4.98
+    },
+    {
+      "word": " ",
+      "start": 4.98,
+      "end": 5.319
+    },
+    {
+      "word": "Makes",
+      "start": 5.319,
+      "end": 5.519
+    },
+    {
+      "word": " ",
+      "start": 5.519,
+      "end": 5.559
+    },
+    {
+      "word": "sense.",
+      "start": 5.559,
+      "end": 5.859
+    },
+    {
+      "word": " ",
+      "start": 5.859,
+      "end": 6.479
+    },
+    {
+      "word": "Wrong",
+      "start": 6.48,
+      "end": 6.799
+    },
+    {
+      "word": " ",
+      "start": 6.799,
+      "end": 6.919
+    },
+    {
+      "word": "move.",
+      "start": 6.92,
+      "end": 7.279
+    },
+    {
+      "word": " ",
+      "start": 7.279,
+      "end": 8.259
+    },
+    {
+      "word": "Most",
+      "start": 8.26,
+      "end": 8.46
+    },
+    {
+      "word": " ",
+      "start": 8.46,
+      "end": 8.519
+    },
+    {
+      "word": "people",
+      "start": 8.519,
+      "end": 8.72
+    },
+    {
+      "word": " ",
+      "start": 8.72,
+      "end": 8.8
+    },
+    {
+      "word": "think",
+      "start": 8.8,
+      "end": 8.939
+    },
+    {
+      "word": " ",
+      "start": 8.939,
+      "end": 9.039
+    },
+    {
+      "word": "bloating",
+      "start": 9.039,
+      "end": 9.38
+    },
+    {
+      "word": " ",
+      "start": 9.38,
+      "end": 9.46
+    },
+    {
+      "word": "means",
+      "start": 9.46,
+      "end": 9.679
+    },
+    {
+      "word": " ",
+      "start": 9.679,
+      "end": 9.739
+    },
+    {
+      "word": "something's",
+      "start": 9.739,
+      "end": 10.099
+    },
+    {
+      "word": " ",
+      "start": 10.099,
+      "end": 10.179
+    },
+    {
+      "word": "wrong.",
+      "start": 10.179,
+      "end": 10.479
+    },
+    {
+      "word": " ",
+      "start": 10.479,
+      "end": 10.979
+    },
+    {
+      "word": "It",
+      "start": 10.979,
+      "end": 11.079
+    },
+    {
+      "word": " ",
+      "start": 11.079,
+      "end": 11.139
+    },
+    {
+      "word": "means",
+      "start": 11.139,
+      "end": 11.399
+    },
+    {
+      "word": " ",
+      "start": 11.399,
+      "end": 11.579
+    },
+    {
+      "word": "your",
+      "start": 11.579,
+      "end": 11.699
+    },
+    {
+      "word": " ",
+      "start": 11.699,
+      "end": 11.84
+    },
+    {
+      "word": "gut",
+      "start": 11.84,
+      "end": 12.099
+    },
+    {
+      "word": " ",
+      "start": 12.099,
+      "end": 12.159
+    },
+    {
+      "word": "is",
+      "start": 12.159,
+      "end": 12.259
+    },
+    {
+      "word": " ",
+      "start": 12.259,
+      "end": 12.379
+    },
+    {
+      "word": "alive.",
+      "start": 12.38,
+      "end": 12.84
+    },
+    {
+      "word": " ",
+      "start": 12.84,
+      "end": 13.539
+    },
+    {
+      "word": "Dead",
+      "start": 13.539,
+      "end": 13.699
+    },
+    {
+      "word": " ",
+      "start": 13.699,
+      "end": 13.819
+    },
+    {
+      "word": "guts",
+      "start": 13.819,
+      "end": 14.119
+    },
+    {
+      "word": " ",
+      "start": 14.119,
+      "end": 14.42
+    },
+    {
+      "word": "don't",
+      "start": 14.42,
+      "end": 14.719
+    },
+    {
+      "word": " ",
+      "start": 14.719,
+      "end": 14.779
+    },
+    {
+      "word": "bloat.",
+      "start": 14.779,
+      "end": 15.119
+    },
+    {
+      "word": " ",
+      "start": 15.119,
+      "end": 16.039
+    },
+    {
+      "word": "Your",
+      "start": 16.039,
+      "end": 16.139
+    },
+    {
+      "word": " ",
+      "start": 16.139,
+      "end": 16.179
+    },
+    {
+      "word": "bacteria",
+      "start": 16.18,
+      "end": 16.779
+    },
+    {
+      "word": " ",
+      "start": 16.779,
+      "end": 16.879
+    },
+    {
+      "word": "just",
+      "start": 16.879,
+      "end": 17.02
+    },
+    {
+      "word": " ",
+      "start": 17.02,
+      "end": 17.039
+    },
+    {
+      "word": "hit",
+      "start": 17.039,
+      "end": 17.139
+    },
+    {
+      "word": " ",
+      "start": 17.139,
+      "end": 17.199
+    },
+    {
+      "word": "a",
+      "start": 17.199,
+      "end": 17.359
+    },
+    {
+      "word": " ",
+      "start": 17.359,
+      "end": 17.439
+    },
+    {
+      "word": "flood",
+      "start": 17.44,
+      "end": 17.699
+    },
+    {
+      "word": " ",
+      "start": 17.699,
+      "end": 17.739
+    },
+    {
+      "word": "of",
+      "start": 17.739,
+      "end": 17.859
+    },
+    {
+      "word": " ",
+      "start": 17.859,
+      "end": 17.959
+    },
+    {
+      "word": "fiber",
+      "start": 17.959,
+      "end": 18.279
+    },
+    {
+      "word": " ",
+      "start": 18.279,
+      "end": 18.319
+    },
+    {
+      "word": "they",
+      "start": 18.319,
+      "end": 18.42
+    },
+    {
+      "word": " ",
+      "start": 18.42,
+      "end": 18.479
+    },
+    {
+      "word": "weren't",
+      "start": 18.479,
+      "end": 18.7
+    },
+    {
+      "word": " ",
+      "start": 18.7,
+      "end": 18.719
+    },
+    {
+      "word": "ready",
+      "start": 18.719,
+      "end": 18.959
+    },
+    {
+      "word": " ",
+      "start": 18.959,
+      "end": 19.019
+    },
+    {
+      "word": "for.",
+      "start": 19.02,
+      "end": 19.26
+    },
+    {
+      "word": " ",
+      "start": 19.26,
+      "end": 19.639
+    },
+    {
+      "word": "They",
+      "start": 19.639,
+      "end": 19.76
+    },
+    {
+      "word": " ",
+      "start": 19.76,
+      "end": 19.76
+    },
+    {
+      "word": "went",
+      "start": 19.76,
+      "end": 19.859
+    },
+    {
+      "word": " ",
+      "start": 19.859,
+      "end": 19.899
+    },
+    {
+      "word": "into",
+      "start": 19.899,
+      "end": 20.059
+    },
+    {
+      "word": " ",
+      "start": 20.059,
+      "end": 20.179
+    },
+    {
+      "word": "overdrive.",
+      "start": 20.18,
+      "end": 20.819
+    },
+    {
+      "word": " ",
+      "start": 20.819,
+      "end": 21.34
+    },
+    {
+      "word": "Don't",
+      "start": 21.34,
+      "end": 21.579
+    },
+    {
+      "word": " ",
+      "start": 21.579,
+      "end": 21.619
+    },
+    {
+      "word": "blame",
+      "start": 21.619,
+      "end": 21.84
+    },
+    {
+      "word": " ",
+      "start": 21.84,
+      "end": 21.899
+    },
+    {
+      "word": "the",
+      "start": 21.899,
+      "end": 21.96
+    },
+    {
+      "word": " ",
+      "start": 21.96,
+      "end": 22.019
+    },
+    {
+      "word": "broccoli.",
+      "start": 22.02,
+      "end": 22.519
+    },
+    {
+      "word": " ",
+      "start": 22.519,
+      "end": 23.419
+    },
+    {
+      "word": "That",
+      "start": 23.42,
+      "end": 23.519
+    },
+    {
+      "word": " ",
+      "start": 23.519,
+      "end": 23.619
+    },
+    {
+      "word": "apple",
+      "start": 23.619,
+      "end": 23.959
+    },
+    {
+      "word": " ",
+      "start": 23.959,
+      "end": 24.059
+    },
+    {
+      "word": "sitting",
+      "start": 24.059,
+      "end": 24.239
+    },
+    {
+      "word": " ",
+      "start": 24.239,
+      "end": 24.279
+    },
+    {
+      "word": "in",
+      "start": 24.279,
+      "end": 24.34
+    },
+    {
+      "word": " ",
+      "start": 24.34,
+      "end": 24.379
+    },
+    {
+      "word": "your",
+      "start": 24.379,
+      "end": 24.479
+    },
+    {
+      "word": " ",
+      "start": 24.479,
+      "end": 24.519
+    },
+    {
+      "word": "fridge,",
+      "start": 24.519,
+      "end": 24.859
+    },
+    {
+      "word": " ",
+      "start": 24.859,
+      "end": 25.279
+    },
+    {
+      "word": "that",
+      "start": 25.279,
+      "end": 25.399
+    },
+    {
+      "word": " ",
+      "start": 25.399,
+      "end": 25.479
+    },
+    {
+      "word": "bowl",
+      "start": 25.479,
+      "end": 25.619
+    },
+    {
+      "word": " ",
+      "start": 25.619,
+      "end": 25.659
+    },
+    {
+      "word": "of",
+      "start": 25.659,
+      "end": 25.76
+    },
+    {
+      "word": " ",
+      "start": 25.76,
+      "end": 25.799
+    },
+    {
+      "word": "oatmeal",
+      "start": 25.799,
+      "end": 26.139
+    },
+    {
+      "word": " ",
+      "start": 26.139,
+      "end": 26.18
+    },
+    {
+      "word": "in",
+      "start": 26.18,
+      "end": 26.239
+    },
+    {
+      "word": " ",
+      "start": 26.239,
+      "end": 26.26
+    },
+    {
+      "word": "the",
+      "start": 26.26,
+      "end": 26.319
+    },
+    {
+      "word": " ",
+      "start": 26.319,
+      "end": 26.359
+    },
+    {
+      "word": "morning,",
+      "start": 26.359,
+      "end": 26.68
+    },
+    {
+      "word": " ",
+      "start": 26.68,
+      "end": 27.239
+    },
+    {
+      "word": "start",
+      "start": 27.239,
+      "end": 27.5
+    },
+    {
+      "word": " ",
+      "start": 27.5,
+      "end": 27.559
+    },
+    {
+      "word": "there,",
+      "start": 27.559,
+      "end": 27.819
+    },
+    {
+      "word": " ",
+      "start": 27.819,
+      "end": 28.379
+    },
+    {
+      "word": "one",
+      "start": 28.379,
+      "end": 28.599
+    },
+    {
+      "word": " ",
+      "start": 28.599,
+      "end": 28.639
+    },
+    {
+      "word": "thing",
+      "start": 28.639,
+      "end": 28.779
+    },
+    {
+      "word": " ",
+      "start": 28.779,
+      "end": 28.819
+    },
+    {
+      "word": "at",
+      "start": 28.819,
+      "end": 28.879
+    },
+    {
+      "word": " ",
+      "start": 28.879,
+      "end": 28.92
+    },
+    {
+      "word": "a",
+      "start": 28.92,
+      "end": 28.939
+    },
+    {
+      "word": " ",
+      "start": 28.939,
+      "end": 29.059
+    },
+    {
+      "word": "time.",
+      "start": 29.059,
+      "end": 29.419
+    },
+    {
+      "word": " ",
+      "start": 29.419,
+      "end": 29.419
+    },
+    {
+      "word": "Four",
+      "start": 30.559,
+      "end": 30.719
+    },
+    {
+      "word": " ",
+      "start": 30.719,
+      "end": 30.859
+    },
+    {
+      "word": "weeks,",
+      "start": 30.859,
+      "end": 31.219
+    },
+    {
+      "word": " ",
+      "start": 31.219,
+      "end": 31.639
+    },
+    {
+      "word": "then",
+      "start": 31.639,
+      "end": 31.799
+    },
+    {
+      "word": " ",
+      "start": 31.799,
+      "end": 31.859
+    },
+    {
+      "word": "decide.",
+      "start": 31.859,
+      "end": 32.36
+    },
+    {
+      "word": " ",
+      "start": 32.36,
+      "end": 33.18
+    },
+    {
+      "word": "Recipes",
+      "start": 33.18,
+      "end": 33.739
+    },
+    {
+      "word": " ",
+      "start": 33.739,
+      "end": 33.779
+    },
+    {
+      "word": "at",
+      "start": 33.779,
+      "end": 33.919
+    },
+    {
+      "word": " ",
+      "start": 33.919,
+      "end": 33.959
+    },
+    {
+      "word": "dailylifehacks.com.",
+      "start": 33.959,
+      "end": 35.479
+    },
+    {
+      "word": " ",
+      "start": 35.479,
+      "end": 35.919
+    },
+    {
+      "word": "Free",
+      "start": 35.919,
+      "end": 36.2
+    },
+    {
+      "word": " ",
+      "start": 36.2,
+      "end": 36.619
+    },
+    {
+      "word": "every",
+      "start": 36.619,
+      "end": 36.86
+    },
+    {
+      "word": " ",
+      "start": 36.86,
+      "end": 36.919
+    },
+    {
+      "word": "week.",
+      "start": 36.919,
+      "end": 37.18
+    }
+  ],
+  "duration": 37.18,
+  "language": "eng"
+}

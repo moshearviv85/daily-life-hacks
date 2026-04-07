@@ -1,0 +1,1002 @@
+{
+  "text": "Japanese food is healthy. You've heard that. What you haven't heard? Sashimi has zero fiber. Zero. But Japan also gave us edamame, natto, burdock root, things that are actually fiber bombs. Edamame alone, eight grams per cup. That's more than most protein bars claiming to be healthy. Natto is weirder. Fermented soybeans. Tastes like an acquired taste. Five grams of fiber per serving. Worth it. Burdock root, six grams per half cup. Most people have never touched it. The Japanese gut health secret isn't sushi. It's the stuff nobody orders. The recipes are at dailylifehacks.com. Free. In your inbox. Weekly.",
+  "words": [
+    {
+      "word": "Japanese",
+      "start": 0.099,
+      "end": 0.579
+    },
+    {
+      "word": " ",
+      "start": 0.579,
+      "end": 0.699
+    },
+    {
+      "word": "food",
+      "start": 0.699,
+      "end": 0.899
+    },
+    {
+      "word": " ",
+      "start": 0.899,
+      "end": 0.959
+    },
+    {
+      "word": "is",
+      "start": 0.959,
+      "end": 1.059
+    },
+    {
+      "word": " ",
+      "start": 1.059,
+      "end": 1.179
+    },
+    {
+      "word": "healthy.",
+      "start": 1.179,
+      "end": 1.559
+    },
+    {
+      "word": " ",
+      "start": 1.559,
+      "end": 2.359
+    },
+    {
+      "word": "You've",
+      "start": 2.359,
+      "end": 2.519
+    },
+    {
+      "word": " ",
+      "start": 2.519,
+      "end": 2.539
+    },
+    {
+      "word": "heard",
+      "start": 2.539,
+      "end": 2.74
+    },
+    {
+      "word": " ",
+      "start": 2.74,
+      "end": 2.799
+    },
+    {
+      "word": "that.",
+      "start": 2.799,
+      "end": 3.019
+    },
+    {
+      "word": " ",
+      "start": 3.019,
+      "end": 3.859
+    },
+    {
+      "word": "What",
+      "start": 3.859,
+      "end": 3.98
+    },
+    {
+      "word": " ",
+      "start": 3.98,
+      "end": 4.039
+    },
+    {
+      "word": "you",
+      "start": 4.039,
+      "end": 4.099
+    },
+    {
+      "word": " ",
+      "start": 4.099,
+      "end": 4.239
+    },
+    {
+      "word": "haven't",
+      "start": 4.239,
+      "end": 4.5
+    },
+    {
+      "word": " ",
+      "start": 4.5,
+      "end": 4.559
+    },
+    {
+      "word": "heard?",
+      "start": 4.559,
+      "end": 4.799
+    },
+    {
+      "word": " ",
+      "start": 4.799,
+      "end": 5.739
+    },
+    {
+      "word": "Sashimi",
+      "start": 5.739,
+      "end": 6.479
+    },
+    {
+      "word": " ",
+      "start": 6.479,
+      "end": 6.579
+    },
+    {
+      "word": "has",
+      "start": 6.579,
+      "end": 6.92
+    },
+    {
+      "word": " ",
+      "start": 6.92,
+      "end": 7.139
+    },
+    {
+      "word": "zero",
+      "start": 7.139,
+      "end": 7.46
+    },
+    {
+      "word": " ",
+      "start": 7.46,
+      "end": 7.679
+    },
+    {
+      "word": "fiber.",
+      "start": 7.679,
+      "end": 8.019
+    },
+    {
+      "word": " ",
+      "start": 8.019,
+      "end": 8.459
+    },
+    {
+      "word": "Zero.",
+      "start": 8.46,
+      "end": 8.859
+    },
+    {
+      "word": " ",
+      "start": 8.859,
+      "end": 9.859
+    },
+    {
+      "word": "But",
+      "start": 9.859,
+      "end": 9.92
+    },
+    {
+      "word": " ",
+      "start": 9.92,
+      "end": 10
+    },
+    {
+      "word": "Japan",
+      "start": 10,
+      "end": 10.519
+    },
+    {
+      "word": " ",
+      "start": 10.519,
+      "end": 10.619
+    },
+    {
+      "word": "also",
+      "start": 10.619,
+      "end": 10.84
+    },
+    {
+      "word": " ",
+      "start": 10.84,
+      "end": 10.939
+    },
+    {
+      "word": "gave",
+      "start": 10.939,
+      "end": 11.079
+    },
+    {
+      "word": " ",
+      "start": 11.079,
+      "end": 11.159
+    },
+    {
+      "word": "us",
+      "start": 11.159,
+      "end": 11.3
+    },
+    {
+      "word": " ",
+      "start": 11.3,
+      "end": 11.42
+    },
+    {
+      "word": "edamame,",
+      "start": 11.42,
+      "end": 11.979
+    },
+    {
+      "word": " ",
+      "start": 11.979,
+      "end": 12.5
+    },
+    {
+      "word": "natto,",
+      "start": 12.5,
+      "end": 12.88
+    },
+    {
+      "word": " ",
+      "start": 12.88,
+      "end": 13.519
+    },
+    {
+      "word": "burdock",
+      "start": 13.519,
+      "end": 13.96
+    },
+    {
+      "word": " ",
+      "start": 13.96,
+      "end": 14.019
+    },
+    {
+      "word": "root,",
+      "start": 14.019,
+      "end": 14.279
+    },
+    {
+      "word": " ",
+      "start": 14.279,
+      "end": 14.96
+    },
+    {
+      "word": "things",
+      "start": 14.96,
+      "end": 15.199
+    },
+    {
+      "word": " ",
+      "start": 15.199,
+      "end": 15.279
+    },
+    {
+      "word": "that",
+      "start": 15.279,
+      "end": 15.339
+    },
+    {
+      "word": " ",
+      "start": 15.339,
+      "end": 15.399
+    },
+    {
+      "word": "are",
+      "start": 15.399,
+      "end": 15.579
+    },
+    {
+      "word": " ",
+      "start": 15.579,
+      "end": 15.699
+    },
+    {
+      "word": "actually",
+      "start": 15.699,
+      "end": 16.159
+    },
+    {
+      "word": " ",
+      "start": 16.159,
+      "end": 16.379
+    },
+    {
+      "word": "fiber",
+      "start": 16.379,
+      "end": 16.779
+    },
+    {
+      "word": " ",
+      "start": 16.779,
+      "end": 16.879
+    },
+    {
+      "word": "bombs.",
+      "start": 16.879,
+      "end": 17.419
+    },
+    {
+      "word": " ",
+      "start": 17.419,
+      "end": 17.419
+    },
+    {
+      "word": "Edamame",
+      "start": 18.479,
+      "end": 18.959
+    },
+    {
+      "word": " ",
+      "start": 18.959,
+      "end": 19.019
+    },
+    {
+      "word": "alone,",
+      "start": 19.02,
+      "end": 19.42
+    },
+    {
+      "word": " ",
+      "start": 19.42,
+      "end": 20.059
+    },
+    {
+      "word": "eight",
+      "start": 20.059,
+      "end": 20.279
+    },
+    {
+      "word": " ",
+      "start": 20.279,
+      "end": 20.339
+    },
+    {
+      "word": "grams",
+      "start": 20.34,
+      "end": 20.799
+    },
+    {
+      "word": " ",
+      "start": 20.799,
+      "end": 20.84
+    },
+    {
+      "word": "per",
+      "start": 20.84,
+      "end": 20.939
+    },
+    {
+      "word": " ",
+      "start": 20.939,
+      "end": 21.099
+    },
+    {
+      "word": "cup.",
+      "start": 21.1,
+      "end": 21.379
+    },
+    {
+      "word": " ",
+      "start": 21.379,
+      "end": 21.799
+    },
+    {
+      "word": "That's",
+      "start": 21.799,
+      "end": 21.979
+    },
+    {
+      "word": " ",
+      "start": 21.979,
+      "end": 22.039
+    },
+    {
+      "word": "more",
+      "start": 22.039,
+      "end": 22.159
+    },
+    {
+      "word": " ",
+      "start": 22.159,
+      "end": 22.199
+    },
+    {
+      "word": "than",
+      "start": 22.199,
+      "end": 22.279
+    },
+    {
+      "word": " ",
+      "start": 22.279,
+      "end": 22.359
+    },
+    {
+      "word": "most",
+      "start": 22.359,
+      "end": 22.579
+    },
+    {
+      "word": " ",
+      "start": 22.579,
+      "end": 22.719
+    },
+    {
+      "word": "protein",
+      "start": 22.719,
+      "end": 23.159
+    },
+    {
+      "word": " ",
+      "start": 23.159,
+      "end": 23.26
+    },
+    {
+      "word": "bars",
+      "start": 23.26,
+      "end": 23.539
+    },
+    {
+      "word": " ",
+      "start": 23.539,
+      "end": 23.659
+    },
+    {
+      "word": "claiming",
+      "start": 23.659,
+      "end": 23.939
+    },
+    {
+      "word": " ",
+      "start": 23.939,
+      "end": 23.999
+    },
+    {
+      "word": "to",
+      "start": 24,
+      "end": 24.059
+    },
+    {
+      "word": " ",
+      "start": 24.059,
+      "end": 24.099
+    },
+    {
+      "word": "be",
+      "start": 24.1,
+      "end": 24.199
+    },
+    {
+      "word": " ",
+      "start": 24.199,
+      "end": 24.259
+    },
+    {
+      "word": "healthy.",
+      "start": 24.26,
+      "end": 24.619
+    },
+    {
+      "word": " ",
+      "start": 24.619,
+      "end": 24.619
+    },
+    {
+      "word": "Natto",
+      "start": 25.719,
+      "end": 26.18
+    },
+    {
+      "word": " ",
+      "start": 26.18,
+      "end": 26.26
+    },
+    {
+      "word": "is",
+      "start": 26.26,
+      "end": 26.439
+    },
+    {
+      "word": " ",
+      "start": 26.439,
+      "end": 26.499
+    },
+    {
+      "word": "weirder.",
+      "start": 26.5,
+      "end": 26.879
+    },
+    {
+      "word": " ",
+      "start": 26.879,
+      "end": 27.359
+    },
+    {
+      "word": "Fermented",
+      "start": 27.359,
+      "end": 27.839
+    },
+    {
+      "word": " ",
+      "start": 27.839,
+      "end": 28.019
+    },
+    {
+      "word": "soybeans.",
+      "start": 28.019,
+      "end": 28.679
+    },
+    {
+      "word": " ",
+      "start": 28.679,
+      "end": 29.059
+    },
+    {
+      "word": "Tastes",
+      "start": 29.059,
+      "end": 29.479
+    },
+    {
+      "word": " ",
+      "start": 29.479,
+      "end": 29.599
+    },
+    {
+      "word": "like",
+      "start": 29.599,
+      "end": 29.979
+    },
+    {
+      "word": " ",
+      "start": 29.979,
+      "end": 30.619
+    },
+    {
+      "word": "an",
+      "start": 30.619,
+      "end": 30.679
+    },
+    {
+      "word": " ",
+      "start": 30.679,
+      "end": 30.739
+    },
+    {
+      "word": "acquired",
+      "start": 30.739,
+      "end": 31.26
+    },
+    {
+      "word": " ",
+      "start": 31.26,
+      "end": 31.319
+    },
+    {
+      "word": "taste.",
+      "start": 31.319,
+      "end": 31.739
+    },
+    {
+      "word": " ",
+      "start": 31.739,
+      "end": 32.579
+    },
+    {
+      "word": "Five",
+      "start": 32.579,
+      "end": 32.739
+    },
+    {
+      "word": " ",
+      "start": 32.739,
+      "end": 32.899
+    },
+    {
+      "word": "grams",
+      "start": 32.899,
+      "end": 33.219
+    },
+    {
+      "word": " ",
+      "start": 33.219,
+      "end": 33.259
+    },
+    {
+      "word": "of",
+      "start": 33.259,
+      "end": 33.36
+    },
+    {
+      "word": " ",
+      "start": 33.36,
+      "end": 33.459
+    },
+    {
+      "word": "fiber",
+      "start": 33.459,
+      "end": 33.819
+    },
+    {
+      "word": " ",
+      "start": 33.819,
+      "end": 33.88
+    },
+    {
+      "word": "per",
+      "start": 33.88,
+      "end": 34.04
+    },
+    {
+      "word": " ",
+      "start": 34.04,
+      "end": 34.119
+    },
+    {
+      "word": "serving.",
+      "start": 34.119,
+      "end": 34.459
+    },
+    {
+      "word": " ",
+      "start": 34.459,
+      "end": 34.979
+    },
+    {
+      "word": "Worth",
+      "start": 34.979,
+      "end": 35.18
+    },
+    {
+      "word": " ",
+      "start": 35.18,
+      "end": 35.2
+    },
+    {
+      "word": "it.",
+      "start": 35.2,
+      "end": 35.379
+    },
+    {
+      "word": " ",
+      "start": 35.379,
+      "end": 36.219
+    },
+    {
+      "word": "Burdock",
+      "start": 36.219,
+      "end": 36.579
+    },
+    {
+      "word": " ",
+      "start": 36.579,
+      "end": 36.659
+    },
+    {
+      "word": "root,",
+      "start": 36.659,
+      "end": 36.919
+    },
+    {
+      "word": " ",
+      "start": 36.919,
+      "end": 37.539
+    },
+    {
+      "word": "six",
+      "start": 37.54,
+      "end": 37.68
+    },
+    {
+      "word": " ",
+      "start": 37.68,
+      "end": 37.799
+    },
+    {
+      "word": "grams",
+      "start": 37.799,
+      "end": 38.259
+    },
+    {
+      "word": " ",
+      "start": 38.259,
+      "end": 38.319
+    },
+    {
+      "word": "per",
+      "start": 38.319,
+      "end": 38.479
+    },
+    {
+      "word": " ",
+      "start": 38.479,
+      "end": 38.559
+    },
+    {
+      "word": "half",
+      "start": 38.559,
+      "end": 38.819
+    },
+    {
+      "word": " ",
+      "start": 38.819,
+      "end": 38.879
+    },
+    {
+      "word": "cup.",
+      "start": 38.879,
+      "end": 39.18
+    },
+    {
+      "word": " ",
+      "start": 39.18,
+      "end": 39.54
+    },
+    {
+      "word": "Most",
+      "start": 39.54,
+      "end": 39.759
+    },
+    {
+      "word": " ",
+      "start": 39.759,
+      "end": 39.879
+    },
+    {
+      "word": "people",
+      "start": 39.879,
+      "end": 40.159
+    },
+    {
+      "word": " ",
+      "start": 40.159,
+      "end": 40.219
+    },
+    {
+      "word": "have",
+      "start": 40.219,
+      "end": 40.459
+    },
+    {
+      "word": " ",
+      "start": 40.459,
+      "end": 40.52
+    },
+    {
+      "word": "never",
+      "start": 40.52,
+      "end": 40.819
+    },
+    {
+      "word": " ",
+      "start": 40.819,
+      "end": 40.899
+    },
+    {
+      "word": "touched",
+      "start": 40.899,
+      "end": 41.159
+    },
+    {
+      "word": " ",
+      "start": 41.159,
+      "end": 41.2
+    },
+    {
+      "word": "it.",
+      "start": 41.2,
+      "end": 41.319
+    },
+    {
+      "word": " ",
+      "start": 41.319,
+      "end": 42.179
+    },
+    {
+      "word": "The",
+      "start": 42.18,
+      "end": 42.259
+    },
+    {
+      "word": " ",
+      "start": 42.259,
+      "end": 42.34
+    },
+    {
+      "word": "Japanese",
+      "start": 42.34,
+      "end": 42.84
+    },
+    {
+      "word": " ",
+      "start": 42.84,
+      "end": 42.959
+    },
+    {
+      "word": "gut",
+      "start": 42.959,
+      "end": 43.199
+    },
+    {
+      "word": " ",
+      "start": 43.199,
+      "end": 43.239
+    },
+    {
+      "word": "health",
+      "start": 43.239,
+      "end": 43.499
+    },
+    {
+      "word": " ",
+      "start": 43.499,
+      "end": 43.559
+    },
+    {
+      "word": "secret",
+      "start": 43.559,
+      "end": 43.919
+    },
+    {
+      "word": " ",
+      "start": 43.919,
+      "end": 44
+    },
+    {
+      "word": "isn't",
+      "start": 44,
+      "end": 44.339
+    },
+    {
+      "word": " ",
+      "start": 44.339,
+      "end": 44.459
+    },
+    {
+      "word": "sushi.",
+      "start": 44.459,
+      "end": 44.899
+    },
+    {
+      "word": " ",
+      "start": 44.899,
+      "end": 45.719
+    },
+    {
+      "word": "It's",
+      "start": 45.719,
+      "end": 45.84
+    },
+    {
+      "word": " ",
+      "start": 45.84,
+      "end": 45.879
+    },
+    {
+      "word": "the",
+      "start": 45.879,
+      "end": 45.959
+    },
+    {
+      "word": " ",
+      "start": 45.959,
+      "end": 46.039
+    },
+    {
+      "word": "stuff",
+      "start": 46.039,
+      "end": 46.259
+    },
+    {
+      "word": " ",
+      "start": 46.259,
+      "end": 46.459
+    },
+    {
+      "word": "nobody",
+      "start": 46.459,
+      "end": 46.879
+    },
+    {
+      "word": " ",
+      "start": 46.879,
+      "end": 46.979
+    },
+    {
+      "word": "orders.",
+      "start": 46.979,
+      "end": 47.379
+    },
+    {
+      "word": " ",
+      "start": 47.379,
+      "end": 48.059
+    },
+    {
+      "word": "The",
+      "start": 48.059,
+      "end": 48.119
+    },
+    {
+      "word": " ",
+      "start": 48.119,
+      "end": 48.18
+    },
+    {
+      "word": "recipes",
+      "start": 48.18,
+      "end": 48.739
+    },
+    {
+      "word": " ",
+      "start": 48.739,
+      "end": 48.799
+    },
+    {
+      "word": "are",
+      "start": 48.799,
+      "end": 48.879
+    },
+    {
+      "word": " ",
+      "start": 48.879,
+      "end": 48.939
+    },
+    {
+      "word": "at",
+      "start": 48.939,
+      "end": 49.119
+    },
+    {
+      "word": " ",
+      "start": 49.119,
+      "end": 49.159
+    },
+    {
+      "word": "daily-life-hacks.com",
+      "start": 49.159,
+      "end": 51
+    },
+    {
+      "word": " ",
+      "start": 51,
+      "end": 51.519
+    },
+    {
+      "word": "Free.",
+      "start": 51.52,
+      "end": 51.819
+    },
+    {
+      "word": " ",
+      "start": 51.819,
+      "end": 52.379
+    },
+    {
+      "word": "In",
+      "start": 52.379,
+      "end": 52.479
+    },
+    {
+      "word": " ",
+      "start": 52.479,
+      "end": 52.539
+    },
+    {
+      "word": "your",
+      "start": 52.539,
+      "end": 52.659
+    },
+    {
+      "word": " ",
+      "start": 52.659,
+      "end": 52.719
+    },
+    {
+      "word": "inbox.",
+      "start": 52.719,
+      "end": 53.279
+    },
+    {
+      "word": " ",
+      "start": 53.279,
+      "end": 53.719
+    },
+    {
+      "word": "Weekly.",
+      "start": 53.719,
+      "end": 54.039
+    }
+  ],
+  "duration": 54.039,
+  "language": "eng"
+}

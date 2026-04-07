@@ -1,0 +1,40 @@
+---
+description: Checklist for writing new articles and shipping Pinterest keyword URLs (KV + mapping) without drift.
+globs: src/data/articles/**/*.md,pipeline-data/router-mapping.json,pipeline-data/kv-upload.json,pipeline-data/gemini-article-instructions.md,pipeline-data/content-registry.json
+alwaysApply: false
+---
+
+# Article Ship Checklist (Daily Life Hacks)
+
+When adding or editing site articles, follow this order so production behavior matches intent.
+
+## Writing (single source of truth)
+
+- Follow `pipeline-data/gemini-article-instructions.md` for structure, frontmatter, FAQ (5 Q&As), length, and banned patterns (no em dash, no emojis, no medical guarantees, etc.).
+- For tone and wording on non-legal copy, follow `.cursor/skills/david-miller-voice/SKILL.md` (the `david-miller-voice` rule points here on purpose).
+
+## Images (per project pipeline)
+
+- Main: `/images/{base-slug}-main.jpg`
+- Pins: `/images/pins/{base-slug}_v1.jpg` through `_v4.jpg`
+- Use the existing image-generation scripts and scene rules in `pipeline-data/` / `INSTRUCTIONS-KEYWORD-PIPELINE.md` as applicable.
+
+## Pinterest keyword URLs (production routing)
+
+Pins often use **keyword slugs** that are not the same as the article file slug (`base_slug`). The Worker resolves paths using **Cloudflare KV** (`ROUTES_KV`); query strings do not affect routing.
+
+**Before treating a batch as done:**
+
+1. For each article, `router-mapping.json` must list **v1–v4** with `url_slug` + title for pins.
+2. `kv-upload.json` must include a KV row for **every** `url_slug` (key = slug without leading slash), value = `{"type":"internal","base_slug":"<file-slug>"}`.
+3. Deploy KV to production: `wrangler kv bulk put --binding ROUTES_KV pipeline-data/kv-upload.json` (from project docs; use the correct account/project).
+
+If step 2–3 is skipped, Pinterest links that use keyword paths can 404 even when the `.md` page exists.
+
+## Registry (if the project uses it)
+
+- When publishing new articles, update `pipeline-data/content-registry.json` (and the public copy if your flow mirrors it) per existing project practice.
+
+## Do not duplicate
+
+- Before creating a new slug, confirm it is not already used in `src/data/articles/` and not already reserved in `pipeline-data/topics-to-write.md` backlog lists.

@@ -1,0 +1,31 @@
+[emphatic] Bloated. Every time you eat healthy.
+[dry] So you quit your diet.
+[matter-of-fact] Makes sense.
+[emphatic] Wrong move.
+
+[pause]
+
+[matter-of-fact] Most people think bloating means something's wrong.
+[building] It means your gut is alive.
+[emphatic] Dead guts don't bloat.
+
+[pause]
+
+[matter-of-fact] Your bacteria just hit a flood of fiber they weren't ready for.
+[dry] They went into overdrive.
+[dry] Don't blame the broccoli.
+
+[pause]
+
+[matter-of-fact] That apple sitting in your fridge.
+[matter-of-fact] That bowl of oatmeal in the morning.
+[matter-of-fact] Start there. One thing at a time.
+
+[pause]
+
+[dry] Four weeks. Then decide.
+
+[pause]
+
+[warm] Recipes at www.daily-life-hacks.com
+[matter-of-fact] Free. Every week.

@@ -1,0 +1,36 @@
+{
+  "duration_ms": 55000,
+  "instrumental": true,
+  "positive_global_styles": ["energetic", "driving", "electronic", "punchy"],
+  "negative_global_styles": ["slow", "melancholic", "ambient"],
+  "sections": [
+    {
+      "section_name": "Hard Open",
+      "duration_ms": 8000,
+      "positive_local_styles": ["punchy beat", "bold", "attention-grabbing"],
+      "negative_local_styles": ["soft", "gentle"],
+      "lines": []
+    },
+    {
+      "section_name": "Facts Drive",
+      "duration_ms": 30000,
+      "positive_local_styles": ["driving rhythm", "synth", "forward momentum", "upbeat"],
+      "negative_local_styles": ["chaotic", "heavy metal"],
+      "lines": []
+    },
+    {
+      "section_name": "Punchline",
+      "duration_ms": 10000,
+      "positive_local_styles": ["building energy", "crisp", "confident"],
+      "negative_local_styles": ["messy"],
+      "lines": []
+    },
+    {
+      "section_name": "Exit",
+      "duration_ms": 7000,
+      "positive_local_styles": ["quick fade", "clean", "decisive"],
+      "negative_local_styles": ["lingering"],
+      "lines": []
+    }
+  ]
+}

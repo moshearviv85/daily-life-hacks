@@ -1,0 +1,36 @@
+{
+  "duration_ms": 38000,
+  "instrumental": true,
+  "positive_global_styles": ["phonk", "dark phonk", "aggressive", "fast tempo", "viral tiktok energy", "heavy 808 bass", "high BPM"],
+  "negative_global_styles": ["slow", "ambient", "chill", "jazz", "lo-fi", "soft"],
+  "sections": [
+    {
+      "section_name": "Phonk Drop",
+      "duration_ms": 4000,
+      "positive_local_styles": ["hard drop", "808 bass hit", "phonk drum pattern", "aggressive opener"],
+      "negative_local_styles": ["soft", "gradual", "gentle"],
+      "lines": []
+    },
+    {
+      "section_name": "Full Drive",
+      "duration_ms": 22000,
+      "positive_local_styles": ["full phonk energy", "fast cowbell hi-hat", "808 slides", "relentless rhythm", "dark synth stabs"],
+      "negative_local_styles": ["breakdown", "quiet", "mellow"],
+      "lines": []
+    },
+    {
+      "section_name": "Peak",
+      "duration_ms": 7000,
+      "positive_local_styles": ["maximum energy", "layered phonk", "distorted bass", "punchy"],
+      "negative_local_styles": ["soft"],
+      "lines": []
+    },
+    {
+      "section_name": "Exit",
+      "duration_ms": 5000,
+      "positive_local_styles": ["clean cut", "decisive", "quick fade"],
+      "negative_local_styles": ["lingering"],
+      "lines": []
+    }
+  ]
+}

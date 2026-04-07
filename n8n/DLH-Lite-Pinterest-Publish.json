@@ -1,0 +1,481 @@
+{
+  "name": "DLH Lite - Pinterest Publish (Interactive OAuth + Picker)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual_trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [-1600, 260]
+    },
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "dlh/pinterest/publish",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook_get",
+      "name": "Publish UI (GET)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-1600, 0]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "dlh/pinterest/publish",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "webhook_post",
+      "name": "Publish Selected (POST)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-520, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://api.pinterest.com/v5/user_account",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "ignoreResponseCode": true,
+          "fullResponse": false
+        }
+      },
+      "id": "pinterest_auth_check",
+      "name": "Pinterest Auth Check",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [-1360, 0],
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "Pinterest API Token" }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "auth_ok",
+              "leftValue": "={{ $json.username || $json.id || $json.account_type || $json.profile_image }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "notEmpty", "singleValue": true }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if_connected",
+      "name": "Is Pinterest Connected?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [-1140, 0]
+    },
+    {
+      "parameters": {
+        "url": "https://api.pinterest.com/v5/user_account",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "ignoreResponseCode": true,
+          "fullResponse": false
+        }
+      },
+      "id": "pinterest_auth_check_post",
+      "name": "Pinterest Auth Check (POST)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [-340, -160],
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "Pinterest API Token" }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "auth_ok_post",
+              "leftValue": "={{ $json.username || $json.id || $json.account_type || $json.profile_image }}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "notEmpty", "singleValue": true }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if_connected_post",
+      "name": "Is Pinterest Connected? (POST)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [-120, -160]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" /><title>Pinterest not connected</title><style>body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:24px}.card{max-width:760px;border:1px solid #ddd;border-radius:12px;padding:18px}h1{margin:0 0 10px;font-size:20px}.warn{background:#fff7ed;border:1px solid #fed7aa;padding:12px;border-radius:10px;color:#7c2d12;margin-top:12px}code{background:#f5f5f5;padding:2px 6px;border-radius:6px}</style></head><body><div class=\"card\"><h1>Pinterest is not connected</h1><div class=\"warn\">Connect the Pinterest OAuth credential in n8n first, then refresh this page.</div><p>Demo note: record the full OAuth consent screen (inside AdsPower) and return here to pick exactly one pin.</p></div></body></html>",
+        "options": {
+          "responseCode": 401,
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type", "value": "text/html; charset=utf-8" }
+            ]
+          }
+        }
+      },
+      "id": "respond_not_connected",
+      "name": "Respond Not Connected (HTML)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [-920, 160]
+    },
+    {
+      "parameters": {
+        "documentId": { "__rl": true, "value": "", "mode": "list" },
+        "sheetName": { "__rl": true, "value": "", "mode": "list" },
+        "filtersUI": {
+          "values": [{ "lookupColumn": "status", "lookupValue": "PENDING" }]
+        },
+        "options": { "returnAllMatches": true }
+      },
+      "id": "get_pending",
+      "name": "List Pending Rows",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [-920, 0],
+      "credentials": {
+        "googleSheetsOAuth2Api": { "id": "", "name": "Google Sheets OAuth2" }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": { "__rl": true, "value": "", "mode": "list" },
+        "sheetName": { "__rl": true, "value": "", "mode": "list" },
+        "filtersUI": {
+          "values": [{ "lookupColumn": "status", "lookupValue": "PENDING" }]
+        },
+        "options": { "returnAllMatches": true }
+      },
+      "id": "get_pending_post",
+      "name": "List Pending Rows (POST)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [-340, 0],
+      "credentials": {
+        "googleSheetsOAuth2Api": { "id": "", "name": "Google Sheets OAuth2" }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows = $input.all().map(i => i.json);\n\nconst esc = (s) => String(s ?? '').replace(/[&<>\"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]));\n\nconst pending = rows\n  .filter(r => String(r.status || '').toUpperCase() === 'PENDING')\n  .slice(0, 75);\n\nconst options = pending\n  .map(r => {\n    const rowId = String(r.row_id || '').trim();\n    const title = String(r.pin_title || '').trim();\n    const label = `${rowId} — ${title}`.trim();\n    return `<option value=\"${esc(rowId)}\">${esc(label).slice(0, 160)}</option>`;\n  })\n  .join('\\n');\n\nconst hasOptions = pending.length > 0;\n\nconst html = `<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <title>DLH Pinterest Publish</title>\n  <style>\n    body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; margin: 24px; }\n    .card { max-width: 760px; border: 1px solid #ddd; border-radius: 12px; padding: 18px; }\n    h1 { margin: 0 0 8px; font-size: 20px; }\n    p { margin: 0 0 12px; color: #444; line-height: 1.4; }\n    select, button { width: 100%; padding: 10px; font-size: 14px; }\n    button { margin-top: 12px; background: #F29B30; color: #fff; border: 0; border-radius: 10px; font-weight: 800; cursor: pointer; }\n    .muted { font-size: 12px; color: #666; margin-top: 10px; }\n    .warn { background: #fff7ed; border: 1px solid #fed7aa; padding: 12px; border-radius: 10px; color: #7c2d12; margin-top: 12px; }\n    code { background: #f5f5f5; padding: 2px 6px; border-radius: 6px; }\n  </style>\n</head>\n<body>\n  <div class=\"card\">\n    <h1>Publish 1 Pinterest Pin (manual)</h1>\n    <p>Select exactly one <code>PENDING</code> row. This workflow will publish only what you pick.</p>\n    ${hasOptions ? '' : '<div class=\"warn\">No PENDING rows found.</div>'}\n    <form method=\"POST\">\n      <label for=\"row_id\"><strong>Select pin</strong></label>\n      <select id=\"row_id\" name=\"row_id\" required>\n        ${hasOptions ? options : '<option value=\"\">(none)</option>'}\n      </select>\n      <button type=\"submit\" ${hasOptions ? '' : 'disabled'}>Publish selected pin</button>\n      <div class=\"muted\">Demo note: manual selection is intentional to match Pinterest guidelines.</div>\n    </form>\n  </div>\n</body>\n</html>`;\n\nreturn [{ json: { html } }];"
+      },
+      "id": "build_picker_html",
+      "name": "Build Picker HTML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-700, 0]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type", "value": "text/html; charset=utf-8" }
+            ]
+          }
+        }
+      },
+      "id": "respond_picker",
+      "name": "Respond Picker (HTML)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [-480, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "const FORCE_BOARD_ID = ''; // Optional: set a fixed board_id for the demo\n\nconst body = $input.first().json.body || {};\nconst rowId = String(body.row_id || '').trim();\n\nif (!rowId) {\n  return [{ json: { valid: false, row_id: '', status: 'ERROR', pin_id: '', published_date: new Date().toISOString(), pinterest_response: 'No row_id selected' } }];\n}\n\nconst allRows = $('List Pending Rows (POST)').all().map(i => i.json);\nconst row = allRows.find(r => String(r.row_id || '').trim() === rowId);\n\nif (!row) {\n  return [{ json: { valid: false, row_id: rowId, status: 'ERROR', pin_id: '', published_date: new Date().toISOString(), pinterest_response: 'Selected row not found in pending list' } }];\n}\n\nconst banned = ['casino', 'viagra'];\nconst errors = [];\nconst title = String(row.pin_title ?? '').trim();\nconst desc = String(row.pin_description ?? '').trim();\nconst alt = String(row.alt_text ?? '').trim();\nconst imageUrl = String(row.image_url ?? '').trim();\nconst boardIdFromRow = String(row.board_id ?? '').trim();\nconst link = String(row.link ?? '').trim();\n\nconst finalBoardId = String(FORCE_BOARD_ID || boardIdFromRow).trim();\n\nif (!String(row.row_id ?? '').trim()) errors.push('row_id missing');\nif (!title) errors.push('pin_title missing');\nif (title.length > 100) errors.push('pin_title over 100 chars');\nif (!desc) errors.push('pin_description empty');\nif (desc.length < 100 || desc.length > 500) errors.push('pin_description must be 100-500 chars');\nif (!alt) errors.push('alt_text empty');\nif (alt.length < 50 || alt.length > 500) errors.push('alt_text must be 50-500 chars');\nif (!imageUrl) errors.push('image_url empty');\nif (!finalBoardId) errors.push('board_id empty');\nif (!link) errors.push('link empty');\n\nconst blob = (title + ' ' + desc).toLowerCase();\nfor (const w of banned) {\n  if (blob.includes(w.toLowerCase())) errors.push('blocked term');\n}\n\nif (errors.length) {\n  return [{\n    json: {\n      valid: false,\n      row_id: row.row_id,\n      status: 'ERROR',\n      pin_id: '',\n      published_date: new Date().toISOString(),\n      pinterest_response: 'Validation: ' + errors.join('; ')\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    valid: true,\n    row_id: row.row_id,\n    pinPayload: {\n      title,\n      description: desc.replace(/\\n/g, ' '),\n      link,\n      alt_text: alt,\n      board_id: finalBoardId,\n      media_source: { source_type: 'image_url', url: imageUrl }\n    }\n  }\n}];"
+      },
+      "id": "validate_build_selected",
+      "name": "Validate and Build Payload (Selected)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-260, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "const row = $('Get Next Pending Row').first().json;\nconst banned = ['casino', 'viagra'];\n\nconst errors = [];\nconst title = String(row.pin_title ?? '').trim();\nconst desc = String(row.pin_description ?? '').trim();\nconst alt = String(row.alt_text ?? '').trim();\nconst imageUrl = String(row.image_url ?? '').trim();\nconst boardId = String(row.board_id ?? '').trim();\nconst link = String(row.link ?? '').trim();\n\nif (!String(row.row_id ?? '').trim()) errors.push('row_id missing');\nif (!title) {\n  return [{\n    json: {\n      valid: false,\n      row_id: row.row_id,\n      status: 'SKIPPED',\n      pin_id: '',\n      published_date: new Date().toISOString(),\n      pinterest_response: 'Skipped: no pin_title'\n    }\n  }];\n}\nif (title.length > 100) errors.push('pin_title over 100 chars');\nif (!desc) errors.push('pin_description empty');\nif (desc.length < 100 || desc.length > 500) errors.push('pin_description must be 100-500 chars');\nif (!alt) errors.push('alt_text empty');\nif (alt.length < 50 || alt.length > 500) errors.push('alt_text must be 50-500 chars');\nif (!imageUrl) errors.push('image_url empty');\nif (!boardId) errors.push('board_id empty');\nif (!link) errors.push('link empty');\n\nconst blob = (title + ' ' + desc).toLowerCase();\nfor (const w of banned) {\n  if (blob.includes(w.toLowerCase())) errors.push('blocked term');\n}\n\nif (errors.length) {\n  return [{\n    json: {\n      valid: false,\n      row_id: row.row_id,\n      status: 'ERROR',\n      pin_id: '',\n      published_date: new Date().toISOString(),\n      pinterest_response: 'Validation: ' + errors.join('; ')\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    valid: true,\n    row_id: row.row_id,\n    pinPayload: {\n      title,\n      description: desc.replace(/\\n/g, ' '),\n      link,\n      alt_text: alt,\n      board_id: boardId,\n      media_source: { source_type: 'image_url', url: imageUrl }\n    }\n  }\n}];"
+      },
+      "id": "validate_build",
+      "name": "Validate and Build Payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-740, 260],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "valid_true",
+              "leftValue": "={{ $json.valid }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "if_valid",
+      "name": "Passed Validation?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [-40, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.pinterest.com/v5/pins",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.pinPayload }}",
+        "options": {}
+      },
+      "id": "create_pin",
+      "name": "Create Pinterest Pin",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.3,
+      "position": [220, 0],
+      "retryOnFail": true,
+      "onError": "continueRegularOutput",
+      "credentials": {
+        "httpHeaderAuth": { "id": "", "name": "Pinterest API Token" }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const api = $input.first().json;\nconst row = $('Validate and Build Payload (Selected)').first().json;\n\nif (api && api.id) {\n  return [{\n    json: {\n      row_id: row.row_id,\n      status: 'PUBLISHED',\n      pin_id: api.id,\n      published_date: new Date().toISOString(),\n      pinterest_response: JSON.stringify(api).substring(0, 500)\n    }\n  }];\n}\n\nreturn [{\n  json: {\n    row_id: row.row_id,\n    status: 'ERROR',\n    pin_id: '',\n    published_date: new Date().toISOString(),\n    pinterest_response: JSON.stringify(api || { message: 'Unknown API error' }).substring(0, 500)\n  }\n}];"
+      },
+      "id": "check_result",
+      "name": "Check Pin Result",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 0]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": { "__rl": true, "value": "", "mode": "list" },
+        "sheetName": { "__rl": true, "value": "", "mode": "list" },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_id": "={{ $json.row_id }}",
+            "status": "={{ $json.status }}",
+            "pin_id": "={{ $json.pin_id }}",
+            "published_date": "={{ $json.published_date }}",
+            "pinterest_response": "={{ $json.pinterest_response }}"
+          },
+          "matchingColumns": ["row_id"],
+          "schema": [
+            {
+              "id": "row_id",
+              "displayName": "row_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "pin_id",
+              "displayName": "pin_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "published_date",
+              "displayName": "published_date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "pinterest_response",
+              "displayName": "pinterest_response",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "id": "mark_result",
+      "name": "Mark Row Result",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [700, 0],
+      "credentials": {
+        "googleSheetsOAuth2Api": { "id": "", "name": "Google Sheets OAuth2" }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const r = $input.first().json || {};\nconst ok = String(r.status || '') === 'PUBLISHED';\nconst pinId = String(r.pin_id || '');\nconst msg = String(r.pinterest_response || '');\n\nconst esc = (s) => String(s ?? '').replace(/[&<>\"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;'}[c]));\n\nconst title = ok ? 'Published' : 'Error';\nconst color = ok ? '#166534' : '#7c2d12';\nconst bg = ok ? '#f0fdf4' : '#fff7ed';\n\nconst html = `<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <title>${title}</title>\n  <style>\n    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:24px}\n    .card{max-width:760px;border:1px solid #ddd;border-radius:12px;padding:18px}\n    h1{margin:0 0 10px;font-size:20px}\n    .box{background:${bg};border:1px solid #ddd;padding:12px;border-radius:10px;color:${color};line-height:1.5}\n    code{background:#f5f5f5;padding:2px 6px;border-radius:6px;word-break:break-all}\n    a{color:#F29B30;font-weight:800}\n  </style>\n</head>\n<body>\n  <div class=\"card\">\n    <h1>${title}</h1>\n    <div class=\"box\">\n      Row: <code>${esc(r.row_id || '')}</code><br/>\n      Status: <code>${esc(r.status || '')}</code>\n      ${pinId ? `<br/>Pin ID: <code>${esc(pinId)}</code>` : ''}\n    </div>\n    ${msg ? `<p style=\"margin-top:12px;color:#444\">${esc(msg).slice(0, 400)}</p>` : ''}\n    <p style=\"margin-top:12px\"><a href=\"/webhook/dlh/pinterest/publish\">Publish another (manual)</a></p>\n  </div>\n</body>\n</html>`;\n\nreturn [{ json: { html } }];"
+      },
+      "id": "build_result_html",
+      "name": "Build Result HTML",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [700, 160]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.html }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              { "name": "Content-Type", "value": "text/html; charset=utf-8" }
+            ]
+          }
+        }
+      },
+      "id": "respond_result",
+      "name": "Respond Result (HTML)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [940, 0]
+    }
+  ],
+  "connections": {
+    "Publish UI (GET)": {
+      "main": [[{ "node": "Pinterest Auth Check", "type": "main", "index": 0 }]]
+    },
+    "Pinterest Auth Check": {
+      "main": [[{ "node": "Is Pinterest Connected?", "type": "main", "index": 0 }]]
+    },
+    "Is Pinterest Connected?": {
+      "main": [
+        [{ "node": "List Pending Rows", "type": "main", "index": 0 }],
+        [{ "node": "Respond Not Connected (HTML)", "type": "main", "index": 0 }]
+      ]
+    },
+    "List Pending Rows": {
+      "main": [[{ "node": "Build Picker HTML", "type": "main", "index": 0 }]]
+    },
+    "Build Picker HTML": {
+      "main": [[{ "node": "Respond Picker (HTML)", "type": "main", "index": 0 }]]
+    },
+    "Publish Selected (POST)": {
+      "main": [[{ "node": "Pinterest Auth Check (POST)", "type": "main", "index": 0 }]]
+    },
+    "List Pending Rows (POST)": {
+      "main": [[{ "node": "Validate and Build Payload (Selected)", "type": "main", "index": 0 }]]
+    },
+    "Pinterest Auth Check (POST)": {
+      "main": [[{ "node": "Is Pinterest Connected? (POST)", "type": "main", "index": 0 }]]
+    },
+    "Is Pinterest Connected? (POST)": {
+      "main": [
+        [{ "node": "List Pending Rows (POST)", "type": "main", "index": 0 }],
+        [{ "node": "Respond Not Connected (HTML)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Respond Picker (HTML)": {
+      "main": []
+    },
+    "Respond Not Connected (HTML)": {
+      "main": []
+    },
+    "Validate and Build Payload (Selected)": {
+      "main": [[{ "node": "Passed Validation?", "type": "main", "index": 0 }]]
+    },
+    "Passed Validation?": {
+      "main": [
+        [{ "node": "Create Pinterest Pin", "type": "main", "index": 0 }],
+        [{ "node": "Build Result HTML", "type": "main", "index": 0 }]
+      ]
+    },
+    "Create Pinterest Pin": {
+      "main": [[{ "node": "Check Pin Result", "type": "main", "index": 0 }]]
+    },
+    "Check Pin Result": {
+      "main": [[{ "node": "Mark Row Result", "type": "main", "index": 0 }]]
+    },
+    "Mark Row Result": {
+      "main": [[{ "node": "Build Result HTML", "type": "main", "index": 0 }]]
+    },
+    "Build Result HTML": {
+      "main": [[{ "node": "Respond Result (HTML)", "type": "main", "index": 0 }]]
+    },
+    "Manual Trigger": {
+      "main": [[{ "node": "List Pending Rows", "type": "main", "index": 0 }]]
+    },
+    "Validate and Build Payload": {
+      "main": []
+    }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" }
+}

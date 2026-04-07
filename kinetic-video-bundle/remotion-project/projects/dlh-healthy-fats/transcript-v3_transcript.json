@@ -1,0 +1,782 @@
+{
+  "text": "Fat was the villain for thirty years. I bought low-fat everything. They added sugar to make up for it. We got worse. Turns out the type of fat matters. Avocado, half on toast keeps you full till noon. Olive oil, not a drizzle, an actual pour. Walnuts, one handful, done. Salmon, twice a week. That's the whole strategy. Nothing here is complicated. It's just fat that doesn't work against you. Recipes at www.dailylifehacks.com. Free, every week, no drama.",
+  "words": [
+    {
+      "word": "Fat",
+      "start": 0.079,
+      "end": 0.379
+    },
+    {
+      "word": " ",
+      "start": 0.379,
+      "end": 0.599
+    },
+    {
+      "word": "was",
+      "start": 0.599,
+      "end": 0.759
+    },
+    {
+      "word": " ",
+      "start": 0.759,
+      "end": 0.799
+    },
+    {
+      "word": "the",
+      "start": 0.799,
+      "end": 0.859
+    },
+    {
+      "word": " ",
+      "start": 0.859,
+      "end": 0.939
+    },
+    {
+      "word": "villain",
+      "start": 0.939,
+      "end": 1.24
+    },
+    {
+      "word": " ",
+      "start": 1.24,
+      "end": 1.36
+    },
+    {
+      "word": "for",
+      "start": 1.36,
+      "end": 1.599
+    },
+    {
+      "word": " ",
+      "start": 1.599,
+      "end": 1.639
+    },
+    {
+      "word": "thirty",
+      "start": 1.639,
+      "end": 1.899
+    },
+    {
+      "word": " ",
+      "start": 1.899,
+      "end": 2.039
+    },
+    {
+      "word": "years.",
+      "start": 2.039,
+      "end": 2.44
+    },
+    {
+      "word": " ",
+      "start": 2.44,
+      "end": 2.44
+    },
+    {
+      "word": "I",
+      "start": 3.46,
+      "end": 3.5
+    },
+    {
+      "word": " ",
+      "start": 3.5,
+      "end": 3.559
+    },
+    {
+      "word": "bought",
+      "start": 3.559,
+      "end": 3.759
+    },
+    {
+      "word": " ",
+      "start": 3.759,
+      "end": 3.879
+    },
+    {
+      "word": "low-fat",
+      "start": 3.879,
+      "end": 4.42
+    },
+    {
+      "word": " ",
+      "start": 4.42,
+      "end": 4.579
+    },
+    {
+      "word": "everything.",
+      "start": 4.579,
+      "end": 5.079
+    },
+    {
+      "word": " ",
+      "start": 5.079,
+      "end": 5.559
+    },
+    {
+      "word": "They",
+      "start": 5.559,
+      "end": 5.659
+    },
+    {
+      "word": " ",
+      "start": 5.659,
+      "end": 5.739
+    },
+    {
+      "word": "added",
+      "start": 5.739,
+      "end": 5.96
+    },
+    {
+      "word": " ",
+      "start": 5.96,
+      "end": 6.119
+    },
+    {
+      "word": "sugar",
+      "start": 6.119,
+      "end": 6.399
+    },
+    {
+      "word": " ",
+      "start": 6.399,
+      "end": 6.519
+    },
+    {
+      "word": "to",
+      "start": 6.519,
+      "end": 6.599
+    },
+    {
+      "word": " ",
+      "start": 6.599,
+      "end": 6.639
+    },
+    {
+      "word": "make",
+      "start": 6.639,
+      "end": 6.799
+    },
+    {
+      "word": " ",
+      "start": 6.799,
+      "end": 6.859
+    },
+    {
+      "word": "up",
+      "start": 6.859,
+      "end": 7.019
+    },
+    {
+      "word": " ",
+      "start": 7.019,
+      "end": 7.079
+    },
+    {
+      "word": "for",
+      "start": 7.079,
+      "end": 7.179
+    },
+    {
+      "word": " ",
+      "start": 7.179,
+      "end": 7.259
+    },
+    {
+      "word": "it.",
+      "start": 7.259,
+      "end": 7.359
+    },
+    {
+      "word": " ",
+      "start": 7.359,
+      "end": 7.359
+    },
+    {
+      "word": "We",
+      "start": 8.479,
+      "end": 8.72
+    },
+    {
+      "word": " ",
+      "start": 8.72,
+      "end": 8.88
+    },
+    {
+      "word": "got",
+      "start": 8.88,
+      "end": 9.159
+    },
+    {
+      "word": " ",
+      "start": 9.159,
+      "end": 9.239
+    },
+    {
+      "word": "worse.",
+      "start": 9.239,
+      "end": 9.659
+    },
+    {
+      "word": " ",
+      "start": 9.659,
+      "end": 9.659
+    },
+    {
+      "word": "Turns",
+      "start": 10.739,
+      "end": 10.96
+    },
+    {
+      "word": " ",
+      "start": 10.96,
+      "end": 11.019
+    },
+    {
+      "word": "out",
+      "start": 11.019,
+      "end": 11.159
+    },
+    {
+      "word": " ",
+      "start": 11.159,
+      "end": 11.199
+    },
+    {
+      "word": "the",
+      "start": 11.199,
+      "end": 11.359
+    },
+    {
+      "word": " ",
+      "start": 11.359,
+      "end": 11.46
+    },
+    {
+      "word": "type",
+      "start": 11.46,
+      "end": 11.679
+    },
+    {
+      "word": " ",
+      "start": 11.679,
+      "end": 11.739
+    },
+    {
+      "word": "of",
+      "start": 11.739,
+      "end": 11.8
+    },
+    {
+      "word": " ",
+      "start": 11.8,
+      "end": 11.96
+    },
+    {
+      "word": "fat",
+      "start": 11.96,
+      "end": 12.219
+    },
+    {
+      "word": " ",
+      "start": 12.219,
+      "end": 12.379
+    },
+    {
+      "word": "matters.",
+      "start": 12.38,
+      "end": 12.84
+    },
+    {
+      "word": " ",
+      "start": 12.84,
+      "end": 13.699
+    },
+    {
+      "word": "Avocado,",
+      "start": 13.699,
+      "end": 14.239
+    },
+    {
+      "word": " ",
+      "start": 14.239,
+      "end": 14.939
+    },
+    {
+      "word": "half",
+      "start": 14.939,
+      "end": 15.199
+    },
+    {
+      "word": " ",
+      "start": 15.199,
+      "end": 15.259
+    },
+    {
+      "word": "on",
+      "start": 15.259,
+      "end": 15.399
+    },
+    {
+      "word": " ",
+      "start": 15.399,
+      "end": 15.539
+    },
+    {
+      "word": "toast",
+      "start": 15.539,
+      "end": 15.899
+    },
+    {
+      "word": " ",
+      "start": 15.899,
+      "end": 16
+    },
+    {
+      "word": "keeps",
+      "start": 16,
+      "end": 16.26
+    },
+    {
+      "word": " ",
+      "start": 16.26,
+      "end": 16.319
+    },
+    {
+      "word": "you",
+      "start": 16.319,
+      "end": 16.52
+    },
+    {
+      "word": " ",
+      "start": 16.52,
+      "end": 16.579
+    },
+    {
+      "word": "full",
+      "start": 16.579,
+      "end": 16.879
+    },
+    {
+      "word": " ",
+      "start": 16.879,
+      "end": 16.939
+    },
+    {
+      "word": "till",
+      "start": 16.94,
+      "end": 17.099
+    },
+    {
+      "word": " ",
+      "start": 17.099,
+      "end": 17.219
+    },
+    {
+      "word": "noon.",
+      "start": 17.219,
+      "end": 17.579
+    },
+    {
+      "word": " ",
+      "start": 17.579,
+      "end": 18.559
+    },
+    {
+      "word": "Olive",
+      "start": 18.559,
+      "end": 18.799
+    },
+    {
+      "word": " ",
+      "start": 18.799,
+      "end": 18.899
+    },
+    {
+      "word": "oil,",
+      "start": 18.899,
+      "end": 19.059
+    },
+    {
+      "word": " ",
+      "start": 19.059,
+      "end": 19.539
+    },
+    {
+      "word": "not",
+      "start": 19.539,
+      "end": 19.799
+    },
+    {
+      "word": " ",
+      "start": 19.799,
+      "end": 19.879
+    },
+    {
+      "word": "a",
+      "start": 19.879,
+      "end": 19.939
+    },
+    {
+      "word": " ",
+      "start": 19.939,
+      "end": 20.019
+    },
+    {
+      "word": "drizzle,",
+      "start": 20.02,
+      "end": 20.399
+    },
+    {
+      "word": " ",
+      "start": 20.399,
+      "end": 20.799
+    },
+    {
+      "word": "an",
+      "start": 20.799,
+      "end": 21
+    },
+    {
+      "word": " ",
+      "start": 21,
+      "end": 21.1
+    },
+    {
+      "word": "actual",
+      "start": 21.1,
+      "end": 21.559
+    },
+    {
+      "word": " ",
+      "start": 21.559,
+      "end": 21.779
+    },
+    {
+      "word": "pour.",
+      "start": 21.779,
+      "end": 22.219
+    },
+    {
+      "word": " ",
+      "start": 22.219,
+      "end": 22.219
+    },
+    {
+      "word": "Walnuts,",
+      "start": 23.26,
+      "end": 23.76
+    },
+    {
+      "word": " ",
+      "start": 23.76,
+      "end": 24.299
+    },
+    {
+      "word": "one",
+      "start": 24.299,
+      "end": 24.399
+    },
+    {
+      "word": " ",
+      "start": 24.399,
+      "end": 24.5
+    },
+    {
+      "word": "handful,",
+      "start": 24.5,
+      "end": 24.959
+    },
+    {
+      "word": " ",
+      "start": 24.959,
+      "end": 25.5
+    },
+    {
+      "word": "done.",
+      "start": 25.5,
+      "end": 25.799
+    },
+    {
+      "word": " ",
+      "start": 25.799,
+      "end": 25.799
+    },
+    {
+      "word": "Salmon,",
+      "start": 26.84,
+      "end": 27.199
+    },
+    {
+      "word": " ",
+      "start": 27.199,
+      "end": 27.519
+    },
+    {
+      "word": "twice",
+      "start": 27.519,
+      "end": 27.799
+    },
+    {
+      "word": " ",
+      "start": 27.799,
+      "end": 27.84
+    },
+    {
+      "word": "a",
+      "start": 27.84,
+      "end": 27.899
+    },
+    {
+      "word": " ",
+      "start": 27.899,
+      "end": 27.959
+    },
+    {
+      "word": "week.",
+      "start": 27.959,
+      "end": 28.26
+    },
+    {
+      "word": " ",
+      "start": 28.26,
+      "end": 28.84
+    },
+    {
+      "word": "That's",
+      "start": 28.84,
+      "end": 29.039
+    },
+    {
+      "word": " ",
+      "start": 29.039,
+      "end": 29.099
+    },
+    {
+      "word": "the",
+      "start": 29.099,
+      "end": 29.159
+    },
+    {
+      "word": " ",
+      "start": 29.159,
+      "end": 29.199
+    },
+    {
+      "word": "whole",
+      "start": 29.199,
+      "end": 29.379
+    },
+    {
+      "word": " ",
+      "start": 29.379,
+      "end": 29.42
+    },
+    {
+      "word": "strategy.",
+      "start": 29.42,
+      "end": 29.919
+    },
+    {
+      "word": " ",
+      "start": 29.919,
+      "end": 29.919
+    },
+    {
+      "word": "Nothing",
+      "start": 31.139,
+      "end": 31.42
+    },
+    {
+      "word": " ",
+      "start": 31.42,
+      "end": 31.5
+    },
+    {
+      "word": "here",
+      "start": 31.5,
+      "end": 31.639
+    },
+    {
+      "word": " ",
+      "start": 31.639,
+      "end": 31.699
+    },
+    {
+      "word": "is",
+      "start": 31.699,
+      "end": 31.819
+    },
+    {
+      "word": " ",
+      "start": 31.819,
+      "end": 31.879
+    },
+    {
+      "word": "complicated.",
+      "start": 31.879,
+      "end": 32.52
+    },
+    {
+      "word": " ",
+      "start": 32.52,
+      "end": 32.959
+    },
+    {
+      "word": "It's",
+      "start": 32.959,
+      "end": 33.119
+    },
+    {
+      "word": " ",
+      "start": 33.119,
+      "end": 33.219
+    },
+    {
+      "word": "just",
+      "start": 33.219,
+      "end": 33.38
+    },
+    {
+      "word": " ",
+      "start": 33.38,
+      "end": 33.559
+    },
+    {
+      "word": "fat",
+      "start": 33.559,
+      "end": 33.919
+    },
+    {
+      "word": " ",
+      "start": 33.919,
+      "end": 33.979
+    },
+    {
+      "word": "that",
+      "start": 33.979,
+      "end": 34.2
+    },
+    {
+      "word": " ",
+      "start": 34.2,
+      "end": 34.279
+    },
+    {
+      "word": "doesn't",
+      "start": 34.279,
+      "end": 34.68
+    },
+    {
+      "word": " ",
+      "start": 34.68,
+      "end": 34.739
+    },
+    {
+      "word": "work",
+      "start": 34.739,
+      "end": 35
+    },
+    {
+      "word": " ",
+      "start": 35,
+      "end": 35.139
+    },
+    {
+      "word": "against",
+      "start": 35.139,
+      "end": 35.5
+    },
+    {
+      "word": " ",
+      "start": 35.5,
+      "end": 35.559
+    },
+    {
+      "word": "you.",
+      "start": 35.559,
+      "end": 35.7
+    },
+    {
+      "word": " ",
+      "start": 35.7,
+      "end": 35.7
+    },
+    {
+      "word": "Recipes",
+      "start": 37.18,
+      "end": 37.819
+    },
+    {
+      "word": " ",
+      "start": 37.819,
+      "end": 37.919
+    },
+    {
+      "word": "at",
+      "start": 37.919,
+      "end": 38.139
+    },
+    {
+      "word": " ",
+      "start": 38.139,
+      "end": 38.52
+    },
+    {
+      "word": "www.dailylifehacks.com.",
+      "start": 38.52,
+      "end": 41.639
+    },
+    {
+      "word": " ",
+      "start": 41.639,
+      "end": 42.639
+    },
+    {
+      "word": "Free,",
+      "start": 42.639,
+      "end": 42.899
+    },
+    {
+      "word": " ",
+      "start": 42.899,
+      "end": 43.419
+    },
+    {
+      "word": "every",
+      "start": 43.419,
+      "end": 43.659
+    },
+    {
+      "word": " ",
+      "start": 43.659,
+      "end": 43.719
+    },
+    {
+      "word": "week,",
+      "start": 43.719,
+      "end": 43.979
+    },
+    {
+      "word": " ",
+      "start": 43.979,
+      "end": 44.519
+    },
+    {
+      "word": "no",
+      "start": 44.52,
+      "end": 44.659
+    },
+    {
+      "word": " ",
+      "start": 44.659,
+      "end": 44.719
+    },
+    {
+      "word": "drama.",
+      "start": 44.719,
+      "end": 45
+    }
+  ],
+  "duration": 45,
+  "language": "eng"
+}
