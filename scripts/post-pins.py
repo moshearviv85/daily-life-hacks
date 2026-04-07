@@ -24,13 +24,34 @@ import requests
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
-APP_ID       = os.environ["PINTEREST_APP_ID"]
-APP_SECRET   = os.environ["PINTEREST_APP_SECRET"]
+APP_ID        = os.environ["PINTEREST_APP_ID"]
+APP_SECRET    = os.environ["PINTEREST_APP_SECRET"]
 REFRESH_TOKEN = os.environ["PINTEREST_REFRESH_TOKEN"]
+GH_PAT        = os.environ.get("GH_PAT", "")
+GH_REPO       = os.environ.get("GITHUB_REPOSITORY", "")
 
 CSV_PATH     = "pipeline-data/pins-schedule.csv"
 API_BASE     = "https://api.pinterest.com/v5"
 MAX_PER_RUN  = 1  # Safety: never bulk-post accidentally
+
+# ── GitHub Secret auto-update ─────────────────────────────────────────────────
+
+def update_github_secret(secret_name, secret_value):
+    if not GH_PAT or not GH_REPO:
+        print(f"  WARNING: GH_PAT or GITHUB_REPOSITORY not set — cannot auto-update {secret_name}")
+        print(f"  Manual update required: {secret_value}")
+        return
+
+    result = subprocess.run(
+        ["gh", "secret", "set", secret_name, "--body", secret_value, "--repo", GH_REPO],
+        env={**os.environ, "GH_TOKEN": GH_PAT},
+        capture_output=True, text=True,
+    )
+    if result.returncode == 0:
+        print(f"  Auto-updated {secret_name} secret in GitHub.")
+    else:
+        print(f"  Failed to auto-update secret: {result.stderr.strip()}")
+        print(f"  Manual update required: {secret_value}")
 
 # ── Token refresh ─────────────────────────────────────────────────────────────
 
@@ -64,8 +85,8 @@ def get_access_token():
 
     print(f"Token refreshed OK. Expires in {data.get('expires_in', '?')}s")
     if new_refresh and new_refresh != REFRESH_TOKEN:
-        print("NOTE: Pinterest returned a new refresh_token. Update PINTEREST_REFRESH_TOKEN secret.")
-        print(f"  New refresh_token: {new_refresh}")
+        print("Pinterest returned a new refresh_token — auto-updating GitHub Secret...")
+        update_github_secret("PINTEREST_REFRESH_TOKEN", new_refresh)
 
     return access_token
 
