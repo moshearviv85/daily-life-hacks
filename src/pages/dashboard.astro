@@ -985,7 +985,7 @@ function renderBuildData() {
       const pub = new Date(a.publishAt + 'T00:00:00');
       const daysLeft = Math.round((pub - today) / 86400000);
       return `<tr>
-        <td><a href="/${a.slug}" target="_blank" style="color:var(--orange);text-decoration:none">${a.title}</a></td>
+        <td><a href="/${a.slug}?preview=moshiko1985!" target="_blank" style="color:var(--orange);text-decoration:none">${a.title}</a></td>
         <td>${a.category}</td>
         <td><strong>${a.publishAt}</strong></td>
         <td><span class="badge ${daysLeft <= 3 ? 'badge-red' : daysLeft <= 7 ? 'badge-orange' : 'badge-blue'}">${daysLeft}d</span></td>
