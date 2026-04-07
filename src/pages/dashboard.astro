@@ -1473,7 +1473,7 @@ function renderScheduledTable(rows) {
       const d = new Date(a.publishAt + 'T00:00:00');
       const dl = Math.round((d - today) / 86400000);
       return `<tr>
-        <td><a href="/${a.slug}" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600">${a.title}</a></td>
+        <td><a href="/${a.slug}?preview=moshiko1985!" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600">${a.title}</a></td>
         <td><span class="badge badge-gray">${a.category}</span></td>
         <td><strong>${a.publishAt}</strong></td>
         <td><span class="badge ${dl<=3?'badge-red':dl<=7?'badge-orange':'badge-blue'}">${dl}d</span></td>
