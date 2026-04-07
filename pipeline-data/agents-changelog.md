@@ -3,6 +3,10 @@
 
 ---
 
+**2026-04-07 — Agent 7 (The Finisher):** Cleared `pipeline-data/finisher-backlog.md` pending queue by performing a full **Workspace Sweep** and syncing all untracked pipeline assets/drafts to Git (skills/rules, scripts, n8n flows, docs, pipeline-data exports, `public/images/pins/draft/`, plus `kinetic-video-bundle/`). Fixed a corrupted/binary `.gitignore` and added ignores for `.wrangler/` and `.claude/settings.local.json` to prevent committing local tooling artifacts. Commit: `302443c`.
+
+---
+
 **2026-04-05 — Agent 7 (The Finisher):** Cleared **Pending Tasks** in `finisher-backlog.md`: generated four Pinterest pins for `natto-japanese-fermented-soybeans-gut-health` (tracker id 226 + `scripts/generate-images.py` with `GENERATE_IMAGES_ONLY`); restored `pipeline-data/pins-export.csv` from `HEAD` after the generator truncated it. Staged previously untracked production assets (tuscan/zinc articles, web mains, top-level pin JPGs; excluded `public/images/pins/draft/`). Git commit and `npm run deploy:prod` to Cloudflare Pages. Updated `finisher-backlog.md` resolutions.
 
 ---
