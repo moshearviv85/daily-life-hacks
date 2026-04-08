@@ -22,7 +22,7 @@ Format the output as a Markdown table with the following columns:
 1. **Read-Only on existing data:** Do NOT modify `master-state.json` or `topics-to-write.md`.
 2. **Write Once:** Create/overwrite `pipeline-data/proposed-topics-batch.md` with your new ideas.
 3. **Conceptual Uniqueness:** Actively compare your ideas against the slugs in `master-state.json`. If it's too similar to an existing slug, discard it and think of another.
-4. **Safety First:** STRICTLY enforce the site's legal and YMYL (Your Money or Your Life) constraints. No disease treatments, no "cures", no "detox". Keep it to everyday nutrition, easy recipes, and kitchen tips.
+4. **Safety First:** STRICTLY enforce the site's legal and YMYL (Your Money or Your Life) constraints. No disease treatments, no "cures", no "detox", NO "hormone balancing" or "hormone regulation". Keep it to everyday nutrition, easy recipes, and kitchen tips.
 5. **Quantity:** Generate exactly 15 new topics (5 recipes, 5 nutrition, 5 tips) unless the user specifies a different number in the prompt.
 6. **STOP:** When you finish writing the file, output a short message to the user that the batch is ready for review, and STOP.
 ## Mandatory Global Agent Rules

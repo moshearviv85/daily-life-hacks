@@ -25,7 +25,8 @@ Write a distinct `.md` file for each topic inside the drafts folder:
    - NO summary endings. Just stop writing when the point is made. Do not add "Happy eating!" or "Enjoy your meal!".
 5. **Medical Constraints:** ZERO medical promises. Use "may support", "could help", NOT "cures", "treats", or "fixes".
 6. **Recipes:** If the category is `recipes`, you MUST include realistic quantities, exact oven temperatures, and step-by-step instructions. Add the recipe-specific frontmatter fields (prepTime, cookTime, difficulty, calories).
-7. **STOP:** After generating the requested article(s) to the drafts folder, output a short summary in the chat with the filenames created, and STOP.
+7. **Dates:** Leave the `publishAt` field empty or omit it entirely from the frontmatter. DO NOT assign future publishing dates. The Publisher (Agent 6) will handle scheduling.
+8. **STOP:** After generating the requested article(s) to the drafts folder, output a short summary in the chat with the filenames created, and STOP.
 ## Mandatory Global Agent Rules
 1. **Changelog:** When you finish your task, you MUST PREPEND a short summary of your actions to pipeline-data/agents-changelog.md. Include the date, agent name, and a brief note of files modified.
 2. **Finisher Backlog:** If you encounter any issue, edge case, or required action that is OUTSIDE your defined scope (e.g., a missing production sync, an unexpected script error), DO NOT TRY TO FIX IT. Instead, add a new bullet point to the 'Pending Tasks' section in pipeline-data/finisher-backlog.md for Agent 7 to handle.

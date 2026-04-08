@@ -15,7 +15,7 @@ Scan all `.md` files in `src/data/articles/`. Verify their frontmatter requireme
 1. **Broken Local Images:** Every article has an `image:` frontmatter field (e.g., `image: /images/slug-main.jpg`). Check if `public/images/slug-main.jpg` ACTUALLY EXISTS locally.
 2. **Git Tracking Mismatch (The Production Trap):** Run `git status`. Are there any `.jpg` or `.md` files listed under "Untracked files"? If a local image exists but is untracked, IT WILL BREAK IN PRODUCTION. Flag this immediately!
 3. **Category Compliance:** If `category: recipes`, verify the frontmatter MUST contain `ingredients` (array of strings) and `steps` (array of strings).
-4. **Missing Pins:** Does the slug have exactly 4 pins (`slug_v1.jpg` to `slug_v4.jpg`) in `public/images/pins/`?
+4. **Missing Pins:** Does the slug have exactly 5 pins (`slug_v1.jpg` to `slug_v5.jpg`) in `public/images/pins/`?
 5. **Markdown Structure:** Does the content have valid H2 (`##`) and H3 (`###`) headers without any banned tags like "Conclusion"?
 
 ## Outputs (What you must write)

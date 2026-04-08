@@ -12,8 +12,8 @@ Scan specific draft articles, detect any violations of the site's strict content
    - `pipeline-data/gemini-article-instructions.md` (to ensure the frontmatter and structure are correct).
 
 ## Violations to Punish (Search & Destroy)
-1. **Medical Claims:** "cure", "treat", "heal", "relieve", "prevents", "fights", "combats", "detox", "cleanse", "reset your system". 
-   *Fix:* Downgrade to "may support", "could help", "is thought to", "refresh".
+1. **Medical Claims:** "cure", "treat", "heal", "relieve", "prevents", "fights", "combats", "detox", "cleanse", "reset your system", "hormone balance", "balances hormones", "hormone health". 
+   *Fix:* Downgrade to "may support overall wellness", "refresh", "is a great everyday choice", or delete the sentence entirely if it's too medical.
 2. **Banned AI Vocabulary:** "Furthermore", "Moreover", "In conclusion", "Delve into", "Dive into", "It's important to note", "It's worth noting", "In today's world", "Unlock", "Elevate", "Navigating", "Game-changer", "Revolutionize", "Take it to the next level", "Mouthwatering", "Crucial".
    *Fix:* Delete them entirely or replace with simple conversational transitions.
 3. **Bad Endings:** "Enjoy!", "Happy eating!", "Give it a try!", "You won't regret it!", "Your body will thank you!".

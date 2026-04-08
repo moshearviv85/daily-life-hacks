@@ -698,5 +698,165 @@
   {
     "key": "zinc-containing-foods-weekly-meals-v4",
     "value": "{\"type\": \"internal\", \"base_slug\": \"zinc-containing-foods-weekly-meals\"}"
+  },
+  {
+    "key": "air-fryer-salmon-bites-garlic-honey-glaze-v1",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"air-fryer-salmon-bites-garlic-honey-glaze\"}"
+  },
+  {
+    "key": "air-fryer-salmon-bites-garlic-honey-glaze-v2",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"air-fryer-salmon-bites-garlic-honey-glaze\"}"
+  },
+  {
+    "key": "air-fryer-salmon-bites-garlic-honey-glaze-v3",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"air-fryer-salmon-bites-garlic-honey-glaze\"}"
+  },
+  {
+    "key": "air-fryer-salmon-bites-garlic-honey-glaze-v4",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"air-fryer-salmon-bites-garlic-honey-glaze\"}"
+  },
+  {
+    "key": "air-fryer-salmon-bites-garlic-honey-glaze-v5",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"air-fryer-salmon-bites-garlic-honey-glaze\"}"
+  },
+  {
+    "key": "amaranth-millet-teff-beginner-cooking-guide-v1",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"amaranth-millet-teff-beginner-cooking-guide\"}"
+  },
+  {
+    "key": "amaranth-millet-teff-beginner-cooking-guide-v2",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"amaranth-millet-teff-beginner-cooking-guide\"}"
+  },
+  {
+    "key": "amaranth-millet-teff-beginner-cooking-guide-v3",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"amaranth-millet-teff-beginner-cooking-guide\"}"
+  },
+  {
+    "key": "amaranth-millet-teff-beginner-cooking-guide-v4",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"amaranth-millet-teff-beginner-cooking-guide\"}"
+  },
+  {
+    "key": "amaranth-millet-teff-beginner-cooking-guide-v5",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"amaranth-millet-teff-beginner-cooking-guide\"}"
+  },
+  {
+    "key": "baked-cod-lemon-capers-green-beans-v1",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"baked-cod-lemon-capers-green-beans\"}"
+  },
+  {
+    "key": "baked-cod-lemon-capers-green-beans-v2",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"baked-cod-lemon-capers-green-beans\"}"
+  },
+  {
+    "key": "baked-cod-lemon-capers-green-beans-v3",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"baked-cod-lemon-capers-green-beans\"}"
+  },
+  {
+    "key": "baked-cod-lemon-capers-green-beans-v4",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"baked-cod-lemon-capers-green-beans\"}"
+  },
+  {
+    "key": "baked-cod-lemon-capers-green-beans-v5",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"baked-cod-lemon-capers-green-beans\"}"
+  },
+  {
+    "key": "baking-sheet-liners-parchment-silicone-when-to-use-v1",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"baking-sheet-liners-parchment-silicone-when-to-use\"}"
+  },
+  {
+    "key": "baking-sheet-liners-parchment-silicone-when-to-use-v2",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"baking-sheet-liners-parchment-silicone-when-to-use\"}"
+  },
+  {
+    "key": "baking-sheet-liners-parchment-silicone-when-to-use-v3",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"baking-sheet-liners-parchment-silicone-when-to-use\"}"
+  },
+  {
+    "key": "baking-sheet-liners-parchment-silicone-when-to-use-v4",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"baking-sheet-liners-parchment-silicone-when-to-use\"}"
+  },
+  {
+    "key": "baking-sheet-liners-parchment-silicone-when-to-use-v5",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"baking-sheet-liners-parchment-silicone-when-to-use\"}"
+  },
+  {
+    "key": "beans-and-rice-complete-protein-meal-v1",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"beans-and-rice-complete-protein-meal\"}"
+  },
+  {
+    "key": "beans-and-rice-complete-protein-meal-v2",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"beans-and-rice-complete-protein-meal\"}"
+  },
+  {
+    "key": "beans-and-rice-complete-protein-meal-v3",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"beans-and-rice-complete-protein-meal\"}"
+  },
+  {
+    "key": "beans-and-rice-complete-protein-meal-v4",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"beans-and-rice-complete-protein-meal\"}"
+  },
+  {
+    "key": "beans-and-rice-complete-protein-meal-v5",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"beans-and-rice-complete-protein-meal\"}"
+  },
+  {
+    "key": "high-fiber-burrito-bowl-meal-prep-v1",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"high-fiber-burrito-bowl-meal-prep\"}"
+  },
+  {
+    "key": "high-fiber-burrito-bowl-meal-prep-v2",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"high-fiber-burrito-bowl-meal-prep\"}"
+  },
+  {
+    "key": "high-fiber-burrito-bowl-meal-prep-v3",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"high-fiber-burrito-bowl-meal-prep\"}"
+  },
+  {
+    "key": "high-fiber-burrito-bowl-meal-prep-v4",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"high-fiber-burrito-bowl-meal-prep\"}"
+  },
+  {
+    "key": "high-fiber-burrito-bowl-meal-prep-v5",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"high-fiber-burrito-bowl-meal-prep\"}"
+  },
+  {
+    "key": "high-fiber-gluten-free-bread-recipe-v1",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"high-fiber-gluten-free-bread-recipe\"}"
+  },
+  {
+    "key": "high-fiber-gluten-free-bread-recipe-v2",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"high-fiber-gluten-free-bread-recipe\"}"
+  },
+  {
+    "key": "high-fiber-gluten-free-bread-recipe-v3",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"high-fiber-gluten-free-bread-recipe\"}"
+  },
+  {
+    "key": "high-fiber-gluten-free-bread-recipe-v4",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"high-fiber-gluten-free-bread-recipe\"}"
+  },
+  {
+    "key": "high-fiber-gluten-free-bread-recipe-v5",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"high-fiber-gluten-free-bread-recipe\"}"
+  },
+  {
+    "key": "lentil-curry-high-fiber-vegan-dinner-v1",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"lentil-curry-high-fiber-vegan-dinner\"}"
+  },
+  {
+    "key": "lentil-curry-high-fiber-vegan-dinner-v2",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"lentil-curry-high-fiber-vegan-dinner\"}"
+  },
+  {
+    "key": "lentil-curry-high-fiber-vegan-dinner-v3",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"lentil-curry-high-fiber-vegan-dinner\"}"
+  },
+  {
+    "key": "lentil-curry-high-fiber-vegan-dinner-v4",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"lentil-curry-high-fiber-vegan-dinner\"}"
+  },
+  {
+    "key": "lentil-curry-high-fiber-vegan-dinner-v5",
+    "value": "{\"type\": \"internal\", \"base_slug\": \"lentil-curry-high-fiber-vegan-dinner\"}"
   }
 ]

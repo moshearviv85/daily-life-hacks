@@ -32,12 +32,12 @@ The structure of `master-state.json` MUST be:
       "status": "published|draft|topic_only",
       "category": "recipes|nutrition|tips",
       "has_web_image": true,
-      "pin_image_count": 4
+      "pin_image_count": 5
     }
   },
   "missing_assets": [
     "slug-name-here is missing web image",
-    "slug-name-here only has 2 pin images (expected 4)"
+    "slug-name-here only has 3 pin images (expected 5)"
   ]
 }
 ```

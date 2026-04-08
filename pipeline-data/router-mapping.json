@@ -808,5 +808,181 @@
       "url_slug": "zinc-containing-foods-weekly-meals-v4",
       "title": "You Don't Need Oysters or a Pill to Vary Zinc Sources"
     }
+  },
+  "air-fryer-salmon-bites-garlic-honey-glaze": {
+    "v1": {
+      "url_slug": "air-fryer-salmon-bites-garlic-honey-glaze-v1",
+      "title": "Air Fryer Salmon Bites With Garlic Honey Glaze"
+    },
+    "v2": {
+      "url_slug": "air-fryer-salmon-bites-garlic-honey-glaze-v2",
+      "title": "An 18-Minute Air Fryer Seafood Dinner"
+    },
+    "v3": {
+      "url_slug": "air-fryer-salmon-bites-garlic-honey-glaze-v3",
+      "title": "How to Cook Salmon Without Burning the Glaze"
+    },
+    "v4": {
+      "url_slug": "air-fryer-salmon-bites-garlic-honey-glaze-v4",
+      "title": "Stop Being Intimidated by Cooking Fish at Home"
+    },
+    "v5": {
+      "url_slug": "air-fryer-salmon-bites-garlic-honey-glaze-v5",
+      "title": "The Dinner Cheat Code for When You Forgot to Plan"
+    }
+  },
+  "amaranth-millet-teff-beginner-cooking-guide": {
+    "v1": {
+      "url_slug": "amaranth-millet-teff-beginner-cooking-guide-v1",
+      "title": "Beginner's Guide to Cooking Amaranth, Millet, and Teff"
+    },
+    "v2": {
+      "url_slug": "amaranth-millet-teff-beginner-cooking-guide-v2",
+      "title": "How to Cook New Whole Grains (Without Ruining Dinner)"
+    },
+    "v3": {
+      "url_slug": "amaranth-millet-teff-beginner-cooking-guide-v3",
+      "title": "Why Is Your Millet Bitter? (And How to Fix It)"
+    },
+    "v4": {
+      "url_slug": "amaranth-millet-teff-beginner-cooking-guide-v4",
+      "title": "Stop Pretending Amaranth Is Just Like Rice"
+    },
+    "v5": {
+      "url_slug": "amaranth-millet-teff-beginner-cooking-guide-v5",
+      "title": "The Golden Rule for Cooking Amaranth, Millet, and Teff"
+    }
+  },
+  "baked-cod-lemon-capers-green-beans": {
+    "v1": {
+      "url_slug": "baked-cod-lemon-capers-green-beans-v1",
+      "title": "Baked Cod With Lemon, Capers, and Green Beans"
+    },
+    "v2": {
+      "url_slug": "baked-cod-lemon-capers-green-beans-v2",
+      "title": "Cook Fish Without Stress: 15-Minute Sheet Pan Dinner"
+    },
+    "v3": {
+      "url_slug": "baked-cod-lemon-capers-green-beans-v3",
+      "title": "How to Cook Cod That Actually Tastes Good"
+    },
+    "v4": {
+      "url_slug": "baked-cod-lemon-capers-green-beans-v4",
+      "title": "Stop Searing Your Fish on Busy Weeknights"
+    },
+    "v5": {
+      "url_slug": "baked-cod-lemon-capers-green-beans-v5",
+      "title": "A Fancy Seafood Dinner When You Hate Doing Dishes"
+    }
+  },
+  "baking-sheet-liners-parchment-silicone-when-to-use": {
+    "v1": {
+      "url_slug": "baking-sheet-liners-parchment-silicone-when-to-use-v1",
+      "title": "Baking Sheet Liners: Parchment vs. Silicone Mats"
+    },
+    "v2": {
+      "url_slug": "baking-sheet-liners-parchment-silicone-when-to-use-v2",
+      "title": "Choose the Right Pan Liner for Easy Cleanup"
+    },
+    "v3": {
+      "url_slug": "baking-sheet-liners-parchment-silicone-when-to-use-v3",
+      "title": "Why Are Your Cookies Spreading Too Much?"
+    },
+    "v4": {
+      "url_slug": "baking-sheet-liners-parchment-silicone-when-to-use-v4",
+      "title": "Silicone Mats Cannot Replace Parchment Paper"
+    },
+    "v5": {
+      "url_slug": "baking-sheet-liners-parchment-silicone-when-to-use-v5",
+      "title": "The Rule of Thumb for Baking Sheet Liners"
+    }
+  },
+  "beans-and-rice-complete-protein-meal": {
+    "v1": {
+      "url_slug": "beans-and-rice-complete-protein-meal-v1",
+      "title": "Beans and Rice: A Complete Protein Meal That Won't Break the Bank"
+    },
+    "v2": {
+      "url_slug": "beans-and-rice-complete-protein-meal-v2",
+      "title": "Beans and Rice: A Complete Protein Meal That Won't Break the Bank Guide"
+    },
+    "v3": {
+      "url_slug": "beans-and-rice-complete-protein-meal-v3",
+      "title": "Beans and Rice: A Complete Protein Meal That Won't Break the Bank Tips"
+    },
+    "v4": {
+      "url_slug": "beans-and-rice-complete-protein-meal-v4",
+      "title": "Best Beans and Rice: A Complete Protein Meal That Won't Break the Bank"
+    },
+    "v5": {
+      "url_slug": "beans-and-rice-complete-protein-meal-v5",
+      "title": "Easy Beans and Rice: A Complete Protein Meal That Won't Break the Bank"
+    }
+  },
+  "high-fiber-burrito-bowl-meal-prep": {
+    "v1": {
+      "url_slug": "high-fiber-burrito-bowl-meal-prep-v1",
+      "title": "High Fiber Burrito Bowl Meal Prep for a Better Work Lunch"
+    },
+    "v2": {
+      "url_slug": "high-fiber-burrito-bowl-meal-prep-v2",
+      "title": "High Fiber Burrito Bowl Meal Prep for a Better Work Lunch Guide"
+    },
+    "v3": {
+      "url_slug": "high-fiber-burrito-bowl-meal-prep-v3",
+      "title": "High Fiber Burrito Bowl Meal Prep for a Better Work Lunch Tips"
+    },
+    "v4": {
+      "url_slug": "high-fiber-burrito-bowl-meal-prep-v4",
+      "title": "Best High Fiber Burrito Bowl Meal Prep for a Better Work Lunch"
+    },
+    "v5": {
+      "url_slug": "high-fiber-burrito-bowl-meal-prep-v5",
+      "title": "Easy High Fiber Burrito Bowl Meal Prep for a Better Work Lunch"
+    }
+  },
+  "high-fiber-gluten-free-bread-recipe": {
+    "v1": {
+      "url_slug": "high-fiber-gluten-free-bread-recipe-v1",
+      "title": "The Only High Fiber Gluten Free Bread Recipe You Actually Need"
+    },
+    "v2": {
+      "url_slug": "high-fiber-gluten-free-bread-recipe-v2",
+      "title": "The Only High Fiber Gluten Free Bread Recipe You Actually Need Guide"
+    },
+    "v3": {
+      "url_slug": "high-fiber-gluten-free-bread-recipe-v3",
+      "title": "The Only High Fiber Gluten Free Bread Recipe You Actually Need Tips"
+    },
+    "v4": {
+      "url_slug": "high-fiber-gluten-free-bread-recipe-v4",
+      "title": "Best The Only High Fiber Gluten Free Bread Recipe You Actually Need"
+    },
+    "v5": {
+      "url_slug": "high-fiber-gluten-free-bread-recipe-v5",
+      "title": "Easy The Only High Fiber Gluten Free Bread Recipe You Actually Need"
+    }
+  },
+  "lentil-curry-high-fiber-vegan-dinner": {
+    "v1": {
+      "url_slug": "lentil-curry-high-fiber-vegan-dinner-v1",
+      "title": "Lentil Curry: A High Fiber Vegan Dinner You'll Actually Crave"
+    },
+    "v2": {
+      "url_slug": "lentil-curry-high-fiber-vegan-dinner-v2",
+      "title": "Lentil Curry: A High Fiber Vegan Dinner You'll Actually Crave Guide"
+    },
+    "v3": {
+      "url_slug": "lentil-curry-high-fiber-vegan-dinner-v3",
+      "title": "Lentil Curry: A High Fiber Vegan Dinner You'll Actually Crave Tips"
+    },
+    "v4": {
+      "url_slug": "lentil-curry-high-fiber-vegan-dinner-v4",
+      "title": "Best Lentil Curry: A High Fiber Vegan Dinner You'll Actually Crave"
+    },
+    "v5": {
+      "url_slug": "lentil-curry-high-fiber-vegan-dinner-v5",
+      "title": "Easy Lentil Curry: A High Fiber Vegan Dinner You'll Actually Crave"
+    }
   }
 }
