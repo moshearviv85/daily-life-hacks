@@ -1731,8 +1731,9 @@ async function uploadPinsCSV() {
 
     if (res.ok) {
       statusEl.style.color = '#16a34a';
-      statusEl.textContent = `Uploaded: ${data.inserted} new, ${data.updated} updated (${data.total} total rows)`;
-      loadPinsStatus(); // refresh stats
+      const triggerNote = data.triggered ? ' — first pin posting now!' : '';
+      statusEl.textContent = `Uploaded: ${data.inserted} new, ${data.updated} updated (${data.total} total rows)${triggerNote}`;
+      loadPinsStatus();
       input.value = '';
     } else {
       statusEl.style.color = '#b91c1c';

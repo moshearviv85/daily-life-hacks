@@ -197,11 +197,33 @@ export async function onRequestPost(context) {
     }
   }
 
+  // Trigger GitHub Actions workflow immediately if new pins were inserted
+  let triggered = false;
+  if (inserted > 0 && env.GH_PAT) {
+    try {
+      const ghRes = await fetch(
+        "https://api.github.com/repos/moshearviv85/daily-life-hacks/actions/workflows/post-pins.yml/dispatches",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${env.GH_PAT}`,
+            Accept: "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ ref: "main" }),
+        }
+      );
+      triggered = ghRes.ok;
+    } catch (_) {}
+  }
+
   return json({
     ok: true,
     total: rows.length,
     inserted,
     updated,
     skipped_posted: rows.length - inserted - updated,
+    triggered,
   });
 }
