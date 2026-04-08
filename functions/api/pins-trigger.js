@@ -26,24 +26,31 @@ export async function onRequestPost(context) {
     return json({ error: "GH_PAT not configured in Cloudflare environment" }, 500);
   }
 
-  const ghRes = await fetch(
-    "https://api.github.com/repos/moshearviv85/daily-life-hacks/actions/workflows/post-pins.yml/dispatches",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${env.GH_PAT}`,
-        Accept: "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ref: "main" }),
+  let ghStatus, ghBody;
+  try {
+    const ghRes = await fetch(
+      "https://api.github.com/repos/moshearviv85/daily-life-hacks/actions/workflows/post-pins.yml/dispatches",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${env.GH_PAT}`,
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          "Content-Type": "application/json",
+          "User-Agent": "daily-life-hacks-cloudflare",
+        },
+        body: JSON.stringify({ ref: "main" }),
+      }
+    );
+    ghStatus = ghRes.status;
+    ghBody   = await ghRes.text();
+
+    if (ghRes.ok) {
+      return json({ ok: true, message: "Workflow dispatched", gh_status: ghStatus });
     }
-  );
+    return json({ ok: false, gh_status: ghStatus, gh_body: ghBody }, 400);
 
-  if (ghRes.ok) {
-    return json({ ok: true, message: "Workflow dispatched" });
+  } catch (err) {
+    return json({ ok: false, error: String(err), gh_status: ghStatus ?? null }, 500);
   }
-
-  const errText = await ghRes.text();
-  return json({ ok: false, status: ghRes.status, error: errText }, 502);
 }
