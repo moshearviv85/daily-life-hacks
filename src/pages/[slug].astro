@@ -252,6 +252,31 @@ const robotsMeta = released ? undefined : "noindex, follow";
     }
 
     <div id="release-content" style={pendingRelease ? "display: none;" : undefined}>
+
+    <!-- Featured Image — top of article -->
+    <div class="relative mb-8 group rounded-2xl overflow-hidden shadow-md">
+      <Image
+        src={article.data.image}
+        alt={article.data.imageAlt}
+        width={768}
+        height={432}
+        fetchpriority="high"
+        loading="eager"
+        decoding="sync"
+        inferSize={true}
+        data-pin-description={`${article.data.title} - ${article.data.excerpt} | Daily Life Hacks`}
+        data-pin-url={new URL(
+          Astro.url.pathname,
+          Astro.site || Astro.url.origin,
+        ).href}
+        data-pin-media={new URL(
+          article.data.image,
+          Astro.site || Astro.url.origin,
+        ).href}
+        class="w-full aspect-video object-cover"
+      />
+    </div>
+
     <!-- Article Header -->
     <header class="mb-8">
       <span
@@ -357,30 +382,6 @@ const robotsMeta = released ? undefined : "noindex, follow";
         </p>
       </div>
     </section>
-
-    <!-- Featured Image -->
-    <div class="relative mb-10 group rounded-2xl overflow-hidden shadow-md">
-      <Image
-        src={article.data.image}
-        alt={article.data.imageAlt}
-        width={768}
-        height={432}
-        fetchpriority="high"
-        loading="eager"
-        decoding="sync"
-        inferSize={true}
-        data-pin-description={`${article.data.title} - ${article.data.excerpt} | Daily Life Hacks`}
-        data-pin-url={new URL(
-          Astro.url.pathname,
-          Astro.site || Astro.url.origin,
-        ).href}
-        data-pin-media={new URL(
-          article.data.image,
-          Astro.site || Astro.url.origin,
-        ).href}
-        class="w-full aspect-video object-cover"
-      />
-    </div>
 
     <!-- Recipe Card -->
     {
@@ -824,7 +825,39 @@ const robotsMeta = released ? undefined : "noindex, follow";
       loadSnapshot();
     }
 
+    function setupMidArticleImage() {
+      const content = document.querySelector(".article-content");
+      const main = document.querySelector("main[data-base-slug]");
+      if (!content || !main) return;
+
+      const slug = main.getAttribute("data-base-slug");
+      if (!slug) return;
+
+      const paragraphs = Array.from(content.querySelectorAll("p, ul, ol, blockquote, h2, h3"));
+      if (paragraphs.length < 4) return;
+
+      const insertAfter = paragraphs[Math.floor(paragraphs.length / 3)];
+      if (!insertAfter) return;
+
+      const imgUrl = `/images/pins/${slug}_v2.jpg`;
+
+      const wrapper = document.createElement("div");
+      wrapper.style.cssText = "margin:2rem 0;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08)";
+
+      const img = document.createElement("img");
+      img.src = imgUrl;
+      img.alt = "";
+      img.loading = "lazy";
+      img.style.cssText = "width:100%;display:block;max-height:480px;object-fit:cover";
+
+      img.onerror = () => { wrapper.remove(); };
+
+      wrapper.appendChild(img);
+      insertAfter.after(wrapper);
+    }
+
     document.addEventListener("astro:page-load", setupReleaseGate);
     document.addEventListener("astro:page-load", setupRatingWidget);
+    document.addEventListener("astro:page-load", setupMidArticleImage);
   </script>
 </BaseLayout>
