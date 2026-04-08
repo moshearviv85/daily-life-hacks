@@ -34,9 +34,10 @@ Move draft articles to the live site directory, update the central content regis
      - `pin_description` = full description text (NOT "description")
      - `image_url` = `https://www.daily-life-hacks.com/images/pins/{slug}_v{n}.jpg`
      - `board_id` = numeric Pinterest board ID (NOT board name). Known IDs:
-       - High Fiber Dinner and Gut Health Recipes → `1124140825679184032`
-       - Healthy Breakfast, Smoothies and Snacks → `1124140825679184036`
-       - Gut Health Tips and Nutrition Charts → `1124140825679184034`
+       - `1124140825679184032` → recipes (salmon, cod, beans, burrito, lentil, bread, chickpeas)
+       - `1124140825679184036` → breakfast, snacks, tips, kitchen hacks, meal prep
+       - `1124140825679184034` → nutrition, gut health, whole grains, fiber guides
+     - If unsure, use `1124140825679184036` as default.
      - `link` = `https://www.daily-life-hacks.com/{slug}` (NOT "destination_url")
      - `status` = `PENDING`
    - Do NOT include columns: `slug`, `variant`, `destination_url`, `board`, `scheduled_time_utc`.

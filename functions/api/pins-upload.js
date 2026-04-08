@@ -14,11 +14,18 @@
  *   destination_url, board, scheduled_date, scheduled_time_utc, status
  */
 
-// Board name → ID mapping
+// Board name → ID mapping (includes aliases from Agent 6)
 const BOARD_IDS = {
+  // Canonical names
   "High Fiber Dinner and Gut Health Recipes": "1124140825679184032",
   "Healthy Breakfast, Smoothies and Snacks":  "1124140825679184036",
   "Gut Health Tips and Nutrition Charts":     "1124140825679184034",
+  // Agent 6 aliases
+  "High Fiber Recipes":                       "1124140825679184032",
+  "Gut Health & Nutrition Tips":              "1124140825679184034",
+  "Healthy Meal Prep & Kitchen Tips":         "1124140825679184036",
+  "Gut Health and Nutrition Tips":            "1124140825679184034",
+  "Healthy Breakfast Smoothies and Snacks":   "1124140825679184036",
 };
 
 const REQUIRED_COLS = ["pin_title", "image_url", "scheduled_date"];
