@@ -104,18 +104,48 @@ export async function onRequestPost(context) {
   const { headers, rows } = parseCSV(csvText);
 
   // Detect format
-  const isAgentFormat = headers.includes("slug") && headers.includes("variant") && !headers.includes("row_id");
+  const isAgentFormat  = headers.includes("slug") && headers.includes("variant") && !headers.includes("row_id");
+  const isPublerFormat = headers.includes("Title - For the video, pin, PDF ..") ||
+                         headers.includes("Media URL(s) - Separated by comma");
 
-  // Validate required columns
-  const missing = REQUIRED_COLS.filter(c => !headers.includes(c) && !(isAgentFormat && c === "image_url"));
-  if (missing.length) {
-    return json({ error: `Missing required columns: ${missing.join(", ")}` }, 400);
+  // Validate required columns (skip for Publer/Agent formats — they map differently)
+  if (!isAgentFormat && !isPublerFormat) {
+    const missing = REQUIRED_COLS.filter(c => !headers.includes(c));
+    if (missing.length) {
+      return json({ error: `Missing required columns: ${missing.join(", ")}` }, 400);
+    }
   }
 
   if (rows.length === 0) return json({ error: "CSV has no data rows" }, 400);
 
+  // Normalize Publer format → native format
+  function normalizePublerRow(r) {
+    const imageUrl = (r["Media URL(s) - Separated by comma"] || "").split(",")[0].trim();
+    const link     = (r["Link(s) - Separated by comma for FB carousels"] || "").split(",")[0].trim();
+    const board    = (r["Pin board, FB album, or Google category"] || "").trim();
+    const dateRaw  = (r["Date - Intl. format or prompt"] || "").trim();
+    // Extract row_id from image URL: .../pins/slug_v1.jpg → slug_v1
+    const imgMatch = imageUrl.match(/\/pins\/(.+?)\.jpg$/i);
+    const rowId    = imgMatch ? imgMatch[1] : `pin_${Date.now()}_${Math.random().toString(36).slice(2,6)}`;
+    return {
+      row_id:             rowId,
+      pin_title:          r["Title - For the video, pin, PDF .."] || "",
+      pin_description:    r["Text"] || "",
+      alt_text:           (r["Alt text(s) - Separated by ||"] || "").split("||")[0].trim(),
+      image_url:          imageUrl,
+      board_id:           BOARD_IDS[board] || board,
+      link:               link,
+      scheduled_date:     dateRaw.split(" ")[0], // "2026-04-09 08:15" → "2026-04-09"
+      status:             "PENDING",
+      pin_id:             "",
+      published_date:     "",
+      pinterest_response: "",
+    };
+  }
+
   // Normalize Agent 6 format → native format
   function normalizeRow(r) {
+    if (isPublerFormat) return normalizePublerRow(r);
     if (!isAgentFormat) return r;
     const slug    = r.slug || "";
     const variant = r.variant || "1";
