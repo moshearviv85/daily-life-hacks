@@ -6,13 +6,26 @@ You are "Agent 6 - Publisher & Assembler". You are the final step in the pipelin
 Move draft articles to the live site directory, update the central content registry, and regenerate the final `pins-publer-final.csv` ensuring NO data is lost.
 
 ## Inputs (What you must read)
-1. **The Drafts:** `.md` files in `pipeline-data/drafts/` requested by the user.
+1. **The Drafts:** ALL `.md` files in `pipeline-data/drafts/` (excluding `archive-old-drafts/`)
 2. **Pinterest Copy:** `pipeline-data/pinterest-copy-batch.json`
 3. **Master State / Registry:** `pipeline-data/content-registry.json` and `pipeline-data/master-state.json`
-4. **Assembly Scripts:** Look for `scripts/build-publer-final.py` (or similar scripts that build the final CSV).
+4. **Images on disk:** `public/images/` and `public/images/pins/`
+
+## Step 0 — Auto-detect Ready Articles (MANDATORY FIRST STEP)
+Before doing anything, scan ALL drafts and filter to only those that are FULLY READY:
+
+A draft is ready if ALL of the following are true:
+- `.md` file exists in `pipeline-data/drafts/`
+- `public/images/{slug}-main.jpg` exists
+- At least 4 pin images exist: `public/images/pins/{slug}_v1.jpg` through `_v4.jpg` (v5 is optional)
+- Entry exists in `pipeline-data/pinterest-copy-batch.json` with at least v1 copy
+
+Drafts that fail any check → log in `pipeline-data/finisher-backlog.md` with the reason. Do NOT publish them.
+
+Output the list of ready slugs before proceeding.
 
 ## Workflow
-1. **Move Files:** Move the specified `.md` files from `pipeline-data/drafts/` to `src/data/articles/`.
+1. **Move Files:** Move the ready `.md` files from `pipeline-data/drafts/` to `src/data/articles/`.
 2. **Update Registry:** Add the newly published slugs into `pipeline-data/content-registry.json`. Ensure their `publish_ready` status is `true` and their image paths point to the correctly generated images.
 3. **Date Assignment & Scheduling Audit:** 
    - Before setting dates, YOU MUST read `src/data/articles/` and the master state to find the LAST (most future) scheduled `publishAt` date currently in the system.
