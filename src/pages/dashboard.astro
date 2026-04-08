@@ -694,7 +694,17 @@ const BUILD = {
             Upload
           </button>
         </div>
+        <!-- Progress bar -->
+        <div id="pins-progress-wrap" style="display:none;margin-top:.6rem">
+          <div style="height:6px;background:var(--border);border-radius:4px;overflow:hidden">
+            <div id="pins-progress-bar"
+              style="height:100%;width:0%;background:#F29B30;border-radius:4px;transition:width .4s ease"></div>
+          </div>
+          <div id="pins-progress-label" style="font-size:.72rem;color:var(--muted);margin-top:.3rem"></div>
+        </div>
         <div id="pins-upload-status" style="font-size:.75rem;margin-top:.4rem;display:none"></div>
+        <!-- Polling status after trigger -->
+        <div id="pins-poll-status" style="display:none;margin-top:.5rem;padding:.5rem .7rem;border-radius:8px;background:#fff7ed;border:1px solid #fed7aa;font-size:.75rem;color:#92400e"></div>
         <div style="margin-top:.5rem">
           <button onclick="clearPendingPins()"
             style="background:#ef4444;color:#fff;border:none;border-radius:8px;padding:.35rem .8rem;font-size:.75rem;font-weight:700;cursor:pointer">
@@ -1708,10 +1718,20 @@ async function loadPinsStatus() {
   }
 }
 
-async function uploadPinsCSV() {
-  const input = document.getElementById('pins-csv-input');
+function setProgress(pct, label) {
+  const wrap = document.getElementById('pins-progress-wrap');
+  const bar  = document.getElementById('pins-progress-bar');
+  const lbl  = document.getElementById('pins-progress-label');
+  wrap.style.display = pct >= 0 ? '' : 'none';
+  bar.style.width = pct + '%';
+  lbl.textContent  = label || '';
+}
+
+function uploadPinsCSV() {
+  const input    = document.getElementById('pins-csv-input');
   const statusEl = document.getElementById('pins-upload-status');
-  const btn = document.getElementById('pins-upload-btn');
+  const pollEl   = document.getElementById('pins-poll-status');
+  const btn      = document.getElementById('pins-upload-btn');
 
   if (!input.files || !input.files[0]) {
     statusEl.style.display = '';
@@ -1723,37 +1743,114 @@ async function uploadPinsCSV() {
   btn.disabled = true;
   btn.textContent = 'Uploading...';
   statusEl.style.display = 'none';
+  pollEl.style.display   = 'none';
+  setProgress(0, 'שולח קובץ...');
 
-  try {
-    const formData = new FormData();
-    formData.append('file', input.files[0]);
+  const formData = new FormData();
+  formData.append('file', input.files[0]);
 
-    const res = await fetch(`/api/pins-upload?key=${encodeURIComponent(pw)}`, {
-      method: 'POST',
-      body: formData,
-    });
+  const xhr = new XMLHttpRequest();
 
-    const data = await res.json();
-    statusEl.style.display = '';
-
-    if (res.ok) {
-      statusEl.style.color = '#16a34a';
-      const triggerNote = data.triggered ? ' — first pin posting now!' : '';
-      statusEl.textContent = `Uploaded: ${data.inserted} new, ${data.updated} updated (${data.total} total rows)${triggerNote}`;
-      loadPinsStatus();
-      input.value = '';
-    } else {
-      statusEl.style.color = '#b91c1c';
-      statusEl.textContent = `Error: ${data.error || res.statusText}`;
+  // Phase 1: file upload progress (0→50%)
+  xhr.upload.onprogress = (e) => {
+    if (e.lengthComputable) {
+      const pct = Math.round((e.loaded / e.total) * 50);
+      setProgress(pct, `שולח קובץ... ${pct * 2}%`);
     }
-  } catch(e) {
-    statusEl.style.display = '';
-    statusEl.style.color = '#b91c1c';
-    statusEl.textContent = `Upload failed: ${e.message}`;
-  } finally {
+  };
+
+  // Phase 1 done → animate 50→90% while server processes
+  xhr.upload.onload = () => {
+    setProgress(50, 'מעבד שורות ושומר ב-D1...');
+    let pct = 50;
+    const timer = setInterval(() => {
+      pct = Math.min(90, pct + 2);
+      setProgress(pct, `מעבד שורות ושומר ב-D1... ${Math.round((pct - 50) / 40 * 100)}%`);
+    }, 400);
+    xhr._processingTimer = timer;
+  };
+
+  xhr.onload = () => {
+    clearInterval(xhr._processingTimer);
+    setProgress(100, 'הושלם!');
+    setTimeout(() => setProgress(-1, ''), 2000);
+
     btn.disabled = false;
     btn.textContent = 'Upload';
+
+    let data;
+    try { data = JSON.parse(xhr.responseText); } catch(e) { data = {}; }
+
+    statusEl.style.display = '';
+    if (xhr.status >= 200 && xhr.status < 300) {
+      statusEl.style.color = '#16a34a';
+      statusEl.textContent = `הועלו ${data.inserted} פינים חדשים, עודכנו ${data.updated} (סה"כ ${data.total} שורות).`;
+      loadPinsStatus();
+      input.value = '';
+      if (data.triggered) {
+        startPinPostedPolling();
+      }
+    } else {
+      statusEl.style.color = '#b91c1c';
+      statusEl.textContent = `Error: ${data.error || xhr.statusText}`;
+    }
+  };
+
+  xhr.onerror = () => {
+    clearInterval(xhr._processingTimer);
+    setProgress(-1, '');
+    btn.disabled = false;
+    btn.textContent = 'Upload';
+    statusEl.style.display = '';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = 'Upload failed — check network.';
+  };
+
+  xhr.open('POST', `/api/pins-upload?key=${encodeURIComponent(pw)}`);
+  xhr.send(formData);
+}
+
+let _pollTimer = null;
+async function startPinPostedPolling() {
+  const pollEl = document.getElementById('pins-poll-status');
+  pollEl.style.display = '';
+
+  // Snapshot current posted count
+  let prevPosted = 0;
+  try {
+    const s = await fetch(`/api/pins-status?key=${encodeURIComponent(pw)}`).then(r => r.json());
+    prevPosted = s.posted || 0;
+  } catch(_) {}
+
+  let attempts = 0;
+  const MAX = 20; // 5 minutes max
+  clearInterval(_pollTimer);
+
+  function tick() {
+    attempts++;
+    const remaining = MAX - attempts;
+    pollEl.textContent = `⏳ ממתין לפרסום הפין הראשון... (בדיקה ${attempts}/${MAX})`;
+
+    fetch(`/api/pins-status?key=${encodeURIComponent(pw)}`)
+      .then(r => r.json())
+      .then(s => {
+        if (s.posted > prevPosted) {
+          clearInterval(_pollTimer);
+          pollEl.style.background = '#f0fdf4';
+          pollEl.style.borderColor = '#bbf7d0';
+          pollEl.style.color = '#166534';
+          pollEl.textContent = `✓ הפין הראשון פורסם בהצלחה! (סה"כ ${s.posted} פורסמו)`;
+          loadPinsStatus();
+        } else if (attempts >= MAX) {
+          clearInterval(_pollTimer);
+          pollEl.textContent = 'לא התקבל אישור תוך 5 דקות — בדוק GitHub Actions.';
+        }
+      })
+      .catch(() => {});
   }
+
+  _pollTimer = setInterval(tick, 15000);
+  tick(); // immediate first check
 }
 
 async function clearPendingPins() {
