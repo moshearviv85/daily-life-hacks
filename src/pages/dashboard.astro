@@ -1895,7 +1895,9 @@ async function triggerPostNow() {
   pollEl.textContent = 'שולח פקודה ל-GitHub Actions...';
   try {
     const res  = await fetch(`/api/pins-trigger?key=${encodeURIComponent(pw)}`, { method: 'POST' });
-    const data = await res.json();
+    const text = await res.text();
+    let data;
+    try { data = JSON.parse(text); } catch(_) { data = { error: text.slice(0, 300) }; }
     if (res.ok && data.ok) {
       pollEl.textContent = '✓ GitHub Actions הופעל — ממתין לפרסום...';
       startPinPostedPolling();
