@@ -43,7 +43,7 @@ export async function onRequestGet(context) {
 
     // Last 5 posted
     db.prepare(`
-      SELECT row_id, pin_title, pin_id, published_date
+      SELECT row_id, pin_title, pin_id, published_date, link
       FROM pins_schedule
       WHERE status = 'POSTED'
       ORDER BY published_date DESC

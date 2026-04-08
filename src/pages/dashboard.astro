@@ -733,7 +733,7 @@ const BUILD = {
         <div class="card-title" style="font-size:.78rem;margin-bottom:.4rem">Recently Posted</div>
         <div id="ps-recent-empty" class="empty" style="display:none">None yet.</div>
         <table class="data-table" id="ps-recent-table" style="display:none">
-          <thead><tr><th>Date</th><th>Title</th><th>Pin ID</th></tr></thead>
+          <thead><tr><th>Date</th><th>Title</th><th>Pin ID</th><th>Article</th></tr></thead>
           <tbody id="ps-recent-tbody"></tbody>
         </table>
       </div>
@@ -1706,13 +1706,20 @@ async function loadPinsStatus() {
     if (d.recent_posted && d.recent_posted.length > 0) {
       el('ps-recent-empty').style.display = 'none';
       el('ps-recent-table').style.display = '';
-      el('ps-recent-tbody').innerHTML = d.recent_posted.map(p =>
-        `<tr>
+      el('ps-recent-tbody').innerHTML = d.recent_posted.map(p => {
+        const pinLink = p.pin_id
+          ? `<a href="https://www.pinterest.com/pin/${p.pin_id}/" target="_blank" style="color:#E60023;font-size:.72rem">${p.pin_id}</a>`
+          : '—';
+        const articleLink = p.link
+          ? `<a href="${p.link}" target="_blank" style="font-size:.72rem;color:var(--orange)">↗</a>`
+          : '—';
+        return `<tr>
           <td style="white-space:nowrap;font-size:.72rem">${(p.published_date || '').slice(0,16)}</td>
           <td style="font-size:.75rem">${p.pin_title}</td>
-          <td style="font-size:.72rem;color:var(--muted)">${p.pin_id || '—'}</td>
-        </tr>`
-      ).join('');
+          <td style="white-space:nowrap">${pinLink}</td>
+          <td style="text-align:center">${articleLink}</td>
+        </tr>`;
+      }).join('');
     } else {
       el('ps-recent-empty').style.display = '';
       el('ps-recent-table').style.display = 'none';
@@ -1816,46 +1823,77 @@ function uploadPinsCSV() {
 }
 
 let _pollTimer = null;
+let _pollLogs  = [];
+
+function appendPollLog(msg) {
+  const now = new Date().toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  _pollLogs.push(`[${now}] ${msg}`);
+  const pollEl = document.getElementById('pins-poll-status');
+  pollEl.innerHTML = _pollLogs.map(l =>
+    `<div style="font-family:monospace;font-size:.72rem;line-height:1.6">${l}</div>`
+  ).join('');
+  pollEl.scrollTop = pollEl.scrollHeight;
+}
+
 async function startPinPostedPolling() {
   const pollEl = document.getElementById('pins-poll-status');
   pollEl.style.display = '';
+  pollEl.style.maxHeight = '140px';
+  pollEl.style.overflowY = 'auto';
+  _pollLogs = [];
 
-  // Snapshot current posted count
+  // Snapshot current posted count + recent pin IDs
   let prevPosted = 0;
+  let prevPinIds = new Set();
   try {
     const s = await fetch(`/api/pins-status?key=${encodeURIComponent(pw)}`).then(r => r.json());
     prevPosted = s.posted || 0;
+    (s.recent_posted || []).forEach(p => { if (p.pin_id) prevPinIds.add(p.pin_id); });
   } catch(_) {}
 
+  appendPollLog(`GitHub Actions הופעל — ${prevPosted} פינים פורסמו עד כה`);
+  appendPollLog('ממתין לאישור פרסום מ-Pinterest...');
+
   let attempts = 0;
-  const MAX = 20; // 5 minutes max
+  const MAX = 24; // 6 minutes max
   clearInterval(_pollTimer);
 
   function tick() {
     attempts++;
-    const remaining = MAX - attempts;
-    pollEl.textContent = `⏳ ממתין לפרסום הפין הראשון... (בדיקה ${attempts}/${MAX})`;
+    appendPollLog(`בדיקה ${attempts}/${MAX}...`);
 
     fetch(`/api/pins-status?key=${encodeURIComponent(pw)}`)
       .then(r => r.json())
       .then(s => {
         if (s.posted > prevPosted) {
           clearInterval(_pollTimer);
+          // Find the new pin
+          const newPin = (s.recent_posted || []).find(p => p.pin_id && !prevPinIds.has(p.pin_id));
+          if (newPin) {
+            appendPollLog(`✓ פורסם! Pin ID: ${newPin.pin_id}`);
+            appendPollLog(`  כותרת: ${newPin.pin_title}`);
+            if (newPin.link) appendPollLog(`  כתבה: ${newPin.link}`);
+            appendPollLog(`  Pinterest: https://www.pinterest.com/pin/${newPin.pin_id}/`);
+          } else {
+            appendPollLog(`✓ פורסם! (סה"כ ${s.posted} פינים)`);
+          }
           pollEl.style.background = '#f0fdf4';
           pollEl.style.borderColor = '#bbf7d0';
           pollEl.style.color = '#166534';
-          pollEl.textContent = `✓ הפין הראשון פורסם בהצלחה! (סה"כ ${s.posted} פורסמו)`;
           loadPinsStatus();
         } else if (attempts >= MAX) {
           clearInterval(_pollTimer);
-          pollEl.textContent = 'לא התקבל אישור תוך 5 דקות — בדוק GitHub Actions.';
+          appendPollLog('⚠ לא התקבל אישור תוך 6 דקות.');
+          appendPollLog('בדוק GitHub Actions: github.com/moshearviv85/daily-life-hacks/actions');
+        } else {
+          appendPollLog(`  עדיין ממתין... (${s.posted} פורסמו, ${s.pending} ממתינים)`);
         }
       })
-      .catch(() => {});
+      .catch(e => appendPollLog(`  שגיאת רשת: ${e.message}`));
   }
 
   _pollTimer = setInterval(tick, 15000);
-  tick(); // immediate first check
+  setTimeout(tick, 5000); // first check after 5 seconds
 }
 
 async function clearPendingPins() {
