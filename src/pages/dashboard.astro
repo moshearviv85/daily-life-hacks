@@ -695,6 +695,13 @@ const BUILD = {
           </button>
         </div>
         <div id="pins-upload-status" style="font-size:.75rem;margin-top:.4rem;display:none"></div>
+        <div style="margin-top:.5rem">
+          <button onclick="clearPendingPins()"
+            style="background:#ef4444;color:#fff;border:none;border-radius:8px;padding:.35rem .8rem;font-size:.75rem;font-weight:700;cursor:pointer">
+            Clear Pending
+          </button>
+          <span style="font-size:.72rem;color:var(--muted);margin-left:.5rem">מוחק רק פינים שעוד לא פורסמו</span>
+        </div>
       </div>
 
       <!-- Upcoming pins -->
@@ -1748,6 +1755,31 @@ async function uploadPinsCSV() {
     btn.textContent = 'Upload';
   }
 }
+
+async function clearPendingPins() {
+  if (!pw) return;
+  if (!confirm('למחוק את כל הפינים הממתינים (PENDING)?')) return;
+  const statusEl = document.getElementById('pins-upload-status');
+  statusEl.style.display = '';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = 'מוחק...';
+  try {
+    const res = await fetch(`/api/pins-clear?key=${encodeURIComponent(pw)}`, { method: 'POST' });
+    const data = await res.json();
+    if (res.ok) {
+      statusEl.style.color = '#16a34a';
+      statusEl.textContent = `נמחקו ${data.deleted} פינים ממתינים.`;
+      loadPinsStatus();
+    } else {
+      statusEl.style.color = '#b91c1c';
+      statusEl.textContent = `Error: ${data.error || res.statusText}`;
+    }
+  } catch(e) {
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+  }
+}
+window.clearPendingPins = clearPendingPins;
 </script>
 
 </body>

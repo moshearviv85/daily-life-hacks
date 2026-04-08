@@ -167,9 +167,54 @@ export async function onRequestPost(context) {
   }
 
   // Validate all rows have row_id (after normalization)
-  const normalizedRows = rows.map(normalizeRow);
+  let normalizedRows = rows.map(normalizeRow);
   const noId = normalizedRows.filter(r => !r.row_id);
   if (noId.length) return json({ error: `${noId.length} row(s) missing row_id` }, 400);
+
+  // Shuffle: interleave pins from different articles so same-article pins are spread out
+  // Then reassign scheduled_date: 8 pins/day, 3 hours apart, starting today UTC
+  function shuffleAndReschedule(rows) {
+    // Group by base slug (strip _v1, _v2 suffix)
+    const groups = {};
+    for (const row of rows) {
+      const base = row.row_id.replace(/_v\d+$/, "");
+      if (!groups[base]) groups[base] = [];
+      groups[base].push(row);
+    }
+    // Sort within each group by variant number
+    for (const base in groups) {
+      groups[base].sort((a, b) => {
+        const va = parseInt(a.row_id.match(/_v(\d+)$/)?.[1] ?? 0);
+        const vb = parseInt(b.row_id.match(/_v(\d+)$/)?.[1] ?? 0);
+        return va - vb;
+      });
+    }
+    // Round-robin interleave across all slugs
+    const slugs = Object.keys(groups).sort();
+    const interleaved = [];
+    const maxLen = Math.max(...slugs.map(s => groups[s].length));
+    for (let i = 0; i < maxLen; i++) {
+      for (const slug of slugs) {
+        if (groups[slug][i]) interleaved.push(groups[slug][i]);
+      }
+    }
+    // Reassign dates: start today, 8 pins/day, 3h apart from 06:00 UTC
+    const PINS_PER_DAY = 8;
+    const START_HOUR   = 6;
+    const INTERVAL_H   = 3;
+    const todayUTC = new Date();
+    todayUTC.setUTCHours(0, 0, 0, 0);
+    return interleaved.map((row, i) => {
+      const dayOffset  = Math.floor(i / PINS_PER_DAY);
+      const slotInDay  = i % PINS_PER_DAY;
+      const d = new Date(todayUTC);
+      d.setUTCDate(d.getUTCDate() + dayOffset);
+      d.setUTCHours(START_HOUR + slotInDay * INTERVAL_H, 0, 0, 0);
+      return { ...row, scheduled_date: d.toISOString().split("T")[0] };
+    });
+  }
+
+  normalizedRows = shuffleAndReschedule(normalizedRows);
 
   // Upsert into D1 in batches of 10
   const db = env.DB;
