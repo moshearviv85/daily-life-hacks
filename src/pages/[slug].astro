@@ -839,12 +839,6 @@ const robotsMeta = released ? undefined : "noindex, follow";
       const insertAfter = paragraphs[Math.floor(paragraphs.length / 3)];
       if (!insertAfter) return;
 
-      // Try ingredients image — production path first, then draft path
-      const candidates = [
-        `/images/${slug}-ingredients.jpg`,
-        `/images/draft/${slug}-ingredients.jpg`,
-      ];
-
       const wrapper = document.createElement("div");
       wrapper.style.cssText = "margin:2rem 0;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08)";
 
@@ -852,18 +846,8 @@ const robotsMeta = released ? undefined : "noindex, follow";
       img.alt = "Ingredients";
       img.loading = "lazy";
       img.style.cssText = "width:100%;display:block;max-height:520px;object-fit:cover";
-
-      let attempt = 0;
-      img.onerror = () => {
-        attempt++;
-        if (attempt < candidates.length) {
-          img.src = candidates[attempt];
-        } else {
-          wrapper.remove(); // no ingredients image — don't show anything
-        }
-      };
-
-      img.src = candidates[0];
+      img.onerror = () => { wrapper.remove(); };
+      img.src = `/images/${slug}-ingredients.jpg`;
       wrapper.appendChild(img);
       insertAfter.after(wrapper);
     }
