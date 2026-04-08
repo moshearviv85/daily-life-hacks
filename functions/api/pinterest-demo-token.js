@@ -29,22 +29,27 @@ export async function onRequestGet(context) {
   const url            = new URL(request.url);
   const cookies        = parseCookies(request.headers.get("Cookie") || "");
 
-  // Access gate
+  // Access gate — accepts direct ?key= param OR cookie
   if (accessKey) {
-    const signedAccess = cookies.pinterest_demo_access;
-    const payload = cookieSecret && signedAccess ? await verifySignedCookie(cookieSecret, signedAccess) : null;
-    const ok = payload && payload.ok === true && Number(payload.exp_at || 0) > Date.now();
-    if (!ok) {
-      return htmlPage(
-        `<h1>Restricted</h1>
-         <div class="warn">Access key required.
-           <form method="GET" style="margin-top:10px">
-             <input name="key" type="password" placeholder="Access key" style="padding:8px 12px;border-radius:8px;border:1px solid #ddd;width:260px"/>
-             <button type="submit" class="btn" style="margin-top:0;margin-left:8px">Unlock</button>
-           </form>
-         </div>`,
-        401
-      );
+    const directKey = url.searchParams.get("key") || "";
+    if (directKey === accessKey) {
+      // Direct key auth — pass through
+    } else {
+      const signedAccess = cookies.pinterest_demo_access;
+      const payload = cookieSecret && signedAccess ? await verifySignedCookie(cookieSecret, signedAccess) : null;
+      const ok = payload && payload.ok === true && Number(payload.exp_at || 0) > Date.now();
+      if (!ok) {
+        return htmlPage(
+          `<h1>Restricted</h1>
+           <div class="warn">Access key required.
+             <form method="GET" style="margin-top:10px">
+               <input name="key" type="password" placeholder="Access key" style="padding:8px 12px;border-radius:8px;border:1px solid #ddd;width:260px"/>
+               <button type="submit" class="btn" style="margin-top:0;margin-left:8px">Unlock</button>
+             </form>
+           </div>`,
+          401
+        );
+      }
     }
   }
 
