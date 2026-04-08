@@ -705,12 +705,16 @@ const BUILD = {
         <div id="pins-upload-status" style="font-size:.75rem;margin-top:.4rem;display:none"></div>
         <!-- Polling status after trigger -->
         <div id="pins-poll-status" style="display:none;margin-top:.5rem;padding:.5rem .7rem;border-radius:8px;background:#fff7ed;border:1px solid #fed7aa;font-size:.75rem;color:#92400e"></div>
-        <div style="margin-top:.5rem">
+        <div style="margin-top:.5rem;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center">
+          <button id="pins-post-now-btn" onclick="triggerPostNow()"
+            style="background:#16a34a;color:#fff;border:none;border-radius:8px;padding:.35rem .8rem;font-size:.75rem;font-weight:700;cursor:pointer">
+            ▶ Post Now
+          </button>
           <button onclick="clearPendingPins()"
             style="background:#ef4444;color:#fff;border:none;border-radius:8px;padding:.35rem .8rem;font-size:.75rem;font-weight:700;cursor:pointer">
             Clear Pending
           </button>
-          <span style="font-size:.72rem;color:var(--muted);margin-left:.5rem">מוחק רק פינים שעוד לא פורסמו</span>
+          <span style="font-size:.72rem;color:var(--muted)">מוחק רק פינים שעוד לא פורסמו</span>
         </div>
       </div>
 
@@ -1784,7 +1788,8 @@ function uploadPinsCSV() {
     statusEl.style.display = '';
     if (xhr.status >= 200 && xhr.status < 300) {
       statusEl.style.color = '#16a34a';
-      statusEl.textContent = `הועלו ${data.inserted} פינים חדשים, עודכנו ${data.updated} (סה"כ ${data.total} שורות).`;
+      const triggerStatus = data.triggered ? ' | GitHub Actions: ✓ הופעל' : ' | GitHub Actions: ✗ לא הופעל (לחץ Post Now)';
+      statusEl.textContent = `הועלו ${data.inserted} פינים חדשים, עודכנו ${data.updated} (סה"כ ${data.total} שורות).${triggerStatus}`;
       loadPinsStatus();
       input.value = '';
       if (data.triggered) {
@@ -1877,6 +1882,39 @@ async function clearPendingPins() {
   }
 }
 window.clearPendingPins = clearPendingPins;
+
+async function triggerPostNow() {
+  const btn    = document.getElementById('pins-post-now-btn');
+  const pollEl = document.getElementById('pins-poll-status');
+  btn.disabled = true;
+  btn.textContent = 'מפעיל...';
+  pollEl.style.display = '';
+  pollEl.style.background = '#fff7ed';
+  pollEl.style.borderColor = '#fed7aa';
+  pollEl.style.color = '#92400e';
+  pollEl.textContent = 'שולח פקודה ל-GitHub Actions...';
+  try {
+    const res  = await fetch(`/api/pins-trigger?key=${encodeURIComponent(pw)}`, { method: 'POST' });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      pollEl.textContent = '✓ GitHub Actions הופעל — ממתין לפרסום...';
+      startPinPostedPolling();
+    } else {
+      pollEl.style.background = '#fef2f2';
+      pollEl.style.borderColor = '#fecaca';
+      pollEl.style.color = '#b91c1c';
+      pollEl.textContent = `שגיאה (${data.status || res.status}): ${data.error || 'לא ידוע'}`;
+    }
+  } catch(e) {
+    pollEl.style.background = '#fef2f2';
+    pollEl.style.color = '#b91c1c';
+    pollEl.textContent = `Failed: ${e.message}`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '▶ Post Now';
+  }
+}
+window.triggerPostNow = triggerPostNow;
 </script>
 
 </body>
