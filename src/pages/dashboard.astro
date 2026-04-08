@@ -655,43 +655,70 @@ const BUILD = {
     </div>
 
     <!-- ── PINTEREST AUTO-POSTER ──────────────────────────────────────────── -->
-    <div class="card section-gap">
+    <div class="card section-gap" id="pins-poster-section">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
         <div class="card-title" style="margin:0">Pinterest Auto-Poster</div>
-        <a href="/api/pinterest-demo-token" target="_blank"
-           style="font-size:.78rem;background:var(--orange);color:#fff;padding:.35rem .8rem;border-radius:8px;text-decoration:none;font-weight:700">
-          Get Token →
-        </a>
+        <div style="display:flex;gap:.5rem;align-items:center">
+          <button onclick="loadPinsStatus()" class="refresh-btn" title="Refresh" style="font-size:.85rem">↻</button>
+          <a href="/api/pinterest-demo-token" target="_blank"
+             style="font-size:.75rem;background:var(--orange);color:#fff;padding:.3rem .7rem;border-radius:8px;text-decoration:none;font-weight:700">
+            Get Token →
+          </a>
+        </div>
       </div>
+
+      <!-- Stats -->
       <div class="stats-row" style="grid-template-columns:repeat(3,1fr);margin-bottom:1rem">
         <div>
-          <div class="stat-label">Total Scheduled</div>
-          <div class="stat-value" style="font-size:1.6rem">{pinsSchedule.length}</div>
+          <div class="stat-label">Total</div>
+          <div class="stat-value" style="font-size:1.6rem" id="ps-total">—</div>
         </div>
         <div>
           <div class="stat-label">Posted</div>
-          <div class="stat-value" style="font-size:1.6rem;color:#16a34a">{schedPosted.length}</div>
+          <div class="stat-value" style="font-size:1.6rem;color:#16a34a" id="ps-posted">—</div>
         </div>
         <div>
           <div class="stat-label">Pending</div>
-          <div class="stat-value" style="font-size:1.6rem">{schedPending.length}</div>
+          <div class="stat-value" style="font-size:1.6rem" id="ps-pending">—</div>
         </div>
       </div>
-      {nextPin && (
-        <div style="background:var(--input-bg);border:1px solid var(--border);border-radius:10px;padding:.75rem 1rem;font-size:.8rem">
-          <span style="color:var(--muted);font-weight:600">Next pin:</span>
-          <span style="color:var(--orange);font-weight:700;margin:0 .4rem">{nextPin.scheduled_date}</span>
-          <span style="color:var(--text)">{nextPin.pin_title}</span>
+
+      <!-- Upload CSV -->
+      <div style="border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;margin-bottom:1rem">
+        <div style="font-size:.8rem;font-weight:700;color:var(--heading);margin-bottom:.5rem">Upload Pins Schedule CSV</div>
+        <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+          <input type="file" id="pins-csv-input" accept=".csv,text/csv"
+            style="font-size:.78rem;flex:1;min-width:0;padding:.3rem;border:1px solid var(--border);border-radius:6px;background:var(--input-bg);color:var(--text)" />
+          <button id="pins-upload-btn" onclick="uploadPinsCSV()"
+            style="background:var(--orange);color:#fff;border:none;border-radius:8px;padding:.4rem .9rem;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap">
+            Upload
+          </button>
         </div>
-      )}
-      {schedPending.length === 0 && pinsSchedule.length > 0 && (
-        <div style="font-size:.8rem;color:var(--muted)">All pins posted. Add more rows to pins-schedule.csv.</div>
-      )}
-      {pinsSchedule.length === 0 && (
-        <div style="font-size:.8rem;color:var(--muted)">pins-schedule.csv not found or empty.</div>
-      )}
-      <div style="margin-top:.75rem;font-size:.72rem;color:var(--muted)">
-        Runs via GitHub Actions every 2h. Token refresh: AdsPower Profile 77 → /api/pinterest-demo-token
+        <div id="pins-upload-status" style="font-size:.75rem;margin-top:.4rem;display:none"></div>
+      </div>
+
+      <!-- Upcoming pins -->
+      <div id="ps-upcoming-wrap">
+        <div class="card-title" style="font-size:.78rem;margin-bottom:.4rem">Upcoming (next 10)</div>
+        <div id="ps-upcoming-empty" class="empty" style="display:none">No pending pins scheduled.</div>
+        <table class="data-table" id="ps-upcoming-table" style="display:none">
+          <thead><tr><th>Date</th><th>Title</th></tr></thead>
+          <tbody id="ps-upcoming-tbody"></tbody>
+        </table>
+      </div>
+
+      <!-- Recently posted -->
+      <div style="margin-top:1rem" id="ps-recent-wrap">
+        <div class="card-title" style="font-size:.78rem;margin-bottom:.4rem">Recently Posted</div>
+        <div id="ps-recent-empty" class="empty" style="display:none">None yet.</div>
+        <table class="data-table" id="ps-recent-table" style="display:none">
+          <thead><tr><th>Date</th><th>Title</th><th>Pin ID</th></tr></thead>
+          <tbody id="ps-recent-tbody"></tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:.75rem;font-size:.7rem;color:var(--muted)">
+        GitHub Actions runs every 2h · Token auto-refreshes · Images served from /images/pins/
       </div>
     </div>
 
@@ -839,6 +866,7 @@ async function loadDashboard() {
 
   // Fetch live data
   await fetchLive(currentPeriod);
+  loadPinsStatus();
 }
 
 // ── Period toggle ──────────────────────────────────────────────────────────
@@ -1621,6 +1649,104 @@ window.fetchClarity     = fetchClarity;
 window.closeModal       = closeModal;
 window.handleModalClick = handleModalClick;
 window.modalSearch      = modalSearch;
+window.loadPinsStatus   = loadPinsStatus;
+window.uploadPinsCSV    = uploadPinsCSV;
+
+// ── Pinterest Auto-Poster ──────────────────────────────────────────────────
+
+async function loadPinsStatus() {
+  if (!pw) return;
+  try {
+    const res = await fetch(`/api/pins-status?key=${encodeURIComponent(pw)}`);
+    if (res.status === 401) return; // not authenticated yet
+    if (!res.ok) return;
+    const d = await res.json();
+
+    el('ps-total').textContent  = d.total ?? '—';
+    el('ps-posted').textContent = d.posted ?? '—';
+    el('ps-pending').textContent = d.pending ?? '—';
+
+    // Upcoming
+    if (d.upcoming && d.upcoming.length > 0) {
+      el('ps-upcoming-empty').style.display = 'none';
+      el('ps-upcoming-table').style.display = '';
+      el('ps-upcoming-tbody').innerHTML = d.upcoming.map(p =>
+        `<tr>
+          <td style="white-space:nowrap">${p.scheduled_date}</td>
+          <td style="font-size:.75rem">${p.pin_title}</td>
+        </tr>`
+      ).join('');
+    } else {
+      el('ps-upcoming-empty').style.display = '';
+      el('ps-upcoming-table').style.display = 'none';
+    }
+
+    // Recent posted
+    if (d.recent_posted && d.recent_posted.length > 0) {
+      el('ps-recent-empty').style.display = 'none';
+      el('ps-recent-table').style.display = '';
+      el('ps-recent-tbody').innerHTML = d.recent_posted.map(p =>
+        `<tr>
+          <td style="white-space:nowrap;font-size:.72rem">${(p.published_date || '').slice(0,16)}</td>
+          <td style="font-size:.75rem">${p.pin_title}</td>
+          <td style="font-size:.72rem;color:var(--muted)">${p.pin_id || '—'}</td>
+        </tr>`
+      ).join('');
+    } else {
+      el('ps-recent-empty').style.display = '';
+      el('ps-recent-table').style.display = 'none';
+    }
+  } catch(e) {
+    console.warn('pins-status error:', e);
+  }
+}
+
+async function uploadPinsCSV() {
+  const input = document.getElementById('pins-csv-input');
+  const statusEl = document.getElementById('pins-upload-status');
+  const btn = document.getElementById('pins-upload-btn');
+
+  if (!input.files || !input.files[0]) {
+    statusEl.style.display = '';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = 'Please select a CSV file first.';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Uploading...';
+  statusEl.style.display = 'none';
+
+  try {
+    const formData = new FormData();
+    formData.append('file', input.files[0]);
+
+    const res = await fetch(`/api/pins-upload?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      body: formData,
+    });
+
+    const data = await res.json();
+    statusEl.style.display = '';
+
+    if (res.ok) {
+      statusEl.style.color = '#16a34a';
+      statusEl.textContent = `Uploaded: ${data.inserted} new, ${data.updated} updated (${data.total} total rows)`;
+      loadPinsStatus(); // refresh stats
+      input.value = '';
+    } else {
+      statusEl.style.color = '#b91c1c';
+      statusEl.textContent = `Error: ${data.error || res.statusText}`;
+    }
+  } catch(e) {
+    statusEl.style.display = '';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Upload failed: ${e.message}`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Upload';
+  }
+}
 </script>
 
 </body>

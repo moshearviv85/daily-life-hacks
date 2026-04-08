@@ -1,23 +1,26 @@
 #!/usr/bin/env python3
 """
 Pinterest Auto-Poster
-Reads pipeline-data/pins-schedule.csv, posts due pins to Pinterest API v5,
-updates the CSV with status/pin_id, and commits back to git.
+Gets next due pin from /api/pins-next, posts to Pinterest API v5,
+then marks as POSTED via /api/pins-mark-posted.
 
 Required env vars (GitHub Secrets):
   PINTEREST_APP_ID
   PINTEREST_APP_SECRET
   PINTEREST_REFRESH_TOKEN
+  PINS_API_URL     e.g. https://www.daily-life-hacks.com
+  PINS_API_KEY     same value as STATS_KEY in Cloudflare
 
-Safety: posts at most 1 pin per run.
+Optional:
+  GH_PAT           Personal Access Token for auto-updating PINTEREST_REFRESH_TOKEN secret
+  GITHUB_REPOSITORY  e.g. moshearviv85/daily-life-hacks (auto-set by GitHub Actions)
 """
 
 import os
-import csv
 import json
 import sys
 import subprocess
-from datetime import date, datetime
+from datetime import datetime
 from base64 import b64encode
 
 import requests
@@ -27,31 +30,29 @@ import requests
 APP_ID        = os.environ["PINTEREST_APP_ID"]
 APP_SECRET    = os.environ["PINTEREST_APP_SECRET"]
 REFRESH_TOKEN = os.environ["PINTEREST_REFRESH_TOKEN"]
+PINS_API_URL  = os.environ["PINS_API_URL"].rstrip("/")
+PINS_API_KEY  = os.environ["PINS_API_KEY"]
 GH_PAT        = os.environ.get("GH_PAT", "")
 GH_REPO       = os.environ.get("GITHUB_REPOSITORY", "")
 
-CSV_PATH     = "pipeline-data/pins-schedule.csv"
-API_BASE     = "https://api.pinterest.com/v5"
-MAX_PER_RUN  = 1  # Safety: never bulk-post accidentally
+API_BASE = "https://api.pinterest.com/v5"
 
 # ── GitHub Secret auto-update ─────────────────────────────────────────────────
 
 def update_github_secret(secret_name, secret_value):
     if not GH_PAT or not GH_REPO:
         print(f"  WARNING: GH_PAT or GITHUB_REPOSITORY not set — cannot auto-update {secret_name}")
-        print(f"  Manual update required: {secret_value}")
+        print(f"  Manual update required.")
         return
-
     result = subprocess.run(
         ["gh", "secret", "set", secret_name, "--body", secret_value, "--repo", GH_REPO],
         env={**os.environ, "GH_TOKEN": GH_PAT},
         capture_output=True, text=True,
     )
     if result.returncode == 0:
-        print(f"  Auto-updated {secret_name} secret in GitHub.")
+        print(f"  Auto-updated {secret_name} in GitHub Secrets.")
     else:
         print(f"  Failed to auto-update secret: {result.stderr.strip()}")
-        print(f"  Manual update required: {secret_value}")
 
 # ── Token refresh ─────────────────────────────────────────────────────────────
 
@@ -76,7 +77,7 @@ def get_access_token():
 
     data = resp.json()
     access_token = data.get("access_token")
-    new_refresh   = data.get("refresh_token")
+    new_refresh = data.get("refresh_token")
 
     if not access_token:
         print("ERROR: No access_token in refresh response")
@@ -90,7 +91,41 @@ def get_access_token():
 
     return access_token
 
-# ── Pin creation ──────────────────────────────────────────────────────────────
+# ── Get next pin from D1 ──────────────────────────────────────────────────────
+
+def get_next_pin():
+    resp = requests.get(
+        f"{PINS_API_URL}/api/pins-next",
+        params={"key": PINS_API_KEY},
+        timeout=10,
+    )
+    if resp.status_code == 204:
+        return None
+    if not resp.ok:
+        print(f"ERROR: pins-next failed — HTTP {resp.status_code}: {resp.text[:200]}")
+        sys.exit(1)
+    return resp.json()
+
+# ── Mark pin as posted in D1 ──────────────────────────────────────────────────
+
+def mark_posted(row_id, pin_id, pinterest_response):
+    resp = requests.post(
+        f"{PINS_API_URL}/api/pins-mark-posted",
+        params={"key": PINS_API_KEY},
+        json={
+            "row_id": row_id,
+            "pin_id": pin_id,
+            "published_date": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
+            "pinterest_response": pinterest_response,
+        },
+        timeout=10,
+    )
+    if not resp.ok:
+        print(f"WARNING: mark-posted failed — HTTP {resp.status_code}: {resp.text[:200]}")
+    else:
+        print(f"  Marked {row_id} as POSTED in D1.")
+
+# ── Post pin to Pinterest ─────────────────────────────────────────────────────
 
 def post_pin(access_token, row):
     payload = {
@@ -104,7 +139,6 @@ def post_pin(access_token, row):
             "url": row["image_url"],
         },
     }
-
     resp = requests.post(
         f"{API_BASE}/pins",
         headers={
@@ -129,93 +163,37 @@ def post_pin(access_token, row):
     pin_id = data.get("id") or data.get("pin_id") or ""
     return True, {"pin_id": pin_id, "raw": data}
 
-# ── CSV helpers ───────────────────────────────────────────────────────────────
-
-def load_csv():
-    with open(CSV_PATH, newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
-
-def save_csv(rows):
-    if not rows:
-        return
-    fieldnames = rows[0].keys()
-    with open(CSV_PATH, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-
-# ── Git commit ────────────────────────────────────────────────────────────────
-
-def git_commit(pin_id, row_id):
-    subprocess.run(["git", "config", "user.email", "actions@github.com"], check=True)
-    subprocess.run(["git", "config", "user.name", "GitHub Actions"], check=True)
-    subprocess.run(["git", "add", CSV_PATH], check=True)
-    subprocess.run([
-        "git", "commit", "-m",
-        f"Posted pin {row_id} (pin_id={pin_id}) [skip ci]"
-    ], check=True)
-    subprocess.run(["git", "push"], check=True)
-    print(f"CSV committed and pushed.")
-
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    from datetime import date
     today = date.today().isoformat()
     print(f"Running post-pins.py — today is {today}")
 
-    rows = load_csv()
-    due = [
-        r for r in rows
-        if r.get("status", "").strip().upper() == "PENDING"
-        and r.get("scheduled_date", "").strip() <= today
-    ]
-
-    if not due:
+    pin = get_next_pin()
+    if not pin:
         print("No pins due today. Done.")
         return
 
-    print(f"Found {len(due)} pending pin(s) due. Will post at most {MAX_PER_RUN}.")
+    print(f"\nNext pin: {pin['row_id']} — {pin['pin_title']}")
+    print(f"  scheduled: {pin['scheduled_date']}")
+    print(f"  board_id:  {pin['board_id']}")
+    print(f"  image:     {pin['image_url']}")
+    print(f"  link:      {pin['link']}")
 
     access_token = get_access_token()
+    ok, result = post_pin(access_token, pin)
 
-    posted = 0
-    for row in due[:MAX_PER_RUN]:
-        print(f"\nPosting: {row['row_id']} — {row['pin_title']}")
-        print(f"  board_id: {row['board_id']}")
-        print(f"  image:    {row['image_url']}")
-        print(f"  link:     {row['link']}")
+    if ok:
+        pin_id = result["pin_id"]
+        print(f"SUCCESS — pin_id: {pin_id}")
+        mark_posted(pin["row_id"], pin_id, result["raw"])
+    else:
+        print(f"FAILED — Pinterest API error:")
+        print(json.dumps(result, indent=2)[:600])
+        sys.exit(1)
 
-        ok, result = post_pin(access_token, row)
-
-        if ok:
-            pin_id = result["pin_id"]
-            print(f"SUCCESS — pin_id: {pin_id}")
-
-            # Update row in place
-            for r in rows:
-                if r["row_id"] == row["row_id"]:
-                    r["status"]           = "POSTED"
-                    r["pin_id"]           = pin_id
-                    r["published_date"]   = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
-                    r["pinterest_response"] = json.dumps(result["raw"])
-                    break
-
-            save_csv(rows)
-            git_commit(pin_id, row["row_id"])
-            posted += 1
-
-        else:
-            print(f"FAILED — HTTP error")
-            print(json.dumps(result, indent=2)[:600])
-
-            # Log error in CSV but keep PENDING so it retries next run
-            for r in rows:
-                if r["row_id"] == row["row_id"]:
-                    r["pinterest_response"] = json.dumps(result)[:300]
-                    break
-            save_csv(rows)
-
-    print(f"\nDone. Posted {posted} pin(s) this run.")
+    print("\nDone.")
 
 if __name__ == "__main__":
     main()

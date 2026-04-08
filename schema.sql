@@ -84,3 +84,24 @@ CREATE TABLE IF NOT EXISTS clarity_cache (
   data TEXT NOT NULL,
   cached_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+
+-- Pinterest auto-poster schedule
+CREATE TABLE IF NOT EXISTS pins_schedule (
+  row_id TEXT PRIMARY KEY,
+  pin_title TEXT NOT NULL,
+  pin_description TEXT,
+  alt_text TEXT,
+  image_url TEXT,
+  board_id TEXT,
+  link TEXT,
+  scheduled_date TEXT,
+  status TEXT DEFAULT 'PENDING',
+  pin_id TEXT,
+  published_date TEXT,
+  pinterest_response TEXT,
+  created_at TEXT DEFAULT (datetime('now')),
+  updated_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_ps_status ON pins_schedule(status);
+CREATE INDEX IF NOT EXISTS idx_ps_scheduled_date ON pins_schedule(scheduled_date);
