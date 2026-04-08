@@ -3,12 +3,25 @@
  * Accepts a CSV file (multipart or raw text) and upserts all rows into D1 pins_schedule table.
  * Protected by STATS_KEY.
  *
- * CSV expected columns (order flexible, detected by header):
+ * Supports two CSV formats:
+ *
+ * Format A (native — preferred):
  *   row_id, pin_title, pin_description, alt_text, image_url, board_id,
  *   link, scheduled_date, status, pin_id, published_date, pinterest_response
+ *
+ * Format B (Agent 6 output — auto-detected and normalized):
+ *   slug, variant, pin_title, description, alt_text, image_url,
+ *   destination_url, board, scheduled_date, scheduled_time_utc, status
  */
 
-const REQUIRED_COLS = ["row_id", "pin_title", "image_url", "board_id", "link", "scheduled_date"];
+// Board name → ID mapping
+const BOARD_IDS = {
+  "High Fiber Dinner and Gut Health Recipes": "1124140825679184032",
+  "Healthy Breakfast, Smoothies and Snacks":  "1124140825679184036",
+  "Gut Health Tips and Nutrition Charts":     "1124140825679184034",
+};
+
+const REQUIRED_COLS = ["pin_title", "image_url", "scheduled_date"];
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -83,16 +96,42 @@ export async function onRequestPost(context) {
 
   const { headers, rows } = parseCSV(csvText);
 
-  // Validate required columns exist
-  const missing = REQUIRED_COLS.filter(c => !headers.includes(c));
+  // Detect format
+  const isAgentFormat = headers.includes("slug") && headers.includes("variant") && !headers.includes("row_id");
+
+  // Validate required columns
+  const missing = REQUIRED_COLS.filter(c => !headers.includes(c) && !(isAgentFormat && c === "image_url"));
   if (missing.length) {
     return json({ error: `Missing required columns: ${missing.join(", ")}` }, 400);
   }
 
   if (rows.length === 0) return json({ error: "CSV has no data rows" }, 400);
 
-  // Validate all rows have row_id
-  const noId = rows.filter(r => !r.row_id);
+  // Normalize Agent 6 format → native format
+  function normalizeRow(r) {
+    if (!isAgentFormat) return r;
+    const slug    = r.slug || "";
+    const variant = r.variant || "1";
+    const board   = (r.board || "").trim();
+    return {
+      row_id:             `${slug}_v${variant}`,
+      pin_title:          r.pin_title || "",
+      pin_description:    r.description || "",
+      alt_text:           r.alt_text || "",
+      image_url:          r.image_url || `https://www.daily-life-hacks.com/images/pins/${slug}_v${variant}.jpg`,
+      board_id:           BOARD_IDS[board] || board,
+      link:               r.destination_url || `https://www.daily-life-hacks.com/${slug}`,
+      scheduled_date:     r.scheduled_date || "",
+      status:             r.status || "PENDING",
+      pin_id:             "",
+      published_date:     "",
+      pinterest_response: "",
+    };
+  }
+
+  // Validate all rows have row_id (after normalization)
+  const normalizedRows = rows.map(normalizeRow);
+  const noId = normalizedRows.filter(r => !r.row_id);
   if (noId.length) return json({ error: `${noId.length} row(s) missing row_id` }, 400);
 
   // Upsert into D1 in batches of 10
@@ -101,7 +140,7 @@ export async function onRequestPost(context) {
 
   let inserted = 0, updated = 0;
 
-  for (const row of rows) {
+  for (const row of normalizedRows) {
     // Check if exists
     const existing = await db.prepare(
       "SELECT row_id, status FROM pins_schedule WHERE row_id = ?"
