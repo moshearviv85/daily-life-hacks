@@ -32,4 +32,5 @@ jobs:
           PINS_API_KEY: ${{ secrets.STATS_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          PYTHONUNBUFFERED: "1"
         run: python scripts/fetch-pinterest-analytics.py
