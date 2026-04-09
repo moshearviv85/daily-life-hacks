@@ -68,11 +68,6 @@ def get_access_token():
 # ── Fetch top pins analytics ───────────────────────────────────────────────────
 
 def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
-    """
-    GET /v5/user_account/top_pins_analytics
-    Returns top N pins sorted by sort_by metric, with their analytics.
-    Requires org_analytics scope.
-    """
     resp = requests.get(
         f"{API_BASE}/user_account/analytics/top_pins",
         headers={"Authorization": f"Bearer {access_token}"},
@@ -87,11 +82,21 @@ def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
     )
     print(f"  top_pins [{sort_by}] → {resp.status_code}")
     if not resp.ok:
-        print(f"  ERROR: {resp.text[:300]}")
+        print(f"  ERROR: {resp.text[:500]}")
         return []
 
-    data  = resp.json()
-    items = (data.get("all") or {}).get("value") or []
+    data = resp.json()
+    print(f"  RAW KEYS: {list(data.keys())}")
+    print(f"  RAW SAMPLE: {str(data)[:800]}")
+
+    # Try every known response structure
+    items = (
+        data.get("value")                          # direct value array
+        or (data.get("all") or {}).get("value")    # wrapped under "all"
+        or data.get("pins")                        # alternative key
+        or data.get("items")                       # alternative key
+        or []
+    )
     print(f"  Got {len(items)} pins")
     return items
 
