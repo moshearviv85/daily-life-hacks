@@ -112,13 +112,13 @@ def main():
     print(f"Fetching Pinterest analytics: {start_date} → {end_date}")
 
     # Get list of posted pins from D1
-    resp = requests.get(f"{PINS_API_URL}/api/pins-status", params={"key": PINS_API_KEY}, timeout=10)
+    resp = requests.get(f"{PINS_API_URL}/api/pins-posted", params={"key": PINS_API_KEY}, timeout=10)
     if not resp.ok:
-        print(f"ERROR: pins-status failed {resp.status_code}")
+        print(f"ERROR: pins-posted failed {resp.status_code}: {resp.text[:200]}")
         sys.exit(1)
 
     data   = resp.json()
-    posted = [p for p in (data.get("pins") or []) if p.get("status") == "POSTED" and p.get("pin_id")]
+    posted = [p for p in (data.get("pins") or []) if p.get("pin_id")]
     print(f"Found {len(posted)} posted pins")
 
     if not posted:

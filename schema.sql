@@ -105,3 +105,16 @@ CREATE TABLE IF NOT EXISTS pins_schedule (
 
 CREATE INDEX IF NOT EXISTS idx_ps_status ON pins_schedule(status);
 CREATE INDEX IF NOT EXISTS idx_ps_scheduled_date ON pins_schedule(scheduled_date);
+
+-- Pinterest analytics cache (populated by GitHub Actions fetch-analytics.yml)
+CREATE TABLE IF NOT EXISTS pinterest_analytics_cache (
+  pin_id TEXT PRIMARY KEY,
+  pin_title TEXT,
+  pin_url TEXT,
+  pin_link TEXT,
+  created_at TEXT,
+  impressions INTEGER DEFAULT 0,
+  outbound_clicks INTEGER DEFAULT 0,
+  saves INTEGER DEFAULT 0,
+  cached_at TEXT DEFAULT (datetime('now'))
+);
