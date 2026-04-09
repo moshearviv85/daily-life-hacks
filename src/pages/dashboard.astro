@@ -659,6 +659,79 @@ const BUILD = {
 
     </div>
 
+    <!-- ── PINTEREST ANALYTICS ─────────────────────────────────────────────── -->
+    <div class="card section-gap">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem">
+        <div>
+          <div class="card-title" style="margin-bottom:0">Pinterest Analytics — Top Pins</div>
+          <div id="pa-cache-note" style="font-size:.72rem;color:var(--muted);margin-top:.2rem"></div>
+        </div>
+        <div style="display:flex;gap:.5rem">
+          <button id="pa-load-btn" onclick="loadPinterestAnalytics(false)"
+            style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
+            ↻ Load Analytics
+          </button>
+          <button id="pa-refresh-btn" onclick="loadPinterestAnalytics(true)"
+            style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--muted);cursor:pointer" title="Force fresh pull from Pinterest API (ignores cache)">
+            ⟳ Force Refresh
+          </button>
+        </div>
+      </div>
+      <div id="pa-loading"  class="empty" style="display:none">Fetching Pinterest analytics...</div>
+      <div id="pa-error"    class="empty" style="display:none"></div>
+      <div id="pa-content"  style="display:none">
+        <!-- Account totals row -->
+        <div class="stats-grid" style="margin-bottom:1.25rem">
+          <div class="stat-card blue">
+            <div class="stat-label">Impressions</div>
+            <div class="stat-value" id="pa-total-imp">—</div>
+            <div class="stat-sub">last 90 days</div>
+          </div>
+          <div class="stat-card orange">
+            <div class="stat-label">Outbound Clicks</div>
+            <div class="stat-value" id="pa-total-clicks">—</div>
+            <div class="stat-sub">to site</div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-label">Saves</div>
+            <div class="stat-value" id="pa-total-saves">—</div>
+            <div class="stat-sub">re-pins</div>
+          </div>
+          <div class="stat-card purple">
+            <div class="stat-label">Pins Tracked</div>
+            <div class="stat-value" id="pa-total-pins">—</div>
+            <div class="stat-sub">top 50</div>
+          </div>
+        </div>
+        <!-- Pins table -->
+        <table class="data-table" id="pa-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Pin Title</th>
+              <th>Created</th>
+              <th style="cursor:pointer" onclick="paSortBy('impressions')">Impressions ↕</th>
+              <th style="cursor:pointer" onclick="paSortBy('outbound_clicks')">Clicks ↕</th>
+              <th style="cursor:pointer" onclick="paSortBy('saves')">Saves ↕</th>
+            </tr>
+          </thead>
+          <tbody id="pa-tbody"></tbody>
+        </table>
+        <!-- Pagination -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:.75rem;font-size:.85rem">
+          <button id="pa-prev" onclick="paPage(-1)"
+            style="padding:.3rem .75rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
+            ← Prev
+          </button>
+          <span id="pa-page-info" style="color:var(--muted)"></span>
+          <button id="pa-next" onclick="paPage(1)"
+            style="padding:.3rem .75rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
+            Next →
+          </button>
+        </div>
+      </div>
+    </div>
+
     <!-- ── PINTEREST AUTO-POSTER ──────────────────────────────────────────── -->
     <div class="card section-gap" id="pins-poster-section">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
@@ -1668,6 +1741,120 @@ function renderCountriesTable(rows) {
   </table>`;
 }
 
+// ── Pinterest Analytics ────────────────────────────────────────────────────
+let paAllPins = [];
+let paCurrentPage = 0;
+let paSortField = 'impressions';
+const PA_PAGE_SIZE = 10;
+
+async function loadPinterestAnalytics(forceRefresh = false) {
+  const loadBtn    = document.getElementById('pa-load-btn');
+  const refreshBtn = document.getElementById('pa-refresh-btn');
+  loadBtn.disabled = refreshBtn.disabled = true;
+  loadBtn.textContent = 'Loading...';
+  el('pa-loading').style.display = 'block';
+  el('pa-loading').textContent   = forceRefresh ? 'Fetching fresh data from Pinterest...' : 'Loading analytics...';
+  el('pa-content').style.display = 'none';
+  el('pa-error').style.display   = 'none';
+
+  try {
+    const qs = forceRefresh ? '&refresh=1' : '';
+    const res = await fetch(`/api/pinterest-analytics?key=${encodeURIComponent(pw)}${qs}`, {
+      credentials: 'include', // send Pinterest cookie
+    });
+    const data = await res.json();
+
+    if (!res.ok || data.error) {
+      if (data.error === 'no_token') {
+        el('pa-error').innerHTML = `Pinterest not connected. <a href="/api/pinterest-demo" target="_blank" style="color:var(--orange)">Connect here</a> then try again.`;
+      } else {
+        el('pa-error').textContent = 'Error: ' + (data.error || 'unknown');
+      }
+      el('pa-loading').style.display = 'none';
+      el('pa-error').style.display   = 'block';
+      return;
+    }
+
+    paAllPins     = data.pins || [];
+    paCurrentPage = 0;
+
+    // Cache note
+    const note = el('pa-cache-note');
+    if (data.stale) {
+      note.textContent = `⚠️ Stale cache from ${data.cachedAt ? new Date(data.cachedAt + 'Z').toLocaleString() : '?'} — Pinterest API error`;
+      note.style.color = 'var(--red, #e55)';
+    } else if (data.fromCache) {
+      note.textContent = `Cached · ${data.cachedAt ? new Date(data.cachedAt + 'Z').toLocaleString() : ''}`;
+      note.style.color = '';
+    } else {
+      const range = data.startDate && data.endDate ? ` (${data.startDate} → ${data.endDate})` : '';
+      note.textContent = `Live data${range} · fetched ${new Date().toLocaleTimeString()}`;
+      note.style.color = '';
+    }
+
+    // Totals
+    if (data.totals) {
+      el('pa-total-imp').textContent    = fmt(data.totals.impressions    || 0);
+      el('pa-total-clicks').textContent = fmt(data.totals.outbound_clicks|| 0);
+      el('pa-total-saves').textContent  = fmt(data.totals.saves          || 0);
+    }
+    el('pa-total-pins').textContent = paAllPins.length;
+
+    el('pa-loading').style.display = 'none';
+    el('pa-content').style.display = 'block';
+    paRender();
+
+    loadBtn.textContent = '↻ Reload';
+  } catch (e) {
+    el('pa-loading').style.display = 'none';
+    el('pa-error').style.display   = 'block';
+    el('pa-error').textContent     = 'Network error: ' + e.message;
+  } finally {
+    loadBtn.disabled = refreshBtn.disabled = false;
+  }
+}
+
+function paSortBy(field) {
+  paSortField   = field;
+  paCurrentPage = 0;
+  paRender();
+}
+
+function paPage(dir) {
+  const maxPage = Math.ceil(paAllPins.length / PA_PAGE_SIZE) - 1;
+  paCurrentPage = Math.max(0, Math.min(maxPage, paCurrentPage + dir));
+  paRender();
+}
+
+function paRender() {
+  const sorted = [...paAllPins].sort((a, b) => (b[paSortField] || 0) - (a[paSortField] || 0));
+  const start  = paCurrentPage * PA_PAGE_SIZE;
+  const page   = sorted.slice(start, start + PA_PAGE_SIZE);
+  const total  = sorted.length;
+  const maxPage= Math.ceil(total / PA_PAGE_SIZE);
+
+  el('pa-tbody').innerHTML = page.map((p, i) => {
+    const rank = start + i + 1;
+    const created = p.created_at ? new Date(p.created_at).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}) : '—';
+    const title   = p.pin_title?.slice(0, 60) + (p.pin_title?.length > 60 ? '…' : '');
+    return `<tr>
+      <td style="color:var(--muted);font-weight:600">${rank}</td>
+      <td>
+        <a href="${p.pin_url}" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600;font-size:.82rem">${title}</a>
+        ${p.pin_link ? `<br><a href="${p.pin_link}" target="_blank" style="color:var(--muted);font-size:.72rem;text-decoration:none">→ site link</a>` : ''}
+      </td>
+      <td style="white-space:nowrap;color:var(--muted);font-size:.8rem">${created}</td>
+      <td><strong style="color:${paSortField==='impressions'?'var(--orange)':'inherit'}">${fmt(p.impressions||0)}</strong></td>
+      <td><strong style="color:${paSortField==='outbound_clicks'?'var(--orange)':'inherit'}">${fmt(p.outbound_clicks||0)}</strong></td>
+      <td><strong style="color:${paSortField==='saves'?'var(--orange)':'inherit'}">${fmt(p.saves||0)}</strong></td>
+    </tr>`;
+  }).join('');
+
+  el('pa-page-info').textContent = `Page ${paCurrentPage + 1} of ${maxPage} · ${total} pins`;
+  el('pa-prev').disabled = paCurrentPage === 0;
+  el('pa-next').disabled = paCurrentPage >= maxPage - 1;
+}
+
 // ── Expose to global scope (needed for inline onclick attributes) ──────────
 window.setPeriod        = setPeriod;
 window.refreshData      = refreshData;
@@ -1676,7 +1863,10 @@ window.toggleCollapse   = toggleCollapse;
 window.filterSubs       = filterSubs;
 window.copySubEmails    = copySubEmails;
 window.openModal        = openModal;
-window.fetchClarity     = fetchClarity;
+window.fetchClarity          = fetchClarity;
+window.loadPinterestAnalytics = loadPinterestAnalytics;
+window.paSortBy              = paSortBy;
+window.paPage                = paPage;
 window.togglePwVisible  = togglePwVisible;
 window.closeModal       = closeModal;
 window.handleModalClick = handleModalClick;
