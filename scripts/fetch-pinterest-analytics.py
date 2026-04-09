@@ -80,10 +80,12 @@ def get_all_boards(access_token):
             timeout=15,
         )
         if not resp.ok:
-            print(f"  WARNING: boards fetch failed {resp.status_code}")
-            break
+            print(f"  ERROR: boards fetch failed {resp.status_code}: {resp.text[:300]}")
+            return None  # None = API failed (vs [] = empty)
         data = resp.json()
-        boards.extend(data.get("items", []))
+        items = data.get("items", [])
+        print(f"  boards page: {len(items)} items")
+        boards.extend(items)
         cursor = data.get("bookmark")
         if not cursor:
             break
@@ -106,7 +108,7 @@ def get_board_pins(access_token, board_id):
             timeout=15,
         )
         if not resp.ok:
-            print(f"  WARNING: pins fetch for board {board_id} failed {resp.status_code}")
+            print(f"    WARNING: pins fetch for board {board_id} failed {resp.status_code}: {resp.text[:200]}")
             break
         data = resp.json()
         pins.extend(data.get("items", []))
@@ -115,6 +117,26 @@ def get_board_pins(access_token, board_id):
             break
         time.sleep(0.2)
     return pins
+
+# ── Fallback: get pins from D1 ─────────────────────────────────────────────────
+
+def get_pins_from_d1():
+    resp = requests.get(f"{PINS_API_URL}/api/pins-posted", params={"key": PINS_API_KEY}, timeout=10)
+    if not resp.ok:
+        print(f"  D1 fallback also failed {resp.status_code}")
+        return []
+    data = resp.json()
+    pins = data.get("pins") or []
+    print(f"  D1 fallback: {len(pins)} posted pins")
+    return [
+        {
+            "id":         p["pin_id"],
+            "title":      p.get("pin_title", ""),
+            "link":       p.get("link", ""),
+            "created_at": p.get("published_date", ""),
+        }
+        for p in pins if p.get("pin_id")
+    ]
 
 # ── Fetch analytics per pin ────────────────────────────────────────────────────
 
@@ -163,21 +185,29 @@ def main():
     access_token = get_access_token()
 
     # Step 1: get all boards
-    print("Fetching boards...")
+    print("Fetching boards from Pinterest API...")
     boards = get_all_boards(access_token)
-    print(f"Found {len(boards)} boards")
 
-    # Step 2: get all pins from every board
-    all_pins = []
-    for board in boards:
-        board_id   = board["id"]
-        board_name = board.get("name", board_id)
-        print(f"  Board: {board_name}")
-        pins = get_board_pins(access_token, board_id)
-        print(f"    {len(pins)} pins")
-        all_pins.extend(pins)
+    if boards is None:
+        # boards API failed — fall back to D1 posted pins
+        print("Boards API failed — falling back to D1 posted pins")
+        all_pins = get_pins_from_d1()
+    elif len(boards) == 0:
+        print("No boards found in account — falling back to D1 posted pins")
+        all_pins = get_pins_from_d1()
+    else:
+        print(f"Found {len(boards)} boards")
+        # Step 2: get all pins from every board
+        all_pins = []
+        for board in boards:
+            board_id   = board["id"]
+            board_name = board.get("name", board_id)
+            print(f"  Board: {board_name}")
+            pins = get_board_pins(access_token, board_id)
+            print(f"    {len(pins)} pins")
+            all_pins.extend(pins)
 
-    print(f"\nTotal pins across all boards: {len(all_pins)}")
+    print(f"\nTotal pins to fetch analytics for: {len(all_pins)}")
 
     if not all_pins:
         print("No pins found. Done.")
