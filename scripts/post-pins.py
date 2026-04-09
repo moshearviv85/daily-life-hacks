@@ -163,102 +163,6 @@ def post_pin(access_token, row):
     pin_id = data.get("id") or data.get("pin_id") or ""
     return True, {"pin_id": pin_id, "raw": data}
 
-# ── Fetch analytics for all posted pins & save to D1 ─────────────────────────
-
-def fetch_pin_analytics(access_token, pin_id, start_date, end_date):
-    resp = requests.get(
-        f"{API_BASE}/pins/{pin_id}/analytics",
-        headers={"Authorization": f"Bearer {access_token}"},
-        params={
-            "start_date": start_date,
-            "end_date": end_date,
-            "metric_types": "IMPRESSION,OUTBOUND_CLICK,SAVE,PIN_CLICK",
-            "app_types": "ALL",
-        },
-        timeout=15,
-    )
-    if not resp.ok:
-        return None
-    data = resp.json()
-    # Prefer lifetime_metrics; fall back to summing daily_metrics
-    lifetime = (data.get("all") or {}).get("lifetime_metrics")
-    if lifetime:
-        return {
-            "impressions":      lifetime.get("IMPRESSION", 0),
-            "outbound_clicks":  lifetime.get("OUTBOUND_CLICK", 0),
-            "pin_clicks":       lifetime.get("PIN_CLICK", 0),
-            "saves":            lifetime.get("SAVE", 0),
-        }
-    daily = (data.get("all") or {}).get("daily_metrics", [])
-    totals = {"impressions": 0, "outbound_clicks": 0, "pin_clicks": 0, "saves": 0}
-    for d in daily:
-        if d.get("data_status") != "READY":
-            continue
-        m = d.get("metric", {})
-        totals["impressions"]     += m.get("IMPRESSION", 0)
-        totals["outbound_clicks"] += m.get("OUTBOUND_CLICK", 0)
-        totals["pin_clicks"]      += m.get("PIN_CLICK", 0)
-        totals["saves"]           += m.get("SAVE", 0)
-    return totals
-
-def sync_analytics(access_token):
-    from datetime import date, timedelta
-    end_date   = date.today().isoformat()
-    start_date = (date.today() - timedelta(days=89)).isoformat()
-
-    # Get all posted pins from D1
-    resp = requests.get(
-        f"{PINS_API_URL}/api/pins-status",
-        params={"key": PINS_API_KEY},
-        timeout=10,
-    )
-    if not resp.ok:
-        print(f"  WARNING: Could not fetch pins list — {resp.status_code}")
-        return
-
-    data = resp.json()
-    posted = [p for p in (data.get("pins") or []) if p.get("status") == "POSTED" and p.get("pin_id")]
-    if not posted:
-        print("  No posted pins found for analytics sync.")
-        return
-
-    print(f"  Fetching analytics for {len(posted)} posted pins ({start_date} → {end_date})...")
-
-    results = []
-    for i, pin in enumerate(posted):
-        stats = fetch_pin_analytics(access_token, pin["pin_id"], start_date, end_date)
-        if stats:
-            results.append({
-                "pin_id":          pin["pin_id"],
-                "pin_title":       pin.get("pin_title", ""),
-                "pin_url":         f"https://www.pinterest.com/pin/{pin['pin_id']}/",
-                "pin_link":        pin.get("link", ""),
-                "created_at":      pin.get("published_date", ""),
-                "impressions":     stats["impressions"],
-                "outbound_clicks": stats["outbound_clicks"],
-                "pin_clicks":      stats["pin_clicks"],
-                "saves":           stats["saves"],
-            })
-        # Small delay to avoid rate limit
-        import time
-        time.sleep(0.3)
-
-    if not results:
-        print("  No analytics data returned.")
-        return
-
-    # Save to D1 via dashboard API
-    save_resp = requests.post(
-        f"{PINS_API_URL}/api/pinterest-analytics-save",
-        params={"key": PINS_API_KEY},
-        json={"pins": results},
-        timeout=30,
-    )
-    if save_resp.ok:
-        print(f"  Saved analytics for {len(results)} pins to D1.")
-    else:
-        print(f"  WARNING: Failed to save analytics — {save_resp.status_code}: {save_resp.text[:200]}")
-
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -269,29 +173,25 @@ def main():
     pin = get_next_pin()
     if not pin:
         print("No pins due today. Done.")
+        return
+
+    print(f"\nNext pin: {pin['row_id']} — {pin['pin_title']}")
+    print(f"  scheduled: {pin['scheduled_date']}")
+    print(f"  board_id:  {pin['board_id']}")
+    print(f"  image:     {pin['image_url']}")
+    print(f"  link:      {pin['link']}")
+
+    access_token = get_access_token()
+    ok, result = post_pin(access_token, pin)
+
+    if ok:
+        pin_id = result["pin_id"]
+        print(f"SUCCESS — pin_id: {pin_id}")
+        mark_posted(pin["row_id"], pin_id, result["raw"])
     else:
-        print(f"\nNext pin: {pin['row_id']} — {pin['pin_title']}")
-        print(f"  scheduled: {pin['scheduled_date']}")
-        print(f"  board_id:  {pin['board_id']}")
-        print(f"  image:     {pin['image_url']}")
-        print(f"  link:      {pin['link']}")
-
-        access_token = get_access_token()
-        ok, result = post_pin(access_token, pin)
-
-        if ok:
-            pin_id = result["pin_id"]
-            print(f"SUCCESS — pin_id: {pin_id}")
-            mark_posted(pin["row_id"], pin_id, result["raw"])
-        else:
-            print(f"FAILED — Pinterest API error:")
-            print(json.dumps(result, indent=2)[:600])
-            sys.exit(1)
-
-    # Always sync analytics (runs regardless of whether a pin was posted)
-    print("\nSyncing Pinterest analytics to D1...")
-    access_token = get_access_token() if not pin else access_token
-    sync_analytics(access_token)
+        print(f"FAILED — Pinterest API error:")
+        print(json.dumps(result, indent=2)[:600])
+        sys.exit(1)
 
     print("\nDone.")
 

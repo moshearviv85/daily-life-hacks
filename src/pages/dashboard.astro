@@ -666,10 +666,18 @@ const BUILD = {
           <div class="card-title" style="margin-bottom:0">Pinterest Analytics — Top Pins</div>
           <div id="pa-cache-note" style="font-size:.72rem;color:var(--muted);margin-top:.2rem"></div>
         </div>
-        <button id="pa-load-btn" onclick="loadPinterestAnalytics()"
-          style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
-          ↻ Load Analytics
-        </button>
+        <div style="display:flex;gap:.5rem;align-items:center">
+          <button id="pa-trigger-btn" onclick="triggerFetchAnalytics()"
+            title="Run GitHub Actions to fetch fresh data from Pinterest API"
+            style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid #E60023;background:#E60023;color:#fff;cursor:pointer;font-weight:600">
+            ↻ Refresh from Pinterest
+          </button>
+          <button id="pa-load-btn" onclick="loadPinterestAnalytics()"
+            title="Load cached analytics from D1"
+            style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
+            Load Analytics
+          </button>
+        </div>
       </div>
       <div id="pa-loading"  class="empty" style="display:none">Fetching Pinterest analytics...</div>
       <div id="pa-error"    class="empty" style="display:none"></div>
@@ -1845,6 +1853,35 @@ function paRender() {
   el('pa-next').disabled = paCurrentPage >= maxPage - 1;
 }
 
+async function triggerFetchAnalytics() {
+  const btn = document.getElementById('pa-trigger-btn');
+  const note = el('pa-cache-note');
+  btn.disabled = true;
+  btn.textContent = 'Triggering...';
+  note.textContent = '';
+  note.style.color = '';
+
+  try {
+    const res = await fetch(`/api/analytics-trigger?key=${encodeURIComponent(pw)}`, { method: 'POST' });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.ok) {
+      note.textContent = '✓ Job triggered — Pinterest data will be ready in ~1 min. Click "Load Analytics" to view.';
+      note.style.color = 'var(--green, #4caf50)';
+      btn.textContent = '↻ Refresh from Pinterest';
+    } else {
+      note.textContent = 'Failed to trigger: ' + (data.gh_body || data.error || 'unknown error');
+      note.style.color = 'var(--red, #e55)';
+      btn.textContent = '↻ Refresh from Pinterest';
+    }
+  } catch (e) {
+    note.textContent = 'Network error: ' + e.message;
+    note.style.color = 'var(--red, #e55)';
+    btn.textContent = '↻ Refresh from Pinterest';
+  } finally {
+    btn.disabled = false;
+  }
+}
+
 // ── Expose to global scope (needed for inline onclick attributes) ──────────
 window.setPeriod        = setPeriod;
 window.refreshData      = refreshData;
@@ -1854,9 +1891,10 @@ window.filterSubs       = filterSubs;
 window.copySubEmails    = copySubEmails;
 window.openModal        = openModal;
 window.fetchClarity          = fetchClarity;
-window.loadPinterestAnalytics = loadPinterestAnalytics;
-window.paSortBy               = paSortBy;
-window.paPage                 = paPage;
+window.loadPinterestAnalytics  = loadPinterestAnalytics;
+window.triggerFetchAnalytics   = triggerFetchAnalytics;
+window.paSortBy                = paSortBy;
+window.paPage                  = paPage;
 window.togglePwVisible  = togglePwVisible;
 window.closeModal       = closeModal;
 window.handleModalClick = handleModalClick;
