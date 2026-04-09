@@ -6,9 +6,10 @@
 export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
-  const key = url.searchParams.get("key");
+  const statsKey = env.STATS_KEY;
+  const reqKey = url.searchParams.get("key") || request.headers.get("x-api-key") || "";
 
-  if (!env.STATS_KEY || key !== env.STATS_KEY) {
+  if (statsKey && reqKey !== statsKey) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
   if (!env.DB) {
