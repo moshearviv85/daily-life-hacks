@@ -31,7 +31,9 @@ export async function onRequestPost(context) {
          (pin_id, pin_title, pin_url, pin_link, created_at, impressions, outbound_clicks, saves, cached_at)
        VALUES (?,?,?,?,?,?,?,?,?)
        ON CONFLICT(pin_id) DO UPDATE SET
-         pin_title=excluded.pin_title,
+         pin_title=CASE WHEN excluded.pin_title!='' THEN excluded.pin_title ELSE pin_title END,
+         pin_link=CASE WHEN excluded.pin_link!='' THEN excluded.pin_link ELSE pin_link END,
+         created_at=CASE WHEN excluded.created_at!='' THEN excluded.created_at ELSE created_at END,
          impressions=excluded.impressions,
          outbound_clicks=excluded.outbound_clicks,
          saves=excluded.saves,

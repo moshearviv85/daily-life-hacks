@@ -85,18 +85,8 @@ def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
         print(f"  ERROR: {resp.text[:500]}")
         return []
 
-    data = resp.json()
-    print(f"  RAW KEYS: {list(data.keys())}")
-    print(f"  RAW SAMPLE: {str(data)[:800]}")
-
-    # Try every known response structure
-    items = (
-        data.get("value")                          # direct value array
-        or (data.get("all") or {}).get("value")    # wrapped under "all"
-        or data.get("pins")                        # alternative key
-        or data.get("items")                       # alternative key
-        or []
-    )
+    data  = resp.json()
+    items = data.get("pins") or []
     print(f"  Got {len(items)} pins")
     return items
 
@@ -114,16 +104,16 @@ def main():
     for sort_by in ["IMPRESSION", "OUTBOUND_CLICK", "SAVE"]:
         items = fetch_top_pins(access_token, start_date, end_date, sort_by)
         for item in items:
-            pin_id = item.get("id") or item.get("pin_id") or ""
+            pin_id = item.get("pin_id") or ""
             if not pin_id or pin_id in pins_by_id:
                 continue
-            metrics = item.get("lifetime_metrics") or {}
+            metrics = item.get("metrics") or {}
             pins_by_id[pin_id] = {
                 "pin_id":          pin_id,
-                "pin_title":       (item.get("title") or "")[:80],
+                "pin_title":       "",
                 "pin_url":         f"https://www.pinterest.com/pin/{pin_id}/",
-                "pin_link":        item.get("link") or "",
-                "created_at":      item.get("created_at") or "",
+                "pin_link":        "",
+                "created_at":      "",
                 "impressions":     metrics.get("IMPRESSION", 0),
                 "outbound_clicks": metrics.get("OUTBOUND_CLICK", 0),
                 "pin_clicks":      metrics.get("PIN_CLICK", 0),
