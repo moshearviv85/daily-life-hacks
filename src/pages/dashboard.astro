@@ -666,16 +666,10 @@ const BUILD = {
           <div class="card-title" style="margin-bottom:0">Pinterest Analytics — Top Pins</div>
           <div id="pa-cache-note" style="font-size:.72rem;color:var(--muted);margin-top:.2rem"></div>
         </div>
-        <div style="display:flex;gap:.5rem">
-          <button id="pa-load-btn" onclick="loadPinterestAnalytics(false)"
-            style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
-            ↻ Load Analytics
-          </button>
-          <button id="pa-refresh-btn" onclick="loadPinterestAnalytics(true)"
-            style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--muted);cursor:pointer" title="Force fresh pull from Pinterest API (ignores cache)">
-            ⟳ Force Refresh
-          </button>
-        </div>
+        <button id="pa-load-btn" onclick="loadPinterestAnalytics()"
+          style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
+          ↻ Load Analytics
+        </button>
       </div>
       <div id="pa-loading"  class="empty" style="display:none">Fetching Pinterest analytics...</div>
       <div id="pa-error"    class="empty" style="display:none"></div>
@@ -1747,21 +1741,17 @@ let paCurrentPage = 0;
 let paSortField = 'impressions';
 const PA_PAGE_SIZE = 10;
 
-async function loadPinterestAnalytics(forceRefresh = false) {
-  const loadBtn    = document.getElementById('pa-load-btn');
-  const refreshBtn = document.getElementById('pa-refresh-btn');
-  loadBtn.disabled = refreshBtn.disabled = true;
+async function loadPinterestAnalytics() {
+  const loadBtn = document.getElementById('pa-load-btn');
+  loadBtn.disabled = true;
   loadBtn.textContent = 'Loading...';
   el('pa-loading').style.display = 'block';
-  el('pa-loading').textContent   = forceRefresh ? 'Fetching fresh data from Pinterest...' : 'Loading analytics...';
+  el('pa-loading').textContent   = 'Loading analytics from D1...';
   el('pa-content').style.display = 'none';
   el('pa-error').style.display   = 'none';
 
   try {
-    const qs = forceRefresh ? '&refresh=1' : '';
-    const res = await fetch(`/api/pinterest-analytics?key=${encodeURIComponent(pw)}${qs}`, {
-      credentials: 'include', // send Pinterest cookie
-    });
+    const res = await fetch(`/api/pinterest-analytics?key=${encodeURIComponent(pw)}`);
     const data = await res.json();
 
     if (!res.ok || data.error) {
@@ -1804,13 +1794,13 @@ async function loadPinterestAnalytics(forceRefresh = false) {
     el('pa-content').style.display = 'block';
     paRender();
 
-    loadBtn.textContent = '↻ Reload';
+    loadBtn.textContent = '↻ Refresh';
   } catch (e) {
     el('pa-loading').style.display = 'none';
     el('pa-error').style.display   = 'block';
     el('pa-error').textContent     = 'Network error: ' + e.message;
   } finally {
-    loadBtn.disabled = refreshBtn.disabled = false;
+    loadBtn.disabled = false;
   }
 }
 
@@ -1865,8 +1855,8 @@ window.copySubEmails    = copySubEmails;
 window.openModal        = openModal;
 window.fetchClarity          = fetchClarity;
 window.loadPinterestAnalytics = loadPinterestAnalytics;
-window.paSortBy              = paSortBy;
-window.paPage                = paPage;
+window.paSortBy               = paSortBy;
+window.paPage                 = paPage;
 window.togglePwVisible  = togglePwVisible;
 window.closeModal       = closeModal;
 window.handleModalClick = handleModalClick;
