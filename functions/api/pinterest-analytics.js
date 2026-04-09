@@ -24,78 +24,94 @@ function today() {
   return new Date().toISOString().split("T")[0];
 }
 
-async function pullFromPinterest(accessToken) {
-  const startDate = daysAgo(89); // Pinterest max = 90 days
+async function fetchPinAnalytics(accessToken, pinId, startDate, endDate) {
+  const url = new URL(`https://api.pinterest.com/v5/pins/${pinId}/analytics`);
+  url.searchParams.set("start_date",   startDate);
+  url.searchParams.set("end_date",     endDate);
+  url.searchParams.set("metric_types", "IMPRESSION,OUTBOUND_CLICK,SAVE,PIN_CLICK");
+  url.searchParams.set("app_types",    "ALL");
+
+  const res = await fetch(url.toString(), {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  });
+  if (!res.ok) return null;
+  const data = await res.json();
+
+  // Prefer lifetime_metrics; fall back to summing daily_metrics
+  const lifetime = data?.all?.lifetime_metrics;
+  if (lifetime) {
+    return {
+      impressions:     lifetime.IMPRESSION       || 0,
+      outbound_clicks: lifetime.OUTBOUND_CLICK   || 0,
+      pin_clicks:      lifetime.PIN_CLICK        || 0,
+      saves:           lifetime.SAVE             || 0,
+    };
+  }
+  return (data?.all?.daily_metrics || []).reduce(
+    (acc, d) => {
+      if (d.data_status !== "READY") return acc;
+      acc.impressions     += d.metric?.IMPRESSION       || 0;
+      acc.outbound_clicks += d.metric?.OUTBOUND_CLICK   || 0;
+      acc.pin_clicks      += d.metric?.PIN_CLICK        || 0;
+      acc.saves           += d.metric?.SAVE             || 0;
+      return acc;
+    },
+    { impressions: 0, outbound_clicks: 0, pin_clicks: 0, saves: 0 }
+  );
+}
+
+async function pullFromPinterest(accessToken, db) {
+  const startDate = daysAgo(89);
   const endDate   = today();
 
-  // ── 1. Top 50 pins by impression ─────────────────────────────────────────
-  const topPinsUrl = new URL("https://api.pinterest.com/v5/user_account/analytics/top_pins");
-  topPinsUrl.searchParams.set("start_date",    startDate);
-  topPinsUrl.searchParams.set("end_date",      endDate);
-  topPinsUrl.searchParams.set("sort_by",       "IMPRESSION");
-  topPinsUrl.searchParams.set("metric_types",  "IMPRESSION,OUTBOUND_CLICK,SAVE,PIN_CLICK");
-  topPinsUrl.searchParams.set("num_of_pins",   "50");
+  // ── 1. Load our posted pins from D1 pins_schedule ────────────────────────
+  const posted = db
+    ? await db.prepare(
+        `SELECT row_id, pin_title, pin_id, link, published_date
+         FROM pins_schedule WHERE status='POSTED' AND pin_id IS NOT NULL
+         ORDER BY published_date DESC`
+      ).all().catch(() => null)
+    : null;
 
-  const topPinsRes = await fetch(topPinsUrl.toString(), {
-    headers: { Authorization: `Bearer ${accessToken}` },
-  });
+  const dbPins = posted?.results ?? [];
 
-  if (!topPinsRes.ok) {
-    const errText = await topPinsRes.text().catch(() => "");
-    throw new Error(`Pinterest top_pins API ${topPinsRes.status}: ${errText.slice(0, 200)}`);
+  // ── 2. Fetch analytics per pin in batches of 5 ───────────────────────────
+  const pins = [];
+  const BATCH = 5;
+  for (let i = 0; i < dbPins.length; i += BATCH) {
+    const batch = dbPins.slice(i, i + BATCH);
+    const stats = await Promise.all(
+      batch.map(p => fetchPinAnalytics(accessToken, p.pin_id, startDate, endDate).catch(() => null))
+    );
+    for (let j = 0; j < batch.length; j++) {
+      const p = batch[j];
+      const s = stats[j] || { impressions: 0, outbound_clicks: 0, pin_clicks: 0, saves: 0 };
+      pins.push({
+        pin_id:          p.pin_id,
+        pin_title:       p.pin_title || p.row_id,
+        pin_url:         `https://www.pinterest.com/pin/${p.pin_id}/`,
+        pin_link:        p.link || "",
+        created_at:      p.published_date || "",
+        impressions:     s.impressions,
+        outbound_clicks: s.outbound_clicks,
+        pin_clicks:      s.pin_clicks,
+        saves:           s.saves,
+      });
+    }
+    if (i + BATCH < dbPins.length) await new Promise(r => setTimeout(r, 200));
   }
 
-  const topPinsData = await topPinsRes.json();
+  pins.sort((a, b) => b.impressions - a.impressions);
 
-  // ── 2. Account-level totals ───────────────────────────────────────────────
-  const acctUrl = new URL("https://api.pinterest.com/v5/user_account/analytics");
-  acctUrl.searchParams.set("start_date",   startDate);
-  acctUrl.searchParams.set("end_date",     endDate);
-  acctUrl.searchParams.set("metric_types", "IMPRESSION,OUTBOUND_CLICK,SAVE,PIN_CLICK");
-
-  const acctRes = await fetch(acctUrl.toString(), {
-    headers: { Authorization: `Bearer ${accessToken}` },
-  });
-  const acctData = acctRes.ok ? await acctRes.json().catch(() => null) : null;
-
-  // ── 3. Parse top pins ─────────────────────────────────────────────────────
-  // Response shape: { pins_total_aggregate_counts: {...}, top_pins_results: [ {pin: {...}, metrics: {...}} ] }
-  const pinsResults = topPinsData?.top_pins_results ?? topPinsData?.items ?? [];
-
-  const pins = pinsResults.map((item) => {
-    const pin     = item.pin     ?? item;
-    const metrics = item.metrics ?? {};
-    return {
-      pin_id:         pin.id ?? "",
-      pin_title:      pin.title || pin.description?.slice(0, 80) || pin.id || "—",
-      pin_url:        `https://www.pinterest.com/pin/${pin.id}/`,
-      pin_link:       pin.link || "",
-      created_at:     pin.created_at || "",
-      impressions:    metrics.IMPRESSION       ?? 0,
-      outbound_clicks:metrics.OUTBOUND_CLICK   ?? 0,
-      pin_clicks:     metrics.PIN_CLICK        ?? 0,
-      saves:          metrics.SAVE             ?? 0,
-    };
-  }).sort((a, b) => b.impressions - a.impressions);
-
-  // ── 4. Account totals (sum over date range) ───────────────────────────────
-  let totals = { impressions: 0, outbound_clicks: 0, pin_clicks: 0, saves: 0 };
-  if (acctData?.all?.daily_metrics) {
-    for (const day of acctData.all.daily_metrics) {
-      totals.impressions     += day.data_status === "READY" ? (day.metric?.IMPRESSION       ?? 0) : 0;
-      totals.outbound_clicks += day.data_status === "READY" ? (day.metric?.OUTBOUND_CLICK   ?? 0) : 0;
-      totals.pin_clicks      += day.data_status === "READY" ? (day.metric?.PIN_CLICK        ?? 0) : 0;
-      totals.saves           += day.data_status === "READY" ? (day.metric?.SAVE             ?? 0) : 0;
-    }
-  } else if (Array.isArray(acctData)) {
-    // Some responses are an array of daily records
-    for (const day of acctData) {
-      totals.impressions     += day.IMPRESSION       ?? 0;
-      totals.outbound_clicks += day.OUTBOUND_CLICK   ?? 0;
-      totals.pin_clicks      += day.PIN_CLICK        ?? 0;
-      totals.saves           += day.SAVE             ?? 0;
-    }
-  }
+  const totals = pins.reduce(
+    (acc, p) => {
+      acc.impressions     += p.impressions;
+      acc.outbound_clicks += p.outbound_clicks;
+      acc.saves           += p.saves;
+      return acc;
+    },
+    { impressions: 0, outbound_clicks: 0, saves: 0 }
+  );
 
   return { pins, totals, startDate, endDate };
 }
@@ -173,7 +189,7 @@ export async function onRequestGet(context) {
   }
 
   try {
-    const { pins, totals, startDate, endDate } = await pullFromPinterest(token.access_token);
+    const { pins, totals, startDate, endDate } = await pullFromPinterest(token.access_token, env.DB);
 
     // Upsert into D1 cache
     if (env.DB && pins.length > 0) {
