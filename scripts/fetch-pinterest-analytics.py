@@ -74,7 +74,7 @@ def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
     Requires org_analytics scope.
     """
     resp = requests.get(
-        f"{API_BASE}/user_account/top_pins_analytics",
+        f"{API_BASE}/user_account/analytics/top_pins",
         headers={"Authorization": f"Bearer {access_token}"},
         params={
             "start_date":   start_date,
