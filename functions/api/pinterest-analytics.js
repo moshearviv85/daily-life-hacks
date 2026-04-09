@@ -130,39 +130,46 @@ export async function onRequestGet(context) {
     }
   }
 
-  // ── Load token from D1 (works from any browser/device) ──────────────────
-  if (!env.DB) {
-    return Response.json({ error: "DB not bound" }, { status: 500 });
-  }
+  // ── Load token: D1 first, fallback to env var ────────────────────────────
+  const storedToken = env.DB
+    ? await env.DB.prepare(
+        "SELECT access_token, refresh_token, expires_at FROM pinterest_token WHERE id = 1"
+      ).first().catch(() => null)
+    : null;
 
-  const storedToken = await env.DB.prepare(
-    "SELECT access_token, refresh_token, expires_at FROM pinterest_token WHERE id = 1"
-  ).first().catch(() => null);
+  // Build token object — prefer D1, fall back to env.PINTEREST_REFRESH_TOKEN
+  let token = storedToken?.access_token
+    ? { access_token: storedToken.access_token, refresh_token: storedToken.refresh_token, expires_at: storedToken.expires_at }
+    : storedToken?.refresh_token || env.PINTEREST_REFRESH_TOKEN
+      ? { access_token: null, refresh_token: storedToken?.refresh_token || env.PINTEREST_REFRESH_TOKEN, expires_at: 0 }
+      : null;
 
-  if (!storedToken?.access_token) {
+  if (!token) {
     return Response.json({
-      error:   "no_token",
-      message: "Pinterest token not saved yet. Open /api/pinterest-save-token?key=PASSWORD from the browser where you connected Pinterest.",
+      error: "no_token",
+      message: "No Pinterest token found. Either add PINTEREST_REFRESH_TOKEN to Cloudflare env vars, or open /api/pinterest-save-token?key=PASSWORD from the OAuth browser.",
     }, { status: 401 });
   }
 
-  let token = {
-    access_token:  storedToken.access_token,
-    refresh_token: storedToken.refresh_token,
-    expires_at:    storedToken.expires_at,
-  };
-
-  // Refresh if expiring soon, then update D1
-  if (token.expires_at && Date.now() > token.expires_at - 60_000) {
+  // Get a fresh access_token if missing or expiring soon
+  if (!token.access_token || (token.expires_at && Date.now() > token.expires_at - 60_000)) {
     try {
       token = await refreshAccessToken({
         appId: env.PINTEREST_APP_ID, appSecret: env.PINTEREST_APP_SECRET, token, scopes: [],
       });
-      // Save refreshed token back to D1
-      await env.DB.prepare(
-        `UPDATE pinterest_token SET access_token=?, refresh_token=?, expires_at=?, updated_at=datetime('now') WHERE id=1`
-      ).bind(token.access_token, token.refresh_token || null, token.expires_at || null).run().catch(() => null);
-    } catch { /* use existing token */ }
+      // Persist refreshed token to D1
+      if (env.DB) {
+        await env.DB.prepare(
+          `INSERT INTO pinterest_token (id, access_token, refresh_token, expires_at, updated_at)
+           VALUES (1,?,?,?,datetime('now'))
+           ON CONFLICT(id) DO UPDATE SET
+             access_token=excluded.access_token, refresh_token=excluded.refresh_token,
+             expires_at=excluded.expires_at, updated_at=excluded.updated_at`
+        ).bind(token.access_token, token.refresh_token || null, token.expires_at || null).run().catch(() => null);
+      }
+    } catch (e) {
+      return Response.json({ error: "Token refresh failed: " + e.message }, { status: 401 });
+    }
   }
 
   try {
