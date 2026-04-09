@@ -165,6 +165,7 @@ export function pinterestScopes() {
     "boards:write",
     "pins:read",
     "pins:write",
+    "org_analytics",
   ].join(" ");
 }
 

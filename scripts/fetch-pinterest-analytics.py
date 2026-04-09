@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Pinterest Analytics Fetcher — fetches ALL pins from the Pinterest account
-(across all boards), pulls analytics for each, and saves to D1.
+Pinterest Analytics Fetcher — uses user_account/top_pins_analytics
+Fetches top pins by Impression, Click, and Save in 3 API calls (vs 100+ individual).
+Requires org_analytics scope on the Pinterest token.
 
 Required env vars (same GitHub Secrets as post-pins.py):
   PINTEREST_APP_ID
@@ -64,195 +65,81 @@ def get_access_token():
         update_github_secret("PINTEREST_REFRESH_TOKEN", new_refresh)
     return access_token
 
-# ── Get all boards ─────────────────────────────────────────────────────────────
+# ── Fetch top pins analytics ───────────────────────────────────────────────────
 
-def get_all_boards(access_token):
-    boards = []
-    cursor = None
-    while True:
-        params = {"page_size": 25}
-        if cursor:
-            params["bookmark"] = cursor
-        resp = requests.get(
-            f"{API_BASE}/boards",
-            headers={"Authorization": f"Bearer {access_token}"},
-            params=params,
-            timeout=15,
-        )
-        if not resp.ok:
-            print(f"  ERROR: boards fetch failed {resp.status_code}: {resp.text[:300]}")
-            return None  # None = API failed (vs [] = empty)
-        data = resp.json()
-        items = data.get("items", [])
-        print(f"  boards page: {len(items)} items")
-        boards.extend(items)
-        cursor = data.get("bookmark")
-        if not cursor:
-            break
-        time.sleep(0.3)
-    return boards
-
-# ── Get all pins from a board ──────────────────────────────────────────────────
-
-def get_board_pins(access_token, board_id):
-    pins = []
-    cursor = None
-    while True:
-        params = {"page_size": 25}
-        if cursor:
-            params["bookmark"] = cursor
-        resp = requests.get(
-            f"{API_BASE}/boards/{board_id}/pins",
-            headers={"Authorization": f"Bearer {access_token}"},
-            params=params,
-            timeout=15,
-        )
-        if not resp.ok:
-            print(f"    WARNING: pins fetch for board {board_id} failed {resp.status_code}: {resp.text[:200]}")
-            break
-        data = resp.json()
-        pins.extend(data.get("items", []))
-        cursor = data.get("bookmark")
-        if not cursor:
-            break
-        time.sleep(0.2)
-    return pins
-
-# ── Fallback: get pins from D1 ─────────────────────────────────────────────────
-
-def get_pins_from_d1():
-    resp = requests.get(f"{PINS_API_URL}/api/pins-posted", params={"key": PINS_API_KEY}, timeout=10)
-    if not resp.ok:
-        print(f"  D1 fallback also failed {resp.status_code}")
-        return []
-    data = resp.json()
-    pins = data.get("pins") or []
-    print(f"  D1 fallback: {len(pins)} posted pins")
-    return [
-        {
-            "id":         p["pin_id"],
-            "title":      p.get("pin_title", ""),
-            "link":       p.get("link", ""),
-            "created_at": p.get("published_date", ""),
-        }
-        for p in pins if p.get("pin_id")
-    ]
-
-# ── Fetch analytics per pin ────────────────────────────────────────────────────
-
-DEBUG_FIRST = True  # print raw response for first pin only
-
-def fetch_pin_analytics(access_token, pin_id, start_date, end_date):
-    global DEBUG_FIRST
+def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
+    """
+    GET /v5/user_account/top_pins_analytics
+    Returns top N pins sorted by sort_by metric, with their analytics.
+    Requires org_analytics scope.
+    """
     resp = requests.get(
-        f"{API_BASE}/pins/{pin_id}/analytics",
+        f"{API_BASE}/user_account/top_pins_analytics",
         headers={"Authorization": f"Bearer {access_token}"},
         params={
             "start_date":   start_date,
             "end_date":     end_date,
+            "sort_by":      sort_by,
+            "num_of_pins":  num,
             "metric_types": "IMPRESSION,OUTBOUND_CLICK,SAVE,PIN_CLICK",
-            "app_types":    "ALL",
         },
-        timeout=15,
+        timeout=20,
     )
-    if DEBUG_FIRST:
-        print(f"  DEBUG status={resp.status_code} body={resp.text[:500]}")
-        DEBUG_FIRST = False
-
+    print(f"  top_pins [{sort_by}] → {resp.status_code}")
     if not resp.ok:
-        return None
+        print(f"  ERROR: {resp.text[:300]}")
+        return []
 
-    data = resp.json()
-    lifetime = (data.get("all") or {}).get("lifetime_metrics")
-    if lifetime:
-        return {
-            "impressions":     lifetime.get("IMPRESSION", 0),
-            "outbound_clicks": lifetime.get("OUTBOUND_CLICK", 0),
-            "pin_clicks":      lifetime.get("PIN_CLICK", 0),
-            "saves":           lifetime.get("SAVE", 0),
-        }
-    totals = {"impressions": 0, "outbound_clicks": 0, "pin_clicks": 0, "saves": 0}
-    for d in (data.get("all") or {}).get("daily_metrics", []):
-        if d.get("data_status") != "READY":
-            continue
-        m = d.get("metric", {})
-        totals["impressions"]     += m.get("IMPRESSION", 0)
-        totals["outbound_clicks"] += m.get("OUTBOUND_CLICK", 0)
-        totals["pin_clicks"]      += m.get("PIN_CLICK", 0)
-        totals["saves"]           += m.get("SAVE", 0)
-    return totals
+    data  = resp.json()
+    items = (data.get("all") or {}).get("value") or []
+    print(f"  Got {len(items)} pins")
+    return items
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
     end_date   = date.today().isoformat()
     start_date = (date.today() - timedelta(days=89)).isoformat()
-    print(f"Fetching Pinterest analytics: {start_date} → {end_date}")
+    print(f"Fetching Pinterest top-pins analytics: {start_date} → {end_date}")
 
     access_token = get_access_token()
 
-    # Step 1: get all boards
-    print("Fetching boards from Pinterest API...")
-    boards = get_all_boards(access_token)
-
-    if boards is None:
-        # boards API failed — fall back to D1 posted pins
-        print("Boards API failed — falling back to D1 posted pins")
-        all_pins = get_pins_from_d1()
-    elif len(boards) == 0:
-        print("No boards found in account — falling back to D1 posted pins")
-        all_pins = get_pins_from_d1()
-    else:
-        print(f"Found {len(boards)} boards")
-        # Step 2: get all pins from every board
-        all_pins = []
-        for board in boards:
-            board_id   = board["id"]
-            board_name = board.get("name", board_id)
-            print(f"  Board: {board_name}")
-            pins = get_board_pins(access_token, board_id)
-            print(f"    {len(pins)} pins")
-            all_pins.extend(pins)
-
-    print(f"\nTotal pins to fetch analytics for: {len(all_pins)}")
-
-    if not all_pins:
-        print("No pins found. Done.")
-        return
-
-    # Step 3: fetch analytics for each pin
-    results = []
-    for i, pin in enumerate(all_pins):
-        pin_id    = pin.get("id", "")
-        pin_title = (pin.get("title") or "")[:80]
-        pin_link  = pin.get("link") or ""
-        created   = pin.get("created_at") or ""
-        if not pin_id:
-            continue
-
-        print(f"  [{i+1}/{len(all_pins)}] {pin_title[:60] or pin_id}")
-        stats = fetch_pin_analytics(access_token, pin_id, start_date, end_date)
-        if stats:
-            results.append({
+    # Fetch top 50 pins by each metric (3 API calls total)
+    pins_by_id = {}
+    for sort_by in ["IMPRESSION", "OUTBOUND_CLICK", "SAVE"]:
+        items = fetch_top_pins(access_token, start_date, end_date, sort_by)
+        for item in items:
+            pin_id = item.get("id") or item.get("pin_id") or ""
+            if not pin_id or pin_id in pins_by_id:
+                continue
+            metrics = item.get("lifetime_metrics") or {}
+            pins_by_id[pin_id] = {
                 "pin_id":          pin_id,
-                "pin_title":       pin_title,
+                "pin_title":       (item.get("title") or "")[:80],
                 "pin_url":         f"https://www.pinterest.com/pin/{pin_id}/",
-                "pin_link":        pin_link,
-                "created_at":      created,
-                "impressions":     stats["impressions"],
-                "outbound_clicks": stats["outbound_clicks"],
-                "pin_clicks":      stats["pin_clicks"],
-                "saves":           stats["saves"],
-            })
-        time.sleep(0.3)
+                "pin_link":        item.get("link") or "",
+                "created_at":      item.get("created_at") or "",
+                "impressions":     metrics.get("IMPRESSION", 0),
+                "outbound_clicks": metrics.get("OUTBOUND_CLICK", 0),
+                "pin_clicks":      metrics.get("PIN_CLICK", 0),
+                "saves":           metrics.get("SAVE", 0),
+            }
+        time.sleep(1)
 
-    print(f"\nGot analytics for {len(results)} pins. Saving to D1...")
+    results = list(pins_by_id.values())
+    print(f"\nUnique pins collected: {len(results)}")
 
+    if not results:
+        print("No data returned. Token may be missing org_analytics scope.")
+        print("Re-authenticate at /api/pinterest-demo to get the updated token.")
+        sys.exit(1)
+
+    print("Saving to D1...")
     save = requests.post(
         f"{PINS_API_URL}/api/pinterest-analytics-save",
         params={"key": PINS_API_KEY},
         json={"pins": results},
-        timeout=60,
+        timeout=30,
     )
     if save.ok:
         print(f"Done. Saved {save.json().get('saved', len(results))} pins.")
