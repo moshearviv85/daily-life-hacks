@@ -712,9 +712,9 @@ const BUILD = {
               <th>#</th>
               <th>Pin Title</th>
               <th>Created</th>
-              <th style="cursor:pointer" onclick="paSortBy('impressions')">Impressions ↕</th>
-              <th style="cursor:pointer" onclick="paSortBy('outbound_clicks')">Clicks ↕</th>
-              <th style="cursor:pointer" onclick="paSortBy('saves')">Saves ↕</th>
+              <th id="pa-th-impressions" style="cursor:pointer" onclick="paSortBy('impressions')">Impressions ↓</th>
+              <th id="pa-th-outbound_clicks" style="cursor:pointer" onclick="paSortBy('outbound_clicks')">Clicks ↕</th>
+              <th id="pa-th-saves" style="cursor:pointer" onclick="paSortBy('saves')">Saves ↕</th>
             </tr>
           </thead>
           <tbody id="pa-tbody"></tbody>
@@ -1838,15 +1838,21 @@ function paRender() {
   const total  = sorted.length;
   const maxPage= Math.ceil(total / PA_PAGE_SIZE);
 
+  // Update sort arrows in header
+  ['impressions','outbound_clicks','saves'].forEach(f => {
+    const th = document.getElementById(`pa-th-${f}`);
+    if (th) th.textContent = (f === 'impressions' ? 'Impressions' : f === 'outbound_clicks' ? 'Clicks' : 'Saves') + (paSortField === f ? ' ↓' : ' ↕');
+  });
+
   el('pa-tbody').innerHTML = page.map((p, i) => {
-    const rank = start + i + 1;
+    const rank    = start + i + 1;
     const created = p.created_at ? new Date(p.created_at).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}) : '—';
-    const title   = p.pin_title?.slice(0, 60) + (p.pin_title?.length > 60 ? '…' : '');
+    const rawTitle = p.pin_title || '';
+    const title   = rawTitle ? (rawTitle.slice(0, 60) + (rawTitle.length > 60 ? '…' : '')) : `Pin ${p.pin_id?.slice(-8) || '—'}`;
     return `<tr>
       <td style="color:var(--muted);font-weight:600">${rank}</td>
       <td>
         <a href="${p.pin_url}" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600;font-size:.82rem">${title}</a>
-        ${p.pin_link ? `<br><a href="${p.pin_link}" target="_blank" style="color:var(--muted);font-size:.72rem;text-decoration:none">→ site link</a>` : ''}
       </td>
       <td style="white-space:nowrap;color:var(--muted);font-size:.8rem">${created}</td>
       <td><strong style="color:${paSortField==='impressions'?'var(--orange)':'inherit'}">${fmt(p.impressions||0)}</strong></td>

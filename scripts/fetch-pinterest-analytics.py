@@ -126,8 +126,25 @@ def main():
 
     if not results:
         print("No data returned. Token may be missing org_analytics scope.")
-        print("Re-authenticate at /api/pinterest-demo to get the updated token.")
         sys.exit(1)
+
+    # Fetch title + link for each pin
+    print("Fetching pin details (title, link)...")
+    for i, pin in enumerate(results):
+        pin_id = pin["pin_id"]
+        resp = requests.get(
+            f"{API_BASE}/pins/{pin_id}",
+            headers={"Authorization": f"Bearer {access_token}"},
+            timeout=10,
+        )
+        if resp.ok:
+            d = resp.json()
+            pin["pin_title"] = (d.get("title") or "")[:80]
+            pin["pin_link"]  = d.get("link") or ""
+            pin["created_at"] = d.get("created_at") or ""
+        if (i + 1) % 10 == 0:
+            print(f"  {i+1}/{len(results)} details fetched")
+        time.sleep(1)  # 60 req/min limit
 
     print("Saving to D1...")
     save = requests.post(
