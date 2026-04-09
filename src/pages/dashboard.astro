@@ -1799,6 +1799,13 @@ async function loadPinterestAnalytics() {
     el('pa-total-pins').textContent = paAllPins.length;
 
     el('pa-loading').style.display = 'none';
+
+    if (paAllPins.length === 0) {
+      el('pa-error').style.display = 'block';
+      el('pa-error').innerHTML = `No analytics data yet. Click <strong>↻ Refresh from Pinterest</strong> to fetch fresh data from Pinterest API (~1 min).`;
+      return;
+    }
+
     el('pa-content').style.display = 'block';
     paRender();
 
