@@ -11,7 +11,7 @@
  * + GET /user_account/analytics (account-level totals).
  */
 
-import { parseCookies, verifySignedCookie, refreshAccessToken } from "./pinterest-demo-lib.js";
+import { refreshAccessToken } from "./pinterest-demo-lib.js";
 
 const CACHE_TTL_HOURS = 6;
 
@@ -130,31 +130,39 @@ export async function onRequestGet(context) {
     }
   }
 
-  // ── Need live data — verify Pinterest cookie token ────────────────────────
-  const cookieSecret = env.PINTEREST_DEMO_COOKIE_SECRET;
-  if (!cookieSecret) {
-    return Response.json({ error: "PINTEREST_DEMO_COOKIE_SECRET not set" }, { status: 500 });
+  // ── Load token from D1 (works from any browser/device) ──────────────────
+  if (!env.DB) {
+    return Response.json({ error: "DB not bound" }, { status: 500 });
   }
 
-  const cookies     = parseCookies(request.headers.get("Cookie") || "");
-  const signedToken = cookies.pinterest_demo_token;
-  if (!signedToken) {
+  const storedToken = await env.DB.prepare(
+    "SELECT access_token, refresh_token, expires_at FROM pinterest_token WHERE id = 1"
+  ).first().catch(() => null);
+
+  if (!storedToken?.access_token) {
     return Response.json({
       error:   "no_token",
-      message: "Pinterest not connected. Open /api/pinterest-demo to connect.",
+      message: "Pinterest token not saved yet. Open /api/pinterest-save-token?key=PASSWORD from the browser where you connected Pinterest.",
     }, { status: 401 });
   }
 
-  let token = await verifySignedCookie(cookieSecret, signedToken);
-  if (!token?.access_token) {
-    return Response.json({ error: "no_token", message: "Invalid Pinterest token." }, { status: 401 });
-  }
+  let token = {
+    access_token:  storedToken.access_token,
+    refresh_token: storedToken.refresh_token,
+    expires_at:    storedToken.expires_at,
+  };
 
-  // Refresh if expiring soon
+  // Refresh if expiring soon, then update D1
   if (token.expires_at && Date.now() > token.expires_at - 60_000) {
-    token = await refreshAccessToken({
-      appId: env.PINTEREST_APP_ID, appSecret: env.PINTEREST_APP_SECRET, token, scopes: [],
-    }).catch(() => token);
+    try {
+      token = await refreshAccessToken({
+        appId: env.PINTEREST_APP_ID, appSecret: env.PINTEREST_APP_SECRET, token, scopes: [],
+      });
+      // Save refreshed token back to D1
+      await env.DB.prepare(
+        `UPDATE pinterest_token SET access_token=?, refresh_token=?, expires_at=?, updated_at=datetime('now') WHERE id=1`
+      ).bind(token.access_token, token.refresh_token || null, token.expires_at || null).run().catch(() => null);
+    } catch { /* use existing token */ }
   }
 
   try {
