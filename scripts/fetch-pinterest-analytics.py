@@ -140,7 +140,10 @@ def get_pins_from_d1():
 
 # ── Fetch analytics per pin ────────────────────────────────────────────────────
 
+DEBUG_FIRST = True  # print raw response for first pin only
+
 def fetch_pin_analytics(access_token, pin_id, start_date, end_date):
+    global DEBUG_FIRST
     resp = requests.get(
         f"{API_BASE}/pins/{pin_id}/analytics",
         headers={"Authorization": f"Bearer {access_token}"},
@@ -152,6 +155,10 @@ def fetch_pin_analytics(access_token, pin_id, start_date, end_date):
         },
         timeout=15,
     )
+    if DEBUG_FIRST:
+        print(f"  DEBUG status={resp.status_code} body={resp.text[:500]}")
+        DEBUG_FIRST = False
+
     if not resp.ok:
         return None
 
