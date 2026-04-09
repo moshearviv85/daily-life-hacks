@@ -405,7 +405,11 @@ const BUILD = {
     <div class="login-logo">🍂</div>
     <div class="login-title">Daily Life Hacks</div>
     <div class="login-sub">Enter dashboard password to continue</div>
-    <input id="pw-input" class="login-input" type="password" placeholder="Password" autocomplete="current-password" />
+    <div style="position:relative">
+      <input id="pw-input" class="login-input" type="password" placeholder="Password" autocomplete="off" style="padding-right:2.5rem;width:100%;box-sizing:border-box" />
+      <button type="button" onclick="togglePwVisible()" title="Show/hide password"
+        style="position:absolute;right:.6rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:1rem;color:var(--muted-color)">👁</button>
+    </div>
     <button class="login-btn" id="login-btn">Enter Dashboard</button>
     <div class="login-error" id="login-error">Wrong password. Try again.</div>
   </div>
@@ -853,6 +857,11 @@ document.getElementById('pw-input').addEventListener('keydown', e => {
   if (e.key === 'Enter') attemptLogin();
 });
 document.getElementById('login-btn').addEventListener('click', attemptLogin);
+
+function togglePwVisible() {
+  const input = document.getElementById('pw-input');
+  input.type = input.type === 'password' ? 'text' : 'password';
+}
 
 function attemptLogin() {
   const val = document.getElementById('pw-input').value.trim();
@@ -1667,6 +1676,7 @@ window.filterSubs       = filterSubs;
 window.copySubEmails    = copySubEmails;
 window.openModal        = openModal;
 window.fetchClarity     = fetchClarity;
+window.togglePwVisible  = togglePwVisible;
 window.closeModal       = closeModal;
 window.handleModalClick = handleModalClick;
 window.modalSearch      = modalSearch;
