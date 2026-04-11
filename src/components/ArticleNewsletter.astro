@@ -1,0 +1,147 @@
+---
+interface Props {
+  category: "recipes" | "nutrition" | "tips";
+  baseSlug: string;
+}
+
+const { category, baseSlug } = Astro.props;
+---
+
+<section
+  class="article-newsletter-cta mt-12 rounded-2xl border p-6 md:p-8"
+  style="background-color: var(--card-bg); border-color: var(--border-color); border-left-width: 4px; border-left-color: #F29B30;"
+  aria-labelledby="article-newsletter-lead"
+>
+  <p
+    id="article-newsletter-lead"
+    class="text-lg md:text-xl font-bold leading-snug mb-4"
+    style="color: var(--heading-color);"
+  >
+    Subscribe and all that stuff…
+  </p>
+  <div class="space-y-3 text-base leading-relaxed mb-6" style="color: var(--text-color);">
+    <p>I'm not here to fix your whole life in one email.</p>
+    <p>
+      I'm here to make dinner a little easier and your grocery run a little less annoying.
+    </p>
+    <p class="text-sm" style="color: var(--muted-color);">
+      No junk mail. Just one useful email a week. And you can unsubscribe whenever you want.
+    </p>
+  </div>
+
+  <form id="article-newsletter-form" class="space-y-4 max-w-lg">
+    <label for="article-newsletter-email" class="sr-only">Email address</label>
+    <input
+      id="article-newsletter-email"
+      type="email"
+      name="email"
+      autocomplete="email"
+      inputmode="email"
+      placeholder="Enter your email"
+      required
+      class="w-full px-4 py-3 rounded-xl text-base focus:ring-2 focus:ring-[#F29B30] outline-none transition-all"
+      style="color: var(--text-color); background-color: var(--input-bg); border: 1px solid var(--border-color);"
+    />
+    <label class="flex items-start gap-2 text-left cursor-pointer">
+      <input
+        id="article-newsletter-consent"
+        type="checkbox"
+        name="consent"
+        required
+        class="mt-1 accent-[#F29B30] shrink-0"
+      />
+      <span class="text-xs leading-snug" style="color: var(--muted-color);">
+        I agree to receive email newsletters and accept the
+        <a href="/privacy" class="underline hover:text-[#F29B30]">Privacy Policy</a>.
+        You can unsubscribe at any time.
+      </span>
+    </label>
+    <button
+      id="article-newsletter-submit"
+      type="submit"
+      class="w-full sm:w-auto min-w-[200px] py-3 px-8 font-bold text-white rounded-xl transition-transform hover:scale-[1.02] shadow-md text-base"
+      style="background-color: #F29B30;"
+    >
+      Join the list
+    </button>
+  </form>
+
+  <div id="article-newsletter-success" class="hidden mt-6" role="status">
+    <p class="text-lg font-bold" style="color: var(--heading-color);">You're in!</p>
+    <p class="text-sm mt-1" style="color: var(--muted-color);">Taking you to the thank you page…</p>
+  </div>
+</section>
+
+<script define:vars={{ category, baseSlug }}>
+  function redirectArticleThankYou() {
+    const params = new URLSearchParams({ source: "article" });
+    if (category) params.set("category", category);
+    window.location.href = `/thank-you?${params.toString()}`;
+  }
+
+  function setupArticleNewsletter() {
+    const form = document.getElementById("article-newsletter-form");
+    const emailInput = document.getElementById("article-newsletter-email");
+    const consentInput = document.getElementById("article-newsletter-consent");
+    const submitBtn = document.getElementById("article-newsletter-submit");
+    const successEl = document.getElementById("article-newsletter-success");
+
+    if (!form || !(emailInput instanceof HTMLInputElement)) return;
+    if (!(consentInput instanceof HTMLInputElement)) return;
+    if (!(submitBtn instanceof HTMLButtonElement)) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!emailInput.value || !emailInput.value.includes("@")) return;
+      if (!consentInput.checked) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Joining…";
+
+      try {
+        fetch("/api/event", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            event_type: "signup_started",
+            source: "article",
+            page: window.location.pathname,
+            metadata: {
+              location: "article-newsletter",
+              base_slug: baseSlug,
+            },
+          }),
+        }).catch(() => {});
+
+        const res = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: emailInput.value.trim(),
+            source: "article",
+            page: window.location.pathname,
+            category,
+            base_slug: baseSlug,
+            variant_slug: "",
+            email_segment: "",
+          }),
+        });
+
+        if (res.ok) {
+          form.classList.add("hidden");
+          successEl?.classList.remove("hidden");
+          setTimeout(() => redirectArticleThankYou(), 400);
+          return;
+        }
+
+        submitBtn.textContent = "Try again";
+        submitBtn.disabled = false;
+      } catch {
+        submitBtn.textContent = "Try again";
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
+  document.addEventListener("astro:page-load", setupArticleNewsletter);
+</script>

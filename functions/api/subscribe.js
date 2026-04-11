@@ -95,6 +95,10 @@ function getKitTagIds(env, { category, source, email_segment }) {
 
   if (source === "footer") rawIds.push(env.KIT_TAG_SOURCE_FOOTER || DEFAULT_KIT_TAG_IDS.sourceFooter);
   if (source === "popup") rawIds.push(env.KIT_TAG_SOURCE_POPUP || DEFAULT_KIT_TAG_IDS.sourcePopup);
+  if (source === "article" && env.KIT_TAG_SOURCE_ARTICLE) {
+    const articleTagId = Number.parseInt(env.KIT_TAG_SOURCE_ARTICLE, 10);
+    if (Number.isInteger(articleTagId)) rawIds.push(articleTagId);
+  }
 
   const segmentEnvMap = {
     "recipes-breakfast": env.KIT_TAG_SEGMENT_RECIPES_BREAKFAST || DEFAULT_KIT_TAG_IDS.recipesBreakfast,
