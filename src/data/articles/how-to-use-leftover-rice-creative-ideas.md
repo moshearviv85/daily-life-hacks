@@ -40,37 +40,22 @@ publishAt: '2026-03-15T00:00:00.000Z'
 ---You made way too much rice. Again. 
 
 Instead of shoving the container to the back of the fridge to let it slowly turn into a science experiment, you can easily turn it into a new meal with minimal effort. Because leftover rice is already fully cooked, it acts as the ultimate head start for dinner. It's ready to go straight into soups, salads, and skillets. Here are some highly practical ways to actually use it before it goes bad.
-
-<br>
-
 ## The Classic: Fried Rice
 
 This is the undisputed champion of leftover rice. In fact, cold, day-old rice works significantly better for this than fresh rice because it's slightly dried out, meaning it won't turn into a sticky, mushy paste in the pan. 
 
 Heat a little oil in a wide pan, toss in whatever random vegetables you need to get rid of, maybe scramble an egg in the corner, and then throw in the cold rice with a splash of soy sauce. You do not need an authentic wok to pull this off. A large skillet and high heat are more than enough. Toss in some leftover chicken or tofu if you have it. Dinner is done in 10 minutes.
-
-<br>
-
 ## Bulk Up a Soup
 
 If you are making a simple broth-based soup, dropping a scoop of leftover rice right into the pot makes it instantly heartier. Add it to some chicken broth with chopped carrots and celery. Let it simmer just long enough to heat through. You can even stir a beaten egg directly into the hot broth at the very end for a quick, filling egg-drop style soup that feels comforting and uses up your leftovers effortlessly.
-
-<br>
-
 ## Crispy Rice Fritters
 
 Mix a cup of cold rice with one beaten egg, a tablespoon of flour or breadcrumbs, and whatever chopped herbs or scallions you have lying around. Form the mixture into small, flat patties and pan-fry them in a little oil until they are golden and crispy on both sides. 
 
 They make a fantastic side dish for dinner, or you can serve them with a simple side salad for a light lunch. You can easily fold in a little shredded cheese or some leftover finely diced vegetables to change the flavor profile.
-
-<br>
-
 ## Stuffed Vegetables
 
 Leftover rice acts as the perfect base for stuffing bell peppers, large tomatoes, or hollowed-out zucchini. Mix your cold rice with some sautéed onions, garlic, maybe a spoonful of tomato paste, and some dried herbs. Pack the mixture tightly into the vegetables, top them with a little cheese if you like, and bake them until the vegetables are tender. It turns a boring leftover into a meal that actually looks intentional.
-
-<br>
-
 ## Cold Rice Salad
 
 Cold rice works surprisingly well as the base for a hearty salad. Toss it in a bowl with chopped cucumbers, cherry tomatoes, fresh parsley, and a sharp vinaigrette. You can add chickpeas, crumbled feta cheese, or some toasted nuts for crunch. Because the rice is sturdy, this salad holds up beautifully in the fridge, meaning you can make a big batch on Monday and happily eat it for lunch on Tuesday and Wednesday. 

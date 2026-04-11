@@ -42,17 +42,11 @@ publishAt: '2026-03-15T00:00:00.000Z'
 ---People tend to talk about cast iron skillets like they are fragile, magical artifacts that will instantly be ruined if you look at them the wrong way. They aren't. They are literally heavy chunks of iron. 
 
 A well-seasoned cast iron skillet is naturally nonstick without needing any weird chemical coatings, it will outlive you, and it genuinely gets better the more you cook with it. "Seasoning" is just a fancy culinary word for building up a microscopic, baked-on layer of oil so the metal surface becomes smooth and resists rusting. It is not complicated. Here is exactly how to do it, and how to keep it from turning into a rusty mess later.
-
-<br>
-
 ## What You Actually Need
 
 You need your cast iron pan, a standard cooking oil with a high smoke point (like basic vegetable oil, canola oil, or grapeseed oil), some paper towels, and an oven. 
 
 Ignore the internet forums telling you to buy expensive, artisan flaxseed oil for seasoning; it looks great initially but has a notorious habit of flaking off into your food a few months later. Cheap, simple cooking oil is much more reliable.
-
-<br>
-
 ## The Initial Seasoning Process
 
 If the pan is brand new, or if you found it in a garage sale and it looks terrifying, wash it with hot water and dish soap. Dry it. Water is the enemy of iron and is the sole cause of rust. 
@@ -65,9 +59,6 @@ If the pan is brand new, or if you found it in a garage sale and it looks terrif
 6. Bake it for exactly one hour. Turn the oven off, and just let the pan cool down slowly inside the oven. 
 
 If the surface still looks a bit patchy or gray, repeat the oil-and-bake process one more time. When it's done correctly, the iron should look dark, matte, and incredibly smooth.
-
-<br>
-
 ## Daily Maintenance: The 60-Second Routine
 
 You do not need to do that whole oven process every time you cook an egg. 
@@ -75,9 +66,6 @@ You do not need to do that whole oven process every time you cook an egg.
 After cooking dinner, rinse the pan with hot water in the sink. Use a brush or a plastic scraper if some food is really stuck. You can use a tiny drop of modern dish soap if you need to; it won't destroy the seasoning. 
 
 Never, ever leave it soaking wet on the counter. Put the clean, wet pan back on the stove over medium-low heat for about two minutes until all the water evaporates. Turn off the heat, add one tiny drop of oil, wipe it around the inside with a paper towel, and you're done. That 60-second routine prevents rust and keeps the nonstick surface in perfect shape.
-
-<br>
-
 ## How to Fix Mistakes
 
 Cast iron is incredibly forgiving. If the pan accidentally gets rusty because someone left it wet, just scrub the rust off with steel wool, dry it, and put it through the oven-seasoning process again. 

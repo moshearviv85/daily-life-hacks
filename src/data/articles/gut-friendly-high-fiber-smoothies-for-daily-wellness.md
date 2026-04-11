@@ -45,9 +45,6 @@ faq:
 A smoothie is a fast way to eat fruit without admitting you are late. If you want fiber in the mix, you need ingredients that actually bring fiber, not just a pretty color.
 
 Berries, oats, chia, and spinach are the boring MVPs. They blend well and do not require a twelve step shopping list.
-
-<br>
-
 ## A Simple Formula That Works
 
 Start with liquid you like: milk, fortified soy milk, or water if you want it lighter.
@@ -57,33 +54,21 @@ Add frozen fruit for texture. Add a handful of greens if you want nutrients with
 Add oats or chia for fiber. If you hate chia texture, grind chia in a spice grinder first or use ground flax.
 
 Add protein if you need the smoothie to carry you to lunch. Greek yogurt, silken tofu, or a scoop of your preferred protein powder all work, depending on your goals and tolerance.
-
-<br>
-
 ## Two Blends Worth Repeating
 
 **Berry oat:** frozen mixed berries, half a banana, rolled oats, milk, pinch of salt. Blend until smooth.
 
 **Green mango:** frozen mango, spinach, chia soaked for five minutes, lime juice, water. This one tastes brighter than it looks.
-
-<br>
-
 ## The Gas Conversation, Without Drama
 
 If you are new to more fiber, jumping straight to huge smoothies can feel loud in your gut. Start with smaller portions, drink water through the day, and add fiber gradually.
 
 That is not scare talk. It is the difference between a habit that sticks and a habit that ends with you avoiding beans forever.
-
-<br>
-
 ## Sweetness Without A Sugar Bomb
 
 Fruit already brings sweetness. If you still want more, try cinnamon or vanilla first before you pour in extra syrup.
 
 If you are watching blood sugar for medical reasons, talk with your clinician about what portions make sense for you. General tips here are for typical healthy adults, not a replacement for personal guidance.
-
-<br>
-
 ## Reduced-Calorie and Lower-Sugar Versions (Without Killing the Taste)
 
 If you want a lighter smoothie, the fix is usually not “more willpower.” It is ingredient ratios.
@@ -103,9 +88,6 @@ Use a smoothie when you need:
 * A portable option when life is in “no time” mode
 
 If you are trying to build a full meal, pair the smoothie with something simple on the side (like a piece of fruit or a few nuts). This makes it easier to feel satisfied.
-
-<br>
-
 ## Thick Without Grit: Choose the Right Texture
 
 If you hate gritty smoothies, texture is fixable:
@@ -129,9 +111,6 @@ Then keep sweeteners simple. Fruit sweetness is usually enough when the blend is
 If you make a smoothie for tomorrow:
 * Prep a freezer bag with frozen fruit plus oats or chia
 * Add liquid fresh when you blend (it tastes brighter and the texture stays better)
-
-<br>
-
 ## Three “Blend Templates” You Can Reuse
 
 Use these as starting points and adjust based on what you have:

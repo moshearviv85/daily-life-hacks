@@ -44,47 +44,29 @@ faq:
 If you are trying to lose weight, fruit can be your friend or your sneaky sugar source depending on how you use it. Fiber is the part that often helps you feel full without turning lunch into dessert.
 
 This list is practical, not mystical. No fruit replaces your overall calorie balance.
-
-<br>
-
 ## Berries (Raspberries, Blackberries, Strawberries)
 
 Berries pack a lot of flavor per bite and tend to bring strong fiber for their calorie load. They also freeze well, which matters if you buy in bulk and do not want waste.
 
 Use them on yogurt, oats, or plain as a snack you can measure in a bowl.
-
-<br>
-
 ## Pears and Apples (Eat the Skin)
 
 A lot of the fiber sits in the skin. If you peel everything, you leave fiber on the cutting board.
 
 Slice them and pair with a protein source like cheese or peanut butter if you want the snack to last longer than five minutes.
-
-<br>
-
 ## Kiwi and Oranges
 
 Citrus and kiwi bring fiber and vitamin C without requiring a recipe. They travel well and do not need refrigeration all day.
 
 If you hate peeling oranges at work, buy easy peel varieties or pack segments in a small container.
-
-<br>
-
 ## Portion Language That Actually Helps
 
 Think in whole fruits first, not endless smoothies. Blending can be fine, but it is easier to drink calories fast.
 
 If you track food, weigh fruit once so your eye learns what a medium apple actually means for you.
-
-<br>
-
 ## The Honest Bottom Line
 
 Fruit supports a pattern. The pattern is what changes your weight over time. Fiber is one lever. Protein, vegetables, sleep, stress, and movement are the other levers nobody wants to list because they sound less exciting than a single superfruit.
-
-<br>
-
 ## How to Build a “Lower-Fuss” Fruit Snack
 
 Fruit is easy. The part that trips people up is turning it into fruit dessert.
@@ -104,9 +86,6 @@ If you want a flavor track that feels natural and not like a diet assignment:
 * Citrus + olives? Not for everyone, but citrus with a savory meal can help you notice portion cues more clearly
 
 You do not need to do everything perfectly. You just need a pattern you can repeat.
-
-<br>
-
 ## A Simple Fruit Serving Guide (No Math Required)
 
 If you want a starting point that does not spiral:
@@ -122,9 +101,6 @@ If you are having fruit as a snack, pairing helps it feel more filling:
 ## Watch the “Hidden Sugar” Traps
 
 Smoothies and dried fruit can sneak extra sugar because portions get blurry. If you blend, use whole fruit (not juice) and keep the sweetener light. If you choose dried fruit, treat it like a measured snack, not an all-day graze.
-
-<br>
-
 ## Better Fruit Snacks: Pairments That Work
 
 Fruit is great, but it sticks better when you pair it smart. Try:

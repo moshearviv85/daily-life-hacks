@@ -63,41 +63,26 @@ faq:
 Avocado toast became a cliché because it photographs well and takes almost no skill. That is not an insult. It is a feature.
 
 If you want more fiber without turning breakfast into a project, you need three levers: bread with real whole grains, a topping that is not just salt, and something crunchy that is not only aesthetic.
-
-<br>
-
 ## Variation One: Beans and Lime
 
 Mash rinsed black beans with a fork, season with a little salt, and spoon over the avocado. Hit it with lime juice so it tastes bright instead of heavy.
 
 This is the variation for people who want something closer to a meal than a snack.
-
-<br>
-
 ## Variation Two: Tomatoes and Seeds
 
 Cherry tomatoes add acidity. Hemp seeds or pumpkin seeds add crunch and fiber without pretending to be a salad.
 
 If you hate cutting tomatoes, use salsa. It is not elegant. It works.
-
-<br>
-
 ## Variation Three: Hummus and Cucumber
 
 Spread a thin layer of hummus first so the toast does not go soggy immediately. Add avocado, cucumber slices, and everything seasoning.
 
 This one is cooler in temperature, which matters on mornings when hot food sounds like a bad idea.
-
-<br>
-
 ## The Whole Grain Bread Part
 
 Look for bread where whole grains show up early in the ingredient list. If the slice is white flour with a dusting of seeds on top, you are buying a costume.
 
 Fiber adds up through the day. Breakfast is one place where you can make a clean win without feeling like you are on a plan.
-
-<br>
-
 ## Small Breakfast Moves That Feel Fancy
 
 If you want this to feel less “morning routine” and more “I planned this,” add one detail:
@@ -116,9 +101,6 @@ Try one of these directions:
 * Avocado + tomatoes + a sprinkle of feta (optional) + cracked pepper
 
 The point is not to “follow a diet.” It is to give your breakfast a new flavor track so you do not get sick of it by day three.
-
-<br>
-
 ## Meal Prep Without Turning It Into a Mess
 
 If you want this for weekdays, do not pre assemble the whole thing.
@@ -138,9 +120,6 @@ If you want less bread without losing the “toast moment,” go lighter:
 * Skip cheese (optional) and lean into lemon, lime, and pepper for flavor
 
 Same vibe. Less heavy plate.
-
-<br>
-
 ## A 5-Day Breakfast Rotation (So You Stop Repeating Yourself)
 
 If you want this to feel like a habit, not a one-time experiment, rotate these five plates:
@@ -172,9 +151,6 @@ If you have leftover toppings, keep them separate:
 * store seeds in a small bag or jar
 
 When you want breakfast, toast fresh bread and assemble in under five minutes.
-
-<br>
-
 ## One Last Tiny Tip
 
 If you hate waiting, prep seeds and beans ahead and toast the bread last.

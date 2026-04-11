@@ -41,9 +41,6 @@ publishAt: '2026-03-15T00:00:00.000Z'
 ---Canned beans are undeniably convenient, but buying a bag of dried beans costs significantly less money and allows you to control exactly how mushy they get and how much salt goes into them. 
 
 Cooking them from scratch sounds like a homesteading chore, but it isn't actually complicated. You do exactly three things: you soak, you simmer, and you season. Once you've done it a couple of times, it becomes as brainless as boiling a pot of pasta. Here is a very straightforward method that works reliably for black beans, pinto beans, chickpeas, and most standard legumes.
-
-<br>
-
 ## Step One: Rinse and Soak
 
 First, dump the dry beans into a colander and pick through them quickly to remove any tiny stones or broken pieces that might have snuck in from the farm. Rinse them under cold water. 
@@ -51,9 +48,6 @@ First, dump the dry beans into a colander and pick through them quickly to remov
 Soaking them is highly recommended because it cuts your active cooking time down and can make them much easier to digest later. Put your rinsed beans in a large pot and cover them with a massive amount of cold water (the water should be at least a few inches above the beans, as they will expand). Let them soak for 8 to 12 hours, or just leave them overnight. 
 
 **In a rush?** You can do a "quick soak." Put the beans and water in a pot, bring it to a rolling boil for exactly 2 minutes, turn off the heat, put the lid on, and let them sit right there for one hour. Drain and rinse them, and they are ready to cook.
-
-<br>
-
 ## Step Two: Cook Low and Steady
 
 Take your soaked, drained beans, put them back into a clean pot, and cover them with fresh water (again, going a few inches above the top of the beans). Bring the whole pot to a boil over medium-high heat, and then immediately drop the heat down to a very gentle simmer. 
@@ -63,9 +57,6 @@ If you see a bunch of white foam rise to the top, just skim it off with a spoon 
 Start checking them around the 45-minute mark. Scoop one out, let it cool for a second, and taste it. If the water level in the pot gets too low while they cook, just pour in a little more hot water. 
 
 *Crucial rule:* Do not add your salt or acidic ingredients (like canned tomatoes or vinegar) into the pot until the beans are almost soft. Acid and salt early in the process can lock the skins and keep the beans tough forever.
-
-<br>
-
 ## Step Three: Season and Store
 
 Once the beans are perfectly soft to your liking, add a generous amount of salt and stir it in. If you want, you can also toss in a smashed clove of garlic, half an onion, or a bay leaf while they simmer to build up the flavor of the broth. 

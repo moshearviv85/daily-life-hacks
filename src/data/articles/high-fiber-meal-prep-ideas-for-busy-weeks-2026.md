@@ -70,9 +70,6 @@ faq:
 If your week looks like a spreadsheet with a bad attitude, meal prep is not about perfection. It is about having three decent options ready so you do not end up eating crackers for dinner while standing in front of the fridge.
 
 High fiber meal prep sounds like a health lecture, but in practice it is just cooking beans, grains, and vegetables once, then remixing them into bowls, wraps, and soups.
-
-<br>
-
 ## Build a Prep Menu in Three Buckets
 
 Think in components, not identical meals.
@@ -84,33 +81,21 @@ Think in components, not identical meals.
 **Bucket three:** roasted vegetables. They add volume and fiber without making you feel like you are eating a haystack.
 
 Mix and match through the week. Monday can be a bowl, Tuesday can be a wrap, Wednesday can be soup with the same ingredients.
-
-<br>
-
 ## Fiber Without the Drama
 
 You do not need exotic powders. Oats, beans, lentils, whole grains, fruits, and vegetables are the usual suspects. If your containers look colorful and you have at least one legume or whole grain in there, you are usually pointed in a good direction.
 
 If you are new to more fiber, ramp slowly so your digestion has time to adjust. That is not a cute slogan. It is the difference between feeling great and feeling like you swallowed a balloon.
-
-<br>
-
 ## Time Savers That Actually Help
 
 Roast a sheet pan of vegetables while lentils simmer. Cook quinoa in a rice cooker while you chop. Use pre washed greens if that is what gets you to eat them.
 
 If you hate chopping, buy frozen mixed vegetables and roast them straight from the bag. It is not cheating. It is survival.
-
-<br>
-
 ## Make It Feel Less Boring
 
 Change the sauce, not the whole plan. One day add salsa. Another day add a lemon yogurt drizzle. Another day add a spoon of pesto. Same containers, different mood.
 
 That is how meal prep survives a real life schedule, not a fantasy one.
-
-<br>
-
 ## Mediterranean-Inspired (Without Needing a Food Blogger Handle)
 
 If you want the meal prep to feel brighter and more “real food,” go Mediterranean-ish:
@@ -138,9 +123,6 @@ If you are aiming for reduced calories, you usually win by adding more volume an
 2. Quinoa + lentils + roasted peppers + salsa + a spoon of Greek yogurt (optional)
 
 Same building blocks. Different experience.
-
-<br>
-
 ## The Sauce System (Because Sauce Makes It Feel New)
 
 If your containers are starting to look boring, it is usually not the food. It is the sauce.
@@ -160,9 +142,6 @@ This meal prep is already vegetarian-friendly. If you want vegan:
 * Add extra legumes or a bit more roasted vegetables for volume
 
 Your fridge will still look colorful. That counts for sanity.
-
-<br>
-
 ## A Sunday Prep Checklist (Simple, Not Fancy)
 
 If your meal prep always falls apart on Sunday, use this checklist:

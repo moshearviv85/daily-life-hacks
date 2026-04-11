@@ -62,33 +62,21 @@ faq:
 If you want a high fiber snack that feels like junk food cosplay, roasted chickpeas are the move. They crunch, they carry spice, and they do not require a culinary degree.
 
 The whole operation lives or dies on dryness. Wet chickpeas steam in the oven and come out sad. Dry chickpeas roast.
-
-<br>
-
 ## The Non Negotiable Steps
 
 Rinse, drain, then dry like you are preparing them for a photoshoot. Oil helps crisping, but too much oil makes them greasy.
 
 Single layer on the sheet pan. If you stack them, you made a casserole by accident.
-
-<br>
-
 ## Seasoning Ideas That Are Not Boring
 
 Smoked paprika and garlic powder are the baseline. Add cayenne if you want heat. Add lime zest after roasting if you want something brighter.
 
 If you want a sweet version, cinnamon and a tiny bit of maple can work, but watch the sugar if you are keeping the snack savory minded.
-
-<br>
-
 ## Serving
 
 Eat them straight from the bowl, throw them on a salad, or use them as a soup topper. They also disappear fast if you leave them on the counter, so portion them if you are saving some for tomorrow.
 
 If you batch cook chickpeas from dry beans, the method is the same. Just make sure they are fully cooked and dry before roasting.
-
-<br>
-
 ## Oil and Salt: How to Keep Crunch Without Overdoing It
 
 Crunch is not about drowning chickpeas in oil. It is about dry chickpeas plus a thin coating plus heat.
@@ -115,15 +103,9 @@ If your roasted chickpeas soften overnight:
 3. Bake 6 to 8 minutes until they look drier
 
 They will not be identical to day one, but they come back enough to be worth eating.
-
-<br>
-
 ## One Last Nerd Detail: Drying the Chickpeas
 
 If you want maximum crunch, the drying step matters as much as the oven time. Pat them with a towel until they look truly dry, not just “mostly dry.” It feels fussy for 30 seconds, and it pays you back later when you take a bite.
-
-<br>
-
 ## Five Serving Ideas That Don’t Get Old
 
 These are not just “snack out of the bowl” snacks (though they are).

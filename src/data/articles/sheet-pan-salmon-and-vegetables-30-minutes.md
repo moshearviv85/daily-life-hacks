@@ -65,25 +65,16 @@ publishAt: '2026-03-15T00:00:00.000Z'
 ---Sheet pan dinners are wildly popular for a very good reason. You put your entire meal on a single metal tray, slide it into a hot oven, and when the timer rings, you have dinner ready and exactly one pan to scrub. 
 
 This sheet pan salmon and vegetables recipe is built for those nights when standing over a stove flipping things with a spatula feels like an impossible task. The vegetables go in first to get a quick head start, and then the salmon joins the party. In about 30 minutes total, you end up with flaky fish and tender, roasted veggies without juggling multiple timers or burning through half a roll of paper towels.
-
-<br>
-
 ## Why This Combo Actually Works
 
 Salmon cooks notoriously fast and frankly doesn't need much help besides some olive oil, salt, and a little dried herb to taste great. On the other side of the pan, broccoli, zucchini, and cherry tomatoes roast beautifully at the exact same high heat without needing you to babysit them. 
 
 Starting the vegetables 10 minutes before the fish gives the veggies a crucial head start. This ensures the broccoli gets those nice crispy edges right around the same time the salmon finishes cooking. If everything went in at once, you'd either have raw vegetables or dry, overcooked fish. 
-
-<br>
-
 ## Picking the Right Salmon and Veggies
 
 When buying your fish, look for skin-on fillets. The skin acts as a protective layer against the hot metal of the pan, holding the fish together and keeping the flesh moist. You can just eat the meat right off the skin once it's on your plate. Try to buy fillets that are roughly the same thickness so nobody ends up with a dry piece while someone else has an undercooked one.
 
 If you aren't a fan of zucchini, you can easily swap in asparagus or fresh green beans. The main rule of sheet pan cooking is to keep your vegetable pieces cut to a similar size so they roast evenly. 
-
-<br>
-
 ## Keeping the Flavor Simple
 
 There's no complicated glaze or reduction sauce to make here unless you really want to do the extra dishes. A hefty squeeze of fresh lemon juice right when it comes out of the oven is usually all the fish needs to brighten up. 

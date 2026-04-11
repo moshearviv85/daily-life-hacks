@@ -70,39 +70,24 @@ faq:
 Some nights you do not have a zen hour to chop a rainbow. You have twenty minutes, a hungry household, and a sink that is already half full. That is when a one skillet bean and rice situation saves you without feeling like a sad compromise.
 
 This recipe is not trying to win a chef competition. It is trying to get fiber and protein on the table before anyone asks for cereal.
-
-<br>
-
 ## Why Fiber Still Matters When You Are Busy
 
 Fiber is the part of plant foods that your body does not fully break down, and that is the point. It can help you feel full, and it pairs well with steady energy when you are not eating every hour.
 
 When you are slammed, fiber also plays well with simple meals. Beans, lentils, oats, and whole grains do not need a long speech. They just need heat and seasoning.
-
-<br>
-
 ## The Busy Night Game Plan
 
 Keep canned beans in the cupboard. Keep a pouch of cooked brown rice in the pantry or batch cook rice once a week. Keep frozen peppers or spinach for the nights when fresh produce is a fantasy.
 
 If you have those three categories, you can almost always build a skillet meal in twenty minutes.
-
-<br>
-
 ## Variations That Still Stay Quick
 
 Swap spinach for chopped kale, but give kale an extra minute to soften. Add frozen corn if you want a little sweetness. Toss in rotisserie chicken if you need a meat option without extra cook time.
 
 If you want a different flavor profile, swap cumin and paprika for Italian seasoning and a spoon of tomato paste. Same structure, new mood.
-
-<br>
-
 ## Storage
 
 Leftovers keep in the fridge for about three days in an airtight container. Reheat in a skillet with a splash of water so the rice does not dry out.
-
-<br>
-
 ## Low-Carb and Lower-Calorie Swaps That Actually Work
 
 You do not need to “diet” this into something you hate. This recipe already has structure, so you can steer it gently.
@@ -123,9 +108,6 @@ When you are short on time, flavor choices matter more than complicated steps. F
 One small move that helps a lot: mash a few spoonfuls of beans against the pan early, then leave the rest whole. It thickens the mixture so it clings to rice and vegetables instead of tasting watery.
 
 If you reheat leftovers, add a tiny splash of water or broth first. Then simmer for 1 to 2 minutes so it tastes like dinner again, not yesterday’s reheating project.
-
-<br>
-
 ## A Realistic 20-Minute Timeline (So You Stop Guessing)
 
 If you like cooking with structure, here is the flow:
@@ -136,9 +118,6 @@ If you like cooking with structure, here is the flow:
 That is it. No magic, no complicated steps.
 
 If your day runs late, cook the bean mixture first and keep it warm. Rice can be microwaved last. You still get a fresh tasting dinner without acting surprised that dinner takes time.
-
-<br>
-
 ## Toppings That Make It Feel Like a Different Meal
 
 Same skillet base. New mood.

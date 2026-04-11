@@ -43,45 +43,27 @@ faq:
 Fiber is one of those nutrients that sounds wholesome until your stomach files a complaint. If you want more fiber with less drama, you need a boring plan: gradual change, consistent water, and fewer heroic one day leaps.
 
 This is not a challenge culture article. This is a keep your pants comfortable article.
-
-<br>
-
 ## Rule One: Add Fiber in Small Doses
 
 If you normally eat low fiber meals, a giant bean burrito is not a gentle step. It is a referendum.
 
 Try one swap at a time. Add vegetables to a meal you already eat. Switch one refined grain to a whole grain a few days a week. Add beans in quarter cup increments.
-
-<br>
-
 ## Rule Two: Water Is Part of the Fiber System
 
 Fiber pulls water into the digestive tract. If you increase fiber and your water intake stays flat, you might feel off even if the foods are healthy.
 
 You do not need to turn your life into a hydration competition. You do need a baseline that matches the change you are making.
-
-<br>
-
 ## Rule Three: Beans Deserve Respect
 
 Beans are fiber heavyweights, but they reward patience. If canned beans bother you, try smaller portions, longer cooking, or different varieties. Some people tolerate lentils more easily than chickpeas, or the other way around.
 
 Discarding soaking water for dry beans, rinsing canned beans, and cooking can help for some people.
-
-<br>
-
 ## Rule Four: Spread Fiber Across the Day
 
 One mega salad can overload your system if you are not used to volume. Smaller fiber hits across breakfast, lunch, and dinner are often easier to tolerate.
-
-<br>
-
 ## When to Talk to Someone
 
 If pain is sharp, persistent, or paired with other symptoms you do not recognize, stop guessing and call a qualified clinician. This article is everyday eating advice, not a diagnosis.
-
-<br>
-
 ## A Simple 7-Day Ramp Plan (No Hero Moves)
 
 If you want something concrete, use this:
@@ -100,9 +82,6 @@ Fiber is one lever, but your routine matters too:
 * Keep regular meal timing so your body has fewer surprises
 
 If you are also trying to cut carbs, reduce added sugar, or eat more Mediterranean style, that can support the “lighter” feeling too. Pair gradual changes with regular habits and you will have more wins with less stress.
-
-<br>
-
 ## Common Mistakes That Backfire
 
 Even smart people make these mistakes:
@@ -120,9 +99,6 @@ To make it practical, try:
 * Lunch: a bowl of cooked vegetables plus lentils or chickpeas in a moderate serving
 * Dinner: roasted veggies with a whole grain or beans on the side (not the entire plate)
 * Water through the day, plus a short walk after dinner if you can
-
-<br>
-
 ## How to Handle Restaurants and “Real Life” Meals
 
 Going out does not mean you have to skip fiber. It just means you plan the approach:

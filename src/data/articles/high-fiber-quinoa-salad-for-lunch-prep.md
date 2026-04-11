@@ -68,33 +68,21 @@ faq:
 Quinoa salad is one of those recipes that sounds like it belongs on a wellness poster, but it is really just a sturdy grain bowl that tolerates commuting.
 
 If your goal is fiber, you want more than lettuce and hope. You want whole grains, legumes, and vegetables that still taste good after a night in the fridge.
-
-<br>
-
 ## Why This Combination Holds
 
 Chickpeas add fiber and chew. Tomatoes add acid. Cucumber adds crunch if you do not salt it to death. Lemon dressing cuts richness from olive oil and keeps the flavor bright.
 
 Feta is optional. Some people want it. Some people want the salad to stay vegan. Both paths are fine.
-
-<br>
-
 ## Prep Without Turning It Into a Chore
 
 Cook quinoa once. Chop vegetables once. Mix dressing in a jar and shake it like you mean it.
 
 If you are tired, buy pre washed greens and throw a handful into the container the morning you eat it. The base salad can stay grain forward.
-
-<br>
-
 ## Lunch Box Reality
 
 Pack dressing separately if your containers leak emotion when tipped. If your office fridge is a mystery, keep a small ice pack in the bag.
 
 If you want extra fiber, add a handful of shredded cabbage or kale when you toss the salad. Sturdy greens survive better than delicate ones.
-
-<br>
-
 ## Dressing Timing: The Secret Weapon
 
 People love salad… until it turns into “sad salad soup” in the container.
@@ -114,9 +102,6 @@ If you want the salad to stay crisp through the day, pack like this:
 * Side: dressing container
 
 Then you eat it like a competent adult. You are welcome.
-
-<br>
-
 ## Reduced-Carb Twist (For When You Still Want Lunch, Not a Heavy Plate)
 
 If you want a lighter feel, adjust the grain part:
@@ -131,9 +116,6 @@ To make the salad feel more like a Mediterranean bowl:
 * Add extra lemon zest (not just juice) for fragrance
 * Add parsley plus black pepper
 * Optional: swap part of the feta for a spoon of hummus in the dressing
-
-<br>
-
 ## Turn It Into a “Real” Lunch (Without Complicated Add-Ons)
 
 Quinoa salads can feel like a side dish if you keep the portions tiny. If you want it to feel like lunch, add one of these:
@@ -164,9 +146,6 @@ Use this simple order:
 4. Assemble right before packing
 
 If you are really rushed, skip one step. Even a “rough” version still tastes better than eating the same sandwich on repeat.
-
-<br>
-
 ## Lunch-Box Reality Check
 
 If it smells off or looks strange, toss it. Trust your senses before you trust your plan.

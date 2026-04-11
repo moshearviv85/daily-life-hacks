@@ -64,41 +64,26 @@ faq:
 Energy balls are socially acceptable cookie dough that you admit in public. The no bake version is for people who do not want to preheat an oven, wash a mixer, or pretend they have patience.
 
 These come together in one bowl, hide in the fridge, and rescue you when the afternoon gets loud.
-
-<br>
-
 ## What Holds Them Together
 
 Rolled oats give structure. Nut butter gives stickiness. Ground flaxseed adds fiber and helps the mixture bind without turning gummy.
 
 Sweetener is not just for taste. It also helps everything cling. Honey is thick and forgiving. Maple syrup works, but the mix can be a little looser, so you may need less water at the end.
-
-<br>
-
 ## Texture Notes That Matter
 
 You want a mix that squeezes into a ball without crumbling instantly. If it is too dry, add water slowly. If it is too sticky, add a few extra tablespoons of oats.
 
 Chilling is not optional if you want them to firm up. Warm peanut butter is delicious, but it does not respect your schedule.
-
-<br>
-
 ## Flavor Swaps
 
 Add cinnamon or cardamom if you want a warmer vibe. Add unsweetened cocoa powder if you want something closer to a brownie bite.
 
 If you want extra crunch, roll the outside in chopped nuts or toasted coconut. If you want less sugar, cut the chips and lean on vanilla and cinnamon instead.
-
-<br>
-
 ## Portion Reality
 
 These are still calorie dense because nut butter is calorie dense. That is not a moral statement. It is just math.
 
 Two balls with coffee can be a reasonable snack. Six balls because they are small is a different story, and we have all lived that story.
-
-<br>
-
 ## A Few “No-Stress” Tips So They Turn Out Right
 
 The goal is a mix that squeezes together and holds its shape.
@@ -122,9 +107,6 @@ Energy balls work best when you pair them:
 * With a protein option (Greek yogurt, or a dairy-free yogurt)
 * With a piece of fruit on the side when you want a bigger snack moment
 * With tea or coffee so you actually sit down and eat them slowly
-
-<br>
-
 ## Portion Sense (Because the Fridge Is Good at Lying)
 
 Energy balls are small, which is exactly why people accidentally eat a whole handful.
@@ -134,9 +116,6 @@ A practical serving is 2 to 3 balls. If you want more, add a piece of fruit and 
 ## Allergy and Swap Notes
 
 If you use peanut butter, remember allergens are real. Swap to sunflower seed butter if you need a nut-free version, and check labels on add-ins like chocolate chips so you do not get surprise ingredients.
-
-<br>
-
 ## Nut-Free and Vegan Swap Map
 
 This recipe is flexible, just not in a “mystery ingredients” way. Use clear swaps:

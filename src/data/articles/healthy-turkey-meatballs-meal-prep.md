@@ -66,25 +66,16 @@ publishAt: '2026-03-15T00:00:00.000Z'
 ---Turkey meatballs are one of those things that sound like a great idea on paper, but often end up tasting like heavily seasoned cardboard. These don't. They're actually moist, seasoned simply, and built specifically so you don't have to cook every single night.
 
 This healthy turkey meatballs meal prep recipe gives you a big batch of food in about 35 minutes. You can eat a few the same night tossed in marinara with some pasta, pack them up for lunch with a grain and some roasted veggies, or drop them into a soup later in the week. It's low-effort batch cooking that actually tastes good three days later.
-
-<br>
-
 ## Why Turkey Works for Meal Prep
 
 Ground turkey is lean, meaning it doesn't release a massive pool of grease when you cook it, which keeps your skillet relatively clean. However, that leanness is also why turkey gets a bad reputation for drying out. 
 
 To fix that, a little bit of breadcrumbs and one egg act as binders that hold onto the moisture. The flavor profile here comes from fresh garlic, parsley, and oregano. It's nothing terribly fancy or hard to find, but it holds up exceptionally well in the fridge and freezer. You can cook once, and the meatballs act as a blank canvas for three or four different meals without making you feel like you're eating leftovers.
-
-<br>
-
 ## Shaping and Cooking Without the Mess
 
 Here is a practical trick: wet your hands slightly with cold water before you start rolling the meatballs. The cold water stops the ground turkey mixture from sticking to your palms. Try to keep them all roughly the same size (about a tablespoon and a half each) so they finish cooking at the same time. 
 
 If your skillet is on the smaller side, do not crowd the pan. Cook them in two batches instead. Crowding the pan drops the temperature and causes the meat to steam rather than brown. You want that nice golden crust. They're done when they hit 165°F in the center. Give them a few minutes to rest off the heat so they don't fall apart when you move them.
-
-<br>
-
 ## How to Actually Use Them
 
 The best part of this prep is the flexibility. Toss them with some jarred marinara and spaghetti for a classic dinner. Slice them in half and add them to a sub roll with a little sauce and a slice of provolone for lunch. Or, serve them over rice or quinoa with a side of steamed broccoli. 

@@ -61,25 +61,16 @@ publishAt: '2026-03-15T00:00:00.000Z'
 ---Tacos don't have to automatically mean browning ground beef or chopping a mountain of ingredients. Sometimes you just need food to be ready immediately. These easy black bean tacos are explicitly built for those tired weeknights. 
 
 You open a couple of cans, warm the beans with a few standard pantry spices, and set out some tortillas. The entire operation goes from the cupboard to the table in about 15 minutes. It's not fussy, it's not complicated, and it gets the job done perfectly.
-
-<br>
-
 ## Why Black Beans Belong in Tacos
 
 Black beans are an unsung hero of the pantry. They are incredibly cheap, shelf-stable, and bring a heavy dose of both protein and fiber to the table. 
 
 The real trick here is mashing about half of the beans right in the skillet while they heat up. This gives you a mixture that is thick and creamy enough to actually stay inside the tortilla, but still has enough whole beans to provide texture. You aren't trying to make authentic, slow-cooked refried beans from scratch; you're just heating and seasoning them quickly. The cumin and chili powder do all the heavy lifting for the flavor profile.
-
-<br>
-
 ## Keeping the Meal Flexible
 
 The beauty of a taco night is that you don't have to plate anything. You can use corn or flour tortillas-whatever you already have sitting in the fridge. 
 
 The toppings are up to what you feel like digging out of the crisper drawer. Shredded cabbage or romaine lettuce for crunch, a spoonful of jarred salsa, a squeeze of fresh lime, or maybe a little avocado if you're feeling fancy. If you want to throw on some shredded cheese or leftover pickled onions, go for it. The bean base remains the same, and everyone at the table can construct the taco they actually want to eat.
-
-<br>
-
 ## Making It a Full Dinner
 
 If you're particularly hungry, serving these with a quick side of rice or a simple vinegar-based slaw rounds the meal out nicely. 

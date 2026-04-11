@@ -67,25 +67,16 @@ publishAt: '2026-03-15T00:00:00.000Z'
 ---One pot means one pan to wash. That's the whole pitch.
 
 Let's be honest, by the time Tuesday evening rolls around, the idea of using three different skillets and a saucepan to make dinner sounds like a personal insult. This easy one-pot chicken and rice dinner is the kind of meal you can throw together when your brain is running on fumes. You brown some chicken, toss in some rice and broth, and let it simmer. No fancy techniques, no hovering over the stove, and no separate pots for the rice. Everything cooks together and comes out tender, flavorful, and actually satisfying.
-
-<br>
-
 ## Why One-Pot Makes Sense Here
 
 Cooking the rice in the same pan as the chicken does two major things. First, the rice acts like a sponge, soaking up all those savory pan drippings and chicken broth instead of just boiling in plain water. Second, you skip the usual pile of dishes sitting in the sink waiting for you after you eat. 
 
 Long-grain white rice holds its shape well and won't turn to mush if you keep the heat low and the lid firmly on. We highly recommend using chicken thighs rather than breasts for this. Thighs have a little more fat, meaning they stay juicier and are way more forgiving in this kind of simmered dish, making them a much better fit for a relaxed weeknight.
-
-<br>
-
 ## What You Need (No Surprises)
 
 You'll need a deep skillet with high sides or a Dutch oven with a tight-fitting lid. If you don't have one, a large, heavy-bottomed pot works just fine. The rest of the list is pretty standard stuff you probably don't need a special grocery trip for: chicken thighs, onion, garlic, rice, broth, and a couple of pantry spices. 
 
 Frozen peas are optional, but tossing a handful in at the very end adds a bit of color and some fiber without adding any extra prep work. 
-
-<br>
-
 ## Tips for Getting It Right
 
 Please, do not skip rinsing the rice. It takes 30 seconds and keeps the grains from getting clumpy and weird. When you add the broth to the pan, make sure it reaches a full boil before you turn the heat down and put the cover on. That ensures the rice cooks evenly instead of just sitting in warm water. 

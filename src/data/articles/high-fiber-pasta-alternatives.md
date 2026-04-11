@@ -42,49 +42,31 @@ faq:
 If you want more fiber but you still want a fork and a red sauce situation, pasta is the emotional comfort food you do not want to negotiate with. The good news is you have real options that are not just salad pretending to be spaghetti.
 
 The bad news is legume pastas behave differently. Treat them like their own ingredient, not a perfect clone of semolina.
-
-<br>
-
 ## Chickpea Pasta
 
 Chickpea pasta tends to bring more protein and fiber than white pasta. Texture can be slightly grainier, which is not a moral failure.
 
 Cook in salted water, rinse only if your brand recommends it, and sauce. Acidic sauces hide earthy notes if your palate notices them.
-
-<br>
-
 ## Lentil Pasta
 
 Red lentil pasta is common and often gluten free. It can soften quickly, so set a timer and taste at the low end of the package range.
 
 If you are meal prepping, a quick toss in olive oil after draining can reduce sticking.
-
-<br>
-
 ## Whole Wheat Pasta
 
 Whole wheat pasta is the least dramatic swap and the easiest for family meals where not everyone wants a bean forward flavor.
 
 Pair it with chunky sauces so the slightly firmer bite feels intentional.
-
-<br>
-
 ## Add Fiber Without Changing the Noodle
 
 Sometimes the pasta stays white and fiber shows up elsewhere. White beans blended into tomato sauce, extra vegetables in the skillet, or a side salad with seeds can move the needle without a texture fight.
 
 That approach is also cheaper than buying specialty pasta every week.
-
-<br>
-
 ## Label Reading Without Losing Your Mind
 
 Look for whole grain as the first ingredient when you buy whole wheat pasta. For legume pastas, scan fiber and protein per serving and compare to your usual brand.
 
 If the serving size is tiny on the label, do not trick yourself. Two servings happen faster than pride admits.
-
-<br>
-
 ## Cook Smart So It Still Feels Like Dinner
 
 These pasta swaps behave differently than regular white pasta, so treat them like their own ingredient.
@@ -103,9 +85,6 @@ If you want it lighter (reduced calories), use a smaller pasta portion and load 
 * Pesto style sauce: usually coats nicely, but go easy on added oils if you are trying to keep calories down
 
 The pasta does not need to be perfect. It just needs to be cooked and sauced right so it tastes intentional, not like a diet penalty.
-
-<br>
-
 ## Troubleshooting Quick Hits
 
 Legume pastas can be moody, so here is how to save dinner:
@@ -120,9 +99,6 @@ If you want the meal to feel Mediterranean without extra work:
 * Use tomato-based sauce with garlic and oregano
 * Add extra vegetables (roasted peppers, zucchini, or sautéed mushrooms)
 * Finish with lemon juice and parsley instead of heavy extra cheese
-
-<br>
-
 ## Pick the Noodle by the Sauce
 
 The easiest way to avoid disappointment is to match pasta type to sauce style:
