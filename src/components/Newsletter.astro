@@ -1,5 +1,11 @@
 ---
+interface Props {
+  /** When embedded on an article page, pass Kit/D1 context (same visible UI as homepage). */
+  articleCategory?: string;
+  articleBaseSlug?: string;
+}
 
+const { articleCategory = "", articleBaseSlug = "" } = Astro.props;
 ---
 
 <section
@@ -104,7 +110,7 @@
   </div>
 </section>
 
-<script>
+<script define:vars={{ articleCategory, articleBaseSlug }}>
   interface SignupContext {
     category?: string;
     base_slug?: string;
@@ -181,6 +187,8 @@
         }).catch(() => {});
 
         const signupContext = getStoredSignupContext();
+        const mergedCategory = signupContext.category || articleCategory || "";
+        const mergedBaseSlug = signupContext.base_slug || articleBaseSlug || "";
         const res = await fetch("/api/subscribe", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -189,13 +197,20 @@
             source: "footer",
             page: window.location.pathname,
             ...signupContext,
+            category: mergedCategory,
+            base_slug: mergedBaseSlug,
           }),
         });
 
         if (res.ok) {
           form.classList.add("hidden");
           successEl?.classList.remove("hidden");
-          setTimeout(() => redirectToThankYou("footer", signupContext), 250);
+          const thankYouContext = {
+            ...signupContext,
+            category: mergedCategory,
+            base_slug: mergedBaseSlug,
+          };
+          setTimeout(() => redirectToThankYou("footer", thankYouContext), 250);
         } else {
           submitBtn.innerText = "Try Again";
           submitBtn.disabled = false;
