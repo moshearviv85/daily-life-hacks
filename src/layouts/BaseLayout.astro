@@ -59,6 +59,9 @@ const {
     <meta name="pinterest-rich-pin" content="true" />
     <meta name="p:domain_verify" content="0aee36e1e94111369fd7fdf18cb18c48"/>
 
+    <!-- Mobile browser chrome color (status bar / address bar) -->
+    <meta id="theme-color-meta" name="theme-color" content="#ffffff" />
+
     <!-- Prevent white flash in dark mode -->
     <script is:inline>
       const getTheme = () => {
@@ -73,11 +76,15 @@ const {
 
       const setTheme = () => {
         const theme = getTheme();
-        if (theme === "dark") {
+        const isDark = theme === "dark";
+        if (isDark) {
           document.documentElement.classList.add("dark");
         } else {
           document.documentElement.classList.remove("dark");
         }
+        // Keep mobile browser chrome in sync with the site theme
+        const meta = document.getElementById("theme-color-meta");
+        if (meta) meta.setAttribute("content", isDark ? "#1e293b" : "#ffffff");
       };
 
       // Set on initial load

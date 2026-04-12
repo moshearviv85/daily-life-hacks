@@ -68,6 +68,8 @@ html,
 body {
   overflow-x: hidden;
   width: 100%;
+  /* Prevents black overscroll area on iOS Safari when bouncing past the top */
+  background-color: var(--header-bg);
 }
 
 /* Hide floating Pinterest button when mobile menu is open */

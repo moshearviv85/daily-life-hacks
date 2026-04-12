@@ -184,6 +184,8 @@ const currentPath = Astro.url.pathname;
       themeBtn.addEventListener("click", () => {
         const isDark = document.documentElement.classList.toggle("dark");
         localStorage.setItem("theme", isDark ? "dark" : "light");
+        const meta = document.getElementById("theme-color-meta");
+        if (meta) meta.setAttribute("content", isDark ? "#1e293b" : "#ffffff");
       });
     }
 
