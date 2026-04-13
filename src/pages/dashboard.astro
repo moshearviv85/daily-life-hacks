@@ -734,6 +734,37 @@ const BUILD = {
       </div>
     </div>
 
+    <!-- ── PINTEREST TRENDS ──────────────────────────────────────────────── -->
+    <div class="card section-gap">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem">
+        <div>
+          <div class="card-title" style="margin-bottom:0">Pinterest Trending Keywords</div>
+          <div id="pt-cache-note" style="font-size:.72rem;color:var(--muted);margin-top:.2rem">US · Growing · Food &amp; Recipes</div>
+        </div>
+        <button id="pt-load-btn" onclick="loadTrends()"
+          style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
+          ↻ Load Trends
+        </button>
+      </div>
+      <div id="pt-loading" class="empty" style="display:none">Loading trends...</div>
+      <div id="pt-error"   class="empty" style="display:none"></div>
+      <div id="pt-content" style="display:none">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Keyword</th>
+              <th title="Week over week">WoW %</th>
+              <th title="Month over month">MoM %</th>
+              <th title="Year over year">YoY %</th>
+            </tr>
+          </thead>
+          <tbody id="pt-tbody"></tbody>
+        </table>
+        <div id="pt-footer" style="font-size:.75rem;color:var(--muted);margin-top:.5rem;text-align:right"></div>
+      </div>
+    </div>
+
     <!-- ── PINTEREST AUTO-POSTER ──────────────────────────────────────────── -->
     <div class="card section-gap" id="pins-poster-section">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
@@ -1895,6 +1926,58 @@ async function triggerFetchAnalytics() {
   }
 }
 
+// ── Pinterest Trends ───────────────────────────────────────────────────────
+async function loadTrends() {
+  const btn = document.getElementById('pt-load-btn');
+  btn.disabled = true; btn.textContent = 'Loading...';
+  el('pt-loading').style.display = 'block';
+  el('pt-content').style.display = 'none';
+  el('pt-error').style.display   = 'none';
+
+  try {
+    const res  = await fetch(`/api/pinterest-trends?key=${encodeURIComponent(pw)}`);
+    const data = await res.json();
+    if (!res.ok || data.error) {
+      el('pt-error').textContent = data.error || 'Error loading trends';
+      el('pt-error').style.display = 'block';
+      return;
+    }
+    const trends = data.trends || [];
+    if (trends.length === 0) {
+      el('pt-error').textContent = 'No trends yet — click "↻ Refresh from Pinterest" in the Analytics section above to fetch.';
+      el('pt-error').style.display = 'block';
+      return;
+    }
+
+    const pct = v => {
+      if (v == null) return '<span style="color:var(--muted)">—</span>';
+      const n = Math.round(v);
+      const color = n > 0 ? 'var(--green,#4caf50)' : n < 0 ? 'var(--red,#e55)' : 'var(--muted)';
+      return `<span style="color:${color};font-weight:600">${n > 0 ? '+' : ''}${n}%</span>`;
+    };
+
+    el('pt-tbody').innerHTML = trends.map((t, i) => `
+      <tr>
+        <td style="color:var(--muted);font-weight:600">${i + 1}</td>
+        <td style="font-weight:600">${t.keyword}</td>
+        <td>${pct(t.growth_wow)}</td>
+        <td>${pct(t.growth_mom)}</td>
+        <td>${pct(t.growth_yoy)}</td>
+      </tr>`).join('');
+
+    el('pt-footer').textContent = `${trends.length} keywords · cached ${data.cachedAt ? new Date(data.cachedAt + 'Z').toLocaleString() : '—'}`;
+    el('pt-loading').style.display = 'none';
+    el('pt-content').style.display = 'block';
+    btn.textContent = '↻ Refresh';
+  } catch (e) {
+    el('pt-error').textContent = 'Network error: ' + e.message;
+    el('pt-error').style.display = 'block';
+  } finally {
+    el('pt-loading').style.display = 'none';
+    btn.disabled = false;
+  }
+}
+
 // ── Expose to global scope (needed for inline onclick attributes) ──────────
 window.setPeriod        = setPeriod;
 window.refreshData      = refreshData;
@@ -1904,6 +1987,7 @@ window.filterSubs       = filterSubs;
 window.copySubEmails    = copySubEmails;
 window.openModal        = openModal;
 window.fetchClarity          = fetchClarity;
+window.loadTrends              = loadTrends;
 window.loadPinterestAnalytics  = loadPinterestAnalytics;
 window.triggerFetchAnalytics   = triggerFetchAnalytics;
 window.paSortBy                = paSortBy;

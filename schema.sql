@@ -106,6 +106,13 @@ CREATE TABLE IF NOT EXISTS pins_schedule (
 CREATE INDEX IF NOT EXISTS idx_ps_status ON pins_schedule(status);
 CREATE INDEX IF NOT EXISTS idx_ps_scheduled_date ON pins_schedule(scheduled_date);
 
+-- Pinterest trending keywords cache (populated by GitHub Actions fetch-analytics.yml)
+CREATE TABLE IF NOT EXISTS pinterest_trends_cache (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  data TEXT NOT NULL,
+  cached_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
 -- Pinterest analytics cache (populated by GitHub Actions fetch-analytics.yml)
 CREATE TABLE IF NOT EXISTS pinterest_analytics_cache (
   pin_id TEXT PRIMARY KEY,

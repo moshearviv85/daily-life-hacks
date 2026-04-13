@@ -159,5 +159,63 @@ def main():
         print(f"ERROR saving: {save.status_code} {save.text[:300]}")
         sys.exit(1)
 
+    # Fetch and save trending keywords
+    print("\nFetching Pinterest trends (US, growing, food/recipes)...")
+    trends = fetch_trends(access_token)
+    if trends:
+        save_trends(trends)
+
+def fetch_trends(access_token):
+    """
+    GET /v5/trends/keywords/US/top/growing
+    Filtered to food + recipes interests. Returns top 50 growing keywords.
+    """
+    all_trends = {}
+    for interest in ["food", "recipes", "healthy_food"]:
+        resp = requests.get(
+            f"{API_BASE}/trends/keywords/US/top/growing",
+            headers={"Authorization": f"Bearer {access_token}"},
+            params={
+                "interests": interest,
+                "limit":     50,
+            },
+            timeout=15,
+        )
+        print(f"  trends [{interest}] → {resp.status_code}")
+        if not resp.ok:
+            print(f"  ERROR: {resp.text[:200]}")
+            continue
+        data = resp.json()
+        for t in (data.get("trends") or []):
+            kw = t.get("keyword", "").strip()
+            if not kw or kw in all_trends:
+                continue
+            all_trends[kw] = {
+                "keyword":       kw,
+                "growth_wow":    t.get("pct_growth_wow", 0),
+                "growth_mom":    t.get("pct_growth_mom", 0),
+                "growth_yoy":    t.get("pct_growth_yoy", 0),
+            }
+        time.sleep(1)
+
+    results = sorted(all_trends.values(), key=lambda x: x["growth_mom"] or 0, reverse=True)
+    print(f"  Total unique trends: {len(results)}")
+    return results
+
+
+def save_trends(trends):
+    import json as _json
+    resp = requests.post(
+        f"{PINS_API_URL}/api/pinterest-trends-save",
+        params={"key": PINS_API_KEY},
+        json={"trends": trends},
+        timeout=15,
+    )
+    if resp.ok:
+        print(f"Trends saved: {resp.json().get('saved', len(trends))} keywords")
+    else:
+        print(f"ERROR saving trends: {resp.status_code} {resp.text[:200]}")
+
+
 if __name__ == "__main__":
     main()
