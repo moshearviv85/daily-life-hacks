@@ -168,10 +168,11 @@ def main():
 def fetch_trends(access_token):
     """
     GET /v5/trends/keywords/US/top/growing
-    Filtered to food + recipes interests. Returns top 50 growing keywords.
+    Filtered to food + recipes interests.
     """
     all_trends = {}
-    for interest in ["food", "recipes", "healthy_food"]:
+    # Valid Pinterest interest slugs for food/health niche
+    for interest in ["food_drinks", "recipes"]:
         resp = requests.get(
             f"{API_BASE}/trends/keywords/US/top/growing",
             headers={"Authorization": f"Bearer {access_token}"},
@@ -183,18 +184,23 @@ def fetch_trends(access_token):
         )
         print(f"  trends [{interest}] → {resp.status_code}")
         if not resp.ok:
-            print(f"  ERROR: {resp.text[:200]}")
+            print(f"  ERROR: {resp.text[:300]}")
             continue
         data = resp.json()
-        for t in (data.get("trends") or []):
-            kw = t.get("keyword", "").strip()
+        print(f"  RAW KEYS: {list(data.keys())}")
+        items = data.get("trends") or []
+        print(f"  Items count: {len(items)}")
+        if items:
+            print(f"  First item keys: {list(items[0].keys())}")
+        for t in items:
+            kw = (t.get("keyword") or "").strip()
             if not kw or kw in all_trends:
                 continue
             all_trends[kw] = {
-                "keyword":       kw,
-                "growth_wow":    t.get("pct_growth_wow", 0),
-                "growth_mom":    t.get("pct_growth_mom", 0),
-                "growth_yoy":    t.get("pct_growth_yoy", 0),
+                "keyword":    kw,
+                "growth_wow": t.get("pct_growth_wow") or t.get("growth_rate") or 0,
+                "growth_mom": t.get("pct_growth_mom") or 0,
+                "growth_yoy": t.get("pct_growth_yoy") or 0,
             }
         time.sleep(1)
 
