@@ -184,6 +184,68 @@ const {
       });
     </script>
 
+    <!-- Infinite scroll for category pages (single shared listener, View Transitions-safe) -->
+    <script>
+      {
+        let _infiniteObserver: IntersectionObserver | null = null;
+
+        function initCategoryInfiniteScroll() {
+          // Always clean up previous observer before re-initializing
+          if (_infiniteObserver) {
+            _infiniteObserver.disconnect();
+            _infiniteObserver = null;
+          }
+
+          const BATCH_SIZE = 12;
+          let visible = BATCH_SIZE;
+          let busy = false;
+
+          // Re-query from current DOM on every navigation
+          const items = Array.from(
+            document.querySelectorAll<HTMLElement>(".article-item")
+          );
+          const sentinel = document.getElementById("load-sentinel");
+          const spinner = document.getElementById("loading-spinner");
+
+          // Not a category page, or all items already visible
+          if (!sentinel || items.length <= BATCH_SIZE) return;
+
+          _infiniteObserver = new IntersectionObserver(
+            ([entry]) => {
+              if (!entry.isIntersecting || busy) return;
+              busy = true;
+              if (spinner) spinner.classList.remove("hidden");
+
+              setTimeout(() => {
+                const end = Math.min(visible + BATCH_SIZE, items.length);
+                for (let i = visible; i < end; i++) {
+                  items[i].style.display = "";
+                  items[i].style.animation = "fadeInUp 0.35s ease both";
+                }
+                visible = end;
+                if (spinner) spinner.classList.add("hidden");
+                busy = false;
+
+                if (visible >= items.length) {
+                  if (_infiniteObserver) {
+                    _infiniteObserver.disconnect();
+                    _infiniteObserver = null;
+                  }
+                  sentinel.remove();
+                }
+              }, 300);
+            },
+            { rootMargin: "200px" }
+          );
+
+          _infiniteObserver.observe(sentinel);
+        }
+
+        // Fires on initial load AND on every View Transitions navigation
+        document.addEventListener("astro:page-load", initCategoryInfiniteScroll);
+      }
+    </script>
+
     <!-- Page view tracking (client-side) -->
     <script is:inline>
       function sendPageView() {

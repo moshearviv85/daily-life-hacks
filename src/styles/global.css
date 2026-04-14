@@ -163,3 +163,15 @@ img {
   color: var(--muted-color);
   font-style: italic;
 }
+
+/* ── Infinite scroll animation (used by category pages) ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
