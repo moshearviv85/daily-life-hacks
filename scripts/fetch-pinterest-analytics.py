@@ -172,7 +172,7 @@ def fetch_trends(access_token):
     """
     all_trends = {}
     # Valid Pinterest interest slugs for food/health niche
-    for interest in ["food_drinks", "recipes"]:
+    for interest in ["food_and_drinks", "health"]:
         resp = requests.get(
             f"{API_BASE}/trends/keywords/US/top/growing",
             headers={"Authorization": f"Bearer {access_token}"},
