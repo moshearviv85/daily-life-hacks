@@ -111,10 +111,13 @@ const description =
                     if (visibleCount >= items.length) {
                         observer.disconnect();
                         sentinel.remove();
+                    } else {
+                        observer.unobserve(sentinel);
+                        observer.observe(sentinel);
                     }
                 }, 300);
             },
-            { rootMargin: "0px" },
+            { rootMargin: "200px" },
         );
 
         observer.observe(sentinel);

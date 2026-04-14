@@ -111,6 +111,9 @@ const description =
                     if (visibleCount >= items.length) {
                         observer.disconnect();
                         sentinel.remove();
+                    } else {
+                        observer.unobserve(sentinel);
+                        observer.observe(sentinel);
                     }
                 }, 300);
             },
