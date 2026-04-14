@@ -85,38 +85,36 @@ const description =
 <script>
     const BATCH_SIZE = 12;
     let visibleCount = BATCH_SIZE;
+    let loading = false;
 
-    const items =
-        document.querySelectorAll<HTMLElement>(".article-item");
+    const items = document.querySelectorAll<HTMLElement>(".article-item");
     const sentinel = document.getElementById("load-sentinel");
     const spinner = document.getElementById("loading-spinner");
 
     if (sentinel && items.length > BATCH_SIZE) {
         const observer = new IntersectionObserver(
             (entries) => {
-                if (!entries[0].isIntersecting) return;
-
+                if (!entries[0].isIntersecting || loading) return;
+                loading = true;
                 spinner?.classList.remove("hidden");
 
                 setTimeout(() => {
-                    const end = Math.min(
-                        visibleCount + BATCH_SIZE,
-                        items.length,
-                    );
+                    const end = Math.min(visibleCount + BATCH_SIZE, items.length);
                     for (let i = visibleCount; i < end; i++) {
                         items[i].style.display = "";
                         items[i].style.animation = "fadeInUp 0.35s ease both";
                     }
                     visibleCount = end;
                     spinner?.classList.add("hidden");
+                    loading = false;
 
                     if (visibleCount >= items.length) {
                         observer.disconnect();
                         sentinel.remove();
                     }
-                }, 200);
+                }, 300);
             },
-            { rootMargin: "300px" },
+            { rootMargin: "0px" },
         );
 
         observer.observe(sentinel);
