@@ -1,0 +1,137 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import { getCollection } from "astro:content";
+import { isReleased, getReleaseTimestamp } from "../../content/release";
+
+const allArticles = await getCollection("articles");
+const articles = allArticles
+    .filter((article: any) => isReleased(article))
+    .filter((article: any) => article.data.category === "tips")
+    .sort((a: any, b: any) => getReleaseTimestamp(b) - getReleaseTimestamp(a));
+
+const BATCH_SIZE = 12;
+const title = "Kitchen Tips, Storage Hacks & Money Savers | Daily Life Hacks";
+const description =
+    "Practical kitchen tips, food storage hacks, and budget-friendly tricks to make your daily life easier and more efficient.";
+---
+
+<BaseLayout title={title} description={description}>
+    <Header />
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <header class="mb-12 text-center">
+            <h1
+                class="text-4xl md:text-5xl font-bold mb-4 text-[var(--heading-color)]"
+            >
+                Tips
+            </h1>
+            <p
+                class="text-xl max-w-2xl mx-auto"
+                style="color: var(--muted-color);"
+            >
+                {description}
+            </p>
+        </header>
+
+        <div
+            id="articles-grid"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+        >
+            {
+                articles.map((article: any, i: number) => (
+                    <div
+                        class="article-item"
+                        data-index={i}
+                        style={i >= BATCH_SIZE ? "display:none" : ""}
+                    >
+                        <ArticleCard
+                            title={article.data.title}
+                            excerpt={article.data.excerpt}
+                            image={article.data.image}
+                            imageAlt={article.data.imageAlt}
+                            category={article.data.category}
+                            slug={article.id}
+                            date={article.data.date}
+                        />
+                    </div>
+                ))
+            }
+        </div>
+
+        {
+            articles.length === 0 && (
+                <div class="text-center py-12">
+                    <p class="text-lg" style="color: var(--label-color);">
+                        No tips found yet. Check back soon!
+                    </p>
+                </div>
+            )
+        }
+
+        <div id="load-sentinel" class="h-4"></div>
+        <div
+            id="loading-spinner"
+            class="hidden text-center py-6 text-sm"
+            style="color: var(--muted-color);"
+        >
+            Loading more...
+        </div>
+    </div>
+    <Footer />
+</BaseLayout>
+
+<script>
+    const BATCH_SIZE = 12;
+    let visibleCount = BATCH_SIZE;
+
+    const items =
+        document.querySelectorAll<HTMLElement>(".article-item");
+    const sentinel = document.getElementById("load-sentinel");
+    const spinner = document.getElementById("loading-spinner");
+
+    if (sentinel && items.length > BATCH_SIZE) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (!entries[0].isIntersecting) return;
+
+                spinner?.classList.remove("hidden");
+
+                setTimeout(() => {
+                    const end = Math.min(
+                        visibleCount + BATCH_SIZE,
+                        items.length,
+                    );
+                    for (let i = visibleCount; i < end; i++) {
+                        items[i].style.display = "";
+                        items[i].style.animation = "fadeInUp 0.35s ease both";
+                    }
+                    visibleCount = end;
+                    spinner?.classList.add("hidden");
+
+                    if (visibleCount >= items.length) {
+                        observer.disconnect();
+                        sentinel.remove();
+                    }
+                }, 200);
+            },
+            { rootMargin: "300px" },
+        );
+
+        observer.observe(sentinel);
+    }
+</script>
+
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
