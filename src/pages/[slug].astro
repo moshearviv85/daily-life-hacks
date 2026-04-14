@@ -189,30 +189,8 @@ const robotsMeta = released ? undefined : "noindex, follow";
     data-release-root={pendingRelease ? "true" : "false"}
     data-release-at={pendingRelease ? releaseIso : undefined}
   >
-    <!-- Mobile Back Button & Breadcrumb -->
+    <!-- Breadcrumb -->
     <nav class="mb-6 flex flex-col gap-4 relative z-10">
-      <!-- Visual Back Button (Mobile Only) -->
-      <button
-        onclick="history.back()"
-        class="md:hidden flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all w-fit"
-        style="background-color: var(--input-bg); color: var(--heading-color); border: 1px solid var(--border-color);"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-        </svg>
-        Back
-      </button>
-
       <div
         class="text-sm flex items-center gap-1 flex-wrap"
         style="color: var(--muted-color);"
