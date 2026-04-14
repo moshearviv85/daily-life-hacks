@@ -187,7 +187,7 @@ const {
     <!-- Infinite scroll for category pages (single shared listener, View Transitions-safe) -->
     <script>
       {
-        let _infiniteObserver: IntersectionObserver | null = null;
+        let _infiniteObserver = null;
 
         function initCategoryInfiniteScroll() {
           // Always clean up previous observer before re-initializing
@@ -202,7 +202,7 @@ const {
 
           // Re-query from current DOM on every navigation
           const items = Array.from(
-            document.querySelectorAll<HTMLElement>(".article-item")
+            document.querySelectorAll(".article-item")
           );
           const sentinel = document.getElementById("load-sentinel");
           const spinner = document.getElementById("loading-spinner");
