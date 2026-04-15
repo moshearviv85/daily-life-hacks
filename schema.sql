@@ -116,10 +116,15 @@ CREATE TABLE IF NOT EXISTS articles_schedule (
   markdown_content TEXT NOT NULL,
   image_filename TEXT,
   publish_at TEXT,
-  status TEXT DEFAULT 'PENDING',  -- PENDING, PUBLISHED, SKIPPED
+  status TEXT DEFAULT 'PENDING',  -- PENDING, PUBLISHED, SKIPPED, DUPLICATE
   published_at TEXT,
+  duplicate_of TEXT,              -- URL of the existing live article (set when status=DUPLICATE)
   created_at TEXT DEFAULT (datetime('now'))
 );
+
+-- Migration: add duplicate_of column if upgrading from older schema
+-- Run once in Cloudflare D1 console:
+-- ALTER TABLE articles_schedule ADD COLUMN duplicate_of TEXT;
 CREATE INDEX IF NOT EXISTS idx_artsch_publish_at ON articles_schedule(publish_at);
 CREATE INDEX IF NOT EXISTS idx_artsch_status ON articles_schedule(status);
 

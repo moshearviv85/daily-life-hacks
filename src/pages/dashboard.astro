@@ -941,6 +941,7 @@ const BUILD = {
               <th>Category</th>
               <th>Publish Date</th>
               <th>Status</th>
+              <th>Notes</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -2143,14 +2144,35 @@ async function uploadArticlesCSV() {
       body: text,
     });
     const data = await res.json();
-    if (res.ok && data.ok) {
-      statusEl.style.color = '#16a34a';
-      statusEl.textContent = `✓ Uploaded: ${data.inserted} articles added/updated, ${data.skipped} skipped`;
-      loadArticles();
-    } else {
+    if (!res.ok || !data.ok) {
       statusEl.style.color = '#dc2626';
       statusEl.textContent = `Error: ${data.error || 'Upload failed'}`;
+      return;
     }
+
+    statusEl.style.color = 'var(--muted)';
+    statusEl.textContent = `✓ Uploaded ${data.inserted} articles. Publishing first article...`;
+
+    // Auto-publish first article immediately after upload
+    const pubRes  = await fetch(`/api/articles-publish?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({}),
+    });
+    const pubData = await pubRes.json();
+
+    const dupCount = pubData.skipped_duplicates?.length || 0;
+    const dupNote  = dupCount > 0 ? ` (${dupCount} duplicate${dupCount > 1 ? 's' : ''} skipped)` : '';
+
+    if (pubData.ok) {
+      statusEl.style.color = '#16a34a';
+      statusEl.textContent = `✓ Uploaded ${data.inserted} articles. Published: "${pubData.title || pubData.slug}"${dupNote}`;
+    } else {
+      statusEl.style.color = dupCount > 0 ? '#dc2626' : '#F29B30';
+      statusEl.textContent = `✓ Uploaded ${data.inserted} articles. ${pubData.error || 'Publish failed'}${dupNote}`;
+    }
+
+    loadArticles();
   } catch (e) {
     statusEl.style.color = '#dc2626';
     statusEl.textContent = `Error: ${e.message}`;
@@ -2187,6 +2209,7 @@ async function loadArticles() {
     el('art-tbody').innerHTML = articles.map(a => {
       const isDue     = a.publish_at && a.publish_at <= today;
       const isPending = a.status === 'PENDING';
+      const isDup     = a.status === 'DUPLICATE';
       const statusColor = a.status === 'PUBLISHED'  ? '#16a34a'
                         : a.status === 'PENDING'    ? '#F29B30'
                         : a.status === 'DUPLICATE'  ? '#dc2626'
@@ -2197,12 +2220,25 @@ async function loadArticles() {
              Publish Now
            </button>`
         : `<span style="color:var(--muted);font-size:.75rem">—</span>`;
-      return `<tr>
-        <td style="font-size:.75rem;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"
+
+      // Notes column: for DUPLICATE rows show both links
+      const siteUrl = `https://www.daily-life-hacks.com/${a.slug}`;
+      const notesCell = isDup && a.duplicate_of
+        ? `<td style="font-size:.7rem">
+             <span style="color:#991b1b">Tried: </span>
+             <a href="${siteUrl}" target="_blank" style="color:#2563eb;word-break:break-all">${a.slug}</a><br>
+             <span style="color:#991b1b">Live: </span>
+             <a href="${a.duplicate_of}" target="_blank" style="color:#dc2626;word-break:break-all">${a.duplicate_of}</a>
+           </td>`
+        : `<td style="font-size:.75rem;color:var(--muted)">—</td>`;
+
+      return `<tr style="${isDup ? 'background:#fef2f2' : ''}">
+        <td style="font-size:.75rem;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"
             title="${a.title}">${a.title}</td>
         <td style="font-size:.75rem">${a.category || '—'}</td>
         <td style="font-size:.75rem;white-space:nowrap;color:${isDue && isPending ? '#dc2626' : 'inherit'}">${a.publish_at || '—'}</td>
         <td style="font-size:.75rem;font-weight:700;color:${statusColor}">${a.status}</td>
+        ${notesCell}
         <td>${actionBtn}</td>
       </tr>`;
     }).join('');
@@ -2218,7 +2254,8 @@ async function loadArticles() {
 }
 
 async function publishArticle(slug) {
-  if (!confirm(`Publish "${slug}" now?`)) return;
+  const btn = document.querySelector(`button[onclick="publishArticle('${slug}')"]`);
+  if (btn) { btn.disabled = true; btn.textContent = '...'; }
   try {
     const res  = await fetch(`/api/articles-publish?key=${encodeURIComponent(pw)}`, {
       method: 'POST',
@@ -2227,13 +2264,33 @@ async function publishArticle(slug) {
     });
     const data = await res.json();
     if (res.ok && data.ok) {
-      alert(`✓ Published: ${slug}`);
+      const dupNote = data.skipped_duplicates?.length
+        ? ` (${data.skipped_duplicates.length} duplicate skipped)`
+        : '';
+      el('art-trigger-status').style.display = '';
+      el('art-trigger-status').style.background = '#f0fdf4';
+      el('art-trigger-status').style.color = '#166534';
+      el('art-trigger-status').textContent = `✓ Published: "${data.title || data.slug}"${dupNote}`;
+      loadArticles();
+    } else if (res.status === 409) {
+      // Duplicate detected
+      el('art-trigger-status').style.display = '';
+      el('art-trigger-status').style.background = '#fef2f2';
+      el('art-trigger-status').style.color = '#991b1b';
+      el('art-trigger-status').innerHTML =
+        `⚠ Duplicate: "<strong>${data.title || data.slug}</strong>" already live — ` +
+        `<a href="${data.duplicate_of}" target="_blank" style="color:#dc2626">${data.duplicate_of}</a>`;
       loadArticles();
     } else {
-      alert(`Error: ${data.error || 'Publish failed'}`);
+      el('art-trigger-status').style.display = '';
+      el('art-trigger-status').style.background = '#fef2f2';
+      el('art-trigger-status').style.color = '#991b1b';
+      el('art-trigger-status').textContent = `Error: ${data.error || 'Publish failed'}`;
+      if (btn) { btn.disabled = false; btn.textContent = 'Publish Now'; }
     }
   } catch (e) {
     alert(`Error: ${e.message}`);
+    if (btn) { btn.disabled = false; btn.textContent = 'Publish Now'; }
   }
 }
 
