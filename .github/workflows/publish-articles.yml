@@ -1,0 +1,29 @@
+name: Daily Article Publisher
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # 07:00 UTC every day
+  workflow_dispatch:        # manual trigger from dashboard
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Publish due articles
+        env:
+          PINS_API_URL: ${{ secrets.PINS_API_URL }}
+          PINS_API_KEY: ${{ secrets.PINS_API_KEY }}
+          GH_PAT:       ${{ secrets.GH_PAT }}
+        run: python scripts/publish-articles.py
