@@ -2212,13 +2212,21 @@ async function loadArticles() {
     const today    = new Date().toISOString().slice(0, 10);
 
     el('art-tbody').innerHTML = articles.map(a => {
-      const isDue     = a.publish_at && a.publish_at <= today;
-      const isPending = a.status === 'PENDING';
-      const isDup     = a.status === 'DUPLICATE';
-      const statusColor = a.status === 'PUBLISHED'  ? '#16a34a'
-                        : a.status === 'PENDING'    ? '#F29B30'
-                        : a.status === 'DUPLICATE'  ? '#dc2626'
+      const isDue       = a.publish_at && a.publish_at <= today;
+      const isPending   = a.status === 'PENDING';
+      const isDup       = a.status === 'DUPLICATE';
+      const isPublished = a.status === 'PUBLISHED';
+      const statusColor = isPublished ? '#16a34a'
+                        : isPending   ? '#F29B30'
+                        : isDup       ? '#dc2626'
                         : 'var(--muted)';
+
+      // Date column: published_at for published articles, publish_at for others
+      const displayDate = isPublished && a.published_at
+        ? a.published_at.slice(0, 10)
+        : a.publish_at || '—';
+      const dateColor = isDue && isPending ? '#dc2626' : isPublished ? '#16a34a' : 'inherit';
+
       const actionBtn = isPending
         ? `<button onclick="publishArticle('${a.slug}')"
              style="font-size:.7rem;padding:.2rem .5rem;border-radius:5px;border:none;background:#2563eb;color:#fff;cursor:pointer">
@@ -2226,22 +2234,32 @@ async function loadArticles() {
            </button>`
         : `<span style="color:var(--muted);font-size:.75rem">—</span>`;
 
-      // Notes column: for DUPLICATE rows show both links
+      // Notes column
       const siteUrl = `https://www.daily-life-hacks.com/${a.slug}`;
-      const notesCell = isDup && a.duplicate_of
-        ? `<td style="font-size:.7rem">
-             <span style="color:#991b1b">Tried: </span>
-             <a href="${siteUrl}" target="_blank" style="color:#2563eb;word-break:break-all">${a.slug}</a><br>
-             <span style="color:#991b1b">Live: </span>
-             <a href="${a.duplicate_of}" target="_blank" style="color:#dc2626;word-break:break-all">${a.duplicate_of}</a>
-           </td>`
-        : `<td style="font-size:.75rem;color:var(--muted)">—</td>`;
+      let notesCell;
+      if (isPublished) {
+        notesCell = `<td style="font-size:.75rem">
+          <a href="${siteUrl}" target="_blank"
+             style="color:#16a34a;font-weight:600;text-decoration:none"
+             title="${a.title}">↗ View article</a>
+        </td>`;
+      } else if (isDup && a.duplicate_of) {
+        notesCell = `<td style="font-size:.7rem">
+          <span style="color:#991b1b">Tried: </span>
+          <a href="${siteUrl}" target="_blank" style="color:#2563eb">${a.slug}</a><br>
+          <span style="color:#991b1b">Live: </span>
+          <a href="${a.duplicate_of}" target="_blank" style="color:#dc2626">${a.duplicate_of.replace('https://www.daily-life-hacks.com/','')}</a>
+        </td>`;
+      } else {
+        notesCell = `<td style="font-size:.75rem;color:var(--muted)">—</td>`;
+      }
 
-      return `<tr style="${isDup ? 'background:#fef2f2' : ''}">
+      const rowBg = isDup ? 'background:#fef2f2' : isPublished ? 'background:#f0fdf4' : '';
+      return `<tr style="${rowBg}">
         <td style="font-size:.75rem;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"
             title="${a.title}">${a.title}</td>
         <td style="font-size:.75rem">${a.category || '—'}</td>
-        <td style="font-size:.75rem;white-space:nowrap;color:${isDue && isPending ? '#dc2626' : 'inherit'}">${a.publish_at || '—'}</td>
+        <td style="font-size:.75rem;white-space:nowrap;color:${dateColor}">${displayDate}</td>
         <td style="font-size:.75rem;font-weight:700;color:${statusColor}">${a.status}</td>
         ${notesCell}
         <td>${actionBtn}</td>

@@ -15,7 +15,9 @@ export async function onRequestGet(context) {
   const { results } = await env.DB.prepare(
     `SELECT slug, title, category, image_filename, publish_at, status, published_at, duplicate_of, created_at
      FROM articles_schedule
-     ORDER BY publish_at ASC, created_at ASC`
+     ORDER BY
+       CASE status WHEN 'PENDING' THEN 0 WHEN 'PUBLISHED' THEN 1 WHEN 'DUPLICATE' THEN 2 ELSE 3 END ASC,
+       CASE WHEN status = 'PENDING' THEN created_at ELSE published_at END DESC`
   ).all();
 
   const stats = { total: 0, pending: 0, published: 0, duplicate: 0 };
