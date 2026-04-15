@@ -881,6 +881,10 @@ const BUILD = {
             style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
             ↻ Load Status
           </button>
+          <button onclick="downloadArticlesCSV()"
+            style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
+            ⬇ Download CSV
+          </button>
           <button id="art-trigger-btn" onclick="triggerArticlePublisher()"
             style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:none;background:#16a34a;color:#fff;cursor:pointer;font-weight:700">
             ▶ Run Publisher
@@ -2119,6 +2123,7 @@ window.modalSearch      = modalSearch;
 window.loadPinsStatus         = loadPinsStatus;
 window.uploadPinsCSV          = uploadPinsCSV;
 window.uploadArticlesCSV      = uploadArticlesCSV;
+window.downloadArticlesCSV    = downloadArticlesCSV;
 window.loadArticles           = loadArticles;
 window.publishArticle         = publishArticle;
 window.triggerArticlePublisher = triggerArticlePublisher;
@@ -2292,6 +2297,14 @@ async function publishArticle(slug) {
     alert(`Error: ${e.message}`);
     if (btn) { btn.disabled = false; btn.textContent = 'Publish Now'; }
   }
+}
+
+function downloadArticlesCSV() {
+  if (!pw) { alert('Enter password first'); return; }
+  const a = document.createElement('a');
+  a.href = `/api/articles-export?key=${encodeURIComponent(pw)}`;
+  a.download = '';
+  a.click();
 }
 
 async function triggerArticlePublisher() {
