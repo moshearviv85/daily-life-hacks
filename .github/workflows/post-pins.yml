@@ -2,7 +2,7 @@ name: Pinterest Auto-Poster
 
 on:
   schedule:
-    - cron: '0 */3 * * *'   # Every 3 hours = 8 runs/day
+    - cron: '*/30 * * * *'  # Every 30 min — catches ±30 min time jitter
   workflow_dispatch:          # Allow manual trigger
 
 jobs:

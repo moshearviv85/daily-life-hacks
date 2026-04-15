@@ -95,6 +95,7 @@ CREATE TABLE IF NOT EXISTS pins_schedule (
   board_id TEXT,
   link TEXT,
   scheduled_date TEXT,
+  scheduled_time TEXT,
   status TEXT DEFAULT 'PENDING',
   pin_id TEXT,
   published_date TEXT,
@@ -105,6 +106,21 @@ CREATE TABLE IF NOT EXISTS pins_schedule (
 
 CREATE INDEX IF NOT EXISTS idx_ps_status ON pins_schedule(status);
 CREATE INDEX IF NOT EXISTS idx_ps_scheduled_date ON pins_schedule(scheduled_date);
+
+-- Content pipeline: articles uploaded via CSV, published daily by GitHub Actions
+CREATE TABLE IF NOT EXISTS articles_schedule (
+  slug TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  category TEXT,
+  markdown_content TEXT NOT NULL,
+  image_filename TEXT,
+  publish_at TEXT,
+  status TEXT DEFAULT 'PENDING',  -- PENDING, PUBLISHED, SKIPPED
+  published_at TEXT,
+  created_at TEXT DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS idx_artsch_publish_at ON articles_schedule(publish_at);
+CREATE INDEX IF NOT EXISTS idx_artsch_status ON articles_schedule(status);
 
 -- Pinterest trending keywords cache (populated by GitHub Actions fetch-analytics.yml)
 CREATE TABLE IF NOT EXISTS pinterest_trends_cache (

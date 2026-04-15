@@ -198,20 +198,35 @@ export async function onRequestPost(context) {
         if (groups[slug][i]) interleaved.push(groups[slug][i]);
       }
     }
-    // Reassign dates: start today, 8 pins/day, 3h apart from 06:00 UTC
-    const PINS_PER_DAY = 8;
-    const START_HOUR   = 6;
-    const INTERVAL_H   = 3;
+    // Reassign dates: start today, 6–8 pins/day (random), ~3h apart from 06:00 UTC
+    // Each slot gets ±30 min random jitter to feel human
+    const START_HOUR = 6;
+    const INTERVAL_H = 3;
     const todayUTC = new Date();
     todayUTC.setUTCHours(0, 0, 0, 0);
-    return interleaved.map((row, i) => {
-      const dayOffset  = Math.floor(i / PINS_PER_DAY);
-      const slotInDay  = i % PINS_PER_DAY;
-      const d = new Date(todayUTC);
-      d.setUTCDate(d.getUTCDate() + dayOffset);
-      d.setUTCHours(START_HOUR + slotInDay * INTERVAL_H, 0, 0, 0);
-      return { ...row, scheduled_date: d.toISOString().split("T")[0] };
-    });
+
+    const scheduled = [];
+    let idx = 0;
+    let dayOffset = 0;
+    while (idx < interleaved.length) {
+      // Pick a random number of pins for this day: 6, 7, or 8
+      const pinsToday = 6 + Math.floor(Math.random() * 3); // 6, 7, or 8
+      for (let slot = 0; slot < pinsToday && idx < interleaved.length; slot++, idx++) {
+        const d = new Date(todayUTC);
+        d.setUTCDate(d.getUTCDate() + dayOffset);
+        // Base time: START_HOUR + slot * INTERVAL_H
+        // Jitter: random offset between -30 and +30 minutes
+        const jitterMin = Math.floor(Math.random() * 61) - 30; // -30..+30
+        const totalMin  = (START_HOUR + slot * INTERVAL_H) * 60 + jitterMin;
+        const h = Math.floor(totalMin / 60) % 24;
+        const m = ((totalMin % 60) + 60) % 60;
+        d.setUTCHours(h, m, 0, 0);
+        const scheduled_time = `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}`;
+        scheduled.push({ ...interleaved[idx], scheduled_date: d.toISOString().split("T")[0], scheduled_time });
+      }
+      dayOffset++;
+    }
+    return scheduled;
   }
 
   normalizedRows = shuffleAndReschedule(normalizedRows);
@@ -238,13 +253,13 @@ export async function onRequestPost(context) {
         UPDATE pins_schedule SET
           pin_title = ?, pin_description = ?, alt_text = ?,
           image_url = ?, board_id = ?, link = ?,
-          scheduled_date = ?, status = ?,
+          scheduled_date = ?, scheduled_time = ?, status = ?,
           updated_at = datetime('now')
         WHERE row_id = ?
       `).bind(
         row.pin_title, row.pin_description || "", row.alt_text || "",
         row.image_url, row.board_id, row.link,
-        row.scheduled_date, row.status || "PENDING",
+        row.scheduled_date, row.scheduled_time || null, row.status || "PENDING",
         row.row_id
       ).run();
       updated++;
@@ -252,8 +267,8 @@ export async function onRequestPost(context) {
       await db.prepare(`
         INSERT INTO pins_schedule
           (row_id, pin_title, pin_description, alt_text, image_url, board_id,
-           link, scheduled_date, status, pin_id, published_date, pinterest_response)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+           link, scheduled_date, scheduled_time, status, pin_id, published_date, pinterest_response)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).bind(
         row.row_id,
         row.pin_title,
@@ -263,6 +278,7 @@ export async function onRequestPost(context) {
         row.board_id,
         row.link,
         row.scheduled_date,
+        row.scheduled_time || null,
         row.status || "PENDING",
         row.pin_id || null,
         row.published_date || null,
