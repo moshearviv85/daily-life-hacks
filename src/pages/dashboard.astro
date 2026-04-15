@@ -825,6 +825,10 @@ const BUILD = {
             style="background:#16a34a;color:#fff;border:none;border-radius:8px;padding:.35rem .8rem;font-size:.75rem;font-weight:700;cursor:pointer">
             ▶ Post Now
           </button>
+          <button onclick="reschedulePins()"
+            style="background:#2563eb;color:#fff;border:none;border-radius:8px;padding:.35rem .8rem;font-size:.75rem;font-weight:700;cursor:pointer">
+            ↺ Reschedule
+          </button>
           <button onclick="clearPendingPins()"
             style="background:#ef4444;color:#fff;border:none;border-radius:8px;padding:.35rem .8rem;font-size:.75rem;font-weight:700;cursor:pointer">
             Clear Pending
@@ -2534,6 +2538,31 @@ async function clearPendingPins() {
   }
 }
 window.clearPendingPins = clearPendingPins;
+
+async function reschedulePins() {
+  if (!pw) return;
+  if (!confirm('לשנות מחדש את זמני כל הפינים הממתינים? (6–8 פינים/יום, חלונות 2 שעות אקראיים)')) return;
+  const statusEl = document.getElementById('pins-upload-status');
+  statusEl.style.display = '';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = 'מחשב מחדש...';
+  try {
+    const res = await fetch(`/api/pins-reschedule?key=${encodeURIComponent(pw)}`, { method: 'POST' });
+    const data = await res.json();
+    if (res.ok) {
+      statusEl.style.color = '#16a34a';
+      statusEl.textContent = `✓ ${data.rescheduled} פינים נקבעו מחדש עם זמנים אקראיים.`;
+      loadPinsStatus();
+    } else {
+      statusEl.style.color = '#b91c1c';
+      statusEl.textContent = `Error: ${data.error || res.statusText}`;
+    }
+  } catch(e) {
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+  }
+}
+window.reschedulePins = reschedulePins;
 
 async function triggerPostNow() {
   const btn    = document.getElementById('pins-post-now-btn');
