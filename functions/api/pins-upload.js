@@ -198,10 +198,11 @@ export async function onRequestPost(context) {
         if (groups[slug][i]) interleaved.push(groups[slug][i]);
       }
     }
-    // Reassign dates: start today, 6–8 pins/day (random), ~3h apart from 06:00 UTC
-    // Each slot gets ±30 min random jitter to feel human
+    // Reassign dates: start today, 6–8 pins/day (random), 2h windows from 06:00 UTC
+    // Each pin lands at a fully random minute within its 2-hour window — no predictable pattern
+    // 8 pins max: window 0 = 06:00–07:59 … window 7 = 20:00–21:59 (no midnight overflow)
     const START_HOUR = 6;
-    const INTERVAL_H = 3;
+    const WINDOW_H   = 2; // each slot is a 2-hour window
     const todayUTC = new Date();
     todayUTC.setUTCHours(0, 0, 0, 0);
 
@@ -210,16 +211,16 @@ export async function onRequestPost(context) {
     let dayOffset = 0;
     while (idx < interleaved.length) {
       // Pick a random number of pins for this day: 6, 7, or 8
-      const pinsToday = 6 + Math.floor(Math.random() * 3); // 6, 7, or 8
+      const pinsToday = 6 + Math.floor(Math.random() * 3);
       for (let slot = 0; slot < pinsToday && idx < interleaved.length; slot++, idx++) {
         const d = new Date(todayUTC);
         d.setUTCDate(d.getUTCDate() + dayOffset);
-        // Base time: START_HOUR + slot * INTERVAL_H
-        // Jitter: random offset between -30 and +30 minutes
-        const jitterMin = Math.floor(Math.random() * 61) - 30; // -30..+30
-        const totalMin  = (START_HOUR + slot * INTERVAL_H) * 60 + jitterMin;
-        const h = Math.floor(totalMin / 60) % 24;
-        const m = ((totalMin % 60) + 60) % 60;
+        // Window start (minutes from midnight) + random offset anywhere in the window
+        const windowStartMin = (START_HOUR + slot * WINDOW_H) * 60;
+        const randomOffsetMin = Math.floor(Math.random() * WINDOW_H * 60); // 0–119
+        const totalMin = windowStartMin + randomOffsetMin;
+        const h = Math.floor(totalMin / 60); // max: 6 + 7*2 + 1h59 = 21h59 — no overflow
+        const m = totalMin % 60;
         d.setUTCHours(h, m, 0, 0);
         const scheduled_time = `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}`;
         scheduled.push({ ...interleaved[idx], scheduled_date: d.toISOString().split("T")[0], scheduled_time });
