@@ -17,7 +17,7 @@ const now = new Date();
 // ── Articles ──────────────────────────────────────────────────────────────
 const articles = await getCollection('articles');
 
-function isPub(a) {
+function isPub(a: any) {
   return !a.data.publishAt || new Date(a.data.publishAt) <= now;
 }
 const published  = articles.filter(isPub);
@@ -792,6 +792,10 @@ const BUILD = {
           <div class="stat-label">Pending</div>
           <div class="stat-value" style="font-size:1.6rem" id="ps-pending">—</div>
         </div>
+        <div>
+          <div class="stat-label">Failed</div>
+          <div class="stat-value" style="font-size:1.6rem;color:#b91c1c" id="ps-failed">—</div>
+        </div>
       </div>
 
       <!-- Upload CSV -->
@@ -849,8 +853,100 @@ const BUILD = {
         </table>
       </div>
 
+      <!-- Failed pins -->
+      <div style="margin-top:1rem" id="ps-failed-wrap" style="display:none">
+        <div class="card-title" style="font-size:.78rem;margin-bottom:.4rem;color:#b91c1c">Failed Pins (3 attempts)</div>
+        <div id="ps-failed-empty" class="empty" style="display:none">No failed pins.</div>
+        <table class="data-table" id="ps-failed-table" style="display:none">
+          <thead><tr><th>Title</th><th>Attempts</th><th>Last Error</th></tr></thead>
+          <tbody id="ps-failed-tbody"></tbody>
+        </table>
+      </div>
+
       <div style="margin-top:.75rem;font-size:.7rem;color:var(--muted)">
         GitHub Actions runs every 2h · Token auto-refreshes · Images served from /images/pins/
+      </div>
+    </div>
+
+    <!-- ── ARTICLE PUBLISHING PIPELINE ─────────────────────────────────── -->
+    <div class="card section-gap" id="articles-pipeline-section">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+        <div class="card-title" style="margin:0">Article Publishing Pipeline</div>
+        <div style="display:flex;gap:.5rem;align-items:center">
+          <button onclick="loadArticles()"
+            style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer">
+            ↻ Load Status
+          </button>
+          <button id="art-trigger-btn" onclick="triggerArticlePublisher()"
+            style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:none;background:#16a34a;color:#fff;cursor:pointer;font-weight:700">
+            ▶ Run Publisher
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:1rem">
+        <div>
+          <div class="stat-label">Total</div>
+          <div class="stat-value" style="font-size:1.6rem" id="art-total">—</div>
+        </div>
+        <div>
+          <div class="stat-label">Published</div>
+          <div class="stat-value" style="font-size:1.6rem;color:#16a34a" id="art-published">—</div>
+        </div>
+        <div>
+          <div class="stat-label">Pending</div>
+          <div class="stat-value" style="font-size:1.6rem;color:#F29B30" id="art-pending">—</div>
+        </div>
+        <div>
+          <div class="stat-label">Duplicates</div>
+          <div class="stat-value" style="font-size:1.6rem;color:#dc2626" id="art-duplicate">—</div>
+          <div style="font-size:.7rem;color:#dc2626;display:none" id="art-duplicate-warn">⚠ בדוק ידנית</div>
+        </div>
+      </div>
+      <!-- Duplicate warning banner -->
+      <div id="art-duplicate-banner" style="display:none;padding:.6rem 1rem;border-radius:8px;background:#fef2f2;border:1px solid #fecaca;color:#991b1b;font-size:.8rem;margin-bottom:1rem">
+        ⚠ נמצאו כתבות עם שם כפול — הן סומנו כ-DUPLICATE ודולגו. יש לבדוק ולמחוק ידנית מה-D1 אם נדרש.
+      </div>
+
+      <!-- Upload CSV -->
+      <div style="border:1px solid var(--border);border-radius:10px;padding:.85rem 1rem;margin-bottom:1rem">
+        <div style="font-size:.8rem;font-weight:700;color:var(--heading);margin-bottom:.5rem">Upload Production Sheet CSV</div>
+        <div style="display:flex;gap:.5rem;align-items:center;flex-wrap:wrap">
+          <input type="file" id="art-csv-input" accept=".csv,text/csv"
+            style="font-size:.78rem;flex:1;min-width:0;padding:.3rem;border:1px solid var(--border);border-radius:6px;background:var(--input-bg);color:var(--text)" />
+          <button id="art-upload-btn" onclick="uploadArticlesCSV()"
+            style="background:var(--orange);color:#fff;border:none;border-radius:8px;padding:.4rem .9rem;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap">
+            Upload
+          </button>
+        </div>
+        <div id="art-upload-status" style="font-size:.75rem;margin-top:.4rem;display:none"></div>
+      </div>
+
+      <!-- Trigger status -->
+      <div id="art-trigger-status" style="display:none;margin-bottom:.75rem;padding:.5rem .7rem;border-radius:8px;background:#f0fdf4;border:1px solid #bbf7d0;font-size:.75rem;color:#166534"></div>
+
+      <!-- Articles table -->
+      <div id="art-loading" class="empty" style="display:none">Loading articles...</div>
+      <div id="art-error"   class="empty" style="display:none"></div>
+      <div id="art-content" style="display:none">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Publish Date</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="art-tbody"></tbody>
+        </table>
+        <div id="art-footer" style="font-size:.75rem;color:var(--muted);margin-top:.5rem;text-align:right"></div>
+      </div>
+
+      <div style="margin-top:.75rem;font-size:.7rem;color:var(--muted)">
+        GitHub Actions runs daily at 07:00 UTC · Articles missing images are skipped and retried next run
       </div>
     </div>
 
@@ -1004,6 +1100,7 @@ async function loadDashboard() {
   // Fetch live data
   await fetchLive(currentPeriod);
   loadPinsStatus();
+  loadArticles();
 }
 
 // ── Period toggle ──────────────────────────────────────────────────────────
@@ -2014,8 +2111,161 @@ window.togglePwVisible  = togglePwVisible;
 window.closeModal       = closeModal;
 window.handleModalClick = handleModalClick;
 window.modalSearch      = modalSearch;
-window.loadPinsStatus   = loadPinsStatus;
-window.uploadPinsCSV    = uploadPinsCSV;
+window.loadPinsStatus         = loadPinsStatus;
+window.uploadPinsCSV          = uploadPinsCSV;
+window.uploadArticlesCSV      = uploadArticlesCSV;
+window.loadArticles           = loadArticles;
+window.publishArticle         = publishArticle;
+window.triggerArticlePublisher = triggerArticlePublisher;
+
+// ── Article Publishing Pipeline ───────────────────────────────────────────
+
+async function uploadArticlesCSV() {
+  const file = document.getElementById('art-csv-input').files[0];
+  if (!file) { alert('Choose a CSV file first'); return; }
+  const statusEl = el('art-upload-status');
+  const btn      = el('art-upload-btn');
+  btn.disabled   = true;
+  btn.textContent = 'Uploading...';
+  statusEl.style.display = 'block';
+  statusEl.style.color   = 'var(--muted)';
+  statusEl.textContent   = 'Reading file...';
+
+  try {
+    const text = await file.text();
+    const res  = await fetch(`/api/articles-upload?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: text,
+    });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      statusEl.style.color = '#16a34a';
+      statusEl.textContent = `✓ Uploaded: ${data.inserted} articles added/updated, ${data.skipped} skipped`;
+      loadArticles();
+    } else {
+      statusEl.style.color = '#dc2626';
+      statusEl.textContent = `Error: ${data.error || 'Upload failed'}`;
+    }
+  } catch (e) {
+    statusEl.style.color = '#dc2626';
+    statusEl.textContent = `Error: ${e.message}`;
+  } finally {
+    btn.disabled    = false;
+    btn.textContent = 'Upload';
+  }
+}
+
+async function loadArticles() {
+  if (!pw) return;
+  el('art-loading').style.display = '';
+  el('art-error').style.display   = 'none';
+  el('art-content').style.display = 'none';
+
+  try {
+    const res  = await fetch(`/api/articles-list?key=${encodeURIComponent(pw)}`);
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Load failed');
+
+    const stats = data.stats || {};
+    el('art-total').textContent     = stats.total     ?? '—';
+    el('art-published').textContent = stats.published ?? '—';
+    el('art-pending').textContent   = stats.pending   ?? '—';
+    el('art-duplicate').textContent = stats.duplicate ?? '0';
+
+    const dupCount = stats.duplicate || 0;
+    el('art-duplicate-warn').style.display  = dupCount > 0 ? '' : 'none';
+    el('art-duplicate-banner').style.display = dupCount > 0 ? '' : 'none';
+
+    const articles = data.articles || [];
+    const today    = new Date().toISOString().slice(0, 10);
+
+    el('art-tbody').innerHTML = articles.map(a => {
+      const isDue     = a.publish_at && a.publish_at <= today;
+      const isPending = a.status === 'PENDING';
+      const statusColor = a.status === 'PUBLISHED'  ? '#16a34a'
+                        : a.status === 'PENDING'    ? '#F29B30'
+                        : a.status === 'DUPLICATE'  ? '#dc2626'
+                        : 'var(--muted)';
+      const actionBtn = isPending
+        ? `<button onclick="publishArticle('${a.slug}')"
+             style="font-size:.7rem;padding:.2rem .5rem;border-radius:5px;border:none;background:#2563eb;color:#fff;cursor:pointer">
+             Publish Now
+           </button>`
+        : `<span style="color:var(--muted);font-size:.75rem">—</span>`;
+      return `<tr>
+        <td style="font-size:.75rem;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"
+            title="${a.title}">${a.title}</td>
+        <td style="font-size:.75rem">${a.category || '—'}</td>
+        <td style="font-size:.75rem;white-space:nowrap;color:${isDue && isPending ? '#dc2626' : 'inherit'}">${a.publish_at || '—'}</td>
+        <td style="font-size:.75rem;font-weight:700;color:${statusColor}">${a.status}</td>
+        <td>${actionBtn}</td>
+      </tr>`;
+    }).join('');
+
+    el('art-footer').textContent = `${articles.length} articles total`;
+    el('art-loading').style.display = 'none';
+    el('art-content').style.display = '';
+  } catch (e) {
+    el('art-loading').style.display = 'none';
+    el('art-error').style.display   = '';
+    el('art-error').textContent     = `Error: ${e.message}`;
+  }
+}
+
+async function publishArticle(slug) {
+  if (!confirm(`Publish "${slug}" now?`)) return;
+  try {
+    const res  = await fetch(`/api/articles-publish?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug }),
+    });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      alert(`✓ Published: ${slug}`);
+      loadArticles();
+    } else {
+      alert(`Error: ${data.error || 'Publish failed'}`);
+    }
+  } catch (e) {
+    alert(`Error: ${e.message}`);
+  }
+}
+
+async function triggerArticlePublisher() {
+  const btn    = el('art-trigger-btn');
+  const status = el('art-trigger-status');
+  btn.disabled = true;
+  btn.textContent = 'Triggering...';
+  status.style.display = 'none';
+
+  try {
+    const res  = await fetch(`/api/articles-trigger?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+    });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      status.style.background  = '#f0fdf4';
+      status.style.borderColor = '#bbf7d0';
+      status.style.color       = '#166534';
+      status.style.display     = '';
+      status.textContent       = '✓ Publisher workflow triggered — check GitHub Actions for progress.';
+    } else {
+      status.style.background  = '#fef2f2';
+      status.style.borderColor = '#fecaca';
+      status.style.color       = '#991b1b';
+      status.style.display     = '';
+      status.textContent       = `Error: ${data.error || data.gh_body || 'Trigger failed'}`;
+    }
+  } catch (e) {
+    status.style.display = '';
+    status.textContent   = `Error: ${e.message}`;
+  } finally {
+    btn.disabled    = false;
+    btn.textContent = '▶ Run Publisher';
+  }
+}
 
 // ── Pinterest Auto-Poster ──────────────────────────────────────────────────
 
@@ -2027,9 +2277,10 @@ async function loadPinsStatus() {
     if (!res.ok) return;
     const d = await res.json();
 
-    el('ps-total').textContent  = d.total ?? '—';
-    el('ps-posted').textContent = d.posted ?? '—';
+    el('ps-total').textContent   = d.total ?? '—';
+    el('ps-posted').textContent  = d.posted ?? '—';
     el('ps-pending').textContent = d.pending ?? '—';
+    el('ps-failed').textContent  = d.failed ?? '0';
 
     // Upcoming
     if (d.upcoming && d.upcoming.length > 0) {
@@ -2067,6 +2318,25 @@ async function loadPinsStatus() {
     } else {
       el('ps-recent-empty').style.display = '';
       el('ps-recent-table').style.display = 'none';
+    }
+
+    // Failed pins
+    const failedWrap = el('ps-failed-wrap');
+    if (d.failed_pins && d.failed_pins.length > 0) {
+      failedWrap.style.display = '';
+      el('ps-failed-empty').style.display = 'none';
+      el('ps-failed-table').style.display = '';
+      el('ps-failed-tbody').innerHTML = d.failed_pins.map(p => {
+        let lastErr = '—';
+        try { lastErr = JSON.parse(p.pinterest_response)?.error || '—'; } catch(_) {}
+        return `<tr>
+          <td style="font-size:.75rem">${p.pin_title}</td>
+          <td style="text-align:center;color:#b91c1c;font-weight:700">${p.fail_count}</td>
+          <td style="font-size:.7rem;color:var(--muted);max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${lastErr}">${lastErr}</td>
+        </tr>`;
+      }).join('');
+    } else {
+      failedWrap.style.display = 'none';
     }
   } catch(e) {
     console.warn('pins-status error:', e);

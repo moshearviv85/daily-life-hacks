@@ -106,6 +106,27 @@ def get_next_pin():
         sys.exit(1)
     return resp.json()
 
+# ── Mark pin as failed in D1 ─────────────────────────────────────────────────
+
+def mark_failed(row_id, error_message):
+    resp = requests.post(
+        f"{PINS_API_URL}/api/pins-mark-failed",
+        params={"key": PINS_API_KEY},
+        json={"row_id": row_id, "error_message": error_message},
+        timeout=10,
+    )
+    if not resp.ok:
+        print(f"WARNING: mark-failed call failed — HTTP {resp.status_code}: {resp.text[:200]}")
+        return None
+    data = resp.json()
+    fail_count = data.get("fail_count", "?")
+    status = data.get("status", "PENDING")
+    if status == "FAILED":
+        print(f"  Pin {row_id} marked FAILED after {fail_count} attempts — skipping permanently.")
+    else:
+        print(f"  Pin {row_id} fail count: {fail_count}/3 — will retry next run.")
+    return data
+
 # ── Mark pin as posted in D1 ──────────────────────────────────────────────────
 
 def mark_posted(row_id, pin_id, pinterest_response):
@@ -191,7 +212,11 @@ def main():
     else:
         print(f"FAILED — Pinterest API error:")
         print(json.dumps(result, indent=2)[:600])
-        sys.exit(1)
+        error_msg = result.get("message", json.dumps(result))
+        outcome = mark_failed(pin["row_id"], error_msg)
+        # Exit 0 so GitHub Actions doesn't mark the run red;
+        # the pin is tracked in D1 and will be skipped after 3 failures.
+        sys.exit(0)
 
     print("\nDone.")
 

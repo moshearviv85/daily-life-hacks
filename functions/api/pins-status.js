@@ -26,7 +26,7 @@ export async function onRequestGet(context) {
 
   const today = new Date().toISOString().split("T")[0];
 
-  const [counts, upcoming, recent] = await Promise.all([
+  const [counts, upcoming, recent, failed] = await Promise.all([
     // Status counts
     db.prepare(`
       SELECT status, COUNT(*) as count FROM pins_schedule GROUP BY status
@@ -49,6 +49,15 @@ export async function onRequestGet(context) {
       ORDER BY published_date DESC
       LIMIT 5
     `).all(),
+
+    // Failed pins (permanent failures after 3 attempts)
+    db.prepare(`
+      SELECT row_id, pin_title, fail_count, pinterest_response, image_url
+      FROM pins_schedule
+      WHERE status = 'FAILED'
+      ORDER BY updated_at DESC
+      LIMIT 10
+    `).all(),
   ]);
 
   const statusMap = {};
@@ -59,8 +68,10 @@ export async function onRequestGet(context) {
     total: Object.values(statusMap).reduce((a, b) => a + b, 0),
     posted: statusMap.POSTED || 0,
     pending: statusMap.PENDING || 0,
+    failed: statusMap.FAILED || 0,
     upcoming: upcoming.results,
     recent_posted: recent.results,
+    failed_pins: failed.results,
   }), {
     status: 200,
     headers: { "Content-Type": "application/json", "Cache-Control": "no-store" },

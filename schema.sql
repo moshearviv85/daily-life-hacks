@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS pins_schedule (
   pin_id TEXT,
   published_date TEXT,
   pinterest_response TEXT,
+  fail_count INTEGER DEFAULT 0,
   created_at TEXT DEFAULT (datetime('now')),
   updated_at TEXT DEFAULT (datetime('now'))
 );
