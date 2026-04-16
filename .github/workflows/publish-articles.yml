@@ -23,7 +23,7 @@ jobs:
 
       - name: Publish due articles
         env:
-          PINS_API_URL: ${{ secrets.PINS_API_URL }}
-          PINS_API_KEY: ${{ secrets.PINS_API_KEY }}
+          PINS_API_URL: https://www.daily-life-hacks.com
+          PINS_API_KEY: ${{ secrets.STATS_KEY }}
           GH_PAT:       ${{ secrets.GH_PAT }}
         run: python scripts/publish-articles.py
