@@ -13,7 +13,7 @@ tags:
 image: /images/healthy-fats-list-foods-to-eat-daily-main.jpg
 imageAlt: 'Assortment of healthy fat foods: avocado, nuts, olive oil, salmon'
 date: 2026-03-15
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

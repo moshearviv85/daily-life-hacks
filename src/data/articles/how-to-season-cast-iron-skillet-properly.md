@@ -13,7 +13,7 @@ tags:
 image: /images/how-to-season-cast-iron-skillet-properly-main.jpg
 imageAlt: Cast iron skillet with a dark, seasoned surface
 date: 2026-03-15
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

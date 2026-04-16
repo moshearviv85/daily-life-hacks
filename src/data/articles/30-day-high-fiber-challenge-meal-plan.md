@@ -12,7 +12,7 @@ image: /images/30-day-high-fiber-challenge-meal-plan-main.jpg
 imageAlt: 30 Day High Fiber Challenge Meal Plan - a weekly planner calendar surrounded
   by fresh produce
 date: 2026-02-06
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

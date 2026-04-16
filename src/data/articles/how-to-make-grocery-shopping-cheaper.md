@@ -12,7 +12,7 @@ image: /images/how-to-make-grocery-shopping-cheaper-main.jpg
 imageAlt: How to Make Grocery Shopping Cheaper - a person calculating a total on a
   smartphone while sitting in a grocery cart aisle
 date: 2026-01-25
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

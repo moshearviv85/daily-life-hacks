@@ -13,7 +13,7 @@ image: /images/tabbouleh-salad-high-fiber-bulgur-main.jpg
 imageAlt: Tabbouleh Salad High Fiber Bulgur - appetizing bowl with colorful ingredients
   for natural nutrition
 date: 2026-01-14
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

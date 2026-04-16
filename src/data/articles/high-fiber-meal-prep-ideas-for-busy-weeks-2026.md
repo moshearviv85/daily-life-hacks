@@ -13,7 +13,7 @@ image: /images/high-fiber-meal-prep-ideas-for-busy-weeks-2026-main.jpg
 imageAlt: Glass meal prep containers with quinoa, vegetables, and beans
 date: 2026-03-30
 publishAt: 2026-04-03 00:00:00+00:00
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

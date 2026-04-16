@@ -12,7 +12,7 @@ image: /images/freezer-meal-prep-ideas-for-beginners-main.jpg
 imageAlt: Freezer Meal Prep Ideas for Beginners - five flat frozen ziplock bags stacked
   neatly in a modern freezer
 date: 2026-01-30
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

@@ -13,7 +13,7 @@ image: /images/gut-health-tea-peppermint-ginger-main.jpg
 imageAlt: Gut Health Tea Peppermint Ginger - fresh meal in glass containers for digestive
   comfort
 date: 2026-02-28
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

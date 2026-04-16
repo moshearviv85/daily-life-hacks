@@ -13,7 +13,7 @@ image: /images/high-fiber-pasta-alternatives-main.jpg
 imageAlt: Bowls of pasta with vegetables and tomato sauce
 date: 2026-03-30
 publishAt: 2026-04-11 00:00:00+00:00
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

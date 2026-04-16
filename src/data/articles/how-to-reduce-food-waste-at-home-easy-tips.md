@@ -12,7 +12,7 @@ image: /images/how-to-reduce-food-waste-at-home-easy-tips-main.jpg
 imageAlt: How to Reduce Food Waste at Home - a clear glass fridge container showing
   crisp brightly colored vegetables
 date: 2025-12-26
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

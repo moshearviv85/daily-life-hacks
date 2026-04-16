@@ -12,7 +12,7 @@ tags:
 image: /images/easy-one-pot-chicken-and-rice-dinner-main.jpg
 imageAlt: One-pot chicken and rice in a large pot, ready to serve
 date: 2026-03-15
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

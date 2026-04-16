@@ -13,7 +13,7 @@ image: /images/high-fiber-salad-dressings-homemade-main.jpg
 imageAlt: High Fiber Salad Dressings Homemade - fresh meal in glass containers for
   natural nutrition
 date: 2026-02-22
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

@@ -13,7 +13,7 @@ image: /images/high-fiber-quinoa-salad-for-lunch-prep-main.jpg
 imageAlt: Quinoa salad with vegetables in a meal prep container
 date: 2026-03-30
 publishAt: 2026-04-06 00:00:00+00:00
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

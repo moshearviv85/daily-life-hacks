@@ -12,7 +12,7 @@ image: /images/high-fiber-bran-muffins-that-taste-good-main.jpg
 imageAlt: High Fiber Bran Muffins That Taste Good - appetizing food presentation for
   natural digestive relief
 date: 2025-12-28
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

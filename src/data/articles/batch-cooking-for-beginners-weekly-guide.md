@@ -12,7 +12,7 @@ image: /images/batch-cooking-for-beginners-weekly-guide-main.jpg
 imageAlt: Batch Cooking for Beginners Weekly Guide - multiple glass containers filled
   with pre-cooked grains, roasted vegetables, and proteins aligned on a counter
 date: 2026-01-06
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

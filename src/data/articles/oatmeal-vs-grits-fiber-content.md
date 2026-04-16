@@ -13,7 +13,7 @@ image: /images/oatmeal-vs-grits-fiber-content-main.jpg
 imageAlt: Oatmeal vs Grits Fiber Content - appetizing bowl with colorful ingredients
   for healthy weight management
 date: 2026-02-03
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

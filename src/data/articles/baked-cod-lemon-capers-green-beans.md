@@ -7,7 +7,7 @@ image: "/images/baked-cod-lemon-capers-green-beans-main.jpg"
 imageAlt: "Baked cod fillets with lemon slices capers and green beans on a baking sheet"
 date: 2026-04-08
 publishAt: 2026-04-08T00:00:00+00:00
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

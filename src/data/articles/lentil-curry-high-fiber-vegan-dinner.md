@@ -7,7 +7,7 @@ image: "/images/lentil-curry-high-fiber-vegan-dinner-main.jpg"
 imageAlt: "A bowl of creamy coconut lentil curry served with fresh cilantro and naan bread"
 date: 2026-04-08
 publishAt: 2026-04-08T00:00:00+00:00
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

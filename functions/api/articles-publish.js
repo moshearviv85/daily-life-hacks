@@ -46,6 +46,8 @@ function cleanFrontmatter(markdown) {
     .replace(/^publishAt:\s*["']{0,2}\s*$/m, '')
     // Update date to today (publish date)
     .replace(/^date:\s*.+$/m, `date: ${today}`)
+    // Normalize author name
+    .replace(/^author:\s*.+$/m, 'author: "David Miller"')
     .replace(/\n{3,}/g, '\n\n');
   return fixed;
 }

@@ -13,7 +13,7 @@ image: /images/black-bean-brownies-hidden-fiber-dessert-main.jpg
 imageAlt: Black Bean Brownies Hidden Fiber Dessert - appetizing food presentation
   for natural nutrition
 date: 2026-01-19
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

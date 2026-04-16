@@ -14,7 +14,7 @@ image: /images/high-fiber-yogurt-parfait-for-breakfast-main.jpg
 imageAlt: High Fiber Yogurt Parfait for Breakfast - fresh meal in glass containers
   with berries, yogurt for a healthy morning
 date: 2026-01-05
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

@@ -13,7 +13,7 @@ image: /images/high-fiber-meals-for-constipation-relief-main.jpg
 imageAlt: High Fiber Meals for Constipation Relief - a bright breakfast bowl with
   chia seeds and vibrant berries
 date: 2025-12-31
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

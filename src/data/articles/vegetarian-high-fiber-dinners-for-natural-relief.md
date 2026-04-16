@@ -12,7 +12,7 @@ tags:
 image: /images/vegetarian-high-fiber-dinners-for-natural-relief-main.jpg
 imageAlt: Vegetarian high fiber chickpea cauliflower curry in a bowl with cilantro
 date: 2026-01-18
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

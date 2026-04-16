@@ -12,7 +12,7 @@ tags:
 image: /images/how-much-protein-do-you-need-per-day-main.jpg
 imageAlt: Variety of protein-rich foods on a table
 date: 2026-03-15
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

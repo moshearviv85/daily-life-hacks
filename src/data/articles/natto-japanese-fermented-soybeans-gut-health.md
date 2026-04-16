@@ -14,7 +14,7 @@ image: /images/natto-japanese-fermented-soybeans-gut-health-main.jpg
 imageAlt: A bowl of natto, sticky fermented Japanese soybeans, over rice
 date: 2026-04-04
 publishAt: 2026-04-04 00:00:00+00:00
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

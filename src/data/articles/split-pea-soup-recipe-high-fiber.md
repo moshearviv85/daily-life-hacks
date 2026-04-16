@@ -13,7 +13,7 @@ image: /images/split-pea-soup-recipe-high-fiber-main.jpg
 imageAlt: Split Pea Soup Recipe High Fiber - appetizing bowl with colorful ingredients
   for natural nutrition
 date: 2026-01-16
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

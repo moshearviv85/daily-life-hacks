@@ -13,7 +13,7 @@ image: /images/whole-wheat-vs-white-pasta-fiber-main.jpg
 imageAlt: Whole Wheat vs White Pasta Fiber - detailed close-up shot for healthy weight
   management
 date: 2026-01-03
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

@@ -13,7 +13,7 @@ image: /images/no-bake-high-fiber-energy-balls-recipe-main.jpg
 imageAlt: Stack of oat energy balls on a plate with a napkin
 date: 2026-03-30
 publishAt: 2026-04-04 00:00:00+00:00
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

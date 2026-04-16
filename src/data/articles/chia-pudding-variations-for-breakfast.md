@@ -13,7 +13,7 @@ image: /images/chia-pudding-variations-for-breakfast-main.jpg
 imageAlt: Chia Pudding Variations for Breakfast - overhead view of prepared meal with
   chia seeds for a healthy morning
 date: 2026-02-23
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

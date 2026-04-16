@@ -13,7 +13,7 @@ image: /images/high-fiber-fast-food-options-guide-main.jpg
 imageAlt: High Fiber Fast Food Options Guide - appetizing bowl with colorful ingredients
   for natural nutrition
 date: 2026-01-21
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

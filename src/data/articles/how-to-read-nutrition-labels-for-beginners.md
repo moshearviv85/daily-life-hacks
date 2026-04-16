@@ -12,7 +12,7 @@ image: /images/how-to-read-nutrition-labels-for-beginners-main.jpg
 imageAlt: How to Read Nutrition Labels for Beginners - a close up crop of a confusing
   black and white nutrition facts panel
 date: 2026-01-28
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

@@ -7,7 +7,7 @@ image: "/images/tuscan-white-bean-kale-soup-stovetop-main.jpg"
 imageAlt: "Bowl of Tuscan white bean and kale soup with crusty bread on a wooden table"
 date: 2026-04-12
 publishAt: 2026-04-12 00:00:00+00:00
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

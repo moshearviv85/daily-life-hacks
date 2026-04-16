@@ -12,7 +12,7 @@ image: /images/water-and-fiber-the-golden-rule-main.jpg
 imageAlt: Water and Fiber The Golden Rule - appetizing food presentation for natural
   nutrition
 date: 2026-02-11
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

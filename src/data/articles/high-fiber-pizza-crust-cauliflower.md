@@ -12,7 +12,7 @@ image: /images/high-fiber-pizza-crust-cauliflower-main.jpg
 imageAlt: High Fiber Pizza Crust Cauliflower - appetizing food presentation for natural
   nutrition
 date: 2026-01-02
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

@@ -13,7 +13,7 @@ image: /images/grocery-shopping-list-for-healthy-eating-on-a-budget-main.jpg
 imageAlt: Grocery Shopping List for Healthy Eating on a Budget - a colorful cart full
   of produce and bulk dry goods
 date: 2026-02-20
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

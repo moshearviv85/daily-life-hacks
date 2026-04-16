@@ -13,7 +13,7 @@ image: /images/quick-20-minute-high-fiber-meals-for-busy-days-main.jpg
 imageAlt: Colorful skillet meal with beans and vegetables on a wooden table
 date: 2026-03-30
 publishAt: 2026-04-02 00:00:00+00:00
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

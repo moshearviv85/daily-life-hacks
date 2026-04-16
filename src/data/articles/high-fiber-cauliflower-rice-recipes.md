@@ -13,7 +13,7 @@ image: /images/high-fiber-cauliflower-rice-recipes-main.jpg
 imageAlt: High Fiber Cauliflower Rice Recipes - dynamic cooking action shot for natural
   nutrition
 date: 2026-02-27
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

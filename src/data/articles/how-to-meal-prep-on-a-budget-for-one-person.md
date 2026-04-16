@@ -12,7 +12,7 @@ image: /images/how-to-meal-prep-on-a-budget-for-one-person-main.jpg
 imageAlt: How to Meal Prep on a Budget for One Person - three separate glass meal
   prep containers with wildly different colorful meals
 date: 2026-02-08
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

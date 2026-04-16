@@ -13,7 +13,7 @@ image: /images/pear-salad-with-walnuts-fiber-rich-main.jpg
 imageAlt: Pear Salad with Walnuts Fiber Rich - professionally plated meal for natural
   nutrition
 date: 2025-12-29
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

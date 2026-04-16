@@ -12,7 +12,7 @@ image: /images/how-to-freeze-bananas-for-smoothies-main.jpg
 imageAlt: How to Freeze Bananas for Smoothies - perfectly sliced bananas laid out
   flat on a baking sheet lined with parchment paper
 date: 2026-01-24
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

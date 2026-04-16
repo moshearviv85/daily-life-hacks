@@ -7,7 +7,7 @@ image: "/images/beans-and-rice-complete-protein-meal-main.jpg"
 imageAlt: "A hearty bowl of black beans and rice garnished with fresh cilantro and lime"
 date: 2026-04-08
 publishAt: 2026-04-08T00:00:00+00:00
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

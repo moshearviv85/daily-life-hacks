@@ -12,7 +12,7 @@ image: /images/how-to-organize-a-small-kitchen-on-a-budget-main.jpg
 imageAlt: How to Organize a Small Kitchen on a Budget - a tiny beautifully organized
   kitchen counter with vertical tiered shelving
 date: 2026-01-23
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

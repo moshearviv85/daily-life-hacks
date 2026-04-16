@@ -13,7 +13,7 @@ image: /images/high-fiber-popcorn-toppings-healthy-main.jpg
 imageAlt: High Fiber Popcorn Toppings Healthy - appetizing bowl with colorful ingredients
   for healthy snacking
 date: 2026-02-01
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

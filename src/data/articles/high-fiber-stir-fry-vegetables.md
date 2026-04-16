@@ -12,7 +12,7 @@ image: /images/high-fiber-stir-fry-vegetables-main.jpg
 imageAlt: High Fiber Stir Fry Vegetables - dynamic cooking action shot for natural
   nutrition
 date: 2026-02-19
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

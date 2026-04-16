@@ -12,7 +12,7 @@ tags:
 image: /images/plant-based-protein-sources-complete-guide-main.jpg
 imageAlt: 'Assortment of plant-based protein foods: beans, lentils, tofu, nuts'
 date: 2026-03-15
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

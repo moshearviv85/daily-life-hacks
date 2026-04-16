@@ -12,7 +12,7 @@ image: /images/easy-high-fiber-breakfast-ideas-for-gut-health-main.jpg
 imageAlt: Easy High Fiber Breakfast Ideas for Gut Health - a large mason jar of overnight
   oats topped with fresh fruit
 date: 2026-02-15
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

@@ -12,7 +12,7 @@ image: /images/how-to-revive-wilted-lettuce-and-greens-main.jpg
 imageAlt: How to Revive Wilted Lettuce and Greens - sad limp lettuce being submerged
   into a large glass bowl filled with ice water
 date: 2026-02-09
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

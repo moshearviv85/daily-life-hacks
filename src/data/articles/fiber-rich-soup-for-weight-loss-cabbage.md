@@ -14,7 +14,7 @@ image: /images/fiber-rich-soup-for-weight-loss-cabbage-main.jpg
 imageAlt: Fiber Rich Soup for Weight Loss Cabbage - hearty soup in rustic pot with
   cabbage for natural nutrition
 date: 2026-02-13
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

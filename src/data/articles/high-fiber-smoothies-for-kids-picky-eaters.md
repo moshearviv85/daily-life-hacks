@@ -13,7 +13,7 @@ image: /images/high-fiber-smoothies-for-kids-picky-eaters-main.jpg
 imageAlt: High Fiber Smoothies for Kids Picky Eaters - colorful smoothie with berries
   and greens with spinach, fresh vegetables for natural nutrition
 date: 2026-02-16
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

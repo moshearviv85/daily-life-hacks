@@ -12,7 +12,7 @@ image: /images/best-way-to-store-avocados-to-stop-browning-main.jpg
 imageAlt: Best Way to Store Avocados to Stop Browning - a perfectly green halved avocado
   stored with red onions in an airtight glass container
 date: 2026-01-26
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

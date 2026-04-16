@@ -12,7 +12,7 @@ image: /images/high-protein-high-fiber-meals-for-weight-loss-main.jpg
 imageAlt: High Protein High Fiber Meals for Weight Loss - a hearty bowl of lentil
   stew with a side of grilled chicken
 date: 2026-02-25
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

@@ -14,7 +14,7 @@ image: /images/prune-juice-alternatives-for-constipation-main.jpg
 imageAlt: Prune Juice Alternatives for Constipation - fresh meal in glass containers
   for natural digestive relief
 date: 2026-02-05
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

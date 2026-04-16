@@ -12,7 +12,7 @@ tags:
 image: /images/kitchen-tools-that-save-time-and-money-main.jpg
 imageAlt: 'Essential kitchen tools on a counter: knife, cutting board, can opener'
 date: 2026-03-15
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

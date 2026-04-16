@@ -13,7 +13,7 @@ image: /images/popcorn-vs-potato-chips-fiber-comparison-main.jpg
 imageAlt: Popcorn vs Potato Chips Fiber Comparison - appetizing bowl with colorful
   ingredients for healthy weight management
 date: 2026-02-07
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

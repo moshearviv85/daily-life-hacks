@@ -7,7 +7,7 @@ image: "/images/amaranth-millet-teff-beginner-cooking-guide-main.jpg"
 imageAlt: "Small bowls of cooked amaranth millet and teff with a spoon on a kitchen counter"
 date: 2026-04-08
 publishAt: 2026-04-08T00:00:00+00:00
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

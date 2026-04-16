@@ -12,7 +12,7 @@ tags:
 image: /images/how-to-use-leftover-rice-creative-ideas-main.jpg
 imageAlt: Bowl of fried rice made from leftover rice
 date: 2026-03-15
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

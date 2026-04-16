@@ -13,7 +13,7 @@ image: /images/vegan-high-fiber-meal-prep-for-week-main.jpg
 imageAlt: Vegan High Fiber Meal Prep for Week - fresh meal in glass containers with
   fresh vegetables, whole grains for natural nutrition
 date: 2026-01-10
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

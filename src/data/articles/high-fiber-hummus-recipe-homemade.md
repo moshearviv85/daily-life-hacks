@@ -13,7 +13,7 @@ image: /images/high-fiber-hummus-recipe-homemade-main.jpg
 imageAlt: High Fiber Hummus Recipe Homemade - professionally plated meal with fresh
   vegetables, chickpeas for healthy snacking
 date: 2026-01-08
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

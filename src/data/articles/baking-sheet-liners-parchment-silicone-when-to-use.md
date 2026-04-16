@@ -7,7 +7,7 @@ image: "/images/baking-sheet-liners-parchment-silicone-when-to-use-main.jpg"
 imageAlt: "Baking sheet half lined with parchment paper and half with a silicone baking mat"
 date: 2026-04-08
 publishAt: 2026-04-08T00:00:00+00:00
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

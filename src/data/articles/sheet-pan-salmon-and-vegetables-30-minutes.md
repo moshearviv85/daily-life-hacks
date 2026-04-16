@@ -12,7 +12,7 @@ tags:
 image: /images/sheet-pan-salmon-and-vegetables-30-minutes-main.jpg
 imageAlt: Sheet pan with salmon fillets and roasted vegetables
 date: 2026-03-15
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false
