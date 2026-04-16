@@ -38,10 +38,16 @@ function b64(str) {
   return btoa(unescape(encodeURIComponent(str)));
 }
 
-/** Strip frontmatter fields with empty values so Astro schema doesn't choke. */
+/** Strip empty frontmatter fields and update date to today so article sorts as newest. */
 function cleanFrontmatter(markdown) {
-  // Remove lines like: publishAt: "" or publishAt: '' or publishAt: (empty)
-  return markdown.replace(/^publishAt:\s*["']{0,2}\s*$/m, '').replace(/\n{3,}/g, '\n\n');
+  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  let fixed = markdown
+    // Remove publishAt with empty value
+    .replace(/^publishAt:\s*["']{0,2}\s*$/m, '')
+    // Update date to today (publish date)
+    .replace(/^date:\s*.+$/m, `date: ${today}`)
+    .replace(/\n{3,}/g, '\n\n');
+  return fixed;
 }
 
 /** Check if src/data/articles/{slug}.md exists in GitHub. Returns SHA or null. */
