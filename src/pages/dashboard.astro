@@ -2329,26 +2329,31 @@ async function triggerArticlePublisher() {
   const btn    = el('art-trigger-btn');
   const status = el('art-trigger-status');
   btn.disabled = true;
-  btn.textContent = 'Triggering...';
+  btn.textContent = 'Publishing...';
   status.style.display = 'none';
 
   try {
-    const res  = await fetch(`/api/articles-trigger?key=${encodeURIComponent(pw)}`, {
+    const res  = await fetch(`/api/articles-publish?key=${encodeURIComponent(pw)}`, {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({}),
     });
     const data = await res.json();
-    if (res.ok && data.ok) {
+    const dupCount = data.skipped_duplicates?.length || 0;
+    const dupNote  = dupCount > 0 ? ` (${dupCount} duplicate${dupCount > 1 ? 's' : ''} skipped)` : '';
+    if (data.ok) {
       status.style.background  = '#f0fdf4';
       status.style.borderColor = '#bbf7d0';
       status.style.color       = '#166534';
       status.style.display     = '';
-      status.textContent       = '✓ Publisher workflow triggered — check GitHub Actions for progress.';
+      status.textContent       = `✓ Published: "${data.title || data.slug}"${dupNote}`;
+      loadArticles();
     } else {
       status.style.background  = '#fef2f2';
       status.style.borderColor = '#fecaca';
       status.style.color       = '#991b1b';
       status.style.display     = '';
-      status.textContent       = `Error: ${data.error || data.gh_body || 'Trigger failed'}`;
+      status.textContent       = `${data.error || 'Publish failed'}${dupNote}`;
     }
   } catch (e) {
     status.style.display = '';
