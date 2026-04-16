@@ -18,6 +18,7 @@ import base64
 import time
 from datetime import date
 
+import re
 import requests
 
 PINS_API_URL = os.environ["PINS_API_URL"].rstrip("/")
@@ -30,6 +31,26 @@ GH_HEADS = {"Authorization": f"Bearer {GH_PAT}",
              "Accept": "application/vnd.github+json",
              "X-GitHub-Api-Version": "2022-11-28",
              "User-Agent": "daily-life-hacks-publisher"}
+
+# ── Frontmatter cleaner ────────────────────────────────────────────────────────
+
+def clean_frontmatter(markdown: str) -> str:
+    """Fix frontmatter before committing to GitHub:
+    - Remove publishAt with empty value (causes Astro build failure)
+    - Set date to today (so article appears as newest on homepage)
+    - Set author to David Miller
+    """
+    today = date.today().isoformat()
+    fixed = markdown
+    # Remove publishAt: "" or publishAt: '' or publishAt: (bare empty)
+    fixed = re.sub(r'^publishAt:\s*["\']?\s*["\']?\s*$', '', fixed, flags=re.MULTILINE)
+    # Update date to today
+    fixed = re.sub(r'^date:\s*.+$', f'date: {today}', fixed, flags=re.MULTILINE)
+    # Normalize author
+    fixed = re.sub(r'^author:\s*.+$', 'author: "David Miller"', fixed, flags=re.MULTILINE)
+    # Clean up extra blank lines
+    fixed = re.sub(r'\n{3,}', '\n\n', fixed)
+    return fixed
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -96,7 +117,7 @@ def batch_commit(articles):
     tree_items = []
     for article in articles:
         slug    = article["slug"]
-        content = article["markdown_content"]
+        content = clean_frontmatter(article["markdown_content"])
         encoded = base64.b64encode(content.encode("utf-8")).decode("ascii")
 
         blob_res = gh_post(f"/repos/{GH_REPO}/git/blobs", {
