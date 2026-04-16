@@ -1,4 +1,4 @@
----
+למה ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -85,8 +85,8 @@ const description = "Choose from three free weekly meal plans designed to help y
       <div class="grid md:grid-cols-3 gap-8">
 
         <!-- Plan 1: Gut Health Reset -->
-        <div class="plan-card card-animate-1 rounded-3xl overflow-hidden" style="background-color: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
-          <div class="relative h-52 overflow-hidden">
+        <div class="plan-card card-animate-1 rounded-3xl overflow-hidden flex flex-col" style="background-color: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+          <div class="relative h-52 overflow-hidden flex-shrink-0">
             <img
               src="/images/artichoke-recipes-for-gut-health-main.jpg"
               alt="Gut health meal plan"
@@ -97,12 +97,12 @@ const description = "Choose from three free weekly meal plans designed to help y
             <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
             <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full badge-gut">Gut Health</span>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex flex-col flex-1">
             <h3 class="text-xl font-black mb-2 tracking-tight" style="color: var(--heading-color);">7-Day Gut Health Reset</h3>
             <p class="text-sm mb-5" style="color: var(--muted-color); line-height: 1.6;">
               High-fiber meals, fermented foods, and gut-friendly ingredients to help you feel less bloated and more energized.
             </p>
-            <ul class="space-y-2 mb-6">
+            <ul class="space-y-2 mb-6 flex-1">
               {[
                 "~1,800 cal/day | 40–50g fiber",
                 "Probiotic & prebiotic rich meals",
@@ -127,13 +127,11 @@ const description = "Choose from three free weekly meal plans designed to help y
         </div>
 
         <!-- Plan 2: Energy & Weight Loss -->
-        <div class="plan-card card-animate-2 rounded-3xl overflow-hidden" style="background-color: var(--card-bg); border: 2px solid #F29B30; box-shadow: 0 4px 24px rgba(242,155,48,0.15);">
-          <div class="relative">
-            <div class="absolute top-0 left-0 right-0 text-center py-2 text-xs font-bold text-white z-10" style="background-color: #F29B30;">
-              Most Popular
-            </div>
+        <div class="plan-card card-animate-2 rounded-3xl overflow-hidden flex flex-col" style="background-color: var(--card-bg); border: 2px solid #F29B30; box-shadow: 0 4px 24px rgba(242,155,48,0.15);">
+          <div style="background-color: #F29B30; padding: 6px; text-align: center;">
+            <span class="text-xs font-bold text-white uppercase tracking-widest">Most Popular</span>
           </div>
-          <div class="relative h-52 overflow-hidden mt-8">
+          <div class="relative h-52 overflow-hidden flex-shrink-0">
             <img
               src="/images/balanced-breakfast-that-keeps-you-full-main.jpg"
               alt="Energy and weight loss meal plan"
@@ -144,12 +142,12 @@ const description = "Choose from three free weekly meal plans designed to help y
             <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
             <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full badge-energy">Energy & Weight</span>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex flex-col flex-1">
             <h3 class="text-xl font-black mb-2 tracking-tight" style="color: var(--heading-color);">7-Day Energy & Weight Loss</h3>
             <p class="text-sm mb-5" style="color: var(--muted-color); line-height: 1.6;">
               Balanced, satisfying meals that keep you full and fuel your day — without counting every calorie or feeling deprived.
             </p>
-            <ul class="space-y-2 mb-6">
+            <ul class="space-y-2 mb-6 flex-1">
               {[
                 "~1,600 cal/day | 90–100g protein",
                 "Simple, family-friendly recipes",
@@ -174,8 +172,8 @@ const description = "Choose from three free weekly meal plans designed to help y
         </div>
 
         <!-- Plan 3: High-Protein Power -->
-        <div class="plan-card card-animate-3 rounded-3xl overflow-hidden" style="background-color: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
-          <div class="relative h-52 overflow-hidden">
+        <div class="plan-card card-animate-3 rounded-3xl overflow-hidden flex flex-col" style="background-color: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+          <div class="relative h-52 overflow-hidden flex-shrink-0">
             <img
               src="/images/beans-and-rice-complete-protein-meal-main.jpg"
               alt="High protein meal plan"
@@ -186,12 +184,12 @@ const description = "Choose from three free weekly meal plans designed to help y
             <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
             <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full badge-protein">High Protein</span>
           </div>
-          <div class="p-6">
+          <div class="p-6 flex flex-col flex-1">
             <h3 class="text-xl font-black mb-2 tracking-tight" style="color: var(--heading-color);">7-Day High-Protein Power</h3>
             <p class="text-sm mb-5" style="color: var(--muted-color); line-height: 1.6;">
               A protein-forward plan built for muscle maintenance, satiety, and steady energy — ideal if you're active or building lean muscle.
             </p>
-            <ul class="space-y-2 mb-6">
+            <ul class="space-y-2 mb-6 flex-1">
               {[
                 "~2,000 cal/day | 150–180g protein",
                 "Lean proteins at every meal",
