@@ -3486,7 +3486,8 @@
       "public/images/pins/best-breakfast-foods-for-sustained-energy_v1.jpg",
       "public/images/pins/best-breakfast-foods-for-sustained-energy_v2.jpg",
       "public/images/pins/best-breakfast-foods-for-sustained-energy_v3.jpg",
-      "public/images/pins/best-breakfast-foods-for-sustained-energy_v4.jpg"
+      "public/images/pins/best-breakfast-foods-for-sustained-energy_v4.jpg",
+      "public/images/pins/best-breakfast-foods-for-sustained-energy_v5.jpg"
     ],
     "published": true,
     "deployed": false,
@@ -3514,7 +3515,8 @@
       "public/images/pins/kitchen-tools-that-save-time-and-money_v1.jpg",
       "public/images/pins/kitchen-tools-that-save-time-and-money_v2.jpg",
       "public/images/pins/kitchen-tools-that-save-time-and-money_v3.jpg",
-      "public/images/pins/kitchen-tools-that-save-time-and-money_v4.jpg"
+      "public/images/pins/kitchen-tools-that-save-time-and-money_v4.jpg",
+      "public/images/pins/kitchen-tools-that-save-time-and-money_v5.jpg"
     ],
     "published": true,
     "deployed": false,
@@ -3542,7 +3544,8 @@
       "public/images/pins/how-to-use-leftover-rice-creative-ideas_v1.jpg",
       "public/images/pins/how-to-use-leftover-rice-creative-ideas_v2.jpg",
       "public/images/pins/how-to-use-leftover-rice-creative-ideas_v3.jpg",
-      "public/images/pins/how-to-use-leftover-rice-creative-ideas_v4.jpg"
+      "public/images/pins/how-to-use-leftover-rice-creative-ideas_v4.jpg",
+      "public/images/pins/how-to-use-leftover-rice-creative-ideas_v5.jpg"
     ],
     "published": true,
     "deployed": false,
@@ -3570,7 +3573,8 @@
       "public/images/pins/how-to-cook-dried-beans-from-scratch_v1.jpg",
       "public/images/pins/how-to-cook-dried-beans-from-scratch_v2.jpg",
       "public/images/pins/how-to-cook-dried-beans-from-scratch_v3.jpg",
-      "public/images/pins/how-to-cook-dried-beans-from-scratch_v4.jpg"
+      "public/images/pins/how-to-cook-dried-beans-from-scratch_v4.jpg",
+      "public/images/pins/how-to-cook-dried-beans-from-scratch_v5.jpg"
     ],
     "published": true,
     "deployed": false,
@@ -3598,7 +3602,8 @@
       "public/images/pins/how-to-season-cast-iron-skillet-properly_v1.jpg",
       "public/images/pins/how-to-season-cast-iron-skillet-properly_v2.jpg",
       "public/images/pins/how-to-season-cast-iron-skillet-properly_v3.jpg",
-      "public/images/pins/how-to-season-cast-iron-skillet-properly_v4.jpg"
+      "public/images/pins/how-to-season-cast-iron-skillet-properly_v4.jpg",
+      "public/images/pins/how-to-season-cast-iron-skillet-properly_v5.jpg"
     ],
     "published": true,
     "deployed": false,
@@ -3629,7 +3634,8 @@
       "public/images/pins/tuscan-white-bean-kale-soup-stovetop_v1.jpg",
       "public/images/pins/tuscan-white-bean-kale-soup-stovetop_v2.jpg",
       "public/images/pins/tuscan-white-bean-kale-soup-stovetop_v3.jpg",
-      "public/images/pins/tuscan-white-bean-kale-soup-stovetop_v4.jpg"
+      "public/images/pins/tuscan-white-bean-kale-soup-stovetop_v4.jpg",
+      "public/images/pins/tuscan-white-bean-kale-soup-stovetop_v5.jpg"
     ],
     "published": true,
     "deployed": false,
@@ -3659,7 +3665,8 @@
       "public/images/pins/zinc-containing-foods-weekly-meals_v1.jpg",
       "public/images/pins/zinc-containing-foods-weekly-meals_v2.jpg",
       "public/images/pins/zinc-containing-foods-weekly-meals_v3.jpg",
-      "public/images/pins/zinc-containing-foods-weekly-meals_v4.jpg"
+      "public/images/pins/zinc-containing-foods-weekly-meals_v4.jpg",
+      "public/images/pins/zinc-containing-foods-weekly-meals_v5.jpg"
     ],
     "published": true,
     "deployed": false,
@@ -3689,7 +3696,8 @@
       "public/images/pins/natto-japanese-fermented-soybeans-gut-health_v1.jpg",
       "public/images/pins/natto-japanese-fermented-soybeans-gut-health_v2.jpg",
       "public/images/pins/natto-japanese-fermented-soybeans-gut-health_v3.jpg",
-      "public/images/pins/natto-japanese-fermented-soybeans-gut-health_v4.jpg"
+      "public/images/pins/natto-japanese-fermented-soybeans-gut-health_v4.jpg",
+      "public/images/pins/natto-japanese-fermented-soybeans-gut-health_v5.jpg"
     ],
     "published": true,
     "deployed": false,
@@ -3840,7 +3848,7 @@
     "slug": "balanced-breakfast-that-keeps-you-full",
     "status": "IMAGES_READY",
     "date_created": "",
-    "draft_path": "pipeline-data/drafts/balanced-breakfast-that-keeps-you-full.md",
+    "draft_path": null,
     "validated_path": null,
     "image_web": "/images/balanced-breakfast-that-keeps-you-full-main.jpg",
     "image_pins": [
@@ -3850,7 +3858,7 @@
       "public/images/pins/balanced-breakfast-that-keeps-you-full_v4.jpg",
       "public/images/pins/balanced-breakfast-that-keeps-you-full_v5.jpg"
     ],
-    "published": false,
+    "published": true,
     "deployed": false,
     "qc_notes": ""
   }

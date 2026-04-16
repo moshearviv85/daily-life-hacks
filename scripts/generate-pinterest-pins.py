@@ -28,7 +28,7 @@ PINS_PER_ARTICLE = 5
 SITE_URL         = "https://www.daily-life-hacks.com"
 
 PROJECT_DIR         = "."
-TRACKER_FILE        = os.path.join(PROJECT_DIR, "pipeline-data", "content-tracker.json")
+CSV_PATH            = os.path.join(PROJECT_DIR, "pipeline-data", "production-sheet.csv")
 SCENES_FILE         = os.path.join(PROJECT_DIR, "pipeline-data", "image-scenes.json")
 ROUTER_MAPPING_FILE = os.path.join(PROJECT_DIR, "pipeline-data", "router-mapping.json")
 ARTICLES_DIR        = os.path.join(PROJECT_DIR, "src", "data", "articles")
@@ -164,8 +164,9 @@ def main():
     os.makedirs(SAVE_DIR_PINS, exist_ok=True)
     os.makedirs(TRASH_DIR, exist_ok=True)
 
-    with open(TRACKER_FILE, "r", encoding="utf-8") as f:
-        tracker = json.load(f)
+    with open(CSV_PATH, "r", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        tracker = list(reader)
     with open(SCENES_FILE, "r", encoding="utf-8") as f:
         scenes = json.load(f)
 
@@ -277,8 +278,8 @@ def main():
             item["status"]     = "IMAGES_READY"
             print(f"  DONE – {len(pin_paths)}/5 pins  ({slug})")
 
-        with open(TRACKER_FILE, "w", encoding="utf-8") as f:
-            json.dump(tracker, f, indent=2, ensure_ascii=False)
+            # with open(TRACKER_FILE, "w", encoding="utf-8") as f:
+            #    json.dump(tracker, f, indent=2, ensure_ascii=False)
 
         time.sleep(SLEEP_BETWEEN_ARTICLES)
 

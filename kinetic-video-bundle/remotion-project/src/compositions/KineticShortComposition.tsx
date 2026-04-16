@@ -22,6 +22,7 @@ import {
   useVideoConfig,
   staticFile,
   Img,
+  OffthreadVideo,
 } from 'remotion';
 
 interface WordTiming {
@@ -220,7 +221,7 @@ function getAnimTransform(type: AnimationType, progress: number): Transform {
   }
 }
 
-// ── Ken Burns background (unchanged from V1) ──────────────────────────────────
+// ── Ken Burns background ──────────────────────────────────────────────────────
 interface BgProps { src: string; frameAge: number; zoomDir: 'in' | 'out'; opacity?: number; driftDir?: 1 | -1 }
 const Background: React.FC<BgProps> = ({ src, frameAge, zoomDir, opacity = 1, driftDir = 1 }) => {
   const { durationInFrames } = useVideoConfig();
@@ -229,16 +230,26 @@ const Background: React.FC<BgProps> = ({ src, frameAge, zoomDir, opacity = 1, dr
     ? interpolate(progress, [0, 1], [1.08, 1.22])
     : interpolate(progress, [0, 1], [1.22, 1.08]);
   const drift = interpolate(progress, [0, 1], [0, driftDir * 2.5]);
+  const mediaStyle: React.CSSProperties = {
+    width: '100%', height: '100%', objectFit: 'cover',
+    transform: `scale(${scale}) translateX(${drift}%)`,
+    transformOrigin: 'center center',
+  };
+  const isVideo = src.endsWith('.mp4') || src.endsWith('.webm') || src.endsWith('.mov');
   return (
     <AbsoluteFill style={{ overflow: 'hidden', opacity }}>
-      <Img
-        src={staticFile(src)}
-        style={{
-          width: '100%', height: '100%', objectFit: 'cover',
-          transform: `scale(${scale}) translateX(${drift}%)`,
-          transformOrigin: 'center center',
-        }}
-      />
+      {isVideo ? (
+        <OffthreadVideo
+          src={staticFile(src)}
+          style={mediaStyle}
+          muted
+        />
+      ) : (
+        <Img
+          src={staticFile(src)}
+          style={mediaStyle}
+        />
+      )}
     </AbsoluteFill>
   );
 };

@@ -984,5 +984,27 @@
       "url_slug": "lentil-curry-high-fiber-vegan-dinner-v5",
       "title": "Easy Lentil Curry: A High Fiber Vegan Dinner You'll Actually Crave"
     }
+  },
+  "balanced-breakfast-that-keeps-you-full": {
+    "v1": {
+      "url_slug": "balanced-breakfast-that-keeps-you-full-v1",
+      "title": "How to Build a Balanced Breakfast"
+    },
+    "v2": {
+      "url_slug": "balanced-breakfast-that-keeps-you-full-v2",
+      "title": "A Quick Breakfast That Keeps You Full Until Lunch"
+    },
+    "v3": {
+      "url_slug": "balanced-breakfast-that-keeps-you-full-v3",
+      "title": "Why Are You Always Hungry by 10 AM?"
+    },
+    "v4": {
+      "url_slug": "balanced-breakfast-that-keeps-you-full-v4",
+      "title": "Stop Eating Just a Bagel for Breakfast"
+    },
+    "v5": {
+      "url_slug": "balanced-breakfast-that-keeps-you-full-v5",
+      "title": "3 Simple Components for a Filling Morning Meal"
+    }
   }
 }

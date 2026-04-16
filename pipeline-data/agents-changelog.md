@@ -3,6 +3,10 @@
 
 ---
 
+**2026-04-08 — Agent 6 (Publisher & Assembler) [Run 3]:** Step 0 auto-scan of 54 drafts found **1 ready** article: `balanced-breakfast-that-keeps-you-full` (nutrition). Moved to `src/data/articles/`, set `publishAt: 2026-04-08T00:00:00+00:00`. Migrated `pinterest-api-queue.csv` to new SKILL-mandated column format (`row_id, pin_title, pin_description, alt_text, image_url, board_id, link, scheduled_date, status`) preserving all 20 existing rows. Appended 4 new pin rows (v1 Apr 9, v3 Apr 11, v4 Apr 12, v5 Apr 13 — v2 skipped, image missing). Updated `content-tracker.json`, `router-mapping.json`, ran `normalize-content-registry.py` (54 articles, 225 variants, 23 blocked). Build verified: 292 pages. 51 blocked drafts logged to finisher-backlog.
+
+---
+
 **2026-04-08 — Agent 6 (Publisher & Assembler):** Published 8 new articles to `src/data/articles/` with `publishAt: 2026-04-08T00:00:00+00:00`. All 8 have complete v1–v5 pin images and web main images. Created `pipeline-data/pinterest-api-queue.csv` with 20 scheduled pins (4 articles × 5 variants) using round-robin scheduling starting 2026-04-08 22:00 UTC through 2026-04-13. Updated `content-tracker.json` (8 entries → PUBLISHED), `router-mapping.json` (8 new article entries with v1–v5), and ran `normalize-content-registry.py` (53 articles, 220 variants, 22 blocked). Fixed pre-existing YAML frontmatter bug in `zinc-containing-foods-weekly-meals.md`. Build verified: 286 pages.
 
 **Articles published:** `air-fryer-salmon-bites-garlic-honey-glaze` (recipes), `amaranth-millet-teff-beginner-cooking-guide` (nutrition), `baked-cod-lemon-capers-green-beans` (recipes), `baking-sheet-liners-parchment-silicone-when-to-use` (tips), `beans-and-rice-complete-protein-meal` (recipes), `high-fiber-burrito-bowl-meal-prep` (recipes), `high-fiber-gluten-free-bread-recipe` (recipes), `lentil-curry-high-fiber-vegan-dinner` (recipes).

@@ -1,0 +1,33 @@
+{
+  "report_date": "2026-04-05",
+  "summary": {
+    "total_site_articles": 77,
+    "already_in_publer": 40,
+    "already_in_api_queue": 5,
+    "published_in_this_batch": 32,
+    "pins_in_this_batch": 132,
+    "articles_with_no_pin_images": 0,
+    "articles_using_fallback_copy": 18
+  },
+  "articles_with_no_pins": [],
+  "articles_using_fallback_copy_needs_agent4": [
+    "best-breakfast-foods-for-sustained-energy",
+    "easy-black-bean-tacos-weeknight-dinner",
+    "easy-one-pot-chicken-and-rice-dinner",
+    "healthy-fats-list-foods-to-eat-daily",
+    "healthy-turkey-meatballs-meal-prep",
+    "high-fiber-meal-prep-ideas-for-busy-weeks-2026",
+    "high-fiber-meals-for-constipation-relief",
+    "high-fiber-smoothies-for-kids-picky-eaters",
+    "how-much-protein-do-you-need-per-day",
+    "how-to-cook-dried-beans-from-scratch",
+    "how-to-season-cast-iron-skillet-properly",
+    "how-to-use-leftover-rice-creative-ideas",
+    "kitchen-tools-that-save-time-and-money",
+    "natto-japanese-fermented-soybeans-gut-health",
+    "plant-based-protein-sources-complete-guide",
+    "prune-juice-alternatives-for-constipation",
+    "sheet-pan-salmon-and-vegetables-30-minutes",
+    "vegetarian-high-fiber-dinners-for-natural-relief"
+  ]
+}

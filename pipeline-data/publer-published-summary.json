@@ -1,0 +1,591 @@
+{
+  "folder": "publer published",
+  "total_image_files": 149,
+  "unique_canonical_pin_files": 72,
+  "canonical_files_with_duplicates": 72,
+  "note": "Publer renamed files; each line maps random name -> canonical pins/*.jpg",
+  "duplicate_groups": [
+    {
+      "canonical": "30-day-high-fiber-challenge-meal-plan_v1.jpg",
+      "publer_copies": [
+        "69b1c1c50b9caca61147b077.jpg",
+        "69b1c7fb3db7c47a925eca92.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "artichoke-recipes-for-gut-health_v1.jpg",
+      "publer_copies": [
+        "69b1c1c30b9caca61147b063.jpg",
+        "69b1c7f93db7c47a925eca84.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "artichoke-recipes-for-gut-health_v2.jpg",
+      "publer_copies": [
+        "69aaeb3ebda96b9fac34abe6.jpg",
+        "69b1c1b30b9caca61147afed.jpg",
+        "69b1c7e93db7c47a925eca0e.jpg"
+      ],
+      "count": 3
+    },
+    {
+      "canonical": "artichoke-recipes-for-gut-health_v4.jpg",
+      "publer_copies": [
+        "69b1c1be0b9caca61147b03e.jpg",
+        "69b1c7f43db7c47a925eca5e.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "batch-cooking-for-beginners-weekly-guide_v4.jpg",
+      "publer_copies": [
+        "69b1c1b60b9caca61147b001.jpg",
+        "69b1c7ec3db7c47a925eca23.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "best-way-to-store-avocados-to-stop-browning_v1.jpg",
+      "publer_copies": [
+        "69aaeb10bda96b9fac34ab83.jpg",
+        "69b1c1b40b9caca61147aff1.jpg",
+        "69b1c7e93db7c47a925eca12.jpg"
+      ],
+      "count": 3
+    },
+    {
+      "canonical": "best-way-to-store-avocados-to-stop-browning_v2.jpg",
+      "publer_copies": [
+        "69b1c1c10b9caca61147b057.jpg",
+        "69b1c7f73db7c47a925eca78.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "best-way-to-store-avocados-to-stop-browning_v3.jpg",
+      "publer_copies": [
+        "69b1c1cf0b9caca61147b0c6.jpg",
+        "69b1c8053db7c47a925ecadc.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "best-way-to-store-avocados-to-stop-browning_v4.jpg",
+      "publer_copies": [
+        "69b1c1d60b9caca61147b101.jpg",
+        "69b1c80d3db7c47a925ecb18.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "black-bean-brownies-hidden-fiber-dessert_v3.jpg",
+      "publer_copies": [
+        "69b1c1d00b9caca61147b0d2.jpg",
+        "69b1c8063db7c47a925ecae8.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "chia-pudding-variations-for-breakfast_v1.jpg",
+      "publer_copies": [
+        "69b1c1bc0b9caca61147b02f.jpg",
+        "69b1c7f23db7c47a925eca52.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "chia-pudding-variations-for-breakfast_v2.jpg",
+      "publer_copies": [
+        "69b1c1d10b9caca61147b0da.jpg",
+        "69b1c8083db7c47a925ecaf0.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "chia-pudding-variations-for-breakfast_v3.jpg",
+      "publer_copies": [
+        "69b1c1c80b9caca61147b093.jpg",
+        "69b1c7ff3db7c47a925ecaae.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "chia-pudding-variations-for-breakfast_v4.jpg",
+      "publer_copies": [
+        "69b1c1da0b9caca61147b11e.jpg",
+        "69b1c8113db7c47a925ecb34.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "easy-high-fiber-breakfast-ideas-for-gut-health_v1.jpg",
+      "publer_copies": [
+        "69b1c1b70b9caca61147b009.jpg",
+        "69b1c7ed3db7c47a925eca2b.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "freezer-meal-prep-ideas-for-beginners_v1.jpg",
+      "publer_copies": [
+        "69b1c1d90b9caca61147b116.jpg",
+        "69b1c8103db7c47a925ecb2c.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "freezer-meal-prep-ideas-for-beginners_v4.jpg",
+      "publer_copies": [
+        "69b1c1bb0b9caca61147b027.jpg",
+        "69b1c7f13db7c47a925eca4a.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "grocery-shopping-list-for-healthy-eating-on-a-budget_v4.jpg",
+      "publer_copies": [
+        "69aaeb11bda96b9fac34ab8b.jpg",
+        "69b1c1b40b9caca61147aff5.jpg",
+        "69b1c7ea3db7c47a925eca16.jpg"
+      ],
+      "count": 3
+    },
+    {
+      "canonical": "gut-health-tea-peppermint-ginger_v3.jpg",
+      "publer_copies": [
+        "69aaeb11bda96b9fac34ab87.jpg",
+        "69b1c1b40b9caca61147aff3.jpg",
+        "69b1c7ea3db7c47a925eca14.jpg"
+      ],
+      "count": 3
+    },
+    {
+      "canonical": "high-fiber-bran-muffins-that-taste-good_v1.jpg",
+      "publer_copies": [
+        "69b1c1b60b9caca61147b005.jpg",
+        "69b1c7ec3db7c47a925eca27.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-cauliflower-rice-recipes_v3.jpg",
+      "publer_copies": [
+        "69b1c1bd0b9caca61147b033.jpg",
+        "69b1c7f33db7c47a925eca56.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-fast-food-options-guide_v3.jpg",
+      "publer_copies": [
+        "69b1c1b80b9caca61147b011.jpg",
+        "69b1c7ee3db7c47a925eca33.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-hummus-recipe-homemade_v2.jpg",
+      "publer_copies": [
+        "69b1c1bf0b9caca61147b045.jpg",
+        "69b1c7f43db7c47a925eca62.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-pizza-crust-cauliflower_v4.jpg",
+      "publer_copies": [
+        "69b1c1c90b9caca61147b099.jpg",
+        "69b1c7ff3db7c47a925ecab4.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-popcorn-toppings-healthy_v2.jpg",
+      "publer_copies": [
+        "69b1c1c70b9caca61147b08d.jpg",
+        "69b1c7fe3db7c47a925ecaa8.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-salad-dressings-homemade_v2.jpg",
+      "publer_copies": [
+        "69b1c1b50b9caca61147aff7.jpg",
+        "69b1c7ea3db7c47a925eca18.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-stir-fry-vegetables_v1.jpg",
+      "publer_copies": [
+        "69b1c1c60b9caca61147b084.jpg",
+        "69b1c7fd3db7c47a925eca9e.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-stir-fry-vegetables_v2.jpg",
+      "publer_copies": [
+        "69b1c1bc0b9caca61147b02b.jpg",
+        "69b1c7f23db7c47a925eca4e.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-stir-fry-vegetables_v3.jpg",
+      "publer_copies": [
+        "69b1c1c40b9caca61147b06b.jpg",
+        "69b1c7fa3db7c47a925eca8a.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-stir-fry-vegetables_v4.jpg",
+      "publer_copies": [
+        "69b1c1d10b9caca61147b0d8.jpg",
+        "69b1c8073db7c47a925ecaee.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-fiber-yogurt-parfait-for-breakfast_v1.jpg",
+      "publer_copies": [
+        "69b1c1b80b9caca61147b00d.jpg",
+        "69b1c7ed3db7c47a925eca2f.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-protein-high-fiber-meals-for-weight-loss_v1.jpg",
+      "publer_copies": [
+        "69b1c1d90b9caca61147b114.jpg",
+        "69b1c80f3db7c47a925ecb2a.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "high-protein-high-fiber-meals-for-weight-loss_v4.jpg",
+      "publer_copies": [
+        "69b1c1b50b9caca61147affb.jpg",
+        "69b1c7eb3db7c47a925eca1c.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-freeze-bananas-for-smoothies_v1.jpg",
+      "publer_copies": [
+        "69b1c1cc0b9caca61147b0af.jpg",
+        "69b1c8023db7c47a925ecac6.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-freeze-bananas-for-smoothies_v2.jpg",
+      "publer_copies": [
+        "69b1c1cb0b9caca61147b0a5.jpg",
+        "69b1c8013db7c47a925ecabf.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-freeze-bananas-for-smoothies_v4.jpg",
+      "publer_copies": [
+        "69b1c1c70b9caca61147b08b.jpg",
+        "69b1c7fe3db7c47a925ecaa6.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-keep-bread-fresh-longer-without-mold_v4.jpg",
+      "publer_copies": [
+        "69b1c1c20b9caca61147b05b.jpg",
+        "69b1c7f73db7c47a925eca7c.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-make-grocery-shopping-cheaper_v1.jpg",
+      "publer_copies": [
+        "69b1c1d70b9caca61147b103.jpg",
+        "69b1c80d3db7c47a925ecb1a.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-make-grocery-shopping-cheaper_v4.jpg",
+      "publer_copies": [
+        "69b1c1bb0b9caca61147b023.jpg",
+        "69b1c7f03db7c47a925eca46.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-meal-prep-on-a-budget-for-one-person_v1.jpg",
+      "publer_copies": [
+        "69b1c1b70b9caca61147b007.jpg",
+        "69b1c7ed3db7c47a925eca29.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-meal-prep-on-a-budget-for-one-person_v3.jpg",
+      "publer_copies": [
+        "69b1c1b80b9caca61147b00f.jpg",
+        "69b1c7ee3db7c47a925eca31.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-meal-prep-on-a-budget-for-one-person_v4.jpg",
+      "publer_copies": [
+        "69b1c1ba0b9caca61147b01f.jpg",
+        "69b1c7f03db7c47a925eca42.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-organize-a-small-kitchen-on-a-budget_v1.jpg",
+      "publer_copies": [
+        "69b1c1c90b9caca61147b097.jpg",
+        "69b1c7ff3db7c47a925ecab2.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-organize-a-small-kitchen-on-a-budget_v2.jpg",
+      "publer_copies": [
+        "69b1c1cb0b9caca61147b0a9.jpg",
+        "69b1c8013db7c47a925ecac2.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-organize-a-small-kitchen-on-a-budget_v4.jpg",
+      "publer_copies": [
+        "69b1c1bd0b9caca61147b036.jpg",
+        "69b1c7f33db7c47a925eca58.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-read-nutrition-labels-for-beginners_v1.jpg",
+      "publer_copies": [
+        "69b1c1c20b9caca61147b05d.jpg",
+        "69b1c7f83db7c47a925eca7e.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-read-nutrition-labels-for-beginners_v3.jpg",
+      "publer_copies": [
+        "69b1c1d40b9caca61147b0ed.jpg",
+        "69b1c80a3db7c47a925ecb04.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-reduce-food-waste-at-home-easy-tips_v4.jpg",
+      "publer_copies": [
+        "69b1c1b90b9caca61147b015.jpg",
+        "69b1c7ee3db7c47a925eca37.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-revive-wilted-lettuce-and-greens_v1.jpg",
+      "publer_copies": [
+        "69b1c1c60b9caca61147b082.jpg",
+        "69b1c7fc3db7c47a925eca9c.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-revive-wilted-lettuce-and-greens_v2.jpg",
+      "publer_copies": [
+        "69b1c1b50b9caca61147aff9.jpg",
+        "69b1c7ea3db7c47a925eca1a.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-revive-wilted-lettuce-and-greens_v4.jpg",
+      "publer_copies": [
+        "69b1c1c40b9caca61147b073.jpg",
+        "69b1c7fb3db7c47a925eca90.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-store-fresh-herbs-to-last-longer_v1.jpg",
+      "publer_copies": [
+        "69b1c1b50b9caca61147affd.jpg",
+        "69b1c7eb3db7c47a925eca1f.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-store-fresh-herbs-to-last-longer_v2.jpg",
+      "publer_copies": [
+        "69b1c1d40b9caca61147b0f1.jpg",
+        "69b1c80b3db7c47a925ecb08.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-store-fresh-herbs-to-last-longer_v3.jpg",
+      "publer_copies": [
+        "69b1c1bf0b9caca61147b049.jpg",
+        "69b1c7f53db7c47a925eca6a.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-store-fresh-herbs-to-last-longer_v4.jpg",
+      "publer_copies": [
+        "69b1c1da0b9caca61147b11a.jpg",
+        "69b1c8103db7c47a925ecb30.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-store-fruits-and-vegetables-properly_v1.jpg",
+      "publer_copies": [
+        "69b1c1bb0b9caca61147b021.jpg",
+        "69b1c7f03db7c47a925eca44.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-store-fruits-and-vegetables-properly_v2.jpg",
+      "publer_copies": [
+        "69b1c1cf0b9caca61147b0ca.jpg",
+        "69b1c8053db7c47a925ecae0.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-store-fruits-and-vegetables-properly_v3.jpg",
+      "publer_copies": [
+        "69b1c1d70b9caca61147b107.jpg",
+        "69b1c80e3db7c47a925ecb1e.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "how-to-store-fruits-and-vegetables-properly_v4.jpg",
+      "publer_copies": [
+        "69b1c1c60b9caca61147b07f.jpg",
+        "69b1c7fc3db7c47a925eca9a.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "oatmeal-vs-grits-fiber-content_v3.jpg",
+      "publer_copies": [
+        "69b1c1b60b9caca61147b003.jpg",
+        "69b1c7ec3db7c47a925eca25.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "pear-salad-with-walnuts-fiber-rich_v3.jpg",
+      "publer_copies": [
+        "69b1c1b90b9caca61147b017.jpg",
+        "69b1c7ef3db7c47a925eca39.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "popcorn-vs-potato-chips-fiber-comparison_v2.jpg",
+      "publer_copies": [
+        "69b1c1c00b9caca61147b04f.jpg",
+        "69b1c7f63db7c47a925eca70.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "split-pea-soup-recipe-high-fiber_v1.jpg",
+      "publer_copies": [
+        "69b1c1b80b9caca61147b013.jpg",
+        "69b1c7ee3db7c47a925eca35.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "split-pea-soup-recipe-high-fiber_v3.jpg",
+      "publer_copies": [
+        "69b1c1c40b9caca61147b06d.jpg",
+        "69b1c7fa3db7c47a925eca8c.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "split-pea-soup-recipe-high-fiber_v4.jpg",
+      "publer_copies": [
+        "69b1c1bd0b9caca61147b031.jpg",
+        "69b1c7f23db7c47a925eca54.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "tabbouleh-salad-high-fiber-bulgur_v2.jpg",
+      "publer_copies": [
+        "69aaeb10bda96b9fac34ab80.jpg",
+        "69b1c1b40b9caca61147afef.jpg",
+        "69b1c7e93db7c47a925eca10.jpg"
+      ],
+      "count": 3
+    },
+    {
+      "canonical": "vegan-high-fiber-meal-prep-for-week_v2.jpg",
+      "publer_copies": [
+        "69b1c1c10b9caca61147b053.jpg",
+        "69b1c7f63db7c47a925eca74.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "water-and-fiber-the-golden-rule_v4.jpg",
+      "publer_copies": [
+        "69b1c1c00b9caca61147b04d.jpg",
+        "69b1c7f53db7c47a925eca6e.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "whole-wheat-vs-white-pasta-fiber_v1.jpg",
+      "publer_copies": [
+        "69b1c1ba0b9caca61147b01d.jpg",
+        "69b1c7ef3db7c47a925eca40.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "whole-wheat-vs-white-pasta-fiber_v2.jpg",
+      "publer_copies": [
+        "69b1c1d20b9caca61147b0dc.jpg",
+        "69b1c8083db7c47a925ecaf2.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "whole-wheat-vs-white-pasta-fiber_v3.jpg",
+      "publer_copies": [
+        "69b1c1c10b9caca61147b055.jpg",
+        "69b1c7f63db7c47a925eca76.jpg"
+      ],
+      "count": 2
+    },
+    {
+      "canonical": "whole-wheat-vs-white-pasta-fiber_v4.jpg",
+      "publer_copies": [
+        "69b1c1ce0b9caca61147b0c2.jpg",
+        "69b1c8043db7c47a925ecad8.jpg"
+      ],
+      "count": 2
+    }
+  ],
+  "unique_only_one_copy": 0
+}

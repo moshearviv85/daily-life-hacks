@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T19:30:27.974218+00:00",
+  "generated_at": "2026-04-08T20:05:43.666534+00:00",
   "offers": {
     "fiber-guide": {
       "label": "Fiber Starter Guide",
@@ -4712,6 +4712,110 @@
           "board": "High Fiber Recipes",
           "pin_image": "/images/pins/lentil-curry-high-fiber-vegan-dinner_v5.jpg",
           "destination_url": "https://www.daily-life-hacks.com/lentil-curry-high-fiber-vegan-dinner-v5",
+          "scheduled_count": 0,
+          "publish_ready": true,
+          "blocked_reasons": []
+        }
+      }
+    },
+    "balanced-breakfast-that-keeps-you-full": {
+      "article": {
+        "base_slug": "balanced-breakfast-that-keeps-you-full",
+        "category": "nutrition",
+        "canonical_url": "https://www.daily-life-hacks.com/balanced-breakfast-that-keeps-you-full",
+        "content_path": "src/data/articles/balanced-breakfast-that-keeps-you-full.md",
+        "image": "/images/balanced-breakfast-that-keeps-you-full-main.jpg",
+        "image_alt": "A balanced breakfast plate with eggs toast and avocado next to coffee",
+        "title": "How to Build a Balanced Breakfast That Actually Holds You Over",
+        "excerpt": "Stop crashing at ten in the morning. Learn how to build a balanced breakfast that keeps you full without requiring an hour of meal prep.",
+        "status": "PUBLISHED",
+        "legal_risk_level": "normal",
+        "offer_id": "fiber-guide"
+      },
+      "variants": {
+        "v1": {
+          "variant_id": "v1",
+          "url_slug": "balanced-breakfast-that-keeps-you-full-v1",
+          "title": "How to Build a Balanced Breakfast",
+          "description": "Stop crashing at ten in the morning. Learn how to build a balanced breakfast that keeps you full without requiring an hour of meal prep.",
+          "intro_paragraph": "How to Build a Balanced Breakfast answers the question clearly, strips out the noise, and helps readers make a more confident everyday food decision.",
+          "search_intent": "problem-solving",
+          "audience_angle": "healthy-eating-basics",
+          "cta_variant": "Get the fiber starter guide",
+          "email_segment": "nutrition-foundations",
+          "board": "Gut Health & Nutrition Tips",
+          "pin_image": "/images/pins/balanced-breakfast-that-keeps-you-full_v1.jpg",
+          "destination_url": "https://www.daily-life-hacks.com/balanced-breakfast-that-keeps-you-full-v1",
+          "scheduled_count": 0,
+          "publish_ready": true,
+          "blocked_reasons": []
+        },
+        "v2": {
+          "variant_id": "v2",
+          "url_slug": "balanced-breakfast-that-keeps-you-full-v2",
+          "title": "A Quick Breakfast That Keeps You Full Until Lunch",
+          "description": "Stop crashing at ten in the morning. Learn how to build a balanced breakfast that keeps you full without requiring an hour of meal prep.",
+          "intro_paragraph": "A Quick Breakfast That Keeps You Full Until Lunch answers the question clearly, strips out the noise, and helps readers make a more confident everyday food decision.",
+          "search_intent": "discovery",
+          "audience_angle": "healthy-eating-basics",
+          "cta_variant": "Get the fiber starter guide",
+          "email_segment": "nutrition-foundations",
+          "board": "Gut Health & Nutrition Tips",
+          "pin_image": "/images/pins/balanced-breakfast-that-keeps-you-full_v2.jpg",
+          "destination_url": "https://www.daily-life-hacks.com/balanced-breakfast-that-keeps-you-full-v2",
+          "scheduled_count": 0,
+          "publish_ready": false,
+          "blocked_reasons": [
+            "missing-pin-image"
+          ]
+        },
+        "v3": {
+          "variant_id": "v3",
+          "url_slug": "balanced-breakfast-that-keeps-you-full-v3",
+          "title": "Why Are You Always Hungry by 10 AM?",
+          "description": "Stop crashing at ten in the morning. Learn how to build a balanced breakfast that keeps you full without requiring an hour of meal prep.",
+          "intro_paragraph": "Why Are You Always Hungry by 10 AM? answers the question clearly, strips out the noise, and helps readers make a more confident everyday food decision.",
+          "search_intent": "discovery",
+          "audience_angle": "healthy-eating-basics",
+          "cta_variant": "Get the fiber starter guide",
+          "email_segment": "nutrition-foundations",
+          "board": "Gut Health & Nutrition Tips",
+          "pin_image": "/images/pins/balanced-breakfast-that-keeps-you-full_v3.jpg",
+          "destination_url": "https://www.daily-life-hacks.com/balanced-breakfast-that-keeps-you-full-v3",
+          "scheduled_count": 0,
+          "publish_ready": true,
+          "blocked_reasons": []
+        },
+        "v4": {
+          "variant_id": "v4",
+          "url_slug": "balanced-breakfast-that-keeps-you-full-v4",
+          "title": "Stop Eating Just a Bagel for Breakfast",
+          "description": "Stop crashing at ten in the morning. Learn how to build a balanced breakfast that keeps you full without requiring an hour of meal prep.",
+          "intro_paragraph": "Stop Eating Just a Bagel for Breakfast answers the question clearly, strips out the noise, and helps readers make a more confident everyday food decision.",
+          "search_intent": "discovery",
+          "audience_angle": "healthy-eating-basics",
+          "cta_variant": "Get the fiber starter guide",
+          "email_segment": "nutrition-foundations",
+          "board": "Gut Health & Nutrition Tips",
+          "pin_image": "/images/pins/balanced-breakfast-that-keeps-you-full_v4.jpg",
+          "destination_url": "https://www.daily-life-hacks.com/balanced-breakfast-that-keeps-you-full-v4",
+          "scheduled_count": 0,
+          "publish_ready": true,
+          "blocked_reasons": []
+        },
+        "v5": {
+          "variant_id": "v5",
+          "url_slug": "balanced-breakfast-that-keeps-you-full-v5",
+          "title": "3 Simple Components for a Filling Morning Meal",
+          "description": "Stop crashing at ten in the morning. Learn how to build a balanced breakfast that keeps you full without requiring an hour of meal prep.",
+          "intro_paragraph": "3 Simple Components for a Filling Morning Meal answers the question clearly, strips out the noise, and helps readers make a more confident everyday food decision.",
+          "search_intent": "discovery",
+          "audience_angle": "healthy-eating-basics",
+          "cta_variant": "Get the fiber starter guide",
+          "email_segment": "nutrition-foundations",
+          "board": "Gut Health & Nutrition Tips",
+          "pin_image": "/images/pins/balanced-breakfast-that-keeps-you-full_v5.jpg",
+          "destination_url": "https://www.daily-life-hacks.com/balanced-breakfast-that-keeps-you-full-v5",
           "scheduled_count": 0,
           "publish_ready": true,
           "blocked_reasons": []

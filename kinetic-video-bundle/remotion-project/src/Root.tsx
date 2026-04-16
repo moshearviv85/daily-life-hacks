@@ -21,6 +21,7 @@ import { CabbageV1 } from './compositions/CabbageV1';
 import { CabbageV2 } from './compositions/CabbageV2';
 import { CabbageV3 } from './compositions/CabbageV3';
 import { CabbageV4 } from './compositions/CabbageV4';
+import { CabbageV5 } from './compositions/CabbageV5';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -194,6 +195,14 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="CabbageV4"
         component={CabbageV4}
+        durationInFrames={1728}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+      <Composition
+        id="CabbageV5"
+        component={CabbageV5}
         durationInFrames={1728}
         fps={30}
         width={1080}

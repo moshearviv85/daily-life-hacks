@@ -2,16 +2,24 @@
 Site Media Generation Script - Daily Life Hacks
 Model: Imagen 4 Ultra (imagen-4.0-ultra-generate-001) via :predict endpoint
 
-Generates 3 images per article, ALL without text:
-  {slug}-main.jpg        16:9  finished dish, for blog post hero
-  {slug}-ingredients.jpg 16:9  raw ingredients, same scene as main
-  {slug}-video.jpg       9:16  vertical, for Kinetic Video background
+**Reads (no CSV writes):**
+- ``pipeline-data/production-sheet.csv`` — ``slug``, ``title``, and
+  **pre-filled** ``image_main_filename``, ``image_ingredients_filename``,
+  ``image_video_filename`` (basenames only; used as output filenames).
+- ``pipeline-data/image-scenes.json`` — random scene lines.
 
-Main + Ingredients share the same randomly selected scene (consistency hack).
+**Disk:** writes under ``public/images/``, ``public/images/ingredients/``,
+``public/images/video/`` using the basename from the CSV column for each slot.
 
-Dimension validation: existing files are checked for correct orientation.
-Wrong-orientation files are deleted and regenerated automatically.
+**Skip vs generate:** for each slot, if the file **already exists** on disk with
+the correct orientation, the script **skips** (no API call). If the file is
+missing or wrong orientation, it **generates** (same basename). Deleting a bad
+image and re-running will recreate it.
+
+Main + ingredients share one random scene per row; video uses its own scene.
+Aspect ratios unchanged: 16:9 landscape (main, ingredients), 9:16 portrait (video).
 """
+import csv
 import os, json, requests, base64, io, time, random
 from datetime import datetime
 from PIL import Image
@@ -28,21 +36,27 @@ API_URL    = (
 )
 
 PROJECT_DIR       = "."
-TRACKER_FILE      = os.path.join(PROJECT_DIR, "pipeline-data", "content-tracker.json")
+PRODUCTION_SHEET  = os.path.join(PROJECT_DIR, "pipeline-data", "production-sheet.csv")
 SCENES_FILE       = os.path.join(PROJECT_DIR, "pipeline-data", "image-scenes.json")
-ARTICLES_DIR      = os.path.join(PROJECT_DIR, "src", "data", "articles")
-DRAFTS_DIR        = os.path.join(PROJECT_DIR, "pipeline-data", "drafts")
-SAVE_DIR_WEB      = os.path.join(PROJECT_DIR, "public", "images")               # main dish
-SAVE_DIR_ING      = os.path.join(PROJECT_DIR, "public", "images", "ingredients") # raw ingredients
-SAVE_DIR_VIDEO    = os.path.join(PROJECT_DIR, "public", "images", "video")       # kinetic video bg
+SAVE_DIR_WEB      = os.path.join(PROJECT_DIR, "public", "images")
+SAVE_DIR_ING      = os.path.join(PROJECT_DIR, "public", "images", "ingredients")
+SAVE_DIR_VIDEO    = os.path.join(PROJECT_DIR, "public", "images", "video")
 
-LIMIT                  = 0    # 0 = all; N = first N (test runs)
-SLEEP_BETWEEN_IMAGES   = 4    # seconds between API calls
-SLEEP_BETWEEN_ARTICLES = 8    # seconds between articles
-RATE_LIMIT_WAIT        = 65   # seconds to pause on 429
+LIMIT                  = 0
+SLEEP_BETWEEN_IMAGES   = 4
+SLEEP_BETWEEN_ARTICLES = 8
+RATE_LIMIT_WAIT        = 65
 MAX_RETRIES            = 3
-# If set to "1"/"true", generate ONLY the 9:16 video background per slug.
+HTTP_TIMEOUT           = int(os.getenv("GENERATE_SITE_MEDIA_HTTP_TIMEOUT", "180"))
 VIDEO_ONLY             = os.getenv("GENERATE_VIDEO_ONLY", "").strip().lower() in ("1", "true", "yes", "y")
+
+REQUIRED_COLUMNS = (
+    "slug",
+    "title",
+    "image_main_filename",
+    "image_ingredients_filename",
+    "image_video_filename",
+)
 # ────────────────────────────────────────────────────────────────────────────
 
 
@@ -54,7 +68,7 @@ def call_api(prompt: str, file_path: str, aspect_ratio: str = "16:9") -> str:
     }
     for attempt in range(MAX_RETRIES):
         try:
-            r = requests.post(API_URL, json=payload, timeout=120)
+            r = requests.post(API_URL, json=payload, timeout=HTTP_TIMEOUT)
             if r.status_code == 200:
                 data = r.json()
                 b64 = ""
@@ -86,22 +100,16 @@ def call_api(prompt: str, file_path: str, aspect_ratio: str = "16:9") -> str:
 
 
 def image_is_landscape(path: str) -> bool:
-    """True if image width > height (i.e. correct for 16:9 targets)."""
     with Image.open(path) as im:
         return im.width > im.height
 
 
 def image_is_portrait(path: str) -> bool:
-    """True if image height > width (i.e. correct for 9:16 target)."""
     with Image.open(path) as im:
         return im.height > im.width
 
 
 def need_regen(path: str, want_landscape: bool) -> bool:
-    """
-    Returns True if the file doesn't exist, or exists but has the wrong
-    orientation for what we want.
-    """
     if not os.path.exists(path):
         return True
     try:
@@ -114,23 +122,55 @@ def need_regen(path: str, want_landscape: bool) -> bool:
             os.remove(path)
         return wrong
     except Exception:
-        return True   # can't read → regenerate
+        return True
 
 
-def generate_one(
+def pad_row(row: list[str], width: int) -> None:
+    while len(row) < width:
+        row.append("")
+
+
+def cell(row: list[str], col: int) -> str:
+    if col >= len(row):
+        return ""
+    return row[col] if row[col] else ""
+
+
+def slot_needs_api(basename_cell: str, save_dir: str, want_landscape: bool) -> bool:
+    """True if this slot should run (non-empty basename in CSV and file missing or bad)."""
+    raw = basename_cell.strip()
+    if not raw:
+        return False
+    path = os.path.join(save_dir, os.path.basename(raw))
+    return need_regen(path, want_landscape)
+
+
+def process_image_slot(
     label: str,
     prompt: str,
-    file_path: str,
+    save_dir: str,
+    basename_cell: str,
     aspect_ratio: str,
     want_landscape: bool,
     count_ref: list,
 ) -> bool:
-    """Generate one image. Returns False only on QUOTA_LIMIT."""
-    if not need_regen(file_path, want_landscape):
-        print(f"  -> {label}: OK (exists, correct orientation).")
+    """
+    Returns False only on QUOTA_LIMIT.
+    Uses basename from CSV (column value); never writes CSV.
+    """
+    raw = basename_cell.strip()
+    if not raw:
+        print(f"  -> {label}: skip (empty filename in CSV).")
         return True
 
-    print(f"  -> {label} ({aspect_ratio})…")
+    base = os.path.basename(raw)
+    file_path = os.path.join(save_dir, base)
+
+    if not need_regen(file_path, want_landscape):
+        print(f"  -> {label}: skip (exists on disk, OK orientation).")
+        return True
+
+    print(f"  -> {label} ({aspect_ratio}) -> {base}.")
     status = call_api(prompt, file_path, aspect_ratio)
     if status == "QUOTA_LIMIT":
         print("  QUOTA LIMIT – stopping.")
@@ -141,63 +181,107 @@ def generate_one(
     return True
 
 
-def has_markdown(slug: str) -> bool:
+def load_sheet_and_indices() -> tuple[list[list[str]], dict[str, int]] | tuple[None, None]:
+    if not os.path.exists(PRODUCTION_SHEET):
+        print(f"ERROR: Missing {PRODUCTION_SHEET}")
+        return None, None
+    try:
+        with open(PRODUCTION_SHEET, "r", encoding="utf-8", newline="") as f:
+            rows = list(csv.reader(f))
+    except OSError as e:
+        print(f"ERROR: Cannot read production sheet: {e}")
+        return None, None
+    if len(rows) < 2:
+        print("ERROR: production-sheet has no data rows.")
+        return None, None
+    header = rows[0]
+    try:
+        idx = {name: header.index(name) for name in REQUIRED_COLUMNS}
+    except ValueError as e:
+        print(f"ERROR: production-sheet.csv missing required column: {e}")
+        return None, None
+    return rows, idx
+
+
+def row_needs_pass(row: list[str], idx: dict[str, int], header_len: int) -> bool:
+    """True if at least one slot has a basename and needs generation."""
+    pad_row(row, header_len)
+    v = cell(row, idx["image_video_filename"])
+    m = cell(row, idx["image_main_filename"])
+    i = cell(row, idx["image_ingredients_filename"])
+    if VIDEO_ONLY:
+        return slot_needs_api(v, SAVE_DIR_VIDEO, False)
     return (
-        bool(slug)
-        and (
-            os.path.exists(os.path.join(ARTICLES_DIR, f"{slug}.md"))
-            or os.path.exists(os.path.join(DRAFTS_DIR, f"{slug}.md"))
-        )
+        slot_needs_api(v, SAVE_DIR_VIDEO, False)
+        or slot_needs_api(m, SAVE_DIR_WEB, True)
+        or slot_needs_api(i, SAVE_DIR_ING, True)
     )
 
 
 def main():
-    os.makedirs(SAVE_DIR_WEB,   exist_ok=True)
-    os.makedirs(SAVE_DIR_ING,   exist_ok=True)
+    os.makedirs(SAVE_DIR_WEB, exist_ok=True)
+    os.makedirs(SAVE_DIR_ING, exist_ok=True)
     os.makedirs(SAVE_DIR_VIDEO, exist_ok=True)
 
-    with open(TRACKER_FILE, "r", encoding="utf-8") as f:
-        tracker = json.load(f)
+    all_rows, idx = load_sheet_and_indices()
+    if all_rows is None or idx is None:
+        return
+
+    header = all_rows[0]
+    hi = max(idx.values())
+
     with open(SCENES_FILE, "r", encoding="utf-8") as f:
         scenes = json.load(f)
 
-    items = [i for i in tracker if has_markdown(i.get("slug", ""))]
-
     only = [s.strip() for s in os.getenv("GENERATE_IMAGES_ONLY", "").split(",") if s.strip()]
-    if only:
-        want = set(only)
-        items = [i for i in items if i["slug"] in want]
-    else:
-        # Filter by missing images only — NOT by status.
-        # This way published articles with missing video/ingredients are also caught.
-        def needs_work(item):
-            slug = item.get("slug", "")
-            missing_main  = need_regen(os.path.join(SAVE_DIR_WEB,   f"{slug}-main.jpg"),        want_landscape=True)
-            missing_ing   = need_regen(os.path.join(SAVE_DIR_ING,   f"{slug}-ingredients.jpg"), want_landscape=True)
-            missing_video = need_regen(os.path.join(SAVE_DIR_VIDEO, f"{slug}-video.jpg"),        want_landscape=False)
-            return missing_main or missing_ing or missing_video
-        items = [i for i in items if needs_work(i)]
+    want_only = set(only) if only else None
+
+    work_indices: list[int] = []
+    for r_idx in range(1, len(all_rows)):
+        row = all_rows[r_idx]
+        pad_row(row, len(header))
+        if len(row) <= hi:
+            continue
+        slug = cell(row, idx["slug"]).strip()
+        if not slug:
+            continue
+        if want_only is not None and slug not in want_only:
+            continue
+        if not row_needs_pass(row, idx, len(header)):
+            continue
+        work_indices.append(r_idx)
 
     if LIMIT > 0:
-        items = items[:LIMIT]
+        work_indices = work_indices[:LIMIT]
 
     print(f"\n{'='*54}")
     print(f"  Site Media  |  {MODEL_NAME}")
-    print(f"  {len(items)} articles need at least one image")
+    print(f"  Read CSV (no writes): {PRODUCTION_SHEET}")
+    print(f"  Scenes (read only): {SCENES_FILE}")
+    print(f"  HTTP timeout: {HTTP_TIMEOUT}s")
+    print(f"  {len(work_indices)} row(s) with at least one missing/bad image")
     print(f"{'='*54}\n")
 
     quota_hit = False
     count = [0]
 
-    for item in items:
+    for r_idx in work_indices:
         if quota_hit:
             break
 
-        slug  = item.get("slug", "")
-        title = item.get("pin_title") or item.get("title") or slug.replace("-", " ").title()
+        row = all_rows[r_idx]
+        pad_row(row, len(header))
+        slug = cell(row, idx["slug"]).strip()
+        title = cell(row, idx["title"]).strip()
+        if not title:
+            title = slug.replace("-", " ").title()
+
+        video_cell = cell(row, idx["image_video_filename"])
+        main_cell = cell(row, idx["image_main_filename"])
+        ing_cell = cell(row, idx["image_ingredients_filename"])
+
         print(f"\n[{datetime.now().strftime('%H:%M:%S')}]  {slug}")
 
-        # ── Video background – 9:16 portrait ───────────────────────────────
         video_scene = random.choice(scenes)
         p_video = (
             f"{title}, {video_scene}. "
@@ -205,76 +289,69 @@ def main():
             "Portrait orientation. "
             "No text, no words, no watermarks."
         )
-        ok = generate_one(
-            "video bg (9:16)",
-            p_video,
-            os.path.join(SAVE_DIR_VIDEO, f"{slug}-video.jpg"),
-            "9:16",
-            want_landscape=False,
-            count_ref=count,
-        )
-        if not ok:
-            quota_hit = True
-            break
-        item["image_video"] = f"/images/video/{slug}-video.jpg"
+        # DISABLED AS PER REQUEST
+        # ok = process_image_slot(
+        #     "video bg (9:16)",
+        #     p_video,
+        #     SAVE_DIR_VIDEO,
+        #     video_cell,
+        #     "9:16",
+        #     False,
+        #     count,
+        # )
+        # if not ok:
+        #     quota_hit = True
+        #     break
 
         if not VIDEO_ONLY:
-            # Main dish and ingredients share ONE scene for visual consistency
             scene = random.choice(scenes)
-
-            # ── Main dish – 16:9 landscape ─────────────────────────────────
             p_main = (
                 f"{title}, {scene}. "
                 "Realistic food photography, beautifully plated finished dish. "
                 "No text, no words, no watermarks."
             )
-            ok = generate_one(
+            ok = process_image_slot(
                 "main dish (16:9)",
                 p_main,
-                os.path.join(SAVE_DIR_WEB, f"{slug}-main.jpg"),
+                SAVE_DIR_WEB,
+                main_cell,
                 "16:9",
-                want_landscape=True,
-                count_ref=count,
+                True,
+                count,
             )
             if not ok:
                 quota_hit = True
                 break
-            item["image_web"] = f"/images/{slug}-main.jpg"
 
-            # ── Raw ingredients – 16:9 landscape (same scene) ──────────────
             p_ing = (
                 f"Raw fresh ingredients for {title}, {scene}. "
                 "Realistic food photography, overhead or slight-angle flat-lay, "
                 "ingredients spread beautifully, no cooked food. "
                 "No text, no words, no watermarks."
             )
-            ok = generate_one(
-                "ingredients (16:9)",
-                p_ing,
-                os.path.join(SAVE_DIR_ING, f"{slug}-ingredients.jpg"),
-                "16:9",
-                want_landscape=True,
-                count_ref=count,
-            )
-            if not ok:
-                quota_hit = True
-                break
-            item["image_ingredients"] = f"/images/ingredients/{slug}-ingredients.jpg"
+            # DISABLED AS PER REQUEST
+            # ok = process_image_slot(
+            #     "ingredients (16:9)",
+            #     p_ing,
+            #     SAVE_DIR_ING,
+            #     ing_cell,
+            #     "16:9",
+            #     True,
+            #     count,
+            # )
+            # if not ok:
+            #     quota_hit = True
+            #     break
 
         if not quota_hit:
-            item["status"] = "SITE_MEDIA_READY"
-            done_count = 1 if VIDEO_ONLY else 3
-            print(f"  DONE – {done_count} image{'s' if done_count != 1 else ''}  ({slug})")
-
-        with open(TRACKER_FILE, "w", encoding="utf-8") as f:
-            json.dump(tracker, f, indent=2, ensure_ascii=False)
+            print(f"  DONE pass for ({slug})")
 
         time.sleep(SLEEP_BETWEEN_ARTICLES)
 
     print(f"\n{'='*54}")
-    print(f"  Generated {count[0]} new images.")
+    print(f"  New images written this run: {count[0]}")
     if quota_hit:
-        print("  Quota hit – re-run to resume (already-correct images are skipped).")
+        print("  Quota hit – re-run to resume.")
     print(f"{'='*54}")
 
 

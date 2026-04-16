@@ -1,5 +1,6 @@
 requests
 Pillow
+imagehash
 pytrends
 python-dotenv
 openpyxl
