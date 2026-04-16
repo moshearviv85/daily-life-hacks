@@ -38,6 +38,12 @@ function b64(str) {
   return btoa(unescape(encodeURIComponent(str)));
 }
 
+/** Strip frontmatter fields with empty values so Astro schema doesn't choke. */
+function cleanFrontmatter(markdown) {
+  // Remove lines like: publishAt: "" or publishAt: '' or publishAt: (empty)
+  return markdown.replace(/^publishAt:\s*["']{0,2}\s*$/m, '').replace(/\n{3,}/g, '\n\n');
+}
+
 /** Check if src/data/articles/{slug}.md exists in GitHub. Returns SHA or null. */
 async function getFileSha(slug, pat) {
   const res = await ghFetch(
@@ -139,7 +145,7 @@ export async function onRequestPost(context) {
     const filePath = `src/data/articles/${slug}.md`;
     const commitBody = {
       message: `feat: publish article ${slug}`,
-      content: b64(markdown_content),
+      content: b64(cleanFrontmatter(markdown_content)),
       branch: GH_BRANCH,
     };
 
