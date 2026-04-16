@@ -1,43 +1,33 @@
 /**
  * POST /api/pins-reschedule?key=SECRET
- * Re-schedules all PENDING pins in D1 using the 2-hour window logic.
- * Preserves current interleave order (sorted by scheduled_date, scheduled_time).
- * Starts scheduling from today UTC.
+ * Shuffles the scheduled_time of all PENDING pins — keeps their scheduled_date intact.
+ * Pins on the same day are spread across 2-hour windows in US active hours (13:00–01:00 UTC).
+ * Use this to randomize posting times without changing the overall date schedule.
  *
  * Response: { ok, rescheduled }
  */
 
-const START_HOUR = 6;
+// 13:00 UTC = 9am ET (EDT/summer). Covers 9am–1am ET — US active hours.
+const START_HOUR = 13;
 const WINDOW_H   = 2; // 2-hour windows
 
-function rescheduleRows(rows) {
-  const todayUTC = new Date();
-  todayUTC.setUTCHours(0, 0, 0, 0);
-
-  const result = [];
-  let idx = 0;
-  let dayOffset = 0;
-
-  while (idx < rows.length) {
-    const pinsToday = 6 + Math.floor(Math.random() * 3); // 6, 7, or 8
-    for (let slot = 0; slot < pinsToday && idx < rows.length; slot++, idx++) {
-      const d = new Date(todayUTC);
-      d.setUTCDate(d.getUTCDate() + dayOffset);
-      const windowStartMin  = (START_HOUR + slot * WINDOW_H) * 60;
-      const randomOffsetMin = Math.floor(Math.random() * WINDOW_H * 60); // 0–119
-      const totalMin = windowStartMin + randomOffsetMin;
-      const h = Math.floor(totalMin / 60);
-      const m = totalMin % 60;
-      d.setUTCHours(h, m, 0, 0);
-      result.push({
-        row_id:         rows[idx].row_id,
-        scheduled_date: d.toISOString().split("T")[0],
-        scheduled_time: `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}`,
-      });
-    }
-    dayOffset++;
-  }
-  return result;
+/** Assign random times to an array of row_ids for a single day, keeping the date fixed. */
+function assignTimesForDay(rowIds, date) {
+  // Shuffle slot order so different pins get different windows each time
+  const slots = rowIds.map((_, i) => i).sort(() => Math.random() - 0.5);
+  return rowIds.map((row_id, i) => {
+    const slot = slots[i];
+    const windowStartMin  = (START_HOUR + slot * WINDOW_H) * 60;
+    const randomOffsetMin = Math.floor(Math.random() * WINDOW_H * 60); // 0–119
+    const totalMin = windowStartMin + randomOffsetMin;
+    const h = Math.floor(totalMin / 60) % 24; // stay within 00–23
+    const m = totalMin % 60;
+    return {
+      row_id,
+      scheduled_date: date,
+      scheduled_time: `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}`,
+    };
+  });
 }
 
 export async function onRequestPost(context) {
@@ -61,9 +51,9 @@ export async function onRequestPost(context) {
     });
   }
 
-  // Fetch all PENDING pins in current order
+  // Fetch all PENDING pins with their current scheduled_date
   const { results } = await db.prepare(`
-    SELECT row_id FROM pins_schedule
+    SELECT row_id, scheduled_date FROM pins_schedule
     WHERE status = 'PENDING'
     ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC, row_id ASC
   `).all();
@@ -74,18 +64,28 @@ export async function onRequestPost(context) {
     });
   }
 
-  const rescheduled = rescheduleRows(results);
-
-  // Update in batches of 20
-  for (const row of rescheduled) {
-    await db.prepare(`
-      UPDATE pins_schedule
-      SET scheduled_date = ?, scheduled_time = ?, updated_at = datetime('now')
-      WHERE row_id = ?
-    `).bind(row.scheduled_date, row.scheduled_time, row.row_id).run();
+  // Group by date — keeps dates intact, only times change
+  const byDate = {};
+  for (const row of results) {
+    const d = row.scheduled_date;
+    if (!byDate[d]) byDate[d] = [];
+    byDate[d].push(row.row_id);
   }
 
-  return new Response(JSON.stringify({ ok: true, rescheduled: rescheduled.length }), {
+  const toUpdate = [];
+  for (const [date, rowIds] of Object.entries(byDate)) {
+    toUpdate.push(...assignTimesForDay(rowIds, date));
+  }
+
+  for (const row of toUpdate) {
+    await db.prepare(`
+      UPDATE pins_schedule
+      SET scheduled_time = ?, updated_at = datetime('now')
+      WHERE row_id = ?
+    `).bind(row.scheduled_time, row.row_id).run();
+  }
+
+  return new Response(JSON.stringify({ ok: true, rescheduled: toUpdate.length }), {
     headers: { "Content-Type": "application/json" },
   });
 }
