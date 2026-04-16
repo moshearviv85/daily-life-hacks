@@ -1,0 +1,283 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Your Free Weekly Meal Plan";
+const description = "Choose from three free weekly meal plans designed to help you eat better, feel stronger, and stay on track — all week long. Download instantly.";
+---
+
+<BaseLayout title={title} description={description} robots="index, follow, max-image-preview:large, max-snippet:-1">
+  <Header />
+
+  <style>
+    .plan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+    .plan-card {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .badge-gut    { background: #d1fae5; color: #065f46; }
+    .badge-energy { background: #fef3e2; color: #92400e; }
+    .badge-protein { background: #e0e7ff; color: #3730a3; }
+
+    html.dark .badge-gut    { background: #064e3b; color: #6ee7b7; }
+    html.dark .badge-energy { background: #451a03; color: #fbbf24; }
+    html.dark .badge-protein { background: #1e1b4b; color: #a5b4fc; }
+
+    .check-icon { color: #10b981; }
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-color), transparent);
+      margin: 3rem 0;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-animate { animation: fadeUp 0.7s ease both; }
+    .card-animate-1 { animation: fadeUp 0.7s ease 0.15s both; }
+    .card-animate-2 { animation: fadeUp 0.7s ease 0.30s both; }
+    .card-animate-3 { animation: fadeUp 0.7s ease 0.45s both; }
+  </style>
+
+  <main>
+    <!-- ── Hero ── -->
+    <section class="hero-animate" style="background: linear-gradient(135deg, #fff8f0 0%, #f9fafb 60%, #ecfdf5 100%); border-bottom: 1px solid var(--border-color);">
+      <div class="max-w-4xl mx-auto px-4 py-16 md:py-24 text-center">
+        <span class="inline-block text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" style="background-color: #F29B30; color: #fff;">
+          Free Download
+        </span>
+        <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight" style="color: var(--heading-color); line-height: 1.1;">
+          Your free weekly<br/>meal plan is here.
+        </h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10" style="color: var(--muted-color); line-height: 1.7;">
+          Three different plans. One for your gut, one for your energy, one for your gains.
+          Pick the one that fits your goal — then print it or save it as a PDF.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-medium" style="color: var(--muted-color);">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="#10b981" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            100% free
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="#10b981" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            No sign-up required
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="#10b981" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            Print-ready PDF
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="#10b981" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            Dietitian-reviewed
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3 Plan Cards ── -->
+    <section class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-black text-center mb-4 tracking-tight" style="color: var(--heading-color);">Choose your plan</h2>
+      <p class="text-center mb-12 text-base" style="color: var(--muted-color);">All three are free. You can download all of them if you like.</p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Plan 1: Gut Health Reset -->
+        <div class="plan-card card-animate-1 rounded-3xl overflow-hidden" style="background-color: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+          <div class="relative h-52 overflow-hidden">
+            <img
+              src="/images/artichoke-recipes-for-gut-health-main.jpg"
+              alt="Gut health meal plan"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              width="400" height="208"
+            />
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
+            <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full badge-gut">Gut Health</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-black mb-2 tracking-tight" style="color: var(--heading-color);">7-Day Gut Health Reset</h3>
+            <p class="text-sm mb-5" style="color: var(--muted-color); line-height: 1.6;">
+              High-fiber meals, fermented foods, and gut-friendly ingredients to help you feel less bloated and more energized.
+            </p>
+            <ul class="space-y-2 mb-6">
+              {[
+                "~1,800 cal/day | 40–50g fiber",
+                "Probiotic & prebiotic rich meals",
+                "5 meals per day including snacks",
+                "Shopping list included",
+              ].map(item => (
+                <li class="flex items-start gap-2.5 text-sm" style="color: var(--text-color);">
+                  <svg class="w-4 h-4 mt-0.5 flex-shrink-0 check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/meal-plan/gut-health-reset"
+              class="flex items-center justify-center gap-2 w-full rounded-xl px-5 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+              style="background-color: #059669;"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              View & Download Free
+            </a>
+          </div>
+        </div>
+
+        <!-- Plan 2: Energy & Weight Loss -->
+        <div class="plan-card card-animate-2 rounded-3xl overflow-hidden" style="background-color: var(--card-bg); border: 2px solid #F29B30; box-shadow: 0 4px 24px rgba(242,155,48,0.15);">
+          <div class="relative">
+            <div class="absolute top-0 left-0 right-0 text-center py-2 text-xs font-bold text-white z-10" style="background-color: #F29B30;">
+              Most Popular
+            </div>
+          </div>
+          <div class="relative h-52 overflow-hidden mt-8">
+            <img
+              src="/images/balanced-breakfast-that-keeps-you-full-main.jpg"
+              alt="Energy and weight loss meal plan"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              width="400" height="208"
+            />
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
+            <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full badge-energy">Energy & Weight</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-black mb-2 tracking-tight" style="color: var(--heading-color);">7-Day Energy & Weight Loss</h3>
+            <p class="text-sm mb-5" style="color: var(--muted-color); line-height: 1.6;">
+              Balanced, satisfying meals that keep you full and fuel your day — without counting every calorie or feeling deprived.
+            </p>
+            <ul class="space-y-2 mb-6">
+              {[
+                "~1,600 cal/day | 90–100g protein",
+                "Simple, family-friendly recipes",
+                "5 meals per day including snacks",
+                "Meal prep tips for Sunday",
+              ].map(item => (
+                <li class="flex items-start gap-2.5 text-sm" style="color: var(--text-color);">
+                  <svg class="w-4 h-4 mt-0.5 flex-shrink-0 check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/meal-plan/energy-and-weight-loss"
+              class="flex items-center justify-center gap-2 w-full rounded-xl px-5 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+              style="background-color: #F29B30;"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              View & Download Free
+            </a>
+          </div>
+        </div>
+
+        <!-- Plan 3: High-Protein Power -->
+        <div class="plan-card card-animate-3 rounded-3xl overflow-hidden" style="background-color: var(--card-bg); border: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+          <div class="relative h-52 overflow-hidden">
+            <img
+              src="/images/beans-and-rice-complete-protein-meal-main.jpg"
+              alt="High protein meal plan"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              width="400" height="208"
+            />
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 55%);"></div>
+            <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full badge-protein">High Protein</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-black mb-2 tracking-tight" style="color: var(--heading-color);">7-Day High-Protein Power</h3>
+            <p class="text-sm mb-5" style="color: var(--muted-color); line-height: 1.6;">
+              A protein-forward plan built for muscle maintenance, satiety, and steady energy — ideal if you're active or building lean muscle.
+            </p>
+            <ul class="space-y-2 mb-6">
+              {[
+                "~2,000 cal/day | 150–180g protein",
+                "Lean proteins at every meal",
+                "5 meals per day including snacks",
+                "High-volume, filling portions",
+              ].map(item => (
+                <li class="flex items-start gap-2.5 text-sm" style="color: var(--text-color);">
+                  <svg class="w-4 h-4 mt-0.5 flex-shrink-0 check-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/meal-plan/high-protein-power"
+              class="flex items-center justify-center gap-2 w-full rounded-xl px-5 py-3.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+              style="background-color: #4338ca;"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              View & Download Free
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- ── How It Works ── -->
+    <section class="max-w-4xl mx-auto px-4 pb-16">
+      <h2 class="text-2xl md:text-3xl font-black text-center mb-12 tracking-tight" style="color: var(--heading-color);">How to use your meal plan</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        {[
+          {
+            num: "1",
+            color: "#059669",
+            title: "Choose your plan",
+            text: "Pick the one that matches your current goal — gut health, weight loss, or muscle building.",
+          },
+          {
+            num: "2",
+            color: "#F29B30",
+            title: "Print or save as PDF",
+            text: "Click the download button on the plan page. Your browser will print it — just save as PDF.",
+          },
+          {
+            num: "3",
+            color: "#4338ca",
+            title: "Follow it for 7 days",
+            text: "Use the shopping list, prep what you can on Sunday, and check off each meal as you go.",
+          },
+        ].map(step => (
+          <div>
+            <div class="text-5xl font-black mb-4" style={`color: ${step.color};`}>{step.num}</div>
+            <h3 class="text-lg font-bold mb-2" style="color: var(--heading-color);">{step.title}</h3>
+            <p class="text-sm leading-relaxed" style="color: var(--muted-color);">{step.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <div class="section-divider max-w-4xl mx-auto"></div>
+
+    <!-- ── Newsletter CTA ── -->
+    <section class="max-w-2xl mx-auto px-4 pb-20 text-center">
+      <span class="text-3xl mb-4 block">
+        <svg class="w-10 h-10 mx-auto" fill="none" stroke="#F29B30" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+      </span>
+      <h2 class="text-2xl md:text-3xl font-black mb-4 tracking-tight" style="color: var(--heading-color);">
+        Want a new plan every week?
+      </h2>
+      <p class="text-base mb-8" style="color: var(--muted-color); line-height: 1.7;">
+        Join the Daily Life Hacks newsletter and get weekly recipes, nutrition tips, and practical guides delivered straight to your inbox — free.
+      </p>
+      <a
+        href="/#newsletter"
+        class="inline-flex items-center gap-2 rounded-xl px-8 py-4 text-base font-bold text-white transition-opacity hover:opacity-90"
+        style="background-color: #F29B30; box-shadow: 0 4px 14px rgba(242,155,48,0.3);"
+      >
+        Join the newsletter — it's free
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+      <p class="text-xs mt-4" style="color: var(--label-color);">No spam. Unsubscribe any time.</p>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>
