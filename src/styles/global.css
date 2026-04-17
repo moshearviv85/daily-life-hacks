@@ -77,6 +77,19 @@ body.mobile-menu-open [data-pin-log] {
   display: none !important;
 }
 
+/* Pinterest Save button overlay — always visible on touch devices
+   (group-hover relies on hover, which doesn't exist on touch-only screens) */
+@media (hover: none) {
+  .dlh-pin-save {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.dlh-pin-save:hover {
+  background-color: #ad081b !important;
+}
+
 body {
   font-family: system-ui, -apple-system, sans-serif;
   background-color: var(--page-bg);

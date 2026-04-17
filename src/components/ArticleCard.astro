@@ -35,10 +35,15 @@ const formatDate = (d: Date) =>
   });
 
 const badgeColor = "#F29B30";
+
+const pageUrl = new URL("/" + slug, Astro.site || Astro.url.origin).href;
+const mediaUrl = new URL(image, Astro.site || Astro.url.origin).href;
+const pinDescription = `${title} - ${excerpt} | Daily Life Hacks`;
+const pinBuilderUrl = `https://www.pinterest.com/pin-builder/?media=${encodeURIComponent(mediaUrl)}&url=${encodeURIComponent(pageUrl)}&is_video=false&description=${encodeURIComponent(pinDescription)}&method=bookmarklet`;
 ---
 
 <article
-  class={`group rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg ${fillHeight ? "h-full flex flex-col" : ""}`}
+  class={`group relative rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg ${fillHeight ? "h-full flex flex-col" : ""}`}
   style="background-color: var(--card-bg); box-shadow: 0 1px 3px rgba(0,0,0,0.08);"
 >
   <a
@@ -54,9 +59,10 @@ const badgeColor = "#F29B30";
         alt={imageAlt}
         width={640}
         height={size === "sm" ? 480 : 360}
-        data-pin-url={new URL("/" + slug, Astro.site || Astro.url.origin).href}
-        data-pin-media={new URL(image, Astro.site || Astro.url.origin).href}
-        data-pin-description={`${title} - ${excerpt} | Daily Life Hacks`}
+        data-pin-url={pageUrl}
+        data-pin-media={mediaUrl}
+        data-pin-description={pinDescription}
+        data-pin-nopin="true"
         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         loading={loading}
         decoding={loading === "lazy" ? "async" : "sync"}
@@ -102,5 +108,22 @@ const badgeColor = "#F29B30";
         )
       }
     </div>
+  </a>
+
+  <!-- Pinterest Save button (opens pin-builder in a new tab) -->
+  <a
+    href={pinBuilderUrl}
+    target="_blank"
+    rel="noopener nofollow"
+    aria-label="Save to Pinterest"
+    title="Save to Pinterest"
+    class="dlh-pin-save absolute top-3 right-3 z-10 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold text-white opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 focus:opacity-100 focus:translate-y-0 transition-all duration-200 shadow-md"
+    style="background-color: #E60023;"
+    onclick="event.stopPropagation();"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
+      <path d="M12 0a12 12 0 0 0-4.37 23.17c-.1-.94-.2-2.4.04-3.43.22-.93 1.4-5.94 1.4-5.94s-.36-.72-.36-1.78c0-1.67.97-2.92 2.17-2.92 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 4-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.26 3.78-5.52 0-2.88-2.07-4.9-5.03-4.9-3.43 0-5.44 2.57-5.44 5.23 0 1.04.4 2.15.9 2.76.1.11.11.21.08.33l-.34 1.37c-.05.22-.17.27-.4.16-1.48-.7-2.4-2.86-2.4-4.6 0-3.75 2.72-7.19 7.84-7.19 4.12 0 7.32 2.94 7.32 6.87 0 4.09-2.58 7.39-6.17 7.39-1.2 0-2.33-.62-2.72-1.36l-.74 2.83c-.27 1.04-1 2.34-1.49 3.14A12 12 0 1 0 12 0Z"/>
+    </svg>
+    <span>Save</span>
   </a>
 </article>

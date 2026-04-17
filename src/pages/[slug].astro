@@ -233,28 +233,45 @@ const robotsMeta = released ? undefined : "noindex, follow";
     <div id="release-content" style={pendingRelease ? "display: none;" : undefined}>
 
     <!-- Featured Image — top of article -->
-    <div class="relative mb-8 group rounded-2xl overflow-hidden shadow-md">
-      <Image
-        src={article.data.image}
-        alt={article.data.imageAlt}
-        width={768}
-        height={432}
-        fetchpriority="high"
-        loading="eager"
-        decoding="sync"
-        inferSize={true}
-        data-pin-description={`${article.data.title} - ${article.data.excerpt} | Daily Life Hacks`}
-        data-pin-url={new URL(
-          Astro.url.pathname,
-          Astro.site || Astro.url.origin,
-        ).href}
-        data-pin-media={new URL(
-          article.data.image,
-          Astro.site || Astro.url.origin,
-        ).href}
-        class="w-full aspect-video object-cover"
-      />
-    </div>
+    {(() => {
+      const featuredPageUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
+      const featuredMediaUrl = new URL(article.data.image, Astro.site || Astro.url.origin).href;
+      const featuredDesc = `${article.data.title} - ${article.data.excerpt} | Daily Life Hacks`;
+      const featuredPinBuilderUrl = `https://www.pinterest.com/pin-builder/?media=${encodeURIComponent(featuredMediaUrl)}&url=${encodeURIComponent(featuredPageUrl)}&is_video=false&description=${encodeURIComponent(featuredDesc)}&method=bookmarklet`;
+      return (
+        <div class="relative mb-8 group rounded-2xl overflow-hidden shadow-md">
+          <Image
+            src={article.data.image}
+            alt={article.data.imageAlt}
+            width={768}
+            height={432}
+            fetchpriority="high"
+            loading="eager"
+            decoding="sync"
+            inferSize={true}
+            data-pin-description={featuredDesc}
+            data-pin-url={featuredPageUrl}
+            data-pin-media={featuredMediaUrl}
+            data-pin-nopin="true"
+            class="w-full aspect-video object-cover"
+          />
+          <a
+            href={featuredPinBuilderUrl}
+            target="_blank"
+            rel="noopener nofollow"
+            aria-label="Save to Pinterest"
+            title="Save to Pinterest"
+            class="dlh-pin-save absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold text-white shadow-md hover:shadow-lg transition-all duration-200"
+            style="background-color: #E60023;"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+              <path d="M12 0a12 12 0 0 0-4.37 23.17c-.1-.94-.2-2.4.04-3.43.22-.93 1.4-5.94 1.4-5.94s-.36-.72-.36-1.78c0-1.67.97-2.92 2.17-2.92 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 4-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.26 3.78-5.52 0-2.88-2.07-4.9-5.03-4.9-3.43 0-5.44 2.57-5.44 5.23 0 1.04.4 2.15.9 2.76.1.11.11.21.08.33l-.34 1.37c-.05.22-.17.27-.4.16-1.48-.7-2.4-2.86-2.4-4.6 0-3.75 2.72-7.19 7.84-7.19 4.12 0 7.32 2.94 7.32 6.87 0 4.09-2.58 7.39-6.17 7.39-1.2 0-2.33-.62-2.72-1.36l-.74 2.83c-.27 1.04-1 2.34-1.49 3.14A12 12 0 1 0 12 0Z"/>
+            </svg>
+            <span>Save</span>
+          </a>
+        </div>
+      );
+    })()}
 
     <!-- Article Header -->
     <header class="mb-8">

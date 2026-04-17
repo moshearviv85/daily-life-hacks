@@ -157,39 +157,14 @@ const {
     <slot />
     <NewsletterPopup />
 
-    <!-- Pinterest Save Button SDK -->
+    <!-- Pinterest: custom Save overlay handles pin creation; SDK removed to avoid mobile issues -->
     <script is:inline>
-      function loadPinterestSDK() {
-        // Clear old Pinterest tracking elements
+      document.addEventListener("astro:page-load", function () {
         document.querySelectorAll("[data-pin-log]").forEach(function (el) {
           el.remove();
         });
-
         var old = document.getElementById("pinterest-sdk");
         if (old) old.remove();
-
-        // Reset the globals to force full re-initialization
-        window.PinUtils = null;
-        window.PIN_XXXX = null;
-        for (var key in window) {
-          if (key.startsWith("PIN_")) {
-            window[key] = null;
-          }
-        }
-
-        var s = document.createElement("script");
-        s.id = "pinterest-sdk";
-        s.async = true;
-        s.src = "https://assets.pinterest.com/js/pinit.js";
-        s.setAttribute("data-pin-hover", "true");
-        s.setAttribute("data-pin-tall", "true");
-        s.setAttribute("data-pin-round", "true");
-        document.body.appendChild(s);
-      }
-
-      document.addEventListener("astro:page-load", function () {
-        // Small timeout allows DOM to settle before Pinterest scans it
-        setTimeout(loadPinterestSDK, 150);
       });
     </script>
 
