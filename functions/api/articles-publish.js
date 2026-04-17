@@ -94,12 +94,15 @@ export async function onRequestPost(context) {
     if (!row) return Response.json({ error: 'Article not found or already published' }, { status: 404 });
     candidates = [row];
   } else {
-    // Auto-pick: all PENDING ordered by row_num (original CSV order)
+    // Auto-pick: PENDING articles whose publish_at date has arrived (or has no date)
+    const today = new Date().toISOString().slice(0, 10);
     const { results } = await env.DB.prepare(
       `SELECT slug, title, markdown_content, image_filename
-       FROM articles_schedule WHERE status = 'PENDING'
+       FROM articles_schedule
+       WHERE status = 'PENDING'
+         AND (publish_at IS NULL OR publish_at = '' OR publish_at <= ?)
        ORDER BY row_num ASC, created_at ASC`
-    ).all();
+    ).bind(today).all();
     candidates = results;
   }
 

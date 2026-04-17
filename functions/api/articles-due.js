@@ -30,8 +30,9 @@ export async function onRequestGet(context) {
       `SELECT slug, title, category, image_filename, markdown_content, row_num, created_at
        FROM articles_schedule
        WHERE status = 'PENDING'
+         AND (publish_at IS NULL OR publish_at = '' OR publish_at <= ?)
        ORDER BY row_num ASC, created_at ASC`
-    ).all();
+    ).bind(today).all();
     results = res.results;
   } catch (e) {
     return Response.json({ error: 'DB query failed: ' + e.message }, { status: 500 });
