@@ -211,12 +211,12 @@ def main():
         if quota_hit:
             break
 
-        slug        = item.get("slug", "")
-        title       = item.get("pin_title") or item.get("title") or slug.replace("-", " ").title()
-        description = item.get("description", "")
-        alt_text    = item.get("alt_text", "")
-        hashtags    = item.get("hashtags", [])
-        category    = item.get("category", "")
+        slug         = item.get("slug", "")
+        article_title = item.get("title") or slug.replace("-", " ").title()
+        description  = item.get("pin_v1_description") or item.get("description", "")
+        alt_text     = item.get("pin_v1_alt_text") or item.get("alt_text", "")
+        hashtags     = item.get("hashtags", [])
+        category     = item.get("category", "")
 
         print(f"\n[{datetime.now().strftime('%H:%M:%S')}]  {slug}")
 
@@ -226,11 +226,12 @@ def main():
             pin_filename = f"{slug}_v{v}.jpg"
             pin_path     = os.path.join(SAVE_DIR_PINS, pin_filename)
 
-            # Per-variant title from router_mapping (if available)
+            # Per-variant title: prefer CSV column pin_v{N}_title, then router_mapping, then article title
             variant_key   = f"v{v}"
-            variant_title = title
-            if slug in router_mapping and variant_key in router_mapping[slug]:
-                variant_title = router_mapping[slug][variant_key]
+            variant_title = item.get(f"pin_{variant_key}_title") or article_title
+            if variant_title == article_title and slug in router_mapping and variant_key in router_mapping[slug]:
+                mapped = router_mapping[slug][variant_key]
+                variant_title = mapped.get("title", article_title) if isinstance(mapped, dict) else mapped
 
             if os.path.exists(pin_path) and is_portrait(pin_path):
                 print(f"  -> Pin v{v}/{PINS_PER_ARTICLE}: OK (exists, portrait).")
@@ -263,14 +264,17 @@ def main():
                     if category == "recipes"
                     else "Gut Health Tips and Nutrition Charts"
                 )
+                variant_description = item.get(f"pin_{variant_key}_description") or description
+                variant_alt_text    = item.get(f"pin_{variant_key}_alt_text") or alt_text
+                variant_link        = item.get(f"pin_{variant_key}_link") or f"{SITE_URL}/{slug}?utm_content={variant_key}"
                 pin_export_rows.append({
                     "image_filename":  pin_filename,
                     "image_url":       f"https://www.daily-life-hacks.com/images/pins/{pin_filename}",
                     "pin_title":       variant_title,
-                    "description":     f"{description} {hashtag_str}".strip(),
-                    "destination_url": f"{SITE_URL}/{slug}?utm_content={variant_key}",
+                    "description":     f"{variant_description} {hashtag_str}".strip(),
+                    "destination_url": variant_link,
                     "board":           board,
-                    "alt_text":        alt_text,
+                    "alt_text":        variant_alt_text,
                 })
 
         if not quota_hit:
