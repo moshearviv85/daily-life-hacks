@@ -2,7 +2,9 @@ name: Daily Article Publisher
 
 on:
   schedule:
-    - cron: '0 7 * * *'   # 07:00 UTC every day
+    - cron: '0 7 * * *'    # 07:00 UTC every day (production)
+    - cron: '30 9 17 4 *'  # TEST: 09:30 UTC on 2026-04-17 only — article 1
+    - cron: '40 9 17 4 *'  # TEST: 09:40 UTC on 2026-04-17 only — article 2
   workflow_dispatch:        # manual trigger from dashboard
 
 env:

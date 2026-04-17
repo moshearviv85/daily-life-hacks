@@ -2155,8 +2155,11 @@ async function uploadArticlesCSV() {
       return;
     }
 
+    const uploadSummary = data.inserted > 0
+      ? `${data.inserted} new article${data.inserted > 1 ? 's' : ''}`
+      : `${data.updated ?? 0} updated`;
     statusEl.style.color = 'var(--muted)';
-    statusEl.textContent = `✓ Uploaded ${data.inserted} articles. Publishing first article...`;
+    statusEl.textContent = `✓ Uploaded (${uploadSummary}). Publishing first article...`;
 
     // Auto-publish first article immediately after upload
     const pubRes  = await fetch(`/api/articles-publish?key=${encodeURIComponent(pw)}`, {
@@ -2171,10 +2174,10 @@ async function uploadArticlesCSV() {
 
     if (pubData.ok) {
       statusEl.style.color = '#16a34a';
-      statusEl.textContent = `✓ Uploaded ${data.inserted} articles. Published: "${pubData.title || pubData.slug}"${dupNote}`;
+      statusEl.textContent = `✓ (${uploadSummary}). Published: "${pubData.title || pubData.slug}"${dupNote}`;
     } else {
       statusEl.style.color = dupCount > 0 ? '#dc2626' : '#F29B30';
-      statusEl.textContent = `✓ Uploaded ${data.inserted} articles. ${pubData.error || 'Publish failed'}${dupNote}`;
+      statusEl.textContent = `✓ (${uploadSummary}). ${pubData.error || 'Publish failed'}${dupNote}`;
     }
 
     loadArticles();

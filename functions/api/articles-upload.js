@@ -2,6 +2,11 @@
  * POST /api/articles-upload?key=STATS_KEY
  * Accepts a CSV (production-sheet.csv) as text body.
  * Parses rows and upserts into articles_schedule D1 table.
+ *
+ * Row ordering: uses the "row" column from CSV (or insertion index) to preserve
+ * original CSV order — articles-due.js sorts by row_num ASC.
+ *
+ * On re-upload: updates content/image only, never resets status or row_num.
  */
 
 function parseCSV(text) {
@@ -15,14 +20,14 @@ function parseCSV(text) {
     do {
       let field;
       if (pos < len && text[pos] === '"') {
-        pos++; // skip opening "
+        pos++;
         field = '';
         while (pos < len) {
           if (text[pos] === '"') {
             if (pos + 1 < len && text[pos + 1] === '"') {
               field += '"'; pos += 2;
             } else {
-              pos++; break; // closing "
+              pos++; break;
             }
           } else {
             field += text[pos++];
@@ -54,6 +59,31 @@ export async function onRequestPost(context) {
   }
   if (!env.DB) return Response.json({ error: 'DB not bound' }, { status: 500 });
 
+  // Ensure table + columns exist (safe to run on every request)
+  try {
+    await env.DB.prepare(`
+      CREATE TABLE IF NOT EXISTS articles_schedule (
+        slug TEXT PRIMARY KEY,
+        title TEXT NOT NULL,
+        category TEXT,
+        markdown_content TEXT NOT NULL,
+        image_filename TEXT,
+        publish_at TEXT,
+        row_num INTEGER DEFAULT 0,
+        status TEXT DEFAULT 'PENDING',
+        published_at TEXT,
+        created_at TEXT DEFAULT (datetime('now'))
+      )
+    `).run();
+    // Migrate older tables that don't have row_num yet
+    // (ALTER TABLE fails silently if column already exists — that's expected)
+    try { await env.DB.prepare(`ALTER TABLE articles_schedule ADD COLUMN row_num INTEGER DEFAULT 0`).run(); } catch(_) {}
+    try { await env.DB.prepare(`CREATE INDEX IF NOT EXISTS idx_artsch_status  ON articles_schedule(status)`).run(); } catch(_) {}
+    try { await env.DB.prepare(`CREATE INDEX IF NOT EXISTS idx_artsch_row_num ON articles_schedule(row_num)`).run(); } catch(_) {}
+  } catch (e) {
+    return Response.json({ error: 'DB setup failed: ' + e.message }, { status: 500 });
+  }
+
   const text = await request.text().catch(() => '');
   if (!text) return Response.json({ error: 'Empty body' }, { status: 400 });
 
@@ -63,6 +93,7 @@ export async function onRequestPost(context) {
   const headers = rows[0].map(h => h.trim());
   const col = name => headers.indexOf(name);
 
+  const iRow      = col('row');
   const iSlug     = col('slug');
   const iTitle    = col('title');
   const iCat      = col('category');
@@ -74,7 +105,8 @@ export async function onRequestPost(context) {
     return Response.json({ error: 'Missing required columns: slug, title, article_markdown' }, { status: 400 });
   }
 
-  let inserted = 0, skipped = 0;
+  let inserted = 0, updated = 0, skipped = 0;
+  const errors = [];
   const now = new Date().toISOString();
 
   for (let r = 1; r < rows.length; r++) {
@@ -84,23 +116,50 @@ export async function onRequestPost(context) {
     const markdown = row[iMarkdown]?.trim();
     if (!slug || !title || !markdown) { skipped++; continue; }
 
-    const category   = iCat    >= 0 ? (row[iCat]?.trim()   || '') : '';
-    const imagefile  = iImage  >= 0 ? (row[iImage]?.trim()  || '') : '';
-    const publishAt  = iPublish >= 0 ? (row[iPublish]?.trim() || '') : '';
+    const category  = iCat     >= 0 ? (row[iCat]?.trim()     || '') : '';
+    const imagefile = iImage   >= 0 ? (row[iImage]?.trim()    || '') : '';
+    const publishAt = iPublish >= 0 ? (row[iPublish]?.trim()  || '') : '';
+    // Preserve original CSV row order: use "row" column if present, else loop index
+    const rowNum    = iRow     >= 0 ? (parseInt(row[iRow]) || r) : r;
 
-    await env.DB.prepare(
-      `INSERT INTO articles_schedule (slug, title, category, markdown_content, image_filename, publish_at, status, created_at)
-       VALUES (?,?,?,?,?,?,?,?)
-       ON CONFLICT(slug) DO UPDATE SET
-         title=excluded.title, category=excluded.category,
-         markdown_content=excluded.markdown_content,
-         image_filename=excluded.image_filename,
-         publish_at=excluded.publish_at,
-         created_at=excluded.created_at`
-    ).bind(slug, title, category, markdown, imagefile, publishAt, 'PENDING', now)
-     .run().catch(() => null);
-    inserted++;
+    try {
+      // Check if row already exists
+      const existing = await env.DB.prepare(
+        `SELECT slug, status FROM articles_schedule WHERE slug = ?`
+      ).bind(slug).first();
+
+      if (existing) {
+        // Re-upload: update content + image, but NEVER reset status or row_num
+        await env.DB.prepare(
+          `UPDATE articles_schedule
+           SET title=?, category=?, markdown_content=?, image_filename=?, publish_at=?
+           WHERE slug=?`
+        ).bind(title, category, markdown, imagefile, publishAt, slug).run();
+        updated++;
+      } else {
+        // New row: insert with PENDING status
+        await env.DB.prepare(
+          `INSERT INTO articles_schedule
+             (slug, title, category, markdown_content, image_filename, publish_at, row_num, status, created_at)
+           VALUES (?,?,?,?,?,?,?,'PENDING',?)`
+        ).bind(slug, title, category, markdown, imagefile, publishAt, rowNum, now).run();
+        inserted++;
+      }
+    } catch (e) {
+      errors.push(`${slug}: ${e.message}`);
+    }
   }
 
-  return Response.json({ ok: true, inserted, skipped });
+  if (errors.length > 0) {
+    return Response.json({
+      ok: false,
+      error: `${errors.length} row(s) failed`,
+      details: errors.slice(0, 5),
+      inserted,
+      updated,
+      skipped,
+    }, { status: 500 });
+  }
+
+  return Response.json({ ok: true, inserted, updated, skipped });
 }

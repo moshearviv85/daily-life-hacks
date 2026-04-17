@@ -1,14 +1,12 @@
 /**
  * POST /api/articles-publish?key=STATS_KEY
- * Body: { slug }  — specific slug to publish
- * Body: {}        — auto-pick: publishes first PENDING that isn't a duplicate on GitHub,
- *                   marks any duplicates found along the way as DUPLICATE and skips them.
- *
- * Duplicate check: if src/data/articles/{slug}.md already exists in GitHub → duplicate.
+ * Body: { slug }  — publish a specific article
+ * Body: {}        — auto-pick: find first PENDING with image, publish it.
+ *                   Duplicates (already live on GitHub) are marked DUPLICATE and skipped.
  *
  * Response on success:
- *   { ok: true, slug, published_at, skipped_duplicates: [{slug, title, duplicate_of}] }
- * Response when all are duplicates / no pending:
+ *   { ok: true, slug, title, published_at, skipped_duplicates: [slug, ...] }
+ * Response when nothing publishable:
  *   { ok: false, error: '...', skipped_duplicates: [...] }
  *
  * Requires GH_PAT env var in Cloudflare.
@@ -17,7 +15,6 @@
 const GH_OWNER  = 'moshearviv85';
 const GH_REPO   = 'daily-life-hacks';
 const GH_BRANCH = 'main';
-const SITE_BASE = 'https://www.daily-life-hacks.com';
 const API_BASE  = 'https://api.github.com';
 
 async function ghFetch(path, options, pat) {
@@ -38,37 +35,38 @@ function b64(str) {
   return btoa(unescape(encodeURIComponent(str)));
 }
 
-/** Strip empty frontmatter fields and update date to today so article sorts as newest. */
 function cleanFrontmatter(markdown) {
-  const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-  let fixed = markdown
-    // Remove publishAt with empty value
+  const today = new Date().toISOString().slice(0, 10);
+  return markdown
     .replace(/^publishAt:\s*["']{0,2}\s*$/m, '')
-    // Update date to today (publish date)
     .replace(/^date:\s*.+$/m, `date: ${today}`)
-    // Normalize author name
     .replace(/^author:\s*.+$/m, 'author: "David Miller"')
     .replace(/\n{3,}/g, '\n\n');
-  return fixed;
 }
 
-/** Check if src/data/articles/{slug}.md exists in GitHub. Returns SHA or null. */
-async function getFileSha(slug, pat) {
+/** Returns true if src/data/articles/{slug}.md already exists in GitHub. */
+async function articleExistsInGitHub(slug, pat) {
   const res = await ghFetch(
     `/repos/${GH_OWNER}/${GH_REPO}/contents/src/data/articles/${slug}.md`,
     { method: 'GET' },
     pat
   );
-  if (!res.ok) return null;
-  const data = await res.json();
-  return data.sha || null;
+  return res.ok;
 }
 
-/** Mark article as DUPLICATE in D1. */
-async function markDuplicate(slug, duplicateOf, db) {
-  await db.prepare(
-    `UPDATE articles_schedule SET status = 'DUPLICATE', duplicate_of = ? WHERE slug = ?`
-  ).bind(duplicateOf, slug).run();
+/** Returns true if public/images/{filename} exists in GitHub. */
+async function imageExistsInGitHub(filename, pat) {
+  if (!filename) return true; // no image required
+  const res = await ghFetch(
+    `/repos/${GH_OWNER}/${GH_REPO}/contents/public/images/${filename}`,
+    { method: 'GET' },
+    pat
+  );
+  return res.ok;
+}
+
+async function ensureRowNum(db) {
+  try { await db.prepare(`ALTER TABLE articles_schedule ADD COLUMN row_num INTEGER DEFAULT 0`).run(); } catch(_) {}
 }
 
 export async function onRequestPost(context) {
@@ -81,13 +79,14 @@ export async function onRequestPost(context) {
   if (!env.DB)     return Response.json({ error: 'DB not bound' }, { status: 500 });
   if (!env.GH_PAT) return Response.json({ error: 'GH_PAT not configured' }, { status: 500 });
 
+  await ensureRowNum(env.DB);
+
   const body = await request.json().catch(() => ({}));
   const requestedSlug = body?.slug?.trim() || null;
 
   // Build candidate list
   let candidates;
   if (requestedSlug) {
-    // Single specific article
     const row = await env.DB.prepare(
       `SELECT slug, title, markdown_content, image_filename
        FROM articles_schedule WHERE slug = ? AND status = 'PENDING'`
@@ -95,10 +94,11 @@ export async function onRequestPost(context) {
     if (!row) return Response.json({ error: 'Article not found or already published' }, { status: 404 });
     candidates = [row];
   } else {
-    // Auto-pick: all PENDING ordered by created_at (CSV row order)
+    // Auto-pick: all PENDING ordered by row_num (original CSV order)
     const { results } = await env.DB.prepare(
       `SELECT slug, title, markdown_content, image_filename
-       FROM articles_schedule WHERE status = 'PENDING' ORDER BY created_at ASC`
+       FROM articles_schedule WHERE status = 'PENDING'
+       ORDER BY row_num ASC, created_at ASC`
     ).all();
     candidates = results;
   }
@@ -111,55 +111,48 @@ export async function onRequestPost(context) {
 
   for (const row of candidates) {
     const { slug, title, markdown_content, image_filename } = row;
-    const siteUrl = `${SITE_BASE}/${slug}`;
 
-    // ── Duplicate check: does the .md file already exist in GitHub? ──────────
-    const existingSha = await getFileSha(slug, env.GH_PAT);
-    if (existingSha) {
-      // Already live on the site — mark as duplicate and skip
-      await markDuplicate(slug, siteUrl, env.DB);
-      skippedDuplicates.push({ slug, title, duplicate_of: siteUrl });
+    // ── Duplicate check ───────────────────────────────────────────────────────
+    const isDuplicate = await articleExistsInGitHub(slug, env.GH_PAT);
+    if (isDuplicate) {
+      // Mark as DUPLICATE in D1 (no duplicate_of column — just status)
+      await env.DB.prepare(
+        `UPDATE articles_schedule SET status = 'DUPLICATE' WHERE slug = ?`
+      ).bind(slug).run().catch(() => null);
+      skippedDuplicates.push(slug);
+
       if (requestedSlug) {
-        // Specific slug was requested and it's a duplicate — stop here
         return Response.json({
           ok: false,
-          error: `Article already live on site`,
+          error: 'Article already live on site',
           slug,
-          title,
-          duplicate_of: siteUrl,
           skipped_duplicates: skippedDuplicates,
         }, { status: 409 });
       }
-      continue; // auto-pick mode: try next
+      continue;
     }
 
     // ── Image check ───────────────────────────────────────────────────────────
-    if (image_filename) {
-      const imgRes = await ghFetch(
-        `/repos/${GH_OWNER}/${GH_REPO}/contents/public/images/${image_filename}`,
-        { method: 'GET' },
-        env.GH_PAT
-      );
-      if (!imgRes.ok) {
-        // Image missing in GitHub — skip this article (don't mark DUPLICATE, just skip for now)
-        if (requestedSlug) {
-          return Response.json({ error: `Image not found in GitHub: ${image_filename}` }, { status: 400 });
-        }
-        continue;
+    const hasImage = await imageExistsInGitHub(image_filename, env.GH_PAT);
+    if (!hasImage) {
+      if (requestedSlug) {
+        return Response.json({ error: `Image not found in GitHub: ${image_filename}` }, { status: 400 });
       }
+      continue; // no image yet — skip, try next
     }
 
     // ── Commit .md to GitHub ──────────────────────────────────────────────────
-    const filePath = `src/data/articles/${slug}.md`;
-    const commitBody = {
-      message: `feat: publish article ${slug}`,
-      content: b64(cleanFrontmatter(markdown_content)),
-      branch: GH_BRANCH,
-    };
-
+    const filePath  = `src/data/articles/${slug}.md`;
     const commitRes = await ghFetch(
       `/repos/${GH_OWNER}/${GH_REPO}/contents/${filePath}`,
-      { method: 'PUT', body: JSON.stringify(commitBody) },
+      {
+        method: 'PUT',
+        body: JSON.stringify({
+          message: `feat: publish article ${slug}`,
+          content: b64(cleanFrontmatter(markdown_content)),
+          branch:  GH_BRANCH,
+        }),
+      },
       env.GH_PAT
     );
 
@@ -187,8 +180,8 @@ export async function onRequestPost(context) {
   return Response.json({
     ok: false,
     error: skippedDuplicates.length
-      ? `All ${skippedDuplicates.length} pending articles are duplicates — already live on site`
-      : 'No publishable articles found (images may be missing from GitHub)',
+      ? `All pending articles are already live on site (${skippedDuplicates.length} duplicates marked)`
+      : 'No publishable articles — images may be missing from GitHub',
     skipped_duplicates: skippedDuplicates,
   });
 }

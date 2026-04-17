@@ -116,17 +116,16 @@ CREATE TABLE IF NOT EXISTS articles_schedule (
   markdown_content TEXT NOT NULL,
   image_filename TEXT,
   publish_at TEXT,
-  status TEXT DEFAULT 'PENDING',  -- PENDING, PUBLISHED, SKIPPED, DUPLICATE
+  row_num INTEGER DEFAULT 0,      -- original CSV row order (preserves publish sequence)
+  status TEXT DEFAULT 'PENDING',  -- PENDING, PUBLISHED, DUPLICATE
   published_at TEXT,
-  duplicate_of TEXT,              -- URL of the existing live article (set when status=DUPLICATE)
   created_at TEXT DEFAULT (datetime('now'))
 );
-
--- Migration: add duplicate_of column if upgrading from older schema
--- Run once in Cloudflare D1 console:
--- ALTER TABLE articles_schedule ADD COLUMN duplicate_of TEXT;
-CREATE INDEX IF NOT EXISTS idx_artsch_publish_at ON articles_schedule(publish_at);
-CREATE INDEX IF NOT EXISTS idx_artsch_status ON articles_schedule(status);
+-- The table is also auto-created by articles-upload.js on first upload.
+-- If upgrading an existing DB, run in Cloudflare D1 console:
+--   ALTER TABLE articles_schedule ADD COLUMN row_num INTEGER DEFAULT 0;
+CREATE INDEX IF NOT EXISTS idx_artsch_status  ON articles_schedule(status);
+CREATE INDEX IF NOT EXISTS idx_artsch_row_num ON articles_schedule(row_num);
 
 -- Pinterest trending keywords cache (populated by GitHub Actions fetch-analytics.yml)
 CREATE TABLE IF NOT EXISTS pinterest_trends_cache (
