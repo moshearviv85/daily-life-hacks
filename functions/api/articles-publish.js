@@ -38,7 +38,7 @@ function b64(str) {
 function cleanFrontmatter(markdown) {
   const today = new Date().toISOString().slice(0, 10);
   return markdown
-    .replace(/^publishAt:\s*["']{0,2}\s*$/m, '')
+    .replace(/^publishAt:\s*.*$/m, '')          // always strip publishAt (any value)
     .replace(/^date:\s*.+$/m, `date: ${today}`)
     .replace(/^author:\s*.+$/m, 'author: "David Miller"')
     .replace(/\n{3,}/g, '\n\n');

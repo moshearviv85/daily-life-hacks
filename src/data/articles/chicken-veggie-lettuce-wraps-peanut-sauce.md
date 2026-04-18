@@ -6,7 +6,6 @@ tags: ["LettuceWraps", "ChickenRecipes", "PeanutSauce", "LowCarbDinner", "QuickM
 image: "/images/chicken-veggie-lettuce-wraps-peanut-sauce-main.jpg"
 imageAlt: "Chicken and veggie lettuce wraps drizzled with peanut sauce on a platter"
 date: 2026-04-17
-publishAt: 2026-04-08T00:00:00.000Z
 author: "David Miller"
 featured: false
 editorsPick: false
