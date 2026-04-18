@@ -126,6 +126,8 @@ def batch_commit(articles):
         })
         if not blob_res.ok:
             print(f"  ERROR creating blob for {slug}: {blob_res.text[:200]}")
+            if blob_res.status_code == 403 or blob_res.status_code == 401:
+                print("\nCRITICAL ERROR: GitHub API returned 401/403. This almost certainly means your GH_PAT secret has expired or lacks 'Contents: Write' permission. Please generate a new Personal Access Token and update the GH_PAT secret in GitHub Actions.")
             return False
         blob_sha = blob_res.json()["sha"]
         tree_items.append({
