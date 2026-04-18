@@ -36,14 +36,14 @@ GH_HEADS = {"Authorization": f"Bearer {GH_PAT}",
 
 def clean_frontmatter(markdown: str) -> str:
     """Fix frontmatter before committing to GitHub:
-    - Remove publishAt with empty value (causes Astro build failure)
+    - Remove publishAt entirely (any value) — future date hides article from Astro
     - Set date to today (so article appears as newest on homepage)
     - Set author to David Miller
     """
     today = date.today().isoformat()
     fixed = markdown
-    # Remove publishAt: "" or publishAt: '' or publishAt: (bare empty)
-    fixed = re.sub(r'^publishAt:\s*["\']?\s*["\']?\s*$', '', fixed, flags=re.MULTILINE)
+    # Remove publishAt line entirely (any value)
+    fixed = re.sub(r'^publishAt:\s*.*\n?', '', fixed, flags=re.MULTILINE)
     # Update date to today
     fixed = re.sub(r'^date:\s*.+$', f'date: {today}', fixed, flags=re.MULTILINE)
     # Normalize author
