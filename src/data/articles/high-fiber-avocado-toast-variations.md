@@ -12,7 +12,6 @@ tags:
 image: /images/high-fiber-avocado-toast-variations-main.jpg
 imageAlt: Avocado toast on whole grain bread with seeds and tomatoes
 date: 2026-03-30
-publishAt: 2026-04-05 00:00:00+00:00
 author: "David Miller"
 featured: false
 editorsPick: false

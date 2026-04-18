@@ -48,7 +48,6 @@ faq:
     for breakfast, while a hearty lentil stew or bean chili might easily stretch across
     several lunches. Buying seasonal produce can also lower your grocery costs and
     make these simple dishes taste amazing.
-publishAt: '2026-02-08T00:00:00.000Z'
 ---I used to passionately hate meal prep. The entire concept sounded like sheer torture to me. You're supposed to spend your entire Sunday afternoon cooking massive vats of chicken, broccoli, and brown rice, only to eat that exact same bleak, flavorless combination every single day until Friday. By Wednesday, I was always so violently bored that I would just order a $20 burrito out of pure spite, destroying my grocery budget. 
 
 But cooking fresh dinners every single night for one person is equally terrible. Buying "single portions" at the grocery store is outrageously expensive, and cooking full family-sized recipes just leaves you drowning in endless leftovers that eventually go bad anyway. 

@@ -47,7 +47,6 @@ faq:
     to the taste and texture, you can slowly bump up the amount. A good high fiber
     smoothies for kids picky eaters guide suggests aiming for just a few grams per
     serving to keep it gentle and delicious.
-publishAt: '2026-02-16T00:00:00.000Z'
 ---I swear, my youngest thinks anything green is a monster trying to get him. A little stalk of broccoli? Nope. A pea? not. It's a battlefield, dinner time, every single night. And as a parent, you're just trying to make sure they, you know, grow properly and get all the good stuff their little bodies need, like fiber, which could be really helpful for digestive health and keeping things moving along, if you catch my drift.
 
 One day, I just stared at a bunch of spinach in the fridge. And then at a banana. And then at my kid, who was currently attempting to feed a perfectly good carrot stick to the dog under the table. Lightbulb moment. Smoothies. But not just any smoothie; a truly deceptive, delicious smoothie where the veggies vanish. We need high fiber smoothies for kids picky eaters. This is the way.

@@ -6,7 +6,6 @@ tags: ["MealPrep", "BurritoBowl", "HighFiberLunch", "WorkLunch", "HealthyEating"
 image: "/images/high-fiber-burrito-bowl-meal-prep-main.jpg"
 imageAlt: "Four glass meal prep containers filled with quinoa black beans corn and salsa"
 date: 2026-04-08
-publishAt: 2026-04-08T00:00:00+00:00
 author: "David Miller"
 featured: false
 editorsPick: false

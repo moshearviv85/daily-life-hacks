@@ -37,7 +37,6 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
-publishAt: '2026-03-15T00:00:00.000Z'
 ---Canned beans are undeniably convenient, but buying a bag of dried beans costs significantly less money and allows you to control exactly how mushy they get and how much salt goes into them. 
 
 Cooking them from scratch sounds like a homesteading chore, but it isn't actually complicated. You do exactly three things: you soak, you simmer, and you season. Once you've done it a couple of times, it becomes as brainless as boiling a pot of pasta. Here is a very straightforward method that works reliably for black beans, pinto beans, chickpeas, and most standard legumes.

@@ -43,7 +43,6 @@ faq:
     It's best to mash them with a little lime or lemon juice first, then place the
     puree in an airtight freezer bag. While the texture might change slightly once
     thawed, they're still perfectly delicious for smoothies or homemade guacamole.
-publishAt: '2026-01-26T00:00:00.000Z'
 ---Avocados are a luxury item these days. You spend decent money on them, nurture them on the counter for three days waiting for that exact perfect moment of ripeness, and then you cut one open only to eat half. You wrap the other half in plastic wrap, put it in the fridge, and by the next morning? It looks like literal brown mush. 
 
 The oxidation process of an avocado is ruthless. As soon as the flesh hits the air, it starts breaking down. Luckily, there are a few genuinely effective tricks, and I am going to show you the absolute best way to store avocados to stop browning.

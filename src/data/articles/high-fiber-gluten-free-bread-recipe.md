@@ -6,7 +6,6 @@ tags: ["GlutenFreeBaking", "HighFiberBread", "HealthyBaking", "SeedBread", "Dair
 image: "/images/high-fiber-gluten-free-bread-recipe-main.jpg"
 imageAlt: "Slices of hearty high fiber gluten free bread on a wooden cutting board"
 date: 2026-04-08
-publishAt: 2026-04-08T00:00:00+00:00
 author: "David Miller"
 featured: false
 editorsPick: false

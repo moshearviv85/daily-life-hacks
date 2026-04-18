@@ -57,7 +57,6 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
-publishAt: '2026-03-15T00:00:00.000Z'
 ---Tacos don't have to automatically mean browning ground beef or chopping a mountain of ingredients. Sometimes you just need food to be ready immediately. These easy black bean tacos are explicitly built for those tired weeknights. 
 
 You open a couple of cans, warm the beans with a few standard pantry spices, and set out some tortillas. The entire operation goes from the cupboard to the table in about 15 minutes. It's not fussy, it's not complicated, and it gets the job done perfectly.

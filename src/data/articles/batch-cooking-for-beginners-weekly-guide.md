@@ -50,7 +50,6 @@ faq:
     like lettuce, cucumbers, or certain dairy-based sauces, might become mushy or
     separate when thawed. A solid batch cooking for beginners weekly guide will usually
     point out exactly which recipes are freezer-friendly so you don't have to guess.
-publishAt: '2026-01-06T00:00:00.000Z'
 ---
 
 There's exactly one reason why people give up on eating healthy: it requires an absurd amount of daily effort. If your strategy relies on coming home from work at 6:00 PM, chopping vegetables, boiling water, and managing three different pans on the stove every single night, you're going to burn out by Wednesday. When you're exhausted, the drive-thru window suddenly looks like the most logical choice in the world. 

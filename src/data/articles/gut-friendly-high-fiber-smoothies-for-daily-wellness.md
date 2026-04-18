@@ -12,7 +12,6 @@ tags:
 image: /images/gut-friendly-high-fiber-smoothies-for-daily-wellness-main.jpg
 imageAlt: Blender jar with purple berry smoothie and fresh fruit nearby
 date: 2026-03-30
-publishAt: 2026-04-08 00:00:00+00:00
 author: "David Miller"
 featured: false
 editorsPick: false

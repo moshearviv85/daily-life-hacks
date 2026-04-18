@@ -74,7 +74,6 @@ faq:
     for your microbiome. However, if you aren't used to eating a lot of fiber, it's
     best to start slow. Gradually increasing your intake may help your stomach adjust
     without causing temporary discomfort.
-publishAt: '2026-01-22T00:00:00.000Z'
 ---
 Okay, so who else looks at an artichoke and thinks, "What even *is* that alien vegetable?" Seriously, it's like something from a Dr. Seuss book. All spiky, green, and a bit... prehistoric. But, yo, once you get past its intimidating exterior, you're in for a treat, a truly spectacular, fiber-packed experience for your insides, especially if you're trying to keep things moving along smoothly (if you catch my drift).
 

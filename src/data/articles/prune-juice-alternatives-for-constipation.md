@@ -47,7 +47,6 @@ faq:
     alternatives that might help get things moving. They're naturally rich in sorbitol,
     a sugar alcohol that could gently encourage a bowel movement. Staying hydrated
     with plain water is also a simple step that shouldn't be overlooked.
-publishAt: '2026-02-05T00:00:00.000Z'
 ---I mean, seriously, who *actually* enjoys prune juice? It's one of those things, you know, like trying to assemble IKEA furniture with just the pictures, or getting stuck in traffic when you're already late-utterly necessary sometimes, sure, but never, ever pleasant. The taste, the color, the whole vibe of it, it just screams "medicinal." And when you're already feeling, shall we say, a bit *backed up*, the last thing you want is another thing that makes you feel gross.
 
 So, if you're nodding your head vigorously right now (and maybe a little green around the gills just thinking about it), then welcome, my friend. We're in this together. The good news? You don't have to subject yourself to that dark, syrupy liquid anymore to encourage a bit of digestive harmony. There are other players in the game, some real MVPs, that can help get things moving without making you question all your life choices.

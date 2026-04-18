@@ -43,7 +43,6 @@ faq:
     ways to make grocery shopping cheaper. Look for family-sized packs and freeze
     what you don't immediately use. You might also want to try incorporating a few
     meatless meals into your week or buying cheaper cuts that do well in slow cookers.
-publishAt: '2026-01-25T00:00:00.000Z'
 ---
 
 Walking into a grocery store right now feels a bit like walking into a trap. You go in needing milk, eggs, and bread, and somehow you leave with a receipt for $140 and a bag of artisan sea salt caramel chips you did not need. 

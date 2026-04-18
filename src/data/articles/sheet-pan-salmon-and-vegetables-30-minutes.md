@@ -61,7 +61,6 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
-publishAt: '2026-03-15T00:00:00.000Z'
 ---Sheet pan dinners are wildly popular for a very good reason. You put your entire meal on a single metal tray, slide it into a hot oven, and when the timer rings, you have dinner ready and exactly one pan to scrub. 
 
 This sheet pan salmon and vegetables recipe is built for those nights when standing over a stove flipping things with a spatula feels like an impossible task. The vegetables go in first to get a quick head start, and then the salmon joins the party. In about 30 minutes total, you end up with flaky fish and tender, roasted veggies without juggling multiple timers or burning through half a roll of paper towels.

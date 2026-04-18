@@ -80,7 +80,6 @@ faq:
     a splash of lemon juice or apple cider vinegar to brighten the broth. Roasting
     the vegetables slightly before simmering them might also add a wonderful depth
     of flavor.
-publishAt: '2026-02-13T00:00:00.000Z'
 ---Remember that whole cabbage soup thing? Yeah, *that* cabbage soup. For a while, it felt like everyone and their dog (metaphorically, of course, please don't feed your dog a lot of cabbage soup) was trying to lose weight with it, mostly by suffering through something that tasted suspiciously like sad, boiled water with a side of regret. Rough times.
 
 But here's the thing, the *idea* wasn't terrible, just the execution. Cabbage, hello, is actually amazing. Like, really good for you. Super fibrous. And fiber? Oh, fiber is the unsung hero, the MVP of feeling full and keeping things, shall we say, moving along. So, I figured, why not take that ancient, slightly traumatic concept and give it a serious glow-up? This isn't a "lose 10 pounds by Friday" kind of deal, which, you know, isn't sustainable anyway. This is about making a genuinely delicious, hearty, fiber rich soup for weight loss cabbage style that you'd actually *want* to eat. Not just *tolerate*. Big difference.

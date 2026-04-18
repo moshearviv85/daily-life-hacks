@@ -46,7 +46,6 @@ faq:
     may support better digestion. When you're wondering what is good fiber to eat
     for constipation, roasting these veggies as a side dish is an easy choice. They're
     tasty, simple to prepare, and could give your gut the extra bulk it needs.
-publishAt: '2025-12-31T00:00:00.000Z'
 ---Nobody ever wants to talk about it, but honestly, it happens to literally everyone. You eat too much heavy takeout over the weekend, you forget to drink enough water, you get extremely stressed out at work, and suddenly you realize you haven't really "gone" properly in three solid days. You feel heavy, sluggish, frustrated, and extremely bloated. 
 
 Your immediate, panicked reaction might be to run to the pharmacy and buy some violent, chalky laxative that tastes like absolute misery and leaves you afraid to leave your house for the next six hours. Don't do it. Your body is just begging you for fiber and hydration. If you know exactly what high fiber meals for constipation relief to make, you can easily fix the situation naturally and gently.

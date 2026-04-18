@@ -52,7 +52,6 @@ faq:
     that prioritize whole grains, affordable proteins, and flexible seasonal produce.
     Once you find a template that works for your family, you can easily customize
     it weekly based on local sales.
-publishAt: '2026-02-20T00:00:00.000Z'
 ---I used to believe the massive myth that eating healthy is a luxury only wealthy people can afford. I would walk into those fancy health food stores, stare at a six-dollar organic avocado and a twelve-dollar jar of almond butter, and just give up. I am here to fundamentally change your mind. 
 
 The truth is that processed, heavily packaged convenience food is actually outrageously expensive, while whole foods are incredibly cheap if you know what to buy. If you want a genuinely effective grocery shopping list for healthy eating on a budget, you have to rethink your strategy. 

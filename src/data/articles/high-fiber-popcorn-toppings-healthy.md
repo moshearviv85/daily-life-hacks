@@ -45,7 +45,6 @@ faq:
     or flax seeds might cause a little mild bloating. It's best to introduce these
     new toppings gradually so your digestive system can comfortably adjust. Make sure
     you're also drinking plenty of water to help the fiber move smoothly.
-publishAt: '2026-02-01T00:00:00.000Z'
 ---I was watching this old movie the other day, you know, the one where the protagonist is always just casually munching on a giant bowl of popcorn, and it hit me: we've all been sort of... doing popcorn wrong. Well, not *wrong*, but maybe a little less... vibrant? Less good for us? I mean, all that butter, it just sits there, a pool of yellow-ish grease at the bottom of the bowl, and then your fingers are all sticky, and honestly, the flavor profile just sort of flattens out, you know? It's fine, but it could be *more*. Much more.
 
 ## Popcorn: The Unexpected Whole Grain Hero

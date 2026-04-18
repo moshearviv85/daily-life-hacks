@@ -38,7 +38,6 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
-publishAt: '2026-03-15T00:00:00.000Z'
 ---People tend to talk about cast iron skillets like they are fragile, magical artifacts that will instantly be ruined if you look at them the wrong way. They aren't. They are literally heavy chunks of iron. 
 
 A well-seasoned cast iron skillet is naturally nonstick without needing any weird chemical coatings, it will outlive you, and it genuinely gets better the more you cook with it. "Seasoning" is just a fancy culinary word for building up a microscopic, baked-on layer of oil so the metal surface becomes smooth and resists rusting. It is not complicated. Here is exactly how to do it, and how to keep it from turning into a rusty mess later.

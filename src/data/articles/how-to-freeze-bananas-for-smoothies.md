@@ -45,7 +45,6 @@ faq:
     milkshake-like texture. If your blender struggles with hard ingredients, just
     let the bananas sit on the counter for about five minutes to soften slightly before
     blending.
-publishAt: '2026-01-24T00:00:00.000Z'
 ---We have all been there. You buy a giant bunch of beautiful yellow bananas with grand plans to eat one every morning, and suddenly it's Thursday and they're covered in dark brown spots. Instead of throwing them in the trash (or pretending you're finally going to bake that banana bread), the absolute best thing you can do is freeze them. 
 
 But if you just toss a whole banana, peel and all, directly into the freezer, you're setting yourself up for a nightmare. A frozen unpeeled banana is essentially a rock, and trying to peel it's nearly impossible. If you want to know how to freeze bananas for smoothies the right way, there's a specific method that guarantees a perfectly creamy blend.

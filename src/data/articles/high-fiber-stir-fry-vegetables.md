@@ -86,7 +86,6 @@ faq:
     them. In fact, stir frying is a quick cooking method that helps retain most of
     the nutrients. You'll still get all the dietary benefits, and the heat might actually
     make some veggies easier to digest.
-publishAt: '2026-02-19T00:00:00.000Z'
 ---Sometimes, I just stare at the fridge, you know? Like, it's 7 PM, my brain is fried from spreadsheets or whatever existential dread the day brought, and the concept of *cooking* feels like scaling Everest. Dinner. Again. My dog looks at me expectantly, probably wondering if I'm finally going to drop that rogue piece of cheese I've been eyeing.
 
 Anyway.

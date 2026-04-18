@@ -74,7 +74,6 @@ faq:
     bean enchiladas, and quinoa casseroles actually taste better the next day once
     the flavors have mingled. Having these meals prepped in your fridge means you'll
     always have a quick, fiber-rich dinner ready when you need it.
-publishAt: '2026-01-18T00:00:00.000Z'
 ---Some nights you do not want a giant slab of meat. That is fine. It does not need a speech.
 
 This page is about **vegetarian high fiber dinners for natural relief** in the boring, useful sense: beans, vegetables, a little fat, enough salt, and a pot that mostly minds its own business. Nothing here promises a miracle. Fiber might help you feel a little more regular if you also drink water and do not change everything at once. That is the whole deal.

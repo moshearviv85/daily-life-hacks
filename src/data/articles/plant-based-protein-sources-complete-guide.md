@@ -37,7 +37,6 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
-publishAt: '2026-03-15T00:00:00.000Z'
 ---Going plant-based, or even just deciding to cut back on your meat intake a few days a week, does not mean you're doomed to eat sad, wilted salads for the rest of your life. 
 
 There is a surprisingly long list of plant-based protein sources that work perfectly in normal, everyday meals. We're talking about beans, lentils, tofu, tempeh, nuts, seeds, and even certain grains. This guide breaks down what they actually are, roughly how much protein they give you, and how to use them without turning dinner into a complicated science experiment.

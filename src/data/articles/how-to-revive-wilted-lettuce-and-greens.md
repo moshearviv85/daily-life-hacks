@@ -42,7 +42,6 @@ faq:
     sour smell. While limp leaves just need a little hydration, slime and dark spots
     are signs of decay that an ice bath won't fix. It's best to compost the batch
     if you notice those warning signs.
-publishAt: '2026-02-09T00:00:00.000Z'
 ---We all do it. We confidently buy the massive plastic tub of "spring mix" or a giant head of romaine on Sunday, determined to eat salads every single day for lunch. By Thursday, you open the fridge, and the lettuce isn't exactly bad or rotten, but it's incredibly sad. It's limp, rubbery, and unappetizing. 
 
 Before you dramatically sweep it all into the trash can out of pure frustration, you need to know a little secret. Unless the greens are actually slimy or starting to smell rancid, they're not dead; they're just severely dehydrated. The refrigerator is a giant dehumidifier, and it sucks the moisture right out of delicate leaves. 

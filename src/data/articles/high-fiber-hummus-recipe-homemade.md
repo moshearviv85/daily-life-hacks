@@ -86,7 +86,6 @@ faq:
     ice-cold water while blending can also help whip air into the mixture, making
     it incredibly light and fluffy. Don't forget to generously season it with cumin,
     fresh garlic, and a pinch of salt to really bring out the flavors.
-publishAt: '2026-01-08T00:00:00.000Z'
 ---
 Oh, man. This hummus. I just made a batch, right? And it's... shockingly good. Like, not just "good for homemade" but like, "why would I ever buy that bland stuff from the store again?" good. I actually used two whole cans of chickpeas, yeah, a bit extra, but trust me, it's for the *heft*, the substantial feeling you get from it. And then, the tahini. Some folks (I won't name names, but you know who you are) are so stingy with the tahini, but that's where the magic happens, the silkiness that makes it just glide onto a carrot stick or a piece of pita. And the lemon, too. I really went for it with the lemon. Zing!
 

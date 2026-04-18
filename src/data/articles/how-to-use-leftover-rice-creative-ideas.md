@@ -36,7 +36,6 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
-publishAt: '2026-03-15T00:00:00.000Z'
 ---You made way too much rice. Again. 
 
 Instead of shoving the container to the back of the fridge to let it slowly turn into a science experiment, you can easily turn it into a new meal with minimal effort. Because leftover rice is already fully cooked, it acts as the ultimate head start for dinner. It's ready to go straight into soups, salads, and skillets. Here are some highly practical ways to actually use it before it goes bad.

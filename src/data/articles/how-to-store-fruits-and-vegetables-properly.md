@@ -47,7 +47,6 @@ faq:
     Bananas and avocados should also stay on the counter until they're fully ripe,
     though you can move avocados to the fridge to pause the ripening process once
     they're soft.
-publishAt: '2026-01-17T00:00:00.000Z'
 ---
 
 We're all incredibly guilty of the "dump and run" grocery routine. You get home from the supermarket, exhausted, and you just start shoving things wherever they fit into the refrigerator or tossing them randomly into a fruit bowl on the counter. 

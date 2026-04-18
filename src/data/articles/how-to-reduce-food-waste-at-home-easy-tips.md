@@ -45,7 +45,6 @@ faq:
     In, First Out' (FIFO) method. Simply place your newest groceries at the back of
     the fridge and move the older items to the front. This visual reminder ensures
     you'll use up what's expiring soon before reaching for the freshly bought groceries.
-publishAt: '2025-12-26T00:00:00.000Z'
 ---We don't talk about the guilt associated with throwing out food enough. You buy a massive, gorgeous clamshell of fresh spinach on Sunday, determined that this is the week you eat salads every single day. By Friday, you pull it out of the fridge, and it has dissolved into a terrifying, murky puddle of dark green slime. You toss the entire five-dollar container into the trash feeling terrible about both the planet and your wallet. 
 
 The average household literally throws away hundreds, if not thousands, of dollars of perfectly good food every single year simply due to bad storage and lack of planning. If you want to know how to reduce food waste at home, you don't need to start a massive composting farm in your backyard. You just need to implement three extremely basic rules in your own kitchen. 

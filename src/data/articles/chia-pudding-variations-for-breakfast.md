@@ -46,7 +46,6 @@ faq:
     it sit in the fridge overnight gives the seeds plenty of time to absorb the liquid
     and achieve a perfectly creamy texture. It's a fantastic time-saver, meaning you'll
     wake up to a delicious, ready-to-eat breakfast.
-publishAt: '2026-02-23T00:00:00.000Z'
 ---Honestly, sometimes I just stare into the fridge in the morning, right? It's like, "Ugh, another bagel?" My brain just gives up sometimes before 7 AM, and I swear, that's how I ended up on this whole chia pudding kick a few years back. It started because I was just so *over* the same old, same old, you know? Breakfast felt like a chore, and nobody needs that kind of negativity first thing.
 
 I used to think chia seeds were just for those fancy health gurus, but nah. They're actually pretty chill. They swell up and make this thick, creamy pudding situation, and what's really cool is how much fiber they pack in there. Seriously, a couple of tablespoons (which is what you'd use for a serving) can give you a decent chunk of your daily fiber goals. Fiber is, like, super important for your gut (it's true, ask anyone who's ever felt "off"), and it also helps keep you feeling full so you're not raiding the snack cupboard an hour later. Plus, omegas, always good for the ol' noggin.

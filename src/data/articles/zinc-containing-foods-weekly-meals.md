@@ -6,7 +6,6 @@ tags: ["ZincFoods", "MealPlanning", "BalancedEating", "PantryStaples", "Nutrient
 image: "/images/zinc-containing-foods-weekly-meals-main.jpg"
 imageAlt: "Assorted whole foods on a cutting board including beans seeds and lean protein"
 date: 2026-04-13
-publishAt: 2026-04-13 00:00:00+00:00
 author: "David Miller"
 featured: false
 editorsPick: false

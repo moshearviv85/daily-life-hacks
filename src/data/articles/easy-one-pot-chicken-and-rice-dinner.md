@@ -63,7 +63,6 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
-publishAt: '2026-03-15T00:00:00.000Z'
 ---One pot means one pan to wash. That's the whole pitch.
 
 Let's be honest, by the time Tuesday evening rolls around, the idea of using three different skillets and a saucepan to make dinner sounds like a personal insult. This easy one-pot chicken and rice dinner is the kind of meal you can throw together when your brain is running on fumes. You brown some chicken, toss in some rice and broth, and let it simmer. No fancy techniques, no hovering over the stove, and no separate pots for the rice. Everything cooks together and comes out tender, flavorful, and actually satisfying.

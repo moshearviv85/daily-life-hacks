@@ -6,7 +6,6 @@ tags: ["AirFryerRecipes", "SalmonBites", "HealthyDinner", "QuickMeals", "Seafood
 image: "/images/air-fryer-salmon-bites-garlic-honey-glaze-main.jpg"
 imageAlt: "Sticky glazed air fryer salmon bites served over a bowl of rice with sesame seeds"
 date: 2026-04-08
-publishAt: 2026-04-08T00:00:00+00:00
 author: "David Miller"
 featured: false
 editorsPick: false

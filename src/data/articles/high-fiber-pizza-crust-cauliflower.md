@@ -94,7 +94,6 @@ faq:
     be a great way to increase your daily vegetable and nutrient intake. It generally
     contains fewer carbs and could help support healthy digestion. Plus, it's naturally
     gluten-free if you use the right binding ingredients!
-publishAt: '2026-01-02T00:00:00.000Z'
 ---Oh, pizza. Right? It's like, that universal comfort food, the one thing everyone can agree on, especially after a particularly long Tuesday. For ages, though, I kind of just... gave up on it, at least the "feel good after eating it" kind. My digestive system, bless its sensitive heart, decided somewhere around my late twenties that flour-heavy, cheese-laden concoctions were an act of war, and honestly, who needs that kind of drama?
 
 My relationship with pizza became complicated. A clandestine affair, perhaps. Until, that is, cauliflower waltzed into my kitchen. No, really. Cauliflower. I know what you're thinking (because I thought it too, probably louder): "Cauliflower? For *pizza*?" Yeah. Wild, I tell ya. But listen, the journey to a genuinely satisfying, *crispy* **high fiber pizza crust cauliflower** has been a pilgrimage. Many soggy attempts. Many tears. But we got there. And you, my friend, are about to reap the benefits of my kitchen trials and tribulations.

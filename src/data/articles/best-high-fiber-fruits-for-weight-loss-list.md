@@ -12,7 +12,6 @@ tags:
 image: /images/best-high-fiber-fruits-for-weight-loss-list-main.jpg
 imageAlt: Assorted berries pears and apples on a wooden board
 date: 2026-03-30
-publishAt: 2026-04-10 00:00:00+00:00
 author: "David Miller"
 featured: false
 editorsPick: false
