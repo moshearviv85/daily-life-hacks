@@ -1369,22 +1369,39 @@ function renderLiveData(data, days) {
     el('s-subs-sub').textContent = data.subscriptions?.error || 'DB not connected';
   }
 
-  // Cloudflare Analytics
-  if (data.cloudflareAnalytics && !data.cloudflareAnalytics.error) {
-    const cf = data.cloudflareAnalytics;
-    el('s-pv').textContent = fmt(cf.totals.pageViews);
-    el('s-pv-sub').textContent = `last ${days}d`;
-    el('s-uv').textContent = fmt(cf.totals.uniques);
-    el('s-uv-sub').textContent = `unique visitors`;
-    renderTrafficChart(cf.byDay, days);
+  // Cloudflare Analytics — prefer Web Analytics (RUM, matches CF dashboard) over edge data
+  const wa = data.webAnalytics && !data.webAnalytics.error ? data.webAnalytics : null;
+  const cf = data.cloudflareAnalytics && !data.cloudflareAnalytics.error ? data.cloudflareAnalytics : null;
+
+  if (wa) {
+    el('s-pv').textContent = fmt(wa.totals.pageViews);
+    el('s-pv-sub').textContent = `last ${days}d · Web Analytics`;
+    el('s-uv').textContent = fmt(wa.totals.visits);
+    el('s-uv-sub').textContent = `visits (real browsers, matches CF)`;
+    // Map RUM byDay to traffic chart shape (pageViews + uniques)
+    renderTrafficChart(wa.byDay.map(d => ({
+      day: d.day, pageViews: d.pageViews, uniques: d.visits, requests: d.pageViews
+    })), days);
     el('traffic-error').style.display = 'none';
+  } else if (cf) {
+    el('s-pv').textContent = fmt(cf.totals.pageViews);
+    el('s-pv-sub').textContent = `last ${days}d · edge data`;
+    el('s-uv').textContent = fmt(cf.totals.uniques);
+    el('s-uv-sub').textContent = `unique IPs (includes bots)`;
+    renderTrafficChart(cf.byDay, days);
+    const waErr = data.webAnalytics?.error;
+    if (waErr) {
+      el('traffic-error').textContent = 'Web Analytics unavailable: ' + waErr + ' — showing edge data';
+      el('traffic-error').style.display = 'block';
+    } else {
+      el('traffic-error').style.display = 'none';
+    }
   } else {
     el('s-pv').textContent = '—';
     el('s-uv').textContent = '—';
-    const errMsg = data.cloudflareAnalytics?.error || 'No data';
+    const errMsg = data.cloudflareAnalytics?.error || data.webAnalytics?.error || 'No data';
     el('traffic-error').textContent = 'Cloudflare Analytics: ' + errMsg;
     el('traffic-error').style.display = 'block';
-    // Fall back to funnel events chart
     if (data.funnelEvents && data.funnelEvents.byDay?.length > 0) {
       renderTrafficChart(data.funnelEvents.byDay.map(d => ({
         day: d.day, pageViews: d.count, requests: d.count, uniques: 0
@@ -1705,11 +1722,13 @@ function openModal(type) {
 
     case 'pageviews':
     case 'visitors': {
-      const countries = liveData?.cloudflareAnalytics?.topCountries ?? [];
-      const countryNote = liveData?.cloudflareAnalytics?.countryNote ?? '';
+      const waCountries = (liveData?.webAnalytics && !liveData.webAnalytics.error) ? liveData.webAnalytics.topCountries : null;
+      const countries = waCountries ?? liveData?.cloudflareAnalytics?.topCountries ?? [];
+      const source = waCountries ? 'Web Analytics (matches Cloudflare Dashboard)' : 'Edge data (includes bots)';
+      const countryNote = waCountries ? `Last ${liveData?.days || 30} days` : (liveData?.cloudflareAnalytics?.countryNote ?? '');
       title.innerHTML = `Visits by Country <span class="modal-count">(${countries.length} countries)</span>`;
       const disclaimer = `<div style="font-size:.75rem;color:var(--muted);margin-bottom:.75rem;line-height:1.5">
-        <strong>Visits</strong> = sessions from unique visitors (matches Cloudflare Dashboard).
+        <strong>${source}</strong> · Visits = browser sessions.
         ${countryNote ? `<br>📅 ${countryNote}` : ''}
       </div>`;
       body.innerHTML = countries.length === 0

@@ -330,6 +330,130 @@ export async function onRequestGet(context) {
     result.cloudflareAnalytics = { error: "CF_API_TOKEN or CF_ZONE_ID not configured", byDay: [], totals: { pageViews: 0, requests: 0, uniques: 0 } };
   }
 
+  // ── 5b. Cloudflare Web Analytics (RUM / JS beacon) ───────────────────────
+  // Matches the "Web Analytics" page in Cloudflare dashboard (real browser users, no bots).
+  // Requires: CF_API_TOKEN with Account Analytics Read, plus site tag.
+  const siteTag = env.CF_SITE_TAG || "91c501fca325c556efd161e4f904d443";
+  if (cfToken && siteTag) {
+    try {
+      // Discover account tag automatically from the zone (no extra env var needed)
+      let accountTag = env.CF_ACCOUNT_TAG;
+      if (!accountTag && cfZone) {
+        const zoneRes = await fetch(`https://api.cloudflare.com/client/v4/zones/${cfZone}`, {
+          headers: { Authorization: `Bearer ${cfToken}` },
+        });
+        const zoneJson = await zoneRes.json();
+        accountTag = zoneJson?.result?.account?.id;
+      }
+
+      if (!accountTag) {
+        result.webAnalytics = { error: "Could not resolve account tag (set CF_ACCOUNT_TAG or give CF_API_TOKEN zone:read)" };
+      } else {
+        const since = new Date();
+        since.setDate(since.getDate() - days);
+        const sinceStr = since.toISOString().split("T")[0];
+        const untilStr = new Date().toISOString().split("T")[0];
+
+        // Totals + by-day + countries — one query with the date dimension for the chart,
+        // then a separate query without date for the true period-wide totals.
+        const byDayQuery = `{
+          viewer {
+            accounts(filter: {accountTag: "${accountTag}"}) {
+              rumPageloadEventsAdaptiveGroups(
+                limit: 91
+                filter: {siteTag: "${siteTag}", date_geq: "${sinceStr}", date_leq: "${untilStr}"}
+                orderBy: [date_ASC]
+              ) {
+                dimensions { date }
+                count
+                sum { visits }
+              }
+            }
+          }
+        }`;
+        const totalsQuery = `{
+          viewer {
+            accounts(filter: {accountTag: "${accountTag}"}) {
+              rumPageloadEventsAdaptiveGroups(
+                limit: 1
+                filter: {siteTag: "${siteTag}", date_geq: "${sinceStr}", date_leq: "${untilStr}"}
+              ) {
+                count
+                sum { visits }
+              }
+            }
+          }
+        }`;
+        const countryQuery = `{
+          viewer {
+            accounts(filter: {accountTag: "${accountTag}"}) {
+              rumPageloadEventsAdaptiveGroups(
+                limit: 50
+                filter: {siteTag: "${siteTag}", date_geq: "${sinceStr}", date_leq: "${untilStr}"}
+                orderBy: [sum_visits_DESC]
+              ) {
+                dimensions { clientCountryName }
+                count
+                sum { visits }
+              }
+            }
+          }
+        }`;
+
+        const runRum = async (query) => {
+          const r = await fetch("https://api.cloudflare.com/client/v4/graphql", {
+            method: "POST",
+            headers: { Authorization: `Bearer ${cfToken}`, "Content-Type": "application/json" },
+            body: JSON.stringify({ query }),
+          });
+          return r.json();
+        };
+
+        const [byDayJson, totalsJson, countryJson] = await Promise.all([
+          runRum(byDayQuery),
+          runRum(totalsQuery),
+          runRum(countryQuery),
+        ]);
+
+        const firstError = [byDayJson, totalsJson, countryJson].find((j) => j?.errors?.length)?.errors?.[0]?.message;
+        if (firstError) {
+          const isPerm = firstError.includes("does not have permission") || firstError.includes("authz");
+          result.webAnalytics = {
+            error: isPerm
+              ? "Token missing Account Analytics Read permission. Create a new token with account-level 'Account Analytics: Read' and replace CF_API_TOKEN."
+              : firstError,
+            byDay: [],
+            totals: { pageViews: 0, visits: 0 },
+            topCountries: [],
+          };
+        } else {
+          const byDayRows = byDayJson?.data?.viewer?.accounts?.[0]?.rumPageloadEventsAdaptiveGroups ?? [];
+          const totalsRow = totalsJson?.data?.viewer?.accounts?.[0]?.rumPageloadEventsAdaptiveGroups?.[0];
+          const countryRows = countryJson?.data?.viewer?.accounts?.[0]?.rumPageloadEventsAdaptiveGroups ?? [];
+
+          result.webAnalytics = {
+            byDay: byDayRows.map((g) => ({
+              day: g.dimensions.date,
+              pageViews: g.count || 0,
+              visits: g.sum?.visits || 0,
+            })),
+            totals: {
+              pageViews: totalsRow?.count || 0,
+              visits: totalsRow?.sum?.visits || 0,
+            },
+            topCountries: countryRows.map((r) => ({
+              country: r.dimensions.clientCountryName || "Unknown",
+              visits: r.sum?.visits || 0,
+              pageViews: r.count || 0,
+            })),
+          };
+        }
+      }
+    } catch (e) {
+      result.webAnalytics = { error: e.message, byDay: [], totals: { pageViews: 0, visits: 0 }, topCountries: [] };
+    }
+  }
+
   } // end !clarityOnly
 
   // ── 6. Microsoft Clarity Analytics (with D1 cache) ───────────────────────
