@@ -255,44 +255,71 @@ export async function onRequestGet(context) {
           }
         } catch { /* fall back to 0 if the period query fails */ }
 
-        // Country breakdown via httpRequestsAdaptiveGroups — max 1d on free plan
-        // Use UTC midnight-to-now to match Cloudflare Dashboard's "today" view
+        // Country breakdown — unique visitors per country, same period as the summary card.
+        // Try the full period first; if CF plan restricts (>72h often blocked on free), fall back to shorter windows.
         try {
-          const todayUTC = new Date();
-          todayUTC.setUTCHours(0, 0, 0, 0); // midnight UTC = same as CF dashboard
-          const sinceISO = todayUTC.toISOString().replace(/\.\d{3}Z$/, "Z");
-          const untilISO = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
-          const countryQuery = `{
-            viewer {
-              zones(filter: {zoneTag: "${cfZone}"}) {
-                httpRequestsAdaptiveGroups(
-                  limit: 50
-                  filter: {datetime_geq: "${sinceISO}", datetime_lt: "${untilISO}"}
-                  orderBy: [count_DESC]
-                ) {
-                  count
-                  dimensions { clientCountryName }
+          const nowISO = new Date().toISOString().replace(/\.\d{3}Z$/, "Z");
+          const attempts = [
+            { days, label: `Last ${days} days` },
+            { days: 7, label: "Last 7 days" },
+            { days: 3, label: "Last 72 hours" },
+            { days: 1, label: "Today UTC" },
+          ];
+          // Deduplicate in case days already equals one of the fallbacks
+          const seen = new Set();
+          const tries = attempts.filter((a) => {
+            if (seen.has(a.days)) return false;
+            seen.add(a.days);
+            return true;
+          });
+
+          let gotRows = null;
+          let gotLabel = null;
+          for (const attempt of tries) {
+            const since = new Date();
+            if (attempt.days === 1) {
+              since.setUTCHours(0, 0, 0, 0); // midnight UTC
+            } else {
+              since.setDate(since.getDate() - attempt.days);
+            }
+            const sinceISO = since.toISOString().replace(/\.\d{3}Z$/, "Z");
+            const countryQuery = `{
+              viewer {
+                zones(filter: {zoneTag: "${cfZone}"}) {
+                  httpRequestsAdaptiveGroups(
+                    limit: 50
+                    filter: {datetime_geq: "${sinceISO}", datetime_lt: "${nowISO}"}
+                    orderBy: [sum_visits_DESC]
+                  ) {
+                    sum { visits }
+                    dimensions { clientCountryName }
+                  }
                 }
               }
+            }`;
+            const countryRes = await fetch("https://api.cloudflare.com/client/v4/graphql", {
+              method: "POST",
+              headers: { Authorization: `Bearer ${cfToken}`, "Content-Type": "application/json" },
+              body: JSON.stringify({ query: countryQuery }),
+            });
+            const countryJson = await countryRes.json();
+            if (!countryJson?.errors?.length) {
+              gotRows = countryJson?.data?.viewer?.zones?.[0]?.httpRequestsAdaptiveGroups ?? [];
+              gotLabel = attempt.label;
+              break;
             }
-          }`;
-          const countryRes = await fetch("https://api.cloudflare.com/client/v4/graphql", {
-            method: "POST",
-            headers: { Authorization: `Bearer ${cfToken}`, "Content-Type": "application/json" },
-            body: JSON.stringify({ query: countryQuery }),
-          });
-          const countryJson = await countryRes.json();
-          if (!countryJson?.errors?.length) {
-            const rows = countryJson?.data?.viewer?.zones?.[0]?.httpRequestsAdaptiveGroups ?? [];
+          }
+
+          if (gotRows) {
             const countryMap = {};
-            for (const r of rows) {
+            for (const r of gotRows) {
               const name = r.dimensions.clientCountryName || "Unknown";
-              countryMap[name] = (countryMap[name] || 0) + (r.count || 0);
+              countryMap[name] = (countryMap[name] || 0) + (r.sum?.visits || 0);
             }
             result.cloudflareAnalytics.topCountries = Object.entries(countryMap)
-              .map(([country, requests]) => ({ country, requests }))
-              .sort((a, b) => b.requests - a.requests);
-            result.cloudflareAnalytics.countryNote = "Today UTC (matches Cloudflare Dashboard)";
+              .map(([country, visits]) => ({ country, visits }))
+              .sort((a, b) => b.visits - a.visits);
+            result.cloudflareAnalytics.countryNote = `${gotLabel} (visits = sessions from unique visitors)`;
           }
         } catch { /* country data is optional */ }
       }

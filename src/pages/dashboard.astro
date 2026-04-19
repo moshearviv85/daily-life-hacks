@@ -1707,10 +1707,9 @@ function openModal(type) {
     case 'visitors': {
       const countries = liveData?.cloudflareAnalytics?.topCountries ?? [];
       const countryNote = liveData?.cloudflareAnalytics?.countryNote ?? '';
-      title.innerHTML = `Requests by Country <span class="modal-count">(${countries.length} countries)</span>`;
+      title.innerHTML = `Visits by Country <span class="modal-count">(${countries.length} countries)</span>`;
       const disclaimer = `<div style="font-size:.75rem;color:var(--muted);margin-bottom:.75rem;line-height:1.5">
-        ⚠️ <strong>Note:</strong> This counts all HTTP <em>requests</em> (images, CSS, API) — not PageViews or Unique Visitors.
-        For accurate visitor data, see the Clarity section below.
+        <strong>Visits</strong> = sessions from unique visitors (matches Cloudflare Dashboard).
         ${countryNote ? `<br>📅 ${countryNote}` : ''}
       </div>`;
       body.innerHTML = countries.length === 0
@@ -1867,15 +1866,15 @@ function renderSubsTable(rows) {
 }
 
 function renderCountriesTable(rows) {
-  const sorted = [...rows].sort((a, b) => b.requests - a.requests);
-  const maxVal = sorted[0]?.requests || 1;
+  const sorted = [...rows].sort((a, b) => (b.visits || 0) - (a.visits || 0));
+  const maxVal = sorted[0]?.visits || 1;
   return `<table class="data-table">
-    <thead><tr><th>#</th><th>Country</th><th>Requests</th><th style="width:35%"></th></tr></thead>
+    <thead><tr><th>#</th><th>Country</th><th>Visits</th><th style="width:35%"></th></tr></thead>
     <tbody>${sorted.map((c, i) => `<tr>
       <td style="color:var(--muted)">${i+1}</td>
       <td><strong>${c.country}</strong></td>
-      <td><strong>${fmt(c.requests)}</strong></td>
-      <td><div style="background:var(--border);border-radius:99px;height:6px"><div style="background:var(--orange);height:6px;border-radius:99px;width:${Math.round(c.requests/maxVal*100)}%"></div></div></td>
+      <td><strong>${fmt(c.visits || 0)}</strong></td>
+      <td><div style="background:var(--border);border-radius:99px;height:6px"><div style="background:var(--orange);height:6px;border-radius:99px;width:${Math.round((c.visits||0)/maxVal*100)}%"></div></div></td>
     </tr>`).join('')}</tbody>
   </table>`;
 }
