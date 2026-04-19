@@ -221,10 +221,39 @@ export async function onRequestGet(context) {
           totals: {
             pageViews: groups.reduce((s, g) => s + (g.sum.pageViews || 0), 0),
             requests: groups.reduce((s, g) => s + (g.sum.requests || 0), 0),
-            uniques: groups.reduce((s, g) => s + (g.uniq.uniques || 0), 0),
+            // uniques filled by separate period-aggregate query below (summing daily double-counts returning visitors)
+            uniques: 0,
           },
           topCountries: [],
         };
+
+        // Period-wide unique visitors — single aggregate row (matches Cloudflare Dashboard)
+        try {
+          const periodQuery = `{
+            viewer {
+              zones(filter: {zoneTag: "${cfZone}"}) {
+                httpRequests1dGroups(
+                  limit: 1
+                  filter: {date_geq: "${sinceStr}", date_leq: "${untilStr}"}
+                ) {
+                  uniq { uniques }
+                }
+              }
+            }
+          }`;
+          const periodRes = await fetch("https://api.cloudflare.com/client/v4/graphql", {
+            method: "POST",
+            headers: { Authorization: `Bearer ${cfToken}`, "Content-Type": "application/json" },
+            body: JSON.stringify({ query: periodQuery }),
+          });
+          const periodJson = await periodRes.json();
+          if (!periodJson?.errors?.length) {
+            const row = periodJson?.data?.viewer?.zones?.[0]?.httpRequests1dGroups?.[0];
+            if (row?.uniq?.uniques != null) {
+              result.cloudflareAnalytics.totals.uniques = row.uniq.uniques;
+            }
+          }
+        } catch { /* fall back to 0 if the period query fails */ }
 
         // Country breakdown via httpRequestsAdaptiveGroups — max 1d on free plan
         // Use UTC midnight-to-now to match Cloudflare Dashboard's "today" view
