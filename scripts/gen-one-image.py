@@ -16,8 +16,8 @@ API_URL    = (
     f"/{MODEL_NAME}:predict?key={API_KEY}"
 )
 
-SLUG  = "gut-friendly-high-fiber-smoothies-for-daily-wellness"
-TITLE = "Gut-Friendly Smoothie Blends for Daily Wellness"
+SLUG  = "cooking-oils-smoke-points-best-uses"
+TITLE = "Cooking Oils in the Kitchen: Smoke Points and Best Uses"
 
 SAVE_PATH = os.path.join("public", "images", f"{SLUG}-main.jpg")
 
@@ -25,18 +25,19 @@ SCENES_FILE = os.path.join("pipeline-data", "image-scenes.json")
 with open(SCENES_FILE, "r", encoding="utf-8") as f:
     scenes = json.load(f)
 
-# Pick a scene that fits smoothies well — skip market/outdoor scenes
-smoothie_scenes = [s for s in scenes if not any(x in s.lower() for x in ["market", "outdoor", "patio", "garden", "bbq", "grill"])]
-scene = random.choice(smoothie_scenes)
+# Pick an indoor kitchen scene — skip outdoor/market scenes
+kitchen_scenes = [s for s in scenes if not any(x in s.lower() for x in ["market", "outdoor", "patio", "garden", "bbq", "grill", "picnic"])]
+scene = random.choice(kitchen_scenes)
 print(f"Scene: {scene}")
 
 PROMPT = (
-    f"{TITLE}, {scene}. "
-    "Two or three colorful smoothie glasses on a clean kitchen counter, "
-    "fresh berries, spinach, banana and chia seeds scattered nearby. "
-    "Bright natural light, minimal clean styling. "
-    "Realistic food photography, beautifully composed. "
-    "No text, no words, no watermarks."
+    f"{TITLE}. {scene}. "
+    "A neat lineup of several glass bottles of cooking oils (olive oil, avocado oil, "
+    "sesame oil, vegetable oil) on a clean kitchen counter, different colors of oil visible, "
+    "a cast iron skillet and wooden spoon nearby, a small white ramekin with oil for dipping. "
+    "Warm natural light, shallow depth of field, magazine-quality food photography, "
+    "crisp and inviting composition. "
+    "No text, no words, no labels, no watermarks."
 )
 print(f"Prompt:\n{PROMPT}\n")
 
