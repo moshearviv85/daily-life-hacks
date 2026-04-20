@@ -106,17 +106,42 @@ def get_next_pin():
         sys.exit(1)
     return resp.json()
 
+# ── Retry helper for D1 sync calls ────────────────────────────────────────────
+
+import time
+
+def _post_with_retries(url, json_body, label, attempts=3, timeout=30, backoff=5):
+    """POST with retries. Returns (ok, response_or_None). Never raises."""
+    last_err = None
+    for i in range(1, attempts + 1):
+        try:
+            resp = requests.post(
+                url,
+                params={"key": PINS_API_KEY},
+                json=json_body,
+                timeout=timeout,
+            )
+            if resp.ok:
+                return True, resp
+            print(f"WARNING: {label} attempt {i}/{attempts} — HTTP {resp.status_code}: {resp.text[:200]}")
+            last_err = f"HTTP {resp.status_code}"
+        except requests.exceptions.RequestException as e:
+            print(f"WARNING: {label} attempt {i}/{attempts} failed: {type(e).__name__}: {e}")
+            last_err = str(e)
+        if i < attempts:
+            time.sleep(backoff)
+    print(f"ERROR: {label} failed after {attempts} attempts ({last_err}) — continuing without blocking.")
+    return False, None
+
 # ── Mark pin as failed in D1 ─────────────────────────────────────────────────
 
 def mark_failed(row_id, error_message):
-    resp = requests.post(
+    ok, resp = _post_with_retries(
         f"{PINS_API_URL}/api/pins-mark-failed",
-        params={"key": PINS_API_KEY},
-        json={"row_id": row_id, "error_message": error_message},
-        timeout=10,
+        {"row_id": row_id, "error_message": error_message},
+        label="mark-failed",
     )
-    if not resp.ok:
-        print(f"WARNING: mark-failed call failed — HTTP {resp.status_code}: {resp.text[:200]}")
+    if not ok:
         return None
     data = resp.json()
     fail_count = data.get("fail_count", "?")
@@ -130,21 +155,21 @@ def mark_failed(row_id, error_message):
 # ── Mark pin as posted in D1 ──────────────────────────────────────────────────
 
 def mark_posted(row_id, pin_id, pinterest_response):
-    resp = requests.post(
+    ok, _ = _post_with_retries(
         f"{PINS_API_URL}/api/pins-mark-posted",
-        params={"key": PINS_API_KEY},
-        json={
+        {
             "row_id": row_id,
             "pin_id": pin_id,
             "published_date": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
             "pinterest_response": pinterest_response,
         },
-        timeout=10,
+        label="mark-posted",
     )
-    if not resp.ok:
-        print(f"WARNING: mark-posted failed — HTTP {resp.status_code}: {resp.text[:200]}")
-    else:
+    if ok:
         print(f"  Marked {row_id} as POSTED in D1.")
+    else:
+        print(f"  CRITICAL: pin {row_id} (pin_id={pin_id}) posted to Pinterest but NOT marked POSTED in D1.")
+        print(f"  Manual fix needed — else next run will re-post and duplicate.")
 
 # ── Post pin to Pinterest ─────────────────────────────────────────────────────
 
