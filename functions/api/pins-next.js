@@ -69,8 +69,10 @@ export async function onRequestGet(context) {
         `SELECT status FROM articles_schedule WHERE slug = ?`
       ).bind(slug).first();
 
-      // Article is in the pipeline but not yet published → skip this pin
-      if (article && article.status !== 'PUBLISHED') {
+      // Treat PUBLISHED and DUPLICATE as live — DUPLICATE means the file already
+      // exists in the repo, so the article is on the site and the pin link works.
+      const LIVE_STATUSES = new Set(['PUBLISHED', 'DUPLICATE']);
+      if (article && !LIVE_STATUSES.has(article.status)) {
         skipped.push({
           row_id: row.row_id,
           slug,
