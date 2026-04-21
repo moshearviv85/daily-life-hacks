@@ -94,11 +94,15 @@ def get_access_token():
 # ── Get next pin from D1 ──────────────────────────────────────────────────────
 
 def get_next_pin():
-    resp = requests.get(
-        f"{PINS_API_URL}/api/pins-next",
-        params={"key": PINS_API_KEY},
-        timeout=10,
-    )
+    try:
+        resp = requests.get(
+            f"{PINS_API_URL}/api/pins-next",
+            params={"key": PINS_API_KEY},
+            timeout=30,
+        )
+    except requests.exceptions.RequestException as e:
+        print(f"WARNING: pins-next request failed ({type(e).__name__}: {e}). Will retry next run.")
+        sys.exit(0)
     if resp.status_code == 204:
         # Body is present for diagnostics even though status is 204
         try:
@@ -114,10 +118,21 @@ def get_next_pin():
         else:
             print(f"No pins due. reason={reason} due_count={diag.get('due_count', 0)}")
         return None
+    if 500 <= resp.status_code < 600:
+        # Transient Cloudflare/D1 hiccup (often returns HTML error page).
+        # Exit clean so the Action stays green; next cron will retry.
+        print(f"WARNING: pins-next returned HTTP {resp.status_code} (Cloudflare/D1 transient). Will retry next run.")
+        print(f"  body preview: {resp.text[:150].replace(chr(10), ' ')}")
+        sys.exit(0)
     if not resp.ok:
         print(f"ERROR: pins-next failed — HTTP {resp.status_code}: {resp.text[:200]}")
         sys.exit(1)
-    return resp.json()
+    try:
+        return resp.json()
+    except ValueError:
+        print(f"WARNING: pins-next returned non-JSON body. Will retry next run.")
+        print(f"  body preview: {resp.text[:150].replace(chr(10), ' ')}")
+        sys.exit(0)
 
 # ── Retry helper for D1 sync calls ────────────────────────────────────────────
 
