@@ -49,8 +49,13 @@ export async function onRequestGet(context) {
   `).bind(today, today, nowTime).all();
 
   if (!duePins || duePins.length === 0) {
-    return new Response(null, { status: 204 });
+    return new Response(
+      JSON.stringify({ reason: "no_due_pins", due_count: 0 }),
+      { status: 204, headers: { "Content-Type": "application/json" } }
+    );
   }
+
+  const skipped = []; // [{ row_id, slug, article_status, scheduled_date }]
 
   for (const row of duePins) {
     // Extract slug from pin link (e.g. https://www.daily-life-hacks.com/some-slug?utm_content=v1)
@@ -64,9 +69,14 @@ export async function onRequestGet(context) {
         `SELECT status FROM articles_schedule WHERE slug = ?`
       ).bind(slug).first();
 
-      // Article is in the pipeline but not yet published → skip this pin silently
+      // Article is in the pipeline but not yet published → skip this pin
       if (article && article.status !== 'PUBLISHED') {
-        console.log(`Skipping pin ${row.row_id}: article "${slug}" not yet live (status: ${article.status})`);
+        skipped.push({
+          row_id: row.row_id,
+          slug,
+          article_status: article.status,
+          scheduled_date: row.scheduled_date,
+        });
         continue;
       }
       // article is null → not in pipeline = one of the original articles, assumed live → proceed
@@ -78,6 +88,17 @@ export async function onRequestGet(context) {
     });
   }
 
-  // All due pins are waiting for their articles to be published
-  return new Response(null, { status: 204 });
+  // All due pins are waiting for their articles to be published.
+  // Return 204 + diagnostic body so the GitHub Action log shows exactly which
+  // pins were skipped and why — prevents silent "no pins due" when the queue
+  // is actually blocked by articles stuck in PENDING/DUPLICATE.
+  return new Response(
+    JSON.stringify({
+      reason: "all_due_pins_blocked_by_pending_articles",
+      due_count: duePins.length,
+      skipped_count: skipped.length,
+      sample: skipped.slice(0, 10),
+    }),
+    { status: 204, headers: { "Content-Type": "application/json" } }
+  );
 }

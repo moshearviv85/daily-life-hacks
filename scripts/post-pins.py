@@ -100,6 +100,19 @@ def get_next_pin():
         timeout=10,
     )
     if resp.status_code == 204:
+        # Body is present for diagnostics even though status is 204
+        try:
+            diag = json.loads(resp.text) if resp.text else {}
+        except Exception:
+            diag = {}
+        reason = diag.get("reason", "no_due_pins")
+        if reason == "all_due_pins_blocked_by_pending_articles":
+            print(f"BLOCKED: {diag.get('skipped_count')} due pin(s) waiting on articles not yet PUBLISHED.")
+            for s in diag.get("sample", []):
+                print(f"  - row_id={s['row_id']} slug={s['slug']} article_status={s['article_status']} scheduled={s['scheduled_date']}")
+            print("Fix: publish the articles (publish-articles.py) or mark stale pins FAILED.")
+        else:
+            print(f"No pins due. reason={reason} due_count={diag.get('due_count', 0)}")
         return None
     if not resp.ok:
         print(f"ERROR: pins-next failed — HTTP {resp.status_code}: {resp.text[:200]}")
