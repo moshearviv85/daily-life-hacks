@@ -145,6 +145,7 @@ schema.sql              - D1 database schema for subscriptions table
 - **NO medical claims** - avoid "cure", "treat", "heal", "relieve", "prevents", "fights", "combats" - use "may support", "could help", "might improve", "is thought to"
 - **NO absolute health statements** - never say "is good for your gut" or "helps regulate blood sugar" - always hedge with "could", "may", "might"
 - **NO detox/cleanse language** - never use "detox", "cleanses", "reset your system" - use "refresh", "feel refreshed"
+- **NO supplements of any kind** - never discuss, recommend, or mention dietary supplements. This includes synthetic supplements (vitamins, minerals, protein powders, pre-workouts, fat burners) AND "natural" supplements (herbal extracts, adaptogens, probiotic capsules, fiber powders, collagen powders, greens powders, sea moss, ashwagandha, etc.). If a topic can only be served via supplementation, reject the topic. Food-first content only.
 - **ALWAYS use contractions** - never "it is", "do not", "they are" - always "it's", "don't", "they're"
 - **NO "Conclusion" heading** - AI giveaway, use natural closing instead
 - **NO double endings** - one natural closing paragraph, no "Happy eating!" type sign-offs

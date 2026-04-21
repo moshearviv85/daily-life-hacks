@@ -1,0 +1,33 @@
+Audience View,Date,Aggregation,Audience Size
+Your total audience,2026-04-18,Monthly,10000
+
+Interests
+Category,Bulk Sheet Category,Percent of audience,Affinity,Interest,Bulk Sheet Interests,Percent of audience,Affinity
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.875,1.78,Meal Planning,"{'name': 'Meal Planning', 'id': '956336077278'}",0.968,1.294
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.875,1.78,Soup,"{'name': 'Soup', 'id': '938111697483'}",0.337,8.558
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.875,1.78,Sandwich,"{'name': 'Sandwich', 'id': '905475941341'}",0.191,9.434
+Food and Drinks,"{'name': 'Food and Drinks', 'id': '918530398158'}",0.875,1.78,Grain,"{'name': 'Grain', 'id': '961579433317'}",0.064,
+Health,"{'name': 'Health', 'id': '898620064290'}",0.89,1.61,Diet and Nutrition,"{'name': 'Diet and Nutrition', 'id': '899102674037'}",0.939,1.476
+
+Countries,Percent of audience
+United States,0.545
+Canada,0.114
+United Kingdom,0.051
+
+Metros,Percent of audience
+Los Angeles,0.043
+New York,0.04
+
+Gender,Percent of audience
+Female,0.802
+Unspecified & custom,0.103
+Male,0.095
+
+Device,Percent of audience
+iPhone,0.636
+Web,0.269
+
+Age,Percent of audience
+25-34,0.222
+35-44,0.215
+18-24,0.086
