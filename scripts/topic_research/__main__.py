@@ -2,7 +2,7 @@
 
 Usage
 -----
-python -m scripts.topic_research stage1 --audience-csv PATH [--db PATH]
+python -m scripts.topic_research stage1 --audience-csv PATH [PATH ...] [--db PATH]
 python -m scripts.topic_research stage2 --keywords-csv PATH --boards-csv PATH [--stage1-run-id N] [--db PATH]
 
 Environment variables (also read from .env in repo root):
@@ -36,7 +36,7 @@ from scripts.topic_research.stage2 import run_stage2
 
 def _cmd_stage1(args: argparse.Namespace) -> None:
     result = run_stage1(
-        audience_csv_path=args.audience_csv,
+        audience_csv_paths=args.audience_csv,
         db_path=args.db,
     )
     print(json.dumps(result, indent=2, ensure_ascii=False))
@@ -48,6 +48,7 @@ def _cmd_stage2(args: argparse.Namespace) -> None:
         boards_csv_path=args.boards_csv,
         stage1_run_id=args.stage1_run_id,
         db_path=args.db,
+        balance=args.balance or None,
     )
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
@@ -63,9 +64,10 @@ def main(argv: list[str] | None = None) -> None:
     p1 = sub.add_parser("stage1", help="Audience CSV -> fetch signals -> 20+20 keywords")
     p1.add_argument(
         "--audience-csv",
+        nargs="+",
         required=True,
         metavar="PATH",
-        help="Pinterest Audience Insights CSV export",
+        help="Pinterest Audience Insights CSV export(s). Pass multiple paths to merge audiences.",
     )
     p1.add_argument(
         "--db",
@@ -84,9 +86,10 @@ def main(argv: list[str] | None = None) -> None:
     )
     p2.add_argument(
         "--boards-csv",
-        required=True,
+        required=False,
+        default=None,
         metavar="PATH",
-        help="Pin Inspector boards CSV export",
+        help="Pin Inspector boards CSV export (optional)",
     )
     p2.add_argument(
         "--stage1-run-id",
@@ -100,6 +103,12 @@ def main(argv: list[str] | None = None) -> None:
         default=_DEFAULT_DB,
         metavar="PATH",
         help=f"SQLite DB path (default: {_DEFAULT_DB})",
+    )
+    p2.add_argument(
+        "--balance",
+        default="20:15:15",
+        metavar="R:N:T",
+        help="Per-category quota recipes:nutrition:tips (default: 20:15:15). Pass empty string to disable.",
     )
 
     args = parser.parse_args(argv)

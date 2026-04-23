@@ -18,6 +18,8 @@ try:
         run_stage2,
         _slugify,
         _build_stage2_prompt,
+        _parse_balance,
+        _enforce_balance,
         _STAGE2_SCHEMA,
     )
     from scripts.topic_research.db import (
@@ -260,7 +262,7 @@ def test_stage2_schema_category_has_enum():
     items = _STAGE2_SCHEMA["properties"]["topics"]["items"]
     cat_schema = items["properties"]["category"]
     assert "enum" in cat_schema
-    assert set(cat_schema["enum"]) == {"recipes", "nutrition"}
+    assert set(cat_schema["enum"]) == {"recipes", "nutrition", "tips"}
 
 
 # ── 5. run_stage2 end-to-end with mocked Gemini ───────────────────────────────
@@ -384,7 +386,7 @@ def test_run_stage2_reads_stage1_output_from_db(tmp_path):
 
     captured_prompts: list[str] = []
 
-    def _fake_generate(prompt, api_key, schema=None, temperature=0.2):
+    def _fake_generate(prompt, api_key, schema=None, temperature=0.2, timeout=60):
         captured_prompts.append(prompt)
         return SAMPLE_GEMINI_RESPONSE
 
@@ -426,7 +428,7 @@ def test_run_stage2_uses_latest_stage1_run_when_no_run_id_given(tmp_path):
 
     captured_prompts: list[str] = []
 
-    def _fake_generate(prompt, api_key, schema=None, temperature=0.2):
+    def _fake_generate(prompt, api_key, schema=None, temperature=0.2, timeout=60):
         captured_prompts.append(prompt)
         return SAMPLE_GEMINI_RESPONSE
 
@@ -570,6 +572,239 @@ def test_run_stage2_result_has_topics_key(tmp_path):
     assert "run_id" in result
     assert "topics" in result
     assert isinstance(result["topics"], list)
+
+
+# ── 6. balance / per-category quota ───────────────────────────────────────────
+
+
+def test_parse_balance_basic():
+    assert _parse_balance("20:15:15") == {"recipes": 20, "nutrition": 15, "tips": 15}
+
+
+def test_parse_balance_rejects_bad_format():
+    with pytest.raises(ValueError):
+        _parse_balance("20:15")
+    with pytest.raises(ValueError):
+        _parse_balance("a:b:c")
+    with pytest.raises(ValueError):
+        _parse_balance("-1:15:15")
+
+
+def test_build_stage2_prompt_includes_quota_block_when_balance_set():
+    prompt = _build_stage2_prompt(
+        stage1_content_kws=[],
+        stage1_board_kws=[],
+        pin_inspector_kws=[],
+        pin_inspector_boards=[],
+        published_titles=[],
+        published_slugs=[],
+        pending_topics=[],
+        balance={"recipes": 20, "nutrition": 15, "tips": 15},
+    )
+    assert "recipes: 20" in prompt
+    assert "nutrition: 15" in prompt
+    assert "tips: 15" in prompt
+    assert "CATEGORY QUOTA" in prompt
+
+
+def test_build_stage2_prompt_legacy_when_balance_none():
+    prompt = _build_stage2_prompt([], [], [], [], [], [], [])
+    assert "CATEGORY QUOTA" not in prompt
+    assert "50" in prompt
+
+
+def test_enforce_balance_trims_over_quota():
+    """Over-quota categories should be trimmed to top-N by score."""
+    topics = [
+        {"rank": i, "topic": f"rec {i}", "category": "recipes",
+         "slug": f"rec-{i}", "score": 100 - i, "rationale": ""}
+        for i in range(30)
+    ] + [
+        {"rank": i, "topic": f"nut {i}", "category": "nutrition",
+         "slug": f"nut-{i}", "score": 80 - i, "rationale": ""}
+        for i in range(20)
+    ] + [
+        {"rank": i, "topic": f"tip {i}", "category": "tips",
+         "slug": f"tip-{i}", "score": 60 - i, "rationale": ""}
+        for i in range(20)
+    ]
+
+    # No topup needed since all categories are over quota — gen_fn must not be called
+    def _fail_gen(**_kwargs):
+        raise AssertionError("gen_fn must not be called when all categories are over quota")
+
+    balanced = _enforce_balance(
+        topics=topics,
+        balance={"recipes": 20, "nutrition": 15, "tips": 15},
+        stage1_content_kws=[], stage1_board_kws=[],
+        pin_inspector_kws=[], pin_inspector_boards=[],
+        published_titles=[], pending_topics=[],
+        api_key="fake", gen_fn=_fail_gen,
+    )
+    counts: dict[str, int] = {}
+    for t in balanced:
+        counts[t["category"]] = counts.get(t["category"], 0) + 1
+    assert counts == {"recipes": 20, "nutrition": 15, "tips": 15}
+    assert len(balanced) == 50
+    # Re-ranked globally 1..50
+    assert [t["rank"] for t in balanced] == list(range(1, 51))
+
+
+def test_enforce_balance_tops_up_under_quota_via_gen_fn():
+    """Under-quota categories should trigger a topup call and merge the result."""
+    topics = [
+        {"rank": i, "topic": f"rec {i}", "category": "recipes",
+         "slug": f"rec-{i}", "score": 100 - i, "rationale": ""}
+        for i in range(20)
+    ] + [
+        {"rank": i, "topic": f"nut {i}", "category": "nutrition",
+         "slug": f"nut-{i}", "score": 80 - i, "rationale": ""}
+        for i in range(15)
+    ]
+    # tips: 0 → need 15 via topup
+
+    calls: list[dict] = []
+
+    def _gen(**kwargs):
+        calls.append(kwargs)
+        schema_cat = kwargs["schema"]["properties"]["topics"]["items"]["properties"]["category"]["enum"][0]
+        assert schema_cat == "tips"
+        return {
+            "topics": [
+                {"rank": i, "topic": f"new tip {i}", "category": "tips",
+                 "slug": f"new-tip-{i}", "score": 50 - i, "rationale": "topup"}
+                for i in range(1, 16)
+            ]
+        }
+
+    balanced = _enforce_balance(
+        topics=topics,
+        balance={"recipes": 20, "nutrition": 15, "tips": 15},
+        stage1_content_kws=[], stage1_board_kws=[],
+        pin_inspector_kws=[], pin_inspector_boards=[],
+        published_titles=[], pending_topics=[],
+        api_key="fake", gen_fn=_gen,
+    )
+    counts: dict[str, int] = {}
+    for t in balanced:
+        counts[t["category"]] = counts.get(t["category"], 0) + 1
+    assert counts == {"recipes": 20, "nutrition": 15, "tips": 15}
+    assert len(calls) == 1  # exactly one topup call for tips
+
+
+def test_enforce_balance_dedups_topup_against_existing():
+    """If topup returns a slug that already exists, it should be skipped."""
+    topics = [
+        {"rank": 1, "topic": "rec 1", "category": "recipes",
+         "slug": "dup-slug", "score": 100, "rationale": ""},
+    ]
+
+    def _gen(**_kwargs):
+        # First topup topic collides with an existing slug
+        return {
+            "topics": [
+                {"rank": 1, "topic": "dup", "category": "recipes",
+                 "slug": "dup-slug", "score": 90, "rationale": ""},
+                {"rank": 2, "topic": "fresh", "category": "recipes",
+                 "slug": "fresh-slug", "score": 80, "rationale": ""},
+            ]
+        }
+
+    balanced = _enforce_balance(
+        topics=topics,
+        balance={"recipes": 2, "nutrition": 0, "tips": 0},
+        stage1_content_kws=[], stage1_board_kws=[],
+        pin_inspector_kws=[], pin_inspector_boards=[],
+        published_titles=[], pending_topics=[],
+        api_key="fake", gen_fn=_gen,
+    )
+    slugs = [t["slug"] for t in balanced]
+    assert "dup-slug" in slugs
+    assert "fresh-slug" in slugs
+    assert len(balanced) == 2
+
+
+def test_run_stage2_applies_balance_end_to_end(tmp_path):
+    """When balance='20:15:15' is passed, the final DB rows match the quota."""
+    keywords_csv = _write_pi_keywords_csv(tmp_path)
+    boards_csv = _write_pi_boards_csv(tmp_path)
+    db_path = str(tmp_path / "test.sqlite")
+
+    # Skewed response: 42 recipes, 3 nutrition, 5 tips (like run_id=11)
+    skewed = (
+        [
+            {"rank": i, "topic": f"rec {i}", "category": "recipes",
+             "slug": f"rec-{i}", "score": 100 - i, "rationale": ""}
+            for i in range(1, 43)
+        ]
+        + [
+            {"rank": i, "topic": f"nut {i}", "category": "nutrition",
+             "slug": f"nut-{i}", "score": 80 - i, "rationale": ""}
+            for i in range(1, 4)
+        ]
+        + [
+            {"rank": i, "topic": f"tip {i}", "category": "tips",
+             "slug": f"tip-{i}", "score": 60 - i, "rationale": ""}
+            for i in range(1, 6)
+        ]
+    )
+
+    def _fake_generate(prompt, api_key, schema=None, temperature=0.2, timeout=60):
+        # First call = full skewed list. Topups = enough of the requested category.
+        cat_enum = schema["properties"]["topics"]["items"]["properties"]["category"]["enum"]
+        if set(cat_enum) == {"recipes", "nutrition", "tips"}:
+            return {"topics": skewed}
+        # single-category topup
+        only = cat_enum[0]
+        return {
+            "topics": [
+                {"rank": i, "topic": f"new {only} {i}", "category": only,
+                 "slug": f"new-{only}-{i}", "score": 40 - i, "rationale": "topup"}
+                for i in range(1, 20)
+            ]
+        }
+
+    with patch("scripts.topic_research.stage2.generate", side_effect=_fake_generate):
+        result = run_stage2(
+            keywords_csv_path=keywords_csv,
+            boards_csv_path=boards_csv,
+            db_path=db_path,
+            articles_dir=str(tmp_path / "no_articles"),
+            topics_file=str(tmp_path / "no_topics.md"),
+            gemini_api_key="fake-key",
+            balance="20:15:15",
+        )
+
+    conn = open_db(db_path)
+    db_rows = read_stage2_output(conn, result["run_id"])
+    conn.close()
+
+    counts: dict[str, int] = {}
+    for r in db_rows:
+        counts[r["category"]] = counts.get(r["category"], 0) + 1
+    assert counts == {"recipes": 20, "nutrition": 15, "tips": 15}
+    assert len(db_rows) == 50
+    # Re-ranked globally
+    assert [r["rank"] for r in db_rows] == list(range(1, 51))
+
+
+def test_run_stage2_no_balance_preserves_legacy_behavior(tmp_path):
+    """Default balance=None must not touch the topics returned by Gemini."""
+    keywords_csv = _write_pi_keywords_csv(tmp_path)
+    boards_csv = _write_pi_boards_csv(tmp_path)
+    db_path = str(tmp_path / "test.sqlite")
+
+    with patch("scripts.topic_research.stage2.generate", return_value=SAMPLE_GEMINI_RESPONSE):
+        result = run_stage2(
+            keywords_csv_path=keywords_csv,
+            boards_csv_path=boards_csv,
+            db_path=db_path,
+            articles_dir=str(tmp_path / "no_articles"),
+            topics_file=str(tmp_path / "no_topics.md"),
+            gemini_api_key="fake-key",
+        )
+
+    assert len(result["topics"]) == 50
 
 
 def test_run_stage2_works_without_prior_stage1_run(tmp_path):
