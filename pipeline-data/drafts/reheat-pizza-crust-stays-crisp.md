@@ -14,15 +14,15 @@ whatsHot: false
 mustRead: false
 faq:
  - question: "Why does the microwave make leftover pizza rubbery?"
- answer: "Microwaves heat water molecules rapidly, which essentially steams the dough. When it cools down a minute later, the gluten proteins toughen up, leaving you with a chewy, rubbery crust."
+   answer: "Microwaves heat water molecules rapidly, which essentially steams the dough. When it cools down a minute later, the gluten proteins toughen up, leaving you with a chewy, rubbery crust."
  - question: "Can I use an air fryer to reheat pizza?"
- answer: "Yes, the air fryer works well. Set it to 350 degrees for about 3 to 4 minutes. Just keep an eye on it so the cheese doesn't burn before the center is hot."
+   answer: "Yes, the air fryer works well. Set it to 350 degrees for about 3 to 4 minutes. Just keep an eye on it so the cheese doesn't burn before the center is hot."
  - question: "Does the glass of water trick in the microwave actually work?"
- answer: "It helps a little by absorbing some of the excess microwave energy, which heats the pizza more gently. But it still won't give you a crispy crust like the stovetop method."
+   answer: "It helps a little by absorbing some of the excess microwave energy, which heats the pizza more gently. But it still won't give you a crispy crust like the stovetop method."
  - question: "How long does leftover pizza last in the fridge?"
- answer: "Usually about 3 to 4 days if stored properly in an airtight container or wrapped tightly. After that, the quality drops and safety becomes a concern."
+   answer: "Usually about 3 to 4 days if stored properly in an airtight container or wrapped tightly. After that, the quality drops and safety becomes a concern."
  - question: "Should I let the pan preheat before adding the pizza slice?"
- answer: "Yes, give the skillet a minute to get warm over medium-low heat. Dropping cold pizza into a cold pan means it sits there longer and might dry out before the cheese melts."
+   answer: "Yes, give the skillet a minute to get warm over medium-low heat. Dropping cold pizza into a cold pan means it sits there longer and might dry out before the cheese melts."
 ---
 
 Leftover pizza is a beautiful thing. Some people like it cold straight from the fridge, which is fine if that is your vibe. But if you want it hot, you have a problem. The microwave is the standard move because it's fast, but it destroys the texture. You put a great slice of pizza in, press a button, and 45 seconds later you pull out a floppy, rubbery triangle. It's hot, sure, but the crust is chewy in a bad way, and the cheese feels like molten plastic.

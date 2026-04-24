@@ -14,15 +14,15 @@ whatsHot: false
 mustRead: false
 faq:
  - question: "Why does cut onion smell up the whole fridge?"
- answer: "Onions release sulfur compounds when cut. These compounds are highly volatile, meaning they become a gas easily and spread. Plastic wrap is completely porous to them, which is why your butter ends up tasting like a bad deli sandwich."
+   answer: "Onions release sulfur compounds when cut. These compounds are highly volatile, meaning they become a gas easily and spread. Plastic wrap is completely porous to them, which is why your butter ends up tasting like a bad deli sandwich."
  - question: "Is it safe to store a cut onion in the fridge?"
- answer: "Yes, it's perfectly safe. The old internet rumor that cut onions absorb bacteria like a magnet is a myth. As long as you store them in a clean, airtight container, they're fine to use for several days."
+   answer: "Yes, it's perfectly safe. The old internet rumor that cut onions absorb bacteria like a magnet is a myth. As long as you store them in a clean, airtight container, they're fine to use for several days."
  - question: "How long do cut lemons last in the fridge?"
- answer: "A cut lemon usually stays good for about three to four days if stored properly. If you just leave it exposed on a shelf, the cut side dries out and turns hard within twenty four hours."
+   answer: "A cut lemon usually stays good for about three to four days if stored properly. If you just leave it exposed on a shelf, the cut side dries out and turns hard within twenty four hours."
  - question: "Can I store cut produce in plastic bags?"
- answer: "You can, but it isn't ideal for strong odors. Plastic absorbs smells over time and lets some compounds pass through. Glass is significantly better for odor control and doesn't hold onto smells after washing."
+   answer: "You can, but it isn't ideal for strong odors. Plastic absorbs smells over time and lets some compounds pass through. Glass is significantly better for odor control and doesn't hold onto smells after washing."
  - question: "How do I keep an avocado half from turning brown?"
- answer: "Brush the exposed flesh with a tiny bit of olive oil or lemon juice, leave the pit in if you want, and store it in an airtight container. It might still brown slightly on the very top layer, but you can just scrape that thin layer off."
+   answer: "Brush the exposed flesh with a tiny bit of olive oil or lemon juice, leave the pit in if you want, and store it in an airtight container. It might still brown slightly on the very top layer, but you can just scrape that thin layer off."
 ---
 
 We have all been there. You only need half an onion for the soup. You chop what you need, wrap the remaining half in some plastic wrap, and toss it onto the second shelf of the fridge. Two days later, you pour yourself a glass of cold milk, take a sip, and realize it tastes faintly of regret and yellow onion.

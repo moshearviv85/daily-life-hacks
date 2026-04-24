@@ -14,15 +14,15 @@ whatsHot: false
 mustRead: false
 faq:
  - question: "Is it safe to put my blender pitcher in the dishwasher?"
- answer: "It depends on the brand, but generally, high heat from a dishwasher can degrade the rubber seals at the base over time. Hand washing is safer for the lifespan of the machine."
+   answer: "It depends on the brand, but generally, high heat from a dishwasher can degrade the rubber seals at the base over time. Hand washing is safer for the lifespan of the machine."
  - question: "How do I get rid of the smell in my blender?"
- answer: "If your blender smells like yesterday's garlic sauce, blend warm water with a splash of white vinegar or a spoonful of baking soda, let it sit for five minutes, then rinse."
+   answer: "If your blender smells like yesterday's garlic sauce, blend warm water with a splash of white vinegar or a spoonful of baking soda, let it sit for five minutes, then rinse."
  - question: "Why is my blender pitcher cloudy?"
- answer: "Cloudiness usually comes from mineral buildup from hard water or scratching from blending hard items like ice and nuts. You can soak it in equal parts water and white vinegar to dissolve minerals."
+   answer: "Cloudiness usually comes from mineral buildup from hard water or scratching from blending hard items like ice and nuts. You can soak it in equal parts water and white vinegar to dissolve minerals."
  - question: "Do I ever need to take the blade out to clean it?"
- answer: "Only occasionally for a deep clean, or if thick food gets jammed underneath. For daily smoothie use, the blending method is enough."
+   answer: "Only occasionally for a deep clean, or if thick food gets jammed underneath. For daily smoothie use, the blending method is enough."
  - question: "Can I use boiling water to clean my blender?"
- answer: "Avoid boiling water. Extreme heat can crack plastic pitchers or damage the seals around the blade. Use hot tap water instead."
+   answer: "Avoid boiling water. Extreme heat can crack plastic pitchers or damage the seals around the blade. Use hot tap water instead."
 ---
 
 Making a smoothie takes three minutes. Cleaning the blender afterward feels like it takes twenty. It's the one kitchen chore that consistently makes people second guess whether they actually want a blended drink in the first place.

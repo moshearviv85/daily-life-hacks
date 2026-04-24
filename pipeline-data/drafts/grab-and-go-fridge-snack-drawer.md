@@ -14,15 +14,15 @@ whatsHot: false
 mustRead: false
 faq:
  - question: "What is the best container for a fridge snack drawer?"
- answer: "Clear acrylic bins or standard plastic fridge organizers work best because you can see exactly what is inside. If it's opaque, you will forget the food exists."
+   answer: "Clear acrylic bins or standard plastic fridge organizers work best because you can see exactly what is inside. If it's opaque, you will forget the food exists."
  - question: "How often should I restock the snack drawer?"
- answer: "Most people find that twice a week works well. Prepping too far in advance means cut veggies might dry out or get slimy before you eat them."
+   answer: "Most people find that twice a week works well. Prepping too far in advance means cut veggies might dry out or get slimy before you eat them."
  - question: "What are the best snacks to keep in the fridge drawer?"
- answer: "Hard-boiled eggs, cheese sticks, washed grapes, snap peas, and small containers of hummus or yogurt are reliable choices that hold up well for a few days."
+   answer: "Hard-boiled eggs, cheese sticks, washed grapes, snap peas, and small containers of hummus or yogurt are reliable choices that hold up well for a few days."
  - question: "Should I pre-cut apples for the snack drawer?"
- answer: "Apples brown quickly once cut. If you do cut them, toss the slices in a little diluted lemon juice or store them in an airtight container with a damp paper towel."
+   answer: "Apples brown quickly once cut. If you do cut them, toss the slices in a little diluted lemon juice or store them in an airtight container with a damp paper towel."
  - question: "How do I stop my kids from eating all the snacks on day one?"
- answer: "If you have kids, try separating the drawer into daily sections or specific bins. You can also mix in lower-cost, high-volume snacks like carrots to balance things out."
+   answer: "If you have kids, try separating the drawer into daily sections or specific bins. You can also mix in lower-cost, high-volume snacks like carrots to balance things out."
 ---
 
 The hours between lunch and dinner are the danger zone. Around four in the afternoon, your energy drops, you get slightly irritable, and you wander into the kitchen looking for a fix. When you're tired and hungry, you aren't making rational decisions. You're looking for the path of least resistance.

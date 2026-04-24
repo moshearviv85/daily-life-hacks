@@ -13,15 +13,15 @@ whatsHot: false
 mustRead: false
 faq:
  - question: "Why do I need a freezer inventory?"
- answer: "Because frozen food all looks the same after a month. Without a list, you end up buying things you already have, or throwing away expired food because you forgot it was buried in the back."
+   answer: "Because frozen food all looks the same after a month. Without a list, you end up buying things you already have, or throwing away expired food because you forgot it was buried in the back."
  - question: "What is the best way to label frozen food?"
- answer: "Masking tape and a sharpie. It's cheap, the tape sticks well to plastic and glass in the cold, and it peels off easily when you wash the container."
+   answer: "Masking tape and a sharpie. It's cheap, the tape sticks well to plastic and glass in the cold, and it peels off easily when you wash the container."
  - question: "How long does food actually last in the freezer?"
- answer: "Most cooked meals and meats are best within three to six months. They don't become unsafe after that, but they lose flavor and texture due to freezer burn."
+   answer: "Most cooked meals and meats are best within three to six months. They don't become unsafe after that, but they lose flavor and texture due to freezer burn."
  - question: "Should I use an app for my freezer inventory?"
- answer: "Only if you're the kind of person who faithfully updates apps. For most people, a physical list on the fridge door works better because you can't ignore it when you walk into the kitchen."
+   answer: "Only if you're the kind of person who faithfully updates apps. For most people, a physical list on the fridge door works better because you can't ignore it when you walk into the kitchen."
  - question: "How do I prevent freezer burn?"
- answer: "Air is the enemy. Squeeze as much air out of bags as possible, use containers that fit the food snugly, and make sure your freezer is actually cold enough."
+   answer: "Air is the enemy. Squeeze as much air out of bags as possible, use containers that fit the food snugly, and make sure your freezer is actually cold enough."
 ---
 
 The freezer is the most optimistic appliance in the house. We put things in there with the best of intentions. Half a batch of soup, three chicken thighs, a bag of spinach we swear we will put in a smoothie. We tell ourselves we will definitely remember what is in that opaque plastic container.

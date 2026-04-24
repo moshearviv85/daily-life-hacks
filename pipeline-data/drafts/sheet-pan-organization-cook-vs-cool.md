@@ -14,15 +14,15 @@ whatsHot: false
 mustRead: false
 faq:
  - question: "Why should I use different sheet pans for cooking and cooling?"
- answer: "A pan straight out of the oven stays hot for a long time. If you leave food on it, it continues to cook and can turn soggy from trapped steam. Moving food to a cool pan stops the cooking process."
+   answer: "A pan straight out of the oven stays hot for a long time. If you leave food on it, it continues to cook and can turn soggy from trapped steam. Moving food to a cool pan stops the cooking process."
  - question: "Do I need expensive baking sheets for this to work?"
- answer: "No. Standard half sheet aluminum pans from a restaurant supply store are cheap, durable, and work perfectly. Avoid the flimsy ones that warp and pop in the oven."
+   answer: "No. Standard half sheet aluminum pans from a restaurant supply store are cheap, durable, and work perfectly. Avoid the flimsy ones that warp and pop in the oven."
  - question: "How does this help with kitchen counter space?"
- answer: "Sheet pans act as mobile staging areas. You can group ingredients on a cool pan, move it out of the way, and keep your main cutting board clear for active prep work."
+   answer: "Sheet pans act as mobile staging areas. You can group ingredients on a cool pan, move it out of the way, and keep your main cutting board clear for active prep work."
  - question: "Can I just use a wire cooling rack instead?"
- answer: "Wire racks are great for cookies, but terrible for roasted vegetables or messy meats. A cool sheet pan catches drips and handles loose items that would fall through a wire rack."
+   answer: "Wire racks are great for cookies, but terrible for roasted vegetables or messy meats. A cool sheet pan catches drips and handles loose items that would fall through a wire rack."
  - question: "How do I clean heavily stained sheet pans?"
- answer: "Make a paste of baking soda and hydrogen peroxide, spread it over the stains, let it sit for a couple of hours, then scrub. But remember, a stained pan still works perfectly fine."
+   answer: "Make a paste of baking soda and hydrogen peroxide, spread it over the stains, let it sit for a couple of hours, then scrub. But remember, a stained pan still works perfectly fine."
 ---
 
 If you cook a lot, you probably know the feeling of running out of counter space. You have a cutting board covered in onions, a bowl of marinade taking up the corner, and nowhere to put the chicken you just pulled out of the fridge.

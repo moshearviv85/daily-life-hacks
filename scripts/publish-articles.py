@@ -20,6 +20,7 @@ from datetime import date
 
 import re
 import requests
+import yaml
 
 PINS_API_URL = os.environ["PINS_API_URL"].rstrip("/")
 PINS_API_KEY = os.environ["PINS_API_KEY"]
@@ -31,6 +32,34 @@ GH_HEADS = {"Authorization": f"Bearer {GH_PAT}",
              "Accept": "application/vnd.github+json",
              "X-GitHub-Api-Version": "2022-11-28",
              "User-Agent": "daily-life-hacks-publisher"}
+
+# ── Frontmatter validator ──────────────────────────────────────────────────────
+
+def validate_frontmatter(markdown: str) -> tuple[bool, str]:
+    """Parse the YAML frontmatter and check structure. Returns (ok, error_message).
+    Required: frontmatter block with title, category, date. If faq is present,
+    every item must be a dict with 'question' and 'answer' keys.
+    """
+    m = re.match(r'^---\s*\n(.*?)\n---', markdown, re.DOTALL)
+    if not m:
+        return False, "no frontmatter block found"
+    try:
+        data = yaml.safe_load(m.group(1))
+    except yaml.YAMLError as e:
+        return False, f"YAML parse error: {e}"
+    if not isinstance(data, dict):
+        return False, "frontmatter is not a mapping"
+    for key in ("title", "category", "date"):
+        if key not in data:
+            return False, f"missing required field: {key}"
+    faq = data.get("faq")
+    if faq is not None:
+        if not isinstance(faq, list):
+            return False, "faq is not a list"
+        for i, item in enumerate(faq):
+            if not isinstance(item, dict) or "question" not in item or "answer" not in item:
+                return False, f"faq[{i}] missing question or answer (bad indentation?)"
+    return True, ""
 
 # ── Frontmatter cleaner ────────────────────────────────────────────────────────
 
@@ -200,10 +229,11 @@ def main():
         print("Nothing to publish today.")
         return
 
-    # Check duplicates and images, filter publishable articles
+    # Check duplicates, validate frontmatter, check images, filter publishable articles
     to_publish  = []
     no_image    = []
     duplicates  = []
+    invalid     = []
 
     for art in articles:
         slug    = art["slug"]
@@ -223,7 +253,21 @@ def main():
             time.sleep(0.3)
             continue
 
-        # 2. Image check
+        # 2. Frontmatter validation — refuse to publish articles with broken YAML
+        ok, err = validate_frontmatter(art.get("markdown_content") or "")
+        if not ok:
+            invalid.append(slug)
+            print(f"    ✗ INVALID frontmatter — {err} — marking and skipping")
+            requests.post(
+                f"{PINS_API_URL}/api/articles-set-status",
+                params={"key": PINS_API_KEY},
+                json={"slug": slug, "status": "INVALID", "published_at": None},
+                timeout=10,
+            )
+            time.sleep(0.3)
+            continue
+
+        # 3. Image check
         if image_exists_in_github(imgfile):
             to_publish.append(art)
             print(f"    ✓ Image found — queued for publish")
@@ -232,7 +276,9 @@ def main():
             print(f"    ✗ Image NOT found — skipping (will retry next run)")
         time.sleep(0.3)
 
-    print(f"\nScanned: {len(articles)} | Duplicates: {len(duplicates)} | Ready: {len(to_publish)} | No image: {len(no_image)}")
+    print(f"\nScanned: {len(articles)} | Duplicates: {len(duplicates)} | Invalid: {len(invalid)} | Ready: {len(to_publish)} | No image: {len(no_image)}")
+    if invalid:
+        print(f"⚠ INVALID articles (marked in D1, needs manual fix): {', '.join(invalid)}")
 
     if duplicates:
         print(f"⚠ DUPLICATES found (marked in D1, review manually): {', '.join(duplicates)}")

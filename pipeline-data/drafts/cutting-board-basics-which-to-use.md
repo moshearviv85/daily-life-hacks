@@ -14,15 +14,15 @@ whatsHot: false
 mustRead: false
 faq:
  - question: "Is wood or plastic better for raw meat?"
- answer: "Plastic is usually recommended for raw meat because it's dishwasher safe, making sanitization easier. Wood can absorb juices if not properly sealed, though some hardwoods have natural properties that help."
+   answer: "Plastic is usually recommended for raw meat because it's dishwasher safe, making sanitization easier. Wood can absorb juices if not properly sealed, though some hardwoods have natural properties that help."
  - question: "How often do I need to oil a wooden cutting board?"
- answer: "Usually once a month, or whenever the wood looks dry and dull. Use food-safe mineral oil, not olive oil, which can go rancid over time."
+   answer: "Usually once a month, or whenever the wood looks dry and dull. Use food-safe mineral oil, not olive oil, which can go rancid over time."
  - question: "Can I put my bamboo cutting board in the dishwasher?"
- answer: "No. The heat and water will warp, crack, and destroy bamboo or any wooden board. Always hand wash them and dry them immediately."
+   answer: "No. The heat and water will warp, crack, and destroy bamboo or any wooden board. Always hand wash them and dry them immediately."
  - question: "Why does my cutting board slip on the counter?"
- answer: "Hard counters and hard boards don't grip. Place a damp paper towel or a thin silicone baking mat under the board to lock it in place."
+   answer: "Hard counters and hard boards don't grip. Place a damp paper towel or a thin silicone baking mat under the board to lock it in place."
  - question: "When should I throw away a plastic cutting board?"
- answer: "When it has deep grooves that you can't scrub clean. Those deep cuts become traps for bacteria that normal washing won't reach."
+   answer: "When it has deep grooves that you can't scrub clean. Those deep cuts become traps for bacteria that normal washing won't reach."
 ---
 
 If you look in most kitchens, you will find a random assortment of cutting boards. There is usually one massive wooden board that is too heavy to wash, a flimsy plastic one that is deeply stained with tomato juice, and maybe a weird glass one someone gave as a gift. Most people just grab whatever is closest when it's time to chop an onion.

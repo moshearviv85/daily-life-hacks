@@ -14,15 +14,15 @@ whatsHot: false
 mustRead: false
 faq:
  - question: "Should I wash berries as soon as I bring them home?"
- answer: "Usually, no. Washing adds moisture, and moisture causes mold. Store them dry and wash them right before you plan to eat them."
+   answer: "Usually, no. Washing adds moisture, and moisture causes mold. Store them dry and wash them right before you plan to eat them."
  - question: "Does the vinegar soak method actually work for berries?"
- answer: "Yes, a quick soak in water with a splash of white vinegar can help remove mold spores. Just make sure you dry them completely before putting them in the fridge."
+   answer: "Yes, a quick soak in water with a splash of white vinegar can help remove mold spores. Just make sure you dry them completely before putting them in the fridge."
  - question: "Can I store berries in the plastic clamshell they came in?"
- answer: "You can, but it isn't ideal. Moving them to a glass container lined with a paper towel helps control moisture much better."
+   answer: "You can, but it isn't ideal. Moving them to a glass container lined with a paper towel helps control moisture much better."
  - question: "Why do raspberries go bad so much faster than blueberries?"
- answer: "Raspberries have very thin skins and a hollow core that traps moisture. They're delicate and prone to crushing, which speeds up decay."
+   answer: "Raspberries have very thin skins and a hollow core that traps moisture. They're delicate and prone to crushing, which speeds up decay."
  - question: "What should I do if one berry in the box is moldy?"
- answer: "Toss the fuzzy one immediately and check its neighbors. Mold spreads fast in close quarters, so separating the bad ones saves the rest of the batch."
+   answer: "Toss the fuzzy one immediately and check its neighbors. Mold spreads fast in close quarters, so separating the bad ones saves the rest of the batch."
 ---
 
 Buying fresh berries feels like a small luxury. You stand in the grocery store, looking at those vibrant red strawberries and deep blue blueberries, and you picture yourself eating them all week. Then you put them in the fridge. Two days later, you open the door, and half of them are wearing a fuzzy sweater of mold. It's frustrating. You spent good money, and now you're throwing it in the trash.

@@ -14,15 +14,15 @@ whatsHot: false
 mustRead: false
 faq:
  - question: "Does putting a potato in oversalted soup actually work?"
- answer: "Not really. The potato will absorb some liquid, and with it some salt, but it doesn't act like a magical salt magnet. It won't fix a deeply oversalted broth on its own."
+   answer: "Not really. The potato will absorb some liquid, and with it some salt, but it doesn't act like a magical salt magnet. It won't fix a deeply oversalted broth on its own."
  - question: "Can I add sugar to fix too much salt?"
- answer: "A tiny pinch of sugar can help balance the flavor profile if the soup is only slightly too salty. However, if it's heavily oversalted, adding sugar will just make it taste weirdly sweet and salty."
+   answer: "A tiny pinch of sugar can help balance the flavor profile if the soup is only slightly too salty. However, if it's heavily oversalted, adding sugar will just make it taste weirdly sweet and salty."
  - question: "How do you fix oversalted rice?"
- answer: "If the rice is already cooked, your best bet is to make a second batch of completely unsalted rice and mix them together. Rinsing cooked rice ruins the texture."
+   answer: "If the rice is already cooked, your best bet is to make a second batch of completely unsalted rice and mix them together. Rinsing cooked rice ruins the texture."
  - question: "Will adding water fix a salty soup?"
- answer: "Yes, dilution is the most reliable way to fix too much salt. However, adding water dilutes all the other flavors too, so you may need to add more herbs, garlic, or aromatics to balance it out."
+   answer: "Yes, dilution is the most reliable way to fix too much salt. However, adding water dilutes all the other flavors too, so you may need to add more herbs, garlic, or aromatics to balance it out."
  - question: "Does lemon juice cancel out salt?"
- answer: "Acid doesn't remove salt, but it does distract your palate. A squeeze of lemon or a dash of vinegar can make a slightly salty dish taste much more balanced."
+   answer: "Acid doesn't remove salt, but it does distract your palate. A squeeze of lemon or a dash of vinegar can make a slightly salty dish taste much more balanced."
 ---
 
 It happens to everyone. You're making soup, you toss in a pinch of salt, you taste it. It needs a little more. You grab the shaker, the lid slips, and suddenly half a cup of salt cascades into your dinner. Or maybe the broth reduced too much, concentrating the salt until it tastes like the dead sea.
