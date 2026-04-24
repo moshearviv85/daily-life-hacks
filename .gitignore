@@ -30,3 +30,10 @@ scripts/.env
 
 # local app settings
 kilo_settings.json
+
+# Claude Code runtime state (per-session)
+.claude/state.json
+.claude/logs/
+.claude/hooks/__pycache__/
+.claude/settings.local.json
+.claude/settings.local.json.backup-*
