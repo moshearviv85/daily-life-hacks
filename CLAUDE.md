@@ -9,10 +9,19 @@
 - **User communication:** Hebrew
 
 ## Autonomy
-Run tasks end-to-end without stopping for confirmation. Only pause if:
-- Destructive action (delete files, drop DB, force push to main)
-- External action visible to others (send email, publish to social media, post to Pinterest)
-- Genuinely blocked and need information only the user has
+
+**Default = ASK before any state-changing action.** This includes Edit / Write to source files (`*.py`, `*.ts`, `*.js`, `*.tsx`, `*.astro`, `*.sql`, `*.yml`, `*.yaml`, anything under `src/`, `scripts/`, `functions/`), `git commit`, `git push`, `npm install`, `npx wrangler`, sending emails, posting to social media, posting to Pinterest, deleting files, dropping DB, force-push.
+
+You may proceed without asking ONLY when one of the following is true:
+- The user explicitly authorized this turn (`go ahead`, `yes do it`, `proceed`, `אישור`, `תבצע`, `תמשיך`, `כן`, `צא לדרך`).
+- The user gave a concrete task this turn that names what to change ("write a script that does X", "fix the bug in Y", "תכתוב לי", "תקן את").
+- The action is part of an approved SDD plan or active TDD cycle the user already greenlit.
+- The action is read-only (Read, Grep, Glob, `git status`, `cat`, `ls`, `wc`).
+- The action is a memory or rule edit that the user just asked for.
+
+If the user's last message is a question, a clarification, or casual back-and-forth — DO NOT make code changes. Ask first.
+
+Always pause and ask if: destructive, external, or you genuinely don't have enough information. Even when authorized for one task, do not chain into a second task without checking back.
 
 ## Build & Deploy
 - Build: `npm run build` → outputs `dist/`
