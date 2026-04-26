@@ -50,11 +50,11 @@ Key tables (with current row counts as of 2026-04-26):
 
 ### Stage 1.5 / 1.75 — Multi-model writer discovery (ONE-TIME, COMPLETED)
 
-**Scripts:** `scripts/archive/stage_1_5/*` (writer runner across 50 models — archived 2026-04-26), `scripts/stage_1_75/*` (Gemini judge — KEEP, still active).
+**Scripts:** `scripts/stage_1_5/*` (writer runner — multi-model discovery + production-time helpers), `scripts/stage_1_75/*` (Gemini judge).
 **Reads:** `stage2_output`.
 **Writes:** `stage_1_5_outputs`, `stage_1_75_scores`.
 **Outcome (2026-04-23, $0.68 spend):** `google/gemini-3-flash-preview` won (89.4 quality on 13 topics, $0.009/article, 20s latency). `google/gemma-4-31b-it` is backup for pillar pages.
-**Status:** COMPLETED. Do not re-run unless model landscape shifts. **`scripts/stage_1_75/rubric.py` is still actively imported by `judge_articles.py` — keep that directory alive. `stage_1_5` is now in `scripts/archive/` since no active code references it.**
+**Status:** ACTIVE. Although the original blind-discovery sweep is COMPLETED, the modules in `stage_1_5/` are still imported at runtime by `write.py`, `generate_hero_brief.py`, `generate_pin_briefs.py`, and `stage_1_75/judge.py` (OpenRouter client, prompt template, model selector, writer wrapper). Do not move this directory; do not delete from it.
 
 ### Stage 3 — Article writing
 
