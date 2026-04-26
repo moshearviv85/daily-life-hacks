@@ -37,3 +37,15 @@ kilo_settings.json
 .claude/hooks/__pycache__/
 .claude/settings.local.json
 .claude/settings.local.json.backup-*
+
+# SQLite databases — runtime data, never tracked
+*.sqlite
+*.sqlite.backup-*
+*.db
+!schema.sql
+!**/schema.sql
+
+# Python bytecode cache — never tracked
+__pycache__/
+**/__pycache__/
+*.pyc
