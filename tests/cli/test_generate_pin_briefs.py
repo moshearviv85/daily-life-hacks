@@ -234,3 +234,225 @@ def test_generate_pin_briefs_gives_up_after_max_retries(tmp_path, monkeypatch):
         generate_pin_briefs("demo", llm_call=always_bad_llm)
     assert call_count["n"] >= 3, f"expected >=3 attempts before giving up, got {call_count['n']}"
     assert call_count["n"] <= 10, f"too many attempts ({call_count['n']}), retry cap missing"
+
+
+# ── --description-only backfill mode ─────────────────────────────────────────
+#
+# Backfill flow: a record already exists in pin-briefs.jsonl with title +
+# prompt + alt + slug for each pin, but `description` is missing or empty.
+# `--description-only` keeps every other field untouched and fills in only
+# the description on each of the 4 pins. Reason: the pin overlay images
+# have already been rendered against the existing titles; regenerating the
+# whole record would shift titles and break image alignment.
+
+from scripts.generate_pin_briefs import (
+    backfill_descriptions,
+    update_record_in_jsonl,
+)
+
+
+def _legacy_record_for(slug: str) -> dict:
+    """A pre-description-era record: 4 pins with title/prompt/alt/slug only."""
+    return {
+        "article_slug": slug,
+        "pins": [
+            {
+                "slug": "pantry-swaps-cut-grocery-bill",
+                "title": "5 Pantry Swaps That Cut Your Grocery Bill in Half",
+                "prompt": 'Overhead pantry photo. Render the text "5 Pantry Swaps That Cut Your Grocery Bill in Half" across the top.',
+                "alt": "An overhead photo of a kitchen pantry with neatly arranged glass jars on a wooden shelf.",
+            },
+            {
+                "slug": "ingredient-costing-forty-week",
+                "title": "The Ingredient Costing You $40 a Week",
+                "prompt": 'Receipt close-up. Render the text "The Ingredient Costing You $40 a Week" boldly in the top half.',
+                "alt": "A close-up photo of a grocery receipt next to a single ingredient highlighted in red.",
+            },
+            {
+                "slug": "bulk-buying-backfires-families",
+                "title": "Why Bulk Buying Backfires for Most Families",
+                "prompt": 'Cart at checkout. Render the text "Why Bulk Buying Backfires for Most Families" across the lower band.',
+                "alt": "A wide photo of a family cart at the supermarket checkout filled with bulk packages.",
+            },
+            {
+                "slug": "cheap-dinners-kids-actually-eat",
+                "title": "Cheap Dinners My Kids Actually Eat",
+                "prompt": 'Smiling child with pasta plate. Render the text "Cheap Dinners My Kids Actually Eat" on the side.',
+                "alt": "A photo of a smiling child holding a plate of pasta with simple toppings on it.",
+            },
+        ],
+    }
+
+
+def _good_descriptions_llm(article, pin_titles):
+    """Mock LLM that returns 4 valid descriptions, one per pin title."""
+    return {
+        "descriptions": [
+            "Stop overspending at the store. Click for 5 pantry swaps that quietly cut your bill in half this week.",
+            "One ingredient is eating $40 a week from your budget. See which one and what to swap it with.",
+            "Bulk buying sounds smart but wastes money for most families. See the rule that fixes it tonight.",
+            "Picky kids and tight budgets do not mix. Get the dinner formula that works on both, every weeknight.",
+        ]
+    }
+
+
+def _setup_legacy_jsonl(tmp_path, monkeypatch, slug: str = "demo"):
+    """Article on disk + legacy record (no descriptions) in jsonl."""
+    articles_dir, out_path = _setup_article(tmp_path, monkeypatch, slug=slug)
+    record = _legacy_record_for(slug)
+    out_path.write_text(json.dumps(record, ensure_ascii=False) + "\n", encoding="utf-8")
+    return articles_dir, out_path
+
+
+def test_backfill_descriptions_returns_full_pin_brief_set(tmp_path, monkeypatch):
+    _setup_legacy_jsonl(tmp_path, monkeypatch)
+    pset = backfill_descriptions("demo", llm_call=_good_descriptions_llm)
+    assert pset.article_slug == "demo"
+    assert len(pset.pins) == 4
+    assert all(p.description for p in pset.pins)
+    assert all(80 <= len(p.description) <= 200 for p in pset.pins)
+
+
+def test_backfill_descriptions_preserves_titles_prompts_alts_slugs(tmp_path, monkeypatch):
+    _setup_legacy_jsonl(tmp_path, monkeypatch)
+    legacy = _legacy_record_for("demo")
+    pset = backfill_descriptions("demo", llm_call=_good_descriptions_llm)
+    for old, new in zip(legacy["pins"], pset.pins):
+        assert new.slug == old["slug"]
+        assert new.title == old["title"]
+        assert new.prompt == old["prompt"]
+        assert new.alt == old["alt"]
+
+
+def test_backfill_descriptions_retries_on_too_short(tmp_path, monkeypatch):
+    """LLM returns an under-80-char description in the first sample;
+    backfill must retry instead of bubbling up the validation error."""
+    _setup_legacy_jsonl(tmp_path, monkeypatch)
+    call_count = {"n": 0}
+
+    def flaky_llm(article, pin_titles):
+        call_count["n"] += 1
+        out = _good_descriptions_llm(article, pin_titles)
+        if call_count["n"] == 1:
+            out["descriptions"][2] = "Too short."
+        return out
+
+    pset = backfill_descriptions("demo", llm_call=flaky_llm)
+    assert len(pset.pins) == 4
+    assert call_count["n"] == 2
+
+
+def test_backfill_descriptions_retries_on_em_dash(tmp_path, monkeypatch):
+    _setup_legacy_jsonl(tmp_path, monkeypatch)
+    call_count = {"n": 0}
+
+    def flaky_llm(article, pin_titles):
+        call_count["n"] += 1
+        out = _good_descriptions_llm(article, pin_titles)
+        if call_count["n"] == 1:
+            out["descriptions"][0] = (
+                "Stop overspending at the store — click for 5 pantry "
+                "swaps that quietly cut your bill in half this week."
+            )
+        return out
+
+    pset = backfill_descriptions("demo", llm_call=flaky_llm)
+    assert all("—" not in p.description for p in pset.pins)
+    assert call_count["n"] == 2
+
+
+def test_backfill_descriptions_gives_up_after_max_retries(tmp_path, monkeypatch):
+    _setup_legacy_jsonl(tmp_path, monkeypatch)
+    call_count = {"n": 0}
+
+    def always_bad_llm(article, pin_titles):
+        call_count["n"] += 1
+        out = _good_descriptions_llm(article, pin_titles)
+        out["descriptions"][0] = "Too short."
+        return out
+
+    with pytest.raises(ValueError):
+        backfill_descriptions("demo", llm_call=always_bad_llm)
+    assert 3 <= call_count["n"] <= 10
+
+
+def test_backfill_descriptions_raises_when_record_missing(tmp_path, monkeypatch):
+    _setup_article(tmp_path, monkeypatch, slug="demo")  # no jsonl record written
+    with pytest.raises((FileNotFoundError, KeyError, ValueError)):
+        backfill_descriptions("demo", llm_call=_good_descriptions_llm)
+
+
+def test_backfill_descriptions_wrong_count_retries(tmp_path, monkeypatch):
+    """LLM returns 3 descriptions instead of 4 - must retry, not crash."""
+    _setup_legacy_jsonl(tmp_path, monkeypatch)
+    call_count = {"n": 0}
+
+    def flaky_llm(article, pin_titles):
+        call_count["n"] += 1
+        out = _good_descriptions_llm(article, pin_titles)
+        if call_count["n"] == 1:
+            out["descriptions"] = out["descriptions"][:3]
+        return out
+
+    pset = backfill_descriptions("demo", llm_call=flaky_llm)
+    assert len(pset.pins) == 4
+    assert call_count["n"] == 2
+
+
+def test_update_record_in_jsonl_replaces_in_place(tmp_path):
+    p = tmp_path / "pin-briefs.jsonl"
+    append_record(p, {"article_slug": "a", "pins": [{"x": 1}]})
+    append_record(p, {"article_slug": "b", "pins": [{"x": 2}]})
+    append_record(p, {"article_slug": "c", "pins": [{"x": 3}]})
+
+    update_record_in_jsonl(p, "b", {"article_slug": "b", "pins": [{"x": 99}]})
+
+    lines = [json.loads(l) for l in p.read_text(encoding="utf-8").splitlines() if l.strip()]
+    assert len(lines) == 3
+    assert [r["article_slug"] for r in lines] == ["a", "b", "c"]
+    assert lines[1]["pins"] == [{"x": 99}]
+
+
+def test_update_record_in_jsonl_raises_when_slug_missing(tmp_path):
+    p = tmp_path / "pin-briefs.jsonl"
+    append_record(p, {"article_slug": "a", "pins": []})
+    with pytest.raises((KeyError, ValueError)):
+        update_record_in_jsonl(p, "nope", {"article_slug": "nope", "pins": []})
+
+
+def test_cli_description_only_writes_back_to_jsonl(tmp_path, monkeypatch):
+    _, out_path = _setup_legacy_jsonl(tmp_path, monkeypatch)
+    rc = main(
+        ["--slug", "demo", "--description-only"],
+        llm_call=_good_descriptions_llm,
+    )
+    assert rc == 0
+    lines = out_path.read_text(encoding="utf-8").splitlines()
+    assert len(lines) == 1, "must replace, not append"
+    obj = json.loads(lines[0])
+    assert obj["article_slug"] == "demo"
+    assert len(obj["pins"]) == 4
+    for p in obj["pins"]:
+        assert p["description"], "description must be filled"
+        assert 80 <= len(p["description"]) <= 200
+
+
+def test_cli_description_only_preserves_neighbor_records(tmp_path, monkeypatch):
+    """When backfilling slug X, the records for slugs Y and Z must remain
+    byte-identical."""
+    _, out_path = _setup_legacy_jsonl(tmp_path, monkeypatch, slug="demo")
+    other_a = {"article_slug": "other-a", "pins": [{"keep": True}]}
+    other_b = {"article_slug": "other-b", "pins": [{"keep": True}]}
+    with out_path.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(other_a, ensure_ascii=False) + "\n")
+        fh.write(json.dumps(other_b, ensure_ascii=False) + "\n")
+
+    main(
+        ["--slug", "demo", "--description-only"],
+        llm_call=_good_descriptions_llm,
+    )
+
+    lines = [json.loads(l) for l in out_path.read_text(encoding="utf-8").splitlines() if l.strip()]
+    assert [r["article_slug"] for r in lines] == ["demo", "other-a", "other-b"]
+    assert lines[1] == other_a
+    assert lines[2] == other_b

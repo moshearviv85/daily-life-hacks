@@ -9,6 +9,7 @@ CLI:
     python scripts/generate_pin_briefs.py --slug <article-slug>
     python scripts/generate_pin_briefs.py --slug <article-slug> --dry-run
     python scripts/generate_pin_briefs.py --slug <article-slug> --force
+    python scripts/generate_pin_briefs.py --slug <article-slug> --description-only
 """
 from __future__ import annotations
 
@@ -107,6 +108,52 @@ Article opening:
 \"\"\"
 
 Produce the 4-pin JSON now.
+"""
+
+
+DESCRIPTIONS_SYSTEM_PROMPT = """You are a Pinterest direct-response copywriter.
+
+You will be given one article (title + opening) and 4 pin titles that have
+already been chosen and rendered onto pin images. Your job: write the
+Pinterest pin DESCRIPTION for each of the 4 pins, in order.
+
+Each description must:
+  - Be 80 to 200 characters (hard ceiling).
+  - Open with a hook that does NOT just repeat the pin title.
+  - Name the concrete value the reader gets.
+  - End with a clear CTA driving the click ("Get the full recipe.",
+    "See all 5 swaps.", "Click for the printable list.", etc.).
+  - Be ASCII-only (no accented characters, no em-dash, no emojis).
+  - No medical claims, no supplements, no detox/cleanse language.
+
+Hard rules:
+- No em-dashes.
+- No emojis.
+- No banned AI words: Furthermore, Moreover, In conclusion, Delve into,
+  Dive into, It's important to note, It's worth noting, In today's world,
+  Unlock, Elevate, Navigating, Game-changer, Revolutionize,
+  Take it to the next level, Mouthwatering.
+
+Return ONLY a JSON object, no preamble, no commentary, no code fence:
+{
+  "descriptions": ["...", "...", "...", "..."]
+}
+"""
+
+DESCRIPTIONS_USER_TEMPLATE = """Article title: {title}
+
+Article opening:
+\"\"\"
+{body_digest}
+\"\"\"
+
+Pin titles (already locked, in order):
+1. {t1}
+2. {t2}
+3. {t3}
+4. {t4}
+
+Produce the descriptions JSON now (one per pin, in the same order).
 """
 
 
@@ -212,6 +259,37 @@ def call_llm(article: dict) -> dict:
     return extract_json_object(text)
 
 
+def call_llm_for_descriptions(article: dict, pin_titles: list[str]) -> dict:
+    """Call Gemini via OpenRouter for description-only backfill. Returns
+    parsed JSON dict with 'descriptions' key (list of 4 strings)."""
+    load_env_file(ENV_PATH)
+    api_key = os.environ.get("OPENROUTER_API_KEY", "")
+    if not api_key:
+        raise RuntimeError("OPENROUTER_API_KEY not set")
+    from stage_1_5 import openrouter as _or
+    user = DESCRIPTIONS_USER_TEMPLATE.format(
+        title=article["title"],
+        body_digest=article["body_digest"],
+        t1=pin_titles[0],
+        t2=pin_titles[1],
+        t3=pin_titles[2],
+        t4=pin_titles[3],
+    )
+    resp, _latency_ms = _or.call_with_retry(
+        api_key=api_key,
+        model_id=DEFAULT_MODEL,
+        system=DESCRIPTIONS_SYSTEM_PROMPT,
+        user=user,
+        temperature=DEFAULT_TEMPERATURE,
+        max_tokens=600,
+        timeout=DEFAULT_TIMEOUT,
+        retries=2,
+        backoff_seconds=3.0,
+    )
+    text, _finish = _or.extract_text(resp)
+    return extract_json_object(text)
+
+
 # ── core ────────────────────────────────────────────────────────────────────
 
 MAX_VALIDATION_RETRIES = 5
@@ -271,6 +349,124 @@ def generate_pin_briefs(slug: str, *, llm_call=call_llm) -> PinBriefSet:
     )
 
 
+def load_record_for_slug(path: Path, slug: str) -> dict:
+    """Read one record from pin-briefs.jsonl by article_slug. Raises
+    FileNotFoundError if the file is missing, KeyError if the slug is not in it."""
+    if not path.exists():
+        raise FileNotFoundError(f"pin-briefs file missing: {path}")
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if obj.get("article_slug") == slug:
+            return obj
+    raise KeyError(f"slug {slug!r} not found in {path}")
+
+
+def update_record_in_jsonl(path: Path, slug: str, new_record: dict) -> None:
+    """Replace the record for `slug` in pin-briefs.jsonl in place. Order of
+    other records is preserved. Raises KeyError if `slug` is absent."""
+    if not path.exists():
+        raise KeyError(f"slug {slug!r} not found in {path} (file missing)")
+    kept: list[str] = []
+    found = False
+    for line in path.read_text(encoding="utf-8").splitlines():
+        s = line.strip()
+        if not s:
+            continue
+        try:
+            obj = json.loads(s)
+        except json.JSONDecodeError:
+            kept.append(s)
+            continue
+        if obj.get("article_slug") == slug and not found:
+            kept.append(json.dumps(new_record, ensure_ascii=False))
+            found = True
+        else:
+            kept.append(s)
+    if not found:
+        raise KeyError(f"slug {slug!r} not found in {path}")
+    path.write_text("\n".join(kept) + "\n", encoding="utf-8")
+
+
+def _build_pin_brief_set_with_descriptions(
+    slug: str, legacy_pins: list[dict], descriptions: list[str]
+) -> PinBriefSet:
+    """Take a list of legacy pin dicts (slug/title/prompt/alt) and a parallel
+    list of descriptions, return a validated PinBriefSet. Validation lives
+    inside PinBrief.__post_init__ and PinBriefSet.__post_init__."""
+    if not isinstance(descriptions, list):
+        raise ValueError(
+            f"LLM 'descriptions' must be a list, got {type(descriptions).__name__}"
+        )
+    if len(descriptions) != len(legacy_pins):
+        raise ValueError(
+            f"description count mismatch: got {len(descriptions)} for "
+            f"{len(legacy_pins)} pins"
+        )
+    pins: list[PinBrief] = []
+    for i, (legacy, desc) in enumerate(zip(legacy_pins, descriptions)):
+        if not isinstance(desc, str):
+            raise ValueError(f"descriptions[{i}] is not a string: {desc!r}")
+        pins.append(PinBrief(
+            slug=legacy["slug"],
+            title=legacy["title"],
+            prompt=legacy["prompt"],
+            alt=legacy["alt"],
+            description=desc.strip(),
+        ))
+    return PinBriefSet(article_slug=slug, pins=pins)
+
+
+def backfill_descriptions(
+    slug: str, *, llm_call=call_llm_for_descriptions
+) -> PinBriefSet:
+    """Backfill description on every pin of an existing record in
+    pin-briefs.jsonl. Reads the article markdown for context, calls the
+    LLM for 4 descriptions matching the locked pin titles, validates the
+    result, retries up to MAX_VALIDATION_RETRIES times on stochastic
+    validation failures (banned word, em-dash, length out of range).
+
+    Returns a validated PinBriefSet. Does NOT write to disk - the caller
+    persists via update_record_in_jsonl."""
+    record = load_record_for_slug(OUTPUT_PATH, slug)
+    legacy_pins = record.get("pins") or []
+    if len(legacy_pins) != 4:
+        raise ValueError(
+            f"record for {slug!r} must have 4 pins, got {len(legacy_pins)}"
+        )
+    for i, p in enumerate(legacy_pins):
+        for k in ("slug", "title", "prompt", "alt"):
+            if not p.get(k):
+                raise ValueError(f"pin[{i}].{k} missing in record for {slug!r}")
+    pin_titles = [p["title"] for p in legacy_pins]
+    article = load_article(slug)
+    last_err: ValueError | None = None
+    for attempt in range(1, MAX_VALIDATION_RETRIES + 1):
+        raw = llm_call(article, pin_titles)
+        descriptions = raw.get("descriptions") if isinstance(raw, dict) else None
+        try:
+            return _build_pin_brief_set_with_descriptions(
+                slug, legacy_pins, descriptions if descriptions is not None else []
+            )
+        except ValueError as exc:
+            last_err = exc
+            print(
+                f"description backfill attempt {attempt}/{MAX_VALIDATION_RETRIES} "
+                f"failed for {slug!r}: {exc}",
+                file=sys.stderr,
+            )
+    assert last_err is not None
+    raise ValueError(
+        f"description backfill failed after {MAX_VALIDATION_RETRIES} attempts "
+        f"for {slug!r}; last error: {last_err}"
+    )
+
+
 def pin_brief_set_to_record(pset: PinBriefSet) -> dict:
     return {
         "article_slug": pset.article_slug,
@@ -289,19 +485,35 @@ def pin_brief_set_to_record(pset: PinBriefSet) -> dict:
 
 # ── CLI ─────────────────────────────────────────────────────────────────────
 
-def main(argv: list[str] | None = None, *, llm_call=call_llm) -> int:
+def main(argv: list[str] | None = None, *, llm_call=None) -> int:
     parser = argparse.ArgumentParser(description="Generate 4 pin briefs for one article")
     parser.add_argument("--slug", required=True, help="article slug (matches src/data/articles/{slug}.md)")
     parser.add_argument("--dry-run", action="store_true", help="print result, do not append to JSONL")
     parser.add_argument("--force", action="store_true", help="overwrite existing record for this slug")
+    parser.add_argument(
+        "--description-only",
+        action="store_true",
+        help="backfill description on every pin of an existing record; "
+             "preserves slug, title, prompt, alt. Does not regenerate them.",
+    )
     args = parser.parse_args(argv)
+
+    if args.description_only:
+        active_llm = llm_call if llm_call is not None else call_llm_for_descriptions
+        pset = backfill_descriptions(args.slug, llm_call=active_llm)
+        record = pin_brief_set_to_record(pset)
+        update_record_in_jsonl(OUTPUT_PATH, args.slug, record)
+        print(json.dumps(record, ensure_ascii=False))
+        return 0
+
+    active_llm = llm_call if llm_call is not None else call_llm
 
     if not args.force and not args.dry_run:
         if args.slug in load_existing_slugs(OUTPUT_PATH):
             print(f"skip: {args.slug} already in {OUTPUT_PATH.name}", file=sys.stderr)
             return 0
 
-    pset = generate_pin_briefs(args.slug, llm_call=llm_call)
+    pset = generate_pin_briefs(args.slug, llm_call=active_llm)
     record = pin_brief_set_to_record(pset)
 
     if args.dry_run:
