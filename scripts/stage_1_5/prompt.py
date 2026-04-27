@@ -53,7 +53,6 @@ Always include:
   category ({category})
   tags (4 to 6 lowercase plain multi-word strings)
   image ("/images/{slug}-main.jpg")
-  imageAlt (specific visual description)
   date ({today})
   author ("David Miller")
   featured: false
