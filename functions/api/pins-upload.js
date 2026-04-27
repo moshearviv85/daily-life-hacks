@@ -171,9 +171,29 @@ export async function onRequestPost(context) {
   const noId = normalizedRows.filter(r => !r.row_id);
   if (noId.length) return json({ error: `${noId.length} row(s) missing row_id` }, 400);
 
+  // Optional: when ?append=1, start scheduling AFTER the latest existing
+  // PENDING pin so a new upload queues up behind what's already booked,
+  // instead of mixing in with today's slots.
+  let startDayOffset = 0;
+  if (url.searchParams.get("append") === "1") {
+    const latest = await env.DB.prepare(
+      `SELECT MAX(scheduled_date) AS max_date
+         FROM pins_schedule
+        WHERE status = 'PENDING'`
+    ).first();
+    if (latest && latest.max_date) {
+      const lastD = new Date(latest.max_date + "T00:00:00Z");
+      const today = new Date();
+      today.setUTCHours(0, 0, 0, 0);
+      const diff = Math.ceil((lastD - today) / 86400000);
+      startDayOffset = Math.max(0, diff + 1);
+    }
+  }
+
   // Shuffle: interleave pins from different articles so same-article pins are spread out
   // Then reassign scheduled_date: 8 pins/day, 3 hours apart, starting today UTC
-  function shuffleAndReschedule(rows) {
+  // (or after the latest PENDING when append=1)
+  function shuffleAndReschedule(rows, dayOffsetStart) {
     // Group by base slug (strip _v1, _v2 suffix)
     const groups = {};
     for (const row of rows) {
@@ -208,7 +228,7 @@ export async function onRequestPost(context) {
 
     const scheduled = [];
     let idx = 0;
-    let dayOffset = 0;
+    let dayOffset = dayOffsetStart;
     while (idx < interleaved.length) {
       // Pick a random number of pins for this day: 6, 7, or 8
       const pinsToday = 6 + Math.floor(Math.random() * 3);
@@ -230,7 +250,7 @@ export async function onRequestPost(context) {
     return scheduled;
   }
 
-  normalizedRows = shuffleAndReschedule(normalizedRows);
+  normalizedRows = shuffleAndReschedule(normalizedRows, startDayOffset);
 
   // Upsert into D1 in batches of 10
   const db = env.DB;
