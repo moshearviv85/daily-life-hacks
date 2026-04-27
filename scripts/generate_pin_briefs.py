@@ -69,9 +69,16 @@ Each pin has:
   - alt    : one factual sentence describing what is literally in the
              photograph for screen readers and Google. 30 to 200 chars. No
              marketing language.
+  - description : the Pinterest pin description (NOT the same as alt). A
+             scroll-stopping 80-200 char teaser written from a different
+             angle than the title (do not just repeat the title). Open with
+             a hook, name the concrete value the reader gets, end with a
+             clear CTA driving them to click through to the article on the
+             site (e.g., "Get the full recipe.", "See all 5 swaps.",
+             "Click for the printable list."). No em-dashes. No emojis.
 
 Hard rules:
-- No em-dashes in titles or alts.
+- No em-dashes in titles, alts, or descriptions.
 - No emojis anywhere.
 - No medical claims, no supplements, no detox/cleanse language.
 - Across the 4 pins of THIS article, vary the typography style, the surface,
@@ -84,10 +91,10 @@ Hard rules:
 Return ONLY a JSON object, no preamble, no commentary, no code fence:
 {
   "pins": [
-    {"title": "...", "prompt": "...", "alt": "..."},
-    {"title": "...", "prompt": "...", "alt": "..."},
-    {"title": "...", "prompt": "...", "alt": "..."},
-    {"title": "...", "prompt": "...", "alt": "..."}
+    {"title": "...", "prompt": "...", "alt": "...", "description": "..."},
+    {"title": "...", "prompt": "...", "alt": "...", "description": "..."},
+    {"title": "...", "prompt": "...", "alt": "...", "description": "..."},
+    {"title": "...", "prompt": "...", "alt": "...", "description": "..."}
   ]
 }
 """
@@ -223,11 +230,18 @@ def _build_pin_brief_set(slug: str, raw: dict) -> PinBriefSet:
         title = (p.get("title") or "").strip()
         prompt = p.get("prompt") or ""
         alt = p.get("alt") or ""
+        description = (p.get("description") or "").strip()
         if not title:
             raise ValueError(f"pin[{i}].title missing or empty")
         slug_for_pin = _unique_slug_for(title, taken)
         taken.add(slug_for_pin)
-        pins.append(PinBrief(slug=slug_for_pin, title=title, prompt=prompt, alt=alt))
+        pins.append(PinBrief(
+            slug=slug_for_pin,
+            title=title,
+            prompt=prompt,
+            alt=alt,
+            description=description,
+        ))
 
     return PinBriefSet(article_slug=slug, pins=pins)
 
@@ -261,7 +275,13 @@ def pin_brief_set_to_record(pset: PinBriefSet) -> dict:
     return {
         "article_slug": pset.article_slug,
         "pins": [
-            {"slug": p.slug, "title": p.title, "prompt": p.prompt, "alt": p.alt}
+            {
+                "slug": p.slug,
+                "title": p.title,
+                "prompt": p.prompt,
+                "alt": p.alt,
+                "description": p.description,
+            }
             for p in pset.pins
         ],
     }

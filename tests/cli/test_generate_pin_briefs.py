@@ -34,21 +34,25 @@ def _good_llm(article):
                 "title": "5 Pantry Swaps That Cut Your Grocery Bill in Half",
                 "prompt": 'A cinematic overhead photo of a kitchen pantry. Render the text "5 Pantry Swaps That Cut Your Grocery Bill in Half" prominently across the top.',
                 "alt": "An overhead photo of a kitchen pantry with neatly arranged glass jars on a wooden shelf.",
+                "description": "Stop overspending at the store. Click for 5 pantry swaps that quietly cut your bill in half this week.",
             },
             {
                 "title": "The Ingredient Costing You $40 a Week",
                 "prompt": 'A close-up of a grocery receipt next to one ingredient. Render the text "The Ingredient Costing You $40 a Week" boldly in the top half.',
                 "alt": "A close-up photo of a grocery receipt next to a single ingredient highlighted in red.",
+                "description": "One ingredient is eating $40 a week from your budget. Find out which one and what to swap it with.",
             },
             {
                 "title": "Why Bulk Buying Backfires for Most Families",
                 "prompt": 'A wide shot of a family cart at supermarket checkout. Render the text "Why Bulk Buying Backfires for Most Families" across the lower band.',
                 "alt": "A wide photo of a family cart at the supermarket checkout filled with bulk packages.",
+                "description": "Bulk buying sounds smart but wastes money for most families. See the rule that fixes it tonight.",
             },
             {
                 "title": "Cheap Dinners My Kids Actually Eat",
                 "prompt": 'A photo of a smiling child holding a plate of pasta. Render the text "Cheap Dinners My Kids Actually Eat" in a friendly typography on the side.',
                 "alt": "A photo of a smiling child holding a plate of pasta with simple toppings on it.",
+                "description": "Picky kids and tight budgets do not mix. Get the dinner formula that works on both, every weeknight.",
             },
         ]
     }
