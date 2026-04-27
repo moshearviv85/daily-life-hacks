@@ -26,6 +26,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.lib.hero_brief import HeroBrief
+from scripts.lib.article_lookup import markdown_for_slug
 
 ARTICLES_DIR = REPO_ROOT / "src" / "data" / "articles"
 OUTPUT_PATH = REPO_ROOT / "pipeline-data" / "hero-briefs.jsonl"
@@ -101,10 +102,17 @@ def first_paragraphs(body: str, max_words: int = 180) -> str:
 
 
 def load_article(slug: str) -> dict:
-    path = ARTICLES_DIR / f"{slug}.md"
-    if not path.exists():
-        raise FileNotFoundError(f"article not found: {path}")
-    raw = path.read_text(encoding="utf-8")
+    """Load article markdown for a slug. SQL is the source of truth
+    (write_outputs.markdown); disk md is a fallback only."""
+    raw = markdown_for_slug(slug)
+    if not raw:
+        path = ARTICLES_DIR / f"{slug}.md"
+        if not path.exists():
+            raise FileNotFoundError(
+                f"article not found: not in SQL (write_outputs.markdown) "
+                f"and not on disk ({path})"
+            )
+        raw = path.read_text(encoding="utf-8")
     front, body = parse_frontmatter(raw)
     return {
         "slug": slug,

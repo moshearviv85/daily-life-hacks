@@ -28,6 +28,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from scripts.lib.pin_brief import PinBrief, PinBriefSet
 from scripts.lib.slugify import pin_slug_from_title
+from scripts.lib.article_lookup import markdown_for_slug
 from scripts.generate_hero_brief import (
     parse_frontmatter,
     first_paragraphs,
@@ -105,10 +106,17 @@ Produce the 4-pin JSON now.
 # ── article ingestion ───────────────────────────────────────────────────────
 
 def load_article(slug: str) -> dict:
-    path = ARTICLES_DIR / f"{slug}.md"
-    if not path.exists():
-        raise FileNotFoundError(f"article not found: {path}")
-    raw = path.read_text(encoding="utf-8")
+    """Load article markdown for a slug. SQL is the source of truth
+    (write_outputs.markdown); disk md is a fallback only."""
+    raw = markdown_for_slug(slug)
+    if not raw:
+        path = ARTICLES_DIR / f"{slug}.md"
+        if not path.exists():
+            raise FileNotFoundError(
+                f"article not found: not in SQL (write_outputs.markdown) "
+                f"and not on disk ({path})"
+            )
+        raw = path.read_text(encoding="utf-8")
     front, body = parse_frontmatter(raw)
     return {
         "slug": slug,
