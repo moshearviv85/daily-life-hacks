@@ -19,15 +19,22 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DISCOVERY_SCRIPTS = REPO_ROOT / "experiments" / "pinterest-50" / "scripts"
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 if str(DISCOVERY_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(DISCOVERY_SCRIPTS))
 
 from discovery import fal_client  # noqa: E402
 
+from scripts.lib.image_resize import to_jpeg  # noqa: E402
+
 HERO_JSONL = REPO_ROOT / "pipeline-data" / "hero-briefs.jsonl"
 OUT_DIR = REPO_ROOT / "public" / "images"
 MODEL_ID = "recraft-v4-pro"
 ASPECT_RATIO = "16:9"
+MAX_WIDTH = 1920
+MAX_HEIGHT = 1080
+JPEG_QUALITY = 85
 
 
 def load_briefs() -> dict[str, dict]:
@@ -58,8 +65,15 @@ def generate_one(slug: str, prompt: str, *, force: bool, dry_run: bool) -> str:
         model_id=MODEL_ID,
         prompt=prompt,
         aspect_ratio=ASPECT_RATIO,
-        output_path=out,
     )
+    jpeg_bytes = to_jpeg(
+        res["image_bytes"],
+        max_width=MAX_WIDTH,
+        max_height=MAX_HEIGHT,
+        quality=JPEG_QUALITY,
+    )
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_bytes(jpeg_bytes)
     dt = time.time() - t0
     size = out.stat().st_size if out.exists() else 0
     return (
