@@ -137,7 +137,7 @@ Key tables (with current row counts as of 2026-04-26):
 Not in this file's SQLite. Tables:
 - `articles_schedule` — pipeline of articles to publish (PENDING → PUBLISHED → DUPLICATE).
 - `pins_schedule` — pipeline of pins to post (PENDING → POSTED → FAILED).
-- `subscriptions` — Beehiiv newsletter signups.
+- `subscriptions` — Kit (ConvertKit) newsletter signups.
 
 Endpoints in `functions/api/*.js` (Cloudflare Pages Functions). Schema in `schema.sql`.
 

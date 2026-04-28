@@ -31,6 +31,6 @@ After redeploying, call:
 | Where | When available | Use for |
 |-------|----------------|--------|
 | **Build → Environment variables** | Build time only | e.g. `NODE_ENV`, build-time API keys |
-| **Settings → Variables and Secrets** | Runtime (Functions) | `STATS_KEY`, `BEEHIIV_API_KEY`, etc. |
+| **Settings → Variables and Secrets** | Runtime (Functions) | `STATS_KEY`, `KIT_API_KEY`, etc. |
 
 If you set `STATS_KEY` only in Build → Environment variables, the APIs will return 401 and `STATS_KEY_available_at_runtime: false`. Set it in **Variables and Secrets** and redeploy.

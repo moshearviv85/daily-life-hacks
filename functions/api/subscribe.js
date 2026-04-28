@@ -186,33 +186,6 @@ async function subscribeWithKit(env, payload) {
   };
 }
 
-async function subscribeWithBeehiiv(env, payload) {
-  const res = await fetch(
-    `https://api.beehiiv.com/v2/publications/${env.BEEHIIV_PUB_ID || "pub_99ff482f-ae3d-436b-b0b9-637220faa120"}/subscriptions`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${env.BEEHIIV_API_KEY}`,
-      },
-      body: JSON.stringify({
-        email: payload.email,
-        reactivate_existing: false,
-        send_welcome_email: true,
-        utm_source: "website",
-        referring_site: SITE_URL,
-      }),
-    }
-  );
-
-  return {
-    ok: res.ok || res.status === 409,
-    status: res.status,
-    detail: res.ok || res.status === 409 ? "" : await res.text(),
-    provider: "beehiiv",
-  };
-}
-
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -253,14 +226,10 @@ export async function onRequestPost(context) {
       email_segment,
     };
 
-    let providerResult;
-    if (env.KIT_API_KEY) {
-      providerResult = await subscribeWithKit(env, providerPayload);
-    } else if (env.BEEHIIV_API_KEY) {
-      providerResult = await subscribeWithBeehiiv(env, providerPayload);
-    } else {
+    if (!env.KIT_API_KEY) {
       return jsonResponse({ error: "Newsletter service not configured" }, 500, corsHeaders);
     }
+    const providerResult = await subscribeWithKit(env, providerPayload);
 
     const referrer = request.headers.get("Referer") || "";
     const status = providerResult.ok ? "success" : "failed";

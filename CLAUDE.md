@@ -30,8 +30,7 @@ Always pause and ask if: destructive, external, or you genuinely don't have enou
 - D1 DB binding name: `DB` (schema in `schema.sql`)
 
 ## Cloudflare Env Vars
-- `BEEHIIV_API_KEY` (Full Access required)
-- `BEEHIIV_PUB_ID` default `99ff482f-ae3d-436b-b0b9-637220faa120`
+- `KIT_API_KEY` (Kit / ConvertKit API key — required for `/api/subscribe`)
 - `STATS_KEY` (for `/api/stats`)
 
 ## Workflow
@@ -86,7 +85,7 @@ See `.claude/settings.json`. Summary:
 
 ## Important Constraints
 - Contact form is static (no backend) — do not imply it works
-- Beehiiv iframe embed does NOT work; custom form + `/api/subscribe` proxy is the only path that works
+- Newsletter signups go through custom form + `/api/subscribe` proxy to Kit (ConvertKit). The form posts JSON; the function calls Kit v4 API server-side
 - D1 database must be created manually in Cloudflare Dashboard and bound as `DB`
 - Original Excel backup at `../diet-website.xlsx`
 

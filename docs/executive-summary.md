@@ -68,7 +68,7 @@ Every article has either an `Article` or `Recipe` JSON-LD block. Recipe pages in
 
 **Newsletter & Email Capture**  
 - Footer form + modal popup (page-aware text varies by category)
-- Custom Cloudflare Pages Function proxy to Kit (ConvertKit) API with Beehiiv fallback
+- Custom Cloudflare Pages Function proxy to Kit (ConvertKit) API
 - Full per-signup tracking: source (footer/popup), page path, referrer, category, email segment
 - D1 database logs every signup with full context fields
 - Kit custom fields and tags set at capture: `source`, `page`, `base_slug`, `variant_slug`, `category`, `email_segment`
@@ -181,7 +181,7 @@ Two-model pipeline for all visual assets:
 
 ### Current State
 
-- **Platform:** Kit (ConvertKit) as primary, Beehiiv as fallback
+- **Platform:** Kit (ConvertKit)
 - **Capture:** Footer form + modal popup on every article page
 - **Tracking:** Full source/page/segment data captured per subscriber
 - **Segmentation:** 6 category-based email segments defined and mapped to Kit tags
