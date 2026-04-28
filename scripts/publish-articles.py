@@ -17,10 +17,17 @@ import json
 import base64
 import time
 from datetime import date
+from pathlib import Path
 
 import re
 import requests
 import yaml
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from scripts.lib.frontmatter import clean_frontmatter as _lib_clean_frontmatter
 
 PINS_API_URL = os.environ["PINS_API_URL"].rstrip("/")
 PINS_API_KEY = os.environ["PINS_API_KEY"]
@@ -64,22 +71,8 @@ def validate_frontmatter(markdown: str) -> tuple[bool, str]:
 # ── Frontmatter cleaner ────────────────────────────────────────────────────────
 
 def clean_frontmatter(markdown: str) -> str:
-    """Fix frontmatter before committing to GitHub:
-    - Remove publishAt entirely (any value) — future date hides article from Astro
-    - Set date to today (so article appears as newest on homepage)
-    - Set author to David Miller
-    """
-    today = date.today().isoformat()
-    fixed = markdown
-    # Remove publishAt line entirely (any value)
-    fixed = re.sub(r'^publishAt:\s*.*\n?', '', fixed, flags=re.MULTILINE)
-    # Update date to today
-    fixed = re.sub(r'^date:\s*.+$', f'date: {today}', fixed, flags=re.MULTILINE)
-    # Normalize author
-    fixed = re.sub(r'^author:\s*.+$', 'author: "David Miller"', fixed, flags=re.MULTILINE)
-    # Clean up extra blank lines
-    fixed = re.sub(r'\n{3,}', '\n\n', fixed)
-    return fixed
+    """Wrapper that delegates to scripts.lib.frontmatter."""
+    return _lib_clean_frontmatter(markdown)
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
