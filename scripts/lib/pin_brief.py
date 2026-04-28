@@ -2,7 +2,7 @@
 
 PinBrief is one Pinterest pin. PinBriefSet wraps exactly 4 unique pins
 (unique slugs, unique titles) for one article. Persisted as one record
-per article in pipeline-data/pin-briefs.jsonl.
+per article in the pin_briefs SQL table (topic-research.sqlite).
 
 Validation rules from .claude/rules/content.md.
 """

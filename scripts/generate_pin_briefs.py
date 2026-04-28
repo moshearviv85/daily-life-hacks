@@ -1,9 +1,13 @@
-"""Generate 4-pin briefs for one article.
+"""Generate 4-pin briefs for one article. Writes to pin_briefs table in
+pipeline-data/topic-research.sqlite (no JSONL).
 
 Reads src/data/articles/{slug}.md, calls Gemini once via OpenRouter, derives
 pin slugs from pin titles in Python, validates the response against
-PinBriefSet (4 unique pins, prompt must contain the title), and appends
-one record to pipeline-data/pin-briefs.jsonl.
+PinBriefSet (4 unique pins, prompt must contain the title), and upserts
+4 rows into pin_briefs (one row per pin, each in its own transaction).
+
+If the LLM fails after MAX_VALIDATION_RETRIES, 4 status='failed' rows are
+written so the failure is visible in SQL instead of disappearing.
 
 CLI:
     python scripts/generate_pin_briefs.py --slug <article-slug>
@@ -27,6 +31,7 @@ if str(SCRIPTS_DIR) not in sys.path:
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.lib import brief_store
 from scripts.lib.pin_brief import PinBrief, PinBriefSet
 from scripts.lib.slugify import pin_slug_from_title
 from scripts.lib.article_lookup import markdown_for_slug
@@ -38,8 +43,8 @@ from scripts.generate_hero_brief import (
 )
 
 ARTICLES_DIR = REPO_ROOT / "src" / "data" / "articles"
-OUTPUT_PATH = REPO_ROOT / "pipeline-data" / "pin-briefs.jsonl"
 ENV_PATH = REPO_ROOT / ".env"
+DEFAULT_DB_PATH = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 
 DEFAULT_MODEL = "google/gemini-2.5-flash"
 DEFAULT_TEMPERATURE = 0.7
@@ -88,19 +93,50 @@ Hard rules:
 - Across the 4 pins of THIS article, vary the typography style, the surface,
   the lighting. Do not default to one look.
 - Every title must be ASCII-only. Do NOT use accented characters or special
-  letters (no é, ñ, ü, ç, &, etc.). Replace accented words with their plain
+  letters (no e, n, u, c, &, etc.). Replace accented words with their plain
   English equivalent: "Sauteing" not "Sauteing", "Cafe" not "Cafe", and use
   the word "and" instead of "&".
+- BANNED WORDS in titles, alts, descriptions (any field): Unlock, Elevate,
+  Navigating, Game-changer, Revolutionize, Mouthwatering, Furthermore,
+  Moreover, Delve, Dive into, In conclusion, In today's world, Take it to
+  the next level. Use plain language instead. Examples of replacements:
+  "Unlock the secret" -> "See the trick" or "Try the swap";
+  "Elevate your meal" -> "Improve your meal" or "Boost your meal";
+  "Game-changer" -> "real difference" or "shift";
+  "Mouthwatering" -> "tasty" or just describe the food directly.
 
-Return ONLY a JSON object, no preamble, no commentary, no code fence:
-{
-  "pins": [
-    {"title": "...", "prompt": "...", "alt": "...", "description": "..."},
-    {"title": "...", "prompt": "...", "alt": "...", "description": "..."},
-    {"title": "...", "prompt": "...", "alt": "...", "description": "..."},
-    {"title": "...", "prompt": "...", "alt": "...", "description": "..."}
-  ]
-}
+OUTPUT FORMAT (PLAIN TEXT, NOT JSON):
+
+Return exactly 4 pins, each as a block of 4 labeled lines, separated by
+the header "PIN N" where N is 1..4. No preamble, no closing remarks, no
+code fence. Use the exact labels TITLE:, PROMPT:, ALT:, DESCRIPTION:
+(uppercase, colon, single space). Each value is one single line.
+
+Example shape (do not copy the example values):
+
+PIN 1
+TITLE: Your title here
+PROMPT: Your photo brief here. Render the text "Your title here" across the top.
+ALT: One factual sentence about the photograph.
+DESCRIPTION: Your scroll-stopping teaser ending with a CTA.
+
+PIN 2
+TITLE: ...
+PROMPT: ...
+ALT: ...
+DESCRIPTION: ...
+
+PIN 3
+TITLE: ...
+PROMPT: ...
+ALT: ...
+DESCRIPTION: ...
+
+PIN 4
+TITLE: ...
+PROMPT: ...
+ALT: ...
+DESCRIPTION: ...
 """
 
 USER_TEMPLATE = """Article title: {title}
@@ -183,49 +219,6 @@ def load_article(slug: str) -> dict:
     }
 
 
-# ── JSONL persistence ───────────────────────────────────────────────────────
-
-def load_existing_slugs(path: Path) -> set[str]:
-    if not path.exists():
-        return set()
-    out: set[str] = set()
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        try:
-            obj = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-        s = obj.get("article_slug")
-        if s:
-            out.add(s)
-    return out
-
-
-def append_record(path: Path, record: dict) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("a", encoding="utf-8") as fh:
-        fh.write(json.dumps(record, ensure_ascii=False) + "\n")
-
-
-def remove_slug_from_jsonl(path: Path, slug: str) -> None:
-    if not path.exists():
-        return
-    kept = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        s = line.strip()
-        if not s:
-            continue
-        try:
-            obj = json.loads(s)
-        except json.JSONDecodeError:
-            continue
-        if obj.get("article_slug") != slug:
-            kept.append(s)
-    path.write_text(("\n".join(kept) + "\n") if kept else "", encoding="utf-8")
-
-
 # ── slug derivation with uniqueness fallback ────────────────────────────────
 
 def _unique_slug_for(title: str, taken: set[str]) -> str:
@@ -240,8 +233,48 @@ def _unique_slug_for(title: str, taken: set[str]) -> str:
 
 # ── LLM call ────────────────────────────────────────────────────────────────
 
+PIN_HEADER_RE = re.compile(r"^PIN\s+\d+\s*$", re.IGNORECASE)
+FIELD_RE = re.compile(
+    r"^(TITLE|PROMPT|ALT|DESCRIPTION)\s*:\s*(.*)$", re.IGNORECASE
+)
+
+
+def parse_pins_text(text: str) -> dict:
+    """Parse the plain-text pin output into {'pins': [...]}.
+
+    Skips any preamble before the first PIN header. Tolerates case
+    variation, extra whitespace, and code fences. Each pin block is a
+    PIN N header followed by lines of the form FIELD: value, with one
+    line per field. Unknown fields are ignored. Empty pins are dropped."""
+    pins: list[dict] = []
+    current: dict = {}
+    seen_first_header = False
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line or line.startswith("```"):
+            continue
+        if PIN_HEADER_RE.match(line):
+            if current:
+                pins.append(current)
+            current = {}
+            seen_first_header = True
+            continue
+        if not seen_first_header:
+            continue
+        m = FIELD_RE.match(line)
+        if not m:
+            continue
+        key = m.group(1).lower()
+        val = m.group(2).strip()
+        current[key] = val
+    if current:
+        pins.append(current)
+    return {"pins": pins}
+
+
 def call_llm(article: dict) -> dict:
-    """Call Gemini via OpenRouter, return parsed JSON dict with 'pins' key."""
+    """Call the LLM via OpenRouter, return {'pins': [...]} parsed from
+    the plain-text response."""
     load_env_file(ENV_PATH)
     api_key = os.environ.get("OPENROUTER_API_KEY", "")
     if not api_key:
@@ -260,7 +293,7 @@ def call_llm(article: dict) -> dict:
         backoff_seconds=3.0,
     )
     text, _finish = _or.extract_text(resp)
-    return extract_json_object(text)
+    return parse_pins_text(text)
 
 
 def call_llm_for_descriptions(article: dict, pin_titles: list[str]) -> dict:
@@ -297,6 +330,7 @@ def call_llm_for_descriptions(article: dict, pin_titles: list[str]) -> dict:
 # ── core ────────────────────────────────────────────────────────────────────
 
 MAX_VALIDATION_RETRIES = 10
+EXPECTED_PINS_PER_ARTICLE = 4
 
 
 def _build_pin_brief_set(slug: str, raw: dict) -> PinBriefSet:
@@ -331,7 +365,7 @@ def _build_pin_brief_set(slug: str, raw: dict) -> PinBriefSet:
 def generate_pin_briefs(slug: str, *, llm_call=call_llm) -> PinBriefSet:
     """Generate a 4-pin set for one article. Retries on stochastic validation
     failures (banned word, em-dash, etc.) up to MAX_VALIDATION_RETRIES times,
-    since the LLM is sampled at temperature > 0 — a fresh sample usually passes.
+    since the LLM is sampled at temperature > 0 - a fresh sample usually passes.
     Hard errors (article missing, malformed LLM JSON shape) are not retried."""
     article = load_article(slug)
     last_err: ValueError | None = None
@@ -353,56 +387,56 @@ def generate_pin_briefs(slug: str, *, llm_call=call_llm) -> PinBriefSet:
     )
 
 
-def load_record_for_slug(path: Path, slug: str) -> dict:
-    """Read one record from pin-briefs.jsonl by article_slug. Raises
-    FileNotFoundError if the file is missing, KeyError if the slug is not in it."""
-    if not path.exists():
-        raise FileNotFoundError(f"pin-briefs file missing: {path}")
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        try:
-            obj = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-        if obj.get("article_slug") == slug:
-            return obj
-    raise KeyError(f"slug {slug!r} not found in {path}")
+# ── SQL persistence ─────────────────────────────────────────────────────────
+
+def _legacy_pins_from_sql(con, slug: str) -> list[dict]:
+    """Read existing pin rows for backfill. Returns a list of dicts with
+    keys (slug, title, prompt, alt) preserving pin_index order. Raises
+    KeyError if no rows exist for this slug."""
+    rows = brief_store.list_pin_briefs(con, slug, only_ok=True)
+    if not rows:
+        raise KeyError(f"no pin_briefs rows for slug {slug!r}")
+    return [
+        {
+            "slug": r["pin_slug"],
+            "title": r["title"],
+            "prompt": r["prompt"],
+            "alt": r["alt"],
+        }
+        for r in rows
+    ]
 
 
-def update_record_in_jsonl(path: Path, slug: str, new_record: dict) -> None:
-    """Replace the record for `slug` in pin-briefs.jsonl in place. Order of
-    other records is preserved. Raises KeyError if `slug` is absent."""
-    if not path.exists():
-        raise KeyError(f"slug {slug!r} not found in {path} (file missing)")
-    kept: list[str] = []
-    found = False
-    for line in path.read_text(encoding="utf-8").splitlines():
-        s = line.strip()
-        if not s:
-            continue
-        try:
-            obj = json.loads(s)
-        except json.JSONDecodeError:
-            kept.append(s)
-            continue
-        if obj.get("article_slug") == slug and not found:
-            kept.append(json.dumps(new_record, ensure_ascii=False))
-            found = True
-        else:
-            kept.append(s)
-    if not found:
-        raise KeyError(f"slug {slug!r} not found in {path}")
-    path.write_text("\n".join(kept) + "\n", encoding="utf-8")
+def _write_pin_brief_set(con, pset: PinBriefSet, *, model_id: str) -> None:
+    """Upsert each pin in its own transaction. A CHECK violation on one pin
+    does not roll back the others."""
+    for idx, p in enumerate(pset.pins):
+        brief_store.upsert_pin_brief(
+            con,
+            article_slug=pset.article_slug,
+            pin_index=idx,
+            pin_slug=p.slug,
+            title=p.title,
+            description=p.description,
+            prompt=p.prompt,
+            alt=p.alt,
+            model_id=model_id,
+        )
 
+
+def _record_failure_for_all_slots(con, slug: str, error: str, *, model_id: str) -> None:
+    """Mark every expected pin slot as failed. Visibility, not data."""
+    for idx in range(EXPECTED_PINS_PER_ARTICLE):
+        brief_store.record_failure_pin(
+            con, slug, idx, error[:500], model_id=model_id
+        )
+
+
+# ── description-only backfill ───────────────────────────────────────────────
 
 def _build_pin_brief_set_with_descriptions(
     slug: str, legacy_pins: list[dict], descriptions: list[str]
 ) -> PinBriefSet:
-    """Take a list of legacy pin dicts (slug/title/prompt/alt) and a parallel
-    list of descriptions, return a validated PinBriefSet. Validation lives
-    inside PinBrief.__post_init__ and PinBriefSet.__post_init__."""
     if not isinstance(descriptions, list):
         raise ValueError(
             f"LLM 'descriptions' must be a list, got {type(descriptions).__name__}"
@@ -427,21 +461,28 @@ def _build_pin_brief_set_with_descriptions(
 
 
 def backfill_descriptions(
-    slug: str, *, llm_call=call_llm_for_descriptions
+    slug: str,
+    *,
+    llm_call=call_llm_for_descriptions,
+    db_path: Path | str = DEFAULT_DB_PATH,
 ) -> PinBriefSet:
     """Backfill description on every pin of an existing record in
-    pin-briefs.jsonl. Reads the article markdown for context, calls the
+    pin_briefs SQL. Reads the article markdown for context, calls the
     LLM for 4 descriptions matching the locked pin titles, validates the
     result, retries up to MAX_VALIDATION_RETRIES times on stochastic
-    validation failures (banned word, em-dash, length out of range).
+    validation failures.
 
-    Returns a validated PinBriefSet. Does NOT write to disk - the caller
-    persists via update_record_in_jsonl."""
-    record = load_record_for_slug(OUTPUT_PATH, slug)
-    legacy_pins = record.get("pins") or []
-    if len(legacy_pins) != 4:
+    Returns a validated PinBriefSet. Does NOT write to SQL - the caller
+    persists via _write_pin_brief_set."""
+    con = brief_store.connect(db_path)
+    try:
+        legacy_pins = _legacy_pins_from_sql(con, slug)
+    finally:
+        con.close()
+    if len(legacy_pins) != EXPECTED_PINS_PER_ARTICLE:
         raise ValueError(
-            f"record for {slug!r} must have 4 pins, got {len(legacy_pins)}"
+            f"record for {slug!r} must have {EXPECTED_PINS_PER_ARTICLE} pins, "
+            f"got {len(legacy_pins)}"
         )
     for i, p in enumerate(legacy_pins):
         for k in ("slug", "title", "prompt", "alt"):
@@ -472,6 +513,7 @@ def backfill_descriptions(
 
 
 def pin_brief_set_to_record(pset: PinBriefSet) -> dict:
+    """Reduce a PinBriefSet to the JSON shape printable from --dry-run."""
     return {
         "article_slug": pset.article_slug,
         "pins": [
@@ -489,11 +531,11 @@ def pin_brief_set_to_record(pset: PinBriefSet) -> dict:
 
 # ── CLI ─────────────────────────────────────────────────────────────────────
 
-def main(argv: list[str] | None = None, *, llm_call=None) -> int:
+def main(argv: list[str] | None = None, *, llm_call=None, db_path: Path | str = DEFAULT_DB_PATH) -> int:
     parser = argparse.ArgumentParser(description="Generate 4 pin briefs for one article")
     parser.add_argument("--slug", required=True, help="article slug (matches src/data/articles/{slug}.md)")
-    parser.add_argument("--dry-run", action="store_true", help="print result, do not append to JSONL")
-    parser.add_argument("--force", action="store_true", help="overwrite existing record for this slug")
+    parser.add_argument("--dry-run", action="store_true", help="print result, do not write to SQL")
+    parser.add_argument("--force", action="store_true", help="overwrite existing rows for this slug")
     parser.add_argument(
         "--description-only",
         action="store_true",
@@ -504,30 +546,60 @@ def main(argv: list[str] | None = None, *, llm_call=None) -> int:
 
     if args.description_only:
         active_llm = llm_call if llm_call is not None else call_llm_for_descriptions
-        pset = backfill_descriptions(args.slug, llm_call=active_llm)
+        pset = backfill_descriptions(args.slug, llm_call=active_llm, db_path=db_path)
         record = pin_brief_set_to_record(pset)
-        update_record_in_jsonl(OUTPUT_PATH, args.slug, record)
+        if not args.dry_run:
+            con = brief_store.connect(db_path)
+            try:
+                _write_pin_brief_set(con, pset, model_id=DEFAULT_MODEL)
+            finally:
+                con.close()
         print(json.dumps(record, ensure_ascii=False))
         return 0
 
     active_llm = llm_call if llm_call is not None else call_llm
 
+    # idempotency: skip if all expected pins already exist
     if not args.force and not args.dry_run:
-        if args.slug in load_existing_slugs(OUTPUT_PATH):
-            print(f"skip: {args.slug} already in {OUTPUT_PATH.name}", file=sys.stderr)
+        con = brief_store.connect(db_path)
+        try:
+            existing = brief_store.list_pin_briefs(con, args.slug, only_ok=True)
+        finally:
+            con.close()
+        if len(existing) >= EXPECTED_PINS_PER_ARTICLE:
+            print(f"skip: {args.slug} already has {len(existing)} pin_briefs rows", file=sys.stderr)
             return 0
 
-    pset = generate_pin_briefs(args.slug, llm_call=active_llm)
+    try:
+        pset = generate_pin_briefs(args.slug, llm_call=active_llm)
+    except (ValueError, RuntimeError) as exc:
+        if not args.dry_run:
+            con = brief_store.connect(db_path)
+            try:
+                _record_failure_for_all_slots(
+                    con, args.slug, str(exc), model_id=DEFAULT_MODEL
+                )
+            finally:
+                con.close()
+            print(
+                f"failed: {args.slug} - recorded 4 status='failed' rows. error: {exc}",
+                file=sys.stderr,
+            )
+        raise
+
     record = pin_brief_set_to_record(pset)
 
     if args.dry_run:
         print(json.dumps(record, ensure_ascii=False, indent=2))
         return 0
 
-    if args.force:
-        remove_slug_from_jsonl(OUTPUT_PATH, args.slug)
-
-    append_record(OUTPUT_PATH, record)
+    con = brief_store.connect(db_path)
+    try:
+        if args.force:
+            brief_store.delete_pin_briefs(con, args.slug)
+        _write_pin_brief_set(con, pset, model_id=DEFAULT_MODEL)
+    finally:
+        con.close()
     print(json.dumps(record, ensure_ascii=False))
     return 0
 

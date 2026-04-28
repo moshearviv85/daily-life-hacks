@@ -1,9 +1,9 @@
 """Sync local pipeline state to Cloudflare D1.
 
 Reads articles from pipeline-data/topic-research.sqlite (write_outputs,
-status='written') and pins from pipeline-data/pin-briefs.jsonl. Injects
-hero alt from hero-briefs.jsonl into each article's frontmatter (replacing
-the writer's stale imageAlt). Builds two CSVs and POSTs them to:
+status='written'), pins from the pin_briefs table, and hero alts from
+the hero_briefs table. Injects hero alt into each article's frontmatter
+(replacing the writer's stale imageAlt). Builds two CSVs and POSTs them to:
 
     POST {base_url}/api/articles-upload?key={STATS_KEY}   (text/csv)
     POST {base_url}/api/pins-upload?key={STATS_KEY}       (text/csv)
@@ -44,15 +44,13 @@ from scripts.lib.d1_csv import (
 )
 from scripts.lib.d1_sources import (
     fetch_articles_from_sql,
-    fetch_pin_records_from_jsonl,
-    load_hero_alts,
+    fetch_pin_records_from_sql,
+    load_hero_alts_from_sql,
 )
 from scripts.generate_hero_brief import load_env_file
 
 
-DEFAULT_DB        = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
-DEFAULT_PINS_JSONL = REPO_ROOT / "pipeline-data" / "pin-briefs.jsonl"
-DEFAULT_HERO_JSONL = REPO_ROOT / "pipeline-data" / "hero-briefs.jsonl"
+DEFAULT_DB         = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 DEFAULT_BASE_URL   = "https://www.daily-life-hacks.com"
 ENV_PATH           = REPO_ROOT / ".env"
 
@@ -117,8 +115,6 @@ def main(argv: list[str] | None = None, *, post=http_post) -> int:
         description="Sync pipeline state (articles + pins) to Cloudflare D1."
     )
     parser.add_argument("--db", default=str(DEFAULT_DB))
-    parser.add_argument("--pins-jsonl", default=str(DEFAULT_PINS_JSONL))
-    parser.add_argument("--hero-jsonl", default=str(DEFAULT_HERO_JSONL))
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
     parser.add_argument("--key", default="")
     parser.add_argument("--articles-only", action="store_true")
@@ -147,7 +143,7 @@ def main(argv: list[str] | None = None, *, post=http_post) -> int:
     print(f"loaded {len(articles)} article(s) from {args.db}", file=sys.stderr)
 
     if not args.pins_only:
-        hero_alts = load_hero_alts(args.hero_jsonl)
+        hero_alts = load_hero_alts_from_sql(args.db)
         print(f"loaded {len(hero_alts)} hero alt(s) for injection", file=sys.stderr)
         articles_csv = _build_articles_csv_with_injected_alts(articles, hero_alts)
         if args.dry_run:
@@ -161,8 +157,8 @@ def main(argv: list[str] | None = None, *, post=http_post) -> int:
                 return 1
 
     if not args.articles_only:
-        pin_records = fetch_pin_records_from_jsonl(args.pins_jsonl, articles)
-        print(f"loaded {len(pin_records)} pin record(s) from {args.pins_jsonl}", file=sys.stderr)
+        pin_records = fetch_pin_records_from_sql(args.db, articles)
+        print(f"loaded {len(pin_records)} pin record(s) from {args.db}", file=sys.stderr)
         if pin_records:
             pins_csv = build_pins_csv(pin_records)
             if args.dry_run:

@@ -1,15 +1,17 @@
 """Tests for scripts/generate_hero_brief.py.
 
-TDD Task 4 — RED phase.
 LLM call is mocked. We verify:
 - markdown ingestion (frontmatter + body digest)
 - JSON extraction (plain / code fence / embedded)
-- schema validation integration (bad LLM output → ValueError)
-- JSONL append + idempotency + --force + --dry-run
+- schema validation integration (bad LLM output -> ValueError)
+- SQL writes via brief_store, idempotency, --force, --dry-run
+- failure recording when LLM fails after retries
 """
 from __future__ import annotations
 
 import json
+import sqlite3
+from pathlib import Path
 
 import pytest
 
@@ -18,12 +20,11 @@ try:
         main,
         generate_hero_brief,
         load_article,
-        load_existing_slugs,
-        append_record,
         extract_json_object,
         parse_frontmatter,
         first_paragraphs,
     )
+    from scripts.lib import brief_store
     _IMPORT_OK = True
 except ImportError:
     _IMPORT_OK = False
@@ -38,6 +39,20 @@ def _good_llm(article):
     }
 
 
+def _make_db(tmp_path: Path) -> Path:
+    db = tmp_path / "test.sqlite"
+    con = sqlite3.connect(str(db))
+    con.execute(
+        "CREATE TABLE write_outputs (id INTEGER PRIMARY KEY, slug TEXT UNIQUE, status TEXT, markdown TEXT)"
+    )
+    con.commit()
+    con.close()
+    con = brief_store.connect(db)
+    brief_store.init_schema(con)
+    con.close()
+    return db
+
+
 def _setup_article(tmp_path, monkeypatch, slug: str = "demo"):
     articles_dir = tmp_path / "articles"
     articles_dir.mkdir()
@@ -45,10 +60,11 @@ def _setup_article(tmp_path, monkeypatch, slug: str = "demo"):
         '---\ntitle: "Demo Article"\n---\nBody paragraph one.\n',
         encoding="utf-8",
     )
-    out_path = tmp_path / "out.jsonl"
     monkeypatch.setattr("scripts.generate_hero_brief.ARTICLES_DIR", articles_dir)
-    monkeypatch.setattr("scripts.generate_hero_brief.OUTPUT_PATH", out_path)
-    return articles_dir, out_path
+    monkeypatch.setattr(
+        "scripts.generate_hero_brief.markdown_for_slug", lambda s: None
+    )
+    return articles_dir
 
 
 # ── 1. module imports ────────────────────────────────────────────────────────
@@ -125,25 +141,14 @@ def test_load_article_reads_md(tmp_path, monkeypatch):
 
 def test_load_article_missing_raises(tmp_path, monkeypatch):
     monkeypatch.setattr("scripts.generate_hero_brief.ARTICLES_DIR", tmp_path)
+    monkeypatch.setattr(
+        "scripts.generate_hero_brief.markdown_for_slug", lambda s: None
+    )
     with pytest.raises(FileNotFoundError):
         load_article("does-not-exist")
 
 
-# ── 6. JSONL round-trip ──────────────────────────────────────────────────────
-
-def test_append_and_load_existing(tmp_path):
-    p = tmp_path / "out.jsonl"
-    append_record(p, {"article_slug": "a", "prompt": "p", "alt": "a"})
-    append_record(p, {"article_slug": "b", "prompt": "p", "alt": "a"})
-    slugs = load_existing_slugs(p)
-    assert slugs == {"a", "b"}
-
-
-def test_load_existing_returns_empty_when_no_file(tmp_path):
-    assert load_existing_slugs(tmp_path / "missing.jsonl") == set()
-
-
-# ── 7. generate_hero_brief with mock LLM ─────────────────────────────────────
+# ── 6. generate_hero_brief with mock LLM ─────────────────────────────────────
 
 def test_generate_hero_brief_with_mock_returns_valid(tmp_path, monkeypatch):
     _setup_article(tmp_path, monkeypatch)
@@ -165,42 +170,59 @@ def test_generate_hero_brief_invalid_llm_output_raises(tmp_path, monkeypatch):
         generate_hero_brief("demo", llm_call=bad_llm)
 
 
-# ── 8. CLI ───────────────────────────────────────────────────────────────────
+# ── 7. CLI ───────────────────────────────────────────────────────────────────
 
 def test_cli_dry_run_does_not_write(tmp_path, monkeypatch, capsys):
-    _, out_path = _setup_article(tmp_path, monkeypatch)
-    rc = main(["--slug", "demo", "--dry-run"], llm_call=_good_llm)
+    _setup_article(tmp_path, monkeypatch)
+    db = _make_db(tmp_path)
+    rc = main(["--slug", "demo", "--dry-run"], llm_call=_good_llm, db_path=db)
     assert rc == 0
-    assert not out_path.exists()
     captured = capsys.readouterr()
     assert "kitchen" in captured.out
+    con = brief_store.connect(db)
+    try:
+        assert brief_store.get_hero_brief(con, "demo") is None
+    finally:
+        con.close()
 
 
-def test_cli_writes_to_jsonl(tmp_path, monkeypatch):
-    _, out_path = _setup_article(tmp_path, monkeypatch)
-    rc = main(["--slug", "demo"], llm_call=_good_llm)
+def test_cli_writes_to_sql(tmp_path, monkeypatch):
+    _setup_article(tmp_path, monkeypatch)
+    db = _make_db(tmp_path)
+    rc = main(["--slug", "demo"], llm_call=_good_llm, db_path=db)
     assert rc == 0
-    assert out_path.exists()
-    obj = json.loads(out_path.read_text(encoding="utf-8").strip())
-    assert obj["article_slug"] == "demo"
+    con = brief_store.connect(db)
+    try:
+        row = brief_store.get_hero_brief(con, "demo")
+    finally:
+        con.close()
+    assert row is not None
+    assert row["status"] == "ok"
+    assert "kitchen" in row["prompt"]
 
 
 def test_cli_idempotent_skip(tmp_path, monkeypatch):
-    _, out_path = _setup_article(tmp_path, monkeypatch)
-    main(["--slug", "demo"], llm_call=_good_llm)
+    _setup_article(tmp_path, monkeypatch)
+    db = _make_db(tmp_path)
+    main(["--slug", "demo"], llm_call=_good_llm, db_path=db)
 
     def boom(article):
         raise AssertionError("LLM should not be called when slug already present")
 
-    rc = main(["--slug", "demo"], llm_call=boom)
+    rc = main(["--slug", "demo"], llm_call=boom, db_path=db)
     assert rc == 0
-    lines = out_path.read_text(encoding="utf-8").strip().splitlines()
-    assert len(lines) == 1
+    con = brief_store.connect(db)
+    try:
+        row = brief_store.get_hero_brief(con, "demo")
+    finally:
+        con.close()
+    assert row is not None
 
 
 def test_cli_force_overwrites(tmp_path, monkeypatch):
-    _, out_path = _setup_article(tmp_path, monkeypatch)
-    main(["--slug", "demo"], llm_call=_good_llm)
+    _setup_article(tmp_path, monkeypatch)
+    db = _make_db(tmp_path)
+    main(["--slug", "demo"], llm_call=_good_llm, db_path=db)
 
     def alt_llm(article):
         return {
@@ -208,12 +230,36 @@ def test_cli_force_overwrites(tmp_path, monkeypatch):
             "alt": "An overhead photo of a kitchen counter at golden hour with warm afternoon light streaming in.",
         }
 
-    rc = main(["--slug", "demo", "--force"], llm_call=alt_llm)
+    rc = main(["--slug", "demo", "--force"], llm_call=alt_llm, db_path=db)
     assert rc == 0
-    lines = out_path.read_text(encoding="utf-8").strip().splitlines()
-    assert len(lines) == 1
-    obj = json.loads(lines[0])
-    assert "golden hour" in obj["prompt"]
+    con = brief_store.connect(db)
+    try:
+        row = brief_store.get_hero_brief(con, "demo")
+    finally:
+        con.close()
+    assert "golden hour" in row["prompt"]
+
+
+def test_cli_records_failure_row_when_llm_fails(tmp_path, monkeypatch):
+    _setup_article(tmp_path, monkeypatch)
+    db = _make_db(tmp_path)
+
+    def always_bad(article):
+        out = _good_llm(article)
+        out["alt"] = "An overhead photo with em-dash — inserted to always fail validation across attempts."
+        return out
+
+    with pytest.raises(ValueError):
+        main(["--slug", "demo"], llm_call=always_bad, db_path=db)
+
+    con = brief_store.connect(db)
+    try:
+        row = brief_store.get_hero_brief(con, "demo")
+    finally:
+        con.close()
+    assert row is not None
+    assert row["status"] == "failed"
+    assert row["error"]
 
 
 # ── retry on stochastic validation failure ───────────────────────────────────

@@ -1,8 +1,11 @@
-"""Generate hero image brief for one article.
+"""Generate hero image brief for one article. Writes to hero_briefs table in
+pipeline-data/topic-research.sqlite (no JSONL).
 
 Reads src/data/articles/{slug}.md, calls Gemini once via OpenRouter, validates
-the response against HeroBrief, and appends one record to
-pipeline-data/hero-briefs.jsonl.
+the response against HeroBrief, and upserts one row into hero_briefs.
+
+If the LLM fails after MAX_VALIDATION_RETRIES, a status='failed' row is
+written so the failure is visible in SQL instead of disappearing.
 
 CLI:
     python scripts/generate_hero_brief.py --slug <article-slug>
@@ -25,12 +28,13 @@ if str(SCRIPTS_DIR) not in sys.path:
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.lib import brief_store
 from scripts.lib.hero_brief import HeroBrief
 from scripts.lib.article_lookup import markdown_for_slug
 
 ARTICLES_DIR = REPO_ROOT / "src" / "data" / "articles"
-OUTPUT_PATH = REPO_ROOT / "pipeline-data" / "hero-briefs.jsonl"
 ENV_PATH = REPO_ROOT / ".env"
+DEFAULT_DB_PATH = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 
 DEFAULT_MODEL = "google/gemini-2.5-flash"
 DEFAULT_TEMPERATURE = 0.85
@@ -141,47 +145,21 @@ def extract_json_object(text: str) -> dict:
     return json.loads(m.group(0))
 
 
-# ── JSONL persistence ────────────────────────────────────────────────────────
+# ── SQL persistence ──────────────────────────────────────────────────────────
 
-def load_existing_slugs(path: Path) -> set[str]:
-    if not path.exists():
-        return set()
-    out: set[str] = set()
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        try:
-            obj = json.loads(line)
-        except json.JSONDecodeError:
-            continue
-        s = obj.get("article_slug")
-        if s:
-            out.add(s)
-    return out
+def _hero_exists(con, slug: str) -> bool:
+    row = brief_store.get_hero_brief(con, slug)
+    return bool(row and row["status"] == "ok")
 
 
-def append_record(path: Path, record: dict) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("a", encoding="utf-8") as fh:
-        fh.write(json.dumps(record, ensure_ascii=False) + "\n")
-
-
-def remove_slug_from_jsonl(path: Path, slug: str) -> None:
-    if not path.exists():
-        return
-    kept = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        s = line.strip()
-        if not s:
-            continue
-        try:
-            obj = json.loads(s)
-        except json.JSONDecodeError:
-            continue
-        if obj.get("article_slug") != slug:
-            kept.append(s)
-    path.write_text(("\n".join(kept) + "\n") if kept else "", encoding="utf-8")
+def _write_hero_brief(con, brief: HeroBrief, *, model_id: str) -> None:
+    brief_store.upsert_hero_brief(
+        con,
+        article_slug=brief.article_slug,
+        prompt=brief.prompt,
+        alt=brief.alt,
+        model_id=model_id,
+    )
 
 
 # ── LLM call ─────────────────────────────────────────────────────────────────
@@ -256,19 +234,45 @@ def generate_hero_brief(slug: str, *, llm_call=call_llm) -> HeroBrief:
 
 # ── CLI ──────────────────────────────────────────────────────────────────────
 
-def main(argv: list[str] | None = None, *, llm_call=call_llm) -> int:
+def main(
+    argv: list[str] | None = None,
+    *,
+    llm_call=call_llm,
+    db_path: Path | str = DEFAULT_DB_PATH,
+) -> int:
     parser = argparse.ArgumentParser(description="Generate hero image brief for one article")
     parser.add_argument("--slug", required=True, help="article slug (matches src/data/articles/{slug}.md)")
-    parser.add_argument("--dry-run", action="store_true", help="print result, do not append to JSONL")
-    parser.add_argument("--force", action="store_true", help="overwrite existing record for this slug")
+    parser.add_argument("--dry-run", action="store_true", help="print result, do not write to SQL")
+    parser.add_argument("--force", action="store_true", help="overwrite existing row for this slug")
     args = parser.parse_args(argv)
 
     if not args.force and not args.dry_run:
-        if args.slug in load_existing_slugs(OUTPUT_PATH):
-            print(f"skip: {args.slug} already in {OUTPUT_PATH.name}", file=sys.stderr)
+        con = brief_store.connect(db_path)
+        try:
+            already_ok = _hero_exists(con, args.slug)
+        finally:
+            con.close()
+        if already_ok:
+            print(f"skip: {args.slug} already has hero_briefs row (status='ok')", file=sys.stderr)
             return 0
 
-    brief = generate_hero_brief(args.slug, llm_call=llm_call)
+    try:
+        brief = generate_hero_brief(args.slug, llm_call=llm_call)
+    except (ValueError, RuntimeError) as exc:
+        if not args.dry_run:
+            con = brief_store.connect(db_path)
+            try:
+                brief_store.record_failure_hero(
+                    con, args.slug, str(exc)[:500], model_id=DEFAULT_MODEL
+                )
+            finally:
+                con.close()
+            print(
+                f"failed: {args.slug} - recorded status='failed' row. error: {exc}",
+                file=sys.stderr,
+            )
+        raise
+
     record = {
         "article_slug": brief.article_slug,
         "prompt": brief.prompt,
@@ -279,10 +283,11 @@ def main(argv: list[str] | None = None, *, llm_call=call_llm) -> int:
         print(json.dumps(record, ensure_ascii=False, indent=2))
         return 0
 
-    if args.force:
-        remove_slug_from_jsonl(OUTPUT_PATH, args.slug)
-
-    append_record(OUTPUT_PATH, record)
+    con = brief_store.connect(db_path)
+    try:
+        _write_hero_brief(con, brief, model_id=DEFAULT_MODEL)
+    finally:
+        con.close()
     print(json.dumps(record, ensure_ascii=False))
     return 0
 

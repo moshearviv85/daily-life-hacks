@@ -2,15 +2,16 @@
 
 Authoritative sources:
 - pipeline-data/topic-research.sqlite, table write_outputs (articles)
-- pipeline-data/pin-briefs.jsonl (pins)
-- pipeline-data/hero-briefs.jsonl (hero alts for imageAlt injection)
+- pipeline-data/topic-research.sqlite, table pin_briefs (pins)
+- pipeline-data/topic-research.sqlite, table hero_briefs (hero alts)
 """
 from __future__ import annotations
 
-import json
 import re
 import sqlite3
 from pathlib import Path
+
+from scripts.lib import brief_store
 
 
 _TITLE_RE = re.compile(r"^title:\s*(.+?)\s*$", re.MULTILINE)
@@ -63,53 +64,51 @@ def fetch_articles_from_sql(db_path: Path | str) -> list[dict]:
         con.close()
 
 
-def _load_jsonl(path: Path) -> list[dict]:
-    if not path.exists():
-        return []
-    out: list[dict] = []
-    for line in path.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        try:
-            out.append(json.loads(line))
-        except json.JSONDecodeError:
-            continue
-    return out
-
-
-def fetch_pin_records_from_jsonl(
-    path: Path | str, articles: list[dict]
+def fetch_pin_records_from_sql(
+    db_path: Path | str, articles: list[dict]
 ) -> list[dict]:
     """Return [{article_slug, category, pins[]}] for each article that has
-    a record in pin-briefs.jsonl. Articles in `articles` that lack a pin
-    record are skipped silently (in-progress batch)."""
-    p = Path(path)
-    raw = _load_jsonl(p)
-    by_slug = {r.get("article_slug"): r for r in raw if r.get("article_slug")}
-    cat_by_slug = {a["slug"]: a.get("category", "") for a in articles}
-    out: list[dict] = []
-    for a in articles:
-        slug = a["slug"]
-        rec = by_slug.get(slug)
-        if not rec:
-            continue
-        out.append({
-            "article_slug": slug,
-            "category":     cat_by_slug.get(slug, ""),
-            "pins":         rec.get("pins") or [],
-        })
-    return out
+    status='ok' rows in pin_briefs. Articles in `articles` that lack pins
+    are skipped silently (in-progress batch).
+
+    Each pin dict has keys (slug, title, prompt, alt, description) for
+    backward compatibility with build_pins_csv."""
+    con = brief_store.connect(db_path)
+    try:
+        out: list[dict] = []
+        for a in articles:
+            slug = a["slug"]
+            rows = brief_store.list_pin_briefs(con, slug, only_ok=True)
+            if not rows:
+                continue
+            pins = [
+                {
+                    "slug":        r["pin_slug"],
+                    "title":       r["title"],
+                    "prompt":      r["prompt"],
+                    "alt":         r["alt"],
+                    "description": r["description"],
+                }
+                for r in rows
+            ]
+            out.append({
+                "article_slug": slug,
+                "category":     a.get("category", ""),
+                "pins":         pins,
+            })
+        return out
+    finally:
+        con.close()
 
 
-def load_hero_alts(path: Path | str) -> dict[str, str]:
-    """Return {slug: alt} from hero-briefs.jsonl. Records without alt or
-    without article_slug are skipped. Missing file returns {}."""
-    p = Path(path)
-    out: dict[str, str] = {}
-    for rec in _load_jsonl(p):
-        slug = rec.get("article_slug")
-        alt = rec.get("alt")
-        if slug and alt:
-            out[slug] = alt
-    return out
+def load_hero_alts_from_sql(db_path: Path | str) -> dict[str, str]:
+    """Return {slug: alt} from hero_briefs (status='ok' rows only). Rows
+    without an alt are skipped."""
+    con = brief_store.connect(db_path)
+    try:
+        rows = con.execute(
+            "SELECT article_slug, alt FROM hero_briefs WHERE status='ok' AND alt IS NOT NULL AND alt != ''"
+        ).fetchall()
+        return {r["article_slug"]: r["alt"] for r in rows}
+    finally:
+        con.close()

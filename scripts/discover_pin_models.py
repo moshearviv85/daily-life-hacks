@@ -1,4 +1,4 @@
-"""Pin-image model discovery: every pin in pin-briefs.jsonl across 5 FAL models.
+"""Pin-image model discovery: every pin in pin_briefs SQL across 5 FAL models.
 
 Sends each pin's prompt verbatim (no Python templating) to each model. Output
 is grouped per pin so visual comparison is one folder = one pin = N models.
@@ -21,12 +21,15 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DISCOVERY_SCRIPTS = REPO_ROOT / "experiments" / "pinterest-50" / "scripts"
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 if str(DISCOVERY_SCRIPTS) not in sys.path:
     sys.path.insert(0, str(DISCOVERY_SCRIPTS))
 
 from discovery import fal_client  # noqa: E402
+from scripts.lib import brief_store  # noqa: E402
 
-PIN_JSONL = REPO_ROOT / "pipeline-data" / "pin-briefs.jsonl"
+DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 OUT_ROOT = REPO_ROOT / "pipeline-data" / "pin-discovery"
 ASPECT_RATIO = "3:4"
 CONCURRENCY = 4
@@ -40,19 +43,40 @@ MODELS = [
 ]
 
 
-def load_pin_records(filter_slug: str | None) -> list[dict]:
-    if not PIN_JSONL.exists():
-        raise FileNotFoundError(f"missing brief file: {PIN_JSONL}")
-    out: list[dict] = []
-    for line in PIN_JSONL.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        rec = json.loads(line)
-        if filter_slug and rec["article_slug"] != filter_slug:
-            continue
-        out.append(rec)
-    return out
+def load_pin_records(filter_slug: str | None, db_path: Path | str = DEFAULT_DB) -> list[dict]:
+    """Read pin_briefs (status='ok') as records: [{article_slug, pins[...]}].
+    Pins keep keys (slug, title, prompt, alt, description) for backward
+    compatibility with the rest of this script."""
+    con = brief_store.connect(db_path)
+    try:
+        if filter_slug:
+            slugs = [filter_slug]
+        else:
+            rows = con.execute(
+                "SELECT DISTINCT article_slug FROM pin_briefs WHERE status='ok' ORDER BY article_slug"
+            ).fetchall()
+            slugs = [r["article_slug"] for r in rows]
+        out: list[dict] = []
+        for s in slugs:
+            pins = brief_store.list_pin_briefs(con, s, only_ok=True)
+            if not pins:
+                continue
+            out.append({
+                "article_slug": s,
+                "pins": [
+                    {
+                        "slug": p["pin_slug"],
+                        "title": p["title"],
+                        "prompt": p["prompt"],
+                        "alt": p["alt"],
+                        "description": p["description"],
+                    }
+                    for p in pins
+                ],
+            })
+        return out
+    finally:
+        con.close()
 
 
 def out_path_for(pin_slug: str, model_id: str) -> Path:

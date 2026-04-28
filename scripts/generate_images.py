@@ -1,7 +1,7 @@
-"""Generate hero images from pipeline-data/hero-briefs.jsonl via Recraft v4 Pro.
+"""Generate hero images from hero_briefs SQL table via Recraft v4 Pro.
 
-Reads each record's `prompt` verbatim and sends it to FAL. No prompt construction,
-no scene library, no templating in Python. Output: public/images/{slug}-main.jpg.
+Reads each row's `prompt` verbatim and sends it to FAL. Output:
+public/images/{slug}-main.jpg.
 
 CLI:
     python scripts/generate_images.py --slug <article-slug>
@@ -12,7 +12,6 @@ CLI:
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 import time
 from pathlib import Path
@@ -27,8 +26,9 @@ if str(DISCOVERY_SCRIPTS) not in sys.path:
 from discovery import fal_client  # noqa: E402
 
 from scripts.lib.image_resize import to_jpeg  # noqa: E402
+from scripts.lib import brief_store  # noqa: E402
 
-HERO_JSONL = REPO_ROOT / "pipeline-data" / "hero-briefs.jsonl"
+DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 OUT_DIR = REPO_ROOT / "public" / "images"
 MODEL_ID = "recraft-v4-pro"
 ASPECT_RATIO = "16:9"
@@ -37,17 +37,16 @@ MAX_HEIGHT = 1080
 JPEG_QUALITY = 85
 
 
-def load_briefs() -> dict[str, dict]:
-    if not HERO_JSONL.exists():
-        raise FileNotFoundError(f"missing brief file: {HERO_JSONL}")
-    out: dict[str, dict] = {}
-    for line in HERO_JSONL.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        rec = json.loads(line)
-        out[rec["article_slug"]] = rec
-    return out
+def load_briefs(db_path: Path | str = DEFAULT_DB) -> dict[str, dict]:
+    """Read hero_briefs (status='ok') as {slug: {prompt, alt}}."""
+    con = brief_store.connect(db_path)
+    try:
+        rows = con.execute(
+            "SELECT article_slug, prompt, alt FROM hero_briefs WHERE status='ok'"
+        ).fetchall()
+        return {r["article_slug"]: {"prompt": r["prompt"], "alt": r["alt"]} for r in rows}
+    finally:
+        con.close()
 
 
 def out_path_for(slug: str) -> Path:
@@ -86,7 +85,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--slug", help="single article slug to generate")
-    g.add_argument("--all", action="store_true", help="every record in hero-briefs.jsonl")
+    g.add_argument("--all", action="store_true", help="every hero_briefs row (status=ok)")
     ap.add_argument("--force", action="store_true", help="overwrite existing image")
     ap.add_argument("--dry-run", action="store_true", help="print plan, no FAL call")
     args = ap.parse_args(argv)
@@ -95,7 +94,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.slug:
         if args.slug not in briefs:
             print(
-                f"ERR  no hero brief for slug {args.slug!r} in {HERO_JSONL.name}. "
+                f"ERR  no hero_briefs row for slug {args.slug!r}. "
                 f"Run scripts/generate_hero_brief.py --slug {args.slug} first.",
                 file=sys.stderr,
             )

@@ -5,13 +5,14 @@ HTTP is mocked. Real production calls happen only when the user runs the
 CLI directly (no test triggers a network call)."""
 from __future__ import annotations
 
-import json
 import sqlite3
+from pathlib import Path
 
 import pytest
 
 try:
     from scripts.sync_to_d1 import main
+    from scripts.lib import brief_store
     _IMPORT_OK = True
 except ImportError:
     _IMPORT_OK = False
@@ -38,9 +39,14 @@ class FakePost:
 
 # ── fixtures ─────────────────────────────────────────────────────────────────
 
-def _setup_pipeline_state(tmp_path):
-    """Build a complete tmp pipeline state and return (db, pins_jsonl,
-    hero_jsonl)."""
+VALID_PIN_TITLE = "A reasonable pin title that fits the length window"
+VALID_PIN_DESC = "A reasonable pin description that is long enough to satisfy the check constraint and ends with a CTA."
+VALID_PIN_PROMPT = "A cinematic overhead photo of a kitchen scene with text overlay across the top of the frame."
+VALID_HERO_PROMPT = "A wide overhead photo of fresh ingredients on a wooden table with morning light."
+
+
+def _setup_pipeline_state(tmp_path: Path, *, with_pins: bool = True) -> Path:
+    """Build a complete tmp pipeline state in one DB. Returns db path."""
     db = tmp_path / "topic.sqlite"
     con = sqlite3.connect(str(db))
     con.execute("""
@@ -52,52 +58,53 @@ def _setup_pipeline_state(tmp_path):
             status TEXT, disqualified INTEGER DEFAULT 0
         )
     """)
-    md_template = (
-        "---\ntitle: {title}\n"
-        'image: "/images/{slug}-main.jpg"\n'
+    md = (
+        "---\ntitle: Demo Title\n"
+        'image: "/images/demo-main.jpg"\n'
         "imageAlt: stale alt from writer\n"
         "date: 2026-04-27\n---\nBody.\n"
     )
     con.execute(
         "INSERT INTO write_outputs (run_id, topic_id, topic_rank, topic, category, slug, model_id, markdown, status) "
         "VALUES (?,?,?,?,?,?,?,?,?)",
-        (1, 1, 1, "Demo", "recipes", "demo",
-         "test", md_template.format(title="Demo Title", slug="demo"),
-         "written"),
+        (1, 1, 1, "Demo", "recipes", "demo", "test", md, "written"),
     )
     con.commit()
     con.close()
 
-    pins_jsonl = tmp_path / "pin-briefs.jsonl"
-    pins_record = {
-        "article_slug": "demo",
-        "pins": [
-            {"slug": f"p{i}", "title": f"Pin Title {i}", "prompt": f"... {i}",
-             "alt": f"Alt {i} long enough for validation purposes here.",
-             "description": f"Description {i} that is over 80 characters long for the validator and ends with CTA."}
-            for i in range(1, 5)
-        ],
-    }
-    pins_jsonl.write_text(json.dumps(pins_record) + "\n", encoding="utf-8")
-
-    hero_jsonl = tmp_path / "hero-briefs.jsonl"
-    hero_jsonl.write_text(
-        json.dumps({"article_slug": "demo", "prompt": "...",
-                    "alt": "Fresh alt from hero brief"}) + "\n",
-        encoding="utf-8",
-    )
-    return db, pins_jsonl, hero_jsonl
+    bcon = brief_store.connect(db)
+    try:
+        brief_store.init_schema(bcon)
+        brief_store.upsert_hero_brief(
+            bcon,
+            article_slug="demo",
+            prompt=VALID_HERO_PROMPT,
+            alt="Fresh alt from hero brief",
+        )
+        if with_pins:
+            for i in range(4):
+                brief_store.upsert_pin_brief(
+                    bcon,
+                    article_slug="demo",
+                    pin_index=i,
+                    pin_slug=f"pin-{i}",
+                    title=f"{VALID_PIN_TITLE} {i}",
+                    description=f"{VALID_PIN_DESC} v{i}",
+                    prompt=VALID_PIN_PROMPT,
+                    alt=f"A demo pin alt text for variant {i} that is long enough.",
+                )
+    finally:
+        bcon.close()
+    return db
 
 
 # ── default flow ─────────────────────────────────────────────────────────────
 
 def test_main_calls_articles_then_pins(tmp_path):
-    db, pins_jsonl, hero_jsonl = _setup_pipeline_state(tmp_path)
+    db = _setup_pipeline_state(tmp_path)
     fake = FakePost()
     rc = main([
         "--db", str(db),
-        "--pins-jsonl", str(pins_jsonl),
-        "--hero-jsonl", str(hero_jsonl),
         "--base-url", "https://test.example.com",
         "--key", "test-key",
     ], post=fake)
@@ -108,11 +115,10 @@ def test_main_calls_articles_then_pins(tmp_path):
 
 
 def test_main_sends_key_in_query_string(tmp_path):
-    db, pins_jsonl, hero_jsonl = _setup_pipeline_state(tmp_path)
+    db = _setup_pipeline_state(tmp_path)
     fake = FakePost()
     main([
-        "--db", str(db), "--pins-jsonl", str(pins_jsonl),
-        "--hero-jsonl", str(hero_jsonl),
+        "--db", str(db),
         "--base-url", "https://test.example.com", "--key", "secret-key",
     ], post=fake)
     for c in fake.calls:
@@ -120,11 +126,10 @@ def test_main_sends_key_in_query_string(tmp_path):
 
 
 def test_main_injects_image_alt_into_articles_csv(tmp_path):
-    db, pins_jsonl, hero_jsonl = _setup_pipeline_state(tmp_path)
+    db = _setup_pipeline_state(tmp_path)
     fake = FakePost()
     main([
-        "--db", str(db), "--pins-jsonl", str(pins_jsonl),
-        "--hero-jsonl", str(hero_jsonl),
+        "--db", str(db),
         "--base-url", "https://test.example.com", "--key", "k",
     ], post=fake)
     articles_body = fake.calls[0]["body"]
@@ -133,11 +138,10 @@ def test_main_injects_image_alt_into_articles_csv(tmp_path):
 
 
 def test_main_articles_only_skips_pins(tmp_path):
-    db, pins_jsonl, hero_jsonl = _setup_pipeline_state(tmp_path)
+    db = _setup_pipeline_state(tmp_path)
     fake = FakePost()
     main([
-        "--db", str(db), "--pins-jsonl", str(pins_jsonl),
-        "--hero-jsonl", str(hero_jsonl),
+        "--db", str(db),
         "--base-url", "https://test.example.com", "--key", "k",
         "--articles-only",
     ], post=fake)
@@ -146,11 +150,10 @@ def test_main_articles_only_skips_pins(tmp_path):
 
 
 def test_main_pins_only_skips_articles(tmp_path):
-    db, pins_jsonl, hero_jsonl = _setup_pipeline_state(tmp_path)
+    db = _setup_pipeline_state(tmp_path)
     fake = FakePost()
     main([
-        "--db", str(db), "--pins-jsonl", str(pins_jsonl),
-        "--hero-jsonl", str(hero_jsonl),
+        "--db", str(db),
         "--base-url", "https://test.example.com", "--key", "k",
         "--pins-only",
     ], post=fake)
@@ -159,76 +162,67 @@ def test_main_pins_only_skips_articles(tmp_path):
 
 
 def test_main_dry_run_does_not_call_http(tmp_path, capsys):
-    db, pins_jsonl, hero_jsonl = _setup_pipeline_state(tmp_path)
+    db = _setup_pipeline_state(tmp_path)
     fake = FakePost()
     rc = main([
-        "--db", str(db), "--pins-jsonl", str(pins_jsonl),
-        "--hero-jsonl", str(hero_jsonl),
+        "--db", str(db),
         "--base-url", "https://test.example.com", "--key", "k",
         "--dry-run",
     ], post=fake)
     assert rc == 0
     assert fake.calls == []
     out = capsys.readouterr().out
-    assert "demo" in out  # CSV preview was printed
+    assert "demo" in out
 
 
 # ── error handling ───────────────────────────────────────────────────────────
 
 def test_main_retries_on_500_then_succeeds(tmp_path):
-    db, pins_jsonl, hero_jsonl = _setup_pipeline_state(tmp_path)
+    db = _setup_pipeline_state(tmp_path)
     fake = FakePost(responses=[
-        (500, "boom"),               # articles attempt 1
-        (200, '{"ok":true}'),        # articles attempt 2
-        (200, '{"ok":true}'),        # pins attempt 1
+        (500, "boom"),
+        (200, '{"ok":true}'),
+        (200, '{"ok":true}'),
     ])
     rc = main([
-        "--db", str(db), "--pins-jsonl", str(pins_jsonl),
-        "--hero-jsonl", str(hero_jsonl),
+        "--db", str(db),
         "--base-url", "https://test.example.com", "--key", "k",
     ], post=fake)
     assert rc == 0
-    # 1 retry on articles + 1 success on pins = 3 calls
     assert len(fake.calls) == 3
 
 
 def test_main_does_not_retry_on_401(tmp_path):
-    db, pins_jsonl, hero_jsonl = _setup_pipeline_state(tmp_path)
+    db = _setup_pipeline_state(tmp_path)
     fake = FakePost(responses=[
         (401, '{"error":"Unauthorized"}'),
     ])
     rc = main([
-        "--db", str(db), "--pins-jsonl", str(pins_jsonl),
-        "--hero-jsonl", str(hero_jsonl),
+        "--db", str(db),
         "--base-url", "https://test.example.com", "--key", "k",
     ], post=fake)
     assert rc != 0
-    assert len(fake.calls) == 1  # no retry
+    assert len(fake.calls) == 1
 
 
 def test_main_gives_up_after_max_500_retries(tmp_path):
-    db, pins_jsonl, hero_jsonl = _setup_pipeline_state(tmp_path)
+    db = _setup_pipeline_state(tmp_path)
     fake = FakePost(responses=[(500, "x")] * 10)
     rc = main([
-        "--db", str(db), "--pins-jsonl", str(pins_jsonl),
-        "--hero-jsonl", str(hero_jsonl),
+        "--db", str(db),
         "--base-url", "https://test.example.com", "--key", "k",
     ], post=fake)
     assert rc != 0
-    assert 2 <= len(fake.calls) <= 5  # bounded retry
+    assert 2 <= len(fake.calls) <= 5
 
 
-def test_main_skips_pins_when_no_records_in_jsonl(tmp_path):
-    """If pin-briefs.jsonl is empty (or all articles lack pin records),
-    the script must not POST an empty CSV to /api/pins-upload — the endpoint
-    rejects empty bodies."""
-    db, _, hero_jsonl = _setup_pipeline_state(tmp_path)
-    empty_pins = tmp_path / "empty.jsonl"
-    empty_pins.write_text("", encoding="utf-8")
+def test_main_skips_pins_when_no_records_in_sql(tmp_path):
+    """If pin_briefs has no rows for the article, the script must not POST
+    an empty CSV to /api/pins-upload."""
+    db = _setup_pipeline_state(tmp_path, with_pins=False)
     fake = FakePost()
     rc = main([
-        "--db", str(db), "--pins-jsonl", str(empty_pins),
-        "--hero-jsonl", str(hero_jsonl),
+        "--db", str(db),
         "--base-url", "https://test.example.com", "--key", "k",
     ], post=fake)
     assert rc == 0

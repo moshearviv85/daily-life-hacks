@@ -1,8 +1,8 @@
-"""Generate pin images from pipeline-data/pin-briefs.jsonl via GPT Image 2.
+"""Generate pin images from pin_briefs SQL table via GPT Image 2.
 
-For each article record, sends each pin's prompt verbatim to GPT Image 2 and
-saves the result as public/images/pins/{article_slug}_v{1..4}.jpg, where the
-variant number (1..4) is the position of the pin in the article's pins array.
+For each article, sends each pin's prompt verbatim to GPT Image 2 and saves
+the result as public/images/pins/{article_slug}_v{1..N}.jpg, where the
+variant number is pin_index+1 in pin_briefs.
 
 CLI:
     python scripts/generate_pin_images.py --slug <article-slug>
@@ -30,8 +30,9 @@ if str(DISCOVERY_SCRIPTS) not in sys.path:
 from discovery import fal_client  # noqa: E402
 
 from scripts.lib.image_resize import to_jpeg  # noqa: E402
+from scripts.lib import brief_store  # noqa: E402
 
-PIN_JSONL = REPO_ROOT / "pipeline-data" / "pin-briefs.jsonl"
+DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 OUT_DIR = REPO_ROOT / "public" / "images" / "pins"
 LOG_PATH = REPO_ROOT / "pipeline-data" / "pin-images.jsonl"
 MODEL_ID = "gpt-image-2"
@@ -42,19 +43,39 @@ MAX_HEIGHT = 1500
 JPEG_QUALITY = 85
 
 
-def load_pin_records(filter_slug: str | None) -> list[dict]:
-    if not PIN_JSONL.exists():
-        raise FileNotFoundError(f"missing brief file: {PIN_JSONL}")
-    out: list[dict] = []
-    for line in PIN_JSONL.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line:
-            continue
-        rec = json.loads(line)
-        if filter_slug and rec["article_slug"] != filter_slug:
-            continue
-        out.append(rec)
-    return out
+def load_pin_records(filter_slug: str | None, db_path: Path | str = DEFAULT_DB) -> list[dict]:
+    """Read pin_briefs (status='ok') as records of the legacy shape:
+    [{article_slug, pins: [{slug, title, prompt, alt, description}, ...]}]."""
+    con = brief_store.connect(db_path)
+    try:
+        if filter_slug:
+            slugs = [filter_slug]
+        else:
+            rows = con.execute(
+                "SELECT DISTINCT article_slug FROM pin_briefs WHERE status='ok' ORDER BY article_slug"
+            ).fetchall()
+            slugs = [r["article_slug"] for r in rows]
+        out: list[dict] = []
+        for s in slugs:
+            pins = brief_store.list_pin_briefs(con, s, only_ok=True)
+            if not pins:
+                continue
+            out.append({
+                "article_slug": s,
+                "pins": [
+                    {
+                        "slug": p["pin_slug"],
+                        "title": p["title"],
+                        "prompt": p["prompt"],
+                        "alt": p["alt"],
+                        "description": p["description"],
+                    }
+                    for p in pins
+                ],
+            })
+        return out
+    finally:
+        con.close()
 
 
 def out_path_for(article_slug: str, variant: int) -> Path:
@@ -138,14 +159,14 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--slug", help="single article_slug to generate")
-    g.add_argument("--all", action="store_true", help="every article in pin-briefs.jsonl")
+    g.add_argument("--all", action="store_true", help="every article with pin_briefs in SQL")
     ap.add_argument("--force", action="store_true", help="overwrite existing files")
     ap.add_argument("--dry-run", action="store_true", help="print plan, no FAL")
     args = ap.parse_args(argv)
 
     records = load_pin_records(args.slug)
     if not records:
-        print(f"no records found in {PIN_JSONL.name}"
+        print("no pin_briefs rows found"
               + (f" for slug={args.slug!r}" if args.slug else ""), file=sys.stderr)
         return 2
 
