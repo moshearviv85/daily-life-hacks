@@ -42,7 +42,7 @@ OUTPUT_PATH = REPO_ROOT / "pipeline-data" / "pin-briefs.jsonl"
 ENV_PATH = REPO_ROOT / ".env"
 
 DEFAULT_MODEL = "google/gemini-2.5-flash"
-DEFAULT_TEMPERATURE = 0.95
+DEFAULT_TEMPERATURE = 0.7
 DEFAULT_MAX_TOKENS = 2000
 DEFAULT_TIMEOUT = 90
 
@@ -71,12 +71,15 @@ Each pin has:
              photograph for screen readers and Google. 30 to 200 chars. No
              marketing language.
   - description : the Pinterest pin description (NOT the same as alt). A
-             scroll-stopping 80-200 char teaser written from a different
-             angle than the title (do not just repeat the title). Open with
-             a hook, name the concrete value the reader gets, end with a
-             clear CTA driving them to click through to the article on the
-             site (e.g., "Get the full recipe.", "See all 5 swaps.",
-             "Click for the printable list."). No em-dashes. No emojis.
+             scroll-stopping teaser, STRICTLY 80 to 195 characters
+             (count the chars before returning - 196 or more will be
+             rejected). Written from a different angle than the title (do
+             not just repeat the title). Open with a hook, name the
+             concrete value the reader gets, end with a clear CTA driving
+             them to click through to the article on the site (e.g.,
+             "Get the full recipe.", "See all 5 swaps.", "Click for the
+             printable list."). No em-dashes. No emojis. If your draft is
+             196+ chars, rewrite it shorter before returning.
 
 Hard rules:
 - No em-dashes in titles, alts, or descriptions.
@@ -118,7 +121,8 @@ already been chosen and rendered onto pin images. Your job: write the
 Pinterest pin DESCRIPTION for each of the 4 pins, in order.
 
 Each description must:
-  - Be 80 to 200 characters (hard ceiling).
+  - Be 80 to 195 characters STRICTLY. Count the characters before returning.
+    196 or more will be rejected. If your draft is 196+, rewrite shorter.
   - Open with a hook that does NOT just repeat the pin title.
   - Name the concrete value the reader gets.
   - End with a clear CTA driving the click ("Get the full recipe.",
@@ -292,7 +296,7 @@ def call_llm_for_descriptions(article: dict, pin_titles: list[str]) -> dict:
 
 # ── core ────────────────────────────────────────────────────────────────────
 
-MAX_VALIDATION_RETRIES = 5
+MAX_VALIDATION_RETRIES = 10
 
 
 def _build_pin_brief_set(slug: str, raw: dict) -> PinBriefSet:
