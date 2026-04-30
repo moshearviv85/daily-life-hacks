@@ -1,0 +1,27 @@
+# Daily Life Hacks
+
+> Practical nutrition tips, easy healthy recipes, and kitchen hacks for everyday life. Food-first, no supplements, no drama.
+
+## About
+
+Daily Life Hacks is a food and nutrition site run by David Miller. The content focuses on simple, repeatable meals and science-backed nutrition advice for busy people. American audience, English only.
+
+## Topics
+
+- Nutrition: gut health, fiber, protein, healthy fats, reading food labels
+- Recipes: quick weeknight dinners, meal prep, one-pot meals, air fryer recipes, sourdough
+- Tips: kitchen organization, food storage, grocery shopping on a budget, cooking basics
+
+## Key URLs
+
+- Homepage: https://www.daily-life-hacks.com/
+- Nutrition articles: https://www.daily-life-hacks.com/nutrition/1
+- Recipes: https://www.daily-life-hacks.com/recipes/1
+- Tips: https://www.daily-life-hacks.com/tips/1
+- About: https://www.daily-life-hacks.com/about
+- Contact: https://www.daily-life-hacks.com/contact
+- Sitemap: https://www.daily-life-hacks.com/sitemap-index.xml
+
+## Content Guidelines
+
+All content follows a food-first approach. No supplement recommendations, no medical claims, no detox language. Recipes include accurate nutrition info, realistic quantities, and correct cooking times.

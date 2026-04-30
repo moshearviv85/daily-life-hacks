@@ -28,6 +28,22 @@ const organizationSchema = {
   }
 };
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Daily Life Hacks',
+  url: 'https://www.daily-life-hacks.com',
+  description: 'Practical nutrition tips, easy healthy recipes, and kitchen hacks for everyday life.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Daily Life Hacks',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.daily-life-hacks.com/logo.png',
+    },
+  },
+};
+
 const allArticles = await getCollection('articles');
 type Article = CollectionEntry<'articles'>;
 const releasedArticles = allArticles.filter((article: Article) => isReleased(article));
@@ -79,7 +95,7 @@ const badgeColor = (cat: string) => '#F29B30';
 <BaseLayout
   title="Healthy Recipes & Nutrition Tips | Daily Life Hacks"
   description="Discover science-backed nutrition tips and easy, healthy recipes. Join 2,500+ readers for weekly wellness insights and meal prep guides."
-  jsonLd={organizationSchema}
+  jsonLd={[organizationSchema, websiteSchema]}
 >
   <Header />
   <main class="pb-8">

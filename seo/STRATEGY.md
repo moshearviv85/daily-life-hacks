@@ -5,36 +5,12 @@
 > Working directory: `C:/Users/offic/Desktop/dlh-seo` (git worktree on branch `seo-aeo-experiments`)
 > Main site directory: `C:/Users/offic/Desktop/dlh-fresh` (branch `main`)
 
-## Status: Phase 1 Audit DONE, Phase 2 IN PROGRESS (2026-04-30)
+## Status: Phase 2 AEO Infrastructure DONE (2026-04-30)
 
-## NEXT SESSION TODO (Phase 2 - AEO Infrastructure)
+## NEXT SESSION TODO (Phase 2 - Remaining)
 
-Three tasks, approved by Moshe, ready to implement:
-
-### 1. Create `public/llms.txt`
-- Does not exist yet. Must create from scratch.
-- Format: plain text describing site purpose, key URLs, content topics.
-- Reference: https://llmstxt.org/
-- Helps AI engines (ChatGPT, Perplexity, Claude) understand and cite our site.
-
-### 2. Update `public/robots.txt`
-- Current file allows all crawlers (`User-agent: *`) but doesn't explicitly name AI bots.
-- Add explicit Allow rules for: GPTBot, Google-Extended, ClaudeBot, PerplexityBot, Bytespider.
-- Current content:
-  ```
-  User-agent: *
-  Allow: /
-  Disallow: /admin/
-  Disallow: /.git/
-  Disallow: /node_modules/
-  Sitemap: https://www.daily-life-hacks.com/sitemap-index.xml
-  ```
-
-### 3. Add structured data to About page (`src/pages/about.astro`)
-- Page EXISTS but has no schema.org structured data.
-- Add: Organization, AboutPage, and Person schema (entity anchor for EEAT).
-- Important for YMYL niche - Google wants to know who's behind health content.
-- Read about.astro first to understand current content before adding schema.
+- [ ] Verify all structured data with Google Rich Results Test (manual, after deploy)
+- [ ] Consider adding a search page (`/search`) to enable SearchAction schema on homepage
 
 ## Background
 
@@ -90,12 +66,12 @@ We're adapting this approach for our nutrition/recipes niche (YMYL vertical).
 - [ ] Audit Core Web Vitals (deferred - do after AEO infra)
 - [ ] Export and analyze GSC data (waiting for data to accumulate)
 
-### Phase 2: AEO Infrastructure - IN PROGRESS
-- [ ] Create `public/llms.txt`
-- [ ] Update `public/robots.txt` with AI crawler rules
-- [ ] Add structured data to About page
-- [ ] Add WebSite + SearchAction schema to homepage
-- [ ] Verify all structured data with Google Rich Results Test
+### Phase 2: AEO Infrastructure - DONE (2026-04-30)
+- [x] Create `public/llms.txt`
+- [x] Update `public/robots.txt` with AI crawler rules
+- [x] Add structured data to About page (AboutPage + Organization + Person)
+- [x] Add WebSite schema to homepage (SearchAction deferred - no search page yet)
+- [ ] Verify all structured data with Google Rich Results Test (post-deploy)
 
 ### Phase 3: Content Structure Optimization
 - [ ] Add Quick Answer blocks to top articles
@@ -118,6 +94,8 @@ We're adapting this approach for our nutrition/recipes niche (YMYL vertical).
 | 2026-04-29 | Adapt Agensi strategy for YMYL niche | Not all tactics transfer |
 | 2026-04-30 | Register site in Google Search Console | Needed for data-driven SEO |
 | 2026-04-30 | Prioritize llms.txt + robots.txt + About schema | Highest impact, lowest risk |
+| 2026-04-30 | Skip SearchAction schema | No search page exists; fake URL would cause GSC errors |
+| 2026-04-30 | Old GSC sitemaps from 2019 are from previous domain owner | Ignore; submit correct sitemap under https property |
 
 ## What Worked / What Didn't
 
