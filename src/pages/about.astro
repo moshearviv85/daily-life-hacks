@@ -5,9 +5,56 @@ import Footer from "../components/Footer.astro";
 
 const title = "About | Daily Life Hacks";
 const description = "Who's behind Daily Life Hacks. No drama, no miracle stories. Just practical food and a guy who's done with 14-step recipes.";
+
+const aboutSchema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About Daily Life Hacks',
+    url: 'https://www.daily-life-hacks.com/about',
+    description,
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Daily Life Hacks',
+      url: 'https://www.daily-life-hacks.com',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Daily Life Hacks',
+    url: 'https://www.daily-life-hacks.com',
+    logo: 'https://www.daily-life-hacks.com/logo.png',
+    description: 'Practical nutrition tips, easy healthy recipes, and kitchen hacks for everyday life.',
+    sameAs: [
+      'https://www.pinterest.com/DavidMiller615/',
+    ],
+    founder: {
+      '@type': 'Person',
+      name: 'David Miller',
+      url: 'https://www.daily-life-hacks.com/about',
+      jobTitle: 'Founder',
+      knowsAbout: ['Nutrition', 'Healthy Recipes', 'Meal Prep', 'Kitchen Tips'],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'David Miller',
+    url: 'https://www.daily-life-hacks.com/about',
+    jobTitle: 'Founder',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Daily Life Hacks',
+      url: 'https://www.daily-life-hacks.com',
+    },
+    knowsAbout: ['Nutrition', 'Healthy Recipes', 'Meal Prep', 'Kitchen Tips'],
+    description: 'Founder of Daily Life Hacks. Writes about practical nutrition and simple recipes for busy people.',
+  },
+];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} jsonLd={aboutSchema}>
   <Header />
   <main class="max-w-3xl mx-auto px-4 py-12 md:py-16">
     <h1 class="text-4xl md:text-5xl font-bold mb-8" style="color: var(--heading-color);">

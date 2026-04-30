@@ -18,6 +18,8 @@ pnpm-debug.log*
 .env.bak*
 .env.before-*
 scripts/.env
+seo/.env
+seo/credentials/
 .dev.vars
 
 # macOS-specific files
