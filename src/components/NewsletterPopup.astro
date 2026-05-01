@@ -11,6 +11,7 @@ const popupImages = allArticles
     id="newsletter-popup"
     class="fixed inset-0 z-50 flex items-end sm:items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300"
     aria-hidden="true"
+    inert
 >
     <!-- Overlay -->
     <div
@@ -62,7 +63,7 @@ const popupImages = allArticles
 
                 <span
                     id="popup-tag"
-                    class="inline-block self-center sm:self-start px-3 py-1 mb-4 text-xs font-bold uppercase tracking-wider text-white rounded-full bg-[#F29B30]"
+                    class="inline-block self-center sm:self-start px-3 py-1 mb-4 text-xs font-bold uppercase tracking-wider text-white rounded-full bg-[#A56A22]"
                 >
                     Weekly Newsletter
                 </span>
@@ -121,7 +122,7 @@ const popupImages = allArticles
                         id="popup-submit-btn"
                         type="submit"
                         class="w-full py-3 px-4 font-bold text-white rounded-lg transition-transform hover:scale-[1.02] shadow-md"
-                        style="background-color: #F29B30;"
+                        style="background-color: #A56A22;"
                     >
                         Subscribe Free
                     </button>
@@ -246,6 +247,8 @@ const popupImages = allArticles
             sessionStorage.setItem("newsletter_popup_shown", "true");
 
             popup.classList.remove("pointer-events-none", "opacity-0");
+            popup.removeAttribute("inert");
+            popup.setAttribute("aria-hidden", "false");
             popupContent.classList.remove("translate-y-full", "sm:scale-95");
             popupContent.classList.add("translate-y-0", "sm:scale-100");
         }
@@ -253,6 +256,8 @@ const popupImages = allArticles
         function closePopup() {
             if (!popup || !popupContent) return;
             popup.classList.add("pointer-events-none", "opacity-0");
+            popup.setAttribute("inert", "");
+            popup.setAttribute("aria-hidden", "true");
             popupContent.classList.remove("translate-y-0", "sm:scale-100");
             popupContent.classList.add("translate-y-full", "sm:scale-95");
 

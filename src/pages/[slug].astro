@@ -217,7 +217,7 @@ const robotsMeta = released ? undefined : "noindex, follow";
           class="mb-8 rounded-2xl border p-5"
           style="background-color: var(--card-bg); border-color: var(--border-color);"
         >
-          <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #F29B30;">
+          <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #A56A22;">
             Scheduled Release
           </p>
           <h2 class="text-2xl font-bold mb-2" style="color: var(--heading-color);">
@@ -384,7 +384,7 @@ const robotsMeta = released ? undefined : "noindex, follow";
       isRecipe && (
         <div class="mb-10 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
           {/* Top Bar */}
-          <div class="bg-[#F29B30] p-4 text-white grid grid-cols-2 md:grid-cols-3 gap-4 text-sm font-medium">
+          <div class="bg-[#A56A22] p-4 text-white grid grid-cols-2 md:grid-cols-3 gap-4 text-sm font-medium">
             <div class="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -506,12 +506,12 @@ const robotsMeta = released ? undefined : "noindex, follow";
             {/* Ingredients */}
             <div>
               <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
-                <span class="text-[#F29B30]">●</span> Ingredients
+                <span class="text-[#A56A22]">●</span> Ingredients
               </h3>
               <ul class="space-y-2">
                 {article.data.ingredients?.map((ingredient: string) => (
                   <li class="flex items-start gap-2 text-[var(--text-color)]">
-                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#F29B30] flex-shrink-0" />
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#A56A22] flex-shrink-0" />
                     <span>{ingredient}</span>
                   </li>
                 ))}
@@ -521,12 +521,12 @@ const robotsMeta = released ? undefined : "noindex, follow";
             {/* Instructions */}
             <div>
               <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
-                <span class="text-[#F29B30]">●</span> Instructions
+                <span class="text-[#A56A22]">●</span> Instructions
               </h3>
               <ol class="space-y-4">
                 {article.data.steps?.map((step: string, index: number) => (
                   <li class="flex gap-3 text-[var(--text-color)]">
-                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[#F29B30] text-white flex items-center justify-center text-sm font-bold">
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[#A56A22] text-white flex items-center justify-center text-sm font-bold">
                       {index + 1}
                     </span>
                     <span>{step}</span>
@@ -565,7 +565,7 @@ const robotsMeta = released ? undefined : "noindex, follow";
       article.data.faq && article.data.faq.length > 0 && (
         <section class="mt-12 mb-8 border-t border-[var(--border-color)] pt-8">
           <h2 class="text-2xl font-bold mb-6 text-[var(--heading-color)] flex items-center gap-2">
-            <span class="text-[#F29B30]">●</span> Frequently Asked Questions
+            <span class="text-[#A56A22]">●</span> Frequently Asked Questions
           </h2>
           <div class="space-y-4">
             {article.data.faq.map((item: any) => (

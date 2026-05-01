@@ -9,7 +9,7 @@ interface Props {
 
 const { featured, mustReads } = Astro.props;
 
-const badgeColor = (cat: string) => '#F29B30';
+const badgeColor = (cat: string) => '#A56A22';
 ---
 
 <section class="w-full max-w-6xl mx-auto px-4 py-8">
@@ -18,9 +18,9 @@ const badgeColor = (cat: string) => '#F29B30';
     <!-- Featured Article - left 2/3 -->
     {featured && (
       <div class="lg:col-span-2 min-w-0 flex flex-col">
-        <p class="text-xs font-bold uppercase tracking-widest mb-3 pb-2 border-b-2" style="color: var(--label-color); border-color: #F29B30;">
+        <h2 class="text-xs font-bold uppercase tracking-widest mb-3 pb-2 border-b-2" style="color: var(--label-color); border-color: #F29B30;">
           Latest Article
-        </p>
+        </h2>
         <ArticleCard
           title={featured.data.title}
           excerpt={featured.data.excerpt}
@@ -37,9 +37,9 @@ const badgeColor = (cat: string) => '#F29B30';
 
     <!-- Must Read Sidebar - right 1/3 -->
     <div class="min-w-0 flex flex-col h-full">
-      <p class="text-xs font-bold uppercase tracking-widest mb-3 pb-2 border-b-2 shrink-0" style="color: var(--label-color); border-color: #F29B30;">
+      <h2 class="text-xs font-bold uppercase tracking-widest mb-3 pb-2 border-b-2 shrink-0" style="color: var(--label-color); border-color: #F29B30;">
         Must Read
-      </p>
+      </h2>
 
       <div
         class="flex-1 rounded-xl overflow-hidden flex flex-col lg:grid lg:grid-cols-1 lg:min-h-0"
