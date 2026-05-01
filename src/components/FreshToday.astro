@@ -44,7 +44,6 @@ const articlesJson = JSON.stringify(articles);
 <script define:vars={{ articlesJson }}>
   const categories = ["nutrition", "recipes", "tips"];
   const articles = JSON.parse(articlesJson);
-  const grid = document.getElementById("fresh-today-grid");
 
   function formatDate(value) {
     return new Date(value).toLocaleDateString("en-US", {
@@ -89,6 +88,7 @@ const articlesJson = JSON.stringify(articles);
   }
 
   function renderFreshToday() {
+    const grid = document.getElementById("fresh-today-grid");
     if (!grid) return;
 
     const now = Date.now();
