@@ -27,15 +27,15 @@ const articlesJson = JSON.stringify(articles);
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="fresh-today-grid">
     <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
-      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #A56A22;">Nutrition</p>
+      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #F29B30;">Nutrition</p>
       <p class="text-sm" style="color: var(--muted-color);">Loading latest nutrition post...</p>
     </div>
     <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
-      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #A56A22;">Recipes</p>
+      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #F29B30;">Recipes</p>
       <p class="text-sm" style="color: var(--muted-color);">Loading latest recipe...</p>
     </div>
     <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
-      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #A56A22;">Tips</p>
+      <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #F29B30;">Tips</p>
       <p class="text-sm" style="color: var(--muted-color);">Loading latest tip...</p>
     </div>
   </div>
@@ -64,7 +64,7 @@ const articlesJson = JSON.stringify(articles);
     if (!article) {
       return `
         <div class="rounded-xl border p-4" style="border-color: var(--border-color); background-color: var(--card-bg);">
-          <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #A56A22;">${label}</p>
+          <p class="text-sm font-semibold uppercase tracking-wide mb-2" style="color: #F29B30;">${label}</p>
           <p class="text-sm" style="color: var(--muted-color);">No scheduled ${category} release yet.</p>
         </div>
       `;
@@ -79,7 +79,7 @@ const articlesJson = JSON.stringify(articles);
           </picture>
         </div>
         <div class="p-4">
-          <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #A56A22;">${label}</p>
+          <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #F29B30;">${label}</p>
           <h3 class="text-lg font-bold leading-snug mb-2" style="color: var(--heading-color);">${article.title}</h3>
           <p class="text-sm leading-relaxed mb-3" style="color: var(--muted-color);">${article.excerpt}</p>
           <p class="text-xs" style="color: var(--label-color);">Released ${formatDate(article.publishAt || article.date)}</p>
