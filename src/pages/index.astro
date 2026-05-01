@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import HeroSection from '../components/HeroSection.astro';
 import FreshToday from '../components/FreshToday.astro';
-import { Image } from 'astro:assets';
+import OptImage from '../components/OptImage.astro';
 
 import Newsletter from '../components/Newsletter.astro';
 import Footer from '../components/Footer.astro';
@@ -134,15 +134,15 @@ const badgeColor = (cat: string) => '#F29B30';
           >
             <!-- Image Area: Proportional increase of 15% to image, shrink text -->
             <div class="overflow-hidden relative w-[45%] aspect-video sm:w-full sm:h-auto sm:aspect-auto sm:flex-[7.7] shrink-0">
-              <Image
+              <OptImage
                 src={article.data.image}
                 alt={article.data.imageAlt}
                 width={320}
                 height={180}
+                sizes="(max-width: 768px) 100vw, 320px"
                 class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
                 decoding="async"
-                inferSize={true}
                 data-pin-nopin="true"
               />
               <!-- Category badge overlaid on image -->

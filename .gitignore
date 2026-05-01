@@ -1,5 +1,8 @@
 # build output
 dist/
+
+# generated optimized images (built from public/images/*-main.jpg)
+public/images/opt/
 # generated types
 .astro/
 

@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import OptImage from "./OptImage.astro";
 
 interface Props {
   title: string;
@@ -54,11 +54,12 @@ const pinBuilderUrl = `https://www.pinterest.com/pin-builder/?media=${encodeURIC
     <div
       class={`overflow-hidden shrink-0 ${size === "lg" ? "aspect-video" : size === "sm" ? "aspect-[4/3]" : "aspect-video"}`}
     >
-      <Image
+      <OptImage
         src={image}
         alt={imageAlt}
         width={640}
         height={size === "sm" ? 480 : 360}
+        sizes={size === "lg" ? "(max-width: 768px) 100vw, 660px" : "(max-width: 768px) 100vw, 320px"}
         data-pin-url={pageUrl}
         data-pin-media={mediaUrl}
         data-pin-description={pinDescription}
@@ -66,7 +67,6 @@ const pinBuilderUrl = `https://www.pinterest.com/pin-builder/?media=${encodeURIC
         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         loading={loading}
         decoding={loading === "lazy" ? "async" : "sync"}
-        inferSize={true}
       />
     </div>
 

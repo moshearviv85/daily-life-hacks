@@ -1,0 +1,46 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  sizes?: string;
+  class?: string;
+  loading?: "lazy" | "eager";
+  decoding?: "async" | "sync" | "auto";
+  fetchpriority?: "high" | "low" | "auto";
+  [key: string]: any;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  sizes = "(max-width: 768px) 100vw, 640px",
+  class: className,
+  loading = "lazy",
+  decoding = "async",
+  fetchpriority = "auto",
+  ...rest
+} = Astro.props;
+
+const name = src.replace(/^\/images\//, "").replace(/\.jpg$/, "");
+const base = `/images/opt/${name}`;
+const srcset = `${base}-400w.webp 400w, ${base}-800w.webp 800w, ${base}-1200w.webp 1200w`;
+---
+
+<picture>
+  <source type="image/webp" srcset={srcset} sizes={sizes} />
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class={className}
+    loading={loading}
+    decoding={decoding}
+    fetchpriority={fetchpriority}
+    {...rest}
+  />
+</picture>

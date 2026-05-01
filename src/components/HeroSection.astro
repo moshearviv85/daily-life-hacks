@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import OptImage from './OptImage.astro';
 import ArticleCard from './ArticleCard.astro';
 
 interface Props {
@@ -53,16 +53,16 @@ const badgeColor = (cat: string) => '#F29B30';
           >
             <!-- Image: Locked width (53%) and aspect ratio -->
             <div class="relative w-[53%] aspect-video rounded-xl overflow-hidden shrink-0">
-              <Image
+              <OptImage
                 src={article.data.image}
                 alt={article.data.imageAlt}
                 width={320}
                 height={180}
+                sizes="(max-width: 768px) 100vw, 336px"
                 class="absolute inset-0 w-full h-full object-cover object-left rounded-xl group-hover:scale-105 transition-transform duration-500"
                 data-pin-nopin="true"
                 loading="lazy"
                 decoding="async"
-                inferSize={true}
               />
               <span
                 class="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 text-[9px] font-bold rounded uppercase tracking-wider text-white leading-none z-10"
