@@ -15,14 +15,22 @@ const year = new Date().getFullYear();
         class="flex flex-col items-center shrink-0 w-full max-w-[280px] md:max-w-[460px] mx-auto md:mx-0"
       >
         <a href="/" class="w-full flex justify-center">
-          <img
-            src="/logo.png"
-            alt="Daily Life Hacks"
-            width="1024"
-            height="269"
-            data-pin-nopin="true"
-            class="w-full h-auto"
-          />
+          <picture>
+            <source
+              srcset="/logo-175w.webp 175w, /logo-260w.webp 260w, /logo-322w.webp 322w"
+              sizes="(min-width: 768px) 460px, 280px"
+              type="image/webp"
+            />
+            <img
+              src="/logo.png"
+              alt="Daily Life Hacks"
+              width="322"
+              height="85"
+              data-pin-nopin="true"
+              class="w-full h-auto"
+              loading="lazy"
+            />
+          </picture>
         </a>
       </div>
       <p
