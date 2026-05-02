@@ -12,6 +12,7 @@ interface Props {
   date?: Date;
   fillHeight?: boolean;
   loading?: "lazy" | "eager";
+  fetchpriority?: "high" | "low" | "auto";
 }
 
 const {
@@ -25,6 +26,7 @@ const {
   date,
   fillHeight = false,
   loading = "lazy",
+  fetchpriority,
 } = Astro.props;
 
 const formatDate = (d: Date) =>
@@ -67,6 +69,7 @@ const pinBuilderUrl = `https://www.pinterest.com/pin-builder/?media=${encodeURIC
         class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         loading={loading}
         decoding={loading === "lazy" ? "async" : "sync"}
+        fetchpriority={fetchpriority}
       />
     </div>
 

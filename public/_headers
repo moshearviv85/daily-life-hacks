@@ -4,7 +4,6 @@
 # Security: baseline headers
 
 /*
-  Link: <https://assets.pinterest.com>; rel=preconnect
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
