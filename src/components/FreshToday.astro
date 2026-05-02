@@ -93,10 +93,12 @@ const articlesJson = JSON.stringify(articles);
 
     const now = Date.now();
     const cards = categories.map((category) => {
-      const latestReleased = articles
+      const released = articles
         .filter((article) => article.category === category)
         .filter((article) => getReleaseTime(article) <= now)
-        .sort((a, b) => getReleaseTime(b) - getReleaseTime(a))[0];
+        .sort((a, b) => getReleaseTime(b) - getReleaseTime(a));
+      const top = released.slice(0, 2);
+      const latestReleased = top[Math.floor(Math.random() * top.length)];
 
       return buildCard(category, latestReleased);
     });
