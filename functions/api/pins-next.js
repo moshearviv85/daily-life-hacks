@@ -56,7 +56,7 @@ async function getNextPin(db) {
   `).bind(today, today, nowTime).all();
 
   if (!duePins || duePins.length === 0) {
-    return Response.json({ reason: "no_due_pins", due_count: 0 }, { status: 204 });
+    return Response.json({ reason: "no_due_pins", due_count: 0 });
   }
 
   const LIVE_STATUSES = new Set(['PUBLISHED', 'DUPLICATE']);
@@ -87,13 +87,10 @@ async function getNextPin(db) {
     return Response.json(row);
   }
 
-  return Response.json(
-    {
-      reason: "all_due_pins_blocked_by_pending_articles",
-      due_count: duePins.length,
-      skipped_count: skipped.length,
-      sample: skipped.slice(0, 10),
-    },
-    { status: 204 },
-  );
+  return Response.json({
+    reason: "all_due_pins_blocked_by_pending_articles",
+    due_count: duePins.length,
+    skipped_count: skipped.length,
+    sample: skipped.slice(0, 10),
+  });
 }
