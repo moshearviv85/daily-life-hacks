@@ -24,17 +24,24 @@ export async function onRequestGet(context) {
 
   const db = env.DB;
   if (!db) {
-    return new Response(JSON.stringify({ error: "D1 not bound" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    return Response.json({ error: "D1 not bound" }, { status: 500 });
   }
 
-  const now     = new Date();
-  const today   = now.toISOString().split("T")[0]; // YYYY-MM-DD UTC
-  const nowTime = now.toISOString().split("T")[1].slice(0, 5); // HH:MM UTC
+  try {
+    return await getNextPin(db);
+  } catch (err) {
+    return Response.json(
+      { error: "pins-next crashed", message: err.message, stack: err.stack },
+      { status: 500 },
+    );
+  }
+}
 
-  // Fetch up to 50 due pins — we loop to skip any whose article isn't live yet
+async function getNextPin(db) {
+  const now     = new Date();
+  const today   = now.toISOString().split("T")[0];
+  const nowTime = now.toISOString().split("T")[1].slice(0, 5);
+
   const { results: duePins } = await db.prepare(`
     SELECT row_id, pin_title, pin_description, alt_text,
            image_url, board_id, link, scheduled_date, scheduled_time
@@ -49,16 +56,13 @@ export async function onRequestGet(context) {
   `).bind(today, today, nowTime).all();
 
   if (!duePins || duePins.length === 0) {
-    return new Response(
-      JSON.stringify({ reason: "no_due_pins", due_count: 0 }),
-      { status: 204, headers: { "Content-Type": "application/json" } }
-    );
+    return Response.json({ reason: "no_due_pins", due_count: 0 }, { status: 204 });
   }
 
-  const skipped = []; // [{ row_id, slug, article_status, scheduled_date }]
+  const LIVE_STATUSES = new Set(['PUBLISHED', 'DUPLICATE']);
+  const skipped = [];
 
   for (const row of duePins) {
-    // Extract slug from pin link (e.g. https://www.daily-life-hacks.com/some-slug?utm_content=v1)
     let slug = null;
     try {
       slug = new URL(row.link).pathname.replace(/^\/+/, '').split('/')[0];
@@ -69,9 +73,6 @@ export async function onRequestGet(context) {
         `SELECT status FROM articles_schedule WHERE slug = ?`
       ).bind(slug).first();
 
-      // Treat PUBLISHED and DUPLICATE as live — DUPLICATE means the file already
-      // exists in the repo, so the article is on the site and the pin link works.
-      const LIVE_STATUSES = new Set(['PUBLISHED', 'DUPLICATE']);
       if (article && !LIVE_STATUSES.has(article.status)) {
         skipped.push({
           row_id: row.row_id,
@@ -81,26 +82,18 @@ export async function onRequestGet(context) {
         });
         continue;
       }
-      // article is null → not in pipeline = one of the original articles, assumed live → proceed
     }
 
-    return new Response(JSON.stringify(row), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    return Response.json(row);
   }
 
-  // All due pins are waiting for their articles to be published.
-  // Return 204 + diagnostic body so the GitHub Action log shows exactly which
-  // pins were skipped and why — prevents silent "no pins due" when the queue
-  // is actually blocked by articles stuck in PENDING/DUPLICATE.
-  return new Response(
-    JSON.stringify({
+  return Response.json(
+    {
       reason: "all_due_pins_blocked_by_pending_articles",
       due_count: duePins.length,
       skipped_count: skipped.length,
       sample: skipped.slice(0, 10),
-    }),
-    { status: 204, headers: { "Content-Type": "application/json" } }
+    },
+    { status: 204 },
   );
 }
