@@ -34,6 +34,7 @@ PINS_API_URL  = os.environ["PINS_API_URL"].rstrip("/")
 PINS_API_KEY  = os.environ["PINS_API_KEY"]
 GH_PAT        = os.environ.get("GH_PAT", "")
 GH_REPO       = os.environ.get("GITHUB_REPOSITORY", "")
+IMMEDIATE     = os.environ.get("IMMEDIATE", "false") == "true"
 
 API_BASE = "https://api.pinterest.com/v5"
 
@@ -94,10 +95,14 @@ def get_access_token():
 # ── Get next pin from D1 ──────────────────────────────────────────────────────
 
 def get_next_pin():
+    params = {"key": PINS_API_KEY}
+    if IMMEDIATE:
+        params["immediate"] = "1"
+        print("IMMEDIATE mode — skipping schedule filter.")
     try:
         resp = requests.get(
             f"{PINS_API_URL}/api/pins-next",
-            params={"key": PINS_API_KEY},
+            params=params,
             timeout=30,
         )
     except requests.exceptions.RequestException as e:

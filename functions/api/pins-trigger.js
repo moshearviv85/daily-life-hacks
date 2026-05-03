@@ -39,7 +39,7 @@ export async function onRequestPost(context) {
           "Content-Type": "application/json",
           "User-Agent": "daily-life-hacks-cloudflare",
         },
-        body: JSON.stringify({ ref: "main" }),
+        body: JSON.stringify({ ref: "main", inputs: { immediate: "true" } }),
       }
     );
     ghStatus = ghRes.status;

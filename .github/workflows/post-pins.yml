@@ -3,7 +3,12 @@ name: Pinterest Auto-Poster
 on:
   schedule:
     - cron: '*/30 * * * *'  # Every 30 min — catches ±30 min time jitter
-  workflow_dispatch:          # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      immediate:
+        description: 'Skip schedule filter — publish first PENDING pin now'
+        type: boolean
+        default: false
 
 jobs:
   post-pin:
@@ -32,4 +37,5 @@ jobs:
           PINS_API_KEY: ${{ secrets.STATS_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          IMMEDIATE: ${{ github.event.inputs.immediate }}
         run: python scripts/post-pins.py

@@ -1,11 +1,13 @@
 /**
- * GET /api/pins-next?key=SECRET
+ * GET /api/pins-next?key=SECRET[&immediate=1]
  * Returns the next PENDING pin due now (UTC): scheduled_date < today,
- * OR scheduled_date = today AND scheduled_time <= current UTC time (or NULL).
- * Used by GitHub Actions post-pins.py script.
+ * OR scheduled_date = today AND scheduled_time <= current UTC time.
  *
- * Response 200: { row_id, pin_title, pin_description, alt_text, image_url, board_id, link, scheduled_date, scheduled_time }
- * Response 204: no pins due (empty body)
+ * With ?immediate=1: skips the schedule filter and returns the first
+ * PENDING pin regardless of date/time. Used by "publish now" button.
+ *
+ * Response 200: { row_id, pin_title, ... }
+ * Response 204: no pins due (diagnostic headers only, no body)
  * Response 401: bad key
  */
 
@@ -27,8 +29,10 @@ export async function onRequestGet(context) {
     return Response.json({ error: "D1 not bound" }, { status: 500 });
   }
 
+  const immediate = url.searchParams.get("immediate") === "1";
+
   try {
-    return await getNextPin(db);
+    return await getNextPin(db, immediate);
   } catch (err) {
     return Response.json(
       { error: "pins-next crashed", message: err.message, stack: err.stack },
@@ -37,23 +41,36 @@ export async function onRequestGet(context) {
   }
 }
 
-async function getNextPin(db) {
-  const now     = new Date();
-  const today   = now.toISOString().split("T")[0];
-  const nowTime = now.toISOString().split("T")[1].slice(0, 5);
+async function getNextPin(db, immediate = false) {
+  let duePins;
 
-  const { results: duePins } = await db.prepare(`
-    SELECT row_id, pin_title, pin_description, alt_text,
-           image_url, board_id, link, scheduled_date, scheduled_time
-    FROM pins_schedule
-    WHERE status = 'PENDING'
-      AND (
-        scheduled_date < ?
-        OR (scheduled_date = ? AND COALESCE(scheduled_time, '00:00') <= ?)
-      )
-    ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC
-    LIMIT 50
-  `).bind(today, today, nowTime).all();
+  if (immediate) {
+    ({ results: duePins } = await db.prepare(`
+      SELECT row_id, pin_title, pin_description, alt_text,
+             image_url, board_id, link, scheduled_date, scheduled_time
+      FROM pins_schedule
+      WHERE status = 'PENDING'
+      ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC
+      LIMIT 50
+    `).all());
+  } else {
+    const now     = new Date();
+    const today   = now.toISOString().split("T")[0];
+    const nowTime = now.toISOString().split("T")[1].slice(0, 5);
+
+    ({ results: duePins } = await db.prepare(`
+      SELECT row_id, pin_title, pin_description, alt_text,
+             image_url, board_id, link, scheduled_date, scheduled_time
+      FROM pins_schedule
+      WHERE status = 'PENDING'
+        AND (
+          scheduled_date < ?
+          OR (scheduled_date = ? AND COALESCE(scheduled_time, '00:00') <= ?)
+        )
+      ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC
+      LIMIT 50
+    `).bind(today, today, nowTime).all());
+  }
 
   if (!duePins || duePins.length === 0) {
     return new Response(null, {
