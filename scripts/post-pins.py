@@ -104,19 +104,14 @@ def get_next_pin():
         print(f"WARNING: pins-next request failed ({type(e).__name__}: {e}). Will retry next run.")
         sys.exit(0)
     if resp.status_code == 204:
-        # Body is present for diagnostics even though status is 204
-        try:
-            diag = json.loads(resp.text) if resp.text else {}
-        except Exception:
-            diag = {}
-        reason = diag.get("reason", "no_due_pins")
+        reason = resp.headers.get("X-Pins-Reason", "no_due_pins")
+        due = resp.headers.get("X-Pins-Due", "0")
+        skipped = resp.headers.get("X-Pins-Skipped", "0")
         if reason == "all_due_pins_blocked_by_pending_articles":
-            print(f"BLOCKED: {diag.get('skipped_count')} due pin(s) waiting on articles not yet PUBLISHED.")
-            for s in diag.get("sample", []):
-                print(f"  - row_id={s['row_id']} slug={s['slug']} article_status={s['article_status']} scheduled={s['scheduled_date']}")
+            print(f"BLOCKED: {skipped} of {due} due pin(s) waiting on articles not yet PUBLISHED.")
             print("Fix: publish the articles (publish-articles.py) or mark stale pins FAILED.")
         else:
-            print(f"No pins due. reason={reason} due_count={diag.get('due_count', 0)}")
+            print(f"No pins due. reason={reason} due_count={due}")
         return None
     if 500 <= resp.status_code < 600:
         # Transient Cloudflare/D1 hiccup (often returns HTML error page).
