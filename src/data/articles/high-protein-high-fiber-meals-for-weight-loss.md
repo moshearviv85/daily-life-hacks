@@ -34,11 +34,6 @@ faq:
     vegetarian eaters will love. Ingredients like lentils, chickpeas, tofu, and edamame
     are fantastic plant-based sources of both nutrients. Simply toss them into salads,
     soups, or stir-fries for a satisfying, meat-free meal.
-- question: Where can I find a high protein and fiber meals for weight loss PDF?
-  answer: Many nutritionists and recipe blogs offer a free high protein and fiber
-    meals for weight loss PDF when you sign up for their newsletters. You might also
-    find printable meal prep guides online that group these recipes together. Having
-    a downloadable guide makes grocery shopping and weekly planning a breeze.
 - question: Why do high protein and fiber meals help with weight loss?
   answer: Both protein and fiber digest slowly, which may help stabilize your energy
     levels and keep cravings at bay. When you combine them in a single meal, you're
