@@ -59,6 +59,8 @@ const isRecipe =
   article.data.ingredients &&
   article.data.steps;
 
+const chicoryTest = article.id === "air-fryer-salmon-bites-garlic-honey-glaze";
+
 const siteUrl = "https://www.daily-life-hacks.com";
 const articleUrl = `${siteUrl}/${article.id}`;
 const imageUrl = article.data.image.startsWith("http")
@@ -193,6 +195,7 @@ const robotsMeta = released ? undefined : "noindex, follow";
   jsonLd={allSchemas}
   robots={robotsMeta}
 >
+  {chicoryTest && <script is:inline defer src="//www.chicoryapp.com/widget_v2/"></script>}
   <Header />
   <main
     class="max-w-3xl mx-auto px-4 py-10"
@@ -393,7 +396,7 @@ const robotsMeta = released ? undefined : "noindex, follow";
     <!-- Recipe Card -->
     {
       isRecipe && (
-        <div class="mb-10 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
+        <div id={chicoryTest ? "recipe" : undefined} class="mb-10 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
           {/* Top Bar */}
           <div class="bg-[#F29B30] p-4 text-white grid grid-cols-2 md:grid-cols-3 gap-4 text-sm font-medium">
             <div class="flex items-center gap-2">
@@ -515,7 +518,7 @@ const robotsMeta = released ? undefined : "noindex, follow";
 
           <div class="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             {/* Ingredients */}
-            <div>
+            <div id={chicoryTest ? "recipe-ingredients" : undefined}>
               <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
                 <span class="text-[#F29B30]">●</span> Ingredients
               </h3>
@@ -530,7 +533,7 @@ const robotsMeta = released ? undefined : "noindex, follow";
             </div>
 
             {/* Instructions */}
-            <div>
+            <div id={chicoryTest ? "recipe-preparation" : undefined}>
               <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
                 <span class="text-[#F29B30]">●</span> Instructions
               </h3>
