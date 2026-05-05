@@ -3,10 +3,9 @@ title: Cheap Crockpot Meals for Large Families
 excerpt: Feeding a crowd shouldn't cost a fortune. These budget-friendly slow cooker recipes focus on bulk staples that actually taste good without the stress.
 category: recipes
 tags:
-  - budget cooking
-  - slow cooker recipes
-  - family dinner ideas
-  - large family meals
+  - budget friendly
+  - large family
+  - dinner
 image: "/images/cheap-crockpot-meals-large-families-main.jpg"
 imageAlt: A large slow cooker is filled with a hearty stew, surrounded by dried beans, potatoes, and onions.
 date: 2026-04-28
@@ -44,7 +43,6 @@ faq:
   - question: "How do I stretch a crockpot meal to feed more people?"
     answer: "Adding high-fiber fillers like brown rice, quinoa, or extra root vegetables can make a meal go much further without a high cost. Serving a slow-cooked stew or chili over baked potatoes or a large batch of pasta is another classic strategy. These additions are filling and help ensure everyone leaves the table satisfied without needing to double the meat portion."
 ---
-
 I used to think feeding six people on a Tuesday required a second mortgage and a culinary degree. Then I realized that my slow cooker didn't care if the meat was on sale or if the beans came from a bag rather than a can. The crockpot is the great equalizer of the kitchen, turning the toughest, cheapest ingredients into something your kids will actually eat without a bribe.
 
 If you are staring at a grocery budget that feels more like a suggestion than a reality, you need a strategy. Cheap crockpot meals for large families aren't about fancy garnishes or expensive oils. They're about volume, heat, and enough seasoning to make a five-pound bag of potatoes taste like a luxury.

@@ -2,7 +2,9 @@
 title: "What to Eat When You're Cooking for a Non-Adventurous Eater"
 excerpt: "Cooking for picky adults doesn't mean making separate meals forever. These simple options help you work with strong preferences instead of fighting them at the dinner table."
 category: "nutrition"
-tags: ["PickyEaters", "SimpleRecipes", "CookingForTwo", "MealPlanning", "FamilyMeals"]
+tags:
+  - picky eaters
+  - nutrition basics
 image: "/images/cooking-for-picky-adults-simple-options-main.jpg"
 imageAlt: "Simple dinner plate with familiar foods arranged in a clean approachable way"
 date: 2026-04-18
@@ -23,7 +25,6 @@ faq:
   - question: "Can picky eating in adults change over time?"
     answer: "Sometimes. Repeated low-pressure exposure to new foods may help over time, but pushing too hard usually backfires. Some adults expand their range gradually when they feel safe experimenting."
 ---
-
 My partner doesn't eat mushrooms. Or bell peppers. Or "anything with a weird texture," which is a category so broad it basically means anything I'd find interesting to cook. I've been making dinner for both of us for years, and I've learned more about diplomacy than I ever expected from a kitchen.
 
 Cooking for picky adults is a specific kind of challenge. It's not like cooking for kids, where you can hide spinach in a smoothie and feel clever. Adults notice. Adults have opinions. Adults will pick the onion pieces out of a stew and leave them on the side of the plate like tiny evidence.

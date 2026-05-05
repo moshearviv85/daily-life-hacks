@@ -2,7 +2,9 @@
 title: "Cutting Board Basics: Which One to Use for What"
 excerpt: "Wood, plastic, or bamboo? Here is a no-nonsense guide to cutting board basics, which one to use for raw meat, and how to keep them from getting ruined."
 category: "tips"
-tags: ["KitchenBasics", "FoodSafety", "CookingTips", "KitchenTools", "HomeCooking"]
+tags:
+  - kitchen tips
+  - cooking basics
 image: "/images/cutting-board-basics-which-to-use-main.jpg"
 imageAlt: "Various cutting boards including wood plastic and bamboo stacked on a kitchen counter"
 date: 2026-04-23
@@ -23,7 +25,6 @@ faq:
  - question: "When should I throw away a plastic cutting board?"
    answer: "When it has deep grooves that you can't scrub clean. Those deep cuts become traps for bacteria that normal washing won't reach."
 ---
-
 If you look in most kitchens, you will find a random assortment of cutting boards. There is usually one massive wooden board that is too heavy to wash, a flimsy plastic one that is deeply stained with tomato juice, and maybe a weird glass one someone gave as a gift. Most people just grab whatever is closest when it's time to chop an onion.
 
 But the cutting board is the foundation of everything you do in the kitchen. Using the wrong one makes cooking annoying, ruins your knives, and can even create food safety risks. You don't need a huge collection, but you do need to understand the basics of what material works best for what job.

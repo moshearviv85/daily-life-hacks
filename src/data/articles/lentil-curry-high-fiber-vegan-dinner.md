@@ -2,7 +2,10 @@
 title: "Lentil Curry: A High Fiber Vegan Dinner You'll Actually Crave"
 excerpt: "This lentil curry high fiber vegan dinner is rich, warming, and done in one pot. It uses red lentils so you don't have to wait an hour for them to soften."
 category: "recipes"
-tags: ["VeganDinner", "LentilCurry", "OnePotMeal", "HighFiberDiet", "HealthyComfortFood"]
+tags:
+  - high fiber
+  - dinner
+  - vegetarian
 image: "/images/lentil-curry-high-fiber-vegan-dinner-main.jpg"
 imageAlt: "A bowl of creamy coconut lentil curry served with fresh cilantro and naan bread"
 date: 2026-04-08
@@ -52,7 +55,6 @@ faq:
   - question: "Do I have to use full-fat coconut milk?"
     answer: "You don't have to, but light coconut milk makes the broth much thinner and less satisfying. The fat balances the spices and creates that rich, comforting texture."
 ---
-
 You know those nights when you want takeout, but you also want to feel like a responsible adult who eats vegetables? This is the meal for those nights. This lentil curry high fiber vegan dinner hits all the comfort food buttons while casually delivering a massive dose of plant-based nutrition.
 
 It's entirely made in one pot, which means fewer dishes. And because we are using red lentils, it's ready in about half an hour. No soaking, no planning ahead, no fuss.

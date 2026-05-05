@@ -2,7 +2,9 @@
 title: "Beans and Rice: A Complete Protein Meal That Won't Break the Bank"
 excerpt: "This simple beans and rice complete protein meal is cheap, filling, and packed with flavor. No weird ingredients, just pantry staples working together perfectly."
 category: "recipes"
-tags: ["PlantBasedDinner", "CompleteProtein", "BudgetCooking", "MealPrep", "HealthyDinners"]
+tags:
+  - high protein
+  - vegetarian
 image: "/images/beans-and-rice-complete-protein-meal-main.jpg"
 imageAlt: "A hearty bowl of black beans and rice garnished with fresh cilantro and lime"
 date: 2026-04-08
@@ -50,7 +52,6 @@ faq:
   - question: "What else can I add to bulk this up?"
     answer: "Diced zucchini or frozen corn work well if you stir them in with the beans. You can also top it with avocado slices, a fried egg, or some crumbled cheese if you eat dairy."
 ---
-
 We need to talk about dinner when you have zero energy and about four dollars to your name. We've all been there. You stare at the pantry, hoping something will magically assemble itself. This beans and rice complete protein meal is exactly what you make on those nights. 
 
 It's not flashy. It's not trying to be a trendy restaurant dish. It's just honest, hard-working food that fills you up without making you feel heavy. And yes, it covers your nutritional bases without requiring you to buy a thirty-dollar tub of weird protein powder.

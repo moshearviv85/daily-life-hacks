@@ -5,10 +5,8 @@ excerpt: Forget the bland tubs! This homemade, creamy high fiber hummus recipe w
   ridiculously easy and so much better for you.
 category: recipes
 tags:
-- HighFiberHummusRecipeHomemade
-- HighFiberHummusRecipeHomemadeGuide
-- HighFiberHummusRecipeHomemadeTips
-- BestHighFiberHummusRecipeHomemade
+  - high fiber
+  - quick meals
 image: /images/high-fiber-hummus-recipe-homemade-main.jpg
 imageAlt: High Fiber Hummus Recipe Homemade - professionally plated meal with fresh
   vegetables, chickpeas for healthy snacking

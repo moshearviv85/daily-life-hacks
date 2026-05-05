@@ -2,7 +2,9 @@
 title: "Japanese-Inspired Cucumber and Edamame Salad With Sesame"
 excerpt: "This Japanese-inspired cucumber and edamame salad is crisp, refreshing, and packed with plant protein. A toasted sesame dressing brings it all together in under fifteen minutes."
 category: "recipes"
-tags: ["CucumberSalad", "EdamameRecipe", "SesameDressing", "HealthySides", "AsianInspired"]
+tags:
+  - salads
+  - quick meals
 image: "/images/cucumber-edamame-salad-sesame-main.jpg"
 imageAlt: "Fresh cucumber and edamame salad tossed with sesame dressing in a wooden bowl"
 date: 2026-04-22
@@ -47,7 +49,6 @@ faq:
   - question: "How can I make this a full meal?"
     answer: "The edamame already provides a good base of protein. To make it a heavier meal, toss in some cubed tofu, shredded cooked chicken, or serve it over a bed of cold soba noodles or brown rice."
 ---
-
 We have all experienced the tragedy of a watery cucumber salad. You know the one. You chop a cucumber, throw some dressing on it, and twenty minutes later it looks like a depressing vegetable soup. The dressing is completely diluted, the crunch is gone, and you're basically eating salty water.
 
 This Japanese-inspired cucumber and edamame salad refuses to be that guy. It's snappy, it's savory, and it holds onto its dressing. Between the crisp cucumbers and the slightly chewy, nutty edamame, the texture is fantastic. Plus, it takes almost zero effort to put together, making it an ideal side dish when the rest of your dinner requires actual cooking.

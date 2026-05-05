@@ -3,10 +3,8 @@ title: Rotisserie Chicken Nutrition Facts and Sodium Content
 excerpt: Rotisserie chicken is the ultimate weeknight shortcut, but the salt levels can be high. Here is how to handle the sodium while keeping the convenience.
 category: nutrition
 tags:
-  - grocery store hacks
-  - easy weeknight dinner
-  - high protein meals
-  - healthy eating tips
+  - high protein
+  - nutrition basics
 image: "/images/rotisserie-chicken-nutrition-facts-sodium-content-main.jpg"
 imageAlt: A close up of a carved rotisserie chicken on a wooden cutting board with a knife and herbs.
 date: 2026-04-28
@@ -22,7 +20,6 @@ faq:
   - question: "Can you freeze rotisserie chicken leftovers?"
     answer: "Yes, rotisserie chicken freezes exceptionally well for future use. It is best to shred or carve the meat off the bone while it is still warm, let it cool completely, and then store it in airtight freezer bags. This meat can stay fresh in the freezer for up to four months and is perfect for soups or casseroles."
 ---
-
 I have a love-hate relationship with the grocery store rotisserie chicken. I love that it costs five or six bucks and saves me from standing over a stove on a Tuesday when I've lost the will to cook. I hate that I usually feel like I've swallowed a salt lick about twenty minutes after dinner. It's the ultimate convenience food, but it's not exactly a blank slate when it comes to your daily intake.
 
 Understanding rotisserie chicken nutrition facts is about more than just counting calories. It's about knowing what that bird was soaking in before it hit the spit. Most of us grab one because it's "healthy" compared to a drive-thru burger, and while that's generally true, the hidden numbers might surprise you if you're trying to keep things balanced.

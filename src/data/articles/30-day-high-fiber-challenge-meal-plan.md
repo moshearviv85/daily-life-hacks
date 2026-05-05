@@ -4,10 +4,8 @@ excerpt: Ready for a total digestive reset? Follow this realistic 30 day high fi
   challenge meal plan to completely transform your gut health and energy levels.
 category: nutrition
 tags:
-- 30DayHighFiberChallengeMealPlan
-- 30DayHighFiberChallengeMealPlanTips
-- Best30DayHighFiberChallengeMealPlan
-- 30DayHighFiberChallengeMealPlanGuide
+  - high fiber
+  - nutrition basics
 image: /images/30-day-high-fiber-challenge-meal-plan-main.jpg
 imageAlt: 30 Day High Fiber Challenge Meal Plan - a weekly planner calendar surrounded
   by fresh produce
@@ -48,7 +46,8 @@ faq:
     fiber per day from food sources. If you aren't used to eating that much, you might
     want to start closer to 15 grams and slowly work your way up. A solid 30 day high
     fiber challenge meal plan guide will help you track your daily intake easily.
----I used to roll my eyes at any sort of internet "diet challenge." They're usually insanely restrictive, guarantee you will be starving within twelve hours, and are fundamentally impossible to maintain for a normal human being with a job and a life. 
+---
+I used to roll my eyes at any sort of internet "diet challenge." They're usually insanely restrictive, guarantee you will be starving within twelve hours, and are fundamentally impossible to maintain for a normal human being with a job and a life. 
 
 But a fiber challenge is different. You're not restricting calories or banning entire food groups. You're simply focusing on *adding* massive amounts of nutrient-dense, filling foods to what you already eat. If you're struggling with severe bloating, erratic energy crashes, or just a sluggish digestive system, a 30 day high fiber challenge meal plan is the most transformative thing you can possibly do for your body.
 

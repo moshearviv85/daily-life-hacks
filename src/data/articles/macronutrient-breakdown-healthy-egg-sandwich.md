@@ -3,10 +3,8 @@ title: The Macronutrient Breakdown of a Healthy Egg Sandwich
 excerpt: Stop guessing your breakfast stats. We break down the protein, carbs, and fats in a balanced egg sandwich that actually keeps you full until lunch.
 category: nutrition
 tags:
-  - balanced breakfast
-  - high protein breakfast
-  - meal prep ideas
-  - healthy egg sandwich
+  - lunch
+  - nutrition basics
 image: "/images/macronutrient-breakdown-healthy-egg-sandwich-main.jpg"
 imageAlt: A healthy egg sandwich with lettuce, tomato, avocado, and a fried egg on a whole-wheat English muffin, slightly deconstructed.
 date: 2026-04-28
@@ -22,7 +20,6 @@ faq:
   - question: "How can I lower the fat in my breakfast sandwich?"
     answer: "To reduce total fat, you can use one whole egg combined with two egg whites, or swap traditional pork sausage for turkey sausage or Canadian bacon. Using avocado instead of butter or mayonnaise provides monounsaturated fats while maintaining a creamy texture, which might be a more nutrient-dense choice for most people."
 ---
-
 I used to think a "healthy" breakfast meant a bowl of oatmeal that tasted like wet cardboard and left me starving by 10:00 AM. Then I realized that the humble egg sandwich, usually relegated to greasy diners and drive-thrus, is actually a masterpiece of engineering if you stop letting the fast-food giants build it for you. 
 
 It's the ultimate survival tool for a Tuesday morning when the kids can't find their shoes and you've already reheated your coffee twice. But if you're trying to keep things balanced, you need to know what's actually happening under that toasted muffin. Here is the macronutrient breakdown of a healthy egg sandwich that won't leave you in a carb coma.

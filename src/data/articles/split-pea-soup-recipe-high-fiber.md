@@ -5,10 +5,8 @@ excerpt: Forget the fancy stuff. This split pea soup recipe is pure, old-school 
   craving on a chilly day.
 category: recipes
 tags:
-- HowMuchFiberInACupOfSplitPeaSoup
-- HowMuchFiberInABowlOfSplitPeaSoup
-- HighFiberSplitPeaSoupRecipe
-- IsThereALotOfFiberInSplitPeaSoup
+  - high fiber
+  - soups and stews
 image: /images/split-pea-soup-recipe-high-fiber-main.jpg
 imageAlt: Split Pea Soup Recipe High Fiber - appetizing bowl with colorful ingredients
   for natural nutrition
@@ -74,7 +72,8 @@ faq:
     it, as a simple mix of carrots, onions, and celery already works wonders. It's
     a versatile dish, so feel free to experiment with whatever veggies you have in
     the fridge.
----Sometimes, you just need a big ol' bowl of something warm. You know? Not some trendy smoothie or a super green kale-whatever. Just, like, *real* food.
+---
+Sometimes, you just need a big ol' bowl of something warm. You know? Not some trendy smoothie or a super green kale-whatever. Just, like, *real* food.
 
 When the wind starts doing that whistle-y thing outside your window, and the daylight packs up its bags at, oh, 3:30 in the afternoon (seriously, winter, chill), my brain automatically flicks a switch to "soup mode." And not just any soup, oh no. It goes straight for the classics. The OGs. The kind of soup your grandma probably made, even if she never specifically told you her secret. Split pea.
 

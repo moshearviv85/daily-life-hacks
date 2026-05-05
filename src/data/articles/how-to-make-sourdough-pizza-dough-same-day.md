@@ -3,10 +3,8 @@ title: How to Make Sourdough Pizza Dough Same Day
 excerpt: Skip the 24-hour wait and turn your sourdough discard into a crispy, chewy pizza crust by dinnertime with this straightforward same-day method.
 category: tips
 tags:
-  - sourdough discard recipes
-  - quick pizza dough
-  - weeknight dinner hacks
-  - sourdough baking tips
+  - baking
+  - kitchen tips
 image: "/images/how-to-make-sourdough-pizza-dough-same-day-main.jpg"
 imageAlt: Hands gently stretch a shaggy ball of sourdough pizza dough on a floured wooden surface, with a glass jar of sourdough discard in the background.
 date: 2026-04-28
@@ -22,7 +20,6 @@ faq:
   - question: "What temperature should I bake sourdough pizza?"
     answer: "Sourdough pizza should be baked at the highest temperature your home oven can safely reach, typically between 450 and 550 degrees Fahrenheit. A very hot oven is essential for achieving the characteristic oven spring and blistered crust. Using a preheated pizza stone or steel can further improve the crispness of the bottom of the dough."
 ---
-
 I used to think sourdough was a lifestyle choice that required a color-coded calendar and a total lack of social obligations. If I wanted pizza on a Tuesday, I was supposed to have started the dough on Monday morning, right? Wrong. Most of us don't live in a world where we can predict our carb cravings twenty-four hours in advance.
 
 The truth is, you can absolutely make sourdough pizza dough same day without sacrificing that tangy flavor or the chewy crust your family actually likes. The secret isn't magic or some hidden artisan technique. It's just a little bit of help from a packet of instant yeast. It might feel like cheating to the purists, but those people aren't trying to feed a hungry household before soccer practice starts.

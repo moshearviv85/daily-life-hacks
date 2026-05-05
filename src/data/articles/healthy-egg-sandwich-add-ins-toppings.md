@@ -3,10 +3,8 @@ title: Healthy Egg Sandwich Add Ins and Toppings That Actually Taste Good
 excerpt: Tired of the same boring breakfast? These healthy egg sandwich add ins and toppings turn a basic fried egg into a meal that keeps you full without the grease.
 category: recipes
 tags:
-  - easy breakfast ideas
-  - healthy egg recipes
-  - high protein breakfast
-  - quick morning meals
+  - lunch
+  - quick meals
 image: "/images/healthy-egg-sandwich-add-ins-toppings-main.jpg"
 imageAlt: A healthy egg sandwich is cut in half, stacked with egg, arugula, and avocado, on a kitchen counter.
 date: 2026-04-28
@@ -43,7 +41,6 @@ faq:
   - question: "Can I make healthy egg sandwiches ahead of time?"
     answer: "Yes, you can prep the components in advance. Hard-boiled eggs or baked egg patties can be stored in the fridge for a few days. However, to keep the sandwich from getting soggy, it is best to toast the bread and add fresh toppings like avocado or greens right before you plan to eat it."
 ---
-
 The average Tuesday morning usually involves me staring into the fridge, wondering if a third cup of coffee counts as a food group. I love a breakfast sandwich, but the drive-thru versions usually leave me feeling like I need a nap by 10:00 AM. If you are tired of the same rubbery egg on a white roll, it is time to look at what else is in your crisper drawer.
 
 Making a better breakfast isn't about some massive lifestyle overhaul. It is about realizing that healthy egg sandwich add ins can be as simple as grabbing the bag of spinach before it turns into green slime in the back of the fridge. You want something that tastes like a real meal but won't make you feel heavy before you've even started your commute.

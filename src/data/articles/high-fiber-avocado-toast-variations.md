@@ -4,11 +4,8 @@ excerpt: Avocado toast does not have to be the same photo on repeat. These varia
   add beans, seeds, and crunch without a long ingredient list.
 category: recipes
 tags:
-- avocado toast
-- breakfast
-- whole grain
-- high fiber
-- easy breakfast
+  - high fiber
+  - quick meals
 image: /images/high-fiber-avocado-toast-variations-main.jpg
 imageAlt: Avocado toast on whole grain bread with seeds and tomatoes
 date: 2026-03-30
@@ -58,7 +55,6 @@ faq:
     for volume, and rely on lemon/lime, garlic powder, and seeds for punch. Skip cheese
     if you want it lighter.
 ---
-
 Avocado toast became a cliché because it photographs well and takes almost no skill. That is not an insult. It is a feature.
 
 If you want more fiber without turning breakfast into a project, you need three levers: bread with real whole grains, a topping that is not just salt, and something crunchy that is not only aesthetic.

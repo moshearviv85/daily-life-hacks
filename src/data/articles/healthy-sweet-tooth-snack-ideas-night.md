@@ -3,10 +3,8 @@ title: Healthy Sweet Tooth Snack Ideas for Night
 excerpt: Stop fighting the 9 PM sugar craving. These low-effort, healthy sweet tooth snack ideas for night will satisfy you without the sugar crash.
 category: recipes
 tags:
-  - late night snacks
-  - healthy desserts
-  - quick snacks
-  - low sugar treats
+  - snacks
+  - quick meals
 image: "/images/healthy-sweet-tooth-snack-ideas-night-main.jpg"
 imageAlt: A glass bowl of plain Greek yogurt swirled with berry compote and topped with a sprinkle of nuts.
 date: 2026-04-28
@@ -39,7 +37,6 @@ faq:
   - question: "Are frozen grapes a good healthy late night snack?"
     answer: "Frozen grapes are an excellent alternative to popsicles or ice cream. They have a sorbet-like texture when frozen and take longer to eat, which helps with portion control. Since they are a whole fruit, they provide fiber and antioxidants, making them a solid choice for a healthy sweet tooth snack at night."
 ---
-
 It's 9:15 PM. The kids are finally quiet, the dishwasher is humming, and suddenly the pantry is calling your name. You aren't actually hungry for a meal, but you'd kill for something sweet that doesn't involve a box of processed cookies. We've all been there, standing in the glow of the refrigerator light, trying to negotiate with our own willpower.
 
 The goal isn't to starve yourself or pretend a stick of celery is a brownie. It's about finding healthy sweet tooth snack ideas for night that actually hit the spot without leaving you with a sugar headache at 2 AM. You want something that feels like a treat but doesn't require preheating the oven or scrubbing a stand mixer.

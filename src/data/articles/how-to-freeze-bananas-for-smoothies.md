@@ -4,10 +4,8 @@ excerpt: Stop throwing away brown bananas. Learn the absolute best way for how t
   freeze bananas for smoothies so they blend perfectly every single time.
 category: tips
 tags:
-- HowToFreezeStrawberriesAndBananasForSmoothies
-- What'sTheBestWayToFreezeBananasForSmoothies
-- HowToFreezeBananasToMakeSmoothies
-- HowToFreezeBananasForSmoothiesLater
+  - food storage
+  - kitchen tips
 image: /images/how-to-freeze-bananas-for-smoothies-main.jpg
 imageAlt: How to Freeze Bananas for Smoothies - perfectly sliced bananas laid out
   flat on a baking sheet lined with parchment paper
@@ -45,7 +43,8 @@ faq:
     milkshake-like texture. If your blender struggles with hard ingredients, just
     let the bananas sit on the counter for about five minutes to soften slightly before
     blending.
----We have all been there. You buy a giant bunch of beautiful yellow bananas with grand plans to eat one every morning, and suddenly it's Thursday and they're covered in dark brown spots. Instead of throwing them in the trash (or pretending you're finally going to bake that banana bread), the absolute best thing you can do is freeze them. 
+---
+We have all been there. You buy a giant bunch of beautiful yellow bananas with grand plans to eat one every morning, and suddenly it's Thursday and they're covered in dark brown spots. Instead of throwing them in the trash (or pretending you're finally going to bake that banana bread), the absolute best thing you can do is freeze them. 
 
 But if you just toss a whole banana, peel and all, directly into the freezer, you're setting yourself up for a nightmare. A frozen unpeeled banana is essentially a rock, and trying to peel it's nearly impossible. If you want to know how to freeze bananas for smoothies the right way, there's a specific method that guarantees a perfectly creamy blend.
 

@@ -4,11 +4,9 @@ excerpt: Black bean tacos that come together in minutes. No long simmering, no f
   ingredients. Just a solid, repeatable weeknight dinner that everyone can customize.
 category: recipes
 tags:
-- black bean tacos
-- weeknight dinner
-- vegetarian tacos
-- easy recipes
-- quick dinner
+  - quick meals
+  - dinner
+  - vegetarian
 image: /images/easy-black-bean-tacos-weeknight-dinner-main.jpg
 imageAlt: Black bean tacos on corn tortillas with toppings
 date: 2026-03-15
@@ -57,7 +55,8 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
----Tacos don't have to automatically mean browning ground beef or chopping a mountain of ingredients. Sometimes you just need food to be ready immediately. These easy black bean tacos are explicitly built for those tired weeknights. 
+---
+Tacos don't have to automatically mean browning ground beef or chopping a mountain of ingredients. Sometimes you just need food to be ready immediately. These easy black bean tacos are explicitly built for those tired weeknights. 
 
 You open a couple of cans, warm the beans with a few standard pantry spices, and set out some tortillas. The entire operation goes from the cupboard to the table in about 15 minutes. It's not fussy, it's not complicated, and it gets the job done perfectly.
 ## Why Black Beans Belong in Tacos

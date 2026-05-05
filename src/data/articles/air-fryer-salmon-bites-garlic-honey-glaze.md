@@ -2,7 +2,9 @@
 title: "Air Fryer Salmon Bites With Garlic Honey Glaze"
 excerpt: "Crispy on the outside and flaky inside, these air fryer salmon bites take less than ten minutes to cook. Tossed in a sweet and savory garlic honey glaze, they're the perfect quick dinner."
 category: "recipes"
-tags: ["AirFryerRecipes", "SalmonBites", "HealthyDinner", "QuickMeals", "SeafoodRecipes"]
+tags:
+  - dinner
+  - quick meals
 image: "/images/air-fryer-salmon-bites-garlic-honey-glaze-main.jpg"
 imageAlt: "Sticky glazed air fryer salmon bites served over a bowl of rice with sesame seeds"
 date: 2026-04-08
@@ -47,7 +49,6 @@ faq:
   - question: "How do I store and reheat leftovers?"
     answer: "Store leftovers in an airtight container in the fridge for up to 2 days. Reheat gently in the microwave or toss them back in the air fryer for 2 minutes to warm up without drying out the fish."
 ---
-
 Cooking a giant fillet of salmon can feel intimidating. You worry about it sticking to the pan, you worry about flipping it without breaking it in half, and you definitely worry about overcooking it until it tastes like sawdust.
 
 Air fryer salmon bites completely bypass all of that stress.

@@ -4,11 +4,8 @@ excerpt: Meal prep does not have to mean identical boxes of sadness. This lentil
   plan stays flexible when your week goes sideways.
 category: recipes
 tags:
-- meal prep
-- high fiber
-- batch cooking
-- lunch ideas
-- week planning
+  - meal prep
+  - high fiber
 image: /images/high-fiber-meal-prep-ideas-for-busy-weeks-2026-main.jpg
 imageAlt: Glass meal prep containers with quinoa, vegetables, and beans
 date: 2026-03-30
@@ -65,7 +62,6 @@ faq:
     but the texture can soften a bit, so treat it as ‘still good’ not ‘exactly the
     same as day one.’
 ---
-
 If your week looks like a spreadsheet with a bad attitude, meal prep is not about perfection. It is about having three decent options ready so you do not end up eating crackers for dinner while standing in front of the fridge.
 
 High fiber meal prep sounds like a health lecture, but in practice it is just cooking beans, grains, and vegetables once, then remixing them into bowls, wraps, and soups.

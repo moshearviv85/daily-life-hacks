@@ -2,7 +2,9 @@
 title: "How to Plan a Week of Dinners With Fewer Grocery Runs"
 excerpt: "You don't need a Pinterest-perfect meal plan. Here's a practical system to plan a week of dinners with fewer grocery runs and way less wasted food."
 category: "nutrition"
-tags: ["MealPlanning", "GroceryHacks", "DinnerIdeas", "TimeSaving", "FoodWaste"]
+tags:
+  - dinner
+  - grocery shopping
 image: "/images/plan-week-of-dinners-fewer-grocery-runs-main.jpg"
 imageAlt: "A kitchen counter with a simple grocery list next to fresh vegetables and pantry staples"
 date: 2026-05-02
@@ -23,7 +25,6 @@ faq:
   - question: "What if the plan falls apart by Wednesday?"
     answer: "That's what a pantry backup is for. Keep one emergency meal stocked at all times. Canned beans, pasta, eggs, or frozen dumplings. Something that doesn't require a grocery run to rescue the week."
 ---
-
 The midweek grocery run is a trap. You go in for one bell pepper and come out with $47 worth of random stuff you didn't need. Two avocados, a bag of fancy chips, and a jar of something fermented that you'll open once, sniff, and forget about until it's time to clean the fridge.
 
 I used to shop like that. Two, sometimes three trips a week. Each one felt small but they added up in time, gas, and wasted food. The shift happened when I stopped thinking about meals as individual events and started thinking about the week as one connected system.

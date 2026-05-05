@@ -4,10 +4,8 @@ excerpt: Inflation making the checkout line painful? Learn how to make grocery s
   cheaper with these incredibly effective, psychology-based strategies.
 category: tips
 tags:
-- WaysToMakeGroceryShoppingCheaper
-- HowToMakeGroceryShoppingCheap
-- HowToGetGroceriesCheaper
-- HowToMakeGroceriesCheaper
+  - budget friendly
+  - grocery shopping
 image: /images/how-to-make-grocery-shopping-cheaper-main.jpg
 imageAlt: How to Make Grocery Shopping Cheaper - a person calculating a total on a
   smartphone while sitting in a grocery cart aisle
@@ -44,7 +42,6 @@ faq:
     what you don't immediately use. You might also want to try incorporating a few
     meatless meals into your week or buying cheaper cuts that do well in slow cookers.
 ---
-
 Walking into a grocery store right now feels a bit like walking into a trap. You go in needing milk, eggs, and bread, and somehow you leave with a receipt for $140 and a bag of artisan sea salt caramel chips you did not need. 
 
 Grocery stores are not designed for your convenience; they're meticulously engineered psychological obstacle courses designed to make you spend as much money as humanly possible. The layout, the lighting, and even the music are all calibrated to make you impulse buy. 

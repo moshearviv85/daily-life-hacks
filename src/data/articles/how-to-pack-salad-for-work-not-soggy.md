@@ -2,7 +2,10 @@
 title: "How to Pack Salad for Work (And Actually Look Forward to It)"
 excerpt: "If you pack salad for work and it turns into a soggy mess by noon, you are layering it wrong. Here is the dead simple fix for crisp lunches."
 category: "tips"
-tags: ["WorkLunch", "MealPrep", "HealthyHabits", "KitchenHacks", "SaladTips"]
+tags:
+  - lunch
+  - salads
+  - food storage
 image: "/images/how-to-pack-salad-for-work-not-soggy-main.jpg"
 imageAlt: "Layered salad in a clear container showing dressing at the bottom and greens on top"
 date: 2026-04-29
@@ -23,7 +26,6 @@ faq:
   - question: "How do I stop tomatoes from ruining my packed salad?"
     answer: "Cherry tomatoes are your friend. Leave them whole. If you chop a large tomato, it will leak juice everywhere and ruin the texture of the greens before you even get to the office."
 ---
-
 We have all been there. You wake up with good intentions. You pack a salad for work, feeling very responsible and healthy. Then noon rolls around, you open your container, and you are staring at a wet, wilted pile of sadness. 
 
 It is a specific kind of lunchtime disappointment. You end up eating a few bites out of guilt before wandering off to buy an expensive sandwich anyway. 

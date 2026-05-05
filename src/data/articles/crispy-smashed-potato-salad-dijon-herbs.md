@@ -2,7 +2,9 @@
 title: "Crispy Smashed Potato Salad With Dijon and Herbs"
 excerpt: "This crispy smashed potato salad with Dijon and herbs changes the game. Forget the soggy mayo version. We're talking crispy roasted potatoes tossed in a sharp, bright vinaigrette."
 category: "recipes"
-tags: ["PotatoSaladRecipe", "SmashedPotatoes", "DijonVinaigrette", "SideDishIdeas", "PicnicFood"]
+tags:
+  - salads
+  - quick meals
 image: "/images/crispy-smashed-potato-salad-dijon-herbs-main.jpg"
 imageAlt: "Crispy smashed potatoes tossed in a bowl with fresh herbs and mustard dressing"
 date: 2026-04-22
@@ -49,7 +51,6 @@ faq:
   - question: "Can I use regular large potatoes instead of baby potatoes?"
     answer: "Not really. Large potatoes will fall apart completely when you try to smash them. Baby potatoes have the right skin-to-flesh ratio to hold together and get crispy edges."
 ---
-
 We need to talk about potato salad. Specifically, we need to address the fact that a lot of traditional potato salad is just cold, mushy starch suspended in a terrifying amount of mayonnaise. It's usually the saddest side dish at the barbecue.
 
 But what if potato salad was actually good? What if it had texture? What if it had a punchy, sharp flavor instead of just tasting like cold fat? This crispy smashed potato salad with Dijon and herbs is the answer. It's a total departure from the classic deli tub version.

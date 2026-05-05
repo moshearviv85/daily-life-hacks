@@ -3,10 +3,8 @@ title: How to Measure Sourdough Discard in Grams
 excerpt: Stop guessing with messy measuring cups. Learn why measuring sourdough discard in grams is the only way to save your sanity and your recipes.
 category: tips
 tags:
-  - sourdough baking
-  - kitchen tips
-  - sourdough discard
-  - baking measurements
+  - baking
+  - cooking basics
 image: "/images/how-to-measure-sourdough-discard-grams-main.jpg"
 imageAlt: A digital kitchen scale weighing a glass jar filled with bubbly sourdough discard, displaying a gram measurement.
 date: 2026-04-28
@@ -22,7 +20,6 @@ faq:
   - question: "Can I convert sourdough discard recipes from cups to grams?"
     answer: "Yes, you can convert recipes by using the standard ratio where one cup of sourdough discard equals roughly 240 to 250 grams. If a recipe asks for a quarter cup, aim for 60 grams. Keep in mind that sourdough discard is roughly half flour and half water by weight, so measuring in grams helps you maintain the hydration levels intended by the recipe creator."
 ---
-
 I used to be the person who tried to eye-ball sourdough discard with a battered plastic measuring cup. It was a sticky, gloopy disaster that usually ended with me scrubbing dried starter off the counter for twenty minutes. If you have ever tried to level off a cup of discard only to have it collapse into a sad, half-empty puddle, you know exactly what I mean.
 
 The truth is that volume measurements are the enemy of a stress-free kitchen. When you measure sourdough discard in grams, you stop fighting the bubbles and start actually getting dinner on the table. It is the difference between a pancake that is light and fluffy and one that has the structural integrity of a hockey puck.

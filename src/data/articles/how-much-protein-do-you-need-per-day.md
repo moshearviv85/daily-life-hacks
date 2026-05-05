@@ -4,11 +4,8 @@ excerpt: Protein needs aren't one number for everyone. Here's a straightforward 
   at how much protein per day might work for you, without the hype or the spreadsheets.
 category: nutrition
 tags:
-- protein intake
-- daily protein
-- how much protein
-- nutrition basics
-- protein needs
+  - high protein
+  - nutrition basics
 image: /images/how-much-protein-do-you-need-per-day-main.jpg
 imageAlt: Variety of protein-rich foods on a table
 date: 2026-03-15
@@ -37,7 +34,8 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
----"How much protein do I need?" is one of those questions that gets a wildly different answer depending on who you ask. If you listen to fitness influencers, they'll throw out numbers that make it sound like you need to be actively training for a bodybuilding competition just to exist. On the flip side, some older nutritional guidelines can feel surprisingly low. 
+---
+"How much protein do I need?" is one of those questions that gets a wildly different answer depending on who you ask. If you listen to fitness influencers, they'll throw out numbers that make it sound like you need to be actively training for a bodybuilding competition just to exist. On the flip side, some older nutritional guidelines can feel surprisingly low. 
 
 The truth is somewhere in the middle, and it largely depends on your physical size, how much you move around during the day, and what your actual goals are.
 ## The Basic Math

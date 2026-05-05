@@ -4,11 +4,8 @@ excerpt: No fruit melts anything on its own. These fiber-rich options help snack
   feel more satisfying when you pay attention to portions and build better patterns.
 category: nutrition
 tags:
-- high fiber fruits
-- snacking
-- portion control
-- fiber
-- fruit
+  - high fiber
+  - weight management
 image: /images/best-high-fiber-fruits-for-weight-loss-list-main.jpg
 imageAlt: Assorted berries pears and apples on a wooden board
 date: 2026-03-30
@@ -39,7 +36,6 @@ faq:
     around one cup of berries. If you are adding fruit to a meal, use a smaller portion
     and lean on protein or yogurt on the side.
 ---
-
 If you are trying to lose weight, fruit can be your friend or your sneaky sugar source depending on how you use it. Fiber is the part that often helps you feel full without turning lunch into dessert.
 
 This list is practical, not mystical. No fruit replaces your overall calorie balance.

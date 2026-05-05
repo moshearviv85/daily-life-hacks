@@ -4,11 +4,8 @@ excerpt: Chickpea pasta, lentil pasta, and whole wheat pasta are not the same sw
   Here is how to pick pasta alternatives and cook them so they still taste like dinner.
 category: nutrition
 tags:
-- pasta alternatives
-- whole grain
-- legume pasta
-- fiber
-- cooking tips
+  - high fiber
+  - dinner
 image: /images/high-fiber-pasta-alternatives-main.jpg
 imageAlt: Bowls of pasta with vegetables and tomato sauce
 date: 2026-03-30
@@ -37,7 +34,6 @@ faq:
     sticky, rinse only when the brand suggests it, and do not overcook. Also, do not
     keep pasta sitting in a pot with water while you “deal with life.”
 ---
-
 If you want more fiber but you still want a fork and a red sauce situation, pasta is the emotional comfort food you do not want to negotiate with. The good news is you have real options that are not just salad pretending to be spaghetti.
 
 The bad news is legume pastas behave differently. Treat them like their own ingredient, not a perfect clone of semolina.

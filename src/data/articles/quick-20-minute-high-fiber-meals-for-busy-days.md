@@ -4,11 +4,8 @@ excerpt: When the clock is screaming, you still deserve a real dinner. These 20-
   bean-and-rice skillet meals are simple, filling, and easy to clean up.
 category: recipes
 tags:
-- quick dinner
-- high fiber
-- weeknight meals
-- busy days
-- plant forward
+  - high fiber
+  - quick meals
 image: /images/quick-20-minute-high-fiber-meals-for-busy-days-main.jpg
 imageAlt: Colorful skillet meal with beans and vegetables on a wooden table
 date: 2026-03-30
@@ -65,7 +62,6 @@ faq:
     want dairy-free, and if you miss a savory “cheesy” vibe, try a pinch of nutritional
     yeast or extra spices.
 ---
-
 Some nights you do not have a zen hour to chop a rainbow. You have twenty minutes, a hungry household, and a sink that is already half full. That is when a one skillet bean and rice situation saves you without feeling like a sad compromise.
 
 This recipe is not trying to win a chef competition. It is trying to get fiber and protein on the table before anyone asks for cereal.

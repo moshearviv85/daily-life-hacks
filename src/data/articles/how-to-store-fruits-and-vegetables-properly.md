@@ -4,10 +4,8 @@ excerpt: Stop letting your produce rot. Discover how to store fruits and vegetab
   properly to double their lifespan and completely eliminate food waste.
 category: tips
 tags:
-- HowToStoreFruitsAndVegetables
-- HowToProperlyStoreFruitsAndVegetablesInTheFridge
-- HowToProperlyStoreFruitsAndVegetablesChart
-- HowShouldFruitsAndVegetablesBeStored
+  - food storage
+  - kitchen tips
 image: /images/how-to-store-fruits-and-vegetables-properly-main.jpg
 imageAlt: How to Store Fruits and Vegetables Properly - fresh produce perfectly organized
   in clear bins inside a clean refrigerator
@@ -48,7 +46,6 @@ faq:
     though you can move avocados to the fridge to pause the ripening process once
     they're soft.
 ---
-
 We're all incredibly guilty of the "dump and run" grocery routine. You get home from the supermarket, exhausted, and you just start shoving things wherever they fit into the refrigerator or tossing them randomly into a fruit bowl on the counter. 
 
 That chaos is exactly why your tomatoes taste like grainy mush the next day, and why your apples turn soft and wrinkly before Wednesday. Produce is essentially alive. Different fruits and vegetables require different ecosystems to survive. Some desperately need high humidity, some require bone-dry environments, and some literally emit invisible gases that actively murder the other vegetables sitting next to them. 

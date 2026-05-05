@@ -2,7 +2,9 @@
 title: "How to Fix Oversalted Soup, Sauce, and Rice (Without Starting Over)"
 excerpt: "A heavy hand with the salt shaker doesn't have to mean dinner is ruined. Here are reliable ways to rescue oversalted soup, sauce, and rice before you throw the pot out."
 category: "tips"
-tags: ["CookingHacks", "KitchenRescue", "FixOversaltedFood", "DinnerSaved", "CulinaryTips"]
+tags:
+  - soups and stews
+  - cooking basics
 image: "/images/fix-oversalted-soup-sauce-rice-main.jpg"
 imageAlt: "A cook adjusting seasoning in a large pot of soup on a modern stove"
 date: 2026-04-24
@@ -23,7 +25,6 @@ faq:
  - question: "Does lemon juice cancel out salt?"
    answer: "Acid doesn't remove salt, but it does distract your palate. A squeeze of lemon or a dash of vinegar can make a slightly salty dish taste much more balanced."
 ---
-
 It happens to everyone. You're making soup, you toss in a pinch of salt, you taste it. It needs a little more. You grab the shaker, the lid slips, and suddenly half a cup of salt cascades into your dinner. Or maybe the broth reduced too much, concentrating the salt until it tastes like the dead sea.
 
 The panic sets in. You stir it, hoping it will somehow magically disperse into nothingness. You taste it again. Nope. Still ruined.

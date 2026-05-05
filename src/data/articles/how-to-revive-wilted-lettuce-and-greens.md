@@ -4,10 +4,8 @@ excerpt: Don't throw away that sad, limp spinach. Discover precisely how to revi
   wilted lettuce and greens in under 20 minutes so they are perfectly crisp again.
 category: tips
 tags:
-- HowToReviveWiltedGreens
-- HowDoYouBringWiltedLettuceBackToLife
-- HowToReviveWiltedSaladGreens
-- CanYouReviveWiltedLettuce
+  - food storage
+  - kitchen tips
 image: /images/how-to-revive-wilted-lettuce-and-greens-main.jpg
 imageAlt: How to Revive Wilted Lettuce and Greens - sad limp lettuce being submerged
   into a large glass bowl filled with ice water
@@ -42,7 +40,8 @@ faq:
     sour smell. While limp leaves just need a little hydration, slime and dark spots
     are signs of decay that an ice bath won't fix. It's best to compost the batch
     if you notice those warning signs.
----We all do it. We confidently buy the massive plastic tub of "spring mix" or a giant head of romaine on Sunday, determined to eat salads every single day for lunch. By Thursday, you open the fridge, and the lettuce isn't exactly bad or rotten, but it's incredibly sad. It's limp, rubbery, and unappetizing. 
+---
+We all do it. We confidently buy the massive plastic tub of "spring mix" or a giant head of romaine on Sunday, determined to eat salads every single day for lunch. By Thursday, you open the fridge, and the lettuce isn't exactly bad or rotten, but it's incredibly sad. It's limp, rubbery, and unappetizing. 
 
 Before you dramatically sweep it all into the trash can out of pure frustration, you need to know a little secret. Unless the greens are actually slimy or starting to smell rancid, they're not dead; they're just severely dehydrated. The refrigerator is a giant dehumidifier, and it sucks the moisture right out of delicate leaves. 
 

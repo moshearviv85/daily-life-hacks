@@ -2,7 +2,9 @@
 title: "Prebiotic Foods Beyond the Buzzwords"
 excerpt: "You do not need a pricey supplement to feed your gut bacteria. Prebiotic foods are sitting right there in your kitchen. Here is what actually matters."
 category: "nutrition"
-tags: ["GutHealth", "Prebiotics", "WholeFoods", "HealthyHabits", "DietHacks"]
+tags:
+  - gut health
+  - nutrition basics
 image: "/images/prebiotic-foods-beyond-the-buzzwords-main.jpg"
 imageAlt: "A selection of prebiotic whole foods including garlic onions and bananas on a counter"
 date: 2026-05-02
@@ -23,7 +25,6 @@ faq:
   - question: "How do I add more prebiotics to my daily routine?"
     answer: "Keep it simple. Toss half an onion into your soup base, eat a bowl of oatmeal for breakfast, or add a slightly green banana to your smoothie. You do not need to overthink it to get the benefits."
 ---
-
 If you spend more than five minutes looking at wellness content online, you will eventually be told that your gut is a mess and you need to buy a fifty dollar powder to fix it. The internet loves a complicated solution to a simple problem. 
 
 Lately, the word "prebiotic" is slapped on everything from soda cans to protein bars. It sounds very scientific. It sounds like something you should definitely be paying extra for. But before you hand over your credit card for a trendy gut health drink, let's look at what is actually going on. 

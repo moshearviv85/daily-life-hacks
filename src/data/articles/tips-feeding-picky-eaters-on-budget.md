@@ -3,10 +3,8 @@ title: How to Feed Picky Eaters Without Breaking the Bank
 excerpt: Stop wasting money on rejected meals. These practical tips for feeding picky eaters on a budget help you cut costs and stress simultaneously.
 category: tips
 tags:
+  - budget friendly
   - picky eaters
-  - budget cooking
-  - family meal planning
-  - frugal living
 image: "/images/tips-feeding-picky-eaters-on-budget-main.jpg"
 imageAlt: A child's hand reaches for a single green bean on a white plate.
 date: 2026-04-28
@@ -22,7 +20,6 @@ faq:
   - question: "How do I stop wasting money on meals my kids won't eat?"
     answer: "Implement a 'safe food' strategy where every meal includes at least one item you know they will eat, such as bread or fruit. Avoid short-order cooking, which increases grocery costs and labor. You can also repurpose rejected components into future meals, like turning untouched steamed broccoli into a soup or frittata for the adults, to ensure that no part of your food budget goes into the trash."
 ---
-
 I once watched my youngest stare at a piece of green bean for twenty minutes like it was a live grenade. It was a single bean. It cost approximately four cents. But when you multiply that drama by twenty-one meals a week, and you consider the price of groceries lately, that "grenade" starts to feel like a personal attack on your bank account.
 
 The struggle is real. You want them to eat something other than beige carbohydrates, but you also can't afford to play "Chopped" with ingredients that end up in the trash. Feeding picky eaters on a budget isn't about fancy transformations or hidden kale brownies that taste like dirt. It's about damage control and smart shopping.

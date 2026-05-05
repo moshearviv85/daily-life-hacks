@@ -2,7 +2,9 @@
 title: "Chicken and Veggie Lettuce Wraps With Quick Peanut Sauce"
 excerpt: "These chicken and veggie lettuce wraps are light, crunchy, and ready in 20 minutes. The quick peanut sauce is so good you'll want to put it on everything."
 category: "recipes"
-tags: ["LettuceWraps", "ChickenRecipes", "PeanutSauce", "LowCarbDinner", "QuickMeals"]
+tags:
+  - quick meals
+  - dinner
 image: "/images/chicken-veggie-lettuce-wraps-peanut-sauce-main.jpg"
 imageAlt: "Chicken and veggie lettuce wraps drizzled with peanut sauce on a platter"
 date: 2026-04-17
@@ -50,7 +52,6 @@ faq:
   - question: "Can I make the filling vegetarian?"
     answer: "You can easily swap the ground chicken for a block of crumbled firm tofu or finely chopped mushrooms and walnuts. You just need a protein base that absorbs the soy sauce and ginger."
 ---
-
 Sometimes you want a dinner that leaves you feeling energized, not ready for a three hour nap. Chicken and veggie lettuce wraps hit that exact spot. They're crunchy, packed with fresh flavor, and the peanut sauce makes the whole thing taste like a restaurant appetizer that you miraculously made in your own kitchen.
 
 The best part is the speed. Ground chicken cooks incredibly fast, and the vegetables just need a quick turn in the skillet. If you can chop a bell pepper and whisk some peanut butter, you're fully qualified to make this meal. It takes maybe twenty minutes from opening the fridge to sitting down at the table.

@@ -4,10 +4,9 @@ excerpt: Tired of feeling completely starving on a diet? Discover how high prote
   high fiber meals for weight loss keep you completely full and satisfied for hours.
 category: nutrition
 tags:
-- WhatIsAHighProteinHighFiberDiet
-- HighProteinAndFiberMealsForWeightLossVegetarian
-- HighProteinAndFiberMealsForWeightLossPdf
-- EasyHighProteinHighFiberMeals
+  - high fiber
+  - high protein
+  - weight management
 image: /images/high-protein-high-fiber-meals-for-weight-loss-main.jpg
 imageAlt: High Protein High Fiber Meals for Weight Loss - a hearty bowl of lentil
   stew with a side of grilled chicken
@@ -39,7 +38,8 @@ faq:
     levels and keep cravings at bay. When you combine them in a single meal, you're
     much more likely to feel satisfied for hours. This means you might snack less
     and find it easier to stick to your daily goals.
----The absolute worst, most miserable part of genuinely trying to lose weight is the gnawing, persistent feeling of being starving roughly an hour after you eat. You choke down a tiny, sad salad with fat-free dressing, and your body immediately starts screaming at you for a massive bag of potato chips. 
+---
+The absolute worst, most miserable part of genuinely trying to lose weight is the gnawing, persistent feeling of being starving roughly an hour after you eat. You choke down a tiny, sad salad with fat-free dressing, and your body immediately starts screaming at you for a massive bag of potato chips. 
 
 You actually can't out-willpower sheer biological hunger. If your meals actively leave you feeling empty, you're guaranteed to eventually binge. The absolute heavily guarded secret of the fitness industry is combining the two most critically satiating nutrients on the entire planet. If you essentially master building high protein high fiber meals for weight loss, you will literally physically struggle to overeat. 
 

@@ -4,10 +4,8 @@ excerpt: Tiny kitchen driving you crazy? Learn exactly how to organize a small k
   on a budget using clever hacks and cheap dollar store finds.
 category: tips
 tags:
-- HowToOrganizeSmallKitchenIdeasOnABudget
-- HowToOrganizeAVerySmallKitchen
-- HowToOrganizeASmallKitchen
-- KitchenHacks
+  - budget friendly
+  - kitchen tips
 image: /images/how-to-organize-a-small-kitchen-on-a-budget-main.jpg
 imageAlt: How to Organize a Small Kitchen on a Budget - a tiny beautifully organized
   kitchen counter with vertical tiered shelving
@@ -47,7 +45,8 @@ faq:
     tray to make them look intentionally placed rather than messy. Adding a magnetic
     knife strip to the wall is another cheap way to free up counter space while keeping
     your prep tools handy.
----I once lived in an apartment where the kitchen was essentially a narrow hallway. I had barely two feet of usable counter space, three tiny cabinets that didn't actually line up evenly, and zero pantry closet. Cooking anything more complicated than toast felt like performing an aggressive juggling act. 
+---
+I once lived in an apartment where the kitchen was essentially a narrow hallway. I had barely two feet of usable counter space, three tiny cabinets that didn't actually line up evenly, and zero pantry closet. Cooking anything more complicated than toast felt like performing an aggressive juggling act. 
 
 When you have a kitchen that small, every single square inch matters. The problem is that searching for organization solutions usually leads you down a rabbit hole of ridiculously expensive custom shelving or $40 clear acrylic containers that you definitely don't need. 
 

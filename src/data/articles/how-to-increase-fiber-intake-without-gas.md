@@ -4,11 +4,8 @@ excerpt: If fiber makes you bloated, you might be ramping too fast or skipping w
   Here is how to add more fiber comfortably with simple, everyday steps.
 category: nutrition
 tags:
-- fiber
-- digestion
-- bloating
-- gradual change
-- hydration
+  - high fiber
+  - nutrition basics
 image: /images/how-to-increase-fiber-intake-without-gas-main.jpg
 imageAlt: Bowl of oats with fruit and nuts on a kitchen counter
 date: 2026-03-30
@@ -38,7 +35,6 @@ faq:
     slowly again. If symptoms are sharp, persistent, or scary, do not guess and ask
     a qualified clinician.
 ---
-
 Fiber is one of those nutrients that sounds wholesome until your stomach files a complaint. If you want more fiber with less drama, you need a boring plan: gradual change, consistent water, and fewer heroic one day leaps.
 
 This is not a challenge culture article. This is a keep your pants comfortable article.

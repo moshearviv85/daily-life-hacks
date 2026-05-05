@@ -3,10 +3,8 @@ title: Healthy Spring Vegetable Soup Recipes for Busy Weeknights
 excerpt: Skip the heavy winter stews for these healthy spring vegetable soup recipes that use seasonal greens and take less than thirty minutes to prep.
 category: recipes
 tags:
-  - easy weeknight dinner
-  - spring recipes
-  - healthy soup
-  - seasonal vegetables
+  - quick meals
+  - soups and stews
 image: "/images/healthy-spring-vegetable-soup-recipes-main.jpg"
 imageAlt: A vibrant green pureed soup in a rustic ceramic bowl is garnished with cream, chives, and asparagus tips on a light linen tablecloth.
 date: 2026-04-28
@@ -47,7 +45,6 @@ faq:
   - question: "Is vegetable soup actually filling for dinner?"
     answer: "A vegetable soup can be a complete meal if you add a source of protein or complex carbohydrates. Consider stirring in canned cannellini beans, cooked quinoa, or serving the soup with a side of crusty whole-grain bread. These additions provide more substance to keep your household satisfied until breakfast."
 ---
-
 I used to think soup was strictly for the months when you can't feel your toes, but spring has a way of making everything feel heavy, including dinner. By the time April hits, I'm usually over the beef stews and ready for something that doesn't require a nap immediately after the last spoonful. My kids generally view anything green with extreme suspicion, but if I blend it enough, they don't ask too many questions.
 
 Finding healthy spring vegetable soup recipes that don't taste like hot grass is the real challenge. You want something that feels fresh but still counts as a real meal. This particular version uses what's actually at the grocery store right now, meaning you aren't paying eight dollars for a tiny container of out-of-season berries.

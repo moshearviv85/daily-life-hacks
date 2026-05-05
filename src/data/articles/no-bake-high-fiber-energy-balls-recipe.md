@@ -4,11 +4,8 @@ excerpt: These no-bake energy balls take one bowl and a few fridge ingredients. 
   are sweet enough to feel like a treat without a full baking project.
 category: recipes
 tags:
-- energy balls
-- no bake
-- oats
-- snack
-- meal prep snack
+  - high fiber
+  - snacks
 image: /images/no-bake-high-fiber-energy-balls-recipe-main.jpg
 imageAlt: Stack of oat energy balls on a plate with a napkin
 date: 2026-03-30
@@ -59,7 +56,6 @@ faq:
     to boost flavor. You can also increase oats slightly if your mixture feels too
     loose.
 ---
-
 Energy balls are socially acceptable cookie dough that you admit in public. The no bake version is for people who do not want to preheat an oven, wash a mixer, or pretend they have patience.
 
 These come together in one bowl, hide in the fridge, and rescue you when the afternoon gets loud.

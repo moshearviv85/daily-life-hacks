@@ -2,7 +2,9 @@
 title: "Creamy Mushroom and Barley \"Risotto\" (Mostly Hands-Off Method)"
 excerpt: "Get the cozy creaminess of a mushroom risotto without standing over the stove for 40 minutes stirring constantly. Barley does the hard work for you."
 category: "recipes"
-tags: ["MushroomRisotto", "BarleyRecipes", "HandsOffCooking", "HealthyDinner", "ComfortFood"]
+tags:
+  - whole grains
+  - quick meals
 image: "/images/creamy-mushroom-barley-risotto-hands-off-main.jpg"
 imageAlt: "Creamy mushroom and barley risotto in a bowl with herbs"
 date: 2026-04-21
@@ -51,7 +53,6 @@ faq:
   - question: "Why do I need to warm the broth first?"
     answer: "Adding cold broth to a hot pot drops the temperature and stops the cooking process. Warmed broth keeps everything simmering smoothly and helps the grains cook evenly. You can just microwave it for a couple of minutes."
 ---
-
 Risotto has a reputation. People act like making it requires a culinary degree and an hour of unbroken eye contact with a saucepan. You stand there, ladling hot broth, stirring until your arm aches, hoping the rice hits that perfect creamy texture. It's a lot for a random Tuesday night.
 
 I love the idea of risotto, but I don't love the reality of standing over the stove when I could be doing literally anything else. That's where barley changes the math. Barley has enough starch to create a rich, creamy sauce, but it's sturdy enough that you can put a lid on the pot and walk away.

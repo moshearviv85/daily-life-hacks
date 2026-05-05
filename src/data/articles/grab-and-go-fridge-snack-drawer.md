@@ -2,7 +2,9 @@
 title: "How to Make a Grab-and-Go Snack Drawer in Your Fridge"
 excerpt: "When you're hungry and tired, you grab whatever is easiest. Here is how to build a grab-and-go snack drawer so the easy choice is actually a good one."
 category: "tips"
-tags: ["KitchenOrganization", "HealthySnacks", "MealPrep", "FridgeHacks", "TimeSaver"]
+tags:
+  - snacks
+  - kitchen tips
 image: "/images/grab-and-go-fridge-snack-drawer-main.jpg"
 imageAlt: "A well organized refrigerator drawer filled with pre-portioned healthy snacks"
 date: 2026-04-26
@@ -23,7 +25,6 @@ faq:
  - question: "How do I stop my kids from eating all the snacks on day one?"
    answer: "If you have kids, try separating the drawer into daily sections or specific bins. You can also mix in lower-cost, high-volume snacks like carrots to balance things out."
 ---
-
 The hours between lunch and dinner are the danger zone. Around four in the afternoon, your energy drops, you get slightly irritable, and you wander into the kitchen looking for a fix. When you're tired and hungry, you aren't making rational decisions. You're looking for the path of least resistance.
 
 If the easiest thing to grab is a bag of chips from the pantry, that is what you will eat. If the easiest thing is a handful of cookies left on the counter, you will eat those. But if you open the fridge and see a dedicated drawer full of fresh, ready-to-eat snacks, your choices change. It isn't about having more willpower. It's about removing the friction between you and better food.

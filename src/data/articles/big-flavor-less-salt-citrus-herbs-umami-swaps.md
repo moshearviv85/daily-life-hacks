@@ -2,7 +2,9 @@
 title: "Big Flavor With Less Salt: Citrus, Herbs, and Umami Pantry Swaps"
 excerpt: "Want big flavor with less salt without eating sad food? Use acid, herbs, and a few umami pantry staples. This guide gives simple swaps, quick formulas, and weeknight examples that taste like you tried harder than you did."
 category: "nutrition"
-tags: ["LessSalt", "FlavorBoost", "CookingTips", "PantrySwaps", "HealthyCooking"]
+tags:
+  - cooking basics
+  - nutrition basics
 image: "/images/big-flavor-less-salt-citrus-herbs-umami-swaps-main.jpg"
 imageAlt: "Kitchen counter with lemons herbs garlic soy sauce and spices for flavor building"
 date: 2026-04-16
@@ -23,7 +25,6 @@ faq:
   - question: "Why does my low salt food taste flat?"
     answer: "Usually it is missing acid or aroma, not just salt. Add lemon, vinegar, or a quick herb sauce. Also check texture. Crunch and browning make food taste more interesting."
 ---
-
 If you have ever tried to \"cut back on salt\" and ended up with dinner that tasted like wet cardboard, I get it. The problem is not that you are bad at cooking. The problem is that salt is doing too many jobs in your meals.
 
 Salt is not just seasoning. It boosts aroma. It makes flavors feel louder. It covers up bland ingredients. When you pull it back, you need other tools. Good news: those tools are cheap, easy, and already in your kitchen if you are a reasonably stocked adult human.

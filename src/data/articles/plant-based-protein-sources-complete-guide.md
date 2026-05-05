@@ -4,11 +4,8 @@ excerpt: You don't need meat at every meal to get enough protein. Here's a pract
   list of plant-based protein sources with portions and ideas you can use every day.
 category: nutrition
 tags:
-- plant based protein
-- vegetarian protein
-- protein sources
-- beans
-- legumes
+  - high protein
+  - vegetarian
 image: /images/plant-based-protein-sources-complete-guide-main.jpg
 imageAlt: 'Assortment of plant-based protein foods: beans, lentils, tofu, nuts'
 date: 2026-03-15
@@ -37,7 +34,8 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
----Going plant-based, or even just deciding to cut back on your meat intake a few days a week, does not mean you're doomed to eat sad, wilted salads for the rest of your life. 
+---
+Going plant-based, or even just deciding to cut back on your meat intake a few days a week, does not mean you're doomed to eat sad, wilted salads for the rest of your life. 
 
 There is a surprisingly long list of plant-based protein sources that work perfectly in normal, everyday meals. We're talking about beans, lentils, tofu, tempeh, nuts, seeds, and even certain grains. This guide breaks down what they actually are, roughly how much protein they give you, and how to use them without turning dinner into a complicated science experiment.
 ## The Heavy Lifters: Beans and Lentils

@@ -2,7 +2,9 @@
 title: "What 'Good Source of Fiber' Means on a Label (And What It Doesn't)"
 excerpt: "That 'good source of fiber' claim on your cereal box follows specific FDA rules. Here's what the label actually tells you, what it leaves out, and how to read past the marketing."
 category: "nutrition"
-tags: ["FiberLabels", "NutritionLabels", "GroceryShopping", "FiberFoods", "LabelReading"]
+tags:
+  - high fiber
+  - nutrition basics
 image: "/images/good-source-of-fiber-label-meaning-main.jpg"
 imageAlt: "Close up of a nutrition facts label on a food package with fiber highlighted"
 date: 2026-04-25
@@ -23,7 +25,6 @@ faq:
   - question: "Should I only buy foods labeled 'good source of fiber'?"
     answer: "No. Plenty of naturally high-fiber foods like beans, lentils, and whole fruits don't carry front-of-package claims because they don't need them. The label is a marketing tool. The Nutrition Facts panel is more useful for comparing."
 ---
-
 I stood in the cereal aisle for way too long last week. Two boxes, almost the same price, both screaming about fiber on the front. One said "good source of fiber." The other said "made with whole grains." I grabbed both, flipped them over, and one had 3 grams per serving. The other had 1 gram. Same aisle, same promises, very different math.
 
 Front-of-package claims are marketing. That's not cynical, that's just how packaging works. But the phrase "good source of fiber" is one of the more regulated ones, which means it actually has rules behind it. Knowing those rules can save you from buying granola bars that are basically cookies with a health halo.

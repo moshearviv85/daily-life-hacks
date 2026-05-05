@@ -3,10 +3,8 @@ title: Comparing Fiber Content in Different Pizza Crusts
 excerpt: Not all pizza dough is created equal. We look at the fiber content in thin, thick, cauliflower, and whole wheat crusts to help you pick the best base.
 category: nutrition
 tags:
-  - easy healthy swaps
-  - pizza night
-  - high fiber foods
-  - grocery store finds
+  - high fiber
+  - baking
 image: "/images/comparing-fiber-content-different-pizza-crusts-main.jpg"
 imageAlt: Three distinct pizza crust cross-sections are shown from above, revealing their varied textures and compositions.
 date: 2026-04-28
@@ -22,7 +20,6 @@ faq:
   - question: "Does thin crust pizza have less fiber than thick crust?"
     answer: "In terms of density, they are often similar because they use the same dough. However, because a thick crust or deep-dish style uses more physical dough per slice, it may technically contain more fiber than a paper-thin cracker crust. The trade-off is usually a higher calorie and carbohydrate count, so thin crust remains a common choice for those balancing various nutritional goals."
 ---
-
 I used to think pizza night was the one night of the week where I could officially stop caring about nutrition labels. Then my kids started treating vegetables like they were radioactive, and I realized I had to start looking for wins in the foundation of the meal. If I can't get them to eat a salad, I might as well make sure the bread under the cheese is doing some of the heavy lifting.
 
 Comparing fiber content in different pizza crusts isn't about turning pizza into a health food. It's about finding the version that keeps everyone full for more than twenty minutes. Most standard white flour crusts are essentially tasty sponges for grease, offering about one gram of fiber if you're lucky. If you want to move the needle, you have to look at what's actually in the dough.

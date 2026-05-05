@@ -2,7 +2,9 @@
 title: "Freezer Inventory: A Simple System That Prevents Mystery Bags"
 excerpt: "If your freezer is where good intentions go to freeze over, you need an inventory system. Here is a practical, low-effort way to track what you have before it turns into an unrecognizable block of ice."
 category: "tips"
-tags: ["FreezerOrganization", "MealPrepTips", "ReduceFoodWaste", "KitchenSystems", "BudgetCooking"]
+tags:
+  - food storage
+  - kitchen tips
 image: "/images/freezer-inventory-simple-system-main.jpg"
 imageAlt: "A well organized freezer with labeled containers and a simple whiteboard list on the fridge door"
 date: 2026-04-24
@@ -23,7 +25,6 @@ faq:
  - question: "How do I prevent freezer burn?"
    answer: "Air is the enemy. Squeeze as much air out of bags as possible, use containers that fit the food snugly, and make sure your freezer is actually cold enough."
 ---
-
 The freezer is the most optimistic appliance in the house. We put things in there with the best of intentions. Half a batch of soup, three chicken thighs, a bag of spinach we swear we will put in a smoothie. We tell ourselves we will definitely remember what is in that opaque plastic container.
 
 Three months later, you pull out a solid block of brown ice. Is it chili? Is it leftover pasta sauce? Is it beef stew from last winter? You have no idea, so you throw it away.

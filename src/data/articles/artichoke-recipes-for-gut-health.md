@@ -5,10 +5,8 @@ excerpt: Discover the humble artichoke, a fiber champion, transformed into a del
   thank you.
 category: recipes
 tags:
-- IsArtichokeGoodForYourStomach
-- AreArtichokesGoodForDigestion
-- Artichoke
-- FiberRich
+  - gut health
+  - quick meals
 image: /images/artichoke-recipes-for-gut-health-main.jpg
 imageAlt: Artichoke Recipes for Gut Health - appetizing bowl with colorful ingredients
   with fresh vegetables for natural nutrition

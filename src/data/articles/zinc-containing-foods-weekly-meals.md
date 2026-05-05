@@ -2,7 +2,8 @@
 title: "Zinc-Containing Foods to Rotate Into Weekly Meals"
 excerpt: "Zinc shows up in more places than oysters and supplement bottles. Here is a practical rotation of zinc-containing foods you can actually cook with, without turning dinner into a spreadsheet."
 category: "nutrition"
-tags: ["ZincFoods", "MealPlanning", "BalancedEating", "PantryStaples", "NutrientVariety"]
+tags:
+  - nutrition basics
 image: "/images/zinc-containing-foods-weekly-meals-main.jpg"
 imageAlt: "Assorted whole foods on a cutting board including beans seeds and lean protein"
 date: 2026-04-13
@@ -23,7 +24,6 @@ faq:
   - question: "Can you get too much zinc from food?"
     answer: "It's uncommon to overdo zinc from whole foods alone. Problems tied to excess zinc are more often linked to high dose supplements over time. Stick to food variety first."
 ---
-
 People love to panic about protein and fiber. Zinc is the quiet mineral in the corner. You don't think about it until someone on the internet says you should. Then your brain offers you a mental image of a zinc tablet and... that's it.
 
 Food is more interesting than that. Zinc-containing foods show up in normal grocery carts, next to the eggs and the peanut butter like regular people food. The goal here isn't to chase a number every single day like it's a video game score. It's to rotate a few reliable sources through your week so you're not eating the same five ingredients on repeat.

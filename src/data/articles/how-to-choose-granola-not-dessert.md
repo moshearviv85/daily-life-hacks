@@ -2,7 +2,9 @@
 title: "How to Choose a Granola That Isn't Dessert"
 excerpt: "Most store-bought granola is closer to a cookie than a breakfast. Here's how to choose granola that's actually reasonable by reading labels like someone who's been burned before."
 category: "nutrition"
-tags: ["GranolaGuide", "HealthyBreakfast", "LabelReading", "LowSugar", "GroceryShopping"]
+tags:
+  - breakfast
+  - nutrition basics
 image: "/images/how-to-choose-granola-not-dessert-main.jpg"
 imageAlt: "Bowl of simple granola with oats nuts and seeds next to a nutrition label"
 date: 2026-04-27
@@ -23,7 +25,6 @@ faq:
   - question: "Can I make granola at home instead?"
     answer: "Yes, and it's simpler than most people think. Oats, nuts, a little oil, a little honey or maple syrup, salt, and whatever spices you like. Bake at 325F for 20 to 25 minutes, stirring once. You control the sugar."
 ---
-
 I bought a bag of granola once because the packaging had a mountain on it and words like "wholesome" and "ancient grains." Got home, flipped the bag over, and the second ingredient was brown sugar. Third ingredient was canola oil. Fourth was honey. The granola had more sugar per serving than a chocolate chip cookie from the bakery section. The mountain lied.
 
 Granola has an image problem. It sits in the "health food" part of your brain next to yoga mats and smoothie bowls, but plenty of brands are selling you oat-flavored candy in a kraft paper bag. That doesn't mean all granola is bad. It means you need to read the label with your eyes open instead of trusting the vibes.

@@ -2,7 +2,9 @@
 title: "Amaranth, Millet, and Teff: A Beginner Guide to Cooking Whole Grains"
 excerpt: "If your pantry is stuck on rice and oats, you are missing out. This beginner guide to cooking amaranth, millet, and teff makes the ratios simple, the texture predictable, and the \"what do I do with it\" part actually doable."
 category: "nutrition"
-tags: ["WholeGrains", "MealPrepBasics", "HealthyCarbs", "PantryUpgrade", "CookingGuide"]
+tags:
+  - whole grains
+  - nutrition basics
 image: "/images/amaranth-millet-teff-beginner-cooking-guide-main.jpg"
 imageAlt: "Small bowls of cooked amaranth millet and teff with a spoon on a kitchen counter"
 date: 2026-04-08
@@ -23,7 +25,6 @@ faq:
   - question: "What is the easiest way to use these grains in real meals?"
     answer: "Think simple: use millet like rice in bowls, use teff like polenta or oatmeal, and use amaranth for porridge or to thicken soups. Start with one grain for a week and repeat it a few times before you buy three new bags."
 ---
-
 If you have ever bought a bag of a \"new\" grain and then watched it sit in your pantry like a decorative stress object, you are not alone. Amaranth, millet, and teff sound like they come with a membership card and a lecture. They don't.
 
 This is a beginner guide to cooking whole grains, specifically amaranth, millet, and teff, without making it weird. We are going to keep it practical: what each one tastes like, how to cook it so it does not turn into glue, and what to do with it once it is cooked.

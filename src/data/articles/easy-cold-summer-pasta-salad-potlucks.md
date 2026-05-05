@@ -3,10 +3,8 @@ title: Easy Cold Summer Pasta Salad for Potlucks
 excerpt: A reliable, no-cook-sauce pasta salad that stands up to heat and picky kids. Perfect for your next backyard BBQ or neighborhood potluck.
 category: recipes
 tags:
-  - easy weeknight dinner
-  - summer side dishes
-  - potluck recipes
-  - cold pasta salad
+  - salads
+  - quick meals
 image: "/images/easy-cold-summer-pasta-salad-potlucks-main.jpg"
 imageAlt: A close-up of a cold pasta salad, with bowtie pasta, cherry tomatoes, mozzarella balls, and green herbs in a serving bowl.
 date: 2026-04-28
@@ -47,7 +45,6 @@ faq:
   - question: "How long can pasta salad sit out at a BBQ?"
     answer: "Food safety is important when dining outdoors. A vinegar-based pasta salad without mayo can typically sit out for up to two hours in moderate temperatures. If the weather is particularly hot, say over 90 degrees, that window drops to one hour. Keeping the serving bowl nestled in a larger bowl of ice can help keep the temperature stable for a bit longer."
 ---
-
 I have a theory that potlucks are actually a competitive sport disguised as a social gathering. You show up with a bowl, peek under the foil of everyone else's dishes, and secretly judge who brought the bag of chips versus who spent four hours over a hot stove. Personally, I prefer to win the "most eaten dish" award with the least amount of actual labor. 
 
 This easy cold summer pasta salad for potlucks is my go-to move when I have exactly twenty minutes to get my life together before leaving the house. It's not fancy, it doesn't involve artisanal ingredients you have to hunt for at a specialty market, and it doesn't require you to turn on the oven. It's just a solid, reliable crowd-pleaser that won't wilt the moment it hits the humidity of someone's backyard.

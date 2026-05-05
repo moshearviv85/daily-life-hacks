@@ -2,7 +2,9 @@
 title: "The Protein, Color, and Crunch Formula for Easy Lunches"
 excerpt: "Stop staring at the fridge at noon. The protein, color, crunch formula gives you a dead simple framework for building lunches that are filling, interesting, and don't require a recipe."
 category: "nutrition"
-tags: ["LunchIdeas", "MealFormula", "EasyLunches", "BalancedMeals", "MealPrep"]
+tags:
+  - lunch
+  - nutrition basics
 image: "/images/protein-color-crunch-easy-lunch-formula-main.jpg"
 imageAlt: "Colorful lunch bowl with grilled chicken vegetables and crunchy toppings"
 date: 2026-05-03
@@ -23,7 +25,6 @@ faq:
   - question: "What counts as the crunch element?"
     answer: "Nuts, seeds, croutons, raw carrots, sliced radishes, toasted coconut, crackers, pickled onions, or even crispy chickpeas. Anything that adds texture contrast."
 ---
-
 I ate the same sad lunch for about three months straight during a stretch of remote work. Turkey sandwich. Every day. Same bread, same mustard, same two slices of deli turkey that cost more than they should. By month two, I was so bored I started skipping lunch entirely, which led to eating half a box of crackers at 4 PM and calling it a meal.
 
 The problem wasn't motivation. It was decision fatigue. I didn't have a system. I had ingredients and a vague hope that something would come together.

@@ -4,11 +4,8 @@ excerpt: Leftover rice doesn't have to mean the same stir-fry every time. Here a
   simple ways to use it in soups, salads, fritters, and more so nothing goes to waste.
 category: tips
 tags:
-- leftover rice
-- food waste
-- rice recipes
-- meal ideas
-- kitchen tips
+  - cooking basics
+  - kitchen tips
 image: /images/how-to-use-leftover-rice-creative-ideas-main.jpg
 imageAlt: Bowl of fried rice made from leftover rice
 date: 2026-03-15
@@ -36,7 +33,8 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
----You made way too much rice. Again. 
+---
+You made way too much rice. Again. 
 
 Instead of shoving the container to the back of the fridge to let it slowly turn into a science experiment, you can easily turn it into a new meal with minimal effort. Because leftover rice is already fully cooked, it acts as the ultimate head start for dinner. It's ready to go straight into soups, salads, and skillets. Here are some highly practical ways to actually use it before it goes bad.
 ## The Classic: Fried Rice

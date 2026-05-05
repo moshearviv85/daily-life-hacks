@@ -3,10 +3,9 @@ title: Healthy Homemade Vegan Caesar Salad Dressing
 excerpt: Skip the bottled stuff and the raw eggs. This creamy vegan Caesar dressing uses simple pantry staples to get that classic tangy flavor without the dairy.
 category: recipes
 tags:
-  - vegan salad recipes
-  - healthy salad dressings
-  - dairy free caesar
-  - easy plant based meals
+  - salads
+  - vegetarian
+  - salad dressings
 image: "/images/healthy-homemade-vegan-caesar-salad-dressing-main.jpg"
 imageAlt: A single romaine lettuce leaf coated in creamy vegan Caesar dressing rests on a wooden surface.
 date: 2026-04-28
@@ -46,7 +45,6 @@ faq:
   - question: "Is this vegan Caesar dressing actually healthy?"
     answer: "This version swaps out the heavy mayo and raw egg yolks for whole-food fats from cashews and heart-healthy olive oil. It is thought to provide a boost of healthy fats and minerals compared to processed store-bought versions. Using nutritional yeast instead of parmesan also keeps the recipe dairy-free while adding a savory, cheesy flavor profile."
 ---
-
 I used to think that making a decent Caesar dressing without eggs or anchovies was like trying to drive a car without wheels. You can sit in it all you want, but you aren't going anywhere. Traditional Caesar is a masterpiece of fat and salt, and most "healthy" versions I tried in the past tasted like watered-down vinegar. It was depressing.
 
 But then I realized the secret isn't trying to fake the egg, it's about finding a base that actually has some backbone. This healthy homemade vegan caesar salad dressing relies on soaked cashews to do the heavy lifting. It's creamy, it's tangy, and it doesn't leave you feeling like you need a nap immediately after lunch.

@@ -2,7 +2,9 @@
 title: "Creamy Tomato Orzo With White Beans (One Pot)"
 excerpt: "This creamy tomato orzo with white beans is a cozy, one-pot dinner that comes together fast. It's basically the comfort of risotto without the endless stirring."
 category: "recipes"
-tags: ["OnePotOrzo", "VegetarianPasta", "WhiteBeanRecipe", "EasyWeeknightDinner", "PantryMeals"]
+tags:
+  - quick meals
+  - vegetarian
 image: "/images/creamy-tomato-orzo-white-beans-one-pot-main.jpg"
 imageAlt: "Creamy tomato orzo with white beans in a large skillet"
 date: 2026-04-21
@@ -51,7 +53,6 @@ faq:
   - question: "Does this reheat well?"
     answer: "Yes, but the orzo will absorb a lot of the sauce in the fridge. When reheating it on the stove or in the microwave, add a splash of broth or water to loosen it back up into a creamy state."
 ---
-
 We all have those nights where cooking feels like a personal insult, but ordering takeout feels like a defeat. You want something warm, filling, and deeply comforting, but you refuse to wash more than one pan. This creamy tomato orzo with white beans is the peace treaty for that exact mood.
 
 It's basically a cheat code for risotto. Real risotto asks you to stand at the stove, stirring broth in ladle by ladle, contemplating your life choices. Orzo gives you a very similar creamy, starchy texture, but it only takes about fifteen minutes and you can walk away from it (mostly). 

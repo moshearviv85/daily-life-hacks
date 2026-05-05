@@ -3,10 +3,8 @@ title: Easy Sourdough Discard Recipes for Beginners
 excerpt: Don't throw away your sourdough starter. These simple discard recipes help you use every bit of flour without the stress of a 24-hour fermentation schedule.
 category: recipes
 tags:
-  - sourdough discard
-  - easy baking
-  - zero waste cooking
-  - beginner sourdough tips
+  - baking
+  - quick meals
 image: "/images/easy-sourdough-discard-recipes-beginners-main.jpg"
 imageAlt: A close-up photograph shows a glass jar of sourdough starter in the background and a pile of sourdough discard crackers and pancakes in the foreground.
 date: 2026-04-28
@@ -42,7 +40,6 @@ faq:
   - question: "What is the difference between starter and discard?"
     answer: "The starter is the portion you keep and feed to maintain your sourdough culture for bread baking. The discard is the portion you remove before feeding the starter to prevent it from growing too large. Discard is essentially just unfed starter that still has plenty of flavor but less leavening power."
 ---
-
 I used to feel a strange, low-grade guilt every time I scraped half my sourdough starter into the trash. It felt like tossing money and time down the drain, but I didn't have the emotional bandwidth to bake a loaf of artisanal bread every Tuesday. Then I realized that discard isn't actually trash, it's just pre-mixed flour and water with a better personality.
 
 If you have a jar of bubbly goo in your fridge and no desire to spend twelve hours folding dough, you're in the right place. These easy sourdough discard recipes for beginners are designed to get you fed in twenty minutes, not two days.

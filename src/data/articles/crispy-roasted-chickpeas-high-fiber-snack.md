@@ -4,11 +4,8 @@ excerpt: Roasted chickpeas are cheap, crunchy, and easy to season. Dry them well
   spread them out, and you get chip-style crunch without the guesswork.
 category: recipes
 tags:
-- chickpeas
-- roasted chickpeas
-- high fiber snack
-- oven snack
-- plant protein
+  - high fiber
+  - snacks
 image: /images/crispy-roasted-chickpeas-high-fiber-snack-main.jpg
 imageAlt: Bowl of golden roasted chickpeas with spices
 date: 2026-03-30
@@ -57,7 +54,6 @@ faq:
     drain and dry thoroughly before seasoning. After that, roast the same way. The
     texture depends on how dry they are when they go in.
 ---
-
 If you want a high fiber snack that feels like junk food cosplay, roasted chickpeas are the move. They crunch, they carry spice, and they do not require a culinary degree.
 
 The whole operation lives or dies on dryness. Wet chickpeas steam in the oven and come out sad. Dry chickpeas roast.

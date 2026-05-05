@@ -2,7 +2,9 @@
 title: "Cauliflower Fried Rice With Eggs That Doesn't Taste Sad"
 excerpt: "This cauliflower fried rice with eggs is a low carb weeknight dinner that actually satisfies. No mushy vegetables, just a quick, flavor-packed skillet meal."
 category: "recipes"
-tags: ["LowCarbDinner", "CauliflowerRice", "EasyWeeknight", "HealthyAsian", "VegetarianRecipes"]
+tags:
+  - dinner
+  - quick meals
 image: "/images/cauliflower-fried-rice-with-eggs-main.jpg"
 imageAlt: "Skillet of golden cauliflower fried rice with scrambled eggs and green onions"
 date: 2026-04-17
@@ -49,7 +51,6 @@ faq:
   - question: "Can I freeze leftovers?"
     answer: "We do not recommend freezing the cooked leftovers. The texture of the cauliflower tends to get very mushy once it is cooked, frozen, and reheated again."
 ---
-
 Let us be brutally honest for a second. Cauliflower is not rice. It will never be rice. If you go into this recipe expecting the exact chewy comfort of takeout from your favorite local spot, you are setting yourself up for disappointment. 
 
 But if you approach cauliflower fried rice with eggs as its own thing, a savory, garlicky, vegetable packed bowl that comes together in twenty minutes, it is surprisingly great. 

@@ -3,10 +3,8 @@ title: Healthy Homemade Indian Salad Dressing Recipes
 excerpt: Skip the bottled ranch and bring some heat to your greens with these healthy homemade Indian salad dressing recipes that take five minutes to whisk together.
 category: recipes
 tags:
-  - easy salad dressings
-  - indian flavor profiles
-  - healthy meal prep
-  - quick vinaigrettes
+  - salads
+  - salad dressings
 image: "/images/healthy-homemade-indian-salad-dressing-recipes-main.jpg"
 imageAlt: A close-up, overhead shot of a golden Indian-inspired salad dressing beautifully drizzled over a bowl of fresh mixed green salad.
 date: 2026-04-28
@@ -42,7 +40,6 @@ faq:
   - question: "Are Indian salad dressings spicy?"
     answer: "They can be as mild or as hot as you want. Most healthy homemade Indian salad dressing recipes focus on warm, earthy spices like cumin, coriander, and turmeric rather than pure chili heat. If you prefer a kick, you can add a pinch of cayenne pepper or finely chopped green chilies, but the base flavors are generally savory and aromatic rather than burning."
 ---
-
 I used to think salad was the culinary equivalent of doing taxes: something you have to finish before you can get to the good stuff. Then I realized the problem wasn't the lettuce, it was the bottled dressing that tasted like sugar-flavored plastic. If you're tired of the same three vinaigrettes, these healthy homemade Indian salad dressing recipes are the easiest way to make a pile of spinach actually taste like a meal. 
 
 You don't need a pantry full of exotic imports to pull this off. If you have a jar of cumin and some turmeric sitting behind that bottle of dried parsley you bought in 2019, you're already halfway there. These dressings take about ninety seconds to make, which is roughly the same amount of time it takes to find the hidden cap to the ranch bottle in the back of the fridge.

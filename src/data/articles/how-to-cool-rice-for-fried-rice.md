@@ -2,7 +2,9 @@
 title: "How to Cool Rice for Fried Rice (So It Doesn't Turn to Mush)"
 excerpt: "Hot, freshly cooked rice is the enemy of a good stir fry. Here is exactly how to cool rice for fried rice when you forgot to make it yesterday."
 category: "tips"
-tags: ["CookingTips", "KitchenHacks", "FriedRice", "MealPrep", "FoodScience"]
+tags:
+  - dinner
+  - cooking basics
 image: "/images/how-to-cool-rice-for-fried-rice-main.jpg"
 imageAlt: "Cooked white rice spread thinly on a baking sheet to cool"
 date: 2026-04-28
@@ -23,7 +25,6 @@ faq:
   - question: "What is the best type of rice for fried rice?"
     answer: "Medium or long grain white rice, like Jasmine, works best. Short grain sushi rice is naturally stickier and harder to fry without clumping. Day old brown rice also works well because it has a sturdy bran layer that holds up to the heat."
 ---
-
 We all know the rule. Every recipe on the internet tells you that you must use day old, leftover rice to make fried rice. 
 
 It is good advice. It is structurally sound advice. But it is also highly annoying advice when it is 6 p.m. on a Tuesday, you are hungry right now, and past-you did not have the foresight to make a batch of rice on Monday. 

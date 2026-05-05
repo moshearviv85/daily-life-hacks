@@ -4,10 +4,8 @@ excerpt: Tired of throwing away slimy parsley? Learn the exact method for how to
   fresh herbs to last longer and save serious money on your grocery bill.
 category: tips
 tags:
-- HowToStoreFreshHerbsForLongTime
-- HowToStoreHerbsToKeepThemFresh
-- HowToStoreFreshHerbsSoTheyLastLonger
-- HowToMakeFreshHerbsLastLonger
+  - food storage
+  - kitchen tips
 image: /images/how-to-store-fresh-herbs-to-last-longer-main.jpg
 imageAlt: How to Store Fresh Herbs to Last Longer - fresh cilantro standing upright
   in a glass jar of water
@@ -43,7 +41,8 @@ faq:
     use them. Washing them beforehand introduces extra moisture, which can cause them
     to rot or wilt faster in the fridge. If you really want to wash them early, use
     a salad spinner to ensure they're thoroughly dried first.
----I used to just buy a bunch of cilantro, toss it directly into the crisper drawer in its little plastic produce bag, and then act shocked when it turned into a puddle of green slime three days later. Honestly, I must have thrown away hundreds of dollars in ruined herbs before I finally figured out the right way to handle them. 
+---
+I used to just buy a bunch of cilantro, toss it directly into the crisper drawer in its little plastic produce bag, and then act shocked when it turned into a puddle of green slime three days later. Honestly, I must have thrown away hundreds of dollars in ruined herbs before I finally figured out the right way to handle them. 
 
 The biggest mistake we make with herbs is treating them all exactly the same. But here's the secret: herbs fall into two different categories, and if you want to know how to store fresh herbs to last longer, you have to treat them according to their type. 
 

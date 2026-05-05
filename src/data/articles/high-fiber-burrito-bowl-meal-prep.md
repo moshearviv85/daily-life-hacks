@@ -2,7 +2,10 @@
 title: "High Fiber Burrito Bowl Meal Prep for a Better Work Lunch"
 excerpt: "Stop buying sad salads at the food court. This high fiber burrito bowl meal prep comes together fast, keeps you full, and survives the fridge like a champion."
 category: "recipes"
-tags: ["MealPrep", "BurritoBowl", "HighFiberLunch", "WorkLunch", "HealthyEating"]
+tags:
+  - meal prep
+  - high fiber
+  - lunch
 image: "/images/high-fiber-burrito-bowl-meal-prep-main.jpg"
 imageAlt: "Four glass meal prep containers filled with quinoa black beans corn and salsa"
 date: 2026-04-08
@@ -51,7 +54,6 @@ faq:
   - question: "How do I make it spicy?"
     answer: "Add a splash of your favorite hot sauce to the bean mix, or swap the regular salsa for a roasted habanero or jalapeño version."
 ---
-
 Let's be real about the work lunch situation. You either spend fifteen dollars on a mediocre wrap that leaves you hungry at 3 PM, or you bring leftovers that look depressing under office lighting. It's time for a better strategy. 
 
 This high fiber burrito bowl meal prep is the answer. It's stupidly easy to make on a Sunday, it survives the fridge without turning into mush, and it actually keeps you full until you clock out. No sad desk lunches here.

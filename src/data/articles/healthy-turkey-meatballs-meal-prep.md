@@ -4,11 +4,8 @@ excerpt: Make a batch of these turkey meatballs once and eat them all week. They
   simple, lean, and work with pasta, sandwiches, or a grain bowl.
 category: recipes
 tags:
-- turkey meatballs
-- meal prep
-- healthy dinner
-- easy recipes
-- batch cooking
+  - meal prep
+  - dinner
 image: /images/healthy-turkey-meatballs-meal-prep-main.jpg
 imageAlt: Turkey meatballs on a plate with herbs, ready for meal prep
 date: 2026-03-15
@@ -62,7 +59,8 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
----Turkey meatballs are one of those things that sound like a great idea on paper, but often end up tasting like heavily seasoned cardboard. These don't. They're actually moist, seasoned simply, and built specifically so you don't have to cook every single night.
+---
+Turkey meatballs are one of those things that sound like a great idea on paper, but often end up tasting like heavily seasoned cardboard. These don't. They're actually moist, seasoned simply, and built specifically so you don't have to cook every single night.
 
 This healthy turkey meatballs meal prep recipe gives you a big batch of food in about 35 minutes. You can eat a few the same night tossed in marinara with some pasta, pack them up for lunch with a grain and some roasted veggies, or drop them into a soup later in the week. It's low-effort batch cooking that actually tastes good three days later.
 ## Why Turkey Works for Meal Prep

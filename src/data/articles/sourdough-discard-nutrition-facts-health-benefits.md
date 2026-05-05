@@ -3,11 +3,8 @@ title: Sourdough Discard Nutrition Facts and Health Benefits
 excerpt: Stop throwing away your sourdough starter. Learn the actual nutrition facts and health benefits of sourdough discard and how to use it in your kitchen.
 category: nutrition
 tags:
-  - sourdough discard
-  - gut health
-  - fermented foods
-  - baking tips
-  - waste reduction
+  - baking
+  - nutrition basics
 image: "/images/sourdough-discard-nutrition-facts-health-benefits-main.jpg"
 imageAlt: A glass jar filled with active, bubbly sourdough starter discard sits on a wooden counter, illuminated by soft natural light.
 date: 2026-04-28
@@ -23,7 +20,6 @@ faq:
   - question: "Does sourdough discard contain more vitamins than regular flour?"
     answer: "The fermentation process by wild yeast and lactic acid bacteria can increase the bioavailability of certain nutrients. Specifically, it may help increase the levels of B vitamins and folate in the mixture. By neutralizing phytic acid, the discard also makes it easier for your body to absorb minerals like iron, magnesium, and zinc that are naturally present in the grain."
 ---
-
 I used to feel a pang of guilt every time I poured that goopy, beige sludge down the drain. It felt like throwing away money, or at least a very needy pet. Most of us start a sourdough journey because we want "better" bread, but we end up with a fridge full of jars and a nagging sense that we're wasting half our groceries.
 
 The good news is that your discard isn't trash. It's actually a concentrated source of fermented flour that has already done half the heavy lifting for your digestive system. Understanding sourdough discard nutrition facts and health benefits might be the motivation you need to finally stop dumping it and start scooping it into your pancake batter.

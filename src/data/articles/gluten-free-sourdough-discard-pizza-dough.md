@@ -3,10 +3,8 @@ title: Gluten Free Sourdough Discard Pizza Dough
 excerpt: Stop throwing away your GF starter. This gluten free sourdough discard pizza dough recipe makes a crispy, chewy crust without the long wait.
 category: recipes
 tags:
-  - gluten free baking
-  - sourdough discard recipes
-  - easy weeknight dinner
-  - homemade pizza crust
+  - baking
+  - gluten free
 image: "/images/gluten-free-sourdough-discard-pizza-dough-main.jpg"
 imageAlt: A slice of gluten-free sourdough pizza with tomato sauce, mozzarella, and basil is being lifted from the whole pizza.
 date: 2026-04-28
@@ -45,7 +43,6 @@ faq:
   - question: "Do I need a sourdough starter that is active?"
     answer: "No, this recipe specifically uses discard, which is the portion you normally throw away during feedings. Because the discard may not have much leavening power left, we add a small amount of instant yeast to ensure the pizza crust rises properly and stays airy rather than becoming a dense brick."
 ---
-
 I used to feel a strange, low-grade guilt every time I poured half my gluten free starter down the drain. It felt like throwing away a science project I had actually managed to keep alive. If you are like me, you started a GF sourdough journey because you wanted better bread, but now you just have a jar in the fridge that demands to be fed like a very needy, very beige pet.
 
 This gluten free sourdough discard pizza dough is the best way to stop the waste. It doesn't require a 12-hour ferment or a degree in chemistry. You get that distinct sourdough tang and a crust that actually bends without snapping in half.

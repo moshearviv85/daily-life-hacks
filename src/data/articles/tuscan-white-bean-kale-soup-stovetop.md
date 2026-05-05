@@ -2,7 +2,9 @@
 title: "Tuscan White Bean and Kale Soup (Simple Stovetop Version)"
 excerpt: "A pantry friendly Tuscan white bean kale soup you can make on the stovetop in under an hour. Chewy kale, creamy beans, and a broth that tastes like it simmered all afternoon."
 category: "recipes"
-tags: ["WhiteBeanSoup", "KaleRecipes", "WeeknightDinner", "MealPrepSoup", "MediterraneanStyle"]
+tags:
+  - soups and stews
+  - vegetarian
 image: "/images/tuscan-white-bean-kale-soup-stovetop-main.jpg"
 imageAlt: "Bowl of Tuscan white bean and kale soup with crusty bread on a wooden table"
 date: 2026-04-12
@@ -52,7 +54,6 @@ faq:
   - question: "How do I make it vegan?"
     answer: "Use vegetable broth and skip the Parmesan, or use a plant based parm-style topping. The soup is already dairy free until you add cheese at the table."
 ---
-
 Some nights you open the cabinet and it's just cans looking back at you. Not glamorous. Totally fine. This Tuscan white bean kale soup is the answer when you want something that feels a little rustic and Italian-ish without pretending you're running a trattoria in your sweatpants.
 
 It's a stovetop situation. One pot. No immersion blender required unless you're the type who loves extra smooth soup, in which case, you do you. I like a little texture. Beans you can bite. Kale that still has a spine.

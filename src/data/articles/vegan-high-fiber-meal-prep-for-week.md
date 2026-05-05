@@ -5,10 +5,9 @@ excerpt: Whip up five days of cheap, easy, and incredibly satisfying vegan lunch
   an hour for maximum chill time later.
 category: recipes
 tags:
-- VeganHighFiberMealPrepForWeekGuide
-- VeganHighFiberMealPrepForWeekTips
-- BestVeganHighFiberMealPrepForWeek
-- VeganHighFiberMealPrepForWeek
+  - meal prep
+  - high fiber
+  - vegetarian
 image: /images/vegan-high-fiber-meal-prep-for-week-main.jpg
 imageAlt: Vegan High Fiber Meal Prep for Week - fresh meal in glass containers with
   fresh vegetables, whole grains for natural nutrition
@@ -87,7 +86,8 @@ faq:
     lentils, are also packed with protein. By combining these with a sprinkle of hemp
     hearts or a side of quinoa, you'll easily hit your nutritional goals while enjoying
     delicious meals.
----One time, I tried to "wing it" for lunch all week, right? Like, just, you know, *see what happens*. It was an epic fail. By Wednesday, I was staring into an empty fridge, contemplating eating a stale cracker, or maybe, like, a piece of dry bread. My brain was just not making good decisions, nutritional or otherwise. That's why this whole *vegan high fiber meal prep for week* thing actually matters. It's not just about health; it's about not losing your marbles during the midday slump.
+---
+One time, I tried to "wing it" for lunch all week, right? Like, just, you know, *see what happens*. It was an epic fail. By Wednesday, I was staring into an empty fridge, contemplating eating a stale cracker, or maybe, like, a piece of dry bread. My brain was just not making good decisions, nutritional or otherwise. That's why this whole *vegan high fiber meal prep for week* thing actually matters. It's not just about health; it's about not losing your marbles during the midday slump.
 
 This isn't some gourmet chef situation, okay? We're talking basic, real-life food that actually tastes good and keeps you from getting hangry. Tofu, quinoa, roasted veggies - a classic combo, but for good reason. It's cheap. It's cheerful. And it's, like, actually really good for you, fiber-wise.
 

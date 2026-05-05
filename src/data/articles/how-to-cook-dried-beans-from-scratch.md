@@ -4,11 +4,8 @@ excerpt: Cooking dried beans from scratch is cheaper and simpler than it sounds.
   simmer, and season. Here's a straightforward method that works for most beans.
 category: tips
 tags:
-- dried beans
-- cooking beans
-- from scratch
-- budget cooking
-- meal prep
+  - cooking basics
+  - kitchen tips
 image: /images/how-to-cook-dried-beans-from-scratch-main.jpg
 imageAlt: Pot of cooked beans with herbs
 date: 2026-03-15
@@ -37,7 +34,8 @@ faq:
 - question: How long does it take to see results?
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
----Canned beans are undeniably convenient, but buying a bag of dried beans costs significantly less money and allows you to control exactly how mushy they get and how much salt goes into them. 
+---
+Canned beans are undeniably convenient, but buying a bag of dried beans costs significantly less money and allows you to control exactly how mushy they get and how much salt goes into them. 
 
 Cooking them from scratch sounds like a homesteading chore, but it isn't actually complicated. You do exactly three things: you soak, you simmer, and you season. Once you've done it a couple of times, it becomes as brainless as boiling a pot of pasta. Here is a very straightforward method that works reliably for black beans, pinto beans, chickpeas, and most standard legumes.
 ## Step One: Rinse and Soak

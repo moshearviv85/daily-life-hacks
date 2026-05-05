@@ -2,7 +2,9 @@
 title: "High Fiber Raspberry Jam Recipe Using Chia Seeds"
 excerpt: "Skip the cups of refined sugar. This high fiber raspberry jam recipe uses chia seeds to thicken naturally, giving you real fruit flavor in about ten minutes."
 category: "recipes"
-tags: ["ChiaJam", "HealthyBreakfast", "LowSugar", "HighFiberDiet", "EasyRecipes"]
+tags:
+  - high fiber
+  - quick meals
 image: "/images/high-fiber-raspberry-jam-recipe-chia-main.jpg"
 imageAlt: "A glass jar of homemade raspberry chia jam next to a slice of whole grain toast"
 date: 2026-04-26
@@ -41,7 +43,6 @@ faq:
   - question: "Can I freeze chia jam?"
     answer: "Yes. Put it in a freezer-safe jar, leaving a little room at the top for expansion. It freezes well for up to 3 months. Thaw it overnight in the fridge before using."
 ---
-
 If you look at the ingredients on a standard jar of store-bought jam, sugar is usually listed first. Fruit is playing second fiddle. That's why traditional jam is basically fruit-flavored candy spread. 
 
 Making your own jam sounds like a weekend project involving boiling water baths, weird powders like pectin, and intense kitchen stress. It doesn't have to be. This high fiber raspberry jam recipe requires four ingredients, one small pot, and exactly ten minutes of your life. 

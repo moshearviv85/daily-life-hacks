@@ -2,7 +2,9 @@
 title: "Protein per Serving: Beans, Chicken, Tofu, and Pantry Staples Compared"
 excerpt: "If you have ever wondered what protein per serving actually looks like in normal foods, you are in the right place. This guide compares beans, chicken, tofu, and pantry staples in practical portions, plus simple ways to build meals without overthinking it."
 category: "nutrition"
-tags: ["ProteinGuide", "MealPlanning", "PantryStaples", "BalancedMeals", "NutritionBasics"]
+tags:
+  - high protein
+  - nutrition basics
 image: "/images/protein-per-serving-beans-chicken-tofu-compared-main.jpg"
 imageAlt: "Plate with chicken tofu beans and grains arranged as protein portion examples"
 date: 2026-05-03
@@ -23,7 +25,6 @@ faq:
   - question: "What is an easy high protein pantry meal?"
     answer: "Try a bean and rice bowl with salsa and cheese, or a tuna and white bean salad, or a tofu stir fry with frozen vegetables. Simple food wins."
 ---
-
 Protein math is the kind of thing people swear they do \"in their head.\" Then they eat toast for lunch and wonder why they are hunting for snacks at 3 p.m.
 
 This article is not a lecture. It is a practical protein per serving guide so you can look at beans, chicken, tofu, and pantry staples and think, \"oh, that is what that means.\" Not \"I need to download an app.\" Just clarity.

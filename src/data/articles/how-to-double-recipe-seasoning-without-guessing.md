@@ -2,7 +2,9 @@
 title: "How to Double a Recipe Without Over-Salting or Under-Seasoning"
 excerpt: "Math is not cooking. Here is how to double a recipe without over-salting, under-seasoning, or ruining the balance of your meal."
 category: "tips"
-tags: ["CookingTips", "MealPrep", "KitchenHacks", "BatchCooking", "Seasoning"]
+tags:
+  - cooking basics
+  - kitchen tips
 image: "/images/how-to-double-recipe-seasoning-without-guessing-main.jpg"
 imageAlt: "Two identical bowls of soup showing recipe doubling"
 date: 2026-04-28
@@ -23,7 +25,6 @@ faq:
   - question: "Can I double baking recipes like cakes and breads easily?"
     answer: "Baking is chemistry, so it is trickier. You can usually double simple cookies or muffins, but doubling cakes or yeast breads can affect how they rise. It is often safer to make two separate batches."
 ---
-
 We have all done it. You find a soup or a pasta dish you love, and you decide to make a massive batch for the week. You multiply every single ingredient by two. You dump it all in the pot. You sit down to eat, and it tastes like a salt lick, or maybe a spice bomb went off in your kitchen.
 
 Learning how to double a recipe without over-salting or ruining the balance is a basic skill if you want to meal prep. Cooking does not always follow strict mathematical rules.

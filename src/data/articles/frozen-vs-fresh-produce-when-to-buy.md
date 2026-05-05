@@ -2,7 +2,9 @@
 title: "Frozen vs Fresh Produce: When Each Makes More Sense"
 excerpt: "The frozen vs fresh produce debate has a boring answer: it depends. Here's a practical breakdown of when to buy frozen, when fresh actually matters, and when it honestly doesn't."
 category: "nutrition"
-tags: ["FrozenProduce", "FreshVegetables", "GroceryTips", "BudgetEating", "MealPrep"]
+tags:
+  - grocery shopping
+  - nutrition basics
 image: "/images/frozen-vs-fresh-produce-when-to-buy-main.jpg"
 imageAlt: "Split image of fresh vegetables on one side and frozen vegetables in bags on the other"
 date: 2026-04-25
@@ -23,7 +25,6 @@ faq:
   - question: "How long does frozen produce last in the freezer?"
     answer: "Most frozen fruits and vegetables stay good for 8 to 12 months in a standard home freezer. Quality may decline after that, but they're still safe to eat. Check for freezer burn before using."
 ---
-
 There's a weird guilt thing that happens at the grocery store. You see the frozen vegetable aisle and some part of your brain says "that's the lazy option." Then you buy fresh broccoli, put it in the crisper drawer, forget about it for nine days, and throw it away. Very responsible.
 
 I've done this more times than I want to admit. Bought beautiful fresh green beans with every intention of cooking them that week. Found them two Tuesdays later, sad and slimy, in the back of the fridge. Forty cents of green beans, straight into the compost.

@@ -3,10 +3,8 @@ title: Easy Sourdough Discard Pizza Dough Recipe No Yeast
 excerpt: Stop throwing away your starter. This sourdough discard pizza dough uses no yeast and no long rise times for a fast, crispy weeknight crust.
 category: recipes
 tags:
-  - sourdough discard recipes
-  - yeast free pizza dough
-  - easy weeknight dinner
-  - sourdough pizza crust
+  - baking
+  - quick meals
 image: "/images/easy-sourdough-discard-pizza-dough-no-yeast-main.jpg"
 imageAlt: A close-up, top-down view of a golden-brown pizza crust with airy edges on a wooden surface.
 date: 2026-04-28
@@ -43,7 +41,6 @@ faq:
   - question: "Why is my sourdough discard pizza dough tough?"
     answer: "Tough pizza dough usually happens from over-kneading or adding too much flour. Since this recipe doesn't rely on yeast development, you only need to knead it until the ingredients are fully incorporated. If you work the dough too long, the gluten becomes too tight, which results in a chewy or hard crust once it hits the oven heat."
 ---
-
 I used to feel a weird sense of personal failure every time I poured half my sourdough starter down the drain. It felt like throwing away a pet, or at least a very expensive hobby. Then I realized my kids don't actually care about a 24-hour cold ferment or "open crumb" structures. They just want pizza, and they want it before someone has a meltdown.
 
 This easy sourdough discard pizza dough recipe no yeast is my favorite way to clear out the fridge and get dinner moving. It skips the six-hour wait and the temperamental yeast packets in favor of immediate gratification. You get the tang of the sourdough without the drama of the scheduling.

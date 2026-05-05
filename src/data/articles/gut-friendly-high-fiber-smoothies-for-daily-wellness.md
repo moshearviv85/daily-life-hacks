@@ -4,11 +4,8 @@ excerpt: Smoothies are not magic potions, but they are a fast way to stack fiber
   ingredients from fruit, oats, and seeds. These blends stay thick, not weirdly gritty.
 category: nutrition
 tags:
-- smoothies
-- gut health
-- fiber
-- breakfast drinks
-- chia
+  - high fiber
+  - gut health
 image: /images/gut-friendly-high-fiber-smoothies-for-daily-wellness-main.jpg
 imageAlt: Blender jar with purple berry smoothie and fresh fruit nearby
 date: 2026-03-30
@@ -40,7 +37,6 @@ faq:
     dairy yogurt. The key is keeping fiber ingredients (fruit, oats, chia, greens)
     consistent so it stays a real smoothie, not just juice.
 ---
-
 A smoothie is a fast way to eat fruit without admitting you are late. If you want fiber in the mix, you need ingredients that actually bring fiber, not just a pretty color.
 
 Berries, oats, chia, and spinach are the boring MVPs. They blend well and do not require a twelve step shopping list.

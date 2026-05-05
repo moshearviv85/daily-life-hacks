@@ -4,10 +4,8 @@ excerpt: Ditch the dinner dilemma with this ridiculously fast, high-fiber veggie
   Broccoli, snap peas, and peppers unite for a low-calorie, volume-eating triumph.
 category: recipes
 tags:
-- WhatVeggiesAreGoodForAStirFry
-- WhatVegetablesCanYouAddToAStirFry
-- FiberInStirFryVegetables
-- HighFibreStirFryRecipes
+  - high fiber
+  - dinner
 image: /images/high-fiber-stir-fry-vegetables-main.jpg
 imageAlt: High Fiber Stir Fry Vegetables - dynamic cooking action shot for natural
   nutrition
@@ -86,7 +84,8 @@ faq:
     them. In fact, stir frying is a quick cooking method that helps retain most of
     the nutrients. You'll still get all the dietary benefits, and the heat might actually
     make some veggies easier to digest.
----Sometimes, I just stare at the fridge, you know? Like, it's 7 PM, my brain is fried from spreadsheets or whatever existential dread the day brought, and the concept of *cooking* feels like scaling Everest. Dinner. Again. My dog looks at me expectantly, probably wondering if I'm finally going to drop that rogue piece of cheese I've been eyeing.
+---
+Sometimes, I just stare at the fridge, you know? Like, it's 7 PM, my brain is fried from spreadsheets or whatever existential dread the day brought, and the concept of *cooking* feels like scaling Everest. Dinner. Again. My dog looks at me expectantly, probably wondering if I'm finally going to drop that rogue piece of cheese I've been eyeing.
 
 Anyway.
 

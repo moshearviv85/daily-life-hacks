@@ -5,10 +5,8 @@ excerpt: Ditch the empty carbs and discover the significant fiber difference bet
   goals.
 category: nutrition
 tags:
-- WholeWheatVsWhitePastaNutrition
-- WholeWheatVsRegularPastaFiber
-- WholeWheatPastaVsWhitePastaFiber
-- IsWholeWheatPastaBetterThanWhite
+  - whole grains
+  - nutrition basics
 image: /images/whole-wheat-vs-white-pasta-fiber-main.jpg
 imageAlt: Whole Wheat vs White Pasta Fiber - detailed close-up shot for healthy weight
   management
@@ -46,7 +44,8 @@ faq:
     denser texture than regular white pasta. Since it's made from the entire wheat
     kernel, it doesn't cook up quite as soft. If you aren't used to the taste, you
     might want to try mixing it half-and-half with white pasta until your palate adjusts.
----I used to think all pasta was, like, the same, you know? Just... noodles. White, beige, whatever. Boil 'em, sauce 'em, eat 'em. But then, one Tuesday evening, while staring blankly into my pantry trying to pretend a box of instant ramen was going to magically transform into something resembling actual dinner, I noticed two very different-looking pasta boxes sitting next to each other, identical shapes, but profoundly dissimilar in hue and texture. It was a whole wheat penne, a dusty, almost grainy looking thing, next to the familiar sleek, pale white stuff I'd grown up with. Huh.
+---
+I used to think all pasta was, like, the same, you know? Just... noodles. White, beige, whatever. Boil 'em, sauce 'em, eat 'em. But then, one Tuesday evening, while staring blankly into my pantry trying to pretend a box of instant ramen was going to magically transform into something resembling actual dinner, I noticed two very different-looking pasta boxes sitting next to each other, identical shapes, but profoundly dissimilar in hue and texture. It was a whole wheat penne, a dusty, almost grainy looking thing, next to the familiar sleek, pale white stuff I'd grown up with. Huh.
 
 This isn't some deep philosophical rumination on the nature of carbohydrates, promise, but more of a "hey, sometimes the obvious thing staring you in the face is actually a pretty big deal" kind of situation. That dusty whole wheat pasta? Turns out, it's not just a slightly darker shade; it's a different beast for your insides, especially when you're trying to keep things balanced and maybe, just maybe, shed a few pounds without feeling like you're constantly starving or giving up everything delicious.
 

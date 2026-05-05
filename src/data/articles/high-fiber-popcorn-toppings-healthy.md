@@ -5,10 +5,8 @@ excerpt: Did you know popcorn is a whole grain? Ditch the butter and discover ge
   for your next movie night.
 category: nutrition
 tags:
-- HighFiberPopcornToppingsHealthy
-- BestHighFiberPopcornToppingsHealthy
-- HighFiberPopcornToppingsHealthyTips
-- HighFiberPopcornToppingsHealthyGuide
+  - high fiber
+  - snacks
 image: /images/high-fiber-popcorn-toppings-healthy-main.jpg
 imageAlt: High Fiber Popcorn Toppings Healthy - appetizing bowl with colorful ingredients
   for healthy snacking
@@ -45,7 +43,8 @@ faq:
     or flax seeds might cause a little mild bloating. It's best to introduce these
     new toppings gradually so your digestive system can comfortably adjust. Make sure
     you're also drinking plenty of water to help the fiber move smoothly.
----I was watching this old movie the other day, you know, the one where the protagonist is always just casually munching on a giant bowl of popcorn, and it hit me: we've all been sort of... doing popcorn wrong. Well, not *wrong*, but maybe a little less... vibrant? Less good for us? I mean, all that butter, it just sits there, a pool of yellow-ish grease at the bottom of the bowl, and then your fingers are all sticky, and honestly, the flavor profile just sort of flattens out, you know? It's fine, but it could be *more*. Much more.
+---
+I was watching this old movie the other day, you know, the one where the protagonist is always just casually munching on a giant bowl of popcorn, and it hit me: we've all been sort of... doing popcorn wrong. Well, not *wrong*, but maybe a little less... vibrant? Less good for us? I mean, all that butter, it just sits there, a pool of yellow-ish grease at the bottom of the bowl, and then your fingers are all sticky, and honestly, the flavor profile just sort of flattens out, you know? It's fine, but it could be *more*. Much more.
 
 ## Popcorn: The Unexpected Whole Grain Hero
 

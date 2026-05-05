@@ -4,11 +4,10 @@ excerpt: This quinoa salad holds up in the fridge, travels well, and does not tu
   into a sad mush by Wednesday. Lemon, chickpeas, and crunch do the work.
 category: recipes
 tags:
-- quinoa salad
-- meal prep lunch
-- high fiber
-- vegetarian lunch
-- work lunch
+  - high fiber
+  - lunch
+  - salads
+  - whole grains
 image: /images/high-fiber-quinoa-salad-for-lunch-prep-main.jpg
 imageAlt: Quinoa salad with vegetables in a meal prep container
 date: 2026-03-30
@@ -63,7 +62,6 @@ faq:
     a separate container, and use a slightly thicker container with a tight lid. If
     you are meal prepping, dry cucumbers well before mixing.
 ---
-
 Quinoa salad is one of those recipes that sounds like it belongs on a wellness poster, but it is really just a sturdy grain bowl that tolerates commuting.
 
 If your goal is fiber, you want more than lettuce and hope. You want whole grains, legumes, and vegetables that still taste good after a night in the fridge.

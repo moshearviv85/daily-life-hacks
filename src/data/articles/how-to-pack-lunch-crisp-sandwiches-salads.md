@@ -2,7 +2,9 @@
 title: "How to Pack Lunch So Sandwiches and Salads Stay Crisp"
 excerpt: "Nobody likes a soggy sandwich or wilted lettuce. Learn exactly how to pack lunch so sandwiches and salads stay crisp until you are ready to eat."
 category: "tips"
-tags: ["MealPrep", "LunchIdeas", "KitchenHacks", "FoodStorage", "WorkLunch"]
+tags:
+  - lunch
+  - salads
 image: "/images/how-to-pack-lunch-crisp-sandwiches-salads-main.jpg"
 imageAlt: "Freshly packed lunch box with a crisp sandwich and vibrant salad"
 date: 2026-04-29
@@ -23,7 +25,6 @@ faq:
   - question: "Why does my packed lunch sweat in the fridge?"
     answer: "If you pack warm food, condensation builds up on the lid and drips back down. Always let cooked ingredients cool completely before sealing the container."
 ---
-
 Opening a lunch box at noon to find a wet, sad sandwich is a universal disappointment. You spent money on groceries, you took the time to make it, and now you have to eat bread that feels like a wet sponge. It is honestly tragic.
 
 But it does not have to be this way. Learning how to pack lunch so sandwiches and salads stay crisp is just about understanding moisture. Water is the enemy of a good lunch. Once you know how to build a barrier and layer things correctly, your midday meal gets drastically better.

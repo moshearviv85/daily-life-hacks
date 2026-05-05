@@ -3,10 +3,9 @@ title: High Fiber Dinner Recipes for Picky Kids
 excerpt: Getting kids to eat fiber shouldn't feel like a negotiation at a high-stakes summit. These high-fiber dinner recipes are designed to pass the picky eater test.
 category: recipes
 tags:
-  - easy weeknight dinner
-  - high fiber recipes
-  - kid friendly meals
-  - hidden vegetables
+  - high fiber
+  - dinner
+  - picky eaters
 image: "/images/high-fiber-dinner-recipes-picky-kids-main.jpg"
 imageAlt: A close-up overhead photograph of a bowl of spaghetti and meatballs with fresh basil on top.
 date: 2026-04-28
@@ -43,7 +42,6 @@ faq:
   - question: "Can whole wheat pasta really replace white pasta for picky eaters?"
     answer: "Many modern whole wheat or protein-enriched pastas have a milder flavor and smoother texture than older versions. If your kids are sensitive to the change, try a 50/50 blend of white and whole wheat pasta at first. Gradually increasing the ratio of whole wheat might help their palates adjust to the nuttier flavor and firmer bite without causing a dinner table revolt."
 ---
-
 I once watched my nephew pick a microscopic piece of green onion out of a quesadilla like he was performing heart surgery. It's exhausting. You want them to eat something that didn't come out of a blue box with a packet of neon orange powder, but you also don't have the mental bandwidth for a standoff that ends with everyone crying over a plate of cold broccoli.
 
 The trick to high-fiber dinner recipes for picky kids isn't about "sneaking" things in a way that feels like a lie. It's about structural integration. If the fiber is part of the sauce, part of the meat, or part of the noodle, there's nothing to pick out. We're aiming for high-volume fiber that behaves like comfort food.

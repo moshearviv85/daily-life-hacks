@@ -2,7 +2,9 @@
 title: "Cooking Oils in the Kitchen: Smoke Points and Best Uses (Simple Chart)"
 excerpt: "Not all cooking oils belong in every pan. This simple guide covers smoke points, best uses, and when to swap so you stop ruining dinner with the wrong oil at the wrong heat."
 category: "nutrition"
-tags: ["CookingOils", "SmokePoints", "KitchenBasics", "HealthyCooking", "PantryStaples"]
+tags:
+  - kitchen tips
+  - cooking basics
 image: "/images/cooking-oils-smoke-points-best-uses-main.jpg"
 imageAlt: "Several bottles of cooking oils lined up on a kitchen counter with labels visible"
 date: 2026-04-19
@@ -23,7 +25,6 @@ faq:
   - question: "How many oils do I actually need in my kitchen?"
     answer: "Two or three cover most situations. A bottle of extra virgin olive oil for medium-heat cooking and finishing, a bottle of a neutral high-heat oil like avocado or vegetable oil, and maybe a bottle of toasted sesame oil for flavor. You don't need a dozen bottles."
 ---
-
 I used to cook everything in extra virgin olive oil. Eggs, stir-fries, pancakes, seared steak. Everything. Then one night I cranked the heat for a stir-fry and the kitchen filled with smoke so fast my neighbor knocked on the door to check if I was okay. I wasn't burning anything. The oil was just doing what oil does when you push it past its limit.
 
 That's how I learned about smoke points. Not from a cooking class or a book. From a concerned neighbor and a ventilation fan that couldn't keep up.

@@ -3,10 +3,8 @@ title: How to Stretch Meals for Large Families Without Adding Stress
 excerpt: Feeding a crowd on a budget doesn't have to mean eating cereal for dinner. Learn practical ways to bulk up recipes and make your grocery budget go further.
 category: tips
 tags:
-  - budget cooking
-  - family meal planning
-  - cheap dinner ideas
-  - money saving tips
+  - budget friendly
+  - large family
 image: "/images/how-to-stretch-meals-large-families-main.jpg"
 imageAlt: An overhead shot of a large, rustic wooden table filled with a colorful, abundant family-style meal, including a central casserole dish and various side dishes.
 date: 2026-04-28
@@ -22,7 +20,6 @@ faq:
   - question: "How do you plan cheap meals for large families?"
     answer: "Effective meal planning for large groups involves building recipes around a few versatile, low-cost base ingredients like potatoes or pasta. Buying these items in bulk and using them across different cuisines, such as baked potato bar one night and potato hash the next, keeps costs down. Focusing on one-pot meals also reduces waste and makes it easier to manage portions."
 ---
-
 I used to think that feeding a large group meant I had to become a master of logistics or start a backyard farm. Then I realized my kids treat a pound of ground beef like a light snack and my grocery bill was starting to look like a modest mortgage payment. Most advice for large families involves buying half a cow or spending your entire Sunday prepping individual containers, which sounds great if you have a spare freezer and zero other hobbies.
 
 The reality is that you don't need a lifestyle overhaul to keep everyone full. You just need to learn the art of the "filler" and stop letting the protein be the main event. Here is how to master cheap meals for large families without making it look like you're rationing.

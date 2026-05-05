@@ -3,10 +3,8 @@ title: Understanding Macros for a Balanced Family Dinner
 excerpt: Learn how to balance proteins, fats, and carbs for dinner without spending hours on a calculator. Practical macro tips for busy weeknights.
 category: nutrition
 tags:
-  - easy family meals
-  - macronutrient basics
-  - healthy dinner ideas
-  - balanced eating
+  - dinner
+  - nutrition basics
 image: "/images/understanding-macros-balanced-family-dinner-main.jpg"
 imageAlt: An overhead shot of a balanced family dinner featuring roasted chicken, roasted sweet potatoes, a green salad, and avocado slices on a rustic wooden table.
 date: 2026-04-28
@@ -22,7 +20,6 @@ faq:
   - question: "Can I still lose weight while eating carbs at dinner?"
     answer: "Yes, you can include carbohydrates in your dinner while working toward weight management goals. Carbs are not the enemy; they provide necessary fuel for the brain and body. Choosing complex carbohydrates like quinoa, brown rice, or sweet potatoes provides more fiber, which is thought to aid digestion and promote a feeling of fullness compared to refined grains."
 ---
-
 I used to think "macros" was a word reserved for people who spend three hours a day at the gym and carry gallon jugs of water everywhere. Then I realized it's just a fancy way of saying protein, carbs, and fats. If you're staring at a box of pasta and a pound of ground beef at 5:30 PM, you're already dealing with macros, whether you want to or not.
 
 The goal isn't to turn your kitchen into a laboratory. You don't need a degree in chemistry to get a decent meal on the table. Understanding macros in a balanced family dinner is mostly about making sure you didn't accidentally serve a plate that is 90% starch because you were too tired to chop a vegetable.

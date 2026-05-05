@@ -4,10 +4,8 @@ excerpt: Stop stressing about dinner at 5 PM. Discover these brilliant freezer m
   prep ideas for beginners and always have a hot, healthy meal ready to go.
 category: tips
 tags:
-- EasyMealPrepIdeasToFreeze
-- FreezerMealPrepIdeasForToddlers
-- FreezerMealPrepIdeasKidFriendly
-- FreezerMeals
+  - meal prep
+  - kitchen tips
 image: /images/freezer-meal-prep-ideas-for-beginners-main.jpg
 imageAlt: Freezer Meal Prep Ideas for Beginners - five flat frozen ziplock bags stacked
   neatly in a modern freezer
@@ -45,7 +43,8 @@ faq:
     cooker bags, which might actually save you time on prep day. Other dishes, like
     soups or baked pastas, are better to cook fully and freeze in individual portions
     so they're ready to heat and eat.
----We've all had those brutal days. You work nine hours, commute home in horrible traffic, walk through the door utterly exhausted, and realize with a sinking feeling that you still have to figure out dinner. The temptation to just order takeout or eat a bowl of cereal is overwhelmingly strong. 
+---
+We've all had those brutal days. You work nine hours, commute home in horrible traffic, walk through the door utterly exhausted, and realize with a sinking feeling that you still have to figure out dinner. The temptation to just order takeout or eat a bowl of cereal is overwhelmingly strong. 
 
 But what if you could just open your freezer, grab a perfectly portioned bag, and have a home-cooked meal ready in the time it takes to boil water or heat up an oven? That's the absolute magic of a frozen stash. If you're new to this, diving into freezer meal prep ideas for beginners is the single best favor you can do for your future, exhausted self.
 

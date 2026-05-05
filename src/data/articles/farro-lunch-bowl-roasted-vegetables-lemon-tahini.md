@@ -2,7 +2,9 @@
 title: "Farro Lunch Bowl With Roasted Vegetables and Lemon Tahini"
 excerpt: "This farro lunch bowl is the meal prep answer when you want something hearty, not sad. Chewy farro, roasted vegetables, and a lemon tahini sauce that makes leftovers feel intentional."
 category: "recipes"
-tags: ["FarroBowl", "MealPrepLunch", "RoastedVegetables", "TahiniSauce", "HealthyLunch"]
+tags:
+  - lunch
+  - whole grains
 image: "/images/farro-lunch-bowl-roasted-vegetables-lemon-tahini-main.jpg"
 imageAlt: "Farro lunch bowl with roasted vegetables and lemon tahini sauce in a shallow bowl"
 date: 2026-04-23
@@ -59,7 +61,6 @@ steps:
   - "Make lemon tahini sauce: whisk tahini, lemon juice, maple syrup, grated garlic, and 1/4 teaspoon salt in a bowl. Whisk in warm water 1 tablespoon at a time until pourable."
   - "Assemble bowls: divide spinach among 4 containers or bowls. Top with farro, roasted vegetables, and chickpeas. Spoon sauce over the top or keep it on the side. Finish with parsley and pumpkin seeds if using."
 ---
-
 Farro is one of those grains that feels like you have your life together. Not because it's magical, but because it has chew. Real chew. It doesn't collapse into mush the second you look away.
 
 This farro lunch bowl is my go-to when I want a meal prep lunch that isn't just a pile of cold chicken and regret. It's warm, filling, and it actually tastes like something. Roasted vegetables do the heavy lifting, and the lemon tahini sauce makes it feel like a real meal instead of a container you eat over the sink.

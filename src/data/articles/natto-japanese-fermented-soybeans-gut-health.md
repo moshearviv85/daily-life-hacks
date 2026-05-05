@@ -5,11 +5,8 @@ excerpt: Natto is a Japanese fermented soybean dish that is incredibly high in f
   digestion.
 category: nutrition
 tags:
-- GutHealth
-- FermentedFoods
-- HighFiber
-- JapaneseFood
-- HealthyEating
+  - gut health
+  - nutrition basics
 image: /images/natto-japanese-fermented-soybeans-gut-health-main.jpg
 imageAlt: A bowl of natto, sticky fermented Japanese soybeans, over rice
 date: 2026-04-04
