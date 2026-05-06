@@ -4,8 +4,10 @@ excerpt: Sick of eating the exact same meal five days in a row? Learn how to mea
   prep on a budget for one person without dying of total food boredom.
 category: tips
 tags:
-  - meal prep
-  - budget friendly
+- meal prep
+- budget friendly
+- budget
+- meal plan
 image: /images/how-to-meal-prep-on-a-budget-for-one-person-main.jpg
 imageAlt: How to Meal Prep on a Budget for One Person - three separate glass meal
   prep containers with wildly different colorful meals

@@ -5,9 +5,12 @@ excerpt: Skip the heavy meat tonight. This chickpea cauliflower curry is a simpl
   a project.
 category: recipes
 tags:
-  - high fiber
-  - dinner
-  - vegetarian
+- high fiber
+- vegetarian
+- dinner
+- fiber
+- dinners
+- relief
 image: /images/vegetarian-high-fiber-dinners-for-natural-relief-main.jpg
 imageAlt: Vegetarian high fiber chickpea cauliflower curry in a bowl with cilantro
 date: 2026-01-18

@@ -5,7 +5,8 @@ excerpt: Fat isn't the enemy. Here's a practical list of healthy fat foods you c
   fad diets.
 category: nutrition
 tags:
-  - nutrition basics
+- nutrition basics
+- foods
 image: /images/healthy-fats-list-foods-to-eat-daily-main.jpg
 imageAlt: 'Assortment of healthy fat foods: avocado, nuts, olive oil, salmon'
 date: 2026-03-15

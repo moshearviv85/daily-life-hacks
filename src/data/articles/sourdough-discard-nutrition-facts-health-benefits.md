@@ -3,8 +3,13 @@ title: Sourdough Discard Nutrition Facts and Health Benefits
 excerpt: Stop throwing away your sourdough starter. Learn the actual nutrition facts and health benefits of sourdough discard and how to use it in your kitchen.
 category: nutrition
 tags:
-  - baking
-  - nutrition basics
+- nutrition basics
+- baking
+- sourdough discard
+- sourdough
+- nutrition
+- health benefits
+- nutrition facts
 image: "/images/sourdough-discard-nutrition-facts-health-benefits-main.jpg"
 imageAlt: A glass jar filled with active, bubbly sourdough starter discard sits on a wooden counter, illuminated by soft natural light.
 date: 2026-04-28

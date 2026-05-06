@@ -4,8 +4,10 @@ excerpt: Tired of throwing away slimy parsley? Learn the exact method for how to
   fresh herbs to last longer and save serious money on your grocery bill.
 category: tips
 tags:
-  - food storage
-  - kitchen tips
+- food storage
+- kitchen tips
+- herbs
+- longer
 image: /images/how-to-store-fresh-herbs-to-last-longer-main.jpg
 imageAlt: How to Store Fresh Herbs to Last Longer - fresh cilantro standing upright
   in a glass jar of water

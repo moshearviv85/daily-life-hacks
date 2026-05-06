@@ -3,8 +3,9 @@ title: Understanding Macros for a Balanced Family Dinner
 excerpt: Learn how to balance proteins, fats, and carbs for dinner without spending hours on a calculator. Practical macro tips for busy weeknights.
 category: nutrition
 tags:
-  - dinner
-  - nutrition basics
+- nutrition basics
+- dinner
+- family
 image: "/images/understanding-macros-balanced-family-dinner-main.jpg"
 imageAlt: An overhead shot of a balanced family dinner featuring roasted chicken, roasted sweet potatoes, a green salad, and avocado slices on a rustic wooden table.
 date: 2026-04-28

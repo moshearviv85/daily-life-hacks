@@ -3,8 +3,9 @@ title: Savory Chia Seed Recipes for Breakfast
 excerpt: Tired of sweet chia puddings? These savory chia seed recipes for breakfast offer a hearty, salt-forward alternative that actually keeps you full until lunch.
 category: recipes
 tags:
-  - breakfast
-  - quick meals
+- breakfast
+- quick meals
+- chia seed
 image: "/images/savory-chia-seed-recipes-breakfast-main.jpg"
 imageAlt: An overhead shot of a green savory chia pudding in a rustic bowl, garnished with avocado slices, everything bagel seasoning, and chili flakes.
 date: 2026-04-28

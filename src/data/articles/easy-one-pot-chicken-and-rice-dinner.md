@@ -4,8 +4,11 @@ excerpt: One pot, one mess, one solid weeknight dinner. This chicken and rice re
   comes together in under an hour with ingredients you probably already have.
 category: recipes
 tags:
-  - quick meals
-  - dinner
+- quick meals
+- dinner
+- chicken
+- one pot
+- rice dinner
 image: /images/easy-one-pot-chicken-and-rice-dinner-main.jpg
 imageAlt: One-pot chicken and rice in a large pot, ready to serve
 date: 2026-03-15

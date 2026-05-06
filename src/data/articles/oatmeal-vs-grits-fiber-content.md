@@ -5,9 +5,12 @@ excerpt: Ever wondered if your morning bowl of oatmeal or grits is truly pulling
   just flip your breakfast routine.
 category: nutrition
 tags:
-  - high fiber
-  - breakfast
-  - whole grains
+- high fiber
+- breakfast
+- whole grains
+- fiber
+- fiber content
+- content
 image: /images/oatmeal-vs-grits-fiber-content-main.jpg
 imageAlt: Oatmeal vs Grits Fiber Content - appetizing bowl with colorful ingredients
   for healthy weight management

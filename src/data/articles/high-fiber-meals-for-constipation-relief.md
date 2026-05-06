@@ -5,8 +5,13 @@ excerpt: Feeling backed up? You don't need harsh laxatives. Discover these incre
   naturally.
 category: nutrition
 tags:
-  - high fiber
-  - nutrition basics
+- high fiber
+- nutrition basics
+- fiber
+- meals
+- fiber meals
+- high fiber meals
+- constipation
 image: /images/high-fiber-meals-for-constipation-relief-main.jpg
 imageAlt: High Fiber Meals for Constipation Relief - a bright breakfast bowl with
   chia seeds and vibrant berries

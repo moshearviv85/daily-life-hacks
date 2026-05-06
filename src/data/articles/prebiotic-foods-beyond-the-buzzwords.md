@@ -3,8 +3,9 @@ title: "Prebiotic Foods Beyond the Buzzwords"
 excerpt: "You do not need a pricey supplement to feed your gut bacteria. Prebiotic foods are sitting right there in your kitchen. Here is what actually matters."
 category: "nutrition"
 tags:
-  - gut health
-  - nutrition basics
+- nutrition basics
+- gut health
+- foods
 image: "/images/prebiotic-foods-beyond-the-buzzwords-main.jpg"
 imageAlt: "A selection of prebiotic whole foods including garlic onions and bananas on a counter"
 date: 2026-05-02

@@ -3,8 +3,9 @@ title: "Japanese-Inspired Cucumber and Edamame Salad With Sesame"
 excerpt: "This Japanese-inspired cucumber and edamame salad is crisp, refreshing, and packed with plant protein. A toasted sesame dressing brings it all together in under fifteen minutes."
 category: "recipes"
 tags:
-  - salads
-  - quick meals
+- quick meals
+- salads
+- salad
 image: "/images/cucumber-edamame-salad-sesame-main.jpg"
 imageAlt: "Fresh cucumber and edamame salad tossed with sesame dressing in a wooden bowl"
 date: 2026-04-22

@@ -3,8 +3,9 @@ title: "Air Fryer Salmon Bites With Garlic Honey Glaze"
 excerpt: "Crispy on the outside and flaky inside, these air fryer salmon bites take less than ten minutes to cook. Tossed in a sweet and savory garlic honey glaze, they're the perfect quick dinner."
 category: "recipes"
 tags:
-  - dinner
-  - quick meals
+- quick meals
+- dinner
+- salmon
 image: "/images/air-fryer-salmon-bites-garlic-honey-glaze-main.jpg"
 imageAlt: "Sticky glazed air fryer salmon bites served over a bowl of rice with sesame seeds"
 date: 2026-04-08

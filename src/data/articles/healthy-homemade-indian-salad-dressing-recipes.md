@@ -3,8 +3,10 @@ title: Healthy Homemade Indian Salad Dressing Recipes
 excerpt: Skip the bottled ranch and bring some heat to your greens with these healthy homemade Indian salad dressing recipes that take five minutes to whisk together.
 category: recipes
 tags:
-  - salads
-  - salad dressings
+- salads
+- salad dressings
+- salad
+- salad dressing
 image: "/images/healthy-homemade-indian-salad-dressing-recipes-main.jpg"
 imageAlt: A close-up, overhead shot of a golden Indian-inspired salad dressing beautifully drizzled over a bowl of fresh mixed green salad.
 date: 2026-04-28

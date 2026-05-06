@@ -4,8 +4,10 @@ excerpt: Discover how these surprisingly delicious high fiber bran muffins can b
   your gut's best friend without sacrificing flavor. Perfect for breakfast and regularity!
 category: recipes
 tags:
-  - high fiber
-  - baking
+- high fiber
+- baking
+- fiber
+- best high fiber
 image: /images/high-fiber-bran-muffins-that-taste-good-main.jpg
 imageAlt: High Fiber Bran Muffins That Taste Good - appetizing food presentation for
   natural digestive relief

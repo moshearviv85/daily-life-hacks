@@ -3,10 +3,13 @@ title: 5 Quick Costco Rotisserie Chicken Meal Ideas for Busy Nights
 excerpt: Stop staring at that plastic container on your counter. Turn your Costco rotisserie chicken into five fast, family-friendly dinners without the stress.
 category: recipes
 tags:
-  - high protein
-  - quick meals
-  - dinner
-  - grocery shopping
+- quick meals
+- high protein
+- grocery shopping
+- dinner
+- chicken
+- rotisserie chicken
+- costco rotisserie
 image: "/images/costco-rotisserie-chicken-meal-ideas-dinner-main.jpg"
 imageAlt: Pulled rotisserie chicken and fresh vegetables are arranged on a light wooden cutting board.
 date: 2026-04-28

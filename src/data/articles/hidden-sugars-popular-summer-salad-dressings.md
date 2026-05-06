@@ -3,9 +3,13 @@ title: Hidden Sugars in Popular Summer Salad Dressings
 excerpt: Your healthy summer salad might be a dessert in disguise. Learn how to spot hidden sugars in store-bought dressings and find better alternatives.
 category: nutrition
 tags:
-  - salads
-  - nutrition basics
-  - salad dressings
+- nutrition basics
+- salads
+- salad dressings
+- salad
+- summer
+- dressings
+- hidden
 image: "/images/hidden-sugars-popular-summer-salad-dressings-main.jpg"
 imageAlt: A close-up photograph shows a healthy green salad in a wooden bowl with a thick, glossy red salad dressing being poured over it.
 date: 2026-04-28

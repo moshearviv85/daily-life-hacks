@@ -5,8 +5,10 @@ excerpt: Seasoning cast iron isn't a mystery. It's a thin layer of oil baked on 
   to maintain it.
 category: tips
 tags:
-  - kitchen tips
-  - cooking basics
+- cooking basics
+- kitchen tips
+- properly
+- skillet
 image: /images/how-to-season-cast-iron-skillet-properly-main.jpg
 imageAlt: Cast iron skillet with a dark, seasoned surface
 date: 2026-03-15

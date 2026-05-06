@@ -3,9 +3,13 @@ title: Cheap Chicken Casserole Meals for Large Families
 excerpt: Feed a crowd without breaking the bank. These budget-friendly chicken casserole tips and recipes keep the family full and your grocery bill under control.
 category: recipes
 tags:
-  - budget friendly
-  - large family
-  - dinner
+- budget friendly
+- large family
+- dinner
+- meals
+- large families
+- families
+- chicken
 image: "/images/cheap-chicken-casserole-meals-large-families-main.jpg"
 imageAlt: A golden-brown chicken and rice casserole in a glass baking dish sits on a wooden table, fresh from the oven.
 date: 2026-04-28

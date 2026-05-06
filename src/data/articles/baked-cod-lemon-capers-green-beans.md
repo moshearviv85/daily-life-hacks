@@ -3,8 +3,10 @@ title: "Baked Cod With Lemon, Capers, and Green Beans (15-Min Prep)"
 excerpt: "This baked cod with lemon capers and green beans is a bright, easy dinner that cooks on one pan. It tastes fancy but takes almost no effort to throw together."
 category: "recipes"
 tags:
-  - quick meals
-  - dinner
+- quick meals
+- dinner
+- beans
+- lemon
 image: "/images/baked-cod-lemon-capers-green-beans-main.jpg"
 imageAlt: "Baked cod fillets with lemon slices capers and green beans on a baking sheet"
 date: 2026-04-08

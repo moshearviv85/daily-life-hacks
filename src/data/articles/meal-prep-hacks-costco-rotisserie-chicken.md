@@ -3,9 +3,13 @@ title: Smart Meal Prep Hacks Using Costco Rotisserie Chicken
 excerpt: Stop staring at that five dollar bird. These Costco rotisserie chicken meal prep hacks turn one chicken into three nights of low-effort dinners.
 category: tips
 tags:
-  - meal prep
-  - high protein
-  - grocery shopping
+- meal prep
+- high protein
+- grocery shopping
+- chicken
+- rotisserie chicken
+- costco rotisserie
+- rotisserie
 image: "/images/meal-prep-hacks-costco-rotisserie-chicken-main.jpg"
 imageAlt: Shredded warm rotisserie chicken is piled on a wooden cutting board with a chef's knife and rosemary sprigs.
 date: 2026-04-28

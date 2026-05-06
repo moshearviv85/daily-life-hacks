@@ -4,8 +4,11 @@ excerpt: Exhausted by weeknight cooking? Master the Sunday system with this ridi
   straightforward batch cooking for beginners weekly guide.
 category: tips
 tags:
-  - meal prep
-  - kitchen tips
+- meal prep
+- kitchen tips
+- beginners
+- cooking
+- weekly
 image: /images/batch-cooking-for-beginners-weekly-guide-main.jpg
 imageAlt: Batch Cooking for Beginners Weekly Guide - multiple glass containers filled
   with pre-cooked grains, roasted vegetables, and proteins aligned on a counter

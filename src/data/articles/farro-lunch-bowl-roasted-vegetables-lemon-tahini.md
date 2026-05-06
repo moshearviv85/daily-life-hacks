@@ -3,8 +3,11 @@ title: "Farro Lunch Bowl With Roasted Vegetables and Lemon Tahini"
 excerpt: "This farro lunch bowl is the meal prep answer when you want something hearty, not sad. Chewy farro, roasted vegetables, and a lemon tahini sauce that makes leftovers feel intentional."
 category: "recipes"
 tags:
-  - lunch
-  - whole grains
+- whole grains
+- lunch
+- vegetables
+- lemon
+- roasted
 image: "/images/farro-lunch-bowl-roasted-vegetables-lemon-tahini-main.jpg"
 imageAlt: "Farro lunch bowl with roasted vegetables and lemon tahini sauce in a shallow bowl"
 date: 2026-04-23

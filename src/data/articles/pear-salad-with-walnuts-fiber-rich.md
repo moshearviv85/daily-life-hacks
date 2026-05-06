@@ -5,8 +5,11 @@ excerpt: Discover the surprising deliciousness of a pear, walnut, and blue chees
   flavors.
 category: recipes
 tags:
-  - high fiber
-  - salads
+- high fiber
+- salads
+- fiber
+- salad
+- fiber rich
 image: /images/pear-salad-with-walnuts-fiber-rich-main.jpg
 imageAlt: Pear Salad with Walnuts Fiber Rich - professionally plated meal for natural
   nutrition

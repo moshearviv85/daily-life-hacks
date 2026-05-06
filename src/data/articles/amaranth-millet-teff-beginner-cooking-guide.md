@@ -3,8 +3,9 @@ title: "Amaranth, Millet, and Teff: A Beginner Guide to Cooking Whole Grains"
 excerpt: "If your pantry is stuck on rice and oats, you are missing out. This beginner guide to cooking amaranth, millet, and teff makes the ratios simple, the texture predictable, and the \"what do I do with it\" part actually doable."
 category: "nutrition"
 tags:
-  - whole grains
-  - nutrition basics
+- nutrition basics
+- whole grains
+- cooking
 image: "/images/amaranth-millet-teff-beginner-cooking-guide-main.jpg"
 imageAlt: "Small bowls of cooked amaranth millet and teff with a spoon on a kitchen counter"
 date: 2026-04-08

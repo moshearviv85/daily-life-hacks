@@ -4,8 +4,11 @@ excerpt: Stop letting your produce rot. Discover how to store fruits and vegetab
   properly to double their lifespan and completely eliminate food waste.
 category: tips
 tags:
-  - food storage
-  - kitchen tips
+- food storage
+- kitchen tips
+- vegetables
+- fruits
+- properly
 image: /images/how-to-store-fruits-and-vegetables-properly-main.jpg
 imageAlt: How to Store Fruits and Vegetables Properly - fresh produce perfectly organized
   in clear bins inside a clean refrigerator

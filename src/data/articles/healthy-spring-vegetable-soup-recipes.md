@@ -3,8 +3,9 @@ title: Healthy Spring Vegetable Soup Recipes for Busy Weeknights
 excerpt: Skip the heavy winter stews for these healthy spring vegetable soup recipes that use seasonal greens and take less than thirty minutes to prep.
 category: recipes
 tags:
-  - quick meals
-  - soups and stews
+- quick meals
+- soups and stews
+- spring
 image: "/images/healthy-spring-vegetable-soup-recipes-main.jpg"
 imageAlt: A vibrant green pureed soup in a rustic ceramic bowl is garnished with cream, chives, and asparagus tips on a light linen tablecloth.
 date: 2026-04-28

@@ -3,8 +3,9 @@ title: "The Protein, Color, and Crunch Formula for Easy Lunches"
 excerpt: "Stop staring at the fridge at noon. The protein, color, crunch formula gives you a dead simple framework for building lunches that are filling, interesting, and don't require a recipe."
 category: "nutrition"
 tags:
-  - lunch
-  - nutrition basics
+- nutrition basics
+- lunch
+- protein
 image: "/images/protein-color-crunch-easy-lunch-formula-main.jpg"
 imageAlt: "Colorful lunch bowl with grilled chicken vegetables and crunchy toppings"
 date: 2026-05-03

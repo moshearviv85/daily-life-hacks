@@ -3,8 +3,10 @@ title: "How to Preheat a Skillet for More Even Browning"
 excerpt: "Stop putting food into cold pans. Here is the right way to preheat a skillet for more even browning, better crusts, and less sticking."
 category: "tips"
 tags:
-  - kitchen tips
-  - cooking basics
+- cooking basics
+- kitchen tips
+- browning
+- skillet
 image: "/images/how-to-preheat-skillet-even-browning-main.jpg"
 imageAlt: "Hot cast iron skillet on a stovetop with a little oil shimmering"
 date: 2026-04-30

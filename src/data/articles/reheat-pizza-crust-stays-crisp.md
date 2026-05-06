@@ -23,7 +23,6 @@ faq:
  - question: "Should I let the pan preheat before adding the pizza slice?"
    answer: "Yes, give the skillet a minute to get warm over medium-low heat. Dropping cold pizza into a cold pan means it sits there longer and might dry out before the cheese melts."
 ---
-
 Leftover pizza is a beautiful thing. Some people like it cold straight from the fridge, which is fine if that is your vibe. But if you want it hot, you have a problem. The microwave is the standard move because it's fast, but it destroys the texture. You put a great slice of pizza in, press a button, and 45 seconds later you pull out a floppy, rubbery triangle. It's hot, sure, but the crust is chewy in a bad way, and the cheese feels like molten plastic.
 
 The oven is the other option. The oven does a great job. The crust gets crispy and the cheese melts perfectly. But the oven takes forever. By the time it preheats and the pizza actually cooks, fifteen or twenty minutes have passed. When you're hungry for leftovers, fifteen minutes feels like an eternity. You just want the food now.

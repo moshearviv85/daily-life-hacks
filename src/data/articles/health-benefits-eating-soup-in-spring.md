@@ -3,8 +3,12 @@ title: Why You Should Keep Making Soup Well Into Spring
 excerpt: Don't pack away the stockpot just because the sun is out. Spring soups offer a lighter way to stay hydrated and get your greens without the winter bloat.
 category: nutrition
 tags:
-  - soups and stews
-  - nutrition basics
+- nutrition basics
+- soups and stews
+- health benefits
+- benefits
+- eating
+- spring
 image: "/images/health-benefits-eating-soup-in-spring-main.jpg"
 imageAlt: A bowl of bright green spring soup with a cream swirl and edible flower garnish sits on a light-colored surface.
 date: 2026-04-28

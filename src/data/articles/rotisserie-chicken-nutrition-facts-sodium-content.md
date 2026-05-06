@@ -3,8 +3,13 @@ title: Rotisserie Chicken Nutrition Facts and Sodium Content
 excerpt: Rotisserie chicken is the ultimate weeknight shortcut, but the salt levels can be high. Here is how to handle the sodium while keeping the convenience.
 category: nutrition
 tags:
-  - high protein
-  - nutrition basics
+- nutrition basics
+- high protein
+- chicken
+- rotisserie chicken
+- nutrition
+- nutrition facts
+- content
 image: "/images/rotisserie-chicken-nutrition-facts-sodium-content-main.jpg"
 imageAlt: A close up of a carved rotisserie chicken on a wooden cutting board with a knife and herbs.
 date: 2026-04-28

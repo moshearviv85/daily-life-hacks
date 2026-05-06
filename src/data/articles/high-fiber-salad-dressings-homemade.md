@@ -5,9 +5,13 @@ excerpt: Ditch the sweet stuff on your greens. This homemade tahini and lemon dr
   needs without the junk.
 category: recipes
 tags:
-  - high fiber
-  - salads
-  - salad dressings
+- high fiber
+- salads
+- salad dressings
+- fiber
+- salad
+- best high fiber
+- dressings
 image: /images/high-fiber-salad-dressings-homemade-main.jpg
 imageAlt: High Fiber Salad Dressings Homemade - fresh meal in glass containers for
   natural nutrition

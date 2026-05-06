@@ -3,9 +3,13 @@ title: Cheap Crockpot Meals for Large Families
 excerpt: Feeding a crowd shouldn't cost a fortune. These budget-friendly slow cooker recipes focus on bulk staples that actually taste good without the stress.
 category: recipes
 tags:
-  - budget friendly
-  - large family
-  - dinner
+- budget friendly
+- large family
+- dinner
+- meals
+- large families
+- families
+- meals large
 image: "/images/cheap-crockpot-meals-large-families-main.jpg"
 imageAlt: A large slow cooker is filled with a hearty stew, surrounded by dried beans, potatoes, and onions.
 date: 2026-04-28

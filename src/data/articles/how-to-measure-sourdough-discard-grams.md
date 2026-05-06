@@ -3,8 +3,10 @@ title: How to Measure Sourdough Discard in Grams
 excerpt: Stop guessing with messy measuring cups. Learn why measuring sourdough discard in grams is the only way to save your sanity and your recipes.
 category: tips
 tags:
-  - baking
-  - cooking basics
+- cooking basics
+- baking
+- sourdough discard
+- sourdough
 image: "/images/how-to-measure-sourdough-discard-grams-main.jpg"
 imageAlt: A digital kitchen scale weighing a glass jar filled with bubbly sourdough discard, displaying a gram measurement.
 date: 2026-04-28

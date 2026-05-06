@@ -70,6 +70,7 @@ function isUnreleasedSitemapUrl(url) {
 
 export default defineConfig({
   site: 'https://www.daily-life-hacks.com',
+  trailingSlash: 'always',
   integrations: [
     sitemap({
       serialize(item) {

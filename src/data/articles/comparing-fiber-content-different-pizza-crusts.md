@@ -3,8 +3,12 @@ title: Comparing Fiber Content in Different Pizza Crusts
 excerpt: Not all pizza dough is created equal. We look at the fiber content in thin, thick, cauliflower, and whole wheat crusts to help you pick the best base.
 category: nutrition
 tags:
-  - high fiber
-  - baking
+- high fiber
+- baking
+- fiber
+- pizza
+- fiber content
+- content
 image: "/images/comparing-fiber-content-different-pizza-crusts-main.jpg"
 imageAlt: Three distinct pizza crust cross-sections are shown from above, revealing their varied textures and compositions.
 date: 2026-04-28

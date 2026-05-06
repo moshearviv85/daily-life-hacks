@@ -3,9 +3,10 @@ title: "High Fiber Burrito Bowl Meal Prep for a Better Work Lunch"
 excerpt: "Stop buying sad salads at the food court. This high fiber burrito bowl meal prep comes together fast, keeps you full, and survives the fridge like a champion."
 category: "recipes"
 tags:
-  - meal prep
-  - high fiber
-  - lunch
+- high fiber
+- meal prep
+- lunch
+- fiber
 image: "/images/high-fiber-burrito-bowl-meal-prep-main.jpg"
 imageAlt: "Four glass meal prep containers filled with quinoa black beans corn and salsa"
 date: 2026-04-08

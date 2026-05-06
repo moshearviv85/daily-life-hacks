@@ -4,9 +4,11 @@ excerpt: Transform your mornings and your digestion. Explore these surprisingly 
   and easy high fiber breakfast ideas for gut health that you will actually crave.
 category: nutrition
 tags:
-  - high fiber
-  - gut health
-  - breakfast
+- high fiber
+- breakfast
+- gut health
+- fiber
+- breakfast ideas
 image: /images/easy-high-fiber-breakfast-ideas-for-gut-health-main.jpg
 imageAlt: Easy High Fiber Breakfast Ideas for Gut Health - a large mason jar of overnight
   oats topped with fresh fruit

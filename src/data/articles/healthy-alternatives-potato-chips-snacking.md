@@ -3,8 +3,11 @@ title: Healthy Alternatives to Potato Chips for Snacking
 excerpt: Tired of the grease but need the crunch? Discover easy, realistic alternatives to potato chips that satisfy your salt cravings without the mid-afternoon slump.
 category: nutrition
 tags:
-  - snacks
-  - nutrition basics
+- nutrition basics
+- snacks
+- potato chips
+- potato
+- chips
 image: "/images/healthy-alternatives-potato-chips-snacking-main.jpg"
 imageAlt: A large white bowl overflows with fluffy, air-popped popcorn, with some kernels suspended in mid-air.
 date: 2026-04-28

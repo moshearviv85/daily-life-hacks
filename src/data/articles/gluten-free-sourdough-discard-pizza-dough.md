@@ -3,8 +3,13 @@ title: Gluten Free Sourdough Discard Pizza Dough
 excerpt: Stop throwing away your GF starter. This gluten free sourdough discard pizza dough recipe makes a crispy, chewy crust without the long wait.
 category: recipes
 tags:
-  - baking
-  - gluten free
+- gluten free
+- baking
+- sourdough discard
+- pizza
+- sourdough
+- pizza dough
+- discard pizza
 image: "/images/gluten-free-sourdough-discard-pizza-dough-main.jpg"
 imageAlt: A slice of gluten-free sourdough pizza with tomato sauce, mozzarella, and basil is being lifted from the whole pizza.
 date: 2026-04-28

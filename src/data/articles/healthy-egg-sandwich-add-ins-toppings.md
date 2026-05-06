@@ -3,8 +3,13 @@ title: Healthy Egg Sandwich Add Ins and Toppings That Actually Taste Good
 excerpt: Tired of the same boring breakfast? These healthy egg sandwich add ins and toppings turn a basic fried egg into a meal that keeps you full without the grease.
 category: recipes
 tags:
-  - lunch
-  - quick meals
+- quick meals
+- lunch
+- sandwich
+- egg sandwich
+- healthy egg
+- healthy egg sandwich
+- toppings
 image: "/images/healthy-egg-sandwich-add-ins-toppings-main.jpg"
 imageAlt: A healthy egg sandwich is cut in half, stacked with egg, arugula, and avocado, on a kitchen counter.
 date: 2026-04-28

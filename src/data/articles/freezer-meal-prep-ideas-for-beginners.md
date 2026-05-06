@@ -4,8 +4,12 @@ excerpt: Stop stressing about dinner at 5 PM. Discover these brilliant freezer m
   prep ideas for beginners and always have a hot, healthy meal ready to go.
 category: tips
 tags:
-  - meal prep
-  - kitchen tips
+- meal prep
+- kitchen tips
+- beginners
+- prep ideas
+- freezer
+- meal prep ideas
 image: /images/freezer-meal-prep-ideas-for-beginners-main.jpg
 imageAlt: Freezer Meal Prep Ideas for Beginners - five flat frozen ziplock bags stacked
   neatly in a modern freezer

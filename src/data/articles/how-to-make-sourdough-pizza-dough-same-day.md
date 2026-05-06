@@ -3,8 +3,13 @@ title: How to Make Sourdough Pizza Dough Same Day
 excerpt: Skip the 24-hour wait and turn your sourdough discard into a crispy, chewy pizza crust by dinnertime with this straightforward same-day method.
 category: tips
 tags:
-  - baking
-  - kitchen tips
+- kitchen tips
+- baking
+- pizza
+- sourdough
+- pizza dough
+- same day
+- dough
 image: "/images/how-to-make-sourdough-pizza-dough-same-day-main.jpg"
 imageAlt: Hands gently stretch a shaggy ball of sourdough pizza dough on a floured wooden surface, with a glass jar of sourdough discard in the background.
 date: 2026-04-28

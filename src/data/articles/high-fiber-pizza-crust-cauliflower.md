@@ -4,8 +4,13 @@ excerpt: Ditch the carb coma without sacrificing flavor! This cauliflower crust 
   brings back pizza night with a fiber-rich, gluten-free twist.
 category: recipes
 tags:
-  - high fiber
-  - baking
+- high fiber
+- baking
+- fiber
+- best high fiber
+- pizza
+- pizza crust
+- cauliflower
 image: /images/high-fiber-pizza-crust-cauliflower-main.jpg
 imageAlt: High Fiber Pizza Crust Cauliflower - appetizing food presentation for natural
   nutrition

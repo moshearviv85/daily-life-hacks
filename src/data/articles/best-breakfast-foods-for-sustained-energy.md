@@ -4,8 +4,10 @@ excerpt: Skip the sugar crash. Here's what to eat at breakfast to keep your ener
   steadier through the morning, without the hype or the complicated meal plans.
 category: nutrition
 tags:
-  - breakfast
-  - nutrition basics
+- breakfast
+- nutrition basics
+- foods
+- energy
 image: /images/best-breakfast-foods-for-sustained-energy-main.jpg
 imageAlt: Breakfast plate with eggs, whole grain toast, and fruit
 date: 2026-03-15

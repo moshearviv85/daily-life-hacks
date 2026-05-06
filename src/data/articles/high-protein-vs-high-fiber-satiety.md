@@ -3,10 +3,12 @@ title: High Protein vs High Fiber for Satiety
 excerpt: Stop choosing between chicken and broccoli. Learn how protein and fiber work differently to keep you full so you can stop snacking through the afternoon.
 category: nutrition
 tags:
-  - high fiber
-  - high protein
-  - nutrition basics
-  - weight management
+- high fiber
+- high protein
+- nutrition basics
+- weight management
+- fiber
+- protein
 image: "/images/high-protein-vs-high-fiber-satiety-main.jpg"
 imageAlt: A grilled salmon fillet is plated with roasted broccoli, green asparagus spears, and toasted almonds on a ceramic dish.
 date: 2026-04-28

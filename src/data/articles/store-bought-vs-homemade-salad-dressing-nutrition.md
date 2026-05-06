@@ -3,8 +3,13 @@ title: Is Homemade Salad Dressing Actually Better for You
 excerpt: Comparing store bought vs homemade salad dressing nutrition to see if whisking your own vinaigrette is worth the extra dishes or just a Pinterest myth.
 category: nutrition
 tags:
-  - salads
-  - salad dressings
+- salads
+- salad dressings
+- salad
+- salad dressing
+- nutrition
+- homemade salad
+- homemade salad dressing
 image: "/images/store-bought-vs-homemade-salad-dressing-nutrition-main.jpg"
 imageAlt: A hand drizzles homemade vinaigrette over a fresh green salad in a wooden bowl.
 date: 2026-04-28

@@ -5,8 +5,12 @@ excerpt: Did you know popcorn is a whole grain? Ditch the butter and discover ge
   for your next movie night.
 category: nutrition
 tags:
-  - high fiber
-  - snacks
+- high fiber
+- snacks
+- fiber
+- best high fiber
+- popcorn
+- toppings
 image: /images/high-fiber-popcorn-toppings-healthy-main.jpg
 imageAlt: High Fiber Popcorn Toppings Healthy - appetizing bowl with colorful ingredients
   for healthy snacking

@@ -3,8 +3,10 @@ title: "How to Plan a Week of Dinners With Fewer Grocery Runs"
 excerpt: "You don't need a Pinterest-perfect meal plan. Here's a practical system to plan a week of dinners with fewer grocery runs and way less wasted food."
 category: "nutrition"
 tags:
-  - dinner
-  - grocery shopping
+- grocery shopping
+- dinner
+- grocery
+- dinners
 image: "/images/plan-week-of-dinners-fewer-grocery-runs-main.jpg"
 imageAlt: "A kitchen counter with a simple grocery list next to fresh vegetables and pantry staples"
 date: 2026-05-02

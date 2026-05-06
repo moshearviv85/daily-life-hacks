@@ -44,7 +44,6 @@ faq:
   - question: "What are some other toppings I can add?"
     answer: "Sliced almonds, chopped pistachios, a dash of cinnamon, or even a drizzle of balsamic glaze if you want to push it into a savory-sweet direction."
 ---
-
 Avocado toast had a really good run. It dominated cafes, menus, and our kitchens for years. I'm not saying we banish it, but sometimes you wake up and you just don't want to deal with mashing an avocado that may or may not be perfectly ripe.
 
 Enter the ricotta and berry toast bar.

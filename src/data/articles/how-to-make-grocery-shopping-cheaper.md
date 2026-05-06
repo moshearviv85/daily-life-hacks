@@ -4,8 +4,10 @@ excerpt: Inflation making the checkout line painful? Learn how to make grocery s
   cheaper with these incredibly effective, psychology-based strategies.
 category: tips
 tags:
-  - budget friendly
-  - grocery shopping
+- budget friendly
+- grocery shopping
+- grocery
+- shopping
 image: /images/how-to-make-grocery-shopping-cheaper-main.jpg
 imageAlt: How to Make Grocery Shopping Cheaper - a person calculating a total on a
   smartphone while sitting in a grocery cart aisle

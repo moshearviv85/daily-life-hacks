@@ -3,8 +3,9 @@ title: "Freezer Inventory: A Simple System That Prevents Mystery Bags"
 excerpt: "If your freezer is where good intentions go to freeze over, you need an inventory system. Here is a practical, low-effort way to track what you have before it turns into an unrecognizable block of ice."
 category: "tips"
 tags:
-  - food storage
-  - kitchen tips
+- food storage
+- kitchen tips
+- freezer
 image: "/images/freezer-inventory-simple-system-main.jpg"
 imageAlt: "A well organized freezer with labeled containers and a simple whiteboard list on the fridge door"
 date: 2026-04-24

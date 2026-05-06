@@ -3,8 +3,13 @@ title: How to Stretch Meals for Large Families Without Adding Stress
 excerpt: Feeding a crowd on a budget doesn't have to mean eating cereal for dinner. Learn practical ways to bulk up recipes and make your grocery budget go further.
 category: tips
 tags:
-  - budget friendly
-  - large family
+- budget friendly
+- large family
+- meals
+- large families
+- families
+- meals large
+- meals large families
 image: "/images/how-to-stretch-meals-large-families-main.jpg"
 imageAlt: An overhead shot of a large, rustic wooden table filled with a colorful, abundant family-style meal, including a central casserole dish and various side dishes.
 date: 2026-04-28

@@ -4,9 +4,11 @@ excerpt: Black bean tacos that come together in minutes. No long simmering, no f
   ingredients. Just a solid, repeatable weeknight dinner that everyone can customize.
 category: recipes
 tags:
-  - quick meals
-  - dinner
-  - vegetarian
+- quick meals
+- vegetarian
+- dinner
+- black bean
+- black
 image: /images/easy-black-bean-tacos-weeknight-dinner-main.jpg
 imageAlt: Black bean tacos on corn tortillas with toppings
 date: 2026-03-15

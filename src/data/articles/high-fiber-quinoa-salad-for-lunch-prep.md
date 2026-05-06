@@ -4,10 +4,12 @@ excerpt: This quinoa salad holds up in the fridge, travels well, and does not tu
   into a sad mush by Wednesday. Lemon, chickpeas, and crunch do the work.
 category: recipes
 tags:
-  - high fiber
-  - lunch
-  - salads
-  - whole grains
+- high fiber
+- whole grains
+- salads
+- lunch
+- fiber
+- salad
 image: /images/high-fiber-quinoa-salad-for-lunch-prep-main.jpg
 imageAlt: Quinoa salad with vegetables in a meal prep container
 date: 2026-03-30

@@ -3,8 +3,12 @@ title: High Protein Bagel Sandwich Ideas for a Better Lunch
 excerpt: Bored of the same old turkey wrap? These high protein bagel sandwich ideas use simple ingredients to keep you full without a mid-afternoon energy crash.
 category: recipes
 tags:
-  - high protein
-  - lunch
+- high protein
+- lunch
+- protein
+- sandwich
+- bagel sandwich
+- bagel
 image: "/images/high-protein-bagel-sandwich-ideas-lunch-main.jpg"
 imageAlt: A sliced high-protein bagel sandwich with egg, greens, tomato, and turkey on a wooden cutting board.
 date: 2026-04-28

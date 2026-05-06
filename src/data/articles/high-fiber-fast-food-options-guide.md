@@ -5,8 +5,11 @@ excerpt: Trapped by the fast-food siren song? Learn how to navigate Subway, Chip
   gut happy.
 category: nutrition
 tags:
-  - high fiber
-  - nutrition basics
+- high fiber
+- nutrition basics
+- fiber
+- best high fiber
+- options
 image: /images/high-fiber-fast-food-options-guide-main.jpg
 imageAlt: High Fiber Fast Food Options Guide - appetizing bowl with colorful ingredients
   for natural nutrition

@@ -3,9 +3,13 @@ title: How to Store Homemade Salad Dressing Safely
 excerpt: Stop guessing if that jar of vinaigrette in the fridge is still good. Learn the best ways to store homemade salad dressing so it stays fresh and safe.
 category: tips
 tags:
-  - salads
-  - food storage
-  - salad dressings
+- food storage
+- salads
+- salad dressings
+- salad
+- salad dressing
+- homemade salad
+- homemade salad dressing
 image: "/images/how-to-store-homemade-salad-dressing-safely-main.jpg"
 imageAlt: A clear glass bottle filled with golden salad dressing stands on a light wooden cutting board, surrounded by a lemon half and a garlic clove.
 date: 2026-04-28

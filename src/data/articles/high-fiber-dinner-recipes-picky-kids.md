@@ -3,9 +3,10 @@ title: High Fiber Dinner Recipes for Picky Kids
 excerpt: Getting kids to eat fiber shouldn't feel like a negotiation at a high-stakes summit. These high-fiber dinner recipes are designed to pass the picky eater test.
 category: recipes
 tags:
-  - high fiber
-  - dinner
-  - picky eaters
+- high fiber
+- picky eaters
+- dinner
+- fiber
 image: "/images/high-fiber-dinner-recipes-picky-kids-main.jpg"
 imageAlt: A close-up overhead photograph of a bowl of spaghetti and meatballs with fresh basil on top.
 date: 2026-04-28

@@ -4,8 +4,11 @@ excerpt: Cooking dried beans from scratch is cheaper and simpler than it sounds.
   simmer, and season. Here's a straightforward method that works for most beans.
 category: tips
 tags:
-  - cooking basics
-  - kitchen tips
+- cooking basics
+- kitchen tips
+- beans
+- dried beans
+- dried
 image: /images/how-to-cook-dried-beans-from-scratch-main.jpg
 imageAlt: Pot of cooked beans with herbs
 date: 2026-03-15

@@ -6,8 +6,11 @@ excerpt: Kickstart your morning with a layered high fiber yogurt parfait. This s
   system supported.
 category: nutrition
 tags:
-  - high fiber
-  - breakfast
+- high fiber
+- breakfast
+- fiber
+- best high fiber
+- yogurt
 image: /images/high-fiber-yogurt-parfait-for-breakfast-main.jpg
 imageAlt: High Fiber Yogurt Parfait for Breakfast - fresh meal in glass containers
   with berries, yogurt for a healthy morning

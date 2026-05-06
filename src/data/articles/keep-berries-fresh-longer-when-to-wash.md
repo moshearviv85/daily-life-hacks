@@ -3,8 +3,10 @@ title: "How to Keep Berries Fresh Longer (And When to Wash Them)"
 excerpt: "Stop throwing away fuzzy strawberries. Here is the exact method to keep berries fresh longer in the fridge without turning them into an accidental science experiment."
 category: "tips"
 tags:
-  - food storage
-  - kitchen tips
+- food storage
+- kitchen tips
+- fresh longer
+- longer
 image: "/images/keep-berries-fresh-longer-when-to-wash-main.jpg"
 imageAlt: "Fresh berries stored in lined glass containers in a refrigerator"
 date: 2026-05-01

@@ -5,8 +5,13 @@ excerpt: Wrangle those tiny taste buds with three super-stealthy, high-fiber smo
   blends.
 category: nutrition
 tags:
-  - high fiber
-  - picky eaters
+- high fiber
+- picky eaters
+- fiber
+- best high fiber
+- fiber smoothies
+- smoothies
+- high fiber smoothies
 image: /images/high-fiber-smoothies-for-kids-picky-eaters-main.jpg
 imageAlt: High Fiber Smoothies for Kids Picky Eaters - colorful smoothie with berries
   and greens with spinach, fresh vegetables for natural nutrition

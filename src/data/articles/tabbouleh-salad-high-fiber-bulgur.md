@@ -5,9 +5,11 @@ excerpt: Craving something light yet substantial? This authentic tabbouleh recip
   that really refreshes.
 category: recipes
 tags:
-  - high fiber
-  - salads
-  - whole grains
+- high fiber
+- whole grains
+- salads
+- fiber
+- salad
 image: /images/tabbouleh-salad-high-fiber-bulgur-main.jpg
 imageAlt: Tabbouleh Salad High Fiber Bulgur - appetizing bowl with colorful ingredients
   for natural nutrition

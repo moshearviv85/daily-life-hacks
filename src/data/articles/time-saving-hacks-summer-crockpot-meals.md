@@ -3,8 +3,12 @@ title: Time Saving Hacks for Summer Crockpot Meals
 excerpt: Keep your kitchen cool and your schedule open with these practical hacks for summer slow cooking, from prep shortcuts to heat-free side dishes.
 category: tips
 tags:
-  - dinner
-  - kitchen tips
+- kitchen tips
+- dinner
+- meals
+- crockpot meals
+- summer
+- crockpot
 image: "/images/time-saving-hacks-summer-crockpot-meals-main.jpg"
 imageAlt: A white slow cooker sits on a wooden picnic table next to a platter of grilled chicken salad on a screened porch.
 date: 2026-04-28

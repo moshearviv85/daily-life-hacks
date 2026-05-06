@@ -4,8 +4,9 @@ excerpt: You don't need a drawer full of gadgets. A few solid kitchen tools can 
   down on prep time, waste, and the urge to order takeout when you're tired.
 category: tips
 tags:
-  - kitchen tips
-  - cooking basics
+- cooking basics
+- kitchen tips
+- kitchen
 image: /images/kitchen-tools-that-save-time-and-money-main.jpg
 imageAlt: 'Essential kitchen tools on a counter: knife, cutting board, can opener'
 date: 2026-03-15

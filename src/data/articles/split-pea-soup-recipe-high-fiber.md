@@ -5,8 +5,9 @@ excerpt: Forget the fancy stuff. This split pea soup recipe is pure, old-school 
   craving on a chilly day.
 category: recipes
 tags:
-  - high fiber
-  - soups and stews
+- high fiber
+- soups and stews
+- fiber
 image: /images/split-pea-soup-recipe-high-fiber-main.jpg
 imageAlt: Split Pea Soup Recipe High Fiber - appetizing bowl with colorful ingredients
   for natural nutrition

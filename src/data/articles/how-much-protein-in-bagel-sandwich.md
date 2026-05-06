@@ -3,8 +3,12 @@ title: How Much Protein is in a Bagel Sandwich
 excerpt: Looking for a high-protein breakfast that isn't another egg bite? Here is the breakdown of how much protein is actually in your favorite bagel sandwich.
 category: nutrition
 tags:
-  - high protein
-  - lunch
+- high protein
+- lunch
+- protein
+- sandwich
+- bagel sandwich
+- bagel
 image: "/images/how-much-protein-in-bagel-sandwich-main.jpg"
 imageAlt: A sliced bagel sandwich filled with scrambled eggs, turkey bacon, and melted cheese, with steam rising from the filling.
 date: 2026-04-28

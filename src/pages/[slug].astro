@@ -560,12 +560,13 @@ const robotsMeta = released ? undefined : "noindex, follow";
       article.data.tags.length > 0 && (
         <div class="mt-10 flex flex-wrap gap-2">
           {article.data.tags.map((tag: string) => (
-            <span
-              class="px-3 py-1 text-sm rounded-full"
-              style="background-color: var(--input-bg); color: var(--muted-color);"
+            <a
+              href={`/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
+              class="px-3 py-1 text-sm rounded-full transition-colors hover:opacity-80"
+              style="background-color: var(--input-bg); color: var(--muted-color); text-decoration: none;"
             >
               #{tag}
-            </span>
+            </a>
           ))}
         </div>
       )

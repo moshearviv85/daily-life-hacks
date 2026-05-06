@@ -4,8 +4,11 @@ excerpt: Avocado toast does not have to be the same photo on repeat. These varia
   add beans, seeds, and crunch without a long ingredient list.
 category: recipes
 tags:
-  - high fiber
-  - quick meals
+- high fiber
+- quick meals
+- fiber
+- toast
+- variations
 image: /images/high-fiber-avocado-toast-variations-main.jpg
 imageAlt: Avocado toast on whole grain bread with seeds and tomatoes
 date: 2026-03-30

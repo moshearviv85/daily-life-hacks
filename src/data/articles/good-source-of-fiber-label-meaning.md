@@ -3,8 +3,9 @@ title: "What 'Good Source of Fiber' Means on a Label (And What It Doesn't)"
 excerpt: "That 'good source of fiber' claim on your cereal box follows specific FDA rules. Here's what the label actually tells you, what it leaves out, and how to read past the marketing."
 category: "nutrition"
 tags:
-  - high fiber
-  - nutrition basics
+- high fiber
+- nutrition basics
+- fiber
 image: "/images/good-source-of-fiber-label-meaning-main.jpg"
 imageAlt: "Close up of a nutrition facts label on a food package with fiber highlighted"
 date: 2026-04-25

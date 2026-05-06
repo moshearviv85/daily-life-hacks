@@ -5,9 +5,13 @@ excerpt: Whip up five days of cheap, easy, and incredibly satisfying vegan lunch
   an hour for maximum chill time later.
 category: recipes
 tags:
-  - meal prep
-  - high fiber
-  - vegetarian
+- high fiber
+- meal prep
+- vegetarian
+- fiber
+- fiber meal
+- vegan
+- fiber meal prep
 image: /images/vegan-high-fiber-meal-prep-for-week-main.jpg
 imageAlt: Vegan High Fiber Meal Prep for Week - fresh meal in glass containers with
   fresh vegetables, whole grains for natural nutrition

@@ -5,8 +5,10 @@ excerpt: Tired of the same old breakfast? Whip up these four delicious chia pudd
   meal prep solution that keeps things exciting.
 category: nutrition
 tags:
-  - breakfast
-  - nutrition basics
+- breakfast
+- nutrition basics
+- chia seed
+- variations
 image: /images/chia-pudding-variations-for-breakfast-main.jpg
 imageAlt: Chia Pudding Variations for Breakfast - overhead view of prepared meal with
   chia seeds for a healthy morning

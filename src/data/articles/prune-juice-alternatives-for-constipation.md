@@ -6,8 +6,9 @@ excerpt: If the mere thought of prune juice sends shivers down your spine, you'r
   for constipation.
 category: nutrition
 tags:
-  - high fiber
-  - nutrition basics
+- high fiber
+- nutrition basics
+- constipation
 image: /images/prune-juice-alternatives-for-constipation-main.jpg
 imageAlt: Prune Juice Alternatives for Constipation - fresh meal in glass containers
   for natural digestive relief

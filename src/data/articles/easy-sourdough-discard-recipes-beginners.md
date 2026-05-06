@@ -3,8 +3,13 @@ title: Easy Sourdough Discard Recipes for Beginners
 excerpt: Don't throw away your sourdough starter. These simple discard recipes help you use every bit of flour without the stress of a 24-hour fermentation schedule.
 category: recipes
 tags:
-  - baking
-  - quick meals
+- quick meals
+- baking
+- sourdough discard
+- sourdough
+- beginners
+- easy sourdough
+- easy sourdough discard
 image: "/images/easy-sourdough-discard-recipes-beginners-main.jpg"
 imageAlt: A close-up photograph shows a glass jar of sourdough starter in the background and a pile of sourdough discard crackers and pancakes in the foreground.
 date: 2026-04-28

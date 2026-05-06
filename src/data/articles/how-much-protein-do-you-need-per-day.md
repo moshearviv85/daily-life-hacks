@@ -4,8 +4,9 @@ excerpt: Protein needs aren't one number for everyone. Here's a straightforward 
   at how much protein per day might work for you, without the hype or the spreadsheets.
 category: nutrition
 tags:
-  - high protein
-  - nutrition basics
+- nutrition basics
+- high protein
+- protein
 image: /images/how-much-protein-do-you-need-per-day-main.jpg
 imageAlt: Variety of protein-rich foods on a table
 date: 2026-03-15

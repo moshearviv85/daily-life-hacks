@@ -3,8 +3,12 @@ title: The Macronutrient Breakdown of a Healthy Egg Sandwich
 excerpt: Stop guessing your breakfast stats. We break down the protein, carbs, and fats in a balanced egg sandwich that actually keeps you full until lunch.
 category: nutrition
 tags:
-  - lunch
-  - nutrition basics
+- nutrition basics
+- lunch
+- sandwich
+- egg sandwich
+- healthy egg
+- healthy egg sandwich
 image: "/images/macronutrient-breakdown-healthy-egg-sandwich-main.jpg"
 imageAlt: A healthy egg sandwich with lettuce, tomato, avocado, and a fried egg on a whole-wheat English muffin, slightly deconstructed.
 date: 2026-04-28

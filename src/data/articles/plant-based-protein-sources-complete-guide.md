@@ -4,8 +4,11 @@ excerpt: You don't need meat at every meal to get enough protein. Here's a pract
   list of plant-based protein sources with portions and ideas you can use every day.
 category: nutrition
 tags:
-  - high protein
-  - vegetarian
+- high protein
+- vegetarian
+- protein
+- protein sources
+- sources
 image: /images/plant-based-protein-sources-complete-guide-main.jpg
 imageAlt: 'Assortment of plant-based protein foods: beans, lentils, tofu, nuts'
 date: 2026-03-15

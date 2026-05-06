@@ -3,8 +3,13 @@ title: Easy Sourdough Discard Pizza Dough Recipe No Yeast
 excerpt: Stop throwing away your starter. This sourdough discard pizza dough uses no yeast and no long rise times for a fast, crispy weeknight crust.
 category: recipes
 tags:
-  - baking
-  - quick meals
+- quick meals
+- baking
+- sourdough discard
+- pizza
+- sourdough
+- pizza dough
+- discard pizza
 image: "/images/easy-sourdough-discard-pizza-dough-no-yeast-main.jpg"
 imageAlt: A close-up, top-down view of a golden-brown pizza crust with airy edges on a wooden surface.
 date: 2026-04-28

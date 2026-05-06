@@ -5,8 +5,13 @@ excerpt: Discover the fudgy secret to surprisingly healthy brownies made with bl
   dessert.
 category: nutrition
 tags:
-  - baking
-  - nutrition basics
+- nutrition basics
+- baking
+- fiber
+- black bean
+- black
+- dessert
+- hidden
 image: /images/black-bean-brownies-hidden-fiber-dessert-main.jpg
 imageAlt: Black Bean Brownies Hidden Fiber Dessert - appetizing food presentation
   for natural nutrition

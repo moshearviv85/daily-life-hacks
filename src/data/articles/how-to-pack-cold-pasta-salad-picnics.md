@@ -3,8 +3,13 @@ title: How to Pack Cold Pasta Salad for Picnics
 excerpt: Stop eating soggy, lukewarm pasta. Learn the best way to pack cold pasta salad for picnics so it stays fresh, chilled, and perfectly dressed for hours.
 category: tips
 tags:
-  - salads
-  - kitchen tips
+- kitchen tips
+- salads
+- salad
+- pasta
+- pasta salad
+- cold pasta
+- cold pasta salad
 image: "/images/how-to-pack-cold-pasta-salad-picnics-main.jpg"
 imageAlt: A close-up overhead shot of a colorful rotini pasta salad packed in a clear container for a picnic.
 date: 2026-04-28

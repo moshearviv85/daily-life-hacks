@@ -3,8 +3,10 @@ title: "How to Cool Rice for Fried Rice (So It Doesn't Turn to Mush)"
 excerpt: "Hot, freshly cooked rice is the enemy of a good stir fry. Here is exactly how to cool rice for fried rice when you forgot to make it yesterday."
 category: "tips"
 tags:
-  - dinner
-  - cooking basics
+- cooking basics
+- dinner
+- fried rice
+- fried
 image: "/images/how-to-cool-rice-for-fried-rice-main.jpg"
 imageAlt: "Cooked white rice spread thinly on a baking sheet to cool"
 date: 2026-04-28

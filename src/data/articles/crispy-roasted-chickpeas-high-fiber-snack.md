@@ -4,8 +4,11 @@ excerpt: Roasted chickpeas are cheap, crunchy, and easy to season. Dry them well
   spread them out, and you get chip-style crunch without the guesswork.
 category: recipes
 tags:
-  - high fiber
-  - snacks
+- high fiber
+- snacks
+- fiber
+- snack
+- roasted
 image: /images/crispy-roasted-chickpeas-high-fiber-snack-main.jpg
 imageAlt: Bowl of golden roasted chickpeas with spices
 date: 2026-03-30

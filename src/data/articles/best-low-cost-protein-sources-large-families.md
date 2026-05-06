@@ -3,9 +3,13 @@ title: Best Low Cost Protein Sources for Large Families
 excerpt: Feeding a crowd doesn't have to break the bank. Discover the most affordable protein sources that actually keep everyone full without the grocery store sticker shock.
 category: nutrition
 tags:
-  - budget friendly
-  - large family
-  - high protein
+- budget friendly
+- large family
+- high protein
+- protein
+- large families
+- families
+- cost protein
 image: "/images/best-low-cost-protein-sources-large-families-main.jpg"
 imageAlt: A wicker basket filled with brown and white eggs sits on a wooden table.
 date: 2026-04-28

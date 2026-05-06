@@ -4,8 +4,9 @@ excerpt: Stop throwing away brown bananas. Learn the absolute best way for how t
   freeze bananas for smoothies so they blend perfectly every single time.
 category: tips
 tags:
-  - food storage
-  - kitchen tips
+- food storage
+- kitchen tips
+- smoothies
 image: /images/how-to-freeze-bananas-for-smoothies-main.jpg
 imageAlt: How to Freeze Bananas for Smoothies - perfectly sliced bananas laid out
   flat on a baking sheet lined with parchment paper

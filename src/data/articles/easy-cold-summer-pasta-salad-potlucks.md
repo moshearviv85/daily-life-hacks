@@ -3,8 +3,12 @@ title: Easy Cold Summer Pasta Salad for Potlucks
 excerpt: A reliable, no-cook-sauce pasta salad that stands up to heat and picky kids. Perfect for your next backyard BBQ or neighborhood potluck.
 category: recipes
 tags:
-  - salads
-  - quick meals
+- quick meals
+- salads
+- salad
+- pasta
+- pasta salad
+- summer
 image: "/images/easy-cold-summer-pasta-salad-potlucks-main.jpg"
 imageAlt: A close-up of a cold pasta salad, with bowtie pasta, cherry tomatoes, mozzarella balls, and green herbs in a serving bowl.
 date: 2026-04-28

@@ -4,8 +4,9 @@ excerpt: Sick of perfectly good avocados turning brown in five minutes? Discover
   best way to store avocados to stop browning and stretch your grocery budget.
 category: tips
 tags:
-  - food storage
-  - kitchen tips
+- food storage
+- kitchen tips
+- browning
 image: /images/best-way-to-store-avocados-to-stop-browning-main.jpg
 imageAlt: Best Way to Store Avocados to Stop Browning - a perfectly green halved avocado
   stored with red onions in an airtight glass container

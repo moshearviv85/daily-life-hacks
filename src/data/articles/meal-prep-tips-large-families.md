@@ -3,8 +3,10 @@ title: Practical Meal Prep Tips for Large Families
 excerpt: Feeding a crowd doesn't have to mean spending your entire Sunday in the kitchen. These realistic meal prep tips focus on efficiency and bulk.
 category: tips
 tags:
-  - meal prep
-  - large family
+- meal prep
+- large family
+- large families
+- families
 image: "/images/meal-prep-tips-large-families-main.jpg"
 imageAlt: An overhead view of a large rustic wooden table laden with various prepared meal components like chopped vegetables, roasted chicken, pasta, and sauces.
 date: 2026-04-28

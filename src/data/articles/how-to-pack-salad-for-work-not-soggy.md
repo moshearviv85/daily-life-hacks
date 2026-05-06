@@ -3,9 +3,11 @@ title: "How to Pack Salad for Work (And Actually Look Forward to It)"
 excerpt: "If you pack salad for work and it turns into a soggy mess by noon, you are layering it wrong. Here is the dead simple fix for crisp lunches."
 category: "tips"
 tags:
-  - lunch
-  - salads
-  - food storage
+- food storage
+- salads
+- lunch
+- salad
+- soggy
 image: "/images/how-to-pack-salad-for-work-not-soggy-main.jpg"
 imageAlt: "Layered salad in a clear container showing dressing at the bottom and greens on top"
 date: 2026-04-29

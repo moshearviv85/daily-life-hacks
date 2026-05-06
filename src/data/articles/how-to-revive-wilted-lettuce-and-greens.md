@@ -4,8 +4,9 @@ excerpt: Don't throw away that sad, limp spinach. Discover precisely how to revi
   wilted lettuce and greens in under 20 minutes so they are perfectly crisp again.
 category: tips
 tags:
-  - food storage
-  - kitchen tips
+- food storage
+- kitchen tips
+- lettuce
 image: /images/how-to-revive-wilted-lettuce-and-greens-main.jpg
 imageAlt: How to Revive Wilted Lettuce and Greens - sad limp lettuce being submerged
   into a large glass bowl filled with ice water

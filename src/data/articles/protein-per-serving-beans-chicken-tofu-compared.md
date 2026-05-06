@@ -3,8 +3,11 @@ title: "Protein per Serving: Beans, Chicken, Tofu, and Pantry Staples Compared"
 excerpt: "If you have ever wondered what protein per serving actually looks like in normal foods, you are in the right place. This guide compares beans, chicken, tofu, and pantry staples in practical portions, plus simple ways to build meals without overthinking it."
 category: "nutrition"
 tags:
-  - high protein
-  - nutrition basics
+- nutrition basics
+- high protein
+- protein
+- chicken
+- beans
 image: "/images/protein-per-serving-beans-chicken-tofu-compared-main.jpg"
 imageAlt: "Plate with chicken tofu beans and grains arranged as protein portion examples"
 date: 2026-05-03

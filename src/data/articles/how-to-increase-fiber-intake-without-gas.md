@@ -4,8 +4,9 @@ excerpt: If fiber makes you bloated, you might be ramping too fast or skipping w
   Here is how to add more fiber comfortably with simple, everyday steps.
 category: nutrition
 tags:
-  - high fiber
-  - nutrition basics
+- high fiber
+- nutrition basics
+- fiber
 image: /images/how-to-increase-fiber-intake-without-gas-main.jpg
 imageAlt: Bowl of oats with fruit and nuts on a kitchen counter
 date: 2026-03-30

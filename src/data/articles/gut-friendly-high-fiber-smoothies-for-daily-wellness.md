@@ -4,8 +4,12 @@ excerpt: Smoothies are not magic potions, but they are a fast way to stack fiber
   ingredients from fruit, oats, and seeds. These blends stay thick, not weirdly gritty.
 category: nutrition
 tags:
-  - high fiber
-  - gut health
+- high fiber
+- gut health
+- fiber
+- fiber smoothies
+- smoothies
+- high fiber smoothies
 image: /images/gut-friendly-high-fiber-smoothies-for-daily-wellness-main.jpg
 imageAlt: Blender jar with purple berry smoothie and fresh fruit nearby
 date: 2026-03-30

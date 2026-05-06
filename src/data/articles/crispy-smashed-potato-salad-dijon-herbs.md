@@ -3,8 +3,11 @@ title: "Crispy Smashed Potato Salad With Dijon and Herbs"
 excerpt: "This crispy smashed potato salad with Dijon and herbs changes the game. Forget the soggy mayo version. We're talking crispy roasted potatoes tossed in a sharp, bright vinaigrette."
 category: "recipes"
 tags:
-  - salads
-  - quick meals
+- quick meals
+- salads
+- salad
+- herbs
+- potato
 image: "/images/crispy-smashed-potato-salad-dijon-herbs-main.jpg"
 imageAlt: "Crispy smashed potatoes tossed in a bowl with fresh herbs and mustard dressing"
 date: 2026-04-22

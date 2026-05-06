@@ -4,8 +4,10 @@ excerpt: These no-bake energy balls take one bowl and a few fridge ingredients. 
   are sweet enough to feel like a treat without a full baking project.
 category: recipes
 tags:
-  - high fiber
-  - snacks
+- high fiber
+- snacks
+- fiber
+- energy
 image: /images/no-bake-high-fiber-energy-balls-recipe-main.jpg
 imageAlt: Stack of oat energy balls on a plate with a napkin
 date: 2026-03-30

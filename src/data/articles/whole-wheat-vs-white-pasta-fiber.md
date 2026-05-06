@@ -5,8 +5,10 @@ excerpt: Ditch the empty carbs and discover the significant fiber difference bet
   goals.
 category: nutrition
 tags:
-  - whole grains
-  - nutrition basics
+- nutrition basics
+- whole grains
+- fiber
+- pasta
 image: /images/whole-wheat-vs-white-pasta-fiber-main.jpg
 imageAlt: Whole Wheat vs White Pasta Fiber - detailed close-up shot for healthy weight
   management

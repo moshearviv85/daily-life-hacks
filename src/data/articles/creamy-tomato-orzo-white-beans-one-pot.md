@@ -3,8 +3,10 @@ title: "Creamy Tomato Orzo With White Beans (One Pot)"
 excerpt: "This creamy tomato orzo with white beans is a cozy, one-pot dinner that comes together fast. It's basically the comfort of risotto without the endless stirring."
 category: "recipes"
 tags:
-  - quick meals
-  - vegetarian
+- quick meals
+- vegetarian
+- beans
+- one pot
 image: "/images/creamy-tomato-orzo-white-beans-one-pot-main.jpg"
 imageAlt: "Creamy tomato orzo with white beans in a large skillet"
 date: 2026-04-21

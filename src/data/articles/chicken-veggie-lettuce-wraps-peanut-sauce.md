@@ -3,8 +3,11 @@ title: "Chicken and Veggie Lettuce Wraps With Quick Peanut Sauce"
 excerpt: "These chicken and veggie lettuce wraps are light, crunchy, and ready in 20 minutes. The quick peanut sauce is so good you'll want to put it on everything."
 category: "recipes"
 tags:
-  - quick meals
-  - dinner
+- quick meals
+- dinner
+- chicken
+- lettuce
+- sauce
 image: "/images/chicken-veggie-lettuce-wraps-peanut-sauce-main.jpg"
 imageAlt: "Chicken and veggie lettuce wraps drizzled with peanut sauce on a platter"
 date: 2026-04-17

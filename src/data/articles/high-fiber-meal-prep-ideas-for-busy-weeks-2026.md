@@ -4,8 +4,13 @@ excerpt: Meal prep does not have to mean identical boxes of sadness. This lentil
   plan stays flexible when your week goes sideways.
 category: recipes
 tags:
-  - meal prep
-  - high fiber
+- high fiber
+- meal prep
+- fiber
+- fiber meal
+- prep ideas
+- fiber meal prep
+- high fiber meal
 image: /images/high-fiber-meal-prep-ideas-for-busy-weeks-2026-main.jpg
 imageAlt: Glass meal prep containers with quinoa, vegetables, and beans
 date: 2026-03-30

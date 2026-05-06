@@ -3,8 +3,11 @@ title: "Beans and Rice: A Complete Protein Meal That Won't Break the Bank"
 excerpt: "This simple beans and rice complete protein meal is cheap, filling, and packed with flavor. No weird ingredients, just pantry staples working together perfectly."
 category: "recipes"
 tags:
-  - high protein
-  - vegetarian
+- high protein
+- vegetarian
+- protein
+- beans
+- protein meal
 image: "/images/beans-and-rice-complete-protein-meal-main.jpg"
 imageAlt: "A hearty bowl of black beans and rice garnished with fresh cilantro and lime"
 date: 2026-04-08

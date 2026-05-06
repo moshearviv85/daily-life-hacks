@@ -3,8 +3,9 @@ title: 6 Healthy Alternatives to White Rice for Quick Dinners
 excerpt: Tired of the same old white rice? These fiber-rich swaps cook fast and won't make your kids stage a dinner table protest.
 category: nutrition
 tags:
-  - quick meals
-  - dinner
+- quick meals
+- dinner
+- rice dinner
 image: "/images/healthy-alternatives-white-rice-dinner-main.jpg"
 imageAlt: A close-up of a bowl of fluffy cooked quinoa, garnished with fresh green herbs and a light drizzle of olive oil.
 date: 2026-04-28

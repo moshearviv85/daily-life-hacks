@@ -3,8 +3,11 @@ title: "Cauliflower Fried Rice With Eggs That Doesn't Taste Sad"
 excerpt: "This cauliflower fried rice with eggs is a low carb weeknight dinner that actually satisfies. No mushy vegetables, just a quick, flavor-packed skillet meal."
 category: "recipes"
 tags:
-  - dinner
-  - quick meals
+- quick meals
+- dinner
+- fried rice
+- cauliflower
+- fried
 image: "/images/cauliflower-fried-rice-with-eggs-main.jpg"
 imageAlt: "Skillet of golden cauliflower fried rice with scrambled eggs and green onions"
 date: 2026-04-17

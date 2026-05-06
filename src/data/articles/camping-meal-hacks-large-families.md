@@ -3,8 +3,11 @@ title: Camping Meal Hacks for Large Families
 excerpt: Feeding a crowd in the woods doesn't have to be a disaster. These practical camping meal hacks for large families will save your sanity and your cooler space.
 category: tips
 tags:
-  - large family
-  - kitchen tips
+- kitchen tips
+- large family
+- large families
+- families
+- meal hacks
 image: "/images/camping-meal-hacks-large-families-main.jpg"
 imageAlt: A well-organized camp kitchen with a large cooler, a multi-burner stove, and pre-prepped food containers in a forest clearing.
 date: 2026-04-28

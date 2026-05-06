@@ -3,8 +3,9 @@ title: How to Prep High Protein Lunches for Work
 excerpt: Stop settling for soggy sandwiches. Learn how to prep high protein lunches for work that actually taste good on Wednesday and keep you full until dinner.
 category: tips
 tags:
-  - high protein
-  - lunch
+- high protein
+- lunch
+- protein
 image: "/images/how-to-prep-high-protein-lunches-work-main.jpg"
 imageAlt: An overhead view of several meal prep containers filled with various high-protein lunches, including chicken, salmon, eggs, and vegetables.
 date: 2026-04-28

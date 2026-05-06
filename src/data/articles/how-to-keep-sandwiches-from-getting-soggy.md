@@ -3,8 +3,10 @@ title: How to Keep Sandwiches From Getting Soggy
 excerpt: Stop eating limp, wet bread at your desk. Learn the simple layering tricks and moisture barriers that keep your high-protein sandwich fresh until lunch.
 category: tips
 tags:
-  - lunch
-  - food storage
+- food storage
+- lunch
+- sandwiches
+- soggy
 image: "/images/how-to-keep-sandwiches-from-getting-soggy-main.jpg"
 imageAlt: A cross-section of a deli sandwich, showing a layer of spread protecting the bread from moist fillings like tomato and lettuce.
 date: 2026-04-28

@@ -3,8 +3,13 @@ title: The Real Reason You Should Eat Leftover Pasta Salad
 excerpt: Cold pasta salad isn't just a potluck staple. Discover how cooling your noodles creates resistant starch, a fiber-like carb that might help with digestion.
 category: nutrition
 tags:
-  - salads
-  - nutrition basics
+- nutrition basics
+- salads
+- salad
+- pasta
+- pasta salad
+- cold pasta
+- benefits
 image: "/images/nutritional-benefits-cold-pasta-salad-resistant-starch-main.jpg"
 imageAlt: A close-up of a colorful pasta salad in a clear glass bowl, featuring tri-color pasta, cherry tomatoes, bell peppers, and fresh herbs.
 date: 2026-04-28

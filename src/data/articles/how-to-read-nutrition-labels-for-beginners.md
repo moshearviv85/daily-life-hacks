@@ -4,8 +4,11 @@ excerpt: Stop getting tricked by clever marketing. Learn exactly how to read nut
   labels for beginners and spot the hidden sugars hiding in your groceries.
 category: tips
 tags:
-  - grocery shopping
-  - nutrition basics
+- nutrition basics
+- grocery shopping
+- weight loss
+- beginners
+- nutrition
 image: /images/how-to-read-nutrition-labels-for-beginners-main.jpg
 imageAlt: How to Read Nutrition Labels for Beginners - a close up crop of a confusing
   black and white nutrition facts panel

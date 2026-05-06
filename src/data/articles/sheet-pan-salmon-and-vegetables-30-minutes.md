@@ -4,8 +4,10 @@ excerpt: Salmon and veggies on one sheet pan, in about 30 minutes. Minimal clean
   real food, and a reliable weeknight dinner you can repeat anytime.
 category: recipes
 tags:
-  - quick meals
-  - dinner
+- quick meals
+- dinner
+- vegetables
+- salmon
 image: /images/sheet-pan-salmon-and-vegetables-30-minutes-main.jpg
 imageAlt: Sheet pan with salmon fillets and roasted vegetables
 date: 2026-03-15

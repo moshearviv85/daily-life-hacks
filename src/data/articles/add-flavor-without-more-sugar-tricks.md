@@ -3,8 +3,9 @@ title: "Add Flavor Without More Sugar: Cinnamon, Vanilla, Citrus, and Cocoa Tric
 excerpt: "Sugar isn't the only way to make food taste good. Here's how cinnamon, vanilla, citrus, and cocoa can do the heavy lifting in your kitchen without any extra sweetener."
 category: "nutrition"
 tags:
-  - cooking basics
-  - nutrition basics
+- nutrition basics
+- cooking basics
+- flavor
 image: "/images/add-flavor-without-more-sugar-tricks-main.jpg"
 imageAlt: "Cinnamon sticks, vanilla beans, lemon zest, and cocoa powder arranged on a light countertop"
 date: 2026-04-16

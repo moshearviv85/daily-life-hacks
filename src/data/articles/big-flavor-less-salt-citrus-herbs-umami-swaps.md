@@ -3,8 +3,10 @@ title: "Big Flavor With Less Salt: Citrus, Herbs, and Umami Pantry Swaps"
 excerpt: "Want big flavor with less salt without eating sad food? Use acid, herbs, and a few umami pantry staples. This guide gives simple swaps, quick formulas, and weeknight examples that taste like you tried harder than you did."
 category: "nutrition"
 tags:
-  - cooking basics
-  - nutrition basics
+- nutrition basics
+- cooking basics
+- herbs
+- flavor
 image: "/images/big-flavor-less-salt-citrus-herbs-umami-swaps-main.jpg"
 imageAlt: "Kitchen counter with lemons herbs garlic soy sauce and spices for flavor building"
 date: 2026-04-16

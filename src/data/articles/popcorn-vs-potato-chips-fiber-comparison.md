@@ -5,8 +5,13 @@ excerpt: Forget sad diets! Discover why air-popped popcorn, rich in fiber, troun
   to help you make smarter snack choices.
 category: nutrition
 tags:
-  - high fiber
-  - snacks
+- high fiber
+- snacks
+- fiber
+- potato chips
+- potato
+- chips
+- popcorn
 image: /images/popcorn-vs-potato-chips-fiber-comparison-main.jpg
 imageAlt: Popcorn vs Potato Chips Fiber Comparison - appetizing bowl with colorful
   ingredients for healthy weight management

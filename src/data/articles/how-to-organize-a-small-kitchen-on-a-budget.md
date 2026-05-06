@@ -4,8 +4,10 @@ excerpt: Tiny kitchen driving you crazy? Learn exactly how to organize a small k
   on a budget using clever hacks and cheap dollar store finds.
 category: tips
 tags:
-  - budget friendly
-  - kitchen tips
+- kitchen tips
+- budget friendly
+- budget
+- kitchen
 image: /images/how-to-organize-a-small-kitchen-on-a-budget-main.jpg
 imageAlt: How to Organize a Small Kitchen on a Budget - a tiny beautifully organized
   kitchen counter with vertical tiered shelving

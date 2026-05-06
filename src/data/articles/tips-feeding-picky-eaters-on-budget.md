@@ -3,8 +3,10 @@ title: How to Feed Picky Eaters Without Breaking the Bank
 excerpt: Stop wasting money on rejected meals. These practical tips for feeding picky eaters on a budget help you cut costs and stress simultaneously.
 category: tips
 tags:
-  - budget friendly
-  - picky eaters
+- picky eaters
+- budget friendly
+- budget
+- eaters
 image: "/images/tips-feeding-picky-eaters-on-budget-main.jpg"
 imageAlt: A child's hand reaches for a single green bean on a white plate.
 date: 2026-04-28

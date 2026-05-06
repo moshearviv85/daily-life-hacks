@@ -3,8 +3,13 @@ title: Low Cost Protein Meal Hacks for Families
 excerpt: Feeding a family on a budget doesn't mean skipping the protein. Discover practical ways to stretch meat and use plant-based swaps that your kids will actually eat.
 category: tips
 tags:
-  - budget friendly
-  - high protein
+- budget friendly
+- high protein
+- protein
+- families
+- cost protein
+- low cost
+- meal hacks
 image: "/images/low-cost-protein-meal-hacks-families-main.jpg"
 imageAlt: A close-up of a wooden spoon stirring ground meat and lentils in a cast iron skillet.
 date: 2026-04-28

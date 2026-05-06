@@ -5,8 +5,12 @@ excerpt: Healthy eating doesn't have to be expensive. Check out this foolproof g
   wallet.
 category: tips
 tags:
-  - budget friendly
-  - grocery shopping
+- budget friendly
+- grocery shopping
+- budget
+- grocery
+- shopping
+- eating
 image: /images/grocery-shopping-list-for-healthy-eating-on-a-budget-main.jpg
 imageAlt: Grocery Shopping List for Healthy Eating on a Budget - a colorful cart full
   of produce and bulk dry goods

@@ -4,9 +4,13 @@ excerpt: Tired of feeling completely starving on a diet? Discover how high prote
   high fiber meals for weight loss keep you completely full and satisfied for hours.
 category: nutrition
 tags:
-  - high fiber
-  - high protein
-  - weight management
+- high fiber
+- high protein
+- weight management
+- fiber
+- protein
+- meals
+- weight loss
 image: /images/high-protein-high-fiber-meals-for-weight-loss-main.jpg
 imageAlt: High Protein High Fiber Meals for Weight Loss - a hearty bowl of lentil
   stew with a side of grilled chicken

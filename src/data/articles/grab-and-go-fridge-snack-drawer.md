@@ -3,8 +3,9 @@ title: "How to Make a Grab-and-Go Snack Drawer in Your Fridge"
 excerpt: "When you're hungry and tired, you grab whatever is easiest. Here is how to build a grab-and-go snack drawer so the easy choice is actually a good one."
 category: "tips"
 tags:
-  - snacks
-  - kitchen tips
+- snacks
+- kitchen tips
+- snack
 image: "/images/grab-and-go-fridge-snack-drawer-main.jpg"
 imageAlt: "A well organized refrigerator drawer filled with pre-portioned healthy snacks"
 date: 2026-04-26

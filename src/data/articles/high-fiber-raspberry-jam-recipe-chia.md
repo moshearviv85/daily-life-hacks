@@ -3,8 +3,9 @@ title: "High Fiber Raspberry Jam Recipe Using Chia Seeds"
 excerpt: "Skip the cups of refined sugar. This high fiber raspberry jam recipe uses chia seeds to thicken naturally, giving you real fruit flavor in about ten minutes."
 category: "recipes"
 tags:
-  - high fiber
-  - quick meals
+- high fiber
+- quick meals
+- fiber
 image: "/images/high-fiber-raspberry-jam-recipe-chia-main.jpg"
 imageAlt: "A glass jar of homemade raspberry chia jam next to a slice of whole grain toast"
 date: 2026-04-26

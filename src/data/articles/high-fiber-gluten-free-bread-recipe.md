@@ -3,9 +3,13 @@ title: "The Only High Fiber Gluten Free Bread Recipe You Actually Need"
 excerpt: "A high fiber gluten free bread recipe that doesn't taste like a cardboard box. Made with whole food ingredients, it holds together perfectly for sandwiches and toast."
 category: "recipes"
 tags:
-  - high fiber
-  - baking
-  - gluten free
+- high fiber
+- gluten free
+- baking
+- fiber
+- bread recipe
+- bread
+- gluten
 image: "/images/high-fiber-gluten-free-bread-recipe-main.jpg"
 imageAlt: "Slices of hearty high fiber gluten free bread on a wooden cutting board"
 date: 2026-04-08

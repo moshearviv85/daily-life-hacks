@@ -3,8 +3,10 @@ title: "How to Pack Lunch So Sandwiches and Salads Stay Crisp"
 excerpt: "Nobody likes a soggy sandwich or wilted lettuce. Learn exactly how to pack lunch so sandwiches and salads stay crisp until you are ready to eat."
 category: "tips"
 tags:
-  - lunch
-  - salads
+- salads
+- lunch
+- sandwiches
+- crisp
 image: "/images/how-to-pack-lunch-crisp-sandwiches-salads-main.jpg"
 imageAlt: "Freshly packed lunch box with a crisp sandwich and vibrant salad"
 date: 2026-04-29

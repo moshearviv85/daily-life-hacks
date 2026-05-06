@@ -3,8 +3,9 @@ title: Healthy Sweet Tooth Snack Ideas for Night
 excerpt: Stop fighting the 9 PM sugar craving. These low-effort, healthy sweet tooth snack ideas for night will satisfy you without the sugar crash.
 category: recipes
 tags:
-  - snacks
-  - quick meals
+- quick meals
+- snacks
+- snack
 image: "/images/healthy-sweet-tooth-snack-ideas-night-main.jpg"
 imageAlt: A glass bowl of plain Greek yogurt swirled with berry compote and topped with a sprinkle of nuts.
 date: 2026-04-28

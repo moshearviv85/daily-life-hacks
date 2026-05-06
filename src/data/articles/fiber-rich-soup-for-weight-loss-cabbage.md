@@ -6,9 +6,13 @@ excerpt: Forget everything you thought you knew about *that* cabbage soup. This 
   a surprisingly delicious, metabolism-supporting meal!
 category: recipes
 tags:
-  - high fiber
-  - soups and stews
-  - weight management
+- high fiber
+- soups and stews
+- weight management
+- fiber
+- weight loss
+- fiber rich
+- weight
 image: /images/fiber-rich-soup-for-weight-loss-cabbage-main.jpg
 imageAlt: Fiber Rich Soup for Weight Loss Cabbage - hearty soup in rustic pot with
   cabbage for natural nutrition

@@ -4,8 +4,10 @@ excerpt: Chickpea pasta, lentil pasta, and whole wheat pasta are not the same sw
   Here is how to pick pasta alternatives and cook them so they still taste like dinner.
 category: nutrition
 tags:
-  - high fiber
-  - dinner
+- high fiber
+- dinner
+- fiber
+- pasta
 image: /images/high-fiber-pasta-alternatives-main.jpg
 imageAlt: Bowls of pasta with vegetables and tomato sauce
 date: 2026-03-30

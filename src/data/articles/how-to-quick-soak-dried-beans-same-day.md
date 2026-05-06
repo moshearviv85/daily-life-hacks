@@ -3,8 +3,12 @@ title: "How to Quick-Soak Dried Beans the Same Day"
 excerpt: "Forgot to soak your beans last night? Here is exactly how to quick-soak dried beans the same day so dinner is not ruined."
 category: "tips"
 tags:
-  - quick meals
-  - cooking basics
+- quick meals
+- cooking basics
+- beans
+- dried beans
+- same day
+- dried
 image: "/images/how-to-quick-soak-dried-beans-same-day-main.jpg"
 imageAlt: "Pot of dried beans soaking in water on a stovetop"
 date: 2026-04-30

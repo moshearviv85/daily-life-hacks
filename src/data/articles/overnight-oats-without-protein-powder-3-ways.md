@@ -3,8 +3,9 @@ title: "High-Protein Overnight Oats Without Protein Powder (3 Ways)"
 excerpt: "Skip the chalky supplements. Here are three simple ways to make high-protein overnight oats using real ingredients you already have in the kitchen."
 category: "recipes"
 tags:
-  - breakfast
-  - quick meals
+- breakfast
+- quick meals
+- protein
 image: "/images/overnight-oats-without-protein-powder-3-ways-main.jpg"
 imageAlt: "Three glass jars of overnight oats with different toppings on a kitchen counter"
 date: 2026-05-01

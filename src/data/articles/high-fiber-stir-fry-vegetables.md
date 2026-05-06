@@ -4,8 +4,10 @@ excerpt: Ditch the dinner dilemma with this ridiculously fast, high-fiber veggie
   Broccoli, snap peas, and peppers unite for a low-calorie, volume-eating triumph.
 category: recipes
 tags:
-  - high fiber
-  - dinner
+- high fiber
+- dinner
+- fiber
+- vegetables
 image: /images/high-fiber-stir-fry-vegetables-main.jpg
 imageAlt: High Fiber Stir Fry Vegetables - dynamic cooking action shot for natural
   nutrition

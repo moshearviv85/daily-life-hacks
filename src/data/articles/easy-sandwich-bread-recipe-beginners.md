@@ -3,8 +3,12 @@ title: Easy Sandwich Bread Recipe for Beginners
 excerpt: Stop overpaying for store-bought loaves with this simple, no-fail sandwich bread recipe designed for busy kitchens and first-time bakers.
 category: recipes
 tags:
-  - lunch
-  - baking
+- baking
+- lunch
+- beginners
+- sandwich
+- bread recipe
+- bread
 image: "/images/easy-sandwich-bread-recipe-beginners-main.jpg"
 imageAlt: A golden-brown loaf of sliced sandwich bread rests on a wooden cutting board, with one slice partially pulled away.
 date: 2026-04-28

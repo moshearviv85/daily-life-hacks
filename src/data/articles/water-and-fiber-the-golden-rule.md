@@ -4,8 +4,9 @@ excerpt: Eating fiber but still backed up? You might be missing the other half o
   the equation! Discover the 50/50 rule of fiber plus water for truly smooth digestion.
 category: nutrition
 tags:
-  - high fiber
-  - nutrition basics
+- high fiber
+- nutrition basics
+- fiber
 image: /images/water-and-fiber-the-golden-rule-main.jpg
 imageAlt: Water and Fiber The Golden Rule - appetizing food presentation for natural
   nutrition
