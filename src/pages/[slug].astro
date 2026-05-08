@@ -182,7 +182,9 @@ if (article.data.faq && article.data.faq.length > 0) {
   });
 }
 
-const robotsMeta = released ? undefined : "noindex, follow";
+const currentSlug = Astro.params.slug;
+const isVariant = currentSlug !== article.id;
+const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
 ---
 
 <BaseLayout
@@ -326,6 +328,14 @@ const robotsMeta = released ? undefined : "noindex, follow";
         </span>
       </p>
     </header>
+
+    <!-- Quick Answer Block -->
+    {article.data.quickAnswer && (
+      <div class="mb-8 rounded-xl border-l-4 border-[#F29B30] p-5" style="background-color: var(--input-bg);">
+        <h2 class="text-lg font-bold mb-2" style="color: var(--heading-color);">Here's the Deal</h2>
+        <p class="leading-relaxed" style="color: var(--text-color);">{article.data.quickAnswer}</p>
+      </div>
+    )}
 
     <!-- Rating Preview -->
     <section
