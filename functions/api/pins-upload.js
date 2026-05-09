@@ -20,10 +20,13 @@ const BOARD_IDS = {
   "High Fiber Dinner and Gut Health Recipes": "1124140825679184032",
   "Healthy Breakfast, Smoothies and Snacks":  "1124140825679184036",
   "Gut Health Tips and Nutrition Charts":     "1124140825679184034",
-  // Agent 6 aliases
+  // Pinterest board names (as shown on pinterest.com)
+  "high-fiber-recipes":                       "1124140825679184032",
+  "gut-health-nutrition-tips":                "1124140825679184034",
+  "Healthy Meal Prep & Kitchen Tips":         "1124140825679184036",
+  // Legacy aliases
   "High Fiber Recipes":                       "1124140825679184032",
   "Gut Health & Nutrition Tips":              "1124140825679184034",
-  "Healthy Meal Prep & Kitchen Tips":         "1124140825679184036",
   "Gut Health and Nutrition Tips":            "1124140825679184034",
   "Healthy Breakfast Smoothies and Snacks":   "1124140825679184036",
 };
@@ -250,19 +253,31 @@ export async function onRequestPost(context) {
     return scheduled;
   }
 
-  normalizedRows = shuffleAndReschedule(normalizedRows, startDayOffset);
-
-  // Upsert into D1 in batches of 10
+  // Pre-check which rows are already POSTED so we don't waste schedule slots on them
   const db = env.DB;
   if (!db) return json({ error: "D1 database not bound" }, 500);
+
+  const postedSet = new Set();
+  for (const row of normalizedRows) {
+    const ex = await db.prepare(
+      "SELECT status FROM pins_schedule WHERE row_id = ?"
+    ).bind(row.row_id).first();
+    if (ex && ex.status === "POSTED") postedSet.add(row.row_id);
+  }
+
+  const toSchedule = normalizedRows.filter(r => !postedSet.has(r.row_id));
+  const alreadyPosted = normalizedRows.filter(r => postedSet.has(r.row_id));
+  const scheduled = shuffleAndReschedule(toSchedule, startDayOffset);
+  normalizedRows = [...scheduled, ...alreadyPosted];
 
   let inserted = 0, updated = 0;
 
   for (const row of normalizedRows) {
-    // Check if exists
-    const existing = await db.prepare(
-      "SELECT row_id, status FROM pins_schedule WHERE row_id = ?"
-    ).bind(row.row_id).first();
+    const existing = postedSet.has(row.row_id)
+      ? { row_id: row.row_id, status: "POSTED" }
+      : await db.prepare(
+          "SELECT row_id, status FROM pins_schedule WHERE row_id = ?"
+        ).bind(row.row_id).first();
 
     if (existing) {
       // Only update non-posted rows (don't overwrite POSTED status/pin_id)
