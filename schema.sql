@@ -5,6 +5,8 @@ CREATE TABLE IF NOT EXISTS subscriptions (
   page TEXT,
   referrer TEXT,
   status TEXT DEFAULT 'success',
+  kit_subscriber_id TEXT,
+  kit_response TEXT,
   created_at TEXT DEFAULT (datetime('now'))
 );
 

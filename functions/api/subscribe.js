@@ -51,13 +51,15 @@ async function logSignupEvent(env, payload) {
 
   try {
     await env.DB.prepare(
-      "INSERT INTO subscriptions (email, source, page, referrer, status) VALUES (?, ?, ?, ?, ?)"
+      "INSERT INTO subscriptions (email, source, page, referrer, status, kit_subscriber_id, kit_response) VALUES (?, ?, ?, ?, ?, ?, ?)"
     ).bind(
       payload.email,
       payload.source || "unknown",
       payload.page || "",
       payload.referrer,
-      payload.status
+      payload.status,
+      payload.kit_subscriber_id || null,
+      payload.kit_response || null
     ).run();
 
     await env.DB.prepare(
@@ -183,6 +185,13 @@ async function subscribeWithKit(env, payload) {
     status: formRes.status,
     detail: "",
     provider: "kit",
+    subscriberId: String(subscriberId),
+    subscriberState: subscriberBody.subscriber.state || "unknown",
+    rawResponse: JSON.stringify({
+      subscriber: { id: subscriberId, state: subscriberBody.subscriber.state },
+      form: { status: formRes.status },
+      tags: tagIds,
+    }),
   };
 }
 
@@ -251,6 +260,8 @@ export async function onRequestPost(context) {
       referrer,
       status,
       metadata: trackingMetadata,
+      kit_subscriber_id: providerResult.subscriberId || null,
+      kit_response: providerResult.rawResponse || providerResult.detail || null,
     });
 
     if (providerResult.ok) {
