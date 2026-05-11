@@ -84,7 +84,13 @@ export async function onRequest(context) {
           .run();
         waitUntil(pageViewPromise.catch(() => {}));
       }
-      return env.ASSETS.fetch(request);
+      const trailingUrl = new URL(`${path}/`, url.origin);
+      trailingUrl.search = url.search;
+      const trailingReq = new Request(trailingUrl.toString(), {
+        method: request.method,
+        headers: request.headers,
+      });
+      return env.ASSETS.fetch(trailingReq);
     }
   }
 
@@ -119,9 +125,9 @@ export async function onRequest(context) {
     });
   }
 
-  // Internal proxy: serve the base article page
+  // Internal proxy: serve the base article page (trailing slash avoids redirect)
   const targetSlug = routeConfig?.base_slug || baseSlug;
-  const internalUrl = new URL(`/${targetSlug}`, url.origin);
+  const internalUrl = new URL(`/${targetSlug}/`, url.origin);
   const proxyRequest = new Request(internalUrl.toString(), {
     method: request.method,
     headers: request.headers,
