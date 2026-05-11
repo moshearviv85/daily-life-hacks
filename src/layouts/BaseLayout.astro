@@ -22,8 +22,8 @@ const {
   image = "/logo.png",
   canonicalURL = (() => {
     const base = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
-    base.pathname = base.pathname.replace(/-v\d+\/?$/, '');
-    if (base.pathname !== '/') base.pathname = base.pathname.replace(/\/$/, '');
+    base.pathname = base.pathname.replace(/-v\d+\/?$/, '/');
+    if (base.pathname !== '/' && !base.pathname.endsWith('/')) base.pathname += '/';
     return base.href;
   })(),
   jsonLd,
