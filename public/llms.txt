@@ -15,9 +15,9 @@ Daily Life Hacks is a food and nutrition site run by David Miller. The content f
 ## Key URLs
 
 - Homepage: https://www.daily-life-hacks.com/
-- Nutrition articles: https://www.daily-life-hacks.com/nutrition/1
-- Recipes: https://www.daily-life-hacks.com/recipes/1
-- Tips: https://www.daily-life-hacks.com/tips/1
+- Nutrition articles: https://www.daily-life-hacks.com/nutrition/
+- Recipes: https://www.daily-life-hacks.com/recipes/
+- Tips: https://www.daily-life-hacks.com/tips/
 - About: https://www.daily-life-hacks.com/about
 - Contact: https://www.daily-life-hacks.com/contact
 - Sitemap: https://www.daily-life-hacks.com/sitemap-index.xml
