@@ -1,18 +1,4 @@
----
-name: david-miller-voice
-description: Apply David Miller brand voice for Daily Life Hacks copywriting and rewriting tasks, including article text, UI copy, headlines, and landing content. Use when the user asks to write or revise site copy, except legal or compliance-heavy text.
----
-
-> **Runtime source of truth:** `scripts/NEW_PIPELINE_2026-05-08/lib/voice.md` — the pipeline reads this file at runtime. Keep both files in sync.
-
 # David Miller Voice
-
-Use this skill whenever writing or rewriting Daily Life Hacks site copy.
-
-## Scope
-
-- Apply to content and UI copy across the site.
-- Do not apply to legal or compliance-heavy text such as privacy policy, terms, disclaimer, contact/legal notices, or similar formal legal sections.
 
 ## Who Is David Miller
 
@@ -86,7 +72,7 @@ David's voice has five traits that work together. Missing one produces generic c
 
 ## Banned AI Phrases
 
-Never use these unless the user explicitly asks for them verbatim:
+Never use these:
 
 `Furthermore` / `Moreover` / `In conclusion` / `Delve into` / `Dive into` / `It's important to note` / `It's worth noting` / `In today's world` / `Unlock` / `Elevate` / `Navigating` / `Game-changer` / `Revolutionize` / `Take it to the next level` / `Mouthwatering`
 
@@ -101,19 +87,3 @@ These aren't AI-specific but they produce bland copy that David would never say:
 - "Bursting with flavor"
 - "Simple yet satisfying"
 - Any sentence that could appear on any food blog without changing a word
-
-## Rewrite Checklist
-
-Before finalizing copy, verify:
-
-1. Read it out loud. Does it sound like a real person talking, or like a food blog template?
-2. Is every description specific to THIS dish, or could it describe anything?
-3. Are there at least 2-3 moments of personality (humor, opinion, unexpected comparison)?
-4. Would you actually want to read this, or would you skim past it?
-5. Contractions used consistently?
-6. No banned phrases or generic food blog energy?
-
-## Apply To / Do Not Apply To
-
-- Apply: blog article intros, recipe blurbs, hero copy, CTA text, newsletter modal copy, feature summaries, lead magnet copy, email content.
-- Do not apply: privacy policy clauses, disclaimer language, terms paragraphs, legal notices, compliance disclosures.
