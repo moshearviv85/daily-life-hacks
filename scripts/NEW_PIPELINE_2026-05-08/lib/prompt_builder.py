@@ -99,7 +99,7 @@ The FAQ in the frontmatter YAML is a direct AEO asset (it renders as FAQPage str
 """
 
 _LENGTH = """# LENGTH (guidance, not a cap)
-- Aim for a body between 600 and 1200 words. Most articles should land around 750 to 900.
+- Aim for a body between 900 and 1200 words. Most articles should land around 1000.
 - Length should be driven by the topic, not by a target. Short topic: short article. Deeper topic: longer article. Don't pad to hit a number and don't chop a useful step to undershoot.
 - The reader is scanning from Pinterest. If a paragraph isn't earning its place (isn't giving her a concrete how, why, or "this is what matters"), cut it.
 """

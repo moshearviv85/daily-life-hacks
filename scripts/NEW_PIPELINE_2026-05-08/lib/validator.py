@@ -373,9 +373,9 @@ def _s15(parsed, text, body, slug) -> Violation | None:
 
 def _s20(parsed, text, body, slug) -> Violation | None:
     wc = len(body.split())
-    if 600 <= wc <= 1200:
+    if 810 <= wc <= 1320:
         return None
-    return Violation("S-20", 2, f"body word count {wc} not in [600, 1200]")
+    return Violation("S-20", 2, f"body word count {wc} not in [810, 1320]")
 
 
 def _s21(parsed, text, body, slug) -> Violation | None:
