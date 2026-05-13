@@ -6,7 +6,7 @@
  * Password:   DASHBOARD_PASSWORD env var (Cloudflare Pages → Variables and Secrets).
  */
 import { getCollection } from 'astro:content';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -53,7 +53,7 @@ const webFiles = readdirSync(imgDir).filter(f => f.endsWith('-main.jpg'));
 const pinFiles = readdirSync(pinDir).filter(f => /\.jpg$/i.test(f));
 
 const webSlugs = new Set(webFiles.map(f => f.replace('-main.jpg','')));
-const pinSlugs = new Set(pinFiles.map(f => f.replace(/_v\d+\.jpg$/,'')));
+const pinSlugs = new Set(pinFiles.map(f => f.replace(/\.jpg$/i,'')));
 
 const missingWeb = articles
   .filter(a => !webSlugs.has(a.id))
@@ -63,47 +63,20 @@ const missingPin = articles
   .filter(a => !pinSlugs.has(a.id))
   .map(a => ({ slug: a.id, title: a.data.title, category: a.data.category, pub: isPub(a) }));
 
-// ── Pins ──────────────────────────────────────────────────────────────────
-const pins = JSON.parse(readFileSync(join(root,'pipeline-data/pins.json'),'utf8')) as any[];
+// ── Pins (legacy data removed — pipeline data now served from D1 at runtime)
+const pins: any[] = [];
 const pinByCat: Record<string,number>    = {};
 const pinByBoard: Record<string,number>  = {};
 const pinByStatus: Record<string,number> = {};
-for (const p of pins) {
-  pinByCat[p.category]   = (pinByCat[p.category]   || 0) + 1;
-  pinByBoard[p.board]    = (pinByBoard[p.board]     || 0) + 1;
-  pinByStatus[p.status]  = (pinByStatus[p.status]   || 0) + 1;
-}
 
-// ── Pins schedule (auto-poster) ───────────────────────────────────────────
-let pinsSchedule: any[] = [];
-try {
-  const csvText = readFileSync(join(root,'pipeline-data/pins-schedule.csv'),'utf8');
-  const lines = csvText.trim().split('\n').filter(l => l.trim());
-  const headers = lines[0].split(',').map(h => h.trim());
-  pinsSchedule = lines.slice(1).map(line => {
-    const vals: string[] = [];
-    let cur = '', inQ = false;
-    for (const ch of line) {
-      if (ch === '"') inQ = !inQ;
-      else if (ch === ',' && !inQ) { vals.push(cur); cur = ''; }
-      else cur += ch;
-    }
-    vals.push(cur);
-    return Object.fromEntries(headers.map((h, i) => [h, (vals[i] || '').trim()]));
-  });
-} catch(_) {}
-const schedPosted  = pinsSchedule.filter((r: any) => r.status === 'POSTED');
-const schedPending = pinsSchedule.filter((r: any) => r.status === 'PENDING');
-const nextPin = [...schedPending].sort((a: any,b: any) => a.scheduled_date.localeCompare(b.scheduled_date))[0] ?? null;
+const schedPosted: any[]  = [];
+const schedPending: any[] = [];
+const nextPin = null;
 
-// ── Content tracker ───────────────────────────────────────────────────────
-const tracker = JSON.parse(readFileSync(join(root,'pipeline-data/content-tracker.json'),'utf8')) as any[];
+// ── Content tracker (legacy — replaced by pipeline control center)
+const tracker: any[] = [];
 const trkByStatus: Record<string,number>   = {};
 const trkByCat: Record<string,number>      = {};
-for (const t of tracker) {
-  trkByStatus[t.status]   = (trkByStatus[t.status]   || 0) + 1;
-  trkByCat[t.category]    = (trkByCat[t.category]    || 0) + 1;
-}
 
 // ── Final build-time bundle ───────────────────────────────────────────────
 const BUILD = {
@@ -160,7 +133,7 @@ const BUILD = {
       category: a.data.category,
       hasWeb:   webSlugs.has(a.id),
       webPath:  webSlugs.has(a.id) ? `/images/${a.id}-main.jpg` : null,
-      pinCount: pinFiles.filter(f => f.startsWith(a.id + '_v')).length,
+      pinCount: pinFiles.filter(f => f.startsWith(a.id)).length,
     }))
     .sort((a, b) => a.slug.localeCompare(b.slug)),
   pinsList: pins.map((p: any) => ({
