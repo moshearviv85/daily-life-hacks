@@ -1,0 +1,57 @@
+name: Pipeline Discover
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Every Monday at 06:00 UTC
+  workflow_dispatch:
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install google-auth google-api-python-client
+
+      - name: Discover from GSC
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ -n "$GSC_SERVICE_ACCOUNT_JSON" ]; then
+            python scripts/NEW_PIPELINE_2026-05-08/discover_gsc.py > /tmp/gsc-topics.json
+          else
+            echo "GSC_SERVICE_ACCOUNT_JSON not set, skipping GSC discovery"
+            echo "[]" > /tmp/gsc-topics.json
+          fi
+
+      - name: Discover from Autocomplete
+        run: python scripts/NEW_PIPELINE_2026-05-08/discover_autocomplete.py > /tmp/autocomplete-topics.json
+
+      - name: Merge discoveries
+        run: |
+          python -c "
+          import json
+          gsc = json.load(open('/tmp/gsc-topics.json'))
+          auto = json.load(open('/tmp/autocomplete-topics.json'))
+          merged = gsc + auto
+          print(f'Merged: {len(gsc)} GSC + {len(auto)} autocomplete = {len(merged)} total', flush=True)
+          with open('/tmp/all-discovered.json', 'w') as f:
+              json.dump(merged, f, indent=2)
+          "
+
+      - name: Filter and push to D1
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: |
+          python scripts/NEW_PIPELINE_2026-05-08/filter_discovered_topics.py \
+            --input /tmp/all-discovered.json \
+            --key "$DASHBOARD_PASSWORD"
