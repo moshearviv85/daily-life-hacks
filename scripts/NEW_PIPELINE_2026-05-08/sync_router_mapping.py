@@ -73,11 +73,11 @@ def build_mapping_from_db(
             continue
         if limit_slugs is not None and slug not in limit_slugs:
             continue
-        variant_key = f"v{r['pin_index'] + 1}"
+        ps = r["pin_slug"]
         if slug not in mapping:
             mapping[slug] = {}
-        mapping[slug][variant_key] = {
-            "url_slug": r["pin_slug"],
+        mapping[slug][ps] = {
+            "url_slug": ps,
             "title": r["title"],
             "created_at": r["created_at"],
         }

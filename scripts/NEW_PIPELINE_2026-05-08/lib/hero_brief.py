@@ -5,6 +5,7 @@ Validation rules from lib.content_policy (single source of truth).
 """
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 
 from lib.content_policy import EM_DASH, AI_WORDS_BANNED
@@ -15,7 +16,8 @@ def _check_clean_text(text: str, field_name: str) -> None:
         raise ValueError(f"{field_name} contains em-dash (U+2014)")
     lowered = text.lower()
     for banned in AI_WORDS_BANNED:
-        if banned.lower() in lowered:
+        pattern = r"\b" + re.escape(banned.lower()) + r"\b"
+        if re.search(pattern, lowered):
             raise ValueError(f"{field_name} contains banned AI word: {banned!r}")
 
 
@@ -32,6 +34,6 @@ class HeroBrief:
             raise ValueError("prompt must be non-empty")
         if len(self.alt) < 30:
             raise ValueError(f"alt too short ({len(self.alt)} < 30 chars)")
-        if len(self.alt) > 200:
-            raise ValueError(f"alt too long ({len(self.alt)} > 200 chars)")
+        if len(self.alt) > 600:
+            raise ValueError(f"alt too long ({len(self.alt)} > 600 chars)")
         _check_clean_text(self.alt, "alt")

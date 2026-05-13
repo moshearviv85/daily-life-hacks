@@ -74,7 +74,7 @@ def load_pins_from_sqlite(db_path: Path, *, limit: int | None = None) -> list[di
         slugs = {r["article_slug"] for r in recent}
         rows = conn.execute(
             """
-            SELECT pb.article_slug, pb.pin_index, pb.title, pb.description,
+            SELECT pb.article_slug, pb.pin_index, pb.pin_slug, pb.title, pb.description,
                    pb.alt, wo.category
             FROM pin_briefs pb
             JOIN write_outputs wo ON pb.article_slug = wo.slug
@@ -128,22 +128,22 @@ def check_image_exists(url: str) -> bool:
         return False
 
 
-def make_row_id(slug: str, pin_index: int) -> str:
-    return f"{slug}_v{pin_index + 1}"
+def make_row_id(pin_slug: str) -> str:
+    return pin_slug
 
 
-def make_image_url(slug: str, pin_index: int) -> str:
-    return f"{SITE_BASE}/images/pins/{slug}_v{pin_index + 1}.jpg"
+def make_image_url(pin_slug: str) -> str:
+    return f"{SITE_BASE}/images/pins/{pin_slug}.jpg"
 
 
-def local_image_path(slug: str, pin_index: int) -> Path:
-    return REPO_ROOT / "public" / "images" / "pins" / f"{slug}_v{pin_index + 1}.jpg"
+def local_image_path(pin_slug: str) -> Path:
+    return REPO_ROOT / "public" / "images" / "pins" / f"{pin_slug}.jpg"
 
 
 def deploy_pin_images(pins: list[dict]) -> bool:
     to_add = []
     for pin in pins:
-        img = local_image_path(pin["article_slug"], pin["pin_index"])
+        img = local_image_path(pin["pin_slug"])
         if img.exists():
             rel = img.relative_to(REPO_ROOT)
             to_add.append(str(rel).replace("\\", "/"))
@@ -174,9 +174,8 @@ def deploy_pin_images(pins: list[dict]) -> bool:
     return True
 
 
-def _variant_destination_url(slug: str, pin_index: int, router_mapping: dict) -> str:
-    variant_key = f"v{pin_index + 1}"
-    entry = router_mapping.get(slug, {}).get(variant_key, {})
+def _variant_destination_url(slug: str, pin_slug: str, router_mapping: dict) -> str:
+    entry = router_mapping.get(slug, {}).get(pin_slug, {})
     url_slug = entry.get("url_slug", slug)
     return f"{SITE_BASE}/{url_slug}"
 
@@ -197,14 +196,14 @@ def generate_csv(
     rows = []
     for pin in pins:
         slug = pin["article_slug"]
-        idx = pin["pin_index"]
-        row_id = make_row_id(slug, idx)
+        ps = pin["pin_slug"]
+        row_id = make_row_id(ps)
 
         if row_id in d1_existing:
             stats["skipped_d1"] += 1
             continue
 
-        img_url = make_image_url(slug, idx)
+        img_url = make_image_url(ps)
         if not skip_image_check and not check_image_exists(img_url):
             print(f"SKIP (404): {row_id} — {img_url}", file=sys.stderr)
             stats["skipped_404"] += 1
@@ -216,7 +215,7 @@ def generate_csv(
             print(f"SKIP (unknown category {category!r}): {row_id}", file=sys.stderr)
             continue
 
-        dest_url = _variant_destination_url(slug, idx, router_mapping or {})
+        dest_url = _variant_destination_url(slug, ps, router_mapping or {})
         rows.append({
             "slug": slug,
             "variant": str(idx + 1),

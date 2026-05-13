@@ -71,7 +71,7 @@ If you are in a rush, at least give it a splash.
 
 Once the water is boiling and the heat is low, put the lid on and set a timer. Do not peek. The pot is a small ecosystem.
 
-When the timer goes off, take the pot off the heat and leave the lid on for another five minutes. This rest is where the residual steam finishes hydrating the grains. After the rest, fluff with a fork, drizzle with olive oil, and taste.''' + ' word' * 400
+When the timer goes off, take the pot off the heat and leave the lid on for another five minutes. This rest is where the residual steam finishes hydrating the grains. After the rest, fluff with a fork, drizzle with olive oil, and taste.''' + ' word' * 600
 
 
 # ---------------------------------------------------------------------------
