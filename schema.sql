@@ -148,3 +148,72 @@ CREATE TABLE IF NOT EXISTS pinterest_analytics_cache (
   saves INTEGER DEFAULT 0,
   cached_at TEXT DEFAULT (datetime('now'))
 );
+
+-- Pipeline lifecycle tracking: one row per article from discovery to publication
+CREATE TABLE IF NOT EXISTS pipeline_articles (
+  slug TEXT PRIMARY KEY,
+  topic TEXT NOT NULL,
+  category TEXT NOT NULL CHECK (category IN ('recipes', 'nutrition', 'tips')),
+  source TEXT NOT NULL DEFAULT 'manual',
+  stage TEXT NOT NULL DEFAULT 'topic' CHECK (stage IN (
+    'topic', 'approved', 'written', 'reviewed',
+    'hero_brief', 'pins_brief', 'hero_image', 'pin_images',
+    'deployed', 'published', 'failed'
+  )),
+  error TEXT,
+  error_stage TEXT,
+  write_model TEXT,
+  review_model TEXT,
+  word_count INTEGER,
+  hero_prompt TEXT,
+  hero_alt TEXT,
+  pin_count INTEGER DEFAULT 0,
+  pin_images_done INTEGER DEFAULT 0,
+  tokens_total INTEGER DEFAULT 0,
+  cost_usd REAL DEFAULT 0.0,
+  created_at TEXT DEFAULT (datetime('now')),
+  updated_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_pa_stage ON pipeline_articles(stage);
+CREATE INDEX IF NOT EXISTS idx_pa_category ON pipeline_articles(category);
+CREATE INDEX IF NOT EXISTS idx_pa_updated ON pipeline_articles(updated_at);
+
+-- Pin briefs + image status for each article's pins
+CREATE TABLE IF NOT EXISTS pipeline_pins (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  article_slug TEXT NOT NULL,
+  pin_slug TEXT NOT NULL UNIQUE,
+  pin_index INTEGER NOT NULL CHECK (pin_index BETWEEN 0 AND 9),
+  title TEXT,
+  description TEXT,
+  prompt TEXT,
+  alt TEXT,
+  image_status TEXT DEFAULT 'pending' CHECK (image_status IN ('pending', 'done', 'failed')),
+  created_at TEXT DEFAULT (datetime('now')),
+  UNIQUE(article_slug, pin_index)
+);
+
+CREATE INDEX IF NOT EXISTS idx_pp_article ON pipeline_pins(article_slug);
+
+-- Discovered topics queue: pending approval, with source metadata
+CREATE TABLE IF NOT EXISTS pipeline_topics (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  topic TEXT NOT NULL,
+  slug TEXT NOT NULL UNIQUE,
+  category TEXT NOT NULL CHECK (category IN ('recipes', 'nutrition', 'tips')),
+  source TEXT NOT NULL CHECK (source IN ('gsc', 'autocomplete', 'pinterest', 'llm_gap', 'manual')),
+  search_volume INTEGER,
+  impressions INTEGER,
+  ctr REAL,
+  avg_position REAL,
+  trend_score REAL,
+  dedup_score REAL,
+  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected', 'produced')),
+  reject_reason TEXT,
+  created_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_pt_status ON pipeline_topics(status);
+CREATE INDEX IF NOT EXISTS idx_pt_category ON pipeline_topics(category);
+CREATE INDEX IF NOT EXISTS idx_pt_source ON pipeline_topics(source);
