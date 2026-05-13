@@ -6,7 +6,7 @@
  * Password:   DASHBOARD_PASSWORD env var (Cloudflare Pages → Variables and Secrets).
  */
 import { getCollection } from 'astro:content';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -53,7 +53,7 @@ const webFiles = readdirSync(imgDir).filter(f => f.endsWith('-main.jpg'));
 const pinFiles = readdirSync(pinDir).filter(f => /\.jpg$/i.test(f));
 
 const webSlugs = new Set(webFiles.map(f => f.replace('-main.jpg','')));
-const pinSlugs = new Set(pinFiles.map(f => f.replace(/_v\d+\.jpg$/,'')));
+const pinSlugs = new Set(pinFiles.map(f => f.replace(/\.jpg$/i,'')));
 
 const missingWeb = articles
   .filter(a => !webSlugs.has(a.id))
@@ -63,47 +63,20 @@ const missingPin = articles
   .filter(a => !pinSlugs.has(a.id))
   .map(a => ({ slug: a.id, title: a.data.title, category: a.data.category, pub: isPub(a) }));
 
-// ── Pins ──────────────────────────────────────────────────────────────────
-const pins = JSON.parse(readFileSync(join(root,'pipeline-data/pins.json'),'utf8')) as any[];
+// ── Pins (legacy data removed — pipeline data now served from D1 at runtime)
+const pins: any[] = [];
 const pinByCat: Record<string,number>    = {};
 const pinByBoard: Record<string,number>  = {};
 const pinByStatus: Record<string,number> = {};
-for (const p of pins) {
-  pinByCat[p.category]   = (pinByCat[p.category]   || 0) + 1;
-  pinByBoard[p.board]    = (pinByBoard[p.board]     || 0) + 1;
-  pinByStatus[p.status]  = (pinByStatus[p.status]   || 0) + 1;
-}
 
-// ── Pins schedule (auto-poster) ───────────────────────────────────────────
-let pinsSchedule: any[] = [];
-try {
-  const csvText = readFileSync(join(root,'pipeline-data/pins-schedule.csv'),'utf8');
-  const lines = csvText.trim().split('\n').filter(l => l.trim());
-  const headers = lines[0].split(',').map(h => h.trim());
-  pinsSchedule = lines.slice(1).map(line => {
-    const vals: string[] = [];
-    let cur = '', inQ = false;
-    for (const ch of line) {
-      if (ch === '"') inQ = !inQ;
-      else if (ch === ',' && !inQ) { vals.push(cur); cur = ''; }
-      else cur += ch;
-    }
-    vals.push(cur);
-    return Object.fromEntries(headers.map((h, i) => [h, (vals[i] || '').trim()]));
-  });
-} catch(_) {}
-const schedPosted  = pinsSchedule.filter((r: any) => r.status === 'POSTED');
-const schedPending = pinsSchedule.filter((r: any) => r.status === 'PENDING');
-const nextPin = [...schedPending].sort((a: any,b: any) => a.scheduled_date.localeCompare(b.scheduled_date))[0] ?? null;
+const schedPosted: any[]  = [];
+const schedPending: any[] = [];
+const nextPin = null;
 
-// ── Content tracker ───────────────────────────────────────────────────────
-const tracker = JSON.parse(readFileSync(join(root,'pipeline-data/content-tracker.json'),'utf8')) as any[];
+// ── Content tracker (legacy — replaced by pipeline control center)
+const tracker: any[] = [];
 const trkByStatus: Record<string,number>   = {};
 const trkByCat: Record<string,number>      = {};
-for (const t of tracker) {
-  trkByStatus[t.status]   = (trkByStatus[t.status]   || 0) + 1;
-  trkByCat[t.category]    = (trkByCat[t.category]    || 0) + 1;
-}
 
 // ── Final build-time bundle ───────────────────────────────────────────────
 const BUILD = {
@@ -160,7 +133,7 @@ const BUILD = {
       category: a.data.category,
       hasWeb:   webSlugs.has(a.id),
       webPath:  webSlugs.has(a.id) ? `/images/${a.id}-main.jpg` : null,
-      pinCount: pinFiles.filter(f => f.startsWith(a.id + '_v')).length,
+      pinCount: pinFiles.filter(f => f.startsWith(a.id)).length,
     }))
     .sort((a, b) => a.slug.localeCompare(b.slug)),
   pinsList: pins.map((p: any) => ({
@@ -479,6 +452,88 @@ const BUILD = {
         <div class="stat-value" id="s-uv">—</div>
         <div class="stat-sub" id="s-uv-sub">loading...</div>
       </div>
+    </div>
+
+    <!-- ── PIPELINE CONTROL CENTER ──────────────────────────────────────── -->
+    <div class="card section-gap" id="pipeline-section">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem">
+        <div class="card-title" style="margin-bottom:0">Pipeline Control Center</div>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <button class="btn btn-sm" onclick="triggerPipeline('discover')" id="btn-discover">Find Topics</button>
+          <select id="produce-count" style="padding:.3rem .5rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);font-size:.8rem">
+            <option value="3">3 articles</option>
+            <option value="5">5 articles</option>
+            <option value="10">10 articles</option>
+          </select>
+          <button class="btn btn-sm" onclick="triggerPipeline('produce')" id="btn-produce">Generate Articles</button>
+          <button class="btn btn-sm" onclick="triggerPipeline('publish')" id="btn-publish">Publish Ready</button>
+        </div>
+      </div>
+
+      <!-- Pipeline stat cards -->
+      <div class="stats-grid" style="margin-bottom:1rem">
+        <div class="stat-card blue">
+          <div class="stat-label">Topics Queued</div>
+          <div class="stat-value" id="pl-topics-pending">-</div>
+          <div class="stat-sub" id="pl-topics-sub">pending approval</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-label">In Production</div>
+          <div class="stat-value" id="pl-in-production">-</div>
+          <div class="stat-sub">writing / reviewing / images</div>
+        </div>
+        <div class="stat-card purple">
+          <div class="stat-label">Ready to Publish</div>
+          <div class="stat-value" id="pl-ready">-</div>
+          <div class="stat-sub">deployed, awaiting publish</div>
+        </div>
+        <div class="stat-card orange">
+          <div class="stat-label">Total Cost</div>
+          <div class="stat-value" id="pl-cost">-</div>
+          <div class="stat-sub" id="pl-cost-sub">USD across all articles</div>
+        </div>
+      </div>
+
+      <!-- Manual topic input -->
+      <div style="display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;align-items:center">
+        <input type="text" id="manual-topic" placeholder="Add topic manually..." style="flex:1;min-width:200px;padding:.4rem .7rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);font-size:.85rem">
+        <select id="manual-category" style="padding:.4rem .5rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);font-size:.85rem">
+          <option value="recipes">Recipes</option>
+          <option value="nutrition">Nutrition</option>
+          <option value="tips">Tips</option>
+        </select>
+        <button class="btn btn-sm" onclick="addManualTopic()">+ Add Topic</button>
+      </div>
+
+      <!-- Pipeline trigger status -->
+      <div id="pipeline-trigger-status" style="display:none;padding:.5rem .75rem;border-radius:6px;margin-bottom:.75rem;font-size:.8rem;border:1px solid transparent"></div>
+
+      <!-- Filter tabs -->
+      <div style="display:flex;gap:.35rem;margin-bottom:.75rem">
+        <button class="btn btn-sm active" onclick="filterPipeline('all', this)" id="pl-filter-all">All</button>
+        <button class="btn btn-sm" onclick="filterPipeline('progress', this)">In Progress</button>
+        <button class="btn btn-sm" onclick="filterPipeline('ready', this)">Ready</button>
+        <button class="btn btn-sm" onclick="filterPipeline('failed', this)">Failed</button>
+      </div>
+
+      <!-- Pipeline table -->
+      <div style="overflow-x:auto">
+        <table class="data-table" id="pipeline-table">
+          <thead>
+            <tr>
+              <th>Slug</th>
+              <th>Category</th>
+              <th>Stage</th>
+              <th>Words</th>
+              <th>Pins</th>
+              <th>Cost</th>
+              <th>Updated</th>
+            </tr>
+          </thead>
+          <tbody id="pipeline-tbody"></tbody>
+        </table>
+      </div>
+      <div id="pipeline-empty" class="empty" style="display:none">No pipeline data yet. Click "Find Topics" to start.</div>
     </div>
 
     <!-- ── CLARITY ANALYTICS ────────────────────────────────────────────────── -->
@@ -1108,6 +1163,7 @@ async function loadDashboard() {
 
   // Fetch live data
   await fetchLive(currentPeriod);
+  fetchPipelineStatus();
   loadPinsStatus();
   loadArticles();
 }
@@ -1125,7 +1181,7 @@ function setPeriod(days) {
 function refreshData() {
   const btn = document.getElementById('refresh-btn');
   btn.classList.add('spinning');
-  fetchLive(currentPeriod).finally(() => btn.classList.remove('spinning'));
+  Promise.all([fetchLive(currentPeriod), fetchPipelineStatus()]).finally(() => btn.classList.remove('spinning'));
 }
 
 // ── Load Chart.js dynamically (Astro strips CDN script tags) ─────────────
@@ -2711,6 +2767,155 @@ async function triggerPostNow() {
     btn.textContent = '▶ Post Now';
   }
 }
+// ── Pipeline Control Center ──────────────────────────────────────────────
+let pipelineData = null;
+
+async function fetchPipelineStatus() {
+  try {
+    const res = await fetch(`/api/pipeline-status?key=${encodeURIComponent(pw)}`);
+    if (!res.ok) return;
+    pipelineData = await res.json();
+    renderPipelineStats();
+    renderPipelineTable('all');
+  } catch (e) {
+    console.error('Pipeline status fetch failed:', e);
+  }
+}
+
+function renderPipelineStats() {
+  if (!pipelineData) return;
+  const s = pipelineData.summary?.by_stage || {};
+  const topics = pipelineData.topics || {};
+
+  document.getElementById('pl-topics-pending').textContent = topics.pending || 0;
+  document.getElementById('pl-topics-sub').textContent =
+    `${topics.approved || 0} approved, ${topics.rejected || 0} rejected`;
+
+  const inProd = (s.approved || 0) + (s.written || 0) + (s.reviewed || 0) +
+    (s.hero_brief || 0) + (s.pins_brief || 0) + (s.hero_image || 0) + (s.pin_images || 0);
+  document.getElementById('pl-in-production').textContent = inProd;
+
+  document.getElementById('pl-ready').textContent = s.deployed || 0;
+
+  const totalCost = (pipelineData.articles || []).reduce((sum, a) => sum + (a.cost_usd || 0), 0);
+  document.getElementById('pl-cost').textContent = '$' + totalCost.toFixed(2);
+}
+
+function renderPipelineTable(filter) {
+  const tbody = document.getElementById('pipeline-tbody');
+  const empty = document.getElementById('pipeline-empty');
+  if (!pipelineData || !pipelineData.articles?.length) {
+    tbody.innerHTML = '';
+    empty.style.display = '';
+    return;
+  }
+  empty.style.display = 'none';
+
+  let articles = pipelineData.articles;
+  if (filter === 'progress') {
+    articles = articles.filter(a => !['deployed', 'published', 'failed', 'topic'].includes(a.stage));
+  } else if (filter === 'ready') {
+    articles = articles.filter(a => a.stage === 'deployed');
+  } else if (filter === 'failed') {
+    articles = articles.filter(a => a.stage === 'failed');
+  }
+
+  const stageBadge = (stage) => {
+    const colors = {
+      topic: '#6b7280', approved: '#3b82f6', written: '#8b5cf6', reviewed: '#a855f7',
+      hero_brief: '#f59e0b', pins_brief: '#f59e0b', hero_image: '#10b981',
+      pin_images: '#10b981', deployed: '#06b6d4', published: '#22c55e', failed: '#ef4444'
+    };
+    const c = colors[stage] || '#6b7280';
+    return `<span style="display:inline-block;padding:.15rem .45rem;border-radius:4px;font-size:.75rem;font-weight:500;background:${c}20;color:${c};border:1px solid ${c}40">${stage}</span>`;
+  };
+
+  tbody.innerHTML = articles.map(a => `
+    <tr>
+      <td style="font-size:.8rem;font-family:monospace">${a.slug}</td>
+      <td>${a.category}</td>
+      <td>${stageBadge(a.stage)}${a.error ? ` <span style="color:#ef4444;font-size:.75rem" title="${a.error}">!</span>` : ''}</td>
+      <td>${a.word_count || '-'}</td>
+      <td>${a.pin_images_done || 0}/${a.pin_count || 0}</td>
+      <td>$${(a.cost_usd || 0).toFixed(3)}</td>
+      <td style="font-size:.75rem">${a.updated_at ? new Date(a.updated_at + 'Z').toLocaleDateString() : '-'}</td>
+    </tr>
+  `).join('');
+}
+
+function filterPipeline(filter, btn) {
+  document.querySelectorAll('#pipeline-section .btn-sm').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderPipelineTable(filter);
+}
+
+async function triggerPipeline(action) {
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = `Triggering ${action}...`;
+
+  const body = { action };
+  if (action === 'produce') {
+    body.count = parseInt(document.getElementById('produce-count').value);
+  }
+
+  try {
+    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      statusEl.style.background = '#f0fdf4';
+      statusEl.style.borderColor = '#bbf7d0';
+      statusEl.style.color = '#166534';
+      statusEl.textContent = `${action} workflow dispatched successfully`;
+      setTimeout(() => statusEl.style.display = 'none', 5000);
+    } else {
+      statusEl.style.background = '#fef2f2';
+      statusEl.style.borderColor = '#fecaca';
+      statusEl.style.color = '#b91c1c';
+      statusEl.textContent = `Error: ${data.error || 'Unknown error'}`;
+    }
+  } catch (e) {
+    statusEl.style.background = '#fef2f2';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+  }
+}
+
+async function addManualTopic() {
+  const input = document.getElementById('manual-topic');
+  const cat = document.getElementById('manual-category').value;
+  const topic = input.value.trim();
+  if (!topic) return;
+
+  try {
+    const res = await fetch(`/api/pipeline-topics?key=${encodeURIComponent(pw)}&action=add`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic, category: cat })
+    });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      input.value = '';
+      fetchPipelineStatus();
+    } else {
+      alert('Error: ' + (data.error || 'Unknown'));
+    }
+  } catch (e) {
+    alert('Failed: ' + e.message);
+  }
+}
+window.fetchPipelineStatus = fetchPipelineStatus;
+window.triggerPipeline = triggerPipeline;
+window.addManualTopic = addManualTopic;
+window.filterPipeline = filterPipeline;
+
 window.triggerPostNow = triggerPostNow;
 </script>
 
