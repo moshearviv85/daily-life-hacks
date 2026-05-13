@@ -1,0 +1,111 @@
+name: Pipeline Produce
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Number of articles to produce'
+        required: false
+        default: '3'
+      category:
+        description: 'Category filter (empty = any)'
+        required: false
+        default: ''
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests pyyaml google-generativeai httpx
+
+      - name: Create pipeline-data directory
+        run: mkdir -p pipeline-data
+
+      - name: Fetch approved topics from D1
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: |
+          curl -s "https://www.daily-life-hacks.com/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&status=approved" \
+            | python -c "
+          import json, sys
+          data = json.load(sys.stdin)
+          topics = data.get('topics', [])
+          count = int('${{ inputs.count }}' or '3')
+          cat_filter = '${{ inputs.category }}'.strip()
+          if cat_filter:
+              topics = [t for t in topics if t['category'] == cat_filter]
+          selected = topics[:count]
+          print(f'Selected {len(selected)} topics for production:', file=sys.stderr)
+          for t in selected:
+              print(f'  - [{t[\"category\"]}] {t[\"topic\"]}', file=sys.stderr)
+          with open('pipeline-data/selected-topics.json', 'w') as f:
+              json.dump(selected, f, indent=2)
+          print(json.dumps([t['id'] for t in selected]))
+          " > /tmp/topic-ids.json
+
+      - name: Produce articles
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+        run: |
+          TOPICS=$(cat pipeline-data/selected-topics.json)
+          COUNT=$(echo "$TOPICS" | python -c "import json,sys; print(len(json.load(sys.stdin)))")
+          echo "Producing $COUNT articles..."
+          echo "$TOPICS" | python -c "
+          import json, sys, subprocess
+          topics = json.load(sys.stdin)
+          for t in topics:
+              print(f'=== Producing: {t[\"topic\"]} ({t[\"category\"]}) ===')
+              result = subprocess.run([
+                  sys.executable,
+                  'scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py',
+                  t['topic'],
+                  '--category', t['category']
+              ], capture_output=False)
+              if result.returncode != 0:
+                  print(f'WARNING: Pipeline failed for {t[\"topic\"]}')
+          "
+
+      - name: Mark topics as produced
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: |
+          IDS=$(cat /tmp/topic-ids.json)
+          if [ "$IDS" != "[]" ]; then
+            curl -s -X POST \
+              "https://www.daily-life-hacks.com/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=produced" \
+              -H "Content-Type: application/json" \
+              -d "{\"ids\": $IDS}"
+          fi
+
+      - name: Sync pipeline status to D1
+        env:
+          STATS_KEY: ${{ secrets.STATS_KEY }}
+        run: python scripts/NEW_PIPELINE_2026-05-08/sync_pipeline_to_d1.py --key "$STATS_KEY"
+
+      - name: Commit and push generated files
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/articles/ public/images/ pipeline-data/ || true
+          if git diff --cached --quiet; then
+            echo "No new files to commit"
+          else
+            git commit -m "feat(pipeline): produce articles via GH Actions
+
+          Co-Authored-By: GitHub Actions <github-actions[bot]@users.noreply.github.com>"
+            git push https://x-access-token:${GH_PAT}@github.com/moshearviv85/daily-life-hacks.git HEAD:main
+          fi
