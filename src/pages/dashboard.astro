@@ -472,10 +472,10 @@ const BUILD = {
 
       <!-- Pipeline stat cards -->
       <div class="stats-grid" style="margin-bottom:1rem">
-        <div class="stat-card blue">
-          <div class="stat-label">Topics Queued</div>
-          <div class="stat-value" id="pl-topics-pending">-</div>
-          <div class="stat-sub" id="pl-topics-sub">pending approval</div>
+        <div class="stat-card blue clickable" onclick="openModal('pipeline-topics')" title="Click to see topics">
+          <div class="stat-label">Approved Topics</div>
+          <div class="stat-value" id="pl-topics-approved">-</div>
+          <div class="stat-sub" id="pl-topics-sub">0 pending, 0 rejected</div>
         </div>
         <div class="stat-card green">
           <div class="stat-label">In Production</div>
@@ -1816,6 +1816,38 @@ function openModal(type) {
           </table>`;
       break;
     }
+
+    case 'pipeline-topics': {
+      title.innerHTML = 'Pipeline Topics';
+      body.innerHTML = '<div class="empty">Loading topics...</div>';
+      overlay.classList.add('open');
+      document.addEventListener('keydown', escClose);
+      fetchPipelineTopics().then(topics => {
+        if (!topics || topics.length === 0) {
+          body.innerHTML = '<div class="empty">No topics found.</div>';
+          return;
+        }
+        const approved = topics.filter(t => t.status === 'approved');
+        const pending = topics.filter(t => t.status === 'pending' || t.status === 'queued');
+        const rejected = topics.filter(t => t.status === 'rejected');
+        title.innerHTML = `Pipeline Topics <span class="modal-count">(${topics.length} total)</span>`;
+        let html = '';
+        if (approved.length) {
+          html += `<h4 style="margin:0 0 .5rem;color:var(--success)">Approved (${approved.length})</h4>`;
+          html += renderTopicsList(approved);
+        }
+        if (pending.length) {
+          html += `<h4 style="margin:1rem 0 .5rem;color:var(--warning, #e6a700)">Pending (${pending.length})</h4>`;
+          html += renderTopicsList(pending);
+        }
+        if (rejected.length) {
+          html += `<h4 style="margin:1rem 0 .5rem;color:var(--danger, #d32f2f)">Rejected (${rejected.length})</h4>`;
+          html += renderTopicsList(rejected);
+        }
+        body.innerHTML = html;
+      });
+      return;
+    }
   }
 
   overlay.classList.add('open');
@@ -2787,9 +2819,9 @@ function renderPipelineStats() {
   const s = pipelineData.summary?.by_stage || {};
   const topics = pipelineData.topics || {};
 
-  document.getElementById('pl-topics-pending').textContent = topics.pending || 0;
+  document.getElementById('pl-topics-approved').textContent = topics.approved || 0;
   document.getElementById('pl-topics-sub').textContent =
-    `${topics.approved || 0} approved, ${topics.rejected || 0} rejected`;
+    `${topics.pending || 0} pending, ${topics.rejected || 0} rejected`;
 
   const inProd = (s.approved || 0) + (s.written || 0) + (s.reviewed || 0) +
     (s.hero_brief || 0) + (s.pins_brief || 0) + (s.hero_image || 0) + (s.pin_images || 0);
@@ -2799,6 +2831,29 @@ function renderPipelineStats() {
 
   const totalCost = (pipelineData.articles || []).reduce((sum, a) => sum + (a.cost_usd || 0), 0);
   document.getElementById('pl-cost').textContent = '$' + totalCost.toFixed(2);
+}
+
+async function fetchPipelineTopics() {
+  try {
+    const pw = document.getElementById('pw')?.value;
+    if (!pw) return [];
+    const res = await fetch(`/api/pipeline-topics?key=${encodeURIComponent(pw)}`);
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.topics || [];
+  } catch { return []; }
+}
+
+function renderTopicsList(topics) {
+  return `<table class="data-table" style="font-size:.85rem">
+    <thead><tr><th>#</th><th>Topic</th><th>Category</th><th>Source</th></tr></thead>
+    <tbody>${topics.map((t, i) => `<tr>
+      <td style="color:var(--muted)">${i + 1}</td>
+      <td>${t.topic || t.slug || '-'}</td>
+      <td>${t.category || '-'}</td>
+      <td style="color:var(--muted)">${t.source || '-'}</td>
+    </tr>`).join('')}</tbody>
+  </table>`;
 }
 
 function renderPipelineTable(filter) {
