@@ -21,11 +21,13 @@ function getPublishAtFromMarkdown(raw) {
   return Number.isNaN(d.getTime()) ? null : d;
 }
 
-function loadExcludedPathsForUnreleasedArticles() {
+function loadSitemapExclusions() {
   const now = Date.now();
   const articlesDir = join(__dirname, 'src/data/articles');
   const mappingPath = join(__dirname, 'pipeline-data/router-mapping.json');
+  const aliasesPath = join(__dirname, 'pipeline-data/slug-aliases.json');
   const mapping = JSON.parse(readFileSync(mappingPath, 'utf8'));
+  const aliases = JSON.parse(readFileSync(aliasesPath, 'utf8'));
   /** @type {Set<string>} */
   const excluded = new Set();
 
@@ -36,15 +38,8 @@ function loadExcludedPathsForUnreleasedArticles() {
     excluded.add(normalized);
   }
 
-  for (const file of readdirSync(articlesDir)) {
-    if (!file.endsWith('.md')) continue;
-    const slug = file.replace(/\.md$/, '');
-    const content = readFileSync(join(articlesDir, file), 'utf8');
-    const publishAt = getPublishAtFromMarkdown(content);
-    if (!publishAt || publishAt.getTime() <= now) continue;
-
-    addPath(slug);
-    const variants = mapping[slug];
+  // Exclude all variant slugs from router-mapping (non-canonical)
+  for (const [, variants] of Object.entries(mapping)) {
     if (variants && typeof variants === 'object') {
       for (const v of Object.values(variants)) {
         if (v && typeof v === 'object' && 'url_slug' in v && v.url_slug) {
@@ -53,16 +48,32 @@ function loadExcludedPathsForUnreleasedArticles() {
       }
     }
   }
+
+  // Exclude all alias slugs (non-canonical)
+  for (const aliasSlug of Object.keys(aliases)) {
+    addPath(aliasSlug);
+  }
+
+  // Exclude unreleased articles and their variants
+  for (const file of readdirSync(articlesDir)) {
+    if (!file.endsWith('.md')) continue;
+    const slug = file.replace(/\.md$/, '');
+    const content = readFileSync(join(articlesDir, file), 'utf8');
+    const publishAt = getPublishAtFromMarkdown(content);
+    if (!publishAt || publishAt.getTime() <= now) continue;
+    addPath(slug);
+  }
+
   return excluded;
 }
 
-const excludedArticlePaths = loadExcludedPathsForUnreleasedArticles();
+const excludedSitemapPaths = loadSitemapExclusions();
 
-function isUnreleasedSitemapUrl(url) {
+function shouldExcludeFromSitemap(url) {
   try {
     const pathname = new URL(url).pathname;
     const normalized = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
-    return excludedArticlePaths.has(normalized);
+    return excludedSitemapPaths.has(normalized);
   } catch {
     return false;
   }
@@ -74,7 +85,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       serialize(item) {
-        if (isUnreleasedSitemapUrl(item.url)) return undefined;
+        if (shouldExcludeFromSitemap(item.url)) return undefined;
         return item;
       },
     }),
