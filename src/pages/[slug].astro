@@ -7,7 +7,6 @@ import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptImage from "../components/OptImage.astro";
 import { formatReleaseDate, isReleased } from "../content/release";
-import routerMapping from "../../pipeline-data/router-mapping.json";
 import slugAliases from "../../pipeline-data/slug-aliases.json";
 
 function inlineMd(text: string): string {
@@ -21,17 +20,6 @@ export async function getStaticPaths() {
 
   for (const article of articles) {
     paths.push({ params: { slug: article.id }, props: { article } });
-
-    const mappingForArticle = (routerMapping as Record<string, Record<string, { url_slug?: string }>>)[
-      article.id
-    ];
-    if (!mappingForArticle) continue;
-
-    for (const variant of Object.values(mappingForArticle)) {
-      const slug = variant?.url_slug;
-      if (!slug || slug === article.id) continue;
-      paths.push({ params: { slug }, props: { article } });
-    }
   }
 
   for (const [aliasSlug, canonicalSlug] of Object.entries(slugAliases as Record<string, string>)) {

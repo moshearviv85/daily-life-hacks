@@ -24,9 +24,7 @@ function getPublishAtFromMarkdown(raw) {
 function loadSitemapExclusions() {
   const now = Date.now();
   const articlesDir = join(__dirname, 'src/data/articles');
-  const mappingPath = join(__dirname, 'pipeline-data/router-mapping.json');
   const aliasesPath = join(__dirname, 'pipeline-data/slug-aliases.json');
-  const mapping = JSON.parse(readFileSync(mappingPath, 'utf8'));
   const aliases = JSON.parse(readFileSync(aliasesPath, 'utf8'));
   /** @type {Set<string>} */
   const excluded = new Set();
@@ -38,23 +36,12 @@ function loadSitemapExclusions() {
     excluded.add(normalized);
   }
 
-  // Exclude all variant slugs from router-mapping (non-canonical)
-  for (const [, variants] of Object.entries(mapping)) {
-    if (variants && typeof variants === 'object') {
-      for (const v of Object.values(variants)) {
-        if (v && typeof v === 'object' && 'url_slug' in v && v.url_slug) {
-          addPath(v.url_slug);
-        }
-      }
-    }
-  }
-
   // Exclude all alias slugs (non-canonical)
   for (const aliasSlug of Object.keys(aliases)) {
     addPath(aliasSlug);
   }
 
-  // Exclude unreleased articles and their variants
+  // Exclude unreleased articles
   for (const file of readdirSync(articlesDir)) {
     if (!file.endsWith('.md')) continue;
     const slug = file.replace(/\.md$/, '');
