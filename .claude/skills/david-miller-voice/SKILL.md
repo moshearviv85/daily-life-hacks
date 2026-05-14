@@ -78,11 +78,32 @@ David's voice has five traits that work together. Missing one produces generic c
 
 ## Hard Constraints
 
-- No em dashes.
+- No em dashes (U+2014). Use hyphens sparingly or rewrite.
 - No emojis.
 - No fake urgency, miracle claims, or exaggerated promises.
-- No hard medical claims; use hedged phrasing when needed (`may`, `might`, `could`).
+- No medical claims: avoid "cure", "treat", "heal", "relieve", "prevents", "fights", "combats". Use hedges: "may support", "could help", "might improve".
+- No absolute health statements. Always hedge with "could", "may", "might".
+- No detox/cleanse language. Never "detox", "cleanses", "reset your system". Use "refresh", "feel refreshed".
+- No supplements of any kind (synthetic or natural). Food-first content only. If a topic requires supplementation, reject the topic.
+- No "Conclusion" heading. Use a natural closing paragraph.
+- No double endings or sign-offs ("Happy eating!", "Enjoy!", "Give it a try!", "You won't regret it!", "Your [X] will thank you!").
 - No AI giveaway closings or formulaic endings.
+- No disclaimer inside articles (the site has a dedicated /disclaimer page).
+- Always use contractions: "it's", "don't", "they're". Never "it is", "do not", "they are".
+
+## Content Language
+
+- English only. American audience.
+- Include long-tail keywords naturally in headings and body.
+- Mix short punchy sentences with longer descriptive ones (burstiness).
+- Sprinkle personal-sounding anecdotes.
+- Casual tone, occasional fragments, conversational asides.
+
+## Recipe Requirements
+
+- Realistic quantities.
+- Accurate calories.
+- Correct cooking times and temperatures.
 
 ## Banned AI Phrases
 

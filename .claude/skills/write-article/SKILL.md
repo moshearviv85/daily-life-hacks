@@ -20,7 +20,7 @@ Invoke this skill whenever writing a new article for daily-life-hacks.com. Read 
 
 ## Voice — use the david-miller-voice SKILL
 
-**Single source of truth for voice:** `.cursor/skills/david-miller-voice/SKILL.md`
+**Single source of truth for voice:** `.claude/skills/david-miller-voice/SKILL.md`
 
 That SKILL owns every voice rule: contractions, no em dashes, no emojis, banned AI phrases, no sign-off closings, hedging health claims, no hype, no lecturing. Read it once per writing session. Do not re-specify voice rules here.
 
@@ -36,6 +36,17 @@ These are content bans that apply to article bodies regardless of voice:
 | No absolute health statement | legal + trust | "is good for your gut", "prevents cancer" |
 | No detox/cleanse language | anti-pseudoscience stance | "detox", "cleanse", "reset your system" |
 | **No supplements of any kind** | food-first positioning; if a topic only works via supplementation, reject it | synthetic (protein powder, vitamins, fat burners, pre-workout) AND "natural" (herbal extracts, adaptogens, probiotic capsules, fiber powders, collagen powders, greens powders, sea moss, ashwagandha, etc.) |
+
+## Topics That Are OUT OF SCOPE
+
+These topic categories must not appear on the site:
+- YMYL medical: IBS, diabetes, cholesterol, hormones
+- Supplements of any kind
+- Pseudo-science: detox, colon cleanse, ACV remedies
+- Risky: 100g fiber challenge, kids-specific medical content
+- Other YMYL: hormone-balance
+
+If a user request implies one of these topics, flag it and propose a food-first alternative.
 
 ---
 
@@ -202,7 +213,7 @@ The last section should feel like a natural ending, not a formal conclusion. Opt
 
 ## Article-level voice application checklist
 
-The abstract voice rules live in `.cursor/skills/david-miller-voice/SKILL.md`. Below are the article-shape checks that confirm the voice actually lands across the full piece:
+The abstract voice rules live in `.claude/skills/david-miller-voice/SKILL.md`. Below are the article-shape checks that confirm the voice actually lands across the full piece:
 
 - [ ] Opening paragraph starts with a scene, confession, contrast, or direct opinion - not a definition or "In this article"
 - [ ] At least one personal anecdote or "I" voice moment in the intro or a key section
@@ -273,7 +284,7 @@ Do NOT write the recipe steps again in prose - they're already in the YAML front
 
 ## Verification steps before finishing
 
-**First:** run the voice SKILL's own rewrite checklist (`.cursor/skills/david-miller-voice/SKILL.md`).
+**First:** run the voice SKILL's own rewrite checklist (`.claude/skills/david-miller-voice/SKILL.md`).
 
 **Then article-specific checks:**
 

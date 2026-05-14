@@ -1,7 +1,7 @@
 # Daily Life Hacks - Project Brief
 
 ## Identity & Stack
-- **Site:** Daily Life Hacks (daily-life-hacks.com)
+- **Site:** daily-life-hacks.com
 - **Stack:** Astro 5 + Tailwind CSS v4, deployed on Cloudflare Pages
 - **GitHub:** github.com/moshearviv85/daily-life-hacks
 - **Brand color:** `#F29B30` (orange)
@@ -10,87 +10,72 @@
 
 ## Autonomy
 
-**Default = ASK before any state-changing action.** This includes Edit / Write to source files (`*.py`, `*.ts`, `*.js`, `*.tsx`, `*.astro`, `*.sql`, `*.yml`, `*.yaml`, anything under `src/`, `scripts/`, `functions/`), `git commit`, `git push`, `npm install`, `npx wrangler`, sending emails, posting to social media, posting to Pinterest, deleting files, dropping DB, force-push.
+**Default = ASK before any state-changing action.** Includes Edit/Write to source files, `git commit`, `git push`, `npm install`, `npx wrangler`, sending emails, posting to Pinterest, deleting files, dropping DB, force-push.
 
-You may proceed without asking ONLY when one of the following is true:
-- The user explicitly authorized this turn (`go ahead`, `yes do it`, `proceed`, `אישור`, `תבצע`, `תמשיך`, `כן`, `צא לדרך`).
-- The user gave a concrete task this turn that names what to change ("write a script that does X", "fix the bug in Y", "תכתוב לי", "תקן את").
-- The action is part of an approved SDD plan or active TDD cycle the user already greenlit.
-- The action is read-only (Read, Grep, Glob, `git status`, `cat`, `ls`, `wc`).
-- The action is a memory or rule edit that the user just asked for.
+You may proceed without asking ONLY when:
+- The user explicitly authorized this turn (`go ahead`, `yes do it`, `אישור`, `תבצע`, `תמשיך`, `כן`, `צא לדרך`).
+- The user gave a concrete task that names what to change ("fix the bug in Y", "תכתוב לי", "תקן את").
+- The action is part of an approved plan the user already greenlit.
+- The action is read-only (Read, Grep, Glob, `git status`, `ls`).
 
-If the user's last message is a question, a clarification, or casual back-and-forth — DO NOT make code changes. Ask first.
-
-Always pause and ask if: destructive, external, or you genuinely don't have enough information. Even when authorized for one task, do not chain into a second task without checking back.
+Always pause and ask if: destructive, external, or you don't have enough information. Don't chain into a second task without checking back.
 
 ## Build & Deploy
-- Build: `npm run build` → outputs `dist/`
+- Build: `npm run build` → `dist/`
 - Deploy: auto via Cloudflare Pages on push to `main`
 - Serverless: `functions/` directory (Cloudflare Pages Functions)
 - D1 DB binding name: `DB` (schema in `schema.sql`)
 
 ## Cloudflare Env Vars
-- `KIT_API_KEY` (Kit / ConvertKit API key — required for `/api/subscribe`)
-- `STATS_KEY` (for `/api/stats`)
+- `KIT_API_KEY` — Kit (ConvertKit) API key for `/api/subscribe`
+- `STATS_KEY` — for `/api/stats`
 
-## Workflow
-- Claude Code = project manager, code, infrastructure, data, automation
-- Cursor + Gemini = content writing only (articles, pin text). Do not touch site code.
-- Gemini instructions go in `INSTRUCTIONS-*.md` files at project root (managerial, not full code)
-
-## How Rules Load (Important)
-This project uses `.claude/rules/` for instruction management, not inline in this file.
-
-| File | When Loaded |
-|------|-------------|
-| `.claude/rules/truth.md` | Every session (always-on) |
-| `.claude/rules/content.md` | Every session (always-on) |
-| `.claude/rules/articles.md` | When opening `src/data/articles/**` |
-| `.claude/rules/pinterest.md` | When opening pin-related files |
-| `.claude/rules/video.md` | When opening kinetic-video files |
-
-Rules in these files are binding. Do not duplicate their content here.
-
-## Skills Available
+## Skills
 Skills in `.claude/skills/`:
-- `write-article` — article creation workflow
-- `david-miller-voice` — tone/voice for articles
-- `kinetic-video` — video creation (mandatory pre-read for any video work)
-- `post-pin` — Pinterest posting (side-effect skill, manual invocation only)
+- `write-article` — article creation workflow (includes content rules + SEO checklist)
+- `david-miller-voice` — brand voice for all site content (includes content hard bans)
+- `kinetic-video` — video production with Remotion + ElevenLabs
+- `post-pin` — Pinterest posting (manual invocation only)
 
-To invoke: `/write-article`, `/kinetic-video`, etc.
+## Rules
+One path-scoped rule in `.claude/rules/`:
+- `pinterest.md` — loads when working with pin-related files
 
-## Enforcement Hooks Active
-See `.claude/settings.json`. Summary:
-- **PreToolUse `content-checker`** — blocks Edit/Write to articles with em-dash, medical claims, supplements
-- **PostToolUse `post-tool-state`** — writes tool-call history to `.claude/state.json`
-- **Stop `completion-evidence-gate`** — Haiku checks that completion claims are backed by tool evidence
-- **InstructionsLoaded `instructions-logger`** — logs rule loads to `.claude/logs/instructions.log`
-
-## Core Pipeline Locations
+## Core Paths
 - Articles: `src/data/articles/{slug}.md`
-- Article images (web 16:9): `public/images/{slug}-main.jpg`
-- Pin images (3:4, 1000x1500): `public/images/pins/{slug}_v{1-4}.jpg`
-- Pin database: `pipeline-data/pins.json`, `pipeline-data/pipeline.db`
-- Image scenes: `pipeline-data/image-scenes.json` (100 scenes for variety)
-- Content tracker: `pipeline-data/content-tracker.json`
-
-## Scripts
-- `scripts/generate-images.py` — web + 4 pin variants per article (Nano Banana Pro, temp 2.0, rate-limited)
-- `scripts/1-research.py` → `6-deploy.py` — article pipeline stages
-- `scripts/post-pin*.py` — Pinterest posting
+- Article images: `public/images/{slug}-main.jpg`
+- Pin images: `public/images/pins/{slug}_v{1-4}.jpg`
+- Pipeline scripts: `scripts/NEW_PIPELINE_2026-05-08/`
+- Pipeline DB: `pipeline-data/topic-research.sqlite`
+- Image scenes: `pipeline-data/image-scenes-curated.json`
 
 ## Content Schema
-`src/content.config.ts`. Required fields: title, excerpt, category (`nutrition`|`recipes`), tags, image, imageAlt, date. See `.claude/rules/articles.md` for full schema.
+`src/content.config.ts`. Required fields: title, excerpt, category (`nutrition`|`recipes`|`tips`), tags, image, imageAlt, date, author.
 
 ## Important Constraints
-- Contact form is static (no backend) — do not imply it works
-- Newsletter signups go through custom form + `/api/subscribe` proxy to Kit (ConvertKit). The form posts JSON; the function calls Kit v4 API server-side
-- D1 database must be created manually in Cloudflare Dashboard and bound as `DB`
-- Original Excel backup at `../diet-website.xlsx`
+- Contact form is static (no backend)
+- Newsletter: custom form + `/api/subscribe` proxy to Kit v4 API
+- D1 must be created manually in Cloudflare Dashboard and bound as `DB`
+
+## Pending Work
+
+Task files live in `docs/tasks/`. **Do NOT read them at session start** — only when the user asks to work on a specific task.
+
+| # | File | Task | Priority |
+|---|------|------|----------|
+| 1 | `docs/tasks/01-pipeline-completion.md` | Pipeline completion + publish flow | Critical |
+| 6 | `docs/tasks/06-automation.md` | System automation | Critical |
+| 13 | `docs/tasks/13-smart-pins-pipeline.md` | Smart pins pipeline | Medium-High |
+| 2 | `docs/tasks/02-lead-magnet.md` | Lead magnet for email collection | High |
+| 4 | `docs/tasks/04-internal-linking.md` | Internal linking | High |
+| 5 | `docs/tasks/05-pillar-articles.md` | 3 Pillar articles | Medium-High |
+| 11 | `docs/tasks/11-monetization.md` | Monetization strategy | High (planning) |
+| 10 | `docs/tasks/10-seo-audit.md` | Final SEO audit | Medium |
+| 3 | `docs/tasks/03-data-driven-articles.md` | Data-driven articles | Medium |
+| 12 | `docs/tasks/12-video-pipeline.md` | Video production + YouTube | Medium |
+| 7 | `docs/tasks/07-inbound-links.md` | Inbound links strategy | Medium |
+| 9 | `docs/tasks/09-medium-articles.md` | Medium articles | Medium |
+| 8 | `docs/tasks/08-instagram-pinterest.md` | Instagram + Pinterest integration | Low |
 
 ## History
 See `CHANGELOG.md` for completed tasks.
-
-## Pending Work (2026-04-22)
-See `.claude/state.json` (auto-maintained) and memory files in `~/.claude/projects/.../memory/` for current pending tasks. Do not duplicate here.
