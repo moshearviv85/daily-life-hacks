@@ -145,5 +145,17 @@ export async function onRequest(context) {
     headers: request.headers,
   });
 
-  return env.ASSETS.fetch(proxyRequest);
+  const proxyResponse = await env.ASSETS.fetch(proxyRequest);
+
+  if (proxyResponse.status === 404 || proxyResponse.headers.get("x-astro-reroute") === "no") {
+    const notFoundUrl = new URL("/404.html", url.origin);
+    const notFoundReq = new Request(notFoundUrl.toString(), { headers: request.headers });
+    const notFoundPage = await env.ASSETS.fetch(notFoundReq);
+    return new Response(notFoundPage.body, {
+      status: 404,
+      headers: notFoundPage.headers,
+    });
+  }
+
+  return proxyResponse;
 }
