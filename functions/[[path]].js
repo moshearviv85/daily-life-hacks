@@ -90,7 +90,19 @@ export async function onRequest(context) {
         method: request.method,
         headers: request.headers,
       });
-      return env.ASSETS.fetch(trailingReq);
+      const assetResponse = await env.ASSETS.fetch(trailingReq);
+
+      if (assetResponse.status === 404 || assetResponse.headers.get("x-astro-reroute") === "no") {
+        const notFoundUrl = new URL("/404.html", url.origin);
+        const notFoundReq = new Request(notFoundUrl.toString(), { headers: request.headers });
+        const notFoundPage = await env.ASSETS.fetch(notFoundReq);
+        return new Response(notFoundPage.body, {
+          status: 404,
+          headers: notFoundPage.headers,
+        });
+      }
+
+      return assetResponse;
     }
   }
 

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | Daily Life Hacks"
+  description="The page you're looking for doesn't exist or has been moved."
+  robots="noindex, follow"
+>
+  <Header />
+  <main class="max-w-2xl mx-auto px-4 py-20 text-center" style="min-height: 60vh;">
+    <h1 class="text-6xl font-bold mb-4" style="color: #F29B30;">404</h1>
+    <h2 class="text-2xl font-semibold mb-4" style="color: var(--heading-color);">
+      Page Not Found
+    </h2>
+    <p class="text-lg mb-8" style="color: var(--muted-color);">
+      Sorry, this page doesn't exist or has been moved. Let's get you back on track.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="/"
+        class="inline-block px-6 py-3 rounded-lg text-white font-semibold transition-colors duration-200"
+        style="background-color: #F29B30;"
+      >
+        Back to Home
+      </a>
+      <a
+        href="/nutrition/"
+        class="inline-block px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+        style="border: 2px solid #F29B30; color: #F29B30;"
+      >
+        Browse Articles
+      </a>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

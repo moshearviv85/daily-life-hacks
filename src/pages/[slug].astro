@@ -8,6 +8,7 @@ import type { CollectionEntry } from "astro:content";
 import OptImage from "../components/OptImage.astro";
 import { formatReleaseDate, isReleased } from "../content/release";
 import routerMapping from "../../pipeline-data/router-mapping.json";
+import slugAliases from "../../pipeline-data/slug-aliases.json";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -15,13 +16,12 @@ function inlineMd(text: string): string {
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
+  const articleById = new Map(articles.map((a) => [a.id, a]));
   const paths: { params: { slug: string }; props: { article: CollectionEntry<"articles"> } }[] = [];
 
   for (const article of articles) {
-    // Base slug (canonical page)
     paths.push({ params: { slug: article.id }, props: { article } });
 
-    // Variant slugs (Pinterest/SEO routing) that should render the same base content.
     const mappingForArticle = (routerMapping as Record<string, Record<string, { url_slug?: string }>>)[
       article.id
     ];
@@ -31,6 +31,13 @@ export async function getStaticPaths() {
       const slug = variant?.url_slug;
       if (!slug || slug === article.id) continue;
       paths.push({ params: { slug }, props: { article } });
+    }
+  }
+
+  for (const [aliasSlug, canonicalSlug] of Object.entries(slugAliases as Record<string, string>)) {
+    const article = articleById.get(canonicalSlug);
+    if (article) {
+      paths.push({ params: { slug: aliasSlug }, props: { article } });
     }
   }
 
