@@ -2835,7 +2835,7 @@ function renderPipelineStats() {
 
 async function fetchPipelineTopics() {
   try {
-    const pw = document.getElementById('pw')?.value;
+    const pw = document.getElementById('pw-input')?.value;
     if (!pw) return [];
     const res = await fetch(`/api/pipeline-topics?key=${encodeURIComponent(pw)}`);
     if (!res.ok) return [];
