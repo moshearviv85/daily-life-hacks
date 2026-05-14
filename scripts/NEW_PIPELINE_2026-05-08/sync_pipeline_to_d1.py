@@ -139,7 +139,10 @@ def post_to_d1(base_url: str, key: str, payload: dict) -> tuple[int, str]:
     url = f"{base_url}/api/pipeline-sync?key={key}"
     data = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(url, data=data, method="POST",
-        headers={"Content-Type": "application/json"})
+        headers={
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (compatible; DLH-Pipeline/1.0)",
+        })
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             return resp.status, resp.read().decode()

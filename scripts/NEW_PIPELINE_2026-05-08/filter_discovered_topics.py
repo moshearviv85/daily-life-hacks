@@ -21,6 +21,10 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 ARTICLE_DIR = REPO_ROOT / "src" / "data" / "articles"
+_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (compatible; DLH-Pipeline/1.0)",
+    "Accept": "application/json",
+}
 
 
 def _load_env() -> None:
@@ -48,7 +52,7 @@ def get_existing_slugs() -> set[str]:
 
 def fetch_d1_topic_slugs(base_url: str, key: str) -> set[str]:
     url = f"{base_url}/api/pipeline-topics?key={key}"
-    req = urllib.request.Request(url)
+    req = urllib.request.Request(url, headers=_HEADERS)
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             data = json.loads(resp.read().decode())
@@ -84,7 +88,7 @@ def push_topics_to_d1(base_url: str, key: str, topics: list[dict]) -> dict:
             "source": t.get("source", "manual"),
         }).encode("utf-8")
         req = urllib.request.Request(url, data=data, method="POST",
-            headers={"Content-Type": "application/json"})
+            headers={**_HEADERS, "Content-Type": "application/json"})
         try:
             with urllib.request.urlopen(req, timeout=15) as resp:
                 results["added"] += 1
