@@ -6,13 +6,13 @@
 const http = require('http');
 const https = require('https');
 
-const ADS_API            = 'http://local.adspower.net:50325';
-const ADS_KEY            = '9e8265a2a91e8b30658908cef8d51ce30079525b1c553f0b';
+const ADS_API            = process.env.ADS_API || 'http://local.adspower.net:50325';
+const ADS_KEY            = process.env.ADS_KEY || '';
 const ADS_PROFILE_SERIAL = '77';
-const N8N_URL            = 'http://localhost:5678';
-const N8N_CRED           = 'fzKNHehPNPMgZXIo';
-const CLIENT_ID          = '1554902';
-const CLIENT_SECRET      = 'f952dfd1d47d141bc6b170af57a54f212b5b524c';
+const N8N_URL            = process.env.N8N_URL || 'http://localhost:5678';
+const N8N_CRED           = process.env.N8N_CRED || '';
+const CLIENT_ID          = process.env.PINTEREST_APP_ID || '';
+const CLIENT_SECRET      = process.env.PINTEREST_APP_SECRET || '';
 const REDIRECT_URI       = 'http://localhost:5678/rest/oauth2-credential/callback';
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -90,7 +90,7 @@ async function main() {
 
   // Step 2: Login n8n
   console.log('\n[2] Logging into n8n...');
-  const loginRes = await httpPost(`${N8N_URL}/rest/login`, { emailOrLdapLoginId: 'admin@dlh.com', password: 'DLH@2026admin!' });
+  const loginRes = await httpPost(`${N8N_URL}/rest/login`, { emailOrLdapLoginId: process.env.N8N_EMAIL || '', password: process.env.N8N_PASSWORD || '' });
   const cookie = (loginRes.headers['set-cookie'] || []).map(c => c.split(';')[0]).join('; ');
   console.log('    Logged in');
 

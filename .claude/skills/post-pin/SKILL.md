@@ -17,7 +17,7 @@ Only when the user explicitly types `/post-pin` or explicitly asks "post the nex
 1. **Check queue state.** Query `pipeline-data/pipeline.db` (table: `pins`) for the next PENDING pin in the current 2-hour window.
 2. **Verify image exists.** `ls public/images/pins/{slug}_v{variant}.jpg` must show the file.
 3. **Verify article is live.** Check that `https://www.daily-life-hacks.com/{slug}` returns 200 (article was published).
-4. **Refresh Pinterest token if stale.** Token lifetime is ~60 days. Refresh via the demo app at `https://www.daily-life-hacks.com/api/pinterest-demo` (password `testkey123`).
+4. **Refresh Pinterest token if stale.** Token lifetime is ~60 days. Refresh via the demo app at `https://www.daily-life-hacks.com/api/pinterest-demo` (password stored in Cloudflare env var `PINTEREST_DEMO_PASSWORD`).
 5. **POST to Pinterest.**
    - Endpoint: Pinterest API v5 `/pins` with Bearer token.
    - Board ID: from `pins.board` column mapped to one of the 3 active boards.

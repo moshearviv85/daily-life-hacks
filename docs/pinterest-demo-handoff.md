@@ -44,16 +44,16 @@ public/
 
 | שם | תפקיד |
 |----|--------|
-| `PINTEREST_APP_ID` | `1554902` |
-| `PINTEREST_APP_SECRET` | הסוד של האפליקציה |
-| `PINTEREST_DEMO_COOKIE_SECRET` | HMAC signing לcookies |
-| `PINTEREST_DEMO_ACCESS_KEY` | `testkey123` — נועל את הדמו |
+| `PINTEREST_APP_ID` | (stored in Cloudflare env vars) |
+| `PINTEREST_APP_SECRET` | (stored in Cloudflare env vars) |
+| `PINTEREST_DEMO_COOKIE_SECRET` | (stored in Cloudflare env vars) |
+| `PINTEREST_DEMO_ACCESS_KEY` | (stored in Cloudflare env vars) |
 
 ---
 
 ## Pinterest App Settings (Developer Portal)
 
-- **App ID:** `1554902`
+- **App ID:** stored in Cloudflare env vars
 - **Redirect URI שנוסף:** `https://www.daily-life-hacks.com/api/pinterest-demo-callback`
 - **Access level:** Trial (לא Standard עדיין — זאת מטרת הדמו)
 
@@ -63,7 +63,7 @@ public/
 
 ```
 1. כנס ל: https://www.daily-life-hacks.com/api/pinterest-demo
-2. הכנס סיסמה: testkey123
+2. הכנס סיסמה: (stored in Cloudflare env vars)
 3. לחץ "Connect Pinterest OAuth"
    → redirect ל-www.pinterest.com/oauth/
    → Pinterest מציג consent screen
@@ -72,7 +72,7 @@ public/
    → callback מחליף code ל-token (דרך sandbox)
    → token נשמר ב-cookie מוצפן HMAC
    → redirect חזרה ל-/api/pinterest-demo
-5. רואים: "OAuth OK (Production). User: DavidMiller615"
+5. רואים: "OAuth OK (Production)"
 6. בוחרים פין מה-dropdown
 7. לוחצים "Publish selected Pin"
    → POST /v5/pins לסנדבוקס (sandbox board נוצר אוטומטית אם אין)

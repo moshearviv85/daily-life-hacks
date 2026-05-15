@@ -333,7 +333,7 @@ export async function onRequestGet(context) {
   // ── 5b. Cloudflare Web Analytics (RUM / JS beacon) ───────────────────────
   // Matches the "Web Analytics" page in Cloudflare dashboard (real browser users, no bots).
   // Requires: CF_API_TOKEN with Account Analytics Read, plus site tag.
-  const siteTag = env.CF_SITE_TAG || "91c501fca325c556efd161e4f904d443";
+  const siteTag = env.CF_SITE_TAG || "";
   if (cfToken && siteTag) {
     try {
       // Discover account tag automatically from the zone (no extra env var needed)

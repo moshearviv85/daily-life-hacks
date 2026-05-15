@@ -137,10 +137,10 @@ Stage 1 + Stage 2 (מחקר נושאים) בנויים ורצים.
 ## Pinterest — Credentials & Auto-Poster
 
 - Standard Access approved 2026-04-03
-- App ID: `1554902` | App Secret: `f952dfd1d47d141bc6b170af57a54f212b5b524c`
+- App ID & Secret: stored in GitHub Secrets (`PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`)
 - Redirect URI: `https://www.daily-life-hacks.com/api/pinterest-demo-callback`
-- Demo app (לרענון token): `https://www.daily-life-hacks.com/api/pinterest-demo` | סיסמה: `testkey123`
-- ADS POWER: `http://local.adspower.net:50325` | Profile 77 = DLH Pinterest (DavidMiller615)
+- Demo app (לרענון token): `https://www.daily-life-hacks.com/api/pinterest-demo` | סיסמה: stored in Cloudflare env vars
+- ADS POWER: credentials stored locally, not in repo
 
 **בעיות ידועות:**
 - NULL scheduled_time = קופץ לראש התור תמיד → אם פין תקוע, לבדוק scheduled_time ב-D1

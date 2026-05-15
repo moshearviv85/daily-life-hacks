@@ -18,12 +18,12 @@
 - `functions/api/pins-mark-posted.js` — מסמן POSTED אחרי פרסום
 - `functions/api/pins-upload.js` — מקבל CSV → D1, מפעיל workflow אוטומטית
 - `functions/api/pins-status.js` — סטטיסטיקות לדשבורד
-- `functions/api/pinterest-demo-token.js` — מציג refresh_token (גישה: `?key=testkey123`)
+- `functions/api/pinterest-demo-token.js` — מציג refresh_token (גישה: `?key=<PINTEREST_DEMO_ACCESS_KEY>`)
 
 **GitHub Secrets (כבר מוגדרים):**
 | Secret | ערך |
 |--------|-----|
-| `PINTEREST_APP_ID` | `1554902` |
+| `PINTEREST_APP_ID` | (stored in GitHub Secrets) |
 | `PINTEREST_APP_SECRET` | מ-Pinterest developer portal |
 | `PINTEREST_REFRESH_TOKEN` | מתעדכן אוטומטית |
 | `PINS_API_KEY` | = ערך STATS_KEY |
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS pins_schedule (
 - Upload CSV (drag & drop + כפתור)
 - Upcoming — 10 הפינים הבאים
 - Recently Posted — 5 אחרונים
-- כפתור "Get Token" → `/api/pinterest-demo-token?key=testkey123`
+- כפתור "Get Token" → `/api/pinterest-demo-token?key=<PINTEREST_DEMO_ACCESS_KEY>`
 
 **הפעלה:** `loadPinsStatus()` נקראת בעת טעינת הדשבורד
 
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS pins_schedule (
 | URL | תיאור |
 |-----|--------|
 | `https://www.daily-life-hacks.com/dashboard` | דשבורד (סיסמת STATS_KEY) |
-| `https://www.daily-life-hacks.com/api/pinterest-demo-token?key=testkey123` | Token extractor |
+| `https://www.daily-life-hacks.com/api/pinterest-demo-token?key=<PINTEREST_DEMO_ACCESS_KEY>` | Token extractor |
 | `https://www.daily-life-hacks.com/api/pinterest-demo` | OAuth demo app |
 | `https://github.com/moshearviv85/daily-life-hacks/actions/workflows/post-pins.yml` | GitHub Actions — הפעלה ידנית |
 

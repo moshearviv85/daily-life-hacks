@@ -86,7 +86,7 @@ Replaced: hormone-balance article
 
 ## Pinterest Milestones
 
-- 2026-04-03: Pinterest Standard Access approved (App ID `1554902`)
+- 2026-04-03: Pinterest Standard Access approved
 - 2026-04-22: 152 pins in D1, 59 POSTED, 93 PENDING (3 boards active)
 
 ## Content Status Snapshot (as of 2026-04-22)

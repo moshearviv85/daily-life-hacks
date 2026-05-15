@@ -7,11 +7,11 @@
 const http = require('http');
 const https = require('https');
 
-const ADS_API            = 'http://local.adspower.net:50325';
-const ADS_KEY            = '9e8265a2a91e8b30658908cef8d51ce30079525b1c553f0b';
+const ADS_API            = process.env.ADS_API || 'http://local.adspower.net:50325';
+const ADS_KEY            = process.env.ADS_KEY || '';
 const ADS_PROFILE_SERIAL = '77';
-const N8N_URL            = 'http://localhost:5678';
-const N8N_CRED           = 'fzKNHehPNPMgZXIo';
+const N8N_URL            = process.env.N8N_URL || 'http://localhost:5678';
+const N8N_CRED           = process.env.N8N_CRED || '';
 
 function get(url, headers = {}) {
   return new Promise((resolve, reject) => {
@@ -73,7 +73,7 @@ async function getN8nOAuthUrl() {
   console.log('\n[2] Getting Pinterest OAuth URL from n8n...');
 
   const loginRes = await new Promise((resolve, reject) => {
-    const body = JSON.stringify({ emailOrLdapLoginId: 'admin@dlh.com', password: 'DLH@2026admin!' });
+    const body = JSON.stringify({ emailOrLdapLoginId: process.env.N8N_EMAIL || '', password: process.env.N8N_PASSWORD || '' });
     const req = http.request('http://localhost:5678/rest/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Content-Length': body.length }

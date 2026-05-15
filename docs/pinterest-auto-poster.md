@@ -129,9 +129,9 @@ on:
 ### Required GitHub Secrets
 | Secret name | Value |
 |-------------|-------|
-| `PINTEREST_APP_ID` | `1554902` |
-| `PINTEREST_APP_SECRET` | (from Pinterest developer portal) |
-| `PINTEREST_REFRESH_TOKEN` | (obtained once via OAuth flow — see below) |
+| `PINTEREST_APP_ID` | (stored in GitHub Secrets) |
+| `PINTEREST_APP_SECRET` | (stored in GitHub Secrets) |
+| `PINTEREST_REFRESH_TOKEN` | (stored in GitHub Secrets, obtained via OAuth flow) |
 
 ### Workflow steps
 1. Checkout repo
@@ -147,11 +147,11 @@ on:
 The refresh token must be obtained once manually via the OAuth demo app already deployed at:
 ```
 https://www.daily-life-hacks.com/api/pinterest-demo
-Password: testkey123
+Password: (stored in Cloudflare env var PINTEREST_DEMO_ACCESS_KEY)
 ```
 
 **Steps:**
-1. Open the demo app in AdsPower (Profile 77 — DavidMiller615, US proxy)
+1. Open the demo app in AdsPower (Pinterest profile, US proxy)
 2. Complete OAuth flow → "Connect Pinterest OAuth"
 3. Add a `/api/pinterest-demo-token` endpoint to the demo app that displays the current `refresh_token` from the cookie
 4. Copy the refresh token → save as GitHub Secret `PINTEREST_REFRESH_TOKEN`
@@ -177,10 +177,10 @@ The OAuth demo app lives in `functions/api/`:
 
 | Name | Value |
 |------|-------|
-| `PINTEREST_APP_ID` | `1554902` |
-| `PINTEREST_APP_SECRET` | (secret) |
-| `PINTEREST_DEMO_COOKIE_SECRET` | (secret) |
-| `PINTEREST_DEMO_ACCESS_KEY` | `testkey123` |
+| `PINTEREST_APP_ID` | (stored in Cloudflare env vars) |
+| `PINTEREST_APP_SECRET` | (stored in Cloudflare env vars) |
+| `PINTEREST_DEMO_COOKIE_SECRET` | (stored in Cloudflare env vars) |
+| `PINTEREST_DEMO_ACCESS_KEY` | (stored in Cloudflare env vars) |
 
 ---
 
@@ -209,5 +209,5 @@ The OAuth demo app lives in `functions/api/`:
 1. Add 2-3 rows to `pins-schedule.csv` with `scheduled_date = today`
 2. Set GitHub Secrets
 3. Trigger workflow manually (`workflow_dispatch`)
-4. Verify pins appear on Pinterest board (DavidMiller615 account)
+4. Verify pins appear on Pinterest board
 5. Verify CSV updated with `POSTED` status + pin_id

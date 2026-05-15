@@ -6,13 +6,13 @@
 
 const http = require('http');
 
-const ADS_API            = 'http://local.adspower.net:50325';
-const ADS_KEY            = '9e8265a2a91e8b30658908cef8d51ce30079525b1c553f0b';
+const ADS_API            = process.env.ADS_API || 'http://local.adspower.net:50325';
+const ADS_KEY            = process.env.ADS_KEY || '';
 const ADS_PROFILE_SERIAL = '77';
-const N8N_URL            = 'http://localhost:5678';
-const N8N_EMAIL          = 'admin@dlh.com';
-const N8N_PASSWORD       = 'DLH@2026admin!';
-const WORKFLOW_ID        = 'kSs8FdWFyZGU46Vg';
+const N8N_URL            = process.env.N8N_URL || 'http://localhost:5678';
+const N8N_EMAIL          = process.env.N8N_EMAIL || '';
+const N8N_PASSWORD       = process.env.N8N_PASSWORD || '';
+const WORKFLOW_ID        = process.env.N8N_WORKFLOW_ID || '';
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 

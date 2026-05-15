@@ -71,16 +71,16 @@ public/images/pins/
 
 | שם | ערך |
 |----|-----|
-| `PINTEREST_APP_ID` | `1554902` |
-| `PINTEREST_APP_SECRET` | (secret) |
-| `PINTEREST_DEMO_COOKIE_SECRET` | (secret) |
-| `PINTEREST_DEMO_ACCESS_KEY` | `testkey123` |
+| `PINTEREST_APP_ID` | (stored in Cloudflare env vars) |
+| `PINTEREST_APP_SECRET` | (stored in Cloudflare env vars) |
+| `PINTEREST_DEMO_COOKIE_SECRET` | (stored in Cloudflare env vars) |
+| `PINTEREST_DEMO_ACCESS_KEY` | (stored in Cloudflare env vars) |
 
 ---
 
 ## Pinterest App Settings
 
-- **App ID:** `1554902`
+- **App ID:** stored in Cloudflare env vars
 - **Redirect URI:** `https://www.daily-life-hacks.com/api/pinterest-demo-callback`
 - **Scopes:** `user_accounts:read boards:read boards:write pins:read pins:write`
 - **Access level:** Standard ✓ (אושר 2026-04-03)
@@ -89,9 +89,9 @@ public/images/pins/
 
 ## AdsPower
 
-- **API:** `http://local.adspower.net:50325`
-- **API Key:** `9e8265a2a91e8b30658908cef8d51ce30079525b1c553f0b`
-- **Profile 77:** DLH Pinterest (DavidMiller615), US proxy, fingerprint
+- **API:** local AdsPower instance
+- **API Key:** stored locally, not in repo
+- **Profile 77:** DLH Pinterest account, US proxy
 
 ---
 
@@ -99,10 +99,10 @@ public/images/pins/
 
 ```
 1. https://www.daily-life-hacks.com/api/pinterest-demo
-2. סיסמה: testkey123
+2. סיסמה: (stored in Cloudflare env vars)
 3. לחץ "Connect Pinterest OAuth"
 4. Pinterest consent screen → לחץ "Allow access"
-5. חזרה לדף: "OAuth OK. User: DavidMiller615"
+5. חזרה לדף: "OAuth OK"
 6. בחר פין מ-dropdown
 7. לחץ "Publish selected Pin"
 8. מחזיר: Pin ID + Board ID מ-sandbox
@@ -176,11 +176,12 @@ https://www.daily-life-hacks.com/api/pinterest-demo-test
 
 # Demo page
 https://www.daily-life-hacks.com/api/pinterest-demo
-# סיסמה: testkey123
+# סיסמה: stored in Cloudflare env vars
 
 # Trigger Cloudflare redeploy (אחרי שינוי env var)
-curl -X POST "https://api.cloudflare.com/client/v4/accounts/91c501fca325c556efd161e4f904d443/pages/projects/daily-life-hacks/deployments" \
-  -H "Authorization: Bearer RKs5LtHcsxPFDPLqQNxUAfGSGFjbpiwdQsjA3Avh"
+# Use: CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN from env vars
+# curl -X POST "https://api.cloudflare.com/client/v4/accounts/$CF_ACCOUNT_ID/pages/projects/daily-life-hacks/deployments" \
+#   -H "Authorization: Bearer $CF_API_TOKEN"
 ```
 
 ---

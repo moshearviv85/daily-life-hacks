@@ -9,6 +9,7 @@ import { dirname, join } from "path";
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const libPath = pathToFileURL(join(__dir, "../functions/api/pinterest-demo-lib.js")).href;
+const TEST_APP_ID = process.env.PINTEREST_APP_ID || "test-app-id";
 
 // ── import lib ──────────────────────────────────────────────────────────────
 const {
@@ -70,7 +71,7 @@ console.log("\nT3: OAuth URL shape");
 const REDIRECT_URI = "https://www.daily-life-hacks.com/api/pinterest-demo-callback";
 const scopes = pinterestScopes();
 const oauthUrl = buildOauthAuthorizeUrl({
-  clientId: "1554902",
+  clientId: TEST_APP_ID,
   redirectUri: REDIRECT_URI,
   scope: scopes,
   state: "teststate123",
@@ -79,7 +80,7 @@ const parsed = new URL(oauthUrl);
 assert(parsed.hostname === "www.pinterest.com", "hostname = www.pinterest.com");
 assert(parsed.pathname === "/oauth/", "pathname = /oauth/");
 assert(parsed.searchParams.get("response_type") === "code", "response_type = code");
-assert(parsed.searchParams.get("client_id") === "1554902", "client_id = 1554902");
+assert(parsed.searchParams.get("client_id") === TEST_APP_ID, "client_id matches");
 assert(parsed.searchParams.get("redirect_uri") === REDIRECT_URI, "redirect_uri correct");
 assert(parsed.searchParams.get("state") === "teststate123", "state passed");
 
