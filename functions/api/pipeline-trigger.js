@@ -16,7 +16,7 @@ function json(data, status = 200) {
 const WORKFLOWS = {
   discover: "pipeline-discover.yml",
   produce: "pipeline-produce.yml",
-  publish: "pipeline-publish.yml",
+  publish: "publish-articles.yml",
 };
 
 export async function onRequestPost(context) {
