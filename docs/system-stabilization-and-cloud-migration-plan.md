@@ -1,6 +1,6 @@
 # Daily Life Hacks: System Stabilization and Cloud Migration Plan
 
-Status: Draft v0.2  
+Status: Draft v0.3  
 Date: 2026-05-16  
 Scope: mapping, stabilization, and migration planning. No cleanup or deletion is implied by this document.
 
@@ -514,17 +514,19 @@ Output:
 
 ### Phase 5: Staging Plan
 
-Design a staging environment:
+Implement a staging environment:
 
-- `staging` branch or equivalent.
-- Cloudflare Pages preview/staging deployment.
-- Optional staging D1 database.
-- GitHub Action behavior for staging.
-- Manual promotion to production.
+- `main` remains production.
+- `staging` becomes the live testing branch.
+- GitHub Actions deploys both `main` and `staging` through the same Cloudflare Pages project.
+- The Cloudflare Pages deploy command passes the active Git branch to Wrangler, so `main` deploys production and `staging` deploys a preview/staging branch.
+- Optional staging D1 database is deferred until the runtime data model is mapped; for now, staging is a site/build/router validation environment.
+- Manual promotion to production means merging or copying approved changes from `staging` into `main`.
 
 Output:
 
 - Safe live testing path before production.
+- Stable staging branch URL from Cloudflare Pages after first `staging` deployment.
 
 ### Phase 6: Cloud Migration Plan
 
