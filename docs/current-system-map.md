@@ -31,8 +31,8 @@ Production promotion workflow:
 - File: `.github/workflows/promote-staging.yml`
 - Trigger: manual dispatch only.
 - Confirmation required: `PROMOTE`.
-- Behavior: fast-forwards `main` to `staging`.
-- Safety: fails instead of merging if `main` cannot be fast-forwarded cleanly to `staging`.
+- Behavior: checks out `staging`, runs `npm ci` and `npm run build:checked`, then fast-forwards `main` to `staging`.
+- Safety: fails before production if the staging build/routing check fails, or if `main` cannot be fast-forwarded cleanly to `staging`.
 
 ## Staging Surface
 
