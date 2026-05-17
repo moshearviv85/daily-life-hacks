@@ -18,7 +18,7 @@ export async function onRequestPost(context) {
   const url = new URL(request.url);
   const reqKey = url.searchParams.get("key") ||
     request.headers.get("x-api-key") || "";
-  if (key && reqKey !== key) {
+  if (!key || reqKey !== key) {
     return json({ error: "Unauthorized" }, 401);
   }
 

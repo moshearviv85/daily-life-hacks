@@ -288,6 +288,7 @@ Important observation:
 - `produce` dispatches from `main`, but generated files are pushed to `staging` by the workflow.
 - `publish` is still the legacy production publisher and can write to `main`.
 - The dashboard now labels these effects and asks for confirmation before triggering pipeline actions.
+- STATS_KEY-protected API routes now fail closed. If `STATS_KEY` is missing at runtime, state-changing and protected endpoints return unauthorized instead of allowing access.
 
 ## New AI Pipeline
 
@@ -356,5 +357,6 @@ Recommended order:
 1. Keep `pipeline-daily.yml` manual-only.
 2. Keep Pinterest auto-poster running because it is working and has valid pending rows.
 3. Keep `publish-articles.yml` as-is for now because there is only one pending legacy article and it is part of the older working flow.
-4. Build the manual review path for generated articles and pins on `staging`.
-5. Only then move D1 staging or split production/staging DB bindings.
+4. For new content, run `Pipeline Produce` manually with `count=1`, review the generated commit on `staging`, then promote with `PROMOTE` only after QA.
+5. Build the manual review path for generated articles and pins on `staging`.
+6. Only then move D1 staging or split production/staging DB bindings.

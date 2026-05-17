@@ -8,7 +8,7 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const reqKey = url.searchParams.get("key") || request.headers.get("x-api-key") || "";
 
-  if (env.STATS_KEY && reqKey !== env.STATS_KEY) {
+  if (!env.STATS_KEY || reqKey !== env.STATS_KEY) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
   if (!env.DB) {

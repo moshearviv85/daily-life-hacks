@@ -7,7 +7,7 @@ export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const reqKey = url.searchParams.get('key') || request.headers.get('x-api-key') || '';
-  if (env.STATS_KEY && reqKey !== env.STATS_KEY) {
+  if (!env.STATS_KEY || reqKey !== env.STATS_KEY) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
   if (!env.DB) return Response.json({ error: 'DB not bound' }, { status: 500 });
