@@ -41,6 +41,18 @@ function loadSitemapExclusions() {
     addPath(aliasSlug);
   }
 
+  // Exclude utility pages that should not compete with article content in Search.
+  for (const path of [
+    '/dashboard',
+    '/thank-you',
+    '/contact',
+    '/privacy',
+    '/terms',
+    '/disclaimer',
+  ]) {
+    addPath(path);
+  }
+
   // Exclude unreleased articles
   for (const file of readdirSync(articlesDir)) {
     if (!file.endsWith('.md')) continue;
@@ -60,6 +72,7 @@ function shouldExcludeFromSitemap(url) {
   try {
     const pathname = new URL(url).pathname;
     const normalized = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+    if (normalized === '/tag' || normalized.startsWith('/tag/')) return true;
     return excludedSitemapPaths.has(normalized);
   } catch {
     return false;
