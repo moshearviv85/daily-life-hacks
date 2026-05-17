@@ -66,6 +66,7 @@ jobs:
           echo "$TOPICS" | python -c "
           import json, sys, subprocess
           topics = json.load(sys.stdin)
+          failed = []
           for t in topics:
               print(f'=== Producing: {t[\"topic\"]} ({t[\"category\"]}) ===')
               result = subprocess.run([
@@ -75,7 +76,13 @@ jobs:
                   '--category', t['category']
               ], capture_output=False)
               if result.returncode != 0:
-                  print(f'WARNING: Pipeline failed for {t[\"topic\"]}')
+                  print(f'ERROR: Pipeline failed for {t[\"topic\"]}', file=sys.stderr)
+                  failed.append(t['topic'])
+          if failed:
+              print('Failed topics:', file=sys.stderr)
+              for topic in failed:
+                  print(f'  - {topic}', file=sys.stderr)
+              sys.exit(1)
           "
 
       - name: Mark topics as produced

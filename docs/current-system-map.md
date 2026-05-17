@@ -17,7 +17,7 @@ Production site:
 - Stack: Astro 5 + Tailwind CSS v4
 - Hosting: Cloudflare Pages
 - Production branch: `main`
-- Current production deploy source checked during setup: `256672a`
+- Current production deploy source checked during setup: `76ba00c`
 
 Production deploy workflow:
 
@@ -40,7 +40,7 @@ Staging branch:
 
 - Branch: `staging`
 - Cloudflare environment: Preview
-- Current staging URL: `https://a4dcbd8e.daily-life-hacks.pages.dev`
+- Current staging URL: `https://77f0167e.daily-life-hacks.pages.dev`
 - Current staging purpose: site, build, router, and content validation
 
 Important limitation:
@@ -227,6 +227,7 @@ Role:
 - Produces articles and images.
 - Syncs pipeline status to D1.
 - Commits generated files to `staging`.
+- Fails the workflow if any selected topic fails generation, so failed topics are not marked `produced`.
 
 Risk:
 
@@ -251,6 +252,7 @@ Role:
 - Pulls up to 2 approved topics from D1.
 - Runs the new pipeline.
 - Commits generated files to `staging`.
+- Fails the workflow if any selected topic fails generation, so failed topics are not marked `produced`.
 
 Risk:
 
@@ -325,6 +327,7 @@ Important classification:
 
 - Do not delete or archive this directory.
 - It is the current intended pipeline, even if parts still need hardening.
+- `generate_pinterest_csv.py` writes native `/api/pins-upload` rows with explicit `row_id`, `image_url`, and `link` values based on `pin_slug`, instead of relying on the legacy `{article_slug}_vN` fallback.
 
 ## Current Operational Risks
 

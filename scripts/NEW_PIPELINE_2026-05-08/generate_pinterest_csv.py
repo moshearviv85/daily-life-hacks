@@ -1,11 +1,12 @@
-"""Generate a pins CSV for upload via /api/pins-upload (Agent 6 format).
+"""Generate a pins CSV for upload via /api/pins-upload (native format).
 
 Reads all OK pins from topic-research.sqlite, deduplicates against D1
 pins_schedule, verifies images exist on the live site, deploys any
 uncommitted images, and writes a CSV to pipeline-data/.
 
-The endpoint handles scheduling (6-8/day, append after last PENDING),
-board ID mapping, and image/destination URL derivation from slug+variant.
+The endpoint handles scheduling (6-8/day, append after last PENDING).
+This script sends explicit row_id, image_url, and link values because the
+new pipeline uses pin slugs, not article_slug_vN filenames.
 
 CLI:
     python scripts/generate_pinterest_csv.py
@@ -37,7 +38,26 @@ OUTPUT_PREFIX = "pinterest-bulk-upload"
 SITE_BASE = "https://www.daily-life-hacks.com"
 D1_DB_NAME = "dlh-subscriptions"
 
-PIN_CSV_COLUMNS = ["slug", "variant", "pin_title", "description", "alt_text", "board", "destination_url"]
+PIN_CSV_COLUMNS = [
+    "row_id",
+    "pin_title",
+    "pin_description",
+    "alt_text",
+    "image_url",
+    "board_id",
+    "link",
+    "scheduled_date",
+    "status",
+    "pin_id",
+    "published_date",
+    "pinterest_response",
+]
+
+BOARD_NAME_TO_ID = {
+    "high-fiber-recipes": "1124140825679184032",
+    "gut-health-nutrition-tips": "1124140825679184034",
+    "Healthy Meal Prep & Kitchen Tips": "1124140825679184036",
+}
 
 ROUTER_MAPPING_PATH = REPO_ROOT / "pipeline-data" / "router-mapping.json"
 
@@ -86,7 +106,7 @@ def load_pins_from_sqlite(db_path: Path, *, limit: int | None = None) -> list[di
         return [dict(r) for r in rows if r["article_slug"] in slugs]
     rows = conn.execute(
         """
-        SELECT pb.article_slug, pb.pin_index, pb.title, pb.description,
+        SELECT pb.article_slug, pb.pin_index, pb.pin_slug, pb.title, pb.description,
                pb.alt, wo.category
         FROM pin_briefs pb
         JOIN write_outputs wo ON pb.article_slug = wo.slug
@@ -140,10 +160,17 @@ def local_image_path(pin_slug: str) -> Path:
     return REPO_ROOT / "public" / "images" / "pins" / f"{pin_slug}.jpg"
 
 
+def pin_slug_for(pin: dict) -> str:
+    pin_slug = (pin.get("pin_slug") or "").strip()
+    if pin_slug:
+        return pin_slug
+    return f"{pin['article_slug']}_v{int(pin['pin_index']) + 1}"
+
+
 def deploy_pin_images(pins: list[dict]) -> bool:
     to_add = []
     for pin in pins:
-        img = local_image_path(pin["pin_slug"])
+        img = local_image_path(pin_slug_for(pin))
         if img.exists():
             rel = img.relative_to(REPO_ROOT)
             to_add.append(str(rel).replace("\\", "/"))
@@ -196,7 +223,7 @@ def generate_csv(
     rows = []
     for pin in pins:
         slug = pin["article_slug"]
-        ps = pin["pin_slug"]
+        ps = pin_slug_for(pin)
         row_id = make_row_id(ps)
 
         if row_id in d1_existing:
@@ -210,23 +237,29 @@ def generate_csv(
             continue
 
         category = pin["category"]
-        board = CATEGORY_TO_BOARD.get(category)
-        if not board:
+        board_name = CATEGORY_TO_BOARD.get(category)
+        board_id = BOARD_NAME_TO_ID.get(board_name or "")
+        if not board_id:
             print(f"SKIP (unknown category {category!r}): {row_id}", file=sys.stderr)
             continue
 
         dest_url = _variant_destination_url(slug, ps, router_mapping or {})
         rows.append({
-            "slug": slug,
-            "variant": str(idx + 1),
+            "row_id": row_id,
             "pin_title": pin["title"],
-            "description": pin["description"],
+            "pin_description": pin["description"],
             "alt_text": pin.get("alt") or "",
-            "board": board,
-            "destination_url": dest_url,
+            "image_url": img_url,
+            "board_id": board_id,
+            "link": dest_url,
+            "scheduled_date": "",
+            "status": "PENDING",
+            "pin_id": "",
+            "published_date": "",
+            "pinterest_response": "",
         })
         stats["written"] += 1
-        stats["boards"][board] = stats["boards"].get(board, 0) + 1
+        stats["boards"][board_name] = stats["boards"].get(board_name, 0) + 1
 
     return rows, stats
 
@@ -275,7 +308,7 @@ def main() -> None:
 
     new_pins = [
         p for p in pins
-        if make_row_id(p["article_slug"], p["pin_index"]) not in d1_existing
+        if make_row_id(pin_slug_for(p)) not in d1_existing
     ]
     if new_pins and not args.dry_run:
         print(f"Checking deploy for {len(new_pins)} new pin images...", file=sys.stderr)
