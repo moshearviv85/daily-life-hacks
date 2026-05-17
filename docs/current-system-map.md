@@ -234,8 +234,8 @@ File:
 
 Schedule:
 
-- Daily at 05:00 UTC.
-- Manual dispatch supported.
+- Manual dispatch only as of 2026-05-17.
+- The previous daily schedule at 05:00 UTC was removed during stabilization.
 
 Role:
 
@@ -246,8 +246,8 @@ Role:
 Risk:
 
 - Very high.
-- This is a scheduled AI production pipeline that can push new articles/images to production.
-- Recommended next stabilization: pause or gate this workflow until manual approval/staging flow is implemented.
+- This AI production pipeline can push new articles/images to production.
+- It is intentionally not scheduled while manual approval and staging flow are being implemented.
 
 ## Cloudflare Functions
 
@@ -315,7 +315,7 @@ Important classification:
 
 ## Current Operational Risks
 
-1. `pipeline-daily.yml` can generate and push new content directly to `main` on a schedule.
+1. `pipeline-daily.yml` can generate and push new content directly to `main` when manually triggered.
 2. `pipeline-produce.yml` can generate and push new content directly to `main` when manually triggered.
 3. `pipeline-trigger.js` always dispatches workflows on `main`, including from any dashboard context.
 4. Staging currently validates the site build, but not isolated D1/runtime behavior.
@@ -337,9 +337,8 @@ Practical options:
 
 Recommended order:
 
-1. Disable or gate `pipeline-daily.yml` scheduled production generation.
+1. Keep `pipeline-daily.yml` manual-only until staging/manual approval exists.
 2. Keep Pinterest auto-poster running because it is working and has valid pending rows.
 3. Keep `publish-articles.yml` as-is for now because there is only one pending legacy article and it is part of the older working flow.
 4. Build the manual approval path for generated articles and pins.
 5. Only then move D1 staging or split production/staging DB bindings.
-

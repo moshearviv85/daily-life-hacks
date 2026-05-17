@@ -1,9 +1,9 @@
 name: Pipeline Daily
 
 on:
-  schedule:
-    - cron: '0 5 * * *'  # 05:00 UTC (08:00 Israel) daily
-  workflow_dispatch:      # manual trigger too
+  # Manual only while the AI pipeline is being stabilized.
+  # This workflow can generate articles/images and push directly to main.
+  workflow_dispatch:
 
 env:
   PYTHONUNBUFFERED: "1"
