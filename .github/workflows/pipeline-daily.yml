@@ -2,11 +2,12 @@ name: Pipeline Daily
 
 on:
   # Manual only while the AI pipeline is being stabilized.
-  # This workflow can generate articles/images and push directly to main.
+  # This workflow can generate articles/images; generated files go to staging first.
   workflow_dispatch:
 
 env:
   PYTHONUNBUFFERED: "1"
+  PIPELINE_TARGET_BRANCH: "staging"
 
 jobs:
   daily-produce:
@@ -36,9 +37,9 @@ jobs:
           topics = data.get('topics', [])
           selected = topics[:2]
           if not selected:
-              print('No approved topics found — skipping production', file=sys.stderr)
+              print('No approved topics found — skipping staging production', file=sys.stderr)
               sys.exit(0)
-          print(f'Selected {len(selected)} topics for daily production:', file=sys.stderr)
+          print(f'Selected {len(selected)} topics for daily staging production:', file=sys.stderr)
           for t in selected:
               print(f'  - [{t[\"category\"]}] {t[\"topic\"]}', file=sys.stderr)
           with open('pipeline-data/selected-topics.json', 'w') as f:
@@ -109,5 +110,5 @@ jobs:
             git commit -m "feat(pipeline): daily article production
 
           Co-Authored-By: GitHub Actions <github-actions[bot]@users.noreply.github.com>"
-            git push https://x-access-token:${GH_PAT}@github.com/moshearviv85/daily-life-hacks.git HEAD:main
+            git push https://x-access-token:${GH_PAT}@github.com/moshearviv85/daily-life-hacks.git HEAD:${PIPELINE_TARGET_BRANCH}
           fi

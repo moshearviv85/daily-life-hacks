@@ -218,13 +218,14 @@ Role:
 - Pulls approved topics from D1.
 - Produces articles and images.
 - Syncs pipeline status to D1.
-- Commits generated files to `main`.
+- Commits generated files to `staging`.
 
 Risk:
 
 - High.
-- It can generate files and push directly to production.
-- It should be routed through staging/manual approval before becoming routine.
+- It can generate files and update production D1 pipeline status.
+- It no longer pushes generated files directly to production.
+- A separate manual promotion step from `staging` to `main` is still needed.
 
 ### Pipeline Daily
 
@@ -241,13 +242,14 @@ Role:
 
 - Pulls up to 2 approved topics from D1.
 - Runs the new pipeline.
-- Commits generated files to `main`.
+- Commits generated files to `staging`.
 
 Risk:
 
 - Very high.
-- This AI production pipeline can push new articles/images to production.
-- It is intentionally not scheduled while manual approval and staging flow are being implemented.
+- This AI production pipeline can still update production D1 pipeline status.
+- It is intentionally not scheduled.
+- Generated files go to staging first while manual approval and promotion flow are being implemented.
 
 ## Cloudflare Functions
 
@@ -315,8 +317,8 @@ Important classification:
 
 ## Current Operational Risks
 
-1. `pipeline-daily.yml` can generate and push new content directly to `main` when manually triggered.
-2. `pipeline-produce.yml` can generate and push new content directly to `main` when manually triggered.
+1. `pipeline-daily.yml` can generate content and update production D1 state when manually triggered.
+2. `pipeline-produce.yml` can generate content and update production D1 state when manually triggered.
 3. `pipeline-trigger.js` always dispatches workflows on `main`, including from any dashboard context.
 4. Staging currently validates the site build, but not isolated D1/runtime behavior.
 5. There are many dirty/untracked/deleted files in the local working tree that should not be mixed into stabilization commits.
@@ -330,14 +332,14 @@ Immediate next step:
 
 Practical options:
 
-1. Pause `pipeline-daily.yml` schedule and keep manual dispatch only.
-2. Change AI production workflows to push to `staging` first.
+1. Keep `pipeline-daily.yml` manual only.
+2. Keep AI production workflows pushing generated files to `staging` first.
 3. Add a required manual promotion step from `staging` to `main`.
 4. Make dashboard pipeline actions environment-aware so staging cannot accidentally dispatch production work.
 
 Recommended order:
 
-1. Keep `pipeline-daily.yml` manual-only until staging/manual approval exists.
+1. Keep `pipeline-daily.yml` manual-only.
 2. Keep Pinterest auto-poster running because it is working and has valid pending rows.
 3. Keep `publish-articles.yml` as-is for now because there is only one pending legacy article and it is part of the older working flow.
 4. Build the manual approval path for generated articles and pins.

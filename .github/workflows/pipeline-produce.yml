@@ -14,6 +14,7 @@ on:
 
 env:
   PYTHONUNBUFFERED: "1"
+  PIPELINE_TARGET_BRANCH: "staging"
 
 jobs:
   produce:
@@ -46,7 +47,7 @@ jobs:
           if cat_filter:
               topics = [t for t in topics if t['category'] == cat_filter]
           selected = topics[:count]
-          print(f'Selected {len(selected)} topics for production:', file=sys.stderr)
+          print(f'Selected {len(selected)} topics for staging production:', file=sys.stderr)
           for t in selected:
               print(f'  - [{t[\"category\"]}] {t[\"topic\"]}', file=sys.stderr)
           with open('pipeline-data/selected-topics.json', 'w') as f:
@@ -107,5 +108,5 @@ jobs:
             git commit -m "feat(pipeline): produce articles via GH Actions
 
           Co-Authored-By: GitHub Actions <github-actions[bot]@users.noreply.github.com>"
-            git push https://x-access-token:${GH_PAT}@github.com/moshearviv85/daily-life-hacks.git HEAD:main
+            git push https://x-access-token:${GH_PAT}@github.com/moshearviv85/daily-life-hacks.git HEAD:${PIPELINE_TARGET_BRANCH}
           fi
