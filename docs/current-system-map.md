@@ -26,13 +26,21 @@ Production deploy workflow:
 - Build command: `npm run build`
 - Deploy command: `pages deploy dist --project-name=daily-life-hacks --branch=${{ github.ref_name }}`
 
+Production promotion workflow:
+
+- File: `.github/workflows/promote-staging.yml`
+- Trigger: manual dispatch only.
+- Confirmation required: `PROMOTE`.
+- Behavior: fast-forwards `main` to `staging`.
+- Safety: fails instead of merging if `main` cannot be fast-forwarded cleanly to `staging`.
+
 ## Staging Surface
 
 Staging branch:
 
 - Branch: `staging`
 - Cloudflare environment: Preview
-- Current staging URL: `https://74d6a1d9.daily-life-hacks.pages.dev`
+- Current staging URL: `https://a4dcbd8e.daily-life-hacks.pages.dev`
 - Current staging purpose: site, build, router, and content validation
 
 Important limitation:
@@ -328,13 +336,13 @@ Important classification:
 
 Immediate next step:
 
-- Add a production safety gate around AI content generation workflows.
+- Build dashboard/API awareness around staging and promotion.
 
 Practical options:
 
 1. Keep `pipeline-daily.yml` manual only.
 2. Keep AI production workflows pushing generated files to `staging` first.
-3. Add a required manual promotion step from `staging` to `main`.
+3. Use `.github/workflows/promote-staging.yml` for manual promotion from `staging` to `main`.
 4. Make dashboard pipeline actions environment-aware so staging cannot accidentally dispatch production work.
 
 Recommended order:
@@ -342,5 +350,5 @@ Recommended order:
 1. Keep `pipeline-daily.yml` manual-only.
 2. Keep Pinterest auto-poster running because it is working and has valid pending rows.
 3. Keep `publish-articles.yml` as-is for now because there is only one pending legacy article and it is part of the older working flow.
-4. Build the manual approval path for generated articles and pins.
+4. Build the manual review path for generated articles and pins on `staging`.
 5. Only then move D1 staging or split production/staging DB bindings.
