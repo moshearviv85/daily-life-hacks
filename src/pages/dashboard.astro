@@ -465,9 +465,12 @@ const BUILD = {
             <option value="5">5 articles</option>
             <option value="10">10 articles</option>
           </select>
-          <button class="btn btn-sm" onclick="triggerPipeline('produce')" id="btn-produce">Generate Articles</button>
-          <button class="btn btn-sm" onclick="triggerPipeline('publish')" id="btn-publish">Publish Ready</button>
+          <button class="btn btn-sm" onclick="triggerPipeline('produce')" id="btn-produce">Generate to Staging</button>
+          <button class="btn btn-sm" onclick="triggerPipeline('publish')" id="btn-publish">Legacy Publish to Main</button>
         </div>
+      </div>
+      <div style="padding:.55rem .75rem;border-radius:6px;background:#f8fafc;border:1px solid var(--border);font-size:.78rem;color:var(--muted);margin-bottom:.75rem">
+        Generated article files go to <strong style="color:var(--text-color)">staging</strong> first. Legacy publishing still writes to <strong style="color:var(--text-color)">main</strong>.
       </div>
 
       <!-- Pipeline stat cards -->
@@ -2905,6 +2908,20 @@ function filterPipeline(filter, btn) {
 
 async function triggerPipeline(action) {
   const statusEl = document.getElementById('pipeline-trigger-status');
+  if (action === 'produce') {
+    const count = parseInt(document.getElementById('produce-count').value);
+    const ok = confirm(`Generate ${count} article(s) now?\n\nGenerated files will be pushed to staging first. This still uses production D1 topics and AI provider credits.`);
+    if (!ok) return;
+  }
+  if (action === 'publish') {
+    const ok = confirm('Run the legacy publisher now?\n\nThis can publish ready legacy articles directly to main / production.');
+    if (!ok) return;
+  }
+  if (action === 'discover') {
+    const ok = confirm('Find topics now?\n\nThis writes approved topic candidates into production D1.');
+    if (!ok) return;
+  }
+
   statusEl.style.display = '';
   statusEl.style.background = '#fff7ed';
   statusEl.style.borderColor = '#fed7aa';
@@ -2927,7 +2944,7 @@ async function triggerPipeline(action) {
       statusEl.style.background = '#f0fdf4';
       statusEl.style.borderColor = '#bbf7d0';
       statusEl.style.color = '#166534';
-      statusEl.textContent = `${action} workflow dispatched successfully`;
+      statusEl.textContent = `${action} workflow dispatched successfully. Output: ${data.outputBranch || 'unknown'}. ${data.effect || ''}`;
       setTimeout(() => statusEl.style.display = 'none', 5000);
     } else {
       statusEl.style.background = '#fef2f2';

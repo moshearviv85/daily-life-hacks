@@ -4,6 +4,10 @@
  * Protected by DASHBOARD_PASSWORD.
  *
  * Body: { action: "discover" | "produce" | "publish", count?: number, category?: string }
+ *
+ * Note: workflows are dispatched from the default production branch so GitHub can
+ * find the workflow files. Content-generation workflows push their generated
+ * files to staging from inside the workflow.
  */
 
 function json(data, status = 200) {
@@ -13,10 +17,25 @@ function json(data, status = 200) {
   });
 }
 
-const WORKFLOWS = {
-  discover: "pipeline-discover.yml",
-  produce: "pipeline-produce.yml",
-  publish: "publish-articles.yml",
+const ACTIONS = {
+  discover: {
+    workflow: "pipeline-discover.yml",
+    dispatchRef: "main",
+    outputBranch: "production-d1",
+    effect: "Adds approved topics to production D1.",
+  },
+  produce: {
+    workflow: "pipeline-produce.yml",
+    dispatchRef: "main",
+    outputBranch: "staging",
+    effect: "Generates files into staging; may update production D1 pipeline status.",
+  },
+  publish: {
+    workflow: "publish-articles.yml",
+    dispatchRef: "main",
+    outputBranch: "main",
+    effect: "Legacy publisher writes ready articles to production.",
+  },
 };
 
 export async function onRequestPost(context) {
@@ -32,8 +51,8 @@ export async function onRequestPost(context) {
 
   const body = await request.json().catch(() => ({}));
   const action = body.action;
-  const workflow = WORKFLOWS[action];
-  if (!workflow) {
+  const actionConfig = ACTIONS[action];
+  if (!actionConfig) {
     return json({ error: `Unknown action: ${action}. Use: discover, produce, publish` }, 400);
   }
 
@@ -43,7 +62,7 @@ export async function onRequestPost(context) {
 
   try {
     const ghRes = await fetch(
-      `https://api.github.com/repos/moshearviv85/daily-life-hacks/actions/workflows/${workflow}/dispatches`,
+      `https://api.github.com/repos/moshearviv85/daily-life-hacks/actions/workflows/${actionConfig.workflow}/dispatches`,
       {
         method: "POST",
         headers: {
@@ -53,12 +72,20 @@ export async function onRequestPost(context) {
           "Content-Type": "application/json",
           "User-Agent": "daily-life-hacks-cloudflare",
         },
-        body: JSON.stringify({ ref: "main", inputs }),
+        body: JSON.stringify({ ref: actionConfig.dispatchRef, inputs }),
       }
     );
 
     if (ghRes.ok || ghRes.status === 204) {
-      return json({ ok: true, message: `${action} workflow dispatched`, workflow });
+      return json({
+        ok: true,
+        message: `${action} workflow dispatched`,
+        action,
+        workflow: actionConfig.workflow,
+        dispatchRef: actionConfig.dispatchRef,
+        outputBranch: actionConfig.outputBranch,
+        effect: actionConfig.effect,
+      });
     }
     const ghBody = await ghRes.text();
     return json({ ok: false, gh_status: ghRes.status, gh_body: ghBody }, 400);

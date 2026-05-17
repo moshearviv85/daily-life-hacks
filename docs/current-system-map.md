@@ -281,8 +281,11 @@ Routing and analytics:
 Important observation:
 
 - `functions/api/pipeline-trigger.js` dispatches GitHub Actions with `ref: "main"`.
-- That is correct for production dashboard behavior.
-- It is not safe for staging experiments until the endpoint becomes branch/environment-aware.
+- That is intentional so GitHub can read the workflow files from the default branch.
+- The endpoint now returns each action's `outputBranch` and effect.
+- `produce` dispatches from `main`, but generated files are pushed to `staging` by the workflow.
+- `publish` is still the legacy production publisher and can write to `main`.
+- The dashboard now labels these effects and asks for confirmation before triggering pipeline actions.
 
 ## New AI Pipeline
 
@@ -336,14 +339,14 @@ Important classification:
 
 Immediate next step:
 
-- Build dashboard/API awareness around staging and promotion.
+- Build the generated-content review checklist on `staging`.
 
 Practical options:
 
 1. Keep `pipeline-daily.yml` manual only.
 2. Keep AI production workflows pushing generated files to `staging` first.
 3. Use `.github/workflows/promote-staging.yml` for manual promotion from `staging` to `main`.
-4. Make dashboard pipeline actions environment-aware so staging cannot accidentally dispatch production work.
+4. Continue separating runtime D1 operations from generated-file promotion.
 
 Recommended order:
 
