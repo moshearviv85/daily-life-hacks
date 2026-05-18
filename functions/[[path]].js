@@ -84,13 +84,13 @@ export async function onRequest(context) {
           .run();
         waitUntil(pageViewPromise.catch(() => {}));
       }
-      const trailingUrl = new URL(`${path}/`, url.origin);
-      trailingUrl.search = url.search;
-      const trailingReq = new Request(trailingUrl.toString(), {
+      const assetUrl = new URL(path === "/" ? "/" : `${path}/`, url.origin);
+      assetUrl.search = url.search;
+      const assetReq = new Request(assetUrl.toString(), {
         method: request.method,
         headers: request.headers,
       });
-      const assetResponse = await env.ASSETS.fetch(trailingReq);
+      const assetResponse = await env.ASSETS.fetch(assetReq);
 
       if (assetResponse.status === 404 || assetResponse.headers.get("x-astro-reroute") === "no") {
         const notFoundUrl = new URL("/404.html", url.origin);
