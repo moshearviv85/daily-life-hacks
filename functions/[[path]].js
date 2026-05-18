@@ -1,3 +1,18 @@
+function detectTrafficSource(request, url) {
+  const utmSource = (url.searchParams.get("utm_source") || "").toLowerCase();
+  const referrer = (request.headers.get("Referer") || "").toLowerCase();
+
+  const combined = `${utmSource} ${referrer}`;
+  if (combined.includes("pinterest")) return "pinterest";
+  if (combined.includes("google")) return "google";
+  if (combined.includes("bing")) return "bing";
+  if (combined.includes("facebook") || combined.includes("instagram")) return "meta";
+  if (combined.includes("youtube") || combined.includes("tiktok")) return "social";
+  if (combined.includes("newsletter") || combined.includes("email")) return "email";
+  if (referrer) return "referral";
+  return "direct";
+}
+
 /**
  * Pinterest Smart Router - Catch-all Cloudflare Pages Function
  *
@@ -77,10 +92,16 @@ export async function onRequest(context) {
       // --- 4. PASS THROUGH: log page_view to funnel_events (server-side, no JS needed) ---
       if (env.DB && request.method === "GET") {
         const pagePath = path || "/";
+        const metadata = JSON.stringify({
+          referrer: request.headers.get("Referer") || null,
+          user_agent: request.headers.get("User-Agent") || null,
+          country: request.headers.get("CF-IPCountry") || null,
+          query_params: url.search || null,
+        });
         const pageViewPromise = env.DB.prepare(
-          `INSERT INTO funnel_events (event_type, page, source) VALUES (?, ?, ?)`
+          `INSERT INTO funnel_events (event_type, page, source, metadata) VALUES (?, ?, ?, ?)`
         )
-          .bind("page_view", pagePath, "website")
+          .bind("page_view", pagePath, detectTrafficSource(request, url), metadata)
           .run();
         waitUntil(pageViewPromise.catch(() => {}));
       }
