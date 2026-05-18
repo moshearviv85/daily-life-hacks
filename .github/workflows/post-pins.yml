@@ -38,4 +38,5 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           IMMEDIATE: ${{ github.event.inputs.immediate }}
+          MAX_PINS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.immediate == 'true' && '1' || '2' }}
         run: python scripts/post-pins.py

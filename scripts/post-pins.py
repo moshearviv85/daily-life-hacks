@@ -14,6 +14,7 @@ Required env vars (GitHub Secrets):
 Optional:
   GH_PAT           Personal Access Token for auto-updating PINTEREST_REFRESH_TOKEN secret
   GITHUB_REPOSITORY  e.g. moshearviv85/daily-life-hacks (auto-set by GitHub Actions)
+  MAX_PINS_PER_RUN Maximum due pins to publish in one scheduled run (default: 2)
 """
 
 import os
@@ -35,6 +36,26 @@ PINS_API_KEY  = os.environ["PINS_API_KEY"]
 GH_PAT        = os.environ.get("GH_PAT", "")
 GH_REPO       = os.environ.get("GITHUB_REPOSITORY", "")
 IMMEDIATE     = os.environ.get("IMMEDIATE", "false") == "true"
+
+def _env_int(name, default, minimum=1, maximum=5):
+    raw = os.environ.get(name, "").strip()
+    if not raw:
+        return default
+    try:
+        value = int(raw)
+    except ValueError:
+        print(f"WARNING: {name}={raw!r} is invalid; using {default}.")
+        return default
+    if value < minimum:
+        print(f"WARNING: {name}={value} is below {minimum}; using {minimum}.")
+        return minimum
+    if value > maximum:
+        print(f"WARNING: {name}={value} is above safety cap {maximum}; using {maximum}.")
+        return maximum
+    return value
+
+MAX_PINS_PER_RUN = _env_int("MAX_PINS_PER_RUN", 1 if IMMEDIATE else 2, maximum=3)
+CATCH_UP_PAUSE_SECONDS = _env_int("CATCH_UP_PAUSE_SECONDS", 90, minimum=30, maximum=300)
 
 API_BASE = "https://api.pinterest.com/v5"
 
@@ -243,35 +264,49 @@ def main():
     from datetime import date
     today = date.today().isoformat()
     print(f"Running post-pins.py — today is {today}")
+    print(f"Mode: {'IMMEDIATE' if IMMEDIATE else 'scheduled'}; max pins this run: {MAX_PINS_PER_RUN}")
 
-    pin = get_next_pin()
-    if not pin:
-        print("No pins due today. Done.")
-        return
+    access_token = None
+    posted_count = 0
 
-    print(f"\nNext pin: {pin['row_id']} — {pin['pin_title']}")
-    print(f"  scheduled: {pin['scheduled_date']}")
-    print(f"  board_id:  {pin['board_id']}")
-    print(f"  image:     {pin['image_url']}")
-    print(f"  link:      {pin['link']}")
+    for attempt in range(1, MAX_PINS_PER_RUN + 1):
+        pin = get_next_pin()
+        if not pin:
+            if posted_count == 0:
+                print("No pins due today. Done.")
+            else:
+                print(f"No more due pins. Posted {posted_count} pin(s) this run.")
+            return
 
-    access_token = get_access_token()
-    ok, result = post_pin(access_token, pin)
+        print(f"\nPin {attempt}/{MAX_PINS_PER_RUN}: {pin['row_id']} — {pin['pin_title']}")
+        print(f"  scheduled: {pin['scheduled_date']}")
+        print(f"  board_id:  {pin['board_id']}")
+        print(f"  image:     {pin['image_url']}")
+        print(f"  link:      {pin['link']}")
 
-    if ok:
-        pin_id = result["pin_id"]
-        print(f"SUCCESS — pin_id: {pin_id}")
-        mark_posted(pin["row_id"], pin_id, result["raw"])
-    else:
-        print(f"FAILED — Pinterest API error:")
-        print(json.dumps(result, indent=2)[:600])
-        error_msg = result.get("message", json.dumps(result))
-        outcome = mark_failed(pin["row_id"], error_msg)
-        # Exit 0 so GitHub Actions doesn't mark the run red;
-        # the pin is tracked in D1 and will be skipped after 3 failures.
-        sys.exit(0)
+        if access_token is None:
+            access_token = get_access_token()
 
-    print("\nDone.")
+        ok, result = post_pin(access_token, pin)
+
+        if ok:
+            pin_id = result["pin_id"]
+            print(f"SUCCESS — pin_id: {pin_id}")
+            mark_posted(pin["row_id"], pin_id, result["raw"])
+            posted_count += 1
+        else:
+            print(f"FAILED — Pinterest API error:")
+            print(json.dumps(result, indent=2)[:600])
+            error_msg = result.get("message", json.dumps(result))
+            mark_failed(pin["row_id"], error_msg)
+            print("Stopping this run after a Pinterest API failure. The next cron run will retry safely.")
+            sys.exit(0)
+
+        if attempt < MAX_PINS_PER_RUN:
+            print(f"Pausing {CATCH_UP_PAUSE_SECONDS}s before checking for another due pin.")
+            time.sleep(CATCH_UP_PAUSE_SECONDS)
+
+    print(f"\nDone. Posted {posted_count} pin(s).")
 
 if __name__ == "__main__":
     main()
