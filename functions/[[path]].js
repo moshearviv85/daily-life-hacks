@@ -23,6 +23,13 @@ function detectTrafficSource(request, url) {
 export async function onRequest(context) {
   const { request, env, waitUntil } = context;
   const url = new URL(request.url);
+
+  if (url.hostname === "daily-life-hacks.com") {
+    url.hostname = "www.daily-life-hacks.com";
+    url.protocol = "https:";
+    return Response.redirect(url.toString(), 301);
+  }
+
   const path = url.pathname.replace(/\/$/, "") || "/";
 
   // --- 1. GUARD: Skip static assets and API routes ---
@@ -178,5 +185,12 @@ export async function onRequest(context) {
     });
   }
 
-  return proxyResponse;
+  const headers = new Headers(proxyResponse.headers);
+  headers.set("X-Robots-Tag", "noindex, follow");
+
+  return new Response(proxyResponse.body, {
+    status: proxyResponse.status,
+    statusText: proxyResponse.statusText,
+    headers,
+  });
 }
