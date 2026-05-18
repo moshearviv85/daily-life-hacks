@@ -88,6 +88,14 @@ export async function onRequest(context) {
     }
   }
 
+  // A few legacy KV entries map a canonical slug to itself. Those must behave
+  // like normal article pages so search engines can index the canonical URL.
+  if (isKvMatch && routeConfig?.type !== "external" && baseSlug === fullPathSlug) {
+    routeConfig = null;
+    isKvMatch = false;
+    baseSlug = null;
+  }
+
   // --- 3. FALLBACK: -v{n} PATTERN (backward compat) ---
   if (!isKvMatch) {
     const versionMatch = path.match(/^(.+)-v(\d+)$/);
