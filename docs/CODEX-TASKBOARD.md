@@ -284,6 +284,8 @@ Resumed: 2026-05-19, Codex, user approved workflow dispatch for first safe conte
 
 Blocked: 2026-05-19, Codex, `pipeline-produce.yml` run `26074405672` failed in `Produce articles` before marking topics produced or pushing to `staging`; the GitHub checkout is missing runtime files under `scripts/NEW_PIPELINE_2026-05-08`, first failing on `ModuleNotFoundError: No module named 'stage_1_5'`.
 
+Blocked: 2026-05-19, Codex, first restarted article batch is generated, QA-polished, and deployed on staging; waiting for explicit approval before production promotion.
+
 Goal: Run the first conservative content restart batch according to `docs/content-restart-runbook.md`.
 
 Scope:
@@ -300,14 +302,18 @@ Handoff:
 - Read `AGENTS.md`, `docs/WORKLOG-CODEX.md`, `docs/CODEX-TASKBOARD.md`, `docs/content-restart-runbook.md`, `docs/staging-environment.md`, `.github/workflows/pipeline-produce.yml`, and `.github/workflows/promote-staging.yml`.
 - Confirmed GitHub CLI is authenticated with `workflow` scope.
 - Latest listed production `Deploy Cloudflare Pages` run on `main` is green.
-- No recent successful `staging` deploy was visible in the latest deploy workflow list; the next produce run should replace staging and then verify it.
 - `npm run build:checked` passed locally.
 - User approved dispatching `pipeline-produce.yml` with `count=1`.
 - GitHub Actions run `26074405672` selected topic `how to store garlic` and failed during the write stage because `scripts/NEW_PIPELINE_2026-05-08/write.py` imports `stage_1_5`, but that package is not present in the GitHub checkout under the new pipeline directory.
-- The failure happened before `Mark topics as produced`, `Sync pipeline status to D1`, and `Commit and push generated files`, so no generated commit landed on `staging`.
-- Local inspection shows the missing new-pipeline runtime files exist untracked locally, including `scripts/NEW_PIPELINE_2026-05-08/stage_1_5/`, `bulk_deploy_articles.py`, and supporting `lib/` modules.
-- Next step needs explicit approval to commit and push the required pipeline runtime files to GitHub, then rerun `pipeline-produce.yml` with `count=1`.
-- No production promotion, Pinterest action, package install, or manual D1 mutation was performed.
+- Pipeline hardening commits on `main` added the missing restart runtime files, tolerated missing seeded-topic tables, initialized review/brief SQLite schemas, moved D1 marking after staging push, fetched full staging history, installed Pillow, made image failures hard failures, merged `main` into the staging workspace before generation, and configured Git identity before staging merge.
+- Early failed runs exposed two D1/state risks: `how to store garlic` and `best way to cook corn on the cob` were marked produced during pre-hardening attempts but did not remain deployed on staging after cleanup.
+- Reverted the incomplete corn staging commit from `staging`.
+- Successful generation run `26075080660` produced `best-way-to-cook-chicken`, generated the hero image and four pin images, pushed staging commit `aace8d0`, marked the topic produced, and synced D1.
+- QA polish commit `e506b2f` on `staging` shortened the image alt text, removed duplicate `onion powder`, and replaced a stale phrase in the article body.
+- Staging deploy run `26075535665` passed and published `https://staging.daily-life-hacks.pages.dev`.
+- Verified live staging: article URL returns 200, homepage includes the new article, hero image returns 200, and all four generated pin images return 200.
+- Next step is explicit user approval to run `promote-staging.yml` and fast-forward `main` to reviewed `staging`.
+- No production promotion or Pinterest action was performed.
 
 ### T10 - Staging D1 Isolation
 
