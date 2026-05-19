@@ -274,7 +274,7 @@ Handoff:
 
 ### T09 - First Safe Content Restart Batch
 
-Status: `blocked`
+Status: `done`
 
 Claimed: 2026-05-19, Codex, run first conservative content restart batch per restart runbook and pause before external mutations if needed.
 
@@ -285,6 +285,8 @@ Resumed: 2026-05-19, Codex, user approved workflow dispatch for first safe conte
 Blocked: 2026-05-19, Codex, `pipeline-produce.yml` run `26074405672` failed in `Produce articles` before marking topics produced or pushing to `staging`; the GitHub checkout is missing runtime files under `scripts/NEW_PIPELINE_2026-05-08`, first failing on `ModuleNotFoundError: No module named 'stage_1_5'`.
 
 Blocked: 2026-05-19, Codex, first restarted article batch is generated, QA-polished, and deployed on staging; waiting for explicit approval before production promotion.
+
+Completed: 2026-05-19, Codex, promoted reviewed staging batch to production and verified the live article.
 
 Goal: Run the first conservative content restart batch according to `docs/content-restart-runbook.md`.
 
@@ -312,8 +314,10 @@ Handoff:
 - QA polish commit `e506b2f` on `staging` shortened the image alt text, removed duplicate `onion powder`, and replaced a stale phrase in the article body.
 - Staging deploy run `26075535665` passed and published `https://staging.daily-life-hacks.pages.dev`.
 - Verified live staging: article URL returns 200, homepage includes the new article, hero image returns 200, and all four generated pin images return 200.
-- Next step is explicit user approval to run `promote-staging.yml` and fast-forward `main` to reviewed `staging`.
-- No production promotion or Pinterest action was performed.
+- Promotion run `26075981052` passed, including `npm run build:checked`, and fast-forwarded `main` to reviewed `staging`.
+- Production deploy run `26076036864` passed.
+- Verified live production: `https://daily-life-hacks.com/best-way-to-cook-chicken/` returns 200, homepage includes the new article, and the hero image returns 200.
+- No Pinterest action was performed.
 
 ### T10 - Staging D1 Isolation
 

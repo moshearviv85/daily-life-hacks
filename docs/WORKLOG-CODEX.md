@@ -351,3 +351,17 @@ Known follow-up:
 - Production promotion has not been run. Next step requires explicit approval to dispatch `promote-staging.yml`.
 - Do not approve/post new pins in the same pass.
 - Two pre-hardening topics may need manual D1/topic-state cleanup later because failed attempts marked them produced without leaving a reviewed live article: `how to store garlic` and `best way to cook corn on the cob`.
+
+## 2026-05-19 - T09 Production Promotion
+
+Status: completed.
+
+- User asked to view the restarted article in production.
+- Confirmed `origin/main` was an ancestor of `origin/staging`, so promotion was fast-forward safe.
+- Ran `promote-staging.yml` with `confirm=PROMOTE`; run `26075981052` passed, including `npm run build:checked`, and fast-forwarded `main` to `staging`.
+- The promotion push did not trigger the deploy workflow automatically, so `Deploy Cloudflare Pages` was dispatched manually for `main`.
+- Production deploy run `26076036864` passed.
+- Verified `https://daily-life-hacks.com/best-way-to-cook-chicken/` returns 200 and contains the expected title and hero image reference.
+- Verified `https://daily-life-hacks.com/images/best-way-to-cook-chicken-main.jpg` returns 200.
+- Verified the production homepage returns 200 and includes the new article title.
+- No Pinterest action was performed.
