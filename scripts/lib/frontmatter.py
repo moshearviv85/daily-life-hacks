@@ -16,6 +16,7 @@ from datetime import date
 
 _AUTHOR_LINE_RE = re.compile(r'^author:\s*.+$', re.MULTILINE)
 _FRONTMATTER_RE = re.compile(r'^(---\s*\n)(.*?)(\n---\s*(?:\n|$))', re.DOTALL)
+_NUMERIC_FIELD_RE = re.compile(r'^(servings|calories):\s*["\']?(\d+)["\']?\s*$', re.MULTILINE)
 
 
 def clean_frontmatter(markdown: str) -> str:
@@ -23,6 +24,7 @@ def clean_frontmatter(markdown: str) -> str:
     fixed = markdown
     fixed = re.sub(r'^publishAt:\s*.*\n?', '', fixed, flags=re.MULTILINE)
     fixed = re.sub(r'^date:\s*.+$', f'date: {today}', fixed, flags=re.MULTILINE)
+    fixed = _NUMERIC_FIELD_RE.sub(r'\1: \2', fixed)
     if _AUTHOR_LINE_RE.search(fixed):
         fixed = _AUTHOR_LINE_RE.sub('author: "David Miller"', fixed)
     else:
