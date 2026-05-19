@@ -304,3 +304,50 @@ Blocked reason:
 - Next step needs explicit approval to commit and push the required pipeline runtime files to GitHub, then rerun `pipeline-produce.yml` with `count=1`.
 
 No production promotion, Pinterest action, package install, or manual D1 mutation was performed.
+
+## 2026-05-19 - T09 First Safe Content Restart Batch Update
+
+Status: staging-ready, blocked pending explicit production promotion approval.
+
+Pipeline hardening completed:
+
+- Committed missing new-pipeline runtime files needed by GitHub Actions.
+- Updated `write.py` to support seeded approved topics when `stage2_output` is absent.
+- Updated `run_pipeline.py` to initialize restart review/brief SQLite tables.
+- Updated `pipeline-produce.yml` so generated files are pushed to `staging` before topics are marked produced and synced to D1.
+- Updated `pipeline-produce.yml` to fetch full history, prepare the staging workspace from `origin/staging` merged with `origin/main`, install Pillow, fail hard when hero or pin image generation fails, and configure Git identity before staging merges.
+
+Generation history:
+
+- Run `26074405672` failed before D1 mark or staging push because `stage_1_5` was missing from the GitHub checkout.
+- Run `26074591862` failed on missing `stage2_output`.
+- Run `26074652774` failed on missing review SQLite tables.
+- Run `26074732454` generated `how to store garlic`, then failed to push to `staging`; this run did mark/sync the topic as produced before the push-order fix.
+- Run `26074904419` generated `best way to cook corn on the cob` but image generation failed before the hard-fail guard; the incomplete staging commit was reverted from `staging`.
+- Run `26075080660` succeeded and produced `best-way-to-cook-chicken`.
+
+Staging output:
+
+- Article: `src/data/articles/best-way-to-cook-chicken.md`
+- Hero image: `public/images/best-way-to-cook-chicken-main.jpg`
+- Pin images:
+  - `public/images/pins/juicy-chicken-every-time-only.jpg`
+  - `public/images/pins/minute-chicken-only-recipe-you.jpg`
+  - `public/images/pins/skip-guesswork-only-chicken-recipe.jpg`
+  - `public/images/pins/stop-dry-chicken-only-recipe.jpg`
+- Staging generation commit: `aace8d0`
+- QA polish commit: `e506b2f`
+
+Verification:
+
+- Staging deploy run `26075535665` passed.
+- Live staging URL: `https://staging.daily-life-hacks.pages.dev`.
+- Verified `/best-way-to-cook-chicken/` returns 200 and contains the expected title, hero image reference, and image alt text.
+- Verified the homepage returns 200 and includes the new article.
+- Verified the hero image and all four pin image URLs return 200.
+
+Known follow-up:
+
+- Production promotion has not been run. Next step requires explicit approval to dispatch `promote-staging.yml`.
+- Do not approve/post new pins in the same pass.
+- Two pre-hardening topics may need manual D1/topic-state cleanup later because failed attempts marked them produced without leaving a reviewed live article: `how to store garlic` and `best way to cook corn on the cob`.
