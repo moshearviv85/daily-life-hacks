@@ -127,6 +127,14 @@ def _existing_slugs(conn: sqlite3.Connection) -> set[str]:
     return {r[0] for r in rows}
 
 
+def _table_exists(conn: sqlite3.Connection, table_name: str) -> bool:
+    row = conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = ?",
+        (table_name,),
+    ).fetchone()
+    return row is not None
+
+
 def fetch_topics(
     conn: sqlite3.Connection,
     *,
@@ -134,9 +142,15 @@ def fetch_topics(
     count: int | None,
 ) -> list[sqlite3.Row]:
     existing = _existing_slugs(conn)
+    rationale_expr = "'' as rationale"
+    if _table_exists(conn, "stage2_output"):
+        rationale_expr = (
+            "COALESCE((SELECT s.rationale FROM stage2_output s "
+            "WHERE s.slug = f.slug LIMIT 1), '') as rationale"
+        )
     base = (
         "SELECT f.id, f.slug, f.topic, f.score, f.rank, f.category, "
-        "COALESCE((SELECT s.rationale FROM stage2_output s WHERE s.slug = f.slug LIMIT 1), '') as rationale "
+        f"{rationale_expr} "
         "FROM filtered_topics f "
         "WHERE f.status = 'approved'"
     )
