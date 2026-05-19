@@ -9,7 +9,7 @@ tags:
   - simple cooking
   - versatile chicken
 image: "/images/best-way-to-cook-chicken-main.jpg"
-imageAlt: A perfectly cooked, golden-brown chicken breast, sliced to reveal its juicy interior, resting on a rustic wooden cutting board. A few fresh herbs like parsley or thyme are artfully scattered nearby, and a subtle steam rises from the chicken, suggesting warmth and freshness. The lighting is soft and inviting, highlighting the textures of the chicken and board.
+imageAlt: Sliced golden-brown chicken breast on a wooden cutting board with fresh herbs and steam rising.
 date: 2026-05-19
 author: "David Miller"
 featured: false
@@ -30,7 +30,7 @@ ingredients:
 steps:
   - "Pat the chicken breasts dry with paper towels. This is key for a good sear."
   - "Slice each chicken breast in half horizontally to create two thinner cutlets. This helps them cook evenly and quickly."
-  - "In a small bowl, mix together the smoked paprika, garlic powder, onion powder, onion powder, black pepper, and salt."
+  - "In a small bowl, mix together the smoked paprika, garlic powder, onion powder, black pepper, and salt."
   - "Rub the spice mixture evenly over both sides of the chicken cutlets."
   - "Heat the olive oil in a large skillet over medium-high heat until shimmering. Don't crowd the pan; cook in batches if necessary."
   - "Add the chicken to the hot skillet and cook for 4-6 minutes per side, or until golden brown and cooked through (internal temperature of 165°F / 74°C)."
@@ -61,7 +61,7 @@ My method fixes this. We’re going to thin out the chicken, season it simply, a
 
 ### The Secret to Juicy Chicken: Thinning It Out
 
-The biggest game-changer here is making sure your chicken breasts are an even thickness. You can pound them with a mallet, but honestly, just slicing them in half horizontally is faster and less messy for me. You end up with two thinner cutlets from each breast. This means they cook through much quicker and more evenly, so you don't have to overcook the thinner edges waiting for the center to finish.
+The biggest fix here is making sure your chicken breasts are an even thickness. You can pound them with a mallet, but honestly, just slicing them in half horizontally is faster and less messy for me. You end up with two thinner cutlets from each breast. This means they cook through much quicker and more evenly, so you don't have to overcook the thinner edges waiting for the center to finish.
 
 Think of it like this: if you have a really thick book, it takes longer to read cover to cover than two thinner books. Same principle. Even thickness means even heat distribution, which means no dry spots.
 
