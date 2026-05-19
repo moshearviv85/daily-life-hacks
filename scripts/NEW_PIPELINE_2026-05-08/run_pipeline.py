@@ -345,7 +345,8 @@ def main(argv: list[str] | None = None) -> int:
             "--slug", slug,
         ], timeout=300)
         if not ok:
-            log("WARNING: hero image failed, continuing...")
+            log("PIPELINE FAILED at hero image stage")
+            return 1
         print()
 
         # Stage 6: Generate pin images
@@ -354,7 +355,8 @@ def main(argv: list[str] | None = None) -> int:
             "--slug", slug,
         ], timeout=600)
         if not ok:
-            log("WARNING: pin images failed, continuing...")
+            log("PIPELINE FAILED at pin images stage")
+            return 1
         print()
 
     if not args.skip_deploy:
