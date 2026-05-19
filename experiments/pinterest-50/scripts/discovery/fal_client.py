@@ -94,6 +94,9 @@ def _build_payload(
         )
     if seed is not None:
         payload["seed"] = seed
+    quality = config.get("quality")
+    if quality:
+        payload["quality"] = quality
     return payload
 
 

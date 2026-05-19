@@ -203,3 +203,104 @@ Verification:
 
 - Public checks only; no external state was changed.
 - No GitHub workflow dispatch, D1 mutation, package install, commit, push, deploy, or Pinterest action was performed.
+
+## 2026-05-19 - T07 Recover Or Redirect Impression-Bearing 404 URLs
+
+Status: completed locally.
+
+Recovered seven Google impression-bearing 404 URLs by restoring existing tracked drafts into the live article collection:
+
+- `/prebiotic-foods-beyond-the-buzzwords/`
+- `/selenium-containing-foods-easy-ways/`
+- `/protein-per-serving-beans-chicken-tofu-compared/`
+- `/how-to-quick-soak-dried-beans-same-day/`
+- `/how-to-preheat-skillet-even-browning/`
+- `/keep-berries-fresh-longer-when-to-wash/`
+- `/how-to-pack-lunch-crisp-sandwiches-salads/`
+
+Handled `/savory-chia-seed-recipes-breakfast/` as a canonical alias to `/chia-pudding-variations-for-breakfast/`, matching the existing related alias `quick-breakfast-upgrade-savory-chia`.
+
+Changed files:
+
+- `src/data/articles/prebiotic-foods-beyond-the-buzzwords.md`
+- `src/data/articles/selenium-containing-foods-easy-ways.md`
+- `src/data/articles/protein-per-serving-beans-chicken-tofu-compared.md`
+- `src/data/articles/how-to-quick-soak-dried-beans-same-day.md`
+- `src/data/articles/how-to-preheat-skillet-even-browning.md`
+- `src/data/articles/keep-berries-fresh-longer-when-to-wash.md`
+- `src/data/articles/how-to-pack-lunch-crisp-sandwiches-salads.md`
+- `pipeline-data/slug-aliases.json`
+- `docs/organic-search-follow-up.md`
+- `docs/CODEX-TASKBOARD.md`
+
+Verification:
+
+- `npm run build` passed.
+- `npm run verify:routing` passed.
+- Verified local `dist` contains all eight exact URLs.
+- Verified seven restored article URLs are self-canonical, indexable, and present in `dist/sitemap-0.xml`.
+- Verified `/savory-chia-seed-recipes-breakfast/` is generated as an alias with canonical `/chia-pudding-variations-for-breakfast/`, `noindex, follow`, and no sitemap entry.
+- No GitHub workflow dispatch, D1 mutation, package install, commit, push, deploy, or Pinterest action was performed.
+
+## 2026-05-19 - T08 Trailing Slash Canonical Normalization
+
+Status: completed locally.
+
+Decision:
+
+- Trailing-slash URLs are the canonical public URL shape for static pages.
+- This matches `astro.config.mjs` (`trailingSlash: 'always'`), generated `dist/{slug}/index.html` pages, sitemap output, article canonical tags, and article JSON-LD URLs.
+
+Changed files:
+
+- `functions/[[path]].js`
+- `docs/trailing-slash-canonical-normalization.md`
+- `docs/CODEX-TASKBOARD.md`
+- `docs/WORKLOG-CODEX.md`
+
+Implementation:
+
+- Added 301 normalization in the Cloudflare Pages catch-all Function for valid static page requests that arrive without a trailing slash.
+- Preserved query strings on the redirect.
+- Kept API routes and static assets excluded through the existing guard.
+- Unknown no-slash paths still return 404 instead of being blindly redirected.
+- Smart router paths that do not exist as static pages continue through the existing router/proxy behavior.
+
+Verification:
+
+- `npm run build` passed.
+- `npm run verify:routing` passed.
+- Mocked Function checks confirmed:
+  - article no-slash -> 301 to slash.
+  - article slash -> 200.
+  - category no-slash -> 301 to slash.
+  - tag no-slash -> 301 to slash.
+  - alias/pin keyword no-slash -> 301 to slash.
+  - unknown no-slash -> 404.
+- No GitHub workflow dispatch, D1 mutation, package install, commit, push, deploy, or Pinterest action was performed.
+
+## 2026-05-19 - T09 First Safe Content Restart Batch
+
+Status: blocked pending approval to commit/push missing pipeline runtime files and rerun the generation workflow.
+
+Preflight completed:
+
+- Claimed T09 from `docs/CODEX-TASKBOARD.md`.
+- Read `docs/content-restart-runbook.md`, `docs/staging-environment.md`, `.github/workflows/pipeline-produce.yml`, and `.github/workflows/promote-staging.yml`.
+- Confirmed GitHub CLI is authenticated with `workflow` scope.
+- Latest listed production `Deploy Cloudflare Pages` run on `main` is green.
+- No recent successful `staging` deploy was visible in the latest deploy workflow list; the next produce run should replace staging and then verify it.
+- `npm run build:checked` passed locally.
+
+Blocked reason:
+
+- User approved dispatching `.github/workflows/pipeline-produce.yml` with `count=1`.
+- GitHub Actions run `26074405672` selected topic `how to store garlic`.
+- The run failed in `Produce articles` during the write stage:
+  - `scripts/NEW_PIPELINE_2026-05-08/write.py` raised `ModuleNotFoundError: No module named 'stage_1_5'`.
+  - The GitHub checkout has `scripts/stage_1_5/` tracked, but the active new pipeline expects `scripts/NEW_PIPELINE_2026-05-08/stage_1_5/`.
+  - Local inspection shows the missing new-pipeline runtime files exist untracked locally.
+- The failure happened before `Mark topics as produced`, `Sync pipeline status to D1`, and `Commit and push generated files`, so no generated commit landed on `staging`.
+- Next step needs explicit approval to commit and push the required pipeline runtime files to GitHub, then rerun `pipeline-produce.yml` with `count=1`.
+
+No production promotion, Pinterest action, package install, or manual D1 mutation was performed.

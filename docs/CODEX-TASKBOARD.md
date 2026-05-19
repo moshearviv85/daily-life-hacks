@@ -203,7 +203,11 @@ Handoff:
 
 ### T07 - Recover Or Redirect Impression-Bearing 404 URLs
 
-Status: `open`
+Status: `done`
+
+Claimed: 2026-05-19, Codex, recover or redirect Google impression-bearing 404 URLs from organic search follow-up.
+
+Completed: 2026-05-19, Codex.
 
 Goal: Fix Google impression-bearing URLs that currently resolve as 404 or are missing from the live article set.
 
@@ -219,9 +223,30 @@ Deliverable:
 - Update `docs/organic-search-follow-up.md`, `docs/WORKLOG-CODEX.md`, and this task status.
 - Verify live or local behavior with exact URLs.
 
+Handoff:
+- Restored seven existing tracked drafts into `src/data/articles/`:
+  - `prebiotic-foods-beyond-the-buzzwords`
+  - `selenium-containing-foods-easy-ways`
+  - `protein-per-serving-beans-chicken-tofu-compared`
+  - `how-to-quick-soak-dried-beans-same-day`
+  - `how-to-preheat-skillet-even-browning`
+  - `keep-berries-fresh-longer-when-to-wash`
+  - `how-to-pack-lunch-crisp-sandwiches-salads`
+- Added `savory-chia-seed-recipes-breakfast` to `pipeline-data/slug-aliases.json`, pointing at `chia-pudding-variations-for-breakfast`.
+- Updated `docs/organic-search-follow-up.md` and `docs/WORKLOG-CODEX.md`.
+- `npm run build` passed.
+- `npm run verify:routing` passed.
+- Local `dist` verification confirms the seven restored URLs are indexable, self-canonical, and in the sitemap.
+- Local `dist` verification confirms the chia alias is generated with canonical `/chia-pudding-variations-for-breakfast/`, `noindex, follow`, and no sitemap entry.
+- No GitHub workflow dispatch, D1 mutation, package install, commit, push, deploy, or Pinterest action was performed.
+
 ### T08 - Trailing Slash Canonical Normalization
 
-Status: `open`
+Status: `done`
+
+Claimed: 2026-05-19, Codex, investigate and normalize trailing-slash behavior for article and routed URLs.
+
+Completed: 2026-05-19, Codex.
 
 Goal: Decide and, if approved, implement a consistent canonical URL shape for article paths.
 
@@ -234,9 +259,30 @@ Deliverable:
 - Decision note and implementation if approved.
 - Verification for representative article, category, tag, alias, and pin-variant URLs.
 
+Handoff:
+- Decision: trailing-slash URLs are the canonical public shape, matching `trailingSlash: 'always'`, sitemap output, article canonical tags, and JSON-LD URLs.
+- Implemented 301 normalization in `functions/[[path]].js` for valid static page requests that arrive without a trailing slash.
+- Preserved query strings.
+- Left API/static asset guard behavior unchanged.
+- Unknown no-slash paths still return 404 instead of being blindly redirected.
+- Smart router paths that do not exist as static pages continue through the existing router/proxy behavior.
+- Added `docs/trailing-slash-canonical-normalization.md`.
+- `npm run build` passed.
+- `npm run verify:routing` passed.
+- Mocked Function verification covered representative article, category, tag, alias/pin keyword, slash URL, and unknown no-slash URL behavior.
+- No D1 mutation, workflow dispatch, deployment, commit, push, package install, or external publishing action was performed.
+
 ### T09 - First Safe Content Restart Batch
 
-Status: `open`
+Status: `blocked`
+
+Claimed: 2026-05-19, Codex, run first conservative content restart batch per restart runbook and pause before external mutations if needed.
+
+Blocked: 2026-05-19, Codex, preflight completed; waiting for explicit approval to dispatch `pipeline-produce.yml` with `count=1` because it mutates production D1 pipeline topic state and pushes generated files to `staging`.
+
+Resumed: 2026-05-19, Codex, user approved workflow dispatch for first safe content restart batch.
+
+Blocked: 2026-05-19, Codex, `pipeline-produce.yml` run `26074405672` failed in `Produce articles` before marking topics produced or pushing to `staging`; the GitHub checkout is missing runtime files under `scripts/NEW_PIPELINE_2026-05-08`, first failing on `ModuleNotFoundError: No module named 'stage_1_5'`.
 
 Goal: Run the first conservative content restart batch according to `docs/content-restart-runbook.md`.
 
@@ -249,6 +295,19 @@ Scope:
 Deliverable:
 - One approved article promoted safely, or a blocked report with exact failure reason.
 - Update runbook/worklog with what happened.
+
+Handoff:
+- Read `AGENTS.md`, `docs/WORKLOG-CODEX.md`, `docs/CODEX-TASKBOARD.md`, `docs/content-restart-runbook.md`, `docs/staging-environment.md`, `.github/workflows/pipeline-produce.yml`, and `.github/workflows/promote-staging.yml`.
+- Confirmed GitHub CLI is authenticated with `workflow` scope.
+- Latest listed production `Deploy Cloudflare Pages` run on `main` is green.
+- No recent successful `staging` deploy was visible in the latest deploy workflow list; the next produce run should replace staging and then verify it.
+- `npm run build:checked` passed locally.
+- User approved dispatching `pipeline-produce.yml` with `count=1`.
+- GitHub Actions run `26074405672` selected topic `how to store garlic` and failed during the write stage because `scripts/NEW_PIPELINE_2026-05-08/write.py` imports `stage_1_5`, but that package is not present in the GitHub checkout under the new pipeline directory.
+- The failure happened before `Mark topics as produced`, `Sync pipeline status to D1`, and `Commit and push generated files`, so no generated commit landed on `staging`.
+- Local inspection shows the missing new-pipeline runtime files exist untracked locally, including `scripts/NEW_PIPELINE_2026-05-08/stage_1_5/`, `bulk_deploy_articles.py`, and supporting `lib/` modules.
+- Next step needs explicit approval to commit and push the required pipeline runtime files to GitHub, then rerun `pipeline-produce.yml` with `count=1`.
+- No production promotion, Pinterest action, package install, or manual D1 mutation was performed.
 
 ### T10 - Staging D1 Isolation
 
