@@ -398,6 +398,20 @@ class TestArticleStructural:
         rule_ids = {v.rule_id for v in violations}
         assert "S-11" in rule_ids
 
+    def test_draft_article_can_skip_image_alt_until_hero_brief(self):
+        text = GOOD_ARTICLE.replace(
+            "imageAlt: A bowl of fluffy white rice with herbs on a wooden table\n",
+            "",
+        )
+        violations = validate(
+            text,
+            context="article",
+            slug="test-slug",
+            require_image_alt=False,
+        )
+        rule_ids = {v.rule_id for v in violations}
+        assert "S-11" not in rule_ids
+
     def test_long_image_alt_triggers_s11(self):
         long_alt = "A " + "very detailed " * 25 + "photo of rice on a table"
         text = GOOD_ARTICLE.replace(

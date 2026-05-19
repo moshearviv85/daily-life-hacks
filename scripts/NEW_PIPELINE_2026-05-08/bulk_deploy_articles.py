@@ -26,6 +26,7 @@ REPO_ROOT = _SCRIPT_DIR.parent.parent
 from lib.d1_sources import fetch_articles_from_sql, load_hero_alts_from_sql
 from lib.d1_csv import inject_image_alt
 from lib.frontmatter import clean_frontmatter
+from lib.validator import validate
 
 DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 DEFAULT_OUT_DIR = REPO_ROOT / "src" / "data" / "articles"
@@ -63,6 +64,17 @@ def main(argv: list[str] | None = None) -> int:
         slug = a["slug"]
         target = out_dir / f"{slug}.md"
         new_md = build_article_md(a["markdown"], hero_alts.get(slug))
+        tier1 = [
+            v for v in validate(new_md, context="article", slug=slug)
+            if v.tier == 1
+        ]
+        if tier1:
+            print(
+                f"slug {slug!r} failed final article validation: "
+                + ", ".join(f"{v.rule_id}: {v.detail}" for v in tier1),
+                file=sys.stderr,
+            )
+            return 1
         if args.dry_run:
             existed = "exists" if target.exists() else "new"
             alt_note = "with-hero-alt" if hero_alts.get(slug) else "no-hero-alt"

@@ -363,7 +363,12 @@ def main(argv: list[str] | None = None) -> int:
                             f"empty response", fh)
                     continue
 
-                violations = _validate_fn(markdown, context="article", slug=slug)
+                violations = _validate_fn(
+                    markdown,
+                    context="article",
+                    slug=slug,
+                    require_image_alt=False,
+                )
                 tier1 = [v for v in violations if v.tier == 1]
                 if tier1:
                     t1_ids = ",".join(v.rule_id for v in tier1)

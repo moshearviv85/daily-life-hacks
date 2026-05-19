@@ -454,7 +454,13 @@ def _s25(parsed, text, body, slug) -> Violation | None:
 # ---------------------------------------------------------------------------
 
 
-def validate(text: str, *, context: str = "article", slug: str | None = None) -> list[Violation]:
+def validate(
+    text: str,
+    *,
+    context: str = "article",
+    slug: str | None = None,
+    require_image_alt: bool = True,
+) -> list[Violation]:
     """Validate *text* and return a list of Violation objects.
 
     Parameters
@@ -467,6 +473,9 @@ def validate(text: str, *, context: str = "article", slug: str | None = None) ->
     slug:
         Article slug used for the S-08 image-path check. Only meaningful when
         context="article". If None, S-08 is skipped.
+    require_image_alt:
+        When False, skip S-11. Use this only for draft articles before the
+        hero brief stage injects the final imageAlt.
 
     Returns
     -------
@@ -502,7 +511,10 @@ def validate(text: str, *, context: str = "article", slug: str | None = None) ->
         violations.append(v)
 
     # Remaining tier-1 structural checks
-    for check_fn in (_s04, _s05, _s06, _s07, _s08, _s09, _s10, _s11, _s12, _s13, _s14, _s15):
+    tier1_checks = [_s04, _s05, _s06, _s07, _s08, _s09, _s10, _s12, _s13, _s14, _s15]
+    if require_image_alt:
+        tier1_checks.insert(7, _s11)
+    for check_fn in tier1_checks:
         v = check_fn(parsed, text, body, slug)
         if v is not None:
             violations.append(v)
