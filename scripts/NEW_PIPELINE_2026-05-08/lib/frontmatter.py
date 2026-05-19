@@ -16,7 +16,7 @@ from datetime import date
 
 _AUTHOR_LINE_RE = re.compile(r'^author:\s*.+$', re.MULTILINE)
 _FRONTMATTER_RE = re.compile(r'^(---\s*\n)(.*?)(\n---\s*(?:\n|$))', re.DOTALL)
-_NUMERIC_FIELD_RE = re.compile(r'^(servings|calories):\s*["\']?(\d+)["\']?\s*$', re.MULTILINE)
+_NUMERIC_FIELD_RE = re.compile(r'^(servings|calories):\s*["\']?[^0-9\n]*(\d+).*$', re.MULTILINE)
 
 
 def clean_frontmatter(markdown: str) -> str:

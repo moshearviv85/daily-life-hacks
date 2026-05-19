@@ -94,6 +94,23 @@ def test_clean_frontmatter_unquotes_numeric_recipe_fields():
     assert 'calories: "250"' not in out
 
 
+def test_clean_frontmatter_extracts_numeric_recipe_fields_from_text():
+    md = (
+        "---\n"
+        'title: "Demo Article"\n'
+        'category: "recipes"\n'
+        'servings: "4 servings"\n'
+        'calories: "250 calories per serving"\n'
+        "date: 2025-01-01\n"
+        "---\n"
+        "Body.\n"
+    )
+    out = clean_frontmatter(md)
+    assert "servings: 4" in out
+    assert "calories: 250" in out
+    assert "calories per serving" not in out
+
+
 def test_clean_frontmatter_idempotent():
     md = '---\ntitle: "Demo"\ndate: 2025-01-01\nauthor: "Old"\npublishAt: "2030"\n---\nBody.\n'
     once = clean_frontmatter(md)
