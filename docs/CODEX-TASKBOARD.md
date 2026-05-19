@@ -36,7 +36,15 @@ Each chat must claim exactly one task before doing implementation work.
 
 ### T01 - Pipeline Migration Map And Source Of Truth
 
-Status: `open`
+Status: `done`
+
+Claimed: 2026-05-18, Codex, map local pipeline scripts and source-of-truth migration plan.
+Completed: 2026-05-18, Codex, created `docs/pipeline-migration-source-of-truth.md` and updated `docs/WORKLOG-CODEX.md`.
+
+Verification:
+- Read `AGENTS.md`, `docs/WORKLOG-CODEX.md`, and this taskboard.
+- Inspected active new pipeline scripts, GitHub Actions, Cloudflare Functions, D1 schema, and local SQLite table counts.
+- No production code, D1 state, Git commits, pushes, deploys, installs, or external publishing actions were performed.
 
 Goal: Map what still runs locally and design the cloud/Git/D1 source-of-truth flow.
 
@@ -52,7 +60,11 @@ Deliverable:
 
 ### T02 - Manual Approval Publishing Flow
 
-Status: `open`
+Status: `done`
+
+Claimed: 2026-05-18, Codex, map and design minimum manual approval checkpoint for articles and pins.
+
+Completed: 2026-05-18, Codex.
 
 Goal: Define and implement the minimum safe approval checkpoint before new articles or pins go live.
 
@@ -64,9 +76,33 @@ Scope:
 Deliverable:
 - A working approval path or a precise implementation plan if code changes require user approval.
 
+Changed files:
+- `functions/api/articles-upload.js`
+- `functions/api/articles-due.js`
+- `functions/api/articles-publish.js`
+- `functions/api/articles-list.js`
+- `functions/api/articles-set-status.js`
+- `functions/api/pins-upload.js`
+- `functions/api/pins-status.js`
+- `functions/api/pins-set-status.js`
+- `src/pages/dashboard.astro`
+- `scripts/publish-articles.py`
+- `.github/workflows/publish-articles.yml`
+- `schema.sql`
+- `docs/WORKLOG-CODEX.md`
+- `docs/manual-approval-publishing-flow.md`
+
+Verification:
+- `npm run build` passed on 2026-05-18.
+- New article uploads start as `REVIEW`; dashboard approval moves to `APPROVED`; publishers read `APPROVED` plus legacy `PENDING`.
+- New pin uploads start as `REVIEW`; dashboard approval moves to `PENDING`; `/api/pins-next` still only posts `PENDING`.
+- Upload paths no longer auto-publish articles or auto-dispatch the Pinterest posting workflow.
+
 ### T03 - Staging Environment
 
-Status: `open`
+Status: `done`
+
+Claimed: 2026-05-18, Codex, map current deploy behavior and design staging path.
 
 Goal: Create a staging path for testing changes before production.
 
@@ -78,9 +114,20 @@ Scope:
 Deliverable:
 - Staging design plus implementation if approved.
 
+Handoff:
+- Decision: use the `staging` branch as the Cloudflare Pages Preview environment.
+- Documented the runbook in `docs/staging-environment.md`.
+- Updated deploy workflow concurrency to be branch-specific.
+- Verified with `npm run build:checked`.
+- Remaining risk: staging is not D1-isolated; avoid state-changing dashboard/API tests on staging until a separate Preview `DB` binding exists.
+
 ### T04 - Content Restart Runbook
 
-Status: `open`
+Status: `done`
+
+Claimed: 2026-05-18, Codex, define safe content restart runbook and first batch recommendation.
+
+Completed: 2026-05-18, Codex.
 
 Goal: Restart content creation safely after stabilization.
 
@@ -91,9 +138,20 @@ Scope:
 Deliverable:
 - A step-by-step runbook and first safe batch recommendation.
 
+Handoff:
+- Created `docs/content-restart-runbook.md`.
+- First safe batch recommendation: manual `pipeline-produce.yml` with `count=1`, generated files reviewed on `staging`, then production promotion only after review gates pass.
+- Keep `pipeline-daily.yml` manual-only.
+- Do not approve new pins in the same pass as the first restarted article; wait until the production article is live, then approve only one new pin first.
+- No workflow dispatch, D1 mutation, package install, commit, push, deploy, or Pinterest action was performed.
+
 ### T05 - System Documentation
 
-Status: `open`
+Status: `done`
+
+Claimed: 2026-05-19, Codex, consolidate current system architecture, data sources, deploy flow, automation flow, and operational commands.
+
+Completed: 2026-05-19, Codex.
 
 Goal: Produce one current system map that a new assistant can trust.
 
@@ -104,9 +162,22 @@ Scope:
 Deliverable:
 - Update existing system docs or create a concise replacement.
 
+Handoff:
+- Updated `docs/current-system-map.md` as the current trusted system map.
+- Consolidated source-of-truth boundaries, D1 tables/statuses, Cloudflare Functions, GitHub Actions automation, active pipeline paths, deprecated/unsafe paths, operational commands, env vars, restart guardrails, and current risks.
+- Updated `docs/WORKLOG-CODEX.md` with T05 completion notes.
+- No build was run because this was documentation-only.
+- No GitHub workflow dispatch, D1 mutation, package install, commit, push, deploy, or Pinterest action was performed.
+
 ### T06 - Organic Search Follow-Up
 
-Status: `open`
+Status: `done`
+
+Claimed: 2026-05-19, Codex, investigate organic search follow-up after router and canonical fixes without repeating completed router audit.
+
+Blocked: 2026-05-19, Codex, no Google Search Console or Bing Webmaster Tools exports/access were available for traffic analysis.
+
+Completed: 2026-05-19, Codex, analyzed user-provided Google Search Console CSV export.
 
 Goal: Investigate Google/Bing traffic after the router and canonical fixes have settled.
 
@@ -117,3 +188,92 @@ Scope:
 Deliverable:
 - Findings and prioritized fixes.
 
+Handoff:
+- Created and updated `docs/organic-search-follow-up.md` with baseline public crawlability checks, Google Search Console findings, and prioritized next steps.
+- Live spot checks found `robots.txt` and sitemap available, 145 URLs in `sitemap-0.xml`, all 140 local article Markdown files present in the sitemap, sampled canonical article URLs indexable, category pages indexable, and tag pages `noindex, follow`.
+- User-provided GSC export covered 2026-04-29 through 2026-05-16: 4 clicks, 1,980 impressions, 0.20% CTR, and 23.0 impression-weighted average position.
+- User-provided Bing Search Performance export covered 2026-05-03 through 2026-05-16: 2 clicks, 37 impressions, and 5.41% CTR.
+- User-provided Bing AI Performance export covered 2026-05-04 through 2026-05-16: 18 citations and 9 total daily cited-page counts.
+- User-provided Bing AI Page Stats report attributed all 18 citations to 8 URLs; `/prune-juice-alternatives-for-constipation/` led with 8 citations.
+- Highest-priority issue: impression-bearing 404 URLs, led by `/prebiotic-foods-beyond-the-buzzwords/` with 106 impressions at position 10.77 and `/selenium-containing-foods-easy-ways/` with 91 impressions.
+- Next implementation task should recover or redirect active 404s, then consider trailing-slash normalization, then optimize CTR on close-ranking pages.
+- Do not repeat the completed router audit unless a new failing URL, GSC indexing error, or Bing crawl issue is provided.
+
+## Phase 2 Tasks
+
+### T07 - Recover Or Redirect Impression-Bearing 404 URLs
+
+Status: `open`
+
+Goal: Fix Google impression-bearing URLs that currently resolve as 404 or are missing from the live article set.
+
+Scope:
+- Start from `docs/organic-search-follow-up.md`.
+- Prioritize `/prebiotic-foods-beyond-the-buzzwords/` and `/selenium-containing-foods-easy-ways/`.
+- Determine whether each URL should be restored as an article, redirected to an existing close match, or intentionally left 404.
+- Prefer the lowest-risk solution that preserves user intent and search signal.
+- Do not repeat the completed full router audit unless a specific URL fails.
+
+Deliverable:
+- Implement redirects or restoration if the user has approved code changes for the turn.
+- Update `docs/organic-search-follow-up.md`, `docs/WORKLOG-CODEX.md`, and this task status.
+- Verify live or local behavior with exact URLs.
+
+### T08 - Trailing Slash Canonical Normalization
+
+Status: `open`
+
+Goal: Decide and, if approved, implement a consistent canonical URL shape for article paths.
+
+Scope:
+- Investigate URLs where both slash and no-slash variants return 200.
+- Confirm Astro, Cloudflare Pages, sitemap, canonical tags, and router behavior.
+- Prefer 301 normalization only if it does not break Pinterest or existing aliases.
+
+Deliverable:
+- Decision note and implementation if approved.
+- Verification for representative article, category, tag, alias, and pin-variant URLs.
+
+### T09 - First Safe Content Restart Batch
+
+Status: `open`
+
+Goal: Run the first conservative content restart batch according to `docs/content-restart-runbook.md`.
+
+Scope:
+- Use manual `pipeline-produce.yml` with `count=1` only after user approval.
+- Review generated article, image, metadata, and route on `staging`.
+- Promote to production only after the review gates pass.
+- Do not approve new pins in the same pass.
+
+Deliverable:
+- One approved article promoted safely, or a blocked report with exact failure reason.
+- Update runbook/worklog with what happened.
+
+### T10 - Staging D1 Isolation
+
+Status: `open`
+
+Goal: Prevent staging dashboard/API tests from mutating production D1 state.
+
+Scope:
+- Design the Preview `DB` binding strategy.
+- Identify required Cloudflare Pages settings and Wrangler/D1 steps.
+- Implement only after explicit user approval because this touches Cloudflare state.
+
+Deliverable:
+- Either a precise setup checklist or implemented isolation with verification.
+
+### T11 - Conservative New Pin Reintroduction
+
+Status: `open`
+
+Goal: Reintroduce new pins carefully after the first restarted article is live.
+
+Scope:
+- Approve only one new pin for the restarted article.
+- Verify destination URL, canonical behavior, image URL, and D1 status.
+- Wait for at least 48 hours before expanding volume.
+
+Deliverable:
+- One-push pin reintroduction report, or a blocked note if Pinterest/account conditions are still unsafe.

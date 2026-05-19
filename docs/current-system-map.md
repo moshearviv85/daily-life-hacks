@@ -1,362 +1,374 @@
-# Daily Life Hacks: Current System Map
+# Daily Life Hacks Current System Map
 
-Date: 2026-05-16
-Status: Working map, based on local repo inspection and read-only Cloudflare D1 checks.
+Last updated: 2026-05-19
+Task: T05
+Status: current operating map for future Codex sessions
 
 ## Purpose
 
-This document records the current live operating system for Daily Life Hacks.
-It separates production flows, staging, D1 state, GitHub Actions, Cloudflare Functions,
-and the new AI pipeline so future work can be done deliberately instead of by guesswork.
+This is the single trusted map of the current `daily-life-hacks.com` system. It consolidates the live architecture, source-of-truth boundaries, deployment flow, automation flow, operational commands, and unsafe or deprecated paths.
 
-## Production Surface
+Use this with:
 
-Production site:
+- `AGENTS.md` for project rules and user preferences.
+- `docs/WORKLOG-CODEX.md` for recent handoff history.
+- `docs/CODEX-TASKBOARD.md` for task ownership.
+- Focused runbooks under `docs/` when doing a specific workflow.
 
-- Domain: `daily-life-hacks.com`
-- Stack: Astro 5 + Tailwind CSS v4
-- Hosting: Cloudflare Pages
+## System Identity
+
+- Site: `https://www.daily-life-hacks.com`
+- Stack: Astro 5, Tailwind CSS v4, Cloudflare Pages, Cloudflare Pages Functions, Cloudflare D1.
+- Repository: `github.com/moshearviv85/daily-life-hacks`
 - Production branch: `main`
-- Current production deploy source checked during setup: `76ba00c`
+- Staging branch: `staging`
+- Content language: English for a US audience.
+- Assistant/user communication: Hebrew.
+- Brand color: `#F29B30`
 
-Production deploy workflow:
+## Source Of Truth
 
-- File: `.github/workflows/deploy-cloudflare-pages.yml`
-- Trigger: push to `main`, scheduled daily rebuild, and manual dispatch
+| Area | Source of truth | Notes |
+|---|---|---|
+| Live article Markdown | Git: `src/data/articles/*.md` on `main` | D1 article rows are queue/runtime state, not the canonical copy of live content. |
+| Live images | Git: `public/images/` on `main` | Hero images use `{slug}-main.jpg`; pin images live under `public/images/pins/`. |
+| Article schema | `src/content.config.ts` | Required fields include title, excerpt, category, tags, image, imageAlt, date; author is optional in code but normally expected by project convention. |
+| Routing aliases | Git: `pipeline-data/slug-aliases.json` and `pipeline-data/router-mapping.json` | Used by smart routing and pin/alias behavior. |
+| Production queues and approvals | Cloudflare D1 binding `DB` | D1 owns article/pin schedule state, pipeline topic backlog, dashboard state, analytics cache, ratings, subscriptions. |
+| Topic backlog | D1 table `pipeline_topics` | Local SQLite is not the backlog authority. |
+| Generation workbench | `pipeline-data/topic-research.sqlite` | Temporary/job-local cache for pipeline runs and debugging. |
+| Task coordination | `docs/CODEX-TASKBOARD.md` | Claim one open task before implementation work. |
+
+## Important Data Stores
+
+Cloudflare D1 binding:
+
+- Binding name: `DB`
+- Known database name from prior audit: `dlh-subscriptions`
+- Schema file: `schema.sql`
+
+Core D1 tables:
+
+- `subscriptions`: newsletter signups and Kit response data.
+- `funnel_events`: server-side page views and funnel attribution.
+- `pinterest_hits`: smart-router hit logs.
+- `article_ratings`: rating widget state.
+- `articles_schedule`: legacy/manual article publishing queue.
+- `pins_schedule`: production Pinterest posting queue.
+- `pipeline_topics`: discovered topic backlog and approval state.
+- `pipeline_articles`: generation lifecycle status.
+- `pipeline_pins`: pin brief and image status.
+- `pinterest_trends_cache` and `pinterest_analytics_cache`: dashboard caches.
+
+Current status model:
+
+- New article uploads start as `REVIEW`.
+- Dashboard approval moves article rows to `APPROVED`.
+- Article publishers read `APPROVED` plus legacy `PENDING`.
+- New pin uploads start as `REVIEW`.
+- Dashboard approval moves pin rows to `PENDING`.
+- Pinterest auto-poster reads only `PENDING`.
+
+## Cloudflare Pages And Functions
+
+Cloudflare Pages deploys the built Astro site and a bundled Pages Functions worker.
+
+Build and deploy workflow:
+
+- Workflow: `.github/workflows/deploy-cloudflare-pages.yml`
+- Triggers: push to `main`, push to `staging`, daily scheduled rebuild, manual dispatch.
 - Build command: `npm run build`
+- Functions bundle command: `npx wrangler pages functions build functions ...`
+- Worker output copied to `dist/_worker.js`
 - Deploy command: `pages deploy dist --project-name=daily-life-hacks --branch=${{ github.ref_name }}`
+- Concurrency is branch-specific.
 
-Production promotion workflow:
+Catch-all function:
 
-- File: `.github/workflows/promote-staging.yml`
-- Trigger: manual dispatch only.
-- Confirmation required: `PROMOTE`.
-- Behavior: checks out `staging`, runs `npm ci` and `npm run build:checked`, then fast-forwards `main` to `staging`.
-- Safety: fails before production if the staging build/routing check fails, or if `main` cannot be fast-forwarded cleanly to `staging`.
+- File: `functions/[[path]].js`
+- Redirects `daily-life-hacks.com` to `www.daily-life-hacks.com`.
+- Lets static assets and `/api/*` pass through.
+- Checks `ROUTES_KV` for smart-route entries.
+- Supports legacy `-vN` pin route fallback.
+- Logs page views to `funnel_events`.
+- Logs smart-route hits to `pinterest_hits`.
+- Proxies internal pin/alias pages to the base article and sets `X-Robots-Tag: noindex, follow`.
+- Canonical article pages should be served normally and indexable.
 
-## Staging Surface
+Critical API groups:
 
-Staging branch:
+- Article queue: `articles-upload`, `articles-list`, `articles-set-status`, `articles-due`, `articles-publish`, `articles-trigger`, `articles-export`.
+- Pin queue: `pins-upload`, `pins-status`, `pins-set-status`, `pins-next`, `pins-mark-posted`, `pins-mark-failed`, `pins-reschedule`, `pins-posted`, `pins-trigger`.
+- Pipeline: `pipeline-trigger`, `pipeline-topics`, `pipeline-sync`, `pipeline-status`.
+- Dashboard and metrics: `dashboard`, `stats`, `analytics`, `analytics-trigger`, `agent-scan`, `event`, `rating`.
+- Pinterest OAuth/demo/analytics: `pinterest-*`.
+- Newsletter: `subscribe`.
+
+## Branches And Environments
+
+Production:
+
+- Branch: `main`
+- URL: `https://www.daily-life-hacks.com`
+- Deploys through Cloudflare Pages production.
+
+Staging:
 
 - Branch: `staging`
-- Cloudflare environment: Preview
-- Current staging URL: `https://77f0167e.daily-life-hacks.pages.dev`
-- Current staging purpose: site, build, router, and content validation
+- Environment: Cloudflare Pages Preview.
+- Current documented preview URL: `https://77f0167e.daily-life-hacks.pages.dev`
+- Intended for static site, generated content, image, routing, and build review.
 
-Important limitation:
+Staging limitation:
 
-- Staging does not yet have a separate D1 database.
-- Dashboard actions and API endpoints still point at production behavior unless explicitly changed.
-- Do not use staging dashboard buttons for real pipeline tests until the dashboard/API layer is made staging-aware.
+- Preview runtime is not D1-isolated yet.
+- Pages Functions still use the `DB` binding.
+- Dashboard/API actions on staging may mutate production D1.
+- Do not use staging dashboard/API buttons for real tests until a separate Preview D1 binding exists.
 
-## D1 Database
+Promotion:
 
-Cloudflare D1 database:
+- Workflow: `.github/workflows/promote-staging.yml`
+- Manual only.
+- Requires input `PROMOTE`.
+- Checks out `origin/staging`.
+- Runs `npm ci` and `npm run build:checked`.
+- Fast-forwards `main` to `origin/staging`.
+- Pushes `main`, which triggers production deployment.
 
-- Name: `dlh-subscriptions`
-- Binding name in Cloudflare Pages: `DB`
-- Observed remote database id: `dca15f47-7be7-441f-81ab-f08dfb707226`
-
-Live table state observed on 2026-05-16:
-
-| Table | State | Count |
-|---|---:|---:|
-| `articles_schedule` | `PUBLISHED` | 48 |
-| `articles_schedule` | `PENDING` | 1 |
-| `articles_schedule` | `DUPLICATE` | 1 |
-| `pins_schedule` | `POSTED` | 291 |
-| `pins_schedule` | `PENDING` | 51 |
-| `pipeline_topics` | `approved` | 119 |
-| `pipeline_topics` | `produced` | 4 |
-
-Key interpretation:
-
-- The live site content should be treated as `src/data/articles/*.md`, not as `articles_schedule`.
-- `articles_schedule` is legacy/compatibility publishing state, not the full source of live articles.
-- `pins_schedule` is active production state for the Pinterest auto-poster.
-- `pipeline_topics` contains a large approved backlog. Producing from this queue can create and push new content.
-
-## Live Articles And Pinterest State
-
-Current verified map from the committed audit:
-
-- Live articles in repo: 140
-- Live Pinterest pins mapped from local Pinterest inventory: 345
-- Pending scheduled pins in D1 at audit time: 53
-- Total tracked pin records at audit time: 398
-- Unique pin slugs tracked at audit time: 239
-- Pending pins with valid slug and asset at audit time: 53
-- Pending pin page HTTP failures at audit time: 0
-- Pending pin image HTTP failures at audit time: 0
-
-After the audit, D1 showed 51 pending pins and 291 posted pins, which means the auto-poster continued working.
-
-## Production GitHub Actions
+## GitHub Actions Automation
 
 ### Deploy Cloudflare Pages
 
-File:
+- File: `.github/workflows/deploy-cloudflare-pages.yml`
+- Effect: builds and deploys `main` or `staging`.
+- State-changing: yes, deploys Cloudflare Pages.
+- Approval rule: ask unless the user explicitly approved deploy-related work.
 
-- `.github/workflows/deploy-cloudflare-pages.yml`
+### Promote Staging
 
-Role:
-
-- Builds and deploys the static site to Cloudflare Pages.
-- Now supports both `main` and `staging`.
-
-Risk:
-
-- Low. It builds the current repository state and deploys it.
-
-### Pinterest Auto-Poster
-
-File:
-
-- `.github/workflows/post-pins.yml`
-
-Script:
-
-- `scripts/post-pins.py`
-
-Schedule:
-
-- Every 30 minutes.
-
-External systems:
-
-- Pinterest API
-- Cloudflare Functions
-- Cloudflare D1
-- GitHub secrets
-
-Primary API endpoints:
-
-- `GET /api/pins-next`
-- `POST /api/pins-mark-posted`
-- `POST /api/pins-mark-failed`
-
-Role:
-
-- Pulls the next due `PENDING` pin from `pins_schedule`.
-- Posts it to Pinterest.
-- Marks the D1 row as `POSTED` or `FAILED`.
-
-Risk:
-
-- High production importance, but currently working.
-- Should not be paused or changed casually.
-- Needs a future safety layer, but that is a follow-up after mapping.
-
-### Daily Article Publisher
-
-File:
-
-- `.github/workflows/publish-articles.yml`
-
-Script:
-
-- `scripts/publish-articles.py`
-
-Schedule:
-
-- Daily at 07:00 UTC.
-- Also manually triggered by the dashboard through `pipeline-trigger`.
-
-Primary API endpoint:
-
-- `GET /api/articles-due`
-
-Role:
-
-- Reads due rows from `articles_schedule`.
-- Publishes articles by committing Markdown into `src/data/articles`.
-- Marks D1 rows as published.
-
-Risk:
-
-- Medium to high.
-- It is production-affecting because it can commit articles to `main`.
-- Current D1 state shows only one pending article in `articles_schedule`.
+- File: `.github/workflows/promote-staging.yml`
+- Effect: fast-forwards `main` to `staging` after `PROMOTE` and build checks.
+- State-changing: yes, production promotion.
+- Approval rule: always get explicit user approval for the turn.
 
 ### Pipeline Discover
 
-File:
-
-- `.github/workflows/pipeline-discover.yml`
-
-Scripts:
-
-- `scripts/NEW_PIPELINE_2026-05-08/discover_gsc.py`
-- `scripts/NEW_PIPELINE_2026-05-08/discover_autocomplete.py`
-- `scripts/NEW_PIPELINE_2026-05-08/filter_discovered_topics.py`
-
-Schedule:
-
-- Every Monday at 06:00 UTC.
-- Manual dispatch supported.
-
-Role:
-
-- Discovers topics and pushes filtered topics into D1 `pipeline_topics`.
-
-Risk:
-
-- Medium.
-- It changes D1 topic backlog, not the live site directly.
+- File: `.github/workflows/pipeline-discover.yml`
+- Schedule: Mondays at 06:00 UTC plus manual dispatch.
+- Scripts: `discover_gsc.py`, `discover_autocomplete.py`, `filter_discovered_topics.py`.
+- Effect: discovers and filters topics, then writes to production D1 `pipeline_topics`.
+- State-changing: yes, D1 mutation.
 
 ### Pipeline Produce
 
-File:
-
-- `.github/workflows/pipeline-produce.yml`
-
-Script:
-
-- `scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py`
-
-External systems:
-
-- OpenRouter
-- fal.ai
-- Cloudflare D1
-- GitHub
-
-Role:
-
-- Pulls approved topics from D1.
-- Produces articles and images.
-- Syncs pipeline status to D1.
-- Commits generated files to `staging`.
-- Fails the workflow if any selected topic fails generation, so failed topics are not marked `produced`.
-
-Risk:
-
-- High.
-- It can generate files and update production D1 pipeline status.
-- It no longer pushes generated files directly to production.
-- A separate manual promotion step from `staging` to `main` is still needed.
+- File: `.github/workflows/pipeline-produce.yml`
+- Trigger: manual dispatch.
+- Inputs: `count`, `category`.
+- Target branch: `staging` via `PIPELINE_TARGET_BRANCH=staging`.
+- Scripts: `scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py`, then `sync_pipeline_to_d1.py`.
+- External services: OpenRouter and Fal.
+- Effect: fetches approved D1 topics, generates articles/images/pins, marks topics produced, syncs pipeline status to D1, commits generated files to `staging`.
+- State-changing: yes, external API spend, D1 mutation, Git push to `staging`.
+- Current safe use: first restart batch should be `count=1`, then review staging before promotion.
 
 ### Pipeline Daily
 
-File:
+- File: `.github/workflows/pipeline-daily.yml`
+- Trigger: manual only.
+- Target branch: `staging`.
+- Effect: up to 2 approved topics from production D1, same generation path as produce.
+- State-changing: yes.
+- Status: keep manual-only while stabilization continues.
 
-- `.github/workflows/pipeline-daily.yml`
+### Daily Approved Article Publisher
 
-Schedule:
+- File: `.github/workflows/publish-articles.yml`
+- Schedule: daily at 07:00 UTC, plus historical one-off test cron entries and manual dispatch.
+- Script: `scripts/publish-articles.py`
+- Effect: reads due `APPROVED` plus legacy `PENDING` rows through `/api/articles-due`, commits Markdown to `main`, marks rows published.
+- State-changing: yes, writes to production Git and D1.
+- Classification: legacy/manual article queue path. New AI-generated content should use staging and promotion first.
 
-- Manual dispatch only as of 2026-05-17.
-- The previous daily schedule at 05:00 UTC was removed during stabilization.
+### Pinterest Auto-Poster
 
-Role:
+- File: `.github/workflows/post-pins.yml`
+- Schedule: every 30 minutes plus manual dispatch.
+- Script: `scripts/post-pins.py`
+- Effect: gets next due `PENDING` pin, posts to Pinterest, marks row `POSTED` or `FAILED`.
+- Safety: scheduled run max 2 pins; manual `immediate=true` max 1 pin; stops after Pinterest API failure.
+- State-changing: yes, Pinterest and D1.
+- Classification: active production automation. Do not change volume aggressively while reach is suppressed.
 
-- Pulls up to 2 approved topics from D1.
-- Runs the new pipeline.
-- Commits generated files to `staging`.
-- Fails the workflow if any selected topic fails generation, so failed topics are not marked `produced`.
+### Pinterest Analytics Fetcher
 
-Risk:
+- File: `.github/workflows/fetch-analytics.yml`
+- Schedule: every 6 hours plus manual dispatch.
+- Script: `scripts/fetch-pinterest-analytics.py`
+- Effect: fetches Pinterest analytics and saves dashboard cache through protected API.
+- State-changing: yes, D1 cache update and possible token refresh secret update.
 
-- Very high.
-- This AI production pipeline can still update production D1 pipeline status.
-- It is intentionally not scheduled.
-- Generated files go to staging first while manual approval and promotion flow are being implemented.
+## Active Pipeline
 
-## Cloudflare Functions
-
-Critical production endpoints:
-
-- `functions/api/pins-next.js`
-- `functions/api/pins-mark-posted.js`
-- `functions/api/pins-mark-failed.js`
-- `functions/api/pins-status.js`
-- `functions/api/articles-due.js`
-- `functions/api/articles-publish.js`
-- `functions/api/pipeline-trigger.js`
-- `functions/api/pipeline-topics.js`
-- `functions/api/pipeline-sync.js`
-- `functions/api/pipeline-status.js`
-
-Routing and analytics:
-
-- `functions/[[path]].js` handles smart routing fallback and Pinterest hit logging.
-
-Important observation:
-
-- `functions/api/pipeline-trigger.js` dispatches GitHub Actions with `ref: "main"`.
-- That is intentional so GitHub can read the workflow files from the default branch.
-- The endpoint now returns each action's `outputBranch` and effect.
-- `produce` dispatches from `main`, but generated files are pushed to `staging` by the workflow.
-- `publish` is still the legacy production publisher and can write to `main`.
-- The dashboard now labels these effects and asks for confirmation before triggering pipeline actions.
-- STATS_KEY-protected API routes now fail closed. If `STATS_KEY` is missing at runtime, state-changing and protected endpoints return unauthorized instead of allowing access.
-
-## New AI Pipeline
-
-Official active new pipeline directory:
+Official active pipeline directory:
 
 - `scripts/NEW_PIPELINE_2026-05-08/`
 
-Core scripts:
+Core pipeline scripts:
 
-- `run_pipeline.py`
-- `write.py`
-- `judge_articles.py`
-- `generate_hero_brief.py`
-- `generate_pin_briefs.py`
-- `generate_images.py`
-- `generate_pin_images.py`
-- `generate_pinterest_csv.py`
-- `sync_to_d1.py`
-- `sync_pipeline_to_d1.py`
-- `sync_router_mapping.py`
+- `run_pipeline.py`: orchestrates article generation, review, briefs, images, and outputs.
+- `write.py`: article writing through OpenRouter.
+- `judge_articles.py` and `stage_1_75/`: review and compliance checks.
+- `generate_hero_brief.py`: hero prompt and alt brief.
+- `generate_pin_briefs.py`: pin title/description/prompt briefs.
+- `generate_images.py`: hero image generation through Fal/Recraft.
+- `generate_pin_images.py`: pin image generation through Fal/GPT image model path.
+- `generate_pinterest_csv.py`: prepares pin CSV rows.
+- `sync_pipeline_to_d1.py`: syncs lifecycle status to D1.
+- `sync_to_d1.py`: uploads article/pin CSV rows to D1 queue endpoints.
+- `sync_router_mapping.py`: updates routing/alias data for generated pins.
 
-Provider integrations:
+Pipeline outputs:
 
-- OpenRouter:
-  - `stage_1_5/openrouter.py`
-  - `write.py`
-  - `generate_hero_brief.py`
-  - `generate_pin_briefs.py`
-  - `filter_topics.py`
-  - `topic_research/stage2.py`
-- fal.ai:
-  - `generate_images.py`
-  - `generate_pin_images.py`
-  - related `fal_client` imports
+- Articles: `src/data/articles/{slug}.md`
+- Hero images: `public/images/{slug}-main.jpg`
+- Pin images: `public/images/pins/{slug}_v1.jpg` through `_v4.jpg`
+- Router/alias data: `pipeline-data/router-mapping.json`, `pipeline-data/slug-aliases.json`
+- Logs/artifacts: `pipeline-data/*.json`, `pipeline-data/*.jsonl`, local SQLite cache.
 
-Important classification:
+Important guardrails:
 
-- Do not delete or archive this directory.
-- It is the current intended pipeline, even if parts still need hardening.
-- `generate_pinterest_csv.py` writes native `/api/pins-upload` rows with explicit `row_id`, `image_url`, and `link` values based on `pin_slug`, instead of relying on the legacy `{article_slug}_vN` fallback.
+- Do not treat local SQLite as durable production truth.
+- Do not run OpenRouter/Fal generation locally without explicit approval.
+- Do not run `sync_to_d1.py` without explicit approval because it mutates production queues.
+- Review generated files on `staging` before promotion to `main`.
+- Do not approve new pins until the target article is live in production.
 
-## Current Operational Risks
+## Deprecated Or Unsafe Paths
 
-1. `pipeline-daily.yml` can generate content and update production D1 state when manually triggered.
-2. `pipeline-produce.yml` can generate content and update production D1 state when manually triggered.
-3. `pipeline-trigger.js` always dispatches workflows on `main`, including from any dashboard context.
-4. Staging currently validates the site build, but not isolated D1/runtime behavior.
-5. There are many dirty/untracked/deleted files in the local working tree that should not be mixed into stabilization commits.
-6. `package.json` and `package-lock.json` currently have pre-existing local modifications not related to the staging work.
+Treat these as non-production unless a task explicitly revives them:
 
-## Recommended Next Stabilization
+- `scripts/archive/`
+- `scripts/_archive/`
+- `scripts/openrouter-fal/`
+- `scripts/NEW_PIPELINE/`
+- `scripts/TEST_SCRIPTS/`
+- Root-level deleted legacy scripts currently visible in the dirty worktree.
+- Old Publer/n8n archives under archive folders.
 
-Immediate next step:
+Do not delete or clean these during unrelated work. The worktree has many unrelated deletions and untracked files; stage exact files only.
 
-- Build the generated-content review checklist on `staging`.
+## Operational Commands
 
-Practical options:
+Read-only/safe checks:
 
-1. Keep `pipeline-daily.yml` manual only.
-2. Keep AI production workflows pushing generated files to `staging` first.
-3. Use `.github/workflows/promote-staging.yml` for manual promotion from `staging` to `main`.
-4. Continue separating runtime D1 operations from generated-file promotion.
+```bash
+git status --short
+rg --files
+rg "pattern" path
+npm run verify:routing
+```
 
-Recommended order:
+Local build verification:
+
+```bash
+npm run build
+npm run build:checked
+```
+
+Local development:
+
+```bash
+npm run dev
+npm run preview
+```
+
+Production-only scripts in `package.json`:
+
+```bash
+npm run deploy:prod
+npm run release:prod
+```
+
+Do not run production deploy/release commands unless the user explicitly approves that turn.
+
+State-changing operations that require explicit approval:
+
+- Any source edit unless the user gave a concrete task for the change.
+- `git commit`, `git push`, staging files, branch operations.
+- `npm install` or package changes.
+- `npx wrangler`, D1 writes, or Cloudflare deploys.
+- GitHub workflow dispatches.
+- OpenRouter/Fal generation runs.
+- Pinterest posting or token changes.
+- Email/newsletter sends or Kit mutations.
+
+## Environment Variables And Secrets
+
+Cloudflare runtime variables:
+
+- `DB`: D1 binding.
+- `STATS_KEY`: protects stats, queue, pin, article, analytics, and pipeline sync endpoints.
+- `DASHBOARD_PASSWORD`: protects dashboard and pipeline topic/trigger endpoints.
+- `KIT_API_KEY`: used by `/api/subscribe`.
+- `GH_PAT`: used by Cloudflare functions that dispatch workflows or commit via GitHub API.
+- `ROUTES_KV`: optional smart-route KV binding.
+- `PINTEREST_APP_ID`, `PINTEREST_APP_SECRET`, `PINTEREST_REFRESH_TOKEN`: Pinterest OAuth/posting.
+- `PINTEREST_DEMO_COOKIE_SECRET`, `PINTEREST_DEMO_ACCESS_KEY`, `PINTEREST_DEMO_SCOPES`: demo/OAuth utilities.
+
+GitHub Actions secrets:
+
+- `CLOUDFLARE_API_TOKEN`
+- `GH_PAT`
+- `STATS_KEY`
+- `DASHBOARD_PASSWORD`
+- `OPENROUTER_API_KEY`
+- `FAL_KEY`
+- `GSC_SERVICE_ACCOUNT_JSON`
+- `PINTEREST_APP_ID`
+- `PINTEREST_APP_SECRET`
+- `PINTEREST_REFRESH_TOKEN`
+
+## Restarting Content Safely
+
+Use `docs/content-restart-runbook.md` as the detailed checklist.
+
+Short version:
 
 1. Keep `pipeline-daily.yml` manual-only.
-2. Keep Pinterest auto-poster running because it is working and has valid pending rows.
-3. Keep `publish-articles.yml` as-is for now because there is only one pending legacy article and it is part of the older working flow.
-4. For new content, run `Pipeline Produce` manually with `count=1`, review the generated commit on `staging`, then promote with `PROMOTE` only after QA.
-5. Build the manual review path for generated articles and pins on `staging`.
-6. Only then move D1 staging or split production/staging DB bindings.
+2. Dispatch `pipeline-produce.yml` only with explicit approval.
+3. First restart batch: `count=1`.
+4. Generated files land on `staging`.
+5. Review article, images, routing, and build.
+6. Promote with `promote-staging.yml` only after explicit approval.
+7. Approve pins only after the production article URL is live.
+8. Start with one new pin, then wait at least 48 hours before approving more from that batch.
+
+## Current Known Risks
+
+- Staging is not D1-isolated; dashboard/API actions can affect production state.
+- `pipeline-produce.yml` and `pipeline-daily.yml` write generated files to `staging` but can still mutate production D1.
+- `publish-articles.yml` is a legacy production publisher that can write directly to `main`.
+- `pipeline-trigger.js` dispatches workflows from `main`; this is required for GitHub to find workflows, but the effects differ by action.
+- The local worktree contains many unrelated deletions, untracked files, and previous modifications. Do not stage broadly.
+- Pinterest reach is suppressed; avoid posting-volume changes unless explicitly requested.
+
+## Related Runbooks
+
+- `docs/pipeline-migration-source-of-truth.md`: detailed source-of-truth decision and migration plan.
+- `docs/manual-approval-publishing-flow.md`: article and pin review/approval model.
+- `docs/staging-environment.md`: staging and production promotion details.
+- `docs/content-restart-runbook.md`: conservative generation restart process.
+- `docs/pinterest-auto-poster.md`: Pinterest posting implementation notes.
+- `docs/cloudflare-pages-vars.md`: Cloudflare variable setup notes.
+- `docs/analytics-events.md`: analytics event documentation.
+
+## New Assistant Startup Checklist
+
+1. Read `AGENTS.md`.
+2. Read `docs/WORKLOG-CODEX.md`.
+3. Read `docs/CODEX-TASKBOARD.md`.
+4. Read this map if the task touches architecture, pipeline, deployment, D1, or automation.
+5. Claim the first `open` task unless the user named a specific task.
+6. Work on exactly one task.
+7. Update the taskboard and worklog when done.

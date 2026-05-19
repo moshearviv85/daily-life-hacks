@@ -72,9 +72,15 @@ Every new Codex chat should read this file and `AGENTS.md` before choosing work.
 
 ## Known Concerns Still Open
 
-- Need a real cloud/Git-based production pipeline so content generation does not depend on ad hoc local scripts.
-- Need a manual approval checkpoint before publishing new generated content.
-- Need a staging environment for live testing before production.
+- T01 pipeline migration map completed on 2026-05-18. See `docs/pipeline-migration-source-of-truth.md`.
+- Source-of-truth decision: Git owns live content/assets/router data, D1 owns approvals/queues/dashboard/runtime state, and `pipeline-data/topic-research.sqlite` is only a temporary workbench/cache.
+- Local SQLite observed on 2026-05-18: 36 reviewed `write_outputs`, 36 ok `review_outputs`, 36 ok `hero_briefs`, 144 ok `pin_briefs`, and only 1 approved `filtered_topics` row. This confirms D1 `pipeline_topics` is the real topic backlog, not local SQLite.
+- T02 manual approval checkpoint completed on 2026-05-18. See `docs/manual-approval-publishing-flow.md`.
+- New article CSV uploads insert `articles_schedule.status = REVIEW`; dashboard approval moves rows to `APPROVED`; article publishers read `APPROVED` plus legacy `PENDING`.
+- New pin CSV uploads insert `pins_schedule.status = REVIEW`; dashboard approval moves rows to `PENDING`; Pinterest auto-poster reads only `PENDING`.
+- Article upload no longer auto-publishes the first article, and pin upload no longer dispatches `post-pins.yml`.
+- Existing legacy `PENDING` rows are preserved so the already-approved queue is not unexpectedly paused.
+- Staging exists as a `staging` branch Cloudflare Pages Preview deploy, but D1/runtime actions are not isolated yet.
 - Need a clear source-of-truth design for:
   - article generation
   - article review
@@ -88,8 +94,112 @@ Every new Codex chat should read this file and `AGENTS.md` before choosing work.
 
 ## Next Recommended Work Area
 
-Start with `T01` in `docs/CODEX-TASKBOARD.md`: pipeline migration map and source-of-truth design.
+Follow `docs/CODEX-TASKBOARD.md` and choose the first task that is not `done` and not `in_progress`.
 
-The first chat should mark `T01` as `in_progress`, perform only that task, then mark it `done` or `blocked` with notes.
-The next chat should choose the first task that is not `done` and not `in_progress`.
+## 2026-05-18 - T03 Staging Environment
 
+Status: completed.
+
+Findings:
+
+- `.github/workflows/deploy-cloudflare-pages.yml` deploys both `main` and `staging` to Cloudflare Pages with `pages deploy dist --project-name=daily-life-hacks --branch=${{ github.ref_name }}`.
+- `.github/workflows/promote-staging.yml` is the manual production promotion gate. It requires `PROMOTE`, runs `npm run build:checked` against `origin/staging`, then fast-forwards `main`.
+- `pipeline-produce.yml` and `pipeline-daily.yml` already push generated files to `staging` through `PIPELINE_TARGET_BRANCH=staging`.
+- `origin/staging` exists.
+- Staging should remain a Cloudflare Pages branch Preview, not a separate project, until D1 isolation is needed.
+- Current staging limitation: Pages Functions still use the shared `DB` binding, so dashboard/API mutations may affect production D1 state.
+
+Changed files:
+
+- `.github/workflows/deploy-cloudflare-pages.yml`: deploy concurrency is now branch-specific so staging deploys do not cancel production deploys.
+- `docs/staging-environment.md`: added staging decision, testing checklist, promotion flow, boundaries, and future D1 isolation plan.
+- `docs/CODEX-TASKBOARD.md`: T03 claimed and completed.
+
+Verification:
+
+- Reviewed deploy, promotion, pipeline produce, pipeline daily, publisher, and pipeline trigger workflows.
+- Verified `origin/staging` exists locally.
+- Ran `npm run build:checked` successfully after the staging documentation and workflow update.
+
+## 2026-05-18 - T04 Content Restart Runbook
+
+Status: completed.
+
+Created `docs/content-restart-runbook.md` to restart content creation conservatively after stabilization.
+
+Key decisions:
+
+- First restart batch should be 1 article through manual `pipeline-produce.yml`.
+- Generated files should land on `staging` and be reviewed through the Cloudflare Pages Preview before production promotion.
+- `pipeline-daily.yml` should remain manual-only until several clean batches and staging/D1 handoff are proven.
+- New pins should not be approved in the same pass as the first restarted article. Start with one new pin only after the production article URL is live, then wait at least 48 hours before approving more from that batch.
+- Staging is safe for file, routing, image, and content review, but dashboard/API actions remain production D1 mutations until Preview D1 isolation exists.
+
+Verification:
+
+- Read `AGENTS.md`, `docs/WORKLOG-CODEX.md`, `docs/CODEX-TASKBOARD.md`, `docs/pipeline-migration-source-of-truth.md`, `docs/manual-approval-publishing-flow.md`, `docs/staging-environment.md`, `pipeline-produce.yml`, `pipeline-daily.yml`, and `promote-staging.yml`.
+- No GitHub workflow dispatch, D1 mutation, package install, commit, push, deploy, or Pinterest action was performed.
+
+## 2026-05-19 - T05 System Documentation
+
+Status: completed.
+
+Updated `docs/current-system-map.md` as the single trusted current system map for future assistants.
+
+Covered:
+
+- Current stack, production/staging branches, and Cloudflare Pages deployment.
+- Source-of-truth boundaries for Git, D1, router data, topic backlog, and local SQLite.
+- Core D1 tables and current article/pin approval statuses.
+- Cloudflare Functions groups and catch-all smart router behavior.
+- GitHub Actions automation, including deploy, staging promotion, pipeline discovery/produce/daily, article publishing, Pinterest posting, and analytics fetching.
+- Active pipeline directory and generated output paths.
+- Deprecated or unsafe script paths.
+- Operational commands, environment variables, restart guardrails, and current risks.
+
+Verification:
+
+- Read `AGENTS.md`, `docs/WORKLOG-CODEX.md`, `docs/CODEX-TASKBOARD.md`, existing runbooks, `package.json`, `schema.sql`, `src/content.config.ts`, GitHub workflows, key Cloudflare Functions, and active pipeline file list.
+- Verified the updated map contains the required sections for source of truth, automation, unsafe paths, and startup checklist.
+- No build was run because this was documentation-only.
+- No GitHub workflow dispatch, D1 mutation, package install, commit, push, deploy, or Pinterest action was performed.
+
+## 2026-05-19 - T06 Organic Search Follow-Up
+
+Status: completed.
+
+Created and updated `docs/organic-search-follow-up.md` as the handoff for organic search investigation after the router and canonical stabilization.
+
+Findings:
+
+- No Search Console or Bing export data was present in `seo/data/`.
+- `seo/fetch_gsc.py` exists for manual 90-day GSC exports, while `scripts/NEW_PIPELINE_2026-05-08/discover_gsc.py` is for topic discovery through `GSC_SERVICE_ACCOUNT_JSON`.
+- No Bing Webmaster Tools integration or export format was found in the repo.
+- Live `robots.txt` is available and points to `https://www.daily-life-hacks.com/sitemap-index.xml`.
+- Live `sitemap-0.xml` contains 145 URLs.
+- All 140 local article Markdown files are present in the live sitemap.
+- Sampled canonical article URLs returned HTTP 200, self-canonical links, and indexable meta robots.
+- Category pages are indexable; tag pages are `noindex, follow`.
+- User provided a Google Search Console export from `C:\Users\offic\Downloads\daily-life-hacks.com-Performance-on-Search-2026-05-19\`.
+- Export filter says "Last 3 months", but `Chart.csv` contains 2026-04-29 through 2026-05-16.
+- Export totals: 4 clicks, 1,980 impressions, 0.20% CTR, and 23.0 impression-weighted average position.
+- User also provided Bing exports:
+  - Search Performance, 2026-05-03 through 2026-05-16: 2 clicks, 37 impressions, 5.41% CTR.
+  - AI Performance, 2026-05-04 through 2026-05-16: 18 citations and 9 total daily cited-page counts.
+  - AI Page Stats: all 18 citations attributed to 8 URLs; `/prune-juice-alternatives-for-constipation/` led with 8 citations.
+- Priority technical issue: impression-bearing 404 URLs, especially `/prebiotic-foods-beyond-the-buzzwords/` with 106 impressions at position 10.77 and `/selenium-containing-foods-easy-ways/` with 91 impressions.
+- Priority CTR opportunities include `/high-fiber-fast-food-options-guide/`, `/how-to-double-recipe-seasoning-without-guessing/`, `/good-source-of-fiber-label-meaning/`, `/comparing-fiber-content-different-pizza-crusts/`, and `/gut-health-tea-peppermint-ginger/`.
+- GSC shows both slash and no-slash URLs for `high-fiber-fast-food-options-guide`; both return 200, with the no-slash version canonicalizing to the slash URL.
+
+Handoff:
+
+- Next implementation task should recover or intentionally redirect impression-bearing 404 URLs.
+- After that, consider adding a 301 from no-slash article paths to trailing-slash paths.
+- Then optimize titles/excerpts and first-screen copy for close-ranking pages.
+- First useful post-fix review window is at least 7 days after the 2026-05-18 stabilization; a stronger read is 14-28 days after.
+- Do not repeat the completed router audit unless there is a new failing URL, GSC indexing error, or Bing crawl issue.
+
+Verification:
+
+- Public checks only; no external state was changed.
+- No GitHub workflow dispatch, D1 mutation, package install, commit, push, deploy, or Pinterest action was performed.
