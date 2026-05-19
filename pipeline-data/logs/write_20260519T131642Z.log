@@ -1,0 +1,13 @@
+[2026-05-19T13:16:42Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-05-19T13:16:42Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260519T131642Z.log
+[2026-05-19T13:16:42Z] topics selected: 1
+[2026-05-19T13:16:42Z]   #  1 [recipes  ] best way to cook lobster tails  (slug=best-way-to-cook-lobster-tails)
+[2026-05-19T13:16:42Z] write_runs.id = 1
+[2026-05-19T13:16:59Z] OK   #1 best-way-to-cook-lobster-tails  body_words=595 tier2=S-20,S-21 lat=16364ms cost=$0.0054
+[2026-05-19T13:16:59Z] 
+[2026-05-19T13:16:59Z] ============================================================
+[2026-05-19T13:16:59Z] DONE. write_runs.id=1 status=done
+[2026-05-19T13:16:59Z] written=1 dq=0 errors=0 skipped=0
+[2026-05-19T13:16:59Z] tokens in=3,390 out=1,745 cost=$0.0054
+[2026-05-19T13:16:59Z] elapsed: 17.0s (0.3 min)
+[2026-05-19T13:16:59Z] ============================================================
