@@ -1,0 +1,13 @@
+[2026-05-19T03:46:27Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-05-19T03:46:27Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260519T034627Z.log
+[2026-05-19T03:46:27Z] topics selected: 1
+[2026-05-19T03:46:27Z]   #  1 [recipes  ] best way to cook corn on the cob  (slug=best-way-to-cook-corn-on-the-cob)
+[2026-05-19T03:46:27Z] write_runs.id = 1
+[2026-05-19T03:46:41Z] OK   #1 best-way-to-cook-corn-on-the-cob  body_words=700 tier2=CP-07,S-20,S-21 lat=12640ms cost=$0.0054
+[2026-05-19T03:46:41Z] 
+[2026-05-19T03:46:41Z] ============================================================
+[2026-05-19T03:46:41Z] DONE. write_runs.id=1 status=done
+[2026-05-19T03:46:41Z] written=1 dq=0 errors=0 skipped=0
+[2026-05-19T03:46:41Z] tokens in=3,400 out=1,754 cost=$0.0054
+[2026-05-19T03:46:41Z] elapsed: 13.4s (0.2 min)
+[2026-05-19T03:46:41Z] ============================================================
