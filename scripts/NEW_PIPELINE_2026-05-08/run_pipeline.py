@@ -111,6 +111,56 @@ def seed_topic(db_path: str, topic: str, category: str, slug: str) -> int:
     return rank
 
 
+REVIEW_SCHEMA = """
+CREATE TABLE IF NOT EXISTS review_runs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    started_at TEXT NOT NULL,
+    finished_at TEXT,
+    status TEXT NOT NULL,
+    review_model TEXT NOT NULL,
+    article_count INTEGER NOT NULL,
+    notes TEXT
+);
+
+CREATE TABLE IF NOT EXISTS review_outputs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id INTEGER NOT NULL REFERENCES review_runs(id),
+    original_write_output_id INTEGER NOT NULL,
+    slug TEXT NOT NULL,
+    category TEXT NOT NULL,
+    original_markdown TEXT,
+    reviewed_markdown TEXT,
+    changes_json TEXT,
+    changes_count INTEGER,
+    review_model TEXT NOT NULL,
+    tokens_in INTEGER,
+    tokens_out INTEGER,
+    cost_usd REAL,
+    latency_ms INTEGER,
+    tier1_pass INTEGER,
+    tier2_warnings TEXT,
+    status TEXT NOT NULL,
+    error TEXT,
+    attempts INTEGER,
+    created_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_review_outputs_slug
+    ON review_outputs(slug);
+"""
+
+
+def init_brief_schema(db_path: str) -> None:
+    sys.path.insert(0, str(SCRIPT_DIR))
+    from lib import brief_store
+
+    con = brief_store.connect(db_path)
+    try:
+        brief_store.init_schema(con)
+    finally:
+        con.close()
+
+
 def run_review(db_path: str, slug: str, api_key: str) -> bool:
     """LLM review stage: reads write_outputs, reviews via OpenRouter, writes review_outputs."""
     log("--- Stage 2: LLM Review ---")
@@ -121,6 +171,8 @@ def run_review(db_path: str, slug: str, api_key: str) -> bool:
 
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
+    conn.executescript(REVIEW_SCHEMA)
+    conn.commit()
 
     row = conn.execute(
         "SELECT id, slug, category, markdown FROM write_outputs "
@@ -263,6 +315,8 @@ def main(argv: list[str] | None = None) -> int:
         log("DRY RUN: stopping after write + review (no images, no deploy)")
         log(f"Total time: {time.monotonic() - total_start:.1f}s")
         return 0
+
+    init_brief_schema(args.db)
 
     # Stage 3: Generate hero brief
     ok = run_step("Stage 3: Hero Brief", [
