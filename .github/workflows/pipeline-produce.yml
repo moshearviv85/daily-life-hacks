@@ -28,12 +28,18 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Prepare staging workspace
+        run: |
+          git fetch origin main staging
+          git checkout -B pipeline-staging origin/staging
+          git merge --no-edit origin/main
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests pyyaml google-generativeai httpx
+        run: pip install requests pyyaml google-generativeai httpx pillow
 
       - name: Create pipeline-data directory
         run: mkdir -p pipeline-data
