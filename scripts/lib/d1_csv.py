@@ -115,6 +115,14 @@ _FRONTMATTER_RE = re.compile(r"^---\n(.*?)\n---\n(.*)$", re.DOTALL)
 _IMAGEALT_LINE_RE = re.compile(r"^imageAlt:.*$", re.MULTILINE)
 
 
+def validate_image_alt(alt: str) -> None:
+    n = len(alt)
+    if n < 30:
+        raise ValueError(f"imageAlt too short ({n} < 30 chars)")
+    if n > 200:
+        raise ValueError(f"imageAlt too long ({n} > 200 chars)")
+
+
 def inject_image_alt(markdown: str, alt: str) -> str:
     """Replace `imageAlt: ...` in the frontmatter with the new value, or
     insert it if missing. Empty alt is a no-op (keeps the existing value).
@@ -123,6 +131,7 @@ def inject_image_alt(markdown: str, alt: str) -> str:
     quotes don't break the parser."""
     if not alt:
         return markdown
+    validate_image_alt(alt)
     m = _FRONTMATTER_RE.match(markdown)
     if not m:
         return markdown

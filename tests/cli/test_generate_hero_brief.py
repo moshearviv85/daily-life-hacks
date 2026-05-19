@@ -155,6 +155,7 @@ def test_generate_hero_brief_with_mock_returns_valid(tmp_path, monkeypatch):
     brief = generate_hero_brief("demo", llm_call=_good_llm)
     assert brief.article_slug == "demo"
     assert "kitchen" in brief.prompt
+    assert brief.alt == _good_llm(None)["alt"]
 
 
 def test_generate_hero_brief_invalid_llm_output_raises(tmp_path, monkeypatch):
@@ -164,6 +165,19 @@ def test_generate_hero_brief_invalid_llm_output_raises(tmp_path, monkeypatch):
         return {
             "prompt": "ok prompt here that is long enough to look real",
             "alt": "alt — with em-dash inside the description text right here.",
+        }
+
+    with pytest.raises(ValueError):
+        generate_hero_brief("demo", llm_call=bad_llm)
+
+
+def test_generate_hero_brief_rejects_alt_over_200_chars(tmp_path, monkeypatch):
+    _setup_article(tmp_path, monkeypatch)
+
+    def bad_llm(article):
+        return {
+            "prompt": "A clean overhead kitchen photograph with natural light and a simple plate.",
+            "alt": "A " + "very detailed " * 25 + "photo of a plate on a kitchen counter.",
         }
 
     with pytest.raises(ValueError):

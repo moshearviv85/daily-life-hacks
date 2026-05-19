@@ -21,6 +21,7 @@ tags:
   - simple recipe
   - family favorite
 image: "/images/test-slug-main.jpg"
+imageAlt: A bowl of fluffy white rice with herbs on a wooden table
 date: 2026-05-13
 author: "David Miller"
 featured: false
@@ -387,6 +388,40 @@ class TestArticleStructural:
         violations = validate(GOOD_ARTICLE, context="article", slug="different-slug")
         rule_ids = {v.rule_id for v in violations}
         assert "S-08" in rule_ids
+
+    def test_missing_image_alt_triggers_s11(self):
+        text = GOOD_ARTICLE.replace(
+            "imageAlt: A bowl of fluffy white rice with herbs on a wooden table\n",
+            "",
+        )
+        violations = validate(text, context="article", slug="test-slug")
+        rule_ids = {v.rule_id for v in violations}
+        assert "S-11" in rule_ids
+
+    def test_long_image_alt_triggers_s11(self):
+        long_alt = "A " + "very detailed " * 25 + "photo of rice on a table"
+        text = GOOD_ARTICLE.replace(
+            "imageAlt: A bowl of fluffy white rice with herbs on a wooden table",
+            f"imageAlt: {long_alt}",
+        )
+        violations = validate(text, context="article", slug="test-slug")
+        rule_ids = {v.rule_id for v in violations}
+        assert "S-11" in rule_ids
+
+    def test_duplicate_comma_phrase_in_steps_triggers_s14(self):
+        text = GOOD_ARTICLE.replace(
+            '"Combine with water and salt."',
+            '"Combine rice, onion powder, onion powder, and salt."',
+        )
+        violations = validate(text, context="article", slug="test-slug")
+        rule_ids = {v.rule_id for v in violations}
+        assert "S-14" in rule_ids
+
+    def test_stale_phrase_game_changer_triggers_cp09(self):
+        text = GOOD_ARTICLE + "\n\nThis method is a total game-changer for weeknights."
+        violations = validate(text, context="article", slug="test-slug")
+        rule_ids = {v.rule_id for v in violations}
+        assert "CP-09" in rule_ids
 
     def test_no_s08_without_slug(self):
         # S-08 skipped when slug=None

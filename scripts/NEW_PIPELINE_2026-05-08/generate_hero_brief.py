@@ -218,7 +218,7 @@ def generate_hero_brief(slug: str, *, llm_call=call_llm) -> HeroBrief:
             return HeroBrief(
                 article_slug=slug,
                 prompt=prompt,
-                alt=prompt,
+                alt=raw.get("alt", ""),
             )
         except ValueError as exc:
             last_err = exc

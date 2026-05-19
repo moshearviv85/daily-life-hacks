@@ -187,8 +187,8 @@ def test_pins_csv_skips_record_with_missing_descriptions():
 
 def test_inject_image_alt_replaces_existing_line():
     md = '---\ntitle: T\nimage: "/images/x-main.jpg"\nimageAlt: old description here\ndate: 2026-04-27\n---\nBody.'
-    out = inject_image_alt(md, "fresh alt from hero brief")
-    assert "imageAlt: fresh alt from hero brief" in out
+    out = inject_image_alt(md, "Fresh hero alt showing food on a bright kitchen counter")
+    assert "imageAlt: Fresh hero alt showing food on a bright kitchen counter" in out
     assert "old description here" not in out
     assert "title: T" in out
     assert "Body." in out
@@ -196,13 +196,13 @@ def test_inject_image_alt_replaces_existing_line():
 
 def test_inject_image_alt_inserts_when_missing():
     md = '---\ntitle: T\nimage: "/images/x-main.jpg"\ndate: 2026-04-27\n---\nBody.'
-    out = inject_image_alt(md, "fresh alt")
-    assert "imageAlt: fresh alt" in out
+    out = inject_image_alt(md, "Fresh hero alt showing food on a bright kitchen counter")
+    assert "imageAlt: Fresh hero alt showing food on a bright kitchen counter" in out
 
 
 def test_inject_image_alt_preserves_body_unchanged():
     md = '---\ntitle: T\nimageAlt: old\n---\n## Body\n\nParagraph here.\n'
-    out = inject_image_alt(md, "new alt")
+    out = inject_image_alt(md, "Fresh hero alt showing food on a bright kitchen counter")
     assert "## Body" in out
     assert "Paragraph here." in out
 
@@ -210,12 +210,12 @@ def test_inject_image_alt_preserves_body_unchanged():
 def test_inject_image_alt_quotes_value_with_special_chars():
     """Alt text with a colon would break YAML if unquoted."""
     md = '---\ntitle: T\nimageAlt: old\n---\nBody.'
-    out = inject_image_alt(md, "A bowl: with stuff in it")
+    out = inject_image_alt(md, "A bowl: with vegetables on a bright kitchen counter")
     # Round-trip through yaml to confirm parseability
     import yaml
     fm = out.split("---\n")[1]
     parsed = yaml.safe_load(fm)
-    assert parsed["imageAlt"] == "A bowl: with stuff in it"
+    assert parsed["imageAlt"] == "A bowl: with vegetables on a bright kitchen counter"
 
 
 def test_inject_image_alt_returns_unchanged_when_alt_empty():
@@ -224,8 +224,22 @@ def test_inject_image_alt_returns_unchanged_when_alt_empty():
     assert "imageAlt: keep me" in out
 
 
+def test_inject_image_alt_rejects_alt_under_30_chars():
+    md = '---\ntitle: T\nimageAlt: old\n---\nBody.'
+    with pytest.raises(ValueError):
+        inject_image_alt(md, "Too short")
+
+
+def test_inject_image_alt_rejects_alt_over_200_chars():
+    md = '---\ntitle: T\nimageAlt: old\n---\nBody.'
+    long_alt = "A " + "very detailed " * 25 + "photo of food on a plate."
+    with pytest.raises(ValueError):
+        inject_image_alt(md, long_alt)
+
+
 def test_inject_image_alt_idempotent_on_same_value():
-    md = '---\ntitle: T\nimageAlt: stable\n---\nBody.'
-    once = inject_image_alt(md, "stable")
-    twice = inject_image_alt(once, "stable")
+    alt = "Stable hero alt showing food on a bright kitchen counter"
+    md = f"---\ntitle: T\nimageAlt: {alt}\n---\nBody."
+    once = inject_image_alt(md, alt)
+    twice = inject_image_alt(once, alt)
     assert once == twice

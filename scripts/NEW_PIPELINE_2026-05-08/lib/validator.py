@@ -23,6 +23,7 @@ Rule IDs:
     CP-06  detox / cleanse language
     CP-07  (tier 2) banned AI filler word
     CP-08  (tier 2) sign-off phrase
+    CP-09  stale phrase that should trigger regeneration
 
     S-01   article does not open with ---
     S-02   frontmatter closing --- missing
@@ -34,8 +35,10 @@ Rule IDs:
     S-08   image path does not match slug
     S-09   tags shape invalid
     S-10   recipe required fields missing / invalid
+    S-11   imageAlt missing / out of [30, 200]
     S-12   FAQ heading found in body
     S-13   Conclusion heading found in body
+    S-14   duplicate comma-separated phrase in recipe steps
     S-15   wrapping code fence
     S-20   (tier 2) body word count out of [600, 1200]
     S-21   (tier 2) H2 count out of [3, 8]
@@ -80,6 +83,14 @@ _CONCLUSION_HEADING_RE = re.compile(
     r"^#{1,6}\s*Conclusion\b", re.MULTILINE | re.IGNORECASE
 )
 _H2_RE = re.compile(r"^##\s+\S.*$", re.MULTILINE)
+_DUPLICATE_COMMA_PHRASE_RE = re.compile(
+    r"\b([a-z][a-z]+(?:\s+[a-z][a-z]+){0,2})\b,\s+\1\b",
+    re.IGNORECASE,
+)
+_STALE_PHRASES = (
+    "game-changer",
+    "game changer",
+)
 
 
 # ---------------------------------------------------------------------------
@@ -212,6 +223,15 @@ def _check_signoffs(text: str) -> Violation | None:
     return None
 
 
+def _check_stale_phrases(text: str) -> Violation | None:
+    """CP-09 tier 1: stale editorial phrases should regenerate."""
+    lower = text.lower()
+    hits = [phrase for phrase in _STALE_PHRASES if phrase in lower]
+    if hits:
+        return Violation("CP-09", 1, f"stale phrase(s): {hits[:3]}")
+    return None
+
+
 _CONTENT_POLICY_CHECKS = (
     _check_em_dash,
     _check_supplements,
@@ -221,6 +241,7 @@ _CONTENT_POLICY_CHECKS = (
     _check_detox,
     _check_ai_words,
     _check_signoffs,
+    _check_stale_phrases,
 )
 
 
@@ -349,6 +370,18 @@ def _s10(parsed, text, body, slug) -> Violation | None:
     return None
 
 
+def _s11(parsed, text, body, slug) -> Violation | None:
+    if parsed is None:
+        return None
+    alt = parsed.get("imageAlt")
+    if not isinstance(alt, str) or not alt.strip():
+        return Violation("S-11", 1, "imageAlt must be a non-empty string")
+    n = len(alt)
+    if not (30 <= n <= 200):
+        return Violation("S-11", 1, f"imageAlt length {n} not in [30, 200]")
+    return None
+
+
 def _s12(parsed, text, body, slug) -> Violation | None:
     if _FAQ_HEADING_RE.search(body):
         return Violation("S-12", 1, "body contains FAQ / Frequently Asked Questions heading")
@@ -358,6 +391,25 @@ def _s12(parsed, text, body, slug) -> Violation | None:
 def _s13(parsed, text, body, slug) -> Violation | None:
     if _CONCLUSION_HEADING_RE.search(body):
         return Violation("S-13", 1, "body contains 'Conclusion' heading")
+    return None
+
+
+def _s14(parsed, text, body, slug) -> Violation | None:
+    if parsed is None or parsed.get("category") != "recipes":
+        return None
+    steps = parsed.get("steps")
+    if not isinstance(steps, list):
+        return None
+    for i, step in enumerate(steps):
+        if not isinstance(step, str):
+            continue
+        match = _DUPLICATE_COMMA_PHRASE_RE.search(step)
+        if match:
+            return Violation(
+                "S-14",
+                1,
+                f"steps[{i}] repeats comma-separated phrase {match.group(1)!r}",
+            )
     return None
 
 
@@ -450,7 +502,7 @@ def validate(text: str, *, context: str = "article", slug: str | None = None) ->
         violations.append(v)
 
     # Remaining tier-1 structural checks
-    for check_fn in (_s04, _s05, _s06, _s07, _s08, _s09, _s10, _s12, _s13, _s15):
+    for check_fn in (_s04, _s05, _s06, _s07, _s08, _s09, _s10, _s11, _s12, _s13, _s14, _s15):
         v = check_fn(parsed, text, body, slug)
         if v is not None:
             violations.append(v)

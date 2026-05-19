@@ -34,6 +34,6 @@ class HeroBrief:
             raise ValueError("prompt must be non-empty")
         if len(self.alt) < 30:
             raise ValueError(f"alt too short ({len(self.alt)} < 30 chars)")
-        if len(self.alt) > 600:
-            raise ValueError(f"alt too long ({len(self.alt)} > 600 chars)")
+        if len(self.alt) > 200:
+            raise ValueError(f"alt too long ({len(self.alt)} > 200 chars)")
         _check_clean_text(self.alt, "alt")
