@@ -540,78 +540,10 @@ const BUILD = {
     </div>
 
     <!-- ── CLARITY ANALYTICS ────────────────────────────────────────────────── -->
-    <div class="card section-gap" id="clarity-section">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem">
-        <div>
-          <div class="card-title" style="margin-bottom:0">Microsoft Clarity — Last 24h (Real Users, Bots Excluded)</div>
-          <div id="clarity-cache-note" style="font-size:.72rem;color:var(--muted);margin-top:.2rem"></div>
-        </div>
-        <button id="clarity-refresh-btn" onclick="fetchClarity()"
-          style="font-size:.8rem;padding:.35rem .85rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);cursor:pointer;white-space:nowrap">
-          ↻ Load Clarity Data
-        </button>
-      </div>
-      <div id="clarity-loading" class="empty" style="display:none"></div>
-      <div id="clarity-error" class="empty" style="display:none"></div>
-      <div id="clarity-content" style="display:none">
-        <!-- KPI row -->
-        <div class="stats-grid" style="margin-bottom:1.25rem">
-          <div class="stat-card blue clickable" onclick="openModal('clarity-countries')" title="Click for country breakdown">
-            <div class="stat-label">Sessions</div>
-            <div class="stat-value" id="c-sessions">—</div>
-            <div class="stat-sub" id="c-sessions-sub">real users only</div>
-          </div>
-          <div class="stat-card green clickable" onclick="openModal('clarity-countries')" title="Click for country breakdown">
-            <div class="stat-label">Unique Users</div>
-            <div class="stat-value" id="c-users">—</div>
-            <div class="stat-sub" id="c-users-sub">distinct visitors</div>
-          </div>
-          <div class="stat-card purple">
-            <div class="stat-label">Pages / Session</div>
-            <div class="stat-value" id="c-pps">—</div>
-            <div class="stat-sub">avg pages viewed</div>
-          </div>
-          <div class="stat-card orange">
-            <div class="stat-label">Avg Scroll Depth</div>
-            <div class="stat-value" id="c-scroll">—</div>
-            <div class="stat-sub">how far users scroll</div>
-          </div>
-        </div>
-        <!-- Two-column: countries + pages -->
-        <div class="grid-2">
-          <div>
-            <div style="font-weight:600;margin-bottom:.6rem;font-size:.875rem">Top Countries</div>
-            <div id="c-countries"></div>
-          </div>
-          <div>
-            <div style="font-weight:600;margin-bottom:.6rem;font-size:.875rem">Top Pages</div>
-            <div id="c-pages"></div>
-          </div>
-        </div>
-        <!-- Devices + Browsers row -->
-        <div class="grid-2" style="margin-top:1rem">
-          <div>
-            <div style="font-weight:600;margin-bottom:.6rem;font-size:.875rem">Devices</div>
-            <div id="c-devices"></div>
-          </div>
-          <div>
-            <div style="font-weight:600;margin-bottom:.6rem;font-size:.875rem">Browsers</div>
-            <div id="c-browsers"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- ── TRAFFIC CHART ──────────────────────────────────────────────────── -->
-    <div class="card section-gap">
-      <div class="card-title">Traffic — Cloudflare Analytics</div>
-      <div class="chart-wrap">
-        <canvas id="traffic-chart"></canvas>
-      </div>
-      <div id="traffic-error" class="empty" style="display:none"></div>
-    </div>
-
     <!-- ── ARTICLES + CONTENT PIPELINE ───────────────────────────────────── -->
+    <div id="traffic-error" style="display:none"></div>
+
     <div class="grid-2">
 
       <!-- Articles by category -->
@@ -1567,7 +1499,9 @@ function renderClarityData(cl) {
 
 // ── Charts ─────────────────────────────────────────────────────────────────
 function renderTrafficChart(byDay, days) {
-  const ctx = document.getElementById('traffic-chart').getContext('2d');
+  const canvas = document.getElementById('traffic-chart');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
   if (trafficChart) trafficChart.destroy();
 
   const filledDays = fillDays(byDay, days);
@@ -2889,7 +2823,17 @@ function renderPipelineTable(filter) {
 
   tbody.innerHTML = articles.map(a => `
     <tr>
-      <td style="font-size:.8rem;font-family:monospace">${a.slug}</td>
+      <td style="font-size:.8rem;font-family:monospace">
+        <a href="https://staging.daily-life-hacks.pages.dev/${a.slug}/" target="_blank" rel="noopener"
+          style="color:var(--orange);text-decoration:none">${a.slug}</a>
+        <div style="font-family:system-ui,-apple-system,sans-serif;font-size:.68rem;margin-top:.15rem">
+          <a href="https://staging.daily-life-hacks.pages.dev/${a.slug}/" target="_blank" rel="noopener"
+            style="color:var(--muted);text-decoration:none">staging</a>
+          <span style="color:var(--muted)"> · </span>
+          <a href="/${a.slug}/" target="_blank" rel="noopener"
+            style="color:var(--muted);text-decoration:none">local/prod path</a>
+        </div>
+      </td>
       <td>${a.category}</td>
       <td>${stageBadge(a.stage)}${a.error ? ` <span style="color:#ef4444;font-size:.75rem" title="${a.error}">!</span>` : ''}</td>
       <td>${a.word_count || '-'}</td>
