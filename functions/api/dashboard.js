@@ -11,8 +11,12 @@ export async function onRequestGet(context) {
   const noClarity = url.searchParams.get("noClarity") === "1";
   const clarityOnly = url.searchParams.get("clarityOnly") === "1";
 
-  // Auth
-  if (!env.DASHBOARD_PASSWORD || key !== env.DASHBOARD_PASSWORD) {
+  // Auth: accept the dashboard password and the legacy stats key so the
+  // dashboard does not require two different passwords across its widgets.
+  const authorized =
+    (env.DASHBOARD_PASSWORD && key === env.DASHBOARD_PASSWORD) ||
+    (env.STATS_KEY && key === env.STATS_KEY);
+  if (!authorized) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), {
       status: 401,
       headers: { "Content-Type": "application/json" },

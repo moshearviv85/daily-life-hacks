@@ -32,11 +32,13 @@ function assignTimesForDay(rowIds, date) {
 
 export async function onRequestPost(context) {
   const { request, env } = context;
-  const key = env.STATS_KEY;
 
   const url = new URL(request.url);
   const reqKey = url.searchParams.get("key") || request.headers.get("x-api-key") || "";
-  if (!key || reqKey !== key) {
+  const authorized =
+    (env.STATS_KEY && reqKey === env.STATS_KEY) ||
+    (env.DASHBOARD_PASSWORD && reqKey === env.DASHBOARD_PASSWORD);
+  if (!authorized) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), {
       status: 401,
       headers: { "Content-Type": "application/json" },

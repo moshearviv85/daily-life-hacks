@@ -17,7 +17,10 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const key = url.searchParams.get("key") || "";
 
-  if (!env.DASHBOARD_PASSWORD || key !== env.DASHBOARD_PASSWORD) {
+  const authorized =
+    (env.DASHBOARD_PASSWORD && key === env.DASHBOARD_PASSWORD) ||
+    (env.STATS_KEY && key === env.STATS_KEY);
+  if (!authorized) {
     return json({ error: "Unauthorized" }, 401);
   }
   if (!env.DB) {

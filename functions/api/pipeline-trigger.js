@@ -38,11 +38,16 @@ const ACTIONS = {
   },
 };
 
+function authorized(env, key) {
+  return (env.DASHBOARD_PASSWORD && key === env.DASHBOARD_PASSWORD) ||
+    (env.STATS_KEY && key === env.STATS_KEY);
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const key = url.searchParams.get("key") || "";
-  if (!env.DASHBOARD_PASSWORD || key !== env.DASHBOARD_PASSWORD) {
+  if (!authorized(env, key)) {
     return json({ error: "Unauthorized" }, 401);
   }
   if (!env.GH_PAT) {

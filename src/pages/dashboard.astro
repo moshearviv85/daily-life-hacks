@@ -1089,15 +1089,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // ── Load dashboard ─────────────────────────────────────────────────────────
 async function loadDashboard() {
-  // Show app shell
+  document.getElementById('login-error').style.display = 'none';
+  renderBuildData();
+
+  // Verify the password before showing the app shell. This avoids the old
+  // flash-then-login behavior when the runtime API returns 401.
+  const ok = await fetchLive(currentPeriod);
+  if (!ok) return;
+
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('app').style.display = 'block';
 
-  // Render build-time data immediately
-  renderBuildData();
-
-  // Fetch live data
-  await fetchLive(currentPeriod);
   fetchPipelineStatus();
   loadPinsStatus();
   loadArticles();
@@ -1138,18 +1140,21 @@ async function fetchLive(days) {
   try {
     const res = await fetch(`/api/dashboard?key=${encodeURIComponent(pw)}&days=${days}&noClarity=1`);
     if (res.status === 401) {
+      sessionStorage.removeItem('dlh_pw');
       document.getElementById('login-error').style.display = 'block';
       document.getElementById('app').style.display = 'none';
       document.getElementById('login-screen').style.display = 'flex';
       setRefreshStatus('error', 'Unauthorized');
-      return;
+      return false;
     }
     const data = await res.json();
     sessionStorage.setItem('dlh_pw', pw);
     renderLiveData(data, days);
     setRefreshStatus('ok', `Refreshed ${new Date().toLocaleTimeString()}`);
+    return true;
   } catch (e) {
     setRefreshStatus('error', 'Network error: ' + e.message);
+    return false;
   }
 }
 
