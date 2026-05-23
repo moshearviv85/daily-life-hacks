@@ -79,7 +79,7 @@ def _setup_pipeline_state(tmp_path: Path, *, with_pins: bool = True) -> Path:
             bcon,
             article_slug="demo",
             prompt=VALID_HERO_PROMPT,
-            alt="Fresh alt from hero brief",
+            alt="Fresh hero alt from the generated image brief",
         )
         if with_pins:
             for i in range(4):
@@ -133,7 +133,7 @@ def test_main_injects_image_alt_into_articles_csv(tmp_path):
         "--base-url", "https://test.example.com", "--key", "k",
     ], post=fake)
     articles_body = fake.calls[0]["body"]
-    assert "Fresh alt from hero brief" in articles_body
+    assert "Fresh hero alt from the generated image brief" in articles_body
     assert "stale alt from writer" not in articles_body
 
 

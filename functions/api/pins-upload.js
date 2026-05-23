@@ -34,6 +34,7 @@ const BOARD_IDS = {
 };
 
 const REQUIRED_COLS = ["pin_title", "image_url", "scheduled_date"];
+const DEFAULT_UPLOAD_STATUS = "REVIEW";
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -123,6 +124,10 @@ export async function onRequestPost(context) {
 
   if (rows.length === 0) return json({ error: "CSV has no data rows" }, 400);
 
+  function normalizeStatus(value) {
+    return (value || DEFAULT_UPLOAD_STATUS).trim().toUpperCase();
+  }
+
   // Normalize Publer format → native format
   function normalizePublerRow(r) {
     const imageUrl = (r["Media URL(s) - Separated by comma"] || "").split(",")[0].trim();
@@ -141,7 +146,7 @@ export async function onRequestPost(context) {
       board_id:           BOARD_IDS[board] || board,
       link:               link,
       scheduled_date:     dateRaw.split(" ")[0], // "2026-04-09 08:15" → "2026-04-09"
-      status:             "PENDING",
+      status:             normalizeStatus(r.status),
       pin_id:             "",
       published_date:     "",
       pinterest_response: "",
@@ -164,7 +169,7 @@ export async function onRequestPost(context) {
       board_id:           BOARD_IDS[board] || board,
       link:               r.destination_url || `https://www.daily-life-hacks.com/${slug}`,
       scheduled_date:     r.scheduled_date || "",
-      status:             r.status || "PENDING",
+      status:             normalizeStatus(r.status),
       pin_id:             "",
       published_date:     "",
       pinterest_response: "",
@@ -272,7 +277,7 @@ export async function onRequestPost(context) {
   const scheduled = shuffleAndReschedule(toSchedule, startDayOffset);
   normalizedRows = [...scheduled, ...alreadyPosted];
 
-  let inserted = 0, updated = 0;
+  let inserted = 0, updated = 0, pendingTouched = 0;
 
   for (const row of normalizedRows) {
     const existing = postedSet.has(row.row_id)
@@ -297,10 +302,11 @@ export async function onRequestPost(context) {
       `).bind(
         row.pin_title, row.pin_description || "", row.alt_text || "",
         row.image_url, row.board_id, row.link,
-        row.scheduled_date, row.scheduled_time || null, row.status || "PENDING",
+        row.scheduled_date, row.scheduled_time || null, normalizeStatus(row.status),
         row.row_id
       ).run();
       updated++;
+      if (normalizeStatus(row.status) === "PENDING") pendingTouched++;
     } else {
       await db.prepare(`
         INSERT INTO pins_schedule
@@ -317,18 +323,19 @@ export async function onRequestPost(context) {
         row.link,
         row.scheduled_date,
         row.scheduled_time || null,
-        row.status || "PENDING",
+        normalizeStatus(row.status),
         row.pin_id || null,
         row.published_date || null,
         row.pinterest_response || null,
       ).run();
       inserted++;
+      if (normalizeStatus(row.status) === "PENDING") pendingTouched++;
     }
   }
 
-  // Trigger GitHub Actions workflow immediately if new pins were inserted
+  // Trigger GitHub Actions only when rows are explicitly made publishable.
   let triggered = false;
-  if (inserted > 0 && env.GH_PAT) {
+  if (pendingTouched > 0 && env.GH_PAT) {
     try {
       const ghRes = await fetch(
         "https://api.github.com/repos/moshearviv85/daily-life-hacks/actions/workflows/post-pins.yml/dispatches",

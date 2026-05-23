@@ -365,3 +365,30 @@ Status: completed.
 - Verified `https://daily-life-hacks.com/images/best-way-to-cook-chicken-main.jpg` returns 200.
 - Verified the production homepage returns 200 and includes the new article title.
 - No Pinterest action was performed.
+
+## 2026-05-23 - Staging Pipeline Autodeploy And Pin Safety
+
+Status: staging pipeline verified.
+
+- Added a generated-artifact verification gate to the pipeline before topic marking/D1 sync. The gate checks that the reviewed article markdown, hero image, OK review/hero brief, exactly four OK pin briefs, and all four pin images exist.
+- Updated `pipeline-produce.yml` and `pipeline-daily.yml` so successful generation commits to `staging`, builds the site, builds Pages Functions, and deploys the staging branch to Cloudflare Pages before marking topics as produced and syncing pipeline status to D1.
+- Verified `pipeline-produce.yml` run `26330077191` completed end-to-end without a separate manual deploy.
+- Generated staging article `budget-meal-ideas-philippines` with hero image and four pin images:
+  - `public/images/budget-meal-ideas-philippines-main.jpg`
+  - `public/images/pins/smart-budget-meal-ideas-filipino.jpg`
+  - `public/images/pins/smart-budget-meal-ideas-filipino-2.jpg`
+  - `public/images/pins/smart-budget-meal-ideas-filipino-3.jpg`
+  - `public/images/pins/smart-budget-meal-ideas-filipino-4.jpg`
+- Verified the staging article, hero image, and all four pin image URLs return 200.
+- Confirmed the new pipeline sync writes lifecycle data to `pipeline_articles`/`pipeline_pins`; it does not put newly generated pins into `pins_schedule`.
+- Fixed `/api/pins-upload` so CSV/manual pin uploads without an explicit status now default to `REVIEW`, not `PENDING`, and do not dispatch `post-pins.yml`. Only rows explicitly uploaded as `PENDING` can trigger the auto-poster.
+- Added `tests/pins-upload.test.mjs` to lock the `REVIEW` default and explicit-`PENDING` trigger behavior.
+
+Verification:
+
+- `node --test tests/pins-upload.test.mjs tests/dashboard-auth.test.mjs`
+- `python -m pytest tests/cli/test_sync_to_d1.py tests/lib/test_d1_csv.py tests/lib/test_sync_pipeline_to_d1.py`
+- `python -m unittest tests.pipeline_artifacts_test`
+- `npm run build`
+
+No production promotion or Pinterest posting was performed.
