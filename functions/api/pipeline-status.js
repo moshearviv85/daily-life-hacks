@@ -1,3 +1,5 @@
+import { isDashboardAuthorized } from "./_dashboard-auth.js";
+
 // functions/api/pipeline-status.js
 /**
  * GET /api/pipeline-status
@@ -17,9 +19,7 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const key = url.searchParams.get("key") || "";
 
-  const authorized =
-    (env.DASHBOARD_PASSWORD && key === env.DASHBOARD_PASSWORD) ||
-    (env.STATS_KEY && key === env.STATS_KEY);
+  const authorized = await isDashboardAuthorized(env, key, request);
   if (!authorized) {
     return json({ error: "Unauthorized" }, 401);
   }

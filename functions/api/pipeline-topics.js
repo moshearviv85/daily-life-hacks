@@ -7,6 +7,8 @@
  * Auth: DASHBOARD_PASSWORD
  */
 
+import { isDashboardAuthorized } from "./_dashboard-auth.js";
+
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -14,16 +16,11 @@ function json(data, status = 200) {
   });
 }
 
-function authorized(env, key) {
-  return (env.DASHBOARD_PASSWORD && key === env.DASHBOARD_PASSWORD) ||
-    (env.STATS_KEY && key === env.STATS_KEY);
-}
-
 export async function onRequestGet(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const key = url.searchParams.get("key") || "";
-  if (!authorized(env, key)) {
+  if (!(await isDashboardAuthorized(env, key, request))) {
     return json({ error: "Unauthorized" }, 401);
   }
 
@@ -45,7 +42,7 @@ export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const key = url.searchParams.get("key") || "";
-  if (!authorized(env, key)) {
+  if (!(await isDashboardAuthorized(env, key, request))) {
     return json({ error: "Unauthorized" }, 401);
   }
 

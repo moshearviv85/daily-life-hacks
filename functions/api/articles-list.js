@@ -3,6 +3,8 @@
  * Returns all articles from articles_schedule (without markdown content).
  * Used by dashboard to display article status table.
  */
+import { isDashboardAuthorized } from "./_dashboard-auth.js";
+
 async function ensureRowNum(db) {
   try { await db.prepare(`ALTER TABLE articles_schedule ADD COLUMN row_num INTEGER DEFAULT 0`).run(); } catch(_) {}
 }
@@ -11,9 +13,7 @@ export async function onRequestGet(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const reqKey = url.searchParams.get('key') || request.headers.get('x-api-key') || '';
-  const authorized =
-    (env.STATS_KEY && reqKey === env.STATS_KEY) ||
-    (env.DASHBOARD_PASSWORD && reqKey === env.DASHBOARD_PASSWORD);
+  const authorized = await isDashboardAuthorized(env, reqKey, request);
   if (!authorized) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }

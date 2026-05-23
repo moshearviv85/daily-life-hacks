@@ -1,3 +1,5 @@
+import { isDashboardAuthorized } from "./_dashboard-auth.js";
+
 /**
  * POST /api/pins-upload
  * Accepts a CSV file (multipart or raw text) and upserts all rows into D1 pins_schedule table.
@@ -84,9 +86,7 @@ export async function onRequestPost(context) {
   const url = new URL(request.url);
   const reqKey = url.searchParams.get("key") ||
     request.headers.get("x-api-key") || "";
-  const authorized =
-    (env.STATS_KEY && reqKey === env.STATS_KEY) ||
-    (env.DASHBOARD_PASSWORD && reqKey === env.DASHBOARD_PASSWORD);
+  const authorized = await isDashboardAuthorized(env, reqKey, request);
   if (!authorized) {
     return json({ error: "Unauthorized" }, 401);
   }

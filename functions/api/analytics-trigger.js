@@ -4,6 +4,8 @@
  * Protected by STATS_KEY.
  */
 
+import { isDashboardAuthorized } from "./_dashboard-auth.js";
+
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -17,7 +19,7 @@ export async function onRequestPost(context) {
   const url = new URL(request.url);
   const reqKey = url.searchParams.get("key") ||
     request.headers.get("x-api-key") || "";
-  if (!env.STATS_KEY || reqKey !== env.STATS_KEY) {
+  if (!(await isDashboardAuthorized(env, reqKey, request))) {
     return json({ error: "Unauthorized" }, 401);
   }
 

@@ -1,3 +1,5 @@
+import { isDashboardAuthorized } from "./_dashboard-auth.js";
+
 /**
  * Dashboard API – returns all live data for the /dashboard page.
  * Auth: ?key=DASHBOARD_PASSWORD (env var set in Cloudflare Pages → Variables and Secrets)
@@ -13,9 +15,7 @@ export async function onRequestGet(context) {
 
   // Auth: accept the dashboard password and the legacy stats key so the
   // dashboard does not require two different passwords across its widgets.
-  const authorized =
-    (env.DASHBOARD_PASSWORD && key === env.DASHBOARD_PASSWORD) ||
-    (env.STATS_KEY && key === env.STATS_KEY);
+  const authorized = await isDashboardAuthorized(env, key, request);
   if (!authorized) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), {
       status: 401,

@@ -9,6 +9,8 @@
  * On re-upload: updates content/image only, never resets status or row_num.
  */
 
+import { isDashboardAuthorized } from "./_dashboard-auth.js";
+
 function parseCSV(text) {
   text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
   const rows = [];
@@ -53,9 +55,7 @@ export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const reqKey = url.searchParams.get('key') || request.headers.get('x-api-key') || '';
-  const authorized =
-    (env.STATS_KEY && reqKey === env.STATS_KEY) ||
-    (env.DASHBOARD_PASSWORD && reqKey === env.DASHBOARD_PASSWORD);
+  const authorized = await isDashboardAuthorized(env, reqKey, request);
   if (!authorized) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }

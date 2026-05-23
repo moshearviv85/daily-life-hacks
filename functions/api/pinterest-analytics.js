@@ -1,3 +1,5 @@
+import { isDashboardAuthorized } from "./_dashboard-auth.js";
+
 /**
  * GET /api/pinterest-analytics?key=DASHBOARD_PASSWORD
  *
@@ -10,7 +12,7 @@ export async function onRequestGet(context) {
   const url = new URL(request.url);
   const key = url.searchParams.get("key");
 
-  if (!env.DASHBOARD_PASSWORD || key !== env.DASHBOARD_PASSWORD) {
+  if (!(await isDashboardAuthorized(env, key, request))) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
   if (!env.DB) {

@@ -3,13 +3,13 @@
  * Body: { slug, status, published_at? }
  * Updates article status in articles_schedule. Called by publish-articles.py.
  */
+import { isDashboardAuthorized } from "./_dashboard-auth.js";
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const reqKey = url.searchParams.get('key') || request.headers.get('x-api-key') || '';
-  const authorized =
-    (env.STATS_KEY && reqKey === env.STATS_KEY) ||
-    (env.DASHBOARD_PASSWORD && reqKey === env.DASHBOARD_PASSWORD);
+  const authorized = await isDashboardAuthorized(env, reqKey, request);
   if (!authorized) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
   }
