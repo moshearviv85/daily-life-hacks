@@ -1,0 +1,13 @@
+[2026-05-23T10:05:16Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-05-23T10:05:16Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260523T100516Z.log
+[2026-05-23T10:05:16Z] topics selected: 1
+[2026-05-23T10:05:16Z]   #  1 [recipes  ] best way to cook prime rib  (slug=best-way-to-cook-prime-rib)
+[2026-05-23T10:05:16Z] write_runs.id = 1
+[2026-05-23T10:05:29Z] OK   #1 best-way-to-cook-prime-rib  body_words=735 tier2=S-20,S-21 lat=12334ms cost=$0.0064
+[2026-05-23T10:05:29Z] 
+[2026-05-23T10:05:29Z] ============================================================
+[2026-05-23T10:05:29Z] DONE. write_runs.id=1 status=done
+[2026-05-23T10:05:29Z] written=1 dq=0 errors=0 skipped=0
+[2026-05-23T10:05:29Z] tokens in=3,390 out=2,145 cost=$0.0064
+[2026-05-23T10:05:29Z] elapsed: 13.0s (0.2 min)
+[2026-05-23T10:05:29Z] ============================================================
