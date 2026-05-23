@@ -9,6 +9,10 @@ on:
         description: 'Skip schedule filter — publish first PENDING pin now'
         type: boolean
         default: false
+      row_id:
+        description: 'Optional pins_schedule row_id to publish in immediate mode'
+        required: false
+        default: ''
 
 jobs:
   post-pin:
@@ -38,5 +42,6 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           IMMEDIATE: ${{ github.event.inputs.immediate }}
+          PIN_ROW_ID: ${{ github.event.inputs.row_id }}
           MAX_PINS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.immediate == 'true' && '1' || '2' }}
         run: python scripts/post-pins.py

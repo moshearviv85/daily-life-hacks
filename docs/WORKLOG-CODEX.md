@@ -394,3 +394,23 @@ Verification:
 - `npm run build`
 
 No production promotion or Pinterest posting was performed.
+
+## 2026-05-23 - Dashboard Pipeline Pin Publish Button
+
+Status: implemented for staging.
+
+- Added `/api/pipeline-pin-approve` to approve a specific generated pipeline pin into `pins_schedule`.
+- The endpoint uses the exact `pin_slug` as `pins_schedule.row_id`, builds the production article/image URLs, maps the article category to the Pinterest board ID, and refuses pins whose image is not ready or already posted.
+- Added support for targeted immediate publishing:
+  - `post-pins.yml` now accepts optional `row_id`.
+  - `scripts/post-pins.py` forwards `PIN_ROW_ID` to `/api/pins-next`.
+  - `/api/pins-next` can return one exact `row_id` in immediate mode instead of the first pending pin.
+- Added a dashboard `פרסם` button next to the first generated pin link in the pipeline table. The button confirms, approves that exact pin, dispatches the Pinterest workflow for that exact row, and starts the existing posting poller.
+- Added `tests/pipeline-pin-approve.test.mjs` to verify the endpoint writes the correct schedule row and dispatches the exact `row_id`.
+
+Verification:
+
+- `node --test tests/pipeline-pin-approve.test.mjs tests/pins-upload.test.mjs tests/pipeline-status.test.mjs tests/dashboard-auth.test.mjs`
+- `npm run build`
+
+No Pinterest posting was performed during implementation.

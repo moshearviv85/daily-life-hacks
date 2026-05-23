@@ -2836,9 +2836,14 @@ function renderPipelineTable(filter) {
       const slug = pin.pin_slug || `${article.slug}_v${idx + 1}`;
       const href = `https://staging.daily-life-hacks.pages.dev/images/pins/${slug}.jpg`;
       const label = `v${(pin.pin_index ?? idx) + 1}`;
+      const publishButton = idx === 0
+        ? `<button onclick="approvePipelinePin('${slug}')"
+            title="Approve and post this pin"
+            style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">פרסם</button>`
+        : '';
       return `<a href="${href}" target="_blank" rel="noopener"
         title="${slug}"
-        style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>`;
+        style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${publishButton}`;
     }).join('');
     return `<div>${count}</div><div>${links}</div>`;
   };
@@ -2937,6 +2942,48 @@ async function triggerPipeline(action) {
   }
 }
 
+async function approvePipelinePin(pinSlug) {
+  if (!pw) return;
+  const ok = confirm(`לאשר ולפרסם עכשיו את הפין הזה?\n\n${pinSlug}\n\nזה יכניס רק את הפין הזה לתור ויפעיל את GitHub Actions עליו בלבד.`);
+  if (!ok) return;
+
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = 'מאשר את הפין ומפעיל פרסום...';
+
+  try {
+    const res = await fetch(`/api/pipeline-pin-approve?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pin_slug: pinSlug, publish_now: true }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) {
+      statusEl.style.background = '#fef2f2';
+      statusEl.style.borderColor = '#fecaca';
+      statusEl.style.color = '#b91c1c';
+      statusEl.textContent = `שגיאה: ${data.error || res.statusText}`;
+      return;
+    }
+    statusEl.style.background = '#f0fdf4';
+    statusEl.style.borderColor = '#bbf7d0';
+    statusEl.style.color = '#166534';
+    statusEl.textContent = data.triggered
+      ? `הפין ${data.row_id} אושר ונשלח לפרסום.`
+      : `הפין ${data.row_id} אושר לתור, אבל GitHub Actions לא הופעל.`;
+    loadPinsStatus();
+    if (data.triggered) startPinPostedPolling();
+  } catch (e) {
+    statusEl.style.background = '#fef2f2';
+    statusEl.style.borderColor = '#fecaca';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `נכשל: ${e.message}`;
+  }
+}
+
 async function addManualTopic() {
   const input = document.getElementById('manual-topic');
   const cat = document.getElementById('manual-category').value;
@@ -2962,6 +3009,7 @@ async function addManualTopic() {
 }
 window.fetchPipelineStatus = fetchPipelineStatus;
 window.triggerPipeline = triggerPipeline;
+window.approvePipelinePin = approvePipelinePin;
 window.addManualTopic = addManualTopic;
 window.filterPipeline = filterPipeline;
 

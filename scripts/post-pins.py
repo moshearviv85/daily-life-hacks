@@ -36,11 +36,15 @@ PINS_API_KEY  = os.environ["PINS_API_KEY"]
 GH_PAT        = os.environ.get("GH_PAT", "")
 GH_REPO       = os.environ.get("GITHUB_REPOSITORY", "")
 IMMEDIATE     = os.environ.get("IMMEDIATE", "false") == "true"
+PIN_ROW_ID    = os.environ.get("PIN_ROW_ID", "").strip()
 
 def _env_int(name, default, minimum=1, maximum=5):
     raw = os.environ.get(name, "").strip()
     if not raw:
         return default
+    if PIN_ROW_ID:
+        params["row_id"] = PIN_ROW_ID
+        print(f"Target row_id: {PIN_ROW_ID}")
     try:
         value = int(raw)
     except ValueError:

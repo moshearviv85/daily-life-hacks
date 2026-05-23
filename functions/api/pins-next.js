@@ -30,9 +30,10 @@ export async function onRequestGet(context) {
   }
 
   const immediate = url.searchParams.get("immediate") === "1";
+  const rowId = url.searchParams.get("row_id") || "";
 
   try {
-    return await getNextPin(db, immediate);
+    return await getNextPin(db, immediate, rowId);
   } catch (err) {
     return Response.json(
       { error: "pins-next crashed", message: err.message, stack: err.stack },
@@ -41,10 +42,19 @@ export async function onRequestGet(context) {
   }
 }
 
-async function getNextPin(db, immediate = false) {
+async function getNextPin(db, immediate = false, rowId = "") {
   let duePins;
 
-  if (immediate) {
+  if (immediate && rowId) {
+    ({ results: duePins } = await db.prepare(`
+      SELECT row_id, pin_title, pin_description, alt_text,
+             image_url, board_id, link, scheduled_date, scheduled_time
+      FROM pins_schedule
+      WHERE status = 'PENDING'
+        AND row_id = ?
+      LIMIT 1
+    `).bind(rowId).all());
+  } else if (immediate) {
     ({ results: duePins } = await db.prepare(`
       SELECT row_id, pin_title, pin_description, alt_text,
              image_url, board_id, link, scheduled_date, scheduled_time
