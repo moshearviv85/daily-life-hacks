@@ -115,6 +115,34 @@ jobs:
             git push origin HEAD:${PIPELINE_TARGET_BRANCH}
           fi
 
+      - uses: actions/setup-node@v4
+        if: steps.check-topics.outputs.has_topics == 'true'
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install site dependencies
+        if: steps.check-topics.outputs.has_topics == 'true'
+        run: npm ci
+
+      - name: Build staging site
+        if: steps.check-topics.outputs.has_topics == 'true'
+        run: npm run build
+
+      - name: Build Pages Functions
+        if: steps.check-topics.outputs.has_topics == 'true'
+        run: |
+          rm -rf worker-out dist/_worker.js
+          npx wrangler pages functions build functions --outdir=worker-out --output-routes-path=dist/_routes.json --project-directory=. --build-output-directory=dist
+          cp worker-out/index.js dist/_worker.js
+
+      - name: Deploy staging to Cloudflare Pages
+        if: steps.check-topics.outputs.has_topics == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages deploy dist --project-name=daily-life-hacks --branch=staging
+
       - name: Mark topics as produced
         if: steps.check-topics.outputs.has_topics == 'true'
         env:
