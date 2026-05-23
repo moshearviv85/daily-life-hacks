@@ -126,6 +126,7 @@ const BUILD = {
       pub:       isPub(a),
     }))
     .sort((a, b) => new Date(b.date ?? 0).getTime() - new Date(a.date ?? 0).getTime()),
+  articleSlugs: articles.map(a => a.id).sort(),
   imagesList: articles
     .map(a => ({
       slug:     a.id,
@@ -2826,17 +2827,30 @@ function renderPipelineTable(filter) {
     return `<span style="display:inline-block;padding:.15rem .45rem;border-radius:4px;font-size:.75rem;font-weight:500;background:${c}20;color:${c};border:1px solid ${c}40">${stage}</span>`;
   };
 
-  tbody.innerHTML = articles.map(a => `
+  const builtArticleSlugs = new Set(BUILD.articleSlugs || []);
+
+  tbody.innerHTML = articles.map(a => {
+    const existsInBuild = builtArticleSlugs.has(a.slug);
+    const stagingHref = existsInBuild
+      ? `https://staging.daily-life-hacks.pages.dev/${a.slug}/`
+      : "javascript:void(0)";
+    const localHref = existsInBuild ? `/${a.slug}/` : "javascript:void(0)";
+    const linkStyle = existsInBuild ? "color:var(--orange);text-decoration:none" : "color:var(--text);text-decoration:none;cursor:default";
+    const subStyle = existsInBuild ? "color:var(--muted);text-decoration:none" : "color:var(--muted);text-decoration:none;cursor:default";
+    const subLabel = existsInBuild ? "staging" : "not built on staging yet";
+    const localLabel = existsInBuild ? "local/prod path" : "pipeline record only";
+
+    return `
     <tr>
       <td style="font-size:.8rem;font-family:monospace">
-        <a href="https://staging.daily-life-hacks.pages.dev/${a.slug}/" target="_blank" rel="noopener"
-          style="color:var(--orange);text-decoration:none">${a.slug}</a>
+        <a href="${stagingHref}" target="_blank" rel="noopener"
+          style="${linkStyle}">${a.slug}</a>
         <div style="font-family:system-ui,-apple-system,sans-serif;font-size:.68rem;margin-top:.15rem">
-          <a href="https://staging.daily-life-hacks.pages.dev/${a.slug}/" target="_blank" rel="noopener"
-            style="color:var(--muted);text-decoration:none">staging</a>
+          <a href="${stagingHref}" target="_blank" rel="noopener"
+            style="${subStyle}">${subLabel}</a>
           <span style="color:var(--muted)"> · </span>
-          <a href="/${a.slug}/" target="_blank" rel="noopener"
-            style="color:var(--muted);text-decoration:none">local/prod path</a>
+          <a href="${localHref}" target="_blank" rel="noopener"
+            style="${subStyle}">${localLabel}</a>
         </div>
       </td>
       <td>${a.category}</td>
@@ -2846,7 +2860,8 @@ function renderPipelineTable(filter) {
       <td>$${(a.cost_usd || 0).toFixed(3)}</td>
       <td style="font-size:.75rem">${a.updated_at ? new Date(a.updated_at + 'Z').toLocaleDateString() : '-'}</td>
     </tr>
-  `).join('');
+  `;
+  }).join('');
 }
 
 function filterPipeline(filter, btn) {
