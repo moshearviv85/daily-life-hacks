@@ -1,0 +1,13 @@
+[2026-05-23T10:13:51Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-05-23T10:13:51Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260523T101351Z.log
+[2026-05-23T10:13:51Z] topics selected: 1
+[2026-05-23T10:13:51Z]   #  1 [tips     ] budget meal ideas philippines  (slug=budget-meal-ideas-philippines)
+[2026-05-23T10:13:51Z] write_runs.id = 1
+[2026-05-23T10:14:02Z] OK   #1 budget-meal-ideas-philippines  body_words=827 tier2=CP-07,S-21 lat=11104ms cost=$0.0050
+[2026-05-23T10:14:02Z] 
+[2026-05-23T10:14:02Z] ============================================================
+[2026-05-23T10:14:02Z] DONE. write_runs.id=1 status=done
+[2026-05-23T10:14:02Z] written=1 dq=0 errors=0 skipped=0
+[2026-05-23T10:14:02Z] tokens in=3,384 out=1,587 cost=$0.0050
+[2026-05-23T10:14:02Z] elapsed: 11.7s (0.2 min)
+[2026-05-23T10:14:02Z] ============================================================
