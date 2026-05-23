@@ -98,6 +98,11 @@ jobs:
               sys.exit(1)
           "
 
+      - name: Verify generated staging artifacts
+        run: |
+          python scripts/NEW_PIPELINE_2026-05-08/verify_pipeline_artifacts.py \
+            --selected-topics pipeline-data/selected-topics.json
+
       - name: Commit and push generated files
         run: |
           git config user.name "github-actions[bot]"
