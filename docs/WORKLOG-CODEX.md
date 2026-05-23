@@ -383,10 +383,12 @@ Status: staging pipeline verified.
 - Confirmed the new pipeline sync writes lifecycle data to `pipeline_articles`/`pipeline_pins`; it does not put newly generated pins into `pins_schedule`.
 - Fixed `/api/pins-upload` so CSV/manual pin uploads without an explicit status now default to `REVIEW`, not `PENDING`, and do not dispatch `post-pins.yml`. Only rows explicitly uploaded as `PENDING` can trigger the auto-poster.
 - Added `tests/pins-upload.test.mjs` to lock the `REVIEW` default and explicit-`PENDING` trigger behavior.
+- Updated `/api/pipeline-status` and the dashboard pipeline table so each article row carries its `pipeline_pins` records and shows clickable staging image links for the generated pin slugs.
+- Added `tests/pipeline-status.test.mjs` to lock pin rows being attached to their article.
 
 Verification:
 
-- `node --test tests/pins-upload.test.mjs tests/dashboard-auth.test.mjs`
+- `node --test tests/pins-upload.test.mjs tests/pipeline-status.test.mjs tests/dashboard-auth.test.mjs`
 - `python -m pytest tests/cli/test_sync_to_d1.py tests/lib/test_d1_csv.py tests/lib/test_sync_pipeline_to_d1.py`
 - `python -m unittest tests.pipeline_artifacts_test`
 - `npm run build`
