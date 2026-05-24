@@ -8,6 +8,14 @@ const CATEGORY_TO_BOARD_ID = {
   tips: "1124140825679184034",
 };
 
+function isProductionRequest(request, env) {
+  const url = new URL(request.url);
+  const hostname = url.hostname.toLowerCase();
+  const branch = String(env.CF_PAGES_BRANCH || "").toLowerCase();
+  const productionHost = hostname === "www.daily-life-hacks.com" || hostname === "daily-life-hacks.com";
+  return productionHost && branch === "main";
+}
+
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -87,6 +95,25 @@ export async function onRequestPost(context) {
   const imageUrl = `${SITE_BASE}/images/pins/${pin.pin_slug}.jpg`;
   const link = `${SITE_BASE}/${pin.article_slug}/`;
   const scheduledDate = tomorrowUtcDate();
+  const productionRequest = isProductionRequest(request, env);
+
+  if (!productionRequest) {
+    return json({
+      ok: true,
+      dry_run: true,
+      triggered: false,
+      row_id: rowId,
+      pin_slug: pin.pin_slug,
+      article_slug: pin.article_slug,
+      title: pin.title,
+      image_url: imageUrl,
+      link,
+      board_id: boardId,
+      scheduled_date: scheduledDate,
+      status: "STAGING_DRY_RUN",
+      message: "Staging preview only. No D1 scheduling row was written and no Pinterest workflow was dispatched.",
+    });
+  }
 
   const existing = await env.DB.prepare(
     "SELECT status FROM pins_schedule WHERE row_id = ?",

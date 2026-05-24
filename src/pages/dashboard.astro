@@ -2828,6 +2828,8 @@ function renderPipelineTable(filter) {
   };
 
   const builtArticleSlugs = new Set(BUILD.articleSlugs || []);
+  const isProductionDashboard = window.location.hostname === 'www.daily-life-hacks.com'
+    || window.location.hostname === 'daily-life-hacks.com';
   const renderPinLinks = (article) => {
     const pins = Array.isArray(article.pins) ? article.pins : [];
     const count = `${article.pin_images_done || 0}/${article.pin_count || 0}`;
@@ -2838,8 +2840,8 @@ function renderPipelineTable(filter) {
       const label = `v${(pin.pin_index ?? idx) + 1}`;
       const publishButton = idx === 0
         ? `<button onclick="approvePipelinePin('${slug}')"
-            title="Approve and post this pin"
-            style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">פרסם</button>`
+            title="${isProductionDashboard ? 'Approve and post this pin' : 'Staging dry run only'}"
+            style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${isProductionDashboard ? 'פרסם' : 'בדיקה'}</button>`
         : '';
       return `<a href="${href}" target="_blank" rel="noopener"
         title="${slug}"
@@ -2944,7 +2946,11 @@ async function triggerPipeline(action) {
 
 async function approvePipelinePin(pinSlug) {
   if (!pw) return;
-  const ok = confirm(`לאשר ולפרסם עכשיו את הפין הזה?\n\n${pinSlug}\n\nזה יכניס רק את הפין הזה לתור ויפעיל את GitHub Actions עליו בלבד.`);
+  const isProductionDashboard = window.location.hostname === 'www.daily-life-hacks.com'
+    || window.location.hostname === 'daily-life-hacks.com';
+  const ok = confirm(isProductionDashboard
+    ? `לאשר ולפרסם עכשיו את הפין הזה?\n\n${pinSlug}\n\nזה יכניס רק את הפין הזה לתור ויפעיל את GitHub Actions עליו בלבד.`
+    : `בדיקת סטייג'ינג בלבד לפין הזה?\n\n${pinSlug}\n\nלא תיווצר שורת תור, לא יופעל GitHub Actions ולא יתבצע פרסום בפינטרסט.`);
   if (!ok) return;
 
   const statusEl = document.getElementById('pipeline-trigger-status');
@@ -2952,13 +2958,15 @@ async function approvePipelinePin(pinSlug) {
   statusEl.style.background = '#fff7ed';
   statusEl.style.borderColor = '#fed7aa';
   statusEl.style.color = '#92400e';
-  statusEl.textContent = 'מאשר את הפין ומפעיל פרסום...';
+  statusEl.textContent = isProductionDashboard
+    ? 'מאשר את הפין ומפעיל פרסום...'
+    : 'מריץ בדיקת סטייג׳ינג ללא פרסום...';
 
   try {
     const res = await fetch(`/api/pipeline-pin-approve?key=${encodeURIComponent(pw)}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pin_slug: pinSlug, publish_now: true }),
+      body: JSON.stringify({ pin_slug: pinSlug, publish_now: isProductionDashboard }),
     });
     const data = await res.json();
     if (!res.ok || !data.ok) {
@@ -2971,9 +2979,11 @@ async function approvePipelinePin(pinSlug) {
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.textContent = data.triggered
-      ? `הפין ${data.row_id} אושר ונשלח לפרסום.`
-      : `הפין ${data.row_id} אושר לתור, אבל GitHub Actions לא הופעל.`;
+    statusEl.textContent = data.dry_run
+      ? `בדיקת סטייג׳ינג הצליחה עבור ${data.row_id}. לא נכתב תור ולא הופעל פרסום.`
+      : data.triggered
+        ? `הפין ${data.row_id} אושר ונשלח לפרסום.`
+        : `הפין ${data.row_id} אושר לתור, אבל GitHub Actions לא הופעל.`;
     loadPinsStatus();
     if (data.triggered) startPinPostedPolling();
   } catch (e) {

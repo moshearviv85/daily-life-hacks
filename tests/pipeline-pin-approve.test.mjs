@@ -55,7 +55,34 @@ function makeDb() {
   };
 }
 
-test("approves a pipeline pin and dispatches the exact row id", async (t) => {
+test("staging validates a pipeline pin without writing or dispatching", async (t) => {
+  const db = makeDb();
+  let fetchCalled = false;
+  t.mock.method(globalThis, "fetch", async () => {
+    fetchCalled = true;
+    return new Response(null, { status: 204 });
+  });
+
+  const response = await onRequestPost({
+    request: new Request("https://staging.daily-life-hacks.pages.dev/api/pipeline-pin-approve?key=test-key", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pin_slug: "demo-pin", publish_now: true }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", DB: db, CF_PAGES_BRANCH: "staging" },
+  });
+
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  assert.equal(data.ok, true);
+  assert.equal(data.dry_run, true);
+  assert.equal(data.triggered, false);
+  assert.equal(data.status, "STAGING_DRY_RUN");
+  assert.equal(db.schedule.has("demo-pin"), false);
+  assert.equal(fetchCalled, false);
+});
+
+test("production approves a pipeline pin and dispatches the exact row id", async (t) => {
   const db = makeDb();
   let dispatchBody = null;
   t.mock.method(globalThis, "fetch", async (_url, init) => {
@@ -64,12 +91,12 @@ test("approves a pipeline pin and dispatches the exact row id", async (t) => {
   });
 
   const response = await onRequestPost({
-    request: new Request("https://staging.example.test/api/pipeline-pin-approve?key=test-key", {
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-pin-approve?key=test-key", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ pin_slug: "demo-pin", publish_now: true }),
     }),
-    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", DB: db },
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", DB: db, CF_PAGES_BRANCH: "main" },
   });
 
   assert.equal(response.status, 200);
