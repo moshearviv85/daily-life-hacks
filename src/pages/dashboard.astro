@@ -2984,6 +2984,10 @@ async function approvePipelinePin(pinSlug) {
       : data.triggered
         ? `הפין ${data.row_id} אושר ונשלח לפרסום.`
         : `הפין ${data.row_id} אושר לתור, אבל GitHub Actions לא הופעל.`;
+    statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (data.dry_run) {
+      alert(`בדיקת סטייג'ינג הצליחה.\n\n${data.row_id}\n\nלא נכתב תור, לא הופעל GitHub Actions ולא בוצע פרסום בפינטרסט.`);
+    }
     loadPinsStatus();
     if (data.triggered) startPinPostedPolling();
   } catch (e) {
