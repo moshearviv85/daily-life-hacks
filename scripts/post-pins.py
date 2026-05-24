@@ -42,9 +42,6 @@ def _env_int(name, default, minimum=1, maximum=5):
     raw = os.environ.get(name, "").strip()
     if not raw:
         return default
-    if PIN_ROW_ID:
-        params["row_id"] = PIN_ROW_ID
-        print(f"Target row_id: {PIN_ROW_ID}")
     try:
         value = int(raw)
     except ValueError:
@@ -124,6 +121,9 @@ def get_next_pin():
     if IMMEDIATE:
         params["immediate"] = "1"
         print("IMMEDIATE mode — skipping schedule filter.")
+    if PIN_ROW_ID:
+        params["row_id"] = PIN_ROW_ID
+        print(f"Target row_id: {PIN_ROW_ID}")
     try:
         resp = requests.get(
             f"{PINS_API_URL}/api/pins-next",
