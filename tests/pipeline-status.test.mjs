@@ -29,8 +29,8 @@ function makeDb() {
     { results: [{ status: "approved", cnt: 2 }] },
     { results: [{ image_status: "done", cnt: 4 }] },
     { results: [
-      { article_slug: "demo-article", pin_slug: "demo-pin-1", pin_index: 0, title: "Pin 1", description: "Desc", alt: "Alt", image_status: "done" },
-      { article_slug: "demo-article", pin_slug: "demo-pin-2", pin_index: 1, title: "Pin 2", description: "Desc", alt: "Alt", image_status: "done" },
+      { article_slug: "demo-article", pin_slug: "demo-pin-1", pin_index: 0, title: "Pin 1", description: "Desc", alt: "Alt", image_status: "done", publish_status: "POSTED", pin_id: "123" },
+      { article_slug: "demo-article", pin_slug: "demo-pin-2", pin_index: 1, title: "Pin 2", description: "Desc", alt: "Alt", image_status: "done", publish_status: null, pin_id: null },
     ] },
   ];
   return {
@@ -57,5 +57,7 @@ test("pipeline status attaches pin rows to their article", async () => {
   assert.equal(data.articles.length, 1);
   assert.equal(data.articles[0].pins.length, 2);
   assert.equal(data.articles[0].pins[0].pin_slug, "demo-pin-1");
+  assert.equal(data.articles[0].pins[0].publish_status, "POSTED");
+  assert.equal(data.articles[0].pins[0].pin_id, "123");
   assert.equal(data.pin_rows.length, 2);
 });

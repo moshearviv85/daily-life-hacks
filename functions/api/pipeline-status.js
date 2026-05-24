@@ -55,9 +55,11 @@ export async function onRequestGet(context) {
     ).all(),
 
     env.DB.prepare(
-      `SELECT article_slug, pin_slug, pin_index, title, description, alt, image_status
-       FROM pipeline_pins
-       ORDER BY article_slug ASC, pin_index ASC`
+      `SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
+              pp.alt, pp.image_status, ps.status AS publish_status, ps.pin_id
+       FROM pipeline_pins pp
+       LEFT JOIN pins_schedule ps ON ps.row_id = pp.pin_slug
+       ORDER BY pp.article_slug ASC, pp.pin_index ASC`
     ).all(),
   ]);
 

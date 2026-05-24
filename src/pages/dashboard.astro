@@ -2838,14 +2838,19 @@ function renderPipelineTable(filter) {
       const slug = pin.pin_slug || `${article.slug}_v${idx + 1}`;
       const href = `https://staging.daily-life-hacks.pages.dev/images/pins/${slug}.jpg`;
       const label = `v${(pin.pin_index ?? idx) + 1}`;
-      const publishButton = idx === 0
+      const publishStatus = pin.publish_status || '';
+      const statusBadge = publishStatus
+        ? `<span title="Publish status"
+            style="display:inline-block;margin:.15rem .2rem 0 0;padding:.1rem .3rem;border-radius:4px;font-size:.58rem;font-weight:700;background:${publishStatus === 'POSTED' ? '#dcfce7' : '#fef3c7'};color:${publishStatus === 'POSTED' ? '#166534' : '#92400e'}">${publishStatus}</span>`
+        : '';
+      const publishButton = publishStatus !== 'POSTED'
         ? `<button onclick="approvePipelinePin('${slug}')"
             title="${isProductionDashboard ? 'Approve and post this pin' : 'Staging dry run only'}"
             style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${isProductionDashboard ? 'פרסם' : 'בדיקה'}</button>`
         : '';
       return `<a href="${href}" target="_blank" rel="noopener"
         title="${slug}"
-        style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${publishButton}`;
+        style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${statusBadge}${publishButton}`;
     }).join('');
     return `<div>${count}</div><div>${links}</div>`;
   };
