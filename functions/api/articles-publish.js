@@ -19,6 +19,13 @@ const GH_REPO   = 'daily-life-hacks';
 const GH_BRANCH = 'main';
 const API_BASE  = 'https://api.github.com';
 
+function isProductionRequest(env, request) {
+  const host = new URL(request.url).hostname;
+  return env.CF_PAGES_BRANCH === "main"
+    || host === "www.daily-life-hacks.com"
+    || host === "daily-life-hacks.com";
+}
+
 async function ghFetch(path, options, pat) {
   return fetch(`${API_BASE}${path}`, {
     ...options,
@@ -78,6 +85,13 @@ export async function onRequestPost(context) {
   const authorized = await isDashboardAuthorized(env, reqKey, request);
   if (!authorized) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+  if (!isProductionRequest(env, request)) {
+    return Response.json({
+      ok: false,
+      error: 'Article publishing is disabled in staging because it commits to production.',
+      queue: 'staging',
+    }, { status: 409 });
   }
   if (!env.DB)     return Response.json({ error: 'DB not bound' }, { status: 500 });
   if (!env.GH_PAT) return Response.json({ error: 'GH_PAT not configured' }, { status: 500 });

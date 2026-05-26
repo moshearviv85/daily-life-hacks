@@ -1092,6 +1092,18 @@ function initDashboardEnvironment() {
     publishBtn.disabled = true;
     publishBtn.title = 'חסום בסטייג׳ינג: Legacy Publish יכול לכתוב לפרודקשן.';
   }
+
+  const articleTriggerBtn = document.getElementById('art-trigger-btn');
+  if (articleTriggerBtn && !IS_PRODUCTION_DASHBOARD) {
+    articleTriggerBtn.disabled = true;
+    articleTriggerBtn.title = 'חסום בסטייג׳ינג: מפרסם כתבות לפרודקשן.';
+  }
+
+  const articleUploadBtn = document.getElementById('art-upload-btn');
+  if (articleUploadBtn && !IS_PRODUCTION_DASHBOARD) {
+    articleUploadBtn.disabled = true;
+    articleUploadBtn.title = 'חסום בסטייג׳ינג עד בידוד DB מלא.';
+  }
 }
 
 // ── Login ──────────────────────────────────────────────────────────────────
@@ -2220,6 +2232,13 @@ window.triggerArticlePublisher = triggerArticlePublisher;
 // ── Article Publishing Pipeline ───────────────────────────────────────────
 
 async function uploadArticlesCSV() {
+  if (!IS_PRODUCTION_DASHBOARD) {
+    const statusEl = el('art-upload-status');
+    statusEl.style.display = 'block';
+    statusEl.style.color = '#991b1b';
+    statusEl.textContent = 'Upload חסום בסטייג׳ינג עד בידוד DB מלא. הוא לא יכתוב לתור הכתבות של פרודקשן.';
+    return;
+  }
   const file = document.getElementById('art-csv-input').files[0];
   if (!file) { alert('Choose a CSV file first'); return; }
   const statusEl = el('art-upload-status');
@@ -2319,11 +2338,13 @@ async function loadArticles() {
         : a.publish_at || '—';
       const dateColor = isDue && isPending ? '#dc2626' : isPublished ? '#16a34a' : 'inherit';
 
-      const actionBtn = isPending
+      const actionBtn = isPending && IS_PRODUCTION_DASHBOARD
         ? `<button onclick="publishArticle('${a.slug}')"
              style="font-size:.7rem;padding:.2rem .5rem;border-radius:5px;border:none;background:#2563eb;color:#fff;cursor:pointer">
              Publish Now
            </button>`
+        : isPending
+          ? `<span class="badge badge-orange" title="חסום בסטייג׳ינג">Staging only</span>`
         : `<span style="color:var(--muted);font-size:.75rem">—</span>`;
 
       // Notes column
@@ -2369,6 +2390,14 @@ async function loadArticles() {
 }
 
 async function publishArticle(slug) {
+  if (!IS_PRODUCTION_DASHBOARD) {
+    el('art-trigger-status').style.display = '';
+    el('art-trigger-status').style.background = '#fef2f2';
+    el('art-trigger-status').style.borderColor = '#fecaca';
+    el('art-trigger-status').style.color = '#991b1b';
+    el('art-trigger-status').textContent = 'Publish Now חסום בסטייג׳ינג כי הוא מפרסם כתבה לפרודקשן.';
+    return;
+  }
   const btn = document.querySelector(`button[onclick="publishArticle('${slug}')"]`);
   if (btn) { btn.disabled = true; btn.textContent = '...'; }
   try {
@@ -2420,6 +2449,14 @@ function downloadArticlesCSV() {
 async function triggerArticlePublisher() {
   const btn    = el('art-trigger-btn');
   const status = el('art-trigger-status');
+  if (!IS_PRODUCTION_DASHBOARD) {
+    status.style.display = '';
+    status.style.background = '#fef2f2';
+    status.style.borderColor = '#fecaca';
+    status.style.color = '#991b1b';
+    status.textContent = 'Run Publisher חסום בסטייג׳ינג כי הוא יכול לפרסם כתבות לפרודקשן.';
+    return;
+  }
   btn.disabled = true;
   btn.textContent = 'Publishing...';
   status.style.display = 'none';

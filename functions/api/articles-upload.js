@@ -11,6 +11,13 @@
 
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
 
+function isProductionRequest(env, request) {
+  const host = new URL(request.url).hostname;
+  return env.CF_PAGES_BRANCH === "main"
+    || host === "www.daily-life-hacks.com"
+    || host === "daily-life-hacks.com";
+}
+
 function parseCSV(text) {
   text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
   const rows = [];
@@ -58,6 +65,13 @@ export async function onRequestPost(context) {
   const authorized = await isDashboardAuthorized(env, reqKey, request);
   if (!authorized) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+  if (!isProductionRequest(env, request)) {
+    return Response.json({
+      ok: false,
+      error: 'Article schedule upload is disabled in staging because the Preview DB is not fully isolated yet.',
+      queue: 'staging',
+    }, { status: 409 });
   }
   if (!env.DB) return Response.json({ error: 'DB not bound' }, { status: 500 });
 

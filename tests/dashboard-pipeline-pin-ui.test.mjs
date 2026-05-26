@@ -33,4 +33,6 @@ test("dashboard exposes staging environment and queue state", () => {
   assert.match(dashboard, /id="ps-queue-label"/);
   assert.match(dashboard, /Queue: \$\{queue\}/);
   assert.match(dashboard, /Legacy Publish חסום בסטייג׳ינג/);
+  assert.match(dashboard, /Run Publisher חסום בסטייג׳ינג/);
+  assert.match(dashboard, /Publish Now חסום בסטייג׳ינג/);
 });

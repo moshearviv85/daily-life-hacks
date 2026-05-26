@@ -5,6 +5,13 @@
  */
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
 
+function isProductionRequest(env, request) {
+  const host = new URL(request.url).hostname;
+  return env.CF_PAGES_BRANCH === "main"
+    || host === "www.daily-life-hacks.com"
+    || host === "daily-life-hacks.com";
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
@@ -12,6 +19,13 @@ export async function onRequestPost(context) {
   const authorized = await isDashboardAuthorized(env, reqKey, request);
   if (!authorized) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+  if (!isProductionRequest(env, request)) {
+    return Response.json({
+      ok: false,
+      error: 'Article publisher is disabled in staging because it can publish to production.',
+      queue: 'staging',
+    }, { status: 409 });
   }
   if (!env.GH_PAT) {
     return Response.json({ error: 'GH_PAT not configured' }, { status: 500 });
