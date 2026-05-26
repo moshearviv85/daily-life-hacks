@@ -13,6 +13,42 @@ import { isDashboardAuthorized } from "./_dashboard-auth.js";
 const START_HOUR = 13;
 const WINDOW_H   = 2; // 2-hour windows
 
+function isProductionRequest(request, env) {
+  const url = new URL(request.url);
+  const hostname = url.hostname.toLowerCase();
+  const branch = String(env.CF_PAGES_BRANCH || "").toLowerCase();
+  const productionHost = hostname === "www.daily-life-hacks.com" || hostname === "daily-life-hacks.com";
+  return productionHost && branch === "main";
+}
+
+function queueTableName(request, env) {
+  return isProductionRequest(request, env) ? "pins_schedule" : "staging_pins_schedule";
+}
+
+async function ensureStagingQueue(db, tableName) {
+  if (tableName !== "staging_pins_schedule") return;
+  await db.prepare(`
+    CREATE TABLE IF NOT EXISTS staging_pins_schedule (
+      row_id TEXT PRIMARY KEY,
+      pin_title TEXT NOT NULL,
+      pin_description TEXT,
+      alt_text TEXT,
+      image_url TEXT,
+      board_id TEXT,
+      link TEXT,
+      scheduled_date TEXT,
+      scheduled_time TEXT,
+      status TEXT DEFAULT 'PENDING',
+      pin_id TEXT,
+      published_date TEXT,
+      pinterest_response TEXT,
+      fail_count INTEGER DEFAULT 0,
+      created_at TEXT DEFAULT (datetime('now')),
+      updated_at TEXT DEFAULT (datetime('now'))
+    )
+  `).run();
+}
+
 /** Assign random times to an array of row_ids for a single day, keeping the date fixed. */
 function assignTimesForDay(rowIds, date) {
   // Shuffle slot order so different pins get different windows each time
@@ -52,10 +88,12 @@ export async function onRequestPost(context) {
       headers: { "Content-Type": "application/json" },
     });
   }
+  const tableName = queueTableName(request, env);
+  await ensureStagingQueue(db, tableName);
 
   // Fetch all PENDING pins with their current scheduled_date
   const { results } = await db.prepare(`
-    SELECT row_id, scheduled_date FROM pins_schedule
+    SELECT row_id, scheduled_date FROM ${tableName}
     WHERE status = 'PENDING'
     ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC, row_id ASC
   `).all();
@@ -81,13 +119,17 @@ export async function onRequestPost(context) {
 
   for (const row of toUpdate) {
     await db.prepare(`
-      UPDATE pins_schedule
+      UPDATE ${tableName}
       SET scheduled_time = ?, updated_at = datetime('now')
       WHERE row_id = ?
     `).bind(row.scheduled_time, row.row_id).run();
   }
 
-  return new Response(JSON.stringify({ ok: true, rescheduled: toUpdate.length }), {
+  return new Response(JSON.stringify({
+    ok: true,
+    queue: tableName === "pins_schedule" ? "production" : "staging",
+    rescheduled: toUpdate.length,
+  }), {
     headers: { "Content-Type": "application/json" },
   });
 }

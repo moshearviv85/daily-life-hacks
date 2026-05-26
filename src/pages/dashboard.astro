@@ -833,7 +833,7 @@ const BUILD = {
         <div class="card-title" style="font-size:.78rem;margin-bottom:.4rem">Upcoming (next 10)</div>
         <div id="ps-upcoming-empty" class="empty" style="display:none">No pending pins scheduled.</div>
         <table class="data-table" id="ps-upcoming-table" style="display:none">
-          <thead><tr><th>Date</th><th>Title</th></tr></thead>
+          <thead><tr><th>Date</th><th>Time</th><th>Pin</th><th>Title</th><th>Link</th></tr></thead>
           <tbody id="ps-upcoming-tbody"></tbody>
         </table>
       </div>
@@ -2435,12 +2435,18 @@ async function loadPinsStatus() {
     if (d.upcoming && d.upcoming.length > 0) {
       el('ps-upcoming-empty').style.display = 'none';
       el('ps-upcoming-table').style.display = '';
-      el('ps-upcoming-tbody').innerHTML = d.upcoming.map(p =>
-        `<tr>
-          <td style="white-space:nowrap">${p.scheduled_date}</td>
-          <td style="font-size:.75rem">${p.pin_title}</td>
-        </tr>`
-      ).join('');
+      el('ps-upcoming-tbody').innerHTML = d.upcoming.map(p => {
+        const articleLink = p.link
+          ? `<a href="${p.link}" target="_blank" style="font-size:.72rem;color:var(--orange)">↗</a>`
+          : '—';
+        return `<tr>
+          <td style="white-space:nowrap">${p.scheduled_date || '—'}</td>
+          <td style="white-space:nowrap">${p.scheduled_time || '—'}</td>
+          <td style="font-size:.7rem;font-family:monospace">${p.row_id || '—'}</td>
+          <td style="font-size:.75rem">${p.pin_title || '—'}</td>
+          <td style="text-align:center">${articleLink}</td>
+        </tr>`;
+      }).join('');
     } else {
       el('ps-upcoming-empty').style.display = '';
       el('ps-upcoming-table').style.display = 'none';
@@ -2712,6 +2718,16 @@ window.reschedulePins = reschedulePins;
 async function triggerPostNow() {
   const btn    = document.getElementById('pins-post-now-btn');
   const pollEl = document.getElementById('pins-poll-status');
+  const isProductionDashboard = window.location.hostname === 'www.daily-life-hacks.com'
+    || window.location.hostname === 'daily-life-hacks.com';
+  if (!isProductionDashboard) {
+    pollEl.style.display = '';
+    pollEl.style.background = '#fef2f2';
+    pollEl.style.borderColor = '#fecaca';
+    pollEl.style.color = '#b91c1c';
+    pollEl.textContent = 'Post Now חסום בסטייג׳ינג. אפשר להכניס פינים לתור סטייג׳ינג, אבל אי אפשר להפעיל פרסום אמיתי.';
+    return;
+  }
   btn.disabled = true;
   btn.textContent = 'מפעיל...';
   pollEl.style.display = '';
@@ -2984,13 +3000,8 @@ async function approvePipelinePin(pinSlug) {
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.textContent = data.dry_run
-      ? `בדיקת סטייג׳ינג הצליחה עבור ${data.row_id}. לא נכתב תור ולא הופעל פרסום.`
-      : `הפין ${data.row_id} נכנס למסילה כ-PENDING לתאריך ${data.scheduled_date} בשעה ${data.scheduled_time}.`;
+    statusEl.textContent = `הפין ${data.row_id} נכנס למסילה כ-PENDING לתאריך ${data.scheduled_date} בשעה ${data.scheduled_time}.`;
     statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    if (data.dry_run) {
-      alert(`בדיקת סטייג'ינג הצליחה.\n\n${data.row_id}\n\nלא נכתב תור, לא הופעל GitHub Actions ולא בוצע פרסום בפינטרסט.`);
-    }
     loadPinsStatus();
     fetchPipelineStatus();
     if (data.triggered) startPinPostedPolling();

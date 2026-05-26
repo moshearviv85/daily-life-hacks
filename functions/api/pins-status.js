@@ -74,7 +74,7 @@ export async function onRequestGet(context) {
 
     // Next 10 pending
     db.prepare(`
-      SELECT row_id, pin_title, scheduled_date, board_id, image_url
+      SELECT row_id, pin_title, scheduled_date, scheduled_time, board_id, image_url, link
       FROM ${tableName}
       WHERE status = 'PENDING'
       ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC

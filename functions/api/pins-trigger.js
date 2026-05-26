@@ -13,6 +13,14 @@ function json(data, status = 200) {
   });
 }
 
+function isProductionRequest(request, env) {
+  const url = new URL(request.url);
+  const hostname = url.hostname.toLowerCase();
+  const branch = String(env.CF_PAGES_BRANCH || "").toLowerCase();
+  const productionHost = hostname === "www.daily-life-hacks.com" || hostname === "daily-life-hacks.com";
+  return productionHost && branch === "main";
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -22,6 +30,13 @@ export async function onRequestPost(context) {
   const authorized = await isDashboardAuthorized(env, reqKey, request);
   if (!authorized) {
     return json({ error: "Unauthorized" }, 401);
+  }
+  if (!isProductionRequest(request, env)) {
+    return json({
+      ok: false,
+      error: "Post Now is disabled in staging. Staging can queue pins, but cannot dispatch the real Pinterest publisher.",
+      queue: "staging",
+    }, 409);
   }
 
   if (!env.GH_PAT) {
