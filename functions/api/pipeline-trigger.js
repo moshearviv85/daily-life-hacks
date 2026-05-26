@@ -19,6 +19,13 @@ function json(data, status = 200) {
   });
 }
 
+function isProductionRequest(env, request) {
+  const host = new URL(request.url).hostname;
+  return env.CF_PAGES_BRANCH === "main"
+    || host === "www.daily-life-hacks.com"
+    || host === "daily-life-hacks.com";
+}
+
 const ACTIONS = {
   discover: {
     workflow: "pipeline-discover.yml",
@@ -56,6 +63,13 @@ export async function onRequestPost(context) {
   const actionConfig = ACTIONS[action];
   if (!actionConfig) {
     return json({ error: `Unknown action: ${action}. Use: discover, produce, publish` }, 400);
+  }
+  if (action === "publish" && !isProductionRequest(env, request)) {
+    return json({
+      ok: false,
+      error: "Legacy Publish is disabled in staging because it can publish to production.",
+      queue: "staging",
+    }, 409);
   }
 
   const inputs = {};

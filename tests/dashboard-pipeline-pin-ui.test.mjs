@@ -24,3 +24,13 @@ test("pipeline publish button queues pins instead of dispatching immediate publi
   assert.match(dashboard, /publish_now: false/);
   assert.doesNotMatch(dashboard, /publish_now: isProductionDashboard/);
 });
+
+test("dashboard exposes staging environment and queue state", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /id="env-badge"/);
+  assert.match(dashboard, /STAGING/);
+  assert.match(dashboard, /id="ps-queue-label"/);
+  assert.match(dashboard, /Queue: \$\{queue\}/);
+  assert.match(dashboard, /Legacy Publish חסום בסטייג׳ינג/);
+});
