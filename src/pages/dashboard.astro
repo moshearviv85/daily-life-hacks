@@ -2992,6 +2992,7 @@ async function approvePipelinePin(pinSlug) {
       alert(`בדיקת סטייג'ינג הצליחה.\n\n${data.row_id}\n\nלא נכתב תור, לא הופעל GitHub Actions ולא בוצע פרסום בפינטרסט.`);
     }
     loadPinsStatus();
+    fetchPipelineStatus();
     if (data.triggered) startPinPostedPolling();
   } catch (e) {
     statusEl.style.background = '#fef2f2';

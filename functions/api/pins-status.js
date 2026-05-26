@@ -5,6 +5,42 @@
 
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
 
+function isProductionRequest(request, env) {
+  const url = new URL(request.url);
+  const hostname = url.hostname.toLowerCase();
+  const branch = String(env.CF_PAGES_BRANCH || "").toLowerCase();
+  const productionHost = hostname === "www.daily-life-hacks.com" || hostname === "daily-life-hacks.com";
+  return productionHost && branch === "main";
+}
+
+function queueTableName(request, env) {
+  return isProductionRequest(request, env) ? "pins_schedule" : "staging_pins_schedule";
+}
+
+async function ensureStagingQueue(db, tableName) {
+  if (tableName !== "staging_pins_schedule") return;
+  await db.prepare(`
+    CREATE TABLE IF NOT EXISTS staging_pins_schedule (
+      row_id TEXT PRIMARY KEY,
+      pin_title TEXT NOT NULL,
+      pin_description TEXT,
+      alt_text TEXT,
+      image_url TEXT,
+      board_id TEXT,
+      link TEXT,
+      scheduled_date TEXT,
+      scheduled_time TEXT,
+      status TEXT DEFAULT 'PENDING',
+      pin_id TEXT,
+      published_date TEXT,
+      pinterest_response TEXT,
+      fail_count INTEGER DEFAULT 0,
+      created_at TEXT DEFAULT (datetime('now')),
+      updated_at TEXT DEFAULT (datetime('now'))
+    )
+  `).run();
+}
+
 export async function onRequestGet(context) {
   const { request, env } = context;
 
@@ -27,26 +63,28 @@ export async function onRequestGet(context) {
   }
 
   const today = new Date().toISOString().split("T")[0];
+  const tableName = queueTableName(request, env);
+  await ensureStagingQueue(db, tableName);
 
   const [counts, upcoming, recent, failed] = await Promise.all([
     // Status counts
     db.prepare(`
-      SELECT status, COUNT(*) as count FROM pins_schedule GROUP BY status
+      SELECT status, COUNT(*) as count FROM ${tableName} GROUP BY status
     `).all(),
 
     // Next 10 pending
     db.prepare(`
       SELECT row_id, pin_title, scheduled_date, board_id, image_url
-      FROM pins_schedule
+      FROM ${tableName}
       WHERE status = 'PENDING'
-      ORDER BY scheduled_date ASC
+      ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC
       LIMIT 10
     `).all(),
 
     // Last 5 posted
     db.prepare(`
       SELECT row_id, pin_title, pin_id, published_date, link
-      FROM pins_schedule
+      FROM ${tableName}
       WHERE status = 'POSTED'
       ORDER BY published_date DESC
       LIMIT 5
@@ -55,7 +93,7 @@ export async function onRequestGet(context) {
     // Failed pins (permanent failures after 3 attempts)
     db.prepare(`
       SELECT row_id, pin_title, fail_count, pinterest_response, image_url
-      FROM pins_schedule
+      FROM ${tableName}
       WHERE status = 'FAILED'
       ORDER BY updated_at DESC
       LIMIT 10
@@ -67,6 +105,7 @@ export async function onRequestGet(context) {
 
   return new Response(JSON.stringify({
     today,
+    queue: tableName === "pins_schedule" ? "production" : "staging",
     total: Object.values(statusMap).reduce((a, b) => a + b, 0),
     posted: statusMap.POSTED || 0,
     pending: statusMap.PENDING || 0,
