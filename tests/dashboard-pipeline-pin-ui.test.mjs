@@ -2,12 +2,12 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-test("pipeline pin staging dry run shows an explicit success alert", () => {
+test("pipeline pin staging action queues into the staging lane", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
-  assert.match(dashboard, /data\.dry_run/);
-  assert.match(dashboard, /alert\(`בדיקת סטייג'ינג הצליחה/);
-  assert.match(dashboard, /לא נכתב תור, לא הופעל GitHub Actions ולא בוצע פרסום בפינטרסט/);
+  assert.match(dashboard, /PENDING/);
+  assert.match(dashboard, /GitHub Actions/);
+  assert.match(dashboard, /publish_now: false/);
 });
 
 test("pipeline table can publish every unposted pin and hides posted pins", () => {

@@ -31,10 +31,37 @@ function formatTime(d) {
   return `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`;
 }
 
-async function nextQueueSlot(db) {
+function queueTableName(productionRequest) {
+  return productionRequest ? "pins_schedule" : "staging_pins_schedule";
+}
+
+async function ensureStagingQueue(db) {
+  await db.prepare(`
+    CREATE TABLE IF NOT EXISTS staging_pins_schedule (
+      row_id TEXT PRIMARY KEY,
+      pin_title TEXT NOT NULL,
+      pin_description TEXT,
+      alt_text TEXT,
+      image_url TEXT,
+      board_id TEXT,
+      link TEXT,
+      scheduled_date TEXT,
+      scheduled_time TEXT,
+      status TEXT DEFAULT 'PENDING',
+      pin_id TEXT,
+      published_date TEXT,
+      pinterest_response TEXT,
+      fail_count INTEGER DEFAULT 0,
+      created_at TEXT DEFAULT (datetime('now')),
+      updated_at TEXT DEFAULT (datetime('now'))
+    )
+  `).run();
+}
+
+async function nextQueueSlot(db, tableName) {
   const latest = await db.prepare(`
     SELECT scheduled_date, COALESCE(scheduled_time, '00:00') AS scheduled_time
-      FROM pins_schedule
+      FROM ${tableName}
      WHERE status = 'PENDING'
      ORDER BY scheduled_date DESC, COALESCE(scheduled_time, '00:00') DESC
      LIMIT 1
@@ -107,38 +134,25 @@ export async function onRequestPost(context) {
   const rowId = pin.pin_slug;
   const imageUrl = `${SITE_BASE}/images/pins/${pin.pin_slug}.jpg`;
   const link = `${SITE_BASE}/${pin.article_slug}/`;
-  const { scheduledDate, scheduledTime } = await nextQueueSlot(env.DB);
   const productionRequest = isProductionRequest(request, env);
+  const tableName = queueTableName(productionRequest);
 
   if (!productionRequest) {
-    return json({
-      ok: true,
-      dry_run: true,
-      triggered: false,
-      row_id: rowId,
-      pin_slug: pin.pin_slug,
-      article_slug: pin.article_slug,
-      title: pin.title,
-      image_url: imageUrl,
-      link,
-      board_id: boardId,
-      scheduled_date: scheduledDate,
-      scheduled_time: scheduledTime,
-      status: "STAGING_DRY_RUN",
-      message: "Staging preview only. No D1 scheduling row was written and no Pinterest workflow was dispatched.",
-    });
+    await ensureStagingQueue(env.DB);
   }
 
+  const { scheduledDate, scheduledTime } = await nextQueueSlot(env.DB, tableName);
+
   const existing = await env.DB.prepare(
-    "SELECT status FROM pins_schedule WHERE row_id = ?",
+    `SELECT status FROM ${tableName} WHERE row_id = ?`,
   ).bind(rowId).first();
 
-  if (existing?.status === "POSTED") {
+  if (productionRequest && existing?.status === "POSTED") {
     return json({ error: "Pin is already posted", row_id: rowId }, 409);
   }
 
   await env.DB.prepare(`
-    INSERT INTO pins_schedule
+    INSERT INTO ${tableName}
       (row_id, pin_title, pin_description, alt_text, image_url, board_id,
        link, scheduled_date, scheduled_time, status, pin_id, published_date,
        pinterest_response, updated_at)
@@ -169,6 +183,7 @@ export async function onRequestPost(context) {
   return json({
     ok: true,
     queued: true,
+    staging: !productionRequest,
     triggered: false,
     row_id: rowId,
     pin_slug: pin.pin_slug,
@@ -180,5 +195,8 @@ export async function onRequestPost(context) {
     scheduled_date: scheduledDate,
     scheduled_time: scheduledTime,
     status: "PENDING",
+    message: productionRequest
+      ? "Queued for automatic Pinterest posting."
+      : "Queued in the staging-only queue. No GitHub Actions workflow was dispatched and no Pinterest post will be created.",
   });
 }

@@ -14,6 +14,43 @@ function json(data, status = 200) {
   });
 }
 
+function isProductionRequest(request, env) {
+  const url = new URL(request.url);
+  const hostname = url.hostname.toLowerCase();
+  const branch = String(env.CF_PAGES_BRANCH || "").toLowerCase();
+  const productionHost = hostname === "www.daily-life-hacks.com" || hostname === "daily-life-hacks.com";
+  return productionHost && branch === "main";
+}
+
+async function getPinRows(env, stagingRequest) {
+  const productionQuery = `
+    SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
+            pp.alt, pp.image_status, ps.status AS publish_status, ps.pin_id
+      FROM pipeline_pins pp
+      LEFT JOIN pins_schedule ps ON ps.row_id = pp.pin_slug
+      ORDER BY pp.article_slug ASC, pp.pin_index ASC
+  `;
+
+  if (!stagingRequest) {
+    return env.DB.prepare(productionQuery).all();
+  }
+
+  try {
+    return await env.DB.prepare(`
+      SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
+              pp.alt, pp.image_status,
+              COALESCE(ss.status, ps.status) AS publish_status,
+              COALESCE(ss.pin_id, ps.pin_id) AS pin_id
+        FROM pipeline_pins pp
+        LEFT JOIN staging_pins_schedule ss ON ss.row_id = pp.pin_slug
+        LEFT JOIN pins_schedule ps ON ps.row_id = pp.pin_slug
+        ORDER BY pp.article_slug ASC, pp.pin_index ASC
+    `).all();
+  } catch {
+    return env.DB.prepare(productionQuery).all();
+  }
+}
+
 export async function onRequestGet(context) {
   const { request, env } = context;
   const url = new URL(request.url);
@@ -26,6 +63,7 @@ export async function onRequestGet(context) {
   if (!env.DB) {
     return json({ error: "DB not bound" }, 500);
   }
+  const stagingRequest = !isProductionRequest(request, env);
 
   const [articles, byStage, byCategory, topicStats, pinStats, pinRows] = await Promise.all([
     env.DB.prepare(
@@ -54,13 +92,7 @@ export async function onRequestGet(context) {
       `SELECT image_status, COUNT(*) as cnt FROM pipeline_pins GROUP BY image_status`
     ).all(),
 
-    env.DB.prepare(
-      `SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
-              pp.alt, pp.image_status, ps.status AS publish_status, ps.pin_id
-       FROM pipeline_pins pp
-       LEFT JOIN pins_schedule ps ON ps.row_id = pp.pin_slug
-       ORDER BY pp.article_slug ASC, pp.pin_index ASC`
-    ).all(),
+    getPinRows(env, stagingRequest),
   ]);
 
   const stageMap = {};

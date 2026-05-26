@@ -5,13 +5,16 @@ import { onRequestPost } from "../functions/api/pipeline-pin-approve.js";
 
 function makeDb() {
   const schedule = new Map();
+  const stagingSchedule = new Map();
   let latestPending = null;
   return {
     schedule,
+    stagingSchedule,
     setLatestPending(row) {
       latestPending = row;
     },
     prepare(sql) {
+      const targetSchedule = sql.includes("staging_pins_schedule") ? stagingSchedule : schedule;
       return {
         bind(...args) {
           return {
@@ -32,16 +35,19 @@ function makeDb() {
               if (sql.includes("SELECT status FROM pins_schedule")) {
                 return schedule.has(args[0]) ? { status: schedule.get(args[0]).status } : null;
               }
+              if (sql.includes("SELECT status FROM staging_pins_schedule")) {
+                return stagingSchedule.has(args[0]) ? { status: stagingSchedule.get(args[0]).status } : null;
+              }
               if (sql.includes("ORDER BY scheduled_date DESC")) {
                 return latestPending;
               }
               throw new Error(`Unexpected first() query: ${sql}`);
             },
             async run() {
-              if (!sql.includes("INSERT INTO pins_schedule")) {
+              if (!sql.includes("INSERT INTO pins_schedule") && !sql.includes("INSERT INTO staging_pins_schedule")) {
                 throw new Error(`Unexpected run() query: ${sql}`);
               }
-              schedule.set(args[0], {
+              targetSchedule.set(args[0], {
                 row_id: args[0],
                 title: args[1],
                 description: args[2],
@@ -63,12 +69,18 @@ function makeDb() {
           }
           throw new Error(`Unexpected first() query: ${sql}`);
         },
+        async run() {
+          if (sql.includes("CREATE TABLE IF NOT EXISTS staging_pins_schedule")) {
+            return { success: true };
+          }
+          throw new Error(`Unexpected run() query: ${sql}`);
+        },
       };
     },
   };
 }
 
-test("staging validates a pipeline pin without writing or dispatching", async (t) => {
+test("staging queues a pipeline pin in the staging-only queue without dispatching", async (t) => {
   const db = makeDb();
   let fetchCalled = false;
   t.mock.method(globalThis, "fetch", async () => {
@@ -88,10 +100,12 @@ test("staging validates a pipeline pin without writing or dispatching", async (t
   assert.equal(response.status, 200);
   const data = await response.json();
   assert.equal(data.ok, true);
-  assert.equal(data.dry_run, true);
+  assert.equal(data.queued, true);
+  assert.equal(data.staging, true);
   assert.equal(data.triggered, false);
-  assert.equal(data.status, "STAGING_DRY_RUN");
+  assert.equal(data.status, "PENDING");
   assert.equal(db.schedule.has("demo-pin"), false);
+  assert.equal(db.stagingSchedule.get("demo-pin").status, "PENDING");
   assert.equal(fetchCalled, false);
 });
 
