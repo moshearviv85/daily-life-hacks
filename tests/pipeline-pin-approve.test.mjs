@@ -5,8 +5,12 @@ import { onRequestPost } from "../functions/api/pipeline-pin-approve.js";
 
 function makeDb() {
   const schedule = new Map();
+  let latestPending = null;
   return {
     schedule,
+    setLatestPending(row) {
+      latestPending = row;
+    },
     prepare(sql) {
       return {
         bind(...args) {
@@ -27,6 +31,9 @@ function makeDb() {
               }
               if (sql.includes("SELECT status FROM pins_schedule")) {
                 return schedule.has(args[0]) ? { status: schedule.get(args[0]).status } : null;
+              }
+              if (sql.includes("ORDER BY scheduled_date DESC")) {
+                return latestPending;
               }
               throw new Error(`Unexpected first() query: ${sql}`);
             },
@@ -49,6 +56,12 @@ function makeDb() {
               return { success: true };
             },
           };
+        },
+        async first() {
+          if (sql.includes("ORDER BY scheduled_date DESC")) {
+            return latestPending;
+          }
+          throw new Error(`Unexpected first() query: ${sql}`);
         },
       };
     },
@@ -82,11 +95,12 @@ test("staging validates a pipeline pin without writing or dispatching", async (t
   assert.equal(fetchCalled, false);
 });
 
-test("production approves a pipeline pin and dispatches the exact row id", async (t) => {
+test("production queues a pipeline pin behind the latest pending pin without dispatching", async (t) => {
   const db = makeDb();
-  let dispatchBody = null;
+  db.setLatestPending({ scheduled_date: "2026-05-27", scheduled_time: "08:30" });
+  let fetchCalled = false;
   t.mock.method(globalThis, "fetch", async (_url, init) => {
-    dispatchBody = JSON.parse(init.body);
+    fetchCalled = true;
     return new Response(null, { status: 204 });
   });
 
@@ -103,10 +117,12 @@ test("production approves a pipeline pin and dispatches the exact row id", async
   const data = await response.json();
   assert.equal(data.ok, true);
   assert.equal(data.row_id, "demo-pin");
-  assert.equal(data.triggered, true);
+  assert.equal(data.queued, true);
+  assert.equal(data.triggered, false);
   assert.equal(db.schedule.get("demo-pin").status, "PENDING");
+  assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-05-27");
+  assert.equal(db.schedule.get("demo-pin").scheduled_time, "10:30");
   assert.equal(db.schedule.get("demo-pin").link, "https://www.daily-life-hacks.com/demo-article/");
   assert.equal(db.schedule.get("demo-pin").image_url, "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg");
-  assert.equal(dispatchBody.inputs.immediate, "true");
-  assert.equal(dispatchBody.inputs.row_id, "demo-pin");
+  assert.equal(fetchCalled, false);
 });

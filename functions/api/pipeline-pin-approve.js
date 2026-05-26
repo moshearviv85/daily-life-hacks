@@ -23,37 +23,51 @@ function json(data, status = 200) {
   });
 }
 
-function tomorrowUtcDate() {
-  const d = new Date();
-  d.setUTCDate(d.getUTCDate() + 1);
+function formatDate(d) {
   return d.toISOString().slice(0, 10);
 }
 
-async function dispatchPostPin(env, rowId) {
-  if (!env.GH_PAT) {
-    return { triggered: false, error: "GH_PAT not configured" };
+function formatTime(d) {
+  return `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`;
+}
+
+async function nextQueueSlot(db) {
+  const latest = await db.prepare(`
+    SELECT scheduled_date, COALESCE(scheduled_time, '00:00') AS scheduled_time
+      FROM pins_schedule
+     WHERE status = 'PENDING'
+     ORDER BY scheduled_date DESC, COALESCE(scheduled_time, '00:00') DESC
+     LIMIT 1
+  `).first();
+
+  const now = new Date();
+  const today = new Date(now);
+  today.setUTCHours(0, 0, 0, 0);
+
+  if (!latest?.scheduled_date) {
+    const first = new Date(today);
+    first.setUTCDate(first.getUTCDate() + 1);
+    first.setUTCHours(6, 0, 0, 0);
+    return { scheduledDate: formatDate(first), scheduledTime: formatTime(first) };
   }
 
-  const ghRes = await fetch(
-    "https://api.github.com/repos/moshearviv85/daily-life-hacks/actions/workflows/post-pins.yml/dispatches",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${env.GH_PAT}`,
-        Accept: "application/vnd.github+json",
-        "X-GitHub-Api-Version": "2022-11-28",
-        "Content-Type": "application/json",
-        "User-Agent": "daily-life-hacks-cloudflare",
-      },
-      body: JSON.stringify({
-        ref: "main",
-        inputs: { immediate: "true", row_id: rowId },
-      }),
-    },
-  );
+  const [hour, minute] = String(latest.scheduled_time || "00:00").split(":").map((n) => parseInt(n, 10));
+  const latestSlot = new Date(`${latest.scheduled_date}T00:00:00Z`);
+  latestSlot.setUTCHours(Number.isFinite(hour) ? hour : 0, Number.isFinite(minute) ? minute : 0, 0, 0);
 
-  if (ghRes.ok) return { triggered: true };
-  return { triggered: false, error: await ghRes.text(), gh_status: ghRes.status };
+  if (latestSlot < today) {
+    latestSlot.setTime(today.getTime());
+    latestSlot.setUTCDate(latestSlot.getUTCDate() + 1);
+    latestSlot.setUTCHours(6, 0, 0, 0);
+  } else {
+    latestSlot.setUTCHours(latestSlot.getUTCHours() + 2);
+    if (latestSlot.getUTCHours() > 21) {
+      latestSlot.setUTCDate(latestSlot.getUTCDate() + 1);
+      latestSlot.setUTCHours(6, 0, 0, 0);
+    }
+  }
+
+  return { scheduledDate: formatDate(latestSlot), scheduledTime: formatTime(latestSlot) };
 }
 
 export async function onRequestPost(context) {
@@ -73,7 +87,6 @@ export async function onRequestPost(context) {
   }
 
   const pinSlug = String(body.pin_slug || "").trim();
-  const publishNow = body.publish_now === true;
   if (!pinSlug) return json({ error: "pin_slug is required" }, 400);
 
   const pin = await env.DB.prepare(`
@@ -94,7 +107,7 @@ export async function onRequestPost(context) {
   const rowId = pin.pin_slug;
   const imageUrl = `${SITE_BASE}/images/pins/${pin.pin_slug}.jpg`;
   const link = `${SITE_BASE}/${pin.article_slug}/`;
-  const scheduledDate = tomorrowUtcDate();
+  const { scheduledDate, scheduledTime } = await nextQueueSlot(env.DB);
   const productionRequest = isProductionRequest(request, env);
 
   if (!productionRequest) {
@@ -110,6 +123,7 @@ export async function onRequestPost(context) {
       link,
       board_id: boardId,
       scheduled_date: scheduledDate,
+      scheduled_time: scheduledTime,
       status: "STAGING_DRY_RUN",
       message: "Staging preview only. No D1 scheduling row was written and no Pinterest workflow was dispatched.",
     });
@@ -149,16 +163,13 @@ export async function onRequestPost(context) {
     boardId,
     link,
     scheduledDate,
-    "23:59",
+    scheduledTime,
   ).run();
-
-  let dispatch = { triggered: false };
-  if (publishNow) {
-    dispatch = await dispatchPostPin(env, rowId);
-  }
 
   return json({
     ok: true,
+    queued: true,
+    triggered: false,
     row_id: rowId,
     pin_slug: pin.pin_slug,
     article_slug: pin.article_slug,
@@ -167,7 +178,7 @@ export async function onRequestPost(context) {
     link,
     board_id: boardId,
     scheduled_date: scheduledDate,
+    scheduled_time: scheduledTime,
     status: "PENDING",
-    ...dispatch,
   });
 }

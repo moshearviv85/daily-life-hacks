@@ -2954,7 +2954,7 @@ async function approvePipelinePin(pinSlug) {
   const isProductionDashboard = window.location.hostname === 'www.daily-life-hacks.com'
     || window.location.hostname === 'daily-life-hacks.com';
   const ok = confirm(isProductionDashboard
-    ? `לאשר ולפרסם עכשיו את הפין הזה?\n\n${pinSlug}\n\nזה יכניס רק את הפין הזה לתור ויפעיל את GitHub Actions עליו בלבד.`
+    ? `להכניס את הפין הזה למסילת הפרסום האוטומטי?\n\n${pinSlug}\n\nהוא ייכנס כ-PENDING אחרי כל הפינים שכבר ממתינים. לא יתבצע פרסום מיידי.`
     : `בדיקת סטייג'ינג בלבד לפין הזה?\n\n${pinSlug}\n\nלא תיווצר שורת תור, לא יופעל GitHub Actions ולא יתבצע פרסום בפינטרסט.`);
   if (!ok) return;
 
@@ -2964,14 +2964,14 @@ async function approvePipelinePin(pinSlug) {
   statusEl.style.borderColor = '#fed7aa';
   statusEl.style.color = '#92400e';
   statusEl.textContent = isProductionDashboard
-    ? 'מאשר את הפין ומפעיל פרסום...'
+    ? 'מכניס את הפין למסילת הפרסום האוטומטי...'
     : 'מריץ בדיקת סטייג׳ינג ללא פרסום...';
 
   try {
     const res = await fetch(`/api/pipeline-pin-approve?key=${encodeURIComponent(pw)}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ pin_slug: pinSlug, publish_now: isProductionDashboard }),
+      body: JSON.stringify({ pin_slug: pinSlug, publish_now: false }),
     });
     const data = await res.json();
     if (!res.ok || !data.ok) {
@@ -2986,9 +2986,7 @@ async function approvePipelinePin(pinSlug) {
     statusEl.style.color = '#166534';
     statusEl.textContent = data.dry_run
       ? `בדיקת סטייג׳ינג הצליחה עבור ${data.row_id}. לא נכתב תור ולא הופעל פרסום.`
-      : data.triggered
-        ? `הפין ${data.row_id} אושר ונשלח לפרסום.`
-        : `הפין ${data.row_id} אושר לתור, אבל GitHub Actions לא הופעל.`;
+      : `הפין ${data.row_id} נכנס למסילה כ-PENDING לתאריך ${data.scheduled_date} בשעה ${data.scheduled_time}.`;
     statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     if (data.dry_run) {
       alert(`בדיקת סטייג'ינג הצליחה.\n\n${data.row_id}\n\nלא נכתב תור, לא הופעל GitHub Actions ולא בוצע פרסום בפינטרסט.`);

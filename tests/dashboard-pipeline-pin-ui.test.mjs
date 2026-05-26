@@ -17,3 +17,10 @@ test("pipeline table can publish every unposted pin and hides posted pins", () =
   assert.match(dashboard, /publishStatus !== 'POSTED'/);
   assert.match(dashboard, /publish_status/);
 });
+
+test("pipeline publish button queues pins instead of dispatching immediate publish", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /publish_now: false/);
+  assert.doesNotMatch(dashboard, /publish_now: isProductionDashboard/);
+});
