@@ -3,7 +3,7 @@
  * Dispatch a pipeline GitHub Actions workflow by action name.
  * Protected by DASHBOARD_PASSWORD.
  *
- * Body: { action: "discover" | "produce" | "publish", count?: number, category?: string }
+ * Body: { action: "discover" | "produce" | "publish", count?: number, category?: string, topic_ids?: number[] }
  *
  * Note: workflows are dispatched from the default production branch so GitHub can
  * find the workflow files. Content-generation workflows push their generated
@@ -75,6 +75,15 @@ export async function onRequestPost(context) {
   const inputs = {};
   if (body.count) inputs.count = String(body.count);
   if (body.category) inputs.category = body.category;
+  if (action === "produce" && Array.isArray(body.topic_ids) && body.topic_ids.length) {
+    const topicIds = body.topic_ids
+      .map((id) => Number.parseInt(String(id), 10))
+      .filter((id) => Number.isInteger(id) && id > 0);
+    if (topicIds.length === 0) {
+      return json({ error: "topic_ids must contain positive integers" }, 400);
+    }
+    inputs.topic_ids = topicIds.join(",");
+  }
 
   try {
     const ghRes = await fetch(
@@ -101,6 +110,7 @@ export async function onRequestPost(context) {
         dispatchRef: actionConfig.dispatchRef,
         outputBranch: actionConfig.outputBranch,
         effect: actionConfig.effect,
+        topic_ids: inputs.topic_ids || "",
       });
     }
     const ghBody = await ghRes.text();

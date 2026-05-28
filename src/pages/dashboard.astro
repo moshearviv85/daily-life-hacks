@@ -1815,31 +1815,19 @@ function openModal(type) {
     case 'pipeline-topics': {
       title.innerHTML = 'Pipeline Topics';
       body.innerHTML = '<div class="empty">Loading topics...</div>';
+      search.style.display = '';
+      search.placeholder = 'Search topics...';
       overlay.classList.add('open');
       document.addEventListener('keydown', escClose);
       fetchPipelineTopics().then(topics => {
+        modalRows = topics || [];
         if (!topics || topics.length === 0) {
           body.innerHTML = '<div class="empty">No topics found.</div>';
           return;
         }
-        const approved = topics.filter(t => t.status === 'approved');
-        const pending = topics.filter(t => t.status === 'pending' || t.status === 'queued');
-        const rejected = topics.filter(t => t.status === 'rejected');
         title.innerHTML = `Pipeline Topics <span class="modal-count">(${topics.length} total)</span>`;
-        let html = '';
-        if (approved.length) {
-          html += `<h4 style="margin:0 0 .5rem;color:var(--success)">Approved (${approved.length})</h4>`;
-          html += renderTopicsList(approved);
-        }
-        if (pending.length) {
-          html += `<h4 style="margin:1rem 0 .5rem;color:var(--warning, #e6a700)">Pending (${pending.length})</h4>`;
-          html += renderTopicsList(pending);
-        }
-        if (rejected.length) {
-          html += `<h4 style="margin:1rem 0 .5rem;color:var(--danger, #d32f2f)">Rejected (${rejected.length})</h4>`;
-          html += renderTopicsList(rejected);
-        }
-        body.innerHTML = html;
+        body.innerHTML = renderPipelineTopicsModal(topics);
+        updateTopicSelectionSummary();
       });
       return;
     }
@@ -1878,6 +1866,15 @@ function modalSearch() {
     case 'images': {
       const rows = modalRows.filter(i => i.slug.toLowerCase().includes(q) || i.title.toLowerCase().includes(q));
       body.innerHTML = renderImagesTable(rows);
+      break;
+    }
+    case 'pipeline-topics': {
+      const rows = modalRows.filter(t => {
+        const haystack = `${t.topic || ''} ${t.slug || ''} ${t.category || ''} ${t.source || ''} ${t.status || ''}`.toLowerCase();
+        return haystack.includes(q);
+      });
+      body.innerHTML = renderPipelineTopicsModal(rows);
+      updateTopicSelectionSummary();
       break;
     }
     case 'subscribers': {
@@ -2883,16 +2880,134 @@ async function fetchPipelineTopics() {
   } catch { return []; }
 }
 
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function renderTopicStatus(status) {
+  const colors = {
+    approved: ['#dcfce7', '#166534'],
+    pending: ['#fef3c7', '#92400e'],
+    queued: ['#fef3c7', '#92400e'],
+    rejected: ['#fee2e2', '#991b1b'],
+    produced: ['#dbeafe', '#1e40af'],
+  };
+  const [bg, fg] = colors[status] || ['#f3f4f6', '#374151'];
+  return `<span style="display:inline-block;padding:.12rem .4rem;border-radius:4px;font-size:.68rem;font-weight:700;background:${bg};color:${fg}">${escapeHtml(status || 'unknown')}</span>`;
+}
+
+function renderPipelineTopicsModal(topics) {
+  const approved = topics.filter(t => t.status === 'approved');
+  const pending = topics.filter(t => t.status === 'pending' || t.status === 'queued');
+  const rejected = topics.filter(t => t.status === 'rejected');
+  const produced = topics.filter(t => t.status === 'produced');
+  const other = topics.filter(t => !['approved', 'pending', 'queued', 'rejected', 'produced'].includes(t.status));
+
+  const toolbar = `
+    <div style="position:sticky;top:-1rem;z-index:2;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;margin-bottom:.8rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:.45rem;flex-wrap:wrap">
+        <button class="btn btn-sm" onclick="setTopicSelection(true)">Select visible</button>
+        <button class="btn btn-sm" onclick="setTopicSelection(false)">Clear</button>
+        <span id="topic-selection-summary" style="font-size:.75rem;color:var(--muted)">0 selected</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:.45rem;flex-wrap:wrap">
+        <button class="btn btn-sm" onclick="updateSelectedTopics('approve')">Approve</button>
+        <button class="btn btn-sm" onclick="updateSelectedTopics('reject')" style="background:#ef4444;color:#fff;border-color:#ef4444">Reject</button>
+        <button class="btn btn-sm" onclick="produceSelectedTopics()" style="background:#16a34a;color:#fff;border-color:#16a34a">Produce Selected to Staging</button>
+      </div>
+    </div>`;
+
+  const sections = [
+    ['Approved', approved, 'var(--success)'],
+    ['Pending', pending, 'var(--warning, #e6a700)'],
+    ['Rejected', rejected, 'var(--danger, #d32f2f)'],
+    ['Produced', produced, '#2563eb'],
+    ['Other', other, 'var(--muted)'],
+  ];
+
+  const lists = sections
+    .filter(([, rows]) => rows.length)
+    .map(([label, rows, color]) => `
+      <h4 style="margin:${label === 'Approved' ? '0' : '1rem'} 0 .5rem;color:${color}">${label} (${rows.length})</h4>
+      ${renderTopicsList(rows)}
+    `).join('');
+
+  return toolbar + (lists || '<div class="empty">No topics match this filter.</div>');
+}
+
 function renderTopicsList(topics) {
   return `<table class="data-table" style="font-size:.85rem">
-    <thead><tr><th>#</th><th>Topic</th><th>Category</th><th>Source</th></tr></thead>
+    <thead><tr><th style="width:34px"></th><th>#</th><th>Topic</th><th>Category</th><th>Status</th><th>Source</th></tr></thead>
     <tbody>${topics.map((t, i) => `<tr>
+      <td><input type="checkbox" class="topic-select" value="${Number(t.id)}" onchange="updateTopicSelectionSummary()" /></td>
       <td style="color:var(--muted)">${i + 1}</td>
-      <td>${t.topic || t.slug || '-'}</td>
-      <td>${t.category || '-'}</td>
-      <td style="color:var(--muted)">${t.source || '-'}</td>
+      <td>
+        <strong>${escapeHtml(t.topic || t.slug || '-')}</strong>
+        <div style="font-size:.68rem;color:var(--muted);font-family:monospace">${escapeHtml(t.slug || '')}</div>
+      </td>
+      <td>${escapeHtml(t.category || '-')}</td>
+      <td>${renderTopicStatus(t.status)}</td>
+      <td style="color:var(--muted)">${escapeHtml(t.source || '-')}</td>
     </tr>`).join('')}</tbody>
   </table>`;
+}
+
+function getSelectedTopicIds() {
+  return Array.from(document.querySelectorAll('.topic-select:checked'))
+    .map(input => Number.parseInt(input.value, 10))
+    .filter(id => Number.isInteger(id) && id > 0);
+}
+
+function setTopicSelection(checked) {
+  document.querySelectorAll('.topic-select').forEach(input => {
+    input.checked = checked;
+  });
+  updateTopicSelectionSummary();
+}
+
+function updateTopicSelectionSummary() {
+  const summary = document.getElementById('topic-selection-summary');
+  if (!summary) return;
+  const count = getSelectedTopicIds().length;
+  summary.textContent = `${count} selected`;
+}
+
+async function postTopicStatus(action, ids, reason = '') {
+  const res = await fetch(`/api/pipeline-topics?key=${encodeURIComponent(pw)}&action=${action}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ids, reason }),
+  });
+  const data = await res.json();
+  if (!res.ok || !data.ok) {
+    throw new Error(data.error || res.statusText);
+  }
+  return data;
+}
+
+async function updateSelectedTopics(action) {
+  const ids = getSelectedTopicIds();
+  if (!ids.length) {
+    alert('Select at least one topic first.');
+    return;
+  }
+
+  const reason = action === 'reject'
+    ? (prompt('Reject reason?', 'manual rejection') || 'manual rejection')
+    : '';
+
+  try {
+    await postTopicStatus(action, ids, reason);
+    await fetchPipelineStatus();
+    openModal('pipeline-topics');
+  } catch (e) {
+    alert(`Failed: ${e.message}`);
+  }
 }
 
 function renderPipelineTable(filter) {
@@ -3052,6 +3167,50 @@ async function triggerPipeline(action) {
   }
 }
 
+async function produceSelectedTopics() {
+  const ids = getSelectedTopicIds();
+  if (!ids.length) {
+    alert('Select at least one topic first.');
+    return;
+  }
+
+  const ok = confirm(`Generate ${ids.length} selected topic(s) to staging?\n\nSelected topics will be approved first if needed. This uses production D1 topics and AI provider credits.`);
+  if (!ok) return;
+
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = `Approving and dispatching ${ids.length} selected topic(s)...`;
+
+  try {
+    await postTopicStatus('approve', ids);
+
+    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'produce', count: ids.length, topic_ids: ids }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || 'Unknown error');
+    }
+
+    statusEl.style.background = '#f0fdf4';
+    statusEl.style.borderColor = '#bbf7d0';
+    statusEl.style.color = '#166534';
+    statusEl.textContent = `Produce workflow dispatched for ${ids.length} selected topic(s). Output: ${data.outputBranch || 'staging'}.`;
+    closeModal();
+    fetchPipelineStatus();
+  } catch (e) {
+    statusEl.style.background = '#fef2f2';
+    statusEl.style.borderColor = '#fecaca';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+  }
+}
+
 async function approvePipelinePin(pinSlug) {
   if (!pw) return;
   const ok = confirm(IS_PRODUCTION_DASHBOARD
@@ -3126,6 +3285,10 @@ async function addManualTopic() {
 }
 window.fetchPipelineStatus = fetchPipelineStatus;
 window.triggerPipeline = triggerPipeline;
+window.setTopicSelection = setTopicSelection;
+window.updateTopicSelectionSummary = updateTopicSelectionSummary;
+window.updateSelectedTopics = updateSelectedTopics;
+window.produceSelectedTopics = produceSelectedTopics;
 window.approvePipelinePin = approvePipelinePin;
 window.addManualTopic = addManualTopic;
 window.filterPipeline = filterPipeline;

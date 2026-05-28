@@ -43,3 +43,13 @@ test("pipeline pin button is hidden once a pin has any queue status", () => {
   assert.match(dashboard, /const publishButton = !publishStatus/);
   assert.doesNotMatch(dashboard, /publishStatus !== 'POSTED'/);
 });
+
+test("dashboard can select topics and produce selected topics", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /class="topic-select"/);
+  assert.match(dashboard, /Produce Selected to Staging/);
+  assert.match(dashboard, /function produceSelectedTopics/);
+  assert.match(dashboard, /topic_ids: ids/);
+  assert.match(dashboard, /postTopicStatus\('approve', ids\)/);
+});
