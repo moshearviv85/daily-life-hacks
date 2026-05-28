@@ -8,6 +8,7 @@ on:
 env:
   PYTHONUNBUFFERED: "1"
   PIPELINE_TARGET_BRANCH: "staging"
+  PIPELINE_DASHBOARD_BASE_URL: "https://staging.daily-life-hacks.pages.dev"
 
 jobs:
   daily-produce:
@@ -40,7 +41,7 @@ jobs:
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
-          curl -s "https://www.daily-life-hacks.com/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&status=approved" \
+          curl -s "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&status=approved" \
             | python -c "
           import json, sys
           data = json.load(sys.stdin)
@@ -151,7 +152,7 @@ jobs:
           IDS=$(cat /tmp/topic-ids.json)
           if [ "$IDS" != "[]" ]; then
             curl -s -X POST \
-              "https://www.daily-life-hacks.com/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=produced" \
+              "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=produced" \
               -H "Content-Type: application/json" \
               -d "{\"ids\": $IDS}"
           fi
@@ -159,5 +160,5 @@ jobs:
       - name: Sync pipeline status to D1
         if: steps.check-topics.outputs.has_topics == 'true'
         env:
-          STATS_KEY: ${{ secrets.STATS_KEY }}
-        run: python scripts/NEW_PIPELINE_2026-05-08/sync_pipeline_to_d1.py --key "$STATS_KEY"
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: python scripts/NEW_PIPELINE_2026-05-08/sync_pipeline_to_d1.py --base-url "$PIPELINE_DASHBOARD_BASE_URL" --key "$DASHBOARD_PASSWORD"
