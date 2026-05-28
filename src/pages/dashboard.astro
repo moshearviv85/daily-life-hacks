@@ -3127,7 +3127,7 @@ async function triggerPipeline(action) {
   }
   if (action === 'produce') {
     const count = parseInt(document.getElementById('produce-count').value);
-    const ok = confirm(`Generate ${count} article(s) now?\n\nGenerated files will be pushed to staging first. This still uses production D1 topics and AI provider credits.`);
+    const ok = confirm(`Generate ${count} article(s) now?\n\nGenerated files will be pushed to staging first. This uses staging D1 topics and AI provider credits.`);
     if (!ok) return;
   }
   if (action === 'publish') {
@@ -3135,7 +3135,7 @@ async function triggerPipeline(action) {
     if (!ok) return;
   }
   if (action === 'discover') {
-    const ok = confirm('Find topics now?\n\nThis writes approved topic candidates into production D1.');
+    const ok = confirm('Find topics now?\n\nThis writes approved topic candidates into staging D1.');
     if (!ok) return;
   }
 
@@ -3176,16 +3176,20 @@ async function triggerPipeline(action) {
   }
 }
 
+let produceSelectedTopicsInFlight = false;
+
 async function produceSelectedTopics() {
+  if (produceSelectedTopicsInFlight) return;
   const ids = getSelectedTopicIds();
   if (!ids.length) {
     alert('Select at least one topic first.');
     return;
   }
 
-  const ok = confirm(`Generate ${ids.length} selected topic(s) to staging?\n\nSelected topics will be approved first if needed. This uses production D1 topics and AI provider credits.`);
+  const ok = confirm(`Generate ${ids.length} selected topic(s) to staging?\n\nSelected topics will be approved first if needed. This uses staging D1 topics and AI provider credits.`);
   if (!ok) return;
 
+  produceSelectedTopicsInFlight = true;
   const statusEl = document.getElementById('pipeline-trigger-status');
   statusEl.style.display = '';
   statusEl.style.background = '#fff7ed';
@@ -3217,6 +3221,8 @@ async function produceSelectedTopics() {
     statusEl.style.borderColor = '#fecaca';
     statusEl.style.color = '#b91c1c';
     statusEl.textContent = `Failed: ${e.message}`;
+  } finally {
+    produceSelectedTopicsInFlight = false;
   }
 }
 

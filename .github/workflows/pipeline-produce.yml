@@ -89,6 +89,7 @@ jobs:
           import json, sys, subprocess
           topics = json.load(sys.stdin)
           failed = []
+          produced = []
           for t in topics:
               print(f'=== Producing: {t[\"topic\"]} ({t[\"category\"]}) ===')
               result = subprocess.run([
@@ -100,18 +101,31 @@ jobs:
               ], capture_output=False)
               if result.returncode != 0:
                   print(f'ERROR: Pipeline failed for {t[\"topic\"]}', file=sys.stderr)
-                  failed.append(t['topic'])
+                  failed.append(t)
+              else:
+                  produced.append(t)
+          with open('pipeline-data/produced-topics.json', 'w') as f:
+              json.dump(produced, f, indent=2)
+          with open('pipeline-data/failed-topics.json', 'w') as f:
+              json.dump(failed, f, indent=2)
+          with open('/tmp/produced-topic-ids.json', 'w') as f:
+              json.dump([t['id'] for t in produced], f)
+          with open('/tmp/failed-topic-ids.json', 'w') as f:
+              json.dump([t['id'] for t in failed], f)
           if failed:
               print('Failed topics:', file=sys.stderr)
-              for topic in failed:
-                  print(f'  - {topic}', file=sys.stderr)
+              for t in failed:
+                  print(f'  - {t[\"topic\"]}', file=sys.stderr)
+          if not produced:
+              print('No topics produced successfully.', file=sys.stderr)
               sys.exit(1)
+          print(f'Produced {len(produced)} topic(s); failed {len(failed)} topic(s).')
           "
 
       - name: Verify generated staging artifacts
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/verify_pipeline_artifacts.py \
-            --selected-topics pipeline-data/selected-topics.json \
+            --selected-topics pipeline-data/produced-topics.json \
             --article-only
 
       - name: Commit and push generated files
@@ -155,12 +169,24 @@ jobs:
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
-          IDS=$(cat /tmp/topic-ids.json)
+          IDS=$(cat /tmp/produced-topic-ids.json)
           if [ "$IDS" != "[]" ]; then
             curl -s -X POST \
               "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=produced" \
               -H "Content-Type: application/json" \
               -d "{\"ids\": $IDS}"
+          fi
+
+      - name: Mark failed topics as rejected
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: |
+          IDS=$(cat /tmp/failed-topic-ids.json)
+          if [ "$IDS" != "[]" ]; then
+            curl -s -X POST \
+              "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=reject" \
+              -H "Content-Type: application/json" \
+              -d "{\"ids\": $IDS, \"reason\": \"article generation failed automated quality checks\"}"
           fi
 
       - name: Sync pipeline status to D1
