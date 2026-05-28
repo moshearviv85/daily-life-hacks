@@ -140,6 +140,58 @@ class PipelineArtifactsTest(unittest.TestCase):
             self.assertTrue(result.ok)
             self.assertEqual(result.errors, [])
 
+    def test_full_asset_verification_accepts_staging_article_without_review_table(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db = root / "topic-research.sqlite"
+            articles = root / "articles"
+            heroes = root / "images"
+            pins = heroes / "pins"
+            articles.mkdir()
+            pins.mkdir(parents=True)
+            con = sqlite3.connect(db)
+            con.executescript(
+                """
+                CREATE TABLE hero_briefs (
+                  article_slug TEXT,
+                  status TEXT
+                );
+                CREATE TABLE pin_briefs (
+                  article_slug TEXT,
+                  pin_slug TEXT,
+                  pin_index INTEGER,
+                  status TEXT
+                );
+                """
+            )
+            con.execute(
+                "INSERT INTO hero_briefs (article_slug, status) VALUES (?, 'ok')",
+                ("sample-article",),
+            )
+            for idx in range(4):
+                con.execute(
+                    "INSERT INTO pin_briefs (article_slug, pin_slug, pin_index, status) VALUES (?, ?, ?, 'ok')",
+                    ("sample-article", f"sample-pin-{idx + 1}", idx),
+                )
+            con.commit()
+            con.close()
+
+            (articles / "sample-article.md").write_text("---\ntitle: Sample\n---\nBody\n")
+            (heroes / "sample-article-main.jpg").write_bytes(b"jpg")
+            for idx in range(4):
+                (pins / f"sample-pin-{idx + 1}.jpg").write_bytes(b"jpg")
+
+            result = verify_slug(
+                "sample-article",
+                db_path=db,
+                articles_dir=articles,
+                hero_dir=heroes,
+                pin_dir=pins,
+            )
+
+            self.assertTrue(result.ok)
+            self.assertEqual(result.errors, [])
+
 
 if __name__ == "__main__":
     unittest.main()

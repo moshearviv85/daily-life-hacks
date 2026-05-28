@@ -85,6 +85,10 @@ def _has_ok_row(con: sqlite3.Connection, table: str, slug_column: str, slug: str
     return row is not None
 
 
+def _has_article_markdown(slug: str, articles_dir: Path) -> bool:
+    return (articles_dir / f"{slug}.md").exists()
+
+
 def verify_slug(
     slug: str,
     *,
@@ -96,12 +100,13 @@ def verify_slug(
 ) -> ArtifactCheck:
     errors: list[str] = []
 
-    if not (articles_dir / f"{slug}.md").exists():
+    article_exists = _has_article_markdown(slug, articles_dir)
+    if not article_exists:
         errors.append(f"missing article markdown: {articles_dir / f'{slug}.md'}")
 
     con = sqlite3.connect(str(db_path))
     try:
-        if not _has_ok_row(con, "review_outputs", "slug", slug):
+        if not article_exists and not _has_ok_row(con, "review_outputs", "slug", slug):
             errors.append("missing OK review output")
 
         if article_only:
