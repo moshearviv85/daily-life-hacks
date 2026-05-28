@@ -85,6 +85,10 @@ def _has_ok_row(con: sqlite3.Connection, table: str, slug_column: str, slug: str
     return row is not None
 
 
+def _has_article_markdown(slug: str, articles_dir: Path) -> bool:
+    return (articles_dir / f"{slug}.md").exists()
+
+
 def verify_slug(
     slug: str,
     *,
@@ -92,18 +96,24 @@ def verify_slug(
     articles_dir: Path = DEFAULT_ARTICLES_DIR,
     hero_dir: Path = DEFAULT_HERO_DIR,
     pin_dir: Path = DEFAULT_PIN_DIR,
+    article_only: bool = False,
 ) -> ArtifactCheck:
     errors: list[str] = []
 
-    if not (articles_dir / f"{slug}.md").exists():
+    article_exists = _has_article_markdown(slug, articles_dir)
+    if not article_exists:
         errors.append(f"missing article markdown: {articles_dir / f'{slug}.md'}")
-    if not (hero_dir / f"{slug}-main.jpg").exists():
-        errors.append(f"missing hero image: {hero_dir / f'{slug}-main.jpg'}")
 
     con = sqlite3.connect(str(db_path))
     try:
-        if not _has_ok_row(con, "review_outputs", "slug", slug):
+        if not article_exists and not _has_ok_row(con, "review_outputs", "slug", slug):
             errors.append("missing OK review output")
+
+        if article_only:
+            return ArtifactCheck(slug=slug, ok=not errors, errors=errors)
+
+        if not (hero_dir / f"{slug}-main.jpg").exists():
+            errors.append(f"missing hero image: {hero_dir / f'{slug}-main.jpg'}")
         if not _has_ok_row(con, "hero_briefs", "article_slug", slug):
             errors.append("missing OK hero brief")
 
@@ -130,6 +140,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--slug", action="append", default=[], help="Article slug to verify. May be repeated.")
     parser.add_argument("--selected-topics", type=Path, help="JSON file from pipeline-data/selected-topics.json")
     parser.add_argument("--all-reviewed", action="store_true", help="Verify every reviewed article in SQLite.")
+    parser.add_argument("--article-only", action="store_true", help="Verify article draft artifacts only; images and pin briefs must not be required.")
     args = parser.parse_args(argv)
 
     slugs = list(args.slug)
@@ -143,7 +154,7 @@ def main(argv: list[str] | None = None) -> int:
         print("No slugs selected for artifact verification.", file=sys.stderr)
         return 1
 
-    checks = [verify_slug(slug, db_path=args.db) for slug in slugs]
+    checks = [verify_slug(slug, db_path=args.db, article_only=args.article_only) for slug in slugs]
     failed = [check for check in checks if not check.ok]
 
     for check in checks:

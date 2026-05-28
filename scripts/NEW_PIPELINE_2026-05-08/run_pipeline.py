@@ -10,6 +10,7 @@ Usage:
     python scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py "crispy baked falafel with tahini sauce" --category recipes
     python scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py "best ways to store fresh herbs" --category tips
     python scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py "chickpea nutrition facts" --category nutrition --dry-run
+    python scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py "cheap family dinners" --category recipes --article-only
 """
 from __future__ import annotations
 
@@ -261,6 +262,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--category", required=True, choices=["recipes", "nutrition", "tips"])
     p.add_argument("--db", default=str(DEFAULT_DB))
     p.add_argument("--dry-run", action="store_true", help="Seed topic + write + review only, no images")
+    p.add_argument("--article-only", action="store_true", help="Write, review, and deploy the article draft only; no briefs or images")
     p.add_argument("--skip-images", action="store_true", help="Skip hero + pin image generation (saves API cost)")
     p.add_argument("--skip-deploy", action="store_true", help="Stop before deploying to disk")
     p.add_argument("--model", default="google/gemini-2.5-flash")
@@ -313,6 +315,20 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.dry_run:
         log("DRY RUN: stopping after write + review (no images, no deploy)")
+        log(f"Total time: {time.monotonic() - total_start:.1f}s")
+        return 0
+
+    if args.article_only:
+        ok = run_step("Stage 3: Deploy Article Draft", [
+            py, str(SCRIPT_DIR / "bulk_deploy_articles.py"),
+            "--slug", slug,
+            "--db", args.db,
+        ], timeout=30)
+        if not ok:
+            log("PIPELINE FAILED at article draft deploy stage")
+            return 1
+        print()
+        log("ARTICLE DRAFT READY: stopping before briefs, hero image, and pin images")
         log(f"Total time: {time.monotonic() - total_start:.1f}s")
         return 0
 

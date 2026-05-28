@@ -87,3 +87,92 @@ def test_build_payload(pipeline_db):
     assert "pins" in payload
     assert len(payload["articles"]) == 1
     assert len(payload["pins"]) == 1
+
+
+def test_article_only_db_syncs_before_asset_tables_exist(tmp_path):
+    db_path = tmp_path / "article_only.sqlite"
+    conn = sqlite3.connect(str(db_path))
+    conn.executescript("""
+        CREATE TABLE write_outputs (
+            id INTEGER PRIMARY KEY, slug TEXT, topic TEXT, category TEXT,
+            model_id TEXT, markdown TEXT, tokens_in INTEGER, tokens_out INTEGER,
+            cost_usd REAL, status TEXT, created_at TEXT
+        );
+        CREATE TABLE review_outputs (
+            id INTEGER PRIMARY KEY, slug TEXT, reviewed_markdown TEXT,
+            review_model TEXT, tokens_in INTEGER, tokens_out INTEGER,
+            cost_usd REAL, status TEXT, created_at TEXT
+        );
+    """)
+    conn.execute(
+        "INSERT INTO write_outputs VALUES (1, 'article-only', 'Article Only', 'recipes', "
+        "'gemini-2.5-flash', '# Article Only', 100, 500, 0.001, 'reviewed', '2026-05-28')"
+    )
+    conn.execute(
+        "INSERT INTO review_outputs VALUES (1, 'article-only', '# Reviewed Article Only', "
+        "'gemini-2.5-flash', 200, 600, 0.002, 'ok', '2026-05-28')"
+    )
+    conn.commit()
+    conn.close()
+
+    articles = collect_articles_from_sqlite(str(db_path))
+    pins = collect_pins_from_sqlite(str(db_path))
+
+    assert len(articles) == 1
+    assert articles[0]["slug"] == "article-only"
+    assert articles[0]["stage"] == "reviewed"
+    assert pins == []
+
+
+def test_asset_db_syncs_from_staging_markdown_without_write_outputs(tmp_path, monkeypatch):
+    db_path = tmp_path / "asset_only.sqlite"
+    conn = sqlite3.connect(str(db_path))
+    conn.executescript("""
+        CREATE TABLE hero_briefs (
+            article_slug TEXT, status TEXT, prompt TEXT, alt TEXT
+        );
+        CREATE TABLE pin_briefs (
+            article_slug TEXT, pin_slug TEXT, pin_index INTEGER,
+            title TEXT, description TEXT, prompt TEXT, alt TEXT, status TEXT
+        );
+    """)
+    conn.execute(
+        "INSERT INTO hero_briefs VALUES ('asset-only', 'ok', 'Prompt', 'Alt text')"
+    )
+    for idx in range(4):
+        conn.execute(
+            "INSERT INTO pin_briefs VALUES (?, ?, ?, ?, ?, ?, ?, 'ok')",
+            (
+                "asset-only",
+                f"asset-pin-{idx + 1}",
+                idx,
+                f"Pin {idx + 1}",
+                "Description",
+                "Prompt",
+                "Alt",
+            ),
+        )
+    conn.commit()
+    conn.close()
+
+    article_dir = tmp_path / "articles"
+    article_dir.mkdir()
+    (article_dir / "asset-only.md").write_text(
+        "---\n"
+        'title: "Asset Only Article"\n'
+        'category: "recipes"\n'
+        "---\n"
+        "Body words here.\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr("sync_pipeline_to_d1.ARTICLE_DIR", article_dir)
+
+    articles = collect_articles_from_sqlite(str(db_path))
+    pins = collect_pins_from_sqlite(str(db_path))
+
+    assert len(articles) == 1
+    assert articles[0]["slug"] == "asset-only"
+    assert articles[0]["topic"] == "Asset Only Article"
+    assert articles[0]["category"] == "recipes"
+    assert articles[0]["stage"] == "deployed"
+    assert len(pins) == 4

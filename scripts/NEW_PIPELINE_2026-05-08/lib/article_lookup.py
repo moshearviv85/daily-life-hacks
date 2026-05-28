@@ -24,19 +24,29 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 
 
+def _table_exists(con: sqlite3.Connection, name: str) -> bool:
+    return con.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",
+        (name,),
+    ).fetchone() is not None
+
+
 def markdown_for_slug(slug: str, *, db_path: Path = DEFAULT_DB) -> Optional[str]:
     if not db_path.exists():
         return None
     con = sqlite3.connect(str(db_path))
     try:
-        row = con.execute(
-            "SELECT reviewed_markdown FROM review_outputs "
-            "WHERE slug = ? AND reviewed_markdown IS NOT NULL "
-            "ORDER BY rowid DESC LIMIT 1",
-            (slug,),
-        ).fetchone()
-        if row and row[0]:
-            return row[0]
+        if _table_exists(con, "review_outputs"):
+            row = con.execute(
+                "SELECT reviewed_markdown FROM review_outputs "
+                "WHERE slug = ? AND reviewed_markdown IS NOT NULL "
+                "ORDER BY rowid DESC LIMIT 1",
+                (slug,),
+            ).fetchone()
+            if row and row[0]:
+                return row[0]
+        if not _table_exists(con, "write_outputs"):
+            return None
         row = con.execute(
             "SELECT markdown FROM write_outputs "
             "WHERE slug = ? AND markdown IS NOT NULL "

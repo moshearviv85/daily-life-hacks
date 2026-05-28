@@ -18,6 +18,17 @@ HERO_IMG_DIR = REPO_ROOT / "public" / "images"
 ARTICLE_DIR = REPO_ROOT / "src" / "data" / "articles"
 
 
+def _frontmatter_value(markdown: str, key: str) -> str:
+    pattern = f"{key}:"
+    for line in markdown.splitlines():
+        if line.strip().startswith(pattern):
+            value = line.split(":", 1)[1].strip()
+            if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+                value = value[1:-1]
+            return value.strip()
+    return ""
+
+
 def _load_env() -> None:
     env_path = REPO_ROOT / ".env"
     if env_path.exists():
@@ -27,51 +38,95 @@ def _load_env() -> None:
                 os.environ.setdefault(k.strip(), v.strip().strip("'").strip('"'))
 
 
+def _table_exists(conn: sqlite3.Connection, name: str) -> bool:
+    return conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",
+        (name,),
+    ).fetchone() is not None
+
+
+def _article_from_markdown(slug: str, markdown: str) -> dict:
+    title = _frontmatter_value(markdown, "title") or slug.replace("-", " ")
+    category = _frontmatter_value(markdown, "category") or "recipes"
+    word_count = len(markdown.split()) if markdown else 0
+    return {
+        "slug": slug,
+        "topic": title,
+        "category": category,
+        "source": "manual",
+        "stage": "deployed",
+        "write_model": "",
+        "word_count": word_count,
+        "tokens_total": 0,
+        "cost_usd": 0,
+    }
+
+
+def _disk_article_slugs(conn: sqlite3.Connection) -> set[str]:
+    slugs: set[str] = set()
+    if _table_exists(conn, "hero_briefs"):
+        rows = conn.execute("SELECT DISTINCT article_slug FROM hero_briefs WHERE article_slug IS NOT NULL").fetchall()
+        slugs.update(r["article_slug"] for r in rows if r["article_slug"])
+    if _table_exists(conn, "pin_briefs"):
+        rows = conn.execute("SELECT DISTINCT article_slug FROM pin_briefs WHERE article_slug IS NOT NULL").fetchall()
+        slugs.update(r["article_slug"] for r in rows if r["article_slug"])
+    return slugs
+
+
 def collect_articles_from_sqlite(db_path: str) -> list[dict]:
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     articles = {}
 
-    for r in conn.execute(
-        "SELECT slug, topic, category, model_id, markdown, "
-        "tokens_in, tokens_out, cost_usd, status FROM write_outputs"
-    ).fetchall():
-        word_count = len(r["markdown"].split()) if r["markdown"] else 0
-        articles[r["slug"]] = {
-            "slug": r["slug"], "topic": r["topic"], "category": r["category"],
-            "source": "manual", "stage": "written", "write_model": r["model_id"],
-            "word_count": word_count,
-            "tokens_total": (r["tokens_in"] or 0) + (r["tokens_out"] or 0),
-            "cost_usd": r["cost_usd"] or 0,
-        }
+    if _table_exists(conn, "write_outputs"):
+        for r in conn.execute(
+            "SELECT slug, topic, category, model_id, markdown, "
+            "tokens_in, tokens_out, cost_usd, status FROM write_outputs"
+        ).fetchall():
+            word_count = len(r["markdown"].split()) if r["markdown"] else 0
+            articles[r["slug"]] = {
+                "slug": r["slug"], "topic": r["topic"], "category": r["category"],
+                "source": "manual", "stage": "written", "write_model": r["model_id"],
+                "word_count": word_count,
+                "tokens_total": (r["tokens_in"] or 0) + (r["tokens_out"] or 0),
+                "cost_usd": r["cost_usd"] or 0,
+            }
+    else:
+        for slug in _disk_article_slugs(conn):
+            path = ARTICLE_DIR / f"{slug}.md"
+            if path.exists():
+                articles[slug] = _article_from_markdown(slug, path.read_text(encoding="utf-8"))
 
-    for r in conn.execute(
-        "SELECT slug, review_model, tokens_in, tokens_out, cost_usd "
-        "FROM review_outputs WHERE status = 'ok'"
-    ).fetchall():
-        if r["slug"] in articles:
-            a = articles[r["slug"]]
-            a["stage"] = "reviewed"
-            a["review_model"] = r["review_model"]
-            a["tokens_total"] += (r["tokens_in"] or 0) + (r["tokens_out"] or 0)
-            a["cost_usd"] += r["cost_usd"] or 0
+    if _table_exists(conn, "review_outputs"):
+        for r in conn.execute(
+            "SELECT slug, review_model, tokens_in, tokens_out, cost_usd "
+            "FROM review_outputs WHERE status = 'ok'"
+        ).fetchall():
+            if r["slug"] in articles:
+                a = articles[r["slug"]]
+                a["stage"] = "reviewed"
+                a["review_model"] = r["review_model"]
+                a["tokens_total"] += (r["tokens_in"] or 0) + (r["tokens_out"] or 0)
+                a["cost_usd"] += r["cost_usd"] or 0
 
-    for r in conn.execute(
-        "SELECT article_slug, prompt, alt FROM hero_briefs WHERE status = 'ok'"
-    ).fetchall():
-        if r["article_slug"] in articles:
-            a = articles[r["article_slug"]]
-            a["hero_prompt"] = r["prompt"]
-            a["hero_alt"] = r["alt"]
-            if a["stage"] == "reviewed":
-                a["stage"] = "hero_brief"
+    if _table_exists(conn, "hero_briefs"):
+        for r in conn.execute(
+            "SELECT article_slug, prompt, alt FROM hero_briefs WHERE status = 'ok'"
+        ).fetchall():
+            if r["article_slug"] in articles:
+                a = articles[r["article_slug"]]
+                a["hero_prompt"] = r["prompt"]
+                a["hero_alt"] = r["alt"]
+                if a["stage"] == "reviewed":
+                    a["stage"] = "hero_brief"
 
     pin_counts = {}
-    for r in conn.execute(
-        "SELECT article_slug, COUNT(*) as cnt FROM pin_briefs "
-        "WHERE status = 'ok' GROUP BY article_slug"
-    ).fetchall():
-        pin_counts[r["article_slug"]] = r["cnt"]
+    if _table_exists(conn, "pin_briefs"):
+        for r in conn.execute(
+            "SELECT article_slug, COUNT(*) as cnt FROM pin_briefs "
+            "WHERE status = 'ok' GROUP BY article_slug"
+        ).fetchall():
+            pin_counts[r["article_slug"]] = r["cnt"]
     for slug, cnt in pin_counts.items():
         if slug in articles:
             articles[slug]["pin_count"] = cnt
@@ -86,13 +141,14 @@ def collect_articles_from_sqlite(db_path: str) -> list[dict]:
     pin_imgs = set()
     if PIN_IMG_DIR.exists():
         pin_imgs = {f.stem for f in PIN_IMG_DIR.iterdir() if f.suffix == ".jpg"}
-    for r in conn.execute(
-        "SELECT article_slug, pin_slug FROM pin_briefs WHERE status = 'ok'"
-    ).fetchall():
-        slug = r["article_slug"]
-        if slug in articles and r["pin_slug"] in pin_imgs:
-            articles[slug].setdefault("pin_images_done", 0)
-            articles[slug]["pin_images_done"] += 1
+    if _table_exists(conn, "pin_briefs"):
+        for r in conn.execute(
+            "SELECT article_slug, pin_slug FROM pin_briefs WHERE status = 'ok'"
+        ).fetchall():
+            slug = r["article_slug"]
+            if slug in articles and r["pin_slug"] in pin_imgs:
+                articles[slug].setdefault("pin_images_done", 0)
+                articles[slug]["pin_images_done"] += 1
     for slug, a in articles.items():
         done = a.get("pin_images_done", 0)
         total = a.get("pin_count", 0)
@@ -110,6 +166,9 @@ def collect_articles_from_sqlite(db_path: str) -> list[dict]:
 def collect_pins_from_sqlite(db_path: str) -> list[dict]:
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
+    if not _table_exists(conn, "pin_briefs"):
+        conn.close()
+        return []
     rows = conn.execute(
         "SELECT article_slug, pin_slug, pin_index, title, description, prompt, alt "
         "FROM pin_briefs WHERE status = 'ok'"

@@ -12,17 +12,17 @@ def test_pipeline_produce_stops_before_image_generation_until_article_approval()
 
 
 def test_staging_pipeline_workflows_use_staging_dashboard_api():
-    for name in ("pipeline-produce.yml", "pipeline-daily.yml", "pipeline-article-assets.yml"):
+    for name in ("pipeline-produce.yml", "pipeline-daily.yml", "pipeline-article-assets.yml", "pipeline-discover.yml"):
         workflow = (ROOT / ".github" / "workflows" / name).read_text(encoding="utf-8")
 
         assert 'PIPELINE_DASHBOARD_BASE_URL: "https://staging.daily-life-hacks.pages.dev"' in workflow
         assert '--base-url "$PIPELINE_DASHBOARD_BASE_URL"' in workflow
-        if name != "pipeline-article-assets.yml":
+        if name in ("pipeline-produce.yml", "pipeline-daily.yml"):
             assert '${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics' in workflow
 
 
 def test_staging_pipeline_workflows_do_not_sync_pipeline_to_production_api():
-    for name in ("pipeline-produce.yml", "pipeline-daily.yml", "pipeline-article-assets.yml"):
+    for name in ("pipeline-produce.yml", "pipeline-daily.yml", "pipeline-article-assets.yml", "pipeline-discover.yml"):
         workflow = (ROOT / ".github" / "workflows" / name).read_text(encoding="utf-8")
 
         assert "https://www.daily-life-hacks.com/api/pipeline-topics" not in workflow
