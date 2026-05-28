@@ -4,7 +4,7 @@ excerpt: Tired of takeout but short on time? These quick dinner recipes get real
 category: recipes
 tags: ["quick dinner recipes", "family meals", "easy weeknight dinner", "30 minute meals", "dinner ideas"]
 image: "/images/quick-dinner-recipes-for-family-main.jpg"
-imageAlt: A close-up, high-angle shot of a sheet pan filled with roasted chicken and colorful vegetables being placed on a wooden table.
+imageAlt: A close-up, overhead shot of a colorful sheet pan dinner with roasted chicken, broccoli, bell peppers, and cherry tomatoes.
 date: 2026-05-28
 author: "David Miller"
 featured: false
