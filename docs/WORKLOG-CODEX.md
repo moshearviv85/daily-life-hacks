@@ -1,6 +1,6 @@
 # Codex Worklog
 
-Last updated: 2026-05-18
+Last updated: 2026-05-28
 
 This file is the shared memory for Codex sessions on `daily-life-hacks.com`.
 Every new Codex chat should read this file and `AGENTS.md` before choosing work.
@@ -95,6 +95,43 @@ Every new Codex chat should read this file and `AGENTS.md` before choosing work.
 ## Next Recommended Work Area
 
 Follow `docs/CODEX-TASKBOARD.md` and choose the first task that is not `done` and not `in_progress`.
+
+## 2026-05-28 - Pipeline E2E Restart And Staging Queue
+
+Status: in progress.
+
+What was verified:
+
+- `pipeline-produce.yml` completed successfully for `quick-dinner-recipes-for-family`.
+- The article exists on staging and returns 200:
+  - `https://staging.daily-life-hacks.pages.dev/quick-dinner-recipes-for-family/`
+- Hero image exists on staging and returns 200:
+  - `https://staging.daily-life-hacks.pages.dev/images/quick-dinner-recipes-for-family-main.jpg`
+- Four pipeline pin rows exist in D1 with `image_status = done`.
+- All four staging pin image URLs return 200:
+  - `dinner-table-minutes-flat-sheet`
+  - `skip-takeout-dinner-table-minutes`
+  - `weeknight-win-dinner-table-minutes`
+  - `real-food-fast-dinner-table`
+- `staging_pins_schedule` now contains the four pins as `PENDING`, spaced two hours apart on 2026-05-29 at 06:00, 08:00, 10:00, and 12:00 UTC.
+- Staging queue rows use staging article/image URLs and do not dispatch GitHub Actions or post to Pinterest.
+
+Code fixes made during the run:
+
+- Article-only D1 sync no longer fails before hero/pin tables exist.
+- Asset generation can resume from an approved staging article without local SQLite `write_outputs` / `review_outputs`.
+- Asset verification can validate from staging markdown.
+- Staging pin approval now writes staging URLs into `staging_pins_schedule`; production approval still writes production URLs into `pins_schedule`.
+
+Verification:
+
+- `node --test tests/pipeline-pin-approve.test.mjs tests/pins-status.test.mjs tests/dashboard-pipeline-pin-ui.test.mjs tests/pins-staging-actions.test.mjs tests/pins-next.test.mjs` passed: 18/18.
+- Latest staging deploy for commit `3eda813` passed.
+- D1 checks confirmed the article row, four pin metadata rows, and four staging pending queue rows.
+
+Remaining limitation:
+
+- Staging still uses the shared D1 binding. Staging queue writes are separated into `staging_pins_schedule`, but other D1 state is not fully isolated yet. T10 remains the correct next infrastructure task.
 
 ## 2026-05-18 - T03 Staging Environment
 

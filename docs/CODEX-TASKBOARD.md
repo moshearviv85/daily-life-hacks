@@ -1,6 +1,6 @@
 # Codex Taskboard
 
-Last updated: 2026-05-18
+Last updated: 2026-05-28
 
 This file coordinates multiple Codex chats working on the project.
 Each chat must claim exactly one task before doing implementation work.
@@ -321,7 +321,9 @@ Handoff:
 
 ### T10 - Staging D1 Isolation
 
-Status: `open`
+Status: `in_progress`
+
+Claimed: 2026-05-28, Codex, verify current staging queue behavior while preparing the full D1 isolation work.
 
 Goal: Prevent staging dashboard/API tests from mutating production D1 state.
 
@@ -332,6 +334,12 @@ Scope:
 
 Deliverable:
 - Either a precise setup checklist or implemented isolation with verification.
+
+Current notes:
+- Staging pin approval is now separated at the table level: staging writes to `staging_pins_schedule`; production writes to `pins_schedule`.
+- Commit `3eda813` fixed staging pin approval to store staging article/image URLs when clicked from staging.
+- Four `quick-dinner-recipes-for-family` pins are queued in `staging_pins_schedule` as `PENDING` for 2026-05-29 at 06:00, 08:00, 10:00, and 12:00 UTC.
+- This does not complete full D1 isolation. Preview still shares the same D1 database binding for broader pipeline state.
 
 ### T11 - Conservative New Pin Reintroduction
 
