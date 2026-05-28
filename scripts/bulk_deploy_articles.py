@@ -67,6 +67,21 @@ def _deploy_image_alt(article_md: str, hero_alt: str | None) -> str | None:
     return _draft_image_alt(article_md)
 
 
+def _article_from_disk(slug: str, out_dir: Path) -> dict | None:
+    path = out_dir / f"{slug}.md"
+    if not path.exists():
+        return None
+    markdown = path.read_text(encoding="utf-8")
+    title = _frontmatter_value(markdown, _TITLE_LINE_RE)
+    return {
+        "slug": slug,
+        "title": title,
+        "category": "",
+        "markdown": markdown,
+        "image_filename": f"{slug}-main.jpg",
+    }
+
+
 def build_article_md(article_md: str, hero_alt: str | None) -> str:
     """Inject hero alt into the frontmatter, then clean. Pure function."""
     deploy_alt = _deploy_image_alt(article_md, hero_alt)
@@ -88,9 +103,13 @@ def main(argv: list[str] | None = None) -> int:
     if args.slug:
         articles = [a for a in articles if a["slug"] == args.slug]
         if not articles:
-            print(f"slug {args.slug!r} not found in write_outputs (status='written')",
-                  file=sys.stderr)
-            return 2
+            disk_article = _article_from_disk(args.slug, out_dir)
+            if disk_article:
+                articles = [disk_article]
+            else:
+                print(f"slug {args.slug!r} not found in write_outputs or {out_dir}",
+                      file=sys.stderr)
+                return 2
 
     hero_alts = load_hero_alts_from_sql(args.db)
 

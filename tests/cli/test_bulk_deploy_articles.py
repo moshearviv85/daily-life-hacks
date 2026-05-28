@@ -226,3 +226,28 @@ def test_cli_works_when_hero_alt_missing(tmp_path):
     assert rc == 0
     content = (out_dir / "demo.md").read_text(encoding="utf-8")
     assert "Original hero image alt that is already long enough" in content
+
+
+def test_cli_refreshes_existing_slug_from_disk_when_write_outputs_missing(tmp_path):
+    db = tmp_path / "topic.sqlite"
+    con = sqlite3.connect(str(db))
+    con.execute("CREATE TABLE placeholder (id INTEGER)")
+    con.commit()
+    con.close()
+    bcon = brief_store.connect(db)
+    try:
+        brief_store.init_schema(bcon)
+        brief_store.upsert_hero_brief(
+            bcon, article_slug="demo", prompt=VALID_HERO_PROMPT, alt=VALID_HERO_ALT
+        )
+    finally:
+        bcon.close()
+    out_dir = tmp_path / "articles"
+    out_dir.mkdir()
+    (out_dir / "demo.md").write_text(_md(existing_alt="Draft placeholder alt text long enough"), encoding="utf-8")
+
+    rc = main(["--db", str(db), "--out-dir", str(out_dir), "--slug", "demo"])
+
+    assert rc == 0
+    content = (out_dir / "demo.md").read_text(encoding="utf-8")
+    assert VALID_HERO_ALT in content
