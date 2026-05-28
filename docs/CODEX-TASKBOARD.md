@@ -335,11 +335,18 @@ Scope:
 Deliverable:
 - Either a precise setup checklist or implemented isolation with verification.
 
-Current notes:
-- Staging pin approval is now separated at the table level: staging writes to `staging_pins_schedule`; production writes to `pins_schedule`.
-- Commit `3eda813` fixed staging pin approval to store staging article/image URLs when clicked from staging.
-- Four `quick-dinner-recipes-for-family` pins are queued in `staging_pins_schedule` as `PENDING` for 2026-05-29 at 06:00, 08:00, 10:00, and 12:00 UTC.
-- This does not complete full D1 isolation. Preview still shares the same D1 database binding for broader pipeline state.
+Completed:
+- Created `dlh-subscriptions-staging` D1 database.
+- Applied schema and added `staging_pins_schedule` to `schema.sql`.
+- Seeded staging with pipeline topics/articles/pins and staging pending pins only.
+- Added `wrangler.toml` so Preview binds `DB`/`D8` to `dlh-subscriptions-staging`; Production keeps `DB`/`D8` on `dlh-subscriptions`.
+- No production subscribers, analytics events, or Pinterest OAuth/token data were copied.
+
+Verification:
+- `npm run build` passed.
+- `npx wrangler pages functions build ...` passed.
+- D1 count checks show staging has pipeline data and zero `funnel_events`, while production keeps the existing analytics events.
+- Final live Preview verification is still required after the staging deployment containing `wrangler.toml` completes.
 
 ### T11 - Conservative New Pin Reintroduction
 

@@ -129,9 +129,19 @@ Verification:
 - Latest staging deploy for commit `3eda813` passed.
 - D1 checks confirmed the article row, four pin metadata rows, and four staging pending queue rows.
 
-Remaining limitation:
+Follow-up D1 isolation:
 
-- Staging still uses the shared D1 binding. Staging queue writes are separated into `staging_pins_schedule`, but other D1 state is not fully isolated yet. T10 remains the correct next infrastructure task.
+- Created D1 database `dlh-subscriptions-staging` (`e585ee8b-d1fd-443f-bce7-02d9f710c273`) in EEUR.
+- Applied `schema.sql` plus `staging_pins_schedule`.
+- Seeded only pipeline tables and staging queue data from production:
+  - `pipeline_topics`
+  - `pipeline_articles`
+  - `pipeline_pins`
+  - `staging_pins_schedule`
+- Did not copy production subscribers, analytics events, or Pinterest OAuth/token data.
+- Added `wrangler.toml` with Preview `DB`/`D8` bindings pointing at `dlh-subscriptions-staging` and Production `DB`/`D8` bindings pointing at `dlh-subscriptions`.
+- Added `staging_pins_schedule` to `schema.sql`.
+- Local build and Pages Functions bundle passed before deployment.
 
 ## 2026-05-18 - T03 Staging Environment
 

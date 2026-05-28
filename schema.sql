@@ -110,6 +110,30 @@ CREATE TABLE IF NOT EXISTS pins_schedule (
 CREATE INDEX IF NOT EXISTS idx_ps_status ON pins_schedule(status);
 CREATE INDEX IF NOT EXISTS idx_ps_scheduled_date ON pins_schedule(scheduled_date);
 
+-- Staging-only Pinterest queue used by Cloudflare Pages Preview deployments.
+-- This mirrors pins_schedule but is never read by the production auto-poster.
+CREATE TABLE IF NOT EXISTS staging_pins_schedule (
+  row_id TEXT PRIMARY KEY,
+  pin_title TEXT NOT NULL,
+  pin_description TEXT,
+  alt_text TEXT,
+  image_url TEXT,
+  board_id TEXT,
+  link TEXT,
+  scheduled_date TEXT,
+  scheduled_time TEXT,
+  status TEXT DEFAULT 'PENDING',
+  pin_id TEXT,
+  published_date TEXT,
+  pinterest_response TEXT,
+  fail_count INTEGER DEFAULT 0,
+  created_at TEXT DEFAULT (datetime('now')),
+  updated_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_sps_status ON staging_pins_schedule(status);
+CREATE INDEX IF NOT EXISTS idx_sps_scheduled_date ON staging_pins_schedule(scheduled_date);
+
 -- Content pipeline: articles uploaded via CSV, published daily by GitHub Actions
 CREATE TABLE IF NOT EXISTS articles_schedule (
   slug TEXT PRIMARY KEY,

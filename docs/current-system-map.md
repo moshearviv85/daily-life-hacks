@@ -44,7 +44,8 @@ Use this with:
 Cloudflare D1 binding:
 
 - Binding name: `DB`
-- Known database name from prior audit: `dlh-subscriptions`
+- Production database: `dlh-subscriptions`
+- Preview/staging database: `dlh-subscriptions-staging`
 - Schema file: `schema.sql`
 
 Core D1 tables:
@@ -55,6 +56,7 @@ Core D1 tables:
 - `article_ratings`: rating widget state.
 - `articles_schedule`: legacy/manual article publishing queue.
 - `pins_schedule`: production Pinterest posting queue.
+- `staging_pins_schedule`: staging-only Pinterest queue for Preview dashboard tests.
 - `pipeline_topics`: discovered topic backlog and approval state.
 - `pipeline_articles`: generation lifecycle status.
 - `pipeline_pins`: pin brief and image status.
@@ -119,12 +121,12 @@ Staging:
 - Current documented preview URL: `https://77f0167e.daily-life-hacks.pages.dev`
 - Intended for static site, generated content, image, routing, and build review.
 
-Staging limitation:
+Staging data isolation:
 
-- Preview runtime is not D1-isolated yet.
-- Pages Functions still use the `DB` binding.
-- Dashboard/API actions on staging may mutate production D1.
-- Do not use staging dashboard/API buttons for real tests until a separate Preview D1 binding exists.
+- Preview runtime binds `DB` and `D8` to `dlh-subscriptions-staging`.
+- Production runtime binds `DB` and `D8` to `dlh-subscriptions`.
+- Bindings are managed in `wrangler.toml` via `[env.preview]` and `[env.production]`.
+- The staging DB is seeded with pipeline topics/articles/pins and the staging pin queue, but does not contain production subscribers, analytics events, or Pinterest OAuth token data.
 
 Promotion:
 
