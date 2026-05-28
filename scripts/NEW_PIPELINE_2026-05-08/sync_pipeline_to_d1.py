@@ -81,7 +81,8 @@ def collect_articles_from_sqlite(db_path: str) -> list[dict]:
     if _table_exists(conn, "write_outputs"):
         for r in conn.execute(
             "SELECT slug, topic, category, model_id, markdown, "
-            "tokens_in, tokens_out, cost_usd, status FROM write_outputs"
+            "tokens_in, tokens_out, cost_usd, status FROM write_outputs "
+            "WHERE status IN ('written', 'reviewed')"
         ).fetchall():
             word_count = len(r["markdown"].split()) if r["markdown"] else 0
             articles[r["slug"]] = {

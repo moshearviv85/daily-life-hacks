@@ -55,12 +55,29 @@ export async function onRequestPost(context) {
       return json({ error: "ids array required" }, 400);
     }
     const placeholders = ids.map(() => "?").join(",");
+    let rejectedSlugs = [];
+    if (action === "reject") {
+      const rows = await env.DB.prepare(
+        `SELECT slug FROM pipeline_topics WHERE id IN (${placeholders})`
+      ).bind(...ids).all();
+      rejectedSlugs = (rows?.results ?? []).map((r) => r.slug).filter(Boolean);
+    }
     const newStatus = action === "approve" ? "approved" : action === "reject" ? "rejected" : "produced";
     const reason = action === "reject" ? (body.reason || "manual rejection") : null;
 
     await env.DB.prepare(
       `UPDATE pipeline_topics SET status = ?, reject_reason = COALESCE(?, reject_reason) WHERE id IN (${placeholders})`
     ).bind(newStatus, reason, ...ids).run();
+
+    if (rejectedSlugs.length) {
+      const slugPlaceholders = rejectedSlugs.map(() => "?").join(",");
+      await env.DB.prepare(
+        `DELETE FROM pipeline_pins WHERE article_slug IN (${slugPlaceholders})`
+      ).bind(...rejectedSlugs).run();
+      await env.DB.prepare(
+        `DELETE FROM pipeline_articles WHERE slug IN (${slugPlaceholders})`
+      ).bind(...rejectedSlugs).run();
+    }
 
     return json({ ok: true, action, count: ids.length });
   }
