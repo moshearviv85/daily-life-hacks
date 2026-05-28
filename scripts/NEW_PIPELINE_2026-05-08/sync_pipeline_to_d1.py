@@ -18,6 +18,17 @@ HERO_IMG_DIR = REPO_ROOT / "public" / "images"
 ARTICLE_DIR = REPO_ROOT / "src" / "data" / "articles"
 
 
+def _frontmatter_value(markdown: str, key: str) -> str:
+    pattern = f"{key}:"
+    for line in markdown.splitlines():
+        if line.strip().startswith(pattern):
+            value = line.split(":", 1)[1].strip()
+            if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+                value = value[1:-1]
+            return value.strip()
+    return ""
+
+
 def _load_env() -> None:
     env_path = REPO_ROOT / ".env"
     if env_path.exists():
@@ -34,34 +45,69 @@ def _table_exists(conn: sqlite3.Connection, name: str) -> bool:
     ).fetchone() is not None
 
 
+def _article_from_markdown(slug: str, markdown: str) -> dict:
+    title = _frontmatter_value(markdown, "title") or slug.replace("-", " ")
+    category = _frontmatter_value(markdown, "category") or "recipes"
+    word_count = len(markdown.split()) if markdown else 0
+    return {
+        "slug": slug,
+        "topic": title,
+        "category": category,
+        "source": "manual",
+        "stage": "deployed",
+        "write_model": "",
+        "word_count": word_count,
+        "tokens_total": 0,
+        "cost_usd": 0,
+    }
+
+
+def _disk_article_slugs(conn: sqlite3.Connection) -> set[str]:
+    slugs: set[str] = set()
+    if _table_exists(conn, "hero_briefs"):
+        rows = conn.execute("SELECT DISTINCT article_slug FROM hero_briefs WHERE article_slug IS NOT NULL").fetchall()
+        slugs.update(r["article_slug"] for r in rows if r["article_slug"])
+    if _table_exists(conn, "pin_briefs"):
+        rows = conn.execute("SELECT DISTINCT article_slug FROM pin_briefs WHERE article_slug IS NOT NULL").fetchall()
+        slugs.update(r["article_slug"] for r in rows if r["article_slug"])
+    return slugs
+
+
 def collect_articles_from_sqlite(db_path: str) -> list[dict]:
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     articles = {}
 
-    for r in conn.execute(
-        "SELECT slug, topic, category, model_id, markdown, "
-        "tokens_in, tokens_out, cost_usd, status FROM write_outputs"
-    ).fetchall():
-        word_count = len(r["markdown"].split()) if r["markdown"] else 0
-        articles[r["slug"]] = {
-            "slug": r["slug"], "topic": r["topic"], "category": r["category"],
-            "source": "manual", "stage": "written", "write_model": r["model_id"],
-            "word_count": word_count,
-            "tokens_total": (r["tokens_in"] or 0) + (r["tokens_out"] or 0),
-            "cost_usd": r["cost_usd"] or 0,
-        }
+    if _table_exists(conn, "write_outputs"):
+        for r in conn.execute(
+            "SELECT slug, topic, category, model_id, markdown, "
+            "tokens_in, tokens_out, cost_usd, status FROM write_outputs"
+        ).fetchall():
+            word_count = len(r["markdown"].split()) if r["markdown"] else 0
+            articles[r["slug"]] = {
+                "slug": r["slug"], "topic": r["topic"], "category": r["category"],
+                "source": "manual", "stage": "written", "write_model": r["model_id"],
+                "word_count": word_count,
+                "tokens_total": (r["tokens_in"] or 0) + (r["tokens_out"] or 0),
+                "cost_usd": r["cost_usd"] or 0,
+            }
+    else:
+        for slug in _disk_article_slugs(conn):
+            path = ARTICLE_DIR / f"{slug}.md"
+            if path.exists():
+                articles[slug] = _article_from_markdown(slug, path.read_text(encoding="utf-8"))
 
-    for r in conn.execute(
-        "SELECT slug, review_model, tokens_in, tokens_out, cost_usd "
-        "FROM review_outputs WHERE status = 'ok'"
-    ).fetchall():
-        if r["slug"] in articles:
-            a = articles[r["slug"]]
-            a["stage"] = "reviewed"
-            a["review_model"] = r["review_model"]
-            a["tokens_total"] += (r["tokens_in"] or 0) + (r["tokens_out"] or 0)
-            a["cost_usd"] += r["cost_usd"] or 0
+    if _table_exists(conn, "review_outputs"):
+        for r in conn.execute(
+            "SELECT slug, review_model, tokens_in, tokens_out, cost_usd "
+            "FROM review_outputs WHERE status = 'ok'"
+        ).fetchall():
+            if r["slug"] in articles:
+                a = articles[r["slug"]]
+                a["stage"] = "reviewed"
+                a["review_model"] = r["review_model"]
+                a["tokens_total"] += (r["tokens_in"] or 0) + (r["tokens_out"] or 0)
+                a["cost_usd"] += r["cost_usd"] or 0
 
     if _table_exists(conn, "hero_briefs"):
         for r in conn.execute(
