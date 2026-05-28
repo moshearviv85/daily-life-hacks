@@ -106,6 +106,8 @@ test("staging queues a pipeline pin in the staging-only queue without dispatchin
   assert.equal(data.status, "PENDING");
   assert.equal(db.schedule.has("demo-pin"), false);
   assert.equal(db.stagingSchedule.get("demo-pin").status, "PENDING");
+  assert.equal(db.stagingSchedule.get("demo-pin").link, "https://staging.daily-life-hacks.pages.dev/demo-article/");
+  assert.equal(db.stagingSchedule.get("demo-pin").image_url, "https://staging.daily-life-hacks.pages.dev/images/pins/demo-pin.jpg");
   assert.equal(fetchCalled, false);
 });
 

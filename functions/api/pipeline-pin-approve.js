@@ -35,6 +35,11 @@ function queueTableName(productionRequest) {
   return productionRequest ? "pins_schedule" : "staging_pins_schedule";
 }
 
+function targetSiteBase(request, productionRequest) {
+  if (productionRequest) return SITE_BASE;
+  return new URL(request.url).origin;
+}
+
 async function ensureStagingQueue(db) {
   await db.prepare(`
     CREATE TABLE IF NOT EXISTS staging_pins_schedule (
@@ -132,9 +137,10 @@ export async function onRequestPost(context) {
   if (!boardId) return json({ error: `Unknown article category: ${pin.category}` }, 400);
 
   const rowId = pin.pin_slug;
-  const imageUrl = `${SITE_BASE}/images/pins/${pin.pin_slug}.jpg`;
-  const link = `${SITE_BASE}/${pin.article_slug}/`;
   const productionRequest = isProductionRequest(request, env);
+  const siteBase = targetSiteBase(request, productionRequest);
+  const imageUrl = `${siteBase}/images/pins/${pin.pin_slug}.jpg`;
+  const link = `${siteBase}/${pin.article_slug}/`;
   const tableName = queueTableName(productionRequest);
 
   if (!productionRequest) {
