@@ -13,6 +13,7 @@ permissions:
 env:
   PYTHONUNBUFFERED: "1"
   PIPELINE_TARGET_BRANCH: "staging"
+  PIPELINE_DASHBOARD_BASE_URL: "https://staging.daily-life-hacks.pages.dev"
 
 jobs:
   assets:
@@ -88,5 +89,5 @@ jobs:
 
       - name: Sync pipeline status to D1
         env:
-          STATS_KEY: ${{ secrets.STATS_KEY }}
-        run: python scripts/NEW_PIPELINE_2026-05-08/sync_pipeline_to_d1.py --key "$STATS_KEY"
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: python scripts/NEW_PIPELINE_2026-05-08/sync_pipeline_to_d1.py --base-url "$PIPELINE_DASHBOARD_BASE_URL" --key "$DASHBOARD_PASSWORD"

@@ -143,6 +143,7 @@ Follow-up D1 isolation:
 - Added `staging_pins_schedule` to `schema.sql`.
 - Local build and Pages Functions bundle passed before deployment.
 - Live Preview isolation check passed after deployment: a staging `/api/event` POST wrote to `dlh-subscriptions-staging` and did not write to production `dlh-subscriptions`.
+- Follow-up fix: Preview `GH_PAT` secret was added, and staging pipeline workflows were updated to fetch topics, mark produced, and sync lifecycle status through `https://staging.daily-life-hacks.pages.dev` instead of the production dashboard API.
 
 ## 2026-05-18 - T03 Staging Environment
 

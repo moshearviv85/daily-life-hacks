@@ -2,7 +2,7 @@
 /**
  * POST /api/pipeline-sync
  * Receives pipeline results from GitHub Actions and upserts into D1.
- * Auth: ?key=STATS_KEY
+ * Auth: ?key=STATS_KEY or DASHBOARD_PASSWORD
  *
  * Body JSON: {
  *   articles: [{ slug, topic, category, source, stage, error, error_stage,
@@ -12,6 +12,8 @@
  *            prompt, alt, image_status }]
  * }
  */
+
+import { isDashboardAuthorized } from "./_dashboard-auth.js";
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -25,7 +27,7 @@ export async function onRequestPost(context) {
   const url = new URL(request.url);
   const key = url.searchParams.get("key") || request.headers.get("x-api-key") || "";
 
-  if (!env.STATS_KEY || key !== env.STATS_KEY) {
+  if (!(await isDashboardAuthorized(env, key, request))) {
     return json({ error: "Unauthorized" }, 401);
   }
   if (!env.DB) {
