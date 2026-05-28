@@ -27,6 +27,13 @@ def _load_env() -> None:
                 os.environ.setdefault(k.strip(), v.strip().strip("'").strip('"'))
 
 
+def _table_exists(conn: sqlite3.Connection, name: str) -> bool:
+    return conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",
+        (name,),
+    ).fetchone() is not None
+
+
 def collect_articles_from_sqlite(db_path: str) -> list[dict]:
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
@@ -56,22 +63,24 @@ def collect_articles_from_sqlite(db_path: str) -> list[dict]:
             a["tokens_total"] += (r["tokens_in"] or 0) + (r["tokens_out"] or 0)
             a["cost_usd"] += r["cost_usd"] or 0
 
-    for r in conn.execute(
-        "SELECT article_slug, prompt, alt FROM hero_briefs WHERE status = 'ok'"
-    ).fetchall():
-        if r["article_slug"] in articles:
-            a = articles[r["article_slug"]]
-            a["hero_prompt"] = r["prompt"]
-            a["hero_alt"] = r["alt"]
-            if a["stage"] == "reviewed":
-                a["stage"] = "hero_brief"
+    if _table_exists(conn, "hero_briefs"):
+        for r in conn.execute(
+            "SELECT article_slug, prompt, alt FROM hero_briefs WHERE status = 'ok'"
+        ).fetchall():
+            if r["article_slug"] in articles:
+                a = articles[r["article_slug"]]
+                a["hero_prompt"] = r["prompt"]
+                a["hero_alt"] = r["alt"]
+                if a["stage"] == "reviewed":
+                    a["stage"] = "hero_brief"
 
     pin_counts = {}
-    for r in conn.execute(
-        "SELECT article_slug, COUNT(*) as cnt FROM pin_briefs "
-        "WHERE status = 'ok' GROUP BY article_slug"
-    ).fetchall():
-        pin_counts[r["article_slug"]] = r["cnt"]
+    if _table_exists(conn, "pin_briefs"):
+        for r in conn.execute(
+            "SELECT article_slug, COUNT(*) as cnt FROM pin_briefs "
+            "WHERE status = 'ok' GROUP BY article_slug"
+        ).fetchall():
+            pin_counts[r["article_slug"]] = r["cnt"]
     for slug, cnt in pin_counts.items():
         if slug in articles:
             articles[slug]["pin_count"] = cnt
@@ -86,13 +95,14 @@ def collect_articles_from_sqlite(db_path: str) -> list[dict]:
     pin_imgs = set()
     if PIN_IMG_DIR.exists():
         pin_imgs = {f.stem for f in PIN_IMG_DIR.iterdir() if f.suffix == ".jpg"}
-    for r in conn.execute(
-        "SELECT article_slug, pin_slug FROM pin_briefs WHERE status = 'ok'"
-    ).fetchall():
-        slug = r["article_slug"]
-        if slug in articles and r["pin_slug"] in pin_imgs:
-            articles[slug].setdefault("pin_images_done", 0)
-            articles[slug]["pin_images_done"] += 1
+    if _table_exists(conn, "pin_briefs"):
+        for r in conn.execute(
+            "SELECT article_slug, pin_slug FROM pin_briefs WHERE status = 'ok'"
+        ).fetchall():
+            slug = r["article_slug"]
+            if slug in articles and r["pin_slug"] in pin_imgs:
+                articles[slug].setdefault("pin_images_done", 0)
+                articles[slug]["pin_images_done"] += 1
     for slug, a in articles.items():
         done = a.get("pin_images_done", 0)
         total = a.get("pin_count", 0)
@@ -110,6 +120,9 @@ def collect_articles_from_sqlite(db_path: str) -> list[dict]:
 def collect_pins_from_sqlite(db_path: str) -> list[dict]:
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
+    if not _table_exists(conn, "pin_briefs"):
+        conn.close()
+        return []
     rows = conn.execute(
         "SELECT article_slug, pin_slug, pin_index, title, description, prompt, alt "
         "FROM pin_briefs WHERE status = 'ok'"

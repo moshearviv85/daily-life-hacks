@@ -87,3 +87,38 @@ def test_build_payload(pipeline_db):
     assert "pins" in payload
     assert len(payload["articles"]) == 1
     assert len(payload["pins"]) == 1
+
+
+def test_article_only_db_syncs_before_asset_tables_exist(tmp_path):
+    db_path = tmp_path / "article_only.sqlite"
+    conn = sqlite3.connect(str(db_path))
+    conn.executescript("""
+        CREATE TABLE write_outputs (
+            id INTEGER PRIMARY KEY, slug TEXT, topic TEXT, category TEXT,
+            model_id TEXT, markdown TEXT, tokens_in INTEGER, tokens_out INTEGER,
+            cost_usd REAL, status TEXT, created_at TEXT
+        );
+        CREATE TABLE review_outputs (
+            id INTEGER PRIMARY KEY, slug TEXT, reviewed_markdown TEXT,
+            review_model TEXT, tokens_in INTEGER, tokens_out INTEGER,
+            cost_usd REAL, status TEXT, created_at TEXT
+        );
+    """)
+    conn.execute(
+        "INSERT INTO write_outputs VALUES (1, 'article-only', 'Article Only', 'recipes', "
+        "'gemini-2.5-flash', '# Article Only', 100, 500, 0.001, 'reviewed', '2026-05-28')"
+    )
+    conn.execute(
+        "INSERT INTO review_outputs VALUES (1, 'article-only', '# Reviewed Article Only', "
+        "'gemini-2.5-flash', 200, 600, 0.002, 'ok', '2026-05-28')"
+    )
+    conn.commit()
+    conn.close()
+
+    articles = collect_articles_from_sqlite(str(db_path))
+    pins = collect_pins_from_sqlite(str(db_path))
+
+    assert len(articles) == 1
+    assert articles[0]["slug"] == "article-only"
+    assert articles[0]["stage"] == "reviewed"
+    assert pins == []
