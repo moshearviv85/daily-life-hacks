@@ -14,7 +14,7 @@ Required env vars (GitHub Secrets):
 Optional:
   GH_PAT           Personal Access Token for auto-updating PINTEREST_REFRESH_TOKEN secret
   GITHUB_REPOSITORY  e.g. moshearviv85/daily-life-hacks (auto-set by GitHub Actions)
-  MAX_PINS_PER_RUN Maximum due pins to publish in one scheduled run (default: 2)
+  MAX_PINS_PER_RUN Maximum due pins to publish in one scheduled run (safety-capped at 1)
 """
 
 import os
@@ -55,7 +55,7 @@ def _env_int(name, default, minimum=1, maximum=5):
         return maximum
     return value
 
-MAX_PINS_PER_RUN = _env_int("MAX_PINS_PER_RUN", 1 if IMMEDIATE else 2, maximum=3)
+MAX_PINS_PER_RUN = _env_int("MAX_PINS_PER_RUN", 1, maximum=1)
 CATCH_UP_PAUSE_SECONDS = _env_int("CATCH_UP_PAUSE_SECONDS", 90, minimum=30, maximum=300)
 
 API_BASE = "https://api.pinterest.com/v5"

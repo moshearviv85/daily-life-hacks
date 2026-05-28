@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
     inputs:
       immediate:
-        description: 'Skip schedule filter — publish first PENDING pin now'
+        description: 'Skip schedule filter, but keep server cooldown safety'
         type: boolean
         default: false
       row_id:
-        description: 'Optional pins_schedule row_id to publish in immediate mode'
+        description: 'Optional pins_schedule row_id for immediate mode, still rate-limited'
         required: false
         default: ''
 
@@ -43,5 +43,5 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           IMMEDIATE: ${{ github.event.inputs.immediate }}
           PIN_ROW_ID: ${{ github.event.inputs.row_id }}
-          MAX_PINS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.immediate == 'true' && '1' || '2' }}
+          MAX_PINS_PER_RUN: 1
         run: python scripts/post-pins.py

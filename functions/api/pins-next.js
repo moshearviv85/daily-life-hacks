@@ -3,8 +3,8 @@
  * Returns the next PENDING pin due now (UTC): scheduled_date < today,
  * OR scheduled_date = today AND scheduled_time <= current UTC time.
  *
- * With ?immediate=1: skips the schedule filter and returns the first
- * PENDING pin regardless of date/time. Used by "publish now" button.
+ * With ?immediate=1: skips the schedule filter, but still honors the
+ * minimum posting interval safety guard.
  *
  * Response 200: { row_id, pin_title, ... }
  * Response 204: no pins due (diagnostic headers only, no body)
@@ -33,6 +33,9 @@ export async function onRequestGet(context) {
   const rowId = url.searchParams.get("row_id") || "";
 
   try {
+    const cooldown = await enforcePostCooldown(db, env);
+    if (cooldown) return cooldown;
+
     return await getNextPin(db, immediate, rowId);
   } catch (err) {
     return Response.json(
@@ -40,6 +43,59 @@ export async function onRequestGet(context) {
       { status: 500 },
     );
   }
+}
+
+function getMinPostIntervalMinutes(env) {
+  const raw = String(env.PINS_MIN_POST_INTERVAL_MINUTES || "").trim();
+  if (!raw) return 110;
+
+  const value = Number.parseInt(raw, 10);
+  if (!Number.isFinite(value)) return 110;
+  return Math.max(0, value);
+}
+
+function parsePublishedDate(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return null;
+
+  const normalized = raw.endsWith(" UTC")
+    ? raw.replace(" UTC", "Z").replace(" ", "T")
+    : raw;
+  const date = new Date(normalized);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+async function enforcePostCooldown(db, env) {
+  const intervalMinutes = getMinPostIntervalMinutes(env);
+  if (intervalMinutes <= 0) return null;
+
+  const latest = await db.prepare(`
+    SELECT row_id, published_date
+    FROM pins_schedule
+    WHERE status = 'POSTED'
+      AND published_date IS NOT NULL
+      AND published_date != ''
+    ORDER BY published_date DESC
+    LIMIT 1
+  `).first();
+
+  const publishedAt = parsePublishedDate(latest?.published_date);
+  if (!publishedAt) return null;
+
+  const elapsedMinutes = (Date.now() - publishedAt.getTime()) / 60000;
+  if (elapsedMinutes >= intervalMinutes) return null;
+
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "X-Pins-Reason": "min_post_interval_not_elapsed",
+      "X-Pins-Due": "0",
+      "X-Pins-Last-Posted-Row": latest.row_id || "",
+      "X-Pins-Last-Posted": latest.published_date || "",
+      "X-Pins-Min-Interval-Minutes": String(intervalMinutes),
+      "X-Pins-Minutes-Remaining": String(Math.ceil(intervalMinutes - elapsedMinutes)),
+    },
+  });
 }
 
 async function getNextPin(db, immediate = false, rowId = "") {
