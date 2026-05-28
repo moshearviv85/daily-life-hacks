@@ -35,6 +35,7 @@ Every new Codex chat should read this file and `AGENTS.md` before choosing work.
 - 2026-05-28: Fixed staging pipeline dispatch after `GH_PAT not configured` by setting the Preview `GH_PAT` secret.
 - 2026-05-28: Routed `pipeline-discover.yml`, `pipeline-produce.yml`, `pipeline-daily.yml`, and `pipeline-article-assets.yml` to the staging dashboard API/base URL so staging writes to staging D1 instead of production.
 - 2026-05-28: Updated `/api/pipeline-sync` to accept dashboard auth for staging workflow sync calls.
+- 2026-05-28: Hardened `pipeline-produce.yml` so one disqualified topic does not fail the whole selected batch; successful topics continue to staging deploy and failed topics are rejected after deploy. Also locked the selected-topic dashboard action against duplicate submission and corrected staging/prod wording.
 - Router, slug alias, canonical, noindex, and redirect behavior were audited and fixed.
 - Non-www HTTPS root now redirects to canonical www.
 - Canonical article pages should not receive `X-Robots-Tag: noindex`.

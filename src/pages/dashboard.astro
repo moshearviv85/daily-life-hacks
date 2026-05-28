@@ -3003,7 +3003,7 @@ async function triggerPipeline(action) {
   }
   if (action === 'produce') {
     const count = parseInt(document.getElementById('produce-count').value);
-    const ok = confirm(`Generate ${count} article(s) now?\n\nGenerated files will be pushed to staging first. This still uses production D1 topics and AI provider credits.`);
+    const ok = confirm(`Generate ${count} article(s) now?\n\nGenerated files will be pushed to staging first. This uses staging D1 topics and AI provider credits.`);
     if (!ok) return;
   }
   if (action === 'publish') {
@@ -3011,7 +3011,7 @@ async function triggerPipeline(action) {
     if (!ok) return;
   }
   if (action === 'discover') {
-    const ok = confirm('Find topics now?\n\nThis writes approved topic candidates into production D1.');
+    const ok = confirm('Find topics now?\n\nThis writes approved topic candidates into staging D1.');
     if (!ok) return;
   }
 
@@ -3047,6 +3047,92 @@ async function triggerPipeline(action) {
     }
   } catch (e) {
     statusEl.style.background = '#fef2f2';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+  }
+}
+
+let produceSelectedTopicsInFlight = false;
+
+async function produceSelectedTopics() {
+  if (produceSelectedTopicsInFlight) return;
+  const ids = getSelectedTopicIds();
+  if (!ids.length) {
+    alert('Select at least one topic first.');
+    return;
+  }
+
+  const ok = confirm(`Generate ${ids.length} selected topic(s) to staging?\n\nSelected topics will be approved first if needed. This uses staging D1 topics and AI provider credits.`);
+  if (!ok) return;
+
+  produceSelectedTopicsInFlight = true;
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = `Approving and dispatching ${ids.length} selected topic(s)...`;
+
+  try {
+    await postTopicStatus('approve', ids);
+
+    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'produce', count: ids.length, topic_ids: ids }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || 'Unknown error');
+    }
+
+    statusEl.style.background = '#f0fdf4';
+    statusEl.style.borderColor = '#bbf7d0';
+    statusEl.style.color = '#166534';
+    statusEl.textContent = `Produce workflow dispatched for ${ids.length} selected topic(s). Output: ${data.outputBranch || 'staging'}.`;
+    closeModal();
+    fetchPipelineStatus();
+  } catch (e) {
+    statusEl.style.background = '#fef2f2';
+    statusEl.style.borderColor = '#fecaca';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+  } finally {
+    produceSelectedTopicsInFlight = false;
+  }
+}
+
+async function approvePipelineArticle(slug) {
+  if (!pw) return;
+  const ok = confirm(`Approve this article and generate images + pin metadata on staging?\n\n${slug}\n\nThis does not publish to production or Pinterest.`);
+  if (!ok) return;
+
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = `Dispatching asset generation for ${slug}...`;
+
+  try {
+    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'approve_article', slug }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || 'Unknown error');
+    }
+
+    statusEl.style.background = '#f0fdf4';
+    statusEl.style.borderColor = '#bbf7d0';
+    statusEl.style.color = '#166534';
+    statusEl.textContent = `Asset workflow dispatched for ${slug}. Output: ${data.outputBranch || 'staging'}.`;
+    fetchPipelineStatus();
+  } catch (e) {
+    statusEl.style.background = '#fef2f2';
+    statusEl.style.borderColor = '#fecaca';
     statusEl.style.color = '#b91c1c';
     statusEl.textContent = `Failed: ${e.message}`;
   }

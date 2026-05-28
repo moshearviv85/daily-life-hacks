@@ -11,6 +11,18 @@ def test_pipeline_produce_stops_before_image_generation_until_article_approval()
     assert "--article-only" in workflow.split("Verify generated staging artifacts", 1)[1]
 
 
+def test_pipeline_produce_keeps_successful_topics_when_one_topic_fails():
+    workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
+
+    assert "pipeline-data/produced-topics.json" in workflow
+    assert "pipeline-data/failed-topics.json" in workflow
+    assert "/tmp/produced-topic-ids.json" in workflow
+    assert "/tmp/failed-topic-ids.json" in workflow
+    assert "--selected-topics pipeline-data/produced-topics.json" in workflow
+    assert "No topics produced successfully." in workflow
+    assert "Mark failed topics as rejected" in workflow
+
+
 def test_staging_pipeline_workflows_use_staging_dashboard_api():
     for name in ("pipeline-produce.yml", "pipeline-daily.yml", "pipeline-article-assets.yml", "pipeline-discover.yml"):
         workflow = (ROOT / ".github" / "workflows" / name).read_text(encoding="utf-8")
