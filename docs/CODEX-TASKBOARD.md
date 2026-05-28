@@ -321,9 +321,11 @@ Handoff:
 
 ### T10 - Staging D1 Isolation
 
-Status: `in_progress`
+Status: `done`
 
 Claimed: 2026-05-28, Codex, verify current staging queue behavior while preparing the full D1 isolation work.
+
+Completed: 2026-05-28, Codex.
 
 Goal: Prevent staging dashboard/API tests from mutating production D1 state.
 
@@ -346,7 +348,8 @@ Verification:
 - `npm run build` passed.
 - `npx wrangler pages functions build ...` passed.
 - D1 count checks show staging has pipeline data and zero `funnel_events`, while production keeps the existing analytics events.
-- Final live Preview verification is still required after the staging deployment containing `wrangler.toml` completes.
+- Live Preview isolation check passed: POST to `https://staging.daily-life-hacks.pages.dev/api/event` wrote `codex_staging_d1_isolation` to `dlh-subscriptions-staging` (`cnt=1`) and production `dlh-subscriptions` stayed unchanged (`cnt=0`).
+- Staging article and pin image smoke checks returned 200 after deployment.
 
 ### T11 - Conservative New Pin Reintroduction
 
