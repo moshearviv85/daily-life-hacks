@@ -242,6 +242,15 @@ def test_load_hero_alts_empty_when_no_rows(tmp_path):
     assert load_hero_alts_from_sql(db) == {}
 
 
+def test_load_hero_alts_empty_before_hero_brief_stage(tmp_path):
+    db = tmp_path / "pipeline.sqlite"
+    con = sqlite3.connect(db)
+    con.execute("CREATE TABLE write_outputs (slug TEXT)")
+    con.close()
+
+    assert load_hero_alts_from_sql(db) == {}
+
+
 def test_load_hero_alts_skips_records_without_alt(tmp_path):
     db = _mk_sqlite(tmp_path, [])
     bcon = brief_store.connect(db)

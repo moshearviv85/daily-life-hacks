@@ -106,6 +106,11 @@ def load_hero_alts_from_sql(db_path: Path | str) -> dict[str, str]:
     without an alt are skipped."""
     con = brief_store.connect(db_path)
     try:
+        exists = con.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='hero_briefs'"
+        ).fetchone()
+        if not exists:
+            return {}
         rows = con.execute(
             "SELECT article_slug, alt FROM hero_briefs WHERE status='ok' AND alt IS NOT NULL AND alt != ''"
         ).fetchall()
