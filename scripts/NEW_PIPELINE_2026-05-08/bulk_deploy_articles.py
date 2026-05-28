@@ -15,6 +15,7 @@ CLI:
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 
@@ -31,10 +32,47 @@ from lib.validator import validate
 DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 DEFAULT_OUT_DIR = REPO_ROOT / "src" / "data" / "articles"
 
+_TITLE_LINE_RE = re.compile(r'^title:\s*(.+?)\s*$', re.MULTILINE)
+_IMAGE_ALT_LINE_RE = re.compile(r'^imageAlt:\s*(.*?)\s*$', re.MULTILINE)
+
+
+def _clean_yaml_scalar(value: str) -> str:
+    value = value.strip()
+    if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+        return value[1:-1].strip()
+    return value
+
+
+def _frontmatter_value(markdown: str, pattern: re.Pattern[str]) -> str:
+    match = pattern.search(markdown)
+    return _clean_yaml_scalar(match.group(1)) if match else ""
+
+
+def _valid_image_alt(value: str) -> bool:
+    return 30 <= len(value.strip()) <= 200
+
+
+def _draft_image_alt(markdown: str) -> str:
+    title = _frontmatter_value(markdown, _TITLE_LINE_RE) or "this article"
+    alt = f"Draft image placeholder for {title} article hero image"
+    if len(alt) > 200:
+        alt = alt[:197].rstrip() + "..."
+    return alt
+
+
+def _deploy_image_alt(article_md: str, hero_alt: str | None) -> str | None:
+    if hero_alt:
+        return hero_alt
+    existing = _frontmatter_value(article_md, _IMAGE_ALT_LINE_RE)
+    if _valid_image_alt(existing):
+        return None
+    return _draft_image_alt(article_md)
+
 
 def build_article_md(article_md: str, hero_alt: str | None) -> str:
     """Inject hero alt into the frontmatter, then clean. Pure function."""
-    md = inject_image_alt(article_md, hero_alt) if hero_alt else article_md
+    deploy_alt = _deploy_image_alt(article_md, hero_alt)
+    md = inject_image_alt(article_md, deploy_alt) if deploy_alt else article_md
     return clean_frontmatter(md)
 
 
