@@ -22,3 +22,25 @@ def test_run_pipeline_article_only_exits_before_briefs_and_images():
     assert "generate_pin_briefs.py" not in article_only_block
     assert "generate_images.py" not in article_only_block
     assert "generate_pin_images.py" not in article_only_block
+
+
+def test_article_assets_workflow_runs_only_after_approval():
+    workflow = (ROOT / ".github" / "workflows" / "pipeline-article-assets.yml").read_text(encoding="utf-8")
+
+    assert "workflow_dispatch" in workflow
+    assert "continue_article_assets.py" in workflow
+    assert "verify_pipeline_artifacts.py" in workflow
+    assert "--article-only" not in workflow
+
+
+def test_continue_article_assets_does_not_rewrite_article_content():
+    source = (
+        ROOT / "scripts" / "NEW_PIPELINE_2026-05-08" / "continue_article_assets.py"
+    ).read_text(encoding="utf-8")
+
+    assert "generate_hero_brief.py" in source
+    assert "generate_pin_briefs.py" in source
+    assert "generate_images.py" in source
+    assert "generate_pin_images.py" in source
+    assert "write.py" not in source
+    assert "run_review" not in source

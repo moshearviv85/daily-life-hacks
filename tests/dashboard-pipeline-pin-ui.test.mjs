@@ -53,3 +53,12 @@ test("dashboard can select topics and produce selected topics", () => {
   assert.match(dashboard, /topic_ids: ids/);
   assert.match(dashboard, /postTopicStatus\('approve', ids\)/);
 });
+
+test("dashboard exposes article approval before image generation", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /Approve Article/);
+  assert.match(dashboard, /function approvePipelineArticle/);
+  assert.match(dashboard, /action: 'approve_article'/);
+  assert.match(dashboard, /generate images \+ pin metadata on staging/);
+});

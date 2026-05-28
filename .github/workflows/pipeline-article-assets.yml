@@ -1,0 +1,92 @@
+name: Pipeline Article Assets
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Approved article slug to continue into images and pins'
+        required: true
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+  PIPELINE_TARGET_BRANCH: "staging"
+
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepare staging workspace
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main staging
+          git checkout -B pipeline-assets origin/staging
+          git merge --no-edit origin/main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install requests pyyaml google-generativeai httpx pillow
+
+      - name: Continue approved article into assets
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          FAL_KEY: ${{ secrets.FAL_KEY }}
+        run: |
+          python scripts/NEW_PIPELINE_2026-05-08/continue_article_assets.py \
+            --slug "${{ inputs.slug }}"
+
+      - name: Verify generated assets
+        run: |
+          python scripts/NEW_PIPELINE_2026-05-08/verify_pipeline_artifacts.py \
+            --slug "${{ inputs.slug }}"
+
+      - name: Commit and push generated assets
+        run: |
+          git add src/data/articles/ public/images/ pipeline-data/ || true
+          if git diff --cached --quiet; then
+            echo "No generated assets to commit"
+          else
+            git commit -m "feat(pipeline): generate assets for ${{ inputs.slug }}
+
+          Co-Authored-By: GitHub Actions <github-actions[bot]@users.noreply.github.com>"
+            git push origin HEAD:${PIPELINE_TARGET_BRANCH}
+          fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install site dependencies
+        run: npm ci
+
+      - name: Build staging site
+        run: npm run build
+
+      - name: Build Pages Functions
+        run: |
+          rm -rf worker-out dist/_worker.js
+          npx wrangler pages functions build functions --outdir=worker-out --output-routes-path=dist/_routes.json --project-directory=. --build-output-directory=dist
+          cp worker-out/index.js dist/_worker.js
+
+      - name: Deploy staging to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages deploy dist --project-name=daily-life-hacks --branch=staging
+
+      - name: Sync pipeline status to D1
+        env:
+          STATS_KEY: ${{ secrets.STATS_KEY }}
+        run: python scripts/NEW_PIPELINE_2026-05-08/sync_pipeline_to_d1.py --key "$STATS_KEY"

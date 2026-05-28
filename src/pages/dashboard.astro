@@ -3075,6 +3075,14 @@ function renderPipelineTable(filter) {
     const subStyle = existsInBuild ? "color:var(--muted);text-decoration:none" : "color:var(--muted);text-decoration:none;cursor:default";
     const subLabel = existsInBuild ? "staging" : "not built on staging yet";
     const localLabel = existsInBuild ? "local/prod path" : "pipeline record only";
+    const canApproveArticle = existsInBuild
+      && ['reviewed', 'deployed'].includes(a.stage)
+      && (!Array.isArray(a.pins) || a.pins.length === 0);
+    const articleApproval = canApproveArticle
+      ? `<button onclick="approvePipelineArticle('${a.slug}')"
+          title="Approve this staging article and generate hero image plus pin assets"
+          style="margin-top:.25rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.16rem .42rem;font-size:.65rem;font-weight:700;cursor:pointer">Approve Article</button>`
+      : '';
 
     return `
     <tr>
@@ -3088,6 +3096,7 @@ function renderPipelineTable(filter) {
           <a href="${localHref}" target="_blank" rel="noopener"
             style="${subStyle}">${localLabel}</a>
         </div>
+        ${articleApproval}
       </td>
       <td>${a.category}</td>
       <td>${stageBadge(a.stage)}${a.error ? ` <span style="color:#ef4444;font-size:.75rem" title="${a.error}">!</span>` : ''}</td>
@@ -3211,6 +3220,42 @@ async function produceSelectedTopics() {
   }
 }
 
+async function approvePipelineArticle(slug) {
+  if (!pw) return;
+  const ok = confirm(`Approve this article and generate images + pin metadata on staging?\n\n${slug}\n\nThis does not publish to production or Pinterest.`);
+  if (!ok) return;
+
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = `Dispatching asset generation for ${slug}...`;
+
+  try {
+    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'approve_article', slug }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || 'Unknown error');
+    }
+
+    statusEl.style.background = '#f0fdf4';
+    statusEl.style.borderColor = '#bbf7d0';
+    statusEl.style.color = '#166534';
+    statusEl.textContent = `Asset workflow dispatched for ${slug}. Output: ${data.outputBranch || 'staging'}.`;
+    fetchPipelineStatus();
+  } catch (e) {
+    statusEl.style.background = '#fef2f2';
+    statusEl.style.borderColor = '#fecaca';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+  }
+}
+
 async function approvePipelinePin(pinSlug) {
   if (!pw) return;
   const ok = confirm(IS_PRODUCTION_DASHBOARD
@@ -3289,6 +3334,7 @@ window.setTopicSelection = setTopicSelection;
 window.updateTopicSelectionSummary = updateTopicSelectionSummary;
 window.updateSelectedTopics = updateSelectedTopics;
 window.produceSelectedTopics = produceSelectedTopics;
+window.approvePipelineArticle = approvePipelineArticle;
 window.approvePipelinePin = approvePipelinePin;
 window.addManualTopic = addManualTopic;
 window.filterPipeline = filterPipeline;
