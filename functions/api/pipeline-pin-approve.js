@@ -13,7 +13,7 @@ function isProductionRequest(request, env) {
   const hostname = url.hostname.toLowerCase();
   const branch = String(env.CF_PAGES_BRANCH || "").toLowerCase();
   const productionHost = hostname === "www.daily-life-hacks.com" || hostname === "daily-life-hacks.com";
-  return productionHost && branch === "main";
+  return productionHost || branch === "main";
 }
 
 function json(data, status = 200) {
@@ -141,15 +141,35 @@ export async function onRequestPost(context) {
     await ensureStagingQueue(env.DB);
   }
 
-  const { scheduledDate, scheduledTime } = await nextQueueSlot(env.DB, tableName);
-
   const existing = await env.DB.prepare(
-    `SELECT status FROM ${tableName} WHERE row_id = ?`,
+    `SELECT status, scheduled_date, scheduled_time, pin_id FROM ${tableName} WHERE row_id = ?`,
   ).bind(rowId).first();
 
-  if (productionRequest && existing?.status === "POSTED") {
-    return json({ error: "Pin is already posted", row_id: rowId }, 409);
+  if (existing?.status === "POSTED" || existing?.status === "PENDING") {
+    return json({
+      ok: true,
+      queued: existing.status === "PENDING",
+      already_exists: true,
+      staging: !productionRequest,
+      triggered: false,
+      row_id: rowId,
+      pin_slug: pin.pin_slug,
+      article_slug: pin.article_slug,
+      title: pin.title,
+      image_url: imageUrl,
+      link,
+      board_id: boardId,
+      scheduled_date: existing.scheduled_date || null,
+      scheduled_time: existing.scheduled_time || null,
+      pin_id: existing.pin_id || null,
+      status: existing.status,
+      message: existing.status === "POSTED"
+        ? "Pin is already posted."
+        : "Pin is already queued for automatic Pinterest posting.",
+    });
   }
+
+  const { scheduledDate, scheduledTime } = await nextQueueSlot(env.DB, tableName);
 
   await env.DB.prepare(`
     INSERT INTO ${tableName}

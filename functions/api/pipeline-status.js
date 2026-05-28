@@ -19,7 +19,7 @@ function isProductionRequest(request, env) {
   const hostname = url.hostname.toLowerCase();
   const branch = String(env.CF_PAGES_BRANCH || "").toLowerCase();
   const productionHost = hostname === "www.daily-life-hacks.com" || hostname === "daily-life-hacks.com";
-  return productionHost && branch === "main";
+  return productionHost || branch === "main";
 }
 
 async function getPinRows(env, stagingRequest) {

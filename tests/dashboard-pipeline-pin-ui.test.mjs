@@ -14,7 +14,7 @@ test("pipeline table can publish every unposted pin and hides posted pins", () =
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
   assert.doesNotMatch(dashboard, /idx === 0/);
-  assert.match(dashboard, /publishStatus !== 'POSTED'/);
+  assert.match(dashboard, /const publishButton = !publishStatus/);
   assert.match(dashboard, /publish_status/);
 });
 
@@ -35,4 +35,11 @@ test("dashboard exposes staging environment and queue state", () => {
   assert.match(dashboard, /Legacy Publish חסום בסטייג׳ינג/);
   assert.match(dashboard, /Run Publisher חסום בסטייג׳ינג/);
   assert.match(dashboard, /Publish Now חסום בסטייג׳ינג/);
+});
+
+test("pipeline pin button is hidden once a pin has any queue status", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /const publishButton = !publishStatus/);
+  assert.doesNotMatch(dashboard, /publishStatus !== 'POSTED'/);
 });

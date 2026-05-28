@@ -32,11 +32,11 @@ function makeDb() {
                   category: "tips",
                 };
               }
-              if (sql.includes("SELECT status FROM pins_schedule")) {
-                return schedule.has(args[0]) ? { status: schedule.get(args[0]).status } : null;
+              if (sql.includes("FROM pins_schedule WHERE row_id")) {
+                return schedule.has(args[0]) ? schedule.get(args[0]) : null;
               }
-              if (sql.includes("SELECT status FROM staging_pins_schedule")) {
-                return stagingSchedule.has(args[0]) ? { status: stagingSchedule.get(args[0]).status } : null;
+              if (sql.includes("FROM staging_pins_schedule WHERE row_id")) {
+                return stagingSchedule.has(args[0]) ? stagingSchedule.get(args[0]) : null;
               }
               if (sql.includes("ORDER BY scheduled_date DESC")) {
                 return latestPending;
@@ -111,7 +111,7 @@ test("staging queues a pipeline pin in the staging-only queue without dispatchin
 
 test("production queues a pipeline pin behind the latest pending pin without dispatching", async (t) => {
   const db = makeDb();
-  db.setLatestPending({ scheduled_date: "2026-05-27", scheduled_time: "08:30" });
+  db.setLatestPending({ scheduled_date: "2026-05-29", scheduled_time: "08:30" });
   let fetchCalled = false;
   t.mock.method(globalThis, "fetch", async (_url, init) => {
     fetchCalled = true;
@@ -134,9 +134,66 @@ test("production queues a pipeline pin behind the latest pending pin without dis
   assert.equal(data.queued, true);
   assert.equal(data.triggered, false);
   assert.equal(db.schedule.get("demo-pin").status, "PENDING");
-  assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-05-27");
+  assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-05-29");
   assert.equal(db.schedule.get("demo-pin").scheduled_time, "10:30");
   assert.equal(db.schedule.get("demo-pin").link, "https://www.daily-life-hacks.com/demo-article/");
   assert.equal(db.schedule.get("demo-pin").image_url, "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg");
   assert.equal(fetchCalled, false);
+});
+
+test("production approve is idempotent for an already queued pin", async () => {
+  const db = makeDb();
+  db.schedule.set("demo-pin", {
+    row_id: "demo-pin",
+    status: "PENDING",
+    scheduled_date: "2026-05-29",
+    scheduled_time: "12:00",
+  });
+  db.setLatestPending({ scheduled_date: "2026-05-30", scheduled_time: "20:00" });
+
+  const response = await onRequestPost({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-pin-approve?key=test-key", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pin_slug: "demo-pin", publish_now: true }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", DB: db, CF_PAGES_BRANCH: "main" },
+  });
+
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  assert.equal(data.ok, true);
+  assert.equal(data.already_exists, true);
+  assert.equal(data.status, "PENDING");
+  assert.equal(data.scheduled_date, "2026-05-29");
+  assert.equal(data.scheduled_time, "12:00");
+  assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-05-29");
+  assert.equal(db.schedule.get("demo-pin").scheduled_time, "12:00");
+});
+
+test("production approve reports an already posted pin without returning an error", async () => {
+  const db = makeDb();
+  db.schedule.set("demo-pin", {
+    row_id: "demo-pin",
+    status: "POSTED",
+    scheduled_date: "2026-05-28",
+    scheduled_time: "06:00",
+    pin_id: "123",
+  });
+
+  const response = await onRequestPost({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-pin-approve?key=test-key", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pin_slug: "demo-pin", publish_now: true }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", DB: db, CF_PAGES_BRANCH: "main" },
+  });
+
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  assert.equal(data.ok, true);
+  assert.equal(data.already_exists, true);
+  assert.equal(data.status, "POSTED");
+  assert.equal(data.pin_id, "123");
 });

@@ -2938,7 +2938,7 @@ function renderPipelineTable(filter) {
         ? `<span title="Publish status"
             style="display:inline-block;margin:.15rem .2rem 0 0;padding:.1rem .3rem;border-radius:4px;font-size:.58rem;font-weight:700;background:${publishStatus === 'POSTED' ? '#dcfce7' : '#fef3c7'};color:${publishStatus === 'POSTED' ? '#166534' : '#92400e'}">${publishStatus}</span>`
         : '';
-      const publishButton = publishStatus !== 'POSTED'
+      const publishButton = !publishStatus
         ? `<button onclick="approvePipelinePin('${slug}')"
             title="${IS_PRODUCTION_DASHBOARD ? 'Approve and queue this pin for real publishing' : 'Staging queue only'}"
             style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'פרסם' : 'בדיקה'}</button>`
@@ -3085,7 +3085,10 @@ async function approvePipelinePin(pinSlug) {
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.textContent = `הפין ${data.row_id} נכנס למסילה כ-PENDING לתאריך ${data.scheduled_date} בשעה ${data.scheduled_time}.`;
+    const statusText = data.status === 'POSTED'
+      ? `הפין ${data.row_id} כבר פורסם.`
+      : `הפין ${data.row_id} ${data.already_exists ? 'כבר נמצא' : 'נכנס'} במסילה כ-PENDING לתאריך ${data.scheduled_date} בשעה ${data.scheduled_time}.`;
+    statusEl.textContent = statusText;
     statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
     loadPinsStatus();
     fetchPipelineStatus();
