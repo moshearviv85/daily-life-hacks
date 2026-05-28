@@ -1,0 +1,13 @@
+[2026-05-28T14:54:05Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-05-28T14:54:05Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260528T145405Z.log
+[2026-05-28T14:54:05Z] topics selected: 1
+[2026-05-28T14:54:05Z]   #  1 [recipes  ] quick dinner recipes  (slug=quick-dinner-recipes)
+[2026-05-28T14:54:05Z] write_runs.id = 1
+[2026-05-28T14:54:23Z] OK   #1 quick-dinner-recipes  body_words=702 tier2=S-20,S-21 lat=17371ms cost=$0.0056
+[2026-05-28T14:54:23Z] 
+[2026-05-28T14:54:23Z] ============================================================
+[2026-05-28T14:54:23Z] DONE. write_runs.id=1 status=done
+[2026-05-28T14:54:23Z] written=1 dq=0 errors=0 skipped=0
+[2026-05-28T14:54:23Z] tokens in=3,375 out=1,828 cost=$0.0056
+[2026-05-28T14:54:23Z] elapsed: 18.0s (0.3 min)
+[2026-05-28T14:54:23Z] ============================================================
