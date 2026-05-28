@@ -124,6 +124,26 @@ def test_article_only_db_syncs_before_asset_tables_exist(tmp_path):
     assert pins == []
 
 
+def test_disqualified_write_outputs_do_not_sync_as_articles(tmp_path):
+    db_path = tmp_path / "dq.sqlite"
+    conn = sqlite3.connect(str(db_path))
+    conn.executescript("""
+        CREATE TABLE write_outputs (
+            id INTEGER PRIMARY KEY, slug TEXT, topic TEXT, category TEXT,
+            model_id TEXT, markdown TEXT, tokens_in INTEGER, tokens_out INTEGER,
+            cost_usd REAL, status TEXT, created_at TEXT
+        );
+    """)
+    conn.execute(
+        "INSERT INTO write_outputs VALUES (1, 'dq-topic', 'DQ Topic', 'nutrition', "
+        "'gemini-2.5-flash', '', 100, 500, 0.001, 'dq', '2026-05-28')"
+    )
+    conn.commit()
+    conn.close()
+
+    assert collect_articles_from_sqlite(str(db_path)) == []
+
+
 def test_asset_db_syncs_from_staging_markdown_without_write_outputs(tmp_path, monkeypatch):
     db_path = tmp_path / "asset_only.sqlite"
     conn = sqlite3.connect(str(db_path))
