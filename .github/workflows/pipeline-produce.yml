@@ -94,7 +94,8 @@ jobs:
                   sys.executable,
                   'scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py',
                   t['topic'],
-                  '--category', t['category']
+                  '--category', t['category'],
+                  '--article-only'
               ], capture_output=False)
               if result.returncode != 0:
                   print(f'ERROR: Pipeline failed for {t[\"topic\"]}', file=sys.stderr)
@@ -109,7 +110,8 @@ jobs:
       - name: Verify generated staging artifacts
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/verify_pipeline_artifacts.py \
-            --selected-topics pipeline-data/selected-topics.json
+            --selected-topics pipeline-data/selected-topics.json \
+            --article-only
 
       - name: Commit and push generated files
         run: |

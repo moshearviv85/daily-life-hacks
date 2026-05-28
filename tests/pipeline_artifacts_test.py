@@ -115,6 +115,31 @@ class PipelineArtifactsTest(unittest.TestCase):
             self.assertFalse(result.ok)
             self.assertTrue(any("missing pin image" in err for err in result.errors))
 
+    def test_article_only_verification_does_not_require_images_or_pin_briefs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db = root / "topic-research.sqlite"
+            articles = root / "articles"
+            heroes = root / "images"
+            pins = heroes / "pins"
+            articles.mkdir()
+            pins.mkdir(parents=True)
+            _make_db(db)
+
+            (articles / "sample-article.md").write_text("---\ntitle: Sample\n---\nBody\n")
+
+            result = verify_slug(
+                "sample-article",
+                db_path=db,
+                articles_dir=articles,
+                hero_dir=heroes,
+                pin_dir=pins,
+                article_only=True,
+            )
+
+            self.assertTrue(result.ok)
+            self.assertEqual(result.errors, [])
+
 
 if __name__ == "__main__":
     unittest.main()
