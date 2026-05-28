@@ -11,6 +11,10 @@ on:
         description: 'Category filter (empty = any)'
         required: false
         default: ''
+      topic_ids:
+        description: 'Comma-separated pipeline_topics ids to produce (empty = first approved topics)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -57,9 +61,13 @@ jobs:
           topics = data.get('topics', [])
           count = int('${{ inputs.count }}' or '3')
           cat_filter = '${{ inputs.category }}'.strip()
+          topic_ids = {int(x) for x in '${{ inputs.topic_ids }}'.replace(' ', '').split(',') if x}
           if cat_filter:
               topics = [t for t in topics if t['category'] == cat_filter]
-          selected = topics[:count]
+          if topic_ids:
+              selected = [t for t in topics if int(t['id']) in topic_ids]
+          else:
+              selected = topics[:count]
           print(f'Selected {len(selected)} topics for staging production:', file=sys.stderr)
           for t in selected:
               print(f'  - [{t[\"category\"]}] {t[\"topic\"]}', file=sys.stderr)
@@ -86,7 +94,8 @@ jobs:
                   sys.executable,
                   'scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py',
                   t['topic'],
-                  '--category', t['category']
+                  '--category', t['category'],
+                  '--article-only'
               ], capture_output=False)
               if result.returncode != 0:
                   print(f'ERROR: Pipeline failed for {t[\"topic\"]}', file=sys.stderr)
@@ -101,7 +110,8 @@ jobs:
       - name: Verify generated staging artifacts
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/verify_pipeline_artifacts.py \
-            --selected-topics pipeline-data/selected-topics.json
+            --selected-topics pipeline-data/selected-topics.json \
+            --article-only
 
       - name: Commit and push generated files
         run: |
