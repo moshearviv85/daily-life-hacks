@@ -30,14 +30,14 @@ const ACTIONS = {
   discover: {
     workflow: "pipeline-discover.yml",
     dispatchRef: "main",
-    outputBranch: "production-d1",
-    effect: "Adds approved topics to production D1.",
+    outputBranch: "staging-d1",
+    effect: "Adds approved topics to staging D1.",
   },
   produce: {
     workflow: "pipeline-produce.yml",
     dispatchRef: "main",
     outputBranch: "staging",
-    effect: "Generates files into staging; may update production D1 pipeline status.",
+    effect: "Generates files into staging and updates staging D1 pipeline status.",
   },
   publish: {
     workflow: "publish-articles.yml",

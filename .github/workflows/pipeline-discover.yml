@@ -7,6 +7,7 @@ on:
 
 env:
   PYTHONUNBUFFERED: "1"
+  PIPELINE_DASHBOARD_BASE_URL: "https://staging.daily-life-hacks.pages.dev"
 
 jobs:
   discover:
@@ -54,4 +55,5 @@ jobs:
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/filter_discovered_topics.py \
             --input /tmp/all-discovered.json \
+            --base-url "$PIPELINE_DASHBOARD_BASE_URL" \
             --key "$DASHBOARD_PASSWORD"
