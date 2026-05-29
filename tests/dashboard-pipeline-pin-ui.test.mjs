@@ -69,6 +69,10 @@ test("pipeline dashboard shows thumbnails and can regenerate hero image", () => 
   assert.match(dashboard, /function regenerateHeroImage/);
   assert.match(dashboard, /window\.regenerateHeroImage = regenerateHeroImage/);
   assert.match(dashboard, /action: 'regenerate_hero'/);
+  assert.match(dashboard, /pipeline-hero-status-/);
+  assert.match(dashboard, /function watchHeroImageReplacement/);
+  assert.match(dashboard, /Workflow sent\. Watching for the new image/);
+  assert.match(dashboard, /New image is live\. Thumbnail refreshed/);
   assert.match(dashboard, /width:72px;height:96px/);
 });
 

@@ -3120,9 +3120,10 @@ function renderPipelineTable(filter) {
           <a href="${localHref}" target="_blank" rel="noopener"
             style="${subStyle}">${localLabel}</a>
         </div>
-        ${existsInBuild ? `<a href="${heroSrc}" target="_blank" rel="noopener"><img src="${heroSrc}" alt="${escapeHtml(a.slug)} hero" loading="lazy" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.4rem"></a>
-        <button onclick="regenerateHeroImage('${a.slug}')" title="Regenerate only the staging hero image"
-          style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">Regenerate image</button>` : ''}
+        ${existsInBuild ? `<a href="${heroSrc}" target="_blank" rel="noopener"><img id="pipeline-hero-img-${a.slug}" src="${heroSrc}" alt="${escapeHtml(a.slug)} hero" loading="lazy" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.4rem"></a>
+        <button id="pipeline-hero-btn-${a.slug}" onclick="regenerateHeroImage('${a.slug}', '${heroSrc}')" title="Regenerate only the staging hero image"
+          style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">Regenerate image</button>
+        <div id="pipeline-hero-status-${a.slug}" style="display:none;margin-top:.22rem;max-width:150px;font-size:.62rem;line-height:1.25;color:#92400e"></div>` : ''}
         ${articleApproval}
       </td>
       <td>${a.category}</td>
@@ -3289,12 +3290,68 @@ async function approvePipelineArticle(slug) {
   }
 }
 
-async function regenerateHeroImage(slug) {
+function setHeroImageStatus(slug, message, tone = 'pending') {
+  const el = document.getElementById(`pipeline-hero-status-${slug}`);
+  if (!el) return;
+  const colors = { pending: '#92400e', success: '#166534', error: '#b91c1c' };
+  el.style.display = '';
+  el.style.color = colors[tone] || colors.pending;
+  el.textContent = message;
+}
+
+function setHeroImageBusy(slug, busy) {
+  const btn = document.getElementById(`pipeline-hero-btn-${slug}`);
+  if (!btn) return;
+  btn.disabled = busy;
+  btn.style.opacity = busy ? '0.65' : '1';
+  btn.style.cursor = busy ? 'wait' : 'pointer';
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function getHeroImageSignal(heroSrc) {
+  const url = `${heroSrc}${heroSrc.includes('?') ? '&' : '?'}probe=${Date.now()}`;
+  try {
+    const res = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+    if (!res.ok) return '';
+    return [
+      res.headers.get('etag') || '',
+      res.headers.get('last-modified') || '',
+      res.headers.get('content-length') || '',
+    ].join('|');
+  } catch {
+    return '';
+  }
+}
+
+async function watchHeroImageReplacement(slug, heroSrc, initialSignal) {
+  const img = document.getElementById(`pipeline-hero-img-${slug}`);
+  for (let attempt = 1; attempt <= 18; attempt += 1) {
+    await delay(20000);
+    const nextSignal = await getHeroImageSignal(heroSrc);
+    if (nextSignal && initialSignal && nextSignal !== initialSignal) {
+      if (img) img.src = `${heroSrc}${heroSrc.includes('?') ? '&' : '?'}v=${Date.now()}`;
+      setHeroImageStatus(slug, 'New image is live. Thumbnail refreshed.', 'success');
+      setHeroImageBusy(slug, false);
+      fetchPipelineStatus();
+      return;
+    }
+    const minutes = Math.ceil((attempt * 20) / 60);
+    setHeroImageStatus(slug, `Still waiting for the new image... about ${minutes} min elapsed.`, 'pending');
+  }
+
+  setHeroImageStatus(slug, 'Workflow may still be finishing or the browser may be cached. Refresh the dashboard and open the image again.', 'pending');
+  setHeroImageBusy(slug, false);
+}
+
+async function regenerateHeroImage(slug, heroSrc) {
   if (!pw) {
-    alert('צריך להתחבר לדשבורד לפני יצירת תמונה מחדש.');
+    alert('Sign in to the dashboard before regenerating an image.');
     return;
   }
-  const ok = confirm(`ליצור מחדש את תמונת הכתבה בסטייג'ינג?\n\n${slug}\n\nהפעולה מייצרת רק hero image חדש ועדכון alt, בלי לגעת בטקסט הכתבה ובלי לייצר מחדש פינים.`);
+  const ok = confirm(`Regenerate the staging hero image?\n\n${slug}\n\nThis creates only a new hero image and updates alt text. It does not change article copy and does not regenerate pins.`);
   if (!ok) return;
 
   const statusEl = document.getElementById('pipeline-trigger-status');
@@ -3302,7 +3359,11 @@ async function regenerateHeroImage(slug) {
   statusEl.style.background = '#fff7ed';
   statusEl.style.borderColor = '#fed7aa';
   statusEl.style.color = '#92400e';
-  statusEl.textContent = `שולח יצירת תמונה מחדש עבור ${slug}...`;
+  statusEl.textContent = `Dispatching hero image regeneration for ${slug}...`;
+  setHeroImageBusy(slug, true);
+  setHeroImageStatus(slug, 'Dispatching workflow...', 'pending');
+
+  const initialSignal = await getHeroImageSignal(heroSrc);
 
   try {
     const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
@@ -3316,13 +3377,17 @@ async function regenerateHeroImage(slug) {
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.textContent = `הרצת יצירת תמונה מחדש נשלחה עבור ${slug}. יעד: ${data.outputBranch || 'staging'}.`;
+    statusEl.textContent = `Hero image workflow dispatched for ${slug}. Target: ${data.outputBranch || 'staging'}. This usually takes 2-4 minutes.`;
+    setHeroImageStatus(slug, 'Workflow sent. Watching for the new image...', 'pending');
+    watchHeroImageReplacement(slug, heroSrc, initialSignal);
     fetchPipelineStatus();
   } catch (e) {
     statusEl.style.background = '#fef2f2';
     statusEl.style.borderColor = '#fecaca';
     statusEl.style.color = '#b91c1c';
     statusEl.textContent = `Failed: ${e.message}`;
+    setHeroImageStatus(slug, `Failed: ${e.message}`, 'error');
+    setHeroImageBusy(slug, false);
   }
 }
 
