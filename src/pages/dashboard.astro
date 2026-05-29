@@ -3122,7 +3122,7 @@ function renderPipelineTable(filter) {
         </div>
         ${existsInBuild ? `<a href="${heroSrc}" target="_blank" rel="noopener"><img src="${heroSrc}" alt="${escapeHtml(a.slug)} hero" loading="lazy" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.4rem"></a>
         <button onclick="regenerateHeroImage('${a.slug}')" title="Regenerate only the staging hero image"
-          style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">החלף תמונת כתבה</button>` : ''}
+          style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">צור תמונה מחדש</button>` : ''}
         ${articleApproval}
       </td>
       <td>${a.category}</td>
@@ -3290,8 +3290,11 @@ async function approvePipelineArticle(slug) {
 }
 
 async function regenerateHeroImage(slug) {
-  if (!pw) return;
-  const ok = confirm(`להחליף את תמונת הכתבה בסטייג'ינג?\n\n${slug}\n\nהפעולה מייצרת רק hero image חדש ועדכון alt, בלי לגעת בטקסט הכתבה ובלי לייצר מחדש פינים.`);
+  if (!pw) {
+    alert('צריך להתחבר לדשבורד לפני יצירת תמונה מחדש.');
+    return;
+  }
+  const ok = confirm(`ליצור מחדש את תמונת הכתבה בסטייג'ינג?\n\n${slug}\n\nהפעולה מייצרת רק hero image חדש ועדכון alt, בלי לגעת בטקסט הכתבה ובלי לייצר מחדש פינים.`);
   if (!ok) return;
 
   const statusEl = document.getElementById('pipeline-trigger-status');
@@ -3299,7 +3302,7 @@ async function regenerateHeroImage(slug) {
   statusEl.style.background = '#fff7ed';
   statusEl.style.borderColor = '#fed7aa';
   statusEl.style.color = '#92400e';
-  statusEl.textContent = `Dispatching hero image regeneration for ${slug}...`;
+  statusEl.textContent = `שולח יצירת תמונה מחדש עבור ${slug}...`;
 
   try {
     const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
@@ -3313,7 +3316,8 @@ async function regenerateHeroImage(slug) {
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.textContent = `Hero regeneration workflow dispatched for ${slug}. Output: ${data.outputBranch || 'staging'}.`;
+    statusEl.textContent = `הרצת יצירת תמונה מחדש נשלחה עבור ${slug}. יעד: ${data.outputBranch || 'staging'}.`;
+    fetchPipelineStatus();
   } catch (e) {
     statusEl.style.background = '#fef2f2';
     statusEl.style.borderColor = '#fecaca';

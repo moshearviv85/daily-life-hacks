@@ -65,7 +65,7 @@ test("pipeline dashboard shows thumbnails and can regenerate hero image", () => 
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
   assert.match(dashboard, /\$\{a\.slug\}-main\.jpg/);
-  assert.match(dashboard, /החלף תמונת כתבה/);
+  assert.match(dashboard, /צור תמונה מחדש/);
   assert.match(dashboard, /function regenerateHeroImage/);
   assert.match(dashboard, /window\.regenerateHeroImage = regenerateHeroImage/);
   assert.match(dashboard, /action: 'regenerate_hero'/);
