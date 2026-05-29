@@ -51,6 +51,11 @@ Rules:
 - The alt is one factual sentence describing what the image literally shows.
   30 to 200 characters. No marketing language, no opinions, no em-dashes.
 - The hero image has no overlay text. The photograph alone.
+- Make the image bright, fresh, colorful, and appetizing. Use natural daylight
+  or soft studio light, clean highlights, visible color contrast, and warm food
+  styling.
+- Avoid dark, gloomy, underexposed, gray, muddy, desaturated, vintage,
+  dramatic low-key, or moody lighting.
 
 Return ONLY a JSON object, no preamble, no commentary, no code fence:
 {"prompt": "string", "alt": "string"}

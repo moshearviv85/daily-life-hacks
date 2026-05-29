@@ -283,8 +283,9 @@ def main():
         print("Nothing to publish today — all pending articles are missing images.")
         return
 
-    # Publish up to 2 articles per run — required to keep 6-8 pins/day (each article = 4 variants).
-    to_publish = to_publish[:2]
+    # Publish up to 3 articles per run so approved production articles move at
+    # the requested daily pace while still staying bounded.
+    to_publish = to_publish[:3]
     print(f"\nPublishing {len(to_publish)} article(s) today: {', '.join(a['slug'] for a in to_publish)}")
 
     # Batch commit the single article

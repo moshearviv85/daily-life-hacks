@@ -3,7 +3,7 @@
  * Dispatch a pipeline GitHub Actions workflow by action name.
  * Protected by DASHBOARD_PASSWORD.
  *
- * Body: { action: "discover" | "produce" | "publish" | "approve_article", count?: number, category?: string, topic_ids?: number[], slug?: string }
+ * Body: { action: "discover" | "produce" | "publish" | "approve_article" | "regenerate_hero", count?: number, category?: string, topic_ids?: number[], slug?: string }
  *
  * Note: workflows are dispatched from the default production branch so GitHub can
  * find the workflow files. Content-generation workflows push their generated
@@ -51,6 +51,12 @@ const ACTIONS = {
     outputBranch: "staging",
     effect: "Generates hero image and pin assets for an approved staging article.",
   },
+  regenerate_hero: {
+    workflow: "pipeline-article-assets.yml",
+    dispatchRef: "main",
+    outputBranch: "staging",
+    effect: "Regenerates only the staging hero image for an approved article.",
+  },
 };
 
 export async function onRequestPost(context) {
@@ -68,7 +74,7 @@ export async function onRequestPost(context) {
   const action = body.action;
   const actionConfig = ACTIONS[action];
   if (!actionConfig) {
-    return json({ error: `Unknown action: ${action}. Use: discover, produce, publish, approve_article` }, 400);
+    return json({ error: `Unknown action: ${action}. Use: discover, produce, publish, approve_article, regenerate_hero` }, 400);
   }
   if (action === "publish" && !isProductionRequest(env, request)) {
     return json({
@@ -81,12 +87,13 @@ export async function onRequestPost(context) {
   const inputs = {};
   if (body.count) inputs.count = String(body.count);
   if (body.category) inputs.category = body.category;
-  if (action === "approve_article") {
+  if (action === "approve_article" || action === "regenerate_hero") {
     const slug = String(body.slug || "").trim();
     if (!/^[a-z0-9-]{3,120}$/.test(slug)) {
-      return json({ error: "valid slug is required for approve_article" }, 400);
+      return json({ error: `valid slug is required for ${action}` }, 400);
     }
     inputs.slug = slug;
+    if (action === "regenerate_hero") inputs.mode = "hero_only";
   }
   if (action === "produce" && Array.isArray(body.topic_ids) && body.topic_ids.length) {
     const topicIds = body.topic_ids

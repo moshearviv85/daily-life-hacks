@@ -534,6 +534,7 @@ const BUILD = {
         <button class="btn btn-sm" onclick="filterPipeline('progress', this)">In Progress</button>
         <button class="btn btn-sm" onclick="filterPipeline('ready', this)">Ready</button>
         <button class="btn btn-sm" onclick="filterPipeline('failed', this)">Failed</button>
+        <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected">פרסום פינים מסומנים</button>
       </div>
 
       <!-- Pipeline table -->
@@ -3044,9 +3045,9 @@ function renderPipelineTable(filter) {
     const pins = Array.isArray(article.pins) ? article.pins : [];
     const count = `${article.pin_images_done || 0}/${article.pin_count || 0}`;
     if (!pins.length) return count;
+    const dashboardBase = IS_PRODUCTION_DASHBOARD ? 'https://www.daily-life-hacks.com' : 'https://staging.daily-life-hacks.pages.dev';
     const links = pins.map((pin, idx) => {
       const slug = pin.pin_slug || `${article.slug}_v${idx + 1}`;
-      const dashboardBase = IS_PRODUCTION_DASHBOARD ? 'https://www.daily-life-hacks.com' : 'https://staging.daily-life-hacks.pages.dev';
       const href = `${dashboardBase}/images/pins/${slug}.jpg`;
       const label = `v${(pin.pin_index ?? idx) + 1}`;
       const publishStatus = pin.publish_status || '';
@@ -3061,13 +3062,19 @@ function renderPipelineTable(filter) {
             title="${IS_PRODUCTION_DASHBOARD ? 'Approve and queue this pin for real publishing' : 'Staging queue only'}"
             style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'פרסם' : 'פרסום'}</button>`
         : '';
+      const selectBox = !publishStatus
+        ? `<input type="checkbox" class="pipeline-pin-select" value="${escapeHtml(slug)}" data-article-slug="${escapeHtml(article.slug)}" data-pin-index="${pin.pin_index ?? idx}" title="Select pin for batch publishing" style="vertical-align:middle;margin-right:.25rem">`
+        : '';
       return `<details style="margin:.28rem 0;padding:.38rem .45rem;border:1px solid #e5e7eb;border-radius:6px;background:#fff">
         <summary style="cursor:pointer;list-style:none">
-          <a href="${href}" target="_blank" rel="noopener"
+          ${selectBox}<a href="${href}" target="_blank" rel="noopener"
             title="${escapeHtml(slug)}"
             style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${statusBadge}${publishButton}
         </summary>
         <div style="margin-top:.35rem;font-size:.68rem;line-height:1.35;color:var(--text)">
+          <a href="${href}" target="_blank" rel="noopener">
+            <img src="${href}" alt="${escapeHtml(pin.alt || pin.title || slug)}" loading="lazy" style="width:72px;height:96px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;float:right;margin:0 0 .4rem .5rem">
+          </a>
           <div><strong>Title:</strong> ${escapeHtml(pin.title || '-')}</div>
           <div style="margin-top:.18rem"><strong>Description:</strong> ${escapeHtml(description || '-')}</div>
           <div style="margin-top:.18rem"><strong>Board:</strong> ${escapeHtml(pin.board_name || '-')} <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.board_id || '')}</span></div>
@@ -3082,6 +3089,8 @@ function renderPipelineTable(filter) {
 
   tbody.innerHTML = articles.map(a => {
     const existsInBuild = builtArticleSlugs.has(a.slug);
+    const dashboardBase = IS_PRODUCTION_DASHBOARD ? 'https://www.daily-life-hacks.com' : 'https://staging.daily-life-hacks.pages.dev';
+    const heroSrc = `${dashboardBase}/images/${a.slug}-main.jpg`;
     const stagingHref = existsInBuild
       ? `https://staging.daily-life-hacks.pages.dev/${a.slug}/`
       : "javascript:void(0)";
@@ -3111,6 +3120,9 @@ function renderPipelineTable(filter) {
           <a href="${localHref}" target="_blank" rel="noopener"
             style="${subStyle}">${localLabel}</a>
         </div>
+        ${existsInBuild ? `<a href="${heroSrc}" target="_blank" rel="noopener"><img src="${heroSrc}" alt="${escapeHtml(a.slug)} hero" loading="lazy" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.4rem"></a>
+        <button onclick="regenerateHeroImage('${a.slug}')" title="Regenerate only the staging hero image"
+          style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">החלף תמונת כתבה</button>` : ''}
         ${articleApproval}
       </td>
       <td>${a.category}</td>
@@ -3277,9 +3289,80 @@ async function approvePipelineArticle(slug) {
   }
 }
 
-async function approvePipelinePin(pinSlug) {
+async function regenerateHeroImage(slug) {
   if (!pw) return;
-  const ok = confirm(IS_PRODUCTION_DASHBOARD
+  const ok = confirm(`להחליף את תמונת הכתבה בסטייג'ינג?\n\n${slug}\n\nהפעולה מייצרת רק hero image חדש ועדכון alt, בלי לגעת בטקסט הכתבה ובלי לייצר מחדש פינים.`);
+  if (!ok) return;
+
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = `Dispatching hero image regeneration for ${slug}...`;
+
+  try {
+    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'regenerate_hero', slug }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) throw new Error(data.error || 'Unknown error');
+
+    statusEl.style.background = '#f0fdf4';
+    statusEl.style.borderColor = '#bbf7d0';
+    statusEl.style.color = '#166534';
+    statusEl.textContent = `Hero regeneration workflow dispatched for ${slug}. Output: ${data.outputBranch || 'staging'}.`;
+  } catch (e) {
+    statusEl.style.background = '#fef2f2';
+    statusEl.style.borderColor = '#fecaca';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+  }
+}
+
+function getSelectedPipelinePinsInterleaved() {
+  const selected = Array.from(document.querySelectorAll('.pipeline-pin-select:checked'))
+    .map((input) => ({
+      slug: input.value,
+      article: input.dataset.articleSlug || '',
+      index: Number.parseInt(input.dataset.pinIndex || '0', 10) || 0,
+    }));
+  const buckets = new Map();
+  for (const pin of selected) {
+    if (!buckets.has(pin.article)) buckets.set(pin.article, []);
+    buckets.get(pin.article).push(pin);
+  }
+  for (const bucket of buckets.values()) bucket.sort((a, b) => a.index - b.index);
+  const out = [];
+  while (buckets.size) {
+    for (const [article, bucket] of Array.from(buckets.entries()).sort(([a], [b]) => a.localeCompare(b))) {
+      const next = bucket.shift();
+      if (next) out.push(next.slug);
+      if (!bucket.length) buckets.delete(article);
+    }
+  }
+  return out;
+}
+
+async function approveSelectedPipelinePins() {
+  const pinSlugs = getSelectedPipelinePinsInterleaved();
+  if (!pinSlugs.length) {
+    alert('Select at least one pin first.');
+    return;
+  }
+  const ok = confirm(`להכניס ${pinSlugs.length} פינים למסילת הפרסום?\n\nהפינים יוכנסו בסדר מעורב לפי כתבה כדי למנוע רצף של אותו נושא.`);
+  if (!ok) return;
+
+  for (const slug of pinSlugs) {
+    await approvePipelinePin(slug, { skipConfirm: true });
+  }
+}
+
+async function approvePipelinePin(pinSlug, options = {}) {
+  if (!pw) return;
+  const ok = options.skipConfirm || confirm(IS_PRODUCTION_DASHBOARD
     ? `להכניס את הפין הזה למסילת הפרסום האוטומטי?\n\n${pinSlug}\n\nהוא ייכנס כ-PENDING אחרי כל הפינים שכבר ממתינים. לא יתבצע פרסום מיידי.`
     : `להכניס את הפין הזה למסילת סטייג'ינג?\n\n${pinSlug}\n\nתיווצר שורת PENDING בסביבת הבדיקה בלבד. לא יופעל GitHub Actions ולא יתבצע פרסום בפינטרסט.`);
   if (!ok) return;

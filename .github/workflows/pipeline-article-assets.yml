@@ -6,6 +6,10 @@ on:
       slug:
         description: 'Approved article slug to continue into images and pins'
         required: true
+      mode:
+        description: 'assets mode: full or hero_only'
+        required: false
+        default: 'full'
 
 permissions:
   contents: write
@@ -45,7 +49,8 @@ jobs:
           FAL_KEY: ${{ secrets.FAL_KEY }}
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/continue_article_assets.py \
-            --slug "${{ inputs.slug }}"
+            --slug "${{ inputs.slug }}" \
+            ${{ inputs.mode == 'hero_only' && '--hero-only --force-images' || '' }}
 
       - name: Verify generated assets
         run: |

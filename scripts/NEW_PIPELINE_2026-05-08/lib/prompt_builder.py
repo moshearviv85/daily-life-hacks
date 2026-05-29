@@ -403,6 +403,12 @@ def build_hero_system() -> str:
 Return a JSON object with:
 - "prompt": a detailed photography brief (lighting, angle, surface, framing, food styling). No em-dash. No emojis.
 - "alt": one factual sentence describing what is literally in the photograph. 30 to 200 chars.
+
+# VISUAL DIRECTION
+- Make the hero image bright, fresh, colorful, and appetizing.
+- Use natural daylight or soft studio light, clean highlights, visible color contrast, and warm food styling.
+- Avoid dark, gloomy, underexposed, gray, muddy, desaturated, vintage, dramatic low-key, or moody lighting.
+- The image should feel alive on a health and recipe site, not somber or editorially bleak.
 """
 
 

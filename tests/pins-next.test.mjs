@@ -10,15 +10,19 @@ function minutesAgo(minutes) {
     .replace("T", " ") + " UTC";
 }
 
-function makeDb({ latestPosted = null, duePins = [] } = {}) {
+function makeDb({ latestPosted = null, duePins = [], articleStatus = "PUBLISHED", latestPending = null } = {}) {
   const queries = [];
+  const updates = [];
 
   return {
     queries,
+    updates,
     prepare(sql) {
       queries.push(sql);
       const statement = {
-        bind() {
+        args: [],
+        bind(...args) {
+          statement.args = args;
           return statement;
         },
         async first() {
@@ -26,8 +30,9 @@ function makeDb({ latestPosted = null, duePins = [] } = {}) {
             return latestPosted;
           }
           if (sql.includes("FROM articles_schedule")) {
-            return { status: "PUBLISHED" };
+            return { status: articleStatus };
           }
+          if (sql.includes("ORDER BY scheduled_date DESC")) return latestPending;
           if (sql.includes("duplicate_posted_copy") || sql.includes("lower(trim(pin_title))")) {
             return null;
           }
@@ -38,6 +43,10 @@ function makeDb({ latestPosted = null, duePins = [] } = {}) {
             return { results: duePins };
           }
           return { results: [] };
+        },
+        async run() {
+          updates.push({ sql, args: statement.args });
+          return { success: true };
         },
       };
       return statement;
@@ -99,6 +108,35 @@ test("pins-next allows immediate row publishing after the cooldown window", asyn
     assert.equal(response.status, 200);
     const data = await response.json();
     assert.equal(data.row_id, "demo-pin");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("pins-next moves pins with unpublished articles to the end of the queue", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 200 });
+
+  try {
+    const db = makeDb({
+      duePins: [duePin],
+      articleStatus: "PENDING",
+      latestPending: { scheduled_date: "2026-05-29", scheduled_time: "20:00" },
+    });
+
+    const response = await onRequestGet({
+      request: makeRequest("/api/pins-next?key=test-key&immediate=1"),
+      env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "0" },
+    });
+
+    assert.equal(response.status, 204);
+    assert.equal(response.headers.get("X-Pins-Reason"), "all_due_pins_blocked_by_safety_checks");
+    assert.equal(db.updates.length, 1);
+    assert.match(db.updates[0].sql, /UPDATE pins_schedule/);
+    assert.equal(db.updates[0].args[0], "2026-05-30");
+    assert.equal(db.updates[0].args[1], "06:00");
+    assert.match(db.updates[0].args[2], /article_not_live/);
+    assert.equal(db.updates[0].args[3], "demo-pin");
   } finally {
     globalThis.fetch = originalFetch;
   }

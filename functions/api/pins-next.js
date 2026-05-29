@@ -160,6 +160,7 @@ async function getNextPin(db, immediate = false, rowId = "") {
       ).bind(slug).first();
 
       if (article && !LIVE_STATUSES.has(article.status)) {
+        await movePinToEnd(db, row, "article_not_live");
         skipped.push({
           row_id: row.row_id,
           slug,
@@ -183,6 +184,7 @@ async function getNextPin(db, immediate = false, rowId = "") {
 
     const liveCheck = await checkPinTargets(row);
     if (!liveCheck.ok) {
+      await movePinToEnd(db, row, liveCheck.reason);
       skipped.push({
         row_id: row.row_id,
         reason: liveCheck.reason,
@@ -205,6 +207,52 @@ async function getNextPin(db, immediate = false, rowId = "") {
       "X-Pins-Skip-Reasons": summarizeSkipReasons(skipped),
     },
   });
+}
+
+function formatDate(d) {
+  return d.toISOString().slice(0, 10);
+}
+
+function formatTime(d) {
+  return `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`;
+}
+
+async function nextPendingSlot(db) {
+  const latest = await db.prepare(`
+    SELECT scheduled_date, COALESCE(scheduled_time, '00:00') AS scheduled_time
+    FROM pins_schedule
+    WHERE status = 'PENDING'
+    ORDER BY scheduled_date DESC, COALESCE(scheduled_time, '00:00') DESC
+    LIMIT 1
+  `).first();
+
+  const slot = latest?.scheduled_date
+    ? new Date(`${latest.scheduled_date}T00:00:00Z`)
+    : new Date();
+  if (latest?.scheduled_time) {
+    const [hour, minute] = String(latest.scheduled_time).split(":").map((n) => Number.parseInt(n, 10));
+    slot.setUTCHours(Number.isFinite(hour) ? hour : 0, Number.isFinite(minute) ? minute : 0, 0, 0);
+  }
+  slot.setUTCHours(slot.getUTCHours() + 2);
+  if (slot.getUTCHours() > 21) {
+    slot.setUTCDate(slot.getUTCDate() + 1);
+    slot.setUTCHours(6, 0, 0, 0);
+  }
+  return { scheduled_date: formatDate(slot), scheduled_time: formatTime(slot) };
+}
+
+async function movePinToEnd(db, row, reason) {
+  const next = await nextPendingSlot(db);
+  await db.prepare(`
+    UPDATE pins_schedule
+    SET scheduled_date = ?, scheduled_time = ?, pinterest_response = ?, updated_at = datetime('now')
+    WHERE row_id = ? AND status = 'PENDING'
+  `).bind(
+    next.scheduled_date,
+    next.scheduled_time,
+    JSON.stringify({ moved_to_end_reason: reason, moved_at: new Date().toISOString() }),
+    row.row_id,
+  ).run();
 }
 
 function normalizeCopy(value) {

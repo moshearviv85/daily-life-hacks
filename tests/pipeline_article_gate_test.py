@@ -74,3 +74,16 @@ def test_continue_article_assets_does_not_rewrite_article_content():
     assert "generate_pin_images.py" in source
     assert "write.py" not in source
     assert "run_review" not in source
+
+
+def test_article_assets_can_regenerate_only_hero_image():
+    workflow = (ROOT / ".github" / "workflows" / "pipeline-article-assets.yml").read_text(encoding="utf-8")
+    source = (
+        ROOT / "scripts" / "NEW_PIPELINE_2026-05-08" / "continue_article_assets.py"
+    ).read_text(encoding="utf-8")
+
+    assert "mode:" in workflow
+    assert "--hero-only --force-images" in workflow
+    assert "--hero-only" in source
+    assert "--force-images" in source
+    assert "if not args.hero_only" in source
