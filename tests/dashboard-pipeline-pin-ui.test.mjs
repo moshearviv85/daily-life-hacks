@@ -58,6 +58,7 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /פרסום פינים מסומנים/);
   assert.match(dashboard, /function getSelectedPipelinePinsInterleaved/);
   assert.match(dashboard, /function approveSelectedPipelinePins/);
+  assert.match(dashboard, /window\.approveSelectedPipelinePins = approveSelectedPipelinePins/);
 });
 
 test("pipeline dashboard shows thumbnails and can regenerate hero image", () => {
@@ -66,6 +67,7 @@ test("pipeline dashboard shows thumbnails and can regenerate hero image", () => 
   assert.match(dashboard, /\$\{a\.slug\}-main\.jpg/);
   assert.match(dashboard, /החלף תמונת כתבה/);
   assert.match(dashboard, /function regenerateHeroImage/);
+  assert.match(dashboard, /window\.regenerateHeroImage = regenerateHeroImage/);
   assert.match(dashboard, /action: 'regenerate_hero'/);
   assert.match(dashboard, /width:72px;height:96px/);
 });
