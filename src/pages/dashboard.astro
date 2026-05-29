@@ -3059,7 +3059,7 @@ function renderPipelineTable(filter) {
       const publishButton = !publishStatus
         ? `<button onclick="approvePipelinePin('${slug}')"
             title="${IS_PRODUCTION_DASHBOARD ? 'Approve and queue this pin for real publishing' : 'Staging queue only'}"
-            style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'פרסם' : 'בדיקה'}</button>`
+            style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'פרסם' : 'פרסום'}</button>`
         : '';
       return `<details style="margin:.28rem 0;padding:.38rem .45rem;border:1px solid #e5e7eb;border-radius:6px;background:#fff">
         <summary style="cursor:pointer;list-style:none">
