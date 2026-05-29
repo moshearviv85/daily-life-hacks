@@ -97,6 +97,7 @@ def verify_slug(
     hero_dir: Path = DEFAULT_HERO_DIR,
     pin_dir: Path = DEFAULT_PIN_DIR,
     article_only: bool = False,
+    hero_only: bool = False,
 ) -> ArtifactCheck:
     errors: list[str] = []
 
@@ -116,6 +117,9 @@ def verify_slug(
             errors.append(f"missing hero image: {hero_dir / f'{slug}-main.jpg'}")
         if not _has_ok_row(con, "hero_briefs", "article_slug", slug):
             errors.append("missing OK hero brief")
+
+        if hero_only:
+            return ArtifactCheck(slug=slug, ok=not errors, errors=errors)
 
         pin_slugs = _pin_slugs(con, slug)
         if len(pin_slugs) != 4:
@@ -141,6 +145,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--selected-topics", type=Path, help="JSON file from pipeline-data/selected-topics.json")
     parser.add_argument("--all-reviewed", action="store_true", help="Verify every reviewed article in SQLite.")
     parser.add_argument("--article-only", action="store_true", help="Verify article draft artifacts only; images and pin briefs must not be required.")
+    parser.add_argument("--hero-only", action="store_true", help="Verify article and hero artifacts only; pin briefs/images must not be required.")
     args = parser.parse_args(argv)
 
     slugs = list(args.slug)
@@ -154,7 +159,10 @@ def main(argv: list[str] | None = None) -> int:
         print("No slugs selected for artifact verification.", file=sys.stderr)
         return 1
 
-    checks = [verify_slug(slug, db_path=args.db, article_only=args.article_only) for slug in slugs]
+    checks = [
+        verify_slug(slug, db_path=args.db, article_only=args.article_only, hero_only=args.hero_only)
+        for slug in slugs
+    ]
     failed = [check for check in checks if not check.ok]
 
     for check in checks:

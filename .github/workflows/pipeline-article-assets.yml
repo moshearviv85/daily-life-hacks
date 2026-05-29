@@ -55,7 +55,8 @@ jobs:
       - name: Verify generated assets
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/verify_pipeline_artifacts.py \
-            --slug "${{ inputs.slug }}"
+            --slug "${{ inputs.slug }}" \
+            ${{ inputs.mode == 'hero_only' && '--hero-only' || '' }}
 
       - name: Commit and push generated assets
         run: |

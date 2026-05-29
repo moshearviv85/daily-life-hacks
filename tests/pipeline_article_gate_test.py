@@ -84,6 +84,8 @@ def test_article_assets_can_regenerate_only_hero_image():
 
     assert "mode:" in workflow
     assert "--hero-only --force-images" in workflow
+    assert "verify_pipeline_artifacts.py" in workflow
+    assert "--hero-only" in workflow
     assert "--hero-only" in source
     assert "--force-images" in source
     assert "if not args.hero_only" in source
