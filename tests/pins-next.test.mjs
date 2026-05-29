@@ -141,3 +141,75 @@ test("pins-next moves pins with unpublished articles to the end of the queue", a
     globalThis.fetch = originalFetch;
   }
 });
+
+test("pins-next prefers a different article than the last posted pin", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 200 });
+
+  try {
+    const sameArticlePin = {
+      ...duePin,
+      row_id: "meat-pin-2",
+      link: "https://www.daily-life-hacks.com/high-protein-ground-beef-recipes/",
+      image_url: "https://www.daily-life-hacks.com/images/pins/meat-pin-2.jpg",
+    };
+    const differentArticlePin = {
+      ...duePin,
+      row_id: "salad-pin-1",
+      link: "https://www.daily-life-hacks.com/easy-meal-prep-salads/",
+      image_url: "https://www.daily-life-hacks.com/images/pins/salad-pin-1.jpg",
+    };
+
+    const db = makeDb({
+      latestPosted: {
+        row_id: "meat-pin-1",
+        link: "https://www.daily-life-hacks.com/high-protein-ground-beef-recipes/",
+        published_date: minutesAgo(180),
+      },
+      duePins: [sameArticlePin, differentArticlePin],
+    });
+
+    const response = await onRequestGet({
+      request: makeRequest("/api/pins-next?key=test-key&immediate=1"),
+      env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "110" },
+    });
+
+    assert.equal(response.status, 200);
+    const data = await response.json();
+    assert.equal(data.row_id, "salad-pin-1");
+    assert.equal(db.updates.length, 0);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("pins-next still returns same-article pin when no other valid pin is due", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 200 });
+
+  try {
+    const db = makeDb({
+      latestPosted: {
+        row_id: "meat-pin-1",
+        link: "https://www.daily-life-hacks.com/high-protein-ground-beef-recipes/",
+        published_date: minutesAgo(180),
+      },
+      duePins: [{
+        ...duePin,
+        row_id: "meat-pin-2",
+        link: "https://www.daily-life-hacks.com/high-protein-ground-beef-recipes/",
+      }],
+    });
+
+    const response = await onRequestGet({
+      request: makeRequest("/api/pins-next?key=test-key&immediate=1"),
+      env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "110" },
+    });
+
+    assert.equal(response.status, 200);
+    const data = await response.json();
+    assert.equal(data.row_id, "meat-pin-2");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

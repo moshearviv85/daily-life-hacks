@@ -98,6 +98,30 @@ async function enforcePostCooldown(db, env) {
   });
 }
 
+function slugFromLink(link) {
+  try {
+    return new URL(link).pathname.replace(/^\/+/, "").split("/")[0] || null;
+  } catch {
+    return null;
+  }
+}
+
+async function getLatestPostedSlug(db) {
+  const latest = await db.prepare(`
+    SELECT row_id, link, published_date
+    FROM pins_schedule
+    WHERE status = 'POSTED'
+      AND published_date IS NOT NULL
+      AND published_date != ''
+      AND link IS NOT NULL
+      AND link != ''
+    ORDER BY published_date DESC
+    LIMIT 1
+  `).first();
+
+  return slugFromLink(latest?.link);
+}
+
 async function getNextPin(db, immediate = false, rowId = "") {
   let duePins;
 
@@ -147,12 +171,11 @@ async function getNextPin(db, immediate = false, rowId = "") {
 
   const LIVE_STATUSES = new Set(['PUBLISHED', 'DUPLICATE']);
   const skipped = [];
+  const latestPostedSlug = rowId ? null : await getLatestPostedSlug(db);
+  let sameArticleFallback = null;
 
   for (const row of duePins) {
-    let slug = null;
-    try {
-      slug = new URL(row.link).pathname.replace(/^\/+/, '').split('/')[0];
-    } catch {}
+    const slug = slugFromLink(row.link);
 
     if (slug) {
       const article = await db.prepare(
@@ -195,7 +218,16 @@ async function getNextPin(db, immediate = false, rowId = "") {
       continue;
     }
 
+    if (latestPostedSlug && slug === latestPostedSlug) {
+      sameArticleFallback ||= row;
+      continue;
+    }
+
     return Response.json(row);
+  }
+
+  if (sameArticleFallback) {
+    return Response.json(sameArticleFallback);
   }
 
   return new Response(null, {
