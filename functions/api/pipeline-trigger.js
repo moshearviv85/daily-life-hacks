@@ -53,7 +53,7 @@ const ACTIONS = {
   },
   regenerate_hero: {
     workflow: "pipeline-article-assets.yml",
-    dispatchRef: "main",
+    dispatchRef: "staging",
     outputBranch: "staging",
     effect: "Regenerates only the staging hero image for an approved article.",
   },
@@ -135,8 +135,30 @@ export async function onRequestPost(context) {
       });
     }
     const ghBody = await ghRes.text();
-    return json({ ok: false, gh_status: ghRes.status, gh_body: ghBody }, 400);
+    return json({
+      ok: false,
+      error: summarizeGitHubError(ghBody) || `GitHub dispatch failed with status ${ghRes.status}`,
+      gh_status: ghRes.status,
+      gh_body: ghBody,
+    }, 400);
   } catch (err) {
     return json({ ok: false, error: String(err) }, 500);
+  }
+}
+
+function summarizeGitHubError(body) {
+  const text = String(body || "").trim();
+  if (!text) return "";
+  try {
+    const parsed = JSON.parse(text);
+    const parts = [
+      parsed.message,
+      Array.isArray(parsed.errors)
+        ? parsed.errors.map((err) => err.message || err.field || JSON.stringify(err)).join("; ")
+        : "",
+    ].filter(Boolean);
+    return parts.join(": ");
+  } catch {
+    return text.slice(0, 500);
   }
 }

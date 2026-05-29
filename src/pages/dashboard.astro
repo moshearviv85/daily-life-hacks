@@ -534,7 +534,7 @@ const BUILD = {
         <button class="btn btn-sm" onclick="filterPipeline('progress', this)">In Progress</button>
         <button class="btn btn-sm" onclick="filterPipeline('ready', this)">Ready</button>
         <button class="btn btn-sm" onclick="filterPipeline('failed', this)">Failed</button>
-        <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected">פרסום פינים מסומנים</button>
+        <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected">Publish selected pins</button>
       </div>
 
       <!-- Pipeline table -->
@@ -2808,7 +2808,7 @@ async function triggerPostNow() {
     return;
   }
   btn.disabled = true;
-  btn.textContent = 'מפעיל...';
+  btn.textContent = 'Running...';
   pollEl.style.display = '';
   pollEl.style.background = '#fff7ed';
   pollEl.style.borderColor = '#fed7aa';
@@ -3060,7 +3060,7 @@ function renderPipelineTable(filter) {
       const publishButton = !publishStatus
         ? `<button onclick="approvePipelinePin('${slug}')"
             title="${IS_PRODUCTION_DASHBOARD ? 'Approve and queue this pin for real publishing' : 'Staging queue only'}"
-            style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'פרסם' : 'פרסום'}</button>`
+            style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'Publish' : 'Queue'}</button>`
         : '';
       const selectBox = !publishStatus
         ? `<input type="checkbox" class="pipeline-pin-select" value="${escapeHtml(slug)}" data-article-slug="${escapeHtml(article.slug)}" data-pin-index="${pin.pin_index ?? idx}" title="Select pin for batch publishing" style="vertical-align:middle;margin-right:.25rem">`
@@ -3122,7 +3122,7 @@ function renderPipelineTable(filter) {
         </div>
         ${existsInBuild ? `<a href="${heroSrc}" target="_blank" rel="noopener"><img src="${heroSrc}" alt="${escapeHtml(a.slug)} hero" loading="lazy" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.4rem"></a>
         <button onclick="regenerateHeroImage('${a.slug}')" title="Regenerate only the staging hero image"
-          style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">צור תמונה מחדש</button>` : ''}
+          style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">Regenerate image</button>` : ''}
         ${articleApproval}
       </td>
       <td>${a.category}</td>
@@ -3194,7 +3194,7 @@ async function triggerPipeline(action) {
       statusEl.style.background = '#fef2f2';
       statusEl.style.borderColor = '#fecaca';
       statusEl.style.color = '#b91c1c';
-      statusEl.textContent = `Error: ${data.error || 'Unknown error'}`;
+      statusEl.textContent = `Error: ${data.error || data.gh_body || 'Unknown error'}`;
     }
   } catch (e) {
     statusEl.style.background = '#fef2f2';
@@ -3234,7 +3234,7 @@ async function produceSelectedTopics() {
     });
     const data = await res.json();
     if (!res.ok || !data.ok) {
-      throw new Error(data.error || 'Unknown error');
+      throw new Error(data.error || data.gh_body || 'Unknown error');
     }
 
     statusEl.style.background = '#f0fdf4';
@@ -3273,7 +3273,7 @@ async function approvePipelineArticle(slug) {
     });
     const data = await res.json();
     if (!res.ok || !data.ok) {
-      throw new Error(data.error || 'Unknown error');
+      throw new Error(data.error || data.gh_body || 'Unknown error');
     }
 
     statusEl.style.background = '#f0fdf4';
@@ -3311,7 +3311,7 @@ async function regenerateHeroImage(slug) {
       body: JSON.stringify({ action: 'regenerate_hero', slug }),
     });
     const data = await res.json();
-    if (!res.ok || !data.ok) throw new Error(data.error || 'Unknown error');
+    if (!res.ok || !data.ok) throw new Error(data.error || data.gh_body || 'Unknown error');
 
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
@@ -3356,7 +3356,7 @@ async function approveSelectedPipelinePins() {
     alert('Select at least one pin first.');
     return;
   }
-  const ok = confirm(`להכניס ${pinSlugs.length} פינים למסילת הפרסום?\n\nהפינים יוכנסו בסדר מעורב לפי כתבה כדי למנוע רצף של אותו נושא.`);
+  const ok = confirm(`Queue ${pinSlugs.length} selected pin(s)?\n\nPins will be interleaved by article to avoid publishing the same topic in a block.`);
   if (!ok) return;
 
   for (const slug of pinSlugs) {
@@ -3367,8 +3367,8 @@ async function approveSelectedPipelinePins() {
 async function approvePipelinePin(pinSlug, options = {}) {
   if (!pw) return;
   const ok = options.skipConfirm || confirm(IS_PRODUCTION_DASHBOARD
-    ? `להכניס את הפין הזה למסילת הפרסום האוטומטי?\n\n${pinSlug}\n\nהוא ייכנס כ-PENDING אחרי כל הפינים שכבר ממתינים. לא יתבצע פרסום מיידי.`
-    : `להכניס את הפין הזה למסילת סטייג'ינג?\n\n${pinSlug}\n\nתיווצר שורת PENDING בסביבת הבדיקה בלבד. לא יופעל GitHub Actions ולא יתבצע פרסום בפינטרסט.`);
+    ? `Queue this pin for automatic publishing?\n\n${pinSlug}\n\nIt will enter PENDING after the pins already waiting. It will not publish immediately.`
+    : `Queue this pin in staging?\n\n${pinSlug}\n\nA PENDING staging row will be created only. No GitHub Actions run and no Pinterest post will happen.`);
   if (!ok) return;
 
   const statusEl = document.getElementById('pipeline-trigger-status');
@@ -3377,8 +3377,8 @@ async function approvePipelinePin(pinSlug, options = {}) {
   statusEl.style.borderColor = '#fed7aa';
   statusEl.style.color = '#92400e';
   statusEl.textContent = IS_PRODUCTION_DASHBOARD
-    ? 'מכניס את הפין למסילת הפרסום האוטומטי...'
-    : 'מכניס את הפין למסילת סטייג׳ינג ללא פרסום...';
+    ? 'Queueing pin for automatic publishing...'
+    : 'Queueing pin in staging without publishing...';
 
   try {
     const res = await fetch(`/api/pipeline-pin-approve?key=${encodeURIComponent(pw)}`, {

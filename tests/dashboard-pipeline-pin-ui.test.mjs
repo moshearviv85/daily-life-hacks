@@ -55,7 +55,7 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /<strong>Alt:<\/strong>/);
   assert.match(dashboard, /const dashboardBase = IS_PRODUCTION_DASHBOARD/);
   assert.match(dashboard, /class="pipeline-pin-select"/);
-  assert.match(dashboard, /פרסום פינים מסומנים/);
+  assert.match(dashboard, /Publish selected pins/);
   assert.match(dashboard, /function getSelectedPipelinePinsInterleaved/);
   assert.match(dashboard, /function approveSelectedPipelinePins/);
   assert.match(dashboard, /window\.approveSelectedPipelinePins = approveSelectedPipelinePins/);
@@ -65,7 +65,7 @@ test("pipeline dashboard shows thumbnails and can regenerate hero image", () => 
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
   assert.match(dashboard, /\$\{a\.slug\}-main\.jpg/);
-  assert.match(dashboard, /צור תמונה מחדש/);
+  assert.match(dashboard, /Regenerate image/);
   assert.match(dashboard, /function regenerateHeroImage/);
   assert.match(dashboard, /window\.regenerateHeroImage = regenerateHeroImage/);
   assert.match(dashboard, /action: 'regenerate_hero'/);

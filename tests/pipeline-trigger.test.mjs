@@ -143,7 +143,35 @@ test("regenerate_hero dispatches hero-only asset workflow", async (t) => {
   assert.equal(response.status, 200);
   assert.equal(data.ok, true);
   assert.match(requestedWorkflow, /pipeline-article-assets\.yml/);
+  assert.equal(dispatchBody.ref, "staging");
   assert.equal(dispatchBody.inputs.slug, "demo-article");
   assert.equal(dispatchBody.inputs.mode, "hero_only");
   assert.equal(data.slug, "demo-article");
+  assert.equal(data.dispatchRef, "staging");
+});
+
+test("GitHub dispatch failures return a readable error", async (t) => {
+  const originalFetch = globalThis.fetch;
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  globalThis.fetch = async () => new Response(JSON.stringify({
+    message: "Validation Failed",
+    errors: [{ message: "Unexpected inputs provided: [mode]" }],
+  }), { status: 422 });
+
+  const response = await onRequestPost({
+    request: new Request("https://staging.daily-life-hacks.pages.dev/api/pipeline-trigger?key=test-key", {
+      method: "POST",
+      body: JSON.stringify({ action: "regenerate_hero", slug: "demo-article" }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "staging" },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 400);
+  assert.equal(data.ok, false);
+  assert.match(data.error, /Validation Failed/);
+  assert.match(data.error, /Unexpected inputs/);
 });
