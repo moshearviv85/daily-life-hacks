@@ -4,8 +4,8 @@ excerpt: Eating alone doesn't have to mean takeout or wasted groceries. Learn ho
 category: tips
 tags: ["budget meals", "cooking for one", "meal prep", "save money", "single serving"]
 image: "/images/budget-meal-ideas-for-one-main.jpg"
-imageAlt: A flat lay photograph displays budget meal ingredients including eggs, colorful vegetables, cheese, herbs, and grains on a wooden surface.
-date: 2026-05-28
+imageAlt: A colorful vegetable frittata in a small ceramic dish is presented alongside a fanned avocado half and fresh herbs on a white linen.
+date: 2026-05-29
 author: "David Miller"
 featured: false
 faq:
