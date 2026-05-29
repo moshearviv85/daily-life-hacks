@@ -44,6 +44,18 @@ test("pipeline pin button is hidden once a pin has any queue status", () => {
   assert.doesNotMatch(dashboard, /publishStatus !== 'POSTED'/);
 });
 
+test("pipeline pin details show publish metadata before queueing", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /description_with_hashtags/);
+  assert.match(dashboard, /<strong>Title:<\/strong>/);
+  assert.match(dashboard, /<strong>Description:<\/strong>/);
+  assert.match(dashboard, /<strong>Board:<\/strong>/);
+  assert.match(dashboard, /<strong>Hashtags:<\/strong>/);
+  assert.match(dashboard, /<strong>Alt:<\/strong>/);
+  assert.match(dashboard, /const dashboardBase = IS_PRODUCTION_DASHBOARD/);
+});
+
 test("dashboard can select topics and produce selected topics", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 

@@ -1,12 +1,12 @@
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import {
+  boardForCategory,
+  descriptionWithHashtags,
+  formatHashtags,
+  hashtagsForPin,
+} from "./_pin-metadata.js";
 
 const SITE_BASE = "https://www.daily-life-hacks.com";
-
-const CATEGORY_TO_BOARD_ID = {
-  recipes: "1124140825679184032",
-  nutrition: "1124140825679184034",
-  tips: "1124140825679184034",
-};
 
 function isProductionRequest(request, env) {
   const url = new URL(request.url);
@@ -133,8 +133,10 @@ export async function onRequestPost(context) {
   if (!pin) return json({ error: "Pipeline pin not found" }, 404);
   if (pin.image_status !== "done") return json({ error: "Pin image is not ready" }, 409);
 
-  const boardId = CATEGORY_TO_BOARD_ID[pin.category];
-  if (!boardId) return json({ error: `Unknown article category: ${pin.category}` }, 400);
+  const board = boardForCategory(pin.category);
+  if (!board?.id) return json({ error: `Unknown article category: ${pin.category}` }, 400);
+  const hashtags = hashtagsForPin(pin, pin.category);
+  const fullDescription = descriptionWithHashtags(pin.description, hashtags);
 
   const rowId = pin.pin_slug;
   const productionRequest = isProductionRequest(request, env);
@@ -162,9 +164,12 @@ export async function onRequestPost(context) {
       pin_slug: pin.pin_slug,
       article_slug: pin.article_slug,
       title: pin.title,
+      description: fullDescription,
+      hashtags: formatHashtags(hashtags),
       image_url: imageUrl,
       link,
-      board_id: boardId,
+      board_id: board.id,
+      board_name: board.name,
       scheduled_date: existing.scheduled_date || null,
       scheduled_time: existing.scheduled_time || null,
       pin_id: existing.pin_id || null,
@@ -197,10 +202,10 @@ export async function onRequestPost(context) {
   `).bind(
     rowId,
     pin.title || "",
-    pin.description || "",
+    fullDescription,
     pin.alt || "",
     imageUrl,
-    boardId,
+    board.id,
     link,
     scheduledDate,
     scheduledTime,
@@ -215,9 +220,12 @@ export async function onRequestPost(context) {
     pin_slug: pin.pin_slug,
     article_slug: pin.article_slug,
     title: pin.title,
+    description: fullDescription,
+    hashtags: formatHashtags(hashtags),
     image_url: imageUrl,
     link,
-    board_id: boardId,
+    board_id: board.id,
+    board_name: board.name,
     scheduled_date: scheduledDate,
     scheduled_time: scheduledTime,
     status: "PENDING",

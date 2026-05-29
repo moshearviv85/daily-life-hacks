@@ -3046,9 +3046,12 @@ function renderPipelineTable(filter) {
     if (!pins.length) return count;
     const links = pins.map((pin, idx) => {
       const slug = pin.pin_slug || `${article.slug}_v${idx + 1}`;
-      const href = `https://staging.daily-life-hacks.pages.dev/images/pins/${slug}.jpg`;
+      const dashboardBase = IS_PRODUCTION_DASHBOARD ? 'https://www.daily-life-hacks.com' : 'https://staging.daily-life-hacks.pages.dev';
+      const href = `${dashboardBase}/images/pins/${slug}.jpg`;
       const label = `v${(pin.pin_index ?? idx) + 1}`;
       const publishStatus = pin.publish_status || '';
+      const destination = `${dashboardBase}/${article.slug}/`;
+      const description = pin.description_with_hashtags || pin.description || '';
       const statusBadge = publishStatus
         ? `<span title="Publish status"
             style="display:inline-block;margin:.15rem .2rem 0 0;padding:.1rem .3rem;border-radius:4px;font-size:.58rem;font-weight:700;background:${publishStatus === 'POSTED' ? '#dcfce7' : '#fef3c7'};color:${publishStatus === 'POSTED' ? '#166534' : '#92400e'}">${publishStatus}</span>`
@@ -3058,9 +3061,21 @@ function renderPipelineTable(filter) {
             title="${IS_PRODUCTION_DASHBOARD ? 'Approve and queue this pin for real publishing' : 'Staging queue only'}"
             style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'פרסם' : 'בדיקה'}</button>`
         : '';
-      return `<a href="${href}" target="_blank" rel="noopener"
-        title="${slug}"
-        style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${statusBadge}${publishButton}`;
+      return `<details style="margin:.28rem 0;padding:.38rem .45rem;border:1px solid #e5e7eb;border-radius:6px;background:#fff">
+        <summary style="cursor:pointer;list-style:none">
+          <a href="${href}" target="_blank" rel="noopener"
+            title="${escapeHtml(slug)}"
+            style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${statusBadge}${publishButton}
+        </summary>
+        <div style="margin-top:.35rem;font-size:.68rem;line-height:1.35;color:var(--text)">
+          <div><strong>Title:</strong> ${escapeHtml(pin.title || '-')}</div>
+          <div style="margin-top:.18rem"><strong>Description:</strong> ${escapeHtml(description || '-')}</div>
+          <div style="margin-top:.18rem"><strong>Board:</strong> ${escapeHtml(pin.board_name || '-')} <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.board_id || '')}</span></div>
+          <div style="margin-top:.18rem"><strong>Hashtags:</strong> ${escapeHtml(pin.hashtags || '-')}</div>
+          <div style="margin-top:.18rem"><strong>Alt:</strong> ${escapeHtml(pin.alt || '-')}</div>
+          <div style="margin-top:.18rem"><strong>Link:</strong> <a href="${destination}" target="_blank" rel="noopener" style="color:var(--orange)">${escapeHtml(destination)}</a></div>
+        </div>
+      </details>`;
     }).join('');
     return `<div>${count}</div><div>${links}</div>`;
   };
