@@ -2839,6 +2839,7 @@ async function triggerPostNow() {
 }
 // ── Pipeline Control Center ──────────────────────────────────────────────
 let pipelineData = null;
+const heroImageVersions = new Map();
 
 async function fetchPipelineStatus() {
   try {
@@ -3091,7 +3092,7 @@ function renderPipelineTable(filter) {
     const existsInBuild = builtArticleSlugs.has(a.slug);
     const dashboardBase = IS_PRODUCTION_DASHBOARD ? 'https://www.daily-life-hacks.com' : 'https://staging.daily-life-hacks.pages.dev';
     const heroSrc = `${dashboardBase}/images/${a.slug}-main.jpg`;
-    const heroVersion = encodeURIComponent(a.updated_at || a.stage || 'current');
+    const heroVersion = encodeURIComponent(heroImageVersions.get(a.slug) || a.updated_at || a.stage || 'current');
     const heroDisplaySrc = `${heroSrc}?v=${heroVersion}`;
     const stagingHref = existsInBuild
       ? `https://staging.daily-life-hacks.pages.dev/${a.slug}/`
@@ -3333,8 +3334,10 @@ async function watchHeroImageReplacement(slug, heroSrc, initialSignal) {
     await delay(20000);
     const nextSignal = await getHeroImageSignal(heroSrc);
     const img = document.getElementById(`pipeline-hero-img-${slug}`);
+    const version = String(Date.now());
+    heroImageVersions.set(slug, version);
     if (img) {
-      img.src = `${heroSrc}${heroSrc.includes('?') ? '&' : '?'}v=${Date.now()}`;
+      img.src = `${heroSrc}${heroSrc.includes('?') ? '&' : '?'}v=${version}`;
     }
     if (nextSignal && initialSignal && nextSignal !== initialSignal) {
       setHeroImageStatus(slug, 'New image is live. Thumbnail refreshed.', 'success');

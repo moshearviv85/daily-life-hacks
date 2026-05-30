@@ -10,10 +10,10 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
 /images/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=300, must-revalidate
 
 /images/pins/*
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=300, must-revalidate
 
 /dashboard
   X-Robots-Tag: noindex, nofollow

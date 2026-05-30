@@ -70,12 +70,15 @@ test("pipeline dashboard shows thumbnails and can regenerate hero image", () => 
   assert.match(dashboard, /function regenerateHeroImage/);
   assert.match(dashboard, /window\.regenerateHeroImage = regenerateHeroImage/);
   assert.match(dashboard, /action: 'regenerate_hero'/);
+  assert.match(dashboard, /const heroImageVersions = new Map\(\)/);
   assert.match(dashboard, /const heroVersion = encodeURIComponent/);
+  assert.match(dashboard, /heroImageVersions\.get\(a\.slug\) \|\| a\.updated_at/);
   assert.match(dashboard, /const heroDisplaySrc = `\$\{heroSrc\}\?v=\$\{heroVersion\}`/);
   assert.match(dashboard, /pipeline-hero-status-/);
   assert.match(dashboard, /function watchHeroImageReplacement/);
   assert.match(dashboard, /const img = document\.getElementById\(`pipeline-hero-img-\$\{slug\}`\);/);
-  assert.match(dashboard, /img\.src = `\$\{heroSrc\}\$\{heroSrc\.includes\('\?'\) \? '&' : '\?'\}v=\$\{Date\.now\(\)\}`/);
+  assert.match(dashboard, /heroImageVersions\.set\(slug, version\)/);
+  assert.match(dashboard, /img\.src = `\$\{heroSrc\}\$\{heroSrc\.includes\('\?'\) \? '&' : '\?'\}v=\$\{version\}`/);
   assert.match(dashboard, /Workflow sent\. Watching for the new image/);
   assert.match(dashboard, /New image is live\. Thumbnail refreshed/);
   assert.match(dashboard, /refreshed repeatedly without reloading the dashboard/);
@@ -119,6 +122,7 @@ test("hero image watcher refreshes the visible thumbnail after table rerender", 
     fetchPipelineStatus: () => {
       fetchPipelineStatusCalls += 1;
     },
+    heroImageVersions: new Map(),
     Date: { now: () => 12345 },
   };
 
@@ -128,9 +132,18 @@ test("hero image watcher refreshes the visible thumbnail after table rerender", 
 
   assert.equal(staleImage.src, "/images/example-main.jpg?v=old");
   assert.equal(visibleImage.src, "/images/example-main.jpg?v=12345");
+  assert.equal(context.heroImageVersions.get("example"), "12345");
   assert.equal(statusMessage, "New image is live. Thumbnail refreshed.");
   assert.equal(busyState, false);
   assert.equal(fetchPipelineStatusCalls, 1);
+});
+
+test("replaceable images are not cached as immutable assets", () => {
+  const headers = readFileSync(new URL("../public/_headers", import.meta.url), "utf8");
+
+  assert.match(headers, /\/images\/\*\s+Cache-Control: public, max-age=300, must-revalidate/);
+  assert.match(headers, /\/images\/pins\/\*\s+Cache-Control: public, max-age=300, must-revalidate/);
+  assert.doesNotMatch(headers, /\/images\/\*\s+Cache-Control: public, max-age=31536000, immutable/);
 });
 
 test("dashboard can select topics and produce selected topics", () => {
