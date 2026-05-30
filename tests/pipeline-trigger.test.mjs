@@ -3,6 +3,26 @@ import test from "node:test";
 
 import { onRequestPost } from "../functions/api/pipeline-trigger.js";
 
+function makePipelineArticleDb(stage = "deployed") {
+  return {
+    prepare(sql) {
+      return {
+        bind(slug) {
+          return {
+            async first() {
+              if (!sql.includes("FROM pipeline_articles")) {
+                throw new Error(`Unexpected query: ${sql}`);
+              }
+              if (slug !== "demo-article") return null;
+              return { slug, stage, category: "tips" };
+            },
+          };
+        },
+      };
+    },
+  };
+}
+
 test("staging blocks legacy publish before dispatching GitHub Actions", async (t) => {
   const originalFetch = globalThis.fetch;
   t.after(() => {
@@ -106,7 +126,12 @@ test("approve_article dispatches the asset workflow for one slug", async (t) => 
       method: "POST",
       body: JSON.stringify({ action: "approve_article", slug: "demo-article" }),
     }),
-    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "staging" },
+    env: {
+      DASHBOARD_PASSWORD: "test-key",
+      GH_PAT: "gh-token",
+      CF_PAGES_BRANCH: "staging",
+      DB: makePipelineArticleDb("deployed"),
+    },
   });
   const data = await response.json();
 
@@ -115,6 +140,38 @@ test("approve_article dispatches the asset workflow for one slug", async (t) => 
   assert.match(requestedWorkflow, /pipeline-article-assets\.yml/);
   assert.equal(dispatchBody.inputs.slug, "demo-article");
   assert.equal(data.slug, "demo-article");
+});
+
+test("approve_article blocks asset generation for an article that is not ready for review", async (t) => {
+  const originalFetch = globalThis.fetch;
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  let fetchCalled = false;
+  globalThis.fetch = async () => {
+    fetchCalled = true;
+    return new Response(null, { status: 204 });
+  };
+
+  const response = await onRequestPost({
+    request: new Request("https://staging.daily-life-hacks.pages.dev/api/pipeline-trigger?key=test-key", {
+      method: "POST",
+      body: JSON.stringify({ action: "approve_article", slug: "demo-article" }),
+    }),
+    env: {
+      DASHBOARD_PASSWORD: "test-key",
+      GH_PAT: "gh-token",
+      CF_PAGES_BRANCH: "staging",
+      DB: makePipelineArticleDb("written"),
+    },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 409);
+  assert.equal(data.ok, false);
+  assert.match(data.error, /not ready for asset generation/);
+  assert.equal(fetchCalled, false);
 });
 
 test("regenerate_hero dispatches hero-only asset workflow", async (t) => {
@@ -136,7 +193,12 @@ test("regenerate_hero dispatches hero-only asset workflow", async (t) => {
       method: "POST",
       body: JSON.stringify({ action: "regenerate_hero", slug: "demo-article" }),
     }),
-    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "staging" },
+    env: {
+      DASHBOARD_PASSWORD: "test-key",
+      GH_PAT: "gh-token",
+      CF_PAGES_BRANCH: "staging",
+      DB: makePipelineArticleDb("pin_images"),
+    },
   });
   const data = await response.json();
 
@@ -166,7 +228,12 @@ test("GitHub dispatch failures return a readable error", async (t) => {
       method: "POST",
       body: JSON.stringify({ action: "regenerate_hero", slug: "demo-article" }),
     }),
-    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "staging" },
+    env: {
+      DASHBOARD_PASSWORD: "test-key",
+      GH_PAT: "gh-token",
+      CF_PAGES_BRANCH: "staging",
+      DB: makePipelineArticleDb("pin_images"),
+    },
   });
   const data = await response.json();
 

@@ -59,6 +59,49 @@ const ACTIONS = {
   },
 };
 
+const ASSET_READY_STAGES = new Set(["deployed"]);
+const HERO_REGEN_READY_STAGES = new Set([
+  "deployed",
+  "hero_brief",
+  "pins_brief",
+  "hero_image",
+  "pin_images",
+  "published",
+]);
+
+async function getPipelineArticle(env, slug) {
+  if (!env.DB) return null;
+  return env.DB.prepare(`
+    SELECT slug, stage, category
+      FROM pipeline_articles
+     WHERE slug = ?
+     LIMIT 1
+  `).bind(slug).first();
+}
+
+async function validateArticleAssetGate(env, action, slug) {
+  const article = await getPipelineArticle(env, slug);
+  if (!article) {
+    return {
+      ok: false,
+      status: 404,
+      error: `Article ${slug} was not found in pipeline_articles. Produce it to staging before approving assets.`,
+    };
+  }
+
+  const allowed = action === "regenerate_hero" ? HERO_REGEN_READY_STAGES : ASSET_READY_STAGES;
+  if (!allowed.has(article.stage)) {
+    return {
+      ok: false,
+      status: 409,
+      error: `Article ${slug} is not ready for asset generation. Current stage: ${article.stage}.`,
+      article_stage: article.stage,
+    };
+  }
+
+  return { ok: true, article_stage: article.stage };
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
@@ -94,6 +137,11 @@ export async function onRequestPost(context) {
     }
     inputs.slug = slug;
     if (action === "regenerate_hero") inputs.mode = "hero_only";
+
+    const gate = await validateArticleAssetGate(env, action, slug);
+    if (!gate.ok) {
+      return json({ ok: false, error: gate.error, article_stage: gate.article_stage || null }, gate.status);
+    }
   }
   if (action === "produce" && Array.isArray(body.topic_ids) && body.topic_ids.length) {
     const topicIds = body.topic_ids

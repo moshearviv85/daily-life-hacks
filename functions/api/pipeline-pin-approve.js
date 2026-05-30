@@ -40,6 +40,15 @@ function targetSiteBase(request, productionRequest) {
   return new URL(request.url).origin;
 }
 
+function missingPinFields(pin) {
+  const missing = [];
+  if (!String(pin.title || "").trim()) missing.push("title");
+  if (!String(pin.description || "").trim()) missing.push("description");
+  if (!String(pin.alt || "").trim()) missing.push("alt");
+  if (!String(pin.category || "").trim()) missing.push("category");
+  return missing;
+}
+
 async function ensureStagingQueue(db) {
   await db.prepare(`
     CREATE TABLE IF NOT EXISTS staging_pins_schedule (
@@ -132,6 +141,13 @@ export async function onRequestPost(context) {
 
   if (!pin) return json({ error: "Pipeline pin not found" }, 404);
   if (pin.image_status !== "done") return json({ error: "Pin image is not ready" }, 409);
+  const missingFields = missingPinFields(pin);
+  if (missingFields.length) {
+    return json({
+      error: `Pin metadata is incomplete: missing ${missingFields.join(", ")}`,
+      missing_fields: missingFields,
+    }, 409);
+  }
 
   const board = boardForCategory(pin.category);
   if (!board?.id) return json({ error: `Unknown article category: ${pin.category}` }, 400);

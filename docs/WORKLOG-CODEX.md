@@ -102,6 +102,23 @@ Every new Codex chat should read this file and `AGENTS.md` before choosing work.
 
 Follow `docs/CODEX-TASKBOARD.md` and choose the first task that is not `done` and not `in_progress`.
 
+## 2026-05-30 - Pipeline Approval Gates And Pin Metadata Separation
+
+Status: staging fix implemented.
+
+- Locked article asset generation behind a pipeline article state gate: the dashboard/API now refuses `approve_article` when the article is not present in `pipeline_articles` or is still in an early stage such as `written`.
+- Added the same approval preflight inside `pipeline-article-assets.yml` so a direct workflow dispatch also checks the staging pipeline state before generating hero/pin assets.
+- Kept article production article-only: `pipeline-produce.yml` writes and deploys the staging article draft first; images and pins are generated only after the article approval action.
+- Tightened pin queue approval so a pipeline pin cannot enter the staging or production queue unless title, description, alt text, category, board mapping, and image readiness are present.
+- Fixed the active new-pipeline pin brief builder so pin `alt` comes from the explicit ALT field written by the pin brief writer, not by stripping text from the image-generation prompt.
+- Existing duplicate-angle protections remain in place: repeated long title phrases are rejected before pin briefs are accepted.
+
+Verification:
+
+- `python -m pytest tests/cli/test_new_pipeline_generate_pin_briefs.py tests/cli/test_generate_pin_briefs.py tests/lib/test_pin_brief.py tests/lib/test_prompt_builder.py` passed: 88/88.
+- `node --test tests/pipeline-trigger.test.mjs tests/pipeline-pin-approve.test.mjs tests/pins-next.test.mjs tests/dashboard-pipeline-pin-ui.test.mjs tests/pipeline-status.test.mjs` passed: 29/29.
+- `npm run build` passed.
+
 ## 2026-05-28 - Pipeline E2E Restart And Staging Queue
 
 Status: in progress.
