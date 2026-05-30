@@ -9,9 +9,30 @@ Validation rules from .claude/rules/content.md.
 from __future__ import annotations
 
 from dataclasses import dataclass
+import re
 from typing import List
 
 from scripts.lib.hero_brief import _check_clean_text
+
+
+_WORD_RE = re.compile(r"[a-z0-9]+")
+
+
+def _title_tokens(title: str) -> list[str]:
+    return _WORD_RE.findall(title.lower())
+
+
+def _repeated_title_phrases(titles: list[str], *, n: int = 6) -> list[str]:
+    seen: dict[tuple[str, ...], int] = {}
+    repeated: set[tuple[str, ...]] = set()
+    for idx, title in enumerate(titles):
+        tokens = _title_tokens(title)
+        phrases = {tuple(tokens[i:i + n]) for i in range(0, max(0, len(tokens) - n + 1))}
+        for phrase in phrases:
+            previous = seen.setdefault(phrase, idx)
+            if previous != idx:
+                repeated.add(phrase)
+    return [" ".join(phrase) for phrase in sorted(repeated)]
 
 
 @dataclass
@@ -72,3 +93,9 @@ class PinBriefSet:
         titles = [p.title for p in self.pins]
         if len(set(titles)) != 4:
             raise ValueError(f"pin titles must be unique: {titles}")
+        repeated_phrases = _repeated_title_phrases(titles)
+        if repeated_phrases:
+            raise ValueError(
+                "pin titles are too similar; repeated long phrase(s): "
+                + ", ".join(repeated_phrases[:3])
+            )

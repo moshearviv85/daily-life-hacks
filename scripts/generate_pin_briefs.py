@@ -64,7 +64,8 @@ Each pin has:
              necessarily the article's own title. Scroll-stopping. Specific.
              Concrete nouns. 65 character ceiling. Across the 4 titles vary
              the opening word, the rhythm, and the angle. Each title must be
-             unique.
+             unique. Do not reuse the same subtitle, promise, or repeated
+             phrase across multiple titles.
   - prompt : your photography brief PLUS an explicit overlay-text instruction
              at the END. The overlay instruction must read:
                  Render the text "<exact title>" ...
@@ -92,6 +93,9 @@ Hard rules:
 - No medical claims, no supplements, no detox/cleanse language.
 - Across the 4 pins of THIS article, vary the typography style, the surface,
   the lighting. Do not default to one look.
+- Across the 4 titles, use four distinct angles: problem or mistake,
+  specific technique, result or payoff, practical checklist or timing cue.
+- Bad: four titles that all repeat "The Only Way You Should Ever Cook Prime Rib".
 - Every title must be ASCII-only. Do NOT use accented characters or special
   letters (no e, n, u, c, &, etc.). Replace accented words with their plain
   English equivalent: "Sauteing" not "Sauteing", "Cafe" not "Cafe", and use

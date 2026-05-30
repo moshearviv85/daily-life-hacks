@@ -177,13 +177,15 @@ test("pins-next prefers a different article than the last posted pin", async () 
     assert.equal(response.status, 200);
     const data = await response.json();
     assert.equal(data.row_id, "salad-pin-1");
-    assert.equal(db.updates.length, 0);
+    assert.equal(db.updates.length, 1);
+    assert.match(db.updates[0].args[2], /same_article_as_latest_posted/);
+    assert.equal(db.updates[0].args[3], "meat-pin-2");
   } finally {
     globalThis.fetch = originalFetch;
   }
 });
 
-test("pins-next still returns same-article pin when no other valid pin is due", async () => {
+test("pins-next moves same-article pin to the end when no other valid pin is due", async () => {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async () => new Response(null, { status: 200 });
 
@@ -194,6 +196,7 @@ test("pins-next still returns same-article pin when no other valid pin is due", 
         link: "https://www.daily-life-hacks.com/high-protein-ground-beef-recipes/",
         published_date: minutesAgo(180),
       },
+      latestPending: { scheduled_date: "2026-05-29", scheduled_time: "20:00" },
       duePins: [{
         ...duePin,
         row_id: "meat-pin-2",
@@ -206,9 +209,15 @@ test("pins-next still returns same-article pin when no other valid pin is due", 
       env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "110" },
     });
 
-    assert.equal(response.status, 200);
-    const data = await response.json();
-    assert.equal(data.row_id, "meat-pin-2");
+    assert.equal(response.status, 204);
+    assert.equal(response.headers.get("X-Pins-Reason"), "all_due_pins_blocked_by_safety_checks");
+    assert.equal(response.headers.get("X-Pins-Skip-Reasons"), "same_article_as_latest_posted:1");
+    assert.equal(db.updates.length, 1);
+    assert.match(db.updates[0].sql, /UPDATE pins_schedule/);
+    assert.equal(db.updates[0].args[0], "2026-05-30");
+    assert.equal(db.updates[0].args[1], "06:00");
+    assert.match(db.updates[0].args[2], /same_article_as_latest_posted/);
+    assert.equal(db.updates[0].args[3], "meat-pin-2");
   } finally {
     globalThis.fetch = originalFetch;
   }

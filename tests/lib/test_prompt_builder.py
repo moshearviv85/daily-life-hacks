@@ -95,6 +95,12 @@ class TestBuildPinSystem:
         p = build_pin_system(keyword="test", variants=[])
         assert "em dash" in p.lower() or "em-dash" in p.lower() or "U+2014" in p
 
+    def test_requires_angle_diversity(self):
+        p = build_pin_system(keyword="prime rib", variants=["reverse sear"])
+        assert "Use the primary keyword in 2 of the 4 titles at most" in p
+        assert "Do NOT reuse the same subtitle" in p
+        assert "REQUIRED ANGLE DIVERSITY" in p
+
 
 class TestBuildPinDescSystem:
     def test_contains_voice_or_tone(self):

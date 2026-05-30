@@ -172,7 +172,6 @@ async function getNextPin(db, immediate = false, rowId = "") {
   const LIVE_STATUSES = new Set(['PUBLISHED', 'DUPLICATE']);
   const skipped = [];
   const latestPostedSlug = rowId ? null : await getLatestPostedSlug(db);
-  let sameArticleFallback = null;
 
   for (const row of duePins) {
     const slug = slugFromLink(row.link);
@@ -219,15 +218,17 @@ async function getNextPin(db, immediate = false, rowId = "") {
     }
 
     if (latestPostedSlug && slug === latestPostedSlug) {
-      sameArticleFallback ||= row;
+      await movePinToEnd(db, row, "same_article_as_latest_posted");
+      skipped.push({
+        row_id: row.row_id,
+        reason: "same_article_as_latest_posted",
+        slug,
+        scheduled_date: row.scheduled_date,
+      });
       continue;
     }
 
     return Response.json(row);
-  }
-
-  if (sameArticleFallback) {
-    return Response.json(sameArticleFallback);
   }
 
   return new Response(null, {

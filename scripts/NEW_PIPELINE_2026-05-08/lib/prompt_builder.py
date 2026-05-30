@@ -311,7 +311,8 @@ Primary keyword: {keyword}
 Variants to use: {variants_str}
 
 Rules:
-- Include the primary keyword in EACH title (natural placement, not forced).
+- Use the primary keyword in 2 of the 4 titles at most. Use close variants, concrete outcomes, or problem language in the others.
+- Do NOT reuse the same subtitle, promise, or repeated phrase across multiple titles. Each pin must sell a different angle.
 - Use 1-2 keyword variants naturally in each description.
 
 # PIN SPECIFICATIONS
@@ -341,6 +342,16 @@ DESCRIPTION: Your scroll-stopping teaser ending with a CTA.
 PIN 2
 TITLE: ...
 (etc.)
+
+# REQUIRED ANGLE DIVERSITY
+The 4 pins must not look or read like duplicates. Use four distinct angles:
+1. problem or mistake
+2. specific technique
+3. result or payoff
+4. practical checklist or timing cue
+
+Bad: four titles that all repeat "The Only Way You Should Ever Cook Prime Rib".
+Good: "No More Cold Centers", "Reverse Sear Timing Chart", "Skip the Grey Ring", "Rest Before You Slice".
 """
 
 
