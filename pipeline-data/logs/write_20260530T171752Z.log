@@ -1,0 +1,13 @@
+[2026-05-30T17:17:52Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-05-30T17:17:52Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260530T171752Z.log
+[2026-05-30T17:17:52Z] topics selected: 1
+[2026-05-30T17:17:52Z]   #  1 [tips     ] kitchen hacks for sink  (slug=kitchen-hacks-for-sink)
+[2026-05-30T17:17:52Z] write_runs.id = 1
+[2026-05-30T17:18:07Z] OK   #1 kitchen-hacks-for-sink  body_words=960 lat=14212ms cost=$0.0053
+[2026-05-30T17:18:07Z] 
+[2026-05-30T17:18:07Z] ============================================================
+[2026-05-30T17:18:07Z] DONE. write_runs.id=1 status=done
+[2026-05-30T17:18:07Z] written=1 dq=0 errors=0 skipped=0
+[2026-05-30T17:18:07Z] tokens in=3,382 out=1,701 cost=$0.0053
+[2026-05-30T17:18:07Z] elapsed: 14.9s (0.2 min)
+[2026-05-30T17:18:07Z] ============================================================
