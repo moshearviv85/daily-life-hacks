@@ -4,8 +4,8 @@ excerpt: Eating alone doesn't have to mean takeout or wasted groceries. Learn ho
 category: tips
 tags: ["budget meals", "cooking for one", "meal prep", "save money", "single serving"]
 image: "/images/budget-meal-ideas-for-one-main.jpg"
-imageAlt: A frittata slice with cherry tomatoes and spinach on a plate next to a cracked egg and fresh vegetables.
-date: 2026-05-29
+imageAlt: A close-up shot of a single serving frittata slice with vegetables, a side salad, and a piece of bread on a white plate.
+date: 2026-05-30
 author: "David Miller"
 featured: false
 faq:
