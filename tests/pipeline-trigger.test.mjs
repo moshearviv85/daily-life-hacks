@@ -105,6 +105,7 @@ test("produce dispatch forwards selected topic ids to GitHub Actions", async (t)
   assert.equal(dispatchBody.inputs.count, "2");
   assert.equal(dispatchBody.inputs.topic_ids, "17,23");
   assert.equal(data.topic_ids, "17,23");
+  assert.match(data.actions_url, /pipeline-produce\.yml/);
 });
 
 test("approve_article dispatches the asset workflow for one slug", async (t) => {

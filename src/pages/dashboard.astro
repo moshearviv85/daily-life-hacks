@@ -2946,7 +2946,7 @@ function renderTopicsList(topics) {
   return `<table class="data-table" style="font-size:.85rem">
     <thead><tr><th style="width:34px"></th><th>#</th><th>Topic</th><th>Category</th><th>Status</th><th>Source</th></tr></thead>
     <tbody>${topics.map((t, i) => `<tr>
-      <td><input type="checkbox" class="topic-select" value="${Number(t.id)}" onchange="updateTopicSelectionSummary()" /></td>
+      <td><input type="checkbox" class="topic-select" value="${Number(t.id)}" data-topic-slug="${escapeHtml(t.slug || '')}" onchange="updateTopicSelectionSummary()" /></td>
       <td style="color:var(--muted)">${i + 1}</td>
       <td>
         <strong>${escapeHtml(t.topic || t.slug || '-')}</strong>
@@ -2963,6 +2963,12 @@ function getSelectedTopicIds() {
   return Array.from(document.querySelectorAll('.topic-select:checked'))
     .map(input => Number.parseInt(input.value, 10))
     .filter(id => Number.isInteger(id) && id > 0);
+}
+
+function getSelectedTopicSlugs() {
+  return Array.from(document.querySelectorAll('.topic-select:checked'))
+    .map(input => input.dataset.topicSlug || '')
+    .filter(Boolean);
 }
 
 function setTopicSelection(checked) {
@@ -3209,9 +3215,41 @@ async function triggerPipeline(action) {
 
 let produceSelectedTopicsInFlight = false;
 
+function pipelineActionsLink(data, label = 'View GitHub Actions') {
+  if (!data?.actions_url) return '';
+  return ` <a href="${escapeHtml(data.actions_url)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;font-weight:700">${label}</a>`;
+}
+
+async function pollPipelineForSlugs(slugs, data, statusEl) {
+  if (!slugs.length) return;
+  const wanted = new Set(slugs);
+  for (let attempt = 1; attempt <= 24; attempt++) {
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    await fetchPipelineStatus();
+    const articles = pipelineData?.articles || [];
+    const found = articles.filter(article => wanted.has(article.slug));
+    if (found.length === slugs.length) {
+      statusEl.style.background = '#f0fdf4';
+      statusEl.style.borderColor = '#bbf7d0';
+      statusEl.style.color = '#166534';
+      statusEl.innerHTML = `Produced ${found.length}/${slugs.length} article(s) on staging. Next: review the article row, then click Approve Article to generate images and pins.${pipelineActionsLink(data)}`;
+      return;
+    }
+    statusEl.style.background = '#fff7ed';
+    statusEl.style.borderColor = '#fed7aa';
+    statusEl.style.color = '#92400e';
+    statusEl.innerHTML = `Pipeline still running or syncing. Found ${found.length}/${slugs.length} article(s) in the dashboard. Refresh ${attempt}/24.${pipelineActionsLink(data)}`;
+  }
+  statusEl.style.background = '#fef2f2';
+  statusEl.style.borderColor = '#fecaca';
+  statusEl.style.color = '#b91c1c';
+  statusEl.innerHTML = `Workflow was dispatched, but the selected article did not appear in the dashboard after 4 minutes. Check the workflow log.${pipelineActionsLink(data)}`;
+}
+
 async function produceSelectedTopics() {
   if (produceSelectedTopicsInFlight) return;
   const ids = getSelectedTopicIds();
+  const selectedSlugs = getSelectedTopicSlugs();
   if (!ids.length) {
     alert('Select at least one topic first.');
     return;
@@ -3244,9 +3282,9 @@ async function produceSelectedTopics() {
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.textContent = `Produce workflow dispatched for ${ids.length} selected topic(s). Output: ${data.outputBranch || 'staging'}.`;
+    statusEl.innerHTML = `Produce workflow dispatched for ${ids.length} selected topic(s). Output: ${data.outputBranch || 'staging'}. Waiting for staging sync...${pipelineActionsLink(data)}`;
     closeModal();
-    fetchPipelineStatus();
+    pollPipelineForSlugs(selectedSlugs, data, statusEl);
   } catch (e) {
     statusEl.style.background = '#fef2f2';
     statusEl.style.borderColor = '#fecaca';

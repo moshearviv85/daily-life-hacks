@@ -175,6 +175,7 @@ export async function onRequestPost(context) {
         message: `${action} workflow dispatched`,
         action,
         workflow: actionConfig.workflow,
+        actions_url: `https://github.com/moshearviv85/daily-life-hacks/actions/workflows/${actionConfig.workflow}`,
         dispatchRef: actionConfig.dispatchRef,
         outputBranch: actionConfig.outputBranch,
         effect: actionConfig.effect,
