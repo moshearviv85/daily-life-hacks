@@ -3246,6 +3246,42 @@ async function pollPipelineForSlugs(slugs, data, statusEl) {
   statusEl.innerHTML = `Workflow was dispatched, but the selected article did not appear in the dashboard after 4 minutes. Check the workflow log.${pipelineActionsLink(data)}`;
 }
 
+function getPipelineArticle(slug) {
+  return (pipelineData?.articles || []).find(article => article.slug === slug);
+}
+
+function articleAssetsReady(article) {
+  return article && Number(article.pin_count || 0) >= 4 && Number(article.pin_images_done || 0) >= 4;
+}
+
+async function pollArticleAssets(slug, data, statusEl) {
+  for (let attempt = 1; attempt <= 36; attempt++) {
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    await fetchPipelineStatus();
+
+    const article = getPipelineArticle(slug);
+    const pinCount = Number(article?.pin_count || 0);
+    const pinImagesDone = Number(article?.pin_images_done || 0);
+    if (articleAssetsReady(article)) {
+      statusEl.style.background = '#f0fdf4';
+      statusEl.style.borderColor = '#bbf7d0';
+      statusEl.style.color = '#166534';
+      statusEl.innerHTML = `Assets ready for ${escapeHtml(slug)}. Hero image and ${pinImagesDone}/4 pin images are visible in the dashboard.${pipelineActionsLink(data)}`;
+      return;
+    }
+
+    statusEl.style.background = '#fff7ed';
+    statusEl.style.borderColor = '#fed7aa';
+    statusEl.style.color = '#92400e';
+    statusEl.innerHTML = `Generating assets for ${escapeHtml(slug)}. Pin metadata: ${pinCount}/4. Pin images: ${pinImagesDone}/4. Refresh ${attempt}/36.${pipelineActionsLink(data)}`;
+  }
+
+  statusEl.style.background = '#fef2f2';
+  statusEl.style.borderColor = '#fecaca';
+  statusEl.style.color = '#b91c1c';
+  statusEl.innerHTML = `Asset workflow was dispatched, but the dashboard still does not show all assets after 6 minutes. Check the workflow log.${pipelineActionsLink(data)}`;
+}
+
 async function produceSelectedTopics() {
   if (produceSelectedTopicsInFlight) return;
   const ids = getSelectedTopicIds();
@@ -3321,8 +3357,8 @@ async function approvePipelineArticle(slug) {
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.textContent = `Asset workflow dispatched for ${slug}. Output: ${data.outputBranch || 'staging'}.`;
-    fetchPipelineStatus();
+    statusEl.innerHTML = `Asset workflow dispatched for ${escapeHtml(slug)}. Output: ${escapeHtml(data.outputBranch || 'staging')}. Waiting for staging sync...${pipelineActionsLink(data)}`;
+    pollArticleAssets(slug, data, statusEl);
   } catch (e) {
     statusEl.style.background = '#fef2f2';
     statusEl.style.borderColor = '#fecaca';

@@ -164,6 +164,8 @@ test("dashboard exposes article approval before image generation", () => {
 
   assert.match(dashboard, /Approve Article/);
   assert.match(dashboard, /function approvePipelineArticle/);
+  assert.match(dashboard, /function pollArticleAssets/);
   assert.match(dashboard, /action: 'approve_article'/);
   assert.match(dashboard, /generate images \+ pin metadata on staging/);
+  assert.match(dashboard, /Waiting for staging sync/);
 });
