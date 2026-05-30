@@ -4,7 +4,7 @@ excerpt: Tired of a perpetually messy kitchen sink? Learn simple, practical hack
 category: tips
 tags: ["kitchen organization", "cleaning hacks", "daily routine", "sink management", "home tips"]
 image: "/images/kitchen-hacks-for-sink-main.jpg"
-imageAlt: Draft image placeholder for Keep Your Kitchen Sink from Becoming a Disaster Zone article hero image
+imageAlt: A sparkling clean stainless steel kitchen sink filled with whole and sliced green limes and yellow lemons, with water droplets on the fruit and basin.
 date: 2026-05-30
 author: "David Miller"
 featured: false
