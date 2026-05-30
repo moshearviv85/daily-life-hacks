@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import vm from "node:vm";
 
 test("pipeline pin staging action queues into the staging lane", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
@@ -73,11 +74,63 @@ test("pipeline dashboard shows thumbnails and can regenerate hero image", () => 
   assert.match(dashboard, /const heroDisplaySrc = `\$\{heroSrc\}\?v=\$\{heroVersion\}`/);
   assert.match(dashboard, /pipeline-hero-status-/);
   assert.match(dashboard, /function watchHeroImageReplacement/);
+  assert.match(dashboard, /const img = document\.getElementById\(`pipeline-hero-img-\$\{slug\}`\);/);
   assert.match(dashboard, /img\.src = `\$\{heroSrc\}\$\{heroSrc\.includes\('\?'\) \? '&' : '\?'\}v=\$\{Date\.now\(\)\}`/);
   assert.match(dashboard, /Workflow sent\. Watching for the new image/);
   assert.match(dashboard, /New image is live\. Thumbnail refreshed/);
   assert.match(dashboard, /refreshed repeatedly without reloading the dashboard/);
   assert.match(dashboard, /width:72px;height:96px/);
+});
+
+test("hero image watcher refreshes the visible thumbnail after table rerender", async () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+  const watchStart = dashboard.indexOf("async function watchHeroImageReplacement");
+  const regenerateStart = dashboard.indexOf("async function regenerateHeroImage", watchStart);
+  const watchSource = watchStart >= 0 && regenerateStart > watchStart
+    ? dashboard.slice(watchStart, regenerateStart)
+    : "";
+
+  assert.ok(watchSource, "watchHeroImageReplacement source should be present");
+
+  const staleImage = { src: "/images/example-main.jpg?v=old" };
+  const visibleImage = { src: "/images/example-main.jpg?v=old" };
+  let delayCompleted = false;
+  let statusMessage = "";
+  let busyState = true;
+  let fetchPipelineStatusCalls = 0;
+
+  const context = {
+    document: {
+      getElementById(id) {
+        assert.equal(id, "pipeline-hero-img-example");
+        return delayCompleted ? visibleImage : staleImage;
+      },
+    },
+    delay: async () => {
+      delayCompleted = true;
+    },
+    getHeroImageSignal: async () => "new-signal",
+    setHeroImageStatus: (_slug, message) => {
+      statusMessage = message;
+    },
+    setHeroImageBusy: (_slug, busy) => {
+      busyState = busy;
+    },
+    fetchPipelineStatus: () => {
+      fetchPipelineStatusCalls += 1;
+    },
+    Date: { now: () => 12345 },
+  };
+
+  vm.createContext(context);
+  vm.runInContext(`${watchSource}; this.watchHeroImageReplacement = watchHeroImageReplacement;`, context);
+  await context.watchHeroImageReplacement("example", "/images/example-main.jpg", "old-signal");
+
+  assert.equal(staleImage.src, "/images/example-main.jpg?v=old");
+  assert.equal(visibleImage.src, "/images/example-main.jpg?v=12345");
+  assert.equal(statusMessage, "New image is live. Thumbnail refreshed.");
+  assert.equal(busyState, false);
+  assert.equal(fetchPipelineStatusCalls, 1);
 });
 
 test("dashboard can select topics and produce selected topics", () => {

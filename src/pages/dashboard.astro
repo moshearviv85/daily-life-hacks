@@ -3329,10 +3329,10 @@ async function getHeroImageSignal(heroSrc) {
 }
 
 async function watchHeroImageReplacement(slug, heroSrc, initialSignal) {
-  const img = document.getElementById(`pipeline-hero-img-${slug}`);
   for (let attempt = 1; attempt <= 18; attempt += 1) {
     await delay(20000);
     const nextSignal = await getHeroImageSignal(heroSrc);
+    const img = document.getElementById(`pipeline-hero-img-${slug}`);
     if (img) {
       img.src = `${heroSrc}${heroSrc.includes('?') ? '&' : '?'}v=${Date.now()}`;
     }
@@ -3384,7 +3384,6 @@ async function regenerateHeroImage(slug, heroSrc) {
     statusEl.textContent = `Hero image workflow dispatched for ${slug}. Target: ${data.outputBranch || 'staging'}. This usually takes 2-4 minutes.`;
     setHeroImageStatus(slug, 'Workflow sent. Watching for the new image...', 'pending');
     watchHeroImageReplacement(slug, heroSrc, initialSignal);
-    fetchPipelineStatus();
   } catch (e) {
     statusEl.style.background = '#fef2f2';
     statusEl.style.borderColor = '#fecaca';
