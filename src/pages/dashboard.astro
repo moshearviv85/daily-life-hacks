@@ -3333,8 +3333,10 @@ async function watchHeroImageReplacement(slug, heroSrc, initialSignal) {
   for (let attempt = 1; attempt <= 18; attempt += 1) {
     await delay(20000);
     const nextSignal = await getHeroImageSignal(heroSrc);
+    if (img) {
+      img.src = `${heroSrc}${heroSrc.includes('?') ? '&' : '?'}v=${Date.now()}`;
+    }
     if (nextSignal && initialSignal && nextSignal !== initialSignal) {
-      if (img) img.src = `${heroSrc}${heroSrc.includes('?') ? '&' : '?'}v=${Date.now()}`;
       setHeroImageStatus(slug, 'New image is live. Thumbnail refreshed.', 'success');
       setHeroImageBusy(slug, false);
       fetchPipelineStatus();
@@ -3344,7 +3346,7 @@ async function watchHeroImageReplacement(slug, heroSrc, initialSignal) {
     setHeroImageStatus(slug, `Still waiting for the new image... about ${minutes} min elapsed.`, 'pending');
   }
 
-  setHeroImageStatus(slug, 'Workflow may still be finishing or the browser may be cached. Refresh the dashboard and open the image again.', 'pending');
+  setHeroImageStatus(slug, 'Still checking. The thumbnail was refreshed repeatedly without reloading the dashboard.', 'pending');
   setHeroImageBusy(slug, false);
 }
 

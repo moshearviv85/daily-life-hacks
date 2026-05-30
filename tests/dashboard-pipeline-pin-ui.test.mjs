@@ -73,8 +73,10 @@ test("pipeline dashboard shows thumbnails and can regenerate hero image", () => 
   assert.match(dashboard, /const heroDisplaySrc = `\$\{heroSrc\}\?v=\$\{heroVersion\}`/);
   assert.match(dashboard, /pipeline-hero-status-/);
   assert.match(dashboard, /function watchHeroImageReplacement/);
+  assert.match(dashboard, /img\.src = `\$\{heroSrc\}\$\{heroSrc\.includes\('\?'\) \? '&' : '\?'\}v=\$\{Date\.now\(\)\}`/);
   assert.match(dashboard, /Workflow sent\. Watching for the new image/);
   assert.match(dashboard, /New image is live\. Thumbnail refreshed/);
+  assert.match(dashboard, /refreshed repeatedly without reloading the dashboard/);
   assert.match(dashboard, /width:72px;height:96px/);
 });
 
