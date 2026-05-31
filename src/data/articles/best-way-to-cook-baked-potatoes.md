@@ -8,7 +8,7 @@ tags:
   - comfort food
   - simple cooking
 image: "/images/best-way-to-cook-baked-potatoes-main.jpg"
-imageAlt: Draft image placeholder for The Only Way You Should Be Cooking Baked Potatoes article hero image
+imageAlt: A perfectly baked russet potato is split open on a wooden board with melting butter and chives inside.
 date: 2026-05-31
 author: "David Miller"
 featured: false
