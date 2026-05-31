@@ -339,37 +339,36 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
     {
       isRecipe && (
         <section
-          class="mb-8 rounded-xl border border-[#F29B30]/50 p-5"
-          style="background-color: var(--card-bg);"
+          class="mb-8 overflow-hidden rounded-2xl border-2 border-[#F29B30] bg-[var(--card-bg)] shadow-sm"
           aria-label="Recipe summary"
         >
-          <div class="grid grid-cols-2 gap-3 text-sm md:grid-cols-3">
+          <div class="bg-[#F29B30] p-4 text-white grid grid-cols-2 md:grid-cols-3 gap-4 text-sm font-medium">
             <div>
-              <span class="block text-xs font-semibold uppercase tracking-wide" style="color: var(--muted-color);">Prep</span>
-              <span class="font-bold" style="color: var(--heading-color);">{article.data.prepTime}</span>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Prep</span>
+              <span>{article.data.prepTime}</span>
             </div>
             <div>
-              <span class="block text-xs font-semibold uppercase tracking-wide" style="color: var(--muted-color);">Cook</span>
-              <span class="font-bold" style="color: var(--heading-color);">{article.data.cookTime}</span>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Cook</span>
+              <span>{article.data.cookTime}</span>
             </div>
             <div>
-              <span class="block text-xs font-semibold uppercase tracking-wide" style="color: var(--muted-color);">Total</span>
-              <span class="font-bold" style="color: var(--heading-color);">{article.data.totalTime}</span>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Total</span>
+              <span>{article.data.totalTime}</span>
             </div>
             <div>
-              <span class="block text-xs font-semibold uppercase tracking-wide" style="color: var(--muted-color);">Serves</span>
-              <span class="font-bold" style="color: var(--heading-color);">{article.data.servings}</span>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Serves</span>
+              <span>{article.data.servings}</span>
             </div>
             <div>
-              <span class="block text-xs font-semibold uppercase tracking-wide" style="color: var(--muted-color);">Calories</span>
-              <span class="font-bold" style="color: var(--heading-color);">{article.data.calories} kcal</span>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Calories</span>
+              <span>{article.data.calories} kcal</span>
             </div>
             <div>
-              <span class="block text-xs font-semibold uppercase tracking-wide" style="color: var(--muted-color);">Difficulty</span>
-              <span class="font-bold" style="color: var(--heading-color);">{article.data.difficulty}</span>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Difficulty</span>
+              <span>{article.data.difficulty}</span>
             </div>
           </div>
-          <p class="mt-4 text-sm leading-relaxed" style="color: var(--muted-color);">
+          <p class="p-5 text-sm leading-relaxed" style="color: var(--muted-color);">
             Full ingredients and instructions are at the end of the article.
           </p>
         </section>
@@ -485,27 +484,37 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
       <Content />
     </div>
 
-    <!-- Tags -->
-    {
-      article.data.tags.length > 0 && (
-        <div class="order-[25] mt-10 flex flex-wrap gap-2">
-          {article.data.tags.map((tag: string) => (
-            <a
-              href={`/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
-              class="px-3 py-1 text-sm rounded-full transition-colors hover:opacity-80"
-              style="background-color: var(--input-bg); color: var(--muted-color); text-decoration: none;"
-            >
-              #{tag}
-            </a>
-          ))}
-        </div>
-      )
-    }
-
     <!-- Recipe Card -->
     {
       isRecipe && (
-        <div class="mb-10 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
+        <div class="order-[30] mt-10 mb-10 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
+          <div class="bg-[#F29B30] p-4 text-white grid grid-cols-2 md:grid-cols-3 gap-4 text-sm font-medium">
+            <div>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Prep</span>
+              <span>{article.data.prepTime}</span>
+            </div>
+            <div>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Cook</span>
+              <span>{article.data.cookTime}</span>
+            </div>
+            <div>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Total</span>
+              <span>{article.data.totalTime}</span>
+            </div>
+            <div>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Serves</span>
+              <span>{article.data.servings}</span>
+            </div>
+            <div>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Calories</span>
+              <span>{article.data.calories} kcal</span>
+            </div>
+            <div>
+              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Difficulty</span>
+              <span>{article.data.difficulty}</span>
+            </div>
+          </div>
+
           <div class="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             <div>
               <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
