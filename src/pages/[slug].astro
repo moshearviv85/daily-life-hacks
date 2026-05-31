@@ -441,8 +441,8 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
 
     <!-- Recipe Card -->
     {
-      isRecipe && (
-        <div class="order-[30] mb-10 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
+      false && isRecipe && (
+        <div class="hidden">
           <div class="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             {/* Ingredients */}
             <div>
@@ -498,6 +498,45 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
               #{tag}
             </a>
           ))}
+        </div>
+      )
+    }
+
+    <!-- Recipe Card -->
+    {
+      isRecipe && (
+        <div class="mb-10 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
+          <div class="p-6 md:p-8 grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
+                <span class="text-[#F29B30]">●</span> Ingredients
+              </h3>
+              <ul class="space-y-2">
+                {article.data.ingredients?.map((ingredient: string) => (
+                  <li class="flex items-start gap-2 text-[var(--text-color)]">
+                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#F29B30] flex-shrink-0" />
+                    <span>{ingredient}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
+                <span class="text-[#F29B30]">●</span> Instructions
+              </h3>
+              <ol class="space-y-4">
+                {article.data.steps?.map((step: string, index: number) => (
+                  <li class="flex gap-3 text-[var(--text-color)]">
+                    <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[#F29B30] text-white flex items-center justify-center text-sm font-bold">
+                      {index + 1}
+                    </span>
+                    <span set:html={inlineMd(step)} />
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
         </div>
       )
     }
