@@ -6,6 +6,10 @@ on:
       slug:
         description: 'Approved article slug to continue into images and pins'
         required: true
+      mode:
+        description: 'assets mode: full or hero_only'
+        required: false
+        default: 'full'
 
 permissions:
   contents: write
@@ -39,18 +43,51 @@ jobs:
       - name: Install Python dependencies
         run: pip install requests pyyaml google-generativeai httpx pillow
 
+      - name: Verify article approval gate
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: |
+          curl -fsS "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-status?key=${DASHBOARD_PASSWORD}" > /tmp/pipeline-status.json
+          python - <<'PY'
+          import json
+          import os
+          import sys
+
+          slug = "${{ inputs.slug }}"
+          mode = "${{ inputs.mode }}"
+          data = json.load(open("/tmp/pipeline-status.json", encoding="utf-8"))
+          article = next((a for a in data.get("articles", []) if a.get("slug") == slug), None)
+          if not article:
+              print(f"ERROR: {slug} is not present in pipeline_articles. Produce it to staging first.", file=sys.stderr)
+              sys.exit(1)
+
+          stage = article.get("stage")
+          allowed = {"deployed"} if mode != "hero_only" else {
+              "deployed", "hero_brief", "pins_brief", "hero_image", "pin_images", "published"
+          }
+          if stage not in allowed:
+              print(
+                  f"ERROR: {slug} is not ready for asset generation. Current stage: {stage}.",
+                  file=sys.stderr,
+              )
+              sys.exit(1)
+          print(f"Article approval gate passed for {slug}: stage={stage}, mode={mode}")
+          PY
+
       - name: Continue approved article into assets
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_KEY }}
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/continue_article_assets.py \
-            --slug "${{ inputs.slug }}"
+            --slug "${{ inputs.slug }}" \
+            ${{ inputs.mode == 'hero_only' && '--hero-only --force-images' || '' }}
 
       - name: Verify generated assets
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/verify_pipeline_artifacts.py \
-            --slug "${{ inputs.slug }}"
+            --slug "${{ inputs.slug }}" \
+            ${{ inputs.mode == 'hero_only' && '--hero-only' || '' }}
 
       - name: Commit and push generated assets
         run: |

@@ -41,6 +41,24 @@ def test_markdown_for_slug_returns_content_when_present(tmp_path):
     assert "body one" in out
 
 
+def test_markdown_for_slug_prefers_reviewed_markdown(tmp_path):
+    db = _make_db(tmp_path, [("foo", "---\ntitle: Draft\n---\ndraft.\n")])
+    con = sqlite3.connect(str(db))
+    con.execute("CREATE TABLE review_outputs (slug TEXT, reviewed_markdown TEXT)")
+    con.execute(
+        "INSERT INTO review_outputs (slug, reviewed_markdown) VALUES (?, ?)",
+        ("foo", "---\ntitle: Reviewed\n---\nreviewed.\n"),
+    )
+    con.commit()
+    con.close()
+
+    out = markdown_for_slug("foo", db_path=db)
+
+    assert out is not None
+    assert "title: Reviewed" in out
+    assert "draft" not in out
+
+
 def test_markdown_for_slug_returns_none_when_missing(tmp_path):
     db = _make_db(tmp_path, [("foo", "x")])
     assert markdown_for_slug("missing", db_path=db) is None
@@ -58,4 +76,14 @@ def test_markdown_for_slug_returns_none_when_markdown_null(tmp_path):
     con.execute("INSERT INTO write_outputs (slug, markdown) VALUES ('foo', NULL)")
     con.commit()
     con.close()
+    assert markdown_for_slug("foo", db_path=db) is None
+
+
+def test_markdown_for_slug_returns_none_when_write_outputs_missing(tmp_path):
+    db = tmp_path / "test.sqlite"
+    con = sqlite3.connect(str(db))
+    con.execute("CREATE TABLE review_outputs (slug TEXT, reviewed_markdown TEXT)")
+    con.commit()
+    con.close()
+
     assert markdown_for_slug("foo", db_path=db) is None

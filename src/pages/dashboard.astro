@@ -534,6 +534,7 @@ const BUILD = {
         <button class="btn btn-sm" onclick="filterPipeline('progress', this)">In Progress</button>
         <button class="btn btn-sm" onclick="filterPipeline('ready', this)">Ready</button>
         <button class="btn btn-sm" onclick="filterPipeline('failed', this)">Failed</button>
+        <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected">Publish selected pins</button>
       </div>
 
       <!-- Pipeline table -->
@@ -1815,31 +1816,19 @@ function openModal(type) {
     case 'pipeline-topics': {
       title.innerHTML = 'Pipeline Topics';
       body.innerHTML = '<div class="empty">Loading topics...</div>';
+      search.style.display = '';
+      search.placeholder = 'Search topics...';
       overlay.classList.add('open');
       document.addEventListener('keydown', escClose);
       fetchPipelineTopics().then(topics => {
+        modalRows = topics || [];
         if (!topics || topics.length === 0) {
           body.innerHTML = '<div class="empty">No topics found.</div>';
           return;
         }
-        const approved = topics.filter(t => t.status === 'approved');
-        const pending = topics.filter(t => t.status === 'pending' || t.status === 'queued');
-        const rejected = topics.filter(t => t.status === 'rejected');
         title.innerHTML = `Pipeline Topics <span class="modal-count">(${topics.length} total)</span>`;
-        let html = '';
-        if (approved.length) {
-          html += `<h4 style="margin:0 0 .5rem;color:var(--success)">Approved (${approved.length})</h4>`;
-          html += renderTopicsList(approved);
-        }
-        if (pending.length) {
-          html += `<h4 style="margin:1rem 0 .5rem;color:var(--warning, #e6a700)">Pending (${pending.length})</h4>`;
-          html += renderTopicsList(pending);
-        }
-        if (rejected.length) {
-          html += `<h4 style="margin:1rem 0 .5rem;color:var(--danger, #d32f2f)">Rejected (${rejected.length})</h4>`;
-          html += renderTopicsList(rejected);
-        }
-        body.innerHTML = html;
+        body.innerHTML = renderPipelineTopicsModal(topics);
+        updateTopicSelectionSummary();
       });
       return;
     }
@@ -1878,6 +1867,15 @@ function modalSearch() {
     case 'images': {
       const rows = modalRows.filter(i => i.slug.toLowerCase().includes(q) || i.title.toLowerCase().includes(q));
       body.innerHTML = renderImagesTable(rows);
+      break;
+    }
+    case 'pipeline-topics': {
+      const rows = modalRows.filter(t => {
+        const haystack = `${t.topic || ''} ${t.slug || ''} ${t.category || ''} ${t.source || ''} ${t.status || ''}`.toLowerCase();
+        return haystack.includes(q);
+      });
+      body.innerHTML = renderPipelineTopicsModal(rows);
+      updateTopicSelectionSummary();
       break;
     }
     case 'subscribers': {
@@ -2810,7 +2808,7 @@ async function triggerPostNow() {
     return;
   }
   btn.disabled = true;
-  btn.textContent = 'מפעיל...';
+  btn.textContent = 'Running...';
   pollEl.style.display = '';
   pollEl.style.background = '#fff7ed';
   pollEl.style.borderColor = '#fed7aa';
@@ -2841,6 +2839,7 @@ async function triggerPostNow() {
 }
 // ── Pipeline Control Center ──────────────────────────────────────────────
 let pipelineData = null;
+const heroImageVersions = new Map();
 
 async function fetchPipelineStatus() {
   try {
@@ -2883,16 +2882,140 @@ async function fetchPipelineTopics() {
   } catch { return []; }
 }
 
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function renderTopicStatus(status) {
+  const colors = {
+    approved: ['#dcfce7', '#166534'],
+    pending: ['#fef3c7', '#92400e'],
+    queued: ['#fef3c7', '#92400e'],
+    rejected: ['#fee2e2', '#991b1b'],
+    produced: ['#dbeafe', '#1e40af'],
+  };
+  const [bg, fg] = colors[status] || ['#f3f4f6', '#374151'];
+  return `<span style="display:inline-block;padding:.12rem .4rem;border-radius:4px;font-size:.68rem;font-weight:700;background:${bg};color:${fg}">${escapeHtml(status || 'unknown')}</span>`;
+}
+
+function renderPipelineTopicsModal(topics) {
+  const approved = topics.filter(t => t.status === 'approved');
+  const pending = topics.filter(t => t.status === 'pending' || t.status === 'queued');
+  const rejected = topics.filter(t => t.status === 'rejected');
+  const produced = topics.filter(t => t.status === 'produced');
+  const other = topics.filter(t => !['approved', 'pending', 'queued', 'rejected', 'produced'].includes(t.status));
+
+  const toolbar = `
+    <div style="position:sticky;top:-1rem;z-index:2;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;margin-bottom:.8rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:.45rem;flex-wrap:wrap">
+        <button class="btn btn-sm" onclick="setTopicSelection(true)">Select visible</button>
+        <button class="btn btn-sm" onclick="setTopicSelection(false)">Clear</button>
+        <span id="topic-selection-summary" style="font-size:.75rem;color:var(--muted)">0 selected</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:.45rem;flex-wrap:wrap">
+        <button class="btn btn-sm" onclick="updateSelectedTopics('approve')">Approve</button>
+        <button class="btn btn-sm" onclick="updateSelectedTopics('reject')" style="background:#ef4444;color:#fff;border-color:#ef4444">Reject</button>
+        <button class="btn btn-sm" onclick="produceSelectedTopics()" style="background:#16a34a;color:#fff;border-color:#16a34a">Produce Selected to Staging</button>
+      </div>
+    </div>`;
+
+  const sections = [
+    ['Approved', approved, 'var(--success)'],
+    ['Pending', pending, 'var(--warning, #e6a700)'],
+    ['Rejected', rejected, 'var(--danger, #d32f2f)'],
+    ['Produced', produced, '#2563eb'],
+    ['Other', other, 'var(--muted)'],
+  ];
+
+  const lists = sections
+    .filter(([, rows]) => rows.length)
+    .map(([label, rows, color]) => `
+      <h4 style="margin:${label === 'Approved' ? '0' : '1rem'} 0 .5rem;color:${color}">${label} (${rows.length})</h4>
+      ${renderTopicsList(rows)}
+    `).join('');
+
+  return toolbar + (lists || '<div class="empty">No topics match this filter.</div>');
+}
+
 function renderTopicsList(topics) {
   return `<table class="data-table" style="font-size:.85rem">
-    <thead><tr><th>#</th><th>Topic</th><th>Category</th><th>Source</th></tr></thead>
+    <thead><tr><th style="width:34px"></th><th>#</th><th>Topic</th><th>Category</th><th>Status</th><th>Source</th></tr></thead>
     <tbody>${topics.map((t, i) => `<tr>
+      <td><input type="checkbox" class="topic-select" value="${Number(t.id)}" data-topic-slug="${escapeHtml(t.slug || '')}" onchange="updateTopicSelectionSummary()" /></td>
       <td style="color:var(--muted)">${i + 1}</td>
-      <td>${t.topic || t.slug || '-'}</td>
-      <td>${t.category || '-'}</td>
-      <td style="color:var(--muted)">${t.source || '-'}</td>
+      <td>
+        <strong>${escapeHtml(t.topic || t.slug || '-')}</strong>
+        <div style="font-size:.68rem;color:var(--muted);font-family:monospace">${escapeHtml(t.slug || '')}</div>
+      </td>
+      <td>${escapeHtml(t.category || '-')}</td>
+      <td>${renderTopicStatus(t.status)}</td>
+      <td style="color:var(--muted)">${escapeHtml(t.source || '-')}</td>
     </tr>`).join('')}</tbody>
   </table>`;
+}
+
+function getSelectedTopicIds() {
+  return Array.from(document.querySelectorAll('.topic-select:checked'))
+    .map(input => Number.parseInt(input.value, 10))
+    .filter(id => Number.isInteger(id) && id > 0);
+}
+
+function getSelectedTopicSlugs() {
+  return Array.from(document.querySelectorAll('.topic-select:checked'))
+    .map(input => input.dataset.topicSlug || '')
+    .filter(Boolean);
+}
+
+function setTopicSelection(checked) {
+  document.querySelectorAll('.topic-select').forEach(input => {
+    input.checked = checked;
+  });
+  updateTopicSelectionSummary();
+}
+
+function updateTopicSelectionSummary() {
+  const summary = document.getElementById('topic-selection-summary');
+  if (!summary) return;
+  const count = getSelectedTopicIds().length;
+  summary.textContent = `${count} selected`;
+}
+
+async function postTopicStatus(action, ids, reason = '') {
+  const res = await fetch(`/api/pipeline-topics?key=${encodeURIComponent(pw)}&action=${action}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ids, reason }),
+  });
+  const data = await res.json();
+  if (!res.ok || !data.ok) {
+    throw new Error(data.error || res.statusText);
+  }
+  return data;
+}
+
+async function updateSelectedTopics(action) {
+  const ids = getSelectedTopicIds();
+  if (!ids.length) {
+    alert('Select at least one topic first.');
+    return;
+  }
+
+  const reason = action === 'reject'
+    ? (prompt('Reject reason?', 'manual rejection') || 'manual rejection')
+    : '';
+
+  try {
+    await postTopicStatus(action, ids, reason);
+    await fetchPipelineStatus();
+    openModal('pipeline-topics');
+  } catch (e) {
+    alert(`Failed: ${e.message}`);
+  }
 }
 
 function renderPipelineTable(filter) {
@@ -2929,11 +3052,14 @@ function renderPipelineTable(filter) {
     const pins = Array.isArray(article.pins) ? article.pins : [];
     const count = `${article.pin_images_done || 0}/${article.pin_count || 0}`;
     if (!pins.length) return count;
+    const dashboardBase = IS_PRODUCTION_DASHBOARD ? 'https://www.daily-life-hacks.com' : 'https://staging.daily-life-hacks.pages.dev';
     const links = pins.map((pin, idx) => {
       const slug = pin.pin_slug || `${article.slug}_v${idx + 1}`;
-      const href = `https://staging.daily-life-hacks.pages.dev/images/pins/${slug}.jpg`;
+      const href = `${dashboardBase}/images/pins/${slug}.jpg`;
       const label = `v${(pin.pin_index ?? idx) + 1}`;
       const publishStatus = pin.publish_status || '';
+      const destination = `${dashboardBase}/${article.slug}/`;
+      const description = pin.description_with_hashtags || pin.description || '';
       const statusBadge = publishStatus
         ? `<span title="Publish status"
             style="display:inline-block;margin:.15rem .2rem 0 0;padding:.1rem .3rem;border-radius:4px;font-size:.58rem;font-weight:700;background:${publishStatus === 'POSTED' ? '#dcfce7' : '#fef3c7'};color:${publishStatus === 'POSTED' ? '#166534' : '#92400e'}">${publishStatus}</span>`
@@ -2941,25 +3067,59 @@ function renderPipelineTable(filter) {
       const publishButton = !publishStatus
         ? `<button onclick="approvePipelinePin('${slug}')"
             title="${IS_PRODUCTION_DASHBOARD ? 'Approve and queue this pin for real publishing' : 'Staging queue only'}"
-            style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'פרסם' : 'בדיקה'}</button>`
+            style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'Publish' : 'Queue'}</button>`
         : '';
-      return `<a href="${href}" target="_blank" rel="noopener"
-        title="${slug}"
-        style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${statusBadge}${publishButton}`;
+      const selectBox = !publishStatus
+        ? `<input type="checkbox" class="pipeline-pin-select" value="${escapeHtml(slug)}" data-article-slug="${escapeHtml(article.slug)}" data-pin-index="${pin.pin_index ?? idx}" title="Select pin for batch publishing" style="vertical-align:middle;margin-right:.25rem">`
+        : '';
+      return `<details style="margin:.28rem 0;padding:.38rem .45rem;border:1px solid #e5e7eb;border-radius:6px;background:#fff">
+        <summary style="cursor:pointer;list-style:none">
+          ${selectBox}<a href="${href}" target="_blank" rel="noopener"
+            title="${escapeHtml(slug)}"
+            style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${statusBadge}${publishButton}
+        </summary>
+        <div style="margin-top:.35rem;font-size:.68rem;line-height:1.35;color:var(--text)">
+          <a href="${href}" target="_blank" rel="noopener">
+            <img src="${href}" alt="${escapeHtml(pin.alt || pin.title || slug)}" loading="lazy" style="width:72px;height:96px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;float:right;margin:0 0 .4rem .5rem">
+          </a>
+          <div><strong>Title:</strong> ${escapeHtml(pin.title || '-')}</div>
+          <div style="margin-top:.18rem"><strong>Description:</strong> ${escapeHtml(description || '-')}</div>
+          <div style="margin-top:.18rem"><strong>Board:</strong> ${escapeHtml(pin.board_name || '-')} <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.board_id || '')}</span></div>
+          <div style="margin-top:.18rem"><strong>Hashtags:</strong> ${escapeHtml(pin.hashtags || '-')}</div>
+          <div style="margin-top:.18rem"><strong>Alt:</strong> ${escapeHtml(pin.alt || '-')}</div>
+          <div style="margin-top:.18rem"><strong>Link:</strong> <a href="${destination}" target="_blank" rel="noopener" style="color:var(--orange)">${escapeHtml(destination)}</a></div>
+        </div>
+      </details>`;
     }).join('');
     return `<div>${count}</div><div>${links}</div>`;
   };
 
   tbody.innerHTML = articles.map(a => {
     const existsInBuild = builtArticleSlugs.has(a.slug);
-    const stagingHref = existsInBuild
+    const articleAvailable = existsInBuild
+      || ['written', 'reviewed', 'deployed', 'published'].includes(a.stage)
+      || Number(a.word_count || 0) > 0;
+    const heroAvailable = articleAssetsReady(a);
+    const dashboardBase = IS_PRODUCTION_DASHBOARD ? 'https://www.daily-life-hacks.com' : 'https://staging.daily-life-hacks.pages.dev';
+    const heroSrc = `${dashboardBase}/images/${a.slug}-main.jpg`;
+    const heroVersion = encodeURIComponent(heroImageVersions.get(a.slug) || a.updated_at || a.stage || 'current');
+    const heroDisplaySrc = `${heroSrc}?v=${heroVersion}`;
+    const stagingHref = articleAvailable
       ? `https://staging.daily-life-hacks.pages.dev/${a.slug}/`
       : "javascript:void(0)";
-    const localHref = existsInBuild ? `/${a.slug}/` : "javascript:void(0)";
-    const linkStyle = existsInBuild ? "color:var(--orange);text-decoration:none" : "color:var(--text);text-decoration:none;cursor:default";
-    const subStyle = existsInBuild ? "color:var(--muted);text-decoration:none" : "color:var(--muted);text-decoration:none;cursor:default";
-    const subLabel = existsInBuild ? "staging" : "not built on staging yet";
-    const localLabel = existsInBuild ? "local/prod path" : "pipeline record only";
+    const localHref = articleAvailable ? `/${a.slug}/` : "javascript:void(0)";
+    const linkStyle = articleAvailable ? "color:var(--orange);text-decoration:none" : "color:var(--text);text-decoration:none;cursor:default";
+    const subStyle = articleAvailable ? "color:var(--muted);text-decoration:none" : "color:var(--muted);text-decoration:none;cursor:default";
+    const subLabel = articleAvailable ? "staging" : "not built on staging yet";
+    const localLabel = articleAvailable ? "local/prod path" : "pipeline record only";
+    const canApproveArticle = articleAvailable
+      && ['reviewed', 'deployed'].includes(a.stage)
+      && (!Array.isArray(a.pins) || a.pins.length === 0);
+    const articleApproval = canApproveArticle
+      ? `<button onclick="approvePipelineArticle('${a.slug}')"
+          title="Approve this staging article and generate hero image plus pin assets"
+          style="margin-top:.25rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.16rem .42rem;font-size:.65rem;font-weight:700;cursor:pointer">Approve Article</button>`
+      : '';
 
     return `
     <tr>
@@ -2973,6 +3133,11 @@ function renderPipelineTable(filter) {
           <a href="${localHref}" target="_blank" rel="noopener"
             style="${subStyle}">${localLabel}</a>
         </div>
+        ${heroAvailable ? `<a href="${heroDisplaySrc}" target="_blank" rel="noopener"><img id="pipeline-hero-img-${a.slug}" src="${heroDisplaySrc}" alt="${escapeHtml(a.slug)} hero" loading="lazy" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.4rem"></a>
+        <button id="pipeline-hero-btn-${a.slug}" onclick="regenerateHeroImage('${a.slug}', '${heroSrc}')" title="Regenerate only the staging hero image"
+          style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">Regenerate image</button>
+        <div id="pipeline-hero-status-${a.slug}" style="display:none;margin-top:.22rem;max-width:150px;font-size:.62rem;line-height:1.25;color:#92400e"></div>` : ''}
+        ${articleApproval}
       </td>
       <td>${a.category}</td>
       <td>${stageBadge(a.stage)}${a.error ? ` <span style="color:#ef4444;font-size:.75rem" title="${a.error}">!</span>` : ''}</td>
@@ -3043,7 +3208,7 @@ async function triggerPipeline(action) {
       statusEl.style.background = '#fef2f2';
       statusEl.style.borderColor = '#fecaca';
       statusEl.style.color = '#b91c1c';
-      statusEl.textContent = `Error: ${data.error || 'Unknown error'}`;
+      statusEl.textContent = `Error: ${data.error || data.gh_body || 'Unknown error'}`;
     }
   } catch (e) {
     statusEl.style.background = '#fef2f2';
@@ -3054,9 +3219,77 @@ async function triggerPipeline(action) {
 
 let produceSelectedTopicsInFlight = false;
 
+function pipelineActionsLink(data, label = 'View GitHub Actions') {
+  if (!data?.actions_url) return '';
+  return ` <a href="${escapeHtml(data.actions_url)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;font-weight:700">${label}</a>`;
+}
+
+async function pollPipelineForSlugs(slugs, data, statusEl) {
+  if (!slugs.length) return;
+  const wanted = new Set(slugs);
+  for (let attempt = 1; attempt <= 24; attempt++) {
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    await fetchPipelineStatus();
+    const articles = pipelineData?.articles || [];
+    const found = articles.filter(article => wanted.has(article.slug));
+    if (found.length === slugs.length) {
+      statusEl.style.background = '#f0fdf4';
+      statusEl.style.borderColor = '#bbf7d0';
+      statusEl.style.color = '#166534';
+      statusEl.innerHTML = `Produced ${found.length}/${slugs.length} article(s) on staging. Next: review the article row, then click Approve Article to generate images and pins.${pipelineActionsLink(data)}`;
+      return;
+    }
+    statusEl.style.background = '#fff7ed';
+    statusEl.style.borderColor = '#fed7aa';
+    statusEl.style.color = '#92400e';
+    statusEl.innerHTML = `Pipeline still running or syncing. Found ${found.length}/${slugs.length} article(s) in the dashboard. Refresh ${attempt}/24.${pipelineActionsLink(data)}`;
+  }
+  statusEl.style.background = '#fef2f2';
+  statusEl.style.borderColor = '#fecaca';
+  statusEl.style.color = '#b91c1c';
+  statusEl.innerHTML = `Workflow was dispatched, but the selected article did not appear in the dashboard after 4 minutes. Check the workflow log.${pipelineActionsLink(data)}`;
+}
+
+function getPipelineArticle(slug) {
+  return (pipelineData?.articles || []).find(article => article.slug === slug);
+}
+
+function articleAssetsReady(article) {
+  return article && Number(article.pin_count || 0) >= 4 && Number(article.pin_images_done || 0) >= 4;
+}
+
+async function pollArticleAssets(slug, data, statusEl) {
+  for (let attempt = 1; attempt <= 36; attempt++) {
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    await fetchPipelineStatus();
+
+    const article = getPipelineArticle(slug);
+    const pinCount = Number(article?.pin_count || 0);
+    const pinImagesDone = Number(article?.pin_images_done || 0);
+    if (articleAssetsReady(article)) {
+      statusEl.style.background = '#f0fdf4';
+      statusEl.style.borderColor = '#bbf7d0';
+      statusEl.style.color = '#166534';
+      statusEl.innerHTML = `Assets ready for ${escapeHtml(slug)}. Hero image and ${pinImagesDone}/4 pin images are visible in the dashboard.${pipelineActionsLink(data)}`;
+      return;
+    }
+
+    statusEl.style.background = '#fff7ed';
+    statusEl.style.borderColor = '#fed7aa';
+    statusEl.style.color = '#92400e';
+    statusEl.innerHTML = `Generating assets for ${escapeHtml(slug)}. Pin metadata: ${pinCount}/4. Pin images: ${pinImagesDone}/4. Refresh ${attempt}/36.${pipelineActionsLink(data)}`;
+  }
+
+  statusEl.style.background = '#fef2f2';
+  statusEl.style.borderColor = '#fecaca';
+  statusEl.style.color = '#b91c1c';
+  statusEl.innerHTML = `Asset workflow was dispatched, but the dashboard still does not show all assets after 6 minutes. Check the workflow log.${pipelineActionsLink(data)}`;
+}
+
 async function produceSelectedTopics() {
   if (produceSelectedTopicsInFlight) return;
   const ids = getSelectedTopicIds();
+  const selectedSlugs = getSelectedTopicSlugs();
   if (!ids.length) {
     alert('Select at least one topic first.');
     return;
@@ -3083,15 +3316,15 @@ async function produceSelectedTopics() {
     });
     const data = await res.json();
     if (!res.ok || !data.ok) {
-      throw new Error(data.error || 'Unknown error');
+      throw new Error(data.error || data.gh_body || 'Unknown error');
     }
 
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.textContent = `Produce workflow dispatched for ${ids.length} selected topic(s). Output: ${data.outputBranch || 'staging'}.`;
+    statusEl.innerHTML = `Produce workflow dispatched for ${ids.length} selected topic(s). Output: ${data.outputBranch || 'staging'}. Waiting for staging sync...${pipelineActionsLink(data)}`;
     closeModal();
-    fetchPipelineStatus();
+    pollPipelineForSlugs(selectedSlugs, data, statusEl);
   } catch (e) {
     statusEl.style.background = '#fef2f2';
     statusEl.style.borderColor = '#fecaca';
@@ -3122,14 +3355,14 @@ async function approvePipelineArticle(slug) {
     });
     const data = await res.json();
     if (!res.ok || !data.ok) {
-      throw new Error(data.error || 'Unknown error');
+      throw new Error(data.error || data.gh_body || 'Unknown error');
     }
 
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.textContent = `Asset workflow dispatched for ${slug}. Output: ${data.outputBranch || 'staging'}.`;
-    fetchPipelineStatus();
+    statusEl.innerHTML = `Asset workflow dispatched for ${escapeHtml(slug)}. Output: ${escapeHtml(data.outputBranch || 'staging')}. Waiting for staging sync...${pipelineActionsLink(data)}`;
+    pollArticleAssets(slug, data, statusEl);
   } catch (e) {
     statusEl.style.background = '#fef2f2';
     statusEl.style.borderColor = '#fecaca';
@@ -3138,11 +3371,153 @@ async function approvePipelineArticle(slug) {
   }
 }
 
-async function approvePipelinePin(pinSlug) {
+function setHeroImageStatus(slug, message, tone = 'pending') {
+  const el = document.getElementById(`pipeline-hero-status-${slug}`);
+  if (!el) return;
+  const colors = { pending: '#92400e', success: '#166534', error: '#b91c1c' };
+  el.style.display = '';
+  el.style.color = colors[tone] || colors.pending;
+  el.textContent = message;
+}
+
+function setHeroImageBusy(slug, busy) {
+  const btn = document.getElementById(`pipeline-hero-btn-${slug}`);
+  if (!btn) return;
+  btn.disabled = busy;
+  btn.style.opacity = busy ? '0.65' : '1';
+  btn.style.cursor = busy ? 'wait' : 'pointer';
+}
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function getHeroImageSignal(heroSrc) {
+  const url = `${heroSrc}${heroSrc.includes('?') ? '&' : '?'}probe=${Date.now()}`;
+  try {
+    const res = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+    if (!res.ok) return '';
+    return [
+      res.headers.get('etag') || '',
+      res.headers.get('last-modified') || '',
+      res.headers.get('content-length') || '',
+    ].join('|');
+  } catch {
+    return '';
+  }
+}
+
+async function watchHeroImageReplacement(slug, heroSrc, initialSignal) {
+  for (let attempt = 1; attempt <= 18; attempt += 1) {
+    await delay(20000);
+    const nextSignal = await getHeroImageSignal(heroSrc);
+    const img = document.getElementById(`pipeline-hero-img-${slug}`);
+    const version = String(Date.now());
+    heroImageVersions.set(slug, version);
+    if (img) {
+      img.src = `${heroSrc}${heroSrc.includes('?') ? '&' : '?'}v=${version}`;
+    }
+    if (nextSignal && initialSignal && nextSignal !== initialSignal) {
+      setHeroImageStatus(slug, 'New image is live. Thumbnail refreshed.', 'success');
+      setHeroImageBusy(slug, false);
+      fetchPipelineStatus();
+      return;
+    }
+    const minutes = Math.ceil((attempt * 20) / 60);
+    setHeroImageStatus(slug, `Still waiting for the new image... about ${minutes} min elapsed.`, 'pending');
+  }
+
+  setHeroImageStatus(slug, 'Still checking. The thumbnail was refreshed repeatedly without reloading the dashboard.', 'pending');
+  setHeroImageBusy(slug, false);
+}
+
+async function regenerateHeroImage(slug, heroSrc) {
+  if (!pw) {
+    alert('Sign in to the dashboard before regenerating an image.');
+    return;
+  }
+  const ok = confirm(`Regenerate the staging hero image?\n\n${slug}\n\nThis creates only a new hero image and updates alt text. It does not change article copy and does not regenerate pins.`);
+  if (!ok) return;
+
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = `Dispatching hero image regeneration for ${slug}...`;
+  setHeroImageBusy(slug, true);
+  setHeroImageStatus(slug, 'Dispatching workflow...', 'pending');
+
+  const initialSignal = await getHeroImageSignal(heroSrc);
+
+  try {
+    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'regenerate_hero', slug }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) throw new Error(data.error || data.gh_body || 'Unknown error');
+
+    statusEl.style.background = '#f0fdf4';
+    statusEl.style.borderColor = '#bbf7d0';
+    statusEl.style.color = '#166534';
+    statusEl.textContent = `Hero image workflow dispatched for ${slug}. Target: ${data.outputBranch || 'staging'}. This usually takes 2-4 minutes.`;
+    setHeroImageStatus(slug, 'Workflow sent. Watching for the new image...', 'pending');
+    watchHeroImageReplacement(slug, heroSrc, initialSignal);
+  } catch (e) {
+    statusEl.style.background = '#fef2f2';
+    statusEl.style.borderColor = '#fecaca';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+    setHeroImageStatus(slug, `Failed: ${e.message}`, 'error');
+    setHeroImageBusy(slug, false);
+  }
+}
+
+function getSelectedPipelinePinsInterleaved() {
+  const selected = Array.from(document.querySelectorAll('.pipeline-pin-select:checked'))
+    .map((input) => ({
+      slug: input.value,
+      article: input.dataset.articleSlug || '',
+      index: Number.parseInt(input.dataset.pinIndex || '0', 10) || 0,
+    }));
+  const buckets = new Map();
+  for (const pin of selected) {
+    if (!buckets.has(pin.article)) buckets.set(pin.article, []);
+    buckets.get(pin.article).push(pin);
+  }
+  for (const bucket of buckets.values()) bucket.sort((a, b) => a.index - b.index);
+  const out = [];
+  while (buckets.size) {
+    for (const [article, bucket] of Array.from(buckets.entries()).sort(([a], [b]) => a.localeCompare(b))) {
+      const next = bucket.shift();
+      if (next) out.push(next.slug);
+      if (!bucket.length) buckets.delete(article);
+    }
+  }
+  return out;
+}
+
+async function approveSelectedPipelinePins() {
+  const pinSlugs = getSelectedPipelinePinsInterleaved();
+  if (!pinSlugs.length) {
+    alert('Select at least one pin first.');
+    return;
+  }
+  const ok = confirm(`Queue ${pinSlugs.length} selected pin(s)?\n\nPins will be interleaved by article to avoid publishing the same topic in a block.`);
+  if (!ok) return;
+
+  for (const slug of pinSlugs) {
+    await approvePipelinePin(slug, { skipConfirm: true });
+  }
+}
+
+async function approvePipelinePin(pinSlug, options = {}) {
   if (!pw) return;
-  const ok = confirm(IS_PRODUCTION_DASHBOARD
-    ? `להכניס את הפין הזה למסילת הפרסום האוטומטי?\n\n${pinSlug}\n\nהוא ייכנס כ-PENDING אחרי כל הפינים שכבר ממתינים. לא יתבצע פרסום מיידי.`
-    : `להכניס את הפין הזה למסילת סטייג'ינג?\n\n${pinSlug}\n\nתיווצר שורת PENDING בסביבת הבדיקה בלבד. לא יופעל GitHub Actions ולא יתבצע פרסום בפינטרסט.`);
+  const ok = options.skipConfirm || confirm(IS_PRODUCTION_DASHBOARD
+    ? `Queue this pin for automatic publishing?\n\n${pinSlug}\n\nIt will enter PENDING after the pins already waiting. It will not publish immediately.`
+    : `Queue this pin in staging?\n\n${pinSlug}\n\nA PENDING staging row will be created only. No GitHub Actions run and no Pinterest post will happen.`);
   if (!ok) return;
 
   const statusEl = document.getElementById('pipeline-trigger-status');
@@ -3151,8 +3526,8 @@ async function approvePipelinePin(pinSlug) {
   statusEl.style.borderColor = '#fed7aa';
   statusEl.style.color = '#92400e';
   statusEl.textContent = IS_PRODUCTION_DASHBOARD
-    ? 'מכניס את הפין למסילת הפרסום האוטומטי...'
-    : 'מכניס את הפין למסילת סטייג׳ינג ללא פרסום...';
+    ? 'Queueing pin for automatic publishing...'
+    : 'Queueing pin in staging without publishing...';
 
   try {
     const res = await fetch(`/api/pipeline-pin-approve?key=${encodeURIComponent(pw)}`, {
@@ -3212,6 +3587,13 @@ async function addManualTopic() {
 }
 window.fetchPipelineStatus = fetchPipelineStatus;
 window.triggerPipeline = triggerPipeline;
+window.setTopicSelection = setTopicSelection;
+window.updateTopicSelectionSummary = updateTopicSelectionSummary;
+window.updateSelectedTopics = updateSelectedTopics;
+window.produceSelectedTopics = produceSelectedTopics;
+window.approvePipelineArticle = approvePipelineArticle;
+window.regenerateHeroImage = regenerateHeroImage;
+window.approveSelectedPipelinePins = approveSelectedPipelinePins;
 window.approvePipelinePin = approvePipelinePin;
 window.addManualTopic = addManualTopic;
 window.filterPipeline = filterPipeline;

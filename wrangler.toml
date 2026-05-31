@@ -1,0 +1,50 @@
+name = "daily-life-hacks"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-02-23"
+
+# Local/preview defaults intentionally point at staging resources.
+[[kv_namespaces]]
+binding = "ROUTES_KV"
+id = "4f1df6fadd5a459e8ffcd52dc64ecf2d"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dlh-subscriptions-staging"
+database_id = "e585ee8b-d1fd-443f-bce7-02d9f710c273"
+
+[[d1_databases]]
+binding = "D8"
+database_name = "dlh-subscriptions-staging"
+database_id = "e585ee8b-d1fd-443f-bce7-02d9f710c273"
+
+[env.preview]
+
+[[env.preview.kv_namespaces]]
+binding = "ROUTES_KV"
+id = "4f1df6fadd5a459e8ffcd52dc64ecf2d"
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "dlh-subscriptions-staging"
+database_id = "e585ee8b-d1fd-443f-bce7-02d9f710c273"
+
+[[env.preview.d1_databases]]
+binding = "D8"
+database_name = "dlh-subscriptions-staging"
+database_id = "e585ee8b-d1fd-443f-bce7-02d9f710c273"
+
+[env.production]
+
+[[env.production.kv_namespaces]]
+binding = "ROUTES_KV"
+id = "4f1df6fadd5a459e8ffcd52dc64ecf2d"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "dlh-subscriptions"
+database_id = "dca15f47-7be7-441f-81ab-f08dfb707226"
+
+[[env.production.d1_databases]]
+binding = "D8"
+database_name = "dlh-subscriptions"
+database_id = "dca15f47-7be7-441f-81ab-f08dfb707226"

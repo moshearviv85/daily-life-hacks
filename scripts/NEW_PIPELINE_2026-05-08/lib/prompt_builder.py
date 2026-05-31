@@ -99,8 +99,9 @@ The FAQ in the frontmatter YAML is a direct AEO asset (it renders as FAQPage str
 """
 
 _LENGTH = """# LENGTH (guidance, not a cap)
-- Aim for a body between 900 and 1200 words. Most articles should land around 1000.
-- Length should be driven by the topic, not by a target. Short topic: short article. Deeper topic: longer article. Don't pad to hit a number and don't chop a useful step to undershoot.
+- For recipes, aim for 1200 to 1600 words in the body before the recipe card. Recipe posts must have enough useful scrolling depth before the ingredients and instructions.
+- For nutrition and tips, aim for 900 to 1200 words. Most non-recipe articles should land around 1000.
+- Length should be driven by usefulness, not fluff. Add practical explanation, decision points, mistakes, storage notes, substitutions, and timing details instead of padding.
 - The reader is scanning from Pinterest. If a paragraph isn't earning its place (isn't giving her a concrete how, why, or "this is what matters"), cut it.
 """
 
@@ -110,6 +111,12 @@ _STRUCTURE = """# STRUCTURE
 - Paragraphs: 2 to 5 sentences. Single-sentence paragraphs are welcome for emphasis.
 - Lists: use sparingly. When used, prefix named options with `**Label:**`.
 - After the final H2 section, write EXACTLY ONE natural closing paragraph, then stop. No "Conclusion" heading, no sign-off, no FAQ section in the body.
+
+Recipe article structure:
+- Do NOT put the full ingredient list or numbered recipe instructions in the body. The site renders them from YAML at the bottom of the article before FAQ.
+- The visible top of the page will show a small recipe details box with prep time, cook time, total time, servings, calories, difficulty, and a note that the full recipe details are at the end. Do not duplicate that box in the body.
+- Before the recipe card, write enough body sections to make the reader scroll: why the method works, timing cues, doneness checks, mistakes to avoid, variations, what to serve with it, storage, and reheating.
+- Treat the body as the useful explanation around the recipe, not the recipe card itself.
 """
 
 _OUTPUT = """# OUTPUT
@@ -311,7 +318,8 @@ Primary keyword: {keyword}
 Variants to use: {variants_str}
 
 Rules:
-- Include the primary keyword in EACH title (natural placement, not forced).
+- Use the primary keyword in 2 of the 4 titles at most. Use close variants, concrete outcomes, or problem language in the others.
+- Do NOT reuse the same subtitle, promise, or repeated phrase across multiple titles. Each pin must sell a different angle.
 - Use 1-2 keyword variants naturally in each description.
 
 # PIN SPECIFICATIONS
@@ -341,6 +349,16 @@ DESCRIPTION: Your scroll-stopping teaser ending with a CTA.
 PIN 2
 TITLE: ...
 (etc.)
+
+# REQUIRED ANGLE DIVERSITY
+The 4 pins must not look or read like duplicates. Use four distinct angles:
+1. problem or mistake
+2. specific technique
+3. result or payoff
+4. practical checklist or timing cue
+
+Bad: four titles that all repeat "The Only Way You Should Ever Cook Prime Rib".
+Good: "No More Cold Centers", "Reverse Sear Timing Chart", "Skip the Grey Ring", "Rest Before You Slice".
 """
 
 
@@ -403,6 +421,12 @@ def build_hero_system() -> str:
 Return a JSON object with:
 - "prompt": a detailed photography brief (lighting, angle, surface, framing, food styling). No em-dash. No emojis.
 - "alt": one factual sentence describing what is literally in the photograph. 30 to 200 chars.
+
+# VISUAL DIRECTION
+- Make the hero image bright, fresh, colorful, and appetizing.
+- Use natural daylight or soft studio light, clean highlights, visible color contrast, and warm food styling.
+- Avoid dark, gloomy, underexposed, gray, muddy, desaturated, vintage, dramatic low-key, or moody lighting.
+- The image should feel alive on a health and recipe site, not somber or editorially bleak.
 """
 
 

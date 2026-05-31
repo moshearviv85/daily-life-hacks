@@ -34,6 +34,13 @@ def _extract_title(markdown: str) -> str | None:
     return title or None
 
 
+def _table_exists(con: sqlite3.Connection, name: str) -> bool:
+    return con.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",
+        (name,),
+    ).fetchone() is not None
+
+
 def fetch_articles_from_sql(db_path: Path | str) -> list[dict]:
     """Return [{slug, title, category, markdown, image_filename}] for every
     write_outputs row with status='written' and disqualified=0. Articles
@@ -42,6 +49,8 @@ def fetch_articles_from_sql(db_path: Path | str) -> list[dict]:
     con = sqlite3.connect(str(db_path))
     try:
         cur = con.cursor()
+        if not _table_exists(con, "write_outputs"):
+            return []
         cur.execute(
             "SELECT slug, category, markdown FROM write_outputs "
             "WHERE status='written' AND disqualified=0 "
@@ -106,6 +115,11 @@ def load_hero_alts_from_sql(db_path: Path | str) -> dict[str, str]:
     without an alt are skipped."""
     con = brief_store.connect(db_path)
     try:
+        exists = con.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='hero_briefs'"
+        ).fetchone()
+        if not exists:
+            return {}
         rows = con.execute(
             "SELECT article_slug, alt FROM hero_briefs WHERE status='ok' AND alt IS NOT NULL AND alt != ''"
         ).fetchall()

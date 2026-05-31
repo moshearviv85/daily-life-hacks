@@ -1,4 +1,10 @@
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import {
+  boardForCategory,
+  descriptionWithHashtags,
+  formatHashtags,
+  hashtagsForPin,
+} from "./_pin-metadata.js";
 
 // functions/api/pipeline-status.js
 /**
@@ -25,8 +31,10 @@ function isProductionRequest(request, env) {
 async function getPinRows(env, stagingRequest) {
   const productionQuery = `
     SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
-            pp.alt, pp.image_status, ps.status AS publish_status, ps.pin_id
+            pp.alt, pp.image_status, pa.category,
+            ps.status AS publish_status, ps.pin_id
       FROM pipeline_pins pp
+      JOIN pipeline_articles pa ON pa.slug = pp.article_slug
       LEFT JOIN pins_schedule ps ON ps.row_id = pp.pin_slug
       ORDER BY pp.article_slug ASC, pp.pin_index ASC
   `;
@@ -38,10 +46,11 @@ async function getPinRows(env, stagingRequest) {
   try {
     return await env.DB.prepare(`
       SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
-              pp.alt, pp.image_status,
+              pp.alt, pp.image_status, pa.category,
               COALESCE(ss.status, ps.status) AS publish_status,
               COALESCE(ss.pin_id, ps.pin_id) AS pin_id
         FROM pipeline_pins pp
+        JOIN pipeline_articles pa ON pa.slug = pp.article_slug
         LEFT JOIN staging_pins_schedule ss ON ss.row_id = pp.pin_slug
         LEFT JOIN pins_schedule ps ON ps.row_id = pp.pin_slug
         ORDER BY pp.article_slug ASC, pp.pin_index ASC
@@ -113,8 +122,17 @@ export async function onRequestGet(context) {
   const pins = pinRows?.results ?? [];
   const pinsByArticle = {};
   for (const pin of pins) {
+    const board = boardForCategory(pin.category);
+    const hashtags = hashtagsForPin(pin, pin.category);
+    const enrichedPin = {
+      ...pin,
+      board_id: board?.id || null,
+      board_name: board?.name || null,
+      hashtags: formatHashtags(hashtags),
+      description_with_hashtags: descriptionWithHashtags(pin.description, hashtags),
+    };
     if (!pinsByArticle[pin.article_slug]) pinsByArticle[pin.article_slug] = [];
-    pinsByArticle[pin.article_slug].push(pin);
+    pinsByArticle[pin.article_slug].push(enrichedPin);
   }
 
   const articleRows = (articles?.results ?? []).map((article) => ({
@@ -131,6 +149,6 @@ export async function onRequestGet(context) {
     },
     topics: topicMap,
     pins: pinMap,
-    pin_rows: pins,
+    pin_rows: Object.values(pinsByArticle).flat(),
   });
 }

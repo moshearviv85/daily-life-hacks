@@ -320,6 +320,23 @@ def test_generate_pin_briefs_duplicate_titles_raises(tmp_path, monkeypatch):
         generate_pin_briefs("demo", llm_call=lambda a: bad)
 
 
+def test_generate_pin_briefs_near_duplicate_title_phrase_raises(tmp_path, monkeypatch):
+    _setup_article(tmp_path, monkeypatch)
+    bad = _good_llm(None)
+    titles = [
+        "No More Cold Centers: The Only Way You Should Ever Cook Prime Rib",
+        "Edge to Edge Perfection: The Only Way You Should Ever Cook Prime Rib",
+        "Skip the Grey Ring: The Only Way You Should Ever Cook Prime Rib",
+        "Reverse Sear: The Only Way You Should Ever Cook Prime Rib",
+    ]
+    for pin, title in zip(bad["pins"], titles):
+        pin["title"] = title
+        pin["prompt"] = f'A prime rib photo. Render the text "{title}" across the top.'
+
+    with pytest.raises(ValueError, match="too similar"):
+        generate_pin_briefs("demo", llm_call=lambda a: bad)
+
+
 def test_generate_pin_briefs_prompt_missing_title_raises(tmp_path, monkeypatch):
     _setup_article(tmp_path, monkeypatch)
     bad = _good_llm(None)

@@ -246,6 +246,27 @@ def test_duplicate_title_in_set_rejected():
         PinBriefSet(article_slug="x", pins=pins)
 
 
+def test_near_duplicate_long_title_phrase_in_set_rejected():
+    titles = [
+        "No More Cold Centers: The Only Way You Should Ever Cook Prime Rib",
+        "Edge to Edge Perfection: The Only Way You Should Ever Cook Prime Rib",
+        "Skip the Grey Ring: The Only Way You Should Ever Cook Prime Rib",
+        "Reverse Sear: The Only Way You Should Ever Cook Prime Rib",
+    ]
+    pins = [
+        PinBrief(
+            slug=f"prime-rib-pin-{i}",
+            title=title,
+            prompt=_prompt_with(title),
+            alt=VALID_ALTS[i],
+            description=VALID_DESCRIPTIONS[i],
+        )
+        for i, title in enumerate(titles)
+    ]
+    with pytest.raises(Exception, match="too similar"):
+        PinBriefSet(article_slug="best-way-to-cook-prime-rib", pins=pins)
+
+
 # ── 11. PinBriefSet article_slug ─────────────────────────────────────────────
 
 def test_pin_brief_set_empty_article_slug_rejected():

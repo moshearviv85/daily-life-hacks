@@ -18,6 +18,7 @@ except ImportError:
 
 
 VALID_HERO_PROMPT = "A wide overhead photo of fresh ingredients on a wooden table with morning light."
+VALID_HERO_ALT = "Fresh hero image showing prepared food on a bright kitchen counter"
 
 
 def test_module_imports():
@@ -82,30 +83,46 @@ def _md(title: str = "Demo", img: str = "/images/demo-main.jpg",
 
 def test_build_article_md_injects_hero_alt():
     article_md = _md(existing_alt="stale alt from writer")
-    out = build_article_md(article_md, hero_alt="Fresh hero alt")
-    assert "Fresh hero alt" in out
+    out = build_article_md(article_md, hero_alt=VALID_HERO_ALT)
+    assert VALID_HERO_ALT in out
     assert "stale alt from writer" not in out
 
 
 def test_build_article_md_cleans_frontmatter():
     article_md = _md()
-    out = build_article_md(article_md, hero_alt="Fresh alt")
+    out = build_article_md(article_md, hero_alt=VALID_HERO_ALT)
     today = date.today().isoformat()
     assert f"date: {today}" in out
     assert 'author: "David Miller"' in out
 
 
 def test_build_article_md_no_hero_alt_keeps_existing():
-    article_md = _md(existing_alt="existing alt")
+    article_md = _md(existing_alt="Existing hero image alt that is already long enough")
     out = build_article_md(article_md, hero_alt=None)
-    assert "existing alt" in out
+    assert "Existing hero image alt that is already long enough" in out
+
+
+def test_build_article_md_no_hero_alt_adds_draft_alt_when_missing():
+    article_md = (
+        "---\n"
+        'title: "Fast Weeknight Dinner Ideas"\n'
+        'category: "recipes"\n'
+        'image: "/images/fast-weeknight-dinner-ideas-main.jpg"\n'
+        "date: 2025-01-01\n"
+        "---\n"
+        "Body.\n"
+    )
+
+    out = build_article_md(article_md, hero_alt=None)
+
+    assert "imageAlt: Draft image placeholder for Fast Weeknight Dinner Ideas article hero image" in out
 
 
 # ── CLI: dry-run ─────────────────────────────────────────────────────────────
 
 def test_cli_dry_run_does_not_write(tmp_path):
     db = _make_pipeline(tmp_path, [("demo", "recipes", _md())])
-    _seed_hero(db, "demo", "Fresh alt")
+    _seed_hero(db, "demo", VALID_HERO_ALT)
     out_dir = tmp_path / "articles"
     out_dir.mkdir()
 
@@ -124,9 +141,9 @@ def test_cli_writes_one_md_per_article(tmp_path):
         ("b", "tips",    _md(title="B")),
         ("c", "nutrition", _md(title="C")),
     ])
-    _seed_hero(db, "a", "Alt A")
-    _seed_hero(db, "b", "Alt B")
-    _seed_hero(db, "c", "Alt C")
+    _seed_hero(db, "a", f"{VALID_HERO_ALT} A")
+    _seed_hero(db, "b", f"{VALID_HERO_ALT} B")
+    _seed_hero(db, "c", f"{VALID_HERO_ALT} C")
     out_dir = tmp_path / "articles"
     out_dir.mkdir()
 
@@ -138,19 +155,19 @@ def test_cli_writes_one_md_per_article(tmp_path):
 
 def test_cli_injects_hero_alt_into_each_file(tmp_path):
     db = _make_pipeline(tmp_path, [("demo", "recipes", _md(existing_alt="stale"))])
-    _seed_hero(db, "demo", "Fresh hero alt")
+    _seed_hero(db, "demo", VALID_HERO_ALT)
     out_dir = tmp_path / "articles"
     out_dir.mkdir()
 
     main(["--db", str(db), "--out-dir", str(out_dir)])
     content = (out_dir / "demo.md").read_text(encoding="utf-8")
-    assert "Fresh hero alt" in content
+    assert VALID_HERO_ALT in content
     assert "stale" not in content
 
 
 def test_cli_overwrites_existing_files(tmp_path):
     db = _make_pipeline(tmp_path, [("demo", "recipes", _md(title="New Version"))])
-    _seed_hero(db, "demo", "Fresh alt")
+    _seed_hero(db, "demo", VALID_HERO_ALT)
     out_dir = tmp_path / "articles"
     out_dir.mkdir()
     (out_dir / "demo.md").write_text("OLD CONTENT", encoding="utf-8")
@@ -166,8 +183,8 @@ def test_cli_filter_by_slug(tmp_path):
         ("a", "recipes", _md()),
         ("b", "tips",    _md()),
     ])
-    _seed_hero(db, "a", "Alt A")
-    _seed_hero(db, "b", "Alt B")
+    _seed_hero(db, "a", f"{VALID_HERO_ALT} A")
+    _seed_hero(db, "b", f"{VALID_HERO_ALT} B")
     out_dir = tmp_path / "articles"
     out_dir.mkdir()
 
@@ -184,7 +201,7 @@ def test_cli_skips_articles_without_title(tmp_path):
         ("bad", "recipes", bad_md),
         ("good", "tips", _md(title="Good")),
     ])
-    _seed_hero(db, "good", "Alt G")
+    _seed_hero(db, "good", VALID_HERO_ALT)
     out_dir = tmp_path / "articles"
     out_dir.mkdir()
 
@@ -197,11 +214,40 @@ def test_cli_skips_articles_without_title(tmp_path):
 def test_cli_works_when_hero_alt_missing(tmp_path):
     """An article without a hero brief should still deploy with whatever
     imageAlt is in the original frontmatter."""
-    db = _make_pipeline(tmp_path, [("demo", "recipes", _md(existing_alt="original"))])
+    db = _make_pipeline(tmp_path, [(
+        "demo",
+        "recipes",
+        _md(existing_alt="Original hero image alt that is already long enough"),
+    )])
     out_dir = tmp_path / "articles"
     out_dir.mkdir()
 
     rc = main(["--db", str(db), "--out-dir", str(out_dir)])
     assert rc == 0
     content = (out_dir / "demo.md").read_text(encoding="utf-8")
-    assert "original" in content
+    assert "Original hero image alt that is already long enough" in content
+
+
+def test_cli_refreshes_existing_slug_from_disk_when_write_outputs_missing(tmp_path):
+    db = tmp_path / "topic.sqlite"
+    con = sqlite3.connect(str(db))
+    con.execute("CREATE TABLE placeholder (id INTEGER)")
+    con.commit()
+    con.close()
+    bcon = brief_store.connect(db)
+    try:
+        brief_store.init_schema(bcon)
+        brief_store.upsert_hero_brief(
+            bcon, article_slug="demo", prompt=VALID_HERO_PROMPT, alt=VALID_HERO_ALT
+        )
+    finally:
+        bcon.close()
+    out_dir = tmp_path / "articles"
+    out_dir.mkdir()
+    (out_dir / "demo.md").write_text(_md(existing_alt="Draft placeholder alt text long enough"), encoding="utf-8")
+
+    rc = main(["--db", str(db), "--out-dir", str(out_dir), "--slug", "demo"])
+
+    assert rc == 0
+    content = (out_dir / "demo.md").read_text(encoding="utf-8")
+    assert VALID_HERO_ALT in content

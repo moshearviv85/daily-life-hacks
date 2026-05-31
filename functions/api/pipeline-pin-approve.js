@@ -1,12 +1,12 @@
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import {
+  boardForCategory,
+  descriptionWithHashtags,
+  formatHashtags,
+  hashtagsForPin,
+} from "./_pin-metadata.js";
 
 const SITE_BASE = "https://www.daily-life-hacks.com";
-
-const CATEGORY_TO_BOARD_ID = {
-  recipes: "1124140825679184032",
-  nutrition: "1124140825679184034",
-  tips: "1124140825679184034",
-};
 
 function isProductionRequest(request, env) {
   const url = new URL(request.url);
@@ -31,8 +31,104 @@ function formatTime(d) {
   return `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`;
 }
 
+function articleSlugFromLink(link) {
+  try {
+    return new URL(link).pathname.replace(/^\/+/, "").split("/")[0] || "";
+  } catch {
+    return "";
+  }
+}
+
+function interleaveRowsByArticle(rows) {
+  const buckets = new Map();
+  const bucketOrder = [];
+
+  for (const row of rows) {
+    const articleSlug = articleSlugFromLink(row.link) || row.row_id;
+    if (!buckets.has(articleSlug)) {
+      buckets.set(articleSlug, []);
+      bucketOrder.push(articleSlug);
+    }
+    buckets.get(articleSlug).push(row);
+  }
+
+  const ordered = [];
+  let lastArticle = "";
+
+  while (buckets.size) {
+    const candidates = bucketOrder
+      .filter((articleSlug) => buckets.has(articleSlug))
+      .map((articleSlug) => ({
+        articleSlug,
+        next: buckets.get(articleSlug)[0],
+      }))
+      .sort((a, b) => {
+        const sameA = a.articleSlug === lastArticle ? 1 : 0;
+        const sameB = b.articleSlug === lastArticle ? 1 : 0;
+        if (sameA !== sameB) return sameA - sameB;
+        return a.next.__slotIndex - b.next.__slotIndex;
+      });
+
+    const chosen = candidates[0];
+    const bucket = buckets.get(chosen.articleSlug);
+    ordered.push(bucket.shift());
+    lastArticle = chosen.articleSlug;
+    if (!bucket.length) buckets.delete(chosen.articleSlug);
+  }
+
+  return ordered;
+}
+
+async function rebalancePendingQueue(db, tableName) {
+  const { results } = await db.prepare(`
+    SELECT row_id, link, scheduled_date, COALESCE(scheduled_time, '00:00') AS scheduled_time, created_at
+      FROM ${tableName}
+     WHERE status = 'PENDING'
+     ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC, created_at ASC, row_id ASC
+  `).all();
+
+  const rows = (results || []).map((row, index) => ({ ...row, __slotIndex: index }));
+  if (rows.length < 2) return;
+
+  const slots = rows.map((row) => ({
+    scheduled_date: row.scheduled_date,
+    scheduled_time: row.scheduled_time,
+  }));
+  const ordered = interleaveRowsByArticle(rows);
+
+  const updates = ordered
+    .map((row, index) => ({ row_id: row.row_id, ...slots[index] }))
+    .filter((next) => {
+      const current = rows.find((row) => row.row_id === next.row_id);
+      return current
+        && (current.scheduled_date !== next.scheduled_date || current.scheduled_time !== next.scheduled_time);
+    });
+
+  for (const update of updates) {
+    await db.prepare(`
+      UPDATE ${tableName}
+         SET scheduled_date = ?, scheduled_time = ?, updated_at = datetime('now')
+       WHERE row_id = ? AND status = 'PENDING'
+    `).bind(update.scheduled_date, update.scheduled_time, update.row_id).run();
+  }
+}
+
 function queueTableName(productionRequest) {
   return productionRequest ? "pins_schedule" : "staging_pins_schedule";
+}
+
+function targetSiteBase(request, productionRequest) {
+  if (productionRequest) return SITE_BASE;
+  return new URL(request.url).origin;
+}
+
+function missingPinFields(pin) {
+  const missing = [];
+  if (!String(pin.title || "").trim()) missing.push("title");
+  if (!String(pin.description || "").trim()) missing.push("description");
+  if (!String(pin.alt || "").trim()) missing.push("alt");
+  if (!String(pin.category || "").trim()) missing.push("category");
+  return missing;
 }
 
 async function ensureStagingQueue(db) {
@@ -127,14 +223,24 @@ export async function onRequestPost(context) {
 
   if (!pin) return json({ error: "Pipeline pin not found" }, 404);
   if (pin.image_status !== "done") return json({ error: "Pin image is not ready" }, 409);
+  const missingFields = missingPinFields(pin);
+  if (missingFields.length) {
+    return json({
+      error: `Pin metadata is incomplete: missing ${missingFields.join(", ")}`,
+      missing_fields: missingFields,
+    }, 409);
+  }
 
-  const boardId = CATEGORY_TO_BOARD_ID[pin.category];
-  if (!boardId) return json({ error: `Unknown article category: ${pin.category}` }, 400);
+  const board = boardForCategory(pin.category);
+  if (!board?.id) return json({ error: `Unknown article category: ${pin.category}` }, 400);
+  const hashtags = hashtagsForPin(pin, pin.category);
+  const fullDescription = descriptionWithHashtags(pin.description, hashtags);
 
   const rowId = pin.pin_slug;
-  const imageUrl = `${SITE_BASE}/images/pins/${pin.pin_slug}.jpg`;
-  const link = `${SITE_BASE}/${pin.article_slug}/`;
   const productionRequest = isProductionRequest(request, env);
+  const siteBase = targetSiteBase(request, productionRequest);
+  const imageUrl = `${siteBase}/images/pins/${pin.pin_slug}.jpg`;
+  const link = `${siteBase}/${pin.article_slug}/`;
   const tableName = queueTableName(productionRequest);
 
   if (!productionRequest) {
@@ -156,9 +262,12 @@ export async function onRequestPost(context) {
       pin_slug: pin.pin_slug,
       article_slug: pin.article_slug,
       title: pin.title,
+      description: fullDescription,
+      hashtags: formatHashtags(hashtags),
       image_url: imageUrl,
       link,
-      board_id: boardId,
+      board_id: board.id,
+      board_name: board.name,
       scheduled_date: existing.scheduled_date || null,
       scheduled_time: existing.scheduled_time || null,
       pin_id: existing.pin_id || null,
@@ -191,14 +300,19 @@ export async function onRequestPost(context) {
   `).bind(
     rowId,
     pin.title || "",
-    pin.description || "",
+    fullDescription,
     pin.alt || "",
     imageUrl,
-    boardId,
+    board.id,
     link,
     scheduledDate,
     scheduledTime,
   ).run();
+
+  await rebalancePendingQueue(env.DB, tableName);
+  const scheduled = await env.DB.prepare(
+    `SELECT scheduled_date, scheduled_time FROM ${tableName} WHERE row_id = ?`,
+  ).bind(rowId).first();
 
   return json({
     ok: true,
@@ -209,11 +323,14 @@ export async function onRequestPost(context) {
     pin_slug: pin.pin_slug,
     article_slug: pin.article_slug,
     title: pin.title,
+    description: fullDescription,
+    hashtags: formatHashtags(hashtags),
     image_url: imageUrl,
     link,
-    board_id: boardId,
-    scheduled_date: scheduledDate,
-    scheduled_time: scheduledTime,
+    board_id: board.id,
+    board_name: board.name,
+    scheduled_date: scheduled?.scheduled_date || scheduledDate,
+    scheduled_time: scheduled?.scheduled_time || scheduledTime,
     status: "PENDING",
     message: productionRequest
       ? "Queued for automatic Pinterest posting."

@@ -246,7 +246,7 @@ def _build_pin_brief_set(slug: str, raw: dict) -> PinBriefSet:
             raise ValueError(f"pin[{i}] is not an object: {p!r}")
         title = (p.get("title") or "").strip()
         prompt = p.get("prompt") or ""
-        alt = _alt_from_prompt(prompt)
+        alt = (p.get("alt") or "").strip()
         description = (p.get("description") or "").strip()
         if not title:
             raise ValueError(f"pin[{i}].title missing or empty")

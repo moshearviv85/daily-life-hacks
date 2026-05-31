@@ -53,6 +53,13 @@ class TestBuildWriteSystem:
         p = build_write_system(category="recipes", slug="test-slug")
         assert "Furthermore" in p
 
+    def test_recipe_prompt_requires_longer_body_and_bottom_recipe_card(self):
+        p = build_write_system(category="recipes", slug="test-slug")
+        assert "1200 to 1600 words" in p
+        assert "site renders them from YAML at the bottom of the article before FAQ" in p
+        assert "small recipe details box" in p
+        assert "Do NOT put the full ingredient list or numbered recipe instructions in the body" in p
+
 
 class TestBuildWriteUser:
     def test_contains_topic(self):
@@ -94,6 +101,12 @@ class TestBuildPinSystem:
     def test_contains_bans(self):
         p = build_pin_system(keyword="test", variants=[])
         assert "em dash" in p.lower() or "em-dash" in p.lower() or "U+2014" in p
+
+    def test_requires_angle_diversity(self):
+        p = build_pin_system(keyword="prime rib", variants=["reverse sear"])
+        assert "Use the primary keyword in 2 of the 4 titles at most" in p
+        assert "Do NOT reuse the same subtitle" in p
+        assert "REQUIRED ANGLE DIVERSITY" in p
 
 
 class TestBuildPinDescSystem:

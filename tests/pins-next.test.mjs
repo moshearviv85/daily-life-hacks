@@ -1,0 +1,224 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+
+import { onRequestGet } from "../functions/api/pins-next.js";
+
+function minutesAgo(minutes) {
+  return new Date(Date.now() - minutes * 60_000)
+    .toISOString()
+    .slice(0, 16)
+    .replace("T", " ") + " UTC";
+}
+
+function makeDb({ latestPosted = null, duePins = [], articleStatus = "PUBLISHED", latestPending = null } = {}) {
+  const queries = [];
+  const updates = [];
+
+  return {
+    queries,
+    updates,
+    prepare(sql) {
+      queries.push(sql);
+      const statement = {
+        args: [],
+        bind(...args) {
+          statement.args = args;
+          return statement;
+        },
+        async first() {
+          if (sql.includes("FROM pins_schedule") && sql.includes("published_date")) {
+            return latestPosted;
+          }
+          if (sql.includes("FROM articles_schedule")) {
+            return { status: articleStatus };
+          }
+          if (sql.includes("ORDER BY scheduled_date DESC")) return latestPending;
+          if (sql.includes("duplicate_posted_copy") || sql.includes("lower(trim(pin_title))")) {
+            return null;
+          }
+          return null;
+        },
+        async all() {
+          if (sql.includes("FROM pins_schedule") && sql.includes("status = 'PENDING'")) {
+            return { results: duePins };
+          }
+          return { results: [] };
+        },
+        async run() {
+          updates.push({ sql, args: statement.args });
+          return { success: true };
+        },
+      };
+      return statement;
+    },
+  };
+}
+
+function makeRequest(path) {
+  return new Request(`https://www.daily-life-hacks.com${path}`);
+}
+
+const duePin = {
+  row_id: "demo-pin",
+  pin_title: "Smart Budget Meal Ideas",
+  pin_description: "Simple budget meal ideas for busy weeknights.",
+  alt_text: "Budget meal prep containers on a kitchen counter",
+  image_url: "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg",
+  board_id: "123",
+  link: "https://www.daily-life-hacks.com/demo-article/",
+  scheduled_date: "2026-05-29",
+  scheduled_time: "10:00",
+};
+
+test("pins-next blocks immediate row publishing during the cooldown window", async () => {
+  const db = makeDb({
+    latestPosted: { row_id: "previous-pin", published_date: minutesAgo(30) },
+    duePins: [duePin],
+  });
+
+  const response = await onRequestGet({
+    request: makeRequest("/api/pins-next?key=test-key&immediate=1&row_id=demo-pin"),
+    env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "110" },
+  });
+
+  assert.equal(response.status, 204);
+  assert.equal(response.headers.get("X-Pins-Reason"), "min_post_interval_not_elapsed");
+  assert.equal(response.headers.get("X-Pins-Last-Posted-Row"), "previous-pin");
+  assert.equal(
+    db.queries.some((sql) => sql.includes("status = 'PENDING'")),
+    false,
+  );
+});
+
+test("pins-next allows immediate row publishing after the cooldown window", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 200 });
+
+  try {
+    const db = makeDb({
+      latestPosted: { row_id: "previous-pin", published_date: minutesAgo(180) },
+      duePins: [duePin],
+    });
+
+    const response = await onRequestGet({
+      request: makeRequest("/api/pins-next?key=test-key&immediate=1&row_id=demo-pin"),
+      env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "110" },
+    });
+
+    assert.equal(response.status, 200);
+    const data = await response.json();
+    assert.equal(data.row_id, "demo-pin");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("pins-next moves pins with unpublished articles to the end of the queue", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 200 });
+
+  try {
+    const db = makeDb({
+      duePins: [duePin],
+      articleStatus: "PENDING",
+      latestPending: { scheduled_date: "2026-05-29", scheduled_time: "20:00" },
+    });
+
+    const response = await onRequestGet({
+      request: makeRequest("/api/pins-next?key=test-key&immediate=1"),
+      env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "0" },
+    });
+
+    assert.equal(response.status, 204);
+    assert.equal(response.headers.get("X-Pins-Reason"), "all_due_pins_blocked_by_safety_checks");
+    assert.equal(db.updates.length, 1);
+    assert.match(db.updates[0].sql, /UPDATE pins_schedule/);
+    assert.equal(db.updates[0].args[0], "2026-05-30");
+    assert.equal(db.updates[0].args[1], "06:00");
+    assert.match(db.updates[0].args[2], /article_not_live/);
+    assert.equal(db.updates[0].args[3], "demo-pin");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("pins-next prefers a different article than the last posted pin", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 200 });
+
+  try {
+    const sameArticlePin = {
+      ...duePin,
+      row_id: "meat-pin-2",
+      link: "https://www.daily-life-hacks.com/high-protein-ground-beef-recipes/",
+      image_url: "https://www.daily-life-hacks.com/images/pins/meat-pin-2.jpg",
+    };
+    const differentArticlePin = {
+      ...duePin,
+      row_id: "salad-pin-1",
+      link: "https://www.daily-life-hacks.com/easy-meal-prep-salads/",
+      image_url: "https://www.daily-life-hacks.com/images/pins/salad-pin-1.jpg",
+    };
+
+    const db = makeDb({
+      latestPosted: {
+        row_id: "meat-pin-1",
+        link: "https://www.daily-life-hacks.com/high-protein-ground-beef-recipes/",
+        published_date: minutesAgo(180),
+      },
+      duePins: [sameArticlePin, differentArticlePin],
+    });
+
+    const response = await onRequestGet({
+      request: makeRequest("/api/pins-next?key=test-key&immediate=1"),
+      env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "110" },
+    });
+
+    assert.equal(response.status, 200);
+    const data = await response.json();
+    assert.equal(data.row_id, "salad-pin-1");
+    assert.equal(db.updates.length, 1);
+    assert.match(db.updates[0].args[2], /same_article_as_latest_posted/);
+    assert.equal(db.updates[0].args[3], "meat-pin-2");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("pins-next moves same-article pin to the end when no other valid pin is due", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 200 });
+
+  try {
+    const db = makeDb({
+      latestPosted: {
+        row_id: "meat-pin-1",
+        link: "https://www.daily-life-hacks.com/high-protein-ground-beef-recipes/",
+        published_date: minutesAgo(180),
+      },
+      latestPending: { scheduled_date: "2026-05-29", scheduled_time: "20:00" },
+      duePins: [{
+        ...duePin,
+        row_id: "meat-pin-2",
+        link: "https://www.daily-life-hacks.com/high-protein-ground-beef-recipes/",
+      }],
+    });
+
+    const response = await onRequestGet({
+      request: makeRequest("/api/pins-next?key=test-key&immediate=1"),
+      env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "110" },
+    });
+
+    assert.equal(response.status, 204);
+    assert.equal(response.headers.get("X-Pins-Reason"), "all_due_pins_blocked_by_safety_checks");
+    assert.equal(response.headers.get("X-Pins-Skip-Reasons"), "same_article_as_latest_posted:1");
+    assert.equal(db.updates.length, 1);
+    assert.match(db.updates[0].sql, /UPDATE pins_schedule/);
+    assert.equal(db.updates[0].args[0], "2026-05-30");
+    assert.equal(db.updates[0].args[1], "06:00");
+    assert.match(db.updates[0].args[2], /same_article_as_latest_posted/);
+    assert.equal(db.updates[0].args[3], "meat-pin-2");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});

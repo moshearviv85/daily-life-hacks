@@ -3,7 +3,7 @@ import test from "node:test";
 
 import { onRequestPost } from "../functions/api/pipeline-pin-approve.js";
 
-function makeDb() {
+function makeDb(pinOverrides = {}) {
   const schedule = new Map();
   const stagingSchedule = new Map();
   let latestPending = null;
@@ -30,6 +30,7 @@ function makeDb() {
                   alt: "Demo alt text",
                   image_status: "done",
                   category: "tips",
+                  ...pinOverrides,
                 };
               }
               if (sql.includes("FROM pins_schedule WHERE row_id")) {
@@ -69,6 +70,14 @@ function makeDb() {
           }
           throw new Error(`Unexpected first() query: ${sql}`);
         },
+        async all() {
+          if (sql.includes("WHERE status = 'PENDING'")) {
+            return {
+              results: Array.from(targetSchedule.values()).filter((row) => row.status === "PENDING"),
+            };
+          }
+          throw new Error(`Unexpected all() query: ${sql}`);
+        },
         async run() {
           if (sql.includes("CREATE TABLE IF NOT EXISTS staging_pins_schedule")) {
             return { success: true };
@@ -106,12 +115,17 @@ test("staging queues a pipeline pin in the staging-only queue without dispatchin
   assert.equal(data.status, "PENDING");
   assert.equal(db.schedule.has("demo-pin"), false);
   assert.equal(db.stagingSchedule.get("demo-pin").status, "PENDING");
+  assert.equal(db.stagingSchedule.get("demo-pin").link, "https://staging.daily-life-hacks.pages.dev/demo-article/");
+  assert.equal(db.stagingSchedule.get("demo-pin").image_url, "https://staging.daily-life-hacks.pages.dev/images/pins/demo-pin.jpg");
+  assert.equal(db.stagingSchedule.get("demo-pin").board_id, "1124140825679184034");
+  assert.match(db.stagingSchedule.get("demo-pin").description, /#KitchenTips/);
+  assert.match(db.stagingSchedule.get("demo-pin").description, /#DailyLifeHacks/);
   assert.equal(fetchCalled, false);
 });
 
 test("production queues a pipeline pin behind the latest pending pin without dispatching", async (t) => {
   const db = makeDb();
-  db.setLatestPending({ scheduled_date: "2026-05-29", scheduled_time: "08:30" });
+  db.setLatestPending({ scheduled_date: "2026-06-01", scheduled_time: "08:30" });
   let fetchCalled = false;
   t.mock.method(globalThis, "fetch", async (_url, init) => {
     fetchCalled = true;
@@ -134,10 +148,11 @@ test("production queues a pipeline pin behind the latest pending pin without dis
   assert.equal(data.queued, true);
   assert.equal(data.triggered, false);
   assert.equal(db.schedule.get("demo-pin").status, "PENDING");
-  assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-05-29");
+  assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-06-01");
   assert.equal(db.schedule.get("demo-pin").scheduled_time, "10:30");
   assert.equal(db.schedule.get("demo-pin").link, "https://www.daily-life-hacks.com/demo-article/");
   assert.equal(db.schedule.get("demo-pin").image_url, "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg");
+  assert.match(db.schedule.get("demo-pin").description, /#KitchenTips/);
   assert.equal(fetchCalled, false);
 });
 
@@ -196,4 +211,22 @@ test("production approve reports an already posted pin without returning an erro
   assert.equal(data.already_exists, true);
   assert.equal(data.status, "POSTED");
   assert.equal(data.pin_id, "123");
+});
+
+test("pin approval blocks incomplete pin metadata before queueing", async () => {
+  const db = makeDb({ description: "" });
+
+  const response = await onRequestPost({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-pin-approve?key=test-key", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pin_slug: "demo-pin", publish_now: true }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", DB: db, CF_PAGES_BRANCH: "main" },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 409);
+  assert.match(data.error, /Pin metadata is incomplete/);
+  assert.equal(db.schedule.has("demo-pin"), false);
 });

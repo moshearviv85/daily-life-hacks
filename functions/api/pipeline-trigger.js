@@ -3,7 +3,7 @@
  * Dispatch a pipeline GitHub Actions workflow by action name.
  * Protected by DASHBOARD_PASSWORD.
  *
- * Body: { action: "discover" | "produce" | "publish" | "approve_article", count?: number, category?: string, topic_ids?: number[], slug?: string }
+ * Body: { action: "discover" | "produce" | "publish" | "approve_article" | "regenerate_hero", count?: number, category?: string, topic_ids?: number[], slug?: string }
  *
  * Note: workflows are dispatched from the default production branch so GitHub can
  * find the workflow files. Content-generation workflows push their generated
@@ -51,7 +51,56 @@ const ACTIONS = {
     outputBranch: "staging",
     effect: "Generates hero image and pin assets for an approved staging article.",
   },
+  regenerate_hero: {
+    workflow: "pipeline-article-assets.yml",
+    dispatchRef: "staging",
+    outputBranch: "staging",
+    effect: "Regenerates only the staging hero image for an approved article.",
+  },
 };
+
+const ASSET_READY_STAGES = new Set(["deployed"]);
+const HERO_REGEN_READY_STAGES = new Set([
+  "deployed",
+  "hero_brief",
+  "pins_brief",
+  "hero_image",
+  "pin_images",
+  "published",
+]);
+
+async function getPipelineArticle(env, slug) {
+  if (!env.DB) return null;
+  return env.DB.prepare(`
+    SELECT slug, stage, category
+      FROM pipeline_articles
+     WHERE slug = ?
+     LIMIT 1
+  `).bind(slug).first();
+}
+
+async function validateArticleAssetGate(env, action, slug) {
+  const article = await getPipelineArticle(env, slug);
+  if (!article) {
+    return {
+      ok: false,
+      status: 404,
+      error: `Article ${slug} was not found in pipeline_articles. Produce it to staging before approving assets.`,
+    };
+  }
+
+  const allowed = action === "regenerate_hero" ? HERO_REGEN_READY_STAGES : ASSET_READY_STAGES;
+  if (!allowed.has(article.stage)) {
+    return {
+      ok: false,
+      status: 409,
+      error: `Article ${slug} is not ready for asset generation. Current stage: ${article.stage}.`,
+      article_stage: article.stage,
+    };
+  }
+
+  return { ok: true, article_stage: article.stage };
+}
 
 export async function onRequestPost(context) {
   const { request, env } = context;
@@ -68,7 +117,7 @@ export async function onRequestPost(context) {
   const action = body.action;
   const actionConfig = ACTIONS[action];
   if (!actionConfig) {
-    return json({ error: `Unknown action: ${action}. Use: discover, produce, publish, approve_article` }, 400);
+    return json({ error: `Unknown action: ${action}. Use: discover, produce, publish, approve_article, regenerate_hero` }, 400);
   }
   if (action === "publish" && !isProductionRequest(env, request)) {
     return json({
@@ -81,12 +130,18 @@ export async function onRequestPost(context) {
   const inputs = {};
   if (body.count) inputs.count = String(body.count);
   if (body.category) inputs.category = body.category;
-  if (action === "approve_article") {
+  if (action === "approve_article" || action === "regenerate_hero") {
     const slug = String(body.slug || "").trim();
     if (!/^[a-z0-9-]{3,120}$/.test(slug)) {
-      return json({ error: "valid slug is required for approve_article" }, 400);
+      return json({ error: `valid slug is required for ${action}` }, 400);
     }
     inputs.slug = slug;
+    if (action === "regenerate_hero") inputs.mode = "hero_only";
+
+    const gate = await validateArticleAssetGate(env, action, slug);
+    if (!gate.ok) {
+      return json({ ok: false, error: gate.error, article_stage: gate.article_stage || null }, gate.status);
+    }
   }
   if (action === "produce" && Array.isArray(body.topic_ids) && body.topic_ids.length) {
     const topicIds = body.topic_ids
@@ -120,6 +175,7 @@ export async function onRequestPost(context) {
         message: `${action} workflow dispatched`,
         action,
         workflow: actionConfig.workflow,
+        actions_url: `https://github.com/moshearviv85/daily-life-hacks/actions/workflows/${actionConfig.workflow}`,
         dispatchRef: actionConfig.dispatchRef,
         outputBranch: actionConfig.outputBranch,
         effect: actionConfig.effect,
@@ -128,8 +184,30 @@ export async function onRequestPost(context) {
       });
     }
     const ghBody = await ghRes.text();
-    return json({ ok: false, gh_status: ghRes.status, gh_body: ghBody }, 400);
+    return json({
+      ok: false,
+      error: summarizeGitHubError(ghBody) || `GitHub dispatch failed with status ${ghRes.status}`,
+      gh_status: ghRes.status,
+      gh_body: ghBody,
+    }, 400);
   } catch (err) {
     return json({ ok: false, error: String(err) }, 500);
+  }
+}
+
+function summarizeGitHubError(body) {
+  const text = String(body || "").trim();
+  if (!text) return "";
+  try {
+    const parsed = JSON.parse(text);
+    const parts = [
+      parsed.message,
+      Array.isArray(parsed.errors)
+        ? parsed.errors.map((err) => err.message || err.field || JSON.stringify(err)).join("; ")
+        : "",
+    ].filter(Boolean);
+    return parts.join(": ");
+  } catch {
+    return text.slice(0, 500);
   }
 }

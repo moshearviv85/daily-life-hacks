@@ -69,6 +69,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--slug", required=True, help="Article slug already deployed to staging.")
     parser.add_argument("--db", default=str(DEFAULT_DB))
     parser.add_argument("--skip-images", action="store_true", help="Generate briefs only, no FAL image calls.")
+    parser.add_argument("--hero-only", action="store_true", help="Regenerate only the hero brief/image and article imageAlt.")
+    parser.add_argument("--force-images", action="store_true", help="Overwrite existing image files.")
     args = parser.parse_args(argv)
 
     load_env()
@@ -89,16 +91,26 @@ def main(argv: list[str] | None = None) -> int:
     log(f"Continuing approved article assets: {args.slug}")
     init_brief_schema(args.db)
 
-    steps = [
-        ("Hero Brief", [py, str(SCRIPT_DIR / "generate_hero_brief.py"), "--slug", args.slug], 120),
-        ("Pin Briefs", [py, str(SCRIPT_DIR / "generate_pin_briefs.py"), "--slug", args.slug], 180),
-    ]
+    hero_brief_cmd = [py, str(SCRIPT_DIR / "generate_hero_brief.py"), "--slug", args.slug]
+    if args.force_images:
+        hero_brief_cmd.append("--force")
+
+    steps = [("Hero Brief", hero_brief_cmd, 120)]
+
+    if not args.hero_only:
+        steps.append(("Pin Briefs", [py, str(SCRIPT_DIR / "generate_pin_briefs.py"), "--slug", args.slug], 180))
 
     if not args.skip_images:
-        steps.extend([
-            ("Hero Image", [py, str(SCRIPT_DIR / "generate_images.py"), "--slug", args.slug], 300),
-            ("Pin Images", [py, str(SCRIPT_DIR / "generate_pin_images.py"), "--slug", args.slug], 600),
-        ])
+        hero_image_cmd = [py, str(SCRIPT_DIR / "generate_images.py"), "--slug", args.slug]
+        if args.force_images:
+            hero_image_cmd.append("--force")
+        steps.append(("Hero Image", hero_image_cmd, 300))
+
+        if not args.hero_only:
+            pin_image_cmd = [py, str(SCRIPT_DIR / "generate_pin_images.py"), "--slug", args.slug]
+            if args.force_images:
+                pin_image_cmd.append("--force")
+            steps.append(("Pin Images", pin_image_cmd, 600))
 
     steps.append((
         "Refresh Article Markdown",
