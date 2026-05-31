@@ -3096,19 +3096,23 @@ function renderPipelineTable(filter) {
 
   tbody.innerHTML = articles.map(a => {
     const existsInBuild = builtArticleSlugs.has(a.slug);
+    const articleAvailable = existsInBuild
+      || ['written', 'reviewed', 'deployed', 'published'].includes(a.stage)
+      || Number(a.word_count || 0) > 0;
+    const heroAvailable = articleAssetsReady(a);
     const dashboardBase = IS_PRODUCTION_DASHBOARD ? 'https://www.daily-life-hacks.com' : 'https://staging.daily-life-hacks.pages.dev';
     const heroSrc = `${dashboardBase}/images/${a.slug}-main.jpg`;
     const heroVersion = encodeURIComponent(heroImageVersions.get(a.slug) || a.updated_at || a.stage || 'current');
     const heroDisplaySrc = `${heroSrc}?v=${heroVersion}`;
-    const stagingHref = existsInBuild
+    const stagingHref = articleAvailable
       ? `https://staging.daily-life-hacks.pages.dev/${a.slug}/`
       : "javascript:void(0)";
-    const localHref = existsInBuild ? `/${a.slug}/` : "javascript:void(0)";
-    const linkStyle = existsInBuild ? "color:var(--orange);text-decoration:none" : "color:var(--text);text-decoration:none;cursor:default";
-    const subStyle = existsInBuild ? "color:var(--muted);text-decoration:none" : "color:var(--muted);text-decoration:none;cursor:default";
-    const subLabel = existsInBuild ? "staging" : "not built on staging yet";
-    const localLabel = existsInBuild ? "local/prod path" : "pipeline record only";
-    const canApproveArticle = existsInBuild
+    const localHref = articleAvailable ? `/${a.slug}/` : "javascript:void(0)";
+    const linkStyle = articleAvailable ? "color:var(--orange);text-decoration:none" : "color:var(--text);text-decoration:none;cursor:default";
+    const subStyle = articleAvailable ? "color:var(--muted);text-decoration:none" : "color:var(--muted);text-decoration:none;cursor:default";
+    const subLabel = articleAvailable ? "staging" : "not built on staging yet";
+    const localLabel = articleAvailable ? "local/prod path" : "pipeline record only";
+    const canApproveArticle = articleAvailable
       && ['reviewed', 'deployed'].includes(a.stage)
       && (!Array.isArray(a.pins) || a.pins.length === 0);
     const articleApproval = canApproveArticle
@@ -3129,7 +3133,7 @@ function renderPipelineTable(filter) {
           <a href="${localHref}" target="_blank" rel="noopener"
             style="${subStyle}">${localLabel}</a>
         </div>
-        ${existsInBuild ? `<a href="${heroDisplaySrc}" target="_blank" rel="noopener"><img id="pipeline-hero-img-${a.slug}" src="${heroDisplaySrc}" alt="${escapeHtml(a.slug)} hero" loading="lazy" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.4rem"></a>
+        ${heroAvailable ? `<a href="${heroDisplaySrc}" target="_blank" rel="noopener"><img id="pipeline-hero-img-${a.slug}" src="${heroDisplaySrc}" alt="${escapeHtml(a.slug)} hero" loading="lazy" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.4rem"></a>
         <button id="pipeline-hero-btn-${a.slug}" onclick="regenerateHeroImage('${a.slug}', '${heroSrc}')" title="Regenerate only the staging hero image"
           style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">Regenerate image</button>
         <div id="pipeline-hero-status-${a.slug}" style="display:none;margin-top:.22rem;max-width:150px;font-size:.62rem;line-height:1.25;color:#92400e"></div>` : ''}

@@ -163,6 +163,10 @@ test("dashboard exposes article approval before image generation", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
   assert.match(dashboard, /Approve Article/);
+  assert.match(dashboard, /const articleAvailable = existsInBuild/);
+  assert.match(dashboard, /const stagingHref = articleAvailable/);
+  assert.match(dashboard, /const canApproveArticle = articleAvailable/);
+  assert.match(dashboard, /const heroAvailable = articleAssetsReady\(a\)/);
   assert.match(dashboard, /function approvePipelineArticle/);
   assert.match(dashboard, /function pollArticleAssets/);
   assert.match(dashboard, /action: 'approve_article'/);
