@@ -1,9 +1,9 @@
 [
   {
-    "id": 136,
-    "topic": "kitchen hacks for sink",
-    "slug": "kitchen-hacks-for-sink",
-    "category": "tips",
+    "id": 140,
+    "topic": "best way to cook baked potatoes",
+    "slug": "best-way-to-cook-baked-potatoes",
+    "category": "recipes",
     "source": "autocomplete",
     "search_volume": null,
     "impressions": null,
@@ -13,6 +13,6 @@
     "dedup_score": null,
     "status": "approved",
     "reject_reason": null,
-    "created_at": "2026-05-25 09:56:47"
+    "created_at": "2026-05-30 17:17:37"
   }
 ]

@@ -1,0 +1,13 @@
+[2026-05-31T03:27:51Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-05-31T03:27:51Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260531T032751Z.log
+[2026-05-31T03:27:51Z] topics selected: 1
+[2026-05-31T03:27:51Z]   #  1 [recipes  ] best way to cook baked potatoes  (slug=best-way-to-cook-baked-potatoes)
+[2026-05-31T03:27:51Z] write_runs.id = 1
+[2026-05-31T03:28:02Z] OK   #1 best-way-to-cook-baked-potatoes  body_words=622 tier2=S-20,S-21 lat=9989ms cost=$0.0054
+[2026-05-31T03:28:02Z] 
+[2026-05-31T03:28:02Z] ============================================================
+[2026-05-31T03:28:02Z] DONE. write_runs.id=1 status=done
+[2026-05-31T03:28:02Z] written=1 dq=0 errors=0 skipped=0
+[2026-05-31T03:28:02Z] tokens in=3,392 out=1,749 cost=$0.0054
+[2026-05-31T03:28:02Z] elapsed: 10.8s (0.2 min)
+[2026-05-31T03:28:02Z] ============================================================
