@@ -4,7 +4,7 @@ excerpt: This one-pot recipe brings together lentils and rice for a flavorful, h
 category: recipes
 tags: ["indian veg", "one pot meal", "vegetarian lunch", "easy weeknight dinner", "lentil recipes"]
 image: "/images/simple-lunch-recipes-indian-veg-main.jpg"
-imageAlt: Draft image placeholder for One-Pot Dal and Rice article hero image
+imageAlt: An overhead shot of a bowl of golden dal and rice, garnished with fresh cilantro and red chili flakes, on a wooden surface.
 date: 2026-05-31
 author: "David Miller"
 featured: false
