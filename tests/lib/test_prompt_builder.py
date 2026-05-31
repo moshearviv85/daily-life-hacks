@@ -53,6 +53,13 @@ class TestBuildWriteSystem:
         p = build_write_system(category="recipes", slug="test-slug")
         assert "Furthermore" in p
 
+    def test_recipe_prompt_requires_longer_body_and_bottom_recipe_card(self):
+        p = build_write_system(category="recipes", slug="test-slug")
+        assert "1200 to 1600 words" in p
+        assert "site renders them from YAML at the bottom of the article before FAQ" in p
+        assert "small recipe details box" in p
+        assert "Do NOT put the full ingredient list or numbered recipe instructions in the body" in p
+
 
 class TestBuildWriteUser:
     def test_contains_topic(self):
