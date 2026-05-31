@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Newsletter from "../components/Newsletter.astro";
+import RecipeMetaBar from "../components/RecipeMetaBar.astro";
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptImage from "../components/OptImage.astro";
@@ -336,45 +337,6 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
       </div>
     )}
 
-    {
-      isRecipe && (
-        <section
-          class="mb-8 overflow-hidden rounded-2xl border-2 border-[#F29B30] bg-[var(--card-bg)] shadow-sm"
-          aria-label="Recipe summary"
-        >
-          <div class="bg-[#F29B30] p-4 text-white grid grid-cols-2 md:grid-cols-3 gap-4 text-sm font-medium">
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Prep</span>
-              <span>{article.data.prepTime}</span>
-            </div>
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Cook</span>
-              <span>{article.data.cookTime}</span>
-            </div>
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Total</span>
-              <span>{article.data.totalTime}</span>
-            </div>
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Serves</span>
-              <span>{article.data.servings}</span>
-            </div>
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Calories</span>
-              <span>{article.data.calories} kcal</span>
-            </div>
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Difficulty</span>
-              <span>{article.data.difficulty}</span>
-            </div>
-          </div>
-          <p class="p-5 text-sm leading-relaxed" style="color: var(--muted-color);">
-            Full ingredients and instructions are at the end of the article.
-          </p>
-        </section>
-      )
-    }
-
     <!-- Rating Preview -->
     <section
       id="rating-widget"
@@ -438,6 +400,27 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
       </div>
     </section>
 
+    {
+      isRecipe && (
+        <section
+          class="mb-8 overflow-hidden rounded-2xl border-2 border-[#F29B30] bg-[var(--card-bg)] shadow-sm"
+          aria-label="Recipe summary"
+        >
+          <RecipeMetaBar
+            prepTime={article.data.prepTime}
+            cookTime={article.data.cookTime}
+            totalTime={article.data.totalTime}
+            servings={article.data.servings}
+            calories={article.data.calories}
+            difficulty={article.data.difficulty}
+          />
+          <p class="p-5 text-sm leading-relaxed" style="color: var(--muted-color);">
+            Full ingredients and instructions are at the end of the article.
+          </p>
+        </section>
+      )
+    }
+
     <!-- Recipe Card -->
     {
       false && isRecipe && (
@@ -488,32 +471,14 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
     {
       isRecipe && (
         <div class="order-[30] mt-10 mb-10 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
-          <div class="bg-[#F29B30] p-4 text-white grid grid-cols-2 md:grid-cols-3 gap-4 text-sm font-medium">
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Prep</span>
-              <span>{article.data.prepTime}</span>
-            </div>
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Cook</span>
-              <span>{article.data.cookTime}</span>
-            </div>
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Total</span>
-              <span>{article.data.totalTime}</span>
-            </div>
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Serves</span>
-              <span>{article.data.servings}</span>
-            </div>
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Calories</span>
-              <span>{article.data.calories} kcal</span>
-            </div>
-            <div>
-              <span class="block text-[11px] font-bold uppercase tracking-wide text-white/80">Difficulty</span>
-              <span>{article.data.difficulty}</span>
-            </div>
-          </div>
+          <RecipeMetaBar
+            prepTime={article.data.prepTime}
+            cookTime={article.data.cookTime}
+            totalTime={article.data.totalTime}
+            servings={article.data.servings}
+            calories={article.data.calories}
+            difficulty={article.data.difficulty}
+          />
 
           <div class="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             <div>
