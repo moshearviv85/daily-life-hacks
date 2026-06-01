@@ -23,7 +23,7 @@ test("recipe card is visually below the article body and before FAQ", () => {
   assert.match(articlePage, /Full ingredients and instructions are at the end of the article/);
   assert.match(articlePage, /class="article-content order-\[20\]"/);
   assert.match(articlePage, /false && isRecipe && \(/);
-  assert.match(articlePage, /class="mb-10 border-2 border-\[#F29B30\]/);
+  assert.match(articlePage, /class="order-\[30\] mt-10 mb-10 border-2 border-\[#F29B30\]/);
   assert.match(articlePage, /Ingredients[\s\S]*Instructions/);
   assert.match(articlePage, /<section class="order-\[40\][\s\S]*Frequently Asked Questions/);
 

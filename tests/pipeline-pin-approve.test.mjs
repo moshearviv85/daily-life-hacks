@@ -70,6 +70,14 @@ function makeDb(pinOverrides = {}) {
           }
           throw new Error(`Unexpected first() query: ${sql}`);
         },
+        async all() {
+          if (sql.includes("WHERE status = 'PENDING'")) {
+            return {
+              results: Array.from(targetSchedule.values()).filter((row) => row.status === "PENDING"),
+            };
+          }
+          throw new Error(`Unexpected all() query: ${sql}`);
+        },
         async run() {
           if (sql.includes("CREATE TABLE IF NOT EXISTS staging_pins_schedule")) {
             return { success: true };
