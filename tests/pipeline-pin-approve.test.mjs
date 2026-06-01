@@ -126,10 +126,13 @@ test("staging queues a pipeline pin in the staging-only queue without dispatchin
 test("production queues a pipeline pin behind the latest pending pin without dispatching", async (t) => {
   const db = makeDb();
   db.setLatestPending({ scheduled_date: "2026-06-01", scheduled_time: "08:30" });
-  let fetchCalled = false;
-  t.mock.method(globalThis, "fetch", async (_url, init) => {
-    fetchCalled = true;
-    return new Response(null, { status: 204 });
+  const checkedUrls = [];
+  t.mock.method(globalThis, "fetch", async (url, init) => {
+    checkedUrls.push({ url: String(url), method: init?.method || "GET" });
+    return new Response(null, {
+      status: 200,
+      headers: { "Content-Type": String(url).endsWith(".jpg") ? "image/jpeg" : "text/html" },
+    });
   });
 
   const response = await onRequestPost({
@@ -153,7 +156,38 @@ test("production queues a pipeline pin behind the latest pending pin without dis
   assert.equal(db.schedule.get("demo-pin").link, "https://www.daily-life-hacks.com/demo-article/");
   assert.equal(db.schedule.get("demo-pin").image_url, "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg");
   assert.match(db.schedule.get("demo-pin").description, /#KitchenTips/);
-  assert.equal(fetchCalled, false);
+  assert.deepEqual(checkedUrls, [
+    { url: "https://www.daily-life-hacks.com/demo-article/", method: "HEAD" },
+    { url: "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg", method: "HEAD" },
+  ]);
+});
+
+test("production blocks queueing when the production article or pin image is missing", async (t) => {
+  const db = makeDb();
+  const checkedUrls = [];
+  t.mock.method(globalThis, "fetch", async (url, init) => {
+    checkedUrls.push({ url: String(url), method: init?.method || "GET" });
+    return new Response(null, { status: 404 });
+  });
+
+  const response = await onRequestPost({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-pin-approve?key=test-key", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pin_slug: "demo-pin", publish_now: true }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", DB: db, CF_PAGES_BRANCH: "main" },
+  });
+
+  assert.equal(response.status, 409);
+  const data = await response.json();
+  assert.equal(data.ok, false);
+  assert.match(data.error, /Production target is not live/);
+  assert.equal(db.schedule.has("demo-pin"), false);
+  assert.deepEqual(checkedUrls, [
+    { url: "https://www.daily-life-hacks.com/demo-article/", method: "HEAD" },
+    { url: "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg", method: "HEAD" },
+  ]);
 });
 
 test("production approve is idempotent for an already queued pin", async () => {

@@ -20,12 +20,34 @@ function json(data, status = 200) {
   });
 }
 
+const STAGING_PIPELINE_BASE = "https://staging.daily-life-hacks.pages.dev";
+
 function isProductionRequest(request, env) {
   const url = new URL(request.url);
   const hostname = url.hostname.toLowerCase();
   const branch = String(env.CF_PAGES_BRANCH || "").toLowerCase();
   const productionHost = hostname === "www.daily-life-hacks.com" || hostname === "daily-life-hacks.com";
   return productionHost || branch === "main";
+}
+
+async function proxyStagingStatus(request) {
+  const url = new URL(request.url);
+  const target = new URL("/api/pipeline-status", STAGING_PIPELINE_BASE);
+  target.search = url.search;
+  const key = url.searchParams.get("key") || request.headers.get("x-api-key") || "";
+  const headers = { Accept: "application/json" };
+  if (key) headers["x-api-key"] = key;
+  const response = await fetch(target.toString(), {
+    headers,
+  });
+  const text = await response.text();
+  let payload;
+  try {
+    payload = text ? JSON.parse(text) : {};
+  } catch {
+    payload = { error: text || `Staging status returned ${response.status}` };
+  }
+  return json({ ...payload, source: "staging" }, response.status);
 }
 
 async function getPinRows(env, stagingRequest) {
@@ -68,6 +90,9 @@ export async function onRequestGet(context) {
   const authorized = await isDashboardAuthorized(env, key, request);
   if (!authorized) {
     return json({ error: "Unauthorized" }, 401);
+  }
+  if (isProductionRequest(request, env)) {
+    return proxyStagingStatus(request);
   }
   if (!env.DB) {
     return json({ error: "DB not bound" }, 500);

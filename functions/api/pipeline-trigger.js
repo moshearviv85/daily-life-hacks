@@ -26,6 +26,8 @@ function isProductionRequest(env, request) {
     || host === "daily-life-hacks.com";
 }
 
+const STAGING_PIPELINE_BASE = "https://staging.daily-life-hacks.pages.dev";
+
 const ACTIONS = {
   discover: {
     workflow: "pipeline-discover.yml",
@@ -79,8 +81,37 @@ async function getPipelineArticle(env, slug) {
   `).bind(slug).first();
 }
 
-async function validateArticleAssetGate(env, action, slug) {
-  const article = await getPipelineArticle(env, slug);
+async function getStagingPipelineArticle(request, slug) {
+  const source = new URL(request.url);
+  const target = new URL("/api/pipeline-status", STAGING_PIPELINE_BASE);
+  const key = source.searchParams.get("key") || request.headers.get("x-api-key") || "";
+  if (key) target.searchParams.set("key", key);
+
+  const headers = { Accept: "application/json" };
+  if (key) headers["x-api-key"] = key;
+  const response = await fetch(target.toString(), { headers });
+  if (!response.ok) {
+    return {
+      error: `Could not read staging pipeline status before asset generation. Staging returned ${response.status}.`,
+    };
+  }
+  const data = await response.json().catch(() => ({}));
+  const article = (data.articles || []).find((row) => row.slug === slug);
+  return { article };
+}
+
+async function validateArticleAssetGate(env, request, action, slug) {
+  const articleResult = isProductionRequest(env, request)
+    ? await getStagingPipelineArticle(request, slug)
+    : { article: await getPipelineArticle(env, slug) };
+  if (articleResult.error) {
+    return {
+      ok: false,
+      status: 502,
+      error: articleResult.error,
+    };
+  }
+  const article = articleResult.article;
   if (!article) {
     return {
       ok: false,
@@ -138,7 +169,7 @@ export async function onRequestPost(context) {
     inputs.slug = slug;
     if (action === "regenerate_hero") inputs.mode = "hero_only";
 
-    const gate = await validateArticleAssetGate(env, action, slug);
+    const gate = await validateArticleAssetGate(env, request, action, slug);
     if (!gate.ok) {
       return json({ ok: false, error: gate.error, article_stage: gate.article_stage || null }, gate.status);
     }
