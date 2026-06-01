@@ -3101,7 +3101,8 @@ function renderPipelineTable(filter) {
     const articleAvailable = existsInBuild
       || ['written', 'reviewed', 'deployed', 'published'].includes(a.stage)
       || Number(a.word_count || 0) > 0;
-    const heroAvailable = builtHeroSlugs.has(a.slug);
+    const heroAvailable = builtHeroSlugs.has(a.slug)
+      || (articleAvailable && ['deployed', 'hero_brief', 'pins_brief', 'hero_image', 'pin_images', 'published'].includes(a.stage));
     const heroSrc = `${pipelineAssetBase}/images/${a.slug}-main.jpg`;
     const heroVersion = encodeURIComponent(heroImageVersions.get(a.slug) || a.updated_at || a.stage || 'current');
     const heroDisplaySrc = `${heroSrc}?v=${heroVersion}`;
@@ -3134,10 +3135,10 @@ function renderPipelineTable(filter) {
           <a href="${localHref}" target="_blank" rel="noopener"
             style="${subStyle}">${localLabel}</a>
         </div>
-        ${heroAvailable ? `<a href="${heroDisplaySrc}" target="_blank" rel="noopener"><img id="pipeline-hero-img-${a.slug}" src="${heroDisplaySrc}" alt="${escapeHtml(a.slug)} hero" loading="lazy" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.4rem"></a>
+        ${heroAvailable ? `<div data-pipeline-hero="${a.slug}"><a href="${heroDisplaySrc}" target="_blank" rel="noopener"><img id="pipeline-hero-img-${a.slug}" src="${heroDisplaySrc}" alt="${escapeHtml(a.slug)} hero" loading="lazy" onerror="var p=this.closest('[data-pipeline-hero]');if(p)p.remove();" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.4rem"></a>
         <button id="pipeline-hero-btn-${a.slug}" onclick="regenerateHeroImage('${a.slug}', '${heroSrc}')" title="Regenerate only the staging hero image"
           style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">Regenerate image</button>
-        <div id="pipeline-hero-status-${a.slug}" style="display:none;margin-top:.22rem;max-width:150px;font-size:.62rem;line-height:1.25;color:#92400e"></div>` : ''}
+        <div id="pipeline-hero-status-${a.slug}" style="display:none;margin-top:.22rem;max-width:150px;font-size:.62rem;line-height:1.25;color:#92400e"></div></div>` : ''}
         ${articleApproval}
       </td>
       <td>${a.category}</td>
