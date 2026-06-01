@@ -16,12 +16,51 @@ function json(data, status = 200) {
   });
 }
 
+const STAGING_PIPELINE_BASE = "https://staging.daily-life-hacks.pages.dev";
+
+function isProductionRequest(request, env) {
+  const url = new URL(request.url);
+  const hostname = url.hostname.toLowerCase();
+  const branch = String(env.CF_PAGES_BRANCH || "").toLowerCase();
+  return hostname === "www.daily-life-hacks.com" || hostname === "daily-life-hacks.com" || branch === "main";
+}
+
+async function proxyStagingTopics(request) {
+  const source = new URL(request.url);
+  const target = new URL("/api/pipeline-topics", STAGING_PIPELINE_BASE);
+  target.search = source.search;
+  const key = source.searchParams.get("key") || request.headers.get("x-api-key") || "";
+
+  const init = {
+    method: request.method,
+    headers: { Accept: "application/json" },
+  };
+  if (key) init.headers["x-api-key"] = key;
+  if (request.method !== "GET" && request.method !== "HEAD") {
+    init.headers["Content-Type"] = request.headers.get("Content-Type") || "application/json";
+    init.body = await request.text();
+  }
+
+  const response = await fetch(target.toString(), init);
+  const text = await response.text();
+  let payload;
+  try {
+    payload = text ? JSON.parse(text) : {};
+  } catch {
+    payload = { error: text || `Staging topics returned ${response.status}` };
+  }
+  return json({ ...payload, source: "staging" }, response.status);
+}
+
 export async function onRequestGet(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const key = url.searchParams.get("key") || "";
   if (!(await isDashboardAuthorized(env, key, request))) {
     return json({ error: "Unauthorized" }, 401);
+  }
+  if (isProductionRequest(request, env)) {
+    return proxyStagingTopics(request);
   }
 
   const status = url.searchParams.get("status") || null;
@@ -44,6 +83,9 @@ export async function onRequestPost(context) {
   const key = url.searchParams.get("key") || "";
   if (!(await isDashboardAuthorized(env, key, request))) {
     return json({ error: "Unauthorized" }, 401);
+  }
+  if (isProductionRequest(request, env)) {
+    return proxyStagingTopics(request);
   }
 
   const action = url.searchParams.get("action");

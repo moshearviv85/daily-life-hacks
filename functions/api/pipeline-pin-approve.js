@@ -131,6 +131,47 @@ function missingPinFields(pin) {
   return missing;
 }
 
+async function probeUrl(url, expectedType) {
+  const checks = [
+    { method: "HEAD" },
+    { method: "GET" },
+  ];
+
+  let last = { ok: false, status: 0, contentType: "" };
+  for (const init of checks) {
+    const response = await fetch(url, init);
+    const contentType = response.headers.get("Content-Type") || "";
+    last = { ok: response.ok, status: response.status, contentType };
+    if (response.ok) {
+      const matchesType = expectedType === "image"
+        ? contentType.toLowerCase().startsWith("image/")
+        : contentType.toLowerCase().includes("text/html");
+      if (matchesType) return { ...last, ok: true };
+      if (init.method === "GET") return { ...last, ok: false };
+    }
+    if (response.status !== 405 && response.status !== 501) break;
+  }
+  return last;
+}
+
+async function validateProductionTarget(link, imageUrl) {
+  const [article, image] = await Promise.all([
+    probeUrl(link, "html"),
+    probeUrl(imageUrl, "image"),
+  ]);
+
+  if (article.ok && image.ok) {
+    return { ok: true, article, image };
+  }
+
+  return {
+    ok: false,
+    article,
+    image,
+    error: "Production target is not live. The article page and pin image must both return production 200 before this pin can be queued.",
+  };
+}
+
 async function ensureStagingQueue(db) {
   await db.prepare(`
     CREATE TABLE IF NOT EXISTS staging_pins_schedule (
@@ -276,6 +317,22 @@ export async function onRequestPost(context) {
         ? "Pin is already posted."
         : "Pin is already queued for automatic Pinterest posting.",
     });
+  }
+
+  if (productionRequest) {
+    const liveTarget = await validateProductionTarget(link, imageUrl);
+    if (!liveTarget.ok) {
+      return json({
+        ok: false,
+        error: liveTarget.error,
+        article_url: link,
+        image_url: imageUrl,
+        article_status: liveTarget.article.status,
+        article_content_type: liveTarget.article.contentType,
+        image_status_code: liveTarget.image.status,
+        image_content_type: liveTarget.image.contentType,
+      }, 409);
+    }
   }
 
   const { scheduledDate, scheduledTime } = await nextQueueSlot(env.DB, tableName);

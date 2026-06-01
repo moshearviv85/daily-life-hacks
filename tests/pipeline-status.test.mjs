@@ -65,3 +65,41 @@ test("pipeline status attaches pin rows to their article", async () => {
   assert.match(data.articles[0].pins[0].description_with_hashtags, /#DailyLifeHacks/);
   assert.equal(data.pin_rows.length, 2);
 });
+
+test("production dashboard reads pipeline status from staging instead of production D1", async (t) => {
+  const stagingPayload = {
+    articles: [{ slug: "staging-article", pins: [] }],
+    summary: { total: 1, by_stage: { deployed: 1 }, by_category: {} },
+    topics: { approved: 3 },
+    pins: {},
+    pin_rows: [],
+  };
+  const fetched = [];
+  t.mock.method(globalThis, "fetch", async (url) => {
+    fetched.push(String(url));
+    return new Response(JSON.stringify(stagingPayload), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  });
+
+  const response = await onRequestGet({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-status?key=test-key"),
+    env: {
+      DASHBOARD_PASSWORD: "test-key",
+      CF_PAGES_BRANCH: "main",
+      DB: {
+        prepare() {
+          throw new Error("production DB should not be queried for pipeline status");
+        },
+      },
+    },
+  });
+
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  assert.equal(data.source, "staging");
+  assert.equal(data.articles[0].slug, "staging-article");
+  assert.equal(fetched.length, 1);
+  assert.match(fetched[0], /^https:\/\/staging\.daily-life-hacks\.pages\.dev\/api\/pipeline-status\?key=test-key$/);
+});

@@ -143,6 +143,49 @@ test("approve_article dispatches the asset workflow for one slug", async (t) => 
   assert.equal(data.slug, "demo-article");
 });
 
+test("production approve_article gates against staging pipeline state before dispatch", async (t) => {
+  const originalFetch = globalThis.fetch;
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  const urls = [];
+  let dispatchBody = null;
+  globalThis.fetch = async (url, init) => {
+    urls.push(String(url));
+    if (String(url).startsWith("https://staging.daily-life-hacks.pages.dev/api/pipeline-status")) {
+      return new Response(JSON.stringify({
+        articles: [{ slug: "demo-article", stage: "deployed", category: "tips" }],
+      }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+    dispatchBody = JSON.parse(init.body);
+    return new Response(null, { status: 204 });
+  };
+
+  const response = await onRequestPost({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-trigger?key=test-key", {
+      method: "POST",
+      body: JSON.stringify({ action: "approve_article", slug: "demo-article" }),
+    }),
+    env: {
+      DASHBOARD_PASSWORD: "test-key",
+      GH_PAT: "gh-token",
+      CF_PAGES_BRANCH: "main",
+      DB: makePipelineArticleDb("written"),
+    },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 200);
+  assert.equal(data.ok, true);
+  assert.equal(dispatchBody.inputs.slug, "demo-article");
+  assert.match(urls[0], /^https:\/\/staging\.daily-life-hacks\.pages\.dev\/api\/pipeline-status\?key=test-key$/);
+  assert.match(urls[1], /pipeline-article-assets\.yml/);
+});
+
 test("approve_article blocks asset generation for an article that is not ready for review", async (t) => {
   const originalFetch = globalThis.fetch;
   t.after(() => {
