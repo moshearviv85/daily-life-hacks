@@ -1,0 +1,13 @@
+[2026-06-01T05:00:41Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-01T05:00:41Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260601T050041Z.log
+[2026-06-01T05:00:41Z] topics selected: 1
+[2026-06-01T05:00:41Z]   #  1 [tips     ] how to store fresh ginger  (slug=how-to-store-fresh-ginger)
+[2026-06-01T05:00:41Z] write_runs.id = 1
+[2026-06-01T05:00:50Z] OK   #1 how-to-store-fresh-ginger  body_words=786 tier2=S-20,S-21 lat=9188ms cost=$0.0048
+[2026-06-01T05:00:50Z] 
+[2026-06-01T05:00:50Z] ============================================================
+[2026-06-01T05:00:50Z] DONE. write_runs.id=1 status=done
+[2026-06-01T05:00:50Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-01T05:00:50Z] tokens in=3,571 out=1,473 cost=$0.0048
+[2026-06-01T05:00:50Z] elapsed: 9.6s (0.2 min)
+[2026-06-01T05:00:50Z] ============================================================
