@@ -55,10 +55,26 @@ class TestBuildWriteSystem:
 
     def test_recipe_prompt_requires_longer_body_and_bottom_recipe_card(self):
         p = build_write_system(category="recipes", slug="test-slug")
-        assert "1200 to 1600 words" in p
-        assert "site renders them from YAML at the bottom of the article before FAQ" in p
-        assert "small recipe details box" in p
-        assert "Do NOT put the full ingredient list or numbered recipe instructions in the body" in p
+        assert "1200 to 1600 useful body words" in p
+        assert "recipe card at the bottom before FAQ" in p
+        assert "Do not duplicate the top recipe details box" in p
+        assert "Put ingredients, steps, times, servings, calories, and difficulty in YAML only" in p
+
+    def test_article_prompt_uses_general_opening_guidance_without_sample_hooks(self):
+        p = build_write_system(category="recipes", slug="test-slug")
+        assert "Let the first sentence come from the topic itself" in p
+        assert "Do not copy or closely mimic phrasing from this prompt" in p
+        assert "You know those nights" not in p
+        assert "What David Sounds Like" not in p
+        assert "BAD (generic AI)" not in p
+
+    def test_article_prompt_is_concise_and_not_seo_conflicted(self):
+        p = build_write_system(category="recipes", slug="test-slug")
+        assert "Don't write for SEO robots" not in p
+        assert "# SEO / AEO / GEO" not in p
+        assert "# DISCOVERY" in p
+        assert "Never force keywords over readability" in p
+        assert len(p) < 9000
 
 
 class TestBuildWriteUser:
