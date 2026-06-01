@@ -168,6 +168,8 @@ test("dashboard exposes article approval before image generation", () => {
   assert.match(dashboard, /const canApproveArticle = articleAvailable/);
   assert.match(dashboard, /const builtHeroSlugs = new Set\(BUILD\.images\?\.webSlugs \|\| \[\]\)/);
   assert.match(dashboard, /const heroAvailable = builtHeroSlugs\.has\(a\.slug\)/);
+  assert.match(dashboard, /data-pipeline-hero="\$\{a\.slug\}"/);
+  assert.match(dashboard, /onerror="var p=this\.closest/);
   assert.match(dashboard, /function approvePipelineArticle/);
   assert.match(dashboard, /function pollArticleAssets/);
   assert.match(dashboard, /action: 'approve_article'/);
