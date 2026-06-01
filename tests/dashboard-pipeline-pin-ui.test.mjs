@@ -54,7 +54,7 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /<strong>Board:<\/strong>/);
   assert.match(dashboard, /<strong>Hashtags:<\/strong>/);
   assert.match(dashboard, /<strong>Alt:<\/strong>/);
-  assert.match(dashboard, /const dashboardBase = IS_PRODUCTION_DASHBOARD/);
+  assert.match(dashboard, /const pipelineAssetBase = 'https:\/\/staging\.daily-life-hacks\.pages\.dev'/);
   assert.match(dashboard, /class="pipeline-pin-select"/);
   assert.match(dashboard, /Publish selected pins/);
   assert.match(dashboard, /function getSelectedPipelinePinsInterleaved/);
@@ -166,7 +166,8 @@ test("dashboard exposes article approval before image generation", () => {
   assert.match(dashboard, /const articleAvailable = existsInBuild/);
   assert.match(dashboard, /const stagingHref = articleAvailable/);
   assert.match(dashboard, /const canApproveArticle = articleAvailable/);
-  assert.match(dashboard, /const heroAvailable = articleAssetsReady\(a\)/);
+  assert.match(dashboard, /const builtHeroSlugs = new Set\(BUILD\.images\?\.webSlugs \|\| \[\]\)/);
+  assert.match(dashboard, /const heroAvailable = builtHeroSlugs\.has\(a\.slug\)/);
   assert.match(dashboard, /function approvePipelineArticle/);
   assert.match(dashboard, /function pollArticleAssets/);
   assert.match(dashboard, /action: 'approve_article'/);

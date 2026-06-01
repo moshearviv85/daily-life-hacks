@@ -22,6 +22,10 @@ function json(data, status = 200) {
   });
 }
 
+function nullable(value) {
+  return value === undefined || value === null || value === "" ? null : value;
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
@@ -41,7 +45,12 @@ export async function onRequestPost(context) {
     return json({ error: "Invalid JSON" }, 400);
   }
 
-  const results = { articles_upserted: 0, pins_upserted: 0, errors: [] };
+  const results = { articles_upserted: 0, pins_deleted: 0, pins_upserted: 0, errors: [] };
+  const syncedArticleSlugs = new Set(
+    Array.isArray(body.articles)
+      ? body.articles.map((article) => String(article?.slug || "").trim()).filter(Boolean)
+      : []
+  );
 
   if (Array.isArray(body.articles)) {
     for (const a of body.articles) {
@@ -68,10 +77,10 @@ export async function onRequestPost(context) {
             updated_at = datetime('now')
         `).bind(
           a.slug, a.topic, a.category, a.source || "manual", a.stage,
-          a.error || null, a.error_stage || null,
-          a.write_model || null, a.review_model || null,
-          a.word_count || null, a.hero_prompt || null, a.hero_alt || null,
-          a.pin_count || null, a.pin_images_done || null,
+          nullable(a.error), nullable(a.error_stage),
+          nullable(a.write_model), nullable(a.review_model),
+          nullable(a.word_count), nullable(a.hero_prompt), nullable(a.hero_alt),
+          nullable(a.pin_count), nullable(a.pin_images_done),
           a.tokens_total || 0, a.cost_usd || 0,
         ).run();
         results.articles_upserted++;
@@ -82,6 +91,17 @@ export async function onRequestPost(context) {
   }
 
   if (Array.isArray(body.pins)) {
+    for (const slug of syncedArticleSlugs) {
+      try {
+        const deleted = await env.DB.prepare(
+          "DELETE FROM pipeline_pins WHERE article_slug = ?"
+        ).bind(slug).run();
+        results.pins_deleted += deleted.meta?.changes || 0;
+      } catch (e) {
+        results.errors.push({ type: "pin_delete", slug, error: e.message });
+      }
+    }
+
     for (const p of body.pins) {
       try {
         await env.DB.prepare(`
@@ -89,6 +109,8 @@ export async function onRequestPost(context) {
             (article_slug, pin_slug, pin_index, title, description, prompt, alt, image_status)
           VALUES (?, ?, ?, ?, ?, ?, ?, ?)
           ON CONFLICT(pin_slug) DO UPDATE SET
+            article_slug = excluded.article_slug,
+            pin_index = excluded.pin_index,
             title = COALESCE(excluded.title, pipeline_pins.title),
             description = COALESCE(excluded.description, pipeline_pins.description),
             prompt = COALESCE(excluded.prompt, pipeline_pins.prompt),
@@ -96,8 +118,8 @@ export async function onRequestPost(context) {
             image_status = excluded.image_status
         `).bind(
           p.article_slug, p.pin_slug, p.pin_index,
-          p.title || null, p.description || null,
-          p.prompt || null, p.alt || null,
+          nullable(p.title), nullable(p.description),
+          nullable(p.prompt), nullable(p.alt),
           p.image_status || "pending",
         ).run();
         results.pins_upserted++;

@@ -99,6 +99,7 @@ const BUILD = {
     webCount:     webFiles.length,
     pinCount:     pinFiles.length,
     pinSlugsCount: pinSlugs.size,
+    webSlugs:      Array.from(webSlugs).sort(),
     withWeb:      articles.length - missingWeb.length,
     withPins:     articles.length - missingPin.length,
     missingWeb,
@@ -3048,17 +3049,18 @@ function renderPipelineTable(filter) {
   };
 
   const builtArticleSlugs = new Set(BUILD.articleSlugs || []);
+  const builtHeroSlugs = new Set(BUILD.images?.webSlugs || []);
+  const pipelineAssetBase = 'https://staging.daily-life-hacks.pages.dev';
   const renderPinLinks = (article) => {
     const pins = Array.isArray(article.pins) ? article.pins : [];
     const count = `${article.pin_images_done || 0}/${article.pin_count || 0}`;
     if (!pins.length) return count;
-    const dashboardBase = IS_PRODUCTION_DASHBOARD ? 'https://www.daily-life-hacks.com' : 'https://staging.daily-life-hacks.pages.dev';
     const links = pins.map((pin, idx) => {
       const slug = pin.pin_slug || `${article.slug}_v${idx + 1}`;
-      const href = `${dashboardBase}/images/pins/${slug}.jpg`;
+      const href = `${pipelineAssetBase}/images/pins/${slug}.jpg`;
       const label = `v${(pin.pin_index ?? idx) + 1}`;
       const publishStatus = pin.publish_status || '';
-      const destination = `${dashboardBase}/${article.slug}/`;
+      const destination = `${pipelineAssetBase}/${article.slug}/`;
       const description = pin.description_with_hashtags || pin.description || '';
       const statusBadge = publishStatus
         ? `<span title="Publish status"
@@ -3099,9 +3101,8 @@ function renderPipelineTable(filter) {
     const articleAvailable = existsInBuild
       || ['written', 'reviewed', 'deployed', 'published'].includes(a.stage)
       || Number(a.word_count || 0) > 0;
-    const heroAvailable = articleAssetsReady(a);
-    const dashboardBase = IS_PRODUCTION_DASHBOARD ? 'https://www.daily-life-hacks.com' : 'https://staging.daily-life-hacks.pages.dev';
-    const heroSrc = `${dashboardBase}/images/${a.slug}-main.jpg`;
+    const heroAvailable = builtHeroSlugs.has(a.slug);
+    const heroSrc = `${pipelineAssetBase}/images/${a.slug}-main.jpg`;
     const heroVersion = encodeURIComponent(heroImageVersions.get(a.slug) || a.updated_at || a.stage || 'current');
     const heroDisplaySrc = `${heroSrc}?v=${heroVersion}`;
     const stagingHref = articleAvailable
