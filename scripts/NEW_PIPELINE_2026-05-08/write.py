@@ -235,6 +235,41 @@ def log(msg: str, fh) -> None:
     fh.flush()
 
 
+def _retry_instruction(violations: list[_Violation]) -> str:
+    """Convert validator failures into a short repair brief for the next attempt."""
+    if not violations:
+        return ""
+
+    details = []
+    for v in violations:
+        details.append(f"- {v.rule_id}: {v.detail}")
+
+    recipe_yaml = ""
+    if any(v.rule_id == "S-10" for v in violations):
+        recipe_yaml = (
+            "\nFor recipe YAML, keep these exact data types: prepTime/cookTime/totalTime "
+            "as quoted strings, servings and calories as plain integers, difficulty as "
+            "Easy/Medium/Hard, ingredients as a non-empty list of strings, and steps as "
+            "a non-empty list of strings."
+        )
+
+    content_policy = ""
+    if any(v.rule_id.startswith("CP-") for v in violations):
+        content_policy = (
+            "\nFor content policy, rewrite with plain food and cooking language only. "
+            "Remove banned phrases, supplement references, em dashes, and hard-banned "
+            "health terms instead of trying to hedge them."
+        )
+
+    return (
+        "\n\nPrevious attempt failed the automated validator. Rewrite the complete "
+        "article from scratch and fix these exact failures:\n"
+        + "\n".join(details)
+        + recipe_yaml
+        + content_policy
+    )
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Generate production articles from filtered_topics (approved).")
     group = p.add_mutually_exclusive_group()
@@ -328,6 +363,7 @@ def main(argv: list[str] | None = None) -> int:
 
             attempts_log: list[dict[str, Any]] = []
             success: dict[str, Any] | None = None
+            retry_note = ""
 
             for attempt in range(1, args.max_attempts + 1):
                 try:
@@ -335,7 +371,7 @@ def main(argv: list[str] | None = None) -> int:
                         api_key=api_key,
                         model_id=args.model,
                         system=system,
-                        user=user,
+                        user=user + retry_note,
                         temperature=args.temperature,
                         max_tokens=args.max_tokens,
                         timeout=args.timeout,
@@ -379,6 +415,7 @@ def main(argv: list[str] | None = None) -> int:
                     if attempt < args.max_attempts:
                         log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
                             f"tier1 {t1_ids}", fh)
+                        retry_note = _retry_instruction(tier1)
                     continue
 
                 # Layer 2: LLM medical validator
@@ -398,6 +435,10 @@ def main(argv: list[str] | None = None) -> int:
                         if attempt < args.max_attempts:
                             log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
                                 f"medical validator: {terms}", fh)
+                            retry_note = (
+                                "\n\nPrevious attempt failed the medical language validator. "
+                                f"Rewrite the complete article from scratch and remove or hedge these terms: {terms}."
+                            )
                         continue
                 except Exception as exc:
                     log(f"WARN #{t['rank']} {slug}: medical validator error (non-blocking): {exc}", fh)

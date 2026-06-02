@@ -21,6 +21,35 @@ def test_pipeline_produce_keeps_successful_topics_when_one_topic_fails():
     assert "--selected-topics pipeline-data/produced-topics.json" in workflow
     assert "No topics produced successfully." in workflow
     assert "Mark failed topics as rejected" in workflow
+    assert "id: produce" in workflow
+    assert "has_produced=false" in workflow
+    assert "Fail if no articles were produced" in workflow
+    assert "steps.produce.outputs.has_produced == 'true'" in workflow
+
+
+def test_pipeline_produce_rejects_failed_topics_before_final_failure():
+    workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
+
+    failed_idx = workflow.index("Mark failed topics as rejected")
+    sync_idx = workflow.index("Sync pipeline status to D1")
+    final_fail_idx = workflow.index("Fail if no articles were produced")
+    produce_step = workflow.split("- name: Produce articles", 1)[1].split("- name: Verify generated", 1)[0]
+
+    assert "sys.exit(1)" not in produce_step
+    assert failed_idx < sync_idx < final_fail_idx
+
+
+def test_pipeline_daily_tracks_produced_and_failed_topics_separately():
+    workflow = (ROOT / ".github" / "workflows" / "pipeline-daily.yml").read_text(encoding="utf-8")
+
+    assert "pipeline-data/produced-topics.json" in workflow
+    assert "pipeline-data/failed-topics.json" in workflow
+    assert "/tmp/produced-topic-ids.json" in workflow
+    assert "/tmp/failed-topic-ids.json" in workflow
+    assert "Mark failed topics as rejected" in workflow
+    assert "IDS=$(cat /tmp/produced-topic-ids.json)" in workflow
+    assert "--selected-topics pipeline-data/produced-topics.json" in workflow
+    assert "Fail if no articles were produced" in workflow
 
 
 def test_staging_pipeline_workflows_use_staging_dashboard_api():

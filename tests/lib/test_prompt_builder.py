@@ -59,6 +59,9 @@ class TestBuildWriteSystem:
         assert "recipe card at the bottom before FAQ" in p
         assert "Do not duplicate the top recipe details box" in p
         assert "Put ingredients, steps, times, servings, calories, and difficulty in YAML only" in p
+        assert "servings, calories: plain integers, not quoted" in p
+        assert "ingredients: non-empty YAML list of strings" in p
+        assert "steps: non-empty YAML list of strings" in p
 
     def test_article_prompt_uses_general_opening_guidance_without_sample_hooks(self):
         p = build_write_system(category="recipes", slug="test-slug")

@@ -242,9 +242,11 @@ Required:
   faq: exactly 4 or 5 question/answer objects
 
 Recipes also require:
-  prepTime, cookTime, totalTime
-  servings, calories, difficulty
-  ingredients, steps
+  prepTime, cookTime, totalTime: quoted strings
+  servings, calories: plain integers, not quoted
+  difficulty: exactly Easy, Medium, or Hard
+  ingredients: non-empty YAML list of strings
+  steps: non-empty YAML list of strings
 
 FAQ YAML shape:
   faq:
@@ -252,6 +254,7 @@ FAQ YAML shape:
       answer: "Some answer of 40 to 80 words."
 Do NOT use `|` block scalars for FAQ answers.
 Do NOT put a `-` before `answer:`.
+Do NOT quote integer fields such as servings or calories.
 """
 
 _WRITE_USER_TEMPLATE = """Topic: {topic}
@@ -263,7 +266,8 @@ Write the complete article now.
 Reminders:
 - FAQ goes in frontmatter only.
 - End with one closing paragraph.
-- Keep FAQ YAML valid: no `|` and no extra `-` before `answer`."""
+- Keep FAQ YAML valid: no `|` and no extra `-` before `answer`.
+- If this is a recipe, keep servings and calories as integers, and keep ingredients and steps as YAML lists."""
 
 
 def _hard_bans_section() -> str:

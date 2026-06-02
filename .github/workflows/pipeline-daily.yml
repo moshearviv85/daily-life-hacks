@@ -68,6 +68,7 @@ jobs:
           fi
 
       - name: Produce articles
+        id: produce
         if: steps.check-topics.outputs.has_topics == 'true'
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
@@ -77,6 +78,7 @@ jobs:
           import json, sys, subprocess
           topics = json.load(sys.stdin)
           failed = []
+          produced = []
           for t in topics:
               print(f'=== Producing: {t[\"topic\"]} ({t[\"category\"]}) ===')
               result = subprocess.run([
@@ -87,22 +89,40 @@ jobs:
               ], capture_output=False)
               if result.returncode != 0:
                   print(f'ERROR: Pipeline failed for {t[\"topic\"]}', file=sys.stderr)
-                  failed.append(t['topic'])
+                  failed.append(t)
+              else:
+                  produced.append(t)
+          with open('pipeline-data/produced-topics.json', 'w') as f:
+              json.dump(produced, f, indent=2)
+          with open('pipeline-data/failed-topics.json', 'w') as f:
+              json.dump(failed, f, indent=2)
+          with open('/tmp/produced-topic-ids.json', 'w') as f:
+              json.dump([t['id'] for t in produced], f)
+          with open('/tmp/failed-topic-ids.json', 'w') as f:
+              json.dump([t['id'] for t in failed], f)
           if failed:
               print('Failed topics:', file=sys.stderr)
-              for topic in failed:
-                  print(f'  - {topic}', file=sys.stderr)
-              sys.exit(1)
+              for t in failed:
+                  print(f'  - {t[\"topic\"]}', file=sys.stderr)
+          if not produced:
+              print('No topics produced successfully.', file=sys.stderr)
+          print(f'Produced {len(produced)} topic(s); failed {len(failed)} topic(s).')
           "
+          IDS=$(cat /tmp/produced-topic-ids.json)
+          if [ "$IDS" = "[]" ]; then
+            echo "has_produced=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_produced=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Verify generated staging artifacts
-        if: steps.check-topics.outputs.has_topics == 'true'
+        if: steps.check-topics.outputs.has_topics == 'true' && steps.produce.outputs.has_produced == 'true'
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/verify_pipeline_artifacts.py \
-            --selected-topics pipeline-data/selected-topics.json
+            --selected-topics pipeline-data/produced-topics.json
 
       - name: Commit and push generated files
-        if: steps.check-topics.outputs.has_topics == 'true'
+        if: steps.check-topics.outputs.has_topics == 'true' && steps.produce.outputs.has_produced == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -117,39 +137,39 @@ jobs:
           fi
 
       - uses: actions/setup-node@v4
-        if: steps.check-topics.outputs.has_topics == 'true'
+        if: steps.check-topics.outputs.has_topics == 'true' && steps.produce.outputs.has_produced == 'true'
         with:
           node-version: "20"
           cache: npm
 
       - name: Install site dependencies
-        if: steps.check-topics.outputs.has_topics == 'true'
+        if: steps.check-topics.outputs.has_topics == 'true' && steps.produce.outputs.has_produced == 'true'
         run: npm ci
 
       - name: Build staging site
-        if: steps.check-topics.outputs.has_topics == 'true'
+        if: steps.check-topics.outputs.has_topics == 'true' && steps.produce.outputs.has_produced == 'true'
         run: npm run build
 
       - name: Build Pages Functions
-        if: steps.check-topics.outputs.has_topics == 'true'
+        if: steps.check-topics.outputs.has_topics == 'true' && steps.produce.outputs.has_produced == 'true'
         run: |
           rm -rf worker-out dist/_worker.js
           npx wrangler pages functions build functions --outdir=worker-out --output-routes-path=dist/_routes.json --project-directory=. --build-output-directory=dist
           cp worker-out/index.js dist/_worker.js
 
       - name: Deploy staging to Cloudflare Pages
-        if: steps.check-topics.outputs.has_topics == 'true'
+        if: steps.check-topics.outputs.has_topics == 'true' && steps.produce.outputs.has_produced == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: pages deploy dist --project-name=daily-life-hacks --branch=staging
 
       - name: Mark topics as produced
-        if: steps.check-topics.outputs.has_topics == 'true'
+        if: steps.check-topics.outputs.has_topics == 'true' && steps.produce.outputs.has_produced == 'true'
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
-          IDS=$(cat /tmp/topic-ids.json)
+          IDS=$(cat /tmp/produced-topic-ids.json)
           if [ "$IDS" != "[]" ]; then
             curl -s -X POST \
               "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=produced" \
@@ -157,8 +177,27 @@ jobs:
               -d "{\"ids\": $IDS}"
           fi
 
+      - name: Mark failed topics as rejected
+        if: steps.check-topics.outputs.has_topics == 'true'
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: |
+          IDS=$(cat /tmp/failed-topic-ids.json)
+          if [ "$IDS" != "[]" ]; then
+            curl -s -X POST \
+              "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=reject" \
+              -H "Content-Type: application/json" \
+              -d "{\"ids\": $IDS, \"reason\": \"article generation failed automated quality checks\"}"
+          fi
+
       - name: Sync pipeline status to D1
         if: steps.check-topics.outputs.has_topics == 'true'
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: python scripts/NEW_PIPELINE_2026-05-08/sync_pipeline_to_d1.py --base-url "$PIPELINE_DASHBOARD_BASE_URL" --key "$DASHBOARD_PASSWORD"
+
+      - name: Fail if no articles were produced
+        if: steps.check-topics.outputs.has_topics == 'true' && steps.produce.outputs.has_produced == 'false'
+        run: |
+          echo "No articles passed quality checks. Failed topics were rejected and D1 was synced."
+          exit 1
