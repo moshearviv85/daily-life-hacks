@@ -106,7 +106,8 @@ _LENGTH = """# LENGTH (guidance, not a cap)
 """
 
 _STRUCTURE = """# STRUCTURE
-- Intro: 1 to 3 paragraphs. Drop into a scene, confession, contrast, or opinion. The main keyword appears by paragraph 2, not in sentence 1.
+- Intro: 1 to 3 paragraphs. Let the first sentence come from the topic itself, not from a reusable opening formula. The opening can be practical, opinionated, sensory, observational, or personal, as long as it feels specific to this article. The main keyword appears by paragraph 2, not in sentence 1.
+- Do not copy or closely mimic phrasing from this prompt. Use these instructions as direction, not as language to echo.
 - 3 to 8 H2 headings. Plain language, not clickbait. Mix question-style and statement-style. Main keyword appears in at least one H2 but not in all of them.
 - Paragraphs: 2 to 5 sentences. Single-sentence paragraphs are welcome for emphasis.
 - Lists: use sparingly. When used, prefix named options with `**Label:**`.
@@ -195,6 +196,92 @@ def _hard_bans_section() -> str:
 
 # BANNED SIGN-OFFS
 No: "Happy eating!", "Enjoy!", "Give it a try!", "Your gut will thank you!", "You won't regret it!", "Bon appetit!", "Dig in!"
+"""
+
+
+# Concise article prompt overrides. Keep the writer brief short and general so
+# the model has room to write instead of echoing a long instruction stack.
+_AUDIENCE = """# READER
+Write for a busy American home cook who came from Pinterest because the promise sounded useful. She wants practical food help, clear payoff, and a voice that sounds human. Keep the article useful enough to save.
+"""
+
+_SEO_AEO_GEO = """# DISCOVERY
+Use the topic and keyword naturally in the title, excerpt, one heading, and body. Never force keywords over readability. Write clear headings and answer practical reader questions in normal prose.
+"""
+
+_LENGTH = """# LENGTH
+Recipes: aim for 1200 to 1600 useful body words before the recipe card.
+Nutrition and tips: aim for 900 to 1200 useful body words.
+Length comes from real help: decisions, mistakes, timing cues, substitutions, storage, reheating, and practical tradeoffs. Do not pad.
+"""
+
+_STRUCTURE = """# STRUCTURE
+- Start with 1 to 3 intro paragraphs. Let the first sentence come from the topic itself, not from a reusable formula. Do not copy or closely mimic phrasing from this prompt.
+- Use 3 to 8 plain H2 headings. Mix question and statement headings only if it feels natural.
+- Keep paragraphs mostly 2 to 5 sentences. Use lists only when they make the information easier to scan.
+- End with one natural closing paragraph after the last H2 section. No "Conclusion", no sign-off, no FAQ in the body.
+
+For recipes:
+- Put ingredients, steps, times, servings, calories, and difficulty in YAML only. The site renders the recipe card at the bottom before FAQ.
+- The body should explain the recipe: why it works, timing cues, doneness checks, mistakes, variations, serving ideas, storage, and reheating.
+- Do not duplicate the top recipe details box in the body.
+"""
+
+_FRONTMATTER_SCHEMA_TEMPLATE = """# FRONTMATTER
+Start the file with YAML frontmatter.
+
+Required:
+  title: 5 to 10 words
+  excerpt: 100 to 200 characters with a specific payoff
+  category: {category}
+  tags: 4 to 6 lowercase plain multi-word strings
+  image: "/images/{slug}-main.jpg"
+  date: {today}
+  author: "David Miller"
+  featured: false
+  faq: exactly 4 or 5 question/answer objects
+
+Recipes also require:
+  prepTime, cookTime, totalTime: quoted strings
+  servings, calories: plain integers, not quoted
+  difficulty: exactly Easy, Medium, or Hard
+  ingredients: non-empty YAML list of strings
+  steps: non-empty YAML list of strings
+
+FAQ YAML shape:
+  faq:
+    - question: "Some question?"
+      answer: "Some answer of 40 to 80 words."
+Do NOT use `|` block scalars for FAQ answers.
+Do NOT put a `-` before `answer:`.
+Do NOT quote integer fields such as servings or calories.
+"""
+
+_WRITE_USER_TEMPLATE = """Topic: {topic}
+Category: {category}
+Slug: {slug}
+Keywords and angle: {rationale}
+
+Write the complete article now.
+Reminders:
+- FAQ goes in frontmatter only.
+- End with one closing paragraph.
+- Keep FAQ YAML valid: no `|` and no extra `-` before `answer`.
+- If this is a recipe, keep servings and calories as integers, and keep ingredients and steps as YAML lists."""
+
+
+def _hard_bans_section() -> str:
+    hard_ban_terms = ", ".join(MEDICAL_TERMS_HARD_BAN)
+    hedge_terms = ", ".join(MEDICAL_TERMS_HEDGE_REQUIRED)
+    ai_words = ", ".join(AI_WORDS_BANNED)
+    hedging = ", ".join(HEDGING_WORDS)
+    return f"""# NON-NEGOTIABLES
+- No em dashes, emojis, disclaimer text, conclusion heading, body FAQ, sign-off, or code fence.
+- No detox, cleanse, reset, supplements, or absolute health claims.
+- Hedge health language with: {hedging}.
+- Hard-banned health terms: {hard_ban_terms}.
+- Terms requiring hedging: {hedge_terms}.
+- Banned AI words: {ai_words}.
 """
 
 

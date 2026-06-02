@@ -78,6 +78,7 @@ jobs:
           " > /tmp/topic-ids.json
 
       - name: Produce articles
+        id: produce
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           FAL_KEY: ${{ secrets.FAL_KEY }}
@@ -118,17 +119,24 @@ jobs:
                   print(f'  - {t[\"topic\"]}', file=sys.stderr)
           if not produced:
               print('No topics produced successfully.', file=sys.stderr)
-              sys.exit(1)
           print(f'Produced {len(produced)} topic(s); failed {len(failed)} topic(s).')
           "
+          IDS=$(cat /tmp/produced-topic-ids.json)
+          if [ "$IDS" = "[]" ]; then
+            echo "has_produced=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_produced=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Verify generated staging artifacts
+        if: steps.produce.outputs.has_produced == 'true'
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/verify_pipeline_artifacts.py \
             --selected-topics pipeline-data/produced-topics.json \
             --article-only
 
       - name: Commit and push generated files
+        if: steps.produce.outputs.has_produced == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -143,29 +151,35 @@ jobs:
           fi
 
       - uses: actions/setup-node@v4
+        if: steps.produce.outputs.has_produced == 'true'
         with:
           node-version: "20"
           cache: npm
 
       - name: Install site dependencies
+        if: steps.produce.outputs.has_produced == 'true'
         run: npm ci
 
       - name: Build staging site
+        if: steps.produce.outputs.has_produced == 'true'
         run: npm run build
 
       - name: Build Pages Functions
+        if: steps.produce.outputs.has_produced == 'true'
         run: |
           rm -rf worker-out dist/_worker.js
           npx wrangler pages functions build functions --outdir=worker-out --output-routes-path=dist/_routes.json --project-directory=. --build-output-directory=dist
           cp worker-out/index.js dist/_worker.js
 
       - name: Deploy staging to Cloudflare Pages
+        if: steps.produce.outputs.has_produced == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: pages deploy dist --project-name=daily-life-hacks --branch=staging
 
       - name: Mark topics as produced
+        if: steps.produce.outputs.has_produced == 'true'
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
@@ -193,3 +207,9 @@ jobs:
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: python scripts/NEW_PIPELINE_2026-05-08/sync_pipeline_to_d1.py --base-url "$PIPELINE_DASHBOARD_BASE_URL" --key "$DASHBOARD_PASSWORD"
+
+      - name: Fail if no articles were produced
+        if: steps.produce.outputs.has_produced == 'false'
+        run: |
+          echo "No articles passed quality checks. Failed topics were rejected and D1 was synced."
+          exit 1
