@@ -9,7 +9,7 @@ tags:
   - efficient cooking
   - quick meals
 image: "/images/food-prep-tips-to-save-time-main.jpg"
-imageAlt: Draft image placeholder for 6 Food Prep Tips to Save Time During the Week article hero image
+imageAlt: An overhead shot of a kitchen counter with various prepped vegetables, including chopped bell peppers, zucchini, broccoli, onion, and garlic, in glass containers and on a cutting board.
 date: 2026-06-02
 author: "David Miller"
 featured: false
