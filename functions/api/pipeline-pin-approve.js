@@ -7,6 +7,7 @@ import {
 } from "./_pin-metadata.js";
 
 const SITE_BASE = "https://www.daily-life-hacks.com";
+const STAGING_PIPELINE_BASE = "https://staging.daily-life-hacks.pages.dev";
 
 function isProductionRequest(request, env) {
   const url = new URL(request.url);
@@ -195,6 +196,32 @@ async function ensureStagingQueue(db) {
   `).run();
 }
 
+async function findPinInStagingStatus(request, reqKey, pinSlug) {
+  const target = new URL("/api/pipeline-status", STAGING_PIPELINE_BASE);
+  if (reqKey) target.searchParams.set("key", reqKey);
+
+  const headers = { Accept: "application/json" };
+  if (reqKey) headers["x-api-key"] = reqKey;
+
+  const response = await fetch(target.toString(), { headers });
+  if (!response.ok) return null;
+
+  let payload;
+  try {
+    payload = await response.json();
+  } catch {
+    return null;
+  }
+
+  const pinRows = Array.isArray(payload.pin_rows)
+    ? payload.pin_rows
+    : (Array.isArray(payload.articles)
+        ? payload.articles.flatMap((article) => Array.isArray(article.pins) ? article.pins : [])
+        : []);
+
+  return pinRows.find((pin) => String(pin.pin_slug || "").trim() === pinSlug) || null;
+}
+
 async function nextQueueSlot(db, tableName) {
   const latest = await db.prepare(`
     SELECT scheduled_date, COALESCE(scheduled_time, '00:00') AS scheduled_time
@@ -253,7 +280,8 @@ export async function onRequestPost(context) {
   const pinSlug = String(body.pin_slug || "").trim();
   if (!pinSlug) return json({ error: "pin_slug is required" }, 400);
 
-  const pin = await env.DB.prepare(`
+  const productionRequest = isProductionRequest(request, env);
+  let pin = await env.DB.prepare(`
     SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
            pp.alt, pp.image_status, pa.category
       FROM pipeline_pins pp
@@ -261,6 +289,10 @@ export async function onRequestPost(context) {
      WHERE pp.pin_slug = ?
      LIMIT 1
   `).bind(pinSlug).first();
+
+  if (!pin && productionRequest) {
+    pin = await findPinInStagingStatus(request, reqKey, pinSlug);
+  }
 
   if (!pin) return json({ error: "Pipeline pin not found" }, 404);
   if (pin.image_status !== "done") return json({ error: "Pin image is not ready" }, 409);
@@ -278,7 +310,6 @@ export async function onRequestPost(context) {
   const fullDescription = descriptionWithHashtags(pin.description, hashtags);
 
   const rowId = pin.pin_slug;
-  const productionRequest = isProductionRequest(request, env);
   const siteBase = targetSiteBase(request, productionRequest);
   const imageUrl = `${siteBase}/images/pins/${pin.pin_slug}.jpg`;
   const link = `${siteBase}/${pin.article_slug}/`;
