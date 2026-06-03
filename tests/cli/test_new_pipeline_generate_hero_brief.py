@@ -57,3 +57,22 @@ def test_new_pipeline_hero_brief_rejects_alt_over_200_chars(tmp_path, monkeypatc
 
     with pytest.raises(ValueError):
         new_hero.generate_hero_brief("demo", llm_call=llm)
+
+
+def test_new_pipeline_hero_brief_retries_malformed_llm_json(tmp_path, monkeypatch):
+    _setup_article(tmp_path, monkeypatch)
+    calls = {"count": 0}
+
+    def llm(article):
+        calls["count"] += 1
+        if calls["count"] == 1:
+            raise ValueError('no JSON object found: \'{"prompt": "Over\'')
+        return {
+            "prompt": "A bright natural-light food photograph on a clean kitchen surface.",
+            "alt": "A finished lunch bowl on a bright kitchen counter.",
+        }
+
+    brief = new_hero.generate_hero_brief("demo", llm_call=llm)
+
+    assert calls["count"] == 2
+    assert brief.alt == "A finished lunch bowl on a bright kitchen counter."

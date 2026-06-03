@@ -38,7 +38,7 @@ DEFAULT_DB_PATH = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 
 DEFAULT_MODEL = "google/gemini-2.5-flash"
 DEFAULT_TEMPERATURE = 0.85
-DEFAULT_MAX_TOKENS = 1000
+DEFAULT_MAX_TOKENS = 2000
 DEFAULT_TIMEOUT = 60
 
 SYSTEM_PROMPT = """You are a senior food and lifestyle photographer.
@@ -217,9 +217,9 @@ def generate_hero_brief(slug: str, *, llm_call=call_llm) -> HeroBrief:
     article = load_article(slug)
     last_err: ValueError | None = None
     for attempt in range(1, MAX_VALIDATION_RETRIES + 1):
-        raw = llm_call(article)
-        prompt = raw.get("prompt", "")
         try:
+            raw = llm_call(article)
+            prompt = raw.get("prompt", "")
             return HeroBrief(
                 article_slug=slug,
                 prompt=prompt,
