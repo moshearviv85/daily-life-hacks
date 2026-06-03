@@ -1,0 +1,14 @@
+[2026-06-03T14:08:18Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-03T14:08:18Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260603T140818Z.log
+[2026-06-03T14:08:18Z] topics selected: 1
+[2026-06-03T14:08:18Z]   #  1 [recipes  ] best way to cook a pork tenderloin  (slug=best-way-to-cook-a-pork-tenderloin)
+[2026-06-03T14:08:18Z] write_runs.id = 1
+[2026-06-03T14:08:33Z] RETRY #1 best-way-to-cook-a-pork-tenderloin attempt 1/3: tier1 CP-05
+[2026-06-03T14:08:50Z] OK   #1 best-way-to-cook-a-pork-tenderloin  body_words=798 tier2=S-20,S-21 [attempt 2/3] lat=15330ms cost=$0.0056
+[2026-06-03T14:08:50Z] 
+[2026-06-03T14:08:50Z] ============================================================
+[2026-06-03T14:08:50Z] DONE. write_runs.id=1 status=done
+[2026-06-03T14:08:50Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-03T14:08:50Z] tokens in=3,040 out=3,552 cost=$0.0098
+[2026-06-03T14:08:50Z] elapsed: 31.4s (0.5 min)
+[2026-06-03T14:08:50Z] ============================================================
