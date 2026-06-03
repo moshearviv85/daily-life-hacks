@@ -2946,16 +2946,18 @@ function renderPipelineTopicsModal(topics) {
 
 function renderTopicsList(topics) {
   return `<table class="data-table" style="font-size:.85rem">
-    <thead><tr><th style="width:34px"></th><th>#</th><th>Topic</th><th>Category</th><th>Status</th><th>Source</th></tr></thead>
+    <thead><tr><th style="width:34px"></th><th>#</th><th>Topic</th><th>Category</th><th>Status</th><th>Score</th><th>Source</th></tr></thead>
     <tbody>${topics.map((t, i) => `<tr>
       <td><input type="checkbox" class="topic-select" value="${Number(t.id)}" data-topic-slug="${escapeHtml(t.slug || '')}" onchange="updateTopicSelectionSummary()" /></td>
       <td style="color:var(--muted)">${i + 1}</td>
       <td>
         <strong>${escapeHtml(t.topic || t.slug || '-')}</strong>
         <div style="font-size:.68rem;color:var(--muted);font-family:monospace">${escapeHtml(t.slug || '')}</div>
+        ${t.reject_reason ? `<div style="font-size:.7rem;color:var(--muted);margin-top:.12rem">${escapeHtml(t.reject_reason)}</div>` : ''}
       </td>
       <td>${escapeHtml(t.category || '-')}</td>
       <td>${renderTopicStatus(t.status)}</td>
+      <td title="${escapeHtml(t.reject_reason || '')}" style="font-variant-numeric:tabular-nums;color:var(--muted)">${Number.isFinite(Number(t.dedup_score)) ? Number(t.dedup_score).toFixed(2) : '-'}</td>
       <td style="color:var(--muted)">${escapeHtml(t.source || '-')}</td>
     </tr>`).join('')}</tbody>
   </table>`;

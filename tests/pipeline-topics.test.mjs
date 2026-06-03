@@ -76,3 +76,30 @@ test("production dashboard proxies pipeline topics to staging", async (t) => {
     method: "GET",
   }]);
 });
+
+test("adding discovered topic can keep it pending with quality metadata", async () => {
+  const db = makeDb();
+  const response = await onRequestPost({
+    request: new Request("https://staging.example.test/api/pipeline-topics?key=test-key&action=add", {
+      method: "POST",
+      body: JSON.stringify({
+        topic: "best way to cook tuna in a frying pan",
+        category: "recipes",
+        source: "autocomplete",
+        status: "pending",
+        dedup_score: 0.85,
+        quality_reason: "passed deterministic quality gate",
+      }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", DB: db },
+  });
+  const data = await response.json();
+  const insert = db.calls.find((call) => call.type === "run" && call.sql.includes("INSERT INTO pipeline_topics"));
+
+  assert.equal(response.status, 200);
+  assert.equal(data.ok, true);
+  assert.ok(insert);
+  assert.equal(insert.args[4], "pending");
+  assert.equal(insert.args[9], 0.85);
+  assert.equal(insert.args[10], "passed deterministic quality gate");
+});

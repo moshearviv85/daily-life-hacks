@@ -129,12 +129,26 @@ export async function onRequestPost(context) {
     if (!topic || !category) {
       return json({ error: "topic and category required" }, 400);
     }
+    const status = ["pending", "approved"].includes(body.status) ? body.status : "approved";
     const slug = topic.toLowerCase().replace(/[^a-z0-9\s-]/g, "").replace(/\s+/g, "-").slice(0, 80);
     try {
       await env.DB.prepare(
-        `INSERT INTO pipeline_topics (topic, slug, category, source, status)
-         VALUES (?, ?, ?, ?, 'approved')`
-      ).bind(topic, slug, category, source || "manual").run();
+        `INSERT INTO pipeline_topics
+          (topic, slug, category, source, status, impressions, ctr, avg_position, trend_score, dedup_score, reject_reason)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+      ).bind(
+        topic,
+        slug,
+        category,
+        source || "manual",
+        status,
+        body.impressions ?? null,
+        body.ctr ?? null,
+        body.avg_position ?? null,
+        body.trend_score ?? null,
+        body.dedup_score ?? null,
+        body.quality_reason ?? null,
+      ).run();
       return json({ ok: true, slug });
     } catch (e) {
       return json({ error: e.message }, 400);
