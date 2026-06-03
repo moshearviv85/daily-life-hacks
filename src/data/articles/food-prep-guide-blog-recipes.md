@@ -9,7 +9,7 @@ tags:
   - kitchen hacks
   - weeknight dinners
 image: "/images/food-prep-guide-blog-recipes-main.jpg"
-imageAlt: Draft image placeholder for Your Weekend Food Prep Playbook article hero image
+imageAlt: An overhead shot shows roasted chicken, colorful bell peppers, and broccoli florets arranged on a wooden cutting board with containers of grains.
 date: 2026-06-03
 author: "David Miller"
 featured: false
