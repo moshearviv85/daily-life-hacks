@@ -10,7 +10,7 @@ tags:
   - easy ribs
   - tender ribs
 image: "/images/best-way-to-cook-ribs-main.jpg"
-imageAlt: Draft image placeholder for The Best Way to Cook Ribs, Hands Down article hero image
+imageAlt: A rack of glistening, saucy BBQ pork ribs rests on a wooden cutting board, with a small dish of extra sauce nearby.
 date: 2026-06-03
 author: "David Miller"
 featured: false
