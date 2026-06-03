@@ -20,6 +20,7 @@ function makeDb(pinOverrides = {}) {
           return {
             async first() {
               if (sql.includes("FROM pipeline_pins")) {
+                if (pinOverrides === null) return null;
                 if (args[0] !== "demo-pin") return null;
                 return {
                   article_slug: "demo-article",
@@ -125,7 +126,7 @@ test("staging queues a pipeline pin in the staging-only queue without dispatchin
 
 test("production queues a pipeline pin behind the latest pending pin without dispatching", async (t) => {
   const db = makeDb();
-  db.setLatestPending({ scheduled_date: "2026-06-01", scheduled_time: "08:30" });
+  db.setLatestPending({ scheduled_date: "2026-06-05", scheduled_time: "08:30" });
   const checkedUrls = [];
   t.mock.method(globalThis, "fetch", async (url, init) => {
     checkedUrls.push({ url: String(url), method: init?.method || "GET" });
@@ -151,12 +152,61 @@ test("production queues a pipeline pin behind the latest pending pin without dis
   assert.equal(data.queued, true);
   assert.equal(data.triggered, false);
   assert.equal(db.schedule.get("demo-pin").status, "PENDING");
-  assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-06-01");
+  assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-06-05");
   assert.equal(db.schedule.get("demo-pin").scheduled_time, "10:30");
   assert.equal(db.schedule.get("demo-pin").link, "https://www.daily-life-hacks.com/demo-article/");
   assert.equal(db.schedule.get("demo-pin").image_url, "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg");
   assert.match(db.schedule.get("demo-pin").description, /#KitchenTips/);
   assert.deepEqual(checkedUrls, [
+    { url: "https://www.daily-life-hacks.com/demo-article/", method: "HEAD" },
+    { url: "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg", method: "HEAD" },
+  ]);
+});
+
+test("production approve can use staging pipeline metadata when production pipeline row is absent", async (t) => {
+  const db = makeDb(null);
+  const checkedUrls = [];
+  t.mock.method(globalThis, "fetch", async (url, init) => {
+    const href = String(url);
+    checkedUrls.push({ url: href, method: init?.method || "GET" });
+    if (href.startsWith("https://staging.daily-life-hacks.pages.dev/api/pipeline-status")) {
+      return Response.json({
+        pin_rows: [{
+          article_slug: "demo-article",
+          pin_slug: "demo-pin",
+          pin_index: 0,
+          title: "Demo Pin Title",
+          description: "Demo pin description",
+          alt: "Demo alt text",
+          image_status: "done",
+          category: "tips",
+        }],
+      });
+    }
+    return new Response(null, {
+      status: 200,
+      headers: { "Content-Type": href.endsWith(".jpg") ? "image/jpeg" : "text/html" },
+    });
+  });
+
+  const response = await onRequestPost({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-pin-approve?key=test-key", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pin_slug: "demo-pin", publish_now: false }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", DB: db, CF_PAGES_BRANCH: "main" },
+  });
+
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  assert.equal(data.ok, true);
+  assert.equal(data.queued, true);
+  assert.equal(data.staging, false);
+  assert.equal(db.schedule.get("demo-pin").status, "PENDING");
+  assert.equal(db.schedule.get("demo-pin").link, "https://www.daily-life-hacks.com/demo-article/");
+  assert.deepEqual(checkedUrls, [
+    { url: "https://staging.daily-life-hacks.pages.dev/api/pipeline-status?key=test-key", method: "GET" },
     { url: "https://www.daily-life-hacks.com/demo-article/", method: "HEAD" },
     { url: "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg", method: "HEAD" },
   ]);

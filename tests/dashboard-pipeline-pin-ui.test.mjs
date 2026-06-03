@@ -15,7 +15,7 @@ test("pipeline table can publish every unposted pin and hides posted pins", () =
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
   assert.doesNotMatch(dashboard, /idx === 0/);
-  assert.match(dashboard, /const publishButton = !publishStatus/);
+  assert.match(dashboard, /const publishButton = !publishStatus && productionReady/);
   assert.match(dashboard, /publish_status/);
 });
 
@@ -41,7 +41,7 @@ test("dashboard exposes staging environment and queue state", () => {
 test("pipeline pin button is hidden once a pin has any queue status", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
-  assert.match(dashboard, /const publishButton = !publishStatus/);
+  assert.match(dashboard, /const publishButton = !publishStatus && productionReady/);
   assert.doesNotMatch(dashboard, /publishStatus !== 'POSTED'/);
 });
 
@@ -56,10 +56,35 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /<strong>Alt:<\/strong>/);
   assert.match(dashboard, /const pipelineAssetBase = 'https:\/\/staging\.daily-life-hacks\.pages\.dev'/);
   assert.match(dashboard, /class="pipeline-pin-select"/);
-  assert.match(dashboard, /Publish selected pins/);
+  assert.match(dashboard, /Queue selected live pins/);
   assert.match(dashboard, /function getSelectedPipelinePinsInterleaved/);
   assert.match(dashboard, /function approveSelectedPipelinePins/);
   assert.match(dashboard, /window\.approveSelectedPipelinePins = approveSelectedPipelinePins/);
+});
+
+test("production pipeline pin statuses are labeled as metadata, not live queue", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /const formatPipelinePinStatus = \(status, productionReady\) =>/);
+  assert.match(dashboard, /label: `\$\{lane\} \$\{status\}`/);
+  assert.match(dashboard, /Pipeline metadata only\. Check the Pinterest Auto-Poster panel for the real production queue\./);
+  assert.match(dashboard, /Staging pipeline status only\. This is not a live Pinterest production queue\./);
+  assert.equal(dashboard.includes(">${publishStatus}</span>`"), false);
+});
+
+test("production dashboard gates pipeline pin publishing until production assets are live", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /pinSlugs:\s+Array\.from\(pinSlugs\)\.sort\(\)/);
+  assert.match(dashboard, /const builtPinSlugs = new Set\(BUILD\.images\?\.pinSlugs \|\| \[\]\)/);
+  assert.match(dashboard, /const articleLiveOnProduction = builtArticleSlugs\.has\(article\.slug\)/);
+  assert.match(dashboard, /const pinLiveOnProduction = builtPinSlugs\.has\(slug\)/);
+  assert.match(dashboard, /const productionReady = !IS_PRODUCTION_DASHBOARD \|\| \(articleLiveOnProduction && pinLiveOnProduction\)/);
+  assert.match(dashboard, /PROMOTE FIRST/);
+  assert.match(dashboard, /Promote to Production/);
+  assert.match(dashboard, /function promoteStagingToProduction/);
+  assert.match(dashboard, /action: 'promote_staging'/);
+  assert.match(dashboard, /window\.promoteStagingToProduction = promoteStagingToProduction/);
 });
 
 test("pipeline dashboard shows thumbnails and can regenerate hero image", () => {

@@ -3,7 +3,7 @@
  * Dispatch a pipeline GitHub Actions workflow by action name.
  * Protected by DASHBOARD_PASSWORD.
  *
- * Body: { action: "discover" | "produce" | "publish" | "approve_article" | "regenerate_hero", count?: number, category?: string, topic_ids?: number[], slug?: string }
+ * Body: { action: "discover" | "produce" | "publish" | "approve_article" | "regenerate_hero" | "promote_staging", count?: number, category?: string, topic_ids?: number[], slug?: string }
  *
  * Note: workflows are dispatched from the default production branch so GitHub can
  * find the workflow files. Content-generation workflows push their generated
@@ -46,6 +46,12 @@ const ACTIONS = {
     dispatchRef: "main",
     outputBranch: "main",
     effect: "Legacy publisher writes ready articles to production.",
+  },
+  promote_staging: {
+    workflow: "promote-staging.yml",
+    dispatchRef: "main",
+    outputBranch: "main",
+    effect: "Promotes the reviewed staging build to production after build verification.",
   },
   approve_article: {
     workflow: "pipeline-article-assets.yml",
@@ -148,7 +154,7 @@ export async function onRequestPost(context) {
   const action = body.action;
   const actionConfig = ACTIONS[action];
   if (!actionConfig) {
-    return json({ error: `Unknown action: ${action}. Use: discover, produce, publish, approve_article, regenerate_hero` }, 400);
+    return json({ error: `Unknown action: ${action}. Use: discover, produce, publish, approve_article, regenerate_hero, promote_staging` }, 400);
   }
   if (action === "publish" && !isProductionRequest(env, request)) {
     return json({
@@ -157,8 +163,16 @@ export async function onRequestPost(context) {
       queue: "staging",
     }, 409);
   }
+  if (action === "promote_staging" && !isProductionRequest(env, request)) {
+    return json({
+      ok: false,
+      error: "Promote Staging is available only from the production dashboard.",
+      queue: "staging",
+    }, 409);
+  }
 
   const inputs = {};
+  if (action === "promote_staging") inputs.confirm = "PROMOTE";
   if (body.count) inputs.count = String(body.count);
   if (body.category) inputs.category = body.category;
   if (action === "approve_article" || action === "regenerate_hero") {

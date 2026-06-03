@@ -76,6 +76,64 @@ test("production can dispatch legacy publish", async (t) => {
   assert.match(requestedWorkflow, /publish-articles\.yml/);
 });
 
+test("production can dispatch staging promotion with explicit confirmation", async (t) => {
+  const originalFetch = globalThis.fetch;
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  let requestedWorkflow = "";
+  let dispatchBody = null;
+  globalThis.fetch = async (url, init) => {
+    requestedWorkflow = String(url);
+    dispatchBody = JSON.parse(init.body);
+    return new Response(null, { status: 204 });
+  };
+
+  const response = await onRequestPost({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-trigger?key=test-key", {
+      method: "POST",
+      body: JSON.stringify({ action: "promote_staging" }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "main" },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 200);
+  assert.equal(data.ok, true);
+  assert.match(requestedWorkflow, /promote-staging\.yml/);
+  assert.equal(dispatchBody.ref, "main");
+  assert.equal(dispatchBody.inputs.confirm, "PROMOTE");
+  assert.equal(data.outputBranch, "main");
+});
+
+test("staging blocks promotion before dispatching GitHub Actions", async (t) => {
+  const originalFetch = globalThis.fetch;
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  let fetchCalled = false;
+  globalThis.fetch = async () => {
+    fetchCalled = true;
+    return new Response(null, { status: 204 });
+  };
+
+  const response = await onRequestPost({
+    request: new Request("https://staging.daily-life-hacks.pages.dev/api/pipeline-trigger?key=test-key", {
+      method: "POST",
+      body: JSON.stringify({ action: "promote_staging" }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "staging" },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 409);
+  assert.equal(data.ok, false);
+  assert.equal(data.queue, "staging");
+  assert.equal(fetchCalled, false);
+});
+
 test("produce dispatch forwards selected topic ids to GitHub Actions", async (t) => {
   const originalFetch = globalThis.fetch;
   t.after(() => {

@@ -100,6 +100,7 @@ const BUILD = {
     pinCount:     pinFiles.length,
     pinSlugsCount: pinSlugs.size,
     webSlugs:      Array.from(webSlugs).sort(),
+    pinSlugs:      Array.from(pinSlugs).sort(),
     withWeb:      articles.length - missingWeb.length,
     withPins:     articles.length - missingPin.length,
     missingWeb,
@@ -535,7 +536,7 @@ const BUILD = {
         <button class="btn btn-sm" onclick="filterPipeline('progress', this)">In Progress</button>
         <button class="btn btn-sm" onclick="filterPipeline('ready', this)">Ready</button>
         <button class="btn btn-sm" onclick="filterPipeline('failed', this)">Failed</button>
-        <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected">Publish selected pins</button>
+        <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected">Queue selected live pins</button>
       </div>
 
       <!-- Pipeline table -->
@@ -3050,35 +3051,68 @@ function renderPipelineTable(filter) {
 
   const builtArticleSlugs = new Set(BUILD.articleSlugs || []);
   const builtHeroSlugs = new Set(BUILD.images?.webSlugs || []);
+  const builtPinSlugs = new Set(BUILD.images?.pinSlugs || []);
   const pipelineAssetBase = 'https://staging.daily-life-hacks.pages.dev';
+  const formatPipelinePinStatus = (status, productionReady) => {
+    if (!status) return null;
+    if (status === 'POSTED') {
+      return {
+        label: 'POSTED',
+        title: 'This pipeline pin is already marked as posted.',
+        bg: '#dcfce7',
+        color: '#166534',
+      };
+    }
+    const lane = IS_PRODUCTION_DASHBOARD
+      ? (productionReady ? 'PIPELINE' : 'STAGING')
+      : 'STAGING';
+    return {
+      label: `${lane} ${status}`,
+      title: IS_PRODUCTION_DASHBOARD
+        ? 'Pipeline metadata only. Check the Pinterest Auto-Poster panel for the real production queue.'
+        : 'Staging pipeline status only. This is not a live Pinterest production queue.',
+      bg: '#fef3c7',
+      color: '#92400e',
+    };
+  };
   const renderPinLinks = (article) => {
     const pins = Array.isArray(article.pins) ? article.pins : [];
     const count = `${article.pin_images_done || 0}/${article.pin_count || 0}`;
     if (!pins.length) return count;
+    const articleLiveOnProduction = builtArticleSlugs.has(article.slug);
     const links = pins.map((pin, idx) => {
       const slug = pin.pin_slug || `${article.slug}_v${idx + 1}`;
       const href = `${pipelineAssetBase}/images/pins/${slug}.jpg`;
+      const productionHref = `/images/pins/${slug}.jpg`;
       const label = `v${(pin.pin_index ?? idx) + 1}`;
       const publishStatus = pin.publish_status || '';
       const destination = `${pipelineAssetBase}/${article.slug}/`;
+      const productionDestination = `/${article.slug}/`;
+      const pinLiveOnProduction = builtPinSlugs.has(slug);
+      const productionReady = !IS_PRODUCTION_DASHBOARD || (articleLiveOnProduction && pinLiveOnProduction);
       const description = pin.description_with_hashtags || pin.description || '';
-      const statusBadge = publishStatus
-        ? `<span title="Publish status"
-            style="display:inline-block;margin:.15rem .2rem 0 0;padding:.1rem .3rem;border-radius:4px;font-size:.58rem;font-weight:700;background:${publishStatus === 'POSTED' ? '#dcfce7' : '#fef3c7'};color:${publishStatus === 'POSTED' ? '#166534' : '#92400e'}">${publishStatus}</span>`
+      const formattedStatus = formatPipelinePinStatus(publishStatus, productionReady);
+      const statusBadge = formattedStatus
+        ? `<span title="${escapeHtml(formattedStatus.title)}"
+            style="display:inline-block;margin:.15rem .2rem 0 0;padding:.1rem .3rem;border-radius:4px;font-size:.58rem;font-weight:700;background:${formattedStatus.bg};color:${formattedStatus.color}">${escapeHtml(formattedStatus.label)}</span>`
         : '';
-      const publishButton = !publishStatus
+      const promoteBadge = IS_PRODUCTION_DASHBOARD && !productionReady && !publishStatus
+        ? `<span title="Promote staging to production before queueing this pin"
+            style="display:inline-block;margin:.15rem 0 0 .2rem;padding:.1rem .3rem;border-radius:4px;font-size:.58rem;font-weight:700;background:#fee2e2;color:#991b1b">PROMOTE FIRST</span>`
+        : '';
+      const publishButton = !publishStatus && productionReady
         ? `<button onclick="approvePipelinePin('${slug}')"
             title="${IS_PRODUCTION_DASHBOARD ? 'Approve and queue this pin for real publishing' : 'Staging queue only'}"
             style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'Publish' : 'Queue'}</button>`
         : '';
-      const selectBox = !publishStatus
+      const selectBox = !publishStatus && productionReady
         ? `<input type="checkbox" class="pipeline-pin-select" value="${escapeHtml(slug)}" data-article-slug="${escapeHtml(article.slug)}" data-pin-index="${pin.pin_index ?? idx}" title="Select pin for batch publishing" style="vertical-align:middle;margin-right:.25rem">`
         : '';
       return `<details style="margin:.28rem 0;padding:.38rem .45rem;border:1px solid #e5e7eb;border-radius:6px;background:#fff">
         <summary style="cursor:pointer;list-style:none">
           ${selectBox}<a href="${href}" target="_blank" rel="noopener"
             title="${escapeHtml(slug)}"
-            style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${statusBadge}${publishButton}
+            style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${statusBadge}${promoteBadge}${publishButton}
         </summary>
         <div style="margin-top:.35rem;font-size:.68rem;line-height:1.35;color:var(--text)">
           <a href="${href}" target="_blank" rel="noopener">
@@ -3089,7 +3123,9 @@ function renderPipelineTable(filter) {
           <div style="margin-top:.18rem"><strong>Board:</strong> ${escapeHtml(pin.board_name || '-')} <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.board_id || '')}</span></div>
           <div style="margin-top:.18rem"><strong>Hashtags:</strong> ${escapeHtml(pin.hashtags || '-')}</div>
           <div style="margin-top:.18rem"><strong>Alt:</strong> ${escapeHtml(pin.alt || '-')}</div>
-          <div style="margin-top:.18rem"><strong>Link:</strong> <a href="${destination}" target="_blank" rel="noopener" style="color:var(--orange)">${escapeHtml(destination)}</a></div>
+          <div style="margin-top:.18rem"><strong>Staging link:</strong> <a href="${destination}" target="_blank" rel="noopener" style="color:var(--orange)">${escapeHtml(destination)}</a></div>
+          <div style="margin-top:.18rem"><strong>Production link:</strong> <a href="${productionDestination}" target="_blank" rel="noopener" style="color:${productionReady ? 'var(--orange)' : '#991b1b'}">${escapeHtml(productionDestination)}</a></div>
+          <div style="margin-top:.18rem"><strong>Production image:</strong> <a href="${productionHref}" target="_blank" rel="noopener" style="color:${pinLiveOnProduction ? 'var(--orange)' : '#991b1b'}">${escapeHtml(pinLiveOnProduction ? productionHref : 'not live yet')}</a></div>
         </div>
       </details>`;
     }).join('');
@@ -3114,6 +3150,14 @@ function renderPipelineTable(filter) {
     const subStyle = articleAvailable ? "color:var(--muted);text-decoration:none" : "color:var(--muted);text-decoration:none;cursor:default";
     const subLabel = articleAvailable ? "staging" : "not built on staging yet";
     const localLabel = articleAvailable ? "local/prod path" : "pipeline record only";
+    const hasProductionGap = IS_PRODUCTION_DASHBOARD
+      && articleAvailable
+      && (!existsInBuild || (Array.isArray(a.pins) && a.pins.some((pin, idx) => !builtPinSlugs.has(pin.pin_slug || `${a.slug}_v${idx + 1}`))));
+    const promoteAction = hasProductionGap
+      ? `<button onclick="promoteStagingToProduction('${a.slug}')"
+          title="Run the staging promotion workflow before queueing production pins"
+          style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.16rem .42rem;font-size:.65rem;font-weight:700;cursor:pointer">Promote to Production</button>`
+      : '';
     const canApproveArticle = articleAvailable
       && ['reviewed', 'deployed'].includes(a.stage)
       && (!Array.isArray(a.pins) || a.pins.length === 0);
@@ -3139,6 +3183,7 @@ function renderPipelineTable(filter) {
         <button id="pipeline-hero-btn-${a.slug}" onclick="regenerateHeroImage('${a.slug}', '${heroSrc}')" title="Regenerate only the staging hero image"
           style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">Regenerate image</button>
         <div id="pipeline-hero-status-${a.slug}" style="display:none;margin-top:.22rem;max-width:150px;font-size:.62rem;line-height:1.25;color:#92400e"></div></div>` : ''}
+        ${promoteAction}
         ${articleApproval}
       </td>
       <td>${a.category}</td>
@@ -3515,6 +3560,42 @@ async function approveSelectedPipelinePins() {
   }
 }
 
+async function promoteStagingToProduction(slug = '') {
+  if (!pw) return;
+  const ok = confirm(`Promote staging to production now?\n\n${slug ? `Triggered from: ${slug}\n\n` : ''}This runs the promotion workflow, verifies the staging build, then fast-forwards main to staging. It does not post to Pinterest.`);
+  if (!ok) return;
+
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+  statusEl.textContent = 'Dispatching staging promotion workflow...';
+
+  try {
+    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'promote_staging' }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || data.gh_body || 'Unknown error');
+    }
+
+    statusEl.style.background = '#f0fdf4';
+    statusEl.style.borderColor = '#bbf7d0';
+    statusEl.style.color = '#166534';
+    statusEl.innerHTML = `Promotion workflow dispatched. Waiting for production deploy, then reload this dashboard before queueing pins.${pipelineActionsLink(data)}`;
+    statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } catch (e) {
+    statusEl.style.background = '#fef2f2';
+    statusEl.style.borderColor = '#fecaca';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+  }
+}
+
 async function approvePipelinePin(pinSlug, options = {}) {
   if (!pw) return;
   const ok = options.skipConfirm || confirm(IS_PRODUCTION_DASHBOARD
@@ -3597,6 +3678,7 @@ window.approvePipelineArticle = approvePipelineArticle;
 window.regenerateHeroImage = regenerateHeroImage;
 window.approveSelectedPipelinePins = approveSelectedPipelinePins;
 window.approvePipelinePin = approvePipelinePin;
+window.promoteStagingToProduction = promoteStagingToProduction;
 window.addManualTopic = addManualTopic;
 window.filterPipeline = filterPipeline;
 
