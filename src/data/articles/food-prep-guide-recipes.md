@@ -10,7 +10,7 @@ tags:
   - easy prep ideas
   - food prep strategies
 image: "/images/food-prep-guide-recipes-main.jpg"
-imageAlt: "Draft image placeholder for Your Weekly Food Prep Guide: Recipes That Actually Help article hero image"
+imageAlt: An overhead view of several glass meal prep containers filled with colorful, healthy components like roasted vegetables, grains, and protein, neatly arranged on a light wooden table.
 date: 2026-06-03
 author: "David Miller"
 featured: false
