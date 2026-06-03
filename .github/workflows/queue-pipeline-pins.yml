@@ -1,0 +1,82 @@
+name: Queue Pipeline Pins
+
+on:
+  workflow_dispatch:
+    inputs:
+      pin_slugs:
+        description: "Comma-separated pipeline pin slugs to queue"
+        required: true
+
+jobs:
+  queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Queue selected pipeline pins
+        env:
+          PINS_API_URL: https://www.daily-life-hacks.com
+          PINS_API_KEY: ${{ secrets.STATS_KEY }}
+          PIN_SLUGS: ${{ inputs.pin_slugs }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import sys
+          import urllib.request
+          import urllib.error
+
+          api_url = os.environ["PINS_API_URL"].rstrip("/")
+          api_key = os.environ["PINS_API_KEY"]
+          slugs = [
+              s.strip()
+              for s in os.environ["PIN_SLUGS"].split(",")
+              if s.strip()
+          ]
+
+          if not slugs:
+              print("No pin slugs provided.", file=sys.stderr)
+              sys.exit(1)
+
+          results = []
+          failures = []
+          for slug in slugs:
+              url = f"{api_url}/api/pipeline-pin-approve?key={api_key}"
+              payload = json.dumps({"pin_slug": slug}).encode("utf-8")
+              req = urllib.request.Request(
+                  url,
+                  data=payload,
+                  method="POST",
+                  headers={
+                      "Content-Type": "application/json",
+                      "Accept": "application/json",
+                  },
+              )
+              try:
+                  with urllib.request.urlopen(req, timeout=45) as response:
+                      body = json.loads(response.read().decode("utf-8"))
+                      body["status_code"] = response.status
+              except urllib.error.HTTPError as exc:
+                  try:
+                      body = json.loads(exc.read().decode("utf-8"))
+                  except Exception:
+                      body = {"error": exc.reason}
+                  body["status_code"] = exc.code
+              except Exception as exc:
+                  body = {"error": str(exc), "status_code": 0}
+
+              body["pin_slug"] = slug
+              results.append(body)
+              if not body.get("ok"):
+                  failures.append(body)
+              print(json.dumps(body, ensure_ascii=False))
+
+          queued = sum(1 for r in results if r.get("queued"))
+          already = sum(1 for r in results if r.get("already_exists"))
+          print(f"Queued or already queued: {queued}/{len(results)}; already_exists={already}")
+
+          if failures:
+              print("Failures:", file=sys.stderr)
+              for failure in failures:
+                  print(json.dumps(failure, ensure_ascii=False), file=sys.stderr)
+              sys.exit(1)
+          PY
