@@ -1,0 +1,13 @@
+[2026-06-03T14:13:24Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-03T14:13:24Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260603T141324Z.log
+[2026-06-03T14:13:24Z] topics selected: 1
+[2026-06-03T14:13:24Z]   #  1 [recipes  ] best way to cook pork chops  (slug=best-way-to-cook-pork-chops)
+[2026-06-03T14:13:24Z] write_runs.id = 1
+[2026-06-03T14:13:39Z] OK   #1 best-way-to-cook-pork-chops  body_words=885 tier2=S-21 lat=14216ms cost=$0.0054
+[2026-06-03T14:13:39Z] 
+[2026-06-03T14:13:39Z] ============================================================
+[2026-06-03T14:13:39Z] DONE. write_runs.id=1 status=done
+[2026-06-03T14:13:39Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-03T14:13:39Z] tokens in=1,468 out=1,968 cost=$0.0054
+[2026-06-03T14:13:39Z] elapsed: 14.8s (0.2 min)
+[2026-06-03T14:13:39Z] ============================================================
