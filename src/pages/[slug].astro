@@ -99,10 +99,17 @@ const jsonLd = isRecipe
   ? {
       "@context": "https://schema.org",
       "@type": "Recipe",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": articleUrl,
+      },
       url: articleUrl,
       name: article.data.title,
+      headline: article.data.title,
       description: article.data.excerpt,
       image: [imageUrl],
+      thumbnailUrl: imageUrl,
+      inLanguage: "en-US",
       datePublished: publishedDate,
       dateModified: publishedDate,
       prepTime: durationToIso(article.data.prepTime),
@@ -135,9 +142,9 @@ const jsonLd = isRecipe
         },
       ),
       author: {
-        "@type": "Organization",
-        name: "Daily Life Hacks",
-        url: "https://www.daily-life-hacks.com",
+        "@type": "Person",
+        name: article.data.author ?? "David Miller",
+        url: "https://www.daily-life-hacks.com/about/",
       },
       publisher: {
         "@type": "Organization",
