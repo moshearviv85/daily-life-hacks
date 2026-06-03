@@ -1,0 +1,18 @@
+[2026-06-03T14:53:46Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-03T14:53:46Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260603T145346Z.log
+[2026-06-03T14:53:46Z] topics selected: 1
+[2026-06-03T14:53:46Z]   #  3 [recipes  ] simple lunch recipes vegetarian  (slug=simple-lunch-recipes-vegetarian)
+[2026-06-03T14:53:46Z] write_runs.id = 3
+[2026-06-03T14:53:59Z] RETRY #3 simple-lunch-recipes-vegetarian attempt 1/3: tier1 CP-05,S-03
+[2026-06-03T14:54:12Z] RETRY #3 simple-lunch-recipes-vegetarian attempt 2/3: tier1 S-10
+[2026-06-03T14:54:25Z] DQ   #3 simple-lunch-recipes-vegetarian: exhausted 3 attempts, tier1=CP-05,S-03,S-10
+[2026-06-03T14:54:25Z]        attempt1 tier1: CP-05,S-03
+[2026-06-03T14:54:25Z]        attempt2 tier1: S-10
+[2026-06-03T14:54:25Z]        attempt3 tier1: CP-05
+[2026-06-03T14:54:25Z] 
+[2026-06-03T14:54:25Z] ============================================================
+[2026-06-03T14:54:25Z] DONE. write_runs.id=3 status=done
+[2026-06-03T14:54:25Z] written=0 dq=1 errors=0 skipped=0
+[2026-06-03T14:54:25Z] tokens in=4,602 out=5,601 cost=$0.0154
+[2026-06-03T14:54:25Z] elapsed: 39.4s (0.7 min)
+[2026-06-03T14:54:25Z] ============================================================

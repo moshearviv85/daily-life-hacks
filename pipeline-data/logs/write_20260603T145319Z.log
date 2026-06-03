@@ -1,0 +1,13 @@
+[2026-06-03T14:53:19Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-03T14:53:19Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260603T145319Z.log
+[2026-06-03T14:53:19Z] topics selected: 1
+[2026-06-03T14:53:19Z]   #  2 [recipes  ] food prep guide recipes  (slug=food-prep-guide-recipes)
+[2026-06-03T14:53:19Z] write_runs.id = 2
+[2026-06-03T14:53:36Z] OK   #2 food-prep-guide-recipes  body_words=826 tier2=S-21,S-25 lat=16163ms cost=$0.0056
+[2026-06-03T14:53:36Z] 
+[2026-06-03T14:53:36Z] ============================================================
+[2026-06-03T14:53:36Z] DONE. write_runs.id=2 status=done
+[2026-06-03T14:53:36Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-03T14:53:36Z] tokens in=1,454 out=2,079 cost=$0.0056
+[2026-06-03T14:53:36Z] elapsed: 17.0s (0.3 min)
+[2026-06-03T14:53:36Z] ============================================================
