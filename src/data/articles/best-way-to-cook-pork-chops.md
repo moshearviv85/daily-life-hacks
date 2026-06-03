@@ -10,7 +10,7 @@ tags:
   - cast iron cooking
   - juicy pork
 image: "/images/best-way-to-cook-pork-chops-main.jpg"
-imageAlt: Draft image placeholder for The Best Way to Cook Pork Chops, Period article hero image
+imageAlt: A golden-brown seared pork chop rests on a wooden cutting board with rosemary and roasted garlic.
 date: 2026-06-03
 author: "David Miller"
 featured: false
