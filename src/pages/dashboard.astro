@@ -536,7 +536,7 @@ const BUILD = {
         <button class="btn btn-sm" onclick="filterPipeline('progress', this)">In Progress</button>
         <button class="btn btn-sm" onclick="filterPipeline('ready', this)">Ready</button>
         <button class="btn btn-sm" onclick="filterPipeline('failed', this)">Failed</button>
-        <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected">Publish selected pins</button>
+        <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected">Queue selected live pins</button>
       </div>
 
       <!-- Pipeline table -->
@@ -3053,6 +3053,28 @@ function renderPipelineTable(filter) {
   const builtHeroSlugs = new Set(BUILD.images?.webSlugs || []);
   const builtPinSlugs = new Set(BUILD.images?.pinSlugs || []);
   const pipelineAssetBase = 'https://staging.daily-life-hacks.pages.dev';
+  const formatPipelinePinStatus = (status, productionReady) => {
+    if (!status) return null;
+    if (status === 'POSTED') {
+      return {
+        label: 'POSTED',
+        title: 'This pipeline pin is already marked as posted.',
+        bg: '#dcfce7',
+        color: '#166534',
+      };
+    }
+    const lane = IS_PRODUCTION_DASHBOARD
+      ? (productionReady ? 'PIPELINE' : 'STAGING')
+      : 'STAGING';
+    return {
+      label: `${lane} ${status}`,
+      title: IS_PRODUCTION_DASHBOARD
+        ? 'Pipeline metadata only. Check the Pinterest Auto-Poster panel for the real production queue.'
+        : 'Staging pipeline status only. This is not a live Pinterest production queue.',
+      bg: '#fef3c7',
+      color: '#92400e',
+    };
+  };
   const renderPinLinks = (article) => {
     const pins = Array.isArray(article.pins) ? article.pins : [];
     const count = `${article.pin_images_done || 0}/${article.pin_count || 0}`;
@@ -3069,9 +3091,10 @@ function renderPipelineTable(filter) {
       const pinLiveOnProduction = builtPinSlugs.has(slug);
       const productionReady = !IS_PRODUCTION_DASHBOARD || (articleLiveOnProduction && pinLiveOnProduction);
       const description = pin.description_with_hashtags || pin.description || '';
-      const statusBadge = publishStatus
-        ? `<span title="Publish status"
-            style="display:inline-block;margin:.15rem .2rem 0 0;padding:.1rem .3rem;border-radius:4px;font-size:.58rem;font-weight:700;background:${publishStatus === 'POSTED' ? '#dcfce7' : '#fef3c7'};color:${publishStatus === 'POSTED' ? '#166534' : '#92400e'}">${publishStatus}</span>`
+      const formattedStatus = formatPipelinePinStatus(publishStatus, productionReady);
+      const statusBadge = formattedStatus
+        ? `<span title="${escapeHtml(formattedStatus.title)}"
+            style="display:inline-block;margin:.15rem .2rem 0 0;padding:.1rem .3rem;border-radius:4px;font-size:.58rem;font-weight:700;background:${formattedStatus.bg};color:${formattedStatus.color}">${escapeHtml(formattedStatus.label)}</span>`
         : '';
       const promoteBadge = IS_PRODUCTION_DASHBOARD && !productionReady && !publishStatus
         ? `<span title="Promote staging to production before queueing this pin"
