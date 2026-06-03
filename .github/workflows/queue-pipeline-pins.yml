@@ -40,7 +40,7 @@ jobs:
           results = []
           failures = []
           for slug in slugs:
-              url = f"{api_url}/api/pipeline-pin-approve?key={api_key}"
+              url = f"{api_url}/api/pipeline-pin-approve"
               payload = json.dumps({"pin_slug": slug}).encode("utf-8")
               req = urllib.request.Request(
                   url,
@@ -49,6 +49,8 @@ jobs:
                   headers={
                       "Content-Type": "application/json",
                       "Accept": "application/json",
+                      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36 DLH-GitHub-Actions",
+                      "x-api-key": api_key,
                   },
               )
               try:
