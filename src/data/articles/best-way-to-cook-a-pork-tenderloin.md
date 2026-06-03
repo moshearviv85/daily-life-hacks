@@ -10,7 +10,7 @@ tags:
   - oven roasted pork
   - quick meals
 image: "/images/best-way-to-cook-a-pork-tenderloin-main.jpg"
-imageAlt: Draft image placeholder for The Best Way to Cook a Pork Tenderloin article hero image
+imageAlt: Slices of golden-brown pork tenderloin are fanned out on a white platter, garnished with rosemary and chives.
 date: 2026-06-03
 author: "David Miller"
 featured: false
