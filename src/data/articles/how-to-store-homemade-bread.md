@@ -10,7 +10,7 @@ tags:
   - fresh bread
   - baking tips
 image: "/images/how-to-store-homemade-bread-main.jpg"
-imageAlt: Draft image placeholder for How to Store Homemade Bread article hero image
+imageAlt: A golden-brown, round sourdough loaf with one slice cut sits on a light linen on a wooden surface.
 date: 2026-06-04
 author: "David Miller"
 featured: false
