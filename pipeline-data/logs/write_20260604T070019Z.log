@@ -1,0 +1,15 @@
+[2026-06-04T07:00:19Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-04T07:00:19Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260604T070019Z.log
+[2026-06-04T07:00:19Z] topics selected: 1
+[2026-06-04T07:00:19Z]   #  1 [recipes  ] how to store homemade bread  (slug=how-to-store-homemade-bread)
+[2026-06-04T07:00:19Z] write_runs.id = 1
+[2026-06-04T07:00:31Z] RETRY #1 how-to-store-homemade-bread attempt 1/3: tier1 S-10
+[2026-06-04T07:00:42Z] RETRY #1 how-to-store-homemade-bread attempt 2/3: tier1 S-10
+[2026-06-04T07:00:54Z] OK   #1 how-to-store-homemade-bread  body_words=874 tier2=S-21 [attempt 3/3] lat=11990ms cost=$0.0049
+[2026-06-04T07:00:54Z] 
+[2026-06-04T07:00:54Z] ============================================================
+[2026-06-04T07:00:54Z] DONE. write_runs.id=1 status=done
+[2026-06-04T07:00:54Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-04T07:00:54Z] tokens in=4,641 out=4,960 cost=$0.0138
+[2026-06-04T07:00:54Z] elapsed: 35.6s (0.6 min)
+[2026-06-04T07:00:54Z] ============================================================
