@@ -41,29 +41,46 @@ jobs:
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
-          curl -s "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&status=approved" \
-            | python -c "
-          import json, sys
-          data = json.load(sys.stdin)
-          topics = data.get('topics', [])
-          selected = topics[:2]
-          if not selected:
-              print('No approved topics found — skipping staging production', file=sys.stderr)
-              sys.exit(0)
-          print(f'Selected {len(selected)} topics for daily staging production:', file=sys.stderr)
-          for t in selected:
-              print(f'  - [{t[\"category\"]}] {t[\"topic\"]}', file=sys.stderr)
-          with open('pipeline-data/selected-topics.json', 'w') as f:
-              json.dump(selected, f, indent=2)
-          print(json.dumps([t['id'] for t in selected]))
-          " > /tmp/topic-ids.json
+          curl -s "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&status=approved" > /tmp/approved-topics.json
+          python scripts/NEW_PIPELINE_2026-05-08/select_pipeline_topics.py \
+            --input /tmp/approved-topics.json \
+            --count 2 \
+            --selected-output pipeline-data/selected-topics.json \
+            --rejected-output /tmp/quality-rejected-topics.json \
+            > /tmp/topic-ids.json
+
+      - name: Reject low-quality approved topics
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: |
+          python - <<'PY' > /tmp/quality-rejected-topic-ids.json
+          import json
+          rows = json.load(open('/tmp/quality-rejected-topics.json'))
+          print(json.dumps([int(r['id']) for r in rows if r.get('id')]))
+          PY
+          IDS=$(cat /tmp/quality-rejected-topic-ids.json)
+          if [ "$IDS" != "[]" ]; then
+            curl -s -X POST \
+              "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=reject" \
+              -H "Content-Type: application/json" \
+              -d "{\"ids\": $IDS, \"reason\": \"rejected by deterministic topic quality gate before production\"}"
+          fi
 
       - name: Check if topics were selected
         id: check-topics
         run: |
-          if [ -f pipeline-data/selected-topics.json ]; then
+          COUNT=$(python - <<'PY'
+          import json
+          try:
+              print(len(json.load(open('pipeline-data/selected-topics.json'))))
+          except Exception:
+              print(0)
+          PY
+          )
+          if [ "$COUNT" -gt 0 ]; then
             echo "has_topics=true" >> "$GITHUB_OUTPUT"
           else
+            echo "No production-safe approved topics found after deterministic quality gate."
             echo "has_topics=false" >> "$GITHUB_OUTPUT"
           fi
 

@@ -88,6 +88,10 @@ LOW_INTENT_PHRASES = [
 ]
 
 BROAD_TOPIC_PATTERNS = [
+    r"^food prep guide(?: blog)? recipes?$",
+    r"^food prep guide(?: blog)?$",
+    r"^meal prep guide(?: blog)? recipes?$",
+    r"^weekly food prep guide(?: recipes?)?$",
     r"^healthy meal prep$",
     r"^healthy meal prep (breakfast|lunch|lunches|plans|recipes)$",
     r"^simple lunch recipes\b",

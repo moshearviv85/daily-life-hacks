@@ -55,27 +55,32 @@ jobs:
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
-          curl -s "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&status=approved" \
-            | python -c "
-          import json, sys
-          data = json.load(sys.stdin)
-          topics = data.get('topics', [])
-          count = int('${{ inputs.count }}' or '3')
-          cat_filter = '${{ inputs.category }}'.strip()
-          topic_ids = {int(x) for x in '${{ inputs.topic_ids }}'.replace(' ', '').split(',') if x}
-          if cat_filter:
-              topics = [t for t in topics if t['category'] == cat_filter]
-          if topic_ids:
-              selected = [t for t in topics if int(t['id']) in topic_ids]
-          else:
-              selected = topics[:count]
-          print(f'Selected {len(selected)} topics for staging production:', file=sys.stderr)
-          for t in selected:
-              print(f'  - [{t[\"category\"]}] {t[\"topic\"]}', file=sys.stderr)
-          with open('pipeline-data/selected-topics.json', 'w') as f:
-              json.dump(selected, f, indent=2)
-          print(json.dumps([t['id'] for t in selected]))
-          " > /tmp/topic-ids.json
+          curl -s "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&status=approved" > /tmp/approved-topics.json
+          python scripts/NEW_PIPELINE_2026-05-08/select_pipeline_topics.py \
+            --input /tmp/approved-topics.json \
+            --count "${{ inputs.count }}" \
+            --category "${{ inputs.category }}" \
+            --topic-ids "${{ inputs.topic_ids }}" \
+            --selected-output pipeline-data/selected-topics.json \
+            --rejected-output /tmp/quality-rejected-topics.json \
+            > /tmp/topic-ids.json
+
+      - name: Reject low-quality approved topics
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: |
+          python - <<'PY' > /tmp/quality-rejected-topic-ids.json
+          import json
+          rows = json.load(open('/tmp/quality-rejected-topics.json'))
+          print(json.dumps([int(r['id']) for r in rows if r.get('id')]))
+          PY
+          IDS=$(cat /tmp/quality-rejected-topic-ids.json)
+          if [ "$IDS" != "[]" ]; then
+            curl -s -X POST \
+              "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=reject" \
+              -H "Content-Type: application/json" \
+              -d "{\"ids\": $IDS, \"reason\": \"rejected by deterministic topic quality gate before production\"}"
+          fi
 
       - name: Produce articles
         id: produce
