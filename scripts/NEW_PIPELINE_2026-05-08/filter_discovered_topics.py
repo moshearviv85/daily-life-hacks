@@ -44,10 +44,15 @@ OFF_TOPIC_PHRASES = [
     "bags",
     "elderly",
     "restaurant food prep",
+    "small spaces",
 ]
 
 LOCALE_PHRASES = [
+    "filipino",
+    "philippines",
+    "indian",
     "nz",
+    "south indian",
     "south africa",
     "uk",
     "tamil",
@@ -61,6 +66,7 @@ AUDIENCE_RISK_PHRASES = [
     "seniors",
     "older adults",
     "toddlers",
+    "children",
     "12 18 months",
     "10 year olds",
     "11 year olds",
@@ -85,6 +91,11 @@ MEDICAL_OR_DIET_PHRASES = [
 LOW_INTENT_PHRASES = [
     "reddit",
     "chart",
+    "printable",
+    "website",
+    "worksheet",
+    "worksheets",
+    "youtube",
 ]
 
 BROAD_TOPIC_PATTERNS = [
@@ -93,26 +104,31 @@ BROAD_TOPIC_PATTERNS = [
     r"^meal prep guide(?: blog)? recipes?$",
     r"^weekly food prep guide(?: recipes?)?$",
     r"^healthy meal prep$",
-    r"^healthy meal prep (breakfast|lunch|lunches|plans|recipes)$",
+    r"^healthy meal prep\b",
+    r"^quick dinner recipes\b",
+    r"^easy breakfast ideas\b",
+    r"^healthy snack ideas\b",
+    r"^budget meal ideas\b",
     r"^simple lunch recipes\b",
-    r"^simple lunch recipes for\b",
+    r"^food preparation tips\b",
     r"^food prep tips$",
     r"^food prep tips\b",
     r"^food prep safety tips$",
     r"^healthy food prep tips$",
-    r"^healthy eating habits$",
+    r"^healthy eating habits\b",
     r"^nutrition tips for\b",
-    r"^kitchen hacks for (food|cooking|economy|storage|cleaning|organizing)$",
-    r"^budget meal ideas for (family|two|a week)$",
+    r"^kitchen hacks for\b",
 ]
 
 FOOD_ANCHORS = {
-    "air", "avocado", "bake", "baked", "banana", "bananas", "bean", "beans",
-    "berries", "breakfast", "brisket", "budget", "cabbage", "cauliflower", "chicken",
-    "cook", "cooking", "dinner", "food", "garlic", "grill", "healthy",
+    "air", "asparagus", "avocado", "bake", "baked", "banana", "bananas",
+    "bean", "beans", "berries", "breakfast", "brisket", "broccoli",
+    "budget", "cabbage", "cauliflower", "chicken", "cook", "cooking",
+    "dinner", "fiber", "food", "freezer", "garlic", "grill", "healthy",
     "kitchen", "lunch", "meal", "meals", "mint", "nutrition", "oats",
-    "pasta", "potato", "prep", "protein", "recipe", "recipes", "rice",
-    "salad", "sandwich", "snack", "soup", "steak", "store", "strawberries",
+    "oven", "pantry", "pasta", "potato", "potatoes", "prep", "protein",
+    "recipe", "recipes", "rice", "salad", "salmon", "sandwich", "snack",
+    "sodium", "soup", "steak", "store", "strawberries", "swap", "swaps",
     "sweet", "tuna", "vegetarian", "veg",
 }
 

@@ -18,10 +18,30 @@ import urllib.request
 import urllib.parse
 
 DEFAULT_SEEDS = [
-    "healthy meal prep", "quick dinner recipes", "easy breakfast ideas",
-    "nutrition tips for", "best way to cook", "how to store",
-    "healthy snack ideas", "simple lunch recipes", "food prep tips",
-    "kitchen hacks for", "healthy eating habits", "budget meal ideas",
+    "how to store fresh herbs",
+    "how to store berries longer",
+    "how to store avocados",
+    "how to store bread fresh",
+    "how to store potatoes",
+    "best way to cook asparagus",
+    "best way to cook salmon",
+    "best way to cook sweet potatoes",
+    "best way to cook broccoli",
+    "best way to cook steak",
+    "meal prep high protein lunches",
+    "meal prep freezer meals",
+    "meal prep lunch bowls",
+    "meal prep rotisserie chicken",
+    "meal prep rice bowls",
+    "sheet pan chicken dinner",
+    "one pot rice dinner",
+    "ground beef dinner ideas",
+    "rotisserie chicken dinner ideas",
+    "overnight oats high protein",
+    "high fiber lunch ideas",
+    "low sodium pantry swaps",
+    "fiber rich snacks",
+    "high protein breakfast without protein powder",
 ]
 
 
@@ -46,14 +66,18 @@ def discover_from_seeds(seeds: list[str], delay: float = 1.0) -> list[dict]:
     results = []
 
     for seed in seeds:
+        seed_lower = seed.lower().strip()
         suggestions = fetch_autocomplete(seed)
         for s in suggestions:
             s_lower = s.lower().strip()
+            if s_lower == seed_lower:
+                continue
             if s_lower not in seen and len(s_lower) > 10:
                 seen.add(s_lower)
                 results.append({
                     "topic": s,
                     "source": "autocomplete",
+                    "seed": seed,
                 })
         time.sleep(delay)
 

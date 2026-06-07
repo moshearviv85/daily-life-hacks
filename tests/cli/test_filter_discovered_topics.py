@@ -35,17 +35,53 @@ def test_quality_gate_rejects_non_us_locale_modifier():
 def test_quality_gate_rejects_generic_autocomplete_heads():
     for topic in [
         "healthy meal prep",
+        "healthy meal prep ideas",
+        "healthy meal prep ideas high protein",
+        "quick dinner recipes with chicken",
+        "quick dinner recipes with rotisserie chicken",
+        "easy breakfast ideas with eggs",
+        "healthy snack ideas for work",
+        "budget meal ideas for one",
         "simple lunch recipes",
+        "simple lunch recipes vegetarian",
+        "food preparation tips",
         "food prep tips",
         "food prep safety tips",
         "healthy food prep tips",
         "nutrition tips for women",
         "kitchen hacks for cooking",
-        "simple lunch recipes indian",
+        "kitchen hacks for storage",
+        "healthy eating habits for beginners",
     ]:
         ok, reason, _ = mod.quality_score_topic(topic, [])
         assert ok is False, topic
         assert reason == "too generic for autonomous article production"
+
+
+def test_quality_gate_rejects_locale_autocomplete_variants():
+    for topic in [
+        "simple lunch recipes indian",
+        "budget meal ideas philippines",
+        "quick dinner recipes south indian",
+    ]:
+        ok, reason, _ = mod.quality_score_topic(topic, [])
+        assert ok is False, topic
+        assert "US-audience" in reason
+
+
+def test_quality_gate_rejects_low_article_intent_modifiers():
+    for topic in [
+        "food prep guide youtube",
+        "healthy eating habits worksheets",
+        "kitchen hacks for small spaces",
+    ]:
+        ok, reason, _ = mod.quality_score_topic(topic, [])
+        assert ok is False, topic
+        assert (
+            "low article intent" in reason
+            or "off-topic" in reason
+            or reason == "too generic for autonomous article production"
+        )
 
 
 def test_quality_gate_accepts_specific_food_storage_topic():
@@ -57,6 +93,18 @@ def test_quality_gate_accepts_specific_food_storage_topic():
     assert ok is True
     assert reason == "passed deterministic quality gate"
     assert score > 0.5
+
+
+def test_quality_gate_accepts_specific_new_seed_families():
+    for topic in [
+        "meal prep rotisserie chicken rice bowls",
+        "how to keep salmon moist in the oven",
+        "low sodium pantry swaps for busy weeknight dinners",
+    ]:
+        ok, reason, score = mod.quality_score_topic(topic, [])
+        assert ok is True, topic
+        assert reason == "passed deterministic quality gate"
+        assert score >= 0.7
 
 
 def test_quality_gate_rejects_near_duplicate_existing_article():
