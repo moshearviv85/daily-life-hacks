@@ -10,7 +10,7 @@ function minutesAgo(minutes) {
     .replace("T", " ") + " UTC";
 }
 
-function makeDb({ latestPosted = null, duePins = [], articleStatus = "PUBLISHED", latestPending = null } = {}) {
+function makeDb({ latestPosted = null, duePins = [], articleStatus = "PUBLISHED", latestPending = null, postedToday = 0 } = {}) {
   const queries = [];
   const updates = [];
 
@@ -26,6 +26,9 @@ function makeDb({ latestPosted = null, duePins = [], articleStatus = "PUBLISHED"
           return statement;
         },
         async first() {
+          if (sql.includes("COUNT(*) AS count")) {
+            return { count: postedToday };
+          }
           if (sql.includes("FROM pins_schedule") && sql.includes("published_date")) {
             return latestPosted;
           }
@@ -88,6 +91,52 @@ test("pins-next blocks immediate row publishing during the cooldown window", asy
     db.queries.some((sql) => sql.includes("status = 'PENDING'")),
     false,
   );
+});
+
+test("pins-next blocks scheduled publishing after the daily post limit", async () => {
+  const db = makeDb({
+    postedToday: 3,
+    latestPosted: { row_id: "previous-pin", published_date: minutesAgo(180) },
+    duePins: [duePin],
+  });
+
+  const response = await onRequestGet({
+    request: makeRequest("/api/pins-next?key=test-key"),
+    env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "110" },
+  });
+
+  assert.equal(response.status, 204);
+  assert.equal(response.headers.get("X-Pins-Reason"), "daily_scheduled_post_limit_reached");
+  assert.equal(response.headers.get("X-Pins-Posted-Today"), "3");
+  assert.equal(response.headers.get("X-Pins-Max-Scheduled-Posts-Per-Day"), "3");
+  assert.equal(
+    db.queries.some((sql) => sql.includes("status = 'PENDING'")),
+    false,
+  );
+});
+
+test("pins-next lets immediate publishing bypass the daily post limit", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 200 });
+
+  try {
+    const db = makeDb({
+      postedToday: 3,
+      latestPosted: { row_id: "previous-pin", published_date: minutesAgo(180) },
+      duePins: [duePin],
+    });
+
+    const response = await onRequestGet({
+      request: makeRequest("/api/pins-next?key=test-key&immediate=1&row_id=demo-pin"),
+      env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "110" },
+    });
+
+    assert.equal(response.status, 200);
+    const data = await response.json();
+    assert.equal(data.row_id, "demo-pin");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
 });
 
 test("pins-next allows immediate row publishing after the cooldown window", async () => {
@@ -177,15 +226,13 @@ test("pins-next prefers a different article than the last posted pin", async () 
     assert.equal(response.status, 200);
     const data = await response.json();
     assert.equal(data.row_id, "salad-pin-1");
-    assert.equal(db.updates.length, 1);
-    assert.match(db.updates[0].args[2], /same_article_as_latest_posted/);
-    assert.equal(db.updates[0].args[3], "meat-pin-2");
+    assert.equal(db.updates.length, 0);
   } finally {
     globalThis.fetch = originalFetch;
   }
 });
 
-test("pins-next moves same-article pin to the end when no other valid pin is due", async () => {
+test("pins-next allows same-article pin when no other valid pin is due", async () => {
   const originalFetch = globalThis.fetch;
   globalThis.fetch = async () => new Response(null, { status: 200 });
 
@@ -209,15 +256,10 @@ test("pins-next moves same-article pin to the end when no other valid pin is due
       env: { STATS_KEY: "test-key", DB: db, PINS_MIN_POST_INTERVAL_MINUTES: "110" },
     });
 
-    assert.equal(response.status, 204);
-    assert.equal(response.headers.get("X-Pins-Reason"), "all_due_pins_blocked_by_safety_checks");
-    assert.equal(response.headers.get("X-Pins-Skip-Reasons"), "same_article_as_latest_posted:1");
-    assert.equal(db.updates.length, 1);
-    assert.match(db.updates[0].sql, /UPDATE pins_schedule/);
-    assert.equal(db.updates[0].args[0], "2026-05-30");
-    assert.equal(db.updates[0].args[1], "06:00");
-    assert.match(db.updates[0].args[2], /same_article_as_latest_posted/);
-    assert.equal(db.updates[0].args[3], "meat-pin-2");
+    assert.equal(response.status, 200);
+    const data = await response.json();
+    assert.equal(data.row_id, "meat-pin-2");
+    assert.equal(db.updates.length, 0);
   } finally {
     globalThis.fetch = originalFetch;
   }

@@ -33,6 +33,11 @@ export async function onRequestGet(context) {
   const rowId = url.searchParams.get("row_id") || "";
 
   try {
+    if (!immediate) {
+      const dailyLimit = await enforceScheduledDailyLimit(db, env);
+      if (dailyLimit) return dailyLimit;
+    }
+
     const cooldown = await enforcePostCooldown(db, env);
     if (cooldown) return cooldown;
 
@@ -43,6 +48,15 @@ export async function onRequestGet(context) {
       { status: 500 },
     );
   }
+}
+
+function getMaxScheduledPostsPerUtcDay(env) {
+  const raw = String(env.PINS_MAX_SCHEDULED_POSTS_PER_UTC_DAY || "").trim();
+  if (!raw) return 3;
+
+  const value = Number.parseInt(raw, 10);
+  if (!Number.isFinite(value)) return 3;
+  return Math.max(0, value);
 }
 
 function getMinPostIntervalMinutes(env) {
@@ -63,6 +77,33 @@ function parsePublishedDate(value) {
     : raw;
   const date = new Date(normalized);
   return Number.isNaN(date.getTime()) ? null : date;
+}
+
+async function enforceScheduledDailyLimit(db, env) {
+  const maxPosts = getMaxScheduledPostsPerUtcDay(env);
+  if (maxPosts <= 0) return null;
+
+  const today = new Date().toISOString().slice(0, 10);
+  const result = await db.prepare(`
+    SELECT COUNT(*) AS count
+    FROM pins_schedule
+    WHERE status = 'POSTED'
+      AND published_date LIKE ?
+  `).bind(`${today}%`).first();
+
+  const postedToday = Number(result?.count || 0);
+  if (postedToday < maxPosts) return null;
+
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "X-Pins-Reason": "daily_scheduled_post_limit_reached",
+      "X-Pins-Due": "0",
+      "X-Pins-Posted-Today": String(postedToday),
+      "X-Pins-Max-Scheduled-Posts-Per-Day": String(maxPosts),
+      "X-Pins-Day": today,
+    },
+  });
 }
 
 async function enforcePostCooldown(db, env) {
@@ -120,6 +161,15 @@ async function getLatestPostedSlug(db) {
   `).first();
 
   return slugFromLink(latest?.link);
+}
+
+function hasAlternativeSlug(duePins, currentSlug) {
+  if (!currentSlug) return false;
+
+  return duePins.some((row) => {
+    const slug = slugFromLink(row.link);
+    return slug && slug !== currentSlug;
+  });
 }
 
 async function getNextPin(db, immediate = false, rowId = "") {
@@ -217,8 +267,7 @@ async function getNextPin(db, immediate = false, rowId = "") {
       continue;
     }
 
-    if (latestPostedSlug && slug === latestPostedSlug) {
-      await movePinToEnd(db, row, "same_article_as_latest_posted");
+    if (latestPostedSlug && slug === latestPostedSlug && hasAlternativeSlug(duePins, slug)) {
       skipped.push({
         row_id: row.row_id,
         reason: "same_article_as_latest_posted",
