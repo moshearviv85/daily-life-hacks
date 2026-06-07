@@ -25,6 +25,13 @@ def test_quality_gate_rejects_medical_or_diet_program_framing():
     assert "medical" in reason
 
 
+def test_quality_gate_rejects_postpartum_audience_framing():
+    ok, reason, _ = mod.quality_score_topic("meal prep freezer meals for postpartum", [])
+
+    assert ok is False
+    assert "audience" in reason
+
+
 def test_quality_gate_rejects_non_us_locale_modifier():
     ok, reason, _ = mod.quality_score_topic("budget meal ideas uk", [])
 

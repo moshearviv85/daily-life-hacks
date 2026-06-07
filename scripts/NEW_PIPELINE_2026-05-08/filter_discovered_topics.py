@@ -61,6 +61,7 @@ LOCALE_PHRASES = [
 
 AUDIENCE_RISK_PHRASES = [
     "kids",
+    "postpartum",
     "pregnant",
     "pregnancy",
     "seniors",
