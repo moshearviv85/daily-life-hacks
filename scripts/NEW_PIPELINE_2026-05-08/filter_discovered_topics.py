@@ -211,17 +211,25 @@ def fetch_d1_topic_titles(base_url: str, key: str) -> list[str]:
 
 
 def categorize_topic(topic: str) -> str:
-    t = topic.lower()
-    recipe_words = ["recipe", "cook", "bake", "make", "roast", "grill", "fry",
-                    "soup", "salad", "bowl", "sandwich", "bread", "cake", "pie",
-                    "smoothie", "wrap", "stir", "marinade", "sauce"]
+    normalized = normalize_topic(topic)
+    tokens = topic_tokens(topic)
+    tip_intent_patterns = [
+        r"\bhow to (store|keep|freeze|preserve|organize|revive|reheat|thaw)\b",
+        r"\b(storage|stored|storing|fresh longer|last longer|freezer burn)\b",
+    ]
+    recipe_action_words = {
+        "bake", "baked", "cook", "cooked", "grill", "grilled", "make",
+        "roast", "roasted", "fry", "fried", "stir", "marinade",
+    }
     nutrition_words = ["nutrition", "nutrient", "vitamin", "mineral", "protein",
                        "fiber", "calorie", "diet", "health", "benefit",
                        "antioxidant", "omega", "iron", "calcium"]
 
-    if any(w in t for w in recipe_words):
+    if any(re.search(pattern, normalized) for pattern in tip_intent_patterns):
+        return "tips"
+    if "recipe" in tokens or "recipes" in tokens or any(word in tokens for word in recipe_action_words):
         return "recipes"
-    if any(w in t for w in nutrition_words):
+    if any(w in normalized for w in nutrition_words):
         return "nutrition"
     return "tips"
 

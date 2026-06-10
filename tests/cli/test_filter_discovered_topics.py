@@ -127,5 +127,10 @@ def test_quality_gate_rejects_near_duplicate_existing_article():
 
 def test_categorize_topic_keeps_recipe_and_nutrition_distinct():
     assert mod.categorize_topic("high protein breakfast recipes") == "recipes"
+    assert mod.categorize_topic("easy sandwich bread recipe") == "recipes"
+    assert mod.categorize_topic("best way to cook salmon") == "recipes"
     assert mod.categorize_topic("protein per serving beans chicken tofu compared") == "nutrition"
     assert mod.categorize_topic("how to store berries longer") == "tips"
+    assert mod.categorize_topic("how to store homemade bread") == "tips"
+    assert mod.categorize_topic("how to keep bread fresh longer without mold") == "tips"
+    assert mod.categorize_topic("how to store sourdough discard in fridge") == "tips"
