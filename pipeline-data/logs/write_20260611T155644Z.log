@@ -1,0 +1,14 @@
+[2026-06-11T15:56:44Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-11T15:56:44Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260611T155644Z.log
+[2026-06-11T15:56:44Z] topics selected: 1
+[2026-06-11T15:56:44Z]   #  3 [recipes  ] vegetarian chili that holds up all afternoon  (slug=vegetarian-chili-that-holds-up-all-afternoon)
+[2026-06-11T15:56:44Z] write_runs.id = 3
+[2026-06-11T15:57:07Z] RETRY #3 vegetarian-chili-that-holds-up-all-afternoon attempt 1/3: tier1 S-10
+[2026-06-11T15:57:57Z] OK   #3 vegetarian-chili-that-holds-up-all-afternoon  body_words=701 tier2=S-20,S-21 [attempt 2/3] lat=35730ms cost=$0.0055
+[2026-06-11T15:57:57Z] 
+[2026-06-11T15:57:57Z] ============================================================
+[2026-06-11T15:57:57Z] DONE. write_runs.id=3 status=done
+[2026-06-11T15:57:57Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-11T15:57:57Z] tokens in=3,041 out=4,025 cost=$0.0110
+[2026-06-11T15:57:57Z] elapsed: 73.1s (1.2 min)
+[2026-06-11T15:57:57Z] ============================================================

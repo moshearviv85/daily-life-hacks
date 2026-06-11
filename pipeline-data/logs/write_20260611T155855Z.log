@@ -1,0 +1,5 @@
+[2026-06-11T15:58:55Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-11T15:58:55Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260611T155855Z.log
+[2026-06-11T15:58:55Z] topics selected: 1
+[2026-06-11T15:58:55Z]   #  5 [recipes  ] slow cooker chicken thighs that stay juicy after eight hours  (slug=slow-cooker-chicken-thighs-that-stay-juicy-after-eight-hours)
+[2026-06-11T15:58:55Z] write_runs.id = 5
