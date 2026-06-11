@@ -1,8 +1,8 @@
 [
   {
-    "id": 162,
-    "topic": "vegetarian chili that holds up all afternoon",
-    "slug": "vegetarian-chili-that-holds-up-all-afternoon",
+    "id": 164,
+    "topic": "crockpot soups that do not turn watery",
+    "slug": "crockpot-soups-that-do-not-turn-watery",
     "category": "recipes",
     "source": "manual",
     "search_volume": null,
@@ -12,27 +12,9 @@
     "trend_score": null,
     "dedup_score": null,
     "status": "approved",
-    "reject_reason": "board=Slow Cooker & One-Pot Meals; secondary=Comfort Food Made Simple; keyword=chili",
+    "reject_reason": null,
     "created_at": "2026-06-11 15:47:13",
-    "quality_reason": "passed deterministic quality gate",
-    "quality_score": 0.864
-  },
-  {
-    "id": 159,
-    "topic": "freezer dump chicken tacos for the slow cooker",
-    "slug": "freezer-dump-chicken-tacos-for-the-slow-cooker",
-    "category": "recipes",
-    "source": "manual",
-    "search_volume": null,
-    "impressions": null,
-    "ctr": null,
-    "avg_position": null,
-    "trend_score": null,
-    "dedup_score": null,
-    "status": "approved",
-    "reject_reason": "board=Slow Cooker & One-Pot Meals; secondary=Meal Prep & Make-Ahead Food; keyword=crockpot meals",
-    "created_at": "2026-06-11 15:47:13",
-    "quality_reason": "passed deterministic quality gate",
-    "quality_score": 0.721
+    "quality_reason": "manual topic_ids selection bypassed deterministic quality gate",
+    "quality_score": null
   }
 ]

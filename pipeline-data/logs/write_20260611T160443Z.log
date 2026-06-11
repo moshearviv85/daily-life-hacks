@@ -1,0 +1,5 @@
+[2026-06-11T16:04:43Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-11T16:04:43Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260611T160443Z.log
+[2026-06-11T16:04:43Z] topics selected: 1
+[2026-06-11T16:04:43Z]   #  2 [recipes  ] creamy crockpot chicken and rice without mushy rice  (slug=creamy-crockpot-chicken-and-rice-without-mushy-rice)
+[2026-06-11T16:04:43Z] write_runs.id = 2

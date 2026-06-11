@@ -1,0 +1,5 @@
+[2026-06-11T16:04:24Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-11T16:04:24Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260611T160424Z.log
+[2026-06-11T16:04:24Z] topics selected: 1
+[2026-06-11T16:04:24Z]   #  1 [recipes  ] slow cooker salsa chicken for meal prep bowls  (slug=slow-cooker-salsa-chicken-for-meal-prep-bowls)
+[2026-06-11T16:04:24Z] write_runs.id = 1

@@ -1,0 +1,13 @@
+[2026-06-11T16:05:03Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-11T16:05:03Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260611T160503Z.log
+[2026-06-11T16:05:03Z] topics selected: 1
+[2026-06-11T16:05:03Z]   #  3 [recipes  ] slow cooker meatballs for weeknight spaghetti  (slug=slow-cooker-meatballs-for-weeknight-spaghetti)
+[2026-06-11T16:05:03Z] write_runs.id = 3
+[2026-06-11T16:05:25Z] OK   #3 slow-cooker-meatballs-for-weeknight-spaghetti  body_words=767 tier2=S-20,S-21 lat=18682ms cost=$0.0055
+[2026-06-11T16:05:25Z] 
+[2026-06-11T16:05:25Z] ============================================================
+[2026-06-11T16:05:25Z] DONE. write_runs.id=3 status=done
+[2026-06-11T16:05:25Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-11T16:05:25Z] tokens in=1,473 out=2,009 cost=$0.0055
+[2026-06-11T16:05:25Z] elapsed: 22.4s (0.4 min)
+[2026-06-11T16:05:25Z] ============================================================

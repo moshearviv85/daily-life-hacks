@@ -1,0 +1,5 @@
+[2026-06-11T16:06:29Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-11T16:06:29Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260611T160629Z.log
+[2026-06-11T16:06:29Z] topics selected: 1
+[2026-06-11T16:06:29Z]   #  5 [recipes  ] pot roast that does not dry out in the slow cooker  (slug=pot-roast-that-does-not-dry-out-in-the-slow-cooker)
+[2026-06-11T16:06:29Z] write_runs.id = 5

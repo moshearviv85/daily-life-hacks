@@ -1,0 +1,13 @@
+[2026-06-11T16:06:46Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-11T16:06:46Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260611T160646Z.log
+[2026-06-11T16:06:46Z] topics selected: 1
+[2026-06-11T16:06:46Z]   #  6 [recipes  ] slow cooker pulled pork sandwiches for busy weekends  (slug=slow-cooker-pulled-pork-sandwiches-for-busy-weekends)
+[2026-06-11T16:06:46Z] write_runs.id = 6
+[2026-06-11T16:07:13Z] OK   #6 slow-cooker-pulled-pork-sandwiches-for-busy-weekends  body_words=826 tier2=S-21 lat=14785ms cost=$0.0058
+[2026-06-11T16:07:13Z] 
+[2026-06-11T16:07:13Z] ============================================================
+[2026-06-11T16:07:13Z] DONE. write_runs.id=6 status=done
+[2026-06-11T16:07:13Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-11T16:07:13Z] tokens in=1,484 out=2,149 cost=$0.0058
+[2026-06-11T16:07:13Z] elapsed: 27.2s (0.5 min)
+[2026-06-11T16:07:13Z] ============================================================

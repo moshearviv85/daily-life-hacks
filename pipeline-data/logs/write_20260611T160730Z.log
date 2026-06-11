@@ -1,0 +1,5 @@
+[2026-06-11T16:07:30Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-11T16:07:30Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260611T160730Z.log
+[2026-06-11T16:07:30Z] topics selected: 1
+[2026-06-11T16:07:30Z]   #  7 [recipes  ] beef stew that can simmer through a long workday  (slug=beef-stew-that-can-simmer-through-a-long-workday)
+[2026-06-11T16:07:30Z] write_runs.id = 7
