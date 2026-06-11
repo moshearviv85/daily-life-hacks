@@ -1,0 +1,5 @@
+[2026-06-11T15:50:22Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-11T15:50:22Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260611T155022Z.log
+[2026-06-11T15:50:22Z] topics selected: 1
+[2026-06-11T15:50:22Z]   #  4 [tips     ] how to stretch ground beef with beans and vegetables  (slug=how-to-stretch-ground-beef-with-beans-and-vegetables)
+[2026-06-11T15:50:22Z] write_runs.id = 4
