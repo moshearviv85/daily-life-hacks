@@ -196,16 +196,13 @@ jobs:
               -d "{\"ids\": $IDS}"
           fi
 
-      - name: Mark failed topics as rejected
+      - name: Report failed topics without rejecting
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
           IDS=$(cat /tmp/failed-topic-ids.json)
           if [ "$IDS" != "[]" ]; then
-            curl -s -X POST \
-              "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=reject" \
-              -H "Content-Type: application/json" \
-              -d "{\"ids\": $IDS, \"reason\": \"article generation failed automated quality checks\"}"
+            echo "Failed topic ids remain approved for retry: $IDS"
           fi
 
       - name: Sync pipeline status to D1
