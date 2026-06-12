@@ -47,7 +47,7 @@ SUPPLEMENT_PATTERNS: list[str] = [
 ABSOLUTE_HEALTH_PATTERNS: list[str] = [
     r"\bcures?\b",
     r"\bheals?\b",
-    r"\btreats?\b(?!\s+(?:like|your|yourself))",
+    r"\btreats?\s+(?:cancer|disease|diabetes|illness|infection|inflammation|condition|symptoms?)\b",
     r"\bprevents?\s+(?:cancer|disease|diabetes|illness)\b",
     r"\bfights?\s+(?:cancer|disease|infection)\b",
     r"\bcombats?\s+(?:cancer|disease)\b",

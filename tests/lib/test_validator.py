@@ -250,6 +250,12 @@ class TestAbsoluteHealthClaims:
         cp05 = [v for v in violations if v.rule_id == "CP-05"]
         assert cp05
 
+    def test_treats_medical_condition_triggers(self):
+        text = "This snack board treats diabetes."
+        violations = validate(text, context="article")
+        cp05 = [v for v in violations if v.rule_id == "CP-05"]
+        assert cp05, "Expected CP-05 for 'treats diabetes'"
+
     def test_safe_language_passes(self):
         text = "Eating more vegetables may support overall wellness."
         violations = validate(text, context="article")
@@ -262,6 +268,12 @@ class TestAbsoluteHealthClaims:
         violations = validate(text, context="article")
         cp05 = [v for v in violations if v.rule_id == "CP-05"]
         assert cp05 == [], "'treats like' should not trigger CP-05"
+
+    def test_food_treats_passes(self):
+        text = "Add sweet treats and salty snacks to the movie night board."
+        violations = validate(text, context="article")
+        cp05 = [v for v in violations if v.rule_id == "CP-05"]
+        assert cp05 == [], "Food treats should not trigger CP-05"
 
 
 # ---------------------------------------------------------------------------
