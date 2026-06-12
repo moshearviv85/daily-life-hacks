@@ -40,7 +40,7 @@ Rule IDs:
     S-13   Conclusion heading found in body
     S-14   duplicate comma-separated phrase in recipe steps
     S-15   wrapping code fence
-    S-20   (tier 2) body word count out of [600, 1200]
+    S-20   (tier 2) body word count outside the category target range
     S-21   (tier 2) H2 count out of [3, 8]
     S-25   (tier 2) excerpt length out of [100, 200]
 """
@@ -425,9 +425,11 @@ def _s15(parsed, text, body, slug) -> Violation | None:
 
 def _s20(parsed, text, body, slug) -> Violation | None:
     wc = len(body.split())
-    if 810 <= wc <= 1320:
+    category = (parsed or {}).get("category")
+    low, high = (2200, 3400) if category == "recipes" else (1700, 2600)
+    if low <= wc <= high:
         return None
-    return Violation("S-20", 2, f"body word count {wc} not in [810, 1320]")
+    return Violation("S-20", 2, f"body word count {wc} not in [{low}, {high}]")
 
 
 def _s21(parsed, text, body, slug) -> Violation | None:

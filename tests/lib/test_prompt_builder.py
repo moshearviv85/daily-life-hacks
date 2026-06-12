@@ -55,7 +55,8 @@ class TestBuildWriteSystem:
 
     def test_recipe_prompt_requires_longer_body_and_bottom_recipe_card(self):
         p = build_write_system(category="recipes", slug="test-slug")
-        assert "1200 to 1600 useful body words" in p
+        assert "2400 to 3200 useful body words" in p
+        assert "1800 to 2400 useful body words" in p
         assert "recipe card at the bottom before FAQ" in p
         assert "Do not duplicate the top recipe details box" in p
         assert "Put ingredients, steps, times, servings, calories, and difficulty in YAML only" in p
