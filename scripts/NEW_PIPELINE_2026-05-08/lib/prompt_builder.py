@@ -210,9 +210,10 @@ Use the topic and keyword naturally in the title, excerpt, one heading, and body
 """
 
 _LENGTH = """# LENGTH
-Recipes: aim for 2400 to 3200 useful body words before the recipe card.
-Nutrition and tips: aim for 1800 to 2400 useful body words.
-Length comes from real help: decisions, mistakes, timing cues, substitutions, storage, reheating, and practical tradeoffs. Do not pad.
+Minimum body length, before FAQ and before any recipe card:
+- Recipes: 2400 to 3200 useful body words.
+- Nutrition and tips: 1800 to 2400 useful body words.
+Do not stop early. Make the length come from real help: decisions, mistakes, timing cues, substitutions, storage, reheating, and practical tradeoffs.
 """
 
 _STRUCTURE = """# STRUCTURE
@@ -264,6 +265,7 @@ Keywords and angle: {rationale}
 
 Write the complete article now.
 Reminders:
+- Hit the required body length for this category before you stop.
 - FAQ goes in frontmatter only.
 - End with one closing paragraph.
 - Keep FAQ YAML valid: no `|` and no extra `-` before `answer`.
