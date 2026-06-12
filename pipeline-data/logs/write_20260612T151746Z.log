@@ -1,0 +1,13 @@
+[2026-06-12T15:17:46Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-12T15:17:46Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260612T151746Z.log
+[2026-06-12T15:17:46Z] topics selected: 1
+[2026-06-12T15:17:46Z]   #  7 [recipes  ] creamy crockpot chicken and rice without mushy rice  (slug=creamy-crockpot-chicken-and-rice-without-mushy-rice)
+[2026-06-12T15:17:46Z] write_runs.id = 7
+[2026-06-12T15:18:06Z] OK   #7 creamy-crockpot-chicken-and-rice-without-mushy-rice  body_words=866 tier2=S-20,S-21 lat=18486ms cost=$0.0059
+[2026-06-12T15:18:06Z] 
+[2026-06-12T15:18:06Z] ============================================================
+[2026-06-12T15:18:06Z] DONE. write_runs.id=7 status=done
+[2026-06-12T15:18:06Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-12T15:18:06Z] tokens in=1,486 out=2,192 cost=$0.0059
+[2026-06-12T15:18:06Z] elapsed: 19.8s (0.3 min)
+[2026-06-12T15:18:06Z] ============================================================

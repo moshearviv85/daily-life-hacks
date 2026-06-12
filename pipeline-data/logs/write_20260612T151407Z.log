@@ -1,0 +1,14 @@
+[2026-06-12T15:14:07Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-12T15:14:07Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260612T151407Z.log
+[2026-06-12T15:14:07Z] topics selected: 1
+[2026-06-12T15:14:07Z]   #  2 [nutrition] protein-rich dinner ideas that are not boring  (slug=protein-rich-dinner-ideas-that-are-not-boring)
+[2026-06-12T15:14:07Z] write_runs.id = 2
+[2026-06-12T15:14:37Z] RETRY #2 protein-rich-dinner-ideas-that-are-not-boring attempt 1/3: generate medical validator: hormone -> repair same draft
+[2026-06-12T15:14:47Z] OK   #2 protein-rich-dinner-ideas-that-are-not-boring  body_words=1264 tier2=CP-07,S-20,S-21 [attempt 2/3] lat=9414ms cost=$0.0067
+[2026-06-12T15:14:47Z] 
+[2026-06-12T15:14:47Z] ============================================================
+[2026-06-12T15:14:47Z] DONE. write_runs.id=2 status=done
+[2026-06-12T15:14:47Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-12T15:14:47Z] tokens in=5,328 out=4,424 cost=$0.0127
+[2026-06-12T15:14:47Z] elapsed: 40.9s (0.7 min)
+[2026-06-12T15:14:47Z] ============================================================
