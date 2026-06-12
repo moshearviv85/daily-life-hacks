@@ -1,0 +1,13 @@
+[2026-06-12T10:56:25Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-12T10:56:25Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260612T105625Z.log
+[2026-06-12T10:56:25Z] topics selected: 1
+[2026-06-12T10:56:25Z]   #  1 [nutrition] cottage cheese snack bowls with fruit  (slug=cottage-cheese-snack-bowls-with-fruit)
+[2026-06-12T10:56:25Z] write_runs.id = 1
+[2026-06-12T10:56:37Z] OK   #1 cottage-cheese-snack-bowls-with-fruit  body_words=806 tier2=CP-07,S-20,S-21 lat=11706ms cost=$0.0041
+[2026-06-12T10:56:37Z] 
+[2026-06-12T10:56:37Z] ============================================================
+[2026-06-12T10:56:37Z] DONE. write_runs.id=1 status=done
+[2026-06-12T10:56:37Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-12T10:56:37Z] tokens in=1,469 out=1,480 cost=$0.0041
+[2026-06-12T10:56:37Z] elapsed: 12.2s (0.2 min)
+[2026-06-12T10:56:37Z] ============================================================

@@ -1,0 +1,13 @@
+[2026-06-12T10:59:42Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-12T10:59:42Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260612T105942Z.log
+[2026-06-12T10:59:42Z] topics selected: 1
+[2026-06-12T10:59:42Z]   #  8 [recipes  ] beef stew that can simmer through a long workday  (slug=beef-stew-that-can-simmer-through-a-long-workday)
+[2026-06-12T10:59:42Z] write_runs.id = 8
+[2026-06-12T10:59:59Z] OK   #8 beef-stew-that-can-simmer-through-a-long-workday  body_words=866 tier2=S-21 lat=16600ms cost=$0.0061
+[2026-06-12T10:59:59Z] 
+[2026-06-12T10:59:59Z] ============================================================
+[2026-06-12T10:59:59Z] DONE. write_runs.id=8 status=done
+[2026-06-12T10:59:59Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-12T10:59:59Z] tokens in=1,485 out=2,251 cost=$0.0061
+[2026-06-12T10:59:59Z] elapsed: 17.3s (0.3 min)
+[2026-06-12T10:59:59Z] ============================================================
