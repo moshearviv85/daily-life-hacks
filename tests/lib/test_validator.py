@@ -360,10 +360,10 @@ class TestArticleStructural:
         tier1 = [v for v in violations if v.tier == 1]
         assert tier1 == [], f"Expected no Tier 1 violations, got: {tier1}"
 
-    def test_good_article_no_tier2(self):
+    def test_good_article_has_only_length_tier2_under_new_targets(self):
         violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")
         tier2 = [v for v in violations if v.tier == 2]
-        assert tier2 == [], f"Expected no Tier 2 violations, got: {tier2}"
+        assert {v.rule_id for v in tier2} == {"S-20"}, f"Expected only S-20, got: {tier2}"
 
     def test_missing_frontmatter_triggers_s01(self):
         text = "# Just a plain heading\n\nNo frontmatter here."
@@ -485,3 +485,15 @@ class TestArticleStructural:
         violations = validate(text, context="article")
         rule_ids = {v.rule_id for v in violations}
         assert "S-15" in rule_ids
+
+    def test_s20_uses_longer_category_targets(self):
+        recipe_violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")
+        recipe_s20 = [v for v in recipe_violations if v.rule_id == "S-20"]
+        assert recipe_s20
+        assert "[2200, 3400]" in recipe_s20[0].detail
+
+        tips_text = GOOD_ARTICLE.replace("category: recipes", "category: tips")
+        tips_violations = validate(tips_text, context="article", slug="test-slug")
+        tips_s20 = [v for v in tips_violations if v.rule_id == "S-20"]
+        assert tips_s20
+        assert "[1700, 2600]" in tips_s20[0].detail

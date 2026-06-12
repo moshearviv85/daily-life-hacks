@@ -99,8 +99,8 @@ The FAQ in the frontmatter YAML is a direct AEO asset (it renders as FAQPage str
 """
 
 _LENGTH = """# LENGTH (guidance, not a cap)
-- For recipes, aim for 1200 to 1600 words in the body before the recipe card. Recipe posts must have enough useful scrolling depth before the ingredients and instructions.
-- For nutrition and tips, aim for 900 to 1200 words. Most non-recipe articles should land around 1000.
+- For recipes, aim for 2400 to 3200 words in the body before the recipe card. Recipe posts must have enough useful scrolling depth before the ingredients and instructions.
+- For nutrition and tips, aim for 1800 to 2400 words. Most non-recipe articles should land around 2000.
 - Length should be driven by usefulness, not fluff. Add practical explanation, decision points, mistakes, storage notes, substitutions, and timing details instead of padding.
 - The reader is scanning from Pinterest. If a paragraph isn't earning its place (isn't giving her a concrete how, why, or "this is what matters"), cut it.
 """
@@ -210,8 +210,8 @@ Use the topic and keyword naturally in the title, excerpt, one heading, and body
 """
 
 _LENGTH = """# LENGTH
-Recipes: aim for 1200 to 1600 useful body words before the recipe card.
-Nutrition and tips: aim for 900 to 1200 useful body words.
+Recipes: aim for 2400 to 3200 useful body words before the recipe card.
+Nutrition and tips: aim for 1800 to 2400 useful body words.
 Length comes from real help: decisions, mistakes, timing cues, substitutions, storage, reheating, and practical tradeoffs. Do not pad.
 """
 
