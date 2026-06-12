@@ -272,7 +272,9 @@ Validation failures to fix:
 Repair rules:
 - Return the complete corrected markdown article only.
 - Keep the same topic, category, slug, image path, author, and overall angle.
-- Preserve valid frontmatter and body content where possible.
+- Fix only the listed validation failures.
+- Preserve valid frontmatter, body structure, and approximate length unless a listed failure requires a local change.
+- Do not summarize, shorten, or rewrite unrelated sections.
 - Fix every listed validation failure directly in the text or frontmatter.
 - If recipe fields are missing or invalid, add valid recipe frontmatter fields.
 - If health, detox, stale phrase, or sign-off language is flagged, rewrite those sentences plainly.

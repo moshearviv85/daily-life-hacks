@@ -360,10 +360,10 @@ class TestArticleStructural:
         tier1 = [v for v in violations if v.tier == 1]
         assert tier1 == [], f"Expected no Tier 1 violations, got: {tier1}"
 
-    def test_good_article_has_only_length_tier2_under_new_targets(self):
+    def test_good_article_has_only_depth_tier2_under_new_targets(self):
         violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")
         tier2 = [v for v in violations if v.tier == 2]
-        assert {v.rule_id for v in tier2} == {"S-20"}, f"Expected only S-20, got: {tier2}"
+        assert {v.rule_id for v in tier2} == {"S-20", "S-21"}, f"Expected only S-20/S-21, got: {tier2}"
 
     def test_missing_frontmatter_triggers_s01(self):
         text = "# Just a plain heading\n\nNo frontmatter here."
@@ -497,3 +497,31 @@ class TestArticleStructural:
         tips_s20 = [v for v in tips_violations if v.rule_id == "S-20"]
         assert tips_s20
         assert "[1700, 2600]" in tips_s20[0].detail
+
+    def test_s21_uses_category_heading_targets(self):
+        recipe_violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")
+        recipe_s21 = [v for v in recipe_violations if v.rule_id == "S-21"]
+        assert recipe_s21
+        assert "[9, 12]" in recipe_s21[0].detail
+
+        extra_recipe_sections = "\n".join(
+            f"\n## Extra recipe section {i}\n\nUseful practical detail for this recipe section."
+            for i in range(1, 7)
+        )
+        deep_recipe = GOOD_ARTICLE + extra_recipe_sections
+        deep_recipe_violations = validate(deep_recipe, context="article", slug="test-slug")
+        assert "S-21" not in {v.rule_id for v in deep_recipe_violations}
+
+        tips_text = GOOD_ARTICLE.replace("category: recipes", "category: tips")
+        tips_violations = validate(tips_text, context="article", slug="test-slug")
+        tips_s21 = [v for v in tips_violations if v.rule_id == "S-21"]
+        assert tips_s21
+        assert "[8, 11]" in tips_s21[0].detail
+
+        extra_tips_sections = "\n".join(
+            f"\n## Extra tips section {i}\n\nUseful practical detail for this tips section."
+            for i in range(1, 6)
+        )
+        deep_tips = tips_text + extra_tips_sections
+        deep_tips_violations = validate(deep_tips, context="article", slug="test-slug")
+        assert "S-21" not in {v.rule_id for v in deep_tips_violations}

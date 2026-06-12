@@ -218,7 +218,8 @@ Do not stop early. Make the length come from real help: decisions, mistakes, tim
 
 _STRUCTURE = """# STRUCTURE
 - Start with 1 to 3 intro paragraphs. Let the first sentence come from the topic itself, not from a reusable formula. Do not copy or closely mimic phrasing from this prompt.
-- Use 3 to 8 plain H2 headings. Mix question and statement headings only if it feels natural.
+- Use enough plain H2 sections for the required length: recipes usually need 9 to 12 H2s; nutrition and tips usually need 8 to 11 H2s.
+- Each H2 should earn its space with practical detail, not filler. Mix question and statement headings only if it feels natural.
 - Keep paragraphs mostly 2 to 5 sentences. Use lists only when they make the information easier to scan.
 - End with one natural closing paragraph after the last H2 section. No "Conclusion", no sign-off, no FAQ in the body.
 
@@ -256,6 +257,10 @@ FAQ YAML shape:
 Do NOT use `|` block scalars for FAQ answers.
 Do NOT put a `-` before `answer:`.
 Do NOT quote integer fields such as servings or calories.
+"""
+
+_OUTPUT = """# OUTPUT
+Output only the complete markdown file. Start with bare `---` on line 1. End with the last sentence of the body. No preface, no trailing commentary, no code fence.
 """
 
 _WRITE_USER_TEMPLATE = """Topic: {topic}
