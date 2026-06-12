@@ -1,0 +1,18 @@
+[2026-06-12T14:52:05Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-12T14:52:05Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260612T145205Z.log
+[2026-06-12T14:52:05Z] topics selected: 1
+[2026-06-12T14:52:05Z]   #  1 [tips     ] budget snack board for family movie night  (slug=budget-snack-board-for-family-movie-night)
+[2026-06-12T14:52:05Z] write_runs.id = 1
+[2026-06-12T14:52:19Z] RETRY #1 budget-snack-board-for-family-movie-night attempt 1/3: generate tier1 CP-05 -> repair same draft
+[2026-06-12T14:52:30Z] RETRY #1 budget-snack-board-for-family-movie-night attempt 2/3: repair tier1 CP-05 -> repair same draft
+[2026-06-12T14:52:41Z] DQ   #1 budget-snack-board-for-family-movie-night: exhausted 3 attempts, tier1=CP-05
+[2026-06-12T14:52:41Z]        attempt1 tier1: CP-05
+[2026-06-12T14:52:41Z]        attempt2 tier1: CP-05
+[2026-06-12T14:52:41Z]        attempt3 tier1: CP-05
+[2026-06-12T14:52:41Z] 
+[2026-06-12T14:52:41Z] ============================================================
+[2026-06-12T14:52:41Z] DONE. write_runs.id=1 status=done
+[2026-06-12T14:52:41Z] written=0 dq=1 errors=0 skipped=0
+[2026-06-12T14:52:41Z] tokens in=7,863 out=4,886 cost=$0.0146
+[2026-06-12T14:52:41Z] elapsed: 36.1s (0.6 min)
+[2026-06-12T14:52:41Z] ============================================================

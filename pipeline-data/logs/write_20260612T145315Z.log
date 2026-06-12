@@ -1,0 +1,13 @@
+[2026-06-12T14:53:15Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-12T14:53:15Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260612T145315Z.log
+[2026-06-12T14:53:15Z] topics selected: 1
+[2026-06-12T14:53:15Z]   #  3 [recipes  ] slow cooker chicken thighs that stay juicy after eight hours  (slug=slow-cooker-chicken-thighs-that-stay-juicy-after-eight-hours)
+[2026-06-12T14:53:15Z] write_runs.id = 3
+[2026-06-12T14:53:30Z] OK   #3 slow-cooker-chicken-thighs-that-stay-juicy-after-eight-hours  body_words=739 tier2=S-20,S-21 lat=14257ms cost=$0.0052
+[2026-06-12T14:53:30Z] 
+[2026-06-12T14:53:30Z] ============================================================
+[2026-06-12T14:53:30Z] DONE. write_runs.id=3 status=done
+[2026-06-12T14:53:30Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-12T14:53:30Z] tokens in=1,492 out=1,916 cost=$0.0052
+[2026-06-12T14:53:30Z] elapsed: 15.1s (0.3 min)
+[2026-06-12T14:53:30Z] ============================================================

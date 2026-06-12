@@ -1,0 +1,13 @@
+[2026-06-12T14:52:42Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-12T14:52:42Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260612T145242Z.log
+[2026-06-12T14:52:42Z] topics selected: 1
+[2026-06-12T14:52:42Z]   #  2 [tips     ] summer charcuterie board with fresh fruit  (slug=summer-charcuterie-board-with-fresh-fruit)
+[2026-06-12T14:52:42Z] write_runs.id = 2
+[2026-06-12T14:53:01Z] OK   #2 summer-charcuterie-board-with-fresh-fruit  body_words=1017 tier2=S-21 lat=18112ms cost=$0.0050
+[2026-06-12T14:53:01Z] 
+[2026-06-12T14:53:01Z] ============================================================
+[2026-06-12T14:53:01Z] DONE. write_runs.id=2 status=done
+[2026-06-12T14:53:01Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-12T14:53:01Z] tokens in=1,467 out=1,840 cost=$0.0050
+[2026-06-12T14:53:01Z] elapsed: 19.8s (0.3 min)
+[2026-06-12T14:53:01Z] ============================================================
