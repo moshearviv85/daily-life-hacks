@@ -39,6 +39,7 @@ from stage_1_5 import openrouter as _or  # noqa: E402
 from lib.prompt_builder import build_write_system, build_write_user  # noqa: E402
 from lib.validator import validate as _validate_fn, Violation as _Violation  # noqa: E402
 from lib.medical_validator import check_article as _medical_check  # noqa: E402
+from lib import content_policy as _cp  # noqa: E402
 
 DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 LOGS_DIR = REPO_ROOT / "pipeline-data" / "logs"
@@ -235,39 +236,50 @@ def log(msg: str, fh) -> None:
     fh.flush()
 
 
-def _retry_instruction(violations: list[_Violation]) -> str:
-    """Convert validator failures into a short repair brief for the next attempt."""
-    if not violations:
-        return ""
+def _mechanical_fix(markdown: str) -> str:
+    """Apply deterministic fixes that cannot change article meaning."""
+    return markdown.replace(_cp.EM_DASH, "-").replace("\u2014", "-")
 
-    details = []
-    for v in violations:
-        details.append(f"- {v.rule_id}: {v.detail}")
 
-    recipe_yaml = ""
-    if any(v.rule_id == "S-10" for v in violations):
-        recipe_yaml = (
-            "\nFor recipe YAML, keep these exact data types: prepTime/cookTime/totalTime "
-            "as quoted strings, servings and calories as plain integers, difficulty as "
-            "Easy/Medium/Hard, ingredients as a non-empty list of strings, and steps as "
-            "a non-empty list of strings."
-        )
+def _format_repair_issues(issues: list[dict[str, str]]) -> str:
+    lines: list[str] = []
+    for i, issue in enumerate(issues, start=1):
+        rule = issue.get("rule", "unknown")
+        detail = issue.get("detail", "").strip()
+        lines.append(f"{i}. {rule}: {detail}")
+    return "\n".join(lines)
 
-    content_policy = ""
-    if any(v.rule_id.startswith("CP-") for v in violations):
-        content_policy = (
-            "\nFor content policy, rewrite with plain food and cooking language only. "
-            "Remove banned phrases, supplement references, em dashes, and hard-banned "
-            "health terms instead of trying to hedge them."
-        )
 
-    return (
-        "\n\nPrevious attempt failed the automated validator. Rewrite the complete "
-        "article from scratch and fix these exact failures:\n"
-        + "\n".join(details)
-        + recipe_yaml
-        + content_policy
-    )
+def _build_repair_user(
+    *,
+    topic: str,
+    category: str,
+    slug: str,
+    markdown: str,
+    issues: list[dict[str, str]],
+) -> str:
+    """Build a focused repair request for the same article-writing stage."""
+    issue_text = _format_repair_issues(issues)
+    return f"""The article below failed validation. Repair the same article.
+
+Topic: {topic}
+Category: {category}
+Slug: {slug}
+
+Validation failures to fix:
+{issue_text}
+
+Repair rules:
+- Return the complete corrected markdown article only.
+- Keep the same topic, category, slug, image path, author, and overall angle.
+- Preserve valid frontmatter and body content where possible.
+- Fix every listed validation failure directly in the text or frontmatter.
+- If recipe fields are missing or invalid, add valid recipe frontmatter fields.
+- If health, detox, stale phrase, or sign-off language is flagged, rewrite those sentences plainly.
+- Do not add commentary, code fences, or a second article.
+
+Article to repair:
+{markdown}"""
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -363,16 +375,30 @@ def main(argv: list[str] | None = None) -> int:
 
             attempts_log: list[dict[str, Any]] = []
             success: dict[str, Any] | None = None
-            retry_note = ""
+            repair_markdown: str | None = None
+            repair_issues: list[dict[str, str]] = []
 
             for attempt in range(1, args.max_attempts + 1):
+                attempt_mode = "repair" if repair_markdown else "generate"
+                attempt_user = user
+                attempt_temperature = args.temperature
+                if repair_markdown:
+                    attempt_user = _build_repair_user(
+                        topic=t["topic"],
+                        category=t["category"],
+                        slug=slug,
+                        markdown=repair_markdown,
+                        issues=repair_issues,
+                    )
+                    attempt_temperature = min(args.temperature, 0.3)
+
                 try:
                     resp, latency_ms = _or.call_with_retry(
                         api_key=api_key,
                         model_id=args.model,
                         system=system,
-                        user=user + retry_note,
-                        temperature=args.temperature,
+                        user=attempt_user,
+                        temperature=attempt_temperature,
                         max_tokens=args.max_tokens,
                         timeout=args.timeout,
                         retries=2,
@@ -386,6 +412,7 @@ def main(argv: list[str] | None = None) -> int:
                     continue
 
                 markdown, finish_reason = _or.extract_text(resp)
+                markdown = _mechanical_fix(markdown)
                 tokens_in, tokens_out, cost = _or.usage_cost(resp)
                 total_in += tokens_in or 0
                 total_out += tokens_out or 0
@@ -408,14 +435,15 @@ def main(argv: list[str] | None = None) -> int:
                 tier1 = [v for v in violations if v.tier == 1]
                 if tier1:
                     t1_ids = ",".join(v.rule_id for v in tier1)
+                    repair_markdown = markdown
+                    repair_issues = [{"rule": v.rule_id, "detail": v.detail} for v in tier1]
                     attempts_log.append({
-                        "attempt": attempt, "kind": "tier1", "detail": t1_ids,
-                        "violations": [{"rule": v.rule_id, "detail": v.detail} for v in tier1],
+                        "attempt": attempt, "kind": "tier1", "mode": attempt_mode,
+                        "detail": t1_ids, "violations": repair_issues,
                     })
                     if attempt < args.max_attempts:
                         log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
-                            f"tier1 {t1_ids}", fh)
-                        retry_note = _retry_instruction(tier1)
+                            f"{attempt_mode} tier1 {t1_ids} -> repair same draft", fh)
                     continue
 
                 # Layer 2: LLM medical validator
@@ -428,17 +456,21 @@ def main(argv: list[str] | None = None) -> int:
                     unhedged = [v for v in med_violations if not v.hedged]
                     if unhedged:
                         terms = ", ".join(v.term for v in unhedged[:3])
+                        repair_markdown = markdown
+                        repair_issues = [
+                            {
+                                "rule": "medical",
+                                "detail": f"unhedged medical term '{v.term}' in: {v.sentence}",
+                            }
+                            for v in unhedged
+                        ]
                         attempts_log.append({
-                            "attempt": attempt, "kind": "medical",
+                            "attempt": attempt, "kind": "medical", "mode": attempt_mode,
                             "detail": f"unhedged medical terms: {terms}",
                         })
                         if attempt < args.max_attempts:
                             log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
-                                f"medical validator: {terms}", fh)
-                            retry_note = (
-                                "\n\nPrevious attempt failed the medical language validator. "
-                                f"Rewrite the complete article from scratch and remove or hedge these terms: {terms}."
-                            )
+                                f"{attempt_mode} medical validator: {terms} -> repair same draft", fh)
                         continue
                 except Exception as exc:
                     log(f"WARN #{t['rank']} {slug}: medical validator error (non-blocking): {exc}", fh)
