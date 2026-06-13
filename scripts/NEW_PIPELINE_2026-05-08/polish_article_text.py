@@ -16,7 +16,11 @@ from lib import content_policy as _cp  # noqa: E402
 from stage_1_5 import openrouter as _or  # noqa: E402
 
 DEFAULT_MODEL = "google/gemini-2.5-flash"
-EM_DASH_VARIANTS = ("\u2014", "â€”")
+EM_DASH_VARIANTS = (
+    "\u2014",
+    "\u00e2\u20ac\u201d",
+    "\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u20ac\u009d",
+)
 
 
 class ArticlePolishError(RuntimeError):
@@ -56,6 +60,9 @@ You get one complete Markdown article. Do exactly this:
 YMYL editing rules:
 - Prefer plain food, cooking, shopping, timing, satiety, comfort, routine, and meal-planning language.
 - If a health reference is necessary, make it cautious: "may", "might", or "could"; no promises.
+- Remove body-chemistry explanations instead of hedging them.
+- Do not leave words like "brain chemicals", "hormone", "hormones", "neurotransmitters", "reward system", or "nervous system" in the output.
+- For comfort-food topics, explain comfort through memory, warmth, texture, smell, familiarity, routine, seasoning, and serving temperature - never brain chemistry or hormones.
 - Do not add new health claims, citations, disclaimers, notes, or commentary.
 - Do not wrap the answer in code fences.
 - Return the complete corrected Markdown article only.
