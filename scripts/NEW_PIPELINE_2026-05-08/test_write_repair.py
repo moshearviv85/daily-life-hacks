@@ -46,6 +46,15 @@ class TestWriteRepairHelpers(unittest.TestCase):
         self.assertEqual(count, 1)
         self.assertEqual(fixed, "Simple snacks that may support gut health.")
 
+    def test_auto_fix_cp04_neutralizes_unclaimed_terms_without_model(self):
+        raw = "tags: [blood sugar, metabolism]\nDinner protein can feel surprisingly simple."
+        fixed, count = _auto_fix_cp04_hedging(raw)
+
+        self.assertEqual(count, 1)
+        self.assertIn("tags: [steady energy, daily energy]", fixed)
+        cp04 = [v for v in validate(fixed, context="pin_description") if v.rule_id == "CP-04"]
+        self.assertEqual(cp04, [])
+
     def test_repair_prompt_includes_validation_failures_and_article(self):
         prompt = _build_repair_user(
             topic="summer snack board",

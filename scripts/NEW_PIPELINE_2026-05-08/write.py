@@ -276,6 +276,24 @@ _CP04_VERB_BASES = {
     "help": "help",
     "helps": "help",
 }
+_CP04_NEUTRAL_REPLACEMENTS = {
+    "blood sugar": "steady energy",
+    "gut health": "digestive comfort",
+    "bone health": "everyday nutrition",
+    "gut bacteria": "digestive balance",
+    "blood clotting": "everyday nutrition",
+    "digestibility": "how heavy the meal feels",
+    "blood pressure": "lower-sodium habits",
+    "cholesterol": "heart-smart meal planning",
+    "inflammation": "overall comfort",
+    "immune system": "everyday wellness",
+    "metabolism": "daily energy",
+    "digestion": "after-meal comfort",
+    "heart health": "heart-smart eating",
+    "brain health": "focus-friendly eating",
+    "mental health": "daily mood",
+    "anti-inflammatory": "colorful",
+}
 
 
 def _has_cp04_hedge(text: str) -> bool:
@@ -318,6 +336,15 @@ def _fix_cp04_sentence(sentence: str) -> str:
     for_term_re = re.compile(rf"\bfor\s+({term_pattern})\b", re.IGNORECASE)
     fixed, count = for_term_re.subn(r"that may support \1", sentence, count=1)
     if count:
+        return fixed
+
+    fixed = sentence
+    for term in sorted(terms, key=len, reverse=True):
+        replacement = _CP04_NEUTRAL_REPLACEMENTS.get(term.lower())
+        if not replacement:
+            continue
+        fixed = re.sub(re.escape(term), replacement, fixed, flags=re.IGNORECASE)
+    if fixed != sentence:
         return fixed
 
     return sentence
