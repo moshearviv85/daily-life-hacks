@@ -7,9 +7,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from write import _auto_fix_cp04_hedging, _build_repair_user, _mechanical_fix  # noqa: E402
+from normalize_punctuation import normalize_punctuation  # noqa: E402
+from soften_medical_language import build_soften_prompts, soften_medical_language  # noqa: E402
+from write import _build_repair_user, _mechanical_fix  # noqa: E402
 from lib import content_policy as _cp  # noqa: E402
-from lib.validator import validate  # noqa: E402
 
 
 class TestWriteRepairHelpers(unittest.TestCase):
@@ -23,37 +24,31 @@ class TestWriteRepairHelpers(unittest.TestCase):
         self.assertIn("One-two", fixed)
         self.assertIn("three-four", fixed)
 
-    def test_auto_fix_cp04_hedges_local_sentence_without_model(self):
-        raw = "Cinnamon regulates blood sugar levels after dinner."
-        fixed, count = _auto_fix_cp04_hedging(raw)
+    def test_normalize_punctuation_replaces_em_dash_variants(self):
+        raw = f"One{_cp.EM_DASH}two and three\u2014four"
+        fixed = normalize_punctuation(raw)
 
-        self.assertEqual(count, 1)
-        self.assertEqual(fixed, "Cinnamon may help regulate blood sugar levels after dinner.")
-        cp04 = [v for v in validate(fixed, context="pin_description") if v.rule_id == "CP-04"]
-        self.assertEqual(cp04, [])
+        self.assertEqual(fixed, "One-two and three-four")
 
-    def test_auto_fix_cp04_leaves_already_hedged_sentence_alone(self):
-        raw = "Oats might improve cholesterol when eaten regularly."
-        fixed, count = _auto_fix_cp04_hedging(raw)
+    def test_medical_soften_prompt_is_single_purpose(self):
+        system, user = build_soften_prompts(
+            "---\ntitle: Test\n---\n\nThis dinner regulates blood sugar.",
+            issues=[{"rule": "CP-04", "detail": "blood sugar sentence"}],
+        )
 
-        self.assertEqual(count, 0)
-        self.assertEqual(fixed, raw)
+        self.assertIn("soften or remove medical", system)
+        self.assertIn("Return the complete corrected Markdown article only.", system)
+        self.assertIn("Update frontmatter title, excerpt, tags, imageAlt, and FAQ answers", system)
+        self.assertIn("CP-04", user)
+        self.assertIn("This dinner regulates blood sugar.", user)
 
-    def test_auto_fix_cp04_handles_for_phrase(self):
-        raw = "Simple snacks for gut health."
-        fixed, count = _auto_fix_cp04_hedging(raw)
+    def test_medical_soften_strips_code_fences_and_normalizes_punctuation(self):
+        result = soften_medical_language(
+            "old",
+            llm_fn=lambda _system, _user: "```markdown\nnew — text\n```",
+        )
 
-        self.assertEqual(count, 1)
-        self.assertEqual(fixed, "Simple snacks that may support gut health.")
-
-    def test_auto_fix_cp04_neutralizes_unclaimed_terms_without_model(self):
-        raw = "tags: [blood sugar, metabolism]\nDinner protein can feel surprisingly simple."
-        fixed, count = _auto_fix_cp04_hedging(raw)
-
-        self.assertEqual(count, 1)
-        self.assertIn("tags: [steady energy, daily energy]", fixed)
-        cp04 = [v for v in validate(fixed, context="pin_description") if v.rule_id == "CP-04"]
-        self.assertEqual(cp04, [])
+        self.assertEqual(result.markdown, "new - text")
 
     def test_repair_prompt_includes_validation_failures_and_article(self):
         prompt = _build_repair_user(

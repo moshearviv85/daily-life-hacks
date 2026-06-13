@@ -23,7 +23,6 @@ from __future__ import annotations
 import argparse
 import json
 import os
-import re
 import sqlite3
 import sys
 import time
@@ -40,7 +39,8 @@ from stage_1_5 import openrouter as _or  # noqa: E402
 from lib.prompt_builder import build_write_system, build_write_user  # noqa: E402
 from lib.validator import validate as _validate_fn, Violation as _Violation  # noqa: E402
 from lib.medical_validator import check_article as _medical_check  # noqa: E402
-from lib import content_policy as _cp  # noqa: E402
+from normalize_punctuation import normalize_punctuation  # noqa: E402
+from soften_medical_language import MedicalSofteningError, soften_medical_language  # noqa: E402
 
 DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 LOGS_DIR = REPO_ROOT / "pipeline-data" / "logs"
@@ -239,132 +239,18 @@ def log(msg: str, fh) -> None:
 
 def _mechanical_fix(markdown: str) -> str:
     """Apply deterministic fixes that cannot change article meaning."""
-    return markdown.replace(_cp.EM_DASH, "-").replace("\u2014", "-")
+    return normalize_punctuation(markdown)
 
 
-_CP04_SENTENCE_RE = re.compile(r"[^.!?\n]+(?:[.!?]+|(?=\n|$))", re.MULTILINE)
-_CP04_VERB_RE = re.compile(
-    r"\b(?:can\s+)?("
-    r"regulates?|stabilizes?|balances?|lowers?|reduces?|improves?|boosts?|"
-    r"supports?|promotes?|protects?|strengthens?|helps?"
-    r")\b",
-    re.IGNORECASE,
-)
-_CP04_VERB_BASES = {
-    "regulate": "help regulate",
-    "regulates": "help regulate",
-    "stabilize": "help stabilize",
-    "stabilizes": "help stabilize",
-    "balance": "help balance",
-    "balances": "help balance",
-    "lower": "help lower",
-    "lowers": "help lower",
-    "reduce": "help reduce",
-    "reduces": "help reduce",
-    "improve": "help improve",
-    "improves": "help improve",
-    "boost": "help support",
-    "boosts": "help support",
-    "support": "support",
-    "supports": "support",
-    "promote": "support",
-    "promotes": "support",
-    "protect": "support",
-    "protects": "support",
-    "strengthen": "support",
-    "strengthens": "support",
-    "help": "help",
-    "helps": "help",
-}
-_CP04_NEUTRAL_REPLACEMENTS = {
-    "blood sugar": "steady energy",
-    "gut health": "digestive comfort",
-    "bone health": "everyday nutrition",
-    "gut bacteria": "digestive balance",
-    "blood clotting": "everyday nutrition",
-    "digestibility": "how heavy the meal feels",
-    "blood pressure": "lower-sodium habits",
-    "cholesterol": "heart-smart meal planning",
-    "inflammation": "overall comfort",
-    "immune system": "everyday wellness",
-    "metabolism": "daily energy",
-    "digestion": "after-meal comfort",
-    "heart health": "heart-smart eating",
-    "brain health": "focus-friendly eating",
-    "mental health": "daily mood",
-    "anti-inflammatory": "colorful",
-}
+_MEDICAL_SOFTEN_RULES = {"CP-03", "CP-04", "CP-05"}
 
 
-def _has_cp04_hedge(text: str) -> bool:
-    lower = text.lower()
-    return any(hedge.lower() in lower for hedge in _cp.HEDGING_WORDS)
+def _medical_soften_candidates(violations: list[_Violation]) -> list[_Violation]:
+    return [v for v in violations if v.rule_id in _MEDICAL_SOFTEN_RULES]
 
 
-def _cp04_terms_in(text: str) -> list[str]:
-    lower = text.lower()
-    return [term for term in _cp.MEDICAL_TERMS_HEDGE_REQUIRED if term.lower() in lower]
-
-
-def _cp04_verb_replacement(match: re.Match[str]) -> str:
-    raw = match.group(0)
-    verb = match.group(1).lower()
-    replacement = "may " + _CP04_VERB_BASES.get(verb, verb)
-    if raw[:1].isupper():
-        return replacement[:1].upper() + replacement[1:]
-    return replacement
-
-
-def _fix_cp04_sentence(sentence: str) -> str:
-    terms = _cp04_terms_in(sentence)
-    if not terms or _has_cp04_hedge(sentence):
-        return sentence
-
-    first_term_at = min(sentence.lower().find(term.lower()) for term in terms)
-    before_term = sentence[:first_term_at]
-    verb_matches = list(_CP04_VERB_RE.finditer(before_term))
-    if verb_matches:
-        match = verb_matches[-1]
-        return sentence[:match.start()] + _cp04_verb_replacement(match) + sentence[match.end():]
-
-    term_pattern = "|".join(re.escape(term) for term in sorted(terms, key=len, reverse=True))
-    good_for_re = re.compile(rf"\bis\s+good\s+for\s+({term_pattern})\b", re.IGNORECASE)
-    fixed, count = good_for_re.subn(r"may support \1", sentence, count=1)
-    if count:
-        return fixed
-
-    for_term_re = re.compile(rf"\bfor\s+({term_pattern})\b", re.IGNORECASE)
-    fixed, count = for_term_re.subn(r"that may support \1", sentence, count=1)
-    if count:
-        return fixed
-
-    fixed = sentence
-    for term in sorted(terms, key=len, reverse=True):
-        replacement = _CP04_NEUTRAL_REPLACEMENTS.get(term.lower())
-        if not replacement:
-            continue
-        fixed = re.sub(re.escape(term), replacement, fixed, flags=re.IGNORECASE)
-    if fixed != sentence:
-        return fixed
-
-    return sentence
-
-
-def _auto_fix_cp04_hedging(markdown: str) -> tuple[str, int]:
-    """Locally hedge straightforward CP-04 sentences before spending an LLM repair."""
-    pieces: list[str] = []
-    fixes = 0
-    pos = 0
-    for match in _CP04_SENTENCE_RE.finditer(markdown):
-        sentence = match.group(0)
-        fixed = _fix_cp04_sentence(sentence)
-        pieces.append(markdown[pos:match.start()])
-        pieces.append(fixed)
-        pos = match.end()
-        if fixed != sentence:
-            fixes += 1
-    pieces.append(markdown[pos:])
-    return "".join(pieces), fixes
+def _violations_to_issues(violations: list[_Violation]) -> list[dict[str, str]]:
+    return [{"rule": v.rule_id, "detail": v.detail} for v in violations]
 
 
 def _format_repair_issues(issues: list[dict[str, str]]) -> str:
@@ -565,13 +451,6 @@ def main(argv: list[str] | None = None) -> int:
 
                 markdown, finish_reason = _or.extract_text(resp)
                 markdown = _mechanical_fix(markdown)
-                markdown, cp04_fix_count = _auto_fix_cp04_hedging(markdown)
-                if cp04_fix_count:
-                    log(
-                        f"AUTO-FIX #{t['rank']} {slug}: CP-04 hedging pass adjusted "
-                        f"{cp04_fix_count} sentence(s)",
-                        fh,
-                    )
                 tokens_in, tokens_out, cost = _or.usage_cost(resp)
                 total_in += tokens_in or 0
                 total_out += tokens_out or 0
@@ -592,6 +471,52 @@ def main(argv: list[str] | None = None) -> int:
                     require_image_alt=False,
                 )
                 tier1 = [v for v in violations if v.tier == 1]
+                medical_tier1 = _medical_soften_candidates(tier1)
+                if medical_tier1:
+                    try:
+                        softened = soften_medical_language(
+                            markdown,
+                            api_key=api_key,
+                            model_id=args.model,
+                            issues=_violations_to_issues(medical_tier1),
+                            max_tokens=args.max_tokens,
+                            timeout=args.timeout,
+                        )
+                        markdown = _mechanical_fix(softened.markdown)
+                        total_in += softened.tokens_in or 0
+                        total_out += softened.tokens_out or 0
+                        total_cost += softened.cost or 0.0
+                        attempts_log.append({
+                            "attempt": attempt,
+                            "kind": "medical_soften",
+                            "mode": attempt_mode,
+                            "detail": ",".join(v.rule_id for v in medical_tier1),
+                        })
+                        log(
+                            f"MEDICAL-SOFTEN #{t['rank']} {slug}: "
+                            f"{','.join(v.rule_id for v in medical_tier1)}",
+                            fh,
+                        )
+                        violations = _validate_fn(
+                            markdown,
+                            context="article",
+                            slug=slug,
+                            require_image_alt=False,
+                        )
+                        tier1 = [v for v in violations if v.tier == 1]
+                    except (MedicalSofteningError, _or.OpenRouterError) as exc:
+                        attempts_log.append({
+                            "attempt": attempt,
+                            "kind": "medical_soften_error",
+                            "mode": attempt_mode,
+                            "detail": str(exc)[:300],
+                        })
+                        log(
+                            f"WARN #{t['rank']} {slug}: medical softener failed "
+                            f"({str(exc)[:160]})",
+                            fh,
+                        )
+
                 if tier1:
                     t1_ids = ",".join(v.rule_id for v in tier1)
                     repair_markdown = markdown
@@ -615,22 +540,97 @@ def main(argv: list[str] | None = None) -> int:
                     unhedged = [v for v in med_violations if not v.hedged]
                     if unhedged:
                         terms = ", ".join(v.term for v in unhedged[:3])
-                        repair_markdown = markdown
-                        repair_issues = [
+                        medical_issues = [
                             {
                                 "rule": "medical",
                                 "detail": f"unhedged medical term '{v.term}' in: {v.sentence}",
                             }
                             for v in unhedged
                         ]
-                        attempts_log.append({
-                            "attempt": attempt, "kind": "medical", "mode": attempt_mode,
-                            "detail": f"unhedged medical terms: {terms}",
-                        })
-                        if attempt < args.max_attempts:
-                            log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
-                                f"{attempt_mode} medical validator: {terms} -> repair same draft", fh)
-                        continue
+                        try:
+                            softened = soften_medical_language(
+                                markdown,
+                                api_key=api_key,
+                                model_id=args.model,
+                                issues=medical_issues,
+                                max_tokens=args.max_tokens,
+                                timeout=args.timeout,
+                            )
+                            markdown = _mechanical_fix(softened.markdown)
+                            total_in += softened.tokens_in or 0
+                            total_out += softened.tokens_out or 0
+                            total_cost += softened.cost or 0.0
+                            attempts_log.append({
+                                "attempt": attempt,
+                                "kind": "medical_soften",
+                                "mode": attempt_mode,
+                                "detail": f"llm medical validator: {terms}",
+                            })
+                            log(
+                                f"MEDICAL-SOFTEN #{t['rank']} {slug}: "
+                                f"llm medical validator: {terms}",
+                                fh,
+                            )
+                            violations = _validate_fn(
+                                markdown,
+                                context="article",
+                                slug=slug,
+                                require_image_alt=False,
+                            )
+                            tier1 = [v for v in violations if v.tier == 1]
+                            if tier1:
+                                t1_ids = ",".join(v.rule_id for v in tier1)
+                                repair_markdown = markdown
+                                repair_issues = _violations_to_issues(tier1)
+                                attempts_log.append({
+                                    "attempt": attempt, "kind": "tier1", "mode": attempt_mode,
+                                    "detail": t1_ids, "violations": repair_issues,
+                                })
+                                if attempt < args.max_attempts:
+                                    log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
+                                        f"medical soften left tier1 {t1_ids} -> repair same draft", fh)
+                                continue
+
+                            med_violations = _medical_check(
+                                markdown, api_key=api_key,
+                                model="google/gemini-2.5-flash",
+                                temperature=0.1, timeout=60,
+                            )
+                            unhedged = [v for v in med_violations if not v.hedged]
+                            if not unhedged:
+                                pass
+                            else:
+                                terms = ", ".join(v.term for v in unhedged[:3])
+                                medical_issues = [
+                                    {
+                                        "rule": "medical",
+                                        "detail": f"unhedged medical term '{v.term}' in: {v.sentence}",
+                                    }
+                                    for v in unhedged
+                                ]
+                                repair_markdown = markdown
+                                repair_issues = medical_issues
+                                attempts_log.append({
+                                    "attempt": attempt, "kind": "medical", "mode": attempt_mode,
+                                    "detail": f"unhedged medical terms after softening: {terms}",
+                                })
+                                if attempt < args.max_attempts:
+                                    log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
+                                        f"medical softener left unhedged terms {terms} -> repair same draft", fh)
+                                continue
+                        except (MedicalSofteningError, _or.OpenRouterError) as exc:
+                            repair_markdown = markdown
+                            repair_issues = medical_issues
+                            attempts_log.append({
+                                "attempt": attempt,
+                                "kind": "medical_soften_error",
+                                "mode": attempt_mode,
+                                "detail": str(exc)[:300],
+                            })
+                            if attempt < args.max_attempts:
+                                log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
+                                    f"medical softener failed -> repair same draft", fh)
+                            continue
                 except Exception as exc:
                     log(f"WARN #{t['rank']} {slug}: medical validator error (non-blocking): {exc}", fh)
 
