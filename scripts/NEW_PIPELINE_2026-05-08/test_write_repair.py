@@ -38,6 +38,8 @@ class TestWriteRepairHelpers(unittest.TestCase):
         self.assertIn("YMYL copy editor", system)
         self.assertIn("Return the complete corrected Markdown article only.", system)
         self.assertIn("frontmatter, title, excerpt, tags, imageAlt, FAQ, and body", system)
+        self.assertIn("Do not summarize, condense, or shorten the article.", system)
+        self.assertIn("Preserve the body length.", system)
         self.assertIn("This dinner regulates blood sugar.", user)
 
     def test_article_polish_strips_code_fences_and_normalizes_punctuation(self):

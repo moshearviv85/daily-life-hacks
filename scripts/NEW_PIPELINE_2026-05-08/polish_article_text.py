@@ -60,6 +60,8 @@ You get one complete Markdown article. Do exactly this:
 YMYL editing rules:
 - Prefer plain food, cooking, shopping, timing, satiety, comfort, routine, and meal-planning language.
 - If a health reference is necessary, make it cautious: "may", "might", or "could"; no promises.
+- Edit surgically. Do not summarize, condense, or shorten the article.
+- Preserve the body length. When you remove a medical/body-system sentence, replace it with non-medical practical detail, examples, sensory detail, cooking detail, or household context.
 - Remove body-chemistry explanations instead of hedging them.
 - Do not leave words like "brain chemicals", "hormone", "hormones", "neurotransmitters", "reward system", or "nervous system" in the output.
 - For comfort-food topics, explain comfort through memory, warmth, texture, smell, familiarity, routine, seasoning, and serving temperature - never brain chemistry or hormones.

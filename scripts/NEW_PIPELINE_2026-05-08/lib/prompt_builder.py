@@ -214,6 +214,7 @@ Minimum body length, before FAQ and before any recipe card:
 - Recipes: 2400 to 3200 useful body words.
 - Nutrition and tips: 1800 to 2400 useful body words.
 Do not stop early. Make the length come from real help: decisions, mistakes, timing cues, substitutions, storage, reheating, and practical tradeoffs.
+Before returning the article, silently estimate the body word count. If it is below the minimum for this category, keep writing useful body sections until it reaches the minimum. A 900 to 1200 word body is incomplete.
 """
 
 _STRUCTURE = """# ARTICLE SHAPE

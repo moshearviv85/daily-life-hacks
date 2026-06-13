@@ -59,6 +59,7 @@ class TestBuildWriteSystem:
         assert "Recipes: 2400 to 3200 useful body words" in p
         assert "Nutrition and tips: 1800 to 2400 useful body words" in p
         assert "Do not stop early" in p
+        assert "A 900 to 1200 word body is incomplete" in p
         assert "Main body sections MUST use H2 headings" in p
         assert "Do not use H3 (`###`) for top-level body sections" in p
         assert "Do not target an exact heading count" in p
