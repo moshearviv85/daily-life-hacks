@@ -47,7 +47,7 @@ ENV_PATH = REPO_ROOT / ".env"
 
 DEFAULT_MODEL = "google/gemini-2.5-flash"
 DEFAULT_TEMPERATURE = 0.7
-DEFAULT_MAX_TOKENS = 6000
+DEFAULT_MAX_TOKENS = 10000
 DEFAULT_TIMEOUT = 240
 DEFAULT_MAX_ATTEMPTS = 3
 
@@ -272,7 +272,9 @@ Validation failures to fix:
 Repair rules:
 - Return the complete corrected markdown article only.
 - Keep the same topic, category, slug, image path, author, and overall angle.
-- Preserve valid frontmatter and body content where possible.
+- Fix only the listed validation failures.
+- Preserve valid frontmatter, body structure, and approximate length unless a listed failure requires a local change.
+- Do not summarize, shorten, or rewrite unrelated sections.
 - Fix every listed validation failure directly in the text or frontmatter.
 - If recipe fields are missing or invalid, add valid recipe frontmatter fields.
 - If health, detox, stale phrase, or sign-off language is flagged, rewrite those sentences plainly.

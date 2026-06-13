@@ -40,6 +40,8 @@ class TestWriteRepairHelpers(unittest.TestCase):
         self.assertIn("summer-snack-board", prompt)
         self.assertIn("This detox board fixes dinner.", prompt)
         self.assertIn("Return the complete corrected markdown article only.", prompt)
+        self.assertIn("Fix only the listed validation failures.", prompt)
+        self.assertIn("Do not summarize, shorten, or rewrite unrelated sections.", prompt)
 
 
 if __name__ == "__main__":

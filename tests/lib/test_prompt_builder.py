@@ -55,14 +55,20 @@ class TestBuildWriteSystem:
 
     def test_recipe_prompt_requires_longer_body_and_bottom_recipe_card(self):
         p = build_write_system(category="recipes", slug="test-slug")
-        assert "2400 to 3200 useful body words" in p
-        assert "1800 to 2400 useful body words" in p
+        assert "Minimum body length" in p
+        assert "Recipes: 2400 to 3200 useful body words" in p
+        assert "Nutrition and tips: 1800 to 2400 useful body words" in p
+        assert "Do not stop early" in p
+        assert "recipes usually need 9 to 12 H2s" in p
+        assert "nutrition and tips usually need 8 to 11 H2s" in p
         assert "recipe card at the bottom before FAQ" in p
         assert "Do not duplicate the top recipe details box" in p
         assert "Put ingredients, steps, times, servings, calories, and difficulty in YAML only" in p
         assert "servings, calories: plain integers, not quoted" in p
         assert "ingredients: non-empty YAML list of strings" in p
         assert "steps: non-empty YAML list of strings" in p
+        assert "Output only the complete markdown file" in p
+        assert "Use 3 to 8 plain H2 headings" not in p
 
     def test_article_prompt_uses_general_opening_guidance_without_sample_hooks(self):
         p = build_write_system(category="recipes", slug="test-slug")
@@ -85,6 +91,7 @@ class TestBuildWriteUser:
     def test_contains_topic(self):
         p = build_write_user(topic="easy dinner", category="recipes", slug="easy-dinner", rationale="quick meals")
         assert "easy dinner" in p
+        assert "Hit the required body length" in p
 
     def test_contains_rationale(self):
         p = build_write_user(topic="test", category="recipes", slug="test", rationale="keyword angles")
