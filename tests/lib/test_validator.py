@@ -360,10 +360,10 @@ class TestArticleStructural:
         tier1 = [v for v in violations if v.tier == 1]
         assert tier1 == [], f"Expected no Tier 1 violations, got: {tier1}"
 
-    def test_good_article_has_only_depth_tier2_under_new_targets(self):
+    def test_good_article_has_only_word_count_tier2_under_new_targets(self):
         violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")
         tier2 = [v for v in violations if v.tier == 2]
-        assert {v.rule_id for v in tier2} == {"S-20", "S-21"}, f"Expected only S-20/S-21, got: {tier2}"
+        assert {v.rule_id for v in tier2} == {"S-20"}, f"Expected only S-20, got: {tier2}"
 
     def test_missing_frontmatter_triggers_s01(self):
         text = "# Just a plain heading\n\nNo frontmatter here."
@@ -498,11 +498,9 @@ class TestArticleStructural:
         assert tips_s20
         assert "[1700, 2600]" in tips_s20[0].detail
 
-    def test_s21_uses_category_heading_targets(self):
+    def test_s21_allows_flexible_heading_counts(self):
         recipe_violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")
-        recipe_s21 = [v for v in recipe_violations if v.rule_id == "S-21"]
-        assert recipe_s21
-        assert "[9, 12]" in recipe_s21[0].detail
+        assert "S-21" not in {v.rule_id for v in recipe_violations}
 
         extra_recipe_sections = "\n".join(
             f"\n## Extra recipe section {i}\n\nUseful practical detail for this recipe section."
@@ -514,9 +512,7 @@ class TestArticleStructural:
 
         tips_text = GOOD_ARTICLE.replace("category: recipes", "category: tips")
         tips_violations = validate(tips_text, context="article", slug="test-slug")
-        tips_s21 = [v for v in tips_violations if v.rule_id == "S-21"]
-        assert tips_s21
-        assert "[8, 11]" in tips_s21[0].detail
+        assert "S-21" not in {v.rule_id for v in tips_violations}
 
         extra_tips_sections = "\n".join(
             f"\n## Extra tips section {i}\n\nUseful practical detail for this tips section."
@@ -525,3 +521,20 @@ class TestArticleStructural:
         deep_tips = tips_text + extra_tips_sections
         deep_tips_violations = validate(deep_tips, context="article", slug="test-slug")
         assert "S-21" not in {v.rule_id for v in deep_tips_violations}
+
+    def test_s21_warns_for_no_h2_or_too_many_h2s(self):
+        no_h2 = GOOD_ARTICLE.replace("## ", "### ")
+        no_h2_violations = validate(no_h2, context="article", slug="test-slug")
+        no_h2_s21 = [v for v in no_h2_violations if v.rule_id == "S-21"]
+        assert no_h2_s21
+        assert "outside flexible scan range [3, 14]" in no_h2_s21[0].detail
+
+        too_many_sections = "\n".join(
+            f"\n## Extra section {i}\n\nUseful practical detail."
+            for i in range(1, 13)
+        )
+        crowded = GOOD_ARTICLE + too_many_sections
+        crowded_violations = validate(crowded, context="article", slug="test-slug")
+        crowded_s21 = [v for v in crowded_violations if v.rule_id == "S-21"]
+        assert crowded_s21
+        assert "outside flexible scan range [3, 14]" in crowded_s21[0].detail

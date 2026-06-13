@@ -41,7 +41,7 @@ Rule IDs:
     S-14   duplicate comma-separated phrase in recipe steps
     S-15   wrapping code fence
     S-20   (tier 2) body word count outside the category target range
-    S-21   (tier 2) H2 count outside the category target range
+    S-21   (tier 2) H2 count too sparse or too crowded
     S-25   (tier 2) excerpt length out of [100, 200]
 """
 from __future__ import annotations
@@ -434,11 +434,10 @@ def _s20(parsed, text, body, slug) -> Violation | None:
 
 def _s21(parsed, text, body, slug) -> Violation | None:
     n = len(_H2_RE.findall(body))
-    category = (parsed or {}).get("category")
-    low, high = (9, 12) if category == "recipes" else (8, 11)
+    low, high = 3, 14
     if low <= n <= high:
         return None
-    return Violation("S-21", 2, f"body H2 heading count {n} not in [{low}, {high}]")
+    return Violation("S-21", 2, f"body H2 heading count {n} outside flexible scan range [{low}, {high}]")
 
 
 def _s25(parsed, text, body, slug) -> Violation | None:

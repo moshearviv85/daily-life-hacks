@@ -206,7 +206,7 @@ Write for a busy American home cook who came from Pinterest because the promise 
 """
 
 _SEO_AEO_GEO = """# DISCOVERY
-Use the topic and keyword naturally in the title, excerpt, and body. Never force keywords over readability. Answer practical reader questions in normal prose.
+Use the topic and keyword naturally in the title, excerpt, at least one H2, and body. Never force keywords over readability. Answer practical reader questions in normal prose.
 """
 
 _LENGTH = """# LENGTH
@@ -216,15 +216,29 @@ Minimum body length, before FAQ and before any recipe card:
 Do not stop early. Make the length come from real help: decisions, mistakes, timing cues, substitutions, storage, reheating, and practical tradeoffs.
 """
 
-_STRUCTURE = """# WRITING APPROACH
-- Let the article find its natural shape. Do not follow a fixed section count, heading formula, or outline template.
-- Start wherever the topic genuinely starts: a practical problem, a tradeoff, a small opinion, a cooking detail, or the thing the reader is trying to solve.
+_STRUCTURE = """# ARTICLE SHAPE
+- Let the article find its natural shape, but keep the markdown hierarchy clean.
+- Intro: 1 to 3 paragraphs before the first heading. Start from the real topic: a practical problem, a tradeoff, a small opinion, a cooking detail, or the thing the reader is trying to solve.
 - Do not copy or closely mimic phrasing from this prompt. Use it as direction, not source text.
-- Write like a useful human, not like a template. Use headings only where they make the article easier to read, and choose them naturally.
+- Main body sections MUST use H2 headings written as `## Heading`. Do not use H3 (`###`) for top-level body sections.
+- Use enough H2 sections to make the article easy to scan and long enough to be useful. Do not target an exact heading count.
+- H3 headings are optional and only belong inside an H2 section for a real nested subtopic. If you are unsure, use another H2 or plain prose.
+- H2s should sound like useful editorial signposts, not a recycled outline. Mix practical questions, direct observations, and concrete food decisions.
+- Each H2 section needs at least one voice moment: a specific household detail, a mild opinion, a direct aside to the reader, or a dry observation. No flat encyclopedia sections.
 - Build the required length through real help: examples, decisions, mistakes, timing cues, substitutions, storage, reheating, practical tradeoffs, and concrete household situations.
-- If the category is nutrition but the topic is really about cooking, flavor, shopping, storage, or meal planning, keep the article grounded in food and kitchen practicality. Do not turn it into a medical or wellness article.
-- Avoid body-system language unless the topic explicitly requires it. Do not reach for terms like digestion, metabolism, inflammation, cholesterol, hormones, or blood sugar just to make the article sound nutritional.
-- No "Conclusion", no sign-off, no FAQ in the body.
+- Paragraphs are mostly 2 to 5 sentences. Use short punchy sentences for rhythm, but do not make every paragraph a slogan.
+- Lists are fine when they help scanning, but do not let lists replace the article. Explain the why before or after the list.
+- End with one natural closing paragraph after the last H2 section. No "Conclusion", no sign-off, no FAQ in the body.
+
+# QUALITY BAR
+- The article should feel like a capable friend talking at the kitchen counter, not like a wellness handout, SEO template, or school essay.
+- Do not use cutesy generic headings like "The Protein Play", "Fiber Fanatics", "The Beneficial Fat Factor", "The Balanced Bowl", or "Double-Edged Spoon".
+- Do not end with "your body will thank you", "your future self will thank you", "that is the magic", or any similar greeting-card wrap-up.
+- Do not personify nutrients or the body. Avoid lines like "protein tells your brain", "fiber keeps your body happy", or "fat helps your body absorb nutrients" unless carefully hedged and genuinely necessary.
+- For nutrition topics, prefer food mechanics over body-system claims: portion cues, texture, satiety, prep friction, ingredient ratios, shopping choices, and what actually happens at dinner.
+- If the topic is really about cooking, flavor, shopping, storage, or meal planning, keep the article grounded there. Do not turn it into a medical or wellness article.
+- Avoid body-system language unless the topic explicitly requires it. Do not reach for digestion, metabolism, inflammation, cholesterol, hormones, blood sugar, nutrient absorption, or gut health just to make the article sound nutritional.
+- Every section should pass this test: could this paragraph appear in any food blog if you swapped the topic? If yes, rewrite it with concrete details from this topic.
 
 For recipes:
 - Put ingredients, steps, times, servings, calories, and difficulty in YAML only. The site renders the recipe card at the bottom before FAQ.
@@ -237,7 +251,7 @@ Start the file with YAML frontmatter.
 
 Required:
   title: 5 to 10 words
-  excerpt: 100 to 200 characters with a specific payoff
+  excerpt: 130 to 170 characters with a specific payoff. Never exceed 200 characters.
   category: {category}
   tags: 4 to 6 lowercase plain multi-word strings
   image: "/images/{slug}-main.jpg"
@@ -274,6 +288,9 @@ Keywords and angle: {rationale}
 Write the complete article now.
 Reminders:
 - Hit the required body length for this category before you stop.
+- Use H2 (`##`) for top-level body sections. Do not write the main article sections as H3 (`###`).
+- Put the topic keyword in at least one H2, naturally.
+- Make every H2 section sound like David, not like generic food-blog filler.
 - FAQ goes in frontmatter only.
 - End with one closing paragraph.
 - Keep FAQ YAML valid: no `|` and no extra `-` before `answer`.
