@@ -1,0 +1,18 @@
+[2026-06-13T06:39:53Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-13T06:39:53Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260613T063953Z.log
+[2026-06-13T06:39:53Z] topics selected: 1
+[2026-06-13T06:39:53Z]   #  6 [nutrition] why protein matters more at dinner than you think  (slug=why-protein-matters-more-at-dinner-than-you-think)
+[2026-06-13T06:39:53Z] write_runs.id = 6
+[2026-06-13T06:40:09Z] RETRY #6 why-protein-matters-more-at-dinner-than-you-think attempt 1/3: generate tier1 CP-04 -> repair same draft
+[2026-06-13T06:40:18Z] RETRY #6 why-protein-matters-more-at-dinner-than-you-think attempt 2/3: repair tier1 CP-04 -> repair same draft
+[2026-06-13T06:40:26Z] DQ   #6 why-protein-matters-more-at-dinner-than-you-think: exhausted 3 attempts, tier1=CP-04
+[2026-06-13T06:40:26Z]        attempt1 tier1: CP-04
+[2026-06-13T06:40:26Z]        attempt2 tier1: CP-04
+[2026-06-13T06:40:26Z]        attempt3 tier1: CP-04
+[2026-06-13T06:40:26Z] 
+[2026-06-13T06:40:26Z] ============================================================
+[2026-06-13T06:40:26Z] DONE. write_runs.id=6 status=done
+[2026-06-13T06:40:26Z] written=0 dq=1 errors=0 skipped=0
+[2026-06-13T06:40:26Z] tokens in=9,311 out=6,730 cost=$0.0196
+[2026-06-13T06:40:26Z] elapsed: 33.6s (0.6 min)
+[2026-06-13T06:40:26Z] ============================================================

@@ -1,0 +1,18 @@
+[2026-06-13T06:41:06Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-13T06:41:06Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260613T064106Z.log
+[2026-06-13T06:41:06Z] topics selected: 1
+[2026-06-13T06:41:06Z]   #  8 [nutrition] what makes comfort food feel comforting  (slug=what-makes-comfort-food-feel-comforting)
+[2026-06-13T06:41:06Z] write_runs.id = 8
+[2026-06-13T06:41:24Z] RETRY #8 what-makes-comfort-food-feel-comforting attempt 1/3: generate tier1 CP-03 -> repair same draft
+[2026-06-13T06:41:36Z] RETRY #8 what-makes-comfort-food-feel-comforting attempt 2/3: repair medical validator: brain chemicals -> repair same draft
+[2026-06-13T06:41:47Z] ERR  #8 what-makes-comfort-food-feel-comforting: exhausted 3 attempts; last: unhedged medical terms: metabolism, hormone
+[2026-06-13T06:41:47Z]        attempt1 tier1: CP-03
+[2026-06-13T06:41:47Z]        attempt2 medical: unhedged medical terms: brain chemicals
+[2026-06-13T06:41:47Z]        attempt3 medical: unhedged medical terms: metabolism, hormone
+[2026-06-13T06:41:47Z] 
+[2026-06-13T06:41:47Z] ============================================================
+[2026-06-13T06:41:47Z] DONE. write_runs.id=8 status=partial
+[2026-06-13T06:41:47Z] written=0 dq=0 errors=1 skipped=0
+[2026-06-13T06:41:47Z] tokens in=9,737 out=7,401 cost=$0.0214
+[2026-06-13T06:41:47Z] elapsed: 41.7s (0.7 min)
+[2026-06-13T06:41:47Z] ============================================================

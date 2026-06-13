@@ -1,0 +1,14 @@
+[2026-06-13T06:39:12Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-13T06:39:12Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260613T063912Z.log
+[2026-06-13T06:39:12Z] topics selected: 1
+[2026-06-13T06:39:12Z]   #  5 [nutrition] how to build a dinner plate without counting calories  (slug=how-to-build-a-dinner-plate-without-counting-calories)
+[2026-06-13T06:39:12Z] write_runs.id = 5
+[2026-06-13T06:39:28Z] RETRY #5 how-to-build-a-dinner-plate-without-counting-calories attempt 1/3: generate tier1 CP-04 -> repair same draft
+[2026-06-13T06:39:39Z] OK   #5 how-to-build-a-dinner-plate-without-counting-calories  body_words=1239 tier2=S-20,S-21 [attempt 2/3] lat=8392ms cost=$0.0065
+[2026-06-13T06:39:39Z] 
+[2026-06-13T06:39:39Z] ============================================================
+[2026-06-13T06:39:39Z] DONE. write_runs.id=5 status=done
+[2026-06-13T06:39:39Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-13T06:39:39Z] tokens in=5,313 out=4,271 cost=$0.0123
+[2026-06-13T06:39:39Z] elapsed: 27.4s (0.5 min)
+[2026-06-13T06:39:39Z] ============================================================

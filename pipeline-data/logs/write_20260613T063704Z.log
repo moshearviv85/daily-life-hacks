@@ -1,0 +1,13 @@
+[2026-06-13T06:37:04Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-13T06:37:04Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260613T063704Z.log
+[2026-06-13T06:37:04Z] topics selected: 1
+[2026-06-13T06:37:04Z]   #  1 [nutrition] how to make dessert recipes feel lighter  (slug=how-to-make-dessert-recipes-feel-lighter)
+[2026-06-13T06:37:04Z] write_runs.id = 1
+[2026-06-13T06:37:22Z] OK   #1 how-to-make-dessert-recipes-feel-lighter  body_words=1337 tier2=S-20,S-21 lat=15844ms cost=$0.0061
+[2026-06-13T06:37:22Z] 
+[2026-06-13T06:37:22Z] ============================================================
+[2026-06-13T06:37:22Z] DONE. write_runs.id=1 status=done
+[2026-06-13T06:37:22Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-13T06:37:22Z] tokens in=1,530 out=2,245 cost=$0.0061
+[2026-06-13T06:37:22Z] elapsed: 17.4s (0.3 min)
+[2026-06-13T06:37:22Z] ============================================================

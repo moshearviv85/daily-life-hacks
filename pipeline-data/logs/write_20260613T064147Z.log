@@ -1,0 +1,13 @@
+[2026-06-13T06:41:47Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-13T06:41:47Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260613T064147Z.log
+[2026-06-13T06:41:47Z] topics selected: 1
+[2026-06-13T06:41:47Z]   #  9 [nutrition] why slow cooker meals can taste flat  (slug=why-slow-cooker-meals-can-taste-flat)
+[2026-06-13T06:41:47Z] write_runs.id = 9
+[2026-06-13T06:42:10Z] OK   #9 why-slow-cooker-meals-can-taste-flat  body_words=1740 tier2=CP-07,S-21 lat=21540ms cost=$0.0075
+[2026-06-13T06:42:10Z] 
+[2026-06-13T06:42:10Z] ============================================================
+[2026-06-13T06:42:10Z] DONE. write_runs.id=9 status=done
+[2026-06-13T06:42:10Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-13T06:42:10Z] tokens in=1,530 out=2,811 cost=$0.0075
+[2026-06-13T06:42:10Z] elapsed: 23.0s (0.4 min)
+[2026-06-13T06:42:10Z] ============================================================
