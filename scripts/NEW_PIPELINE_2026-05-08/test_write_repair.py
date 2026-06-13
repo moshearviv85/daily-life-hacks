@@ -7,10 +7,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from normalize_punctuation import normalize_punctuation  # noqa: E402
-from soften_medical_language import build_soften_prompts, soften_medical_language  # noqa: E402
-from write import _build_repair_user, _mechanical_fix  # noqa: E402
 from lib import content_policy as _cp  # noqa: E402
+from polish_article_text import build_polish_prompts, normalize_punctuation, polish_article_text  # noqa: E402
+from write import _build_repair_user, _mechanical_fix  # noqa: E402
 
 
 class TestWriteRepairHelpers(unittest.TestCase):
@@ -30,22 +29,21 @@ class TestWriteRepairHelpers(unittest.TestCase):
 
         self.assertEqual(fixed, "One-two and three-four")
 
-    def test_medical_soften_prompt_is_single_purpose(self):
-        system, user = build_soften_prompts(
-            "---\ntitle: Test\n---\n\nThis dinner regulates blood sugar.",
-            issues=[{"rule": "CP-04", "detail": "blood sugar sentence"}],
+    def test_article_polish_prompt_is_single_purpose(self):
+        system, user = build_polish_prompts(
+            "---\ntitle: Test\n---\n\nThis dinner regulates blood sugar."
         )
 
-        self.assertIn("soften or remove medical", system)
+        self.assertIn("Replace any em dash with a short hyphen.", system)
+        self.assertIn("YMYL copy editor", system)
         self.assertIn("Return the complete corrected Markdown article only.", system)
-        self.assertIn("Update frontmatter title, excerpt, tags, imageAlt, and FAQ answers", system)
-        self.assertIn("CP-04", user)
+        self.assertIn("frontmatter, title, excerpt, tags, imageAlt, FAQ, and body", system)
         self.assertIn("This dinner regulates blood sugar.", user)
 
-    def test_medical_soften_strips_code_fences_and_normalizes_punctuation(self):
-        result = soften_medical_language(
+    def test_article_polish_strips_code_fences_and_normalizes_punctuation(self):
+        result = polish_article_text(
             "old",
-            llm_fn=lambda _system, _user: "```markdown\nnew — text\n```",
+            llm_fn=lambda _system, _user: "```markdown\nnew \u2014 text\n```",
         )
 
         self.assertEqual(result.markdown, "new - text")

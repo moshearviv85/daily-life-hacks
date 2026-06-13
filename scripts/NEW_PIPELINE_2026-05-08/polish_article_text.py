@@ -1,4 +1,4 @@
-"""One-pass LLM copy edit for medical or health-adjacent language."""
+"""Single post-write cleanup pass for generated article Markdown."""
 from __future__ import annotations
 
 import argparse
@@ -13,18 +13,18 @@ if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
 
 from lib import content_policy as _cp  # noqa: E402
-from normalize_punctuation import normalize_punctuation  # noqa: E402
 from stage_1_5 import openrouter as _or  # noqa: E402
 
 DEFAULT_MODEL = "google/gemini-2.5-flash"
+EM_DASH_VARIANTS = ("\u2014", "â€”")
 
 
-class MedicalSofteningError(RuntimeError):
-    """Raised when the medical softening pass cannot return usable markdown."""
+class ArticlePolishError(RuntimeError):
+    """Raised when the article polish pass cannot return usable Markdown."""
 
 
 @dataclass(frozen=True)
-class MedicalSofteningResult:
+class ArticlePolishResult:
     markdown: str
     latency_ms: int
     tokens_in: int | None
@@ -33,39 +33,32 @@ class MedicalSofteningResult:
     finish_reason: str | None
 
 
-def _issue_lines(issues: list[dict[str, str]] | None) -> str:
-    if not issues:
-        return "No specific validator lines were provided. Scan the whole article."
-    lines: list[str] = []
-    for issue in issues:
-        rule = issue.get("rule", "medical")
-        detail = issue.get("detail", "").strip()
-        lines.append(f"- {rule}: {detail}")
-    return "\n".join(lines)
+def normalize_punctuation(text: str) -> str:
+    """Replace em-dash variants with a plain short hyphen."""
+    for dash in EM_DASH_VARIANTS:
+        text = text.replace(dash, "-")
+    return text
 
 
-def build_soften_prompts(
-    markdown: str,
-    *,
-    issues: list[dict[str, str]] | None = None,
-) -> tuple[str, str]:
-    """Build the focused medical-copy-edit prompt."""
+def build_polish_prompts(markdown: str) -> tuple[str, str]:
+    """Build the one-pass article polish prompt."""
     hedge_terms = ", ".join(_cp.MEDICAL_TERMS_HEDGE_REQUIRED)
     hard_terms = ", ".join(_cp.MEDICAL_TERMS_HARD_BAN)
-    system = f"""You are a conservative copy editor for Daily Life Hacks.
+    system = f"""You are a careful YMYL copy editor for Daily Life Hacks.
 
-Read the full Markdown article and do one job: soften or remove medical,
-health, disease, supplement, body-system, and treatment language wherever it
-appears.
+You get one complete Markdown article. Do exactly this:
+1. Replace any em dash with a short hyphen.
+2. Read the whole text, including frontmatter, title, excerpt, tags, imageAlt, FAQ, and body.
+3. Identify medical, disease, supplement, body-system, treatment, or strong health statements.
+4. Soften those statements under YMYL rules, or remove them entirely when they are not needed.
+5. Preserve the article's meaning, usefulness, structure, frontmatter keys, Markdown, and natural voice.
 
-Rules:
+YMYL editing rules:
+- Prefer plain food, cooking, shopping, timing, satiety, comfort, routine, and meal-planning language.
+- If a health reference is necessary, make it cautious: "may", "might", or "could"; no promises.
+- Do not add new health claims, citations, disclaimers, notes, or commentary.
+- Do not wrap the answer in code fences.
 - Return the complete corrected Markdown article only.
-- Preserve the article's topic, usefulness, frontmatter shape, Markdown shape, and natural voice.
-- If a medical/body-system reference is not necessary, remove it or replace it with plain food, cooking, shopping, timing, satiety, comfort, routine, or meal-planning language.
-- If a health reference is necessary, make it cautious and non-medical. Use words like "may", "might", or "could"; avoid promises.
-- Do not add new health claims, citations, disclaimers, code fences, notes, or commentary.
-- Update frontmatter title, excerpt, tags, imageAlt, and FAQ answers too if they contain medical language.
-- Never use hard-banned terms unless the only safe choice is to remove the sentence.
 
 Terms that usually need softening or removal:
 {hedge_terms}
@@ -73,11 +66,8 @@ Terms that usually need softening or removal:
 Hard-banned terms:
 {hard_terms}
 """
-    user = f"""Validator notes:
-{_issue_lines(issues)}
-
-Article to soften:
-{markdown}"""
+    user = f"""Article to clean:
+{normalize_punctuation(markdown)}"""
     return system, user
 
 
@@ -91,19 +81,18 @@ def _strip_code_fence(text: str) -> str:
     return cleaned.strip()
 
 
-def soften_medical_language(
+def polish_article_text(
     markdown: str,
     *,
     api_key: str = "",
     model_id: str = DEFAULT_MODEL,
-    issues: list[dict[str, str]] | None = None,
     temperature: float = 0.2,
     max_tokens: int = 10000,
     timeout: int = 180,
     llm_fn: Callable[[str, str], str] | None = None,
-) -> MedicalSofteningResult:
-    """Run one focused model pass that softens/removes medical language."""
-    system, user = build_soften_prompts(markdown, issues=issues)
+) -> ArticlePolishResult:
+    """Normalize punctuation and run one YMYL/medical softening pass."""
+    system, user = build_polish_prompts(markdown)
     if llm_fn is not None:
         raw = llm_fn(system, user)
         latency_ms = 0
@@ -124,11 +113,11 @@ def soften_medical_language(
         raw, finish_reason = _or.extract_text(resp)
         tokens_in, tokens_out, cost = _or.usage_cost(resp)
 
-    softened = normalize_punctuation(_strip_code_fence(raw))
-    if not softened:
-        raise MedicalSofteningError("medical softening returned empty markdown")
-    return MedicalSofteningResult(
-        markdown=softened,
+    polished = normalize_punctuation(_strip_code_fence(raw))
+    if not polished:
+        raise ArticlePolishError("article polish returned empty markdown")
+    return ArticlePolishResult(
+        markdown=polished,
         latency_ms=latency_ms,
         tokens_in=tokens_in,
         tokens_out=tokens_out,
@@ -138,7 +127,7 @@ def soften_medical_language(
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Soften medical language in Markdown.")
+    parser = argparse.ArgumentParser(description="Clean one generated article Markdown file.")
     parser.add_argument("path", nargs="?", help="Markdown file. Reads stdin when omitted.")
     parser.add_argument("--output", help="Output path. Writes stdout when omitted.")
     parser.add_argument("--model", default=DEFAULT_MODEL)
@@ -154,7 +143,7 @@ def main(argv: list[str] | None = None) -> int:
     else:
         markdown = sys.stdin.read()
 
-    result = soften_medical_language(
+    result = polish_article_text(
         markdown,
         api_key=args.api_key,
         model_id=args.model,
