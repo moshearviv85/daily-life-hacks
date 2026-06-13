@@ -172,7 +172,7 @@ def _check_medical_hedge_required(text: str) -> Violation | None:
     """CP-04 tier 1: hedge-required term in sentence without hedging word."""
     # Split on sentence boundaries (. ! ? followed by whitespace, or newlines).
     sentences = re.split(r"(?<=[.!?])\s+|\n+", text)
-    unhedged: list[str] = []
+    unhedged: list[tuple[str, str]] = []
     hedging_lower = [w.lower() for w in _cp.HEDGING_WORDS]
     for sentence in sentences:
         s_lower = sentence.lower()
@@ -181,10 +181,19 @@ def _check_medical_hedge_required(text: str) -> Violation | None:
                 continue
             # Check whether any hedging word appears in the same sentence.
             if not any(h in s_lower for h in hedging_lower):
-                unhedged.append(term)
+                unhedged.append((term, sentence.strip()))
     if unhedged:
-        unique = list(dict.fromkeys(unhedged))  # preserve order, deduplicate
-        return Violation("CP-04", 1, f"hedge-required term(s) used without hedging: {unique[:5]}")
+        terms = list(dict.fromkeys(term for term, _sentence in unhedged))
+        examples = []
+        for term, sentence in unhedged[:3]:
+            clipped = sentence[:160] + ("..." if len(sentence) > 160 else "")
+            examples.append(f"{term}: {clipped}")
+        return Violation(
+            "CP-04",
+            1,
+            "hedge-required term(s) used without hedging: "
+            f"{terms[:5]}; examples: {examples}",
+        )
     return None
 
 
