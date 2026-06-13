@@ -1,0 +1,16 @@
+[2026-06-13T14:11:20Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-13T14:11:20Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260613T141120Z.log
+[2026-06-13T14:11:20Z] topics selected: 1
+[2026-06-13T14:11:20Z]   #  1 [nutrition] how to make meal prep more satisfying  (slug=how-to-make-meal-prep-more-satisfying)
+[2026-06-13T14:11:20Z] write_runs.id = 1
+[2026-06-13T14:11:43Z] POLISH #1 how-to-make-meal-prep-more-satisfying: em dash + YMYL/medical pass body_words=1106->1107
+[2026-06-13T14:11:43Z] RETRY #1 how-to-make-meal-prep-more-satisfying attempt 1/3: generate tier1 CP-09 -> repair same draft
+[2026-06-13T14:11:59Z] POLISH #1 how-to-make-meal-prep-more-satisfying: em dash + YMYL/medical pass body_words=1109->1109
+[2026-06-13T14:11:59Z] OK   #1 how-to-make-meal-prep-more-satisfying  body_words=1109 tier2=CP-07 [attempt 2/3] lat=8179ms cost=$0.0062
+[2026-06-13T14:11:59Z] 
+[2026-06-13T14:11:59Z] ============================================================
+[2026-06-13T14:11:59Z] DONE. write_runs.id=1 status=done
+[2026-06-13T14:11:59Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-13T14:11:59Z] tokens in=11,234 out=7,859 cost=$0.0230
+[2026-06-13T14:11:59Z] elapsed: 39.9s (0.7 min)
+[2026-06-13T14:11:59Z] ============================================================
