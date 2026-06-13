@@ -59,8 +59,9 @@ class TestBuildWriteSystem:
         assert "Recipes: 2400 to 3200 useful body words" in p
         assert "Nutrition and tips: 1800 to 2400 useful body words" in p
         assert "Do not stop early" in p
-        assert "recipes usually need 9 to 12 H2s" in p
-        assert "nutrition and tips usually need 8 to 11 H2s" in p
+        assert "Do not follow a fixed section count" in p
+        assert "Use headings only where they make the article easier to read" in p
+        assert "Do not turn it into a medical or wellness article" in p
         assert "recipe card at the bottom before FAQ" in p
         assert "Do not duplicate the top recipe details box" in p
         assert "Put ingredients, steps, times, servings, calories, and difficulty in YAML only" in p
@@ -69,10 +70,13 @@ class TestBuildWriteSystem:
         assert "steps: non-empty YAML list of strings" in p
         assert "Output only the complete markdown file" in p
         assert "Use 3 to 8 plain H2 headings" not in p
+        assert "Use enough plain H2 sections" not in p
+        assert "one heading" not in p
 
     def test_article_prompt_uses_general_opening_guidance_without_sample_hooks(self):
         p = build_write_system(category="recipes", slug="test-slug")
-        assert "Let the first sentence come from the topic itself" in p
+        assert "Start wherever the topic genuinely starts" in p
+        assert "Let the article find its natural shape" in p
         assert "Do not copy or closely mimic phrasing from this prompt" in p
         assert "You know those nights" not in p
         assert "What David Sounds Like" not in p

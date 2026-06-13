@@ -206,7 +206,7 @@ Write for a busy American home cook who came from Pinterest because the promise 
 """
 
 _SEO_AEO_GEO = """# DISCOVERY
-Use the topic and keyword naturally in the title, excerpt, one heading, and body. Never force keywords over readability. Write clear headings and answer practical reader questions in normal prose.
+Use the topic and keyword naturally in the title, excerpt, and body. Never force keywords over readability. Answer practical reader questions in normal prose.
 """
 
 _LENGTH = """# LENGTH
@@ -216,12 +216,15 @@ Minimum body length, before FAQ and before any recipe card:
 Do not stop early. Make the length come from real help: decisions, mistakes, timing cues, substitutions, storage, reheating, and practical tradeoffs.
 """
 
-_STRUCTURE = """# STRUCTURE
-- Start with 1 to 3 intro paragraphs. Let the first sentence come from the topic itself, not from a reusable formula. Do not copy or closely mimic phrasing from this prompt.
-- Use enough plain H2 sections for the required length: recipes usually need 9 to 12 H2s; nutrition and tips usually need 8 to 11 H2s.
-- Each H2 should earn its space with practical detail, not filler. Mix question and statement headings only if it feels natural.
-- Keep paragraphs mostly 2 to 5 sentences. Use lists only when they make the information easier to scan.
-- End with one natural closing paragraph after the last H2 section. No "Conclusion", no sign-off, no FAQ in the body.
+_STRUCTURE = """# WRITING APPROACH
+- Let the article find its natural shape. Do not follow a fixed section count, heading formula, or outline template.
+- Start wherever the topic genuinely starts: a practical problem, a tradeoff, a small opinion, a cooking detail, or the thing the reader is trying to solve.
+- Do not copy or closely mimic phrasing from this prompt. Use it as direction, not source text.
+- Write like a useful human, not like a template. Use headings only where they make the article easier to read, and choose them naturally.
+- Build the required length through real help: examples, decisions, mistakes, timing cues, substitutions, storage, reheating, practical tradeoffs, and concrete household situations.
+- If the category is nutrition but the topic is really about cooking, flavor, shopping, storage, or meal planning, keep the article grounded in food and kitchen practicality. Do not turn it into a medical or wellness article.
+- Avoid body-system language unless the topic explicitly requires it. Do not reach for terms like digestion, metabolism, inflammation, cholesterol, hormones, or blood sugar just to make the article sound nutritional.
+- No "Conclusion", no sign-off, no FAQ in the body.
 
 For recipes:
 - Put ingredients, steps, times, servings, calories, and difficulty in YAML only. The site renders the recipe card at the bottom before FAQ.
