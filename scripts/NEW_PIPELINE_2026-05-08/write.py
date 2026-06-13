@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sqlite3
 import sys
 import time
@@ -241,12 +242,134 @@ def _mechanical_fix(markdown: str) -> str:
     return markdown.replace(_cp.EM_DASH, "-").replace("\u2014", "-")
 
 
+_CP04_SENTENCE_RE = re.compile(r"[^.!?\n]+(?:[.!?]+|(?=\n|$))", re.MULTILINE)
+_CP04_VERB_RE = re.compile(
+    r"\b(?:can\s+)?("
+    r"regulates?|stabilizes?|balances?|lowers?|reduces?|improves?|boosts?|"
+    r"supports?|promotes?|protects?|strengthens?|helps?"
+    r")\b",
+    re.IGNORECASE,
+)
+_CP04_VERB_BASES = {
+    "regulate": "help regulate",
+    "regulates": "help regulate",
+    "stabilize": "help stabilize",
+    "stabilizes": "help stabilize",
+    "balance": "help balance",
+    "balances": "help balance",
+    "lower": "help lower",
+    "lowers": "help lower",
+    "reduce": "help reduce",
+    "reduces": "help reduce",
+    "improve": "help improve",
+    "improves": "help improve",
+    "boost": "help support",
+    "boosts": "help support",
+    "support": "support",
+    "supports": "support",
+    "promote": "support",
+    "promotes": "support",
+    "protect": "support",
+    "protects": "support",
+    "strengthen": "support",
+    "strengthens": "support",
+    "help": "help",
+    "helps": "help",
+}
+
+
+def _has_cp04_hedge(text: str) -> bool:
+    lower = text.lower()
+    return any(hedge.lower() in lower for hedge in _cp.HEDGING_WORDS)
+
+
+def _cp04_terms_in(text: str) -> list[str]:
+    lower = text.lower()
+    return [term for term in _cp.MEDICAL_TERMS_HEDGE_REQUIRED if term.lower() in lower]
+
+
+def _cp04_verb_replacement(match: re.Match[str]) -> str:
+    raw = match.group(0)
+    verb = match.group(1).lower()
+    replacement = "may " + _CP04_VERB_BASES.get(verb, verb)
+    if raw[:1].isupper():
+        return replacement[:1].upper() + replacement[1:]
+    return replacement
+
+
+def _fix_cp04_sentence(sentence: str) -> str:
+    terms = _cp04_terms_in(sentence)
+    if not terms or _has_cp04_hedge(sentence):
+        return sentence
+
+    first_term_at = min(sentence.lower().find(term.lower()) for term in terms)
+    before_term = sentence[:first_term_at]
+    verb_matches = list(_CP04_VERB_RE.finditer(before_term))
+    if verb_matches:
+        match = verb_matches[-1]
+        return sentence[:match.start()] + _cp04_verb_replacement(match) + sentence[match.end():]
+
+    term_pattern = "|".join(re.escape(term) for term in sorted(terms, key=len, reverse=True))
+    good_for_re = re.compile(rf"\bis\s+good\s+for\s+({term_pattern})\b", re.IGNORECASE)
+    fixed, count = good_for_re.subn(r"may support \1", sentence, count=1)
+    if count:
+        return fixed
+
+    for_term_re = re.compile(rf"\bfor\s+({term_pattern})\b", re.IGNORECASE)
+    fixed, count = for_term_re.subn(r"that may support \1", sentence, count=1)
+    if count:
+        return fixed
+
+    return sentence
+
+
+def _auto_fix_cp04_hedging(markdown: str) -> tuple[str, int]:
+    """Locally hedge straightforward CP-04 sentences before spending an LLM repair."""
+    pieces: list[str] = []
+    fixes = 0
+    pos = 0
+    for match in _CP04_SENTENCE_RE.finditer(markdown):
+        sentence = match.group(0)
+        fixed = _fix_cp04_sentence(sentence)
+        pieces.append(markdown[pos:match.start()])
+        pieces.append(fixed)
+        pos = match.end()
+        if fixed != sentence:
+            fixes += 1
+    pieces.append(markdown[pos:])
+    return "".join(pieces), fixes
+
+
 def _format_repair_issues(issues: list[dict[str, str]]) -> str:
     lines: list[str] = []
     for i, issue in enumerate(issues, start=1):
         rule = issue.get("rule", "unknown")
         detail = issue.get("detail", "").strip()
         lines.append(f"{i}. {rule}: {detail}")
+    return "\n".join(lines)
+
+
+def _retry_instruction(violations: list[_Violation]) -> str:
+    """Return compact repair guidance for legacy tests and diagnostics."""
+    lines = ["Fix the listed validation failures before returning the article:"]
+    for violation in violations:
+        lines.append(f"- {violation.rule_id}: {violation.detail}")
+
+    rule_ids = {violation.rule_id for violation in violations}
+    if "S-10" in rule_ids:
+        lines.extend([
+            "Recipe frontmatter must use prepTime/cookTime/totalTime as quoted strings.",
+            "Recipe frontmatter must use servings and calories as plain integers.",
+            "Recipe frontmatter must use ingredients as a non-empty list of strings.",
+            "Recipe frontmatter must use steps as a non-empty list of strings.",
+        ])
+    if any(rule_id.startswith("CP-") for rule_id in rule_ids):
+        lines.extend([
+            "Use plain food and cooking language only.",
+            "Remove supplement references.",
+            "Remove or hedge hard-banned health terms according to the content policy.",
+        ])
+
     return "\n".join(lines)
 
 
@@ -415,6 +538,13 @@ def main(argv: list[str] | None = None) -> int:
 
                 markdown, finish_reason = _or.extract_text(resp)
                 markdown = _mechanical_fix(markdown)
+                markdown, cp04_fix_count = _auto_fix_cp04_hedging(markdown)
+                if cp04_fix_count:
+                    log(
+                        f"AUTO-FIX #{t['rank']} {slug}: CP-04 hedging pass adjusted "
+                        f"{cp04_fix_count} sentence(s)",
+                        fh,
+                    )
                 tokens_in, tokens_out, cost = _or.usage_cost(resp)
                 total_in += tokens_in or 0
                 total_out += tokens_out or 0

@@ -192,6 +192,7 @@ class TestMedicalTermsHedgeRequired:
         cp04 = [v for v in violations if v.rule_id == "CP-04"]
         assert cp04, "Expected CP-04 for unhedged 'blood sugar'"
         assert cp04[0].tier == 1
+        assert "Cinnamon regulates blood sugar levels." in cp04[0].detail
 
     def test_hedged_blood_sugar_passes(self):
         text = "Cinnamon may help support blood sugar levels."
