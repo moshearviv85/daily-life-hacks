@@ -7,9 +7,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from write import _auto_fix_cp04_hedging, _build_repair_user, _mechanical_fix  # noqa: E402
 from lib import content_policy as _cp  # noqa: E402
-from lib.validator import validate  # noqa: E402
+from polish_article_text import build_polish_prompts, normalize_punctuation, polish_article_text  # noqa: E402
+from write import _build_repair_user, _mechanical_fix  # noqa: E402
 
 
 class TestWriteRepairHelpers(unittest.TestCase):
@@ -23,28 +23,30 @@ class TestWriteRepairHelpers(unittest.TestCase):
         self.assertIn("One-two", fixed)
         self.assertIn("three-four", fixed)
 
-    def test_auto_fix_cp04_hedges_local_sentence_without_model(self):
-        raw = "Cinnamon regulates blood sugar levels after dinner."
-        fixed, count = _auto_fix_cp04_hedging(raw)
+    def test_normalize_punctuation_replaces_em_dash_variants(self):
+        raw = f"One{_cp.EM_DASH}two and three\u2014four"
+        fixed = normalize_punctuation(raw)
 
-        self.assertEqual(count, 1)
-        self.assertEqual(fixed, "Cinnamon may help regulate blood sugar levels after dinner.")
-        cp04 = [v for v in validate(fixed, context="pin_description") if v.rule_id == "CP-04"]
-        self.assertEqual(cp04, [])
+        self.assertEqual(fixed, "One-two and three-four")
 
-    def test_auto_fix_cp04_leaves_already_hedged_sentence_alone(self):
-        raw = "Oats might improve cholesterol when eaten regularly."
-        fixed, count = _auto_fix_cp04_hedging(raw)
+    def test_article_polish_prompt_is_single_purpose(self):
+        system, user = build_polish_prompts(
+            "---\ntitle: Test\n---\n\nThis dinner regulates blood sugar."
+        )
 
-        self.assertEqual(count, 0)
-        self.assertEqual(fixed, raw)
+        self.assertIn("Replace any em dash with a short hyphen.", system)
+        self.assertIn("YMYL copy editor", system)
+        self.assertIn("Return the complete corrected Markdown article only.", system)
+        self.assertIn("frontmatter, title, excerpt, tags, imageAlt, FAQ, and body", system)
+        self.assertIn("This dinner regulates blood sugar.", user)
 
-    def test_auto_fix_cp04_handles_for_phrase(self):
-        raw = "Simple snacks for gut health."
-        fixed, count = _auto_fix_cp04_hedging(raw)
+    def test_article_polish_strips_code_fences_and_normalizes_punctuation(self):
+        result = polish_article_text(
+            "old",
+            llm_fn=lambda _system, _user: "```markdown\nnew \u2014 text\n```",
+        )
 
-        self.assertEqual(count, 1)
-        self.assertEqual(fixed, "Simple snacks that may support gut health.")
+        self.assertEqual(result.markdown, "new - text")
 
     def test_repair_prompt_includes_validation_failures_and_article(self):
         prompt = _build_repair_user(
