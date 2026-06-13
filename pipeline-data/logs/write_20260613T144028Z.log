@@ -1,0 +1,14 @@
+[2026-06-13T14:40:28Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-13T14:40:28Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260613T144028Z.log
+[2026-06-13T14:40:28Z] topics selected: 1
+[2026-06-13T14:40:28Z]   #  1 [nutrition] what makes meal prep meals go stale fast  (slug=what-makes-meal-prep-meals-go-stale-fast)
+[2026-06-13T14:40:28Z] write_runs.id = 1
+[2026-06-13T14:41:12Z] POLISH #1 what-makes-meal-prep-meals-go-stale-fast: em dash + YMYL/medical pass body_words=2018->2018
+[2026-06-13T14:41:13Z] OK   #1 what-makes-meal-prep-meals-go-stale-fast  body_words=2018 lat=26091ms cost=$0.0086
+[2026-06-13T14:41:13Z] 
+[2026-06-13T14:41:13Z] ============================================================
+[2026-06-13T14:41:13Z] DONE. write_runs.id=1 status=done
+[2026-06-13T14:41:13Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-13T14:41:13Z] tokens in=5,941 out=6,331 cost=$0.0176
+[2026-06-13T14:41:13Z] elapsed: 44.6s (0.7 min)
+[2026-06-13T14:41:13Z] ============================================================
