@@ -1,0 +1,14 @@
+[2026-06-13T09:38:22Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-13T09:38:22Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260613T093822Z.log
+[2026-06-13T09:38:22Z] topics selected: 1
+[2026-06-13T09:38:22Z]   #  1 [nutrition] what makes comfort food feel comforting  (slug=what-makes-comfort-food-feel-comforting)
+[2026-06-13T09:38:22Z] write_runs.id = 1
+[2026-06-13T09:38:43Z] POLISH #1 what-makes-comfort-food-feel-comforting: em dash + YMYL/medical pass
+[2026-06-13T09:38:44Z] OK   #1 what-makes-comfort-food-feel-comforting  body_words=954 lat=13258ms cost=$0.0047
+[2026-06-13T09:38:44Z] 
+[2026-06-13T09:38:44Z] ============================================================
+[2026-06-13T09:38:44Z] DONE. write_runs.id=1 status=done
+[2026-06-13T09:38:44Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-13T09:38:44Z] tokens in=4,181 out=3,270 cost=$0.0094
+[2026-06-13T09:38:44Z] elapsed: 21.1s (0.4 min)
+[2026-06-13T09:38:44Z] ============================================================
