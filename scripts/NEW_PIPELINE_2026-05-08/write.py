@@ -241,6 +241,16 @@ def _mechanical_fix(markdown: str) -> str:
     return normalize_punctuation(markdown)
 
 
+def _body_word_count(markdown: str) -> int:
+    if "---" not in markdown:
+        return 0
+    try:
+        body = markdown.split("---", 2)[2]
+    except IndexError:
+        return 0
+    return len(body.split())
+
+
 def _format_repair_issues(issues: list[dict[str, str]]) -> str:
     lines: list[str] = []
     for i, issue in enumerate(issues, start=1):
@@ -452,6 +462,7 @@ def main(argv: list[str] | None = None) -> int:
                             f"empty response", fh)
                     continue
 
+                draft_body_words = _body_word_count(markdown)
                 try:
                     polished = polish_article_text(
                         markdown,
@@ -482,7 +493,12 @@ def main(argv: list[str] | None = None) -> int:
                     "mode": attempt_mode,
                     "detail": "em dash normalization + YMYL/medical language pass",
                 })
-                log(f"POLISH #{t['rank']} {slug}: em dash + YMYL/medical pass", fh)
+                polished_body_words = _body_word_count(markdown)
+                log(
+                    f"POLISH #{t['rank']} {slug}: em dash + YMYL/medical pass "
+                    f"body_words={draft_body_words}->{polished_body_words}",
+                    fh,
+                )
 
                 violations = _validate_fn(
                     markdown,
@@ -600,7 +616,7 @@ def main(argv: list[str] | None = None) -> int:
             t2_summary = f" tier2={','.join(v.rule_id for v in tier2)}" if tier2 else ""
             attempt_label = (f" [attempt {success['attempt']}/{args.max_attempts}]"
                              if success["attempt"] > 1 else "")
-            body_words = len(markdown.split("---", 2)[2].split()) if "---" in markdown else 0
+            body_words = _body_word_count(markdown)
             log(f"OK   #{t['rank']} {slug}  body_words={body_words}{t2_summary}{attempt_label} "
                 f"lat={success['latency_ms']}ms cost=${success['cost'] or 0:.4f}", fh)
             insert_output(conn, {
