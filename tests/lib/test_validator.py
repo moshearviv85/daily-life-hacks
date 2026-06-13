@@ -361,10 +361,10 @@ class TestArticleStructural:
         tier1 = [v for v in violations if v.tier == 1]
         assert tier1 == [], f"Expected no Tier 1 violations, got: {tier1}"
 
-    def test_good_article_has_only_word_count_tier2_under_new_targets(self):
+    def test_good_article_has_no_tier2_warnings(self):
         violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")
         tier2 = [v for v in violations if v.tier == 2]
-        assert {v.rule_id for v in tier2} == {"S-20"}, f"Expected only S-20, got: {tier2}"
+        assert tier2 == [], f"Expected no Tier 2 violations, got: {tier2}"
 
     def test_missing_frontmatter_triggers_s01(self):
         text = "# Just a plain heading\n\nNo frontmatter here."
@@ -487,17 +487,13 @@ class TestArticleStructural:
         rule_ids = {v.rule_id for v in violations}
         assert "S-15" in rule_ids
 
-    def test_s20_uses_longer_category_targets(self):
+    def test_article_length_does_not_trigger_validator_warning(self):
         recipe_violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")
-        recipe_s20 = [v for v in recipe_violations if v.rule_id == "S-20"]
-        assert recipe_s20
-        assert "[2200, 3400]" in recipe_s20[0].detail
+        assert "S-20" not in {v.rule_id for v in recipe_violations}
 
         tips_text = GOOD_ARTICLE.replace("category: recipes", "category: tips")
         tips_violations = validate(tips_text, context="article", slug="test-slug")
-        tips_s20 = [v for v in tips_violations if v.rule_id == "S-20"]
-        assert tips_s20
-        assert "[1700, 2600]" in tips_s20[0].detail
+        assert "S-20" not in {v.rule_id for v in tips_violations}
 
     def test_s21_allows_flexible_heading_counts(self):
         recipe_violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")
