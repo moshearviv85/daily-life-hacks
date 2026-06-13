@@ -59,8 +59,10 @@ class TestBuildWriteSystem:
         assert "Recipes: 2400 to 3200 useful body words" in p
         assert "Nutrition and tips: 1800 to 2400 useful body words" in p
         assert "Do not stop early" in p
-        assert "Do not follow a fixed section count" in p
-        assert "Use headings only where they make the article easier to read" in p
+        assert "Main body sections MUST use H2 headings" in p
+        assert "Do not use H3 (`###`) for top-level body sections" in p
+        assert "Do not target an exact heading count" in p
+        assert "Each H2 section needs at least one voice moment" in p
         assert "Do not turn it into a medical or wellness article" in p
         assert "recipe card at the bottom before FAQ" in p
         assert "Do not duplicate the top recipe details box" in p
@@ -70,12 +72,31 @@ class TestBuildWriteSystem:
         assert "steps: non-empty YAML list of strings" in p
         assert "Output only the complete markdown file" in p
         assert "Use 3 to 8 plain H2 headings" not in p
-        assert "Use enough plain H2 sections" not in p
+        assert "recipes need 9 to 12 H2 sections" not in p
+        assert "nutrition and tips need 8 to 11 H2 sections" not in p
         assert "one heading" not in p
+
+    def test_article_prompt_blocks_recent_generic_failures(self):
+        p = build_write_system(category="nutrition", slug="test-slug")
+        assert "Do not use cutesy generic headings" in p
+        assert "The Protein Play" in p
+        assert "Fiber Fanatics" in p
+        assert "The Beneficial Fat Factor" in p
+        assert "The Balanced Bowl" in p
+        assert "your future self will thank you" in p
+        assert "Do not personify nutrients or the body" in p
+        assert "protein tells your brain" in p
+        assert "prefer food mechanics over body-system claims" in p
+        assert "could this paragraph appear in any food blog" in p
+
+    def test_article_prompt_sets_tighter_excerpt_guidance(self):
+        p = build_write_system(category="nutrition", slug="test-slug")
+        assert "excerpt: 130 to 170 characters" in p
+        assert "Never exceed 200 characters" in p
 
     def test_article_prompt_uses_general_opening_guidance_without_sample_hooks(self):
         p = build_write_system(category="recipes", slug="test-slug")
-        assert "Start wherever the topic genuinely starts" in p
+        assert "Start from the real topic" in p
         assert "Let the article find its natural shape" in p
         assert "Do not copy or closely mimic phrasing from this prompt" in p
         assert "You know those nights" not in p
@@ -88,7 +109,7 @@ class TestBuildWriteSystem:
         assert "# SEO / AEO / GEO" not in p
         assert "# DISCOVERY" in p
         assert "Never force keywords over readability" in p
-        assert len(p) < 9000
+        assert len(p) < 10000
 
 
 class TestBuildWriteUser:
@@ -96,6 +117,10 @@ class TestBuildWriteUser:
         p = build_write_user(topic="easy dinner", category="recipes", slug="easy-dinner", rationale="quick meals")
         assert "easy dinner" in p
         assert "Hit the required body length" in p
+        assert "Use H2 (`##`) for top-level body sections" in p
+        assert "Do not write the main article sections as H3 (`###`)" in p
+        assert "Put the topic keyword in at least one H2" in p
+        assert "generic food-blog filler" in p
 
     def test_contains_rationale(self):
         p = build_write_user(topic="test", category="recipes", slug="test", rationale="keyword angles")
