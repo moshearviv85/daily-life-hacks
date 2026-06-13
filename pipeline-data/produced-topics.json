@@ -1,9 +1,9 @@
 [
   {
-    "id": 351,
-    "topic": "A party food plan that avoids overcooking",
-    "slug": "a-party-food-plan-that-avoids-overcooking",
-    "category": "tips",
+    "id": 398,
+    "topic": "why protein matters more at dinner than you think",
+    "slug": "why-protein-matters-more-at-dinner-than-you-think",
+    "category": "nutrition",
     "source": "manual",
     "search_volume": null,
     "impressions": null,
@@ -12,9 +12,9 @@
     "trend_score": null,
     "dedup_score": null,
     "status": "approved",
-    "reject_reason": "board=Party Food & Easy Entertaining; secondary=Meal Prep & Make-Ahead Food; keyword=appetizer recipes; topup=2026-06-11",
+    "reject_reason": "board=Easy Weeknight Dinners; secondary=Healthy Snacks & Light Bites; keyword=healthy dinner recipes; topup=2026-06-11",
     "created_at": "2026-06-11 16:19:21",
-    "quality_reason": "passed deterministic quality gate",
-    "quality_score": 0.864
+    "quality_reason": "manual topic_ids selection bypassed deterministic quality gate",
+    "quality_score": null
   }
 ]
