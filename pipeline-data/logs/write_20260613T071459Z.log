@@ -1,0 +1,13 @@
+[2026-06-13T07:14:59Z] write.py starting. model=google/gemini-2.5-flash dry_run=False
+[2026-06-13T07:14:59Z] log file: /home/runner/work/daily-life-hacks/daily-life-hacks/pipeline-data/logs/write_20260613T071459Z.log
+[2026-06-13T07:14:59Z] topics selected: 1
+[2026-06-13T07:14:59Z]   #  2 [nutrition] what makes one-pot meals easy to overeat  (slug=what-makes-one-pot-meals-easy-to-overeat)
+[2026-06-13T07:14:59Z] write_runs.id = 2
+[2026-06-13T07:15:16Z] OK   #2 what-makes-one-pot-meals-easy-to-overeat  body_words=1113 tier2=S-20,S-21,S-25 lat=16261ms cost=$0.0055
+[2026-06-13T07:15:16Z] 
+[2026-06-13T07:15:16Z] ============================================================
+[2026-06-13T07:15:16Z] DONE. write_runs.id=2 status=done
+[2026-06-13T07:15:16Z] written=1 dq=0 errors=0 skipped=0
+[2026-06-13T07:15:16Z] tokens in=1,619 out=1,998 cost=$0.0055
+[2026-06-13T07:15:16Z] elapsed: 16.8s (0.3 min)
+[2026-06-13T07:15:16Z] ============================================================
