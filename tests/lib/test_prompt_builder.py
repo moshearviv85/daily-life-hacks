@@ -55,11 +55,13 @@ class TestBuildWriteSystem:
 
     def test_recipe_prompt_requires_longer_body_and_bottom_recipe_card(self):
         p = build_write_system(category="recipes", slug="test-slug")
-        assert "Minimum body length" in p
+        assert "# LENGTH CONTRACT" in p
+        assert "hard requirement, not a suggestion" in p
         assert "Recipes: 2400 to 3200 useful body words" in p
         assert "Nutrition and tips: 1800 to 2400 useful body words" in p
-        assert "Do not stop early" in p
-        assert "A 900 to 1200 word body is incomplete" in p
+        assert "Do not return a short article" in p
+        assert "A 900 to 1200 word body fails this assignment" in p
+        assert "silently plan enough body sections and paragraph depth" in p
         assert "Main body sections MUST use H2 headings" in p
         assert "Do not use H3 (`###`) for top-level body sections" in p
         assert "Do not target an exact heading count" in p
@@ -117,7 +119,8 @@ class TestBuildWriteUser:
     def test_contains_topic(self):
         p = build_write_user(topic="easy dinner", category="recipes", slug="easy-dinner", rationale="quick meals")
         assert "easy dinner" in p
-        assert "Hit the required body length" in p
+        assert "Body length contract: 2400 to 3200 useful body words before the recipe card" in p
+        assert "Do not stop below the body length contract" in p
         assert "Use H2 (`##`) for top-level body sections" in p
         assert "Do not write the main article sections as H3 (`###`)" in p
         assert "Put the topic keyword in at least one H2" in p

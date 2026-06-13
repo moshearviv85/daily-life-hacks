@@ -209,12 +209,14 @@ _SEO_AEO_GEO = """# DISCOVERY
 Use the topic and keyword naturally in the title, excerpt, at least one H2, and body. Never force keywords over readability. Answer practical reader questions in normal prose.
 """
 
-_LENGTH = """# LENGTH
-Minimum body length, before FAQ and before any recipe card:
-- Recipes: 2400 to 3200 useful body words.
+_LENGTH = """# LENGTH CONTRACT
+The body length is a hard requirement, not a suggestion. Count only the article body, excluding YAML frontmatter, FAQ, ingredients, and recipe steps.
+- Recipes: 2400 to 3200 useful body words before the recipe card.
 - Nutrition and tips: 1800 to 2400 useful body words.
-Do not stop early. Make the length come from real help: decisions, mistakes, timing cues, substitutions, storage, reheating, and practical tradeoffs.
-Before returning the article, silently estimate the body word count. If it is below the minimum for this category, keep writing useful body sections until it reaches the minimum. A 900 to 1200 word body is incomplete.
+
+Do not return a short article. A 900 to 1200 word body fails this assignment even if it is polished.
+Before writing, silently plan enough body sections and paragraph depth to reach the required range. Before returning, silently estimate the body word count. If it is below the minimum, keep writing useful article body until it reaches the minimum.
+Build the length through real help: decisions, mistakes, examples, timing cues, substitutions, storage, reheating, practical tradeoffs, and concrete household situations. Do not pad, repeat yourself, or add filler.
 """
 
 _STRUCTURE = """# ARTICLE SHAPE
@@ -285,10 +287,11 @@ _WRITE_USER_TEMPLATE = """Topic: {topic}
 Category: {category}
 Slug: {slug}
 Keywords and angle: {rationale}
+Body length contract: {length_contract}
 
 Write the complete article now.
 Reminders:
-- Hit the required body length for this category before you stop.
+- Do not stop below the body length contract. If the article feels done too early, add useful depth: examples, mistakes, substitutions, storage, timing cues, concrete reader situations, and practical tradeoffs.
 - Use H2 (`##`) for top-level body sections. Do not write the main article sections as H3 (`###`).
 - Put the topic keyword in at least one H2, naturally.
 - Make every H2 section sound like David, not like generic food-blog filler.
@@ -296,6 +299,12 @@ Reminders:
 - End with one closing paragraph.
 - Keep FAQ YAML valid: no `|` and no extra `-` before `answer`.
 - If this is a recipe, keep servings and calories as integers, and keep ingredients and steps as YAML lists."""
+
+
+def _body_length_contract(category: str) -> str:
+    if category == "recipes":
+        return "2400 to 3200 useful body words before the recipe card; YAML recipe fields, FAQ, ingredients, and steps do not count."
+    return "1800 to 2400 useful body words; YAML frontmatter and FAQ do not count."
 
 
 def _hard_bans_section() -> str:
@@ -342,6 +351,7 @@ def build_write_user(*, topic: str, category: str, slug: str, rationale: str) ->
         category=category,
         slug=slug,
         rationale=rationale or "",
+        length_contract=_body_length_contract(category),
     )
 
 
