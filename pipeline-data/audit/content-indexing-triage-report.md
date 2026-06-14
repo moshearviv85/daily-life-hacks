@@ -1,11 +1,11 @@
 # Content Indexing Audit Triage Report
 
-Generated: 2026-06-14T11:12:44+00:00
+Generated: 2026-06-14T10:59:26+00:00
 
 ## Summary
 
-- Articles scanned: 188
-- Released canonical articles: 188
+- Articles scanned: 158
+- Released canonical articles: 158
 - Alias slugs: 266
 - Router variants: 160
 - Bing URLs loaded: 231
@@ -107,10 +107,8 @@ Generated: 2026-06-14T11:12:44+00:00
 | best-way-to-cook-baked-potatoes | 618 | recipes | 1 | 0 | [] |
 | healthy-homemade-vegan-caesar-salad-dressing | 630 | recipes | 1 | 0 | [] |
 | easy-sourdough-discard-pizza-dough-no-yeast | 640 | recipes | 1 | 0 | [] |
-| slow-cooker-pulled-pork-sandwiches-for-busy-weekends | 645 | recipes | 1 | 0 | [] |
 | air-fryer-salmon-bites-garlic-honey-glaze | 651 | recipes | 1 | 0 | [] |
 | easy-cold-summer-pasta-salad-potlucks | 655 | recipes | 1 | 0 | [] |
-| make-ahead-fruit-kabobs-that-do-not-brown | 662 | tips | 1 | 0 | [] |
 | cucumber-edamame-salad-sesame | 670 | recipes | 1 | 0 | [] |
 | healthy-fats-list-foods-to-eat-daily | 687 | nutrition | 1 | 0 | [] |
 | best-way-to-cook-ribs | 688 | recipes | 1 | 0 | [] |
@@ -119,7 +117,6 @@ Generated: 2026-06-14T11:12:44+00:00
 | black-bean-brownies-hidden-fiber-dessert | 695 | nutrition | 1 | 0 | [] |
 | cooking-oils-smoke-points-best-uses | 695 | nutrition | 1 | 0 | [] |
 | crispy-smashed-potato-salad-dijon-herbs | 695 | recipes | 1 | 0 | [] |
-| vegetarian-chili-that-holds-up-all-afternoon | 695 | recipes | 1 | 0 | [] |
 | high-fiber-quinoa-salad-for-lunch-prep | 697 | recipes | 1 | 0 | [] |
 | best-breakfast-foods-for-sustained-energy | 698 | nutrition | 1 | 0 | [] |
 | easy-black-bean-tacos-weeknight-dinner | 699 | recipes | 1 | 0 | [] |
@@ -152,6 +149,9 @@ Generated: 2026-06-14T11:12:44+00:00
 | high-fiber-meals-for-constipation-relief | 714 | nutrition | 1 | 0 | [] |
 | grocery-shopping-list-for-healthy-eating-on-a-budget | 715 | tips | 1 | 0 | [] |
 | how-to-keep-bread-fresh-longer-without-mold | 715 | tips | 1 | 0 | [] |
+| high-fiber-dinner-recipes-picky-kids | 717 | recipes | 1 | 0 | [] |
+| easy-sandwich-bread-recipe-beginners | 723 | recipes | 1 | 0 | [] |
+| how-to-season-cast-iron-skillet-properly | 724 | tips | 1 | 0 | [] |
 
 ## GSC Duplicate URL Shapes
 

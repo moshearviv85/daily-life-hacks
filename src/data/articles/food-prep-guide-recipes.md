@@ -9,8 +9,8 @@ tags:
   - weekly cooking guide
   - easy prep ideas
   - food prep strategies
-image: "/images/food-prep-guide-recipes-main.jpg"
-imageAlt: An overhead view of several glass meal prep containers filled with colorful, healthy components like roasted vegetables, grains, and protein, neatly arranged on a light wooden table.
+image: "/images/food-prep-guide-recipes-fresh-main.jpg"
+imageAlt: "Glass containers and small bowls of weekly food prep components arranged on a bright kitchen counter."
 date: 2026-06-03
 author: "David Miller"
 featured: false
@@ -74,6 +74,8 @@ The seasoning blend here is simple but effective, giving you a savory, slightly 
 <h3>Tips for Perfect Meal Prep Success</h3>
 
 Getting your food prep right isn't just about the recipe; it's about your technique. First, make sure you let everything cool *completely* before portioning and sealing. Trapping steam will create condensation, leading to soggy food and a shorter shelf life. I usually spread everything out on a baking sheet for 15-20 minutes before packing it up.
+
+![Cooked meal prep components cooling on a sheet pan beside open glass storage containers.](/images/food-prep-guide-recipes-support.jpg)
 
 Second, invest in good airtight containers. Glass containers are my go-to because they don't stain, don't hold odors, and can go straight from the fridge to the microwave or oven (if you're feeling fancy). Plastic works too, but make sure it's BPA-free and high quality.
 

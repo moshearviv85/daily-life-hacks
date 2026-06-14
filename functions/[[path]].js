@@ -14,6 +14,79 @@ function detectTrafficSource(request, url) {
 }
 
 const PROXY_ROBOTS = "noindex, follow";
+const CANONICAL_ORIGIN = "https://www.daily-life-hacks.com";
+const SEARCH_GARBAGE_PARAMS = new Set(["s"]);
+
+const LEGACY_PERMANENT_REDIRECTS = new Map([
+  ["protein-per-serving-beans-chicken-tofu-compared", "/best-low-cost-protein-sources-large-families/"],
+  ["how-to-quick-soak-dried-beans-same-day", "/how-to-cook-dried-beans-from-scratch/"],
+  ["keep-berries-fresh-longer-when-to-wash", "/how-to-store-fruits-and-vegetables-properly/"],
+  ["how-to-pack-lunch-crisp-sandwiches-salads", "/how-to-keep-sandwiches-from-getting-soggy/"],
+  ["plan-week-of-dinners-fewer-grocery-runs", "/batch-cooking-for-beginners-weekly-guide/"],
+  ["artichoke-recipes-for-gut-health-guide", "/artichoke-recipes-for-gut-health/"],
+  ["avoid-sodium-shock-rotisserie-chicken", "/big-flavor-less-salt-citrus-herbs-umami-swaps/"],
+  ["simple-snack-portioning-guide", "/grab-and-go-fridge-snack-drawer/"],
+  ["recipes/1", "/recipes/"],
+  ["recipes/2", "/recipes/"],
+  ["tips/1", "/tips/"],
+  ["tag/breakfastideas", "/ricotta-berry-toast-bar-no-cook/"],
+  ["tag/crockpot", "/cheap-crockpot-meals-large-families/"],
+  ["tag/crockpot-meals", "/cheap-crockpot-meals-large-families/"],
+  ["tag/easyovenmeals", "/sheet-pan-ginger-tofu-broccoli-sticky-glaze/"],
+  ["tag/foodstorage", "/how-to-store-fruits-and-vegetables-properly/"],
+  ["tag/foodwaste", "/how-to-reduce-food-waste-at-home-easy-tips/"],
+  ["tag/healthysnacking", "/grab-and-go-fridge-snack-drawer/"],
+  ["tag/homecooking", "/recipes/"],
+  ["tag/kitchenbasics", "/tips/"],
+  ["tag/lentilrecipes", "/lentil-curry-high-fiber-vegan-dinner/"],
+  ["tag/meatlessdinner", "/stuffed-portobello-mushrooms-quinoa-spinach-feta/"],
+  ["tag/nocookmeals", "/ricotta-berry-toast-bar-no-cook/"],
+  ["tag/nutrition-facts", "/nutrition/"],
+  ["tag/quickmeals", "/recipes/"],
+  ["tag/recipetips", "/recipes/"],
+  ["tag/reducefoodwaste", "/how-to-reduce-food-waste-at-home-easy-tips/"],
+  ["tag/rotisserie", "/costco-rotisserie-chicken-meal-ideas-dinner/"],
+  ["tag/slowcookerrecipes", "/cheap-crockpot-meals-large-families/"],
+  ["tag/stuffedmushrooms", "/stuffed-portobello-mushrooms-quinoa-spinach-feta/"],
+  ["tag/vegetariandinner", "/stuffed-portobello-mushrooms-quinoa-spinach-feta/"],
+]);
+
+const LEGACY_GONE_PATHS = new Set([
+  "$%7Ba.slug%7D",
+  "$%7Barticle.slug%7D",
+  "$%7Bimg.slug%7D",
+  "${a.slug}",
+  "${article.slug}",
+  "${img.slug}",
+  "*",
+  "api/event",
+  "feed",
+  "hello-world",
+  "most-very-important-guidance-skill-set",
+  "sample-page",
+  "sample-page/feed",
+  "usual-excuses-made-by-high-conflict-parents",
+  "wp-admin/*",
+  "how-to-preheat-skillet-even-browning",
+  "overnight-oats-without-protein-powder-3-ways",
+  "ten-minute-kitchen-reset-routine",
+  "tag/crisp",
+  "tag/homeorganization",
+  "tag/kitchencleaning",
+  "tag/salsaverde",
+  "tag/tempehrecipes",
+  "tag/timemanagement",
+]);
+
+function normalizeLegacyPath(pathname) {
+  return pathname.replace(/^\/+/, "").replace(/\/+$/, "");
+}
+
+function buildCanonicalUrl(targetPath, search = "") {
+  const targetUrl = new URL(targetPath, CANONICAL_ORIGIN);
+  targetUrl.search = search;
+  return targetUrl.toString();
+}
 
 async function applyProxyRobotsPolicy(proxyResponse, request) {
   const headers = new Headers(proxyResponse.headers);
@@ -72,6 +145,38 @@ export async function onRequest(context) {
     /\.(css|js|png|jpg|jpeg|gif|svg|ico|webp|avif|woff2?|ttf|eot|xml|json|txt|webmanifest)$/,
   ];
   const shouldSkipRouting = skipPatterns.some((pattern) => pattern.test(path));
+
+  const legacyPath = normalizeLegacyPath(originalPathname);
+  const hasLegacyRule =
+    LEGACY_PERMANENT_REDIRECTS.has(legacyPath) || LEGACY_GONE_PATHS.has(legacyPath);
+
+  if (
+    (!shouldSkipRouting || hasLegacyRule) &&
+    (request.method === "GET" || request.method === "HEAD")
+  ) {
+    if (
+      originalPathname === "/" &&
+      [...url.searchParams.keys()].some((key) => SEARCH_GARBAGE_PARAMS.has(key))
+    ) {
+      return Response.redirect(`${CANONICAL_ORIGIN}/`, 301);
+    }
+
+    const legacyTarget = LEGACY_PERMANENT_REDIRECTS.get(legacyPath);
+
+    if (legacyTarget) {
+      return Response.redirect(buildCanonicalUrl(legacyTarget, url.search), 301);
+    }
+
+    if (LEGACY_GONE_PATHS.has(legacyPath)) {
+      return new Response(null, {
+        status: 410,
+        headers: {
+          "X-Robots-Tag": PROXY_ROBOTS,
+          "Cache-Control": "public, max-age=3600",
+        },
+      });
+    }
+  }
 
   if (url.hostname === "daily-life-hacks.com") {
     url.hostname = "www.daily-life-hacks.com";
