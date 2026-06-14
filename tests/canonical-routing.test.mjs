@@ -11,10 +11,13 @@ function makeAssets(existingPaths = new Set()) {
       const url = new URL(request.url);
       calls.push({ url: url.toString(), method: request.method });
       if (existingPaths.has(url.pathname)) {
-        return new Response(`<html>${url.pathname}</html>`, {
+        return new Response(
+          `<html><head><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"></head><body>${url.pathname}</body></html>`,
+          {
           status: 200,
           headers: { "content-type": "text/html" },
-        });
+          },
+        );
       }
       if (url.pathname === "/404.html") {
         return new Response("<html>not found</html>", {
@@ -110,6 +113,7 @@ test("router variants remain noindex proxy pages instead of canonical redirects"
   assert.equal(response.status, 200);
   assert.equal(response.headers.get("x-robots-tag"), "noindex, follow");
   assert.equal(response.headers.get("location"), null);
+  assert.match(await response.text(), /<meta name="robots" content="noindex, follow">/);
   assert.deepEqual(assets.calls, [
     { url: "https://www.daily-life-hacks.com/demo-article/", method: "GET" },
   ]);
