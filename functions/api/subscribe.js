@@ -1,4 +1,8 @@
 const SITE_URL = "https://www.daily-life-hacks.com";
+const CRAWL_NOISE_HEADERS = {
+  "X-Robots-Tag": "noindex, follow",
+  "Cache-Control": "public, max-age=3600",
+};
 const DEFAULT_KIT_FORM_ID = 9202679;
 const DEFAULT_KIT_TAG_IDS = {
   recipes: 17453985,
@@ -276,4 +280,18 @@ export async function onRequestPost(context) {
   } catch (err) {
     return jsonResponse({ error: "Server error" }, 500, corsHeaders);
   }
+}
+
+export async function onRequestGet() {
+  return new Response(null, {
+    status: 410,
+    headers: CRAWL_NOISE_HEADERS,
+  });
+}
+
+export async function onRequestHead() {
+  return new Response(null, {
+    status: 410,
+    headers: CRAWL_NOISE_HEADERS,
+  });
 }

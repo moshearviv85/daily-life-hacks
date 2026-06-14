@@ -2,6 +2,11 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import { onRequest } from "../functions/[[path]].js";
+import {
+  onRequestGet as onSubscribeGet,
+  onRequestHead as onSubscribeHead,
+  onRequestPost as onSubscribePost,
+} from "../functions/api/subscribe.js";
 
 function makeAssets(existingPaths = new Set()) {
   const calls = [];
@@ -33,6 +38,14 @@ function makeAssets(existingPaths = new Set()) {
 function makeContext(url, env = {}) {
   return {
     request: new Request(url),
+    env,
+    waitUntil() {},
+  };
+}
+
+function makeRequestContext(request, env = {}) {
+  return {
+    request,
     env,
     waitUntil() {},
   };
@@ -195,7 +208,12 @@ test("legacy garbage and removed supplement-adjacent URLs return gone", async ()
   const cases = [
     "https://www.daily-life-hacks.com/$%7Ba.slug%7D?preview=moshiko1985!",
     "https://www.daily-life-hacks.com/api/event",
+    "https://www.daily-life-hacks.com/feed/",
+    "https://www.daily-life-hacks.com/hello-world/",
     "https://www.daily-life-hacks.com/overnight-oats-without-protein-powder-3-ways/",
+    "https://www.daily-life-hacks.com/sample-page/",
+    "https://www.daily-life-hacks.com/sample-page/feed/",
+    "https://www.daily-life-hacks.com/wp-admin/*",
   ];
 
   for (const source of cases) {
@@ -211,6 +229,43 @@ test("legacy garbage and removed supplement-adjacent URLs return gone", async ()
     assert.equal(response.headers.get("x-robots-tag"), "noindex, follow");
     assert.deepEqual(assets.calls, []);
   }
+});
+
+test("search query garbage redirects to the homepage canonical URL", async () => {
+  const assets = makeAssets(new Set());
+
+  const response = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/?s=%7Bsearch_term_string%7D", {
+      ASSETS: assets,
+    }),
+  );
+
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get("location"), "https://www.daily-life-hacks.com/");
+  assert.deepEqual(assets.calls, []);
+});
+
+test("newsletter subscribe GET and HEAD are crawl cleanup but POST handler remains available", async () => {
+  const getResponse = await onSubscribeGet();
+  assert.equal(getResponse.status, 410);
+  assert.equal(getResponse.headers.get("x-robots-tag"), "noindex, follow");
+
+  const headResponse = await onSubscribeHead();
+  assert.equal(headResponse.status, 410);
+  assert.equal(headResponse.headers.get("x-robots-tag"), "noindex, follow");
+
+  const postResponse = await onSubscribePost(
+    makeRequestContext(
+      new Request("https://www.daily-life-hacks.com/api/subscribe", {
+        method: "POST",
+        body: JSON.stringify({ email: "not-an-email" }),
+      }),
+      {},
+    ),
+  );
+
+  assert.equal(postResponse.status, 400);
+  assert.deepEqual(await postResponse.json(), { error: "Valid email required" });
 });
 
 test("static assets on non-www only redirect host and do not append a slash", async () => {

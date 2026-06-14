@@ -15,6 +15,7 @@ function detectTrafficSource(request, url) {
 
 const PROXY_ROBOTS = "noindex, follow";
 const CANONICAL_ORIGIN = "https://www.daily-life-hacks.com";
+const SEARCH_GARBAGE_PARAMS = new Set(["s"]);
 
 const LEGACY_PERMANENT_REDIRECTS = new Map([
   ["protein-per-serving-beans-chicken-tofu-compared", "/best-low-cost-protein-sources-large-families/"],
@@ -59,8 +60,13 @@ const LEGACY_GONE_PATHS = new Set([
   "${img.slug}",
   "*",
   "api/event",
+  "feed",
+  "hello-world",
   "most-very-important-guidance-skill-set",
+  "sample-page",
+  "sample-page/feed",
   "usual-excuses-made-by-high-conflict-parents",
+  "wp-admin/*",
   "how-to-preheat-skillet-even-browning",
   "overnight-oats-without-protein-powder-3-ways",
   "ten-minute-kitchen-reset-routine",
@@ -148,6 +154,13 @@ export async function onRequest(context) {
     (!shouldSkipRouting || hasLegacyRule) &&
     (request.method === "GET" || request.method === "HEAD")
   ) {
+    if (
+      originalPathname === "/" &&
+      [...url.searchParams.keys()].some((key) => SEARCH_GARBAGE_PARAMS.has(key))
+    ) {
+      return Response.redirect(`${CANONICAL_ORIGIN}/`, 301);
+    }
+
     const legacyTarget = LEGACY_PERMANENT_REDIRECTS.get(legacyPath);
 
     if (legacyTarget) {
