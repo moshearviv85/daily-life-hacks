@@ -7,12 +7,13 @@
     "prebuild": "node scripts/optimize-images.mjs",
     "build": "astro build",
     "verify:routing": "node scripts/verify-routing.mjs",
-    "build:checked": "npm run build && npm run verify:routing",
+    "verify:pin-destinations": "node scripts/verify-pin-destinations.mjs",
+    "build:checked": "npm run build && npm run verify:routing && npm run verify:pin-destinations",
     "audit:recipes": "node scripts/audit-recipes.mjs",
     "audit:content": "py -3 scripts/audit_content.py",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy:prod": "npm run build && wrangler pages deploy dist --project-name=daily-life-hacks --branch=main",
+    "deploy:prod": "npm run build:checked && wrangler pages deploy dist --project-name=daily-life-hacks --branch=main",
     "release:prod": "git push && npm run deploy:prod"
   },
   "dependencies": {
