@@ -59,7 +59,6 @@ const LEGACY_GONE_PATHS = new Set([
   "${img.slug}",
   "*",
   "api/event",
-  "cdn-cgi/l/email-protection",
   "most-very-important-guidance-skill-set",
   "usual-excuses-made-by-high-conflict-parents",
   "how-to-preheat-skillet-even-browning",

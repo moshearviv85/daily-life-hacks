@@ -99,7 +99,7 @@ Legacy food/kitchen URLs with close canonical matches now return 301 redirects. 
 The following legacy paths now intentionally return `410 Gone` with `X-Robots-Tag: noindex, follow`:
 
 - Placeholder/template leakage: `/${a.slug}`, `/${article.slug}`, `/${img.slug}`, `/*`
-- Obsolete endpoint/noise: `/api/event/`, `/cdn-cgi/l/email-protection/`
+- Obsolete endpoint/noise: `/api/event/`
 - Off-topic/non-food or low-value legacy pages: `/usual-excuses-made-by-high-conflict-parents/`, `/most-very-important-guidance-skill-set/`, `/ten-minute-kitchen-reset-routine/`, `/tag/homeorganization/`, `/tag/kitchencleaning/`, `/tag/timemanagement/`
 - No strong canonical match: `/how-to-preheat-skillet-even-browning/`, `/tag/crisp/`, `/tag/salsaverde/`, `/tag/tempehrecipes/`
 - Supplement-adjacent slug removed under food-first rules: `/overnight-oats-without-protein-powder-3-ways/`
@@ -114,8 +114,10 @@ After local build and Cloudflare Pages function simulation against all 52 rows:
 | --- | ---: |
 | 200 | 6 |
 | 301 | 31 |
-| 410 | 15 |
-| 404 | 0 |
+| 410 | 14 |
+| 404 | 1 |
+
+The one remaining 404 is `/cdn-cgi/l/email-protection`, which is a Cloudflare-reserved system path. It does not reach the Pages Function in production, so it is not controllable from this repository. It should be treated as Cloudflare noise rather than an indexable site URL.
 
 The impression-protected rows are no longer `410`:
 
@@ -140,4 +142,5 @@ Net change from the original triage start: +7 released canonical articles. The i
   - Astro build: 777 pages
   - `verify:routing`: 510 built article/alias slugs OK
   - `verify:pin-destinations`: 225 OK
-- Local Wrangler Pages scan of all 52 Coverage Drilldown URLs: 0 remaining 404s
+- Local Wrangler Pages scan of all 52 Coverage Drilldown URLs: 51 repo-controllable rows handled; 1 Cloudflare-reserved `/cdn-cgi/l/email-protection` row remains 404
+- Production live scan after deploy: same distribution, with only `/cdn-cgi/l/email-protection` remaining 404
