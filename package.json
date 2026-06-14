@@ -9,6 +9,7 @@
     "verify:routing": "node scripts/verify-routing.mjs",
     "build:checked": "npm run build && npm run verify:routing",
     "audit:recipes": "node scripts/audit-recipes.mjs",
+    "audit:content": "py -3 scripts/audit_content.py",
     "preview": "astro preview",
     "astro": "astro",
     "deploy:prod": "npm run build && wrangler pages deploy dist --project-name=daily-life-hacks --branch=main",
