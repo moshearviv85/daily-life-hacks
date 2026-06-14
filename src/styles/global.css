@@ -185,6 +185,56 @@ img {
   font-style: italic;
 }
 
+.article-content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  color: var(--text-color);
+}
+
+.article-content thead {
+  background: var(--sidebar-bg);
+}
+
+.article-content th,
+.article-content td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-content th {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+.article-content tr:last-child td {
+  border-bottom: 0;
+}
+
+.article-content th + th,
+.article-content td + td {
+  border-left: 1px solid var(--border-color);
+}
+
+@media (max-width: 640px) {
+  .article-content table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .article-content th,
+  .article-content td {
+    padding: 0.7rem 0.85rem;
+  }
+}
+
 /* ── Infinite scroll animation (used by category pages) ── */
 @keyframes fadeInUp {
   from {
