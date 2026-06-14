@@ -129,6 +129,30 @@ test("legacy removed and off-topic URLs return gone without hitting static asset
   assert.deepEqual(assets.calls, []);
 });
 
+test("GSC impression article URLs pass through as live canonical pages", async () => {
+  const assets = makeAssets(
+    new Set([
+      "/prebiotic-foods-beyond-the-buzzwords/",
+      "/selenium-containing-foods-easy-ways/",
+    ]),
+  );
+
+  for (const slug of [
+    "prebiotic-foods-beyond-the-buzzwords",
+    "selenium-containing-foods-easy-ways",
+  ]) {
+    const response = await onRequest(
+      makeContext(`https://www.daily-life-hacks.com/${slug}/`, {
+        ASSETS: assets,
+      }),
+    );
+
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get("location"), null);
+    assert.notEqual(response.headers.get("x-robots-tag"), "noindex, follow");
+  }
+});
+
 test("static assets on non-www only redirect host and do not append a slash", async () => {
   const assets = makeAssets(new Set());
 

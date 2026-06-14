@@ -27,6 +27,17 @@ The 54 `keep_review_for_content_depth` rows are not empty canonical articles. In
 
 ## Executed Actions
 
+### Regression Correction
+
+Two URLs in the GSC Performance Pages export had meaningful impressions and must not be treated as gone:
+
+| Restored canonical article | GSC signal |
+| --- | --- |
+| `/prebiotic-foods-beyond-the-buzzwords/` | ~109 impressions, ranking around position 10 |
+| `/selenium-containing-foods-easy-ways/` | ~114 impressions |
+
+Both were restored as live indexable canonical articles. New rule: any URL with impressions in the GSC Pages export must be flagged for content improvement instead of being deleted, redirected to a weak match, or returned as `410 Gone`.
+
 ### Permanent Redirects
 
 The following legacy food/kitchen URLs had close canonical matches and now return 301 redirects:
@@ -47,8 +58,6 @@ The following legacy URLs had no close canonical match, were off-topic, or were 
 | --- |
 | `/most-very-important-guidance-skill-set/` |
 | `/usual-excuses-made-by-high-conflict-parents/` |
-| `/selenium-containing-foods-easy-ways/` |
-| `/prebiotic-foods-beyond-the-buzzwords/` |
 | `/how-to-preheat-skillet-even-browning/` |
 | `/savory-chia-seed-recipes-breakfast/` |
 | `/how-to-pack-salad-for-work-not-soggy/` |
@@ -78,9 +87,9 @@ Indexable canonical article count did not change:
 
 | Metric | Before | After |
 | --- | ---: | ---: |
-| Released canonical article files | 158 | 158 |
+| Released canonical article files | 158 | 160 |
 
-This cleanup removes or redirects legacy URL noise without adding new indexable proxy pages and without deleting canonical articles.
+This cleanup removes or redirects legacy URL noise, restores two impression-bearing canonical articles, and does not add new indexable proxy pages.
 
 ## Verification
 

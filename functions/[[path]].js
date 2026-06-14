@@ -27,8 +27,6 @@ const LEGACY_PERMANENT_REDIRECTS = new Map([
 const LEGACY_GONE_PATHS = new Set([
   "most-very-important-guidance-skill-set",
   "usual-excuses-made-by-high-conflict-parents",
-  "selenium-containing-foods-easy-ways",
-  "prebiotic-foods-beyond-the-buzzwords",
   "how-to-preheat-skillet-even-browning",
   "savory-chia-seed-recipes-breakfast",
   "how-to-pack-salad-for-work-not-soggy",
