@@ -80,6 +80,55 @@ test("missing no-slash paths do not redirect to fake canonical pages", async () 
   assert.equal(response.headers.get("location"), null);
 });
 
+test("legacy food URLs with close canonical matches redirect to the existing article", async () => {
+  const assets = makeAssets(new Set());
+
+  const response = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/how-to-quick-soak-dried-beans-same-day/", {
+      ASSETS: assets,
+    }),
+  );
+
+  assert.equal(response.status, 301);
+  assert.equal(
+    response.headers.get("location"),
+    "https://www.daily-life-hacks.com/how-to-cook-dried-beans-from-scratch/",
+  );
+  assert.deepEqual(assets.calls, []);
+});
+
+test("legacy redirects canonicalize non-www host in one hop", async () => {
+  const assets = makeAssets(new Set());
+
+  const response = await onRequest(
+    makeContext("https://daily-life-hacks.com/keep-berries-fresh-longer-when-to-wash", {
+      ASSETS: assets,
+    }),
+  );
+
+  assert.equal(response.status, 301);
+  assert.equal(
+    response.headers.get("location"),
+    "https://www.daily-life-hacks.com/how-to-store-fruits-and-vegetables-properly/",
+  );
+  assert.deepEqual(assets.calls, []);
+});
+
+test("legacy removed and off-topic URLs return gone without hitting static assets", async () => {
+  const assets = makeAssets(new Set());
+
+  const response = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/usual-excuses-made-by-high-conflict-parents/", {
+      ASSETS: assets,
+    }),
+  );
+
+  assert.equal(response.status, 410);
+  assert.equal(response.headers.get("location"), null);
+  assert.equal(response.headers.get("x-robots-tag"), "noindex, follow");
+  assert.deepEqual(assets.calls, []);
+});
+
 test("static assets on non-www only redirect host and do not append a slash", async () => {
   const assets = makeAssets(new Set());
 

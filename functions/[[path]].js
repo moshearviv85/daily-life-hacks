@@ -14,6 +14,43 @@ function detectTrafficSource(request, url) {
 }
 
 const PROXY_ROBOTS = "noindex, follow";
+const CANONICAL_ORIGIN = "https://www.daily-life-hacks.com";
+
+const LEGACY_PERMANENT_REDIRECTS = new Map([
+  ["protein-per-serving-beans-chicken-tofu-compared", "/best-low-cost-protein-sources-large-families/"],
+  ["how-to-quick-soak-dried-beans-same-day", "/how-to-cook-dried-beans-from-scratch/"],
+  ["keep-berries-fresh-longer-when-to-wash", "/how-to-store-fruits-and-vegetables-properly/"],
+  ["how-to-pack-lunch-crisp-sandwiches-salads", "/how-to-keep-sandwiches-from-getting-soggy/"],
+  ["plan-week-of-dinners-fewer-grocery-runs", "/batch-cooking-for-beginners-weekly-guide/"],
+]);
+
+const LEGACY_GONE_PATHS = new Set([
+  "most-very-important-guidance-skill-set",
+  "usual-excuses-made-by-high-conflict-parents",
+  "selenium-containing-foods-easy-ways",
+  "prebiotic-foods-beyond-the-buzzwords",
+  "how-to-preheat-skillet-even-browning",
+  "savory-chia-seed-recipes-breakfast",
+  "how-to-pack-salad-for-work-not-soggy",
+  "tag/homeorganization",
+  "tag/reducefoodwaste",
+  "tag/quickmeals",
+  "tag/homecooking",
+  "tag/crockpot-meals",
+  "tag/stuffedmushrooms",
+  "tag/kitchenbasics",
+  "tips/1",
+]);
+
+function normalizeLegacyPath(pathname) {
+  return pathname.replace(/^\/+/, "").replace(/\/+$/, "");
+}
+
+function buildCanonicalUrl(targetPath, search = "") {
+  const targetUrl = new URL(targetPath, CANONICAL_ORIGIN);
+  targetUrl.search = search;
+  return targetUrl.toString();
+}
 
 async function applyProxyRobotsPolicy(proxyResponse, request) {
   const headers = new Headers(proxyResponse.headers);
@@ -72,6 +109,25 @@ export async function onRequest(context) {
     /\.(css|js|png|jpg|jpeg|gif|svg|ico|webp|avif|woff2?|ttf|eot|xml|json|txt|webmanifest)$/,
   ];
   const shouldSkipRouting = skipPatterns.some((pattern) => pattern.test(path));
+
+  if (!shouldSkipRouting && (request.method === "GET" || request.method === "HEAD")) {
+    const legacyPath = normalizeLegacyPath(originalPathname);
+    const legacyTarget = LEGACY_PERMANENT_REDIRECTS.get(legacyPath);
+
+    if (legacyTarget) {
+      return Response.redirect(buildCanonicalUrl(legacyTarget, url.search), 301);
+    }
+
+    if (LEGACY_GONE_PATHS.has(legacyPath)) {
+      return new Response(null, {
+        status: 410,
+        headers: {
+          "X-Robots-Tag": PROXY_ROBOTS,
+          "Cache-Control": "public, max-age=3600",
+        },
+      });
+    }
+  }
 
   if (url.hostname === "daily-life-hacks.com") {
     url.hostname = "www.daily-life-hacks.com";
