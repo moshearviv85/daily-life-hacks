@@ -9,7 +9,7 @@ tags:
   - weekly cooking guide
   - easy prep ideas
   - food prep strategies
-image: "/images/food-prep-guide-recipes-main.jpg"
+image: "/images/food-prep-guide-recipes-fresh-main.jpg"
 imageAlt: "Glass containers and small bowls of weekly food prep components arranged on a bright kitchen counter."
 date: 2026-06-03
 author: "David Miller"
