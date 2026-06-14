@@ -23,13 +23,7 @@ function detectTrafficSource(request, url) {
 export async function onRequest(context) {
   const { request, env, waitUntil } = context;
   const url = new URL(request.url);
-
-  if (url.hostname === "daily-life-hacks.com") {
-    url.hostname = "www.daily-life-hacks.com";
-    url.protocol = "https:";
-    return Response.redirect(url.toString(), 301);
-  }
-
+  const originalPathname = url.pathname;
   const path = url.pathname.replace(/\/$/, "") || "/";
 
   // --- 1. GUARD: Skip static assets and API routes ---
@@ -37,11 +31,39 @@ export async function onRequest(context) {
     /^\/(api|_astro|_image)\//,
     /\.(css|js|png|jpg|jpeg|gif|svg|ico|webp|avif|woff2?|ttf|eot|xml|json|txt|webmanifest)$/,
   ];
+  const shouldSkipRouting = skipPatterns.some((pattern) => pattern.test(path));
 
-  for (const pattern of skipPatterns) {
-    if (pattern.test(path)) {
-      return env.ASSETS.fetch(request);
+  if (url.hostname === "daily-life-hacks.com") {
+    url.hostname = "www.daily-life-hacks.com";
+    url.protocol = "https:";
+
+    if (
+      !shouldSkipRouting &&
+      (request.method === "GET" || request.method === "HEAD") &&
+      originalPathname !== "/" &&
+      !originalPathname.endsWith("/")
+    ) {
+      const canonicalUrl = new URL(`${path}/`, url.origin);
+      canonicalUrl.search = url.search;
+      const canonicalReq = new Request(canonicalUrl.toString(), {
+        method: request.method,
+        headers: request.headers,
+      });
+      const canonicalAsset = await env.ASSETS.fetch(canonicalReq);
+
+      if (
+        canonicalAsset.status !== 404 &&
+        canonicalAsset.headers.get("x-astro-reroute") !== "no"
+      ) {
+        return Response.redirect(canonicalUrl.toString(), 301);
+      }
     }
+
+    return Response.redirect(url.toString(), 301);
+  }
+
+  if (shouldSkipRouting) {
+    return env.ASSETS.fetch(request);
   }
 
   const fullPathSlug = path.slice(1); // Remove leading slash
@@ -105,6 +127,27 @@ export async function onRequest(context) {
       routeConfig = { type: "internal", base_slug: baseSlug };
     } else {
       // --- 4. PASS THROUGH: log page_view to funnel_events (server-side, no JS needed) ---
+      if (
+        (request.method === "GET" || request.method === "HEAD") &&
+        originalPathname !== "/" &&
+        !originalPathname.endsWith("/")
+      ) {
+        const canonicalUrl = new URL(`${path}/`, url.origin);
+        canonicalUrl.search = url.search;
+        const canonicalReq = new Request(canonicalUrl.toString(), {
+          method: request.method,
+          headers: request.headers,
+        });
+        const canonicalAsset = await env.ASSETS.fetch(canonicalReq);
+
+        if (
+          canonicalAsset.status !== 404 &&
+          canonicalAsset.headers.get("x-astro-reroute") !== "no"
+        ) {
+          return Response.redirect(canonicalUrl.toString(), 301);
+        }
+      }
+
       if (env.DB && request.method === "GET") {
         const pagePath = path || "/";
         const metadata = JSON.stringify({
