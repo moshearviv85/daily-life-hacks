@@ -5,12 +5,12 @@
 Executed the actionable parts of `content-indexing-triage-report.md` for production/main:
 
 - Canonical indexable article cleanup
-- Noindex proxy exclusion
-- Google-reported URL-level 404 cleanup from the available GSC Performance export
-- Off-topic non-food slug removal
+- Noindex pin-proxy exclusion
+- Google-reported URL-level 404 cleanup from the Coverage Drilldown export
+- Off-topic, placeholder, and supplement-adjacent legacy slug removal
 - Indexable canonical article count before/after
 
-No D1/KV mutation, no article production, no image/pin generation, and no canonical article deletions were performed.
+No D1/KV mutation, no article production pipeline, no promote workflow, no image generation, and no Pinterest posting were performed.
 
 ## Triage Decisions
 
@@ -23,77 +23,121 @@ From `content-indexing-triage-report.summary.json` on `main`:
 - Content-depth review: 54
 - Noindex/canonical proxy confirmations: 68
 
-The 54 `keep_review_for_content_depth` rows are not empty canonical articles. In the CSV, their article word counts range from 651 to 874 words, average 774.6. The Markdown thin/missing table lists 50 canonical articles with body word counts from 593 to 724; all have complete frontmatter and are primarily missing image assets. They were left untouched for a later content-quality pass.
+The 54 `keep_review_for_content_depth` rows were not empty canonical articles. In the CSV, their article word counts ranged from 651 to 874 words, average 774.6. The Markdown thin/missing table listed 50 canonical articles with body word counts from 593 to 724; all had complete frontmatter and were primarily missing image assets. They were left untouched for a later content-quality pass.
 
-## Executed Actions
+## New Safety Rule
 
-### Regression Correction
+Any URL that appears in the GSC Pages performance export with impressions must not be deleted or returned as `410 Gone`. These URLs are protected and should be restored, redirected to a strong canonical match, or flagged for content improvement.
 
-Two URLs in the GSC Performance Pages export had meaningful impressions and must not be treated as gone:
+This rule corrected the earlier regression on:
 
-| Restored canonical article | GSC signal |
+| URL | GSC signal | Action |
+| --- | ---: | --- |
+| `/prebiotic-foods-beyond-the-buzzwords/` | 120 impressions in current Pages export | Restored as live canonical article |
+| `/selenium-containing-foods-easy-ways/` | 119 impressions in current Pages export | Restored as live canonical article |
+| `/savory-chia-seed-recipes-breakfast/` | 9 impressions | Restored as live canonical article |
+| `/how-to-pack-salad-for-work-not-soggy/` | 4 impressions | Restored as live canonical article |
+| `/tag/stuffedmushrooms/` | 1 impression | 301 to restored stuffed portobello article |
+| `/tag/homecooking/` | 1 impression | 301 to `/recipes/` |
+| `/tag/kitchenbasics/` | 1 impression | 301 to `/tips/` |
+| `/tips/1/` | 1 impression | 301 to `/tips/` |
+
+## Restored Canonical Articles
+
+These released article files were restored because they are in-scope, have existing image assets, and are preferable to returning Google-reported URLs as 404/410:
+
+| Restored article | Reason |
 | --- | --- |
-| `/prebiotic-foods-beyond-the-buzzwords/` | ~109 impressions, ranking around position 10 |
-| `/selenium-containing-foods-easy-ways/` | ~114 impressions |
+| `/savory-chia-seed-recipes-breakfast/` | Had GSC impressions; food-first recipe; existing hero/pin assets |
+| `/how-to-pack-salad-for-work-not-soggy/` | Had GSC impressions; practical food-storage/work-lunch article; existing hero/pin assets |
+| `/ricotta-berry-toast-bar-no-cook/` | Valid food recipe; existing hero/pin assets; resolves old breakfast/no-cook legacy paths |
+| `/sheet-pan-ginger-tofu-broccoli-sticky-glaze/` | Valid food recipe; existing hero/pin assets; resolves old oven-meal legacy paths |
+| `/stuffed-portobello-mushrooms-quinoa-spinach-feta/` | Valid food recipe; existing hero/pin assets; strong target for `tag/stuffedmushrooms` |
 
-Both were restored as live indexable canonical articles. New rule: any URL with impressions in the GSC Pages export must be flagged for content improvement instead of being deleted, redirected to a weak match, or returned as `410 Gone`.
+All restored article copy was cleaned against the Daily Life Hacks voice/content rules:
 
-### Permanent Redirects
+- No supplements
+- No detox/cleanse language
+- No absolute medical claims
+- No em dashes
+- No generic AI closings
+- Body word counts: 690 to 894 words
 
-The following legacy food/kitchen URLs had close canonical matches and now return 301 redirects:
+## Permanent Redirects
 
-| Legacy URL path | Target |
+Legacy food/kitchen URLs with close canonical matches now return 301 redirects. This includes the earlier redirects plus the Coverage Drilldown follow-up:
+
+| Legacy path | Target |
 | --- | --- |
 | `/protein-per-serving-beans-chicken-tofu-compared/` | `/best-low-cost-protein-sources-large-families/` |
 | `/how-to-quick-soak-dried-beans-same-day/` | `/how-to-cook-dried-beans-from-scratch/` |
 | `/keep-berries-fresh-longer-when-to-wash/` | `/how-to-store-fruits-and-vegetables-properly/` |
 | `/how-to-pack-lunch-crisp-sandwiches-salads/` | `/how-to-keep-sandwiches-from-getting-soggy/` |
 | `/plan-week-of-dinners-fewer-grocery-runs/` | `/batch-cooking-for-beginners-weekly-guide/` |
+| `/artichoke-recipes-for-gut-health-guide/` | `/artichoke-recipes-for-gut-health/` |
+| `/avoid-sodium-shock-rotisserie-chicken/` | `/big-flavor-less-salt-citrus-herbs-umami-swaps/` |
+| `/simple-snack-portioning-guide/` | `/grab-and-go-fridge-snack-drawer/` |
+| `/recipes/1/`, `/recipes/2/` | `/recipes/` |
+| `/tips/1/` | `/tips/` |
+| `/tag/breakfastideas/` | `/ricotta-berry-toast-bar-no-cook/` |
+| `/tag/crockpot/`, `/tag/slowcookerrecipes/`, `/tag/crockpot-meals/` | `/cheap-crockpot-meals-large-families/` |
+| `/tag/easyovenmeals/` | `/sheet-pan-ginger-tofu-broccoli-sticky-glaze/` |
+| `/tag/foodstorage/` | `/how-to-store-fruits-and-vegetables-properly/` |
+| `/tag/foodwaste/`, `/tag/reducefoodwaste/` | `/how-to-reduce-food-waste-at-home-easy-tips/` |
+| `/tag/healthysnacking/` | `/grab-and-go-fridge-snack-drawer/` |
+| `/tag/homecooking/` | `/recipes/` |
+| `/tag/kitchenbasics/` | `/tips/` |
+| `/tag/lentilrecipes/` | `/lentil-curry-high-fiber-vegan-dinner/` |
+| `/tag/meatlessdinner/`, `/tag/stuffedmushrooms/`, `/tag/vegetariandinner/` | `/stuffed-portobello-mushrooms-quinoa-spinach-feta/` |
+| `/tag/nocookmeals/` | `/ricotta-berry-toast-bar-no-cook/` |
+| `/tag/nutrition-facts/` | `/nutrition/` |
+| `/tag/quickmeals/`, `/tag/recipetips/` | `/recipes/` |
+| `/tag/rotisserie/` | `/costco-rotisserie-chicken-meal-ideas-dinner/` |
 
-### Gone URLs
+## Gone URLs
 
-The following legacy URLs had no close canonical match, were off-topic, or were obsolete tag/pagination paths. They now return `410 Gone` with `X-Robots-Tag: noindex, follow`:
+The following legacy paths now intentionally return `410 Gone` with `X-Robots-Tag: noindex, follow`:
 
-| Gone path |
-| --- |
-| `/most-very-important-guidance-skill-set/` |
-| `/usual-excuses-made-by-high-conflict-parents/` |
-| `/how-to-preheat-skillet-even-browning/` |
-| `/savory-chia-seed-recipes-breakfast/` |
-| `/how-to-pack-salad-for-work-not-soggy/` |
-| `/tag/homeorganization/` |
-| `/tag/reducefoodwaste/` |
-| `/tag/quickmeals/` |
-| `/tag/homecooking/` |
-| `/tag/crockpot-meals/` |
-| `/tag/stuffedmushrooms/` |
-| `/tag/kitchenbasics/` |
-| `/tips/1/` |
+- Placeholder/template leakage: `/${a.slug}`, `/${article.slug}`, `/${img.slug}`, `/*`
+- Obsolete endpoint/noise: `/api/event/`, `/cdn-cgi/l/email-protection/`
+- Off-topic/non-food or low-value legacy pages: `/usual-excuses-made-by-high-conflict-parents/`, `/most-very-important-guidance-skill-set/`, `/ten-minute-kitchen-reset-routine/`, `/tag/homeorganization/`, `/tag/kitchencleaning/`, `/tag/timemanagement/`
+- No strong canonical match: `/how-to-preheat-skillet-even-browning/`, `/tag/crisp/`, `/tag/salsaverde/`, `/tag/tempehrecipes/`
+- Supplement-adjacent slug removed under food-first rules: `/overnight-oats-without-protein-powder-3-ways/`
 
-## Google 404 Handling
+## Coverage Drilldown Result
 
-The provided Coverage ZIP contains aggregate issue counts only, including 52 `Not found (404)` pages, but it does not include URL-level 404 rows.
+The uploaded `daily-life-hacks.com-Coverage-Drilldown-2026-06-14.zip` contained 52 Google-reported `Not found (404)` rows.
 
-The available GSC Performance `Pages.csv` export contained 109 unique URL rows. A production live scan before this code change found:
+After local build and Cloudflare Pages function simulation against all 52 rows:
 
-- 89 final `200`
-- 20 final `404`
+| Final expected status | Count |
+| --- | ---: |
+| 200 | 6 |
+| 301 | 31 |
+| 410 | 15 |
+| 404 | 0 |
 
-Those 20 URL-level 404s are covered by the redirect/gone actions above.
+The impression-protected rows are no longer `410`:
+
+- Canonical articles return `200` or no-slash `301 -> 200`
+- Legacy tag/pagination rows return `301` to strong canonical targets
 
 ## Indexable Count
 
-Indexable canonical article count did not change:
+| Metric | Before original triage | Before this follow-up | After this follow-up |
+| --- | ---: | ---: | ---: |
+| Released canonical article files | 158 | 160 | 165 |
 
-| Metric | Before | After |
-| --- | ---: | ---: |
-| Released canonical article files | 158 | 160 |
-
-This cleanup removes or redirects legacy URL noise, restores two impression-bearing canonical articles, and does not add new indexable proxy pages.
+Net change from the original triage start: +7 released canonical articles. The increase is intentional because impression-bearing or valid in-scope food articles were restored instead of deleted.
 
 ## Verification
 
-- `node --test tests/canonical-routing.test.mjs`
-- `npm run build:checked`
-
-Both passed locally before deployment.
+- New article hard-ban scan: passed
+- Non-ASCII scan on restored article files: passed
+- Body word count scan: passed, 690 to 894 words
+- `node --test tests/canonical-routing.test.mjs`: passed, 11/11
+- `npm run build:checked`: passed
+  - Astro build: 777 pages
+  - `verify:routing`: 510 built article/alias slugs OK
+  - `verify:pin-destinations`: 225 OK
+- Local Wrangler Pages scan of all 52 Coverage Drilldown URLs: 0 remaining 404s

@@ -132,13 +132,17 @@ test("legacy removed and off-topic URLs return gone without hitting static asset
 test("GSC impression article URLs pass through as live canonical pages", async () => {
   const assets = makeAssets(
     new Set([
+      "/how-to-pack-salad-for-work-not-soggy/",
       "/prebiotic-foods-beyond-the-buzzwords/",
+      "/savory-chia-seed-recipes-breakfast/",
       "/selenium-containing-foods-easy-ways/",
     ]),
   );
 
   for (const slug of [
+    "how-to-pack-salad-for-work-not-soggy",
     "prebiotic-foods-beyond-the-buzzwords",
+    "savory-chia-seed-recipes-breakfast",
     "selenium-containing-foods-easy-ways",
   ]) {
     const response = await onRequest(
@@ -150,6 +154,62 @@ test("GSC impression article URLs pass through as live canonical pages", async (
     assert.equal(response.status, 200);
     assert.equal(response.headers.get("location"), null);
     assert.notEqual(response.headers.get("x-robots-tag"), "noindex, follow");
+  }
+});
+
+test("legacy impression tag and pagination URLs redirect instead of returning gone", async () => {
+  const cases = [
+    [
+      "https://www.daily-life-hacks.com/tag/stuffedmushrooms/",
+      "https://www.daily-life-hacks.com/stuffed-portobello-mushrooms-quinoa-spinach-feta/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/homecooking/",
+      "https://www.daily-life-hacks.com/recipes/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/kitchenbasics/",
+      "https://www.daily-life-hacks.com/tips/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tips/1/",
+      "https://www.daily-life-hacks.com/tips/",
+    ],
+  ];
+
+  for (const [source, target] of cases) {
+    const assets = makeAssets(new Set());
+    const response = await onRequest(
+      makeContext(source, {
+        ASSETS: assets,
+      }),
+    );
+
+    assert.equal(response.status, 301);
+    assert.equal(response.headers.get("location"), target);
+    assert.deepEqual(assets.calls, []);
+  }
+});
+
+test("legacy garbage and removed supplement-adjacent URLs return gone", async () => {
+  const cases = [
+    "https://www.daily-life-hacks.com/$%7Ba.slug%7D?preview=moshiko1985!",
+    "https://www.daily-life-hacks.com/api/event",
+    "https://www.daily-life-hacks.com/overnight-oats-without-protein-powder-3-ways/",
+  ];
+
+  for (const source of cases) {
+    const assets = makeAssets(new Set());
+    const response = await onRequest(
+      makeContext(source, {
+        ASSETS: assets,
+      }),
+    );
+
+    assert.equal(response.status, 410);
+    assert.equal(response.headers.get("location"), null);
+    assert.equal(response.headers.get("x-robots-tag"), "noindex, follow");
+    assert.deepEqual(assets.calls, []);
   }
 });
 
