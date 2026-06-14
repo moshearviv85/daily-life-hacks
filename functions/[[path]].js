@@ -13,6 +13,46 @@ function detectTrafficSource(request, url) {
   return "direct";
 }
 
+const PROXY_ROBOTS = "noindex, follow";
+
+async function applyProxyRobotsPolicy(proxyResponse, request) {
+  const headers = new Headers(proxyResponse.headers);
+  headers.set("X-Robots-Tag", PROXY_ROBOTS);
+
+  const response = new Response(proxyResponse.body, {
+    status: proxyResponse.status,
+    statusText: proxyResponse.statusText,
+    headers,
+  });
+
+  if (request.method === "HEAD") return response;
+
+  const contentType = headers.get("content-type") || "";
+  if (!contentType.toLowerCase().includes("text/html")) return response;
+
+  if (typeof HTMLRewriter !== "undefined") {
+    return new HTMLRewriter()
+      .on('meta[name="robots"]', {
+        element(element) {
+          element.setAttribute("content", PROXY_ROBOTS);
+        },
+      })
+      .transform(response);
+  }
+
+  const html = await response.text();
+  const rewritten = html.replace(
+    /<meta\s+name=["']robots["'][^>]*>/i,
+    `<meta name="robots" content="${PROXY_ROBOTS}">`,
+  );
+
+  return new Response(rewritten, {
+    status: proxyResponse.status,
+    statusText: proxyResponse.statusText,
+    headers,
+  });
+}
+
 /**
  * Pinterest Smart Router - Catch-all Cloudflare Pages Function
  *
@@ -236,12 +276,5 @@ export async function onRequest(context) {
     });
   }
 
-  const headers = new Headers(proxyResponse.headers);
-  headers.set("X-Robots-Tag", "noindex, follow");
-
-  return new Response(proxyResponse.body, {
-    status: proxyResponse.status,
-    statusText: proxyResponse.statusText,
-    headers,
-  });
+  return applyProxyRobotsPolicy(proxyResponse, request);
 }
