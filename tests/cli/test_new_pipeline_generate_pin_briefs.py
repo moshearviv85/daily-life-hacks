@@ -39,8 +39,8 @@ def _good_raw():
             },
             {
                 "title": "Cheap Dinners My Kids Actually Eat",
-                "prompt": 'A child with pasta photo. Render the text "Cheap Dinners My Kids Actually Eat" across the top.',
-                "alt": "A photo of a smiling child holding a plate of pasta with simple toppings on it.",
+                "prompt": 'A bowl of simple pasta on a clean kitchen table. Render the text "Cheap Dinners My Kids Actually Eat" across the top.',
+                "alt": "A bowl of simple pasta with tomato sauce and cheese on a clean kitchen table.",
                 "description": "Picky kids and tight budgets do not mix. Get the dinner formula that works on both, every weeknight.",
             },
         ]

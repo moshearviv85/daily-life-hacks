@@ -187,6 +187,34 @@ def test_prompt_with_title_substring_accepted():
     assert title in pb.prompt
 
 
+def test_prompt_visual_brief_with_hands_rejected():
+    title = "Cheap Dinners My Kids Actually Eat"
+    prompt = f'A close-up photo of a hand stirring pasta in a pot. Render the text "{title}" across the top.'
+    with pytest.raises(Exception, match="hands|body parts|image stability"):
+        PinBrief(slug="x", title=title, prompt=prompt, alt=VALID_ALTS[0], description=VALID_DESCRIPTIONS[0])
+
+
+def test_prompt_title_with_kids_allowed_when_only_overlay_text():
+    title = "Cheap Dinners My Kids Actually Eat"
+    prompt = f'A cinematic overhead photo of pasta in a skillet. Render the text "{title}" across the top.'
+    pb = PinBrief(slug="x", title=title, prompt=prompt, alt=VALID_ALTS[0], description=VALID_DESCRIPTIONS[0])
+    assert title in pb.prompt
+
+
+def test_prompt_graphic_format_rejected():
+    title = "Cheap Dinners My Kids Actually Eat"
+    prompt = f'A simple graphic with icons for dinner prep. Render the text "{title}" across the top.'
+    with pytest.raises(Exception, match="graphic|diagram|photograph"):
+        PinBrief(slug="x", title=title, prompt=prompt, alt=VALID_ALTS[0], description=VALID_DESCRIPTIONS[0])
+
+
+def test_prompt_extra_rendered_text_rejected():
+    title = "Cheap Dinners My Kids Actually Eat"
+    prompt = f'A pasta skillet with a label reading "Simmer 15 min". Render the text "{title}" across the top.'
+    with pytest.raises(Exception, match="extra rendered text"):
+        PinBrief(slug="x", title=title, prompt=prompt, alt=VALID_ALTS[0], description=VALID_DESCRIPTIONS[0])
+
+
 # ── 8. PinBriefSet valid construction (4 unique pins) ────────────────────────
 
 def test_valid_pin_brief_set_constructs():

@@ -16,6 +16,19 @@ from lib.hero_brief import _check_clean_text
 
 
 _WORD_RE = re.compile(r"[a-z0-9]+")
+_BANNED_PROMPT_BODY_PART_RE = re.compile(
+    r"\b(?:hand|hands|finger|fingers|person|people|woman|man|child|kid|arm|arms)\b",
+    re.IGNORECASE,
+)
+_BANNED_PROMPT_FORMAT_RE = re.compile(
+    r"\b(?:infographic|graphic|icon|icons|chart|diagram)\b",
+    re.IGNORECASE,
+)
+_QUOTED_TEXT_RE = re.compile(r'["“]([^"”]+)["”]')
+_RENDER_TEXT_RE = re.compile(
+    r'\s*Render the text\s*["“][^"”]*["”][^.]*\.?\s*',
+    re.IGNORECASE,
+)
 
 
 def _title_tokens(title: str) -> list[str]:
@@ -82,6 +95,28 @@ class PinBrief:
         if self.title not in self.prompt:
             raise ValueError(
                 f"prompt must contain the title as a literal substring: {self.title!r}"
+            )
+        visual_prompt = _RENDER_TEXT_RE.sub(" ", self.prompt)
+        match = _BANNED_PROMPT_BODY_PART_RE.search(visual_prompt)
+        if match:
+            raise ValueError(
+                "prompt must avoid people, hands, and body parts for image stability: "
+                f"{match.group(0)!r}"
+            )
+        match = _BANNED_PROMPT_FORMAT_RE.search(visual_prompt)
+        if match:
+            raise ValueError(
+                "prompt must be a food or kitchen photograph, not a graphic/diagram: "
+                f"{match.group(0)!r}"
+            )
+        extra_quoted_text = [
+            text for text in _QUOTED_TEXT_RE.findall(self.prompt)
+            if text != self.title
+        ]
+        if extra_quoted_text:
+            raise ValueError(
+                "prompt must not request extra rendered text beyond the exact title: "
+                f"{extra_quoted_text[:3]!r}"
             )
 
 

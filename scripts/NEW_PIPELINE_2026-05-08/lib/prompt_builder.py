@@ -68,7 +68,7 @@ NO supplements of any kind: protein powder, collagen, greens powder, fiber powde
 Never use: {ai_words}
 
 ## Banned Sign-offs
-No: "Happy eating!", "Enjoy!", "Give it a try!", "Your gut will thank you!", "You won't regret it!", "Bon appetit!", "Dig in!"
+No: "Happy eating!", "Enjoy!", "Give it a try!", "Your gut will thank you!", "Your future self will thank you!", "You won't regret it!", "Bon appetit!", "Dig in!"
 """
 
 
@@ -195,7 +195,7 @@ def _hard_bans_section() -> str:
 {ai_words}
 
 # BANNED SIGN-OFFS
-No: "Happy eating!", "Enjoy!", "Give it a try!", "Your gut will thank you!", "You won't regret it!", "Bon appetit!", "Dig in!"
+No: "Happy eating!", "Enjoy!", "Give it a try!", "Your gut will thank you!", "Your future self will thank you!", "You won't regret it!", "Bon appetit!", "Dig in!"
 """
 
 
@@ -232,11 +232,12 @@ _STRUCTURE = """# ARTICLE SHAPE
 - Paragraphs are mostly 2 to 5 sentences. Use short punchy sentences for rhythm, but do not make every paragraph a slogan.
 - Lists are fine when they help scanning, but do not let lists replace the article. Explain the why before or after the list.
 - End with one natural closing paragraph after the last H2 section. No "Conclusion", no sign-off, no FAQ in the body.
+- If the title, excerpt, or topic promises a specific number of minutes, the recipe frontmatter must honor it. For example, a 20-minute recipe needs totalTime at or below 20 minutes, with prepTime + cookTime matching that total.
 
 # QUALITY BAR
 - The article should feel like a capable friend talking at the kitchen counter, not like a wellness handout, SEO template, or school essay.
 - Do not use cutesy generic headings like "The Protein Play", "Fiber Fanatics", "The Beneficial Fat Factor", "The Balanced Bowl", or "Double-Edged Spoon".
-- Do not end with "your body will thank you", "your future self will thank you", "that is the magic", or any similar greeting-card wrap-up.
+- Do not use "future self" anywhere. Do not end with "your body will thank you", "your future self will thank you", "that is the magic", or any similar greeting-card wrap-up.
 - Do not personify nutrients or the body. Avoid lines like "protein tells your brain", "fiber keeps your body happy", or "fat helps your body absorb nutrients" unless carefully hedged and genuinely necessary.
 - For nutrition topics, prefer food mechanics over body-system claims: portion cues, texture, satiety, prep friction, ingredient ratios, shopping choices, and what actually happens at dinner.
 - If the topic is really about cooking, flavor, shopping, storage, or meal planning, keep the article grounded there. Do not turn it into a medical or wellness article.
@@ -451,6 +452,8 @@ Rules:
 - title: CTA-driven headline. 65 character ceiling. Specific, concrete nouns. Scroll-stopping. NOT generic food blog energy. Each title must be unique across the 4 pins.
 - prompt: photography brief + overlay-text instruction at the END. The overlay instruction must read: Render the text "<exact title>" ... The exact title must match the title field character-for-character.
 - alt: one factual sentence describing what is literally in the photograph. 30 to 200 chars. No marketing language.
+- Image prompts must show food, dishes, cookware, ingredients, counters, tables, or serving scenes only. Do not include people, hands, fingers, arms, kids, faces, or body parts.
+- Do not ask for graphics, icons, diagrams, charts, or extra labels. The only rendered text in the image prompt is the exact title in the final overlay instruction.
 - description: Pinterest pin description (NOT the same as alt). STRICTLY 80 to 195 characters. Open with a hook, name the concrete value the reader gets, end with a clear CTA ("Get the full recipe.", "See all 5 swaps.", "Click for the printable list."). Different angle than the title — do NOT just repeat it.
 
 # CONTENT POLICY
@@ -459,6 +462,8 @@ Rules:
 - NO medical claims. Never use: {hard_ban_terms}
 - NO supplements, detox, cleanse, or reset language.
 - Every title must be ASCII-only. No accented characters or special letters.
+- NO people or body parts in image prompts. Avoid words like hand, hands, fingers, person, people, arm, woman, man, child, kid.
+- NO infographic/graphic/icon/chart/diagram prompts. Use a real food or kitchen photo composition.
 - BANNED AI WORDS (never use in any field): {ai_words}
 
 # OUTPUT FORMAT (PLAIN TEXT, NOT JSON)

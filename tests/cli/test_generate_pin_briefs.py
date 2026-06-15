@@ -55,8 +55,8 @@ def _good_llm(article):
             },
             {
                 "title": "Cheap Dinners My Kids Actually Eat",
-                "prompt": 'A photo of a smiling child holding a plate of pasta. Render the text "Cheap Dinners My Kids Actually Eat" in a friendly typography on the side.',
-                "alt": "A photo of a smiling child holding a plate of pasta with simple toppings on it.",
+                "prompt": 'A simple pasta dinner on a clean kitchen table. Render the text "Cheap Dinners My Kids Actually Eat" in a friendly typography on the side.',
+                "alt": "A simple pasta dinner with tomato sauce and cheese on a clean kitchen table.",
                 "description": "Picky kids and tight budgets do not mix. Get the dinner formula that works on both, every weeknight.",
             },
         ]
@@ -144,8 +144,8 @@ def _legacy_pin_rows() -> list[dict]:
         {
             "slug": "cheap-dinners-kids-actually-eat",
             "title": "Cheap Dinners My Kids Actually Eat",
-            "prompt": 'Smiling child with pasta plate. Render the text "Cheap Dinners My Kids Actually Eat" on the side.',
-            "alt": "A photo of a smiling child holding a plate of pasta with simple toppings on it.",
+            "prompt": 'Simple pasta dinner on a clean kitchen table. Render the text "Cheap Dinners My Kids Actually Eat" on the side.',
+            "alt": "A simple pasta dinner with tomato sauce and cheese on a clean kitchen table.",
             "description": placeholder,
         },
     ]

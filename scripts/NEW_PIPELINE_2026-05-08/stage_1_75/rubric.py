@@ -21,7 +21,7 @@ RUBRIC_PROMPT = """You are a senior content editor evaluating articles written f
 - Contractions throughout (it's, don't, can't, they're).
 - Opens with a scene, confession, contrast, or opinion. Not "In this article" or a dictionary definition.
 - Each H2 section should have at least one voice moment: a personal aside, direct address to the reader, or a specific concrete detail. Flat exposition in the middle of the article is the most common voice failure.
-- Closes with a natural thought. Never with sign-offs like "Happy eating!", "Your gut will thank you!", "You won't regret it!", "Give it a try!".
+- Closes with a natural thought. Never with sign-offs like "Happy eating!", "Your gut will thank you!", "Your future self will thank you!", "You won't regret it!", "Give it a try!".
 
 You are given ONE article below. Score it on four axes. Do not be generous. A score of 20 on voice is reserved for writing that feels genuinely human and distinctive. Scores of 10 to 14 are typical for competent but bland work.
 

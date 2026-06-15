@@ -91,3 +91,35 @@ class TestFetchArticlesReadsReviewedMarkdown:
         from lib.d1_sources import fetch_articles_from_sql
         articles = fetch_articles_from_sql(db_path)
         assert len(articles) == 0
+
+    def test_uses_latest_write_and_latest_review_for_duplicate_slug(self, tmp_path):
+        db_path = str(tmp_path / "test.sqlite")
+        con = _create_test_db(db_path)
+        con.execute(
+            "INSERT INTO write_outputs VALUES (?, ?, ?, ?, 0, 1)",
+            ("test-slug", "recipes",
+             "---\ntitle: Old Write\n---\nOld write body", "reviewed"),
+        )
+        con.execute(
+            "INSERT INTO review_outputs VALUES (?, ?)",
+            ("test-slug",
+             "---\ntitle: Old Review\n---\nOld review body"),
+        )
+        con.execute(
+            "INSERT INTO write_outputs VALUES (?, ?, ?, ?, 0, 1)",
+            ("test-slug", "recipes",
+             "---\ntitle: New Write\n---\nNew write body", "reviewed"),
+        )
+        con.execute(
+            "INSERT INTO review_outputs VALUES (?, ?)",
+            ("test-slug",
+             "---\ntitle: New Review\n---\nNew review body"),
+        )
+        con.commit()
+        con.close()
+
+        from lib.d1_sources import fetch_articles_from_sql
+        articles = fetch_articles_from_sql(db_path)
+        assert len(articles) == 1
+        assert articles[0]["title"] == "New Review"
+        assert "New review body" in articles[0]["markdown"]

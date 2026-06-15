@@ -145,6 +145,10 @@ def test_generate_queue_submit_uses_same_payload_as_sync(monkeypatch):
     else:
         assert payload["aspect_ratio"] == "16:9"
         assert "image_size" not in payload
+    if cfg.get("quality"):
+        assert payload["quality"] == cfg["quality"]
+    for key, value in (cfg.get("payload") or {}).items():
+        assert payload[key] == value
 
 
 def test_generate_queue_sends_auth_header_on_submit_and_polls(monkeypatch):

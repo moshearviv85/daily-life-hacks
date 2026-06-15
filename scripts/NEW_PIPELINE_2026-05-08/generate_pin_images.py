@@ -1,8 +1,8 @@
-"""Generate pin images from pin_briefs SQL table via GPT Image 2.
+"""Generate pin images from pin_briefs SQL table via the configured pin rotation.
 
-For each article, sends each pin's prompt verbatim to GPT Image 2 and saves
-the result as public/images/pins/{pin_slug}.jpg, where pin_slug is the
-unique per-pin slug from pin_briefs.
+For each article, sends each pin's prompt verbatim to the model assigned to
+that pin slot and saves the result as public/images/pins/{pin_slug}.jpg,
+where pin_slug is the unique per-pin slug from pin_briefs.
 
 CLI:
     python scripts/generate_pin_images.py --slug <article-slug>
@@ -32,12 +32,12 @@ from discovery import fal_client  # noqa: E402
 
 from lib.image_resize import to_jpeg  # noqa: E402
 from lib import brief_store  # noqa: E402
+from lib.image_models import model_for_pin_slot, pin_rotation_summary  # noqa: E402
 
 DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 OUT_DIR = REPO_ROOT / "public" / "images" / "pins"
 LOG_PATH = REPO_ROOT / "pipeline-data" / "pin-images.jsonl"
-MODEL_ID = "gpt-image-2"
-ASPECT_RATIO = "3:4"
+ASPECT_RATIO = "2:3"
 CONCURRENCY = 4
 MAX_WIDTH = 1000
 MAX_HEIGHT = 1500
@@ -92,6 +92,7 @@ def append_log(entry: dict) -> None:
 def generate_one(
     article_slug: str,
     variant: int,
+    model_id: str,
     pin_slug: str,
     pin_title: str,
     prompt: str,
@@ -101,14 +102,24 @@ def generate_one(
 ) -> dict:
     out = out_path_for(pin_slug)
     if out.exists() and not force and not dry_run:
-        return {"status": "skip", "article_slug": article_slug, "pin_slug": pin_slug}
+        return {
+            "status": "skip",
+            "article_slug": article_slug,
+            "pin_slug": pin_slug,
+            "model": model_id,
+        }
     if dry_run:
-        return {"status": "dry", "article_slug": article_slug, "pin_slug": pin_slug,
-                "out": str(out)}
+        return {
+            "status": "dry",
+            "article_slug": article_slug,
+            "pin_slug": pin_slug,
+            "model": model_id,
+            "out": str(out),
+        }
     t0 = time.time()
     try:
         res = fal_client.generate(
-            model_id=MODEL_ID,
+            model_id=model_id,
             prompt=prompt,
             aspect_ratio=ASPECT_RATIO,
         )
@@ -127,7 +138,8 @@ def generate_one(
             "article_slug": article_slug,
             "pin_slug": pin_slug,
             "pin_title": pin_title,
-            "model": MODEL_ID,
+            "pin_slot": variant,
+            "model": model_id,
             "status": "ok",
             "wall_s": round(dt, 2),
             "latency_ms": res.get("latency_ms"),
@@ -136,7 +148,8 @@ def generate_one(
         }
         append_log(entry)
         return {"status": "ok", "article_slug": article_slug, "pin_slug": pin_slug,
-                "wall_s": round(dt, 2), "cost_usd": res.get("cost_usd"), "size": size}
+                "model": model_id, "wall_s": round(dt, 2),
+                "cost_usd": res.get("cost_usd"), "size": size}
     except Exception as exc:  # noqa: BLE001
         dt = time.time() - t0
         entry = {
@@ -144,14 +157,15 @@ def generate_one(
             "article_slug": article_slug,
             "pin_slug": pin_slug,
             "pin_title": pin_title,
-            "model": MODEL_ID,
+            "pin_slot": variant,
+            "model": model_id,
             "status": "error",
             "wall_s": round(dt, 2),
             "error": f"{type(exc).__name__}: {exc}"[:400],
         }
         append_log(entry)
         return {"status": "error", "article_slug": article_slug, "pin_slug": pin_slug,
-                "error": str(exc)[:200]}
+                "model": model_id, "error": str(exc)[:200]}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -169,16 +183,16 @@ def main(argv: list[str] | None = None) -> int:
               + (f" for slug={args.slug!r}" if args.slug else ""), file=sys.stderr)
         return 2
 
-    tasks: list[tuple[str, int, str, str, str]] = []
+    tasks: list[tuple[str, int, str, str, str, str]] = []
     for rec in records:
         a = rec["article_slug"]
         for i, pin in enumerate(rec["pins"], 1):
-            tasks.append((a, i, pin["slug"], pin["title"], pin["prompt"]))
+            tasks.append((a, i, model_for_pin_slot(i), pin["slug"], pin["title"], pin["prompt"]))
 
     pending = []
     skipped = 0
     for t in tasks:
-        out = out_path_for(t[2])
+        out = out_path_for(t[3])
         if out.exists() and not args.force and not args.dry_run:
             skipped += 1
         else:
@@ -189,13 +203,14 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.dry_run:
         for t in pending:
-            print(f"  DRY  {t[0]}  {t[2]}  -> {out_path_for(t[2]).name}")
+            print(f"  DRY  {t[0]}  slot={t[1]}  model={t[2]}  {t[3]}  -> {out_path_for(t[3]).name}")
         return 0
     if not pending:
         print("Nothing to do.")
         return 0
 
-    print(f"Generating {len(pending)} via {MODEL_ID} concurrency={CONCURRENCY}...")
+    print(f"Model rotation: {pin_rotation_summary()}")
+    print(f"Generating {len(pending)} via configured pin rotation concurrency={CONCURRENCY}...")
     started = time.time()
     n_ok = 0
     n_err = 0
@@ -203,8 +218,8 @@ def main(argv: list[str] | None = None) -> int:
 
     with ThreadPoolExecutor(max_workers=CONCURRENCY) as ex:
         futs = {
-            ex.submit(generate_one, a, v, ps, pt, pr, force=args.force, dry_run=False): ps
-            for (a, v, ps, pt, pr) in pending
+            ex.submit(generate_one, a, v, mid, ps, pt, pr, force=args.force, dry_run=False): ps
+            for (a, v, mid, ps, pt, pr) in pending
         }
         for fut in as_completed(futs):
             r = fut.result()
@@ -213,10 +228,13 @@ def main(argv: list[str] | None = None) -> int:
             if r["status"] == "ok":
                 n_ok += 1
                 total_cost += r.get("cost_usd") or 0
-                print(f"  OK   {a}  {ps}  {r['wall_s']:.1f}s  ${r.get('cost_usd') or 0:.3f}  {r['size']:,}B")
+                print(
+                    f"  OK   {a}  {ps}  model={r.get('model')}  "
+                    f"{r['wall_s']:.1f}s  ${r.get('cost_usd') or 0:.3f}  {r['size']:,}B"
+                )
             elif r["status"] == "error":
                 n_err += 1
-                print(f"  FAIL {a}  {ps}  {r.get('error','')[:80]}")
+                print(f"  FAIL {a}  {ps}  model={r.get('model')}  {r.get('error','')[:80]}")
     wall = time.time() - started
 
     print()

@@ -311,6 +311,7 @@ Repair rules:
 - Do not summarize, shorten, or rewrite unrelated sections.
 - Fix every listed validation failure directly in the text or frontmatter.
 - If recipe fields are missing or invalid, add valid recipe frontmatter fields.
+- If body length is flagged, expand the article body with useful, topic-specific sections and practical detail until it clears the listed minimum.
 - If health, detox, stale phrase, or sign-off language is flagged, rewrite those sentences plainly.
 - Do not add commentary, code fences, or a second article.
 

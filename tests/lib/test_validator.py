@@ -72,7 +72,7 @@ If you are in a rush, at least give it a splash.
 
 Once the water is boiling and the heat is low, put the lid on and set a timer. Do not peek. The pot is a small ecosystem.
 
-When the timer goes off, take the pot off the heat and leave the lid on for another five minutes. This rest is where the residual steam finishes hydrating the grains. After the rest, fluff with a fork, drizzle with olive oil, and taste.''' + ' word' * 600
+When the timer goes off, take the pot off the heat and leave the lid on for another five minutes. This rest is where the residual steam finishes hydrating the grains. After the rest, fluff with a fork, drizzle with olive oil, and taste.''' + ' word' * 1900
 
 
 # ---------------------------------------------------------------------------
@@ -117,6 +117,7 @@ class TestContentPolicyAllContexts:
         violations = validate(text, context="pin_description")
         rule_ids = {v.rule_id for v in violations}
         assert "CP-07" in rule_ids
+        assert [v for v in violations if v.rule_id == "CP-07"][0].tier == 1
 
     def test_clean_pin_title_passes(self):
         text = "Easy weeknight rice recipe"
@@ -282,14 +283,14 @@ class TestAbsoluteHealthClaims:
 # ---------------------------------------------------------------------------
 
 class TestSignoffs:
-    """CP-08: sign-off phrases are tier-2 warnings."""
+    """CP-08: sign-off and greeting-card phrases are tier-1 blockers."""
 
     def test_happy_eating_triggers(self):
         text = "This rice is great. Happy eating!"
         violations = validate(text, context="article")
         cp08 = [v for v in violations if v.rule_id == "CP-08"]
         assert cp08, "Expected CP-08 for 'Happy eating!'"
-        assert cp08[0].tier == 2
+        assert cp08[0].tier == 1
 
     def test_enjoy_exclamation_triggers(self):
         text = "Try this recipe tonight. Enjoy!"
@@ -302,6 +303,21 @@ class TestSignoffs:
         violations = validate(text, context="pin_description")
         cp08 = [v for v in violations if v.rule_id == "CP-08"]
         assert cp08
+        assert cp08[0].tier == 1
+
+    def test_future_self_thank_you_triggers(self):
+        text = "Your future self will definitely thank you."
+        violations = validate(text, context="article")
+        cp08 = [v for v in violations if v.rule_id == "CP-08"]
+        assert cp08
+        assert cp08[0].tier == 1
+
+    def test_future_self_possessive_triggers(self):
+        text = "That sounds like future self's dinner prep, not actual cooking."
+        violations = validate(text, context="article")
+        cp08 = [v for v in violations if v.rule_id == "CP-08"]
+        assert cp08
+        assert cp08[0].tier == 1
 
     def test_no_signoff_passes(self):
         text = "This dish is ready to serve and pairs well with a green salad."
@@ -487,13 +503,39 @@ class TestArticleStructural:
         rule_ids = {v.rule_id for v in violations}
         assert "S-15" in rule_ids
 
-    def test_article_length_does_not_trigger_validator_warning(self):
+    def test_recipe_minute_promise_must_match_total_time(self):
+        text = (
+            GOOD_ARTICLE
+            .replace("title: Test Recipe", "title: Test Recipe in 20 Minutes")
+            .replace("totalTime: \"30 minutes\"", "totalTime: \"25 minutes\"")
+        )
+        violations = validate(text, context="article", slug="test-slug")
+        s16 = [v for v in violations if v.rule_id == "S-16"]
+        assert s16
+        assert s16[0].tier == 1
+
+    def test_recipe_minute_promise_allows_matching_total_time(self):
+        text = (
+            GOOD_ARTICLE
+            .replace("title: Test Recipe", "title: Test Recipe in 30 Minutes")
+        )
+        violations = validate(text, context="article", slug="test-slug")
+        assert "S-16" not in {v.rule_id for v in violations}
+
+    def test_good_article_length_passes_s20(self):
         recipe_violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")
         assert "S-20" not in {v.rule_id for v in recipe_violations}
 
         tips_text = GOOD_ARTICLE.replace("category: recipes", "category: tips")
         tips_violations = validate(tips_text, context="article", slug="test-slug")
         assert "S-20" not in {v.rule_id for v in tips_violations}
+
+    def test_short_recipe_body_triggers_s20(self):
+        short_text = GOOD_ARTICLE.replace(" word" * 1900, " word" * 50)
+        violations = validate(short_text, context="article", slug="test-slug")
+        s20 = [v for v in violations if v.rule_id == "S-20"]
+        assert s20
+        assert s20[0].tier == 1
 
     def test_s21_allows_flexible_heading_counts(self):
         recipe_violations = validate(GOOD_ARTICLE, context="article", slug="test-slug")

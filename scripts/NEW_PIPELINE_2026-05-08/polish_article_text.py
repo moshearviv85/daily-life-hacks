@@ -56,6 +56,7 @@ You get one complete Markdown article. Do exactly this:
 3. Identify medical, disease, supplement, body-system, treatment, or strong health statements.
 4. Soften those statements under YMYL rules, or remove them entirely when they are not needed.
 5. Preserve the article's meaning, usefulness, structure, frontmatter keys, Markdown, and natural voice.
+6. Remove greeting-card sign-offs and "future self" language entirely.
 
 YMYL editing rules:
 - Prefer plain food, cooking, shopping, timing, satiety, comfort, routine, and meal-planning language.
@@ -66,6 +67,7 @@ YMYL editing rules:
 - Do not leave words like "brain chemicals", "hormone", "hormones", "neurotransmitters", "reward system", or "nervous system" in the output.
 - For comfort-food topics, explain comfort through memory, warmth, texture, smell, familiarity, routine, seasoning, and serving temperature - never brain chemistry or hormones.
 - Do not add new health claims, citations, disclaimers, notes, or commentary.
+- Do not use "future self" anywhere. Never end with "your future self will thank you", "your body will thank you", or any similar greeting-card wrap-up.
 - Do not wrap the answer in code fences.
 - Return the complete corrected Markdown article only.
 

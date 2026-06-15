@@ -97,6 +97,9 @@ def _build_payload(
     quality = config.get("quality")
     if quality:
         payload["quality"] = quality
+    extra_payload = config.get("payload")
+    if extra_payload:
+        payload.update(extra_payload)
     return payload
 
 

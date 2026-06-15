@@ -1,51 +1,124 @@
-"""FAL model candidates for the pinterest-50 image pipeline.
+"""FAL model candidates used by the Daily Life Hacks image pipeline.
 
-Lookup table consumed by ``discovery.fal_client``. Each entry maps a
-short ``model_id`` to the FAL endpoint plus the per-model knobs the
-client needs (shape parameter name, queue vs sync flow, cost estimate).
+Lookup table consumed by ``discovery.fal_client``. Each entry maps a short
+``model_id`` to the FAL endpoint, request shape, small model-specific payload,
+and a cost estimate for reporting only.
 
-Pricing values are FAL's published per-image rates as of 2026-04-26 and
-are used only as a "cost" annotation on each generation result — billing
-authority is FAL's own dashboard.
+Locked image decisions as of 2026-06-14:
+- Pin rotation: gpt-image-2, nano-banana-2, krea-2-large, seedream-v5-lite.
+- Hero default: krea-2-large.
+- Support-image default: nano-banana-2.
+- Hero backups: flux-2-pro, seedream-v5-lite.
 
-Locked production decisions (see memory/media.md, 2026-04-26):
-- Hero (no overlay text): recraft-v4-pro, 16:9
-- Pin (overlay text required): gpt-image-2, 3:4
+Recraft and Ideogram are intentionally not active candidates here.
 """
 from __future__ import annotations
 
 
+PIN_SIZE_2_3 = {"width": 1024, "height": 1536}
+HERO_SIZE_16_9 = {"width": 1536, "height": 864}
+GPT_HERO_SIZE_16_9 = {"width": 1920, "height": 1080}
+SEEDREAM_PIN_SIZE_2_3 = {"width": 1920, "height": 2880}
+SEEDREAM_HERO_SIZE_16_9 = {"width": 2560, "height": 1440}
+
+
 FAL_CANDIDATES: dict[str, dict] = {
     "gpt-image-2": {
-        "fal_endpoint":        "openai/gpt-image-2",
-        "shape_param":         "image_size",
-        "shape_values":        {
-            "3:4":  "portrait_4_3",
-            "16:9": "landscape_16_9",
-            "1:1":  "square_hd",
-        },
-        "quality":             "low",
-        "use_queue":           True,
-        "price_usd_estimate":  0.01,
-        "role":                "pin",
-    },
-    "recraft-v4-pro": {
-        "fal_endpoint":        "fal-ai/recraft/v4/pro/text-to-image",
-        "shape_param":         "image_size",
+        "fal_endpoint": "openai/gpt-image-2",
+        "shape_param": "image_size",
         "shape_values": {
-            "3:4":  "portrait_4_3",
-            "16:9": "landscape_16_9",
-            "1:1":  "square_hd",
+            "2:3": PIN_SIZE_2_3,
+            "3:4": "portrait_4_3",
+            "16:9": GPT_HERO_SIZE_16_9,
+            "1:1": "square_hd",
         },
-        "use_queue":           True,   # slow (~50s), use queue
-        "price_usd_estimate":  0.04,
-        "role":                "hero",
+        "quality": "low",
+        "payload": {
+            "num_images": 1,
+            "output_format": "png",
+        },
+        "use_queue": True,
+        "price_usd_estimate": 0.005,
+        "role": "pin-slot-1",
     },
-    "imagen-4-ultra": {
-        "fal_endpoint":        "fal-ai/imagen4/preview/ultra",
-        "shape_param":         "aspect_ratio",
-        "use_queue":           False,
-        "price_usd_estimate":  0.05,
-        "role":                "fallback",
+    "nano-banana-2": {
+        "fal_endpoint": "fal-ai/nano-banana-2",
+        "shape_param": "aspect_ratio",
+        "payload": {
+            "num_images": 1,
+            "resolution": "1K",
+            "limit_generations": True,
+            "output_format": "png",
+        },
+        "use_queue": True,
+        "price_usd_estimate": 0.080,
+        "role": "pin-slot-2,support-default",
+    },
+    "krea-2-large": {
+        "fal_endpoint": "krea/v2/large/text-to-image",
+        "shape_param": "aspect_ratio",
+        "payload": {
+            "creativity": "low",
+            "image_style_references": [],
+            "styles": [],
+            "moodboards": [],
+        },
+        "use_queue": True,
+        "price_usd_estimate": 0.060,
+        "role": "pin-slot-3,hero-default",
+    },
+    "seedream-v5-lite": {
+        "fal_endpoint": "fal-ai/bytedance/seedream/v5/lite/text-to-image",
+        "shape_param": "image_size",
+        "shape_values": {
+            "2:3": SEEDREAM_PIN_SIZE_2_3,
+            "3:4": "portrait_4_3",
+            "16:9": SEEDREAM_HERO_SIZE_16_9,
+            "1:1": "square_hd",
+        },
+        "payload": {
+            "num_images": 1,
+            "max_images": 1,
+            "enable_safety_checker": True,
+        },
+        "use_queue": True,
+        "price_usd_estimate": 0.035,
+        "role": "pin-slot-4,hero-backup,support-backup",
+    },
+    "flux-2-pro": {
+        "fal_endpoint": "fal-ai/flux-2-pro",
+        "shape_param": "image_size",
+        "shape_values": {
+            "2:3": PIN_SIZE_2_3,
+            "3:4": "portrait_4_3",
+            "16:9": HERO_SIZE_16_9,
+            "1:1": "square_hd",
+        },
+        "payload": {
+            "enable_safety_checker": True,
+            "output_format": "jpeg",
+        },
+        "use_queue": True,
+        "price_usd_estimate": 0.045,
+        "role": "hero-backup,support-backup",
+    },
+    "qwen-image-2512": {
+        "fal_endpoint": "fal-ai/qwen-image-2512",
+        "shape_param": "image_size",
+        "shape_values": {
+            "2:3": PIN_SIZE_2_3,
+            "3:4": "portrait_4_3",
+            "16:9": HERO_SIZE_16_9,
+            "1:1": "square_hd",
+        },
+        "payload": {
+            "num_images": 1,
+            "enable_safety_checker": True,
+            "output_format": "png",
+            "acceleration": "regular",
+        },
+        "use_queue": True,
+        "price_usd_estimate": 0.030,
+        "role": "pin-backup",
     },
 }

@@ -1,7 +1,7 @@
 """End-to-end pipeline orchestrator — run all stages on a single topic.
 
 Seeds a topic into filtered_topics, writes an article, reviews it via LLM,
-generates hero + pin briefs/images, and deploys to disk. Each stage is a
+generates hero + support + pin images, and deploys to disk. Each stage is a
 subprocess so failures are isolated and logs are visible.
 
 Requires: OPENROUTER_API_KEY and FAL_KEY in .env or environment.
@@ -263,7 +263,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--db", default=str(DEFAULT_DB))
     p.add_argument("--dry-run", action="store_true", help="Seed topic + write + review only, no images")
     p.add_argument("--article-only", action="store_true", help="Write, review, and deploy the article draft only; no briefs or images")
-    p.add_argument("--skip-images", action="store_true", help="Skip hero + pin image generation (saves API cost)")
+    p.add_argument("--skip-images", action="store_true", help="Skip hero + support + pin image generation (saves API cost)")
     p.add_argument("--skip-deploy", action="store_true", help="Stop before deploying to disk")
     p.add_argument("--model", default="google/gemini-2.5-flash")
     args = p.parse_args(argv)
@@ -387,12 +387,24 @@ def main(argv: list[str] | None = None) -> int:
             return 1
         print()
 
+        if not args.skip_images:
+            # Stage 8: Generate the mid-article support image auto-inserted by the page.
+            ok = run_step("Stage 8: Support Image", [
+                py, str(SCRIPT_DIR / "generate_support_image.py"),
+                "--slug", slug,
+            ], timeout=300)
+            if not ok:
+                log("PIPELINE FAILED at support image stage")
+                return 1
+            print()
+
     total = time.monotonic() - total_start
     log("=" * 60)
     log(f"PIPELINE COMPLETE: {slug}")
     log(f"Total time: {total:.1f}s ({total/60:.1f}m)")
     log(f"Article: src/data/articles/{slug}.md")
     log(f"Hero:    public/images/{slug}-main.jpg")
+    log(f"Support: public/images/{slug}-ingredients.jpg")
     log(f"Pins:    public/images/pins/{{pin_slug}}.jpg (4 unique slugs)")
     return 0
 

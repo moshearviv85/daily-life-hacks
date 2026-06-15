@@ -21,8 +21,8 @@ Rule IDs:
     CP-04  medical hedge-required term without hedging
     CP-05  absolute health claim
     CP-06  detox / cleanse language
-    CP-07  (tier 2) banned AI filler word
-    CP-08  (tier 2) sign-off phrase
+    CP-07  banned AI filler word
+    CP-08  sign-off / greeting-card phrase
     CP-09  stale phrase that should trigger regeneration
 
     S-01   article does not open with ---
@@ -40,6 +40,8 @@ Rule IDs:
     S-13   Conclusion heading found in body
     S-14   duplicate comma-separated phrase in recipe steps
     S-15   wrapping code fence
+    S-16   recipe minute promise conflicts with totalTime
+    S-20   article body is too short for production
     S-21   (tier 2) H2 count too sparse or too crowded
     S-25   (tier 2) excerpt length out of [100, 200]
 """
@@ -86,10 +88,31 @@ _DUPLICATE_COMMA_PHRASE_RE = re.compile(
     r"\b([a-z][a-z]+(?:\s+[a-z][a-z]+){0,2})\b,\s+\1\b",
     re.IGNORECASE,
 )
+_MINUTE_PROMISE_RE = re.compile(r"\b(\d{1,3})\s*[- ]?minutes?\b", re.IGNORECASE)
+_TIME_HOURS_RE = re.compile(r"\b(\d{1,2})\s*(?:hours?|hrs?)\b", re.IGNORECASE)
+_TIME_MINUTES_RE = re.compile(r"\b(\d{1,3})\s*(?:minutes?|mins?)\b", re.IGNORECASE)
+_BODY_WORD_RE = re.compile(r"[A-Za-z0-9]+(?:'[A-Za-z0-9]+)?")
 _STALE_PHRASES = (
     "game-changer",
     "game changer",
 )
+
+
+def _minutes_from_time_string(value: Any) -> int | None:
+    if not isinstance(value, str):
+        return None
+    lower = value.lower()
+    hours = sum(int(match.group(1)) for match in _TIME_HOURS_RE.finditer(lower))
+    minutes = sum(int(match.group(1)) for match in _TIME_MINUTES_RE.finditer(lower))
+    if hours or minutes:
+        return hours * 60 + minutes
+    if lower.strip().isdigit():
+        return int(lower.strip())
+    return None
+
+
+def _body_word_count(body: str) -> int:
+    return len(_BODY_WORD_RE.findall(body))
 
 
 # ---------------------------------------------------------------------------
@@ -213,21 +236,21 @@ def _check_detox(text: str) -> Violation | None:
 
 
 def _check_ai_words(text: str) -> Violation | None:
-    """CP-07 tier 2: banned AI filler words."""
+    """CP-07 tier 1: banned AI filler words."""
     hits = []
     for w in _cp.AI_WORDS_BANNED:
         if re.search(r"\b" + re.escape(w) + r"\b", text, re.IGNORECASE):
             hits.append(w)
     if hits:
-        return Violation("CP-07", 2, f"banned AI filler word(s): {hits[:5]}")
+        return Violation("CP-07", 1, f"banned AI filler word(s): {hits[:5]}")
     return None
 
 
 def _check_signoffs(text: str) -> Violation | None:
-    """CP-08 tier 2: sign-off phrase."""
+    """CP-08 tier 1: sign-off / greeting-card phrase."""
     for pat in _cp.SIGNOFF_PATTERNS:
         if re.search(pat, text, re.IGNORECASE):
-            return Violation("CP-08", 2, f"sign-off phrase matches pattern: {pat}")
+            return Violation("CP-08", 1, f"sign-off/greeting-card phrase matches pattern: {pat}")
     return None
 
 
@@ -431,6 +454,51 @@ def _s15(parsed, text, body, slug) -> Violation | None:
     return None
 
 
+def _s16(parsed, text, body, slug) -> Violation | None:
+    if parsed is None or parsed.get("category") != "recipes":
+        return None
+    total_minutes = _minutes_from_time_string(parsed.get("totalTime"))
+    if total_minutes is None:
+        return None
+    promise_source = " ".join(
+        str(parsed.get(field) or "")
+        for field in ("title", "excerpt")
+    )
+    promised = [int(match.group(1)) for match in _MINUTE_PROMISE_RE.finditer(promise_source)]
+    if not promised:
+        return None
+    promised_minutes = min(promised)
+    if total_minutes > promised_minutes + 2:
+        return Violation(
+            "S-16",
+            1,
+            f"recipe promises {promised_minutes} minutes but totalTime is {total_minutes} minutes",
+        )
+    return None
+
+
+def _s20(parsed, text, body, slug) -> Violation | None:
+    if parsed is None:
+        return None
+    category = parsed.get("category")
+    minimums = {
+        "recipes": 1800,
+        "nutrition": 1400,
+        "tips": 1400,
+    }
+    minimum = minimums.get(category)
+    if minimum is None:
+        return None
+    count = _body_word_count(body)
+    if count < minimum:
+        return Violation(
+            "S-20",
+            1,
+            f"body word count {count} below production minimum {minimum} for {category}",
+        )
+    return None
+
+
 def _s21(parsed, text, body, slug) -> Violation | None:
     n = len(_H2_RE.findall(body))
     low, high = 3, 14
@@ -513,7 +581,7 @@ def validate(
         violations.append(v)
 
     # Remaining tier-1 structural checks
-    tier1_checks = [_s04, _s05, _s06, _s07, _s08, _s09, _s10, _s12, _s13, _s14, _s15]
+    tier1_checks = [_s04, _s05, _s06, _s07, _s08, _s09, _s10, _s12, _s13, _s14, _s15, _s16, _s20]
     if require_image_alt:
         tier1_checks.insert(7, _s11)
     for check_fn in tier1_checks:

@@ -1,4 +1,4 @@
-"""Generate hero images from hero_briefs SQL table via Recraft v4 Pro.
+"""Generate hero images from hero_briefs SQL table via the configured hero model.
 
 Reads each row's `prompt` verbatim and sends it to FAL. Output:
 public/images/{slug}-main.jpg.
@@ -28,10 +28,11 @@ from discovery import fal_client  # noqa: E402
 
 from lib.image_resize import to_jpeg  # noqa: E402
 from lib import brief_store  # noqa: E402
+from lib.image_models import HERO_IMAGE_MODEL_ID  # noqa: E402
 
 DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 OUT_DIR = REPO_ROOT / "public" / "images"
-MODEL_ID = "recraft-v4-pro"
+MODEL_ID = HERO_IMAGE_MODEL_ID
 ASPECT_RATIO = "16:9"
 MAX_WIDTH = 1920
 MAX_HEIGHT = 1080
@@ -59,7 +60,10 @@ def generate_one(slug: str, prompt: str, *, force: bool, dry_run: bool) -> str:
     if out.exists() and not force and not dry_run:
         return f"SKIP {slug}  (exists: {out.name})"
     if dry_run:
-        return f"DRY  {slug}  ({len(prompt)} chars) -> {out.relative_to(REPO_ROOT)}"
+        return (
+            f"DRY  {slug}  model={MODEL_ID}  "
+            f"({len(prompt)} chars) -> {out.relative_to(REPO_ROOT)}"
+        )
     t0 = time.time()
     res = fal_client.generate(
         model_id=MODEL_ID,
@@ -77,7 +81,7 @@ def generate_one(slug: str, prompt: str, *, force: bool, dry_run: bool) -> str:
     dt = time.time() - t0
     size = out.stat().st_size if out.exists() else 0
     return (
-        f"OK   {slug}  {dt:.1f}s  ${res['cost_usd']:.3f}  "
+        f"OK   {slug}  model={MODEL_ID}  {dt:.1f}s  ${res['cost_usd']:.3f}  "
         f"{size:,}B -> {out.relative_to(REPO_ROOT)}"
     )
 

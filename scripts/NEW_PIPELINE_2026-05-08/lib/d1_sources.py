@@ -50,8 +50,11 @@ def fetch_articles_from_sql(db_path: Path | str) -> list[dict]:
         if not _table_exists(con, "write_outputs"):
             return []
         review_join = (
-            "LEFT JOIN review_outputs r ON r.slug = w.slug "
-            "  AND r.reviewed_markdown IS NOT NULL "
+            "LEFT JOIN review_outputs r ON r.rowid = ("
+            "  SELECT r2.rowid FROM review_outputs r2 "
+            "  WHERE r2.slug = w.slug AND r2.reviewed_markdown IS NOT NULL "
+            "  ORDER BY r2.rowid DESC LIMIT 1"
+            ") "
             if _table_exists(con, "review_outputs") else ""
         )
         markdown_expr = "COALESCE(r.reviewed_markdown, w.markdown)" if review_join else "w.markdown"
@@ -61,6 +64,11 @@ def fetch_articles_from_sql(db_path: Path | str) -> list[dict]:
             "FROM write_outputs w "
             f"{review_join}"
             "WHERE w.status = 'reviewed' AND w.disqualified=0 "
+            "AND w.rowid = ("
+            "  SELECT w2.rowid FROM write_outputs w2 "
+            "  WHERE w2.slug = w.slug AND w2.status = 'reviewed' AND w2.disqualified=0 "
+            "  ORDER BY w2.rowid DESC LIMIT 1"
+            ") "
             "ORDER BY w.topic_rank ASC"
         )
         out: list[dict] = []

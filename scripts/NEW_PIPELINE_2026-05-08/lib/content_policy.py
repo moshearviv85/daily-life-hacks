@@ -74,6 +74,7 @@ SIGNOFF_PATTERNS: list[str] = [
     r"\bhappy\s+eating\s*[!.]?",
     r"\benjoy\s*!",
     r"\bbon\s+appetit\s*[!.]?",
+    r"\bfuture\s+self(?:'s)?\b",
     r"\byour\s+(?:gut|body|taste\s+buds|stomach)\s+will\s+thank\s+you",
     r"\byou\s+won'?t\s+regret\s+it",
     r"\bgive\s+it\s+a\s+try\s*!",
