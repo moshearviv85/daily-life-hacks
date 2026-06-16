@@ -139,6 +139,13 @@ FOOD_ANCHORS = {
     "sweet", "tuna", "vegetarian", "veg",
 }
 
+SPECIFIC_FOOD_ANCHORS = FOOD_ANCHORS - {
+    "bake", "baked", "budget", "breakfast", "cook", "cooking", "dinner",
+    "food", "freezer", "healthy", "kitchen", "lunch", "meal", "meals",
+    "nutrition", "prep", "protein", "recipe", "recipes", "snack", "store",
+    "sweet",
+}
+
 DEFAULT_MIN_SCORE = 0.7
 DEFAULT_SEMANTIC_MODEL = "google/gemini-2.5-flash"
 SOURCE_RANK = {
@@ -194,6 +201,40 @@ def topic_tokens(topic: str) -> set[str]:
         for token in normalize_topic(topic).split()
         if len(token) > 2 and token not in STOPWORDS
     }
+
+
+def specific_food_tokens(tokens: set[str]) -> set[str]:
+    return tokens & SPECIFIC_FOOD_ANCHORS
+
+
+def deterministic_duplicate_match(tokens: set[str], known_tokens: set[str], similarity: float) -> bool:
+    if similarity >= 0.86:
+        return True
+
+    if not tokens or not known_tokens:
+        return False
+
+    candidate_specific = specific_food_tokens(tokens)
+    known_specific = specific_food_tokens(known_tokens)
+    same_specific_food = bool(candidate_specific and known_specific and candidate_specific & known_specific)
+    if same_specific_food and tokens.issubset(known_tokens | {"later", "guide", "tips"}):
+        return True
+    if same_specific_food and known_tokens.issubset(tokens | {"later", "guide", "tips"}):
+        return True
+    return False
+
+
+def topic_specificity_score(tokens: set[str]) -> float:
+    score = 0.6
+    if 3 <= len(tokens) <= 9:
+        score += 0.18
+    elif len(tokens) > 9:
+        score += 0.08
+    if any(word in tokens for word in {"store", "cook", "prep", "freeze", "recipe", "recipes"}):
+        score += 0.1
+    if specific_food_tokens(tokens):
+        score += 0.08
+    return round(min(score, 1.0), 3)
 
 
 def read_article_titles() -> list[str]:
@@ -298,20 +339,21 @@ def quality_score_topic(topic: str, known_titles: list[str]) -> tuple[bool, str,
 
     best_similarity = 0.0
     for known in known_titles:
+        known_normalized = normalize_topic(known)
+        if normalized == known_normalized:
+            return False, f"exact title already exists or is queued: {known}", 1.0
         known_tokens = topic_tokens(known)
         if not known_tokens:
             continue
         overlap = len(tokens & known_tokens)
         similarity = overlap / max(len(tokens), len(known_tokens))
         best_similarity = max(best_similarity, similarity)
-        if similarity >= 0.72:
+        if deterministic_duplicate_match(tokens, known_tokens, similarity):
             return False, f"too similar to existing or queued topic: {known}", round(similarity, 3)
 
-    score = 1.0 - best_similarity
-    if 3 <= len(tokens) <= 7:
-        score += 0.15
-    if any(word in tokens for word in {"how", "store", "cook", "prep", "recipe", "recipes"}):
-        score += 0.1
+    score = topic_specificity_score(tokens)
+    if best_similarity >= 0.55:
+        score = max(score - 0.03, DEFAULT_MIN_SCORE)
     return True, "passed deterministic quality gate", round(min(score, 1.0), 3)
 
 
