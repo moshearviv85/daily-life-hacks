@@ -124,6 +124,49 @@ export async function onRequestPost(context) {
     return json({ ok: true, action, count: ids.length });
   }
 
+  if (action === "delete") {
+    const ids = body.ids;
+    if (!Array.isArray(ids) || ids.length === 0) {
+      return json({ error: "ids array required" }, 400);
+    }
+    if (ids.length > 500) {
+      return json({ error: "cannot delete more than 500 topics at once" }, 400);
+    }
+
+    const cleanIds = ids
+      .map((id) => Number.parseInt(id, 10))
+      .filter((id) => Number.isInteger(id) && id > 0);
+    if (!cleanIds.length) {
+      return json({ error: "valid topic ids required" }, 400);
+    }
+
+    const placeholders = cleanIds.map(() => "?").join(",");
+    const rows = await env.DB.prepare(
+      `SELECT id FROM pipeline_topics
+       WHERE id IN (${placeholders}) AND status IN ('pending', 'queued')`
+    ).bind(...cleanIds).all();
+    const deletableIds = (rows?.results ?? [])
+      .map((row) => Number(row.id))
+      .filter((id) => Number.isInteger(id) && id > 0);
+
+    if (!deletableIds.length) {
+      return json({ ok: true, action, count: 0, skipped: cleanIds.length });
+    }
+
+    const deletePlaceholders = deletableIds.map(() => "?").join(",");
+    await env.DB.prepare(
+      `DELETE FROM pipeline_topics
+       WHERE id IN (${deletePlaceholders}) AND status IN ('pending', 'queued')`
+    ).bind(...deletableIds).run();
+
+    return json({
+      ok: true,
+      action,
+      count: deletableIds.length,
+      skipped: cleanIds.length - deletableIds.length,
+    });
+  }
+
   if (action === "add") {
     const { topic, category, source } = body;
     if (!topic || !category) {
@@ -155,5 +198,5 @@ export async function onRequestPost(context) {
     }
   }
 
-  return json({ error: "Unknown action. Use: approve, reject, produced, add" }, 400);
+  return json({ error: "Unknown action. Use: approve, reject, delete, produced, add" }, 400);
 }

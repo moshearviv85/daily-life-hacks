@@ -1722,6 +1722,8 @@ function copySubEmails() {
 let liveData = null;
 let modalRows = [];
 let modalSearchKey = '';
+let topicStatusFilter = 'pending';
+let topicOriginFilter = 'all';
 
 function openModal(type) {
   const overlay = document.getElementById('detail-modal');
@@ -1840,8 +1842,7 @@ function openModal(type) {
           return;
         }
         title.innerHTML = `Pipeline Topics <span class="modal-count">(${topics.length} total)</span>`;
-        body.innerHTML = renderPipelineTopicsModal(topics);
-        updateTopicSelectionSummary();
+        refreshPipelineTopicsModal();
       });
       return;
     }
@@ -1883,13 +1884,7 @@ function modalSearch() {
       break;
     }
     case 'pipeline-topics': {
-      const rows = modalRows.filter(t => {
-        const sourceMeta = getTopicSourceMeta(t.source);
-        const haystack = `${t.topic || ''} ${t.slug || ''} ${t.category || ''} ${t.source || ''} ${sourceMeta.label} ${t.status || ''} ${t.created_at || ''}`.toLowerCase();
-        return haystack.includes(q);
-      });
-      body.innerHTML = renderPipelineTopicsModal(rows);
-      updateTopicSelectionSummary();
+      refreshPipelineTopicsModal();
       break;
     }
     case 'subscribers': {
@@ -3020,16 +3015,119 @@ function renderTopicSourceSummary(topics) {
   </div>`;
 }
 
+function topicMatchesSearch(topic, query) {
+  if (!query) return true;
+  const sourceMeta = getTopicSourceMeta(topic.source);
+  const haystack = `${topic.topic || ''} ${topic.slug || ''} ${topic.category || ''} ${topic.source || ''} ${sourceMeta.label} ${topic.status || ''} ${topic.created_at || ''}`.toLowerCase();
+  return haystack.includes(query);
+}
+
+function topicMatchesStatusFilter(topic) {
+  if (topicStatusFilter === 'all') return true;
+  if (topicStatusFilter === 'pending') return topic.status === 'pending' || topic.status === 'queued';
+  return topic.status === topicStatusFilter;
+}
+
+function topicMatchesOriginFilter(topic) {
+  return topicOriginFilter === 'all' || topic.source === topicOriginFilter;
+}
+
+function getSearchedPipelineTopics() {
+  const search = document.getElementById('modal-search');
+  const q = search ? search.value.trim().toLowerCase() : '';
+  return modalRows.filter(topic => topicMatchesSearch(topic, q));
+}
+
+function getVisiblePipelineTopics() {
+  return sortTopicsNewestFirst(getSearchedPipelineTopics())
+    .filter(topic => topicMatchesStatusFilter(topic) && topicMatchesOriginFilter(topic));
+}
+
+function refreshPipelineTopicsModal() {
+  if (modalSearchKey !== 'pipeline-topics') return;
+  const body = document.getElementById('modal-body');
+  body.innerHTML = renderPipelineTopicsModal(getSearchedPipelineTopics());
+  updateTopicSelectionSummary();
+}
+
+function getTopicStatusCounts(topics) {
+  return {
+    pending: topics.filter(topic => topic.status === 'pending' || topic.status === 'queued').length,
+    approved: topics.filter(topic => topic.status === 'approved').length,
+    produced: topics.filter(topic => topic.status === 'produced').length,
+    rejected: topics.filter(topic => topic.status === 'rejected').length,
+    all: topics.length,
+  };
+}
+
+function getTopicOriginCounts(topics) {
+  return topics.reduce((acc, topic) => {
+    const key = topic.source || 'unknown';
+    acc[key] = (acc[key] || 0) + 1;
+    return acc;
+  }, { all: topics.length });
+}
+
+function renderTopicFilterButton(kind, value, label, count) {
+  const active = kind === 'status' ? topicStatusFilter === value : topicOriginFilter === value;
+  const fn = kind === 'status' ? 'setTopicStatusFilter' : 'setTopicOriginFilter';
+  return `<button class="btn btn-sm" onclick="${fn}('${escapeHtml(value)}')" style="${active ? 'background:var(--orange);border-color:var(--orange);color:#fff' : ''}">
+    ${escapeHtml(label)} <span style="opacity:.75">${Number(count) || 0}</span>
+  </button>`;
+}
+
+function renderTopicFilterBar(topics) {
+  const statusCounts = getTopicStatusCounts(topics);
+  const originCounts = getTopicOriginCounts(topics.filter(topic => topicMatchesStatusFilter(topic)));
+  const sourceKeys = ['all', 'llm_gap', 'autocomplete', 'gsc', 'pinterest', 'manual'];
+  return `<div style="display:flex;flex-direction:column;gap:.45rem;min-width:min(100%,720px)">
+    <div style="display:flex;align-items:center;gap:.35rem;flex-wrap:wrap">
+      <span style="font-size:.72rem;color:var(--muted);font-weight:700">Status</span>
+      ${renderTopicFilterButton('status', 'pending', 'Needs review', statusCounts.pending)}
+      ${renderTopicFilterButton('status', 'approved', 'Approved', statusCounts.approved)}
+      ${renderTopicFilterButton('status', 'produced', 'Produced', statusCounts.produced)}
+      ${renderTopicFilterButton('status', 'rejected', 'Rejected', statusCounts.rejected)}
+      ${renderTopicFilterButton('status', 'all', 'All', statusCounts.all)}
+    </div>
+    <div style="display:flex;align-items:center;gap:.35rem;flex-wrap:wrap">
+      <span style="font-size:.72rem;color:var(--muted);font-weight:700">Origin</span>
+      ${sourceKeys.map(source => {
+        const meta = source === 'all'
+          ? { label: 'All origins', detail: 'Show all topic origins.' }
+          : getTopicSourceMeta(source);
+        return renderTopicFilterButton('origin', source, meta.label, originCounts[source] || 0);
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+function setTopicStatusFilter(status) {
+  topicStatusFilter = status;
+  refreshPipelineTopicsModal();
+}
+
+function setTopicOriginFilter(origin) {
+  topicOriginFilter = origin;
+  refreshPipelineTopicsModal();
+}
+
 function renderPipelineTopicsModal(topics) {
   const sortedTopics = sortTopicsNewestFirst(topics);
-  const approved = sortedTopics.filter(t => t.status === 'approved');
-  const pending = sortedTopics.filter(t => t.status === 'pending' || t.status === 'queued');
-  const rejected = sortedTopics.filter(t => t.status === 'rejected');
-  const produced = sortedTopics.filter(t => t.status === 'produced');
-  const other = sortedTopics.filter(t => !['approved', 'pending', 'queued', 'rejected', 'produced'].includes(t.status));
+  const filteredTopics = sortedTopics.filter(topic => topicMatchesStatusFilter(topic) && topicMatchesOriginFilter(topic));
+  const approved = filteredTopics.filter(t => t.status === 'approved');
+  const pending = filteredTopics.filter(t => t.status === 'pending' || t.status === 'queued');
+  const rejected = filteredTopics.filter(t => t.status === 'rejected');
+  const produced = filteredTopics.filter(t => t.status === 'produced');
+  const other = filteredTopics.filter(t => !['approved', 'pending', 'queued', 'rejected', 'produced'].includes(t.status));
+  const deletableVisible = filteredTopics.filter(t => t.status === 'pending' || t.status === 'queued').length;
+  const deleteDisabled = topicOriginFilter === 'all' || deletableVisible === 0;
+  const deleteLabel = topicOriginFilter === 'all'
+    ? 'Choose origin to delete'
+    : `Delete visible pending (${deletableVisible})`;
 
   const toolbar = `
     <div style="position:sticky;top:-1rem;z-index:2;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:.6rem .7rem;margin-bottom:.8rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap">
+      ${renderTopicFilterBar(sortedTopics)}
       <div style="display:flex;align-items:center;gap:.45rem;flex-wrap:wrap">
         <button class="btn btn-sm" onclick="setTopicSelection(true)">Select visible</button>
         <button class="btn btn-sm" onclick="setTopicSelection(false)">Clear</button>
@@ -3039,8 +3137,9 @@ function renderPipelineTopicsModal(topics) {
         <button class="btn btn-sm" onclick="updateSelectedTopics('approve')">Approve</button>
         <button class="btn btn-sm" onclick="updateSelectedTopics('reject')" style="background:#ef4444;color:#fff;border-color:#ef4444">Reject</button>
         <button class="btn btn-sm" onclick="produceSelectedTopics()" style="background:#16a34a;color:#fff;border-color:#16a34a">Produce Selected to Staging</button>
+        <button class="btn btn-sm" onclick="deleteVisiblePendingTopics()" ${deleteDisabled ? 'disabled' : ''} title="Deletes only pending/queued topics in the current filtered view. Approved and produced topics are never deleted." style="background:#991b1b;color:#fff;border-color:#991b1b;${deleteDisabled ? 'opacity:.45;cursor:not-allowed' : ''}">${deleteLabel}</button>
       </div>
-      ${renderTopicSourceSummary(sortedTopics)}
+      ${renderTopicSourceSummary(filteredTopics)}
     </div>`;
 
   const sections = [
@@ -3053,8 +3152,8 @@ function renderPipelineTopicsModal(topics) {
 
   const lists = sections
     .filter(([, rows]) => rows.length)
-    .map(([label, rows, color]) => `
-      <h4 style="margin:${label === 'Approved' ? '0' : '1rem'} 0 .5rem;color:${color}">${label} (${rows.length})</h4>
+    .map(([label, rows, color], index) => `
+      <h4 style="margin:${index === 0 ? '0' : '1rem'} 0 .5rem;color:${color}">${label} (${rows.length})</h4>
       ${renderTopicsList(rows)}
     `).join('');
 
@@ -3118,6 +3217,33 @@ async function postTopicStatus(action, ids, reason = '') {
     throw new Error(data.error || res.statusText);
   }
   return data;
+}
+
+async function deleteVisiblePendingTopics() {
+  if (topicOriginFilter === 'all') {
+    alert('Choose a specific Origin first, such as AI Gap or Google Autocomplete.');
+    return;
+  }
+
+  const rows = getVisiblePipelineTopics().filter(topic => topic.status === 'pending' || topic.status === 'queued');
+  const ids = rows.map(topic => Number(topic.id)).filter(id => Number.isInteger(id) && id > 0);
+  if (!ids.length) {
+    alert('No visible pending topics to delete.');
+    return;
+  }
+
+  const origin = getTopicSourceMeta(topicOriginFilter);
+  const ok = confirm(`Delete ${ids.length} visible pending topic(s) from ${origin.label}?\n\nOnly pending/queued topics will be deleted. Approved, produced, and rejected topics will be left alone.\n\nThis lets you rerun Find Topics with a clean queue for this origin.`);
+  if (!ok) return;
+
+  try {
+    const data = await postTopicStatus('delete', ids);
+    await fetchPipelineStatus();
+    openModal('pipeline-topics');
+    alert(`Deleted ${data.count || 0} pending topic(s).${data.skipped ? ` Skipped ${data.skipped} topic(s) that had already moved forward.` : ''}`);
+  } catch (e) {
+    alert(`Failed: ${e.message}`);
+  }
 }
 
 async function updateSelectedTopics(action) {
@@ -3850,8 +3976,11 @@ async function addManualTopic() {
 window.fetchPipelineStatus = fetchPipelineStatus;
 window.triggerPipeline = triggerPipeline;
 window.setTopicSelection = setTopicSelection;
+window.setTopicStatusFilter = setTopicStatusFilter;
+window.setTopicOriginFilter = setTopicOriginFilter;
 window.updateTopicSelectionSummary = updateTopicSelectionSummary;
 window.updateSelectedTopics = updateSelectedTopics;
+window.deleteVisiblePendingTopics = deleteVisiblePendingTopics;
 window.produceSelectedTopics = produceSelectedTopics;
 window.approvePipelineArticle = approvePipelineArticle;
 window.regenerateHeroImage = regenerateHeroImage;
