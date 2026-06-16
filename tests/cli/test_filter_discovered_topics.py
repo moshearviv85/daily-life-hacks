@@ -205,13 +205,13 @@ def test_semantic_pool_diversifies_across_discovery_seeds():
 def test_source_sort_prefers_llm_gaps_before_autocomplete():
     topics = [
         {"topic": "autocomplete idea", "source": "autocomplete"},
-        {"topic": "llm gap idea", "source": "llm_gap_expansion"},
+        {"topic": "llm gap idea", "source": "llm_gap"},
         {"topic": "gsc idea", "source": "gsc"},
     ]
 
     assert [item["source"] for item in sorted(topics, key=mod.source_sort_key)] == [
         "gsc",
-        "llm_gap_expansion",
+        "llm_gap",
         "autocomplete",
     ]
 

@@ -259,7 +259,7 @@ def normalize_topics(raw: dict[str, Any], *, category: str | None = None) -> lis
         topic_category = category or _normalize_category(str(row.get("category") or ""))
         topics.append({
             "topic": topic,
-            "source": "llm_gap_expansion",
+            "source": "llm_gap",
             "category": topic_category,
             "seed": str(row.get("parent_cluster") or "site content gap").strip()[:120],
             "content_type": str(row.get("content_type") or "").strip()[:80],

@@ -150,6 +150,7 @@ DEFAULT_MIN_SCORE = 0.7
 DEFAULT_SEMANTIC_MODEL = "google/gemini-2.5-flash"
 SOURCE_RANK = {
     "gsc": 0,
+    "llm_gap": 1,
     "llm_gap_expansion": 1,
     "pinterest": 2,
     "autocomplete": 3,
@@ -593,10 +594,13 @@ def push_topics_to_d1(base_url: str, key: str, topics: list[dict]) -> dict:
     results = {"added": 0, "added_topics": [], "errors": []}
     for t in topics:
         url = f"{base_url}/api/pipeline-topics?key={key}&action=add"
+        source = t.get("source", "manual")
+        if source == "llm_gap_expansion":
+            source = "llm_gap"
         data = json.dumps({
             "topic": t["topic"],
             "category": t.get("category", "tips"),
-            "source": t.get("source", "manual"),
+            "source": source,
             "status": t.get("status", "pending"),
             "impressions": t.get("impressions"),
             "ctr": t.get("ctr"),
@@ -618,7 +622,7 @@ def push_topics_to_d1(base_url: str, key: str, topics: list[dict]) -> dict:
                     "topic": t["topic"],
                     "slug": payload.get("slug") or t.get("slug"),
                     "category": t.get("category"),
-                    "source": t.get("source"),
+                    "source": source,
                     "dedup_score": t.get("dedup_score"),
                 })
         except urllib.error.HTTPError as e:

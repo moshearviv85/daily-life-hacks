@@ -85,7 +85,7 @@ def test_discover_gaps_normalizes_llm_output_without_network():
 
     assert metadata["cost_usd"] == 0.001
     assert len(topics) == 1
-    assert topics[0]["source"] == "llm_gap_expansion"
+    assert topics[0]["source"] == "llm_gap"
     assert topics[0]["category"] == "recipes"
     assert topics[0]["seed"] == "freezer meal prep"
 
