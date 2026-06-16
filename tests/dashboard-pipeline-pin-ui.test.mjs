@@ -201,7 +201,9 @@ test("dashboard can dispatch bounded topic discovery and poll for new candidates
   assert.match(dashboard, /if \(category\) body\.category = category/);
   assert.match(dashboard, /function pollDiscoveryTopics/);
   assert.match(dashboard, /Found \$\{newTopics\.length\} new topic candidate/);
+  assert.match(dashboard, /valid no-op when the semantic gate rejects duplicates/);
   assert.match(dashboard, /Check the discovery report in GitHub Actions/);
+  assert.doesNotMatch(dashboard, /timed out without adding visible new topics/);
 });
 
 test("dashboard keeps article approval as a fallback for article-only rows", () => {

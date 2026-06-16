@@ -3286,7 +3286,7 @@ async function triggerPipeline(action) {
       statusEl.style.borderColor = '#bbf7d0';
       statusEl.style.color = '#166534';
       if (action === 'discover') {
-        statusEl.innerHTML = `Find Topics workflow dispatched. Waiting for new staging topic candidates...${pipelineActionsLink(data)}`;
+        statusEl.innerHTML = `Find Topics workflow dispatched. Waiting for new staging topic candidates or a no-op discovery report...${pipelineActionsLink(data)}`;
         pollDiscoveryTopics(discoverBeforeIds || new Set(), data, statusEl);
         return;
       }
@@ -3330,12 +3330,12 @@ async function pollDiscoveryTopics(beforeIds, data, statusEl) {
     statusEl.style.background = '#fff7ed';
     statusEl.style.borderColor = '#fed7aa';
     statusEl.style.color = '#92400e';
-    statusEl.innerHTML = `Find Topics is still running or produced no new candidates yet. Refresh ${attempt}/36.${pipelineActionsLink(data)}`;
+    statusEl.innerHTML = `Find Topics is still running or produced no new candidates yet. If every candidate is a semantic duplicate, this will finish as a no-op. Refresh ${attempt}/36.${pipelineActionsLink(data)}`;
   }
-  statusEl.style.background = '#fef2f2';
-  statusEl.style.borderColor = '#fecaca';
-  statusEl.style.color = '#b91c1c';
-  statusEl.innerHTML = `Find Topics finished or timed out without adding visible new topics. Check the discovery report in GitHub Actions.${pipelineActionsLink(data)}`;
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+  statusEl.innerHTML = `No new topic candidates appeared in the dashboard. This can be a valid no-op when the semantic gate rejects duplicates. Check the discovery report in GitHub Actions for the final run result.${pipelineActionsLink(data)}`;
 }
 
 async function pollPipelineForSlugs(slugs, data, statusEl) {
