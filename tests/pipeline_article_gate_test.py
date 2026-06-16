@@ -75,7 +75,8 @@ def test_pipeline_discover_is_bounded_and_reported():
     assert "--semantic-dedup" in workflow
     assert "--semantic-model \"$DISCOVER_SEMANTIC_MODEL\"" in workflow
     assert "Semantic duplicate gate" in workflow
-    assert "--require-added" in workflow
+    assert "--require-added" not in workflow
+    assert "no new topics were added; discovery completed without technical errors" in workflow
     assert "actions/upload-artifact@v4" in workflow
     assert "GITHUB_STEP_SUMMARY" in workflow
 

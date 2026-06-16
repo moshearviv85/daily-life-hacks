@@ -160,6 +160,30 @@ def test_semantic_gate_rejects_same_article_angle():
     assert "semantic duplicate" in rejected[0]["reason"]
 
 
+def test_semantic_pool_diversifies_across_discovery_seeds():
+    candidates = [
+        {"topic": "asparagus oven", "source": "autocomplete", "seed": "asparagus"},
+        {"topic": "asparagus pan", "source": "autocomplete", "seed": "asparagus"},
+        {"topic": "asparagus grill", "source": "autocomplete", "seed": "asparagus"},
+        {"topic": "rice bowl chicken", "source": "autocomplete", "seed": "rice bowls"},
+        {"topic": "rice bowl vegetarian", "source": "autocomplete", "seed": "rice bowls"},
+        {"topic": "freezer meal chicken", "source": "autocomplete", "seed": "freezer meals"},
+    ]
+
+    pool, overflow = mod.select_semantic_pool(candidates, 4)
+
+    assert [item["topic"] for item in pool] == [
+        "asparagus oven",
+        "rice bowl chicken",
+        "freezer meal chicken",
+        "asparagus pan",
+    ]
+    assert [item["topic"] for item in overflow] == [
+        "asparagus grill",
+        "rice bowl vegetarian",
+    ]
+
+
 def test_categorize_topic_keeps_recipe_and_nutrition_distinct():
     assert mod.categorize_topic("high protein breakfast recipes") == "recipes"
     assert mod.categorize_topic("easy sandwich bread recipe") == "recipes"

@@ -81,7 +81,6 @@ jobs:
             --report "pipeline-data/reports/pipeline-discover-${{ github.run_id }}.json" \
             --semantic-dedup \
             --semantic-model "$DISCOVER_SEMANTIC_MODEL" \
-            --require-added \
             "${ARGS[@]}"
 
       - name: Summarize discovery report
@@ -107,6 +106,8 @@ jobs:
               f"- Overflow after limit: {data.get('overflow_count', 0)}",
               f"- Errors: {data.get('error_count', 0)}",
           ]
+          if data.get("no_op"):
+              lines.append("- Result: no new topics were added; discovery completed without technical errors.")
           semantic = data.get("semantic", {})
           if semantic.get("enabled"):
               lines.extend([

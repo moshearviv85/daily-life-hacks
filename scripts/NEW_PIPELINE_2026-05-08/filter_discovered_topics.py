@@ -515,6 +515,36 @@ def source_sort_key(topic: dict) -> tuple:
     )
 
 
+def semantic_pool_key(topic: dict) -> str:
+    seed = str(topic.get("seed") or "").strip().lower()
+    if seed:
+        return f"{topic.get('source', 'manual')}:{seed}"
+    return f"{topic.get('source', 'manual')}:{topic.get('category', 'tips')}"
+
+
+def select_semantic_pool(candidates: list[dict], pool_limit: int) -> tuple[list[dict], list[dict]]:
+    if pool_limit <= 0 or not candidates:
+        return [], list(candidates)
+
+    buckets: dict[str, list[int]] = {}
+    for index, candidate in enumerate(candidates):
+        buckets.setdefault(semantic_pool_key(candidate), []).append(index)
+
+    selected_indexes: list[int] = []
+    while buckets and len(selected_indexes) < pool_limit:
+        for key in list(buckets):
+            selected_indexes.append(buckets[key].pop(0))
+            if not buckets[key]:
+                del buckets[key]
+            if len(selected_indexes) >= pool_limit:
+                break
+
+    selected = set(selected_indexes)
+    pool = [candidates[index] for index in selected_indexes]
+    overflow = [candidate for index, candidate in enumerate(candidates) if index not in selected]
+    return pool, overflow
+
+
 def push_topics_to_d1(base_url: str, key: str, topics: list[dict]) -> dict:
     results = {"added": 0, "added_topics": [], "errors": []}
     for t in topics:
@@ -570,7 +600,8 @@ def write_report(
     path.write_text(
         json.dumps(
             {
-                "ok": not results or (not results.get("errors") and (dry_run or results.get("added", 0) > 0)),
+                "ok": not results or not results.get("errors"),
+                "no_op": bool(results and not results.get("errors") and not dry_run and results.get("added", 0) == 0),
                 "dry_run": dry_run,
                 "input_count": input_count,
                 "source_counts": count_by_source(all_reported),
@@ -685,8 +716,7 @@ def main(argv: list[str] | None = None) -> int:
         if limit == 0:
             semantic_pool_limit = 0
 
-        semantic_pool = accepted[:semantic_pool_limit] if semantic_pool_limit else []
-        semantic_overflow = accepted[semantic_pool_limit:] if semantic_pool_limit else accepted
+        semantic_pool, semantic_overflow = select_semantic_pool(accepted, semantic_pool_limit)
         print(
             f"Semantic gate: checking {len(semantic_pool)} candidates against "
             f"{len(semantic_known_titles)} existing site/pipeline topics",
