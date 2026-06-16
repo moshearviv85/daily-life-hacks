@@ -150,8 +150,9 @@ DEFAULT_MIN_SCORE = 0.7
 DEFAULT_SEMANTIC_MODEL = "google/gemini-2.5-flash"
 SOURCE_RANK = {
     "gsc": 0,
-    "pinterest": 1,
-    "autocomplete": 2,
+    "llm_gap_expansion": 1,
+    "pinterest": 2,
+    "autocomplete": 3,
     "manual": 3,
 }
 SEMANTIC_DEDUP_SCHEMA = {

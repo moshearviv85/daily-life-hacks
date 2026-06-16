@@ -72,6 +72,10 @@ def test_pipeline_discover_is_bounded_and_reported():
     assert "--limit \"$DISCOVER_LIMIT\"" in workflow
     assert "--report \"pipeline-data/reports/pipeline-discover-${{ github.run_id }}.json\"" in workflow
     assert "OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}" in workflow
+    assert "Discover from LLM content gaps" in workflow
+    assert "discover_llm_gaps.py" in workflow
+    assert "DISCOVER_GAP_COUNT" in workflow
+    assert "LLM gaps" in workflow
     assert "--semantic-dedup" in workflow
     assert "--semantic-model \"$DISCOVER_SEMANTIC_MODEL\"" in workflow
     assert "Semantic duplicate gate" in workflow

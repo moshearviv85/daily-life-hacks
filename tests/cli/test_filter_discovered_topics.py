@@ -184,6 +184,20 @@ def test_semantic_pool_diversifies_across_discovery_seeds():
     ]
 
 
+def test_source_sort_prefers_llm_gaps_before_autocomplete():
+    topics = [
+        {"topic": "autocomplete idea", "source": "autocomplete"},
+        {"topic": "llm gap idea", "source": "llm_gap_expansion"},
+        {"topic": "gsc idea", "source": "gsc"},
+    ]
+
+    assert [item["source"] for item in sorted(topics, key=mod.source_sort_key)] == [
+        "gsc",
+        "llm_gap_expansion",
+        "autocomplete",
+    ]
+
+
 def test_categorize_topic_keeps_recipe_and_nutrition_distinct():
     assert mod.categorize_topic("high protein breakfast recipes") == "recipes"
     assert mod.categorize_topic("easy sandwich bread recipe") == "recipes"

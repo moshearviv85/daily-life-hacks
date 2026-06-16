@@ -49,14 +49,33 @@ jobs:
       - name: Discover from Autocomplete
         run: python scripts/NEW_PIPELINE_2026-05-08/discover_autocomplete.py --delay 0.2 > /tmp/autocomplete-topics.json
 
+      - name: Discover from LLM content gaps
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          DISCOVER_GAP_MODEL: ${{ vars.DISCOVER_GAP_MODEL || 'google/gemini-2.5-flash' }}
+          DISCOVER_GAP_COUNT: ${{ vars.DISCOVER_GAP_COUNT || '50' }}
+          DISCOVER_CATEGORY: ${{ github.event.inputs.category || '' }}
+        run: |
+          if [ -n "$OPENROUTER_API_KEY" ]; then
+            ARGS=(--count "$DISCOVER_GAP_COUNT" --model "$DISCOVER_GAP_MODEL" --report "pipeline-data/reports/pipeline-discover-${{ github.run_id }}-llm-gaps.json")
+            if [ -n "$DISCOVER_CATEGORY" ]; then
+              ARGS+=(--category "$DISCOVER_CATEGORY")
+            fi
+            python scripts/NEW_PIPELINE_2026-05-08/discover_llm_gaps.py "${ARGS[@]}" > /tmp/llm-gap-topics.json
+          else
+            echo "OPENROUTER_API_KEY not set, skipping LLM gap discovery"
+            echo "[]" > /tmp/llm-gap-topics.json
+          fi
+
       - name: Merge discoveries
         run: |
           python -c "
           import json
           gsc = json.load(open('/tmp/gsc-topics.json'))
           auto = json.load(open('/tmp/autocomplete-topics.json'))
-          merged = gsc + auto
-          print(f'Merged: {len(gsc)} GSC + {len(auto)} autocomplete = {len(merged)} total', flush=True)
+          llm = json.load(open('/tmp/llm-gap-topics.json'))
+          merged = gsc + llm + auto
+          print(f'Merged: {len(gsc)} GSC + {len(llm)} LLM gaps + {len(auto)} autocomplete = {len(merged)} total', flush=True)
           with open('/tmp/all-discovered.json', 'w') as f:
               json.dump(merged, f, indent=2)
           "
