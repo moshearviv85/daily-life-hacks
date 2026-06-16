@@ -400,6 +400,23 @@ def _clean_json_text(text: str) -> str:
     return cleaned
 
 
+def parse_json_response(text: str) -> dict[str, Any]:
+    cleaned = _clean_json_text(text)
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError as first_error:
+        start = cleaned.find("{")
+        end = cleaned.rfind("}")
+        if start >= 0 and end > start:
+            extracted = cleaned[start:end + 1]
+            try:
+                return json.loads(extracted)
+            except json.JSONDecodeError:
+                pass
+        snippet = cleaned[:700].replace("\n", "\\n")
+        raise ValueError(f"LLM returned invalid JSON: {first_error}. Snippet: {snippet}") from first_error
+
+
 def call_semantic_dedup_llm(
     *,
     candidates: list[dict],
@@ -419,7 +436,33 @@ def call_semantic_dedup_llm(
         timeout=timeout,
     )
     text, _ = extract_text(response)
-    return json.loads(_clean_json_text(text))
+    try:
+        return parse_json_response(text)
+    except ValueError:
+        repair_prompt = f"""Convert this model output into valid JSON matching the required schema.
+
+Rules:
+- Preserve every verdict that is present.
+- Do not add commentary.
+- Return JSON only.
+
+Required schema:
+{json.dumps(SEMANTIC_DEDUP_SCHEMA, indent=2)}
+
+MODEL OUTPUT:
+{text}
+"""
+        repair_response = chat_completion(
+            api_key=api_key,
+            model_id=model,
+            system="You repair malformed JSON. Return valid JSON and no markdown.",
+            user=repair_prompt,
+            temperature=0.0,
+            max_tokens=5000,
+            timeout=timeout,
+        )
+        repair_text, _ = extract_text(repair_response)
+        return parse_json_response(repair_text)
 
 
 def parse_semantic_verdicts(raw: dict[str, Any], candidates: list[dict]) -> list[dict[str, Any]]:

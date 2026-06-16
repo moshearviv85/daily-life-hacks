@@ -92,6 +92,10 @@ jobs:
           if [ -n "$DISCOVER_CATEGORY" ]; then
             ARGS+=(--category "$DISCOVER_CATEGORY")
           fi
+          SEMANTIC_POOL=$(( DISCOVER_LIMIT * 2 ))
+          if [ "$SEMANTIC_POOL" -gt 60 ]; then
+            SEMANTIC_POOL=60
+          fi
           python scripts/NEW_PIPELINE_2026-05-08/filter_discovered_topics.py \
             --input /tmp/all-discovered.json \
             --base-url "$PIPELINE_DASHBOARD_BASE_URL" \
@@ -100,6 +104,7 @@ jobs:
             --report "pipeline-data/reports/pipeline-discover-${{ github.run_id }}.json" \
             --semantic-dedup \
             --semantic-model "$DISCOVER_SEMANTIC_MODEL" \
+            --semantic-pool "$SEMANTIC_POOL" \
             "${ARGS[@]}"
 
       - name: Summarize discovery report

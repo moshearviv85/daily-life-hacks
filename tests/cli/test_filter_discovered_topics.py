@@ -160,6 +160,24 @@ def test_semantic_gate_rejects_same_article_angle():
     assert "semantic duplicate" in rejected[0]["reason"]
 
 
+def test_parse_json_response_extracts_wrapped_json_object():
+    parsed = mod.parse_json_response(
+        '```json\n{"verdicts": [{"topic": "x", "is_duplicate": false, "matched_title": "", "reason": "ok"}]}\n```'
+    )
+
+    assert parsed["verdicts"][0]["topic"] == "x"
+
+
+def test_parse_json_response_reports_invalid_snippet():
+    try:
+        mod.parse_json_response('{"verdicts": [')
+    except ValueError as exc:
+        assert "invalid JSON" in str(exc)
+        assert "Snippet" in str(exc)
+    else:
+        raise AssertionError("expected invalid JSON to raise")
+
+
 def test_semantic_pool_diversifies_across_discovery_seeds():
     candidates = [
         {"topic": "asparagus oven", "source": "autocomplete", "seed": "asparagus"},
