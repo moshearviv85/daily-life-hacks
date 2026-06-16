@@ -5,9 +5,8 @@
  *
  * Body: { action: "discover" | "produce" | "publish" | "approve_article" | "regenerate_hero" | "promote_staging", count?: number, category?: string, topic_ids?: number[], slug?: string }
  *
- * Note: workflows are dispatched from the default production branch so GitHub can
- * find the workflow files. Content-generation workflows push their generated
- * files to staging from inside the workflow.
+ * Note: content-generation workflows push their generated files to staging from
+ * inside the workflow; production publishing/promotion remains explicitly gated.
  */
 
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
@@ -37,9 +36,9 @@ const ACTIONS = {
   },
   produce: {
     workflow: "pipeline-produce.yml",
-    dispatchRef: "main",
+    dispatchRef: "staging",
     outputBranch: "staging",
-    effect: "Generates files into staging and updates staging D1 pipeline status.",
+    effect: "Generates an article, hero image, support image, and four pin images into staging.",
   },
   publish: {
     workflow: "publish-articles.yml",
@@ -55,7 +54,7 @@ const ACTIONS = {
   },
   approve_article: {
     workflow: "pipeline-article-assets.yml",
-    dispatchRef: "main",
+    dispatchRef: "staging",
     outputBranch: "staging",
     effect: "Generates hero image and pin assets for an approved staging article.",
   },

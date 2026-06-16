@@ -52,6 +52,7 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /<strong>Title:<\/strong>/);
   assert.match(dashboard, /<strong>Description:<\/strong>/);
   assert.match(dashboard, /<strong>Board:<\/strong>/);
+  assert.match(dashboard, /<strong>Model:<\/strong>/);
   assert.match(dashboard, /<strong>Hashtags:<\/strong>/);
   assert.match(dashboard, /<strong>Alt:<\/strong>/);
   assert.match(dashboard, /const pipelineAssetBase = 'https:\/\/staging\.daily-life-hacks\.pages\.dev'/);
@@ -91,6 +92,9 @@ test("pipeline dashboard shows thumbnails and can regenerate hero image", () => 
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
   assert.match(dashboard, /\$\{a\.slug\}-main\.jpg/);
+  assert.match(dashboard, /\$\{a\.slug\}-ingredients\.jpg/);
+  assert.match(dashboard, /support image/);
+  assert.match(dashboard, /const supportDisplaySrc = `\$\{supportSrc\}\?v=\$\{heroVersion\}`/);
   assert.match(dashboard, /Regenerate image/);
   assert.match(dashboard, /function regenerateHeroImage/);
   assert.match(dashboard, /window\.regenerateHeroImage = regenerateHeroImage/);
@@ -179,18 +183,23 @@ test("dashboard can select topics and produce selected topics", () => {
   assert.match(dashboard, /Produce Selected to Staging/);
   assert.match(dashboard, /function produceSelectedTopics/);
   assert.match(dashboard, /function pollPipelineForSlugs/);
+  assert.match(dashboard, /Full staging package ready/);
   assert.match(dashboard, /View GitHub Actions/);
   assert.match(dashboard, /topic_ids: ids/);
   assert.match(dashboard, /postTopicStatus\('approve', ids\)/);
 });
 
-test("dashboard exposes article approval before image generation", () => {
+test("dashboard keeps article approval as a fallback for article-only rows", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
   assert.match(dashboard, /Approve Article/);
+  assert.match(dashboard, /Generate creates one full staging package/);
+  assert.match(dashboard, /Ready for Review/);
+  assert.match(dashboard, /by_display_stage/);
   assert.match(dashboard, /const articleAvailable = existsInBuild/);
   assert.match(dashboard, /const stagingHref = articleAvailable/);
   assert.match(dashboard, /const canApproveArticle = articleAvailable/);
+  assert.match(dashboard, /stage !== 'staging_review'/);
   assert.match(dashboard, /const builtHeroSlugs = new Set\(BUILD\.images\?\.webSlugs \|\| \[\]\)/);
   assert.match(dashboard, /const heroAvailable = builtHeroSlugs\.has\(a\.slug\)/);
   assert.match(dashboard, /data-pipeline-hero="\$\{a\.slug\}"/);

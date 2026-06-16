@@ -4,11 +4,24 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_pipeline_produce_stops_before_image_generation_until_article_approval():
-    workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
+def _workflow(name: str) -> str:
+    return (ROOT / ".github" / "workflows" / name).read_text(encoding="utf-8")
 
-    assert "--article-only" in workflow
-    assert "--article-only" in workflow.split("Verify generated staging artifacts", 1)[1]
+
+def _step(workflow: str, start_name: str, end_name: str) -> str:
+    return workflow.split(f"- name: {start_name}", 1)[1].split(f"- name: {end_name}", 1)[0]
+
+
+def test_pipeline_produce_generates_full_staging_package():
+    workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
+    produce_step = _step(workflow, "Produce articles", "Verify generated")
+    verify_step = workflow.split("- name: Verify generated staging artifacts", 1)[1].split("- uses: actions/setup-node", 1)[0]
+
+    assert "default: '1'" in workflow
+    assert "run_pipeline.py" in produce_step
+    assert "--article-only" not in produce_step
+    assert "--article-only" not in verify_step
+    assert '--report "pipeline-data/reports/pipeline-produce-${{ github.run_id }}.json"' in verify_step
 
 
 def test_pipeline_produce_keeps_successful_topics_when_one_topic_fails():
@@ -20,23 +33,36 @@ def test_pipeline_produce_keeps_successful_topics_when_one_topic_fails():
     assert "/tmp/failed-topic-ids.json" in workflow
     assert "--selected-topics pipeline-data/produced-topics.json" in workflow
     assert "No topics produced successfully." in workflow
-    assert "Mark failed topics as rejected" in workflow
+    assert "Report failed topics without rejecting" in workflow
     assert "id: produce" in workflow
     assert "has_produced=false" in workflow
     assert "Fail if no articles were produced" in workflow
     assert "steps.produce.outputs.has_produced == 'true'" in workflow
 
 
-def test_pipeline_produce_rejects_failed_topics_before_final_failure():
+def test_pipeline_produce_reports_failed_topics_before_final_failure():
     workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
 
-    failed_idx = workflow.index("Mark failed topics as rejected")
+    failed_idx = workflow.index("Report failed topics without rejecting")
     sync_idx = workflow.index("Sync pipeline status to D1")
     final_fail_idx = workflow.index("Fail if no articles were produced")
     produce_step = workflow.split("- name: Produce articles", 1)[1].split("- name: Verify generated", 1)[0]
 
     assert "sys.exit(1)" not in produce_step
     assert failed_idx < sync_idx < final_fail_idx
+
+
+def test_staging_generation_workflows_build_before_push():
+    for name in ("pipeline-produce.yml", "pipeline-daily.yml"):
+        workflow = _workflow(name)
+
+        verify_idx = workflow.index("Verify generated staging artifacts")
+        build_idx = workflow.index("Build staging site")
+        commit_idx = workflow.index("Commit and push generated files")
+        deploy_idx = workflow.index("Deploy staging to Cloudflare Pages")
+
+        assert verify_idx < build_idx < commit_idx < deploy_idx
+        assert "pipeline-data/reports/" in workflow
 
 
 def test_pipeline_daily_tracks_produced_and_failed_topics_separately():

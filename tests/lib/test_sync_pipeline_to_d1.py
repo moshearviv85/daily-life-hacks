@@ -12,6 +12,7 @@ from sync_pipeline_to_d1 import (
     collect_pins_from_sqlite,
     build_payload,
 )
+from lib.image_models import HERO_IMAGE_MODEL_ID, SUPPORT_IMAGE_MODEL_ID, model_for_pin_slot
 
 @pytest.fixture
 def pipeline_db(tmp_path):
@@ -70,6 +71,10 @@ def test_collect_articles(pipeline_db):
     # Fixture has review_outputs (ok), hero_briefs (ok), and pin_briefs (ok),
     # so stage advances to "pins_brief" per the progression logic.
     assert a["stage"] == "pins_brief"
+    assert a["hero_model"] == HERO_IMAGE_MODEL_ID
+    assert a["support_model"] == SUPPORT_IMAGE_MODEL_ID
+    assert a["hero_image_done"] == 0
+    assert a["support_image_done"] == 0
     assert a["cost_usd"] > 0
 
 def test_collect_pins(pipeline_db):
@@ -78,6 +83,7 @@ def test_collect_pins(pipeline_db):
     p = pins[0]
     assert p["pin_slug"] == "crispy-falafel-tip"
     assert p["article_slug"] == "test-slug"
+    assert p["model_id"] == model_for_pin_slot(1)
 
 def test_build_payload(pipeline_db):
     articles = collect_articles_from_sqlite(str(pipeline_db))
@@ -176,7 +182,10 @@ def test_asset_db_syncs_from_staging_markdown_without_write_outputs(tmp_path, mo
     conn.close()
 
     article_dir = tmp_path / "articles"
+    image_dir = tmp_path / "images"
+    pin_dir = image_dir / "pins"
     article_dir.mkdir()
+    pin_dir.mkdir(parents=True)
     (article_dir / "asset-only.md").write_text(
         "---\n"
         'title: "Asset Only Article"\n'
@@ -186,6 +195,8 @@ def test_asset_db_syncs_from_staging_markdown_without_write_outputs(tmp_path, mo
         encoding="utf-8",
     )
     monkeypatch.setattr("sync_pipeline_to_d1.ARTICLE_DIR", article_dir)
+    monkeypatch.setattr("sync_pipeline_to_d1.HERO_IMG_DIR", image_dir)
+    monkeypatch.setattr("sync_pipeline_to_d1.PIN_IMG_DIR", pin_dir)
 
     articles = collect_articles_from_sqlite(str(db_path))
     pins = collect_pins_from_sqlite(str(db_path))
@@ -195,4 +206,72 @@ def test_asset_db_syncs_from_staging_markdown_without_write_outputs(tmp_path, mo
     assert articles[0]["topic"] == "Asset Only Article"
     assert articles[0]["category"] == "recipes"
     assert articles[0]["stage"] == "deployed"
+    assert articles[0]["review_state"] == "article_review"
+    assert articles[0]["support_image_done"] == 0
     assert len(pins) == 4
+
+
+def test_full_asset_db_sync_marks_staging_review(tmp_path, monkeypatch):
+    db_path = tmp_path / "full_assets.sqlite"
+    conn = sqlite3.connect(str(db_path))
+    conn.executescript("""
+        CREATE TABLE hero_briefs (
+            article_slug TEXT, status TEXT, prompt TEXT, alt TEXT
+        );
+        CREATE TABLE pin_briefs (
+            article_slug TEXT, pin_slug TEXT, pin_index INTEGER,
+            title TEXT, description TEXT, prompt TEXT, alt TEXT, status TEXT
+        );
+    """)
+    conn.execute(
+        "INSERT INTO hero_briefs VALUES ('full-assets', 'ok', 'Prompt', 'Alt text')"
+    )
+    for idx in range(4):
+        conn.execute(
+            "INSERT INTO pin_briefs VALUES (?, ?, ?, ?, ?, ?, ?, 'ok')",
+            (
+                "full-assets",
+                f"full-assets-v{idx + 1}",
+                idx,
+                f"Pin {idx + 1}",
+                "Description",
+                "Prompt",
+                "Alt",
+            ),
+        )
+    conn.commit()
+    conn.close()
+
+    article_dir = tmp_path / "articles"
+    image_dir = tmp_path / "images"
+    pin_dir = image_dir / "pins"
+    article_dir.mkdir()
+    pin_dir.mkdir(parents=True)
+    (article_dir / "full-assets.md").write_text(
+        "---\n"
+        'title: "Full Assets Article"\n'
+        'category: "recipes"\n'
+        "---\n"
+        "Body words here.\n",
+        encoding="utf-8",
+    )
+    (image_dir / "full-assets-main.jpg").write_bytes(b"jpg")
+    (image_dir / "full-assets-ingredients.jpg").write_bytes(b"jpg")
+    for idx in range(4):
+        (pin_dir / f"full-assets-v{idx + 1}.jpg").write_bytes(b"jpg")
+
+    monkeypatch.setattr("sync_pipeline_to_d1.ARTICLE_DIR", article_dir)
+    monkeypatch.setattr("sync_pipeline_to_d1.HERO_IMG_DIR", image_dir)
+    monkeypatch.setattr("sync_pipeline_to_d1.PIN_IMG_DIR", pin_dir)
+
+    articles = collect_articles_from_sqlite(str(db_path))
+    pins = collect_pins_from_sqlite(str(db_path))
+
+    assert len(articles) == 1
+    assert articles[0]["stage"] == "deployed"
+    assert articles[0]["review_state"] == "staging_review"
+    assert articles[0]["hero_image_done"] == 1
+    assert articles[0]["support_image_done"] == 1
+    assert articles[0]["hero_model"] == HERO_IMAGE_MODEL_ID
+    assert articles[0]["support_model"] == SUPPORT_IMAGE_MODEL_ID
+    assert [p["model_id"] for p in pins] == [model_for_pin_slot(i) for i in range(1, 5)]

@@ -6,7 +6,7 @@ on:
       count:
         description: 'Number of articles to produce'
         required: false
-        default: '3'
+        default: '1'
       category:
         description: 'Category filter (empty = any)'
         required: false
@@ -102,8 +102,7 @@ jobs:
                   sys.executable,
                   'scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py',
                   t['topic'],
-                  '--category', t['category'],
-                  '--article-only'
+                  '--category', t['category']
               ], capture_output=False)
               if result.returncode != 0:
                   print(f'ERROR: Pipeline failed for {t[\"topic\"]}', file=sys.stderr)
@@ -138,22 +137,7 @@ jobs:
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/verify_pipeline_artifacts.py \
             --selected-topics pipeline-data/produced-topics.json \
-            --article-only
-
-      - name: Commit and push generated files
-        if: steps.produce.outputs.has_produced == 'true'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/articles/ public/images/ pipeline-data/ || true
-          if git diff --cached --quiet; then
-            echo "No new files to commit"
-          else
-            git commit -m "feat(pipeline): produce articles via GH Actions
-
-          Co-Authored-By: GitHub Actions <github-actions[bot]@users.noreply.github.com>"
-            git push origin HEAD:${PIPELINE_TARGET_BRANCH}
-          fi
+            --report "pipeline-data/reports/pipeline-produce-${{ github.run_id }}.json"
 
       - uses: actions/setup-node@v4
         if: steps.produce.outputs.has_produced == 'true'
@@ -175,6 +159,25 @@ jobs:
           rm -rf worker-out dist/_worker.js
           npx wrangler pages functions build functions --outdir=worker-out --output-routes-path=dist/_routes.json --project-directory=. --build-output-directory=dist
           cp worker-out/index.js dist/_worker.js
+
+      - name: Commit and push generated files
+        if: steps.produce.outputs.has_produced == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/articles/ public/images/ \
+            pipeline-data/selected-topics.json \
+            pipeline-data/produced-topics.json \
+            pipeline-data/failed-topics.json \
+            pipeline-data/reports/ || true
+          if git diff --cached --quiet; then
+            echo "No new files to commit"
+          else
+            git commit -m "feat(pipeline): produce full staging artifacts via GH Actions
+
+          Co-Authored-By: GitHub Actions <github-actions[bot]@users.noreply.github.com>"
+            git push origin HEAD:${PIPELINE_TARGET_BRANCH}
+          fi
 
       - name: Deploy staging to Cloudflare Pages
         if: steps.produce.outputs.has_produced == 'true'
@@ -213,5 +216,5 @@ jobs:
       - name: Fail if no articles were produced
         if: steps.produce.outputs.has_produced == 'false'
         run: |
-          echo "No articles passed quality checks. Failed topics were rejected and D1 was synced."
+          echo "No articles passed quality checks. Failed topics remain approved for retry and D1 was synced."
           exit 1

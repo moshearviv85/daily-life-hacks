@@ -53,7 +53,16 @@ async function proxyStagingStatus(request) {
 async function getPinRows(env, stagingRequest) {
   const productionQuery = `
     SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
-            pp.alt, pp.image_status, pa.category,
+            pp.alt, pp.model_id, pp.image_status, pa.category,
+            ps.status AS publish_status, ps.pin_id
+      FROM pipeline_pins pp
+      JOIN pipeline_articles pa ON pa.slug = pp.article_slug
+      LEFT JOIN pins_schedule ps ON ps.row_id = pp.pin_slug
+      ORDER BY pp.article_slug ASC, pp.pin_index ASC
+  `;
+  const productionFallbackQuery = `
+    SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
+            pp.alt, NULL AS model_id, pp.image_status, pa.category,
             ps.status AS publish_status, ps.pin_id
       FROM pipeline_pins pp
       JOIN pipeline_articles pa ON pa.slug = pp.article_slug
@@ -62,13 +71,17 @@ async function getPinRows(env, stagingRequest) {
   `;
 
   if (!stagingRequest) {
-    return env.DB.prepare(productionQuery).all();
+    try {
+      return await env.DB.prepare(productionQuery).all();
+    } catch {
+      return env.DB.prepare(productionFallbackQuery).all();
+    }
   }
 
   try {
     return await env.DB.prepare(`
       SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
-              pp.alt, pp.image_status, pa.category,
+              pp.alt, pp.model_id, pp.image_status, pa.category,
               COALESCE(ss.status, ps.status) AS publish_status,
               COALESCE(ss.pin_id, ps.pin_id) AS pin_id
         FROM pipeline_pins pp
@@ -78,7 +91,50 @@ async function getPinRows(env, stagingRequest) {
         ORDER BY pp.article_slug ASC, pp.pin_index ASC
     `).all();
   } catch {
-    return env.DB.prepare(productionQuery).all();
+    try {
+      return await env.DB.prepare(`
+        SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
+                pp.alt, NULL AS model_id, pp.image_status, pa.category,
+                COALESCE(ss.status, ps.status) AS publish_status,
+                COALESCE(ss.pin_id, ps.pin_id) AS pin_id
+          FROM pipeline_pins pp
+          JOIN pipeline_articles pa ON pa.slug = pp.article_slug
+          LEFT JOIN staging_pins_schedule ss ON ss.row_id = pp.pin_slug
+          LEFT JOIN pins_schedule ps ON ps.row_id = pp.pin_slug
+          ORDER BY pp.article_slug ASC, pp.pin_index ASC
+      `).all();
+    } catch {
+      try {
+        return await env.DB.prepare(productionQuery).all();
+      } catch {
+        return env.DB.prepare(productionFallbackQuery).all();
+      }
+    }
+  }
+}
+
+async function getArticles(env) {
+  try {
+    return await env.DB.prepare(
+      `SELECT slug, topic, category, source, stage, error, error_stage,
+              write_model, review_model, word_count, hero_model, hero_image_done,
+              support_model, support_image_done, review_state, pin_count, pin_images_done,
+              tokens_total, cost_usd, created_at, updated_at
+       FROM pipeline_articles
+       ORDER BY updated_at DESC
+       LIMIT 200`
+    ).all();
+  } catch {
+    return env.DB.prepare(
+      `SELECT slug, topic, category, source, stage, error, error_stage,
+              write_model, NULL AS review_model, word_count,
+              NULL AS hero_model, 0 AS hero_image_done,
+              NULL AS support_model, 0 AS support_image_done, NULL AS review_state,
+              pin_count, pin_images_done, tokens_total, cost_usd, created_at, updated_at
+       FROM pipeline_articles
+       ORDER BY updated_at DESC
+       LIMIT 200`
+    ).all();
   }
 }
 
@@ -100,14 +156,7 @@ export async function onRequestGet(context) {
   const stagingRequest = !isProductionRequest(request, env);
 
   const [articles, byStage, byCategory, topicStats, pinStats, pinRows] = await Promise.all([
-    env.DB.prepare(
-      `SELECT slug, topic, category, source, stage, error, error_stage,
-              write_model, word_count, pin_count, pin_images_done,
-              tokens_total, cost_usd, created_at, updated_at
-       FROM pipeline_articles
-       ORDER BY updated_at DESC
-       LIMIT 200`
-    ).all(),
+    getArticles(env),
 
     env.DB.prepare(
       `SELECT stage, COUNT(*) as cnt FROM pipeline_articles GROUP BY stage`
@@ -160,16 +209,38 @@ export async function onRequestGet(context) {
     pinsByArticle[pin.article_slug].push(enrichedPin);
   }
 
-  const articleRows = (articles?.results ?? []).map((article) => ({
-    ...article,
-    pins: pinsByArticle[article.slug] ?? [],
-  }));
+  const articleRows = (articles?.results ?? []).map((article) => {
+    const pinCount = Number(article.pin_count || 0);
+    const pinImagesDone = Number(article.pin_images_done || 0);
+    const fullAssetsReady = article.stage === "deployed"
+      && Number(article.hero_image_done || 0) >= 1
+      && Number(article.support_image_done || 0) >= 1
+      && pinCount >= 4
+      && pinImagesDone >= pinCount;
+    const displayStage = fullAssetsReady ? "staging_review" : (article.review_state || article.stage);
+    return {
+      ...article,
+      display_stage: displayStage,
+      full_assets_ready: fullAssetsReady ? 1 : 0,
+      staging_url: `${STAGING_PIPELINE_BASE}/${article.slug}/`,
+      hero_image_url: `${STAGING_PIPELINE_BASE}/images/${article.slug}-main.jpg`,
+      support_image_url: `${STAGING_PIPELINE_BASE}/images/${article.slug}-ingredients.jpg`,
+      pins: pinsByArticle[article.slug] ?? [],
+    };
+  });
+
+  const displayStageMap = {};
+  for (const article of articleRows) {
+    const stage = article.display_stage || article.stage || "unknown";
+    displayStageMap[stage] = (displayStageMap[stage] || 0) + 1;
+  }
 
   return json({
     articles: articleRows,
     summary: {
       total: articleRows.length,
       by_stage: stageMap,
+      by_display_stage: displayStageMap,
       by_category: catMap,
     },
     topics: topicMap,

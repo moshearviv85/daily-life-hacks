@@ -480,16 +480,16 @@ const BUILD = {
         <div style="display:flex;gap:.5rem;flex-wrap:wrap">
           <button class="btn btn-sm" onclick="triggerPipeline('discover')" id="btn-discover">Find Topics</button>
           <select id="produce-count" style="padding:.3rem .5rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);font-size:.8rem">
+            <option value="1" selected>1 article</option>
+            <option value="2">2 articles</option>
             <option value="3">3 articles</option>
-            <option value="5">5 articles</option>
-            <option value="10">10 articles</option>
           </select>
           <button class="btn btn-sm" onclick="triggerPipeline('produce')" id="btn-produce">Generate to Staging</button>
           <button class="btn btn-sm" onclick="triggerPipeline('publish')" id="btn-publish">Legacy Publish to Main</button>
         </div>
       </div>
       <div style="padding:.55rem .75rem;border-radius:6px;background:#f8fafc;border:1px solid var(--border);font-size:.78rem;color:var(--muted);margin-bottom:.75rem">
-        Generated article files go to <strong style="color:var(--text-color)">staging</strong> first. Legacy publishing still writes to <strong style="color:var(--text-color)">main</strong>.
+        Generate creates one full staging package: article, hero image, support image, and four pin images. Review on <strong style="color:var(--text-color)">staging</strong> before promotion. Pinterest remains manual.
       </div>
 
       <!-- Pipeline stat cards -->
@@ -505,9 +505,9 @@ const BUILD = {
           <div class="stat-sub">writing / reviewing / images</div>
         </div>
         <div class="stat-card purple">
-          <div class="stat-label">Ready to Publish</div>
+          <div class="stat-label">Ready for Review</div>
           <div class="stat-value" id="pl-ready">-</div>
-          <div class="stat-sub">deployed, awaiting publish</div>
+          <div class="stat-sub">full staging assets ready</div>
         </div>
         <div class="stat-card orange">
           <div class="stat-label">Total Cost</div>
@@ -2857,18 +2857,20 @@ async function fetchPipelineStatus() {
 
 function renderPipelineStats() {
   if (!pipelineData) return;
-  const s = pipelineData.summary?.by_stage || {};
+  const rawStages = pipelineData.summary?.by_stage || {};
+  const s = pipelineData.summary?.by_display_stage || rawStages;
   const topics = pipelineData.topics || {};
 
   document.getElementById('pl-topics-approved').textContent = topics.approved || 0;
   document.getElementById('pl-topics-sub').textContent =
     `${topics.pending || 0} pending, ${topics.rejected || 0} rejected`;
 
-  const inProd = (s.approved || 0) + (s.written || 0) + (s.reviewed || 0) +
-    (s.hero_brief || 0) + (s.pins_brief || 0) + (s.hero_image || 0) + (s.pin_images || 0);
+  const inProd = Math.max(0, (rawStages.approved || 0) + (rawStages.written || 0) + (rawStages.reviewed || 0) +
+    (rawStages.hero_brief || 0) + (rawStages.pins_brief || 0) + (rawStages.hero_image || 0) +
+    (rawStages.pin_images || 0) + (s.article_review || 0) + (rawStages.deployed || 0) - (s.staging_review || 0));
   document.getElementById('pl-in-production').textContent = inProd;
 
-  document.getElementById('pl-ready').textContent = s.deployed || 0;
+  document.getElementById('pl-ready').textContent = s.staging_review || 0;
 
   const totalCost = (pipelineData.articles || []).reduce((sum, a) => sum + (a.cost_usd || 0), 0);
   document.getElementById('pl-cost').textContent = '$' + totalCost.toFixed(2);
@@ -3032,11 +3034,12 @@ function renderPipelineTable(filter) {
   }
   empty.style.display = 'none';
 
+  const displayStageFor = (article) => article.display_stage || article.review_state || article.stage;
   let articles = pipelineData.articles;
   if (filter === 'progress') {
-    articles = articles.filter(a => !['deployed', 'published', 'failed', 'topic'].includes(a.stage));
+    articles = articles.filter(a => !['staging_review', 'published', 'failed', 'topic'].includes(displayStageFor(a)));
   } else if (filter === 'ready') {
-    articles = articles.filter(a => a.stage === 'deployed');
+    articles = articles.filter(a => displayStageFor(a) === 'staging_review');
   } else if (filter === 'failed') {
     articles = articles.filter(a => a.stage === 'failed');
   }
@@ -3045,10 +3048,10 @@ function renderPipelineTable(filter) {
     const colors = {
       topic: '#6b7280', approved: '#3b82f6', written: '#8b5cf6', reviewed: '#a855f7',
       hero_brief: '#f59e0b', pins_brief: '#f59e0b', hero_image: '#10b981',
-      pin_images: '#10b981', deployed: '#06b6d4', published: '#22c55e', failed: '#ef4444'
+      pin_images: '#10b981', deployed: '#06b6d4', staging_review: '#7c3aed', published: '#22c55e', failed: '#ef4444'
     };
     const c = colors[stage] || '#6b7280';
-    return `<span style="display:inline-block;padding:.15rem .45rem;border-radius:4px;font-size:.75rem;font-weight:500;background:${c}20;color:${c};border:1px solid ${c}40">${stage}</span>`;
+    return `<span style="display:inline-block;padding:.15rem .45rem;border-radius:4px;font-size:.75rem;font-weight:500;background:${c}20;color:${c};border:1px solid ${c}40">${escapeHtml(stage)}</span>`;
   };
 
   const builtArticleSlugs = new Set(BUILD.articleSlugs || []);
@@ -3123,6 +3126,7 @@ function renderPipelineTable(filter) {
           <div><strong>Title:</strong> ${escapeHtml(pin.title || '-')}</div>
           <div style="margin-top:.18rem"><strong>Description:</strong> ${escapeHtml(description || '-')}</div>
           <div style="margin-top:.18rem"><strong>Board:</strong> ${escapeHtml(pin.board_name || '-')} <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.board_id || '')}</span></div>
+          <div style="margin-top:.18rem"><strong>Model:</strong> <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.model_id || '-')}</span></div>
           <div style="margin-top:.18rem"><strong>Hashtags:</strong> ${escapeHtml(pin.hashtags || '-')}</div>
           <div style="margin-top:.18rem"><strong>Alt:</strong> ${escapeHtml(pin.alt || '-')}</div>
           <div style="margin-top:.18rem"><strong>Staging link:</strong> <a href="${destination}" target="_blank" rel="noopener" style="color:var(--orange)">${escapeHtml(destination)}</a></div>
@@ -3135,17 +3139,22 @@ function renderPipelineTable(filter) {
   };
 
   tbody.innerHTML = articles.map(a => {
+    const stage = displayStageFor(a);
     const existsInBuild = builtArticleSlugs.has(a.slug);
     const articleAvailable = existsInBuild
-      || ['written', 'reviewed', 'deployed', 'published'].includes(a.stage)
+      || ['written', 'reviewed', 'deployed', 'staging_review', 'published'].includes(stage)
       || Number(a.word_count || 0) > 0;
     const heroAvailable = builtHeroSlugs.has(a.slug)
-      || (articleAvailable && ['deployed', 'hero_brief', 'pins_brief', 'hero_image', 'pin_images', 'published'].includes(a.stage));
-    const heroSrc = `${pipelineAssetBase}/images/${a.slug}-main.jpg`;
-    const heroVersion = encodeURIComponent(heroImageVersions.get(a.slug) || a.updated_at || a.stage || 'current');
+      || Number(a.hero_image_done || 0) >= 1
+      || (articleAvailable && ['deployed', 'staging_review', 'hero_brief', 'pins_brief', 'hero_image', 'pin_images', 'published'].includes(stage));
+    const supportAvailable = Number(a.support_image_done || 0) >= 1 || stage === 'staging_review';
+    const heroSrc = a.hero_image_url || `${pipelineAssetBase}/images/${a.slug}-main.jpg`;
+    const supportSrc = a.support_image_url || `${pipelineAssetBase}/images/${a.slug}-ingredients.jpg`;
+    const heroVersion = encodeURIComponent(heroImageVersions.get(a.slug) || a.updated_at || stage || 'current');
     const heroDisplaySrc = `${heroSrc}?v=${heroVersion}`;
+    const supportDisplaySrc = `${supportSrc}?v=${heroVersion}`;
     const stagingHref = articleAvailable
-      ? `https://staging.daily-life-hacks.pages.dev/${a.slug}/`
+      ? (a.staging_url || `https://staging.daily-life-hacks.pages.dev/${a.slug}/`)
       : "javascript:void(0)";
     const localHref = articleAvailable ? `/${a.slug}/` : "javascript:void(0)";
     const linkStyle = articleAvailable ? "color:var(--orange);text-decoration:none" : "color:var(--text);text-decoration:none;cursor:default";
@@ -3162,6 +3171,7 @@ function renderPipelineTable(filter) {
       : '';
     const canApproveArticle = articleAvailable
       && ['reviewed', 'deployed'].includes(a.stage)
+      && stage !== 'staging_review'
       && (!Array.isArray(a.pins) || a.pins.length === 0);
     const articleApproval = canApproveArticle
       ? `<button onclick="approvePipelineArticle('${a.slug}')"
@@ -3185,11 +3195,13 @@ function renderPipelineTable(filter) {
         <button id="pipeline-hero-btn-${a.slug}" onclick="regenerateHeroImage('${a.slug}', '${heroSrc}')" title="Regenerate only the staging hero image"
           style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">Regenerate image</button>
         <div id="pipeline-hero-status-${a.slug}" style="display:none;margin-top:.22rem;max-width:150px;font-size:.62rem;line-height:1.25;color:#92400e"></div></div>` : ''}
+        ${supportAvailable ? `<div data-pipeline-support="${a.slug}"><a href="${supportDisplaySrc}" target="_blank" rel="noopener"><img src="${supportDisplaySrc}" alt="${escapeHtml(a.slug)} support" loading="lazy" onerror="var p=this.closest('[data-pipeline-support]');if(p)p.remove();" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.35rem"></a>
+        <div style="margin-top:.12rem;font-size:.6rem;line-height:1.2;color:var(--muted)">support image</div></div>` : ''}
         ${promoteAction}
         ${articleApproval}
       </td>
       <td>${a.category}</td>
-      <td>${stageBadge(a.stage)}${a.error ? ` <span style="color:#ef4444;font-size:.75rem" title="${a.error}">!</span>` : ''}</td>
+      <td>${stageBadge(stage)}${stage !== a.stage ? `<div style="margin-top:.18rem;font-size:.62rem;color:var(--muted)">raw: ${escapeHtml(a.stage || '-')}</div>` : ''}${a.error ? ` <span style="color:#ef4444;font-size:.75rem" title="${a.error}">!</span>` : ''}</td>
       <td>${a.word_count || '-'}</td>
       <td>${renderPinLinks(a)}</td>
       <td>$${(a.cost_usd || 0).toFixed(3)}</td>
@@ -3217,7 +3229,7 @@ async function triggerPipeline(action) {
   }
   if (action === 'produce') {
     const count = parseInt(document.getElementById('produce-count').value);
-    const ok = confirm(`Generate ${count} article(s) now?\n\nGenerated files will be pushed to staging first. This uses staging D1 topics and AI provider credits.`);
+    const ok = confirm(`Generate ${count} full staging article package(s) now?\n\nEach package includes article, hero image, support image, and four pin images. This uses staging D1 topics and AI provider credits.`);
     if (!ok) return;
   }
   if (action === 'publish') {
@@ -3276,27 +3288,28 @@ function pipelineActionsLink(data, label = 'View GitHub Actions') {
 async function pollPipelineForSlugs(slugs, data, statusEl) {
   if (!slugs.length) return;
   const wanted = new Set(slugs);
-  for (let attempt = 1; attempt <= 24; attempt++) {
+  for (let attempt = 1; attempt <= 72; attempt++) {
     await new Promise(resolve => setTimeout(resolve, 10000));
     await fetchPipelineStatus();
     const articles = pipelineData?.articles || [];
     const found = articles.filter(article => wanted.has(article.slug));
-    if (found.length === slugs.length) {
+    const ready = found.filter(articleAssetsReady);
+    if (ready.length === slugs.length) {
       statusEl.style.background = '#f0fdf4';
       statusEl.style.borderColor = '#bbf7d0';
       statusEl.style.color = '#166534';
-      statusEl.innerHTML = `Produced ${found.length}/${slugs.length} article(s) on staging. Next: review the article row, then click Approve Article to generate images and pins.${pipelineActionsLink(data)}`;
+      statusEl.innerHTML = `Full staging package ready for ${ready.length}/${slugs.length} article(s): article, hero, support image, and four pins. Review the row before promotion or Pinterest.${pipelineActionsLink(data)}`;
       return;
     }
     statusEl.style.background = '#fff7ed';
     statusEl.style.borderColor = '#fed7aa';
     statusEl.style.color = '#92400e';
-    statusEl.innerHTML = `Pipeline still running or syncing. Found ${found.length}/${slugs.length} article(s) in the dashboard. Refresh ${attempt}/24.${pipelineActionsLink(data)}`;
+    statusEl.innerHTML = `Pipeline still running or syncing. Found ${found.length}/${slugs.length} article record(s); full assets ready ${ready.length}/${slugs.length}. Refresh ${attempt}/72.${pipelineActionsLink(data)}`;
   }
   statusEl.style.background = '#fef2f2';
   statusEl.style.borderColor = '#fecaca';
   statusEl.style.color = '#b91c1c';
-  statusEl.innerHTML = `Workflow was dispatched, but the selected article did not appear in the dashboard after 4 minutes. Check the workflow log.${pipelineActionsLink(data)}`;
+  statusEl.innerHTML = `Workflow was dispatched, but the selected article did not reach full staging-review after 12 minutes. Check the workflow log.${pipelineActionsLink(data)}`;
 }
 
 function getPipelineArticle(slug) {
@@ -3304,7 +3317,13 @@ function getPipelineArticle(slug) {
 }
 
 function articleAssetsReady(article) {
-  return article && Number(article.pin_count || 0) >= 4 && Number(article.pin_images_done || 0) >= 4;
+  const pinCount = Number(article?.pin_count || 0);
+  return article
+    && (article.display_stage === 'staging_review' || article.review_state === 'staging_review' || Number(article.full_assets_ready || 0) >= 1)
+    && Number(article.hero_image_done || 0) >= 1
+    && Number(article.support_image_done || 0) >= 1
+    && pinCount >= 4
+    && Number(article.pin_images_done || 0) >= pinCount;
 }
 
 async function pollArticleAssets(slug, data, statusEl) {
@@ -3319,7 +3338,7 @@ async function pollArticleAssets(slug, data, statusEl) {
       statusEl.style.background = '#f0fdf4';
       statusEl.style.borderColor = '#bbf7d0';
       statusEl.style.color = '#166534';
-      statusEl.innerHTML = `Assets ready for ${escapeHtml(slug)}. Hero image and ${pinImagesDone}/4 pin images are visible in the dashboard.${pipelineActionsLink(data)}`;
+      statusEl.innerHTML = `Assets ready for ${escapeHtml(slug)}. Hero, support image, and ${pinImagesDone}/4 pin images are visible in the dashboard.${pipelineActionsLink(data)}`;
       return;
     }
 
@@ -3371,7 +3390,7 @@ async function produceSelectedTopics() {
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.innerHTML = `Produce workflow dispatched for ${ids.length} selected topic(s). Output: ${data.outputBranch || 'staging'}. Waiting for staging sync...${pipelineActionsLink(data)}`;
+    statusEl.innerHTML = `Produce workflow dispatched for ${ids.length} selected topic(s). Output: ${data.outputBranch || 'staging'}. Waiting for full staging package sync...${pipelineActionsLink(data)}`;
     closeModal();
     pollPipelineForSlugs(selectedSlugs, data, statusEl);
   } catch (e) {

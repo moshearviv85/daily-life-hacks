@@ -76,6 +76,7 @@ class PipelineArtifactsTest(unittest.TestCase):
 
             (articles / "sample-article.md").write_text("---\ntitle: Sample\n---\nBody\n")
             (heroes / "sample-article-main.jpg").write_bytes(b"jpg")
+            (heroes / "sample-article-ingredients.jpg").write_bytes(b"jpg")
             for idx in range(4):
                 (pins / f"sample-pin-{idx + 1}.jpg").write_bytes(b"jpg")
 
@@ -103,6 +104,7 @@ class PipelineArtifactsTest(unittest.TestCase):
 
             (articles / "sample-article.md").write_text("---\ntitle: Sample\n---\nBody\n")
             (heroes / "sample-article-main.jpg").write_bytes(b"jpg")
+            (heroes / "sample-article-ingredients.jpg").write_bytes(b"jpg")
 
             result = verify_slug(
                 "sample-article",
@@ -114,6 +116,33 @@ class PipelineArtifactsTest(unittest.TestCase):
 
             self.assertFalse(result.ok)
             self.assertTrue(any("missing pin image" in err for err in result.errors))
+
+    def test_verify_slug_fails_when_support_image_is_missing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db = root / "topic-research.sqlite"
+            articles = root / "articles"
+            heroes = root / "images"
+            pins = heroes / "pins"
+            articles.mkdir()
+            pins.mkdir(parents=True)
+            _make_db(db)
+
+            (articles / "sample-article.md").write_text("---\ntitle: Sample\n---\nBody\n")
+            (heroes / "sample-article-main.jpg").write_bytes(b"jpg")
+            for idx in range(4):
+                (pins / f"sample-pin-{idx + 1}.jpg").write_bytes(b"jpg")
+
+            result = verify_slug(
+                "sample-article",
+                db_path=db,
+                articles_dir=articles,
+                hero_dir=heroes,
+                pin_dir=pins,
+            )
+
+            self.assertFalse(result.ok)
+            self.assertTrue(any("missing support image" in err for err in result.errors))
 
     def test_article_only_verification_does_not_require_images_or_pin_briefs(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -209,6 +238,7 @@ class PipelineArtifactsTest(unittest.TestCase):
 
             (articles / "sample-article.md").write_text("---\ntitle: Sample\n---\nBody\n")
             (heroes / "sample-article-main.jpg").write_bytes(b"jpg")
+            (heroes / "sample-article-ingredients.jpg").write_bytes(b"jpg")
             for idx in range(4):
                 (pins / f"sample-pin-{idx + 1}.jpg").write_bytes(b"jpg")
 

@@ -30,6 +30,14 @@ def test_pipeline_articles_stage_constraint():
             "VALUES ('bad', 'Bad', 'recipes', 'INVALID_STAGE')"
         )
 
+def test_pipeline_asset_status_columns_exist():
+    conn = _fresh_db()
+    article_columns = {row[1] for row in conn.execute("PRAGMA table_info(pipeline_articles)").fetchall()}
+    pin_columns = {row[1] for row in conn.execute("PRAGMA table_info(pipeline_pins)").fetchall()}
+
+    assert {"hero_model", "hero_image_done", "support_model", "support_image_done", "review_state"} <= article_columns
+    assert "model_id" in pin_columns
+
 def test_pipeline_topics_source_constraint():
     conn = _fresh_db()
     conn.execute(

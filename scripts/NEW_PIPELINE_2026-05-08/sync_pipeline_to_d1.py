@@ -17,6 +17,12 @@ PIN_IMG_DIR = REPO_ROOT / "public" / "images" / "pins"
 HERO_IMG_DIR = REPO_ROOT / "public" / "images"
 ARTICLE_DIR = REPO_ROOT / "src" / "data" / "articles"
 
+from lib.image_models import (  # noqa: E402
+    HERO_IMAGE_MODEL_ID,
+    SUPPORT_IMAGE_MODEL_ID,
+    model_for_pin_slot,
+)
+
 
 def _frontmatter_value(markdown: str, key: str) -> str:
     pattern = f"{key}:"
@@ -135,7 +141,13 @@ def collect_articles_from_sqlite(db_path: str) -> list[dict]:
                 articles[slug]["stage"] = "pins_brief"
 
     for slug, a in articles.items():
-        if (HERO_IMG_DIR / f"{slug}-main.jpg").exists():
+        hero_exists = (HERO_IMG_DIR / f"{slug}-main.jpg").exists()
+        support_exists = (HERO_IMG_DIR / f"{slug}-ingredients.jpg").exists()
+        a["hero_image_done"] = 1 if hero_exists else 0
+        a["support_image_done"] = 1 if support_exists else 0
+        a["hero_model"] = HERO_IMAGE_MODEL_ID
+        a["support_model"] = SUPPORT_IMAGE_MODEL_ID
+        if hero_exists:
             if a["stage"] in ("pins_brief", "hero_brief"):
                 a["stage"] = "hero_image"
 
@@ -159,6 +171,13 @@ def collect_articles_from_sqlite(db_path: str) -> list[dict]:
     for slug, a in articles.items():
         if (ARTICLE_DIR / f"{slug}.md").exists():
             a["stage"] = "deployed"
+            full_assets_ready = (
+                a.get("hero_image_done") == 1
+                and a.get("support_image_done") == 1
+                and a.get("pin_count", 0) >= 4
+                and a.get("pin_images_done", 0) >= a.get("pin_count", 0)
+            )
+            a["review_state"] = "staging_review" if full_assets_ready else "article_review"
 
     conn.close()
     return list(articles.values())
@@ -185,6 +204,7 @@ def collect_pins_from_sqlite(db_path: str) -> list[dict]:
             "article_slug": r["article_slug"], "pin_slug": r["pin_slug"],
             "pin_index": r["pin_index"], "title": r["title"],
             "description": r["description"], "prompt": r["prompt"], "alt": r["alt"],
+            "model_id": model_for_pin_slot((r["pin_index"] or 0) + 1),
             "image_status": "done" if r["pin_slug"] in pin_imgs else "pending",
         }
         for r in rows

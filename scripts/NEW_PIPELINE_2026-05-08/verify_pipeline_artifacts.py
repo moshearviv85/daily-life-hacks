@@ -3,6 +3,7 @@
 This script verifies the artifacts produced for reviewed pipeline articles:
 - src/data/articles/{slug}.md exists
 - public/images/{slug}-main.jpg exists
+- public/images/{slug}-ingredients.jpg exists
 - SQLite has exactly four OK pin briefs
 - every OK pin brief has public/images/pins/{pin_slug}.jpg
 
@@ -121,6 +122,9 @@ def verify_slug(
         if hero_only:
             return ArtifactCheck(slug=slug, ok=not errors, errors=errors)
 
+        if not (hero_dir / f"{slug}-ingredients.jpg").exists():
+            errors.append(f"missing support image: {hero_dir / f'{slug}-ingredients.jpg'}")
+
         pin_slugs = _pin_slugs(con, slug)
         if len(pin_slugs) != 4:
             errors.append(f"expected 4 OK pin briefs, found {len(pin_slugs)}")
@@ -146,6 +150,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--all-reviewed", action="store_true", help="Verify every reviewed article in SQLite.")
     parser.add_argument("--article-only", action="store_true", help="Verify article draft artifacts only; images and pin briefs must not be required.")
     parser.add_argument("--hero-only", action="store_true", help="Verify article and hero artifacts only; pin briefs/images must not be required.")
+    parser.add_argument("--report", type=Path, help="Optional JSON report path to write.")
     args = parser.parse_args(argv)
 
     slugs = list(args.slug)
@@ -170,6 +175,28 @@ def main(argv: list[str] | None = None) -> int:
         print(f"{status} {check.slug}")
         for error in check.errors:
             print(f"  - {error}")
+
+    if args.report:
+        args.report.parent.mkdir(parents=True, exist_ok=True)
+        args.report.write_text(
+            json.dumps(
+                {
+                    "ok": not failed,
+                    "article_only": args.article_only,
+                    "hero_only": args.hero_only,
+                    "checks": [
+                        {
+                            "slug": check.slug,
+                            "ok": check.ok,
+                            "errors": check.errors,
+                        }
+                        for check in checks
+                    ],
+                },
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
 
     return 1 if failed else 0
 

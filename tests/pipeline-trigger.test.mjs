@@ -160,9 +160,11 @@ test("produce dispatch forwards selected topic ids to GitHub Actions", async (t)
   assert.equal(response.status, 200);
   assert.equal(data.ok, true);
   assert.match(requestedWorkflow, /pipeline-produce\.yml/);
+  assert.equal(dispatchBody.ref, "staging");
   assert.equal(dispatchBody.inputs.count, "2");
   assert.equal(dispatchBody.inputs.topic_ids, "17,23");
   assert.equal(data.topic_ids, "17,23");
+  assert.equal(data.dispatchRef, "staging");
   assert.match(data.actions_url, /pipeline-produce\.yml/);
 });
 
@@ -197,7 +199,9 @@ test("approve_article dispatches the asset workflow for one slug", async (t) => 
   assert.equal(response.status, 200);
   assert.equal(data.ok, true);
   assert.match(requestedWorkflow, /pipeline-article-assets\.yml/);
+  assert.equal(dispatchBody.ref, "staging");
   assert.equal(dispatchBody.inputs.slug, "demo-article");
+  assert.equal(data.dispatchRef, "staging");
   assert.equal(data.slug, "demo-article");
 });
 
@@ -239,6 +243,7 @@ test("production approve_article gates against staging pipeline state before dis
 
   assert.equal(response.status, 200);
   assert.equal(data.ok, true);
+  assert.equal(dispatchBody.ref, "staging");
   assert.equal(dispatchBody.inputs.slug, "demo-article");
   assert.match(urls[0], /^https:\/\/staging\.daily-life-hacks\.pages\.dev\/api\/pipeline-status\?key=test-key$/);
   assert.match(urls[1], /pipeline-article-assets\.yml/);

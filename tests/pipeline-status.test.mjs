@@ -15,7 +15,13 @@ function makeDb() {
         error: null,
         error_stage: null,
         write_model: "test",
+        review_model: "review-test",
         word_count: 800,
+        hero_model: "krea-2-large",
+        hero_image_done: 1,
+        support_model: "nano-banana-2",
+        support_image_done: 1,
+        review_state: "staging_review",
         pin_count: 4,
         pin_images_done: 4,
         tokens_total: 1000,
@@ -29,8 +35,8 @@ function makeDb() {
     { results: [{ status: "approved", cnt: 2 }] },
     { results: [{ image_status: "done", cnt: 4 }] },
     { results: [
-      { article_slug: "demo-article", pin_slug: "demo-pin-1", pin_index: 0, title: "Budget Pin 1", description: "Desc", alt: "Alt", image_status: "done", category: "tips", publish_status: "POSTED", pin_id: "123" },
-      { article_slug: "demo-article", pin_slug: "demo-pin-2", pin_index: 1, title: "Pin 2", description: "Desc", alt: "Alt", image_status: "done", category: "tips", publish_status: null, pin_id: null },
+      { article_slug: "demo-article", pin_slug: "demo-pin-1", pin_index: 0, title: "Budget Pin 1", description: "Desc", alt: "Alt", model_id: "gpt-image-2", image_status: "done", category: "tips", publish_status: "POSTED", pin_id: "123" },
+      { article_slug: "demo-article", pin_slug: "demo-pin-2", pin_index: 1, title: "Pin 2", description: "Desc", alt: "Alt", model_id: "nano-banana-2", image_status: "done", category: "tips", publish_status: null, pin_id: null },
     ] },
   ];
   return {
@@ -57,12 +63,18 @@ test("pipeline status attaches pin rows to their article", async () => {
   assert.equal(data.articles.length, 1);
   assert.equal(data.articles[0].pins.length, 2);
   assert.equal(data.articles[0].pins[0].pin_slug, "demo-pin-1");
+  assert.equal(data.articles[0].display_stage, "staging_review");
+  assert.equal(data.articles[0].full_assets_ready, 1);
+  assert.equal(data.articles[0].hero_image_url, "https://staging.daily-life-hacks.pages.dev/images/demo-article-main.jpg");
+  assert.equal(data.articles[0].support_image_url, "https://staging.daily-life-hacks.pages.dev/images/demo-article-ingredients.jpg");
   assert.equal(data.articles[0].pins[0].publish_status, "POSTED");
+  assert.equal(data.articles[0].pins[0].model_id, "gpt-image-2");
   assert.equal(data.articles[0].pins[0].pin_id, "123");
   assert.equal(data.articles[0].pins[0].board_id, "1124140825679184034");
   assert.equal(data.articles[0].pins[0].board_name, "Gut Health Tips and Nutrition Charts");
   assert.match(data.articles[0].pins[0].hashtags, /#BudgetMeals/);
   assert.match(data.articles[0].pins[0].description_with_hashtags, /#DailyLifeHacks/);
+  assert.equal(data.summary.by_display_stage.staging_review, 1);
   assert.equal(data.pin_rows.length, 2);
 });
 
