@@ -211,6 +211,23 @@ def _clean_json_text(text: str) -> str:
     return cleaned
 
 
+def parse_json_response(text: str) -> dict[str, Any]:
+    cleaned = _clean_json_text(text)
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError as first_error:
+        start = cleaned.find("{")
+        end = cleaned.rfind("}")
+        if start >= 0 and end > start:
+            extracted = cleaned[start:end + 1]
+            try:
+                return json.loads(extracted)
+            except json.JSONDecodeError:
+                pass
+        snippet = cleaned[:700].replace("\n", "\\n")
+        raise ValueError(f"LLM returned invalid JSON: {first_error}. Snippet: {snippet}") from first_error
+
+
 def _normalize_category(raw: str) -> str:
     category = str(raw or "").strip().lower()
     if category in VALID_CATEGORIES:
@@ -266,7 +283,7 @@ def call_gap_llm(
         system="You are a strict JSON-only content strategist. Return valid JSON and no markdown.",
         user=prompt,
         temperature=0.6,
-        max_tokens=7000,
+        max_tokens=10000,
         timeout=timeout,
     )
     text, finish_reason = extract_text(response)
@@ -277,7 +294,41 @@ def call_gap_llm(
         "tokens_out": tokens_out,
         "cost_usd": cost,
     }
-    return json.loads(_clean_json_text(text)), metadata
+    try:
+        return parse_json_response(text), metadata
+    except ValueError:
+        repair_prompt = f"""Convert this model output into valid JSON matching the required schema.
+
+Rules:
+- Preserve all topic ideas that are present.
+- Do not add commentary.
+- Return JSON only.
+
+Required schema:
+{json.dumps(OUTPUT_SCHEMA, indent=2)}
+
+MODEL OUTPUT:
+{text}
+"""
+        repair_response = chat_completion(
+            api_key=api_key,
+            model_id=model,
+            system="You repair malformed JSON. Return valid JSON and no markdown.",
+            user=repair_prompt,
+            temperature=0.0,
+            max_tokens=10000,
+            timeout=timeout,
+        )
+        repair_text, repair_finish = extract_text(repair_response)
+        repair_tokens_in, repair_tokens_out, repair_cost = usage_cost(repair_response)
+        metadata.update({
+            "repaired_json": True,
+            "repair_finish_reason": repair_finish,
+            "repair_tokens_in": repair_tokens_in,
+            "repair_tokens_out": repair_tokens_out,
+            "repair_cost_usd": repair_cost,
+        })
+        return parse_json_response(repair_text), metadata
 
 
 def discover_gaps(

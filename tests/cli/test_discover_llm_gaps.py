@@ -88,3 +88,21 @@ def test_discover_gaps_normalizes_llm_output_without_network():
     assert topics[0]["source"] == "llm_gap_expansion"
     assert topics[0]["category"] == "recipes"
     assert topics[0]["seed"] == "freezer meal prep"
+
+
+def test_parse_json_response_extracts_object_from_wrapped_text():
+    parsed = mod.parse_json_response(
+        'Here is the JSON:\n```json\n{"topics": [{"topic": "x"}]}\n```\nDone.'
+    )
+
+    assert parsed == {"topics": [{"topic": "x"}]}
+
+
+def test_parse_json_response_reports_invalid_snippet():
+    try:
+        mod.parse_json_response('{\n  "topics": \n')
+    except ValueError as exc:
+        assert "invalid JSON" in str(exc)
+        assert "Snippet" in str(exc)
+    else:
+        raise AssertionError("expected invalid JSON to raise")
