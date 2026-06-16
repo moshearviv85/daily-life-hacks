@@ -70,7 +70,7 @@ export async function onRequestGet(context) {
     query += " WHERE status = ?";
     params.push(status);
   }
-  query += " ORDER BY CASE source WHEN 'gsc' THEN 1 WHEN 'pinterest' THEN 2 WHEN 'autocomplete' THEN 3 ELSE 4 END, impressions DESC NULLS LAST, id DESC";
+  query += " ORDER BY datetime(created_at) DESC, id DESC";
   query += " LIMIT 500";
 
   const rows = await env.DB.prepare(query).bind(...params).all();
