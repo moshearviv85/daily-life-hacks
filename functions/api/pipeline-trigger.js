@@ -3,7 +3,7 @@
  * Dispatch a pipeline GitHub Actions workflow by action name.
  * Protected by DASHBOARD_PASSWORD.
  *
- * Body: { action: "discover" | "produce" | "publish" | "approve_article" | "regenerate_hero" | "promote_staging", count?: number, category?: string, topic_ids?: number[], slug?: string }
+ * Body: { action: "discover" | "produce" | "publish" | "approve_article" | "regenerate_hero" | "promote_staging", count?: number, limit?: number, category?: string, topic_ids?: number[], slug?: string }
  *
  * Note: content-generation workflows push their generated files to staging from
  * inside the workflow; production publishing/promotion remains explicitly gated.
@@ -30,9 +30,9 @@ const STAGING_PIPELINE_BASE = "https://staging.daily-life-hacks.pages.dev";
 const ACTIONS = {
   discover: {
     workflow: "pipeline-discover.yml",
-    dispatchRef: "main",
+    dispatchRef: "staging",
     outputBranch: "staging-d1",
-    effect: "Adds approved topics to staging D1.",
+    effect: "Finds bounded topic candidates and adds them to staging D1 for review.",
   },
   produce: {
     workflow: "pipeline-produce.yml",
@@ -172,8 +172,20 @@ export async function onRequestPost(context) {
 
   const inputs = {};
   if (action === "promote_staging") inputs.confirm = "PROMOTE";
+  if (action === "discover") {
+    const limit = Number.parseInt(String(body.limit || 12), 10);
+    if (!Number.isInteger(limit) || limit < 1 || limit > 50) {
+      return json({ error: "limit must be an integer from 1 to 50" }, 400);
+    }
+    inputs.limit = String(limit);
+  }
   if (body.count) inputs.count = String(body.count);
-  if (body.category) inputs.category = body.category;
+  if (body.category) {
+    if (!["recipes", "nutrition", "tips"].includes(body.category)) {
+      return json({ error: "category must be recipes, nutrition, or tips" }, 400);
+    }
+    inputs.category = body.category;
+  }
   if (action === "approve_article" || action === "regenerate_hero") {
     const slug = String(body.slug || "").trim();
     if (!/^[a-z0-9-]{3,120}$/.test(slug)) {
@@ -223,6 +235,8 @@ export async function onRequestPost(context) {
         dispatchRef: actionConfig.dispatchRef,
         outputBranch: actionConfig.outputBranch,
         effect: actionConfig.effect,
+        limit: inputs.limit || "",
+        category: inputs.category || "",
         topic_ids: inputs.topic_ids || "",
         slug: inputs.slug || "",
       });

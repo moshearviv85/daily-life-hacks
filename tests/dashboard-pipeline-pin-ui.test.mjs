@@ -189,6 +189,21 @@ test("dashboard can select topics and produce selected topics", () => {
   assert.match(dashboard, /postTopicStatus\('approve', ids\)/);
 });
 
+test("dashboard can dispatch bounded topic discovery and poll for new candidates", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /id="discover-limit"/);
+  assert.match(dashboard, /id="discover-category"/);
+  assert.match(dashboard, /Find up to \$\{limit\} new topic candidate/);
+  assert.match(dashboard, /GSC opportunity queries and Google Autocomplete seed expansions/);
+  assert.match(dashboard, /LLM semantic duplicate check against existing site and pipeline topics/);
+  assert.match(dashboard, /body\.limit = parseInt/);
+  assert.match(dashboard, /if \(category\) body\.category = category/);
+  assert.match(dashboard, /function pollDiscoveryTopics/);
+  assert.match(dashboard, /Found \$\{newTopics\.length\} new topic candidate/);
+  assert.match(dashboard, /Check the discovery report in GitHub Actions/);
+});
+
 test("dashboard keeps article approval as a fallback for article-only rows", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 

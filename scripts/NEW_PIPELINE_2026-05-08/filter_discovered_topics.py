@@ -18,7 +18,13 @@ import sys
 import urllib.request
 import urllib.error
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+if str(SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPT_DIR))
+
+from stage_1_5.openrouter import chat_completion, extract_text
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 ARTICLE_DIR = REPO_ROOT / "src" / "data" / "articles"
@@ -134,6 +140,32 @@ FOOD_ANCHORS = {
 }
 
 DEFAULT_MIN_SCORE = 0.7
+DEFAULT_SEMANTIC_MODEL = "google/gemini-2.5-flash"
+SOURCE_RANK = {
+    "gsc": 0,
+    "pinterest": 1,
+    "autocomplete": 2,
+    "manual": 3,
+}
+SEMANTIC_DEDUP_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "verdicts": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "topic": {"type": "string"},
+                    "is_duplicate": {"type": "boolean"},
+                    "matched_title": {"type": "string"},
+                    "reason": {"type": "string"},
+                },
+                "required": ["topic", "is_duplicate", "matched_title", "reason"],
+            },
+        },
+    },
+    "required": ["verdicts"],
+}
 
 
 def _load_env() -> None:
@@ -283,8 +315,166 @@ def quality_score_topic(topic: str, known_titles: list[str]) -> tuple[bool, str,
     return True, "passed deterministic quality gate", round(min(score, 1.0), 3)
 
 
+def build_semantic_dedup_prompt(candidates: list[dict], known_titles: list[str]) -> str:
+    known = [str(title).strip() for title in known_titles if str(title).strip()]
+    candidate_rows = [
+        {
+            "topic": candidate["topic"],
+            "source": candidate.get("source", "manual"),
+            "category": candidate.get("category", "tips"),
+        }
+        for candidate in candidates
+    ]
+
+    return f"""You are the final semantic duplicate gate for Daily Life Hacks.
+
+Daily Life Hacks is an American healthy-eating, recipes, nutrition, and kitchen tips site.
+
+EXISTING SITE ARTICLES AND PIPELINE TOPICS:
+{json.dumps(known, indent=2)}
+
+CANDIDATE TOPICS:
+{json.dumps(candidate_rows, indent=2)}
+
+Task:
+Compare every candidate against the full existing list above.
+Mark is_duplicate true when the candidate would create an article with the same core promise, reader job, or practical angle as an existing article or queued pipeline topic, even if the wording is different.
+Do not mark a candidate duplicate merely because it shares an ingredient or broad category. For example, a salmon storage guide, a salmon oven method, and a salmon nutrition comparison can be separate articles.
+
+Return JSON only, matching this schema:
+{json.dumps(SEMANTIC_DEDUP_SCHEMA, indent=2)}
+
+Use matched_title for the closest existing title when duplicate, otherwise use an empty string.
+Keep each reason to one short sentence."""
+
+
+def _clean_json_text(text: str) -> str:
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        cleaned = cleaned.split("\n", 1)[-1]
+        if cleaned.endswith("```"):
+            cleaned = cleaned[:-3].strip()
+    return cleaned
+
+
+def call_semantic_dedup_llm(
+    *,
+    candidates: list[dict],
+    known_titles: list[str],
+    api_key: str,
+    model: str,
+    timeout: int,
+) -> dict[str, Any]:
+    prompt = build_semantic_dedup_prompt(candidates, known_titles)
+    response = chat_completion(
+        api_key=api_key,
+        model_id=model,
+        system="You are a strict JSON-only content duplicate checker. Return valid JSON and no markdown.",
+        user=prompt,
+        temperature=0.1,
+        max_tokens=3000,
+        timeout=timeout,
+    )
+    text, _ = extract_text(response)
+    return json.loads(_clean_json_text(text))
+
+
+def parse_semantic_verdicts(raw: dict[str, Any], candidates: list[dict]) -> list[dict[str, Any]]:
+    verdicts = raw.get("verdicts") if isinstance(raw, dict) else None
+    if not isinstance(verdicts, list):
+        raise ValueError("semantic gate response missing verdicts array")
+
+    by_topic = {
+        normalize_topic(str(verdict.get("topic", ""))): verdict
+        for verdict in verdicts
+        if isinstance(verdict, dict)
+    }
+    parsed = []
+    for candidate in candidates:
+        topic = str(candidate.get("topic", ""))
+        verdict = by_topic.get(normalize_topic(topic))
+        if not verdict:
+            parsed.append({
+                "topic": topic,
+                "is_duplicate": True,
+                "matched_title": "",
+                "reason": "semantic gate did not return a verdict for this candidate",
+            })
+            continue
+        parsed.append({
+            "topic": topic,
+            "is_duplicate": bool(verdict.get("is_duplicate")),
+            "matched_title": str(verdict.get("matched_title") or ""),
+            "reason": str(verdict.get("reason") or "").strip() or "semantic gate reviewed this candidate",
+        })
+    return parsed
+
+
+def semantic_dedup_topics(
+    candidates: list[dict],
+    known_titles: list[str],
+    *,
+    api_key: str,
+    model: str,
+    timeout: int,
+    llm_fn: Callable[..., dict[str, Any]] | None = None,
+) -> tuple[list[dict], list[dict]]:
+    if not candidates:
+        return [], []
+    if not api_key:
+        raise ValueError("OPENROUTER_API_KEY is required for semantic duplicate checking")
+
+    if llm_fn is None:
+        llm_fn = call_semantic_dedup_llm
+
+    raw = llm_fn(
+        candidates=candidates,
+        known_titles=known_titles,
+        api_key=api_key,
+        model=model,
+        timeout=timeout,
+    )
+    verdicts = parse_semantic_verdicts(raw, candidates)
+
+    accepted: list[dict] = []
+    rejected: list[dict] = []
+    for candidate, verdict in zip(candidates, verdicts):
+        if verdict["is_duplicate"]:
+            rejected.append({
+                **candidate,
+                "reason": f"semantic duplicate: {verdict['matched_title'] or verdict['reason']}",
+                "semantic_match": verdict["matched_title"],
+                "semantic_reason": verdict["reason"],
+            })
+            continue
+        accepted.append({
+            **candidate,
+            "semantic_match": "",
+            "semantic_reason": verdict["reason"],
+            "quality_reason": f"{candidate.get('quality_reason', 'passed deterministic quality gate')}; semantic gate: {verdict['reason']}",
+        })
+    return accepted, rejected
+
+
+def count_by_source(items: list[dict]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for item in items:
+        source = str(item.get("source") or "unknown")
+        counts[source] = counts.get(source, 0) + 1
+    return counts
+
+
+def source_sort_key(topic: dict) -> tuple:
+    return (
+        SOURCE_RANK.get(str(topic.get("source", "manual")), 9),
+        -(topic.get("impressions") or 0),
+        -(topic.get("dedup_score") or 0),
+        str(topic.get("topic", "")),
+    )
+
+
 def push_topics_to_d1(base_url: str, key: str, topics: list[dict]) -> dict:
-    results = {"added": 0, "errors": []}
+    results = {"added": 0, "added_topics": [], "errors": []}
     for t in topics:
         url = f"{base_url}/api/pipeline-topics?key={key}&action=add"
         data = json.dumps({
@@ -302,12 +492,61 @@ def push_topics_to_d1(base_url: str, key: str, topics: list[dict]) -> dict:
             headers={**_HEADERS, "Content-Type": "application/json"})
         try:
             with urllib.request.urlopen(req, timeout=15) as resp:
+                body = resp.read().decode()
+                try:
+                    payload = json.loads(body) if body else {}
+                except json.JSONDecodeError:
+                    payload = {}
                 results["added"] += 1
+                results["added_topics"].append({
+                    "topic": t["topic"],
+                    "slug": payload.get("slug") or t.get("slug"),
+                    "category": t.get("category"),
+                    "source": t.get("source"),
+                    "dedup_score": t.get("dedup_score"),
+                })
         except urllib.error.HTTPError as e:
             results["errors"].append({"topic": t["topic"], "error": e.read().decode()[:200]})
         except Exception as e:
             results["errors"].append({"topic": t["topic"], "error": str(e)[:200]})
     return results
+
+
+def write_report(
+    path: Path,
+    *,
+    input_count: int,
+    accepted: list[dict],
+    overflow: list[dict],
+    rejected: list[dict],
+    results: dict | None,
+    dry_run: bool,
+    semantic: dict[str, Any] | None = None,
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    all_reported = accepted + overflow + rejected
+    path.write_text(
+        json.dumps(
+            {
+                "ok": not results or (not results.get("errors") and (dry_run or results.get("added", 0) > 0)),
+                "dry_run": dry_run,
+                "input_count": input_count,
+                "source_counts": count_by_source(all_reported),
+                "accepted_count": len(accepted),
+                "overflow_count": len(overflow),
+                "rejected_count": len(rejected),
+                "added_count": 0 if not results else results.get("added", 0),
+                "error_count": 0 if not results else len(results.get("errors", [])),
+                "semantic": semantic or {"enabled": False},
+                "accepted": accepted,
+                "overflow": overflow,
+                "rejected": rejected,
+                "results": results or {},
+            },
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -317,6 +556,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--key", default=None)
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--write-rejections", default=None, help="Optional JSON path for rejected candidates")
+    parser.add_argument("--report", type=Path, default=None, help="Optional JSON report path")
+    parser.add_argument("--limit", type=int, default=20, help="Maximum accepted topics to push")
+    parser.add_argument("--category", choices=["recipes", "nutrition", "tips"], default=None)
+    parser.add_argument("--require-added", action="store_true", help="Exit non-zero if no topic was added")
+    parser.add_argument("--semantic-dedup", action="store_true", help="Run final LLM semantic duplicate check before push")
+    parser.add_argument("--semantic-model", default=DEFAULT_SEMANTIC_MODEL, help="OpenRouter model for semantic duplicate check")
+    parser.add_argument("--semantic-key", default=None, help="OpenRouter API key (default: OPENROUTER_API_KEY)")
+    parser.add_argument("--semantic-timeout", type=int, default=90)
+    parser.add_argument("--semantic-pool", type=int, default=None, help="Deterministic candidates to send to semantic gate before limit")
     parser.add_argument("--min-score", type=float, default=DEFAULT_MIN_SCORE)
     args = parser.parse_args(argv)
 
@@ -340,10 +588,12 @@ def main(argv: list[str] | None = None) -> int:
     known_titles = read_article_titles()
     if not args.dry_run:
         known_titles += fetch_d1_topic_titles(args.base_url, key)
+    semantic_known_titles = list(known_titles)
 
-    filtered = []
+    accepted = []
     rejected = []
     for t in discovered:
+        t = dict(t)
         slug = slug_from_topic(t["topic"])
         if slug in all_known:
             rejected.append({**t, "slug": slug, "reason": "exact slug already exists"})
@@ -362,30 +612,140 @@ def main(argv: list[str] | None = None) -> int:
             continue
         if not t.get("category"):
             t["category"] = categorize_topic(t["topic"])
+        if args.category and t["category"] != args.category:
+            rejected.append({
+                **t,
+                "slug": slug,
+                "reason": f"category filter mismatch: wanted {args.category}, got {t['category']}",
+                "dedup_score": score,
+            })
+            continue
         t["slug"] = slug
         t["status"] = "pending"
         t["dedup_score"] = score
         t["quality_reason"] = reason
-        filtered.append(t)
+        accepted.append(t)
         all_known.add(slug)
         known_titles.append(t["topic"])
 
-    print(f"After quality gate: {len(filtered)} candidates, {len(rejected)} rejected", file=sys.stderr)
+    accepted.sort(key=source_sort_key)
+    limit = max(args.limit, 0)
+
+    semantic_report: dict[str, Any] = {"enabled": False}
+    semantic_overflow: list[dict] = []
+    if args.semantic_dedup:
+        semantic_key = args.semantic_key or os.environ.get("OPENROUTER_API_KEY", "")
+        semantic_pool_limit = (
+            max(args.semantic_pool, limit)
+            if args.semantic_pool is not None
+            else max(limit * 4, limit)
+        )
+        if limit == 0:
+            semantic_pool_limit = 0
+
+        semantic_pool = accepted[:semantic_pool_limit] if semantic_pool_limit else []
+        semantic_overflow = accepted[semantic_pool_limit:] if semantic_pool_limit else accepted
+        print(
+            f"Semantic gate: checking {len(semantic_pool)} candidates against "
+            f"{len(semantic_known_titles)} existing site/pipeline topics",
+            file=sys.stderr,
+        )
+        semantic_report = {
+            "enabled": True,
+            "model": args.semantic_model,
+            "known_titles_count": len(semantic_known_titles),
+            "checked_count": len(semantic_pool),
+            "unchecked_overflow_count": len(semantic_overflow),
+            "accepted_count": 0,
+            "rejected_count": 0,
+        }
+        try:
+            accepted, semantic_rejected = semantic_dedup_topics(
+                semantic_pool,
+                semantic_known_titles,
+                api_key=semantic_key,
+                model=args.semantic_model,
+                timeout=args.semantic_timeout,
+            )
+        except Exception as e:
+            semantic_report["error"] = str(e)
+            print(f"ERROR: semantic duplicate gate failed: {e}", file=sys.stderr)
+            if args.report:
+                write_report(
+                    args.report,
+                    input_count=len(discovered),
+                    accepted=[],
+                    overflow=semantic_pool + semantic_overflow,
+                    rejected=rejected,
+                    results={"added": 0, "added_topics": [], "errors": [{"topic": "semantic_gate", "error": str(e)[:300]}]},
+                    dry_run=args.dry_run,
+                    semantic=semantic_report,
+                )
+            return 1
+        rejected.extend(semantic_rejected)
+        semantic_report["accepted_count"] = len(accepted)
+        semantic_report["rejected_count"] = len(semantic_rejected)
+        print(
+            f"Semantic gate: {len(accepted)} passed, {len(semantic_rejected)} rejected, "
+            f"{len(semantic_overflow)} deferred outside pool",
+            file=sys.stderr,
+        )
+
+    selected = accepted[:limit] if limit else []
+    overflow = accepted[limit:] if limit else accepted
+    if semantic_overflow:
+        overflow.extend({
+            **topic,
+            "semantic_status": "not checked; outside semantic pool",
+        } for topic in semantic_overflow)
+
+    print(
+        f"After quality gate: {len(accepted)} candidates, {len(rejected)} rejected, "
+        f"{len(selected)} selected for push",
+        file=sys.stderr,
+    )
 
     if args.write_rejections:
         with open(args.write_rejections, "w", encoding="utf-8") as f:
             json.dump(rejected, f, indent=2)
 
     if args.dry_run:
-        print(json.dumps({"accepted": filtered, "rejected": rejected}, indent=2))
+        if args.report:
+            write_report(
+                args.report,
+                input_count=len(discovered),
+                accepted=selected,
+                overflow=overflow,
+                rejected=rejected,
+                results=None,
+                dry_run=True,
+                semantic=semantic_report,
+            )
+        print(json.dumps({"accepted": selected, "overflow": overflow, "rejected": rejected}, indent=2))
         return 0
 
-    results = push_topics_to_d1(args.base_url, key, filtered)
+    results = push_topics_to_d1(args.base_url, key, selected)
     print(f"Added {results['added']} topics to D1", file=sys.stderr)
     if results["errors"]:
         print(f"Errors: {len(results['errors'])}", file=sys.stderr)
         for e in results["errors"]:
             print(f"  - {e['topic']}: {e['error']}", file=sys.stderr)
+    if args.report:
+        write_report(
+            args.report,
+            input_count=len(discovered),
+            accepted=selected,
+            overflow=overflow,
+            rejected=rejected,
+            results=results,
+            dry_run=False,
+            semantic=semantic_report,
+        )
+    if results["errors"]:
+        return 1
+    if args.require_added and results["added"] == 0:
+        print("ERROR: no new topics were added", file=sys.stderr)
+        return 2
     return 0
 
 

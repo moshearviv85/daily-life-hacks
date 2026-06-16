@@ -1,4 +1,5 @@
 import importlib.util
+import json
 from pathlib import Path
 
 
@@ -125,6 +126,40 @@ def test_quality_gate_rejects_near_duplicate_existing_article():
     assert score >= 0.72
 
 
+def test_semantic_gate_rejects_same_article_angle():
+    candidates = [{
+        "topic": "chicken veggie tray bake weeknight dinner",
+        "source": "autocomplete",
+        "category": "recipes",
+        "quality_reason": "passed deterministic quality gate",
+    }]
+
+    def fake_llm(**kwargs):
+        assert kwargs["known_titles"] == ["Sheet Pan Chicken Dinner Ideas That Actually Work"]
+        return {
+            "verdicts": [{
+                "topic": "chicken veggie tray bake weeknight dinner",
+                "is_duplicate": True,
+                "matched_title": "Sheet Pan Chicken Dinner Ideas That Actually Work",
+                "reason": "Same core sheet-pan chicken dinner angle.",
+            }]
+        }
+
+    accepted, rejected = mod.semantic_dedup_topics(
+        candidates,
+        ["Sheet Pan Chicken Dinner Ideas That Actually Work"],
+        api_key="test-key",
+        model="test/model",
+        timeout=1,
+        llm_fn=fake_llm,
+    )
+
+    assert accepted == []
+    assert len(rejected) == 1
+    assert rejected[0]["semantic_match"] == "Sheet Pan Chicken Dinner Ideas That Actually Work"
+    assert "semantic duplicate" in rejected[0]["reason"]
+
+
 def test_categorize_topic_keeps_recipe_and_nutrition_distinct():
     assert mod.categorize_topic("high protein breakfast recipes") == "recipes"
     assert mod.categorize_topic("easy sandwich bread recipe") == "recipes"
@@ -134,3 +169,88 @@ def test_categorize_topic_keeps_recipe_and_nutrition_distinct():
     assert mod.categorize_topic("how to store homemade bread") == "tips"
     assert mod.categorize_topic("how to keep bread fresh longer without mold") == "tips"
     assert mod.categorize_topic("how to store sourdough discard in fridge") == "tips"
+
+
+def test_dry_run_report_applies_limit_and_keeps_overflow(tmp_path, monkeypatch):
+    monkeypatch.setattr(mod, "ARTICLE_DIR", tmp_path / "missing-articles")
+    discovered = [
+        {"topic": "meal prep rotisserie chicken rice bowls", "source": "autocomplete"},
+        {"topic": "low sodium pantry swaps for busy weeknight dinners", "source": "gsc", "impressions": 40},
+        {"topic": "food prep guide youtube", "source": "autocomplete"},
+    ]
+    input_path = tmp_path / "discovered.json"
+    report_path = tmp_path / "report.json"
+    input_path.write_text(json.dumps(discovered), encoding="utf-8")
+
+    rc = mod.main([
+        "--input", str(input_path),
+        "--dry-run",
+        "--limit", "1",
+        "--report", str(report_path),
+    ])
+
+    assert rc == 0
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    assert report["accepted_count"] == 1
+    assert report["overflow_count"] == 1
+    assert report["rejected_count"] == 1
+    assert report["accepted"][0]["source"] == "gsc"
+
+
+def test_dry_run_semantic_report_checks_site_titles_before_accepting(tmp_path, monkeypatch):
+    article_dir = tmp_path / "articles"
+    article_dir.mkdir()
+    (article_dir / "sheet-pan-chicken-dinner.md").write_text(
+        'title: "Sheet Pan Chicken Dinner Ideas That Actually Work"\n',
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(mod, "ARTICLE_DIR", article_dir)
+
+    discovered = [
+        {"topic": "chicken veggie tray bake weeknight dinner", "source": "autocomplete"},
+        {"topic": "low sodium pantry swaps for busy weeknight dinners", "source": "gsc", "impressions": 40},
+    ]
+    input_path = tmp_path / "discovered.json"
+    report_path = tmp_path / "report.json"
+    input_path.write_text(json.dumps(discovered), encoding="utf-8")
+
+    def fake_semantic_llm(**kwargs):
+        assert kwargs["known_titles"] == ["Sheet Pan Chicken Dinner Ideas That Actually Work"]
+        assert len(kwargs["candidates"]) == 2
+        return {
+            "verdicts": [
+                {
+                    "topic": "low sodium pantry swaps for busy weeknight dinners",
+                    "is_duplicate": False,
+                    "matched_title": "",
+                    "reason": "Distinct pantry-swap angle.",
+                },
+                {
+                    "topic": "chicken veggie tray bake weeknight dinner",
+                    "is_duplicate": True,
+                    "matched_title": "Sheet Pan Chicken Dinner Ideas That Actually Work",
+                    "reason": "Same core sheet-pan chicken dinner angle.",
+                },
+            ]
+        }
+
+    monkeypatch.setattr(mod, "call_semantic_dedup_llm", fake_semantic_llm)
+
+    rc = mod.main([
+        "--input", str(input_path),
+        "--dry-run",
+        "--limit", "2",
+        "--report", str(report_path),
+        "--semantic-dedup",
+        "--semantic-key", "test-key",
+    ])
+
+    assert rc == 0
+    report = json.loads(report_path.read_text(encoding="utf-8"))
+    assert report["semantic"]["enabled"] is True
+    assert report["semantic"]["known_titles_count"] == 1
+    assert report["semantic"]["checked_count"] == 2
+    assert report["semantic"]["rejected_count"] == 1
+    assert report["accepted_count"] == 1
+    assert report["accepted"][0]["topic"] == "low sodium pantry swaps for busy weeknight dinners"
+    assert "semantic duplicate" in report["rejected"][0]["reason"]

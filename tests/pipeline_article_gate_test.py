@@ -65,6 +65,21 @@ def test_staging_generation_workflows_build_before_push():
         assert "pipeline-data/reports/" in workflow
 
 
+def test_pipeline_discover_is_bounded_and_reported():
+    workflow = _workflow("pipeline-discover.yml")
+
+    assert "default: '12'" in workflow
+    assert "--limit \"$DISCOVER_LIMIT\"" in workflow
+    assert "--report \"pipeline-data/reports/pipeline-discover-${{ github.run_id }}.json\"" in workflow
+    assert "OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}" in workflow
+    assert "--semantic-dedup" in workflow
+    assert "--semantic-model \"$DISCOVER_SEMANTIC_MODEL\"" in workflow
+    assert "Semantic duplicate gate" in workflow
+    assert "--require-added" in workflow
+    assert "actions/upload-artifact@v4" in workflow
+    assert "GITHUB_STEP_SUMMARY" in workflow
+
+
 def test_pipeline_daily_tracks_produced_and_failed_topics_separately():
     workflow = (ROOT / ".github" / "workflows" / "pipeline-daily.yml").read_text(encoding="utf-8")
 

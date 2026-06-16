@@ -478,6 +478,17 @@ const BUILD = {
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem">
         <div class="card-title" style="margin-bottom:0">Pipeline Control Center</div>
         <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+          <select id="discover-limit" title="Maximum new topic candidates" style="padding:.3rem .5rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);font-size:.8rem">
+            <option value="6">6 topics</option>
+            <option value="12" selected>12 topics</option>
+            <option value="20">20 topics</option>
+          </select>
+          <select id="discover-category" title="Topic category filter" style="padding:.3rem .5rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);font-size:.8rem">
+            <option value="">Any category</option>
+            <option value="recipes">Recipes</option>
+            <option value="nutrition">Nutrition</option>
+            <option value="tips">Tips</option>
+          </select>
           <button class="btn btn-sm" onclick="triggerPipeline('discover')" id="btn-discover">Find Topics</button>
           <select id="produce-count" style="padding:.3rem .5rem;border-radius:6px;border:1px solid var(--border);background:var(--card-bg);color:var(--text-color);font-size:.8rem">
             <option value="1" selected>1 article</option>
@@ -489,7 +500,7 @@ const BUILD = {
         </div>
       </div>
       <div style="padding:.55rem .75rem;border-radius:6px;background:#f8fafc;border:1px solid var(--border);font-size:.78rem;color:var(--muted);margin-bottom:.75rem">
-        Generate creates one full staging package: article, hero image, support image, and four pin images. Review on <strong style="color:var(--text-color)">staging</strong> before promotion. Pinterest remains manual.
+        Find Topics pulls GSC opportunity queries and Google Autocomplete seed expansions, then runs deterministic filters and an LLM semantic duplicate check against existing site and pipeline topics before adding a small review queue to <strong style="color:var(--text-color)">staging D1</strong>. Generate creates one full staging package: article, hero image, support image, and four pin images. Pinterest remains manual.
       </div>
 
       <!-- Pipeline stat cards -->
@@ -3219,6 +3230,7 @@ function filterPipeline(filter, btn) {
 
 async function triggerPipeline(action) {
   const statusEl = document.getElementById('pipeline-trigger-status');
+  let discoverBeforeIds = null;
   if (action === 'publish' && !IS_PRODUCTION_DASHBOARD) {
     statusEl.style.display = '';
     statusEl.style.background = '#fef2f2';
@@ -3237,8 +3249,13 @@ async function triggerPipeline(action) {
     if (!ok) return;
   }
   if (action === 'discover') {
-    const ok = confirm('Find topics now?\n\nThis writes approved topic candidates into staging D1.');
+    const limit = parseInt(document.getElementById('discover-limit')?.value || '12', 10);
+    const category = document.getElementById('discover-category')?.value || '';
+    const categoryLabel = category ? ` in ${category}` : '';
+    const ok = confirm(`Find up to ${limit} new topic candidate(s)${categoryLabel} now?\n\nSources: GSC opportunity queries and Google Autocomplete seed expansions.\nFinal gate: LLM semantic duplicate check against existing site and pipeline topics.\n\nThis writes pending topics into staging D1 for review. It does not generate articles or images.`);
     if (!ok) return;
+    const existingTopics = await fetchPipelineTopics();
+    discoverBeforeIds = new Set(existingTopics.map(topic => Number(topic.id)).filter(Number.isFinite));
   }
 
   statusEl.style.display = '';
@@ -3248,6 +3265,11 @@ async function triggerPipeline(action) {
   statusEl.textContent = `Triggering ${action}...`;
 
   const body = { action };
+  if (action === 'discover') {
+    body.limit = parseInt(document.getElementById('discover-limit')?.value || '12', 10);
+    const category = document.getElementById('discover-category')?.value || '';
+    if (category) body.category = category;
+  }
   if (action === 'produce') {
     body.count = parseInt(document.getElementById('produce-count').value);
   }
@@ -3263,6 +3285,11 @@ async function triggerPipeline(action) {
       statusEl.style.background = '#f0fdf4';
       statusEl.style.borderColor = '#bbf7d0';
       statusEl.style.color = '#166534';
+      if (action === 'discover') {
+        statusEl.innerHTML = `Find Topics workflow dispatched. Waiting for new staging topic candidates...${pipelineActionsLink(data)}`;
+        pollDiscoveryTopics(discoverBeforeIds || new Set(), data, statusEl);
+        return;
+      }
       statusEl.textContent = `${action} workflow dispatched successfully. Output: ${data.outputBranch || 'unknown'}. ${data.effect || ''}`;
       setTimeout(() => statusEl.style.display = 'none', 5000);
     } else {
@@ -3283,6 +3310,32 @@ let produceSelectedTopicsInFlight = false;
 function pipelineActionsLink(data, label = 'View GitHub Actions') {
   if (!data?.actions_url) return '';
   return ` <a href="${escapeHtml(data.actions_url)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;font-weight:700">${label}</a>`;
+}
+
+async function pollDiscoveryTopics(beforeIds, data, statusEl) {
+  for (let attempt = 1; attempt <= 36; attempt++) {
+    await new Promise(resolve => setTimeout(resolve, 10000));
+    const topics = await fetchPipelineTopics();
+    const newTopics = topics.filter(topic => !beforeIds.has(Number(topic.id)));
+    if (newTopics.length > 0) {
+      await fetchPipelineStatus();
+      const pending = newTopics.filter(topic => topic.status === 'pending' || topic.status === 'queued').length;
+      const approved = newTopics.filter(topic => topic.status === 'approved').length;
+      statusEl.style.background = '#f0fdf4';
+      statusEl.style.borderColor = '#bbf7d0';
+      statusEl.style.color = '#166534';
+      statusEl.innerHTML = `Found ${newTopics.length} new topic candidate(s): ${pending} pending, ${approved} approved. Review them in Pipeline Topics.${pipelineActionsLink(data)}`;
+      return;
+    }
+    statusEl.style.background = '#fff7ed';
+    statusEl.style.borderColor = '#fed7aa';
+    statusEl.style.color = '#92400e';
+    statusEl.innerHTML = `Find Topics is still running or produced no new candidates yet. Refresh ${attempt}/36.${pipelineActionsLink(data)}`;
+  }
+  statusEl.style.background = '#fef2f2';
+  statusEl.style.borderColor = '#fecaca';
+  statusEl.style.color = '#b91c1c';
+  statusEl.innerHTML = `Find Topics finished or timed out without adding visible new topics. Check the discovery report in GitHub Actions.${pipelineActionsLink(data)}`;
 }
 
 async function pollPipelineForSlugs(slugs, data, statusEl) {

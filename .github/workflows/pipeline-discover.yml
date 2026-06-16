@@ -4,6 +4,15 @@ on:
   schedule:
     - cron: '0 6 * * 1'  # Every Monday at 06:00 UTC
   workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Maximum topic candidates to add'
+        required: false
+        default: '12'
+      category:
+        description: 'Category filter (empty = any)'
+        required: false
+        default: ''
 
 env:
   PYTHONUNBUFFERED: "1"
@@ -23,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: pip install google-auth google-api-python-client
 
+      - name: Create report directory
+        run: mkdir -p pipeline-data/reports
+
       - name: Discover from GSC
         env:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
@@ -35,7 +47,7 @@ jobs:
           fi
 
       - name: Discover from Autocomplete
-        run: python scripts/NEW_PIPELINE_2026-05-08/discover_autocomplete.py > /tmp/autocomplete-topics.json
+        run: python scripts/NEW_PIPELINE_2026-05-08/discover_autocomplete.py --delay 0.2 > /tmp/autocomplete-topics.json
 
       - name: Merge discoveries
         run: |
@@ -52,8 +64,77 @@ jobs:
       - name: Filter and push to D1
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          DISCOVER_LIMIT: ${{ github.event.inputs.limit || '12' }}
+          DISCOVER_CATEGORY: ${{ github.event.inputs.category || '' }}
+          DISCOVER_SEMANTIC_MODEL: ${{ vars.DISCOVER_SEMANTIC_MODEL || 'google/gemini-2.5-flash' }}
         run: |
+          ARGS=()
+          if [ -n "$DISCOVER_CATEGORY" ]; then
+            ARGS+=(--category "$DISCOVER_CATEGORY")
+          fi
           python scripts/NEW_PIPELINE_2026-05-08/filter_discovered_topics.py \
             --input /tmp/all-discovered.json \
             --base-url "$PIPELINE_DASHBOARD_BASE_URL" \
-            --key "$DASHBOARD_PASSWORD"
+            --key "$DASHBOARD_PASSWORD" \
+            --limit "$DISCOVER_LIMIT" \
+            --report "pipeline-data/reports/pipeline-discover-${{ github.run_id }}.json" \
+            --semantic-dedup \
+            --semantic-model "$DISCOVER_SEMANTIC_MODEL" \
+            --require-added \
+            "${ARGS[@]}"
+
+      - name: Summarize discovery report
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          report = Path("pipeline-data/reports/pipeline-discover-${{ github.run_id }}.json")
+          if not report.exists():
+              print("No discovery report was written.")
+              raise SystemExit(0)
+          data = json.loads(report.read_text(encoding="utf-8"))
+          lines = [
+              "## Pipeline discovery",
+              "",
+              f"- Input candidates: {data.get('input_count', 0)}",
+              f"- Accepted for push: {data.get('accepted_count', 0)}",
+              f"- Added to D1: {data.get('added_count', 0)}",
+              f"- Rejected by gate: {data.get('rejected_count', 0)}",
+              f"- Overflow after limit: {data.get('overflow_count', 0)}",
+              f"- Errors: {data.get('error_count', 0)}",
+          ]
+          semantic = data.get("semantic", {})
+          if semantic.get("enabled"):
+              lines.extend([
+                  "",
+                  "### Semantic duplicate gate",
+                  f"- Model: {semantic.get('model')}",
+                  f"- Existing titles/topics checked against: {semantic.get('known_titles_count', 0)}",
+                  f"- Candidates checked: {semantic.get('checked_count', 0)}",
+                  f"- Semantic rejects: {semantic.get('rejected_count', 0)}",
+                  f"- Outside semantic pool: {semantic.get('unchecked_overflow_count', 0)}",
+              ])
+              if semantic.get("error"):
+                  lines.append(f"- Error: {semantic.get('error')}")
+          added = data.get("results", {}).get("added_topics", [])
+          if added:
+              lines.extend(["", "### Added topics"])
+              for topic in added[:20]:
+                  lines.append(f"- [{topic.get('category')}] {topic.get('topic')} ({topic.get('source')})")
+          summary = "\n".join(lines) + "\n"
+          print(summary)
+          if os.environ.get("GITHUB_STEP_SUMMARY"):
+              Path(os.environ["GITHUB_STEP_SUMMARY"]).write_text(summary, encoding="utf-8")
+          PY
+
+      - name: Upload discovery report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-discover-report-${{ github.run_id }}
+          path: pipeline-data/reports/pipeline-discover-${{ github.run_id }}.json
+          if-no-files-found: ignore

@@ -168,6 +168,54 @@ test("produce dispatch forwards selected topic ids to GitHub Actions", async (t)
   assert.match(data.actions_url, /pipeline-produce\.yml/);
 });
 
+test("discover dispatch forwards bounded topic discovery inputs", async (t) => {
+  const originalFetch = globalThis.fetch;
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  let requestedWorkflow = "";
+  let dispatchBody = null;
+  globalThis.fetch = async (url, init) => {
+    requestedWorkflow = String(url);
+    dispatchBody = JSON.parse(init.body);
+    return new Response(null, { status: 204 });
+  };
+
+  const response = await onRequestPost({
+    request: new Request("https://staging.daily-life-hacks.pages.dev/api/pipeline-trigger?key=test-key", {
+      method: "POST",
+      body: JSON.stringify({ action: "discover", limit: 12, category: "recipes" }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "staging" },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 200);
+  assert.equal(data.ok, true);
+  assert.match(requestedWorkflow, /pipeline-discover\.yml/);
+  assert.equal(dispatchBody.ref, "staging");
+  assert.equal(dispatchBody.inputs.limit, "12");
+  assert.equal(dispatchBody.inputs.category, "recipes");
+  assert.equal(data.dispatchRef, "staging");
+  assert.equal(data.limit, "12");
+  assert.equal(data.category, "recipes");
+});
+
+test("discover rejects unsafe discovery batch sizes", async () => {
+  const response = await onRequestPost({
+    request: new Request("https://staging.daily-life-hacks.pages.dev/api/pipeline-trigger?key=test-key", {
+      method: "POST",
+      body: JSON.stringify({ action: "discover", limit: 500 }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "staging" },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 400);
+  assert.match(data.error, /limit/);
+});
+
 test("approve_article dispatches the asset workflow for one slug", async (t) => {
   const originalFetch = globalThis.fetch;
   t.after(() => {
