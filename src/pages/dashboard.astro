@@ -3138,6 +3138,7 @@ function renderPipelineTopicsModal(topics) {
         <button class="btn btn-sm" onclick="updateSelectedTopics('reject')" style="background:#ef4444;color:#fff;border-color:#ef4444">Reject</button>
         <button class="btn btn-sm" onclick="produceSelectedTopics()" style="background:#16a34a;color:#fff;border-color:#16a34a">Produce Selected to Staging</button>
         <button class="btn btn-sm" onclick="deleteVisiblePendingTopics()" ${deleteDisabled ? 'disabled' : ''} title="Deletes only pending/queued topics in the current filtered view. Approved and produced topics are never deleted." style="background:#991b1b;color:#fff;border-color:#991b1b;${deleteDisabled ? 'opacity:.45;cursor:not-allowed' : ''}">${deleteLabel}</button>
+        <button class="btn btn-sm" onclick="resetPipelineTopicBank()" ${sortedTopics.length ? '' : 'disabled'} title="Deletes every row from pipeline_topics only. Articles and pins are not deleted." style="background:#450a0a;color:#fff;border-color:#450a0a;${sortedTopics.length ? '' : 'opacity:.45;cursor:not-allowed'}">Clear topic bank (${sortedTopics.length})</button>
       </div>
       ${renderTopicSourceSummary(filteredTopics)}
     </div>`;
@@ -3241,6 +3242,41 @@ async function deleteVisiblePendingTopics() {
     await fetchPipelineStatus();
     openModal('pipeline-topics');
     alert(`Deleted ${data.count || 0} pending topic(s).${data.skipped ? ` Skipped ${data.skipped} topic(s) that had already moved forward.` : ''}`);
+  } catch (e) {
+    alert(`Failed: ${e.message}`);
+  }
+}
+
+async function resetPipelineTopicBank() {
+  const total = modalRows.length;
+  if (!total) {
+    alert('No topics to clear.');
+    return;
+  }
+
+  const ok = confirm(`Clear all ${total} topic(s) from the topic bank?\n\nThis deletes pending, approved, rejected, and produced rows from pipeline_topics only.\n\nIt does not delete generated articles, pins, images, or published site content.`);
+  if (!ok) return;
+
+  const confirmation = prompt('Type DELETE ALL TOPICS to confirm this reset.');
+  if (confirmation !== 'DELETE ALL TOPICS') {
+    alert('Reset cancelled.');
+    return;
+  }
+
+  try {
+    const res = await fetch(`/api/pipeline-topics?key=${encodeURIComponent(pw)}&action=reset`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ confirm: confirmation }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) {
+      throw new Error(data.error || res.statusText);
+    }
+
+    await fetchPipelineStatus();
+    openModal('pipeline-topics');
+    alert(`Cleared ${data.count || 0} topic(s). Remaining: ${data.remaining || 0}.`);
   } catch (e) {
     alert(`Failed: ${e.message}`);
   }
@@ -3981,6 +4017,7 @@ window.setTopicOriginFilter = setTopicOriginFilter;
 window.updateTopicSelectionSummary = updateTopicSelectionSummary;
 window.updateSelectedTopics = updateSelectedTopics;
 window.deleteVisiblePendingTopics = deleteVisiblePendingTopics;
+window.resetPipelineTopicBank = resetPipelineTopicBank;
 window.produceSelectedTopics = produceSelectedTopics;
 window.approvePipelineArticle = approvePipelineArticle;
 window.regenerateHeroImage = regenerateHeroImage;

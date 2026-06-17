@@ -4,6 +4,7 @@
  * POST /api/pipeline-topics?key=...&action=reject       — reject topic(s)
  * POST /api/pipeline-topics?key=...&action=add          — manually add a topic
  * POST /api/pipeline-topics?key=...&action=produced     — mark as produced
+ * POST /api/pipeline-topics?key=...&action=reset        — clear topic bank
  * Auth: DASHBOARD_PASSWORD
  */
 
@@ -167,6 +168,30 @@ export async function onRequestPost(context) {
     });
   }
 
+  if (action === "reset") {
+    const confirm = String(body.confirm || "").trim();
+    if (confirm !== "DELETE ALL TOPICS") {
+      return json({ error: "confirmation text must be DELETE ALL TOPICS" }, 400);
+    }
+
+    const before = await env.DB.prepare(
+      "SELECT COUNT(*) AS count FROM pipeline_topics"
+    ).first();
+    await env.DB.prepare("DELETE FROM pipeline_topics").run();
+    const after = await env.DB.prepare(
+      "SELECT COUNT(*) AS count FROM pipeline_topics"
+    ).first();
+
+    const beforeCount = Number(before?.count || 0);
+    const remaining = Number(after?.count || 0);
+    return json({
+      ok: true,
+      action,
+      count: Math.max(0, beforeCount - remaining),
+      remaining,
+    });
+  }
+
   if (action === "add") {
     const { topic, category, source } = body;
     if (!topic || !category) {
@@ -198,5 +223,5 @@ export async function onRequestPost(context) {
     }
   }
 
-  return json({ error: "Unknown action. Use: approve, reject, delete, produced, add" }, 400);
+  return json({ error: "Unknown action. Use: approve, reject, delete, reset, produced, add" }, 400);
 }
