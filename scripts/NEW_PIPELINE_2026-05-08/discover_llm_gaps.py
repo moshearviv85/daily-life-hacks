@@ -193,6 +193,7 @@ Rules:
 - Prefer practical food/kitchen/nutrition jobs: dinner, lunch, breakfast, meal prep, freezer, storage, grocery savings, family cooking, high fiber, high protein, sodium-aware swaps, no-cook summer meals, leftovers, pantry meals.
 - Include a real mix of recipes, nutrition explainers, and practical kitchen tips.
 - Avoid medical claims, diet-program framing, supplements, detox, pregnancy, toddler/child-specific advice, and generic "healthy eating tips".
+- Whole foods only. Do not suggest topics centered on protein powder, whey, casein, creatine, protein bars, nutrition shakes, meal replacements, capsules, gummies, tablets, or supplement comparisons. If a topic is about protein, use real foods such as eggs, yogurt, beans, lentils, tofu, chicken, fish, nuts, seeds, or cottage cheese.
 - Do not create another version of an existing topic with only wording changed.
 - Do not over-focus on a single ingredient cluster.
 - Use plain American English.

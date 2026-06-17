@@ -31,12 +31,29 @@ def test_quality_gate_rejects_supplement_and_powder_topics():
         "Decoding Protein Powder: Do You Need It and Which Kind to Choose?",
         "best whey protein for breakfast smoothies",
         "meal replacement shakes vs real food",
+        "are protein bars better than breakfast",
+        "creatine and protein for busy meal prep",
+        "nutrition shakes for high protein mornings",
+        "fiber gummies vs real fruit",
+        "electrolyte powder for summer hydration",
     ]:
         ok, reason, score = mod.quality_score_topic(topic, [])
 
         assert ok is False, topic
         assert "supplement/powder" in reason
         assert score == 0.0
+
+
+def test_quality_gate_does_not_reject_normal_cooking_powders():
+    for topic in [
+        "black bean brownies with cocoa powder",
+        "sheet pan chicken with garlic powder vegetables",
+    ]:
+        ok, reason, score = mod.quality_score_topic(topic, [])
+
+        assert ok is True, topic
+        assert reason == "passed deterministic quality gate"
+        assert score >= 0.7
 
 
 def test_quality_gate_rejects_postpartum_audience_framing():

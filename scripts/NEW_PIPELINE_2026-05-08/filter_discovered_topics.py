@@ -112,12 +112,21 @@ SUPPLEMENT_TOPIC_PATTERNS = [
     r"\bcasein\b",
     r"\bcreatine\b",
     r"\bbcaas?\b",
+    r"\bbranched\s+chain\s+amino\s+acids?\b",
+    r"\bamino\s+acid\s+supplements?\b",
     r"\bprotein\s+shakes?\b",
+    r"\bprotein\s+bars?\b",
     r"\bprotein\s+supplements?\b",
+    r"\bnutrition\s+shakes?\b",
+    r"\bdiet\s+shakes?\b",
     r"\bsupplements?\b",
     r"\bmeal\s+replacements?\b",
+    r"\bmeal\s+replacement\s+(?:shakes?|bars?)\b",
     r"\bmass\s+gainers?\b",
     r"\bpowdered\s+protein\b",
+    r"\bpowdered\s+greens?\b",
+    r"\belectrolyte\s+(?:powders?|tablets?)\b",
+    r"\b(?:protein|fiber|collagen|greens|probiotic|vitamin|multivitamin)\s+(?:capsules?|pills?|gummies?|tablets?)\b",
 ]
 
 BROAD_TOPIC_PATTERNS = [
