@@ -91,23 +91,39 @@ def main(argv: list[str] | None = None) -> int:
     log(f"Continuing approved article assets: {args.slug}")
     init_brief_schema(args.db)
 
-    hero_brief_cmd = [py, str(SCRIPT_DIR / "generate_hero_brief.py"), "--slug", args.slug]
+    hero_brief_cmd = [
+        py, str(SCRIPT_DIR / "generate_hero_brief.py"),
+        "--slug", args.slug,
+        "--db", args.db,
+    ]
     if args.force_images:
         hero_brief_cmd.append("--force")
 
     steps = [("Hero Brief", hero_brief_cmd, 120)]
 
     if not args.hero_only:
-        steps.append(("Pin Briefs", [py, str(SCRIPT_DIR / "generate_pin_briefs.py"), "--slug", args.slug], 180))
+        steps.append((
+            "Pin Briefs",
+            [py, str(SCRIPT_DIR / "generate_pin_briefs.py"), "--slug", args.slug, "--db", args.db],
+            180,
+        ))
 
     if not args.skip_images:
-        hero_image_cmd = [py, str(SCRIPT_DIR / "generate_images.py"), "--slug", args.slug]
+        hero_image_cmd = [
+            py, str(SCRIPT_DIR / "generate_images.py"),
+            "--slug", args.slug,
+            "--db", args.db,
+        ]
         if args.force_images:
             hero_image_cmd.append("--force")
         steps.append(("Hero Image", hero_image_cmd, 300))
 
         if not args.hero_only:
-            pin_image_cmd = [py, str(SCRIPT_DIR / "generate_pin_images.py"), "--slug", args.slug]
+            pin_image_cmd = [
+                py, str(SCRIPT_DIR / "generate_pin_images.py"),
+                "--slug", args.slug,
+                "--db", args.db,
+            ]
             if args.force_images:
                 pin_image_cmd.append("--force")
             steps.append(("Pin Images", pin_image_cmd, 600))

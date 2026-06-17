@@ -93,9 +93,10 @@ def main(argv: list[str] | None = None) -> int:
     g.add_argument("--all", action="store_true", help="every hero_briefs row (status=ok)")
     ap.add_argument("--force", action="store_true", help="overwrite existing image")
     ap.add_argument("--dry-run", action="store_true", help="print plan, no FAL call")
+    ap.add_argument("--db", default=str(DEFAULT_DB), help="SQLite DB path")
     args = ap.parse_args(argv)
 
-    briefs = load_briefs()
+    briefs = load_briefs(args.db)
     if args.slug:
         if args.slug not in briefs:
             print(

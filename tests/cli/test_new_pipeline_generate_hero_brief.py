@@ -76,3 +76,8 @@ def test_new_pipeline_hero_brief_retries_malformed_llm_json(tmp_path, monkeypatc
 
     assert calls["count"] == 2
     assert brief.alt == "A finished lunch bowl on a bright kitchen counter."
+
+
+def test_new_pipeline_hero_brief_cli_accepts_db_argument():
+    parser_source = (SCRIPT_DIR / "generate_hero_brief.py").read_text(encoding="utf-8")
+    assert 'parser.add_argument("--db"' in parser_source

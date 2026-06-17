@@ -13,9 +13,10 @@ if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
 
 from lib import content_policy as _cp  # noqa: E402
+from lib.model_defaults import WRITER_MODEL  # noqa: E402
 from stage_1_5 import openrouter as _or  # noqa: E402
 
-DEFAULT_MODEL = "google/gemini-2.5-flash"
+DEFAULT_MODEL = WRITER_MODEL
 EM_DASH_VARIANTS = (
     "\u2014",
     "\u00e2\u20ac\u201d",
@@ -67,7 +68,7 @@ YMYL editing rules:
 - Do not leave words like "brain chemicals", "hormone", "hormones", "neurotransmitters", "reward system", or "nervous system" in the output.
 - For comfort-food topics, explain comfort through memory, warmth, texture, smell, familiarity, routine, seasoning, and serving temperature - never brain chemistry or hormones.
 - Do not add new health claims, citations, disclaimers, notes, or commentary.
-- Do not use "future self" anywhere. Never end with "your future self will thank you", "your body will thank you", or any similar greeting-card wrap-up.
+- Do not use "future self" anywhere. Never end with "your future self will thank you", "your Sunday self will thank you", "your Monday self will thank you", "your body will thank you", "your stomach will thank you", or any similar greeting-card wrap-up.
 - Do not wrap the answer in code fences.
 - Return the complete corrected Markdown article only.
 

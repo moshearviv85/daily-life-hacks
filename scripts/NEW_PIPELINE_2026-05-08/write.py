@@ -1,7 +1,7 @@
 """Production article writer.
 
 Reads approved topics from filtered_topics (topic-research.sqlite), generates
-articles via OpenRouter using gemini-2.5-flash, runs the Layer A compliance
+articles via OpenRouter using MiniMax M2.5, runs the Layer A compliance
 gate, and saves accepted articles to the write_outputs SQL table only (no MD
 files -- those are generated later by the deploy stage).
 
@@ -36,6 +36,7 @@ if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
 
 from stage_1_5 import openrouter as _or  # noqa: E402
+from lib.model_defaults import REVIEW_MODEL, WRITER_MODEL  # noqa: E402
 from lib.prompt_builder import build_write_system, build_write_user  # noqa: E402
 from lib.validator import validate as _validate_fn, Violation as _Violation  # noqa: E402
 from lib.medical_validator import check_article as _medical_check  # noqa: E402
@@ -45,7 +46,7 @@ DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 LOGS_DIR = REPO_ROOT / "pipeline-data" / "logs"
 ENV_PATH = REPO_ROOT / ".env"
 
-DEFAULT_MODEL = "google/gemini-2.5-flash"
+DEFAULT_MODEL = WRITER_MODEL
 DEFAULT_TEMPERATURE = 0.7
 DEFAULT_MAX_TOKENS = 10000
 DEFAULT_TIMEOUT = 240
@@ -333,6 +334,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT)
     p.add_argument("--max-attempts", type=int, default=DEFAULT_MAX_ATTEMPTS,
                    help=f"Regenerate on tier-1 validator failure, up to N attempts per topic (default: {DEFAULT_MAX_ATTEMPTS})")
+    p.add_argument("--polish", action="store_true",
+                   help="Opt in to an extra LLM polish pass. Off by default.")
+    p.add_argument("--polish-model", type=str, default=None,
+                   help="OpenRouter model id for --polish (default: same as --model)")
+    p.add_argument("--medical-llm-check", action="store_true",
+                   help="Opt in to the slower LLM medical language check. Deterministic validators always run.")
+    p.add_argument("--medical-model", type=str, default=REVIEW_MODEL,
+                   help="OpenRouter model id for --medical-llm-check")
     p.add_argument("--db", type=Path, default=DEFAULT_DB)
     p.add_argument("--dry-run", action="store_true",
                    help="Print the topics that would be written, then exit without API calls")
@@ -464,42 +473,44 @@ def main(argv: list[str] | None = None) -> int:
                     continue
 
                 draft_body_words = _body_word_count(markdown)
-                try:
-                    polished = polish_article_text(
-                        markdown,
-                        api_key=api_key,
-                        model_id=args.model,
-                        max_tokens=args.max_tokens,
-                        timeout=args.timeout,
-                    )
-                except (ArticlePolishError, _or.OpenRouterError) as exc:
+                if args.polish:
+                    polish_model = args.polish_model or args.model
+                    try:
+                        polished = polish_article_text(
+                            markdown,
+                            api_key=api_key,
+                            model_id=polish_model,
+                            max_tokens=args.max_tokens,
+                            timeout=args.timeout,
+                        )
+                    except (ArticlePolishError, _or.OpenRouterError) as exc:
+                        attempts_log.append({
+                            "attempt": attempt,
+                            "kind": "polish_error",
+                            "mode": attempt_mode,
+                            "detail": str(exc)[:300],
+                        })
+                        if attempt < args.max_attempts:
+                            log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
+                                f"article polish failed ({str(exc)[:140]})", fh)
+                        continue
+
+                    markdown = _mechanical_fix(polished.markdown)
+                    total_in += polished.tokens_in or 0
+                    total_out += polished.tokens_out or 0
+                    total_cost += polished.cost or 0.0
                     attempts_log.append({
                         "attempt": attempt,
-                        "kind": "polish_error",
+                        "kind": "polish",
                         "mode": attempt_mode,
-                        "detail": str(exc)[:300],
+                        "detail": f"LLM polish via {polish_model}",
                     })
-                    if attempt < args.max_attempts:
-                        log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
-                            f"article polish failed ({str(exc)[:140]})", fh)
-                    continue
-
-                markdown = _mechanical_fix(polished.markdown)
-                total_in += polished.tokens_in or 0
-                total_out += polished.tokens_out or 0
-                total_cost += polished.cost or 0.0
-                attempts_log.append({
-                    "attempt": attempt,
-                    "kind": "polish",
-                    "mode": attempt_mode,
-                    "detail": "em dash normalization + YMYL/medical language pass",
-                })
-                polished_body_words = _body_word_count(markdown)
-                log(
-                    f"POLISH #{t['rank']} {slug}: em dash + YMYL/medical pass "
-                    f"body_words={draft_body_words}->{polished_body_words}",
-                    fh,
-                )
+                    polished_body_words = _body_word_count(markdown)
+                    log(
+                        f"POLISH #{t['rank']} {slug}: model={polish_model} "
+                        f"body_words={draft_body_words}->{polished_body_words}",
+                        fh,
+                    )
 
                 violations = _validate_fn(
                     markdown,
@@ -522,36 +533,36 @@ def main(argv: list[str] | None = None) -> int:
                             f"{attempt_mode} tier1 {t1_ids} -> repair same draft", fh)
                     continue
 
-                # Layer 2: LLM medical validator
-                try:
-                    med_violations = _medical_check(
-                        markdown, api_key=api_key,
-                        model="google/gemini-2.5-flash",
-                        temperature=0.1, timeout=60,
-                    )
-                    unhedged = [v for v in med_violations if not v.hedged]
-                    if unhedged:
-                        terms = ", ".join(v.term for v in unhedged[:3])
-                        repair_markdown = markdown
-                        repair_issues = [
-                            {
-                                "rule": "medical",
-                                "detail": f"unhedged medical term '{v.term}' in: {v.sentence}",
-                            }
-                            for v in unhedged
-                        ]
-                        attempts_log.append({
-                            "attempt": attempt,
-                            "kind": "medical",
-                            "mode": attempt_mode,
-                            "detail": f"post-polish unhedged medical terms: {terms}",
-                        })
-                        if attempt < args.max_attempts:
-                            log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
-                                f"post-polish medical validator: {terms} -> repair same draft", fh)
-                        continue
-                except Exception as exc:
-                    log(f"WARN #{t['rank']} {slug}: medical validator error (non-blocking): {exc}", fh)
+                if args.medical_llm_check:
+                    try:
+                        med_violations = _medical_check(
+                            markdown, api_key=api_key,
+                            model=args.medical_model,
+                            temperature=0.1, timeout=60,
+                        )
+                        unhedged = [v for v in med_violations if not v.hedged]
+                        if unhedged:
+                            terms = ", ".join(v.term for v in unhedged[:3])
+                            repair_markdown = markdown
+                            repair_issues = [
+                                {
+                                    "rule": "medical",
+                                    "detail": f"unhedged medical term '{v.term}' in: {v.sentence}",
+                                }
+                                for v in unhedged
+                            ]
+                            attempts_log.append({
+                                "attempt": attempt,
+                                "kind": "medical",
+                                "mode": attempt_mode,
+                                "detail": f"post-validator unhedged medical terms: {terms}",
+                            })
+                            if attempt < args.max_attempts:
+                                log(f"RETRY #{t['rank']} {slug} attempt {attempt}/{args.max_attempts}: "
+                                    f"medical validator: {terms} -> repair same draft", fh)
+                            continue
+                    except Exception as exc:
+                        log(f"WARN #{t['rank']} {slug}: medical validator error (non-blocking): {exc}", fh)
 
                 success = {
                     "attempt": attempt,

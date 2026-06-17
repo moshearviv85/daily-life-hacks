@@ -89,9 +89,9 @@ class PinBrief:
                 f"title must be ASCII-only (rendered on the pin image): "
                 f"non-ASCII chars {non_ascii!r} in {self.title!r}"
             )
-        _check_clean_text(self.title, "title")
-        _check_clean_text(self.alt, "alt")
-        _check_clean_text(self.description, "description")
+        _check_clean_text(self.title, "title", context="pin_title")
+        _check_clean_text(self.alt, "alt", context="pin_alt")
+        _check_clean_text(self.description, "description", context="pin_description")
         if self.title not in self.prompt:
             raise ValueError(
                 f"prompt must contain the title as a literal substring: {self.title!r}"

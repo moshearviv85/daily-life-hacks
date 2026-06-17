@@ -53,3 +53,23 @@ def test_new_pipeline_pin_alt_comes_from_alt_field_not_image_prompt():
 
     assert pset.pins[0].alt == "An overhead photo of a kitchen pantry with neatly arranged glass jars on a wooden shelf."
     assert "Render the text" not in pset.pins[0].alt
+
+
+def test_new_pipeline_pin_brief_rejects_will_thank_you_signoffs():
+    module = _load_module()
+    raw = _good_raw()
+    raw["pins"][0]["description"] = (
+        "Save this meal prep trick for Sunday night because your Sunday self will thank you after dinner."
+    )
+
+    try:
+        module._build_pin_brief_set("demo-article", raw)
+    except ValueError as exc:
+        assert "CP-08" in str(exc)
+    else:
+        raise AssertionError("expected will-thank-you phrase to fail pin brief validation")
+
+
+def test_new_pipeline_pin_brief_cli_accepts_db_argument():
+    source = MODULE_PATH.read_text(encoding="utf-8")
+    assert 'parser.add_argument("--db"' in source

@@ -1,6 +1,6 @@
 """End-to-end pipeline orchestrator — run all stages on a single topic.
 
-Seeds a topic into filtered_topics, writes an article, reviews it via LLM,
+Seeds a topic into filtered_topics, writes an article, optionally reviews it via LLM,
 generates hero + support + pin images, and deploys to disk. Each stage is a
 subprocess so failures are isolated and logs are visible.
 
@@ -29,6 +29,12 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 ENV_PATH = REPO_ROOT / ".env"
+
+sys.path.insert(0, str(SCRIPT_DIR))
+from lib.model_defaults import REVIEW_MODEL, WRITER_MODEL  # noqa: E402
+
+DEFAULT_WRITER_MODEL = WRITER_MODEL
+DEFAULT_REVIEW_MODEL = REVIEW_MODEL
 
 
 def load_env() -> None:
@@ -162,7 +168,7 @@ def init_brief_schema(db_path: str) -> None:
         con.close()
 
 
-def run_review(db_path: str, slug: str, api_key: str) -> bool:
+def run_review(db_path: str, slug: str, api_key: str, *, model_id: str = DEFAULT_REVIEW_MODEL) -> bool:
     """LLM review stage: reads write_outputs, reviews via OpenRouter, writes review_outputs."""
     log("--- Stage 2: LLM Review ---")
     sys.path.insert(0, str(SCRIPT_DIR))
@@ -192,7 +198,7 @@ def run_review(db_path: str, slug: str, api_key: str) -> bool:
     start = time.monotonic()
     try:
         resp = chat_completion(
-            api_key=api_key, model_id="google/gemini-2.5-flash",
+            api_key=api_key, model_id=model_id,
             system=system, user=user,
             temperature=0.2, max_tokens=8000, timeout=300,
         )
@@ -224,8 +230,8 @@ def run_review(db_path: str, slug: str, api_key: str) -> bool:
 
     run_id = conn.execute(
         "INSERT INTO review_runs (started_at, finished_at, status, review_model, article_count, notes) "
-        "VALUES (?, ?, 'done', 'google/gemini-2.5-flash', 1, 'pipeline orchestrator')",
-        (now_iso(), now_iso()),
+        "VALUES (?, ?, 'done', ?, 1, 'pipeline orchestrator')",
+        (now_iso(), now_iso(), model_id),
     ).lastrowid
 
     conn.execute(
@@ -234,10 +240,10 @@ def run_review(db_path: str, slug: str, api_key: str) -> bool:
         " reviewed_markdown, changes_json, changes_count, review_model, "
         " tokens_in, tokens_out, cost_usd, latency_ms, tier1_pass, "
         " tier2_warnings, status, error, attempts, created_at) "
-        "VALUES (?, ?, ?, ?, ?, ?, '[]', 0, 'google/gemini-2.5-flash', "
+        "VALUES (?, ?, ?, ?, ?, ?, '[]', 0, ?, "
         "        ?, ?, ?, ?, 1, '', 'ok', NULL, 1, ?)",
         (run_id, row["id"], slug, row["category"], row["markdown"],
-         reviewed_md, tokens_in, tokens_out, cost, latency, now_iso()),
+         reviewed_md, model_id, tokens_in, tokens_out, cost, latency, now_iso()),
     )
 
     conn.execute(
@@ -261,11 +267,13 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("topic", help="Topic string, e.g. 'crispy baked falafel with tahini sauce'")
     p.add_argument("--category", required=True, choices=["recipes", "nutrition", "tips"])
     p.add_argument("--db", default=str(DEFAULT_DB))
-    p.add_argument("--dry-run", action="store_true", help="Seed topic + write + review only, no images")
-    p.add_argument("--article-only", action="store_true", help="Write, review, and deploy the article draft only; no briefs or images")
+    p.add_argument("--dry-run", action="store_true", help="Seed topic + write only, no images or deploy")
+    p.add_argument("--article-only", action="store_true", help="Write and deploy the article draft only; no briefs or images")
     p.add_argument("--skip-images", action="store_true", help="Skip hero + support + pin image generation (saves API cost)")
     p.add_argument("--skip-deploy", action="store_true", help="Stop before deploying to disk")
-    p.add_argument("--model", default="google/gemini-2.5-flash")
+    p.add_argument("--model", default=DEFAULT_WRITER_MODEL)
+    p.add_argument("--review", action="store_true", help="Opt in to the LLM review stage. Off by default.")
+    p.add_argument("--review-model", default=DEFAULT_REVIEW_MODEL)
     args = p.parse_args(argv)
 
     load_env()
@@ -274,7 +282,7 @@ def main(argv: list[str] | None = None) -> int:
     if not api_key:
         log("ERROR: OPENROUTER_API_KEY not set")
         return 1
-    if not fal_key and not args.dry_run and not args.skip_images:
+    if not fal_key and not args.dry_run and not args.skip_images and not args.article_only:
         log("ERROR: FAL_KEY not set (needed for image generation)")
         return 1
 
@@ -306,15 +314,18 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     print()
 
-    # Stage 2: LLM Review
-    ok = run_review(args.db, slug, api_key)
-    if not ok:
-        log("PIPELINE FAILED at review stage")
-        return 1
-    print()
+    if args.review:
+        ok = run_review(args.db, slug, api_key, model_id=args.review_model)
+        if not ok:
+            log("PIPELINE FAILED at review stage")
+            return 1
+        print()
+    else:
+        log("SKIP Stage 2: LLM Review (opt-in only)")
+        print()
 
     if args.dry_run:
-        log("DRY RUN: stopping after write + review (no images, no deploy)")
+        log("DRY RUN: stopping after write and optional review (no images, no deploy)")
         log(f"Total time: {time.monotonic() - total_start:.1f}s")
         return 0
 
@@ -338,6 +349,7 @@ def main(argv: list[str] | None = None) -> int:
     ok = run_step("Stage 3: Hero Brief", [
         py, str(SCRIPT_DIR / "generate_hero_brief.py"),
         "--slug", slug,
+        "--db", args.db,
     ], timeout=120)
     if not ok:
         log("PIPELINE FAILED at hero brief stage")
@@ -348,6 +360,7 @@ def main(argv: list[str] | None = None) -> int:
     ok = run_step("Stage 4: Pin Briefs", [
         py, str(SCRIPT_DIR / "generate_pin_briefs.py"),
         "--slug", slug,
+        "--db", args.db,
     ], timeout=180)
     if not ok:
         log("PIPELINE FAILED at pin briefs stage")
@@ -359,6 +372,7 @@ def main(argv: list[str] | None = None) -> int:
         ok = run_step("Stage 5: Hero Image", [
             py, str(SCRIPT_DIR / "generate_images.py"),
             "--slug", slug,
+            "--db", args.db,
         ], timeout=300)
         if not ok:
             log("PIPELINE FAILED at hero image stage")
@@ -369,6 +383,7 @@ def main(argv: list[str] | None = None) -> int:
         ok = run_step("Stage 6: Pin Images", [
             py, str(SCRIPT_DIR / "generate_pin_images.py"),
             "--slug", slug,
+            "--db", args.db,
         ], timeout=600)
         if not ok:
             log("PIPELINE FAILED at pin images stage")

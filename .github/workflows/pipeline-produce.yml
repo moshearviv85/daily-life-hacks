@@ -23,6 +23,7 @@ env:
   PYTHONUNBUFFERED: "1"
   PIPELINE_TARGET_BRANCH: "staging"
   PIPELINE_DASHBOARD_BASE_URL: "https://staging.daily-life-hacks.pages.dev"
+  ARTICLE_WRITER_MODEL: ${{ vars.ARTICLE_WRITER_MODEL || 'minimax/minimax-m2.5' }}
 
 jobs:
   produce:
@@ -92,7 +93,7 @@ jobs:
           COUNT=$(echo "$TOPICS" | python -c "import json,sys; print(len(json.load(sys.stdin)))")
           echo "Producing $COUNT articles..."
           echo "$TOPICS" | python -c "
-          import json, sys, subprocess
+          import json, os, sys, subprocess
           topics = json.load(sys.stdin)
           failed = []
           produced = []
@@ -102,7 +103,8 @@ jobs:
                   sys.executable,
                   'scripts/NEW_PIPELINE_2026-05-08/run_pipeline.py',
                   t['topic'],
-                  '--category', t['category']
+                  '--category', t['category'],
+                  '--model', os.environ.get('ARTICLE_WRITER_MODEL', 'minimax/minimax-m2.5')
               ], capture_output=False)
               if result.returncode != 0:
                   print(f'ERROR: Pipeline failed for {t[\"topic\"]}', file=sys.stderr)

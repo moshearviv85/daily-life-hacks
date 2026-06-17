@@ -68,7 +68,7 @@ NO supplements of any kind: protein powder, collagen, greens powder, fiber powde
 Never use: {ai_words}
 
 ## Banned Sign-offs
-No: "Happy eating!", "Enjoy!", "Give it a try!", "Your gut will thank you!", "Your future self will thank you!", "You won't regret it!", "Bon appetit!", "Dig in!"
+No: "Happy eating!", "Enjoy!", "Give it a try!", "Your gut will thank you!", "Your body will thank you!", "Your stomach will thank you!", "Your future self will thank you!", "Your Sunday self will thank you!", "Your Monday self will thank you!", "You won't regret it!", "Bon appetit!", "Dig in!"
 """
 
 
@@ -195,7 +195,7 @@ def _hard_bans_section() -> str:
 {ai_words}
 
 # BANNED SIGN-OFFS
-No: "Happy eating!", "Enjoy!", "Give it a try!", "Your gut will thank you!", "Your future self will thank you!", "You won't regret it!", "Bon appetit!", "Dig in!"
+No: "Happy eating!", "Enjoy!", "Give it a try!", "Your gut will thank you!", "Your body will thank you!", "Your stomach will thank you!", "Your future self will thank you!", "Your Sunday self will thank you!", "Your Monday self will thank you!", "You won't regret it!", "Bon appetit!", "Dig in!"
 """
 
 
@@ -237,7 +237,7 @@ _STRUCTURE = """# ARTICLE SHAPE
 # QUALITY BAR
 - The article should feel like a capable friend talking at the kitchen counter, not like a wellness handout, SEO template, or school essay.
 - Do not use cutesy generic headings like "The Protein Play", "Fiber Fanatics", "The Beneficial Fat Factor", "The Balanced Bowl", or "Double-Edged Spoon".
-- Do not use "future self" anywhere. Do not end with "your body will thank you", "your future self will thank you", "that is the magic", or any similar greeting-card wrap-up.
+- Do not use "future self" anywhere. Do not end with "your body will thank you", "your stomach will thank you", "your future self will thank you", "your Sunday self will thank you", "that is the magic", or any similar greeting-card wrap-up.
 - Do not personify nutrients or the body. Avoid lines like "protein tells your brain", "fiber keeps your body happy", or "fat helps your body absorb nutrients" unless carefully hedged and genuinely necessary.
 - For nutrition topics, prefer food mechanics over body-system claims: portion cues, texture, satiety, prep friction, ingredient ratios, shopping choices, and what actually happens at dinner.
 - If the topic is really about cooking, flavor, shopping, storage, or meal planning, keep the article grounded there. Do not turn it into a medical or wellness article.

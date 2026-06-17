@@ -466,6 +466,22 @@ class TestArticleStructural:
         rule_ids = {v.rule_id for v in violations}
         assert "CP-09" in rule_ids
 
+    @pytest.mark.parametrize(
+        "phrase",
+        [
+            "Your future self will thank you.",
+            "Your Sunday self will thank you.",
+            "Your Monday self will thank you.",
+            "Your body will thank you.",
+            "Your gut will thank you.",
+            "Your stomach will thank you.",
+        ],
+    )
+    def test_will_thank_you_signoffs_trigger_cp08(self, phrase):
+        violations = validate(phrase, context="pin_description")
+        rule_ids = {v.rule_id for v in violations}
+        assert "CP-08" in rule_ids
+
     def test_no_s08_without_slug(self):
         # S-08 skipped when slug=None
         violations = validate(GOOD_ARTICLE, context="article", slug=None)

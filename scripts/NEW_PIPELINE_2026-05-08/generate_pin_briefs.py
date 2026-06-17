@@ -1,7 +1,7 @@
 """Generate 4-pin briefs for one article. Writes to pin_briefs table in
 pipeline-data/topic-research.sqlite (no JSONL).
 
-Reads the article markdown (from SQL or disk), calls Gemini once via
+Reads the article markdown (from SQL or disk), calls the configured LLM via
 OpenRouter, derives pin slugs from pin titles in Python, validates the
 response against PinBriefSet (4 unique pins, prompt must contain the title),
 and upserts 4 rows into pin_briefs (one row per pin, each in its own
@@ -32,6 +32,7 @@ if str(_SCRIPT_DIR) not in sys.path:
 REPO_ROOT = _SCRIPT_DIR.parent.parent
 
 from lib import brief_store  # noqa: E402
+from lib.model_defaults import BRIEF_MODEL  # noqa: E402
 from lib.pin_brief import PinBrief, PinBriefSet  # noqa: E402
 from lib.slugify import pin_slug_from_title  # noqa: E402
 from lib.article_lookup import markdown_for_slug  # noqa: E402
@@ -47,7 +48,7 @@ ARTICLES_DIR = REPO_ROOT / "src" / "data" / "articles"
 ENV_PATH = REPO_ROOT / ".env"
 DEFAULT_DB_PATH = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 
-DEFAULT_MODEL = "google/gemini-2.5-flash"
+DEFAULT_MODEL = BRIEF_MODEL
 DEFAULT_TEMPERATURE = 0.7
 DEFAULT_MAX_TOKENS = 2000
 DEFAULT_TIMEOUT = 90
@@ -82,11 +83,14 @@ Produce the descriptions JSON now (one per pin, in the same order).
 
 # ── article ingestion ───────────────────────────────────────────────────────
 
-def load_article(slug: str) -> dict:
+def load_article(slug: str, *, db_path: Path | str = DEFAULT_DB_PATH) -> dict:
     """Load article markdown for a slug. SQL is the source of truth
     (review_outputs.reviewed_markdown → write_outputs.markdown); disk md
     is a fallback only."""
-    raw = markdown_for_slug(slug)
+    try:
+        raw = markdown_for_slug(slug, db_path=Path(db_path))
+    except TypeError:
+        raw = markdown_for_slug(slug)
     if not raw:
         path = ARTICLES_DIR / f"{slug}.md"
         if not path.exists():
@@ -198,7 +202,7 @@ def call_llm(article: dict) -> dict:
 
 
 def call_llm_for_descriptions(article: dict, pin_titles: list[str]) -> dict:
-    """Call Gemini via OpenRouter for description-only backfill. Returns
+    """Call the configured LLM via OpenRouter for description-only backfill. Returns
     parsed JSON dict with 'descriptions' key (list of 4 strings)."""
     load_env_file(ENV_PATH)
     api_key = os.environ.get("OPENROUTER_API_KEY", "")
@@ -263,12 +267,17 @@ def _build_pin_brief_set(slug: str, raw: dict) -> PinBriefSet:
     return PinBriefSet(article_slug=slug, pins=pins)
 
 
-def generate_pin_briefs(slug: str, *, llm_call=call_llm) -> PinBriefSet:
+def generate_pin_briefs(
+    slug: str,
+    *,
+    llm_call=call_llm,
+    db_path: Path | str = DEFAULT_DB_PATH,
+) -> PinBriefSet:
     """Generate a 4-pin set for one article. Retries on stochastic validation
     failures (banned word, em-dash, etc.) up to MAX_VALIDATION_RETRIES times,
     since the LLM is sampled at temperature > 0 - a fresh sample usually passes.
     Hard errors (article missing, malformed LLM JSON shape) are not retried."""
-    article = load_article(slug)
+    article = load_article(slug, db_path=db_path)
     last_err: ValueError | None = None
     for attempt in range(1, MAX_VALIDATION_RETRIES + 1):
         raw = llm_call(article)
@@ -390,7 +399,7 @@ def backfill_descriptions(
             if not p.get(k):
                 raise ValueError(f"pin[{i}].{k} missing in record for {slug!r}")
     pin_titles = [p["title"] for p in legacy_pins]
-    article = load_article(slug)
+    article = load_article(slug, db_path=db_path)
     last_err: ValueError | None = None
     for attempt in range(1, MAX_VALIDATION_RETRIES + 1):
         raw = llm_call(article, pin_titles)
@@ -438,6 +447,7 @@ def main(argv: list[str] | None = None, *, llm_call=None, db_path: Path | str = 
     parser.add_argument("--all", action="store_true", help="generate for all articles missing pin briefs")
     parser.add_argument("--dry-run", action="store_true", help="print result, do not write to SQL")
     parser.add_argument("--force", action="store_true", help="overwrite existing rows for this slug")
+    parser.add_argument("--db", default=None, help="SQLite DB path")
     parser.add_argument(
         "--description-only",
         action="store_true",
@@ -445,12 +455,13 @@ def main(argv: list[str] | None = None, *, llm_call=None, db_path: Path | str = 
              "preserves slug, title, prompt, alt. Does not regenerate them.",
     )
     args = parser.parse_args(argv)
+    active_db_path = Path(args.db) if args.db else Path(db_path)
 
     if not args.slug and not args.all:
         parser.error("either --slug or --all is required")
 
     if args.all:
-        con = brief_store.connect(db_path)
+        con = brief_store.connect(active_db_path)
         try:
             missing = brief_store.list_missing_pin_briefs(con)
         finally:
@@ -465,7 +476,7 @@ def main(argv: list[str] | None = None, *, llm_call=None, db_path: Path | str = 
             try:
                 result = main(
                     ["--slug", slug] + (["--dry-run"] if args.dry_run else []) + (["--force"] if args.force else []),
-                    llm_call=llm_call, db_path=db_path,
+                    llm_call=llm_call, db_path=active_db_path,
                 )
                 if result != 0:
                     failed += 1
@@ -476,10 +487,10 @@ def main(argv: list[str] | None = None, *, llm_call=None, db_path: Path | str = 
 
     if args.description_only:
         active_llm = llm_call if llm_call is not None else call_llm_for_descriptions
-        pset = backfill_descriptions(args.slug, llm_call=active_llm, db_path=db_path)
+        pset = backfill_descriptions(args.slug, llm_call=active_llm, db_path=active_db_path)
         record = pin_brief_set_to_record(pset)
         if not args.dry_run:
-            con = brief_store.connect(db_path)
+            con = brief_store.connect(active_db_path)
             try:
                 _write_pin_brief_set(con, pset, model_id=DEFAULT_MODEL)
             finally:
@@ -490,7 +501,7 @@ def main(argv: list[str] | None = None, *, llm_call=None, db_path: Path | str = 
     active_llm = llm_call if llm_call is not None else call_llm
 
     if not args.force and not args.dry_run:
-        con = brief_store.connect(db_path)
+        con = brief_store.connect(active_db_path)
         try:
             existing = brief_store.list_pin_briefs(con, args.slug, only_ok=True)
         finally:
@@ -500,10 +511,10 @@ def main(argv: list[str] | None = None, *, llm_call=None, db_path: Path | str = 
             return 0
 
     try:
-        pset = generate_pin_briefs(args.slug, llm_call=active_llm)
+        pset = generate_pin_briefs(args.slug, llm_call=active_llm, db_path=active_db_path)
     except (ValueError, RuntimeError) as exc:
         if not args.dry_run:
-            con = brief_store.connect(db_path)
+            con = brief_store.connect(active_db_path)
             try:
                 _record_failure_for_all_slots(
                     con, args.slug, str(exc), model_id=DEFAULT_MODEL
@@ -522,7 +533,7 @@ def main(argv: list[str] | None = None, *, llm_call=None, db_path: Path | str = 
         print(json.dumps(record, ensure_ascii=False, indent=2))
         return 0
 
-    con = brief_store.connect(db_path)
+    con = brief_store.connect(active_db_path)
     try:
         if args.force:
             brief_store.delete_pin_briefs(con, args.slug)

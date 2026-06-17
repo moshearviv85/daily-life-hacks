@@ -42,7 +42,7 @@ def _table_exists(con: sqlite3.Connection, name: str) -> bool:
 
 def fetch_articles_from_sql(db_path: Path | str) -> list[dict]:
     """Return [{slug, title, category, markdown, image_filename}] for every
-    reviewed article. Prefers review_outputs.reviewed_markdown over
+    written or reviewed article. Prefers review_outputs.reviewed_markdown over
     write_outputs.markdown."""
     con = sqlite3.connect(str(db_path))
     try:
@@ -63,10 +63,10 @@ def fetch_articles_from_sql(db_path: Path | str) -> list[dict]:
             f"{markdown_expr} AS markdown "
             "FROM write_outputs w "
             f"{review_join}"
-            "WHERE w.status = 'reviewed' AND w.disqualified=0 "
+            "WHERE w.status IN ('written', 'reviewed') AND w.disqualified=0 "
             "AND w.rowid = ("
             "  SELECT w2.rowid FROM write_outputs w2 "
-            "  WHERE w2.slug = w.slug AND w2.status = 'reviewed' AND w2.disqualified=0 "
+            "  WHERE w2.slug = w.slug AND w2.status IN ('written', 'reviewed') AND w2.disqualified=0 "
             "  ORDER BY w2.rowid DESC LIMIT 1"
             ") "
             "ORDER BY w.topic_rank ASC"

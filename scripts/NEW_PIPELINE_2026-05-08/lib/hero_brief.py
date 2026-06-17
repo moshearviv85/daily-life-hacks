@@ -5,20 +5,16 @@ Validation rules from lib.content_policy (single source of truth).
 """
 from __future__ import annotations
 
-import re
 from dataclasses import dataclass
 
-from lib.content_policy import EM_DASH, AI_WORDS_BANNED
+from lib.validator import validate
 
 
-def _check_clean_text(text: str, field_name: str) -> None:
-    if EM_DASH in text:
-        raise ValueError(f"{field_name} contains em-dash (U+2014)")
-    lowered = text.lower()
-    for banned in AI_WORDS_BANNED:
-        pattern = r"\b" + re.escape(banned.lower()) + r"\b"
-        if re.search(pattern, lowered):
-            raise ValueError(f"{field_name} contains banned AI word: {banned!r}")
+def _check_clean_text(text: str, field_name: str, *, context: str = "hero_alt") -> None:
+    tier1 = [v for v in validate(text, context=context) if v.tier == 1]
+    if tier1:
+        details = ", ".join(f"{v.rule_id}: {v.detail}" for v in tier1[:3])
+        raise ValueError(f"{field_name} fails content policy: {details}")
 
 
 @dataclass
@@ -36,4 +32,4 @@ class HeroBrief:
             raise ValueError(f"alt too short ({len(self.alt)} < 30 chars)")
         if len(self.alt) > 200:
             raise ValueError(f"alt too long ({len(self.alt)} > 200 chars)")
-        _check_clean_text(self.alt, "alt")
+        _check_clean_text(self.alt, "alt", context="hero_alt")

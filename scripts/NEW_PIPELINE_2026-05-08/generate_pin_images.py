@@ -175,9 +175,10 @@ def main(argv: list[str] | None = None) -> int:
     g.add_argument("--all", action="store_true", help="every article with pin_briefs in SQL")
     ap.add_argument("--force", action="store_true", help="overwrite existing files")
     ap.add_argument("--dry-run", action="store_true", help="print plan, no FAL")
+    ap.add_argument("--db", default=str(DEFAULT_DB), help="SQLite DB path")
     args = ap.parse_args(argv)
 
-    records = load_pin_records(args.slug)
+    records = load_pin_records(args.slug, args.db)
     if not records:
         print("no pin_briefs rows found"
               + (f" for slug={args.slug!r}" if args.slug else ""), file=sys.stderr)

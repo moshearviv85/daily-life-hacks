@@ -62,7 +62,7 @@ class TestFetchArticlesReadsReviewedMarkdown:
         assert len(articles) == 1
         assert "Original body" in articles[0]["markdown"]
 
-    def test_written_only_excluded(self, tmp_path):
+    def test_written_only_included_when_review_is_not_enabled(self, tmp_path):
         db_path = str(tmp_path / "test.sqlite")
         con = _create_test_db(db_path)
         con.execute(
@@ -75,7 +75,8 @@ class TestFetchArticlesReadsReviewedMarkdown:
 
         from lib.d1_sources import fetch_articles_from_sql
         articles = fetch_articles_from_sql(db_path)
-        assert len(articles) == 0
+        assert len(articles) == 1
+        assert articles[0]["title"] == "Written Only"
 
     def test_disqualified_excluded(self, tmp_path):
         db_path = str(tmp_path / "test.sqlite")

@@ -1,7 +1,7 @@
 """Generate hero image brief for one article. Writes to hero_briefs table in
 pipeline-data/topic-research.sqlite (no JSONL).
 
-Reads the article markdown (from SQL or disk), calls Gemini once via
+Reads the article markdown (from SQL or disk), calls the configured LLM via
 OpenRouter, validates the response against HeroBrief, and upserts one row
 into hero_briefs.
 
@@ -29,6 +29,7 @@ if str(_SCRIPT_DIR) not in sys.path:
 REPO_ROOT = _SCRIPT_DIR.parent.parent
 
 from lib import brief_store  # noqa: E402
+from lib.model_defaults import BRIEF_MODEL  # noqa: E402
 from lib.hero_brief import HeroBrief  # noqa: E402
 from lib.article_lookup import markdown_for_slug  # noqa: E402
 
@@ -36,7 +37,7 @@ ARTICLES_DIR = REPO_ROOT / "src" / "data" / "articles"
 ENV_PATH = REPO_ROOT / ".env"
 DEFAULT_DB_PATH = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 
-DEFAULT_MODEL = "google/gemini-2.5-flash"
+DEFAULT_MODEL = BRIEF_MODEL
 DEFAULT_TEMPERATURE = 0.85
 DEFAULT_MAX_TOKENS = 2000
 DEFAULT_TIMEOUT = 60
@@ -110,11 +111,14 @@ def first_paragraphs(body: str, max_words: int = 180) -> str:
     return " ".join(words[:max_words]) + " ..."
 
 
-def load_article(slug: str) -> dict:
+def load_article(slug: str, *, db_path: Path | str = DEFAULT_DB_PATH) -> dict:
     """Load article markdown for a slug. SQL is the source of truth
     (review_outputs.reviewed_markdown → write_outputs.markdown); disk md
     is a fallback only."""
-    raw = markdown_for_slug(slug)
+    try:
+        raw = markdown_for_slug(slug, db_path=Path(db_path))
+    except TypeError:
+        raw = markdown_for_slug(slug)
     if not raw:
         path = ARTICLES_DIR / f"{slug}.md"
         if not path.exists():
@@ -182,7 +186,7 @@ def load_env_file(path: Path) -> None:
 
 
 def call_llm(article: dict) -> dict:
-    """Call Gemini via OpenRouter, return parsed JSON dict."""
+    """Call the configured LLM via OpenRouter, return parsed JSON dict."""
     load_env_file(ENV_PATH)
     api_key = os.environ.get("OPENROUTER_API_KEY", "")
     if not api_key:
@@ -209,12 +213,17 @@ def call_llm(article: dict) -> dict:
 MAX_VALIDATION_RETRIES = 5
 
 
-def generate_hero_brief(slug: str, *, llm_call=call_llm) -> HeroBrief:
+def generate_hero_brief(
+    slug: str,
+    *,
+    llm_call=call_llm,
+    db_path: Path | str = DEFAULT_DB_PATH,
+) -> HeroBrief:
     """Generate a hero brief for one article. Retries on stochastic validation
     failures (banned word in alt, em-dash, length out of range) up to
     MAX_VALIDATION_RETRIES times — temperature is non-zero so a fresh sample
     usually passes. Hard errors (article missing) are not retried."""
-    article = load_article(slug)
+    article = load_article(slug, db_path=db_path)
     last_err: ValueError | None = None
     for attempt in range(1, MAX_VALIDATION_RETRIES + 1):
         try:
@@ -252,13 +261,15 @@ def main(
     parser.add_argument("--all", action="store_true", help="generate for all articles missing hero briefs")
     parser.add_argument("--dry-run", action="store_true", help="print result, do not write to SQL")
     parser.add_argument("--force", action="store_true", help="overwrite existing row for this slug")
+    parser.add_argument("--db", default=None, help="SQLite DB path")
     args = parser.parse_args(argv)
+    active_db_path = Path(args.db) if args.db else Path(db_path)
 
     if not args.slug and not args.all:
         parser.error("either --slug or --all is required")
 
     if args.all:
-        con = brief_store.connect(db_path)
+        con = brief_store.connect(active_db_path)
         try:
             slugs = brief_store.list_missing_hero_briefs(con)
         finally:
@@ -272,7 +283,7 @@ def main(
             print(f"[{i}/{len(slugs)}] {slug}", file=sys.stderr)
             try:
                 result = main(["--slug", slug] + (["--dry-run"] if args.dry_run else []),
-                              llm_call=llm_call, db_path=db_path)
+                              llm_call=llm_call, db_path=active_db_path)
                 if result != 0:
                     failed += 1
             except (ValueError, RuntimeError):
@@ -281,7 +292,7 @@ def main(
         return 1 if failed else 0
 
     if not args.force and not args.dry_run:
-        con = brief_store.connect(db_path)
+        con = brief_store.connect(active_db_path)
         try:
             already_ok = _hero_exists(con, args.slug)
         finally:
@@ -291,10 +302,10 @@ def main(
             return 0
 
     try:
-        brief = generate_hero_brief(args.slug, llm_call=llm_call)
+        brief = generate_hero_brief(args.slug, llm_call=llm_call, db_path=active_db_path)
     except (ValueError, RuntimeError) as exc:
         if not args.dry_run:
-            con = brief_store.connect(db_path)
+            con = brief_store.connect(active_db_path)
             try:
                 brief_store.record_failure_hero(
                     con, args.slug, str(exc)[:500], model_id=DEFAULT_MODEL
@@ -317,7 +328,7 @@ def main(
         print(json.dumps(record, ensure_ascii=False, indent=2))
         return 0
 
-    con = brief_store.connect(db_path)
+    con = brief_store.connect(active_db_path)
     try:
         _write_hero_brief(con, brief, model_id=DEFAULT_MODEL)
     finally:
