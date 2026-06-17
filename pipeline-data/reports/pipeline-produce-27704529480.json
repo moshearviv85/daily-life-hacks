@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "article_only": false,
+  "hero_only": false,
+  "checks": [
+    {
+      "slug": "sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}
