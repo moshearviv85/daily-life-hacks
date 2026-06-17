@@ -26,6 +26,19 @@ def test_quality_gate_rejects_medical_or_diet_program_framing():
     assert "medical" in reason
 
 
+def test_quality_gate_rejects_supplement_and_powder_topics():
+    for topic in [
+        "Decoding Protein Powder: Do You Need It and Which Kind to Choose?",
+        "best whey protein for breakfast smoothies",
+        "meal replacement shakes vs real food",
+    ]:
+        ok, reason, score = mod.quality_score_topic(topic, [])
+
+        assert ok is False, topic
+        assert "supplement/powder" in reason
+        assert score == 0.0
+
+
 def test_quality_gate_rejects_postpartum_audience_framing():
     ok, reason, _ = mod.quality_score_topic("meal prep freezer meals for postpartum", [])
 
@@ -108,6 +121,7 @@ def test_quality_gate_accepts_specific_new_seed_families():
         "meal prep rotisserie chicken rice bowls",
         "how to keep salmon moist in the oven",
         "low sodium pantry swaps for busy weeknight dinners",
+        "high protein breakfasts with eggs yogurt and beans",
     ]:
         ok, reason, score = mod.quality_score_topic(topic, [])
         assert ok is True, topic

@@ -24,6 +24,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
+from lib.content_policy import SUPPLEMENT_PATTERNS
 from stage_1_5.openrouter import chat_completion, extract_text
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -103,6 +104,20 @@ LOW_INTENT_PHRASES = [
     "worksheet",
     "worksheets",
     "youtube",
+]
+
+SUPPLEMENT_TOPIC_PATTERNS = [
+    *SUPPLEMENT_PATTERNS,
+    r"\bwhey\b",
+    r"\bcasein\b",
+    r"\bcreatine\b",
+    r"\bbcaas?\b",
+    r"\bprotein\s+shakes?\b",
+    r"\bprotein\s+supplements?\b",
+    r"\bsupplements?\b",
+    r"\bmeal\s+replacements?\b",
+    r"\bmass\s+gainers?\b",
+    r"\bpowdered\s+protein\b",
 ]
 
 BROAD_TOPIC_PATTERNS = [
@@ -203,6 +218,14 @@ def topic_tokens(topic: str) -> set[str]:
         for token in normalize_topic(topic).split()
         if len(token) > 2 and token not in STOPWORDS
     }
+
+
+def supplement_topic_rejection(topic: str) -> str | None:
+    normalized = normalize_topic(topic)
+    for pattern in SUPPLEMENT_TOPIC_PATTERNS:
+        if re.search(pattern, normalized):
+            return "supplement/powder topic not suitable for food-first DLH pipeline"
+    return None
 
 
 def specific_food_tokens(tokens: set[str]) -> set[str]:
@@ -312,6 +335,10 @@ def categorize_topic(topic: str) -> str:
 def quality_score_topic(topic: str, known_titles: list[str]) -> tuple[bool, str, float]:
     normalized = normalize_topic(topic)
     tokens = topic_tokens(topic)
+
+    supplement_reason = supplement_topic_rejection(topic)
+    if supplement_reason:
+        return False, supplement_reason, 0.0
 
     for phrase in OFF_TOPIC_PHRASES:
         if phrase in normalized:

@@ -39,3 +39,29 @@ def test_select_topics_applies_gate_to_explicit_topic_ids():
 
     assert [t["id"] for t in selected] == [11]
     assert [t["id"] for t in rejected] == [10]
+
+
+def test_select_topics_rejects_supplement_topic_ids_even_when_selected():
+    topics = [
+        {
+            "id": 458,
+            "topic": "Decoding Protein Powder: Do You Need It and Which Kind to Choose?",
+            "category": "nutrition",
+        },
+        {
+            "id": 459,
+            "topic": "high protein breakfasts with eggs yogurt and beans",
+            "category": "nutrition",
+        },
+    ]
+
+    selected, rejected = mod.select_topics(
+        topics,
+        count=2,
+        topic_ids={458, 459},
+        known_titles=[],
+    )
+
+    assert [t["id"] for t in selected] == [459]
+    assert [t["id"] for t in rejected] == [458]
+    assert "supplement/powder" in rejected[0]["reject_reason"]

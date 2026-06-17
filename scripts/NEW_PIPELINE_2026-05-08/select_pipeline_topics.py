@@ -43,14 +43,6 @@ def select_topics(
     seen_titles = list(known_titles if known_titles is not None else read_article_titles())
 
     for topic in candidates:
-        if wanted_ids:
-            selected.append({
-                **topic,
-                "quality_reason": "manual topic_ids selection bypassed deterministic quality gate",
-                "quality_score": topic.get("dedup_score", 1.0),
-            })
-            seen_titles.append(str(topic.get("topic", "")))
-            continue
         ok, reason, score = quality_score_topic(str(topic.get("topic", "")), seen_titles)
         if not ok:
             rejected.append({
@@ -58,6 +50,14 @@ def select_topics(
                 "reject_reason": reason,
                 "dedup_score": topic.get("dedup_score", score),
             })
+            continue
+        if wanted_ids:
+            selected.append({
+                **topic,
+                "quality_reason": "manual topic_ids selection passed deterministic quality gate",
+                "quality_score": topic.get("dedup_score", score),
+            })
+            seen_titles.append(str(topic.get("topic", "")))
             continue
         selected.append({
             **topic,

@@ -41,7 +41,7 @@ DEFAULT_SEEDS = [
     "high fiber lunch ideas",
     "low sodium pantry swaps",
     "fiber rich snacks",
-    "high protein breakfast without protein powder",
+    "high protein breakfast eggs yogurt beans",
 ]
 
 
