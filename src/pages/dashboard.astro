@@ -3136,7 +3136,7 @@ function renderPipelineTopicsModal(topics) {
       <div style="display:flex;align-items:center;gap:.45rem;flex-wrap:wrap">
         <button class="btn btn-sm" onclick="updateSelectedTopics('approve')">Approve</button>
         <button class="btn btn-sm" onclick="updateSelectedTopics('reject')" style="background:#ef4444;color:#fff;border-color:#ef4444">Reject</button>
-        <button class="btn btn-sm" onclick="produceSelectedTopics()" style="background:#16a34a;color:#fff;border-color:#16a34a">Produce Selected to Staging</button>
+        <button class="btn btn-sm" onclick="produceSelectedTopics()" style="background:#16a34a;color:#fff;border-color:#16a34a">Produce 1 Selected to Staging</button>
         <button class="btn btn-sm" onclick="deleteVisiblePendingTopics()" ${deleteDisabled ? 'disabled' : ''} title="Deletes only pending/queued topics in the current filtered view. Approved and produced topics are never deleted." style="background:#991b1b;color:#fff;border-color:#991b1b;${deleteDisabled ? 'opacity:.45;cursor:not-allowed' : ''}">${deleteLabel}</button>
         <button class="btn btn-sm" onclick="resetPipelineTopicBank()" ${sortedTopics.length ? '' : 'disabled'} title="Deletes every row from pipeline_topics only. Articles and pins are not deleted." style="background:#450a0a;color:#fff;border-color:#450a0a;${sortedTopics.length ? '' : 'opacity:.45;cursor:not-allowed'}">Clear topic bank (${sortedTopics.length})</button>
       </div>
@@ -3682,8 +3682,12 @@ async function produceSelectedTopics() {
     alert('Select at least one topic first.');
     return;
   }
+  if (ids.length > 1) {
+    alert('Produce Selected is limited to 1 topic per run. Clear the selection and choose exactly one topic.');
+    return;
+  }
 
-  const ok = confirm(`Generate ${ids.length} selected topic(s) to staging?\n\nSelected topics will be approved first if needed. This uses staging D1 topics and AI provider credits.`);
+  const ok = confirm(`Generate this selected topic to staging?\n\nThe topic will be approved first if needed. This uses staging D1 topics and AI provider credits.`);
   if (!ok) return;
 
   produceSelectedTopicsInFlight = true;
@@ -3700,7 +3704,7 @@ async function produceSelectedTopics() {
     const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'produce', count: ids.length, topic_ids: ids }),
+      body: JSON.stringify({ action: 'produce', count: 1, topic_ids: ids }),
     });
     const data = await res.json();
     if (!res.ok || !data.ok) {

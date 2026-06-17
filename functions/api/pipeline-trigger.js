@@ -179,7 +179,13 @@ export async function onRequestPost(context) {
     }
     inputs.limit = String(limit);
   }
-  if (body.count) inputs.count = String(body.count);
+  if (action === "produce") {
+    const count = Number.parseInt(String(body.count || 1), 10);
+    if (!Number.isInteger(count) || count < 1 || count > 3) {
+      return json({ error: "produce count must be an integer from 1 to 3" }, 400);
+    }
+    inputs.count = String(count);
+  }
   if (body.category) {
     if (!["recipes", "nutrition", "tips"].includes(body.category)) {
       return json({ error: "category must be recipes, nutrition, or tips" }, 400);
@@ -206,6 +212,10 @@ export async function onRequestPost(context) {
     if (topicIds.length === 0) {
       return json({ error: "topic_ids must contain positive integers" }, 400);
     }
+    if (topicIds.length > 1) {
+      return json({ error: "selected topic production is limited to one topic per run" }, 400);
+    }
+    inputs.count = "1";
     inputs.topic_ids = topicIds.join(",");
   }
 
