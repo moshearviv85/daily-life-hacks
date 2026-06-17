@@ -10,6 +10,7 @@ No third-party SDK. Uses only stdlib so the script stays portable.
 from __future__ import annotations
 
 import json
+import http.client
 import time
 import urllib.error
 import urllib.request
@@ -124,6 +125,8 @@ def chat_completion(
         raise OpenRouterError(f"HTTP {exc.code}: {err_body[:500]}") from exc
     except urllib.error.URLError as exc:
         raise OpenRouterError(f"network error: {exc}") from exc
+    except (http.client.IncompleteRead, TimeoutError, ConnectionError, OSError) as exc:
+        raise OpenRouterError(f"network incomplete read: {exc}") from exc
 
     try:
         return json.loads(raw)
@@ -220,5 +223,6 @@ def _is_retryable(msg: str) -> bool:
         return False
     return any(kw in lower for kw in (
         "timeout", "timed out", "network", "http 5", "http 408", "http 429",
-        "temporarily", "overloaded", "bad gateway",
+        "temporarily", "overloaded", "bad gateway", "incomplete read",
+        "invalid json response", "chunked",
     ))

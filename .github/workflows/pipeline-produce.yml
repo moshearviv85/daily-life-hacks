@@ -218,5 +218,5 @@ jobs:
       - name: Fail if no articles were produced
         if: steps.produce.outputs.has_produced == 'false'
         run: |
-          echo "No articles passed quality checks. Failed topics remain approved for retry and D1 was synced."
+          echo "No articles were produced. Failed topics remain approved for retry and D1 was synced."
           exit 1
