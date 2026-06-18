@@ -3789,13 +3789,19 @@ function renderPipelineTable(filter) {
     const subStyle = articleAvailable ? "color:var(--muted);text-decoration:none" : "color:var(--muted);text-decoration:none;cursor:default";
     const subLabel = articleAvailable ? "staging" : "not built on staging yet";
     const localLabel = articleAvailable ? "local/prod path" : "pipeline record only";
-    const hasProductionGap = IS_PRODUCTION_DASHBOARD
-      && articleAvailable
-      && (!existsInBuild || (Array.isArray(a.pins) && a.pins.some((pin, idx) => !builtPinSlugs.has(pin.pin_slug || `${a.slug}_v${idx + 1}`))));
-    const promoteAction = hasProductionGap
-      ? `<button onclick="promoteStagingToProduction('${a.slug}')"
-          title="Run the staging promotion workflow before queueing production pins"
-          style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.16rem .42rem;font-size:.65rem;font-weight:700;cursor:pointer">Promote to Production</button>`
+    const pinSlugs = Array.isArray(a.pins)
+      ? a.pins.map((pin, idx) => pin.pin_slug || `${a.slug}_v${idx + 1}`)
+      : [];
+    const productionAssetsReady = existsInBuild
+      && pinSlugs.length > 0
+      && pinSlugs.every(slug => builtPinSlugs.has(slug));
+    const publishAction = articleAssetsReady(a)
+      ? (IS_PRODUCTION_DASHBOARD && productionAssetsReady
+        ? `<span title="This article and its pipeline pin images are already present on production"
+            style="display:inline-block;margin-top:.25rem;padding:.16rem .42rem;border-radius:5px;background:#dcfce7;color:#166534;font-size:.65rem;font-weight:800">Live on Production</span>`
+        : `<button id="pipeline-publish-btn-${a.slug}" onclick="publishPipelineArticle('${a.slug}')"
+            title="${IS_PRODUCTION_DASHBOARD ? 'Publish this reviewed staging article to production. Pinterest pins are not posted.' : 'Publishing is locked on staging. Open the production dashboard to publish.'}"
+            style="margin-top:.25rem;border:1px solid #2563eb;background:#2563eb;color:#fff;border-radius:5px;padding:.16rem .42rem;font-size:.65rem;font-weight:800;cursor:pointer">Publish Article</button>`)
       : '';
     const canApproveArticle = articleAvailable
       && ['reviewed', 'deployed'].includes(a.stage)
@@ -3825,7 +3831,7 @@ function renderPipelineTable(filter) {
         <div id="pipeline-hero-status-${a.slug}" style="display:none;margin-top:.22rem;max-width:150px;font-size:.62rem;line-height:1.25;color:#92400e"></div></div>` : ''}
         ${supportAvailable ? `<div data-pipeline-support="${a.slug}"><a href="${supportDisplaySrc}" target="_blank" rel="noopener"><img src="${supportDisplaySrc}" alt="${escapeHtml(a.slug)} support" loading="lazy" onerror="var p=this.closest('[data-pipeline-support]');if(p)p.remove();" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.35rem"></a>
         <div style="margin-top:.12rem;font-size:.6rem;line-height:1.2;color:var(--muted)">support image</div></div>` : ''}
-        ${promoteAction}
+        ${publishAction}
         ${articleApproval}
       </td>
       <td>${a.category}</td>
@@ -4257,7 +4263,7 @@ async function approveSelectedPipelinePins() {
 
 async function promoteStagingToProduction(slug = '') {
   if (!pw) return;
-  const ok = confirm(`Promote staging to production now?\n\n${slug ? `Triggered from: ${slug}\n\n` : ''}This runs the promotion workflow, verifies the staging build, then fast-forwards main to staging. It does not post to Pinterest.`);
+  const ok = confirm(`${slug ? 'Publish this reviewed article to production?' : 'Promote staging to production now?'}\n\n${slug ? `Triggered from: ${slug}\n\n` : ''}This runs the promotion workflow, verifies the staging build, then fast-forwards main to staging. If staging contains more reviewed changes, those changes move too. It does not post to Pinterest.`);
   if (!ok) return;
 
   const statusEl = document.getElementById('pipeline-trigger-status');
@@ -4289,6 +4295,22 @@ async function promoteStagingToProduction(slug = '') {
     statusEl.style.color = '#b91c1c';
     statusEl.textContent = `Failed: ${e.message}`;
   }
+}
+
+async function publishPipelineArticle(slug) {
+  if (!pw) return;
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  if (!IS_PRODUCTION_DASHBOARD) {
+    const dashboardUrl = `https://www.daily-life-hacks.com/dashboard/`;
+    statusEl.style.display = '';
+    statusEl.style.background = '#fff7ed';
+    statusEl.style.borderColor = '#fed7aa';
+    statusEl.style.color = '#92400e';
+    statusEl.innerHTML = `Publishing is locked on staging. Open the <a href="${dashboardUrl}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;font-weight:800">production dashboard</a>, then use Publish Article for ${escapeHtml(slug)}.`;
+    statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  await promoteStagingToProduction(slug);
 }
 
 async function approvePipelinePin(pinSlug, options = {}) {
@@ -4378,6 +4400,7 @@ window.regenerateHeroImage = regenerateHeroImage;
 window.approveSelectedPipelinePins = approveSelectedPipelinePins;
 window.approvePipelinePin = approvePipelinePin;
 window.promoteStagingToProduction = promoteStagingToProduction;
+window.publishPipelineArticle = publishPipelineArticle;
 window.addManualTopic = addManualTopic;
 window.filterPipeline = filterPipeline;
 
