@@ -233,6 +233,7 @@ def post_pin(access_token, row):
         "description": row["pin_description"],
         "alt_text": row["alt_text"],
         "link": row["link"],
+        "ai_disclosures": {"values": ["AI_MODIFIED"]},
         "media_source": {
             "source_type": "image_url",
             "url": row["image_url"],

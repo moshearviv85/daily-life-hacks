@@ -142,6 +142,7 @@ export function buildPinPayload(pin, board_id) {
     link: pin.link,
     alt_text: pin.alt_text,
     board_id,
+    ai_disclosures: { values: ["AI_MODIFIED"] },
     media_source: { source_type: "image_url", url: pin.media_source_url },
   };
 }

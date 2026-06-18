@@ -347,6 +347,66 @@ const BUILD = {
     /* ── Pinterest boards short label ────────────── */
     .board-short { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+    .pipeline-pin-card {
+      margin: .42rem 0;
+      padding: .48rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      background: #fff;
+    }
+    .pipeline-pin-head { display: flex; gap: .55rem; align-items: flex-start; }
+    .pipeline-pin-thumb { flex: 0 0 auto; }
+    .pipeline-pin-thumb img {
+      width: 56px;
+      height: 75px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #e5e7eb;
+      display: block;
+    }
+    .pipeline-pin-main { min-width: 0; flex: 1; }
+    .pipeline-pin-controls {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .18rem;
+      margin-bottom: .22rem;
+    }
+    .pipeline-pin-version {
+      font-family: monospace;
+      font-size: .66rem;
+      font-weight: 800;
+      color: var(--orange);
+    }
+    .pipeline-pin-title {
+      display: block;
+      color: var(--heading);
+      font-size: .73rem;
+      font-weight: 800;
+      line-height: 1.25;
+      text-decoration: none;
+    }
+    .pipeline-pin-title:hover { color: var(--orange); }
+    .pipeline-pin-description {
+      margin-top: .18rem;
+      color: var(--text);
+      font-size: .68rem;
+      line-height: 1.35;
+    }
+    .pipeline-pin-details {
+      margin-top: .36rem;
+      color: var(--text);
+      font-size: .68rem;
+      line-height: 1.35;
+    }
+    .pipeline-pin-details summary {
+      cursor: pointer;
+      color: var(--orange);
+      font-weight: 800;
+    }
+    .pipeline-pin-meta { margin-top: .3rem; }
+    .pipeline-pin-meta div { margin-top: .18rem; }
+
     /* ── Clickable stat cards ─────────────────────────────────────────── */
     .stat-card.clickable { cursor: pointer; transition: transform .12s, box-shadow .12s; }
     .stat-card.clickable:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.13); }
@@ -3391,27 +3451,32 @@ function renderPipelineTable(filter) {
       const selectBox = !publishStatus && productionReady
         ? `<input type="checkbox" class="pipeline-pin-select" value="${escapeHtml(slug)}" data-article-slug="${escapeHtml(article.slug)}" data-pin-index="${pin.pin_index ?? idx}" title="Select pin for batch publishing" style="vertical-align:middle;margin-right:.25rem">`
         : '';
-      return `<details style="margin:.28rem 0;padding:.38rem .45rem;border:1px solid #e5e7eb;border-radius:6px;background:#fff">
-        <summary style="cursor:pointer;list-style:none">
-          ${selectBox}<a href="${href}" target="_blank" rel="noopener"
-            title="${escapeHtml(slug)}"
-            style="display:inline-block;margin:.15rem .22rem 0 0;color:var(--orange);font-family:monospace;font-size:.68rem;text-decoration:none">${label}</a>${statusBadge}${promoteBadge}${publishButton}
-        </summary>
-        <div style="margin-top:.35rem;font-size:.68rem;line-height:1.35;color:var(--text)">
-          <a href="${href}" target="_blank" rel="noopener">
-            <img src="${href}" alt="${escapeHtml(pin.alt || pin.title || slug)}" loading="lazy" style="width:72px;height:96px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;float:right;margin:0 0 .4rem .5rem">
+      return `<div class="pipeline-pin-card">
+        <div class="pipeline-pin-head">
+          <a class="pipeline-pin-thumb" href="${href}" target="_blank" rel="noopener" title="${escapeHtml(slug)}">
+            <img src="${href}" alt="${escapeHtml(pin.alt || pin.title || slug)}" loading="lazy">
           </a>
-          <div><strong>Title:</strong> ${escapeHtml(pin.title || '-')}</div>
-          <div style="margin-top:.18rem"><strong>Description:</strong> ${escapeHtml(description || '-')}</div>
-          <div style="margin-top:.18rem"><strong>Board:</strong> ${escapeHtml(pin.board_name || '-')} <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.board_id || '')}</span></div>
-          <div style="margin-top:.18rem"><strong>Model:</strong> <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.model_id || '-')}</span></div>
-          <div style="margin-top:.18rem"><strong>Hashtags:</strong> ${escapeHtml(pin.hashtags || '-')}</div>
-          <div style="margin-top:.18rem"><strong>Alt:</strong> ${escapeHtml(pin.alt || '-')}</div>
-          <div style="margin-top:.18rem"><strong>Staging link:</strong> <a href="${destination}" target="_blank" rel="noopener" style="color:var(--orange)">${escapeHtml(destination)}</a></div>
-          <div style="margin-top:.18rem"><strong>Production link:</strong> <a href="${productionDestination}" target="_blank" rel="noopener" style="color:${productionReady ? 'var(--orange)' : '#991b1b'}">${escapeHtml(productionDestination)}</a></div>
-          <div style="margin-top:.18rem"><strong>Production image:</strong> <a href="${productionHref}" target="_blank" rel="noopener" style="color:${pinLiveOnProduction ? 'var(--orange)' : '#991b1b'}">${escapeHtml(pinLiveOnProduction ? productionHref : 'not live yet')}</a></div>
+          <div class="pipeline-pin-main">
+            <div class="pipeline-pin-controls">
+              ${selectBox}<span class="pipeline-pin-version">${label}</span>${statusBadge}${promoteBadge}${publishButton}
+            </div>
+            <a class="pipeline-pin-title" href="${href}" target="_blank" rel="noopener">${escapeHtml(pin.title || slug)}</a>
+            <div class="pipeline-pin-description">${escapeHtml(description || '-')}</div>
+          </div>
         </div>
-      </details>`;
+        <details class="pipeline-pin-details">
+          <summary>Details</summary>
+          <div class="pipeline-pin-meta">
+            <div><strong>Board:</strong> ${escapeHtml(pin.board_name || '-')} <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.board_id || '')}</span></div>
+            <div><strong>Model:</strong> <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.model_id || '-')}</span></div>
+            <div><strong>Hashtags:</strong> ${escapeHtml(pin.hashtags || '-')}</div>
+            <div><strong>Alt:</strong> ${escapeHtml(pin.alt || '-')}</div>
+            <div><strong>Staging link:</strong> <a href="${destination}" target="_blank" rel="noopener" style="color:var(--orange)">${escapeHtml(destination)}</a></div>
+            <div><strong>Production link:</strong> <a href="${productionDestination}" target="_blank" rel="noopener" style="color:${productionReady ? 'var(--orange)' : '#991b1b'}">${escapeHtml(productionDestination)}</a></div>
+            <div><strong>Production image:</strong> <a href="${productionHref}" target="_blank" rel="noopener" style="color:${pinLiveOnProduction ? 'var(--orange)' : '#991b1b'}">${escapeHtml(pinLiveOnProduction ? productionHref : 'not live yet')}</a></div>
+          </div>
+        </details>
+      </div>`;
     }).join('');
     return `<div>${count}</div><div>${links}</div>`;
   };
