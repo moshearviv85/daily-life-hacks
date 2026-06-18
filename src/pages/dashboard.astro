@@ -407,6 +407,72 @@ const BUILD = {
     .pipeline-pin-meta { margin-top: .3rem; }
     .pipeline-pin-meta div { margin-top: .18rem; }
 
+    :global(.pipeline-pin-card) {
+      margin: .42rem 0;
+      padding: .48rem;
+      max-width: 360px;
+      box-sizing: border-box;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      background: #fff;
+    }
+    :global(.pipeline-pin-head) { display: flex; gap: .5rem; align-items: flex-start; }
+    :global(.pipeline-pin-thumb) { flex: 0 0 48px; }
+    :global(.pipeline-pin-thumb img) {
+      width: 48px !important;
+      height: 64px !important;
+      max-width: 48px !important;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #e5e7eb;
+      display: block;
+    }
+    :global(.pipeline-pin-main) { min-width: 0; flex: 1; }
+    :global(.pipeline-pin-controls) {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .18rem;
+      margin-bottom: .22rem;
+    }
+    :global(.pipeline-pin-version) {
+      font-family: monospace;
+      font-size: .66rem;
+      font-weight: 800;
+      color: var(--orange);
+    }
+    :global(.pipeline-pin-title) {
+      display: block;
+      color: var(--heading);
+      font-size: .72rem;
+      font-weight: 800;
+      line-height: 1.25;
+      text-decoration: none;
+    }
+    :global(.pipeline-pin-title:hover) { color: var(--orange); }
+    :global(.pipeline-pin-description) {
+      margin-top: .18rem;
+      max-height: 3.8em;
+      overflow: hidden;
+      color: var(--text);
+      font-size: .66rem;
+      line-height: 1.3;
+    }
+    :global(.pipeline-pin-details) {
+      margin-top: .34rem;
+      color: var(--text);
+      font-size: .66rem;
+      line-height: 1.32;
+    }
+    :global(.pipeline-pin-details summary) {
+      cursor: pointer;
+      color: var(--orange);
+      font-weight: 800;
+    }
+    :global(.pipeline-pin-meta) { margin-top: .3rem; }
+    :global(.pipeline-pin-meta div) { margin-top: .18rem; }
+
     /* ── Clickable stat cards ─────────────────────────────────────────── */
     .stat-card.clickable { cursor: pointer; transition: transform .12s, box-shadow .12s; }
     .stat-card.clickable:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.13); }
@@ -3454,7 +3520,7 @@ function renderPipelineTable(filter) {
       return `<div class="pipeline-pin-card">
         <div class="pipeline-pin-head">
           <a class="pipeline-pin-thumb" href="${href}" target="_blank" rel="noopener" title="${escapeHtml(slug)}">
-            <img src="${href}" alt="${escapeHtml(pin.alt || pin.title || slug)}" loading="lazy">
+            <img src="${href}" alt="${escapeHtml(pin.alt || pin.title || slug)}" loading="lazy" style="width:48px;height:64px;max-width:48px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;display:block">
           </a>
           <div class="pipeline-pin-main">
             <div class="pipeline-pin-controls">
