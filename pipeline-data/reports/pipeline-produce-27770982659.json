@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "article_only": false,
+  "hero_only": false,
+  "checks": [
+    {
+      "slug": "quick-black-bean-burgers-that-hold-their-shape",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}
