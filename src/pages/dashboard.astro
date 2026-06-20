@@ -3689,20 +3689,28 @@ function renderPipelineTable(filter) {
     const hasPipelinePins = pinCount > 0 && pinImagesDone >= pinCount;
     return hasHero && (hasBuiltPins || hasPipelinePins);
   };
+  const pinIsPosted = (pin) => String(pin.publish_status || '').toUpperCase() === 'POSTED';
+  const articleHasUnpostedPins = (article) =>
+    Array.isArray(article.pins) && article.pins.some(pin => !pinIsPosted(pin));
 
   let hiddenIncompleteAssets = 0;
+  let hiddenPostedArticles = 0;
   let articles = pipelineData.articles;
   if (IS_PRODUCTION_DASHBOARD) {
     const before = articles.length;
     articles = articles.filter(articleHasHeroAndPins);
     hiddenIncompleteAssets = before - articles.length;
+    const beforePostedFilter = articles.length;
+    articles = articles.filter(articleHasUnpostedPins);
+    hiddenPostedArticles = beforePostedFilter - articles.length;
   }
 
   const imageFilterNote = document.getElementById('pl-image-filter-note');
   if (imageFilterNote) {
-    imageFilterNote.textContent = hiddenIncompleteAssets > 0
-      ? `${hiddenIncompleteAssets} article(s) without hero + pin images hidden.`
-      : '';
+    const hiddenNotes = [];
+    if (hiddenIncompleteAssets > 0) hiddenNotes.push(`${hiddenIncompleteAssets} article(s) without hero + pin images hidden.`);
+    if (hiddenPostedArticles > 0) hiddenNotes.push(`${hiddenPostedArticles} fully posted article(s) hidden.`);
+    imageFilterNote.textContent = hiddenNotes.join(' ');
   }
 
   if (filter === 'progress') {
@@ -3715,8 +3723,8 @@ function renderPipelineTable(filter) {
 
   if (!articles.length) {
     tbody.innerHTML = '';
-    empty.textContent = IS_PRODUCTION_DASHBOARD && hiddenIncompleteAssets > 0
-      ? `No visible articles match this filter. ${hiddenIncompleteAssets} article(s) without complete hero + pin images are hidden.`
+    empty.textContent = IS_PRODUCTION_DASHBOARD && (hiddenIncompleteAssets > 0 || hiddenPostedArticles > 0)
+      ? `No visible articles match this filter. ${hiddenIncompleteAssets} article(s) without complete hero + pin images and ${hiddenPostedArticles} fully posted article(s) are hidden.`
       : 'No pipeline data yet. Click "Find Topics" to start.';
     empty.style.display = '';
     updatePipelinePinSelectionSummary();
@@ -3758,11 +3766,22 @@ function renderPipelineTable(filter) {
     };
   };
   const renderPinLinks = (article) => {
-    const pins = Array.isArray(article.pins) ? article.pins : [];
-    const count = `${article.pin_images_done || 0}/${article.pin_count || 0}`;
-    if (!pins.length) return count;
+    const allPinItems = Array.isArray(article.pins)
+      ? article.pins.map((pin, idx) => ({ pin, idx }))
+      : [];
+    const pinItems = IS_PRODUCTION_DASHBOARD
+      ? allPinItems.filter(({ pin }) => !pinIsPosted(pin))
+      : allPinItems;
+    const hiddenPostedPins = allPinItems.length - pinItems.length;
+    const totalPins = article.pin_count || allPinItems.length || 0;
+    const count = `${pinItems.length}/${totalPins}`;
+    if (!pinItems.length) {
+      return hiddenPostedPins > 0
+        ? `<div>${count}</div><div style="font-size:.68rem;color:var(--muted);margin-top:.2rem">${hiddenPostedPins} already posted pin(s) hidden.</div>`
+        : count;
+    }
     const articleLiveOnProduction = builtArticleSlugs.has(article.slug);
-    const links = pins.map((pin, idx) => {
+    const links = pinItems.map(({ pin, idx }) => {
       const slug = pin.pin_slug || `${article.slug}_v${idx + 1}`;
       const href = `${pipelineAssetBase}/images/pins/${slug}.jpg`;
       const productionHref = `/images/pins/${slug}.jpg`;
@@ -3817,7 +3836,10 @@ function renderPipelineTable(filter) {
         </details>
       </div>`;
     }).join('');
-    return `<div>${count}</div><div>${links}</div>`;
+    const hiddenNote = hiddenPostedPins > 0
+      ? `<div style="font-size:.68rem;color:var(--muted);margin-top:.25rem">${hiddenPostedPins} already posted pin(s) hidden.</div>`
+      : '';
+    return `<div>${count}</div>${hiddenNote}<div>${links}</div>`;
   };
 
   tbody.innerHTML = articles.map(a => {
