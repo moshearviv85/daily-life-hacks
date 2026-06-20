@@ -3795,14 +3795,19 @@ function renderPipelineTable(filter) {
     const productionAssetsReady = existsInBuild
       && pinSlugs.length > 0
       && pinSlugs.every(slug => builtPinSlugs.has(slug));
-    const publishAction = articleAssetsReady(a)
-      ? (IS_PRODUCTION_DASHBOARD && productionAssetsReady
+    const productionLive = IS_PRODUCTION_DASHBOARD
+      && (Number(a.production_live || 0) === 1 || stage === 'published');
+    const publishAction = productionLive
+      ? `<span title="This article is already marked live in production"
+          style="display:inline-block;margin-top:.25rem;padding:.16rem .42rem;border-radius:5px;background:#dcfce7;color:#166534;font-size:.65rem;font-weight:800">Live on Production</span>`
+      : articleAssetsReady(a)
+        ? (IS_PRODUCTION_DASHBOARD && productionAssetsReady
         ? `<span title="This article and its pipeline pin images are already present on production"
             style="display:inline-block;margin-top:.25rem;padding:.16rem .42rem;border-radius:5px;background:#dcfce7;color:#166534;font-size:.65rem;font-weight:800">Live on Production</span>`
         : `<button id="pipeline-publish-btn-${a.slug}" onclick="publishPipelineArticle('${a.slug}')"
             title="${IS_PRODUCTION_DASHBOARD ? 'Publish this reviewed staging article to production. Pinterest pins are not posted.' : 'Publishing is locked on staging. Open the production dashboard to publish.'}"
             style="margin-top:.25rem;border:1px solid #2563eb;background:#2563eb;color:#fff;border-radius:5px;padding:.16rem .42rem;font-size:.65rem;font-weight:800;cursor:pointer">Publish Article</button>`)
-      : '';
+        : '';
     const canApproveArticle = articleAvailable
       && ['reviewed', 'deployed'].includes(a.stage)
       && stage !== 'staging_review'

@@ -21,6 +21,7 @@ function json(data, status = 200) {
 }
 
 const STAGING_PIPELINE_BASE = "https://staging.daily-life-hacks.pages.dev";
+const PRODUCTION_SITE_BASE = "https://www.daily-life-hacks.com";
 
 function isProductionRequest(request, env) {
   const url = new URL(request.url);
@@ -30,7 +31,185 @@ function isProductionRequest(request, env) {
   return productionHost || branch === "main";
 }
 
-async function proxyStagingStatus(request) {
+function chunk(values, size = 80) {
+  const chunks = [];
+  for (let i = 0; i < values.length; i += size) {
+    chunks.push(values.slice(i, i + size));
+  }
+  return chunks;
+}
+
+function uniqueStrings(values) {
+  return [...new Set(values.map((value) => String(value || "").trim()).filter(Boolean))];
+}
+
+function articleSlugFromLink(link) {
+  try {
+    return new URL(link).pathname.replace(/^\/+/, "").split("/")[0] || "";
+  } catch {
+    return "";
+  }
+}
+
+function collectPinRows(payload) {
+  const rows = [];
+  if (Array.isArray(payload.pin_rows)) rows.push(...payload.pin_rows);
+  if (Array.isArray(payload.articles)) {
+    for (const article of payload.articles) {
+      if (Array.isArray(article.pins)) rows.push(...article.pins);
+    }
+  }
+  return rows;
+}
+
+async function readProductionPinStatus(db, rowIds) {
+  const rowsById = new Map();
+  for (const ids of chunk(rowIds)) {
+    const placeholders = ids.map(() => "?").join(",");
+    const rows = await db.prepare(
+      `SELECT row_id, status, pin_id, published_date, scheduled_date, scheduled_time, link
+         FROM pins_schedule
+        WHERE row_id IN (${placeholders})`
+    ).bind(...ids).all();
+    for (const row of rows?.results ?? []) {
+      rowsById.set(row.row_id, row);
+    }
+  }
+  return rowsById;
+}
+
+async function readProductionArticleStatus(db, slugs) {
+  const rowsBySlug = new Map();
+  for (const slugChunk of chunk(slugs)) {
+    const placeholders = slugChunk.map(() => "?").join(",");
+    const rows = await db.prepare(
+      `SELECT slug, status, published_at
+         FROM articles_schedule
+        WHERE slug IN (${placeholders})`
+    ).bind(...slugChunk).all();
+    for (const row of rows?.results ?? []) {
+      rowsBySlug.set(row.slug, row);
+    }
+  }
+  return rowsBySlug;
+}
+
+async function fetchArticleLiveSlugs(slugs) {
+  const liveSlugs = new Set();
+  for (const slugChunk of chunk(slugs, 8)) {
+    await Promise.all(slugChunk.map(async (slug) => {
+      try {
+        const response = await fetch(`${PRODUCTION_SITE_BASE}/${slug}/`, { method: "HEAD" });
+        if (response.ok) {
+          liveSlugs.add(slug);
+          return;
+        }
+        if (response.status === 405 || response.status === 501) {
+          const fallback = await fetch(`${PRODUCTION_SITE_BASE}/${slug}/`, { method: "GET" });
+          if (fallback.ok) liveSlugs.add(slug);
+        }
+      } catch {
+        // Treat network/probe failures as unknown, not live.
+      }
+    }));
+  }
+  return liveSlugs;
+}
+
+async function overlayProductionState(env, payload) {
+  if (!env.DB || !payload || typeof payload !== "object") return payload;
+
+  const pinRows = collectPinRows(payload);
+  const rowIds = uniqueStrings(pinRows.map((pin) => pin.pin_slug));
+  const articleSlugs = uniqueStrings([
+    ...(Array.isArray(payload.articles) ? payload.articles.map((article) => article.slug) : []),
+    ...pinRows.map((pin) => pin.article_slug),
+  ]);
+
+  const [productionPins, productionArticles] = await Promise.all([
+    rowIds.length ? readProductionPinStatus(env.DB, rowIds) : new Map(),
+    articleSlugs.length ? readProductionArticleStatus(env.DB, articleSlugs) : new Map(),
+  ]);
+
+  const productionPinStatusByArticle = new Map();
+  for (const pin of pinRows) {
+    const rowId = String(pin.pin_slug || "").trim();
+    const productionPin = productionPins.get(rowId);
+    if (!productionPin) continue;
+
+    const status = String(productionPin.status || "").trim().toUpperCase();
+    if (status) {
+      pin.publish_status = status;
+      pin.production_publish_status = status;
+    }
+    pin.pin_id = productionPin.pin_id || pin.pin_id || null;
+    pin.published_date = productionPin.published_date || pin.published_date || null;
+    pin.scheduled_date = productionPin.scheduled_date || pin.scheduled_date || null;
+    pin.scheduled_time = productionPin.scheduled_time || pin.scheduled_time || null;
+
+    const articleSlug = String(pin.article_slug || "").trim()
+      || articleSlugFromLink(productionPin.link);
+    if (!articleSlug || !status) continue;
+
+    const current = productionPinStatusByArticle.get(articleSlug);
+    if (current !== "POSTED") {
+      productionPinStatusByArticle.set(articleSlug, status);
+    }
+  }
+
+  if (Array.isArray(payload.articles)) {
+    const slugsNeedingLiveProbe = articleSlugs.filter((slug) => {
+      if (productionArticles.has(slug)) return false;
+      const pinStatus = productionPinStatusByArticle.get(slug);
+      return !["POSTED", "PENDING"].includes(pinStatus);
+    });
+    const liveSlugs = slugsNeedingLiveProbe.length
+      ? await fetchArticleLiveSlugs(slugsNeedingLiveProbe)
+      : new Set();
+
+    for (const article of payload.articles) {
+      const slug = String(article.slug || "").trim();
+      const scheduleRow = productionArticles.get(slug);
+      const pinStatus = productionPinStatusByArticle.get(slug);
+      const scheduleStatus = String(scheduleRow?.status || "").trim().toUpperCase();
+      const productionLive = ["PUBLISHED", "DUPLICATE"].includes(scheduleStatus)
+        || ["POSTED", "PENDING"].includes(pinStatus)
+        || liveSlugs.has(slug);
+
+      article.production_status = scheduleStatus || (productionLive ? "PUBLISHED" : null);
+      article.production_pin_status = pinStatus || null;
+      article.production_published_at = scheduleRow?.published_at || null;
+      article.production_url_live = liveSlugs.has(slug) ? 1 : 0;
+
+      if (productionLive) {
+        article.production_live = 1;
+        article.display_stage = "published";
+      } else {
+        article.production_live = 0;
+      }
+    }
+
+    const displayStageMap = {};
+    for (const article of payload.articles) {
+      const stage = article.display_stage || article.stage || "unknown";
+      displayStageMap[stage] = (displayStageMap[stage] || 0) + 1;
+    }
+    payload.summary = {
+      ...(payload.summary || {}),
+      by_display_stage: displayStageMap,
+    };
+  }
+
+  payload.production_overlay = {
+    pin_rows_checked: rowIds.length,
+    pin_rows_matched: productionPins.size,
+    article_rows_checked: articleSlugs.length,
+    article_rows_matched: productionArticles.size,
+  };
+  return payload;
+}
+
+async function proxyStagingStatus(request, env) {
   const url = new URL(request.url);
   const target = new URL("/api/pipeline-status", STAGING_PIPELINE_BASE);
   target.search = url.search;
@@ -46,6 +225,9 @@ async function proxyStagingStatus(request) {
     payload = text ? JSON.parse(text) : {};
   } catch {
     payload = { error: text || `Staging status returned ${response.status}` };
+  }
+  if (response.ok) {
+    payload = await overlayProductionState(env, payload);
   }
   return json({ ...payload, source: "staging" }, response.status);
 }
@@ -148,7 +330,7 @@ export async function onRequestGet(context) {
     return json({ error: "Unauthorized" }, 401);
   }
   if (isProductionRequest(request, env)) {
-    return proxyStagingStatus(request);
+    return proxyStagingStatus(request, env);
   }
   if (!env.DB) {
     return json({ error: "DB not bound" }, 500);
