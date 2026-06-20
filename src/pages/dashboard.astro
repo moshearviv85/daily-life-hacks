@@ -763,6 +763,7 @@ const BUILD = {
           <strong style="color:var(--text-color)">Selected pins:</strong>
           <span id="pl-selected-pins-count">0</span>
           <span id="pl-selected-pins-help">Choose pins below, then publish them together.</span>
+          <span id="pl-image-filter-note" style="margin-left:.45rem"></span>
         </div>
         <div style="display:flex;gap:.4rem;align-items:center;flex-wrap:wrap">
           <button class="btn btn-sm" onclick="clearPipelinePinSelection()" id="pl-clear-selected-pins" disabled>Clear</button>
@@ -3663,6 +3664,9 @@ function renderPipelineTable(filter) {
   const empty = document.getElementById('pipeline-empty');
   if (!pipelineData || !pipelineData.articles?.length) {
     tbody.innerHTML = '';
+    const imageFilterNote = document.getElementById('pl-image-filter-note');
+    if (imageFilterNote) imageFilterNote.textContent = '';
+    empty.textContent = 'No pipeline data yet. Click "Find Topics" to start.';
     empty.style.display = '';
     updatePipelinePinSelectionSummary();
     return;
@@ -3670,7 +3674,37 @@ function renderPipelineTable(filter) {
   empty.style.display = 'none';
 
   const displayStageFor = (article) => article.display_stage || article.review_state || article.stage;
+  const builtArticleSlugs = new Set(BUILD.articleSlugs || []);
+  const builtHeroSlugs = new Set(BUILD.images?.webSlugs || []);
+  const builtPinSlugs = new Set(BUILD.images?.pinSlugs || []);
+  const pinSlugsForArticle = (article) => Array.isArray(article.pins)
+    ? article.pins.map((pin, idx) => pin.pin_slug || `${article.slug}_v${idx + 1}`).filter(Boolean)
+    : [];
+  const articleHasHeroAndPins = (article) => {
+    const pinSlugs = pinSlugsForArticle(article);
+    const pinCount = Number(article.pin_count || 0);
+    const pinImagesDone = Number(article.pin_images_done || 0);
+    const hasHero = builtHeroSlugs.has(article.slug) || Number(article.hero_image_done || 0) >= 1;
+    const hasBuiltPins = pinSlugs.length > 0 && pinSlugs.every(slug => builtPinSlugs.has(slug));
+    const hasPipelinePins = pinCount > 0 && pinImagesDone >= pinCount;
+    return hasHero && (hasBuiltPins || hasPipelinePins);
+  };
+
+  let hiddenIncompleteAssets = 0;
   let articles = pipelineData.articles;
+  if (IS_PRODUCTION_DASHBOARD) {
+    const before = articles.length;
+    articles = articles.filter(articleHasHeroAndPins);
+    hiddenIncompleteAssets = before - articles.length;
+  }
+
+  const imageFilterNote = document.getElementById('pl-image-filter-note');
+  if (imageFilterNote) {
+    imageFilterNote.textContent = hiddenIncompleteAssets > 0
+      ? `${hiddenIncompleteAssets} article(s) without hero + pin images hidden.`
+      : '';
+  }
+
   if (filter === 'progress') {
     articles = articles.filter(a => !['staging_review', 'published', 'failed', 'topic'].includes(displayStageFor(a)));
   } else if (filter === 'ready') {
@@ -3678,6 +3712,17 @@ function renderPipelineTable(filter) {
   } else if (filter === 'failed') {
     articles = articles.filter(a => a.stage === 'failed');
   }
+
+  if (!articles.length) {
+    tbody.innerHTML = '';
+    empty.textContent = IS_PRODUCTION_DASHBOARD && hiddenIncompleteAssets > 0
+      ? `No visible articles match this filter. ${hiddenIncompleteAssets} article(s) without complete hero + pin images are hidden.`
+      : 'No pipeline data yet. Click "Find Topics" to start.';
+    empty.style.display = '';
+    updatePipelinePinSelectionSummary();
+    return;
+  }
+  empty.style.display = 'none';
 
   const stageBadge = (stage) => {
     const colors = {
@@ -3689,9 +3734,6 @@ function renderPipelineTable(filter) {
     return `<span style="display:inline-block;padding:.15rem .45rem;border-radius:4px;font-size:.75rem;font-weight:500;background:${c}20;color:${c};border:1px solid ${c}40">${escapeHtml(stage)}</span>`;
   };
 
-  const builtArticleSlugs = new Set(BUILD.articleSlugs || []);
-  const builtHeroSlugs = new Set(BUILD.images?.webSlugs || []);
-  const builtPinSlugs = new Set(BUILD.images?.pinSlugs || []);
   const pipelineAssetBase = 'https://staging.daily-life-hacks.pages.dev';
   const formatPipelinePinStatus = (status, productionReady) => {
     if (!status) return null;
