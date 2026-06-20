@@ -751,12 +751,23 @@ const BUILD = {
       <div id="pipeline-trigger-status" style="display:none;padding:.5rem .75rem;border-radius:6px;margin-bottom:.75rem;font-size:.8rem;border:1px solid transparent"></div>
 
       <!-- Filter tabs -->
-      <div style="display:flex;gap:.35rem;margin-bottom:.75rem">
+      <div style="display:flex;gap:.35rem;margin-bottom:.55rem;flex-wrap:wrap">
         <button class="btn btn-sm active" onclick="filterPipeline('all', this)" id="pl-filter-all">All</button>
         <button class="btn btn-sm" onclick="filterPipeline('progress', this)">In Progress</button>
         <button class="btn btn-sm" onclick="filterPipeline('ready', this)">Ready</button>
         <button class="btn btn-sm" onclick="filterPipeline('failed', this)">Failed</button>
-        <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected">Queue selected live pins</button>
+      </div>
+
+      <div id="pipeline-pin-bulk-bar" style="display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;margin-bottom:.75rem;padding:.55rem .7rem;border:1px solid var(--border);border-radius:8px;background:#f8fafc">
+        <div style="font-size:.78rem;color:var(--muted)">
+          <strong style="color:var(--text-color)">Selected pins:</strong>
+          <span id="pl-selected-pins-count">0</span>
+          <span id="pl-selected-pins-help">Choose pins below, then publish them together.</span>
+        </div>
+        <div style="display:flex;gap:.4rem;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-sm" onclick="clearPipelinePinSelection()" id="pl-clear-selected-pins" disabled>Clear</button>
+          <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected" disabled>Publish selected pins</button>
+        </div>
       </div>
 
       <!-- Pipeline table -->
@@ -3653,6 +3664,7 @@ function renderPipelineTable(filter) {
   if (!pipelineData || !pipelineData.articles?.length) {
     tbody.innerHTML = '';
     empty.style.display = '';
+    updatePipelinePinSelectionSummary();
     return;
   }
   empty.style.display = 'none';
@@ -3734,7 +3746,7 @@ function renderPipelineTable(filter) {
             style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'Publish' : 'Queue'}</button>`
         : '';
       const selectBox = !publishStatus && productionReady
-        ? `<input type="checkbox" class="pipeline-pin-select" value="${escapeHtml(slug)}" data-article-slug="${escapeHtml(article.slug)}" data-pin-index="${pin.pin_index ?? idx}" title="Select pin for batch publishing" style="vertical-align:middle;margin-right:.25rem">`
+        ? `<input type="checkbox" class="pipeline-pin-select" value="${escapeHtml(slug)}" data-article-slug="${escapeHtml(article.slug)}" data-pin-index="${pin.pin_index ?? idx}" onchange="updatePipelinePinSelectionSummary()" title="Select pin for batch publishing" style="vertical-align:middle;margin-right:.25rem">`
         : '';
       return `<div class="pipeline-pin-card">
         <div class="pipeline-pin-head">
@@ -3848,6 +3860,7 @@ function renderPipelineTable(filter) {
     </tr>
   `;
   }).join('');
+  updatePipelinePinSelectionSummary();
 }
 
 function filterPipeline(filter, btn) {
@@ -4252,18 +4265,67 @@ function getSelectedPipelinePinsInterleaved() {
   return out;
 }
 
+function updatePipelinePinSelectionSummary() {
+  const selectedCount = document.querySelectorAll('.pipeline-pin-select:checked').length;
+  const availableCount = document.querySelectorAll('.pipeline-pin-select').length;
+  const countEl = document.getElementById('pl-selected-pins-count');
+  const helpEl = document.getElementById('pl-selected-pins-help');
+  const publishBtn = document.getElementById('pl-publish-selected');
+  const clearBtn = document.getElementById('pl-clear-selected-pins');
+
+  if (countEl) countEl.textContent = String(selectedCount);
+  if (helpEl) {
+    helpEl.textContent = availableCount
+      ? ` of ${availableCount} visible publishable pin(s) selected.`
+      : ' No visible pins are ready for publishing.';
+  }
+
+  if (publishBtn) {
+    const action = IS_PRODUCTION_DASHBOARD ? 'Publish' : 'Queue';
+    publishBtn.disabled = selectedCount === 0;
+    publishBtn.textContent = selectedCount
+      ? `${action} selected pins (${selectedCount})`
+      : `${action} selected pins`;
+    publishBtn.title = IS_PRODUCTION_DASHBOARD
+      ? 'Add the selected pins to the production Pinterest publisher queue.'
+      : 'Queue the selected pins in staging only.';
+    publishBtn.style.opacity = selectedCount ? '1' : '0.55';
+    publishBtn.style.cursor = selectedCount ? 'pointer' : 'not-allowed';
+  }
+
+  if (clearBtn) {
+    clearBtn.disabled = selectedCount === 0;
+    clearBtn.style.opacity = selectedCount ? '1' : '0.55';
+    clearBtn.style.cursor = selectedCount ? 'pointer' : 'not-allowed';
+  }
+}
+
+function clearPipelinePinSelection() {
+  document.querySelectorAll('.pipeline-pin-select:checked').forEach((input) => {
+    input.checked = false;
+  });
+  updatePipelinePinSelectionSummary();
+}
+
 async function approveSelectedPipelinePins() {
   const pinSlugs = getSelectedPipelinePinsInterleaved();
   if (!pinSlugs.length) {
     alert('Select at least one pin first.');
     return;
   }
-  const ok = confirm(`Queue ${pinSlugs.length} selected pin(s)?\n\nPins will be interleaved by article to avoid publishing the same topic in a block.`);
+  const ok = confirm(`${IS_PRODUCTION_DASHBOARD ? 'Publish' : 'Queue'} ${pinSlugs.length} selected pin(s)?\n\nPins will be interleaved by article to avoid publishing the same topic in a block.${IS_PRODUCTION_DASHBOARD ? '\n\nThis adds them to the automatic publisher queue; it does not post all of them instantly.' : ''}`);
   if (!ok) return;
+
+  const publishBtn = document.getElementById('pl-publish-selected');
+  if (publishBtn) {
+    publishBtn.disabled = true;
+    publishBtn.textContent = IS_PRODUCTION_DASHBOARD ? 'Publishing selected...' : 'Queueing selected...';
+  }
 
   for (const slug of pinSlugs) {
     await approvePipelinePin(slug, { skipConfirm: true });
   }
+  updatePipelinePinSelectionSummary();
 }
 
 async function promoteStagingToProduction(slug = '') {
@@ -4403,6 +4465,8 @@ window.produceSelectedTopics = produceSelectedTopics;
 window.approvePipelineArticle = approvePipelineArticle;
 window.regenerateHeroImage = regenerateHeroImage;
 window.approveSelectedPipelinePins = approveSelectedPipelinePins;
+window.updatePipelinePinSelectionSummary = updatePipelinePinSelectionSummary;
+window.clearPipelinePinSelection = clearPipelinePinSelection;
 window.approvePipelinePin = approvePipelinePin;
 window.promoteStagingToProduction = promoteStagingToProduction;
 window.publishPipelineArticle = publishPipelineArticle;
