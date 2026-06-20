@@ -4364,9 +4364,32 @@ async function approveSelectedPipelinePins() {
     publishBtn.textContent = IS_PRODUCTION_DASHBOARD ? 'Publishing selected...' : 'Queueing selected...';
   }
 
-  for (const slug of pinSlugs) {
-    await approvePipelinePin(slug, { skipConfirm: true });
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#fff7ed';
+  statusEl.style.borderColor = '#fed7aa';
+  statusEl.style.color = '#92400e';
+
+  const results = [];
+  for (const [index, slug] of pinSlugs.entries()) {
+    statusEl.textContent = `${IS_PRODUCTION_DASHBOARD ? 'Publishing' : 'Queueing'} selected pins ${index + 1}/${pinSlugs.length}: ${slug}`;
+    const result = await approvePipelinePin(slug, {
+      skipConfirm: true,
+      quiet: true,
+      skipRefresh: true,
+      skipScroll: true,
+    });
+    results.push({ slug, ...result });
   }
+
+  await Promise.all([loadPinsStatus(), fetchPipelineStatus()]);
+  const failed = results.filter(result => !result.ok);
+  statusEl.style.background = failed.length ? '#fef2f2' : '#f0fdf4';
+  statusEl.style.borderColor = failed.length ? '#fecaca' : '#bbf7d0';
+  statusEl.style.color = failed.length ? '#b91c1c' : '#166534';
+  statusEl.textContent = failed.length
+    ? `${failed.length}/${pinSlugs.length} selected pin(s) failed. First error: ${failed[0].error || failed[0].slug}`
+    : `${pinSlugs.length} selected pin(s) added to the publisher queue.`;
   updatePipelinePinSelectionSummary();
 }
 
@@ -4430,13 +4453,15 @@ async function approvePipelinePin(pinSlug, options = {}) {
   if (!ok) return;
 
   const statusEl = document.getElementById('pipeline-trigger-status');
-  statusEl.style.display = '';
-  statusEl.style.background = '#fff7ed';
-  statusEl.style.borderColor = '#fed7aa';
-  statusEl.style.color = '#92400e';
-  statusEl.textContent = IS_PRODUCTION_DASHBOARD
-    ? 'Queueing pin for automatic publishing...'
-    : 'Queueing pin in staging without publishing...';
+  if (!options.quiet) {
+    statusEl.style.display = '';
+    statusEl.style.background = '#fff7ed';
+    statusEl.style.borderColor = '#fed7aa';
+    statusEl.style.color = '#92400e';
+    statusEl.textContent = IS_PRODUCTION_DASHBOARD
+      ? 'Queueing pin for automatic publishing...'
+      : 'Queueing pin in staging without publishing...';
+  }
 
   try {
     const res = await fetch(`/api/pipeline-pin-approve?key=${encodeURIComponent(pw)}`, {
@@ -4450,7 +4475,7 @@ async function approvePipelinePin(pinSlug, options = {}) {
       statusEl.style.borderColor = '#fecaca';
       statusEl.style.color = '#b91c1c';
       statusEl.textContent = `שגיאה: ${data.error || res.statusText}`;
-      return;
+      return { ok: false, error: data.error || res.statusText, data };
     }
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
@@ -4459,15 +4484,19 @@ async function approvePipelinePin(pinSlug, options = {}) {
       ? `הפין ${data.row_id} כבר פורסם.`
       : `הפין ${data.row_id} ${data.already_exists ? 'כבר נמצא' : 'נכנס'} במסילה כ-PENDING לתאריך ${data.scheduled_date} בשעה ${data.scheduled_time}.`;
     statusEl.textContent = statusText;
-    statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    loadPinsStatus();
-    fetchPipelineStatus();
+    if (!options.skipScroll) statusEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (!options.skipRefresh) {
+      loadPinsStatus();
+      fetchPipelineStatus();
+    }
     if (data.triggered) startPinPostedPolling();
+    return { ok: true, statusText, data };
   } catch (e) {
     statusEl.style.background = '#fef2f2';
     statusEl.style.borderColor = '#fecaca';
     statusEl.style.color = '#b91c1c';
     statusEl.textContent = `נכשל: ${e.message}`;
+    return { ok: false, error: e.message };
   }
 }
 
