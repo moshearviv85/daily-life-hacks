@@ -3825,6 +3825,8 @@ function renderPipelineTable(filter) {
         <details class="pipeline-pin-details">
           <summary>Details</summary>
           <div class="pipeline-pin-meta">
+            <div><strong>Title:</strong> ${escapeHtml(pin.title || '-')}</div>
+            <div><strong>Description:</strong> ${escapeHtml(description || '-')}</div>
             <div><strong>Board:</strong> ${escapeHtml(pin.board_name || '-')} <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.board_id || '')}</span></div>
             <div><strong>Model:</strong> <span style="font-family:monospace;color:var(--muted)">${escapeHtml(pin.model_id || '-')}</span></div>
             <div><strong>Hashtags:</strong> ${escapeHtml(pin.hashtags || '-')}</div>
@@ -4470,7 +4472,7 @@ async function publishPipelineArticle(slug) {
 async function approvePipelinePin(pinSlug, options = {}) {
   if (!pw) return;
   const ok = options.skipConfirm || confirm(IS_PRODUCTION_DASHBOARD
-    ? `Queue this pin for automatic publishing?\n\n${pinSlug}\n\nIt will enter PENDING after the pins already waiting. It will not publish immediately.`
+    ? `Queue this pin for automatic publishing?\n\n${pinSlug}\n\nIt will enter the next available PENDING slot. If the queue is empty, the first slot starts now. The publisher still respects the normal cooldown.`
     : `Queue this pin in staging?\n\n${pinSlug}\n\nA PENDING staging row will be created only. No GitHub Actions run and no Pinterest post will happen.`);
   if (!ok) return;
 

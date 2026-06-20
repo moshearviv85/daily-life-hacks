@@ -125,6 +125,8 @@ test("staging queues a pipeline pin in the staging-only queue without dispatchin
 });
 
 test("production queues a pipeline pin behind the latest pending pin without dispatching", async (t) => {
+  t.mock.timers.enable({ apis: ["Date"], now: new Date("2026-06-01T08:00:00Z") });
+
   const db = makeDb();
   db.setLatestPending({ scheduled_date: "2026-06-05", scheduled_time: "08:30" });
   const checkedUrls = [];
@@ -161,6 +163,56 @@ test("production queues a pipeline pin behind the latest pending pin without dis
     { url: "https://www.daily-life-hacks.com/demo-article/", method: "HEAD" },
     { url: "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg", method: "HEAD" },
   ]);
+});
+
+test("production queues the first pending pin from the current UTC minute", async (t) => {
+  t.mock.timers.enable({ apis: ["Date"], now: new Date("2026-06-20T08:19:45Z") });
+
+  const db = makeDb();
+  t.mock.method(globalThis, "fetch", async (url) => new Response(null, {
+    status: 200,
+    headers: { "Content-Type": String(url).endsWith(".jpg") ? "image/jpeg" : "text/html" },
+  }));
+
+  const response = await onRequestPost({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-pin-approve?key=test-key", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pin_slug: "demo-pin", publish_now: false }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", DB: db, CF_PAGES_BRANCH: "main" },
+  });
+
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  assert.equal(data.ok, true);
+  assert.equal(data.queued, true);
+  assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-06-20");
+  assert.equal(db.schedule.get("demo-pin").scheduled_time, "08:19");
+});
+
+test("production queues after now when the latest pending slot is stale", async (t) => {
+  t.mock.timers.enable({ apis: ["Date"], now: new Date("2026-06-20T08:21:10Z") });
+
+  const db = makeDb();
+  db.setLatestPending({ scheduled_date: "2026-06-05", scheduled_time: "08:30" });
+  t.mock.method(globalThis, "fetch", async (url) => new Response(null, {
+    status: 200,
+    headers: { "Content-Type": String(url).endsWith(".jpg") ? "image/jpeg" : "text/html" },
+  }));
+
+  const response = await onRequestPost({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-pin-approve?key=test-key", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pin_slug: "demo-pin", publish_now: false }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", DB: db, CF_PAGES_BRANCH: "main" },
+  });
+
+  assert.equal(response.status, 200);
+  assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-06-20");
+  assert.equal(db.schedule.get("demo-pin").scheduled_time, "08:21");
 });
 
 test("production approve can use staging pipeline metadata when production pipeline row is absent", async (t) => {

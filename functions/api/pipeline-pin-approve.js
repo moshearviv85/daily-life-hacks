@@ -232,24 +232,17 @@ async function nextQueueSlot(db, tableName) {
   `).first();
 
   const now = new Date();
-  const today = new Date(now);
-  today.setUTCHours(0, 0, 0, 0);
 
   if (!latest?.scheduled_date) {
-    const first = new Date(today);
-    first.setUTCDate(first.getUTCDate() + 1);
-    first.setUTCHours(6, 0, 0, 0);
-    return { scheduledDate: formatDate(first), scheduledTime: formatTime(first) };
+    return { scheduledDate: formatDate(now), scheduledTime: formatTime(now) };
   }
 
   const [hour, minute] = String(latest.scheduled_time || "00:00").split(":").map((n) => parseInt(n, 10));
   const latestSlot = new Date(`${latest.scheduled_date}T00:00:00Z`);
   latestSlot.setUTCHours(Number.isFinite(hour) ? hour : 0, Number.isFinite(minute) ? minute : 0, 0, 0);
 
-  if (latestSlot < today) {
-    latestSlot.setTime(today.getTime());
-    latestSlot.setUTCDate(latestSlot.getUTCDate() + 1);
-    latestSlot.setUTCHours(6, 0, 0, 0);
+  if (latestSlot < now) {
+    latestSlot.setTime(now.getTime());
   } else {
     latestSlot.setUTCHours(latestSlot.getUTCHours() + 2);
     if (latestSlot.getUTCHours() > 21) {

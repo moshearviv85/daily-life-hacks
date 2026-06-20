@@ -57,7 +57,7 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /<strong>Alt:<\/strong>/);
   assert.match(dashboard, /const pipelineAssetBase = 'https:\/\/staging\.daily-life-hacks\.pages\.dev'/);
   assert.match(dashboard, /class="pipeline-pin-select"/);
-  assert.match(dashboard, /Queue selected live pins/);
+  assert.match(dashboard, /Publish selected pins/);
   assert.match(dashboard, /function getSelectedPipelinePinsInterleaved/);
   assert.match(dashboard, /function approveSelectedPipelinePins/);
   assert.match(dashboard, /window\.approveSelectedPipelinePins = approveSelectedPipelinePins/);
@@ -82,7 +82,7 @@ test("production dashboard gates pipeline pin publishing until production assets
   assert.match(dashboard, /const pinLiveOnProduction = builtPinSlugs\.has\(slug\)/);
   assert.match(dashboard, /const productionReady = !IS_PRODUCTION_DASHBOARD \|\| \(articleLiveOnProduction && pinLiveOnProduction\)/);
   assert.match(dashboard, /PROMOTE FIRST/);
-  assert.match(dashboard, /Promote to Production/);
+  assert.match(dashboard, /Promote staging to production/);
   assert.match(dashboard, /function promoteStagingToProduction/);
   assert.match(dashboard, /action: 'promote_staging'/);
   assert.match(dashboard, /window\.promoteStagingToProduction = promoteStagingToProduction/);
@@ -111,7 +111,7 @@ test("pipeline dashboard shows thumbnails and can regenerate hero image", () => 
   assert.match(dashboard, /Workflow sent\. Watching for the new image/);
   assert.match(dashboard, /New image is live\. Thumbnail refreshed/);
   assert.match(dashboard, /refreshed repeatedly without reloading the dashboard/);
-  assert.match(dashboard, /width:72px;height:96px/);
+  assert.match(dashboard, /width:48px;height:64px/);
 });
 
 test("hero image watcher refreshes the visible thumbnail after table rerender", async () => {
@@ -180,7 +180,7 @@ test("dashboard can select topics and produce selected topics", () => {
 
   assert.match(dashboard, /class="topic-select"/);
   assert.match(dashboard, /data-topic-slug/);
-  assert.match(dashboard, /Produce Selected to Staging/);
+  assert.match(dashboard, /Produce 1 Selected to Staging/);
   assert.match(dashboard, /function produceSelectedTopics/);
   assert.match(dashboard, /function pollPipelineForSlugs/);
   assert.match(dashboard, /Full staging package ready/);
