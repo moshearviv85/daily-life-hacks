@@ -14,16 +14,36 @@ export const PINTEREST_BOARDS = {
     name: "Healthy Meal Prep & Kitchen Tips",
     aliases: ["Healthy Breakfast, Smoothies and Snacks", "Healthy Breakfast Smoothies and Snacks"],
   },
+  easyDinnerRecipes: {
+    id: "1124140825679548778",
+    name: "Easy Dinner Recipes",
+    aliases: ["easy-dinner-recipes", "Easy Weeknight Dinners"],
+  },
+  budgetMealsGrocery: {
+    id: "1124140825679548779",
+    name: "Budget Meals and Grocery Hacks",
+    aliases: ["budget-meals", "Budget Meals", "Grocery Hacks"],
+  },
+  highProteinMeals: {
+    id: "1124140825679548780",
+    name: "High Protein Meals and Smart Swaps",
+    aliases: ["high-protein-meals", "High Protein Recipes", "Protein Meals"],
+  },
+  foodStorageFreezer: {
+    id: "1124140825679548781",
+    name: "Food Storage and Freezer Tips",
+    aliases: ["food-storage", "Food Storage Tips", "Freezer Tips"],
+  },
 };
 
 export const CATEGORY_TO_BOARD = {
-  recipes: PINTEREST_BOARDS.highFiberRecipes,
+  recipes: PINTEREST_BOARDS.easyDinnerRecipes,
   nutrition: PINTEREST_BOARDS.gutHealthNutrition,
   tips: PINTEREST_BOARDS.mealPrepKitchen,
 };
 
 const CATEGORY_HASHTAGS = {
-  recipes: ["RecipeIdeas", "HighFiberRecipes", "EasyDinner"],
+  recipes: ["RecipeIdeas", "EasyDinner", "WeeknightDinner"],
   nutrition: ["NutritionTips", "GutHealth", "HealthyHabits"],
   tips: ["KitchenTips", "MealPlanning", "BudgetMeals"],
 };
@@ -52,18 +72,61 @@ const MEAL_PREP_KEYWORDS = [
   "snack",
   "lunch",
   "sandwich",
-  "freezer",
-  "storage",
   "organize",
   "organization",
-  "grocery",
-  "budget",
   "kitchen",
   "picnic",
-  "leftover",
   "make ahead",
   "batch cooking",
   "prep",
+];
+
+const BUDGET_KEYWORDS = [
+  "budget",
+  "cheap",
+  "affordable",
+  "grocery",
+  "groceries",
+  "save money",
+  "saving money",
+  "frugal",
+  "stretch",
+];
+
+const FOOD_STORAGE_KEYWORDS = [
+  "freezer",
+  "freeze",
+  "storage",
+  "store",
+  "leftover",
+  "leftovers",
+  "keep fresh",
+  "shelf life",
+];
+
+const HIGH_PROTEIN_KEYWORDS = [
+  "protein",
+  "high protein",
+  "high-protein",
+  "egg",
+  "eggs",
+  "tofu",
+  "turkey",
+  "greek yogurt",
+  "cottage cheese",
+];
+
+const HIGH_FIBER_RECIPE_KEYWORDS = [
+  "fiber",
+  "high fiber",
+  "high-fiber",
+  "beans",
+  "lentil",
+  "lentils",
+  "chia",
+  "whole wheat",
+  "oats",
+  "oatmeal",
 ];
 
 const GUT_NUTRITION_KEYWORDS = [
@@ -72,7 +135,6 @@ const GUT_NUTRITION_KEYWORDS = [
   "nutrition",
   "sodium",
   "label",
-  "protein",
   "cholesterol",
   "chia",
   "whole wheat",
@@ -133,10 +195,16 @@ export function boardForPin(pin, category) {
   const normalizedCategory = String(category || "").toLowerCase();
   const haystack = pinHaystack(pin);
 
-  if (includesAny(haystack, MEAL_PREP_KEYWORDS)) return PINTEREST_BOARDS.mealPrepKitchen;
-  if (normalizedCategory === "recipes") return PINTEREST_BOARDS.highFiberRecipes;
+  if (includesAny(haystack, BUDGET_KEYWORDS)) return PINTEREST_BOARDS.budgetMealsGrocery;
+  if (includesAny(haystack, FOOD_STORAGE_KEYWORDS)) return PINTEREST_BOARDS.foodStorageFreezer;
+  if (includesAny(haystack, HIGH_PROTEIN_KEYWORDS)) return PINTEREST_BOARDS.highProteinMeals;
+  if (normalizedCategory === "recipes" && includesAny(haystack, HIGH_FIBER_RECIPE_KEYWORDS)) {
+    return PINTEREST_BOARDS.highFiberRecipes;
+  }
   if (includesAny(haystack, GUT_NUTRITION_KEYWORDS)) return PINTEREST_BOARDS.gutHealthNutrition;
-  if (includesAny(haystack, RECIPE_KEYWORDS)) return PINTEREST_BOARDS.highFiberRecipes;
+  if (includesAny(haystack, MEAL_PREP_KEYWORDS)) return PINTEREST_BOARDS.mealPrepKitchen;
+  if (normalizedCategory === "recipes") return PINTEREST_BOARDS.easyDinnerRecipes;
+  if (includesAny(haystack, RECIPE_KEYWORDS)) return PINTEREST_BOARDS.easyDinnerRecipes;
   return boardForCategory(normalizedCategory);
 }
 

@@ -68,6 +68,43 @@ const pins: any[] = [];
 const pinByCat: Record<string,number>    = {};
 const pinByBoard: Record<string,number>  = {};
 const pinByStatus: Record<string,number> = {};
+const pinterestBoardRouting = [
+  {
+    name: 'Easy Dinner Recipes',
+    id: '1124140825679548778',
+    routes: 'general recipes, dinners, soups, pasta, bowls',
+  },
+  {
+    name: 'High Fiber Dinner and Gut Health Recipes',
+    id: '1124140825679184032',
+    routes: 'fiber-forward recipes, beans, lentils, oats, whole wheat',
+  },
+  {
+    name: 'Gut Health Tips and Nutrition Charts',
+    id: '1124140825679184034',
+    routes: 'nutrition, labels, gut health, sodium, vitamins',
+  },
+  {
+    name: 'Healthy Meal Prep & Kitchen Tips',
+    id: '1124140825679184036',
+    routes: 'meal prep, breakfast, smoothies, snacks, kitchen tips',
+  },
+  {
+    name: 'Budget Meals and Grocery Hacks',
+    id: '1124140825679548779',
+    routes: 'budget meals, groceries, frugal cooking, saving money',
+  },
+  {
+    name: 'High Protein Meals and Smart Swaps',
+    id: '1124140825679548780',
+    routes: 'protein, eggs, tofu, turkey, Greek yogurt',
+  },
+  {
+    name: 'Food Storage and Freezer Tips',
+    id: '1124140825679548781',
+    routes: 'freezer, storage, leftovers, shelf life',
+  },
+];
 
 const schedPosted: any[]  = [];
 const schedPending: any[] = [];
@@ -889,6 +926,23 @@ const BUILD = {
       <div class="card">
         <div class="card-title">Pinterest Boards</div>
         <div id="pins-board-list"></div>
+        <div style="margin-top:1.25rem">
+          <div class="card-title">Active Board Routing</div>
+          <table class="data-table">
+            <thead><tr><th>Board</th><th>Routes</th></tr></thead>
+            <tbody>
+              {pinterestBoardRouting.map(board => (
+                <tr>
+                  <td>
+                    <strong>{board.name}</strong>
+                    <div style="font-family:monospace;color:var(--muted);font-size:.68rem">{board.id}</div>
+                  </td>
+                  <td>{board.routes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <div style="margin-top:1.25rem">
           <div class="card-title">Pins by Status</div>
           <div id="pins-status-list"></div>

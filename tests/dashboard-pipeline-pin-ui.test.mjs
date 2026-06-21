@@ -72,6 +72,10 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /Publish selected pins/);
   assert.match(dashboard, /id="ps-upcoming-more-btn"/);
   assert.match(dashboard, /Show next 10/);
+  assert.match(dashboard, /Active Board Routing/);
+  assert.match(dashboard, /Easy Dinner Recipes/);
+  assert.match(dashboard, /Budget Meals and Grocery Hacks/);
+  assert.match(dashboard, /Food Storage and Freezer Tips/);
   assert.match(dashboard, /let pinsUpcomingLimit = PINS_UPCOMING_PAGE_SIZE/);
   assert.match(dashboard, /&limit=\$\{pinsUpcomingLimit\}/);
   assert.match(dashboard, /function showNextUpcomingPins/);

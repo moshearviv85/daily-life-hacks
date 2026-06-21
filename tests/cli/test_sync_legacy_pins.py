@@ -108,7 +108,7 @@ def test_main_maps_categories_to_boards(tmp_path):
     main(_common_args(csv_p, articles), post=fake)
     rows = list(csv.DictReader(io.StringIO(fake.calls[0]["body"])))
     by_slug = {(r["slug"], r["variant"]): r["board"] for r in rows}
-    assert by_slug[("live-recipe", "1")] == "High Fiber Dinner and Gut Health Recipes"
+    assert by_slug[("live-recipe", "1")] == "Easy Dinner Recipes"
     assert by_slug[("live-tip", "1")] == "Healthy Meal Prep & Kitchen Tips"
 
 

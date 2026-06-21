@@ -20,7 +20,7 @@ from typing import Iterable
 
 
 CATEGORY_TO_BOARD = {
-    "recipes":    "High Fiber Dinner and Gut Health Recipes",
+    "recipes":    "Easy Dinner Recipes",
     "nutrition":  "Gut Health Tips and Nutrition Charts",
     "tips":       "Healthy Meal Prep & Kitchen Tips",
 }
@@ -36,17 +36,51 @@ BOARD_NAME_TO_ID = {
     "healthy meal prep & kitchen tips": "1124140825679184036",
     "healthy breakfast, smoothies and snacks": "1124140825679184036",
     "healthy breakfast smoothies and snacks": "1124140825679184036",
+    "easy dinner recipes": "1124140825679548778",
+    "easy-dinner-recipes": "1124140825679548778",
+    "easy weeknight dinners": "1124140825679548778",
+    "budget meals and grocery hacks": "1124140825679548779",
+    "budget-meals": "1124140825679548779",
+    "budget meals": "1124140825679548779",
+    "grocery hacks": "1124140825679548779",
+    "high protein meals and smart swaps": "1124140825679548780",
+    "high-protein-meals": "1124140825679548780",
+    "high protein recipes": "1124140825679548780",
+    "protein meals": "1124140825679548780",
+    "food storage and freezer tips": "1124140825679548781",
+    "food-storage": "1124140825679548781",
+    "food storage tips": "1124140825679548781",
+    "freezer tips": "1124140825679548781",
 }
 
 MEAL_PREP_KEYWORDS = (
     "meal prep", "meal-prep", "breakfast", "smoothie", "snack", "lunch",
-    "sandwich", "freezer", "storage", "organize", "organization", "grocery",
-    "budget", "kitchen", "picnic", "leftover", "make ahead", "batch cooking",
-    "prep",
+    "sandwich", "organize", "organization", "kitchen", "picnic",
+    "make ahead", "batch cooking", "prep",
+)
+
+BUDGET_KEYWORDS = (
+    "budget", "cheap", "affordable", "grocery", "groceries", "save money",
+    "saving money", "frugal", "stretch",
+)
+
+FOOD_STORAGE_KEYWORDS = (
+    "freezer", "freeze", "storage", "store", "leftover", "leftovers",
+    "keep fresh", "shelf life",
+)
+
+HIGH_PROTEIN_KEYWORDS = (
+    "protein", "high protein", "high-protein", "egg", "eggs", "tofu",
+    "turkey", "greek yogurt", "cottage cheese",
+)
+
+HIGH_FIBER_RECIPE_KEYWORDS = (
+    "fiber", "high fiber", "high-fiber", "beans", "lentil", "lentils",
+    "chia", "whole wheat", "oats", "oatmeal",
 )
 
 GUT_NUTRITION_KEYWORDS = (
-    "gut", "fiber", "nutrition", "sodium", "label", "protein", "cholesterol",
+    "gut", "fiber", "nutrition", "sodium", "label", "cholesterol",
     "chia", "whole wheat", "constipation", "prebiotic", "vitamin", "mineral",
     "satiety",
 )
@@ -95,12 +129,18 @@ def board_for_pin(pin: dict, category: str) -> str:
     category = (category or "").lower()
     haystack = _pin_haystack(pin)
 
-    if _contains_any(haystack, MEAL_PREP_KEYWORDS):
-        return CATEGORY_TO_BOARD["tips"]
-    if category == "recipes":
-        return CATEGORY_TO_BOARD["recipes"]
+    if _contains_any(haystack, BUDGET_KEYWORDS):
+        return "Budget Meals and Grocery Hacks"
+    if _contains_any(haystack, FOOD_STORAGE_KEYWORDS):
+        return "Food Storage and Freezer Tips"
+    if _contains_any(haystack, HIGH_PROTEIN_KEYWORDS):
+        return "High Protein Meals and Smart Swaps"
+    if category == "recipes" and _contains_any(haystack, HIGH_FIBER_RECIPE_KEYWORDS):
+        return "High Fiber Dinner and Gut Health Recipes"
     if _contains_any(haystack, GUT_NUTRITION_KEYWORDS):
         return CATEGORY_TO_BOARD["nutrition"]
+    if _contains_any(haystack, MEAL_PREP_KEYWORDS):
+        return CATEGORY_TO_BOARD["tips"]
     if _contains_any(haystack, RECIPE_KEYWORDS):
         return CATEGORY_TO_BOARD["recipes"]
     return category_to_board(category)

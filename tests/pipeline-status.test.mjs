@@ -70,8 +70,8 @@ test("pipeline status attaches pin rows to their article", async () => {
   assert.equal(data.articles[0].pins[0].publish_status, "POSTED");
   assert.equal(data.articles[0].pins[0].model_id, "gpt-image-2");
   assert.equal(data.articles[0].pins[0].pin_id, "123");
-  assert.equal(data.articles[0].pins[0].board_id, "1124140825679184036");
-  assert.equal(data.articles[0].pins[0].board_name, "Healthy Meal Prep & Kitchen Tips");
+  assert.equal(data.articles[0].pins[0].board_id, "1124140825679548779");
+  assert.equal(data.articles[0].pins[0].board_name, "Budget Meals and Grocery Hacks");
   assert.match(data.articles[0].pins[0].hashtags, /#BudgetMeals/);
   assert.match(data.articles[0].pins[0].description_with_hashtags, /#DailyLifeHacks/);
   assert.equal(data.summary.by_display_stage.staging_review, 1);

@@ -41,7 +41,7 @@ def test_module_imports():
 # ── category_to_board ────────────────────────────────────────────────────────
 
 def test_category_to_board_recipes():
-    assert category_to_board("recipes") == "High Fiber Dinner and Gut Health Recipes"
+    assert category_to_board("recipes") == "Easy Dinner Recipes"
 
 
 def test_category_to_board_nutrition():
@@ -146,11 +146,11 @@ def test_pins_csv_variants_are_1_to_4():
     assert [r["variant"] for r in rows] == ["1", "2", "3", "4"]
 
 
-def test_pins_csv_maps_category_recipes_to_high_fiber_board():
+def test_pins_csv_maps_category_recipes_to_easy_dinner_board():
     text = build_pins_csv([_pin_record("demo", "recipes")])
     rows = _parse(text)
     for r in rows:
-        assert r["board"] == "High Fiber Dinner and Gut Health Recipes"
+        assert r["board"] == "Easy Dinner Recipes"
 
 
 def test_pins_csv_maps_category_nutrition_to_gut_health_board():
@@ -178,17 +178,55 @@ def test_board_for_pin_routes_nutrition_to_gut_health_board():
 
 def test_board_for_pin_routes_meal_prep_to_kitchen_board():
     board = board_for_pin({
-        "title": "Bulk Meal Prep: Freeze Flat for Easy Storage",
-        "description": "A practical kitchen system for freezer meals.",
-        "article_slug": "bulk-meal-prep-freeze-flat-storage",
+        "title": "Bulk Meal Prep for Easy Lunches",
+        "description": "A practical kitchen system for make-ahead meals.",
+        "article_slug": "bulk-meal-prep-easy-lunches",
     }, "tips")
     assert board == "Healthy Meal Prep & Kitchen Tips"
+
+
+def test_board_for_pin_routes_fiber_recipe_to_high_fiber_board():
+    board = board_for_pin({
+        "title": "Easy Bean Dinner Recipe",
+        "description": "A simple weeknight dinner with beans and oats.",
+        "article_slug": "easy-bean-dinner-recipe",
+    }, "recipes")
+    assert board == "High Fiber Dinner and Gut Health Recipes"
+
+
+def test_board_for_pin_routes_budget_to_grocery_board():
+    board = board_for_pin({
+        "title": "Budget Meals from a Small Grocery List",
+        "description": "Affordable dinners that help save money.",
+        "article_slug": "budget-meals-small-grocery-list",
+    }, "tips")
+    assert board == "Budget Meals and Grocery Hacks"
+
+
+def test_board_for_pin_routes_storage_to_freezer_board():
+    board = board_for_pin({
+        "title": "Freeze Flat for Easy Food Storage",
+        "description": "A leftover system that protects shelf life.",
+        "article_slug": "freeze-flat-food-storage",
+    }, "tips")
+    assert board == "Food Storage and Freezer Tips"
+
+
+def test_board_for_pin_routes_protein_to_protein_board():
+    board = board_for_pin({
+        "title": "High Protein Lunch Ideas Without Powder",
+        "description": "Food-first protein meals with eggs, tofu, and yogurt.",
+        "article_slug": "high-protein-lunch-ideas-without-powder",
+    }, "nutrition")
+    assert board == "High Protein Meals and Smart Swaps"
 
 
 def test_board_name_to_id_accepts_aliases():
     assert board_name_to_id("Healthy Breakfast, Smoothies and Snacks") == "1124140825679184036"
     assert board_name_to_id("Healthy Meal Prep & Kitchen Tips") == "1124140825679184036"
     assert board_name_to_id("gut-health-nutrition-tips") == "1124140825679184034"
+    assert board_name_to_id("Budget Meals") == "1124140825679548779"
+    assert board_name_to_id("Freezer Tips") == "1124140825679548781"
 
 
 def test_pins_csv_carries_pin_title_description_alt():
