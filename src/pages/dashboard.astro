@@ -3690,26 +3690,33 @@ function renderPipelineTable(filter) {
     return hasHero && (hasBuiltPins || hasPipelinePins);
   };
   const pinIsPosted = (pin) => String(pin.publish_status || '').toUpperCase() === 'POSTED';
-  const articleHasUnpostedPins = (article) =>
-    Array.isArray(article.pins) && article.pins.some(pin => !pinIsPosted(pin));
+  const articleIsPublished = (article) => {
+    const productionStatus = String(article.production_status || '').toUpperCase();
+    return ['PUBLISHED', 'DUPLICATE'].includes(productionStatus)
+      || Number(article.production_live || 0) === 1
+      || displayStageFor(article) === 'published';
+  };
+  const articleHasPostedPins = (article) =>
+    Array.isArray(article.pins) && article.pins.length > 0 && article.pins.every(pinIsPosted);
+  const articleIsFullyPublished = (article) => articleIsPublished(article) && articleHasPostedPins(article);
 
   let hiddenIncompleteAssets = 0;
-  let hiddenPostedArticles = 0;
+  let hiddenFullyPublishedArticles = 0;
   let articles = pipelineData.articles;
   if (IS_PRODUCTION_DASHBOARD) {
     const before = articles.length;
     articles = articles.filter(articleHasHeroAndPins);
     hiddenIncompleteAssets = before - articles.length;
-    const beforePostedFilter = articles.length;
-    articles = articles.filter(articleHasUnpostedPins);
-    hiddenPostedArticles = beforePostedFilter - articles.length;
+    const beforePublishedFilter = articles.length;
+    articles = articles.filter(article => !articleIsFullyPublished(article));
+    hiddenFullyPublishedArticles = beforePublishedFilter - articles.length;
   }
 
   const imageFilterNote = document.getElementById('pl-image-filter-note');
   if (imageFilterNote) {
     const hiddenNotes = [];
     if (hiddenIncompleteAssets > 0) hiddenNotes.push(`${hiddenIncompleteAssets} article(s) without hero + pin images hidden.`);
-    if (hiddenPostedArticles > 0) hiddenNotes.push(`${hiddenPostedArticles} fully posted article(s) hidden.`);
+    if (hiddenFullyPublishedArticles > 0) hiddenNotes.push(`${hiddenFullyPublishedArticles} fully published article(s) hidden.`);
     imageFilterNote.textContent = hiddenNotes.join(' ');
   }
 
@@ -3723,8 +3730,8 @@ function renderPipelineTable(filter) {
 
   if (!articles.length) {
     tbody.innerHTML = '';
-    empty.textContent = IS_PRODUCTION_DASHBOARD && (hiddenIncompleteAssets > 0 || hiddenPostedArticles > 0)
-      ? `No visible articles match this filter. ${hiddenIncompleteAssets} article(s) without complete hero + pin images and ${hiddenPostedArticles} fully posted article(s) are hidden.`
+    empty.textContent = IS_PRODUCTION_DASHBOARD && (hiddenIncompleteAssets > 0 || hiddenFullyPublishedArticles > 0)
+      ? `No visible articles match this filter. ${hiddenIncompleteAssets} article(s) without complete hero + pin images and ${hiddenFullyPublishedArticles} fully published article(s) are hidden.`
       : 'No pipeline data yet. Click "Find Topics" to start.';
     empty.style.display = '';
     updatePipelinePinSelectionSummary();

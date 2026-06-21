@@ -19,6 +19,18 @@ test("pipeline table can publish every unposted pin and hides posted pins", () =
   assert.match(dashboard, /publish_status/);
 });
 
+test("production pipeline list hides only fully published article packages", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /const articleIsPublished = \(article\) =>/);
+  assert.match(dashboard, /production_status/);
+  assert.match(dashboard, /const articleHasPostedPins = \(article\) =>/);
+  assert.match(dashboard, /const articleIsFullyPublished = \(article\) => articleIsPublished\(article\) && articleHasPostedPins\(article\)/);
+  assert.match(dashboard, /articles = articles\.filter\(article => !articleIsFullyPublished\(article\)\)/);
+  assert.match(dashboard, /fully published article\(s\) hidden/);
+  assert.doesNotMatch(dashboard, /articleHasUnpostedPins/);
+});
+
 test("pipeline publish button queues pins instead of dispatching immediate publish", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
