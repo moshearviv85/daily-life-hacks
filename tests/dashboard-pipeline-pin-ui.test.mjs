@@ -19,15 +19,18 @@ test("pipeline table can publish every unposted pin and hides posted pins", () =
   assert.match(dashboard, /publish_status/);
 });
 
-test("production pipeline list hides only fully published article packages", () => {
+test("production pipeline list hides live articles once all pins are queued or posted", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
   assert.match(dashboard, /const articleIsPublished = \(article\) =>/);
   assert.match(dashboard, /production_status/);
-  assert.match(dashboard, /const articleHasPostedPins = \(article\) =>/);
-  assert.match(dashboard, /const articleIsFullyPublished = \(article\) => articleIsPublished\(article\) && articleHasPostedPins\(article\)/);
-  assert.match(dashboard, /articles = articles\.filter\(article => !articleIsFullyPublished\(article\)\)/);
-  assert.match(dashboard, /fully published article\(s\) hidden/);
+  assert.match(dashboard, /const pinIsInPublishing = \(pin\) => \['PENDING', 'POSTED'\]/);
+  assert.match(dashboard, /const articlePinsInPublishing = \(article\) =>/);
+  assert.match(dashboard, /pins\.every\(pinIsInPublishing\)/);
+  assert.match(dashboard, /const articleIsDoneForPipelineControl = \(article\) => articleIsPublished\(article\) && articlePinsInPublishing\(article\)/);
+  assert.match(dashboard, /articles = articles\.filter\(article => !articleIsDoneForPipelineControl\(article\)\)/);
+  assert.match(dashboard, /live article\(s\) with queued\/posted pins hidden/);
+  assert.doesNotMatch(dashboard, /fully published article\(s\) hidden/);
   assert.doesNotMatch(dashboard, /articleHasUnpostedPins/);
 });
 
