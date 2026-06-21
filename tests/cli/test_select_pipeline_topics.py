@@ -33,7 +33,7 @@ def test_select_topics_applies_gate_to_explicit_topic_ids():
     selected, rejected = mod.select_topics(
         topics,
         count=2,
-        topic_ids={10, 11},
+        topic_ids=[10, 11],
         known_titles=[],
     )
 
@@ -58,10 +58,28 @@ def test_select_topics_rejects_supplement_topic_ids_even_when_selected():
     selected, rejected = mod.select_topics(
         topics,
         count=2,
-        topic_ids={458, 459},
+        topic_ids=[458, 459],
         known_titles=[],
     )
 
     assert [t["id"] for t in selected] == [459]
     assert [t["id"] for t in rejected] == [458]
     assert "supplement/powder" in rejected[0]["reject_reason"]
+
+
+def test_select_topics_preserves_explicit_topic_id_order():
+    topics = [
+        {"id": 10, "topic": "how to freeze soup in single servings", "category": "tips"},
+        {"id": 11, "topic": "high protein breakfasts with eggs yogurt and beans", "category": "nutrition"},
+        {"id": 12, "topic": "how to keep berries fresh longer", "category": "tips"},
+    ]
+
+    selected, rejected = mod.select_topics(
+        topics,
+        count=3,
+        topic_ids=[12, 10, 11],
+        known_titles=[],
+    )
+
+    assert [t["id"] for t in selected] == [12, 10, 11]
+    assert rejected == []

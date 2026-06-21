@@ -28,7 +28,7 @@ env:
 jobs:
   produce:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
         with:
@@ -56,7 +56,12 @@ jobs:
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
-          curl -s "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&status=approved" > /tmp/approved-topics.json
+          TOPIC_IDS="${{ inputs.topic_ids }}"
+          STATUS_FILTER="&status=approved"
+          if [ -n "$TOPIC_IDS" ]; then
+            STATUS_FILTER=""
+          fi
+          curl -s "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}${STATUS_FILTER}" > /tmp/approved-topics.json
           python scripts/NEW_PIPELINE_2026-05-08/select_pipeline_topics.py \
             --input /tmp/approved-topics.json \
             --count "${{ inputs.count }}" \

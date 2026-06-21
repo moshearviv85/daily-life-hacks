@@ -746,7 +746,7 @@ const BUILD = {
         </div>
       </div>
       <div style="padding:.55rem .75rem;border-radius:6px;background:#f8fafc;border:1px solid var(--border);font-size:.78rem;color:var(--muted);margin-bottom:.75rem">
-        Find Topics pulls GSC opportunity queries and Google Autocomplete seed expansions, then runs deterministic filters and an LLM semantic duplicate check against existing site and pipeline topics before adding a small review queue to <strong style="color:var(--text-color)">staging D1</strong>. Generate creates one full staging package: article, hero image, support image, and four pin images. Pinterest remains manual.
+        Find Topics pulls GSC opportunity queries and Google Autocomplete seed expansions, then runs deterministic filters and an LLM semantic duplicate check against existing site and pipeline topics before adding a small review queue to <strong style="color:var(--text-color)">staging D1</strong>. Generate creates full staging packages: article, hero image, support image, and four pin images. Selected topics can be queued together and processed one after another. Pinterest remains manual.
       </div>
 
       <!-- Pipeline stat cards -->
@@ -3584,7 +3584,7 @@ function renderPipelineTopicsModal(topics) {
       <div style="display:flex;align-items:center;gap:.45rem;flex-wrap:wrap">
         <button class="btn btn-sm" onclick="updateSelectedTopics('approve')">Approve</button>
         <button class="btn btn-sm" onclick="updateSelectedTopics('reject')" style="background:#ef4444;color:#fff;border-color:#ef4444">Reject</button>
-        <button class="btn btn-sm" onclick="produceSelectedTopics()" style="background:#16a34a;color:#fff;border-color:#16a34a">Produce 1 Selected to Staging</button>
+        <button class="btn btn-sm" onclick="produceSelectedTopics()" style="background:#16a34a;color:#fff;border-color:#16a34a">Queue Selected to Staging</button>
         <button class="btn btn-sm" onclick="deleteVisiblePendingTopics()" ${deleteDisabled ? 'disabled' : ''} title="Deletes only pending/queued topics in the current filtered view. Approved and produced topics are never deleted." style="background:#991b1b;color:#fff;border-color:#991b1b;${deleteDisabled ? 'opacity:.45;cursor:not-allowed' : ''}">${deleteLabel}</button>
         <button class="btn btn-sm" onclick="resetPipelineTopicBank()" ${totalStoredTopics ? '' : 'disabled'} title="Deletes every row from pipeline_topics only. Articles and pins are not deleted." style="background:#450a0a;color:#fff;border-color:#450a0a;${totalStoredTopics ? '' : 'opacity:.45;cursor:not-allowed'}">Clear topic bank (${totalStoredTopics})</button>
       </div>
@@ -4149,7 +4149,8 @@ async function pollDiscoveryTopics(beforeIds, data, statusEl) {
 async function pollPipelineForSlugs(slugs, data, statusEl) {
   if (!slugs.length) return;
   const wanted = new Set(slugs);
-  for (let attempt = 1; attempt <= 72; attempt++) {
+  const maxAttempts = Math.min(360, Math.max(72, slugs.length * 72));
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     await new Promise(resolve => setTimeout(resolve, 10000));
     await fetchPipelineStatus();
     const articles = pipelineData?.articles || [];
@@ -4165,12 +4166,12 @@ async function pollPipelineForSlugs(slugs, data, statusEl) {
     statusEl.style.background = '#fff7ed';
     statusEl.style.borderColor = '#fed7aa';
     statusEl.style.color = '#92400e';
-    statusEl.innerHTML = `Pipeline still running or syncing. Found ${found.length}/${slugs.length} article record(s); full assets ready ${ready.length}/${slugs.length}. Refresh ${attempt}/72.${pipelineActionsLink(data)}`;
+    statusEl.innerHTML = `Pipeline still running or syncing. Found ${found.length}/${slugs.length} article record(s); full assets ready ${ready.length}/${slugs.length}. Refresh ${attempt}/${maxAttempts}.${pipelineActionsLink(data)}`;
   }
   statusEl.style.background = '#fef2f2';
   statusEl.style.borderColor = '#fecaca';
   statusEl.style.color = '#b91c1c';
-  statusEl.innerHTML = `Workflow was dispatched, but the selected article did not reach full staging-review after 12 minutes. Check the workflow log.${pipelineActionsLink(data)}`;
+  statusEl.innerHTML = `Workflow was dispatched, but the selected topic batch did not reach full staging-review in the dashboard polling window. Check the workflow log.${pipelineActionsLink(data)}`;
 }
 
 function getPipelineArticle(slug) {
@@ -4223,12 +4224,7 @@ async function produceSelectedTopics() {
     alert('Select at least one topic first.');
     return;
   }
-  if (ids.length > 1) {
-    alert('Produce Selected is limited to 1 topic per run. Clear the selection and choose exactly one topic.');
-    return;
-  }
-
-  const ok = confirm(`Generate this selected topic to staging?\n\nThe topic will be approved first if needed. This uses staging D1 topics and AI provider credits.`);
+  const ok = confirm(`Queue ${ids.length} selected topic(s) for staging production?\n\nThey will be approved first if needed, then generated one after another by the produce workflow. Each package includes article, hero image, support image, and four pin images. This uses staging D1 topics and AI provider credits.`);
   if (!ok) return;
 
   produceSelectedTopicsInFlight = true;
@@ -4237,7 +4233,7 @@ async function produceSelectedTopics() {
   statusEl.style.background = '#fff7ed';
   statusEl.style.borderColor = '#fed7aa';
   statusEl.style.color = '#92400e';
-  statusEl.textContent = `Approving and dispatching ${ids.length} selected topic(s)...`;
+  statusEl.textContent = `Approving and queueing ${ids.length} selected topic(s)...`;
 
   try {
     await postTopicStatus('approve', ids);
@@ -4245,7 +4241,7 @@ async function produceSelectedTopics() {
     const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'produce', count: 1, topic_ids: ids }),
+      body: JSON.stringify({ action: 'produce', count: ids.length, topic_ids: ids }),
     });
     const data = await res.json();
     if (!res.ok || !data.ok) {
@@ -4257,7 +4253,7 @@ async function produceSelectedTopics() {
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.innerHTML = `Produce workflow dispatched for ${ids.length} selected topic(s). Output: ${data.outputBranch || 'staging'}. Waiting for full staging package sync...${pipelineActionsLink(data)}`;
+    statusEl.innerHTML = `Queued ${ids.length} selected topic(s) for staging production. The workflow will process them one after another. Output: ${data.outputBranch || 'staging'}. Waiting for full staging package sync...${pipelineActionsLink(data)}`;
     closeModal();
     pollPipelineForSlugs(selectedSlugs, data, statusEl);
   } catch (e) {

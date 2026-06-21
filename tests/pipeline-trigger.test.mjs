@@ -151,7 +151,7 @@ test("produce dispatch forwards selected topic ids to GitHub Actions", async (t)
   const response = await onRequestPost({
     request: new Request("https://staging.daily-life-hacks.pages.dev/api/pipeline-trigger?key=test-key", {
       method: "POST",
-      body: JSON.stringify({ action: "produce", count: 1, topic_ids: [17, "bad"] }),
+      body: JSON.stringify({ action: "produce", count: 4, topic_ids: [17, "23", 23, "bad", 42] }),
     }),
     env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "staging" },
   });
@@ -161,9 +161,9 @@ test("produce dispatch forwards selected topic ids to GitHub Actions", async (t)
   assert.equal(data.ok, true);
   assert.match(requestedWorkflow, /pipeline-produce\.yml/);
   assert.equal(dispatchBody.ref, "staging");
-  assert.equal(dispatchBody.inputs.count, "1");
-  assert.equal(dispatchBody.inputs.topic_ids, "17");
-  assert.equal(data.topic_ids, "17");
+  assert.equal(dispatchBody.inputs.count, "3");
+  assert.equal(dispatchBody.inputs.topic_ids, "17,23,42");
+  assert.equal(data.topic_ids, "17,23,42");
   assert.equal(data.dispatchRef, "staging");
   assert.match(data.actions_url, /pipeline-produce\.yml/);
 });

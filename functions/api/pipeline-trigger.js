@@ -38,7 +38,7 @@ const ACTIONS = {
     workflow: "pipeline-produce.yml",
     dispatchRef: "staging",
     outputBranch: "staging",
-    effect: "Generates an article, hero image, support image, and four pin images into staging.",
+    effect: "Generates staging package(s): article, hero image, support image, and four pin images.",
   },
   publish: {
     workflow: "publish-articles.yml",
@@ -179,7 +179,8 @@ export async function onRequestPost(context) {
     }
     inputs.limit = String(limit);
   }
-  if (action === "produce") {
+  const hasSelectedTopicIds = action === "produce" && Array.isArray(body.topic_ids) && body.topic_ids.length > 0;
+  if (action === "produce" && !hasSelectedTopicIds) {
     const count = Number.parseInt(String(body.count || 1), 10);
     if (!Number.isInteger(count) || count < 1 || count > 3) {
       return json({ error: "produce count must be an integer from 1 to 3" }, 400);
@@ -205,17 +206,22 @@ export async function onRequestPost(context) {
       return json({ ok: false, error: gate.error, article_stage: gate.article_stage || null }, gate.status);
     }
   }
-  if (action === "produce" && Array.isArray(body.topic_ids) && body.topic_ids.length) {
+  if (hasSelectedTopicIds) {
+    const seenTopicIds = new Set();
     const topicIds = body.topic_ids
       .map((id) => Number.parseInt(String(id), 10))
-      .filter((id) => Number.isInteger(id) && id > 0);
+      .filter((id) => {
+        if (!Number.isInteger(id) || id <= 0 || seenTopicIds.has(id)) return false;
+        seenTopicIds.add(id);
+        return true;
+      });
     if (topicIds.length === 0) {
       return json({ error: "topic_ids must contain positive integers" }, 400);
     }
-    if (topicIds.length > 1) {
-      return json({ error: "selected topic production is limited to one topic per run" }, 400);
+    if (topicIds.length > 25) {
+      return json({ error: "selected topic production is limited to 25 topics per queued run" }, 400);
     }
-    inputs.count = "1";
+    inputs.count = String(topicIds.length);
     inputs.topic_ids = topicIds.join(",");
   }
 

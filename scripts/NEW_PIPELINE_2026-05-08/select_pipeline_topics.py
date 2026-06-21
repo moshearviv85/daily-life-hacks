@@ -19,8 +19,18 @@ if str(SCRIPT_DIR) not in sys.path:
 from filter_discovered_topics import read_article_titles, quality_score_topic  # noqa: E402
 
 
-def _parse_topic_ids(raw: str) -> set[int]:
-    return {int(x) for x in raw.replace(" ", "").split(",") if x}
+def _parse_topic_ids(raw: str) -> list[int]:
+    seen: set[int] = set()
+    ids: list[int] = []
+    for part in raw.replace(" ", "").split(","):
+        if not part:
+            continue
+        topic_id = int(part)
+        if topic_id in seen:
+            continue
+        seen.add(topic_id)
+        ids.append(topic_id)
+    return ids
 
 
 def select_topics(
@@ -28,15 +38,16 @@ def select_topics(
     *,
     count: int,
     category: str = "",
-    topic_ids: set[int] | None = None,
+    topic_ids: list[int] | set[int] | None = None,
     known_titles: list[str] | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    wanted_ids = topic_ids or set()
+    wanted_ids = list(topic_ids or [])
     candidates = list(topics)
     if category:
         candidates = [t for t in candidates if t.get("category") == category]
     if wanted_ids:
-        candidates = [t for t in candidates if int(t.get("id", 0)) in wanted_ids]
+        candidates_by_id = {int(t.get("id", 0)): t for t in candidates}
+        candidates = [candidates_by_id[topic_id] for topic_id in wanted_ids if topic_id in candidates_by_id]
 
     selected: list[dict[str, Any]] = []
     rejected: list[dict[str, Any]] = []

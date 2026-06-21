@@ -204,7 +204,7 @@ test("dashboard can select topics and produce selected topics", () => {
 
   assert.match(dashboard, /class="topic-select"/);
   assert.match(dashboard, /data-topic-slug/);
-  assert.match(dashboard, /Produce 1 Selected to Staging/);
+  assert.match(dashboard, /Queue Selected to Staging/);
   assert.match(dashboard, /function produceSelectedTopics/);
   assert.match(dashboard, /function pollPipelineForSlugs/);
   assert.match(dashboard, /Full staging package ready/);
@@ -212,6 +212,9 @@ test("dashboard can select topics and produce selected topics", () => {
   assert.match(dashboard, /topic_ids: ids/);
   assert.match(dashboard, /postTopicStatus\('approve', ids\)/);
   assert.match(dashboard, /postTopicStatus\('produced', ids\)/);
+  assert.match(dashboard, /Queue \$\{ids\.length\} selected topic/);
+  assert.match(dashboard, /count: ids\.length/);
+  assert.doesNotMatch(dashboard, /limited to 1 topic per run/);
 });
 
 test("pipeline topics modal shows only open topics", () => {
@@ -248,7 +251,8 @@ test("dashboard keeps article approval as a fallback for article-only rows", () 
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
   assert.match(dashboard, /Approve Article/);
-  assert.match(dashboard, /Generate creates one full staging package/);
+  assert.match(dashboard, /Generate creates full staging packages/);
+  assert.match(dashboard, /Selected topics can be queued together and processed one after another/);
   assert.match(dashboard, /Ready for Review/);
   assert.match(dashboard, /by_display_stage/);
   assert.match(dashboard, /const articleAvailable = existsInBuild/);

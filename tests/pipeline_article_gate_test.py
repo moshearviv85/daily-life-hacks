@@ -40,6 +40,17 @@ def test_pipeline_produce_keeps_successful_topics_when_one_topic_fails():
     assert "steps.produce.outputs.has_produced == 'true'" in workflow
 
 
+def test_pipeline_produce_selected_topics_can_run_as_a_batch():
+    workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
+
+    assert "timeout-minutes: 180" in workflow
+    assert 'TOPIC_IDS="${{ inputs.topic_ids }}"' in workflow
+    assert 'STATUS_FILTER="&status=approved"' in workflow
+    assert 'if [ -n "$TOPIC_IDS" ]; then' in workflow
+    assert 'STATUS_FILTER=""' in workflow
+    assert '${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}${STATUS_FILTER}' in workflow
+
+
 def test_pipeline_produce_reports_failed_topics_before_final_failure():
     workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
 
