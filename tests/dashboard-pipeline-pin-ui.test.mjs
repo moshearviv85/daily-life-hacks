@@ -211,6 +211,20 @@ test("dashboard can select topics and produce selected topics", () => {
   assert.match(dashboard, /View GitHub Actions/);
   assert.match(dashboard, /topic_ids: ids/);
   assert.match(dashboard, /postTopicStatus\('approve', ids\)/);
+  assert.match(dashboard, /postTopicStatus\('produced', ids\)/);
+});
+
+test("pipeline topics modal shows only open topics", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /const OPEN_TOPIC_STATUSES = new Set\(\['pending', 'queued', 'approved'\]\)/);
+  assert.match(dashboard, /function topicIsOpenForPipelineTopics/);
+  assert.match(dashboard, /return getOpenPipelineTopics\(modalRows\)\.filter/);
+  assert.match(dashboard, /No open topics found/);
+  assert.doesNotMatch(dashboard, /renderTopicFilterButton\('status', 'produced'/);
+  assert.doesNotMatch(dashboard, /renderTopicFilterButton\('status', 'rejected'/);
+  assert.doesNotMatch(dashboard, /\['Produced', produced/);
+  assert.doesNotMatch(dashboard, /\['Rejected', rejected/);
 });
 
 test("dashboard can dispatch bounded topic discovery and poll for new candidates", () => {
