@@ -3,6 +3,15 @@ import test from "node:test";
 
 import { onRequestPost } from "../functions/api/pipeline-pin-approve.js";
 
+function scheduledAt(row) {
+  return new Date(`${row.scheduled_date}T${row.scheduled_time || "00:00"}:00Z`);
+}
+
+function assertNonRoundTime(value) {
+  const minute = Number.parseInt(String(value).split(":")[1] || "0", 10);
+  assert.notEqual(minute % 15, 0);
+}
+
 function makeDb(pinOverrides = {}) {
   const schedule = new Map();
   const stagingSchedule = new Map();
@@ -73,8 +82,17 @@ function makeDb(pinOverrides = {}) {
         },
         async all() {
           if (sql.includes("WHERE status = 'PENDING'")) {
+            const rows = Array.from(targetSchedule.values()).filter((row) => row.status === "PENDING");
+            if (latestPending) {
+              rows.push({
+                row_id: latestPending.row_id || "existing-pending-pin",
+                status: "PENDING",
+                link: latestPending.link || "https://www.daily-life-hacks.com/existing-article/",
+                ...latestPending,
+              });
+            }
             return {
-              results: Array.from(targetSchedule.values()).filter((row) => row.status === "PENDING"),
+              results: rows,
             };
           }
           throw new Error(`Unexpected all() query: ${sql}`);
@@ -155,7 +173,8 @@ test("production queues a pipeline pin behind the latest pending pin without dis
   assert.equal(data.triggered, false);
   assert.equal(db.schedule.get("demo-pin").status, "PENDING");
   assert.equal(db.schedule.get("demo-pin").scheduled_date, "2026-06-05");
-  assert.equal(db.schedule.get("demo-pin").scheduled_time, "10:30");
+  assert.ok(scheduledAt(db.schedule.get("demo-pin")) > new Date("2026-06-05T08:30:00Z"));
+  assertNonRoundTime(db.schedule.get("demo-pin").scheduled_time);
   assert.equal(db.schedule.get("demo-pin").link, "https://www.daily-life-hacks.com/demo-article/");
   assert.equal(db.schedule.get("demo-pin").image_url, "https://www.daily-life-hacks.com/images/pins/demo-pin.jpg");
   assert.match(db.schedule.get("demo-pin").description, /#KitchenTips/);

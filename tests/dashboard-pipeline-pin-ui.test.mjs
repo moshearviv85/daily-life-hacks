@@ -70,6 +70,11 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /const pipelineAssetBase = 'https:\/\/staging\.daily-life-hacks\.pages\.dev'/);
   assert.match(dashboard, /class="pipeline-pin-select"/);
   assert.match(dashboard, /Publish selected pins/);
+  assert.match(dashboard, /id="ps-upcoming-more-btn"/);
+  assert.match(dashboard, /Show next 10/);
+  assert.match(dashboard, /let pinsUpcomingLimit = PINS_UPCOMING_PAGE_SIZE/);
+  assert.match(dashboard, /&limit=\$\{pinsUpcomingLimit\}/);
+  assert.match(dashboard, /function showNextUpcomingPins/);
   assert.match(dashboard, /function getSelectedPipelinePinsInterleaved/);
   assert.match(dashboard, /function approveSelectedPipelinePins/);
   assert.match(dashboard, /window\.approveSelectedPipelinePins = approveSelectedPipelinePins/);

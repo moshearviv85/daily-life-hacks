@@ -3,6 +3,15 @@ import test from "node:test";
 
 import { onRequestGet } from "../functions/api/pins-next.js";
 
+function scheduledAt(row) {
+  return new Date(`${row.scheduled_date}T${row.scheduled_time || "00:00"}:00Z`);
+}
+
+function assertNonRoundTime(value) {
+  const minute = Number.parseInt(String(value).split(":")[1] || "0", 10);
+  assert.notEqual(minute % 15, 0);
+}
+
 function minutesAgo(minutes) {
   return new Date(Date.now() - minutes * 60_000)
     .toISOString()
@@ -42,6 +51,14 @@ function makeDb({ latestPosted = null, duePins = [], articleStatus = "PUBLISHED"
           return null;
         },
         async all() {
+          if (sql.includes("SELECT row_id, scheduled_date")) {
+            return {
+              results: [
+                ...duePins,
+                ...(latestPending ? [{ row_id: "latest-pending", ...latestPending }] : []),
+              ],
+            };
+          }
           if (sql.includes("FROM pins_schedule") && sql.includes("status = 'PENDING'")) {
             return { results: duePins };
           }
@@ -95,7 +112,7 @@ test("pins-next blocks immediate row publishing during the cooldown window", asy
 
 test("pins-next blocks scheduled publishing after the daily post limit", async () => {
   const db = makeDb({
-    postedToday: 3,
+    postedToday: 9,
     latestPosted: { row_id: "previous-pin", published_date: minutesAgo(180) },
     duePins: [duePin],
   });
@@ -107,8 +124,8 @@ test("pins-next blocks scheduled publishing after the daily post limit", async (
 
   assert.equal(response.status, 204);
   assert.equal(response.headers.get("X-Pins-Reason"), "daily_scheduled_post_limit_reached");
-  assert.equal(response.headers.get("X-Pins-Posted-Today"), "3");
-  assert.equal(response.headers.get("X-Pins-Max-Scheduled-Posts-Per-Day"), "3");
+  assert.equal(response.headers.get("X-Pins-Posted-Today"), "9");
+  assert.equal(response.headers.get("X-Pins-Max-Scheduled-Posts-Per-Day"), "9");
   assert.equal(
     db.queries.some((sql) => sql.includes("status = 'PENDING'")),
     false,
@@ -170,7 +187,7 @@ test("pins-next moves pins with unpublished articles to the end of the queue", a
     const db = makeDb({
       duePins: [duePin],
       articleStatus: "PENDING",
-      latestPending: { scheduled_date: "2026-05-29", scheduled_time: "20:00" },
+      latestPending: { scheduled_date: "2026-06-29", scheduled_time: "20:00" },
     });
 
     const response = await onRequestGet({
@@ -182,8 +199,8 @@ test("pins-next moves pins with unpublished articles to the end of the queue", a
     assert.equal(response.headers.get("X-Pins-Reason"), "all_due_pins_blocked_by_safety_checks");
     assert.equal(db.updates.length, 1);
     assert.match(db.updates[0].sql, /UPDATE pins_schedule/);
-    assert.equal(db.updates[0].args[0], "2026-05-30");
-    assert.equal(db.updates[0].args[1], "06:00");
+    assert.ok(scheduledAt({ scheduled_date: db.updates[0].args[0], scheduled_time: db.updates[0].args[1] }) > new Date("2026-06-29T20:00:00Z"));
+    assertNonRoundTime(db.updates[0].args[1]);
     assert.match(db.updates[0].args[2], /article_not_live/);
     assert.equal(db.updates[0].args[3], "demo-pin");
   } finally {

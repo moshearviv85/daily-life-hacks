@@ -1,17 +1,12 @@
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import { formatDate, scheduleRowsByRandomDayCount } from "./_pin-schedule.js";
 
 /**
  * POST /api/pins-reschedule?key=SECRET
- * Shuffles the scheduled_time of all PENDING pins — keeps their scheduled_date intact.
- * Pins on the same day are spread across 2-hour windows in US active hours (13:00–01:00 UTC).
- * Use this to randomize posting times without changing the overall date schedule.
+ * Rebuilds the PENDING pin queue with 6-9 pins per UTC day and non-round times.
  *
- * Response: { ok, rescheduled }
+ * Response: { ok, queue, rescheduled, schedule, start_date }
  */
-
-// 13:00 UTC = 9am ET (EDT/summer). Covers 9am–1am ET — US active hours.
-const START_HOUR = 13;
-const WINDOW_H   = 2; // 2-hour windows
 
 function isProductionRequest(request, env) {
   const url = new URL(request.url);
@@ -49,25 +44,6 @@ async function ensureStagingQueue(db, tableName) {
   `).run();
 }
 
-/** Assign random times to an array of row_ids for a single day, keeping the date fixed. */
-function assignTimesForDay(rowIds, date) {
-  // Shuffle slot order so different pins get different windows each time
-  const slots = rowIds.map((_, i) => i).sort(() => Math.random() - 0.5);
-  return rowIds.map((row_id, i) => {
-    const slot = slots[i];
-    const windowStartMin  = (START_HOUR + slot * WINDOW_H) * 60;
-    const randomOffsetMin = Math.floor(Math.random() * WINDOW_H * 60); // 0–119
-    const totalMin = windowStartMin + randomOffsetMin;
-    const h = Math.floor(totalMin / 60) % 24; // stay within 00–23
-    const m = totalMin % 60;
-    return {
-      row_id,
-      scheduled_date: date,
-      scheduled_time: `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}`,
-    };
-  });
-}
-
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -88,12 +64,13 @@ export async function onRequestPost(context) {
       headers: { "Content-Type": "application/json" },
     });
   }
+
   const tableName = queueTableName(request, env);
   await ensureStagingQueue(db, tableName);
 
-  // Fetch all PENDING pins with their current scheduled_date
   const { results } = await db.prepare(`
-    SELECT row_id, scheduled_date FROM ${tableName}
+    SELECT row_id, scheduled_date, COALESCE(scheduled_time, '00:00') AS scheduled_time
+    FROM ${tableName}
     WHERE status = 'PENDING'
     ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC, row_id ASC
   `).all();
@@ -104,31 +81,28 @@ export async function onRequestPost(context) {
     });
   }
 
-  // Group by date — keeps dates intact, only times change
-  const byDate = {};
-  for (const row of results) {
-    const d = row.scheduled_date;
-    if (!byDate[d]) byDate[d] = [];
-    byDate[d].push(row.row_id);
-  }
-
-  const toUpdate = [];
-  for (const [date, rowIds] of Object.entries(byDate)) {
-    toUpdate.push(...assignTimesForDay(rowIds, date));
-  }
+  const today = new Date();
+  today.setUTCHours(0, 0, 0, 0);
+  const firstDate = results[0]?.scheduled_date
+    ? new Date(`${results[0].scheduled_date}T00:00:00Z`)
+    : today;
+  const startDate = firstDate >= today ? firstDate : today;
+  const toUpdate = scheduleRowsByRandomDayCount(results, { startDate });
 
   for (const row of toUpdate) {
     await db.prepare(`
       UPDATE ${tableName}
-      SET scheduled_time = ?, updated_at = datetime('now')
+      SET scheduled_date = ?, scheduled_time = ?, updated_at = datetime('now')
       WHERE row_id = ?
-    `).bind(row.scheduled_time, row.row_id).run();
+    `).bind(row.scheduled_date, row.scheduled_time, row.row_id).run();
   }
 
   return new Response(JSON.stringify({
     ok: true,
     queue: tableName === "pins_schedule" ? "production" : "staging",
     rescheduled: toUpdate.length,
+    schedule: "6-9 pins/day",
+    start_date: formatDate(startDate),
   }), {
     headers: { "Content-Type": "application/json" },
   });

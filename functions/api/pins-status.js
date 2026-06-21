@@ -46,6 +46,10 @@ export async function onRequestGet(context) {
 
   const url = new URL(request.url);
   const reqKey = url.searchParams.get("key") || request.headers.get("x-api-key") || "";
+  const requestedLimit = Number.parseInt(url.searchParams.get("limit") || "10", 10);
+  const upcomingLimit = Number.isFinite(requestedLimit)
+    ? Math.min(Math.max(requestedLimit, 1), 200)
+    : 10;
   const authorized = await isDashboardAuthorized(env, reqKey, request);
   if (!authorized) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), {
@@ -72,14 +76,14 @@ export async function onRequestGet(context) {
       SELECT status, COUNT(*) as count FROM ${tableName} GROUP BY status
     `).all(),
 
-    // Next 10 pending
+    // Upcoming pending pins
     db.prepare(`
       SELECT row_id, pin_title, scheduled_date, scheduled_time, board_id, image_url, link
       FROM ${tableName}
       WHERE status = 'PENDING'
       ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC
-      LIMIT 10
-    `).all(),
+      LIMIT ?
+    `).bind(upcomingLimit).all(),
 
     // Last 5 posted
     db.prepare(`
@@ -102,6 +106,7 @@ export async function onRequestGet(context) {
 
   const statusMap = {};
   for (const row of counts.results) statusMap[row.status] = row.count;
+  const upcomingRows = upcoming.results || [];
 
   return new Response(JSON.stringify({
     today,
@@ -110,7 +115,9 @@ export async function onRequestGet(context) {
     posted: statusMap.POSTED || 0,
     pending: statusMap.PENDING || 0,
     failed: statusMap.FAILED || 0,
-    upcoming: upcoming.results,
+    upcoming: upcomingRows,
+    upcoming_limit: upcomingLimit,
+    upcoming_count: upcomingRows.length,
     recent_posted: recent.results,
     failed_pins: failed.results,
   }), {

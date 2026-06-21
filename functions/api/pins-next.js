@@ -11,6 +11,8 @@
  * Response 401: bad key
  */
 
+import { nextQueueSlotFromPending } from "./_pin-schedule.js";
+
 export async function onRequestGet(context) {
   const { request, env } = context;
   const key = env.STATS_KEY;
@@ -52,10 +54,10 @@ export async function onRequestGet(context) {
 
 function getMaxScheduledPostsPerUtcDay(env) {
   const raw = String(env.PINS_MAX_SCHEDULED_POSTS_PER_UTC_DAY || "").trim();
-  if (!raw) return 3;
+  if (!raw) return 9;
 
   const value = Number.parseInt(raw, 10);
-  if (!Number.isFinite(value)) return 3;
+  if (!Number.isFinite(value)) return 9;
   return Math.max(0, value);
 }
 
@@ -291,36 +293,15 @@ async function getNextPin(db, immediate = false, rowId = "") {
   });
 }
 
-function formatDate(d) {
-  return d.toISOString().slice(0, 10);
-}
-
-function formatTime(d) {
-  return `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`;
-}
-
 async function nextPendingSlot(db) {
-  const latest = await db.prepare(`
-    SELECT scheduled_date, COALESCE(scheduled_time, '00:00') AS scheduled_time
+  const { results } = await db.prepare(`
+    SELECT row_id, scheduled_date, COALESCE(scheduled_time, '00:00') AS scheduled_time
     FROM pins_schedule
     WHERE status = 'PENDING'
-    ORDER BY scheduled_date DESC, COALESCE(scheduled_time, '00:00') DESC
-    LIMIT 1
-  `).first();
+    ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC, row_id ASC
+  `).all();
 
-  const slot = latest?.scheduled_date
-    ? new Date(`${latest.scheduled_date}T00:00:00Z`)
-    : new Date();
-  if (latest?.scheduled_time) {
-    const [hour, minute] = String(latest.scheduled_time).split(":").map((n) => Number.parseInt(n, 10));
-    slot.setUTCHours(Number.isFinite(hour) ? hour : 0, Number.isFinite(minute) ? minute : 0, 0, 0);
-  }
-  slot.setUTCHours(slot.getUTCHours() + 2);
-  if (slot.getUTCHours() > 21) {
-    slot.setUTCDate(slot.getUTCDate() + 1);
-    slot.setUTCHours(6, 0, 0, 0);
-  }
-  return { scheduled_date: formatDate(slot), scheduled_time: formatTime(slot) };
+  return nextQueueSlotFromPending(results || []);
 }
 
 async function movePinToEnd(db, row, reason) {

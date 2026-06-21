@@ -1084,7 +1084,13 @@ const BUILD = {
 
       <!-- Upcoming pins -->
       <div id="ps-upcoming-wrap">
-        <div class="card-title" style="font-size:.78rem;margin-bottom:.4rem">Upcoming (next 10)</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:.5rem;flex-wrap:wrap;margin-bottom:.4rem">
+          <div id="ps-upcoming-title" class="card-title" style="font-size:.78rem;margin-bottom:0">Upcoming (next 10)</div>
+          <button id="ps-upcoming-more-btn" onclick="showNextUpcomingPins()"
+            style="display:none;background:#fff;color:var(--heading);border:1px solid var(--border);border-radius:8px;padding:.28rem .65rem;font-size:.72rem;font-weight:700;cursor:pointer">
+            Show next 10
+          </button>
+        </div>
         <div id="ps-upcoming-empty" class="empty" style="display:none">No pending pins scheduled.</div>
         <table class="data-table" id="ps-upcoming-table" style="display:none">
           <thead><tr><th>Date</th><th>Time</th><th>Pin</th><th>Title</th><th>Link</th></tr></thead>
@@ -2586,6 +2592,7 @@ window.closeModal       = closeModal;
 window.handleModalClick = handleModalClick;
 window.modalSearch      = modalSearch;
 window.loadPinsStatus         = loadPinsStatus;
+window.showNextUpcomingPins   = showNextUpcomingPins;
 window.uploadPinsCSV          = uploadPinsCSV;
 window.uploadArticlesCSV      = uploadArticlesCSV;
 window.downloadArticlesCSV    = downloadArticlesCSV;
@@ -2859,10 +2866,13 @@ async function triggerArticlePublisher() {
 
 // ── Pinterest Auto-Poster ──────────────────────────────────────────────────
 
+const PINS_UPCOMING_PAGE_SIZE = 10;
+let pinsUpcomingLimit = PINS_UPCOMING_PAGE_SIZE;
+
 async function loadPinsStatus() {
   if (!pw) return;
   try {
-    const res = await fetch(`/api/pins-status?key=${encodeURIComponent(pw)}`);
+    const res = await fetch(`/api/pins-status?key=${encodeURIComponent(pw)}&limit=${pinsUpcomingLimit}`);
     if (res.status === 401) return; // not authenticated yet
     if (!res.ok) return;
     const d = await res.json();
@@ -2876,6 +2886,21 @@ async function loadPinsStatus() {
       const queue = d.queue || DASHBOARD_QUEUE;
       queueLabel.textContent = `Queue: ${queue}`;
       queueLabel.className = `badge ${queue === 'production' ? 'badge-red' : 'badge-orange'}`;
+    }
+
+    const shownUpcoming = d.upcoming_count ?? (d.upcoming?.length || 0);
+    const pendingUpcoming = d.pending ?? shownUpcoming;
+    const upcomingTitle = el('ps-upcoming-title');
+    if (upcomingTitle) {
+      upcomingTitle.textContent = pendingUpcoming > 0
+        ? `Upcoming (showing ${shownUpcoming} of ${pendingUpcoming})`
+        : 'Upcoming (next 10)';
+    }
+    const upcomingMoreBtn = el('ps-upcoming-more-btn');
+    if (upcomingMoreBtn) {
+      const remaining = Math.max(0, pendingUpcoming - shownUpcoming);
+      upcomingMoreBtn.style.display = remaining > 0 ? '' : 'none';
+      upcomingMoreBtn.textContent = `Show next ${Math.min(PINS_UPCOMING_PAGE_SIZE, remaining || PINS_UPCOMING_PAGE_SIZE)}`;
     }
 
     // Upcoming
@@ -2943,6 +2968,11 @@ async function loadPinsStatus() {
   } catch(e) {
     console.warn('pins-status error:', e);
   }
+}
+
+function showNextUpcomingPins() {
+  pinsUpcomingLimit += PINS_UPCOMING_PAGE_SIZE;
+  loadPinsStatus();
 }
 
 function setProgress(pct, label) {
@@ -3139,7 +3169,7 @@ window.clearPendingPins = clearPendingPins;
 
 async function reschedulePins() {
   if (!pw) return;
-  if (!confirm('לשנות מחדש את זמני כל הפינים הממתינים? (6–8 פינים/יום, חלונות 2 שעות אקראיים)')) return;
+  if (!confirm('לשנות מחדש את זמני כל הפינים הממתינים? (6–9 פינים/יום, זמנים לא עגולים)')) return;
   const statusEl = document.getElementById('pins-upload-status');
   statusEl.style.display = '';
   statusEl.style.color = '#92400e';

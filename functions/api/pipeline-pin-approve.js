@@ -1,4 +1,5 @@
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import { nextQueueSlotFromPending } from "./_pin-schedule.js";
 import {
   boardForCategory,
   descriptionWithHashtags,
@@ -22,14 +23,6 @@ function json(data, status = 200) {
     status,
     headers: { "Content-Type": "application/json" },
   });
-}
-
-function formatDate(d) {
-  return d.toISOString().slice(0, 10);
-}
-
-function formatTime(d) {
-  return `${String(d.getUTCHours()).padStart(2, "0")}:${String(d.getUTCMinutes()).padStart(2, "0")}`;
 }
 
 function articleSlugFromLink(link) {
@@ -223,35 +216,14 @@ async function findPinInStagingStatus(request, reqKey, pinSlug) {
 }
 
 async function nextQueueSlot(db, tableName) {
-  const latest = await db.prepare(`
-    SELECT scheduled_date, COALESCE(scheduled_time, '00:00') AS scheduled_time
+  const { results } = await db.prepare(`
+    SELECT row_id, scheduled_date, COALESCE(scheduled_time, '00:00') AS scheduled_time
       FROM ${tableName}
      WHERE status = 'PENDING'
-     ORDER BY scheduled_date DESC, COALESCE(scheduled_time, '00:00') DESC
-     LIMIT 1
-  `).first();
+     ORDER BY scheduled_date ASC, COALESCE(scheduled_time, '00:00') ASC, created_at ASC, row_id ASC
+  `).all();
 
-  const now = new Date();
-
-  if (!latest?.scheduled_date) {
-    return { scheduledDate: formatDate(now), scheduledTime: formatTime(now) };
-  }
-
-  const [hour, minute] = String(latest.scheduled_time || "00:00").split(":").map((n) => parseInt(n, 10));
-  const latestSlot = new Date(`${latest.scheduled_date}T00:00:00Z`);
-  latestSlot.setUTCHours(Number.isFinite(hour) ? hour : 0, Number.isFinite(minute) ? minute : 0, 0, 0);
-
-  if (latestSlot < now) {
-    latestSlot.setTime(now.getTime());
-  } else {
-    latestSlot.setUTCHours(latestSlot.getUTCHours() + 2);
-    if (latestSlot.getUTCHours() > 21) {
-      latestSlot.setUTCDate(latestSlot.getUTCDate() + 1);
-      latestSlot.setUTCHours(6, 0, 0, 0);
-    }
-  }
-
-  return { scheduledDate: formatDate(latestSlot), scheduledTime: formatTime(latestSlot) };
+  return nextQueueSlotFromPending(results || []);
 }
 
 export async function onRequestPost(context) {
@@ -359,7 +331,9 @@ export async function onRequestPost(context) {
     }
   }
 
-  const { scheduledDate, scheduledTime } = await nextQueueSlot(env.DB, tableName);
+  const nextSlot = await nextQueueSlot(env.DB, tableName);
+  const scheduledDate = nextSlot.scheduled_date;
+  const scheduledTime = nextSlot.scheduled_time;
 
   await env.DB.prepare(`
     INSERT INTO ${tableName}

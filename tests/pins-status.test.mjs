@@ -5,11 +5,17 @@ import { onRequestGet } from "../functions/api/pins-status.js";
 
 function makeDb() {
   const queries = [];
+  const binds = [];
   return {
     queries,
+    binds,
     prepare(sql) {
       queries.push(sql);
-      return {
+      const statement = {
+        bind(...args) {
+          binds.push(args);
+          return statement;
+        },
         async run() {
           return { success: true };
         },
@@ -31,6 +37,7 @@ function makeDb() {
           return { results: [] };
         },
       };
+      return statement;
     },
   };
 }
@@ -47,6 +54,7 @@ test("staging pins status reads from the staging queue", async () => {
   assert.equal(data.queue, "staging");
   assert.equal(data.pending, 1);
   assert.equal(data.upcoming[0].row_id, "demo-pin");
+  assert.equal(data.upcoming_limit, 10);
   assert.equal(db.queries.some((q) => q.includes("staging_pins_schedule")), true);
 });
 
@@ -62,4 +70,17 @@ test("production pins status reads from the production queue", async () => {
   assert.equal(data.queue, "production");
   assert.equal(data.pending, 1);
   assert.equal(db.queries.some((q) => q.includes("FROM pins_schedule")), true);
+});
+
+test("pins status accepts a bounded upcoming limit", async () => {
+  const db = makeDb();
+  const response = await onRequestGet({
+    request: new Request("https://www.daily-life-hacks.com/api/pins-status?key=test-key&limit=25"),
+    env: { DASHBOARD_PASSWORD: "test-key", DB: db, CF_PAGES_BRANCH: "main" },
+  });
+
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  assert.equal(data.upcoming_limit, 25);
+  assert.deepEqual(db.binds.at(-1), [25]);
 });

@@ -1,4 +1,5 @@
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import { scheduleRowsByRandomDayCount } from "./_pin-schedule.js";
 
 /**
  * POST /api/pins-upload
@@ -200,9 +201,8 @@ export async function onRequestPost(context) {
     }
   }
 
-  // Shuffle: interleave pins from different articles so same-article pins are spread out
-  // Then reassign scheduled_date: 8 pins/day, 3 hours apart, starting today UTC
-  // (or after the latest PENDING when append=1)
+  // Shuffle: interleave pins from different articles so same-article pins are spread out.
+  // Then reassign scheduled_date/time: 6-9 pins/day with non-round times.
   function shuffleAndReschedule(rows, dayOffsetStart) {
     // Group by base slug (strip _v1, _v2 suffix)
     const groups = {};
@@ -228,36 +228,7 @@ export async function onRequestPost(context) {
         if (groups[slug][i]) interleaved.push(groups[slug][i]);
       }
     }
-    // Reassign dates: start today, 6–8 pins/day (random), 2h windows from 06:00 UTC
-    // Each pin lands at a fully random minute within its 2-hour window — no predictable pattern
-    // 8 pins max: window 0 = 06:00–07:59 … window 7 = 20:00–21:59 (no midnight overflow)
-    const START_HOUR = 6;
-    const WINDOW_H   = 2; // each slot is a 2-hour window
-    const todayUTC = new Date();
-    todayUTC.setUTCHours(0, 0, 0, 0);
-
-    const scheduled = [];
-    let idx = 0;
-    let dayOffset = dayOffsetStart;
-    while (idx < interleaved.length) {
-      // Pick a random number of pins for this day: 6, 7, or 8
-      const pinsToday = 6 + Math.floor(Math.random() * 3);
-      for (let slot = 0; slot < pinsToday && idx < interleaved.length; slot++, idx++) {
-        const d = new Date(todayUTC);
-        d.setUTCDate(d.getUTCDate() + dayOffset);
-        // Window start (minutes from midnight) + random offset anywhere in the window
-        const windowStartMin = (START_HOUR + slot * WINDOW_H) * 60;
-        const randomOffsetMin = Math.floor(Math.random() * WINDOW_H * 60); // 0–119
-        const totalMin = windowStartMin + randomOffsetMin;
-        const h = Math.floor(totalMin / 60); // max: 6 + 7*2 + 1h59 = 21h59 — no overflow
-        const m = totalMin % 60;
-        d.setUTCHours(h, m, 0, 0);
-        const scheduled_time = `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}`;
-        scheduled.push({ ...interleaved[idx], scheduled_date: d.toISOString().split("T")[0], scheduled_time });
-      }
-      dayOffset++;
-    }
-    return scheduled;
+    return scheduleRowsByRandomDayCount(interleaved, { dayOffsetStart });
   }
 
   // Pre-check which rows are already POSTED so we don't waste schedule slots on them
