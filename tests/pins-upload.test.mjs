@@ -95,6 +95,23 @@ test("Agent-format pin uploads default to REVIEW and do not trigger posting", as
   assert.equal(data.triggered, false);
   assert.equal(fetchCalls, 0);
   assert.equal(db.rows.get("demo_v1").status, "REVIEW");
+  assert.equal(db.rows.get("demo_v1").board_id, "1124140825679184032");
+});
+
+test("Agent-format pin uploads accept board aliases", async () => {
+  const db = makeDb();
+  const csv = [
+    "slug,variant,pin_title,description,alt_text,board",
+    "demo,2,Demo Pin,Useful pin copy,A helpful alt text,\"Healthy Breakfast, Smoothies and Snacks\"",
+  ].join("\n");
+
+  const response = await onRequestPost({
+    request: makeRequest(csv),
+    env: { STATS_KEY: "test-key", DB: db, GH_PAT: "gh-token" },
+  });
+
+  assert.equal(response.status, 200);
+  assert.equal(db.rows.get("demo_v2").board_id, "1124140825679184036");
 });
 
 test("Explicit PENDING pin uploads may trigger posting", async (t) => {

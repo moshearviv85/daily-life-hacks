@@ -4,7 +4,7 @@ Reads all OK pins from topic-research.sqlite, deduplicates against D1
 pins_schedule, verifies images exist on the live site, deploys any
 uncommitted images, and writes a CSV to pipeline-data/.
 
-The endpoint handles scheduling (6-8/day, append after last PENDING).
+The endpoint handles scheduling (6-9/day, append after last PENDING).
 This script sends explicit row_id, image_url, and link values because the
 new pipeline uses pin slugs, not article_slug_vN filenames.
 
@@ -30,7 +30,7 @@ if str(_SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPT_DIR))
 REPO_ROOT = _SCRIPT_DIR.parent.parent
 
-from lib.d1_csv import CATEGORY_TO_BOARD
+from lib.d1_csv import board_for_pin, board_name_to_id
 
 SQLITE_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
 OUTPUT_DIR = REPO_ROOT / "pipeline-data"
@@ -52,12 +52,6 @@ PIN_CSV_COLUMNS = [
     "published_date",
     "pinterest_response",
 ]
-
-BOARD_NAME_TO_ID = {
-    "high-fiber-recipes": "1124140825679184032",
-    "gut-health-nutrition-tips": "1124140825679184034",
-    "Healthy Meal Prep & Kitchen Tips": "1124140825679184036",
-}
 
 ROUTER_MAPPING_PATH = REPO_ROOT / "pipeline-data" / "router-mapping.json"
 
@@ -237,8 +231,8 @@ def generate_csv(
             continue
 
         category = pin["category"]
-        board_name = CATEGORY_TO_BOARD.get(category)
-        board_id = BOARD_NAME_TO_ID.get(board_name or "")
+        board_name = board_for_pin(pin, category)
+        board_id = board_name_to_id(board_name)
         if not board_id:
             print(f"SKIP (unknown category {category!r}): {row_id}", file=sys.stderr)
             continue

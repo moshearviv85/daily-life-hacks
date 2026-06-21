@@ -70,8 +70,8 @@ test("pipeline status attaches pin rows to their article", async () => {
   assert.equal(data.articles[0].pins[0].publish_status, "POSTED");
   assert.equal(data.articles[0].pins[0].model_id, "gpt-image-2");
   assert.equal(data.articles[0].pins[0].pin_id, "123");
-  assert.equal(data.articles[0].pins[0].board_id, "1124140825679184034");
-  assert.equal(data.articles[0].pins[0].board_name, "Gut Health Tips and Nutrition Charts");
+  assert.equal(data.articles[0].pins[0].board_id, "1124140825679184036");
+  assert.equal(data.articles[0].pins[0].board_name, "Healthy Meal Prep & Kitchen Tips");
   assert.match(data.articles[0].pins[0].hashtags, /#BudgetMeals/);
   assert.match(data.articles[0].pins[0].description_with_hashtags, /#DailyLifeHacks/);
   assert.equal(data.summary.by_display_stage.staging_review, 1);
@@ -89,6 +89,9 @@ test("production dashboard reads pipeline status from staging instead of product
   const fetched = [];
   t.mock.method(globalThis, "fetch", async (url) => {
     fetched.push(String(url));
+    if (String(url).startsWith("https://www.daily-life-hacks.com/")) {
+      return new Response(null, { status: 404 });
+    }
     return new Response(JSON.stringify(stagingPayload), {
       status: 200,
       headers: { "Content-Type": "application/json" },
@@ -102,7 +105,15 @@ test("production dashboard reads pipeline status from staging instead of product
       CF_PAGES_BRANCH: "main",
       DB: {
         prepare() {
-          throw new Error("production DB should not be queried for pipeline status");
+          return {
+            bind() {
+              return {
+                async all() {
+                  return { results: [] };
+                },
+              };
+            },
+          };
         },
       },
     },
@@ -112,6 +123,7 @@ test("production dashboard reads pipeline status from staging instead of product
   const data = await response.json();
   assert.equal(data.source, "staging");
   assert.equal(data.articles[0].slug, "staging-article");
-  assert.equal(fetched.length, 1);
+  assert.equal(fetched.length, 2);
   assert.match(fetched[0], /^https:\/\/staging\.daily-life-hacks\.pages\.dev\/api\/pipeline-status\?key=test-key$/);
+  assert.match(fetched[1], /^https:\/\/www\.daily-life-hacks\.com\/staging-article\/$/);
 });

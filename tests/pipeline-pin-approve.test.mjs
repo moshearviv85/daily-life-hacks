@@ -136,7 +136,7 @@ test("staging queues a pipeline pin in the staging-only queue without dispatchin
   assert.equal(db.stagingSchedule.get("demo-pin").status, "PENDING");
   assert.equal(db.stagingSchedule.get("demo-pin").link, "https://staging.daily-life-hacks.pages.dev/demo-article/");
   assert.equal(db.stagingSchedule.get("demo-pin").image_url, "https://staging.daily-life-hacks.pages.dev/images/pins/demo-pin.jpg");
-  assert.equal(db.stagingSchedule.get("demo-pin").board_id, "1124140825679184034");
+  assert.equal(db.stagingSchedule.get("demo-pin").board_id, "1124140825679184036");
   assert.match(db.stagingSchedule.get("demo-pin").description, /#KitchenTips/);
   assert.match(db.stagingSchedule.get("demo-pin").description, /#DailyLifeHacks/);
   assert.equal(fetchCalled, false);

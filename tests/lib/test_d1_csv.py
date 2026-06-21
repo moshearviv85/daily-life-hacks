@@ -22,6 +22,8 @@ import pytest
 
 try:
     from scripts.lib.d1_csv import (
+        board_for_pin,
+        board_name_to_id,
         build_articles_csv,
         build_pins_csv,
         category_to_board,
@@ -47,7 +49,7 @@ def test_category_to_board_nutrition():
 
 
 def test_category_to_board_tips():
-    assert category_to_board("tips") == "Gut Health Tips and Nutrition Charts"
+    assert category_to_board("tips") == "Healthy Meal Prep & Kitchen Tips"
 
 
 def test_category_to_board_unknown_raises():
@@ -158,11 +160,35 @@ def test_pins_csv_maps_category_nutrition_to_gut_health_board():
         assert r["board"] == "Gut Health Tips and Nutrition Charts"
 
 
-def test_pins_csv_maps_category_tips_to_gut_health_board():
+def test_pins_csv_maps_category_tips_to_meal_prep_board():
     text = build_pins_csv([_pin_record("demo", "tips")])
     rows = _parse(text)
     for r in rows:
-        assert r["board"] == "Gut Health Tips and Nutrition Charts"
+        assert r["board"] == "Healthy Meal Prep & Kitchen Tips"
+
+
+def test_board_for_pin_routes_nutrition_to_gut_health_board():
+    board = board_for_pin({
+        "title": "How to Read Nutrition Labels",
+        "description": "Simple nutrition label basics with fiber and sodium.",
+        "article_slug": "how-to-read-nutrition-labels",
+    }, "nutrition")
+    assert board == "Gut Health Tips and Nutrition Charts"
+
+
+def test_board_for_pin_routes_meal_prep_to_kitchen_board():
+    board = board_for_pin({
+        "title": "Bulk Meal Prep: Freeze Flat for Easy Storage",
+        "description": "A practical kitchen system for freezer meals.",
+        "article_slug": "bulk-meal-prep-freeze-flat-storage",
+    }, "tips")
+    assert board == "Healthy Meal Prep & Kitchen Tips"
+
+
+def test_board_name_to_id_accepts_aliases():
+    assert board_name_to_id("Healthy Breakfast, Smoothies and Snacks") == "1124140825679184036"
+    assert board_name_to_id("Healthy Meal Prep & Kitchen Tips") == "1124140825679184036"
+    assert board_name_to_id("gut-health-nutrition-tips") == "1124140825679184034"
 
 
 def test_pins_csv_carries_pin_title_description_alt():

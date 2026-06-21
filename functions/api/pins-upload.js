@@ -1,4 +1,5 @@
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import { boardIdForName } from "./_pin-metadata.js";
 import { scheduleRowsByRandomDayCount } from "./_pin-schedule.js";
 
 /**
@@ -144,7 +145,7 @@ export async function onRequestPost(context) {
       pin_description:    r["Text"] || "",
       alt_text:           (r["Alt text(s) - Separated by ||"] || "").split("||")[0].trim(),
       image_url:          imageUrl,
-      board_id:           BOARD_IDS[board] || board,
+      board_id:           boardIdForName(board) || BOARD_IDS[board] || board,
       link:               link,
       scheduled_date:     dateRaw.split(" ")[0], // "2026-04-09 08:15" → "2026-04-09"
       status:             normalizeStatus(r.status),
@@ -167,7 +168,7 @@ export async function onRequestPost(context) {
       pin_description:    r.description || "",
       alt_text:           r.alt_text || "",
       image_url:          r.image_url || `https://www.daily-life-hacks.com/images/pins/${slug}_v${variant}.jpg`,
-      board_id:           BOARD_IDS[board] || board,
+      board_id:           boardIdForName(board) || BOARD_IDS[board] || board,
       link:               r.destination_url || `https://www.daily-life-hacks.com/${slug}`,
       scheduled_date:     r.scheduled_date || "",
       status:             normalizeStatus(r.status),

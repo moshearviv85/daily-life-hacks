@@ -1,7 +1,7 @@
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
 import { nextQueueSlotFromPending } from "./_pin-schedule.js";
 import {
-  boardForCategory,
+  boardForPin,
   descriptionWithHashtags,
   formatHashtags,
   hashtagsForPin,
@@ -269,7 +269,7 @@ export async function onRequestPost(context) {
     }, 409);
   }
 
-  const board = boardForCategory(pin.category);
+  const board = boardForPin(pin, pin.category);
   if (!board?.id) return json({ error: `Unknown article category: ${pin.category}` }, 400);
   const hashtags = hashtagsForPin(pin, pin.category);
   const fullDescription = descriptionWithHashtags(pin.description, hashtags);

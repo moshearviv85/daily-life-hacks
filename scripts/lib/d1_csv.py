@@ -22,8 +22,40 @@ from typing import Iterable
 CATEGORY_TO_BOARD = {
     "recipes":    "High Fiber Dinner and Gut Health Recipes",
     "nutrition":  "Gut Health Tips and Nutrition Charts",
-    "tips":       "Gut Health Tips and Nutrition Charts",
+    "tips":       "Healthy Meal Prep & Kitchen Tips",
 }
+
+BOARD_NAME_TO_ID = {
+    "high fiber dinner and gut health recipes": "1124140825679184032",
+    "high-fiber-recipes": "1124140825679184032",
+    "high fiber recipes": "1124140825679184032",
+    "gut health tips and nutrition charts": "1124140825679184034",
+    "gut-health-nutrition-tips": "1124140825679184034",
+    "gut health & nutrition tips": "1124140825679184034",
+    "gut health and nutrition tips": "1124140825679184034",
+    "healthy meal prep & kitchen tips": "1124140825679184036",
+    "healthy breakfast, smoothies and snacks": "1124140825679184036",
+    "healthy breakfast smoothies and snacks": "1124140825679184036",
+}
+
+MEAL_PREP_KEYWORDS = (
+    "meal prep", "meal-prep", "breakfast", "smoothie", "snack", "lunch",
+    "sandwich", "freezer", "storage", "organize", "organization", "grocery",
+    "budget", "kitchen", "picnic", "leftover", "make ahead", "batch cooking",
+    "prep",
+)
+
+GUT_NUTRITION_KEYWORDS = (
+    "gut", "fiber", "nutrition", "sodium", "label", "protein", "cholesterol",
+    "chia", "whole wheat", "constipation", "prebiotic", "vitamin", "mineral",
+    "satiety",
+)
+
+RECIPE_KEYWORDS = (
+    "recipe", "dinner", "soup", "stew", "salad", "chicken", "pork", "beef",
+    "salmon", "beans", "lentil", "tofu", "vegetarian", "pizza", "pasta",
+    "rice", "bowl", "casserole", "dumpling", "bread", "sourdough",
+)
 
 
 def category_to_board(category: str) -> str:
@@ -38,6 +70,41 @@ def category_to_board(category: str) -> str:
 
 
 # ── articles CSV ─────────────────────────────────────────────────────────────
+
+def board_name_to_id(board_name: str) -> str:
+    return BOARD_NAME_TO_ID.get((board_name or "").strip().lower(), "")
+
+
+def _pin_haystack(pin: dict) -> str:
+    values = (
+        pin.get("title"),
+        pin.get("description"),
+        pin.get("alt"),
+        pin.get("article_slug"),
+        pin.get("pin_slug"),
+        pin.get("slug"),
+    )
+    return " ".join(str(value) for value in values if value).lower()
+
+
+def _contains_any(haystack: str, needles: Iterable[str]) -> bool:
+    return any(needle in haystack for needle in needles)
+
+
+def board_for_pin(pin: dict, category: str) -> str:
+    category = (category or "").lower()
+    haystack = _pin_haystack(pin)
+
+    if _contains_any(haystack, MEAL_PREP_KEYWORDS):
+        return CATEGORY_TO_BOARD["tips"]
+    if category == "recipes":
+        return CATEGORY_TO_BOARD["recipes"]
+    if _contains_any(haystack, GUT_NUTRITION_KEYWORDS):
+        return CATEGORY_TO_BOARD["nutrition"]
+    if _contains_any(haystack, RECIPE_KEYWORDS):
+        return CATEGORY_TO_BOARD["recipes"]
+    return category_to_board(category)
+
 
 ARTICLE_COLUMNS = (
     "row", "slug", "title", "category", "article_markdown", "image_main_filename",
@@ -85,13 +152,13 @@ def build_pins_csv(records: Iterable[dict]) -> str:
     for rec in records:
         slug = rec["article_slug"]
         category = rec.get("category", "")
-        board = category_to_board(category)
         pins = rec.get("pins") or []
         if len(pins) != 4:
             raise ValueError(
                 f"article {slug!r} has {len(pins)} pins; expected 4"
             )
         for variant, pin in enumerate(pins, start=1):
+            board = board_for_pin({**pin, "article_slug": slug}, category)
             description = (pin.get("description") or "").strip()
             if not description:
                 raise ValueError(

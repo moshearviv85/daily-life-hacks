@@ -1,6 +1,6 @@
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
 import {
-  boardForCategory,
+  boardForPin,
   descriptionWithHashtags,
   formatHashtags,
   hashtagsForPin,
@@ -378,7 +378,7 @@ export async function onRequestGet(context) {
   const pins = pinRows?.results ?? [];
   const pinsByArticle = {};
   for (const pin of pins) {
-    const board = boardForCategory(pin.category);
+    const board = boardForPin(pin, pin.category);
     const hashtags = hashtagsForPin(pin, pin.category);
     const enrichedPin = {
       ...pin,
