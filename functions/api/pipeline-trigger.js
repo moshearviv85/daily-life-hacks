@@ -30,13 +30,13 @@ const STAGING_PIPELINE_BASE = "https://staging.daily-life-hacks.pages.dev";
 const ACTIONS = {
   discover: {
     workflow: "pipeline-discover.yml",
-    dispatchRef: "staging",
+    dispatchRef: "main",
     outputBranch: "staging-d1",
     effect: "Finds bounded topic candidates and adds them to staging D1 for review.",
   },
   produce: {
     workflow: "pipeline-produce.yml",
-    dispatchRef: "staging",
+    dispatchRef: "main",
     outputBranch: "staging",
     effect: "Generates staging package(s): article, hero image, support image, and four pin images.",
   },
@@ -54,13 +54,13 @@ const ACTIONS = {
   },
   approve_article: {
     workflow: "pipeline-article-assets.yml",
-    dispatchRef: "staging",
+    dispatchRef: "main",
     outputBranch: "staging",
     effect: "Generates hero image and pin assets for an approved staging article.",
   },
   regenerate_hero: {
     workflow: "pipeline-article-assets.yml",
-    dispatchRef: "staging",
+    dispatchRef: "main",
     outputBranch: "staging",
     effect: "Regenerates only the staging hero image for an approved article.",
   },

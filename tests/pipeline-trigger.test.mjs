@@ -160,11 +160,12 @@ test("produce dispatch forwards selected topic ids to GitHub Actions", async (t)
   assert.equal(response.status, 200);
   assert.equal(data.ok, true);
   assert.match(requestedWorkflow, /pipeline-produce\.yml/);
-  assert.equal(dispatchBody.ref, "staging");
+  assert.equal(dispatchBody.ref, "main");
   assert.equal(dispatchBody.inputs.count, "3");
   assert.equal(dispatchBody.inputs.topic_ids, "17,23,42");
   assert.equal(data.topic_ids, "17,23,42");
-  assert.equal(data.dispatchRef, "staging");
+  assert.equal(data.dispatchRef, "main");
+  assert.equal(data.outputBranch, "staging");
   assert.match(data.actions_url, /pipeline-produce\.yml/);
 });
 
@@ -194,10 +195,11 @@ test("discover dispatch forwards bounded topic discovery inputs", async (t) => {
   assert.equal(response.status, 200);
   assert.equal(data.ok, true);
   assert.match(requestedWorkflow, /pipeline-discover\.yml/);
-  assert.equal(dispatchBody.ref, "staging");
+  assert.equal(dispatchBody.ref, "main");
   assert.equal(dispatchBody.inputs.limit, "12");
   assert.equal(dispatchBody.inputs.category, "recipes");
-  assert.equal(data.dispatchRef, "staging");
+  assert.equal(data.dispatchRef, "main");
+  assert.equal(data.outputBranch, "staging-d1");
   assert.equal(data.limit, "12");
   assert.equal(data.category, "recipes");
 });
@@ -247,9 +249,10 @@ test("approve_article dispatches the asset workflow for one slug", async (t) => 
   assert.equal(response.status, 200);
   assert.equal(data.ok, true);
   assert.match(requestedWorkflow, /pipeline-article-assets\.yml/);
-  assert.equal(dispatchBody.ref, "staging");
+  assert.equal(dispatchBody.ref, "main");
   assert.equal(dispatchBody.inputs.slug, "demo-article");
-  assert.equal(data.dispatchRef, "staging");
+  assert.equal(data.dispatchRef, "main");
+  assert.equal(data.outputBranch, "staging");
   assert.equal(data.slug, "demo-article");
 });
 
@@ -291,7 +294,7 @@ test("production approve_article gates against staging pipeline state before dis
 
   assert.equal(response.status, 200);
   assert.equal(data.ok, true);
-  assert.equal(dispatchBody.ref, "staging");
+  assert.equal(dispatchBody.ref, "main");
   assert.equal(dispatchBody.inputs.slug, "demo-article");
   assert.match(urls[0], /^https:\/\/staging\.daily-life-hacks\.pages\.dev\/api\/pipeline-status\?key=test-key$/);
   assert.match(urls[1], /pipeline-article-assets\.yml/);
@@ -360,11 +363,12 @@ test("regenerate_hero dispatches hero-only asset workflow", async (t) => {
   assert.equal(response.status, 200);
   assert.equal(data.ok, true);
   assert.match(requestedWorkflow, /pipeline-article-assets\.yml/);
-  assert.equal(dispatchBody.ref, "staging");
+  assert.equal(dispatchBody.ref, "main");
   assert.equal(dispatchBody.inputs.slug, "demo-article");
   assert.equal(dispatchBody.inputs.mode, "hero_only");
   assert.equal(data.slug, "demo-article");
-  assert.equal(data.dispatchRef, "staging");
+  assert.equal(data.dispatchRef, "main");
+  assert.equal(data.outputBranch, "staging");
 });
 
 test("GitHub dispatch failures return a readable error", async (t) => {
