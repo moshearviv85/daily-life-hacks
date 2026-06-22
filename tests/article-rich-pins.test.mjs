@@ -13,6 +13,7 @@ test("recipe articles expose Recipe JSON-LD for Pinterest Rich Pins", () => {
   assert.match(articlePage, /recipeYield/);
   assert.match(articlePage, /recipeIngredient: article\.data\.ingredients/);
   assert.match(articlePage, /recipeInstructions: article\.data\.steps/);
+  assert.match(articlePage, /"@type": "HowToStep"[\s\S]*image: imageUrl/);
   assert.match(baseLayout, /type="application\/ld\+json"/);
   assert.match(baseLayout, /<meta name="pinterest-rich-pin" content="true" \/>/);
 });
