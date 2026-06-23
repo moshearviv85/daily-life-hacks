@@ -3778,7 +3778,9 @@ function renderPipelineTable(filter) {
     const hasPipelinePins = pinCount > 0 && pinImagesDone >= pinCount;
     return hasHero && (hasBuiltPins || hasPipelinePins);
   };
-  const pinIsInPublishing = (pin) => ['PENDING', 'POSTED'].includes(String(pin.publish_status || '').toUpperCase());
+  const pinPublishStatus = (pin) => String(pin.publish_status || '').toUpperCase();
+  const pinIsPosted = (pin) => pinPublishStatus(pin) === 'POSTED';
+  const pinIsInPublishing = (pin) => ['PENDING', 'POSTED'].includes(pinPublishStatus(pin));
   const articleIsPublished = (article) => {
     const productionStatus = String(article.production_status || '').toUpperCase();
     return ['PUBLISHED', 'DUPLICATE'].includes(productionStatus)
