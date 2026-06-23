@@ -63,6 +63,21 @@ def test_pipeline_produce_reports_failed_topics_before_final_failure():
     assert failed_idx < sync_idx < final_fail_idx
 
 
+def test_pipeline_produce_marks_topics_produced_only_after_staging_deploy():
+    workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
+
+    deploy_idx = workflow.index("- name: Deploy staging to Cloudflare Pages")
+    produced_idx = workflow.index("- name: Mark topics as produced")
+    sync_idx = workflow.index("- name: Sync pipeline status to D1")
+
+    assert deploy_idx < produced_idx < sync_idx
+    assert "steps.produce.outputs.has_produced == 'true'" in _step(
+        workflow,
+        "Mark topics as produced",
+        "Report failed topics without rejecting",
+    )
+
+
 def test_staging_generation_workflows_build_before_push():
     for name in ("pipeline-produce.yml", "pipeline-daily.yml"):
         workflow = _workflow(name)

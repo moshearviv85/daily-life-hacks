@@ -211,7 +211,8 @@ test("dashboard can select topics and produce selected topics", () => {
   assert.match(dashboard, /View GitHub Actions/);
   assert.match(dashboard, /topic_ids: ids/);
   assert.match(dashboard, /postTopicStatus\('approve', ids\)/);
-  assert.match(dashboard, /postTopicStatus\('produced', ids\)/);
+  assert.match(dashboard, /stay approved until the workflow creates artifacts/);
+  assert.doesNotMatch(dashboard, /postTopicStatus\('produced', ids\)/);
   assert.match(dashboard, /Queue \$\{ids\.length\} selected topic/);
   assert.match(dashboard, /count: ids\.length/);
   assert.doesNotMatch(dashboard, /limited to 1 topic per run/);

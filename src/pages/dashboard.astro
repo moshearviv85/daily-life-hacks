@@ -4247,13 +4247,12 @@ async function produceSelectedTopics() {
     if (!res.ok || !data.ok) {
       throw new Error(data.error || data.gh_body || 'Unknown error');
     }
-    await postTopicStatus('produced', ids);
     await fetchPipelineStatus();
 
     statusEl.style.background = '#f0fdf4';
     statusEl.style.borderColor = '#bbf7d0';
     statusEl.style.color = '#166534';
-    statusEl.innerHTML = `Queued ${ids.length} selected topic(s) for staging production. The workflow will process them one after another. Output: ${data.outputBranch || 'staging'}. Waiting for full staging package sync...${pipelineActionsLink(data)}`;
+    statusEl.innerHTML = `Queued ${ids.length} selected topic(s) for staging production. They stay approved until the workflow creates artifacts and marks only successful topics as produced. Output: ${data.outputBranch || 'staging'}. Waiting for full staging package sync...${pipelineActionsLink(data)}`;
     closeModal();
     pollPipelineForSlugs(selectedSlugs, data, statusEl);
   } catch (e) {
