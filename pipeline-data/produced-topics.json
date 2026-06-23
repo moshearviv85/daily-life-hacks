@@ -1,8 +1,8 @@
 [
   {
-    "id": 456,
-    "topic": "Quick Black Bean Burgers That Hold Their Shape",
-    "slug": "quick-black-bean-burgers-that-hold-their-shape",
+    "id": 468,
+    "topic": "Quick Black Bean and Corn Salsa (No Cooking Required)",
+    "slug": "quick-black-bean-and-corn-salsa-no-cooking-required",
     "category": "recipes",
     "source": "llm_gap",
     "search_volume": null,
@@ -12,26 +12,8 @@
     "trend_score": null,
     "dedup_score": 0.86,
     "status": "approved",
-    "reject_reason": "passed deterministic quality gate; semantic gate: While there are black bean recipes, a specific recipe for black bean burgers that hold their shape is new.",
-    "created_at": "2026-06-17 04:25:53",
-    "quality_reason": "manual topic_ids selection passed deterministic quality gate",
-    "quality_score": 0.86
-  },
-  {
-    "id": 457,
-    "topic": "Sheet Pan Breakfast Hash with Eggs and Sweet Potatoes",
-    "slug": "sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes",
-    "category": "recipes",
-    "source": "llm_gap",
-    "search_volume": null,
-    "impressions": null,
-    "ctr": null,
-    "avg_position": null,
-    "trend_score": null,
-    "dedup_score": 0.86,
-    "status": "approved",
-    "reject_reason": "passed deterministic quality gate; semantic gate: This specific sheet pan breakfast recipe is not covered by existing breakfast or sheet pan articles.",
-    "created_at": "2026-06-17 04:25:54",
+    "reject_reason": "passed deterministic quality gate; semantic gate: There are black bean recipes, but not this specific quick black bean and corn salsa.",
+    "created_at": "2026-06-21 04:05:06",
     "quality_reason": "manual topic_ids selection passed deterministic quality gate",
     "quality_score": 0.86
   }
