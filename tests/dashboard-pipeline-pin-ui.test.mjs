@@ -248,22 +248,29 @@ test("dashboard can dispatch bounded topic discovery and poll for new candidates
   assert.doesNotMatch(dashboard, /timed out without adding visible new topics/);
 });
 
-test("dashboard keeps article approval as a fallback for article-only rows", () => {
+test("pipeline control hides article-only rows without complete staging packages", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
-  assert.match(dashboard, /Approve Article/);
   assert.match(dashboard, /Generate creates full staging packages/);
   assert.match(dashboard, /Selected topics can be queued together and processed one after another/);
   assert.match(dashboard, /Ready for Review/);
   assert.match(dashboard, /by_display_stage/);
+  assert.match(dashboard, /const articleHasCompleteStagingPackage = \(article\) =>/);
+  assert.match(dashboard, /const hasSupport = Number\(article\.support_image_done \|\| 0\) >= 1/);
+  assert.match(dashboard, /const hasPipelinePins = pinCount >= 4 && pinImagesDone >= pinCount/);
+  assert.match(dashboard, /return hasHero && hasSupport && \(hasBuiltPins \|\| hasPipelinePins\)/);
+  assert.match(dashboard, /const beforeCompletePackageFilter = articles\.length/);
+  assert.match(dashboard, /articles = articles\.filter\(articleHasCompleteStagingPackage\)/);
+  assert.match(dashboard, /incomplete staging package\(s\) hidden/);
   assert.match(dashboard, /const articleAvailable = existsInBuild/);
   assert.match(dashboard, /const stagingHref = articleAvailable/);
-  assert.match(dashboard, /const canApproveArticle = articleAvailable/);
-  assert.match(dashboard, /stage !== 'staging_review'/);
   assert.match(dashboard, /const builtHeroSlugs = new Set\(BUILD\.images\?\.webSlugs \|\| \[\]\)/);
   assert.match(dashboard, /const heroAvailable = builtHeroSlugs\.has\(a\.slug\)/);
   assert.match(dashboard, /data-pipeline-hero="\$\{a\.slug\}"/);
   assert.match(dashboard, /onerror="var p=this\.closest/);
+  assert.doesNotMatch(dashboard, /Approve Article/);
+  assert.doesNotMatch(dashboard, /const canApproveArticle = articleAvailable/);
+  assert.doesNotMatch(dashboard, /articleHasHeroAndPins/);
   assert.match(dashboard, /function approvePipelineArticle/);
   assert.match(dashboard, /function pollArticleAssets/);
   assert.match(dashboard, /action: 'approve_article'/);
