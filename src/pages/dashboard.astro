@@ -3769,16 +3769,19 @@ function renderPipelineTable(filter) {
   const pinSlugsForArticle = (article) => Array.isArray(article.pins)
     ? article.pins.map((pin, idx) => pin.pin_slug || `${article.slug}_v${idx + 1}`).filter(Boolean)
     : [];
-  const articleHasHeroAndPins = (article) => {
+  const articleHasCompleteStagingPackage = (article) => {
     const pinSlugs = pinSlugsForArticle(article);
     const pinCount = Number(article.pin_count || 0);
     const pinImagesDone = Number(article.pin_images_done || 0);
     const hasHero = builtHeroSlugs.has(article.slug) || Number(article.hero_image_done || 0) >= 1;
+    const hasSupport = Number(article.support_image_done || 0) >= 1;
     const hasBuiltPins = pinSlugs.length > 0 && pinSlugs.every(slug => builtPinSlugs.has(slug));
-    const hasPipelinePins = pinCount > 0 && pinImagesDone >= pinCount;
-    return hasHero && (hasBuiltPins || hasPipelinePins);
+    const hasPipelinePins = pinCount >= 4 && pinImagesDone >= pinCount;
+    return hasHero && hasSupport && (hasBuiltPins || hasPipelinePins);
   };
-  const pinIsInPublishing = (pin) => ['PENDING', 'POSTED'].includes(String(pin.publish_status || '').toUpperCase());
+  const pinPublishStatus = (pin) => String(pin.publish_status || '').toUpperCase();
+  const pinIsPosted = (pin) => pinPublishStatus(pin) === 'POSTED';
+  const pinIsInPublishing = (pin) => ['PENDING', 'POSTED'].includes(pinPublishStatus(pin));
   const articleIsPublished = (article) => {
     const productionStatus = String(article.production_status || '').toUpperCase();
     return ['PUBLISHED', 'DUPLICATE'].includes(productionStatus)
@@ -3797,10 +3800,10 @@ function renderPipelineTable(filter) {
   let hiddenIncompleteAssets = 0;
   let hiddenDoneArticles = 0;
   let articles = pipelineData.articles;
+  const beforeCompletePackageFilter = articles.length;
+  articles = articles.filter(articleHasCompleteStagingPackage);
+  hiddenIncompleteAssets = beforeCompletePackageFilter - articles.length;
   if (IS_PRODUCTION_DASHBOARD) {
-    const before = articles.length;
-    articles = articles.filter(articleHasHeroAndPins);
-    hiddenIncompleteAssets = before - articles.length;
     const beforePublishedFilter = articles.length;
     articles = articles.filter(article => !articleIsDoneForPipelineControl(article));
     hiddenDoneArticles = beforePublishedFilter - articles.length;
@@ -3809,7 +3812,7 @@ function renderPipelineTable(filter) {
   const imageFilterNote = document.getElementById('pl-image-filter-note');
   if (imageFilterNote) {
     const hiddenNotes = [];
-    if (hiddenIncompleteAssets > 0) hiddenNotes.push(`${hiddenIncompleteAssets} article(s) without hero + pin images hidden.`);
+    if (hiddenIncompleteAssets > 0) hiddenNotes.push(`${hiddenIncompleteAssets} incomplete staging package(s) hidden.`);
     if (hiddenDoneArticles > 0) hiddenNotes.push(`${hiddenDoneArticles} live article(s) with queued/posted pins hidden.`);
     imageFilterNote.textContent = hiddenNotes.join(' ');
   }
@@ -3824,8 +3827,8 @@ function renderPipelineTable(filter) {
 
   if (!articles.length) {
     tbody.innerHTML = '';
-    empty.textContent = IS_PRODUCTION_DASHBOARD && (hiddenIncompleteAssets > 0 || hiddenDoneArticles > 0)
-      ? `No visible articles match this filter. ${hiddenIncompleteAssets} article(s) without complete hero + pin images and ${hiddenDoneArticles} live article(s) with queued/posted pins are hidden.`
+    empty.textContent = (hiddenIncompleteAssets > 0 || hiddenDoneArticles > 0)
+      ? `No visible articles match this filter. ${hiddenIncompleteAssets} incomplete staging package(s) and ${hiddenDoneArticles} live article(s) with queued/posted pins are hidden.`
       : 'No pipeline data yet. Click "Find Topics" to start.';
     empty.style.display = '';
     updatePipelinePinSelectionSummary();
@@ -3987,16 +3990,6 @@ function renderPipelineTable(filter) {
             title="${IS_PRODUCTION_DASHBOARD ? 'Publish this reviewed staging article to production. Pinterest pins are not posted.' : 'Publishing is locked on staging. Open the production dashboard to publish.'}"
             style="margin-top:.25rem;border:1px solid #2563eb;background:#2563eb;color:#fff;border-radius:5px;padding:.16rem .42rem;font-size:.65rem;font-weight:800;cursor:pointer">Publish Article</button>`)
         : '';
-    const canApproveArticle = articleAvailable
-      && ['reviewed', 'deployed'].includes(a.stage)
-      && stage !== 'staging_review'
-      && (!Array.isArray(a.pins) || a.pins.length === 0);
-    const articleApproval = canApproveArticle
-      ? `<button onclick="approvePipelineArticle('${a.slug}')"
-          title="Approve this staging article and generate hero image plus pin assets"
-          style="margin-top:.25rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.16rem .42rem;font-size:.65rem;font-weight:700;cursor:pointer">Approve Article</button>`
-      : '';
-
     return `
     <tr>
       <td style="font-size:.8rem;font-family:monospace">
@@ -4016,7 +4009,6 @@ function renderPipelineTable(filter) {
         ${supportAvailable ? `<div data-pipeline-support="${a.slug}"><a href="${supportDisplaySrc}" target="_blank" rel="noopener"><img src="${supportDisplaySrc}" alt="${escapeHtml(a.slug)} support" loading="lazy" onerror="var p=this.closest('[data-pipeline-support]');if(p)p.remove();" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.35rem"></a>
         <div style="margin-top:.12rem;font-size:.6rem;line-height:1.2;color:var(--muted)">support image</div></div>` : ''}
         ${publishAction}
-        ${articleApproval}
       </td>
       <td>${a.category}</td>
       <td>${stageBadge(stage)}${stage !== a.stage ? `<div style="margin-top:.18rem;font-size:.62rem;color:var(--muted)">raw: ${escapeHtml(a.stage || '-')}</div>` : ''}${a.error ? ` <span style="color:#ef4444;font-size:.75rem" title="${a.error}">!</span>` : ''}</td>
