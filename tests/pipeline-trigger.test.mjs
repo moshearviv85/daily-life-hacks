@@ -23,6 +23,34 @@ function makePipelineArticleDb(stage = "deployed") {
   };
 }
 
+function makeTopicClaimDb(claimableIds = []) {
+  return {
+    calls: [],
+    prepare(sql) {
+      return {
+        bind(...args) {
+          this.calls?.push?.({ sql, args });
+          return {
+            async all() {
+              if (!sql.includes("FROM pipeline_topics")) {
+                throw new Error(`Unexpected query: ${sql}`);
+              }
+              return {
+                results: args
+                  .filter((id) => claimableIds.includes(Number(id)))
+                  .map((id) => ({ id: Number(id) })),
+              };
+            },
+            async run() {
+              return { success: true, meta: { changes: args.length - 1 } };
+            },
+          };
+        },
+      };
+    },
+  };
+}
+
 test("staging blocks legacy publish before dispatching GitHub Actions", async (t) => {
   const originalFetch = globalThis.fetch;
   t.after(() => {
@@ -153,7 +181,12 @@ test("produce dispatch forwards selected topic ids to GitHub Actions", async (t)
       method: "POST",
       body: JSON.stringify({ action: "produce", count: 4, topic_ids: [17, "23", 23, "bad", 42] }),
     }),
-    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "staging" },
+    env: {
+      DASHBOARD_PASSWORD: "test-key",
+      GH_PAT: "gh-token",
+      CF_PAGES_BRANCH: "staging",
+      DB: makeTopicClaimDb([17, 23, 42]),
+    },
   });
   const data = await response.json();
 
@@ -167,6 +200,39 @@ test("produce dispatch forwards selected topic ids to GitHub Actions", async (t)
   assert.equal(data.dispatchRef, "main");
   assert.equal(data.outputBranch, "staging");
   assert.match(data.actions_url, /pipeline-produce\.yml/);
+  assert.equal(data.topic_queue.body.count, 3);
+});
+
+test("produce dispatch stops when selected topics cannot be claimed", async (t) => {
+  const originalFetch = globalThis.fetch;
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  let fetchCalled = false;
+  globalThis.fetch = async () => {
+    fetchCalled = true;
+    return new Response(null, { status: 204 });
+  };
+
+  const response = await onRequestPost({
+    request: new Request("https://staging.daily-life-hacks.pages.dev/api/pipeline-trigger?key=test-key", {
+      method: "POST",
+      body: JSON.stringify({ action: "produce", count: 2, topic_ids: [17, 23] }),
+    }),
+    env: {
+      DASHBOARD_PASSWORD: "test-key",
+      GH_PAT: "gh-token",
+      CF_PAGES_BRANCH: "staging",
+      DB: makeTopicClaimDb([17]),
+    },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 409);
+  assert.equal(data.ok, false);
+  assert.equal(data.queued_topic_count, 1);
+  assert.equal(fetchCalled, false);
 });
 
 test("discover dispatch forwards bounded topic discovery inputs", async (t) => {

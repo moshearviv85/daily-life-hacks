@@ -56,7 +56,7 @@ async function proxyStagingTopics(request) {
 export async function onRequestGet(context) {
   const { request, env } = context;
   const url = new URL(request.url);
-  const key = url.searchParams.get("key") || "";
+  const key = url.searchParams.get("key") || request.headers.get("x-api-key") || "";
   if (!(await isDashboardAuthorized(env, key, request))) {
     return json({ error: "Unauthorized" }, 401);
   }
@@ -81,7 +81,7 @@ export async function onRequestGet(context) {
 export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
-  const key = url.searchParams.get("key") || "";
+  const key = url.searchParams.get("key") || request.headers.get("x-api-key") || "";
   if (!(await isDashboardAuthorized(env, key, request))) {
     return json({ error: "Unauthorized" }, 401);
   }
@@ -91,6 +91,40 @@ export async function onRequestPost(context) {
 
   const action = url.searchParams.get("action");
   const body = await request.json().catch(() => ({}));
+
+  if (action === "queue") {
+    const ids = body.ids;
+    if (!Array.isArray(ids) || ids.length === 0) {
+      return json({ error: "ids array required" }, 400);
+    }
+
+    const placeholders = ids.map(() => "?").join(",");
+    const rows = await env.DB.prepare(
+      `SELECT id FROM pipeline_topics WHERE id IN (${placeholders}) AND status = 'approved'`
+    ).bind(...ids).all();
+    const queueableIds = (rows?.results ?? [])
+      .map((row) => Number(row.id))
+      .filter((id) => Number.isInteger(id) && id > 0);
+
+    if (!queueableIds.length) {
+      return json({ ok: true, action, count: 0, skipped: ids.length });
+    }
+
+    const queuePlaceholders = queueableIds.map(() => "?").join(",");
+    await env.DB.prepare(
+      `UPDATE pipeline_topics
+          SET status = 'queued',
+              reject_reason = COALESCE(?, reject_reason)
+        WHERE id IN (${queuePlaceholders}) AND status = 'approved'`
+    ).bind(body.reason || "queued by dashboard", ...queueableIds).run();
+
+    return json({
+      ok: true,
+      action,
+      count: queueableIds.length,
+      skipped: ids.length - queueableIds.length,
+    });
+  }
 
   if (action === "approve" || action === "reject" || action === "produced") {
     const ids = body.ids;
@@ -105,7 +139,13 @@ export async function onRequestPost(context) {
       ).bind(...ids).all();
       rejectedSlugs = (rows?.results ?? []).map((r) => r.slug).filter(Boolean);
     }
-    const newStatus = action === "approve" ? "approved" : action === "reject" ? "rejected" : "produced";
+    const newStatus = action === "approve"
+      ? "approved"
+      : action === "reject"
+        ? "rejected"
+        : action === "queue"
+          ? "queued"
+          : "produced";
     const reason = action === "reject" ? (body.reason || "manual rejection") : null;
 
     await env.DB.prepare(
@@ -144,7 +184,7 @@ export async function onRequestPost(context) {
     const placeholders = cleanIds.map(() => "?").join(",");
     const rows = await env.DB.prepare(
       `SELECT id FROM pipeline_topics
-       WHERE id IN (${placeholders}) AND status IN ('pending', 'queued')`
+       WHERE id IN (${placeholders}) AND status = 'pending'`
     ).bind(...cleanIds).all();
     const deletableIds = (rows?.results ?? [])
       .map((row) => Number(row.id))
@@ -157,7 +197,7 @@ export async function onRequestPost(context) {
     const deletePlaceholders = deletableIds.map(() => "?").join(",");
     await env.DB.prepare(
       `DELETE FROM pipeline_topics
-       WHERE id IN (${deletePlaceholders}) AND status IN ('pending', 'queued')`
+       WHERE id IN (${deletePlaceholders}) AND status = 'pending'`
     ).bind(...deletableIds).run();
 
     return json({
@@ -223,5 +263,5 @@ export async function onRequestPost(context) {
     }
   }
 
-  return json({ error: "Unknown action. Use: approve, reject, delete, reset, produced, add" }, 400);
+  return json({ error: "Unknown action. Use: approve, reject, queue, delete, reset, produced, add" }, 400);
 }

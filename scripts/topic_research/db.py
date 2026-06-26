@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS stage2_output (
     run_id     INTEGER NOT NULL REFERENCES runs(id),
     rank       INTEGER NOT NULL,
     topic      TEXT    NOT NULL,
-    category   TEXT    NOT NULL CHECK (category IN ('recipes', 'nutrition')),
+    category   TEXT    NOT NULL CHECK (category IN ('recipes', 'nutrition', 'tips')),
     slug       TEXT    NOT NULL,
     score      REAL,
     rationale  TEXT

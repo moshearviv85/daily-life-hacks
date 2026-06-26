@@ -43,6 +43,11 @@ def select_topics(
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     wanted_ids = list(topic_ids or [])
     candidates = list(topics)
+    candidates = [
+        t for t in candidates
+        if not str(t.get("status") or "").strip()
+        or str(t.get("status") or "").strip().lower() in {"approved", "queued"}
+    ]
     if category:
         candidates = [t for t in candidates if t.get("category") == category]
     if wanted_ids:

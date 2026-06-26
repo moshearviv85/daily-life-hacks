@@ -50,6 +50,18 @@ def test_pipeline_topics_source_constraint():
             "VALUES ('Bad', 'bad', 'tips', 'invalid_source')"
         )
 
+def test_pipeline_topics_status_allows_queued():
+    conn = _fresh_db()
+    conn.execute(
+        "INSERT INTO pipeline_topics (topic, slug, category, source, status) "
+        "VALUES ('Queued Topic', 'queued-topic', 'recipes', 'manual', 'queued')"
+    )
+    with pytest.raises(sqlite3.IntegrityError):
+        conn.execute(
+            "INSERT INTO pipeline_topics (topic, slug, category, source, status) "
+            "VALUES ('Bad Topic', 'bad-topic', 'recipes', 'manual', 'running')"
+        )
+
 def test_pipeline_pins_unique_constraint():
     conn = _fresh_db()
     conn.execute(

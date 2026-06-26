@@ -33,7 +33,7 @@ def test_pipeline_produce_keeps_successful_topics_when_one_topic_fails():
     assert "/tmp/failed-topic-ids.json" in workflow
     assert "--selected-topics pipeline-data/produced-topics.json" in workflow
     assert "No topics produced successfully." in workflow
-    assert "Report failed topics without rejecting" in workflow
+    assert "Return failed topics to approved" in workflow
     assert "id: produce" in workflow
     assert "has_produced=false" in workflow
     assert "Fail if no articles were produced" in workflow
@@ -54,7 +54,7 @@ def test_pipeline_produce_selected_topics_can_run_as_a_batch():
 def test_pipeline_produce_reports_failed_topics_before_final_failure():
     workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
 
-    failed_idx = workflow.index("Report failed topics without rejecting")
+    failed_idx = workflow.index("Return failed topics to approved")
     sync_idx = workflow.index("Sync pipeline status to D1")
     final_fail_idx = workflow.index("Fail if no articles were produced")
     produce_step = workflow.split("- name: Produce articles", 1)[1].split("- name: Verify generated", 1)[0]
@@ -74,7 +74,7 @@ def test_pipeline_produce_marks_topics_produced_only_after_staging_deploy():
     assert "steps.produce.outputs.has_produced == 'true'" in _step(
         workflow,
         "Mark topics as produced",
-        "Report failed topics without rejecting",
+        "Return failed topics to approved",
     )
 
 

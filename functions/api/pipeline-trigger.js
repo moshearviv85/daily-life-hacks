@@ -138,10 +138,101 @@ async function validateArticleAssetGate(env, request, action, slug) {
   return { ok: true, article_stage: article.stage };
 }
 
+async function markTopicIdsQueued(env, request, topicIds, key) {
+  if (!topicIds.length) return null;
+
+  if (isProductionRequest(env, request)) {
+    const target = new URL("/api/pipeline-topics", STAGING_PIPELINE_BASE);
+    target.searchParams.set("action", "queue");
+    if (key) target.searchParams.set("key", key);
+    const response = await fetch(target.toString(), {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        ...(key ? { "x-api-key": key } : {}),
+      },
+      body: JSON.stringify({
+        ids: topicIds,
+        reason: "queued by dashboard before workflow dispatch",
+      }),
+    });
+    const body = await response.json().catch(() => ({}));
+    return {
+      ok: response.ok && body.ok !== false,
+      status: response.status,
+      body,
+    };
+  }
+
+  if (!env.DB) {
+    return { ok: false, status: 500, body: { error: "D1 database not bound" } };
+  }
+
+  const placeholders = topicIds.map(() => "?").join(",");
+  const rows = await env.DB.prepare(
+    `SELECT id FROM pipeline_topics WHERE id IN (${placeholders}) AND status = 'approved'`
+  ).bind(...topicIds).all();
+  const queueableIds = (rows?.results ?? [])
+    .map((row) => Number(row.id))
+    .filter((id) => Number.isInteger(id) && id > 0);
+
+  if (!queueableIds.length) {
+    return { ok: true, status: 200, body: { ok: true, action: "queue", count: 0, skipped: topicIds.length } };
+  }
+
+  const queuePlaceholders = queueableIds.map(() => "?").join(",");
+  await env.DB.prepare(
+    `UPDATE pipeline_topics
+        SET status = 'queued',
+            reject_reason = COALESCE(?, reject_reason)
+      WHERE id IN (${queuePlaceholders}) AND status = 'approved'`
+  ).bind("queued by dashboard before workflow dispatch", ...queueableIds).run();
+  return {
+    ok: true,
+    status: 200,
+    body: { ok: true, action: "queue", count: queueableIds.length, skipped: topicIds.length - queueableIds.length },
+  };
+}
+
+async function markTopicIdsApproved(env, request, topicIds, key) {
+  if (!topicIds.length) return null;
+
+  if (isProductionRequest(env, request)) {
+    const target = new URL("/api/pipeline-topics", STAGING_PIPELINE_BASE);
+    target.searchParams.set("action", "approve");
+    if (key) target.searchParams.set("key", key);
+    const response = await fetch(target.toString(), {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        ...(key ? { "x-api-key": key } : {}),
+      },
+      body: JSON.stringify({
+        ids: topicIds,
+        reason: "workflow dispatch failed; returned to approved",
+      }),
+    });
+    const body = await response.json().catch(() => ({}));
+    return { ok: response.ok && body.ok !== false, status: response.status, body };
+  }
+
+  if (!env.DB) return null;
+  const placeholders = topicIds.map(() => "?").join(",");
+  await env.DB.prepare(
+    `UPDATE pipeline_topics
+        SET status = 'approved',
+            reject_reason = COALESCE(?, reject_reason)
+      WHERE id IN (${placeholders}) AND status = 'queued'`
+  ).bind("workflow dispatch failed; returned to approved", ...topicIds).run();
+  return { ok: true, status: 200, body: { ok: true, action: "approve", count: topicIds.length } };
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
   const url = new URL(request.url);
-  const key = url.searchParams.get("key") || "";
+  const key = url.searchParams.get("key") || request.headers.get("x-api-key") || "";
   if (!(await isDashboardAuthorized(env, key, request))) {
     return json({ error: "Unauthorized" }, 401);
   }
@@ -206,6 +297,7 @@ export async function onRequestPost(context) {
       return json({ ok: false, error: gate.error, article_stage: gate.article_stage || null }, gate.status);
     }
   }
+  let selectedTopicIds = [];
   if (hasSelectedTopicIds) {
     const seenTopicIds = new Set();
     const topicIds = body.topic_ids
@@ -221,8 +313,24 @@ export async function onRequestPost(context) {
     if (topicIds.length > 25) {
       return json({ error: "selected topic production is limited to 25 topics per queued run" }, 400);
     }
+    selectedTopicIds = topicIds;
     inputs.count = String(topicIds.length);
     inputs.topic_ids = topicIds.join(",");
+  }
+
+  let topicQueue = null;
+  if (hasSelectedTopicIds) {
+    topicQueue = await markTopicIdsQueued(env, request, selectedTopicIds, key);
+    const queuedCount = Number(topicQueue?.body?.count || 0);
+    if (!topicQueue?.ok || queuedCount !== selectedTopicIds.length) {
+      return json({
+        ok: false,
+        error: "Could not claim every selected topic for production. Refresh Pipeline Topics and try again.",
+        topic_queue: topicQueue,
+        requested_topic_count: selectedTopicIds.length,
+        queued_topic_count: queuedCount,
+      }, 409);
+    }
   }
 
   try {
@@ -254,10 +362,14 @@ export async function onRequestPost(context) {
         limit: inputs.limit || "",
         category: inputs.category || "",
         topic_ids: inputs.topic_ids || "",
+        topic_queue: topicQueue,
         slug: inputs.slug || "",
       });
     }
     const ghBody = await ghRes.text();
+    if (hasSelectedTopicIds) {
+      await markTopicIdsApproved(env, request, selectedTopicIds, key);
+    }
     return json({
       ok: false,
       error: summarizeGitHubError(ghBody) || `GitHub dispatch failed with status ${ghRes.status}`,
@@ -265,6 +377,9 @@ export async function onRequestPost(context) {
       gh_body: ghBody,
     }, 400);
   } catch (err) {
+    if (hasSelectedTopicIds) {
+      await markTopicIdsApproved(env, request, selectedTopicIds, key);
+    }
     return json({ ok: false, error: String(err) }, 500);
   }
 }

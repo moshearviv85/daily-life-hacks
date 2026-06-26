@@ -5,6 +5,10 @@ on:
   # This workflow can generate articles/images; generated files go to staging first.
   workflow_dispatch:
 
+concurrency:
+  group: pipeline-produce-staging
+  cancel-in-progress: false
+
 env:
   PYTHONUNBUFFERED: "1"
   PIPELINE_TARGET_BRANCH: "staging"
@@ -60,10 +64,12 @@ jobs:
           PY
           IDS=$(cat /tmp/quality-rejected-topic-ids.json)
           if [ "$IDS" != "[]" ]; then
-            curl -s -X POST \
+            RESP=$(curl -fsS -X POST \
               "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=reject" \
+              -H "x-api-key: ${DASHBOARD_PASSWORD}" \
               -H "Content-Type: application/json" \
-              -d "{\"ids\": $IDS, \"reason\": \"rejected by deterministic topic quality gate before production\"}"
+              -d "{\"ids\": $IDS, \"reason\": \"rejected by deterministic topic quality gate before production\"}")
+            python -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok') is True, d" <<< "$RESP"
           fi
 
       - name: Check if topics were selected
@@ -82,6 +88,26 @@ jobs:
           else
             echo "No production-safe approved topics found after deterministic quality gate."
             echo "has_topics=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Mark selected topics as queued
+        if: steps.check-topics.outputs.has_topics == 'true'
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: |
+          python - <<'PY' > /tmp/selected-topic-ids.json
+          import json
+          rows = json.load(open('pipeline-data/selected-topics.json'))
+          print(json.dumps([int(r['id']) for r in rows if r.get('id')]))
+          PY
+          IDS=$(cat /tmp/selected-topic-ids.json)
+          if [ "$IDS" != "[]" ]; then
+            RESP=$(curl -fsS -X POST \
+              "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=queue" \
+              -H "x-api-key: ${DASHBOARD_PASSWORD}" \
+              -H "Content-Type: application/json" \
+              -d "{\"ids\": $IDS, \"reason\": \"pipeline daily workflow is running\"}")
+            python -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok') is True, d" <<< "$RESP"
           fi
 
       - name: Produce articles
@@ -193,10 +219,12 @@ jobs:
         run: |
           IDS=$(cat /tmp/produced-topic-ids.json)
           if [ "$IDS" != "[]" ]; then
-            curl -s -X POST \
+            RESP=$(curl -fsS -X POST \
               "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=produced" \
+              -H "x-api-key: ${DASHBOARD_PASSWORD}" \
               -H "Content-Type: application/json" \
-              -d "{\"ids\": $IDS}"
+              -d "{\"ids\": $IDS}")
+            python -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok') is True, d" <<< "$RESP"
           fi
 
       - name: Mark failed topics as rejected
@@ -206,10 +234,12 @@ jobs:
         run: |
           IDS=$(cat /tmp/failed-topic-ids.json)
           if [ "$IDS" != "[]" ]; then
-            curl -s -X POST \
+            RESP=$(curl -fsS -X POST \
               "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=reject" \
+              -H "x-api-key: ${DASHBOARD_PASSWORD}" \
               -H "Content-Type: application/json" \
-              -d "{\"ids\": $IDS, \"reason\": \"article generation failed automated quality checks\"}"
+              -d "{\"ids\": $IDS, \"reason\": \"article generation failed automated quality checks\"}")
+            python -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok') is True, d" <<< "$RESP"
           fi
 
       - name: Sync pipeline status to D1

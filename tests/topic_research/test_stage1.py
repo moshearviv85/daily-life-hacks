@@ -71,6 +71,13 @@ def _gemini_mock(payload: dict) -> MagicMock:
     return m
 
 
+def _make_audience_csv(tmp_path: Path) -> str:
+    """Deprecated stage1 compatibility input; run_stage1 no longer reads it."""
+    path = tmp_path / "audience.csv"
+    path.write_text("interest,percent,affinity\nmeal prep ideas,12,2.1\n", encoding="utf-8")
+    return str(path)
+
+
 # ── 1. module imports ─────────────────────────────────────────────────────────
 
 def test_module_imports():

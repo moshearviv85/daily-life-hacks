@@ -120,6 +120,11 @@ async function overlayProductionState(env, payload) {
   if (!env.DB || !payload || typeof payload !== "object") return payload;
 
   const pinRows = collectPinRows(payload);
+  for (const pin of pinRows) {
+    pin.staging_publish_status = pin.publish_status || null;
+    pin.production_publish_status = null;
+    pin.publish_status = null;
+  }
   const rowIds = uniqueStrings(pinRows.map((pin) => pin.pin_slug));
   const articleSlugs = uniqueStrings([
     ...(Array.isArray(payload.articles) ? payload.articles.map((article) => article.slug) : []),

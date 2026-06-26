@@ -72,6 +72,20 @@ test("production pins status reads from the production queue", async () => {
   assert.equal(db.queries.some((q) => q.includes("FROM pins_schedule")), true);
 });
 
+test("production pins status uses production queue even when branch metadata is missing", async () => {
+  const db = makeDb();
+  const response = await onRequestGet({
+    request: new Request("https://www.daily-life-hacks.com/api/pins-status?key=test-key"),
+    env: { DASHBOARD_PASSWORD: "test-key", DB: db },
+  });
+
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  assert.equal(data.queue, "production");
+  assert.equal(db.queries.some((q) => q.includes("FROM pins_schedule")), true);
+  assert.equal(db.queries.some((q) => q.includes("staging_pins_schedule")), false);
+});
+
 test("pins status accepts a bounded upcoming limit", async () => {
   const db = makeDb();
   const response = await onRequestGet({
