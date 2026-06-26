@@ -136,27 +136,38 @@ function normalizeRun(run) {
   };
 }
 
-function isProblemRun(run) {
+export function isProblemRun(run) {
   if (!run || run.status !== "completed") return false;
   return run.conclusion && !["success", "skipped"].includes(run.conclusion);
 }
 
-function isRecentRun(run, hours = 24) {
+export function isRecentRun(run, hours = 24) {
   const stamp = run?.created_at || run?.updated_at;
   if (!stamp) return false;
   return Date.now() - new Date(stamp).getTime() <= hours * 60 * 60 * 1000;
 }
 
-function classify(meta, latest, recentProblem) {
+export function classify(meta, latest, recentProblem) {
   if (!latest) return "unknown";
   if (latest.status !== "completed") return "running";
   if (["failure", "timed_out", "action_required", "startup_failure"].includes(latest.conclusion)) {
     return "danger";
   }
-  if (latest.conclusion === "cancelled") return "warn";
+  if (latest.conclusion === "cancelled") {
+    return meta.mode === "automatic" ? "warn" : "unknown";
+  }
   if (recentProblem && meta.mode === "automatic") return "warn";
   if (latest.conclusion === "success" || latest.conclusion === "skipped") return "ok";
   return "unknown";
+}
+
+export function findRecentProblemRun(runs, latest, hours = 24) {
+  const latestTime = latest ? new Date(latest.created_at || latest.updated_at || 0).getTime() : 0;
+  return runs.find((run) => {
+    if (!isProblemRun(run) || !isRecentRun(run, hours)) return false;
+    const runTime = new Date(run.created_at || run.updated_at || 0).getTime();
+    return !latestTime || runTime >= latestTime;
+  }) || null;
 }
 
 async function getProblemDetail(env, runId) {
@@ -183,7 +194,7 @@ async function loadWorkflow(env, meta) {
   );
   const runs = (data.workflow_runs || []).map(normalizeRun);
   const latest = runs[0] || null;
-  const recentProblem = runs.find((run) => isProblemRun(run) && isRecentRun(run, 24)) || null;
+  const recentProblem = findRecentProblemRun(runs, latest, 24);
   const status = classify(meta, latest, recentProblem);
   const detailRun = status === "danger" ? latest : recentProblem;
   const detail = detailRun ? await getProblemDetail(env, detailRun.id) : null;
