@@ -373,11 +373,19 @@ def test_insert_and_read_stage2_output():
 
 
 def test_stage2_output_category_constraint():
-    """category must be 'recipes' or 'nutrition'."""
+    """category must be recipes, nutrition, or tips."""
     conn = _tmp_db()
     run_id = create_run(conn, stage=2)
-    bad = [{
+    insert_stage2_output(conn, run_id, [{
         "rank": 1,
+        "topic": "freezer storage tips",
+        "category": "tips",
+        "slug": "freezer-storage-tips",
+        "score": 72.0,
+        "rationale": "",
+    }])
+    bad = [{
+        "rank": 2,
         "topic": "some topic",
         "category": "fitness",
         "slug": "some-topic",

@@ -98,8 +98,8 @@ export async function onRequestPost(context) {
             review_state = COALESCE(excluded.review_state, pipeline_articles.review_state),
             pin_count = COALESCE(excluded.pin_count, pipeline_articles.pin_count),
             pin_images_done = COALESCE(excluded.pin_images_done, pipeline_articles.pin_images_done),
-            tokens_total = pipeline_articles.tokens_total + COALESCE(excluded.tokens_total, 0),
-            cost_usd = pipeline_articles.cost_usd + COALESCE(excluded.cost_usd, 0),
+            tokens_total = COALESCE(excluded.tokens_total, pipeline_articles.tokens_total),
+            cost_usd = COALESCE(excluded.cost_usd, pipeline_articles.cost_usd),
             updated_at = datetime('now')
         `).bind(
           a.slug, a.topic, a.category, a.source || "manual", a.stage,

@@ -16,7 +16,7 @@ test("pipeline table can publish every unposted pin and hides posted pins", () =
 
   assert.doesNotMatch(dashboard, /idx === 0/);
   assert.match(dashboard, /const publishButton = !publishStatus && productionReady/);
-  assert.match(dashboard, /publish_status/);
+  assert.match(dashboard, /production_publish_status \|\| pin\.publish_status/);
 });
 
 test("production pipeline list hides live articles once all pins are queued or posted", () => {
@@ -85,6 +85,11 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /function getSelectedPipelinePinsInterleaved/);
   assert.match(dashboard, /function approveSelectedPipelinePins/);
   assert.match(dashboard, /window\.approveSelectedPipelinePins = approveSelectedPipelinePins/);
+  assert.match(dashboard, /let pipelineFilter = 'all'/);
+  assert.match(dashboard, /renderPipelineTable\(pipelineFilter\)/);
+  assert.match(dashboard, /pipelineFilter = filter \|\| 'all'/);
+  assert.match(dashboard, /const savedScrollY = window\.scrollY/);
+  assert.match(dashboard, /window\.scrollTo\(\{ top: savedScrollY, behavior: 'auto' \}\)/);
 });
 
 test("production pipeline pin statuses are labeled as metadata, not live queue", () => {
@@ -211,7 +216,8 @@ test("dashboard can select topics and produce selected topics", () => {
   assert.match(dashboard, /View GitHub Actions/);
   assert.match(dashboard, /topic_ids: ids/);
   assert.match(dashboard, /postTopicStatus\('approve', ids\)/);
-  assert.match(dashboard, /stay approved until the workflow creates artifacts/);
+  assert.match(dashboard, /move to queued while the workflow runs/);
+  assert.match(dashboard, /failed topics return to approved for retry/);
   assert.doesNotMatch(dashboard, /postTopicStatus\('produced', ids\)/);
   assert.match(dashboard, /Queue \$\{ids\.length\} selected topic/);
   assert.match(dashboard, /count: ids\.length/);

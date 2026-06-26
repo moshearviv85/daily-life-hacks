@@ -13,6 +13,9 @@ function makeDb() {
           return {
             async all() {
               calls.push({ type: "all", sql, args });
+              if (sql.includes("SELECT id FROM pipeline_topics")) {
+                return { results: [{ id: args[0] }] };
+              }
               return { results: [{ slug: "bad-topic" }] };
             },
             async run() {
@@ -42,6 +45,25 @@ test("rejecting pipeline topics clears stale article and pin rows for their slug
   assert.ok(db.calls.some((call) => call.sql.includes("SELECT slug FROM pipeline_topics")));
   assert.ok(db.calls.some((call) => call.sql.includes("DELETE FROM pipeline_pins")));
   assert.ok(db.calls.some((call) => call.sql.includes("DELETE FROM pipeline_articles")));
+});
+
+test("queueing pipeline topics claims only approved topics", async () => {
+  const db = makeDb();
+  const response = await onRequestPost({
+    request: new Request("https://staging.example.test/api/pipeline-topics?key=test-key&action=queue", {
+      method: "POST",
+      body: JSON.stringify({ ids: [137, 138], reason: "workflow is running" }),
+    }),
+    env: { DASHBOARD_PASSWORD: "test-key", DB: db },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 200);
+  assert.equal(data.ok, true);
+  assert.equal(data.count, 1);
+  assert.equal(data.skipped, 1);
+  assert.ok(db.calls.some((call) => call.sql.includes("status = 'approved'")));
+  assert.ok(db.calls.some((call) => call.sql.includes("SET status = 'queued'")));
 });
 
 test("production dashboard proxies pipeline topics to staging", async (t) => {

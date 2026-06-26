@@ -4,7 +4,7 @@ import { buildPinCatalog, buildPinPayload, buildOauthAuthorizeUrl, pinterestScop
 
 test("buildPinPayload includes required fields", () => {
   const catalog = buildPinCatalog();
-  const pin = catalog.herbs_v1;
+  const pin = catalog.energy_balls_v1;
   const payload = buildPinPayload(pin, "board_123");
 
   assert.equal(payload.board_id, "board_123");

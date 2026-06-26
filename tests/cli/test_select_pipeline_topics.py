@@ -83,3 +83,22 @@ def test_select_topics_preserves_explicit_topic_id_order():
 
     assert [t["id"] for t in selected] == [12, 10, 11]
     assert rejected == []
+
+
+def test_select_topics_skips_closed_statuses_for_explicit_topic_ids():
+    topics = [
+        {"id": 10, "topic": "how to freeze soup in single servings", "category": "tips", "status": "produced"},
+        {"id": 11, "topic": "high protein breakfasts with eggs yogurt and beans", "category": "nutrition", "status": "rejected"},
+        {"id": 12, "topic": "how to keep berries fresh longer", "category": "tips", "status": "queued"},
+        {"id": 13, "topic": "sheet pan salmon with green beans", "category": "recipes", "status": "approved"},
+    ]
+
+    selected, rejected = mod.select_topics(
+        topics,
+        count=4,
+        topic_ids=[10, 11, 12, 13],
+        known_titles=[],
+    )
+
+    assert [t["id"] for t in selected] == [12, 13]
+    assert rejected == []

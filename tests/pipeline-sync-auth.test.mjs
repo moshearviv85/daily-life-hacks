@@ -65,6 +65,9 @@ test("pipeline sync clears stale pins and preserves explicit zero counts", async
   assert.ok(articleCall, "article upsert should run");
   assert.equal(articleCall.params[17], 0);
   assert.equal(articleCall.params[18], 0);
+  assert.match(articleCall.sql, /tokens_total = COALESCE\(excluded\.tokens_total, pipeline_articles\.tokens_total\)/);
+  assert.match(articleCall.sql, /cost_usd = COALESCE\(excluded\.cost_usd, pipeline_articles\.cost_usd\)/);
+  assert.doesNotMatch(articleCall.sql, /pipeline_articles\.cost_usd \+/);
 
   const deleteCall = calls.find((call) => /DELETE FROM pipeline_pins/.test(call.sql));
   assert.ok(deleteCall, "stale pins for the synced article should be cleared");

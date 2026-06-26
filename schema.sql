@@ -239,7 +239,7 @@ CREATE TABLE IF NOT EXISTS pipeline_topics (
   avg_position REAL,
   trend_score REAL,
   dedup_score REAL,
-  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'rejected', 'produced')),
+  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'approved', 'queued', 'rejected', 'produced')),
   reject_reason TEXT,
   created_at TEXT DEFAULT (datetime('now'))
 );

@@ -127,3 +127,57 @@ test("production dashboard reads pipeline status from staging instead of product
   assert.match(fetched[0], /^https:\/\/staging\.daily-life-hacks\.pages\.dev\/api\/pipeline-status\?key=test-key$/);
   assert.match(fetched[1], /^https:\/\/www\.daily-life-hacks\.com\/staging-article\/$/);
 });
+
+test("production overlay does not treat staging-only pin queue status as production status", async (t) => {
+  const stagingPayload = {
+    articles: [{
+      slug: "demo-article",
+      pins: [{
+        article_slug: "demo-article",
+        pin_slug: "demo-pin-1",
+        publish_status: "PENDING",
+      }],
+    }],
+    summary: { total: 1, by_stage: { deployed: 1 }, by_category: {} },
+    topics: {},
+    pins: {},
+  };
+
+  t.mock.method(globalThis, "fetch", async (url) => {
+    if (String(url).startsWith("https://staging.daily-life-hacks.pages.dev/")) {
+      return new Response(JSON.stringify(stagingPayload), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+    return new Response(null, { status: 404 });
+  });
+
+  const response = await onRequestGet({
+    request: new Request("https://www.daily-life-hacks.com/api/pipeline-status?key=test-key"),
+    env: {
+      DASHBOARD_PASSWORD: "test-key",
+      CF_PAGES_BRANCH: "main",
+      DB: {
+        prepare() {
+          return {
+            bind() {
+              return {
+                async all() {
+                  return { results: [] };
+                },
+              };
+            },
+          };
+        },
+      },
+    },
+  });
+
+  assert.equal(response.status, 200);
+  const data = await response.json();
+  const pin = data.articles[0].pins[0];
+  assert.equal(pin.staging_publish_status, "PENDING");
+  assert.equal(pin.production_publish_status, null);
+  assert.equal(pin.publish_status, null);
+});
