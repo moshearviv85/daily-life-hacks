@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "article_only": false,
+  "hero_only": false,
+  "checks": [
+    {
+      "slug": "easy-weeknight-fish-tacos-with-cabbage-slaw",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "high-protein-vegetarian-breakfast-burritos-you-can-freeze",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "how-to-properly-store-cooked-grains-for-meal-prep",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "savory-oatmeal-bowls-with-eggs-and-avocado",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}

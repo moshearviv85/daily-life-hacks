@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "article_only": false,
+  "hero_only": false,
+  "checks": [
+    {
+      "slug": "quick-black-bean-and-corn-salsa-no-cooking-required",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}
