@@ -829,6 +829,17 @@ const BUILD = {
       <!-- Pipeline trigger status -->
       <div id="pipeline-trigger-status" style="display:none;padding:.5rem .75rem;border-radius:6px;margin-bottom:.75rem;font-size:.8rem;border:1px solid transparent"></div>
 
+      <div id="pipeline-queued-helper" style="display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;margin-bottom:.75rem;padding:.6rem .75rem;border:1px solid #bae6fd;border-radius:8px;background:#f0f9ff">
+        <div style="font-size:.78rem;color:#075985">
+          <strong>Need an article that already left approval?</strong>
+          Show queued/posted articles to regenerate the support image without touching pins.
+        </div>
+        <div style="display:flex;gap:.4rem;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-sm" id="pl-show-queued-articles" onclick="filterPipeline('queued', document.getElementById('pl-filter-queued')); document.getElementById('pipeline-table-wrap')?.scrollIntoView({ block: 'start' })">Show queued/posted articles</button>
+          <button class="btn btn-sm" id="pl-show-active-articles" onclick="filterPipeline('all', document.getElementById('pl-filter-all'))">Show active review list</button>
+        </div>
+      </div>
+
       <!-- Filter tabs -->
       <div style="display:flex;gap:.35rem;margin-bottom:.55rem;flex-wrap:wrap">
         <button class="btn btn-sm active" onclick="filterPipeline('all', this)" id="pl-filter-all">All</button>
@@ -853,7 +864,7 @@ const BUILD = {
       </div>
 
       <!-- Pipeline table -->
-      <div style="overflow-x:auto">
+      <div id="pipeline-table-wrap" style="overflow-x:auto">
         <table class="data-table" id="pipeline-table">
           <thead>
             <tr>

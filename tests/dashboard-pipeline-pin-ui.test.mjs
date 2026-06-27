@@ -95,6 +95,10 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /renderPipelineTable\(pipelineFilter\)/);
   assert.match(dashboard, /pipelineFilter = filter \|\| 'all'/);
   assert.match(dashboard, /id="pl-filter-queued"/);
+  assert.match(dashboard, /id="pipeline-queued-helper"/);
+  assert.match(dashboard, /id="pl-show-queued-articles"/);
+  assert.match(dashboard, /Show queued\/posted articles/);
+  assert.match(dashboard, /pipeline-table-wrap/);
   assert.match(dashboard, /filterPipeline\('queued', this\)/);
   assert.match(dashboard, /Queued\/Posted/);
   assert.match(dashboard, /const savedScrollY = window\.scrollY/);
