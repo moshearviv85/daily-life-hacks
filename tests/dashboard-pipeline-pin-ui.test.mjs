@@ -72,6 +72,10 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /<strong>Alt:<\/strong>/);
   assert.match(dashboard, /const pipelineAssetBase = 'https:\/\/staging\.daily-life-hacks\.pages\.dev'/);
   assert.match(dashboard, /class="pipeline-pin-select"/);
+  assert.match(dashboard, /class="pipeline-pin-select-label"/);
+  assert.match(dashboard, /id="pl-select-visible-pins"/);
+  assert.match(dashboard, /Select visible pins/);
+  assert.match(dashboard, /All visible selected/);
   assert.match(dashboard, /Publish selected pins/);
   assert.match(dashboard, /id="ps-upcoming-more-btn"/);
   assert.match(dashboard, /Show next 10/);
@@ -83,7 +87,9 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /&limit=\$\{pinsUpcomingLimit\}/);
   assert.match(dashboard, /function showNextUpcomingPins/);
   assert.match(dashboard, /function getSelectedPipelinePinsInterleaved/);
+  assert.match(dashboard, /function selectVisiblePipelinePins/);
   assert.match(dashboard, /function approveSelectedPipelinePins/);
+  assert.match(dashboard, /window\.selectVisiblePipelinePins = selectVisiblePipelinePins/);
   assert.match(dashboard, /window\.approveSelectedPipelinePins = approveSelectedPipelinePins/);
   assert.match(dashboard, /let pipelineFilter = 'all'/);
   assert.match(dashboard, /renderPipelineTable\(pipelineFilter\)/);

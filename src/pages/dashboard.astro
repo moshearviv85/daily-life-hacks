@@ -476,6 +476,27 @@ const BUILD = {
       gap: .18rem;
       margin-bottom: .22rem;
     }
+    .pipeline-pin-select-label {
+      display: inline-flex;
+      align-items: center;
+      gap: .22rem;
+      padding: .12rem .34rem;
+      border: 1px solid #bfdbfe;
+      border-radius: 5px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: .64rem;
+      font-weight: 800;
+      cursor: pointer;
+      user-select: none;
+    }
+    .pipeline-pin-select-label input {
+      width: 15px;
+      height: 15px;
+      margin: 0;
+      accent-color: #2563eb;
+      cursor: pointer;
+    }
     .pipeline-pin-version {
       font-family: monospace;
       font-size: .66rem;
@@ -539,6 +560,27 @@ const BUILD = {
       flex-wrap: wrap;
       gap: .18rem;
       margin-bottom: .22rem;
+    }
+    :global(.pipeline-pin-select-label) {
+      display: inline-flex;
+      align-items: center;
+      gap: .22rem;
+      padding: .12rem .34rem;
+      border: 1px solid #bfdbfe;
+      border-radius: 5px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: .64rem;
+      font-weight: 800;
+      cursor: pointer;
+      user-select: none;
+    }
+    :global(.pipeline-pin-select-label input) {
+      width: 15px;
+      height: 15px;
+      margin: 0;
+      accent-color: #2563eb;
+      cursor: pointer;
     }
     :global(.pipeline-pin-version) {
       font-family: monospace;
@@ -803,6 +845,7 @@ const BUILD = {
           <span id="pl-image-filter-note" style="margin-left:.45rem"></span>
         </div>
         <div style="display:flex;gap:.4rem;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-sm" onclick="selectVisiblePipelinePins()" id="pl-select-visible-pins" disabled>Select visible pins</button>
           <button class="btn btn-sm" onclick="clearPipelinePinSelection()" id="pl-clear-selected-pins" disabled>Clear</button>
           <button class="btn btn-sm" onclick="approveSelectedPipelinePins()" id="pl-publish-selected" disabled>Publish selected pins</button>
         </div>
@@ -3921,7 +3964,10 @@ function renderPipelineTable(filter) {
             style="margin:.15rem 0 0 .2rem;border:1px solid #16a34a;background:#16a34a;color:#fff;border-radius:5px;padding:.12rem .35rem;font-size:.65rem;font-weight:700;cursor:pointer">${IS_PRODUCTION_DASHBOARD ? 'Publish' : 'Queue'}</button>`
         : '';
       const selectBox = !publishStatus && productionReady
-        ? `<input type="checkbox" class="pipeline-pin-select" value="${escapeHtml(slug)}" data-article-slug="${escapeHtml(article.slug)}" data-pin-index="${pin.pin_index ?? idx}" onchange="updatePipelinePinSelectionSummary()" title="Select pin for batch publishing" style="vertical-align:middle;margin-right:.25rem">`
+        ? `<label class="pipeline-pin-select-label" title="Select this pin for batch publishing">
+            <input type="checkbox" class="pipeline-pin-select" value="${escapeHtml(slug)}" data-article-slug="${escapeHtml(article.slug)}" data-pin-index="${pin.pin_index ?? idx}" onchange="updatePipelinePinSelectionSummary()">
+            <span>Select</span>
+          </label>`
         : '';
       return `<div class="pipeline-pin-card">
         <div class="pipeline-pin-head">
@@ -4438,6 +4484,7 @@ function updatePipelinePinSelectionSummary() {
   const helpEl = document.getElementById('pl-selected-pins-help');
   const publishBtn = document.getElementById('pl-publish-selected');
   const clearBtn = document.getElementById('pl-clear-selected-pins');
+  const selectVisibleBtn = document.getElementById('pl-select-visible-pins');
 
   if (countEl) countEl.textContent = String(selectedCount);
   if (helpEl) {
@@ -4459,11 +4506,27 @@ function updatePipelinePinSelectionSummary() {
     publishBtn.style.cursor = selectedCount ? 'pointer' : 'not-allowed';
   }
 
+  if (selectVisibleBtn) {
+    selectVisibleBtn.disabled = availableCount === 0 || selectedCount === availableCount;
+    selectVisibleBtn.textContent = availableCount && selectedCount === availableCount
+      ? 'All visible selected'
+      : `Select visible pins${availableCount ? ` (${availableCount})` : ''}`;
+    selectVisibleBtn.style.opacity = selectVisibleBtn.disabled ? '0.55' : '1';
+    selectVisibleBtn.style.cursor = selectVisibleBtn.disabled ? 'not-allowed' : 'pointer';
+  }
+
   if (clearBtn) {
     clearBtn.disabled = selectedCount === 0;
     clearBtn.style.opacity = selectedCount ? '1' : '0.55';
     clearBtn.style.cursor = selectedCount ? 'pointer' : 'not-allowed';
   }
+}
+
+function selectVisiblePipelinePins() {
+  document.querySelectorAll('.pipeline-pin-select').forEach((input) => {
+    input.checked = true;
+  });
+  updatePipelinePinSelectionSummary();
 }
 
 function clearPipelinePinSelection() {
@@ -4521,7 +4584,7 @@ async function approveSelectedPipelinePins() {
 
 async function promoteStagingToProduction(slug = '') {
   if (!pw) return;
-  const ok = confirm(`${slug ? 'Publish this reviewed article to production?' : 'Promote staging to production now?'}\n\n${slug ? `Triggered from: ${slug}\n\n` : ''}This runs the promotion workflow, verifies the staging build, then fast-forwards main to staging. If staging contains more reviewed changes, those changes move too. It does not post to Pinterest.`);
+  const ok = confirm(`${slug ? 'Publish this reviewed article to production?' : 'Promote staging to production now?'}\n\n${slug ? `Triggered from: ${slug}\n\n` : ''}This runs the promotion workflow, verifies the staging build, then merges reviewed staging into main. If staging contains more reviewed changes, those changes move too. It does not post to Pinterest.`);
   if (!ok) return;
 
   const statusEl = document.getElementById('pipeline-trigger-status');
@@ -4663,6 +4726,7 @@ window.approvePipelineArticle = approvePipelineArticle;
 window.regenerateHeroImage = regenerateHeroImage;
 window.approveSelectedPipelinePins = approveSelectedPipelinePins;
 window.updatePipelinePinSelectionSummary = updatePipelinePinSelectionSummary;
+window.selectVisiblePipelinePins = selectVisiblePipelinePins;
 window.clearPipelinePinSelection = clearPipelinePinSelection;
 window.approvePipelinePin = approvePipelinePin;
 window.promoteStagingToProduction = promoteStagingToProduction;
