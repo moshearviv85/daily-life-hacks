@@ -99,6 +99,7 @@ def verify_slug(
     pin_dir: Path = DEFAULT_PIN_DIR,
     article_only: bool = False,
     hero_only: bool = False,
+    support_only: bool = False,
 ) -> ArtifactCheck:
     errors: list[str] = []
 
@@ -112,6 +113,11 @@ def verify_slug(
             errors.append("missing OK review output")
 
         if article_only:
+            return ArtifactCheck(slug=slug, ok=not errors, errors=errors)
+
+        if support_only:
+            if not (hero_dir / f"{slug}-ingredients.jpg").exists():
+                errors.append(f"missing support image: {hero_dir / f'{slug}-ingredients.jpg'}")
             return ArtifactCheck(slug=slug, ok=not errors, errors=errors)
 
         if not (hero_dir / f"{slug}-main.jpg").exists():
@@ -150,6 +156,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--all-reviewed", action="store_true", help="Verify every reviewed article in SQLite.")
     parser.add_argument("--article-only", action="store_true", help="Verify article draft artifacts only; images and pin briefs must not be required.")
     parser.add_argument("--hero-only", action="store_true", help="Verify article and hero artifacts only; pin briefs/images must not be required.")
+    parser.add_argument("--support-only", action="store_true", help="Verify article and support image artifacts only; hero/pin artifacts must not be required.")
     parser.add_argument("--report", type=Path, help="Optional JSON report path to write.")
     args = parser.parse_args(argv)
 
@@ -165,7 +172,13 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     checks = [
-        verify_slug(slug, db_path=args.db, article_only=args.article_only, hero_only=args.hero_only)
+        verify_slug(
+            slug,
+            db_path=args.db,
+            article_only=args.article_only,
+            hero_only=args.hero_only,
+            support_only=args.support_only,
+        )
         for slug in slugs
     ]
     failed = [check for check in checks if not check.ok]
@@ -184,6 +197,7 @@ def main(argv: list[str] | None = None) -> int:
                     "ok": not failed,
                     "article_only": args.article_only,
                     "hero_only": args.hero_only,
+                    "support_only": args.support_only,
                     "checks": [
                         {
                             "slug": check.slug,

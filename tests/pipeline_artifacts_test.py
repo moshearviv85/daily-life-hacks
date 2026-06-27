@@ -200,6 +200,38 @@ class PipelineArtifactsTest(unittest.TestCase):
             self.assertTrue(result.ok)
             self.assertEqual(result.errors, [])
 
+    def test_support_only_verification_requires_support_but_not_hero_or_pin_briefs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            db = root / "topic-research.sqlite"
+            articles = root / "articles"
+            heroes = root / "images"
+            pins = heroes / "pins"
+            articles.mkdir()
+            pins.mkdir(parents=True)
+            _make_db(db)
+
+            con = sqlite3.connect(db)
+            con.execute("DELETE FROM hero_briefs")
+            con.execute("DELETE FROM pin_briefs")
+            con.commit()
+            con.close()
+
+            (articles / "sample-article.md").write_text("---\ntitle: Sample\n---\nBody\n")
+            (heroes / "sample-article-ingredients.jpg").write_bytes(b"jpg")
+
+            result = verify_slug(
+                "sample-article",
+                db_path=db,
+                articles_dir=articles,
+                hero_dir=heroes,
+                pin_dir=pins,
+                support_only=True,
+            )
+
+            self.assertTrue(result.ok)
+            self.assertEqual(result.errors, [])
+
     def test_full_asset_verification_accepts_staging_article_without_review_table(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

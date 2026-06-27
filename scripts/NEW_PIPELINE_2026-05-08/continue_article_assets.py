@@ -70,11 +70,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--db", default=str(DEFAULT_DB))
     parser.add_argument("--skip-images", action="store_true", help="Generate briefs only, no FAL image calls.")
     parser.add_argument("--hero-only", action="store_true", help="Regenerate only the hero brief/image and article imageAlt.")
+    parser.add_argument("--support-only", action="store_true", help="Regenerate only the mid-article support image.")
     parser.add_argument("--force-images", action="store_true", help="Overwrite existing image files.")
     args = parser.parse_args(argv)
 
     load_env()
-    if not os.environ.get("OPENROUTER_API_KEY"):
+    if args.hero_only and args.support_only:
+        log("ERROR: choose either --hero-only or --support-only, not both")
+        return 1
+    if not args.support_only and not os.environ.get("OPENROUTER_API_KEY"):
         log("ERROR: OPENROUTER_API_KEY not set")
         return 1
     if not args.skip_images and not os.environ.get("FAL_KEY"):
@@ -91,48 +95,59 @@ def main(argv: list[str] | None = None) -> int:
     log(f"Continuing approved article assets: {args.slug}")
     init_brief_schema(args.db)
 
-    hero_brief_cmd = [
-        py, str(SCRIPT_DIR / "generate_hero_brief.py"),
-        "--slug", args.slug,
-        "--db", args.db,
-    ]
-    if args.force_images:
-        hero_brief_cmd.append("--force")
-
-    steps = [("Hero Brief", hero_brief_cmd, 120)]
-
-    if not args.hero_only:
-        steps.append((
-            "Pin Briefs",
-            [py, str(SCRIPT_DIR / "generate_pin_briefs.py"), "--slug", args.slug, "--db", args.db],
-            180,
-        ))
-
-    if not args.skip_images:
-        hero_image_cmd = [
-            py, str(SCRIPT_DIR / "generate_images.py"),
+    if args.support_only:
+        steps = [(
+            "Support Image",
+            [
+                py, str(SCRIPT_DIR / "generate_support_image.py"),
+                "--slug", args.slug,
+                "--force",
+            ],
+            300,
+        )]
+    else:
+        hero_brief_cmd = [
+            py, str(SCRIPT_DIR / "generate_hero_brief.py"),
             "--slug", args.slug,
             "--db", args.db,
         ]
         if args.force_images:
-            hero_image_cmd.append("--force")
-        steps.append(("Hero Image", hero_image_cmd, 300))
+            hero_brief_cmd.append("--force")
+
+        steps = [("Hero Brief", hero_brief_cmd, 120)]
 
         if not args.hero_only:
-            pin_image_cmd = [
-                py, str(SCRIPT_DIR / "generate_pin_images.py"),
+            steps.append((
+                "Pin Briefs",
+                [py, str(SCRIPT_DIR / "generate_pin_briefs.py"), "--slug", args.slug, "--db", args.db],
+                180,
+            ))
+
+        if not args.skip_images:
+            hero_image_cmd = [
+                py, str(SCRIPT_DIR / "generate_images.py"),
                 "--slug", args.slug,
                 "--db", args.db,
             ]
             if args.force_images:
-                pin_image_cmd.append("--force")
-            steps.append(("Pin Images", pin_image_cmd, 600))
+                hero_image_cmd.append("--force")
+            steps.append(("Hero Image", hero_image_cmd, 300))
 
-    steps.append((
-        "Refresh Article Markdown",
-        [py, str(SCRIPT_DIR / "bulk_deploy_articles.py"), "--slug", args.slug, "--db", args.db],
-        30,
-    ))
+            if not args.hero_only:
+                pin_image_cmd = [
+                    py, str(SCRIPT_DIR / "generate_pin_images.py"),
+                    "--slug", args.slug,
+                    "--db", args.db,
+                ]
+                if args.force_images:
+                    pin_image_cmd.append("--force")
+                steps.append(("Pin Images", pin_image_cmd, 600))
+
+        steps.append((
+            "Refresh Article Markdown",
+            [py, str(SCRIPT_DIR / "bulk_deploy_articles.py"), "--slug", args.slug, "--db", args.db],
+            30,
+        ))
 
     for label, cmd, timeout in steps:
         if not run_step(label, cmd, timeout=timeout):

@@ -437,6 +437,45 @@ test("regenerate_hero dispatches hero-only asset workflow", async (t) => {
   assert.equal(data.outputBranch, "staging");
 });
 
+test("regenerate_support dispatches support-only asset workflow", async (t) => {
+  const originalFetch = globalThis.fetch;
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  let requestedWorkflow = "";
+  let dispatchBody = null;
+  globalThis.fetch = async (url, init) => {
+    requestedWorkflow = String(url);
+    dispatchBody = JSON.parse(init.body);
+    return new Response(null, { status: 204 });
+  };
+
+  const response = await onRequestPost({
+    request: new Request("https://staging.daily-life-hacks.pages.dev/api/pipeline-trigger?key=test-key", {
+      method: "POST",
+      body: JSON.stringify({ action: "regenerate_support", slug: "demo-article" }),
+    }),
+    env: {
+      DASHBOARD_PASSWORD: "test-key",
+      GH_PAT: "gh-token",
+      CF_PAGES_BRANCH: "staging",
+      DB: makePipelineArticleDb("pin_images"),
+    },
+  });
+  const data = await response.json();
+
+  assert.equal(response.status, 200);
+  assert.equal(data.ok, true);
+  assert.match(requestedWorkflow, /pipeline-article-assets\.yml/);
+  assert.equal(dispatchBody.ref, "main");
+  assert.equal(dispatchBody.inputs.slug, "demo-article");
+  assert.equal(dispatchBody.inputs.mode, "support_only");
+  assert.equal(data.slug, "demo-article");
+  assert.equal(data.dispatchRef, "main");
+  assert.equal(data.outputBranch, "staging");
+});
+
 test("GitHub dispatch failures return a readable error", async (t) => {
   const originalFetch = globalThis.fetch;
   t.after(() => {

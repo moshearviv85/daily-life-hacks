@@ -84,7 +84,9 @@ export function nextQueueSlotFromPending(rows, now = new Date()) {
   if (!pending.length) return currentQueueSlot(now);
 
   const latest = pending[pending.length - 1];
-  if (latest.scheduled_at < now) return currentQueueSlot(now);
+  const currentSlot = currentQueueSlot(now);
+  const currentSlotAt = parseScheduledDateTime(currentSlot.scheduled_date, currentSlot.scheduled_time);
+  if (latest.scheduled_at < currentSlotAt) return currentSlot;
 
   let dateString = latest.scheduled_date;
   for (let guard = 0; guard < 730; guard += 1) {

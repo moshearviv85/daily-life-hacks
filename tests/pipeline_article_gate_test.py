@@ -191,3 +191,21 @@ def test_article_assets_can_regenerate_only_hero_image():
     assert "--hero-only" in source
     assert "--force-images" in source
     assert "if not args.hero_only" in source
+
+
+def test_article_assets_can_regenerate_only_support_image():
+    workflow = (ROOT / ".github" / "workflows" / "pipeline-article-assets.yml").read_text(encoding="utf-8")
+    source = (
+        ROOT / "scripts" / "NEW_PIPELINE_2026-05-08" / "continue_article_assets.py"
+    ).read_text(encoding="utf-8")
+    verifier = (
+        ROOT / "scripts" / "NEW_PIPELINE_2026-05-08" / "verify_pipeline_artifacts.py"
+    ).read_text(encoding="utf-8")
+
+    assert "support_only" in workflow
+    assert "--support-only --force-images" in workflow
+    assert "--support-only" in workflow
+    assert "--support-only" in source
+    assert "generate_support_image.py" in source
+    assert "--support-only" in verifier
+    assert "support_only" in verifier

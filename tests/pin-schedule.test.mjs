@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import {
+  nextQueueSlotFromPending,
   pinsPerDayForDate,
   scheduleRowsByRandomDayCount,
   scheduledTimeForSlot,
@@ -36,4 +37,14 @@ test("random batch scheduling can place 9 pins on a day", () => {
   for (const row of scheduled) {
     assert.notEqual(minuteOf(row.scheduled_time) % 15, 0);
   }
+});
+
+test("next queue slot does not duplicate a pin already scheduled in the current minute", () => {
+  const next = nextQueueSlotFromPending([
+    { row_id: "pin-a", scheduled_date: "2026-06-27", scheduled_time: "08:07" },
+  ], new Date("2026-06-27T08:07:42Z"));
+
+  assert.equal(next.scheduled_date, "2026-06-27");
+  assert.notEqual(next.scheduled_time, "08:07");
+  assert.notEqual(minuteOf(next.scheduled_time) % 15, 0);
 });

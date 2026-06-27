@@ -3,7 +3,7 @@
  * Dispatch a pipeline GitHub Actions workflow by action name.
  * Protected by DASHBOARD_PASSWORD.
  *
- * Body: { action: "discover" | "produce" | "publish" | "approve_article" | "regenerate_hero" | "promote_staging", count?: number, limit?: number, category?: string, topic_ids?: number[], slug?: string }
+ * Body: { action: "discover" | "produce" | "publish" | "approve_article" | "regenerate_hero" | "regenerate_support" | "promote_staging", count?: number, limit?: number, category?: string, topic_ids?: number[], slug?: string }
  *
  * Note: content-generation workflows push their generated files to staging from
  * inside the workflow; production publishing/promotion remains explicitly gated.
@@ -64,10 +64,16 @@ const ACTIONS = {
     outputBranch: "staging",
     effect: "Regenerates only the staging hero image for an approved article.",
   },
+  regenerate_support: {
+    workflow: "pipeline-article-assets.yml",
+    dispatchRef: "main",
+    outputBranch: "staging",
+    effect: "Regenerates only the staging support image for an approved article.",
+  },
 };
 
 const ASSET_READY_STAGES = new Set(["deployed"]);
-const HERO_REGEN_READY_STAGES = new Set([
+const IMAGE_REGEN_READY_STAGES = new Set([
   "deployed",
   "hero_brief",
   "pins_brief",
@@ -125,7 +131,9 @@ async function validateArticleAssetGate(env, request, action, slug) {
     };
   }
 
-  const allowed = action === "regenerate_hero" ? HERO_REGEN_READY_STAGES : ASSET_READY_STAGES;
+  const allowed = ["regenerate_hero", "regenerate_support"].includes(action)
+    ? IMAGE_REGEN_READY_STAGES
+    : ASSET_READY_STAGES;
   if (!allowed.has(article.stage)) {
     return {
       ok: false,
@@ -244,7 +252,7 @@ export async function onRequestPost(context) {
   const action = body.action;
   const actionConfig = ACTIONS[action];
   if (!actionConfig) {
-    return json({ error: `Unknown action: ${action}. Use: discover, produce, publish, approve_article, regenerate_hero, promote_staging` }, 400);
+    return json({ error: `Unknown action: ${action}. Use: discover, produce, publish, approve_article, regenerate_hero, regenerate_support, promote_staging` }, 400);
   }
   if (action === "publish" && !isProductionRequest(env, request)) {
     return json({
@@ -284,13 +292,14 @@ export async function onRequestPost(context) {
     }
     inputs.category = body.category;
   }
-  if (action === "approve_article" || action === "regenerate_hero") {
+  if (action === "approve_article" || action === "regenerate_hero" || action === "regenerate_support") {
     const slug = String(body.slug || "").trim();
     if (!/^[a-z0-9-]{3,120}$/.test(slug)) {
       return json({ error: `valid slug is required for ${action}` }, 400);
     }
     inputs.slug = slug;
     if (action === "regenerate_hero") inputs.mode = "hero_only";
+    if (action === "regenerate_support") inputs.mode = "support_only";
 
     const gate = await validateArticleAssetGate(env, request, action, slug);
     if (!gate.ok) {

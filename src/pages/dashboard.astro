@@ -834,6 +834,7 @@ const BUILD = {
         <button class="btn btn-sm active" onclick="filterPipeline('all', this)" id="pl-filter-all">All</button>
         <button class="btn btn-sm" onclick="filterPipeline('progress', this)">In Progress</button>
         <button class="btn btn-sm" onclick="filterPipeline('ready', this)">Ready</button>
+        <button class="btn btn-sm" onclick="filterPipeline('queued', this)">Queued/Posted</button>
         <button class="btn btn-sm" onclick="filterPipeline('failed', this)">Failed</button>
       </div>
 
@@ -3335,6 +3336,7 @@ async function triggerPostNow() {
 let pipelineData = null;
 let pipelineFilter = 'all';
 const heroImageVersions = new Map();
+const supportImageVersions = new Map();
 
 async function fetchPipelineStatus() {
   try {
@@ -3858,8 +3860,12 @@ function renderPipelineTable(filter) {
   hiddenIncompleteAssets = beforeCompletePackageFilter - articles.length;
   if (IS_PRODUCTION_DASHBOARD) {
     const beforePublishedFilter = articles.length;
-    articles = articles.filter(article => !articleIsDoneForPipelineControl(article));
-    hiddenDoneArticles = beforePublishedFilter - articles.length;
+    if (filter === 'queued') {
+      articles = articles.filter(articleIsDoneForPipelineControl);
+    } else {
+      articles = articles.filter(article => !articleIsDoneForPipelineControl(article));
+      hiddenDoneArticles = beforePublishedFilter - articles.length;
+    }
   }
 
   const imageFilterNote = document.getElementById('pl-image-filter-note');
@@ -3874,13 +3880,17 @@ function renderPipelineTable(filter) {
     articles = articles.filter(a => !['staging_review', 'published', 'failed', 'topic'].includes(displayStageFor(a)));
   } else if (filter === 'ready') {
     articles = articles.filter(a => displayStageFor(a) === 'staging_review');
+  } else if (filter === 'queued') {
+    articles = IS_PRODUCTION_DASHBOARD ? articles : [];
   } else if (filter === 'failed') {
     articles = articles.filter(a => a.stage === 'failed');
   }
 
   if (!articles.length) {
     tbody.innerHTML = '';
-    empty.textContent = (hiddenIncompleteAssets > 0 || hiddenDoneArticles > 0)
+    empty.textContent = filter === 'queued'
+      ? 'No live articles with queued or posted pipeline pins match this view.'
+      : (hiddenIncompleteAssets > 0 || hiddenDoneArticles > 0)
       ? `No visible articles match this filter. ${hiddenIncompleteAssets} incomplete staging package(s) and ${hiddenDoneArticles} live article(s) with queued/posted pins are hidden.`
       : 'No pipeline data yet. Click "Find Topics" to start.';
     empty.style.display = '';
@@ -4017,8 +4027,9 @@ function renderPipelineTable(filter) {
     const heroSrc = a.hero_image_url || `${pipelineAssetBase}/images/${a.slug}-main.jpg`;
     const supportSrc = a.support_image_url || `${pipelineAssetBase}/images/${a.slug}-ingredients.jpg`;
     const heroVersion = encodeURIComponent(heroImageVersions.get(a.slug) || a.updated_at || stage || 'current');
+    const supportVersion = encodeURIComponent(supportImageVersions.get(a.slug) || a.updated_at || stage || 'current');
     const heroDisplaySrc = `${heroSrc}?v=${heroVersion}`;
-    const supportDisplaySrc = `${supportSrc}?v=${heroVersion}`;
+    const supportDisplaySrc = `${supportSrc}?v=${supportVersion}`;
     const stagingHref = articleAvailable
       ? (a.staging_url || `https://staging.daily-life-hacks.pages.dev/${a.slug}/`)
       : "javascript:void(0)";
@@ -4061,8 +4072,11 @@ function renderPipelineTable(filter) {
         <button id="pipeline-hero-btn-${a.slug}" onclick="regenerateHeroImage('${a.slug}', '${heroSrc}')" title="Regenerate only the staging hero image"
           style="margin-top:.25rem;border:1px solid #f59e0b;background:#fff7ed;color:#92400e;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">Regenerate image</button>
         <div id="pipeline-hero-status-${a.slug}" style="display:none;margin-top:.22rem;max-width:150px;font-size:.62rem;line-height:1.25;color:#92400e"></div></div>` : ''}
-        ${supportAvailable ? `<div data-pipeline-support="${a.slug}"><a href="${supportDisplaySrc}" target="_blank" rel="noopener"><img src="${supportDisplaySrc}" alt="${escapeHtml(a.slug)} support" loading="lazy" onerror="var p=this.closest('[data-pipeline-support]');if(p)p.remove();" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.35rem"></a>
-        <div style="margin-top:.12rem;font-size:.6rem;line-height:1.2;color:var(--muted)">support image</div></div>` : ''}
+        ${supportAvailable ? `<div data-pipeline-support="${a.slug}"><a href="${supportDisplaySrc}" target="_blank" rel="noopener"><img id="pipeline-support-img-${a.slug}" src="${supportDisplaySrc}" alt="${escapeHtml(a.slug)} support" loading="lazy" onerror="var p=this.closest('[data-pipeline-support]');if(p)p.remove();" style="display:block;width:120px;height:68px;object-fit:cover;border-radius:6px;border:1px solid #e5e7eb;margin-top:.35rem"></a>
+        <button id="pipeline-support-btn-${a.slug}" onclick="regenerateSupportImage('${a.slug}', '${supportSrc}')" title="Regenerate only the staging support image"
+          style="margin-top:.25rem;border:1px solid #0ea5e9;background:#f0f9ff;color:#075985;border-radius:5px;padding:.14rem .38rem;font-size:.62rem;font-weight:700;cursor:pointer">Regenerate support</button>
+        <div style="margin-top:.12rem;font-size:.6rem;line-height:1.2;color:var(--muted)">support image</div>
+        <div id="pipeline-support-status-${a.slug}" style="display:none;margin-top:.22rem;max-width:150px;font-size:.62rem;line-height:1.25;color:#075985"></div></div>` : ''}
         ${publishAction}
       </td>
       <td>${a.category}</td>
@@ -4366,6 +4380,23 @@ function setHeroImageBusy(slug, busy) {
   btn.style.cursor = busy ? 'wait' : 'pointer';
 }
 
+function setSupportImageStatus(slug, message, tone = 'pending') {
+  const el = document.getElementById(`pipeline-support-status-${slug}`);
+  if (!el) return;
+  const colors = { pending: '#075985', success: '#166534', error: '#b91c1c' };
+  el.style.display = '';
+  el.style.color = colors[tone] || colors.pending;
+  el.textContent = message;
+}
+
+function setSupportImageBusy(slug, busy) {
+  const btn = document.getElementById(`pipeline-support-btn-${slug}`);
+  if (!btn) return;
+  btn.disabled = busy;
+  btn.style.opacity = busy ? '0.65' : '1';
+  btn.style.cursor = busy ? 'wait' : 'pointer';
+}
+
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -4409,6 +4440,30 @@ async function watchHeroImageReplacement(slug, heroSrc, initialSignal) {
   setHeroImageBusy(slug, false);
 }
 
+async function watchSupportImageReplacement(slug, supportSrc, initialSignal) {
+  for (let attempt = 1; attempt <= 18; attempt += 1) {
+    await delay(20000);
+    const nextSignal = await getHeroImageSignal(supportSrc);
+    const img = document.getElementById(`pipeline-support-img-${slug}`);
+    const version = String(Date.now());
+    supportImageVersions.set(slug, version);
+    if (img) {
+      img.src = `${supportSrc}${supportSrc.includes('?') ? '&' : '?'}v=${version}`;
+    }
+    if (nextSignal && initialSignal && nextSignal !== initialSignal) {
+      setSupportImageStatus(slug, 'New support image is live. Thumbnail refreshed.', 'success');
+      setSupportImageBusy(slug, false);
+      fetchPipelineStatus();
+      return;
+    }
+    const minutes = Math.ceil((attempt * 20) / 60);
+    setSupportImageStatus(slug, `Still waiting for the new support image... about ${minutes} min elapsed.`, 'pending');
+  }
+
+  setSupportImageStatus(slug, 'Still checking. The support thumbnail was refreshed repeatedly without reloading the dashboard.', 'pending');
+  setSupportImageBusy(slug, false);
+}
+
 async function regenerateHeroImage(slug, heroSrc) {
   if (!pw) {
     alert('Sign in to the dashboard before regenerating an image.');
@@ -4450,6 +4505,50 @@ async function regenerateHeroImage(slug, heroSrc) {
     statusEl.textContent = `Failed: ${e.message}`;
     setHeroImageStatus(slug, `Failed: ${e.message}`, 'error');
     setHeroImageBusy(slug, false);
+  }
+}
+
+async function regenerateSupportImage(slug, supportSrc) {
+  if (!pw) {
+    alert('Sign in to the dashboard before regenerating an image.');
+    return;
+  }
+  const ok = confirm(`Regenerate the staging support image?\n\n${slug}\n\nThis replaces only the mid-article ingredients/support image. It does not change the hero image, article copy, pins, or Pinterest queue.`);
+  if (!ok) return;
+
+  const statusEl = document.getElementById('pipeline-trigger-status');
+  statusEl.style.display = '';
+  statusEl.style.background = '#eff6ff';
+  statusEl.style.borderColor = '#bfdbfe';
+  statusEl.style.color = '#075985';
+  statusEl.textContent = `Dispatching support image regeneration for ${slug}...`;
+  setSupportImageBusy(slug, true);
+  setSupportImageStatus(slug, 'Dispatching workflow...', 'pending');
+
+  const initialSignal = await getHeroImageSignal(supportSrc);
+
+  try {
+    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'regenerate_support', slug }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) throw new Error(data.error || data.gh_body || 'Unknown error');
+
+    statusEl.style.background = '#f0fdf4';
+    statusEl.style.borderColor = '#bbf7d0';
+    statusEl.style.color = '#166534';
+    statusEl.textContent = `Support image workflow dispatched for ${slug}. Target: ${data.outputBranch || 'staging'}. This usually takes 2-4 minutes.`;
+    setSupportImageStatus(slug, 'Workflow sent. Watching for the new support image...', 'pending');
+    watchSupportImageReplacement(slug, supportSrc, initialSignal);
+  } catch (e) {
+    statusEl.style.background = '#fef2f2';
+    statusEl.style.borderColor = '#fecaca';
+    statusEl.style.color = '#b91c1c';
+    statusEl.textContent = `Failed: ${e.message}`;
+    setSupportImageStatus(slug, `Failed: ${e.message}`, 'error');
+    setSupportImageBusy(slug, false);
   }
 }
 
@@ -4724,6 +4823,7 @@ window.resetPipelineTopicBank = resetPipelineTopicBank;
 window.produceSelectedTopics = produceSelectedTopics;
 window.approvePipelineArticle = approvePipelineArticle;
 window.regenerateHeroImage = regenerateHeroImage;
+window.regenerateSupportImage = regenerateSupportImage;
 window.approveSelectedPipelinePins = approveSelectedPipelinePins;
 window.updatePipelinePinSelectionSummary = updatePipelinePinSelectionSummary;
 window.selectVisiblePipelinePins = selectVisiblePipelinePins;
