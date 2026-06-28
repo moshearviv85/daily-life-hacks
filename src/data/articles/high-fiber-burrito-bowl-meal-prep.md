@@ -96,4 +96,4 @@ Nobody likes a lukewarm lunch with cold spots. When you pull this out of the off
 
 Microwave the bowl for about 90 seconds. Stop halfway through to give it a good stir. This redistributes the heat and stops the outer edges from turning to lava while the center stays ice cold. Once it's hot, squeeze that fresh lime juice over the top. The acid cuts through the heavy beans and makes the whole meal taste like it was just made.
 
-Spend thirty minutes on Sunday making this high fiber burrito bowl meal prep. Your future self on Tuesday at 12:30 PM will be deeply grateful. It beats standing in line for an overpriced sandwich any day of the week.
+Spend thirty minutes on Sunday making this high fiber burrito bowl meal prep, and Tuesday lunch becomes one less decision to wrestle with. It beats standing in line for an overpriced sandwich any day of the week.

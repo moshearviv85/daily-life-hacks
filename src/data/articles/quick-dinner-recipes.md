@@ -9,7 +9,7 @@ tags:
   - healthy weeknight
   - sheet pan recipes
 image: "/images/quick-dinner-recipes-main.jpg"
-imageAlt: Draft image placeholder for One-Pan Lemon Herb Chicken and Veggies article hero image
+imageAlt: Roasted chicken with broccoli, bell peppers, and tomatoes on a sheet pan
 date: 2026-05-28
 author: "David Miller"
 featured: false
@@ -76,6 +76,6 @@ For the vegetables, I've gone with potatoes, broccoli, and red bell pepper becau
 
 This is probably the most important rule for any sheet pan meal. If you pile everything up, it's going to steam instead of roast. And steamed chicken and veggies are just sad. You want a little caramelization, a little char on the edges of the broccoli. That's where the flavor lives. If your baking sheet isn't big enough to give everything a bit of breathing room, use two. It's worth the extra pan.
 
-And parchment paper? Not strictly necessary, but it makes cleanup so much easier. You just pull it off the pan and toss it. Your future self will thank your current self for that little decision.
+And parchment paper? Not strictly necessary, but it makes cleanup so much easier. You just pull it off the pan and toss it, which is exactly the kind of tiny choice that makes weeknight cooking feel less annoying.
 
 This recipe is not trying to win a chef competition. It's trying to get fiber and protein on the table before anyone asks for cereal. It's simple, it's tasty, and it gets the job done.

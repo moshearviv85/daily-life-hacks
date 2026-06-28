@@ -4,7 +4,7 @@ excerpt: Stop throwing out dried-up ginger. Learn the best way to store fresh gi
 category: tips
 tags: ["ginger storage", "food hacks", "kitchen tips", "reduce food waste", "fresh ingredients"]
 image: "/images/how-to-store-fresh-ginger-main.jpg"
-imageAlt: Draft image placeholder for Keep Fresh Ginger Ready for Weeks, Not Days article hero image
+imageAlt: Fresh herbs stored in glass containers on a kitchen counter
 date: 2026-06-01
 author: "David Miller"
 featured: false
