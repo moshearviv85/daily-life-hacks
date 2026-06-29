@@ -2,14 +2,14 @@
   "articles": 178,
   "released_articles": 178,
   "bing_urls": 231,
-  "bing_zero_byte_urls": 70,
+  "bing_zero_byte_urls": 64,
   "gsc_pages": 109,
   "p0_candidates": 0,
   "triage_by_action": [
     {
       "priority": "P1",
       "recommended_action": "confirm_noindex_and_canonical_target",
-      "count": 123
+      "count": 115
     },
     {
       "priority": "P1",
@@ -19,7 +19,7 @@
     {
       "priority": "P1",
       "recommended_action": "validate_current_301_to_canonical_url",
-      "count": 9
+      "count": 10
     },
     {
       "priority": "P1",
@@ -29,7 +29,7 @@
     {
       "priority": "P2",
       "recommended_action": "validate_current_301_to_canonical_url",
-      "count": 124
+      "count": 132
     },
     {
       "priority": "P2",
@@ -39,7 +39,7 @@
     {
       "priority": "P2",
       "recommended_action": "keep_410_noindex",
-      "count": 3
+      "count": 2
     },
     {
       "priority": "P2",

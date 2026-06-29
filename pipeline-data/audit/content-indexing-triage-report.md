@@ -1,6 +1,6 @@
 # Content Indexing Audit Triage Report
 
-Generated: 2026-06-29T16:42:47+00:00
+Generated: 2026-06-29T16:56:00+00:00
 
 ## Summary
 
@@ -9,7 +9,7 @@ Generated: 2026-06-29T16:42:47+00:00
 - Alias slugs: 345
 - Router variants: 160
 - Bing URLs loaded: 231
-- Bing zero-byte URLs: 70
+- Bing zero-byte URLs: 64
 - GSC pages loaded: 109
 - AI citations loaded: 37
 
@@ -17,17 +17,17 @@ Generated: 2026-06-29T16:42:47+00:00
 
 | priority | url_kind | recommended_action | count |
 | --- | --- | --- | --- |
-| P1 | alias | confirm_noindex_and_canonical_target | 97 |
+| P1 | alias | confirm_noindex_and_canonical_target | 87 |
 | P1 | article | keep_review_for_content_depth | 64 |
-| P1 | router_variant | confirm_noindex_and_canonical_target | 14 |
+| P1 | router_variant | confirm_noindex_and_canonical_target | 16 |
+| P1 | article | validate_current_301_to_canonical_url | 10 |
 | P1 | tag | confirm_noindex_and_canonical_target | 10 |
-| P1 | article | validate_current_301_to_canonical_url | 9 |
 | P1 | legacy_redirect | validate_legacy_301_target | 3 |
 | P1 | utility | confirm_noindex_and_canonical_target | 2 |
-| P2 | article | validate_current_301_to_canonical_url | 124 |
+| P2 | article | validate_current_301_to_canonical_url | 132 |
 | P2 | legacy_redirect | validate_legacy_301_target | 9 |
-| P2 | legacy_gone | keep_410_noindex | 3 |
 | P2 | home | document_no_action | 2 |
+| P2 | legacy_gone | keep_410_noindex | 2 |
 | P2 | unmatched | ignore_stale_unmatched_zero_impression | 2 |
 | P2 | static_page | document_static_page_policy | 1 |
 
