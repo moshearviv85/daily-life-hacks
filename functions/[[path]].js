@@ -18,11 +18,9 @@ const CANONICAL_ORIGIN = "https://www.daily-life-hacks.com";
 const SEARCH_GARBAGE_PARAMS = new Set(["s"]);
 
 const LEGACY_PERMANENT_REDIRECTS = new Map([
-  ["protein-per-serving-beans-chicken-tofu-compared", "/best-low-cost-protein-sources-large-families/"],
-  ["how-to-quick-soak-dried-beans-same-day", "/how-to-cook-dried-beans-from-scratch/"],
-  ["keep-berries-fresh-longer-when-to-wash", "/how-to-store-fruits-and-vegetables-properly/"],
-  ["how-to-pack-lunch-crisp-sandwiches-salads", "/how-to-keep-sandwiches-from-getting-soggy/"],
-  ["plan-week-of-dinners-fewer-grocery-runs", "/batch-cooking-for-beginners-weekly-guide/"],
+  ["sourdough-discard-nutrition-facts-health-benefits", "/easy-sourdough-discard-recipes-beginners/"],
+  ["rotisserie-chicken-nutrition-facts-sodium-content", "/costco-rotisserie-chicken-meal-ideas-dinner/"],
+  ["oatmeal-vs-grits-fiber-content-guide", "/oatmeal-vs-grits-fiber-content/"],
   ["artichoke-recipes-for-gut-health-guide", "/artichoke-recipes-for-gut-health/"],
   ["avoid-sodium-shock-rotisserie-chicken", "/big-flavor-less-salt-citrus-herbs-umami-swaps/"],
   ["simple-snack-portioning-guide", "/grab-and-go-fridge-snack-drawer/"],
@@ -67,7 +65,6 @@ const LEGACY_GONE_PATHS = new Set([
   "sample-page/feed",
   "usual-excuses-made-by-high-conflict-parents",
   "wp-admin/*",
-  "how-to-preheat-skillet-even-browning",
   "overnight-oats-without-protein-powder-3-ways",
   "ten-minute-kitchen-reset-routine",
   "tag/crisp",

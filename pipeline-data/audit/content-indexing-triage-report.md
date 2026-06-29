@@ -1,12 +1,12 @@
 # Content Indexing Audit Triage Report
 
-Generated: 2026-06-14T10:59:26+00:00
+Generated: 2026-06-29T16:42:47+00:00
 
 ## Summary
 
-- Articles scanned: 158
-- Released canonical articles: 158
-- Alias slugs: 266
+- Articles scanned: 178
+- Released canonical articles: 178
+- Alias slugs: 345
 - Router variants: 160
 - Bing URLs loaded: 231
 - Bing zero-byte URLs: 70
@@ -17,29 +17,30 @@ Generated: 2026-06-14T10:59:26+00:00
 
 | priority | url_kind | recommended_action | count |
 | --- | --- | --- | --- |
-| P0 | article | enforce_301_to_canonical_url | 131 |
-| P0 | unmatched | investigate_unmatched_live_200 | 5 |
-| P0 | alias | confirm_noindex_and_canonical_target | 2 |
-| P0 | off_topic_candidate | delete_or_301_after_manual_approval | 2 |
-| P1 | unmatched | investigate_unmatched_live_200 | 61 |
-| P1 | article | keep_review_for_content_depth | 54 |
-| P1 | alias | confirm_noindex_and_canonical_target | 46 |
-| P1 | tag | confirm_noindex_and_canonical_target | 17 |
-| P1 | unmatched | redirect_or_ignore_if_not_reachable | 17 |
+| P1 | alias | confirm_noindex_and_canonical_target | 97 |
+| P1 | article | keep_review_for_content_depth | 64 |
+| P1 | router_variant | confirm_noindex_and_canonical_target | 14 |
+| P1 | tag | confirm_noindex_and_canonical_target | 10 |
+| P1 | article | validate_current_301_to_canonical_url | 9 |
+| P1 | legacy_redirect | validate_legacy_301_target | 3 |
 | P1 | utility | confirm_noindex_and_canonical_target | 2 |
-| P1 | category_pagination | confirm_noindex_and_canonical_target | 1 |
+| P2 | article | validate_current_301_to_canonical_url | 124 |
+| P2 | legacy_redirect | validate_legacy_301_target | 9 |
+| P2 | legacy_gone | keep_410_noindex | 3 |
 | P2 | home | document_no_action | 2 |
+| P2 | unmatched | ignore_stale_unmatched_zero_impression | 2 |
+| P2 | static_page | document_static_page_policy | 1 |
 
 ## GSC Coverage Issues
 
 | reason | source | validation | pages |
 | --- | --- | --- | --- |
-| Excluded by 'noindex' tag | Website | Failed | 148 |
-| Alternative page with proper canonical tag | Website | Failed | 91 |
-| Discovered - currently not indexed | Google systems | Started | 63 |
-| Not found (404) | Website | Failed | 52 |
-| Page with redirect | Website | Failed | 43 |
-| Crawled - currently not indexed | Google systems | Failed | 33 |
+| Excluded by 'noindex' tag | Website | Failed | 167 |
+| Alternative page with proper canonical tag | Website | Failed | 92 |
+| Discovered - currently not indexed | Google systems | Started | 62 |
+| Not found (404) | Website | Started | 54 |
+| Page with redirect | Website | Failed | 42 |
+| Crawled - currently not indexed | Google systems | Failed | 32 |
 | Redirect error | Website | Started | 1 |
 | Server error (5xx) | Website | Passed | 0 |
 
@@ -47,56 +48,6 @@ Generated: 2026-06-14T10:59:26+00:00
 
 | priority | url_kind | recommended_action | url | canonical_slug | article_word_count | bing_document_size | bing_impressions | gsc_impressions | gsc_position |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/high-fiber-fast-food-options-guide | high-fiber-fast-food-options-guide | 802 |  |  | 116 | 10.28 |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/how-to-revive-wilted-lettuce-and-greens | how-to-revive-wilted-lettuce-and-greens | 705 | 0 | 61 |  |  |
-| P0 | alias | confirm_noindex_and_canonical_target | https://www.daily-life-hacks.com/sourdough-discard-nutrition-facts-health-benefits/ | easy-sourdough-discard-recipes-beginners | 734 |  |  | 45 | 8.62 |
-| P0 | alias | confirm_noindex_and_canonical_target | https://www.daily-life-hacks.com/rotisserie-chicken-nutrition-facts-sodium-content/ | costco-rotisserie-chicken-meal-ideas-dinner | 728 |  |  | 38 | 12.05 |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/best-low-cost-protein-sources-large-families | best-low-cost-protein-sources-large-families | 874 |  |  | 28 | 22.29 |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/prune-juice-alternatives-for-constipation | prune-juice-alternatives-for-constipation | 803 | 0 | 26 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/cheap-crockpot-meals-large-families | cheap-crockpot-meals-large-families | 783 |  |  | 23 | 44.61 |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/how-to-double-recipe-seasoning-without-guessing | how-to-double-recipe-seasoning-without-guessing | 727 |  |  | 21 | 9.0 |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/baking-sheet-liners-parchment-silicone-when-to-use | baking-sheet-liners-parchment-silicone-when-to-use | 767 |  |  | 20 | 27.05 |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/split-pea-soup-recipe-high-fiber | split-pea-soup-recipe-high-fiber | 693 | 69120 | 17 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/amaranth-millet-teff-beginner-cooking-guide | amaranth-millet-teff-beginner-cooking-guide | 786 | 74913 | 10 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/baking-sheet-liners-parchment-silicone-when-to-use | baking-sheet-liners-parchment-silicone-when-to-use | 767 | 65441 | 8 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/oatmeal-vs-grits-fiber-content | oatmeal-vs-grits-fiber-content | 782 |  |  | 8 | 9.0 |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/high-fiber-salad-dressings-homemade | high-fiber-salad-dressings-homemade | 745 | 0 | 7 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/oatmeal-vs-grits-fiber-content | oatmeal-vs-grits-fiber-content | 782 | 0 | 7 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/costco-rotisserie-chicken-meal-ideas-dinner | costco-rotisserie-chicken-meal-ideas-dinner | 728 |  |  | 7 | 34.71 |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/30-day-high-fiber-challenge-meal-plan | 30-day-high-fiber-challenge-meal-plan | 752 | 74406 | 5 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/cottage-cheese-vs-greek-yogurt-protein-uses | cottage-cheese-vs-greek-yogurt-protein-uses | 749 | 0 | 4 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/healthy-blue-collar-lunch-ideas-men | healthy-blue-collar-lunch-ideas-men | 738 | 80522 | 4 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/high-fiber-stir-fry-vegetables | high-fiber-stir-fry-vegetables | 813 | 0 | 4 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/how-to-keep-bread-fresh-longer-without-mold | how-to-keep-bread-fresh-longer-without-mold | 715 | 0 | 4 |  |  |
-| P0 | unmatched | investigate_unmatched_live_200 | https://daily-life-hacks.com/oatmeal-vs-grits-fiber-content-guide |  |  | 74624 | 4 |  |  |
-| P0 | unmatched | investigate_unmatched_live_200 | https://daily-life-hacks.com/30-day-high-fiber-challenge-meal-plan-guide |  |  | 74406 | 3 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/baked-cod-lemon-capers-green-beans | baked-cod-lemon-capers-green-beans | 710 | 65092 | 3 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/high-fiber-fast-food-options-guide | high-fiber-fast-food-options-guide | 802 | 75681 | 3 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/high-fiber-smoothies-for-kids-picky-eaters | high-fiber-smoothies-for-kids-picky-eaters | 826 | 0 | 3 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/how-to-freeze-bananas-for-smoothies | how-to-freeze-bananas-for-smoothies | 731 | 0 | 3 |  |  |
-| P0 | unmatched | investigate_unmatched_live_200 | https://daily-life-hacks.com/how-to-revive-wilted-salad-greens |  |  | 72772 | 3 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/high-fiber-hummus-recipe-homemade | high-fiber-hummus-recipe-homemade | 794 |  |  | 3 | 7.67 |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/high-fiber-pizza-crust-cauliflower | high-fiber-pizza-crust-cauliflower | 813 |  |  | 3 | 8.0 |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/costco-rotisserie-chicken-meal-ideas-dinner | costco-rotisserie-chicken-meal-ideas-dinner | 728 | 80881 | 2 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/gluten-free-sourdough-discard-pizza-dough | gluten-free-sourdough-discard-pizza-dough | 714 | 86814 | 2 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/gut-health-tea-peppermint-ginger | gut-health-tea-peppermint-ginger | 838 | 0 | 2 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/high-fiber-hummus-recipe-homemade | high-fiber-hummus-recipe-homemade | 794 | 0 | 2 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/high-fiber-raspberry-jam-recipe-chia | high-fiber-raspberry-jam-recipe-chia | 711 | 83175 | 2 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/high-fiber-yogurt-parfait-for-breakfast | high-fiber-yogurt-parfait-for-breakfast | 822 | 75502 | 2 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/high-protein-bagel-sandwich-ideas-lunch | high-protein-bagel-sandwich-ideas-lunch | 973 | 82141 | 2 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/how-to-measure-sourdough-discard-grams | how-to-measure-sourdough-discard-grams | 710 | 73218 | 2 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/how-to-season-cast-iron-skillet-properly | how-to-season-cast-iron-skillet-properly | 724 |  |  | 2 | 8.0 |
-| P0 | article | enforce_301_to_canonical_url | https://www.daily-life-hacks.com/how-to-store-homemade-salad-dressing-safely | how-to-store-homemade-salad-dressing-safely | 830 |  |  | 2 | 10.0 |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/batch-cooking-for-beginners-weekly-guide | batch-cooking-for-beginners-weekly-guide | 732 | 0 | 1 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/healthy-egg-sandwich-add-ins-toppings | healthy-egg-sandwich-add-ins-toppings | 736 | 0 | 1 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/healthy-turkey-meatballs-meal-prep | healthy-turkey-meatballs-meal-prep | 706 | 60339 | 1 |  |  |
-| P0 | unmatched | investigate_unmatched_live_200 | https://daily-life-hacks.com/high-fiber-gluten-free-bread-recipe-v2 |  |  | 67325 | 1 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/high-fiber-pizza-crust-cauliflower | high-fiber-pizza-crust-cauliflower | 813 | 0 | 1 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/high-fiber-popcorn-toppings-healthy | high-fiber-popcorn-toppings-healthy | 787 | 0 | 1 |  |  |
-| P0 | unmatched | investigate_unmatched_live_200 | https://daily-life-hacks.com/high-fiber-smoothies-for-kids-picky-eaters-guide |  |  | 68003 | 1 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/pear-salad-with-walnuts-fiber-rich | pear-salad-with-walnuts-fiber-rich | 764 | 0 | 1 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/popcorn-vs-potato-chips-fiber-comparison | popcorn-vs-potato-chips-fiber-comparison | 815 | 60149 | 1 |  |  |
-| P0 | article | enforce_301_to_canonical_url | https://daily-life-hacks.com/whole-wheat-vs-white-pasta-fiber | whole-wheat-vs-white-pasta-fiber | 800 | 0 | 1 |  |  |
 
 ## Canonical Articles With Thin Body Or Missing Fields/Images
 
@@ -109,6 +60,7 @@ Generated: 2026-06-14T10:59:26+00:00
 | air-fryer-salmon-bites-garlic-honey-glaze | 651 | recipes | 1 | 0 | [] |
 | easy-cold-summer-pasta-salad-potlucks | 655 | recipes | 1 | 0 | [] |
 | cucumber-edamame-salad-sesame | 670 | recipes | 1 | 0 | [] |
+| stuffed-portobello-mushrooms-quinoa-spinach-feta | 679 | recipes | 1 | 0 | [] |
 | healthy-fats-list-foods-to-eat-daily | 687 | nutrition | 1 | 0 | [] |
 | best-way-to-cook-ribs | 688 | recipes | 1 | 0 | [] |
 | creamy-tomato-orzo-white-beans-one-pot | 691 | recipes | 1 | 0 | [] |
@@ -118,10 +70,11 @@ Generated: 2026-06-14T10:59:26+00:00
 | crispy-smashed-potato-salad-dijon-herbs | 695 | recipes | 1 | 0 | [] |
 | high-fiber-quinoa-salad-for-lunch-prep | 697 | recipes | 1 | 0 | [] |
 | best-breakfast-foods-for-sustained-energy | 698 | nutrition | 1 | 0 | [] |
+| sheet-pan-ginger-tofu-broccoli-sticky-glaze | 698 | recipes | 1 | 0 | [] |
 | easy-black-bean-tacos-weeknight-dinner | 699 | recipes | 1 | 0 | [] |
 | high-fiber-bran-muffins-that-taste-good | 699 | recipes | 1 | 0 | [] |
-| quick-dinner-recipes | 699 | recipes | 1 | 0 | [] |
 | high-fiber-avocado-toast-variations | 700 | recipes | 1 | 0 | [] |
+| quick-dinner-recipes | 702 | recipes | 1 | 0 | [] |
 | best-way-to-store-avocados-to-stop-browning | 703 | tips | 1 | 0 | [] |
 | creamy-mushroom-barley-risotto-hands-off | 705 | recipes | 1 | 0 | [] |
 | crispy-roasted-chickpeas-high-fiber-snack | 705 | recipes | 1 | 0 | [] |
@@ -150,7 +103,6 @@ Generated: 2026-06-14T10:59:26+00:00
 | how-to-keep-bread-fresh-longer-without-mold | 715 | tips | 1 | 0 | [] |
 | high-fiber-dinner-recipes-picky-kids | 717 | recipes | 1 | 0 | [] |
 | easy-sandwich-bread-recipe-beginners | 723 | recipes | 1 | 0 | [] |
-| how-to-season-cast-iron-skillet-properly | 724 | tips | 1 | 0 | [] |
 
 ## GSC Duplicate URL Shapes
 
