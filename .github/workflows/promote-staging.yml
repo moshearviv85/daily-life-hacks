@@ -69,5 +69,12 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: pages deploy dist --project-name=daily-life-hacks --branch=main
 
+      - name: Sync production pipeline metadata
+        env:
+          DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
+        run: |
+          python scripts/NEW_PIPELINE_2026-05-08/sync_staging_pipeline_to_production.py \
+            --key "$DASHBOARD_PASSWORD"
+
       - name: Verify production live metadata
         run: node scripts/verify-live-rich-pin-metadata.mjs https://www.daily-life-hacks.com/best-way-to-cook-baked-potatoes/

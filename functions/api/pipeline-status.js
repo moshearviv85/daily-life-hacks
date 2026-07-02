@@ -240,7 +240,7 @@ async function proxyStagingStatus(request, env) {
 async function getPinRows(env, stagingRequest) {
   const productionQuery = `
     SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
-            pp.alt, pp.model_id, pp.image_status, pa.category,
+            pp.prompt, pp.alt, pp.model_id, pp.image_status, pa.category,
             ps.status AS publish_status, ps.pin_id
       FROM pipeline_pins pp
       JOIN pipeline_articles pa ON pa.slug = pp.article_slug
@@ -249,7 +249,7 @@ async function getPinRows(env, stagingRequest) {
   `;
   const productionFallbackQuery = `
     SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
-            pp.alt, NULL AS model_id, pp.image_status, pa.category,
+            NULL AS prompt, pp.alt, NULL AS model_id, pp.image_status, pa.category,
             ps.status AS publish_status, ps.pin_id
       FROM pipeline_pins pp
       JOIN pipeline_articles pa ON pa.slug = pp.article_slug
@@ -268,7 +268,7 @@ async function getPinRows(env, stagingRequest) {
   try {
     return await env.DB.prepare(`
       SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
-              pp.alt, pp.model_id, pp.image_status, pa.category,
+              pp.prompt, pp.alt, pp.model_id, pp.image_status, pa.category,
               COALESCE(ss.status, ps.status) AS publish_status,
               COALESCE(ss.pin_id, ps.pin_id) AS pin_id
         FROM pipeline_pins pp
@@ -281,7 +281,7 @@ async function getPinRows(env, stagingRequest) {
     try {
       return await env.DB.prepare(`
         SELECT pp.article_slug, pp.pin_slug, pp.pin_index, pp.title, pp.description,
-                pp.alt, NULL AS model_id, pp.image_status, pa.category,
+                NULL AS prompt, pp.alt, NULL AS model_id, pp.image_status, pa.category,
                 COALESCE(ss.status, ps.status) AS publish_status,
                 COALESCE(ss.pin_id, ps.pin_id) AS pin_id
           FROM pipeline_pins pp
