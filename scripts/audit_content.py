@@ -38,7 +38,64 @@ RECIPE_FIELDS = [
 ]
 INTENTIONAL_NOINDEX_KINDS = {"alias", "router_variant", "tag", "utility", "category_pagination"}
 UTILITY_SLUGS = {"dashboard", "thank-you", "contact", "privacy", "terms", "disclaimer", "404"}
+STATIC_PAGE_SLUGS = {"about"}
 CATEGORY_SLUGS = {"nutrition", "recipes", "tips"}
+LEGACY_PERMANENT_REDIRECTS = {
+    "sourdough-discard-nutrition-facts-health-benefits": "/easy-sourdough-discard-recipes-beginners/",
+    "rotisserie-chicken-nutrition-facts-sodium-content": "/costco-rotisserie-chicken-meal-ideas-dinner/",
+    "oatmeal-vs-grits-fiber-content-guide": "/oatmeal-vs-grits-fiber-content/",
+    "artichoke-recipes-for-gut-health-guide": "/artichoke-recipes-for-gut-health/",
+    "avoid-sodium-shock-rotisserie-chicken": "/big-flavor-less-salt-citrus-herbs-umami-swaps/",
+    "simple-snack-portioning-guide": "/grab-and-go-fridge-snack-drawer/",
+    "recipes/1": "/recipes/",
+    "recipes/2": "/recipes/",
+    "tips/1": "/tips/",
+    "tag/breakfastideas": "/ricotta-berry-toast-bar-no-cook/",
+    "tag/crockpot": "/cheap-crockpot-meals-large-families/",
+    "tag/crockpot-meals": "/cheap-crockpot-meals-large-families/",
+    "tag/easyovenmeals": "/sheet-pan-ginger-tofu-broccoli-sticky-glaze/",
+    "tag/foodstorage": "/how-to-store-fruits-and-vegetables-properly/",
+    "tag/foodwaste": "/how-to-reduce-food-waste-at-home-easy-tips/",
+    "tag/healthysnacking": "/grab-and-go-fridge-snack-drawer/",
+    "tag/homecooking": "/recipes/",
+    "tag/kitchenbasics": "/tips/",
+    "tag/lentilrecipes": "/lentil-curry-high-fiber-vegan-dinner/",
+    "tag/meatlessdinner": "/stuffed-portobello-mushrooms-quinoa-spinach-feta/",
+    "tag/nocookmeals": "/ricotta-berry-toast-bar-no-cook/",
+    "tag/nutrition-facts": "/nutrition/",
+    "tag/quickmeals": "/recipes/",
+    "tag/recipetips": "/recipes/",
+    "tag/reducefoodwaste": "/how-to-reduce-food-waste-at-home-easy-tips/",
+    "tag/rotisserie": "/costco-rotisserie-chicken-meal-ideas-dinner/",
+    "tag/slowcookerrecipes": "/cheap-crockpot-meals-large-families/",
+    "tag/stuffedmushrooms": "/stuffed-portobello-mushrooms-quinoa-spinach-feta/",
+    "tag/vegetariandinner": "/stuffed-portobello-mushrooms-quinoa-spinach-feta/",
+}
+LEGACY_GONE_PATHS = {
+    "$%7ba.slug%7d",
+    "$%7barticle.slug%7d",
+    "$%7bimg.slug%7d",
+    "${a.slug}",
+    "${article.slug}",
+    "${img.slug}",
+    "*",
+    "api/event",
+    "feed",
+    "hello-world",
+    "most-very-important-guidance-skill-set",
+    "sample-page",
+    "sample-page/feed",
+    "usual-excuses-made-by-high-conflict-parents",
+    "wp-admin/*",
+    "overnight-oats-without-protein-powder-3-ways",
+    "ten-minute-kitchen-reset-routine",
+    "tag/crisp",
+    "tag/homeorganization",
+    "tag/kitchencleaning",
+    "tag/salsaverde",
+    "tag/tempehrecipes",
+    "tag/timemanagement",
+}
 OFF_TOPIC_PATTERNS = [
     "high-conflict-parents",
     "guidance-skill-set",
@@ -170,6 +227,10 @@ def normalize_slug(value: str | None) -> str:
     if not value:
         return ""
     return str(value).strip().strip("/")
+
+
+def normalize_route_path(value: str | None) -> str:
+    return normalize_slug(value).lower()
 
 
 def parse_date(value: Any) -> str | None:
@@ -619,11 +680,17 @@ def classify_url(
     alias_targets: dict[str, str],
     variant_targets: dict[str, str],
 ) -> tuple[str, str | None]:
-    normalized_path = path.strip("/")
+    normalized_path = normalize_route_path(path)
     if not slug:
         return "home", ""
+    if normalized_path in LEGACY_PERMANENT_REDIRECTS:
+        return "legacy_redirect", normalize_slug(LEGACY_PERMANENT_REDIRECTS[normalized_path])
+    if normalized_path in LEGACY_GONE_PATHS:
+        return "legacy_gone", None
     if slug in UTILITY_SLUGS:
         return "utility", slug
+    if slug in STATIC_PAGE_SLUGS:
+        return "static_page", slug
     if slug == "tag":
         return "tag", slug
     if slug in CATEGORY_SLUGS:
@@ -637,6 +704,9 @@ def classify_url(
         return "alias", alias_targets[slug]
     if slug in variant_targets:
         return "router_variant", variant_targets[slug]
+    version_match = re.fullmatch(r"(.+)-v\d+", slug)
+    if version_match and version_match.group(1) in article_slugs:
+        return "router_variant", version_match.group(1)
     return "unmatched", None
 
 
@@ -723,9 +793,9 @@ def recommend_action(
             )
         if no_slash_on_www or non_www:
             return (
-                "enforce_301_to_canonical_url",
-                "P0",
-                "Article exists, but the crawled URL is not the canonical www/trailing-slash shape.",
+                "validate_current_301_to_canonical_url",
+                "P1" if impressions > 10 else "P2",
+                "Article exists at a non-canonical URL shape; current router policy should 301 to www/trailing-slash.",
             )
         if doc_size == 0:
             return (
@@ -759,6 +829,27 @@ def recommend_action(
             "Category root may be indexable by design; verify sitemap and canonical policy.",
         )
 
+    if kind == "static_page":
+        return (
+            "document_static_page_policy",
+            "P2",
+            "Static site page is intentionally reachable; review only if it should be removed from search.",
+        )
+
+    if kind == "legacy_redirect":
+        return (
+            "validate_legacy_301_target",
+            "P1" if impressions > 10 else "P2",
+            "Legacy URL has a permanent redirect rule; verify live 301 and request validation if it appears in GSC.",
+        )
+
+    if kind == "legacy_gone":
+        return (
+            "keep_410_noindex",
+            "P1" if impressions > 10 else "P2",
+            "Legacy URL is intentionally gone with noindex; keep unless fresh evidence shows a useful replacement.",
+        )
+
     if kind == "off_topic_candidate":
         return (
             "delete_or_301_after_manual_approval",
@@ -768,9 +859,15 @@ def recommend_action(
 
     if kind == "unmatched":
         if bing and bing["http_code"] == 200:
+            if impressions == 0:
+                return (
+                    "ignore_stale_unmatched_zero_impression",
+                    "P2",
+                    "Bing once saw a 200, but the export has zero impressions; verify live only if it reappears.",
+                )
             return (
                 "investigate_unmatched_live_200",
-                "P0" if impressions else "P1",
+                "P0",
                 "Bing saw a 200 for a slug not present as article, alias, or router variant.",
             )
         return (

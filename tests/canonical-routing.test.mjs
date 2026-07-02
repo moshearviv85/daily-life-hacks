@@ -97,7 +97,7 @@ test("legacy food URLs with close canonical matches redirect to the existing art
   const assets = makeAssets(new Set());
 
   const response = await onRequest(
-    makeContext("https://www.daily-life-hacks.com/how-to-quick-soak-dried-beans-same-day/", {
+    makeContext("https://www.daily-life-hacks.com/artichoke-recipes-for-gut-health-guide/", {
       ASSETS: assets,
     }),
   );
@@ -105,7 +105,7 @@ test("legacy food URLs with close canonical matches redirect to the existing art
   assert.equal(response.status, 301);
   assert.equal(
     response.headers.get("location"),
-    "https://www.daily-life-hacks.com/how-to-cook-dried-beans-from-scratch/",
+    "https://www.daily-life-hacks.com/artichoke-recipes-for-gut-health/",
   );
   assert.deepEqual(assets.calls, []);
 });
@@ -114,7 +114,7 @@ test("legacy redirects canonicalize non-www host in one hop", async () => {
   const assets = makeAssets(new Set());
 
   const response = await onRequest(
-    makeContext("https://daily-life-hacks.com/keep-berries-fresh-longer-when-to-wash", {
+    makeContext("https://daily-life-hacks.com/simple-snack-portioning-guide", {
       ASSETS: assets,
     }),
   );
@@ -122,9 +122,37 @@ test("legacy redirects canonicalize non-www host in one hop", async () => {
   assert.equal(response.status, 301);
   assert.equal(
     response.headers.get("location"),
-    "https://www.daily-life-hacks.com/how-to-store-fruits-and-vegetables-properly/",
+    "https://www.daily-life-hacks.com/grab-and-go-fridge-snack-drawer/",
   );
   assert.deepEqual(assets.calls, []);
+});
+
+test("high-impression aliases redirect to canonical articles", async () => {
+  const cases = [
+    [
+      "https://www.daily-life-hacks.com/sourdough-discard-nutrition-facts-health-benefits/",
+      "https://www.daily-life-hacks.com/easy-sourdough-discard-recipes-beginners/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/rotisserie-chicken-nutrition-facts-sodium-content/",
+      "https://www.daily-life-hacks.com/costco-rotisserie-chicken-meal-ideas-dinner/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/oatmeal-vs-grits-fiber-content-guide/",
+      "https://www.daily-life-hacks.com/oatmeal-vs-grits-fiber-content/",
+    ],
+  ];
+
+  for (const [source, target] of cases) {
+    const response = await onRequest(
+      makeContext(source, {
+        ASSETS: makeAssets(new Set()),
+      }),
+    );
+
+    assert.equal(response.status, 301);
+    assert.equal(response.headers.get("location"), target);
+  }
 });
 
 test("legacy removed and off-topic URLs return gone without hitting static assets", async () => {
@@ -149,6 +177,12 @@ test("GSC impression article URLs pass through as live canonical pages", async (
       "/prebiotic-foods-beyond-the-buzzwords/",
       "/savory-chia-seed-recipes-breakfast/",
       "/selenium-containing-foods-easy-ways/",
+      "/protein-per-serving-beans-chicken-tofu-compared/",
+      "/how-to-quick-soak-dried-beans-same-day/",
+      "/how-to-preheat-skillet-even-browning/",
+      "/keep-berries-fresh-longer-when-to-wash/",
+      "/how-to-pack-lunch-crisp-sandwiches-salads/",
+      "/plan-week-of-dinners-fewer-grocery-runs/",
     ]),
   );
 
@@ -157,6 +191,12 @@ test("GSC impression article URLs pass through as live canonical pages", async (
     "prebiotic-foods-beyond-the-buzzwords",
     "savory-chia-seed-recipes-breakfast",
     "selenium-containing-foods-easy-ways",
+    "protein-per-serving-beans-chicken-tofu-compared",
+    "how-to-quick-soak-dried-beans-same-day",
+    "how-to-preheat-skillet-even-browning",
+    "keep-berries-fresh-longer-when-to-wash",
+    "how-to-pack-lunch-crisp-sandwiches-salads",
+    "plan-week-of-dinners-fewer-grocery-runs",
   ]) {
     const response = await onRequest(
       makeContext(`https://www.daily-life-hacks.com/${slug}/`, {

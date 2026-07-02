@@ -61,12 +61,27 @@ def test_classify_article_alias_variant_and_off_topic():
         "good-source-of-fiber-label-meaning",
     )
     assert classify_url(
+        "good-source-of-fiber-label-meaning-v2",
+        "/good-source-of-fiber-label-meaning-v2/",
+        article_slugs,
+        aliases,
+        variants,
+    ) == ("router_variant", "good-source-of-fiber-label-meaning")
+    assert classify_url(
         "usual-excuses-made-by-high-conflict-parents",
         "/usual-excuses-made-by-high-conflict-parents/",
         article_slugs,
         aliases,
         variants,
-    ) == ("off_topic_candidate", None)
+    ) == ("legacy_gone", None)
+    assert classify_url(
+        "simple-snack-portioning-guide",
+        "/simple-snack-portioning-guide/",
+        article_slugs,
+        aliases,
+        variants,
+    ) == ("legacy_redirect", "grab-and-go-fridge-snack-drawer")
+    assert classify_url("about", "/about/", article_slugs, aliases, variants) == ("static_page", "about")
 
 
 def test_zero_byte_real_article_is_not_delete_recommendation():

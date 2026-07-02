@@ -1,55 +1,60 @@
 {
-  "articles": 158,
-  "released_articles": 158,
+  "articles": 178,
+  "released_articles": 178,
   "bing_urls": 231,
-  "bing_zero_byte_urls": 70,
+  "bing_zero_byte_urls": 64,
   "gsc_pages": 109,
-  "p0_candidates": 140,
+  "p0_candidates": 0,
   "triage_by_action": [
     {
-      "priority": "P0",
-      "recommended_action": "enforce_301_to_canonical_url",
-      "count": 131
-    },
-    {
-      "priority": "P0",
-      "recommended_action": "investigate_unmatched_live_200",
-      "count": 5
-    },
-    {
-      "priority": "P0",
-      "recommended_action": "delete_or_301_after_manual_approval",
-      "count": 2
-    },
-    {
-      "priority": "P0",
-      "recommended_action": "confirm_noindex_and_canonical_target",
-      "count": 2
-    },
-    {
       "priority": "P1",
       "recommended_action": "confirm_noindex_and_canonical_target",
-      "count": 66
-    },
-    {
-      "priority": "P1",
-      "recommended_action": "investigate_unmatched_live_200",
-      "count": 61
+      "count": 115
     },
     {
       "priority": "P1",
       "recommended_action": "keep_review_for_content_depth",
-      "count": 54
+      "count": 64
     },
     {
       "priority": "P1",
-      "recommended_action": "redirect_or_ignore_if_not_reachable",
-      "count": 17
+      "recommended_action": "validate_current_301_to_canonical_url",
+      "count": 10
+    },
+    {
+      "priority": "P1",
+      "recommended_action": "validate_legacy_301_target",
+      "count": 3
+    },
+    {
+      "priority": "P2",
+      "recommended_action": "validate_current_301_to_canonical_url",
+      "count": 132
+    },
+    {
+      "priority": "P2",
+      "recommended_action": "validate_legacy_301_target",
+      "count": 9
+    },
+    {
+      "priority": "P2",
+      "recommended_action": "keep_410_noindex",
+      "count": 2
+    },
+    {
+      "priority": "P2",
+      "recommended_action": "ignore_stale_unmatched_zero_impression",
+      "count": 2
     },
     {
       "priority": "P2",
       "recommended_action": "document_no_action",
       "count": 2
+    },
+    {
+      "priority": "P2",
+      "recommended_action": "document_static_page_policy",
+      "count": 1
     }
   ]
 }
