@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "article_only": false,
+  "hero_only": false,
+  "support_only": false,
+  "checks": [
+    {
+      "slug": "hearty-vegetarian-chili-with-three-beans-and-corn",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}
