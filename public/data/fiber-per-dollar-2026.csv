@@ -1,0 +1,54 @@
+rank,food,category,fiber_g_per_100g,package,package_price_usd,package_weight_g,edible_fraction,price_per_100g_usd,fiber_g_per_dollar,price_basis
+1,Green split peas (dry),Dried beans & peas,25.5,16 oz bag,1.37,454,1.0,0.302,84.5,Walmart GV
+2,Whole wheat flour,Whole grains,10.7,5 lb bag,3.12,2268,1.0,0.138,77.8,Walmart GV
+3,Pinto beans (dry),Dried beans & peas,15.5,4 lb bag,3.97,1814,1.0,0.219,70.8,Walmart GV
+4,Black beans (dry),Dried beans & peas,15.5,2 lb bag,2.42,907,1.0,0.267,58.1,Walmart GV
+5,Popcorn kernels,Whole grains,14.5,2 lb bag,2.28,907,1.0,0.251,57.7,Walmart GV
+6,Pearled barley (dry),Whole grains,15.6,16 oz bag,1.24,454,1.0,0.273,57.1,Walmart GV
+7,Navy beans (dry),Dried beans & peas,15.3,2 lb bag,2.67,907,1.0,0.294,52.0,Walmart GV
+8,Whole flaxseed,Nuts & seeds,27.3,24 oz bag,4.28,680,1.0,0.629,43.4,Walmart
+9,Whole wheat spaghetti,Whole grains,10.7,16 oz box,1.18,454,1.0,0.26,41.2,Walmart GV
+10,Old-fashioned rolled oats,Whole grains,10.1,42 oz canister,3.36,1191,1.0,0.282,35.8,Walmart GV
+11,Chickpeas (dry),Dried beans & peas,12.2,16 oz bag,1.64,454,1.0,0.361,33.8,Walmart
+12,Brown lentils (dry),Dried beans & peas,10.7,16 oz bag,1.44,454,1.0,0.317,33.7,Walmart GV
+13,Chia seeds,Nuts & seeds,34.4,32 oz bag,9.44,907,1.0,1.041,33.1,Walmart GV
+14,Canned black beans,Canned,5.6,15.5 oz can,0.88,439,1.0,0.2,27.9,Walmart GV
+15,Red lentils (dry),Dried beans & peas,10.8,16 oz bag,1.94,454,1.0,0.427,25.3,Walmart
+16,Canned kidney beans,Canned,5.6,15.5 oz can,0.98,439,1.0,0.223,25.1,Walmart GV
+17,Bulgur wheat (dry),Whole grains,12.5,24 oz bag,3.49,680,1.0,0.513,24.4,Walmart
+18,Oat bran (dry),Whole grains,15.4,18 oz bag,3.49,510,1.0,0.684,22.5,Walmart
+19,Canned chickpeas,Canned,4.8,15.5 oz can,0.98,439,1.0,0.223,21.5,Walmart GV
+20,Bran flakes cereal,Whole grains,13.0,17.3 oz box,2.98,490,1.0,0.608,21.4,Walmart GV
+21,Frozen green peas,Frozen vegetables,4.5,32 oz bag,2.32,907,1.0,0.256,17.6,Walmart GV
+22,Brown rice (dry),Whole grains,3.6,2 lb bag,1.87,907,1.0,0.206,17.5,Walmart GV
+23,100% whole wheat bread,Whole grains,6.0,20 oz loaf,1.97,567,1.0,0.347,17.3,Walmart GV
+24,"Carrots (whole, bagged)",Fresh vegetables,2.8,2 lb bag,1.58,907,1.0,0.174,16.1,Walmart
+25,Green cabbage,Fresh vegetables,2.5,per lb,0.78,454,1.0,0.172,14.6,Walmart
+26,Sweet potatoes,Fresh vegetables,3.0,per lb,0.98,454,1.0,0.216,13.9,Walmart
+27,Dry roasted peanuts,Nuts & seeds,8.4,16 oz jar,2.78,454,1.0,0.612,13.7,Walmart GV
+28,Sunflower seed kernels,Nuts & seeds,8.6,16 oz bag,2.98,454,1.0,0.656,13.1,Walmart
+29,Bananas,Fresh fruit,2.6,per lb,0.65,454,0.64,0.143,11.6,BLS US avg
+30,Peanut butter,Nuts & seeds,5.0,40 oz jar,4.97,1134,1.0,0.438,11.4,Walmart GV
+31,Frozen green beans,Frozen vegetables,2.7,32 oz bag,2.18,907,1.0,0.24,11.2,Walmart GV
+32,Russet potatoes (with skin),Fresh vegetables,2.1,per lb,0.89,454,1.0,0.196,10.7,BLS US avg
+33,Quinoa (dry),Whole grains,7.0,2 lb bag,5.97,907,1.0,0.658,10.6,Walmart GV
+34,Avocado,Fresh fruit,6.7,each (~7 oz),0.95,200,0.74,0.475,10.4,Walmart
+35,Canned pumpkin,Canned,2.9,15 oz can,1.24,425,1.0,0.292,9.9,Walmart GV
+36,Frozen broccoli florets,Frozen vegetables,3.0,32 oz bag,2.87,907,1.0,0.316,9.5,Walmart GV
+37,Almonds,Nuts & seeds,12.5,16 oz bag,6.47,454,1.0,1.425,8.8,Walmart GV
+38,Frozen chopped spinach,Frozen vegetables,2.9,12 oz bag,1.18,340,1.0,0.347,8.4,Walmart GV
+39,Frozen shelled edamame,Frozen vegetables,5.2,12 oz bag,2.12,340,1.0,0.624,8.3,Walmart GV
+40,Prunes (dried plums),Dried fruit,7.1,16 oz bag,3.98,454,1.0,0.877,8.1,Walmart
+41,Pears,Fresh fruit,3.1,per lb,1.58,454,0.9,0.348,8.0,Walmart
+42,Apples (gala),Fresh fruit,2.4,per lb,1.28,454,0.9,0.282,7.7,Walmart
+43,Chopped kale (bagged),Fresh vegetables,4.1,16 oz bag,2.48,454,1.0,0.546,7.5,Walmart
+44,Yellow onions,Fresh vegetables,1.7,per lb,1.09,454,1.0,0.24,7.1,Walmart
+45,Brussels sprouts,Fresh vegetables,3.8,per lb,2.48,454,1.0,0.546,7.0,Walmart
+46,Oranges (navel),Fresh fruit,2.4,per lb,1.18,454,0.73,0.26,6.7,Walmart
+47,Raisins,Dried fruit,3.7,20 oz canister,3.34,567,1.0,0.589,6.3,Walmart GV
+48,Fresh broccoli crowns,Fresh vegetables,2.6,per lb,1.94,454,1.0,0.427,6.1,Walmart
+49,Chopped dates,Dried fruit,8.0,8 oz bag,2.98,227,1.0,1.313,6.1,Walmart
+50,Raspberries,Fresh fruit,6.5,6 oz box,2.48,170,1.0,1.459,4.5,Walmart
+51,Blackberries,Fresh fruit,5.3,6 oz box,2.28,170,1.0,1.341,4.0,Walmart
+52,Strawberries,Fresh fruit,2.0,16 oz box,2.48,454,0.94,0.546,3.4,Walmart
+53,Blueberries,Fresh fruit,2.4,pint (11 oz),2.98,312,1.0,0.955,2.5,Walmart
