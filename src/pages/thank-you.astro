@@ -49,8 +49,9 @@ const interestLabel = segment ? segment.replace(/-/g, " ") : "";
         Welcome to the club.
       </h1>
       <p class="text-xl md:text-2xl font-medium max-w-2xl mx-auto" style="color: var(--muted-color); line-height: 1.5;">
-        Thanks for joining us. We'll send simple recipes, practical
-        nutrition ideas, and smart kitchen tips that actually make a difference.
+        Thanks for joining us. Your free meal plan is waiting below, and we'll
+        send simple recipes, practical nutrition ideas, and smart kitchen tips
+        that actually make a difference.
       </p>
       
       {segment && (
@@ -58,6 +59,35 @@ const interestLabel = segment ? segment.replace(/-/g, " ") : "";
           We saved your interest in <strong style="color: var(--heading-color);">{interestLabel}</strong>.
         </p>
       )}
+    </section>
+
+    <!-- Lead Magnet Download -->
+    <section class="rounded-[2rem] p-8 md:p-12 mb-12 text-center" style="background-color: rgba(242, 155, 48, 0.08); border: 2px solid #F29B30;">
+      <p class="text-sm font-bold uppercase tracking-[0.2em] mb-3" style="color: #F29B30;">
+        Free Download
+      </p>
+      <h2 class="text-3xl md:text-4xl font-black mb-4" style="color: var(--heading-color); letter-spacing: -0.02em;">
+        Your meal plan is ready.
+      </h2>
+      <p class="text-lg max-w-xl mx-auto mb-8" style="color: var(--muted-color); line-height: 1.6;">
+        The 7-Day High-Fiber Meal Plan: a printable week of meals that keep you
+        full, around 30 grams of fiber a day, with a grocery list at the back.
+        Print it, stick it on the fridge, done.
+      </p>
+      <a
+        href="/downloads/7-day-high-fiber-meal-plan.pdf"
+        download
+        class="inline-flex items-center justify-center gap-3 rounded-xl px-10 py-5 text-xl font-bold text-white transition-transform hover:-translate-y-1"
+        style="background-color: #F29B30; box-shadow: 0 4px 14px rgba(165, 106, 34, 0.4);"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"></path>
+        </svg>
+        Download the Meal Plan (PDF)
+      </a>
+      <p class="text-sm mt-4" style="color: var(--muted-color);">
+        6 pages. Prints on regular paper. No printer? It reads fine on your phone too.
+      </p>
     </section>
 
     <!-- The Game Plan Section -->
