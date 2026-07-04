@@ -54,10 +54,10 @@ export async function onRequestGet(context) {
 
 function getMaxScheduledPostsPerUtcDay(env) {
   const raw = String(env.PINS_MAX_SCHEDULED_POSTS_PER_UTC_DAY || "").trim();
-  if (!raw) return 9;
+  if (!raw) return 2;
 
   const value = Number.parseInt(raw, 10);
-  if (!Number.isFinite(value)) return 9;
+  if (!Number.isFinite(value)) return 2;
   return Math.max(0, value);
 }
 

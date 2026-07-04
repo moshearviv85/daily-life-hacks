@@ -81,18 +81,20 @@ def main():
     parser.add_argument("--all", action="store_true", help="Submit all articles")
     args = parser.parse_args()
 
+    # Canonical URLs use a trailing slash; submitting without it makes Bing see
+    # only redirects and index nothing.
     if args.urls:
-        slugs_raw = [u.lstrip("/").split("/")[-1] for u in args.urls]
-        urls = [f"{SITE}/{s}" for s in slugs_raw]
+        slugs_raw = [u.strip("/").split("/")[-1] for u in args.urls]
+        urls = [f"{SITE}/{s}/" for s in slugs_raw]
     elif args.all:
         slugs = get_all_slugs()
-        urls = [f"{SITE}/{s}" for s in slugs]
+        urls = [f"{SITE}/{s}/" for s in slugs]
     else:
         slugs = get_new_slugs_from_git()
         if not slugs:
             print("No new articles detected in last commit. Use --urls or --all.")
             return
-        urls = [f"{SITE}/{s}" for s in slugs]
+        urls = [f"{SITE}/{s}/" for s in slugs]
 
     print(f"Submitting {len(urls)} URL(s):")
     for u in urls[:10]:

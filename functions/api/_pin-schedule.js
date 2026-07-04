@@ -1,7 +1,11 @@
-export const PIN_SCHEDULE_MIN_PER_DAY = 6;
-export const PIN_SCHEDULE_MAX_PER_DAY = 9;
-export const PIN_SCHEDULE_START_HOUR_UTC = 6;
+// Slowed to 1-2 pins/day (2026-07-04) to recover from a Pinterest distribution
+// limit triggered by the previous 6-9/day cadence. Do not raise until reach recovers.
+export const PIN_SCHEDULE_MIN_PER_DAY = 1;
+export const PIN_SCHEDULE_MAX_PER_DAY = 2;
+// 14:00 UTC = morning US Eastern; second slot lands mid-afternoon US.
+export const PIN_SCHEDULE_START_HOUR_UTC = 14;
 export const PIN_SCHEDULE_WINDOW_MINUTES = 120;
+export const PIN_SCHEDULE_SLOT_SPACING_HOURS = 5;
 
 export function formatDate(date) {
   return date.toISOString().slice(0, 10);
@@ -58,7 +62,7 @@ export function scheduledTimeForSlot(dateString, slotIndex, random = null) {
     ? Math.floor(random() * PIN_SCHEDULE_WINDOW_MINUTES)
     : hashString(`${dateString}:${slotIndex}`) % PIN_SCHEDULE_WINDOW_MINUTES;
   const offset = avoidRoundMinute(rawOffset);
-  const totalMinutes = ((PIN_SCHEDULE_START_HOUR_UTC + slotIndex * 2) * 60) + offset;
+  const totalMinutes = ((PIN_SCHEDULE_START_HOUR_UTC + slotIndex * PIN_SCHEDULE_SLOT_SPACING_HOURS) * 60) + offset;
   const hour = Math.floor(totalMinutes / 60) % 24;
   const minute = totalMinutes % 60;
   return `${String(hour).padStart(2, "0")}:${String(minute).padStart(2, "0")}`;
