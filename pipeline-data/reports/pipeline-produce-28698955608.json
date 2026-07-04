@@ -1,0 +1,98 @@
+{
+  "ok": true,
+  "article_only": false,
+  "hero_only": false,
+  "support_only": false,
+  "checks": [
+    {
+      "slug": "baked-salmon-patties-with-lemon-yogurt-sauce",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "black-bean-quesadillas-with-corn-salsa",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "chicken-fajita-stuffed-peppers",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "creamy-tomato-basil-pasta-with-white-beans",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "crispy-parmesan-zucchini-fries-in-the-oven",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "greek-chicken-meatball-bowls-with-cucumber-salad",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "how-to-balance-a-pasta-dinner-without-counting-anything",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "how-to-build-a-dinner-salad-that-actually-fills-you-up",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "how-to-keep-cut-fruit-fresh-for-lunch-boxes",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "how-to-prep-vegetables-so-they-do-not-go-slimy",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "lemon-dill-tuna-salad-lettuce-cups",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "pantry-chickpea-coconut-curry-in-25-minutes",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "skillet-turkey-taco-rice-with-black-beans",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "slow-cooker-bbq-chicken-sweet-potatoes",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "summer-corn-tomato-and-avocado-pasta-salad",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "turkey-and-white-bean-stuffed-zucchini-boats",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "what-makes-a-snack-plate-actually-satisfying",
+      "ok": true,
+      "errors": []
+    },
+    {
+      "slug": "why-beans-make-cheap-dinners-feel-more-filling",
+      "ok": true,
+      "errors": []
+    }
+  ]
+}
