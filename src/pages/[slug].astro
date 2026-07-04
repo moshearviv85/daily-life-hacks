@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Newsletter from "../components/Newsletter.astro";
 import RecipeMetaBar from "../components/RecipeMetaBar.astro";
+import RelatedArticles from "../components/RelatedArticles.astro";
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptImage from "../components/OptImage.astro";
@@ -581,6 +582,11 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
         </div>
       )
     }
+
+    <!-- Related Articles -->
+    <div class="order-[48]">
+      <RelatedArticles article={article} />
+    </div>
 
     <div class="order-[50]">
       <Newsletter articleCategory={article.data.category} articleBaseSlug={article.id} />
