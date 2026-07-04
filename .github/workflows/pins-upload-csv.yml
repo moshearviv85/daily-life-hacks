@@ -1,0 +1,29 @@
+name: Upload Pins CSV
+
+# Manual: uploads a pins CSV from pipeline-data/ to /api/pins-upload,
+# which schedules them into the D1 queue (1-2 pins/day).
+on:
+  workflow_dispatch:
+    inputs:
+      csv:
+        description: 'CSV filename inside pipeline-data/'
+        required: true
+        default: 'pinterest-bulk-upload-001.csv'
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Upload CSV to pins-upload API
+        env:
+          STATS_KEY: ${{ secrets.STATS_KEY }}
+          CSV_FILE: ${{ inputs.csv }}
+        run: |
+          response=$(curl -sS -X POST \
+            -F "file=@pipeline-data/${CSV_FILE}" \
+            "https://www.daily-life-hacks.com/api/pins-upload?key=${STATS_KEY}" \
+            -w "\nHTTP %{http_code}")
+          echo "$response"
+          echo "$response" | grep -q "HTTP 200"

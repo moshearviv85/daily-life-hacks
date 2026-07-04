@@ -91,25 +91,50 @@ def load_pins_from_sqlite(db_path: Path, *, limit: int | None = None) -> list[di
             SELECT pb.article_slug, pb.pin_index, pb.pin_slug, pb.title, pb.description,
                    pb.alt, wo.category
             FROM pin_briefs pb
-            JOIN write_outputs wo ON pb.article_slug = wo.slug
+            LEFT JOIN write_outputs wo ON pb.article_slug = wo.slug
             WHERE pb.status = 'ok'
             ORDER BY pb.article_slug, pb.pin_index
             """,
         ).fetchall()
         conn.close()
-        return [dict(r) for r in rows if r["article_slug"] in slugs]
+        return _fill_missing_categories([dict(r) for r in rows if r["article_slug"] in slugs])
     rows = conn.execute(
         """
         SELECT pb.article_slug, pb.pin_index, pb.pin_slug, pb.title, pb.description,
                pb.alt, wo.category
         FROM pin_briefs pb
-        JOIN write_outputs wo ON pb.article_slug = wo.slug
+        LEFT JOIN write_outputs wo ON pb.article_slug = wo.slug
         WHERE pb.status = 'ok'
         ORDER BY pb.article_slug, pb.pin_index
         """,
     ).fetchall()
     conn.close()
-    return [dict(r) for r in rows]
+    return _fill_missing_categories([dict(r) for r in rows])
+
+
+_CATEGORY_RE = None
+
+
+def _fill_missing_categories(pins: list[dict]) -> list[dict]:
+    """Original-corpus articles are not in write_outputs; read their category
+    from the markdown frontmatter on disk instead."""
+    import re
+    cache: dict[str, str | None] = {}
+    for pin in pins:
+        if pin.get("category"):
+            continue
+        slug = pin["article_slug"]
+        if slug not in cache:
+            md = REPO_ROOT / "src" / "data" / "articles" / f"{slug}.md"
+            category = None
+            if md.exists():
+                m = re.search(r'^category:\s*["\']?([a-z]+)["\']?\s*$',
+                              md.read_text(encoding="utf-8", errors="replace"), re.M)
+                if m:
+                    category = m.group(1)
+            cache[slug] = category
+        pin["category"] = cache[slug]
+    return pins
 
 
 def fetch_d1_existing_pins() -> set[str]:
