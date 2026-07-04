@@ -1,0 +1,20 @@
+name: Reschedule Pin Queue
+
+# Manually re-spreads all PENDING pins according to the current
+# schedule policy in functions/api/_pin-schedule.js (1-2 pins/day).
+on:
+  workflow_dispatch:
+
+jobs:
+  reschedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call pins-reschedule API
+        env:
+          STATS_KEY: ${{ secrets.STATS_KEY }}
+        run: |
+          response=$(curl -sS -X POST \
+            "https://www.daily-life-hacks.com/api/pins-reschedule?key=${STATS_KEY}" \
+            -w "\nHTTP %{http_code}")
+          echo "$response"
+          echo "$response" | grep -q "HTTP 200"
