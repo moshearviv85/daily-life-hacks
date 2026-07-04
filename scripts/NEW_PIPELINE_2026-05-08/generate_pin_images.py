@@ -117,6 +117,11 @@ def generate_one(
             "out": str(out),
         }
     t0 = time.time()
+    # Hands/people are the #1 AI giveaway in food photos. Enforce at generation
+    # time regardless of how the brief was phrased (briefs double as alt text,
+    # so the suffix must not be stored there).
+    if "no people" not in prompt.lower():
+        prompt = f"{prompt} Still life. No people, no hands, no fingers in the image."
     try:
         res = fal_client.generate(
             model_id=model_id,

@@ -453,6 +453,7 @@ Rules:
 - prompt: photography brief + overlay-text instruction at the END. The overlay instruction must read: Render the text "<exact title>" ... The exact title must match the title field character-for-character.
 - alt: one factual sentence describing what is literally in the photograph. 30 to 200 chars. No marketing language.
 - Image prompts must show food, dishes, cookware, ingredients, counters, tables, or serving scenes only. Do not include people, hands, fingers, arms, kids, faces, or body parts.
+- STILL LIFE ONLY. No actions in progress: never phrases like "being stirred", "being poured", "being added", "being portioned", "being restocked" - image models draw hands for them. Describe the scene at rest: "a wooden spoon resting inside the pan", not "jam being stirred with a wooden spoon".
 - Do not ask for graphics, icons, diagrams, charts, or extra labels. The only rendered text in the image prompt is the exact title in the final overlay instruction.
 - description: Pinterest pin description (NOT the same as alt). STRICTLY 80 to 195 characters. Open with a hook, name the concrete value the reader gets, end with a clear CTA ("Get the full recipe.", "See all 5 swaps.", "Click for the printable list."). Different angle than the title — do NOT just repeat it.
 
