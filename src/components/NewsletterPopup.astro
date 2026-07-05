@@ -1,10 +1,6 @@
 ---
-import { getCollection } from "astro:content";
-
-const allArticles = await getCollection("articles");
-const popupImages = allArticles
-    .map((article) => article.data.image)
-    .filter(Boolean);
+// Dedicated portrait image sized for the tall side panel (was: random 16:9
+// article heroes stretched to fit, which always cropped badly).
 ---
 
 <div
@@ -30,11 +26,9 @@ const popupImages = allArticles
             <!-- Image Side (Desktop only) -->
             <div
                 class="hidden sm:block sm:w-2/5 relative overflow-hidden flex-shrink-0 bg-[var(--input-bg)] bg-cover bg-center"
-                data-images={JSON.stringify(popupImages)}
                 id="popup-dynamic-image"
-                style="background-image: url('/popup-image.jpg');"
+                style="background-image: url('/images/popup-meal-plan.jpg');"
             >
-                <!-- Fallback will be covered implicitly since we only set valid urls -->
             </div>
 
             <!-- Content Side -->
@@ -81,9 +75,9 @@ const popupImages = allArticles
                     class="mb-8 text-sm sm:text-base leading-relaxed"
                     style="color: var(--muted-color);"
                 >
-                    A printable week of meals that keep you full, grocery
-                    list included. Subscribe and it's yours, plus weekly
-                    recipes and kitchen tips worth opening.
+                    Seven days of real meals, around 30 grams of fiber a
+                    day, grocery list included. Print it, stick it on the
+                    fridge, done.
                 </p>
 
                 <!-- Form -->
@@ -280,7 +274,7 @@ const popupImages = allArticles
                 titleEl.innerText = "Get the Free 7-Day High-Fiber Meal Plan";
             if (descEl)
                 descEl.innerText =
-                    "A printable week of real meals that keep you full, grocery list included. Plus a new easy recipe in your inbox every week.";
+                    "Seven days of real meals that keep you full, grocery list included. Plus one new recipe worth cooking every week.";
             if (tagEl) tagEl.innerText = "Free Meal Plan";
         }
 
@@ -289,29 +283,12 @@ const popupImages = allArticles
                 titleEl.innerText = "Get the Free 7-Day High-Fiber Meal Plan";
             if (descEl)
                 descEl.innerText =
-                    "A printable week of meals that hit around 30 grams of fiber a day, grocery list included. Plus practical nutrition tips every week.";
+                    "Seven days of meals that land around 30 grams of fiber, grocery list included. Plus practical nutrition tips every week.";
             if (tagEl) tagEl.innerText = "Free Meal Plan";
         }
 
         function initPopup() {
             if (shouldSuppressPopup()) return;
-
-            // Set a random image
-            const imgDiv = document.getElementById("popup-dynamic-image");
-            if (imgDiv) {
-                try {
-                    const imagesStr =
-                        imgDiv.getAttribute("data-images") || "[]";
-                    const images = JSON.parse(imagesStr);
-                    if (images.length > 0) {
-                        const randomImg =
-                            images[Math.floor(Math.random() * images.length)];
-                        imgDiv.style.backgroundImage = `url('${randomImg}')`;
-                    }
-                } catch (e) {
-                    // Ignore
-                }
-            }
 
             const path = window.location.pathname;
             if (path.includes("recipe") || path.includes("recipes")) {
