@@ -1,6 +1,6 @@
 ---
-title: "How to Double a Recipe Without Over-Salting or Under-Seasoning"
-excerpt: "Math is not cooking. Here is how to double a recipe without over-salting, under-seasoning, or ruining the balance of your meal."
+title: "Doubling a Recipe? Don't Double the Salt (Use the 1.5x Rule)"
+excerpt: "No, you don't double the spices when you double a recipe. Salt and heat scale to about 1.5x. Here's the cheat sheet, ingredient by ingredient."
 category: "tips"
 tags:
   - cooking basics
@@ -14,22 +14,43 @@ editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
+  - question: "Do you double the seasoning when doubling a recipe?"
+    answer: "No. Double the bulk ingredients like meat, vegetables, grains, and broth, but scale salt, dried spices, and anything spicy to about 1.5 times the original amount. Taste near the end of cooking and adjust. It's easy to add seasoning and nearly impossible to take it out."
   - question: "Do I just multiply every ingredient by two?"
     answer: "For base ingredients like meat, vegetables, and grains, yes. But for strong seasonings, salt, and spicy elements, multiplying exactly by two often leads to overpowering flavors."
   - question: "How much salt should I add when doubling a recipe?"
-    answer: "Start by multiplying the salt by 1.5 instead of 2. You can always taste the dish near the end of cooking and add the rest if it needs it. You cannot take salt out once it is in."
+    answer: "Start by multiplying the salt by 1.5 instead of 2. You can always taste the dish near the end of cooking and add the rest if it needs it. You can't take salt out once it's in."
+  - question: "Why does doubled soup taste bland?"
+    answer: "Two usual suspects: you seasoned cautiously and never went back to taste, or the bigger pot hasn't simmered long enough for flavors to concentrate. Start seasoning at 1.5x, let it cook, then taste at the end. If it's still flat, a pinch more salt or a small splash of lemon juice or vinegar usually wakes it up."
   - question: "Does cooking time double when you double a recipe?"
     answer: "Rarely. A bigger batch of soup might take a few extra minutes to come to a boil, but a double batch of cookies baked on two sheets takes the same amount of time as a single batch."
   - question: "Do I double the cooking oil?"
-    answer: "Not usually. You only need enough oil to lightly coat the bottom of the pan you are using. A larger pan might need a little more oil, but definitely not double."
+    answer: "Not usually. You only need enough oil to lightly coat the bottom of the pan you're using. A larger pan might need a little more oil, but definitely not double."
   - question: "Can I double baking recipes like cakes and breads easily?"
-    answer: "Baking is chemistry, so it is trickier. You can usually double simple cookies or muffins, but doubling cakes or yeast breads can affect how they rise. It is often safer to make two separate batches."
+    answer: "Baking is chemistry, so it's trickier. You can usually double simple cookies or muffins, but doubling cakes or yeast breads can affect how they rise. It's often safer to make two separate batches."
 ---
-We have all done it. You find a soup or a pasta dish you love, and you decide to make a massive batch for the week. You multiply every single ingredient by two. You dump it all in the pot. You sit down to eat, and it tastes like a salt lick, or maybe a spice bomb went off in your kitchen.
+No, you don't double the spices when you double a recipe. Scale salt, dried spices, and anything hot to about 1.5 times the original amount, then taste near the end and adjust. The bulk ingredients, meat, vegetables, grains, and broth, get a clean 2x. That's the whole rule, and ignoring it is how a promising pot of soup turns into a salt lick.
 
-Learning how to double a recipe without over-salting or ruining the balance is a basic skill if you want to meal prep. Cooking does not always follow strict mathematical rules.
+We have all done it. You find a soup or a pasta dish you love, you multiply every single ingredient by two, you dump it all in the pot, and dinner tastes like a spice bomb went off in your kitchen.
 
-When I first started batch cooking, I ruined a massive pot of chili by doubling the chili powder and the cayenne pepper. It was basically inedible. I learned the hard way that flavors do not scale in a straight line. Here is the framework to make sure your double batches actually taste like the original recipe.
+When I first started batch cooking, I ruined a massive pot of chili by doubling the chili powder and the cayenne pepper. It was basically inedible. I learned the hard way that flavors don't scale in a straight line. Here's the framework to make sure your double batches actually taste like the original recipe.
+
+## The doubling cheat sheet
+
+Tape this to the inside of a cabinet if you have to.
+
+| Ingredient type | When doubling, use | Notes |
+|---|---|---|
+| Meat, vegetables, grains, broth | 2x | Bulk scales in a straight line |
+| Salt | 1.5x | Taste at the end, add the rest if needed |
+| Dried herbs and ground spices | 1.5x | Cumin, paprika, oregano, chili powder |
+| Chili, cayenne, hot sauce | 1.25 to 1.5x | Heat spreads further than you expect |
+| Fresh herbs | 2x | They're gentle, doubling is safe |
+| Garlic | 1.5x to start | 2x if you're honest about how you feel about garlic |
+| Onions | 2x | They mellow as they cook |
+| Lemon juice, vinegar | 1.5x | Stir in at the very end, then taste |
+| Baking spices (cinnamon, nutmeg, cloves) | 1.75x | Warm spices read louder in big batches |
+| Cooking oil | Enough to coat the pan | Almost never doubles |
 
 ## The ingredients you can safely double
 
@@ -45,7 +66,7 @@ The golden rule for salt and strong spices is to multiply by 1.5, not 2.
 
 If the original recipe calls for one teaspoon of salt, start with one and a half teaspoons for your double batch. If it calls for a tablespoon of cumin, use a tablespoon and a half.
 
-You can always add more at the end. That is the beauty of cooking. If you taste the soup ten minutes before it is done and it feels a little flat, you sprinkle in another pinch of salt. But if you start with two full teaspoons of salt and it is too salty, you are stuck trying to rescue a ruined pot of food.
+You can always add more at the end. That's the beauty of cooking. If you taste the soup ten minutes before it's done and it feels a little flat, you sprinkle in another pinch of salt. But if you start with two full teaspoons of salt and it's too salty, you're stuck trying to [rescue an oversalted pot](/fix-oversalted-soup-sauce-rice/), and that's a much worse afternoon.
 
 This rule applies heavily to spicy elements. Cayenne pepper, red pepper flakes, and hot sauce scale aggressively. Start with 1.5 times the original amount. The heat will permeate the larger batch more effectively than you think.
 
@@ -61,10 +82,12 @@ If you double the food, you need a bigger pot or a wider skillet. This sounds ob
 
 Cooking times rarely double. If you are roasting two trays of vegetables instead of one, they will still take 25 minutes. You might just need to rotate the trays halfway through so they cook evenly in the oven.
 
-For stovetop cooking like soups or stews, a larger volume of liquid will take longer to come to a boil. Once it is boiling, however, the simmer time remains roughly the same as the original recipe.
+For stovetop cooking like soups or stews, a larger volume of liquid will take longer to come to a boil. Once it's boiling, though, the simmer time stays roughly the same as the original recipe.
 
 ## The takeaway
 
 Stop doing blind math in the kitchen. Treat the recipe as a guide, not a contract. Scale your proteins, your veggies, and your liquids directly. Hold back slightly on the salt, the heat, and the intense spices. Taste everything before you serve it.
+
+And if the doubled batch still tastes a little flat after all that, don't just keep shaking the salt jar. Citrus, fresh herbs, and umami-heavy ingredients can [add big flavor without more salt](/big-flavor-less-salt-citrus-herbs-umami-swaps/), which matters when you're about to eat this thing five days in a row.
 
 Batch cooking is supposed to make your week easier, not supply you with five days of aggressively seasoned leftovers. A little caution with the spice jar is all it takes to keep the flavor balanced.

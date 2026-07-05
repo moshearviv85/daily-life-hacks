@@ -1,6 +1,6 @@
 ---
 title: "Prebiotic Foods Beyond the Buzzwords"
-excerpt: "Prebiotic foods aren't a wellness aisle mystery. Here are normal grocery foods that bring useful fiber without making dinner weird."
+excerpt: "Garlic, onions, bananas, oats, and beans are the real prebiotic foods. Here's what makes each one work, and why a $2.50 soda can't beat your groceries."
 category: "nutrition"
 tags:
 - prebiotic foods
@@ -19,6 +19,10 @@ mustRead: false
 faq:
   - question: "What are prebiotic foods?"
     answer: "Prebiotic foods are plant foods with fibers that your body doesn't fully digest. Those fibers can be fermented by gut bacteria later in digestion. That doesn't make them magic. It just makes foods like onions, oats, beans, and bananas useful pantry regulars."
+  - question: "Is garlic a prebiotic?"
+    answer: "Yes. Garlic contains inulin and related fructans, fibers your body doesn't fully digest, so they travel to the large intestine where bacteria can ferment them. Cooked garlic still counts, and it's a lot easier to live with than raw."
+  - question: "What foods are naturally prebiotic?"
+    answer: "Garlic, onions, leeks, slightly green bananas, oats, asparagus, apples with the skin, and beans are the everyday standouts. Each brings a fiber your body doesn't fully break down, like inulin, resistant starch, beta-glucan, or pectin."
   - question: "What are easy prebiotic foods to eat?"
     answer: "Start with foods that already fit normal meals: onions, garlic, oats, apples with the skin, slightly green bananas, lentils, chickpeas, black beans, asparagus, and cooked then cooled potatoes or rice. The best option is the one you will actually eat more than once."
   - question: "Are prebiotic foods the same as fermented foods?"
@@ -33,11 +37,20 @@ The word "prebiotic" has been dragged through the wellness aisle until it sounds
 
 Here is the calmer version: prebiotic foods are mostly normal plant foods with fibers your body doesn't fully break down. Those fibers move farther along in digestion, where gut bacteria can use them. That is the useful part. Not the branding. Not the fancy label. The food.
 
-Prebiotic foods beyond the buzzwords are onions, garlic, oats, beans, apples, bananas, asparagus, and a few other regular groceries you can buy without needing a second mortgage or a new personality.
+Here's the list, before anything else, with what actually makes each one prebiotic:
+
+* **Garlic, onions, and leeks**: loaded with inulin, a fiber your small intestine doesn't break down. Yes, garlic absolutely counts.
+* **Bananas**, especially slightly green ones: resistant starch, which behaves more like fiber than sugar until the banana ripens.
+* **Oats**: beta-glucan, the soluble fiber that makes oatmeal go thick and creamy.
+* **Asparagus**: another inulin carrier, and it roasts in about 12 minutes.
+* **Apples** with the skin on: pectin, the same stuff that sets jam.
+* **Beans and lentils**: resistant starch plus a pile of regular fiber.
+
+Every one of those is a normal grocery item. No second mortgage, no new personality required.
 
 ## The plain English version
 
-Think of your gut like a busy kitchen after dinner. A lot is happening, most of it isn't glamorous, and the whole thing runs better when the right basics are around.
+Think of your gut like a busy kitchen after dinner. A lot is happening, most of it isn't glamorous, and things may go smoother when the right basics are around.
 
 Prebiotic fibers are one of those basics. They aren't the same as fermented foods. Yogurt, kimchi, sauerkraut, and kefir are fermented foods. Prebiotic foods are the ingredients that bring certain fibers and starches to the party.
 
@@ -84,6 +97,14 @@ You don't need a spreadsheet. You need a few defaults that show up without much 
 * **Snack:** Apple slices, a banana that still has a little firmness, or hummus with vegetables.
 
 That is the whole game. Not perfect. Not precious. Just a week where prebiotic foods sneak into meals often enough to matter.
+
+## Prebiotic soda vs. a banana: the honest math
+
+Prebiotic sodas are everywhere now, and I get the appeal. It tastes like soda and the can says it's doing something useful. Most brands get their fiber from inulin, usually chicory root or agave, and depending on the can you're looking at roughly 2 to 9 grams of fiber for around $2.50.
+
+Now the boring comparison. A slightly green banana costs about a quarter and brings roughly 3 grams of fiber plus resistant starch. A bowl of oats runs maybe 20 cents and lands around 4 grams. And when we priced the whole store for our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried beans delivered around 70 grams of fiber per dollar. A prebiotic soda gets you somewhere between 1 and 4 grams per dollar. Same fiber type the soda brags about, by the way. The inulin in the can is the same inulin sitting in your onion drawer for free.
+
+That doesn't make the soda evil. If it's replacing a regular soda, fine, enjoy it. Just don't let a $2.50 can do a job your groceries already do for a tenth of the price.
 
 ## The honest bottom line
 
