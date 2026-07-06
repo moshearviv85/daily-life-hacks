@@ -117,6 +117,84 @@ const badgeColor = (cat: string) => '#F29B30';
 
     <FreshToday articles={releaseFeed} />
 
+    <!-- Data studies + calculator showcase -->
+    <section class="w-full max-w-6xl mx-auto px-4 py-8">
+      <div class="flex items-center gap-3 mb-2">
+        <h2 class="text-xl font-bold uppercase tracking-wide shrink-0" style="color: var(--heading-color);">We Did the Math</h2>
+        <div class="flex-1 h-px" style="background-color: var(--border-color);"></div>
+        <div class="w-10 h-0.5 shrink-0" style="background-color: #F29B30;"></div>
+      </div>
+      <p class="text-sm mb-4" style="color: var(--muted-color);">USDA nutrition numbers, real grocery prices, and one very long spreadsheet, so you can see exactly what your dollar buys.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Fiber per Dollar study -->
+        <a
+          href="/fiber-per-dollar-cheapest-high-fiber-foods/"
+          class="group overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-lg flex flex-col"
+          style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+        >
+          <div class="overflow-hidden relative aspect-video shrink-0">
+            <OptImage
+              src="/images/fiber-per-dollar-cheapest-high-fiber-foods-main.jpg"
+              alt="Fiber per dollar data study comparing cheap high fiber foods"
+              width={400}
+              height={225}
+              sizes="(max-width: 768px) 100vw, 400px"
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
+              data-pin-nopin="true"
+            />
+            <span class="absolute bottom-2 left-2 px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider text-white leading-none z-10" style="background-color: #F29B30;">Data Study</span>
+          </div>
+          <div class="p-4 flex-1 flex flex-col gap-1.5">
+            <h3 class="font-semibold leading-tight group-hover:text-[#F29B30] transition-colors duration-200" style="color: var(--heading-color);">Fiber per Dollar: 53 Foods Ranked</h3>
+            <p class="text-sm leading-snug" style="color: var(--muted-color);">53 foods ranked by how much fiber a dollar buys. Spoiler: the winners live in the dry goods aisle.</p>
+          </div>
+        </a>
+        <!-- Protein per Dollar study -->
+        <a
+          href="/protein-per-dollar-cheapest-protein-sources/"
+          class="group overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-lg flex flex-col"
+          style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+        >
+          <div class="overflow-hidden relative aspect-video shrink-0">
+            <OptImage
+              src="/images/protein-per-dollar-cheapest-protein-sources-main.jpg"
+              alt="Protein per dollar data study comparing cheap protein sources"
+              width={400}
+              height={225}
+              sizes="(max-width: 768px) 100vw, 400px"
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+              decoding="async"
+              data-pin-nopin="true"
+            />
+            <span class="absolute bottom-2 left-2 px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider text-white leading-none z-10" style="background-color: #F29B30;">Data Study</span>
+          </div>
+          <div class="p-4 flex-1 flex flex-col gap-1.5">
+            <h3 class="font-semibold leading-tight group-hover:text-[#F29B30] transition-colors duration-200" style="color: var(--heading-color);">Protein per Dollar: 49 Sources Ranked</h3>
+            <p class="text-sm leading-snug" style="color: var(--muted-color);">49 protein sources compared by cost per gram. The fancy stuff near the deli counter does not do well.</p>
+          </div>
+        </a>
+        <!-- Fiber per Dollar calculator -->
+        <a
+          href="/tools/fiber-per-dollar-calculator/"
+          class="group overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-lg flex flex-col"
+          style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+        >
+          <div class="overflow-hidden relative aspect-video shrink-0 flex flex-col items-center justify-center gap-1" style="background-color: rgba(242, 155, 48, 0.08);">
+            <span class="text-5xl font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-500" style="color: #F29B30;">$1 = ?</span>
+            <span class="text-[11px] font-bold uppercase tracking-widest" style="color: var(--muted-color);">grams of fiber</span>
+            <span class="absolute bottom-2 left-2 px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider text-white leading-none z-10" style="background-color: #F29B30;">Free Tool</span>
+          </div>
+          <div class="p-4 flex-1 flex flex-col gap-1.5">
+            <h3 class="font-semibold leading-tight group-hover:text-[#F29B30] transition-colors duration-200" style="color: var(--heading-color);">The Fiber per Dollar Calculator</h3>
+            <p class="text-sm leading-snug" style="color: var(--muted-color);">Punch in any food and its price. Find out if you're buying fiber or just paying for the packaging.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <!-- 4×4 Grid: More to Read -->
     <section class="w-full max-w-6xl mx-auto px-4 py-8">
       <div class="flex items-center gap-3 mb-4">
