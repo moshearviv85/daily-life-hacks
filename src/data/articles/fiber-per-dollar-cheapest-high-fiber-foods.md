@@ -34,7 +34,7 @@ No mystery math here. Three steps:
 
 One more thing, because a data article that can't admit mistakes isn't a data article. On July 4, 2026 we re-verified every fiber value against USDA FoodData Central and every price against current shelf listings, and corrected several figures (split peas, whole wheat spaghetti, russet potatoes, canned kidney beans, bran flakes, and flaxseed). The table below is the checked version.
 
-The full dataset is public. You can download the raw CSV [here](/data/fiber-per-dollar-2026.csv) and check every number yourself.
+The full dataset is public. You can download the raw CSV [here](/data/fiber-per-dollar-2026.csv) and check every number yourself. Or skip the spreadsheet and play with the numbers in the [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/), which compares any two foods and does the basket math for you.
 
 ## The full ranking: 53 foods by fiber per dollar
 

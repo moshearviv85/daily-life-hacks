@@ -1,0 +1,906 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const title = "Fiber per Dollar Calculator: What Your Grocery Money Buys";
+const description =
+  "Free calculator that ranks 53 grocery foods by fiber per dollar, compares any two foods, and totals your basket. Live USDA data plus real shelf prices.";
+
+const toolSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Fiber per Dollar Calculator",
+  url: "https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/",
+  description,
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  browserRequirements: "Requires JavaScript",
+  isAccessibleForFree: true,
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Daily Life Hacks",
+    url: "https://www.daily-life-hacks.com",
+  },
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={toolSchema}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-4 py-12 md:py-16">
+    <h1
+      class="text-3xl md:text-5xl font-bold mb-4"
+      style="color: var(--heading-color);"
+    >
+      The Fiber per Dollar Calculator
+    </h1>
+
+    <p class="text-lg mb-8" style="color: var(--text-color);">
+      Grocery shopping is a math problem you're doing in your head while your
+      cart blocks aisle six. This tool does the math for you: real fiber
+      numbers, real shelf prices, and a straight answer about which foods
+      actually earn a spot in your cart. Compare any two foods, build a basket,
+      or just snoop around the rankings.
+    </p>
+
+    <div id="fpd-app">
+      <!-- Loading / error state -->
+      <div
+        id="fpd-status"
+        class="rounded-xl p-6 text-center mb-8"
+        style="background-color: var(--card-bg); border: 1px solid var(--border-color); color: var(--muted-color);"
+      >
+        Loading the numbers...
+      </div>
+
+      <div id="fpd-content" class="hidden">
+        <!-- Nutrient toggle (hidden unless protein data exists) -->
+        <div id="fpd-nutrient-toggle" class="hidden mb-6">
+          <div
+            class="inline-flex rounded-xl overflow-hidden"
+            style="border: 1px solid var(--border-color);"
+            role="group"
+            aria-label="Choose nutrient"
+          >
+            <button
+              type="button"
+              data-nutrient="fiber"
+              class="fpd-nutrient-btn px-5 py-2 text-sm font-semibold"
+              aria-pressed="true">Fiber</button
+            >
+            <button
+              type="button"
+              data-nutrient="protein"
+              class="fpd-nutrient-btn px-5 py-2 text-sm font-semibold"
+              aria-pressed="false">Protein</button
+            >
+          </div>
+        </div>
+
+        <!-- ============ 1. What does your dollar buy? ============ -->
+        <section
+          class="rounded-xl p-5 md:p-6 mb-8"
+          style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+        >
+          <h2
+            class="text-2xl font-bold mb-2"
+            style="color: var(--heading-color);"
+          >
+            What does your dollar buy?
+          </h2>
+          <p class="text-sm mb-4" style="color: var(--muted-color);">
+            Every food in the index, ranked. Tap a column header to sort. Set a
+            weekly goal and the last column shows what hitting it would cost
+            with each food alone.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 mb-4">
+            <input
+              type="search"
+              id="fpd-search"
+              placeholder="Search foods (beans, oats, kale...)"
+              class="w-full sm:flex-1 rounded-xl px-4 py-2 text-sm outline-none focus:ring-2"
+              style="background-color: var(--page-bg); border: 1px solid var(--border-color); color: var(--text-color); --tw-ring-color: #F29B30;"
+            />
+            <label
+              class="flex items-center gap-2 text-sm whitespace-nowrap"
+              style="color: var(--text-color);"
+            >
+              <span id="fpd-goal-label">Weekly fiber goal (g)</span>
+              <input
+                type="number"
+                id="fpd-goal"
+                value="196"
+                min="1"
+                max="2000"
+                inputmode="numeric"
+                class="w-24 rounded-xl px-3 py-2 text-sm outline-none focus:ring-2"
+                style="background-color: var(--page-bg); border: 1px solid var(--border-color); color: var(--text-color); --tw-ring-color: #F29B30;"
+              />
+            </label>
+          </div>
+
+          <div id="fpd-chips" class="flex flex-wrap gap-2 mb-4"></div>
+
+          <div
+            class="overflow-x-auto rounded-xl"
+            style="border: 1px solid var(--border-color);"
+          >
+            <table
+              id="fpd-table"
+              class="w-full text-sm"
+              style="min-width: 640px; border-collapse: collapse;"
+            >
+              <thead>
+                <tr
+                  style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);"
+                >
+                  <th class="fpd-th" data-sort="food">Food</th>
+                  <th class="fpd-th" data-sort="category">Category</th>
+                  <th class="fpd-th fpd-num" data-sort="gpd">
+                    <span class="fpd-nutrient-word">Fiber</span> per $1
+                  </th>
+                  <th class="fpd-th fpd-num" data-sort="p100">
+                    Price / 100g
+                  </th>
+                  <th class="fpd-th fpd-num" data-sort="goalcost">
+                    $ for your week
+                  </th>
+                  <th class="fpd-th"></th>
+                </tr>
+              </thead>
+              <tbody id="fpd-tbody"></tbody>
+            </table>
+          </div>
+          <p
+            id="fpd-table-empty"
+            class="hidden text-center text-sm py-4"
+            style="color: var(--muted-color);"
+          >
+            Nothing matches that search. Even the beans came up empty.
+          </p>
+        </section>
+
+        <!-- ============ 2. Compare any two foods ============ -->
+        <section
+          class="rounded-xl p-5 md:p-6 mb-8"
+          style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+        >
+          <h2
+            class="text-2xl font-bold mb-2"
+            style="color: var(--heading-color);"
+          >
+            Compare any two foods
+          </h2>
+          <p class="text-sm mb-4" style="color: var(--muted-color);">
+            Pick two, get a verdict. The daily value math uses
+            <span class="fpd-dv-note">28g of fiber per day</span>.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 mb-5">
+            <select
+              id="fpd-cmp-a"
+              class="w-full sm:flex-1 rounded-xl px-3 py-2 text-sm outline-none focus:ring-2"
+              style="background-color: var(--page-bg); border: 1px solid var(--border-color); color: var(--text-color); --tw-ring-color: #F29B30;"
+              aria-label="First food"></select>
+            <select
+              id="fpd-cmp-b"
+              class="w-full sm:flex-1 rounded-xl px-3 py-2 text-sm outline-none focus:ring-2"
+              style="background-color: var(--page-bg); border: 1px solid var(--border-color); color: var(--text-color); --tw-ring-color: #F29B30;"
+              aria-label="Second food"></select>
+          </div>
+
+          <div id="fpd-cmp-cards" class="grid grid-cols-2 gap-3 mb-4"></div>
+
+          <p
+            id="fpd-verdict"
+            class="text-base italic pl-4 py-1"
+            style="border-left: 3px solid #F29B30; color: var(--heading-color);"
+          >
+          </p>
+        </section>
+
+        <!-- ============ 3. Build your basket ============ -->
+        <section
+          class="rounded-xl p-5 md:p-6 mb-8"
+          style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+        >
+          <h2
+            class="text-2xl font-bold mb-2"
+            style="color: var(--heading-color);"
+          >
+            Build your basket
+          </h2>
+          <p class="text-sm mb-4" style="color: var(--muted-color);">
+            Add foods (the + button in the table works too), set how many
+            dollars a week each one gets, and see what the whole basket
+            delivers.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 mb-4">
+            <select
+              id="fpd-basket-select"
+              class="w-full sm:flex-1 rounded-xl px-3 py-2 text-sm outline-none focus:ring-2"
+              style="background-color: var(--page-bg); border: 1px solid var(--border-color); color: var(--text-color); --tw-ring-color: #F29B30;"
+              aria-label="Food to add to basket"></select>
+            <button
+              type="button"
+              id="fpd-basket-add"
+              class="rounded-xl px-5 py-2 text-sm font-semibold text-white"
+              style="background-color: #F29B30;">Add to basket</button
+            >
+          </div>
+
+          <ul id="fpd-basket-list" class="space-y-2 mb-4"></ul>
+
+          <p
+            id="fpd-basket-empty"
+            class="text-sm mb-4"
+            style="color: var(--muted-color);"
+          >
+            Your basket is empty. Bold strategy.
+          </p>
+
+          <div
+            id="fpd-basket-totals"
+            class="hidden rounded-xl p-4"
+            style="background-color: var(--page-bg); border: 1px solid var(--border-color);"
+          >
+          </div>
+        </section>
+
+        <!-- ============ 4. Where the numbers come from ============ -->
+        <p class="text-sm" style="color: var(--muted-color);">
+          <strong style="color: var(--text-color);"
+            >Where the numbers come from:</strong
+          > fiber values from USDA FoodData Central, prices from Walmart shelf listings
+          cross-checked against BLS average price data. The methodology, the caveats,
+          and the full write-up live in
+          <a
+            href="/fiber-per-dollar-cheapest-high-fiber-foods/"
+            class="underline"
+            style="color: #F29B30;">the fiber per dollar study</a
+          >, and the
+          <a
+            href="/data/fiber-per-dollar-2026.csv"
+            class="underline"
+            style="color: #F29B30;">raw CSV is public</a
+          >. This page reads that exact file live, so when the index updates,
+          the calculator updates with it.<span id="fpd-updated"></span>
+        </p>
+      </div>
+    </div>
+  </main>
+  <Footer />
+
+  <style>
+    .fpd-th {
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .fpd-th.fpd-num {
+      text-align: right;
+    }
+    .fpd-th[data-sort]:hover {
+      color: #f29b30;
+    }
+  </style>
+
+  <script is:inline>
+    (function () {
+      "use strict";
+
+      var NUTRIENTS = {
+        fiber: {
+          csv: "/data/fiber-per-dollar-2026.csv",
+          label: "Fiber",
+          dv: 28,
+          weeklyDefault: 196,
+        },
+        protein: {
+          csv: "/data/protein-per-dollar-2026.csv",
+          label: "Protein",
+          dv: 50,
+          weeklyDefault: 350,
+        },
+      };
+
+      /* ---------- CSV parsing (handles quoted fields) ---------- */
+      function parseCSV(text) {
+        var rows = [];
+        var row = [];
+        var field = "";
+        var inQuotes = false;
+        for (var i = 0; i < text.length; i++) {
+          var c = text[i];
+          if (inQuotes) {
+            if (c === '"') {
+              if (text[i + 1] === '"') {
+                field += '"';
+                i++;
+              } else {
+                inQuotes = false;
+              }
+            } else {
+              field += c;
+            }
+          } else if (c === '"') {
+            inQuotes = true;
+          } else if (c === ",") {
+            row.push(field);
+            field = "";
+          } else if (c === "\n") {
+            row.push(field);
+            field = "";
+            if (row.join("") !== "") rows.push(row);
+            row = [];
+          } else if (c !== "\r") {
+            field += c;
+          }
+        }
+        if (field !== "" || row.length) {
+          row.push(field);
+          if (row.join("") !== "") rows.push(row);
+        }
+        return rows;
+      }
+
+      /* Column names differ by nutrient (fiber_g_per_dollar vs protein_g_per_dollar),
+         so detect them by suffix instead of hardcoding. */
+      function toFoods(rows) {
+        if (!rows.length) return null;
+        var headers = rows[0].map(function (h) {
+          return h.trim();
+        });
+        var gpdKey = -1;
+        var p100gKey = -1;
+        var foodKey = headers.indexOf("food");
+        var catKey = headers.indexOf("category");
+        var priceKey = headers.indexOf("price_per_100g_usd");
+        headers.forEach(function (h, idx) {
+          if (/_g_per_dollar$/.test(h)) gpdKey = idx;
+          if (/_g_per_100g$/.test(h)) p100gKey = idx;
+        });
+        if (gpdKey < 0 || foodKey < 0 || priceKey < 0) return null;
+        var foods = [];
+        for (var i = 1; i < rows.length; i++) {
+          var r = rows[i];
+          var gpd = parseFloat(r[gpdKey]);
+          var p100 = parseFloat(r[priceKey]);
+          if (!r[foodKey] || !isFinite(gpd) || gpd <= 0) continue;
+          foods.push({
+            food: r[foodKey],
+            category: catKey >= 0 ? r[catKey] : "",
+            gpd: gpd,
+            p100: isFinite(p100) ? p100 : null,
+            gPer100: p100gKey >= 0 ? parseFloat(r[p100gKey]) : null,
+          });
+        }
+        return foods.length ? foods : null;
+      }
+
+      function esc(s) {
+        return String(s).replace(/[&<>"']/g, function (m) {
+          return {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;",
+          }[m];
+        });
+      }
+
+      function money(n) {
+        if (!isFinite(n)) return "-";
+        return "$" + (n >= 100 ? Math.round(n) : n.toFixed(2));
+      }
+
+      /* ---------- App ---------- */
+      function init(root) {
+        var el = function (id) {
+          return root.querySelector("#" + id);
+        };
+        var statusBox = el("fpd-status");
+        var content = el("fpd-content");
+
+        var state = {
+          nutrient: "fiber",
+          data: { fiber: null, protein: null },
+          search: "",
+          category: "All",
+          sortKey: "gpd",
+          sortDir: -1,
+          goal: NUTRIENTS.fiber.weeklyDefault,
+          basket: [], // { food, dollars }
+        };
+
+        function cfg() {
+          return NUTRIENTS[state.nutrient];
+        }
+        function foods() {
+          return state.data[state.nutrient] || [];
+        }
+        function byName(name) {
+          return foods().find(function (f) {
+            return f.food === name;
+          });
+        }
+        function top3Names() {
+          return foods()
+            .slice()
+            .sort(function (a, b) {
+              return b.gpd - a.gpd;
+            })
+            .slice(0, 3)
+            .map(function (f) {
+              return f.food;
+            });
+        }
+
+        /* ---------- Table ---------- */
+        function renderChips() {
+          var cats = ["All"];
+          foods().forEach(function (f) {
+            if (f.category && cats.indexOf(f.category) < 0)
+              cats.push(f.category);
+          });
+          el("fpd-chips").innerHTML = cats
+            .map(function (c) {
+              var active = c === state.category;
+              return (
+                '<button type="button" data-cat="' +
+                esc(c) +
+                '" class="rounded-full px-3 py-1 text-xs font-semibold" style="' +
+                (active
+                  ? "background-color:#F29B30;color:#fff;border:1px solid #F29B30;"
+                  : "background-color:var(--card-bg);color:var(--text-color);border:1px solid var(--border-color);") +
+                '">' +
+                esc(c) +
+                "</button>"
+              );
+            })
+            .join("");
+        }
+
+        function visibleRows() {
+          var q = state.search.toLowerCase();
+          var rows = foods().filter(function (f) {
+            if (state.category !== "All" && f.category !== state.category)
+              return false;
+            if (q && f.food.toLowerCase().indexOf(q) < 0) return false;
+            return true;
+          });
+          var k = state.sortKey;
+          var dir = state.sortDir;
+          rows.sort(function (a, b) {
+            var av, bv;
+            if (k === "food" || k === "category") {
+              av = a[k].toLowerCase();
+              bv = b[k].toLowerCase();
+              return av < bv ? -dir : av > bv ? dir : 0;
+            }
+            if (k === "goalcost") {
+              av = state.goal / a.gpd;
+              bv = state.goal / b.gpd;
+            } else {
+              av = a[k] === null ? Infinity : a[k];
+              bv = b[k] === null ? Infinity : b[k];
+            }
+            return (av - bv) * dir;
+          });
+          return rows;
+        }
+
+        function renderTable() {
+          var tops = top3Names();
+          var rows = visibleRows();
+          var html = rows
+            .map(function (f) {
+              var topIdx = tops.indexOf(f.food);
+              var isTop = topIdx >= 0;
+              var badge = isTop
+                ? '<span class="ml-2 rounded-full px-2 py-0.5 text-xs font-bold text-white" style="background-color:#F29B30;">#' +
+                  (topIdx + 1) +
+                  "</span>"
+                : "";
+              return (
+                '<tr style="border-bottom:1px solid var(--border-color);' +
+                (isTop ? "background-color:rgba(242,155,48,0.08);" : "") +
+                '">' +
+                '<td class="px-3 py-2 font-medium" style="color:var(--heading-color);">' +
+                esc(f.food) +
+                badge +
+                "</td>" +
+                '<td class="px-3 py-2" style="color:var(--muted-color);">' +
+                esc(f.category) +
+                "</td>" +
+                '<td class="px-3 py-2 text-right font-semibold" style="color:var(--heading-color);">' +
+                f.gpd.toFixed(1) +
+                "g</td>" +
+                '<td class="px-3 py-2 text-right" style="color:var(--text-color);">' +
+                (f.p100 !== null ? money(f.p100) : "-") +
+                "</td>" +
+                '<td class="px-3 py-2 text-right" style="color:var(--text-color);">' +
+                money(state.goal / f.gpd) +
+                "</td>" +
+                '<td class="px-2 py-2 text-center"><button type="button" data-add="' +
+                esc(f.food) +
+                '" title="Add to basket" aria-label="Add ' +
+                esc(f.food) +
+                ' to basket" class="rounded-full w-7 h-7 text-sm font-bold" style="border:1px solid #F29B30;color:#F29B30;">+</button></td>' +
+                "</tr>"
+              );
+            })
+            .join("");
+          el("fpd-tbody").innerHTML = html;
+          el("fpd-table-empty").classList.toggle("hidden", rows.length > 0);
+        }
+
+        /* ---------- Compare ---------- */
+        function fillSelect(sel, selected) {
+          sel.innerHTML = foods()
+            .map(function (f) {
+              return (
+                '<option value="' +
+                esc(f.food) +
+                '"' +
+                (f.food === selected ? " selected" : "") +
+                ">" +
+                esc(f.food) +
+                "</option>"
+              );
+            })
+            .join("");
+        }
+
+        function verdictLine(a, b) {
+          var nutrient = cfg().label.toLowerCase();
+          var hi = a.gpd >= b.gpd ? a : b;
+          var lo = a.gpd >= b.gpd ? b : a;
+          var ratio = hi.gpd / lo.gpd;
+          var r =
+            ratio >= 10 ? Math.round(ratio) : Math.round(ratio * 10) / 10;
+          if (ratio < 1.15) {
+            return "Basically a tie. Buy whichever one won't sit in your pantry until 2029.";
+          }
+          if (ratio < 1.5) {
+            return (
+              "Close call, slight edge to " +
+              hi.food.toLowerCase() +
+              ". Let taste break the tie."
+            );
+          }
+          if (ratio < 3) {
+            return (
+              "Same " +
+              nutrient +
+              ", " +
+              r +
+              " times the price. This round goes to " +
+              hi.food.toLowerCase() +
+              " without much of a fight."
+            );
+          }
+          return (
+            "Same " +
+            nutrient +
+            ", " +
+            r +
+            " times the price. " +
+            hi.food +
+            " wins, and it isn't close. That's not a price gap, that's a lifestyle choice."
+          );
+        }
+
+        function renderCompare() {
+          var a = byName(el("fpd-cmp-a").value);
+          var b = byName(el("fpd-cmp-b").value);
+          if (!a || !b) return;
+          var dv = cfg().dv;
+          el("fpd-cmp-cards").innerHTML = [a, b]
+            .map(function (f) {
+              return (
+                '<div class="rounded-xl p-4" style="background-color:var(--page-bg);border:1px solid var(--border-color);">' +
+                '<p class="text-sm font-semibold mb-2" style="color:var(--heading-color);">' +
+                esc(f.food) +
+                "</p>" +
+                '<p class="text-2xl font-bold" style="color:#F29B30;">' +
+                f.gpd.toFixed(1) +
+                'g <span class="text-sm font-normal" style="color:var(--muted-color);">per $1</span></p>' +
+                '<p class="text-sm mt-2" style="color:var(--text-color);">' +
+                money(dv / f.gpd) +
+                " to hit " +
+                dv +
+                "g (a full day)</p>" +
+                "</div>"
+              );
+            })
+            .join("");
+          el("fpd-verdict").textContent =
+            a.food === b.food
+              ? "That's the same food twice. It ties with itself."
+              : verdictLine(a, b);
+        }
+
+        /* ---------- Basket ---------- */
+        function renderBasket() {
+          var list = el("fpd-basket-list");
+          var totalsBox = el("fpd-basket-totals");
+          el("fpd-basket-empty").classList.toggle(
+            "hidden",
+            state.basket.length > 0
+          );
+          list.innerHTML = state.basket
+            .map(function (item, idx) {
+              var f = byName(item.food);
+              if (!f) return "";
+              var grams = item.dollars * f.gpd;
+              return (
+                '<li class="flex flex-wrap items-center gap-2 rounded-xl px-3 py-2" style="background-color:var(--page-bg);border:1px solid var(--border-color);">' +
+                '<span class="flex-1 min-w-[8rem] text-sm font-medium" style="color:var(--heading-color);">' +
+                esc(f.food) +
+                "</span>" +
+                '<label class="flex items-center gap-1 text-sm" style="color:var(--muted-color);">$' +
+                '<input type="number" data-basket-idx="' +
+                idx +
+                '" value="' +
+                item.dollars +
+                '" min="0" max="500" step="0.5" inputmode="decimal" class="w-20 rounded-lg px-2 py-1 text-sm outline-none" style="background-color:var(--card-bg);border:1px solid var(--border-color);color:var(--text-color);" aria-label="Dollars per week for ' +
+                esc(f.food) +
+                '"> / week</label>' +
+                '<span class="text-sm w-20 text-right" style="color:var(--text-color);">' +
+                Math.round(grams) +
+                "g</span>" +
+                '<button type="button" data-remove="' +
+                idx +
+                '" aria-label="Remove ' +
+                esc(f.food) +
+                '" class="text-sm font-bold px-2" style="color:var(--muted-color);">&times;</button>' +
+                "</li>"
+              );
+            })
+            .join("");
+
+          if (!state.basket.length) {
+            totalsBox.classList.add("hidden");
+            return;
+          }
+          var dv = cfg().dv;
+          var nutrient = cfg().label.toLowerCase();
+          var totalCost = 0;
+          var totalGrams = 0;
+          state.basket.forEach(function (item) {
+            var f = byName(item.food);
+            if (!f) return;
+            totalCost += item.dollars;
+            totalGrams += item.dollars * f.gpd;
+          });
+          var perDay = totalGrams / 7;
+          var costPerDvDay =
+            totalGrams > 0 ? totalCost / (totalGrams / dv) : NaN;
+          var pct = Math.round((perDay / dv) * 100);
+          var note =
+            perDay >= dv
+              ? "That covers the daily value all week, with room to spare."
+              : "That's about " +
+                pct +
+                "% of the daily value. The dry beans are right there.";
+          totalsBox.innerHTML =
+            '<p class="text-sm mb-1" style="color:var(--text-color);"><strong style="color:var(--heading-color);">' +
+            money(totalCost) +
+            "/week</strong> buys <strong style=\"color:var(--heading-color);\">" +
+            Math.round(totalGrams) +
+            "g of " +
+            nutrient +
+            "</strong> (about " +
+            Math.round(perDay) +
+            "g a day).</p>" +
+            '<p class="text-sm mb-1" style="color:var(--text-color);">Cost per ' +
+            dv +
+            "g day: <strong style=\"color:#F29B30;\">" +
+            money(costPerDvDay) +
+            "</strong></p>" +
+            '<p class="text-sm" style="color:var(--muted-color);">' +
+            note +
+            "</p>";
+          totalsBox.classList.remove("hidden");
+        }
+
+        function addToBasket(name) {
+          var exists = state.basket.some(function (i) {
+            return i.food === name;
+          });
+          if (!exists && byName(name)) {
+            state.basket.push({ food: name, dollars: 2 });
+          }
+          renderBasket();
+        }
+
+        /* ---------- Nutrient switching ---------- */
+        function applyNutrient() {
+          var c = cfg();
+          state.goal = c.weeklyDefault;
+          state.category = "All";
+          state.search = "";
+          state.basket = [];
+          el("fpd-search").value = "";
+          el("fpd-goal").value = c.weeklyDefault;
+          el("fpd-goal-label").textContent =
+            "Weekly " + c.label.toLowerCase() + " goal (g)";
+          root.querySelectorAll(".fpd-nutrient-word").forEach(function (n) {
+            n.textContent = c.label;
+          });
+          root.querySelectorAll(".fpd-dv-note").forEach(function (n) {
+            n.textContent =
+              c.dv + "g of " + c.label.toLowerCase() + " per day";
+          });
+          root.querySelectorAll(".fpd-nutrient-btn").forEach(function (btn) {
+            var active = btn.getAttribute("data-nutrient") === state.nutrient;
+            btn.setAttribute("aria-pressed", active ? "true" : "false");
+            btn.style.backgroundColor = active ? "#F29B30" : "var(--card-bg)";
+            btn.style.color = active ? "#fff" : "var(--text-color)";
+          });
+          renderChips();
+          renderTable();
+          var list = foods();
+          fillSelect(el("fpd-cmp-a"), list[0] && list[0].food);
+          fillSelect(
+            el("fpd-cmp-b"),
+            list[list.length - 1] && list[list.length - 1].food
+          );
+          fillSelect(el("fpd-basket-select"), list[0] && list[0].food);
+          renderCompare();
+          renderBasket();
+        }
+
+        /* ---------- Events (delegated, bound once) ---------- */
+        el("fpd-search").addEventListener("input", function (e) {
+          state.search = e.target.value;
+          renderTable();
+        });
+        el("fpd-goal").addEventListener("input", function (e) {
+          var v = parseFloat(e.target.value);
+          state.goal = isFinite(v) && v > 0 ? v : cfg().weeklyDefault;
+          renderTable();
+        });
+        el("fpd-chips").addEventListener("click", function (e) {
+          var btn = e.target.closest("[data-cat]");
+          if (!btn) return;
+          state.category = btn.getAttribute("data-cat");
+          renderChips();
+          renderTable();
+        });
+        el("fpd-table").addEventListener("click", function (e) {
+          var add = e.target.closest("[data-add]");
+          if (add) {
+            addToBasket(add.getAttribute("data-add"));
+            return;
+          }
+          var th = e.target.closest("[data-sort]");
+          if (!th) return;
+          var key = th.getAttribute("data-sort");
+          if (state.sortKey === key) {
+            state.sortDir = -state.sortDir;
+          } else {
+            state.sortKey = key;
+            state.sortDir = key === "food" || key === "category" ? 1 : -1;
+            if (key === "p100" || key === "goalcost") state.sortDir = 1;
+          }
+          renderTable();
+        });
+        el("fpd-cmp-a").addEventListener("change", renderCompare);
+        el("fpd-cmp-b").addEventListener("change", renderCompare);
+        el("fpd-basket-add").addEventListener("click", function () {
+          addToBasket(el("fpd-basket-select").value);
+        });
+        el("fpd-basket-list").addEventListener("input", function (e) {
+          var input = e.target.closest("[data-basket-idx]");
+          if (!input) return;
+          var idx = parseInt(input.getAttribute("data-basket-idx"), 10);
+          var v = parseFloat(input.value);
+          if (state.basket[idx]) {
+            state.basket[idx].dollars = isFinite(v) && v >= 0 ? v : 0;
+            // Re-render totals only; leave the input alone so typing isn't interrupted.
+            var focused = document.activeElement;
+            renderBasket();
+            var again = el("fpd-basket-list").querySelector(
+              '[data-basket-idx="' + idx + '"]'
+            );
+            if (again && focused && focused.hasAttribute("data-basket-idx")) {
+              again.focus();
+              again.value = input.value;
+            }
+          }
+        });
+        el("fpd-basket-list").addEventListener("click", function (e) {
+          var btn = e.target.closest("[data-remove]");
+          if (!btn) return;
+          state.basket.splice(
+            parseInt(btn.getAttribute("data-remove"), 10),
+            1
+          );
+          renderBasket();
+        });
+        el("fpd-nutrient-toggle").addEventListener("click", function (e) {
+          var btn = e.target.closest("[data-nutrient]");
+          if (!btn) return;
+          var n = btn.getAttribute("data-nutrient");
+          if (n === state.nutrient || !state.data[n]) return;
+          state.nutrient = n;
+          applyNutrient();
+        });
+
+        /* ---------- Data loading ---------- */
+        fetch(NUTRIENTS.fiber.csv, { cache: "no-cache" })
+          .then(function (res) {
+            if (!res.ok) throw new Error("HTTP " + res.status);
+            var lastMod = res.headers.get("last-modified");
+            if (lastMod) {
+              var d = new Date(lastMod);
+              if (!isNaN(d)) {
+                el("fpd-updated").textContent =
+                  " Data file last updated " +
+                  d.toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }) +
+                  ".";
+              }
+            }
+            return res.text();
+          })
+          .then(function (text) {
+            var parsed = toFoods(parseCSV(text));
+            if (!parsed) throw new Error("bad csv");
+            state.data.fiber = parsed;
+            statusBox.classList.add("hidden");
+            content.classList.remove("hidden");
+            applyNutrient();
+
+            // Protein index: enable the toggle only if its CSV actually exists.
+            fetch(NUTRIENTS.protein.csv, { cache: "no-cache" })
+              .then(function (res) {
+                if (!res.ok) throw new Error("no protein csv");
+                return res.text();
+              })
+              .then(function (t) {
+                var p = toFoods(parseCSV(t));
+                if (p) {
+                  state.data.protein = p;
+                  el("fpd-nutrient-toggle").classList.remove("hidden");
+                }
+              })
+              .catch(function () {
+                /* Protein index isn't live yet. The toggle stays hidden. */
+              });
+          })
+          .catch(function () {
+            statusBox.innerHTML =
+              "The data file didn't load. It's not you, it's the network. Refresh the page and it'll probably behave. " +
+              'If it keeps sulking, the full ranked table lives in <a href="/fiber-per-dollar-cheapest-high-fiber-foods/" class="underline" style="color:#F29B30;">the fiber per dollar study</a>.';
+          });
+      }
+
+      /* Idempotent boot that survives Astro View Transitions. */
+      function boot() {
+        var root = document.getElementById("fpd-app");
+        if (!root || root.dataset.fpdBooted === "1") return;
+        root.dataset.fpdBooted = "1";
+        init(root);
+      }
+      boot();
+      document.addEventListener("astro:page-load", boot);
+    })();
+  </script>
+</BaseLayout>
