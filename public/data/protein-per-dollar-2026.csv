@@ -1,0 +1,50 @@
+rank,food,category,protein_g_per_100g,package,package_price_usd,package_weight_g,edible_fraction,price_per_100g_usd,protein_g_per_dollar,price_basis
+1,Pinto beans (dry),Dried beans & lentils,21.42,4 lb bag,3.97,1814,1.0,0.219,97.9,"Walmart GV (fiber study, audited)"
+2,Whole wheat flour,Grains & pantry,13.21,5 lb bag,3.12,2268,1.0,0.138,96.0,"Walmart GV (fiber study, audited)"
+3,Black beans (dry),Dried beans & lentils,21.6,2 lb bag,2.42,907,1.0,0.267,81.0,"Walmart GV (fiber study, audited)"
+4,Brown lentils (dry),Dried beans & lentils,24.63,16 oz bag,1.44,454,1.0,0.317,77.7,"Walmart GV (fiber study, audited)"
+5,Navy beans (dry),Dried beans & lentils,22.33,2 lb bag,2.67,907,1.0,0.294,75.9,"Walmart GV (fiber study, audited)"
+6,Green split peas (dry),Dried beans & lentils,23.12,16 oz bag,1.42,454,1.0,0.313,73.9,"Walmart GV (fiber study, audited)"
+7,Chickpeas (dry),Dried beans & lentils,20.47,16 oz bag,1.64,454,1.0,0.361,56.7,"Walmart (fiber study, audited)"
+8,Red lentils (dry),Dried beans & lentils,23.91,16 oz bag,1.94,454,1.0,0.427,56.0,"Walmart (fiber study, audited)"
+9,Whole wheat spaghetti,Grains & pantry,13.87,16 oz box,1.18,454,1.0,0.26,53.4,"Walmart GV (fiber study, audited)"
+10,Peanut butter,Nuts & seeds,22.21,40 oz jar,4.97,1134,1.0,0.438,50.7,"Walmart GV (fiber study, audited)"
+11,Chicken drumsticks (bone-in),Meat & poultry,18.08,5 lb bag,5.46,2268,0.67,0.241,50.3,Walmart Jul 2026; USDA SR28 refuse: 33% bone and cartilage
+12,"White rice (long grain, dry)",Grains & pantry,7.13,5 lb bag,3.37,2268,1.0,0.149,48.0,Walmart GV Jul 2026
+13,"Spaghetti (regular, dry)",Grains & pantry,13.04,16 oz box,1.24,454,1.0,0.273,47.7,Walmart GV Jul 2026
+14,Old-fashioned rolled oats,Grains & pantry,13.15,42 oz canister,3.36,1191,1.0,0.282,46.6,"Walmart GV (fiber study, audited)"
+15,Dry roasted peanuts,Nuts & seeds,24.35,16 oz jar,2.78,454,1.0,0.612,39.8,"Walmart GV (fiber study, audited)"
+16,Brown rice (dry),Grains & pantry,7.54,2 lb bag,1.87,907,1.0,0.206,36.6,"Walmart GV (fiber study, audited)"
+17,Pearled barley (dry),Grains & pantry,9.91,16 oz bag,1.24,454,1.0,0.273,36.3,"Walmart GV (fiber study, audited)"
+18,100% whole wheat bread,Grains & pantry,12.45,20 oz loaf,1.97,567,1.0,0.347,35.8,"Walmart GV (fiber study, audited)"
+19,Eggs (large),Eggs & dairy,12.56,1 dozen (600 g edible),2.19,600,1.0,0.365,34.4,BLS US avg May 2026 (APU0000708111)
+20,Sunflower seed kernels,Nuts & seeds,20.78,16 oz bag,2.98,454,1.0,0.656,31.7,"Walmart (fiber study, audited)"
+21,Canned black beans,Canned beans,6.03,15.5 oz can,0.88,439,1.0,0.2,30.1,"Walmart GV (fiber study, audited)"
+22,Mozzarella (low-moisture part-skim),Eggs & dairy,23.75,16 oz block,3.58,454,1.0,0.789,30.1,Walmart GV Jul 2026
+23,Whole milk,Eggs & dairy,3.15,1 gallon,4.22,3904,1.0,0.108,29.1,BLS US avg May 2026 (APU0000709112)
+24,"Chicken thighs (boneless, skinless)",Meat & poultry,19.66,per lb,3.22,454,1.0,0.709,27.7,Walmart Jul 2026
+25,"Greek yogurt (plain, nonfat)",Eggs & dairy,10.19,32 oz tub,3.36,907,1.0,0.37,27.5,Walmart GV Jul 2026
+26,"Rotisserie chicken (whole, cooked)",Meat & poultry,28.93,"whole bird (36 oz, cooked)",5.97,1021,0.54,0.585,26.7,"Walmart deli Jul 2026; USDA SR28 refuse (roasted, meat only): 33% bone + 13% skin"
+27,Cottage cheese (4%),Eggs & dairy,11.12,24 oz tub,2.87,680,1.0,0.422,26.3,Walmart GV Jul 2026
+28,Whole chicken (raw),Meat & poultry,18.6,per lb,2.04,454,0.61,0.449,25.3,BLS US avg May 2026 (APU0000706111); USDA FDC 171447 yield: 276 g meat+skin per lb ready-to-cook
+29,Pork shoulder butt roast (boneless),Meat & poultry,17.42,per lb,3.14,454,1.0,0.692,25.2,Walmart (Smithfield) Jul 2026
+30,"Chicken breast (boneless, skinless)",Meat & poultry,22.5,per lb,4.17,454,1.0,0.919,24.5,BLS US avg May 2026 (APU0000FF1101)
+31,Canned kidney beans,Canned beans,5.22,15.5 oz can,0.98,439,1.0,0.223,23.4,"Walmart GV (fiber study, audited)"
+32,TVP (textured vegetable protein),Soy & plant proteins,50.0,10 oz bag,6.3,283,1.0,2.226,22.5,Walmart/Bob's Red Mill Jul 2026; label value (USDA defatted soy flour: 51.5)
+33,"Canned tuna (chunk light, in water)",Fish (canned & frozen),19.44,5 oz can (113 g drained),0.98,113,1.0,0.867,22.4,Walmart GV Jul 2026
+34,Pork loin chops (boneless),Meat & poultry,21.55,per lb,4.39,454,1.0,0.967,22.3,BLS US avg May 2026 (APU0000FD3101)
+35,Canned chickpeas,Canned beans,4.92,15.5 oz can,0.98,439,1.0,0.223,22.0,"Walmart GV (fiber study, audited)"
+36,Canned pink salmon,Fish (canned & frozen),19.68,14.75 oz can,3.8,418,1.0,0.909,21.6,Walmart GV Jul 2026
+37,Quinoa (dry),Grains & pantry,14.12,2 lb bag,5.97,907,1.0,0.658,21.5,"Walmart GV (fiber study, audited)"
+38,Frozen tilapia fillets,Fish (canned & frozen),20.08,4 lb bag,17.47,1814,1.0,0.963,20.9,Walmart GV Jul 2026
+39,Frozen green peas,Frozen vegetables,5.22,32 oz bag,2.32,907,1.0,0.256,20.4,"Walmart GV (fiber study, audited)"
+40,"Sardines (canned in oil, drained)",Fish (canned & frozen),24.62,3.75 oz can (92 g drained),1.12,92,1.0,1.217,20.2,Walmart Jul 2026
+41,Cheddar cheese,Eggs & dairy,22.87,per lb,5.69,454,1.0,1.253,18.2,BLS US avg May 2026 (APU0000710212)
+42,Frozen shelled edamame,Soy & plant proteins,11.22,12 oz bag,2.12,340,1.0,0.624,18.0,"Walmart GV (fiber study, audited)"
+43,Ground turkey (93/7),Meat & poultry,18.73,1 lb roll,5.46,454,1.0,1.203,15.6,Walmart (Jennie-O) Jul 2026
+44,Almonds,Nuts & seeds,21.15,16 oz bag,6.47,454,1.0,1.425,14.8,"Walmart GV (fiber study, audited)"
+45,Tofu (extra firm),Soy & plant proteins,9.98,14 oz block,2.92,397,1.0,0.736,13.6,Walmart (Nasoya) Jul 2026
+46,Tempeh,Soy & plant proteins,20.29,8 oz pack,3.48,227,1.0,1.533,13.2,Walmart (Lightlife) Jul 2026
+47,Ground beef (80/20),Meat & poultry,17.17,per lb,6.75,454,1.0,1.487,11.5,BLS US avg May 2026 (APU0000703112)
+48,Ground beef (93/7),Meat & poultry,20.85,per lb,8.62,454,1.0,1.899,11.0,BLS US avg May 2026 (APU0000703113)
+49,Bacon,Meat & poultry,13.66,per lb,6.71,454,1.0,1.478,9.2,BLS US avg May 2026 (APU0000704111)

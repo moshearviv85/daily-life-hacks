@@ -35,7 +35,7 @@ Despite the occasional price spikes that make the news, eggs remain one of the m
 If you have a local warehouse club membership, buy the five-dozen pack. It looks intimidating in the fridge, but eggs stay fresh for weeks. Hard-boil a batch on Sunday and you've got an instant snack for the kid who claims they're starving five minutes after lunch. It beats a bag of chips every single time.
 
 ## Dried beans and the art of the filler
-I know, telling someone to eat more beans feels like cliché advice from a 1930s cookbook, but the math doesn't lie. A bag of dried lentils costs pennies per serving and doesn't require the overnight soaking that turns people off from black beans or chickpeas. Lentils cook in about twenty minutes and have a neutral enough flavor that you can hide them in almost anything.
+I know, telling someone to eat more beans feels like cliché advice from a 1930s cookbook, but the math doesn't lie. We actually ran that math across 49 foods in our [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), and dried beans took six of the top eight spots. A bag of dried lentils costs pennies per serving and doesn't require the overnight soaking that turns people off from black beans or chickpeas. Lentils cook in about twenty minutes and have a neutral enough flavor that you can hide them in almost anything.
 
 **The Stretch Method:** When you're making tacos or bolognese, swap out half the ground beef for cooked brown lentils. Your family likely won't notice the difference in texture once it's covered in seasoning and sauce. You've just doubled your meal volume for about sixty cents. It is a simple way to keep the meat flavor everyone wants while actually filling their stomachs.
 
