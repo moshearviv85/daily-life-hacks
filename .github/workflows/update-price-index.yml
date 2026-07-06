@@ -1,0 +1,80 @@
+name: Monthly Grocery Price Watch
+
+# Generates a monthly "Price Watch" report from official BLS Average Price data:
+# which staple foods moved nationally and what it would do to the per-dollar rankings.
+# The published ranking CSVs are NOT touched — they stay on one consistent price basis
+# (Walmart shelf prices, re-audited quarterly). Mixing BLS national averages into a
+# Walmart-priced ranking would shift ranks because of the source switch, not reality.
+# BLS publishes the previous month's AP data around mid-month, so we run on the 20th.
+# The report lands as a PR so the owner sees it (and it doubles as newsletter material).
+
+on:
+  schedule:
+    - cron: '0 9 20 * *'   # 09:00 UTC on the 20th of every month
+  workflow_dispatch:        # manual trigger from dashboard
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  price-watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate Price Watch report from BLS
+        env:
+          BLS_API_KEY: ${{ secrets.BLS_API_KEY }}   # optional — script works without it
+        run: python scripts/update-price-index.py --report-only
+
+      - name: Detect report
+        id: diff
+        run: |
+          echo "month=$(date -u +%Y-%m)" >> "$GITHUB_OUTPUT"
+          if [ -n "$(git status --porcelain -- 'pipeline-data/index-update-report-*.md')" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No new report this month — nothing to open a PR for."
+          fi
+
+      - name: Commit report to branch and open PR
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT != '' && secrets.GH_PAT || github.token }}
+        run: |
+          MONTH="${{ steps.diff.outputs.month }}"
+          BRANCH="price-watch-$MONTH"
+          REPORT="pipeline-data/index-update-report-$MONTH.md"
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git checkout -B "$BRANCH"
+          git add -- "$REPORT"
+          git commit -m "chore(data): monthly BLS price watch report $MONTH"
+          git push -f origin "$BRANCH"
+
+          {
+            echo "Monthly grocery Price Watch from official U.S. government (BLS) price data."
+            echo ""
+            echo "**This does NOT change the live site or the rankings.** It archives the month's report. Merge it to keep the record; the interesting price moves below are ready-made material for the newsletter and social posts."
+            echo ""
+            cat "$REPORT"
+          } > /tmp/pr-body.md
+
+          gh pr create --base main --head "$BRANCH" \
+            --title "Grocery Price Watch — $MONTH" \
+            --body-file /tmp/pr-body.md \
+          || gh pr edit "$BRANCH" --body-file /tmp/pr-body.md
