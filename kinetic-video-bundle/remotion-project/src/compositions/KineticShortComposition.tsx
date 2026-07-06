@@ -119,6 +119,9 @@ const KEYWORDS = [
   // ↓ new additions only
   'cabbage', 'kombucha', 'caramelizes', 'vegetable',
   'probiotic', 'gut', 'sauerkraut',
+  // ↓ dlh-fiber-dollar additions
+  'pennies', 'dollar', 'peas', 'blueberries', 'nutrient', 'price',
+  'dried', 'canned', 'frozen', 'broccoli', 'berries', 'terrible',
 ];
 
 function getImportance(word: string, idx: number, total: number, groupIdx: number): number {

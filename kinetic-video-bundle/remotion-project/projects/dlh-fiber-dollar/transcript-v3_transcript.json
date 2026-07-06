@@ -1,0 +1,832 @@
+{
+  "text": "I ranked 53 grocery foods by how much fiber $1 buys. The winners cost pennies. A dollar of dry split peas buys 71 grams of fiber. A dollar of fresh blueberries buys two and a half. Same nutrient, 28 times the price. Dried beans beat canned by two and a half times. Frozen peas beat fresh broccoli by three. Dead last, fresh berries. Delicious. Terrible deal. Buy it dry. Buy it frozen. Buy it in a bag. Recipes at dailylifehacks.com. Free every week.",
+  "words": [
+    {
+      "word": "I",
+      "start": 0.079,
+      "end": 0.179
+    },
+    {
+      "word": " ",
+      "start": 0.179,
+      "end": 0.259
+    },
+    {
+      "word": "ranked",
+      "start": 0.259,
+      "end": 0.539
+    },
+    {
+      "word": " ",
+      "start": 0.539,
+      "end": 0.579
+    },
+    {
+      "word": "53",
+      "start": 0.579,
+      "end": 0.979
+    },
+    {
+      "word": " ",
+      "start": 0.979,
+      "end": 1.099
+    },
+    {
+      "word": "grocery",
+      "start": 1.1,
+      "end": 1.459
+    },
+    {
+      "word": " ",
+      "start": 1.459,
+      "end": 1.519
+    },
+    {
+      "word": "foods",
+      "start": 1.519,
+      "end": 1.779
+    },
+    {
+      "word": " ",
+      "start": 1.779,
+      "end": 1.86
+    },
+    {
+      "word": "by",
+      "start": 1.86,
+      "end": 1.939
+    },
+    {
+      "word": " ",
+      "start": 1.939,
+      "end": 2.039
+    },
+    {
+      "word": "how",
+      "start": 2.039,
+      "end": 2.139
+    },
+    {
+      "word": " ",
+      "start": 2.139,
+      "end": 2.179
+    },
+    {
+      "word": "much",
+      "start": 2.18,
+      "end": 2.379
+    },
+    {
+      "word": " ",
+      "start": 2.379,
+      "end": 2.459
+    },
+    {
+      "word": "fiber",
+      "start": 2.46,
+      "end": 2.799
+    },
+    {
+      "word": " ",
+      "start": 2.799,
+      "end": 3.019
+    },
+    {
+      "word": "$1",
+      "start": 3.019,
+      "end": 3.519
+    },
+    {
+      "word": " ",
+      "start": 3.519,
+      "end": 3.599
+    },
+    {
+      "word": "buys.",
+      "start": 3.599,
+      "end": 4
+    },
+    {
+      "word": " ",
+      "start": 4,
+      "end": 4.559
+    },
+    {
+      "word": "The",
+      "start": 4.559,
+      "end": 4.599
+    },
+    {
+      "word": " ",
+      "start": 4.599,
+      "end": 4.699
+    },
+    {
+      "word": "winners",
+      "start": 4.699,
+      "end": 5.079
+    },
+    {
+      "word": " ",
+      "start": 5.079,
+      "end": 5.199
+    },
+    {
+      "word": "cost",
+      "start": 5.199,
+      "end": 5.5
+    },
+    {
+      "word": " ",
+      "start": 5.5,
+      "end": 5.579
+    },
+    {
+      "word": "pennies.",
+      "start": 5.579,
+      "end": 6
+    },
+    {
+      "word": " ",
+      "start": 6,
+      "end": 6.739
+    },
+    {
+      "word": "A",
+      "start": 6.739,
+      "end": 6.819
+    },
+    {
+      "word": " ",
+      "start": 6.819,
+      "end": 6.899
+    },
+    {
+      "word": "dollar",
+      "start": 6.899,
+      "end": 7.159
+    },
+    {
+      "word": " ",
+      "start": 7.159,
+      "end": 7.239
+    },
+    {
+      "word": "of",
+      "start": 7.239,
+      "end": 7.319
+    },
+    {
+      "word": " ",
+      "start": 7.319,
+      "end": 7.419
+    },
+    {
+      "word": "dry",
+      "start": 7.419,
+      "end": 7.639
+    },
+    {
+      "word": " ",
+      "start": 7.639,
+      "end": 7.759
+    },
+    {
+      "word": "split",
+      "start": 7.759,
+      "end": 8.039
+    },
+    {
+      "word": " ",
+      "start": 8.039,
+      "end": 8.139
+    },
+    {
+      "word": "peas",
+      "start": 8.139,
+      "end": 8.46
+    },
+    {
+      "word": " ",
+      "start": 8.46,
+      "end": 8.639
+    },
+    {
+      "word": "buys",
+      "start": 8.639,
+      "end": 8.899
+    },
+    {
+      "word": " ",
+      "start": 8.899,
+      "end": 9.139
+    },
+    {
+      "word": "71",
+      "start": 9.139,
+      "end": 9.46
+    },
+    {
+      "word": " ",
+      "start": 9.46,
+      "end": 9.559
+    },
+    {
+      "word": "grams",
+      "start": 9.559,
+      "end": 9.88
+    },
+    {
+      "word": " ",
+      "start": 9.88,
+      "end": 9.939
+    },
+    {
+      "word": "of",
+      "start": 9.939,
+      "end": 10.019
+    },
+    {
+      "word": " ",
+      "start": 10.019,
+      "end": 10.099
+    },
+    {
+      "word": "fiber.",
+      "start": 10.099,
+      "end": 10.42
+    },
+    {
+      "word": " ",
+      "start": 10.42,
+      "end": 11.099
+    },
+    {
+      "word": "A",
+      "start": 11.099,
+      "end": 11.159
+    },
+    {
+      "word": " ",
+      "start": 11.159,
+      "end": 11.219
+    },
+    {
+      "word": "dollar",
+      "start": 11.219,
+      "end": 11.439
+    },
+    {
+      "word": " ",
+      "start": 11.439,
+      "end": 11.5
+    },
+    {
+      "word": "of",
+      "start": 11.5,
+      "end": 11.56
+    },
+    {
+      "word": " ",
+      "start": 11.56,
+      "end": 11.659
+    },
+    {
+      "word": "fresh",
+      "start": 11.659,
+      "end": 11.84
+    },
+    {
+      "word": " ",
+      "start": 11.84,
+      "end": 11.939
+    },
+    {
+      "word": "blueberries",
+      "start": 11.939,
+      "end": 12.439
+    },
+    {
+      "word": " ",
+      "start": 12.439,
+      "end": 12.5
+    },
+    {
+      "word": "buys",
+      "start": 12.5,
+      "end": 12.779
+    },
+    {
+      "word": " ",
+      "start": 12.779,
+      "end": 12.84
+    },
+    {
+      "word": "two",
+      "start": 12.84,
+      "end": 12.92
+    },
+    {
+      "word": " ",
+      "start": 12.92,
+      "end": 12.96
+    },
+    {
+      "word": "and",
+      "start": 12.96,
+      "end": 13.02
+    },
+    {
+      "word": " ",
+      "start": 13.02,
+      "end": 13.059
+    },
+    {
+      "word": "a",
+      "start": 13.059,
+      "end": 13.079
+    },
+    {
+      "word": " ",
+      "start": 13.079,
+      "end": 13.119
+    },
+    {
+      "word": "half.",
+      "start": 13.119,
+      "end": 13.46
+    },
+    {
+      "word": " ",
+      "start": 13.46,
+      "end": 14.419
+    },
+    {
+      "word": "Same",
+      "start": 14.42,
+      "end": 14.579
+    },
+    {
+      "word": " ",
+      "start": 14.579,
+      "end": 14.659
+    },
+    {
+      "word": "nutrient,",
+      "start": 14.659,
+      "end": 15.059
+    },
+    {
+      "word": " ",
+      "start": 15.059,
+      "end": 15.659
+    },
+    {
+      "word": "28",
+      "start": 15.659,
+      "end": 16.02
+    },
+    {
+      "word": " ",
+      "start": 16.02,
+      "end": 16.1
+    },
+    {
+      "word": "times",
+      "start": 16.1,
+      "end": 16.459
+    },
+    {
+      "word": " ",
+      "start": 16.459,
+      "end": 16.539
+    },
+    {
+      "word": "the",
+      "start": 16.539,
+      "end": 16.579
+    },
+    {
+      "word": " ",
+      "start": 16.579,
+      "end": 16.68
+    },
+    {
+      "word": "price.",
+      "start": 16.68,
+      "end": 17.059
+    },
+    {
+      "word": " ",
+      "start": 17.059,
+      "end": 17.059
+    },
+    {
+      "word": "Dried",
+      "start": 18.18,
+      "end": 18.42
+    },
+    {
+      "word": " ",
+      "start": 18.42,
+      "end": 18.5
+    },
+    {
+      "word": "beans",
+      "start": 18.5,
+      "end": 18.779
+    },
+    {
+      "word": " ",
+      "start": 18.779,
+      "end": 18.859
+    },
+    {
+      "word": "beat",
+      "start": 18.859,
+      "end": 19.02
+    },
+    {
+      "word": " ",
+      "start": 19.02,
+      "end": 19.119
+    },
+    {
+      "word": "canned",
+      "start": 19.119,
+      "end": 19.439
+    },
+    {
+      "word": " ",
+      "start": 19.439,
+      "end": 19.499
+    },
+    {
+      "word": "by",
+      "start": 19.5,
+      "end": 19.579
+    },
+    {
+      "word": " ",
+      "start": 19.579,
+      "end": 19.699
+    },
+    {
+      "word": "two",
+      "start": 19.699,
+      "end": 19.78
+    },
+    {
+      "word": " ",
+      "start": 19.78,
+      "end": 19.819
+    },
+    {
+      "word": "and",
+      "start": 19.819,
+      "end": 19.879
+    },
+    {
+      "word": " ",
+      "start": 19.879,
+      "end": 19.919
+    },
+    {
+      "word": "a",
+      "start": 19.92,
+      "end": 19.939
+    },
+    {
+      "word": " ",
+      "start": 19.939,
+      "end": 19.979
+    },
+    {
+      "word": "half",
+      "start": 19.979,
+      "end": 20.12
+    },
+    {
+      "word": " ",
+      "start": 20.12,
+      "end": 20.219
+    },
+    {
+      "word": "times.",
+      "start": 20.219,
+      "end": 20.579
+    },
+    {
+      "word": " ",
+      "start": 20.579,
+      "end": 21.399
+    },
+    {
+      "word": "Frozen",
+      "start": 21.399,
+      "end": 21.699
+    },
+    {
+      "word": " ",
+      "start": 21.699,
+      "end": 21.819
+    },
+    {
+      "word": "peas",
+      "start": 21.819,
+      "end": 22.119
+    },
+    {
+      "word": " ",
+      "start": 22.119,
+      "end": 22.219
+    },
+    {
+      "word": "beat",
+      "start": 22.219,
+      "end": 22.379
+    },
+    {
+      "word": " ",
+      "start": 22.379,
+      "end": 22.459
+    },
+    {
+      "word": "fresh",
+      "start": 22.459,
+      "end": 22.639
+    },
+    {
+      "word": " ",
+      "start": 22.639,
+      "end": 22.739
+    },
+    {
+      "word": "broccoli",
+      "start": 22.739,
+      "end": 23.139
+    },
+    {
+      "word": " ",
+      "start": 23.139,
+      "end": 23.18
+    },
+    {
+      "word": "by",
+      "start": 23.18,
+      "end": 23.359
+    },
+    {
+      "word": " ",
+      "start": 23.359,
+      "end": 23.419
+    },
+    {
+      "word": "three.",
+      "start": 23.42,
+      "end": 23.739
+    },
+    {
+      "word": " ",
+      "start": 23.739,
+      "end": 24.699
+    },
+    {
+      "word": "Dead",
+      "start": 24.699,
+      "end": 24.859
+    },
+    {
+      "word": " ",
+      "start": 24.859,
+      "end": 24.939
+    },
+    {
+      "word": "last,",
+      "start": 24.939,
+      "end": 25.279
+    },
+    {
+      "word": " ",
+      "start": 25.279,
+      "end": 25.759
+    },
+    {
+      "word": "fresh",
+      "start": 25.76,
+      "end": 26.099
+    },
+    {
+      "word": " ",
+      "start": 26.099,
+      "end": 26.179
+    },
+    {
+      "word": "berries.",
+      "start": 26.18,
+      "end": 26.579
+    },
+    {
+      "word": " ",
+      "start": 26.579,
+      "end": 27.199
+    },
+    {
+      "word": "Delicious.",
+      "start": 27.199,
+      "end": 27.799
+    },
+    {
+      "word": " ",
+      "start": 27.799,
+      "end": 28.379
+    },
+    {
+      "word": "Terrible",
+      "start": 28.379,
+      "end": 28.799
+    },
+    {
+      "word": " ",
+      "start": 28.799,
+      "end": 28.939
+    },
+    {
+      "word": "deal.",
+      "start": 28.939,
+      "end": 29.199
+    },
+    {
+      "word": " ",
+      "start": 29.199,
+      "end": 29.199
+    },
+    {
+      "word": "Buy",
+      "start": 30.239,
+      "end": 30.359
+    },
+    {
+      "word": " ",
+      "start": 30.359,
+      "end": 30.419
+    },
+    {
+      "word": "it",
+      "start": 30.42,
+      "end": 30.5
+    },
+    {
+      "word": " ",
+      "start": 30.5,
+      "end": 30.599
+    },
+    {
+      "word": "dry.",
+      "start": 30.599,
+      "end": 30.939
+    },
+    {
+      "word": " ",
+      "start": 30.939,
+      "end": 31.279
+    },
+    {
+      "word": "Buy",
+      "start": 31.279,
+      "end": 31.379
+    },
+    {
+      "word": " ",
+      "start": 31.379,
+      "end": 31.439
+    },
+    {
+      "word": "it",
+      "start": 31.439,
+      "end": 31.519
+    },
+    {
+      "word": " ",
+      "start": 31.519,
+      "end": 31.639
+    },
+    {
+      "word": "frozen.",
+      "start": 31.639,
+      "end": 32.059
+    },
+    {
+      "word": " ",
+      "start": 32.059,
+      "end": 32.52
+    },
+    {
+      "word": "Buy",
+      "start": 32.52,
+      "end": 32.639
+    },
+    {
+      "word": " ",
+      "start": 32.639,
+      "end": 32.7
+    },
+    {
+      "word": "it",
+      "start": 32.7,
+      "end": 32.819
+    },
+    {
+      "word": " ",
+      "start": 32.819,
+      "end": 32.88
+    },
+    {
+      "word": "in",
+      "start": 32.88,
+      "end": 32.939
+    },
+    {
+      "word": " ",
+      "start": 32.939,
+      "end": 33
+    },
+    {
+      "word": "a",
+      "start": 33,
+      "end": 33.02
+    },
+    {
+      "word": " ",
+      "start": 33.02,
+      "end": 33.099
+    },
+    {
+      "word": "bag.",
+      "start": 33.099,
+      "end": 33.419
+    },
+    {
+      "word": " ",
+      "start": 33.419,
+      "end": 34.239
+    },
+    {
+      "word": "Recipes",
+      "start": 34.239,
+      "end": 34.759
+    },
+    {
+      "word": " ",
+      "start": 34.759,
+      "end": 34.779
+    },
+    {
+      "word": "at",
+      "start": 34.779,
+      "end": 34.899
+    },
+    {
+      "word": " ",
+      "start": 34.899,
+      "end": 34.959
+    },
+    {
+      "word": "dailylifehacks.com.",
+      "start": 34.959,
+      "end": 36.259
+    },
+    {
+      "word": " ",
+      "start": 36.259,
+      "end": 36.68
+    },
+    {
+      "word": "Free",
+      "start": 36.68,
+      "end": 36.899
+    },
+    {
+      "word": " ",
+      "start": 36.899,
+      "end": 37.279
+    },
+    {
+      "word": "every",
+      "start": 37.279,
+      "end": 37.479
+    },
+    {
+      "word": " ",
+      "start": 37.479,
+      "end": 37.54
+    },
+    {
+      "word": "week.",
+      "start": 37.54,
+      "end": 37.759
+    }
+  ],
+  "duration": 37.759,
+  "language": "eng"
+}
