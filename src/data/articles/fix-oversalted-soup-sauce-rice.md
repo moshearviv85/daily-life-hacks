@@ -68,6 +68,6 @@ The only reliable way to fix heavily oversalted rice is the mixing method. Quick
 
 The best way to fix oversalted food is to not do it in the first place. 
 
-Never salt a dish heavily at the beginning of cooking, especially if it's a soup or sauce that will simmer. As water evaporates, the salt concentrates. What tastes perfectly seasoned at five o'clock will taste like an ocean at six. 
+Never salt a dish heavily at the beginning of cooking, especially if it's a soup or sauce that will simmer. As water evaporates, the salt concentrates. What tastes perfectly seasoned at five o'clock will taste like an ocean at six. The risk doubles when you scale a recipe up, because salt and spices don't multiply cleanly. Here's [how to double a recipe's seasoning without guessing](/how-to-double-recipe-seasoning-without-guessing/). 
 
 Layer your seasoning. Add a small pinch when you saute the onions. Add another small pinch when the broth goes in. Then put the salt away until the very end. Taste it right before you serve it, and adjust it then. It's infinitely easier to add a pinch to a bowl than it's to take it out.

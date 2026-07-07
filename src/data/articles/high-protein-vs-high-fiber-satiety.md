@@ -48,7 +48,7 @@ I’ve tried the "just eat a giant bowl of broccoli" trick. It works for about f
 
 ## Making the combo work in real life
 
-You don't need a degree in dietetics to make this work for dinner tonight. You just need to stop thinking about your plate as one thing or the other. If you’re making tacos, don't just do beef and cheese. Add black beans for that fiber hit. If you’re having a salad, don't just do greens and dressing. Throw in some leftover chicken or a few hard-boiled eggs. 
+You don't need a degree in dietetics to make this work for dinner tonight. You just need to stop thinking about your plate as one thing or the other. If you’re making tacos, don't just do beef and cheese. Add black beans for that fiber hit. If you’re having a salad, don't just do greens and dressing. Throw in some leftover chicken or a few hard-boiled eggs. And if you'd rather have the pairing done for you, these [high protein high fiber meals for weight loss](/high-protein-high-fiber-meals-for-weight-loss/) are built on exactly this combo. 
 
 The goal is to hit the hunger from two angles. The protein manages the "brain hunger" by fixing your hormones, and the fiber manages the "stomach hunger" by providing physical bulk. When you combine them, you aren't just eating less; you’re actually wanting less. That’s a much easier way to live than trying to white-knuckle your way through every evening.
 

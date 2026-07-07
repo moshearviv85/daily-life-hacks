@@ -79,4 +79,4 @@ I find that unsweetened, cloudy apple juice (the kind that looks like it actuall
 
 ## Kiwi Smoothies: The Real MVP for Fiber
 
-Alright, if you want to bring out the big guns, but still keep it delicious and not "prune-y," kiwis are your jam. Or, well, your smoothie. These fuzzy little green guys are just loaded with good stuff.
+Alright, if you want to bring out the big guns, but still keep it delicious and not "prune-y," kiwis are your jam. Or, well, your smoothie. These fuzzy little green guys are just loaded with good stuff. And if you'd rather chew your fiber than sip it, these [high fiber meals for constipation relief](/high-fiber-meals-for-constipation-relief/) put the same idea on an actual dinner plate.

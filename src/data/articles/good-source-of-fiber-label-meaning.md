@@ -34,7 +34,7 @@ On a U.S. food label, "good source of fiber" means one serving gives you 10 to 1
 
 That's the answer. Now the part the label doesn't mention.
 
-I stood in the cereal aisle for way too long last week. Two boxes, almost the same price, both screaming about fiber on the front. One said "good source of fiber." The other said "made with whole grains." I grabbed both, flipped them over, and one had 3 grams per serving. The other had 1 gram. Same aisle, same promises, very different math.
+I stood in the cereal aisle for way too long last week. Two boxes, almost the same price, both screaming about fiber on the front. One said "good source of fiber." The other said "made with whole grains." I grabbed both, flipped them over, and one had 3 grams per serving. The other had 1 gram. Same aisle, same promises, very different math. Whole grain math stays messy outside the cereal aisle too. We ran the numbers on [oatmeal vs grits fiber content](/oatmeal-vs-grits-fiber-content/) and the two are not even close.
 
 Front-of-package claims are marketing. That's not cynical, that's just how packaging works. But the phrase "good source of fiber" is one of the more regulated ones, which means it actually has rules behind it. Knowing those rules can save you from buying granola bars that are basically cookies with a health halo.
 

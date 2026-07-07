@@ -68,4 +68,4 @@ We all do it. You see something interesting at the store and convince yourself y
 
 During a planned week, buy only what you know how to cook quickly. Save the experiments for a weekend when you have time and energy to mess up. Boring groceries that get used beat exciting groceries that get composted.
 
-One grocery run. Five solid dinners. A freezer backup for the rough night. That's the whole system.
+One grocery run. Five solid dinners. A freezer backup for the rough night. That's the whole system. And if you want to shrink the receipt on that one trip too, here's [how to make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/) without turning it into a part-time job.

@@ -63,7 +63,7 @@ Warm food and cold containers do not mix well. If you are packing leftover roast
 
 If you put warm chicken in a plastic box and snap the lid shut, steam gets trapped. That steam turns into condensation, which drips down onto your crisp lettuce and ruins it. Cool everything down first.
 
-Ice packs are also necessary if your lunch sits at a desk for a few hours. A warm sandwich is not just a food safety risk, it also causes the fats to soften and the vegetables to release more water. Keeping the lunch box cold keeps the ingredients firm.
+Ice packs are also necessary if your lunch sits at a desk for a few hours. A warm sandwich is not just a food safety risk, it also causes the fats to soften and the vegetables to release more water. Keeping the lunch box cold keeps the ingredients firm. The same playbook scales up for outdoor meals too. Here's [how to pack cold pasta salad for picnics](/how-to-pack-cold-pasta-salad-picnics/) without it turning into a warm mistake.
 
 ## Wrapping it up
 

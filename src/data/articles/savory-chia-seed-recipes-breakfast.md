@@ -51,7 +51,7 @@ faq:
     answer: "They can be, especially when you pair them with toppings that add fat, protein, and texture. Chia seeds bring fiber, while avocado, eggs, yogurt, seeds, or cheese can make the meal feel more complete. The trick is building a breakfast, not just eating a jar of seeds."
 ---
 
-I used to think chia seeds belonged in sweet jars with berries and a heroic amount of vanilla. Fine for some mornings. Terrible for the mornings when you want salt, heat, and something that feels like breakfast instead of a soft dessert with a PR team.
+I used to think chia seeds belonged in sweet jars with berries and a heroic amount of vanilla. Fine for some mornings. Terrible for the mornings when you want salt, heat, and something that feels like breakfast instead of a soft dessert with a PR team. If sweet jars are still your lane, I've got a whole lineup of [chia pudding variations for breakfast](/chia-pudding-variations-for-breakfast/) that covers that side of the fridge.
 
 Savory chia seed recipes for breakfast fix that problem. You keep the prep-ahead convenience, but you swap the maple syrup energy for garlic, smoked paprika, avocado, tomatoes, and crunchy seeds. It sounds strange for about three seconds. Then you realize it eats like a cold breakfast bowl.
 

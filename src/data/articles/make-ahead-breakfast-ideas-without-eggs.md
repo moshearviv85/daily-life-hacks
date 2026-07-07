@@ -49,7 +49,7 @@ Finding make ahead breakfast ideas without eggs isn't just about avoiding an all
 
 Overnight oats are the poster child for egg-free mornings for a reason. They require zero heat and about five minutes of actual labor. You're essentially letting physics do the cooking for you while you sleep. The oats absorb the liquid, softening into a creamy consistency that's far better than the gluey mess you get from the microwave packets.
 
-The trick to making these not taste like soggy cardboard is the ratio. You want a one-to-one ratio of oats to liquid, plus a little extra if you're adding chia seeds. Chia seeds are great because they soak up a ton of moisture and keep the mixture from being runny. If you've tried these before and hated them, you probably didn't add enough salt or sweetener. Even a pinch of salt makes a massive difference in the flavor profile.
+The trick to making these not taste like soggy cardboard is the ratio. You want a one-to-one ratio of oats to liquid, plus a little extra if you're adding chia seeds. Chia seeds are great because they soak up a ton of moisture and keep the mixture from being runny. If you like where that's headed, straight-up [chia pudding variations](/chia-pudding-variations-for-breakfast/) work on the same principle with even fewer ingredients. If you've tried these before and hated them, you probably didn't add enough salt or sweetener. Even a pinch of salt makes a massive difference in the flavor profile.
 
 ## Savory Options That Aren't Omelets
 

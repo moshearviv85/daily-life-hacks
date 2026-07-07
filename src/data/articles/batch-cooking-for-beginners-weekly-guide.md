@@ -56,7 +56,7 @@ There's exactly one reason why people give up on eating healthy: it requires an 
 
 The secret to actually maintaining a healthy diet without losing your mind is moving all the hard work to the one day of the week when you actually have energy. Following a batch cooking for beginners weekly guide transforms your Monday through Friday. 
 
-Batch cooking is different from traditional "meal prep." You're not making ten identical, sad containers of chicken and rice. Instead, you're prepping core ingredients in bulk on Sunday afternoon, so weeknight dinners become an assembly project that takes exactly five minutes. 
+Batch cooking is different from traditional "meal prep." You're not making ten identical, sad containers of chicken and rice. Instead, you're prepping core ingredients in bulk on Sunday afternoon, so weeknight dinners become an assembly project that takes exactly five minutes. One warning before you scale everything up: spices don't multiply cleanly, so learn [how to double a recipe's seasoning without guessing](/how-to-double-recipe-seasoning-without-guessing/) before you dump in twice the cumin. 
 
 Here is the master blueprint for taking back your evenings.
 

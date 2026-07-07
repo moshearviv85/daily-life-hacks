@@ -148,6 +148,8 @@ If you have leftover toppings, keep them separate:
 * store tomatoes separately (dry them a bit if you can)
 * store seeds in a small bag or jar
 
+And that leftover avocado half? Here's the [best way to store avocados to stop browning](/best-way-to-store-avocados-to-stop-browning/) so tomorrow's toast doesn't start out gray.
+
 When you want breakfast, toast fresh bread and assemble in under five minutes.
 ## One Last Tiny Tip
 

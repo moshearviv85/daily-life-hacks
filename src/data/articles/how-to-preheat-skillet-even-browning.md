@@ -35,7 +35,7 @@ I used to just turn the burner on, splash some oil in, and throw the chicken in 
 
 The first rule is patience. You cannot rush physics. Put your empty pan on the stove over medium heat. Not high heat. High heat will give you a pan that is scorching hot in the center and cold on the edges. Medium heat allows the temperature to rise steadily and spread evenly across the entire surface of the metal.
 
-If you are using a heavy cast iron skillet, this process can take up to five minutes. Cast iron holds heat beautifully, but it is actually terrible at conducting it quickly. You have to give it time. A stainless steel pan might take two or three minutes.
+If you are using a heavy cast iron skillet, this process can take up to five minutes. Cast iron holds heat beautifully, but it is actually terrible at conducting it quickly. You have to give it time. The preheat also only pays off if the surface is in good shape, so it is worth learning [how to season a cast iron skillet properly](/how-to-season-cast-iron-skillet-properly/) before blaming the pan. A stainless steel pan might take two or three minutes.
 
 ## When to add the oil
 

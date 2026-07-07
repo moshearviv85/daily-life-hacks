@@ -104,7 +104,7 @@ Prebiotic sodas are everywhere now, and I get the appeal. It tastes like soda an
 
 Now the boring comparison. A slightly green banana costs about a quarter and brings roughly 3 grams of fiber plus resistant starch. A bowl of oats runs maybe 20 cents and lands around 4 grams. And when we priced the whole store for our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried beans delivered around 70 grams of fiber per dollar. A prebiotic soda gets you somewhere between 1 and 4 grams per dollar. Same fiber type the soda brags about, by the way. The inulin in the can is the same inulin sitting in your onion drawer for free.
 
-That doesn't make the soda evil. If it's replacing a regular soda, fine, enjoy it. Just don't let a $2.50 can do a job your groceries already do for a tenth of the price.
+That doesn't make the soda evil. If it's replacing a regular soda, fine, enjoy it. Just don't let a $2.50 can do a job your groceries already do for a tenth of the price. Same logic for drinks in general: a homemade [gut health tea with peppermint or ginger](/gut-health-tea-peppermint-ginger/) costs pennies a cup and doesn't need a marketing department.
 
 ## The honest bottom line
 

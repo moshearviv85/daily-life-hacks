@@ -77,6 +77,7 @@ Your refrigerator usually has two drawers at the bottom. These are not just rand
 When you close the vent, you trap moisture inside the drawer. This environment is specifically designed for anything that wilts easily. The goal is to keep the moisture locked inside the plant. 
 *   **What goes inside:** All leafy greens (spinach, kale, lettuce), fresh herbs, broccoli, cauliflower, carrots, and celery. 
 *   **The Hack:** Don't wash these items before putting them in! Excess water sitting on the leaves will cause them to turn to slime. Wash them right when you pull them out to eat them. 
+*   **A note on herbs:** Cilantro and parsley are dramatic enough to deserve their own guide, so here's [how to store fresh herbs so they last longer](/how-to-store-fresh-herbs-to-last-longer/) instead of dying by Thursday. 
 
 ### 2. The Low-Humidity Drawer (The Vent Open)
 When the vent is wide open, air constantly circulates, allowing the naturally emitted ethylene gas to escape the drawer so things don't rot. This is for fruits and vegetables that tend to break down and rot quickly rather than wilt. 
@@ -86,6 +87,6 @@ When the vent is wide open, air constantly circulates, allowing the naturally em
 
 Certain fruits only belong on the countertop because they need warmth to actually ripen safely. 
 
-Bananas, avocados, peaches, and plums should sit in a fruit bowl until they reach absolute peak softness. If you want to hold them at that exact moment of perfection, *then* you can move them into the fridge. The cold will halt the ripening dead in its tracks, giving you an extra three or four days to eat them. 
+Bananas, avocados, peaches, and plums should sit in a fruit bowl until they reach absolute peak softness. If you want to hold them at that exact moment of perfection, *then* you can move them into the fridge. The cold will halt the ripening dead in its tracks, giving you an extra three or four days to eat them. Avocados are their own soap opera, so I broke down the [best way to store avocados to stop browning](/best-way-to-store-avocados-to-stop-browning/) separately. 
 
 Learning how to store fruits and vegetables properly is like giving your groceries a protective shield. Once you memorize these few basic rules, you will be utterly shocked at how long a head of lettuce or a bowl of lemons can actually survive in your kitchen!

@@ -79,7 +79,7 @@ This is where people blow their budgets. They buy highly perishable, incredibly 
 
 If you're basing your meals off intensely cheap items like beans, rice, and cabbage, you must invest a tiny bit of your budget into making them taste phenomenal. This is the difference between eating like a budget master and eating like a depressed college student. 
 
-Building a powerful grocery shopping list for healthy eating on a budget is about changing your mindset. You're no longer buying "meals" in boxes; you're buying highly versatile, incredibly cheap raw ingredients to assemble yourself!
+Building a powerful grocery shopping list for healthy eating on a budget is about changing your mindset. You're no longer buying "meals" in boxes; you're buying highly versatile, incredibly cheap raw ingredients to assemble yourself! And once the list itself is solid, there are more ways to [make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/) that don't involve clipping a single coupon.
 
 ## Safety without a lecture
 

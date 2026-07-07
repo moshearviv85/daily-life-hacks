@@ -65,4 +65,4 @@ A few quick don'ts, because some advice out there is just asking for trouble:
 *   **Don't wrap it in a damp paper towel:** Similar to the water jar, this just introduces too much moisture and creates a breeding ground for mold. The goal is *controlled* humidity, not a swamp.
 *   **Don't leave it uncovered:** This is the express lane to shriveled, woody ginger. Air is the enemy here.
 
-Keeping your ginger fresh is one of those small kitchen wins that adds up. You save money, reduce food waste, and always have that spicy kick ready to go.
+Keeping your ginger fresh is one of those small kitchen wins that adds up. You save money, reduce food waste, and always have that spicy kick ready to go. It also means a mug of [peppermint or ginger tea for your gut](/gut-health-tea-peppermint-ginger/) is never more than three minutes away.

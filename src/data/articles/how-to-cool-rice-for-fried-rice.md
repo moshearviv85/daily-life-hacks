@@ -79,4 +79,4 @@ Even with cooled rice, you will have some clumps. Do not try to smash them apart
 
 Before the rice goes into the skillet, use wet hands to gently massage and break apart any big chunks right there on the baking sheet. If the grains are separated before they hit the oil, your fried rice is going to toss beautifully. 
 
-You do not have to abandon your dinner plans just because you forgot to plan ahead. Spread it out, chill it down, and pretend it was yesterday's leftovers.
+You do not have to abandon your dinner plans just because you forgot to plan ahead. Spread it out, chill it down, and pretend it was yesterday's leftovers. And when you actually do have a container of day old rice staring at you, fried rice is only the beginning. These [creative ways to use leftover rice](/how-to-use-leftover-rice-creative-ideas/) cover the rest.

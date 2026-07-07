@@ -53,7 +53,7 @@ Here's a practical reference. These numbers are approximate because they vary by
 
 The chart is nice, but what you really need is this: match your heat level to the right oil.
 
-**High heat (searing, stir-frying, deep frying):** Avocado oil, safflower oil, light olive oil, or peanut oil. These can take the punishment.
+**High heat (searing, stir-frying, deep frying):** Avocado oil, safflower oil, light olive oil, or peanut oil. These can take the punishment. They're also the right picks when you [season a cast iron skillet properly](/how-to-season-cast-iron-skillet-properly/), since that job pushes oil to its limit on purpose.
 
 **Medium heat (sauteing, roasting at 375 to 425F):** Extra virgin olive oil, vegetable oil, canola oil. The workhorses of daily cooking.
 

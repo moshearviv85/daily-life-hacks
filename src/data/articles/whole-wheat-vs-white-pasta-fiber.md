@@ -67,7 +67,7 @@ Typically, a serving of white pasta might contain around 2-3 grams of dietary fi
 
 ### Whole Wheat Pasta: The Steady Does It
 
-Now, swing over to whole wheat pasta. For the same serving size, you're usually looking at anywhere from 5 to 7 grams of fiber. See that? Five to seven! That's literally double, sometimes even triple, the fiber of its paler cousin. This isn't just some random number; this extra fiber, my friends, could be why you feel fuller, for longer. It may slow down digestion. It might help keep your blood sugar levels more stable, potentially reducing those annoying energy dips and the subsequent ravenous hunger that sabotages even the best intentions. It's genuinely a big difference.
+Now, swing over to whole wheat pasta. For the same serving size, you're usually looking at anywhere from 5 to 7 grams of fiber. See that? Five to seven! That's literally double, sometimes even triple, the fiber of its paler cousin. This isn't just some random number; this extra fiber, my friends, could be why you feel fuller, for longer. It may slow down digestion. It might help keep your blood sugar levels more stable, potentially reducing those annoying energy dips and the subsequent ravenous hunger that sabotages even the best intentions. It's genuinely a big difference. And whole wheat is just the entry point. There's a whole lineup of [high fiber pasta alternatives](/high-fiber-pasta-alternatives/), from chickpea to lentil noodles, if you want to push those numbers even higher.
 
 ## Why Fiber is Your Weight-Loss Buddy (Seriously)
 

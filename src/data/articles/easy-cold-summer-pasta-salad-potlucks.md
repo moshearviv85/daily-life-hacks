@@ -77,4 +77,4 @@ The beauty of this dish is that it's basically a template. If your kids hate oli
 
 Just remember that the pasta will drink up the dressing as it sits. If you're making this the night before, keep a little extra dressing on hand. Give it a quick toss right before you leave the house to wake up the flavors and give it that fresh, glossy look that makes people reach for the serving spoon first.
 
-You really don't need a complicated plan to bring the best dish to the party. Stick to the basics, keep the textures distinct, and make sure there's enough salt to make the tomatoes pop. When you come home with an empty bowl and zero leftovers, you'll know you did it right without breaking a sweat.
+You really don't need a complicated plan to bring the best dish to the party. Stick to the basics, keep the textures distinct, and make sure there's enough salt to make the tomatoes pop. When you come home with an empty bowl and zero leftovers, you'll know you did it right without breaking a sweat. And if the party is a park picnic instead of a backyard, here's [how to pack cold pasta salad for picnics](/how-to-pack-cold-pasta-salad-picnics/) so it survives the ride.

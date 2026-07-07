@@ -54,14 +54,14 @@ The main reason food goes bad in our refrigerators is simply that we forget it g
 
 1. **The Setup:** Go to a discount store and buy one medium-sized, clear plastic bin. 
 2. **The Placement:** Put it front-and-center on the middle shelf of your fridge perfectly at eye level. Label it "Eat Me First" with a piece of tape. 
-3. **The Habit:** Every single time you open the fridge and notice half an onion, a yogurt cup expiring tomorrow, or leftover rice, physically move it into this specific bin. When you're looking for a snack or starting dinner, you're strictly required to check the bin before opening anything new. 
+3. **The Habit:** Every single time you open the fridge and notice half an onion, a yogurt cup expiring tomorrow, or leftover rice, physically move it into this specific bin. When you're looking for a snack or starting dinner, you're strictly required to check the bin before opening anything new. That container of leftover rice alone has a dozen second lives, and these [creative ideas for leftover rice](/how-to-use-leftover-rice-creative-ideas/) will help you clear the bin faster. 
 
 ## Rule 2: Learn to Love the Freezer
 
 The freezer is essentially a pause button on expiration dates. Most people severely underutilize it. 
 
 *   **Dying Fruit:** If those bananas are going black, peel them, slice them into massive chunks, and freeze them flat on a tray for future smoothies. 
-*   **Wilting Greens:** If your fresh spinach is just starting to look a tiny bit sad, stuff the entire remaining bag into the freezer. You can't use it for a crisp salad anymore, but it's perfect for throwing directly into soups, stews, or pasta sauces frozen.
+*   **Wilting Greens:** Limp but not slimy? An ice water soak can often [revive wilted lettuce and greens](/how-to-revive-wilted-lettuce-and-greens/) before you write them off. If your fresh spinach is past that point and just starting to look a tiny bit sad, stuff the entire remaining bag into the freezer. You can't use it for a crisp salad anymore, but it's perfect for throwing directly into soups, stews, or pasta sauces frozen.
 *   **Stale Bread:** Slice the entire loaf of bread the second you get it home and freeze it in a heavy-duty bag. Take out only exactly the slices you need to pop straight into the toaster. 
 
 ## Rule 3: Understand Expiration Dates

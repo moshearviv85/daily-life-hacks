@@ -53,7 +53,7 @@ faq:
 ---
 I used to stand in the grocery aisle staring at the price of ribeye like it was a museum exhibit I couldn't afford to touch. When you have a house full of people who eat like they haven't seen food in a week, you stop looking at the fancy cuts and start looking for the heavy packs of chuck. Ground beef is the workhorse of the American kitchen, but if you aren't careful, you'll end up spending forty dollars on a single taco night.
 
-The secret to making cheap ground beef meals for large families isn't just buying the meat on sale. It's about what you put next to the meat. If you're just serving patties, you're going to go broke. If you're serving beef mixed with things that cost pennies, you're winning.
+The secret to making cheap ground beef meals for large families isn't just buying the meat on sale. It's about what you put next to the meat. If you're just serving patties, you're going to go broke. If you're serving beef mixed with things that cost pennies, you're winning. Where you buy matters too. These [Aldi shopping hacks for large family meals](/aldi-shopping-hacks-large-family-meals/) are how I keep the per-pound price from ruining the whole plan.
 
 ## The Art of the Meat Stretcher
 

@@ -63,7 +63,7 @@ Spring mix is lovely for about nine minutes. After that, it starts behaving like
 
 Kale holds up well, especially if it's chopped small. Cabbage is nearly indestructible. Romaine gives you crunch and still feels like a classic salad. Shredded Brussels sprouts are great if you like a hearty texture and don't mind a little chew.
 
-Baby spinach is acceptable for same-day salads, but it wilts fast around dressing, tomatoes, or warm protein. Use it when you're packing in the morning and eating by noon. For multi-day meal prep, let cabbage do the heavy lifting. Cabbage was built for this nonsense.
+Baby spinach is acceptable for same-day salads, but it wilts fast around dressing, tomatoes, or warm protein. Use it when you're packing in the morning and eating by noon. For multi-day meal prep, let cabbage do the heavy lifting. Cabbage was built for this nonsense. And if your greens went limp before you even packed them, you can usually [revive wilted lettuce and greens](/how-to-revive-wilted-lettuce-and-greens/) with ten minutes in ice water instead of tossing the bag.
 
 ## Keep wet and warm things under control
 

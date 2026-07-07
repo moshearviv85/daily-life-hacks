@@ -64,7 +64,7 @@ The texture also works better than you'd expect. Oats have a creaminess when coo
 
 Here's where most people go wrong: they use instant oats and cook them with too much water, resulting in something with the texture of wallpaper paste. Don't do that.
 
-For savory oatmeal, you want old-fashioned rolled oats. Not quick oats, not instant, not the ones that come in a packet with dried apple chunks already mixed in. Rolled oats hold their shape better and have more fiber. If you can find steel-cut, those work too, though they take longer and have a chewier bite.
+For savory oatmeal, you want old-fashioned rolled oats. Not quick oats, not instant, not the ones that come in a packet with dried apple chunks already mixed in. Rolled oats hold their shape better and have more fiber. If you can find steel-cut, those work too, though they take longer and have a chewier bite. And if you're wondering how oats stack up against the South's favorite breakfast porridge, I compared [oatmeal vs grits on fiber content](/oatmeal-vs-grits-fiber-content/) and the gap surprised me.
 
 The ratio matters. Use 1 cup of oats to 2 cups of water or broth. That's it. Cook over medium heat, stirring occasionally, for about 5 to 7 minutes until thick and creamy. If it looks too dry while cooking, add a splash more water. If it's too soupy, let it cook a minute longer. You're looking for something that holds its shape in the bowl-not solid, but not liquid either.
 

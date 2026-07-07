@@ -109,4 +109,4 @@ If you want more vegetables without starting a second cooking project, roast a t
 
 **Using the wrong pot.** A thin saucepan heats unevenly. A heavy Dutch oven or deep skillet with tall sides is the move. You want even heat so the beans don't stick in one angry corner.
 
-You don't need a special occasion. You need a spoon and maybe ten minutes of chopping. The Tuscan white bean kale soup stovetop version is exactly that kind of meal. It reheats well, it forgives small mistakes, and it makes the kitchen smell like you tried harder than you did.
+You don't need a special occasion. You need a spoon and maybe ten minutes of chopping. The Tuscan white bean kale soup stovetop version is exactly that kind of meal. It reheats well, it forgives small mistakes, and it makes the kitchen smell like you tried harder than you did. And when this pot runs out, a [high fiber split pea soup](/split-pea-soup-recipe-high-fiber/) pulls the same pantry-first trick with a two-dollar bag of dried peas.

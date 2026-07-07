@@ -131,7 +131,7 @@ Browning adds flavor without adding sodium. Also, it makes you look like you kno
 Pick one of these for the week:
 
 * Keep lemons on the counter and use them daily.
-* Buy one herb and actually finish it.
+* Buy one herb and actually finish it. Learning [how to store fresh herbs so they last longer](/how-to-store-fresh-herbs-to-last-longer/) makes that goal a lot more realistic.
 * Add tomato paste to your next soup.
 
 You do not need to overhaul everything. If you only do one thing, add acid at the end of cooking and taste again before you reach for salt. Big flavor with less salt is mostly about remembering you have options.

@@ -97,7 +97,7 @@ If a tip saves an hour every time, it is rare. Most wins are five minutes here a
 
 ## Before you buy another gadget
 
-Most kitchen wins come from a sharp knife, a big cutting board, and a pan that does not warp. If a tool promises to replace skill, be skeptical. If it removes a step you hate every day, it might be worth it.
+Most kitchen wins come from a sharp knife, a big cutting board, and a pan that does not warp. If a tool promises to replace skill, be skeptical. If it removes a step you hate every day, it might be worth it. These [kitchen tools that save time and money](/kitchen-tools-that-save-time-and-money/) actually pass that test.
 
 ## When a hack fails, check the boring variables
 

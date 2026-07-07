@@ -64,7 +64,7 @@ The whole operation lives or dies on dryness. Wet chickpeas steam in the oven an
 
 Rinse, drain, then dry like you are preparing them for a photoshoot. Oil helps crisping, but too much oil makes them greasy.
 
-Single layer on the sheet pan. If you stack them, you made a casserole by accident.
+Single layer on the sheet pan. If you stack them, you made a casserole by accident. Bare pan or lined is your call, and here's [when parchment or silicone liners earn their spot](/baking-sheet-liners-parchment-silicone-when-to-use/) and when bare metal browns better.
 ## Seasoning Ideas That Are Not Boring
 
 Smoked paprika and garlic powder are the baseline. Add cayenne if you want heat. Add lime zest after roasting if you want something brighter.

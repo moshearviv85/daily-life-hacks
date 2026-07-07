@@ -72,7 +72,7 @@ Nothing else in the drive-thru universe comes close. Beans run about 8 grams of 
 
 The order: burrito bowl with brown rice (2 grams), black beans and pinto beans (about 8 grams each), fajita veggies, and guacamole (6 grams). That's roughly 25 grams of fiber in one meal, which is most of your entire day handled before dinner. Yes, the guac costs extra. It's also pulling real weight here, so pay the toll.
 
-Chicken or steak won't add fiber, but they'll keep you full, so pick whichever you like. If you get the burrito instead of the bowl, fine, but the flour tortilla is mostly just 300 extra calories wearing a trench coat.
+Chicken or steak won't add fiber, but they'll keep you full, so pick whichever you like. That protein plus fiber combo is the whole game, and these [high protein high fiber meals for weight loss](/high-protein-high-fiber-meals-for-weight-loss/) run the same play from your own kitchen for a fraction of the price. If you get the burrito instead of the bowl, fine, but the flour tortilla is mostly just 300 extra calories wearing a trench coat.
 
 ## Wendy's: the sleeper pick nobody talks about
 

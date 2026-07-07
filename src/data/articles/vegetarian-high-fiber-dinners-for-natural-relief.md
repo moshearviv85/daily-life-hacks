@@ -79,7 +79,7 @@ faq:
 ---
 Some nights you do not want a giant slab of meat. That is fine. It does not need a speech.
 
-This page is about **vegetarian high fiber dinners for natural relief** in the boring, useful sense: beans, vegetables, a little fat, enough salt, and a pot that mostly minds its own business. Nothing here promises a miracle. Fiber might help you feel a little more regular if you also drink water and do not change everything at once. That is the whole deal.
+This page is about **vegetarian high fiber dinners for natural relief** in the boring, useful sense: beans, vegetables, a little fat, enough salt, and a pot that mostly minds its own business. Nothing here promises a miracle. Fiber might help you feel a little more regular if you also drink water and do not change everything at once. That is the whole deal. If you want a wider menu built on the same idea, this roundup of [high fiber meals for constipation relief](/high-fiber-meals-for-constipation-relief/) covers breakfast through dinner.
 
 ## Why chickpeas carry the meal
 
