@@ -73,12 +73,12 @@ Cherry tomatoes add acidity. Hemp seeds or pumpkin seeds add crunch and fiber wi
 If you hate cutting tomatoes, use salsa. It is not elegant. It works.
 ## Variation Three: Hummus and Cucumber
 
-Spread a thin layer of hummus first so the toast does not go soggy immediately. Add avocado, cucumber slices, and everything seasoning.
+Spread a thin layer of hummus first so the toast does not go soggy immediately. A batch of [homemade high fiber hummus](/high-fiber-hummus-recipe-homemade/) makes this one even better. Add avocado, cucumber slices, and everything seasoning.
 
 This one is cooler in temperature, which matters on mornings when hot food sounds like a bad idea.
 ## The Whole Grain Bread Part
 
-Look for bread where whole grains show up early in the ingredient list. If the slice is white flour with a dusting of seeds on top, you are buying a costume.
+Look for bread where whole grains show up early in the ingredient list. If the slice is white flour with a dusting of seeds on top, you are buying a costume. Eating gluten free? This [high fiber gluten free bread recipe](/high-fiber-gluten-free-bread-recipe/) holds up under toppings better than most store loaves.
 
 Fiber adds up through the day. Breakfast is one place where you can make a clean win without feeling like you are on a plan.
 ## Small Breakfast Moves That Feel Fancy

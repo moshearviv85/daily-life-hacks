@@ -73,7 +73,7 @@ Here's the thing about beans in chili: they are not interchangeable. Each type b
 
 Kidney beans are the backbone. They're big, meaty, and hold their shape well through a long simmer. They give you that classic chili look and provide the bulk that makes the dish feel substantial. Use dark red kidney beans for the most traditional appearance, though light red works fine too.
 
-Black beans add creaminess. When they cook down, they break apart slightly and thicken the sauce in a way that feels luxurious. They also bring a slight earthiness that plays well against the brighter tomatoes. Don't drain them too aggressively-a little liquid on them when they go in is fine.
+Black beans add creaminess. When they cook down, they break apart slightly and thicken the sauce in a way that feels luxurious. They also bring a slight earthiness that plays well against the brighter tomatoes. (If you end up with a spare can, [easy black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) are the fastest way to use it later in the week.) Don't drain them too aggressively-a little liquid on them when they go in is fine.
 
 Pinto beans are the secret weapon. They're softer than the other two, almost buttery when cooked, and they disappear into the background in a way that ties everything together. If you've ever had chili that tasted a little too separate, like the beans were just floating in sauce, pintos fix that. They are the glue.
 
@@ -87,7 +87,7 @@ The corn does three jobs. First, it adds sweetness that balances the acidity fro
 
 Fresh corn is great in July and August when the ears are sweet and in season. Cut the kernels off and add them during the last 15 minutes of cooking so they stay intact. But honestly, frozen corn is the move most of the year. It cooks up fine, it's consistently sweet, and it holds up better in a long simmer than fresh corn does, which can turn mushy. A cup of frozen corn, added during the last ten minutes, is the right call.
 
-Canned corn is fine in a pinch but tastes noticeably tinned. If that's what you have, use it, but keep the frozen kind in your freezer for next time.
+Canned corn is fine in a pinch but tastes noticeably tinned. If that's what you have, use it, but keep the frozen kind in your freezer for next time. And whatever's left of the bag goes straight into a [quick black bean and corn salsa](/quick-black-bean-and-corn-salsa-no-cooking-required/), no cooking required.
 
 ## Building Depth Without Meat
 

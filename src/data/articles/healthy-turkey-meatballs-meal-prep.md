@@ -75,7 +75,7 @@ Here is a practical trick: wet your hands slightly with cold water before you st
 If your skillet is on the smaller side, do not crowd the pan. Cook them in two batches instead. Crowding the pan drops the temperature and causes the meat to steam rather than brown. You want that nice golden crust. They're done when they hit 165°F in the center. Give them a few minutes to rest off the heat so they don't fall apart when you move them.
 ## How to Actually Use Them
 
-The best part of this prep is the flexibility. Toss them with some jarred marinara and spaghetti for a classic dinner. Slice them in half and add them to a sub roll with a little sauce and a slice of provolone for lunch. Or, serve them over rice or quinoa with a side of steamed broccoli. 
+The best part of this prep is the flexibility. Toss them with some jarred marinara and spaghetti for a classic dinner. Slice them in half and add them to a sub roll with a little sauce and a slice of provolone for lunch. Or, serve them over rice or quinoa with a side of steamed broccoli. If you batch-cook the grains too, make sure you [store cooked grains properly](/how-to-properly-store-cooked-grains-for-meal-prep/) so they last the whole week. 
 
 They reheat really well in the microwave, or you can warm them in a skillet with a splash of water or sauce so they don't dry out. If you freeze a batch, just let them thaw in the fridge overnight before you reheat them. One cooking session, several different meals, and zero sad desk lunches.
 
@@ -89,7 +89,7 @@ A pile of vegetables can feel like a side dish unless you give it a anchor. Thin
 
 ## If the flavor feels flat
 
-Acid usually fixes flat. A squeeze of lemon, a splash of vinegar, or even a spoon of yogurt can drag flavor forward. Fat carries spice, so a little extra olive oil can help if the heat reads harsh. If it tastes muddy, add salt in tiny pinches and taste between each one.
+Acid usually fixes flat. A squeeze of lemon, a splash of vinegar, or even a spoon of yogurt can drag flavor forward. Fat carries spice, so a little extra olive oil can help if the heat reads harsh. If it tastes muddy, add salt in tiny pinches and taste between each one. And if you overshoot, here's [how to rescue an oversalted dish](/fix-oversalted-soup-sauce-rice/).
 
 ## What I do when I am out of one ingredient
 

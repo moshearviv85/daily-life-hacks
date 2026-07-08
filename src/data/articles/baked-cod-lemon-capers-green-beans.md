@@ -56,13 +56,13 @@ Cooking fish at home stresses a lot of people out. I get it. You buy a nice piec
 
 But it really does not have to be. This baked cod with lemon, capers, and green beans removes the drama. It is a sheet pan situation that pairs a mild, forgiving fish with a bright, punchy sauce. You get dinner on the table fast, the cleanup is basically just throwing away a piece of parchment paper, and nobody ends up eating rubbery seafood. 
 
-My sister hates cooking fish. She says it always smells up the kitchen. I made her try this baking method instead of searing it in a pan, and she actually changed her mind. Baking contains the mess and the smell, and the butter sauce keeps things moist. 
+My sister hates cooking fish. She says it always smells up the kitchen. I made her try this baking method instead of searing it in a pan, and she actually changed her mind. Baking contains the mess and the smell, and the butter sauce keeps things moist. If baking won her over, the [air fryer salmon bites with garlic honey glaze](/air-fryer-salmon-bites-garlic-honey-glaze/) sealed the deal a week later. 
 
 ## Why cod is the perfect weeknight fish
 
 Cod is the friendly neighbor of the seafood world. It is mild, it does not taste "fishy," and it happily absorbs whatever flavors you throw at it. 
 
-Because the fillets are usually pretty thick, they have a slightly larger margin of error than thin, delicate fish like sole. It flakes beautifully when it is done. It is also usually easier to find and more affordable than halibut, which makes it a solid choice for a random Wednesday night instead of waiting for a special occasion.
+Because the fillets are usually pretty thick, they have a slightly larger margin of error than thin, delicate fish like sole. It flakes beautifully when it is done. It is also usually easier to find and more affordable than halibut, which makes it a solid choice for a random Wednesday night instead of waiting for a special occasion. Cod is also exactly what I reach for in these [easy weeknight fish tacos with cabbage slaw](/easy-weeknight-fish-tacos-with-cabbage-slaw/), so grab an extra fillet while you're at the counter.
 
 ## The magic of the butter and caper sauce
 

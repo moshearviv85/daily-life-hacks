@@ -48,10 +48,10 @@ Avocado oil has a higher smoke point, making it a much better choice if you are 
 
 Almonds, walnuts, pecans, and peanuts are incredibly easy to throw into meals or just eat as a quick handful for a snack. A small serving (about an ounce) gives you a solid dose of fat, a bit of protein, and some dietary fiber. 
 
-Chia seeds, flaxseeds, and pumpkin seeds are another great avenue to get healthy fats. You can effortlessly stir them into your morning yogurt, a bowl of oatmeal, or blend them into a smoothie. The only catch here is portion control-because nuts and seeds are highly calorie-dense, eating half a jar of almonds while watching TV might accidentally derail your daily intake.
+Chia seeds, flaxseeds, and pumpkin seeds are another great avenue to get healthy fats. You can effortlessly stir them into your morning yogurt, a bowl of oatmeal, or blend them into a smoothie. Chia can even go savory; these [savory chia seed breakfast recipes](/savory-chia-seed-recipes-breakfast/) prove it doesn't have to live in pudding. The only catch here is portion control-because nuts and seeds are highly calorie-dense, eating half a jar of almonds while watching TV might accidentally derail your daily intake.
 ## The Versatile Avocado
 
-Avocados are mostly fat, and specifically, they are packed with the monounsaturated kind. They are foolproof. You can slice half an avocado onto some whole-grain toast, dice it up for a salad, blend it to make a smoothie creamier, or mash it up as a sandwich spread instead of mayo. 
+Avocados are mostly fat, and specifically, they are packed with the monounsaturated kind. They are foolproof. You can slice half an avocado onto some whole-grain toast, dice it up for a salad, blend it to make a smoothie creamier, or mash it up as a sandwich spread instead of mayo. If toast is your default, these [high fiber avocado toast variations](/high-fiber-avocado-toast-variations/) keep it from getting boring. 
 
 An avocado doesn't magically fix a terrible diet all by itself, but it is an incredibly versatile way to add healthy fat and rich texture to everyday meals.
 ## Fatty Fish

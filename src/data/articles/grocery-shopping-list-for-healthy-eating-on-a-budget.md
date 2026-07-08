@@ -64,7 +64,7 @@ The truth is that processed, heavily packaged convenience food is actually outra
 Your primary source of calories and dense nutrition should come from the cheapest aisles in the store: the dry bulk section. 
 
 *   **Brown Rice and Quinoa:** A massive five-pound bag of brown rice costs maybe four dollars and will provide the incredibly filling base for twenty different meals. 
-*   **Dry Beans and Lentils:** Stop buying cans if you're heavily restricting your budget. A bag of dry lentils costs nothing, provides massive amounts of protein and fiber, and absorbs whatever cheap spices you throw at it. 
+*   **Dry Beans and Lentils:** Stop buying cans if you're heavily restricting your budget. A bag of dry lentils costs nothing, provides massive amounts of protein and fiber, and absorbs whatever cheap spices you throw at it. Beans and lentils anchor our entire [plant-based protein sources guide](/plant-based-protein-sources-complete-guide/) for exactly this reason. 
 *   **Rolled Oats:** Ignore the sugary, individual oatmeal packets. Buy massive, plain cardboard tubs of old-fashioned rolled oats. They're heart-healthy, incredibly cheap, and last forever in your pantry. 
 
 ## The Produce Aisle Strategy
@@ -79,7 +79,7 @@ This is where people blow their budgets. They buy highly perishable, incredibly 
 
 If you're basing your meals off intensely cheap items like beans, rice, and cabbage, you must invest a tiny bit of your budget into making them taste phenomenal. This is the difference between eating like a budget master and eating like a depressed college student. 
 
-Building a powerful grocery shopping list for healthy eating on a budget is about changing your mindset. You're no longer buying "meals" in boxes; you're buying highly versatile, incredibly cheap raw ingredients to assemble yourself! And once the list itself is solid, there are more ways to [make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/) that don't involve clipping a single coupon.
+Building a powerful grocery shopping list for healthy eating on a budget is about changing your mindset. You're no longer buying "meals" in boxes; you're buying highly versatile, incredibly cheap raw ingredients to assemble yourself! Cooking for a household of one? The same strategy scales down; these [budget meal ideas for one](/budget-meal-ideas-for-one/) show what the list actually turns into. And once the list itself is solid, there are more ways to [make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/) that don't involve clipping a single coupon.
 
 ## Safety without a lecture
 

@@ -82,7 +82,7 @@ This isn't a slow cooker meal; this is for incredibly fast, sizzling stovetop di
 *   Massage the bag heavily so the oil and spices coat all the raw chicken and veggies perfectly. 
 *   **To cook:** Dump the frozen contents directly into a ripping hot cast-iron skillet. The ice immediately starts to melt and steam, the fajitas cook perfectly in roughly 15 minutes, and the sauce naturally thickens around the meat. 
 
-These freezer meal prep ideas for beginners eliminate the 5 PM dinner panic. You're outsourcing your stress to your freezer!
+These freezer meal prep ideas for beginners eliminate the 5 PM dinner panic. You're outsourcing your stress to your freezer! And it doesn't stop at dinner. A stash of [high-protein vegetarian breakfast burritos](/high-protein-vegetarian-breakfast-burritos-you-can-freeze/) handles mornings the same way, and [freezing overripe bananas for smoothies](/how-to-freeze-bananas-for-smoothies/) turns almost-trash into breakfast.
 
 ## Before you buy another gadget
 

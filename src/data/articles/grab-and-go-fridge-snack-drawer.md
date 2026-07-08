@@ -48,9 +48,9 @@ If you like dips, portion them out. Don't put a massive tub of hummus in the dra
 
 ## What to avoid
 
-There are a few things to avoid. Don't pre-cut apples or pears for the drawer unless you plan to eat them that same day. They brown quickly and get a weird, mealy texture, even if you try the lemon juice trick. Berries are also tricky because they mold fast if they get trapped in a humid container. It's usually better to keep berries separate and wash them as needed.
+There are a few things to avoid. Don't pre-cut apples or pears for the drawer unless you plan to eat them that same day. They brown quickly and get a weird, mealy texture, even if you try the lemon juice trick. Berries are also tricky because they mold fast if they get trapped in a humid container. It's usually better to keep berries separate and wash them as needed; there's a whole science to [when to wash berries so they last longer](/keep-berries-fresh-longer-when-to-wash/).
 
-If you have kids, this system is a lifesaver. You can point them to the drawer and tell them they can have anything inside. It gives them autonomy without you having to negotiate a snack treaty every afternoon. You can even mix in some fun things, like a small piece of dark chocolate or a handful of pretzels in a baggie, alongside the fruit and protein.
+If you have kids, this system is a lifesaver. You can point them to the drawer and tell them they can have anything inside. It gives them autonomy without you having to negotiate a snack treaty every afternoon. You can even mix in some fun things, like a small piece of dark chocolate or a handful of pretzels in a baggie, alongside the fruit and protein. That little chocolate stash pulls double duty after dinner too; there are more ideas like it in our [healthy sweet tooth snacks for night](/healthy-sweet-tooth-snack-ideas-night/).
 
 The key to keeping the drawer functional isn't over-prepping. If you try to prep two weeks of snacks, things will go bad. Aim for three or four days at a time. Spend ten minutes on a Sunday evening washing grapes and peeling eggs, and maybe another ten minutes on Wednesday to restock.
 

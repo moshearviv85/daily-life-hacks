@@ -81,7 +81,7 @@ Okay, so who else looks at an artichoke and thinks, "What even *is* that alien v
 
 &#x20;
 
-For real, the artichoke is kinda a big deal for gut health. We're talking about one of the highest-fiber vegetables out there. That's right, those fuzzy chokes and meaty leaves are just packed with prebiotics, which are like gourmet meals for the good bacteria hanging out in your gut. Your gut biome (that's all the tiny critters living in your digestive system, a whole city in there) seems to really like this stuff, and when they're happy, you might feel better, perhaps less bloated, and just generally more... balanced. It's not just about, you know, regularity; a healthy gut biome could have all these ripple effects on your whole vibe, potentially affecting everything from mood to immunity.
+For real, the artichoke is kinda a big deal for gut health. We're talking about one of the highest-fiber vegetables out there. That's right, those fuzzy chokes and meaty leaves are just packed with prebiotics, which are like gourmet meals for the good bacteria hanging out in your gut. Your gut biome (that's all the tiny critters living in your digestive system, a whole city in there) seems to really like this stuff, and when they're happy, you might feel better, perhaps less bloated, and just generally more... balanced. It's not just about, you know, regularity; a healthy gut biome could have all these ripple effects on your whole vibe, potentially affecting everything from mood to immunity. And if you want to go full gut-health adventurer, [natto, Japan's famously funky fermented soybeans](/natto-japanese-fermented-soybeans-gut-health/), plays for the same team.
 
 &#x20;
 
@@ -97,7 +97,7 @@ Choosing a good artichoke isn't rocket science, but there are a few pro-tips. Yo
 
 &#x20;
 
-The fiber in artichokes, particularly a type called inulin, is a fantastic prebiotic. What does that mean? It means it ferments in your large intestine, feeding those beneficial gut bacteria. When those good guys get enough to eat, they multiply, outcompeting the less desirable bacteria, which may help support a more diverse and robust gut flora. This can potentially lead to better digestion, improved nutrient absorption (wild, right?), and even a stronger immune system over time. Plus, all that fiber helps you feel full and satisfied, which is always a bonus when you're trying to eat well. It's just a win-win for your digestive system.
+The fiber in artichokes, particularly a type called inulin, is a fantastic prebiotic. What does that mean? It means it ferments in your large intestine, feeding those beneficial gut bacteria. When those good guys get enough to eat, they multiply, outcompeting the less desirable bacteria, which may help support a more diverse and robust gut flora. This can potentially lead to better digestion, improved nutrient absorption (wild, right?), and even a stronger immune system over time. Plus, all that fiber helps you feel full and satisfied, which is always a bonus when you're trying to eat well. It's just a win-win for your digestive system. Artichokes are only one entry on the list, though, so here's a rundown of [prebiotic foods beyond the buzzwords](/prebiotic-foods-beyond-the-buzzwords/) if you want more options.
 
 &#x20;
 

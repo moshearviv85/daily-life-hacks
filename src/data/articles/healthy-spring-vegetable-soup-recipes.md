@@ -52,7 +52,7 @@ Finding healthy spring vegetable soup recipes that don't taste like hot grass is
 
 ## Why seasonal greens matter for your routine
 
-The transition from heavy winter comfort food to lighter fare doesn't have to be a whole thing. Using spring vegetables like asparagus and leeks is a low-effort way to get more fiber into your family's diet without making a big production out of it. These vegetables are often more affordable this time of year, which is a nice bonus when the grocery bill is already climbing.
+The transition from heavy winter comfort food to lighter fare doesn't have to be a whole thing. Using spring vegetables like asparagus and leeks is a low-effort way to get more fiber into your family's diet without making a big production out of it. These vegetables are often more affordable this time of year, which is a nice bonus when the grocery bill is already climbing. We've made the [full case for keeping soup going into spring](/health-benefits-eating-soup-in-spring/) if you need more convincing.
 
 Leeks are the unsung heroes here. They provide a mild, onion-like base that doesn't overpower the delicate flavor of the greens. If you've never cooked with them, just make sure you wash them thoroughly after slicing, as dirt loves to hide in those layers. It's a small price to pay for a flavor that's much more sophisticated than a standard yellow onion.
 
@@ -74,4 +74,4 @@ This soup actually holds up pretty well in the fridge for a day or two, though t
 
 If you find yourself with an abundance of herbs like mint or basil that are about to go bad, throw them in. Spring cooking is mostly about using what's fresh before it turns into a sad puddle in your crisper drawer. There's no need to follow the measurements to the gram here, just keep the ratio of liquid to vegetables reasonable so it doesn't turn into a smoothie.
 
-Getting a decent dinner on the table shouldn't require a culinary degree or a two-hour window of free time. This soup is about as straightforward as it gets, using the stuff that's actually at the front of the produce aisle right now. It gets some greens into the rotation, keeps the dishes to a minimum, and lets you get on with your night without feeling weighed down by a heavy meal.
+Getting a decent dinner on the table shouldn't require a culinary degree or a two-hour window of free time. This soup is about as straightforward as it gets, using the stuff that's actually at the front of the produce aisle right now. It gets some greens into the rotation, keeps the dishes to a minimum, and lets you get on with your night without feeling weighed down by a heavy meal. When you want something with more heft in the bowl, this [fiber-rich cabbage soup](/fiber-rich-soup-for-weight-loss-cabbage/) fills the same weeknight slot.

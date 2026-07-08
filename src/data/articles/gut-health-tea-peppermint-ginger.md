@@ -85,7 +85,7 @@ This isn't rocket science, folks. It's so easy you'll wonder why you ever suffer
 7. Add lemon or sweetener if desired.
 8. Sip slowly. Really, take your time. This isn't a race.
 
-This specific gut health tea peppermint ginger concoction is designed to be consumed *after* a meal, particularly one that you suspect might cause some digestive drama. It's like a little preventative measure, a post-game victory lap for your stomach.
+This specific gut health tea peppermint ginger concoction is designed to be consumed *after* a meal, particularly one that you suspect might cause some digestive drama. It's like a little preventative measure, a post-game victory lap for your stomach. One practical note: fresh ginger keeps for weeks if you [store it the right way](/how-to-store-fresh-ginger/), so buy a big knob and stop letting it shrivel in the crisper.
 
 ## Other Handy Tips for Digestive Wellness (Beyond Tea)
 
@@ -94,3 +94,5 @@ Beyond chugging this fantastic tea, there are a few other little adjustments you
 ## Chew Your Food! Seriously.
 
 I know, I know. Obvious, right? But how many times do we scarf down lunch while scrolling through TikTok? Digestion actually starts in your mouth. Chewing breaks down food into smaller pieces, making it easier for your stomach enzymes to do their job. Plus, it slows you down, which can help help avoid swallowing excess air (less gas, yay!).
+
+And what you feed your gut matters as much as how you soothe it. If you want the food side of the equation, we broke down [prebiotic foods beyond the buzzwords](/prebiotic-foods-beyond-the-buzzwords/) in plain English.

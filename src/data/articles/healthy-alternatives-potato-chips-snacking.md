@@ -29,13 +29,13 @@ Finding healthy alternatives to potato chips for snacking doesn't mean you have 
 
 ## The high volume hero: Air-popped popcorn
 
-If you want to eat a giant bowl of something while watching TV, popcorn is the only logical choice. It's a whole grain, which means it has more fiber than a standard chip, and the volume-to-calorie ratio is unbeatable. You can eat three cups of air-popped popcorn for about 90 calories. Try doing that with chips and you'll be finished in four bites.
+If you want to eat a giant bowl of something while watching TV, popcorn is the only logical choice. It's a whole grain, which means it has more fiber than a standard chip, and the volume-to-calorie ratio is unbeatable. You can eat three cups of air-popped popcorn for about 90 calories. Try doing that with chips and you'll be finished in four bites. We ran the full [popcorn vs potato chips fiber comparison](/popcorn-vs-potato-chips-fiber-comparison/) if you want the receipts.
 
 The trick is to skip the movie theater butter that comes in those questionable plastic jugs. I use a light mist of olive oil or even a quick spray of lime juice to get seasonings to stick. Nutritional yeast is my go-to because it tastes vaguely like cheese but doesn't leave you feeling greasy. If you're feeling fancy, a dusting of smoked paprika or garlic powder works wonders, and these [healthy high fiber popcorn toppings](/high-fiber-popcorn-toppings-healthy/) go way beyond the salt shaker. Just don't blame me when you're still picking hulls out of your teeth an hour later.
 
 ## Beans that actually crunch
 
-Roasted chickpeas are the snack you didn't know you needed. When you roast them long enough, they lose that mushy texture and turn into little salt-bombs that actually have some protein and fiber. They're much sturdier than a potato chip, so you won't feel like you're eating air.
+Roasted chickpeas are the snack you didn't know you needed. When you roast them long enough, they lose that mushy texture and turn into little salt-bombs that actually have some protein and fiber. They're much sturdier than a potato chip, so you won't feel like you're eating air. Our [crispy roasted chickpeas recipe](/crispy-roasted-chickpeas-high-fiber-snack/) nails the texture every time.
 
 **Pro tip:** if you make them at home, dry them thoroughly with a paper towel before roasting. If they're even a little damp, they'll just steam and stay soft, which is a tragedy. Roast them at 400 degrees Fahrenheit for about 20 to 30 minutes until they're golden. They're a great way to use up that can of garbanzo beans that's been sitting in the back of your pantry since the Obama administration.
 

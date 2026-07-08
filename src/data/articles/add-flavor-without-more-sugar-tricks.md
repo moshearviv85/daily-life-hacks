@@ -36,7 +36,7 @@ This isn't a "quit sugar forever" lecture. I'm not here for that. It's about bui
 
 Cinnamon doesn't contain sugar. It's ground tree bark. But your brain has spent years connecting that warm, spicy smell to cinnamon rolls, apple pie, and French toast. So when you shake it onto plain oatmeal or black coffee, your brain fills in the gap. It assumes sweetness is coming, even though it isn't.
 
-That mental shortcut is genuinely useful. I dumped a heavy coat of cinnamon on my morning yogurt one day out of desperation and couldn't believe how much less I missed the honey drizzle. It also works on roasted sweet potatoes, sliced apples, and even butternut squash soup.
+That mental shortcut is genuinely useful. I dumped a heavy coat of cinnamon on my morning yogurt one day out of desperation and couldn't believe how much less I missed the honey drizzle. The same trick rescues plain granola, which matters because half the boxes at the store are candy in disguise. Here's [how to choose a granola that isn't secretly dessert](/how-to-choose-granola-not-dessert/) if you want to check yours. It also works on roasted sweet potatoes, sliced apples, and even butternut squash soup.
 
 If you want to get specific, Ceylon cinnamon has a slightly softer, more delicate flavor than the common Cassia type. Both work. Use whichever one you have.
 
@@ -54,7 +54,7 @@ Here's something that took me too long to learn. When a dish tastes flat, the an
 
 Roasted vegetables. Grain bowls. Grilled chicken. A simple soup. All of these get dramatically better with a hit of fresh citrus juice right before serving. But the real trick to add flavor without more sugar is the zest. The colored outer layer of the peel holds concentrated oils that deliver bright, intense flavor with zero tartness. Keep a microplane grater near your stove. Zest a lemon over pasta, over fish, over a pot of rice. It takes three seconds and changes the entire plate.
 
-Orange zest in a vinaigrette is another easy win. Lime zest on black beans. Grapefruit zest in a yogurt bowl. Once you start, you'll wonder why you ever reached for the sugar jar first.
+Orange zest in a vinaigrette is another easy win, and making your own matters more than you'd think once you see the [hidden sugars in popular summer salad dressings](/hidden-sugars-popular-summer-salad-dressings/). Lime zest on black beans. Grapefruit zest in a yogurt bowl. Once you start, you'll wonder why you ever reached for the sugar jar first.
 
 ## Cocoa powder for when you want chocolate, not candy
 

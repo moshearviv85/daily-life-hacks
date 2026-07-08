@@ -80,6 +80,8 @@ You keep the healthy breakfast routine from Week One, but now we're targeting yo
 
 A 30 day high fiber challenge meal plan works because it builds tiny, manageable sustainable habits instead of aggressive, sweeping restrictions!
 
+By weeks three and four, dinner becomes the target. Keep a few [quick 20-minute high fiber meals](/quick-20-minute-high-fiber-meals-for-busy-days/) in your back pocket for the nights when the challenge feels like a chore, and if you're leaning meatless, these [vegetarian high fiber dinners](/vegetarian-high-fiber-dinners-for-natural-relief/) will carry you through the back half of the month.
+
 ## How to read this without turning it into a personality
 
 Nutrition posts are easy to treat like a scoreboard. You are allowed to borrow one idea, try it for a week, and keep what fits. If something makes you feel worse, stop. If it makes meals easier, keep it. Small steady changes beat a dramatic reset you abandon by Thursday.

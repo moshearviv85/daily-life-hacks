@@ -36,7 +36,7 @@ That's the answer. Now the part the label doesn't mention.
 
 I stood in the cereal aisle for way too long last week. Two boxes, almost the same price, both screaming about fiber on the front. One said "good source of fiber." The other said "made with whole grains." I grabbed both, flipped them over, and one had 3 grams per serving. The other had 1 gram. Same aisle, same promises, very different math. Whole grain math stays messy outside the cereal aisle too. We ran the numbers on [oatmeal vs grits fiber content](/oatmeal-vs-grits-fiber-content/) and the two are not even close.
 
-Front-of-package claims are marketing. That's not cynical, that's just how packaging works. But the phrase "good source of fiber" is one of the more regulated ones, which means it actually has rules behind it. Knowing those rules can save you from buying granola bars that are basically cookies with a health halo.
+Front-of-package claims are marketing. That's not cynical, that's just how packaging works. But the phrase "good source of fiber" is one of the more regulated ones, which means it actually has rules behind it. Knowing those rules can save you from buying granola bars that are basically cookies with a health halo. Granola is the worst offender in the whole store, which is why we wrote a separate guide on [choosing a granola that isn't secretly dessert](/how-to-choose-granola-not-dessert/).
 
 ## What the FDA actually requires, claim by claim
 
@@ -70,7 +70,7 @@ Don't ignore the claim entirely. It's a reasonable starting filter. But treat it
 
 ## Foods that don't need the label (and why that matters)
 
-A can of black beans has about 8 grams of fiber per half-cup serving. A medium pear has around 6 grams. A cup of cooked lentils? Roughly 15 grams (USDA FoodData Central). None of these carry a flashy front label. They don't need one. They also happen to be the cheapest fiber in the store: when we priced it out in our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried beans and lentils crushed every packaged product with a claim on the front.
+A can of black beans has about 8 grams of fiber per half-cup serving. A medium pear has around 6 grams, and there are plenty more numbers like that in our [list of the best high fiber fruits](/best-high-fiber-fruits-for-weight-loss-list/). A cup of cooked lentils? Roughly 15 grams (USDA FoodData Central). None of these carry a flashy front label. They don't need one. They also happen to be the cheapest fiber in the store: when we priced it out in our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried beans and lentils crushed every packaged product with a claim on the front.
 
 The "good source of fiber" claim mostly appears on packaged foods competing for your attention. Whole foods like fruits, vegetables, legumes, and whole grains are naturally high in fiber without a marketing budget. My friend Jess once ditched a brand of "fiber enriched" white bread after realizing regular whole wheat from the bakery had more fiber and fewer ingredients.
 

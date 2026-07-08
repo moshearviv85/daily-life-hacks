@@ -88,6 +88,8 @@ When the salmon comes out of the air fryer - hot, crispy, and perfect - you toss
 
 These bites are dangerously snackable. You could probably eat them right out of the bowl with a toothpick.
 
-But if you want a real dinner, serve them over a bowl of warm rice. The extra glaze drips down into the grains and flavors the whole bowl. Add a side of roasted broccoli, steamed edamame, or a quick cucumber salad with rice vinegar, and you have a balanced, satisfying meal that took less time than watching an episode of a sitcom.
+But if you want a real dinner, serve them over a bowl of warm rice. The extra glaze drips down into the grains and flavors the whole bowl. Add a side of roasted broccoli, steamed edamame, or a quick cucumber salad with rice vinegar, and you have a balanced, satisfying meal that took less time than watching an episode of a sitcom. On nights when you'd rather cook the sides and the fish together, this [sheet pan salmon and vegetables dinner](/sheet-pan-salmon-and-vegetables-30-minutes/) handles the whole plate in 30 minutes.
+
+As a bonus, salmon happens to be one of the easiest [selenium-containing foods](/selenium-containing-foods-easy-ways/) to work into a regular week, so these bites are pulling double duty.
 
 Fast, healthy, and incredibly flavorful. That is the kind of weeknight cooking we can all get behind.

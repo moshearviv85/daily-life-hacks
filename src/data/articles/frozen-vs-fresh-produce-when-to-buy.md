@@ -57,9 +57,9 @@ For anything that's going into a hot pan, a pot, a casserole, or a blender, froz
 
 * **Berries for smoothies and oatmeal.** Cheaper, already prepped, available year-round. Frozen blueberries in February cost about a third of what fresh ones do.
 * **Spinach and kale for cooking.** You're going to wilt it anyway. Frozen spinach is already blanched and compact. Less prep, less waste.
-* **Stir-fry vegetable mixes.** Broccoli, snap peas, carrots, and edamame ready to dump in a pan. Not gourmet. Extremely convenient.
+* **Stir-fry vegetable mixes.** Broccoli, snap peas, carrots, and edamame ready to dump in a pan. Not gourmet. Extremely convenient, and the fastest route to a [high fiber stir fry](/high-fiber-stir-fry-vegetables/) on a weeknight.
 * **Peas and corn.** Frozen peas are often better than "fresh" peas from the store, which may have been sitting around for days. Frozen corn kernels are consistent and easy.
-* **Cauliflower rice.** If you're using it, frozen is already riced and ready to go.
+* **Cauliflower rice.** If you're using it, frozen is already riced and ready to go for [high fiber cauliflower rice recipes](/high-fiber-cauliflower-rice-recipes/).
 
 The pattern here is simple: if you're cooking it, frozen is fine. If you're eating it raw, go fresh.
 

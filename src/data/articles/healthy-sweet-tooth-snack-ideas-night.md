@@ -46,13 +46,13 @@ The goal isn't to starve yourself or pretend a stick of celery is a brownie. It'
 
 If you want something creamy that mimics the vibe of cheesecake or thick pudding, Greek yogurt is your best friend. It's packed with protein, which means you won't wake up an hour later looking for more food. The trick is to avoid the pre-sweetened "fruit on the bottom" cups that are basically dessert in disguise.
 
-Buy the plain stuff and add your own flavor. A teaspoon of honey and a dash of cinnamon goes a long way. If you're feeling fancy, stir in a spoonful of almond butter. The fat in the nut butter makes the snack feel much more indulgent than it actually is. It's a five-minute fix that solves the "I need something creamy" problem instantly.
+Buy the plain stuff and add your own flavor. A teaspoon of honey and a dash of cinnamon goes a long way. If you're feeling fancy, stir in a spoonful of almond butter, or swirl in some [homemade chia raspberry jam](/high-fiber-raspberry-jam-recipe-chia/) for something that tastes suspiciously like dessert. The fat in the nut butter makes the snack feel much more indulgent than it actually is. It's a five-minute fix that solves the "I need something creamy" problem instantly.
 
 ## Why dark chocolate is a tactical win
 
 I'm not going to tell you to eat a bowl of kale when you want chocolate. That's a lie, and we both know it. Instead, keep a bar of high-quality dark chocolate (at least 70% cocoa) in the back of the cupboard. Dark chocolate is richer and more intense, which usually means you're satisfied with one or two squares rather than the whole bar.
 
-**Pro tip:** Pair two squares of dark chocolate with a handful of walnuts or almonds. The crunch makes the snack last longer, and the combination of fats and fiber is thought to help slow down the absorption of sugar. It’s a grown-up way to handle a chocolate craving without the sugar crash that comes from a milk chocolate caramel bar.
+**Pro tip:** Pair two squares of dark chocolate with a handful of walnuts or almonds. The crunch makes the snack last longer, and the combination of fats and fiber is thought to help slow down the absorption of sugar. It’s a grown-up way to handle a chocolate craving without the sugar crash that comes from a milk chocolate caramel bar. And when the craving demands an actual baked good, [black bean brownies](/black-bean-brownies-hidden-fiber-dessert/) sound like a prank but genuinely deliver.
 
 ## Frozen fruit is the lazy person's sorbet
 

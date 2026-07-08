@@ -110,6 +110,8 @@ Then keep sweeteners simple. Fruit sweetness is usually enough when the blend is
 If you make a smoothie for tomorrow:
 * Prep a freezer bag with frozen fruit plus oats or chia
 * Add liquid fresh when you blend (it tastes brighter and the texture stays better)
+
+Overripe bananas belong in those bags too. [Freeze them the right way](/how-to-freeze-bananas-for-smoothies/) and you'll always have a creamy base waiting.
 ## Three “Blend Templates” You Can Reuse
 
 Use these as starting points and adjust based on what you have:
@@ -132,4 +134,4 @@ If you are sensitive to fiber, ramp up gradually instead of changing everything 
 
 ## Quick Clean-Up Hack
 
-Rinse the blender right after you pour. Then add warm water and a drop of soap, blend for 10 seconds, and rinse again. It sounds small, but it keeps smoothie mornings from turning into cleaning mornings.
+Rinse the blender right after you pour. Then add warm water and a drop of soap, blend for 10 seconds, and rinse again. It sounds small, but it keeps smoothie mornings from turning into cleaning mornings. And if the jar's already crusty, here's [how to clean a blender fast with zero scrubbing](/how-to-clean-blender-fast-no-scrub/).

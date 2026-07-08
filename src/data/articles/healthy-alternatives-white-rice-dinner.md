@@ -33,12 +33,12 @@ Quinoa is often considered a powerhouse because it contains all nine essential a
 ## Cauliflower rice for the high-volume eaters
 I was a skeptic about cauliflower rice for years. I don't like being lied to, and calling a pulverized vegetable "rice" feels like a lie. However, if you're looking to cut calories or just sneak a vegetable past someone who hates greens, this is the move.
 
-You can buy it frozen and pre-shredded now, which is the only way I'll do it. Grating a head of cauliflower by hand is a mess I don't need in my life. The secret is to sauté it in a dry pan first to get the moisture out. If you steam it in the bag, it turns into a soggy pile of sadness. A quick pan-fry with some garlic makes it a decent base for a stir-fry or a burrito bowl.
+You can buy it frozen and pre-shredded now, which is the only way I'll do it. Grating a head of cauliflower by hand is a mess I don't need in my life. The secret is to sauté it in a dry pan first to get the moisture out. If you steam it in the bag, it turns into a soggy pile of sadness. A quick pan-fry with some garlic makes it a decent base for a stir-fry or a burrito bowl. Take it one step further and you've got [cauliflower fried rice with eggs](/cauliflower-fried-rice-with-eggs/), which is a whole dinner on its own.
 
 ## Farro provides the chew white rice lacks
 Farro is an ancient grain that looks like a slightly plumped-up version of brown rice. It has a nutty flavor and a chewy texture that doesn't get mushy, even if you overcook it by a few minutes. This makes it very forgiving for those of us who get distracted by a laundry timer or a loud toddler.
 
-Because farro is dense, it's incredibly filling. It may contain more fiber than brown rice, which is a win for digestion. It does contain gluten, so it's not for everyone, but as a direct replacement in a soup or a grain bowl, it’s far superior to the standard white grain. Look for "pearled" farro at the store, it cooks in about 20 minutes instead of forty.
+Because farro is dense, it's incredibly filling. It may contain more fiber than brown rice, which is a win for digestion. It does contain gluten, so it's not for everyone, but as a direct replacement in a soup or a grain bowl, it’s far superior to the standard white grain. Look for "pearled" farro at the store, it cooks in about 20 minutes instead of forty. And if ancient grains turn out to be your thing, [amaranth, millet, and teff](/amaranth-millet-teff-beginner-cooking-guide/) are the next stops down that road.
 
 ## Barley isn't just for soup
 Most people only see barley at the bottom of a beef stew bowl, but it works perfectly well as a side dish. It's cheap, shelf-stable, and has a lower glycemic index than white rice, which might help keep energy levels from crashing after dinner.

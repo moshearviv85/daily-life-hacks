@@ -91,7 +91,7 @@ This is where most people get stuck. They cook the grain. They feel proud. Then 
 
 ### Use millet like rice
 
-Millet is basically your \"swap it in\" grain.
+Millet is basically your \"swap it in\" grain. If you've been hunting for [healthy alternatives to white rice at dinner](/healthy-alternatives-white-rice-dinner/), fluffy millet belongs on that list.
 
 * Burrito bowls with beans, salsa, and avocado
 * Stir fry leftovers over millet
@@ -101,7 +101,7 @@ If you cook millet fluffy, it plays well with anything saucy.
 
 ### Use teff like savory oatmeal
 
-Teff is great when you handle it like something you eat with a spoon.
+Teff is great when you handle it like something you eat with a spoon. If you already love [savory oatmeal bowls with eggs and avocado](/savory-oatmeal-bowls-with-eggs-and-avocado/), teff will feel like familiar territory.
 
 * Teff porridge with yogurt, berries, and a spoon of nut butter
 * Savory teff with olive oil, salt, pepper, and a fried egg

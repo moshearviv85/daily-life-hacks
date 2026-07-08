@@ -39,7 +39,7 @@ Parchment is the undisputed champion of baking. If you are making cookies, cakes
 
 It also breathes slightly better than a thick mat. This means the bottoms of your baked goods get beautifully golden brown without becoming overly greasy. When you bake a cake, lining the bottom of the tin with parchment guarantees it will pop out perfectly every single time.
 
-For messy savory roasting, parchment is brilliant. If you are roasting sticky sweet potatoes or a piece of salmon with a glaze, parchment handles the mess. When dinner is done, you throw the paper away and give the pan a quick rinse. No scrubbing required.
+For messy savory roasting, parchment is brilliant. If you are roasting sticky sweet potatoes or a piece of salmon with a glaze, parchment handles the mess. It is exactly why the paper goes down first for this [sheet pan ginger tofu and broccoli with sticky glaze](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/). When dinner is done, you throw the paper away and give the pan a quick rinse. No scrubbing required.
 
 The only downside to parchment is that it is a consumable. You have to keep buying it, and it has a temperature limit. Most parchment paper is safe up to 425 or 450 degrees Fahrenheit. If you stick it under the broiler, it will turn black and crumble.
 
@@ -65,7 +65,7 @@ But foil is fantastic for high-heat savory roasting. If you are broiling chicken
 
 Here is the cheat sheet to keep in your head.
 
-Use parchment paper for almost all baking. Cookies, cakes, breads, and anything where you want a nice browned bottom. Use it for roasting vegetables when you want easy cleanup and good browning.
+Use parchment paper for almost all baking. Cookies, cakes, breads, and anything where you want a nice browned bottom. Use it for roasting vegetables when you want easy cleanup and good browning, and definitely use it for this [sheet pan breakfast hash with eggs and sweet potatoes](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/), because nobody wants to scrub baked egg off bare metal.
 
 Use silicone mats for sticky jobs. Candy making, macarons, kneading dough, or freezing things that you need to peel off later.
 

@@ -46,7 +46,7 @@ When I take something out, I wipe it off the board. This prevents that awkward m
 Grouping food by "beef" or "chicken" is fine, but grouping by how you cook it is better for a busy household. I use large plastic bins to separate my freezer into functional zones. One bin is for "Slow Cooker Dumps," another is for "Instant Pot Ready," and a third is for "Heat and Eat" leftovers.
 
 **Slow Cooker Bin:** These are raw ingredients prepped in a bag that just need to be thawed and dumped into the crockpot.
-**Pre-Cooked Bin:** Think lasagna, casseroles, or cooked taco meat that just needs a microwave or oven session.
+**Pre-Cooked Bin:** Think lasagna, casseroles, or cooked taco meat that just needs a microwave or oven session. Most of my [cheap chicken casserole meals](/cheap-chicken-casserole-meals-large-families/) and batches of [budget ground beef dinners](/cheap-ground-beef-meals-large-families/) live in this bin.
 **Bulk Proteins:** This is where the raw meat lives, usually at the bottom or back since you don't grab it for a quick fix.
 
 This system helps when you are exhausted. If you know you have zero time to cook, you go straight to the "Heat and Eat" bin. You don't have to think; you just grab and go.

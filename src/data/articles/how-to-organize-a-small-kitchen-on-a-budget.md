@@ -61,7 +61,7 @@ This is the cheapest, most brilliant hack for the chaotic cabinet under your kit
 2. Install it horizontally inside the cabinet beneath your sink, placed as high up against the top edge as it will securely fit. 
 3. Now, take all of your spray bottles (glass cleaner, all-purpose spray, bleach) and hook their trigger handles directly over the tension rod. 
 
-Suddenly, you have freed up the entire bottom floor of that cabinet to store bulk sponges, trash bags, or dish soap bottles. You doubled the storage space instantly for three dollars. 
+Suddenly, you have freed up the entire bottom floor of that cabinet to store bulk sponges, trash bags, or dish soap bottles. You doubled the storage space instantly for three dollars. While you're down there, these [kitchen sink hacks](/kitchen-hacks-for-sink/) squeeze even more out of that awkward zone. 
 
 ## Strategy 2: Magnetize the Knives
 
@@ -97,7 +97,7 @@ If a tip saves an hour every time, it is rare. Most wins are five minutes here a
 
 ## Before you buy another gadget
 
-Most kitchen wins come from a sharp knife, a big cutting board, and a pan that does not warp. If a tool promises to replace skill, be skeptical. If it removes a step you hate every day, it might be worth it. These [kitchen tools that save time and money](/kitchen-tools-that-save-time-and-money/) actually pass that test.
+Most kitchen wins come from a sharp knife, [the right cutting board](/cutting-board-basics-which-to-use/), and a pan that does not warp. If a tool promises to replace skill, be skeptical. If it removes a step you hate every day, it might be worth it. These [kitchen tools that save time and money](/kitchen-tools-that-save-time-and-money/) actually pass that test.
 
 ## When a hack fails, check the boring variables
 

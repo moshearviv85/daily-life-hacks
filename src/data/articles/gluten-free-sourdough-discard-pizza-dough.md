@@ -50,13 +50,13 @@ faq:
 ---
 I used to feel a strange, low-grade guilt every time I poured half my gluten free starter down the drain. It felt like throwing away a science project I had actually managed to keep alive. If you are like me, you started a GF sourdough journey because you wanted better bread, but now you just have a jar in the fridge that demands to be fed like a very needy, very beige pet.
 
-This gluten free sourdough discard pizza dough is the best way to stop the waste. It doesn't require a 12-hour ferment or a degree in chemistry. You get that distinct sourdough tang and a crust that actually bends without snapping in half.
+This gluten free sourdough discard pizza dough is the best way to stop the waste. It doesn't require a 12-hour ferment or a degree in chemistry. You get that distinct sourdough tang and a crust that actually bends without snapping in half. And if gluten isn't your problem, the regular [no-yeast sourdough discard pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/) works the same magic.
 
 ## Why use discard in gluten free pizza?
 
 Gluten free flour blends can sometimes taste a bit flat or dusty. The fermented discard adds a depth of flavor that mimics a slow-risen traditional dough. It also helps with the texture. Since we aren't dealing with gluten, we need every bit of structural help we can get, and the acidity in the discard may help the starches in your flour blend set more effectively.
 
-Most people think sourdough means waiting all day. By adding a little instant yeast to this gluten free sourdough discard pizza dough, we get the flavor of the old starter with the speed of a standard weeknight meal. It is the ultimate shortcut for people who have better things to do than watch dough not rise.
+Most people think sourdough means waiting all day. By adding a little instant yeast to this gluten free sourdough discard pizza dough, we get the flavor of the old starter with the speed of a standard weeknight meal. It is the ultimate shortcut for people who have better things to do than watch dough not rise. It's the same idea behind my [same-day sourdough pizza dough](/how-to-make-sourdough-pizza-dough-same-day/), just adapted for GF flours.
 
 ## Handling the sticky dough situation
 

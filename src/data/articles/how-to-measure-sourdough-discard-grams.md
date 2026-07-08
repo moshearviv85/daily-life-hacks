@@ -36,11 +36,11 @@ Using a scale eliminates the "is it stirred or not?" debate entirely. A gram is 
 
 The biggest mistake people make is trying to pour discard into a measuring cup and then onto a scale. Don't do that. You are just creating more work for yourself. Instead, place your mixing bowl directly on the digital scale and hit the "tare" or "zero" button.
 
-Once the scale reads zero, pour your discard directly from the jar into the bowl until you hit the number of grams your recipe requires. If you go over by a few grams, just scoop a little back out with a spoon. This method keeps the sticky mess contained to one bowl and one jar. If you are making something like discard pizza dough, this precision ensures the dough isn't too wet to handle.
+Once the scale reads zero, pour your discard directly from the jar into the bowl until you hit the number of grams your recipe requires. If you go over by a few grams, just scoop a little back out with a spoon. This method keeps the sticky mess contained to one bowl and one jar. If you are making something like [discard pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/), this precision ensures the dough isn't too wet to handle.
 
 ## Converting your old recipes to grams
 
-Most of those classic Pinterest recipes for sourdough discard use cups because it feels less intimidating. If you have a favorite recipe that calls for a cup of discard, you can safely assume it wants about 240 to 250 grams. For a half cup, aim for 120 to 125 grams. 
+Most of those classic Pinterest recipes for sourdough discard use cups because it feels less intimidating. If you have a favorite recipe that calls for a cup of discard, you can safely assume it wants about 240 to 250 grams. For a half cup, aim for 120 to 125 grams. And if the jar is filling up faster than you can bake, these [easy sourdough discard recipes](/easy-sourdough-discard-recipes-beginners/) will help you work through the backlog. 
 
 It might feel like an extra step to pull out the scale, but it actually saves time because you aren't guessing if the batter looks "right" or adding extra flour at the last minute. Most digital scales toggle between units with one button, so keep yours set to grams for anything involving flour or starter. It is the standard for bakers for a reason: it works.
 

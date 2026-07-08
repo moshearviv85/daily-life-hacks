@@ -69,13 +69,13 @@ If you're a fan of thicker dressings but want to avoid the heavy mayo-slop of a 
 **Yogurt Tip:** If the dressing is too thick to pour, add a teaspoon of water at a time until it reaches the right consistency. 
 **Flavor Hack:** Add a handful of chopped cilantro or mint. It brightens the whole thing up and makes it feel like you actually tried.
 
-This version is great on a "Kachumber" style salad, which is basically just chopped cucumbers, tomatoes, and onions. It’s the kind of salad that doesn't feel like a chore to eat, especially on a Tuesday night when the kids are complaining about "green things" on their plates.
+This version is great on a "Kachumber" style salad, which is basically just chopped cucumbers, tomatoes, and onions. It’s the kind of salad that doesn't feel like a chore to eat, especially on a Tuesday night when the kids are complaining about "green things" on their plates. It also slots right into these [simple Indian veg lunch recipes](/simple-lunch-recipes-indian-veg/) if you want the full spread.
 
 ## How to use these dressings for meal prep
 
 I am not a "meal prep Sunday" person who spends six hours in the kitchen, but I can manage to shake a jar. These healthy homemade Indian salad dressing recipes are perfect for prepping ahead because the flavors actually get better after a day or two. The spices have time to bloom in the oil, making the whole thing taste more cohesive.
 
-Store them in glass jars rather than plastic. Turmeric will turn your Tupperware a permanent shade of neon orange that no amount of scrubbing will fix. Also, keep in mind that olive oil can solidify in a cold fridge. If your dressing looks like a candle when you take it out, just let it sit on the counter for five minutes or run the jar under warm water for a second. It'll liquefy again, and you’ll be back in business.
+Store them in glass jars rather than plastic. Turmeric will turn your Tupperware a permanent shade of neon orange that no amount of scrubbing will fix. Also, keep in mind that olive oil can solidify in a cold fridge. If your dressing looks like a candle when you take it out, just let it sit on the counter for five minutes or run the jar under warm water for a second. It'll liquefy again, and you’ll be back in business. For the full rundown on shelf life, here's [how to store homemade salad dressing safely](/how-to-store-homemade-salad-dressing-safely/).
 
 The beauty of these recipes is that they aren't precious. If you like more heat, throw in some red chili flakes. If you hate cilantro, leave it out. You're the one eating it, so make it taste like something you actually want to put in your mouth rather than a health requirement you're trying to check off the list.
 

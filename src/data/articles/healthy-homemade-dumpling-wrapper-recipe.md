@@ -53,7 +53,7 @@ I've found that whole wheat pastry flour is the sweet spot. It's finely ground, 
 
 The biggest mistake people make is skipping the rest period. You knead the dough, it feels tough, and you try to force it into a circle with a rolling pin. The dough fights back. You get frustrated. You order pizza. 
 
-To avoid the pizza-ordering spiral, let the dough sit for at least 30 minutes. This isn't just a suggestion; it's the science of gluten. While it sits, the flour fully hydrates and the protein bonds relax. You'll know it's ready when you poke it and the indentation stays mostly put rather than springing back instantly. Use this time to chop your ginger or finally empty the dishwasher.
+To avoid the pizza-ordering spiral, let the dough sit for at least 30 minutes. This isn't just a suggestion; it's the science of gluten. While it sits, the flour fully hydrates and the protein bonds relax. You'll know it's ready when you poke it and the indentation stays mostly put rather than springing back instantly. Use this time to chop your ginger (which lasts way longer if you [store it properly](/how-to-store-fresh-ginger/)) or finally empty the dishwasher.
 
 ## Rolling and shaping without the stress
 
@@ -67,4 +67,4 @@ If you aren't the type of person who wants to spend an hour rolling dough right 
 
 **Freezing:** Lay the wrappers out on a parchment-lined baking sheet so they aren't touching. Freeze them for an hour until they're solid, then toss them into a freezer bag. They'll stay good for a couple of months. When you're ready to use them, let them thaw in the fridge for a few hours. Just don't try to peel them apart while they're still frozen, or you'll end up with a pile of flour shards and a bad mood.
 
-Making your own wrappers is one of those kitchen tasks that feels like a big deal until you do it once and realize it’s mostly just mindless repetition. It won't turn your kitchen into a five-star restaurant overnight, but it does mean you know exactly what's going into your family's dinner. Once you get the hang of the rolling motion, you might actually find it a bit therapeutic, or at the very least, a good excuse to ignore your phone for twenty minutes.
+Making your own wrappers is one of those kitchen tasks that feels like a big deal until you do it once and realize it’s mostly just mindless repetition. It won't turn your kitchen into a five-star restaurant overnight, but it does mean you know exactly what's going into your family's dinner. Once you get the hang of the rolling motion, you might actually find it a bit therapeutic, or at the very least, a good excuse to ignore your phone for twenty minutes. And on nights when even flour and water feels like too much, [chicken veggie lettuce wraps with peanut sauce](/chicken-veggie-lettuce-wraps-peanut-sauce/) scratch a similar itch with zero rolling.

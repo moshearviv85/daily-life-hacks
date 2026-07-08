@@ -67,7 +67,7 @@ The goal is to get in the kitchen, execute the plan, and get out. Set a timer fo
 ### Step 1: The Massive Carb Base
 You need a foundational carbohydrate that's cheap, filling, and incredibly versatile. Put this on the stove or in the rice cooker the literal second you walk into the kitchen. 
 *   **The Action:** Cook three cups of brown rice, a massive pot of quinoa, or boil an entire box of whole wheat pasta. Don't season it heavily; just use salt. 
-*   **The Storage:** Once it cools, dump the entire batch into a very large airtight container. This will sit in your fridge and act as the base for almost every single meal this week. 
+*   **The Storage:** Once it cools, dump the entire batch into a very large airtight container. This will sit in your fridge and act as the base for almost every single meal this week. Here's [how to properly store cooked grains for meal prep](/how-to-properly-store-cooked-grains-for-meal-prep/) so that batch stays safe and doesn't dry into a brick. 
 
 ### Step 2: The Two-Pan Veggie Roast
 Washing and chopping vegetables on a Tuesday night is miserable. Doing it all at once on a Sunday is efficient. 
@@ -90,4 +90,4 @@ You just spent 90 minutes working hard. The payoff is that from Monday to Friday
 *   **Tuesday (The Quick Stir-Fry):** Take some rice, toss in the roasted sweet potatoes and peppers, add a handful of chopped tofu or chicken, and douse it in the peanut sauce. Heat it until hot. 
 *   **Wednesday (The Wrap Trick):** Tired of eating out of a bowl? Take a large whole wheat tortilla. Spread some hummus inside. Add exactly the same chicken and roasted vegetables from Tuesday, wrap it tightly, and eat it cold. It tastes different. 
 
-The brilliance of a solid batch cooking for beginners weekly guide is that it removes all decision fatigue. You never have to stare blankly into the fridge at 7:00 PM wondering what to make, because the ingredients are already perfectly cooked and staring right back at you. You just combine them, heat them, and enjoy your evening.
+The brilliance of a solid batch cooking for beginners weekly guide is that it removes all decision fatigue. You never have to stare blankly into the fridge at 7:00 PM wondering what to make, because the ingredients are already perfectly cooked and staring right back at you. You just combine them, heat them, and enjoy your evening. Once the Sunday sprint feels automatic, these [high fiber meal prep ideas for busy weeks](/high-fiber-meal-prep-ideas-for-busy-weeks-2026/) slot straight into the same system.

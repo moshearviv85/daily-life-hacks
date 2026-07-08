@@ -48,7 +48,7 @@ faq:
 ---
 The average Tuesday morning usually involves me staring into the fridge, wondering if a third cup of coffee counts as a food group. I love a breakfast sandwich, but the drive-thru versions usually leave me feeling like I need a nap by 10:00 AM. If you are tired of the same rubbery egg on a white roll, it is time to look at what else is in your crisper drawer.
 
-Making a better breakfast isn't about some massive lifestyle overhaul. It is about realizing that healthy egg sandwich add ins can be as simple as grabbing the bag of spinach before it turns into green slime in the back of the fridge. You want something that tastes like a real meal but won't make you feel heavy before you've even started your commute.
+Making a better breakfast isn't about some massive lifestyle overhaul. It is about realizing that healthy egg sandwich add ins can be as simple as grabbing the bag of spinach before it turns into green slime in the back of the fridge. You want something that tastes like a real meal but won't make you feel heavy before you've even started your commute. We ran the [full macronutrient breakdown on a healthy egg sandwich](/macronutrient-breakdown-healthy-egg-sandwich/), and it genuinely holds up.
 
 ## Green stuff that isn't just decoration
 
@@ -82,4 +82,4 @@ If your sandwich tastes like cardboard, you probably forgot the seasoning. A pla
 
 **Everything Bagel Seasoning:** This stuff is basically cheating. It gives you the flavor of the bagel without the density of an actual bagel. Sprinkle it directly onto the egg while it is still in the pan so the seeds stick to the whites.
 
-You don't need a culinary degree or an hour of prep time to stop eating boring breakfasts. Most of these additions take less than sixty seconds to pull from the fridge and throw onto a plate. Start with one or two and see what actually sticks, because at the end of the day, the best healthy sandwich is the one you actually look forward to eating.
+You don't need a culinary degree or an hour of prep time to stop eating boring breakfasts. Most of these additions take less than sixty seconds to pull from the fridge and throw onto a plate. The bread matters too, so if you want a sturdier base, we ranked the [best high protein breads for sandwiches](/best-high-protein-breads-healthy-sandwiches/). Start with one or two and see what actually sticks, because at the end of the day, the best healthy sandwich is the one you actually look forward to eating.
