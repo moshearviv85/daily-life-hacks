@@ -450,6 +450,7 @@ Rules:
 
 # PIN SPECIFICATIONS
 - title: CTA-driven headline. 65 character ceiling. Specific, concrete nouns. Scroll-stopping. NOT generic food blog energy. Each title must be unique across the 4 pins.
+- ALIGNMENT (HARD RULE): a reader must be able to guess the article's actual subject from the title alone. Never build a hook around a DIFFERENT food or topic ("Avocados are bad, try this instead" for a ricotta article = banned bait). Never use generic titles that could belong to any article ("20 Minutes From Fridge to Table" = banned; name the dish). Every number in a title or description must appear in the article itself - inventing stats is banned.
 - prompt: photography brief + overlay-text instruction at the END. The overlay instruction must read: Render the text "<exact title>" ... The exact title must match the title field character-for-character.
 - alt: one factual sentence describing what is literally in the photograph. 30 to 200 chars. No marketing language.
 - Image prompts must show food, dishes, cookware, ingredients, counters, tables, or serving scenes only. Do not include people, hands, fingers, arms, kids, faces, or body parts.
