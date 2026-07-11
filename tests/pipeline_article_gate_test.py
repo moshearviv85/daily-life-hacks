@@ -66,7 +66,7 @@ def test_pipeline_produce_reports_failed_topics_before_final_failure():
 def test_pipeline_produce_marks_topics_produced_only_after_staging_deploy():
     workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
 
-    deploy_idx = workflow.index("- name: Deploy staging to Cloudflare Pages")
+    deploy_idx = workflow.index("- name: Wait for staging Pages deploy")
     produced_idx = workflow.index("- name: Mark topics as produced")
     sync_idx = workflow.index("- name: Sync pipeline status to D1")
 
@@ -79,16 +79,17 @@ def test_pipeline_produce_marks_topics_produced_only_after_staging_deploy():
 
 
 def test_staging_generation_workflows_build_before_push():
-    for name in ("pipeline-produce.yml", "pipeline-daily.yml"):
-        workflow = _workflow(name)
+    workflow = _workflow("pipeline-produce.yml")
 
-        verify_idx = workflow.index("Verify generated staging artifacts")
-        build_idx = workflow.index("Build staging site")
-        commit_idx = workflow.index("Commit and push generated files")
-        deploy_idx = workflow.index("Deploy staging to Cloudflare Pages")
+    verify_idx = workflow.index("Verify generated staging artifacts")
+    build_idx = workflow.index("Build staging site")
+    commit_idx = workflow.index("Commit and push generated files")
+    wait_idx = workflow.index("Wait for staging Pages deploy")
 
-        assert verify_idx < build_idx < commit_idx < deploy_idx
-        assert "pipeline-data/reports/" in workflow
+    assert verify_idx < build_idx < commit_idx < wait_idx
+    assert "npm run build:checked" in workflow
+    assert "pipeline-data/reports/" in workflow
+    assert "wrangler-action" not in workflow
 
 
 def test_pipeline_discover_is_bounded_and_reported():
@@ -112,35 +113,53 @@ def test_pipeline_discover_is_bounded_and_reported():
     assert "GITHUB_STEP_SUMMARY" in workflow
 
 
-def test_pipeline_daily_tracks_produced_and_failed_topics_separately():
-    workflow = (ROOT / ".github" / "workflows" / "pipeline-daily.yml").read_text(encoding="utf-8")
-
-    assert "pipeline-data/produced-topics.json" in workflow
-    assert "pipeline-data/failed-topics.json" in workflow
-    assert "/tmp/produced-topic-ids.json" in workflow
-    assert "/tmp/failed-topic-ids.json" in workflow
-    assert "Mark failed topics as rejected" in workflow
-    assert "IDS=$(cat /tmp/produced-topic-ids.json)" in workflow
-    assert "--selected-topics pipeline-data/produced-topics.json" in workflow
-    assert "Fail if no articles were produced" in workflow
+def test_pipeline_daily_archived_out_of_active_workflows():
+    active = ROOT / ".github" / "workflows" / "pipeline-daily.yml"
+    archived = ROOT / "archive" / "github-workflows" / "pipeline-daily.yml"
+    assert not active.exists()
+    assert archived.exists()
+    assert "pipeline-produce-staging" in archived.read_text(encoding="utf-8")
 
 
 def test_staging_pipeline_workflows_use_staging_dashboard_api():
-    for name in ("pipeline-produce.yml", "pipeline-daily.yml", "pipeline-article-assets.yml", "pipeline-discover.yml"):
-        workflow = (ROOT / ".github" / "workflows" / name).read_text(encoding="utf-8")
+    for name in ("pipeline-produce.yml", "pipeline-article-assets.yml", "pipeline-discover.yml"):
+        workflow = _workflow(name)
 
         assert 'PIPELINE_DASHBOARD_BASE_URL: "https://staging.daily-life-hacks.pages.dev"' in workflow
         assert '--base-url "$PIPELINE_DASHBOARD_BASE_URL"' in workflow
-        if name in ("pipeline-produce.yml", "pipeline-daily.yml"):
+        if name == "pipeline-produce.yml":
             assert '${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics' in workflow
 
 
 def test_staging_pipeline_workflows_do_not_sync_pipeline_to_production_api():
-    for name in ("pipeline-produce.yml", "pipeline-daily.yml", "pipeline-article-assets.yml", "pipeline-discover.yml"):
-        workflow = (ROOT / ".github" / "workflows" / name).read_text(encoding="utf-8")
+    for name in ("pipeline-produce.yml", "pipeline-article-assets.yml", "pipeline-discover.yml"):
+        workflow = _workflow(name)
 
         assert "https://www.daily-life-hacks.com/api/pipeline-topics" not in workflow
         assert "sync_pipeline_to_d1.py --key" not in workflow
+
+
+def test_publish_articles_schedule_disabled():
+    workflow = _workflow("publish-articles.yml")
+    assert "schedule:" not in workflow
+    assert "workflow_dispatch" in workflow
+
+
+def test_promote_does_not_double_deploy_with_wrangler():
+    workflow = _workflow("promote-staging.yml")
+    assert "wrangler-action" not in workflow
+    assert "Wait for production Cloudflare deploy" in workflow
+    assert "git push origin main" in workflow
+
+
+def test_article_assets_build_before_push_and_no_wrangler():
+    workflow = _workflow("pipeline-article-assets.yml")
+    build_idx = workflow.index("Build staging site")
+    commit_idx = workflow.index("Commit and push generated assets")
+    wait_idx = workflow.index("Wait for staging Pages deploy")
+    assert build_idx < commit_idx < wait_idx
+    assert "npm run build:checked" in workflow
+    assert "wrangler-action" not in workflow
 
 
 def test_run_pipeline_article_only_exits_before_briefs_and_images():

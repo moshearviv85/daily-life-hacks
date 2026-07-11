@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: promote-staging-to-production
@@ -18,7 +19,7 @@ concurrency:
 jobs:
   promote:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Require explicit confirmation
         run: |
@@ -54,20 +55,32 @@ jobs:
           git merge --no-edit origin/staging
           git push origin main
 
-      - name: Build production artifact
-        run: npm run build
-
-      - name: Build Pages Functions
+      # CP3.1: do not wrangler-deploy here — push to main triggers deploy-cloudflare-pages.yml
+      - name: Wait for production Cloudflare deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          rm -rf worker-out dist/_worker.js
-          npx wrangler pages functions build functions --outdir=worker-out --output-routes-path=dist/_routes.json --project-directory=. --build-output-directory=dist
-          cp worker-out/index.js dist/_worker.js
-
-      - name: Publish production to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy dist --project-name=daily-life-hacks --branch=main
+          set -e
+          echo "Waiting for deploy-cloudflare-pages.yml on main..."
+          for i in $(seq 1 40); do
+            ROW=$(gh run list --workflow=deploy-cloudflare-pages.yml --branch=main --limit=1 \
+              --json databaseId,status,conclusion,createdAt,displayTitle \
+              --jq '.[0] | "\(.databaseId)|\(.status)|\(.conclusion // "null")|\(.createdAt)"')
+            echo "[$i] $ROW"
+            STATUS=$(echo "$ROW" | cut -d'|' -f2)
+            CONCLUSION=$(echo "$ROW" | cut -d'|' -f3)
+            if [ "$STATUS" = "completed" ] && [ "$CONCLUSION" = "success" ]; then
+              echo "Deploy succeeded."
+              exit 0
+            fi
+            if [ "$STATUS" = "completed" ] && [ "$CONCLUSION" != "success" ]; then
+              echo "Deploy finished with conclusion=$CONCLUSION"
+              exit 1
+            fi
+            sleep 15
+          done
+          echo "Timed out waiting for production deploy"
+          exit 1
 
       - name: Sync production pipeline metadata
         env:

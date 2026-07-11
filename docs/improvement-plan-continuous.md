@@ -12,8 +12,8 @@
 | Checkpoint | Status |
 |------------|--------|
 | CP1 Stabilization & SEO Cleanup | **DONE** (2026-07-11) |
-| CP2 Pipeline & Routing Automation | **Phase B done** (canonical-only build + runtime 301) — staging/prod smoke pending |
-| CP3 Dashboard Refactor | Pending |
+| CP2 Pipeline & Routing Automation | **DONE** (Phase A+B on main) |
+| CP3 Pipeline Reliability & Dashboard | **CP3.1 done locally** — awaiting push approval; next CP3.2 |
 | CP4 Workflows Unification | Pending |
 | CP5 Growth & Pinterest | Pending |
 

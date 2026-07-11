@@ -784,9 +784,14 @@ const BUILD = {
             <option value="3">3 articles</option>
           </select>
           <button class="btn btn-sm" onclick="triggerPipeline('produce')" id="btn-produce">Generate to Staging</button>
-          <button class="btn btn-sm" onclick="triggerPipeline('publish')" id="btn-publish">Legacy Publish to Main</button>
+          <button class="btn btn-sm" onclick="triggerPipeline('promote_staging')" id="btn-promote" title="Merge staging → main after review">Promote Staging</button>
         </div>
       </div>
+      <details style="margin-bottom:.75rem;padding:.55rem .75rem;border-radius:6px;background:#fff7ed;border:1px solid #fdba74;font-size:.78rem;color:var(--muted)">
+        <summary style="cursor:pointer;font-weight:600;color:#9a3412">Legacy tools (avoid unless draining old queue)</summary>
+        <p style="margin:.5rem 0">Preferred path: Generate to Staging → review → Promote. Legacy Publish writes directly to production via <code>articles_schedule</code>.</p>
+        <button class="btn btn-sm" onclick="triggerPipeline('publish')" id="btn-publish">Legacy Publish to Main</button>
+      </details>
       <div style="padding:.55rem .75rem;border-radius:6px;background:#f8fafc;border:1px solid var(--border);font-size:.78rem;color:var(--muted);margin-bottom:.75rem">
         Find Topics pulls GSC opportunity queries and Google Autocomplete seed expansions, then runs deterministic filters and an LLM semantic duplicate check against existing site and pipeline topics before adding a small review queue to <strong style="color:var(--text-color)">staging D1</strong>. Generate creates full staging packages: article, hero image, support image, and four pin images. Selected topics can be queued together and processed one after another. Pinterest remains manual.
       </div>

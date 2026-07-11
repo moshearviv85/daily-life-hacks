@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 env:
   PYTHONUNBUFFERED: "1"
@@ -113,6 +114,17 @@ jobs:
           python scripts/NEW_PIPELINE_2026-05-08/sync_pin_destinations.py \
             --article-slug "${{ inputs.slug }}"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install site dependencies
+        run: npm ci
+
+      - name: Build staging site
+        run: npm run build:checked
+
       - name: Commit and push generated assets
         run: |
           git add src/data/articles/ public/images/ pipeline-data/ \
@@ -126,28 +138,29 @@ jobs:
             git push origin HEAD:${PIPELINE_TARGET_BRANCH}
           fi
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
-
-      - name: Install site dependencies
-        run: npm ci
-
-      - name: Build staging site
-        run: npm run build
-
-      - name: Build Pages Functions
+      - name: Wait for staging Pages deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          rm -rf worker-out dist/_worker.js
-          npx wrangler pages functions build functions --outdir=worker-out --output-routes-path=dist/_routes.json --project-directory=. --build-output-directory=dist
-          cp worker-out/index.js dist/_worker.js
-
-      - name: Deploy staging to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy dist --project-name=daily-life-hacks --branch=staging
+          set -e
+          echo "Waiting for deploy-cloudflare-pages.yml on staging..."
+          for i in $(seq 1 40); do
+            ROW=$(gh run list --workflow=deploy-cloudflare-pages.yml --branch=staging --limit=1 \
+              --json status,conclusion \
+              --jq '.[0] | "\(.status)|\(.conclusion // "null")"')
+            echo "[$i] $ROW"
+            STATUS=$(echo "$ROW" | cut -d'|' -f1)
+            CONCLUSION=$(echo "$ROW" | cut -d'|' -f2)
+            if [ "$STATUS" = "completed" ] && [ "$CONCLUSION" = "success" ]; then
+              exit 0
+            fi
+            if [ "$STATUS" = "completed" ] && [ "$CONCLUSION" != "success" ]; then
+              exit 1
+            fi
+            sleep 15
+          done
+          echo "Timed out waiting for staging deploy"
+          exit 1
 
       - name: Sync pipeline status to D1
         env:

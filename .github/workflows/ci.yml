@@ -1,0 +1,40 @@
+name: CI
+
+# CP3.1: fail closed on PRs before merge to main/staging.
+on:
+  pull_request:
+    branches: [main, staging]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-checked:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and verify routing
+        run: npm run build:checked
+
+      - name: Canonical routing unit tests
+        run: node --test tests/canonical-routing.test.mjs
+
+      - name: Pipeline workflow contract tests
+        run: |
+          pip install pytest
+          python -m pytest tests/pipeline_article_gate_test.py -q
