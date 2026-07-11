@@ -8,12 +8,21 @@ import {
   onRequestPost as onSubscribePost,
 } from "../functions/api/subscribe.js";
 
-function makeAssets(existingPaths = new Set()) {
+function makeAssets(existingPaths = new Set(), { pinDestinations = {} } = {}) {
   const calls = [];
   return {
     calls,
     async fetch(request) {
       const url = new URL(request.url);
+
+      // Registry lookup used by Checkpoint 2 pin → 301 routing.
+      if (url.pathname === "/data/pin-destinations-flat.json") {
+        return new Response(JSON.stringify(pinDestinations), {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        });
+      }
+
       calls.push({ url: url.toString(), method: request.method });
       if (existingPaths.has(url.pathname)) {
         return new Response(
@@ -36,6 +45,8 @@ function makeAssets(existingPaths = new Set()) {
 }
 
 function makeContext(url, env = {}) {
+  // Avoid cross-test pollution from the worker's in-memory destination cache.
+  globalThis.__PIN_DEST_MAP = null;
   return {
     request: new Request(url),
     env,
@@ -322,7 +333,31 @@ test("static assets on non-www only redirect host and do not append a slash", as
   assert.deepEqual(assets.calls, []);
 });
 
-test("router variants remain noindex proxy pages instead of canonical redirects", async () => {
+test("pin destinations from Git registry 301 to canonical before KV/static", async () => {
+  // Reset module cache between tests if previous empty map was cached.
+  globalThis.__PIN_DEST_MAP = null;
+
+  const assets = makeAssets(new Set(["/demo-article/"]), {
+    pinDestinations: { "pin-variant": "demo-article" },
+  });
+
+  const response = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/pin-variant/", {
+      ASSETS: assets,
+    }),
+  );
+
+  assert.equal(response.status, 301);
+  assert.equal(
+    response.headers.get("location"),
+    "https://www.daily-life-hacks.com/demo-article/",
+  );
+  assert.deepEqual(assets.calls, []);
+});
+
+test("legacy KV internal pin routes 301 to canonical instead of noindex proxy", async () => {
+  globalThis.__PIN_DEST_MAP = null;
+
   const assets = makeAssets(new Set(["/demo-article/"]));
   const routesKv = {
     async get(key) {
@@ -338,11 +373,27 @@ test("router variants remain noindex proxy pages instead of canonical redirects"
     }),
   );
 
-  assert.equal(response.status, 200);
-  assert.equal(response.headers.get("x-robots-tag"), "noindex, follow");
-  assert.equal(response.headers.get("location"), null);
-  assert.match(await response.text(), /<meta name="robots" content="noindex, follow">/);
-  assert.deepEqual(assets.calls, [
-    { url: "https://www.daily-life-hacks.com/demo-article/", method: "GET" },
-  ]);
+  assert.equal(response.status, 301);
+  assert.equal(
+    response.headers.get("location"),
+    "https://www.daily-life-hacks.com/demo-article/",
+  );
+  assert.equal(response.headers.get("x-robots-tag"), null);
+});
+
+test("versioned -vN pin URLs 301 to canonical article", async () => {
+  globalThis.__PIN_DEST_MAP = null;
+
+  const assets = makeAssets(new Set(["/demo-article/"]));
+  const response = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/demo-article-v2/", {
+      ASSETS: assets,
+    }),
+  );
+
+  assert.equal(response.status, 301);
+  assert.equal(
+    response.headers.get("location"),
+    "https://www.daily-life-hacks.com/demo-article/",
+  );
 });

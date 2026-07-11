@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T09:21:40.104Z",
+  "generatedAt": "2026-07-11T10:00:59.456Z",
   "checkpoint": "CP1-baseline",
   "policy": "docs/pin-routing-policy.md",
   "targetModel": "pin-destination-301-to-canonical",

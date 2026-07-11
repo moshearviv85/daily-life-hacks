@@ -113,8 +113,8 @@ function main() {
     },
     notes: [
       "Orphan aliases often include legacy best-/guide-/tips- patterns outside router-mapping.",
-      "CP1 freeze: do not manually grow slug-aliases.json.",
-      "CP2 will migrate to pin-destinations.json + runtime 301.",
+      "CP2 Phase B: aliases are runtime 301 destinations, not Astro HTML pages.",
+      "Orphans remain in pin-destinations.json until traffic review (M2/M3).",
     ],
   };
 

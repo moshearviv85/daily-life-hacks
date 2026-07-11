@@ -1,0 +1,4336 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-11T09:58:46.894Z",
+  "articles": {
+    "30-day-high-fiber-challenge-meal-plan": {
+      "canonical": "30-day-high-fiber-challenge-meal-plan",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "30-day-high-fiber-challenge-meal-plan-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "30-day-high-fiber-challenge-meal-plan-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "best-30-day-high-fiber-challenge-meal-plan",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "add-flavor-without-more-sugar-tricks": {
+      "canonical": "add-flavor-without-more-sugar-tricks",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "add-flavor-without-more-sugar",
+          "title": "Add Flavor Without More Sugar Using Pantry Staples",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:29:23"
+        },
+        {
+          "id": "v4",
+          "url_slug": "build-flavor-cinnamon-vanilla-citrus",
+          "title": "Build Flavor With Cinnamon, Vanilla, Citrus, or Cocoa",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:29:23"
+        },
+        {
+          "id": "v1",
+          "url_slug": "i-put-honey-everything-until",
+          "title": "I Put Honey in Everything Until a Friend Called Me Out",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:29:23"
+        },
+        {
+          "id": "v2",
+          "url_slug": "shake-cinnamon-into-black-coffee",
+          "title": "Shake Cinnamon Into Black Coffee Instead of Sugar",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:29:23"
+        }
+      ]
+    },
+    "aldi-shopping-hacks-large-family-meals": {
+      "canonical": "aldi-shopping-hacks-large-family-meals",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "aldi-shopping-guide-maximize-savings",
+          "title": "Aldi Shopping Guide: Maximize Savings on Bulk Buys",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:17:03"
+        },
+        {
+          "id": "v2",
+          "url_slug": "feed-family-less-aldi-secrets",
+          "title": "Feed Your Family of 5+ for Less: Aldi Secrets Revealed",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:17:03"
+        },
+        {
+          "id": "v1",
+          "url_slug": "slash-grocery-bill-aldi-hacks",
+          "title": "Slash Your Grocery Bill: Aldi Hacks for Big Families",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:17:03"
+        },
+        {
+          "id": "v4",
+          "url_slug": "smart-shopping-aldi-tips-weekly",
+          "title": "Smart Shopping: Aldi Tips for Weekly Family Meals",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:17:03"
+        }
+      ]
+    },
+    "artichoke-recipes-for-gut-health": {
+      "canonical": "artichoke-recipes-for-gut-health",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "are-artichokes-good-for-digestion",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "artichoke-recipes-for-gut-health-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "best-artichoke-recipes-for-gut-health",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "is-artichoke-good-for-your-stomach",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "balanced-breakfast-that-keeps-you-full": {
+      "canonical": "balanced-breakfast-that-keeps-you-full",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "build-balanced-plate-protein-carbs",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "quick-macro-swaps-healthier-weeknight",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "stop-pm-crash-smart-family",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "understanding-macros-balanced-family-dinner",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "batch-cooking-for-beginners-weekly-guide": {
+      "canonical": "batch-cooking-for-beginners-weekly-guide",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "batch-cooking-for-beginners-weekly-guide-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "batch-cooking-for-beginners-weekly-guide-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "best-batch-cooking-for-beginners-weekly-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "best-high-protein-breads-healthy-sandwiches": {
+      "canonical": "best-high-protein-breads-healthy-sandwiches",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "healthy-lunch-best-protein-breads",
+          "title": "Healthy Lunch: Best Protein Breads Revealed",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:33"
+        },
+        {
+          "id": "v1",
+          "url_slug": "sprouted-grain-bread-protein-powerhouse",
+          "title": "Sprouted Grain Bread: Your Protein Powerhouse",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:33"
+        },
+        {
+          "id": "v3",
+          "url_slug": "stop-hunger-choose-protein-bread",
+          "title": "Stop Hunger: Choose This Protein Bread",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:33"
+        },
+        {
+          "id": "v2",
+          "url_slug": "upgrade-sandwiches-high-protein-bread",
+          "title": "Upgrade Sandwiches: High Protein Bread Choices",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:33"
+        }
+      ]
+    },
+    "best-low-cost-protein-sources-large-families": {
+      "canonical": "best-low-cost-protein-sources-large-families",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "budget-friendly-protein-keep-family",
+          "title": "Budget-Friendly Protein: Keep Your Family Fed For Less",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v2",
+          "url_slug": "family-eats-delicious-high-protein",
+          "title": "Family Eats: Delicious High Protein Dinners on a Dime",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "save-big-penny-pinching-proteins",
+          "title": "Save Big: 21 Penny-Pinching Proteins for Family Meals",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "stretch-dollar-smart-protein-swaps",
+          "title": "Stretch Your Dollar: Smart Protein Swaps for Busy Parents",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "best-way-to-store-avocados-to-stop-browning": {
+      "canonical": "best-way-to-store-avocados-to-stop-browning",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "how-to-store-avocados-to-keep-them-fresh",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-store-avocados-to-prevent-browning",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-store-cut-avocado-without-it-turning-brown",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "what-is-the-best-way-to-keep-avocados-from-browning",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "big-flavor-less-salt-citrus-herbs-umami-swaps": {
+      "canonical": "big-flavor-less-salt-citrus-herbs-umami-swaps",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "acid-trick-makes-everything-taste",
+          "title": "The Acid Trick That Makes Everything Taste Like a Restaurant Meal",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:29:56"
+        },
+        {
+          "id": "v3",
+          "url_slug": "big-flavor-less-salt-pantry",
+          "title": "Big Flavor With Less Salt: 5 Pantry Swaps That Actually Work",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:29:56"
+        },
+        {
+          "id": "v4",
+          "url_slug": "food-doesn-t-need-much",
+          "title": "Your Food Doesn't Need That Much Salt. Here's What to Add Instead",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:29:56"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-settling-bland-food-just",
+          "title": "Stop Settling for Bland Food Just Because You're Cutting Salt",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:29:56"
+        }
+      ]
+    },
+    "black-bean-brownies-hidden-fiber-dessert": {
+      "canonical": "black-bean-brownies-hidden-fiber-dessert",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-black-bean-brownies-hidden-fiber-dessert",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "black-bean-brownies-hidden-fiber-dessert-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "black-bean-brownies-hidden-fiber-dessert-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "camping-meal-hacks-large-families": {
+      "canonical": "camping-meal-hacks-large-families",
+      "destinations": [
+        {
+          "id": "legacy-5",
+          "url_slug": "busy-parents-quick-dinner-solutions",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-6",
+          "url_slug": "cook-crowd-smart-prep-tactics",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v4",
+          "url_slug": "easy-camping-breakfasts-feed-crowd",
+          "title": "Easy Camping Breakfasts: Feed a Crowd Fast",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v2",
+          "url_slug": "family-camping-meal-prep-skip",
+          "title": "Family Camping Meal Prep: Skip the Dishes, Have Fun",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "hack-camping-food-cook-ahead",
+          "title": "Hack Your Camping Food: Cook Ahead and Chill Out",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "legacy-7",
+          "url_slug": "large-family-meal-ideas-save",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-8",
+          "url_slug": "meal-prep-tips-large-families",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v3",
+          "url_slug": "no-mess-camping-dinners-keep",
+          "title": "No-Mess Camping Dinners: Keep Your Cooler Organized",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "cauliflower-fried-rice-with-eggs": {
+      "canonical": "cauliflower-fried-rice-with-eggs",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "cauliflower-fried-rice-doesn-t",
+          "title": "Cauliflower Fried Rice That Doesn't Taste Like Sad Diet Food",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:07"
+        },
+        {
+          "id": "v4",
+          "url_slug": "frozen-cauliflower-rice-dinner-minutes",
+          "title": "Frozen Cauliflower Rice to Dinner in 20 Minutes",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:07"
+        },
+        {
+          "id": "v3",
+          "url_slug": "minutes-empty-fridge-dinner",
+          "title": "20 Minutes From Empty Fridge to Dinner",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:07"
+        },
+        {
+          "id": "v2",
+          "url_slug": "secret-good-cauliflower-fried-rice",
+          "title": "The Secret to Good Cauliflower Fried Rice? Enough Garlic",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:07"
+        }
+      ]
+    },
+    "cheap-chicken-casserole-meals-large-families": {
+      "canonical": "cheap-chicken-casserole-meals-large-families",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "budget-chicken-casseroles-big-families",
+          "title": "5 Budget Chicken Casseroles for Big Families",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:39"
+        },
+        {
+          "id": "v3",
+          "url_slug": "easy-dinner-solutions-large-households",
+          "title": "Easy Dinner Solutions for Large Households",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:39"
+        },
+        {
+          "id": "v4",
+          "url_slug": "hearty-chicken-dinners-won-t",
+          "title": "Hearty Chicken Dinners That Won't Break the Bank",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:39"
+        },
+        {
+          "id": "v2",
+          "url_slug": "stretch-chicken-further-family-meals",
+          "title": "Stretch Chicken Further in Family Meals",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:39"
+        }
+      ]
+    },
+    "cheap-crockpot-meals-large-families": {
+      "canonical": "cheap-crockpot-meals-large-families",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "budget-dinner-ideas-slow-cooker",
+          "title": "Budget Dinner Ideas: Slow Cooker Edition",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "legacy-5",
+          "url_slug": "cool-kitchen-easy-dinner-summer",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v1",
+          "url_slug": "feed-family-big-meals-small",
+          "title": "Feed Your Family Big Meals For Small Money",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "legacy-6",
+          "url_slug": "outsider-cooking-move-crockpot-outdoors",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-7",
+          "url_slug": "prep-dinner-minutes-summer-slow",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v3",
+          "url_slug": "save-big-groceries-these-recipes",
+          "title": "Save Big on Groceries with These 5 Recipes",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "stretch-dollar-easy-crockpot-dinners",
+          "title": "Stretch Your Dollar: Easy Crockpot Dinners",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "legacy-8",
+          "url_slug": "time-saving-hacks-summer-crockpot-meals",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "cheap-ground-beef-meals-large-families": {
+      "canonical": "cheap-ground-beef-meals-large-families",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "budget-friendly-meals-maximize-ground",
+          "title": "Budget-Friendly Meals: Maximize Your Ground Beef",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "cheap-eats-families-bulk-up",
+          "title": "Cheap Eats for Families: Bulk Up Ground Beef Dishes",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "feed-crowd-genius-ground-beef",
+          "title": "Feed a Crowd: Genius Ground Beef Fillers",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stretch-ground-beef-people-budget",
+          "title": "Stretch Ground Beef for 8 People on a Budget",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        }
+      ]
+    },
+    "chia-pudding-variations-for-breakfast": {
+      "canonical": "chia-pudding-variations-for-breakfast",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "can-you-eat-chia-seed-pudding-for-breakfast",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "chia-pudding-recipes-for-breakfast",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-much-chia-pudding-for-breakfast",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "is-chia-seed-pudding-enough-for-breakfast",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-5",
+          "url_slug": "quick-breakfast-upgrade-savory-chia",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "chicken-veggie-lettuce-wraps-peanut-sauce": {
+      "canonical": "chicken-veggie-lettuce-wraps-peanut-sauce",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "chicken-lettuce-wraps-won-t",
+          "title": "Chicken Lettuce Wraps That Won't Leave You Sleepy",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:13"
+        },
+        {
+          "id": "v4",
+          "url_slug": "fridge-table-minutes",
+          "title": "From Fridge to Table in 20 Minutes",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:13"
+        },
+        {
+          "id": "v2",
+          "url_slug": "minute-dinner-actually-tastes-good",
+          "title": "The 20-Minute Dinner That Actually Tastes Good",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:13"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-ordering-takeout-7pm-make",
+          "title": "Stop Ordering Takeout at 7pm - Make These Instead",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:13"
+        }
+      ]
+    },
+    "comparing-fiber-content-different-pizza-crusts": {
+      "canonical": "comparing-fiber-content-different-pizza-crusts",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "boost-pizza-night-high-fiber",
+          "title": "Boost Your Pizza Night: High Fiber Crusts Explored",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:46"
+        },
+        {
+          "id": "v2",
+          "url_slug": "fiber-filled-pizza-make-meal",
+          "title": "Fiber-Filled Pizza: Make Your Meal Healthier",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:46"
+        },
+        {
+          "id": "v3",
+          "url_slug": "stop-eating-empty-carbs-choose",
+          "title": "Stop Eating Empty Carbs: Choose Better Pizza",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:46"
+        },
+        {
+          "id": "v4",
+          "url_slug": "truth-about-pizza-crusts-fiber",
+          "title": "The Truth About Pizza Crusts and Fiber",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:46"
+        }
+      ]
+    },
+    "cooking-for-picky-adults-simple-options": {
+      "canonical": "cooking-for-picky-adults-simple-options",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "actually-cook-you-re-only",
+          "title": "What to Actually Cook When You're the Only Adventurous Eater",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:52"
+        },
+        {
+          "id": "v3",
+          "url_slug": "cook-you-want-without-making",
+          "title": "Cook What You Want Without Making Two Separate Dinners",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:52"
+        },
+        {
+          "id": "v2",
+          "url_slug": "food-rule-solves-dinner-picky",
+          "title": "The 15-Food Rule That Solves Dinner for Picky Eaters",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:52"
+        },
+        {
+          "id": "v1",
+          "url_slug": "mistake-most-people-make-cooking",
+          "title": "The Mistake Most People Make Cooking for a Non-Adventurous Eater",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:30:52"
+        }
+      ]
+    },
+    "cooking-oils-smoke-points-best-uses": {
+      "canonical": "cooking-oils-smoke-points-best-uses",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "high-heat-here-s-which",
+          "title": "High Heat? Here's Which Oil Actually Survives",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:31:42"
+        },
+        {
+          "id": "v1",
+          "url_slug": "i-used-evoo-stir-fry",
+          "title": "I Used EVOO for Stir-Fry Until My Kitchen Filled With Smoke",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:31:42"
+        },
+        {
+          "id": "v3",
+          "url_slug": "no-more-bitter-food-smoke",
+          "title": "No More Bitter Food or Smoke-Filled Kitchens",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:31:42"
+        },
+        {
+          "id": "v4",
+          "url_slug": "only-cooking-oils-you-need",
+          "title": "The Only 4 Cooking Oils You Need for Everything",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:31:42"
+        }
+      ]
+    },
+    "costco-rotisserie-chicken-meal-ideas-dinner": {
+      "canonical": "costco-rotisserie-chicken-meal-ideas-dinner",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "busy-night-solution-costco-chicken",
+          "title": "Busy Night Solution: Costco Chicken Recipes",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "cheap-easy-costco-chicken-ideas",
+          "title": "Cheap and Easy: 5 Costco Chicken Ideas",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v1",
+          "url_slug": "costco-chicken-dinners-easy-weeknight",
+          "title": "5 Costco Chicken Dinners: Easy Weeknight Meals",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "legacy-5",
+          "url_slug": "easy-weeknight-meals-one-costco",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-6",
+          "url_slug": "meal-prep-hacks-costco-rotisserie-chicken",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-7",
+          "url_slug": "never-struggle-shredding-chicken-again",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-8",
+          "url_slug": "rotisserie-chicken-nutrition-facts-sodium-content",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-9",
+          "url_slug": "rotisserie-chicken-salt-bomb",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-10",
+          "url_slug": "smart-swaps-lower-sodium-chicken",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-11",
+          "url_slug": "stop-wasting-costco-rotisserie-chicken",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v2",
+          "url_slug": "transform-rotisserie-chicken-quick-dinner",
+          "title": "Transform Rotisserie Chicken: Quick Dinner Hacks",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "legacy-12",
+          "url_slug": "uncover-hidden-salts-rotisserie-chicken",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "cottage-cheese-vs-greek-yogurt-protein-uses": {
+      "canonical": "cottage-cheese-vs-greek-yogurt-protein-uses",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "one-s-salty-one-s",
+          "title": "One's Salty, One's Tart. Here's How to Pick.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:32:38"
+        },
+        {
+          "id": "v4",
+          "url_slug": "real-difference-between-cottage-cheese",
+          "title": "The Real Difference Between Cottage Cheese and Greek Yogurt",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:32:38"
+        },
+        {
+          "id": "v3",
+          "url_slug": "same-protein-only-one-works",
+          "title": "Same Protein, But Only One Works in Smoothies",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:32:38"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-buying-wrong-one-recipes",
+          "title": "Stop Buying the Wrong One for Your Recipes",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:32:38"
+        }
+      ]
+    },
+    "creamy-mushroom-barley-risotto-hands-off": {
+      "canonical": "creamy-mushroom-barley-risotto-hands-off",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "barley-hands-off-secret-creamy",
+          "title": "Barley Is the Hands-Off Secret to Creamy Risotto",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:33:31"
+        },
+        {
+          "id": "v3",
+          "url_slug": "creamy-mushroom-barley-risotto-without",
+          "title": "Creamy Mushroom Barley Risotto Without the Kitchen Workout",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:33:31"
+        },
+        {
+          "id": "v4",
+          "url_slug": "minute-active-cook-time-risotto",
+          "title": "The 10-Minute Active Cook Time Risotto Hack",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:33:31"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-stirring-mushrooms-second-they",
+          "title": "Stop Stirring Mushrooms the Second They Hit the Pan",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:33:31"
+        }
+      ]
+    },
+    "creamy-tomato-orzo-white-beans-one-pot": {
+      "canonical": "creamy-tomato-orzo-white-beans-one-pot",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "creamy-tomato-orzo-white-beans",
+          "title": "Creamy Tomato Orzo With White Beans (One Pot)",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:33:56"
+        },
+        {
+          "id": "v4",
+          "url_slug": "minute-dinner-uses-you-already",
+          "title": "15-Minute Dinner That Uses What You Already Have",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:33:56"
+        },
+        {
+          "id": "v1",
+          "url_slug": "one-pot-no-takeout-creamy",
+          "title": "One Pot, No Takeout: Creamy Tomato Orzo in 15 Minutes",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:33:56"
+        },
+        {
+          "id": "v2",
+          "url_slug": "secret-creamy-orzo-let-it",
+          "title": "The Secret to Creamy Orzo? Let It Get Starchy",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:33:56"
+        }
+      ]
+    },
+    "crispy-smashed-potato-salad-dijon-herbs": {
+      "canonical": "crispy-smashed-potato-salad-dijon-herbs",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "crispy-smashed-potato-salad-actually",
+          "title": "This Crispy Smashed Potato Salad Actually Tastes Good",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:35:47"
+        },
+        {
+          "id": "v2",
+          "url_slug": "smash-then-roast-crispy-potato",
+          "title": "Smash Then Roast for Crispy Potato Salad Edges",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:35:47"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-making-sad-mushy-potato",
+          "title": "Stop Making Sad Mushy Potato Salad",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:35:47"
+        },
+        {
+          "id": "v4",
+          "url_slug": "warm-potato-salad-dijon-summer",
+          "title": "Warm Potato Salad With Dijon Is the Summer Side You Need",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:35:47"
+        }
+      ]
+    },
+    "cucumber-edamame-salad-sesame": {
+      "canonical": "cucumber-edamame-salad-sesame",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "cucumber-salad-actually-holds-its",
+          "title": "This Cucumber Salad Actually Holds Its Dressing",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:04"
+        },
+        {
+          "id": "v1",
+          "url_slug": "cucumber-salad-watery-because-you",
+          "title": "Your Cucumber Salad Is Watery Because You Forgot This",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:04"
+        },
+        {
+          "id": "v4",
+          "url_slug": "minute-salad-pairs-everything",
+          "title": "This 5-Minute Salad Pairs With Everything",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:04"
+        },
+        {
+          "id": "v2",
+          "url_slug": "salt-cucumbers-first-accept-watery",
+          "title": "Salt Your Cucumbers First or Accept Watery Salad",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:04"
+        }
+      ]
+    },
+    "cutting-board-basics-which-to-use": {
+      "canonical": "cutting-board-basics-which-to-use",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "cutting-board-basics-which-one",
+          "title": "Cutting Board Basics: Which One to Use for What",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:29"
+        },
+        {
+          "id": "v4",
+          "url_slug": "one-board-meat-one-veggies",
+          "title": "One Board for Meat, One for Veggies - Your Cheat Sheet",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:29"
+        },
+        {
+          "id": "v3",
+          "url_slug": "only-board-actually-keeps-knives",
+          "title": "The Only Board That Actually Keeps Your Knives Sharp",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:29"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-ruining-knives-wrong-cutting",
+          "title": "Stop Ruining Your Knives With the Wrong Cutting Board",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:29"
+        }
+      ]
+    },
+    "easy-cold-summer-pasta-salad-potlucks": {
+      "canonical": "easy-cold-summer-pasta-salad-potlucks",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "avoid-mushy-pasta-secret-perfect",
+          "title": "Avoid Mushy Pasta: The Secret to Perfect Cold Salad",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "legacy-5",
+          "url_slug": "chilled-pasta-helps-avoid-sugar",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v3",
+          "url_slug": "easy-cold-pasta-salad-recipe",
+          "title": "Easy Cold Pasta Salad Recipe for Crowd Pleasing",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "legacy-6",
+          "url_slug": "nutritional-benefits-cold-pasta-salad-resistant-starch",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v2",
+          "url_slug": "quick-potluck-pasta-salad-you",
+          "title": "Quick Potluck Pasta Salad You Can Make in 20 Minutes",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "legacy-7",
+          "url_slug": "secret-benefit-cold-pasta-revealed",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v1",
+          "url_slug": "summer-pasta-salad-perfect-next",
+          "title": "Summer Pasta Salad: Perfect for Your Next Potluck",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        }
+      ]
+    },
+    "easy-high-fiber-breakfast-ideas-for-gut-health": {
+      "canonical": "easy-high-fiber-breakfast-ideas-for-gut-health",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-easy-high-fiber-breakfast-ideas-for-gut-health",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "easy-high-fiber-breakfast-ideas-for-gut-health-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "easy-high-fiber-breakfast-ideas-for-gut-health-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "easy-sandwich-bread-recipe-beginners": {
+      "canonical": "easy-sandwich-bread-recipe-beginners",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "bake-first-bread-loaf-today",
+          "title": "Bake Your First Bread Loaf Today (Its So Easy!)",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:52"
+        },
+        {
+          "id": "v3",
+          "url_slug": "beginner-bread-recipe-perfect-loaf",
+          "title": "Beginner Bread Recipe: Perfect Loaf Guaranteed",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:52"
+        },
+        {
+          "id": "v4",
+          "url_slug": "homemade-bread-hours-no-fancy",
+          "title": "Homemade Bread in 2 Hours (No Fancy Ingredients)",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:52"
+        },
+        {
+          "id": "v2",
+          "url_slug": "soft-sandwich-bread-recipe-no",
+          "title": "Soft Sandwich Bread Recipe (No Stand Mixer Needed)",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:18:52"
+        }
+      ]
+    },
+    "easy-sourdough-discard-pizza-dough-no-yeast": {
+      "canonical": "easy-sourdough-discard-pizza-dough-no-yeast",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "fast-pizza-dough-without-yeast",
+          "title": "Fast Pizza Dough Without Yeast: 30 Minute Recipe",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v3",
+          "url_slug": "no-wait-pizza-dough-sourdough",
+          "title": "No-Wait Pizza Dough: Sourdough Tang Without the Fuss",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "quick-sourdough-pizza-skip-hour",
+          "title": "Quick Sourdough Pizza: Skip the 6 Hour Proofing",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "sourdough-discard-pizza-crust-under",
+          "title": "Sourdough Discard Pizza Crust in Under an Hour",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        }
+      ]
+    },
+    "easy-sourdough-discard-recipes-beginners": {
+      "canonical": "easy-sourdough-discard-recipes-beginners",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "easy-sourdough-discard-muffins-beginners",
+          "title": "Easy Sourdough Discard Muffins for Beginners",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:03"
+        },
+        {
+          "id": "legacy-5",
+          "url_slug": "health-benefits-sourdough-discard-explained",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-6",
+          "url_slug": "sourdough-discard-actually-healthy",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-7",
+          "url_slug": "sourdough-discard-nutrition-facts-health-benefits",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-8",
+          "url_slug": "sourdough-discard-nutrition-it-s",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v1",
+          "url_slug": "sourdough-discard-recipes-ready-minutes",
+          "title": "5 Sourdough Discard Recipes Ready in 20 Minutes",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:03"
+        },
+        {
+          "id": "v4",
+          "url_slug": "stop-wasting-sourdough-discard-bake",
+          "title": "Stop Wasting Sourdough Discard, Bake This",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:03"
+        },
+        {
+          "id": "v2",
+          "url_slug": "turn-sourdough-discard-into-delicious",
+          "title": "Turn Sourdough Discard into Delicious Crackers",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:03"
+        }
+      ]
+    },
+    "eat-healthy-on-a-budget-complete-playbook": {
+      "canonical": "eat-healthy-on-a-budget-complete-playbook",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "budget-grocery-playbook-foods-ranked",
+          "title": "The Budget Grocery Playbook: 49 Foods Ranked by Protein",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:35"
+        },
+        {
+          "id": "v3",
+          "url_slug": "i-ate-better-week-than",
+          "title": "I Ate Better on $60/Week Than I Did Spending More",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:35"
+        },
+        {
+          "id": "v2",
+          "url_slug": "shop-dry-goods-aisle-first",
+          "title": "Shop the Dry Goods Aisle First",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:35"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-assuming-healthy-eating-has",
+          "title": "Stop Assuming Healthy Eating Has to Be Expensive",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:35"
+        }
+      ]
+    },
+    "farro-lunch-bowl-roasted-vegetables-lemon-tahini": {
+      "canonical": "farro-lunch-bowl-roasted-vegetables-lemon-tahini",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "farro-bowls-last-days-fridge",
+          "title": "Farro Bowls Last 5 Days in the Fridge",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:59"
+        },
+        {
+          "id": "v3",
+          "url_slug": "lemon-tahini-sauce-fixes-everything",
+          "title": "This Lemon Tahini Sauce Fixes Everything",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:59"
+        },
+        {
+          "id": "v2",
+          "url_slug": "secret-rinsing-farro-before-you",
+          "title": "The Secret Is Rinsing Your Farro Before You Cook It",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:59"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-making-meal-prep-lunches",
+          "title": "Stop Making Meal Prep Lunches That Feel Like Punishment",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:36:59"
+        }
+      ]
+    },
+    "fiber-per-dollar-cheapest-high-fiber-foods": {
+      "canonical": "fiber-per-dollar-cheapest-high-fiber-foods",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "buy-beans-oats-skip-expensive",
+          "title": "Buy Beans and Oats, Skip the Expensive Berries",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:37:56"
+        },
+        {
+          "id": "v2",
+          "url_slug": "get-grams-fiber-just",
+          "title": "How to Get 84 Grams of Fiber for Just $1",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:37:56"
+        },
+        {
+          "id": "v3",
+          "url_slug": "grocery-store-s-biggest-fiber",
+          "title": "The Grocery Store's Biggest Fiber Rip-Off",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:37:56"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-wasting-34x-more-money",
+          "title": "Stop Wasting 34x More Money on the Same Fiber",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:37:56"
+        }
+      ]
+    },
+    "fiber-rich-soup-for-weight-loss-cabbage": {
+      "canonical": "fiber-rich-soup-for-weight-loss-cabbage",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-fiber-rich-soup-for-weight-loss-cabbage",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "fiber-rich-soup-for-weight-loss-cabbage-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "fiber-rich-soup-for-weight-loss-cabbage-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "fix-oversalted-soup-sauce-rice": {
+      "canonical": "fix-oversalted-soup-sauce-rice",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "acid-trick-fixes-oversalted-soup",
+          "title": "The Acid Trick That Fixes Oversalted Soup Every Time",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "rice-soup-sauce-actually-works",
+          "title": "Rice, Soup, Sauce - What Actually Works for Each",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "save-oversalted-rice-one-simple",
+          "title": "Save Your Oversalted Rice With One Simple Step",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "you-didn-t-ruin-soup",
+          "title": "You Didn't Ruin Your Soup - Here's How to Fix It",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:11"
+        }
+      ]
+    },
+    "freezer-inventory-simple-system": {
+      "canonical": "freezer-inventory-simple-system",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "brown-ice-block-freezer-money",
+          "title": "That Brown Ice Block in Your Freezer Is Money You're Throwing Away",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:25"
+        },
+        {
+          "id": "v3",
+          "url_slug": "eat-frozen-soup-instead-wondering",
+          "title": "Eat Your Frozen Soup Instead of Wondering What It Is",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:25"
+        },
+        {
+          "id": "v2",
+          "url_slug": "label-it-lose-it-second",
+          "title": "Label It or Lose It: The 30-Second System That Saves Food",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:25"
+        },
+        {
+          "id": "v4",
+          "url_slug": "minute-tuesday-night-habit-saves",
+          "title": "The 10-Minute Tuesday Night Habit That Saves Money",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:25"
+        }
+      ]
+    },
+    "freezer-meal-prep-ideas-for-beginners": {
+      "canonical": "freezer-meal-prep-ideas-for-beginners",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "easy-meal-prep-ideas-to-freeze",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "freezer-meal-prep-ideas-for-beginners-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "freezer-meal-prep-ideas-for-toddlers",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "freezer-meal-prep-ideas-kid-friendly",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "freezer-organization-tips-large-family-meals": {
+      "canonical": "freezer-organization-tips-large-family-meals",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "bulk-meal-prep-freeze-flat",
+          "title": "Bulk Meal Prep: Freeze Flat for Easy Storage",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:08"
+        },
+        {
+          "id": "v3",
+          "url_slug": "family-freezer-hacks-never-dig",
+          "title": "Family Freezer Hacks: Never Dig for Dinner Again",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:08"
+        },
+        {
+          "id": "v4",
+          "url_slug": "organize-freezer-find-meals-seconds",
+          "title": "Organize Your Freezer: Find Meals in Seconds",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:08"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-losing-food-smart-freezer",
+          "title": "Stop Losing Food: Smart Freezer Organization Tips",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:08"
+        }
+      ]
+    },
+    "frozen-vs-fresh-produce-when-to-buy": {
+      "canonical": "frozen-vs-fresh-produce-when-to-buy",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "fresh-vs-frozen-only-question",
+          "title": "Fresh vs Frozen: The Only Question That Matters",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:39"
+        },
+        {
+          "id": "v2",
+          "url_slug": "frozen-picked-ripe-fresh-usually",
+          "title": "Frozen Is Picked Ripe. Fresh Usually Isn't.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:39"
+        },
+        {
+          "id": "v3",
+          "url_slug": "frozen-produce-actually-makes-more",
+          "title": "When Frozen Produce Actually Makes More Sense",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:39"
+        },
+        {
+          "id": "v1",
+          "url_slug": "i-bought-fresh-broccoli-forgot",
+          "title": "I Bought Fresh Broccoli and Forgot It for 9 Days",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:38:39"
+        }
+      ]
+    },
+    "gluten-free-sourdough-discard-pizza-dough": {
+      "canonical": "gluten-free-sourdough-discard-pizza-dough",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "easy-gluten-free-sourdough-pizza",
+          "title": "Easy Gluten Free Sourdough Pizza Dough Recipe",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:13"
+        },
+        {
+          "id": "v3",
+          "url_slug": "gf-pizza-crust-bends-not",
+          "title": "GF Pizza Crust That Bends, Not Breaks",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:13"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-wasting-gf-sourdough-discard",
+          "title": "Stop Wasting GF Sourdough Discard: Make Pizza",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:13"
+        },
+        {
+          "id": "v4",
+          "url_slug": "tangy-sourdough-discard-pizza-minutes",
+          "title": "Tangy Sourdough Discard Pizza in Minutes",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:19:13"
+        }
+      ]
+    },
+    "good-source-of-fiber-label-meaning": {
+      "canonical": "good-source-of-fiber-label-meaning",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "high-fiber-vs-good-source-difference",
+          "title": "High Fiber vs Good Source of Fiber: Not the Same Thing",
+          "origin": "pin",
+          "created_at": "2026-07-05 16:20:31"
+        },
+        {
+          "id": "v3",
+          "url_slug": "stop-falling-front-of-box",
+          "title": "Stop Falling for the Front of the Box. Read This Instead",
+          "origin": "pin",
+          "created_at": "2026-07-05 16:20:31"
+        },
+        {
+          "id": "v2",
+          "url_slug": "three-gram-rule-behind-fiber-claims",
+          "title": "The 3-Gram Rule Hiding Behind Fiber Label Claims",
+          "origin": "pin",
+          "created_at": "2026-07-05 16:20:31"
+        },
+        {
+          "id": "v1",
+          "url_slug": "what-good-source-fiber-actually-means",
+          "title": "What 'Good Source of Fiber' Actually Means on a Label",
+          "origin": "pin",
+          "created_at": "2026-07-05 16:20:31"
+        }
+      ]
+    },
+    "grab-and-go-fridge-snack-drawer": {
+      "canonical": "grab-and-go-fridge-snack-drawer",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "4pm-kitchen-wander-weakest-moment",
+          "title": "The 4PM Kitchen Wander Is Your Weakest Moment",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:41:17"
+        },
+        {
+          "id": "v2",
+          "url_slug": "bottom-crisper-drawer-wasted-sad",
+          "title": "Your Bottom Crisper Drawer Is Wasted on Sad Lettuce",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:41:17"
+        },
+        {
+          "id": "v3",
+          "url_slug": "no-willpower-required-snacks-already",
+          "title": "No Willpower Required When Snacks Are Already Prepped",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:41:17"
+        },
+        {
+          "id": "v4",
+          "url_slug": "seconds-restock-each-morning-keeps",
+          "title": "10 Seconds to Restock Each Morning Keeps This Working",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:41:17"
+        }
+      ]
+    },
+    "grocery-shopping-list-for-healthy-eating-on-a-budget": {
+      "canonical": "grocery-shopping-list-for-healthy-eating-on-a-budget",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-grocery-shopping-list-for-healthy-eating-on-a-budget",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "grocery-shopping-list-for-healthy-eating-on-a-budget-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "grocery-shopping-list-for-healthy-eating-on-a-budget-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "gut-health-tea-peppermint-ginger": {
+      "canonical": "gut-health-tea-peppermint-ginger",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-gut-health-tea-peppermint-ginger",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "gut-health-tea-peppermint-ginger-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "gut-health-tea-peppermint-ginger-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "health-benefits-eating-soup-in-spring": {
+      "canonical": "health-benefits-eating-soup-in-spring",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "boost-hydration-surprising-spring-soup",
+          "title": "Boost Hydration: The Surprising Spring Soup Secret",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "ditch-winter-dinners-embrace-lighter",
+          "title": "Ditch Winter Dinners: Embrace Lighter Spring Soups",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "spring-soups-body-craves-them",
+          "title": "Spring Soups: Why Your Body Craves Them Now",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "transition-meals-soup-key-spring",
+          "title": "Transition Meals: Why Soup is Key for Spring",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "healthy-alternatives-potato-chips-snacking": {
+      "canonical": "healthy-alternatives-potato-chips-snacking",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "crunchy-snacks-healthy-chip-swaps",
+          "title": "Crunchy Snacks: 5 Healthy Chip Swaps for Movie Night",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v3",
+          "url_slug": "healthy-snacking-upgrade-guilty-pleasure",
+          "title": "Healthy Snacking: Upgrade Your Guilty Pleasure Chips",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "no-more-chips-delicious-healthy",
+          "title": "No More Chips: 7 Delicious and Healthy Substitutions",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "satisfy-cravings-salty-crunchy-chip",
+          "title": "Satisfy Cravings: Salty and Crunchy Chip Alternatives",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        }
+      ]
+    },
+    "healthy-alternatives-white-rice-dinner": {
+      "canonical": "healthy-alternatives-white-rice-dinner",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "healthy-dinner-now-essential-amino",
+          "title": "Healthy dinner now: 9 essential amino acids in one grain",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "quinoa-minute-dinner-powerhouse-you",
+          "title": "Quinoa: The 15 Minute Dinner Powerhouse You Need",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "swap-white-rice-easy-minute",
+          "title": "Swap white rice for this easy 15-minute grain",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "tired-bland-rice-try-nutrient",
+          "title": "Tired of bland rice? Try this nutrient rich alternative",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "healthy-blue-collar-lunch-ideas-men": {
+      "canonical": "healthy-blue-collar-lunch-ideas-men",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "build-power-packed-lunch-hearty",
+          "title": "Build a Power-Packed Lunch: 5 Hearty Recipes",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v2",
+          "url_slug": "fuel-day-easy-filling-lunch",
+          "title": "Fuel Your Day: 7 Easy, Filling Lunch Ideas for Men",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "skip-drive-thru-healthy-workday",
+          "title": "Skip the Drive-Thru: Healthy Workday Lunch Swaps",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "stay-full-longer-high-protein",
+          "title": "Stay Full Longer: 6 High-Protein Lunch Solutions",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "healthy-egg-sandwich-add-ins-toppings": {
+      "canonical": "healthy-egg-sandwich-add-ins-toppings",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "build-better-breakfast-sandwich-today",
+          "title": "Build a Better Breakfast Sandwich Today",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:01"
+        },
+        {
+          "id": "v1",
+          "url_slug": "easy-healthy-egg-sandwich-upgrades",
+          "title": "5 Easy Healthy Egg Sandwich Upgrades",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:01"
+        },
+        {
+          "id": "v3",
+          "url_slug": "healthy-egg-sandwich-toppings-you",
+          "title": "Healthy Egg Sandwich Toppings You Need",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:01"
+        },
+        {
+          "id": "v4",
+          "url_slug": "skip-drive-thru-egg-sandwich",
+          "title": "Skip the Drive-Thru Egg Sandwich",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:01"
+        }
+      ]
+    },
+    "healthy-homemade-dumpling-wrapper-recipe": {
+      "canonical": "healthy-homemade-dumpling-wrapper-recipe",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "healthier-dumplings-easy-wrapper-recipe",
+          "title": "Healthier Dumplings: Easy Wrapper Recipe",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "ingredient-wrappers-no-more-store",
+          "title": "2 Ingredient Wrappers: No More Store Bought",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "make-homemade-dumpling-wrappers-just",
+          "title": "Make Homemade Dumpling Wrappers: Just 2 Ingredients",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:11"
+        },
+        {
+          "id": "v2",
+          "url_slug": "skip-preservatives-diy-dumpling-wrappers",
+          "title": "Skip Preservatives: DIY Dumpling Wrappers Now",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:11"
+        }
+      ]
+    },
+    "healthy-homemade-indian-salad-dressing-recipes": {
+      "canonical": "healthy-homemade-indian-salad-dressing-recipes",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "flavorful-indian-dressings-under-minutes",
+          "title": "Flavorful Indian Dressings in Under 2 Minutes",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:43"
+        },
+        {
+          "id": "v1",
+          "url_slug": "indian-dressings-beat-bottled-vinaigrette",
+          "title": "5 Indian Dressings That Beat Bottled Vinaigrette",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:43"
+        },
+        {
+          "id": "v4",
+          "url_slug": "stop-eating-bland-salads-try",
+          "title": "Stop Eating Bland Salads: Try These Indian Recipes",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:43"
+        },
+        {
+          "id": "v2",
+          "url_slug": "turmeric-ginger-dressing-new-salad",
+          "title": "Turmeric Ginger Dressing: Your New Salad Go-To",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:43"
+        }
+      ]
+    },
+    "healthy-homemade-vegan-caesar-salad-dressing": {
+      "canonical": "healthy-homemade-vegan-caesar-salad-dressing",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "best-vegan-caesar-dressing-starts",
+          "title": "Your Best Vegan Caesar Dressing Starts Here",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v1",
+          "url_slug": "creamy-vegan-caesar-recipe-no",
+          "title": "Creamy Vegan Caesar Recipe: No Eggs, No Anchovies",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "make-cashew-caesar-dressing-minutes",
+          "title": "Make Cashew Caesar Dressing in 5 Minutes",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "never-buy-boring-vegan-caesar",
+          "title": "Never Buy Boring Vegan Caesar Again",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        }
+      ]
+    },
+    "healthy-spring-vegetable-soup-recipes": {
+      "canonical": "healthy-spring-vegetable-soup-recipes",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "easy-spring-vegetable-soup-under",
+          "title": "Easy Spring Vegetable Soup Under 200 Calories",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v1",
+          "url_slug": "fresh-asparagus-soup-ready-minutes",
+          "title": "Fresh Asparagus Soup Ready in 30 Minutes",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v3",
+          "url_slug": "healthy-spring-soup-kids-will",
+          "title": "Healthy Spring Soup Your Kids Will Actually Eat",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "quick-weeknight-leek-soup-busy",
+          "title": "Quick Weeknight Leek Soup for Busy Parents",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        }
+      ]
+    },
+    "healthy-sweet-tooth-snack-ideas-night": {
+      "canonical": "healthy-sweet-tooth-snack-ideas-night",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "curb-late-night-cravings-healthy",
+          "title": "Curb Late Night Cravings with 5 Healthy Sweets",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "guilt-free-treats-after-dinner",
+          "title": "Guilt-Free Treats for Your After Dinner Cravings",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v2",
+          "url_slug": "healthy-sweet-snacks-evening-fix",
+          "title": "Healthy Sweet Snacks for Your Evening Fix",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "satisfy-sweet-tooth-without-sugar",
+          "title": "Satisfy Sweet Tooth Without the Sugar Crash",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "hidden-sugars-popular-summer-salad-dressings": {
+      "canonical": "hidden-sugars-popular-summer-salad-dressings",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "avoid-these-sugary-salad-dressings",
+          "title": "Avoid These 5 Sugary Salad Dressings",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:54"
+        },
+        {
+          "id": "v3",
+          "url_slug": "favorite-dressing-has-much-sugar",
+          "title": "Your Favorite Dressing Has HOW MUCH Sugar?",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:54"
+        },
+        {
+          "id": "v4",
+          "url_slug": "healthy-salads-spot-sugar-traps",
+          "title": "Healthy Salads: Spot the Sugar Traps",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:54"
+        },
+        {
+          "id": "v1",
+          "url_slug": "slash-hidden-sugars-salad-dressing",
+          "title": "Slash Hidden Sugars: Salad Dressing Swaps",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:20:54"
+        }
+      ]
+    },
+    "high-fiber-bran-muffins-that-taste-good": {
+      "canonical": "high-fiber-bran-muffins-that-taste-good",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-high-fiber-bran-muffins-that-taste-good",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "high-fiber-bran-muffins-that-taste-good-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "high-fiber-bran-muffins-that-taste-good-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-cauliflower-rice-recipes": {
+      "canonical": "high-fiber-cauliflower-rice-recipes",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-high-fiber-cauliflower-rice-recipes",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "high-fiber-cauliflower-rice-recipes-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "high-fiber-cauliflower-rice-recipes-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-dinner-recipes-picky-kids": {
+      "canonical": "high-fiber-dinner-recipes-picky-kids",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "healthy-kid-meals-fiber-rich",
+          "title": "Healthy Kid Meals: Fiber-Rich Comfort Food Recipes",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "kid-approved-dinners-high-fiber",
+          "title": "Kid Approved Dinners: High Fiber, Zero Complaints",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "picky-eater-hacks-fiber-their",
+          "title": "Picky Eater Hacks: Fiber in Their Favorite Meals",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v2",
+          "url_slug": "secret-ingredient-boost-kids-fiber",
+          "title": "Secret Ingredient: Boost Kids' Fiber Without a Fuss",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "high-fiber-fast-food-options-guide": {
+      "canonical": "high-fiber-fast-food-options-guide",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-high-fiber-fast-food-options-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "high-fiber-fast-food-options-guide-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "high-fiber-fast-food-options-guide-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-hummus-recipe-homemade": {
+      "canonical": "high-fiber-hummus-recipe-homemade",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-high-fiber-hummus-recipe-homemade",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "high-fiber-hummus-recipe-homemade-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "high-fiber-hummus-recipe-homemade-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-meals-for-constipation-relief": {
+      "canonical": "high-fiber-meals-for-constipation-relief",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "high-fiber-foods-for-constipation-relief",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "highfiber-meals-for-constipation",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "what-are-good-sources-of-fiber-for-constipation",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "what-is-good-fiber-to-eat-for-constipation",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-pasta-alternatives": {
+      "canonical": "high-fiber-pasta-alternatives",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "turn-leftover-pasta-into-resistant",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-pizza-crust-cauliflower": {
+      "canonical": "high-fiber-pizza-crust-cauliflower",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-high-fiber-pizza-crust-cauliflower",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "high-fiber-pizza-crust-cauliflower-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "high-fiber-pizza-crust-cauliflower-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-popcorn-toppings-healthy": {
+      "canonical": "high-fiber-popcorn-toppings-healthy",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-high-fiber-popcorn-toppings-healthy",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "high-fiber-popcorn-toppings-healthy-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "high-fiber-popcorn-toppings-healthy-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-raspberry-jam-recipe-chia": {
+      "canonical": "high-fiber-raspberry-jam-recipe-chia",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "high-fiber-raspberry-jam-actually",
+          "title": "High Fiber Raspberry Jam That Actually Tastes Like Fruit",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:42:13"
+        },
+        {
+          "id": "v4",
+          "url_slug": "ingredients-pot-minutes-no-jars",
+          "title": "4 Ingredients, 1 Pot, 10 Minutes, No Jars Required",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:42:13"
+        },
+        {
+          "id": "v2",
+          "url_slug": "minute-hack-replaces-pectin-altogether",
+          "title": "The 10-Minute Hack That Replaces Pectin Altogether",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:42:13"
+        },
+        {
+          "id": "v1",
+          "url_slug": "most-store-bought-jam-just",
+          "title": "Most Store-Bought Jam Is Just Candy in a Jar",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:42:13"
+        }
+      ]
+    },
+    "high-fiber-salad-dressings-homemade": {
+      "canonical": "high-fiber-salad-dressings-homemade",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-high-fiber-salad-dressings-homemade",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "high-fiber-salad-dressings-homemade-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "high-fiber-salad-dressings-homemade-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-smoothies-for-kids-picky-eaters": {
+      "canonical": "high-fiber-smoothies-for-kids-picky-eaters",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "affordable-kids-meals-no-more",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "best-high-fiber-smoothies-for-kids-picky-eaters",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "end-picky-eating-battles-save",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "high-fiber-smoothies-for-kids-picky-eaters-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-5",
+          "url_slug": "high-fiber-smoothies-for-kids-picky-eaters-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-6",
+          "url_slug": "smart-shopping-feed-kids-less",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-7",
+          "url_slug": "tips-feeding-picky-eaters-on-budget",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-stir-fry-vegetables": {
+      "canonical": "high-fiber-stir-fry-vegetables",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "fiber-in-stir-fry-vegetables",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "high-fibre-stir-fry-recipes",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "what-vegetables-can-you-add-to-a-stir-fry",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "what-veggies-are-good-for-a-stir-fry",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-yogurt-parfait-for-breakfast": {
+      "canonical": "high-fiber-yogurt-parfait-for-breakfast",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-high-fiber-yogurt-parfait-for-breakfast",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "high-fiber-yogurt-parfait-for-breakfast-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "high-fiber-yogurt-parfait-for-breakfast-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "high-protein-bagel-sandwich-ideas-lunch": {
+      "canonical": "high-protein-bagel-sandwich-ideas-lunch",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "build-protein-packed-bagel-lunch",
+          "title": "Build a Protein Packed Bagel for Lunch",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "quick-protein-bagel-sandwiches-you",
+          "title": "Quick Protein Bagel Sandwiches You Need",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v3",
+          "url_slug": "transform-bagel-into-power-meal",
+          "title": "Transform Your Bagel into a Power Meal",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "upgrade-lunch-bagel-high-protein",
+          "title": "Upgrade Your Lunch Bagel: High Protein Ideas",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        }
+      ]
+    },
+    "high-protein-high-fiber-meals-for-weight-loss": {
+      "canonical": "high-protein-high-fiber-meals-for-weight-loss",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "easy-high-protein-high-fiber-meals",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "high-protein-and-fiber-meals-for-weight-loss-pdf",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "high-protein-and-fiber-meals-for-weight-loss-vegetarian",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "what-is-a-high-protein-high-fiber-diet",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "high-protein-vs-high-fiber-satiety": {
+      "canonical": "high-protein-vs-high-fiber-satiety",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "beat-cravings-protein-fiber-win",
+          "title": "Beat Cravings: How Protein and Fiber Win",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:04"
+        },
+        {
+          "id": "v1",
+          "url_slug": "protein-vs-fiber-satiety-showdown",
+          "title": "Protein vs Fiber: The Satiety Showdown",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:04"
+        },
+        {
+          "id": "v4",
+          "url_slug": "stay-full-longer-smart-food",
+          "title": "Stay Full Longer: The Smart Food Choices",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:04"
+        },
+        {
+          "id": "v2",
+          "url_slug": "stop-hunger-protein-fiber-secret",
+          "title": "Stop Hunger: The Protein and Fiber Secret",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:04"
+        }
+      ]
+    },
+    "how-much-protein-in-bagel-sandwich": {
+      "canonical": "how-much-protein-in-bagel-sandwich",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "bagel-protein-guide-surprising-amounts",
+          "title": "Your Bagel Protein Guide: Surprising Amounts",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:14"
+        },
+        {
+          "id": "v2",
+          "url_slug": "build-high-protein-bagel-sandwich",
+          "title": "Build a High Protein Bagel Sandwich Easily",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:14"
+        },
+        {
+          "id": "v1",
+          "url_slug": "maximize-bagel-12g-protein-before",
+          "title": "Maximize Your Bagel: 12g Protein Before Toppings",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:14"
+        },
+        {
+          "id": "v4",
+          "url_slug": "stop-guessing-protein-bagel-revealed",
+          "title": "Stop Guessing: Protein in Your Bagel Revealed",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:14"
+        }
+      ]
+    },
+    "how-to-choose-granola-not-dessert": {
+      "canonical": "how-to-choose-granola-not-dessert",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "6g-added-sugar-less-breakfast",
+          "title": "6g Added Sugar or Less = Breakfast. More Than That = Dessert.",
+          "origin": "pin",
+          "created_at": "2026-07-04 15:23:48"
+        },
+        {
+          "id": "v2",
+          "url_slug": "flip-bag-check-added-sugars",
+          "title": "Flip the Bag. Check 'Added Sugars.' 6g or Less Is Your Benchmark.",
+          "origin": "pin",
+          "created_at": "2026-07-04 15:23:48"
+        },
+        {
+          "id": "v1",
+          "url_slug": "healthy-granola-has-more-sugar",
+          "title": "That 'Healthy' Granola Has More Sugar Than a Chocolate Chip Cookie",
+          "origin": "pin",
+          "created_at": "2026-07-04 15:23:48"
+        },
+        {
+          "id": "v3",
+          "url_slug": "you-can-find-granola-actually",
+          "title": "You Can Find Granola That Actually Qualifies as Breakfast",
+          "origin": "pin",
+          "created_at": "2026-07-04 15:23:48"
+        }
+      ]
+    },
+    "how-to-clean-blender-fast-no-scrub": {
+      "canonical": "how-to-clean-blender-fast-no-scrub",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "build-second-routine-never-scrub",
+          "title": "Build This 30-Second Routine and Never Scrub a Blade Again",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:00"
+        },
+        {
+          "id": "v2",
+          "url_slug": "clean-blender-fast-no-scrubbing",
+          "title": "How to Clean a Blender Fast (No Scrubbing Required)",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:00"
+        },
+        {
+          "id": "v3",
+          "url_slug": "clean-blender-time-it-takes",
+          "title": "Clean Your Blender in the Time It Takes to Pour Your Smoothie",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:00"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-reaching-into-blender-full",
+          "title": "Stop Reaching Into a Blender Full of Razor-Sharp Blades",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:00"
+        }
+      ]
+    },
+    "how-to-cool-rice-for-fried-rice": {
+      "canonical": "how-to-cool-rice-for-fried-rice",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "cool-rice-fried-rice-so",
+          "title": "How to Cool Rice for Fried Rice (So It Doesn't Turn to Mush)",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:26"
+        },
+        {
+          "id": "v3",
+          "url_slug": "crispy-separated-grains-every-bite",
+          "title": "Crispy, Separated Grains in Every Bite",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:26"
+        },
+        {
+          "id": "v1",
+          "url_slug": "fried-rice-turns-into-sticky",
+          "title": "Why Your Fried Rice Turns Into a Sticky Clump",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:26"
+        },
+        {
+          "id": "v4",
+          "url_slug": "minute-hack-takeout-style-fried",
+          "title": "The 30-Minute Hack for Takeout-Style Fried Rice",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:26"
+        }
+      ]
+    },
+    "how-to-double-recipe-seasoning-without-guessing": {
+      "canonical": "how-to-double-recipe-seasoning-without-guessing",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "double-recipe-not-salt",
+          "title": "Double Your Recipe, Not Your Salt",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:25:00"
+        },
+        {
+          "id": "v3",
+          "url_slug": "make-double-food-half-flavor",
+          "title": "Make Double the Food, Half the Flavor Disasters",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:25:00"
+        },
+        {
+          "id": "v4",
+          "url_slug": "second-test-stops-you-overseasoning",
+          "title": "The 5-Second Test That Stops You From Overseasoning Doubled Recipes",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:25:00"
+        },
+        {
+          "id": "v1",
+          "url_slug": "you-doubled-recipe-now-chili",
+          "title": "You Doubled the Recipe. Now Your Chili Is a Fire Hazard.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:25:00"
+        }
+      ]
+    },
+    "how-to-eat-more-fiber-on-a-budget-complete-guide": {
+      "canonical": "how-to-eat-more-fiber-on-a-budget-complete-guide",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "bottom-shelf-foods-beat-expensive",
+          "title": "The Bottom Shelf Foods That Beat Expensive Fiber Supplements",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:21"
+        },
+        {
+          "id": "v2",
+          "url_slug": "close-13g-fiber-gap-without",
+          "title": "How to Close the 13g Fiber Gap Without Spending More",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:21"
+        },
+        {
+          "id": "v4",
+          "url_slug": "fiber-shopping-list-hits-grams",
+          "title": "The $2 Fiber Shopping List That Hits 28 Grams",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:21"
+        },
+        {
+          "id": "v1",
+          "url_slug": "you-re-paying-triple-less",
+          "title": "You're Paying Triple for Less Fiber (Here's the Spreadsheet Proof)",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:57:21"
+        }
+      ]
+    },
+    "how-to-freeze-bananas-for-smoothies": {
+      "canonical": "how-to-freeze-bananas-for-smoothies",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "how-to-freeze-bananas-for-smoothies-later",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-freeze-bananas-to-make-smoothies",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-freeze-strawberries-and-bananas-for-smoothies",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "whats-the-best-way-to-freeze-bananas-for-smoothies",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-keep-bread-fresh-longer-without-mold": {
+      "canonical": "how-to-keep-bread-fresh-longer-without-mold",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-how-to-keep-bread-fresh-longer-without-mold",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-keep-bread-fresh-longer-without-mold-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-keep-bread-fresh-longer-without-mold-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-keep-sandwiches-from-getting-soggy": {
+      "canonical": "how-to-keep-sandwiches-from-getting-soggy",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "never-eat-soggy-lunch-again",
+          "title": "Never Eat A Soggy Lunch Again: Quick Fixes Here",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v2",
+          "url_slug": "pack-perfect-sandwiches-stay-fresh",
+          "title": "Pack Perfect Sandwiches That Stay Fresh All Day",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "sandwich-survival-guide-avoid-damp",
+          "title": "Your Sandwich Survival Guide: Avoid The Damp",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-soggy-sandwiches-waterproofing-hacks",
+          "title": "Stop Soggy Sandwiches: 7 Waterproofing Hacks",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "how-to-make-grocery-shopping-cheaper": {
+      "canonical": "how-to-make-grocery-shopping-cheaper",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "how-to-get-groceries-cheaper",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-make-groceries-cheaper",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-make-grocery-shopping-cheap",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "ways-to-make-grocery-shopping-cheaper",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-make-sourdough-pizza-dough-same-day": {
+      "canonical": "how-to-make-sourdough-pizza-dough-same-day",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "fastest-sourdough-pizza-dough-ever",
+          "title": "Your Fastest Sourdough Pizza Dough Ever",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:46"
+        },
+        {
+          "id": "v2",
+          "url_slug": "hybrid-sourdough-pizza-dough-hours",
+          "title": "Hybrid Sourdough Pizza Dough in Hours",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:46"
+        },
+        {
+          "id": "v4",
+          "url_slug": "make-sourdough-pizza-dough-today",
+          "title": "Make Sourdough Pizza Dough Today",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:46"
+        },
+        {
+          "id": "v1",
+          "url_slug": "sourdough-pizza-dough-same-day",
+          "title": "Sourdough Pizza Dough: Same-Day Recipe Hack",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:46"
+        }
+      ]
+    },
+    "how-to-meal-prep-on-a-budget-for-one-person": {
+      "canonical": "how-to-meal-prep-on-a-budget-for-one-person",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "how-to-meal-plan-on-a-budget",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-meal-prep-at-trader-joes-on-a-budget-for-one-person",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-meal-prep-on-a-budget",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "how-to-meal-prep-on-a-budget-for-one-person-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-measure-sourdough-discard-grams": {
+      "canonical": "how-to-measure-sourdough-discard-grams",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "bake-perfect-sourdough-every-time",
+          "title": "Bake Perfect Sourdough Every Time: Use Grams",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v3",
+          "url_slug": "kitchen-hack-measure-discard-fluffy",
+          "title": "Kitchen Hack: Measure Discard for Fluffy Pancakes",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "never-fail-sourdough-grams-vs",
+          "title": "Never Fail Sourdough: Grams vs Volume Explained",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-ruining-baked-goods-weigh",
+          "title": "Stop Ruining Baked Goods: Weigh Sourdough Discard",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        }
+      ]
+    },
+    "how-to-organize-a-small-kitchen-on-a-budget": {
+      "canonical": "how-to-organize-a-small-kitchen-on-a-budget",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "how-to-organize-a-small-kitchen",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-organize-a-small-kitchen-on-a-budget-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-organize-a-very-small-kitchen",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "how-to-organize-small-kitchen-ideas-on-a-budget",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-pack-cold-pasta-salad-picnics": {
+      "canonical": "how-to-pack-cold-pasta-salad-picnics",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "avoid-mushy-pasta-salad-choose",
+          "title": "Avoid Mushy Pasta Salad: Choose the Right Noodle",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "keep-pasta-salad-cold-creamy",
+          "title": "Keep Pasta Salad Cold and Creamy for Picnics",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "pack-pasta-salad-perfect-picnic",
+          "title": "Pack Pasta Salad for Perfect Picnic Freshness",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "secrets-non-gummy-pasta-salad",
+          "title": "Secrets to Non-Gummy Pasta Salad on the Go",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "how-to-pack-lunch-crisp-sandwiches-salads": {
+      "canonical": "how-to-pack-lunch-crisp-sandwiches-salads",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "barrier-method-salad-stays-crunchy",
+          "title": "The Barrier Method for Salad That Stays Crunchy",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:31"
+        },
+        {
+          "id": "v4",
+          "url_slug": "pack-lunch-so-sandwiches-salads",
+          "title": "How to Pack Lunch So Sandwiches and Salads Stay Crisp",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:31"
+        },
+        {
+          "id": "v3",
+          "url_slug": "pack-salad-am-eat-it",
+          "title": "Pack a Salad at 7 AM, Eat It Crisp at Noon",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:31"
+        },
+        {
+          "id": "v1",
+          "url_slug": "sandwich-soggy-noon-fix-it",
+          "title": "Why Your Sandwich Is Soggy by Noon (And How to Fix It)",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:31"
+        }
+      ]
+    },
+    "how-to-pack-salad-for-work-not-soggy": {
+      "canonical": "how-to-pack-salad-for-work-not-soggy",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "keep-aggressive-ingredients-away-delicate",
+          "title": "Keep Aggressive Ingredients Away from Delicate Greens",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:37"
+        },
+        {
+          "id": "v3",
+          "url_slug": "mason-jar-salad-trick-nobody",
+          "title": "The Mason Jar Salad Trick Nobody Tells You",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:37"
+        },
+        {
+          "id": "v1",
+          "url_slug": "office-salad-always-soggy-noon",
+          "title": "Why Your Office Salad Is Always Soggy by Noon",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:37"
+        },
+        {
+          "id": "v2",
+          "url_slug": "pack-dressing-separately-eat-wet",
+          "title": "Pack Dressing Separately or Eat Wet Lettuce",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:49:37"
+        }
+      ]
+    },
+    "how-to-preheat-skillet-even-browning": {
+      "canonical": "how-to-preheat-skillet-even-browning",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "finally-get-golden-brown-crust",
+          "title": "Finally Get That Golden Brown Crust Every Time",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:08"
+        },
+        {
+          "id": "v1",
+          "url_slug": "meat-keeps-sticking-pan",
+          "title": "Why Your Meat Keeps Sticking to the Pan",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:08"
+        },
+        {
+          "id": "v2",
+          "url_slug": "minute-rule-perfectly-preheated-skillet",
+          "title": "The 3-Minute Rule for Perfectly Preheated Skillet",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:08"
+        },
+        {
+          "id": "v4",
+          "url_slug": "wait-water-drop-test-before",
+          "title": "Wait for the Water Drop Test Before Adding Food",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:08"
+        }
+      ]
+    },
+    "how-to-prep-high-protein-lunches-work": {
+      "canonical": "how-to-prep-high-protein-lunches-work",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "boost-focus-quick-protein-packed",
+          "title": "Boost Focus: Quick Protein Packed Lunch Ideas",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "never-skip-lunch-simple-protein",
+          "title": "Never Skip Lunch: Simple Protein Prep Guide",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "save-money-prep-affordable-high",
+          "title": "Save Money: Prep Affordable High Protein Meals",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-hunger-easy-high-protein",
+          "title": "Stop Hunger: Easy High Protein Lunch Prep for Work",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "how-to-quick-soak-dried-beans-same-day": {
+      "canonical": "how-to-quick-soak-dried-beans-same-day",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "boil-method-breaks-down-beans",
+          "title": "The 2-Boil Method That Breaks Down Beans in 60 Minutes",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:41"
+        },
+        {
+          "id": "v3",
+          "url_slug": "rock-hard-dinner-ready-one",
+          "title": "From Rock-Hard to Dinner-Ready in One Hour",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:41"
+        },
+        {
+          "id": "v4",
+          "url_slug": "sort-boil-wait-drain-same",
+          "title": "Sort, Boil, Wait, Drain: Your Same-Day Bean Cheat Sheet",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:41"
+        },
+        {
+          "id": "v1",
+          "url_slug": "you-re-not-lazy-you",
+          "title": "You're Not Lazy, You Just Forgot to Soak Beans Yesterday",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:41"
+        }
+      ]
+    },
+    "how-to-read-nutrition-labels-for-beginners": {
+      "canonical": "how-to-read-nutrition-labels-for-beginners",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "how-to-read-food-nutrition-labels",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-read-nutrition-labels-for-weight-loss",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-read-nutrition-labels-to-lower-cholesterol",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "how-to-read-nutrition-labels-total-fat",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-reduce-food-waste-at-home-easy-tips": {
+      "canonical": "how-to-reduce-food-waste-at-home-easy-tips",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-how-to-reduce-food-waste-at-home-easy-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-reduce-food-waste-at-home-easy-tips-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-reduce-food-waste-at-home-easy-tips-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-revive-wilted-lettuce-and-greens": {
+      "canonical": "how-to-revive-wilted-lettuce-and-greens",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "can-you-revive-wilted-lettuce",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-do-you-bring-wilted-lettuce-back-to-life",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-revive-wilted-greens",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "how-to-revive-wilted-salad-greens",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-store-fresh-ginger": {
+      "canonical": "how-to-store-fresh-ginger",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "freeze-ginger-not-plans",
+          "title": "Freeze Your Ginger, Not Your Plans",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:54"
+        },
+        {
+          "id": "v4",
+          "url_slug": "ginger-fine-storage-not",
+          "title": "Your Ginger Is Fine. Your Storage Is Not.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:54"
+        },
+        {
+          "id": "v3",
+          "url_slug": "one-storage-mistake-ruining-ginger",
+          "title": "The One Storage Mistake Ruining Your Ginger",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:54"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-throwing-away-money-wilted",
+          "title": "Stop Throwing Away Money on Wilted Ginger",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:50:54"
+        }
+      ]
+    },
+    "how-to-store-fresh-herbs-to-last-longer": {
+      "canonical": "how-to-store-fresh-herbs-to-last-longer",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "how-to-make-fresh-herbs-last-longer",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-store-fresh-herbs-for-long-time",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-store-fresh-herbs-so-they-last-longer",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "how-to-store-herbs-to-keep-them-fresh",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-store-fruits-and-vegetables-properly": {
+      "canonical": "how-to-store-fruits-and-vegetables-properly",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "how-should-fruits-and-vegetables-be-stored",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-to-properly-store-fruits-and-vegetables-chart",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-to-properly-store-fruits-and-vegetables-in-the-fridge",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "how-to-store-fruits-and-vegetables",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-store-homemade-salad-dressing-safely": {
+      "canonical": "how-to-store-homemade-salad-dressing-safely",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "avoid-moldy-dressings-essential-tips",
+          "title": "Avoid Moldy Dressings: Essential Tips",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:52"
+        },
+        {
+          "id": "legacy-5",
+          "url_slug": "avoid-these-sneaky-ingredients-store",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-6",
+          "url_slug": "diy-salad-dressing-healthier-tastier",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v3",
+          "url_slug": "glass-vs-plastic-dressing-storage",
+          "title": "Glass vs Plastic: Dressing Storage Showdown",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:52"
+        },
+        {
+          "id": "legacy-7",
+          "url_slug": "hidden-sugar-dressings-make-these",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "v1",
+          "url_slug": "keep-homemade-dressings-fresh-weeks",
+          "title": "Keep Homemade Dressings Fresh for Weeks",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:52"
+        },
+        {
+          "id": "v2",
+          "url_slug": "stop-ruining-homemade-salad-dressing",
+          "title": "Stop Ruining Your Homemade Salad Dressing",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:21:52"
+        },
+        {
+          "id": "legacy-8",
+          "url_slug": "store-bought-vs-homemade-salad-dressing-nutrition",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-stretch-meals-large-families": {
+      "canonical": "how-to-stretch-meals-large-families",
+      "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "feed-crowd-budget-meal-prep",
+          "title": "Feed a Crowd: Budget Meal Prep Without the Stress",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "make-meals-go-further-hidden",
+          "title": "Make Meals Go Further: Hidden Veggies Your Kids Will Eat",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "slash-grocery-bills-creative-ways",
+          "title": "Slash Grocery Bills: Creative Ways to Extend Protein",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stretch-ground-beef-smart-fillers",
+          "title": "Stretch Ground Beef: 5 Smart Fillers for Family Meals",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "keep-berries-fresh-longer-when-to-wash": {
+      "canonical": "keep-berries-fresh-longer-when-to-wash",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "berries-mold-days-it-s",
+          "title": "Why Your Berries Mold in 2 Days (It's Not the Fridge)",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:11"
+        },
+        {
+          "id": "v3",
+          "url_slug": "don-t-wash-berries-until",
+          "title": "Don't Wash Berries Until You're Ready to Eat Them",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "minute-routine-you-bring-berries",
+          "title": "The 2-Minute Routine When You Bring Berries Home",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:11"
+        },
+        {
+          "id": "v2",
+          "url_slug": "paper-towel-trick-keeps-berries",
+          "title": "The Paper Towel Trick That Keeps Berries Fresh All Week",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:11"
+        }
+      ]
+    },
+    "low-cost-protein-meal-hacks-families": {
+      "canonical": "low-cost-protein-meal-hacks-families",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "budget-dinner-ideas-bulk-up",
+          "title": "Budget Dinner Ideas: Bulk Up Meals with Lentils",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "feed-family-less-easy-protein",
+          "title": "Feed Your Family for Less: Easy Protein Swaps",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "save-groceries-healthy-meals-budget",
+          "title": "Save on Groceries: Healthy Meals on a Budget",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stretch-ground-beef-smart-hacks",
+          "title": "Stretch Ground Beef: 3 Smart Hacks for Budget Meals",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:10"
+        }
+      ]
+    },
+    "macronutrient-breakdown-healthy-egg-sandwich": {
+      "canonical": "macronutrient-breakdown-healthy-egg-sandwich",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "avoid-carb-coma-egg-sandwich",
+          "title": "Avoid the Carb Coma: Egg Sandwich Secrets",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:22:07"
+        },
+        {
+          "id": "v1",
+          "url_slug": "build-perfect-balanced-egg-sandwich",
+          "title": "Build the Perfect Balanced Egg Sandwich",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:22:07"
+        },
+        {
+          "id": "v4",
+          "url_slug": "healthy-egg-sandwich-macronutrient-guide",
+          "title": "Healthy Egg Sandwich Macronutrient Guide",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:22:07"
+        },
+        {
+          "id": "v2",
+          "url_slug": "maximize-morning-protein-intake",
+          "title": "Maximize Your Morning Protein Intake",
+          "origin": "pin",
+          "created_at": "2026-04-28 17:22:07"
+        }
+      ]
+    },
+    "make-ahead-breakfast-ideas-without-eggs": {
+      "canonical": "make-ahead-breakfast-ideas-without-eggs",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "creamy-no-cook-oats-ready",
+          "title": "Creamy No Cook Oats Ready in 5 Minutes Flat",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v4",
+          "url_slug": "escape-morning-rush-these-oat",
+          "title": "Escape the Morning Rush With These Oat Recipes",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v2",
+          "url_slug": "meal-prep-egg-free-breakfast",
+          "title": "Meal Prep This Egg Free Breakfast for Busy Mornings",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "v1",
+          "url_slug": "overnight-oats-dont-taste-like",
+          "title": "5 Overnight Oats That Dont Taste Like Sawdust",
+          "origin": "pin",
+          "created_at": "2026-04-28 15:58:11"
+        }
+      ]
+    },
+    "meal-prep-for-beginners-complete-system": {
+      "canonical": "meal-prep-for-beginners-complete-system",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "formula-meal-prep-doesn-t",
+          "title": "The 2-2-2 Formula: Meal Prep That Doesn't Feel Like Prison Food",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:58:02"
+        },
+        {
+          "id": "v2",
+          "url_slug": "meal-prep-beginners-component-method",
+          "title": "Meal Prep for Beginners: The Component Method That Actually Works",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:58:02"
+        },
+        {
+          "id": "v1",
+          "url_slug": "meal-prep-fails-wednesday-here",
+          "title": "Your Meal Prep Fails by Wednesday. Here's the Actual Fix.",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:58:02"
+        },
+        {
+          "id": "v3",
+          "url_slug": "minutes-sunday-different-dinners-all",
+          "title": "90 Minutes Sunday = 5 Different Dinners All Week",
+          "origin": "pin",
+          "created_at": "2026-07-07 13:58:02"
+        }
+      ]
+    },
+    "oatmeal-vs-grits-fiber-content": {
+      "canonical": "oatmeal-vs-grits-fiber-content",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-oatmeal-vs-grits-fiber-content",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "oatmeal-vs-grits-fiber-content-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "oatmeal-vs-grits-fiber-content-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "pear-salad-with-walnuts-fiber-rich": {
+      "canonical": "pear-salad-with-walnuts-fiber-rich",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-pear-salad-with-walnuts-fiber-rich",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "pear-salad-with-walnuts-fiber-rich-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "pear-salad-with-walnuts-fiber-rich-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "plan-week-of-dinners-fewer-grocery-runs": {
+      "canonical": "plan-week-of-dinners-fewer-grocery-runs",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "i-stopped-doing-midweek-grocery",
+          "title": "I Stopped Doing Midweek Grocery Runs and Saved $47 Each Time",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:34"
+        },
+        {
+          "id": "v4",
+          "url_slug": "monday-friday-dinner-system-takes",
+          "title": "The Monday-Friday Dinner System That Takes 10 Minutes to Plan",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:34"
+        },
+        {
+          "id": "v3",
+          "url_slug": "one-shopping-trip-five-dinners",
+          "title": "One Shopping Trip. Five Dinners. Zero Wasted Food.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:34"
+        },
+        {
+          "id": "v2",
+          "url_slug": "plan-dinners-perishability-not-recipes",
+          "title": "Plan Dinners by Perishability, Not Recipes",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:34"
+        }
+      ]
+    },
+    "popcorn-vs-potato-chips-fiber-comparison": {
+      "canonical": "popcorn-vs-potato-chips-fiber-comparison",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-popcorn-vs-potato-chips-fiber-comparison",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "popcorn-vs-potato-chips-fiber-comparison-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "popcorn-vs-potato-chips-fiber-comparison-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "prebiotic-foods-beyond-the-buzzwords": {
+      "canonical": "prebiotic-foods-beyond-the-buzzwords",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "foods-count-prebiotics-without-wellness",
+          "title": "8 Foods That Count as Prebiotics Without the Wellness Aisle",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:38"
+        },
+        {
+          "id": "v3",
+          "url_slug": "these-foods-keep-you-full",
+          "title": "These Foods Keep You Full Longer Without the Weird Labels",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:38"
+        },
+        {
+          "id": "v2",
+          "url_slug": "way-you-re-cooking-onions",
+          "title": "The Way You're Cooking Onions Is Killing Their Best Part",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:38"
+        },
+        {
+          "id": "v1",
+          "url_slug": "you-re-overcomplicating-prebiotics-they",
+          "title": "You're Overcomplicating Prebiotics When They're Already in Your Kitchen",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:38"
+        }
+      ]
+    },
+    "protein-per-dollar-cheapest-protein-sources": {
+      "canonical": "protein-per-dollar-cheapest-protein-sources",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "grams-protein-dollar-here-s",
+          "title": "98 Grams of Protein for a Dollar. Here's What Actually Wins.",
+          "origin": "pin",
+          "created_at": "2026-07-06 14:59:58"
+        },
+        {
+          "id": "v2",
+          "url_slug": "one-division-problem-changes-you",
+          "title": "The One Division Problem That Changes How You Shop",
+          "origin": "pin",
+          "created_at": "2026-07-06 14:59:58"
+        },
+        {
+          "id": "v3",
+          "url_slug": "protein-per-dollar-cheapest-protein",
+          "title": "Protein per Dollar: The Cheapest Protein Sources, Ranked",
+          "origin": "pin",
+          "created_at": "2026-07-06 14:59:58"
+        },
+        {
+          "id": "v1",
+          "url_slug": "steak-11x-more-expensive-than",
+          "title": "That Steak Is 11x More Expensive Than It Needs to Be",
+          "origin": "pin",
+          "created_at": "2026-07-06 14:59:58"
+        }
+      ]
+    },
+    "protein-per-serving-beans-chicken-tofu-compared": {
+      "canonical": "protein-per-serving-beans-chicken-tofu-compared",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "beans-vs-chicken-vs-tofu",
+          "title": "Beans vs Chicken vs Tofu: The Quick Protein Comparison",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:58"
+        },
+        {
+          "id": "v3",
+          "url_slug": "build-protein-meals-without-guesswork",
+          "title": "Build Protein Meals Without the Guesswork",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:58"
+        },
+        {
+          "id": "v2",
+          "url_slug": "protein-serving-size-visual-guide",
+          "title": "Your Protein Serving Size Visual Guide",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:58"
+        },
+        {
+          "id": "v1",
+          "url_slug": "toast-lunch-you-re-hungry",
+          "title": "That Toast Lunch Is Why You're Hungry by 3 PM",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:51:58"
+        }
+      ]
+    },
+    "prune-juice-alternatives-for-constipation": {
+      "canonical": "prune-juice-alternatives-for-constipation",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "can-drinking-prune-juice-help-with-constipation",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "does-prune-juice-help-with-severe-constipation",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-much-prune-juice-for-severe-constipation",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "how-much-prune-juice-to-drink-for-severe-constipation",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "quick-20-minute-high-fiber-meals-for-busy-days": {
+      "canonical": "quick-20-minute-high-fiber-meals-for-busy-days",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "high-fiber-meals-for-gut-health",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "quick-dinner-recipes": {
+      "canonical": "quick-dinner-recipes",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "minutes-one-pan-no-cleanup",
+          "title": "30 Minutes. One Pan. No Cleanup Drama.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:52:14"
+        },
+        {
+          "id": "v3",
+          "url_slug": "one-pan-lemon-herb-chicken",
+          "title": "One-Pan Lemon Herb Chicken That's Actually Worth Eating",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:52:14"
+        },
+        {
+          "id": "v2",
+          "url_slug": "simple-lemon-herb-move-makes",
+          "title": "The Simple Lemon Herb Move That Makes Chicken Taste Expensive",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:52:14"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-ruining-one-pan-chicken",
+          "title": "Stop Ruining One-Pan Chicken With These 3 Mistakes",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:52:14"
+        }
+      ]
+    },
+    "quick-dinner-recipes-for-family": {
+      "canonical": "quick-dinner-recipes-for-family",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "hot-dinner-table-nobody-asked",
+          "title": "Hot Dinner on the Table. Nobody Asked for Nuggets.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:54:52"
+        },
+        {
+          "id": "v1",
+          "url_slug": "it-s-nobody-s-started",
+          "title": "It's 5:30 and Nobody's Started Dinner. Here's Your Out.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:54:52"
+        },
+        {
+          "id": "v4",
+          "url_slug": "minutes-start-finish-dinner-solved",
+          "title": "30 Minutes. Start to Finish. Dinner Solved.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:54:52"
+        },
+        {
+          "id": "v2",
+          "url_slug": "one-pan-minutes-zero-excuses",
+          "title": "One Pan, 30 Minutes, Zero Excuses",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:54:52"
+        }
+      ]
+    },
+    "ricotta-berry-toast-bar-no-cook": {
+      "canonical": "ricotta-berry-toast-bar-no-cook",
+      "destinations": [
+        {
+          "id": "v1",
+          "url_slug": "avocados-either-rock-hard-already",
+          "title": "Avocados Are Either Rock-Hard or Already Bad. Try This Instead.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:55:02"
+        },
+        {
+          "id": "v3",
+          "url_slug": "minute-toast-bar-looks-like",
+          "title": "This 5-Minute Toast Bar Looks Like a Cafe Menu Item",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:55:02"
+        },
+        {
+          "id": "v4",
+          "url_slug": "ricotta-berry-toast-bar-set",
+          "title": "Ricotta and Berry Toast Bar: Set Out 5 Things, Feel Like a Pro",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:55:02"
+        },
+        {
+          "id": "v2",
+          "url_slug": "secret-creamy-ricotta-toast-whole",
+          "title": "The Secret to Creamy Ricotta Toast? Whole Milk and Warm Bread",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:55:02"
+        }
+      ]
+    },
+    "savory-chia-seed-recipes-breakfast": {
+      "canonical": "savory-chia-seed-recipes-breakfast",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "cold-breakfast-bowl-energy-without",
+          "title": "Cold Breakfast Bowl Energy Without the Cook Time",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:55:47"
+        },
+        {
+          "id": "v2",
+          "url_slug": "savory-swap-changes-everything",
+          "title": "The Savory Swap That Changes Everything",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:55:47"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-making-chia-seeds-taste",
+          "title": "Stop Making Your Chia Seeds Taste Like Dessert",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:55:47"
+        },
+        {
+          "id": "v4",
+          "url_slug": "sunday-prep-just-got-more",
+          "title": "Your Sunday Prep Just Got More Interesting",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:55:47"
+        }
+      ]
+    },
+    "selenium-containing-foods-easy-ways": {
+      "canonical": "selenium-containing-foods-easy-ways",
+      "destinations": [
+        {
+          "id": "v4",
+          "url_slug": "meal-prep-sunday-just-got",
+          "title": "Meal Prep Sunday Just Got Easier. Add These 5 Selenium Foods",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:56:10"
+        },
+        {
+          "id": "v3",
+          "url_slug": "no-weird-ingredients-just-foods",
+          "title": "No Weird Ingredients. Just 8 Foods That Actually Have Selenium",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:56:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "same-proteins-every-week-killing",
+          "title": "The Same 3 Proteins Every Week Is Killing Your Selenium Variety",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:56:10"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-chasing-exotic-foods-selenium",
+          "title": "Stop Chasing Exotic Foods for Selenium. Your Regular Grocery Has It",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:56:10"
+        }
+      ]
+    },
+    "sheet-pan-ginger-tofu-broccoli-sticky-glaze": {
+      "canonical": "sheet-pan-ginger-tofu-broccoli-sticky-glaze",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "crisp-tofu-sticky-ginger-glaze",
+          "title": "Crisp Tofu, Sticky Ginger Glaze, One Sheet Pan",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:56:57"
+        },
+        {
+          "id": "v2",
+          "url_slug": "press-it-first-coat-it",
+          "title": "Press It First. Coat It With Cornstarch. The Rest Is Easy.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:56:57"
+        },
+        {
+          "id": "v4",
+          "url_slug": "press-min-roast-tofu-add",
+          "title": "Press 10 Min. Roast Tofu. Add Broccoli. Glaze Last.",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:56:57"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-ruining-tofu-soggy-sad",
+          "title": "Stop Ruining Tofu With Soggy, Sad Texture",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:56:57"
+        }
+      ]
+    },
+    "simple-lunch-recipes-indian-veg": {
+      "canonical": "simple-lunch-recipes-indian-veg",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "lunch-doesn-t-feel-like",
+          "title": "The Lunch That Doesn't Feel Like a Compromise",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:57:10"
+        },
+        {
+          "id": "v4",
+          "url_slug": "minutes-pot-desk-new-weekly",
+          "title": "30 Minutes From Pot to Desk. Your New Weekly Lunch",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:57:10"
+        },
+        {
+          "id": "v2",
+          "url_slug": "stop-using-two-pots-cook",
+          "title": "Stop Using Two Pots. Cook Dal and Rice Together in One",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:57:10"
+        },
+        {
+          "id": "v1",
+          "url_slug": "you-re-overcomplicating-lunch-one",
+          "title": "You're Overcomplicating Lunch. This One-Pot Dal Takes 30 Minutes",
+          "origin": "pin",
+          "created_at": "2026-07-04 14:57:10"
+        }
+      ]
+    },
+    "split-pea-soup-recipe-high-fiber": {
+      "canonical": "split-pea-soup-recipe-high-fiber",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "high-fiber-split-pea-soup-recipe",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "how-much-fiber-in-a-bowl-of-split-pea-soup",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "how-much-fiber-in-a-cup-of-split-pea-soup",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "is-there-a-lot-of-fiber-in-split-pea-soup",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    },
+    "stuffed-portobello-mushrooms-quinoa-spinach-feta": {
+      "canonical": "stuffed-portobello-mushrooms-quinoa-spinach-feta",
+      "destinations": [
+        {
+          "id": "v3",
+          "url_slug": "dinner-looks-fancy-isn-t",
+          "title": "The Dinner That Looks Fancy But Isn't",
+          "origin": "pin",
+          "created_at": "2026-07-04 15:24:36"
+        },
+        {
+          "id": "v4",
+          "url_slug": "new-weeknight-vegetarians",
+          "title": "Your New Weeknight Vegetarians",
+          "origin": "pin",
+          "created_at": "2026-07-04 15:24:36"
+        },
+        {
+          "id": "v2",
+          "url_slug": "roast-caps-first-then-stuff",
+          "title": "Roast the Caps First. Then Stuff.",
+          "origin": "pin",
+          "created_at": "2026-07-04 15:24:36"
+        },
+        {
+          "id": "v1",
+          "url_slug": "stop-stuffing-mushrooms-before-you",
+          "title": "Stop Stuffing Mushrooms Before You Read This",
+          "origin": "pin",
+          "created_at": "2026-07-04 15:24:36"
+        }
+      ]
+    },
+    "tabbouleh-salad-high-fiber-bulgur": {
+      "canonical": "tabbouleh-salad-high-fiber-bulgur",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-tabbouleh-salad-high-fiber-bulgur",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "tabbouleh-salad-high-fiber-bulgur-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "tabbouleh-salad-high-fiber-bulgur-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "vegan-high-fiber-meal-prep-for-week": {
+      "canonical": "vegan-high-fiber-meal-prep-for-week",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-vegan-high-fiber-meal-prep-for-week",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "vegan-high-fiber-meal-prep-for-week-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "vegan-high-fiber-meal-prep-for-week-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "vegetarian-high-fiber-dinners-for-natural-relief": {
+      "canonical": "vegetarian-high-fiber-dinners-for-natural-relief",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-vegetarian-high-fiber-dinners-for-natural-relief",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "vegetarian-high-fiber-dinners-for-natural-relief-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "vegetarian-high-fiber-dinners-for-natural-relief-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "water-and-fiber-the-golden-rule": {
+      "canonical": "water-and-fiber-the-golden-rule",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "best-water-and-fiber-the-golden-rule",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "water-and-fiber-the-golden-rule-guide",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "water-and-fiber-the-golden-rule-tips",
+          "title": "",
+          "origin": "legacy_seo_variant",
+          "created_at": null
+        }
+      ]
+    },
+    "whole-wheat-vs-white-pasta-fiber": {
+      "canonical": "whole-wheat-vs-white-pasta-fiber",
+      "destinations": [
+        {
+          "id": "legacy-1",
+          "url_slug": "is-whole-wheat-pasta-better-than-white",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-2",
+          "url_slug": "whole-wheat-pasta-vs-white-pasta-fiber",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-3",
+          "url_slug": "whole-wheat-vs-regular-pasta-fiber",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        },
+        {
+          "id": "legacy-4",
+          "url_slug": "whole-wheat-vs-white-pasta-nutrition",
+          "title": "",
+          "origin": "legacy_orphan",
+          "created_at": null
+        }
+      ]
+    }
+  }
+}

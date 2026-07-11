@@ -20,9 +20,8 @@ const allArticles = await getCollection("articles");
 
 /**
  * Eligible pool: canonical, released articles only.
- * - getCollection only returns canonical entries (alias slugs from
- *   pipeline-data/slug-aliases.json are never collection ids), and we link
- *   exclusively via entry.id, so alias/variant URLs can never appear here.
+ * - getCollection only returns canonical entries; we link via entry.id.
+ * - Pin destinations are runtime 301s (CP2 Phase B), never collection ids.
  * - isReleased filters out future-dated (publishAt) articles that are
  *   still noindexed.
  * - The current article itself is excluded (no self-links).

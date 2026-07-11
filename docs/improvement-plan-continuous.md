@@ -11,8 +11,8 @@
 
 | Checkpoint | Status |
 |------------|--------|
-| CP1 Stabilization & SEO Cleanup | **DONE** (2026-07-11) — see baseline `pipeline-data/reports/routing-audit-2026-07-11.json` |
-| CP2 Pipeline & Routing Automation | Next |
+| CP1 Stabilization & SEO Cleanup | **DONE** (2026-07-11) |
+| CP2 Pipeline & Routing Automation | **Phase B done** (canonical-only build + runtime 301) — staging/prod smoke pending |
 | CP3 Dashboard Refactor | Pending |
 | CP4 Workflows Unification | Pending |
 | CP5 Growth & Pinterest | Pending |

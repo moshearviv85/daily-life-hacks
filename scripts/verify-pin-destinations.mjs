@@ -6,6 +6,7 @@ const ARTICLES_DIR = path.join(ROOT, "src", "data", "articles");
 const REGISTRY_PATH = path.join(ROOT, "public", "data", "content-registry.json");
 const SLUG_ALIASES_PATH = path.join(ROOT, "pipeline-data", "slug-aliases.json");
 const ROUTER_MAPPING_PATH = path.join(ROOT, "pipeline-data", "router-mapping.json");
+const FLAT_PATH = path.join(ROOT, "public", "data", "pin-destinations-flat.json");
 
 function fail(message) {
   console.error(`\n[verify-pin-destinations] ERROR: ${message}\n`);
@@ -58,9 +59,14 @@ function parseDestinationSlug(destinationUrl, context) {
   }
 }
 
-function resolveDestination(slug, { articleIds, aliasTargets, routerVariantTargets }) {
+function resolveDestination(slug, { articleIds, aliasTargets, routerVariantTargets, flatTargets }) {
   if (articleIds.has(slug)) {
     return { kind: "canonical_article", target: slug };
+  }
+
+  const flatTarget = flatTargets.get(slug);
+  if (flatTarget) {
+    return { kind: "pin_destination", target: flatTarget };
   }
 
   const aliasTarget = aliasTargets.get(slug);
@@ -85,12 +91,17 @@ function main() {
   const registry = readJson(REGISTRY_PATH);
   const slugAliases = readJson(SLUG_ALIASES_PATH);
   const routerMapping = readJson(ROUTER_MAPPING_PATH);
+  const flatMap = fs.existsSync(FLAT_PATH) ? readJson(FLAT_PATH) : {};
   const articleIds = listArticleIds();
   const routerVariantTargets = collectRouterVariantTargets(routerMapping);
   const aliasTargets = new Map();
+  const flatTargets = new Map();
 
   for (const [alias, target] of Object.entries(slugAliases || {})) {
     aliasTargets.set(normalizeSlug(alias), normalizeSlug(target));
+  }
+  for (const [alias, target] of Object.entries(flatMap || {})) {
+    flatTargets.set(normalizeSlug(alias), normalizeSlug(target));
   }
 
   const errors = [];
@@ -117,13 +128,14 @@ function main() {
         articleIds,
         aliasTargets,
         routerVariantTargets,
+        flatTargets,
       });
 
       counts.set(resolved.kind, (counts.get(resolved.kind) || 0) + 1);
 
       if (resolved.kind === "missing_local_route") {
         errors.push(
-          `${baseSlug}.${variantId}: "${slug}" has no local route; add alias "${slug}": "${baseSlug}"`,
+          `${baseSlug}.${variantId}: "${slug}" has no local route; add to pin-destinations.json`,
         );
         continue;
       }

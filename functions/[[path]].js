@@ -209,12 +209,71 @@ export async function onRequest(context) {
   }
 
   const fullPathSlug = path.slice(1); // Remove leading slash
+
+  // --- 1b. PIN DESTINATIONS (Git registry → 301 to canonical) ---
+  // Single source of truth: public/data/pin-destinations-flat.json
+  // Takes precedence over ROUTES_KV proxy and static alias HTML (Checkpoint 2).
+  if (
+    fullPathSlug &&
+    (request.method === "GET" || request.method === "HEAD") &&
+    env.ASSETS
+  ) {
+    try {
+      if (!globalThis.__PIN_DEST_MAP) {
+        const mapReq = new Request(
+          new URL("/data/pin-destinations-flat.json", url.origin).toString(),
+          { method: "GET" },
+        );
+        const mapRes = await env.ASSETS.fetch(mapReq);
+        if (mapRes.ok) {
+          globalThis.__PIN_DEST_MAP = await mapRes.json();
+        } else {
+          globalThis.__PIN_DEST_MAP = {};
+        }
+      }
+
+      const canonicalFromMap = globalThis.__PIN_DEST_MAP?.[fullPathSlug];
+      if (
+        typeof canonicalFromMap === "string" &&
+        canonicalFromMap &&
+        canonicalFromMap !== fullPathSlug
+      ) {
+        if (env.DB) {
+          const logPromise = env.DB.prepare(
+            `INSERT INTO pinterest_hits
+             (versioned_slug, base_slug, route_type, version, query_params, referrer, user_agent, country)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+          )
+            .bind(
+              fullPathSlug,
+              canonicalFromMap,
+              "pin_destination_301",
+              null,
+              url.search || null,
+              request.headers.get("Referer") || null,
+              request.headers.get("User-Agent") || null,
+              request.headers.get("CF-IPCountry") || null,
+            )
+            .run();
+          waitUntil(logPromise.catch(() => {}));
+        }
+
+        return Response.redirect(
+          buildCanonicalUrl(`/${canonicalFromMap}/`, url.search),
+          301,
+        );
+      }
+    } catch {
+      // Missing map must not break normal routing.
+    }
+  }
+
   let routeConfig = null;
   let version = null;
   let baseSlug = null;
   let isKvMatch = false;
 
-  // --- 2. KV LOOKUP (runs for ALL paths) ---
+  // --- 2. KV LOOKUP (external redirects + legacy internal; pins prefer Git map above) ---
   if (env.ROUTES_KV && fullPathSlug) {
     try {
       const raw = await env.ROUTES_KV.get(fullPathSlug);
@@ -260,13 +319,34 @@ export async function onRequest(context) {
     baseSlug = null;
   }
 
-  // --- 3. FALLBACK: -v{n} PATTERN (backward compat) ---
+  // --- 3. FALLBACK: -v{n} PATTERN → 301 to canonical (Checkpoint 2) ---
   if (!isKvMatch) {
     const versionMatch = path.match(/^(.+)-v(\d+)$/);
     if (versionMatch) {
       baseSlug = versionMatch[1].slice(1); // "/slug" -> "slug"
       version = versionMatch[2];
-      routeConfig = { type: "internal", base_slug: baseSlug };
+
+      if (env.DB) {
+        const logPromise = env.DB.prepare(
+          `INSERT INTO pinterest_hits
+           (versioned_slug, base_slug, route_type, version, query_params, referrer, user_agent, country)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+        )
+          .bind(
+            fullPathSlug,
+            baseSlug,
+            "version_fallback_301",
+            version,
+            url.search || null,
+            request.headers.get("Referer") || null,
+            request.headers.get("User-Agent") || null,
+            request.headers.get("CF-IPCountry") || null,
+          )
+          .run();
+        waitUntil(logPromise.catch(() => {}));
+      }
+
+      return Response.redirect(buildCanonicalUrl(`/${baseSlug}/`, url.search), 301);
     } else {
       // --- 4. PASS THROUGH: log page_view to funnel_events (server-side, no JS needed) ---
       if (
@@ -358,17 +438,21 @@ export async function onRequest(context) {
     });
   }
 
-  // Internal proxy: serve the base article page (trailing slash avoids redirect)
+  // Internal KV leftovers: 301 to canonical (no HTML proxy / soft-duplicate).
   const targetSlug = routeConfig?.base_slug || baseSlug;
-  const internalUrl = new URL(`/${targetSlug}/`, url.origin);
-  const proxyRequest = new Request(internalUrl.toString(), {
+  if (targetSlug && targetSlug !== fullPathSlug) {
+    return Response.redirect(buildCanonicalUrl(`/${targetSlug}/`, url.search), 301);
+  }
+
+  const assetUrl = new URL(path === "/" ? "/" : `${path}/`, url.origin);
+  assetUrl.search = url.search;
+  const assetReq = new Request(assetUrl.toString(), {
     method: request.method,
     headers: request.headers,
   });
+  const assetResponse = await env.ASSETS.fetch(assetReq);
 
-  const proxyResponse = await env.ASSETS.fetch(proxyRequest);
-
-  if (proxyResponse.status === 404 || proxyResponse.headers.get("x-astro-reroute") === "no") {
+  if (assetResponse.status === 404 || assetResponse.headers.get("x-astro-reroute") === "no") {
     const notFoundUrl = new URL("/404.html", url.origin);
     const notFoundReq = new Request(notFoundUrl.toString(), { headers: request.headers });
     const notFoundPage = await env.ASSETS.fetch(notFoundReq);
@@ -378,5 +462,5 @@ export async function onRequest(context) {
     });
   }
 
-  return applyProxyRobotsPolicy(proxyResponse, request);
+  return assetResponse;
 }

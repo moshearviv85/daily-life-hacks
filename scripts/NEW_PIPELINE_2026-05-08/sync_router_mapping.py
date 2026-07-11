@@ -1,8 +1,12 @@
-"""Sync pin_briefs slugs into router-mapping.json for variant routing.
+"""DEPRECATED for produce automation.
 
-Reads pin_briefs (status='ok') from SQLite, groups by article, and
-builds the router-mapping structure that [slug].astro uses to create
-variant pages. Each pin gets a unique URL slug derived from its title.
+Use sync_pin_destinations.py instead (Checkpoint 2).
+This script remains for emergency/debug rebuilds of router-mapping.json only.
+It does NOT update pin-destinations.json or the flat runtime map.
+
+Prefer:
+    python scripts/NEW_PIPELINE_2026-05-08/sync_pin_destinations.py
+"""
 
 CLI:
     python scripts/NEW_PIPELINE_2026-05-08/sync_router_mapping.py

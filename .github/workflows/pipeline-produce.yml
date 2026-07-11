@@ -171,6 +171,15 @@ jobs:
             --selected-topics pipeline-data/produced-topics.json \
             --report "pipeline-data/reports/pipeline-produce-${{ github.run_id }}.json"
 
+      - name: Sync pin destinations registry
+        if: steps.produce.outputs.has_produced == 'true'
+        run: |
+          python scripts/NEW_PIPELINE_2026-05-08/sync_pin_destinations.py --only-complete
+          git add pipeline-data/pin-destinations.json \
+            pipeline-data/slug-aliases.json \
+            pipeline-data/router-mapping.json \
+            public/data/pin-destinations-flat.json || true
+
       - uses: actions/setup-node@v4
         if: steps.produce.outputs.has_produced == 'true'
         with:
@@ -201,7 +210,11 @@ jobs:
             pipeline-data/selected-topics.json \
             pipeline-data/produced-topics.json \
             pipeline-data/failed-topics.json \
-            pipeline-data/reports/ || true
+            pipeline-data/reports/ \
+            pipeline-data/pin-destinations.json \
+            pipeline-data/slug-aliases.json \
+            pipeline-data/router-mapping.json \
+            public/data/pin-destinations-flat.json || true
           if git diff --cached --quiet; then
             echo "No new files to commit"
           else

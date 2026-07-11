@@ -1,45 +1,61 @@
 # Pin Routing Policy
 
-**Status:** Active freeze (Checkpoint 1)  
+**Status:** Checkpoint 2 **Phase B complete** — canonical HTML only + runtime 301  
 **Updated:** 2026-07-11  
-**Approved decisions:** Pin destinations → **301 to canonical**; proceed with continuous improvement plan.
+**Approved decisions:** Pin destinations → **301 to canonical**.
 
-## Target end state (Checkpoint 2)
+## Source of truth
 
-| URL type | Behavior |
-|----------|----------|
-| Canonical article `/{article-slug}/` | `200`, indexable, in sitemap |
-| Pin destination `/{pin-slug}/` | **301** → canonical + D1 hit log before redirect |
-| Build output | No static HTML clones for pin destinations |
-| Source of truth | `pipeline-data/pin-destinations.json` (auto-updated by produce) |
+`pipeline-data/pin-destinations.json`
 
-Pinterest keeps **4+ diversified pins** per article via unique creatives + unique `url_slug` links. Uniqueness is not achieved by duplicate HTML.
+Do **not** hand-edit derived files:
+- `pipeline-data/slug-aliases.json` (derived lookup / CSV compat — **not** Astro pages)
+- `pipeline-data/router-mapping.json`
+- `public/data/pin-destinations-flat.json`
 
-## Temporary state (until Checkpoint 2 ships)
+Update via:
 
-| Layer | Role |
-|-------|------|
-| `pipeline-data/slug-aliases.json` | Static Astro alias pages (`noindex` + canonical) |
-| `pipeline-data/router-mapping.json` | Pin metadata / CSV link targets |
-| `ROUTES_KV` + `-vN` fallback | Runtime proxy with `X-Robots-Tag: noindex` |
+```bash
+npm run migrate:pin-destinations   # rebuild registry from legacy (rare)
+npm run sync:pin-destinations      # after produce (from SQLite pin_briefs)
+npm run derive:pin-routing         # re-derive artifacts only
+```
 
-Do **not** treat these three as permanent architecture.
+## Runtime + build (Phase B)
 
-## Freeze rules (Checkpoint 1)
+| Surface | Behavior |
+|---------|----------|
+| Astro `getStaticPaths` | **Canonical articles only** |
+| `/{canonical}/` | 200, indexable (if released) |
+| `/{pin-destination}/` | **301** → canonical via `[[path]].js` + flat map |
+| `/{slug}-vN/` | **301** → canonical |
+| KV `external` | 302 affiliate (allowed) |
+| KV `internal` leftovers | 301 → canonical |
+| `dist/{alias}/index.html` | **Must not exist** (`verify-routing` fails if leaked) |
 
-1. Do **not** manually add rows to `slug-aliases.json` unless fixing a broken live pin and documenting why.
-2. Do **not** bulk-upload new `ROUTES_KV` entries as a parallel source of truth.
-3. New pin destinations must go through the pipeline scripts; after Checkpoint 2 they must land in `pin-destinations.json` only.
-4. Do **not** remove existing aliases in production until runtime 301 coverage is verified.
-5. `npm run verify:routing` and `npm run verify:pin-destinations` must pass before deploy (`build:checked`).
+## ROUTES_KV policy
 
-## Preview of scheduled articles
+| Use | Policy |
+|-----|--------|
+| New pin destinations | **Do not write to KV** |
+| Existing pin KV keys | Harmless; Git flat map wins first |
+| External affiliate routes | **Keep in KV** |
+| Bulk `kv-upload` for pins | **Deprecated** |
 
-- **Production (`www.daily-life-hacks.com`):** date gate enforced; no client-side password bypass.
-- **Staging / Pages preview hosts:** scheduled content may be shown unlocked for review (hostname-based only).
+## Orphan aliases (185)
 
-## Related docs
+Imported into `pin-destinations` with `origin: legacy_seo_variant | legacy_orphan`.  
+They receive **301 forever** until retired after traffic review (see orphan plan in `docs/cp2-routing-automation.md`).
 
-- `docs/improvement-plan-continuous.md` — full checkpoint plan
-- `docs/project-architecture-audit-2026-07-11.md` — audit baseline
-- `docs/content-production-control.md` — produce/promote safety
+## Rules
+
+1. No manual growth of derived routing JSON.
+2. Produce must run `sync_pin_destinations.py` before commit.
+3. `verify:routing` + `verify:pin-destinations` must pass (`build:checked`).
+4. Do not reintroduce alias pages in `getStaticPaths`.
+
+## Related
+
+- `docs/cp2-routing-automation.md`
+- `docs/improvement-plan-continuous.md`
+- Baseline: `pipeline-data/reports/routing-audit-2026-07-11.json`
