@@ -13,6 +13,7 @@ These annotated tags mark known-good checkpoints on `main`:
 | `cp2-canonical-routing` | `7dcd91a` | After CP2 Phase B (canonical-only routing) |
 | `cp3.1-unify-workflows` | `e8d2b88` | After CP3.1 (workflow unification) |
 | `cp3.2-produce-hardening` | `6ee175a` | After CP3.2 (dry-run + pin assert) |
+| `cp3.3-dashboard-tabs` | `dfe0802` | After CP3.3 (dashboard tab shell) |
 
 Restore code to a checkpoint (prefer revert over hard reset on shared `main`):
 
