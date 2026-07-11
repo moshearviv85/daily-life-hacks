@@ -86,10 +86,10 @@ test("dashboard client uses DashApi header auth and external modules", () => {
   assert.match(dashboard, /src="\/js\/dashboard\/tabs\.js"/);
   assert.match(dashboard, /DashApi\.fetch\(`/);
   assert.match(dashboard, /DashApi\?\.setKey/);
-  assert.match(dashboard, /DashApi\.download\(/);
   assert.match(dashboard, /DashApi\.openXhr\(/);
   assert.match(dashboard, /DashTabs\?\.initDashTabs/);
   assert.doesNotMatch(dashboard, /\?key=\$\{encodeURIComponent\(pw\)\}/);
+  assert.match(apiJs, /download\(/);
   assert.match(apiJs, /x-api-key/);
   assert.match(tabsJs, /function switchDashTab/);
 });

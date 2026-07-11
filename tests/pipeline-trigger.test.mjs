@@ -51,7 +51,7 @@ function makeTopicClaimDb(claimableIds = []) {
   };
 }
 
-test("staging blocks legacy publish before dispatching GitHub Actions", async (t) => {
+test("staging and production both reject retired legacy publish", async (t) => {
   const originalFetch = globalThis.fetch;
   t.after(() => {
     globalThis.fetch = originalFetch;
@@ -63,45 +63,30 @@ test("staging blocks legacy publish before dispatching GitHub Actions", async (t
     return new Response(null, { status: 204 });
   };
 
-  const response = await onRequestPost({
-    request: new Request("https://staging.daily-life-hacks.pages.dev/api/pipeline-trigger?key=test-key", {
-      method: "POST",
-      body: JSON.stringify({ action: "publish" }),
-    }),
-    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "staging" },
-  });
-  const data = await response.json();
+  for (const host of [
+    "https://staging.daily-life-hacks.pages.dev",
+    "https://www.daily-life-hacks.com",
+  ]) {
+    fetchCalled = false;
+    const response = await onRequestPost({
+      request: new Request(`${host}/api/pipeline-trigger?key=test-key`, {
+        method: "POST",
+        body: JSON.stringify({ action: "publish" }),
+      }),
+      env: {
+        DASHBOARD_PASSWORD: "test-key",
+        GH_PAT: "gh-token",
+        CF_PAGES_BRANCH: host.includes("staging") ? "staging" : "main",
+      },
+    });
+    const data = await response.json();
 
-  assert.equal(response.status, 409);
-  assert.equal(data.ok, false);
-  assert.equal(data.queue, "staging");
-  assert.equal(fetchCalled, false);
-});
-
-test("production can dispatch legacy publish", async (t) => {
-  const originalFetch = globalThis.fetch;
-  t.after(() => {
-    globalThis.fetch = originalFetch;
-  });
-
-  let requestedWorkflow = "";
-  globalThis.fetch = async (url) => {
-    requestedWorkflow = String(url);
-    return new Response(null, { status: 204 });
-  };
-
-  const response = await onRequestPost({
-    request: new Request("https://www.daily-life-hacks.com/api/pipeline-trigger?key=test-key", {
-      method: "POST",
-      body: JSON.stringify({ action: "publish" }),
-    }),
-    env: { DASHBOARD_PASSWORD: "test-key", GH_PAT: "gh-token", CF_PAGES_BRANCH: "main" },
-  });
-  const data = await response.json();
-
-  assert.equal(response.status, 200);
-  assert.equal(data.ok, true);
-  assert.match(requestedWorkflow, /publish-articles\.yml/);
+    assert.equal(response.status, 410);
+    assert.equal(data.ok, false);
+    assert.equal(data.retired, true);
+    assert.match(data.error, /retired/i);
+    assert.equal(fetchCalled, false);
+  }
 });
 
 test("production can dispatch staging promotion with explicit confirmation", async (t) => {

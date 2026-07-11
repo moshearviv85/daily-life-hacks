@@ -166,10 +166,12 @@ def test_staging_pipeline_workflows_do_not_sync_pipeline_to_production_api():
         assert "sync_pipeline_to_d1.py --key" not in workflow
 
 
-def test_publish_articles_schedule_disabled():
-    workflow = _workflow("publish-articles.yml")
-    assert "schedule:" not in workflow
-    assert "workflow_dispatch" in workflow
+def test_publish_articles_archived_out_of_active_workflows():
+    active = ROOT / ".github" / "workflows" / "publish-articles.yml"
+    archived = ROOT / "archive" / "github-workflows" / "publish-articles.yml"
+    assert not active.exists()
+    assert archived.exists()
+    assert "workflow_dispatch" in archived.read_text(encoding="utf-8")
 
 
 def test_promote_does_not_double_deploy_with_wrangler():

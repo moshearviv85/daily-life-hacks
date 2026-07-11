@@ -206,8 +206,12 @@ Before deleting:
 - Server: `getDashboardAuthKey()` prefers header, still accepts query for legacy scripts
 - Pins upload/reschedule workflows use header auth
 
-### CP3.5 — API slim + Legacy retirement
-- Confirm `articles_schedule` empty; remove Legacy UI + archive `publish-articles.yml`
+### CP3.5 — API slim + Legacy retirement ✅
+- Cancelled stale PENDING `vegetable-fried-rice-frozen-veg` in prod D1
+- Archived `publish-articles.yml`
+- Removed Legacy dashboard UI/tab
+- `pipeline-trigger` `publish` → 410 Gone
+- Doc: `docs/cp3.5-legacy-retirement.md`
 
 ---
 

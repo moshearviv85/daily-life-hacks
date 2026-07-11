@@ -48,9 +48,9 @@ test("dashboard exposes staging environment and queue state", () => {
   assert.match(dashboard, /STAGING/);
   assert.match(dashboard, /id="ps-queue-label"/);
   assert.match(dashboard, /Queue: \$\{queue\}/);
-  assert.match(dashboard, /Legacy Publish חסום בסטייג׳ינג/);
-  assert.match(dashboard, /Run Publisher חסום בסטייג׳ינג/);
-  assert.match(dashboard, /Publish Now חסום בסטייג׳ינג/);
+  assert.match(dashboard, /Legacy Publish was retired/);
+  assert.match(dashboard, /Legacy article publisher was retired/);
+  assert.doesNotMatch(dashboard, /id="btn-publish"/);
 });
 
 test("pipeline pin button is hidden once a pin has any queue status", () => {
@@ -281,34 +281,28 @@ test("dashboard can dispatch bounded topic discovery and poll for new candidates
   assert.doesNotMatch(dashboard, /timed out without adding visible new topics/);
 });
 
-test("dashboard exposes top-level tabs and moves Legacy Publish off Pipeline", () => {
+test("dashboard exposes top-level tabs and retires Legacy Publish UI", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 
   assert.match(dashboard, /id="dash-tab-overview"/);
   assert.match(dashboard, /id="dash-tab-pipeline"/);
   assert.match(dashboard, /id="dash-tab-pins"/);
   assert.match(dashboard, /id="dash-tab-content"/);
-  assert.match(dashboard, /id="dash-tab-legacy"/);
-  assert.match(dashboard, /id="dash-panel-pipeline"/);
-  assert.match(dashboard, /id="dash-panel-legacy"/);
+  assert.doesNotMatch(dashboard, /id="dash-tab-legacy"/);
+  assert.doesNotMatch(dashboard, /id="dash-panel-legacy"/);
+  assert.doesNotMatch(dashboard, /id="btn-publish"/);
+  assert.doesNotMatch(dashboard, /id="articles-pipeline-section"/);
+  assert.match(dashboard, /CP3\.5: Legacy publisher retired/);
   assert.match(dashboard, /DashTabs\?\.initDashTabs/);
   assert.match(dashboard, /src="\/js\/dashboard\/tabs\.js"/);
   assert.doesNotMatch(dashboard, /function switchDashTab/);
-  assert.match(dashboard, /id="btn-publish"/);
-  assert.match(dashboard, /dash-legacy-note/);
-  assert.doesNotMatch(dashboard, /Legacy tools \(avoid unless draining old queue\)/);
 
   const pipelineStart = dashboard.indexOf('id="dash-panel-pipeline"');
   const pipelineEnd = dashboard.indexOf("<!-- /dash-panel-pipeline -->");
-  const legacyStart = dashboard.indexOf('id="dash-panel-legacy"');
   const pipelineChunk = dashboard.slice(pipelineStart, pipelineEnd);
-  const legacyChunk = dashboard.slice(legacyStart, legacyStart + 2500);
-
-  assert.doesNotMatch(pipelineChunk, /id="btn-publish"/);
   assert.match(pipelineChunk, /id="btn-promote"/);
-  assert.match(legacyChunk, /id="btn-publish"/);
-  assert.match(legacyChunk, /id="articles-pipeline-section"/);
-  assert.match(dashboard, /CP3\.3: Clarity UI removed/);
+  assert.doesNotMatch(pipelineChunk, /id="btn-publish"/);
+  assert.match(dashboard, /CP3\.3: Clarity UI removed|Clarity UI removed/);
 });
 
 test("pipeline control hides article-only rows without complete staging packages", () => {

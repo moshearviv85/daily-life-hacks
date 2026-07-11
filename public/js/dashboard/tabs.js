@@ -2,7 +2,7 @@
  * Dashboard top-level tab switching (CP3.4).
  */
 (function (global) {
-  const ALLOWED = new Set(["overview", "pipeline", "pins", "content", "legacy"]);
+  const ALLOWED = new Set(["overview", "pipeline", "pins", "content"]);
   const STORAGE_KEY = "dlh-dash-tab";
 
   function switchDashTab(tabId) {

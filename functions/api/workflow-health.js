@@ -36,11 +36,11 @@ const WORKFLOWS = [
   },
   {
     key: "publisher",
-    name: "Daily Article Publisher",
+    name: "Daily Article Publisher (Retired)",
     workflow: "publish-articles.yml",
-    mode: "automatic",
-    trigger: "daily 07:00 UTC",
-    effect: "Publishes due production articles.",
+    mode: "retired",
+    trigger: "archived — CP3.5",
+    effect: "Legacy articles_schedule publisher retired. Use staging → promote.",
   },
   {
     key: "discover",

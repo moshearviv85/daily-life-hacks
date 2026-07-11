@@ -44,7 +44,8 @@ const ACTIONS = {
     workflow: "publish-articles.yml",
     dispatchRef: "main",
     outputBranch: "main",
-    effect: "Legacy publisher writes ready articles to production.",
+    effect: "Retired in CP3.5 — use Pipeline Produce → Promote instead.",
+    retired: true,
   },
   promote_staging: {
     workflow: "promote-staging.yml",
@@ -254,12 +255,13 @@ export async function onRequestPost(context) {
   if (!actionConfig) {
     return json({ error: `Unknown action: ${action}. Use: discover, produce, publish, approve_article, regenerate_hero, regenerate_support, promote_staging` }, 400);
   }
-  if (action === "publish" && !isProductionRequest(env, request)) {
+  if (actionConfig.retired || action === "publish") {
     return json({
       ok: false,
-      error: "Legacy Publish is disabled in staging because it can publish to production.",
-      queue: "staging",
-    }, 409);
+      error: "Legacy Publish was retired in CP3.5. Use Pipeline → Generate to Staging → Promote Staging.",
+      retired: true,
+      docs: "/docs/cp3.5-legacy-retirement.md",
+    }, 410);
   }
   if (action === "promote_staging" && !isProductionRequest(env, request)) {
     return json({
