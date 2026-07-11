@@ -13,9 +13,9 @@
 |------------|--------|
 | CP1 Stabilization & SEO Cleanup | **DONE** (2026-07-11) |
 | CP2 Pipeline & Routing Automation | **DONE** (Phase A+B on main) |
-| CP3 Pipeline Reliability & Dashboard | **CP3.1–3.5 complete** on main (Legacy publisher retired) |
-| CP4 Workflows Unification | Pending |
-| CP5 Growth & Pinterest | Pending |
+| CP3 Pipeline Reliability & Dashboard | **DONE** (CP3.1–3.5) |
+| CP4 Workflows Unification | **DONE** — see `docs/cp4-workflows-closure.md` |
+| CP5 Growth & Pinterest | **Planned** — see `docs/cp5-growth-pinterest-plan.md` |
 
 ---
 
@@ -456,10 +456,12 @@ flowchart LR
 
 ## 9. הצעד הבא המיידי
 
-**סטטוס:** החלטות אושרו ב-2026-07-11 — מבצעים CP1.
+**סטטוס:** CP1–CP4 סגורים (2026-07-11). הבא = **CP5.1** לפי `docs/cp5-growth-pinterest-plan.md`.
 
 ### החלטות שאושרו
 1. **יעד SEO לפינים = 301 לקנוני** — מאושר.
 2. **Preview:** אין סיסמה בקליינט; unlock רק על staging / Pages preview / localhost.
+3. **Publish path:** staging → promote בלבד; legacy publisher בארכיון.
+4. **Deploy:** רק `deploy-cloudflare-pages.yml`, concurrency לפי branch.
 
-ראה גם: `docs/pin-routing-policy.md`.
+ראה גם: `docs/pin-routing-policy.md`, `docs/cp4-workflows-closure.md`.

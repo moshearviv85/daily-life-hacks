@@ -188,6 +188,18 @@ async function getProblemDetail(env, runId) {
 }
 
 async function loadWorkflow(env, meta) {
+  if (meta.mode === "retired") {
+    return {
+      ...meta,
+      status: "ok",
+      latest: null,
+      recent_problem: null,
+      problem_detail: null,
+      actions_url: `https://github.com/${REPO}/tree/main/archive/github-workflows`,
+      note: "Archived workflow — not executed by GitHub Actions",
+    };
+  }
+
   const data = await githubJson(
     env,
     `/actions/workflows/${encodeURIComponent(meta.workflow)}/runs?per_page=6&exclude_pull_requests=true`

@@ -174,11 +174,37 @@ def test_publish_articles_archived_out_of_active_workflows():
     assert "workflow_dispatch" in archived.read_text(encoding="utf-8")
 
 
-def test_promote_does_not_double_deploy_with_wrangler():
-    workflow = _workflow("promote-staging.yml")
-    assert "wrangler-action" not in workflow
-    assert "Wait for production Cloudflare deploy" in workflow
-    assert "git push origin main" in workflow
+def test_deploy_concurrency_is_branch_scoped():
+    workflow = _workflow("deploy-cloudflare-pages.yml")
+    assert "cloudflare-pages-deploy-${{ github.ref_name }}" in workflow
+    assert "npm run build:checked" in workflow
+    assert "wrangler-action" in workflow  # only deploy path may wrangler-deploy
+
+
+def test_ci_runs_build_checked_on_prs():
+    workflow = _workflow("ci.yml")
+    assert "pull_request:" in workflow
+    assert "npm run build:checked" in workflow
+    assert "canonical-routing.test.mjs" in workflow
+    assert "pipeline_article_gate_test.py" in workflow
+
+
+def test_active_workflows_inventory_excludes_archived_publishers():
+    active_dir = ROOT / ".github" / "workflows"
+    names = sorted(p.name for p in active_dir.glob("*.yml"))
+    assert "ci.yml" in names
+    assert "deploy-cloudflare-pages.yml" in names
+    assert "pipeline-produce.yml" in names
+    assert "promote-staging.yml" in names
+    assert "publish-articles.yml" not in names
+    assert "pipeline-daily.yml" not in names
+    # Only deploy workflow may call wrangler pages deploy
+    for name in names:
+        text = (active_dir / name).read_text(encoding="utf-8")
+        if name == "deploy-cloudflare-pages.yml":
+            assert "wrangler-action" in text or "pages deploy" in text
+        else:
+            assert "wrangler-action" not in text
 
 
 def test_article_assets_build_before_push_and_no_wrangler():

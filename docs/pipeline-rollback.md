@@ -16,6 +16,7 @@ These annotated tags mark known-good checkpoints on `main`:
 | `cp3.3-dashboard-tabs` | `dfe0802` | After CP3.3 (dashboard tab shell) |
 | `cp3.4-dashboard-auth` | `4e05849` | After CP3.4 (header auth + api/tabs modules) |
 | `cp3.5-legacy-retired` | `13005a2` | After CP3.5 (Legacy publisher retired) |
+| `cp4-workflows-closed` | *(after push)* | After CP4 (workflows final cleanup) |
 
 Restore code to a checkpoint (prefer revert over hard reset on shared `main`):
 

@@ -19,7 +19,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: cloudflare-pages-deploy
+  # Branch-scoped so a staging push cannot cancel an in-flight production deploy (or vice versa).
+  group: cloudflare-pages-deploy-${{ github.ref_name }}
   cancel-in-progress: true
 
 jobs:
