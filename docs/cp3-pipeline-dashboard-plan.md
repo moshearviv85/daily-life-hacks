@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-11  
 **Depends on:** CP2 Phase A+B (pushed to `main`)  
-**Status:** CP3.1 complete (local) — awaiting push to main  
+**Status:** CP3.1 pushed (`e8d2b88`). CP3.2 in progress (dry_run + pin assert + rollback doc).  
 
 ---
 
@@ -190,11 +190,11 @@ Before deleting:
 - Add `ci.yml`
 - Update `pipeline-trigger` / dashboard copy
 
-### CP3.2 — Produce hardening
-- `build:checked` in produce + article-assets
-- Optional `dry_run` input
-- Assert pin destinations for produced slugs
-- Document rollback in content-production-control
+### CP3.2 — Produce hardening ✅
+- `build:checked` in produce + article-assets (done in CP3.1)
+- `inputs.dry_run` on produce — skip commit/push/deploy/mark-produced
+- `assert_pin_destinations.py` after sync (registry + flat, ≥4 pin origins)
+- Rollback runbook: `docs/pipeline-rollback.md`
 
 ### CP3.3 — Dashboard tabs (structure only)
 - Tab shell + hide Legacy from primary Pipeline

@@ -15,6 +15,11 @@ on:
         description: 'Comma-separated pipeline_topics ids to produce (empty = first approved topics)'
         required: false
         default: ''
+      dry_run:
+        description: 'If true: generate + verify + build:checked, but do not commit/push/deploy/mark produced'
+        required: false
+        default: 'false'
+        type: boolean
 
 concurrency:
   group: pipeline-produce-staging
@@ -176,6 +181,8 @@ jobs:
         if: steps.produce.outputs.has_produced == 'true'
         run: |
           python scripts/NEW_PIPELINE_2026-05-08/sync_pin_destinations.py --only-complete
+          python scripts/NEW_PIPELINE_2026-05-08/assert_pin_destinations.py \
+            --topics pipeline-data/produced-topics.json
           git add pipeline-data/pin-destinations.json \
             pipeline-data/slug-aliases.json \
             pipeline-data/router-mapping.json \
@@ -195,8 +202,16 @@ jobs:
         if: steps.produce.outputs.has_produced == 'true'
         run: npm run build:checked
 
+      - name: Dry-run summary (skip publish side effects)
+        if: steps.produce.outputs.has_produced == 'true' && inputs.dry_run == true
+        run: |
+          echo "## Dry run — no commit/push/deploy" >> "$GITHUB_STEP_SUMMARY"
+          echo "Artifacts were generated and build:checked passed. Git/D1 mark-produced skipped." >> "$GITHUB_STEP_SUMMARY"
+          echo "See docs/pipeline-rollback.md for cleanup if local workspace changes must be discarded." >> "$GITHUB_STEP_SUMMARY"
+          ls -la pipeline-data/produced-topics.json || true
+
       - name: Commit and push generated files
-        if: steps.produce.outputs.has_produced == 'true'
+        if: steps.produce.outputs.has_produced == 'true' && inputs.dry_run != true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -220,7 +235,7 @@ jobs:
 
       # CP3.1: push to staging triggers deploy-cloudflare-pages.yml (no duplicate wrangler)
       - name: Wait for staging Pages deploy
-        if: steps.produce.outputs.has_produced == 'true'
+        if: steps.produce.outputs.has_produced == 'true' && inputs.dry_run != true
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -245,7 +260,7 @@ jobs:
           exit 1
 
       - name: Mark topics as produced
-        if: steps.produce.outputs.has_produced == 'true'
+        if: steps.produce.outputs.has_produced == 'true' && inputs.dry_run != true
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
@@ -260,6 +275,7 @@ jobs:
           fi
 
       - name: Return failed topics to approved
+        if: inputs.dry_run != true
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
@@ -275,6 +291,7 @@ jobs:
           fi
 
       - name: Sync pipeline status to D1
+        if: inputs.dry_run != true
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: python scripts/NEW_PIPELINE_2026-05-08/sync_pipeline_to_d1.py --base-url "$PIPELINE_DASHBOARD_BASE_URL" --key "$DASHBOARD_PASSWORD"

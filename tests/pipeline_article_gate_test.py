@@ -76,6 +76,32 @@ def test_pipeline_produce_marks_topics_produced_only_after_staging_deploy():
         "Mark topics as produced",
         "Return failed topics to approved",
     )
+    assert "inputs.dry_run != true" in _step(
+        workflow,
+        "Mark topics as produced",
+        "Return failed topics to approved",
+    )
+
+
+def test_pipeline_produce_supports_dry_run_without_publish_side_effects():
+    workflow = _workflow("pipeline-produce.yml")
+
+    assert "dry_run:" in workflow
+    assert "default: 'false'" in workflow
+    assert "assert_pin_destinations.py" in workflow
+    assert "--topics pipeline-data/produced-topics.json" in workflow
+    assert "Dry-run summary (skip publish side effects)" in workflow
+    assert "inputs.dry_run == true" in workflow
+    assert "inputs.dry_run != true" in _step(
+        workflow,
+        "Commit and push generated files",
+        "Wait for staging Pages deploy",
+    )
+    assert "inputs.dry_run != true" in _step(
+        workflow,
+        "Wait for staging Pages deploy",
+        "Mark topics as produced",
+    )
 
 
 def test_staging_generation_workflows_build_before_push():
@@ -85,8 +111,9 @@ def test_staging_generation_workflows_build_before_push():
     build_idx = workflow.index("Build staging site")
     commit_idx = workflow.index("Commit and push generated files")
     wait_idx = workflow.index("Wait for staging Pages deploy")
+    dry_idx = workflow.index("Dry-run summary (skip publish side effects)")
 
-    assert verify_idx < build_idx < commit_idx < wait_idx
+    assert verify_idx < build_idx < dry_idx < commit_idx < wait_idx
     assert "npm run build:checked" in workflow
     assert "pipeline-data/reports/" in workflow
     assert "wrangler-action" not in workflow

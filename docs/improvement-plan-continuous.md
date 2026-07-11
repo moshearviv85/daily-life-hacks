@@ -13,7 +13,7 @@
 |------------|--------|
 | CP1 Stabilization & SEO Cleanup | **DONE** (2026-07-11) |
 | CP2 Pipeline & Routing Automation | **DONE** (Phase A+B on main) |
-| CP3 Pipeline Reliability & Dashboard | **CP3.1 done locally** — awaiting push approval; next CP3.2 |
+| CP3 Pipeline Reliability & Dashboard | **CP3.1 on main**; **CP3.2** dry_run + pin assert + rollback doc |
 | CP4 Workflows Unification | Pending |
 | CP5 Growth & Pinterest | Pending |
 
