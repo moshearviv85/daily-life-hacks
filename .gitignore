@@ -15,6 +15,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# reddit API credentials — never commit
+pipeline-data/reddit-app-config.json
+pipeline-data/.reddit-token.json
+
 # environment variables
 .env
 .env.production

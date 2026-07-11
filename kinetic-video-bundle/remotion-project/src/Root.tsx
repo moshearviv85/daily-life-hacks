@@ -23,6 +23,7 @@ import { CabbageV3 } from './compositions/CabbageV3';
 import { CabbageV4 } from './compositions/CabbageV4';
 import { CabbageV5 } from './compositions/CabbageV5';
 import { FiberDollarV1 } from './compositions/FiberDollarV1';
+import { ProteinDollarV1 } from './compositions/ProteinDollarV1';
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -215,6 +216,16 @@ export const RemotionRoot: React.FC = () => {
         id="FiberDollarV1"
         component={FiberDollarV1}
         durationInFrames={1193}   // ~39.8 sec @ 30fps — speech ends 37.76s + 2s buffer
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      {/* ── Protein Dollar Series ── */}
+      <Composition
+        id="ProteinDollarV1"
+        component={ProteinDollarV1}
+        durationInFrames={1140}   // ~38 sec @ 30fps — speech ends 35.0s + 2s buffer
         fps={30}
         width={1080}
         height={1920}

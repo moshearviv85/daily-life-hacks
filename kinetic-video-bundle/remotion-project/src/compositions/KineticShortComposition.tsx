@@ -122,6 +122,9 @@ const KEYWORDS = [
   // ↓ dlh-fiber-dollar additions
   'pennies', 'dollar', 'peas', 'blueberries', 'nutrient', 'price',
   'dried', 'canned', 'frozen', 'broccoli', 'berries', 'terrible',
+  // ↓ dlh-protein-dollar additions
+  'pinto', 'beans', 'bacon', 'nine', 'same', 'drumsticks',
+  'eggs', 'breast', 'double', 'garnish',
 ];
 
 function getImportance(word: string, idx: number, total: number, groupIdx: number): number {
