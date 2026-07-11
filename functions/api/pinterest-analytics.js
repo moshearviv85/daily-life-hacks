@@ -1,7 +1,8 @@
-import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import { getDashboardAuthKey, isDashboardAuthorized } from "./_dashboard-auth.js";
 
 /**
- * GET /api/pinterest-analytics?key=DASHBOARD_PASSWORD
+ * GET /api/pinterest-analytics
+ * Auth: x-api-key header (preferred) or ?key=
  *
  * Reads Pinterest analytics from D1 (populated every 3h by post-pins.py via GitHub Actions).
  * No Pinterest API token needed here — GitHub Actions handles all the token logic.
@@ -9,8 +10,7 @@ import { isDashboardAuthorized } from "./_dashboard-auth.js";
 
 export async function onRequestGet(context) {
   const { request, env } = context;
-  const url = new URL(request.url);
-  const key = url.searchParams.get("key");
+  const key = getDashboardAuthKey(request);
 
   if (!(await isDashboardAuthorized(env, key, request))) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });

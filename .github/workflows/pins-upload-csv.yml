@@ -22,8 +22,9 @@ jobs:
           CSV_FILE: ${{ inputs.csv }}
         run: |
           response=$(curl -sS -X POST \
+            -H "x-api-key: ${STATS_KEY}" \
             -F "file=@pipeline-data/${CSV_FILE}" \
-            "https://www.daily-life-hacks.com/api/pins-upload?key=${STATS_KEY}" \
+            "https://www.daily-life-hacks.com/api/pins-upload" \
             -w "\nHTTP %{http_code}")
           echo "$response"
           echo "$response" | grep -q "HTTP 200"

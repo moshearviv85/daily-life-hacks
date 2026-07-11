@@ -1,4 +1,4 @@
-import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import { getDashboardAuthKey, isDashboardAuthorized } from "./_dashboard-auth.js";
 import {
   boardForPin,
   descriptionWithHashtags,
@@ -327,8 +327,7 @@ async function getArticles(env) {
 
 export async function onRequestGet(context) {
   const { request, env } = context;
-  const url = new URL(request.url);
-  const key = url.searchParams.get("key") || "";
+  const key = getDashboardAuthKey(request);
 
   const authorized = await isDashboardAuthorized(env, key, request);
   if (!authorized) {

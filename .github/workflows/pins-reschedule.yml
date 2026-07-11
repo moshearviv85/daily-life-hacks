@@ -14,7 +14,8 @@ jobs:
           STATS_KEY: ${{ secrets.STATS_KEY }}
         run: |
           response=$(curl -sS -X POST \
-            "https://www.daily-life-hacks.com/api/pins-reschedule?key=${STATS_KEY}" \
+            -H "x-api-key: ${STATS_KEY}" \
+            "https://www.daily-life-hacks.com/api/pins-reschedule" \
             -w "\nHTTP %{http_code}")
           echo "$response"
           echo "$response" | grep -q "HTTP 200"

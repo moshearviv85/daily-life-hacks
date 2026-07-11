@@ -2,7 +2,7 @@
 /**
  * /dashboard — password-protected site dashboard.
  * Build-time: reads local markdown + JSON for content stats.
- * Runtime:    fetches live data (subs, analytics, agent scans) from /api/dashboard.
+ * Runtime:    fetches live data via /api/* with x-api-key header (see public/js/dashboard/api.js).
  * Password:   DASHBOARD_PASSWORD env var (Cloudflare Pages → Variables and Secrets).
  */
 import { getCollection } from 'astro:content';
@@ -1477,6 +1477,8 @@ const BUILD = {
   </div>
 </div>
 
+<script src="/js/dashboard/api.js"></script>
+<script src="/js/dashboard/tabs.js"></script>
 <script define:vars={{ BUILD }}>
 // ═══════════════════════════════════════════════════════════════════════════
 //  Client-side dashboard logic
@@ -1534,12 +1536,14 @@ function attemptLogin() {
   const val = document.getElementById('pw-input').value.trim();
   if (!val) return;
   pw = val;
+  window.DashApi?.setKey(pw);
   loadDashboard();
 }
 
 function logout() {
   sessionStorage.removeItem('dlh_pw');
   pw = '';
+  window.DashApi?.clearKey();
   document.getElementById('app').style.display = 'none';
   document.getElementById('login-screen').style.display = 'flex';
   document.getElementById('pw-input').value = '';
@@ -1550,7 +1554,7 @@ function logout() {
 window.addEventListener('DOMContentLoaded', () => {
   initDashboardEnvironment();
   const saved = sessionStorage.getItem('dlh_pw');
-  if (saved) { pw = saved; loadDashboard(); }
+  if (saved) { pw = saved; window.DashApi?.setKey(pw); loadDashboard(); }
 });
 
 // ── Load dashboard ─────────────────────────────────────────────────────────
@@ -1605,7 +1609,7 @@ async function fetchLive(days) {
   setRefreshStatus('loading');
   await loadChartJs();
   try {
-    const res = await fetch(`/api/dashboard?key=${encodeURIComponent(pw)}&days=${days}&noClarity=1`);
+    const res = await DashApi.fetch(`/api/dashboard?days=${days}&noClarity=1`);
     if (res.status === 401) {
       sessionStorage.removeItem('dlh_pw');
       document.getElementById('login-error').style.display = 'block';
@@ -1630,7 +1634,7 @@ async function fetchAutomationHealth() {
   const btn = document.getElementById('automation-refresh-btn');
   if (btn) btn.classList.add('spinning');
   try {
-    const res = await fetch(`/api/workflow-health?key=${encodeURIComponent(pw)}&t=${Date.now()}`);
+    const res = await DashApi.fetch(`/api/workflow-health?t=${Date.now()}`);
     const data = await res.json().catch(() => ({}));
     if (!res.ok || !data.ok) {
       renderAutomationHealthError(data.error || `Workflow health returned ${res.status}`);
@@ -1761,30 +1765,7 @@ function formatAge(value) {
 }
 
 
-function switchDashTab(tabId) {
-  const allowed = new Set(['overview', 'pipeline', 'pins', 'content', 'legacy']);
-  const id = allowed.has(tabId) ? tabId : 'overview';
-  document.querySelectorAll('.dash-tab').forEach((btn) => {
-    const on = btn.getAttribute('data-dash-tab') === id;
-    btn.classList.toggle('active', on);
-    btn.setAttribute('aria-selected', on ? 'true' : 'false');
-  });
-  document.querySelectorAll('.dash-panel').forEach((panel) => {
-    const on = panel.id === `dash-panel-${id}`;
-    if (on) panel.removeAttribute('hidden');
-    else panel.setAttribute('hidden', '');
-  });
-  try { localStorage.setItem('dlh-dash-tab', id); } catch (_) {}
-}
-
-document.querySelectorAll('.dash-tab').forEach((btn) => {
-  btn.addEventListener('click', () => switchDashTab(btn.getAttribute('data-dash-tab')));
-});
-try {
-  const saved = localStorage.getItem('dlh-dash-tab');
-  if (saved) switchDashTab(saved);
-} catch (_) {}
-window.switchDashTab = switchDashTab;
+window.DashTabs?.initDashTabs();
 
 async function fetchClarity() {
   /* CP3.3: Clarity UI removed — no-op */
@@ -2494,7 +2475,7 @@ async function loadPinterestAnalytics() {
   el('pa-error').style.display   = 'none';
 
   try {
-    const res = await fetch(`/api/pinterest-analytics?key=${encodeURIComponent(pw)}`);
+    const res = await DashApi.fetch(`/api/pinterest-analytics`);
     const data = await res.json();
 
     if (!res.ok || data.error) {
@@ -2610,7 +2591,7 @@ async function triggerFetchAnalytics() {
   note.style.color = '';
 
   try {
-    const res = await fetch(`/api/analytics-trigger?key=${encodeURIComponent(pw)}`, { method: 'POST' });
+    const res = await DashApi.fetch(`/api/analytics-trigger`, { method: 'POST' });
     const data = await res.json().catch(() => ({}));
     if (res.ok && data.ok) {
       note.textContent = '✓ Job triggered — Pinterest data will be ready in ~1 min. Click "Load Analytics" to view.';
@@ -2672,7 +2653,7 @@ async function loadTrends() {
   el('pt-error').style.display   = 'none';
 
   try {
-    const res  = await fetch(`/api/pinterest-trends?key=${encodeURIComponent(pw)}`);
+    const res  = await DashApi.fetch(`/api/pinterest-trends`);
     const data = await res.json();
     if (!res.ok || data.error) {
       el('pt-error').textContent = data.error || 'Error loading trends';
@@ -2749,7 +2730,7 @@ async function uploadArticlesCSV() {
 
   try {
     const text = await file.text();
-    const res  = await fetch(`/api/articles-upload?key=${encodeURIComponent(pw)}`, {
+    const res  = await DashApi.fetch(`/api/articles-upload`, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain' },
       body: text,
@@ -2768,7 +2749,7 @@ async function uploadArticlesCSV() {
     statusEl.textContent = `✓ Uploaded (${uploadSummary}). Publishing first article...`;
 
     // Auto-publish first article immediately after upload
-    const pubRes  = await fetch(`/api/articles-publish?key=${encodeURIComponent(pw)}`, {
+    const pubRes  = await DashApi.fetch(`/api/articles-publish`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({}),
@@ -2803,7 +2784,7 @@ async function loadArticles() {
   el('art-content').style.display = 'none';
 
   try {
-    const res  = await fetch(`/api/articles-list?key=${encodeURIComponent(pw)}`);
+    const res  = await DashApi.fetch(`/api/articles-list`);
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Load failed');
 
@@ -2899,7 +2880,7 @@ async function publishArticle(slug) {
   const btn = document.querySelector(`button[onclick="publishArticle('${slug}')"]`);
   if (btn) { btn.disabled = true; btn.textContent = '...'; }
   try {
-    const res  = await fetch(`/api/articles-publish?key=${encodeURIComponent(pw)}`, {
+    const res  = await DashApi.fetch(`/api/articles-publish`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ slug }),
@@ -2936,12 +2917,13 @@ async function publishArticle(slug) {
   }
 }
 
-function downloadArticlesCSV() {
+async function downloadArticlesCSV() {
   if (!pw) { alert('Enter password first'); return; }
-  const a = document.createElement('a');
-  a.href = `/api/articles-export?key=${encodeURIComponent(pw)}`;
-  a.download = '';
-  a.click();
+  try {
+    await DashApi.download('/api/articles-export', 'articles-export.csv');
+  } catch (e) {
+    alert(`Download failed: ${e.message}`);
+  }
 }
 
 async function triggerArticlePublisher() {
@@ -2960,7 +2942,7 @@ async function triggerArticlePublisher() {
   status.style.display = 'none';
 
   try {
-    const res  = await fetch(`/api/articles-publish?key=${encodeURIComponent(pw)}`, {
+    const res  = await DashApi.fetch(`/api/articles-publish`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({}),
@@ -2999,7 +2981,7 @@ let pinsUpcomingLimit = PINS_UPCOMING_PAGE_SIZE;
 async function loadPinsStatus() {
   if (!pw) return;
   try {
-    const res = await fetch(`/api/pins-status?key=${encodeURIComponent(pw)}&limit=${pinsUpcomingLimit}`);
+    const res = await DashApi.fetch(`/api/pins-status?limit=${pinsUpcomingLimit}`);
     if (res.status === 401) return; // not authenticated yet
     if (!res.ok) return;
     const d = await res.json();
@@ -3191,7 +3173,7 @@ function uploadPinsCSV() {
     statusEl.textContent = 'Upload failed — check network.';
   };
 
-  xhr.open('POST', `/api/pins-upload?key=${encodeURIComponent(pw)}`);
+  DashApi.openXhr(xhr, 'POST', '/api/pins-upload');
   xhr.send(formData);
 }
 
@@ -3219,7 +3201,7 @@ async function startPinPostedPolling() {
   let prevPosted = 0;
   let prevPinIds = new Set();
   try {
-    const s = await fetch(`/api/pins-status?key=${encodeURIComponent(pw)}`).then(r => r.json());
+    const s = await DashApi.fetch(`/api/pins-status`).then(r => r.json());
     prevPosted = s.posted || 0;
     (s.recent_posted || []).forEach(p => { if (p.pin_id) prevPinIds.add(p.pin_id); });
   } catch(_) {}
@@ -3235,7 +3217,7 @@ async function startPinPostedPolling() {
     attempts++;
     appendPollLog(`בדיקה ${attempts}/${MAX}...`);
 
-    fetch(`/api/pins-status?key=${encodeURIComponent(pw)}`)
+    DashApi.fetch(`/api/pins-status`)
       .then(r => r.json())
       .then(s => {
         if (s.posted > prevPosted) {
@@ -3277,7 +3259,7 @@ async function clearPendingPins() {
   statusEl.style.color = '#92400e';
   statusEl.textContent = 'מוחק...';
   try {
-    const res = await fetch(`/api/pins-clear?key=${encodeURIComponent(pw)}`, { method: 'POST' });
+    const res = await DashApi.fetch(`/api/pins-clear`, { method: 'POST' });
     const data = await res.json();
     if (res.ok) {
       statusEl.style.color = '#16a34a';
@@ -3302,7 +3284,7 @@ async function reschedulePins() {
   statusEl.style.color = '#92400e';
   statusEl.textContent = 'מחשב מחדש...';
   try {
-    const res = await fetch(`/api/pins-reschedule?key=${encodeURIComponent(pw)}`, { method: 'POST' });
+    const res = await DashApi.fetch(`/api/pins-reschedule`, { method: 'POST' });
     const data = await res.json();
     if (res.ok) {
       statusEl.style.color = '#16a34a';
@@ -3338,7 +3320,7 @@ async function triggerPostNow() {
   pollEl.style.color = '#92400e';
   pollEl.textContent = 'שולח פקודה ל-GitHub Actions...';
   try {
-    const res  = await fetch(`/api/pins-trigger?key=${encodeURIComponent(pw)}`, { method: 'POST' });
+    const res  = await DashApi.fetch(`/api/pins-trigger`, { method: 'POST' });
     const text = await res.text();
     let data;
     try { data = JSON.parse(text); } catch(_) { data = { error: text.slice(0, 300) }; }
@@ -3368,7 +3350,7 @@ const supportImageVersions = new Map();
 
 async function fetchPipelineStatus() {
   try {
-    const res = await fetch(`/api/pipeline-status?key=${encodeURIComponent(pw)}`);
+    const res = await DashApi.fetch(`/api/pipeline-status`);
     if (!res.ok) return;
     pipelineData = await res.json();
     renderPipelineStats();
@@ -3402,7 +3384,7 @@ function renderPipelineStats() {
 async function fetchPipelineTopics() {
   try {
     if (!pw) return [];
-    const res = await fetch(`/api/pipeline-topics?key=${encodeURIComponent(pw)}`);
+    const res = await DashApi.fetch(`/api/pipeline-topics`);
     if (!res.ok) return [];
     const data = await res.json();
     return data.topics || [];
@@ -3737,7 +3719,7 @@ function updateTopicSelectionSummary() {
 }
 
 async function postTopicStatus(action, ids, reason = '') {
-  const res = await fetch(`/api/pipeline-topics?key=${encodeURIComponent(pw)}&action=${action}`, {
+  const res = await DashApi.fetch(`/api/pipeline-topics?action=${action}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ ids, reason }),
@@ -3793,7 +3775,7 @@ async function resetPipelineTopicBank() {
   }
 
   try {
-    const res = await fetch(`/api/pipeline-topics?key=${encodeURIComponent(pw)}&action=reset`, {
+    const res = await DashApi.fetch(`/api/pipeline-topics?action=reset`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ confirm: confirmation }),
@@ -4173,7 +4155,7 @@ async function triggerPipeline(action) {
   }
 
   try {
-    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+    const res = await DashApi.fetch(`/api/pipeline-trigger`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
@@ -4328,7 +4310,7 @@ async function produceSelectedTopics() {
   try {
     await postTopicStatus('approve', ids);
 
-    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+    const res = await DashApi.fetch(`/api/pipeline-trigger`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: 'produce', count: ids.length, topic_ids: ids }),
@@ -4368,7 +4350,7 @@ async function approvePipelineArticle(slug) {
   statusEl.textContent = `Dispatching asset generation for ${slug}...`;
 
   try {
-    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+    const res = await DashApi.fetch(`/api/pipeline-trigger`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: 'approve_article', slug }),
@@ -4512,7 +4494,7 @@ async function regenerateHeroImage(slug, heroSrc) {
   const initialSignal = await getHeroImageSignal(heroSrc);
 
   try {
-    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+    const res = await DashApi.fetch(`/api/pipeline-trigger`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: 'regenerate_hero', slug }),
@@ -4556,7 +4538,7 @@ async function regenerateSupportImage(slug, supportSrc) {
   const initialSignal = await getHeroImageSignal(supportSrc);
 
   try {
-    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+    const res = await DashApi.fetch(`/api/pipeline-trigger`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: 'regenerate_support', slug }),
@@ -4722,7 +4704,7 @@ async function promoteStagingToProduction(slug = '') {
   statusEl.textContent = 'Dispatching staging promotion workflow...';
 
   try {
-    const res = await fetch(`/api/pipeline-trigger?key=${encodeURIComponent(pw)}`, {
+    const res = await DashApi.fetch(`/api/pipeline-trigger`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: 'promote_staging' }),
@@ -4780,7 +4762,7 @@ async function approvePipelinePin(pinSlug, options = {}) {
   }
 
   try {
-    const res = await fetch(`/api/pipeline-pin-approve?key=${encodeURIComponent(pw)}`, {
+    const res = await DashApi.fetch(`/api/pipeline-pin-approve`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ pin_slug: pinSlug, publish_now: false }),
@@ -4823,7 +4805,7 @@ async function addManualTopic() {
   if (!topic) return;
 
   try {
-    const res = await fetch(`/api/pipeline-topics?key=${encodeURIComponent(pw)}&action=add`, {
+    const res = await DashApi.fetch(`/api/pipeline-topics?action=add`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ topic, category: cat })

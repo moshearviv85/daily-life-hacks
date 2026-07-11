@@ -1,14 +1,14 @@
-import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import { getDashboardAuthKey, isDashboardAuthorized } from "./_dashboard-auth.js";
 
 /**
  * Dashboard API – returns all live data for the /dashboard page.
- * Auth: ?key=DASHBOARD_PASSWORD (env var set in Cloudflare Pages → Variables and Secrets)
+ * Auth: x-api-key header (preferred) or ?key=DASHBOARD_PASSWORD
  * Query params: days=7|30 (default 30)
  */
 export async function onRequestGet(context) {
   const { request, env } = context;
   const url = new URL(request.url);
-  const key = url.searchParams.get("key");
+  const key = getDashboardAuthKey(request);
   const days = Math.min(Math.max(parseInt(url.searchParams.get("days") || "30", 10), 1), 90);
   const noClarity = url.searchParams.get("noClarity") === "1";
   const clarityOnly = url.searchParams.get("clarityOnly") === "1";

@@ -4,7 +4,7 @@
  * Read-only GitHub Actions health summary for the dashboard.
  */
 
-import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import { getDashboardAuthKey, isDashboardAuthorized } from "./_dashboard-auth.js";
 
 const REPO = "moshearviv85/daily-life-hacks";
 const GITHUB_API = `https://api.github.com/repos/${REPO}`;
@@ -222,8 +222,7 @@ function summarizeOverall(workflows) {
 
 export async function onRequestGet(context) {
   const { request, env } = context;
-  const url = new URL(request.url);
-  const key = url.searchParams.get("key") || "";
+  const key = getDashboardAuthKey(request);
   if (!(await isDashboardAuthorized(env, key, request))) {
     return json({ error: "Unauthorized" }, 401);
   }

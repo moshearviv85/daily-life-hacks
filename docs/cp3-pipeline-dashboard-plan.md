@@ -200,8 +200,11 @@ Before deleting:
 - Tab shell: Overview / Pipeline / Pins / Content / Legacy
 - Legacy Publish + CSV publisher only under Legacy tab
 - Clarity UI helpers stubbed (no-op); dead HTML comments removed
-### CP3.4 — Dashboard modules + auth headers
-- Split JS; header auth
+### CP3.4 — Dashboard modules + auth headers ✅
+- `public/js/dashboard/api.js` — DashApi with `x-api-key` header (no `?key=` in client URLs)
+- `public/js/dashboard/tabs.js` — tab shell JS extracted
+- Server: `getDashboardAuthKey()` prefers header, still accepts query for legacy scripts
+- Pins upload/reschedule workflows use header auth
 
 ### CP3.5 — API slim + Legacy retirement
 - Confirm `articles_schedule` empty; remove Legacy UI + archive `publish-articles.yml`

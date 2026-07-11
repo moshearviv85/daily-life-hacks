@@ -84,7 +84,7 @@ test("pipeline pin details show publish metadata before queueing", () => {
   assert.match(dashboard, /Budget Meals and Grocery Hacks/);
   assert.match(dashboard, /Food Storage and Freezer Tips/);
   assert.match(dashboard, /let pinsUpcomingLimit = PINS_UPCOMING_PAGE_SIZE/);
-  assert.match(dashboard, /&limit=\$\{pinsUpcomingLimit\}/);
+  assert.match(dashboard, /[?&]limit=\$\{pinsUpcomingLimit\}/);
   assert.match(dashboard, /function showNextUpcomingPins/);
   assert.match(dashboard, /function getSelectedPipelinePinsInterleaved/);
   assert.match(dashboard, /function selectVisiblePipelinePins/);
@@ -291,7 +291,9 @@ test("dashboard exposes top-level tabs and moves Legacy Publish off Pipeline", (
   assert.match(dashboard, /id="dash-tab-legacy"/);
   assert.match(dashboard, /id="dash-panel-pipeline"/);
   assert.match(dashboard, /id="dash-panel-legacy"/);
-  assert.match(dashboard, /function switchDashTab/);
+  assert.match(dashboard, /DashTabs\?\.initDashTabs/);
+  assert.match(dashboard, /src="\/js\/dashboard\/tabs\.js"/);
+  assert.doesNotMatch(dashboard, /function switchDashTab/);
   assert.match(dashboard, /id="btn-publish"/);
   assert.match(dashboard, /dash-legacy-note/);
   assert.doesNotMatch(dashboard, /Legacy tools \(avoid unless draining old queue\)/);

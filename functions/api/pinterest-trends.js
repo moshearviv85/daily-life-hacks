@@ -1,14 +1,14 @@
-import { isDashboardAuthorized } from "./_dashboard-auth.js";
+import { getDashboardAuthKey, isDashboardAuthorized } from "./_dashboard-auth.js";
 
 /**
- * GET /api/pinterest-trends?key=DASHBOARD_PASSWORD
+ * GET /api/pinterest-trends
+ * Auth: x-api-key header (preferred) or ?key=
  * Returns Pinterest trending keywords cached in D1.
  * Populated by GitHub Actions fetch-analytics.yml every 6h.
  */
 export async function onRequestGet(context) {
   const { request, env } = context;
-  const url = new URL(request.url);
-  const key = url.searchParams.get("key");
+  const key = getDashboardAuthKey(request);
 
   if (!(await isDashboardAuthorized(env, key, request))) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
