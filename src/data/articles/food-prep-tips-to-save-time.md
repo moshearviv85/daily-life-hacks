@@ -27,7 +27,7 @@ faq:
 ---
 Look, nobody wants to spend every evening chopping onions or waiting for water to boil. Life is busy, and sometimes getting a decent meal on the table feels like a full-time job in itself. That's where food prep comes in. It's not about becoming a meal-prep guru with a fridge full of identical plastic containers. It's about making a few smart moves that shave off serious time when you actually need it most: during the dinner rush.
 
-I've been in the trenches, trying to get dinner ready with a hungry family circling like sharks. The key isn't to cook everything from scratch every night. It's to front-load some of the most time-consuming steps. Think of it as setting yourself up for success. Here are the practical strategies I actually use to make weeknight cooking less of a chore and more of a quick assembly job.
+I've been in the trenches, trying to get dinner ready with a hungry family circling like sharks. The key isn't to cook everything from scratch every night. It's to front-load some of the most time-consuming steps. Think of it as setting yourself up for success. Here are the practical strategies I actually use to make weeknight cooking less of a chore and more of a quick assembly job. And when you're ready to turn scattered tips into a full week's system, my [food prep guide with recipes](/food-prep-guide-blog-recipes/) takes it from there.
 
 ### Get Your Veggies Ready to Go
 

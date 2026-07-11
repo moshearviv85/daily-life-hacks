@@ -110,7 +110,7 @@ If you want the plate to feel more filling, put a fried egg on top. Not traditio
 
 ## Make-ahead and leftovers
 
-You can make the quinoa filling up to 3 days ahead. Store it in the fridge, then stuff and bake the mushrooms when you're ready. That's the best kind of prep: future dinner help without committing to four days of identical leftovers.
+You can make the quinoa filling up to 3 days ahead. Store it in the fridge, then stuff and bake the mushrooms when you're ready. That's the best kind of prep: future dinner help without committing to four days of identical leftovers. Cooking extra quinoa anyway? This [quinoa lunch salad that stays fresh](/high-fiber-quinoa-salad-for-lunch-prep/) turns the surplus into a week of work lunches.
 
 Fully baked stuffed portobellos keep for about 3 days. Reheat them in a 375F oven for 10 to 12 minutes. The microwave works, but the mushrooms get softer. Still edible, just less impressive.
 

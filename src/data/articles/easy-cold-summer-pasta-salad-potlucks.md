@@ -51,7 +51,7 @@ faq:
 ---
 I have a theory that potlucks are actually a competitive sport disguised as a social gathering. You show up with a bowl, peek under the foil of everyone else's dishes, and secretly judge who brought the bag of chips versus who spent four hours over a hot stove. Personally, I prefer to win the "most eaten dish" award with the least amount of actual labor. 
 
-This easy cold summer pasta salad for potlucks is my go-to move when I have exactly twenty minutes to get my life together before leaving the house. It's not fancy, it doesn't involve artisanal ingredients you have to hunt for at a specialty market, and it doesn't require you to turn on the oven. It's just a solid, reliable crowd-pleaser that won't wilt the moment it hits the humidity of someone's backyard.
+This easy cold summer pasta salad for potlucks is my go-to move when I have exactly twenty minutes to get my life together before leaving the house. It's not fancy, it doesn't involve artisanal ingredients you have to hunt for at a specialty market, and it doesn't require you to turn on the oven. It's just a solid, reliable crowd-pleaser that won't wilt the moment it hits the humidity of someone's backyard. (And when the weather turns and you want your pasta hot again, my [creamy tomato orzo with white beans](/creamy-tomato-orzo-white-beans-one-pot/) is the one-pot cold-month counterpart.)
 
 ## The Secret to Non-Mushy Pasta
 

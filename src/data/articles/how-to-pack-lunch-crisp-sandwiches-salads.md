@@ -43,7 +43,7 @@ Third, isolate the wet stuff. Put your tomatoes, pickles, and roasted red pepper
 
 If you are really serious about your tomatoes, slice them and pat them dry with a paper towel before putting them in. Or better yet, pack the tomato slices in a little separate baggie and add them right before you eat. It takes three seconds and changes everything.
 
-Lastly, choose the right bread. Soft, fluffy white bread absorbs liquid immediately. A sturdy sourdough, a dense rye, or a toasted ciabatta roll will hold up much better in a lunch bag. If you love soft bread, lightly toasting the inside faces of the slices helps create a firmer texture.
+Lastly, choose the right bread. Soft, fluffy white bread absorbs liquid immediately. A sturdy sourdough, a dense rye, or a toasted ciabatta roll will hold up much better in a lunch bag. If you love soft bread, lightly toasting the inside faces of the slices helps create a firmer texture. And if you're wondering what actually belongs between the slices, these [healthy egg sandwich add-ins and toppings](/healthy-egg-sandwich-add-ins-toppings/) play by the same keep-the-wet-stuff-contained rules.
 
 ## How to build a salad that actually survives
 
@@ -69,4 +69,4 @@ Ice packs are also necessary if your lunch sits at a desk for a few hours. A war
 
 Ditch the plastic sandwich bags. They trap moisture. Instead, wrap your sandwich tightly in parchment paper or beeswax wrap. It holds the sandwich together tightly, keeping the layers from sliding around, but allows it to breathe just enough so the bread does not get clammy.
 
-Packing a good lunch takes maybe three extra minutes of planning. Building the sandwich the right way, layering the salad strategically, and keeping the dressing separate are small habits that pay off instantly. You save money, you eat better, and you never have to face a soggy piece of bread again.
+Packing a good lunch takes maybe three extra minutes of planning. Building the sandwich the right way, layering the salad strategically, and keeping the dressing separate are small habits that pay off instantly. You save money, you eat better, and you never have to face a soggy piece of bread again. Once the technique is down, upgrade the contents too: these [high protein bagel sandwich ideas](/high-protein-bagel-sandwich-ideas-lunch/) are built on bread sturdy enough to laugh at moisture.

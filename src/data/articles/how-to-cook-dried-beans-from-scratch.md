@@ -63,7 +63,7 @@ Once the beans are perfectly soft to your liking, add a generous amount of salt 
 
 If you plan to use these beans in a recipe that is already heavily seasoned (like a spicy chili), you can just leave the beans plain and season them later. 
 
-You will get significantly more food out of a $2 bag of dried beans than you ever will from $2 worth of cans. You can cook a massive batch on a Sunday afternoon while you're doing other things around the house, stick them in the fridge, and use them all week in tacos, soups, and quick salads. It's one of those minor kitchen skills that pays off constantly.
+You will get significantly more food out of a $2 bag of dried beans than you ever will from $2 worth of cans. You can cook a massive batch on a Sunday afternoon while you're doing other things around the house, stick them in the fridge, and use them all week in tacos, soups, and quick salads. A pot of [three-bean vegetarian chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) is the obvious first assignment for that Sunday batch. It's one of those minor kitchen skills that pays off constantly.
 
 ## Before you buy another gadget
 

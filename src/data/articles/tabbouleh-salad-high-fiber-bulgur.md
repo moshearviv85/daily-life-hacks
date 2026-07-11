@@ -113,7 +113,7 @@ So, the classic recipe is pretty perfect, but sometimes you just gotta switch th
 
 ### Add Some Heft
 
-If you're feeling extra hungry or want to make it a more substantial meal, consider tossing in some chickpeas or a handful of black beans for added protein and fiber. Grilled chicken or shrimp could also be a nice addition if you're not keeping it strictly vegan or vegetarian. For a little crunch, maybe some chopped walnuts or almonds? (I've done it, it's pretty good).
+If you're feeling extra hungry or want to make it a more substantial meal, consider tossing in some chickpeas or a handful of black beans for added protein and fiber. Grilled chicken or shrimp could also be a nice addition if you're not keeping it strictly vegan or vegetarian. For a little crunch, maybe some chopped walnuts or almonds? (I've done it, it's pretty good). And if you're in a grain-salad mood but want something warmer, this [farro lunch bowl with roasted vegetables and lemon tahini](/farro-lunch-bowl-roasted-vegetables-lemon-tahini/) scratches the same itch with a chewier grain.
 
 ### Veggie Swap Shenanigans
 

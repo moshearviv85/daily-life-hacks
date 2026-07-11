@@ -59,7 +59,7 @@ faq:
 ---
 You know those nights when you want takeout, but you also want to feel like a responsible adult who eats vegetables? This is the meal for those nights. This lentil curry high fiber vegan dinner hits all the comfort food buttons while casually delivering a massive dose of plant-based nutrition.
 
-It's entirely made in one pot, which means fewer dishes. And because we are using red lentils, it's ready in about half an hour. No soaking, no planning ahead, no fuss.
+It's entirely made in one pot, which means fewer dishes. And because we are using red lentils, it's ready in about half an hour. No soaking, no planning ahead, no fuss. It also reheats like a champ, which is exactly why it earns a spot in this [vegan high fiber meal prep for the week](/vegan-high-fiber-meal-prep-for-week/).
 
 ## Why red lentils are the best shortcut
 

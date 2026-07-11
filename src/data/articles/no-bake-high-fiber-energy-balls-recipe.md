@@ -76,11 +76,13 @@ Chilling is not optional if you want them to firm up. Warm peanut butter is deli
 Add cinnamon or cardamom if you want a warmer vibe. Add unsweetened cocoa powder if you want something closer to a brownie bite.
 
 If you want extra crunch, roll the outside in chopped nuts or toasted coconut. If you want less sugar, cut the chips and lean on vanilla and cinnamon instead.
+
+Kids tend to inhale these, by the way. If yours will happily eat oat balls but treat actual dinner like a hostage negotiation, these [high fiber dinner recipes for picky kids](/high-fiber-dinner-recipes-picky-kids/) run the same sneaky playbook at 6 PM.
 ## Portion Reality
 
 These are still calorie dense because nut butter is calorie dense. That is not a moral statement. It is just math.
 
-Two balls with coffee can be a reasonable snack. Six balls because they are small is a different story, and we have all lived that story.
+Two balls with coffee can be a reasonable snack. Six balls because they are small is a different story, and we have all lived that story. And if your cravings run salty instead of sweet, these [healthy alternatives to potato chips](/healthy-alternatives-potato-chips-snacking/) cover the other side of the vending machine.
 ## A Few “No-Stress” Tips So They Turn Out Right
 
 The goal is a mix that squeezes together and holds its shape.

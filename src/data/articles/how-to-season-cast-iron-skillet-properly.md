@@ -45,7 +45,7 @@ A well-seasoned cast iron skillet is naturally nonstick without needing any weir
 
 You need your cast iron pan, a standard cooking oil with a high smoke point (like basic vegetable oil, canola oil, or grapeseed oil), some paper towels, and an oven. 
 
-Ignore the internet forums telling you to buy expensive, artisan flaxseed oil for seasoning; it looks great initially but has a notorious habit of flaking off into your food a few months later. Cheap, simple cooking oil is much more reliable.
+Ignore the internet forums telling you to buy expensive, artisan flaxseed oil for seasoning; it looks great initially but has a notorious habit of flaking off into your food a few months later. Cheap, simple cooking oil is much more reliable. If you're not sure which oils can actually take the heat, this guide to [cooking oil smoke points and best uses](/cooking-oils-smoke-points-best-uses/) sorts it out in two minutes.
 ## The Initial Seasoning Process
 
 If the pan is brand new, or if you found it in a garage sale and it looks terrifying, wash it with hot water and dish soap. Dry it. Water is the enemy of iron and is the sole cause of rust. 
@@ -70,6 +70,8 @@ Never, ever leave it soaking wet on the counter. Put the clean, wet pan back on 
 Cast iron is incredibly forgiving. If the pan accidentally gets rusty because someone left it wet, just scrub the rust off with steel wool, dry it, and put it through the oven-seasoning process again. 
 
 If the surface feels sticky or gummy to the touch, you used way too much oil the last time you seasoned it. Scrub the sticky spots down, and do a fresh round in the oven with a much thinner layer of oil. If your food keeps sticking to the bottom while you cook, the pan might just need another round in the oven, or you simply need to make sure you are using enough cooking fat and letting the pan preheat properly before dropping your food in.
+
+The only real downside of cast iron is that it's a brick to store. If cabinet space is tight, these ideas for [organizing a small kitchen on a budget](/how-to-organize-a-small-kitchen-on-a-budget/) will help you find it a permanent home that isn't your stovetop.
 
 ## If you share a kitchen
 

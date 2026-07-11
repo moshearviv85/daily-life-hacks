@@ -36,9 +36,9 @@ steps:
   - Pour in the soy sauce and garlic powder, tossing everything together for 2 to 3 minutes until steaming.
 faq:
   - question: "How long is a Costco rotisserie chicken good for in the fridge?"
-    answer: "A Costco rotisserie chicken typically stays fresh for three to four days when stored in an airtight container in the refrigerator. To maintain the best quality, it is helpful to shred the meat off the bone while it is still warm before chilling. This makes it much easier to portion out for various costco rotisserie chicken meal ideas throughout the week."
+    answer: "A Costco rotisserie chicken stays fresh for three to four days in an airtight container in the refrigerator, which is the USDA's standard window for cooked poultry. To maintain the best quality, shred the meat off the bone while it is still warm before chilling. That makes it much easier to portion out for dinners through the week."
   - question: "Can you freeze rotisserie chicken for later use?"
-    answer: "Yes, you can freeze the meat for up to four months. For the best results, remove the skin and bones first, then place the shredded or chopped meat into freezer-safe bags. Press the air out to prevent freezer burn. When you are ready to cook, thaw it in the fridge overnight before adding it to soups, tacos, or casseroles."
+    answer: "Yes, you can freeze the meat for up to four months, per USDA guidance on cooked chicken. For the best results, remove the skin and bones first, then place the shredded or chopped meat into freezer-safe bags. Press the air out to prevent freezer burn. When you are ready to cook, thaw it in the fridge overnight before adding it to soups, tacos, or casseroles."
   - question: "Is rotisserie chicken a healthy dinner option?"
     answer: "Rotisserie chicken is often considered a lean protein source, especially if you remove the skin which contains most of the saturated fat. It may provide essential nutrients like niacin and selenium. Using it as a base for meals with plenty of vegetables and whole grains is a practical way to build a balanced plate without spending hours in the kitchen."
   - question: "What is the best way to reheat rotisserie chicken without drying it out?"
@@ -46,7 +46,15 @@ faq:
 ---
 I have spent more time than I care to admit standing in the Costco checkout line, staring at a five-dollar bird and wondering if I actually have a plan for it. We all do it. It is the ultimate impulse buy that feels like a win until you get home and realize your kids won't just eat plain chicken three nights in a row.
 
-The beauty of a pre-cooked bird isn't just the price, it's the fact that the hardest part of dinner is already done. You don't need a culinary degree to make this work, you just need a few pantry staples and about fifteen minutes. Here are the best ways to use that bird before it becomes a sad, cold leftover in the back of your fridge.
+The beauty of a pre-cooked bird isn't just the price, it's the fact that the hardest part of dinner is already done. You don't need a culinary degree to make this work, you just need a few pantry staples and about fifteen minutes. Here are the five dinners, every one of them under 25 minutes:
+
+1. **Shortcut chicken stir-fry** with frozen vegetables and rice
+2. **Weeknight chicken tacos** the whole table agrees on
+3. **Pesto chicken pasta** from a jar and a box
+4. **10-minute chicken salad**, no stove required
+5. **Flatbread pizzas** on naan, faster than delivery
+
+Here's how each one works before that bird becomes a sad, cold leftover in the back of your fridge.
 
 ## The Shortcut Chicken Stir-Fry
 The recipe at the top of this page is my go-to when the "what's for dinner" panic sets in at 5:30 PM. Using frozen vegetables means there is zero chopping involved. You are essentially just heating things up in a pan, which is about all the energy I can muster on a Tuesday.
@@ -79,4 +87,4 @@ Buy a pack of naan or pre-made flatbreads and use the chicken as a topping. Spre
 
 It's faster than delivery and usually cheaper. The edges of the chicken get a little crispy in the oven, which solves the "soggy leftover" problem that some people have with rotisserie meat. It's a low-effort way to use up the smaller scraps of meat you can't quite turn into a full sandwich.
 
-The real secret to making these Costco rotisserie chicken meal ideas work is to process the bird the second you get it home. If you leave it in that plastic dome in the fridge, it becomes a chore to pick at later. Spend five minutes shredding the whole thing while it's still warm, put the meat in a container, and you've basically prepped three nights of protein before you've even put the rest of the groceries away.
+The real secret to making any of these dinners work is to process the bird the second you get it home. If you leave it in that plastic dome in the fridge, it becomes a chore to pick at later. Spend five minutes shredding the whole thing while it's still warm, put the meat in a container, and you've basically prepped three nights of protein before you've even put the rest of the groceries away.

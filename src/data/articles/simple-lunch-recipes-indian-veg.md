@@ -94,4 +94,4 @@ This one-pot dal and rice is a complete meal on its own, but a few simple additi
 *   **Yogurt:** A dollop of plain yogurt or raita (yogurt with chopped cucumber and a little spice) on the side can be really refreshing, especially if you added the cayenne.
 *   **Naan or Roti:** Tearing off a piece of warm bread and dragging it through the curry is arguably the best part of the meal.
 
-This kind of simple, flavorful, and easy-to-clean-up meal is exactly what I'm looking for on a busy day. It’s proof that eating well doesn’t have to be complicated or take hours in the kitchen.
+This kind of simple, flavorful, and easy-to-clean-up meal is exactly what I'm looking for on a busy day. It’s proof that eating well doesn’t have to be complicated or take hours in the kitchen. Rice-and-legume cooking like this shows up in kitchens all over the world for the same reason: it's cheap and it holds you. These [budget meal ideas for your Filipino kitchen](/budget-meal-ideas-philippines/) run the exact same playbook with a different spice drawer.

@@ -57,7 +57,7 @@ One day, I just stared at a bunch of spinach in the fridge. And then at a banana
 
 ## Why Fiber is, Like, a Huge Deal for Little Humans
 
-Okay, fiber. It's not just for grown-ups reading cereal boxes. Kids need it too! It helps them feel full (so maybe fewer requests for snacks five minutes after lunch, a mom can dream), keeps their digestive system happy and regular (which is a relief for everyone involved, am I right?), and may even help with steadier blood sugar levels throughout the day, which could mean fewer of those wild sugar crashes and subsequent meltdowns that nobody signed up for. Most kids don't get enough. A lot of kids, actually. So finding fun ways to sneak it in, well, that's just good parenting.
+Okay, fiber. It's not just for grown-ups reading cereal boxes. Kids need it too! It helps them feel full (so maybe fewer requests for snacks five minutes after lunch, a mom can dream), keeps their digestive system happy and regular (which is a relief for everyone involved, am I right?), and may even help with steadier blood sugar levels throughout the day, which could mean fewer of those wild sugar crashes and subsequent meltdowns that nobody signed up for. Most kids don't get enough. A lot of kids, actually. So finding fun ways to sneak it in, well, that's just good parenting. (Smoothies are just the opening move; these [high-fiber dinners for picky kids](/high-fiber-dinner-recipes-picky-kids/) carry the same strategy all the way to the dinner table.)
 
 And veggies, like spinach? They're packed with it, alongside a bunch of other vital nutrients. But how do you get a kid who'd rather eat dirt (and sometimes does, let's be honest) to consume a leafy green? Blend it till it's unrecognizable and tastes like a milkshake. Genius.
 

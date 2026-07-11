@@ -76,7 +76,7 @@ If you are using frozen cauliflower rice, this rule is twice as important. Do no
 
 Because cauliflower is so mild, you have to be aggressive with your aromatics. Do not skimp on the garlic or the ginger. The fresh ginger does a lot of heavy lifting here, cutting through the funk of the cauliflower and giving the dish a bright, clean background note. 
 
-The sesame oil is non negotiable. It gives you that toasted, restaurant style aroma the second it hits the pan. Olive oil will just make it taste like a weird Italian stir fry. 
+The sesame oil is non negotiable. It gives you that toasted, restaurant style aroma the second it hits the pan. Olive oil will just make it taste like a weird Italian stir fry. If you're fuzzy on which oils can actually handle a ripping hot skillet, my guide to [cooking oil smoke points](/cooking-oils-smoke-points-best-uses/) sorts that out. 
 
 ## The egg strategy
 

@@ -83,4 +83,4 @@ Once it hits that target temperature, take the prime rib out of the oven. Tent i
 
 After its nap, it's time for the fireworks. Crank your oven up to a blazing 450-500°F (230-260°C). Once it's screaming hot, pop the prime rib back in. This is a quick sprint, not a marathon. You're looking for 10-15 minutes, just until a deep, gorgeous, mahogany crust forms all over. Keep an eye on it; you want crust, not charcoal.
 
-Pull it out, slice against the grain, and serve. Because it's already rested, you can carve it immediately. You've earned it.
+Pull it out, slice against the grain, and serve. Because it's already rested, you can carve it immediately. You've earned it. All it needs now is the steakhouse classic on the side, and my [baked potato method](/best-way-to-cook-baked-potatoes/) handles that without stealing any oven attention until the roast is resting.

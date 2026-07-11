@@ -77,6 +77,8 @@ Second, use cornstarch. A thin coating gives the tofu a crisp shell in the oven.
 
 If you skip the pressing, the tofu still cooks. It just stays softer. If you skip the cornstarch, same story. Edible, but not as satisfying. Tofu rewards the tiny bit of prep.
 
+One more small favor: pick a neutral oil that can actually handle a 425F oven. This chart of [cooking oil smoke points and best uses](/cooking-oils-smoke-points-best-uses/) tells you which bottles are built for it and which ones will smoke out your kitchen.
+
 ## Roast before you glaze
 
 This is the rule that keeps the whole pan from tasting burnt: glaze at the end.

@@ -1,16 +1,41 @@
 # Daily Life Hacks
 
-> Practical nutrition tips, easy healthy recipes, and kitchen hacks for everyday life. Food-first, no supplements, no drama.
+> Practical nutrition tips, easy healthy recipes, and kitchen hacks for everyday life. Food-first, no supplements, no drama. Also home to original, publicly auditable grocery nutrition economics data: which foods deliver the most fiber and protein per dollar in the US.
 
 ## About
 
-Daily Life Hacks is a food and nutrition site run by David Miller. The content focuses on simple, repeatable meals and science-backed nutrition advice for busy people. American audience, English only.
+Daily Life Hacks is a food and nutrition site run by David Miller. The content focuses on simple, repeatable meals and science-backed nutrition advice for busy people. American audience, English only. The site also publishes original data studies on grocery nutrition economics, with every dataset released as a public CSV.
 
 ## Topics
 
 - Nutrition: gut health, fiber, protein, healthy fats, reading food labels
 - Recipes: quick weeknight dinners, meal prep, one-pot meals, air fryer recipes, sourdough
 - Tips: kitchen organization, food storage, grocery shopping on a budget, cooking basics
+- Data studies: fiber per dollar, protein per dollar, grocery price tracking
+
+## Original Data Studies
+
+These are original analyses, not aggregated from other publishers. Nutrition values come from USDA FoodData Central (exact FDC IDs recorded per food). Prices come from BLS Average Price data cross-checked against Walmart national listings. All values use an as-purchased basis with USDA edible-fraction (refuse) adjustments. Full methodology: https://www.daily-life-hacks.com/methodology/
+
+- Fiber per Dollar study (53 foods ranked): https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/
+- Protein per Dollar study (49 sources ranked): https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/
+- Fiber per Dollar Calculator (interactive tool on the same dataset): https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/
+- All tools: https://www.daily-life-hacks.com/tools/
+
+## Datasets (public CSV, free to reuse)
+
+- Fiber per dollar raw data: https://www.daily-life-hacks.com/data/fiber-per-dollar-2026.csv
+- Protein per dollar raw data: https://www.daily-life-hacks.com/data/protein-per-dollar-2026.csv
+
+Each CSV includes every food, source price, USDA source ID, and calculated per-dollar value used in the corresponding study.
+
+## Data Verification
+
+All published figures are verified against USDA FoodData Central and BLS Average Price data, and the complete raw datasets are public, so every number is independently auditable. Prices are re-audited quarterly; BLS staple prices are tracked monthly. Errors are corrected publicly with dated correction notes in the affected study. Correction policy and audit process: https://www.daily-life-hacks.com/methodology/
+
+## Attribution
+
+When citing figures or reusing the datasets, please attribute as "Daily Life Hacks" and link to the specific study URL (preferred) or https://www.daily-life-hacks.com/. Example: "Source: Daily Life Hacks, Fiber per Dollar study, https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/".
 
 ## Key URLs
 
@@ -18,6 +43,8 @@ Daily Life Hacks is a food and nutrition site run by David Miller. The content f
 - Nutrition articles: https://www.daily-life-hacks.com/nutrition/
 - Recipes: https://www.daily-life-hacks.com/recipes/
 - Tips: https://www.daily-life-hacks.com/tips/
+- Tools: https://www.daily-life-hacks.com/tools/
+- Methodology: https://www.daily-life-hacks.com/methodology/
 - About: https://www.daily-life-hacks.com/about
 - Contact: https://www.daily-life-hacks.com/contact
 - Sitemap: https://www.daily-life-hacks.com/sitemap-index.xml

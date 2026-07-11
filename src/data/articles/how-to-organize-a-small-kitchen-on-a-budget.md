@@ -83,9 +83,11 @@ These pockets are the absolute perfect size for holding flavor packets, gravy mi
 
 Figuring out how to organize a small kitchen on a budget is honestly just a giant game of Tetris. Once you stop looking at the shelves and start looking at the walls, doors, and vertical air space, you will find massive amounts of hidden storage!
 
+A tiny kitchen doesn't have to stop you from cooking ahead, either. Here's [how to meal prep on a budget](/how-to-meal-prep-on-a-budget-for-one-person/) when your counter space is measured in inches, not feet.
+
 ## Maintenance beats motivation
 
-Motivation is weather. Systems are climate. A ten-minute reset after cooking saves you from a weekend deep clean you will dread. Wipe the counter, soak the pan, take the trash out if it is full.
+Motivation is weather. Systems are climate. A ten-minute reset after cooking saves you from a weekend deep clean you will dread. Wipe the counter, soak the pan, take the trash out if it is full. An organized kitchen also makes cooking faster, and these [food prep tips to save time](/food-prep-tips-to-save-time/) run on the same set-it-up-once logic.
 
 ## If you share a kitchen
 

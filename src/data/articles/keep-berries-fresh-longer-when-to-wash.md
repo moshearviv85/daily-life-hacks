@@ -33,7 +33,7 @@ The problem is usually moisture. Berries are delicate, porous, and they hold ont
 
 First, let's talk about the golden rule of berries: don't wash them until you're ready to eat them. I know the instinct is to rinse everything as soon as you unpack the groceries so they're ready to go. Resist that urge. Washing adds water, and even if you think you dried them perfectly, moisture hides in the little crevices. That hidden water is what causes the rapid decay. 
 
-Store them dry. When you want a handful of raspberries for your yogurt, pull them out, give them a quick rinse under the tap, and eat them immediately.
+Store them dry. When you want a handful of raspberries for your yogurt, pull them out, give them a quick rinse under the tap, and eat them immediately. And if you want to feel slightly fancier about it, fresh berries turn this [no-cook ricotta berry toast bar](/ricotta-berry-toast-bar-no-cook/) into a five-minute breakfast that looks like effort.
 
 ## The container upgrade
 
@@ -53,6 +53,6 @@ Another important step is triage. When you buy a box of berries, there is usuall
 
 You also have to think about where they live in the fridge. The crisper drawer seems like the logical choice, but it can actually be too humid depending on the settings. Sometimes the middle shelf is better because the airflow is more consistent. Just keep them visible so you remember to eat them.
 
-If you notice they're starting to get a little too soft and you know you won't finish them, don't wait for them to mold. That is when you pivot. Throw them in a freezer bag and put them in the freezer. They won't be great for eating raw anymore, but they're perfect for smoothies, baking, or cooking down into a quick stovetop jam.
+If you notice they're starting to get a little too soft and you know you won't finish them, don't wait for them to mold. That is when you pivot. Throw them in a freezer bag and put them in the freezer. They won't be great for eating raw anymore, but they're perfect for smoothies, baking, or cooking down into a quick stovetop jam. Frozen berries are actually ideal for these [gut-friendly smoothie blends](/gut-friendly-high-fiber-smoothies-for-daily-wellness/), since they chill the drink without watering it down.
 
 Keeping berries fresh longer isn't really a magic trick. It's just about keeping them dry, giving them a little space, and catching the bad ones early. It's a small habit, but when you stop throwing away half your groceries, it feels like a pretty big win.

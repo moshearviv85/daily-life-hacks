@@ -36,7 +36,7 @@ Not all noodles are built for the bumpy ride to a picnic table. Thin strands lik
 **Farfalle:** Bowties stay firm and are easy for kids to stab with a plastic fork.
 **Penne:** The hollow center acts like a little straw for vinaigrette, keeping the inside of the pasta seasoned.
 
-Regardless of the shape, you must cook the pasta to al dente. If it's soft in the kitchen, it'll be mush by the time you're at the park. Overcooked pasta absorbs liquid like a sponge, which is exactly why your salad ends up dry and lifeless by noon.
+Regardless of the shape, you must cook the pasta to al dente. If it's soft in the kitchen, it'll be mush by the time you're at the park. Overcooked pasta absorbs liquid like a sponge, which is exactly why your salad ends up dry and lifeless by noon. If you need a salad worth all this packing effort, this [easy cold summer pasta salad for potlucks](/easy-cold-summer-pasta-salad-potlucks/) is the one I keep getting asked to bring back.
 
 ## The two-stage dressing strategy
 The biggest mistake people make is dressing the salad once and calling it a day. Pasta is thirsty. If you dress it at 8:00 AM, by your 1:00 PM lunch, the noodles will have sucked up every drop of oil and vinegar. You'll be left with seasoned noodles that have zero moisture.
@@ -62,4 +62,4 @@ Picnic coolers are often a chaotic mix of soda cans, damp sandwiches, and maybe 
 
 Use containers with locking lids and silicone seals. If you're stuck using a bowl with plastic wrap, double-wrap it. Run one layer across the top and another around the rim to create a makeshift gasket. It's a small step that prevents your lunch from tasting like the inside of a plastic box, which is a low bar to clear but one that many people miss.
 
-Packing a picnic shouldn't feel like a logistical nightmare, but a little bit of planning goes a long way when you're trying to feed a hungry family outdoors. By separating your dressing and keeping your pasta at the bottom of the cooler, you're ensuring that the meal you worked on actually tastes good when it's time to eat. It's the difference between a sad, dry side dish and the highlight of the afternoon.
+Packing a picnic shouldn't feel like a logistical nightmare, but a little bit of planning goes a long way when you're trying to feed a hungry family outdoors. By separating your dressing and keeping your pasta at the bottom of the cooler, you're ensuring that the meal you worked on actually tastes good when it's time to eat. It's the difference between a sad, dry side dish and the highlight of the afternoon. And if you want a second dish that survives the same truck-bed treatment, this [crispy smashed potato salad with Dijon and herbs](/crispy-smashed-potato-salad-dijon-herbs/) travels like a champ.

@@ -62,7 +62,7 @@ The freezer is essentially a pause button on expiration dates. Most people sever
 
 *   **Dying Fruit:** If those bananas are going black, peel them, slice them into massive chunks, and freeze them flat on a tray for future smoothies. 
 *   **Wilting Greens:** Limp but not slimy? An ice water soak can often [revive wilted lettuce and greens](/how-to-revive-wilted-lettuce-and-greens/) before you write them off. If your fresh spinach is past that point and just starting to look a tiny bit sad, stuff the entire remaining bag into the freezer. You can't use it for a crisp salad anymore, but it's perfect for throwing directly into soups, stews, or pasta sauces frozen.
-*   **Stale Bread:** Slice the entire loaf of bread the second you get it home and freeze it in a heavy-duty bag. Take out only exactly the slices you need to pop straight into the toaster. 
+*   **Stale Bread:** Slice the entire loaf of bread the second you get it home and freeze it in a heavy-duty bag. Take out only exactly the slices you need to pop straight into the toaster. And if mold always beats staleness to your loaf, here's [how to keep bread fresh longer without mold](/how-to-keep-bread-fresh-longer-without-mold/). 
 
 ## Rule 3: Understand Expiration Dates
 
@@ -71,7 +71,7 @@ The massive secret the food industry doesn't heavily publicize is that the dates
 *   **"Best By" / "Best Before":** This is a quality indicator, not a safety warning. It means the manufacturer guarantees it will taste the absolute freshest before this date. It might still be perfectly fine for weeks (or even months for canned goods) after. 
 *   **"Sell By":** This date is strictly for the grocery store employees to manage inventory on the shelf. It has nothing to do with whether the food in your fridge is suddenly deadly. 
 
-Figuring out how to reduce food waste at home mostly comes down to trusting your own senses. If it looks okay, feels normal, and smells perfectly fine... it's highly likely perfectly safe to eat. Start trusting your nose over arbitrary ink stamps!
+Figuring out how to reduce food waste at home mostly comes down to trusting your own senses. If it looks okay, feels normal, and smells perfectly fine... it's highly likely perfectly safe to eat. Start trusting your nose over arbitrary ink stamps! Planning helps just as much as storage, by the way. A basic [food prep guide with recipes](/food-prep-guide-recipes/) means every grocery item comes home with a job already assigned to it.
 
 ## When a hack fails, check the boring variables
 

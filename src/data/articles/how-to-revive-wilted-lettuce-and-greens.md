@@ -59,7 +59,7 @@ This technique is used in high-end restaurant kitchens all the time to make sala
 5. **The Wait:** Walk away for 15 to 20 minutes. The extremely cold water shocks the plant cells, forcing them to rapidly absorb the moisture they lost in your fridge. 
 6. **The Spin:** Pull the greens out of the water. They should feel incredibly firm, crisp, and heavy compared to 20 minutes ago. You must dry them now. The absolute best way to do this is to run them through a salad spinner. If you don't have one, lay them out on a clean, dry kitchen towel and gently pat them dry. Don't put wet lettuce into your salad bowl, or your dressing will just slide right off into a watery puddle. 
 
-Learning how to revive wilted lettuce and greens takes almost zero effort, but it will legitimately save you hundreds of dollars in wasted groceries over the course of a year. That sad spinach has a second life!
+Learning how to revive wilted lettuce and greens takes almost zero effort, but it will legitimately save you hundreds of dollars in wasted groceries over the course of a year. That sad spinach has a second life! And once your greens are crisp again, put them straight to work in something like this [pear salad with walnuts](/pear-salad-with-walnuts-fiber-rich/) before the fridge dries them out a second time.
 
 ## Before you buy another gadget
 

@@ -41,7 +41,7 @@ Quinoa is particularly useful because it cooks in about 15 minutes and acts like
 
 Some people can't stand the smell of an office microwave, and I don't blame them. If that's you, look toward "adult Lunchables" or dense bean salads. A container filled with hard-boiled eggs, rolled-up deli turkey, some sharp cheddar, and almonds is a high-protein win that requires zero heat.
 
-A chickpea and tuna salad is another heavy hitter. Use a vinaigrette instead of mayo if you're worried about it sitting in your bag for a few hours. The acidity in the dressing keeps things fresh, and the fiber in the beans works with the protein in the tuna to keep you full. Just maybe don't eat the tuna in a small, unventilated conference room if you want to keep your work friends.
+A chickpea and tuna salad is another heavy hitter. Use a vinaigrette instead of mayo if you're worried about it sitting in your bag for a few hours. The acidity in the dressing keeps things fresh, and the fiber in the beans works with the protein in the tuna to keep you full. Just maybe don't eat the tuna in a small, unventilated conference room if you want to keep your work friends. And if sandwiches are more your speed, these [high protein bagel sandwich ideas for lunch](/high-protein-bagel-sandwich-ideas-lunch/) skip the microwave line entirely.
 
 ## Master the art of the sauce
 
@@ -55,4 +55,4 @@ If you're making a salad-based lunch, the order of operations matters. Put your 
 
 This prevents the spinach from turning into a swampy mess by Wednesday afternoon. When you're ready to eat, you just shake the whole thing into a bowl or a plate. It’s a simple mechanical fix for a common problem. High protein lunches don't have to be complicated, they just have to be structured well enough to survive the commute and the fridge.
 
-You don't need a pantry full of specialized containers or a degree in nutrition to make this work. Start with one protein you actually like, pick a grain or a bean that doesn't get soggy, and find a sauce that makes the whole thing tolerable on day four. Once you realize you're saving fifty dollars a week and not crashing at your desk every afternoon, the twenty minutes you spent in the kitchen on Sunday starts to look like a very smart investment.
+You don't need a pantry full of specialized containers or a degree in nutrition to make this work. Start with one protein you actually like, pick a grain or a bean that doesn't get soggy, and find a sauce that makes the whole thing tolerable on day four. Once you realize you're saving fifty dollars a week and not crashing at your desk every afternoon, the twenty minutes you spent in the kitchen on Sunday starts to look like a very smart investment. And for the days when the prep falls apart and lunch is a drive-thru, this [high fiber fast food guide](/high-fiber-fast-food-options-guide/) helps you order the least regrettable thing on the menu.

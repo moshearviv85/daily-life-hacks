@@ -45,7 +45,7 @@ faq:
 ---
 Avocados are a luxury item these days. You spend decent money on them, nurture them on the counter for three days waiting for that exact perfect moment of ripeness, and then you cut one open only to eat half. You wrap the other half in plastic wrap, put it in the fridge, and by the next morning? It looks like literal brown mush. 
 
-The oxidation process of an avocado is ruthless. As soon as the flesh hits the air, it starts breaking down. Luckily, there are a few genuinely effective tricks, and I am going to show you the absolute best way to store avocados to stop browning.
+The oxidation process of an avocado is ruthless. As soon as the flesh hits the air, it starts breaking down. Luckily, there are a few genuinely effective tricks, and I am going to show you the absolute best way to store avocados to stop browning. The effort is worth it, too, because avocados sit near the top of my [list of healthy fats worth eating daily](/healthy-fats-list-foods-to-eat-daily/).
 
 ## Trick #1: The Onion Method (The Best Option)
 

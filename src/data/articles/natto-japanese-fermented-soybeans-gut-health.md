@@ -53,7 +53,7 @@ First, you have the fiber. Soybeans are already fiber bombs. A small serving of 
 
 Second, the fermentation process creates a massive colony of probiotics. But not just any probiotics. The bacteria used to make natto is incredibly tough. Most of the live cultures in expensive yogurt die as soon as they hit your stomach acid. The bacteria in natto has a protective shell that helps it survive the trip all the way to your intestines, where it actually does the work.
 
-You get the fiber to sweep things out, and the heavy duty bacteria to replenish the good guys. All in one weird little package.
+You get the fiber to sweep things out, and the heavy duty bacteria to replenish the good guys. All in one weird little package. And if natto turns out to be a step too far, these [artichoke recipes for gut health](/artichoke-recipes-for-gut-health/) work the same territory without a single slimy string.
 
 ## How to Actually Eat It 
 

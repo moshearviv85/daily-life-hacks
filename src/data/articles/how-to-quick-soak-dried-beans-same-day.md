@@ -63,8 +63,8 @@ If you are adding salt, wait until the beans are mostly tender. Adding salt righ
 
 I honestly prefer the quick soak method for certain dishes. When you soak beans overnight, especially in a warm kitchen, they can sometimes start to split open. The quick soak is fast and controlled.
 
-It is also incredibly reliable. If you decide on Tuesday morning that you want chili on Tuesday night, you can make it happen. You do not need the foresight of a fortune teller to eat a cheap, healthy meal.
+It is also incredibly reliable. If you decide on Tuesday morning that you want chili on Tuesday night, you can make it happen. That is exactly how this [hearty vegetarian chili with three beans and corn](/hearty-vegetarian-chili-with-three-beans-and-corn/) usually ends up on my table. You do not need the foresight of a fortune teller to eat a cheap, healthy meal.
 
-If you find yourself buying canned beans because you constantly forget to soak the dry ones, this trick changes the math. Dried beans are cheaper, they take up less pantry space, and you get to control the texture and the sodium.
+If you find yourself buying canned beans because you constantly forget to soak the dry ones, this trick changes the math. Dried beans are cheaper, they take up less pantry space, and you get to control the texture and the sodium. Beans cooked from dry also run drier than canned, which is exactly what these [quick black bean burgers that hold their shape](/quick-black-bean-burgers-that-hold-their-shape/) want from you.
 
 So next time you forget the overnight soak, do not panic. Grab a pot, set a timer for two minutes, and get on with your day. You got this.

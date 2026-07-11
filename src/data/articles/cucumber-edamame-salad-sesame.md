@@ -82,6 +82,6 @@ Whisk it all together, toss in the dry cucumbers and the edamame, and you're don
 
 ## Serving suggestions
 
-This Japanese-inspired cucumber and edamame salad plays nicely with almost anything. It's the perfect partner for grilled salmon, teriyaki chicken thighs, or even a simple bowl of rice and a fried egg. I have eaten a massive bowl of it on its own for lunch and felt perfectly happy about it.
+This Japanese-inspired cucumber and edamame salad plays nicely with almost anything. It's the perfect partner for grilled salmon, teriyaki chicken thighs, or even a simple bowl of rice and a fried egg. It's also exactly what you want next to a batch of [homemade dumplings](/healthy-homemade-dumpling-wrapper-recipe/) if you're taking on the whole make-your-own-wrapper project. I have eaten a massive bowl of it on its own for lunch and felt perfectly happy about it.
 
 If you want to prep it ahead of time, do the salting step, mix the dressing, but keep them in separate containers in the fridge until right before you eat. That guarantees maximum crunch when you finally sit down.

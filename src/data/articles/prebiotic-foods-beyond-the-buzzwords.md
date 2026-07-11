@@ -33,18 +33,20 @@ faq:
     answer: "Use onions and garlic as the base for soups or skillet dinners, eat oatmeal a few mornings a week, add beans to tacos or salads, and keep apples or bananas around for snacks. You don't need a complicated plan. You need repeatable defaults."
 ---
 
-The word "prebiotic" has been dragged through the wellness aisle until it sounds like a secret code. You hear it and suddenly dinner feels like homework. Nobody asked for that.
+Prebiotic foods are mostly normal plant foods with fibers your body doesn't fully break down. Those fibers move farther along in digestion, where gut bacteria can use them. That is the useful part. Not the branding. Not the fancy label. The food.
 
-Here is the calmer version: prebiotic foods are mostly normal plant foods with fibers your body doesn't fully break down. Those fibers move farther along in digestion, where gut bacteria can use them. That is the useful part. Not the branding. Not the fancy label. The food.
+The word "prebiotic" has been dragged through the wellness aisle until it sounds like a secret code. You hear it and suddenly dinner feels like homework. Nobody asked for that.
 
 Here's the list, before anything else, with what actually makes each one prebiotic:
 
-* **Garlic, onions, and leeks**: loaded with inulin, a fiber your small intestine doesn't break down. Yes, garlic absolutely counts.
-* **Bananas**, especially slightly green ones: resistant starch, which behaves more like fiber than sugar until the banana ripens.
-* **Oats**: beta-glucan, the soluble fiber that makes oatmeal go thick and creamy.
-* **Asparagus**: another inulin carrier, and it roasts in about 12 minutes.
-* **Apples** with the skin on: pectin, the same stuff that sets jam.
-* **Beans and lentils**: resistant starch plus a pile of regular fiber.
+| Food | Prebiotic fiber | Easy way to eat it |
+|---|---|---|
+| Garlic, onions, and leeks | Inulin and related fructans | Chop them into the base of soups, chili, and pasta sauce |
+| Bananas, slightly green | Resistant starch | Slice one over oatmeal while it's still a little firm |
+| Oats | Beta-glucan | A bowl of oatmeal a few mornings a week |
+| Asparagus | Inulin | Roast it, about 12 minutes |
+| Apples, skin on | Pectin | Snack whole, or chop into oatmeal or a salad |
+| Beans and lentils | Resistant starch plus regular fiber | Tacos, salads, soup, or mashed onto toast |
 
 Every one of those is a normal grocery item. No second mortgage, no new personality required.
 
@@ -64,7 +66,9 @@ Oats are another easy win. A bowl of oatmeal isn't exciting in a fireworks sense
 
 Beans and lentils are the heavy lifters. Chickpeas in a salad, black beans in tacos, lentils in soup, white beans mashed onto toast. They bring fiber, texture, and enough heft that you aren't staring into the pantry at 9 PM looking for something crunchy.
 
-Apples count too, especially with the skin. So do slightly green bananas, which bring resistant starch before they turn sweet and spotty. You don't need to eat them green-green, unless you enjoy snacks that taste like a dare. A little firm is enough.
+Apples count too, especially with the skin. So do slightly green bananas, which bring resistant starch before they turn sweet and spotty. You don't need to eat them green-green. A little firm is enough.
+
+Artichokes deserve a mention here as well, since they're one of the denser inulin sources in the produce aisle. We covered [whether artichoke is actually good for your stomach](/artichoke-recipes-for-gut-health/), plus a few ways to cook one that don't involve fighting it leaf by leaf.
 
 ## Cooked food still counts
 
@@ -84,7 +88,7 @@ Ease in.
 
 Add beans to one dinner. Swap one breakfast for oats. Put onions and garlic into the pan before the rest of the meal. Keep apples around. These are small moves, but small moves are usually the ones that survive a normal week.
 
-Water helps too. Fiber without enough fluid can make digestion feel like traffic at a broken stoplight. Keep a glass nearby and don't turn this into a dramatic self-improvement project.
+Water helps too. Fiber without enough fluid tends to slow digestion down instead of helping it. Keep a glass nearby and don't turn this into a dramatic self-improvement project.
 
 ## A simple prebiotic foods rotation
 
@@ -100,9 +104,9 @@ That is the whole game. Not perfect. Not precious. Just a week where prebiotic f
 
 ## Prebiotic soda vs. a banana: the honest math
 
-Prebiotic sodas are everywhere now, and I get the appeal. It tastes like soda and the can says it's doing something useful. Most brands get their fiber from inulin, usually chicory root or agave, and depending on the can you're looking at roughly 2 to 9 grams of fiber for around $2.50.
+Prebiotic sodas are everywhere now, and I get the appeal. It tastes like soda and the can says it's doing something useful. Most brands get their fiber from inulin, usually chicory root or agave, and depending on the can you're looking at roughly 2 to 9 grams of fiber for around $2.50. That range comes straight off typical nutrition labels, not a lab, so check the specific can in your hand.
 
-Now the boring comparison. A slightly green banana costs about a quarter and brings roughly 3 grams of fiber plus resistant starch. A bowl of oats runs maybe 20 cents and lands around 4 grams. And when we priced the whole store for our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried beans delivered around 70 grams of fiber per dollar. A prebiotic soda gets you somewhere between 1 and 4 grams per dollar. Same fiber type the soda brags about, by the way. The inulin in the can is the same inulin sitting in your onion drawer for free.
+Now the boring comparison, with numbers from USDA FoodData Central. A slightly green banana costs about a quarter and brings roughly 3 grams of fiber plus resistant starch. A bowl of oats runs maybe 20 cents and lands around 4 grams. And when we priced the whole store for our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried beans delivered around 70 grams of fiber per dollar. A prebiotic soda gets you somewhere between 1 and 4 grams per dollar. Same fiber type the soda brags about, by the way. The inulin in the can is the same inulin sitting in your onion drawer for free.
 
 That doesn't make the soda evil. If it's replacing a regular soda, fine, enjoy it. Just don't let a $2.50 can do a job your groceries already do for a tenth of the price. Same logic for drinks in general: a homemade [gut health tea with peppermint or ginger](/gut-health-tea-peppermint-ginger/) costs pennies a cup and doesn't need a marketing department.
 

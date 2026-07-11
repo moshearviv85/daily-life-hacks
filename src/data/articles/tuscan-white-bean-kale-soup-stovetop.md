@@ -87,6 +87,8 @@ Finish with lemon and the last drizzle of oil. Fat carries flavor. Acid lifts it
 * **Less heat:** Skip the red pepper flakes. The soup is still good. Promise.
 * **Herb swap:** Thyme works if rosemary isn't your thing. Fresh basil stirred in at the end is nice in summer when you're pretending the weather cooperates.
 
+If the pasta-in-soup idea is calling you, take it one step further. This [creamy tomato orzo with white beans](/creamy-tomato-orzo-white-beans-one-pot/) turns the same two cans into a one-pot dinner that's more stew than soup.
+
 ## Meal prep and storage
 
 This is a Sunday pot that becomes Tuesday lunch without drama. Cool the soup before you refrigerate it. Reheat on the stove over medium low, not full blast, so the beans don't explode into paste.

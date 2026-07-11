@@ -26,9 +26,14 @@ faq:
     answer: "With this system, $50 to $70 a week per person is realistic in most of the US, and a shared household drops the per-person number further because staples stretch. The variables that move it most are meat quantity, snacks, and drinks, not the vegetables. If your total runs higher, the fix is usually shifting protein from ground beef and deli meat toward beans, eggs, and drumsticks, not eating less."
 ---
 
-My first real grocery budget happened by force, not virtue. Money got tight one spring, I gave myself $60 a week, and I assumed I'd be living on instant noodles until things turned around. Instead I accidentally started eating better than I had in years, because a tight budget pushes you toward exactly the foods that turn out to be the good ones.
+Eating healthy on a budget comes down to four moves, and none of them involve coupons:
 
-Here's the whole playbook in one paragraph, and the rest of this page just unpacks it. Shop the dry goods aisle first, because that's where beans, oats, rice, and lentils sell nutrition for pennies. Plan a week, not a day, so one shopping trip feeds seven dinners instead of one. Cook once and eat three times, because batch cooking is the only way cheap ingredients survive a busy Wednesday. And let actual data pick your staples instead of vibes, because we ran the numbers and the results are not what the ads suggest.
+* **Shop the dry goods aisle first.** That's where beans, oats, rice, and lentils sell nutrition for pennies.
+* **Plan a full week, not a day.** One shopping trip feeds seven dinners instead of one.
+* **Cook once, eat three times.** Batch cooking is the only way cheap ingredients survive a busy Wednesday.
+* **Let cost-per-nutrient data pick your staples, not vibes.** We ran the numbers, and the results are not what the ads suggest.
+
+I learned all four by force, not virtue. Money got tight one spring, I gave myself $60 a week, and I assumed I'd be living on instant noodles until things turned around. Instead I accidentally started eating better than I had in years, because a tight budget pushes you toward exactly the foods that turn out to be the good ones. The rest of this page just unpacks those four moves.
 
 ## Let the numbers pick your staples
 
@@ -38,7 +43,20 @@ Both tables told the same story. A dollar of dried pinto beans buys about 98 gra
 
 The winners repeat across both studies, which is exactly what you want in a staple. Dried beans, lentils, and split peas dominate the top of both lists. Oats, whole wheat pasta, and rice fill in behind them. Among animal foods, chicken drumsticks are the meat counter's best bargain at about 50 grams of protein per dollar even after subtracting the bone, and eggs are the easiest at 34. Nothing on that list is exotic. It's the least photogenic aisle in the store, quietly winning.
 
-A few more findings worth keeping in your back pocket. Dried beans beat canned by roughly three to one on protein (98 grams per dollar versus 30), so canned is the convenience tax, not the crime; it still outscores every ground meat in the store. Whole milk surprised me at 29 grams of protein per dollar, which means a $4.22 gallon quietly holds 123 grams of protein. Whole wheat flour technically topped both tables (96 on protein, 78 on fiber), but flour only counts if you bake, so it wears a permanent asterisk. And popcorn, of all things, landed fifth for fiber at 58 grams per dollar, which makes plain kernels the rare snack that belongs on a budget list.
+Here's the shortlist in one table, straight from the two datasets:
+
+| Food | Protein g per $1 | Fiber g per $1 | Approx price |
+|---|---|---|---|
+| Pinto beans (dry) | 97.9 | 70.8 | $3.97 for a 4 lb bag |
+| Green split peas (dry) | 73.9 | 71.0 | $1.42 for a 16 oz bag |
+| Whole wheat spaghetti | 53.4 | 35.4 | $1.18 for a 16 oz box |
+| Chicken drumsticks (bone-in) | 50.3 | - | $1.09 per lb in a 5 lb bag |
+| Rolled oats | 46.6 | 35.8 | $3.36 for a 42 oz canister |
+| Eggs (large) | 34.4 | - | $2.19 per dozen |
+| Whole milk | 29.1 | - | $4.22 per gallon |
+| Bacon (the anti-example) | 9.2 | - | $6.71 per lb |
+
+A few more findings worth keeping in your back pocket. Dried beans beat canned by roughly three to one on protein (98 grams per dollar versus 30), so canned is the convenience tax, not the crime; it still outscores every ground meat in the store. Whole milk surprised me at 29 grams of protein per dollar, which means a $4.22 gallon holds 123 grams of protein without making any fuss about it. Whole wheat flour technically topped both tables (96 on protein, 78 on fiber), but flour only counts if you bake, so it wears a permanent asterisk. And popcorn, of all things, landed fifth for fiber at 58 grams per dollar, which makes plain kernels the rare snack that belongs on a budget list.
 
 Meanwhile the stuff at the bottom is the stuff the ads sell hardest. Ground beef at 80/20 delivers about 11.5 grams of protein per dollar, roughly one eighth of what pinto beans manage. Fresh berries anchor the bottom of the fiber table. None of those foods are bad. They're just terrible places to send a tight grocery dollar and pretend it's the nutrition budget.
 
@@ -78,7 +96,7 @@ And when the pot looks a little small for the table, [how to stretch meals](/how
 
 The average American household throws out hundreds of dollars of food a year, which means the cheapest groceries in your house are the ones already in your fridge. Waste prevention isn't a side note to budget eating. It's a third of it.
 
-The foundation is [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/): eat-first shelves, honest leftover habits, and actually seeing what you own before you shop. Storage does the quiet heavy lifting; [storing fruits and vegetables properly](/how-to-store-fruits-and-vegetables-properly/) can add days to produce that would otherwise turn into compost with a receipt attached.
+The foundation is [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/): eat-first shelves, honest leftover habits, and actually seeing what you own before you shop. Storage does the boring heavy lifting; [storing fruits and vegetables properly](/how-to-store-fruits-and-vegetables-properly/) can add days to produce that would otherwise turn into compost with a receipt attached.
 
 Even the losses aren't always losses. [Wilted lettuce and greens can usually be revived](/how-to-revive-wilted-lettuce-and-greens/) with ice water and ten minutes, and [leftover rice](/how-to-use-leftover-rice-creative-ideas/) is arguably better the second day, when it fries properly instead of steaming into mush.
 
@@ -86,7 +104,7 @@ The freezer is the endgame. A [simple freezer inventory](/freezer-inventory-simp
 
 ## Common mistakes that backfire
 
-I've watched people try budget eating, hate it, and quit within two weeks, and it's almost always one of the same four mistakes.
+Budget eating has a familiar failure arc: enthusiastic Sunday, grim Wednesday, takeout by Friday, whole thing abandoned before payday. Having seen that arc up close more than once, I can tell you it's almost always one of the same four mistakes.
 
 **Buying cheap ingredients without a cooking plan.** A bag of lentils that sits in the cabinet for six months didn't save you anything. If you're not going to batch cook, buy canned; the per-dollar numbers are worse, but eaten beans beat theoretical ones every single time.
 
@@ -100,7 +118,19 @@ None of these are character flaws. They're system gaps, and every one of them ha
 
 ## A realistic $60 week
 
-Here's roughly how I'd sketch a week for two adults on $60, using the same prices from our studies. The backbone costs about $25: a 4 pound bag of pinto beans ($3.97, holding around 389 grams of protein), a bag of split peas ($1.42), a 5 pound bag of drumsticks (about $5.45 at $1.09 per pound), two dozen eggs (around $4.40), a gallon of milk ($4.22), oats, rice, and whole wheat spaghetti (about $6 combined). The remaining $35 buys produce and flexibility: bananas, cabbage, carrots, onions, a couple bags of frozen vegetables, canned tomatoes, peanut butter, bread, and a block of cheese.
+Here's roughly how I'd sketch a week for two adults on $60, using the same prices from our studies. The backbone costs about $25:
+
+| Item | Price | What it delivers |
+|---|---|---|
+| Pinto beans, 4 lb bag | $3.97 | Around 389 grams of protein, plus serious fiber |
+| Green split peas, 16 oz bag | $1.42 | About 101 grams of fiber and a week of soup lunches |
+| Chicken drumsticks, 5 lb bag | $5.45 | The meat counter's best bargain at $1.09 per lb |
+| Eggs, two dozen | $4.40 | The easiest protein in the kitchen, zero prep drama |
+| Whole milk, 1 gallon | $4.22 | 123 grams of protein hiding in the fridge door |
+| Oats, rice, and whole wheat spaghetti | ~$6.00 | Every breakfast and dinner base for the week |
+| **Total** | **~$25** | The backbone of the whole week |
+
+The remaining $35 buys produce and flexibility: bananas, cabbage, carrots, onions, a couple bags of frozen vegetables, canned tomatoes, peanut butter, bread, and a block of cheese.
 
 The day-to-day looks something like this:
 

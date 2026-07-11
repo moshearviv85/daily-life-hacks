@@ -112,6 +112,8 @@ Okay, so maybe you're thinking, "Tofu? Meh." I get it. It can be a little... squ
 *   **Assembly Line Style:** Once everything is cooked, line up your containers, scoop in the quinoa, then the veggies, then the tofu. It's like a little factory, and it makes the whole process go super quick. Put on some tunes, get in the zone.
 *   **Don't Forget the Garnish (If You're Feeling Fancy):** A sprinkle of sesame seeds or some fresh cilantro right before you eat it can really make it feel like a fresh meal, even if it's day four. Presentation matters, even for a Tuesday lunch that nobody else will see.
 
+And if you want a wider rotation than tofu bowls, this [weekly food prep guide with recipes](/food-prep-guide-recipes/) fills out the rest of the calendar without doubling your Sunday workload.
+
 ## Nutritional Breakdown (The Good Stuff)
 
 This meal is packed. I mean, seriously. Each serving delivers a hefty dose of dietary fiber from the quinoa, broccoli, and bell peppers. Quinoa is also a complete protein, which is pretty rad for a grain, meaning it has all nine essential amino acids. Tofu, obviously, brings the protein party too. We've got vitamins out the wazoo from the veggies (Vitamin C, Vitamin K, folate, the list goes on). Plus, healthy fats from the olive oil. It's a balanced situation. You're getting carbs, protein, fats, and a ton of micronutrients. Your body will be like, "Thank you, friend, for not feeding me another sad desk sandwich."

@@ -65,6 +65,8 @@ But if you look at the very, very top line of the label, under the words "Nutrit
 
 This means you have to severely multiply every single number on that entire label-calories, sugar, sodium - by 2.5 if you plan on actually drinking the whole bottle in one sitting. Always, always check the serving size first before you look at a single other number. The numbers mean nothing without context.
 
+Serving sizes are also why protein claims get slippery. This [protein per serving comparison of beans, chicken, and tofu](/protein-per-serving-beans-chicken-tofu-compared/) puts the real numbers side by side so the label can't play games with you.
+
 ## The Sugar Deception: Total vs. Added 
 
 A few years ago, the FDA finally updated nutrition labels to be significantly more honest about sugar. You will now clearly see two different lines: "Total Sugars" and directly underneath it, "Includes Xg Added Sugars."
@@ -82,7 +84,7 @@ If you pick up a loaf of bread claiming to be "Honey Wheat," but the ingredient 
 
 That means there's literally more high fructose corn syrup in that specific bread than actual honey, and the primary bulk is bleached white flour, not whole wheat. 
 
-Learning how to read nutrition labels for beginners is just learning how to see through the matrix of clever advertising. Trust the tiny black text on the back, and ignore the loud yelling on the front!
+Learning how to read nutrition labels for beginners is just learning how to see through the matrix of clever advertising. Trust the tiny black text on the back, and ignore the loud yelling on the front! And when you're scanning the fat line, remember that fat itself isn't the villain; this [healthy fats list of foods to eat daily](/healthy-fats-list-foods-to-eat-daily/) covers the ones actually worth keeping in your cart.
 
 ## Before you buy another gadget
 

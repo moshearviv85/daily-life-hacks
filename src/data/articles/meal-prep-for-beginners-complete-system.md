@@ -26,13 +26,30 @@ faq:
     answer: "Absolutely, and for anything past day four you should. Cooked grains, beans, meatballs, and most assembled meals freeze well in airtight containers. Frozen food stays safe indefinitely at 0 degrees F, though quality is best within about 2 to 3 months. Thaw overnight in the fridge, not on the counter."
 ---
 
-Everyone's first attempt at meal prep looks the same. You watch one video, buy ten matching containers, cook a mountain of chicken and rice on Sunday afternoon, and feel like a person who finally has their life together. By Wednesday you're staring at container number four with genuine dread. By Friday you've ordered pizza and the last two containers slide into the trash, along with the whole idea.
+Meal prep that actually survives the week is a component system: two bases, two proteins, and two sauces, cooked in about 90 minutes on Sunday, giving you eight different meal combinations instead of five identical lunches.
+
+Everyone's first attempt looks nothing like that. It looks the same for all of us. You watch one video, buy ten matching containers, cook a mountain of chicken and rice on Sunday afternoon, and feel like a person who finally has their life together. By Wednesday you're staring at container number four with genuine dread. By Friday you've ordered pizza and the last two containers slide into the trash, along with the whole idea.
 
 I've prepped most Sundays for years, and I can tell you the problem was never your discipline. It was the plan. Cooking five identical meals is a system designed to make you hate your own food by midweek. This guide is the fix: a meal prep for beginners system built around components instead of finished meals, done in about 90 minutes, that feeds you all week without the Wednesday dread.
 
 ## The whole system in one paragraph
 
-Here it is. Every Sunday, pick two bases (say, rice and roasted potatoes), two proteins (turkey meatballs and shredded chicken), and two sauces (a peanut sauce and a lemon vinaigrette). Cook everything in parallel, about 90 minutes, using the oven, the stovetop, and your cutting board at the same time. Store each component in its own container instead of pre-assembling meals. Then all week you combine them differently: meatballs over rice with peanut sauce Monday, chicken and potatoes with vinaigrette Tuesday, fried rice with whatever's left on Thursday. Two bases times two proteins times two sauces is eight different meals from one cooking session. That's the entire system. Everything below is just the details.
+Here it is, in four steps:
+
+1. **Pick six components every Sunday.** Two bases (say, rice and roasted potatoes), two proteins (turkey meatballs and shredded chicken), and two sauces (a peanut sauce and a lemon vinaigrette).
+2. **Cook everything in parallel.** About 90 minutes, using the oven, the stovetop, and your cutting board at the same time.
+3. **Store each component in its own container.** No pre-assembled meals.
+4. **Combine them differently all week.** Meatballs over rice with peanut sauce Monday, chicken and potatoes with vinaigrette Tuesday, fried rice with whatever's left on Thursday.
+
+Two bases times two proteins times two sauces is eight different meals from one cooking session. Here's what a rotation can look like, using components covered later in this guide:
+
+| Bases | Proteins | Sauces |
+|---|---|---|
+| Rice | Turkey meatballs | Peanut sauce |
+| Roasted potatoes | Shredded rotisserie chicken | Lemon vinaigrette |
+| Quinoa or beans | Hard-boiled eggs | Yogurt sauce |
+
+That's the entire system. Everything below is just the details.
 
 ## Why most meal prep fails
 
@@ -67,6 +84,7 @@ Bases are the cheap, boring foundation that makes everything else work. Rice, qu
 * **Grains:** Rice is the workhorse. Cook a big batch, cool it right, and half of it becomes [fried rice](/how-to-cool-rice-for-fried-rice/) on Thursday, which is the single best trick for making day-four prep feel like a brand new meal.
 * **Beans:** Canned works fine forever. But [dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) cost roughly a third as much per cooked cup and taste noticeably better, so it's worth learning once.
 * **The batching habit itself:** If the parallel-cooking workflow above feels chaotic, the [batch cooking for beginners guide](/batch-cooking-for-beginners-weekly-guide/) breaks it into an even gentler on-ramp.
+* **The weekend version:** Prefer to spread the work across Saturday and Sunday instead of one sprint? The [weekend food prep playbook](/food-prep-guide-blog-recipes/) lays out that slower rhythm.
 
 ### Proteins
 
@@ -91,6 +109,15 @@ Two things kill a week of prep: food that goes bad and food that goes boring. Bo
 
 On safety, the numbers are simple and worth taking seriously. Cooked food keeps 3 to 4 days in a fridge at 40 degrees F or below, per USDA guidance. That means a Sunday session covers you through Wednesday or Thursday. Anything meant for Friday should go in the freezer on Sunday and come down to the fridge Thursday night. Don't negotiate with the timeline; freeze instead.
 
+| Component | Fridge (40 F or below) | Freezer (0 F) |
+|---|---|---|
+| Cooked grains and beans | 3 to 4 days | Safe indefinitely; best quality within 2 to 3 months |
+| Cooked meats (meatballs, shredded chicken) | 3 to 4 days | Safe indefinitely; best quality within 2 to 3 months |
+| Hard-boiled eggs, in the shell | Up to 1 week | - |
+| Assembled meals | 3 to 4 days | Safe indefinitely; best quality within 2 to 3 months |
+
+*Storage windows per USDA food safety guidance for leftovers and frozen food.*
+
 On quality, most "meal prep tastes bad" complaints are really storage mistakes:
 
 * **Produce dies first when it's stored wrong.** Half of it has strong opinions about where it lives. The guide to [storing fruits and vegetables properly](/how-to-store-fruits-and-vegetables-properly/) covers what goes in the fridge, what stays on the counter, and what to keep apart.
@@ -101,7 +128,7 @@ As for boredom, the components are already doing the heavy lifting. But keep one
 
 ## The budget math
 
-Meal prep gets sold as a health habit, but honestly, the money argument might be stronger. A prepped lunch built from rice, beans, chicken, and roasted vegetables runs 2 to 4 dollars a portion. The mediocre wrap near your office is 14. Do that math across a work week and prep pays for the containers in about four days.
+Meal prep gets sold as a health habit, but honestly, the money argument might be stronger. Take the ingredients in this guide at the prices from our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/): chicken drumsticks run $1.09 per pound in the 5 pound bag, dried pinto beans about 22 cents per 100 grams, and rice costs pennies per serving. A lunch assembled from those plus roasted vegetables lands around 2 to 4 dollars a portion. The mediocre wrap near your office is 14. Do that math across a work week and prep pays for the containers in about four days.
 
 The system compounds when you shop by cost-per-nutrient instead of vibes. We ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle ran away with it, which is convenient, because the dry goods aisle is also where the best prep bases live. If you want the full strategy, the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the shopping side, and the [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) goes deep on getting the most filling food for the fewest dollars. Meal prep is the execution layer for all of it: cheap ingredients only save money if they actually get cooked.
 

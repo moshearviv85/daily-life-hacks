@@ -57,7 +57,7 @@ faq:
 ---
 We all have those nights where cooking feels like a personal insult, but ordering takeout feels like a defeat. You want something warm, filling, and deeply comforting, but you refuse to wash more than one pan. This creamy tomato orzo with white beans is the peace treaty for that exact mood.
 
-It's basically a cheat code for risotto. Real risotto asks you to stand at the stove, stirring broth in ladle by ladle, contemplating your life choices. Orzo gives you a very similar creamy, starchy texture, but it only takes about fifteen minutes and you can walk away from it (mostly). 
+It's basically a cheat code for risotto. Real risotto asks you to stand at the stove, stirring broth in ladle by ladle, contemplating your life choices. Orzo gives you a very similar creamy, starchy texture, but it only takes about fifteen minutes and you can walk away from it (mostly). If you're into this lazy-risotto genre, my [creamy mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/) is the even more hands-off cousin. 
 
 I threw this together one night when a storm knocked out our power right after I had finished cooking. We ate it by flashlight, straight out of the skillet, and honestly, it was the best thing I had eaten all week. It's just a bowl of pure, savory comfort that relies on things you probably already have sitting in your pantry.
 

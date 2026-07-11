@@ -38,14 +38,14 @@ I stood in the cereal aisle for way too long last week. Two boxes, almost the sa
 
 Front-of-package claims are marketing. That's not cynical, that's just how packaging works. But the phrase "good source of fiber" is one of the more regulated ones, which means it actually has rules behind it. Knowing those rules can save you from buying granola bars that are basically cookies with a health halo. Granola is the worst offender in the whole store, which is why we wrote a separate guide on [choosing a granola that isn't secretly dessert](/how-to-choose-granola-not-dessert/).
 
-## What the FDA actually requires, claim by claim
+## What does the FDA require for each fiber claim?
 
 The whole system fits in one table, and honestly it's easier to scan than to read:
 
 | What the package says | What the FDA requires per serving |
 |---|---|
 | "Good source of fiber", "Contains fiber", "Provides fiber" | 10 to 19% of the Daily Value: 2.8 to 5.3 grams |
-| "High in fiber", "Excellent source of fiber", "Rich in fiber" | 20% DV or more: at least 5.6 grams |
+| "High in fiber", "Excellent source of fiber", "Rich in fiber" | 20% DV or more: at least 5.6 grams, about what two slices of 100% whole wheat bread deliver |
 | "More fiber" or "Added fiber" | At least 10% DV (2.8 grams) more than the food it's compared to |
 | "Made with whole grains" | Nothing. It's not a fiber claim, and there's no fiber minimum |
 
@@ -55,7 +55,7 @@ These numbers aren't opinions. They're federal thresholds, all based on the 28 g
 
 **Serving size tricks.** A serving of crackers might be listed as 6 crackers. But if you normally eat 12 (no judgment, we've all been there), the fiber per actual eating occasion is double what's printed. Or, more commonly, the serving is tiny to keep the calories low and the fiber percentage high enough to qualify for the claim.
 
-**Natural vs added fiber.** The good source of fiber label meaning doesn't distinguish between fiber already in the food and fiber added during manufacturing. Chicory root fiber (inulin), polydextrose, and soluble corn fiber are common additions. They bump the number, but whether isolated fibers behave the same as intact plant fiber is still debated (a 2017 review in *Nutrients* raised questions). The honest answer: it depends on the type and amount.
+**Natural vs added fiber.** The good source of fiber label meaning doesn't distinguish between fiber already in the food and fiber added during manufacturing. Chicory root fiber (inulin), polydextrose, and soluble corn fiber are common additions. They bump the number, but whether isolated fibers behave the same as intact plant fiber is still debated (a 2017 review in *Nutrients* on isolated versus intact fibers raised questions). The honest answer: it depends on the type and amount.
 
 **The rest of the ingredient list.** A snack bar can be a "good source of fiber" while also containing 12 grams of added sugar. The fiber claim doesn't mean the product is healthy overall. It means one specific nutrient hit a threshold. That's it.
 

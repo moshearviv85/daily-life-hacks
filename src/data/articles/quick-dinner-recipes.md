@@ -68,7 +68,7 @@ Don't skimp on the olive oil. You need enough to really coat everything, not jus
 
 ### Choosing Your Chicken and Veggies
 
-I usually go for boneless, skinless chicken breasts because that's what I usually have on hand, but thighs work just as well, maybe even better if you like your chicken extra juicy. Just make sure whatever you choose is cut into roughly 1-inch pieces so it cooks evenly and quickly.
+I usually go for boneless, skinless chicken breasts because that's what I usually have on hand, but thighs work just as well, maybe even better if you like your chicken extra juicy. Just make sure whatever you choose is cut into roughly 1-inch pieces so it cooks evenly and quickly. And if your chicken has a habit of coming out dry no matter what you do, this guide to the [best way to cook chicken](/best-way-to-cook-chicken/) fixes that for good.
 
 For the vegetables, I've gone with potatoes, broccoli, and red bell pepper because they're a solid combo that holds up well to roasting. But this is where you can play around a bit. Asparagus, green beans, or even some zucchini would also be good. Just make sure you're picking things that will cook in about 20-25 minutes. If you're using denser root vegetables like carrots or sweet potatoes, cut them smaller than the potatoes so they soften up in time.
 
@@ -78,4 +78,4 @@ This is probably the most important rule for any sheet pan meal. If you pile eve
 
 And parchment paper? Not strictly necessary, but it makes cleanup so much easier. You just pull it off the pan and toss it, which is exactly the kind of tiny choice that makes weeknight cooking feel less annoying.
 
-This recipe is not trying to win a chef competition. It's trying to get fiber and protein on the table before anyone asks for cereal. It's simple, it's tasty, and it gets the job done.
+This recipe is not trying to win a chef competition. It's trying to get fiber and protein on the table before anyone asks for cereal. It's simple, it's tasty, and it gets the job done. And if the rotation needs a break from poultry entirely, the [best way to cook pork chops](/best-way-to-cook-pork-chops/) runs on the same low-effort, high-payoff energy.

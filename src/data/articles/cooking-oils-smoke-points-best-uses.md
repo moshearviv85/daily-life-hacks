@@ -26,6 +26,8 @@ faq:
   - question: "How many oils do I actually need in my kitchen?"
     answer: "Two or three cover most situations. A bottle of extra virgin olive oil for medium-heat cooking and finishing, a bottle of a neutral high-heat oil like avocado or vegetable oil, and maybe a bottle of toasted sesame oil for flavor. You don't need a dozen bottles."
 ---
+An oil's smoke point is the temperature where it starts breaking down and visibly smoking in the pan. Refined avocado oil handles the most heat of any common kitchen oil at roughly 520F, while extra virgin olive oil sits in medium-heat territory at about 350 to 410F depending on quality.
+
 I used to cook everything in extra virgin olive oil. Eggs, stir-fries, pancakes, seared steak. Everything. Then one night I cranked the heat for a stir-fry and the kitchen filled with smoke so fast my neighbor knocked on the door to check if I was okay. I wasn't burning anything. The oil was just doing what oil does when you push it past its limit.
 
 That's how I learned about smoke points. Not from a cooking class or a book. From a concerned neighbor and a ventilation fan that couldn't keep up.
@@ -38,16 +40,18 @@ It doesn't mean the oil is poisonous at that exact temperature. But it does mean
 
 ## A simple chart of cooking oils and smoke points
 
-Here's a practical reference. These numbers are approximate because they vary by brand and refinement level, but they're reliable enough for home cooking.
+Here's a practical reference. There's no single official authority for smoke points, so these are the commonly published ranges. They're approximate because they vary by brand and refinement level, but they're reliable enough for home cooking.
 
-* **Avocado oil (refined):** ~520F. Best for searing, roasting at high heat, stir-frying. Neutral flavor.
-* **Safflower oil (refined):** ~510F. Good for deep frying and high-heat baking. Very neutral.
-* **Light olive oil (refined):** ~470F. Works for most stovetop cooking and roasting. Not the same as extra virgin.
-* **Vegetable oil / canola oil:** ~400 to 450F. Everyday neutral option for most cooking methods.
-* **Coconut oil (refined):** ~400F. Works for medium-high heat, adds a slight sweetness. Unrefined has a lower smoke point (~350F) and a stronger coconut flavor.
-* **Extra virgin olive oil:** ~350 to 410F depending on quality. Great for sauteing at medium heat, dressings, drizzling, finishing. Not ideal for screaming hot pans.
-* **Butter:** ~300 to 350F. Low smoke point. Burns easily. Best for gentle cooking, baking, and finishing.
-* **Toasted sesame oil:** ~350F. Flavor oil, not a cooking oil. Add at the end of a dish for that nutty warmth.
+| Oil | Smoke point | Best use |
+|---|---|---|
+| Avocado oil (refined) | ~520F | Searing, high-heat roasting, stir-frying. Neutral flavor |
+| Safflower oil (refined) | ~510F | Deep frying and high-heat baking. Very neutral |
+| Light olive oil (refined) | ~470F | Most stovetop cooking and roasting. Not the same as extra virgin |
+| Vegetable oil / canola oil | ~400 to 450F | Everyday neutral option for most cooking methods |
+| Coconut oil (refined) | ~400F | Medium-high heat, adds a slight sweetness. Unrefined runs ~350F with a stronger coconut flavor |
+| Extra virgin olive oil | ~350 to 410F | Sauteing at medium heat, dressings, drizzling, finishing. Not for screaming hot pans |
+| Butter | ~300 to 350F | Gentle cooking, baking, and finishing. Burns easily |
+| Toasted sesame oil | ~350F | Flavor oil, not a cooking oil. Add at the end for that nutty warmth |
 
 ## Matching oil to cooking method
 

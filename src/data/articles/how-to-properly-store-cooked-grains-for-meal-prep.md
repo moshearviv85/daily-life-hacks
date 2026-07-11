@@ -67,7 +67,7 @@ One middle-ground option: store in the fridge for three days, then freeze whatev
 
 Numbers vary based on the grain, the storage conditions, and how well you sealed them, but here's a realistic timeline.
 
-White rice and jasmine rice hold up best-they'll last 5 to 6 days in the fridge and still be decent on day 5. Brown rice has more oils and will start to taste off around day 4. Quinoa and millet are softer and tend to dry out faster; aim for 3 to 4 days max. Farro and barley have a chewier texture that holds up reasonably well for 4 to 5 days.
+White rice and jasmine rice hold up best-they'll last 5 to 6 days in the fridge and still be decent on day 5. Brown rice has more oils and will start to taste off around day 4. Quinoa and millet are softer and tend to dry out faster; aim for 3 to 4 days max. Farro and barley have a chewier texture that holds up reasonably well for 4 to 5 days. That's part of why this [farro lunch bowl with roasted vegetables and lemon tahini](/farro-lunch-bowl-roasted-vegetables-lemon-tahini/) works so well as prep; the grain is basically built for day three. Barley pulls the same trick in this [creamy mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/), which honestly tastes even better after a night in the fridge.
 
 If your grains smell different than when you cooked them-anything sour, musty, or just "not right"-trust your nose. Texture changes are normal; smell changes are a red flag. If it's slimy, toss it. That's mold, and it's not coming back.
 

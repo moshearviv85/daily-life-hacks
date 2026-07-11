@@ -73,7 +73,7 @@ Starting the vegetables 10 minutes before the fish gives the veggies a crucial h
 
 When buying your fish, look for skin-on fillets. The skin acts as a protective layer against the hot metal of the pan, holding the fish together and keeping the flesh moist. You can just eat the meat right off the skin once it's on your plate. Try to buy fillets that are roughly the same thickness so nobody ends up with a dry piece while someone else has an undercooked one.
 
-If you aren't a fan of zucchini, you can easily swap in asparagus or fresh green beans. The main rule of sheet pan cooking is to keep your vegetable pieces cut to a similar size so they roast evenly. 
+If you aren't a fan of zucchini, you can easily swap in asparagus or fresh green beans. The main rule of sheet pan cooking is to keep your vegetable pieces cut to a similar size so they roast evenly. And when salmon prices are having a moment, this [baked cod with lemon, capers, and green beans](/baked-cod-lemon-capers-green-beans/) runs on the same one-pan logic for a few dollars less.
 ## Keeping the Flavor Simple
 
 There's no complicated glaze or reduction sauce to make here unless you really want to do the extra dishes. A hefty squeeze of fresh lemon juice right when it comes out of the oven is usually all the fish needs to brighten up. 

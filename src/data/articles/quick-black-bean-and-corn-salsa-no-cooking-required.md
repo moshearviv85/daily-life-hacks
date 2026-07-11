@@ -54,7 +54,7 @@ faq:
     answer: "It works as a taco topping, a burrito bowl filler, a quesadilla ingredient, a grilled chicken sandwich add-on, or a simple side for grilled meats. It also makes a decent nacho topping if you bake it briefly with cheese on top."
 ---
 
-Most salsas want you to cook something. Roasted tomatoes, charred peppers, blistered corn-they all require your attention and a hot stove. This one doesn't ask for any of that. You open some cans, chop a few things, and you're done. The result isn't as complex as a roasted salsa, but it has its own thing going on: bright, clean, and flexible enough to show up at a weeknight dinner or a backyard gathering without anyone blinking.
+Most salsas want you to cook something. Roasted tomatoes, charred peppers, blistered corn-they all require your attention and a hot stove. This one doesn't ask for any of that. You open some cans, chop a few things, and you're done. The result isn't as complex as a roasted salsa, but it has its own thing going on: bright, clean, and flexible enough to show up at a weeknight dinner or a backyard gathering without anyone blinking. It also moonlights as the topping for this [high fiber burrito bowl meal prep](/high-fiber-burrito-bowl-meal-prep/), where it carries four lunches in a row without complaint.
 
 The trick isn't really a trick. It's just respecting what each ingredient brings to the table when you don't have heat to transform them.
 
@@ -105,6 +105,8 @@ This salsa works as a topping for grilled chicken or fish. It's solid in a burri
 For a lighter meal, serve it over mixed greens as a salad topping. Add some avocado and you've got something that could be lunch.
 
 It also travels well, which makes it a solid contribution to a potluck or gathering. Make it in a bowl, bring it with a bag of tortilla chips, and you're not showing up empty-handed.
+
+And when the weather turns and cold salsa stops sounding like dinner, the same beans-and-corn combo goes warm in this [hearty vegetarian chili with three beans and corn](/hearty-vegetarian-chili-with-three-beans-and-corn/). Same pantry, opposite season.
 
 ## Making It Ahead and Storing It
 

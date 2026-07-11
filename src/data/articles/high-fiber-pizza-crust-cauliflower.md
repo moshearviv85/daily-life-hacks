@@ -116,7 +116,7 @@ Sometimes I get wild. Roasted red peppers, maybe some sautéed mushrooms. A litt
 
 ## Nutritional Breakdown: What's the Skinny?
 
-Okay, let's talk numbers, for those of us who like to know what's actually going into our bodies. This **high fiber pizza crust cauliflower** recipe is a winner because it drastically cuts down on refined carbohydrates. Instead, you're getting a hefty dose of dietary fiber from the cauliflower itself, which could be great for gut health and might help with blood sugar levels.
+Okay, let's talk numbers, for those of us who like to know what's actually going into our bodies. This **high fiber pizza crust cauliflower** recipe is a winner because it drastically cuts down on refined carbohydrates. (If you're curious how it stacks up against whole wheat, sourdough, and the usual suspects, I ran [the fiber numbers on different pizza crusts](/comparing-fiber-content-different-pizza-crusts/) side by side.) Instead, you're getting a hefty dose of dietary fiber from the cauliflower itself, which could be great for gut health and might help with blood sugar levels.
 
 Plus, cauliflower is packed with vitamins C and K, and a bunch of other good stuff like folate and potassium. We've got protein from the egg and Parmesan, and healthy fats from the almond flour. Compare this to a traditional white flour crust, which often offers little in the way of nutritional density beyond calories and simple carbs. This version may help support healthy eating habits without feeling like you're missing out on the joy of pizza night. It's a win-win, really. Your taste buds are happy, and your body is like, "Oh, thank you for being so thoughtful!"
 

@@ -57,6 +57,8 @@ Soft herbs are the ones with tender green stems. Think cilantro, parsley, basil,
 3. **The Tent:** Take a small plastic sandwich bag (or even the produce bag they came in) and loosely drape it over the top of the herbs like a little greenhouse tent. 
 4. **The Location:** Put cilantro and parsley right into the fridge. They will easily last two to three weeks like this. **Exception:** Basil hates the cold. Treat it like flowers, but leave the jar sitting out on your kitchen counter at room temperature. 
 
+A jar of living cilantro and scallions also means weeknight stir fry gets its proper fresh finish. These [quick and easy stir-fry sauce recipes](/quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff/) handle the rest of the equation. 
+
 ## The Hard Herbs (The Damp Towel Method)
 
 Hard herbs have tough, woody stems. This includes rosemary, thyme, sage, and oregano. These don't need a jar of water; in fact, too much moisture will ruin them. 
@@ -65,7 +67,7 @@ Hard herbs have tough, woody stems. This includes rosemary, thyme, sage, and ore
 2. **The Roll:** Lay the woody herbs flat on the damp paper towel and roll them up gently like a little burrito. 
 3. **The Seal:** Slide the wrapped herbs into a zip-lock bag or an airtight glass container and pop them in the crisper drawer. The tiny bit of moisture keeps them from drying out, but the plastic protects them from excessive fridge humidity. 
 
-Learning how to store fresh herbs to last longer changes the way you cook. You can finally garnish your tacos on a Friday with the same cilantro you bought on Monday!
+Learning how to store fresh herbs to last longer changes the way you cook. You can finally garnish your tacos on a Friday with the same cilantro you bought on Monday! It also means herb-heavy dishes like this [high fiber bulgur tabbouleh salad](/tabbouleh-salad-high-fiber-bulgur/) stop feeling like a race against the crisper drawer.
 
 ## When a hack fails, check the boring variables
 

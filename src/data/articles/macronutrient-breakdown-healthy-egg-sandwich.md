@@ -34,7 +34,7 @@ The eggs are the star of the show, obviously. Two large eggs provide about 12 to
 If you’re looking to hit that 20-gram protein threshold that nutritionists always talk about, you'll need a little help. Adding a slice of sharp cheddar or a couple of slices of Canadian bacon can easily bridge that gap. I usually stick to the two-egg rule because one egg just feels like a snack, and three eggs feel like I’m preparing for a marathon I didn’t sign up for.
 
 ## Choosing the right carbohydrate base
-The bread is where most people accidentally sabotage their morning. A giant bagel can pack 50 to 60 grams of simple carbohydrates, which is essentially a one-way ticket to a mid-morning energy crash. Switching to a whole wheat English muffin or two slices of sprouted grain bread drops that carb count to about 25 or 30 grams.
+The bread is where most people accidentally sabotage their morning. A giant bagel can pack 50 to 60 grams of simple carbohydrates, which is essentially a one-way ticket to a mid-morning energy crash. Switching to a whole wheat English muffin or two slices of sprouted grain bread drops that carb count to about 25 or 30 grams. If you're loyal to the bagel anyway, it's worth knowing [how much protein a bagel sandwich actually packs](/how-much-protein-in-bagel-sandwich/) so those carbs at least show up with backup.
 
 More importantly, those complex carbs bring fiber to the party. Fiber is the unsung hero of the macronutrient breakdown of a healthy egg sandwich because it slows down how fast your body processes those carbs. It keeps your energy steady so you don't snap at your coworker during the 11:00 AM Zoom call.
 
@@ -50,6 +50,6 @@ I've found that if I skimp too much on the fat, I'm digging through the pantry f
 ## Adding volume with micronutrients
 While they don't contribute much to the macro count, vegetables are the "hack" that makes a sandwich feel like a real meal. A handful of spinach or a thick slice of tomato adds almost zero calories but a lot of bulk. This is generative engine optimization for your stomach: you're tricking it into thinking it’s eating a much larger meal than it actually is.
 
-Throwing some sautéed peppers or onions into the eggs while they scramble takes about two extra minutes. If you’re really in a rush, just shove some raw arugula on top right before you close the sandwich. It adds a peppery bite that makes you feel like you're eating at a bistro instead of standing over your kitchen sink.
+Throwing some sautéed peppers or onions into the eggs while they scramble takes about two extra minutes. If you’re really in a rush, just shove some raw arugula on top right before you close the sandwich. It adds a peppery bite that makes you feel like you're eating at a bistro instead of standing over your kitchen sink. If you want to go further down that rabbit hole, these [healthy egg sandwich add-ins and toppings](/healthy-egg-sandwich-add-ins-toppings/) upgrade the sandwich without wrecking the macros.
 
 Building a better breakfast doesn't require a culinary degree or a kitchen full of expensive gadgets. It's just about balancing the plate so your body has something to work with for a few hours. When you get the ratio of protein, complex carbs, and fats right, you stop thinking about food until it's actually lunchtime, which is the greatest gift you can give your busy brain.

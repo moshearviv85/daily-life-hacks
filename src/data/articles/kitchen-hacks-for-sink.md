@@ -65,6 +65,6 @@ This mixture can help break down minor grease and food particle buildup, and the
 
 The sink often becomes the default landing zone for everything. Mail, keys, kids' toys, random junk. If the area around your sink is cluttered, it makes the whole dishwashing process feel more overwhelming.
 
-Clear it off. Give your sink some breathing room. When the surrounding area is clean and tidy, the sink itself feels less like a burden. It's easier to keep clean, and you're more likely to actually do the dishes if you don't have to excavate the sink area first.
+Clear it off. Give your sink some breathing room. When the surrounding area is clean and tidy, the sink itself feels less like a burden. It's easier to keep clean, and you're more likely to actually do the dishes if you don't have to excavate the sink area first. And if the clutter problem goes beyond the sink zone, this guide to [organizing a small kitchen on a budget](/how-to-organize-a-small-kitchen-on-a-budget/) tackles the rest of the room for pocket change.
 
 These aren't revolutionary ideas, just practical habits that turn your sink from a potential source of frustration into a functional part of your kitchen. A little effort goes a long way in keeping things clear, clean, and ready for whatever you throw at it next.

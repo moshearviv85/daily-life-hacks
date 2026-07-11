@@ -108,7 +108,7 @@ The beauty of a salad like this is its flexibility. You can make it your own, wh
 *   **Dress It Up (or Down):** The balsamic vinaigrette is classic, but if you're feeling wild, a honey-mustard dressing or even a light lemon-tahini dressing could be interesting. I've even done a simple olive oil and lemon juice mix when I'm feeling super lazy.
 *   **Add-ins:** Dried cranberries or pomegranate seeds are an obvious choice for a tart counterpoint. But thinly sliced red onion adds a sharp bite, or even some grilled chicken if you want to make it a more substantial meal. Bacon bits, if you're not counting... (which, sometimes, we aren't).
 
-Don't be afraid to experiment. That's where the real magic happens, when you find your perfect combo.
+Don't be afraid to experiment. That's where the real magic happens, when you find your perfect combo. And if the mustardy dressing angle wins you over, this [crispy smashed potato salad with Dijon and herbs](/crispy-smashed-potato-salad-dijon-herbs/) rides that same kick in a much heartier form.
 
 ---
 

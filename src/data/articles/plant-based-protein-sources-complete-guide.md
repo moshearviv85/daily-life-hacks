@@ -65,9 +65,9 @@ Quinoa is often singled out in health articles because it contains all the essen
 Edamame (which are just young, green soybeans) is another incredibly easy option. A half-cup of shelled edamame has about 8 grams of protein. You can buy a bag frozen at the grocery store and steam or boil it in literal minutes for a fast snack.
 ## Putting It All Together
 
-Here is the best news: you do not have to meticulously combine specific foods at a single meal to form a "complete" protein. Eating a reasonable variety of plant-based protein sources over the course of the entire day usually gives your body exactly what it needs. 
+Here is the best news: you do not have to meticulously combine specific foods at a single meal to form a "complete" protein. Eating a reasonable variety of plant-based protein sources over the course of the entire day usually gives your body exactly what it needs. And if you're wondering what "enough" even means, we broke down [how much protein you need per day](/how-much-protein-do-you-need-per-day/) so you can aim at an actual number instead of a vibe. 
 
-A normal day might look like a bowl of oatmeal topped with nuts at breakfast, a hearty lentil soup or a bean-heavy bowl for lunch, and some crispy tofu or black bean tacos at dinner. It's highly doable, and it does not require a degree in nutrition. Start with the foods you already know you like, and build outward from there.
+A normal day might look like a bowl of oatmeal topped with nuts at breakfast, a hearty lentil soup or a bean-heavy bowl for lunch, and some crispy tofu or black bean tacos at dinner. It's highly doable, and it does not require a degree in nutrition. Start with the foods you already know you like, and build outward from there. And when you're ready to graduate past tacos, these [quick black bean burgers that hold their shape](/quick-black-bean-burgers-that-hold-their-shape/) put a can of those beans to serious work.
 
 ## Hydration is the unsexy partner
 

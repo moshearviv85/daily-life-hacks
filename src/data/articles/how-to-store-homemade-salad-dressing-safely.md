@@ -23,12 +23,14 @@ faq:
   - question: "How long does creamy or dairy-based homemade dressing last?"
     answer: "Anything with mayo, sour cream, yogurt, or buttermilk is good for about five to seven days, assuming your fridge runs at 40 degrees Fahrenheit or below. If it smells sour or the texture turns clumpy in a way it wasn't on day one, toss it. Dairy is not something worth gambling on to save two dollars of ingredients."
   - question: "Is homemade garlic in oil dangerous?"
-    answer: "It can be if you store it wrong. Garlic stored in oil without acid creates a low-oxygen environment where the bacteria that causes botulism can grow, and room temperature makes it worse. Keep any garlic-in-oil mixture refrigerated and use it within three to four days, or add plenty of vinegar or lemon juice to your dressing so the acid keeps things in check."
+    answer: "It can be if you store it wrong. Garlic stored in oil without acid creates a low-oxygen environment where the bacteria that causes botulism can grow, and room temperature makes it worse. The FDA and USDA both advise keeping any garlic-in-oil mixture refrigerated and using it within three to four days. A vinaigrette that's at least one-third vinegar or lemon juice is acidic enough to be a different story, but splashing a little acid into a mostly-oil garlic mixture is not a substitute for the fridge."
   - question: "Can you freeze homemade salad dressing?"
     answer: "Freezing is generally not recommended because the emulsion usually breaks during thawing. Dairy-based dressings like ranch or blue cheese often separate and turn grainy after being frozen. Oil-based vinaigrettes might survive the freezer better, but they still need vigorous whisking or blending once thawed to get their texture back."
   - question: "Why does my olive oil dressing turn solid in the fridge?"
     answer: "Extra virgin olive oil contains natural waxes that solidify at cold temperatures, which makes your dressing look cloudy or thick. That's a normal physical reaction, not a sign it has gone bad. Set the jar on the counter for 15 to 20 minutes before dinner, or run the closed jar under warm tap water, and it pours like new."
 ---
+Homemade salad dressing lasts anywhere from 3 days to 2 weeks in the fridge, depending on what's in it. A plain vinaigrette holds up to 2 weeks, dairy-based dressings get 5 to 7 days, and anything with fresh garlic is on a 3 to 5 day clock. All of it needs refrigeration, no exceptions.
+
 I used to be the guy who bought those plastic bottles of "Zesty Italian" that could probably survive a nuclear winter on a pantry shelf. Then I realized making a vinaigrette takes about thirty seconds and doesn't involve ingredients I can't pronounce. But the first time I made a big batch of honey mustard, I stared at the leftovers and realized I had no idea when it would officially become a science project in the back of my fridge.
 
 Storing homemade salad dressing safely isn't about being a kitchen snob. It's about not wasting expensive olive oil, and not serving your family something that's turned. Unlike the store-bought stuff packed with stabilizers and [more sugar than you'd guess](/hidden-sugars-popular-summer-salad-dressings/), your homemade version is a ticking clock of fresh ingredients.
@@ -57,15 +59,15 @@ Store-bought bottles get away with shelf life because of preservatives and indus
 
 ## The garlic-in-oil rule you actually need to know
 
-This one's a real safety fact, not fridge trivia. Garlic stored in oil without acid creates a low-oxygen environment where the bacteria that causes botulism can grow. Room temperature makes it dramatically worse. That trendy jar of garlic confit oil sitting on the counter? That's the one situation in this whole article where "eh, it's probably fine" is the wrong call.
+This one's a real safety fact, not fridge trivia. Garlic stored in oil without acid creates a low-oxygen environment where the bacteria that causes botulism can grow. Room temperature makes it dramatically worse. That's why the FDA and USDA both advise refrigerating any garlic-in-oil mixture and using it within 3 to 4 days. That trendy jar of garlic confit oil sitting on the counter? That's the one situation in this whole article where "eh, it's probably fine" is the wrong call.
 
-The fix is easy. If your dressing is mostly oil with raw garlic in it, keep it refrigerated and use it within 3 to 4 days. Or build your dressing with plenty of vinegar or lemon juice, because acid is exactly what keeps that bacteria from growing. A standard vinaigrette with a real pour of vinegar is a very different situation than garlic cloves drowning in plain olive oil.
+The fix is easy. If your dressing is mostly oil with raw garlic in it, keep it refrigerated and use it within 3 to 4 days. Acid does change the math, but only in real quantities: a vinaigrette that's at least one-third vinegar or lemon juice is acidic enough to keep that bacteria in check. Casually adding a splash of lemon to a mostly-oil garlic mixture is not a substitute for refrigeration. A standard vinaigrette with a real pour of vinegar is a very different situation than garlic cloves drowning in plain olive oil.
 
 Fresh herbs and shallots follow a gentler version of the same rule. They may start to ferment or break down after 3 to 5 days, and garlic loses its punch and starts tasting "old" fast. If you want a batch to last the full week, use garlic powder and dried herbs, and add the fresh stuff right before serving.
 
 ## Choose the right container from the start
 
-If you're still using plastic Tupperware for your dressings, stop. Plastic is porous, and unless you want your next batch of fruit salad to taste faintly of last week's garlic-heavy Caesar, you need glass. Glass is non-reactive, which matters because most dressings are heavy on acids like vinegar or citrus juice that can pull "off" flavors out of cheap plastic.
+If you're still using plastic Tupperware for your dressings, stop. Plastic absorbs odors and stains, and unless you want your next batch of fruit salad to taste faintly of last week's garlic-heavy Caesar, you need glass. Glass is non-reactive, which matters because most dressings are heavy on acids like vinegar or citrus juice that can pull "off" flavors out of cheap plastic.
 
 **Mason jars** are the gold standard: airtight seal, dishwasher-safe, and a 16-ounce jar is the right size for a weekly batch. Just use a clean lid every time. Those metal rings rust if they sit in the fridge with acidic residue on them.
 

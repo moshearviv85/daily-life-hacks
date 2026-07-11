@@ -75,7 +75,7 @@ This two-stage approach is non-negotiable if you want eggs that aren't rubbery. 
 
 For the wells, just push the vegetables aside with a spatula and crack the egg into the gap. The vegetables act as a little nest, which keeps the egg white contained and stops it from spreading into a watery mess across the pan. If you like your yolks runny, eight minutes is your target. Ten minutes gives you a jammy center. Twelve minutes and you're approaching fully set, which is fine if you're packing this for lunch and want no risk of runniness.
 
-One egg per person is the baseline. You can absolutely do two eggs if you've got bigger appetites or are feeding someone who needs more protein, but four wells fit comfortably on a standard sheet pan. More than that and you're crowding the eggs, which means uneven cooking.
+One egg per person is the baseline. You can absolutely do two eggs if you've got bigger appetites or are feeding someone who needs more protein, but four wells fit comfortably on a standard sheet pan. More than that and you're crowding the eggs, which means uneven cooking. And if your usual weekday breakfast is a bagel sandwich from the drive-thru, it's worth checking [how much protein a bagel sandwich actually delivers](/how-much-protein-in-bagel-sandwich/); this pan usually wins that math for less money.
 
 ## Seasoning Without Overcomplicating It
 

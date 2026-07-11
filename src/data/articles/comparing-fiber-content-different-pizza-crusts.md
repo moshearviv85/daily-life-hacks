@@ -18,13 +18,13 @@ faq:
   - question: "Does pizza crust have fiber?"
     answer: "Yes, every pizza crust has some fiber, but the amount depends on the flour. A slice of regular white-flour crust has about 1 to 2 grams, whole wheat crust roughly doubles that at 4 to 5 grams, and chickpea crusts can reach 4 to 8 grams per serving. If the first ingredient on the label is refined wheat flour, expect the low end."
   - question: "Which pizza crust has the most fiber?"
-    answer: "Generally, whole wheat or sprouted grain crusts offer the highest fiber content, often providing 4 to 6 grams per serving. While cauliflower crusts are popular, their fiber content varies significantly by brand, as many use rice flour or starches as binders. Always check the label to ensure the first ingredient is a whole grain or a vegetable if you want to increase your intake."
+    answer: "Whole wheat and sprouted grain crusts win most of the time, at about 4 to 6 grams per serving, and chickpea crusts can beat them both at 4 to 8. Cauliflower is a coin flip because many brands pad the dough with rice flour or starches. Check that the first ingredient is a whole grain, a legume, or the actual vegetable before you trust the front of the box."
   - question: "Is cauliflower pizza crust actually higher in fiber than white crust?"
-    answer: "It depends on the brand. A pure cauliflower-based crust might provide 2 to 3 grams of fiber, which is slightly more than the 1 gram found in standard white flour crusts. However, many commercial cauliflower crusts contain cornstarch or white rice flour, which can lower the overall fiber density. Comparing labels is the only way to be certain of the nutritional payoff."
+    answer: "It depends on the brand. A crust that's mostly actual cauliflower and egg might give you 2 to 3 grams of fiber, a bit better than the 1 gram in a standard white crust. But plenty of frozen versions lean on cornstarch or white rice flour to hold together, which drags the fiber right back down. Flip the package and compare labels, it's the only way to know."
   - question: "How can I add fiber to a store-bought pizza crust?"
-    answer: "If you are starting with a low-fiber white crust, you can increase the total fiber of the meal by adding specific toppings. Loading the pizza with broccoli, artichokes, spinach, or mushrooms can add several grams of fiber per slice. You might also consider sprinkling a tablespoon of ground flaxseed or chia seeds over the cheese before baking for a subtle boost without changing the flavor."
+    answer: "Start with the toppings. Broccoli, artichokes, spinach, and mushrooms can add several grams of fiber per slice to a low-fiber white crust. A tablespoon of ground flaxseed or chia seeds sprinkled over the cheese before baking works too, and nobody at the table will notice it's there."
   - question: "Does thin crust pizza have less fiber than thick crust?"
-    answer: "In terms of density, they are often similar because they use the same dough. However, because a thick crust or deep-dish style uses more physical dough per slice, it may technically contain more fiber than a paper-thin cracker crust. The trade-off is usually a higher calorie and carbohydrate count, so thin crust remains a common choice for those balancing various nutritional goals."
+    answer: "Density-wise they're usually the same, because it's the same dough. A thick or deep-dish slice simply contains more of it, so it may technically carry more fiber than a paper-thin cracker crust. The catch is that the extra calories and carbs come along for the ride, which is why a thin whole wheat or chickpea crust usually gets you the most fiber for the fewest calories."
 ---
 Yes, pizza crust has fiber, just not much of it. A slice of regular white-flour crust gives you roughly 1 to 2 grams of fiber, a 100% whole wheat crust roughly doubles that at 4 to 5 grams per slice, and cauliflower crust is a total coin flip depending on the brand. Chickpea crusts quietly beat them all.
 
@@ -43,7 +43,7 @@ Comparing fiber content in different pizza crusts isn't about turning pizza into
 | Chickpea flour | 6 to 8g | 4 to 8g per serving |
 | Almond flour | About 5g | Around 3g |
 
-A "slice" here means one slice of a medium hand-tossed pizza, crust only. Store-bought numbers swing a lot by brand, so treat these as ballparks and check the label. Now, the details.
+A "slice" here means one slice of a medium hand-tossed pizza, crust only. The baseline flour numbers come from USDA FoodData Central, but store-bought products swing a lot by brand, so treat these as ballparks and check the label. Now, the details.
 
 ## The standard white flour baseline
 Most delivery chains and frozen staples rely on refined white flour. It's cheap, it's stretchy, and it tastes like childhood, but the fiber is almost nonexistent. When flour is refined, the bran and germ are stripped away, leaving you with a product that the body processes very quickly.
@@ -55,7 +55,7 @@ If you switch to a 100% whole wheat crust, you are looking at a significant jump
 
 Sprouted grain crusts are another solid choice for those who can find them in the frozen aisle. These are thought to be easier on the digestion for some people, and they consistently hover around the 5-gram mark for fiber. Just be prepared for the texture change; it's a bit nuttier and denser, which might require an extra hit of garlic butter to sell it to the skeptics at your table.
 
-## The cauliflower crust reality check
+## Is cauliflower crust higher in fiber than regular crust?
 Marketing has done a number on us with cauliflower. We've been told it's the solution to every carb-related problem, but when it comes to fiber, the results are all over the place. A homemade crust made purely of cauliflower and egg is a fiber win, but the frozen ones you buy at the grocery store are a different story.
 
 Many commercial cauliflower crusts use rice flour, potato starch, or tapioca starch to keep the crust from falling apart. These binders are often low in fiber. You might find a cauliflower crust that only has 2 grams of fiber, which is barely better than the white flour version you were trying to avoid. Check the label for "cauliflower" as the very first ingredient to ensure you're actually getting the vegetable benefits. If you'd rather skip the label roulette entirely, our [homemade high-fiber cauliflower pizza crust](/high-fiber-pizza-crust-cauliflower/) puts you in charge of what goes in the dough.

@@ -44,7 +44,7 @@ faq:
 ---
 I used to watch my neighbor, a guy who spends ten hours a day framing houses, walk out his door with a giant bag of greasy fast-food bags at least three times a week. By 2:00 PM, he looked like he was ready to crawl into a pile of sawdust and sleep for a month. The traditional "manly" lunch usually involves a heavy bun, deep-fried everything, and enough sodium to preserve a mummy, but that stuff is a trap.
 
-Finding healthy blue collar lunch ideas for men isn't about eating a salad and pretending you're full. It is about packing enough fuel to actually survive a ten-hour shift without hitting a wall or spending twenty bucks at a gas station. You need calories, but you need the kind that don't make you feel like a lead weight.
+Finding healthy blue collar lunch ideas for men isn't about eating a salad and pretending you're full. It is about packing enough fuel to actually survive a ten-hour shift without hitting a wall or spending twenty bucks at a gas station. You need calories, but you need the kind that don't make you feel like a lead weight. (And for the days the drive-thru wins anyway, my [high-fiber fast food guide](/high-fiber-fast-food-options-guide/) covers the least-bad orders.)
 
 ## Why the Standard Sandwich Fails
 

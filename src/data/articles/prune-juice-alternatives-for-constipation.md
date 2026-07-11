@@ -55,7 +55,7 @@ So, if you're nodding your head vigorously right now (and maybe a little green a
 
 Okay, first things first, let's give prunes their due, begrudgingly. They're effective. Why? Well, they're packed with fiber, obviously, both soluble and insoluble, which is pretty neat. But the secret sauce (literally, in this case) is sorbitol. This little sugar alcohol, when consumed in enough quantity, is thought to work similarly to an osmotic laxative, potentially drawing water into your large intestine. This softens things up, making it easier for them to, you know, make their grand exit. Plus, they've got phenolic compounds that are thought to stimulate gut contractions. So, yeah, effective. But also... prune juice. Yuck.
 
-Now, let's talk about the delicious ways you can actually make peace with your digestive system.
+Now, let's talk about the delicious ways you can actually make peace with your digestive system. And if you'd rather chew your fiber than sip it, these [gut-friendly high fiber smoothies](/gut-friendly-high-fiber-smoothies-for-daily-wellness/) split the difference nicely.
 
 ## Pear Juice: The Understated Champion of Regularity
 
@@ -80,3 +80,5 @@ I find that unsweetened, cloudy apple juice (the kind that looks like it actuall
 ## Kiwi Smoothies: The Real MVP for Fiber
 
 Alright, if you want to bring out the big guns, but still keep it delicious and not "prune-y," kiwis are your jam. Or, well, your smoothie. These fuzzy little green guys are just loaded with good stuff. And if you'd rather chew your fiber than sip it, these [high fiber meals for constipation relief](/high-fiber-meals-for-constipation-relief/) put the same idea on an actual dinner plate.
+
+One more note for the parents: if the backed-up one in your house is a kid, these [high fiber smoothies for picky eaters](/high-fiber-smoothies-for-kids-picky-eaters/) hide the same good stuff behind much friendlier colors.

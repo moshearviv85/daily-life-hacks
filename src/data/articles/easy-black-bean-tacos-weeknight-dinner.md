@@ -75,7 +75,7 @@ The toppings are up to what you feel like digging out of the crisper drawer. Shr
 
 If you're particularly hungry, serving these with a quick side of rice or a simple vinegar-based slaw rounds the meal out nicely. 
 
-The seasoned bean mixture also keeps wonderfully in the fridge for a few days. You can easily warm up a small portion the next day and make tacos for lunch without having to start the cooking process all over again. No advanced culinary techniques, no pots simmering for three hours. Just a highly reliable, quick dinner that doesn't ask much of you when you're tired.
+The seasoned bean mixture also keeps wonderfully in the fridge for a few days. You can easily warm up a small portion the next day and make tacos for lunch without having to start the cooking process all over again. No advanced culinary techniques, no pots simmering for three hours. Just a highly reliable, quick dinner that doesn't ask much of you when you're tired. And if you'd rather skip the tortilla juggling entirely, the same pantry logic powers my [high-fiber burrito bowl meal prep](/high-fiber-burrito-bowl-meal-prep/).
 
 ## If the flavor feels flat
 

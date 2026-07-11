@@ -76,12 +76,13 @@ Your refrigerator usually has two drawers at the bottom. These are not just rand
 ### 1. The High-Humidity Drawer (The Vent Closed)
 When you close the vent, you trap moisture inside the drawer. This environment is specifically designed for anything that wilts easily. The goal is to keep the moisture locked inside the plant. 
 *   **What goes inside:** All leafy greens (spinach, kale, lettuce), fresh herbs, broccoli, cauliflower, carrots, and celery. 
-*   **The Hack:** Don't wash these items before putting them in! Excess water sitting on the leaves will cause them to turn to slime. Wash them right when you pull them out to eat them. 
+*   **The Hack:** Don't wash these items before putting them in! Excess water sitting on the leaves will cause them to turn to slime. Wash them right when you pull them out to eat them. That fridge-cold crunch is exactly what makes something like this [cucumber edamame salad with sesame](/cucumber-edamame-salad-sesame/) worth the five minutes it takes. 
 *   **A note on herbs:** Cilantro and parsley are dramatic enough to deserve their own guide, so here's [how to store fresh herbs so they last longer](/how-to-store-fresh-herbs-to-last-longer/) instead of dying by Thursday. 
 
 ### 2. The Low-Humidity Drawer (The Vent Open)
 When the vent is wide open, air constantly circulates, allowing the naturally emitted ethylene gas to escape the drawer so things don't rot. This is for fruits and vegetables that tend to break down and rot quickly rather than wilt. 
 *   **What goes inside:** Apples, pears, peaches, plums, melons, peppers, and avocados (only once the avocados are fully ripe). 
+*   **The payoff:** When those pears hit peak ripeness, this [pear salad with walnuts](/pear-salad-with-walnuts-fiber-rich/) is the best possible exit plan. 
 
 ## The Countertop Ripeners
 

@@ -71,7 +71,7 @@ Let's be honest, by the time Tuesday evening rolls around, the idea of using thr
 
 Cooking the rice in the same pan as the chicken does two major things. First, the rice acts like a sponge, soaking up all those savory pan drippings and chicken broth instead of just boiling in plain water. Second, you skip the usual pile of dishes sitting in the sink waiting for you after you eat. 
 
-Long-grain white rice holds its shape well and won't turn to mush if you keep the heat low and the lid firmly on. We highly recommend using chicken thighs rather than breasts for this. Thighs have a little more fat, meaning they stay juicier and are way more forgiving in this kind of simmered dish, making them a much better fit for a relaxed weeknight.
+Long-grain white rice holds its shape well and won't turn to mush if you keep the heat low and the lid firmly on. We highly recommend using chicken thighs rather than breasts for this. Thighs have a little more fat, meaning they stay juicier and are way more forgiving in this kind of simmered dish, making them a much better fit for a relaxed weeknight. If chicken comes out dry at your house no matter what you do, my guide to [the best way to cook chicken](/best-way-to-cook-chicken/) fixes that for good.
 ## What You Need (No Surprises)
 
 You'll need a deep skillet with high sides or a Dutch oven with a tight-fitting lid. If you don't have one, a large, heavy-bottomed pot works just fine. The rest of the list is pretty standard stuff you probably don't need a special grocery trip for: chicken thighs, onion, garlic, rice, broth, and a couple of pantry spices. 

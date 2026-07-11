@@ -45,7 +45,7 @@ If you put the oil in a cold pan and let it heat up for five minutes, the oil wi
 
 Instead, let the dry pan get hot. How do you know it is ready? Use the water drop test. Flick a tiny drop of water off your fingers into the pan. If the water sizzles and immediately disappears, the pan is not hot enough. If the water beads up into a little ball and dances wildly around the surface like a marble, the pan is ready. This is called the Leidenfrost effect, and it means the pan is hot enough to instantly vaporize the moisture on the surface of your food, creating that non-stick steam barrier.
 
-Once the pan passes the water test, add your oil. Give it a few seconds to heat up. You will see it start to shimmer and move fluidly across the bottom of the pan. Now, immediately add your food. You should hear a loud, aggressive sizzle. If it does not sizzle loudly, the pan was not ready.
+Once the pan passes the water test, add your oil. Give it a few seconds to heat up. You will see it start to shimmer and move fluidly across the bottom of the pan. Now, immediately add your food. You should hear a loud, aggressive sizzle. If it does not sizzle loudly, the pan was not ready. That sizzle is the whole difference between a juicy chop and a gray one, which is why the [best way to cook pork chops](/best-way-to-cook-pork-chops/) starts with this exact preheat.
 
 ## The non-stick exception
 
@@ -57,6 +57,6 @@ If you are using non-stick, add a small amount of oil or butter right when you t
 
 Once you have preheated the pan, added the oil, and placed your food down, you have to execute the hardest step of all. You have to walk away.
 
-Do not poke it. Do not nudge it. Do not try to peek underneath it after thirty seconds. If you try to flip a piece of chicken before the crust has fully formed, it will stick and tear. When the sear is complete and the crust is golden brown, the food will naturally release itself from the metal with very little resistance.
+Do not poke it. Do not nudge it. Do not try to peek underneath it after thirty seconds. If you try to flip a piece of chicken before the crust has fully formed, it will stick and tear. When the sear is complete and the crust is golden brown, the food will naturally release itself from the metal with very little resistance. That same patience scales up to the expensive cuts, too. The [best way to cook prime rib](/best-way-to-cook-prime-rib/) ends with a hard sear instead of starting with one, and a properly preheated pan is half that battle.
 
 Preheating a skillet requires zero special equipment and costs zero dollars. It just requires you to stand there for three minutes before you start cooking. It is the cheapest, easiest way to make your weeknight dinners look and taste like you actually know what you are doing.

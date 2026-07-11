@@ -20,11 +20,11 @@ faq:
     answer: "The exact numbers will shift with your store and region, but the tiers barely move. Dried beans, split peas, and whole grains are so far ahead of fresh produce that even a 30 to 40 percent price swing doesn't change which end of the list a food sits on. Treat the rankings as tiers, not precise scores."
 ---
 
-I built a spreadsheet nobody asked for. I took 53 foods from a normal American grocery run, pulled the fiber numbers for each one from the USDA database, matched them to current prices, and calculated exactly how many grams of fiber one dollar buys.
+Dry green split peas are the cheapest high-fiber food you can cook and eat as-is, at about 71 grams of fiber per dollar, based on USDA fiber data and July 2026 grocery prices. Whole wheat flour technically takes the number one spot at 78 grams per dollar, but you only collect that fiber if you bake with it. Here's how I know: I built a spreadsheet nobody asked for. I took 53 foods from a normal American grocery run, pulled the fiber numbers for each one from the USDA database, matched them to current prices, and calculated exactly how many grams of fiber one dollar buys.
 
-The result is a full ranking of the cheapest high-fiber foods in the store, and the gap between the top and the bottom is honestly absurd. A dollar of dry split peas buys about 71 grams of fiber. A dollar of fresh blueberries buys 2.5 grams. Same nutrient, 28 times the price. If fiber were gasoline, that would be the difference between $3 a gallon and $85 a gallon, and we'd all be rioting.
+The result is a full ranking of the cheapest high-fiber foods in the store, and the gap between the top and the bottom is honestly absurd. A dollar of fresh blueberries buys 2.5 grams of fiber against those 71 grams from split peas. Same nutrient, 28 times the price. If fiber were gasoline, that would be the difference between $3 a gallon and $85 a gallon, and we'd all be rioting.
 
-## How we ran the numbers
+## How is fiber per dollar calculated?
 
 No mystery math here. Three steps:
 
@@ -37,6 +37,8 @@ One more thing, because a data article that can't admit mistakes isn't a data ar
 The full dataset is public. You can download the raw CSV [here](/data/fiber-per-dollar-2026.csv) and check every number yourself. Or skip the spreadsheet and play with the numbers in the [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/), which compares any two foods and does the basket math for you.
 
 ## The full ranking: 53 foods by fiber per dollar
+
+Fiber values in this table come from USDA FoodData Central, and every price was checked against current shelf listings on July 4, 2026.
 
 | Rank | Food | Fiber (g per 100g) | Price per 100g | Fiber per $1 |
 |---|---|---|---|---|
@@ -96,7 +98,7 @@ The full dataset is public. You can download the raw CSV [here](/data/fiber-per-
 
 Fiber per $1 accounts for edible portion on fresh fruit, so bananas are scored on the fruit, not the peel.
 
-## What the numbers actually say
+## What are the cheapest high-fiber foods per dollar?
 
 **The dry goods aisle is running the table.** Eleven of the top twelve foods are dried beans, peas, or whole grains. Whole wheat flour technically wins the whole list at about 78 grams of fiber per dollar, but flour is an ingredient, not dinner (more on that below). Among foods you can actually cook and eat, dry split peas take the crown at about 71 grams of fiber per dollar, roughly 16 times more than fresh raspberries and 28 times more than blueberries. One $1.42 bag of split peas holds around 101 grams of fiber. For context, the FDA's Daily Value for fiber is 28 grams, so that single dollar-and-change bag covers about three and a half days' worth. If you've never cooked them, our [split pea soup recipe](/split-pea-soup-recipe-high-fiber/) is the easy on-ramp.
 

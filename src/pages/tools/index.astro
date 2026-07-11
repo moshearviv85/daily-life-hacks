@@ -1,0 +1,63 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const title = "Free Grocery Tools | Daily Life Hacks";
+const description =
+  "Free calculators built on USDA nutrition data and real shelf prices. Find out exactly what your grocery dollar buys before you get to the checkout.";
+
+const toolsSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Free Grocery Tools",
+  url: "https://www.daily-life-hacks.com/tools/",
+  description,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Daily Life Hacks",
+    url: "https://www.daily-life-hacks.com",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Daily Life Hacks",
+    url: "https://www.daily-life-hacks.com",
+  },
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={toolsSchema}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-4 py-12 md:py-16">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      Tools
+    </h1>
+    <p class="text-lg mb-10" style="color: var(--text-color);">
+      Calculators that do the grocery math so you don't have to do it in aisle six. Everything here runs on the same verified data as our studies: USDA nutrition numbers and real shelf prices. See <a href="/methodology/" class="underline" style="color: #F29B30;">how we verify our numbers</a> if you want the receipts.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <!-- Fiber per Dollar calculator -->
+      <a
+        href="/tools/fiber-per-dollar-calculator/"
+        class="group overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-lg flex flex-col"
+        style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+      >
+        <div class="overflow-hidden relative aspect-video shrink-0 flex flex-col items-center justify-center gap-1" style="background-color: rgba(242, 155, 48, 0.08);">
+          <span class="text-5xl font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-500" style="color: #F29B30;">$1 = ?</span>
+          <span class="text-[11px] font-bold uppercase tracking-widest" style="color: var(--muted-color);">grams of fiber</span>
+          <span class="absolute bottom-2 left-2 px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider text-white leading-none z-10" style="background-color: #F29B30;">Free Tool</span>
+        </div>
+        <div class="p-4 flex-1 flex flex-col gap-1.5">
+          <h2 class="font-semibold text-lg leading-tight group-hover:text-[#F29B30] transition-colors duration-200" style="color: var(--heading-color);">The Fiber per Dollar Calculator</h2>
+          <p class="text-sm leading-snug" style="color: var(--muted-color);">Punch in any food and its price. Rank 53 foods, compare any two head to head, or total up a whole basket. Find out if you're buying fiber or just paying for the packaging.</p>
+        </div>
+      </a>
+    </div>
+
+    <p class="mt-10 text-base" style="color: var(--muted-color);">
+      More tools are on the way. Same rule for all of them: real data, sources listed, no guessing.
+    </p>
+  </main>
+  <Footer />
+</BaseLayout>

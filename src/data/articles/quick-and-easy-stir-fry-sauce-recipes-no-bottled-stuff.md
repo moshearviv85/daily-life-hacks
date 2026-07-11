@@ -60,7 +60,7 @@ The practical argument breaks down into three parts. First, flavor control. When
 
 There's also the cost angle, though it's less dramatic than you'd think. A bottle of decent stir-fry sauce runs three to five dollars and lasts a few meals. The ingredients for homemade sauces cost more upfront but last longer and make more batches. Over a month of weekly stir-fry dinners, you're maybe saving a few dollars-not enough to write home about, but not nothing either.
 
-The real payoff is the meal itself. A good sauce transforms a weeknight stir-fry from "serviceable" to "I'd order this at a restaurant." That's worth a few minutes of mixing.
+The real payoff is the meal itself. A good sauce transforms a weeknight stir-fry from "serviceable" to "I'd order this at a restaurant." That's worth a few minutes of mixing. The other half of the equation is a properly hot pan, so it's worth knowing [how to preheat a skillet for even browning](/how-to-preheat-skillet-even-browning/) before the sauce ever hits the metal.
 
 ## The Building Blocks of Any Stir-Fry Sauce
 
@@ -128,7 +128,7 @@ If you've already mixed the sauce with the stir-fry, leftovers keep in the fridg
 
 These sauces also freeze remarkably well. Pour them into ice cube trays, freeze until solid, then transfer the cubes to a freezer bag. Each cube is roughly two tablespoons, which is enough for a quick single-serving stir-fry. Thaw in the microwave or overnight in the fridge.
 
-You can also double or triple any of these recipes and keep several versions in your fridge at once. That's what I do-it takes ten minutes on a Sunday afternoon and means weeknight dinners get a little variety without any extra effort during the week.
+You can also double or triple any of these recipes and keep several versions in your fridge at once. That's what I do-it takes ten minutes on a Sunday afternoon and means weeknight dinners get a little variety without any extra effort during the week. They moonlight as dipping sauces too. Thin the basic version with a splash of vinegar and it's perfect next to this [healthy homemade dumpling wrapper recipe](/healthy-homemade-dumpling-wrapper-recipe/) on a weekend when you feel like a project.
 
 ## Substitutions When You're Missing Ingredients
 

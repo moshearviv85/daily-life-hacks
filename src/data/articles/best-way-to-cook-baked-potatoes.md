@@ -71,4 +71,4 @@ As for knowing when they're done? Don't just rely on the timer. Give a potato a 
 
 Once they're out of the oven, don't just plop them on a plate. Grab a sharp knife and slice each potato lengthwise, but don't cut all the way through. Then, gently push the ends towards the center. This action "fluffs" up the inside, creating more surface area for butter, sour cream, chives, cheese, bacon bits – whatever your heart desires. This isn't just for looks; it makes the potato absorb those toppings better, delivering a more flavorful bite every time.
 
-So, there you have it. A few simple tweaks that turn a humble potato into a star. You won't be digging around for the foil next time, trust me.
+So, there you have it. A few simple tweaks that turn a humble potato into a star. You won't be digging around for the foil next time, trust me. And once you're buying potatoes by the bag, my [crispy smashed potato salad with dijon and herbs](/crispy-smashed-potato-salad-dijon-herbs/) is the obvious next move.

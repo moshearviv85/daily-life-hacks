@@ -81,7 +81,7 @@ Cumin is the obvious choice here, and I use a full teaspoon because I want that 
 
 Salt matters more than you'd think. Beans need a decent amount of salt to taste good-don't be shy. Half a teaspoon is my baseline for this recipe, and you can adjust up or down based on your preferences and what toppings you're adding.
 
-Some recipes call for additional add-ins like jalapeños, cilantro, or chipotle in adobo. These are all fine, but I kept this version simple so you can customize without fighting strong flavors you didn't intend to include. If you want heat, add a diced jalapeño or a teaspoon of chipotle sauce. If you want fresher flavor, stir in some chopped cilantro after mixing.
+Some recipes call for additional add-ins like jalapeños, cilantro, or chipotle in adobo. These are all fine, but I kept this version simple so you can customize without fighting strong flavors you didn't intend to include. If you want heat, add a diced jalapeño or a teaspoon of chipotle sauce. If you want fresher flavor, stir in some chopped cilantro after mixing. That build-it-plain-then-customize approach is also the entire playbook for [cooking for picky adults](/cooking-for-picky-adults-simple-options/), so this recipe pulls double duty at a mixed table.
 
 ## Forming and Cooking: The Details That Matter
 

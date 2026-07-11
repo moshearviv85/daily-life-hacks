@@ -45,9 +45,17 @@ faq:
   - question: "What is the difference between starter and discard?"
     answer: "The starter is the portion you keep and feed to maintain your sourdough culture for bread baking. The discard is the portion you remove before feeding the starter to prevent it from growing too large. Discard is essentially just unfed starter that still has plenty of flavor but less leavening power."
 ---
+Sourdough discard is just unfed starter, equal parts flour and water, and you can use it straight from the fridge in pancakes, crackers, and quick breads. No feeding, no waiting, no overnight schedule.
+
 I used to feel a strange, low-grade guilt every time I scraped half my sourdough starter into the trash. It felt like tossing money and time down the drain, but I didn't have the emotional bandwidth to bake a loaf of artisanal bread every Tuesday. Then I realized that discard isn't actually trash, it's just pre-mixed flour and water with a better personality.
 
-If you have a jar of bubbly goo in your fridge and no desire to spend twelve hours folding dough, you're in the right place. These easy sourdough discard recipes for beginners are designed to get you fed in twenty minutes, not two days.
+If you have a jar of bubbly goo in your fridge and no desire to spend twelve hours folding dough, you're in the right place. These easy sourdough discard recipes for beginners are designed to get you fed in twenty minutes, not two days. Here's the quick map:
+
+| Use | Discard amount | Time |
+|---|---|---|
+| Pancakes (recipe above) | 1 cup | About 20 minutes |
+| Crackers | 1 cup | About 40 minutes, mostly bake time |
+| Skillet flatbread | 1/2 cup per flatbread | About 10 minutes |
 
 ## Why you should stop tossing your discard
 The biggest hurdle for sourdough beginners is the maintenance. You're told to feed this thing daily, which leads to a massive buildup of excess starter. Throwing it away is the standard advice, but that's a waste of perfectly good fermented flour. 
@@ -64,7 +72,7 @@ Keeping a separate "discard jar" in the fridge is the easiest way to stay organi
 
 **Labeling:** Stick a piece of masking tape on the jar with the date. It stays fresh for about two weeks, though it gets more sour the longer it sits.
 **Consistency:** If your discard is very runny, you might need a tablespoon more flour in your recipes. If it's thick like paste, you're good to go.
-**The Hooch:** If a gray liquid forms on top, don't panic. It's just alcohol produced by the yeast. You can pour it off if you want a milder flavor or stir it back in if you like things extra tangy.
+**The Hooch:** If a gray liquid forms on top, don't panic. It's just alcohol produced by the yeast. You can pour it off if you want a milder flavor or stir it back in if you like things extra tangy. The one hard safety rule: gray liquid is harmless, but pink or orange streaks or any mold means the whole jar goes in the trash. No scraping, no rescue mission.
 
 ## Mixing and matching flavors
 Once you master the basic pancake or muffin, you can treat the discard like a blank canvas. It plays incredibly well with both sweet and savory profiles. 

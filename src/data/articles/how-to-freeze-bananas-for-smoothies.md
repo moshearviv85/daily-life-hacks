@@ -61,7 +61,7 @@ If you just chop up bananas and throw them in a bag together, they will freeze i
 6. **The Flash:** Put the entire baking sheet into the freezer for about two hours. You want the outside of the bananas to be solid. 
 7. **The Transfer:** Once the slices are frozen solid on the outside, you can quickly transfer them all into a heavy-duty freezer bag or a silicone Stasher bag. Because you flash-froze them first, they will remain separate in the bag. You can easily reach in and grab exactly what you need. 
 
-Learning how to freeze bananas for smoothies correctly saves so much morning frustration. Just toss a handful of those frozen coins directly into the blender with some almond milk and a scoop of protein powder, and you will get an incredibly thick, milk-shake-like texture instantly!
+Learning how to freeze bananas for smoothies correctly saves so much morning frustration. Just toss a handful of those frozen coins directly into the blender with some almond milk and a scoop of protein powder, and you will get an incredibly thick, milk-shake-like texture instantly! If you want ideas beyond the basic banana blend, these [gut-friendly high-fiber smoothies](/gut-friendly-high-fiber-smoothies-for-daily-wellness/) put that frozen stash to serious work.
 
 ## Maintenance beats motivation
 

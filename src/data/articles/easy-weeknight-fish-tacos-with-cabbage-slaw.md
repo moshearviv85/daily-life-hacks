@@ -59,7 +59,7 @@ These are the fish tacos you actually want to make on a Tuesday. The fish is pan
 
 ## The Fish: Cheap, Quick, and Actually Good
 
-Here's the thing about fish tacos: the fish matters less than you'd think. You're not looking for sushi-grade ahi or anything that requires a special trip to the fishmonger. Tilapia is the workhorse here, and that's not an insult. It's mild, inexpensive, and cooks fast. Cod works too if you want something with a little more sweetness. Mahi-mahi is the upgrade option-firmer flesh, more personality, same quick cook time.
+Here's the thing about fish tacos: the fish matters less than you'd think. You're not looking for sushi-grade ahi or anything that requires a special trip to the fishmonger. Tilapia is the workhorse here, and that's not an insult. It's mild, inexpensive, and cooks fast. Cod works too if you want something with a little more sweetness. Mahi-mahi is the upgrade option-firmer flesh, more personality, same quick cook time. And if you grab extra cod while you're at it, my [baked cod with lemon and capers](/baked-cod-lemon-capers-green-beans/) is the same low-effort energy in dinner-plate form.
 
 What you want is fillets that are about three-quarters of an inch thick. Anything thinner and they'll overcook before you get any color. Anything thicker and you'll be standing at the stove wondering why the center is still raw while the edges are drying out. If your fillets are thick, just cut them in half horizontally so you have two thinner pieces.
 

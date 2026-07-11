@@ -36,7 +36,7 @@ This is the method I swear by. It's low effort, high reward. Forget wrapping it 
 2.  **Into the bag or container:** Pop the unpeeled ginger into a resealable plastic bag. Push out as much air as you can before sealing it. If you're using an airtight container, make sure the lid seals tightly.
 3.  **Into the fridge:** Place the sealed bag or container in the crisper drawer of your refrigerator.
 
-That's it. This method creates a humid, stable environment that drastically slows down the drying-out process. I've had ginger last a month or more doing this. When you need it, just grab it, peel the amount you need with a spoon (it's surprisingly easy), and put the rest back.
+That's it. This method creates a humid, stable environment that drastically slows down the drying-out process. I've had ginger last a month or more doing this. When you need it, just grab it, peel the amount you need with a spoon (it's surprisingly easy), and put the rest back. Fresh ginger on permanent standby also means something like this [Japanese-inspired cucumber and edamame salad with sesame](/cucumber-edamame-salad-sesame/) happens on a whim instead of requiring a plan.
 
 ### When Freezing is the Smarter Move
 
@@ -55,7 +55,7 @@ This is a real time-saver if you use grated ginger a lot.
 *   **Store:** Pop the frozen ginger cubes out of the tray and transfer them to a freezer bag or airtight container.
 *   **Use:** Just drop a cube or two directly into your cooking. It thaws almost instantly in a hot pan. Each cube is usually about a tablespoon, which is handy for most recipes.
 
-Freezing can keep ginger good for several months, easily. It's perfect for those times you find a good deal on ginger or just want to prep ahead.
+Freezing can keep ginger good for several months, easily. It's perfect for those times you find a good deal on ginger or just want to prep ahead. A frozen stash also means these [quick and easy stir fry sauce recipes](/quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff/) come together on a Tuesday night without a grocery run.
 
 ### What Not to Do with Your Ginger
 

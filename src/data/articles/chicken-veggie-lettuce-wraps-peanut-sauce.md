@@ -95,7 +95,7 @@ Wash the leaves and dry them really well. Wet lettuce waters down the peanut sau
 
 ## Serving and storing
 
-Bring the skillet to the table with a plate of lettuce leaves and a bowl of the peanut sauce. Letting everyone assemble their own wraps takes the pressure off the cook and makes dinner feel a little more interactive.
+Bring the skillet to the table with a plate of lettuce leaves and a bowl of the peanut sauce. Letting everyone assemble their own wraps takes the pressure off the cook and makes dinner feel a little more interactive. A cold [cucumber edamame salad with sesame](/cucumber-edamame-salad-sesame/) on the side rounds it out without adding any real work.
 
 If you're saving some for tomorrow's lunch, don't pre-assemble the wraps. The lettuce will turn into a soggy mess overnight. Keep the filling in a glass container, pack the sauce in a small jar, and put the lettuce in a zip-top bag with a paper towel to absorb moisture.
 

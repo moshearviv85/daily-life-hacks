@@ -75,9 +75,11 @@ A jar of plain savory chia is useful, but it's not exciting. The toppings do the
 
 * **Avocado:** Creamy, rich, and the fastest way to make the bowl feel like a meal.
 * **Cherry tomatoes:** Fresh and juicy without turning the whole container watery.
-* **Seeds:** Sunflower seeds, pepitas, or hemp seeds add crunch and a little heft.
+* **Seeds:** Sunflower seeds, pepitas, or hemp seeds add crunch and a little heft. Pepitas pull mineral duty too, which is why they keep showing up in these [zinc-containing foods for weekly meals](/zinc-containing-foods-weekly-meals/).
 * **Eggs:** A jammy egg on top makes this feel less like meal prep and more like brunch without the parking situation.
 * **Heat:** Chili crisp, hot sauce, or red pepper flakes keep the bowl awake.
+
+Between the avocado, the hemp seeds, and the chia itself, this bowl quietly checks half the boxes on our [healthy fats list of foods to eat daily](/healthy-fats-list-foods-to-eat-daily/). Not bad for a jar you shook together in five minutes.
 
 If you're packing this for work, keep the toppings in a separate container. Nobody wants avocado that has been pressed against chia pudding since 7 AM. It gets dramatic in the wrong direction.
 

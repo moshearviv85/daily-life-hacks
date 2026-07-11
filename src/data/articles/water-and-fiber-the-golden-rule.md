@@ -65,7 +65,7 @@ Think about it like a slippery slide. If there's no water, you just kind of... s
 
 So, what's the deal with this "50/50 rule" I keep yammering about? It's super simple, almost ridiculously so, but that's what makes it actually actionable. For every portion of fiber-rich food you consume, make a conscious effort to consume an equivalent or greater amount of water. It's not a strict measurement, obviously, because who's measuring fiber in cups and then water in the same cups? (Okay, maybe some people, but not me on a Tuesday morning.)
 
-It's more of a mental pairing. Bowl of oatmeal? Grab a big glass of water. Apple? Follow it up with some H2O. A big salad? Keep that water bottle handy. The goal is to avoid the fiber acting like a dehydrating agent in your gut. This isn't just about drinking water *with* your meals, though that's a good start; it's about consistent hydration throughout the day. Your body needs a steady supply to keep things flowing.
+It's more of a mental pairing. Bowl of oatmeal? Grab a big glass of water. Apple? Follow it up with some H2O. A big salad? Keep that water bottle handy. The goal is to avoid the fiber acting like a dehydrating agent in your gut. This isn't just about drinking water *with* your meals, though that's a good start; it's about consistent hydration throughout the day. Your body needs a steady supply to keep things flowing. And if you've already been down the prune juice road and hated every sip, these [prune juice alternatives](/prune-juice-alternatives-for-constipation/) cover gentler options that pair nicely with the 50/50 rule.
 
 ### Practical Sips and Bites: How to Make it Happen
 

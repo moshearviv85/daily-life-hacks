@@ -31,7 +31,7 @@ faq:
 ---
 No, you don't double the spices when you double a recipe. Scale salt, dried spices, and anything hot to about 1.5 times the original amount, then taste near the end and adjust. The bulk ingredients, meat, vegetables, grains, and broth, get a clean 2x. That's the whole rule, and ignoring it is how a promising pot of soup turns into a salt lick.
 
-We have all done it. You find a soup or a pasta dish you love, you multiply every single ingredient by two, you dump it all in the pot, and dinner tastes like a spice bomb went off in your kitchen.
+You find a soup or a pasta dish you love, you multiply every single ingredient by two, you dump it all in the pot, and dinner tastes like a spice bomb went off in your kitchen.
 
 When I first started batch cooking, I ruined a massive pot of chili by doubling the chili powder and the cayenne pepper. It was basically inedible. I learned the hard way that flavors don't scale in a straight line. Here's the framework to make sure your double batches actually taste like the original recipe.
 
@@ -56,17 +56,17 @@ Tape this to the inside of a cabinet if you have to.
 
 Let's start with the easy stuff. The bulk ingredients. If a recipe calls for one pound of chicken, use two pounds. If it asks for one cup of rice, use two cups.
 
-Broth, water, canned tomatoes, beans, and large vegetables like potatoes and carrots scale up perfectly. You are simply increasing the volume of the food. These are the foundations of the dish, and the math applies to them directly. One plus one equals two.
+Broth, water, canned tomatoes, beans, and large vegetables like potatoes and carrots scale up perfectly. You are simply increasing the volume of the food. These are the foundations of the dish, and the math applies to them directly.
 
-## The danger zone: Salt and strong spices
+## How much salt when you double a recipe?
 
-This is where things go wrong. Spices and salt amplify as the volume of food increases. If you strictly double them, the flavor often becomes harsh and overpowering.
+This is where things go wrong. Spices and salt amplify as the volume of food increases. If you strictly double them, the flavor often becomes harsh and overpowering. Part of it is simple pot physics: a doubled batch has less surface area relative to its volume, so it loses less liquid to evaporation per serving, and the same salt-to-food ratio ends up tasting saltier in the finished dish.
 
 The golden rule for salt and strong spices is to multiply by 1.5, not 2.
 
 If the original recipe calls for one teaspoon of salt, start with one and a half teaspoons for your double batch. If it calls for a tablespoon of cumin, use a tablespoon and a half.
 
-You can always add more at the end. That's the beauty of cooking. If you taste the soup ten minutes before it's done and it feels a little flat, you sprinkle in another pinch of salt. But if you start with two full teaspoons of salt and it's too salty, you're stuck trying to [rescue an oversalted pot](/fix-oversalted-soup-sauce-rice/), and that's a much worse afternoon.
+You can always add more at the end. If you taste the soup ten minutes before it's done and it feels a little flat, you sprinkle in another pinch of salt. But if you start with two full teaspoons of salt and it's too salty, you're stuck trying to [rescue an oversalted pot](/fix-oversalted-soup-sauce-rice/), and that's a much worse afternoon.
 
 This rule applies heavily to spicy elements. Cayenne pepper, red pepper flakes, and hot sauce scale aggressively. Start with 1.5 times the original amount. The heat will permeate the larger batch more effectively than you think.
 
@@ -76,7 +76,7 @@ Garlic and onions act a little differently. You can usually double the onions wi
 
 Acids like lemon juice and vinegar also need a light touch. If you double the lemon juice in a sauce, it might become too tart. Start with 1.5 times the amount, stir it in at the very end, and taste. Acid is meant to brighten a dish, not make you pucker.
 
-## Cooking times and equipment
+## Does cooking time double when you double a recipe?
 
 If you double the food, you need a bigger pot or a wider skillet. This sounds obvious, but crowding a small pan with double the chicken means the meat will steam instead of browning nicely. Give the food room to breathe.
 

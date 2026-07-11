@@ -59,7 +59,7 @@ faq:
 ---
 Pork tenderloin is one of those cuts that promises a lot but often delivers, well, dry disappointment. It's lean, it cooks fast, and it can go from perfectly juicy to sawdust in about 30 seconds if you're not paying attention. But when it's done right? It's tender, flavorful, and feels a lot fancier than the minimal effort it actually takes.
 
-The trick, like with most good things in life, is a combination of high heat and knowing when to quit. You want a good sear for flavor and color, then a quick finish in the oven to cook it through without drying it out. This method gets you there every single time, even if you're only half-paying attention after a long day. No fancy brines, no complicated techniques. Just solid cooking.
+The trick, like with most good things in life, is a combination of high heat and knowing when to quit. You want a good sear for flavor and color, then a quick finish in the oven to cook it through without drying it out. This method gets you there every single time, even if you're only half-paying attention after a long day. No fancy brines, no complicated techniques. Just solid cooking. It's the same sear-then-finish logic behind my [pork chops method](/best-way-to-cook-pork-chops/), just adapted for a lean little log of meat.
 
 ### Why This Method Works So Well
 

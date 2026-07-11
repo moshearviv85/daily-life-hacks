@@ -55,7 +55,7 @@ It sounds incredibly obvious, but owning a can opener that actually turns smooth
 A basic manual one is cheap. If you find yourself fighting with your current one every time you want to make chili, spending fifteen dollars on a decent upgrade pays for itself immediately in lower blood pressure.
 ## Reliable Measuring Cups and Spoons
 
-Eyeballing ingredients is perfectly fine for a lot of casual cooking, but when a recipe specifically calls for baking powder or you are actively trying to track your portions, you need something reliable. A basic metal set of measuring cups and spoons doesn't cost much, lasts forever, and prevents you from ruining an entire batch of food through bad guesswork.
+Eyeballing ingredients is perfectly fine for a lot of casual cooking, but when a recipe specifically calls for baking powder or you are actively trying to track your portions, you need something reliable. A basic metal set of measuring cups and spoons doesn't cost much, lasts forever, and prevents you from ruining an entire batch of food through bad guesswork. If you bake at all, a cheap digital scale earns its spot too; weighing something like [sourdough discard in grams](/how-to-measure-sourdough-discard-grams/) beats scraping sticky measuring cups every single time. That same scale gets a real workout with [gluten-free sourdough discard pizza dough](/gluten-free-sourdough-discard-pizza-dough/), where the flours punish loose measuring.
 ## A Sheet Pan (or Two)
 
 Heavy-duty metal sheet pans are for way more than just baking cookies. You can use them to roast vegetables, bake chicken thighs, and throw together incredibly easy one-pan dinners. 

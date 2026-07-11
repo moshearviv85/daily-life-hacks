@@ -42,9 +42,9 @@ This shelf life cascade means nothing goes bad before you get to it. It also mea
 
 Here's the part most people skip. If you plan five unrelated dinners, your shopping list has thirty different ingredients and you'll use half of each. A head of cabbage. A single lemon. A quarter cup of sour cream.
 
-Instead, choose two or three anchor ingredients and use them across multiple nights. Roast a big batch of chicken thighs on Sunday. Monday they're on a salad. Wednesday they go into quesadillas. Friday they're chopped into fried rice with whatever vegetables survived the week.
+Instead, choose two or three anchor ingredients and use them across multiple nights. Roast a big batch of chicken thighs on Sunday. Monday they're on a salad. Wednesday they go into quesadillas. Friday they're chopped into fried rice with whatever vegetables survived the week. If you'd rather anchor the week with a lazy weekend project, the [best way to cook ribs](/best-way-to-cook-ribs/) gives you Sunday dinner plus leftover meat that slides into sandwiches and fried rice for days.
 
-Same logic applies to grains and vegetables. Cook a pot of rice once, eat it three ways. Buy one big bag of broccoli and split it between a stir fry and a sheet pan dinner. Overlapping ingredients is how you plan a week of dinners with fewer grocery runs without eating the exact same plate every night. The flavors change even when the base stays similar.
+Same logic applies to grains and vegetables. Cook a pot of rice once, eat it three ways. Buy one big bag of broccoli and split it between a stir fry and a sheet pan dinner. Overlapping ingredients is how you plan a week of dinners with fewer grocery runs without eating the exact same plate every night. The flavors change even when the base stays similar. If you need candidates for those anchor nights, these [quick dinner recipes](/quick-dinner-recipes/) slot straight into the rotation.
 
 ## Keep one emergency meal on permanent standby
 

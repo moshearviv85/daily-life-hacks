@@ -78,7 +78,7 @@ Berries are the low-effort luxury move. Wash them, dry them, and slice only the 
 
 If berries are expensive or out of season, pivot. Sliced peaches, nectarines, apples, pears, or even a spoonful of quick berry compote all work. The ricotta is mild enough to handle almost any fruit.
 
-Just dry the fruit before it hits the toast. Wet berries make the bread soggy faster, and we already have enough soggy food in the world.
+Just dry the fruit before it hits the toast. Wet berries make the bread soggy faster, and we already have enough soggy food in the world. And if a few berries went soft before toast day, blend them instead; these [high fiber smoothies for picky kids](/high-fiber-smoothies-for-kids-picky-eaters/) don't care what the berries look like.
 
 ## The finishing touches matter
 
@@ -96,7 +96,7 @@ If you're serving more than one person, don't assemble every toast yourself. Tha
 
 Put the ricotta in a bowl. Set out the berries, honey, salt, and toppings. Keep the toast warm in a basket or on a sheet pan. Let everyone build their own.
 
-This also solves the picky-eater issue without a negotiation session. One person wants blueberries only. Someone else wants pistachios and too much honey. Fine. Their toast, their business.
+This also solves the picky-eater issue without a negotiation session. One person wants blueberries only. Someone else wants pistachios and too much honey. Fine. Their toast, their business. And if the picky eater at your table is a full-grown adult, this guide to [cooking for a non-adventurous eater](/cooking-for-picky-adults-simple-options/) applies the same no-negotiation logic to dinner.
 
 ## Make it a snack plate
 

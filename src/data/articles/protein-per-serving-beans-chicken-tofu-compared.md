@@ -29,7 +29,7 @@ Protein math is the kind of thing people swear they do \"in their head.\" Then t
 
 This article is not a lecture. It is a practical protein per serving guide so you can look at beans, chicken, tofu, and pantry staples and think, \"oh, that is what that means.\" Not \"I need to download an app.\" Just clarity.
 
-Also, quick reality check: protein needs vary. Activity level varies. Appetite varies. The point here is comparison and meal building, not a personalized prescription.
+Also, quick reality check: protein needs vary. Activity level varies. Appetite varies. The point here is comparison and meal building, not a personalized prescription. If you're wondering what your daily target should even be, here's [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/) before we start comparing plates.
 
 ## What \"per serving\" means in real life
 

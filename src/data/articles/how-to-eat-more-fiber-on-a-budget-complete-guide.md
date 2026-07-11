@@ -23,26 +23,34 @@ faq:
     answer: "Slowly. Jumping from 15 grams a day to 35 overnight is the most common reason people feel bloated and give up. Spreading the increase over two to three weeks, adding one higher-fiber meal at a time, and drinking more water as you go tends to make the transition much more comfortable."
 ---
 
-Fiber has a marketing problem. The foods that deliver the most of it per dollar are the least photogenic things in the store: dusty bags of split peas, dry pinto beans, plain rolled oats parked on the bottom shelf below the granola with the kraft paper branding. Nobody's building an Instagram feed around a bag of legumes.
+The FDA's Daily Value for fiber is 28 grams a day, and most American adults get about 15. The cheapest way to close that gap runs through the dry goods aisle, where dry green split peas deliver about 71 grams of fiber per dollar, based on USDA data and July 2026 prices.
+
+Nobody tells you this, because fiber has a marketing problem. The foods that deliver the most of it per dollar are the least photogenic things in the store: dusty bags of split peas, dry pinto beans, plain rolled oats parked on the bottom shelf below the granola with the kraft paper branding. Nobody's building an Instagram feed around a bag of legumes.
 
 I know this because I built the spreadsheet. We priced 53 common grocery foods against USDA fiber data and ranked every one by grams of fiber per dollar. This guide is what came out the other side: the complete playbook for how to eat more fiber on a budget, with real prices, real meals, and zero foods that taste like punishment.
 
 ## The short answer
 
-The FDA's Daily Value for fiber is 28 grams a day. Most American adults get about 15. The gap exists for a boring reason: the foods people think of as "fiber foods" (fresh berries, salads, cereal with claims on the box) are some of the most expensive ways to buy it, so fiber quietly becomes a luxury line item and gets cut.
+The gap between 28 grams and 15 exists for a boring reason: the foods people think of as "fiber foods" (fresh berries, salads, cereal with claims on the box) are some of the most expensive ways to buy it, so fiber quietly becomes a luxury line item and gets cut.
 
-The fix fits in one sentence: buy your fiber in the dry goods aisle, use the freezer aisle for produce, and run the whole thing on a simple repeatable system instead of willpower. In our analysis, a dollar of dry split peas bought about 71 grams of fiber. A dollar of fresh blueberries bought 2.5. Same nutrient, 28 times the price. Everything below is just that sentence with recipes attached.
+The fix fits in one sentence: buy your fiber in the dry goods aisle, use the freezer aisle for produce, and run the whole thing on a simple repeatable system instead of willpower. For scale, a dollar of fresh blueberries bought 2.5 grams of fiber in our analysis, against 71 for split peas. Same nutrient, 28 times the price. Everything below is just that sentence with recipes attached.
 
-## What a dollar of fiber actually buys
+## What is the cheapest source of fiber?
 
-We published the full 53-food ranking in our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), and the top of the table is a dry goods landslide. The highlights:
+We published the full 53-food ranking in our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), and the top of the table is a dry goods landslide. Here's what one dollar buys:
 
-* **Whole wheat flour: about 78 grams of fiber per dollar.** Technically the winner, but flour is an ingredient, not dinner. It counts if you bake, so swap it into pancakes and muffins and let the fiber tag along for pennies.
-* **Dry green split peas: about 71 grams per dollar.** The real champion among foods you can put in a pot tonight. One $1.42 bag holds around 101 grams of fiber, which covers about three and a half days of the entire Daily Value.
-* **Dry pinto beans: 70.8 grams per dollar.** Within a rounding error of split peas, and arguably more versatile.
-* **Popcorn kernels: almost 58 grams per dollar.** The sleeper hit of the whole list. It's a snack that outranks lentils.
-* **Rolled oats: about 36 grams per dollar.** Breakfast, solved, for about 28 cents per 100 grams.
-* **Frozen green peas: 17.6 grams per dollar.** Nearly triple what fresh broccoli crowns deliver at 6.1. The freezer aisle quietly beats the produce section.
+| Food | Fiber per $1 |
+|---|---|
+| Whole wheat flour | 77.8 g |
+| Green split peas (dry) | 71.0 g |
+| Pinto beans (dry) | 70.8 g |
+| Popcorn kernels | 57.7 g |
+| Rolled oats | 35.8 g |
+| Frozen green peas | 17.6 g |
+| Fresh broccoli crowns | 6.1 g |
+| Blueberries | 2.5 g |
+
+A few notes on that table. Whole wheat flour is technically the winner, but flour is an ingredient, not dinner; it only counts if you bake, so swap it into pancakes and muffins and let the fiber tag along for pennies. That makes dry green split peas the real champion among foods you can put in a pot tonight: one $1.42 bag holds around 101 grams of fiber, which covers about three and a half days of the entire Daily Value. Pinto beans sit within a rounding error of the peas and are arguably more versatile. Popcorn is the sleeper hit of the whole list, a snack that outranks lentils. Rolled oats are breakfast, solved, for about 28 cents per 100 grams. And frozen green peas deliver nearly triple what fresh broccoli crowns do, which is why the freezer aisle quietly beats the produce section.
 
 At the very bottom sit fresh blueberries at 2.5 grams per dollar. Berries aren't bad food. They're just a terrible fiber strategy. Buy them because you love them, not for the grams. Bananas are the exception that proves the rule: at just under 12 grams of fiber per dollar, they're the best fresh fruit value on the list, which is exactly why one shows up in the sample day below.
 
@@ -54,10 +62,16 @@ Want to run your own matchups? The [Fiber per Dollar Calculator](/tools/fiber-pe
 
 Talk is cheap. So is this. Here's the fiber skeleton of one day, priced straight from our dataset:
 
-* **Breakfast: oatmeal with a banana.** Half a cup of rolled oats (40 grams dry) brings 4 grams of fiber for 11 cents. One banana adds about 3.1 grams for 17 cents. Running total: 7.1 grams, 28 cents.
-* **Lunch: split pea soup.** A bowl made from a third of a cup of dry split peas (65 grams) carries about 14.4 grams of fiber for 20 cents. Toss in a carrot for another 1.7 grams and a dime. Running total: 23.2 grams, 58 cents.
-* **Snack: popcorn.** Three tablespoons of kernels (30 grams) pop into a genuinely large bowl with 4.4 grams of fiber for 8 cents. Running total: 27.6 grams, 66 cents.
-* **Dinner: beans and rice.** A quarter cup of dry pinto beans (50 grams) delivers 7.8 grams of fiber for 11 cents, and a quarter cup of dry brown rice adds 1.8 grams for another 11 cents. Day total: about 37 grams of fiber for 88 cents.
+| Meal | Food | Fiber (g) | Cost |
+|---|---|---|---|
+| Breakfast | Rolled oats, half a cup dry (40 g) | 4.0 | $0.11 |
+| Breakfast | One banana | 3.1 | $0.17 |
+| Lunch | Split pea soup, a third of a cup dry peas (65 g) | 14.4 | $0.20 |
+| Lunch | One carrot, tossed in the soup | 1.7 | $0.10 |
+| Snack | Popcorn, three tablespoons of kernels (30 g) | 4.4 | $0.08 |
+| Dinner | Pinto beans, a quarter cup dry (50 g) | 7.8 | $0.11 |
+| Dinner | Brown rice, a quarter cup dry | 1.8 | $0.11 |
+| **Total** | | **~37** | **$0.88** |
 
 Read that again. Thirty-seven grams, which clears the 28 gram Daily Value with room to spare, and the fiber-carrying ingredients cost less than a dollar.
 
@@ -107,7 +121,7 @@ I've watched people run this exact plan and bail within two weeks. It's almost n
 
 **Trusting the front of the box.** A "good source of fiber" label legally means just 2.8 to 5.3 grams per serving, and the serving might be six crackers. Our breakdown of [what the fiber label actually means](/good-source-of-fiber-label-meaning/) shows why a 22-cent serving of dry beans quietly embarrasses most packaged products with claims on the front.
 
-**Buying all your fiber fresh.** Fresh produce is great food and a mediocre fiber budget. The freezer aisle delivers the same vegetables at a fraction of the cost per gram, and our [frozen vs fresh guide](/frozen-vs-fresh-produce-when-to-buy/) maps exactly when each one wins.
+**Buying all your fiber fresh.** Fresh produce is great food and a mediocre fiber budget. The freezer aisle delivers the same vegetables at a fraction of the cost per gram, and our [frozen vs fresh guide](/frozen-vs-fresh-produce-when-to-buy/) maps exactly when each one wins. When you do splurge on fresh, make it count: [artichokes](/artichoke-recipes-for-gut-health/) are one of the few produce-aisle picks that earn their price tag on fiber alone.
 
 ## Start with two bags
 

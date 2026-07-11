@@ -50,7 +50,7 @@ faq:
 ---
 We've all had those brutal days. You work nine hours, commute home in horrible traffic, walk through the door utterly exhausted, and realize with a sinking feeling that you still have to figure out dinner. The temptation to just order takeout or eat a bowl of cereal is overwhelmingly strong. 
 
-But what if you could just open your freezer, grab a perfectly portioned bag, and have a home-cooked meal ready in the time it takes to boil water or heat up an oven? That's the absolute magic of a frozen stash. If you're new to this, diving into freezer meal prep ideas for beginners is the single best favor you can do for your future, exhausted self.
+But what if you could just open your freezer, grab a perfectly portioned bag, and have a home-cooked meal ready in the time it takes to boil water or heat up an oven? That's the absolute magic of a frozen stash. If you're new to this, diving into freezer meal prep ideas for beginners is the single best favor you can do for your future, exhausted self. Pair it with a few [food prep tips that save real time](/food-prep-tips-to-save-time/) and weeknights basically run themselves.
 
 ## The Secret to Success: "Dump Bags"
 

@@ -86,6 +86,6 @@ Parsley adds a clean, grassy note, while chives give you that mild onion flavor 
 
 ## Serving and storing
 
-This crispy smashed potato salad with Dijon and herbs is best served warm or at room temperature. That makes it incredibly convenient if you're hosting dinner or taking it to a potluck. You don't have to worry about mayo spoiling in the sun, and you don't have to fight for fridge space.
+This crispy smashed potato salad with Dijon and herbs is best served warm or at room temperature. That makes it incredibly convenient if you're hosting dinner or taking it to a potluck. You don't have to worry about mayo spoiling in the sun, and you don't have to fight for fridge space. If you're building out a whole potluck spread, my [cold summer pasta salad](/easy-cold-summer-pasta-salad-potlucks/) plays by the same no-mayo rules.
 
 If you have leftovers, they will keep in the fridge for a few days. They won't be quite as crispy the next day, but the flavors actually deepen as they sit. You can eat them cold, or throw them in a hot skillet for a few minutes to crisp them back up. Just make sure you make a big batch, because people tend to pick at them straight from the bowl.

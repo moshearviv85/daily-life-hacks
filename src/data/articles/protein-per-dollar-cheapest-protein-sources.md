@@ -20,9 +20,9 @@ faq:
     answer: "We took each food's protein content per 100 grams from USDA FoodData Central, matched it to a typical July 2026 US price per package (audited Walmart national listings plus Bureau of Labor Statistics average prices), and divided total protein in the package by its price. Everything is measured as purchased: raw meat, dry beans, whole packages. For bone-in items we counted only the edible portion, using USDA refuse percentages."
 ---
 
-Last week I ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle embarrassed everything else in the store. Several readers asked the obvious follow-up: does the same thing happen with protein? So I built the second spreadsheet. Forty-nine common grocery foods, USDA protein numbers, current prices, one division problem. The result is a full ranking of the cheapest protein sources in the store.
+Dried pinto beans are the cheapest protein source in the American grocery store, at about 98 grams of protein per dollar, based on USDA protein data and July 2026 prices. Bacon sits at the bottom of the same ranking at 9. That's the same nutrient at more than ten times the price, and the expensive version is the one everyone photographs on burgers.
 
-Short answer: the beans repeat, and the gap is still absurd. A dollar of dried pinto beans buys about 98 grams of protein. A dollar of bacon buys 9. That's the same nutrient at more than ten times the price, and the expensive version is the one everyone photographs on burgers.
+Here's where those numbers come from. Last week I ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle embarrassed everything else in the store. Several readers asked the obvious follow-up: does the same thing happen with protein? So I built the second spreadsheet. Forty-nine common grocery foods, USDA protein numbers, current prices, one division problem. The result is a full ranking of the cheapest protein sources in the store, and yes, the beans repeat.
 
 ## How we ran the numbers
 
@@ -39,6 +39,8 @@ And no, protein powder isn't in the table. This site covers food you can eat as 
 The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv) and check every number yourself.
 
 ## The full ranking: 49 protein sources by protein per dollar
+
+Protein values in this table come from USDA FoodData Central, and every price is a July 2026 US figure, audited against Walmart shelf listings and BLS national averages.
 
 | Rank | Food | Protein (g per 100g) | Price per 100g | Protein per $1 |
 |---|---|---|---|---|
@@ -102,13 +104,31 @@ Protein per $1 accounts for edible portion on bone-in items, so drumsticks are s
 
 **Eggs are the easiest animal protein, not the cheapest.** At $2.19 a dozen (May 2026 average, the calmest egg prices in a while), eggs score 34 grams per dollar. Only drumsticks beat them among animal foods without handing you a cutting board and a raw chicken. Milk quietly rides right behind at 29; a $4.22 gallon holds 123 grams of protein, which surprised me enough to check it twice.
 
-**Tofu does not have more protein than chicken.** This question drives real traffic, so here are the numbers: extra firm tofu has about 10 grams of protein per 100 grams; raw chicken breast has 22.5. Per dollar it's 13.6 versus 24.5, chicken again. Tofu is fine. It's just not a protein bargain, and neither is tempeh at 13.2. The cheap plant proteins are beans, lentils, and peanut butter, all of which may also help keep you full between meals.
-
 **Dried beats canned by three to one.** Dry pinto beans, 98 grams per dollar; canned black beans, 30. Canned still beats every ground meat in the store, so keep the shelf stocked for lazy nights. But the gap is the price of convenience, and it's steep.
 
 **Ground beef is a rough way to buy protein.** The bottom three spots are 80/20 ground beef, 93/7 ground beef, and bacon, all between 9 and 12 grams per dollar. Nobody buys bacon for protein, but plenty of people believe a pound of ground beef is the default protein move. At $6.75 a pound, every dollar you hand over buys less protein than the same dollar spent on canned beans, frozen peas, or a box of spaghetti.
 
+If you just want the winner from each corner of the store, here's the shortlist:
+
+| Category | Best value | Protein per $1 |
+|---|---|---|
+| Legumes | Pinto beans (dry) | 97.9 g |
+| Meat and poultry | Chicken drumsticks (bone-in) | 50.3 g |
+| Eggs and dairy | Eggs (large) | 34.4 g |
+| Fish | Canned tuna (chunk light, in water) | 22.4 g |
+
 ![Bar chart comparing how many total grams of protein five dollars buys across ten common foods, from 490 grams for dried pinto beans down to 46 grams for bacon](/images/protein-per-dollar-five-dollars.jpg)
+
+## Does tofu have more protein than chicken?
+
+No, and this question drives real traffic, so here are the numbers side by side:
+
+| | Protein per 100g | Protein per $1 |
+|---|---|---|
+| Tofu (extra firm) | 10.0 g | 13.6 g |
+| Chicken breast (boneless, skinless) | 22.5 g | 24.5 g |
+
+Raw chicken breast carries more than twice the protein per 100 grams and nearly double the protein per dollar. Tofu is fine. It's just not a protein bargain, and neither is tempeh at 13.2 grams per dollar. The cheap plant proteins are beans, lentils, and peanut butter, all of which may also help keep you full between meals. If fullness is the thing you're actually shopping for, we compared [high protein vs high fiber for satiety](/high-protein-vs-high-fiber-satiety/) and the answer isn't one or the other.
 
 ## The fine print on plant protein
 
@@ -127,4 +147,4 @@ Don't build a bean-only menu out of spite. Let the top of the table carry the ch
 * **Keep eggs, milk, and cottage cheese doing quiet work.** All three sit in the 26 to 34 range with zero prep drama. If you're deciding between the tubs, our [cottage cheese vs Greek yogurt](/cottage-cheese-vs-greek-yogurt-protein-uses/) breakdown settles it.
 * **Feeding a crowd?** We wrote a full playbook on [low-cost protein for large families](/best-low-cost-protein-sources-large-families/) that pairs well with this table.
 
-The whole study comes down to one sentence, and it's nearly the same sentence as last time: the cheapest protein in America lives in the dry goods aisle at about a quarter per 100 grams, the meat counter's real bargain is the humble drumstick, and the stuff at the bottom of the list is the stuff the ads are selling. Now you have the receipts, again.
+The whole study comes down to one sentence, and it's nearly the same sentence as last time: the cheapest protein in America lives in the dry goods aisle at about a quarter per 100 grams, the meat counter's real bargain is the humble drumstick, and the stuff at the bottom of the list is the stuff the ads are selling. The spreadsheet is public, the math is one division problem, and the beans don't care whether anyone photographs them.

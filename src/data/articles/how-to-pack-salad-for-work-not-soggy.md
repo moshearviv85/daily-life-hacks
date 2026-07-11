@@ -55,7 +55,7 @@ For the tall stack method, order matters. Build from bottom to top:
 * **Soft extras:** Cheese, avocado, dried fruit, and nuts stay above the heavier stuff.
 * **Greens:** Lettuce, spinach, kale, or cabbage goes on top, far away from the dressing.
 
-When lunch hits, dump the container into a bowl so the dressing lands on top. If you eat straight from the jar, you will end up trying to fork lettuce through three inches of chickpeas like you're excavating lunch.
+When lunch hits, dump the container into a bowl so the dressing lands on top. If you eat straight from the jar, you will end up trying to fork lettuce through three inches of chickpeas like you're excavating lunch. If you want a salad that was built for this exact system, this [high fiber quinoa salad for lunch prep](/high-fiber-quinoa-salad-for-lunch-prep/) stacks like it read the manual.
 
 ## Greens that can survive the commute
 
@@ -85,7 +85,7 @@ Same goes for delicate herbs. Parsley, cilantro, basil, and dill taste brighter 
 
 A work salad needs enough substance to carry you past 2 PM. Otherwise it's just a crunchy apology.
 
-Add protein, grains, beans, or a hearty fat. Chicken, eggs, tuna, tofu, chickpeas, quinoa, farro, feta, avocado, and nuts all help. The goal isn't to make the salad enormous. The goal is to make it useful.
+Add protein, grains, beans, or a hearty fat. Chicken, eggs, tuna, tofu, chickpeas, quinoa, farro, feta, avocado, and nuts all help. The goal isn't to make the salad enormous. The goal is to make it useful. And some weeks, skip the lettuce problem entirely: this [easy cold summer pasta salad](/easy-cold-summer-pasta-salad-potlucks/) shrugs off dressing and sits happily in the fridge for days.
 
 If you're using saucy protein, pack it separately or bury it in the middle layer away from the greens. Buffalo chicken directly on romaine at 8 AM is how lunch turns into a swamp.
 

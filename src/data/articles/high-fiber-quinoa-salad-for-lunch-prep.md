@@ -64,7 +64,7 @@ faq:
     a separate container, and use a slightly thicker container with a tight lid. If
     you are meal prepping, dry cucumbers well before mixing.
 ---
-Quinoa salad is one of those recipes that sounds like it belongs on a wellness poster, but it is really just a sturdy grain bowl that tolerates commuting.
+Quinoa salad is one of those recipes that sounds like it belongs on a wellness poster, but it is really just a sturdy grain bowl that tolerates commuting. (If quinoa isn't your grain, my [farro lunch bowl with roasted vegetables and lemon tahini](/farro-lunch-bowl-roasted-vegetables-lemon-tahini/) works the same commuter-proof angle with a chewier bite.)
 
 If your goal is fiber, you want more than lettuce and hope. You want whole grains, legumes, and vegetables that still taste good after a night in the fridge.
 ## Why This Combination Holds

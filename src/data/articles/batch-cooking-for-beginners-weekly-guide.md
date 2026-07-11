@@ -58,7 +58,7 @@ The secret to actually maintaining a healthy diet without losing your mind is mo
 
 Batch cooking is different from traditional "meal prep." You're not making ten identical, sad containers of chicken and rice. Instead, you're prepping core ingredients in bulk on Sunday afternoon, so weeknight dinners become an assembly project that takes exactly five minutes. One warning before you scale everything up: spices don't multiply cleanly, so learn [how to double a recipe's seasoning without guessing](/how-to-double-recipe-seasoning-without-guessing/) before you dump in twice the cumin. 
 
-Here is the master blueprint for taking back your evenings.
+Here is the master blueprint for taking back your evenings. (If you want more ready-made combinations to plug into it, my [food prep guide and recipes](/food-prep-guide-recipes/) picks up where this blueprint leaves off.)
 
 ## The 90-Minute Sunday Sprint
 

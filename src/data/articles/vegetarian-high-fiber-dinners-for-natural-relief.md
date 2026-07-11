@@ -117,7 +117,7 @@ If you want another serving tomorrow, double the beans or grains and keep the sp
 
 ## Serving ideas that still feel like a meal
 
-A pile of vegetables can feel like a side dish unless you give it a anchor. Think plain yogurt, a fried egg, a scoop of rice, or a warm tortilla. You are not trying to impress anyone. You are trying to sit down and eat something that holds you.
+A pile of vegetables can feel like a side dish unless you give it a anchor. Think plain yogurt, a fried egg, a scoop of rice, or a warm tortilla. You are not trying to impress anyone. You are trying to sit down and eat something that holds you. And on nights when you want something that looks a little more composed, these [stuffed portobello mushrooms with quinoa, spinach, and feta](/stuffed-portobello-mushrooms-quinoa-spinach-feta/) carry dinner without a single meat pep talk.
 
 ## If the flavor feels flat
 

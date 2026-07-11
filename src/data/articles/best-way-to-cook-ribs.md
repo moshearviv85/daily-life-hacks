@@ -63,7 +63,7 @@ The goal here isn't just "cooked." It's that elusive tenderness where the bone s
 
 ### Why Low and Slow in the Oven is Your Rib Secret Weapon
 
-Let's be honest, not everyone has a smoker, or the time to tend one all afternoon. This oven method gives you incredible control over temperature, which is key for breaking down the tough connective tissue in ribs into succulent gelatin. It's set-it-and-forget-it for a good chunk of the cooking time, which means you can actually do other things, like make sides or, you know, live your life.
+Let's be honest, not everyone has a smoker, or the time to tend one all afternoon. This oven method gives you incredible control over temperature, which is key for breaking down the tough connective tissue in ribs into succulent gelatin. It's set-it-and-forget-it for a good chunk of the cooking time, which means you can actually do other things, like make sides or, you know, live your life. If you like this hands-off style of big-meat cooking, my [prime rib method](/best-way-to-cook-prime-rib/) runs on the exact same patience principle.
 
 The initial covered bake steams the ribs in their own juices and the added liquid, creating an incredibly moist environment. This is where the magic happens for tenderness. Then, removing the foil and bumping up the heat allows the exterior to dry out a bit, letting the BBQ sauce caramelize into a sticky, flavorful glaze. It's the best of both worlds: tender interior, delicious crust.
 

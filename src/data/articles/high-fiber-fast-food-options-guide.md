@@ -48,11 +48,13 @@ faq:
     burger with 2 grams, the bowl is the clear win for your gut. Think of these
     orders as damage control that happens to taste good, not a health food plan.
 ---
+The short answer: a Chipotle burrito bowl with brown rice, double beans, and guacamole packs about 25 grams of fiber, a Wendy's plain baked potato plus a large chili lands around 16, and a Subway footlong Veggie Delite with avocado gets you roughly 13. Those three orders cover most of the fiber emergencies the drive-thru will ever throw at you.
+
 You know that feeling, right? You're starving, you're nowhere near your kitchen, and every road sign is screaming drive-thru. You'd like to eat something with actual *fiber* in it, but the value menu wasn't exactly designed with your gut in mind.
 
-Here's the plot twist: high fiber fast food absolutely exists. You just need the exact order, because the default build at almost every chain is a fiber wasteland. I dug through the published nutrition numbers at seven big chains and pulled out the orders that actually deliver. For context, you're aiming for about 28 grams of fiber a day, so a 16 gram lunch is doing serious work.
+Here's the plot twist: high fiber fast food absolutely exists. You just need the exact order, because the default build at almost every chain is a fiber wasteland. I dug through the published nutrition numbers at seven big chains and pulled out the orders that actually deliver. For context, the FDA's Daily Value for fiber is 28 grams a day, so a 16 gram lunch is doing serious work.
 
-## The best high fiber order at each chain
+## What fast food is high in fiber?
 
 | Chain | The order | Fiber (approx.) |
 |---|---|---|

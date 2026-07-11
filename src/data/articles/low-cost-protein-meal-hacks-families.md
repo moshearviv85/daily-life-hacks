@@ -33,7 +33,7 @@ Finding low cost protein meal hacks for families isn't about eating sawdust or b
 
 Ground beef or turkey is the backbone of the American weeknight, but it's getting pricey. The easiest hack is the "half-and-half" rule. Instead of using two pounds of meat for taco night, use one pound and supplement the rest with a can of black beans or a cup of cooked lentils. 
 
-Lentils are the secret weapon here because they have a similar texture to ground meat once they're simmered in sauce. They'll soak up the taco seasoning or the marinara, and most kids won't even notice the difference. You're effectively doubling the volume of your protein for about sixty cents. It's not a culinary revolution, but it keeps everyone full.
+Lentils are the secret weapon here because they have a similar texture to ground meat once they're simmered in sauce. They'll soak up the taco seasoning or the marinara, and most kids won't even notice the difference. You're effectively doubling the volume of your protein for about sixty cents. It's not a culinary revolution, but it keeps everyone full. Roll that same bean-heavy filling into a [high fiber burrito bowl meal prep](/high-fiber-burrito-bowl-meal-prep/) and next week's work lunches are covered for the price of one drive-thru run.
 
 ## Embrace the humble egg for dinner
 
@@ -59,4 +59,4 @@ Tuna is fine, but canned salmon or pink salmon is often overlooked and can be fo
 
 **Chickpea boost:** If you're making a tuna or salmon salad, mash in half a can of chickpeas. It adds bulk, fiber, and more protein without changing the flavor profile much. It's about cumulative wins. A little extra protein here and a few cents saved there adds up by the time Friday rolls around.
 
-Keeping the family fed and the protein levels up doesn't require a miracle or a second job. It's mostly about realizing that the "main event" on the plate doesn't always have to be a massive slab of expensive beef. If you can get comfortable with beans, eggs, and the frozen aisle, you'll find that your grocery bill starts behaving itself again. Just keep the transitions subtle and the seasoning heavy, and you might actually make it through the week without a mutiny at the dinner table.
+Keeping the family fed and the protein levels up doesn't require a miracle or a second job. It's mostly about realizing that the "main event" on the plate doesn't always have to be a massive slab of expensive beef. If you can get comfortable with beans, eggs, and the frozen aisle, you'll find that your grocery bill starts behaving itself again. And if you're curious how the swaps actually stack up, this [protein per serving comparison of beans, chicken, and tofu](/protein-per-serving-beans-chicken-tofu-compared/) does the math for you. Just keep the transitions subtle and the seasoning heavy, and you might actually make it through the week without a mutiny at the dinner table.

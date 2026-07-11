@@ -39,7 +39,7 @@ faq:
 ---
 A frustrating amount of traditional breakfast options are just dessert disguised as a morning meal. Think about it: brightly colored sweet cereal, giant pastries, and flavored yogurt that is heavily loaded with added sugar. They taste fantastic for about ten minutes, and then an hour later, you're sitting at your desk dragging your feet and looking for coffee. 
 
-The fundamental idea behind eating for "sustained energy" is incredibly simple: include some protein and fiber, and go significantly easier on the refined sugar. You don't need a special diet plan or expensive superfood powders. Here are the practical breakfast foods that tend to keep people going without the inevitable mid-morning crash.
+The fundamental idea behind eating for "sustained energy" is incredibly simple: include some protein and fiber, and go significantly easier on the refined sugar. You don't need a special diet plan or expensive superfood powders. I laid out the whole plate-building formula in my guide to [a balanced breakfast that actually keeps you full](/balanced-breakfast-that-keeps-you-full/), but here are the practical breakfast foods that tend to keep people going without the inevitable mid-morning crash.
 ## Eggs: The Reliable Classic
 
 Eggs give you a solid hit of both protein and fat in one neat little package. They are also highly flexible: you can scramble them, hard-boil a batch for the week, fold them into an omelet, or fry one to put on toast. 

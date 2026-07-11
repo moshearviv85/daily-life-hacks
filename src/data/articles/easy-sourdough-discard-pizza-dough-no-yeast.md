@@ -77,4 +77,4 @@ If you don't own a pizza stone, don't go out and buy one just for this. You can 
 
 I always roll this out directly on parchment paper. It makes the transfer to the hot pan about a thousand percent less stressful. Nobody wants to spend their Tuesday night scraping raw dough off a hot oven rack because the "slide" technique failed.
 
-You don't need a culinary degree or a three-day fermentation schedule to make a decent dinner. This crust gets the job done using what you already have in the jar on your counter. It’s fast, it’s cheap, and it’s one less thing ending up in the kitchen sink at the end of the week.
+You don't need a culinary degree or a three-day fermentation schedule to make a decent dinner. This crust gets the job done using what you already have in the jar on your counter. It’s fast, it’s cheap, and it’s one less thing ending up in the kitchen sink at the end of the week. And if someone at your table can't do wheat, my [gluten-free sourdough discard pizza dough](/gluten-free-sourdough-discard-pizza-dough/) keeps them in the pizza rotation too.

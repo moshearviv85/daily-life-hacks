@@ -50,7 +50,7 @@ faq:
 ---
 There are a lot of ways to cook a pork chop, but let's be honest, most of them result in something dry, tough, and generally disappointing. You expect juicy, flavorful, and tender, and you get a hockey puck. It's a common kitchen tragedy, one that I've personally experienced more times than I care to admit. But it doesn't have to be that way.
 
-After years of trial and error, I've landed on a method that consistently delivers perfectly cooked pork chops. It's a combination of high-heat searing for that irresistible crust, followed by a gentle butter basting to finish them off and infuse them with flavor. This isn't some complicated chef trick; it's just smart cooking that respects the meat.
+After years of trial and error, I've landed on a method that consistently delivers perfectly cooked pork chops. It's a combination of high-heat searing for that irresistible crust, followed by a gentle butter basting to finish them off and infuse them with flavor. This isn't some complicated chef trick; it's just smart cooking that respects the meat. And when you've got a whole afternoon instead of twenty minutes, my [oven ribs method](/best-way-to-cook-ribs/) is the weekend version of the same idea.
 
 The key here is temperature control and not rushing the process. You want a good sear, but you don't want to burn the outside before the inside is cooked. And that resting period at the end? Non-negotiable if you want to keep all those precious juices inside the chop where they belong.
 
