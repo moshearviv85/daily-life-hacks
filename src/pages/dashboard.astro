@@ -440,6 +440,31 @@ const BUILD = {
     .scan-notes { font-size: .85rem; margin: .25rem 0; }
     .scan-meta { display: flex; gap: .75rem; font-size: .75rem; }
 
+
+    /* ── Dashboard top-level tabs (CP3.3) ─────────── */
+    .dash-tabs {
+      display: flex; flex-wrap: wrap; gap: .35rem;
+      margin: 0 0 1.1rem; padding: .35rem;
+      border: 1px solid var(--border); border-radius: 10px;
+      background: #f8fafc;
+    }
+    .dash-tab {
+      border: 1px solid transparent; background: transparent;
+      color: var(--muted); font-size: .82rem; font-weight: 700;
+      padding: .45rem .85rem; border-radius: 8px; cursor: pointer;
+    }
+    .dash-tab:hover { color: var(--heading); background: #fff; }
+    .dash-tab.active {
+      color: #9a3412; background: #fff;
+      border-color: #fdba74; box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+    .dash-panel[hidden] { display: none !important; }
+    .dash-legacy-note {
+      margin-bottom: .75rem; padding: .7rem .85rem;
+      border-radius: 8px; background: #fff7ed; border: 1px solid #fdba74;
+      font-size: .8rem; color: #9a3412;
+    }
+
     /* ── Divider row ──────────────────────────────── */
     .section-gap { margin-bottom: 1.5rem; }
 
@@ -745,7 +770,17 @@ const BUILD = {
       </div>
     </div>
 
-    <!-- ── PIPELINE CONTROL CENTER ──────────────────────────────────────── -->
+
+    <nav class="dash-tabs" role="tablist" aria-label="Dashboard sections">
+      <button type="button" class="dash-tab active" role="tab" aria-selected="true" data-dash-tab="overview" id="dash-tab-overview">Overview</button>
+      <button type="button" class="dash-tab" role="tab" aria-selected="false" data-dash-tab="pipeline" id="dash-tab-pipeline">Pipeline</button>
+      <button type="button" class="dash-tab" role="tab" aria-selected="false" data-dash-tab="pins" id="dash-tab-pins">Pins</button>
+      <button type="button" class="dash-tab" role="tab" aria-selected="false" data-dash-tab="content" id="dash-tab-content">Content</button>
+      <button type="button" class="dash-tab" role="tab" aria-selected="false" data-dash-tab="legacy" id="dash-tab-legacy">Legacy</button>
+    </nav>
+
+    <div id="dash-panel-overview" class="dash-panel" role="tabpanel" aria-labelledby="dash-tab-overview">
+
     <div class="card section-gap" id="automation-health-card">
       <div class="automation-health-head">
         <div>
@@ -761,6 +796,140 @@ const BUILD = {
         <div class="empty">Loading workflow status...</div>
       </div>
     </div>
+
+
+
+    <div id="traffic-error" style="display:none"></div>
+
+    <div class="grid-2">
+
+      <!-- Articles by category -->
+      <div class="card">
+        <div class="card-title">Articles by Category</div>
+        <div id="cat-bars">
+          <div class="cat-row">
+            <span class="cat-label">Nutrition</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="bar-nutrition" style="width:0%"></div></div>
+            <span class="cat-count" id="cnt-nutrition">—</span>
+          </div>
+          <div class="cat-row">
+            <span class="cat-label">Recipes</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="bar-recipes" style="width:0%;background:var(--green)"></div></div>
+            <span class="cat-count" id="cnt-recipes">—</span>
+          </div>
+          <div class="cat-row">
+            <span class="cat-label">Tips</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="bar-tips" style="width:0%;background:var(--purple)"></div></div>
+            <span class="cat-count" id="cnt-tips">—</span>
+          </div>
+        </div>
+        <div style="margin-top:1rem">
+          <div class="card-title">Published vs Total</div>
+          <div class="cat-row">
+            <span class="cat-label">Nutrition</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="pbar-nutrition" style="width:0%"></div></div>
+            <span class="cat-count" id="pcnt-nutrition">—</span>
+          </div>
+          <div class="cat-row">
+            <span class="cat-label">Recipes</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="pbar-recipes" style="width:0%;background:var(--green)"></div></div>
+            <span class="cat-count" id="pcnt-recipes">—</span>
+          </div>
+          <div class="cat-row">
+            <span class="cat-label">Tips</span>
+            <div class="cat-bar-wrap"><div class="cat-bar" id="pbar-tips" style="width:0%;background:var(--purple)"></div></div>
+            <span class="cat-count" id="pcnt-tips">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content pipeline -->
+      <div class="card">
+        <div class="card-title">Content Pipeline (Tracker)</div>
+        <div id="pipeline-bars"></div>
+        <div style="margin-top:1.25rem">
+          <div class="card-title">Pins by Category</div>
+          <div id="pins-cat-bars"></div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ── NEWSLETTER + AGENT SCANS ──────────────────────────────────────── -->
+    <div class="grid-2">
+
+      <!-- Newsletter -->
+      <div class="card">
+        <div class="card-title">Newsletter — Kit / D1</div>
+        <div class="stats-row" style="grid-template-columns:repeat(3,1fr);margin-bottom:.75rem">
+          <div>
+            <div class="stat-label">Total</div>
+            <div class="stat-value" style="font-size:1.5rem" id="nl-total">—</div>
+          </div>
+          <div>
+            <div class="stat-label">Period</div>
+            <div class="stat-value" style="font-size:1.5rem" id="nl-period">—</div>
+            <div class="stat-sub">last <span class="period-label">30</span>d</div>
+          </div>
+          <div>
+            <div class="stat-label">Today</div>
+            <div class="stat-value" style="font-size:1.5rem" id="nl-today">—</div>
+          </div>
+        </div>
+        <div class="card-title">By Source</div>
+        <div id="nl-by-source"></div>
+        <div class="card-title" style="margin-top:1rem">Daily (last <span class="period-label">30</span>d)</div>
+        <div class="chart-wrap" style="height:140px">
+          <canvas id="subs-chart"></canvas>
+        </div>
+      </div>
+
+      <!-- Agent scan log -->
+      <div class="card">
+        <div class="card-title">Agent Scan Log</div>
+        <div id="scan-log-empty" class="empty" style="display:none">No scans recorded yet.</div>
+        <div id="scan-log-list"></div>
+      </div>
+
+    </div>
+
+    <!-- ── TOP PAGES (funnel events) ─────────────────────────────────────── -->
+    <div class="card section-gap">
+      <div class="card-title">Top Pages — Site Events (D1) — last <span class="period-label">30</span> days</div>
+      <div id="top-pages-empty" class="empty" style="display:none">No page events tracked yet.</div>
+      <table class="data-table" id="top-pages-table">
+        <thead><tr><th>Page</th><th>Events</th></tr></thead>
+        <tbody id="top-pages-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- ── LAST PUBLISHED ARTICLE ─────────────────────────────────────────── -->
+    <div class="card section-gap" id="last-pub-card">
+      <div class="card-title">Last Published Article</div>
+      <div id="last-pub-info"></div>
+    </div>
+
+    <!-- ── SUBSCRIBER LIST ────────────────────────────────────────────────── -->
+    <div class="card section-gap">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+        <div class="card-title" style="margin-bottom:0">All Subscribers — D1 (<span id="subs-list-count">0</span>)</div>
+        <div style="display:flex;gap:.5rem;align-items:center">
+          <input id="subs-search" type="text" placeholder="Search email..." style="padding:.35rem .75rem;border:1.5px solid var(--border);border-radius:6px;font-size:.82rem;outline:none;width:200px" oninput="filterSubs()" />
+          <button onclick="copySubEmails()" style="padding:.35rem .8rem;background:var(--orange);color:#fff;border:none;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer">Copy all emails</button>
+        </div>
+      </div>
+      <div id="subs-list-empty" class="empty" style="display:none">No subscribers yet.</div>
+      <table class="data-table" id="subs-list-table">
+        <thead><tr><th>#</th><th>Email</th><th>Source</th><th>Page</th><th>Status</th><th>Date</th></tr></thead>
+        <tbody id="subs-list-tbody"></tbody>
+      </table>
+    </div>
+
+    </div><!-- /dash-panel-overview -->
+
+
+    <div id="dash-panel-pipeline" class="dash-panel" role="tabpanel" aria-labelledby="dash-tab-pipeline" hidden>
 
     <div class="card section-gap" id="pipeline-section">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem">
@@ -787,11 +956,6 @@ const BUILD = {
           <button class="btn btn-sm" onclick="triggerPipeline('promote_staging')" id="btn-promote" title="Merge staging → main after review">Promote Staging</button>
         </div>
       </div>
-      <details style="margin-bottom:.75rem;padding:.55rem .75rem;border-radius:6px;background:#fff7ed;border:1px solid #fdba74;font-size:.78rem;color:var(--muted)">
-        <summary style="cursor:pointer;font-weight:600;color:#9a3412">Legacy tools (avoid unless draining old queue)</summary>
-        <p style="margin:.5rem 0">Preferred path: Generate to Staging → review → Promote. Legacy Publish writes directly to production via <code>articles_schedule</code>.</p>
-        <button class="btn btn-sm" onclick="triggerPipeline('publish')" id="btn-publish">Legacy Publish to Main</button>
-      </details>
       <div style="padding:.55rem .75rem;border-radius:6px;background:#f8fafc;border:1px solid var(--border);font-size:.78rem;color:var(--muted);margin-bottom:.75rem">
         Find Topics pulls GSC opportunity queries and Google Autocomplete seed expansions, then runs deterministic filters and an LLM semantic duplicate check against existing site and pipeline topics before adding a small review queue to <strong style="color:var(--text-color)">staging D1</strong>. Generate creates full staging packages: article, hero image, support image, and four pin images. Selected topics can be queued together and processed one after another. Pinterest remains manual.
       </div>
@@ -888,64 +1052,9 @@ const BUILD = {
       <div id="pipeline-empty" class="empty" style="display:none">No pipeline data yet. Click "Find Topics" to start.</div>
     </div>
 
-    <!-- ── CLARITY ANALYTICS ────────────────────────────────────────────────── -->
-    <!-- ── TRAFFIC CHART ──────────────────────────────────────────────────── -->
-    <!-- ── ARTICLES + CONTENT PIPELINE ───────────────────────────────────── -->
-    <div id="traffic-error" style="display:none"></div>
+    </div><!-- /dash-panel-pipeline -->
 
-    <div class="grid-2">
-
-      <!-- Articles by category -->
-      <div class="card">
-        <div class="card-title">Articles by Category</div>
-        <div id="cat-bars">
-          <div class="cat-row">
-            <span class="cat-label">Nutrition</span>
-            <div class="cat-bar-wrap"><div class="cat-bar" id="bar-nutrition" style="width:0%"></div></div>
-            <span class="cat-count" id="cnt-nutrition">—</span>
-          </div>
-          <div class="cat-row">
-            <span class="cat-label">Recipes</span>
-            <div class="cat-bar-wrap"><div class="cat-bar" id="bar-recipes" style="width:0%;background:var(--green)"></div></div>
-            <span class="cat-count" id="cnt-recipes">—</span>
-          </div>
-          <div class="cat-row">
-            <span class="cat-label">Tips</span>
-            <div class="cat-bar-wrap"><div class="cat-bar" id="bar-tips" style="width:0%;background:var(--purple)"></div></div>
-            <span class="cat-count" id="cnt-tips">—</span>
-          </div>
-        </div>
-        <div style="margin-top:1rem">
-          <div class="card-title">Published vs Total</div>
-          <div class="cat-row">
-            <span class="cat-label">Nutrition</span>
-            <div class="cat-bar-wrap"><div class="cat-bar" id="pbar-nutrition" style="width:0%"></div></div>
-            <span class="cat-count" id="pcnt-nutrition">—</span>
-          </div>
-          <div class="cat-row">
-            <span class="cat-label">Recipes</span>
-            <div class="cat-bar-wrap"><div class="cat-bar" id="pbar-recipes" style="width:0%;background:var(--green)"></div></div>
-            <span class="cat-count" id="pcnt-recipes">—</span>
-          </div>
-          <div class="cat-row">
-            <span class="cat-label">Tips</span>
-            <div class="cat-bar-wrap"><div class="cat-bar" id="pbar-tips" style="width:0%;background:var(--purple)"></div></div>
-            <span class="cat-count" id="pcnt-tips">—</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Content pipeline -->
-      <div class="card">
-        <div class="card-title">Content Pipeline (Tracker)</div>
-        <div id="pipeline-bars"></div>
-        <div style="margin-top:1.25rem">
-          <div class="card-title">Pins by Category</div>
-          <div id="pins-cat-bars"></div>
-        </div>
-      </div>
-
-    </div>
+    <div id="dash-panel-pins" class="dash-panel" role="tabpanel" aria-labelledby="dash-tab-pins" hidden>
 
     <!-- ── IMAGES STATUS + PINS BOARDS ───────────────────────────────────── -->
     <div class="grid-2">
@@ -1237,6 +1346,33 @@ const BUILD = {
       </div>
     </div>
 
+    </div><!-- /dash-panel-pins -->
+
+    <div id="dash-panel-content" class="dash-panel" role="tabpanel" aria-labelledby="dash-tab-content" hidden>
+
+    <!-- ── SCHEDULED ARTICLES ─────────────────────────────────────────────── -->
+    <div class="card section-gap">
+      <div class="card-title">Scheduled Articles (publishAt in future)</div>
+      <div id="scheduled-empty" class="empty" style="display:none">No scheduled articles — all articles are live.</div>
+      <table class="data-table" id="scheduled-table">
+        <thead><tr><th>Title</th><th>Category</th><th>Publish Date</th><th>Days Left</th></tr></thead>
+        <tbody id="scheduled-tbody"></tbody>
+      </table>
+    </div>
+
+    </div><!-- /dash-panel-content -->
+
+
+    <div id="dash-panel-legacy" class="dash-panel" role="tabpanel" aria-labelledby="dash-tab-legacy" hidden>
+
+    <div class="dash-legacy-note">
+      <strong>Legacy path.</strong> Prefer Pipeline → Generate to Staging → Promote.
+      Use this only to drain the old <code>articles_schedule</code> queue.
+      <div style="margin-top:.55rem">
+        <button class="btn btn-sm" onclick="triggerPipeline('publish')" id="btn-publish">Legacy Publish to Main</button>
+      </div>
+    </div>
+
     <!-- ── ARTICLE PUBLISHING PIPELINE ─────────────────────────────────── -->
     <div class="card section-gap" id="articles-pipeline-section">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
@@ -1324,85 +1460,7 @@ const BUILD = {
       </div>
     </div>
 
-    <!-- ── SCHEDULED ARTICLES ─────────────────────────────────────────────── -->
-    <div class="card section-gap">
-      <div class="card-title">Scheduled Articles (publishAt in future)</div>
-      <div id="scheduled-empty" class="empty" style="display:none">No scheduled articles — all articles are live.</div>
-      <table class="data-table" id="scheduled-table">
-        <thead><tr><th>Title</th><th>Category</th><th>Publish Date</th><th>Days Left</th></tr></thead>
-        <tbody id="scheduled-tbody"></tbody>
-      </table>
-    </div>
-
-    <!-- ── NEWSLETTER + AGENT SCANS ──────────────────────────────────────── -->
-    <div class="grid-2">
-
-      <!-- Newsletter -->
-      <div class="card">
-        <div class="card-title">Newsletter — Kit / D1</div>
-        <div class="stats-row" style="grid-template-columns:repeat(3,1fr);margin-bottom:.75rem">
-          <div>
-            <div class="stat-label">Total</div>
-            <div class="stat-value" style="font-size:1.5rem" id="nl-total">—</div>
-          </div>
-          <div>
-            <div class="stat-label">Period</div>
-            <div class="stat-value" style="font-size:1.5rem" id="nl-period">—</div>
-            <div class="stat-sub">last <span class="period-label">30</span>d</div>
-          </div>
-          <div>
-            <div class="stat-label">Today</div>
-            <div class="stat-value" style="font-size:1.5rem" id="nl-today">—</div>
-          </div>
-        </div>
-        <div class="card-title">By Source</div>
-        <div id="nl-by-source"></div>
-        <div class="card-title" style="margin-top:1rem">Daily (last <span class="period-label">30</span>d)</div>
-        <div class="chart-wrap" style="height:140px">
-          <canvas id="subs-chart"></canvas>
-        </div>
-      </div>
-
-      <!-- Agent scan log -->
-      <div class="card">
-        <div class="card-title">Agent Scan Log</div>
-        <div id="scan-log-empty" class="empty" style="display:none">No scans recorded yet.</div>
-        <div id="scan-log-list"></div>
-      </div>
-
-    </div>
-
-    <!-- ── TOP PAGES (funnel events) ─────────────────────────────────────── -->
-    <div class="card section-gap">
-      <div class="card-title">Top Pages — Site Events (D1) — last <span class="period-label">30</span> days</div>
-      <div id="top-pages-empty" class="empty" style="display:none">No page events tracked yet.</div>
-      <table class="data-table" id="top-pages-table">
-        <thead><tr><th>Page</th><th>Events</th></tr></thead>
-        <tbody id="top-pages-tbody"></tbody>
-      </table>
-    </div>
-
-    <!-- ── LAST PUBLISHED ARTICLE ─────────────────────────────────────────── -->
-    <div class="card section-gap" id="last-pub-card">
-      <div class="card-title">Last Published Article</div>
-      <div id="last-pub-info"></div>
-    </div>
-
-    <!-- ── SUBSCRIBER LIST ────────────────────────────────────────────────── -->
-    <div class="card section-gap">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
-        <div class="card-title" style="margin-bottom:0">All Subscribers — D1 (<span id="subs-list-count">0</span>)</div>
-        <div style="display:flex;gap:.5rem;align-items:center">
-          <input id="subs-search" type="text" placeholder="Search email..." style="padding:.35rem .75rem;border:1.5px solid var(--border);border-radius:6px;font-size:.82rem;outline:none;width:200px" oninput="filterSubs()" />
-          <button onclick="copySubEmails()" style="padding:.35rem .8rem;background:var(--orange);color:#fff;border:none;border-radius:6px;font-size:.78rem;font-weight:700;cursor:pointer">Copy all emails</button>
-        </div>
-      </div>
-      <div id="subs-list-empty" class="empty" style="display:none">No subscribers yet.</div>
-      <table class="data-table" id="subs-list-table">
-        <thead><tr><th>#</th><th>Email</th><th>Source</th><th>Page</th><th>Status</th><th>Date</th></tr></thead>
-        <tbody id="subs-list-tbody"></tbody>
-      </table>
-    </div>
+    </div><!-- /dash-panel-legacy -->
 
   </main>
 </div><!-- #app -->
@@ -1702,30 +1760,34 @@ function formatAge(value) {
   return `${days}d ago`;
 }
 
+
+function switchDashTab(tabId) {
+  const allowed = new Set(['overview', 'pipeline', 'pins', 'content', 'legacy']);
+  const id = allowed.has(tabId) ? tabId : 'overview';
+  document.querySelectorAll('.dash-tab').forEach((btn) => {
+    const on = btn.getAttribute('data-dash-tab') === id;
+    btn.classList.toggle('active', on);
+    btn.setAttribute('aria-selected', on ? 'true' : 'false');
+  });
+  document.querySelectorAll('.dash-panel').forEach((panel) => {
+    const on = panel.id === `dash-panel-${id}`;
+    if (on) panel.removeAttribute('hidden');
+    else panel.setAttribute('hidden', '');
+  });
+  try { localStorage.setItem('dlh-dash-tab', id); } catch (_) {}
+}
+
+document.querySelectorAll('.dash-tab').forEach((btn) => {
+  btn.addEventListener('click', () => switchDashTab(btn.getAttribute('data-dash-tab')));
+});
+try {
+  const saved = localStorage.getItem('dlh-dash-tab');
+  if (saved) switchDashTab(saved);
+} catch (_) {}
+window.switchDashTab = switchDashTab;
+
 async function fetchClarity() {
-  const btn = document.getElementById('clarity-refresh-btn');
-  btn.disabled = true;
-  btn.textContent = 'Loading...';
-  el('clarity-loading').style.display = 'block';
-  el('clarity-loading').textContent = 'Fetching from Clarity API...';
-  el('clarity-content').style.display = 'none';
-  el('clarity-error').style.display = 'none';
-  try {
-    const res = await fetch(`/api/dashboard?key=${encodeURIComponent(pw)}&days=1&clarityOnly=1`);
-    const data = await res.json();
-    if (data.clarity) {
-      liveData = { ...liveData, clarity: data.clarity };
-      renderClarityData(data.clarity);
-    }
-    btn.textContent = `↻ Refresh Clarity (last: ${new Date().toLocaleTimeString()})`;
-  } catch (e) {
-    el('clarity-loading').style.display = 'none';
-    el('clarity-error').style.display = 'block';
-    el('clarity-error').textContent = 'Error: ' + e.message;
-    btn.textContent = '↻ Refresh Clarity';
-  } finally {
-    btn.disabled = false;
-  }
+  /* CP3.3: Clarity UI removed — no-op */
 }
 
 function setRefreshStatus(state, msg) {
@@ -1992,58 +2054,8 @@ function renderLiveData(data, days) {
 }
 
 // ── Clarity render (standalone, called by fetchClarity) ────────────────────
-function renderClarityData(cl) {
-  if (!cl || cl.error) {
-    el('clarity-loading').style.display = 'none';
-    el('clarity-error').style.display = 'block';
-    el('clarity-error').textContent = 'Clarity: ' + (cl?.error || 'not configured');
-    return;
-  }
-  el('clarity-loading').style.display = 'none';
-  el('clarity-content').style.display = 'block';
-
-  // Cache note
-  const cacheNote = el('clarity-cache-note');
-  if (cl.stale) {
-    cacheNote.textContent = `⚠️ Showing stale data from ${cl.cachedAt ? new Date(cl.cachedAt + 'Z').toLocaleString() : 'cache'} — API rate limit reached`;
-    cacheNote.style.color = 'var(--red, #e55)';
-  } else if (cl.fromCache) {
-    cacheNote.textContent = `Cached at ${cl.cachedAt ? new Date(cl.cachedAt + 'Z').toLocaleString() : '—'}`;
-  } else {
-    cacheNote.textContent = `Live data fetched at ${new Date().toLocaleTimeString()}`;
-  }
-
-  el('c-sessions').textContent     = fmt(cl.sessions);
-  el('c-sessions-sub').textContent = `${cl.botSessions} bots filtered`;
-  el('c-users').textContent        = fmt(cl.users);
-  el('c-users-sub').textContent    = `${cl.pagesPerSession} pages/session`;
-  el('c-pps').textContent          = cl.pagesPerSession;
-  el('c-scroll').textContent       = cl.avgScrollDepth + '%';
-
-  el('c-countries').innerHTML = cl.countries.length === 0
-    ? '<div class="empty">No data</div>'
-    : cl.countries.slice(0, 8).map(c => `
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
-          <span>${c.country}</span><strong>${c.sessions} sessions</strong>
-        </div>`).join('');
-
-  el('c-pages').innerHTML = cl.topPages.length === 0
-    ? '<div class="empty">No data</div>'
-    : cl.topPages.slice(0, 8).map(p => `
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.82rem">
-          <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70%">${p.title}</span>
-          <strong style="white-space:nowrap;margin-left:.5rem">${p.sessions}</strong>
-        </div>`).join('');
-
-  el('c-devices').innerHTML = cl.devices.map(d => `
-    <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
-      <span>${d.name}</span><strong>${d.sessions}</strong>
-    </div>`).join('');
-
-  el('c-browsers').innerHTML = cl.browsers.map(b => `
-    <div style="display:flex;justify-content:space-between;padding:.3rem 0;border-bottom:1px solid var(--border);font-size:.85rem">
-      <span>${b.name}</span><strong>${b.sessions}</strong>
-    </div>`).join('');
+function renderClarityData(_cl) {
+  /* CP3.3: Clarity UI removed — no-op */
 }
 
 // ── Charts ─────────────────────────────────────────────────────────────────

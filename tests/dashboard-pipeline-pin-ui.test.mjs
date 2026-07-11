@@ -281,6 +281,34 @@ test("dashboard can dispatch bounded topic discovery and poll for new candidates
   assert.doesNotMatch(dashboard, /timed out without adding visible new topics/);
 });
 
+test("dashboard exposes top-level tabs and moves Legacy Publish off Pipeline", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+
+  assert.match(dashboard, /id="dash-tab-overview"/);
+  assert.match(dashboard, /id="dash-tab-pipeline"/);
+  assert.match(dashboard, /id="dash-tab-pins"/);
+  assert.match(dashboard, /id="dash-tab-content"/);
+  assert.match(dashboard, /id="dash-tab-legacy"/);
+  assert.match(dashboard, /id="dash-panel-pipeline"/);
+  assert.match(dashboard, /id="dash-panel-legacy"/);
+  assert.match(dashboard, /function switchDashTab/);
+  assert.match(dashboard, /id="btn-publish"/);
+  assert.match(dashboard, /dash-legacy-note/);
+  assert.doesNotMatch(dashboard, /Legacy tools \(avoid unless draining old queue\)/);
+
+  const pipelineStart = dashboard.indexOf('id="dash-panel-pipeline"');
+  const pipelineEnd = dashboard.indexOf("<!-- /dash-panel-pipeline -->");
+  const legacyStart = dashboard.indexOf('id="dash-panel-legacy"');
+  const pipelineChunk = dashboard.slice(pipelineStart, pipelineEnd);
+  const legacyChunk = dashboard.slice(legacyStart, legacyStart + 2500);
+
+  assert.doesNotMatch(pipelineChunk, /id="btn-publish"/);
+  assert.match(pipelineChunk, /id="btn-promote"/);
+  assert.match(legacyChunk, /id="btn-publish"/);
+  assert.match(legacyChunk, /id="articles-pipeline-section"/);
+  assert.match(dashboard, /CP3\.3: Clarity UI removed/);
+});
+
 test("pipeline control hides article-only rows without complete staging packages", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 

@@ -1,12 +1,38 @@
 # Pipeline Rollback Runbook
 
-**Updated:** 2026-07-11 (CP3.2)
+**Updated:** 2026-07-11 (CP3.2 + tagged checkpoints)
 
 Use this when a staging produce/assets batch is rejected or breaks build/deploy.
 
+## Git rollback tags (pushed to origin)
+
+These annotated tags mark known-good checkpoints on `main`:
+
+| Tag | Commit | Meaning |
+|-----|--------|---------|
+| `cp2-canonical-routing` | `7dcd91a` | After CP2 Phase B (canonical-only routing) |
+| `cp3.1-unify-workflows` | `e8d2b88` | After CP3.1 (workflow unification) |
+| `cp3.2-produce-hardening` | `6ee175a` | After CP3.2 (dry-run + pin assert) |
+
+Restore code to a checkpoint (prefer revert over hard reset on shared `main`):
+
+```bash
+# Inspect
+git fetch --tags
+git log -1 cp3.1-unify-workflows
+
+# Safe: reverse newer commits with a new commit
+git revert --no-edit 6ee175a   # example: undo CP3.2 only
+
+# Or create a recovery branch from a tag (does not rewrite main)
+git checkout -b recover/from-cp3.1 cp3.1-unify-workflows
+```
+
+Also retained: `archive/github-workflows/pipeline-daily.yml` (inactive; restore with `git mv` if needed).
+
 ## Hard rules
 
-- Prefer a **normal revert commit** on `staging`.
+- Prefer a **normal revert commit** on `staging` / `main`.
 - Do **not** force-push unless the user explicitly approves.
 - Do **not** mutate D1 topic state during cleanup without explicit approval.
 - Do not run produce/promote/images/pins while cleanup is in progress.

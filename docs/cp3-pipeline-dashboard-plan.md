@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-11  
 **Depends on:** CP2 Phase A+B (pushed to `main`)  
-**Status:** CP3.1 pushed (`e8d2b88`). CP3.2 in progress (dry_run + pin assert + rollback doc).  
+**Status:** CP3.1–CP3.2 on main (tagged). CP3.3 dashboard tabs in progress.  
 
 ---
 
@@ -196,10 +196,10 @@ Before deleting:
 - `assert_pin_destinations.py` after sync (registry + flat, ≥4 pin origins)
 - Rollback runbook: `docs/pipeline-rollback.md`
 
-### CP3.3 — Dashboard tabs (structure only)
-- Tab shell + hide Legacy from primary Pipeline
-- Remove dead code
-
+### CP3.3 — Dashboard tabs (structure only) ✅
+- Tab shell: Overview / Pipeline / Pins / Content / Legacy
+- Legacy Publish + CSV publisher only under Legacy tab
+- Clarity UI helpers stubbed (no-op); dead HTML comments removed
 ### CP3.4 — Dashboard modules + auth headers
 - Split JS; header auth
 
