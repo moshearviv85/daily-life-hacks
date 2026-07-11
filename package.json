@@ -8,6 +8,7 @@
     "build": "astro build",
     "verify:routing": "node scripts/verify-routing.mjs",
     "verify:pin-destinations": "node scripts/verify-pin-destinations.mjs",
+    "audit:routing": "node scripts/audit-routing.mjs",
     "build:checked": "npm run build && npm run verify:routing && npm run verify:pin-destinations && npm run audit:recipes",
     "audit:recipes": "node scripts/audit-recipes.mjs",
     "audit:content": "py -3 scripts/audit_content.py",

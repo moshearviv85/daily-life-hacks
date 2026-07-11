@@ -85,7 +85,7 @@ const breadcrumbSchema = {
           : article.data.category === "tips"
             ? "Tips"
             : "Nutrition",
-      item: `${siteUrl}/${article.data.category}`,
+      item: `${siteUrl}/${article.data.category}/`,
     },
     {
       "@type": "ListItem",
@@ -202,6 +202,7 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
   canonicalURL={articleUrl}
   jsonLd={allSchemas}
   robots={robotsMeta}
+  ogType="article"
 >
   <Header />
   <main
@@ -615,12 +616,20 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
 
       if (!main || !releaseContent || !releaseAt) return;
 
-      // Preview mode: ?preview=PASSWORD bypasses the date gate
-      const previewParam = new URLSearchParams(window.location.search).get("preview");
-      if (previewParam === "moshiko1985!") {
+      // Staging / Pages preview hosts may unlock scheduled content for review.
+      // Production never accepts a client-side password bypass.
+      const host = window.location.hostname || "";
+      const isNonProdHost =
+        host.includes("pages.dev") ||
+        host.startsWith("staging.") ||
+        host === "localhost" ||
+        host === "127.0.0.1";
+
+      if (isNonProdHost) {
         releaseContent.style.display = "";
         if (releaseNotice) {
-          releaseNotice.innerHTML = '<p style="font-size:.8rem;color:#F29B30;font-weight:600">🔓 Preview mode — not yet published</p>';
+          releaseNotice.innerHTML =
+            '<p style="font-size:.8rem;color:#F29B30;font-weight:600">Staging preview — not yet published on production</p>';
           releaseNotice.style.padding = ".4rem .75rem";
         }
         return;

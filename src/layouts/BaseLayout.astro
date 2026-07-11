@@ -11,6 +11,8 @@ interface Props {
   jsonLd?: object | object[];
   /** Defaults to indexable; use `noindex, follow` for pages not ready for Search (must match build-time policy). */
   robots?: string;
+  /** Open Graph type — articles only; everything else defaults to website. */
+  ogType?: "article" | "website";
 }
 
 const DEFAULT_ROBOTS =
@@ -28,6 +30,7 @@ const {
   })(),
   jsonLd,
   robots = DEFAULT_ROBOTS,
+  ogType = "website",
 } = Astro.props;
 
 const absoluteImage = image.startsWith("http")
@@ -67,7 +70,7 @@ const metaDescription =
     <ClientRouter />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={metaDescription} />
     <meta property="og:image" content={absoluteImage} />

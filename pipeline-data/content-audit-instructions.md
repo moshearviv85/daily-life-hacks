@@ -73,7 +73,8 @@ The Agent should not fix the files automatically unless explicitly asked. Instea
 
 After completing the audit and any fixes, the agent MUST POST a scan summary to the dashboard log endpoint. This records the scan timestamp and results so the owner can see when the last quality check was performed.
 
-**Endpoint:** `POST https://www.daily-life-hacks.com/api/agent-scan?key=moshiko1985!`
+**Endpoint:** `POST https://www.daily-life-hacks.com/api/agent-scan`  
+**Auth:** header `x-api-key: <DASHBOARD_PASSWORD or STATS_KEY>` (do not put secrets in the URL)  
 **Method:** POST
 **Content-Type:** application/json
 **Body:**
@@ -89,8 +90,9 @@ After completing the audit and any fixes, the agent MUST POST a scan summary to 
 
 **Example curl command:**
 ```bash
-curl -s -X POST "https://www.daily-life-hacks.com/api/agent-scan?key=moshiko1985!" \
+curl -s -X POST "https://www.daily-life-hacks.com/api/agent-scan" \
   -H "Content-Type: application/json" \
+  -H "x-api-key: $DASHBOARD_PASSWORD" \
   -d '{"scan_type":"content_audit","notes":"Scanned 66 articles — 3 violations fixed (em dashes, banned words)","issues_found":3,"issues_fixed":3,"details":"fixed: article-a.md, article-b.md, article-c.md"}'
 ```
 

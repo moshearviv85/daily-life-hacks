@@ -246,7 +246,7 @@ test("legacy impression tag and pagination URLs redirect instead of returning go
 
 test("legacy garbage and removed supplement-adjacent URLs return gone", async () => {
   const cases = [
-    "https://www.daily-life-hacks.com/$%7Ba.slug%7D?preview=moshiko1985!",
+    "https://www.daily-life-hacks.com/$%7Ba.slug%7D",
     "https://www.daily-life-hacks.com/api/event",
     "https://www.daily-life-hacks.com/feed/",
     "https://www.daily-life-hacks.com/hello-world/",

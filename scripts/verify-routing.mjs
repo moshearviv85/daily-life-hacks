@@ -174,8 +174,22 @@ function main() {
     process.exit(1);
   }
 
+  const articlesWithoutRouter = [...articleIds].filter((id) => !baseSlugs.has(id));
+  const pinCounts = [];
+  for (const [base, variants] of Object.entries(routerMapping || {})) {
+    const n = Object.values(variants || {}).filter((v) => normalizeSlug(v?.url_slug)).length;
+    pinCounts.push(n);
+  }
+  const under4 = pinCounts.filter((n) => n < 4).length;
+
   console.log(
     `[verify-routing] OK: verified ${requiredBuiltSlugs.size} built article/alias slug(s) against dist/`,
+  );
+  console.log(
+    `[verify-routing] Summary: articles=${articleIds.size} aliases=${aliasSlugs.size} routerBases=${baseSlugs.size} routerVariants=${variantSlugs.size} unmigratedVariants=${unmigratedVariants.length} articlesWithoutRouter=${articlesWithoutRouter.length} routerBasesUnder4Pins=${under4}`,
+  );
+  console.log(
+    `[verify-routing] Policy: pin destinations remain static+noindex until CP2 301 migration (see docs/pin-routing-policy.md)`,
   );
 }
 

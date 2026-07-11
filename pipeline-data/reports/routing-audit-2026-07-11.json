@@ -1,0 +1,158 @@
+{
+  "generatedAt": "2026-07-11T09:21:40.104Z",
+  "checkpoint": "CP1-baseline",
+  "policy": "docs/pin-routing-policy.md",
+  "targetModel": "pin-destination-301-to-canonical",
+  "counts": {
+    "articles": 186,
+    "aliases": 525,
+    "routerBases": 85,
+    "routerVariants": 340,
+    "variantsMissingFromAliases": 0,
+    "orphanAliasesNotInRouter": 185,
+    "aliasesPointingMissingArticle": 0,
+    "articlesWithoutRouterMapping": 101,
+    "articlesWithUnder4PinDestinations": 0,
+    "variantBaseCollisions": 0
+  },
+  "samples": {
+    "variantsMissingFromAliases": [],
+    "orphanAliases": [
+      {
+        "alias": "30-day-high-fiber-challenge-meal-plan-guide",
+        "target": "30-day-high-fiber-challenge-meal-plan"
+      },
+      {
+        "alias": "30-day-high-fiber-challenge-meal-plan-tips",
+        "target": "30-day-high-fiber-challenge-meal-plan"
+      },
+      {
+        "alias": "affordable-kids-meals-no-more",
+        "target": "high-fiber-smoothies-for-kids-picky-eaters"
+      },
+      {
+        "alias": "are-artichokes-good-for-digestion",
+        "target": "artichoke-recipes-for-gut-health"
+      },
+      {
+        "alias": "artichoke-recipes-for-gut-health-guide",
+        "target": "artichoke-recipes-for-gut-health"
+      },
+      {
+        "alias": "avoid-these-sneaky-ingredients-store",
+        "target": "how-to-store-homemade-salad-dressing-safely"
+      },
+      {
+        "alias": "batch-cooking-for-beginners-weekly-guide-guide",
+        "target": "batch-cooking-for-beginners-weekly-guide"
+      },
+      {
+        "alias": "batch-cooking-for-beginners-weekly-guide-tips",
+        "target": "batch-cooking-for-beginners-weekly-guide"
+      },
+      {
+        "alias": "best-30-day-high-fiber-challenge-meal-plan",
+        "target": "30-day-high-fiber-challenge-meal-plan"
+      },
+      {
+        "alias": "best-artichoke-recipes-for-gut-health",
+        "target": "artichoke-recipes-for-gut-health"
+      },
+      {
+        "alias": "best-batch-cooking-for-beginners-weekly-guide",
+        "target": "batch-cooking-for-beginners-weekly-guide"
+      },
+      {
+        "alias": "best-black-bean-brownies-hidden-fiber-dessert",
+        "target": "black-bean-brownies-hidden-fiber-dessert"
+      },
+      {
+        "alias": "best-easy-high-fiber-breakfast-ideas-for-gut-health",
+        "target": "easy-high-fiber-breakfast-ideas-for-gut-health"
+      },
+      {
+        "alias": "best-fiber-rich-soup-for-weight-loss-cabbage",
+        "target": "fiber-rich-soup-for-weight-loss-cabbage"
+      },
+      {
+        "alias": "best-grocery-shopping-list-for-healthy-eating-on-a-budget",
+        "target": "grocery-shopping-list-for-healthy-eating-on-a-budget"
+      },
+      {
+        "alias": "best-gut-health-tea-peppermint-ginger",
+        "target": "gut-health-tea-peppermint-ginger"
+      },
+      {
+        "alias": "best-high-fiber-bran-muffins-that-taste-good",
+        "target": "high-fiber-bran-muffins-that-taste-good"
+      },
+      {
+        "alias": "best-high-fiber-cauliflower-rice-recipes",
+        "target": "high-fiber-cauliflower-rice-recipes"
+      },
+      {
+        "alias": "best-high-fiber-fast-food-options-guide",
+        "target": "high-fiber-fast-food-options-guide"
+      },
+      {
+        "alias": "best-high-fiber-hummus-recipe-homemade",
+        "target": "high-fiber-hummus-recipe-homemade"
+      },
+      {
+        "alias": "best-high-fiber-pizza-crust-cauliflower",
+        "target": "high-fiber-pizza-crust-cauliflower"
+      },
+      {
+        "alias": "best-high-fiber-popcorn-toppings-healthy",
+        "target": "high-fiber-popcorn-toppings-healthy"
+      },
+      {
+        "alias": "best-high-fiber-salad-dressings-homemade",
+        "target": "high-fiber-salad-dressings-homemade"
+      },
+      {
+        "alias": "best-high-fiber-smoothies-for-kids-picky-eaters",
+        "target": "high-fiber-smoothies-for-kids-picky-eaters"
+      },
+      {
+        "alias": "best-high-fiber-yogurt-parfait-for-breakfast",
+        "target": "high-fiber-yogurt-parfait-for-breakfast"
+      }
+    ],
+    "aliasesPointingMissing": [],
+    "articlesWithoutRouter": [
+      "30-day-high-fiber-challenge-meal-plan",
+      "air-fryer-salmon-bites-garlic-honey-glaze",
+      "amaranth-millet-teff-beginner-cooking-guide",
+      "artichoke-recipes-for-gut-health",
+      "baked-cod-lemon-capers-green-beans",
+      "baking-sheet-liners-parchment-silicone-when-to-use",
+      "balanced-breakfast-that-keeps-you-full",
+      "batch-cooking-for-beginners-weekly-guide",
+      "beans-and-rice-complete-protein-meal",
+      "best-breakfast-foods-for-sustained-energy",
+      "best-high-fiber-fruits-for-weight-loss-list",
+      "best-way-to-cook-a-pork-tenderloin",
+      "best-way-to-cook-baked-potatoes",
+      "best-way-to-cook-chicken",
+      "best-way-to-cook-pork-chops",
+      "best-way-to-cook-prime-rib",
+      "best-way-to-cook-ribs",
+      "best-way-to-store-avocados-to-stop-browning",
+      "black-bean-brownies-hidden-fiber-dessert",
+      "budget-meal-ideas-for-one",
+      "budget-meal-ideas-philippines",
+      "chia-pudding-variations-for-breakfast",
+      "crispy-roasted-chickpeas-high-fiber-snack",
+      "easy-black-bean-tacos-weeknight-dinner",
+      "easy-high-fiber-breakfast-ideas-for-gut-health"
+    ],
+    "articlesUnder4Pins": [],
+    "collisions": []
+  },
+  "notes": [
+    "Orphan aliases often include legacy best-/guide-/tips- patterns outside router-mapping.",
+    "CP1 freeze: do not manually grow slug-aliases.json.",
+    "CP2 will migrate to pin-destinations.json + runtime 301."
+  ]
+}
