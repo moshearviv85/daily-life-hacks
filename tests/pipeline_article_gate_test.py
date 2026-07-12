@@ -66,7 +66,7 @@ def test_pipeline_produce_reports_failed_topics_before_final_failure():
 def test_pipeline_produce_marks_topics_produced_only_after_staging_deploy():
     workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
 
-    deploy_idx = workflow.index("- name: Wait for staging Pages deploy")
+    deploy_idx = workflow.index("- name: Trigger and wait for staging Pages deploy")
     produced_idx = workflow.index("- name: Mark topics as produced")
     sync_idx = workflow.index("- name: Sync pipeline status to D1")
 
@@ -95,11 +95,11 @@ def test_pipeline_produce_supports_dry_run_without_publish_side_effects():
     assert "inputs.dry_run != true" in _step(
         workflow,
         "Commit and push generated files",
-        "Wait for staging Pages deploy",
+        "Trigger and wait for staging Pages deploy",
     )
     assert "inputs.dry_run != true" in _step(
         workflow,
-        "Wait for staging Pages deploy",
+        "Trigger and wait for staging Pages deploy",
         "Mark topics as produced",
     )
     assert "inputs.dry_run != true" in _step(
@@ -140,7 +140,7 @@ def test_staging_generation_workflows_build_before_push():
     verify_idx = workflow.index("Verify generated staging artifacts")
     build_idx = workflow.index("Build staging site")
     commit_idx = workflow.index("Commit and push generated files")
-    wait_idx = workflow.index("Wait for staging Pages deploy")
+    wait_idx = workflow.index("Trigger and wait for staging Pages deploy")
     dry_idx = workflow.index("Dry-run summary (skip publish side effects)")
 
     assert verify_idx < build_idx < dry_idx < commit_idx < wait_idx
@@ -241,7 +241,7 @@ def test_article_assets_build_before_push_and_no_wrangler():
     workflow = _workflow("pipeline-article-assets.yml")
     build_idx = workflow.index("Build staging site")
     commit_idx = workflow.index("Commit and push generated assets")
-    wait_idx = workflow.index("Wait for staging Pages deploy")
+    wait_idx = workflow.index("Trigger and wait for staging Pages deploy")
     assert build_idx < commit_idx < wait_idx
     assert "npm run build:checked" in workflow
     assert "wrangler-action" not in workflow
