@@ -62,6 +62,8 @@ jobs:
           rm -rf worker-out dist/_worker.js
           npx wrangler pages functions build functions --outdir=worker-out --output-routes-path=dist/_routes.json --project-directory=. --build-output-directory=dist
           cp worker-out/index.js dist/_worker.js
+          cp public/_routes.json dist/_routes.json
+          python -c "import json; routes=json.load(open('dist/_routes.json')); assert '/deploy-proof*' in routes['exclude'], routes"
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

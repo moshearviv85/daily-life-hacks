@@ -9,6 +9,7 @@
     "/favicon.ico",
     "/logo.png",
     "/robots.txt",
-    "/sitemap*"
+    "/sitemap*",
+    "/deploy-proof*"
   ]
 }
