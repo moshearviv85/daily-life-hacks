@@ -40,12 +40,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Read Cloudflare account configuration
+      - name: Read Pages project configuration
         continue-on-error: true
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: whoami
+          accountId: 91c501fca325c556efd161e4f904d443
+          command: pages project list
 
       - name: Build and verify routing
         run: npm run build:checked
@@ -60,4 +61,5 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 91c501fca325c556efd161e4f904d443
           command: pages deploy dist --project-name=daily-life-hacks --branch=${{ github.ref_name }}
