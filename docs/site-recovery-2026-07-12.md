@@ -49,23 +49,27 @@ Publishing more generic articles would make all four problems worse.
 
 ### Batch A — restore truth, trust, and crawl efficiency
 
-- [ ] Link every internal navigation/card/tag/category URL directly to its
+- [x] Link every internal navigation/card/tag/category URL directly to its
       trailing-slash canonical.
-- [ ] Add a build gate that fails on internal links to non-canonical HTML URLs.
-- [ ] Add `CollectionPage` and `ItemList` structured data to the three category
+- [x] Add a build gate that fails on internal links to non-canonical HTML URLs.
+- [x] Add `CollectionPage` and `ItemList` structured data to the three category
       hubs.
-- [ ] Fix the on-page audit parser, regenerate the report, and rebuild the
+- [x] Fix the on-page audit parser, regenerate the report, and rebuild the
       upgrade queue from real frontmatter.
-- [ ] Deliver the existing 7-day meal-plan PDF on the thank-you page and measure
+- [x] Deliver the existing 7-day meal-plan PDF on the thank-you page and measure
       the download.
-- [ ] Make pipeline `dry_run` genuinely side-effect free and guarantee cleanup
+- [x] Make pipeline `dry_run` genuinely side-effect free and guarantee cleanup
       for queued topics after failures.
-- [ ] Remove the repeated filler blocks from the 22 affected articles.
-- [ ] Stop the global three-pillar boost in Related Articles.
+- [x] Remove the repeated filler blocks from the 22 affected articles.
+- [x] Stop the global three-pillar boost in Related Articles.
 
 Exit gate: targeted tests pass, `npm run build:checked` passes, the generated
 HTML contains no internal redirect links, and the lead-magnet file/CTA/event are
 present in the build.
+
+Batch A proof: commit `5aa183c`; Cloudflare preview workflow run `29179963942`
+passed and the preview returned `200` for the homepage, thank-you page, PDF,
+Recipes, Contact, and a cleaned article.
 
 ### Batch B — consolidate topical authority
 
