@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-07-12",
+  "source": "docs/pinterest-title-rewrite-pack.md",
+  "boards_source": "docs/pinterest-boards.md",
+  "note": "New briefs / queue curation only — do not mass-edit live pin objects without a measured test.",
+  "rewrites": [
+    {
+      "article_slug": "how-to-meal-prep-on-a-budget-for-one-person",
+      "old_title_hint": "How to Meal Prep on a Budget",
+      "new_titles": [
+        "Meal Prep for One: 5 Cheap Lunches Under $3",
+        "5 Cheap Lunches for One: Meal Prep Under $3",
+        "Solo Meal Prep: 5 Budget Lunches Under $3 Each"
+      ],
+      "description": "Meal prep for one without wasting food or money. Five cheap lunch ideas you can batch on Sunday and eat all week — each under $3.",
+      "board_name": "Budget Meals and Grocery Hacks",
+      "board_id": "1124140825679548779",
+      "status": "ready_for_queue"
+    },
+    {
+      "article_slug": "how-to-make-grocery-shopping-cheaper",
+      "old_title_hint": "Ways to Make Grocery Shopping Cheaper",
+      "new_titles": [
+        "Grocery Run Checklist: Cut $40 Without Coupons",
+        "Cut $40 Off Groceries Without Chasing Coupons",
+        "What's the Best Way to Cut $40 Off Your Grocery Run"
+      ],
+      "description": "A practical grocery run checklist that trims the bill without coupon hunting. Simple swaps and shopping order that add up fast.",
+      "board_name": "Budget Meals and Grocery Hacks",
+      "board_id": "1124140825679548779",
+      "status": "ready_for_queue"
+    },
+    {
+      "article_slug": "easy-high-fiber-breakfast-ideas-for-gut-health",
+      "old_title_hint": "Easy High Fiber Breakfast Ideas for Gut Health",
+      "new_titles": [
+        "7 High Fiber Breakfasts You Can Make in 10 Minutes",
+        "10-Minute High Fiber Breakfasts for Gut Health",
+        "Fast High Fiber Breakfast Without Skipping: 7 Ideas"
+      ],
+      "description": "Seven high-fiber breakfasts you can make in about 10 minutes. Real food ideas that support gut health without a complicated morning routine.",
+      "board_name": "High Fiber Dinner and Gut Health Recipes",
+      "board_id": "1124140825679184032",
+      "status": "ready_for_queue"
+    },
+    {
+      "article_slug": "high-fiber-bran-muffins-that-taste-good",
+      "old_title_hint": "High Fiber Bran Muffins That Taste Good",
+      "new_titles": [
+        "Bran Muffins That Don't Taste Like Cardboard",
+        "High Fiber Bran Muffins That Actually Taste Good",
+        "Moist Bran Muffins (High Fiber, No Cardboard Taste)"
+      ],
+      "description": "High-fiber bran muffins that stay moist and actually taste good. A simple bake you can meal-prep for breakfast or snacks.",
+      "board_name": "High Fiber Dinner and Gut Health Recipes",
+      "board_id": "1124140825679184032",
+      "status": "ready_for_queue"
+    },
+    {
+      "article_slug": "high-fiber-meals-for-constipation-relief",
+      "old_title_hint": "What Are Good Sources of Fiber for Constipation",
+      "new_titles": [
+        "High Fiber Meals That Actually Move Things Along",
+        "Fiber Meals for Constipation Relief (That You'll Eat)",
+        "What to Eat for Fiber When Things Feel Stuck"
+      ],
+      "description": "High-fiber meals that actually help when things feel stuck. Practical food ideas — not just a list of random fiber sources.",
+      "board_name": "Gut Health Tips and Nutrition Charts",
+      "board_id": "1124140825679184034",
+      "status": "ready_for_queue"
+    },
+    {
+      "article_slug": "how-much-protein-do-you-need-per-day",
+      "old_title_hint": "How Much Protein Do You Need Per Day?",
+      "new_titles": [
+        "How Much Protein Per Day Without Buying Powders",
+        "Daily Protein Target Without Protein Powder",
+        "What's the Best Way to Hit Protein Without Powders"
+      ],
+      "description": "How much protein you need per day — and how to hit it with regular food, not powders. Clear targets and practical meal ideas.",
+      "board_name": "High Protein Meals and Smart Swaps",
+      "board_id": "1124140825679548780",
+      "status": "ready_for_queue"
+    },
+    {
+      "article_slug": "black-bean-brownies-hidden-fiber-dessert",
+      "old_title_hint": "Black Bean Brownies Hidden Fiber Dessert",
+      "new_titles": [
+        "Black Bean Brownies Hidden Fiber Dessert Tips",
+        "Black Bean Brownies (Hidden Fiber Dessert Version)",
+        "Fudgy Black Bean Brownies With Hidden Fiber"
+      ],
+      "description": "Fudgy black bean brownies with hidden fiber. Keep the strong dessert angle — tips that make the batch taste like brownies, not beans.",
+      "board_name": "High Fiber Dinner and Gut Health Recipes",
+      "board_id": "1124140825679184032",
+      "status": "ready_for_queue"
+    },
+    {
+      "article_slug": "split-pea-soup-recipe-high-fiber",
+      "old_title_hint": "How Much Fiber in a Cup of Split Pea Soup",
+      "new_titles": [
+        "Split Pea Soup: 16g Fiber Per Bowl, Stovetop",
+        "Stovetop Split Pea Soup With 16g Fiber Per Bowl",
+        "High Fiber Split Pea Soup (16g Per Bowl)"
+      ],
+      "description": "Stovetop split pea soup with about 16g of fiber per bowl. Simple ingredients, filling, and easy to batch for leftovers.",
+      "board_name": "High Fiber Dinner and Gut Health Recipes",
+      "board_id": "1124140825679184032",
+      "status": "ready_for_queue"
+    },
+    {
+      "article_slug": "high-protein-high-fiber-meals-for-weight-loss",
+      "old_title_hint": "What Is a High Protein High Fiber Diet",
+      "new_titles": [
+        "High Protein High Fiber Meals That Keep You Full",
+        "Protein + Fiber Meals That Keep You Full Longer",
+        "Full-Day High Protein High Fiber Meals for Satiety"
+      ],
+      "description": "High-protein, high-fiber meals built to keep you full. Practical plates you can actually cook — not a vague diet definition.",
+      "board_name": "High Protein Meals and Smart Swaps",
+      "board_id": "1124140825679548780",
+      "status": "ready_for_queue"
+    },
+    {
+      "article_slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "old_title_hint": "Fiber Rich Soup for Weight Loss Cabbage",
+      "new_titles": [
+        "Cabbage Soup Meal Prep: High Fiber, Low Cost",
+        "High Fiber Cabbage Soup Meal Prep on a Budget",
+        "Batch Cabbage Soup: High Fiber, Low Cost Bowls"
+      ],
+      "description": "Cabbage soup meal prep that is high fiber and low cost. Batch a pot once and portion bowls for the week.",
+      "board_name": "Budget Meals and Grocery Hacks",
+      "board_id": "1124140825679548779",
+      "status": "ready_for_queue"
+    }
+  ]
+}

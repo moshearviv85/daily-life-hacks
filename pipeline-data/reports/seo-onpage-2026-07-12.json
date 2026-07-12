@@ -3,8 +3,8 @@
   "total_articles": 186,
   "with_issues": 156,
   "missing_faq": 0,
-  "no_internal_links": 34,
-  "thin_body": 58,
+  "no_internal_links": 30,
+  "thin_body": 51,
   "top50_priority": [
     {
       "slug": "best-way-to-cook-baked-potatoes",
@@ -61,64 +61,10 @@
       "issue_count": 4
     },
     {
-      "slug": "black-bean-brownies-hidden-fiber-dessert",
-      "title": "black-bean-brownies-hidden-fiber-dessert",
-      "category": "",
-      "word_count": 661,
-      "h2_count": 1,
-      "internal_link_count": 1,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "few_h2",
-        "thin_body"
-      ],
-      "issue_count": 4
-    },
-    {
-      "slug": "budget-meal-ideas-philippines",
-      "title": "budget-meal-ideas-philippines",
-      "category": "",
-      "word_count": 852,
-      "h2_count": 0,
-      "internal_link_count": 0,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "few_h2",
-        "no_internal_links"
-      ],
-      "issue_count": 4
-    },
-    {
       "slug": "easy-sandwich-bread-recipe-beginners",
       "title": "easy-sandwich-bread-recipe-beginners",
       "category": "",
       "word_count": 257,
-      "h2_count": 1,
-      "internal_link_count": 1,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "few_h2",
-        "thin_body"
-      ],
-      "issue_count": 4
-    },
-    {
-      "slug": "fiber-rich-soup-for-weight-loss-cabbage",
-      "title": "fiber-rich-soup-for-weight-loss-cabbage",
-      "category": "",
-      "word_count": 355,
       "h2_count": 1,
       "internal_link_count": 1,
       "has_faq": true,
@@ -147,60 +93,6 @@
         "short_excerpt",
         "few_h2",
         "no_internal_links"
-      ],
-      "issue_count": 4
-    },
-    {
-      "slug": "high-fiber-bran-muffins-that-taste-good",
-      "title": "high-fiber-bran-muffins-that-taste-good",
-      "category": "",
-      "word_count": 541,
-      "h2_count": 1,
-      "internal_link_count": 1,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "few_h2",
-        "thin_body"
-      ],
-      "issue_count": 4
-    },
-    {
-      "slug": "high-fiber-cauliflower-rice-recipes",
-      "title": "high-fiber-cauliflower-rice-recipes",
-      "category": "",
-      "word_count": 330,
-      "h2_count": 1,
-      "internal_link_count": 1,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "few_h2",
-        "thin_body"
-      ],
-      "issue_count": 4
-    },
-    {
-      "slug": "high-fiber-salad-dressings-homemade",
-      "title": "high-fiber-salad-dressings-homemade",
-      "category": "",
-      "word_count": 302,
-      "h2_count": 1,
-      "internal_link_count": 1,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "few_h2",
-        "thin_body"
       ],
       "issue_count": 4
     },
@@ -237,24 +129,6 @@
         "short_excerpt",
         "few_h2",
         "no_internal_links"
-      ],
-      "issue_count": 4
-    },
-    {
-      "slug": "how-much-protein-do-you-need-per-day",
-      "title": "how-much-protein-do-you-need-per-day",
-      "category": "",
-      "word_count": 259,
-      "h2_count": 1,
-      "internal_link_count": 1,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "few_h2",
-        "thin_body"
       ],
       "issue_count": 4
     },
@@ -301,24 +175,6 @@
       "word_count": 699,
       "h2_count": 0,
       "internal_link_count": 2,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "few_h2",
-        "thin_body"
-      ],
-      "issue_count": 4
-    },
-    {
-      "slug": "split-pea-soup-recipe-high-fiber",
-      "title": "split-pea-soup-recipe-high-fiber",
-      "category": "",
-      "word_count": 391,
-      "h2_count": 1,
-      "internal_link_count": 1,
       "has_faq": true,
       "has_image_alt": false,
       "excerpt_len": 0,
@@ -378,23 +234,6 @@
         "missing_image_alt",
         "short_excerpt",
         "thin_body"
-      ],
-      "issue_count": 3
-    },
-    {
-      "slug": "best-high-fiber-fruits-for-weight-loss-list",
-      "title": "best-high-fiber-fruits-for-weight-loss-list",
-      "category": "",
-      "word_count": 803,
-      "h2_count": 13,
-      "internal_link_count": 0,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "no_internal_links"
       ],
       "issue_count": 3
     },
@@ -501,45 +340,11 @@
       "issue_count": 3
     },
     {
-      "slug": "cheap-chicken-casserole-meals-large-families",
-      "title": "cheap-chicken-casserole-meals-large-families",
-      "category": "",
-      "word_count": 840,
-      "h2_count": 5,
-      "internal_link_count": 0,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "no_internal_links"
-      ],
-      "issue_count": 3
-    },
-    {
       "slug": "cheap-crockpot-meals-large-families",
       "title": "cheap-crockpot-meals-large-families",
       "category": "",
       "word_count": 805,
       "h2_count": 4,
-      "internal_link_count": 0,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "no_internal_links"
-      ],
-      "issue_count": 3
-    },
-    {
-      "slug": "chia-pudding-variations-for-breakfast",
-      "title": "chia-pudding-variations-for-breakfast",
-      "category": "",
-      "word_count": 883,
-      "h2_count": 5,
       "internal_link_count": 0,
       "has_faq": true,
       "has_image_alt": false,
@@ -871,6 +676,193 @@
         "missing_image_alt",
         "short_excerpt",
         "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "high-fiber-quinoa-salad-for-lunch-prep",
+      "title": "high-fiber-quinoa-salad-for-lunch-prep",
+      "category": "",
+      "word_count": 744,
+      "h2_count": 11,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "high-protein-bagel-sandwich-ideas-lunch",
+      "title": "high-protein-bagel-sandwich-ideas-lunch",
+      "category": "",
+      "word_count": 994,
+      "h2_count": 5,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "high-protein-vegetarian-breakfast-burritos-you-can-freeze",
+      "title": "high-protein-vegetarian-breakfast-burritos-you-can-freeze",
+      "category": "",
+      "word_count": 1979,
+      "h2_count": 9,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "how-much-protein-in-bagel-sandwich",
+      "title": "how-much-protein-in-bagel-sandwich",
+      "category": "",
+      "word_count": 875,
+      "h2_count": 4,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "how-to-cook-dried-beans-from-scratch",
+      "title": "how-to-cook-dried-beans-from-scratch",
+      "category": "",
+      "word_count": 738,
+      "h2_count": 5,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "how-to-freeze-bananas-for-smoothies",
+      "title": "how-to-freeze-bananas-for-smoothies",
+      "category": "",
+      "word_count": 782,
+      "h2_count": 8,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "how-to-increase-fiber-intake-without-gas",
+      "title": "how-to-increase-fiber-intake-without-gas",
+      "category": "",
+      "word_count": 849,
+      "h2_count": 13,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "how-to-revive-wilted-lettuce-and-greens",
+      "title": "how-to-revive-wilted-lettuce-and-greens",
+      "category": "",
+      "word_count": 758,
+      "h2_count": 7,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "how-to-store-fresh-ginger",
+      "title": "how-to-store-fresh-ginger",
+      "category": "",
+      "word_count": 882,
+      "h2_count": 0,
+      "internal_link_count": 3,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "how-to-store-fresh-herbs-to-last-longer",
+      "title": "how-to-store-fresh-herbs-to-last-longer",
+      "category": "",
+      "word_count": 790,
+      "h2_count": 8,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "how-to-store-homemade-bread",
+      "title": "how-to-store-homemade-bread",
+      "category": "",
+      "word_count": 960,
+      "h2_count": 0,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2"
       ],
       "issue_count": 3
     }

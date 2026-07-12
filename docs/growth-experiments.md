@@ -56,6 +56,18 @@
 | Result | _not started_ |
 | Decision | Automation stays NO-GO until ≥3/5 pass |
 
+### EXP-005 — Pinterest title rewrites (queue seed)
+| Field | Value |
+|-------|-------|
+| Status | **Running / seeded** (2026-07-12) |
+| Hypothesis | Numbered, specific, job-to-be-done titles from the rewrite pack lift CTR vs weak current angles on the same articles |
+| Metric | Own-domain CTR (clicks÷impressions), pins ≥50 impr |
+| Window | 14 days after first post of rewritten cohort |
+| Cohort | 10 rewrite objects in `pipeline-data/upgrade-queue/pinterest-title-rewrites-2026-07-12.json` — new briefs / queue only |
+| Related | Idea Pin manual 5-pack seeded in `pinterest-idea-pin-manual-5.json` (feeds EXP-004; automation remains NO-GO) |
+| Result | _pending_ |
+| Decision | _pending_ |
+
 ---
 
 ## Monthly review ritual

@@ -116,6 +116,19 @@ def process_file(path: Path, cluster: str | None, dry_run: bool) -> dict:
     fm, body = parts[1], parts[2]
     title_m = re.search(r'^title:\s*"([^"]+)"', fm, re.M)
     title = title_m.group(1) if title_m else path.stem
+    # Prefer queue-provided cluster; never invent protein for baking-only topics
+    baking_blocklist = {
+        "how-to-make-sourdough-pizza-dough-same-day",
+        "easy-sandwich-bread-recipe-beginners",
+        "how-to-keep-bread-fresh-longer-without-mold",
+        "how-to-measure-sourdough-discard-grams",
+    }
+    if path.stem in baking_blocklist:
+        return {
+            "slug": path.stem,
+            "status": "skip",
+            "reason": "baking_blocklist",
+        }
     cluster = cluster or detect_cluster(path.stem, title, body)
     if not cluster or cluster not in PILLARS:
         return {"slug": path.stem, "status": "skip", "reason": "no_cluster"}

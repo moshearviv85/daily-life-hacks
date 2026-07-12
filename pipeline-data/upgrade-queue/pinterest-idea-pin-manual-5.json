@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-07-12",
+  "source": "docs/pinterest-title-rewrite-pack.md",
+  "gate": "docs/idea-pin-automation-gate.md",
+  "automation": "no-go",
+  "pass_bar": "≥6% CTR @14d or beat matched static; unlock automation only if ≥3/5 pass",
+  "note": "Manual upload only. Log 14d CTR. Do not wire Idea Pin / kinetic into auto-poster.",
+  "candidates": [
+    {
+      "rank": 1,
+      "article_slug": "30-day-high-fiber-challenge-meal-plan",
+      "asset_angle": "30-day fiber challenge kinetic (if exists)",
+      "suggested_title": "30 Day High Fiber Challenge Meal Plan",
+      "board_name": "High Fiber Dinner and Gut Health Recipes",
+      "board_id": "1124140825679184032",
+      "format": "Idea Pin / kinetic",
+      "status": "ready_manual_upload",
+      "automation": "no-go"
+    },
+    {
+      "rank": 2,
+      "article_slug": "how-to-freeze-bananas-for-smoothies",
+      "asset_angle": "Freeze bananas / smoothie tip",
+      "suggested_title": "What's the Best Way to Freeze Bananas for Smoothies",
+      "board_name": "Healthy Meal Prep & Kitchen Tips",
+      "board_id": "1124140825679184036",
+      "format": "Idea Pin / kinetic",
+      "status": "ready_manual_upload",
+      "automation": "no-go"
+    },
+    {
+      "rank": 3,
+      "article_slug": "high-fiber-burrito-bowl-meal-prep",
+      "asset_angle": "Burrito bowl meal prep",
+      "suggested_title": "High Fiber Burrito Bowl Meal Prep for Work Lunch",
+      "board_name": "High Fiber Dinner and Gut Health Recipes",
+      "board_id": "1124140825679184032",
+      "format": "Idea Pin / kinetic",
+      "status": "ready_manual_upload",
+      "automation": "no-go"
+    },
+    {
+      "rank": 4,
+      "article_slug": "how-to-season-cast-iron-skillet-properly",
+      "asset_angle": "Cast iron seasoning",
+      "suggested_title": "How to Season a Cast Iron Skillet Properly",
+      "board_name": "Healthy Meal Prep & Kitchen Tips",
+      "board_id": "1124140825679184036",
+      "format": "Idea Pin / kinetic",
+      "status": "ready_manual_upload",
+      "automation": "no-go"
+    },
+    {
+      "rank": 5,
+      "article_slug": "easy-sourdough-discard-pizza-dough-no-yeast",
+      "asset_angle": "Pizza dough 30 min",
+      "suggested_title": "Fast Pizza Dough Without Yeast: 30 Minute Recipe",
+      "board_name": "Easy Dinner Recipes",
+      "board_id": "1124140825679548778",
+      "format": "Idea Pin / kinetic",
+      "status": "ready_manual_upload",
+      "automation": "no-go"
+    }
+  ]
+}
