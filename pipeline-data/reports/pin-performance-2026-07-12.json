@@ -1,0 +1,455 @@
+{
+  "version": 1,
+  "scored_at": "2026-07-12T03:17:00.695377+00:00",
+  "min_impressions": 50,
+  "own_domain_only": true,
+  "input_pins": 268,
+  "scored_pins": 66,
+  "skipped_external_or_empty_link": 128,
+  "skipped_low_impressions": 74,
+  "totals": {
+    "impressions": 9620,
+    "outbound_clicks": 319,
+    "saves": 60,
+    "avg_ctr_pct": 3.316
+  },
+  "top10_by_ctr": [
+    {
+      "pin_id": "1124140757042183125",
+      "title": "30 Day High Fiber Challenge Meal Plan",
+      "link": "https://www.daily-life-hacks.com/30-day-high-fiber-challenge-meal-plan",
+      "pin_url": "https://www.pinterest.com/pin/1124140757042183125/",
+      "impressions": 75,
+      "outbound_clicks": 7,
+      "saves": 0,
+      "ctr": 0.093333,
+      "ctr_pct": 9.333,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "has_number",
+        "challenge",
+        "fiber"
+      ]
+    },
+    {
+      "pin_id": "1124140757043979282",
+      "title": "Tuscan White Bean and Kale Soup (Simple Stovetop Version)",
+      "link": "https://www.daily-life-hacks.com/tuscan-white-bean-kale-soup-stovetop",
+      "pin_url": "https://www.pinterest.com/pin/1124140757043979282/",
+      "impressions": 55,
+      "outbound_clicks": 5,
+      "saves": 1,
+      "ctr": 0.090909,
+      "ctr_pct": 9.091,
+      "save_rate_pct": 1.818,
+      "patterns": [
+        "plain"
+      ]
+    },
+    {
+      "pin_id": "1124140757044418122",
+      "title": "Fast Pizza Dough Without Yeast: 30 Minute Recipe",
+      "link": "https://www.daily-life-hacks.com/easy-sourdough-discard-pizza-dough-no-yeast",
+      "pin_url": "https://www.pinterest.com/pin/1124140757044418122/",
+      "impressions": 100,
+      "outbound_clicks": 9,
+      "saves": 0,
+      "ctr": 0.09,
+      "ctr_pct": 9.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "has_number"
+      ]
+    },
+    {
+      "pin_id": "1124140757042433894",
+      "title": "What's the Best Way to Freeze Bananas for Smoothies",
+      "link": "https://www.daily-life-hacks.com/whats-the-best-way-to-freeze-bananas-for-smoothies",
+      "pin_url": "https://www.pinterest.com/pin/1124140757042433894/",
+      "impressions": 289,
+      "outbound_clicks": 26,
+      "saves": 6,
+      "ctr": 0.089965,
+      "ctr_pct": 8.997,
+      "save_rate_pct": 2.076,
+      "patterns": [
+        "plain"
+      ]
+    },
+    {
+      "pin_id": "1124140757043775259",
+      "title": "High Fiber Burrito Bowl Meal Prep for a Better Work Lunch",
+      "link": "https://www.daily-life-hacks.com/high-fiber-burrito-bowl-meal-prep",
+      "pin_url": "https://www.pinterest.com/pin/1124140757043775259/",
+      "impressions": 103,
+      "outbound_clicks": 8,
+      "saves": 3,
+      "ctr": 0.07767,
+      "ctr_pct": 7.767,
+      "save_rate_pct": 2.913,
+      "patterns": [
+        "meal_prep",
+        "fiber"
+      ]
+    },
+    {
+      "pin_id": "1124140757042671343",
+      "title": "Black Bean Brownies Hidden Fiber Dessert Tips",
+      "link": "https://www.daily-life-hacks.com/black-bean-brownies-hidden-fiber-dessert-tips",
+      "pin_url": "https://www.pinterest.com/pin/1124140757042671343/",
+      "impressions": 122,
+      "outbound_clicks": 9,
+      "saves": 1,
+      "ctr": 0.07377,
+      "ctr_pct": 7.377,
+      "save_rate_pct": 0.82,
+      "patterns": [
+        "fiber"
+      ]
+    },
+    {
+      "pin_id": "1124140757043299800",
+      "title": "How to Season a Cast Iron Skillet Properly",
+      "link": "https://www.daily-life-hacks.com/how-to-season-cast-iron-skillet-properly",
+      "pin_url": "https://www.pinterest.com/pin/1124140757043299800/",
+      "impressions": 760,
+      "outbound_clicks": 53,
+      "saves": 2,
+      "ctr": 0.069737,
+      "ctr_pct": 6.974,
+      "save_rate_pct": 0.263,
+      "patterns": [
+        "how_to"
+      ]
+    },
+    {
+      "pin_id": "1124140757043128087",
+      "title": "Amaranth, Millet, and Teff: A Beginner Guide to Cooking Whole Grains",
+      "link": "https://www.daily-life-hacks.com/amaranth-millet-teff-beginner-cooking-guide",
+      "pin_url": "https://www.pinterest.com/pin/1124140757043128087/",
+      "impressions": 59,
+      "outbound_clicks": 4,
+      "saves": 0,
+      "ctr": 0.067797,
+      "ctr_pct": 6.78,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "plain"
+      ]
+    },
+    {
+      "pin_id": "1124140757044107180",
+      "title": "Healthy Fats: A List of Foods to Eat Daily",
+      "link": "https://www.daily-life-hacks.com/healthy-fats-list-foods-to-eat-daily",
+      "pin_url": "https://www.pinterest.com/pin/1124140757044107180/",
+      "impressions": 140,
+      "outbound_clicks": 8,
+      "saves": 1,
+      "ctr": 0.057143,
+      "ctr_pct": 5.714,
+      "save_rate_pct": 0.714,
+      "patterns": [
+        "plain"
+      ]
+    },
+    {
+      "pin_id": "1124140757043279587",
+      "title": "How to Cook Dried Beans From Scratch",
+      "link": "https://www.daily-life-hacks.com/how-to-cook-dried-beans-from-scratch",
+      "pin_url": "https://www.pinterest.com/pin/1124140757043279587/",
+      "impressions": 123,
+      "outbound_clicks": 7,
+      "saves": 1,
+      "ctr": 0.056911,
+      "ctr_pct": 5.691,
+      "save_rate_pct": 0.813,
+      "patterns": [
+        "how_to"
+      ]
+    }
+  ],
+  "bottom10_by_ctr": [
+    {
+      "pin_id": "1124140757041667583",
+      "title": "Whole Wheat Vs White Pasta Nutrition",
+      "link": "https://www.daily-life-hacks.com/whole-wheat-vs-white-pasta-nutrition",
+      "pin_url": "https://www.pinterest.com/pin/1124140757041667583/",
+      "impressions": 52,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "ctr": 0.0,
+      "ctr_pct": 0.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "plain"
+      ]
+    },
+    {
+      "pin_id": "1124140757041774146",
+      "title": "What Vegetables Can You Add to a Stir Fry",
+      "link": "https://www.daily-life-hacks.com/what-vegetables-can-you-add-to-a-stir-fry",
+      "pin_url": "https://www.pinterest.com/pin/1124140757041774146/",
+      "impressions": 56,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "ctr": 0.0,
+      "ctr_pct": 0.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "plain"
+      ]
+    },
+    {
+      "pin_id": "1124140757043434838",
+      "title": "How to Build a Balanced Breakfast That Actually Holds You Over",
+      "link": "https://www.daily-life-hacks.com/balanced-breakfast-that-keeps-you-full",
+      "pin_url": "https://www.pinterest.com/pin/1124140757043434838/",
+      "impressions": 60,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "ctr": 0.0,
+      "ctr_pct": 0.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "how_to"
+      ]
+    },
+    {
+      "pin_id": "1124140757041533493",
+      "title": "Easy High Fiber Breakfast Ideas for Gut Health",
+      "link": "https://www.daily-life-hacks.com/easy-high-fiber-breakfast-ideas-for-gut-health",
+      "pin_url": "https://www.pinterest.com/pin/1124140757041533493/",
+      "impressions": 61,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "ctr": 0.0,
+      "ctr_pct": 0.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "fiber"
+      ]
+    },
+    {
+      "pin_id": "1124140757042851455",
+      "title": "How to Read Food Nutrition Labels",
+      "link": "https://www.daily-life-hacks.com/how-to-read-food-nutrition-labels",
+      "pin_url": "https://www.pinterest.com/pin/1124140757042851455/",
+      "impressions": 61,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "ctr": 0.0,
+      "ctr_pct": 0.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "how_to",
+        "short_title"
+      ]
+    },
+    {
+      "pin_id": "1124140757041925652",
+      "title": "How to Store Fresh Herbs So They Last Longer",
+      "link": "https://www.daily-life-hacks.com/how-to-store-fresh-herbs-so-they-last-longer",
+      "pin_url": "https://www.pinterest.com/pin/1124140757041925652/",
+      "impressions": 64,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "ctr": 0.0,
+      "ctr_pct": 0.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "how_to"
+      ]
+    },
+    {
+      "pin_id": "1124140757041531729",
+      "title": "How to Meal Prep on a Budget",
+      "link": "https://www.daily-life-hacks.com/how-to-meal-prep-on-a-budget",
+      "pin_url": "https://www.pinterest.com/pin/1124140757041531729/",
+      "impressions": 65,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "ctr": 0.0,
+      "ctr_pct": 0.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "how_to",
+        "meal_prep",
+        "budget",
+        "short_title"
+      ]
+    },
+    {
+      "pin_id": "1124140757042888570",
+      "title": "The $1.50 Gut Health Hack You're Ignoring",
+      "link": "https://www.daily-life-hacks.com/fiber-rich-soup-for-weight-loss-cabbage?utm_source=pinterest&utm_medium=video_pin&utm_campaign=shorts&utm_content=v_cabbage",
+      "pin_url": "https://www.pinterest.com/pin/1124140757042888570/",
+      "impressions": 66,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "ctr": 0.0,
+      "ctr_pct": 0.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "has_number",
+        "budget"
+      ]
+    },
+    {
+      "pin_id": "1124140757041834433",
+      "title": "Best High Fiber Cauliflower Rice Recipes",
+      "link": "https://www.daily-life-hacks.com/best-high-fiber-cauliflower-rice-recipes",
+      "pin_url": "https://www.pinterest.com/pin/1124140757041834433/",
+      "impressions": 67,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "ctr": 0.0,
+      "ctr_pct": 0.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "fiber"
+      ]
+    },
+    {
+      "pin_id": "1124140757041647502",
+      "title": "Best Pear Salad with Walnuts Fiber Rich",
+      "link": "https://www.daily-life-hacks.com/best-pear-salad-with-walnuts-fiber-rich",
+      "pin_url": "https://www.pinterest.com/pin/1124140757041647502/",
+      "impressions": 69,
+      "outbound_clicks": 0,
+      "saves": 0,
+      "ctr": 0.0,
+      "ctr_pct": 0.0,
+      "save_rate_pct": 0.0,
+      "patterns": [
+        "fiber"
+      ]
+    }
+  ],
+  "top5_by_impressions": [
+    {
+      "pin_id": "1124140757041712291",
+      "title": "How to Store Fruits and Vegetables",
+      "link": "https://www.daily-life-hacks.com/how-to-store-fruits-and-vegetables",
+      "pin_url": "https://www.pinterest.com/pin/1124140757041712291/",
+      "impressions": 857,
+      "outbound_clicks": 25,
+      "saves": 8,
+      "ctr": 0.029172,
+      "ctr_pct": 2.917,
+      "save_rate_pct": 0.933,
+      "patterns": [
+        "how_to",
+        "short_title"
+      ]
+    },
+    {
+      "pin_id": "1124140757043299800",
+      "title": "How to Season a Cast Iron Skillet Properly",
+      "link": "https://www.daily-life-hacks.com/how-to-season-cast-iron-skillet-properly",
+      "pin_url": "https://www.pinterest.com/pin/1124140757043299800/",
+      "impressions": 760,
+      "outbound_clicks": 53,
+      "saves": 2,
+      "ctr": 0.069737,
+      "ctr_pct": 6.974,
+      "save_rate_pct": 0.263,
+      "patterns": [
+        "how_to"
+      ]
+    },
+    {
+      "pin_id": "1124140757043096851",
+      "title": "What Is a High Protein High Fiber Diet",
+      "link": "https://www.daily-life-hacks.com/what-is-a-high-protein-high-fiber-diet",
+      "pin_url": "https://www.pinterest.com/pin/1124140757043096851/",
+      "impressions": 574,
+      "outbound_clicks": 20,
+      "saves": 3,
+      "ctr": 0.034843,
+      "ctr_pct": 3.484,
+      "save_rate_pct": 0.523,
+      "patterns": [
+        "fiber",
+        "protein"
+      ]
+    },
+    {
+      "pin_id": "1124140757043265023",
+      "title": "High Fiber Smoothies for Kids Picky Eaters",
+      "link": "https://www.daily-life-hacks.com/high-fiber-smoothies-for-kids-picky-eaters",
+      "pin_url": "https://www.pinterest.com/pin/1124140757043265023/",
+      "impressions": 552,
+      "outbound_clicks": 26,
+      "saves": 7,
+      "ctr": 0.047101,
+      "ctr_pct": 4.71,
+      "save_rate_pct": 1.268,
+      "patterns": [
+        "fiber"
+      ]
+    },
+    {
+      "pin_id": "1124140757043099876",
+      "title": "Easy Meal Prep Ideas to Freeze",
+      "link": "https://www.daily-life-hacks.com/easy-meal-prep-ideas-to-freeze",
+      "pin_url": "https://www.pinterest.com/pin/1124140757043099876/",
+      "impressions": 391,
+      "outbound_clicks": 3,
+      "saves": 1,
+      "ctr": 0.007673,
+      "ctr_pct": 0.767,
+      "save_rate_pct": 0.256,
+      "patterns": [
+        "meal_prep",
+        "short_title"
+      ]
+    }
+  ],
+  "pattern_avg_ctr": [
+    {
+      "pattern": "challenge",
+      "count": 1,
+      "avg_ctr_pct": 9.333
+    },
+    {
+      "pattern": "has_number",
+      "count": 6,
+      "avg_ctr_pct": 3.611
+    },
+    {
+      "pattern": "protein",
+      "count": 3,
+      "avg_ctr_pct": 3.273
+    },
+    {
+      "pattern": "how_to",
+      "count": 12,
+      "avg_ctr_pct": 2.926
+    },
+    {
+      "pattern": "plain",
+      "count": 19,
+      "avg_ctr_pct": 2.922
+    },
+    {
+      "pattern": "meal_prep",
+      "count": 5,
+      "avg_ctr_pct": 2.92
+    },
+    {
+      "pattern": "fiber",
+      "count": 23,
+      "avg_ctr_pct": 2.649
+    },
+    {
+      "pattern": "short_title",
+      "count": 9,
+      "avg_ctr_pct": 0.771
+    },
+    {
+      "pattern": "budget",
+      "count": 4,
+      "avg_ctr_pct": 0.602
+    }
+  ]
+}

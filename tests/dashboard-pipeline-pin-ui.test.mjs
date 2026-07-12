@@ -41,6 +41,15 @@ test("pipeline publish button queues pins instead of dispatching immediate publi
   assert.doesNotMatch(dashboard, /publish_now: isProductionDashboard/);
 });
 
+test("dashboard Pinterest analytics supports CTR sort", () => {
+  const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
+  assert.match(dashboard, /paSortBy\('ctr'\)/);
+  assert.match(dashboard, /id="pa-th-ctr"/);
+  assert.match(dashboard, /function paEnrichPin/);
+  assert.match(dashboard, /paSortField = 'ctr'/);
+  assert.match(dashboard, /ctr_pct/);
+});
+
 test("dashboard exposes staging environment and queue state", () => {
   const dashboard = readFileSync(new URL("../src/pages/dashboard.astro", import.meta.url), "utf8");
 

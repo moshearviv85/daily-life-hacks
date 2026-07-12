@@ -1176,8 +1176,9 @@ const BUILD = {
               <th>#</th>
               <th>Pin Title</th>
               <th>Created</th>
-              <th id="pa-th-impressions" style="cursor:pointer" onclick="paSortBy('impressions')">Impressions ↓</th>
+              <th id="pa-th-impressions" style="cursor:pointer" onclick="paSortBy('impressions')">Impressions ↕</th>
               <th id="pa-th-outbound_clicks" style="cursor:pointer" onclick="paSortBy('outbound_clicks')">Clicks ↕</th>
+              <th id="pa-th-ctr" style="cursor:pointer" onclick="paSortBy('ctr')" title="Outbound clicks / impressions">CTR ↕</th>
               <th id="pa-th-saves" style="cursor:pointer" onclick="paSortBy('saves')">Saves ↕</th>
             </tr>
           </thead>
@@ -2349,8 +2350,21 @@ function renderCountriesTable(rows) {
 // ── Pinterest Analytics ────────────────────────────────────────────────────
 let paAllPins = [];
 let paCurrentPage = 0;
-let paSortField = 'impressions';
+let paSortField = 'ctr';
 const PA_PAGE_SIZE = 10;
+const PA_SORT_LABELS = {
+  impressions: 'Impressions',
+  outbound_clicks: 'Clicks',
+  ctr: 'CTR',
+  saves: 'Saves',
+};
+
+function paEnrichPin(p) {
+  const impressions = Number(p.impressions || 0);
+  const clicks = Number(p.outbound_clicks || 0);
+  const ctr = impressions > 0 ? clicks / impressions : 0;
+  return { ...p, ctr, ctr_pct: Math.round(ctr * 10000) / 100 };
+}
 
 async function loadPinterestAnalytics() {
   const loadBtn = document.getElementById('pa-load-btn');
@@ -2376,8 +2390,9 @@ async function loadPinterestAnalytics() {
       return;
     }
 
-    paAllPins     = data.pins || [];
+    paAllPins     = (data.pins || []).map(paEnrichPin);
     paCurrentPage = 0;
+    paSortField   = 'ctr';
 
     // Cache note
     const note = el('pa-cache-note');
@@ -2439,12 +2454,12 @@ function paRender() {
   const start  = paCurrentPage * PA_PAGE_SIZE;
   const page   = sorted.slice(start, start + PA_PAGE_SIZE);
   const total  = sorted.length;
-  const maxPage= Math.ceil(total / PA_PAGE_SIZE);
+  const maxPage= Math.ceil(total / PA_PAGE_SIZE) || 1;
 
   // Update sort arrows in header
-  ['impressions','outbound_clicks','saves'].forEach(f => {
+  Object.keys(PA_SORT_LABELS).forEach(f => {
     const th = document.getElementById(`pa-th-${f}`);
-    if (th) th.textContent = (f === 'impressions' ? 'Impressions' : f === 'outbound_clicks' ? 'Clicks' : 'Saves') + (paSortField === f ? ' ↓' : ' ↕');
+    if (th) th.textContent = PA_SORT_LABELS[f] + (paSortField === f ? ' ↓' : ' ↕');
   });
 
   el('pa-tbody').innerHTML = page.map((p, i) => {
@@ -2452,6 +2467,7 @@ function paRender() {
     const created = p.created_at ? new Date(p.created_at).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}) : '—';
     const rawTitle = p.pin_title || '';
     const title   = rawTitle ? (rawTitle.slice(0, 60) + (rawTitle.length > 60 ? '…' : '')) : `Pin ${p.pin_id?.slice(-8) || '—'}`;
+    const ctrLabel = `${(p.ctr_pct ?? 0).toFixed(2)}%`;
     return `<tr>
       <td style="color:var(--muted);font-weight:600">${rank}</td>
       <td>
@@ -2460,11 +2476,12 @@ function paRender() {
       <td style="white-space:nowrap;color:var(--muted);font-size:.8rem">${created}</td>
       <td><strong style="color:${paSortField==='impressions'?'var(--orange)':'inherit'}">${fmt(p.impressions||0)}</strong></td>
       <td><strong style="color:${paSortField==='outbound_clicks'?'var(--orange)':'inherit'}">${fmt(p.outbound_clicks||0)}</strong></td>
+      <td><strong style="color:${paSortField==='ctr'?'var(--orange)':'inherit'}">${ctrLabel}</strong></td>
       <td><strong style="color:${paSortField==='saves'?'var(--orange)':'inherit'}">${fmt(p.saves||0)}</strong></td>
     </tr>`;
   }).join('');
 
-  el('pa-page-info').textContent = `Page ${paCurrentPage + 1} of ${maxPage} · ${total} pins`;
+  el('pa-page-info').textContent = `Page ${paCurrentPage + 1} of ${maxPage} · ${total} pins · sorted by ${PA_SORT_LABELS[paSortField] || paSortField}`;
   el('pa-prev').disabled = paCurrentPage === 0;
   el('pa-next').disabled = paCurrentPage >= maxPage - 1;
 }

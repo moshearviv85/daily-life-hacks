@@ -17,6 +17,7 @@ These annotated tags mark known-good checkpoints on `main`:
 | `cp3.4-dashboard-auth` | `4e05849` | After CP3.4 (header auth + api/tabs modules) |
 | `cp3.5-legacy-retired` | `13005a2` | After CP3.5 (Legacy publisher retired) |
 | `cp4-workflows-closed` | `ab0bf37` | After CP4 (workflows final cleanup) |
+| `cp5.1-pin-measurement` | *(after push)* | After CP5.1 (pin CTR scoring + playbook) |
 
 Restore code to a checkpoint (prefer revert over hard reset on shared `main`):
 

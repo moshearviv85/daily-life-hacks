@@ -15,7 +15,7 @@
 | CP2 Pipeline & Routing Automation | **DONE** (Phase A+B on main) |
 | CP3 Pipeline Reliability & Dashboard | **DONE** (CP3.1–3.5) |
 | CP4 Workflows Unification | **DONE** — see `docs/cp4-workflows-closure.md` |
-| CP5 Growth & Pinterest | **Planned** — see `docs/cp5-growth-pinterest-plan.md` |
+| CP5 Growth & Pinterest | **CP5.1 done** — next CP5.2 after approval |
 
 ---
 

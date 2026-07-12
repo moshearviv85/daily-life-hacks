@@ -12,6 +12,7 @@
     "migrate:pin-destinations": "node scripts/migrate-pin-destinations.mjs",
     "derive:pin-routing": "node scripts/derive-pin-routing.mjs",
     "sync:pin-destinations": "py -3 scripts/NEW_PIPELINE_2026-05-08/sync_pin_destinations.py",
+    "score:pins": "py -3 scripts/NEW_PIPELINE_2026-05-08/score_pin_performance.py",
     "build:checked": "npm run build && npm run verify:routing && npm run verify:pin-destinations && npm run audit:recipes",
     "audit:recipes": "node scripts/audit-recipes.mjs",
     "audit:content": "py -3 scripts/audit_content.py",

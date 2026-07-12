@@ -164,11 +164,13 @@ Pick **3 pillars** (aligns with task `05-pillar-articles`):
 
 ## 7. CP5 checkpoints (delivery slices)
 
-### CP5.1 — Pinterest measurement + playbook
-- Creative scoring report + dashboard sort
-- Playbook doc
-- Keep post rate capped
-- **Exit:** can name top 10 and bottom 10 pins with reasons
+### CP5.1 — Pinterest measurement + playbook ✅ (2026-07-12)
+- Creative scoring report + dashboard CTR sort
+- Playbook: `docs/pinterest-creative-playbook.md`
+- Scorer: `scripts/NEW_PIPELINE_2026-05-08/score_pin_performance.py`
+- Baseline report: `pipeline-data/reports/pin-performance-2026-07-12.*`
+- Keep post rate capped (`MAX_PINS_PER_RUN=1`)
+- **Exit met:** top/bottom 10 named with reasons in playbook + report
 
 ### CP5.2 — Format expansion gate
 - 5 manual kinetic/video or Idea Pins
