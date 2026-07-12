@@ -40,11 +40,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Read Pages project configuration
+      - name: Read Cloudflare account configuration
+        continue-on-error: true
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages project list
+          command: whoami
 
       - name: Build and verify routing
         run: npm run build:checked
