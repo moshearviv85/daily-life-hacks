@@ -174,7 +174,77 @@ const jsonLd = isRecipe
       },
     };
 
+/**
+ * Data studies that publish a downloadable CSV get schema.org/Dataset
+ * (Google Dataset Search + AI-citation surface). Keyed by article id;
+ * entries for not-yet-published slugs are harmless.
+ */
+const DATASETS: Record<
+  string,
+  { name: string; csv: string; variables: string[]; temporal: string }
+> = {
+  "fiber-per-dollar-cheapest-high-fiber-foods": {
+    name: "Fiber per Dollar: 53 High-Fiber Foods Ranked by Cost Efficiency (2026)",
+    csv: "/data/fiber-per-dollar-2026.csv",
+    variables: ["dietary fiber (g per 100g)", "price (USD)", "fiber grams per dollar"],
+    temporal: "2026",
+  },
+  "protein-per-dollar-cheapest-protein-sources": {
+    name: "Protein per Dollar: 49 Protein Sources Ranked by Cost Efficiency (2026)",
+    csv: "/data/protein-per-dollar-2026.csv",
+    variables: ["protein (g per 100g)", "price (USD)", "protein grams per dollar"],
+    temporal: "2026",
+  },
+  "what-30-grams-of-fiber-costs-per-day": {
+    name: "Daily Cost of 30 Grams of Fiber: 5 Real Menu Plans Priced (2026)",
+    csv: "/data/fiber-day-cost-2026.csv",
+    variables: ["dietary fiber (g per day)", "daily cost (USD)"],
+    temporal: "2026",
+  },
+  "what-50-grams-of-protein-costs-per-day": {
+    name: "Daily Cost of 50 Grams of Protein: 5 Real Menu Plans Priced (2026)",
+    csv: "/data/protein-day-cost-2026.csv",
+    variables: ["protein (g per day)", "daily cost (USD)"],
+    temporal: "2026",
+  },
+  "fast-food-protein-per-dollar-ranked": {
+    name: "Fast Food Protein per Dollar: 30 Menu Items Ranked (2026)",
+    csv: "/data/fastfood-protein-per-dollar-2026.csv",
+    variables: ["protein (g per item)", "menu price (USD)", "protein grams per dollar"],
+    temporal: "2026",
+  },
+};
+
 const allSchemas: any[] = [jsonLd, breadcrumbSchema];
+
+const dataset = DATASETS[article.id];
+if (dataset) {
+  allSchemas.push({
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: dataset.name,
+    description: article.data.excerpt,
+    url: articleUrl,
+    isAccessibleForFree: true,
+    creator: {
+      "@type": "Organization",
+      name: "Daily Life Hacks",
+      url: siteUrl,
+    },
+    datePublished: publishedDate,
+    dateModified: modifiedDate,
+    keywords: article.data.tags?.join(", "),
+    variableMeasured: dataset.variables,
+    temporalCoverage: dataset.temporal,
+    spatialCoverage: "United States",
+    measurementTechnique: `${siteUrl}/methodology/`,
+    distribution: {
+      "@type": "DataDownload",
+      encodingFormat: "text/csv",
+      contentUrl: `${siteUrl}${dataset.csv}`,
+    },
+  });
+}
 
 if (article.data.faq && article.data.faq.length > 0) {
   allSchemas.push({

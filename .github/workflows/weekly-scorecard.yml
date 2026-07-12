@@ -1,0 +1,57 @@
+name: Weekly Growth Scorecard
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Monday 06:00 UTC
+  workflow_dispatch:        # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  scorecard:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate scorecard
+        env:
+          PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+          PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          STATS_KEY: ${{ secrets.STATS_KEY }}
+          SITE_URL: https://www.daily-life-hacks.com
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PYTHONUNBUFFERED: "1"
+        run: python scripts/weekly-scorecard.py
+
+      - name: Commit scorecard
+        run: |
+          WEEK=$(python -c "import datetime; y, w, _ = datetime.date.today().isocalendar(); print(f'{y}-W{w:02d}')")
+          FILE="pipeline-data/scorecards/scorecard-${WEEK}.md"
+          if [ ! -f "$FILE" ]; then
+            echo "Scorecard file $FILE not found — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "$FILE"
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(metrics): weekly scorecard ${WEEK}"
+          git push origin HEAD:main
