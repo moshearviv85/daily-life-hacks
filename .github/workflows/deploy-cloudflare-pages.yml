@@ -57,10 +57,6 @@ jobs:
       - name: Build and verify routing
         run: npm run build:checked
 
-      - name: Write deploy proof
-        run: |
-          printf '{"commit":"%s"}\n' "$GITHUB_SHA" > dist/deploy-meta.json
-
       - name: Build Pages Functions
         run: |
           rm -rf worker-out dist/_worker.js
@@ -77,7 +73,7 @@ jobs:
       - name: Verify production custom domain
         if: github.ref_name == 'main'
         run: |
-          for i in $(seq 1 20); do
+          for i in $(seq 1 40); do
             LIVE_SHA=$(curl -fsS "https://www.daily-life-hacks.com/deploy-meta.json?expected=${GITHUB_SHA}" \
               | python -c "import json,sys; print(json.load(sys.stdin).get('commit',''))" 2>/dev/null || true)
             echo "[$i] live=$LIVE_SHA expected=$GITHUB_SHA"
