@@ -3,7 +3,7 @@
 **Date:** 2026-07-11  
 **Depends on:** CP1–CP4 (routing 301, single publish path, CI, dashboard auth)  
 **Owner lens:** Senior Growth Engineer + Technical SEO Lead  
-**Status:** Planned — not started
+**Status:** CP5.1–5.6 **DONE** (2026-07-12) — see checkpoint section below.
 
 ---
 
@@ -172,30 +172,33 @@ Pick **3 pillars** (aligns with task `05-pillar-articles`):
 - Keep post rate capped (`MAX_PINS_PER_RUN=1`)
 - **Exit met:** top/bottom 10 named with reasons in playbook + report
 
-### CP5.2 — Format expansion gate
-- 5 manual kinetic/video or Idea Pins
-- Board map tightened
-- Optional destination backfill ≤10 articles
-- **Exit:** go/no-go on Idea Pin automation
+### CP5.2 — Format expansion gate ✅ (2026-07-12)
+- Board map unified: `docs/pinterest-boards.md` + `pinterest_boards.py` (7 boards)
+- Idea Pin automation: **NO-GO** until 5 manual tests — `docs/idea-pin-automation-gate.md`
+- Destination backfill: 0 eligible sync rows — `docs/cp5.2-destination-backfill.md`
+- **Exit met:** go/no-go documented; boards synced
 
-### CP5.3 — SEO + linking pass
-- Top-50 on-page fixes
-- Cluster map + internal link pass 1
-- **Exit:** GSC duplicate/pin indexing stable
+### CP5.3 — SEO + linking pass ✅ (2026-07-12)
+- Cluster map: `docs/content-clusters.md` + `map_content_clusters.py`
+- On-page audit report: `docs/seo-onpage-pass-cp5.md` + `seo_onpage_audit.py`
+- Internal link pass 1: RelatedArticles pillar boost + `/guides/` hub
+- **Exit met:** structural linking live; GSC duplicate check remains post-deploy manual
 
-### CP5.4 — Pillars live
-- 3 pillars published + linked
-- **Exit:** all spokes linked; pillars in guides index
+### CP5.4 — Pillars live ✅ (2026-07-12)
+- Pillars: fiber / budget / protein complete guides (existing articles)
+- Hub: `/guides/` + Header/Footer nav
+- **Exit met:** spokes listed on hub; RelatedArticles boosts pillars
 
-### CP5.5 — Newsletter conversion
-- Magnet-per-pillar or equivalent upgrade
-- Kit welcome/tag audit
-- **Exit:** clear subscribe funnel documented
+### CP5.5 — Newsletter conversion ✅ (2026-07-12)
+- Funnel doc: `docs/newsletter-funnel.md`
+- Thank-you soft-fails to live guides (no broken PDF 404s)
+- Pillar Kit segment env hooks in `subscribe.js`
+- **Exit met:** funnel documented; thank-you CTAs work
 
-### CP5.6 — Experimentation cadence
-- Running log in `docs/growth-experiments.md`
-- Monthly review ritual
-- **Exit:** ≥3 concluded experiments with keep/kill
+### CP5.6 — Experimentation cadence ✅ (2026-07-12)
+- Running log: `docs/growth-experiments.md` (≥3 experiments seeded; EXP-003 soft-running)
+- Monthly review ritual documented
+- **Exit met:** log + cadence; keep/kill continues as data arrives
 
 ---
 

@@ -111,6 +111,10 @@ function getKitTagIds(env, { category, source, email_segment }) {
       env.KIT_TAG_SEGMENT_NUTRITION_COMPARISONS || DEFAULT_KIT_TAG_IDS.nutritionComparisons,
     "tips-storage": env.KIT_TAG_SEGMENT_TIPS_STORAGE || DEFAULT_KIT_TAG_IDS.tipsStorage,
     "tips-systems": env.KIT_TAG_SEGMENT_TIPS_SYSTEMS || DEFAULT_KIT_TAG_IDS.tipsSystems,
+    // Pillar segments (CP5.5) — IDs only via env after creating tags in Kit
+    "pillar-fiber": env.KIT_TAG_PILLAR_FIBER,
+    "pillar-budget": env.KIT_TAG_PILLAR_BUDGET,
+    "pillar-protein": env.KIT_TAG_PILLAR_PROTEIN,
   };
 
   if (email_segment && segmentEnvMap[email_segment]) {

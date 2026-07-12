@@ -1,0 +1,883 @@
+{
+  "date": "2026-07-12",
+  "total_articles": 186,
+  "with_issues": 156,
+  "missing_faq": 0,
+  "no_internal_links": 48,
+  "thin_body": 63,
+  "top50_priority": [
+    {
+      "slug": "best-way-to-cook-baked-potatoes",
+      "title": "best-way-to-cook-baked-potatoes",
+      "category": "",
+      "word_count": 671,
+      "h2_count": 0,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "best-way-to-cook-chicken",
+      "title": "best-way-to-cook-chicken",
+      "category": "",
+      "word_count": 813,
+      "h2_count": 0,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2",
+        "no_internal_links"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "best-way-to-cook-ribs",
+      "title": "best-way-to-cook-ribs",
+      "category": "",
+      "word_count": 758,
+      "h2_count": 0,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "black-bean-brownies-hidden-fiber-dessert",
+      "title": "black-bean-brownies-hidden-fiber-dessert",
+      "category": "",
+      "word_count": 732,
+      "h2_count": 3,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "budget-meal-ideas-philippines",
+      "title": "budget-meal-ideas-philippines",
+      "category": "",
+      "word_count": 852,
+      "h2_count": 0,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2",
+        "no_internal_links"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "easy-high-fiber-breakfast-ideas-for-gut-health",
+      "title": "easy-high-fiber-breakfast-ideas-for-gut-health",
+      "category": "",
+      "word_count": 719,
+      "h2_count": 8,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "easy-sandwich-bread-recipe-beginners",
+      "title": "easy-sandwich-bread-recipe-beginners",
+      "category": "",
+      "word_count": 753,
+      "h2_count": 5,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "title": "fiber-rich-soup-for-weight-loss-cabbage",
+      "category": "",
+      "word_count": 760,
+      "h2_count": 4,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "food-prep-guide-blog-recipes",
+      "title": "food-prep-guide-blog-recipes",
+      "category": "",
+      "word_count": 813,
+      "h2_count": 0,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2",
+        "no_internal_links"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "high-fiber-bran-muffins-that-taste-good",
+      "title": "high-fiber-bran-muffins-that-taste-good",
+      "category": "",
+      "word_count": 739,
+      "h2_count": 3,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "high-fiber-cauliflower-rice-recipes",
+      "title": "high-fiber-cauliflower-rice-recipes",
+      "category": "",
+      "word_count": 768,
+      "h2_count": 5,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "high-fiber-meals-for-constipation-relief",
+      "title": "high-fiber-meals-for-constipation-relief",
+      "category": "",
+      "word_count": 724,
+      "h2_count": 7,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "high-fiber-salad-dressings-homemade",
+      "title": "high-fiber-salad-dressings-homemade",
+      "category": "",
+      "word_count": 791,
+      "h2_count": 5,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "high-fiber-stir-fry-vegetables",
+      "title": "high-fiber-stir-fry-vegetables",
+      "category": "",
+      "word_count": 851,
+      "h2_count": 0,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2",
+        "no_internal_links"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "high-fiber-yogurt-parfait-for-breakfast",
+      "title": "high-fiber-yogurt-parfait-for-breakfast",
+      "category": "",
+      "word_count": 873,
+      "h2_count": 0,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2",
+        "no_internal_links"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "high-protein-high-fiber-meals-for-weight-loss",
+      "title": "high-protein-high-fiber-meals-for-weight-loss",
+      "category": "",
+      "word_count": 740,
+      "h2_count": 9,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "how-much-protein-do-you-need-per-day",
+      "title": "how-much-protein-do-you-need-per-day",
+      "category": "",
+      "word_count": 774,
+      "h2_count": 8,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "how-to-keep-bread-fresh-longer-without-mold",
+      "title": "how-to-keep-bread-fresh-longer-without-mold",
+      "category": "",
+      "word_count": 729,
+      "h2_count": 7,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "how-to-make-grocery-shopping-cheaper",
+      "title": "how-to-make-grocery-shopping-cheaper",
+      "category": "",
+      "word_count": 772,
+      "h2_count": 5,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "how-to-make-sourdough-pizza-dough-same-day",
+      "title": "how-to-make-sourdough-pizza-dough-same-day",
+      "category": "",
+      "word_count": 783,
+      "h2_count": 4,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "how-to-meal-prep-on-a-budget-for-one-person",
+      "title": "how-to-meal-prep-on-a-budget-for-one-person",
+      "category": "",
+      "word_count": 730,
+      "h2_count": 8,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "quick-dinner-recipes-for-family",
+      "title": "quick-dinner-recipes-for-family",
+      "category": "",
+      "word_count": 699,
+      "h2_count": 0,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "split-pea-soup-recipe-high-fiber",
+      "title": "split-pea-soup-recipe-high-fiber",
+      "category": "",
+      "word_count": 731,
+      "h2_count": 4,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "issue_count": 4
+    },
+    {
+      "slug": "artichoke-recipes-for-gut-health",
+      "title": "artichoke-recipes-for-gut-health",
+      "category": "",
+      "word_count": 861,
+      "h2_count": 1,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "batch-cooking-for-beginners-weekly-guide",
+      "title": "batch-cooking-for-beginners-weekly-guide",
+      "category": "",
+      "word_count": 878,
+      "h2_count": 2,
+      "internal_link_count": 4,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "best-breakfast-foods-for-sustained-energy",
+      "title": "best-breakfast-foods-for-sustained-energy",
+      "category": "",
+      "word_count": 744,
+      "h2_count": 7,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "best-high-fiber-fruits-for-weight-loss-list",
+      "title": "best-high-fiber-fruits-for-weight-loss-list",
+      "category": "",
+      "word_count": 803,
+      "h2_count": 13,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "best-way-to-cook-a-pork-tenderloin",
+      "title": "best-way-to-cook-a-pork-tenderloin",
+      "category": "",
+      "word_count": 851,
+      "h2_count": 0,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "best-way-to-cook-pork-chops",
+      "title": "best-way-to-cook-pork-chops",
+      "category": "",
+      "word_count": 954,
+      "h2_count": 0,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "best-way-to-cook-prime-rib",
+      "title": "best-way-to-cook-prime-rib",
+      "category": "",
+      "word_count": 820,
+      "h2_count": 0,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "best-way-to-store-avocados-to-stop-browning",
+      "title": "best-way-to-store-avocados-to-stop-browning",
+      "category": "",
+      "word_count": 751,
+      "h2_count": 8,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "budget-meal-ideas-for-one",
+      "title": "budget-meal-ideas-for-one",
+      "category": "",
+      "word_count": 946,
+      "h2_count": 0,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "camping-meal-hacks-large-families",
+      "title": "camping-meal-hacks-large-families",
+      "category": "",
+      "word_count": 910,
+      "h2_count": 5,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "cheap-chicken-casserole-meals-large-families",
+      "title": "cheap-chicken-casserole-meals-large-families",
+      "category": "",
+      "word_count": 840,
+      "h2_count": 5,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "cheap-crockpot-meals-large-families",
+      "title": "cheap-crockpot-meals-large-families",
+      "category": "",
+      "word_count": 805,
+      "h2_count": 4,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "chia-pudding-variations-for-breakfast",
+      "title": "chia-pudding-variations-for-breakfast",
+      "category": "",
+      "word_count": 883,
+      "h2_count": 5,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "costco-rotisserie-chicken-meal-ideas-dinner",
+      "title": "costco-rotisserie-chicken-meal-ideas-dinner",
+      "category": "",
+      "word_count": 809,
+      "h2_count": 5,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "crispy-roasted-chickpeas-high-fiber-snack",
+      "title": "crispy-roasted-chickpeas-high-fiber-snack",
+      "category": "",
+      "word_count": 749,
+      "h2_count": 10,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "easy-black-bean-tacos-weeknight-dinner",
+      "title": "easy-black-bean-tacos-weeknight-dinner",
+      "category": "",
+      "word_count": 741,
+      "h2_count": 8,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "easy-cold-summer-pasta-salad-potlucks",
+      "title": "easy-cold-summer-pasta-salad-potlucks",
+      "category": "",
+      "word_count": 752,
+      "h2_count": 4,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "easy-one-pot-chicken-and-rice-dinner",
+      "title": "easy-one-pot-chicken-and-rice-dinner",
+      "category": "",
+      "word_count": 751,
+      "h2_count": 7,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "easy-sourdough-discard-pizza-dough-no-yeast",
+      "title": "easy-sourdough-discard-pizza-dough-no-yeast",
+      "category": "",
+      "word_count": 694,
+      "h2_count": 4,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "easy-sourdough-discard-recipes-beginners",
+      "title": "easy-sourdough-discard-recipes-beginners",
+      "category": "",
+      "word_count": 857,
+      "h2_count": 5,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "food-prep-tips-to-save-time",
+      "title": "food-prep-tips-to-save-time",
+      "category": "",
+      "word_count": 868,
+      "h2_count": 0,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "few_h2"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "gluten-free-sourdough-discard-pizza-dough",
+      "title": "gluten-free-sourdough-discard-pizza-dough",
+      "category": "",
+      "word_count": 791,
+      "h2_count": 4,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "healthy-egg-sandwich-add-ins-toppings",
+      "title": "healthy-egg-sandwich-add-ins-toppings",
+      "category": "",
+      "word_count": 797,
+      "h2_count": 4,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "healthy-fats-list-foods-to-eat-daily",
+      "title": "healthy-fats-list-foods-to-eat-daily",
+      "category": "",
+      "word_count": 747,
+      "h2_count": 7,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "healthy-homemade-dumpling-wrapper-recipe",
+      "title": "healthy-homemade-dumpling-wrapper-recipe",
+      "category": "",
+      "word_count": 788,
+      "h2_count": 4,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "healthy-homemade-vegan-caesar-salad-dressing",
+      "title": "healthy-homemade-vegan-caesar-salad-dressing",
+      "category": "",
+      "word_count": 709,
+      "h2_count": 4,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "healthy-turkey-meatballs-meal-prep",
+      "title": "healthy-turkey-meatballs-meal-prep",
+      "category": "",
+      "word_count": 763,
+      "h2_count": 7,
+      "internal_link_count": 2,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    }
+  ]
+}

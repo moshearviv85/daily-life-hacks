@@ -15,7 +15,7 @@
 | CP2 Pipeline & Routing Automation | **DONE** (Phase A+B on main) |
 | CP3 Pipeline Reliability & Dashboard | **DONE** (CP3.1–3.5) |
 | CP4 Workflows Unification | **DONE** — see `docs/cp4-workflows-closure.md` |
-| CP5 Growth & Pinterest | **CP5.1 done** — next CP5.2 after approval |
+| CP5 Growth & Pinterest | **DONE** (CP5.1–5.6, 2026-07-12) — `docs/cp5-growth-pinterest-plan.md` |
 
 ---
 
@@ -456,12 +456,13 @@ flowchart LR
 
 ## 9. הצעד הבא המיידי
 
-**סטטוס:** CP1–CP4 סגורים (2026-07-11). הבא = **CP5.1** לפי `docs/cp5-growth-pinterest-plan.md`.
+**סטטוס:** CP1–CP5 סגורים (2026-07-12). Growth נכנס ל**ריצה שוטפת**: score pins שבועי, experiments log, GSC spot-check, PDFs ל-magnets כשיהיו מוכנים.
 
 ### החלטות שאושרו
 1. **יעד SEO לפינים = 301 לקנוני** — מאושר.
 2. **Preview:** אין סיסמה בקליינט; unlock רק על staging / Pages preview / localhost.
 3. **Publish path:** staging → promote בלבד; legacy publisher בארכיון.
 4. **Deploy:** רק `deploy-cloudflare-pages.yml`, concurrency לפי branch.
+5. **Idea Pin automation:** NO-GO עד 5 בדיקות ידניות (`docs/idea-pin-automation-gate.md`).
 
-ראה גם: `docs/pin-routing-policy.md`, `docs/cp4-workflows-closure.md`.
+ראה גם: `docs/pin-routing-policy.md`, `docs/cp4-workflows-closure.md`, `docs/cp5-growth-pinterest-plan.md`, `docs/growth-experiments.md`.

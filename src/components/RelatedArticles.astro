@@ -3,6 +3,11 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptImage from "./OptImage.astro";
 import { getReleaseTimestamp, isReleased } from "../content/release";
+import {
+  PILLAR_SLUGS,
+  clusterForText,
+  pillarSlugForCluster,
+} from "../content/pillars";
 
 interface Props {
   /** The article currently being viewed (canonical entry). */
@@ -15,6 +20,14 @@ const { article, count = 4 } = Astro.props;
 
 const normalizeTag = (tag: string) => tag.trim().toLowerCase();
 const currentTags = new Set(article.data.tags.map(normalizeTag));
+const currentHay = [article.data.title, ...article.data.tags, article.id]
+  .join(" ")
+  .toLowerCase();
+const currentCluster = clusterForText(currentHay);
+const preferredPillar =
+  currentCluster && !PILLAR_SLUGS.has(article.id)
+    ? pillarSlugForCluster(currentCluster)
+    : null;
 
 const allArticles = await getCollection("articles");
 
@@ -38,7 +51,11 @@ const scored = candidates
     );
     const sameCategory = a.data.category === article.data.category ? 1 : 0;
     // Shared tags are the primary signal; same category is secondary.
-    const score = sharedTags * 10 + sameCategory * 3;
+    // CP5.4: boost hub pillars so cluster spokes surface the guide.
+    const pillarBoost = PILLAR_SLUGS.has(a.id) ? 25 : 0;
+    const preferredPillarBoost = preferredPillar && a.id === preferredPillar ? 15 : 0;
+    const score =
+      sharedTags * 10 + sameCategory * 3 + pillarBoost + preferredPillarBoost;
     return { entry: a, score };
   })
   .filter((item) => item.score > 0);

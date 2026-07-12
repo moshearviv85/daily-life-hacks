@@ -26,22 +26,42 @@ GH_REPO = os.environ.get("GITHUB_REPOSITORY", "")
 CREATE_BOARDS = os.environ.get("CREATE_BOARDS", "false").lower() == "true"
 
 
+# Keep in sync with functions/api/_pin-metadata.js (PINTEREST_BOARDS) and docs/pinterest-boards.md
 TARGET_BOARDS = [
+    {
+        "name": "High Fiber Dinner and Gut Health Recipes",
+        "description": "High-fiber dinners, beans, lentils, oats, and gut-friendly recipes from Daily Life Hacks.",
+        "id": "1124140825679184032",
+    },
+    {
+        "name": "Gut Health Tips and Nutrition Charts",
+        "description": "Gut health tips, nutrition charts, labels, and everyday nutrition ideas from Daily Life Hacks.",
+        "id": "1124140825679184034",
+    },
+    {
+        "name": "Healthy Meal Prep & Kitchen Tips",
+        "description": "Meal prep systems, breakfast, smoothies, snacks, and kitchen tips from Daily Life Hacks.",
+        "id": "1124140825679184036",
+    },
     {
         "name": "Easy Dinner Recipes",
         "description": "Practical weeknight dinners, simple recipes, and real-life meal ideas from Daily Life Hacks.",
+        "id": "1124140825679548778",
     },
     {
         "name": "Budget Meals and Grocery Hacks",
         "description": "Affordable meals, grocery planning, and kitchen money-saving ideas from Daily Life Hacks.",
+        "id": "1124140825679548779",
     },
     {
         "name": "High Protein Meals and Smart Swaps",
         "description": "High-protein meals, food-first swaps, and filling everyday ideas from Daily Life Hacks.",
+        "id": "1124140825679548780",
     },
     {
         "name": "Food Storage and Freezer Tips",
         "description": "Food storage, freezer meals, leftovers, and prep tips from Daily Life Hacks.",
+        "id": "1124140825679548781",
     },
 ]
 

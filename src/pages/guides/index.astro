@@ -1,0 +1,129 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+import { isReleased } from "../../content/release";
+import { PILLARS, clusterForText } from "../../content/pillars";
+
+const title = "Complete Guides | Daily Life Hacks";
+const description =
+  "Start with three complete guides — fiber on a budget, healthy eating on a budget, and high protein on a budget — then dig into the supporting articles.";
+
+const allArticles = await getCollection("articles");
+const released = allArticles.filter((a) => isReleased(a));
+
+const spokesByCluster = {
+  fiber: [] as { id: string; title: string }[],
+  budget: [] as { id: string; title: string }[],
+  protein: [] as { id: string; title: string }[],
+};
+
+const pillarIds = new Set(PILLARS.map((p) => p.slug));
+
+for (const article of released) {
+  if (pillarIds.has(article.id)) continue;
+  const hay = [article.data.title, ...article.data.tags, article.id].join(" ");
+  const cluster = clusterForText(hay);
+  if (!cluster) continue;
+  spokesByCluster[cluster].push({ id: article.id, title: article.data.title });
+}
+
+for (const key of Object.keys(spokesByCluster) as Array<keyof typeof spokesByCluster>) {
+  spokesByCluster[key].sort((a, b) => a.title.localeCompare(b.title));
+}
+
+const guidesSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Complete Guides",
+  url: "https://www.daily-life-hacks.com/guides/",
+  description,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Daily Life Hacks",
+    url: "https://www.daily-life-hacks.com",
+  },
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={guidesSchema}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-4 py-12 md:py-16">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      Guides
+    </h1>
+    <p class="text-lg mb-10" style="color: var(--text-color);">
+      Three complete playbooks. Pick the job you care about, then use the linked
+      articles for the next step. Every number we cite traces back to USDA data
+      and real shelf prices — see <a href="/methodology/" class="underline" style="color: #F29B30;">methodology</a>.
+    </p>
+
+    <div class="space-y-10 mb-16">
+      {
+        PILLARS.map((pillar) => {
+          const spokes = spokesByCluster[pillar.cluster].slice(0, 8);
+          return (
+            <section
+              class="rounded-xl p-6 md:p-8"
+              style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+            >
+              <p
+                class="text-xs font-bold uppercase tracking-[0.18em] mb-2"
+                style="color: #F29B30;"
+              >
+                {pillar.cluster} pillar
+              </p>
+              <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+                <a href={`/${pillar.slug}/`} class="hover:text-[#F29B30] transition-colors">
+                  {pillar.title}
+                </a>
+              </h2>
+              <p class="mb-5" style="color: var(--muted-color);">
+                {pillar.blurb}
+              </p>
+              <a
+                href={`/${pillar.slug}/`}
+                class="inline-flex font-bold mb-6"
+                style="color: #F29B30;"
+              >
+                Read the full guide →
+              </a>
+              {
+                spokes.length > 0 && (
+                  <div>
+                    <h3
+                      class="text-sm font-bold uppercase tracking-wider mb-3"
+                      style="color: var(--heading-color);"
+                    >
+                      Related articles
+                    </h3>
+                    <ul class="grid gap-2 sm:grid-cols-2">
+                      {spokes.map((spoke) => (
+                        <li>
+                          <a
+                            href={`/${spoke.id}/`}
+                            class="text-sm underline-offset-2 hover:underline"
+                            style="color: var(--text-color);"
+                          >
+                            {spoke.title}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              }
+            </section>
+          );
+        })
+      }
+    </div>
+
+    <p class="text-base" style="color: var(--muted-color);">
+      Prefer a calculator first? Try the
+      <a href="/tools/" class="underline" style="color: #F29B30;">fiber per dollar tool</a>.
+    </p>
+  </main>
+  <Footer />
+</BaseLayout>
