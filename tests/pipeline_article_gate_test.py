@@ -255,6 +255,7 @@ def test_cloudflare_deploy_uses_configured_production_branch_and_live_proof():
     assert "production_branch" in workflow
     assert "steps.pages_config.outputs.production_branch" in workflow
     assert 'dist/deploy-meta.json' in workflow
+    assert workflow.index("Write deploy proof") < workflow.index("Build Pages Functions")
     assert "Verify production custom domain" in workflow
     assert "https://www.daily-life-hacks.com/deploy-meta.json" in workflow
     assert 'LIVE_SHA' in workflow
