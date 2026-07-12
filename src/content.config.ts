@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { CONTENT_CLUSTER_IDS, CONTENT_PARENT_PILLARS } from './content/clusters';
 
 const articles = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/data/articles' }),
@@ -14,6 +15,8 @@ const articles = defineCollection({
     dateModified: z.coerce.date().optional(),
     publishAt: z.coerce.date().optional(),
     author: z.string().optional(),
+    cluster: z.enum(CONTENT_CLUSTER_IDS).optional(),
+    parentPillar: z.enum(CONTENT_PARENT_PILLARS).optional(),
     featured: z.boolean().default(false),
     editorsPick: z.boolean().default(false),
     whatsHot: z.boolean().default(false),

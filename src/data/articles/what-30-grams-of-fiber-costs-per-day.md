@@ -3,9 +3,12 @@ title: "What a Day of 30 Grams of Fiber Actually Costs"
 excerpt: "We priced five real ways to hit 30 grams of fiber in one day, from 62 cents to $14.42. Same fiber, 23 times the price. Every number is audited."
 category: "nutrition"
 tags: ["cost of fiber per day", "30 grams of fiber a day", "fiber on a budget", "cheap high fiber meals", "grocery data"]
+cluster: "budget-fiber"
+parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/what-30-grams-of-fiber-costs-per-day-main.jpg"
 imageAlt: "Horizontal bar chart comparing the cost of five ways to eat 30 grams of fiber in one day, from 62 cents for dry goods to $14.42 at restaurants"
 date: 2026-07-08
+dateModified: 2026-07-12
 author: "David Miller"
 faq:
   - question: "How much does it cost to eat 30 grams of fiber a day?"
@@ -26,13 +29,13 @@ This is the third spreadsheet in the series. First we ranked 53 foods by [fiber 
 
 ## How we priced a 30-gram day
 
-No new data collection, and that's the point. Every grocery number below reuses the audited dataset from the fiber per dollar study: fiber per 100 grams from USDA FoodData Central, and July 2026 US prices from Walmart national listings cross-checked against Bureau of Labor Statistics averages, all re-verified on July 4, 2026. The restaurant day uses the fiber figures we already published in our [high fiber fast food guide](/high-fiber-fast-food-options-guide/), which come from each chain's own nutrition pages, matched to typical national menu prices as of July 2026.
+No new data collection, and that's the point. Every grocery number below reuses the audited dataset from the fiber per dollar study: fiber per 100 grams from [USDA FoodData Central](https://fdc.nal.usda.gov/), and July 2026 US prices from Walmart national listings cross-checked against [BLS average-price data](https://www.bls.gov/cpi/factsheets/average-prices.htm), all re-verified on July 4, 2026. The restaurant day uses the fiber figures we already published in our [high fiber fast food guide](/high-fiber-fast-food-options-guide/), which come from each chain's own nutrition pages, matched to typical national menu prices as of July 2026. These are a dated national snapshot. Your local receipt is allowed to disagree with the spreadsheet.
 
 Three ground rules so nobody has to squint at the math:
 
 * **We priced the fiber-carrying foods only.** The 62-cent day assumes your pantry supplies salt, oil, and whatever protein lands next to the beans. The restaurant day buys complete meals, so it gets a built-in head start in the fairness department and still loses by a mile.
 * **Dry goods are measured dry, fruit is measured as purchased.** Fiber on peeled fruit counts only the edible portion, same as the parent study. You can't eat a banana peel no matter what the sticker says.
-* **Every day lands between 31 and 32.1 grams.** The FDA's Daily Value is 28 grams; 30 is the round number everyone actually searches for. All five plans clear both.
+* **Every day lands between 31 and 32.1 grams.** The [FDA's Daily Value is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels); 30 is the round number everyone actually searches for. All five plans clear both.
 
 The full dataset is public. Download the raw CSV [here](/data/fiber-day-cost-2026.csv), check any row against the [parent dataset](/data/fiber-per-dollar-2026.csv), or run your own matchups in the [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/).
 

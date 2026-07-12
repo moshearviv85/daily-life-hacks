@@ -3,9 +3,12 @@ title: "Fiber per Dollar: The Cheapest High-Fiber Foods, Ranked"
 excerpt: "We ranked 53 common grocery foods by grams of fiber per dollar, using USDA data and July 2026 prices. The winners cost pennies. The losers may surprise you."
 category: "nutrition"
 tags: ["cheapest high fiber foods", "fiber per dollar", "budget groceries", "high fiber on a budget", "grocery data"]
+cluster: "budget-fiber"
+parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/fiber-per-dollar-cheapest-high-fiber-foods-main.jpg"
 imageAlt: "Horizontal bar chart ranking the top 20 cheapest high-fiber foods by grams of fiber per dollar, with whole wheat flour in first place"
 date: 2026-07-04
+dateModified: 2026-07-12
 author: "David Miller"
 faq:
   - question: "What food has the most fiber per dollar?"
@@ -28,8 +31,8 @@ The result is a full ranking of the cheapest high-fiber foods in the store, and 
 
 No mystery math here. Three steps:
 
-* **Fiber content:** grams of fiber per 100 grams of each food, straight from USDA FoodData Central. For dry goods like beans and oats, that's fiber per 100 grams as sold in the bag, so the price and the fiber are measured on the same basis.
-* **Prices:** typical US prices collected in July 2026, mostly from Walmart.com national listings (store brand where one exists), cross-checked against Bureau of Labor Statistics average price data. Some are national averages, rounded. Your store will differ a little. The tiers won't.
+* **Fiber content:** grams of fiber per 100 grams of each food, straight from [USDA FoodData Central](https://fdc.nal.usda.gov/). For dry goods like beans and oats, that's fiber per 100 grams as sold in the bag, so the price and the fiber are measured on the same basis.
+* **Prices:** typical US prices collected in July 2026, mostly from Walmart.com national listings (store brand where one exists), cross-checked against Bureau of Labor Statistics average price data. The [BLS average-price methodology](https://www.bls.gov/cpi/factsheets/average-prices.htm) explains an important limitation: these are estimates of price levels built from eligible retail observations, not a promise about the price at your store. Some values here are national averages, rounded. Your receipt will move. The broad tiers may move less.
 * **The math:** total grams of fiber in the package, divided by the package price. For foods with peels, cores, or pits (bananas, oranges, avocados, apples, pears), we only counted the edible portion, because you can't eat a banana peel no matter what the per-pound sticker implies.
 
 One more thing, because a data article that can't admit mistakes isn't a data article. On July 4, 2026 we re-verified every fiber value against USDA FoodData Central and every price against current shelf listings, and corrected several figures (split peas, whole wheat spaghetti, russet potatoes, canned kidney beans, bran flakes, and flaxseed). The table below is the checked version.
@@ -100,7 +103,7 @@ Fiber per $1 accounts for edible portion on fresh fruit, so bananas are scored o
 
 ## What are the cheapest high-fiber foods per dollar?
 
-**The dry goods aisle is running the table.** Eleven of the top twelve foods are dried beans, peas, or whole grains. Whole wheat flour technically wins the whole list at about 78 grams of fiber per dollar, but flour is an ingredient, not dinner (more on that below). Among foods you can actually cook and eat, dry split peas take the crown at about 71 grams of fiber per dollar, roughly 16 times more than fresh raspberries and 28 times more than blueberries. One $1.42 bag of split peas holds around 101 grams of fiber. For context, the FDA's Daily Value for fiber is 28 grams, so that single dollar-and-change bag covers about three and a half days' worth. If you've never cooked them, our [split pea soup recipe](/split-pea-soup-recipe-high-fiber/) is the easy on-ramp.
+**The dry goods aisle is running the table.** Eleven of the top twelve foods are dried beans, peas, or whole grains. Whole wheat flour technically wins the whole list at about 78 grams of fiber per dollar, but flour is an ingredient, not dinner (more on that below). Among foods you can actually cook and eat, dry split peas take the crown at about 71 grams of fiber per dollar, roughly 16 times more than fresh raspberries and 28 times more than blueberries. One $1.42 bag of split peas holds around 101 grams of fiber. For context, the [FDA lists 28 grams as the Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), so that single dollar-and-change bag contains about three and a half Daily Values. That's a comparison, not a suggestion to eat the bag in three days. If you've never cooked split peas, our [split pea soup recipe](/split-pea-soup-recipe-high-fiber/) is the easy on-ramp.
 
 **Dry beans beat canned by 2.5x.** Dry pinto beans came in around 71 grams of fiber per dollar; canned black beans, about 28. Canned is still a genuinely good deal, and I keep a shelf of them for lazy nights. But if the soaking step is the only thing stopping you, the [same-day quick-soak method](/how-to-quick-soak-dried-beans-same-day/) removes the excuse.
 
@@ -131,6 +134,6 @@ Don't overhaul anything. Just let the top of the table cover the boring baseline
 * **Let frozen peas be your emergency vegetable.** Ninety seconds in the microwave, 17.6 grams per dollar, zero chopping.
 * **Buy berries because you love them.** Just don't buy them as a fiber strategy.
 
-If you want the bigger picture on stretching a grocery budget, our [healthy eating on a budget shopping list](/grocery-shopping-list-for-healthy-eating-on-a-budget/) pairs well with this table.
+If you want to turn the ranking into actual meals, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) handles the shopping routine. The follow-up study on [what 30 grams of fiber costs in a day](/what-30-grams-of-fiber-costs-per-day/) shows five ways to use the same dataset, from dry goods to drive-thru food. For the rest of the cart, our [healthy eating on a budget shopping list](/grocery-shopping-list-for-healthy-eating-on-a-budget/) pairs well with this table.
 
 The whole analysis comes down to one sentence: the cheapest high-fiber foods in America live in the dry goods aisle, they cost about a quarter per 100 grams, and the store has been hiding them at knee level below the fancy stuff the whole time. Now you have the receipts.
