@@ -3,8 +3,8 @@
   "total_articles": 186,
   "with_issues": 156,
   "missing_faq": 0,
-  "no_internal_links": 48,
-  "thin_body": 63,
+  "no_internal_links": 34,
+  "thin_body": 58,
   "top50_priority": [
     {
       "slug": "best-way-to-cook-baked-potatoes",
@@ -64,16 +64,16 @@
       "slug": "black-bean-brownies-hidden-fiber-dessert",
       "title": "black-bean-brownies-hidden-fiber-dessert",
       "category": "",
-      "word_count": 732,
-      "h2_count": 3,
-      "internal_link_count": 0,
+      "word_count": 661,
+      "h2_count": 1,
+      "internal_link_count": 1,
       "has_faq": true,
       "has_image_alt": false,
       "excerpt_len": 0,
       "issues": [
         "missing_image_alt",
         "short_excerpt",
-        "no_internal_links",
+        "few_h2",
         "thin_body"
       ],
       "issue_count": 4
@@ -97,37 +97,19 @@
       "issue_count": 4
     },
     {
-      "slug": "easy-high-fiber-breakfast-ideas-for-gut-health",
-      "title": "easy-high-fiber-breakfast-ideas-for-gut-health",
-      "category": "",
-      "word_count": 719,
-      "h2_count": 8,
-      "internal_link_count": 0,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "no_internal_links",
-        "thin_body"
-      ],
-      "issue_count": 4
-    },
-    {
       "slug": "easy-sandwich-bread-recipe-beginners",
       "title": "easy-sandwich-bread-recipe-beginners",
       "category": "",
-      "word_count": 753,
-      "h2_count": 5,
-      "internal_link_count": 0,
+      "word_count": 257,
+      "h2_count": 1,
+      "internal_link_count": 1,
       "has_faq": true,
       "has_image_alt": false,
       "excerpt_len": 0,
       "issues": [
         "missing_image_alt",
         "short_excerpt",
-        "no_internal_links",
+        "few_h2",
         "thin_body"
       ],
       "issue_count": 4
@@ -136,16 +118,16 @@
       "slug": "fiber-rich-soup-for-weight-loss-cabbage",
       "title": "fiber-rich-soup-for-weight-loss-cabbage",
       "category": "",
-      "word_count": 760,
-      "h2_count": 4,
-      "internal_link_count": 0,
+      "word_count": 355,
+      "h2_count": 1,
+      "internal_link_count": 1,
       "has_faq": true,
       "has_image_alt": false,
       "excerpt_len": 0,
       "issues": [
         "missing_image_alt",
         "short_excerpt",
-        "no_internal_links",
+        "few_h2",
         "thin_body"
       ],
       "issue_count": 4
@@ -172,16 +154,16 @@
       "slug": "high-fiber-bran-muffins-that-taste-good",
       "title": "high-fiber-bran-muffins-that-taste-good",
       "category": "",
-      "word_count": 739,
-      "h2_count": 3,
-      "internal_link_count": 0,
+      "word_count": 541,
+      "h2_count": 1,
+      "internal_link_count": 1,
       "has_faq": true,
       "has_image_alt": false,
       "excerpt_len": 0,
       "issues": [
         "missing_image_alt",
         "short_excerpt",
-        "no_internal_links",
+        "few_h2",
         "thin_body"
       ],
       "issue_count": 4
@@ -190,34 +172,16 @@
       "slug": "high-fiber-cauliflower-rice-recipes",
       "title": "high-fiber-cauliflower-rice-recipes",
       "category": "",
-      "word_count": 768,
-      "h2_count": 5,
-      "internal_link_count": 0,
+      "word_count": 330,
+      "h2_count": 1,
+      "internal_link_count": 1,
       "has_faq": true,
       "has_image_alt": false,
       "excerpt_len": 0,
       "issues": [
         "missing_image_alt",
         "short_excerpt",
-        "no_internal_links",
-        "thin_body"
-      ],
-      "issue_count": 4
-    },
-    {
-      "slug": "high-fiber-meals-for-constipation-relief",
-      "title": "high-fiber-meals-for-constipation-relief",
-      "category": "",
-      "word_count": 724,
-      "h2_count": 7,
-      "internal_link_count": 0,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "no_internal_links",
+        "few_h2",
         "thin_body"
       ],
       "issue_count": 4
@@ -226,16 +190,16 @@
       "slug": "high-fiber-salad-dressings-homemade",
       "title": "high-fiber-salad-dressings-homemade",
       "category": "",
-      "word_count": 791,
-      "h2_count": 5,
-      "internal_link_count": 0,
+      "word_count": 302,
+      "h2_count": 1,
+      "internal_link_count": 1,
       "has_faq": true,
       "has_image_alt": false,
       "excerpt_len": 0,
       "issues": [
         "missing_image_alt",
         "short_excerpt",
-        "no_internal_links",
+        "few_h2",
         "thin_body"
       ],
       "issue_count": 4
@@ -277,37 +241,19 @@
       "issue_count": 4
     },
     {
-      "slug": "high-protein-high-fiber-meals-for-weight-loss",
-      "title": "high-protein-high-fiber-meals-for-weight-loss",
-      "category": "",
-      "word_count": 740,
-      "h2_count": 9,
-      "internal_link_count": 0,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "no_internal_links",
-        "thin_body"
-      ],
-      "issue_count": 4
-    },
-    {
       "slug": "how-much-protein-do-you-need-per-day",
       "title": "how-much-protein-do-you-need-per-day",
       "category": "",
-      "word_count": 774,
-      "h2_count": 8,
-      "internal_link_count": 0,
+      "word_count": 259,
+      "h2_count": 1,
+      "internal_link_count": 1,
       "has_faq": true,
       "has_image_alt": false,
       "excerpt_len": 0,
       "issues": [
         "missing_image_alt",
         "short_excerpt",
-        "no_internal_links",
+        "few_h2",
         "thin_body"
       ],
       "issue_count": 4
@@ -331,55 +277,19 @@
       "issue_count": 4
     },
     {
-      "slug": "how-to-make-grocery-shopping-cheaper",
-      "title": "how-to-make-grocery-shopping-cheaper",
-      "category": "",
-      "word_count": 772,
-      "h2_count": 5,
-      "internal_link_count": 0,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "no_internal_links",
-        "thin_body"
-      ],
-      "issue_count": 4
-    },
-    {
       "slug": "how-to-make-sourdough-pizza-dough-same-day",
       "title": "how-to-make-sourdough-pizza-dough-same-day",
       "category": "",
-      "word_count": 783,
-      "h2_count": 4,
-      "internal_link_count": 0,
+      "word_count": 286,
+      "h2_count": 1,
+      "internal_link_count": 1,
       "has_faq": true,
       "has_image_alt": false,
       "excerpt_len": 0,
       "issues": [
         "missing_image_alt",
         "short_excerpt",
-        "no_internal_links",
-        "thin_body"
-      ],
-      "issue_count": 4
-    },
-    {
-      "slug": "how-to-meal-prep-on-a-budget-for-one-person",
-      "title": "how-to-meal-prep-on-a-budget-for-one-person",
-      "category": "",
-      "word_count": 730,
-      "h2_count": 8,
-      "internal_link_count": 0,
-      "has_faq": true,
-      "has_image_alt": false,
-      "excerpt_len": 0,
-      "issues": [
-        "missing_image_alt",
-        "short_excerpt",
-        "no_internal_links",
+        "few_h2",
         "thin_body"
       ],
       "issue_count": 4
@@ -406,16 +316,16 @@
       "slug": "split-pea-soup-recipe-high-fiber",
       "title": "split-pea-soup-recipe-high-fiber",
       "category": "",
-      "word_count": 731,
-      "h2_count": 4,
-      "internal_link_count": 0,
+      "word_count": 391,
+      "h2_count": 1,
+      "internal_link_count": 1,
       "has_faq": true,
       "has_image_alt": false,
       "excerpt_len": 0,
       "issues": [
         "missing_image_alt",
         "short_excerpt",
-        "no_internal_links",
+        "few_h2",
         "thin_body"
       ],
       "issue_count": 4
@@ -876,6 +786,91 @@
         "missing_image_alt",
         "short_excerpt",
         "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "high-fiber-avocado-toast-variations",
+      "title": "high-fiber-avocado-toast-variations",
+      "category": "",
+      "word_count": 787,
+      "h2_count": 12,
+      "internal_link_count": 3,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "high-fiber-dinner-recipes-picky-kids",
+      "title": "high-fiber-dinner-recipes-picky-kids",
+      "category": "",
+      "word_count": 787,
+      "h2_count": 4,
+      "internal_link_count": 1,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "thin_body"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "high-fiber-hummus-recipe-homemade",
+      "title": "high-fiber-hummus-recipe-homemade",
+      "category": "",
+      "word_count": 837,
+      "h2_count": 3,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "high-fiber-meal-prep-ideas-for-busy-weeks-2026",
+      "title": "high-fiber-meal-prep-ideas-for-busy-weeks-2026",
+      "category": "",
+      "word_count": 844,
+      "h2_count": 11,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
+      ],
+      "issue_count": 3
+    },
+    {
+      "slug": "high-fiber-pasta-alternatives",
+      "title": "high-fiber-pasta-alternatives",
+      "category": "",
+      "word_count": 846,
+      "h2_count": 13,
+      "internal_link_count": 0,
+      "has_faq": true,
+      "has_image_alt": false,
+      "excerpt_len": 0,
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links"
       ],
       "issue_count": 3
     }

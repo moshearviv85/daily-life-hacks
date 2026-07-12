@@ -13,6 +13,7 @@ tags:
 image: "/images/how-to-make-sourdough-pizza-dough-same-day-main.jpg"
 imageAlt: Hands gently stretch a shaggy ball of sourdough pizza dough on a floured wooden surface, with a glass jar of sourdough discard in the background.
 date: 2026-04-28
+dateModified: 2026-07-12
 author: "David Miller"
 featured: false
 faq:
@@ -34,23 +35,3 @@ To get a sourdough pizza dough ready in a few hours, we use what's called a hybr
 
 The sourdough starter provides the acidity and the structural integrity that makes the crust taste like something from a fancy wood-fired oven. The instant yeast handles the heavy lifting of the rise so you aren't waiting until midnight to eat. You'll want to aim for a hydration level that's manageable. If the dough is too sticky, you'll end up frustrated and covered in flour, which is the opposite of a life hack.
 
-## Temperature is your best friend
-If you want to speed things up even more, you need to pay attention to the environment. Yeast is a living thing, and it likes to be warm. I'm not saying you should turn your kitchen into a sauna, but putting your dough bowl in a turned-off oven with the light on can shave an hour off your wait time.
-
-A warm spot helps the dough double in size much faster than a drafty countertop. Just don't get overzealous and put it on a radiator or near an open flame. You want a gentle proof, not a slow cook. If the dough feels cold to the touch, it's going to take its sweet time, and your "same-day" pizza will quickly turn into "late-night" pizza.
-
-## Skipping the fancy equipment
-You don't need a pizza stone to make this work, though they're nice if you have one taking up space in your cabinets. A standard baking sheet turned upside down works surprisingly well. The goal is a flat, hot surface that can transfer heat quickly to the bottom of the crust.
-
-**Baking Sheet:** Use a heavy-duty rimmed baking sheet flipped over.
-**Cast Iron Skillet:** This is actually my favorite for a thick, crispy-bottomed crust.
-**Pizza Steel:** Great for heat retention, but heavy and expensive.
-
-When it's time to stretch the dough, don't use a rolling pin unless you want a cracker. Use your hands to gently push the air from the center out to the edges. If the dough keeps shrinking back like a stubborn rubber band, walk away. Give it ten minutes to relax, then try again. It's not a race, even if you are hungry.
-
-## Getting the right texture
-A common mistake with same-day sourdough pizza dough is adding too much flour because the dough feels "tacky." Resist the urge. A slightly wetter dough yields a much better crumb and more bubbles in the crust. Use a little olive oil on your hands instead of dumping more flour onto the board.
-
-The high heat of your oven is what's going to transform that dough from a limp disk into a blistered masterpiece. Set your oven as high as it will go, usually 500 or 550 degrees. Let it preheat for at least thirty minutes. Even if the little light says it's ready, the air is hot but the pans aren't. Give it time to soak up that heat so the crust sears the moment it hits the surface.
-
-You don't have to be a master baker to pull this off, and you definitely don't have to plan your life around a jar of fermented flour. Just mix the discard, the yeast, and the flour, give it a few hours to do its thing, and get the oven hot enough to scare the neighbors. It turns out that a little bit of planning and a healthy dose of heat are all you really need to get a decent dinner on the table without the 48-hour drama.

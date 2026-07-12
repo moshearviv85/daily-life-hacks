@@ -1,0 +1,356 @@
+{
+  "generated_at": "2026-07-12",
+  "limit": 15,
+  "pillars": {
+    "fiber": "how-to-eat-more-fiber-on-a-budget-complete-guide",
+    "budget": "eat-healthy-on-a-budget-complete-playbook",
+    "protein": "high-protein-on-a-budget-complete-guide"
+  },
+  "queue": [
+    {
+      "slug": "black-bean-brownies-hidden-fiber-dessert",
+      "title": "black-bean-brownies-hidden-fiber-dessert",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "fiber",
+      "pillar_slug": "how-to-eat-more-fiber-on-a-budget-complete-guide",
+      "word_count": 732,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "easy-high-fiber-breakfast-ideas-for-gut-health",
+      "title": "easy-high-fiber-breakfast-ideas-for-gut-health",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "fiber",
+      "pillar_slug": "how-to-eat-more-fiber-on-a-budget-complete-guide",
+      "word_count": 719,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "fiber-rich-soup-for-weight-loss-cabbage",
+      "title": "fiber-rich-soup-for-weight-loss-cabbage",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "fiber",
+      "pillar_slug": "how-to-eat-more-fiber-on-a-budget-complete-guide",
+      "word_count": 760,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "high-fiber-bran-muffins-that-taste-good",
+      "title": "high-fiber-bran-muffins-that-taste-good",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "fiber",
+      "pillar_slug": "how-to-eat-more-fiber-on-a-budget-complete-guide",
+      "word_count": 739,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "high-fiber-cauliflower-rice-recipes",
+      "title": "high-fiber-cauliflower-rice-recipes",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "fiber",
+      "pillar_slug": "how-to-eat-more-fiber-on-a-budget-complete-guide",
+      "word_count": 768,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "high-fiber-meals-for-constipation-relief",
+      "title": "high-fiber-meals-for-constipation-relief",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "fiber",
+      "pillar_slug": "how-to-eat-more-fiber-on-a-budget-complete-guide",
+      "word_count": 724,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "high-fiber-salad-dressings-homemade",
+      "title": "high-fiber-salad-dressings-homemade",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "fiber",
+      "pillar_slug": "how-to-eat-more-fiber-on-a-budget-complete-guide",
+      "word_count": 791,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "high-protein-high-fiber-meals-for-weight-loss",
+      "title": "high-protein-high-fiber-meals-for-weight-loss",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "protein",
+      "pillar_slug": "high-protein-on-a-budget-complete-guide",
+      "word_count": 740,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "how-much-protein-do-you-need-per-day",
+      "title": "how-much-protein-do-you-need-per-day",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "protein",
+      "pillar_slug": "high-protein-on-a-budget-complete-guide",
+      "word_count": 774,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "how-to-make-grocery-shopping-cheaper",
+      "title": "how-to-make-grocery-shopping-cheaper",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "budget",
+      "pillar_slug": "eat-healthy-on-a-budget-complete-playbook",
+      "word_count": 772,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "how-to-make-sourdough-pizza-dough-same-day",
+      "title": "how-to-make-sourdough-pizza-dough-same-day",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "protein",
+      "pillar_slug": "high-protein-on-a-budget-complete-guide",
+      "word_count": 783,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "how-to-meal-prep-on-a-budget-for-one-person",
+      "title": "how-to-meal-prep-on-a-budget-for-one-person",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "budget",
+      "pillar_slug": "eat-healthy-on-a-budget-complete-playbook",
+      "word_count": 730,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "split-pea-soup-recipe-high-fiber",
+      "title": "split-pea-soup-recipe-high-fiber",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": "fiber",
+      "pillar_slug": "how-to-eat-more-fiber-on-a-budget-complete-guide",
+      "word_count": 731,
+      "internal_link_count": 0,
+      "priority_score": 85,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_pillar_internal_link",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "easy-sandwich-bread-recipe-beginners",
+      "title": "easy-sandwich-bread-recipe-beginners",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": null,
+      "pillar_slug": null,
+      "word_count": 753,
+      "internal_link_count": 0,
+      "priority_score": 65,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_2_internal_links",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    },
+    {
+      "slug": "how-to-keep-bread-fresh-longer-without-mold",
+      "title": "how-to-keep-bread-fresh-longer-without-mold",
+      "issues": [
+        "missing_image_alt",
+        "short_excerpt",
+        "no_internal_links",
+        "thin_body"
+      ],
+      "cluster": null,
+      "pillar_slug": null,
+      "word_count": 729,
+      "internal_link_count": 0,
+      "priority_score": 65,
+      "status": "pending",
+      "upgrade_actions": [
+        "expand_to_1200_plus_words",
+        "add_2_internal_links",
+        "fix_image_alt",
+        "lengthen_excerpt",
+        "set_dateModified_today"
+      ]
+    }
+  ]
+}

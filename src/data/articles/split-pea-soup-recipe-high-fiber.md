@@ -12,6 +12,7 @@ image: /images/split-pea-soup-recipe-high-fiber-main.jpg
 imageAlt: Split Pea Soup Recipe High Fiber - appetizing bowl with colorful ingredients
   for natural nutrition
 date: 2026-01-16
+dateModified: 2026-07-12
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -82,18 +83,6 @@ Yeah, I know. Peas. They sound a bit... well, *pea*-ish. But trust me, these hum
 ## Why This Soup Hits Different
 Look, there's something profoundly satisfying about turning a bunch of dried peas, a few humble veggies, and some broth into a meal that tastes like it simmered all day. It's an alchemy, kind of. This split pea soup recipe is, dare I say, almost ridiculously easy. You chop some stuff, you toss it in a pot, you let it do its thing. That's it. No complicated steps, no weird ingredients you have to hunt down in some specialty aisle. Just honest-to-goodness comfort.
 
+If you want the full system behind this, read the [how to eat more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/).
+
 I remember one winter (it was a particularly gnarly one, snow up to my knees, no exaggeration), I made a huge batch of this. My roommate at the time kept saying, "What *is* that smell? It smells like... home." And she wasn't even talking about her home, just like, the *concept* of home. That's the vibe we're going for. It makes your kitchen smell amazing, your tummy feel cozy, and your wallet doesn't even feel a pinch. Win-win-win, if you ask me.
-## The Nitty-Gritty: Nutritional Breakdown
-Okay, so we already talked about the fiber. Sixteen grams. That's a lot, dude. Fiber is your friend, especially for keeping things moving along (if you catch my drift) and helping you feel full and satisfied. This soup is a fiber delivery system.
-
-Beyond that, peas are packed with protein. So while this recipe is vegetarian (if you use veggie broth, which, hello, I did), it's still quite substantial. You're getting a decent amount of plant-based protein, which is neat. We're talking about vitamins too, like some B vitamins and a bit of iron. The carrots bring their vitamin A party to the pot, and the celery and onions add their own little nutritional contributions. It's a well-rounded meal hiding in a simple bowl, honestly. Pretty sneaky.
-
-It may help support a balanced diet, you know, when you're not eating only instant noodles. (No judgment, we've all been there.)
-## Keep It Fresh: Meal Prep and Storage Hacks
-This is where this soup truly shines for busy folks. Seriously. This stuff stores like a champ. You can make a huge batch on a Sunday, and you're set for days.
-
-Once your soup cools down (like, *really* cool, don't put hot stuff in the fridge, bad idea), spoon it into airtight containers. It'll hang out happily in the refrigerator for about 3-4 days. It actually tastes even better the next day, after all those flavors have had a proper chance to get to know each other.
-
-Freezing? Oh,. This soup freezes beautifully. Portion it out into freezer-safe containers or even heavy-duty freezer bags (lay them flat to save space, that's a pro tip). It'll keep for up to 3 months. When you're ready to eat, just thaw it in the fridge overnight or gently reheat it on the stove, adding a splash of broth or water if it's too thick. A cold winter night emergency meal, just waiting for you.
-## Mix It Up: Fun Variations
-While the classic version is, in my humble opinion, perfect, sometimes you just wanna shake things up. Get a little wild.

@@ -63,12 +63,15 @@ const articleUrl = `${siteUrl}/${article.id}/`;
 const imageUrl = article.data.image.startsWith("http")
   ? article.data.image
   : `${siteUrl}${article.data.image}`;
+const modifiedDate = (
+  article.data.dateModified ?? releaseDate
+).toISOString();
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
     {
       "@type": "ListItem",
       position: 2,
@@ -105,7 +108,7 @@ const jsonLd = isRecipe
       thumbnailUrl: imageUrl,
       inLanguage: "en-US",
       datePublished: publishedDate,
-      dateModified: publishedDate,
+      dateModified: modifiedDate,
       prepTime: durationToIso(article.data.prepTime),
       cookTime: durationToIso(article.data.cookTime),
       totalTime: durationToIso(article.data.totalTime),
@@ -149,11 +152,16 @@ const jsonLd = isRecipe
   : {
       "@context": "https://schema.org",
       "@type": "Article",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": articleUrl,
+      },
+      url: articleUrl,
       headline: article.data.title,
       description: article.data.excerpt,
       image: [imageUrl],
       datePublished: publishedDate,
-      dateModified: publishedDate,
+      dateModified: modifiedDate,
       author: {
         "@type": "Organization",
         name: "Daily Life Hacks",
@@ -521,7 +529,7 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
               </h3>
               <ol class="space-y-4">
                 {article.data.steps?.map((step: string, index: number) => (
-                  <li class="flex gap-3 text-[var(--text-color)]">
+                  <li id={`step-${index + 1}`} class="flex gap-3 text-[var(--text-color)]">
                     <span class="flex-shrink-0 w-6 h-6 rounded-full bg-[#F29B30] text-white flex items-center justify-center text-sm font-bold">
                       {index + 1}
                     </span>

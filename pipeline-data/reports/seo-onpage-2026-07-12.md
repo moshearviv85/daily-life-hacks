@@ -3,34 +3,29 @@
 Articles scanned: **186**
 With ≥1 checklist issue: **156**
 Missing FAQ: **0**
-No internal links in body: **48**
-Thin body (<800 words): **63**
+No internal links in body: **34**
+Thin body (<800 words): **58**
 
 ## Top 50 priority (most issues first)
 
 - `best-way-to-cook-baked-potatoes` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 671 words; 1 internal links
 - `best-way-to-cook-chicken` — 4 issues (missing_image_alt, short_excerpt, few_h2, no_internal_links); 813 words; 0 internal links
 - `best-way-to-cook-ribs` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 758 words; 1 internal links
-- `black-bean-brownies-hidden-fiber-dessert` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 732 words; 0 internal links
+- `black-bean-brownies-hidden-fiber-dessert` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 661 words; 1 internal links
 - `budget-meal-ideas-philippines` — 4 issues (missing_image_alt, short_excerpt, few_h2, no_internal_links); 852 words; 0 internal links
-- `easy-high-fiber-breakfast-ideas-for-gut-health` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 719 words; 0 internal links
-- `easy-sandwich-bread-recipe-beginners` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 753 words; 0 internal links
-- `fiber-rich-soup-for-weight-loss-cabbage` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 760 words; 0 internal links
+- `easy-sandwich-bread-recipe-beginners` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 257 words; 1 internal links
+- `fiber-rich-soup-for-weight-loss-cabbage` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 355 words; 1 internal links
 - `food-prep-guide-blog-recipes` — 4 issues (missing_image_alt, short_excerpt, few_h2, no_internal_links); 813 words; 0 internal links
-- `high-fiber-bran-muffins-that-taste-good` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 739 words; 0 internal links
-- `high-fiber-cauliflower-rice-recipes` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 768 words; 0 internal links
-- `high-fiber-meals-for-constipation-relief` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 724 words; 0 internal links
-- `high-fiber-salad-dressings-homemade` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 791 words; 0 internal links
+- `high-fiber-bran-muffins-that-taste-good` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 541 words; 1 internal links
+- `high-fiber-cauliflower-rice-recipes` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 330 words; 1 internal links
+- `high-fiber-salad-dressings-homemade` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 302 words; 1 internal links
 - `high-fiber-stir-fry-vegetables` — 4 issues (missing_image_alt, short_excerpt, few_h2, no_internal_links); 851 words; 0 internal links
 - `high-fiber-yogurt-parfait-for-breakfast` — 4 issues (missing_image_alt, short_excerpt, few_h2, no_internal_links); 873 words; 0 internal links
-- `high-protein-high-fiber-meals-for-weight-loss` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 740 words; 0 internal links
-- `how-much-protein-do-you-need-per-day` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 774 words; 0 internal links
+- `how-much-protein-do-you-need-per-day` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 259 words; 1 internal links
 - `how-to-keep-bread-fresh-longer-without-mold` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 729 words; 0 internal links
-- `how-to-make-grocery-shopping-cheaper` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 772 words; 0 internal links
-- `how-to-make-sourdough-pizza-dough-same-day` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 783 words; 0 internal links
-- `how-to-meal-prep-on-a-budget-for-one-person` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 730 words; 0 internal links
+- `how-to-make-sourdough-pizza-dough-same-day` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 286 words; 1 internal links
 - `quick-dinner-recipes-for-family` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 699 words; 2 internal links
-- `split-pea-soup-recipe-high-fiber` — 4 issues (missing_image_alt, short_excerpt, no_internal_links, thin_body); 731 words; 0 internal links
+- `split-pea-soup-recipe-high-fiber` — 4 issues (missing_image_alt, short_excerpt, few_h2, thin_body); 391 words; 1 internal links
 - `artichoke-recipes-for-gut-health` — 3 issues (missing_image_alt, short_excerpt, few_h2); 861 words; 2 internal links
 - `batch-cooking-for-beginners-weekly-guide` — 3 issues (missing_image_alt, short_excerpt, few_h2); 878 words; 4 internal links
 - `best-breakfast-foods-for-sustained-energy` — 3 issues (missing_image_alt, short_excerpt, thin_body); 744 words; 1 internal links
@@ -58,3 +53,8 @@ Thin body (<800 words): **63**
 - `healthy-homemade-dumpling-wrapper-recipe` — 3 issues (missing_image_alt, short_excerpt, thin_body); 788 words; 2 internal links
 - `healthy-homemade-vegan-caesar-salad-dressing` — 3 issues (missing_image_alt, short_excerpt, thin_body); 709 words; 2 internal links
 - `healthy-turkey-meatballs-meal-prep` — 3 issues (missing_image_alt, short_excerpt, thin_body); 763 words; 2 internal links
+- `high-fiber-avocado-toast-variations` — 3 issues (missing_image_alt, short_excerpt, thin_body); 787 words; 3 internal links
+- `high-fiber-dinner-recipes-picky-kids` — 3 issues (missing_image_alt, short_excerpt, thin_body); 787 words; 1 internal links
+- `high-fiber-hummus-recipe-homemade` — 3 issues (missing_image_alt, short_excerpt, no_internal_links); 837 words; 0 internal links
+- `high-fiber-meal-prep-ideas-for-busy-weeks-2026` — 3 issues (missing_image_alt, short_excerpt, no_internal_links); 844 words; 0 internal links
+- `high-fiber-pasta-alternatives` — 3 issues (missing_image_alt, short_excerpt, no_internal_links); 846 words; 0 internal links

@@ -15,6 +15,8 @@
     "score:pins": "py -3 scripts/NEW_PIPELINE_2026-05-08/score_pin_performance.py",
     "map:clusters": "py -3 scripts/NEW_PIPELINE_2026-05-08/map_content_clusters.py",
     "audit:seo-onpage": "py -3 scripts/NEW_PIPELINE_2026-05-08/seo_onpage_audit.py",
+    "upgrade:queue": "py -3 scripts/NEW_PIPELINE_2026-05-08/build_upgrade_queue.py",
+    "upgrade:links": "py -3 scripts/NEW_PIPELINE_2026-05-08/inject_pillar_links.py",
     "build:checked": "npm run build && npm run verify:routing && npm run verify:pin-destinations && npm run audit:recipes",
     "audit:recipes": "node scripts/audit-recipes.mjs",
     "audit:content": "py -3 scripts/audit_content.py",
