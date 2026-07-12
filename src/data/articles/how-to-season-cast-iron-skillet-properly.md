@@ -72,7 +72,3 @@ Cast iron is incredibly forgiving. If the pan accidentally gets rusty because so
 If the surface feels sticky or gummy to the touch, you used way too much oil the last time you seasoned it. Scrub the sticky spots down, and do a fresh round in the oven with a much thinner layer of oil. If your food keeps sticking to the bottom while you cook, the pan might just need another round in the oven, or you simply need to make sure you are using enough cooking fat and letting the pan preheat properly before dropping your food in.
 
 The only real downside of cast iron is that it's a brick to store. If cabinet space is tight, these ideas for [organizing a small kitchen on a budget](/how-to-organize-a-small-kitchen-on-a-budget/) will help you find it a permanent home that isn't your stovetop.
-
-## If you share a kitchen
-
-Label leftovers with a date. Use one shelf for meal prep. Negotiate one rule everyone can keep, like dishes in the sink overnight. Peace is a kitchen hack too.

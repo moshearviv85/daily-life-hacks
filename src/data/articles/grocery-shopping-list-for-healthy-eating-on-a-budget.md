@@ -80,31 +80,3 @@ This is where people blow their budgets. They buy highly perishable, incredibly 
 If you're basing your meals off intensely cheap items like beans, rice, and cabbage, you must invest a tiny bit of your budget into making them taste phenomenal. This is the difference between eating like a budget master and eating like a depressed college student. 
 
 Building a powerful grocery shopping list for healthy eating on a budget is about changing your mindset. You're no longer buying "meals" in boxes; you're buying highly versatile, incredibly cheap raw ingredients to assemble yourself! Cooking for a household of one? The same strategy scales down; these [budget meal ideas for one](/budget-meal-ideas-for-one/) show what the list actually turns into. And once the list itself is solid, there are more ways to [make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/) that don't involve clipping a single coupon.
-
-## Safety without a lecture
-
-Hot oil, sharp blades, and heavy pots are not dramatic villains. They are just hazards you respect. Dry wet hands before you grab a knife. Turn handles inward. If you are tired, do the smaller task tonight and finish tomorrow.
-
-## Maintenance beats motivation
-
-Motivation is weather. Systems are climate. A ten-minute reset after cooking saves you from a weekend deep clean you will dread. Wipe the counter, soak the pan, take the trash out if it is full.
-
-## If you share a kitchen
-
-Label leftovers with a date. Use one shelf for meal prep. Negotiate one rule everyone can keep, like dishes in the sink overnight. Peace is a kitchen hack too.
-
-## The honest reason some tips sound too good
-
-If a tip saves an hour every time, it is rare. Most wins are five minutes here and there. Stack enough small wins and dinner stops feeling like a crisis. That is the whole game.
-
-## Before you buy another gadget
-
-Most kitchen wins come from a sharp knife, a big cutting board, and a pan that does not warp. If a tool promises to replace skill, be skeptical. If it removes a step you hate every day, it might be worth it.
-
-## When a hack fails, check the boring variables
-
-Temperature, time, and moisture ruin more projects than talent does. If something worked once and never again, something in the environment changed. Write down what you did the time it worked. Yes, it feels silly. It also works.
-
-## One more practical note
-
-If you are reading this at night, bookmark it and try one idea tomorrow. If you are reading it hungry, eat first, then come back. Good decisions rarely happen on an empty stomach and a short fuse.

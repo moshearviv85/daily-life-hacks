@@ -222,7 +222,7 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
         <a href="/" class="hover:text-[#F29B30] transition-colors">Home</a>
         <span>/</span>
         <a
-          href={`/${article.data.category}`}
+          href={`/${article.data.category}/`}
           class="hover:text-[#F29B30] capitalize transition-colors"
           >{article.data.category}</a
         >
@@ -484,7 +484,7 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
         <div class="order-[25] mt-10 flex flex-wrap gap-2">
           {article.data.tags.map((tag: string) => (
             <a
-              href={`/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
+              href={`/tag/${tag.toLowerCase().replace(/\s+/g, "-")}/`}
               class="px-3 py-1 text-sm rounded-full transition-colors hover:opacity-80"
               style="background-color: var(--input-bg); color: var(--muted-color); text-decoration: none;"
             >
@@ -575,7 +575,7 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
         <div class="order-[45] mt-10 flex flex-wrap gap-2">
           {article.data.tags.map((tag: string) => (
             <a
-              href={`/tag/${tag.toLowerCase().replace(/\s+/g, "-")}`}
+              href={`/tag/${tag.toLowerCase().replace(/\s+/g, "-")}/`}
               class="px-3 py-1 text-sm rounded-full transition-colors hover:opacity-80"
               style="background-color: var(--input-bg); color: var(--muted-color); text-decoration: none;"
             >

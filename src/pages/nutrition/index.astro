@@ -16,9 +16,41 @@ const BATCH_SIZE = 12;
 const title = "Nutrition Tips & Science-Backed Advice | Daily Life Hacks";
 const description =
     "Explore our latest nutrition tips, science-backed advice, and healthy eating guides to fuel your body and mind.";
+const categoryUrl = "https://www.daily-life-hacks.com/nutrition/";
+const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${categoryUrl}#item-list`,
+    name: "Nutrition Tips and Science-Backed Advice",
+    numberOfItems: articles.length,
+    itemListOrder: "https://schema.org/ItemListOrderDescending",
+    itemListElement: articles.map((article: any, index: number) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: article.data.title,
+        url: `https://www.daily-life-hacks.com/${article.id}/`,
+    })),
+};
+const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Nutrition Tips and Science-Backed Advice",
+    url: categoryUrl,
+    description,
+    isPartOf: {
+        "@type": "WebSite",
+        name: "Daily Life Hacks",
+        url: "https://www.daily-life-hacks.com/",
+    },
+    mainEntity: { "@id": `${categoryUrl}#item-list` },
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+    title={title}
+    description={description}
+    jsonLd={[collectionPageSchema, itemListSchema]}
+>
     <Header />
     <div class="max-w-6xl mx-auto px-4 py-12">
         <header class="mb-12 text-center">

@@ -16,9 +16,41 @@ const BATCH_SIZE = 12;
 const title = "Healthy Recipes & Meal Prep Ideas | Daily Life Hacks";
 const description =
     "Discover easy, healthy recipes and meal prep ideas that fit your busy lifestyle without sacrificing flavor.";
+const categoryUrl = "https://www.daily-life-hacks.com/recipes/";
+const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${categoryUrl}#item-list`,
+    name: "Healthy Recipes and Meal Prep Ideas",
+    numberOfItems: articles.length,
+    itemListOrder: "https://schema.org/ItemListOrderDescending",
+    itemListElement: articles.map((article: any, index: number) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: article.data.title,
+        url: `https://www.daily-life-hacks.com/${article.id}/`,
+    })),
+};
+const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Healthy Recipes and Meal Prep Ideas",
+    url: categoryUrl,
+    description,
+    isPartOf: {
+        "@type": "WebSite",
+        name: "Daily Life Hacks",
+        url: "https://www.daily-life-hacks.com/",
+    },
+    mainEntity: { "@id": `${categoryUrl}#item-list` },
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+    title={title}
+    description={description}
+    jsonLd={[collectionPageSchema, itemListSchema]}
+>
     <Header />
     <div class="max-w-6xl mx-auto px-4 py-12">
         <header class="mb-12 text-center">

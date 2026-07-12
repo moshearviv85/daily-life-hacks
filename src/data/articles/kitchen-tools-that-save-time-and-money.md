@@ -66,11 +66,3 @@ They are incredibly easy to clean and they stack flat. Having two of them means 
 Draining pasta, rinsing canned beans, washing fresh greens: a colander gets used constantly. Get a sturdy metal or heavy plastic one that sits flat in the sink and doesn't tip over and dump your dinner down the drain when it's full.
 
 You do not have to go out and buy everything on this list at once. Start by upgrading your knife and your cutting board, and then slowly add the rest as you notice exactly what is slowing you down on a Tuesday night. The entire goal here is to own fewer tools that actually earn their keep, rather than having a drawer packed full of junk you never touch.
-
-## When a hack fails, check the boring variables
-
-Temperature, time, and moisture ruin more projects than talent does. If something worked once and never again, something in the environment changed. Write down what you did the time it worked. Yes, it feels silly. It also works.
-
-## Safety without a lecture
-
-Hot oil, sharp blades, and heavy pots are not dramatic villains. They are just hazards you respect. Dry wet hands before you grab a knife. Turn handles inward. If you are tired, do the smaller task tonight and finish tomorrow.

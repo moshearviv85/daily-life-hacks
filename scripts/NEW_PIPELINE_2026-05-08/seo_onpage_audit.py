@@ -11,6 +11,8 @@ import re
 from datetime import date
 from pathlib import Path
 
+import yaml
+
 REPO = Path(__file__).resolve().parents[2]
 ARTICLES = REPO / "src" / "data" / "articles"
 REPORTS = REPO / "pipeline-data" / "reports"
@@ -23,13 +25,19 @@ def parse(path: Path) -> dict:
     raw = path.read_text(encoding="utf-8")
     m = FM_RE.match(raw)
     fm_text, body = (m.group(1), m.group(2)) if m else ("", raw)
-    title_m = re.search(r'^title:\s*"([^"]+)"', fm_text, re.M)
-    excerpt_m = re.search(r'^excerpt:\s*"([^"]+)"', fm_text, re.M)
-    cat_m = re.search(r'^category:\s*"([^"]+)"', fm_text, re.M)
-    image_alt = bool(re.search(r'^imageAlt:\s*"[^"]+"', fm_text, re.M))
-    has_faq = "faq:" in fm_text
-    title = title_m.group(1) if title_m else path.stem
-    excerpt = excerpt_m.group(1) if excerpt_m else ""
+    try:
+        frontmatter = yaml.safe_load(fm_text) if fm_text else {}
+    except yaml.YAMLError:
+        frontmatter = {}
+    if not isinstance(frontmatter, dict):
+        frontmatter = {}
+
+    title = str(frontmatter.get("title") or path.stem).strip()
+    excerpt = str(frontmatter.get("excerpt") or "").strip()
+    category = str(frontmatter.get("category") or "").strip()
+    image_alt = bool(str(frontmatter.get("imageAlt") or "").strip())
+    faq = frontmatter.get("faq")
+    has_faq = isinstance(faq, list) and len(faq) > 0
     h2s = re.findall(r"^##\s+(.+)$", body, re.M)
     internal = re.findall(r"\]\((/[a-z0-9][^)\s]*)\)", body)
     word_count = len(re.findall(r"\b\w+\b", body))
@@ -49,7 +57,7 @@ def parse(path: Path) -> dict:
     return {
         "slug": path.stem,
         "title": title,
-        "category": cat_m.group(1) if cat_m else "",
+        "category": category,
         "word_count": word_count,
         "h2_count": len(h2s),
         "internal_link_count": len(set(internal)),
@@ -75,6 +83,7 @@ def main() -> None:
         "no_internal_links": sum(1 for r in rows if "no_internal_links" in r["issues"]),
         "thin_body": sum(1 for r in rows if "thin_body" in r["issues"]),
         "top50_priority": top50,
+        "articles": rows,
     }
     json_path = REPORTS / f"seo-onpage-{today}.json"
     md_path = REPORTS / f"seo-onpage-{today}.md"

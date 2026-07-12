@@ -9,6 +9,7 @@ const { articleCategory = "", articleBaseSlug = "" } = Astro.props;
 ---
 
 <section
+  id="newsletter"
   class="py-8 mt-4 mb-0 transition-colors duration-300"
   style="background-color: var(--newsletter-bg); border-top: 1px solid var(--newsletter-border);"
 >
@@ -31,9 +32,13 @@ const { articleCategory = "", articleBaseSlug = "" } = Astro.props;
 
     <!-- Subscribe Form -->
     <form id="footer-newsletter-form" class="max-w-md mx-auto space-y-3">
+      <label for="footer-email" class="sr-only">Email address</label>
       <input
         id="footer-email"
+        name="email"
         type="email"
+        autocomplete="email"
+        inputmode="email"
         placeholder="Enter your email"
         required
         class="w-full px-5 py-3.5 rounded-xl text-base focus:ring-2 focus:ring-[#F29B30] outline-none transition-all"
@@ -42,13 +47,14 @@ const { articleCategory = "", articleBaseSlug = "" } = Astro.props;
       <label class="flex items-start gap-2 text-left cursor-pointer">
         <input
           id="footer-consent"
+          name="consent"
           type="checkbox"
           required
           class="mt-1 accent-[#F29B30] shrink-0"
         />
         <span class="text-xs leading-snug" style="color: var(--muted-color);">
           I agree to receive email newsletters and accept the
-          <a href="/privacy" class="underline hover:text-[#F29B30]">Privacy Policy</a>.
+          <a href="/privacy/" class="underline hover:text-[#F29B30]">Privacy Policy</a>.
           You can unsubscribe at any time.
         </span>
       </label>

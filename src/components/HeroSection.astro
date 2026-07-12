@@ -48,7 +48,7 @@ const badgeColor = (cat: string) => '#F29B30';
       >
         {mustReads.map((article: any, i: number) => (
           <a
-            href={`/${article.id}`}
+            href={`/${article.id}/`}
             class="group relative flex flex-row items-center overflow-hidden transition-colors duration-200 px-2 h-full w-full hover:bg-black/5 dark:hover:bg-white/5"
             style={i < mustReads.length - 1 ? 'border-bottom: 1px solid var(--border-color);' : ''}
           >

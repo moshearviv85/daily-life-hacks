@@ -84,19 +84,3 @@ Please, do not skip rinsing the rice. It takes 30 seconds and keeps the grains f
 If the rice still looks a bit wet when your timer goes off, don't panic. Just put the lid back on and let it sit off the heat for another 5 minutes. The residual steam will finish the job.
 
 Leftovers keep well in the fridge for a few days. They reheat nicely in the microwave-just add a tiny splash of water or broth to loosen things up. It's a real dinner with minimal cleanup, which is exactly what a weeknight needs.
-
-## A weeknight reality check
-
-Most dinners fall apart because the cook is tired, not because the steps are hard. If you are staring at the pot thinking this was a mistake, you are in good company. Turn the heat down, add a splash of water, and give it two minutes. Taste for salt last. Salt wakes everything up, and it is easier to add than to fix.
-
-## The mistake I see most often
-
-People crank the heat because they are hungry. Then the bottom scorches while the middle stays shy. A gentle simmer is boring, and that is the point. You want the sauce to reduce without turning into a paste. If it looks tight, loosen it. If it looks soupy, give it time with the lid off.
-
-## Make it a little bigger without more work
-
-If you want another serving tomorrow, double the beans or grains and keep the spice level the same. Leftovers hate being shy on seasoning anyway. Pack them in a wide container so they cool faster, then refrigerate. Reheat with a spoonful of water so the sauce comes back to life.
-
-## Serving ideas that still feel like a meal
-
-A pile of vegetables can feel like a side dish unless you give it a anchor. Think plain yogurt, a fried egg, a scoop of rice, or a warm tortilla. You are not trying to impress anyone. You are trying to sit down and eat something that holds you.

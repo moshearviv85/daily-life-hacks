@@ -64,11 +64,3 @@ If cooking fresh fish sounds like too much work, canned salmon and sardines are 
 The primary benefit of getting your fats directly from food is that you get all the other nutrients that come along for the ride. A piece of salmon gives you high-quality protein; a handful of walnuts gives you fiber and minerals. 
 
 Taking a fish oil pill isn't necessarily a bad thing if your doctor suggests it, but for the vast majority of people, eating a handful of nuts, tossing some olive oil on a salad, and having a piece of fish once a week is a perfectly simple way to include healthy fats without overthinking it.
-
-## Budget and access matter more than perfect groceries
-
-Frozen vegetables count. Canned beans count. Store brands count. If the fancy version is not in the cart, you did not fail the assignment. Fiber still shows up in cheap staples if you know where to look.
-
-## Hydration is the unsexy partner
-
-More fiber without more water is a classic way to feel off. You do not need a gallon challenge. You need a glass with meals and another when you think of it. Tea counts. Soup counts. Sparkling water counts if bubbles do not bother you.

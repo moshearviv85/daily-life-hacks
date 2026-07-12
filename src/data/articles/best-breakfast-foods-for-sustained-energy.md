@@ -65,11 +65,3 @@ That specific combination of macronutrients can help smooth out your blood sugar
 Commercially sweetened cereals, massive bakery pastries, and juice-heavy smoothies can send your blood sugar skyrocketing up and then plummeting right back down. 
 
 That doesn't mean you have to banish a donut from your life forever. But if you routinely notice that you are tired, cranky, or starving shortly after breakfast, swapping in a meal with more protein and fiber and less added sugar might seriously help. It's worth trying for a few days just to see how your body feels. We aren't making miracle claims here; it's just a highly practical tweak that works well for a lot of people.
-
-## Budget and access matter more than perfect groceries
-
-Frozen vegetables count. Canned beans count. Store brands count. If the fancy version is not in the cart, you did not fail the assignment. Fiber still shows up in cheap staples if you know where to look.
-
-## Hydration is the unsexy partner
-
-More fiber without more water is a classic way to feel off. You do not need a gallon challenge. You need a glass with meals and another when you think of it. Tea counts. Soup counts. Sparkling water counts if bubbles do not bother you.

@@ -8,6 +8,7 @@ import {
   clusterForText,
   pillarSlugForCluster,
 } from "../content/pillars";
+import { scoreRelatedCandidate } from "../content/relatedArticleScoring.js";
 
 interface Props {
   /** The article currently being viewed (canonical entry). */
@@ -45,20 +46,19 @@ const candidates = allArticles.filter(
 
 const scored = candidates
   .map((a) => {
-    const sharedTags = a.data.tags.reduce(
-      (n, tag) => n + (currentTags.has(normalizeTag(tag)) ? 1 : 0),
-      0,
-    );
-    const sameCategory = a.data.category === article.data.category ? 1 : 0;
-    // Shared tags are the primary signal; same category is secondary.
-    // CP5.4: boost hub pillars so cluster spokes surface the guide.
-    const pillarBoost = PILLAR_SLUGS.has(a.id) ? 25 : 0;
-    const preferredPillarBoost = preferredPillar && a.id === preferredPillar ? 15 : 0;
-    const score =
-      sharedTags * 10 + sameCategory * 3 + pillarBoost + preferredPillarBoost;
+    const score = scoreRelatedCandidate({
+      candidateId: a.id,
+      candidateTags: a.data.tags,
+      candidateCategory: a.data.category,
+      currentTags,
+      currentCategory: article.data.category,
+      pillarSlugs: PILLAR_SLUGS,
+      preferredPillar,
+    });
+    if (score === null || score <= 0) return null;
     return { entry: a, score };
   })
-  .filter((item) => item.score > 0);
+  .filter((item): item is NonNullable<typeof item> => item !== null);
 
 // Deterministic ordering: score desc, then newer release date, then slug A-Z.
 scored.sort((a, b) => {

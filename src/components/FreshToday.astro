@@ -70,7 +70,7 @@ const articlesJson = JSON.stringify(articles);
     }
 
     return `
-      <a href="/${article.slug}" class="group block overflow-hidden rounded-xl border transition-shadow duration-300 hover:shadow-lg" style="border-color: var(--border-color); background-color: var(--card-bg);">
+      <a href="/${article.slug}/" class="group block overflow-hidden rounded-xl border transition-shadow duration-300 hover:shadow-lg" style="border-color: var(--border-color); background-color: var(--card-bg);">
         <div class="aspect-video overflow-hidden">
           <picture>
             <source type="image/webp" srcset="${article.image.replace(/^\/images\//, '/images/opt/').replace(/\.jpg$/, '-400w.webp')} 400w, ${article.image.replace(/^\/images\//, '/images/opt/').replace(/\.jpg$/, '-800w.webp')} 800w, ${article.image.replace(/^\/images\//, '/images/opt/').replace(/\.jpg$/, '-1200w.webp')} 1200w" sizes="(max-width: 768px) 100vw, 400px" />

@@ -33,7 +33,7 @@ def test_pipeline_produce_keeps_successful_topics_when_one_topic_fails():
     assert "/tmp/failed-topic-ids.json" in workflow
     assert "--selected-topics pipeline-data/produced-topics.json" in workflow
     assert "No topics produced successfully." in workflow
-    assert "Return failed topics to approved" in workflow
+    assert "Finalize queued topics" in workflow
     assert "id: produce" in workflow
     assert "has_produced=false" in workflow
     assert "Fail if no articles were produced" in workflow
@@ -54,7 +54,7 @@ def test_pipeline_produce_selected_topics_can_run_as_a_batch():
 def test_pipeline_produce_reports_failed_topics_before_final_failure():
     workflow = (ROOT / ".github" / "workflows" / "pipeline-produce.yml").read_text(encoding="utf-8")
 
-    failed_idx = workflow.index("Return failed topics to approved")
+    failed_idx = workflow.index("Finalize queued topics")
     sync_idx = workflow.index("Sync pipeline status to D1")
     final_fail_idx = workflow.index("Fail if no articles were produced")
     produce_step = workflow.split("- name: Produce articles", 1)[1].split("- name: Verify generated", 1)[0]
@@ -74,12 +74,12 @@ def test_pipeline_produce_marks_topics_produced_only_after_staging_deploy():
     assert "steps.produce.outputs.has_produced == 'true'" in _step(
         workflow,
         "Mark topics as produced",
-        "Return failed topics to approved",
+        "Finalize queued topics",
     )
     assert "inputs.dry_run != true" in _step(
         workflow,
         "Mark topics as produced",
-        "Return failed topics to approved",
+        "Finalize queued topics",
     )
 
 
@@ -102,6 +102,36 @@ def test_pipeline_produce_supports_dry_run_without_publish_side_effects():
         "Wait for staging Pages deploy",
         "Mark topics as produced",
     )
+    assert "inputs.dry_run != true" in _step(
+        workflow,
+        "Reject low-quality approved topics",
+        "Mark selected topics as queued",
+    )
+    assert "inputs.dry_run != true" in _step(
+        workflow,
+        "Mark selected topics as queued",
+        "Produce articles",
+    )
+
+
+def test_pipeline_produce_always_releases_queued_topics_after_failure():
+    workflow = _workflow("pipeline-produce.yml")
+    prepare_idx = workflow.index("Prepare selected topic ids")
+    reject_idx = workflow.index("Reject low-quality approved topics")
+    queue_idx = workflow.index("Mark selected topics as queued")
+    finalize = _step(
+        workflow,
+        "Finalize queued topics",
+        "Sync pipeline status to D1",
+    )
+
+    assert prepare_idx < reject_idx < queue_idx
+    assert "if: always() && inputs.dry_run != true" in finalize
+    assert "steps.mark_produced.outcome" in finalize
+    assert "/tmp/failed-topic-ids.json" in finalize
+    assert "/tmp/selected-topic-ids.json" in finalize
+    assert "action=approve" in finalize
+    assert "id: mark_produced" in workflow
 
 
 def test_staging_generation_workflows_build_before_push():

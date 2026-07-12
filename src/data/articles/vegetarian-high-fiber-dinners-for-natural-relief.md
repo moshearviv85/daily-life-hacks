@@ -103,33 +103,9 @@ If you want it milder, use less curry powder or pick a blend labeled mild. If yo
 
 Leftovers keep about **3 to 4 days** in the fridge. The sauce thickens as it sits, so add a splash of water or broth when you reheat.
 
-## A weeknight reality check
-
-Most dinners fall apart because the cook is tired, not because the steps are hard. If you are staring at the pot thinking this was a mistake, you are in good company. Turn the heat down, add a splash of water, and give it two minutes. Taste for salt last. Salt wakes everything up, and it is easier to add than to fix.
-
-## The mistake I see most often
-
-People crank the heat because they are hungry. Then the bottom scorches while the middle stays shy. A gentle simmer is boring, and that is the point. You want the sauce to reduce without turning into a paste. If it looks tight, loosen it. If it looks soupy, give it time with the lid off.
-
-## Make it a little bigger without more work
-
-If you want another serving tomorrow, double the beans or grains and keep the spice level the same. Leftovers hate being shy on seasoning anyway. Pack them in a wide container so they cool faster, then refrigerate. Reheat with a spoonful of water so the sauce comes back to life.
-
 ## Serving ideas that still feel like a meal
 
 A pile of vegetables can feel like a side dish unless you give it a anchor. Think plain yogurt, a fried egg, a scoop of rice, or a warm tortilla. You are not trying to impress anyone. You are trying to sit down and eat something that holds you. And on nights when you want something that looks a little more composed, these [stuffed portobello mushrooms with quinoa, spinach, and feta](/stuffed-portobello-mushrooms-quinoa-spinach-feta/) carry dinner without a single meat pep talk.
-
-## If the flavor feels flat
-
-Acid usually fixes flat. A squeeze of lemon, a splash of vinegar, or even a spoon of yogurt can drag flavor forward. Fat carries spice, so a little extra olive oil can help if the heat reads harsh. If it tastes muddy, add salt in tiny pinches and taste between each one.
-
-## What I do when I am out of one ingredient
-
-Swap like a human, not like a contestant. Onion for shallot, kale for spinach, water for half the coconut milk. Keep the bones the same: aromatics, salt, something creamy or starchy, something with bite. Write your swap on a sticky note if you liked it. Future you will appreciate the cheat sheet.
-
-## One more practical note
-
-If you are reading this at night, bookmark it and try one idea tomorrow. If you are reading it hungry, eat first, then come back. Good decisions rarely happen on an empty stomach and a short fuse.
 
 ## One more practical note
 

@@ -79,19 +79,3 @@ If you aren't a fan of zucchini, you can easily swap in asparagus or fresh green
 There's no complicated glaze or reduction sauce to make here unless you really want to do the extra dishes. A hefty squeeze of fresh lemon juice right when it comes out of the oven is usually all the fish needs to brighten up. 
 
 If you happen to have a little plain Greek yogurt, Dijon mustard, or an old jar of pesto in the fridge, a quick dollop on the side works nicely too. Leftover salmon and veggies will keep in the fridge for a day or two. Reheat it very gently in the microwave or enjoy it cold over a salad so the fish doesn't turn rubbery. It's one pan, one timer, and one less decision you have to make today.
-
-## What I do when I am out of one ingredient
-
-Swap like a human, not like a contestant. Onion for shallot, kale for spinach, water for half the coconut milk. Keep the bones the same: aromatics, salt, something creamy or starchy, something with bite. Write your swap on a sticky note if you liked it. Future you will appreciate the cheat sheet.
-
-## A weeknight reality check
-
-Most dinners fall apart because the cook is tired, not because the steps are hard. If you are staring at the pot thinking this was a mistake, you are in good company. Turn the heat down, add a splash of water, and give it two minutes. Taste for salt last. Salt wakes everything up, and it is easier to add than to fix.
-
-## The mistake I see most often
-
-People crank the heat because they are hungry. Then the bottom scorches while the middle stays shy. A gentle simmer is boring, and that is the point. You want the sauce to reduce without turning into a paste. If it looks tight, loosen it. If it looks soupy, give it time with the lid off.
-
-## Make it a little bigger without more work
-
-If you want another serving tomorrow, double the beans or grains and keep the spice level the same. Leftovers hate being shy on seasoning anyway. Pack them in a wide container so they cool faster, then refrigerate. Reheat with a spoonful of water so the sauce comes back to life.

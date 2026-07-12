@@ -64,11 +64,3 @@ Once the beans are perfectly soft to your liking, add a generous amount of salt 
 If you plan to use these beans in a recipe that is already heavily seasoned (like a spicy chili), you can just leave the beans plain and season them later. 
 
 You will get significantly more food out of a $2 bag of dried beans than you ever will from $2 worth of cans. You can cook a massive batch on a Sunday afternoon while you're doing other things around the house, stick them in the fridge, and use them all week in tacos, soups, and quick salads. A pot of [three-bean vegetarian chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) is the obvious first assignment for that Sunday batch. It's one of those minor kitchen skills that pays off constantly.
-
-## Before you buy another gadget
-
-Most kitchen wins come from a sharp knife, a big cutting board, and a pan that does not warp. If a tool promises to replace skill, be skeptical. If it removes a step you hate every day, it might be worth it.
-
-## When a hack fails, check the boring variables
-
-Temperature, time, and moisture ruin more projects than talent does. If something worked once and never again, something in the environment changed. Write down what you did the time it worked. Yes, it feels silly. It also works.

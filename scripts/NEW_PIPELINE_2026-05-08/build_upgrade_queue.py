@@ -81,9 +81,7 @@ def main() -> None:
     pin_report = load_json(pin_files[0]) if pin_files else {}
     pin_boost = pin_boost_by_slug(pin_report if isinstance(pin_report, dict) else {})
 
-    rows = seo.get("top50_priority") or []
-    if not rows and isinstance(seo.get("articles"), list):
-        rows = seo["articles"]
+    rows = seo.get("articles") or seo.get("top50_priority") or []
 
     scored = []
     for row in rows:

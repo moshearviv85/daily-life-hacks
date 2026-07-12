@@ -9,10 +9,10 @@
 | Metric | Count |
 |--------|------:|
 | Articles scanned | 186 |
-| With ≥1 issue | 156 |
+| With ≥1 issue | 89 |
 | Missing FAQ | 0 |
-| No body internal links | 30 |
-| Thin body (&lt;800 words) | 51 |
+| No body internal links | 29 |
+| Thin body (&lt;800 words) | 56 |
 
 Full list: `pipeline-data/reports/seo-onpage-2026-07-12.*`
 

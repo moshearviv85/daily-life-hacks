@@ -72,19 +72,3 @@ The massive secret the food industry doesn't heavily publicize is that the dates
 *   **"Sell By":** This date is strictly for the grocery store employees to manage inventory on the shelf. It has nothing to do with whether the food in your fridge is suddenly deadly. 
 
 Figuring out how to reduce food waste at home mostly comes down to trusting your own senses. If it looks okay, feels normal, and smells perfectly fine... it's highly likely perfectly safe to eat. Start trusting your nose over arbitrary ink stamps! Planning helps just as much as storage, by the way. A basic [food prep guide with recipes](/food-prep-guide-recipes/) means every grocery item comes home with a job already assigned to it.
-
-## When a hack fails, check the boring variables
-
-Temperature, time, and moisture ruin more projects than talent does. If something worked once and never again, something in the environment changed. Write down what you did the time it worked. Yes, it feels silly. It also works.
-
-## Safety without a lecture
-
-Hot oil, sharp blades, and heavy pots are not dramatic villains. They are just hazards you respect. Dry wet hands before you grab a knife. Turn handles inward. If you are tired, do the smaller task tonight and finish tomorrow.
-
-## Maintenance beats motivation
-
-Motivation is weather. Systems are climate. A ten-minute reset after cooking saves you from a weekend deep clean you will dread. Wipe the counter, soak the pan, take the trash out if it is full.
-
-## If you share a kitchen
-
-Label leftovers with a date. Use one shelf for meal prep. Negotiate one rule everyone can keep, like dishes in the sink overnight. Peace is a kitchen hack too.

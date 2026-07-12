@@ -25,7 +25,9 @@ export const PILLARS = [
 
 export type PillarCluster = (typeof PILLARS)[number]["cluster"];
 
-export const PILLAR_SLUGS = new Set(PILLARS.map((p) => p.slug));
+export const PILLAR_SLUGS: ReadonlySet<string> = new Set(
+  PILLARS.map((p) => p.slug),
+);
 
 export const CLUSTER_KEYWORDS: Record<PillarCluster, string[]> = {
   fiber: [

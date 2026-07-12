@@ -83,7 +83,16 @@ jobs:
             --rejected-output /tmp/quality-rejected-topics.json \
             > /tmp/topic-ids.json
 
+      - name: Prepare selected topic ids
+        run: |
+          python - <<'PY' > /tmp/selected-topic-ids.json
+          import json
+          rows = json.load(open('pipeline-data/selected-topics.json'))
+          print(json.dumps([int(r['id']) for r in rows if r.get('id')]))
+          PY
+
       - name: Reject low-quality approved topics
+        if: inputs.dry_run != true
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
@@ -103,14 +112,10 @@ jobs:
           fi
 
       - name: Mark selected topics as queued
+        if: inputs.dry_run != true
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
-          python - <<'PY' > /tmp/selected-topic-ids.json
-          import json
-          rows = json.load(open('pipeline-data/selected-topics.json'))
-          print(json.dumps([int(r['id']) for r in rows if r.get('id')]))
-          PY
           IDS=$(cat /tmp/selected-topic-ids.json)
           if [ "$IDS" != "[]" ]; then
             RESP=$(curl -fsS -X POST \
@@ -265,6 +270,7 @@ jobs:
           gh run watch "$RUN_ID" --exit-status
 
       - name: Mark topics as produced
+        id: mark_produced
         if: steps.produce.outputs.has_produced == 'true' && inputs.dry_run != true
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
@@ -279,19 +285,25 @@ jobs:
             python -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok') is True, d" <<< "$RESP"
           fi
 
-      - name: Return failed topics to approved
-        if: inputs.dry_run != true
+      - name: Finalize queued topics
+        if: always() && inputs.dry_run != true
         env:
           DASHBOARD_PASSWORD: ${{ secrets.DASHBOARD_PASSWORD }}
         run: |
-          IDS=$(cat /tmp/failed-topic-ids.json)
+          if [ "${{ steps.mark_produced.outcome }}" = "success" ]; then
+            IDS=$(cat /tmp/failed-topic-ids.json 2>/dev/null || echo "[]")
+            REASON="pipeline production failed; returned to approved for retry"
+          else
+            IDS=$(cat /tmp/selected-topic-ids.json 2>/dev/null || echo "[]")
+            REASON="pipeline stopped before topics were marked produced; returned to approved"
+          fi
           if [ "$IDS" != "[]" ]; then
-            echo "Failed topic ids return to approved for retry: $IDS"
+            echo "Queued topic ids return to approved: $IDS"
             RESP=$(curl -fsS -X POST \
               "${PIPELINE_DASHBOARD_BASE_URL}/api/pipeline-topics?key=${DASHBOARD_PASSWORD}&action=approve" \
               -H "x-api-key: ${DASHBOARD_PASSWORD}" \
               -H "Content-Type: application/json" \
-              -d "{\"ids\": $IDS, \"reason\": \"pipeline production failed; returned to approved for retry\"}")
+              -d "{\"ids\": $IDS, \"reason\": \"$REASON\"}")
             python -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok') is True, d" <<< "$RESP"
           fi
 

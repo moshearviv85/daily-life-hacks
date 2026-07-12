@@ -58,15 +58,3 @@ Leftover rice acts as the perfect base for stuffing bell peppers, large tomatoes
 Cold rice works surprisingly well as the base for a hearty salad. Toss it in a bowl with chopped cucumbers, cherry tomatoes, fresh parsley, and a sharp vinaigrette. You can add chickpeas, crumbled feta cheese, or some toasted nuts for crunch. Because the rice is sturdy, this salad holds up beautifully in the fridge, meaning you can make a big batch on Monday and happily eat it for lunch on Tuesday and Wednesday. 
 
 The main rule of rice is food safety: try to get your extra rice into the fridge within a couple of hours of cooking it, and plan to use it up within a few days. With just a tiny bit of effort, a massive container of extra rice stops being a guilt-inducing waste and becomes the easiest part of your meal prep.
-
-## When a hack fails, check the boring variables
-
-Temperature, time, and moisture ruin more projects than talent does. If something worked once and never again, something in the environment changed. Write down what you did the time it worked. Yes, it feels silly. It also works.
-
-## Safety without a lecture
-
-Hot oil, sharp blades, and heavy pots are not dramatic villains. They are just hazards you respect. Dry wet hands before you grab a knife. Turn handles inward. If you are tired, do the smaller task tonight and finish tomorrow.
-
-## Maintenance beats motivation
-
-Motivation is weather. Systems are climate. A ten-minute reset after cooking saves you from a weekend deep clean you will dread. Wipe the counter, soak the pan, take the trash out if it is full.

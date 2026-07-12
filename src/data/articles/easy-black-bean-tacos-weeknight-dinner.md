@@ -76,23 +76,3 @@ The toppings are up to what you feel like digging out of the crisper drawer. Shr
 If you're particularly hungry, serving these with a quick side of rice or a simple vinegar-based slaw rounds the meal out nicely. 
 
 The seasoned bean mixture also keeps wonderfully in the fridge for a few days. You can easily warm up a small portion the next day and make tacos for lunch without having to start the cooking process all over again. No advanced culinary techniques, no pots simmering for three hours. Just a highly reliable, quick dinner that doesn't ask much of you when you're tired. And if you'd rather skip the tortilla juggling entirely, the same pantry logic powers my [high-fiber burrito bowl meal prep](/high-fiber-burrito-bowl-meal-prep/).
-
-## If the flavor feels flat
-
-Acid usually fixes flat. A squeeze of lemon, a splash of vinegar, or even a spoon of yogurt can drag flavor forward. Fat carries spice, so a little extra olive oil can help if the heat reads harsh. If it tastes muddy, add salt in tiny pinches and taste between each one.
-
-## What I do when I am out of one ingredient
-
-Swap like a human, not like a contestant. Onion for shallot, kale for spinach, water for half the coconut milk. Keep the bones the same: aromatics, salt, something creamy or starchy, something with bite. Write your swap on a sticky note if you liked it. Future you will appreciate the cheat sheet.
-
-## A weeknight reality check
-
-Most dinners fall apart because the cook is tired, not because the steps are hard. If you are staring at the pot thinking this was a mistake, you are in good company. Turn the heat down, add a splash of water, and give it two minutes. Taste for salt last. Salt wakes everything up, and it is easier to add than to fix.
-
-## The mistake I see most often
-
-People crank the heat because they are hungry. Then the bottom scorches while the middle stays shy. A gentle simmer is boring, and that is the point. You want the sauce to reduce without turning into a paste. If it looks tight, loosen it. If it looks soupy, give it time with the lid off.
-
-## Make it a little bigger without more work
-
-If you want another serving tomorrow, double the beans or grains and keep the spice level the same. Leftovers hate being shy on seasoning anyway. Pack them in a wide container so they cool faster, then refrigerate. Reheat with a spoonful of water so the sauce comes back to life.

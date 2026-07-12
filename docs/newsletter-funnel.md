@@ -9,7 +9,8 @@ Inline Newsletter / NewsletterPopup
   → POST /api/subscribe (Kit v4)
   → D1 subscriptions + funnel_events
   → client redirect /thank-you?source=&category=&segment=
-  → soft CTA to /guides pillars (PDFs not in repo yet)
+  → direct 7-Day High-Fiber Meal Plan PDF download
+  → optional follow-on CTAs to /guides/ pillars
 ```
 
 ## Code
@@ -20,6 +21,7 @@ Inline Newsletter / NewsletterPopup
 | Inline form | `src/components/Newsletter.astro` |
 | Popup | `src/components/NewsletterPopup.astro` |
 | Thank-you | `src/pages/thank-you.astro` |
+| Primary PDF | `public/downloads/7-day-high-fiber-meal-plan.pdf` |
 
 ## Kit tags (defaults in code)
 
@@ -27,7 +29,7 @@ Category: recipes / nutrition / tips
 Source: footer / popup  
 Segments: `recipes-breakfast`, `recipes-main`, `nutrition-foundations`, `nutrition-comparisons`, `tips-storage`, `tips-systems`
 
-### Pillar segments (ready via env — create tags in Kit first)
+### Pillar segments (ready via env; create tags in Kit first)
 
 Set when tags exist in Kit:
 
@@ -43,8 +45,8 @@ Pass `email_segment` from forms on pillar pages when wiring CTAs.
 
 | Magnet | Status |
 |--------|--------|
-| 7-Day High-Fiber Meal Plan PDF | **Not in repo** — thank-you no longer 404s; links fiber guide |
-| $60 Week Meal Plan PDF | **Not in repo** — thank-you links budget playbook |
+| 7-Day High-Fiber Meal Plan PDF | Live at `/downloads/7-day-high-fiber-meal-plan.pdf` and linked from thank-you |
+| $60 Week Meal Plan PDF | Live at `/downloads/60-dollar-week-meal-plan.pdf`; not currently the primary funnel offer |
 | Per-pillar HTML guides | Live pillars on `/guides/` |
 
 ## Manual Kit checklist
@@ -52,10 +54,12 @@ Pass `email_segment` from forms on pillar pages when wiring CTAs.
 1. Confirm form ID `9202679` (or `KIT_FORM_ID`) still active.
 2. Confirm welcome sequence fires on form subscribe.
 3. Create pillar tags → set Cloudflare env vars above.
-4. When PDFs are ready, place under `public/downloads/` and restore download CTAs on thank-you.
+4. Keep the visible signup promise and Kit welcome sequence on the same weekly cadence.
+5. Verify the primary PDF URL after each production deploy.
 
 ## Measurement
 
 - D1 `subscriptions` by `page` / `source`
 - `funnel_events` `signup_completed` / `signup_failed`
+- `funnel_events` `lead_magnet_download` from the thank-you page
 - Dashboard subscribers modal

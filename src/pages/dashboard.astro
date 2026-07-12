@@ -1769,13 +1769,13 @@ function renderBuildData() {
 
   // Missing web image table
   el('missing-web-tbody').innerHTML = d.images.missingWeb.map(a =>
-    `<tr><td><a href="/${a.slug}" target="_blank" style="color:var(--orange);text-decoration:none">${a.slug}</a></td>
+    `<tr><td><a href="/${a.slug}/" target="_blank" style="color:var(--orange);text-decoration:none">${a.slug}</a></td>
      <td>${a.category}</td><td>${a.pub ? '<span class="badge badge-green">LIVE</span>' : '<span class="badge badge-gray">draft</span>'}</td></tr>`
   ).join('') || '<tr><td colspan="3" class="empty">None missing!</td></tr>';
 
   // Missing pin image table
   el('missing-pin-tbody').innerHTML = d.images.missingPin.map(a =>
-    `<tr><td><a href="/${a.slug}" target="_blank" style="color:var(--orange);text-decoration:none">${a.slug}</a></td>
+    `<tr><td><a href="/${a.slug}/" target="_blank" style="color:var(--orange);text-decoration:none">${a.slug}</a></td>
      <td>${a.category}</td><td>${a.pub ? '<span class="badge badge-green">LIVE</span>' : '<span class="badge badge-gray">draft</span>'}</td></tr>`
   ).join('') || '<tr><td colspan="3" class="empty">None missing!</td></tr>';
 

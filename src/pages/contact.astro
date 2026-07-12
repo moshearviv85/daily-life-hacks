@@ -43,62 +43,17 @@ const description = "Get in touch with the Daily Life Hacks team.";
                 class="p-6 rounded-xl border"
                 style="background-color: var(--card-bg); border-color: var(--border-color);"
             >
-                <h2 class="text-2xl font-bold mb-4">Send us a message</h2>
-                <form class="space-y-4">
-                    <div>
-                        <label
-                            for="name"
-                            class="block text-sm font-medium mb-1"
-                            style="color: var(--label-color)">Name</label
-                        >
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-colors"
-                            style="background-color: var(--input-bg); border-color: var(--border-color); color: var(--text-color);"
-                            placeholder="Your name"
-                        />
-                    </div>
-
-                    <div>
-                        <label
-                            for="email"
-                            class="block text-sm font-medium mb-1"
-                            style="color: var(--label-color)">Email</label
-                        >
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-colors"
-                            style="background-color: var(--input-bg); border-color: var(--border-color); color: var(--text-color);"
-                            placeholder="your@email.com"
-                        />
-                    </div>
-
-                    <div>
-                        <label
-                            for="message"
-                            class="block text-sm font-medium mb-1"
-                            style="color: var(--label-color)">Message</label
-                        >
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="4"
-                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-sky-500 focus:border-sky-500 outline-none transition-colors"
-                            style="background-color: var(--input-bg); border-color: var(--border-color); color: var(--text-color);"
-                            placeholder="How can we help?"></textarea>
-                    </div>
-
-                    <button
-                        type="submit"
-                        class="w-full bg-[#F29B30] text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition-colors"
-                    >
-                        Send Message
-                    </button>
-                </form>
+                <h2 class="text-2xl font-bold mb-4">Email us directly</h2>
+                <p class="mb-6 leading-relaxed" style="color: var(--text-color);">
+                    Email is the most reliable way to reach us. The button below
+                    opens a new message in your email app.
+                </p>
+                <a
+                    href="mailto:hello@daily-life-hacks.com?subject=Daily%20Life%20Hacks%20message"
+                    class="inline-flex w-full items-center justify-center rounded-lg bg-[#F29B30] px-6 py-3 font-bold text-white transition-colors hover:bg-orange-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F29B30]"
+                >
+                    Email Daily Life Hacks
+                </a>
             </div>
         </div>
     </div>

@@ -12,11 +12,11 @@ const description = "You're on the Daily Life Hacks newsletter list.";
 
 const nextLink =
   category === "recipes"
-    ? "/recipes"
+    ? "/recipes/"
     : category === "nutrition"
-      ? "/nutrition"
+      ? "/nutrition/"
       : category === "tips"
-        ? "/tips"
+        ? "/tips/"
         : "/guides/";
 
 const nextLabel =
@@ -30,23 +30,24 @@ const nextLabel =
 
 const interestLabel = segment ? segment.replace(/-/g, " ") : "";
 
-/** PDFs are not in-repo yet — soft-fail to live pillar guides (CP5.5). */
 const magnets = [
   {
-    eyebrow: "Start here",
-    title: "Fiber on a budget",
-    body: "The complete guide to closing the fiber gap with dry goods, freezer produce, and real price math.",
-    href: "/how-to-eat-more-fiber-on-a-budget-complete-guide/",
-    cta: "Open the fiber guide",
+    eyebrow: "Your download",
+    title: "7-Day High-Fiber Meal Plan",
+    body: "Seven days of real meals, a grocery list, and no hunt through six open tabs at dinnertime.",
+    href: "/downloads/7-day-high-fiber-meal-plan.pdf",
+    cta: "Download the meal plan",
     primary: true,
+    download: true,
   },
   {
     eyebrow: "Bonus",
     title: "The budget playbook",
-    body: "Healthy eating systems that keep the cart under control — then dig into high protein on a budget.",
+    body: "Healthy eating systems that keep the cart under control, plus a full guide to high protein on a budget.",
     href: "/eat-healthy-on-a-budget-complete-playbook/",
     cta: "Open the budget playbook",
     primary: false,
+    download: false,
   },
   {
     eyebrow: "Also useful",
@@ -55,6 +56,7 @@ const magnets = [
     href: "/high-protein-on-a-budget-complete-guide/",
     cta: "Open the protein guide",
     primary: false,
+    download: false,
   },
 ];
 ---
@@ -120,6 +122,8 @@ const magnets = [
             </p>
             <a
               href={magnet.href}
+              download={magnet.download ? "7-day-high-fiber-meal-plan.pdf" : undefined}
+              data-lead-magnet-download={magnet.download ? "true" : undefined}
               class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-lg font-bold transition-transform hover:-translate-y-1"
               style={
                 magnet.primary
@@ -133,8 +137,8 @@ const magnets = [
         ))
       }
       <p class="text-sm text-center" style="color: var(--muted-color);">
-        Printable PDF meal plans are coming next — for now these guides are the
-        full playbooks on the site.
+        The PDF is ready now. The two guides stay online when you want the full
+        price math and meal-prep system.
       </p>
     </section>
 
@@ -144,9 +148,9 @@ const magnets = [
       <div class="grid gap-8 md:grid-cols-3">
         <div>
           <div class="text-4xl mb-4 font-black" style="color: #F29B30;">1</div>
-          <h3 class="text-xl font-bold mb-2" style="color: var(--heading-color);">One email a day</h3>
+          <h3 class="text-xl font-bold mb-2" style="color: var(--heading-color);">One useful email a week</h3>
           <p class="text-base" style="color: var(--muted-color); line-height: 1.6;">
-            A brand new recipe, nutrition guide, or tip sent directly to you before it hits the site.
+            One recipe, nutrition guide, or kitchen fix you can actually use.
           </p>
         </div>
         <div>
@@ -187,4 +191,32 @@ const magnets = [
   </main>
 
   <Footer />
+
+  <script define:vars={{ source, category, segment }}>
+    function setupLeadMagnetTracking() {
+      document.querySelectorAll("[data-lead-magnet-download]").forEach((link) => {
+        if (link.getAttribute("data-event-bound") === "true") return;
+        link.setAttribute("data-event-bound", "true");
+        link.addEventListener("click", () => {
+          fetch("/api/event", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            keepalive: true,
+            body: JSON.stringify({
+              event_type: "lead_magnet_download",
+              source,
+              page: window.location.pathname,
+              category,
+              email_segment: segment,
+              metadata: {
+                asset: "/downloads/7-day-high-fiber-meal-plan.pdf",
+              },
+            }),
+          }).catch(() => {});
+        });
+      });
+    }
+
+    document.addEventListener("astro:page-load", setupLeadMagnetTracking);
+  </script>
 </BaseLayout>
