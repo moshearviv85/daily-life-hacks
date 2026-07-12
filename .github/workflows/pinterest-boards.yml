@@ -7,6 +7,10 @@ on:
         description: 'Create missing target boards'
         type: boolean
         default: false
+      update_descriptions:
+        description: 'Push SEO descriptions to existing boards'
+        type: boolean
+        default: false
 
 jobs:
   boards:
@@ -34,5 +38,6 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           CREATE_BOARDS: ${{ github.event.inputs.create }}
+          UPDATE_DESCRIPTIONS: ${{ github.event.inputs.update_descriptions }}
           PYTHONUNBUFFERED: "1"
         run: python scripts/pinterest_boards.py

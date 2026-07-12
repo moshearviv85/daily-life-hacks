@@ -24,43 +24,44 @@ REFRESH_TOKEN = os.environ["PINTEREST_REFRESH_TOKEN"]
 GH_PAT = os.environ.get("GH_PAT", "")
 GH_REPO = os.environ.get("GITHUB_REPOSITORY", "")
 CREATE_BOARDS = os.environ.get("CREATE_BOARDS", "false").lower() == "true"
+UPDATE_DESCRIPTIONS = os.environ.get("UPDATE_DESCRIPTIONS", "false").lower() == "true"
 
 
 # Keep in sync with functions/api/_pin-metadata.js (PINTEREST_BOARDS) and docs/pinterest-boards.md
 TARGET_BOARDS = [
     {
         "name": "High Fiber Dinner and Gut Health Recipes",
-        "description": "High-fiber dinners, beans, lentils, oats, and gut-friendly recipes from Daily Life Hacks.",
+        "description": "High fiber dinner recipes and gut health foods that actually taste good. Bean recipes, lentil soups, overnight oats, and easy ways to hit 30 grams of fiber a day on a real budget. Practical high fiber meal ideas from Daily Life Hacks, backed by USDA nutrition data.",
         "id": "1124140825679184032",
     },
     {
         "name": "Gut Health Tips and Nutrition Charts",
-        "description": "Gut health tips, nutrition charts, labels, and everyday nutrition ideas from Daily Life Hacks.",
+        "description": "Nutrition charts, food comparison infographics, and gut health tips you can actually use. Fiber per dollar rankings, protein cost comparisons, grocery label reading, and simple nutrition facts explained. Data-driven healthy eating charts from Daily Life Hacks.",
         "id": "1124140825679184034",
     },
     {
         "name": "Healthy Meal Prep & Kitchen Tips",
-        "description": "Meal prep systems, breakfast, smoothies, snacks, and kitchen tips from Daily Life Hacks.",
+        "description": "Meal prep ideas for beginners, healthy breakfast recipes, smoothies, snack prep, and kitchen tips that save time and money. Weekly meal prep systems, batch cooking basics, and easy healthy recipes for busy weeks from Daily Life Hacks.",
         "id": "1124140825679184036",
     },
     {
         "name": "Easy Dinner Recipes",
-        "description": "Practical weeknight dinners, simple recipes, and real-life meal ideas from Daily Life Hacks.",
+        "description": "Easy dinner recipes for busy weeknights. Simple healthy dinner ideas, one pot meals, 30 minute dinners, budget friendly family dinner recipes, and real life meal ideas that don't need fancy ingredients. From Daily Life Hacks.",
         "id": "1124140825679548778",
     },
     {
         "name": "Budget Meals and Grocery Hacks",
-        "description": "Affordable meals, grocery planning, and kitchen money-saving ideas from Daily Life Hacks.",
+        "description": "Budget meals, cheap healthy recipes, and grocery shopping hacks. What protein and fiber actually cost per dollar, cheap grocery staples that stretch, and eating healthy on a budget without extreme couponing. Data-backed grocery savings from Daily Life Hacks.",
         "id": "1124140825679548779",
     },
     {
         "name": "High Protein Meals and Smart Swaps",
-        "description": "High-protein meals, food-first swaps, and filling everyday ideas from Daily Life Hacks.",
+        "description": "High protein meals and cheap protein sources ranked by real cost per gram. High protein breakfast ideas, budget proteins like beans, eggs, and cottage cheese, plus smart food swaps that add protein without supplements. From Daily Life Hacks.",
         "id": "1124140825679548780",
     },
     {
         "name": "Food Storage and Freezer Tips",
-        "description": "Food storage, freezer meals, leftovers, and prep tips from Daily Life Hacks.",
+        "description": "Food storage tips, freezer meal ideas, and how to keep groceries fresh longer. Leftover makeovers, pantry organization, freezing guides for produce and bread, and prep tips that cut food waste and save money. From Daily Life Hacks.",
         "id": "1124140825679548781",
     },
 ]
@@ -162,8 +163,18 @@ def create_board(access_token: str, board: dict) -> dict:
     return resp.json()
 
 
+def update_board_description(access_token: str, board_id: str, description: str) -> None:
+    resp = pinterest_request(
+        "PATCH", f"/boards/{board_id}", access_token, json={"description": description}
+    )
+    if not resp.ok:
+        print(f"ERROR: update board {board_id} failed, HTTP {resp.status_code}")
+        print(resp.text[:800])
+        sys.exit(1)
+
+
 def main() -> None:
-    print(f"Pinterest board manager. create={CREATE_BOARDS}")
+    print(f"Pinterest board manager. create={CREATE_BOARDS} update_descriptions={UPDATE_DESCRIPTIONS}")
     access_token = get_access_token()
     existing = list_boards(access_token)
     by_name = {normalize_name(board.get("name", "")): board for board in existing}
@@ -173,8 +184,12 @@ def main() -> None:
         normalized = normalize_name(target["name"])
         if normalized in by_name:
             board = by_name[normalized]
+            status = "existing"
+            if UPDATE_DESCRIPTIONS and board.get("description") != target["description"]:
+                update_board_description(access_token, board["id"], target["description"])
+                status = "description_updated"
             results.append({
-                "status": "existing",
+                "status": status,
                 "name": target["name"],
                 "id": board.get("id", ""),
             })
