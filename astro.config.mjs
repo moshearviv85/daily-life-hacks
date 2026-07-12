@@ -44,6 +44,7 @@ function loadSitemapExclusions() {
   // Exclude utility pages that should not compete with article content in Search.
   for (const path of [
     '/dashboard',
+    '/deploy-proof',
     '/thank-you',
     '/contact',
     '/privacy',

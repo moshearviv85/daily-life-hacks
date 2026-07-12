@@ -1,0 +1,19 @@
+---
+const commit =
+  process.env.CF_PAGES_COMMIT_SHA ??
+  process.env.GITHUB_SHA ??
+  process.env.COMMIT_SHA ??
+  'local';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Deployment proof</title>
+  </head>
+  <body>
+    <code data-commit={commit}>{commit}</code>
+  </body>
+</html>

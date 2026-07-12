@@ -74,8 +74,8 @@ jobs:
         if: github.ref_name == 'main'
         run: |
           for i in $(seq 1 40); do
-            LIVE_SHA=$(curl -fsS "https://www.daily-life-hacks.com/deploy-meta.json?expected=${GITHUB_SHA}" \
-              | python -c "import json,sys; print(json.load(sys.stdin).get('commit',''))" 2>/dev/null || true)
+            LIVE_SHA=$(curl -fsS "https://www.daily-life-hacks.com/deploy-proof/?expected=${GITHUB_SHA}" \
+              | python -c "import re,sys; match=re.search(r'data-commit=\"([^\"]+)\"', sys.stdin.read()); print(match.group(1) if match else '')" 2>/dev/null || true)
             echo "[$i] live=$LIVE_SHA expected=$GITHUB_SHA"
             if [ "$LIVE_SHA" = "$GITHUB_SHA" ]; then
               exit 0
