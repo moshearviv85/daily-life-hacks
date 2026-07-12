@@ -37,6 +37,12 @@ jobs:
           node-version: "20"
           cache: npm
 
+      - name: Read Pages project configuration
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          command: pages project list --json
+
       - name: Install dependencies
         run: npm ci
 
