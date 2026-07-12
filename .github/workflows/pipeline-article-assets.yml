@@ -13,7 +13,9 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  # actions: write — bot pushes with GITHUB_TOKEN never fire on:push workflows,
+  # so the deploy must be dispatched explicitly (workflow_dispatch is exempt).
+  actions: write
 
 env:
   PYTHONUNBUFFERED: "1"
@@ -126,41 +128,46 @@ jobs:
         run: npm run build:checked
 
       - name: Commit and push generated assets
+        id: push_assets
         run: |
           git add src/data/articles/ public/images/ pipeline-data/ \
             public/data/pin-destinations-flat.json || true
           if git diff --cached --quiet; then
             echo "No generated assets to commit"
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
           else
             git commit -m "feat(pipeline): generate assets for ${{ inputs.slug }}
 
           Co-Authored-By: GitHub Actions <github-actions[bot]@users.noreply.github.com>"
             git push origin HEAD:${PIPELINE_TARGET_BRANCH}
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Wait for staging Pages deploy
+      # GITHUB_TOKEN pushes do not trigger on:push workflows (GitHub anti-recursion
+      # rule), so dispatch the deploy explicitly and watch that exact run.
+      - name: Trigger and wait for staging Pages deploy
+        if: steps.push_assets.outputs.pushed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -e
-          echo "Waiting for deploy-cloudflare-pages.yml on staging..."
-          for i in $(seq 1 40); do
-            ROW=$(gh run list --workflow=deploy-cloudflare-pages.yml --branch=staging --limit=1 \
-              --json status,conclusion \
-              --jq '.[0] | "\(.status)|\(.conclusion // "null")"')
-            echo "[$i] $ROW"
-            STATUS=$(echo "$ROW" | cut -d'|' -f1)
-            CONCLUSION=$(echo "$ROW" | cut -d'|' -f2)
-            if [ "$STATUS" = "completed" ] && [ "$CONCLUSION" = "success" ]; then
-              exit 0
-            fi
-            if [ "$STATUS" = "completed" ] && [ "$CONCLUSION" != "success" ]; then
-              exit 1
-            fi
-            sleep 15
+          SINCE=$(date -u -d '30 seconds ago' +%Y-%m-%dT%H:%M:%SZ)
+          gh workflow run deploy-cloudflare-pages.yml --ref "$PIPELINE_TARGET_BRANCH"
+          RUN_ID=""
+          for i in $(seq 1 24); do
+            sleep 5
+            RUN_ID=$(gh run list --workflow=deploy-cloudflare-pages.yml \
+              --branch="$PIPELINE_TARGET_BRANCH" --event=workflow_dispatch --limit=5 \
+              --json databaseId,createdAt \
+              --jq "[.[] | select(.createdAt >= \"$SINCE\")][0].databaseId // empty")
+            [ -n "$RUN_ID" ] && break
           done
-          echo "Timed out waiting for staging deploy"
-          exit 1
+          if [ -z "$RUN_ID" ]; then
+            echo "Dispatched deploy run never appeared"
+            exit 1
+          fi
+          echo "Watching deploy run $RUN_ID"
+          gh run watch "$RUN_ID" --exit-status
 
       - name: Sync pipeline status to D1
         env:

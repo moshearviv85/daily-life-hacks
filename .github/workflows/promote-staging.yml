@@ -10,7 +10,9 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  # actions: write — bot pushes with GITHUB_TOKEN never fire on:push workflows,
+  # so the deploy must be dispatched explicitly (workflow_dispatch is exempt).
+  actions: write
 
 concurrency:
   group: promote-staging-to-production
@@ -48,39 +50,46 @@ jobs:
           npm run build:checked
 
       - name: Merge staging into main
+        id: merge_staging
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout main
+          BEFORE=$(git rev-parse HEAD)
           git merge --no-edit origin/staging
+          AFTER=$(git rev-parse HEAD)
           git push origin main
+          if [ "$BEFORE" = "$AFTER" ]; then
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          fi
 
-      # CP3.1: do not wrangler-deploy here — push to main triggers deploy-cloudflare-pages.yml
-      - name: Wait for production Cloudflare deploy
+      # GITHUB_TOKEN pushes do not trigger on:push workflows (GitHub anti-recursion
+      # rule), so dispatch the deploy explicitly and watch that exact run.
+      - name: Trigger and wait for production Cloudflare deploy
+        if: steps.merge_staging.outputs.pushed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -e
-          echo "Waiting for deploy-cloudflare-pages.yml on main..."
-          for i in $(seq 1 40); do
-            ROW=$(gh run list --workflow=deploy-cloudflare-pages.yml --branch=main --limit=1 \
-              --json databaseId,status,conclusion,createdAt,displayTitle \
-              --jq '.[0] | "\(.databaseId)|\(.status)|\(.conclusion // "null")|\(.createdAt)"')
-            echo "[$i] $ROW"
-            STATUS=$(echo "$ROW" | cut -d'|' -f2)
-            CONCLUSION=$(echo "$ROW" | cut -d'|' -f3)
-            if [ "$STATUS" = "completed" ] && [ "$CONCLUSION" = "success" ]; then
-              echo "Deploy succeeded."
-              exit 0
-            fi
-            if [ "$STATUS" = "completed" ] && [ "$CONCLUSION" != "success" ]; then
-              echo "Deploy finished with conclusion=$CONCLUSION"
-              exit 1
-            fi
-            sleep 15
+          SINCE=$(date -u -d '30 seconds ago' +%Y-%m-%dT%H:%M:%SZ)
+          gh workflow run deploy-cloudflare-pages.yml --ref main
+          RUN_ID=""
+          for i in $(seq 1 24); do
+            sleep 5
+            RUN_ID=$(gh run list --workflow=deploy-cloudflare-pages.yml \
+              --branch=main --event=workflow_dispatch --limit=5 \
+              --json databaseId,createdAt \
+              --jq "[.[] | select(.createdAt >= \"$SINCE\")][0].databaseId // empty")
+            [ -n "$RUN_ID" ] && break
           done
-          echo "Timed out waiting for production deploy"
-          exit 1
+          if [ -z "$RUN_ID" ]; then
+            echo "Dispatched deploy run never appeared"
+            exit 1
+          fi
+          echo "Watching deploy run $RUN_ID"
+          gh run watch "$RUN_ID" --exit-status
 
       - name: Sync production pipeline metadata
         env:

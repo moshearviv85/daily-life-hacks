@@ -71,7 +71,7 @@ def insert_link_block(body: str, pillar_slug: str, anchor: str) -> str | None:
         f"[{anchor}](/{pillar_slug}/)."
     )
     # Prefer after first ## section's first paragraph
-    parts = re.split(r"(^## .+$)", body, maxsplit=2, flags=re.M)
+    parts = re.split(r"(^## .+$)", body, maxsplit=1, flags=re.M)
     if len(parts) >= 3:
         # parts: before, heading, rest
         rest = parts[2]
