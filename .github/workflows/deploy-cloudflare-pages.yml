@@ -41,12 +41,18 @@ jobs:
         run: npm ci
 
       - name: Read Pages project configuration
-        continue-on-error: true
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: 91c501fca325c556efd161e4f904d443
-          command: pages project list
+        id: pages_config
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 91c501fca325c556efd161e4f904d443
+        run: |
+          PROJECT_JSON=$(curl -fsS \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/daily-life-hacks")
+          PRODUCTION_BRANCH=$(python -c "import json,sys; d=json.load(sys.stdin); assert d.get('success') is True, d; print(d['result']['production_branch'])" <<< "$PROJECT_JSON")
+          test -n "$PRODUCTION_BRANCH"
+          echo "production_branch=$PRODUCTION_BRANCH" >> "$GITHUB_OUTPUT"
+          echo "Cloudflare Pages production branch: $PRODUCTION_BRANCH"
 
       - name: Build and verify routing
         run: npm run build:checked
@@ -57,9 +63,28 @@ jobs:
           npx wrangler pages functions build functions --outdir=worker-out --output-routes-path=dist/_routes.json --project-directory=. --build-output-directory=dist
           cp worker-out/index.js dist/_worker.js
 
+      - name: Write deploy proof
+        run: |
+          printf '{"commit":"%s"}\n' "$GITHUB_SHA" > dist/deploy-meta.json
+
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 91c501fca325c556efd161e4f904d443
-          command: pages deploy dist --project-name=daily-life-hacks --branch=${{ github.ref_name }}
+          command: pages deploy dist --project-name=daily-life-hacks --branch=${{ github.ref_name == 'main' && steps.pages_config.outputs.production_branch || github.ref_name }}
+
+      - name: Verify production custom domain
+        if: github.ref_name == 'main'
+        run: |
+          for i in $(seq 1 20); do
+            LIVE_SHA=$(curl -fsS "https://www.daily-life-hacks.com/deploy-meta.json?expected=${GITHUB_SHA}" \
+              | python -c "import json,sys; print(json.load(sys.stdin).get('commit',''))" 2>/dev/null || true)
+            echo "[$i] live=$LIVE_SHA expected=$GITHUB_SHA"
+            if [ "$LIVE_SHA" = "$GITHUB_SHA" ]; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "Production custom domain did not reach commit $GITHUB_SHA"
+          exit 1

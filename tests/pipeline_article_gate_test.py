@@ -247,6 +247,19 @@ def test_article_assets_build_before_push_and_no_wrangler():
     assert "wrangler-action" not in workflow
 
 
+def test_cloudflare_deploy_uses_configured_production_branch_and_live_proof():
+    workflow = _workflow("deploy-cloudflare-pages.yml")
+
+    assert "id: pages_config" in workflow
+    assert "/pages/projects/daily-life-hacks" in workflow
+    assert "production_branch" in workflow
+    assert "steps.pages_config.outputs.production_branch" in workflow
+    assert 'dist/deploy-meta.json' in workflow
+    assert "Verify production custom domain" in workflow
+    assert "https://www.daily-life-hacks.com/deploy-meta.json" in workflow
+    assert 'LIVE_SHA' in workflow
+
+
 def test_run_pipeline_article_only_exits_before_briefs_and_images():
     source = (
         ROOT / "scripts" / "NEW_PIPELINE_2026-05-08" / "run_pipeline.py"
