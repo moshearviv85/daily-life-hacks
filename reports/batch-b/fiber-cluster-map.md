@@ -1,6 +1,6 @@
 # Fiber Authority Cluster Map
 
-Date: 2026-07-12  
+Date: 2026-07-12
 Scope: Batch B1, fiber-only inventory and a bounded first edit of the three core pages
 
 The machine-readable inventory is in [`fiber-cluster-map.csv`](./fiber-cluster-map.csv). It covers 46 article URLs whose slug or title explicitly targets fiber, including two cross-cluster protein pages that B1 did not edit.

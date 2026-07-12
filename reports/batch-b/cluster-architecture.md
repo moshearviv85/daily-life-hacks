@@ -1,6 +1,6 @@
 # Batch B Cluster Architecture
 
-Date: 2026-07-12  
+Date: 2026-07-12
 Scope: B3 explicit cluster architecture only
 
 ## Outcome

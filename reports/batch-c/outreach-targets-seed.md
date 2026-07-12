@@ -37,4 +37,3 @@ Before any outreach:
 - Dry-versus-canned bean comparison: The Kitchn and Consumer Reports health.
 - Classroom/extension chart and CSV: Penn State, Utah State, and Minnesota
   Extension.
-

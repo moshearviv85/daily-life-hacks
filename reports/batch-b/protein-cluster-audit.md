@@ -1,7 +1,7 @@
 # Protein Cluster Audit - Batch B2
 
-**Date:** 2026-07-12  
-**Scope:** Protein per Dollar study, What 50 Grams of Protein Costs per Day, the budget-protein guide, and the large-family spoke.  
+**Date:** 2026-07-12
+**Scope:** Protein per Dollar study, What 50 Grams of Protein Costs per Day, the budget-protein guide, and the large-family spoke.
 **Batch state:** Local bounded edit. Not deployed or published.
 
 ## Series roles
