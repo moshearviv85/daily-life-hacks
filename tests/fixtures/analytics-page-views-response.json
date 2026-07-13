@@ -1,0 +1,19 @@
+{
+  "page_views_by_day": [
+    {"day":"2026-07-06","count":1},
+    {"day":"2026-07-07","count":0},
+    {"day":"2026-07-08","count":0},
+    {"day":"2026-07-09","count":0},
+    {"day":"2026-07-10","count":1},
+    {"day":"2026-07-11","count":0},
+    {"day":"2026-07-12","count":1}
+  ],
+  "page_views_window": {
+    "event_type":"page_view",
+    "timezone":"UTC",
+    "start":"2026-07-06T00:00:00.000Z",
+    "end_exclusive":"2026-07-13T00:00:00.000Z",
+    "days":7,
+    "complete_days":true
+  }
+}

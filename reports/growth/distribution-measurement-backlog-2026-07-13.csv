@@ -1,0 +1,14 @@
+priority,channel,work_item,impact,effort,current_status,completion_evidence,recommended_lane
+P0,Measurement,"Replace scorecard traffic row with sessions or exact page_view-only UTC metric",Very high,M,"Mislabelled all-event count","Tests exclude non-page events; W29 records source and interval",Measurement
+P0,Pinterest,"Define separate contracts for 30d account and 90d eligible-pin metrics",Very high,S,"Different windows/populations currently coexist","Endpoint population window and fetch time embedded in every output",Measurement
+P0,Cross-channel,"Create distribution release ledger and backfill 12 new pins as prepared",Very high,S,"Assets exist without release proof","Status plus external/queue ID publish time experiment and due date",Pinterest release
+P0,Search,"Capture current 28d GSC and Bing baseline and fill weekly scorecard",Very high,M/manual,"GSC blank; Bing blank; indexing action log stale","Dated export/API artifact with search and indexing metrics",Measurement
+P1,Pinterest,"Release one controlled cohort from the 12 new pins at existing safety cap",High,S + approval,"Prepared but not proven queued/posted","Queue/post IDs destination proof and 14d due dates",Pinterest release
+P1,Pinterest,"Run EXP-001 as the only active controlled experiment",High,M,"Seeded/queued only","Matched pin IDs publish dates metrics and keep/kill decision",Pinterest release
+P1,Reddit,"Reconcile karma and post two manual value-first comments before launch posts",High,S/manual,"Placeholder OAuth config; no token; ten drafts only","Current karma evidence and two posted URLs with 24h/7d fields",Reddit
+P1,Measurement,"Publish scorecard without direct main push and production redeploy",Medium-high,M,"Workflow commits directly to main","Artifact or PR/metrics branch with visible failure state",Measurement
+P1,Pinterest,"Preserve reproducible analytics input manifest or redacted snapshot",Medium-high,S,"Scored output exists; raw input absent","Immutable input hash query window and repeatable totals",Measurement
+P2,Search,"Wire safe post-deploy IndexNow for modified canonical articles",Medium,M,"Standalone script not invoked","Dry-run plus logged canonical URL submissions and responses",Search automation
+P2,Search,"Create recurring indexing-health snapshot separate from GSC topic discovery",Medium,M,"Monitoring is manual/stale","Weekly 28d artifact with indexed discovered crawled-not-indexed and validation state",Measurement
+P2,Pinterest,"Complete five manual Idea/kinetic tests after static cohort stabilizes",Medium,L/manual,"Explicit NO-GO; zero completed tests","Five external URLs and 14d metrics; at least 3 of 5 pass",Pinterest release
+P3,Documentation,"Change done criteria to released and measured rather than generated",Medium,S,"Several docs call prepared work running/done","Every running item links to release ID and measurement date",Documentation QA

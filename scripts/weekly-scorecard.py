@@ -9,7 +9,8 @@ Auto metrics:
   - Reddit comment karma      (public about.json, no auth)
   - Pinterest 30d impressions + outbound clicks (user_account/analytics, OAuth refresh flow)
   - Email subscribers total   (/api/stats?key=STATS_KEY)
-  - Funnel pageviews last 7d  (/api/analytics?key=STATS_KEY, funnel_events by_day)
+  - Site page views over the last 7 complete UTC days
+    (/api/analytics?key=STATS_KEY, page_views_by_day)
 
 Manual metrics (rendered as fill-in rows with instructions):
   - Google Search Console impressions/clicks per day
@@ -77,7 +78,7 @@ METRICS = [
     ("email_subscribers",           "Email subscribers (total)",         5,    25,    "auto"),
     ("reddit_comment_karma",        "Reddit comment karma",              5,    50,    "auto"),
     ("ai_citations_day",            "AI citations/day (Bing)",           0,    10,    "manual"),
-    ("pageviews_7d",                "Site funnel pageviews (7d)",        0,    None,  "auto"),
+    ("page_views_7d",               "Site page views (last 7 complete UTC days)", 0, None, "auto"),
 ]
 
 MANUAL_INSTRUCTIONS = {
@@ -234,8 +235,37 @@ def fetch_subscribers():
         return None, f"N/A (/api/stats error: {type(e).__name__})"
 
 
-def fetch_pageviews_7d():
-    """Funnel pageview events, last 7 days, from /api/analytics by_day (page_view proxy)."""
+def parse_page_views_7d(data):
+    """Validate and sum the API's exact seven-complete-UTC-day page-view series."""
+    window = data.get("page_views_window") or {}
+    rows = data.get("page_views_by_day") or []
+    if window.get("event_type") != "page_view":
+        raise ValueError("page_views_window.event_type must be page_view")
+    if window.get("timezone") != "UTC" or window.get("complete_days") is not True:
+        raise ValueError("page-view window must contain complete UTC days")
+    if window.get("days") != 7 or len(rows) != 7:
+        raise ValueError("page-view series must contain exactly 7 days")
+
+    start = datetime.fromisoformat(str(window.get("start", "")).replace("Z", "+00:00"))
+    end = datetime.fromisoformat(str(window.get("end_exclusive", "")).replace("Z", "+00:00"))
+    if start.tzinfo is None or end.tzinfo is None or end - start != timedelta(days=7):
+        raise ValueError("page-view window must be exactly 7 timezone-aware days")
+
+    expected_days = [(start + timedelta(days=i)).date().isoformat() for i in range(7)]
+    actual_days = [str(row.get("day", "")) for row in rows]
+    if actual_days != expected_days:
+        raise ValueError("page-view rows must cover each UTC day exactly once in order")
+
+    total = sum(int(row.get("count") or 0) for row in rows)
+    source = (
+        "auto (/api/analytics page_views_by_day; event_type=page_view; "
+        f"UTC window [{window['start']}, {window['end_exclusive']}); 7 complete days)"
+    )
+    return total, source
+
+
+def fetch_page_views_7d():
+    """Fetch page views for exactly the last seven complete UTC calendar days."""
     if requests is None:
         return None, NA_NO_REQUESTS
     if not STATS_KEY:
@@ -248,15 +278,7 @@ def fetch_pageviews_7d():
         )
         if not resp.ok:
             return None, f"N/A (/api/analytics HTTP {resp.status_code})"
-        data = resp.json()
-        by_day = data.get("by_day") or []
-        cutoff = (datetime.now(timezone.utc).date() - timedelta(days=7)).isoformat()
-        total = 0
-        for row in by_day:
-            day = (row.get("day") or "")[:10]
-            if day >= cutoff:
-                total += int(row.get("count") or 0)
-        return total, "auto (/api/analytics funnel_events by_day — all event types, pageview proxy)"
+        return parse_page_views_7d(resp.json())
     except Exception as e:
         return None, f"N/A (/api/analytics error: {type(e).__name__})"
 
@@ -336,8 +358,8 @@ def main():
     log("[3/4] Email subscribers (/api/stats)")
     values["email_subscribers"], notes["email_subscribers"] = fetch_subscribers()
 
-    log("[4/4] Funnel pageviews 7d (/api/analytics)")
-    values["pageviews_7d"], notes["pageviews_7d"] = fetch_pageviews_7d()
+    log("[4/4] Site page views — last 7 complete UTC days (/api/analytics)")
+    values["page_views_7d"], notes["page_views_7d"] = fetch_page_views_7d()
 
     for key in ("google_impressions_day", "google_clicks_day", "ai_citations_day"):
         values[key] = None
@@ -380,7 +402,12 @@ def main():
         lines.append("")
 
     # Machine-readable block for next week's trend arrows.
-    payload = {"week": week_tag, "generated": today.isoformat(), "values": values}
+    payload = {
+        "week": week_tag,
+        "generated": today.isoformat(),
+        "values": values,
+        "notes": notes,
+    }
     lines.append(f"<!-- scorecard-data: {json.dumps(payload)} -->")
     lines.append("")
 
