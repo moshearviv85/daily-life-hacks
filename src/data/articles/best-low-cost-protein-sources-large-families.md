@@ -14,7 +14,7 @@ parentPillar: high-protein-on-a-budget-complete-guide
 image: "/images/best-low-cost-protein-sources-large-families-main.jpg"
 imageAlt: A wicker basket filled with brown and white eggs sits on a wooden table.
 date: 2026-04-28
-dateModified: 2026-07-12
+dateModified: 2026-07-13
 author: "David Miller"
 featured: false
 faq:
@@ -71,6 +71,8 @@ The cheapest item is not supposed to carry every meal. Pinto beans win the sprea
 
 Pick one food from each job instead of buying five versions of the same expensive protein. The beans or lentils handle the cheap volume. Eggs cover the night when the plan falls apart. Drumsticks keep meat in the rotation without making chicken breast the default tax on every dinner. Tuna or peanut butter handles the lunch nobody remembered to plan.
 
+![Horizontal bar chart comparing six jobs in a low-cost family protein ladder by grams of protein per dollar](/images/family-protein-ladder.jpg)
+
 This also makes sale shopping less chaotic. If eggs jump in price, the whole plan does not collapse because lentils and peanut butter were already doing part of the work. If drumsticks are not the bargain at your store this week, compare thighs, a whole chicken, and the marked-down family packs. The ladder has jobs, not sacred ingredients.
 
 ## One prep block, four different dinners
@@ -84,6 +86,8 @@ Keep one container of beans plain for tacos or rice bowls. Season another portio
 The rest of the ladder stays deliberately unprepared. Eggs are useful because they can become dinner in ten minutes. Tuna is useful because it waits in the cabinet. Peanut butter is useful because a sandwich does not require a family meeting. Meal prep works better when it removes the slow jobs and leaves the easy ones alone.
 
 For a household with teenagers, double the pot before doubling the meat tray. For younger kids who eat smaller portions, keep sauces and toppings separate so one base can go in different directions. A bowl of lentils becomes taco filling for one person, soup for another, and a side dish for the kid who considers mixed food a personal attack.
+
+![Family-style dinner table with roasted chicken drumsticks, beans and brown rice, a vegetable frittata, broccoli, and whole grain bread](/images/family-protein-dinner-table.jpg)
 
 ## Recheck the receipt, not the headline
 

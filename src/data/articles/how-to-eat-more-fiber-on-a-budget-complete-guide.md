@@ -7,7 +7,7 @@ cluster: "budget-fiber"
 image: "/images/how-to-eat-more-fiber-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry pinto beans, split peas, red lentils, oats, and popcorn kernels on a wooden table beside a bag of frozen peas and a loaf of whole wheat bread"
 date: 2026-07-07
-dateModified: 2026-07-12
+dateModified: 2026-07-13
 author: "David Miller"
 featured: false
 faq:
@@ -75,9 +75,13 @@ Talk is cheap. So is this. Here's the fiber skeleton of one day, priced straight
 
 Read that again. Thirty-seven grams, which clears the 28 gram Daily Value with room to spare, and the fiber-carrying ingredients cost less than a dollar.
 
+![Horizontal bar chart showing breakfast, lunch, snack, and dinner adding up to about 37 grams of fiber for 88 cents](/images/fiber-budget-day-breakdown.jpg)
+
 Two honest caveats. First, this is the fiber skeleton, not everything you'd eat. Add milk for the oats, oil and an onion for the soup, eggs or whatever protein you like at dinner, and you're still comfortably under three dollars for the day's core food. Second, if you're currently near the 16 gram national average, don't jump to 37 tomorrow. More on that in the mistakes section, because stomach drama is a lousy onboarding experience.
 
 If you want less spreadsheet and more real-life options, our follow-up shows [what 30 grams of fiber costs across five different days](/what-30-grams-of-fiber-costs-per-day/), including a no-cook version and a mixed grocery day.
+
+![Four inexpensive high-fiber meals: oatmeal with banana, split pea soup, popcorn, and a pinto bean bowl with brown rice and vegetables](/images/fiber-budget-real-day.jpg)
 
 The other thing to notice is that nothing here is precious. Swap the soup for a lentil dish and the numbers barely move, because brown lentils sit at about 34 grams of fiber per dollar. Trade the beans and rice for whole wheat spaghetti with frozen peas stirred in and you're still miles ahead of a takeout menu. The skeleton flexes. The math keeps working.
 

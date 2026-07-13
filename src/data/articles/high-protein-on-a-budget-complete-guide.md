@@ -7,7 +7,7 @@ cluster: "budget-protein"
 image: "/images/high-protein-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry beans and lentils beside a carton of eggs, a whole chicken, canned fish, a block of tofu, and a tub of cottage cheese on a wooden table"
 date: 2026-07-08
-dateModified: 2026-07-12
+dateModified: 2026-07-13
 author: "David Miller"
 featured: false
 faq:
@@ -124,7 +124,11 @@ Talk is cheap, so here's a receipt. Six items, all priced from our dataset:
 
 Call it twenty bucks. That's about 1,047 grams of protein in the basket, or roughly 150 grams a day if one person divided it evenly across seven days. That is three times the FDA labeling benchmark, not a recommended target. The point is the price capacity: the backbone costs $20, and everything you add after that (vegetables, fruit, sauces, the fun stuff) can be chosen for the meals you actually want.
 
+![Horizontal bar chart showing the protein supplied by six foods in a 20 dollar weekly grocery backbone, led by pinto beans and chicken drumsticks](/images/protein-budget-weekly-backbone.jpg)
+
 This basket is a skeleton, not a meal plan. Turning it into actual dinners is a batch-cooking problem, and our [meal prep for beginners system](/meal-prep-for-beginners-complete-system/) walks through that routine without turning your Sunday into a second job.
+
+![A practical weekly protein prep with roasted chicken drumsticks, lentils, eggs, peanut butter, whole wheat bread, and cottage cheese](/images/protein-budget-weekly-prep.jpg)
 
 ## Where protein meets fiber
 
