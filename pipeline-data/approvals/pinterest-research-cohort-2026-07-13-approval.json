@@ -1,7 +1,7 @@
 {
   "schema": "pinterest-cohort-approval/v1",
   "mode": "dry-run-replace_next_30d",
-  "gate": "REVIEW",
+  "gate": "PENDING",
   "status_flow": [
     "REVIEW",
     "APPROVED",
@@ -23,7 +23,7 @@
       "destination_url": "https://www.daily-life-hacks.com/beans-98g-protein-per-dollar/",
       "asset_path": "public/images/pins/beans-98g-protein-per-dollar.jpg",
       "variant": "A",
-      "status": "REVIEW",
+      "status": "PENDING",
       "queue_row_id": "exp-20260713-beans-98g-protein-per-dollar",
       "pinterest_pin_id": null,
       "scheduled_at_utc": "2026-07-17T15:06:00Z",
@@ -47,7 +47,7 @@
       "destination_url": "https://www.daily-life-hacks.com/build-day-dry-goods-aisle/",
       "asset_path": "public/images/pins/build-day-dry-goods-aisle.jpg",
       "variant": "A",
-      "status": "REVIEW",
+      "status": "PENDING",
       "queue_row_id": "exp-20260713-build-day-dry-goods-aisle",
       "pinterest_pin_id": null,
       "scheduled_at_utc": "2026-07-22T19:55:00Z",
@@ -71,7 +71,7 @@
       "destination_url": "https://www.daily-life-hacks.com/stop-paying-protein-it-costs/",
       "asset_path": "public/images/pins/stop-paying-protein-it-costs.jpg",
       "variant": "A",
-      "status": "REVIEW",
+      "status": "PENDING",
       "queue_row_id": "exp-20260713-stop-paying-protein-it-costs",
       "pinterest_pin_id": null,
       "scheduled_at_utc": "2026-07-26T20:58:00Z",
@@ -95,7 +95,7 @@
       "destination_url": "https://www.daily-life-hacks.com/restaurant-fiber-meal-costs-same/",
       "asset_path": "public/images/pins/restaurant-fiber-meal-costs-same.jpg",
       "variant": "B",
-      "status": "REVIEW",
+      "status": "PENDING",
       "queue_row_id": "exp-20260713-restaurant-fiber-meal-costs-same",
       "pinterest_pin_id": null,
       "scheduled_at_utc": "2026-08-02T14:40:00Z",
@@ -119,7 +119,7 @@
       "destination_url": "https://www.daily-life-hacks.com/protein-days-priced-dry-goods/",
       "asset_path": "public/images/pins/protein-days-priced-dry-goods.jpg",
       "variant": "B",
-      "status": "REVIEW",
+      "status": "PENDING",
       "queue_row_id": "exp-20260713-protein-days-priced-dry-goods",
       "pinterest_pin_id": null,
       "scheduled_at_utc": "2026-08-03T14:02:00Z",
@@ -143,7 +143,7 @@
       "destination_url": "https://www.daily-life-hacks.com/only-foods-you-need-high/",
       "asset_path": "public/images/pins/only-foods-you-need-high.jpg",
       "variant": "B",
-      "status": "REVIEW",
+      "status": "PENDING",
       "queue_row_id": "exp-20260713-only-foods-you-need-high",
       "pinterest_pin_id": null,
       "scheduled_at_utc": "2026-08-05T19:57:00Z",
@@ -445,5 +445,6 @@
   "old_row_status_change": {
     "from": "PENDING",
     "to": "REVIEW"
-  }
+  },
+  "gate_updated_at_utc": "2026-07-14T14:28:29Z"
 }
