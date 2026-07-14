@@ -286,5 +286,41 @@
     "sub": "Pinto beans: 98g of protein per dollar. Almonds: 15g. Same store, same month.",
     "footer": "USDA data + real store prices, July 2026",
     "style": "dark"
+  },
+  {
+    "pin_slug": "txt-usda-thrifty-food-plan-a",
+    "kicker": "The USDA priced it, we translated it",
+    "headline": "What the Government Says a Cheap, Healthy Week Costs:",
+    "big_number": "$235",
+    "sub": "For the reference family of four, May 2026 Thrifty Food Plan. That's $1,018.20 a month.",
+    "footer": "USDA Thrifty Food Plan, May 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-usda-thrifty-food-plan-b",
+    "kicker": "The USDA priced it, we translated it",
+    "headline": "The Government Has a Grocery Budget for You. Here's the Number.",
+    "big_number": null,
+    "sub": "The USDA Thrifty Food Plan: $235 a week for a family of four. We break down where every dollar goes.",
+    "footer": "USDA Thrifty Food Plan, May 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-daily-values-explained-a",
+    "kicker": "Where the label numbers come from",
+    "headline": "Why 28 Grams of Fiber? The Actual Math.",
+    "big_number": "28g",
+    "sub": "14 grams of fiber per 1,000 calories, times the label's 2,000-calorie reference. That's the whole formula.",
+    "footer": "FDA Daily Values, 21 CFR 101.9",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-daily-values-explained-b",
+    "kicker": "Where the label numbers come from",
+    "headline": "Who Decided You Need 50g of Protein a Day?",
+    "big_number": null,
+    "sub": "The FDA did, and the math is simpler than you think. We traced both label targets to their source.",
+    "footer": "FDA Daily Values, 21 CFR 101.9",
+    "style": "cream"
   }
 ]
