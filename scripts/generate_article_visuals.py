@@ -300,9 +300,9 @@ def main() -> None:
     save_bar_chart(
         "popcorn-vs-chips-fiber-chart.jpg",
         ["Air-popped popcorn", "Potato chips"],
-        [3.6, 1.2],
-        ["3.6 g", "1.2 g"],
-        "Popcorn Delivers 3x the Fiber per Ounce",
+        [4.1, 0.9],
+        ["4.1 g", "0.9 g"],
+        "Popcorn Delivers About 4.7x the Fiber per Ounce",
         "Equal 1-ounce (28 g) servings",
         "Grams of fiber per 1 oz",
         "Data: USDA FoodData Central values cited in the article | daily-life-hacks.com",
@@ -320,16 +320,16 @@ def main() -> None:
         "Data: USDA FoodData Central and typical labels cited in the article | daily-life-hacks.com",
     )
 
-    # Serving definitions intentionally follow the comparison table in the recipe.
-    save_range_bar_chart(
+    # Full-recipe fiber contributions follow the ingredient math in the article.
+    save_bar_chart(
         "cauliflower-crust-fiber-comparison.jpg",
-        ["This cauliflower crust", "Typical whole-wheat crust", "Typical white crust"],
-        [(4.0, 4.0), (2.0, 3.0), (1.0, 1.0)],
-        ["4 g", "2 to 3 g", "1 g"],
-        "Fiber Across Three Pizza Crust Servings",
-        "Serving definitions differ: 1/4 homemade crust versus typical slices",
-        "Approximate grams of fiber",
-        "Data: Serving estimates stated in the article | daily-life-hacks.com",
+        ["Trimmed cauliflower", "Almond flour"],
+        [18.0, 6.0],
+        ["18 g", "6 g"],
+        "Where This Cauliflower Crust Gets Its Fiber",
+        "About 24 g in the full untopped crust, or 6 g per quarter",
+        "Approximate grams of fiber in the full crust",
+        "Data: USDA FoodData Central values and ingredient amounts | daily-life-hacks.com",
     )
 
     # Protein-per-dollar results are copied from the large-family protein ladder.

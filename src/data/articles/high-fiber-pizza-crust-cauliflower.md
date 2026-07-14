@@ -1,6 +1,6 @@
 ---
 title: "High Fiber Cauliflower Pizza Crust That Actually Gets Crispy"
-excerpt: "A cauliflower crust with about 4g of fiber per serving vs 1g for white crust. The secret is the squeeze. 35 minutes, 6 pantry ingredients."
+excerpt: "A crisp cauliflower crust with about 6g of fiber per quarter-crust serving. The secret is squeezing out the water before baking. About 55 minutes."
 category: recipes
 tags:
 - high fiber
@@ -17,14 +17,14 @@ featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-prepTime: 10 minutes
-cookTime: 25 minutes
-totalTime: 35 minutes
+prepTime: 20 minutes
+cookTime: 35 minutes
+totalTime: 55 minutes
 servings: 4
-calories: 380
+calories: 185
 difficulty: Easy
 ingredients:
-- 1 large head cauliflower (about 2 pounds), washed and trimmed
+- About 2 pounds trimmed cauliflower florets, washed
 - 1/2 cup almond flour
 - 1/4 cup finely grated Parmesan cheese
 - 1 large egg
@@ -68,7 +68,7 @@ steps:
   a slice. Slice it up and dig in.
 faq:
 - question: "How much fiber is in a cauliflower pizza crust?"
-  answer: "This homemade version lands around 4 grams of fiber per serving (a quarter of the crust, before toppings), from roughly 2 grams per 100 grams of cauliflower plus about 6 grams in the half cup of almond flour. A typical white flour crust slice carries closer to 1 gram."
+  answer: "This homemade crust lands around 6 grams of fiber per serving, with one serving defined as one quarter of the untopped crust. Two pounds of trimmed cauliflower contributes roughly 18 grams and the almond flour contributes about 6 grams, for approximately 24 grams in the full crust. Exact numbers vary with the cauliflower and almond flour brand."
 - question: "Why is my cauliflower pizza crust soggy?"
   answer: "Almost always leftover water. Cooked riced cauliflower holds a shocking amount of it, and every drop you don't wring out ends up steaming your crust. Squeeze it in a kitchen towel until nothing drips, bake on parchment, and pre-bake the crust fully before topping."
 - question: "Can I freeze cauliflower pizza crust?"
@@ -82,7 +82,7 @@ A high fiber cauliflower pizza crust has one job before it gets anywhere near sa
 
 I learned this after making three soft crusts in a row and blaming everything except the obvious problem. I blamed the parchment. I blamed the oven. I gave the egg a suspicious look. The cauliflower was holding the water the whole time.
 
-This version lands at roughly 4 grams of fiber per quarter-crust serving before toppings, compared with about 1 gram in a typical slice of white-flour crust. The real payoff, though, is texture. Get the moisture, thickness, and topping load right and you can pick up a slice with one hand. That's a modest standard for pizza and a major achievement for a vegetable pretending to be dough.
+This version lands at roughly 6 grams of fiber per quarter-crust serving before toppings. The real payoff, though, is texture. Get the moisture, thickness, and topping load right and you can pick up a slice with one hand. That's a modest standard for pizza and a major achievement for a vegetable pretending to be dough.
 
 ## Crisp cauliflower crust starts with moisture control
 
@@ -173,17 +173,18 @@ If you're already processing and cooking one head of cauliflower, making a secon
 
 ## How to compare fiber numbers and labels
 
-The estimate for this recipe is about 4 grams of fiber per serving, with one serving defined as one quarter of the crust before toppings. Most of that estimate comes from the cauliflower and almond flour. Exact numbers can shift with the size of the cauliflower head, the almond flour brand, and how the finished pizza is divided.
+The estimate for this recipe is about 6 grams of fiber per serving, with one serving defined as one quarter of the crust before toppings. Roughly 18 grams comes from the two pounds of trimmed cauliflower and about 6 grams comes from the almond flour. That puts the full untopped crust near 24 grams before it is divided into four servings.
 
-That serving definition matters. A quarter of this homemade crust isn't automatically the same weight or diameter as one slice from a frozen pizza or restaurant pie. The comparison below is useful for orientation, not a laboratory-controlled contest.
+Exact numbers can shift with the cauliflower and almond flour brand, and toppings change the calorie count. The frontmatter estimate of 185 calories is for one quarter of the crust before sauce, cheese, or other toppings.
 
-| Crust serving | Approximate fiber |
+| Fiber source in the full crust | Approximate fiber |
 |---|---:|
-| This cauliflower crust, 1/4 of recipe | About 4g |
-| Typical 100% whole-wheat crust slice | About 2 to 3g |
-| Typical white-flour crust slice | About 1g |
+| Two pounds trimmed cauliflower | About 18g |
+| Half cup almond flour | About 6g |
+| Full untopped crust | About 24g |
+| One quarter of the crust | About 6g |
 
-![Horizontal bar chart comparing approximate fiber across different serving definitions: 4 grams per quarter of this cauliflower crust, 2 to 3 grams per typical whole-wheat slice, and 1 gram per typical white-flour slice](/images/cauliflower-crust-fiber-comparison.jpg)
+![Horizontal bar chart showing where the cauliflower crust fiber comes from: about 18 grams from cauliflower and 6 grams from almond flour, for about 24 grams in the full crust](/images/cauliflower-crust-fiber-comparison.jpg)
 
 When you compare a packaged cauliflower crust, ignore the vegetable photo on the front for a minute. Turn the box around. Check the serving size in grams, fiber per serving, and first several ingredients. Many commercial cauliflower crusts use rice flour, tapioca starch, cornstarch, or wheat flour for structure. That doesn't make them bad products. It does mean the word *cauliflower* doesn't tell you the fiber number or whether the product is gluten-free.
 

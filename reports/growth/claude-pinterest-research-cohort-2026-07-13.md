@@ -9,7 +9,7 @@ Visual contact sheet: `reports/growth/claude-pinterest-cohort-contact-sheet-2026
 
 **6 selected (2 per article), 6 rejected.** In the first pass only 5 were selectable: all four candidates for the second `what-50-grams-of-protein-costs-per-day` slot failed hard rejection rules, three with defects baked into the image pixels (typos, gibberish AI text, unsupported claim). The owner approved exactly one regeneration, and `protein-days-priced-dry-goods` was rebuilt (gpt-image-2, $0.005) with the corrected headline **"5 Protein Days Priced: From 82 Cents to $9.97"**. The new image passed full-resolution and 236px mobile inspection, manual spelling check, margin check (5.7% left / 2.8% right), and both prices trace to the article (Day 1 $0.82, Day 4 $9.97). Score: **61/70**, above the 56 threshold. It fills slot A of the protein pair, completing the third matched A/B pair.
 
-## Selected cohort (5)
+## Selected cohort (6)
 
 | Pin | Destination | Variant | Score | Why it wins |
 |---|---|---|---|---|
@@ -20,7 +20,7 @@ Visual contact sheet: `reports/growth/claude-pinterest-cohort-contact-sheet-2026
 | `only-foods-you-need-high` | high-protein pillar | A/B pair partner (simplicity) | 59/70 | Best-composed image of the batch; legible handwritten week plan with zero AI text errors |
 | `build-day-dry-goods-aisle` | what-30-grams-of-fiber | A direct number/method | 56/70 | Constructive how-to counterpart to the restaurant pin; notebook math legible and roughly correct (cooked-cup figures) |
 
-Copy: final titles, keyword-aware descriptions (protein per dollar, cheap protein, 30 grams of fiber, budget meals — no stuffing), and alt text for all five are in the experiment JSON. Notable fixes: removed "The USDA tested 49 foods" false attribution pattern from descriptions; removed a "supplement" mention from the build-day description; every description now names its data source and price date.
+Copy: final titles, keyword-aware descriptions (protein per dollar, cheap protein, 30 grams of fiber, budget meals — no stuffing), and alt text for all six are in the experiment JSON. Notable fixes: removed "The USDA tested 49 foods" false attribution pattern from descriptions; removed a "supplement" mention from the build-day description; every description now names its data source and price date.
 
 ### The A/B hypotheses (three complete pairs)
 
@@ -28,7 +28,7 @@ Copy: final titles, keyword-aware descriptions (protein per dollar, cheap protei
 - **Fiber pair:** constructive how-to ("build your day, 62 cents") vs price shock ("$14.42 vs 62 cents") — same destination, same numbers, opposite emotional frame.
 - **Protein pair:** direct number range ("From 82 Cents to $9.97", regenerated) vs drive-thru comparison ("Stop Paying $10") — same destination, tests range-of-outcomes vs us-vs-them framing.
 
-## Rejected (7) with reasons
+## Original rejections (7; one regenerated and promoted)
 
 | Pin | Score | Hard rule violated |
 |---|---|---|
@@ -46,7 +46,7 @@ Copy: final titles, keyword-aware descriptions (protein per dollar, cheap protei
 
 - Production destinations: all three return **200** (checked 2026-07-13).
 - Images: all 12 exist on disk, all portrait (1000x1500 / 848x1264 / 832x1248).
-- Number traceability (selected 5): 98/50/34 g-per-dollar verbatim in pillar body; $0.62 and $14.42 = Day 1 / Day 4 fiber-day totals; $9.97/$0.82 = Day 4 / Day 1 protein-day totals; 12x and 23x ratios stated in the articles.
+- Number traceability (selected 6): 98/50/34 g-per-dollar verbatim in pillar body; $0.62 and $14.42 = Day 1 / Day 4 fiber-day totals; $9.97/$0.82 = Day 4 / Day 1 protein-day totals; 12x and 23x ratios stated in the articles.
 - Duplicate title/message pairs: none among the 6 selected (two comparison variants share a *frame* but target different articles with different numbers).
 - Selected count: **6, 2 per article** — complete after the approved regeneration.
 - Regenerated image: portrait 1024x1536; spelling manually verified at full resolution; readable at 236px mobile preview; headline margins 5.7% left / 2.8% right; no receipts, labels, menus, text cards, or microtext.

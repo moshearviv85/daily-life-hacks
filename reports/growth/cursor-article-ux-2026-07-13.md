@@ -1,8 +1,8 @@
 # Article Reading Experience — Cursor workstream
 
-**Date:** 2026-07-13  
-**Branch:** `cursor/article-reading-experience-2026-07-13`  
-**Worktree:** `C:\Users\offic\Desktop\dlh-cursor-article-ux`  
+**Date:** 2026-07-13
+**Branch:** `cursor/article-reading-experience-2026-07-13`
+**Worktree:** `C:\Users\offic\Desktop\dlh-cursor-article-ux`
 **Scope:** presentation layer only (article Markdown body styles + focused tests)
 
 ## Audit

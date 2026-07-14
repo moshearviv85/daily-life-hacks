@@ -1,6 +1,6 @@
 ---
 title: "Popcorn vs Potato Chips: The Fiber Numbers, Compared"
-excerpt: "Air-popped popcorn brings about 3.6g of fiber per ounce vs roughly 1.2g for potato chips, at a third of the calories per cup. Here's the full math."
+excerpt: "Air-popped popcorn has about 4.1g of fiber per ounce versus about 0.9g for plain salted potato chips, with roughly 108 versus 149 calories."
 category: nutrition
 tags:
   - high fiber
@@ -19,17 +19,17 @@ whatsHot: false
 mustRead: false
 faq:
   - question: "Does popcorn or potato chips have more fiber?"
-    answer: "Popcorn, and it isn't close. Popcorn is a whole grain with roughly 14.5 grams of fiber per 100 grams, which works out to about 3.6 grams per ounce air-popped. Standard potato chips land around 1.2 grams per ounce. Ounce for ounce, popcorn delivers about three times the fiber."
+    answer: "Popcorn, and it isn't close. USDA FoodData Central lists air-popped popcorn at roughly 14.5 grams of fiber per 100 grams, which works out to about 4.1 grams per ounce. Plain salted potato chips land around 0.9 gram per ounce. Ounce for ounce, popcorn delivers about 4.7 times the fiber."
   - question: "How much fiber is in 3 cups of air-popped popcorn?"
     answer: "About 3.5 grams, from roughly 24 grams of popped corn, for around 90 to 100 calories. That's more fiber than a typical serving of chips at well under half the calories, and 3 cups is an actual bowl, not a sad handful."
   - question: "Is popcorn a whole grain?"
     answer: "Yes. A popcorn kernel is the entire corn grain, bran and germ included, and the bran is where most of the fiber lives. Potato chips start as a whole potato but lose ground through peeling, slicing thin, and frying in oil."
   - question: "Does switching from chips to popcorn actually matter?"
-    answer: "If you snack most days, it adds up. Swapping one ounce of chips for three cups of air-popped popcorn adds about 2 grams of fiber and saves around 60 calories per swap. Do that five times a week and you've added fiber without eating anything you didn't want."
+    answer: "If you snack most days, it adds up. Swapping one ounce of chips for three cups of air-popped popcorn adds about 2.6 grams of fiber and saves around 56 calories per swap. Do that five times a week and you've added fiber without eating anything you didn't want."
   - question: "Are baked potato chips as good as popcorn for fiber?"
     answer: "Baked chips cut the fat, but they don't add fiber. They're still peeled, processed potato, usually 1 to 2 grams of fiber per ounce. Popcorn keeps the fiber lead regardless of how the chips are cooked."
 ---
-Ounce for ounce, air-popped popcorn has about three times the fiber of potato chips: roughly 3.6 grams per ounce versus about 1.2 grams, based on USDA FoodData Central numbers. And because popped corn is mostly air by volume, a real bowl of it, 3 cups, runs 90 to 100 calories while the same calorie budget buys you maybe 12 chips.
+Ounce for ounce, air-popped popcorn has about 4.7 times the fiber of plain salted potato chips: roughly 4.1 grams per ounce versus about 0.9 gram, based on USDA FoodData Central numbers. And because popped corn is mostly air by volume, a real bowl of it, 3 cups, runs about 93 calories while the same calorie budget buys you maybe 12 chips.
 
 That's the comparison in two sentences. The rest is why it works, what it costs, and the one way people ruin it.
 
@@ -37,17 +37,17 @@ That's the comparison in two sentences. The rest is why it works, what it costs,
 
 | | Air-popped popcorn | Potato chips |
 |---|---|---|
-| Fiber per ounce (28g) | ~3.6g | ~1.2g |
-| Calories per ounce | ~110 | ~150 |
+| Fiber per ounce (28g) | ~4.1g | ~0.9g |
+| Calories per ounce | ~108 | ~149 |
 | What an ounce looks like | About 3.5 cups popped | 15 to 20 chips |
-| Fiber per 100 calories | ~3.3g | ~0.8g |
+| Fiber per 100 calories | ~3.7g | ~0.6g |
 | Whole grain? | Yes, the entire kernel | No, peeled and fried potato |
 
-Source: USDA FoodData Central, plain air-popped popcorn vs plain salted potato chips. Flavored chips and buttered microwave popcorn move the numbers, always in the wrong direction.
+Source: USDA FoodData Central entries [167959, air-popped popcorn](https://fdc.nal.usda.gov/food-details/167959/nutrients) and [169677, plain salted potato chips](https://fdc.nal.usda.gov/food-details/169677/nutrients). Flavored chips and buttered microwave popcorn move the numbers.
 
-![Horizontal bar chart comparing fiber in equal 1-ounce servings: air-popped popcorn at 3.6 grams and potato chips at 1.2 grams](/images/popcorn-vs-chips-fiber-chart.jpg)
+![Horizontal bar chart comparing fiber in equal 1-ounce servings: air-popped popcorn at 4.1 grams and potato chips at 0.9 gram](/images/popcorn-vs-chips-fiber-chart.jpg)
 
-The fiber-per-100-calories row is the one that matters if you snack in front of a screen. Popcorn gives you about four times the fiber for the same calorie spend, and you get a bowl you can dig into for twenty minutes instead of a bag that's gone before the show starts.
+The fiber-per-100-calories row is the one that matters if you snack in front of a screen. Popcorn gives you about six times the fiber for the same calorie spend, and you get a bowl you can dig into for twenty minutes instead of a bag that's gone before the show starts.
 
 ## Serving size is where this comparison gets slippery
 
