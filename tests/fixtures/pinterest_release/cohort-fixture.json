@@ -1,0 +1,93 @@
+{
+  "experiment_id": "exp-fixture",
+  "cohort_id": "cohort-fixture",
+  "channel": "pinterest",
+  "append_after_utc": "2026-10-27T23:59:00Z",
+  "slot_spacing_hours": 12,
+  "selected_pin_slugs": ["pin-a1", "pin-a2", "pin-b1", "pin-b2", "pin-c1", "pin-c2"],
+  "matched_pairs": [
+    {"pair_id": "pair-a", "article_slug": "article-a", "a": "pin-a1", "b": "pin-a2"},
+    {"pair_id": "pair-b", "article_slug": "article-b", "a": "pin-b1", "b": "pin-b2"},
+    {"pair_id": "pair-c", "article_slug": "article-c", "a": "pin-c1", "b": "pin-c2"}
+  ],
+  "pins": [
+    {
+      "pin_slug": "pin-a1",
+      "article_slug": "article-a",
+      "variant": "A",
+      "pair_id": "pair-a",
+      "title": "A1",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/a.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-a1/",
+      "board_id": "1",
+      "row_id": "row-a1"
+    },
+    {
+      "pin_slug": "pin-a2",
+      "article_slug": "article-a",
+      "variant": "B",
+      "pair_id": "pair-a",
+      "title": "A2",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/b.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-a2/",
+      "board_id": "1",
+      "row_id": "row-a2"
+    },
+    {
+      "pin_slug": "pin-b1",
+      "article_slug": "article-b",
+      "variant": "A",
+      "pair_id": "pair-b",
+      "title": "B1",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/c.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-b1/",
+      "board_id": "1",
+      "row_id": "row-b1"
+    },
+    {
+      "pin_slug": "pin-b2",
+      "article_slug": "article-b",
+      "variant": "B",
+      "pair_id": "pair-b",
+      "title": "B2",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/d.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-b2/",
+      "board_id": "1",
+      "row_id": "row-b2"
+    },
+    {
+      "pin_slug": "pin-c1",
+      "article_slug": "article-c",
+      "variant": "A",
+      "pair_id": "pair-c",
+      "title": "C1",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/e.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-c1/",
+      "board_id": "1",
+      "row_id": "row-c1"
+    },
+    {
+      "pin_slug": "pin-c2",
+      "article_slug": "article-c",
+      "variant": "B",
+      "pair_id": "pair-c",
+      "title": "C2",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/f.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-c2/",
+      "board_id": "1",
+      "row_id": "row-c2"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "rows": [
+    {
+      "row_id": "old-slot-1",
+      "status": "PENDING",
+      "pin_title": "Old Title 1",
+      "publish_at": "2026-07-17T15:06:00",
+      "pin_link": "https://www.daily-life-hacks.com/old-slot-1/",
+      "article_slug": "other-1"
+    },
+    {
+      "row_id": "keep-pending",
+      "status": "PENDING",
+      "pin_title": "Keep Me",
+      "publish_at": "2026-07-20T12:00:00",
+      "pin_link": "https://www.daily-life-hacks.com/keep-pending/",
+      "article_slug": "other-keep"
+    },
+    {
+      "row_id": "old-slot-2",
+      "status": "PENDING",
+      "pin_title": "Old Title 2",
+      "publish_at": "2026-07-22T19:55:00",
+      "pin_link": "https://www.daily-life-hacks.com/old-slot-2/",
+      "article_slug": "other-2"
+    },
+    {
+      "row_id": "old-slot-3",
+      "status": "PENDING",
+      "pin_title": "Old Title 3",
+      "publish_at": "2026-07-26T20:58:00",
+      "pin_link": "https://www.daily-life-hacks.com/old-slot-3/",
+      "article_slug": "other-3"
+    },
+    {
+      "row_id": "old-slot-4",
+      "status": "PENDING",
+      "pin_title": "Old Title 4",
+      "publish_at": "2026-08-02T14:40:00",
+      "pin_link": "https://www.daily-life-hacks.com/old-slot-4/",
+      "article_slug": "other-4"
+    },
+    {
+      "row_id": "old-slot-5",
+      "status": "PENDING",
+      "pin_title": "Old Title 5",
+      "publish_at": "2026-08-05T19:57:00",
+      "pin_link": "https://www.daily-life-hacks.com/old-slot-5/",
+      "article_slug": "other-5"
+    },
+    {
+      "row_id": "posted-1",
+      "status": "POSTED",
+      "pin_title": "Posted pin",
+      "posted_at": "2026-07-10T15:00:00Z",
+      "pinterest_pin_id": "999"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "rows": [
+    {
+      "row_id": "legacy-1",
+      "status": "PENDING",
+      "pin_title": "Legacy pending soon",
+      "publish_at": "2026-07-01T00:00:00",
+      "pin_link": "https://www.daily-life-hacks.com/legacy-1/"
+    },
+    {
+      "row_id": "legacy-2",
+      "status": "PENDING",
+      "pin_title": "Legacy pending later",
+      "publish_at": "2026-10-20T12:00:00",
+      "pin_link": "https://www.daily-life-hacks.com/legacy-2/"
+    },
+    {
+      "row_id": "legacy-3",
+      "status": "PENDING",
+      "pin_title": "Legacy pending mid",
+      "publish_at": "2026-09-01T08:00:00",
+      "pin_link": "https://www.daily-life-hacks.com/legacy-3/"
+    },
+    {
+      "row_id": "legacy-4",
+      "status": "PENDING",
+      "pin_title": "Legacy pending late",
+      "publish_at": "2026-10-27T18:00:00",
+      "pin_link": "https://www.daily-life-hacks.com/legacy-4/"
+    },
+    {
+      "row_id": "legacy-5",
+      "status": "PENDING",
+      "pin_title": "Legacy pending late2",
+      "publish_at": "2026-10-27T20:00:00",
+      "pin_link": "https://www.daily-life-hacks.com/legacy-5/"
+    },
+    {
+      "row_id": "legacy-6",
+      "status": "PENDING",
+      "pin_title": "Legacy pending late3",
+      "publish_at": "2026-10-27T22:00:00",
+      "pin_link": "https://www.daily-life-hacks.com/legacy-6/"
+    },
+    {
+      "row_id": "posted-1",
+      "status": "POSTED",
+      "pin_title": "Posted pin",
+      "posted_at": "2026-07-10T15:00:00Z",
+      "pinterest_pin_id": "999"
+    }
+  ]
+}

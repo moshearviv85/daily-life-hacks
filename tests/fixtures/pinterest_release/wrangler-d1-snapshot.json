@@ -1,0 +1,20 @@
+[
+  {
+    "results": [
+      {
+        "row_id": "wrangler-1",
+        "status": "PENDING",
+        "pin_title": "From D1",
+        "publish_at": "2026-07-20T10:00:00",
+        "pin_link": "https://www.daily-life-hacks.com/wrangler-1/"
+      },
+      {
+        "row_id": "wrangler-2",
+        "status": "POSTED",
+        "pin_title": "Posted from D1",
+        "posted_at": "2026-07-09T10:00:00Z",
+        "pinterest_pin_id": "42"
+      }
+    ]
+  }
+]

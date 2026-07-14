@@ -1,0 +1,50 @@
+[
+  {
+    "old_row_id": "build-protein-meals-without-guesswork",
+    "old_title": "Build Protein Meals Without the Guesswork",
+    "replacement_row_id": "exp-20260713-beans-98g-protein-per-dollar",
+    "replacement_title": "Beans: 98g of Protein Per Dollar. Chicken Legs: 50g. Eggs: 34g.",
+    "preserved_utc_slot": "2026-07-17T15:06:00Z",
+    "reason": "Claude-approved research pin replaces weaker next-30-day PENDING slot; preserve UTC cadence."
+  },
+  {
+    "old_row_id": "cold-breakfast-bowl-energy-without",
+    "old_title": "Cold Breakfast Bowl Energy Without the Cook Time",
+    "replacement_row_id": "exp-20260713-build-day-dry-goods-aisle",
+    "replacement_title": "Build Your Day From the Dry Goods Aisle: 30g of Fiber for 62 Cents",
+    "preserved_utc_slot": "2026-07-22T19:55:00Z",
+    "reason": "Claude-approved fiber study pin replaces next-30-day PENDING slot; preserve UTC cadence."
+  },
+  {
+    "old_row_id": "crispy-separated-grains-every-bite",
+    "old_title": "Crispy, Separated Grains in Every Bite",
+    "replacement_row_id": "exp-20260713-stop-paying-protein-it-costs",
+    "replacement_title": "Stop Paying $10 for Protein When It Costs Less Than a Dollar",
+    "preserved_utc_slot": "2026-07-26T20:58:00Z",
+    "reason": "Claude-approved protein day-cost pin replaces next-30-day PENDING slot; preserve UTC cadence."
+  },
+  {
+    "old_row_id": "food-doesn-t-need-much",
+    "old_title": "Your Food Doesn't Need That Much Salt. Here's What to Add Instead",
+    "replacement_row_id": "exp-20260713-protein-days-priced-dry-goods",
+    "replacement_title": "5 Protein Days Priced: From 82 Cents to $9.97",
+    "preserved_utc_slot": "2026-08-03T14:02:00Z",
+    "reason": "Claude-approved direct-range protein study pin replaces a generic next-30-day PENDING slot; preserve UTC cadence."
+  },
+  {
+    "old_row_id": "finally-get-golden-brown-crust",
+    "old_title": "Finally Get That Golden Brown Crust Every Time",
+    "replacement_row_id": "exp-20260713-restaurant-fiber-meal-costs-same",
+    "replacement_title": "That Restaurant Fiber Meal Costs $14.42. The Same Fiber at Home Costs 62 Cents.",
+    "preserved_utc_slot": "2026-08-02T14:40:00Z",
+    "reason": "Claude-approved fiber contrast pin replaces next-30-day PENDING slot; preserve UTC cadence."
+  },
+  {
+    "old_row_id": "fresh-vs-frozen-only-question",
+    "old_title": "Fresh vs Frozen: The Only Question That Matters",
+    "replacement_row_id": "exp-20260713-only-foods-you-need-high",
+    "replacement_title": "The Only 3 Foods You Need for High Protein on a Budget",
+    "preserved_utc_slot": "2026-08-05T19:57:00Z",
+    "reason": "Claude-approved protein pillar simplicity pin replaces next-30-day PENDING slot; preserve UTC cadence."
+  }
+]

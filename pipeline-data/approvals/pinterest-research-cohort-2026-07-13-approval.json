@@ -1,0 +1,449 @@
+{
+  "schema": "pinterest-cohort-approval/v1",
+  "mode": "dry-run-replace_next_30d",
+  "gate": "REVIEW",
+  "status_flow": [
+    "REVIEW",
+    "APPROVED",
+    "PENDING"
+  ],
+  "channel": "pinterest",
+  "cohort_id": "pinterest-research-cohort-2026-07-13",
+  "experiment_id": "exp-pinterest-cost-studies-2026-07-13",
+  "created_at_utc": "2026-07-14T14:16:43Z",
+  "d1_write_attempts": 0,
+  "production_write": false,
+  "max_pins_per_run_unchanged": 1,
+  "pins": [
+    {
+      "channel": "pinterest",
+      "cohort_id": "pinterest-research-cohort-2026-07-13",
+      "experiment_id": "exp-pinterest-cost-studies-2026-07-13",
+      "pin_slug": "beans-98g-protein-per-dollar",
+      "destination_url": "https://www.daily-life-hacks.com/beans-98g-protein-per-dollar/",
+      "asset_path": "public/images/pins/beans-98g-protein-per-dollar.jpg",
+      "variant": "A",
+      "status": "REVIEW",
+      "queue_row_id": "exp-20260713-beans-98g-protein-per-dollar",
+      "pinterest_pin_id": null,
+      "scheduled_at_utc": "2026-07-17T15:06:00Z",
+      "published_at_utc": null,
+      "measurement_due_24h": "2026-07-18T15:06:00Z",
+      "measurement_due_7d": "2026-07-24T15:06:00Z",
+      "measurement_due_14d": "2026-07-31T15:06:00Z",
+      "impressions": null,
+      "outbound_clicks": null,
+      "saves": null,
+      "ctr": null,
+      "decision": "pending",
+      "article_slug": "high-protein-on-a-budget-complete-guide",
+      "pair_id": "protein-pillar-ab"
+    },
+    {
+      "channel": "pinterest",
+      "cohort_id": "pinterest-research-cohort-2026-07-13",
+      "experiment_id": "exp-pinterest-cost-studies-2026-07-13",
+      "pin_slug": "build-day-dry-goods-aisle",
+      "destination_url": "https://www.daily-life-hacks.com/build-day-dry-goods-aisle/",
+      "asset_path": "public/images/pins/build-day-dry-goods-aisle.jpg",
+      "variant": "A",
+      "status": "REVIEW",
+      "queue_row_id": "exp-20260713-build-day-dry-goods-aisle",
+      "pinterest_pin_id": null,
+      "scheduled_at_utc": "2026-07-22T19:55:00Z",
+      "published_at_utc": null,
+      "measurement_due_24h": "2026-07-23T19:55:00Z",
+      "measurement_due_7d": "2026-07-29T19:55:00Z",
+      "measurement_due_14d": "2026-08-05T19:55:00Z",
+      "impressions": null,
+      "outbound_clicks": null,
+      "saves": null,
+      "ctr": null,
+      "decision": "pending",
+      "article_slug": "what-30-grams-of-fiber-costs-per-day",
+      "pair_id": "fiber-day-cost-ab"
+    },
+    {
+      "channel": "pinterest",
+      "cohort_id": "pinterest-research-cohort-2026-07-13",
+      "experiment_id": "exp-pinterest-cost-studies-2026-07-13",
+      "pin_slug": "stop-paying-protein-it-costs",
+      "destination_url": "https://www.daily-life-hacks.com/stop-paying-protein-it-costs/",
+      "asset_path": "public/images/pins/stop-paying-protein-it-costs.jpg",
+      "variant": "A",
+      "status": "REVIEW",
+      "queue_row_id": "exp-20260713-stop-paying-protein-it-costs",
+      "pinterest_pin_id": null,
+      "scheduled_at_utc": "2026-07-26T20:58:00Z",
+      "published_at_utc": null,
+      "measurement_due_24h": "2026-07-27T20:58:00Z",
+      "measurement_due_7d": "2026-08-02T20:58:00Z",
+      "measurement_due_14d": "2026-08-09T20:58:00Z",
+      "impressions": null,
+      "outbound_clicks": null,
+      "saves": null,
+      "ctr": null,
+      "decision": "pending",
+      "article_slug": "what-50-grams-of-protein-costs-per-day",
+      "pair_id": "protein-day-cost-ab"
+    },
+    {
+      "channel": "pinterest",
+      "cohort_id": "pinterest-research-cohort-2026-07-13",
+      "experiment_id": "exp-pinterest-cost-studies-2026-07-13",
+      "pin_slug": "restaurant-fiber-meal-costs-same",
+      "destination_url": "https://www.daily-life-hacks.com/restaurant-fiber-meal-costs-same/",
+      "asset_path": "public/images/pins/restaurant-fiber-meal-costs-same.jpg",
+      "variant": "B",
+      "status": "REVIEW",
+      "queue_row_id": "exp-20260713-restaurant-fiber-meal-costs-same",
+      "pinterest_pin_id": null,
+      "scheduled_at_utc": "2026-08-02T14:40:00Z",
+      "published_at_utc": null,
+      "measurement_due_24h": "2026-08-03T14:40:00Z",
+      "measurement_due_7d": "2026-08-09T14:40:00Z",
+      "measurement_due_14d": "2026-08-16T14:40:00Z",
+      "impressions": null,
+      "outbound_clicks": null,
+      "saves": null,
+      "ctr": null,
+      "decision": "pending",
+      "article_slug": "what-30-grams-of-fiber-costs-per-day",
+      "pair_id": "fiber-day-cost-ab"
+    },
+    {
+      "channel": "pinterest",
+      "cohort_id": "pinterest-research-cohort-2026-07-13",
+      "experiment_id": "exp-pinterest-cost-studies-2026-07-13",
+      "pin_slug": "protein-days-priced-dry-goods",
+      "destination_url": "https://www.daily-life-hacks.com/protein-days-priced-dry-goods/",
+      "asset_path": "public/images/pins/protein-days-priced-dry-goods.jpg",
+      "variant": "B",
+      "status": "REVIEW",
+      "queue_row_id": "exp-20260713-protein-days-priced-dry-goods",
+      "pinterest_pin_id": null,
+      "scheduled_at_utc": "2026-08-03T14:02:00Z",
+      "published_at_utc": null,
+      "measurement_due_24h": "2026-08-04T14:02:00Z",
+      "measurement_due_7d": "2026-08-10T14:02:00Z",
+      "measurement_due_14d": "2026-08-17T14:02:00Z",
+      "impressions": null,
+      "outbound_clicks": null,
+      "saves": null,
+      "ctr": null,
+      "decision": "pending",
+      "article_slug": "what-50-grams-of-protein-costs-per-day",
+      "pair_id": "protein-day-cost-ab"
+    },
+    {
+      "channel": "pinterest",
+      "cohort_id": "pinterest-research-cohort-2026-07-13",
+      "experiment_id": "exp-pinterest-cost-studies-2026-07-13",
+      "pin_slug": "only-foods-you-need-high",
+      "destination_url": "https://www.daily-life-hacks.com/only-foods-you-need-high/",
+      "asset_path": "public/images/pins/only-foods-you-need-high.jpg",
+      "variant": "B",
+      "status": "REVIEW",
+      "queue_row_id": "exp-20260713-only-foods-you-need-high",
+      "pinterest_pin_id": null,
+      "scheduled_at_utc": "2026-08-05T19:57:00Z",
+      "published_at_utc": null,
+      "measurement_due_24h": "2026-08-06T19:57:00Z",
+      "measurement_due_7d": "2026-08-12T19:57:00Z",
+      "measurement_due_14d": "2026-08-19T19:57:00Z",
+      "impressions": null,
+      "outbound_clicks": null,
+      "saves": null,
+      "ctr": null,
+      "decision": "pending",
+      "article_slug": "high-protein-on-a-budget-complete-guide",
+      "pair_id": "protein-pillar-ab"
+    }
+  ],
+  "proposed_slots_utc": [
+    "2026-07-17T15:06:00Z",
+    "2026-07-22T19:55:00Z",
+    "2026-07-26T20:58:00Z",
+    "2026-08-02T14:40:00Z",
+    "2026-08-03T14:02:00Z",
+    "2026-08-05T19:57:00Z"
+  ],
+  "next_gate": "Set gate to APPROVED after human review, then promote to PENDING via existing production upload path.",
+  "schedule_mode": "replace_next_30d",
+  "transaction_preview": [
+    {
+      "old_row_id": "build-protein-meals-without-guesswork",
+      "old_title": "Build Protein Meals Without the Guesswork",
+      "replacement_row_id": "exp-20260713-beans-98g-protein-per-dollar",
+      "replacement_title": "Beans: 98g of Protein Per Dollar. Chicken Legs: 50g. Eggs: 34g.",
+      "preserved_utc_slot": "2026-07-17T15:06:00Z",
+      "reason": "Claude-approved research pin replaces weaker next-30-day PENDING slot; preserve UTC cadence."
+    },
+    {
+      "old_row_id": "cold-breakfast-bowl-energy-without",
+      "old_title": "Cold Breakfast Bowl Energy Without the Cook Time",
+      "replacement_row_id": "exp-20260713-build-day-dry-goods-aisle",
+      "replacement_title": "Build Your Day From the Dry Goods Aisle: 30g of Fiber for 62 Cents",
+      "preserved_utc_slot": "2026-07-22T19:55:00Z",
+      "reason": "Claude-approved fiber study pin replaces next-30-day PENDING slot; preserve UTC cadence."
+    },
+    {
+      "old_row_id": "crispy-separated-grains-every-bite",
+      "old_title": "Crispy, Separated Grains in Every Bite",
+      "replacement_row_id": "exp-20260713-stop-paying-protein-it-costs",
+      "replacement_title": "Stop Paying $10 for Protein When It Costs Less Than a Dollar",
+      "preserved_utc_slot": "2026-07-26T20:58:00Z",
+      "reason": "Claude-approved protein day-cost pin replaces next-30-day PENDING slot; preserve UTC cadence."
+    },
+    {
+      "old_row_id": "food-doesn-t-need-much",
+      "old_title": "Your Food Doesn't Need That Much Salt. Here's What to Add Instead",
+      "replacement_row_id": "exp-20260713-protein-days-priced-dry-goods",
+      "replacement_title": "5 Protein Days Priced: From 82 Cents to $9.97",
+      "preserved_utc_slot": "2026-08-03T14:02:00Z",
+      "reason": "Claude-approved direct-range protein study pin replaces a generic next-30-day PENDING slot; preserve UTC cadence."
+    },
+    {
+      "old_row_id": "finally-get-golden-brown-crust",
+      "old_title": "Finally Get That Golden Brown Crust Every Time",
+      "replacement_row_id": "exp-20260713-restaurant-fiber-meal-costs-same",
+      "replacement_title": "That Restaurant Fiber Meal Costs $14.42. The Same Fiber at Home Costs 62 Cents.",
+      "preserved_utc_slot": "2026-08-02T14:40:00Z",
+      "reason": "Claude-approved fiber contrast pin replaces next-30-day PENDING slot; preserve UTC cadence."
+    },
+    {
+      "old_row_id": "fresh-vs-frozen-only-question",
+      "old_title": "Fresh vs Frozen: The Only Question That Matters",
+      "replacement_row_id": "exp-20260713-only-foods-you-need-high",
+      "replacement_title": "The Only 3 Foods You Need for High Protein on a Budget",
+      "preserved_utc_slot": "2026-08-05T19:57:00Z",
+      "reason": "Claude-approved protein pillar simplicity pin replaces next-30-day PENDING slot; preserve UTC cadence."
+    }
+  ],
+  "replacement_manifest": {
+    "schema": "pinterest-replacement-manifest/v1",
+    "schedule_mode": "replace_next_30d",
+    "never_delete_old_rows": true,
+    "old_row_status_change": {
+      "from": "PENDING",
+      "to": "REVIEW"
+    },
+    "preserved_old_rows": [
+      {
+        "row_id": "build-protein-meals-without-guesswork",
+        "title": "Build Protein Meals Without the Guesswork",
+        "current_status": "PENDING",
+        "proposed_status": "REVIEW",
+        "action": "preserve_status_change",
+        "delete": false,
+        "preserved_utc_slot": "2026-07-17T15:06:00Z",
+        "replaced_by_row_id": "exp-20260713-beans-98g-protein-per-dollar"
+      },
+      {
+        "row_id": "cold-breakfast-bowl-energy-without",
+        "title": "Cold Breakfast Bowl Energy Without the Cook Time",
+        "current_status": "PENDING",
+        "proposed_status": "REVIEW",
+        "action": "preserve_status_change",
+        "delete": false,
+        "preserved_utc_slot": "2026-07-22T19:55:00Z",
+        "replaced_by_row_id": "exp-20260713-build-day-dry-goods-aisle"
+      },
+      {
+        "row_id": "crispy-separated-grains-every-bite",
+        "title": "Crispy, Separated Grains in Every Bite",
+        "current_status": "PENDING",
+        "proposed_status": "REVIEW",
+        "action": "preserve_status_change",
+        "delete": false,
+        "preserved_utc_slot": "2026-07-26T20:58:00Z",
+        "replaced_by_row_id": "exp-20260713-stop-paying-protein-it-costs"
+      },
+      {
+        "row_id": "food-doesn-t-need-much",
+        "title": "Your Food Doesn't Need That Much Salt. Here's What to Add Instead",
+        "current_status": "PENDING",
+        "proposed_status": "REVIEW",
+        "action": "preserve_status_change",
+        "delete": false,
+        "preserved_utc_slot": "2026-08-03T14:02:00Z",
+        "replaced_by_row_id": "exp-20260713-protein-days-priced-dry-goods"
+      },
+      {
+        "row_id": "finally-get-golden-brown-crust",
+        "title": "Finally Get That Golden Brown Crust Every Time",
+        "current_status": "PENDING",
+        "proposed_status": "REVIEW",
+        "action": "preserve_status_change",
+        "delete": false,
+        "preserved_utc_slot": "2026-08-02T14:40:00Z",
+        "replaced_by_row_id": "exp-20260713-restaurant-fiber-meal-costs-same"
+      },
+      {
+        "row_id": "fresh-vs-frozen-only-question",
+        "title": "Fresh vs Frozen: The Only Question That Matters",
+        "current_status": "PENDING",
+        "proposed_status": "REVIEW",
+        "action": "preserve_status_change",
+        "delete": false,
+        "preserved_utc_slot": "2026-08-05T19:57:00Z",
+        "replaced_by_row_id": "exp-20260713-only-foods-you-need-high"
+      }
+    ],
+    "incoming_replacement_rows": [
+      {
+        "row_id": "exp-20260713-beans-98g-protein-per-dollar",
+        "pin_slug": "beans-98g-protein-per-dollar",
+        "title": "Beans: 98g of Protein Per Dollar. Chicken Legs: 50g. Eggs: 34g.",
+        "article_slug": "high-protein-on-a-budget-complete-guide",
+        "proposed_status": "PENDING",
+        "preserved_utc_slot": "2026-07-17T15:06:00Z",
+        "replaces_row_id": "build-protein-meals-without-guesswork"
+      },
+      {
+        "row_id": "exp-20260713-build-day-dry-goods-aisle",
+        "pin_slug": "build-day-dry-goods-aisle",
+        "title": "Build Your Day From the Dry Goods Aisle: 30g of Fiber for 62 Cents",
+        "article_slug": "what-30-grams-of-fiber-costs-per-day",
+        "proposed_status": "PENDING",
+        "preserved_utc_slot": "2026-07-22T19:55:00Z",
+        "replaces_row_id": "cold-breakfast-bowl-energy-without"
+      },
+      {
+        "row_id": "exp-20260713-stop-paying-protein-it-costs",
+        "pin_slug": "stop-paying-protein-it-costs",
+        "title": "Stop Paying $10 for Protein When It Costs Less Than a Dollar",
+        "article_slug": "what-50-grams-of-protein-costs-per-day",
+        "proposed_status": "PENDING",
+        "preserved_utc_slot": "2026-07-26T20:58:00Z",
+        "replaces_row_id": "crispy-separated-grains-every-bite"
+      },
+      {
+        "row_id": "exp-20260713-protein-days-priced-dry-goods",
+        "pin_slug": "protein-days-priced-dry-goods",
+        "title": "5 Protein Days Priced: From 82 Cents to $9.97",
+        "article_slug": "what-50-grams-of-protein-costs-per-day",
+        "proposed_status": "PENDING",
+        "preserved_utc_slot": "2026-08-03T14:02:00Z",
+        "replaces_row_id": "food-doesn-t-need-much"
+      },
+      {
+        "row_id": "exp-20260713-restaurant-fiber-meal-costs-same",
+        "pin_slug": "restaurant-fiber-meal-costs-same",
+        "title": "That Restaurant Fiber Meal Costs $14.42. The Same Fiber at Home Costs 62 Cents.",
+        "article_slug": "what-30-grams-of-fiber-costs-per-day",
+        "proposed_status": "PENDING",
+        "preserved_utc_slot": "2026-08-02T14:40:00Z",
+        "replaces_row_id": "finally-get-golden-brown-crust"
+      },
+      {
+        "row_id": "exp-20260713-only-foods-you-need-high",
+        "pin_slug": "only-foods-you-need-high",
+        "title": "The Only 3 Foods You Need for High Protein on a Budget",
+        "article_slug": "high-protein-on-a-budget-complete-guide",
+        "proposed_status": "PENDING",
+        "preserved_utc_slot": "2026-08-05T19:57:00Z",
+        "replaces_row_id": "fresh-vs-frozen-only-question"
+      }
+    ],
+    "transaction_preview": [
+      {
+        "old_row_id": "build-protein-meals-without-guesswork",
+        "old_title": "Build Protein Meals Without the Guesswork",
+        "replacement_row_id": "exp-20260713-beans-98g-protein-per-dollar",
+        "replacement_title": "Beans: 98g of Protein Per Dollar. Chicken Legs: 50g. Eggs: 34g.",
+        "preserved_utc_slot": "2026-07-17T15:06:00Z",
+        "reason": "Claude-approved research pin replaces weaker next-30-day PENDING slot; preserve UTC cadence."
+      },
+      {
+        "old_row_id": "cold-breakfast-bowl-energy-without",
+        "old_title": "Cold Breakfast Bowl Energy Without the Cook Time",
+        "replacement_row_id": "exp-20260713-build-day-dry-goods-aisle",
+        "replacement_title": "Build Your Day From the Dry Goods Aisle: 30g of Fiber for 62 Cents",
+        "preserved_utc_slot": "2026-07-22T19:55:00Z",
+        "reason": "Claude-approved fiber study pin replaces next-30-day PENDING slot; preserve UTC cadence."
+      },
+      {
+        "old_row_id": "crispy-separated-grains-every-bite",
+        "old_title": "Crispy, Separated Grains in Every Bite",
+        "replacement_row_id": "exp-20260713-stop-paying-protein-it-costs",
+        "replacement_title": "Stop Paying $10 for Protein When It Costs Less Than a Dollar",
+        "preserved_utc_slot": "2026-07-26T20:58:00Z",
+        "reason": "Claude-approved protein day-cost pin replaces next-30-day PENDING slot; preserve UTC cadence."
+      },
+      {
+        "old_row_id": "food-doesn-t-need-much",
+        "old_title": "Your Food Doesn't Need That Much Salt. Here's What to Add Instead",
+        "replacement_row_id": "exp-20260713-protein-days-priced-dry-goods",
+        "replacement_title": "5 Protein Days Priced: From 82 Cents to $9.97",
+        "preserved_utc_slot": "2026-08-03T14:02:00Z",
+        "reason": "Claude-approved direct-range protein study pin replaces a generic next-30-day PENDING slot; preserve UTC cadence."
+      },
+      {
+        "old_row_id": "finally-get-golden-brown-crust",
+        "old_title": "Finally Get That Golden Brown Crust Every Time",
+        "replacement_row_id": "exp-20260713-restaurant-fiber-meal-costs-same",
+        "replacement_title": "That Restaurant Fiber Meal Costs $14.42. The Same Fiber at Home Costs 62 Cents.",
+        "preserved_utc_slot": "2026-08-02T14:40:00Z",
+        "reason": "Claude-approved fiber contrast pin replaces next-30-day PENDING slot; preserve UTC cadence."
+      },
+      {
+        "old_row_id": "fresh-vs-frozen-only-question",
+        "old_title": "Fresh vs Frozen: The Only Question That Matters",
+        "replacement_row_id": "exp-20260713-only-foods-you-need-high",
+        "replacement_title": "The Only 3 Foods You Need for High Protein on a Budget",
+        "preserved_utc_slot": "2026-08-05T19:57:00Z",
+        "reason": "Claude-approved protein pillar simplicity pin replaces next-30-day PENDING slot; preserve UTC cadence."
+      }
+    ]
+  },
+  "proposed_active_queue_sample": [
+    {
+      "row_id": "exp-20260713-beans-98g-protein-per-dollar",
+      "pin_title": "Beans: 98g of Protein Per Dollar. Chicken Legs: 50g. Eggs: 34g.",
+      "publish_at": "2026-07-17T15:06:00Z",
+      "article_slug": "high-protein-on-a-budget-complete-guide",
+      "status": "PENDING"
+    },
+    {
+      "row_id": "exp-20260713-build-day-dry-goods-aisle",
+      "pin_title": "Build Your Day From the Dry Goods Aisle: 30g of Fiber for 62 Cents",
+      "publish_at": "2026-07-22T19:55:00Z",
+      "article_slug": "what-30-grams-of-fiber-costs-per-day",
+      "status": "PENDING"
+    },
+    {
+      "row_id": "exp-20260713-stop-paying-protein-it-costs",
+      "pin_title": "Stop Paying $10 for Protein When It Costs Less Than a Dollar",
+      "publish_at": "2026-07-26T20:58:00Z",
+      "article_slug": "what-50-grams-of-protein-costs-per-day",
+      "status": "PENDING"
+    },
+    {
+      "row_id": "exp-20260713-restaurant-fiber-meal-costs-same",
+      "pin_title": "That Restaurant Fiber Meal Costs $14.42. The Same Fiber at Home Costs 62 Cents.",
+      "publish_at": "2026-08-02T14:40:00Z",
+      "article_slug": "what-30-grams-of-fiber-costs-per-day",
+      "status": "PENDING"
+    },
+    {
+      "row_id": "exp-20260713-protein-days-priced-dry-goods",
+      "pin_title": "5 Protein Days Priced: From 82 Cents to $9.97",
+      "publish_at": "2026-08-03T14:02:00Z",
+      "article_slug": "what-50-grams-of-protein-costs-per-day",
+      "status": "PENDING"
+    },
+    {
+      "row_id": "exp-20260713-only-foods-you-need-high",
+      "pin_title": "The Only 3 Foods You Need for High Protein on a Budget",
+      "publish_at": "2026-08-05T19:57:00Z",
+      "article_slug": "high-protein-on-a-budget-complete-guide",
+      "status": "PENDING"
+    }
+  ],
+  "old_rows_preserved": true,
+  "old_row_status_change": {
+    "from": "PENDING",
+    "to": "REVIEW"
+  }
+}

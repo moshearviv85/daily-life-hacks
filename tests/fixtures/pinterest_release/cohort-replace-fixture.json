@@ -1,0 +1,125 @@
+{
+  "cohort_id": "cohort-replace-fixture",
+  "experiment_id": "exp-replace-fixture",
+  "channel": "pinterest",
+  "schedule_mode": "replace_next_30d",
+  "selected_pin_slugs": ["pin-a1", "pin-b1", "pin-c1", "pin-a2", "pin-b2"],
+  "rejected_pin_slugs": [
+    "get-50g-protein-before-lunch",
+    "you-re-overspending-protein-month",
+    "pin-rejected"
+  ],
+  "matched_pairs": [
+    {"pair_id": "pair-a", "article_slug": "article-a", "a": "pin-a1", "b": "pin-a2"},
+    {"pair_id": "pair-b", "article_slug": "article-b", "a": "pin-b1", "b": "pin-b2"}
+  ],
+  "replacements": [
+    {
+      "replacement_pin_slug": "pin-a1",
+      "old_row_id": "old-slot-1",
+      "old_title": "Old Title 1",
+      "preserved_slot_utc": "2026-07-17T15:06:00Z",
+      "reason": "test replacement 1"
+    },
+    {
+      "replacement_pin_slug": "pin-b1",
+      "old_row_id": "old-slot-2",
+      "old_title": "Old Title 2",
+      "preserved_slot_utc": "2026-07-22T19:55:00Z",
+      "reason": "test replacement 2"
+    },
+    {
+      "replacement_pin_slug": "pin-c1",
+      "old_row_id": "old-slot-3",
+      "old_title": "Old Title 3",
+      "preserved_slot_utc": "2026-07-26T20:58:00Z",
+      "reason": "test replacement 3"
+    },
+    {
+      "replacement_pin_slug": "pin-a2",
+      "old_row_id": "old-slot-4",
+      "old_title": "Old Title 4",
+      "preserved_slot_utc": "2026-08-02T14:40:00Z",
+      "reason": "test replacement 4"
+    },
+    {
+      "replacement_pin_slug": "pin-b2",
+      "old_row_id": "old-slot-5",
+      "old_title": "Old Title 5",
+      "preserved_slot_utc": "2026-08-05T19:57:00Z",
+      "reason": "test replacement 5"
+    }
+  ],
+  "pins": [
+    {
+      "pin_slug": "pin-a1",
+      "article_slug": "article-a",
+      "variant": "A",
+      "pair_id": "pair-a",
+      "title": "New A1",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/a.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-a1/",
+      "board_id": "1",
+      "row_id": "row-a1",
+      "selected": true
+    },
+    {
+      "pin_slug": "pin-b1",
+      "article_slug": "article-b",
+      "variant": "A",
+      "pair_id": "pair-b",
+      "title": "New B1",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/c.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-b1/",
+      "board_id": "1",
+      "row_id": "row-b1",
+      "selected": true
+    },
+    {
+      "pin_slug": "pin-c1",
+      "article_slug": "article-c",
+      "variant": "A",
+      "pair_id": null,
+      "title": "New C1",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/e.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-c1/",
+      "board_id": "1",
+      "row_id": "row-c1",
+      "selected": true
+    },
+    {
+      "pin_slug": "pin-a2",
+      "article_slug": "article-a",
+      "variant": "B",
+      "pair_id": "pair-a",
+      "title": "New A2",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/b.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-a2/",
+      "board_id": "1",
+      "row_id": "row-a2",
+      "selected": true
+    },
+    {
+      "pin_slug": "pin-b2",
+      "article_slug": "article-b",
+      "variant": "B",
+      "pair_id": "pair-b",
+      "title": "New B2",
+      "description": "d",
+      "alt_text": "alt",
+      "asset_path": "tests/fixtures/pinterest_release/images/d.jpg",
+      "destination_url": "https://www.daily-life-hacks.com/pin-b2/",
+      "board_id": "1",
+      "row_id": "row-b2",
+      "selected": true
+    }
+  ]
+}
