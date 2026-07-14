@@ -1,0 +1,62 @@
+{
+  "slug": "dairy-protein-per-dollar-ranked",
+  "suggested_title": "Dairy Protein per Dollar: Milk Beats the Hype",
+  "metric": "protein_g_per_dollar",
+  "computed_from": "audited public/data CSVs (protein-per-dollar-2026, fiber-per-dollar-2026)",
+  "n_foods": 6,
+  "winner": "Eggs (large)",
+  "winner_value": 34.4,
+  "loser": "Cheddar cheese",
+  "loser_value": 18.2,
+  "spread_x": 1.9,
+  "rows": [
+    {
+      "food": "Eggs (large)",
+      "category": "Eggs & dairy",
+      "value": 34.4,
+      "package": "1 dozen (600 g edible)",
+      "package_price_usd": 2.19,
+      "price_basis": "BLS US avg May 2026 (APU0000708111)"
+    },
+    {
+      "food": "Mozzarella (low-moisture part-skim)",
+      "category": "Eggs & dairy",
+      "value": 30.1,
+      "package": "16 oz block",
+      "package_price_usd": 3.58,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Whole milk",
+      "category": "Eggs & dairy",
+      "value": 29.1,
+      "package": "1 gallon",
+      "package_price_usd": 4.22,
+      "price_basis": "BLS US avg May 2026 (APU0000709112)"
+    },
+    {
+      "food": "Greek yogurt (plain, nonfat)",
+      "category": "Eggs & dairy",
+      "value": 27.5,
+      "package": "32 oz tub",
+      "package_price_usd": 3.36,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Cottage cheese (4%)",
+      "category": "Eggs & dairy",
+      "value": 26.3,
+      "package": "24 oz tub",
+      "package_price_usd": 2.87,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Cheddar cheese",
+      "category": "Eggs & dairy",
+      "value": 18.2,
+      "package": "per lb",
+      "package_price_usd": 5.69,
+      "price_basis": "BLS US avg May 2026 (APU0000710212)"
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+{
+  "slug": "eggs-vs-everything-protein-value",
+  "suggested_title": "Eggs vs Everything: Where the Default Protein Really Ranks",
+  "metric": "protein_g_per_dollar",
+  "computed_from": "audited public/data CSVs (protein-per-dollar-2026, fiber-per-dollar-2026)",
+  "n_foods": 49,
+  "winner": "Pinto beans (dry)",
+  "winner_value": 97.9,
+  "loser": "Bacon",
+  "loser_value": 9.2,
+  "spread_x": 10.6,
+  "rows": [
+    {
+      "food": "Pinto beans (dry)",
+      "category": "Dried beans & lentils",
+      "value": 97.9,
+      "package": "4 lb bag",
+      "package_price_usd": 3.97,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Whole wheat flour",
+      "category": "Grains & pantry",
+      "value": 96.0,
+      "package": "5 lb bag",
+      "package_price_usd": 3.12,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Black beans (dry)",
+      "category": "Dried beans & lentils",
+      "value": 81.0,
+      "package": "2 lb bag",
+      "package_price_usd": 2.42,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Brown lentils (dry)",
+      "category": "Dried beans & lentils",
+      "value": 77.7,
+      "package": "16 oz bag",
+      "package_price_usd": 1.44,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Navy beans (dry)",
+      "category": "Dried beans & lentils",
+      "value": 75.9,
+      "package": "2 lb bag",
+      "package_price_usd": 2.67,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Green split peas (dry)",
+      "category": "Dried beans & lentils",
+      "value": 73.9,
+      "package": "16 oz bag",
+      "package_price_usd": 1.42,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Chickpeas (dry)",
+      "category": "Dried beans & lentils",
+      "value": 56.7,
+      "package": "16 oz bag",
+      "package_price_usd": 1.64,
+      "price_basis": "Walmart (fiber study, audited)"
+    },
+    {
+      "food": "Red lentils (dry)",
+      "category": "Dried beans & lentils",
+      "value": 56.0,
+      "package": "16 oz bag",
+      "package_price_usd": 1.94,
+      "price_basis": "Walmart (fiber study, audited)"
+    },
+    {
+      "food": "Whole wheat spaghetti",
+      "category": "Grains & pantry",
+      "value": 53.4,
+      "package": "16 oz box",
+      "package_price_usd": 1.18,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Peanut butter",
+      "category": "Nuts & seeds",
+      "value": 50.7,
+      "package": "40 oz jar",
+      "package_price_usd": 4.97,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Chicken drumsticks (bone-in)",
+      "category": "Meat & poultry",
+      "value": 50.3,
+      "package": "5 lb bag",
+      "package_price_usd": 5.46,
+      "price_basis": "Walmart Jul 2026; USDA SR28 refuse: 33% bone and cartilage"
+    },
+    {
+      "food": "White rice (long grain, dry)",
+      "category": "Grains & pantry",
+      "value": 48.0,
+      "package": "5 lb bag",
+      "package_price_usd": 3.37,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Spaghetti (regular, dry)",
+      "category": "Grains & pantry",
+      "value": 47.7,
+      "package": "16 oz box",
+      "package_price_usd": 1.24,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Old-fashioned rolled oats",
+      "category": "Grains & pantry",
+      "value": 46.6,
+      "package": "42 oz canister",
+      "package_price_usd": 3.36,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Dry roasted peanuts",
+      "category": "Nuts & seeds",
+      "value": 39.8,
+      "package": "16 oz jar",
+      "package_price_usd": 2.78,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Brown rice (dry)",
+      "category": "Grains & pantry",
+      "value": 36.6,
+      "package": "2 lb bag",
+      "package_price_usd": 1.87,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Pearled barley (dry)",
+      "category": "Grains & pantry",
+      "value": 36.3,
+      "package": "16 oz bag",
+      "package_price_usd": 1.24,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "100% whole wheat bread",
+      "category": "Grains & pantry",
+      "value": 35.8,
+      "package": "20 oz loaf",
+      "package_price_usd": 1.97,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Eggs (large)",
+      "category": "Eggs & dairy",
+      "value": 34.4,
+      "package": "1 dozen (600 g edible)",
+      "package_price_usd": 2.19,
+      "price_basis": "BLS US avg May 2026 (APU0000708111)"
+    },
+    {
+      "food": "Sunflower seed kernels",
+      "category": "Nuts & seeds",
+      "value": 31.7,
+      "package": "16 oz bag",
+      "package_price_usd": 2.98,
+      "price_basis": "Walmart (fiber study, audited)"
+    },
+    {
+      "food": "Canned black beans",
+      "category": "Canned beans",
+      "value": 30.1,
+      "package": "15.5 oz can",
+      "package_price_usd": 0.88,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Mozzarella (low-moisture part-skim)",
+      "category": "Eggs & dairy",
+      "value": 30.1,
+      "package": "16 oz block",
+      "package_price_usd": 3.58,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Whole milk",
+      "category": "Eggs & dairy",
+      "value": 29.1,
+      "package": "1 gallon",
+      "package_price_usd": 4.22,
+      "price_basis": "BLS US avg May 2026 (APU0000709112)"
+    },
+    {
+      "food": "Chicken thighs (boneless, skinless)",
+      "category": "Meat & poultry",
+      "value": 27.7,
+      "package": "per lb",
+      "package_price_usd": 3.22,
+      "price_basis": "Walmart Jul 2026"
+    },
+    {
+      "food": "Greek yogurt (plain, nonfat)",
+      "category": "Eggs & dairy",
+      "value": 27.5,
+      "package": "32 oz tub",
+      "package_price_usd": 3.36,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Rotisserie chicken (whole, cooked)",
+      "category": "Meat & poultry",
+      "value": 26.7,
+      "package": "whole bird (36 oz, cooked)",
+      "package_price_usd": 5.97,
+      "price_basis": "Walmart deli Jul 2026; USDA SR28 refuse (roasted, meat only): 33% bone + 13% skin"
+    },
+    {
+      "food": "Cottage cheese (4%)",
+      "category": "Eggs & dairy",
+      "value": 26.3,
+      "package": "24 oz tub",
+      "package_price_usd": 2.87,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Whole chicken (raw)",
+      "category": "Meat & poultry",
+      "value": 25.3,
+      "package": "per lb",
+      "package_price_usd": 2.04,
+      "price_basis": "BLS US avg May 2026 (APU0000706111); USDA FDC 171447 yield: 276 g meat+skin per lb ready-to-cook"
+    },
+    {
+      "food": "Pork shoulder butt roast (boneless)",
+      "category": "Meat & poultry",
+      "value": 25.2,
+      "package": "per lb",
+      "package_price_usd": 3.14,
+      "price_basis": "Walmart (Smithfield) Jul 2026"
+    },
+    {
+      "food": "Chicken breast (boneless, skinless)",
+      "category": "Meat & poultry",
+      "value": 24.5,
+      "package": "per lb",
+      "package_price_usd": 4.17,
+      "price_basis": "BLS US avg May 2026 (APU0000FF1101)"
+    },
+    {
+      "food": "Canned kidney beans",
+      "category": "Canned beans",
+      "value": 23.4,
+      "package": "15.5 oz can",
+      "package_price_usd": 0.98,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "TVP (textured vegetable protein)",
+      "category": "Soy & plant proteins",
+      "value": 22.5,
+      "package": "10 oz bag",
+      "package_price_usd": 6.3,
+      "price_basis": "Walmart/Bob's Red Mill Jul 2026; label value (USDA defatted soy flour: 51.5)"
+    },
+    {
+      "food": "Canned tuna (chunk light, in water)",
+      "category": "Fish (canned & frozen)",
+      "value": 22.4,
+      "package": "5 oz can (113 g drained)",
+      "package_price_usd": 0.98,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Pork loin chops (boneless)",
+      "category": "Meat & poultry",
+      "value": 22.3,
+      "package": "per lb",
+      "package_price_usd": 4.39,
+      "price_basis": "BLS US avg May 2026 (APU0000FD3101)"
+    },
+    {
+      "food": "Canned chickpeas",
+      "category": "Canned beans",
+      "value": 22.0,
+      "package": "15.5 oz can",
+      "package_price_usd": 0.98,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Canned pink salmon",
+      "category": "Fish (canned & frozen)",
+      "value": 21.6,
+      "package": "14.75 oz can",
+      "package_price_usd": 3.8,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Quinoa (dry)",
+      "category": "Grains & pantry",
+      "value": 21.5,
+      "package": "2 lb bag",
+      "package_price_usd": 5.97,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Frozen tilapia fillets",
+      "category": "Fish (canned & frozen)",
+      "value": 20.9,
+      "package": "4 lb bag",
+      "package_price_usd": 17.47,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Frozen green peas",
+      "category": "Frozen vegetables",
+      "value": 20.4,
+      "package": "32 oz bag",
+      "package_price_usd": 2.32,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Sardines (canned in oil, drained)",
+      "category": "Fish (canned & frozen)",
+      "value": 20.2,
+      "package": "3.75 oz can (92 g drained)",
+      "package_price_usd": 1.12,
+      "price_basis": "Walmart Jul 2026"
+    },
+    {
+      "food": "Cheddar cheese",
+      "category": "Eggs & dairy",
+      "value": 18.2,
+      "package": "per lb",
+      "package_price_usd": 5.69,
+      "price_basis": "BLS US avg May 2026 (APU0000710212)"
+    },
+    {
+      "food": "Frozen shelled edamame",
+      "category": "Soy & plant proteins",
+      "value": 18.0,
+      "package": "12 oz bag",
+      "package_price_usd": 2.12,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Ground turkey (93/7)",
+      "category": "Meat & poultry",
+      "value": 15.6,
+      "package": "1 lb roll",
+      "package_price_usd": 5.46,
+      "price_basis": "Walmart (Jennie-O) Jul 2026"
+    },
+    {
+      "food": "Almonds",
+      "category": "Nuts & seeds",
+      "value": 14.8,
+      "package": "16 oz bag",
+      "package_price_usd": 6.47,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Tofu (extra firm)",
+      "category": "Soy & plant proteins",
+      "value": 13.6,
+      "package": "14 oz block",
+      "package_price_usd": 2.92,
+      "price_basis": "Walmart (Nasoya) Jul 2026"
+    },
+    {
+      "food": "Tempeh",
+      "category": "Soy & plant proteins",
+      "value": 13.2,
+      "package": "8 oz pack",
+      "package_price_usd": 3.48,
+      "price_basis": "Walmart (Lightlife) Jul 2026"
+    },
+    {
+      "food": "Ground beef (80/20)",
+      "category": "Meat & poultry",
+      "value": 11.5,
+      "package": "per lb",
+      "package_price_usd": 6.75,
+      "price_basis": "BLS US avg May 2026 (APU0000703112)"
+    },
+    {
+      "food": "Ground beef (93/7)",
+      "category": "Meat & poultry",
+      "value": 11.0,
+      "package": "per lb",
+      "package_price_usd": 8.62,
+      "price_basis": "BLS US avg May 2026 (APU0000703113)"
+    },
+    {
+      "food": "Bacon",
+      "category": "Meat & poultry",
+      "value": 9.2,
+      "package": "per lb",
+      "package_price_usd": 6.71,
+      "price_basis": "BLS US avg May 2026 (APU0000704111)"
+    }
+  ]
+}

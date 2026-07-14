@@ -1,0 +1,174 @@
+{
+  "slug": "cheapest-complete-protein-pairs",
+  "suggested_title": "Rice and Beans Math: The Cheapest Complete-Protein Combos",
+  "metric": "combined_g_per_dollar_5050",
+  "computed_from": "audited public/data CSVs (protein-per-dollar-2026, fiber-per-dollar-2026)",
+  "n_foods": 20,
+  "winner": "Pinto beans (dry) + Whole wheat flour",
+  "winner_value": 97.0,
+  "loser": "Green split peas (dry) + Pearled barley (dry)",
+  "loser_value": 55.1,
+  "spread_x": 1.8,
+  "rows": [
+    {
+      "food": "Pinto beans (dry) + Whole wheat flour",
+      "category": "combo",
+      "value": 97.0,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Pinto beans (dry) 97.9, Whole wheat flour 96.0"
+    },
+    {
+      "food": "Black beans (dry) + Whole wheat flour",
+      "category": "combo",
+      "value": 88.5,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Black beans (dry) 81.0, Whole wheat flour 96.0"
+    },
+    {
+      "food": "Brown lentils (dry) + Whole wheat flour",
+      "category": "combo",
+      "value": 86.8,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Brown lentils (dry) 77.7, Whole wheat flour 96.0"
+    },
+    {
+      "food": "Navy beans (dry) + Whole wheat flour",
+      "category": "combo",
+      "value": 86.0,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Navy beans (dry) 75.9, Whole wheat flour 96.0"
+    },
+    {
+      "food": "Green split peas (dry) + Whole wheat flour",
+      "category": "combo",
+      "value": 85.0,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Green split peas (dry) 73.9, Whole wheat flour 96.0"
+    },
+    {
+      "food": "Pinto beans (dry) + Old-fashioned rolled oats",
+      "category": "combo",
+      "value": 72.2,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Pinto beans (dry) 97.9, Old-fashioned rolled oats 46.6"
+    },
+    {
+      "food": "Pinto beans (dry) + Brown rice (dry)",
+      "category": "combo",
+      "value": 67.2,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Pinto beans (dry) 97.9, Brown rice (dry) 36.6"
+    },
+    {
+      "food": "Pinto beans (dry) + Pearled barley (dry)",
+      "category": "combo",
+      "value": 67.1,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Pinto beans (dry) 97.9, Pearled barley (dry) 36.3"
+    },
+    {
+      "food": "Black beans (dry) + Old-fashioned rolled oats",
+      "category": "combo",
+      "value": 63.8,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Black beans (dry) 81.0, Old-fashioned rolled oats 46.6"
+    },
+    {
+      "food": "Brown lentils (dry) + Old-fashioned rolled oats",
+      "category": "combo",
+      "value": 62.2,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Brown lentils (dry) 77.7, Old-fashioned rolled oats 46.6"
+    },
+    {
+      "food": "Navy beans (dry) + Old-fashioned rolled oats",
+      "category": "combo",
+      "value": 61.2,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Navy beans (dry) 75.9, Old-fashioned rolled oats 46.6"
+    },
+    {
+      "food": "Green split peas (dry) + Old-fashioned rolled oats",
+      "category": "combo",
+      "value": 60.2,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Green split peas (dry) 73.9, Old-fashioned rolled oats 46.6"
+    },
+    {
+      "food": "Black beans (dry) + Brown rice (dry)",
+      "category": "combo",
+      "value": 58.8,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Black beans (dry) 81.0, Brown rice (dry) 36.6"
+    },
+    {
+      "food": "Black beans (dry) + Pearled barley (dry)",
+      "category": "combo",
+      "value": 58.6,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Black beans (dry) 81.0, Pearled barley (dry) 36.3"
+    },
+    {
+      "food": "Brown lentils (dry) + Brown rice (dry)",
+      "category": "combo",
+      "value": 57.2,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Brown lentils (dry) 77.7, Brown rice (dry) 36.6"
+    },
+    {
+      "food": "Brown lentils (dry) + Pearled barley (dry)",
+      "category": "combo",
+      "value": 57.0,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Brown lentils (dry) 77.7, Pearled barley (dry) 36.3"
+    },
+    {
+      "food": "Navy beans (dry) + Brown rice (dry)",
+      "category": "combo",
+      "value": 56.2,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Navy beans (dry) 75.9, Brown rice (dry) 36.6"
+    },
+    {
+      "food": "Navy beans (dry) + Pearled barley (dry)",
+      "category": "combo",
+      "value": 56.1,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Navy beans (dry) 75.9, Pearled barley (dry) 36.3"
+    },
+    {
+      "food": "Green split peas (dry) + Brown rice (dry)",
+      "category": "combo",
+      "value": 55.2,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Green split peas (dry) 73.9, Brown rice (dry) 36.6"
+    },
+    {
+      "food": "Green split peas (dry) + Pearled barley (dry)",
+      "category": "combo",
+      "value": 55.1,
+      "package": "",
+      "package_price_usd": 0,
+      "price_basis": "50/50 dollar split of audited rows: Green split peas (dry) 73.9, Pearled barley (dry) 36.3"
+    }
+  ]
+}

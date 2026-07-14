@@ -1,0 +1,134 @@
+{
+  "slug": "one-dollar-protein-what-it-buys",
+  "suggested_title": "What One Dollar of Protein Buys, Food by Food",
+  "metric": "protein_g_per_dollar",
+  "computed_from": "audited public/data CSVs (protein-per-dollar-2026, fiber-per-dollar-2026)",
+  "n_foods": 15,
+  "winner": "Pinto beans (dry)",
+  "winner_value": 97.9,
+  "loser": "Dry roasted peanuts",
+  "loser_value": 39.8,
+  "spread_x": 2.5,
+  "rows": [
+    {
+      "food": "Pinto beans (dry)",
+      "category": "Dried beans & lentils",
+      "value": 97.9,
+      "package": "4 lb bag",
+      "package_price_usd": 3.97,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Whole wheat flour",
+      "category": "Grains & pantry",
+      "value": 96.0,
+      "package": "5 lb bag",
+      "package_price_usd": 3.12,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Black beans (dry)",
+      "category": "Dried beans & lentils",
+      "value": 81.0,
+      "package": "2 lb bag",
+      "package_price_usd": 2.42,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Brown lentils (dry)",
+      "category": "Dried beans & lentils",
+      "value": 77.7,
+      "package": "16 oz bag",
+      "package_price_usd": 1.44,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Navy beans (dry)",
+      "category": "Dried beans & lentils",
+      "value": 75.9,
+      "package": "2 lb bag",
+      "package_price_usd": 2.67,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Green split peas (dry)",
+      "category": "Dried beans & lentils",
+      "value": 73.9,
+      "package": "16 oz bag",
+      "package_price_usd": 1.42,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Chickpeas (dry)",
+      "category": "Dried beans & lentils",
+      "value": 56.7,
+      "package": "16 oz bag",
+      "package_price_usd": 1.64,
+      "price_basis": "Walmart (fiber study, audited)"
+    },
+    {
+      "food": "Red lentils (dry)",
+      "category": "Dried beans & lentils",
+      "value": 56.0,
+      "package": "16 oz bag",
+      "package_price_usd": 1.94,
+      "price_basis": "Walmart (fiber study, audited)"
+    },
+    {
+      "food": "Whole wheat spaghetti",
+      "category": "Grains & pantry",
+      "value": 53.4,
+      "package": "16 oz box",
+      "package_price_usd": 1.18,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Peanut butter",
+      "category": "Nuts & seeds",
+      "value": 50.7,
+      "package": "40 oz jar",
+      "package_price_usd": 4.97,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Chicken drumsticks (bone-in)",
+      "category": "Meat & poultry",
+      "value": 50.3,
+      "package": "5 lb bag",
+      "package_price_usd": 5.46,
+      "price_basis": "Walmart Jul 2026; USDA SR28 refuse: 33% bone and cartilage"
+    },
+    {
+      "food": "White rice (long grain, dry)",
+      "category": "Grains & pantry",
+      "value": 48.0,
+      "package": "5 lb bag",
+      "package_price_usd": 3.37,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Spaghetti (regular, dry)",
+      "category": "Grains & pantry",
+      "value": 47.7,
+      "package": "16 oz box",
+      "package_price_usd": 1.24,
+      "price_basis": "Walmart GV Jul 2026"
+    },
+    {
+      "food": "Old-fashioned rolled oats",
+      "category": "Grains & pantry",
+      "value": 46.6,
+      "package": "42 oz canister",
+      "package_price_usd": 3.36,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    },
+    {
+      "food": "Dry roasted peanuts",
+      "category": "Nuts & seeds",
+      "value": 39.8,
+      "package": "16 oz jar",
+      "package_price_usd": 2.78,
+      "price_basis": "Walmart GV (fiber study, audited)"
+    }
+  ]
+}

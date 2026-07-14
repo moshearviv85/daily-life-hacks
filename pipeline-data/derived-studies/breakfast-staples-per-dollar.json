@@ -1,0 +1,98 @@
+{
+  "slug": "breakfast-staples-per-dollar",
+  "suggested_title": "Breakfast Staples Ranked by Nutrition per Dollar",
+  "metric": "combined",
+  "computed_from": "audited public/data CSVs (protein-per-dollar-2026, fiber-per-dollar-2026)",
+  "n_foods": 9,
+  "winner": "Whole wheat flour",
+  "winner_value": 173.8,
+  "loser": "Apples (gala)",
+  "loser_value": 7.7,
+  "spread_x": 22.6,
+  "rows": [
+    {
+      "food": "Whole wheat flour",
+      "category": "Grains & pantry",
+      "value": 173.8,
+      "package": "5 lb bag",
+      "package_price_usd": 3.12,
+      "price_basis": "Walmart GV (fiber study, audited)",
+      "protein_g_per_dollar": 96.0,
+      "fiber_g_per_dollar": 77.8
+    },
+    {
+      "food": "Old-fashioned rolled oats",
+      "category": "Grains & pantry",
+      "value": 82.4,
+      "package": "42 oz canister",
+      "package_price_usd": 3.36,
+      "price_basis": "Walmart GV (fiber study, audited)",
+      "protein_g_per_dollar": 46.6,
+      "fiber_g_per_dollar": 35.8
+    },
+    {
+      "food": "Peanut butter",
+      "category": "Nuts & seeds",
+      "value": 62.1,
+      "package": "40 oz jar",
+      "package_price_usd": 4.97,
+      "price_basis": "Walmart GV (fiber study, audited)",
+      "protein_g_per_dollar": 50.7,
+      "fiber_g_per_dollar": 11.4
+    },
+    {
+      "food": "Eggs (large)",
+      "category": "Eggs & dairy",
+      "value": 34.4,
+      "package": "1 dozen (600 g edible)",
+      "package_price_usd": 2.19,
+      "price_basis": "BLS US avg May 2026 (APU0000708111)",
+      "protein_g_per_dollar": 34.4
+    },
+    {
+      "food": "Whole milk",
+      "category": "Eggs & dairy",
+      "value": 29.1,
+      "package": "1 gallon",
+      "package_price_usd": 4.22,
+      "price_basis": "BLS US avg May 2026 (APU0000709112)",
+      "protein_g_per_dollar": 29.1
+    },
+    {
+      "food": "Greek yogurt (plain, nonfat)",
+      "category": "Eggs & dairy",
+      "value": 27.5,
+      "package": "32 oz tub",
+      "package_price_usd": 3.36,
+      "price_basis": "Walmart GV Jul 2026",
+      "protein_g_per_dollar": 27.5
+    },
+    {
+      "food": "Cottage cheese (4%)",
+      "category": "Eggs & dairy",
+      "value": 26.3,
+      "package": "24 oz tub",
+      "package_price_usd": 2.87,
+      "price_basis": "Walmart GV Jul 2026",
+      "protein_g_per_dollar": 26.3
+    },
+    {
+      "food": "Bananas",
+      "category": "Fresh fruit",
+      "value": 11.6,
+      "package": "per lb",
+      "package_price_usd": 0.65,
+      "price_basis": "BLS US avg",
+      "fiber_g_per_dollar": 11.6
+    },
+    {
+      "food": "Apples (gala)",
+      "category": "Fresh fruit",
+      "value": 7.7,
+      "package": "per lb",
+      "package_price_usd": 1.28,
+      "price_basis": "Walmart",
+      "fiber_g_per_dollar": 7.7
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "grains-fiber-per-dollar-ranked",
+  "suggested_title": "Grains Ranked by Fiber per Dollar",
+  "metric": "fiber_g_per_dollar",
+  "computed_from": "audited public/data CSVs (protein-per-dollar-2026, fiber-per-dollar-2026)",
+  "n_foods": 11,
+  "winner": "Whole wheat flour",
+  "winner_value": 77.8,
+  "loser": "Quinoa (dry)",
+  "loser_value": 10.6,
+  "spread_x": 7.3,
+  "rows": [
+    {
+      "food": "Whole wheat flour",
+      "category": "Whole grains",
+      "value": 77.8,
+      "package": "5 lb bag",
+      "package_price_usd": 3.12,
+      "price_basis": "Walmart GV"
+    },
+    {
+      "food": "Popcorn kernels",
+      "category": "Whole grains",
+      "value": 57.7,
+      "package": "2 lb bag",
+      "package_price_usd": 2.28,
+      "price_basis": "Walmart GV"
+    },
+    {
+      "food": "Pearled barley (dry)",
+      "category": "Whole grains",
+      "value": 57.1,
+      "package": "16 oz bag",
+      "package_price_usd": 1.24,
+      "price_basis": "Walmart GV"
+    },
+    {
+      "food": "Old-fashioned rolled oats",
+      "category": "Whole grains",
+      "value": 35.8,
+      "package": "42 oz canister",
+      "package_price_usd": 3.36,
+      "price_basis": "Walmart GV"
+    },
+    {
+      "food": "Whole wheat spaghetti",
+      "category": "Whole grains",
+      "value": 35.4,
+      "package": "16 oz box",
+      "package_price_usd": 1.18,
+      "price_basis": "Walmart GV"
+    },
+    {
+      "food": "Bran flakes cereal",
+      "category": "Whole grains",
+      "value": 30.1,
+      "package": "17.3 oz box",
+      "package_price_usd": 2.98,
+      "price_basis": "Walmart GV"
+    },
+    {
+      "food": "Bulgur wheat (dry)",
+      "category": "Whole grains",
+      "value": 24.4,
+      "package": "24 oz bag",
+      "package_price_usd": 3.49,
+      "price_basis": "Walmart"
+    },
+    {
+      "food": "Oat bran (dry)",
+      "category": "Whole grains",
+      "value": 22.5,
+      "package": "18 oz bag",
+      "package_price_usd": 3.49,
+      "price_basis": "Walmart"
+    },
+    {
+      "food": "Brown rice (dry)",
+      "category": "Whole grains",
+      "value": 17.5,
+      "package": "2 lb bag",
+      "package_price_usd": 1.87,
+      "price_basis": "Walmart GV"
+    },
+    {
+      "food": "100% whole wheat bread",
+      "category": "Whole grains",
+      "value": 17.3,
+      "package": "20 oz loaf",
+      "package_price_usd": 1.97,
+      "price_basis": "Walmart GV"
+    },
+    {
+      "food": "Quinoa (dry)",
+      "category": "Whole grains",
+      "value": 10.6,
+      "package": "2 lb bag",
+      "package_price_usd": 5.97,
+      "price_basis": "Walmart GV"
+    }
+  ]
+}

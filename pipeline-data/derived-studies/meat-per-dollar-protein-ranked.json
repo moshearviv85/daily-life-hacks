@@ -1,0 +1,102 @@
+{
+  "slug": "meat-per-dollar-protein-ranked",
+  "suggested_title": "Meat per Dollar: 11 Cuts Ranked by Protein Value",
+  "metric": "protein_g_per_dollar",
+  "computed_from": "audited public/data CSVs (protein-per-dollar-2026, fiber-per-dollar-2026)",
+  "n_foods": 11,
+  "winner": "Chicken drumsticks (bone-in)",
+  "winner_value": 50.3,
+  "loser": "Bacon",
+  "loser_value": 9.2,
+  "spread_x": 5.5,
+  "rows": [
+    {
+      "food": "Chicken drumsticks (bone-in)",
+      "category": "Meat & poultry",
+      "value": 50.3,
+      "package": "5 lb bag",
+      "package_price_usd": 5.46,
+      "price_basis": "Walmart Jul 2026; USDA SR28 refuse: 33% bone and cartilage"
+    },
+    {
+      "food": "Chicken thighs (boneless, skinless)",
+      "category": "Meat & poultry",
+      "value": 27.7,
+      "package": "per lb",
+      "package_price_usd": 3.22,
+      "price_basis": "Walmart Jul 2026"
+    },
+    {
+      "food": "Rotisserie chicken (whole, cooked)",
+      "category": "Meat & poultry",
+      "value": 26.7,
+      "package": "whole bird (36 oz, cooked)",
+      "package_price_usd": 5.97,
+      "price_basis": "Walmart deli Jul 2026; USDA SR28 refuse (roasted, meat only): 33% bone + 13% skin"
+    },
+    {
+      "food": "Whole chicken (raw)",
+      "category": "Meat & poultry",
+      "value": 25.3,
+      "package": "per lb",
+      "package_price_usd": 2.04,
+      "price_basis": "BLS US avg May 2026 (APU0000706111); USDA FDC 171447 yield: 276 g meat+skin per lb ready-to-cook"
+    },
+    {
+      "food": "Pork shoulder butt roast (boneless)",
+      "category": "Meat & poultry",
+      "value": 25.2,
+      "package": "per lb",
+      "package_price_usd": 3.14,
+      "price_basis": "Walmart (Smithfield) Jul 2026"
+    },
+    {
+      "food": "Chicken breast (boneless, skinless)",
+      "category": "Meat & poultry",
+      "value": 24.5,
+      "package": "per lb",
+      "package_price_usd": 4.17,
+      "price_basis": "BLS US avg May 2026 (APU0000FF1101)"
+    },
+    {
+      "food": "Pork loin chops (boneless)",
+      "category": "Meat & poultry",
+      "value": 22.3,
+      "package": "per lb",
+      "package_price_usd": 4.39,
+      "price_basis": "BLS US avg May 2026 (APU0000FD3101)"
+    },
+    {
+      "food": "Ground turkey (93/7)",
+      "category": "Meat & poultry",
+      "value": 15.6,
+      "package": "1 lb roll",
+      "package_price_usd": 5.46,
+      "price_basis": "Walmart (Jennie-O) Jul 2026"
+    },
+    {
+      "food": "Ground beef (80/20)",
+      "category": "Meat & poultry",
+      "value": 11.5,
+      "package": "per lb",
+      "package_price_usd": 6.75,
+      "price_basis": "BLS US avg May 2026 (APU0000703112)"
+    },
+    {
+      "food": "Ground beef (93/7)",
+      "category": "Meat & poultry",
+      "value": 11.0,
+      "package": "per lb",
+      "package_price_usd": 8.62,
+      "price_basis": "BLS US avg May 2026 (APU0000703113)"
+    },
+    {
+      "food": "Bacon",
+      "category": "Meat & poultry",
+      "value": 9.2,
+      "package": "per lb",
+      "package_price_usd": 6.71,
+      "price_basis": "BLS US avg May 2026 (APU0000704111)"
+    }
+  ]
+}
