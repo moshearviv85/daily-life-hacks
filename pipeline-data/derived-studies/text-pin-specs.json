@@ -1,0 +1,290 @@
+[
+  {
+    "pin_slug": "txt-animal-protein-per-dollar-ranked-a",
+    "kicker": "We priced 21 animal proteins",
+    "headline": "The Cheapest Animal Protein: Chicken drumsticks.",
+    "big_number": "50g",
+    "sub": "50 grams of protein per dollar. Runner-up: Eggs at 34.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-animal-protein-per-dollar-ranked-b",
+    "kicker": "We priced 21 animal proteins",
+    "headline": "Same Aisle. 5.5x the Protein Value.",
+    "big_number": null,
+    "sub": "Chicken drumsticks: 50g of protein per dollar. Bacon: 9g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-beans-double-win-fiber-protein-a",
+    "kicker": "We priced 10 beans and lentils",
+    "headline": "Beans Win Twice: Fiber and Protein: Pinto beans.",
+    "big_number": "169g",
+    "sub": "169 grams of protein + fiber per dollar. Runner-up: Green split peas at 145.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-beans-double-win-fiber-protein-b",
+    "kicker": "We priced 10 beans and lentils",
+    "headline": "Same Aisle. 7.7x the Protein + Fiber Value.",
+    "big_number": null,
+    "sub": "Pinto beans: 169g of protein + fiber per dollar. Canned chickpeas: 22g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-breakfast-staples-per-dollar-a",
+    "kicker": "We priced 9 breakfast staples",
+    "headline": "The Best Breakfast Value in the Store: Whole wheat flour.",
+    "big_number": "174g",
+    "sub": "174 grams of protein + fiber per dollar. Runner-up: Old-fashioned rolled oats at 82.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-breakfast-staples-per-dollar-b",
+    "kicker": "We priced 9 breakfast staples",
+    "headline": "Same Aisle. 22.6x the Protein + Fiber Value.",
+    "big_number": null,
+    "sub": "Whole wheat flour: 174g of protein + fiber per dollar. Apples: 8g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-canned-vs-dry-beans-cost-a",
+    "kicker": "We priced 10 beans, canned and dry",
+    "headline": "Canned vs Dry Beans: The Real Cost Gap: Pinto beans.",
+    "big_number": "98g",
+    "sub": "98 grams of protein per dollar. Runner-up: Black beans at 81.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-canned-vs-dry-beans-cost-b",
+    "kicker": "We priced 10 beans, canned and dry",
+    "headline": "Same Aisle. 4.5x the Protein Value.",
+    "big_number": null,
+    "sub": "Pinto beans: 98g of protein per dollar. Canned chickpeas: 22g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-cheapest-complete-protein-pairs-a",
+    "kicker": "We priced 20 legume + grain combos",
+    "headline": "The Cheapest Rice-and-Beans Math: Pinto beans + Whole wheat flour.",
+    "big_number": "97g",
+    "sub": "97 grams of combined protein per dollar. Runner-up: Black beans + Whole wheat flour at 88.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-cheapest-complete-protein-pairs-b",
+    "kicker": "We priced 20 legume + grain combos",
+    "headline": "Same Aisle. 1.8x the Combined Protein Value.",
+    "big_number": null,
+    "sub": "Pinto beans + Whole wheat flour: 97g of combined protein per dollar. Green split peas + Pearled barley: 55g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-dairy-protein-per-dollar-ranked-a",
+    "kicker": "We priced 6 dairy staples",
+    "headline": "The Best Dairy Protein Deal: Eggs.",
+    "big_number": "34g",
+    "sub": "34 grams of protein per dollar. Runner-up: Mozzarella at 30.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-dairy-protein-per-dollar-ranked-b",
+    "kicker": "We priced 6 dairy staples",
+    "headline": "Same Aisle. 1.9x the Protein Value.",
+    "big_number": null,
+    "sub": "Eggs: 34g of protein per dollar. Cheddar cheese: 18g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-eggs-vs-everything-protein-value-a",
+    "kicker": "We priced 49 grocery foods",
+    "headline": "What Beats Eggs on Protein per Dollar: Pinto beans.",
+    "big_number": "98g",
+    "sub": "98 grams of protein per dollar. Runner-up: Whole wheat flour at 96.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-eggs-vs-everything-protein-value-b",
+    "kicker": "We priced 49 grocery foods",
+    "headline": "Same Aisle. 10.6x the Protein Value.",
+    "big_number": null,
+    "sub": "Pinto beans: 98g of protein per dollar. Bacon: 9g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-grains-fiber-per-dollar-ranked-a",
+    "kicker": "We priced 11 grains",
+    "headline": "The Cheapest Fiber in the Grain Aisle: Whole wheat flour.",
+    "big_number": "78g",
+    "sub": "78 grams of fiber per dollar. Runner-up: Popcorn kernels at 58.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-grains-fiber-per-dollar-ranked-b",
+    "kicker": "We priced 11 grains",
+    "headline": "Same Aisle. 7.3x the Fiber Value.",
+    "big_number": null,
+    "sub": "Whole wheat flour: 78g of fiber per dollar. Quinoa: 11g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-high-fiber-snacks-per-dollar-a",
+    "kicker": "We priced 10 snacks",
+    "headline": "The Cheapest High-Fiber Snack: Popcorn kernels.",
+    "big_number": "58g",
+    "sub": "58 grams of fiber per dollar. Runner-up: Carrots at 16.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-high-fiber-snacks-per-dollar-b",
+    "kicker": "We priced 10 snacks",
+    "headline": "Same Aisle. 9.2x the Fiber Value.",
+    "big_number": null,
+    "sub": "Popcorn kernels: 58g of fiber per dollar. Raisins: 6g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-meat-per-dollar-protein-ranked-a",
+    "kicker": "We priced 11 cuts of meat",
+    "headline": "The Cheapest Meat for Protein: Chicken drumsticks.",
+    "big_number": "50g",
+    "sub": "50 grams of protein per dollar. Runner-up: Chicken thighs at 28.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-meat-per-dollar-protein-ranked-b",
+    "kicker": "We priced 11 cuts of meat",
+    "headline": "Same Aisle. 5.5x the Protein Value.",
+    "big_number": null,
+    "sub": "Chicken drumsticks: 50g of protein per dollar. Bacon: 9g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-no-cook-protein-per-dollar-a",
+    "kicker": "We priced 15 no-cook proteins",
+    "headline": "The Cheapest No-Cook Protein: Peanut butter.",
+    "big_number": "51g",
+    "sub": "51 grams of protein per dollar. Runner-up: Dry roasted peanuts at 40.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-no-cook-protein-per-dollar-b",
+    "kicker": "We priced 15 no-cook proteins",
+    "headline": "Same Aisle. 3.4x the Protein Value.",
+    "big_number": null,
+    "sub": "Peanut butter: 51g of protein per dollar. Almonds: 15g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-one-dollar-fiber-what-it-buys-a",
+    "kicker": "We priced 15 foods",
+    "headline": "The Cheapest Fiber in the Store: Whole wheat flour.",
+    "big_number": "78g",
+    "sub": "78 grams of fiber per dollar. Runner-up: Green split peas at 71.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-one-dollar-fiber-what-it-buys-b",
+    "kicker": "We priced 15 foods",
+    "headline": "Same Aisle. 2.8x the Fiber Value.",
+    "big_number": null,
+    "sub": "Whole wheat flour: 78g of fiber per dollar. Canned black beans: 28g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-one-dollar-protein-what-it-buys-a",
+    "kicker": "We priced 15 foods",
+    "headline": "The Cheapest Protein in the Store: Pinto beans.",
+    "big_number": "98g",
+    "sub": "98 grams of protein per dollar. Runner-up: Whole wheat flour at 96.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-one-dollar-protein-what-it-buys-b",
+    "kicker": "We priced 15 foods",
+    "headline": "Same Aisle. 2.5x the Protein Value.",
+    "big_number": null,
+    "sub": "Pinto beans: 98g of protein per dollar. Dry roasted peanuts: 40g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-plant-protein-per-dollar-ranked-a",
+    "kicker": "We priced 18 plant proteins",
+    "headline": "The Cheapest Plant Protein: Pinto beans.",
+    "big_number": "98g",
+    "sub": "98 grams of protein per dollar. Runner-up: Black beans at 81.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-plant-protein-per-dollar-ranked-b",
+    "kicker": "We priced 18 plant proteins",
+    "headline": "Same Aisle. 7.4x the Protein Value.",
+    "big_number": null,
+    "sub": "Pinto beans: 98g of protein per dollar. Tempeh: 13g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-produce-fiber-per-dollar-ranked-a",
+    "kicker": "We priced 22 fruits and vegetables",
+    "headline": "The Cheapest Fiber in the Produce Aisle: Frozen green peas.",
+    "big_number": "18g",
+    "sub": "18 grams of fiber per dollar. Runner-up: Carrots at 16.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-produce-fiber-per-dollar-ranked-b",
+    "kicker": "We priced 22 fruits and vegetables",
+    "headline": "Same Aisle. 7.0x the Fiber Value.",
+    "big_number": null,
+    "sub": "Frozen green peas: 18g of fiber per dollar. Blueberries: 2g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-shelf-stable-pantry-per-dollar-a",
+    "kicker": "We priced 27 pantry foods",
+    "headline": "The Cheapest Shelf-Stable Protein: Pinto beans.",
+    "big_number": "98g",
+    "sub": "98 grams of protein per dollar. Runner-up: Whole wheat flour at 96.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-shelf-stable-pantry-per-dollar-b",
+    "kicker": "We priced 27 pantry foods",
+    "headline": "Same Aisle. 6.6x the Protein Value.",
+    "big_number": null,
+    "sub": "Pinto beans: 98g of protein per dollar. Almonds: 15g. Same store, same month.",
+    "footer": "USDA data + real store prices, July 2026",
+    "style": "dark"
+  }
+]

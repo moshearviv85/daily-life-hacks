@@ -111,25 +111,32 @@ def render_pin(spec: dict, out_dir: Path) -> Path:
         y += lh
     y += 40
 
-    # hero number
+    # everything below the headline must end above the footer zone
+    footer_top = H - 240
+    sub = spec.get("sub")
     big = spec.get("big_number")
+
+    # measure the sub block first (bottom-anchored above the footer)
+    sf, slines, s_h = None, [], 0
+    if sub:
+        sf, slines = _fit_font(d, sub, F_SERIF, inner_w, 56, min_size=36)
+        s_h = int(sf.size * 1.3) * len(slines)
+
     if big:
-        bf = _font(F_BLACK, 330)
+        gap = footer_top - y - s_h - 50
+        size = min(300, max(120, int(gap * 0.62)))
+        bf = _font(F_BLACK, size)
         while d.textlength(big, font=bf) > inner_w:
             bf = _font(F_BLACK, bf.size - 10)
-        d.text((W / 2, y), big, font=bf, fill=style["accent"], anchor="ma")
-        y += bf.size + 60
-    else:
-        y += 20
+        d.text((W / 2, y + max(0, (gap - bf.size) // 2)), big, font=bf,
+               fill=style["accent"], anchor="ma")
 
-    # sub line
-    sub = spec.get("sub")
     if sub:
-        sf, slines = _fit_font(d, sub, F_SERIF, inner_w, 60, min_size=40)
+        sy = footer_top - s_h - 20
         slh = int(sf.size * 1.3)
         for ln in slines:
-            d.text((W / 2, y), ln, font=sf, fill=style["ink"], anchor="ma")
-            y += slh
+            d.text((W / 2, sy), ln, font=sf, fill=style["ink"], anchor="ma")
+            sy += slh
 
     # footer block (anchored to bottom)
     fy = H - 150
