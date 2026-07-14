@@ -153,6 +153,65 @@ def render_pin(spec: dict, out_dir: Path) -> Path:
     return out
 
 
+
+
+def render_hero_pin(spec: dict, out_dir: Path) -> Path:
+    """v2 layout after owner feedback 2026-07-13: pins are scanned in half a
+    second on a small feed card. ONE message: tiny kicker, one HUGE number,
+    a 1-3 word title, a single short tagline line. Nothing else."""
+    style = STYLES[spec.get("style", "cream")]
+    img = Image.new("RGB", (W, H), style["bg"])
+    d = ImageDraw.Draw(img)
+    inner_w = W - 2 * MARGIN
+
+    # tiny kicker at top
+    kicker = spec.get("kicker", "")
+    if kicker:
+        kf = _font(F_BLACK, 36)
+        kick = " ".join(kicker.upper())
+        while d.textlength(kick, font=kf) > inner_w and kf.size > 24:
+            kf = _font(F_BLACK, kf.size - 2)
+        d.text((W / 2, 130), kick, font=kf, fill=style["accent"], anchor="ma")
+
+    # the number: as big as the canvas allows
+    number = spec["number"]
+    bf = _font(F_BLACK, 460)
+    while d.textlength(number, font=bf) > inner_w and bf.size > 120:
+        bf = _font(F_BLACK, bf.size - 10)
+    num_y = 380
+    d.text((W / 2, num_y), number, font=bf, fill=style["accent"], anchor="ma")
+
+    # title: 1-3 words, huge, max 2 lines
+    title = spec.get("title", "")
+    ty = num_y + bf.size + 70
+    if title:
+        tf, tlines = _fit_font(d, title, F_BLACK, inner_w, 130, min_size=80)
+        tlh = int(tf.size * 1.1)
+        for ln in tlines[:2]:
+            d.text((W / 2, ty), ln, font=tf, fill=style["ink"], anchor="ma")
+            ty += tlh
+
+    # tagline: ONE line, forced to fit
+    tag = spec.get("tagline", "")
+    if tag:
+        gf = _font(F_SERIF, 54)
+        while d.textlength(tag, font=gf) > inner_w and gf.size > 34:
+            gf = _font(F_SERIF, gf.size - 2)
+        d.text((W / 2, ty + 40), tag, font=gf, fill=style["ink"], anchor="ma")
+
+    # minimal footer
+    fy = H - 130
+    d.rectangle([W / 2 - 40, fy - 36, W / 2 + 40, fy - 30], fill=style["accent"])
+    d.text((W / 2, fy), SITE, font=_font(F_BLACK, 40), fill=style["ink"], anchor="ma")
+    small = spec.get("footer", "")
+    if small:
+        d.text((W / 2, fy + 54), small, font=_font(F_REG, 28), fill=style["footer_ink"], anchor="ma")
+
+    out = out_dir / f"{spec['pin_slug']}.jpg"
+    img.save(out, "JPEG", quality=90)
+    return out
+
+
 DEMO = [
     {
         "pin_slug": "text-beans-98g-v1",
