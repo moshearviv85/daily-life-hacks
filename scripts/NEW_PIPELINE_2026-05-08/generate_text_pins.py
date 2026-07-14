@@ -212,6 +212,62 @@ def render_hero_pin(spec: dict, out_dir: Path) -> Path:
     return out
 
 
+
+
+def render_claim_pin(spec: dict, out_dir: Path) -> Path:
+    """v3 layout after owner feedback: a pin is ONE complete claim that tells a
+    story (like a great Reddit title), big and readable, plus one support line
+    that says what the article holds. Fields: kicker, claim, support, footer."""
+    style = STYLES[spec.get("style", "cream")]
+    img = Image.new("RGB", (W, H), style["bg"])
+    d = ImageDraw.Draw(img)
+    inner_w = W - 2 * MARGIN
+
+    kicker = spec.get("kicker", "")
+    if kicker:
+        kf = _font(F_BLACK, 34)
+        kick = " ".join(kicker.upper())
+        while d.textlength(kick, font=kf) > inner_w and kf.size > 22:
+            kf = _font(F_BLACK, kf.size - 2)
+        d.text((W / 2, 120), kick, font=kf, fill=style["accent"], anchor="ma")
+        d.rectangle([W / 2 - 40, 190, W / 2 + 40, 196], fill=style["accent"])
+
+    # the claim: complete sentence(s), as big as fits in the middle band
+    claim = spec["claim"]
+    size = 96
+    while size > 56:
+        cf = _font(F_BLACK, size)
+        lines = _wrap(d, claim, cf, inner_w)
+        block_h = int(size * 1.22) * len(lines)
+        if block_h <= 760 and all(d.textlength(ln, font=cf) <= inner_w for ln in lines):
+            break
+        size -= 4
+    lh = int(size * 1.22)
+    y = 300 + max(0, (760 - lh * len(lines)) // 2)
+    for ln in lines:
+        d.text((W / 2, y), ln, font=cf, fill=style["ink"], anchor="ma")
+        y += lh
+
+    # support line: why click (one line, forced fit)
+    support = spec.get("support", "")
+    if support:
+        gf = _font(F_SERIF, 46)
+        while d.textlength(support, font=gf) > inner_w and gf.size > 32:
+            gf = _font(F_SERIF, gf.size - 2)
+        d.text((W / 2, 1160), support, font=gf, fill=style["accent"], anchor="ma")
+
+    fy = H - 130
+    d.rectangle([W / 2 - 40, fy - 36, W / 2 + 40, fy - 30], fill=style["accent"])
+    d.text((W / 2, fy), SITE, font=_font(F_BLACK, 40), fill=style["ink"], anchor="ma")
+    small = spec.get("footer", "")
+    if small:
+        d.text((W / 2, fy + 54), small, font=_font(F_REG, 28), fill=style["footer_ink"], anchor="ma")
+
+    out = out_dir / f"{spec['pin_slug']}.jpg"
+    img.save(out, "JPEG", quality=90)
+    return out
+
+
 DEMO = [
     {
         "pin_slug": "text-beans-98g-v1",

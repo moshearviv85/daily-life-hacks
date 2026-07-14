@@ -1,326 +1,290 @@
 [
   {
-    "pin_slug": "txt-animal-protein-per-dollar-ranked-a",
-    "kicker": "Protein per dollar, 21 foods",
-    "number": "50g",
-    "title": "Drumsticks.",
-    "tagline": "The cheapest animal protein, per dollar",
+    "pin_slug": "txt-meat-per-dollar-protein-ranked-a",
+    "kicker": "We priced 11 cuts of meat",
+    "claim": "Chicken drumsticks deliver 50g of protein per dollar. Chicken breast? 24.5.",
+    "support": "All 11 cuts ranked, cheapest to priciest",
     "footer": "USDA data · July 2026",
     "style": "cream"
   },
   {
+    "pin_slug": "txt-meat-per-dollar-protein-ranked-b",
+    "kicker": "We priced 11 cuts of meat",
+    "claim": "Ground beef is one of the worst protein deals in the meat aisle: 11.5g per dollar.",
+    "support": "See what beats it, ranked on the site",
+    "footer": "USDA data · July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-animal-protein-per-dollar-ranked-a",
+    "kicker": "We priced 21 animal proteins",
+    "claim": "The cheapest animal protein isn't chicken breast. It's drumsticks, at 50g per dollar.",
+    "support": "All 21 ranked: meat, fish, eggs, dairy",
+    "footer": "USDA data · July 2026",
+    "style": "orange"
+  },
+  {
     "pin_slug": "txt-animal-protein-per-dollar-ranked-b",
-    "kicker": "Protein per dollar, 21 foods",
-    "number": "5.5x",
-    "title": "Same store.",
-    "tagline": "Drumsticks: 50 · Bacon: 9",
+    "kicker": "We priced 21 animal proteins",
+    "claim": "Eggs beat every fish we priced on protein per dollar: 34.4 vs 22.4 for canned tuna.",
+    "support": "The full animal-protein ranking is on the site",
+    "footer": "USDA data · July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-dairy-protein-per-dollar-ranked-a",
+    "kicker": "We priced 6 dairy staples",
+    "claim": "Plain milk beats Greek yogurt on protein per dollar: 29.1 vs 27.5.",
+    "support": "All 6 fridge staples, ranked by real prices",
     "footer": "USDA data · July 2026",
     "style": "dark"
   },
   {
-    "pin_slug": "txt-beans-double-win-fiber-protein-a",
-    "kicker": "Protein + fiber per dollar",
-    "number": "169g",
-    "title": "Pintos.",
-    "tagline": "Beans win both columns, per dollar",
+    "pin_slug": "txt-dairy-protein-per-dollar-ranked-b",
+    "kicker": "We priced 6 dairy staples",
+    "claim": "Cottage cheese delivers 26.3g of protein per dollar. More than chicken breast.",
+    "support": "The dairy aisle ranking nobody ran, until now",
+    "footer": "USDA data · July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-no-cook-protein-per-dollar-a",
+    "kicker": "15 proteins, zero cooking",
+    "claim": "The cheapest protein that needs zero cooking? Peanut butter: 51g per dollar.",
+    "support": "All 15 no-cook options ranked on the site",
+    "footer": "USDA data · July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-no-cook-protein-per-dollar-b",
+    "kicker": "15 proteins, zero cooking",
+    "claim": "No stove, no problem: canned beans still deliver 30g of protein per dollar.",
+    "support": "The full zero-cooking protein ranking",
+    "footer": "USDA data · July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-plant-protein-per-dollar-ranked-a",
+    "kicker": "We priced 18 plant proteins",
+    "claim": "Dry pinto beans: 98g of protein per dollar. No meat we priced comes close.",
+    "support": "18 plant proteins ranked by real store prices",
     "footer": "USDA data · July 2026",
     "style": "dark"
   },
   {
-    "pin_slug": "txt-beans-double-win-fiber-protein-b",
-    "kicker": "Protein + fiber per dollar",
-    "number": "7.7x",
-    "title": "Same store.",
-    "tagline": "Pintos: 169 · Canned chickpeas: 22",
-    "footer": "USDA data · July 2026",
-    "style": "orange"
-  },
-  {
-    "pin_slug": "txt-breakfast-staples-per-dollar-a",
-    "kicker": "Breakfast, priced right",
-    "number": "174g",
-    "title": "Flour.",
-    "tagline": "The best breakfast value, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "orange"
-  },
-  {
-    "pin_slug": "txt-breakfast-staples-per-dollar-b",
-    "kicker": "Breakfast, priced right",
-    "number": "22.6x",
-    "title": "Same store.",
-    "tagline": "Flour: 174 · Apples: 8",
+    "pin_slug": "txt-plant-protein-per-dollar-ranked-b",
+    "kicker": "We priced 18 plant proteins",
+    "claim": "Tofu is one of the priciest plant proteins: 13.6g per dollar vs 78 for lentils.",
+    "support": "The full plant-protein ranking is on the site",
     "footer": "USDA data · July 2026",
     "style": "cream"
   },
   {
     "pin_slug": "txt-canned-vs-dry-beans-cost-a",
     "kicker": "Canned vs dry, priced",
-    "number": "98g",
-    "title": "Pintos.",
-    "tagline": "The convenience tax on beans, per dollar",
+    "claim": "Canned beans cost about 2.7x more per gram of protein than dry. Still cheaper than chicken.",
+    "support": "The convenience tax, calculated bean by bean",
     "footer": "USDA data · July 2026",
-    "style": "cream"
+    "style": "orange"
   },
   {
     "pin_slug": "txt-canned-vs-dry-beans-cost-b",
     "kicker": "Canned vs dry, priced",
-    "number": "4.5x",
-    "title": "Same store.",
-    "tagline": "Pintos: 98 · Canned chickpeas: 22",
+    "claim": "Dry black beans: 81g of protein per dollar. The same beans canned: 30.1.",
+    "support": "Every bean priced both ways on the site",
+    "footer": "USDA data · July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-one-dollar-protein-what-it-buys-a",
+    "kicker": "What one dollar buys",
+    "claim": "One dollar buys 98g of protein in dry beans, or 9 in bacon.",
+    "support": "15 foods, one dollar each, ranked",
     "footer": "USDA data · July 2026",
     "style": "dark"
   },
   {
+    "pin_slug": "txt-one-dollar-protein-what-it-buys-b",
+    "kicker": "What one dollar buys",
+    "claim": "A dollar of whole wheat flour buys 96g of protein. A dollar of oats: 47g.",
+    "support": "The full dollar-by-dollar protein list",
+    "footer": "USDA data · July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-eggs-vs-everything-protein-value-a",
+    "kicker": "Eggs vs 48 other foods",
+    "claim": "Eggs rank 19th of 49 on protein per dollar. Every dried bean beats them.",
+    "support": "The complete 49-food ranking is on the site",
+    "footer": "USDA data · July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-eggs-vs-everything-protein-value-b",
+    "kicker": "Eggs vs 48 other foods",
+    "claim": "Eggs are still the best animal protein deal after drumsticks: 34.4g per dollar.",
+    "support": "See everything eggs beat, and what beats eggs",
+    "footer": "USDA data · July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-grains-fiber-per-dollar-ranked-a",
+    "kicker": "We priced 11 grains",
+    "claim": "Whole wheat flour has 7x the fiber per dollar of quinoa. Same aisle.",
+    "support": "All 11 grains ranked by fiber per dollar",
+    "footer": "USDA data · July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-grains-fiber-per-dollar-ranked-b",
+    "kicker": "We priced 11 grains",
+    "claim": "Pearled barley is the sleeper of the grain aisle: 57.1g of fiber per dollar.",
+    "support": "The full grain ranking is on the site",
+    "footer": "USDA data · July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-produce-fiber-per-dollar-ranked-a",
+    "kicker": "22 fruits and vegetables, priced",
+    "claim": "Frozen green peas beat every fresh vegetable we priced on fiber per dollar: 18g.",
+    "support": "All 22 produce picks ranked by real prices",
+    "footer": "USDA data · July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-produce-fiber-per-dollar-ranked-b",
+    "kicker": "22 fruits and vegetables, priced",
+    "claim": "The freezer aisle quietly beats the fresh section on fiber per dollar. We have the receipts.",
+    "support": "22 fruits and vegetables, ranked on the site",
+    "footer": "USDA data · July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-high-fiber-snacks-per-dollar-a",
+    "kicker": "10 snacks, priced by fiber",
+    "claim": "The cheapest high-fiber snack in the store: popcorn kernels, 58g of fiber per dollar.",
+    "support": "All 10 snacks ranked, cheapest fiber first",
+    "footer": "USDA data · July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-high-fiber-snacks-per-dollar-b",
+    "kicker": "10 snacks, priced by fiber",
+    "claim": "Sunflower seeds pack 13g of fiber per dollar. Most snack bars do not come close.",
+    "support": "The full snack ranking is on the site",
+    "footer": "USDA data · July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-one-dollar-fiber-what-it-buys-a",
+    "kicker": "What one dollar buys",
+    "claim": "One dollar of whole wheat flour buys 78g of fiber. Almost three days of the target.",
+    "support": "15 foods, one dollar each, ranked by fiber",
+    "footer": "USDA data · July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-one-dollar-fiber-what-it-buys-b",
+    "kicker": "What one dollar buys",
+    "claim": "A dollar of split peas: 71g of fiber. Two and a half days of the target.",
+    "support": "The dollar-by-dollar fiber list is on the site",
+    "footer": "USDA data · July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-beans-double-win-fiber-protein-a",
+    "kicker": "Protein and fiber, one price",
+    "claim": "Pinto beans deliver 169g of protein plus fiber per dollar. Nothing we priced comes close.",
+    "support": "10 beans scored on both nutrients at once",
+    "footer": "USDA data · July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-beans-double-win-fiber-protein-b",
+    "kicker": "Protein and fiber, one price",
+    "claim": "Beans are the only aisle that wins the protein column and the fiber column at once.",
+    "support": "The double-win ranking, priced on the site",
+    "footer": "USDA data · July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-breakfast-staples-per-dollar-a",
+    "kicker": "Breakfast, priced right",
+    "claim": "Oats deliver 82g of protein plus fiber per dollar. The cereal aisle can't touch that.",
+    "support": "9 breakfast staples ranked by real value",
+    "footer": "USDA data · July 2026",
+    "style": "cream"
+  },
+  {
+    "pin_slug": "txt-breakfast-staples-per-dollar-b",
+    "kicker": "Breakfast, priced right",
+    "claim": "Eggs, oats, and peanut butter: the whole breakfast value podium, priced.",
+    "support": "9 staples ranked by nutrition per dollar",
+    "footer": "USDA data · July 2026",
+    "style": "dark"
+  },
+  {
+    "pin_slug": "txt-shelf-stable-pantry-per-dollar-a",
+    "kicker": "27 pantry foods, priced",
+    "claim": "A pantry with no fridge can still hit 98g of protein per dollar.",
+    "support": "27 shelf-stable foods ranked on the site",
+    "footer": "USDA data · July 2026",
+    "style": "orange"
+  },
+  {
+    "pin_slug": "txt-shelf-stable-pantry-per-dollar-b",
+    "kicker": "27 pantry foods, priced",
+    "claim": "Canned tuna vs dry lentils: 22.4 vs 78g of protein per dollar.",
+    "support": "The full shelf-stable ranking is on the site",
+    "footer": "USDA data · July 2026",
+    "style": "cream"
+  },
+  {
     "pin_slug": "txt-cheapest-complete-protein-pairs-a",
     "kicker": "Rice and beans math",
-    "number": "97g",
-    "title": "Pintos.",
-    "tagline": "The cheapest complete-protein combo, per dollar",
+    "claim": "Beans and grains complete each other's protein. The best combo delivers 97g per dollar.",
+    "support": "20 legume and grain combos, priced",
     "footer": "USDA data · July 2026",
     "style": "dark"
   },
   {
     "pin_slug": "txt-cheapest-complete-protein-pairs-b",
     "kicker": "Rice and beans math",
-    "number": "1.8x",
-    "title": "Same store.",
-    "tagline": "Pintos: 97 · Split peas: 55",
+    "claim": "The oldest budget meal on earth is still the best protein math in the store.",
+    "support": "20 rice-and-beans combos priced on the site",
     "footer": "USDA data · July 2026",
     "style": "orange"
-  },
-  {
-    "pin_slug": "txt-dairy-protein-per-dollar-ranked-a",
-    "kicker": "Protein per dollar, 6 staples",
-    "number": "34g",
-    "title": "Eggs.",
-    "tagline": "The best dairy protein deal, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "orange"
-  },
-  {
-    "pin_slug": "txt-dairy-protein-per-dollar-ranked-b",
-    "kicker": "Protein per dollar, 6 staples",
-    "number": "1.9x",
-    "title": "Same store.",
-    "tagline": "Eggs: 34 · Cheddar cheese: 18",
-    "footer": "USDA data · July 2026",
-    "style": "cream"
-  },
-  {
-    "pin_slug": "txt-eggs-vs-everything-protein-value-a",
-    "kicker": "Eggs vs 48 foods",
-    "number": "98g",
-    "title": "Pintos.",
-    "tagline": "What beats eggs on protein value, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "cream"
-  },
-  {
-    "pin_slug": "txt-eggs-vs-everything-protein-value-b",
-    "kicker": "Eggs vs 48 foods",
-    "number": "10.6x",
-    "title": "Same store.",
-    "tagline": "Pintos: 98 · Bacon: 9",
-    "footer": "USDA data · July 2026",
-    "style": "dark"
-  },
-  {
-    "pin_slug": "txt-grains-fiber-per-dollar-ranked-a",
-    "kicker": "Fiber per dollar, 11 grains",
-    "number": "78g",
-    "title": "Flour.",
-    "tagline": "The cheapest fiber in the grain aisle, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "dark"
-  },
-  {
-    "pin_slug": "txt-grains-fiber-per-dollar-ranked-b",
-    "kicker": "Fiber per dollar, 11 grains",
-    "number": "7.3x",
-    "title": "Same store.",
-    "tagline": "Flour: 78 · Quinoa: 11",
-    "footer": "USDA data · July 2026",
-    "style": "orange"
-  },
-  {
-    "pin_slug": "txt-high-fiber-snacks-per-dollar-a",
-    "kicker": "Fiber per dollar, 10 snacks",
-    "number": "58g",
-    "title": "Popcorn.",
-    "tagline": "The cheapest high-fiber snack, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "orange"
-  },
-  {
-    "pin_slug": "txt-high-fiber-snacks-per-dollar-b",
-    "kicker": "Fiber per dollar, 10 snacks",
-    "number": "9.2x",
-    "title": "Same store.",
-    "tagline": "Popcorn: 58 · Raisins: 6",
-    "footer": "USDA data · July 2026",
-    "style": "cream"
-  },
-  {
-    "pin_slug": "txt-meat-per-dollar-protein-ranked-a",
-    "kicker": "Protein per dollar, 11 cuts",
-    "number": "50g",
-    "title": "Drumsticks.",
-    "tagline": "The cheapest meat for protein, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "cream"
-  },
-  {
-    "pin_slug": "txt-meat-per-dollar-protein-ranked-b",
-    "kicker": "Protein per dollar, 11 cuts",
-    "number": "5.5x",
-    "title": "Same store.",
-    "tagline": "Drumsticks: 50 · Bacon: 9",
-    "footer": "USDA data · July 2026",
-    "style": "dark"
-  },
-  {
-    "pin_slug": "txt-no-cook-protein-per-dollar-a",
-    "kicker": "Protein per dollar, no cooking",
-    "number": "51g",
-    "title": "Peanut butter.",
-    "tagline": "The cheapest no-cook protein, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "dark"
-  },
-  {
-    "pin_slug": "txt-no-cook-protein-per-dollar-b",
-    "kicker": "Protein per dollar, no cooking",
-    "number": "3.4x",
-    "title": "Same store.",
-    "tagline": "Peanut butter: 51 · Almonds: 15",
-    "footer": "USDA data · July 2026",
-    "style": "orange"
-  },
-  {
-    "pin_slug": "txt-one-dollar-fiber-what-it-buys-a",
-    "kicker": "What $1 buys, 15 foods",
-    "number": "78g",
-    "title": "Flour.",
-    "tagline": "The cheapest fiber in the store, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "orange"
-  },
-  {
-    "pin_slug": "txt-one-dollar-fiber-what-it-buys-b",
-    "kicker": "What $1 buys, 15 foods",
-    "number": "2.8x",
-    "title": "Same store.",
-    "tagline": "Flour: 78 · Canned black beans: 28",
-    "footer": "USDA data · July 2026",
-    "style": "cream"
-  },
-  {
-    "pin_slug": "txt-one-dollar-protein-what-it-buys-a",
-    "kicker": "What $1 buys, 15 foods",
-    "number": "98g",
-    "title": "Pintos.",
-    "tagline": "The cheapest protein in the store, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "cream"
-  },
-  {
-    "pin_slug": "txt-one-dollar-protein-what-it-buys-b",
-    "kicker": "What $1 buys, 15 foods",
-    "number": "2.5x",
-    "title": "Same store.",
-    "tagline": "Pintos: 98 · Peanuts: 40",
-    "footer": "USDA data · July 2026",
-    "style": "dark"
-  },
-  {
-    "pin_slug": "txt-plant-protein-per-dollar-ranked-a",
-    "kicker": "Protein per dollar, 18 plants",
-    "number": "98g",
-    "title": "Pintos.",
-    "tagline": "The cheapest plant protein, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "dark"
-  },
-  {
-    "pin_slug": "txt-plant-protein-per-dollar-ranked-b",
-    "kicker": "Protein per dollar, 18 plants",
-    "number": "7.4x",
-    "title": "Same store.",
-    "tagline": "Pintos: 98 · Tempeh: 13",
-    "footer": "USDA data · July 2026",
-    "style": "orange"
-  },
-  {
-    "pin_slug": "txt-produce-fiber-per-dollar-ranked-a",
-    "kicker": "Fiber per dollar, 22 produce",
-    "number": "18g",
-    "title": "Frozen peas.",
-    "tagline": "The cheapest fiber in produce, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "orange"
-  },
-  {
-    "pin_slug": "txt-produce-fiber-per-dollar-ranked-b",
-    "kicker": "Fiber per dollar, 22 produce",
-    "number": "7.0x",
-    "title": "Same store.",
-    "tagline": "Frozen peas: 18 · Blueberries: 2",
-    "footer": "USDA data · July 2026",
-    "style": "cream"
-  },
-  {
-    "pin_slug": "txt-shelf-stable-pantry-per-dollar-a",
-    "kicker": "Protein per dollar, 27 pantry foods",
-    "number": "98g",
-    "title": "Pintos.",
-    "tagline": "The cheapest shelf-stable protein, per dollar",
-    "footer": "USDA data · July 2026",
-    "style": "cream"
-  },
-  {
-    "pin_slug": "txt-shelf-stable-pantry-per-dollar-b",
-    "kicker": "Protein per dollar, 27 pantry foods",
-    "number": "6.6x",
-    "title": "Same store.",
-    "tagline": "Pintos: 98 · Almonds: 15",
-    "footer": "USDA data · July 2026",
-    "style": "dark"
   },
   {
     "pin_slug": "txt-usda-thrifty-food-plan-a",
     "kicker": "The government's grocery budget",
-    "number": "$235",
-    "title": "a week.",
-    "tagline": "USDA's plan for a family of four, translated",
-    "footer": "USDA Thrifty Food Plan, May 2026",
+    "claim": "The USDA priced a healthy week of groceries: $235 for a family of four.",
+    "support": "What's in that budget, translated on the site",
+    "footer": "USDA data · July 2026",
     "style": "cream"
   },
   {
     "pin_slug": "txt-usda-thrifty-food-plan-b",
     "kicker": "The government's grocery budget",
-    "number": "$1,018",
-    "title": "a month.",
-    "tagline": "What the USDA says healthy costs",
-    "footer": "USDA Thrifty Food Plan, May 2026",
+    "claim": "$1,018 a month. That's the government's food budget for a family of four.",
+    "support": "The Thrifty Food Plan, explained in plain English",
+    "footer": "USDA data · July 2026",
     "style": "dark"
   },
   {
     "pin_slug": "txt-daily-values-explained-a",
     "kicker": "The label math, explained",
-    "number": "28g",
-    "title": "Says who?",
-    "tagline": "Where the fiber target really comes from",
-    "footer": "FDA Daily Values, 21 CFR 101.9",
+    "claim": "The 28g fiber target isn't random: it's 14g per 1,000 calories, times two.",
+    "support": "Where the label numbers come from",
+    "footer": "USDA data · July 2026",
     "style": "orange"
   },
   {
     "pin_slug": "txt-daily-values-explained-b",
     "kicker": "The label math, explained",
-    "number": "50g",
-    "title": "Says who?",
-    "tagline": "Where the protein target really comes from",
-    "footer": "FDA Daily Values, 21 CFR 101.9",
+    "claim": "Who decided you need 50g of protein a day? The FDA. The math is simpler than you think.",
+    "support": "Both label targets, traced to the source",
+    "footer": "USDA data · July 2026",
     "style": "cream"
   }
 ]
