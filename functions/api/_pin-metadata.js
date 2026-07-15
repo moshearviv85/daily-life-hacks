@@ -1,4 +1,9 @@
 export const PINTEREST_BOARDS = {
+  groceryMathData: {
+    id: "1124140825679640841",
+    name: "Grocery Math: Food Prices and Nutrition Data",
+    aliases: ["grocery-math", "Grocery Math", "food-price-data"],
+  },
   highFiberRecipes: {
     id: "1124140825679184032",
     name: "High Fiber Dinner and Gut Health Recipes",

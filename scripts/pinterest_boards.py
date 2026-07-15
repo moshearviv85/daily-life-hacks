@@ -67,6 +67,7 @@ TARGET_BOARDS = [
     {
         "name": "Grocery Math: Food Prices and Nutrition Data",
         "description": "What food actually costs: protein per dollar, fiber per dollar, and grocery price data built from USDA numbers and real store prices. Cheap protein rankings, budget grocery math, food price comparisons, and the real cost of eating healthy, all charted by Daily Life Hacks.",
+        "id": "1124140825679640841",
     },
 ]
 
