@@ -64,6 +64,10 @@ TARGET_BOARDS = [
         "description": "Food storage tips, freezer meal ideas, and how to keep groceries fresh longer. Leftover makeovers, pantry organization, freezing guides for produce and bread, and prep tips that cut food waste and save money. From Daily Life Hacks.",
         "id": "1124140825679548781",
     },
+    {
+        "name": "Grocery Math: Food Prices and Nutrition Data",
+        "description": "What food actually costs: protein per dollar, fiber per dollar, and grocery price data built from USDA numbers and real store prices. Cheap protein rankings, budget grocery math, food price comparisons, and the real cost of eating healthy, all charted by Daily Life Hacks.",
+    },
 ]
 
 
