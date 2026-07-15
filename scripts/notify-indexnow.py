@@ -28,8 +28,8 @@ from urllib.request import Request, urlopen
 
 SITE = "https://www.daily-life-hacks.com"
 HOST = "www.daily-life-hacks.com"
-DEFAULT_INDEXNOW_KEY = "618542d1be1649429b2de77572afc9e8"
-INDEXNOW_ENDPOINT = "https://www.bing.com/indexnow"
+DEFAULT_INDEXNOW_KEY = "bfae002c508721fed055bda08154ede6"
+INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
 REPO_ROOT = Path(__file__).resolve().parent.parent
 PAGE_EXTENSIONS = {".astro", ".html", ".md", ".mdx"}
 

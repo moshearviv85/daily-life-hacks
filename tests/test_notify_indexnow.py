@@ -27,6 +27,18 @@ class FakeResponse:
 
 
 class NotifyIndexNowTests(unittest.TestCase):
+    def test_default_key_is_deployed_and_official_endpoint_is_used(self):
+        key_file = SCRIPT_PATH.parents[1] / "public" / f"{notify_indexnow.DEFAULT_INDEXNOW_KEY}.txt"
+
+        self.assertEqual(
+            notify_indexnow.INDEXNOW_ENDPOINT,
+            "https://api.indexnow.org/indexnow",
+        )
+        self.assertEqual(
+            key_file.read_text(encoding="utf-8").strip(),
+            notify_indexnow.DEFAULT_INDEXNOW_KEY,
+        )
+
     def test_source_mapping_accepts_pages_and_rejects_assets_and_dynamic_routes(self):
         self.assertEqual(
             notify_indexnow.source_path_to_url("src/data/articles/demo.md"),
