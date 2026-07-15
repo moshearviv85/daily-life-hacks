@@ -7,7 +7,7 @@ cluster: "budget-fiber"
 image: "/images/how-to-eat-more-fiber-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry pinto beans, split peas, red lentils, oats, and popcorn kernels on a wooden table beside a bag of frozen peas and a loaf of whole wheat bread"
 date: 2026-07-07
-dateModified: 2026-07-13
+dateModified: 2026-07-15
 author: "David Miller"
 featured: false
 faq:
@@ -99,11 +99,15 @@ The trick is not eating the same sad bowl every day. Rotate three formats and it
 
 For a bigger menu of options, the full roundup of [easy high fiber breakfast ideas](/easy-high-fiber-breakfast-ideas-for-gut-health/) has you covered for a month of mornings.
 
+If you're choosing among cereal, oats, bread, and the bag of granola wearing a tiny expensive hat, our [breakfast staples value ranking](/breakfast-staples-per-dollar/) sorts the aisle by what your dollar actually buys. The same math gets less polite after 3 PM, which is why we also ranked [high-fiber snacks by cost](/high-fiber-snacks-per-dollar/).
+
 ## Lunch and dinner: let beans do the heavy lifting
 
 Here's the mental shift that makes this whole system work: stop treating beans and lentils as a side dish and let them be the main event two or three times a week. That's it. That's the system.
 
 [Split pea soup](/split-pea-soup-recipe-high-fiber/) is the obvious opener, since split peas are the best edible-as-is value in the entire store. I make a pot most Sundays, partly because it's good and partly because it costs about a dollar and feeds me until Wednesday. One pot covers three lunches without a single decision required. When you want something that tastes like takeout instead of a farmhouse, the [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) melts red lentils into coconut broth and asks almost nothing of you.
+
+Beans are where the budget gets especially lopsided. The [canned versus dry bean comparison](/canned-vs-dry-beans-cost/) puts an exact price on skipping the soak, and the [beans protein-and-fiber ranking](/beans-double-win-fiber-protein/) shows why even the convenient can still pulls more than one shift.
 
 Pasta night doesn't need to be sacrificed either. Whole wheat spaghetti holds 9.2 grams of fiber per 100 grams dry and ranks ninth on our list, and the [whole wheat vs white pasta breakdown](/whole-wheat-vs-white-pasta-fiber/) shows exactly what you're leaving on the table with the regular box. If wheat pasta isn't your thing, there's a whole world of [high fiber pasta alternatives](/high-fiber-pasta-alternatives/) made from lentils and chickpeas.
 
@@ -128,6 +132,8 @@ I've watched people run this exact plan and bail within two weeks. It's almost n
 **Trusting the front of the box.** A "good source of fiber" label legally means just 2.8 to 5.3 grams per serving, and the serving might be six crackers. Our breakdown of [what the fiber label actually means](/good-source-of-fiber-label-meaning/) shows why a 22-cent serving of dry beans quietly embarrasses most packaged products with claims on the front.
 
 **Buying all your fiber fresh.** Fresh produce is great food and a mediocre fiber budget. The freezer aisle delivers the same vegetables at a fraction of the cost per gram, and our [frozen vs fresh guide](/frozen-vs-fresh-produce-when-to-buy/) maps exactly when each one wins. When you do splurge on fresh, make it count: [artichokes](/artichoke-recipes-for-gut-health/) are one of the few produce-aisle picks that earn their price tag on fiber alone.
+
+If you're still deciding where the first dollar goes, the [one-dollar fiber breakdown](/one-dollar-fiber-what-it-buys/) strips the choice down to a clean budget, while the separate [grain](/grains-fiber-per-dollar-ranked/) and [produce](/produce-fiber-per-dollar-ranked/) rankings show why two foods with similar fiber labels can land miles apart at checkout.
 
 ## Start with two bags
 

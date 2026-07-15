@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/what-50-grams-of-protein-costs-per-day-main.jpg"
 imageAlt: "Horizontal bar chart comparing the cost of five ways to eat 50 grams of protein in one day, from 82 cents for dry goods to $9.97 at McDonald's"
 date: 2026-07-12
-dateModified: 2026-07-12
+dateModified: 2026-07-15
 author: "David Miller"
 faq:
   - question: "How much does it cost to eat 50 grams of protein a day?"
@@ -121,6 +121,10 @@ A buck fifty. That's a recognizable day of food, no split-pea heroics required, 
 **Convenience has two very different price tags.** The can-and-yogurt day costs $1.23 more than cooking dry beans. The drive-thru day costs $9.15 more. Cans are cheap convenience; cash registers are not.
 
 **The year math is where it gets loud.** At 365 days, the five plans cost about $299, $552, $749, $1,011, and $3,639 in protein-carrying foods. The gap between getting your 50 grams from a daily fast-food run and getting them from a mixed grocery cart is about $3,000 a year, which is a decent used appliance, a flight somewhere good, or a whole lot of pinto beans.
+
+The five days are broad scenarios, so we also pulled apart the aisles behind them. The [animal protein ranking](/animal-protein-per-dollar-ranked/) and [meat counter ranking](/meat-per-dollar-protein-ranked/) explain why the cheapest cut isn't always the one printed on a fitness meal plan. The [dairy protein table](/dairy-protein-per-dollar-ranked/) does the same for milk, yogurt, and cottage cheese, while the [plant protein ranking](/plant-protein-per-dollar-ranked/) keeps beans, tofu, and lentils in their own fair comparison.
+
+Convenience needs its own receipt. Compare [one dollar of protein](/one-dollar-protein-what-it-buys/) with the [no-cook ranking](/no-cook-protein-per-dollar/) and [shelf-stable pantry ranking](/shelf-stable-pantry-per-dollar/) to see what you pay for skipping pans and refrigeration. We also tested [eggs against the rest of the grocery store](/eggs-vs-everything-protein-value/) and ranked the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/), because a carton or a bag of beans eventually has to become a meal.
 
 ![Bar chart comparing the yearly cost of five ways to eat 50 grams of protein daily, from $299 for dry goods to $3,639 for daily fast food](/images/what-50-grams-of-protein-costs-per-year.jpg)
 

@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/protein-per-dollar-cheapest-protein-sources-main.jpg"
 imageAlt: "Horizontal bar chart ranking the top 20 cheapest protein sources by grams of protein per dollar, with dried pinto beans in first place"
 date: 2026-07-06
-dateModified: 2026-07-12
+dateModified: 2026-07-15
 author: "David Miller"
 faq:
   - question: "What is the cheapest protein source?"
@@ -117,6 +117,10 @@ If you just want the winner from each corner of the store, here's the shortlist:
 | Meat and poultry | Chicken drumsticks (bone-in) | 50.3 g |
 | Eggs and dairy | Eggs (large) | 34.4 g |
 | Fish | Canned tuna (chunk light, in water) | 22.4 g |
+
+That shortlist is the quick answer. The department-by-department answer is messier and more useful. We broke out [animal proteins](/animal-protein-per-dollar-ranked/) and the narrower [meat counter ranking](/meat-per-dollar-protein-ranked/) because a broad category can hide the cheaper cut. We did the same for [dairy protein](/dairy-protein-per-dollar-ranked/), [plant protein](/plant-protein-per-dollar-ranked/), and [shelf-stable pantry protein](/shelf-stable-pantry-per-dollar/), where convenience changes what "cheap" looks like.
+
+Three everyday questions deserved their own math: [what one dollar of protein buys](/one-dollar-protein-what-it-buys/), whether [eggs are actually cheap protein](/eggs-vs-everything-protein-value/), and which [no-cook proteins](/no-cook-protein-per-dollar/) still earn their shelf space. For meals rather than ingredients, the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/) show what happens when the spreadsheet finally has to become dinner.
 
 ![Bar chart comparing how many total grams of protein five dollars buys across ten common foods, from 490 grams for dried pinto beans down to 46 grams for bacon](/images/protein-per-dollar-five-dollars.jpg)
 

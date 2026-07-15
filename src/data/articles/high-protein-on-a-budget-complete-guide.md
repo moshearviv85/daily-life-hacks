@@ -7,7 +7,7 @@ cluster: "budget-protein"
 image: "/images/high-protein-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry beans and lentils beside a carton of eggs, a whole chicken, canned fish, a block of tofu, and a tub of cottage cheese on a wooden table"
 date: 2026-07-08
-dateModified: 2026-07-13
+dateModified: 2026-07-15
 author: "David Miller"
 featured: false
 faq:
@@ -82,6 +82,8 @@ Dairy clusters tightly behind: whole milk at 29 grams per dollar, Greek yogurt a
 
 This category is also where lunch gets solved. A [high protein bagel sandwich](/high-protein-bagel-sandwich-ideas-lunch/) built on eggs and cheese costs a fraction of the deli version, and if you're curious what the numbers actually look like, we [counted the protein in a bagel sandwich](/how-much-protein-in-bagel-sandwich/) layer by layer.
 
+The close-up rankings settle two arguments the big table can't: [eggs versus the other 48 foods](/eggs-vs-everything-protein-value/) shows exactly where convenience overtakes raw value, and the [dairy protein ranking](/dairy-protein-per-dollar-ranked/) reveals why the plain gallon can beat a tub with louder packaging.
+
 ## Chicken: buy the drumsticks, steal the rotisserie trick
 
 Chicken drumsticks led the meats in our sample at about 50 grams of protein per dollar, after subtracting a third of the package weight for bone. At $1.09 per pound in the 5 pound bag used here, they delivered about twice the per-dollar protein of boneless breast at its BLS average price. The catch is that nobody feels fancy serving drumsticks. My counterargument: crispy roasted drumsticks are objectively better eating than a dry sauteed breast, and this dataset agrees with me.
@@ -89,6 +91,8 @@ Chicken drumsticks led the meats in our sample at about 50 grams of protein per 
 The rotisserie chicken deserves its own paragraph, because the math surprised us. A $5.97 cooked bird scores 26.7 grams of protein per dollar, which beats buying raw boneless breast at national average prices. Someone else did the cooking and you still came out ahead. Our [rotisserie chicken meal ideas](/costco-rotisserie-chicken-meal-ideas-dinner/) stretch one bird across multiple dinners, which is the whole game.
 
 Ground turkey sits further down the list at 15.6 grams per dollar, but it earns its spot on versatility. A batch of [turkey meatballs](/healthy-turkey-meatballs-meal-prep/) made on Sunday covers three lunches, and meatballs freeze better than almost any other cooked protein.
+
+If the drumstick-versus-breast result still feels suspicious, the [animal protein ranking](/animal-protein-per-dollar-ranked/) compares eggs, dairy, fish, and poultry together, while the [meat counter ranking](/meat-per-dollar-protein-ranked/) keeps the contest strictly to cuts you'd bring home raw. Chicken breast doesn't get a ceremonial head start in either one.
 
 ## Canned fish: the pantry's quiet overachiever
 
@@ -102,11 +106,15 @@ Here's the take that gets me in trouble: tofu was not a budget winner in this pr
 
 The actual budget plant proteins are the boring ones: the dried legumes at the top of the table, frozen edamame at 18 grams per dollar, and TVP at 22.5, which is just defatted soy flour and costs less than it sounds like it should. If you're eating mostly or fully plant-based, our [plant-based protein guide](/plant-based-protein-sources-complete-guide/) maps the whole aisle, and the [beans vs chicken vs tofu comparison](/protein-per-serving-beans-chicken-tofu-compared/) puts the per-serving numbers side by side.
 
+For the price-only view, the [plant protein ranking](/plant-protein-per-dollar-ranked/) compares the aisle without pretending tofu and lentils are interchangeable. They're not. One is a weeknight block you can sear; the other is a bag of tiny brown pebbles that becomes dinner after half an hour.
+
 ## Do you need to pair proteins? The complete protein question
 
 Short version: the pairing is real, the stress about it isn't.
 
 Different plant foods bring different amino acid profiles, which is why beans and grains make such a practical team. But the part people overcomplicate is timing: [MedlinePlus says you do not need to combine them at the same meal](https://medlineplus.gov/ency/article/002465.htm). Eat a varied mix of beans, lentils, soy foods, nuts, seeds, and whole grains across the day. Our [beans and rice complete protein](/beans-and-rice-complete-protein-meal/) page handles the kitchen version of that advice.
+
+If you want the grocery math behind that plate, the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/) rank the combinations by cost instead of asking rice and beans to coast on their reputation.
 
 ## The $20 weekly protein backbone
 
@@ -127,6 +135,8 @@ Call it twenty bucks. That's about 1,047 grams of protein in the basket, or roug
 ![Horizontal bar chart showing the protein supplied by six foods in a 20 dollar weekly grocery backbone, led by pinto beans and chicken drumsticks](/images/protein-budget-weekly-backbone.jpg)
 
 This basket is a skeleton, not a meal plan. Turning it into actual dinners is a batch-cooking problem, and our [meal prep for beginners system](/meal-prep-for-beginners-complete-system/) walks through that routine without turning your Sunday into a second job.
+
+The basket can flex around the week you actually have. The [one-dollar protein breakdown](/one-dollar-protein-what-it-buys/) finds the raw buying power, the [no-cook protein ranking](/no-cook-protein-per-dollar/) handles weeks when the stove is decorative, and the [shelf-stable pantry ranking](/shelf-stable-pantry-per-dollar/) covers the groceries that won't punish you for changing plans.
 
 ![A practical weekly protein prep with roasted chicken drumsticks, lentils, eggs, peanut butter, whole wheat bread, and cottage cheese](/images/protein-budget-weekly-prep.jpg)
 

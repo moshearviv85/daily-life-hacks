@@ -8,7 +8,7 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/fiber-per-dollar-cheapest-high-fiber-foods-main.jpg"
 imageAlt: "Horizontal bar chart ranking the top 20 cheapest high-fiber foods by grams of fiber per dollar, with whole wheat flour in first place"
 date: 2026-07-04
-dateModified: 2026-07-12
+dateModified: 2026-07-15
 author: "David Miller"
 faq:
   - question: "What food has the most fiber per dollar?"
@@ -112,6 +112,8 @@ Fiber per $1 accounts for edible portion on fresh fruit, so bananas are scored o
 **Frozen quietly beats fresh.** Frozen green peas scored 17.6 grams per dollar; fresh broccoli crowns, 6.1. That matches what we found when we compared [frozen versus fresh produce](/frozen-vs-fresh-produce-when-to-buy/) more broadly: the freezer aisle is where the value hides.
 
 **Berries are a luxury good, fiber-wise.** The bottom four spots are all berries. Raspberries look impressive at 6.5 grams of fiber per 100 grams, but at $2.48 for a 6 ounce clamshell, you're paying boutique prices. Five dollars buys 355 grams of fiber as split peas or 12 grams as blueberries.
+
+The full table is useful, but a 53-row ranking is not how anyone shops unless they bring a clipboard to Walmart. The tighter cuts make the decisions clearer: see [what one fiber dollar buys](/one-dollar-fiber-what-it-buys/) when the budget is fixed, then compare the [grain aisle](/grains-fiber-per-dollar-ranked/), [produce aisle](/produce-fiber-per-dollar-ranked/), [breakfast staples](/breakfast-staples-per-dollar/), and [high-fiber snacks](/high-fiber-snacks-per-dollar/) on their own terms. Beans earned two separate audits because they're doing two jobs at once: the [canned versus dry cost gap](/canned-vs-dry-beans-cost/) measures the convenience markup, while the [protein and fiber ranking](/beans-double-win-fiber-protein/) shows why they keep winning both spreadsheets.
 
 ![Bar chart comparing how many total grams of fiber five dollars buys across ten common foods, from 355 grams for split peas down to 12 grams for blueberries](/images/fiber-per-dollar-five-dollars.jpg)
 

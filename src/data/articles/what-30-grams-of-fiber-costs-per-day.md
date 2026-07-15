@@ -8,7 +8,7 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/what-30-grams-of-fiber-costs-per-day-main.jpg"
 imageAlt: "Horizontal bar chart comparing the cost of five ways to eat 30 grams of fiber in one day, from 62 cents for dry goods to $14.42 at restaurants"
 date: 2026-07-08
-dateModified: 2026-07-12
+dateModified: 2026-07-15
 author: "David Miller"
 faq:
   - question: "How much does it cost to eat 30 grams of fiber a day?"
@@ -125,6 +125,10 @@ Two bucks. That's a completely normal day of food, no split-pea heroics required
 **Fresh produce is a flavor budget, not a fiber budget.** The produce day costs roughly twice the mixed day and almost seven times the dry goods day. Buy the raspberries because you love them, and let beans carry the gram count.
 
 **The year math is where it gets loud.** At 365 days, the five plans cost about $226, $635, $726, $1,526, and $5,263 in fiber-carrying foods. The gap between eating your 30 grams from restaurants and eating them from a mixed grocery cart is about $4,500 a year, which is a used car, or a very nice vacation, or a lot of raspberries.
+
+The meal plans also hide a few aisle-level decisions. The [one-dollar fiber comparison](/one-dollar-fiber-what-it-buys/) shows which staples stretch a fixed bill furthest, while the [grain ranking](/grains-fiber-per-dollar-ranked/) and [produce ranking](/produce-fiber-per-dollar-ranked/) explain why oats and frozen vegetables keep appearing here. Breakfast and snacks needed their own audits too, because the [breakfast value table](/breakfast-staples-per-dollar/) and [snack cost ranking](/high-fiber-snacks-per-dollar/) expose where packaging charges extra for very ordinary food.
+
+Then there are beans, the spreadsheet's recurring houseguest. Our [canned versus dry bean math](/canned-vs-dry-beans-cost/) prices the convenience in the mixed day, and the [beans protein-and-fiber ranking](/beans-double-win-fiber-protein/) explains why either version earns space in the cart.
 
 ![Bar chart comparing the yearly cost of five ways to eat 30 grams of fiber daily, from $226 for dry goods to $5,263 for restaurant meals](/images/what-30-grams-of-fiber-costs-per-year.jpg)
 

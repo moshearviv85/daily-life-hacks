@@ -30,6 +30,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # IndexNow compares the complete push range after a verified main deploy.
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -86,3 +89,23 @@ jobs:
           done
           echo "Production custom domain did not reach commit $GITHUB_SHA"
           exit 1
+
+      - name: Notify IndexNow about changed canonical pages
+        if: github.ref_name == 'main' && github.event_name == 'push'
+        continue-on-error: true
+        run: |
+          python scripts/notify-indexnow.py \
+            --base "${{ github.event.before }}" \
+            --head "$GITHUB_SHA" \
+            --sitemap-dir dist \
+            --log-file indexnow-deploy-report.json
+
+      - name: Upload IndexNow deploy report
+        if: always() && github.ref_name == 'main' && github.event_name == 'push'
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: indexnow-deploy-${{ github.sha }}
+          path: indexnow-deploy-report.json
+          if-no-files-found: warn
+          retention-days: 30
