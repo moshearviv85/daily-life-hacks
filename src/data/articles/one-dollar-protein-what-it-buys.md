@@ -1,10 +1,10 @@
 ---
-title: "What One Dollar Buys in Protein: 15 Grocery Foods, Ranked"
+title: "What One Dollar of Protein Actually Buys, Food by Food"
 excerpt: "One dollar buys 97.9 g of protein as dry pinto beans, 50.3 g as chicken drumsticks, 39.8 g as peanuts. 15 foods ranked at July 2026 prices."
 category: "nutrition"
 tags: ["protein per dollar", "cheap protein foods", "budget protein groceries", "cheap high protein foods", "grocery data"]
 image: "/images/one-dollar-protein-what-it-buys-main.jpg"
-imageAlt: "Horizontal bar chart showing how many grams of protein one dollar buys across the top 10 foods, from dry pinto beans at 98 down to peanut butter at 51"
+imageAlt: "A stack of coins surrounded by dried pinto beans, brown eggs, and a scoop of rolled oats on a wooden table"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -36,6 +36,8 @@ One dollar buys 97.9 grams of protein if you hand it to the dry pinto beans, nea
 | 10 | Peanut butter | 50.7 g | 40 oz jar | $4.97 |
 | 11 | Chicken drumsticks (bone-in) | 50.3 g | 5 lb bag | $5.46 |
 | 12 | White rice (long grain, dry) | 48.0 g | 5 lb bag | $3.37 |
+
+![Bar chart of protein grams per single dollar across 15 foods](/images/one-dollar-protein-what-it-buys-chart.jpg)
 
 *Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 

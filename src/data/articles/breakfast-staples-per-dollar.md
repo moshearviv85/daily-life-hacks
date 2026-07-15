@@ -1,12 +1,12 @@
 ---
-title: "The Cheapest Breakfast Staples, Ranked by Protein and Fiber per Dollar"
+title: "The Cereal Aisle Is Overcharging You: Breakfast Staples Ranked by Real Value"
 excerpt: "Whole wheat flour leads breakfast staples at 173.8 combined grams of protein and fiber per dollar. Oats hit 82.4, eggs 34.4, gala apples just 7.7."
 category: "nutrition"
 tags: ["cheap breakfast foods", "breakfast protein per dollar", "budget breakfast ideas", "oatmeal vs eggs cost", "grocery data"]
 cluster: "budget-protein"
 parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/breakfast-staples-per-dollar-main.jpg"
-imageAlt: "Bar chart ranking 9 breakfast staples by combined grams of protein and fiber per dollar, with whole wheat flour first at 173.8 grams"
+imageAlt: "A breakfast table with steaming oatmeal topped with banana, fried eggs, peanut butter, and a glass of milk"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -39,6 +39,8 @@ This ranking crosses our two grocery studies, [protein per dollar](/protein-per-
 | Apples (gala) | not scored | 7.7 g | 7.7 g | per lb, $1.28 |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
+
+![Bar chart ranking 9 breakfast staples by protein plus fiber per dollar](/images/breakfast-staples-per-dollar-chart.jpg)
 
 Quick fine print: the egg and dairy rows come from the protein study only, and the fruit rows from the fiber study only, so their combined scores count the one metric on record. The top three carry both.
 

@@ -4,7 +4,7 @@ excerpt: "Eggs deliver 34.4 g of protein per dollar and rank 19th of 49 foods. E
 category: "nutrition"
 tags: ["are eggs cheap protein", "eggs protein per dollar", "egg prices 2026", "cheap protein sources", "eggs vs chicken protein"]
 image: "/images/eggs-vs-everything-protein-value-main.jpg"
-imageAlt: "Horizontal bar chart of the 10 highest protein-per-dollar grocery foods, led by dry pinto beans at 98 grams per dollar; eggs rank 19th of the 49 foods studied"
+imageAlt: "A carton of brown eggs surrounded by bowls of beans, canned tuna, peanut butter, and chicken drumsticks"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -36,6 +36,8 @@ Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, the May 2026 nat
 | 10 | Peanut butter | 50.7 g | 40 oz jar | $4.97 |
 | 11 | Chicken drumsticks (bone-in) | 50.3 g | 5 lb bag | $5.46 |
 | 12 | White rice (long grain, dry) | 48.0 g | 5 lb bag | $3.37 |
+
+![Bar chart of the full ranking for eggs vs everything protein value](/images/eggs-vs-everything-protein-value-chart.jpg)
 
 *Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 

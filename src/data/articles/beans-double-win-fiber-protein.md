@@ -6,7 +6,7 @@ tags: ["beans protein and fiber", "protein per dollar", "fiber per dollar", "che
 cluster: "budget-fiber"
 parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/beans-double-win-fiber-protein-main.jpg"
-imageAlt: "Bar chart ranking 10 beans and lentils by combined grams of protein and fiber per dollar, with dry pinto beans first at 168.7 grams"
+imageAlt: "A steaming bowl of simmered pinto beans surrounded by small bowls of black beans, lentils, and chickpeas"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -40,6 +40,8 @@ Here's where this came from. We ran two separate grocery studies, one ranking fo
 | Canned chickpeas | 22.0 g | not scored | 22.0 g | 15.5 oz can, $0.98 |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
+
+![Bar chart of the full ranking for beans double win fiber protein](/images/beans-double-win-fiber-protein-chart.jpg)
 
 One honesty note about the table: the three canned rows only appear in our protein study, so their combined score counts protein alone. Even with a fiber number added on, they wouldn't be catching the dry bags.
 

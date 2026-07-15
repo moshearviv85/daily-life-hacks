@@ -1,12 +1,12 @@
 ---
-title: "The Cheapest Complete Protein Combos: Rice and Beans Math, Ranked"
+title: "Rice and Beans Math: Why the Oldest Budget Meal Still Wins"
 excerpt: "Split a dollar 50/50 between dry pinto beans and whole wheat flour and it buys 97.0 grams of protein. We ranked 20 legume and grain pairs this way."
 category: "nutrition"
 tags: ["complete protein combos", "rice and beans protein", "cheap vegetarian protein", "protein per dollar", "legumes and grains"]
 cluster: "budget-protein"
 parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/cheapest-complete-protein-pairs-main.jpg"
-imageAlt: "Bar chart ranking 20 legume and grain pairs by grams of protein per dollar on a 50/50 dollar split, led by pinto beans plus whole wheat flour at 97.0 grams"
+imageAlt: "A plate of rice and beans with cilantro, with sacks of dry rice and pinto beans in the background"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -40,6 +40,8 @@ First, the framing, stated carefully. Legumes and grains complement each other's
 | 10 | Brown lentils (dry) + Old-fashioned rolled oats | 62.2 g |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
+
+![Bar chart ranking 20 legume and grain combos by combined protein per dollar](/images/cheapest-complete-protein-pairs-chart.jpg)
 
 ## What does a 50/50 dollar split actually mean?
 

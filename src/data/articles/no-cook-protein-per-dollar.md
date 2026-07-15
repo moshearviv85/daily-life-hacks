@@ -1,12 +1,12 @@
 ---
-title: "The Cheapest No-Cook Protein: 15 Foods Ranked per Dollar"
+title: "No Stove, No Problem: The Cheapest Proteins With Zero Cooking"
 excerpt: "Peanut butter wins no-cook protein at 50.7 g per dollar. Canned black beans hit 30.1 and a $0.98 tuna can gives 22.4. July 2026 ranking."
 category: "nutrition"
 tags: ["no cook protein", "cheapest no cook protein", "protein per dollar", "budget protein", "pantry protein"]
 cluster: "budget-protein"
 parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/no-cook-protein-per-dollar-main.jpg"
-imageAlt: "Horizontal bar chart ranking 15 no-cook foods by grams of protein per dollar, with peanut butter first at 50.7 grams and almonds last at 14.8"
+imageAlt: "An open jar of peanut butter, canned tuna, yogurt, and a glass of milk on a sunny kitchen counter"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -46,6 +46,8 @@ Top 12 of the 15, ready to eat straight from the package.
 | 12 | Canned pink salmon | 21.6 g | $3.80 | 14.75 oz can |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
+
+![Bar chart ranking 15 no-cook proteins by protein per dollar](/images/no-cook-protein-per-dollar-chart.jpg)
 
 Rounding out the list: sardines at 20.2 grams per dollar, cheddar at 18.2, and almonds at 14.8.
 

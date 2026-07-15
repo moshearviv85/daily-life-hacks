@@ -1,12 +1,12 @@
 ---
-title: "The Cheapest Meat for Protein: 11 Cuts Ranked by Protein per Dollar"
+title: "The Smartest Meat to Buy Right Now (It Isn't Chicken Breast)"
 excerpt: "Bone-in chicken drumsticks lead 11 meat cuts at 50.3 g of protein per dollar. Bacon comes last at 9.2 g. Full July 2026 ranking with prices."
 category: "nutrition"
 tags: ["cheapest meat for protein", "meat protein per dollar", "budget protein", "cheap meat cuts", "grocery data"]
 cluster: "budget-protein"
 parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/meat-per-dollar-protein-ranked-main.jpg"
-imageAlt: "Horizontal bar chart ranking 11 meat and poultry cuts by grams of protein per dollar, with bone-in chicken drumsticks first at 50.3 grams and bacon last at 9.2"
+imageAlt: "Roasted chicken drumsticks on a wooden board beside raw thighs and a pork roast at a butcher counter"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -45,6 +45,8 @@ Every value counts edible portion only. Bone-in cuts get docked for the bone bef
 | 11 | Bacon | 9.2 g | $6.71 | per lb |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
+
+![Bar chart ranking 11 meat cuts by protein per dollar](/images/meat-per-dollar-protein-ranked-chart.jpg)
 
 ## Why do drumsticks beat chicken breast by this much?
 

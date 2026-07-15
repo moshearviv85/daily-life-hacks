@@ -1,10 +1,10 @@
 ---
-title: "The Cheapest High-Fiber Fruits and Vegetables, Ranked by Fiber per Dollar"
+title: "Frozen Beats Fresh: Fruits and Vegetables Ranked by Fiber per Dollar"
 excerpt: "Frozen green peas win at 17.6g of fiber per dollar across 22 fruits and vegetables; blueberries land last at 2.5g. Full July 2026 ranking."
 category: "nutrition"
 tags: ["high fiber vegetables", "high fiber fruits", "fiber per dollar", "budget produce", "cheap vegetables"]
 image: "/images/produce-fiber-per-dollar-ranked-main.jpg"
-imageAlt: "Horizontal bar chart ranking 22 fruits and vegetables by grams of fiber per dollar, with frozen green peas first at 17.6 grams and blueberries last at 2.5 grams"
+imageAlt: "A bag of frozen green peas with frost beside fresh raspberries, an avocado, and leafy greens"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -40,6 +40,8 @@ We ranked 22 common fruits and vegetables by grams of fiber per dollar, pulled f
 | 12 | Apples (gala) | 7.7 g | per lb | $1.28 |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at /methodology/.
+
+![Bar chart ranking 22 fruits and vegetables by fiber per dollar](/images/produce-fiber-per-dollar-ranked-chart.jpg)
 
 ## Which vegetables give you the most fiber per dollar?
 

@@ -1,10 +1,10 @@
 ---
-title: "What One Dollar of Fiber Actually Buys You, Food by Food"
+title: "What One Dollar of Fiber Actually Buys, Food by Food"
 excerpt: "One dollar buys 77.8g of fiber as whole wheat flour, 71g as split peas, and 27.9g as canned black beans. Here's what $1 buys across 15 foods."
 category: "nutrition"
 tags: ["fiber per dollar", "cheap fiber foods", "budget nutrition", "grocery data", "fiber on a budget"]
 image: "/images/one-dollar-fiber-what-it-buys-main.jpg"
-imageAlt: "Horizontal bar chart showing how many grams of fiber one dollar buys across 15 foods, from whole wheat flour at 77.8 grams down to canned black beans at 27.9 grams"
+imageAlt: "A stack of coins next to a mound of whole wheat flour, split peas, and popcorn kernels on a counter"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -40,6 +40,8 @@ This is the elite tier of our full [fiber per dollar study](/fiber-per-dollar-ch
 | 12 | Chia seeds | 33.1 g | 32 oz bag | $9.44 |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at /methodology/.
+
+![Bar chart of fiber grams per single dollar across 15 foods](/images/one-dollar-fiber-what-it-buys-chart.jpg)
 
 Rounding out the 15: bran flakes cereal at 30.1 grams per dollar, whole flaxseed at 28.5, and canned black beans at 27.9.
 

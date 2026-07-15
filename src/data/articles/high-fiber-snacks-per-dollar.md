@@ -1,10 +1,10 @@
 ---
-title: "The Cheapest High-Fiber Snacks, Ranked by Fiber per Dollar"
+title: "Snacks That Actually Fill You Up, Ranked by What They Cost"
 excerpt: "Popcorn kernels top 10 snack foods at 57.7g of fiber per dollar, 9.2x more than raisins at 6.3g. Ranked with real July 2026 prices."
 category: "nutrition"
 tags: ["high fiber snacks", "fiber per dollar", "cheap healthy snacks", "budget snacks", "snacks ranked"]
 image: "/images/high-fiber-snacks-per-dollar-main.jpg"
-imageAlt: "Horizontal bar chart ranking 10 snack foods by grams of fiber per dollar, with popcorn kernels first at 57.7 grams and raisins last at 6.3 grams"
+imageAlt: "A big bowl of popcorn with small bowls of almonds, sunflower seeds, an apple, and prunes on a table"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -38,6 +38,8 @@ We pulled the 10 most snackable foods from our full [fiber per dollar study](/fi
 | 10 | Raisins | 6.3 g | 20 oz canister | $3.34 |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at /methodology/.
+
+![Bar chart ranking 10 snacks by fiber per dollar](/images/high-fiber-snacks-per-dollar-chart.jpg)
 
 ## Why is popcorn the cheapest high-fiber snack?
 

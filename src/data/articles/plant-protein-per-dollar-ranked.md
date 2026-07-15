@@ -1,10 +1,10 @@
 ---
-title: "The Cheapest Plant Protein Sources, Ranked: 18 Foods by Protein per Dollar"
+title: "Beans, Tofu, or Lentils? 18 Plant Proteins Ranked by Real Cost"
 excerpt: "Dry pinto beans lead 18 plant proteins at 97.9 g of protein per dollar. Tofu and tempeh sit at the bottom. Full ranking with July 2026 prices."
 category: "nutrition"
 tags: ["cheapest plant protein", "plant protein per dollar", "vegan protein on a budget", "budget plant based protein", "grocery data"]
 image: "/images/plant-protein-per-dollar-ranked-main.jpg"
-imageAlt: "Horizontal bar chart ranking the top 10 plant protein sources by grams of protein per dollar, with dry pinto beans first at 98"
+imageAlt: "Ceramic bowls of pinto beans, black beans, red lentils, and chickpeas with a block of tofu on a cutting board"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -38,6 +38,8 @@ This ranking is the plant-only cut of our full [protein per dollar study](/prote
 | 10 | Sunflower seed kernels | 31.7 g | 16 oz bag | $2.98 |
 | 11 | Canned black beans | 30.1 g | 15.5 oz can | $0.88 |
 | 12 | Canned kidney beans | 23.4 g | 15.5 oz can | $0.98 |
+
+![Bar chart ranking 18 plant proteins by protein per dollar](/images/plant-protein-per-dollar-ranked-chart.jpg)
 
 *Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 

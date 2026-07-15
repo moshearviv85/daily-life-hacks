@@ -4,7 +4,7 @@ excerpt: "Dry pinto beans deliver 97.9 g of protein per dollar; canned chickpeas
 category: "nutrition"
 tags: ["canned vs dry beans", "dry beans cost", "canned beans price", "cheap protein beans", "budget groceries"]
 image: "/images/canned-vs-dry-beans-cost-main.jpg"
-imageAlt: "Horizontal bar chart comparing protein per dollar across 10 dry and canned beans, with dry pinto beans first at 98 and canned chickpeas last at 22"
+imageAlt: "Open cans of black beans next to a burlap sack of dry black beans on a wooden counter"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -36,6 +36,8 @@ These numbers come from our full [protein per dollar study](/protein-per-dollar-
 | 8 | Black beans | Canned, 15.5 oz | 30.1 g | $0.88 |
 | 9 | Kidney beans | Canned, 15.5 oz | 23.4 g | $0.98 |
 | 10 | Chickpeas | Canned, 15.5 oz | 22.0 g | $0.98 |
+
+![Bar chart of the full ranking for canned vs dry beans cost](/images/canned-vs-dry-beans-cost-chart.jpg)
 
 *Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 

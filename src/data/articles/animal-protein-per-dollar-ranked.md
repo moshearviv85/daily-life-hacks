@@ -1,12 +1,12 @@
 ---
-title: "The Cheapest Animal Protein: 21 Foods Ranked by Protein per Dollar"
+title: "Chicken Breast Is Overrated: 21 Animal Proteins Ranked by Real Cost"
 excerpt: "Chicken drumsticks top 21 animal proteins at 50.3 g per dollar. Eggs hit 34.4, milk 29.1, and bacon trails at 9.2. July 2026 prices."
 category: "nutrition"
 tags: ["cheapest animal protein", "animal protein per dollar", "budget protein", "eggs vs meat protein", "grocery data"]
 cluster: "budget-protein"
 parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/animal-protein-per-dollar-ranked-main.jpg"
-imageAlt: "Horizontal bar chart ranking 21 animal protein foods by grams of protein per dollar, with bone-in chicken drumsticks first at 50.3 grams and bacon last at 9.2"
+imageAlt: "A table spread with roasted drumsticks, brown eggs, a glass of milk, canned sardines, and cheese"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -46,6 +46,8 @@ Here's the top 12 of 21. All values count edible portion only.
 | 12 | Canned tuna (chunk light, in water) | 22.4 g | $0.98 | 5 oz can |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
+
+![Bar chart ranking 21 animal proteins by protein per dollar](/images/animal-protein-per-dollar-ranked-chart.jpg)
 
 Below the table: pork loin chops at 22.3, canned pink salmon at 21.6, frozen tilapia at 20.9, sardines at 20.2, cheddar at 18.2, ground turkey at 15.6, ground beef at 11.5 (80/20) and 11.0 (93/7), and bacon dead last at 9.2.
 

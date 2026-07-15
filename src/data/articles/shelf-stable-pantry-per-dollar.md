@@ -1,12 +1,12 @@
 ---
-title: "Shelf-Stable Protein: 27 Pantry Foods Ranked by Protein per Dollar"
+title: "No Fridge Required: 27 Shelf-Stable Proteins Ranked by Value"
 excerpt: "Dry pinto beans lead 27 shelf-stable foods at 97.9g of protein per dollar. Canned black beans top the cans at 30.1g, and almonds trail at 14.8g."
 category: "nutrition"
 tags: ["shelf stable protein", "pantry protein sources", "protein per dollar", "cheap pantry staples", "grocery data"]
 cluster: "budget-protein"
 parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/shelf-stable-pantry-per-dollar-main.jpg"
-imageAlt: "Horizontal bar chart ranking 27 shelf-stable pantry foods by grams of protein per dollar, with dry pinto beans first at 97.9 grams"
+imageAlt: "An organized pantry shelf with unlabeled cans, jars of peanut butter, lentils, and bags of rice"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -42,6 +42,8 @@ This is a cut of our full [protein per dollar study](/protein-per-dollar-cheapes
 | 12 | Spaghetti (regular, dry) | 47.7 g | 16 oz box, $1.24 |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
+
+![Bar chart ranking 27 shelf-stable pantry foods by protein per dollar](/images/shelf-stable-pantry-per-dollar-chart.jpg)
 
 ## Why does the dry goods aisle dominate the ranking?
 

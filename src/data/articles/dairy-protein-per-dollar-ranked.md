@@ -1,12 +1,12 @@
 ---
-title: "Dairy Protein per Dollar: 6 Fridge Staples Ranked (Milk Beats the Hype)"
+title: "Milk Quietly Beats Greek Yogurt: The Dairy Aisle Ranked by Protein Value"
 excerpt: "Eggs lead the dairy case at 34.4 g of protein per dollar, mozzarella hits 30.1, and plain whole milk at 29.1 beats Greek yogurt at 27.5."
 category: "nutrition"
 tags: ["cheapest dairy protein", "dairy protein per dollar", "eggs protein cost", "budget protein", "grocery data"]
 cluster: "budget-protein"
 parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/dairy-protein-per-dollar-ranked-main.jpg"
-imageAlt: "Horizontal bar chart ranking 6 egg and dairy staples by grams of protein per dollar, with large eggs first at 34.4 grams and cheddar cheese last at 18.2"
+imageAlt: "Milk being poured into a glass beside tubs of yogurt and cottage cheese and brown eggs on a marble counter"
 date: 2026-07-13
 author: "David Miller"
 faq:
@@ -38,6 +38,8 @@ This is the eggs-and-dairy slice of our full [protein per dollar study](/protein
 | 6 | Cheddar cheese | 18.2 g | $5.69 | per lb |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
+
+![Bar chart ranking 6 dairy staples by protein per dollar](/images/dairy-protein-per-dollar-ranked-chart.jpg)
 
 Yes, eggs technically aren't dairy. They live in the same aisle, they're in the same category in our dataset, and leaving out the winner felt like rigging the contest. So they stay.
 
