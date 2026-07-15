@@ -43,6 +43,20 @@
       "created_at": "2026-04-28 17:17:03"
     }
   },
+  "animal-protein-per-dollar-ranked": {
+    "v1": {
+      "url_slug": "txt-animal-protein-per-dollar-ranked-b",
+      "title": "Eggs beat every fish we priced on protein per dollar: 34.4 vs 22.4 for canned tuna.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
+  "beans-double-win-fiber-protein": {
+    "v1": {
+      "url_slug": "txt-beans-double-win-fiber-protein-b",
+      "title": "Beans are the only aisle that wins the protein column and the fiber column at once.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
   "best-high-protein-breads-healthy-sandwiches": {
     "v4": {
       "url_slug": "healthy-lunch-best-protein-breads",
@@ -109,6 +123,13 @@
       "created_at": "2026-07-04 14:29:56"
     }
   },
+  "breakfast-staples-per-dollar": {
+    "v1": {
+      "url_slug": "txt-breakfast-staples-per-dollar-b",
+      "title": "Eggs, oats, and peanut butter: the whole breakfast value podium, priced.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
   "camping-meal-hacks-large-families": {
     "v4": {
       "url_slug": "easy-camping-breakfasts-feed-crowd",
@@ -129,6 +150,13 @@
       "url_slug": "no-mess-camping-dinners-keep",
       "title": "No-Mess Camping Dinners: Keep Your Cooler Organized",
       "created_at": "2026-04-28 15:58:11"
+    }
+  },
+  "canned-vs-dry-beans-cost": {
+    "v1": {
+      "url_slug": "txt-canned-vs-dry-beans-cost-b",
+      "title": "Dry black beans: 81g of protein per dollar. The same beans canned: 30.1.",
+      "created_at": "2026-07-15T03:55:09.852794"
     }
   },
   "cauliflower-fried-rice-with-eggs": {
@@ -217,6 +245,13 @@
       "url_slug": "stretch-ground-beef-people-budget",
       "title": "Stretch Ground Beef for 8 People on a Budget",
       "created_at": "2026-04-28 15:58:10"
+    }
+  },
+  "cheapest-complete-protein-pairs": {
+    "v1": {
+      "url_slug": "txt-cheapest-complete-protein-pairs-b",
+      "title": "The oldest budget meal on earth is still the best protein math in the store.",
+      "created_at": "2026-07-15T03:55:09.852794"
     }
   },
   "chicken-veggie-lettuce-wraps-peanut-sauce": {
@@ -461,6 +496,13 @@
       "created_at": "2026-07-04 14:36:29"
     }
   },
+  "dairy-protein-per-dollar-ranked": {
+    "v1": {
+      "url_slug": "txt-dairy-protein-per-dollar-ranked-b",
+      "title": "Cottage cheese delivers 26.3g of protein per dollar. More than chicken breast.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
   "easy-cold-summer-pasta-salad-potlucks": {
     "v4": {
       "url_slug": "avoid-mushy-pasta-secret-perfect",
@@ -571,6 +613,13 @@
       "created_at": "2026-07-07 13:57:35"
     }
   },
+  "eggs-vs-everything-protein-value": {
+    "v1": {
+      "url_slug": "txt-eggs-vs-everything-protein-value-b",
+      "title": "Eggs are still the best animal protein deal after drumsticks: 34.4g per dollar.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
   "farro-lunch-bowl-roasted-vegetables-lemon-tahini": {
     "v4": {
       "url_slug": "farro-bowls-last-days-fridge",
@@ -613,6 +662,13 @@
       "url_slug": "stop-wasting-34x-more-money",
       "title": "Stop Paying 28x More for the Same Fiber",
       "created_at": "2026-07-04 14:37:56"
+    }
+  },
+  "fiber-protein-daily-values-explained": {
+    "v1": {
+      "url_slug": "txt-daily-values-explained-b",
+      "title": "Who decided you need 50g of protein a day? The FDA. The math is simpler than you think.",
+      "created_at": "2026-07-15T03:55:09.852794"
     }
   },
   "fix-oversalted-soup-sauce-rice": {
@@ -767,6 +823,13 @@
       "url_slug": "seconds-restock-each-morning-keeps",
       "title": "10 Seconds to Restock Each Morning Keeps This Working",
       "created_at": "2026-07-04 14:41:17"
+    }
+  },
+  "grains-fiber-per-dollar-ranked": {
+    "v1": {
+      "url_slug": "txt-grains-fiber-per-dollar-ranked-b",
+      "title": "Pearled barley is the sleeper of the grain aisle: 57.1g of fiber per dollar.",
+      "created_at": "2026-07-15T03:55:09.852794"
     }
   },
   "health-benefits-eating-soup-in-spring": {
@@ -1053,6 +1116,13 @@
       "url_slug": "most-store-bought-jam-just",
       "title": "Most Store-Bought Jam Is Just Candy in a Jar",
       "created_at": "2026-07-04 14:42:13"
+    }
+  },
+  "high-fiber-snacks-per-dollar": {
+    "v1": {
+      "url_slug": "txt-high-fiber-snacks-per-dollar-b",
+      "title": "Sunflower seeds pack 13g of fiber per dollar. Most snack bars do not come close.",
+      "created_at": "2026-07-15T03:55:09.852794"
     }
   },
   "high-protein-bagel-sandwich-ideas-lunch": {
@@ -1622,6 +1692,34 @@
       "created_at": "2026-07-07 13:58:02"
     }
   },
+  "meat-per-dollar-protein-ranked": {
+    "v1": {
+      "url_slug": "txt-meat-per-dollar-protein-ranked-b",
+      "title": "Ground beef is one of the worst protein deals in the meat aisle: 11.5g per dollar.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
+  "no-cook-protein-per-dollar": {
+    "v1": {
+      "url_slug": "txt-no-cook-protein-per-dollar-b",
+      "title": "No stove, no problem: canned beans still deliver 30g of protein per dollar.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
+  "one-dollar-fiber-what-it-buys": {
+    "v1": {
+      "url_slug": "txt-one-dollar-fiber-what-it-buys-b",
+      "title": "A dollar of split peas: 71g of fiber. Two and a half days of the target.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
+  "one-dollar-protein-what-it-buys": {
+    "v1": {
+      "url_slug": "txt-one-dollar-protein-what-it-buys-b",
+      "title": "A dollar of whole wheat flour buys 96g of protein. A dollar of oats: 47g.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
   "plan-week-of-dinners-fewer-grocery-runs": {
     "v1": {
       "url_slug": "i-stopped-doing-midweek-grocery",
@@ -1644,6 +1742,13 @@
       "created_at": "2026-07-04 14:51:34"
     }
   },
+  "plant-protein-per-dollar-ranked": {
+    "v1": {
+      "url_slug": "txt-plant-protein-per-dollar-ranked-b",
+      "title": "Tofu is one of the priciest plant proteins: 13.6g per dollar vs 78 for lentils.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
   "prebiotic-foods-beyond-the-buzzwords": {
     "v4": {
       "url_slug": "foods-count-prebiotics-without-wellness",
@@ -1664,6 +1769,13 @@
       "url_slug": "you-re-overcomplicating-prebiotics-they",
       "title": "You're Overcomplicating Prebiotics When They're Already in Your Kitchen",
       "created_at": "2026-07-04 14:51:38"
+    }
+  },
+  "produce-fiber-per-dollar-ranked": {
+    "v1": {
+      "url_slug": "txt-produce-fiber-per-dollar-ranked-b",
+      "title": "The freezer aisle quietly beats the fresh section on fiber per dollar. We have the receipts.",
+      "created_at": "2026-07-15T03:55:09.852794"
     }
   },
   "protein-per-dollar-cheapest-protein-sources": {
@@ -1842,6 +1954,13 @@
       "created_at": "2026-07-04 14:56:57"
     }
   },
+  "shelf-stable-pantry-per-dollar": {
+    "v1": {
+      "url_slug": "txt-shelf-stable-pantry-per-dollar-b",
+      "title": "Canned tuna vs dry lentils: 22.4 vs 78g of protein per dollar.",
+      "created_at": "2026-07-15T03:55:09.852794"
+    }
+  },
   "simple-lunch-recipes-indian-veg": {
     "v3": {
       "url_slug": "lunch-doesn-t-feel-like",
@@ -1884,6 +2003,13 @@
       "url_slug": "stop-stuffing-mushrooms-before-you",
       "title": "Stop Stuffing Mushrooms Before You Read This",
       "created_at": "2026-07-04 15:24:36"
+    }
+  },
+  "usda-thrifty-food-plan-weekly-cost": {
+    "v1": {
+      "url_slug": "txt-usda-thrifty-food-plan-b",
+      "title": "$1,018 a month. That's the government's food budget for a family of four.",
+      "created_at": "2026-07-15T03:55:09.852794"
     }
   },
   "what-30-grams-of-fiber-costs-per-day": {
