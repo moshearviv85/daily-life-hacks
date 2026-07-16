@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-15T03:55:32.859273+00:00",
+  "updatedAt": "2026-07-16T03:35:59.743774+00:00",
   "articles": {
     "30-day-high-fiber-challenge-meal-plan": {
       "canonical": "30-day-high-fiber-challenge-meal-plan",
@@ -1123,6 +1123,13 @@
       "canonical": "dairy-protein-per-dollar-ranked",
       "destinations": [
         {
+          "id": "v2",
+          "url_slug": "playful-milk-wins",
+          "title": "Milk Beats Greek Yogurt on Protein per Dollar: 29 vs 28",
+          "origin": "pin",
+          "created_at": "2026-07-16T03:35:58.646530+00:00"
+        },
+        {
           "id": "v1",
           "url_slug": "txt-dairy-protein-per-dollar-ranked-a",
           "title": "Plain milk beats Greek yogurt on protein per dollar: 29.1 vs 27.5.",
@@ -1381,6 +1388,13 @@
     "eggs-vs-everything-protein-value": {
       "canonical": "eggs-vs-everything-protein-value",
       "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "playful-eggs-shocked",
+          "title": "Eggs Are Only #19 of 49 on Protein per Dollar",
+          "origin": "pin",
+          "created_at": "2026-07-16T03:35:58.646530+00:00"
+        },
         {
           "id": "v1",
           "url_slug": "txt-eggs-vs-everything-protein-value-a",
@@ -2556,6 +2570,13 @@
     "high-fiber-snacks-per-dollar": {
       "canonical": "high-fiber-snacks-per-dollar",
       "destinations": [
+        {
+          "id": "v2",
+          "url_slug": "playful-popcorn-crown",
+          "title": "The Cheapest High-Fiber Snack Is Popcorn: 58g per Dollar",
+          "origin": "pin",
+          "created_at": "2026-07-16T03:35:58.646530+00:00"
+        },
         {
           "id": "v1",
           "url_slug": "txt-high-fiber-snacks-per-dollar-a",
@@ -4031,6 +4052,13 @@
       "canonical": "plant-protein-per-dollar-ranked",
       "destinations": [
         {
+          "id": "v2",
+          "url_slug": "playful-tofu-fancy",
+          "title": "Tofu Is the Fancy One: 14g of Protein per Dollar vs Lentils at 78",
+          "origin": "pin",
+          "created_at": "2026-07-16T03:35:58.646530+00:00"
+        },
+        {
           "id": "v1",
           "url_slug": "txt-plant-protein-per-dollar-ranked-a",
           "title": "Dry pinto beans: 98g of protein per dollar. No meat we priced comes close.",
@@ -4109,6 +4137,13 @@
       "canonical": "produce-fiber-per-dollar-ranked",
       "destinations": [
         {
+          "id": "v2",
+          "url_slug": "playful-frozen-peas",
+          "title": "Frozen Beats Fresh: Peas Deliver 18g of Fiber per Dollar",
+          "origin": "pin",
+          "created_at": "2026-07-16T03:35:58.646530+00:00"
+        },
+        {
           "id": "v1",
           "url_slug": "txt-produce-fiber-per-dollar-ranked-a",
           "title": "Frozen green peas beat every fresh vegetable we priced on fiber per dollar: 18g.",
@@ -4140,6 +4175,20 @@
           "title": "The One Division Problem That Changes How You Shop",
           "origin": "pin",
           "created_at": "2026-07-06 14:59:58"
+        },
+        {
+          "id": "v4",
+          "url_slug": "playful-bacon-last",
+          "title": "Bacon Finished Dead Last: 9g of Protein per Dollar (We Priced 49 Foods)",
+          "origin": "pin",
+          "created_at": "2026-07-16T03:35:58.646530+00:00"
+        },
+        {
+          "id": "v5",
+          "url_slug": "playful-flour-hero",
+          "title": "Flour Is Secretly a Protein Powerhouse: 96g per Dollar",
+          "origin": "pin",
+          "created_at": "2026-07-16T03:35:58.646530+00:00"
         },
         {
           "id": "v3",
@@ -4716,6 +4765,13 @@
           "title": "How to Get 50g of Protein Before Lunch for Under $1",
           "origin": "pin",
           "created_at": "2026-07-12 13:47:42"
+        },
+        {
+          "id": "v4",
+          "url_slug": "playful-piggy-82c",
+          "title": "A Full Day of Protein for 82 Cents",
+          "origin": "pin",
+          "created_at": "2026-07-16T03:35:58.646530+00:00"
         },
         {
           "id": "v3",
