@@ -112,7 +112,7 @@ Portion the toppings based on appetite, not on a need to win the highest number.
 
 Choose oatmeal when fiber per plain serving is the priority, when you like sweet breakfasts, or when five-minute cooking matters. Rolled oats are the easiest all-purpose package. They cook fast, work overnight, bake well, and accept nearly any fruit without complaining.
 
-Choose regular grits when speed and a smooth savory base matter more than the fiber number. They're useful under eggs, beans, vegetables, shrimp, or leftovers. Treat their lower fiber as information, then supply fiber elsewhere in the bowl or later in the day.
+Choose regular grits when speed and a smooth savory base matter more than the fiber number. They're useful under eggs, beans, vegetables, shrimp, or leftovers. Think of their lower fiber as information, then supply fiber elsewhere in the bowl or later in the day.
 
 Choose stone-ground grits when flavor and corn texture are the point. Batch them on a slower morning and reheat portions. The additional cooking time buys a better bowl and often a better fiber number, but only if you plan around it.
 
