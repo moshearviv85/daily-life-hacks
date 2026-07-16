@@ -36,12 +36,24 @@ PILLARS = {
         "slug": "high-protein-on-a-budget-complete-guide",
         "anchor": "high protein on a budget guide",
     },
+    "meal-prep": {
+        "slug": "meal-prep-for-beginners-complete-system",
+        "anchor": "meal prep system for beginners",
+    },
 }
 
 CLUSTER_HINTS = {
     "fiber": ["fiber", "gut", "bean", "lentil", "oat", "bran", "chia"],
     "budget": ["budget", "cheap", "grocery", "affordable", "dollar", "frugal"],
     "protein": ["protein", "egg", "tofu", "chicken", "turkey", "yogurt"],
+    "meal-prep": [
+        "meal prep",
+        "batch cooking",
+        "make ahead",
+        "freezer meal",
+        "food storage",
+        "work lunch",
+    ],
 }
 
 

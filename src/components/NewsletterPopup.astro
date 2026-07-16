@@ -171,26 +171,19 @@
         </div>
     </div>
 
-    <script>
+    <script is:inline>
         // Logic to show/hide popup
         const POPUP_DELAY = 12000; // 12 seconds
         const SUPPRESS_DAYS = 7; // Don't show again for 7 days if closed
 
-        let popup: HTMLElement | null;
-        let popupContent: HTMLElement | null;
-        let overlay: HTMLElement | null;
-        let closeBtn: HTMLElement | null;
-        let titleEl: HTMLElement | null;
-        let descEl: HTMLElement | null;
-        let tagEl: HTMLElement | null;
-        let showTimeout: ReturnType<typeof setTimeout>;
-
-        interface SignupContext {
-            category?: string;
-            base_slug?: string;
-            variant_slug?: string;
-            email_segment?: string;
-        }
+        let popup;
+        let popupContent;
+        let overlay;
+        let closeBtn;
+        let titleEl;
+        let descEl;
+        let tagEl;
+        let showTimeout;
 
         function getStoredSignupContext() {
             try {
@@ -213,7 +206,7 @@
             }
         }
 
-        function redirectToThankYou(source: string, context: SignupContext) {
+        function redirectToThankYou(source, context) {
             const params = new URLSearchParams({ source });
             if (context.category) params.set("category", context.category);
             if (context.email_segment) params.set("segment", context.email_segment);
@@ -267,7 +260,7 @@
             // The popup will show again on the next visit.
         }
 
-        function handleExitIntent(e: MouseEvent) {
+        function handleExitIntent(e) {
             if (e.clientY <= 0) {
                 // If they move cursor up, always show popup instead of checking suppression
                 showPopup();
@@ -308,17 +301,17 @@
             document.addEventListener("mouseleave", handleExitIntent);
         }
 
-        async function handleSubscribe(e: SubmitEvent) {
+        async function handleSubscribe(e) {
             e.preventDefault();
             const emailInput = document.getElementById(
                 "popup-email",
-            ) as HTMLInputElement;
+            );
             const submitBtn = document.getElementById(
                 "popup-submit-btn",
-            ) as HTMLButtonElement;
+            );
             const form = document.getElementById(
                 "popup-form",
-            ) as HTMLFormElement;
+            );
             const successEl = document.getElementById("popup-success");
 
             if (!emailInput || !emailInput.value) return;

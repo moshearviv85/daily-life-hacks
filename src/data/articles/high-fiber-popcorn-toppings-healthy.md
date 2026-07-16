@@ -15,6 +15,7 @@ image: /images/high-fiber-popcorn-toppings-healthy-main.jpg
 imageAlt: High Fiber Popcorn Toppings Healthy - appetizing bowl with colorful ingredients
   for healthy snacking
 date: 2026-02-01
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -49,6 +50,8 @@ faq:
     you're also drinking plenty of water to help the fiber move smoothly.
 ---
 I was watching this old movie the other day, you know, the one where the protagonist is always just casually munching on a giant bowl of popcorn, and it hit me: we've all been sort of... doing popcorn wrong. Well, not *wrong*, but maybe a little less... vibrant? Less good for us? I mean, all that butter, it just sits there, a pool of yellow-ish grease at the bottom of the bowl, and then your fingers are all sticky, and honestly, the flavor profile just sort of flattens out, you know? It's fine, but it could be *more*. Much more.
+
+Popcorn is only one cheap piece of the puzzle, so here's the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) when you want the beans, grains, fruit, and actual meals too.
 
 ## Popcorn: The Unexpected Whole Grain Hero
 

@@ -7,16 +7,16 @@ cluster: "budget-protein"
 image: "/images/high-protein-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry beans and lentils beside a carton of eggs, a whole chicken, canned fish, a block of tofu, and a tub of cottage cheese on a wooden table"
 date: 2026-07-08
-dateModified: 2026-07-15
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 faq:
   - question: "What is the cheapest way to get protein?"
     answer: "Dried beans and lentils. In our 49-food pricing analysis, every dried legume landed between 56 and 98 grams of protein per dollar, with dried pinto beans on top at about 98. For comparison, chicken breast delivered about 24.5 grams per dollar and ground beef about 11.5. All figures use USDA protein data and July 2026 US prices."
   - question: "How much protein do I need a day?"
-    answer: "The FDA's Daily Value for protein, the number used on US nutrition labels, is 50 grams per day for a 2,000-calorie diet. That's a labeling reference point, not a personal prescription, since individual needs vary. Our $20 basket contains about 1,047 grams of protein in total; it is a price example, not a recommended one-person weekly target."
+    answer: "The FDA's Daily Value for protein, the number used on US nutrition labels, is 50 grams per day for a 2,000-calorie diet. That's a labeling reference point, not a personal prescription, since individual needs vary. Our $20 basket contains about 1,047 grams of protein in total; it's a price example, not a recommended one-person weekly target."
   - question: "Are eggs still a cheap protein?"
-    answer: "Yes. At the May 2026 BLS average of $2.19 per dozen, large eggs delivered about 34 grams of protein per dollar in our analysis, second among the animal foods in our sample after chicken drumsticks. A dozen holds roughly 75 grams of protein, and the combination of price, convenience, and versatility keeps eggs useful even when they do not win the full ranking."
+    answer: "Yes. At the May 2026 BLS average of $2.19 per dozen, large eggs delivered about 34 grams of protein per dollar in our analysis, second among the animal foods in our sample after chicken drumsticks. A dozen holds roughly 75 grams of protein, and the combination of price, convenience, and versatility keeps eggs useful even when they don't win the full ranking."
   - question: "Is canned tuna a good cheap protein?"
     answer: "It's a solid middle-of-the-pack value. Chunk light tuna delivered about 22.4 grams of protein per dollar in our July 2026 numbers, with a 98-cent can holding roughly 22 grams of protein. That's less than half what dried beans deliver per dollar, but tuna needs zero cooking, keeps for years in the pantry, and turns into lunch in about ninety seconds."
   - question: "What is the cheapest meat for protein?"
@@ -28,6 +28,18 @@ Dried beans and lentils delivered the highest protein return in our 49-food groc
 Those three facts are the whole strategy. Everything else in this guide is the practical part: which foods to buy, what to do with them, and how to build a week of eating around them without feeling like you're serving punishment rations.
 
 Here's where the numbers come from. We priced 49 common grocery foods against USDA protein data and ranked every one by grams of protein per dollar, the same way we did for fiber. The full ranking lives in our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), the raw data is public if you want to [check the math yourself](/data/protein-per-dollar-2026.csv), and the companion [50-gram daily-cost study](/what-50-grams-of-protein-costs-per-day/) turns those rows into five meal-by-meal scenarios. This guide is the playbook built on top of that data.
+
+**Where should you start?**
+
+Pick the route that solves today's problem:
+
+* **You want the cheapest foods:** go to the [protein-per-dollar table](#what-is-the-cheapest-source-of-protein).
+* **Package sizes are making the shelf label useless:** start with that table, then use the unit-price tool linked below it.
+* **You need meals, not rankings:** start with [beans and lentils](#beans-and-lentils-the-champions-nobody-brags-about), [eggs and dairy](#eggs-and-dairy-the-everyday-workhorses), or the [$20 weekly backbone](#the-20-weekly-protein-backbone).
+* **You need the full cart to stay under a limit:** use the broader [healthy budget playbook](/eat-healthy-on-a-budget-complete-playbook/), then price the cart with the budget tool in the weekly-backbone section.
+* **You want to audit the evidence:** read the [research methodology](/methodology/) and the plain-English explainer on [where the 50-gram Daily Value comes from](/fiber-protein-daily-values-explained/).
+
+Nobody has to read this from top to bottom while standing in a supermarket. That would be an odd use of frozen-food-aisle time.
 
 ## The short answer
 
@@ -58,11 +70,13 @@ Here's what one dollar buys, pulled straight from the ranking:
 | Ground beef (80/20) | 11.5 g |
 | Bacon | 9.2 g |
 
+![Horizontal bar chart showing how many grams of protein one dollar buys across eight grocery foods](/images/protein-on-a-budget-value-chart.jpg)
+
 Two things jump out of that table. First, the top is a dry goods landslide, just like the fiber ranking. Second, the foods people instinctively reach for when they decide to "eat more protein" (chicken breast, ground beef) sit in the bottom half. Not bad foods. Just expensive ways to buy the nutrient.
 
 One benchmark worth keeping in your head while you read the rest: the [FDA's Daily Value for protein](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), the reference number on US nutrition labels, is 50 grams a day for a 2,000-calorie diet. That's a labeling fact, not personal advice, and [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/) is its own conversation. As a price yardstick, it means a dollar of pinto beans in this dataset carries almost twice that labeling benchmark.
 
-Want to run your own matchups? The [per-dollar calculator](/tools/fiber-per-dollar-calculator/) now has a protein toggle and will compare any two foods from the dataset for you.
+Want to run your own matchups? The [per-dollar calculator](/tools/fiber-per-dollar-calculator/) now has a protein toggle and will compare any two foods from the dataset for you. When two cartons or bags contain the same food in different sizes, the [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles that quieter checkout trap.
 
 ## Beans and lentils: the champions nobody brags about
 
@@ -112,7 +126,7 @@ For the price-only view, the [plant protein ranking](/plant-protein-per-dollar-r
 
 Short version: the pairing is real, the stress about it isn't.
 
-Different plant foods bring different amino acid profiles, which is why beans and grains make such a practical team. But the part people overcomplicate is timing: [MedlinePlus says you do not need to combine them at the same meal](https://medlineplus.gov/ency/article/002465.htm). Eat a varied mix of beans, lentils, soy foods, nuts, seeds, and whole grains across the day. Our [beans and rice complete protein](/beans-and-rice-complete-protein-meal/) page handles the kitchen version of that advice.
+Different plant foods bring different amino acid profiles, which is why beans and grains make such a practical team. But the part people overcomplicate is timing: [MedlinePlus says you don't need to combine them at the same meal](https://medlineplus.gov/ency/article/002465.htm). Eat a varied mix of beans, lentils, soy foods, nuts, seeds, and whole grains across the day. Our [beans and rice complete protein](/beans-and-rice-complete-protein-meal/) page handles the kitchen version of that advice.
 
 If you want the grocery math behind that plate, the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/) rank the combinations by cost instead of asking rice and beans to coast on their reputation.
 
@@ -134,9 +148,11 @@ Call it twenty bucks. That's about 1,047 grams of protein in the basket, or roug
 
 ![Horizontal bar chart showing the protein supplied by six foods in a 20 dollar weekly grocery backbone, led by pinto beans and chicken drumsticks](/images/protein-budget-weekly-backbone.jpg)
 
-This basket is a skeleton, not a meal plan. Turning it into actual dinners is a batch-cooking problem, and our [meal prep for beginners system](/meal-prep-for-beginners-complete-system/) walks through that routine without turning your Sunday into a second job.
+This basket is a skeleton, not a meal plan. Turning it into actual dinners is a batch-cooking problem, and our [meal prep for beginners system](/meal-prep-for-beginners-complete-system/) walks through that routine without turning your Sunday into a second job. Once you've picked the meals, the [recipe cost calculator](/tools/recipe-cost-calculator/) shows cost per serving, which is far more useful than congratulating yourself for buying a cheap bag of beans and then burying it under pricey toppings.
 
 The basket can flex around the week you actually have. The [one-dollar protein breakdown](/one-dollar-protein-what-it-buys/) finds the raw buying power, the [no-cook protein ranking](/no-cook-protein-per-dollar/) handles weeks when the stove is decorative, and the [shelf-stable pantry ranking](/shelf-stable-pantry-per-dollar/) covers the groceries that won't punish you for changing plans.
+
+If this protein backbone is only one slice of the household cart, put it inside the [grocery budget calculator](/tools/grocery-budget-calculator/) before adding produce, breakfast, snacks, and the four things somebody remembered after you finished the list.
 
 ![A practical weekly protein prep with roasted chicken drumsticks, lentils, eggs, peanut butter, whole wheat bread, and cottage cheese](/images/protein-budget-weekly-prep.jpg)
 

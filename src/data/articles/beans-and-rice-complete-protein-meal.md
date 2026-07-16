@@ -11,6 +11,7 @@ tags:
 image: "/images/beans-and-rice-complete-protein-meal-main.jpg"
 imageAlt: "A hearty bowl of black beans and rice garnished with fresh cilantro and lime"
 date: 2026-04-08
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -57,7 +58,9 @@ faq:
 ---
 We need to talk about dinner when you have zero energy and about four dollars to your name. We've all been there. You stare at the pantry, hoping something will magically assemble itself. This beans and rice complete protein meal is exactly what you make on those nights. 
 
-It's not flashy. It's not trying to be a trendy restaurant dish. It's just honest, hard-working food that fills you up without making you feel heavy. And yes, it covers your nutritional bases without requiring you to buy a thirty-dollar tub of weird protein powder.
+It's not flashy. It's not trying to be a trendy restaurant dish. It's just honest, hard-working food that I keep coming back to when dinner needs to cost very little and still feel like dinner. No thirty-dollar bag of specialty groceries required.
+
+If you want the rest of the cheap-protein playbook, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) covers the beans, eggs, chicken, dairy, and pantry backups that make this dinner less of a one-hit wonder.
 
 ## Why this combination actually works
 

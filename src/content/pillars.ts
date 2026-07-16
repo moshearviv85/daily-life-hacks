@@ -12,14 +12,21 @@ export const PILLARS = [
     cluster: "budget",
     title: "Eat Healthy on a Budget: Complete Playbook",
     blurb:
-      "Build a cart that feeds well without premium prices — systems, not willpower.",
+      "Build a cart that feeds well without premium prices. Systems, not willpower.",
   },
   {
     slug: "high-protein-on-a-budget-complete-guide",
     cluster: "protein",
     title: "High Protein on a Budget",
     blurb:
-      "Beans, eggs, and drumsticks first — protein per dollar with USDA numbers.",
+      "Beans, eggs, and drumsticks first. Protein per dollar with USDA numbers.",
+  },
+  {
+    slug: "meal-prep-for-beginners-complete-system",
+    cluster: "meal-prep",
+    title: "Meal Prep for Beginners: The Complete System",
+    blurb:
+      "Two bases, two proteins, and two sauces. Build a week of meals without eating the same sad container five times.",
   },
 ] as const;
 
@@ -61,6 +68,15 @@ export const CLUSTER_KEYWORDS: Record<PillarCluster, string[]> = {
     "cottage cheese",
     "chicken",
     "legume",
+  ],
+  "meal-prep": [
+    "meal prep",
+    "batch cooking",
+    "make ahead",
+    "freezer meal",
+    "food storage",
+    "work lunch",
+    "weekly prep",
   ],
 };
 

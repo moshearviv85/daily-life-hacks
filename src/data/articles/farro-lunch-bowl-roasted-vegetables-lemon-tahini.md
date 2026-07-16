@@ -11,6 +11,7 @@ tags:
 image: "/images/farro-lunch-bowl-roasted-vegetables-lemon-tahini-main.jpg"
 imageAlt: "Farro lunch bowl with roasted vegetables and lemon tahini sauce in a shallow bowl"
 date: 2026-04-23
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -69,6 +70,8 @@ Farro is one of those grains that feels like you have your life together. Not be
 This farro lunch bowl is my go-to when I want a meal prep lunch that isn't just a pile of cold chicken and regret. It's warm, filling, and it actually tastes like something. Roasted vegetables do the heavy lifting, and the lemon tahini sauce makes it feel like a real meal instead of a container you eat over the sink.
 
 Also, it travels well. That matters. Nobody wants a lunch that turns into a wet, beige science project by noon.
+
+For the full Sunday-to-office setup around this bowl, the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) handles shopping, batch order, storage, and reheating before the containers start multiplying on their own.
 
 ## Why farro makes a great lunch bowl base
 

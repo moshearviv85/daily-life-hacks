@@ -6,9 +6,11 @@ tags:
 - food storage
 - kitchen tips
 - freezer
+- freezer organization
 image: "/images/freezer-inventory-simple-system-main.jpg"
 imageAlt: "A well organized freezer with labeled containers and a simple whiteboard list on the fridge door"
 date: 2026-04-24
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -31,6 +33,8 @@ The freezer is the most optimistic appliance in the house. We put things in ther
 Three months later, you pull out a solid block of brown ice. Is it chili? Is it leftover pasta sauce? Is it beef stew from last winter? You have no idea, so you throw it away.
 
 This is how freezers become graveyards for food and money. If you want to actually eat the food you save, you have to stop treating the freezer like a time capsule. You need a system. Not a color coded, heavily spreadsheeted nightmare, just a simple inventory that a tired person can maintain on a Tuesday night.
+
+If the inventory says you own eleven bags of frozen corn but you still can't reach them, these [freezer organization tips for family meals](/freezer-organization-tips-large-family-meals/) handle the physical side of the problem.
 
 ## The tape and marker rule
 

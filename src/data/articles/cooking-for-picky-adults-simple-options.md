@@ -10,6 +10,7 @@ tags:
 image: "/images/cooking-for-picky-adults-simple-options-main.jpg"
 imageAlt: "Simple dinner plate with familiar foods arranged in a clean approachable way"
 date: 2026-04-18
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -32,6 +33,8 @@ My partner doesn't eat mushrooms. Or bell peppers. Or "anything with a weird tex
 Cooking for picky adults is a specific kind of challenge. It's not like cooking for kids, where you can hide spinach in a smoothie and feel clever. Adults notice. Adults have opinions. Adults will pick the onion pieces out of a stew and leave them on the side of the plate like tiny evidence.
 
 But you can make this work without losing your mind or eating plain chicken and rice every single night.
+
+For a low-stakes place to start, these [20-minute bean and rice meals](/quick-20-minute-high-fiber-meals-for-busy-days/) keep the ingredients visible, separate, and easy to adjust without turning dinner into a negotiation summit.
 
 ## Understand the comfort zone first
 

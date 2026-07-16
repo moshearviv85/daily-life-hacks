@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+
+const title = "Grocery Budget Calculator: Weekly Plan by Category";
+const description =
+  "Split a weekly grocery budget by category, adjust percentages, and see spending per person and per day. Free and private in your browser.";
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Grocery Budget Calculator",
+    url: "https://www.daily-life-hacks.com/tools/grocery-budget-calculator/",
+    description,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Any",
+    browserRequirements: "Requires JavaScript",
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    publisher: {
+      "@type": "Organization",
+      name: "Daily Life Hacks",
+      url: "https://www.daily-life-hacks.com",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      ["How much is my grocery budget per person per day?", "Divide the weekly total by the number of people, then divide by seven. A $175 budget for four people works out to $6.25 per person per day."],
+      ["Do my categories have to total 100%?", "Yes for a complete plan. The calculator flags any money left unassigned or any amount promised twice."],
+      ["Can I rename or add categories?", "Yes. Edit every category name, remove rows, or add your own. The starter categories are suggestions, not grocery law."],
+      ["Does this tell me what my household should spend?", "No. It organizes the budget you enter. For an official low-cost benchmark, read our USDA food plan explainer."],
+      ["How do Daily Life Hacks price studies handle grocery data?", "Our methodology explains how prices, package sizes, and comparison dates are recorded."],
+    ].map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text },
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/tools/" class="underline" style="color:#F29B30;">Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Grocery budget calculator</span>
+    </nav>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Grocery Budget Calculator</h1>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      A grocery budget needs jobs, not good intentions. Give every dollar a category before the store gives it one for you, usually “snacks bought while hungry.” Enter your weekly total, adjust the percentages, and see what the plan means per person and per day.
+    </p>
+
+    <section id="grocery-budget-app" class="rounded-2xl p-5 md:p-7 mb-10" style="background:var(--card-bg);border:1px solid var(--border-color);">
+      <div class="grid sm:grid-cols-2 gap-4 mb-6">
+        <label class="tool-label">Weekly grocery budget<span class="input-prefix"><span aria-hidden="true">$</span><input id="gb-budget" class="tool-input pl-7" type="number" min="0" step="1" value="175" inputmode="decimal" /></span></label>
+        <label class="tool-label">People eating from this budget<input id="gb-people" class="tool-input" type="number" min="1" step="1" value="4" inputmode="numeric" /></label>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6" aria-live="polite">
+        <div class="metric"><span>Weekly total</span><strong id="gb-weekly">$0</strong></div>
+        <div class="metric"><span>Per person / week</span><strong id="gb-person-week">$0</strong></div>
+        <div class="metric"><span>Household / day</span><strong id="gb-house-day">$0</strong></div>
+        <div class="metric highlight"><span>Per person / day</span><strong id="gb-person-day">$0</strong></div>
+      </div>
+
+      <div class="flex flex-wrap justify-between items-end gap-3 mb-3">
+        <div><h2 class="text-xl font-bold" style="color:var(--heading-color);">Give each category a share</h2><p class="text-sm" style="color:var(--muted-color);">Edit the names and percentages. A complete plan lands at 100%.</p></div>
+        <button id="gb-add" type="button" class="rounded-xl px-4 py-2 font-semibold text-white" style="background:#F29B30;">Add category</button>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:580px;border-collapse:collapse;">
+          <thead><tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);"><th class="cell text-left">Category</th><th class="cell text-left">Percent</th><th class="cell text-right">Per week</th><th class="cell text-right">Per person / week</th><th class="cell"><span class="sr-only">Remove</span></th></tr></thead>
+          <tbody id="gb-rows"></tbody>
+        </table>
+      </div>
+
+      <div id="gb-balance" class="mt-4 rounded-xl p-4 font-semibold" role="status"></div>
+      <div id="gb-chart" class="mt-5 space-y-3" aria-label="Budget allocation chart"></div>
+
+      <div class="flex flex-wrap gap-3 mt-6">
+        <button id="gb-reset" type="button" class="rounded-xl px-4 py-2 font-semibold" style="border:1px solid var(--border-color);color:var(--text-color);">Reset starter plan</button>
+        <button id="gb-even" type="button" class="rounded-xl px-4 py-2 font-semibold" style="border:1px solid var(--border-color);color:var(--text-color);">Split evenly</button>
+      </div>
+      <p class="mt-4 text-xs" style="color:var(--muted-color);">This is a planning tool, not a spending prescription. Your entries stay in this browser tab and aren't sent anywhere.</p>
+    </section>
+
+    <article class="prose-like max-w-3xl">
+      <h2>How do you make a weekly grocery budget?</h2>
+      <p>Start with the total you can spend this week, then divide it into categories before you shop. The category amounts become guardrails. They're allowed to bend when chicken is on sale or berries cost the same as a small appliance, but they stop one aisle from swallowing the whole budget.</p>
+      <div class="formula">category dollars = weekly budget × category percentage</div>
+      <div class="formula">per-person daily budget = weekly budget ÷ people ÷ 7</div>
+
+      <h2>What grocery budget categories should you use?</h2>
+      <p>The starter plan uses produce, proteins, grains, dairy or alternatives, pantry staples, and flexible spending. Rename anything. A vegetarian household may give beans and tofu their own category. A parent packing five lunches may need a lunchbox line before yogurt pouches stage a hostile takeover.</p>
+
+      <h2>How much should a household spend on groceries?</h2>
+      <p>There isn't one useful number for every household. Family size, location, dietary needs, cooking time, and the food already in your kitchen all change the answer. Our <a href="/usda-thrifty-food-plan-weekly-cost/">USDA Thrifty Food Plan explainer</a> translates one official benchmark, but this calculator works from the number that's real for you.</p>
+
+      <h2>How do you keep the grocery plan realistic?</h2>
+      <p>Use receipts. After two or three weeks, compare the plan with what you actually bought and adjust the categories. If pantry staples keep running over, that doesn't mean you failed budgeting. It means the first estimate was fiction with a spreadsheet. Our <a href="/grocery-shopping-list-for-healthy-eating-on-a-budget/">budget grocery list</a> and <a href="/eat-healthy-on-a-budget-complete-playbook/">healthy eating on a budget playbook</a> can help turn the numbers into an actual cart.</p>
+
+      <h2>What if the percentages don't add up to 100%?</h2>
+      <p>The calculator shows the unassigned amount or the overage. Under 100% leaves money without a job. Over 100% promises the same dollar to two different aisles. Adjust any row until the total lands at 100%, then treat the result as a starting plan rather than a sacred grocery constitution.</p>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>How much is my grocery budget per person per day?</summary><p>Divide the weekly total by the number of people, then divide by seven. A $175 budget for four people works out to $6.25 per person per day.</p></details>
+        <details><summary>Do my categories have to total 100%?</summary><p>Yes for a complete plan. The calculator flags any money left unassigned or any amount promised twice.</p></details>
+        <details><summary>Can I rename or add categories?</summary><p>Yes. Edit every category name, remove rows, or add your own. The starter categories are suggestions, not grocery law.</p></details>
+        <details><summary>Does this tell me what my household should spend?</summary><p>No. It organizes the budget you enter. For an official low-cost benchmark, read our USDA food plan explainer.</p></details>
+        <details><summary>How do Daily Life Hacks price studies handle grocery data?</summary><p>Our <a href="/methodology/">methodology</a> explains how prices, package sizes, and comparison dates are recorded.</p></details>
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <style>
+    .tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:600;color:var(--text-color)}.tool-input,.row-input{width:100%;border-radius:.7rem;padding:.65rem .75rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--text-color);outline:none}.tool-input:focus,.row-input:focus{box-shadow:0 0 0 2px #F29B30}.input-prefix{position:relative;display:block}.input-prefix>span{position:absolute;left:.75rem;top:.65rem;color:var(--muted-color)}.input-prefix .tool-input{padding-left:1.75rem}.cell{padding:.65rem}.metric{display:flex;flex-direction:column;gap:.2rem;padding:1rem;border-radius:.75rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--muted-color);font-size:.8rem}.metric strong{font-size:1.35rem;color:var(--heading-color)}.metric.highlight{border:2px solid #F29B30;background:rgba(242,155,48,.1)}.metric.highlight strong{color:#F29B30}.prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:700;margin:2.25rem 0 .7rem;color:var(--heading-color)}.prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}.prose-like a{color:#F29B30;text-decoration:underline;font-weight:600}.formula{margin:1rem 0;padding:1rem 1.25rem;border-radius:.75rem;background:var(--card-bg);border-left:4px solid #F29B30;font-weight:700;color:var(--heading-color)}.faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}.faq-list summary{cursor:pointer;font-weight:700;padding:1rem 0;color:var(--heading-color)}.faq-list p{margin:0 0 1rem}
+  </style>
+
+  <script is:inline>
+    (function(){
+      var defaults=[['Produce',25],['Protein foods',25],['Grains and bread',15],['Dairy or alternatives',10],['Pantry staples',15],['Flexible',10]];
+      function money(n){return '$'+(isFinite(n)?n:0).toFixed(2)}
+      function addRow(root,data){data=data||['New category',0];var tr=document.createElement('tr');tr.style.borderBottom='1px solid var(--border-color)';tr.innerHTML='<td class="cell"><input class="row-input" data-name aria-label="Category name"></td><td class="cell"><div class="flex items-center gap-1"><input class="row-input" data-pct type="number" min="0" max="100" step="1" inputmode="decimal" aria-label="Category percentage"><span>%</span></div></td><td class="cell text-right font-bold" data-week style="color:var(--heading-color);">$0.00</td><td class="cell text-right" data-person style="color:var(--text-color);">$0.00</td><td class="cell"><button type="button" data-remove aria-label="Remove category" class="font-bold text-lg" style="color:var(--muted-color);">×</button></td>';tr.querySelector('[data-name]').value=data[0];tr.querySelector('[data-pct]').value=data[1];root.querySelector('#gb-rows').appendChild(tr)}
+      function render(root){var budget=parseFloat(root.querySelector('#gb-budget').value),people=parseFloat(root.querySelector('#gb-people').value);budget=isFinite(budget)&&budget>=0?budget:0;people=isFinite(people)&&people>0?people:1;root.querySelector('#gb-weekly').textContent=money(budget);root.querySelector('#gb-person-week').textContent=money(budget/people);root.querySelector('#gb-house-day').textContent=money(budget/7);root.querySelector('#gb-person-day').textContent=money(budget/people/7);var total=0,items=[];root.querySelectorAll('#gb-rows tr').forEach(function(row){var pct=parseFloat(row.querySelector('[data-pct]').value);pct=isFinite(pct)&&pct>=0?pct:0;var amount=budget*pct/100;total+=pct;row.querySelector('[data-week]').textContent=money(amount);row.querySelector('[data-person]').textContent=money(amount/people);items.push({name:row.querySelector('[data-name]').value.trim()||'Untitled category',pct:pct,amount:amount})});var balance=root.querySelector('#gb-balance'),diff=100-total;if(Math.abs(diff)<.001){balance.textContent='100% assigned. Every dollar has a job.';balance.style.cssText='background:rgba(34,197,94,.1);border:1px solid #22c55e;color:var(--text-color);'}else if(diff>0){balance.textContent=total.toFixed(1)+'% assigned. '+money(budget*diff/100)+' is still unassigned.';balance.style.cssText='background:#fff4e5;border:1px solid #F29B30;color:#7a4300;'}else{balance.textContent=total.toFixed(1)+'% assigned. The plan is '+money(budget*Math.abs(diff)/100)+' over budget.';balance.style.cssText='background:#fff0f0;border:1px solid #dc2626;color:#991b1b;'}var chart=root.querySelector('#gb-chart');chart.innerHTML='';items.forEach(function(item){var wrap=document.createElement('div'),line=document.createElement('div'),label=document.createElement('span'),value=document.createElement('strong'),track=document.createElement('div'),bar=document.createElement('div');line.className='flex justify-between gap-3 text-sm mb-1';label.textContent=item.name;value.textContent=money(item.amount)+' ('+item.pct.toFixed(1)+'%)';line.append(label,value);track.style.cssText='height:.65rem;border-radius:999px;background:var(--page-bg);overflow:hidden;border:1px solid var(--border-color);';bar.style.cssText='height:100%;width:'+Math.min(item.pct,100)+'%;background:#F29B30;border-radius:999px;';track.appendChild(bar);wrap.append(line,track);chart.appendChild(wrap)})}
+      function load(root,rows){root.querySelector('#gb-rows').innerHTML='';rows.forEach(function(r){addRow(root,r)});render(root)}
+      function boot(){var root=document.getElementById('grocery-budget-app');if(!root||root.dataset.booted)return;root.dataset.booted='1';root.addEventListener('input',function(){render(root)});root.addEventListener('change',function(){render(root)});root.querySelector('#gb-rows').addEventListener('click',function(e){var b=e.target.closest('[data-remove]');if(!b)return;b.closest('tr').remove();if(!root.querySelector('#gb-rows tr'))addRow(root);render(root)});root.querySelector('#gb-add').addEventListener('click',function(){addRow(root);render(root)});root.querySelector('#gb-reset').addEventListener('click',function(){root.querySelector('#gb-budget').value=175;root.querySelector('#gb-people').value=4;load(root,defaults)});root.querySelector('#gb-even').addEventListener('click',function(){var rows=Array.from(root.querySelectorAll('#gb-rows tr')),share=rows.length?100/rows.length:100;rows.forEach(function(row,i){row.querySelector('[data-pct]').value=(i===rows.length-1?100-share*(rows.length-1):share).toFixed(2)});render(root)});load(root,defaults)}
+      boot();document.addEventListener('astro:page-load',boot);
+    })();
+  </script>
+</BaseLayout>

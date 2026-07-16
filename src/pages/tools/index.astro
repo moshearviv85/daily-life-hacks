@@ -3,61 +3,116 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
-const title = "Free Grocery Tools | Daily Life Hacks";
+const title = "Free Grocery Calculators and Food Budget Tools";
 const description =
-  "Free calculators built on USDA nutrition data and real shelf prices. Find out exactly what your grocery dollar buys before you get to the checkout.";
+  "Free grocery calculators for unit prices, recipe costs, weekly budgets, and fiber value. Clear formulas, private inputs, and no signup.";
 
-const toolsSchema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Free Grocery Tools",
-  url: "https://www.daily-life-hacks.com/tools/",
-  description,
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Daily Life Hacks",
-    url: "https://www.daily-life-hacks.com",
+const tools = [
+  {
+    href: "/tools/grocery-unit-price-calculator/",
+    eyebrow: "Compare packages",
+    visual: "$ / oz",
+    title: "Grocery Unit Price Calculator",
+    text: "Compare two package prices across ounces, pounds, grams, liters, or count. The shelf sticker can keep its tiny calculator button.",
   },
-  publisher: {
-    "@type": "Organization",
-    name: "Daily Life Hacks",
-    url: "https://www.daily-life-hacks.com",
+  {
+    href: "/tools/recipe-cost-calculator/",
+    eyebrow: "Price a meal",
+    visual: "$ / serving",
+    title: "Recipe Cost Calculator",
+    text: "Price the part of each package you actually use, total the batch, and get an honest cost per serving.",
   },
-};
+  {
+    href: "/tools/grocery-budget-calculator/",
+    eyebrow: "Plan the week",
+    visual: "$ / day",
+    title: "Grocery Budget Calculator",
+    text: "Split a weekly total into editable categories and see the budget per household, person, week, and day.",
+  },
+  {
+    href: "/tools/fiber-per-dollar-calculator/",
+    eyebrow: "Compare food value",
+    visual: "$1 = ?",
+    title: "Fiber per Dollar Calculator",
+    text: "Rank 53 foods, compare any two, or build a basket using USDA fiber data and verified shelf prices.",
+  },
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Free Grocery Calculators and Food Budget Tools",
+    url: "https://www.daily-life-hacks.com/tools/",
+    description,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Daily Life Hacks",
+      url: "https://www.daily-life-hacks.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Daily Life Hacks",
+      url: "https://www.daily-life-hacks.com",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Daily Life Hacks grocery tools",
+    itemListElement: tools.map((tool, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: tool.title,
+      url: `https://www.daily-life-hacks.com${tool.href}`,
+    })),
+  },
+];
 ---
 
-<BaseLayout title={title} description={description} jsonLd={toolsSchema}>
+<BaseLayout title={title} description={description} jsonLd={schemas}>
   <Header />
-  <main class="max-w-4xl mx-auto px-4 py-12 md:py-16">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
-      Tools
-    </h1>
-    <p class="text-lg mb-10" style="color: var(--text-color);">
-      Calculators that do the grocery math so you don't have to do it in aisle six. Everything here runs on the same verified data as our studies: USDA nutrition numbers and real shelf prices. See <a href="/methodology/" class="underline" style="color: #F29B30;">how we verify our numbers</a> if you want the receipts.
-    </p>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <!-- Fiber per Dollar calculator -->
-      <a
-        href="/tools/fiber-per-dollar-calculator/"
-        class="group overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-lg flex flex-col"
-        style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
-      >
-        <div class="overflow-hidden relative aspect-video shrink-0 flex flex-col items-center justify-center gap-1" style="background-color: rgba(242, 155, 48, 0.08);">
-          <span class="text-5xl font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-500" style="color: #F29B30;">$1 = ?</span>
-          <span class="text-[11px] font-bold uppercase tracking-widest" style="color: var(--muted-color);">grams of fiber</span>
-          <span class="absolute bottom-2 left-2 px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider text-white leading-none z-10" style="background-color: #F29B30;">Free Tool</span>
-        </div>
-        <div class="p-4 flex-1 flex flex-col gap-1.5">
-          <h2 class="font-semibold text-lg leading-tight group-hover:text-[#F29B30] transition-colors duration-200" style="color: var(--heading-color);">The Fiber per Dollar Calculator</h2>
-          <p class="text-sm leading-snug" style="color: var(--muted-color);">Punch in any food and its price. Rank 53 foods, compare any two head to head, or total up a whole basket. Find out if you're buying fiber or just paying for the packaging.</p>
-        </div>
-      </a>
+  <main class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+    <div class="max-w-3xl mb-10">
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Free. Private. Actually useful.</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Grocery Tools</h1>
+      <p class="text-lg" style="color:var(--text-color);">
+        Grocery math always shows up at the worst time: in a crowded aisle, halfway through a recipe, or three days before payday. These calculators handle the arithmetic and show the formula. No signup, no data sale, no motivational speech from a cartoon avocado.
+      </p>
     </div>
 
-    <p class="mt-10 text-base" style="color: var(--muted-color);">
-      More tools are on the way. Same rule for all of them: real data, sources listed, no guessing.
-    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {tools.map((tool) => (
+        <a href={tool.href} class="tool-card group">
+          <div class="tool-visual">
+            <span class="text-4xl font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-300" style="color:#F29B30;">{tool.visual}</span>
+            <span class="text-[11px] font-bold uppercase tracking-widest" style="color:var(--muted-color);">{tool.eyebrow}</span>
+            <span class="absolute top-3 right-3 px-2 py-1 text-[10px] font-bold rounded-full uppercase tracking-wider text-white" style="background:#F29B30;">Free Tool</span>
+          </div>
+          <div class="p-5 flex-1 flex flex-col gap-2">
+            <h2 class="font-bold text-xl leading-tight group-hover:text-[#F29B30] transition-colors" style="color:var(--heading-color);">{tool.title}</h2>
+            <p class="text-sm leading-relaxed" style="color:var(--muted-color);">{tool.text}</p>
+            <span class="mt-auto pt-2 text-sm font-bold" style="color:#F29B30;">Open calculator <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <section class="mt-14 grid md:grid-cols-3 gap-5">
+      <div class="promise"><strong>Nothing leaves your browser</strong><p>Prices, budgets, and recipe ingredients stay on your device. The tools don't need an account because division has managed without one for centuries.</p></div>
+      <div class="promise"><strong>The formulas are visible</strong><p>You can see how every answer is calculated. No mystery score, black box, or “trust us” math.</p></div>
+      <div class="promise"><strong>The examples work immediately</strong><p>Every calculator opens with a realistic example. Change one number and watch the result update.</p></div>
+    </section>
+
+    <section class="max-w-3xl mt-14">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--heading-color);">Start with the decision in front of you</h2>
+      <p class="leading-relaxed mb-4" style="color:var(--text-color);">Comparing two boxes? Use unit price. Pricing tonight's dinner? Use recipe cost. Trying to keep the whole week under control? Build a grocery budget. If you want to know which foods deliver the most fiber for the money, use the food-value calculator.</p>
+      <p class="leading-relaxed" style="color:var(--text-color);">The calculators handle your numbers. Our <a href="/eat-healthy-on-a-budget-complete-playbook/" class="text-link">healthy eating on a budget playbook</a> handles the strategy, and the <a href="/methodology/" class="text-link">methodology page</a> explains how we verify the prices and nutrition data used in published studies.</p>
+    </section>
   </main>
   <Footer />
+
+  <style>
+    .tool-card{overflow:hidden;border-radius:1rem;display:flex;flex-direction:column;background:var(--card-bg);border:1px solid var(--border-color);transition:transform .2s,box-shadow .2s}.tool-card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(15,23,42,.10)}.tool-visual{position:relative;aspect-ratio:16/8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;background:rgba(242,155,48,.08)}.promise{padding:1.25rem;border-radius:.9rem;background:var(--card-bg);border:1px solid var(--border-color)}.promise strong{display:block;margin-bottom:.5rem;color:var(--heading-color)}.promise p{font-size:.9rem;line-height:1.65;color:var(--muted-color)}.text-link{color:#F29B30;text-decoration:underline;font-weight:600}
+  </style>
 </BaseLayout>

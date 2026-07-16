@@ -12,6 +12,7 @@ tags:
 image: /images/plant-based-protein-sources-complete-guide-main.jpg
 imageAlt: 'Assortment of plant-based protein foods: beans, lentils, tofu, nuts'
 date: 2026-03-15
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -41,6 +42,8 @@ faq:
 Going plant-based, or even just deciding to cut back on your meat intake a few days a week, does not mean you're doomed to eat sad, wilted salads for the rest of your life. 
 
 There is a surprisingly long list of plant-based protein sources that work perfectly in normal, everyday meals. We're talking about beans, lentils, tofu, tempeh, nuts, seeds, and even certain grains. This guide breaks down what they actually are, roughly how much protein they give you, and how to use them without turning dinner into a complicated science experiment.
+
+If grocery cost is the part nobody bothered to explain, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) shows how those same staples stack up when your checking account gets a vote.
 ## The Heavy Lifters: Beans and Lentils
 
 Beans and lentils are the undisputed workhorses of plant protein. A standard cup of cooked black beans has around 15 grams of protein. Chickpeas and kidney beans land in the exact same ballpark. 

@@ -12,6 +12,7 @@ tags:
 image: /images/crispy-roasted-chickpeas-high-fiber-snack-main.jpg
 imageAlt: Bowl of golden roasted chickpeas with spices
 date: 2026-03-30
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -60,6 +61,8 @@ faq:
 If you want a high fiber snack that feels like junk food cosplay, roasted chickpeas are the move. They crunch, they carry spice, and they do not require a culinary degree.
 
 The whole operation lives or dies on dryness. Wet chickpeas steam in the oven and come out sad. Dry chickpeas roast.
+
+If chickpeas are doing this much work in your snack bowl, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) shows where they fit with beans, oats, lentils, and the rest of the cheap pantry crew.
 ## The Non Negotiable Steps
 
 Rinse, drain, then dry like you are preparing them for a photoshoot. Oil helps crisping, but too much oil makes them greasy.

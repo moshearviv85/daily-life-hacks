@@ -62,6 +62,35 @@ const metaDescription =
       }, 3500);
     </script>
 
+    <!-- Record one anonymous engagement event per calculator session. Input values are never sent. -->
+    <script is:inline>
+      (function () {
+        if (window.__dlhToolTrackerBound) return;
+        window.__dlhToolTrackerBound = true;
+
+        function recordToolUse(event) {
+          if (!location.pathname.startsWith('/tools/') || location.pathname === '/tools/') return;
+          if (!(event.target instanceof Element)) return;
+          if (!event.target.closest('[id$="-app"]')) return;
+
+          var toolName = location.pathname.split('/').filter(Boolean).pop();
+          var storageKey = 'dlh-tool-used:' + toolName;
+          if (sessionStorage.getItem(storageKey)) return;
+
+          sessionStorage.setItem(storageKey, '1');
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'tool_engagement', {
+              tool_name: toolName,
+              interaction_type: event.type,
+            });
+          }
+        }
+
+        document.addEventListener('input', recordToolUse, true);
+        document.addEventListener('click', recordToolUse, true);
+      })();
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title.includes('Daily Life Hacks') ? title : `${title} | DLH`}</title>

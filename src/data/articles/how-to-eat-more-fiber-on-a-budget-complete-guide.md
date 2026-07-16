@@ -7,7 +7,7 @@ cluster: "budget-fiber"
 image: "/images/how-to-eat-more-fiber-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry pinto beans, split peas, red lentils, oats, and popcorn kernels on a wooden table beside a bag of frozen peas and a loaf of whole wheat bread"
 date: 2026-07-07
-dateModified: 2026-07-15
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 faq:
@@ -23,11 +23,23 @@ faq:
     answer: "Slowly. Jumping from roughly 16 grams a day to 35 overnight may cause gas, bloating, or cramps. Federal health guidance recommends adding fiber a little at a time and drinking enough liquids as you increase it."
 ---
 
-The [FDA's Daily Value for fiber is 28 grams a day](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), while [MedlinePlus says Americans average about 16 grams](https://medlineplus.gov/ency/article/002470.htm). That's a useful national reference point, not a personalized prescription. The cheapest way to close the gap runs through the dry goods aisle, where dry green split peas deliver about 71 grams of fiber per dollar, based on USDA data and July 2026 prices.
+The cheapest way to eat more fiber is to build meals around dry beans, split peas, oats, and popcorn, then use frozen produce to fill in the gaps. The [FDA's Daily Value for fiber is 28 grams a day](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), while [MedlinePlus says Americans average about 16 grams](https://medlineplus.gov/ency/article/002470.htm). That's a useful national reference point, not a personalized prescription. In our grocery sample, dry green split peas delivered about 71 grams of fiber per dollar based on USDA data and July 2026 prices.
 
 Nobody tells you this, because fiber has a marketing problem. The foods that deliver the most of it per dollar are the least photogenic things in the store: dusty bags of split peas, dry pinto beans, plain rolled oats parked on the bottom shelf below the granola with the kraft paper branding. Nobody's building an Instagram feed around a bag of legumes.
 
 I know this because I built the spreadsheet. We priced 53 common grocery foods against USDA fiber data and ranked every one by grams of fiber per dollar. This guide is what came out the other side: the complete playbook for how to eat more fiber on a budget, with real prices, real meals, and zero foods that taste like punishment.
+
+**Where should you start?**
+
+Use the part that matches the problem currently staring at you from the kitchen:
+
+* **Your grocery bill is the problem:** jump to the [cheapest fiber sources](#what-is-the-cheapest-source-of-fiber).
+* **You need a day you can copy:** use the [30-plus-gram sample day](#a-full-day-of-30-grams-for-under-three-dollars).
+* **Breakfast is the weak spot:** start with the [oats, parfait, and muffin rotation](#breakfast-the-easiest-10-grams-of-your-day).
+* **Dinner keeps falling apart:** go to the [beans-and-lentils system](#lunch-and-dinner-let-beans-do-the-heavy-lifting).
+* **You want the full evidence:** read the [53-food fiber ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) and our [research methodology](/methodology/).
+
+No twelve-tab grocery research project required. Pick the leak, fix that one first, and come back for the rest when the bag of oats is no longer decorative.
 
 ## The short answer
 
@@ -50,13 +62,15 @@ We published the full 53-food ranking in our [fiber per dollar study](/fiber-per
 | Fresh broccoli crowns | 6.1 g |
 | Blueberries | 2.5 g |
 
+![Horizontal bar chart showing how many grams of fiber one dollar buys across eight grocery foods](/images/fiber-on-a-budget-value-chart.jpg)
+
 A few notes on that table. Whole wheat flour is technically the winner, but flour is an ingredient, not dinner; it only counts if you bake, so swap it into pancakes and muffins and let the fiber tag along for pennies. That makes dry green split peas the real champion among foods you can put in a pot tonight: one $1.42 bag holds around 101 grams of fiber, or about three and a half Daily Values. That's spreadsheet context, not a three-day menu. Pinto beans sit within a rounding error of the peas and are arguably more versatile. Popcorn is the sleeper hit of the whole list, a snack that outranks lentils. Rolled oats are breakfast, solved, for about 28 cents per 100 grams. And frozen green peas deliver nearly triple what fresh broccoli crowns do, which is why the freezer aisle quietly beats the produce section.
 
 At the very bottom sit fresh blueberries at 2.5 grams per dollar. Berries aren't bad food. They're just a terrible fiber strategy. Buy them because you love them, not for the grams. Bananas are the exception that proves the rule: at just under 12 grams of fiber per dollar, they're the best fresh fruit value on the list, which is exactly why one shows up in the sample day below.
 
 One more number worth knowing: dry beans beat canned by about 2.5 times per dollar. Canned is still a genuinely good middle option, and if the only thing keeping you from dry beans is the overnight soak, the [same-day quick soak method](/how-to-quick-soak-dried-beans-same-day/) deletes that excuse in about an hour.
 
-Want to run your own matchups? The [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/) compares any two foods and does the basket math for you. And if you're rebuilding the whole grocery run, not just the fiber part, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) and this [budget shopping list](/grocery-shopping-list-for-healthy-eating-on-a-budget/) cover the rest of the cart.
+Want to run your own matchups? The [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/) compares any two foods and does the nutrient math for you. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles the other question that tiny shelf labels make unnecessarily annoying: which package is actually cheaper per ounce. And if you're rebuilding the whole grocery run, not just the fiber part, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) and this [budget shopping list](/grocery-shopping-list-for-healthy-eating-on-a-budget/) cover the rest of the cart.
 
 ## A full day of 30+ grams for under three dollars
 
@@ -78,6 +92,8 @@ Read that again. Thirty-seven grams, which clears the 28 gram Daily Value with r
 ![Horizontal bar chart showing breakfast, lunch, snack, and dinner adding up to about 37 grams of fiber for 88 cents](/images/fiber-budget-day-breakdown.jpg)
 
 Two honest caveats. First, this is the fiber skeleton, not everything you'd eat. Add milk for the oats, oil and an onion for the soup, eggs or whatever protein you like at dinner, and you're still comfortably under three dollars for the day's core food. Second, if you're currently near the 16 gram national average, don't jump to 37 tomorrow. More on that in the mistakes section, because stomach drama is a lousy onboarding experience.
+
+The [grocery budget calculator](/tools/grocery-budget-calculator/) lets you turn this skeleton into your own weekly ceiling, including the foods that aren't here. That's the honest version of budget math. A bowl of split peas is cheap; the complete cart is what hits your bank account.
 
 If you want less spreadsheet and more real-life options, our follow-up shows [what 30 grams of fiber costs across five different days](/what-30-grams-of-fiber-costs-per-day/), including a no-cook version and a mixed grocery day.
 
@@ -111,7 +127,7 @@ Beans are where the budget gets especially lopsided. The [canned versus dry bean
 
 Pasta night doesn't need to be sacrificed either. Whole wheat spaghetti holds 9.2 grams of fiber per 100 grams dry and ranks ninth on our list, and the [whole wheat vs white pasta breakdown](/whole-wheat-vs-white-pasta-fiber/) shows exactly what you're leaving on the table with the regular box. If wheat pasta isn't your thing, there's a whole world of [high fiber pasta alternatives](/high-fiber-pasta-alternatives/) made from lentils and chickpeas.
 
-The failure point for most people isn't the recipes. It's the Wednesday night where nothing is prepped and pizza wins. Batch cooking is the counter-move, and our [meal prep for beginners system](/meal-prep-for-beginners-complete-system/) walks through the whole routine without turning your Sunday into a shift job. And if you want the training-wheels version where every day is already decided, the [30-day high fiber challenge meal plan](/30-day-high-fiber-challenge-meal-plan/) does exactly that.
+The failure point for most people isn't the recipes. It's the Wednesday night where nothing is prepped and pizza wins. Batch cooking is the counter-move, and our [meal prep for beginners system](/meal-prep-for-beginners-complete-system/) walks through the whole routine without turning your Sunday into a shift job. If one recipe keeps blowing the budget, put its ingredient list into the [recipe cost calculator](/tools/recipe-cost-calculator/) and check the cost per serving before blaming groceries as a species. And if you want the training-wheels version where every day is already decided, the [30-day high fiber challenge meal plan](/30-day-high-fiber-challenge-meal-plan/) does exactly that.
 
 ## Snacks that pull their weight
 

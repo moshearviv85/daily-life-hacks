@@ -9,10 +9,10 @@ tags:
 - dinner
 - chicken
 - rotisserie chicken
-- costco rotisserie
 image: "/images/costco-rotisserie-chicken-meal-ideas-dinner-main.jpg"
 imageAlt: Pulled rotisserie chicken and fresh vegetables are arranged on a light wooden cutting board.
 date: 2026-04-28
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
@@ -47,6 +47,8 @@ faq:
 I have spent more time than I care to admit standing in the Costco checkout line, staring at a five-dollar bird and wondering if I actually have a plan for it. We all do it. It is the ultimate impulse buy that feels like a win until you get home and realize your kids won't just eat plain chicken three nights in a row.
 
 The beauty of a pre-cooked bird isn't just the price, it's the fact that the hardest part of dinner is already done. You don't need a culinary degree to make this work, you just need a few pantry staples and about fifteen minutes. Here are the five dinners, every one of them under 25 minutes:
+
+Run your add-ons through the [recipe cost calculator](/tools/recipe-cost-calculator/) if you want to know whether the five-dollar bird stayed a bargain after pesto, tortillas, and the cheese aisle got involved.
 
 1. **Shortcut chicken stir-fry** with frozen vegetables and rice
 2. **Weeknight chicken tacos** the whole table agrees on

@@ -11,6 +11,7 @@ tags:
 image: "/images/food-prep-guide-blog-recipes-main.jpg"
 imageAlt: An overhead shot shows roasted chicken, colorful bell peppers, and broccoli florets arranged on a wooden cutting board with containers of grains.
 date: 2026-06-03
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 prepTime: "2 hours"
@@ -57,6 +58,8 @@ faq:
 Let's be honest, the idea of cooking a full, healthy dinner every single weeknight after a long day is often a fantasy. You get home, you're tired, and suddenly, that drive-thru menu looks like a Michelin-star experience. That's where a little weekend planning, and a good food prep guide, really shines. It's not about becoming a gourmet chef; it's about setting yourself up for success when your willpower is running low.
 
 The core idea here is to front-load the effort. Spend a concentrated block of time on Saturday or Sunday, and you'll reap the rewards all week. You're essentially building your own personal grab-and-go section in the fridge, but with food you actually want to eat, made with ingredients you trust. This particular recipe for roasted chicken and veggies is a workhorse for that exact reason. It's simple, adaptable, and holds up well for days.
+
+For the complete system around this one batch, the [meal-prep guide for beginners](/meal-prep-for-beginners-complete-system/) connects the shopping list, cooking order, storage, and reheating so Wednesday lunch doesn't become a scavenger hunt.
 
 ### Why This Roasted Chicken and Veggies Recipe Works for Meal Prep
 

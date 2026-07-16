@@ -6,9 +6,11 @@ tags:
 - high fiber
 - quick meals
 - fiber
+- breakfast
 image: "/images/high-fiber-raspberry-jam-recipe-chia-main.jpg"
 imageAlt: "A glass jar of homemade raspberry chia jam next to a slice of whole grain toast"
 date: 2026-04-26
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -47,6 +49,8 @@ faq:
 If you look at the ingredients on a standard jar of store-bought jam, sugar is usually listed first. Fruit is playing second fiddle. That's why traditional jam is basically fruit-flavored candy spread. 
 
 Making your own jam sounds like a weekend project involving boiling water baths, weird powders like pectin, and intense kitchen stress. It doesn't have to be. This high fiber raspberry jam recipe requires four ingredients, one small pot, and exactly ten minutes of your life. 
+
+Once the jar is cooling, these [easy high-fiber breakfast ideas](/easy-high-fiber-breakfast-ideas-for-gut-health/) give it somewhere useful to go besides repeated spoonfuls over the sink.
 
 ## The chia seed trick
 

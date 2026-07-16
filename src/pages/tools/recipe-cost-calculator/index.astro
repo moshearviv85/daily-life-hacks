@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+
+const title = "Recipe Cost Calculator: Cost Per Batch and Serving";
+const description =
+  "Calculate a recipe's total cost and cost per serving from package prices. Add ingredients, convert common units, and include a waste buffer.";
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Recipe Cost Calculator",
+    url: "https://www.daily-life-hacks.com/tools/recipe-cost-calculator/",
+    description,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Any",
+    browserRequirements: "Requires JavaScript",
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    publisher: {
+      "@type": "Organization",
+      name: "Daily Life Hacks",
+      url: "https://www.daily-life-hacks.com",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      ["How do I price part of a package?", "Divide the amount you used by the package size, then multiply by the package price. Eight ounces from a 32-ounce, $4 bag costs $1."],
+      ["Can the calculator convert cups to fluid ounces?", "Yes. It converts common volume units, weight units, and counts. It can't reliably convert cups of flour to ounces by weight because ingredients have different densities."],
+      ["What should I enter for servings?", "Enter the number of portions you actually serve. Real plates beat optimistic label math."],
+      ["What does the waste buffer do?", "It adds your chosen percentage to the ingredient subtotal. A $10 subtotal with a 5% buffer becomes $10.50."],
+      ["How are your published food costs checked?", "Read our methodology for the sourcing and calculation rules used in Daily Life Hacks studies."],
+    ].map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text },
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/tools/" class="underline" style="color:#F29B30;">Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Recipe cost calculator</span>
+    </nav>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Recipe Cost Calculator</h1>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
+      That $12 bag of rice didn't vanish into one dinner. You used part of it. This calculator prices the part that hit the pot, adds every ingredient, and divides the batch into honest servings. No accounting degree. No pretending one taco is dinner.
+    </p>
+
+    <section id="recipe-cost-app" class="rounded-2xl p-4 md:p-7 mb-10" style="background:var(--card-bg);border:1px solid var(--border-color);">
+      <div class="grid sm:grid-cols-3 gap-4 mb-6">
+        <label class="tool-label">Recipe name<input id="rc-name" class="tool-input" type="text" value="Black bean tacos" autocomplete="off" /></label>
+        <label class="tool-label">Servings<input id="rc-servings" class="tool-input" type="number" value="6" min="1" step="1" inputmode="numeric" /></label>
+        <label class="tool-label">Waste buffer (%)<input id="rc-waste" class="tool-input" type="number" value="5" min="0" max="100" step="1" inputmode="decimal" /></label>
+      </div>
+
+      <div class="flex flex-wrap items-end justify-between gap-3 mb-3">
+        <div>
+          <h2 class="text-xl font-bold" style="color:var(--heading-color);">Ingredients</h2>
+          <p class="text-sm" style="color:var(--muted-color);">Use matching weight, volume, or count units within each row.</p>
+        </div>
+        <button id="rc-add" type="button" class="rounded-xl px-4 py-2 font-semibold text-white" style="background:#F29B30;">Add ingredient</button>
+      </div>
+
+      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width:940px;border-collapse:collapse;">
+          <thead><tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);">
+            <th class="cell text-left">Ingredient</th><th class="cell text-left">Amount used</th><th class="cell text-left">Used unit</th><th class="cell text-left">Package size</th><th class="cell text-left">Package unit</th><th class="cell text-left">Package price</th><th class="cell text-right">Recipe cost</th><th class="cell"><span class="sr-only">Remove</span></th>
+          </tr></thead>
+          <tbody id="rc-rows"></tbody>
+        </table>
+      </div>
+
+      <div id="rc-warning" class="hidden mt-4 rounded-xl p-3 text-sm" role="alert" style="background:#fff4e5;color:#7a4300;border:1px solid #F29B30;"></div>
+      <div class="grid sm:grid-cols-3 gap-3 mt-5" aria-live="polite">
+        <div class="total-card"><span>Ingredient subtotal</span><strong id="rc-subtotal">$0.00</strong></div>
+        <div class="total-card"><span>Batch total</span><strong id="rc-total">$0.00</strong></div>
+        <div class="total-card highlight"><span>Cost per serving</span><strong id="rc-per-serving">$0.00</strong></div>
+      </div>
+      <p id="rc-verdict" class="mt-4 font-medium" style="color:var(--text-color);"></p>
+      <div class="flex flex-wrap gap-3 mt-5">
+        <button id="rc-example" type="button" class="rounded-xl px-4 py-2 font-semibold" style="border:1px solid var(--border-color);color:var(--text-color);">Load taco example</button>
+        <button id="rc-clear" type="button" class="rounded-xl px-4 py-2 font-semibold" style="border:1px solid var(--border-color);color:var(--text-color);">Start blank</button>
+      </div>
+      <p class="mt-4 text-xs" style="color:var(--muted-color);">Your ingredient list stays in this browser tab. It isn't uploaded, stored, or added to a mysterious marketing spreadsheet.</p>
+    </section>
+
+    <article class="prose-like max-w-3xl">
+      <h2>How do you calculate the cost of a recipe?</h2>
+      <p>Price each ingredient by the fraction of its package you used. If a 32-ounce bag costs $4 and your recipe uses 8 ounces, that ingredient adds $1 to the batch. Repeat for every row, add the costs, then divide by the number of servings.</p>
+      <div class="formula">ingredient cost = (amount used ÷ package amount) × package price</div>
+      <div class="formula">cost per serving = adjusted batch cost ÷ servings</div>
+
+      <h2>Why does recipe cost per serving matter?</h2>
+      <p>Because “cheap dinner” is usually a vibe, not a number. Cost per serving lets you compare a six-serving pot of chili with takeout, a frozen meal, or the recipe you made last week. Our <a href="/eat-healthy-on-a-budget-complete-playbook/">budget eating playbook</a> explains the bigger system, while the <a href="/tools/grocery-unit-price-calculator/">unit price calculator</a> helps you choose the cheaper package before you build the recipe.</p>
+
+      <h2>What counts as one serving?</h2>
+      <p>Use the number of portions your household actually gets. If the pot feeds four people, enter four. The package may claim eight servings because someone in a conference room decided two spoonfuls were a meal. You don't have to participate.</p>
+
+      <h2>Should you include pantry staples and waste?</h2>
+      <p>Include oil, spices, sauces, and garnishes if you want a full cost. Tiny amounts still add up across a month. The optional waste buffer covers trim, spills, and food that never reaches the plate. Five percent is a practical starting estimate, but use zero if you've already priced exact edible amounts.</p>
+
+      <h2>How can you lower a recipe's cost?</h2>
+      <p>Look at the expensive rows first. Swapping one costly ingredient usually matters more than shaving three cents from six spices. Dried beans are a classic example, and our <a href="/canned-vs-dry-beans-cost/">canned versus dry bean cost study</a> shows exactly where the tradeoff lands. You can also run ingredients through the <a href="/tools/fiber-per-dollar-calculator/">fiber per dollar calculator</a> when you're comparing price with what the food brings to the bowl.</p>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        <details><summary>How do I price part of a package?</summary><p>Divide the amount you used by the package size, then multiply by the package price. Eight ounces from a 32-ounce, $4 bag costs $1.</p></details>
+        <details><summary>Can the calculator convert cups to fluid ounces?</summary><p>Yes. It converts common volume units, weight units, and counts. It can't reliably convert cups of flour to ounces by weight because ingredients have different densities.</p></details>
+        <details><summary>What should I enter for servings?</summary><p>Enter the number of portions you actually serve. Real plates beat optimistic label math.</p></details>
+        <details><summary>What does the waste buffer do?</summary><p>It adds your chosen percentage to the ingredient subtotal. A $10 subtotal with a 5% buffer becomes $10.50.</p></details>
+        <details><summary>How are your published food costs checked?</summary><p>Read our <a href="/methodology/">methodology</a> for the sourcing and calculation rules used in Daily Life Hacks studies.</p></details>
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <style>
+    .tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:600;color:var(--text-color)}.tool-input,.row-input{width:100%;border-radius:.65rem;padding:.6rem .7rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--text-color);outline:none}.tool-input:focus,.row-input:focus{box-shadow:0 0 0 2px #F29B30}.cell{padding:.65rem}.total-card{display:flex;flex-direction:column;gap:.25rem;border-radius:.75rem;padding:1rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--muted-color)}.total-card strong{font-size:1.6rem;color:var(--heading-color)}.total-card.highlight{border:2px solid #F29B30;background:rgba(242,155,48,.1)}.total-card.highlight strong{color:#F29B30}.prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:700;margin:2.25rem 0 .7rem;color:var(--heading-color)}.prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}.prose-like a{color:#F29B30;text-decoration:underline;font-weight:600}.formula{margin:1rem 0;padding:1rem 1.25rem;border-radius:.75rem;background:var(--card-bg);border-left:4px solid #F29B30;font-weight:700;color:var(--heading-color)}.faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}.faq-list summary{cursor:pointer;font-weight:700;padding:1rem 0;color:var(--heading-color)}.faq-list p{margin:0 0 1rem}
+  </style>
+
+  <script is:inline>
+    (function(){
+      var units={oz:{kind:'weight',factor:1,label:'oz'},lb:{kind:'weight',factor:16,label:'lb'},g:{kind:'weight',factor:0.0352739619,label:'g'},kg:{kind:'weight',factor:35.2739619,label:'kg'},floz:{kind:'volume',factor:1,label:'fl oz'},tsp:{kind:'volume',factor:1/6,label:'tsp'},tbsp:{kind:'volume',factor:.5,label:'tbsp'},cup:{kind:'volume',factor:8,label:'cup'},pint:{kind:'volume',factor:16,label:'pint'},quart:{kind:'volume',factor:32,label:'quart'},ml:{kind:'volume',factor:0.0338140227,label:'mL'},liter:{kind:'volume',factor:33.8140227,label:'L'},each:{kind:'count',factor:1,label:'count'}};
+      var example=[['Corn tortillas',12,'each',30,'each',3.48],['Black beans',30,'oz',30,'oz',2.58],['Shredded cheese',6,'oz',8,'oz',2.79],['Salsa',8,'oz',16,'oz',2.48],['Lime',2,'each',4,'each',1.98]];
+      function money(n){return '$'+(isFinite(n)?n:0).toFixed(2)}
+      function options(selected){var groups={weight:'Weight',volume:'Volume',count:'Count'},html='';Object.keys(groups).forEach(function(kind){html+='<optgroup label="'+groups[kind]+'">';Object.keys(units).forEach(function(key){if(units[key].kind===kind)html+='<option value="'+key+'"'+(key===selected?' selected':'')+'>'+units[key].label+'</option>'});html+='</optgroup>'});return html}
+      function addRow(root,data){data=data||['',1,'oz',1,'oz',0];var tr=document.createElement('tr');tr.style.borderBottom='1px solid var(--border-color)';tr.innerHTML='<td class="cell"><input class="row-input" data-f="name" aria-label="Ingredient name"></td><td class="cell"><input class="row-input" data-f="used" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Amount used"></td><td class="cell"><select class="row-input" data-f="usedUnit" aria-label="Unit used">'+options(data[2])+'</select></td><td class="cell"><input class="row-input" data-f="package" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Package size"></td><td class="cell"><select class="row-input" data-f="packageUnit" aria-label="Package unit">'+options(data[4])+'</select></td><td class="cell"><input class="row-input" data-f="price" type="number" min="0" step="0.01" inputmode="decimal" aria-label="Package price in dollars"></td><td class="cell text-right font-bold" data-cost style="color:var(--heading-color);">$0.00</td><td class="cell"><button type="button" data-remove aria-label="Remove ingredient" class="font-bold text-lg" style="color:var(--muted-color);">×</button></td>';var fields=['name','used','usedUnit','package','packageUnit','price'];fields.forEach(function(f,i){tr.querySelector('[data-f="'+f+'"]').value=data[i]});root.querySelector('#rc-rows').appendChild(tr)}
+      function calculate(root){var subtotal=0,problems=0;root.querySelectorAll('#rc-rows tr').forEach(function(row){var used=parseFloat(row.querySelector('[data-f="used"]').value),pack=parseFloat(row.querySelector('[data-f="package"]').value),price=parseFloat(row.querySelector('[data-f="price"]').value),u=units[row.querySelector('[data-f="usedUnit"]').value],p=units[row.querySelector('[data-f="packageUnit"]').value],cost=0;if(isFinite(used)&&used>=0&&isFinite(pack)&&pack>0&&isFinite(price)&&price>=0&&u.kind===p.kind){cost=(used*u.factor)/(pack*p.factor)*price;subtotal+=cost;row.querySelector('[data-cost]').textContent=money(cost);row.querySelector('[data-cost]').style.color='var(--heading-color)'}else{problems++;row.querySelector('[data-cost]').textContent='Fix units';row.querySelector('[data-cost]').style.color='#a85e00'}});var waste=parseFloat(root.querySelector('#rc-waste').value),servings=parseFloat(root.querySelector('#rc-servings').value);waste=isFinite(waste)&&waste>=0?waste:0;servings=isFinite(servings)&&servings>0?servings:1;var total=subtotal*(1+waste/100),per=total/servings;root.querySelector('#rc-subtotal').textContent=money(subtotal);root.querySelector('#rc-total').textContent=money(total);root.querySelector('#rc-per-serving').textContent=money(per);var name=root.querySelector('#rc-name').value.trim()||'This recipe';root.querySelector('#rc-verdict').textContent=name+' costs about '+money(total)+' per batch and '+money(per)+' per serving with a '+waste.toFixed(0)+'% buffer.';var warning=root.querySelector('#rc-warning');warning.classList.toggle('hidden',problems===0);warning.textContent=problems+' ingredient row'+(problems===1?' has':'s have')+' mismatched units or incomplete numbers. That row isn\'t included yet.'}
+      function load(root,rows){root.querySelector('#rc-rows').innerHTML='';rows.forEach(function(r){addRow(root,r)});calculate(root)}
+      function boot(){var root=document.getElementById('recipe-cost-app');if(!root||root.dataset.booted)return;root.dataset.booted='1';root.addEventListener('input',function(){calculate(root)});root.addEventListener('change',function(){calculate(root)});root.querySelector('#rc-rows').addEventListener('click',function(e){var b=e.target.closest('[data-remove]');if(!b)return;b.closest('tr').remove();if(!root.querySelector('#rc-rows tr'))addRow(root);calculate(root)});root.querySelector('#rc-add').addEventListener('click',function(){addRow(root);calculate(root)});root.querySelector('#rc-example').addEventListener('click',function(){root.querySelector('#rc-name').value='Black bean tacos';root.querySelector('#rc-servings').value=6;root.querySelector('#rc-waste').value=5;load(root,example)});root.querySelector('#rc-clear').addEventListener('click',function(){root.querySelector('#rc-name').value='';root.querySelector('#rc-servings').value=4;root.querySelector('#rc-waste').value=0;load(root,[['',1,'oz',1,'oz',0]])});load(root,example)}
+      boot();document.addEventListener('astro:page-load',boot);
+    })();
+  </script>
+</BaseLayout>

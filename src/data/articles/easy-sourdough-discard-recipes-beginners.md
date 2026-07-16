@@ -9,10 +9,10 @@ tags:
 - sourdough
 - beginners
 - easy sourdough
-- easy sourdough discard
 image: "/images/easy-sourdough-discard-recipes-beginners-main.jpg"
 imageAlt: A close-up photograph shows a glass jar of sourdough starter in the background and a pile of sourdough discard crackers and pancakes in the foreground.
 date: 2026-04-28
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"
@@ -56,6 +56,8 @@ If you have a jar of bubbly goo in your fridge and no desire to spend twelve hou
 | Pancakes (recipe above) | 1 cup | About 20 minutes |
 | Crackers | 1 cup | About 40 minutes, mostly bake time |
 | Skillet flatbread | 1/2 cup per flatbread | About 10 minutes |
+
+If dinner sounds better than another breakfast stack, this [no-yeast sourdough discard pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/) turns the same jar into something that can carry cheese.
 
 ## Why you should stop tossing your discard
 The biggest hurdle for sourdough beginners is the maintenance. You're told to feed this thing daily, which leads to a massive buildup of excess starter. Throwing it away is the standard advice, but that's a waste of perfectly good fermented flour. 

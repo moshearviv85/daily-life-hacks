@@ -97,13 +97,6 @@ const { articleCategory = "", articleBaseSlug = "" } = Astro.props;
 </section>
 
 <script define:vars={{ articleCategory, articleBaseSlug }}>
-  interface SignupContext {
-    category?: string;
-    base_slug?: string;
-    variant_slug?: string;
-    email_segment?: string;
-  }
-
   function getStoredSignupContext() {
     try {
       const raw = sessionStorage.getItem("newsletter_signup_context");
@@ -125,7 +118,7 @@ const { articleCategory = "", articleBaseSlug = "" } = Astro.props;
     }
   }
 
-  function redirectToThankYou(source: string, context: SignupContext) {
+  function redirectToThankYou(source, context) {
     const params = new URLSearchParams({ source });
     if (context.category) params.set("category", context.category);
     if (context.email_segment) params.set("segment", context.email_segment);
@@ -143,10 +136,10 @@ const { articleCategory = "", articleBaseSlug = "" } = Astro.props;
     const form = document.getElementById("footer-newsletter-form");
     const emailInput = document.getElementById(
       "footer-email",
-    ) as HTMLInputElement;
+    );
     const submitBtn = document.getElementById(
       "footer-submit-btn",
-    ) as HTMLButtonElement;
+    );
     const successEl = document.getElementById("footer-success");
 
     if (!form) return;

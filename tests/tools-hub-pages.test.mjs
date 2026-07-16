@@ -1,0 +1,90 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+
+const root = process.cwd();
+const pages = [
+  "src/pages/tools/grocery-unit-price-calculator/index.astro",
+  "src/pages/tools/recipe-cost-calculator/index.astro",
+  "src/pages/tools/grocery-budget-calculator/index.astro",
+];
+
+test("new calculator pages expose the required search and privacy signals", async () => {
+  for (const relative of pages) {
+    const source = await readFile(path.join(root, relative), "utf8");
+    assert.match(source, /"@type": "WebApplication"/, relative);
+    assert.match(source, /"@type": "FAQPage"/, relative);
+    assert.match(source, /applicationCategory/, relative);
+    assert.match(source, /browser tab/, relative);
+    assert.match(source, /href="\/methodology\/"/, relative);
+    assert.match(source, /document\.addEventListener\('astro:page-load'/, relative);
+    assert.doesNotMatch(source, /—/, `${relative} contains an em dash`);
+  }
+});
+
+test("FAQ schema matches the five questions and answers visible on each tool", async () => {
+  const normalize = (value) =>
+    value.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+
+  for (const relative of pages) {
+    const source = await readFile(path.join(root, relative), "utf8");
+    const schemaBlock = source.match(/mainEntity:\s*\[(.*?)\]\.map/s)?.[1] ?? "";
+    const schemaEntries = [...schemaBlock.matchAll(/\["([^"]+)", "([^"]+)"\]/g)]
+      .map((match) => [match[1], normalize(match[2])]);
+    const visibleEntries = [...source.matchAll(/<details><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/gs)]
+      .map((match) => [normalize(match[1]), normalize(match[2])]);
+
+    assert.equal(schemaEntries.length, 5, `${relative} schema FAQ count`);
+    assert.deepEqual(schemaEntries, visibleEntries, `${relative} FAQ mismatch`);
+  }
+});
+
+test("tools hub links all four calculators", async () => {
+  const source = await readFile(
+    path.join(root, "src/pages/tools/index.astro"),
+    "utf8",
+  );
+  for (const route of [
+    "/tools/grocery-unit-price-calculator/",
+    "/tools/recipe-cost-calculator/",
+    "/tools/grocery-budget-calculator/",
+    "/tools/fiber-per-dollar-calculator/",
+  ]) {
+    assert.match(source, new RegExp(route.replaceAll("/", "\\/")), route);
+  }
+  assert.match(source, /"@type": "ItemList"/);
+});
+
+test("calculator formulas and interaction hooks remain present", async () => {
+  const unit = await readFile(path.join(root, pages[0]), "utf8");
+  const recipe = await readFile(path.join(root, pages[1]), "utf8");
+  const budget = await readFile(path.join(root, pages[2]), "utf8");
+
+  assert.match(unit, /package price ÷ package quantity/);
+  assert.match(unit, /a\.price\/\(a\.size\*a\.meta\.factor\)/);
+  assert.match(recipe, /amount used ÷ package amount/);
+  assert.match(recipe, /\(used\*u\.factor\)\/\(pack\*p\.factor\)\*price/);
+  assert.match(budget, /weekly budget × category percentage/);
+  assert.match(budget, /budget\/people\/7/);
+});
+
+test("calculator engagement is measured without sending entered values", async () => {
+  const layout = await readFile(
+    path.join(root, "src/layouts/BaseLayout.astro"),
+    "utf8",
+  );
+  assert.match(layout, /'tool_engagement'/);
+  assert.match(layout, /tool_name: toolName/);
+  assert.match(layout, /sessionStorage\.getItem\(storageKey\)/);
+  assert.doesNotMatch(layout, /input_value|entered_price|recipe_name/);
+});
+
+test("inline calculator programs parse as JavaScript", async () => {
+  for (const relative of pages) {
+    const source = await readFile(path.join(root, relative), "utf8");
+    const match = source.match(/<script is:inline>([\s\S]*?)<\/script>/);
+    assert.ok(match, `${relative} has an inline calculator program`);
+    assert.doesNotThrow(() => new Function(match[1]), relative);
+  }
+});

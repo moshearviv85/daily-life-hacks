@@ -6,6 +6,7 @@ tags: ["budget meals", "cooking for one", "meal prep", "save money", "single ser
 image: "/images/budget-meal-ideas-for-one-main.jpg"
 imageAlt: A golden frittata with visible vegetables and cheese is on a wooden cutting board, with one slice on a white plate next to it.
 date: 2026-05-30
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 faq:
@@ -24,6 +25,8 @@ faq:
 You know those nights when you're just cooking for yourself? It's easy to fall into the takeout trap. Or worse, you buy a bunch of groceries with good intentions, only to watch half of them slowly wither in the back of the fridge. Cooking for one can feel like a losing battle against food waste and boredom. But it doesn't have to be.
 
 I've been there. Staring at a recipe that serves four, trying to figure out how to halve everything and not end up with a microscopic portion or a week's worth of the same leftovers. The truth is, budget meal ideas for one are less about fancy recipes and more about smart shopping and a little bit of planning. You want to eat well, save money, and not feel like you're eating sad desk lunches, even if that desk is your kitchen counter.
+
+Before you build the list, the [grocery budget calculator](/tools/grocery-budget-calculator/) gives your week a real spending ceiling instead of the classic "I'll just be careful" plan.
 
 ### Embrace the Humble Egg
 

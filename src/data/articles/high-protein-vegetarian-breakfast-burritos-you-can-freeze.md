@@ -11,6 +11,7 @@ tags:
 image: "/images/high-protein-vegetarian-breakfast-burritos-you-can-freeze-main.jpg"
 imageAlt: Two breakfast burritos on a wooden board, one whole and one cut in half showing eggs, black beans, cheese, and vegetables inside with salsa and lime.
 date: 2026-06-26
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 prepTime: "25 min"
@@ -62,6 +63,8 @@ faq:
 The thing about breakfast burritos is that most of the ones you freeze turn into sad, wet, chewy disasters by the time you reheat them. The tortilla goes rubbery. The eggs get rubbery. Everything inside turns into one gray mass that requires a knife and serious commitment to eat. I've eaten more than a few of these failures, and I'm here to tell you it doesn't have to be that way.
 
 These burritos actually work. The key is understanding what happens to each component when you freeze it, then building the recipe around those realities instead of ignoring them. This isn't a healthy-ingredients-are-magic situation. It's just good prep technique applied consistently.
+
+For the larger prep plan around these burritos, the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) covers batch size, storage, reheating, and the fine art of not turning your freezer into a warehouse.
 
 ## Why These Burritos Actually Freeze Well
 

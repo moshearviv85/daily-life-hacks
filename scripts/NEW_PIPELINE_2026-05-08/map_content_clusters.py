@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Map articles into CP5 content clusters (fiber / budget / protein).
+"""Map articles into CP5 content clusters (fiber / budget / protein / meal prep).
 
 Writes:
   pipeline-data/reports/content-clusters-YYYY-MM-DD.{json,md}
@@ -24,6 +24,7 @@ PILLARS = {
     "fiber": "how-to-eat-more-fiber-on-a-budget-complete-guide",
     "budget": "eat-healthy-on-a-budget-complete-playbook",
     "protein": "high-protein-on-a-budget-complete-guide",
+    "meal-prep": "meal-prep-for-beginners-complete-system",
 }
 
 KEYWORDS = {
@@ -58,6 +59,15 @@ KEYWORDS = {
         "cottage cheese",
         "chicken",
         "legume",
+    ],
+    "meal-prep": [
+        "meal prep",
+        "batch cooking",
+        "make ahead",
+        "freezer meal",
+        "food storage",
+        "work lunch",
+        "weekly prep",
     ],
 }
 
