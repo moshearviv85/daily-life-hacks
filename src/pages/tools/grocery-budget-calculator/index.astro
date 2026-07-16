@@ -3,135 +3,153 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 
-const title = "Grocery Budget Calculator: Weekly Plan by Category";
-const description =
-  "Split a weekly grocery budget by category, adjust percentages, and see spending per person and per day. Free and private in your browser.";
+const title = "Weekly Fiber and Protein Cost Planner: Build a Real Food Week";
+const description = "Build a 7-day fiber or protein plan from 10 audited menus. Change people and days to get exact food quantities, cost, and restaurant savings.";
+
+const faqs = [
+  ["What does the weekly food cost planner calculate?", "It scales one of our 10 audited daily menus by the number of people and days you choose, then totals the tracked food, grams, and consumed cost."],
+  ["Are these complete meal plans?", "No. They price the foods carrying roughly 30 grams of fiber or 50 grams of protein in each study day. Drinks, seasonings, calories, and the rest of your plate may add cost."],
+  ["Where do the food prices come from?", "The grocery prices come from our July 2026 audited datasets, matched to USDA FoodData Central nutrition values. Restaurant prices are the exact recorded orders in each study."],
+  ["Why is checkout cost different from consumed cost?", "A 60-gram portion of oats costs only part of a bag, but the register charges for the whole bag. This planner shows consumed cost because that is what the study measured."],
+  ["Does the planner save my household information?", "No. People, menu choices, and day counts stay in this browser tab. The site records only that the tool was used, not the values you entered."],
+];
 
 const schemas = [
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Grocery Budget Calculator",
+    name: "Weekly Fiber and Protein Cost Planner",
     url: "https://www.daily-life-hacks.com/tools/grocery-budget-calculator/",
     description,
-    applicationCategory: "FinanceApplication",
+    applicationCategory: "LifestyleApplication",
     operatingSystem: "Any",
     browserRequirements: "Requires JavaScript",
     isAccessibleForFree: true,
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    publisher: {
-      "@type": "Organization",
-      name: "Daily Life Hacks",
-      url: "https://www.daily-life-hacks.com",
-    },
+    publisher: { "@type": "Organization", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" },
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      ["How much is my grocery budget per person per day?", "Divide the weekly total by the number of people, then divide by seven. A $175 budget for four people works out to $6.25 per person per day."],
-      ["Do my categories have to total 100%?", "Yes for a complete plan. The calculator flags any money left unassigned or any amount promised twice."],
-      ["Can I rename or add categories?", "Yes. Edit every category name, remove rows, or add your own. The starter categories are suggestions, not grocery law."],
-      ["Does this tell me what my household should spend?", "No. It organizes the budget you enter. For an official low-cost benchmark, read our USDA food plan explainer."],
-      ["How do Daily Life Hacks price studies handle grocery data?", "Our methodology explains how prices, package sizes, and comparison dates are recorded."],
-    ].map(([name, text]) => ({
-      "@type": "Question",
-      name,
-      acceptedAnswer: { "@type": "Answer", text },
-    })),
+    mainEntity: faqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })),
   },
 ];
 ---
 
 <BaseLayout title={title} description={description} jsonLd={schemas}>
   <Header />
-  <main class="max-w-5xl mx-auto px-4 py-10 md:py-16">
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
     <nav class="text-sm mb-5" aria-label="Breadcrumb">
       <a href="/tools/" class="underline" style="color:#F29B30;">Tools</a>
-      <span aria-hidden="true" style="color:var(--muted-color);"> / Grocery budget calculator</span>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Weekly food cost planner</span>
     </nav>
-    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Grocery Budget Calculator</h1>
-    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
-      A grocery budget needs jobs, not good intentions. Give every dollar a category before the store gives it one for you, usually “snacks bought while hungry.” Enter your weekly total, adjust the percentages, and see what the plan means per person and per day.
-    </p>
 
-    <section id="grocery-budget-app" class="rounded-2xl p-5 md:p-7 mb-10" style="background:var(--card-bg);border:1px solid var(--border-color);">
-      <div class="grid sm:grid-cols-2 gap-4 mb-6">
-        <label class="tool-label">Weekly grocery budget<span class="input-prefix"><span aria-hidden="true">$</span><input id="gb-budget" class="tool-input pl-7" type="number" min="0" step="1" value="175" inputmode="decimal" /></span></label>
-        <label class="tool-label">People eating from this budget<input id="gb-people" class="tool-input" type="number" min="1" step="1" value="4" inputmode="numeric" /></label>
+    <div class="max-w-4xl mb-8">
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">10 audited days. Your actual household.</p>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Build a Week From the Food-Cost Studies</h1>
+      <p class="text-lg leading-relaxed" style="color:var(--text-color);">
+        We already priced five ways to get roughly 30 grams of fiber and five ways to get roughly 50 grams of protein. You shouldn't have to retype every oat and bean like you're applying for a grocery permit. Pick your days, choose how many people are eating, and the planner scales the food, cost, and restaurant comparison.
+      </p>
+    </div>
+
+    <section id="research-week-planner" class="rounded-2xl p-5 md:p-7 mb-12" style="background:var(--card-bg);border:1px solid var(--border-color);">
+      <div class="grid md:grid-cols-[1fr_auto] gap-5 items-end mb-6">
+        <div>
+          <span class="tool-label mb-2">What are you pricing?</span>
+          <div class="inline-flex rounded-xl overflow-hidden" style="border:1px solid var(--border-color);" role="group" aria-label="Choose the tracked food target">
+            <button type="button" data-goal="fiber" class="goal-button" aria-pressed="true">About 30g fiber</button>
+            <button type="button" data-goal="protein" class="goal-button" aria-pressed="false">About 50g protein</button>
+          </div>
+        </div>
+        <label class="tool-label">People eating these foods<input id="rwp-people" class="tool-input" type="number" min="1" max="20" step="1" value="2" inputmode="numeric" /></label>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6" aria-live="polite">
-        <div class="metric"><span>Weekly total</span><strong id="gb-weekly">$0</strong></div>
-        <div class="metric"><span>Per person / week</span><strong id="gb-person-week">$0</strong></div>
-        <div class="metric"><span>Household / day</span><strong id="gb-house-day">$0</strong></div>
-        <div class="metric highlight"><span>Per person / day</span><strong id="gb-person-day">$0</strong></div>
-      </div>
+      <div id="rwp-status" class="rounded-xl p-5 text-center" style="background:var(--page-bg);color:var(--muted-color);">Loading the audited menus...</div>
 
-      <div class="flex flex-wrap justify-between items-end gap-3 mb-3">
-        <div><h2 class="text-xl font-bold" style="color:var(--heading-color);">Give each category a share</h2><p class="text-sm" style="color:var(--muted-color);">Edit the names and percentages. A complete plan lands at 100%.</p></div>
-        <button id="gb-add" type="button" class="rounded-xl px-4 py-2 font-semibold text-white" style="background:#F29B30;">Add category</button>
-      </div>
+      <div id="rwp-content" class="hidden">
+        <div class="flex flex-wrap items-end justify-between gap-3 mb-3">
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold" style="color:var(--heading-color);">Choose how many days of each menu</h2>
+            <p class="text-sm" style="color:var(--muted-color);">The starter week uses cheap days most often and keeps the restaurant day at zero. Civilization survives.</p>
+          </div>
+          <p id="rwp-day-count" class="font-bold" style="color:#F29B30;">7 days planned</p>
+        </div>
 
-      <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
-        <table class="w-full text-sm" style="min-width:580px;border-collapse:collapse;">
-          <thead><tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);"><th class="cell text-left">Category</th><th class="cell text-left">Percent</th><th class="cell text-right">Per week</th><th class="cell text-right">Per person / week</th><th class="cell"><span class="sr-only">Remove</span></th></tr></thead>
-          <tbody id="gb-rows"></tbody>
-        </table>
-      </div>
+        <div id="rwp-scenarios" class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 mb-7"></div>
 
-      <div id="gb-balance" class="mt-4 rounded-xl p-4 font-semibold" role="status"></div>
-      <div id="gb-chart" class="mt-5 space-y-3" aria-label="Budget allocation chart"></div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-7" aria-live="polite">
+          <div class="metric highlight"><span>Tracked food cost</span><strong id="rwp-week-cost">$0.00</strong></div>
+          <div class="metric"><span>4.33-week estimate</span><strong id="rwp-month-cost">$0.00</strong></div>
+          <div class="metric"><span id="rwp-grams-label">Fiber per person / day</span><strong id="rwp-grams">0g</strong></div>
+          <div class="metric"><span>Saved vs restaurant days</span><strong id="rwp-savings">$0.00</strong></div>
+        </div>
 
-      <div class="flex flex-wrap gap-3 mt-6">
-        <button id="gb-reset" type="button" class="rounded-xl px-4 py-2 font-semibold" style="border:1px solid var(--border-color);color:var(--text-color);">Reset starter plan</button>
-        <button id="gb-even" type="button" class="rounded-xl px-4 py-2 font-semibold" style="border:1px solid var(--border-color);color:var(--text-color);">Split evenly</button>
+        <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-6 min-w-0">
+          <section class="min-w-0">
+            <h2 class="text-xl font-bold mb-3" style="color:var(--heading-color);">Your scaled food list</h2>
+            <p class="text-sm mb-3" style="color:var(--muted-color);">Quantities are totals for everyone across the days you selected. Package sizes stay package sizes. A 15-ounce can doesn't become a 30-ounce can because four people are hungry.</p>
+            <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+              <table class="w-full text-sm" style="min-width:560px;border-collapse:collapse;">
+                <thead><tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);"><th class="cell text-left">Food</th><th class="cell text-right">Total amount</th><th class="cell text-right">Tracked grams</th><th class="cell text-right">Consumed cost</th></tr></thead>
+                <tbody id="rwp-shopping"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <aside class="min-w-0">
+            <h2 class="text-xl font-bold mb-3" style="color:var(--heading-color);">What each day contains</h2>
+            <div id="rwp-menu-details" class="space-y-3"></div>
+          </aside>
+        </div>
+
+        <div class="mt-6 rounded-xl p-4 text-sm leading-relaxed" style="background:var(--page-bg);border-left:4px solid #F29B30;color:var(--text-color);">
+          <strong>Read this before declaring victory:</strong> this is a cost planner for the foods tracked in our fiber and protein studies, not a complete calorie plan. Oil, sauces, drinks, extra produce, and the food that keeps dinner from looking like a spreadsheet still count.
+        </div>
+        <p class="mt-4 text-xs" style="color:var(--muted-color);">Your choices stay in this browser tab. Prices are the recorded July 2026 study prices, not a promise about today's shelf in your ZIP code.</p>
       </div>
-      <p class="mt-4 text-xs" style="color:var(--muted-color);">This is a planning tool, not a spending prescription. Your entries stay in this browser tab and aren't sent anywhere.</p>
     </section>
 
-    <article class="prose-like max-w-3xl">
-      <h2>How do you make a weekly grocery budget?</h2>
-      <p>Start with the total you can spend this week, then divide it into categories before you shop. The category amounts become guardrails. They're allowed to bend when chicken is on sale or berries cost the same as a small appliance, but they stop one aisle from swallowing the whole budget.</p>
-      <div class="formula">category dollars = weekly budget × category percentage</div>
-      <div class="formula">per-person daily budget = weekly budget ÷ people ÷ 7</div>
+    <article class="prose-like max-w-4xl">
+      <h2>What can the audited food-cost planner tell you?</h2>
+      <p>It tells you what the tracked part of a week costs when real people replace hypothetical servings. Choose two people and seven days, for example, and every menu row doubles before it gets repeated. The planner then compares that week with the restaurant scenario from the same study. No vague “save more” speech. You get the dollar gap.</p>
 
-      <h2>What grocery budget categories should you use?</h2>
-      <p>The starter plan uses produce, proteins, grains, dairy or alternatives, pantry staples, and flexible spending. Rename anything. A vegetarian household may give beans and tofu their own category. A parent packing five lunches may need a lunchbox line before yogurt pouches stage a hostile takeover.</p>
+      <h2>Why are consumed cost and checkout cost different?</h2>
+      <p>Our studies price the amount eaten. If breakfast uses 60 grams from a two-pound bag of oats, only 60 grams count toward consumed cost. The register, being less philosophical, charges for the bag. Use these numbers to compare menu styles and recurring food cost, then leave room in the first week's budget for whole packages.</p>
 
-      <h2>How much should a household spend on groceries?</h2>
-      <p>There isn't one useful number for every household. Family size, location, dietary needs, cooking time, and the food already in your kitchen all change the answer. Our <a href="/usda-thrifty-food-plan-weekly-cost/">USDA Thrifty Food Plan explainer</a> translates one official benchmark, but this calculator works from the number that's real for you.</p>
+      <h2>Where do the fiber and protein numbers come from?</h2>
+      <p>The menus come directly from our public <a href="/data/fiber-day-cost-2026.csv">fiber day CSV</a> and <a href="/data/protein-day-cost-2026.csv">protein day CSV</a>. The parent rankings use USDA FoodData Central values matched to recorded shelf prices. You can read the full <a href="/what-30-grams-of-fiber-costs-per-day/">30-gram fiber cost study</a>, the <a href="/what-50-grams-of-protein-costs-per-day/">50-gram protein cost study</a>, and our <a href="/methodology/">methodology</a>. The spreadsheet is public because “trust me, I divided correctly” isn't a methodology.</p>
 
-      <h2>How do you keep the grocery plan realistic?</h2>
-      <p>Use receipts. After two or three weeks, compare the plan with what you actually bought and adjust the categories. If pantry staples keep running over, that doesn't mean you failed budgeting. It means the first estimate was fiction with a spreadsheet. Our <a href="/grocery-shopping-list-for-healthy-eating-on-a-budget/">budget grocery list</a> and <a href="/eat-healthy-on-a-budget-complete-playbook/">healthy eating on a budget playbook</a> can help turn the numbers into an actual cart.</p>
-
-      <h2>What if the percentages don't add up to 100%?</h2>
-      <p>The calculator shows the unassigned amount or the overage. Under 100% leaves money without a job. Over 100% promises the same dollar to two different aisles. Adjust any row until the total lands at 100%, then treat the result as a starting plan rather than a sacred grocery constitution.</p>
+      <h2>How should you use the cheapest days?</h2>
+      <p>Use them as a floor, not a personality. The rock-bottom days prove how little the tracked foods can cost. The realistic mixed days are usually easier to repeat. Build a week that fits your stove, schedule, and tolerance for seeing beans again on Thursday. Our <a href="/eat-healthy-on-a-budget-complete-playbook/">budget eating playbook</a> handles the broader grocery strategy.</p>
 
       <h2>Frequently asked questions</h2>
       <div class="faq-list">
-        <details><summary>How much is my grocery budget per person per day?</summary><p>Divide the weekly total by the number of people, then divide by seven. A $175 budget for four people works out to $6.25 per person per day.</p></details>
-        <details><summary>Do my categories have to total 100%?</summary><p>Yes for a complete plan. The calculator flags any money left unassigned or any amount promised twice.</p></details>
-        <details><summary>Can I rename or add categories?</summary><p>Yes. Edit every category name, remove rows, or add your own. The starter categories are suggestions, not grocery law.</p></details>
-        <details><summary>Does this tell me what my household should spend?</summary><p>No. It organizes the budget you enter. For an official low-cost benchmark, read our USDA food plan explainer.</p></details>
-        <details><summary>How do Daily Life Hacks price studies handle grocery data?</summary><p>Our <a href="/methodology/">methodology</a> explains how prices, package sizes, and comparison dates are recorded.</p></details>
+        {faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}
       </div>
     </article>
   </main>
   <Footer />
 
   <style>
-    .tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:600;color:var(--text-color)}.tool-input,.row-input{width:100%;border-radius:.7rem;padding:.65rem .75rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--text-color);outline:none}.tool-input:focus,.row-input:focus{box-shadow:0 0 0 2px #F29B30}.input-prefix{position:relative;display:block}.input-prefix>span{position:absolute;left:.75rem;top:.65rem;color:var(--muted-color)}.input-prefix .tool-input{padding-left:1.75rem}.cell{padding:.65rem}.metric{display:flex;flex-direction:column;gap:.2rem;padding:1rem;border-radius:.75rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--muted-color);font-size:.8rem}.metric strong{font-size:1.35rem;color:var(--heading-color)}.metric.highlight{border:2px solid #F29B30;background:rgba(242,155,48,.1)}.metric.highlight strong{color:#F29B30}.prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:700;margin:2.25rem 0 .7rem;color:var(--heading-color)}.prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}.prose-like a{color:#F29B30;text-decoration:underline;font-weight:600}.formula{margin:1rem 0;padding:1rem 1.25rem;border-radius:.75rem;background:var(--card-bg);border-left:4px solid #F29B30;font-weight:700;color:var(--heading-color)}.faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}.faq-list summary{cursor:pointer;font-weight:700;padding:1rem 0;color:var(--heading-color)}.faq-list p{margin:0 0 1rem}
+    .tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:700;color:var(--text-color)}.tool-input{width:7rem;border-radius:.75rem;padding:.65rem .75rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--text-color);outline:none}.tool-input:focus{box-shadow:0 0 0 2px #F29B30}.goal-button{padding:.7rem 1rem;font-size:.875rem;font-weight:800;background:var(--card-bg);color:var(--text-color)}.goal-button[aria-pressed="true"]{background:#F29B30;color:white}.scenario{padding:1rem;border-radius:.9rem;background:var(--page-bg);border:1px solid var(--border-color)}.day-input{width:3rem;border-radius:.6rem;padding:.45rem;background:var(--card-bg);border:1px solid var(--border-color);color:var(--heading-color);font-weight:800;text-align:center}.metric{display:flex;flex-direction:column;gap:.25rem;padding:1rem;border-radius:.8rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--muted-color);font-size:.78rem}.metric strong{font-size:1.35rem;color:var(--heading-color)}.metric.highlight{border:2px solid #F29B30;background:rgba(242,155,48,.09)}.metric.highlight strong{color:#F29B30}.cell{padding:.65rem}.menu-card{padding:1rem;border-radius:.8rem;background:var(--page-bg);border:1px solid var(--border-color)}.prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:800;margin:2.25rem 0 .7rem;color:var(--heading-color)}.prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}.prose-like a{color:#F29B30;text-decoration:underline;font-weight:700}.faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}.faq-list summary{cursor:pointer;font-weight:800;padding:1rem 0;color:var(--heading-color)}.faq-list p{margin:0 0 1rem}
   </style>
 
   <script is:inline>
     (function(){
-      var defaults=[['Produce',25],['Protein foods',25],['Grains and bread',15],['Dairy or alternatives',10],['Pantry staples',15],['Flexible',10]];
-      function money(n){return '$'+(isFinite(n)?n:0).toFixed(2)}
-      function addRow(root,data){data=data||['New category',0];var tr=document.createElement('tr');tr.style.borderBottom='1px solid var(--border-color)';tr.innerHTML='<td class="cell"><input class="row-input" data-name aria-label="Category name"></td><td class="cell"><div class="flex items-center gap-1"><input class="row-input" data-pct type="number" min="0" max="100" step="1" inputmode="decimal" aria-label="Category percentage"><span>%</span></div></td><td class="cell text-right font-bold" data-week style="color:var(--heading-color);">$0.00</td><td class="cell text-right" data-person style="color:var(--text-color);">$0.00</td><td class="cell"><button type="button" data-remove aria-label="Remove category" class="font-bold text-lg" style="color:var(--muted-color);">×</button></td>';tr.querySelector('[data-name]').value=data[0];tr.querySelector('[data-pct]').value=data[1];root.querySelector('#gb-rows').appendChild(tr)}
-      function render(root){var budget=parseFloat(root.querySelector('#gb-budget').value),people=parseFloat(root.querySelector('#gb-people').value);budget=isFinite(budget)&&budget>=0?budget:0;people=isFinite(people)&&people>0?people:1;root.querySelector('#gb-weekly').textContent=money(budget);root.querySelector('#gb-person-week').textContent=money(budget/people);root.querySelector('#gb-house-day').textContent=money(budget/7);root.querySelector('#gb-person-day').textContent=money(budget/people/7);var total=0,items=[];root.querySelectorAll('#gb-rows tr').forEach(function(row){var pct=parseFloat(row.querySelector('[data-pct]').value);pct=isFinite(pct)&&pct>=0?pct:0;var amount=budget*pct/100;total+=pct;row.querySelector('[data-week]').textContent=money(amount);row.querySelector('[data-person]').textContent=money(amount/people);items.push({name:row.querySelector('[data-name]').value.trim()||'Untitled category',pct:pct,amount:amount})});var balance=root.querySelector('#gb-balance'),diff=100-total;if(Math.abs(diff)<.001){balance.textContent='100% assigned. Every dollar has a job.';balance.style.cssText='background:rgba(34,197,94,.1);border:1px solid #22c55e;color:var(--text-color);'}else if(diff>0){balance.textContent=total.toFixed(1)+'% assigned. '+money(budget*diff/100)+' is still unassigned.';balance.style.cssText='background:#fff4e5;border:1px solid #F29B30;color:#7a4300;'}else{balance.textContent=total.toFixed(1)+'% assigned. The plan is '+money(budget*Math.abs(diff)/100)+' over budget.';balance.style.cssText='background:#fff0f0;border:1px solid #dc2626;color:#991b1b;'}var chart=root.querySelector('#gb-chart');chart.innerHTML='';items.forEach(function(item){var wrap=document.createElement('div'),line=document.createElement('div'),label=document.createElement('span'),value=document.createElement('strong'),track=document.createElement('div'),bar=document.createElement('div');line.className='flex justify-between gap-3 text-sm mb-1';label.textContent=item.name;value.textContent=money(item.amount)+' ('+item.pct.toFixed(1)+'%)';line.append(label,value);track.style.cssText='height:.65rem;border-radius:999px;background:var(--page-bg);overflow:hidden;border:1px solid var(--border-color);';bar.style.cssText='height:100%;width:'+Math.min(item.pct,100)+'%;background:#F29B30;border-radius:999px;';track.appendChild(bar);wrap.append(line,track);chart.appendChild(wrap)})}
-      function load(root,rows){root.querySelector('#gb-rows').innerHTML='';rows.forEach(function(r){addRow(root,r)});render(root)}
-      function boot(){var root=document.getElementById('grocery-budget-app');if(!root||root.dataset.booted)return;root.dataset.booted='1';root.addEventListener('input',function(){render(root)});root.addEventListener('change',function(){render(root)});root.querySelector('#gb-rows').addEventListener('click',function(e){var b=e.target.closest('[data-remove]');if(!b)return;b.closest('tr').remove();if(!root.querySelector('#gb-rows tr'))addRow(root);render(root)});root.querySelector('#gb-add').addEventListener('click',function(){addRow(root);render(root)});root.querySelector('#gb-reset').addEventListener('click',function(){root.querySelector('#gb-budget').value=175;root.querySelector('#gb-people').value=4;load(root,defaults)});root.querySelector('#gb-even').addEventListener('click',function(){var rows=Array.from(root.querySelectorAll('#gb-rows tr')),share=rows.length?100/rows.length:100;rows.forEach(function(row,i){row.querySelector('[data-pct]').value=(i===rows.length-1?100-share*(rows.length-1):share).toFixed(2)});render(root)});load(root,defaults)}
+      var sources={fiber:{url:'/data/fiber-day-cost-2026.csv',grams:'fiber_g',label:'Fiber',target:30},protein:{url:'/data/protein-day-cost-2026.csv',grams:'protein_g',label:'Protein',target:50}};
+      var defaults=[2,1,0,0,4];
+      function parseCSV(text){var rows=[],row=[],field='',quoted=false;for(var i=0;i<text.length;i++){var c=text[i];if(quoted){if(c==='"'){if(text[i+1]==='"'){field+='"';i++}else quoted=false}else field+=c}else if(c==='"')quoted=true;else if(c===','){row.push(field);field=''}else if(c==='\n'){row.push(field);field='';if(row.join(''))rows.push(row);row=[]}else if(c!=='\r')field+=c}if(field||row.length){row.push(field);if(row.join(''))rows.push(row)}return rows}
+      function records(text){var grid=parseCSV(text),headers=grid.shift();return grid.map(function(row){var item={};headers.forEach(function(key,i){item[key]=row[i]||''});return item})}
+      function esc(value){return String(value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+      function money(value){return '$'+(isFinite(value)?value:0).toFixed(2)}
+      function canonical(row){return (row.basis||'').replace(/^parent CSV:\s*/i,'').trim()||row.food.replace(/,.*$/,'')}
+      function group(rows,goal){var by={};rows.forEach(function(row){if(!by[row.day])by[row.day]={name:row.day,rows:[],cost:0,grams:0};by[row.day].rows.push(row);by[row.day].cost+=Number(row.cost_usd)||0;by[row.day].grams+=Number(row[sources[goal].grams])||0});return Object.keys(by).map(function(key){return by[key]})}
+      function shortName(name){return name.replace(/^Day \d+:\s*/,'')}
+      function boot(){var root=document.getElementById('research-week-planner');if(!root||root.dataset.booted)return;root.dataset.booted='1';var state={goal:'fiber',menus:[],days:defaults.slice()};
+        function load(){root.querySelector('#rwp-status').classList.remove('hidden');root.querySelector('#rwp-content').classList.add('hidden');fetch(sources[state.goal].url,{cache:'no-cache'}).then(function(res){if(!res.ok)throw new Error('HTTP '+res.status);return res.text()}).then(function(text){state.menus=group(records(text),state.goal);state.days=defaults.slice();root.querySelector('#rwp-status').classList.add('hidden');root.querySelector('#rwp-content').classList.remove('hidden');renderScenarios();render()}).catch(function(){root.querySelector('#rwp-status').textContent='The study file did not load. Refresh the page and the beans will try again.'})}
+        function renderScenarios(){root.querySelector('#rwp-scenarios').innerHTML=state.menus.map(function(menu,index){return '<div class="scenario"><p class="text-xs font-bold uppercase tracking-wide mb-1" style="color:#F29B30;">'+esc(shortName(menu.name))+'</p><p class="text-sm mb-3" style="color:var(--muted-color);">'+menu.grams.toFixed(1)+'g '+sources[state.goal].label.toLowerCase()+' for '+money(menu.cost)+'</p><label class="tool-label">Days this week<input class="day-input" data-plan-days="'+index+'" type="number" min="0" max="7" step="1" value="'+state.days[index]+'" inputmode="numeric"></label></div>'}).join('')}
+        function render(){var people=Math.max(1,Math.min(20,Math.round(Number(root.querySelector('#rwp-people').value)||1))),planned=0,totalCost=0,totalGrams=0,shopping={},restaurant=state.menus.find(function(menu){return /restaurant/i.test(menu.name)});state.menus.forEach(function(menu,index){var days=Math.max(0,Math.min(7,Math.round(Number(state.days[index])||0)));state.days[index]=days;planned+=days;totalCost+=menu.cost*days*people;totalGrams+=menu.grams*days*people;if(!days)return;menu.rows.forEach(function(row){var key=canonical(row);if(!shopping[key])shopping[key]={food:key,grams:0,nutrient:0,cost:0};shopping[key].grams+=(Number(row.grams_used)||0)*days*people;shopping[key].nutrient+=(Number(row[sources[state.goal].grams])||0)*days*people;shopping[key].cost+=(Number(row.cost_usd)||0)*days*people})});var restaurantCost=restaurant?restaurant.cost*planned*people:0,savings=Math.max(0,restaurantCost-totalCost),average=planned&&people?totalGrams/planned/people:0;root.querySelector('#rwp-day-count').textContent=planned+' day'+(planned===1?'':'s')+' planned';root.querySelector('#rwp-week-cost').textContent=money(totalCost);root.querySelector('#rwp-month-cost').textContent=money(totalCost*4.33);root.querySelector('#rwp-grams-label').textContent=sources[state.goal].label+' per person / day';root.querySelector('#rwp-grams').textContent=average.toFixed(1)+'g';root.querySelector('#rwp-savings').textContent=money(savings);root.querySelector('#rwp-shopping').innerHTML=Object.keys(shopping).sort(function(a,b){return shopping[b].cost-shopping[a].cost}).map(function(key){var item=shopping[key];return '<tr style="border-bottom:1px solid var(--border-color);"><td class="cell font-semibold" style="color:var(--heading-color);">'+esc(item.food)+'</td><td class="cell text-right" style="color:var(--text-color);">'+Math.round(item.grams)+'g</td><td class="cell text-right" style="color:var(--text-color);">'+item.nutrient.toFixed(1)+'g</td><td class="cell text-right font-bold" style="color:var(--heading-color);">'+money(item.cost)+'</td></tr>'}).join('')||'<tr><td colspan="4" class="cell text-center" style="color:var(--muted-color);">Choose at least one day. Right now the meal plan is fresh air.</td></tr>';root.querySelector('#rwp-menu-details').innerHTML=state.menus.map(function(menu,index){if(!state.days[index])return '';return '<div class="menu-card"><div class="flex justify-between gap-3 mb-2"><strong style="color:var(--heading-color);">'+esc(shortName(menu.name))+'</strong><span class="text-sm" style="color:#F29B30;">'+state.days[index]+' day'+(state.days[index]===1?'':'s')+'</span></div><ul class="text-sm space-y-1" style="color:var(--muted-color);">'+menu.rows.map(function(row){return '<li>'+esc(row.meal)+': '+esc(row.food)+'</li>'}).join('')+'</ul></div>'}).join('')}
+        root.addEventListener('input',function(event){var input=event.target.closest('[data-plan-days]');if(input){state.days[Number(input.dataset.planDays)]=Number(input.value)||0}render()});root.querySelectorAll('[data-goal]').forEach(function(button){button.addEventListener('click',function(){if(button.dataset.goal===state.goal)return;state.goal=button.dataset.goal;root.querySelectorAll('[data-goal]').forEach(function(item){item.setAttribute('aria-pressed',item===button?'true':'false')});load()})});load()}
       boot();document.addEventListener('astro:page-load',boot);
     })();
   </script>

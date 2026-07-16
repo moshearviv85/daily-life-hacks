@@ -3,14 +3,14 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
-const title = "Fiber per Dollar Calculator: What Your Grocery Money Buys";
+const title = "Protein and Fiber Value Planner: What Your Grocery Money Buys";
 const description =
-  "Free calculator that ranks 53 grocery foods by fiber per dollar, compares any two foods, and totals your basket. Live USDA data plus real shelf prices.";
+  "Compare 53 fiber foods and 49 protein foods, set a weekly goal, test two foods, or build a basket from USDA data and audited shelf prices.";
 
 const toolSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  name: "Fiber per Dollar Calculator",
+  name: "Protein and Fiber Value Planner",
   url: "https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/",
   description,
   applicationCategory: "UtilityApplication",
@@ -37,15 +37,15 @@ const toolSchema = {
       class="text-3xl md:text-5xl font-bold mb-4"
       style="color: var(--heading-color);"
     >
-      The Fiber per Dollar Calculator
+      The Protein and Fiber Value Planner
     </h1>
 
     <p class="text-lg mb-8" style="color: var(--text-color);">
-      Grocery shopping is a math problem you're doing in your head while your
-      cart blocks aisle six. This tool does the math for you: real fiber
-      numbers, real shelf prices, and a straight answer about which foods
-      actually earn a spot in your cart. Compare any two foods, build a basket,
-      or just snoop around the rankings.
+      This isn't an empty calculator waiting for you to rebuild our spreadsheet.
+      The 53-food fiber ranking and 49-food protein ranking are already loaded.
+      Set a weekly goal, compare two foods, or give several foods part of your
+      grocery budget and see what the basket buys. The cart can keep blocking
+      aisle six, but at least the math is handled.
     </p>
 
     <div id="fpd-app">

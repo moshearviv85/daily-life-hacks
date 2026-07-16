@@ -3,111 +3,81 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
-const title = "Free Grocery Calculators and Food Budget Tools";
-const description =
-  "Free grocery calculators for unit prices, recipe costs, weekly budgets, and fiber value. Clear formulas, private inputs, and no signup.";
+const title = "Research-Based Grocery Tools, Recipe Scaler and Food Cost Planner";
+const description = "Build a food-cost week from audited menus, scale any of 80 recipes, and compare 102 fiber and protein values. Free, private, and no signup.";
 
 const tools = [
-  {
-    href: "/tools/grocery-unit-price-calculator/",
-    eyebrow: "Compare packages",
-    visual: "$ / oz",
-    title: "Grocery Unit Price Calculator",
-    text: "Compare two package prices across ounces, pounds, grams, liters, or count. The shelf sticker can keep its tiny calculator button.",
-  },
-  {
-    href: "/tools/recipe-cost-calculator/",
-    eyebrow: "Price a meal",
-    visual: "$ / serving",
-    title: "Recipe Cost Calculator",
-    text: "Price the part of each package you actually use, total the batch, and get an honest cost per serving.",
-  },
-  {
-    href: "/tools/grocery-budget-calculator/",
-    eyebrow: "Plan the week",
-    visual: "$ / day",
-    title: "Grocery Budget Calculator",
-    text: "Split a weekly total into editable categories and see the budget per household, person, week, and day.",
-  },
-  {
-    href: "/tools/fiber-per-dollar-calculator/",
-    eyebrow: "Compare food value",
-    visual: "$1 = ?",
-    title: "Fiber per Dollar Calculator",
-    text: "Rank 53 foods, compare any two, or build a basket using USDA fiber data and verified shelf prices.",
-  },
+  { href: "/tools/grocery-budget-calculator/", eyebrow: "Built from 10 audited menus", visual: "7 days", title: "Weekly Food Cost Planner", text: "Choose fiber or protein, assign the five priced menu styles across your week, and get scaled food quantities, cost, and restaurant savings.", tier: "featured" },
+  { href: "/tools/fiber-per-dollar-calculator/", eyebrow: "102 audited food rankings", visual: "$1 = ?", title: "Protein and Fiber Value Planner", text: "Switch between 53 fiber foods and 49 protein foods, set a weekly target, compare two foods, or build a grocery basket.", tier: "featured" },
+  { href: "/recipes/", eyebrow: "Built into 80 recipes", visual: "4 → 7", title: "Recipe Serving Scaler", text: "Open any recipe, change the number of people, and watch the ingredient amounts update. No copying the recipe into another box first.", tier: "featured" },
+  { href: "/tools/grocery-unit-price-calculator/", eyebrow: "Basic shelf utility", visual: "$ / oz", title: "Grocery Unit Price Calculator", text: "Compare two package prices across ounces, pounds, grams, liters, or count when the shelf labels refuse to be helpful.", tier: "basic" },
+  { href: "/tools/recipe-cost-calculator/", eyebrow: "Advanced manual utility", visual: "$ / serving", title: "Recipe Cost Calculator", text: "Use this when you genuinely need line-by-line package costing. It's detailed, accurate, and admittedly more work.", tier: "basic" },
 ];
 
 const schemas = [
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: "Free Grocery Calculators and Food Budget Tools",
-    url: "https://www.daily-life-hacks.com/tools/",
-    description,
-    isPartOf: {
-      "@type": "WebSite",
-      name: "Daily Life Hacks",
-      url: "https://www.daily-life-hacks.com",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Daily Life Hacks",
-      url: "https://www.daily-life-hacks.com",
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Daily Life Hacks grocery tools",
-    itemListElement: tools.map((tool, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: tool.title,
-      url: `https://www.daily-life-hacks.com${tool.href}`,
-    })),
-  },
+  { "@context": "https://schema.org", "@type": "CollectionPage", name: title, url: "https://www.daily-life-hacks.com/tools/", description, isPartOf: { "@type": "WebSite", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" }, publisher: { "@type": "Organization", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" } },
+  { "@context": "https://schema.org", "@type": "ItemList", name: "Daily Life Hacks grocery tools", itemListElement: tools.map((tool, index) => ({ "@type": "ListItem", position: index + 1, name: tool.title, url: `https://www.daily-life-hacks.com${tool.href}` })) },
 ];
 ---
 
 <BaseLayout title={title} description={description} jsonLd={schemas}>
   <Header />
-  <main class="max-w-5xl mx-auto px-4 py-12 md:py-16">
-    <div class="max-w-3xl mb-10">
-      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Free. Private. Actually useful.</p>
+  <main class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+    <div class="max-w-4xl mb-10">
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Our research, turned into decisions.</p>
       <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Grocery Tools</h1>
-      <p class="text-lg" style="color:var(--text-color);">
-        Grocery math always shows up at the worst time: in a crowded aisle, halfway through a recipe, or three days before payday. These calculators handle the arithmetic and show the formula. No signup, no data sale, no motivational speech from a cartoon avocado.
+      <p class="text-lg leading-relaxed" style="color:var(--text-color);">
+        You were right to expect more than blank boxes. The useful tools now start with the data we've already audited or the recipe you're already cooking. Build a week from the cost studies, scale a real recipe, or make the 102-food value index answer your grocery question. No signup. No retyping a pantry before breakfast.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-      {tools.map((tool) => (
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      {tools.filter((tool) => tool.tier === "featured").map((tool) => (
         <a href={tool.href} class="tool-card group">
           <div class="tool-visual">
             <span class="text-4xl font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-300" style="color:#F29B30;">{tool.visual}</span>
             <span class="text-[11px] font-bold uppercase tracking-widest" style="color:var(--muted-color);">{tool.eyebrow}</span>
-            <span class="absolute top-3 right-3 px-2 py-1 text-[10px] font-bold rounded-full uppercase tracking-wider text-white" style="background:#F29B30;">Free Tool</span>
+            <span class="absolute top-3 right-3 px-2 py-1 text-[10px] font-bold rounded-full uppercase tracking-wider text-white" style="background:#F29B30;">Featured</span>
           </div>
           <div class="p-5 flex-1 flex flex-col gap-2">
             <h2 class="font-bold text-xl leading-tight group-hover:text-[#F29B30] transition-colors" style="color:var(--heading-color);">{tool.title}</h2>
             <p class="text-sm leading-relaxed" style="color:var(--muted-color);">{tool.text}</p>
-            <span class="mt-auto pt-2 text-sm font-bold" style="color:#F29B30;">Open calculator <span aria-hidden="true">→</span></span>
+            <span class="mt-auto pt-2 text-sm font-bold" style="color:#F29B30;">Use the tool <span aria-hidden="true">→</span></span>
           </div>
         </a>
       ))}
     </div>
 
-    <section class="mt-14 grid md:grid-cols-3 gap-5">
-      <div class="promise"><strong>Nothing leaves your browser</strong><p>Prices, budgets, and recipe ingredients stay on your device. The tools don't need an account because division has managed without one for centuries.</p></div>
-      <div class="promise"><strong>The formulas are visible</strong><p>You can see how every answer is calculated. No mystery score, black box, or “trust us” math.</p></div>
-      <div class="promise"><strong>The examples work immediately</strong><p>Every calculator opens with a realistic example. Change one number and watch the result update.</p></div>
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold mb-2" style="color:var(--heading-color);">Basic calculators, when you actually need them</h2>
+      <p class="mb-5 max-w-3xl" style="color:var(--muted-color);">These still solve specific math problems. They just don't get to pretend they're the main event anymore.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {tools.filter((tool) => tool.tier === "basic").map((tool) => (
+          <a href={tool.href} class="tool-card group">
+            <div class="tool-visual">
+              <span class="text-4xl font-extrabold tracking-tight group-hover:scale-105 transition-transform duration-300" style="color:#F29B30;">{tool.visual}</span>
+              <span class="text-[11px] font-bold uppercase tracking-widest" style="color:var(--muted-color);">{tool.eyebrow}</span>
+            </div>
+            <div class="p-5 flex-1 flex flex-col gap-2">
+              <h3 class="font-bold text-xl leading-tight group-hover:text-[#F29B30] transition-colors" style="color:var(--heading-color);">{tool.title}</h3>
+              <p class="text-sm leading-relaxed" style="color:var(--muted-color);">{tool.text}</p>
+              <span class="mt-auto pt-2 text-sm font-bold" style="color:#F29B30;">Open calculator <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        ))}
+      </div>
     </section>
 
-    <section class="max-w-3xl mt-14">
+    <section class="mt-14 grid md:grid-cols-3 gap-5">
+      <div class="promise"><strong>Nothing leaves your browser</strong><p>Household size, recipe servings, prices, and baskets stay on your device. The tools don't need an account because division has managed without one for centuries.</p></div>
+      <div class="promise"><strong>The formulas are visible</strong><p>You can see how every answer is calculated and where the study data came from. No mystery score or “trust us” math.</p></div>
+      <div class="promise"><strong>The main tools start with real data</strong><p>Ten priced menus, 102 ranked foods, and 80 recipes are already loaded. You change the decision, not rebuild the dataset.</p></div>
+    </section>
+
+    <section class="max-w-4xl mt-14">
       <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--heading-color);">Start with the decision in front of you</h2>
-      <p class="leading-relaxed mb-4" style="color:var(--text-color);">Comparing two boxes? Use unit price. Pricing tonight's dinner? Use recipe cost. Trying to keep the whole week under control? Build a grocery budget. If you want to know which foods deliver the most fiber for the money, use the food-value calculator.</p>
-      <p class="leading-relaxed" style="color:var(--text-color);">The calculators handle your numbers. Our <a href="/eat-healthy-on-a-budget-complete-playbook/" class="text-link">healthy eating on a budget playbook</a> handles the strategy, and the <a href="/methodology/" class="text-link">methodology page</a> explains how we verify the prices and nutrition data used in published studies.</p>
+      <p class="leading-relaxed mb-4" style="color:var(--text-color);">Planning seven days? Start with the audited week builder. Cooking for six instead of four? Open the recipe and change the servings inside the ingredient card. Deciding whether oats, eggs, beans, or yogurt earn the grocery money? Use the protein and fiber value planner.</p>
+      <p class="leading-relaxed" style="color:var(--text-color);">The tools handle the numbers. Our <a href="/eat-healthy-on-a-budget-complete-playbook/" class="text-link">healthy eating on a budget playbook</a> handles the strategy, and the <a href="/methodology/" class="text-link">methodology page</a> explains how we verify the prices and nutrition data used in published studies.</p>
     </section>
   </main>
   <Footer />

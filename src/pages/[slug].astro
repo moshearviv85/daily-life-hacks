@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Newsletter from "../components/Newsletter.astro";
 import RecipeMetaBar from "../components/RecipeMetaBar.astro";
+import RecipeServingScaler from "../components/RecipeServingScaler.astro";
 import RelatedArticles from "../components/RelatedArticles.astro";
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -508,19 +509,7 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
         <div class="hidden">
           <div class="p-6 md:p-8 grid md:grid-cols-2 gap-8">
             {/* Ingredients */}
-            <div>
-              <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
-                <span class="text-[#F29B30]">●</span> Ingredients
-              </h3>
-              <ul class="space-y-2">
-                {article.data.ingredients?.map((ingredient: string) => (
-                  <li class="flex items-start gap-2 text-[var(--text-color)]">
-                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#F29B30] flex-shrink-0" />
-                    <span>{ingredient}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <RecipeServingScaler ingredients={article.data.ingredients ?? []} servings={article.data.servings ?? 1} />
 
             {/* Instructions */}
             <div>
@@ -579,19 +568,7 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
           />
 
           <div class="p-6 md:p-8 grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">
-                <span class="text-[#F29B30]">●</span> Ingredients
-              </h3>
-              <ul class="space-y-2">
-                {article.data.ingredients?.map((ingredient: string) => (
-                  <li class="flex items-start gap-2 text-[var(--text-color)]">
-                    <span class="mt-2 w-1.5 h-1.5 rounded-full bg-[#F29B30] flex-shrink-0" />
-                    <span>{ingredient}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <RecipeServingScaler ingredients={article.data.ingredients ?? []} servings={article.data.servings ?? 1} />
 
             <div>
               <h3 class="text-xl font-bold mb-4 text-[var(--heading-color)] flex items-center gap-2">

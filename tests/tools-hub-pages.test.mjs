@@ -29,6 +29,12 @@ test("FAQ schema matches the five questions and answers visible on each tool", a
 
   for (const relative of pages) {
     const source = await readFile(path.join(root, relative), "utf8");
+    if (relative.includes("grocery-budget-calculator")) {
+      assert.match(source, /const faqs = \[/);
+      assert.match(source, /mainEntity: faqs\.map/);
+      assert.match(source, /\{faqs\.map\(\(\[question, answer\]\)/);
+      continue;
+    }
     const schemaBlock = source.match(/mainEntity:\s*\[(.*?)\]\.map/s)?.[1] ?? "";
     const schemaEntries = [...schemaBlock.matchAll(/\["([^"]+)", "([^"]+)"\]/g)]
       .map((match) => [match[1], normalize(match[2])]);
@@ -50,6 +56,7 @@ test("tools hub links all four calculators", async () => {
     "/tools/recipe-cost-calculator/",
     "/tools/grocery-budget-calculator/",
     "/tools/fiber-per-dollar-calculator/",
+    "/recipes/",
   ]) {
     assert.match(source, new RegExp(route.replaceAll("/", "\\/")), route);
   }
@@ -65,8 +72,10 @@ test("calculator formulas and interaction hooks remain present", async () => {
   assert.match(unit, /a\.price\/\(a\.size\*a\.meta\.factor\)/);
   assert.match(recipe, /amount used ÷ package amount/);
   assert.match(recipe, /\(used\*u\.factor\)\/\(pack\*p\.factor\)\*price/);
-  assert.match(budget, /weekly budget × category percentage/);
-  assert.match(budget, /budget\/people\/7/);
+  assert.match(budget, /fiber-day-cost-2026\.csv/);
+  assert.match(budget, /protein-day-cost-2026\.csv/);
+  assert.match(budget, /menu\.cost\*days\*people/);
+  assert.match(budget, /restaurant\.cost\*planned\*people/);
 });
 
 test("calculator engagement is measured without sending entered values", async () => {

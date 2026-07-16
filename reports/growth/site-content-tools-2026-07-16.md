@@ -43,3 +43,14 @@ Track this release in three separate layers:
 3. Usefulness: `tool_engagement`, clicks from tools to guides, guide-to-article clicks, and newsletter conversions.
 
 Search traffic should be judged against the pre-release baseline, not by whether rankings move on deployment day.
+
+## Product correction after review
+
+The first calculator release leaned too heavily on blank forms. The follow-up release changes the product direction:
+
+- The generic grocery budget splitter is replaced by a weekly planner that loads the 10 audited fiber and protein cost-study days automatically.
+- Visitors choose people and menu days, then receive scaled food quantities, tracked grams, consumed cost, and savings against the recorded restaurant scenario.
+- All 80 recipe pages now scale leading ingredient quantities from the requested serving count while preserving package sizes and temperatures.
+- The 53-food fiber and 49-food protein calculator is promoted as the main grocery value planner.
+- Manual unit-price and recipe-cost calculators remain available as secondary utilities, not the center of the tools product.
+- Browser QA covered fiber and protein switching, four-person cost math, serving changes, package-size protection, and a 390-pixel mobile viewport with no page overflow.
