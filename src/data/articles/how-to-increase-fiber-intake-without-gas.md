@@ -7,9 +7,11 @@ tags:
 - high fiber
 - nutrition basics
 - fiber
+- digestive comfort
 image: /images/how-to-increase-fiber-intake-without-gas-main.jpg
 imageAlt: Bowl of oats with fruit and nuts on a kitchen counter
 date: 2026-03-30
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -39,6 +41,8 @@ faq:
 Fiber is one of those nutrients that sounds wholesome until your stomach files a complaint. If you want more fiber with less drama, you need a boring plan: gradual change, consistent water, and fewer heroic one day leaps.
 
 This is not a challenge culture article. This is a keep your pants comfortable article.
+Before adding another scoop of beans, read the [practical guide to water and fiber](/water-and-fiber-the-golden-rule/) so the gradual plan includes the glass sitting next to the plate.
+
 ## Rule One: Add Fiber in Small Doses
 
 If you normally eat low fiber meals, a giant bean burrito is not a gentle step. It is a referendum.

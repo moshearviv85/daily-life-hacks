@@ -10,6 +10,7 @@ tags:
 image: "/images/zinc-containing-foods-weekly-meals-main.jpg"
 imageAlt: "Assorted whole foods on a cutting board including beans seeds and lean protein"
 date: 2026-04-13
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -32,6 +33,8 @@ People love to panic about protein and fiber. Zinc is the quiet mineral in the c
 Food is more interesting than that. Zinc-containing foods show up in normal grocery carts, next to the eggs and the peanut butter like regular people food. The goal here isn't to chase a number every single day like it's a video game score. It's to rotate a few reliable sources through your week so you're not eating the same five ingredients on repeat.
 
 I'm not going to sell you a miracle. Zinc plays roles in normal body processes, and getting a mix of nutrients from food is a sensible baseline. If you want the official adult ballpark in the U.S., many references cite roughly 11 mg per day for men and 8 mg for women, not counting pregnancy or breastfeeding (NIH Office of Dietary Supplements). Use that as context, not as homework you're failing.
+
+For another food-first rotation built from the same grocery-store cast, these [selenium-containing foods and meal ideas](/selenium-containing-foods-easy-ways/) keep the mineral talk attached to actual dinner.
 
 ## Animal foods that are easy to work into meals
 

@@ -7,12 +7,12 @@ tags:
 - large family
 - dinner
 - meals
-- large families
 - families
 - meals large
 image: "/images/cheap-crockpot-meals-large-families-main.jpg"
 imageAlt: A large slow cooker is filled with a hearty stew, surrounded by dried beans, potatoes, and onions.
 date: 2026-04-28
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
@@ -50,6 +50,8 @@ faq:
 I used to think feeding six people on a Tuesday required a second mortgage and a culinary degree. Then I realized that my slow cooker didn't care if the meat was on sale or if the beans came from a bag rather than a can. The crockpot is the great equalizer of the kitchen, turning the toughest, cheapest ingredients into something your kids will actually eat without a bribe.
 
 If you are staring at a grocery budget that feels more like a suggestion than a reality, you need a strategy. Cheap crockpot meals for large families aren't about fancy garnishes or expensive oils. They're about volume, heat, and enough seasoning to make a five-pound bag of potatoes taste like a luxury.
+
+Use the [recipe cost calculator](/tools/recipe-cost-calculator/) before you scale a batch, because "one cheap ingredient" has a funny way of inviting seven expensive friends into the slow cooker.
 
 ## Why dried beans are your best friend
 

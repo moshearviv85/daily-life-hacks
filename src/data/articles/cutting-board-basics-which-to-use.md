@@ -5,9 +5,12 @@ category: "tips"
 tags:
   - kitchen tips
   - cooking basics
+  - cutting boards
+  - kitchen tools
 image: "/images/cutting-board-basics-which-to-use-main.jpg"
 imageAlt: "Various cutting boards including wood plastic and bamboo stacked on a kitchen counter"
 date: 2026-04-23
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -28,6 +31,8 @@ faq:
 If you look in most kitchens, you will find a random assortment of cutting boards. There is usually one massive wooden board that is too heavy to wash, a flimsy plastic one that is deeply stained with tomato juice, and maybe a weird glass one someone gave as a gift. Most people just grab whatever is closest when it's time to chop an onion.
 
 But the cutting board is the foundation of everything you do in the kitchen. Using the wrong one makes cooking annoying, ruins your knives, and can even create food safety risks. You don't need a huge collection, but you do need to understand the basics of what material works best for what job.
+
+Once the board situation is handled, these [kitchen tools that save time and money](/kitchen-tools-that-save-time-and-money/) cover the other gear that deserves cabinet space instead of collecting dust behind the waffle maker.
 
 ## The wooden board (the daily driver)
 

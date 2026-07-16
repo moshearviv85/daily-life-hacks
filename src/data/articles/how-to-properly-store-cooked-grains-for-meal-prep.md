@@ -6,6 +6,7 @@ tags: ["meal prep tips", "grain storage", "food storage hacks", "meal prep guide
 image: "/images/how-to-properly-store-cooked-grains-for-meal-prep-main.jpg"
 imageAlt: Overhead view of a white meal prep container filled with fluffy rice next to a glass storage container, with fresh herbs and wood cutting board.
 date: 2026-06-26
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 faq:
@@ -24,6 +25,8 @@ faq:
 You've meal prepped a big batch of rice on Sunday. By Wednesday, it's dry, sticky, or smelling faintly off. You're not doing anything wrong-you're just missing a few small details that change everything.
 
 Storing cooked grains well is one of those kitchen skills that sounds trivial until you're eating sad, crunchy rice with your Wednesday lunch. The good news: it takes about 30 seconds of extra effort upfront, and your grains will taste better for nearly a week.
+
+Storage is only one piece of the operation, so the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) connects it to shopping, batch cooking, portioning, and the rest of the week.
 
 ## Why Storage Method Actually Matters
 

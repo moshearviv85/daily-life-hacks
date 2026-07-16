@@ -12,6 +12,7 @@ tags:
 image: "/images/how-much-protein-in-bagel-sandwich-main.jpg"
 imageAlt: A sliced bagel sandwich filled with scrambled eggs, turkey bacon, and melted cheese, with steam rising from the filling.
 date: 2026-04-28
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 faq:
@@ -27,6 +28,8 @@ faq:
 I used to think bagels were just round pieces of guilt disguised as breakfast. Then the internet decided that the high-protein bagel sandwich was the new kale salad, and suddenly everyone is stacking eggs and turkey bacon like they're building a structural marvel. It's a nice change of pace. I'll take a chewy bagel over a bowl of soggy oats any day of the week, provided it actually keeps me full until my 1:00 PM meeting.
 
 If you are trying to hit a specific daily goal, you probably want to know if that sandwich is doing the heavy lifting or just taking up space. It turns out the answer depends entirely on whether you're just slapping on some cream cheese or actually putting in the work with your fillings.
+
+For the rest of the day's meals, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) compares the inexpensive staples that can do more work than a heroic stack of deli meat.
 
 ## The protein baseline of a plain bagel
 

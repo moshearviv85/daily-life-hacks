@@ -7,6 +7,7 @@ const pillars = new Set([
   "how-to-eat-more-fiber-on-a-budget-complete-guide",
   "eat-healthy-on-a-budget-complete-playbook",
   "high-protein-on-a-budget-complete-guide",
+  "meal-prep-for-beginners-complete-system",
 ]);
 
 function score(candidateId, preferredPillar = null) {
@@ -40,5 +41,5 @@ test("an unassigned article does not receive a pillar by force", () => {
 });
 
 test("ordinary siblings retain shared-tag and category relevance", () => {
-  assert.equal(score("meal-prep-for-beginners-complete-system", null), 13);
+  assert.equal(score("batch-cooking-for-beginners-weekly-guide", null), 13);
 });

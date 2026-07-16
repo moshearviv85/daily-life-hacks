@@ -8,7 +8,7 @@ import { PILLARS, clusterForText } from "../../content/pillars";
 
 const title = "Complete Guides | Daily Life Hacks";
 const description =
-  "Start with three complete guides — fiber on a budget, healthy eating on a budget, and high protein on a budget — then dig into the supporting articles.";
+  "Start with four complete guides on fiber, protein, grocery budgets, and meal prep, then use the supporting articles and free calculators.";
 
 const allArticles = await getCollection("articles");
 const released = allArticles.filter((a) => isReleased(a));
@@ -17,9 +17,10 @@ const spokesByCluster = {
   fiber: [] as { id: string; title: string }[],
   budget: [] as { id: string; title: string }[],
   protein: [] as { id: string; title: string }[],
+  "meal-prep": [] as { id: string; title: string }[],
 };
 
-const pillarIds = new Set(PILLARS.map((p) => p.slug));
+const pillarIds = new Set<string>(PILLARS.map((p) => p.slug));
 
 for (const article of released) {
   if (pillarIds.has(article.id)) continue;
@@ -54,9 +55,9 @@ const guidesSchema = {
       Guides
     </h1>
     <p class="text-lg mb-10" style="color: var(--text-color);">
-      Three complete playbooks. Pick the job you care about, then use the linked
+      Four complete playbooks. Pick the job you care about, then use the linked
       articles for the next step. Every number we cite traces back to USDA data
-      and real shelf prices — see <a href="/methodology/" class="underline" style="color: #F29B30;">methodology</a>.
+      and real shelf prices. See <a href="/methodology/" class="underline" style="color: #F29B30;">how we check the math</a>.
     </p>
 
     <div class="space-y-10 mb-16">
@@ -87,7 +88,7 @@ const guidesSchema = {
                 class="inline-flex font-bold mb-6"
                 style="color: #F29B30;"
               >
-                Read the full guide →
+                Read the full guide
               </a>
               {
                 spokes.length > 0 && (
@@ -121,8 +122,8 @@ const guidesSchema = {
     </div>
 
     <p class="text-base" style="color: var(--muted-color);">
-      Prefer a calculator first? Try the
-      <a href="/tools/" class="underline" style="color: #F29B30;">fiber per dollar tool</a>.
+      Prefer to start with your own numbers? Open the
+      <a href="/tools/" class="underline" style="color: #F29B30;">free grocery calculators</a>.
     </p>
   </main>
   <Footer />

@@ -6,9 +6,11 @@ tags:
 - high fiber
 - nutrition basics
 - fiber
+- food labels
 image: "/images/good-source-of-fiber-label-meaning-main.jpg"
 imageAlt: "Close up of a nutrition facts label on a food package with fiber highlighted"
 date: 2026-04-25
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -17,16 +19,12 @@ mustRead: false
 faq:
   - question: "What does 'good source of fiber' mean on a food label?"
     answer: "In the U.S., it means one serving contains 10 to 19 percent of the Daily Value for fiber, which works out to roughly 2.8 to 5.3 grams per serving based on the 28g DV. The FDA regulates this specific phrase under 21 CFR 101.54."
-  - question: "What does 10 to 19 percent Daily Value of fiber mean?"
-    answer: "The Daily Value for fiber is 28 grams per day. Ten percent of that is 2.8 grams and 19 percent is about 5.3 grams. When one serving of a food lands in that window, the FDA allows the package to say 'good source of fiber.'"
   - question: "Does 3 grams of fiber per serving count as a good source?"
     answer: "Yes. Three grams is about 11 percent of the 28 gram Daily Value, which clears the FDA's 10 percent floor for a 'good source' claim. It's a legitimate claim, just not a huge amount of fiber on its own."
   - question: "What is the difference between 'good source' and 'excellent source' of fiber?"
     answer: "An 'excellent source' (or 'high in') claim means 20 percent or more of the Daily Value per serving, so at least about 5.6 grams. 'Good source' is the tier below that, at 10 to 19 percent."
   - question: "Can a food with added fiber use the 'good source' claim?"
     answer: "Yes. The claim is based on total fiber per serving, whether it's naturally occurring or added. Some products add isolated fibers like inulin or chicory root to reach the threshold. The Nutrition Facts panel shows total dietary fiber but doesn't always separate natural from added."
-  - question: "Is 3 grams of fiber per serving a lot?"
-    answer: "It's a start but not a huge amount. Most adults in the U.S. eat around 15 grams per day, which is well below the 25 to 34 gram range many guidelines suggest. Three grams is a contribution, not a solution on its own."
   - question: "Should I only buy foods labeled 'good source of fiber'?"
     answer: "No. Plenty of naturally high-fiber foods like beans, lentils, and whole fruits don't carry front-of-package claims because they don't need them. The label is a marketing tool. The Nutrition Facts panel is more useful for comparing."
 ---
@@ -37,6 +35,8 @@ That's the answer. Now the part the label doesn't mention.
 I stood in the cereal aisle for way too long last week. Two boxes, almost the same price, both screaming about fiber on the front. One said "good source of fiber." The other said "made with whole grains." I grabbed both, flipped them over, and one had 3 grams per serving. The other had 1 gram. Same aisle, same promises, very different math. Whole grain math stays messy outside the cereal aisle too. We ran the numbers on [oatmeal vs grits fiber content](/oatmeal-vs-grits-fiber-content/) and the two are not even close.
 
 Front-of-package claims are marketing. That's not cynical, that's just how packaging works. But the phrase "good source of fiber" is one of the more regulated ones, which means it actually has rules behind it. Knowing those rules can save you from buying granola bars that are basically cookies with a health halo. Granola is the worst offender in the whole store, which is why we wrote a separate guide on [choosing a granola that isn't secretly dessert](/how-to-choose-granola-not-dessert/).
+
+Once you've decoded the box, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) helps you compare the beans, grains, fruit, and other foods that don't arrive wearing a billboard.
 
 ## What does the FDA require for each fiber claim?
 

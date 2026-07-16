@@ -5,9 +5,12 @@ category: "recipes"
 tags:
   - soups and stews
   - vegetarian
+  - white beans
+  - budget meals
 image: "/images/tuscan-white-bean-kale-soup-stovetop-main.jpg"
 imageAlt: "Bowl of Tuscan white bean and kale soup with crusty bread on a wooden table"
 date: 2026-04-12
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -59,6 +62,8 @@ Some nights you open the cabinet and it's just cans looking back at you. Not gla
 It's a stovetop situation. One pot. No immersion blender required unless you're the type who loves extra smooth soup, in which case, you do you. I like a little texture. Beans you can bite. Kale that still has a spine.
 
 My neighbor once brought over a version of this after I helped her carry groceries up the stairs. Hers had way too much salt. I smiled and ate it anyway. This one is built around low sodium broth so you control the salinity at the end. Chef cosplay? No. Less regretful? Yes.
+
+For more meals where a cheap can of beans does the heavy lifting, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) is your next stop.
 
 ## Why this combo works
 

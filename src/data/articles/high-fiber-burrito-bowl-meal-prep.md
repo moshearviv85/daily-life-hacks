@@ -10,6 +10,7 @@ tags:
 image: "/images/high-fiber-burrito-bowl-meal-prep-main.jpg"
 imageAlt: "Four glass meal prep containers filled with quinoa black beans corn and salsa"
 date: 2026-04-08
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -58,6 +59,8 @@ faq:
 Let's be real about the work lunch situation. You either spend fifteen dollars on a mediocre wrap that leaves you hungry at 3 PM, or you bring leftovers that look depressing under office lighting. It's time for a better strategy. 
 
 This high fiber burrito bowl meal prep is the answer. It's stupidly easy to make on a Sunday, it survives the fridge without turning into mush, and it actually keeps you full until you clock out. No sad desk lunches here.
+
+For the Sunday-to-Friday plan behind this bowl, the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) covers shopping, batch cooking, storage, and the part where lunch still has to taste decent on Thursday.
 
 ## The foundation of a good bowl
 

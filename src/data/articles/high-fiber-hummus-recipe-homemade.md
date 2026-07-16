@@ -13,6 +13,7 @@ image: /images/high-fiber-hummus-recipe-homemade-main.jpg
 imageAlt: High Fiber Hummus Recipe Homemade - professionally plated meal with fresh
   vegetables, chickpeas for healthy snacking
 date: 2026-01-08
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -92,6 +93,8 @@ Oh, man. This hummus. I just made a batch, right? And it's... shockingly good. L
 See, for ages, I was just a grab-and-go hummus person. You know, from the refrigerated aisle at the supermarket. But lately, it's just been... underwhelming. Or tiny tubs that vanish in two seconds flat for a ridiculous price. And the texture? Sometimes grainy, sometimes kinda stiff, unsuited for dipping anything with grace. My friend Brenda (she's a little over-the-top about, like, gut health and "biohacking," but her food advice is usually spot-on) kept telling me to make my own. "It's so easy," she'd chirp, "and you control everything!" I scoffed, obviously. *Me* making hummus? I once set off the smoke alarm making toast, dude. But I finally decided, what the heck. And wow. Just, wow.
 
 The real secret, I think, to this creamy high fiber hummus recipe homemade situation, is a few things. First off, the extra chickpeas. It just gives it more body, more substance, like you're actually eating something rather than just air with a hint of chickpea. Second, the tahini. I mentioned it, but I'm going to mention it again: don't skimp. It's not just for flavor; it's what gives you that luxurious, velvety texture. Be brave. Third, and this is maybe the biggest one, process it for longer than you think you need to. Seriously. Let that food processor really *go*. It gets warm, it gets smooth, it hums with joy. That's when you know it's getting there. And that ice water trick at the end, if it's too thick, it helps with the emulsion; it's like a little science experiment in your kitchen. I picked that up from some old-school culinary blog, definitely not YouTube.
+
+If you have one can left after making the dip, turn it into [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) instead of letting it begin a six-month residency in the back of the pantry.
 
 ## Breaking Down the Goodness: Nutritional Notes
 

@@ -11,6 +11,7 @@ tags:
 image: "/images/lentil-curry-high-fiber-vegan-dinner-main.jpg"
 imageAlt: "A bowl of creamy coconut lentil curry served with fresh cilantro and naan bread"
 date: 2026-04-08
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -60,6 +61,8 @@ faq:
 You know those nights when you want takeout, but you also want to feel like a responsible adult who eats vegetables? This is the meal for those nights. This lentil curry high fiber vegan dinner hits all the comfort food buttons while casually delivering a massive dose of plant-based nutrition.
 
 It's entirely made in one pot, which means fewer dishes. And because we are using red lentils, it's ready in about half an hour. No soaking, no planning ahead, no fuss. It also reheats like a champ, which is exactly why it earns a spot in this [vegan high fiber meal prep for the week](/vegan-high-fiber-meal-prep-for-week/).
+
+For the broader plan behind this pot, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) shows how lentils, beans, oats, and other cheap staples can cover a lot of meals without getting weird about it.
 
 ## Why red lentils are the best shortcut
 

@@ -11,6 +11,7 @@ tags:
 image: "/images/selenium-containing-foods-easy-ways-main.jpg"
 imageAlt: "Eggs fish Brazil nuts oats and chicken arranged on a kitchen counter"
 date: 2026-05-06
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -34,6 +35,8 @@ Selenium sounds like something that belongs on a lab label, not a grocery list. 
 But selenium-containing foods aren't strange. They are eggs, fish, chicken, turkey, grains, beans, lentils, dairy foods, and Brazil nuts. Normal groceries. The kind you buy while half-thinking about whether you still have paper towels at home.
 
 The goal isn't to obsess over one mineral. That way lies spreadsheet cooking, and nobody needs that at 6:15 PM. The goal is to know which foods tend to bring selenium along for the ride so your weekly meals have some variety and don't depend on the same three ingredients forever.
+
+If you're planning food variety instead of chasing one nutrient, this guide to [zinc-containing foods for weekly meals](/zinc-containing-foods-weekly-meals/) uses the same normal-groceries approach.
 
 ## Selenium is a food nutrient, not a dinner theme
 

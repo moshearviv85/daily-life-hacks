@@ -11,6 +11,7 @@ tags:
 image: /images/high-fiber-pasta-alternatives-main.jpg
 imageAlt: Bowls of pasta with vegetables and tomato sauce
 date: 2026-03-30
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -39,6 +40,8 @@ faq:
 If you want more fiber but you still want a fork and a red sauce situation, pasta is the emotional comfort food you do not want to negotiate with. The good news is you have real options that are not just salad pretending to be spaghetti.
 
 The bad news is legume pastas behave differently. Treat them like their own ingredient, not a perfect clone of semolina.
+
+If you're rebuilding more than pasta night, the [budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) sorts out which pantry staples earn their shelf space without turning dinner into a spreadsheet.
 ## Chickpea Pasta
 
 Chickpea pasta tends to bring more protein and fiber than white pasta. Texture can be slightly grainier, which is not a moral failure.

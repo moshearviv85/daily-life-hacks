@@ -13,6 +13,7 @@ tags:
 image: /images/quick-20-minute-high-fiber-meals-for-busy-days-main.jpg
 imageAlt: Colorful skillet meal with beans and vegetables on a wooden table
 date: 2026-03-30
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -69,6 +70,8 @@ faq:
 Some nights you do not have a zen hour to chop a rainbow. You have twenty minutes, a hungry household, and a sink that is already half full. That is when a one skillet bean and rice situation saves you without feeling like a sad compromise.
 
 This recipe is not trying to win a chef competition. It is trying to get fiber and protein on the table before anyone asks for cereal.
+
+If you need more dinners built for that exact level of chaos, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) turns beans, grains, and other cheap staples into an actual plan.
 ## Why Fiber Still Matters When You Are Busy
 
 Fiber is the part of plant foods that your body does not fully break down, and that is the point. It can help you feel full, and it pairs well with steady energy when you are not eating every hour.

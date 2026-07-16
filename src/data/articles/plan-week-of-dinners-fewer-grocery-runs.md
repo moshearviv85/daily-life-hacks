@@ -6,7 +6,8 @@ tags: ["MealPlanning", "GroceryHacks", "DinnerIdeas", "TimeSaving", "FoodWaste"]
 image: "/images/plan-week-of-dinners-fewer-grocery-runs-main.jpg"
 imageAlt: "A kitchen counter with a simple grocery list next to fresh vegetables and pantry staples"
 date: 2026-04-08
-author: "Daily Life Hacks Team"
+dateModified: 2026-07-16
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false
@@ -29,6 +30,8 @@ The midweek grocery run is a trap. You go in for one bell pepper and come out wi
 I used to shop like that. Two, sometimes three trips a week. Each one felt small but they added up in time, gas, and wasted food. The shift happened when I stopped thinking about meals as individual events and started thinking about the week as one connected system.
 
 You don't need a color coded spreadsheet. You need a few practical habits that let you plan a week of dinners with fewer grocery runs and actually stick with it.
+
+For the full system behind those habits, the [complete healthy-eating-on-a-budget playbook](/eat-healthy-on-a-budget-complete-playbook/) ties the weekly plan to shopping, storage, and leftovers before Wednesday gets ideas.
 
 ## Think in shelf life, not recipes
 

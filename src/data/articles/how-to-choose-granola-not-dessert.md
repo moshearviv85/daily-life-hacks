@@ -6,9 +6,11 @@ tags:
 - breakfast
 - nutrition basics
 - dessert
+- food labels
 image: "/images/how-to-choose-granola-not-dessert-main.jpg"
 imageAlt: "Bowl of simple granola with oats nuts and seeds next to a nutrition label"
 date: 2026-04-27
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -29,6 +31,8 @@ faq:
 I bought a bag of granola once because the packaging had a mountain on it and words like "wholesome" and "ancient grains." Got home, flipped the bag over, and the second ingredient was brown sugar. Third ingredient was canola oil. Fourth was honey. The granola had more sugar per serving than a chocolate chip cookie from the bakery section. The mountain lied.
 
 Granola has an image problem. It sits in the "health food" part of your brain next to yoga mats and smoothie bowls, but plenty of brands are selling you oat-flavored candy in a kraft paper bag. That doesn't mean all granola is bad. It means you need to read the label with your eyes open instead of trusting the vibes.
+
+When the bag starts throwing regulated nutrition phrases at you, this breakdown of [what "good source of fiber" actually means](/good-source-of-fiber-label-meaning/) translates the label math into normal English.
 
 ## The sugar check (this is the big one)
 

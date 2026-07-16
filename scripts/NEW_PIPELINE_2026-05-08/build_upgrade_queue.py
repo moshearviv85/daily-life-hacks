@@ -21,6 +21,7 @@ PILLARS = {
     "fiber": "how-to-eat-more-fiber-on-a-budget-complete-guide",
     "budget": "eat-healthy-on-a-budget-complete-playbook",
     "protein": "high-protein-on-a-budget-complete-guide",
+    "meal-prep": "meal-prep-for-beginners-complete-system",
 }
 
 

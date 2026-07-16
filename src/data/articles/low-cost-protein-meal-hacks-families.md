@@ -7,12 +7,12 @@ tags:
 - high protein
 - protein
 - families
-- cost protein
 - low cost
 - meal hacks
 image: "/images/low-cost-protein-meal-hacks-families-main.jpg"
 imageAlt: A close-up of a wooden spoon stirring ground meat and lentils in a cast iron skillet.
 date: 2026-04-28
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 faq:
@@ -28,6 +28,8 @@ faq:
 I was standing in the grocery aisle last Tuesday, staring at a pack of chicken breasts that cost more than my first car, wondering when poultry became a luxury good. It's a common scene. You want to feed the kids something that isn't just a bowl of beige carbs, but the meat counter feels like a personal attack on your checking account.
 
 Finding low cost protein meal hacks for families isn't about eating sawdust or becoming a master of spreadsheets. It's about being a little bit sneaky and a lot more strategic with how we bulk up the plate. You don't need a lifestyle overhaul, you just need to get dinner on the table without crying at the checkout.
+
+When package sizes make the shelf tags useless, the [grocery unit price calculator](/tools/grocery-unit-price-calculator/) tells you which beans, meat, or yogurt actually costs less per ounce.
 
 ## Stretch the ground meat with pantry staples
 

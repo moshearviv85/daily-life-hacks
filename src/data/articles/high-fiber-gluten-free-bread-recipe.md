@@ -9,10 +9,10 @@ tags:
 - fiber
 - bread recipe
 - bread
-- gluten
 image: "/images/high-fiber-gluten-free-bread-recipe-main.jpg"
 imageAlt: "Slices of hearty high fiber gluten free bread on a wooden cutting board"
 date: 2026-04-08
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -60,6 +60,8 @@ faq:
 Most gluten-free bread from the store is sad. There, I said it. It's usually full of refined starches, it falls apart if you look at it wrong, and it has the nutritional profile of a paper napkin. Finding a good high fiber gluten free bread recipe feels like trying to find a parking spot on a Saturday afternoon.
 
 But this one? This one actually works. It's a dense, hearty, seed-packed loaf that holds up to serious sandwich fillings and makes incredible toast. It doesn't rely on weird gums or fifteen different flours. It uses whole ingredients that happen to pack a massive fiber punch.
+
+For more ways to put oats, seeds, beans, and grains to work without wrecking the grocery budget, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) lays out the rest of the pantry.
 
 ## How this bread actually holds together
 

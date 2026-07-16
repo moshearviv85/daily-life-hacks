@@ -12,6 +12,7 @@ tags:
 image: "/images/comparing-fiber-content-different-pizza-crusts-main.jpg"
 imageAlt: Three distinct pizza crust cross-sections are shown from above, revealing their varied textures and compositions.
 date: 2026-04-28
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 faq:
@@ -31,6 +32,8 @@ Yes, pizza crust has fiber, just not much of it. A slice of regular white-flour 
 I used to think pizza night was the one night of the week where I could officially stop caring about nutrition labels. Then my kids started treating vegetables like they were radioactive, and I realized I had to start looking for wins in the foundation of the meal. If I can't get them to eat a salad, I might as well make sure the bread under the cheese is doing some of the heavy lifting.
 
 Comparing fiber content in different pizza crusts isn't about turning pizza into a health food. It's about finding the version that keeps everyone full for more than twenty minutes. Here's the whole lineup in one place, then we'll get into why the numbers land where they do.
+
+For the rest of the grocery cart, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) compares the less glamorous foods that don't come covered in cheese.
 
 ## Fiber in pizza crust, by the numbers
 
