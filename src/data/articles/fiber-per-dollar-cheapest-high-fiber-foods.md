@@ -39,6 +39,8 @@ One more thing, because a data article that can't admit mistakes isn't a data ar
 
 The full dataset is public. You can download the raw CSV [here](/data/fiber-per-dollar-2026.csv) and check every number yourself. Or skip the spreadsheet and play with the numbers in the [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/), which compares any two foods and does the basket math for you.
 
+*Data last verified July 2026 (full USDA re-audit completed July 4). Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
+
 ## The full ranking: 53 foods by fiber per dollar
 
 Fiber values in this table come from USDA FoodData Central, and every price was checked against current shelf listings on July 4, 2026.

@@ -39,6 +39,8 @@ Three ground rules so nobody has to squint at the math:
 
 The full dataset is public. Download the raw CSV [here](/data/protein-day-cost-2026.csv), check any row against the [parent dataset](/data/protein-per-dollar-2026.csv), or run your own matchups in the [per dollar calculator](/tools/fiber-per-dollar-calculator/). One accounting note: meal rows are displayed and exported after rounding, while the day totals and annual chart use the unrounded parent-dataset values. Adding the visible rows can therefore differ from the reported total by one cent or 0.1 gram.
 
+*Data last verified July 12, 2026. Menu prices re-checked at each quarterly re-audit; next: October 2026.*
+
 ## Day 1: The rock-bottom dry goods day ($0.82)
 
 This is the floor. Nobody's calling it dinner at a steakhouse. It is, however, 52.7 grams of protein for less than a dollar.

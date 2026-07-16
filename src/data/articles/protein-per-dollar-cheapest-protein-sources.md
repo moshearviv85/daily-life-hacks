@@ -39,6 +39,8 @@ One basis rule matters enough to spell out. Everything is measured **as purchase
 
 The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv), read the site's [grocery-data methodology](/methodology/), and check the calculations yourself.
 
+*Data last verified July 2026 (dual independent USDA pulls). Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
+
 ## The full ranking: 49 protein sources by protein per dollar
 
 Protein values in this table come from USDA FoodData Central, and every price is a July 2026 US figure, audited against Walmart shelf listings and BLS national averages.

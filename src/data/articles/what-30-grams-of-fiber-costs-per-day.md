@@ -39,6 +39,8 @@ Three ground rules so nobody has to squint at the math:
 
 The full dataset is public. Download the raw CSV [here](/data/fiber-day-cost-2026.csv), check any row against the [parent dataset](/data/fiber-per-dollar-2026.csv), or run your own matchups in the [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/).
 
+*Data last verified July 12, 2026. Menu prices re-checked at each quarterly re-audit; next: October 2026.*
+
 ## Day 1: The rock-bottom dry goods day ($0.62)
 
 This is the floor. Nobody's saying it's exciting. It is, however, 31.9 grams of fiber for less than the sales tax on a latte.
