@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/protein-per-dollar-cheapest-protein-sources-main.jpg"
 imageAlt: "Horizontal bar chart ranking the top 20 cheapest protein sources by grams of protein per dollar, with dried pinto beans in first place"
 date: 2026-07-06
-dateModified: 2026-07-15
+dateModified: 2026-07-17
 author: "David Miller"
 faq:
   - question: "What is the cheapest protein source?"
@@ -37,7 +37,7 @@ Same playbook as the fiber study, because it survived an audit and I'm not messi
 
 One basis rule matters enough to spell out. Everything is measured **as purchased**: raw meat, dry beans, the package in your cart. Cooked chicken shows more protein per 100 grams than raw chicken because roasting drives off water, not because protein appeared from nowhere. Ranking cooked values against raw prices is how these comparisons usually go wrong, so we didn't.
 
-The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv), read the site's [grocery-data methodology](/methodology/), and check the calculations yourself.
+The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv), read the site's [grocery-data methodology](/methodology/), and check the calculations yourself. The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) lets you compare any two rows or build a basket without wrestling the CSV. The [weekly food-cost planner](/tools/grocery-budget-calculator/) takes the next step and scales our five audited 50-gram days for the number of people you're feeding.
 
 *Data last verified July 2026 (dual independent USDA pulls). Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
 

@@ -8,7 +8,7 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/what-30-grams-of-fiber-costs-per-day-main.jpg"
 imageAlt: "Horizontal bar chart comparing the cost of five ways to eat 30 grams of fiber in one day, from 62 cents for dry goods to $14.42 at restaurants"
 date: 2026-07-08
-dateModified: 2026-07-15
+dateModified: 2026-07-17
 author: "David Miller"
 faq:
   - question: "How much does it cost to eat 30 grams of fiber a day?"
@@ -37,7 +37,7 @@ Three ground rules so nobody has to squint at the math:
 * **Dry goods are measured dry, fruit is measured as purchased.** Fiber on peeled fruit counts only the edible portion, same as the parent study. You can't eat a banana peel no matter what the sticker says.
 * **Every day lands between 31 and 32.1 grams.** The [FDA's Daily Value is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels); 30 is the round number everyone actually searches for. All five plans clear both.
 
-The full dataset is public. Download the raw CSV [here](/data/fiber-day-cost-2026.csv), check any row against the [parent dataset](/data/fiber-per-dollar-2026.csv), or run your own matchups in the [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/).
+The full dataset is public. Download the raw CSV [here](/data/fiber-day-cost-2026.csv), check any row against the [parent dataset](/data/fiber-per-dollar-2026.csv), or run your own matchups in the [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/). If you want these five days to behave like an actual household week, the [weekly food-cost planner](/tools/grocery-budget-calculator/) scales every menu by people and days. No retyping oats into a tiny box seven times.
 
 *Data last verified July 12, 2026. Menu prices re-checked at each quarterly re-audit; next: October 2026.*
 

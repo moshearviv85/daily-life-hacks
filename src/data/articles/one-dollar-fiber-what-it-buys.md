@@ -6,6 +6,7 @@ tags: ["fiber per dollar", "cheap fiber foods", "budget nutrition", "grocery dat
 image: "/images/one-dollar-fiber-what-it-buys-main.jpg"
 imageAlt: "A stack of coins next to a mound of whole wheat flour, split peas, and popcorn kernels on a counter"
 date: 2026-07-13
+dateModified: 2026-07-17
 author: "David Miller"
 faq:
   - question: "How many grams of fiber can one dollar buy?"
@@ -67,6 +68,6 @@ The grains on the list are just as low-effort. Popcorn kernels (57.7 grams per d
 
 This is my favorite part of the data. Chia seeds cost $9.44 for a 32 oz bag, which feels like a splurge at the shelf. But they're so dense with fiber that they still deliver 33.1 grams per dollar, right alongside lentils. A spoonful goes a long way, which is the whole trick behind [chia raspberry jam](/high-fiber-raspberry-jam-recipe-chia/). Whole flaxseed tells the same story at 28.5 grams per dollar despite a $5.98 bag. Sticker price and value per dollar are different questions, and this list is what happens when you ask the second one.
 
-So what do you do with all this? Spend your next spare dollar at the top of the table, and let the boring bags do the heavy lifting. Our breakdown of [what a full day of fiber costs](/what-30-grams-of-fiber-costs-per-day/) turns these per-dollar numbers into actual meals, and the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) builds the whole week around them. A dollar doesn't buy much anymore. In this one corner of the store, it still buys a lot.
+So what do you do with all this? Put the foods you actually eat into the [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) and see what your weekly dollars buy. Our breakdown of [what a full day of fiber costs](/what-30-grams-of-fiber-costs-per-day/) turns these per-dollar numbers into actual meals, and the [weekly food-cost planner](/tools/grocery-budget-calculator/) repeats those audited days for your household. The [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) handles the shopping and cooking system around them. A dollar doesn't buy much anymore. In this one corner of the store, it still buys a lot.
 
 <!-- numbers-source: pipeline-data/derived-studies/one-dollar-fiber-what-it-buys.json -->

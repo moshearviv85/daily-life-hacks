@@ -13,15 +13,15 @@ const articles = allArticles
     .sort((a: any, b: any) => getReleaseTimestamp(b) - getReleaseTimestamp(a));
 
 const BATCH_SIZE = 12;
-const title = "Healthy Recipes & Meal Prep Ideas | Daily Life Hacks";
+const title = "Easy Recipes With Adjustable Servings | Daily Life Hacks";
 const description =
-    "Discover easy, healthy recipes and meal prep ideas that fit your busy lifestyle without sacrificing flavor.";
+    "Practical recipes with ingredient amounts you can scale for the number of people you're feeding, plus meal prep ideas built for real kitchens.";
 const categoryUrl = "https://www.daily-life-hacks.com/recipes/";
 const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "@id": `${categoryUrl}#item-list`,
-    name: "Healthy Recipes and Meal Prep Ideas",
+    name: "Easy Recipes With Adjustable Servings",
     numberOfItems: articles.length,
     itemListOrder: "https://schema.org/ItemListOrderDescending",
     itemListElement: articles.map((article: any, index: number) => ({
@@ -34,7 +34,7 @@ const itemListSchema = {
 const collectionPageSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Healthy Recipes and Meal Prep Ideas",
+    name: "Easy Recipes With Adjustable Servings",
     url: categoryUrl,
     description,
     isPartOf: {
@@ -66,6 +66,14 @@ const collectionPageSchema = {
                 {description}
             </p>
         </header>
+
+        <aside class="mb-10 rounded-2xl p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3" style="background:rgba(242,155,48,.09);border:1px solid rgba(242,155,48,.35);">
+            <div>
+                <h2 class="text-xl font-bold mb-1" style="color:var(--heading-color);">Cooking for two instead of six?</h2>
+                <p style="color:var(--text-color);">Open any recipe and change the servings inside the ingredient card. The cups, cans, and tablespoons update before dinner turns into a fraction worksheet.</p>
+            </div>
+            <span class="shrink-0 rounded-full px-4 py-2 text-sm font-bold text-white" style="background:#F29B30;">All {articles.length} recipes scale</span>
+        </aside>
 
         <div
             id="articles-grid"

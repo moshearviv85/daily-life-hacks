@@ -6,6 +6,7 @@ tags: ["protein per dollar", "cheap protein foods", "budget protein groceries", 
 image: "/images/one-dollar-protein-what-it-buys-main.jpg"
 imageAlt: "A stack of coins surrounded by dried pinto beans, brown eggs, and a scoop of rolled oats on a wooden table"
 date: 2026-07-13
+dateModified: 2026-07-17
 author: "David Miller"
 faq:
   - question: "What food gives you the most protein for a dollar?"
@@ -65,6 +66,6 @@ Oats belong in the same conversation at 46.6 grams per dollar, about 157 grams o
 
 Take the 50 gram Daily Value as a yardstick. Covered entirely by dry pinto beans, it costs about $0.51 a day. Covered by drumsticks, about a dollar. Nobody eats a single food all day, but the yardstick shows how low the floor sits when you build meals around this list; we ran the fuller version of that math in [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/).
 
-The bigger lesson from the whole dataset is that price and protein aren't strangers, they're just filed in different aisles. If you want the full week-of-meals version of this strategy, our [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) is the place to start.
+The bigger lesson from the whole dataset is that price and protein aren't strangers, they're just filed in different aisles. Test the foods you already buy in the [protein and fiber value planner](/tools/fiber-per-dollar-calculator/), then use the [weekly food-cost planner](/tools/grocery-budget-calculator/) to scale our audited 50-gram days for your household. For the shopping and cooking system around those numbers, the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) is the place to start.
 
 <!-- numbers-source: pipeline-data/derived-studies/one-dollar-protein-what-it-buys.json -->

@@ -8,7 +8,7 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/fiber-per-dollar-cheapest-high-fiber-foods-main.jpg"
 imageAlt: "Horizontal bar chart ranking the top 20 cheapest high-fiber foods by grams of fiber per dollar, with whole wheat flour in first place"
 date: 2026-07-04
-dateModified: 2026-07-15
+dateModified: 2026-07-17
 author: "David Miller"
 faq:
   - question: "What food has the most fiber per dollar?"
@@ -37,7 +37,7 @@ No mystery math here. Three steps:
 
 One more thing, because a data article that can't admit mistakes isn't a data article. On July 4, 2026 we re-verified every fiber value against USDA FoodData Central and every price against current shelf listings, and corrected several figures (split peas, whole wheat spaghetti, russet potatoes, canned kidney beans, bran flakes, and flaxseed). The table below is the checked version.
 
-The full dataset is public. You can download the raw CSV [here](/data/fiber-per-dollar-2026.csv) and check every number yourself. Or skip the spreadsheet and play with the numbers in the [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/), which compares any two foods and does the basket math for you.
+The full dataset is public. You can download the raw CSV [here](/data/fiber-per-dollar-2026.csv) and check every number yourself. Or skip the spreadsheet and use the [protein and fiber value planner](/tools/fiber-per-dollar-calculator/), which compares foods and builds a basket from the same 53-row dataset. Once the winners have to feed actual people, the [weekly food-cost planner](/tools/grocery-budget-calculator/) turns our five audited 30-gram days into a scaled food list instead of another theoretical ranking.
 
 *Data last verified July 2026 (full USDA re-audit completed July 4). Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
 

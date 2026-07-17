@@ -13,7 +13,7 @@ image: /images/batch-cooking-for-beginners-weekly-guide-main.jpg
 imageAlt: Batch Cooking for Beginners Weekly Guide - multiple glass containers filled
   with pre-cooked grains, roasted vegetables, and proteins aligned on a counter
 date: 2026-01-06
-dateModified: 2026-07-16
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -57,7 +57,7 @@ There's exactly one reason why people give up on eating healthy: it requires an 
 
 The secret to actually maintaining a healthy diet without losing your mind is moving all the hard work to the one day of the week when you actually have energy. Following a batch cooking for beginners weekly guide transforms your Monday through Friday. 
 
-Batch cooking is different from traditional "meal prep." You're not making ten identical, sad containers of chicken and rice. Instead, you're prepping core ingredients in bulk on Sunday afternoon, so weeknight dinners become an assembly project that takes exactly five minutes. One warning before you scale everything up: spices don't multiply cleanly, so learn [how to double a recipe's seasoning without guessing](/how-to-double-recipe-seasoning-without-guessing/) before you dump in twice the cumin. 
+Batch cooking is different from traditional "meal prep." You're not making ten identical, sad containers of chicken and rice. Instead, you're prepping core ingredients in bulk on Sunday afternoon, so weeknight dinners become an assembly project that takes exactly five minutes. Start with the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) or [turkey meatball meal prep](/healthy-turkey-meatballs-meal-prep/) and change the servings above the ingredient list. The amounts move automatically. Spices still don't multiply cleanly, so read [how to double a recipe's seasoning without guessing](/how-to-double-recipe-seasoning-without-guessing/) before you dump in twice the cumin.
 
 For the full system around that Sunday chopping, the [complete meal-prep guide for beginners](/meal-prep-for-beginners-complete-system/) connects shopping, batch cooking, storage, and actual meals without requiring a color-coded command center.
 
@@ -93,4 +93,4 @@ You just spent 90 minutes working hard. The payoff is that from Monday to Friday
 *   **Tuesday (The Quick Stir-Fry):** Take some rice, toss in the roasted sweet potatoes and peppers, add a handful of chopped tofu or chicken, and douse it in the peanut sauce. Heat it until hot. 
 *   **Wednesday (The Wrap Trick):** Tired of eating out of a bowl? Take a large whole wheat tortilla. Spread some hummus inside. Add exactly the same chicken and roasted vegetables from Tuesday, wrap it tightly, and eat it cold. It tastes different. 
 
-The brilliance of a solid batch cooking for beginners weekly guide is that it removes all decision fatigue. You never have to stare blankly into the fridge at 7:00 PM wondering what to make, because the ingredients are already perfectly cooked and staring right back at you. You just combine them, heat them, and enjoy your evening. Once the Sunday sprint feels automatic, these [high fiber meal prep ideas for busy weeks](/high-fiber-meal-prep-ideas-for-busy-weeks-2026/) slot straight into the same system.
+The brilliance of a solid batch cooking for beginners weekly guide is that it removes all decision fatigue. You never have to stare blankly into the fridge at 7:00 PM wondering what to make, because the ingredients are already perfectly cooked and staring right back at you. You just combine them, heat them, and enjoy your evening. Once the Sunday sprint feels automatic, these [high fiber meal prep ideas for busy weeks](/high-fiber-meal-prep-ideas-for-busy-weeks-2026/) slot straight into the same system. If you want the grocery math before the chopping starts, the [weekly food-cost planner](/tools/grocery-budget-calculator/) scales our audited menus by people and days.

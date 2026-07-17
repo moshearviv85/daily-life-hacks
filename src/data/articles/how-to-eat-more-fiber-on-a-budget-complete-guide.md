@@ -7,7 +7,7 @@ cluster: "budget-fiber"
 image: "/images/how-to-eat-more-fiber-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry pinto beans, split peas, red lentils, oats, and popcorn kernels on a wooden table beside a bag of frozen peas and a loaf of whole wheat bread"
 date: 2026-07-07
-dateModified: 2026-07-16
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 faq:
@@ -93,7 +93,7 @@ Read that again. Thirty-seven grams, which clears the 28 gram Daily Value with r
 
 Two honest caveats. First, this is the fiber skeleton, not everything you'd eat. Add milk for the oats, oil and an onion for the soup, eggs or whatever protein you like at dinner, and you're still comfortably under three dollars for the day's core food. Second, if you're currently near the 16 gram national average, don't jump to 37 tomorrow. More on that in the mistakes section, because stomach drama is a lousy onboarding experience.
 
-The [grocery budget calculator](/tools/grocery-budget-calculator/) lets you turn this skeleton into your own weekly ceiling, including the foods that aren't here. That's the honest version of budget math. A bowl of split peas is cheap; the complete cart is what hits your bank account.
+The [weekly food-cost planner](/tools/grocery-budget-calculator/) scales our five audited 30-gram days by people and days, then gives you the combined food list and tracked cost. That's the honest version of the study math. A bowl of split peas is cheap; the complete cart is what hits your bank account.
 
 If you want less spreadsheet and more real-life options, our follow-up shows [what 30 grams of fiber costs across five different days](/what-30-grams-of-fiber-costs-per-day/), including a no-cook version and a mixed grocery day.
 
@@ -121,7 +121,7 @@ If you're choosing among cereal, oats, bread, and the bag of granola wearing a t
 
 Here's the mental shift that makes this whole system work: stop treating beans and lentils as a side dish and let them be the main event two or three times a week. That's it. That's the system.
 
-[Split pea soup](/split-pea-soup-recipe-high-fiber/) is the obvious opener, since split peas are the best edible-as-is value in the entire store. I make a pot most Sundays, partly because it's good and partly because it costs about a dollar and feeds me until Wednesday. One pot covers three lunches without a single decision required. When you want something that tastes like takeout instead of a farmhouse, the [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) melts red lentils into coconut broth and asks almost nothing of you.
+[Split pea soup](/split-pea-soup-recipe-high-fiber/) is the obvious opener, since split peas are the best edible-as-is value in the entire store. I make a pot most Sundays, partly because it's good and partly because it costs about a dollar and feeds me until Wednesday. One pot covers three lunches without a single decision required. Both that soup and the [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) have a servings control above the ingredient list, so you can scale the batch before discovering halfway through that your pot has become a studio apartment for lentils.
 
 Beans are where the budget gets especially lopsided. The [canned versus dry bean comparison](/canned-vs-dry-beans-cost/) puts an exact price on skipping the soak, and the [beans protein-and-fiber ranking](/beans-double-win-fiber-protein/) shows why even the convenient can still pulls more than one shift.
 

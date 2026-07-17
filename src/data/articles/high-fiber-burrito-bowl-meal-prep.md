@@ -10,7 +10,7 @@ tags:
 image: "/images/high-fiber-burrito-bowl-meal-prep-main.jpg"
 imageAlt: "Four glass meal prep containers filled with quinoa black beans corn and salsa"
 date: 2026-04-08
-dateModified: 2026-07-16
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -76,9 +76,9 @@ Don't overcook them. Leave a little bit of crunch. They will soften a bit more a
 
 ## The budget advantage
 
-One of the best things about this meal prep is the cost. Buying a burrito bowl near your office probably runs you twelve to fifteen bucks these days. This entire batch, which makes four generous lunches, costs roughly the same as a single takeout bowl.
+One of the best things about this meal prep is the cost. Buying a burrito bowl near your office probably runs you twelve to fifteen bucks these days. This entire batch, which makes four generous lunches, costs roughly the same as a single takeout bowl. Feeding two people instead of four? Change the servings above the ingredient list before you shop. The quinoa, beans, and everything else scale with the number instead of expecting you to do fraction homework beside the produce aisle.
 
-Black beans, frozen corn, and quinoa are some of the cheapest staples you can keep in your pantry. By prepping this yourself, you're saving serious cash while controlling exactly how much sodium and oil goes into your food.
+Black beans, frozen corn, and quinoa all scored as practical pantry staples in our grocery research. The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) lets you compare those ingredients with alternatives from the audited datasets, while the [weekly food-cost planner](/tools/grocery-budget-calculator/) shows where a batch like this fits beside the rest of the week.
 
 ## How to handle the fresh stuff
 

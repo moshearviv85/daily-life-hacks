@@ -68,7 +68,13 @@ test("calculator formulas and interaction hooks remain present", async () => {
   const recipe = await readFile(path.join(root, pages[1]), "utf8");
   const budget = await readFile(path.join(root, pages[2]), "utf8");
 
-  assert.match(unit, /package price ÷ package quantity/);
+  assert.match(unit, /Is This a Good Price\?/);
+  assert.match(unit, /fiber-per-dollar-2026\.csv/);
+  assert.match(unit, /protein-per-dollar-2026\.csv/);
+  assert.match(unit, /currentPer100=price\/\(grams\/100\)/);
+  assert.match(unit, /fiberBaseline\*parseFloat\(food\.fiber\.price_per_100g_usd\)\/currentPer100/);
+  assert.match(unit, /proteinBaseline\*parseFloat\(food\.protein\.price_per_100g_usd\)\/currentPer100/);
+  assert.match(unit, /Compare two packages directly/);
   assert.match(unit, /a\.price\/\(a\.size\*a\.meta\.factor\)/);
   assert.match(recipe, /amount used ÷ package amount/);
   assert.match(recipe, /\(used\*u\.factor\)\/\(pack\*p\.factor\)\*price/);

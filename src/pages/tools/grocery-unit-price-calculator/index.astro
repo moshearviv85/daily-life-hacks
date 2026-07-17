@@ -3,15 +3,15 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 
-const title = "Grocery Unit Price Calculator: Compare Any Two Packages";
+const title = "Is This a Good Grocery Price? Compare With Our 2026 Data";
 const description =
-  "Compare grocery package prices across ounces, pounds, grams, liters, or count. See the cheaper buy and savings before checkout.";
+  "Pick a food, enter one shelf price, and compare it with our audited July 2026 baseline, including fiber or protein per dollar.";
 
 const schemas = [
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Grocery Unit Price Calculator",
+    name: "Is This a Good Price? Grocery Benchmark",
     url: "https://www.daily-life-hacks.com/tools/grocery-unit-price-calculator/",
     description,
     applicationCategory: "FinanceApplication",
@@ -29,11 +29,11 @@ const schemas = [
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
-      ["How do I calculate unit price?", "Divide price by quantity after converting both packages to the same unit. The tool handles the conversion for you."],
-      ["Can I compare ounces with pounds?", "Yes. One pound equals 16 ounces, so both packages are compared in ounces."],
-      ["Can I compare grams with ounces?", "Yes. The calculator converts both to a common weight unit before it picks a winner."],
-      ["Does a lower unit price always mean a better buy?", "No. Spoilage, storage, and whether you'll actually use the product still count. Your pantry isn't a warehouse, despite what the bulk aisle suggests."],
-      ["Where do the formulas come from?", "The arithmetic is standard price-per-unit division. Read our methodology for how we handle price comparisons in published studies."],
+      ["How does the grocery price benchmark work?", "Choose a food and enter its current package price and weight. The tool compares your price per 100 grams with our audited July 2026 baseline."],
+      ["Where do the benchmark prices come from?", "They come from the 53-food fiber study and 49-food protein study published by Daily Life Hacks in July 2026, using documented Walmart and BLS price sources."],
+      ["What does fiber or protein per dollar mean?", "It estimates how many grams of the selected nutrient one dollar buys at your entered price, using the same food data and edible-yield assumptions as our studies."],
+      ["Does a good price mean I should buy the biggest package?", "No. A low unit price loses its charm if half the package goes stale behind three jars of mustard."],
+      ["Can I still compare two packages directly?", "Yes. Open the two-package comparison below the benchmark to compare weight, volume, or count units."],
     ].map(([name, text]) => ({
       "@type": "Question",
       name,
@@ -48,132 +48,142 @@ const schemas = [
   <main class="max-w-5xl mx-auto px-4 py-10 md:py-16">
     <nav class="text-sm mb-5" aria-label="Breadcrumb">
       <a href="/tools/" class="underline" style="color:#F29B30;">Tools</a>
-      <span aria-hidden="true" style="color:var(--muted-color);"> / Unit price calculator</span>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Grocery price benchmark</span>
     </nav>
 
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">Built from 102 audited food-price rows</p>
     <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
-      Grocery Unit Price Calculator
+      Is This a Good Price?
     </h1>
     <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">
-      The bigger box isn't automatically the bargain. Sometimes it's just a larger cardboard monument to bad math. Enter two prices and package sizes, and this calculator tells you which one actually costs less per unit.
+      Pick the food, type the price on the shelf, and enter the package weight. We'll compare it with our July 2026 research and show what your dollar buys. One package. Three fields. No spreadsheet cosplay in aisle seven.
     </p>
 
-    <section id="unit-price-app" class="rounded-2xl p-5 md:p-7 mb-10" style="background:var(--card-bg);border:1px solid var(--border-color);">
-      <div class="grid md:grid-cols-2 gap-5">
-        {['a', 'b'].map((key, index) => (
-          <fieldset class="rounded-xl p-4 md:p-5" style="background:var(--page-bg);border:1px solid var(--border-color);">
-            <legend class="px-2 font-bold text-lg" style="color:var(--heading-color);">Package {index + 1}</legend>
-            <label class="tool-label">
-              Product name
-              <input class="tool-input" id={`up-name-${key}`} type="text" value={index === 0 ? "Store-brand oats" : "Name-brand oats"} autocomplete="off" />
-            </label>
-            <div class="grid grid-cols-2 gap-3 mt-4">
-              <label class="tool-label">
-                Package price
-                <span class="input-prefix"><span aria-hidden="true">$</span><input class="tool-input pl-7" id={`up-price-${key}`} type="number" min="0" step="0.01" inputmode="decimal" value={index === 0 ? "4.79" : "3.49"} /></span>
-              </label>
-              <label class="tool-label">
-                Package size
-                <input class="tool-input" id={`up-size-${key}`} type="number" min="0" step="0.01" inputmode="decimal" value={index === 0 ? "32" : "20"} />
-              </label>
-            </div>
-            <label class="tool-label mt-4">
-              Size unit
-              <select class="tool-input" id={`up-unit-${key}`}>
-                <optgroup label="Weight">
-                  <option value="oz" selected>ounces (oz)</option>
-                  <option value="lb">pounds (lb)</option>
-                  <option value="g">grams (g)</option>
-                  <option value="kg">kilograms (kg)</option>
-                </optgroup>
-                <optgroup label="Volume">
-                  <option value="floz">fluid ounces (fl oz)</option>
-                  <option value="cup">cups</option>
-                  <option value="pint">pints</option>
-                  <option value="quart">quarts</option>
-                  <option value="gallon">gallons</option>
-                  <option value="ml">milliliters (mL)</option>
-                  <option value="liter">liters (L)</option>
-                </optgroup>
-                <optgroup label="Count">
-                  <option value="each">items / count</option>
-                </optgroup>
-              </select>
-            </label>
-          </fieldset>
-        ))}
+    <section id="price-benchmark-app" class="rounded-2xl p-5 md:p-7 mb-10" style="background:var(--card-bg);border:1px solid var(--border-color);">
+      <div id="benchmark-loading" class="rounded-xl p-4" style="background:rgba(242,155,48,.10);color:var(--text-color);">
+        Loading the audited food-price tables...
       </div>
+      <div id="benchmark-fields" class="hidden">
+        <div class="grid md:grid-cols-3 gap-4 items-end">
+          <label class="tool-label md:col-span-3">
+            Food to check
+            <select class="tool-input" id="benchmark-food"></select>
+          </label>
+          <label class="tool-label">
+            Shelf price
+            <span class="input-prefix"><span aria-hidden="true">$</span><input class="tool-input pl-7" id="benchmark-price" type="number" min="0.01" step="0.01" inputmode="decimal" value="4.25" /></span>
+          </label>
+          <label class="tool-label">
+            Package weight
+            <input class="tool-input" id="benchmark-weight" type="number" min="0.01" step="0.01" inputmode="decimal" value="42" />
+          </label>
+          <label class="tool-label">
+            Weight unit
+            <select class="tool-input" id="benchmark-unit">
+              <option value="oz" selected>ounces (oz)</option>
+              <option value="lb">pounds (lb)</option>
+              <option value="g">grams (g)</option>
+              <option value="kg">kilograms (kg)</option>
+            </select>
+          </label>
+        </div>
 
-      <div id="up-error" class="hidden rounded-xl p-4 mt-5 text-sm" role="alert" style="background:#fff4e5;color:#7a4300;border:1px solid #F29B30;"></div>
-      <div id="up-result" class="rounded-xl p-5 mt-5" aria-live="polite" style="background:rgba(242,155,48,.10);border:2px solid #F29B30;">
-        <p class="text-sm font-bold uppercase tracking-wider mb-2" style="color:#a85e00;">The cheaper buy</p>
-        <p id="up-verdict" class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);"></p>
-        <div id="up-breakdown" class="grid sm:grid-cols-2 gap-3"></div>
-        <p id="up-savings" class="mt-4 text-sm" style="color:var(--text-color);"></p>
+        <div id="benchmark-error" class="hidden rounded-xl p-4 mt-5 text-sm" role="alert" style="background:#fff4e5;color:#7a4300;border:1px solid #F29B30;"></div>
+        <div id="benchmark-result" class="rounded-xl p-5 mt-5" aria-live="polite" style="background:rgba(242,155,48,.10);border:2px solid #F29B30;">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+            <p id="benchmark-label" class="text-sm font-bold uppercase tracking-wider" style="color:#a85e00;"></p>
+            <span id="benchmark-rank" class="rounded-full px-3 py-1 text-xs font-bold" style="background:var(--card-bg);color:var(--text-color);border:1px solid var(--border-color);"></span>
+          </div>
+          <p id="benchmark-verdict" class="text-2xl md:text-3xl font-bold mb-2" style="color:var(--heading-color);"></p>
+          <p id="benchmark-explanation" class="mb-5" style="color:var(--text-color);"></p>
+          <div id="benchmark-cards" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+          <p id="benchmark-source" class="mt-4 text-xs" style="color:var(--muted-color);"></p>
+        </div>
       </div>
-
-      <button id="up-reset" type="button" class="mt-5 rounded-xl px-5 py-2.5 font-semibold" style="border:1px solid var(--border-color);color:var(--text-color);">Reset example</button>
-      <p class="mt-4 text-xs" style="color:var(--muted-color);">Your prices stay in this browser tab. Nothing is saved or sent to us.</p>
+      <p class="mt-4 text-xs" style="color:var(--muted-color);">Prices stay in this browser tab. Nothing you enter is saved or sent to us. Benchmarks are a July 2026 snapshot, not a promise that every store got the memo.</p>
     </section>
 
+    <details class="rounded-2xl p-5 md:p-7 mb-10" style="background:var(--card-bg);border:1px solid var(--border-color);">
+      <summary class="cursor-pointer text-xl font-bold" style="color:var(--heading-color);">Compare two packages directly</summary>
+      <p class="mt-3 mb-5" style="color:var(--text-color);">Use this when the shelf gives you two sizes of the same product and expects you to conduct a tiny procurement meeting beside the cereal.</p>
+      <section id="unit-price-app">
+        <div class="grid md:grid-cols-2 gap-5">
+          {['a', 'b'].map((key, index) => (
+            <fieldset class="rounded-xl p-4 md:p-5" style="background:var(--page-bg);border:1px solid var(--border-color);">
+              <legend class="px-2 font-bold text-lg" style="color:var(--heading-color);">Package {index + 1}</legend>
+              <label class="tool-label">Product name<input class="tool-input" id={`up-name-${key}`} type="text" value={index === 0 ? "Store-brand oats" : "Name-brand oats"} autocomplete="off" /></label>
+              <div class="grid grid-cols-2 gap-3 mt-4">
+                <label class="tool-label">Package price<span class="input-prefix"><span aria-hidden="true">$</span><input class="tool-input pl-7" id={`up-price-${key}`} type="number" min="0" step="0.01" inputmode="decimal" value={index === 0 ? "4.79" : "3.49"} /></span></label>
+                <label class="tool-label">Package size<input class="tool-input" id={`up-size-${key}`} type="number" min="0" step="0.01" inputmode="decimal" value={index === 0 ? "32" : "20"} /></label>
+              </div>
+              <label class="tool-label mt-4">Size unit<select class="tool-input" id={`up-unit-${key}`}>
+                <optgroup label="Weight"><option value="oz" selected>ounces (oz)</option><option value="lb">pounds (lb)</option><option value="g">grams (g)</option><option value="kg">kilograms (kg)</option></optgroup>
+                <optgroup label="Volume"><option value="floz">fluid ounces (fl oz)</option><option value="cup">cups</option><option value="pint">pints</option><option value="quart">quarts</option><option value="gallon">gallons</option><option value="ml">milliliters (mL)</option><option value="liter">liters (L)</option></optgroup>
+                <optgroup label="Count"><option value="each">items / count</option></optgroup>
+              </select></label>
+            </fieldset>
+          ))}
+        </div>
+        <div id="up-error" class="hidden rounded-xl p-4 mt-5 text-sm" role="alert" style="background:#fff4e5;color:#7a4300;border:1px solid #F29B30;"></div>
+        <div id="up-result" class="rounded-xl p-5 mt-5" aria-live="polite" style="background:rgba(242,155,48,.10);border:2px solid #F29B30;">
+          <p class="text-sm font-bold uppercase tracking-wider mb-2" style="color:#a85e00;">The cheaper buy</p>
+          <p id="up-verdict" class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);"></p>
+          <div id="up-breakdown" class="grid sm:grid-cols-2 gap-3"></div>
+          <p id="up-savings" class="mt-4 text-sm" style="color:var(--text-color);"></p>
+        </div>
+        <button id="up-reset" type="button" class="mt-5 rounded-xl px-5 py-2.5 font-semibold" style="border:1px solid var(--border-color);color:var(--text-color);">Reset example</button>
+      </section>
+    </details>
+
     <article class="prose-like max-w-3xl">
-      <h2>How do you calculate unit price at the grocery store?</h2>
-      <p>Divide the package price by the amount in the package. A $4.79 box with 32 ounces costs about 15 cents per ounce. A $3.49 box with 20 ounces costs about 17 cents per ounce. The second sticker price looks friendlier. The first box is the cheaper food.</p>
-      <div class="formula" aria-label="Unit price formula">unit price = package price ÷ package quantity</div>
+      <h2>How can you tell if a grocery price is actually good?</h2>
+      <p>A sale sticker can't answer that. Compare the price for the same amount of food, then check what one dollar buys. This tool uses the price-per-100-gram baselines from our <a href="/fiber-per-dollar-cheapest-high-fiber-foods/">53-food fiber study</a> and <a href="/protein-per-dollar-cheapest-protein-sources/">49-food protein study</a>. If your oats cost 25% more per 100 grams than our audited oats, the yellow tag is mostly theater.</p>
 
-      <h2>Can you compare ounces, pounds, grams, and liters?</h2>
-      <p>Yes, as long as both packages measure the same kind of thing. The tool converts weight to ounces, liquid volume to fluid ounces, and count to individual items. It won't compare a 12-ounce jar with a six-count box because that would be math wearing a fake mustache.</p>
+      <h2>What do the July 2026 grocery benchmarks include?</h2>
+      <p>The research covers dried beans, grains, canned foods, produce, dairy, meat, fish, and other common groceries. We recorded package price, package weight, edible yield where it mattered, and nutrient data. You can see every assumption in our <a href="/methodology/">methodology</a>. Prices move by store and ZIP code, so treat the result as a useful reference point, not a stone tablet from Walmart.</p>
 
-      <h2>When is the larger package not the better deal?</h2>
-      <p>A lower unit price only matters if you use the food. If half the giant bag goes stale, the savings went stale with it. Check storage space, realistic serving size, and how quickly your household finishes the product. For more practical grocery decisions, start with our <a href="/eat-healthy-on-a-budget-complete-playbook/">healthy eating on a budget playbook</a> and <a href="/how-to-make-grocery-shopping-cheaper/">grocery shopping guide</a>.</p>
-
-      <h2>What should you compare besides unit price?</h2>
-      <p>Compare the actual product, not just the container. Drained weight matters for canned food. Concentrated products may use smaller servings. A food you won't eat has an impressively bad return at every price. When nutrition value is part of the decision, our <a href="/tools/fiber-per-dollar-calculator/">fiber per dollar calculator</a> compares what the money buys, not just how much the package weighs.</p>
+      <h2>Why compare fiber and protein per dollar?</h2>
+      <p>Two foods can have similar sticker prices and buy very different amounts of food value. The nutrient-per-dollar card translates your current price using the same food data as the original study. It doesn't declare one food morally superior to another. It just shows the arithmetic, which is already doing enough judging.</p>
 
       <h2>Frequently asked questions</h2>
       <div class="faq-list">
-        <details><summary>How do I calculate unit price?</summary><p>Divide price by quantity after converting both packages to the same unit. The tool handles the conversion for you.</p></details>
-        <details><summary>Can I compare ounces with pounds?</summary><p>Yes. One pound equals 16 ounces, so both packages are compared in ounces.</p></details>
-        <details><summary>Can I compare grams with ounces?</summary><p>Yes. The calculator converts both to a common weight unit before it picks a winner.</p></details>
-        <details><summary>Does a lower unit price always mean a better buy?</summary><p>No. Spoilage, storage, and whether you'll actually use the product still count. Your pantry isn't a warehouse, despite what the bulk aisle suggests.</p></details>
-        <details><summary>Where do the formulas come from?</summary><p>The arithmetic is standard price-per-unit division. Read our <a href="/methodology/">methodology</a> for how we handle price comparisons in published studies.</p></details>
+        <details><summary>How does the grocery price benchmark work?</summary><p>Choose a food and enter its current package price and weight. The tool compares your price per 100 grams with our audited July 2026 baseline.</p></details>
+        <details><summary>Where do the benchmark prices come from?</summary><p>They come from the 53-food fiber study and 49-food protein study published by Daily Life Hacks in July 2026, using documented Walmart and BLS price sources.</p></details>
+        <details><summary>What does fiber or protein per dollar mean?</summary><p>It estimates how many grams of the selected nutrient one dollar buys at your entered price, using the same food data and edible-yield assumptions as our studies.</p></details>
+        <details><summary>Does a good price mean I should buy the biggest package?</summary><p>No. A low unit price loses its charm if half the package goes stale behind three jars of mustard.</p></details>
+        <details><summary>Can I still compare two packages directly?</summary><p>Yes. Open the two-package comparison below the benchmark to compare weight, volume, or count units.</p></details>
       </div>
     </article>
   </main>
   <Footer />
 
   <style>
-    .tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:600;color:var(--text-color)}
-    .tool-input{width:100%;border-radius:.75rem;padding:.65rem .75rem;background:var(--card-bg);border:1px solid var(--border-color);color:var(--text-color);outline:none}
-    .tool-input:focus{box-shadow:0 0 0 2px #F29B30}
+    .hidden{display:none!important}.tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:600;color:var(--text-color)}
+    .tool-input{width:100%;border-radius:.75rem;padding:.65rem .75rem;background:var(--card-bg);border:1px solid var(--border-color);color:var(--text-color);outline:none}.tool-input:focus{box-shadow:0 0 0 2px #F29B30}
     .input-prefix{position:relative;display:block}.input-prefix>span{position:absolute;left:.75rem;top:.65rem;color:var(--muted-color)}.input-prefix .tool-input{padding-left:1.75rem}
-    .prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:700;margin:2.25rem 0 .7rem;color:var(--heading-color)}
-    .prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}
-    .prose-like a{color:#F29B30;text-decoration:underline;font-weight:600}
-    .formula{margin:1.25rem 0;padding:1rem 1.25rem;border-radius:.75rem;background:var(--card-bg);border-left:4px solid #F29B30;font-weight:700;color:var(--heading-color)}
+    .metric-card{border-radius:.75rem;padding:.9rem;background:var(--card-bg);border:1px solid var(--border-color)}.metric-label{display:block;font-size:.75rem;color:var(--muted-color);margin-bottom:.2rem}.metric-value{display:block;font-size:1.3rem;font-weight:800;color:var(--heading-color)}.metric-note{display:block;font-size:.75rem;color:var(--muted-color);margin-top:.2rem}
+    .prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:700;margin:2.25rem 0 .7rem;color:var(--heading-color)}.prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}.prose-like a{color:#F29B30;text-decoration:underline;font-weight:600}
     .faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}.faq-list summary{cursor:pointer;font-weight:700;padding:1rem 0;color:var(--heading-color)}.faq-list p{margin:0 0 1rem}
   </style>
 
   <script is:inline>
     (function(){
+      var DATA_URLS=['/data/fiber-per-dollar-2026.csv','/data/protein-per-dollar-2026.csv'];
+      var weightFactors={oz:28.349523125,lb:453.59237,g:1,kg:1000};
+      function parseCsv(text){var rows=[],row=[],cell='',quoted=false;for(var i=0;i<text.length;i++){var c=text[i],next=text[i+1];if(c==='"'&&quoted&&next==='"'){cell+='"';i++;}else if(c==='"'){quoted=!quoted;}else if(c===','&&!quoted){row.push(cell);cell='';}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&next==='\n')i++;row.push(cell);if(row.some(function(x){return x!==''}))rows.push(row);row=[];cell='';}else{cell+=c;}}if(cell||row.length){row.push(cell);rows.push(row);}var headers=rows.shift()||[];return rows.map(function(values){var item={};headers.forEach(function(header,index){item[header]=values[index]||'';});return item;});}
+      function escapeHtml(value){return String(value).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+      function money(n){return '$'+n.toFixed(n<1?3:2)}
+      function metric(label,value,note){return '<div class="metric-card"><span class="metric-label">'+escapeHtml(label)+'</span><span class="metric-value">'+escapeHtml(value)+'</span><span class="metric-note">'+escapeHtml(note)+'</span></div>'}
+      function mergeRows(fiberRows,proteinRows){var foods={};fiberRows.forEach(function(row){foods[row.food]=foods[row.food]||{food:row.food};foods[row.food].fiber=row;});proteinRows.forEach(function(row){foods[row.food]=foods[row.food]||{food:row.food};foods[row.food].protein=row;});return Object.keys(foods).sort().map(function(key){return foods[key];});}
+      function preferredRow(food){return food.fiber||food.protein}
+      function renderBenchmark(root,foods){var select=root.querySelector('#benchmark-food'),food=foods[Number(select.value)],price=parseFloat(root.querySelector('#benchmark-price').value),weight=parseFloat(root.querySelector('#benchmark-weight').value),unit=root.querySelector('#benchmark-unit').value,error=root.querySelector('#benchmark-error'),result=root.querySelector('#benchmark-result');error.classList.add('hidden');result.classList.add('hidden');if(!food||!isFinite(price)||!isFinite(weight)||price<=0||weight<=0){error.textContent='Enter a package price and weight greater than zero.';error.classList.remove('hidden');return;}var row=preferredRow(food),grams=weight*weightFactors[unit],currentPer100=price/(grams/100),baseline=parseFloat(row.price_per_100g_usd),difference=(currentPer100-baseline)/baseline*100,abs=Math.abs(difference),label,verdict,explanation;if(difference<=-10){label='Good price';verdict=food.food+' is '+abs.toFixed(0)+'% below our benchmark.';explanation='That is a genuinely better price than the July 2026 package we audited. The sale sticker may keep its job.';}else if(difference<10){label='Fair price';verdict=food.food+' is close to our benchmark.';explanation='Your price is within 10% of our July 2026 baseline. No parade, no robbery. It is a normal buy.';}else if(difference<30){label='Pricey';verdict=food.food+' is '+abs.toFixed(0)+'% above our benchmark.';explanation='You may find a better price by checking another size, store brand, or nearby store.';}else{label='Very expensive';verdict=food.food+' is '+abs.toFixed(0)+'% above our benchmark.';explanation='That is a large gap. Unless convenience is the point, this package is asking your grocery budget to do unnecessary cardio.';}root.querySelector('#benchmark-label').textContent=label;root.querySelector('#benchmark-verdict').textContent=verdict;root.querySelector('#benchmark-explanation').textContent=explanation;var cards=[metric('Your price',money(currentPer100)+' / 100g',money(price)+' for '+weight+' '+unit),metric('July 2026 baseline',money(baseline)+' / 100g',row.package+' for $'+Number(row.package_price_usd).toFixed(2))];if(food.fiber){var fiberBaseline=parseFloat(food.fiber.fiber_g_per_dollar),fiberNow=fiberBaseline*parseFloat(food.fiber.price_per_100g_usd)/currentPer100;cards.push(metric('Fiber at your price',fiberNow.toFixed(1)+'g / $1',fiberBaseline.toFixed(1)+'g / $1 in our study'));}if(food.protein){var proteinBaseline=parseFloat(food.protein.protein_g_per_dollar),proteinNow=proteinBaseline*parseFloat(food.protein.price_per_100g_usd)/currentPer100;cards.push(metric('Protein at your price',proteinNow.toFixed(1)+'g / $1',proteinBaseline.toFixed(1)+'g / $1 in our study'));}root.querySelector('#benchmark-cards').innerHTML=cards.join('');var ranks=[];if(food.fiber)ranks.push('#'+food.fiber.rank+' of 53 for fiber value');if(food.protein)ranks.push('#'+food.protein.rank+' of 49 for protein value');root.querySelector('#benchmark-rank').textContent=ranks.join(' | ');root.querySelector('#benchmark-source').textContent='Baseline source: '+row.price_basis+'. Same edible-yield assumptions as the published study.';result.classList.remove('hidden');}
+      function bootBenchmark(){var root=document.getElementById('price-benchmark-app');if(!root||root.dataset.booted)return;root.dataset.booted='1';Promise.all(DATA_URLS.map(function(url){return fetch(url).then(function(response){if(!response.ok)throw new Error('Could not load '+url);return response.text();}).then(parseCsv);})).then(function(tables){var foods=mergeRows(tables[0],tables[1]),select=root.querySelector('#benchmark-food');select.innerHTML=foods.map(function(food,index){var studies=food.fiber&&food.protein?'fiber + protein':food.fiber?'fiber':'protein';return '<option value="'+index+'"'+(food.food==='Old-fashioned rolled oats'?' selected':'')+'>'+escapeHtml(food.food)+' ('+studies+')</option>';}).join('');root.querySelector('#benchmark-loading').classList.add('hidden');root.querySelector('#benchmark-fields').classList.remove('hidden');root.addEventListener('input',function(){renderBenchmark(root,foods)});root.addEventListener('change',function(){renderBenchmark(root,foods)});renderBenchmark(root,foods);}).catch(function(){root.querySelector('#benchmark-loading').textContent='The benchmark tables could not load. Try refreshing the page.';});}
       var units={oz:{kind:'weight',factor:1,label:'oz'},lb:{kind:'weight',factor:16,label:'oz'},g:{kind:'weight',factor:0.0352739619,label:'oz'},kg:{kind:'weight',factor:35.2739619,label:'oz'},floz:{kind:'volume',factor:1,label:'fl oz'},cup:{kind:'volume',factor:8,label:'fl oz'},pint:{kind:'volume',factor:16,label:'fl oz'},quart:{kind:'volume',factor:32,label:'fl oz'},gallon:{kind:'volume',factor:128,label:'fl oz'},ml:{kind:'volume',factor:0.0338140227,label:'fl oz'},liter:{kind:'volume',factor:33.8140227,label:'fl oz'},each:{kind:'count',factor:1,label:'item'}};
       var defaults={a:{name:'Store-brand oats',price:4.79,size:32,unit:'oz'},b:{name:'Name-brand oats',price:3.49,size:20,unit:'oz'}};
-      function money(n){return '$'+n.toFixed(n<1?3:2)}
       function read(root,key){var unit=root.querySelector('#up-unit-'+key).value;return{name:root.querySelector('#up-name-'+key).value.trim()||'Package '+(key==='a'?'1':'2'),price:parseFloat(root.querySelector('#up-price-'+key).value),size:parseFloat(root.querySelector('#up-size-'+key).value),unit:unit,meta:units[unit]}}
-      function render(root){
-        var a=read(root,'a'),b=read(root,'b'),error=root.querySelector('#up-error'),result=root.querySelector('#up-result');
-        error.classList.add('hidden');result.classList.add('hidden');
-        if(!isFinite(a.price)||!isFinite(b.price)||!isFinite(a.size)||!isFinite(b.size)||a.price<0||b.price<0||a.size<=0||b.size<=0){error.textContent='Enter a price of zero or more and a package size greater than zero for both products.';error.classList.remove('hidden');return}
-        if(a.meta.kind!==b.meta.kind){error.textContent="These packages use different kinds of units. Compare weight with weight, volume with volume, or count with count.";error.classList.remove('hidden');return}
-        var ap=a.price/(a.size*a.meta.factor),bp=b.price/(b.size*b.meta.factor),winner=ap<=bp?a:b,low=Math.min(ap,bp),high=Math.max(ap,bp),pct=high>0?(high-low)/high*100:0;
-        root.querySelector('#up-verdict').textContent=Math.abs(ap-bp)<0.0000001?"It's a tie. The shelf tags may now stand down.":winner.name+' is cheaper per '+a.meta.label+'.';
-        root.querySelector('#up-breakdown').innerHTML=[{x:a,p:ap},{x:b,p:bp}].map(function(item){return '<div class="rounded-lg p-3" style="background:var(--card-bg);border:1px solid var(--border-color);"><strong style="color:var(--heading-color);">'+escapeHtml(item.x.name)+'</strong><br><span style="color:#F29B30;font-size:1.35rem;font-weight:800;">'+money(item.p)+'</span> <span style="color:var(--muted-color);">per '+a.meta.label+'</span></div>'}).join('');
-        root.querySelector('#up-savings').textContent=pct<0.01?'Both packages have the same unit price. Pick the size you can actually use.':winner.name+' costs '+pct.toFixed(1)+'% less per '+a.meta.label+'. On $20 worth at the higher rate, that difference is about '+money(20*pct/100)+'.';
-        result.classList.remove('hidden');
-      }
-      function escapeHtml(value){return String(value).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-      function boot(){var root=document.getElementById('unit-price-app');if(!root||root.dataset.booted)return;root.dataset.booted='1';root.addEventListener('input',function(){render(root)});root.addEventListener('change',function(){render(root)});root.querySelector('#up-reset').addEventListener('click',function(){['a','b'].forEach(function(k){var d=defaults[k];root.querySelector('#up-name-'+k).value=d.name;root.querySelector('#up-price-'+k).value=d.price;root.querySelector('#up-size-'+k).value=d.size;root.querySelector('#up-unit-'+k).value=d.unit});render(root)});render(root)}
-      boot();document.addEventListener('astro:page-load',boot);
+      function renderPackages(root){var a=read(root,'a'),b=read(root,'b'),error=root.querySelector('#up-error'),result=root.querySelector('#up-result');error.classList.add('hidden');result.classList.add('hidden');if(!isFinite(a.price)||!isFinite(b.price)||!isFinite(a.size)||!isFinite(b.size)||a.price<0||b.price<0||a.size<=0||b.size<=0){error.textContent='Enter a price of zero or more and a package size greater than zero for both products.';error.classList.remove('hidden');return}if(a.meta.kind!==b.meta.kind){error.textContent='These packages use different kinds of units. Compare weight with weight, volume with volume, or count with count.';error.classList.remove('hidden');return}var ap=a.price/(a.size*a.meta.factor),bp=b.price/(b.size*b.meta.factor),winner=ap<=bp?a:b,low=Math.min(ap,bp),high=Math.max(ap,bp),pct=high>0?(high-low)/high*100:0;root.querySelector('#up-verdict').textContent=Math.abs(ap-bp)<0.0000001?"It's a tie. The shelf tags may now stand down.":winner.name+' is cheaper per '+a.meta.label+'.';root.querySelector('#up-breakdown').innerHTML=[{x:a,p:ap},{x:b,p:bp}].map(function(item){return '<div class="rounded-lg p-3" style="background:var(--card-bg);border:1px solid var(--border-color);"><strong style="color:var(--heading-color);">'+escapeHtml(item.x.name)+'</strong><br><span style="color:#F29B30;font-size:1.35rem;font-weight:800;">'+money(item.p)+'</span> <span style="color:var(--muted-color);">per '+a.meta.label+'</span></div>'}).join('');root.querySelector('#up-savings').textContent=pct<0.01?'Both packages have the same unit price. Pick the size you can actually use.':winner.name+' costs '+pct.toFixed(1)+'% less per '+a.meta.label+'. On $20 worth at the higher rate, that difference is about '+money(20*pct/100)+'.';result.classList.remove('hidden');}
+      function bootPackages(){var root=document.getElementById('unit-price-app');if(!root||root.dataset.booted)return;root.dataset.booted='1';root.addEventListener('input',function(){renderPackages(root)});root.addEventListener('change',function(){renderPackages(root)});root.querySelector('#up-reset').addEventListener('click',function(){['a','b'].forEach(function(k){var d=defaults[k];root.querySelector('#up-name-'+k).value=d.name;root.querySelector('#up-price-'+k).value=d.price;root.querySelector('#up-size-'+k).value=d.size;root.querySelector('#up-unit-'+k).value=d.unit;});renderPackages(root);});renderPackages(root);}
+      function boot(){bootBenchmark();bootPackages();}boot();document.addEventListener('astro:page-load',boot);
     })();
   </script>
 </BaseLayout>

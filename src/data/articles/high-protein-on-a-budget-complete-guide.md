@@ -7,7 +7,7 @@ cluster: "budget-protein"
 image: "/images/high-protein-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry beans and lentils beside a carton of eggs, a whole chicken, canned fish, a block of tofu, and a tub of cottage cheese on a wooden table"
 date: 2026-07-08
-dateModified: 2026-07-16
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 faq:
@@ -76,7 +76,7 @@ Two things jump out of that table. First, the top is a dry goods landslide, just
 
 One benchmark worth keeping in your head while you read the rest: the [FDA's Daily Value for protein](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), the reference number on US nutrition labels, is 50 grams a day for a 2,000-calorie diet. That's a labeling fact, not personal advice, and [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/) is its own conversation. As a price yardstick, it means a dollar of pinto beans in this dataset carries almost twice that labeling benchmark.
 
-Want to run your own matchups? The [per-dollar calculator](/tools/fiber-per-dollar-calculator/) now has a protein toggle and will compare any two foods from the dataset for you. When two cartons or bags contain the same food in different sizes, the [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles that quieter checkout trap.
+Want to run your own matchups? The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) compares any two foods from the dataset and builds a weekly basket from the dollars you assign. When two cartons or bags contain the same food in different sizes, the [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles that quieter checkout trap.
 
 ## Beans and lentils: the champions nobody brags about
 
@@ -152,7 +152,7 @@ This basket is a skeleton, not a meal plan. Turning it into actual dinners is a 
 
 The basket can flex around the week you actually have. The [one-dollar protein breakdown](/one-dollar-protein-what-it-buys/) finds the raw buying power, the [no-cook protein ranking](/no-cook-protein-per-dollar/) handles weeks when the stove is decorative, and the [shelf-stable pantry ranking](/shelf-stable-pantry-per-dollar/) covers the groceries that won't punish you for changing plans.
 
-If this protein backbone is only one slice of the household cart, put it inside the [grocery budget calculator](/tools/grocery-budget-calculator/) before adding produce, breakfast, snacks, and the four things somebody remembered after you finished the list.
+If this protein backbone is only one slice of the household cart, compare it with the [weekly food-cost planner](/tools/grocery-budget-calculator/). It scales the five audited 50-gram days by people and days, then tells you exactly which food quantities produced the tracked subtotal. Produce, breakfast, snacks, and the four things somebody remembered after you finished the list still count.
 
 ![A practical weekly protein prep with roasted chicken drumsticks, lentils, eggs, peanut butter, whole wheat bread, and cottage cheese](/images/protein-budget-weekly-prep.jpg)
 

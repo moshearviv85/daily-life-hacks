@@ -6,7 +6,7 @@ tags: ["meal prep for beginners", "sunday meal prep", "batch cooking", "meal pla
 image: "/images/meal-prep-for-beginners-complete-system-main.jpg"
 imageAlt: "Glass meal prep containers filled with colorful prepped meals on a counter next to a rice pot and a sheet pan of roasted vegetables"
 date: 2026-07-07
-dateModified: 2026-07-16
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -106,7 +106,7 @@ This is where the money goes, so pick proteins that are cheap, reheat well, and 
 
 * **Turkey meatballs** are my top recommendation for beginners. They bake hands-off while you do other things, they reheat like champs, and the [healthy turkey meatball meal prep recipe](/healthy-turkey-meatballs-meal-prep/) makes enough for the whole week.
 * **Rotisserie chicken** is the legal cheat code. One [Costco rotisserie chicken stretches into multiple dinners](/costco-rotisserie-chicken-meal-ideas-dinner/), and shredding it takes ten minutes of the workflow instead of forty.
-* **Work lunches** deserve their own strategy, because office lighting is where sad prep goes to die. The [high-protein work lunch guide](/how-to-prep-high-protein-lunches-work/) covers combinations that hold up until noon, while the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) gives you one complete batch to copy before you start improvising.
+* **Work lunches** deserve their own strategy, because office lighting is where sad prep goes to die. The [high-protein work lunch guide](/how-to-prep-high-protein-lunches-work/) covers combinations that hold up until noon, while the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) gives you one complete batch to copy before you start improvising. Change the servings above its ingredient list and the amounts scale with you, whether you're feeding one person or the office refrigerator.
 * **Shopping by the numbers:** When you're deciding which protein to buy, we ran the actual math. The [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) compares 49 grocery foods on cost, and the winners will probably surprise you. Dried beans embarrassed almost everything with a face.
 
 ### Grab-and-go
@@ -148,7 +148,7 @@ Those grocery figures use the source-and-price process documented on our [method
 
 The system compounds when you shop by cost-per-nutrient instead of vibes. We ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle ran away with it, which is convenient, because the dry goods aisle is also where the best prep bases live. If you want the full strategy, the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the shopping side, and the [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) goes deep on getting the most filling food for the fewest dollars. Meal prep is the execution layer for all of it: cheap ingredients only save money if they actually get cooked.
 
-Before you commit to a cart full of matching containers, run one normal week through the [grocery budget calculator](/tools/grocery-budget-calculator/). Then put the ingredients from one reliable dinner into the [recipe cost calculator](/tools/recipe-cost-calculator/). That gives you a real cost per serving instead of the deeply scientific method of staring at a receipt and feeling vaguely betrayed.
+Before you commit to a cart full of matching containers, build one normal week in the [weekly food-cost planner](/tools/grocery-budget-calculator/). It uses the ten audited fiber and protein menus, scales them for your household, and hands back the food quantities and tracked cost. Then open one reliable recipe and change the serving count in its ingredient card. That's a usable prep list, not the deeply scientific method of staring at a receipt and feeling vaguely betrayed.
 
 ## How small should your first meal-prep session be?
 

@@ -6,7 +6,7 @@ tags: ["eat healthy on a budget", "budget meal planning", "cheap healthy food", 
 image: "/images/eat-healthy-on-a-budget-complete-playbook-main.jpg"
 imageAlt: "Paper grocery bag with vegetables, bags of dry beans, eggs, and bananas next to a receipt and pencil on a kitchen table"
 date: 2026-07-07
-dateModified: 2026-07-16
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -83,7 +83,7 @@ Start with a list built around the staples, not around cravings. Our [budget gro
 
 Then plan the week before you enter the store. [Planning a full week of dinners](/plan-week-of-dinners-fewer-grocery-runs/) cuts you down to one shopping trip, and fewer trips is the single most underrated money saver, because every "quick stop for milk" comes home with four other things. For the trip itself, [how to make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/) covers the store-level tactics: unit prices, store brands, and the shelf games worth knowing.
 
-Set the ceiling before you write the list. The [grocery budget calculator](/tools/grocery-budget-calculator/) turns a weekly or monthly number into a usable shopping target, so "spend less" becomes an actual amount instead of a small cloud of guilt following you through aisle seven.
+Before you write the list, run a real week through the [weekly food-cost planner](/tools/grocery-budget-calculator/). It scales the ten audited fiber and protein menus for your household, so you're starting with food quantities and a tracked subtotal instead of a small cloud of guilt following you through aisle seven.
 
 Three more moves that pay for themselves:
 
@@ -95,7 +95,7 @@ Three more moves that pay for themselves:
 
 Here's the honest catch with budget staples: a bag of dried beans is 22 cents per 100 grams and also completely inedible at 6 PM on a Tuesday. Cheap ingredients demand a system, because the whole reason takeout wins is that it's ready and your pintos aren't.
 
-The fix is cooking once and eating three times. [Batch cooking for beginners](/batch-cooking-for-beginners-weekly-guide/) is the full weekly method, and its big sibling, the [meal prep complete system](/meal-prep-for-beginners-complete-system/), turns it into a routine you can run on autopilot. The short version: one cooking session on the weekend produces a pot of beans, a batch of grains, and one big main, and suddenly weeknights are assembly instead of cooking. The [recipe cost calculator](/tools/recipe-cost-calculator/) then tells you whether that pot is a cheap lunch or a takeout-priced lunch wearing a homemade costume.
+The fix is cooking once and eating three times. [Batch cooking for beginners](/batch-cooking-for-beginners-weekly-guide/) is the full weekly method, and its big sibling, the [meal prep complete system](/meal-prep-for-beginners-complete-system/), turns it into a routine you can run on autopilot. The short version: one cooking session on the weekend produces a pot of beans, a batch of grains, and one big main, and suddenly weeknights are assembly instead of cooking. Open the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) or [turkey meatball meal prep](/healthy-turkey-meatballs-meal-prep/) and change the servings above the ingredient list before you shop. The amounts scale automatically, because multiplying eleven ingredients by 1.5 is not anyone's preferred Sunday hobby.
 
 For the beans specifically, [cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is easier than its reputation, and the [same-day quick soak](/how-to-quick-soak-dried-beans-same-day/) kills the "I forgot to soak them" excuse. A slow cooker makes the whole thing hands-off; these [cheap crockpot meals](/cheap-crockpot-meals-large-families/) are built around exactly the ingredients that topped our rankings.
 
