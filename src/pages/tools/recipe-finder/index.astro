@@ -1,0 +1,165 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { getCollection } from "astro:content";
+import { isReleased } from "../../../content/release";
+
+const title = "Recipe Finder by Ingredients: Use What You Have";
+const description = "Enter the ingredients you have and find published recipes ranked by overlap, with the missing groceries shown before you open the recipe.";
+
+const allArticles = await getCollection("articles");
+const recipes = allArticles
+  .filter((article: any) => isReleased(article))
+  .filter((article: any) => article.data.category === "recipes")
+  .filter((article: any) => article.data.ingredients?.length && article.data.servings)
+  .map((article: any) => ({
+    title: article.data.title,
+    url: `/${article.id}/`,
+    image: article.data.image,
+    imageAlt: article.data.imageAlt,
+    servings: article.data.servings,
+    ingredients: article.data.ingredients,
+  }))
+  .sort((a: any, b: any) => a.title.localeCompare(b.title));
+
+const suggestionCandidates = [
+  "beans", "bell pepper", "broccoli", "carrots", "cauliflower", "cheese", "chicken",
+  "chickpeas", "eggs", "garlic", "lentils", "oats", "onion", "pasta", "potatoes",
+  "rice", "salmon", "spinach", "tofu", "tomatoes", "tuna", "yogurt", "zucchini",
+];
+const searchableIngredients = recipes.flatMap((recipe: any) => recipe.ingredients).join(" ").toLowerCase();
+const suggestions = suggestionCandidates.filter((ingredient) => searchableIngredients.includes(ingredient.replace(/s$/, "")));
+
+const faqs = [
+  ["How does the recipe finder match my ingredients?", "It compares the ingredients you enter with every published recipe ingredient list, then ranks recipes by the number matched and the number still missing."],
+  ["Does the recipe finder include every recipe on the site?", `It currently searches ${recipes.length} published recipes that have complete ingredient lists and serving counts.`],
+  ["Do salt, oil, and spices hurt a recipe's ranking?", "No. Common pantry basics are shown separately, so a teaspoon of salt doesn't outrank the chicken you actually need to buy."],
+  ["Can I change the number of servings after finding a recipe?", "Yes. Open a result and use the serving control above its ingredient list. The listed quantities scale from the recipe's original serving count."],
+  ["Does the site save the ingredients I enter?", "No. Your ingredient list stays in this browser tab. Analytics records only that the finder was used, never the foods you typed."],
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Use What You Have Recipe Finder",
+    url: "https://www.daily-life-hacks.com/tools/recipe-finder/",
+    description,
+    applicationCategory: "LifestyleApplication",
+    operatingSystem: "Any",
+    browserRequirements: "Requires JavaScript",
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    publisher: { "@type": "Organization", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })),
+  },
+];
+
+const recipeJson = JSON.stringify(recipes).replace(/</g, "\\u003c");
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/tools/" class="underline" style="color:#F29B30;">Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Recipe finder</span>
+    </nav>
+
+    <header class="max-w-4xl mb-8">
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">{recipes.length} real recipes. Your slightly chaotic kitchen.</p>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Find a Recipe From What You Already Have</h1>
+      <p class="text-lg leading-relaxed" style="color:var(--text-color);">
+        Add the ingredients sitting in your fridge and pantry. We'll put the closest recipes first and show what you'd still need to buy. Because finding one decent dinner shouldn't require opening 14 tabs and pretending half an onion is a meal plan.
+      </p>
+    </header>
+
+    <section id="recipe-finder-app" class="finder-shell rounded-2xl p-5 md:p-7 mb-12" aria-labelledby="finder-heading">
+      <div class="max-w-3xl mb-5">
+        <h2 id="finder-heading" class="text-xl md:text-2xl font-bold mb-2" style="color:var(--heading-color);">What's in your kitchen?</h2>
+        <p class="text-sm" style="color:var(--muted-color);">Type an ingredient and press Enter, or tap a few common ones. Specific beats ambitious: “black beans” is more useful than “food.”</p>
+      </div>
+
+      <div class="ingredient-entry rounded-xl p-3 mb-4">
+        <div id="rf-selected" class="flex flex-wrap gap-2 mb-2" aria-live="polite"></div>
+        <label class="sr-only" for="rf-input">Add an ingredient</label>
+        <div class="flex gap-2">
+          <input id="rf-input" class="finder-input" type="text" autocomplete="off" placeholder="Try chicken, rice, or spinach" />
+          <button id="rf-add" class="primary-button" type="button">Add</button>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <p class="text-xs font-bold uppercase tracking-wide mb-2" style="color:var(--muted-color);">Quick picks</p>
+        <div class="flex flex-wrap gap-2">
+          {suggestions.map((ingredient) => <button type="button" class="suggestion" data-suggestion={ingredient}>{ingredient}</button>)}
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <p id="rf-summary" class="font-bold" style="color:var(--heading-color);">Add an ingredient to start matching.</p>
+        <button id="rf-clear" type="button" class="text-sm font-bold underline hidden" style="color:#F29B30;">Clear ingredients</button>
+      </div>
+
+      <div id="rf-results" class="grid md:grid-cols-2 xl:grid-cols-3 gap-4" aria-live="polite"></div>
+      <noscript><p class="empty-state">This finder needs JavaScript. You can still browse every adjustable recipe on the <a href="/recipes/">recipes page</a>.</p></noscript>
+    </section>
+
+    <article class="prose-like max-w-4xl">
+      <h2>How does the ingredient recipe finder decide what comes first?</h2>
+      <p>It checks the ingredient list attached to every published recipe. A recipe matching chicken, rice, and bell pepper ranks above one matching only rice. If two recipes match the same number, the one with fewer missing ingredients wins. Very democratic. Slightly biased against recipes that need the entire supermarket.</p>
+
+      <h2>What counts as a missing ingredient?</h2>
+      <p>Anything listed in the recipe that you haven't entered is missing. We split out common pantry basics such as salt, pepper, oil, water, and dried spices so they don't make a nearly complete dinner look impossible. Check your cupboards anyway. The cumin jar has a habit of being empty precisely when you feel confident.</p>
+
+      <h2>Can you adjust the recipes for more or fewer people?</h2>
+      <p>Yes. Each result shows its original serving count. Open the recipe and change the servings above the ingredient list. The quantities update before you shop, which beats dividing 1/3 cup by four while someone is asking when dinner will be ready.</p>
+
+      <h2>What if none of the recipes match?</h2>
+      <p>Try a broader name such as “beans” instead of a brand or “tomatoes” instead of “cherry tomatoes.” The matcher handles basic singular and plural forms, but it can't identify the unlabeled frozen block in the back of your freezer. Some mysteries belong to you.</p>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        {faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <script id="recipe-finder-data" type="application/json" set:html={recipeJson}></script>
+  <style>
+    .finder-shell{background:var(--card-bg);border:1px solid var(--border-color)}.ingredient-entry{background:var(--page-bg);border:1px solid var(--border-color)}.finder-input{flex:1;min-width:0;border:0;background:transparent;padding:.65rem;color:var(--heading-color);outline:none}.finder-input:focus{box-shadow:inset 0 -2px #F29B30}.primary-button{border-radius:.7rem;background:#F29B30;color:#fff;padding:.65rem 1rem;font-weight:800}.suggestion{border:1px solid var(--border-color);border-radius:999px;background:var(--page-bg);color:var(--text-color);padding:.45rem .75rem;font-size:.82rem;font-weight:700}.suggestion:hover,.suggestion[aria-pressed="true"]{border-color:#F29B30;color:#F29B30}.selected-chip{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;background:#F29B30;color:#fff;padding:.42rem .7rem;font-size:.82rem;font-weight:800}.selected-chip button{line-height:1;font-size:1rem}.recipe-result{overflow:hidden;border-radius:1rem;background:var(--page-bg);border:1px solid var(--border-color)}.recipe-result img{width:100%;height:165px;object-fit:cover}.recipe-body{padding:1rem}.match-bar{height:.4rem;border-radius:999px;background:var(--border-color);overflow:hidden}.match-bar span{display:block;height:100%;background:#F29B30}.ingredient-list{font-size:.8rem;line-height:1.45;color:var(--muted-color)}.empty-state{grid-column:1/-1;border-radius:1rem;padding:1.25rem;background:var(--page-bg);color:var(--muted-color);text-align:center}.empty-state a{color:#F29B30;text-decoration:underline;font-weight:700}.prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:800;margin:2.25rem 0 .7rem;color:var(--heading-color)}.prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}.faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}.faq-list summary{cursor:pointer;font-weight:800;padding:1rem 0;color:var(--heading-color)}.faq-list p{margin:0 0 1rem}
+  </style>
+
+  <script is:inline>
+    (function(){
+      var dataNode=document.getElementById('recipe-finder-data');
+      var root=document.getElementById('recipe-finder-app');
+      if(!dataNode||!root||root.dataset.booted)return;
+      root.dataset.booted='1';
+      var recipes=JSON.parse(dataNode.textContent||'[]'),selected=[],tracked=false;
+      var pantry=/\b(salt|pepper|water|oil|paprika|cumin|oregano|thyme|cinnamon|chili powder|garlic powder|onion powder|cooking spray|red pepper flakes|optional|garnish|for serving|to taste)\b/i;
+      function esc(value){return String(value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+      function clean(value){return String(value).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim()}
+      function stem(word){if(word.length>4&&/ies$/.test(word))return word.slice(0,-3)+'y';if(word.length>4&&/oes$/.test(word))return word.slice(0,-2);if(word.length>4&&/ses$/.test(word))return word.slice(0,-2);if(word.length>3&&/s$/.test(word)&&!/ss$/.test(word))return word.slice(0,-1);return word}
+      function tokens(value){return clean(value).split(' ').filter(Boolean).map(stem)}
+      function matches(line,item){var hay=tokens(line),need=tokens(item);return need.length>0&&need.every(function(token){return hay.indexOf(token)>-1})}
+      function shortIngredient(line){return String(line).replace(/^\s*[\d\s./-]+(?:cups?|tablespoons?|tbsp|teaspoons?|tsp|ounces?|oz|pounds?|lbs?|cloves?|cans?|packages?|medium|large|small)?\s*/i,'').replace(/\s*\([^)]*\)\s*/g,' ').replace(/^\s*(?:cans?|packages?)\s+/i,'').trim()}
+      function add(value){String(value).split(',').map(clean).forEach(function(item){if(item.length>1&&!selected.some(function(old){return clean(old)===item}))selected.push(item)});root.querySelector('#rf-input').value='';render();track()}
+      function track(){if(tracked)return;tracked=true;if(typeof window.gtag==='function')window.gtag('event','recipe_finder_used',{tool_name:'recipe_finder',interaction_type:'ingredient_added'})}
+      function score(recipe){var matched=selected.filter(function(item){return recipe.ingredients.some(function(line){return matches(line,item)})});var missing=recipe.ingredients.filter(function(line){return !selected.some(function(item){return matches(line,item)})});return {recipe:recipe,matched:matched,missing:missing,mainMissing:missing.filter(function(line){return !pantry.test(line)}),pantryMissing:missing.filter(function(line){return pantry.test(line)})}}
+      function renderCard(result){var recipe=result.recipe,matched=result.matched.length,coverage=Math.round(matched/Math.max(1,selected.length)*100),main=result.mainMissing.slice(0,5).map(shortIngredient),extra=Math.max(0,result.mainMissing.length-main.length);return '<article class="recipe-result"><img src="'+esc(recipe.image)+'" alt="'+esc(recipe.imageAlt)+'" loading="lazy" width="640" height="360"><div class="recipe-body"><div class="flex items-center justify-between gap-2 mb-2"><span class="text-xs font-bold uppercase tracking-wide" style="color:#F29B30;">'+matched+' of '+selected.length+' matched</span><span class="text-xs" style="color:var(--muted-color);">'+esc(recipe.servings)+' servings</span></div><div class="match-bar mb-3" aria-label="'+coverage+' percent of your ingredients matched"><span style="width:'+coverage+'%"></span></div><h3 class="text-lg font-bold leading-tight mb-3" style="color:var(--heading-color);"><a href="'+esc(recipe.url)+'">'+esc(recipe.title)+'</a></h3><p class="ingredient-list mb-2"><strong style="color:var(--heading-color);">You have:</strong> '+result.matched.map(esc).join(', ')+'</p><p class="ingredient-list mb-3"><strong style="color:var(--heading-color);">Still on the list:</strong> '+(main.length?main.map(esc).join(', ')+(extra?' + '+extra+' more':''):'only pantry basics')+(result.pantryMissing.length?' <span title="Salt, oil, water, or dried seasonings">('+result.pantryMissing.length+' pantry basic'+(result.pantryMissing.length===1?'':'s')+')</span>':'')+'</p><a class="inline-block font-bold underline" style="color:#F29B30;" href="'+esc(recipe.url)+'">Open and scale the recipe</a></div></article>'}
+      function render(){var selectedBox=root.querySelector('#rf-selected');selectedBox.innerHTML=selected.map(function(item,index){return '<span class="selected-chip">'+esc(item)+'<button type="button" data-remove="'+index+'" aria-label="Remove '+esc(item)+'">×</button></span>'}).join('');root.querySelector('#rf-clear').classList.toggle('hidden',selected.length===0);root.querySelectorAll('[data-suggestion]').forEach(function(button){button.setAttribute('aria-pressed',String(selected.some(function(item){return clean(item)===clean(button.dataset.suggestion)})))});if(!selected.length){root.querySelector('#rf-summary').textContent='Add an ingredient to start matching.';root.querySelector('#rf-results').innerHTML='<div class="empty-state">Start with two or three ingredients you actually want to use. The lonely zucchini in the drawer is allowed to participate.</div>';return}var ranked=recipes.map(score).filter(function(result){return result.matched.length>0}).sort(function(a,b){return b.matched.length-a.matched.length||a.mainMissing.length-b.mainMissing.length||a.recipe.title.localeCompare(b.recipe.title)});root.querySelector('#rf-summary').textContent=ranked.length+' recipe'+(ranked.length===1?'':'s')+' match at least one ingredient. Best matches are first.';root.querySelector('#rf-results').innerHTML=ranked.slice(0,12).map(renderCard).join('')||'<div class="empty-state">No recipe matched yet. Try a broader ingredient name, or <a href="/recipes/">browse every recipe</a>.</div>'}
+      root.querySelector('#rf-add').addEventListener('click',function(){add(root.querySelector('#rf-input').value)});
+      root.querySelector('#rf-input').addEventListener('keydown',function(event){if(event.key==='Enter'||event.key===','){event.preventDefault();add(event.target.value)}});
+      root.addEventListener('click',function(event){var suggestion=event.target.closest('[data-suggestion]');if(suggestion){var existing=selected.findIndex(function(item){return clean(item)===clean(suggestion.dataset.suggestion)});if(existing>-1)selected.splice(existing,1);else add(suggestion.dataset.suggestion);render();return}var remove=event.target.closest('[data-remove]');if(remove){selected.splice(Number(remove.dataset.remove),1);render()}});
+      root.querySelector('#rf-clear').addEventListener('click',function(){selected=[];render()});
+      render();
+    })();
+  </script>
+</BaseLayout>

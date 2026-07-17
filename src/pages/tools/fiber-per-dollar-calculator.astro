@@ -2,10 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import DataProvenance from "../../components/DataProvenance.astro";
 
 const title = "Protein and Fiber Value Planner: What Your Grocery Money Buys";
 const description =
-  "Compare 53 fiber foods and 49 protein foods, set a weekly goal, test two foods, or build a basket from USDA data and audited shelf prices.";
+  "Compare 53 fiber foods and 49 protein foods, set a weekly goal, test two foods, or build a basket from USDA data and published shelf-price snapshots.";
 
 const toolSchema = {
   "@context": "https://schema.org",
@@ -255,24 +256,10 @@ const toolSchema = {
         </section>
 
         <!-- ============ 4. Where the numbers come from ============ -->
-        <p class="text-sm" style="color: var(--muted-color);">
-          <strong style="color: var(--text-color);"
-            >Where the numbers come from:</strong
-          > fiber values from USDA FoodData Central, prices from Walmart shelf listings
-          cross-checked against BLS average price data. The methodology, the caveats,
-          and the full write-up live in
-          <a
-            href="/fiber-per-dollar-cheapest-high-fiber-foods/"
-            class="underline"
-            style="color: #F29B30;">the fiber per dollar study</a
-          >, and the
-          <a
-            href="/data/fiber-per-dollar-2026.csv"
-            class="underline"
-            style="color: #F29B30;">raw CSV is public</a
-          >. This page reads that exact file live, so when the index updates,
-          the calculator updates with it.<span id="fpd-updated"></span>
-        </p>
+        <DataProvenance
+          datasets={["fiber-per-dollar-2026", "protein-per-dollar-2026"]}
+          heading="The price snapshot behind this planner"
+        />
       </div>
     </div>
   </main>
@@ -844,20 +831,6 @@ const toolSchema = {
         fetch(NUTRIENTS.fiber.csv, { cache: "no-cache" })
           .then(function (res) {
             if (!res.ok) throw new Error("HTTP " + res.status);
-            var lastMod = res.headers.get("last-modified");
-            if (lastMod) {
-              var d = new Date(lastMod);
-              if (!isNaN(d)) {
-                el("fpd-updated").textContent =
-                  " Data file last updated " +
-                  d.toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  }) +
-                  ".";
-              }
-            }
             return res.text();
           })
           .then(function (text) {

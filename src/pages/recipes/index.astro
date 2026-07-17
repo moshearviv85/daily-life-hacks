@@ -75,6 +75,19 @@ const collectionPageSchema = {
             <span class="shrink-0 rounded-full px-4 py-2 text-sm font-bold text-white" style="background:#F29B30;">All {articles.length} recipes scale</span>
         </aside>
 
+        <section class="mb-10 grid md:grid-cols-2 gap-4" aria-label="Recipe planning tools">
+            <a href="/tools/recipe-finder/" class="rounded-2xl p-5 transition-transform hover:-translate-y-0.5" style="background:var(--card-bg);border:1px solid var(--border-color);">
+                <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#F29B30;">Start with the ingredients</p>
+                <h2 class="text-xl font-bold mb-2" style="color:var(--heading-color);">Find a Recipe From What You Have</h2>
+                <p style="color:var(--text-color);">Enter the food already in the kitchen. We'll rank the closest recipes and show what is still missing.</p>
+            </a>
+            <a href="/tools/shopping-list-builder/" class="rounded-2xl p-5 transition-transform hover:-translate-y-0.5" style="background:var(--card-bg);border:1px solid var(--border-color);">
+                <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#F29B30;">Plan several recipes</p>
+                <h2 class="text-xl font-bold mb-2" style="color:var(--heading-color);">Build One Combined Shopping List</h2>
+                <p style="color:var(--text-color);">Choose the recipes, change the servings, and turn their ingredients into one printable checklist.</p>
+            </a>
+        </section>
+
         <div
             id="articles-grid"
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"

@@ -1,0 +1,170 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { isReleased } from "../../../content/release";
+
+const recipes = (await getCollection("articles"))
+  .filter((article) =>
+    isReleased(article) &&
+    article.data.category === "recipes" &&
+    Boolean(article.data.servings) &&
+    Boolean(article.data.ingredients?.length)
+  )
+  .map(({ id, data }) => ({
+    slug: id.replace(/\.md$/, ""),
+    title: data.title,
+    image: data.image,
+    imageAlt: data.imageAlt,
+    servings: data.servings ?? 1,
+    totalTime: data.totalTime ?? "",
+    ingredients: data.ingredients ?? [],
+  }))
+  .sort((a, b) => a.title.localeCompare(b.title));
+
+const recipeData = JSON.stringify(recipes).replace(/</g, "\\u003c");
+const title = "Multi-Recipe Shopping List Builder: Scale and Combine Ingredients";
+const description = `Choose from ${recipes.length} recipes, change the servings, and combine their ingredients into one printable shopping list.`;
+const faqs = [
+  ["How does the recipe shopping list builder work?", "Choose two or more recipes, set the servings for each one, and the tool scales their ingredient lists before combining safe matches."],
+  ["Will the tool combine every repeated ingredient?", "No. It combines matching ingredients only when the quantity and unit are clear. Ambiguous lines stay separate because one confident-looking wrong onion is still a wrong onion."],
+  ["Can I change the number of servings for each recipe?", "Yes. Each selected recipe has its own servings control, from 1 to 50 servings, based on the recipe's original yield."],
+  ["Can I print or copy the shopping list?", "Yes. Use the print button for a paper checklist or copy the plain-text list into your notes app."],
+  ["Does the shopping list builder save what I select?", "No. Your recipes and servings stay in this browser tab. Anonymous analytics record that the tool was used, not your selections."],
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Multi-Recipe Shopping List Builder",
+    url: "https://www.daily-life-hacks.com/tools/shopping-list-builder/",
+    description,
+    applicationCategory: "LifestyleApplication",
+    operatingSystem: "Any",
+    browserRequirements: "Requires JavaScript",
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    publisher: { "@type": "Organization", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(([name, text]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text },
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/tools/" class="underline" style="color:#F29B30;">Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Shopping list builder</span>
+    </nav>
+
+    <div class="max-w-4xl mb-8">
+      <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">{recipes.length} real recipes. One grocery list.</p>
+      <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Build One Shopping List for Several Recipes</h1>
+      <p class="text-lg leading-relaxed" style="color:var(--text-color);">
+        Pick the recipes you're actually cooking and set the servings for each one. We'll scale the ingredients, combine the obvious matches, and leave questionable ones alone. A shopping list is no place for an algorithm to confidently turn cilantro into six cups of parsley.
+      </p>
+    </div>
+
+    <section id="shopping-list-builder-app" class="grid lg:grid-cols-[minmax(0,1fr)_minmax(300px,.8fr)] gap-6 items-start mb-12">
+      <div class="rounded-2xl p-5 md:p-7 min-w-0" style="background:var(--card-bg);border:1px solid var(--border-color);">
+        <div class="flex flex-wrap justify-between gap-3 mb-4">
+          <div>
+            <h2 class="text-xl md:text-2xl font-bold" style="color:var(--heading-color);">1. Choose your recipes</h2>
+            <p class="text-sm mt-1" style="color:var(--muted-color);">Search by recipe name, then add as many as you're willing to cook.</p>
+          </div>
+          <span id="slb-selected-count" class="count-pill">0 selected</span>
+        </div>
+        <label class="sr-only" for="slb-search">Search recipes</label>
+        <input id="slb-search" class="tool-input mb-4" type="search" placeholder="Search recipes, like lentil soup or burrito bowl" autocomplete="off" />
+        <div id="slb-recipe-grid" class="recipe-grid" aria-live="polite"></div>
+        <p id="slb-empty-search" class="hidden rounded-xl p-4 text-sm" style="background:var(--page-bg);color:var(--muted-color);">No recipe matches that search. The site has plenty of beans, but apparently not those beans.</p>
+
+        <div class="mt-7 pt-6" style="border-top:1px solid var(--border-color);">
+          <h2 class="text-xl md:text-2xl font-bold mb-2" style="color:var(--heading-color);">2. Set the servings</h2>
+          <p class="text-sm mb-4" style="color:var(--muted-color);">Each recipe scales from its original yield. Fractions are allowed because sometimes dinner is three people, not a committee of four.</p>
+          <div id="slb-selected-recipes" class="space-y-3"></div>
+          <p id="slb-no-selection" class="rounded-xl p-4 text-sm" style="background:var(--page-bg);color:var(--muted-color);">Choose a recipe above to start the list.</p>
+        </div>
+      </div>
+
+      <aside id="slb-print-area" class="rounded-2xl p-5 md:p-7 lg:sticky lg:top-5 min-w-0" style="background:var(--card-bg);border:1px solid var(--border-color);">
+        <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wider mb-1" style="color:#a85e00;">Your combined list</p>
+            <h2 class="text-2xl font-bold" style="color:var(--heading-color);">Shopping checklist</h2>
+          </div>
+          <span id="slb-item-count" class="count-pill">0 items</span>
+        </div>
+        <div id="slb-list-empty" class="rounded-xl p-5 text-center" style="background:var(--page-bg);color:var(--muted-color);">Add a recipe and the grocery list appears here. At the moment, dinner is optimism.</div>
+        <div id="slb-list-content" class="hidden">
+          <ul id="slb-shopping-list" class="shopping-list"></ul>
+          <div class="mt-6 pt-5" style="border-top:1px solid var(--border-color);">
+            <h3 class="font-bold mb-2" style="color:var(--heading-color);">Recipes on this list</h3>
+            <ul id="slb-recipe-links" class="space-y-1 text-sm"></ul>
+          </div>
+          <div class="action-row mt-6">
+            <button id="slb-copy" type="button" class="primary-button">Copy list</button>
+            <button id="slb-print" type="button" class="secondary-button">Print list</button>
+          </div>
+          <p id="slb-copy-status" class="mt-3 text-sm" aria-live="polite" style="color:var(--muted-color);"></p>
+        </div>
+        <p class="mt-5 text-xs leading-relaxed no-print" style="color:var(--muted-color);">Your choices stay in this browser tab. The tool doesn't send recipe names, serving counts, or shopping-list contents to us.</p>
+      </aside>
+    </section>
+
+    <article class="prose-like max-w-4xl">
+      <h2>How does the tool combine ingredients without making a mess?</h2>
+      <p>It adds quantities only when the ingredient name and unit match. Two lines of “olive oil” measured in tablespoons can become one line. A tablespoon of oil and “oil for the pan” stay separate. That's less flashy than pretending every ingredient converts perfectly, but it's considerably more useful in an actual store.</p>
+
+      <h2>Why should you set servings before making a grocery list?</h2>
+      <p>A recipe written for four doesn't magically feed seven because you stared at it with confidence. This builder scales each ingredient from the published yield, just like the serving controls on our individual recipes. If you're planning a whole week, pair the list with the <a href="/tools/grocery-budget-calculator/">weekly food-cost planner</a> to compare your menu with our audited research.</p>
+
+      <h2>What should you check before going to the store?</h2>
+      <p>Check the pantry first. Then check the ingredient notes on each linked recipe, especially optional toppings and “to taste” amounts. The list handles arithmetic. It can't see the half-bag of rice hiding behind the cereal, which is probably for the best. Our <a href="/methodology/">methodology</a> explains how we handle numbers across the site's tools and studies.</p>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        {faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <script id="slb-recipe-data" type="application/json" set:html={recipeData}></script>
+  <style>
+    .hidden{display:none!important}.tool-input{width:100%;border-radius:.8rem;padding:.75rem .9rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--text-color);outline:none}.tool-input:focus{box-shadow:0 0 0 2px #F29B30}.count-pill{display:inline-flex;align-items:center;align-self:flex-start;border-radius:999px;padding:.35rem .7rem;background:rgba(242,155,48,.12);border:1px solid rgba(242,155,48,.5);color:#a85e00;font-size:.75rem;font-weight:800;white-space:nowrap}.recipe-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;max-height:28rem;overflow-y:auto;padding:.1rem}.recipe-choice{display:grid;grid-template-columns:52px minmax(0,1fr);gap:.7rem;align-items:center;width:100%;padding:.65rem;text-align:left;border-radius:.85rem;background:var(--page-bg);border:1px solid var(--border-color);color:var(--text-color)}.recipe-choice:hover,.recipe-choice:focus-visible{border-color:#F29B30}.recipe-choice[aria-pressed="true"]{border:2px solid #F29B30;background:rgba(242,155,48,.09)}.recipe-choice img{width:52px;height:52px;object-fit:cover;border-radius:.65rem}.recipe-choice strong{display:block;line-height:1.2;color:var(--heading-color);font-size:.85rem}.recipe-choice small{display:block;margin-top:.25rem;color:var(--muted-color)}.selected-row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:.65rem;align-items:center;padding:.8rem;border-radius:.8rem;background:var(--page-bg);border:1px solid var(--border-color)}.selected-row a{font-weight:700;color:var(--heading-color)}.servings-control{display:flex;align-items:center;gap:.45rem;font-size:.75rem;color:var(--muted-color)}.servings-input{width:4.5rem;border-radius:.65rem;padding:.5rem;background:var(--card-bg);border:1px solid var(--border-color);color:var(--heading-color);font-weight:800}.remove-button{padding:.45rem .65rem;border-radius:.6rem;border:1px solid var(--border-color);font-size:.75rem;font-weight:700;color:var(--text-color)}.shopping-list{display:flex;flex-direction:column;gap:.25rem}.shopping-item label{display:flex;gap:.7rem;align-items:flex-start;padding:.65rem .25rem;border-bottom:1px solid var(--border-color);color:var(--text-color);line-height:1.4}.shopping-item input{width:1.1rem;height:1.1rem;margin-top:.1rem;accent-color:#F29B30;flex:none}.shopping-item input:checked+span{text-decoration:line-through;color:var(--muted-color)}.shopping-item small{display:block;margin-top:.15rem;color:var(--muted-color);font-size:.7rem}.action-row{display:flex;flex-wrap:wrap;gap:.65rem}.primary-button,.secondary-button{border-radius:.75rem;padding:.7rem 1rem;font-weight:800}.primary-button{background:#F29B30;color:white}.secondary-button{border:1px solid var(--border-color);color:var(--text-color)}.prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:800;margin:2.25rem 0 .7rem;color:var(--heading-color)}.prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}.prose-like a{color:#F29B30;text-decoration:underline;font-weight:700}.faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}.faq-list summary{cursor:pointer;font-weight:800;padding:1rem 0;color:var(--heading-color)}.faq-list p{margin:0 0 1rem}@media(max-width:640px){.recipe-grid{grid-template-columns:1fr}.selected-row{grid-template-columns:1fr auto}.servings-control{grid-row:2}.remove-button{grid-row:2}}@media print{body *{visibility:hidden!important}#slb-print-area,#slb-print-area *{visibility:visible!important}#slb-print-area{position:absolute!important;inset:0!important;width:100%!important;border:0!important;background:white!important;color:#111!important}.no-print,.action-row{display:none!important}.shopping-item label{color:#111!important}.shopping-item small,#slb-recipe-links a{color:#444!important}}
+  </style>
+
+  <script is:inline>
+    (function(){
+      var fractionMap={'¼':.25,'½':.5,'¾':.75,'⅓':1/3,'⅔':2/3,'⅛':.125,'⅜':.375,'⅝':.625,'⅞':.875};
+      var unitAliases={teaspoon:'tsp',teaspoons:'tsp',tsp:'tsp',tablespoon:'tbsp',tablespoons:'tbsp',tbsp:'tbsp',cup:'cup',cups:'cup',ounce:'oz',ounces:'oz',oz:'oz',pound:'lb',pounds:'lb',lb:'lb',lbs:'lb',gram:'g',grams:'g',g:'g',kilogram:'kg',kilograms:'kg',kg:'kg',can:'can',cans:'can',clove:'clove',cloves:'clove',package:'package',packages:'package'};
+      function esc(value){return String(value).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+      function readNumber(text){var match=text.match(/^\s*(?:(\d+)\s+)?(?:(\d+)\/(\d+)|([¼½¾⅓⅔⅛⅜⅝⅞])|(\d+(?:\.\d+)?))\s*/);if(!match)return null;var value=0;if(match[1])value+=Number(match[1]);if(match[2])value+=Number(match[2])/Number(match[3]);else if(match[4])value+=fractionMap[match[4]];else if(match[5])value+=Number(match[5]);return{value:value,length:match[0].length}}
+      function parseIngredient(line){var amount=readNumber(line);if(!amount)return{safe:false,text:line};var rest=line.slice(amount.length).trim();if(!rest)return{safe:false,text:line};var unitMatch=rest.match(/^([A-Za-z]+)\b\.?\s*/),unit=unitMatch&&unitAliases[unitMatch[1].toLowerCase()],name=unit?rest.slice(unitMatch[0].length).trim():rest;if(!name)return{safe:false,text:line};if(!unit)unit='item';var key=unit+'|'+name.toLowerCase().replace(/\s+/g,' ').replace(/[.,;:]$/,'');return{safe:true,amount:amount.value,unit:unit,name:name,key:key}}
+      function niceNumber(value){var rounded=Math.round(value*8)/8,whole=Math.floor(rounded),part=Math.round((rounded-whole)*8),fractions={1:'1/8',2:'1/4',3:'3/8',4:'1/2',5:'5/8',6:'3/4',7:'7/8'};if(!part)return String(whole);if(!whole)return fractions[part];return whole+' '+fractions[part]}
+      function unitLabel(unit,amount){if(Math.abs(amount-1)<.01)return unit;return{tsp:'tsp',tbsp:'tbsp',cup:'cups',oz:'oz',lb:'lb',g:'g',kg:'kg',can:'cans',clove:'cloves',package:'packages'}[unit]||unit}
+      function boot(){var root=document.getElementById('shopping-list-builder-app');if(!root||root.dataset.booted)return;root.dataset.booted='1';var dataNode=document.getElementById('slb-recipe-data'),recipes=JSON.parse(dataNode.textContent||'[]'),state={selected:{},query:'',tracked:false};
+        function selectedRecipes(){return recipes.filter(function(recipe){return state.selected[recipe.slug]})}
+        function renderChoices(){var query=state.query.toLowerCase(),visible=recipes.filter(function(recipe){return recipe.title.toLowerCase().indexOf(query)>-1});root.querySelector('#slb-recipe-grid').innerHTML=visible.map(function(recipe){var active=Boolean(state.selected[recipe.slug]);return '<button type="button" class="recipe-choice" data-add-recipe="'+esc(recipe.slug)+'" aria-pressed="'+active+'"><img src="'+esc(recipe.image)+'" alt="" loading="lazy" width="52" height="52"><span><strong>'+esc(recipe.title)+'</strong><small>'+recipe.servings+' servings'+(recipe.totalTime?' | '+esc(recipe.totalTime):'')+'</small></span></button>'}).join('');root.querySelector('#slb-empty-search').classList.toggle('hidden',visible.length>0)}
+        function renderSelected(){var chosen=selectedRecipes(),holder=root.querySelector('#slb-selected-recipes');root.querySelector('#slb-selected-count').textContent=chosen.length+' selected';root.querySelector('#slb-no-selection').classList.toggle('hidden',chosen.length>0);holder.innerHTML=chosen.map(function(recipe){var servings=state.selected[recipe.slug].servings;return '<div class="selected-row"><a href="/'+esc(recipe.slug)+'/">'+esc(recipe.title)+'</a><label class="servings-control">Servings <input class="servings-input" data-servings="'+esc(recipe.slug)+'" type="number" min="1" max="50" step="0.5" value="'+servings+'" inputmode="decimal"></label><button type="button" class="remove-button" data-remove-recipe="'+esc(recipe.slug)+'">Remove</button></div>'}).join('');renderList()}
+        function buildItems(){var combined={},separate=[];selectedRecipes().forEach(function(recipe){var factor=state.selected[recipe.slug].servings/recipe.servings;recipe.ingredients.forEach(function(line){var parsed=parseIngredient(line);if(parsed.safe){if(!combined[parsed.key])combined[parsed.key]={amount:0,unit:parsed.unit,name:parsed.name,recipes:[]};combined[parsed.key].amount+=parsed.amount*factor;combined[parsed.key].recipes.push(recipe.title)}else{separate.push({text:line,recipe:recipe.title})}})});var items=Object.keys(combined).map(function(key){var item=combined[key],text=[niceNumber(item.amount),unitLabel(item.unit,item.amount),item.name].filter(Boolean).join(' ');return{text:text,note:item.recipes.length>1?'Combined from '+item.recipes.length+' recipes':item.recipes[0]}});separate.forEach(function(item){items.push({text:item.text,note:item.recipe+' | check amount in recipe'})});return items.sort(function(a,b){return a.text.localeCompare(b.text)})}
+        function renderList(){var chosen=selectedRecipes(),items=buildItems(),content=root.querySelector('#slb-list-content'),empty=root.querySelector('#slb-list-empty');content.classList.toggle('hidden',!chosen.length);empty.classList.toggle('hidden',chosen.length>0);root.querySelector('#slb-item-count').textContent=items.length+' item'+(items.length===1?'':'s');root.querySelector('#slb-shopping-list').innerHTML=items.map(function(item,index){return '<li class="shopping-item"><label><input type="checkbox" data-check-item="'+index+'"><span>'+esc(item.text)+'<small>'+esc(item.note)+'</small></span></label></li>'}).join('');root.querySelector('#slb-recipe-links').innerHTML=chosen.map(function(recipe){return '<li><a href="/'+esc(recipe.slug)+'/" style="color:#F29B30;text-decoration:underline;font-weight:700;">'+esc(recipe.title)+'</a> <span style="color:var(--muted-color);">('+state.selected[recipe.slug].servings+' servings)</span></li>'}).join('')}
+        function trackFirstSelection(){if(state.tracked)return;state.tracked=true;if(typeof window.gtag==='function')window.gtag('event','tool_action',{tool_name:'shopping-list-builder',action:'first_recipe_selected'})}
+        function add(slug){var recipe=recipes.find(function(item){return item.slug===slug});if(!recipe)return;if(state.selected[slug])delete state.selected[slug];else{state.selected[slug]={servings:recipe.servings};trackFirstSelection()}renderChoices();renderSelected()}
+        function textList(){var lines=['SHOPPING LIST',''];buildItems().forEach(function(item){lines.push('[ ] '+item.text)});lines.push('','RECIPES');selectedRecipes().forEach(function(recipe){lines.push(recipe.title+' ('+state.selected[recipe.slug].servings+' servings): '+location.origin+'/'+recipe.slug+'/')});return lines.join('\n')}
+        root.addEventListener('click',function(event){var addButton=event.target.closest('[data-add-recipe]'),removeButton=event.target.closest('[data-remove-recipe]');if(addButton)add(addButton.dataset.addRecipe);if(removeButton)add(removeButton.dataset.removeRecipe);if(event.target.closest('#slb-print'))window.print();if(event.target.closest('#slb-copy')){var status=root.querySelector('#slb-copy-status');navigator.clipboard.writeText(textList()).then(function(){status.textContent='Copied. Your notes app is about to look unusually organized.'}).catch(function(){status.textContent='Copy failed. Select the list and copy it manually.'})}});root.addEventListener('input',function(event){if(event.target.matches('#slb-search')){state.query=event.target.value;renderChoices()}var servings=event.target.closest('[data-servings]');if(servings){var value=Math.max(1,Math.min(50,Number(servings.value)||1));state.selected[servings.dataset.servings].servings=value;renderList()}});renderChoices();renderSelected()}
+      boot();document.addEventListener('astro:page-load',boot);
+    })();
+  </script>
+</BaseLayout>

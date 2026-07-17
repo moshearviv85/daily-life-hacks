@@ -1,0 +1,66 @@
+---
+import provenance from "../../public/data/dataset-provenance.json";
+
+interface Props {
+  datasets: Array<keyof typeof provenance.datasets>;
+  heading?: string;
+}
+
+const {
+  datasets,
+  heading = "What data is this tool using?",
+} = Astro.props;
+
+const selected = datasets.map((id) => provenance.datasets[id]);
+---
+
+<aside
+  class="data-provenance rounded-2xl p-5 md:p-6"
+  style="background:var(--card-bg);border:1px solid var(--border-color);"
+  aria-labelledby="data-provenance-heading"
+>
+  <div class="flex flex-wrap items-start justify-between gap-4">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color:#F29B30;">Data receipt</p>
+      <h2 id="data-provenance-heading" class="text-xl md:text-2xl font-bold" style="color:var(--heading-color);">{heading}</h2>
+    </div>
+    <div class="rounded-xl px-4 py-3" style="background:var(--page-bg);border:1px solid var(--border-color);">
+      <span class="block text-xs font-bold uppercase tracking-wide" style="color:var(--muted-color);">Prices observed</span>
+      <strong class="text-lg" style="color:var(--heading-color);">{provenance.priceObservation}</strong>
+    </div>
+  </div>
+
+  <dl class="grid sm:grid-cols-2 gap-3 mt-5 text-sm">
+    <div class="rounded-xl p-4" style="background:var(--page-bg);">
+      <dt class="font-bold mb-1" style="color:var(--heading-color);">Market coverage</dt>
+      <dd class="leading-relaxed" style="color:var(--text-color);">{provenance.geography}. {provenance.coverage}</dd>
+    </div>
+    <div class="rounded-xl p-4" style="background:var(--page-bg);">
+      <dt class="font-bold mb-1" style="color:var(--heading-color);">Review schedule</dt>
+      <dd class="leading-relaxed" style="color:var(--text-color);">{provenance.reviewCadence}</dd>
+    </div>
+  </dl>
+
+  <div class="mt-5">
+    <p class="font-bold mb-2" style="color:var(--heading-color);">Download the numbers</p>
+    <ul class="flex flex-wrap gap-2">
+      {selected.map((dataset) => (
+        <li>
+          <a class="inline-block rounded-full px-3 py-2 text-sm font-bold" style="color:#F29B30;border:1px solid #F29B30;" href={dataset.csvUrl}>
+            {dataset.label} CSV
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="mt-5 text-sm leading-relaxed" style="color:var(--text-color);">
+    <p class="font-bold mb-1" style="color:var(--heading-color);">The honest limits</p>
+    <ul class="list-disc pl-5 space-y-1">
+      {provenance.limitations.map((limitation) => <li>{limitation}</li>)}
+    </ul>
+    <p class="mt-3">
+      Read the <a class="font-bold underline" style="color:#F29B30;" href={provenance.methodologyUrl}>full methodology</a> for the nutrition sources, price rules, edible-fraction adjustments, and correction policy. A deployment timestamp tells you when a file moved. It doesn't tell you when somebody checked the price of oats.
+    </p>
+  </div>
+</aside>

@@ -2,14 +2,15 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import DataProvenance from "../../../components/DataProvenance.astro";
 
 const title = "Weekly Fiber and Protein Cost Planner: Build a Real Food Week";
-const description = "Build a 7-day fiber or protein plan from 10 audited menus. Change people and days to get exact food quantities, cost, and restaurant savings.";
+const description = "Build a 7-day fiber or protein plan from 10 published menus. Change people and days to get food quantities, cost, and restaurant savings.";
 
 const faqs = [
-  ["What does the weekly food cost planner calculate?", "It scales one of our 10 audited daily menus by the number of people and days you choose, then totals the tracked food, grams, and consumed cost."],
+  ["What does the weekly food cost planner calculate?", "It scales one of our 10 published daily menus by the number of people and days you choose, then totals the tracked food, grams, and consumed cost."],
   ["Are these complete meal plans?", "No. They price the foods carrying roughly 30 grams of fiber or 50 grams of protein in each study day. Drinks, seasonings, calories, and the rest of your plate may add cost."],
-  ["Where do the food prices come from?", "The grocery prices come from our July 2026 audited datasets, matched to USDA FoodData Central nutrition values. Restaurant prices are the exact recorded orders in each study."],
+  ["Where do the food prices come from?", "The grocery prices come from our July 2026 published datasets, matched to USDA FoodData Central nutrition values. Restaurant prices are the recorded orders in each study."],
   ["Why is checkout cost different from consumed cost?", "A 60-gram portion of oats costs only part of a bag, but the register charges for the whole bag. This planner shows consumed cost because that is what the study measured."],
   ["Does the planner save my household information?", "No. People, menu choices, and day counts stay in this browser tab. The site records only that the tool was used, not the values you entered."],
 ];
@@ -45,7 +46,7 @@ const schemas = [
     </nav>
 
     <div class="max-w-4xl mb-8">
-      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">10 audited days. Your actual household.</p>
+      <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">10 priced days. Your actual household.</p>
       <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Build a Week From the Food-Cost Studies</h1>
       <p class="text-lg leading-relaxed" style="color:var(--text-color);">
         We already priced five ways to get roughly 30 grams of fiber and five ways to get roughly 50 grams of protein. You shouldn't have to retype every oat and bean like you're applying for a grocery permit. Pick your days, choose how many people are eating, and the planner scales the food, cost, and restaurant comparison.
@@ -64,7 +65,7 @@ const schemas = [
         <label class="tool-label">People eating these foods<input id="rwp-people" class="tool-input" type="number" min="1" max="20" step="1" value="2" inputmode="numeric" /></label>
       </div>
 
-      <div id="rwp-status" class="rounded-xl p-5 text-center" style="background:var(--page-bg);color:var(--muted-color);">Loading the audited menus...</div>
+      <div id="rwp-status" class="rounded-xl p-5 text-center" style="background:var(--page-bg);color:var(--muted-color);">Loading the published menus...</div>
 
       <div id="rwp-content" class="hidden">
         <div class="flex flex-wrap items-end justify-between gap-3 mb-3">
@@ -110,8 +111,15 @@ const schemas = [
       </div>
     </section>
 
+    <div class="mb-12">
+      <DataProvenance
+        datasets={["fiber-day-cost-2026", "protein-day-cost-2026", "fiber-per-dollar-2026", "protein-per-dollar-2026"]}
+        heading="The menus and prices behind this week"
+      />
+    </div>
+
     <article class="prose-like max-w-4xl">
-      <h2>What can the audited food-cost planner tell you?</h2>
+      <h2>What can the food-cost planner tell you?</h2>
       <p>It tells you what the tracked part of a week costs when real people replace hypothetical servings. Choose two people and seven days, for example, and every menu row doubles before it gets repeated. The planner then compares that week with the restaurant scenario from the same study. No vague “save more” speech. You get the dollar gap.</p>
 
       <h2>Why are consumed cost and checkout cost different?</h2>

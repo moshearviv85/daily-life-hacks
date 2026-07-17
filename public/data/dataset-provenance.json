@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "priceObservation": "July 2026",
+  "geography": "United States",
+  "coverage": "A U.S. price snapshot using BLS national average prices where available and Walmart national listings for items BLS doesn't track.",
+  "reviewCadence": "Quarterly price re-audit, with monthly monitoring of relevant BLS average-price releases.",
+  "methodologyUrl": "/methodology/",
+  "limitations": [
+    "This isn't a live price feed. Your store, ZIP code, package size, and sale price may differ.",
+    "Published costs use the package, edible-fraction, and consumed-amount rules described in the methodology.",
+    "The public CSVs document the ranking inputs, but they don't yet include a source URL or observation date for every row."
+  ],
+  "datasets": {
+    "fiber-per-dollar-2026": {
+      "label": "Fiber per dollar ranking",
+      "csvUrl": "/data/fiber-per-dollar-2026.csv",
+      "rows": 53
+    },
+    "protein-per-dollar-2026": {
+      "label": "Protein per dollar ranking",
+      "csvUrl": "/data/protein-per-dollar-2026.csv",
+      "rows": 49
+    },
+    "fiber-day-cost-2026": {
+      "label": "30g fiber day menus",
+      "csvUrl": "/data/fiber-day-cost-2026.csv",
+      "menus": 5
+    },
+    "protein-day-cost-2026": {
+      "label": "50g protein day menus",
+      "csvUrl": "/data/protein-day-cost-2026.csv",
+      "menus": 5
+    }
+  }
+}

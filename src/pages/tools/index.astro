@@ -3,14 +3,16 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 
-const title = "Research-Based Grocery Tools, Recipe Scaler and Food Cost Planner";
-const description = "Build a food-cost week from audited menus, scale any of 80 recipes, and compare 53 fiber plus 49 protein rankings. Free and private.";
+const title = "Free Grocery and Recipe Tools Built From Real Site Data";
+const description = "Find recipes from ingredients, combine shopping lists, scale 80 recipes, plan a food-cost week, and check prices. Free and private.";
 
 const tools = [
-  { href: "/tools/grocery-budget-calculator/", eyebrow: "Built from 10 audited menus", visual: "7 days", title: "Weekly Food Cost Planner", text: "Choose fiber or protein, assign the five priced menu styles across your week, and get scaled food quantities, cost, and restaurant savings.", tier: "featured" },
-  { href: "/tools/fiber-per-dollar-calculator/", eyebrow: "53 fiber + 49 protein rows", visual: "$1 = ?", title: "Protein and Fiber Value Planner", text: "Switch between the two audited rankings, set a weekly target, compare two foods, or build a grocery basket.", tier: "featured" },
+  { href: "/tools/recipe-finder/", eyebrow: "Searches 80 real recipes", visual: "Use it", title: "Use What You Have Recipe Finder", text: "Enter what is already in the kitchen. The tool ranks the closest recipes and shows what you would still need to buy.", tier: "featured" },
+  { href: "/tools/shopping-list-builder/", eyebrow: "Several recipes, one list", visual: "1 list", title: "Multi-Recipe Shopping List Builder", text: "Choose the recipes, set servings for each one, and get a combined checklist without pretending every unit converts perfectly.", tier: "featured" },
+  { href: "/tools/grocery-budget-calculator/", eyebrow: "Built from 10 priced menus", visual: "7 days", title: "Weekly Food Cost Planner", text: "Choose fiber or protein, assign the five priced menu styles across your week, and get scaled food quantities, cost, and restaurant savings.", tier: "featured" },
+  { href: "/tools/fiber-per-dollar-calculator/", eyebrow: "53 fiber + 49 protein rows", visual: "$1 = ?", title: "Protein and Fiber Value Planner", text: "Switch between the two published rankings, set a weekly target, compare two foods, or build a grocery basket.", tier: "featured" },
   { href: "/recipes/", eyebrow: "Built into 80 recipes", visual: "4 → 7", title: "Recipe Serving Scaler", text: "Open any recipe, change the number of people, and watch the ingredient amounts update. No copying the recipe into another box first.", tier: "featured" },
-  { href: "/tools/grocery-unit-price-calculator/", eyebrow: "Basic shelf utility", visual: "$ / oz", title: "Grocery Unit Price Calculator", text: "Compare two package prices across ounces, pounds, grams, liters, or count when the shelf labels refuse to be helpful.", tier: "basic" },
+  { href: "/tools/grocery-unit-price-calculator/", eyebrow: "79 foods from two studies", visual: "Good?", title: "Is This a Good Grocery Price?", text: "Pick a studied food, enter the shelf price and package size, and compare it with our July 2026 price observation. The two-package calculator is still there too.", tier: "featured" },
   { href: "/tools/recipe-cost-calculator/", eyebrow: "Advanced manual utility", visual: "$ / serving", title: "Recipe Cost Calculator", text: "Use this when you genuinely need line-by-line package costing. It's detailed, accurate, and admittedly more work.", tier: "basic" },
 ];
 
@@ -27,7 +29,7 @@ const schemas = [
       <p class="text-sm font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Our research, turned into decisions.</p>
       <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Grocery Tools</h1>
       <p class="text-lg leading-relaxed" style="color:var(--text-color);">
-        You were right to expect more than blank boxes. The useful tools now start with the data we've already audited or the recipe you're already cooking. Build a week from the cost studies, scale a real recipe, or make the fiber and protein value index answer your grocery question. No signup. No retyping a pantry before breakfast.
+        These tools start with the recipes and price observations already on the site. Find dinner from what you have, combine several recipes into one shopping list, scale the servings, or make the cost studies answer a grocery question. No signup. No rebuilding our spreadsheets one onion at a time.
       </p>
     </div>
 
@@ -49,7 +51,7 @@ const schemas = [
     </div>
 
     <section class="mt-12">
-      <h2 class="text-2xl font-bold mb-2" style="color:var(--heading-color);">Basic calculators, when you actually need them</h2>
+      <h2 class="text-2xl font-bold mb-2" style="color:var(--heading-color);">The detailed calculator, when you actually need it</h2>
       <p class="mb-5 max-w-3xl" style="color:var(--muted-color);">These still solve specific math problems. They just don't get to pretend they're the main event anymore.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {tools.filter((tool) => tool.tier === "basic").map((tool) => (
@@ -61,7 +63,7 @@ const schemas = [
             <div class="p-5 flex-1 flex flex-col gap-2">
               <h3 class="font-bold text-xl leading-tight group-hover:text-[#F29B30] transition-colors" style="color:var(--heading-color);">{tool.title}</h3>
               <p class="text-sm leading-relaxed" style="color:var(--muted-color);">{tool.text}</p>
-              <span class="mt-auto pt-2 text-sm font-bold" style="color:#F29B30;">Open calculator <span aria-hidden="true">→</span></span>
+              <span class="mt-auto pt-2 text-sm font-bold" style="color:#F29B30;">Open tool <span aria-hidden="true">→</span></span>
             </div>
           </a>
         ))}
@@ -76,7 +78,7 @@ const schemas = [
 
     <section class="max-w-4xl mt-14">
       <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--heading-color);">Start with the decision in front of you</h2>
-      <p class="leading-relaxed mb-4" style="color:var(--text-color);">Planning seven days? Start with the audited week builder. Cooking for six instead of four? Open the recipe and change the servings inside the ingredient card. Deciding whether oats, eggs, beans, or yogurt earn the grocery money? Use the protein and fiber value planner.</p>
+      <p class="leading-relaxed mb-4" style="color:var(--text-color);">Staring at a fridge with no plan? Start with the recipe finder. Planning several dinners? Build one shopping list and set the servings before you shop. Comparing oats, eggs, beans, or yogurt? Use the value planner or the grocery price checker.</p>
       <p class="leading-relaxed" style="color:var(--text-color);">The tools handle the numbers. Our <a href="/eat-healthy-on-a-budget-complete-playbook/" class="text-link">healthy eating on a budget playbook</a> handles the strategy, and the <a href="/methodology/" class="text-link">methodology page</a> explains how we verify the prices and nutrition data used in published studies.</p>
     </section>
   </main>

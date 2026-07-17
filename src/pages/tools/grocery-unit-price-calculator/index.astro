@@ -2,10 +2,11 @@
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import DataProvenance from "../../../components/DataProvenance.astro";
 
 const title = "Is This a Good Grocery Price? Compare With Our 2026 Data";
 const description =
-  "Pick a food, enter one shelf price, and compare it with our audited July 2026 baseline, including fiber or protein per dollar.";
+  "Pick a food, enter one shelf price, and compare it with our published July 2026 snapshot, including fiber or protein per dollar.";
 
 const schemas = [
   {
@@ -29,7 +30,7 @@ const schemas = [
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: [
-      ["How does the grocery price benchmark work?", "Choose a food and enter its current package price and weight. The tool compares your price per 100 grams with our audited July 2026 baseline."],
+      ["How does the grocery price benchmark work?", "Choose a food and enter its current package price and weight. The tool compares your price per 100 grams with our published July 2026 snapshot."],
       ["Where do the benchmark prices come from?", "They come from the 53-food fiber study and 49-food protein study published by Daily Life Hacks in July 2026, using documented Walmart and BLS price sources."],
       ["What does fiber or protein per dollar mean?", "It estimates how many grams of the selected nutrient one dollar buys at your entered price, using the same food data and edible-yield assumptions as our studies."],
       ["Does a good price mean I should buy the biggest package?", "No. A low unit price loses its charm if half the package goes stale behind three jars of mustard."],
@@ -51,7 +52,7 @@ const schemas = [
       <span aria-hidden="true" style="color:var(--muted-color);"> / Grocery price benchmark</span>
     </nav>
 
-    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">Built from 102 audited food-price rows</p>
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">Built from 102 published food-price rows</p>
     <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">
       Is This a Good Price?
     </h1>
@@ -61,7 +62,7 @@ const schemas = [
 
     <section id="price-benchmark-app" class="rounded-2xl p-5 md:p-7 mb-10" style="background:var(--card-bg);border:1px solid var(--border-color);">
       <div id="benchmark-loading" class="rounded-xl p-4" style="background:rgba(242,155,48,.10);color:var(--text-color);">
-        Loading the audited food-price tables...
+        Loading the published food-price tables...
       </div>
       <div id="benchmark-fields" class="hidden">
         <div class="grid md:grid-cols-3 gap-4 items-end">
@@ -135,9 +136,16 @@ const schemas = [
       </section>
     </details>
 
+    <div class="mb-12">
+      <DataProvenance
+        datasets={["fiber-per-dollar-2026", "protein-per-dollar-2026"]}
+        heading="The benchmark behind your result"
+      />
+    </div>
+
     <article class="prose-like max-w-3xl">
       <h2>How can you tell if a grocery price is actually good?</h2>
-      <p>A sale sticker can't answer that. Compare the price for the same amount of food, then check what one dollar buys. This tool uses the price-per-100-gram baselines from our <a href="/fiber-per-dollar-cheapest-high-fiber-foods/">53-food fiber study</a> and <a href="/protein-per-dollar-cheapest-protein-sources/">49-food protein study</a>. If your oats cost 25% more per 100 grams than our audited oats, the yellow tag is mostly theater.</p>
+      <p>A sale sticker can't answer that. Compare the price for the same amount of food, then check what one dollar buys. This tool uses the price-per-100-gram baselines from our <a href="/fiber-per-dollar-cheapest-high-fiber-foods/">53-food fiber study</a> and <a href="/protein-per-dollar-cheapest-protein-sources/">49-food protein study</a>. If your oats cost 25% more per 100 grams than the package recorded in our snapshot, the yellow tag is mostly theater.</p>
 
       <h2>What do the July 2026 grocery benchmarks include?</h2>
       <p>The research covers dried beans, grains, canned foods, produce, dairy, meat, fish, and other common groceries. We recorded package price, package weight, edible yield where it mattered, and nutrient data. You can see every assumption in our <a href="/methodology/">methodology</a>. Prices move by store and ZIP code, so treat the result as a useful reference point, not a stone tablet from Walmart.</p>
@@ -147,7 +155,7 @@ const schemas = [
 
       <h2>Frequently asked questions</h2>
       <div class="faq-list">
-        <details><summary>How does the grocery price benchmark work?</summary><p>Choose a food and enter its current package price and weight. The tool compares your price per 100 grams with our audited July 2026 baseline.</p></details>
+        <details><summary>How does the grocery price benchmark work?</summary><p>Choose a food and enter its current package price and weight. The tool compares your price per 100 grams with our published July 2026 snapshot.</p></details>
         <details><summary>Where do the benchmark prices come from?</summary><p>They come from the 53-food fiber study and 49-food protein study published by Daily Life Hacks in July 2026, using documented Walmart and BLS price sources.</p></details>
         <details><summary>What does fiber or protein per dollar mean?</summary><p>It estimates how many grams of the selected nutrient one dollar buys at your entered price, using the same food data and edible-yield assumptions as our studies.</p></details>
         <details><summary>Does a good price mean I should buy the biggest package?</summary><p>No. A low unit price loses its charm if half the package goes stale behind three jars of mustard.</p></details>
@@ -176,7 +184,7 @@ const schemas = [
       function metric(label,value,note){return '<div class="metric-card"><span class="metric-label">'+escapeHtml(label)+'</span><span class="metric-value">'+escapeHtml(value)+'</span><span class="metric-note">'+escapeHtml(note)+'</span></div>'}
       function mergeRows(fiberRows,proteinRows){var foods={};fiberRows.forEach(function(row){foods[row.food]=foods[row.food]||{food:row.food};foods[row.food].fiber=row;});proteinRows.forEach(function(row){foods[row.food]=foods[row.food]||{food:row.food};foods[row.food].protein=row;});return Object.keys(foods).sort().map(function(key){return foods[key];});}
       function preferredRow(food){return food.fiber||food.protein}
-      function renderBenchmark(root,foods){var select=root.querySelector('#benchmark-food'),food=foods[Number(select.value)],price=parseFloat(root.querySelector('#benchmark-price').value),weight=parseFloat(root.querySelector('#benchmark-weight').value),unit=root.querySelector('#benchmark-unit').value,error=root.querySelector('#benchmark-error'),result=root.querySelector('#benchmark-result');error.classList.add('hidden');result.classList.add('hidden');if(!food||!isFinite(price)||!isFinite(weight)||price<=0||weight<=0){error.textContent='Enter a package price and weight greater than zero.';error.classList.remove('hidden');return;}var row=preferredRow(food),grams=weight*weightFactors[unit],currentPer100=price/(grams/100),baseline=parseFloat(row.price_per_100g_usd),difference=(currentPer100-baseline)/baseline*100,abs=Math.abs(difference),label,verdict,explanation;if(difference<=-10){label='Good price';verdict=food.food+' is '+abs.toFixed(0)+'% below our benchmark.';explanation='That is a genuinely better price than the July 2026 package we audited. The sale sticker may keep its job.';}else if(difference<10){label='Fair price';verdict=food.food+' is close to our benchmark.';explanation='Your price is within 10% of our July 2026 baseline. No parade, no robbery. It is a normal buy.';}else if(difference<30){label='Pricey';verdict=food.food+' is '+abs.toFixed(0)+'% above our benchmark.';explanation='You may find a better price by checking another size, store brand, or nearby store.';}else{label='Very expensive';verdict=food.food+' is '+abs.toFixed(0)+'% above our benchmark.';explanation='That is a large gap. Unless convenience is the point, this package is asking your grocery budget to do unnecessary cardio.';}root.querySelector('#benchmark-label').textContent=label;root.querySelector('#benchmark-verdict').textContent=verdict;root.querySelector('#benchmark-explanation').textContent=explanation;var cards=[metric('Your price',money(currentPer100)+' / 100g',money(price)+' for '+weight+' '+unit),metric('July 2026 baseline',money(baseline)+' / 100g',row.package+' for $'+Number(row.package_price_usd).toFixed(2))];if(food.fiber){var fiberBaseline=parseFloat(food.fiber.fiber_g_per_dollar),fiberNow=fiberBaseline*parseFloat(food.fiber.price_per_100g_usd)/currentPer100;cards.push(metric('Fiber at your price',fiberNow.toFixed(1)+'g / $1',fiberBaseline.toFixed(1)+'g / $1 in our study'));}if(food.protein){var proteinBaseline=parseFloat(food.protein.protein_g_per_dollar),proteinNow=proteinBaseline*parseFloat(food.protein.price_per_100g_usd)/currentPer100;cards.push(metric('Protein at your price',proteinNow.toFixed(1)+'g / $1',proteinBaseline.toFixed(1)+'g / $1 in our study'));}root.querySelector('#benchmark-cards').innerHTML=cards.join('');var ranks=[];if(food.fiber)ranks.push('#'+food.fiber.rank+' of 53 for fiber value');if(food.protein)ranks.push('#'+food.protein.rank+' of 49 for protein value');root.querySelector('#benchmark-rank').textContent=ranks.join(' | ');root.querySelector('#benchmark-source').textContent='Baseline source: '+row.price_basis+'. Same edible-yield assumptions as the published study.';result.classList.remove('hidden');}
+      function renderBenchmark(root,foods){var select=root.querySelector('#benchmark-food'),food=foods[Number(select.value)],price=parseFloat(root.querySelector('#benchmark-price').value),weight=parseFloat(root.querySelector('#benchmark-weight').value),unit=root.querySelector('#benchmark-unit').value,error=root.querySelector('#benchmark-error'),result=root.querySelector('#benchmark-result');error.classList.add('hidden');result.classList.add('hidden');if(!food||!isFinite(price)||!isFinite(weight)||price<=0||weight<=0){error.textContent='Enter a package price and weight greater than zero.';error.classList.remove('hidden');return;}var row=preferredRow(food),grams=weight*weightFactors[unit],currentPer100=price/(grams/100),baseline=parseFloat(row.price_per_100g_usd),difference=(currentPer100-baseline)/baseline*100,abs=Math.abs(difference),label,verdict,explanation;if(difference<=-10){label='Good price';verdict=food.food+' is '+abs.toFixed(0)+'% below our benchmark.';explanation='That is a genuinely better price than the July 2026 package we recorded. The sale sticker may keep its job.';}else if(difference<10){label='Fair price';verdict=food.food+' is close to our benchmark.';explanation='Your price is within 10% of our July 2026 baseline. No parade, no robbery. It is a normal buy.';}else if(difference<30){label='Pricey';verdict=food.food+' is '+abs.toFixed(0)+'% above our benchmark.';explanation='You may find a better price by checking another size, store brand, or nearby store.';}else{label='Very expensive';verdict=food.food+' is '+abs.toFixed(0)+'% above our benchmark.';explanation='That is a large gap. Unless convenience is the point, this package is asking your grocery budget to do unnecessary cardio.';}root.querySelector('#benchmark-label').textContent=label;root.querySelector('#benchmark-verdict').textContent=verdict;root.querySelector('#benchmark-explanation').textContent=explanation;var cards=[metric('Your price',money(currentPer100)+' / 100g',money(price)+' for '+weight+' '+unit),metric('July 2026 baseline',money(baseline)+' / 100g',row.package+' for $'+Number(row.package_price_usd).toFixed(2))];if(food.fiber){var fiberBaseline=parseFloat(food.fiber.fiber_g_per_dollar),fiberNow=fiberBaseline*parseFloat(food.fiber.price_per_100g_usd)/currentPer100;cards.push(metric('Fiber at your price',fiberNow.toFixed(1)+'g / $1',fiberBaseline.toFixed(1)+'g / $1 in our study'));}if(food.protein){var proteinBaseline=parseFloat(food.protein.protein_g_per_dollar),proteinNow=proteinBaseline*parseFloat(food.protein.price_per_100g_usd)/currentPer100;cards.push(metric('Protein at your price',proteinNow.toFixed(1)+'g / $1',proteinBaseline.toFixed(1)+'g / $1 in our study'));}root.querySelector('#benchmark-cards').innerHTML=cards.join('');var ranks=[];if(food.fiber)ranks.push('#'+food.fiber.rank+' of 53 for fiber value');if(food.protein)ranks.push('#'+food.protein.rank+' of 49 for protein value');root.querySelector('#benchmark-rank').textContent=ranks.join(' | ');root.querySelector('#benchmark-source').textContent='Baseline source: '+row.price_basis+'. Same edible-yield assumptions as the published study.';result.classList.remove('hidden');}
       function bootBenchmark(){var root=document.getElementById('price-benchmark-app');if(!root||root.dataset.booted)return;root.dataset.booted='1';Promise.all(DATA_URLS.map(function(url){return fetch(url).then(function(response){if(!response.ok)throw new Error('Could not load '+url);return response.text();}).then(parseCsv);})).then(function(tables){var foods=mergeRows(tables[0],tables[1]),select=root.querySelector('#benchmark-food');select.innerHTML=foods.map(function(food,index){var studies=food.fiber&&food.protein?'fiber + protein':food.fiber?'fiber':'protein';return '<option value="'+index+'"'+(food.food==='Old-fashioned rolled oats'?' selected':'')+'>'+escapeHtml(food.food)+' ('+studies+')</option>';}).join('');root.querySelector('#benchmark-loading').classList.add('hidden');root.querySelector('#benchmark-fields').classList.remove('hidden');root.addEventListener('input',function(){renderBenchmark(root,foods)});root.addEventListener('change',function(){renderBenchmark(root,foods)});renderBenchmark(root,foods);}).catch(function(){root.querySelector('#benchmark-loading').textContent='The benchmark tables could not load. Try refreshing the page.';});}
       var units={oz:{kind:'weight',factor:1,label:'oz'},lb:{kind:'weight',factor:16,label:'oz'},g:{kind:'weight',factor:0.0352739619,label:'oz'},kg:{kind:'weight',factor:35.2739619,label:'oz'},floz:{kind:'volume',factor:1,label:'fl oz'},cup:{kind:'volume',factor:8,label:'fl oz'},pint:{kind:'volume',factor:16,label:'fl oz'},quart:{kind:'volume',factor:32,label:'fl oz'},gallon:{kind:'volume',factor:128,label:'fl oz'},ml:{kind:'volume',factor:0.0338140227,label:'fl oz'},liter:{kind:'volume',factor:33.8140227,label:'fl oz'},each:{kind:'count',factor:1,label:'item'}};
       var defaults={a:{name:'Store-brand oats',price:4.79,size:32,unit:'oz'},b:{name:'Name-brand oats',price:3.49,size:20,unit:'oz'}};
