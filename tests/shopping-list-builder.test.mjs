@@ -29,6 +29,19 @@ test("shopping list builder exposes search, per-recipe servings, copy, print, an
   ]) assert.match(source, new RegExp(signal.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), signal);
 });
 
+test("recipe selection is visibly clickable and can be removed from either surface", async () => {
+  const source = await readFile(sourcePath, "utf8");
+  assert.match(source, /Click a recipe card to add it\. Click a selected card again to remove it\./);
+  assert.match(source, /active\?'Selected - click to remove':'Click to add'/);
+  assert.match(source, /aria-label="'\+\(active\?'Remove ':'Add '\)/);
+  assert.match(source, /data-remove-recipe=/);
+  assert.match(source, />×<\/span> Remove recipe/);
+  assert.match(source, /recipe\.title\+' removed\. No hard feelings\.'/);
+  assert.match(source, /\.recipe-choice:hover/);
+  assert.match(source, /\.recipe-choice:active\{transform:translateY\(0\) scale\(\.97\)/);
+  assert.match(source, /cursor:pointer/);
+});
+
 test("ingredient math fails safely instead of inventing conversions", async () => {
   const source = await readFile(sourcePath, "utf8");
   assert.match(source, /if\(!amount\)return\{safe:false,text:line\}/);
