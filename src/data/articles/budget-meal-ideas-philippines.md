@@ -11,7 +11,7 @@ tags:
 image: "/images/budget-meal-ideas-philippines-main.jpg"
 imageAlt: Tortang talong, white rice, sardines, eggs, and tomatoes arranged on a wooden table
 date: 2026-05-23
-dateModified: 2026-07-12
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -44,7 +44,7 @@ If eggs and canned goods aren't doing heavy lifting in your rotation, you're lea
 
 **Ginisang sardinas:** Garlic, onion, tomato, then a can of sardines in tomato sauce. Add pechay or malunggay if you have them. Over hot rice it's done before the kettle finishes arguing with you.
 
-**Corned beef guisado:** Onion, garlic, canned corned beef, diced potato to stretch it. Savory, familiar, and fast. Nobody needs a speech about "elevating" it. It already knows what it is.
+**Corned beef guisado:** Onion, garlic, canned corned beef, diced potato to stretch it. Savory, familiar, and fast. Nobody needs a chef's manifesto. It already knows what it is.
 
 These aren't filler meals. They're staples that have fed people through tighter months than this one.
 

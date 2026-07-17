@@ -6,7 +6,7 @@ tags: ["cheapest protein sources", "protein per dollar", "budget protein", "chea
 cluster: "budget-protein"
 parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/protein-per-dollar-cheapest-protein-sources-main.jpg"
-imageAlt: "Horizontal bar chart ranking the top 20 cheapest protein sources by grams of protein per dollar, with dried pinto beans in first place"
+imageAlt: "Playful editorial illustration of dried beans, eggs, and chicken competing for space on a grocery scale"
 date: 2026-07-06
 dateModified: 2026-07-17
 author: "David Miller"
@@ -40,6 +40,8 @@ One basis rule matters enough to spell out. Everything is measured **as purchase
 The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv), read the site's [grocery-data methodology](/methodology/), and check the calculations yourself. The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) lets you compare any two rows or build a basket without wrestling the CSV. The [weekly food-cost planner](/tools/grocery-budget-calculator/) takes the next step and scales our five audited 50-gram days for the number of people you're feeding.
 
 *Data last verified July 2026 (dual independent USDA pulls). Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
+
+![Horizontal bar chart ranking the top 20 cheapest protein sources by grams of protein per dollar](/images/protein-per-dollar-top-20-chart.jpg)
 
 ## The full ranking: 49 protein sources by protein per dollar
 

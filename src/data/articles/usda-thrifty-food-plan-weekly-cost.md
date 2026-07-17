@@ -4,9 +4,9 @@ excerpt: "USDA says its reference family can eat at home for $235 a week. Here's
 category: "nutrition"
 tags: ["USDA Thrifty Food Plan", "weekly grocery budget", "family food cost", "food economics", "budget meal planning"]
 image: "/images/usda-thrifty-food-plan-weekly-cost-main.jpg"
-imageAlt: "Bar chart showing the USDA May 2026 weekly Thrifty Food Plan costs for two adults and two children"
+imageAlt: "Playful editorial illustration of a family grocery table divided into seven affordable meal days"
 date: 2026-07-14
-dateModified: 2026-07-15
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -46,7 +46,7 @@ The model was rebuilt in 2021 using prices, food data, consumption patterns, and
 
 USDA doesn't split the money into four equal envelopes. The report assigns $73.20 to the adult man, $58.20 to the adult woman, $48.00 to the younger child, and $55.50 to the older child. The displayed numbers add to $234.90, while USDA reports $235.00 from unrounded amounts. Ten cents of federal rounding. Nobody is hiding a steak.
 
-![Bar chart of weekly USDA Thrifty Food Plan costs by reference family member in May 2026](/images/usda-thrifty-food-plan-weekly-cost-main.jpg)
+![Bar chart of weekly USDA Thrifty Food Plan costs by reference family member in May 2026](/images/usda-thrifty-food-plan-family-cost-chart.jpg)
 
 ## How much does a cheap, healthy week cost in 2026?
 

@@ -11,7 +11,7 @@ tags:
 image: /images/split-pea-soup-recipe-high-fiber-main.jpg
 imageAlt: Thick green split pea soup in a white bowl with carrots, celery, and parsley on top
 date: 2026-01-16
-dateModified: 2026-07-12
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -61,7 +61,7 @@ When the wind starts whistling and daylight clocks out at 3:30 PM, my brain flip
 
 Yeah, I know. Peas. They sound plain. Then they cook down into a thick, savory situation that feels like a blanket with a spoon. One hearty bowl of this high fiber split pea soup can land around 16 grams of fiber. That's not a cute garnish number. That's real grocery math. And dried split peas are cheap enough that the whole pot barely registers on the bill.
 
-## Why this soup hits different
+## Why is split pea soup so satisfying?
 
 There's something deeply satisfying about turning dried peas, a few humble vegetables, and broth into a meal that tastes like it simmered all afternoon. You chop. You toss. You wait. That's most of the skill.
 

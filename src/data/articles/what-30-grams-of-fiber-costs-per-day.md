@@ -6,7 +6,7 @@ tags: ["cost of fiber per day", "30 grams of fiber a day", "fiber on a budget", 
 cluster: "budget-fiber"
 parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/what-30-grams-of-fiber-costs-per-day-main.jpg"
-imageAlt: "Horizontal bar chart comparing the cost of five ways to eat 30 grams of fiber in one day, from 62 cents for dry goods to $14.42 at restaurants"
+imageAlt: "Editorial illustration contrasting a pantry basket of oats, beans, and popcorn with an oversized restaurant receipt"
 date: 2026-07-08
 dateModified: 2026-07-17
 author: "David Miller"
@@ -40,6 +40,8 @@ Three ground rules so nobody has to squint at the math:
 The full dataset is public. Download the raw CSV [here](/data/fiber-day-cost-2026.csv), check any row against the [parent dataset](/data/fiber-per-dollar-2026.csv), or run your own matchups in the [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/). If you want these five days to behave like an actual household week, the [weekly food-cost planner](/tools/grocery-budget-calculator/) scales every menu by people and days. No retyping oats into a tiny box seven times.
 
 *Data last verified July 12, 2026. Menu prices re-checked at each quarterly re-audit; next: October 2026.*
+
+![Horizontal bar chart comparing five ways to eat roughly 30 grams of fiber, from a 62-cent dry-goods day to a $14.42 restaurant day](/images/what-30-grams-of-fiber-costs-five-ways-chart.jpg)
 
 ## Day 1: The rock-bottom dry goods day ($0.62)
 

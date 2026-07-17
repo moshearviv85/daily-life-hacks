@@ -6,7 +6,7 @@ tags: ["cost of protein per day", "50 grams of protein a day", "protein on a bud
 cluster: "budget-protein"
 parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/what-50-grams-of-protein-costs-per-day-main.jpg"
-imageAlt: "Horizontal bar chart comparing the cost of five ways to eat 50 grams of protein in one day, from 82 cents for dry goods to $9.97 at McDonald's"
+imageAlt: "Editorial illustration contrasting a budget protein basket of beans, eggs, and chicken with an oversized fast-food receipt"
 date: 2026-07-12
 dateModified: 2026-07-17
 author: "David Miller"
@@ -40,6 +40,8 @@ Three ground rules so nobody has to squint at the math:
 The full dataset is public. Download the raw CSV [here](/data/protein-day-cost-2026.csv), check any row against the [parent dataset](/data/protein-per-dollar-2026.csv), or run your own matchups in the [per dollar calculator](/tools/fiber-per-dollar-calculator/). To repeat these menus across a real household, use the [weekly food-cost planner](/tools/grocery-budget-calculator/). It scales food amounts, tracked grams, and cost by people and days, which is more useful than admiring one cheap Tuesday in isolation. One accounting note: meal rows are displayed and exported after rounding, while the day totals and annual chart use the unrounded parent-dataset values. Adding the visible rows can therefore differ from the reported total by one cent or 0.1 gram.
 
 *Data last verified July 12, 2026. Menu prices re-checked at each quarterly re-audit; next: October 2026.*
+
+![Horizontal bar chart comparing five ways to eat roughly 50 grams of protein, from an 82-cent dry-goods day to a $9.97 fast-food day](/images/what-50-grams-of-protein-costs-five-ways-chart.jpg)
 
 ## Day 1: The rock-bottom dry goods day ($0.82)
 

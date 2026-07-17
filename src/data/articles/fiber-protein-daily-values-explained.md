@@ -4,9 +4,9 @@ excerpt: "FDA gets 28g fiber and 50g protein from tidy 2,000-calorie label math.
 category: "nutrition"
 tags: ["FDA Daily Value", "28 grams fiber", "50 grams protein", "nutrition label math", "food cost targets"]
 image: "/images/fiber-protein-daily-values-explained-main.jpg"
-imageAlt: "Bar chart explaining the FDA percent Daily Value thresholds for low, good source, and high nutrient claims"
+imageAlt: "Playful editorial illustration of a magnifying glass examining a nutrition label beside beans, oats, eggs, and chicken"
 date: 2026-07-14
-dateModified: 2026-07-15
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -90,7 +90,7 @@ Protein labels have an extra wrinkle. When a company puts a protein %DV on the p
 
 For the full fiber version, our guide to [what “good source of fiber” means](/good-source-of-fiber-label-meaning/) walks through the cereal-aisle numbers without asking you to become a regulatory attorney before breakfast.
 
-![Bar chart showing the FDA percent Daily Value thresholds used for low, good source, and high label language](/images/fiber-protein-daily-values-explained-main.jpg)
+![Bar chart showing the FDA percent Daily Value thresholds used for low, good source, and high label language](/images/fiber-protein-daily-values-thresholds-chart.jpg)
 
 ## How do our four cost studies use these targets?
 

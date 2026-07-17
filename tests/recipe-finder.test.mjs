@@ -16,9 +16,9 @@ test("recipe finder is built from released recipe frontmatter", () => {
 test("recipe finder ranks overlap and exposes shopping gaps", () => {
   assert.match(source, /b\.matched\.length-a\.matched\.length/);
   assert.match(source, /a\.mainMissing\.length-b\.mainMissing\.length/);
-  assert.match(source, /Still on the list:/);
+  assert.match(source, /You'd still need:/);
   assert.match(source, /pantry basic/);
-  assert.match(source, /Open and scale the recipe/);
+  assert.match(source, /See the recipe and fix the servings/);
 });
 
 test("recipe finder includes utility SEO and structured data", () => {

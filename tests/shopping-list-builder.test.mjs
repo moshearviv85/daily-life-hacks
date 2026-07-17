@@ -31,12 +31,12 @@ test("shopping list builder exposes search, per-recipe servings, copy, print, an
 
 test("recipe selection is visibly clickable and can be removed from either surface", async () => {
   const source = await readFile(sourcePath, "utf8");
-  assert.match(source, /Click a recipe card to add it\. Click a selected card again to remove it\./);
-  assert.match(source, /active\?'Selected - click to remove':'Click to add'/);
+  assert.match(source, /Click a card to add it\. Click the orange selected card to remove it\. That's the whole ceremony\./);
+  assert.match(source, /active\?'On the list - click to remove':'Add to the plan'/);
   assert.match(source, /aria-label="'\+\(active\?'Remove ':'Add '\)/);
   assert.match(source, /data-remove-recipe=/);
   assert.match(source, />×<\/span> Remove recipe/);
-  assert.match(source, /recipe\.title\+' removed\. No hard feelings\.'/);
+  assert.match(source, /recipe\.title\+' is off the list\. Dinner will recover\.'/);
   assert.match(source, /\.recipe-choice:hover/);
   assert.match(source, /\.recipe-choice:active\{transform:translateY\(0\) scale\(\.97\)/);
   assert.match(source, /cursor:pointer/);

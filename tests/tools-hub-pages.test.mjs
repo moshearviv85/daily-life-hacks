@@ -67,8 +67,8 @@ test("tools hub exposes the practical recipe workflows", async () => {
   const source = await readFile(path.join(process.cwd(), "src/pages/tools/index.astro"), "utf8");
   assert.match(source, /href: "\/tools\/recipe-finder\/"/);
   assert.match(source, /href: "\/tools\/shopping-list-builder\/"/);
-  assert.match(source, /Use What You Have Recipe Finder/);
-  assert.match(source, /Multi-Recipe Shopping List Builder/);
+  assert.match(source, /You've Got Ingredients\. Let's Find Dinner\./);
+  assert.match(source, /Make One Shopping List, Not Five/);
 });
 
 test("calculator formulas and interaction hooks remain present", async () => {

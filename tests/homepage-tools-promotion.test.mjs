@@ -6,7 +6,7 @@ test("homepage sends research readers to the priced weekly planner", async () =>
   const source = await readFile("src/pages/index.astro", "utf8");
   assert.match(source, /href="\/tools\/grocery-budget-calculator\/"/);
   assert.match(source, /10 priced menus/);
-  assert.match(source, /Build a Week From Our Cost Studies/);
+  assert.match(source, /Plan the Week Before the Cart Gets Ideas/);
   assert.match(source, /Grocery Cost Studies, Recipes and Food Tools/);
   assert.match(source, /Grocery Cost Studies, Practical Recipes, and Food Tools/);
   assert.doesNotMatch(source, /Join 2,500\+ readers/);
@@ -24,8 +24,8 @@ test("recipes index links the finder and combined shopping list", async () => {
   const source = await readFile("src/pages/recipes/index.astro", "utf8");
   assert.match(source, /href="\/tools\/recipe-finder\/"/);
   assert.match(source, /href="\/tools\/shopping-list-builder\/"/);
-  assert.match(source, /Find a Recipe From What You Have/);
-  assert.match(source, /Build One Combined Shopping List/);
+  assert.match(source, /You've Got Ingredients\. Let's Find Dinner\./);
+  assert.match(source, /Make One Shopping List, Not Five/);
 });
 
 test("weekly planner cannot quietly become a 35-day week", async () => {

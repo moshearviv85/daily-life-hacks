@@ -11,7 +11,7 @@ tags:
 image: /images/popcorn-vs-potato-chips-fiber-comparison-main.jpg
 imageAlt: Bowl of air-popped popcorn next to a small pile of potato chips for a fiber comparison
 date: 2026-02-07
-dateModified: 2026-07-13
+dateModified: 2026-07-17
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -63,7 +63,7 @@ For chips, the trap is the bag. A family-size bag doesn't become one serving bec
 
 Popcorn is a whole grain. Each kernel is the complete corn grain with its bran still attached, and bran is where the fiber lives. Nothing gets peeled, refined, or stripped on the way to your bowl. Heat, pop, done.
 
-A potato chip has a rougher journey. The potato gets peeled (there goes a chunk of the fiber), sliced thin, and fried, which concentrates calories while the fiber stays flat. Nothing evil happened, but the math at the end is what it is: more calories, less fiber, smaller serving.
+A potato chip takes a rougher route. The potato gets peeled (there goes a chunk of the fiber), sliced thin, and fried, which concentrates calories while the fiber stays flat. Nothing evil happened, but the math at the end is what it is: more calories, less fiber, smaller serving.
 
 This is the same pattern we found across the whole snack aisle when we ranked [healthy alternatives to potato chips](/healthy-alternatives-potato-chips-snacking/): the closer a snack is to the intact plant, the better the fiber math gets.
 
