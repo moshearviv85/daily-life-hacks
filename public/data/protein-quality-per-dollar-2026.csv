@@ -1,0 +1,26 @@
+food,protein_g_per_dollar,diaas_score,diaas_capped_for_multiplication,diaas_method,diaas_source,adjusted_g_per_dollar,notes
+Pinto beans (dry),97.9,0.59,0.59,DIAAS,Nosworthy et al. 2018 (cooked Phaseolus vulgaris),57.8,Common bean; limited by sulfur amino acids
+Chicken drumsticks (bone-in),50.3,1.08,1.00,DIAAS,Burd et al. 2019 (cooked chicken breast),50.3,Complete protein; chicken proxy
+Brown lentils (dry),77.7,0.63,0.63,DIAAS,Nosworthy et al. 2017 (cooked green lentil),49.0,Limited by sulfur amino acids
+Black beans (dry),81.0,0.59,0.59,DIAAS,Nosworthy et al. 2018 (cooked Phaseolus vulgaris),47.8,Common bean; limited by sulfur amino acids
+Chickpeas (dry),56.7,0.83,0.83,DIAAS,Phillips 2017 review (cooked chickpea),47.1,Highest-quality common pulse; limited by tryptophan
+Navy beans (dry),75.9,0.57,0.57,DIAAS,Nosworthy et al. 2018 (cooked navy bean),43.3,Common bean; limited by sulfur amino acids
+Whole wheat flour,96.0,0.45,0.45,DIAAS,Ertl et al. 2016; Herreman et al. 2020 (wheat),43.2,Cereal grain; limited by lysine
+Green split peas (dry),73.9,0.58,0.58,DIAAS,Phillips 2017 review (cooked peas),42.9,Limited by sulfur amino acids
+Red lentils (dry),56.0,0.63,0.63,DIAAS,Nosworthy et al. 2017 (cooked red lentil),35.3,Limited by sulfur amino acids
+Eggs (large),34.4,1.13,1.00,DIAAS,Phillips 2017 review; FAO 2013 (cooked whole egg),34.4,Complete protein
+Mozzarella (low-moisture part-skim),30.1,1.14,1.00,DIAAS,Mathai et al. 2017; FAO 2013 (milk protein),30.1,Complete protein; milk-protein proxy
+Whole milk,29.1,1.14,1.00,DIAAS,Phillips 2017 review; FAO 2013 (whole milk),29.1,Complete protein
+"White rice (long grain, dry)",48.0,0.60,0.60,DIAAS,Phillips 2017 review (cooked white rice),28.8,Cereal grain; limited by lysine
+"Chicken thighs (boneless, skinless)",27.7,1.08,1.00,DIAAS,Burd et al. 2019 (cooked chicken breast),27.7,Complete protein; chicken proxy
+"Greek yogurt (plain, nonfat)",27.5,1.14,1.00,DIAAS,Mathai et al. 2017; FAO 2013 (milk protein),27.5,Complete protein; milk-protein proxy
+Cottage cheese (4%),26.3,1.14,1.00,DIAAS,Mathai et al. 2017; FAO 2013 (milk protein),26.3,Complete protein; milk-protein proxy
+Old-fashioned rolled oats,46.6,0.54,0.54,DIAAS,Rutherfurd et al. 2015 (cooked rolled oats),25.2,Cereal grain; limited by lysine
+"Chicken breast (boneless, skinless)",24.5,1.08,1.00,DIAAS,Burd et al. 2019 (cooked chicken breast),24.5,Complete protein
+Whole wheat spaghetti,53.4,0.45,0.45,DIAAS,Ertl et al. 2016; Herreman et al. 2020 (wheat),24.0,Durum wheat; limited by lysine
+"Canned tuna (chunk light, in water)",22.4,1.00,1.00,DIAAS,Stein lab / FAO 2013 (fish protein),22.4,Complete protein; fish proxy
+Peanut butter,50.7,0.43,0.43,DIAAS,Rutherfurd et al. 2015 (roasted peanuts),21.8,Limited by lysine
+TVP (textured vegetable protein),22.5,0.90,0.90,DIAAS,Herreman et al. 2020 (soy),20.2,Soy is a complete plant protein
+100% whole wheat bread,35.8,0.45,0.45,DIAAS,Ertl et al. 2016; Herreman et al. 2020 (wheat),16.1,Cereal grain; limited by lysine
+Tofu (extra firm),13.6,0.90,0.90,DIAAS,Herreman et al. 2020 (soy),12.2,Soy is a complete plant protein
+Ground beef (80/20),11.5,1.11,1.00,DIAAS,Ertl et al. 2016 (beef),11.5,Complete protein
