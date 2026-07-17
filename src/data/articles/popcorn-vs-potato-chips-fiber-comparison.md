@@ -69,7 +69,7 @@ This is the same pattern we found across the whole snack aisle when we ranked [h
 
 The whole-grain point doesn't mean popcorn wins every snack decision. It means it wins this specific measurement. Chips bring a dense salty crunch that popcorn doesn't fully copy, and pretending otherwise is how you end up eating popcorn first and chips ten minutes later. If you genuinely want chips, have chips. If what you want is a long, crunchy snack while your hands are busy with a keyboard or a remote, popcorn is usually the better tool.
 
-Calories deserve the same practical treatment. The lower calorie density of air-popped popcorn lets you eat more physical volume for a similar or smaller calorie budget. That's useful when the experience of snacking matters as much as the first bite. It isn't a moral score. There are days when a compact snack is more convenient, and a small bag of chips survives a backpack better than a container of popcorn that has been crushed into salty packing material.
+Calories deserve the same practical treatment. Air-popped popcorn packs fewer calories into a bigger bowl, so the same calorie budget buys a snack that actually lasts a while. That's useful when the experience of snacking matters as much as the first bite. It isn't a moral score. There are days when a compact snack is more convenient, and a small bag of chips survives a backpack better than a container of popcorn that has been crushed into salty packing material.
 
 ## Which snack fits the situation?
 

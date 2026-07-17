@@ -86,7 +86,7 @@ For fiber, the conversion is clean:
 
 *Source: FDA, 21 CFR 101.54 and "The Lows and Highs of Percent Daily Value on the Nutrition Facts Label."*
 
-Protein labels have an extra wrinkle. When a protein %DV is calculated, FDA rules can require the amount to be adjusted for protein quality. That means “5g of protein equals 10%” isn't a safe legal shortcut for every product.
+Protein labels have an extra wrinkle. When a company puts a protein %DV on the package, FDA rules can make it adjust the amount for protein quality first. That means “5g of protein equals 10%” isn't a safe legal shortcut for every product.
 
 For the full fiber version, our guide to [what “good source of fiber” means](/good-source-of-fiber-label-meaning/) walks through the cereal-aisle numbers without asking you to become a regulatory attorney before breakfast.
 

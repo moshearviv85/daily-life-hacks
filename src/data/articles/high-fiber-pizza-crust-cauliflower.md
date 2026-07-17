@@ -173,7 +173,7 @@ If you're already processing and cooking one head of cauliflower, making a secon
 
 ## How to compare fiber numbers and labels
 
-The estimate for this recipe is about 6 grams of fiber per serving, with one serving defined as one quarter of the crust before toppings. Roughly 18 grams comes from the two pounds of trimmed cauliflower and about 6 grams comes from the almond flour. That puts the full untopped crust near 24 grams before it is divided into four servings.
+The estimate for this recipe is about 6 grams of fiber per serving, with one serving defined as one quarter of the crust before toppings. Roughly 18 grams comes from the two pounds of trimmed cauliflower and about 6 grams comes from the almond flour. That puts the full untopped crust near 24 grams before it's divided into four servings.
 
 Exact numbers can shift with the cauliflower and almond flour brand, and toppings change the calorie count. The frontmatter estimate of 185 calories is for one quarter of the crust before sauce, cheese, or other toppings.
 
