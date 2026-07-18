@@ -12,7 +12,7 @@ tags:
 image: "/images/easy-sourdough-discard-recipes-beginners-main.jpg"
 imageAlt: A close-up photograph shows a glass jar of sourdough starter in the background and a pile of sourdough discard crackers and pancakes in the foreground.
 date: 2026-04-28
-dateModified: 2026-07-16
+dateModified: 2026-07-18
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"
@@ -49,7 +49,7 @@ Sourdough discard is just unfed starter, equal parts flour and water, and you ca
 
 I used to feel a strange, low-grade guilt every time I scraped half my sourdough starter into the trash. It felt like tossing money and time down the drain, but I didn't have the emotional bandwidth to bake a loaf of artisanal bread every Tuesday. Then I realized that discard isn't actually trash, it's just pre-mixed flour and water with a better personality.
 
-If you have a jar of bubbly goo in your fridge and no desire to spend twelve hours folding dough, you're in the right place. These easy sourdough discard recipes for beginners are designed to get you fed in twenty minutes, not two days. Here's the quick map:
+If you have a jar of bubbly goo in your fridge and no desire to spend twelve hours folding dough, you're in the right place. These easy sourdough discard recipes for beginners are designed to get you fed in twenty minutes, not two days. If your recipe speaks cups while your scale speaks grams, use this [sourdough discard conversion chart](/how-to-measure-sourdough-discard-grams/) before you coat another measuring cup in beige glue. Here's the quick map:
 
 | Use | Discard amount | Time |
 |---|---|---|

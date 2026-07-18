@@ -12,7 +12,7 @@ tags:
 image: "/images/gluten-free-sourdough-discard-pizza-dough-main.jpg"
 imageAlt: A slice of gluten-free sourdough pizza with tomato sauce, mozzarella, and basil is being lifted from the whole pizza.
 date: 2026-04-28
-dateModified: 2026-07-17
+dateModified: 2026-07-18
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
@@ -50,7 +50,7 @@ faq:
 ---
 I used to feel a strange, low-grade guilt every time I poured half my gluten free starter down the drain. It felt like throwing away a science project I had actually managed to keep alive. If you're like me, you started a GF sourdough starter because you wanted better bread, but now you just have a jar in the fridge that demands to be fed like a very needy, very beige pet.
 
-This gluten free sourdough discard pizza dough is the best way to stop the waste. It doesn't require a 12-hour ferment or a degree in chemistry. You get that distinct sourdough tang and a crust that actually bends without snapping in half. And if gluten isn't your problem, the regular [no-yeast sourdough discard pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/) works the same magic.
+This gluten free sourdough discard pizza dough is the best way to stop the waste. It doesn't require a 12-hour ferment or a degree in chemistry. You get that distinct sourdough tang and a crust that actually bends without snapping in half. Measure carefully, though. The [sourdough discard grams conversion](/how-to-measure-sourdough-discard-grams/) keeps an extra splash of starter from turning the crust into paste. And if gluten isn't your problem, the regular [no-yeast sourdough discard pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/) works the same magic.
 
 ## Why use discard in gluten free pizza?
 

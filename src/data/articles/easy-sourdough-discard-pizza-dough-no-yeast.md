@@ -9,10 +9,10 @@ tags:
 - pizza
 - sourdough
 - pizza dough
-- discard pizza
 image: "/images/easy-sourdough-discard-pizza-dough-no-yeast-main.jpg"
 imageAlt: A close-up, top-down view of a golden-brown pizza crust with airy edges on a wooden surface.
 date: 2026-04-28
+dateModified: 2026-07-18
 author: "David Miller"
 featured: false
 prepTime: "10 minutes"
@@ -58,7 +58,7 @@ If you've ever forgotten to start your dough the night before, this is your safe
 
 ## Getting the texture right with discard
 
-The hydration of your starter matters here. If your discard is watery, you're going to need a bit more flour than the recipe calls for. I usually start with the base measurements and then add flour a tablespoon at a time. You want the dough to feel like a Post-it note: sticky enough to cling to your finger for a second, but clean enough to pull away without leaving a mess.
+The hydration of your starter matters here. If your discard is watery, you're going to need a bit more flour than the recipe calls for. I usually start with the base measurements and then add flour a tablespoon at a time. You want the dough to feel like a Post-it note: sticky enough to cling to your finger for a second, but clean enough to pull away without leaving a mess. If you'd rather remove one variable before the flour bag comes out, [weigh the sourdough discard in grams](/how-to-measure-sourdough-discard-grams/) directly in the mixing bowl.
 
 **Pro-tip:** Don't overwork this. This isn't a traditional bread dough where you're trying to build massive gluten networks. If you knead it like you're angry at it, the crust will turn out like a piece of plywood. Just get it smooth and stop.
 

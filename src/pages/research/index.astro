@@ -1,0 +1,156 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const title = "Grocery Cost Research and Public Data | Daily Life Hacks";
+const description = "Explore our audited grocery cost studies, USDA-based rankings, priced daily menus, public CSV files, and plain-English source explainers.";
+
+const studies = [
+  {
+    href: "/fiber-per-dollar-cheapest-high-fiber-foods/",
+    eyebrow: "53 foods ranked",
+    number: "71g",
+    label: "fiber per dollar from dry split peas",
+    title: "Fiber per Dollar",
+    text: "We matched USDA fiber data to July 2026 grocery prices. The dry goods aisle won by an almost rude margin.",
+  },
+  {
+    href: "/protein-per-dollar-cheapest-protein-sources/",
+    eyebrow: "49 foods ranked",
+    number: "98g",
+    label: "protein per dollar from dry pinto beans",
+    title: "Protein per Dollar",
+    text: "Beans, lentils, meat, dairy, and everything in between, compared with the same as-purchased rules.",
+  },
+  {
+    href: "/what-30-grams-of-fiber-costs-per-day/",
+    eyebrow: "5 complete day scenarios",
+    number: "$0.62",
+    label: "cheapest 30-gram fiber day",
+    title: "What 30 Grams of Fiber Costs",
+    text: "Five ways to reach roughly 30 grams, from pantry staples to a $14.42 restaurant day.",
+  },
+  {
+    href: "/what-50-grams-of-protein-costs-per-day/",
+    eyebrow: "5 complete day scenarios",
+    number: "$0.82",
+    label: "cheapest 50-gram protein day",
+    title: "What 50 Grams of Protein Costs",
+    text: "Five 50-gram days priced meal by meal. The fast-food version cost about 12 times more.",
+  },
+];
+
+const explainers = [
+  {
+    href: "/usda-thrifty-food-plan-weekly-cost/",
+    title: "What the USDA Thrifty Food Plan Actually Costs",
+    text: "The government's low-cost food benchmark, translated into weekly and monthly household numbers without the agency-speak fog machine.",
+  },
+  {
+    href: "/fiber-protein-daily-values-explained/",
+    title: "Where the 28g Fiber and 50g Protein Targets Come From",
+    text: "What FDA Daily Values mean, what they don't mean, and why those two numbers appear across our cost studies.",
+  },
+];
+
+const researchSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Daily Life Hacks Grocery Cost Research",
+    url: "https://www.daily-life-hacks.com/research/",
+    description,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Daily Life Hacks",
+      url: "https://www.daily-life-hacks.com/",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Daily Life Hacks grocery cost studies",
+    itemListElement: studies.map((study, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://www.daily-life-hacks.com${study.href}`,
+      name: study.title,
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={researchSchema}>
+  <Header />
+  <main class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+    <section class="max-w-3xl mb-10">
+      <p class="text-sm font-bold uppercase tracking-[0.16em] mb-3" style="color:#F29B30;">Original research</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-5" style="color:var(--heading-color);">
+        We priced the groceries. You get the spreadsheet.
+      </h1>
+      <p class="text-lg md:text-xl leading-relaxed" style="color:var(--text-color);">
+        These aren't recycled lists wearing a lab coat. We match USDA nutrition records to dated US prices, adjust for the part you actually eat, publish the CSV, and show the math. Sometimes the result is useful. Sometimes bacon owes everyone an apology.
+      </p>
+    </section>
+
+    <section aria-labelledby="study-heading" class="mb-14">
+      <div class="flex items-center gap-3 mb-5">
+        <h2 id="study-heading" class="text-2xl md:text-3xl font-bold" style="color:var(--heading-color);">The four core studies</h2>
+        <div class="h-px flex-1" style="background:var(--border-color);"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        {studies.map((study) => (
+          <a href={study.href} class="group rounded-2xl p-6 transition-all hover:-translate-y-1 hover:shadow-lg" style="background:var(--card-bg);border:1px solid var(--border-color);">
+            <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color:#F29B30;">{study.eyebrow}</p>
+            <div class="flex items-end gap-3 mb-4">
+              <span class="text-5xl font-extrabold leading-none" style="color:#F29B30;">{study.number}</span>
+              <span class="text-sm leading-tight max-w-44" style="color:var(--muted-color);">{study.label}</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2 group-hover:text-[#F29B30] transition-colors" style="color:var(--heading-color);">{study.title}</h3>
+            <p class="leading-relaxed" style="color:var(--text-color);">{study.text}</p>
+            <span class="inline-block mt-4 font-bold" style="color:#F29B30;">Read the study →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="grid lg:grid-cols-[1.2fr_0.8fr] gap-7 mb-14">
+      <div class="rounded-2xl p-6 md:p-8" style="background:var(--card-bg);border:1px solid var(--border-color);">
+        <h2 class="text-2xl font-bold mb-3" style="color:var(--heading-color);">Official numbers, translated into English</h2>
+        <p class="mb-6 leading-relaxed" style="color:var(--text-color);">
+          Government documents are great at supplying definitions and less great at keeping you awake. These explainers handle the translation without pretending a federal table is a personality.
+        </p>
+        <div class="space-y-5">
+          {explainers.map((explainer) => (
+            <a href={explainer.href} class="block group border-t pt-5 first:border-t-0 first:pt-0" style="border-color:var(--border-color);">
+              <h3 class="font-bold text-lg group-hover:text-[#F29B30] transition-colors mb-1" style="color:var(--heading-color);">{explainer.title}</h3>
+              <p class="leading-relaxed" style="color:var(--muted-color);">{explainer.text}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="rounded-2xl p-6 md:p-8 text-white" style="background:#1e293b;">
+        <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">Public files</p>
+        <h2 class="text-2xl font-bold mb-3 text-white">Don't trust a chart because it's orange.</h2>
+        <p class="leading-relaxed mb-5 text-slate-200">Download the rows, check the prices, and find the exact place where we divided. “Trust me” remains a terrible spreadsheet column.</p>
+        <ul class="space-y-3 font-semibold">
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/fiber-per-dollar-2026.csv">Fiber per dollar CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-per-dollar-2026.csv">Protein per dollar CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/fiber-day-cost-2026.csv">30-gram fiber day CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-day-cost-2026.csv">50-gram protein day CSV</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5" style="background:rgba(242,155,48,0.10);border:1px solid rgba(242,155,48,0.35);">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl font-bold mb-2" style="color:var(--heading-color);">How we check the math</h2>
+        <p class="leading-relaxed" style="color:var(--text-color);">USDA records, dated price snapshots, edible-fraction adjustments, correction notes, and the refresh schedule all live on one page. The boring details are where a ranking earns the right to exist.</p>
+      </div>
+      <a href="/methodology/" class="shrink-0 inline-flex justify-center rounded-lg px-5 py-3 font-bold text-white" style="background:#F29B30;">Read the methodology</a>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
