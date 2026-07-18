@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { buildRenderedArticleLinkGraph } from "./lib/rendered-article-link-graph.mjs";
 
 const ROOT = process.cwd();
 const DIST_DIR = path.join(ROOT, "dist");
@@ -99,6 +100,7 @@ function main() {
       filePath,
       html,
       canonicalPath: getCanonicalPath(html),
+      indexable: isIndexable(html),
     };
   });
 
@@ -154,9 +156,41 @@ function main() {
     process.exit(1);
   }
 
+  const articleGraph = buildRenderedArticleLinkGraph(documents);
+  const weakRendered = articleGraph.rows.filter((row) => row.mainInbound <= 1);
+  const zeroContextual = articleGraph.rows.filter((row) => row.contextualInbound === 0);
+  if (articleGraph.orphans.length) {
+    console.error(
+      `[verify-internal-links] Found ${articleGraph.orphans.length} rendered article orphan(s) with zero inbound links from another article main:`,
+    );
+    for (const orphan of articleGraph.orphans) {
+      console.error(`- ${orphan.canonicalPath}`);
+    }
+    console.error(
+      `[verify-internal-links] Rendered inbound <=1: ${weakRendered.map((row) => `${row.slug}=${row.mainInbound}`).join(", ")}`,
+    );
+    console.error(
+      `[verify-internal-links] Zero contextual inbound: ${zeroContextual.map((row) => row.slug).join(", ")}`,
+    );
+    process.exit(1);
+  }
+
   console.log(
     `[verify-internal-links] OK: checked ${internalAnchorsChecked} internal anchor(s) across ${htmlFiles.length} HTML file(s); indexable canonical targets=${indexableCanonicalPaths.size}`,
   );
+  console.log(
+    `[verify-internal-links] Article graph: ${articleGraph.articleCount} indexable article(s); rendered orphans=0; rendered inbound <=1=${weakRendered.length}; contextual inbound=0=${zeroContextual.length}`,
+  );
+  if (weakRendered.length) {
+    console.log(
+      `[verify-internal-links] Weak rendered inbound: ${weakRendered.map((row) => `${row.slug}=${row.mainInbound}`).join(", ")}`,
+    );
+  }
+  if (zeroContextual.length) {
+    console.log(
+      `[verify-internal-links] Zero contextual inbound: ${zeroContextual.map((row) => row.slug).join(", ")}`,
+    );
+  }
 }
 
 main();

@@ -55,7 +55,7 @@ Lentils are where I'd point anyone who finds dry beans intimidating, because red
 
 Because you're paying brand-name prices for water and refrigeration. A $2.92 block of extra firm tofu holds about 40 grams of protein. A $1.44 bag of brown lentils holds about 112 grams. Half the price, nearly triple the protein, and nobody had to keep it cold on the truck.
 
-Tempeh tells the same story at $3.48 for an 8 ounce pack. Even TVP, which is basically protein confetti, lands at just 22.5 grams per dollar because the 10 ounce bag costs $6.30 at the store we priced. None of this makes soy foods bad. [Sheet pan ginger tofu](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/) is in my regular rotation because it tastes great, not because it's thrifty. Just don't buy tofu believing it's the budget move. The budget move is beans.
+Tempeh tells the same story at $3.48 for an 8 ounce pack. Even TVP, which is basically protein confetti, lands at just 22.5 grams per dollar because the 10 ounce bag costs $6.30 at the store we priced. None of this makes soy foods bad. [Sheet pan ginger tofu](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/) is in my regular rotation because it tastes great, not because it's thrifty. And if you want soy in its strangest breakfast form, the [guide to natto](/natto-japanese-fermented-soybeans-gut-health/) explains the sticky fermented version. Just don't buy tofu believing it's the budget move. The budget move is beans.
 
 ## Are canned beans a decent middle ground?
 

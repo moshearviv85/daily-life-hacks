@@ -143,7 +143,7 @@ Raw chicken breast carries more than twice the protein per 100 grams and nearly 
 
 One honest note before you replace your entire cart with pinto beans. Plant foods vary in their essential amino acid profiles, but you don't need to pair specific foods at the same meal. [MedlinePlus recommends eating a varied mix](https://medlineplus.gov/ency/article/002465.htm) of beans, lentils, soy foods, nuts, seeds, and whole grains across a vegetarian diet. Beans and rice remain a cheap, practical combination, and our [beans and rice complete protein](/beans-and-rice-complete-protein-meal/) piece explains the kitchen side without turning lunch into biochemistry homework.
 
-Also worth saying: ranking low doesn't make a food bad. Sardines, tempeh, and Greek yogurt bring things to the table that a bag of pinto beans never will. This list answers one question, where each protein dollar goes furthest, and nothing else.
+Also worth saying: ranking low doesn't make a food bad. Sardines, tempeh, and Greek yogurt bring things to the table that a bag of pinto beans never will. This list answers one question, where each protein dollar goes furthest, and nothing else. We ran the separate [quality-adjusted protein-per-dollar ranking](/protein-per-dollar-adjusted-for-quality/) when readers reasonably pointed out that raw grams don't all perform the same job.
 
 ![Bar chart of median protein per dollar by grocery category, with dried beans and lentils far ahead of grains, dairy, meat, and fish](/images/protein-per-dollar-by-category.jpg)
 
@@ -156,6 +156,7 @@ Don't build a bean-only menu out of spite. Let the top of the table carry the ch
 * **Keep eggs, milk, and cottage cheese doing quiet work.** All three sit in the 26 to 34 range with zero prep drama. If you're deciding between the tubs, our [cottage cheese vs Greek yogurt](/cottage-cheese-vs-greek-yogurt-protein-uses/) breakdown settles it.
 * **Feeding a crowd?** We wrote a full playbook on [low-cost protein for large families](/best-low-cost-protein-sources-large-families/) that pairs well with this table.
 * **Want to see the ranking turned into actual days?** Our [50-gram protein cost study](/what-50-grams-of-protein-costs-per-day/) prices five grocery and restaurant scenarios meal by meal.
+* **Already stuck at the drive-thru?** The [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) prices 30 menu items and shows exactly how expensive convenience gets.
 * **Want the shopping system instead of another table?** The [high-protein budget guide](/high-protein-on-a-budget-complete-guide/) turns the same dataset into a cart, pantry, and weekly backbone.
 
 The whole study comes down to one sentence, and it's nearly the same sentence as last time: the highest-return protein in this sample lives in the dry goods aisle at about a quarter per 100 grams, the meat counter's bargain is the humble drumstick, and the stuff at the bottom of the list is the stuff the ads are selling. The spreadsheet is public, the math is one division problem, and the beans don't care whether anyone photographs them.

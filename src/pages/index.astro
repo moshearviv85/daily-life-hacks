@@ -14,9 +14,10 @@ import { isReleased, getReleaseTimestamp } from '../content/release';
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://www.daily-life-hacks.com/#organization',
   name: 'Daily Life Hacks',
   url: 'https://www.daily-life-hacks.com',
-  description: 'Science-backed nutrition tips and easy, healthy recipes for everyday wellness.',
+  description: 'Audited grocery cost research, practical recipes, and interactive food tools built from USDA data and real shelf prices.',
   logo: 'https://www.daily-life-hacks.com/logo.png',
   sameAs: [
     'https://www.pinterest.com/DavidMiller615/'
@@ -33,9 +34,10 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'Daily Life Hacks',
   url: 'https://www.daily-life-hacks.com',
-  description: 'Practical nutrition tips, easy healthy recipes, and kitchen hacks for everyday life.',
+  description: 'Grocery cost studies, practical recipes, and interactive food tools with public data and documented methodology.',
   publisher: {
     '@type': 'Organization',
+    '@id': 'https://www.daily-life-hacks.com/#organization',
     name: 'Daily Life Hacks',
     logo: {
       '@type': 'ImageObject',
@@ -50,7 +52,7 @@ const releasedArticles = allArticles.filter((article: Article) => isReleased(art
 const sorted = releasedArticles.sort(
   (a: Article, b: Article) => getReleaseTimestamp(b) - getReleaseTimestamp(a),
 );
-const releaseFeed = allArticles
+const releaseFeedRows = allArticles
   .map((article: Article) => ({
     slug: article.id,
     title: article.data.title,
@@ -61,8 +63,26 @@ const releaseFeed = allArticles
     date: article.data.date.toISOString(),
     publishAt: article.data.publishAt?.toISOString(),
     releaseTime: getReleaseTimestamp(article),
-  }))
-  .sort((a, b) => b.releaseTime - a.releaseTime)
+  }));
+
+// Fresh Today renders three cards. Shipping all 207 article summaries to the
+// browser made the homepage parse a large JSON payload it never displayed.
+// Keep two released and two upcoming entries per category so scheduled posts
+// can still appear between daily deploys without carrying the whole archive.
+const feedBuildTime = Date.now();
+const releaseFeed = (["nutrition", "recipes", "tips"] as const)
+  .flatMap((category) => {
+    const categoryRows = releaseFeedRows.filter((row) => row.category === category);
+    const released = categoryRows
+      .filter((row) => row.releaseTime <= feedBuildTime)
+      .sort((a, b) => b.releaseTime - a.releaseTime)
+      .slice(0, 2);
+    const upcoming = categoryRows
+      .filter((row) => row.releaseTime > feedBuildTime)
+      .sort((a, b) => a.releaseTime - b.releaseTime)
+      .slice(0, 2);
+    return [...released, ...upcoming];
+  })
   .map(({ releaseTime, ...article }) => article);
 
 const featured  = sorted.find((a: Article) => a.data.featured) ?? sorted[0];

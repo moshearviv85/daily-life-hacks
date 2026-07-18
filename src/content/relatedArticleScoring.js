@@ -26,3 +26,37 @@ export function scoreRelatedCandidate({
 
   return sharedTags * 10 + sameCategory * 3 + preferredPillarBoost;
 }
+
+/**
+ * Resolve cluster ownership in priority order: explicit cluster, explicit
+ * parent, canonical pillar slug, then legacy inference. Registry data is
+ * injected from clusters.ts so there is only one source of truth.
+ */
+export function resolveArticleCluster({
+  articleId,
+  explicitCluster,
+  explicitParentPillar,
+  clusters,
+  inferLegacy,
+  legacyText,
+}) {
+  if (explicitCluster) {
+    const match = clusters.find((cluster) => cluster.id === explicitCluster);
+    if (match) return { cluster: match, source: "frontmatter-cluster" };
+  }
+
+  if (explicitParentPillar) {
+    const match = clusters.find(
+      (cluster) => cluster.parentPillar === explicitParentPillar,
+    );
+    if (match) return { cluster: match, source: "frontmatter-parent" };
+  }
+
+  const pillarMatch = clusters.find(
+    (cluster) => cluster.parentPillar === articleId,
+  );
+  if (pillarMatch) return { cluster: pillarMatch, source: "pillar-slug" };
+
+  const inferred = inferLegacy(legacyText);
+  return inferred ? { cluster: inferred, source: "legacy-fallback" } : null;
+}

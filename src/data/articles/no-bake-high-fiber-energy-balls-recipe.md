@@ -73,7 +73,7 @@ You want a mix that squeezes into a ball without crumbling instantly. If it is t
 Chilling is not optional if you want them to firm up. Warm peanut butter is delicious, but it does not respect your schedule.
 ## Flavor Swaps
 
-Add cinnamon or cardamom if you want a warmer vibe. Add unsweetened cocoa powder if you want something closer to a brownie bite.
+Add cinnamon or cardamom if you want a warmer vibe. Add unsweetened cocoa powder if you want something closer to a brownie bite. If you want the full square-and-fork version, these [black bean brownies](/black-bean-brownies-hidden-fiber-dessert/) take the same chocolate detour without tasting like somebody hid lunch in dessert.
 
 If you want extra crunch, roll the outside in chopped nuts or toasted coconut. If you want less sugar, cut the chips and lean on vanilla and cinnamon instead.
 

@@ -4,7 +4,12 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { isReleased } from "../../content/release";
-import { PILLARS, clusterForText } from "../../content/pillars";
+import {
+  CONTENT_CLUSTERS,
+  inferLegacyCluster,
+  type ContentClusterId,
+} from "../../content/clusters";
+import { resolveArticleCluster } from "../../content/relatedArticleScoring.js";
 
 const title = "Complete Guides | Daily Life Hacks";
 const description =
@@ -13,21 +18,35 @@ const description =
 const allArticles = await getCollection("articles");
 const released = allArticles.filter((a) => isReleased(a));
 
-const spokesByCluster = {
-  fiber: [] as { id: string; title: string }[],
-  budget: [] as { id: string; title: string }[],
-  protein: [] as { id: string; title: string }[],
-  "meal-prep": [] as { id: string; title: string }[],
-};
+const spokesByCluster = CONTENT_CLUSTERS.reduce(
+  (groups, cluster) => {
+    groups[cluster.id] = [];
+    return groups;
+  },
+  {} as Record<ContentClusterId, { id: string; title: string }[]>,
+);
 
-const pillarIds = new Set<string>(PILLARS.map((p) => p.slug));
+const pillarIds = new Set<string>(
+  CONTENT_CLUSTERS.map((cluster) => cluster.parentPillar),
+);
 
 for (const article of released) {
   if (pillarIds.has(article.id)) continue;
   const hay = [article.data.title, ...article.data.tags, article.id].join(" ");
-  const cluster = clusterForText(hay);
-  if (!cluster) continue;
-  spokesByCluster[cluster].push({ id: article.id, title: article.data.title });
+  const resolution = resolveArticleCluster({
+    articleId: article.id,
+    explicitCluster: article.data.cluster,
+    explicitParentPillar: article.data.parentPillar,
+    clusters: CONTENT_CLUSTERS,
+    inferLegacy: inferLegacyCluster,
+    legacyText: hay,
+  });
+  if (!resolution) continue;
+  const clusterId = resolution.cluster.id as ContentClusterId;
+  spokesByCluster[clusterId].push({
+    id: article.id,
+    title: article.data.title,
+  });
 }
 
 for (const key of Object.keys(spokesByCluster) as Array<keyof typeof spokesByCluster>) {
@@ -62,8 +81,8 @@ const guidesSchema = {
 
     <div class="space-y-10 mb-16">
       {
-        PILLARS.map((pillar) => {
-          const spokes = spokesByCluster[pillar.cluster].slice(0, 8);
+        CONTENT_CLUSTERS.map((cluster) => {
+          const spokes = spokesByCluster[cluster.id].slice(0, 8);
           return (
             <section
               class="rounded-xl p-6 md:p-8"
@@ -73,18 +92,18 @@ const guidesSchema = {
                 class="text-xs font-bold uppercase tracking-[0.18em] mb-2"
                 style="color: #F29B30;"
               >
-                {pillar.cluster} pillar
+                {cluster.label} pillar
               </p>
               <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
-                <a href={`/${pillar.slug}/`} class="hover:text-[#F29B30] transition-colors">
-                  {pillar.title}
+                <a href={`/${cluster.parentPillar}/`} class="hover:text-[#F29B30] transition-colors">
+                  {cluster.title}
                 </a>
               </h2>
               <p class="mb-5" style="color: var(--muted-color);">
-                {pillar.blurb}
+                {cluster.blurb}
               </p>
               <a
-                href={`/${pillar.slug}/`}
+                href={`/${cluster.parentPillar}/`}
                 class="inline-flex font-bold mb-6"
                 style="color: #F29B30;"
               >

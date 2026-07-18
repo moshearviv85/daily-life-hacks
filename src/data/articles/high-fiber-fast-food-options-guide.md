@@ -98,7 +98,7 @@ Panera's the easiest place on this list to eat well without thinking hard. It's 
 
 The humble bean burrito has about 9 grams of fiber and costs pocket change. Order it fresco style and they'll swap the cheese for pico, which keeps it lighter without touching the fiber.
 
-Here's the trick most people miss: Taco Bell will substitute beans for beef in almost anything, free. That swap adds a few grams of fiber to whatever you were ordering anyway. Two bean burritos gets you to 18 grams for well under ten bucks, which might be the best fiber-per-dollar deal in fast food. Speaking of which, if that math interests you, I ran the [fiber per dollar numbers on grocery staples](/fiber-per-dollar-cheapest-high-fiber-foods/) and the results surprised me.
+Here's the trick most people miss: Taco Bell will substitute beans for beef in almost anything, free. That swap adds a few grams of fiber to whatever you were ordering anyway. Two bean burritos gets you to 18 grams for well under ten bucks, which might be the best fiber-per-dollar deal in fast food. For the other half of the order, our [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) prices 30 menu items instead of trusting the word "protein" on a menu board. And if grocery math interests you, I also ran the [fiber per dollar numbers on pantry staples](/fiber-per-dollar-cheapest-high-fiber-foods/).
 
 ## Starbucks and McDonald's: breakfast or nothing
 

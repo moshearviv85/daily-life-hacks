@@ -53,7 +53,7 @@ We're all incredibly guilty of the "dump and run" grocery routine. You get home 
 
 That chaos is exactly why your tomatoes taste like grainy mush the next day, and why your apples turn soft and wrinkly before Wednesday. Produce is essentially alive. Different fruits and vegetables require different ecosystems to survive. Some desperately need high humidity, some require bone-dry environments, and some literally emit invisible gases that actively murder the other vegetables sitting next to them. 
 
-If you complain that fresh produce is too expensive, you can't afford to store it incorrectly. Figuring out how to store fruits and vegetables properly usually doubles the lifespan of your groceries, saving you hundreds of dollars a year. Here is the absolute master list of what goes where. 
+If you complain that fresh produce is too expensive, you can't afford to store it incorrectly. Storage is also the unglamorous first move in [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/), because a bargain tomato that liquefies in the drawer is still money in the trash. Here is the master list of what goes where.
 
 ## The Refrigerator Rule Breakers
 

@@ -69,6 +69,8 @@ The tofu gets pressed, coated, and roasted first. The broccoli goes on the pan a
 
 One pan. Crisp edges. Dinner that doesn't taste like you're apologizing for eating tofu.
 
+If you're curious how the same soybean ends up as something completely different, the [natto guide](/natto-japanese-fermented-soybeans-gut-health/) covers the fermented, sticky end of the spectrum. Tofu is the easy first date. Natto shows up with a lot more personality.
+
 ## The tofu needs two small favors
 
 First, press it. You don't need a special tofu press unless you enjoy owning niche equipment. Wrap the block in a towel, set a heavy pan on top, and give it 10 minutes. Less water means better browning.

@@ -22,10 +22,11 @@ const aboutSchema = [
   {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': 'https://www.daily-life-hacks.com/#organization',
     name: 'Daily Life Hacks',
     url: 'https://www.daily-life-hacks.com',
     logo: 'https://www.daily-life-hacks.com/logo.png',
-    description: 'Practical nutrition tips, easy healthy recipes, and kitchen hacks for everyday life.',
+    description: 'Audited grocery cost research, practical recipes, and interactive food tools built from public data and real shelf prices.',
     sameAs: [
       'https://www.pinterest.com/DavidMiller615/',
     ],
@@ -34,22 +35,24 @@ const aboutSchema = [
       name: 'David Miller',
       url: 'https://www.daily-life-hacks.com/about/',
       jobTitle: 'Founder',
-      knowsAbout: ['Nutrition', 'Healthy Recipes', 'Meal Prep', 'Kitchen Tips'],
+      knowsAbout: ['Grocery Cost Research', 'USDA Food Data', 'Budget Cooking', 'Meal Prep'],
     },
   },
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': 'https://www.daily-life-hacks.com/about/',
     name: 'David Miller',
     url: 'https://www.daily-life-hacks.com/about/',
     jobTitle: 'Founder',
     worksFor: {
       '@type': 'Organization',
+      '@id': 'https://www.daily-life-hacks.com/#organization',
       name: 'Daily Life Hacks',
       url: 'https://www.daily-life-hacks.com',
     },
-    knowsAbout: ['Nutrition', 'Healthy Recipes', 'Meal Prep', 'Kitchen Tips'],
-    description: 'Founder of Daily Life Hacks. Writes about practical nutrition and simple recipes for busy people.',
+    knowsAbout: ['Grocery Cost Research', 'USDA Food Data', 'Budget Cooking', 'Meal Prep'],
+    description: 'Founder of Daily Life Hacks. Publishes grocery cost studies, practical recipes, and food tools with public source data.',
   },
 ];
 ---
@@ -75,7 +78,8 @@ const aboutSchema = [
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">What you'll find here</h2>
       <ul class="list-disc pl-6 space-y-2">
         <li>Simple recipes you can actually repeat on a weekday without bargaining with your sanity.</li>
-        <li>Nutrition posts that speak human, not lab report. Just enough info so you know what to toss in the cart without overthinking it.</li>
+        <li>Grocery cost studies that publish the numbers, the source files, and the part where beans embarrass half the store.</li>
+        <li>Nutrition posts that speak human, not lab report. Just enough information to understand the number without adopting a spreadsheet as a pet.</li>
         <li>Practical fixes for everyday kitchen annoyances: leftovers, storage, "what do I do with this", not avocado swans.</li>
       </ul>
 
@@ -88,10 +92,10 @@ const aboutSchema = [
 
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Who this site is for</h2>
       <p>
-        If you want real food, minimal drama, and zero spreadsheets, you're my people. You like learning small, useful things that make cooking less annoying, not turning your life into a wellness TED Talk.
+        If you want real food, minimal drama, and spreadsheets you don't have to build yourself, you're my people. You like useful numbers that make shopping and cooking less annoying, not turning your life into a wellness TED Talk.
       </p>
       <p>
-        Come hang out in the <a href="/recipes/" class="underline" style="color: #F29B30;">recipes</a>, <a href="/nutrition/" class="underline" style="color: #F29B30;">nutrition</a>, and <a href="/tips/" class="underline" style="color: #F29B30;">tips</a> sections, or <a href="/#newsletter" class="underline" style="color: #F29B30;">join the newsletter</a> and get the new stuff before it even hits the site.
+        Start with the <a href="/research/" class="underline" style="color: #F29B30;">original research</a>, check <a href="/methodology/" class="underline" style="color: #F29B30;">how we verify the math</a>, or head to the <a href="/recipes/" class="underline" style="color: #F29B30;">recipes</a> when dinner is the more urgent problem. You can also <a href="/#newsletter" class="underline" style="color: #F29B30;">join the newsletter</a> and get the new stuff before it hits the site.
       </p>
 
       <p class="mt-10">If you made it this far, you have more patience than I do.</p>

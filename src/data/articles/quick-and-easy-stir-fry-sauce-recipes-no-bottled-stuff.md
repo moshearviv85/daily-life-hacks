@@ -60,7 +60,7 @@ The practical argument breaks down into three parts. First, flavor control. When
 
 There's also the cost angle, though it's less dramatic than you'd think. A bottle of decent stir-fry sauce runs three to five dollars and lasts a few meals. The ingredients for homemade sauces cost more upfront but last longer and make more batches. Over a month of weekly stir-fry dinners, you're maybe saving a few dollars-not enough to write home about, but not nothing either.
 
-The real payoff is the meal itself. A good sauce transforms a weeknight stir-fry from "serviceable" to "I'd order this at a restaurant." That's worth a few minutes of mixing. The other half of the equation is a properly hot pan, so it's worth knowing [how to preheat a skillet for even browning](/how-to-preheat-skillet-even-browning/) before the sauce ever hits the metal.
+The real payoff is the meal itself. A good sauce transforms a weeknight stir-fry from "serviceable" to "I'd order this at a restaurant." That's worth a few minutes of mixing. The other half of the equation is a properly hot pan, so it's worth knowing [how to preheat a skillet for even browning](/how-to-preheat-skillet-even-browning/) before the sauce ever hits the metal. If you need the vegetables and timing too, the [high-fiber stir-fry guide](/high-fiber-stir-fry-vegetables/) handles the rest of the pan.
 
 ## The Building Blocks of Any Stir-Fry Sauce
 

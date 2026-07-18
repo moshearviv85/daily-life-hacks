@@ -64,7 +64,7 @@ Oats belong in the same conversation at 46.6 grams per dollar, about 157 grams o
 
 ## What does a full day of protein cost at these prices?
 
-Take the 50 gram Daily Value as a yardstick. Covered entirely by dry pinto beans, it costs about $0.51 a day. Covered by drumsticks, about a dollar. Nobody eats a single food all day, but the yardstick shows how low the floor sits when you build meals around this list; we ran the fuller version of that math in [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/).
+Take the 50 gram Daily Value as a yardstick. Covered entirely by dry pinto beans, it costs about $0.51 a day. Covered by drumsticks, about a dollar. Nobody eats a single food all day, but the yardstick shows how low the floor sits when you build meals around this list; we ran the fuller version of that math in [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/). At the other end, the [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) shows the best drive-thru option topping out at 8.4 grams per dollar. Convenience has apparently hired a very confident accountant.
 
 The bigger lesson from the whole dataset is that price and protein aren't strangers, they're just filed in different aisles. Test the foods you already buy in the [protein and fiber value planner](/tools/fiber-per-dollar-calculator/), then use the [weekly food-cost planner](/tools/grocery-budget-calculator/) to scale our audited 50-gram days for your household. For the shopping and cooking system around those numbers, the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) is the place to start.
 

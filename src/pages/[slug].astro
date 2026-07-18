@@ -68,6 +68,31 @@ const modifiedDate = (
   article.data.dateModified ?? releaseDate
 ).toISOString();
 
+const publisherSchema = {
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  name: "Daily Life Hacks",
+  url: siteUrl,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteUrl}/logo.png`,
+  },
+};
+
+const authorName = article.data.author ?? "David Miller";
+const articleAuthor = authorName === "Daily Life Hacks Team"
+  ? {
+      "@type": "Organization",
+      name: authorName,
+      url: `${siteUrl}/about/`,
+    }
+  : {
+      "@type": "Person",
+      "@id": `${siteUrl}/about/`,
+      name: authorName,
+      url: `${siteUrl}/about/`,
+    };
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -139,16 +164,8 @@ const jsonLd = isRecipe
           };
         },
       ),
-      author: {
-        "@type": "Person",
-        name: article.data.author ?? "David Miller",
-        url: "https://www.daily-life-hacks.com/about/",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Daily Life Hacks",
-        url: "https://www.daily-life-hacks.com",
-      },
+      author: articleAuthor,
+      publisher: publisherSchema,
     }
   : {
       "@context": "https://schema.org",
@@ -159,20 +176,16 @@ const jsonLd = isRecipe
       },
       url: articleUrl,
       headline: article.data.title,
+      name: article.data.title,
       description: article.data.excerpt,
       image: [imageUrl],
+      thumbnailUrl: imageUrl,
+      inLanguage: "en-US",
+      keywords: article.data.tags?.join(", "),
       datePublished: publishedDate,
       dateModified: modifiedDate,
-      author: {
-        "@type": "Organization",
-        name: "Daily Life Hacks",
-        url: siteUrl,
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Daily Life Hacks",
-        url: siteUrl,
-      },
+      author: articleAuthor,
+      publisher: publisherSchema,
     };
 
 /**
@@ -233,11 +246,8 @@ if (dataset) {
     description: article.data.excerpt,
     url: articleUrl,
     isAccessibleForFree: true,
-    creator: {
-      "@type": "Organization",
-      name: "Daily Life Hacks",
-      url: siteUrl,
-    },
+    creator: publisherSchema,
+    publisher: publisherSchema,
     datePublished: publishedDate,
     dateModified: modifiedDate,
     keywords: article.data.tags?.join(", "),
@@ -272,6 +282,8 @@ const currentSlug = Astro.params.slug;
 /** Built pages are canonical-only (CP2 Phase B); keep guard if path ever drifts. */
 const isVariant = Boolean(currentSlug && currentSlug !== article.id);
 const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
+/** Do not advertise rich-result entities for hidden or non-canonical pages. */
+const publishedSchemas = released && !isVariant ? allSchemas : undefined;
 ---
 
 <BaseLayout
@@ -279,7 +291,7 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
   description={article.data.excerpt}
   image={article.data.image}
   canonicalURL={articleUrl}
-  jsonLd={allSchemas}
+  jsonLd={publishedSchemas}
   robots={robotsMeta}
   ogType="article"
 >
@@ -398,16 +410,20 @@ const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
         {
           article.data.author && (
             <>
-              <span class="font-medium text-[var(--text-color)]">
+              <a
+                href="/about/"
+                rel="author"
+                class="font-medium text-[var(--text-color)] hover:text-[#F29B30] transition-colors"
+              >
                 {article.data.author}
-              </span>
+              </a>
               <span>•</span>
             </>
           )
         }
         <span>
           {
-            article.data.date.toLocaleDateString("en-US", {
+            releaseDate.toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
               year: "numeric",

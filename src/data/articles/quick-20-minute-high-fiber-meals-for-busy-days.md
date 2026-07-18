@@ -87,6 +87,8 @@ If you have those three categories, you can almost always build a skillet meal i
 Swap spinach for chopped kale, but give kale an extra minute to soften. Add frozen corn if you want a little sweetness. Toss in rotisserie chicken if you need a meat option without extra cook time.
 
 If you want a different flavor profile, swap cumin and paprika for Italian seasoning and a spoon of tomato paste. Same structure, new mood.
+
+If frozen vegetables are doing the heavy lifting, turn the pan into a [high-fiber vegetable stir-fry](/high-fiber-stir-fry-vegetables/) instead. Same twenty-minute rescue, less chance of finding half a pouch of rice fossilizing in the fridge on Friday.
 ## Storage
 
 Leftovers keep in the fridge for about three days in an airtight container. Reheat in a skillet with a splash of water so the rice does not dry out.

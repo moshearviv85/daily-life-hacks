@@ -4,11 +4,13 @@ import type { CollectionEntry } from "astro:content";
 import OptImage from "./OptImage.astro";
 import { getReleaseTimestamp, isReleased } from "../content/release";
 import {
-  PILLAR_SLUGS,
-  clusterForText,
-  pillarSlugForCluster,
-} from "../content/pillars";
-import { scoreRelatedCandidate } from "../content/relatedArticleScoring.js";
+  CONTENT_CLUSTERS,
+  inferLegacyCluster,
+} from "../content/clusters";
+import {
+  resolveArticleCluster,
+  scoreRelatedCandidate,
+} from "../content/relatedArticleScoring.js";
 
 interface Props {
   /** The article currently being viewed (canonical entry). */
@@ -24,10 +26,20 @@ const currentTags = new Set(article.data.tags.map(normalizeTag));
 const currentHay = [article.data.title, ...article.data.tags, article.id]
   .join(" ")
   .toLowerCase();
-const currentCluster = clusterForText(currentHay);
+const currentResolution = resolveArticleCluster({
+  articleId: article.id,
+  explicitCluster: article.data.cluster,
+  explicitParentPillar: article.data.parentPillar,
+  clusters: CONTENT_CLUSTERS,
+  inferLegacy: inferLegacyCluster,
+  legacyText: currentHay,
+});
+const pillarSlugs = new Set<string>(
+  CONTENT_CLUSTERS.map((item) => item.parentPillar),
+);
 const preferredPillar =
-  currentCluster && !PILLAR_SLUGS.has(article.id)
-    ? pillarSlugForCluster(currentCluster)
+  currentResolution && !pillarSlugs.has(article.id)
+    ? currentResolution.cluster.parentPillar
     : null;
 
 const allArticles = await getCollection("articles");
@@ -52,7 +64,7 @@ const scored = candidates
       candidateCategory: a.data.category,
       currentTags,
       currentCategory: article.data.category,
-      pillarSlugs: PILLAR_SLUGS,
+      pillarSlugs,
       preferredPillar,
     });
     if (score === null || score <= 0) return null;

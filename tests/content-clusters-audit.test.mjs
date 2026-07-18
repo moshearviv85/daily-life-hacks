@@ -92,10 +92,15 @@ test("valid spoke and parent assignments pass the bounded audit", (t) => {
 });
 
 
-test("audit reports missing, unknown, mismatched, and self-referential metadata", (t) => {
+test("audit ignores unrelated inventory and reports malformed controlled metadata", (t) => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), "dlh-clusters-"));
   t.after(() => fs.rmSync(directory, { recursive: true, force: true }));
-  const missing = writeTempArticle(directory, "missing", "category: tips");
+  const unrelated = writeTempArticle(directory, "unrelated", "category: tips");
+  const missing = writeTempArticle(
+    directory,
+    "missing",
+    "category: tips\nparentPillar: high-protein-on-a-budget-complete-guide",
+  );
   const unknown = writeTempArticle(
     directory,
     "unknown",
@@ -112,7 +117,7 @@ test("audit reports missing, unknown, mismatched, and self-referential metadata"
     "cluster: budget-fiber\nparentPillar: meal-prep-for-beginners-complete-system",
   );
 
-  const result = auditArticleFiles([missing, unknown, self, mismatch], {
+  const result = auditArticleFiles([unrelated, missing, unknown, self, mismatch], {
     knownArticleSlugs: PARENTS,
   });
 
@@ -121,13 +126,22 @@ test("audit reports missing, unknown, mismatched, and self-referential metadata"
   assert.equal(result.counts.unknown_parent, 2);
   assert.equal(result.counts.self_referential_parent, 1);
   assert.equal(result.counts.parent_mismatch, 2);
+  assert.equal(result.outsideControlledClusters, 1);
+  assert.equal(
+    result.rows.find((row) => row.slug === "unrelated").problems.length,
+    0,
+  );
 });
 
 
 test("strict CLI requires a bounded file list and fails only that batch", (t) => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), "dlh-clusters-"));
   t.after(() => fs.rmSync(directory, { recursive: true, force: true }));
-  const invalid = writeTempArticle(directory, "invalid", "category: tips");
+  const invalid = writeTempArticle(
+    directory,
+    "invalid",
+    "category: tips\nparentPillar: meal-prep-for-beginners-complete-system",
+  );
   const valid = writeTempArticle(
     directory,
     "valid",

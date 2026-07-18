@@ -44,7 +44,7 @@ faq:
     to rot or wilt faster in the fridge. If you really want to wash them early, use
     a salad spinner to ensure they're thoroughly dried first.
 ---
-I used to just buy a bunch of cilantro, toss it directly into the crisper drawer in its little plastic produce bag, and then act shocked when it turned into a puddle of green slime three days later. Honestly, I must have thrown away hundreds of dollars in ruined herbs before I finally figured out the right way to handle them. 
+I used to just buy a bunch of cilantro, toss it directly into the crisper drawer in its little plastic produce bag, and then act shocked when it turned into a puddle of green slime three days later. Honestly, I must have thrown away hundreds of dollars in ruined herbs before I finally figured out the right way to handle them. The broader [food-waste guide](/how-to-reduce-food-waste-at-home-easy-tips/) uses the same unglamorous rule: make the food last long enough to actually eat it.
 
 The biggest mistake we make with herbs is treating them all exactly the same. But here's the secret: herbs fall into two different categories, and if you want to know how to store fresh herbs to last longer, you have to treat them according to their type. 
 

@@ -90,13 +90,23 @@ export function auditArticleFiles(
 
     const metadata = readClusterFrontmatter(fs.readFileSync(absolute, "utf8"));
     const definition = byCluster.get(metadata.cluster);
+    const isControlledParent = knownParents.has(slug);
+    const hasClusterMetadata = Boolean(
+      metadata.cluster || metadata.parentPillar || isControlledParent,
+    );
 
-    if (!metadata.cluster) {
-      problems.push(problem("missing_cluster", "cluster is not assigned"));
-    } else if (!definition) {
+    // Articles outside these four authority clusters are valid inventory, not
+    // audit failures. Only partial or invalid controlled metadata is reported.
+    if (!metadata.cluster && metadata.parentPillar) {
       problems.push(
-        problem("unknown_cluster", `cluster is not registered: ${metadata.cluster}`),
+        problem("missing_cluster", "parentPillar is set but cluster is not assigned"),
       );
+    } else if (!definition) {
+      if (metadata.cluster) {
+        problems.push(
+          problem("unknown_cluster", `cluster is not registered: ${metadata.cluster}`),
+        );
+      }
     }
 
     if (metadata.parentPillar === slug) {
@@ -147,7 +157,13 @@ export function auditArticleFiles(
       }
     }
 
-    rows.push({ file: absolute, slug, ...metadata, problems });
+    rows.push({
+      file: absolute,
+      slug,
+      ...metadata,
+      controlled: hasClusterMetadata,
+      problems,
+    });
   }
 
   const counts = {};
@@ -157,6 +173,8 @@ export function auditArticleFiles(
   return {
     scanned: rows.length,
     assigned: rows.filter((row) => row.cluster).length,
+    controlled: rows.filter((row) => row.controlled).length,
+    outsideControlledClusters: rows.filter((row) => !row.controlled).length,
     articlesWithIssues: rows.filter((row) => row.problems.length > 0).length,
     counts,
     rows,
@@ -193,7 +211,9 @@ function listInventory() {
 function printHuman(result, strict) {
   console.log(`[audit-clusters] mode=${strict ? "strict" : "report-only"}`);
   console.log(
-    `[audit-clusters] scanned=${result.scanned} assigned=${result.assigned} ` +
+    `[audit-clusters] scanned=${result.scanned} controlled=${result.controlled} ` +
+      `outside_controlled_clusters=${result.outsideControlledClusters} ` +
+      `assigned=${result.assigned} ` +
       `articles_with_issues=${result.articlesWithIssues}`,
   );
   for (const [code, count] of Object.entries(result.counts).sort()) {
@@ -206,7 +226,7 @@ function printHuman(result, strict) {
   }
   if (!strict && result.articlesWithIssues > 0) {
     console.log(
-      "[audit-clusters] Legacy gaps are reported only. Use --strict with --files or --files-from for a bounded batch gate.",
+      "[audit-clusters] Controlled-metadata errors are report-only. Use --strict with --files or --files-from for a bounded batch gate.",
     );
   }
 }

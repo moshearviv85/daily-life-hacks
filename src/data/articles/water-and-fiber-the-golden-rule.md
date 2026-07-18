@@ -70,7 +70,7 @@ Start with one meal, not a personality transplant.
 
 * Add oats or berries to breakfast for several days.
 * Put beans or lentils into one lunch or dinner you already make.
-* Choose a whole pear or apple instead of relying on clear juice for fiber.
+* Choose a whole pear or apple instead of relying on clear juice for fiber. The [food-first alternatives to prune juice](/prune-juice-alternatives-for-constipation/) explain why whole kiwi, pears, and apples make more sense than playing musical chairs with bottles of fruit juice.
 * Keep a glass or bottle where you can see it, because the cabinet has never reminded anyone to drink.
 * Give the change time before adding three more high-fiber foods.
 

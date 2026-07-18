@@ -51,7 +51,7 @@ Pintos, and it's not particularly close. The gap between first place and last pl
 
 The quiet surprise is green split peas. They actually edge out pintos on fiber per dollar, 71.0 grams to 70.8, and a bag costs $1.42. That's the cheapest entry ticket on the whole list. If you've only ever met split peas in [a pot of split pea soup](/split-pea-soup-recipe-high-fiber/), that's still the correct move, it just happens to be a financially brilliant one too.
 
-Black beans take third at 139.1 combined grams per dollar, and they're the most forgiving bean here for people who don't love beans yet. [Black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) on a Tuesday don't feel like a budget decision. That's the trick.
+Black beans take third at 139.1 combined grams per dollar, and they're the most forgiving bean here for people who don't love beans yet. [Black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) on a Tuesday don't feel like a budget decision. Neither do [black bean brownies](/black-bean-brownies-hidden-fiber-dessert/) once the cocoa gets involved. That's the trick.
 
 ## Why do dry beans beat canned by three to one?
 

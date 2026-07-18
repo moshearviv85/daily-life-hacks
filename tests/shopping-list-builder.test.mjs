@@ -32,14 +32,31 @@ test("shopping list builder exposes search, per-recipe servings, copy, print, an
 test("recipe selection is visibly clickable and can be removed from either surface", async () => {
   const source = await readFile(sourcePath, "utf8");
   assert.match(source, /Click a card to add it\. Click the orange selected card to remove it\. That's the whole ceremony\./);
-  assert.match(source, /active\?'On the list - click to remove':'Add to the plan'/);
-  assert.match(source, /aria-label="'\+\(active\?'Remove ':'Add '\)/);
+  assert.match(source, /textContent=active\?'On the list - click to remove':'Add to the plan'/);
+  assert.match(source, /setAttribute\('aria-label',\(active\?'Remove ':'Add '\)\+recipe\.title\)/);
   assert.match(source, /data-remove-recipe=/);
   assert.match(source, />×<\/span> Remove recipe/);
   assert.match(source, /recipe\.title\+' is off the list\. Dinner will recover\.'/);
   assert.match(source, /\.recipe-choice:hover/);
   assert.match(source, /\.recipe-choice:active\{transform:translateY\(0\) scale\(\.97\)/);
   assert.match(source, /cursor:pointer/);
+});
+
+test("high-frequency interactions avoid rebuilding the full recipe grid", async () => {
+  const source = await readFile(sourcePath, "utf8");
+  const addFunction = source.match(/function add\(slug\)\{(.*?)\}\n/s)?.[1] ?? "";
+  const inputHandler = source.match(/root\.addEventListener\('input',function\(event\)\{(.*?)\}\);renderChoices/s)?.[1] ?? "";
+
+  assert.match(source, /choiceNodes=Object\.create\(null\)/);
+  assert.match(source, /function updateChoice\(slug\)/);
+  assert.match(addFunction, /updateChoice\(slug\);renderSelected\(\)/);
+  assert.doesNotMatch(addFunction, /renderChoices\(\)/);
+
+  assert.match(inputHandler, /scheduleChoiceFilter\(\)/);
+  assert.match(inputHandler, /scheduleListRender\(\)/);
+  assert.doesNotMatch(inputHandler, /renderChoices\(\)|renderList\(\)/);
+  assert.match(source, /requestAnimationFrame\(function\(\)\{searchFrame=0;applyChoiceFilter\(\)\}\)/);
+  assert.match(source, /requestAnimationFrame\(function\(\)\{listFrame=0;renderList\(\)\}\)/);
 });
 
 test("ingredient math fails safely instead of inventing conversions", async () => {

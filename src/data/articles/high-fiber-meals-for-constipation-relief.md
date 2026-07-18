@@ -101,7 +101,7 @@ Coffee can nudge some people along in the morning. It's not a plan by itself, an
 
 ## What to ease in vs what to pause
 
-**Usually helpful to add gradually:** oats, chia, pears, berries, kiwi, cooked vegetables, lentils, beans, brown rice, popcorn in normal portions.
+**Usually helpful to add gradually:** oats, chia, pears, berries, kiwi, cooked vegetables, lentils, beans, brown rice, popcorn in normal portions. If prune juice is the part making you reconsider the whole plan, our [evidence check on prune juice alternatives](/prune-juice-alternatives-for-constipation/) sorts the useful food options from the internet folklore.
 
 **Often worth pausing when you already feel awful:** huge raw salads, giant portions of bran cereal, sugar-free products sweetened with sugar alcohols (they can create their own digestive drama), and specialty teas that promise overnight miracles.
 

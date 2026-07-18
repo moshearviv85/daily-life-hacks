@@ -12,6 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
  * Mirrors `isReleased` / publishAt logic: paths that are not yet public for Search.
  * Must stay in sync with `src/content/release.ts` (publishAt in frontmatter).
  */
+/** @param {string} raw */
 function getPublishAtFromMarkdown(raw) {
   const fm = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!fm) return null;
@@ -29,6 +30,7 @@ function loadSitemapExclusions() {
   /** @type {Set<string>} */
   const excluded = new Set();
 
+  /** @param {string} slug */
   function addPath(slug) {
     if (!slug) return;
     const p = slug.startsWith('/') ? slug : `/${slug}`;
@@ -69,6 +71,7 @@ function loadSitemapExclusions() {
 
 const excludedSitemapPaths = loadSitemapExclusions();
 
+/** @param {string} url */
 function shouldExcludeFromSitemap(url) {
   try {
     const pathname = new URL(url).pathname;
