@@ -1,7 +1,7 @@
 name: Upload Pins CSV
 
 # Manual: uploads a pins CSV from pipeline-data/ to /api/pins-upload,
-# which schedules them into the D1 queue (1-2 pins/day).
+# which schedules them into the D1 queue (3 pins/day).
 on:
   workflow_dispatch:
     inputs:

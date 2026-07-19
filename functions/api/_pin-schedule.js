@@ -1,11 +1,11 @@
-// Slowed to 1-2 pins/day (2026-07-04) to recover from a Pinterest distribution
-// limit triggered by the previous 6-9/day cadence. Do not raise until reach recovers.
-export const PIN_SCHEDULE_MIN_PER_DAY = 1;
-export const PIN_SCHEDULE_MAX_PER_DAY = 2;
-// 14:00 UTC = morning US Eastern; second slot lands mid-afternoon US.
+// Set to three evenly spread pins/day (2026-07-19). Keep one pin per poster run
+// and the server cooldown so a delayed workflow cannot publish a burst.
+export const PIN_SCHEDULE_MIN_PER_DAY = 3;
+export const PIN_SCHEDULE_MAX_PER_DAY = 3;
+// 14:00 UTC = morning US Eastern; later slots cover afternoon and evening.
 export const PIN_SCHEDULE_START_HOUR_UTC = 14;
 export const PIN_SCHEDULE_WINDOW_MINUTES = 120;
-export const PIN_SCHEDULE_SLOT_SPACING_HOURS = 5;
+export const PIN_SCHEDULE_SLOT_SPACING_HOURS = 4;
 
 export function formatDate(date) {
   return date.toISOString().slice(0, 10);

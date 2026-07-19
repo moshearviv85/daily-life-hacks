@@ -3,7 +3,7 @@ import { formatDate, scheduleRowsByRandomDayCount } from "./_pin-schedule.js";
 
 /**
  * POST /api/pins-reschedule?key=SECRET
- * Rebuilds the PENDING pin queue with 1-2 pins per UTC day and non-round times.
+ * Rebuilds the PENDING pin queue with 3 pins per UTC day and non-round times.
  *
  * Response: { ok, queue, rescheduled, schedule, start_date }
  */
@@ -101,7 +101,7 @@ export async function onRequestPost(context) {
     ok: true,
     queue: tableName === "pins_schedule" ? "production" : "staging",
     rescheduled: toUpdate.length,
-    schedule: "1-2 pins/day",
+    schedule: "3 pins/day",
     start_date: formatDate(startDate),
   }), {
     headers: { "Content-Type": "application/json" },

@@ -1,7 +1,7 @@
 name: Reschedule Pin Queue
 
 # Manually re-spreads all PENDING pins according to the current
-# schedule policy in functions/api/_pin-schedule.js (1-2 pins/day).
+# schedule policy in functions/api/_pin-schedule.js (3 pins/day).
 on:
   workflow_dispatch:
 

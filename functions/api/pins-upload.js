@@ -203,7 +203,7 @@ export async function onRequestPost(context) {
   }
 
   // Shuffle: interleave pins from different articles so same-article pins are spread out.
-  // Then reassign scheduled_date/time: 1-2 pins/day with non-round times.
+  // Then reassign scheduled_date/time: 3 pins/day with non-round times.
   function shuffleAndReschedule(rows, dayOffsetStart) {
     // Group by base slug (strip _v1, _v2 suffix)
     const groups = {};

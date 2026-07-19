@@ -19,6 +19,10 @@ function minutesAgo(minutes) {
     .replace("T", " ") + " UTC";
 }
 
+function dateDaysFromNow(days) {
+  return new Date(Date.now() + days * 86_400_000).toISOString().slice(0, 10);
+}
+
 function makeDb({ latestPosted = null, duePins = [], articleStatus = "PUBLISHED", latestPending = null, postedToday = 0 } = {}) {
   const queries = [];
   const updates = [];
@@ -112,7 +116,7 @@ test("pins-next blocks immediate row publishing during the cooldown window", asy
 
 test("pins-next blocks scheduled publishing after the daily post limit", async () => {
   const db = makeDb({
-    postedToday: 9,
+    postedToday: 3,
     latestPosted: { row_id: "previous-pin", published_date: minutesAgo(180) },
     duePins: [duePin],
   });
@@ -124,8 +128,8 @@ test("pins-next blocks scheduled publishing after the daily post limit", async (
 
   assert.equal(response.status, 204);
   assert.equal(response.headers.get("X-Pins-Reason"), "daily_scheduled_post_limit_reached");
-  assert.equal(response.headers.get("X-Pins-Posted-Today"), "9");
-  assert.equal(response.headers.get("X-Pins-Max-Scheduled-Posts-Per-Day"), "9");
+  assert.equal(response.headers.get("X-Pins-Posted-Today"), "3");
+  assert.equal(response.headers.get("X-Pins-Max-Scheduled-Posts-Per-Day"), "3");
   assert.equal(
     db.queries.some((sql) => sql.includes("status = 'PENDING'")),
     false,
@@ -184,10 +188,11 @@ test("pins-next moves pins with unpublished articles to the end of the queue", a
   globalThis.fetch = async () => new Response(null, { status: 200 });
 
   try {
+    const latestPendingDate = dateDaysFromNow(2);
     const db = makeDb({
       duePins: [duePin],
       articleStatus: "PENDING",
-      latestPending: { scheduled_date: "2026-06-29", scheduled_time: "20:00" },
+      latestPending: { scheduled_date: latestPendingDate, scheduled_time: "20:00" },
     });
 
     const response = await onRequestGet({
@@ -199,7 +204,7 @@ test("pins-next moves pins with unpublished articles to the end of the queue", a
     assert.equal(response.headers.get("X-Pins-Reason"), "all_due_pins_blocked_by_safety_checks");
     assert.equal(db.updates.length, 1);
     assert.match(db.updates[0].sql, /UPDATE pins_schedule/);
-    assert.ok(scheduledAt({ scheduled_date: db.updates[0].args[0], scheduled_time: db.updates[0].args[1] }) > new Date("2026-06-29T20:00:00Z"));
+    assert.ok(scheduledAt({ scheduled_date: db.updates[0].args[0], scheduled_time: db.updates[0].args[1] }) > new Date(`${latestPendingDate}T20:00:00Z`));
     assertNonRoundTime(db.updates[0].args[1]);
     assert.match(db.updates[0].args[2], /article_not_live/);
     assert.equal(db.updates[0].args[3], "demo-pin");
