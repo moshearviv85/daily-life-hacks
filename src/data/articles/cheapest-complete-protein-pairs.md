@@ -24,7 +24,7 @@ faq:
 
 The cheapest legume and grain pair in our ranking is dry pinto beans plus whole wheat flour, at 97.0 grams of protein per dollar when you split the dollar 50/50 between them. Rice and beans, the combo with all the folklore, is real too, it's just not the winner: pintos with brown rice land at 67.2.
 
-First, the framing, stated carefully. Legumes and grains complement each other's amino acid profiles, which is why the pairing has been dinner in kitchens all over the world for a very long time, and why it gets called a complete protein. We're not here to litigate the biology. We're here to price it. We took the legumes and grains from our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) and scored 20 pairs the same way: spend 50 cents on the legume, 50 cents on the grain, count the protein grams that dollar buys.
+First, the framing, stated carefully. Legumes and grains complement each other's amino acid profiles, which is why the pairing has been dinner in kitchens all over the world for a very long time, and why it gets called a complete protein. If you'd rather see each food graded on quality on its own, we ranked [protein per dollar adjusted for quality (DIAAS)](/protein-per-dollar-adjusted-for-quality/) separately; pairing is just the cheap way to cover the amino acids either food is light on alone. We're not here to litigate the biology. We're here to price it. We took the legumes and grains from our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) and scored 20 pairs the same way: spend 50 cents on the legume, 50 cents on the grain, count the protein grams that dollar buys.
 
 | Rank | Pair | Protein per $1 (50/50 split) |
 |---|---|---|

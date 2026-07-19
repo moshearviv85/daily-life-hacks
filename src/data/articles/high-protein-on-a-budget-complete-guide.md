@@ -27,7 +27,7 @@ Dried beans and lentils delivered the highest protein return in our 49-food groc
 
 Those three facts are the whole strategy. Everything else in this guide is the practical part: which foods to buy, what to do with them, and how to build a week of eating around them without feeling like you're serving punishment rations.
 
-Here's where the numbers come from. We priced 49 common grocery foods against USDA protein data and ranked every one by grams of protein per dollar, the same way we did for fiber. The full ranking lives in our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), the raw data is public if you want to [check the math yourself](/data/protein-per-dollar-2026.csv), and the companion [50-gram daily-cost study](/what-50-grams-of-protein-costs-per-day/) turns those rows into five meal-by-meal scenarios. This guide is the playbook built on top of that data.
+Here's where the numbers come from. We priced 49 common grocery foods against USDA protein data and ranked every one by grams of protein per dollar, the same way we did for fiber. The full ranking lives in our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), the raw data is public if you want to [check the math yourself](/data/protein-per-dollar-2026.csv), and the companion [50-gram daily-cost study](/what-50-grams-of-protein-costs-per-day/) turns those rows into five meal-by-meal scenarios, and when the drive-thru is happening anyway, we ranked [fast food protein per dollar across seven chains](/fast-food-protein-per-dollar-ranked/) so you can order the least-wasteful one. This guide is the playbook built on top of that data.
 
 **Where should you start?**
 
@@ -128,7 +128,7 @@ Short version: the pairing is real, the stress about it isn't.
 
 Different plant foods bring different amino acid profiles, which is why beans and grains make such a practical team. But the part people overcomplicate is timing: [MedlinePlus says you don't need to combine them at the same meal](https://medlineplus.gov/ency/article/002465.htm). Eat a varied mix of beans, lentils, soy foods, nuts, seeds, and whole grains across the day. Our [beans and rice complete protein](/beans-and-rice-complete-protein-meal/) page handles the kitchen version of that advice.
 
-If you want the grocery math behind that plate, the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/) rank the combinations by cost instead of asking rice and beans to coast on their reputation.
+If you want the grocery math behind that plate, the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/) rank the combinations by cost instead of asking rice and beans to coast on their reputation. And if the amino acid worry is the thing actually nagging you, we reranked the whole store by [protein per dollar adjusted for quality (DIAAS)](/protein-per-dollar-adjusted-for-quality/); beans held first even after the quality haircut, which is the short answer to whether you should lose sleep over it.
 
 ## The $20 weekly protein backbone
 

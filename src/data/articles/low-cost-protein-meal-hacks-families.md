@@ -35,7 +35,7 @@ When package sizes make the shelf tags useless, the [grocery unit price calculat
 
 Ground beef or turkey is the backbone of the American weeknight, but it's getting pricey. The easiest hack is the "half-and-half" rule. Instead of using two pounds of meat for taco night, use one pound and supplement the rest with a can of black beans or a cup of cooked lentils. 
 
-Lentils are the secret weapon here because they have a similar texture to ground meat once they're simmered in sauce. They'll soak up the taco seasoning or the marinara, and most kids won't even notice the difference. You're effectively doubling the volume of your protein for about sixty cents. It's not a culinary revolution, but it keeps everyone full. Roll that same bean-heavy filling into a [high fiber burrito bowl meal prep](/high-fiber-burrito-bowl-meal-prep/) and next week's work lunches are covered for the price of one drive-thru run.
+Lentils are the secret weapon here because they have a similar texture to ground meat once they're simmered in sauce. They'll soak up the taco seasoning or the marinara, and most kids won't even notice the difference. You're effectively doubling the volume of your protein for about sixty cents. It's not a culinary revolution, but it keeps everyone full. Roll that same bean-heavy filling into a [high fiber burrito bowl meal prep](/high-fiber-burrito-bowl-meal-prep/) and next week's work lunches are covered for the price of one drive-thru run. And when some nights the drive-thru wins anyway, we ranked [fast food protein per dollar across seven chains](/fast-food-protein-per-dollar-ranked/) so you can grab the order that hands you the most protein for the money.
 
 ## Embrace the humble egg for dinner
 

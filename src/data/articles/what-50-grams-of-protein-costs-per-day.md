@@ -96,7 +96,7 @@ Nothing home-cooked, nothing from a grocery store. Protein figures come from McD
 | Dinner | [McDonald's McChicken](https://www.mcdonalds.com/us/en-us/product/mcchicken.html) | 14.0 g | $2.99 |
 | **Total** | | **53.0 g** | **$9.97** |
 
-At the $3.19 price recorded in this dataset, the McDouble comes in around 7 grams of protein per dollar against pinto beans at 98. That's useful scenario math, not a universal menu ranking. Restaurant prices change by location, while the grocery rows use the package prices documented in the parent CSV.
+At the $3.19 price recorded in this dataset, the McDouble comes in around 7 grams of protein per dollar against pinto beans at 98. That's useful scenario math, not a universal menu ranking. Restaurant prices change by location, while the grocery rows use the package prices documented in the parent CSV. If the drive-thru is more your reality than the dry-goods aisle, we ranked [fast food protein per dollar across seven chains](/fast-food-protein-per-dollar-ranked/) so you can at least order the smart way; the best deal on any national menu we priced turned out to be a plain cup of chicken.
 
 ![Bar chart of protein per dollar for the foods behind the five days, with pinto beans at 98 grams per dollar far ahead of chicken, ground beef, and McDonald's items near the bottom](/images/protein-per-dollar-groceries-vs-drivethru.jpg)
 
