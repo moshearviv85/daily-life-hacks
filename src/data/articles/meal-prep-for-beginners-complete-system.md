@@ -73,6 +73,8 @@ Components fix this because assembly takes two minutes and the combinations feel
 
 One more benefit nobody mentions: components survive contact with reality. If Tuesday dinner plans change, a container of pre-assembled pasta bake is now a problem. A container of plain cooked rice is not. It just waits.
 
+If choosing the components is where your brain leaves the meeting, use a [one-theme, five-dinner plan](/one-theme-five-dinners-one-grocery-list/). It repeats the beans, tortillas, cabbage, corn, lime, and salsa while changing the actual dinner. Same grocery list, fewer one-recipe ingredients, and nobody has to eat one sad container five days in a row.
+
 ## How do you meal prep for the week in 90 minutes?
 
 The trick to finishing in 90 minutes isn't speed. It's parallelism. The oven, the stovetop, and your knife all work at the same time, and the sequence is built so nothing sits idle. Here's the flow I run, with real timings.

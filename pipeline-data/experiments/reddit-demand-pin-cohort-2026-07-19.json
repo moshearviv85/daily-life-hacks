@@ -1,0 +1,61 @@
+{
+  "cohort": "reddit-demand-questions-2026-07-19",
+  "status": "review",
+  "distribution_status": "not_queued_not_posted",
+  "generated_at": "2026-07-19",
+  "notes": "Question-led Pinterest creatives derived from verified Reddit demand. Variant aliases must be registered and deployed before any D1 upload.",
+  "pins": [
+    {
+      "row_id": "is-driving-to-cheaper-grocery-store-worth-it_v1",
+      "article_slug": "is-driving-to-cheaper-grocery-store-worth-it",
+      "variant_slug": "cheaper-grocery-store-drive-worth-it",
+      "destination": "/is-driving-to-cheaper-grocery-store-worth-it/",
+      "image": "/images/pins/is-driving-to-cheaper-grocery-store-worth-it_v1.jpg",
+      "pin_title": "Is Driving to a Cheaper Grocery Store Worth It?",
+      "pin_description": "A cheaper store only wins when the basket savings beat gas, parking, transit, and the extra time. Run your own numbers with the free grocery-trip calculator.",
+      "alt_text": "Grocery bags, a road map, car keys, and a calculator with the question Is Driving to a Cheaper Grocery Store Worth It?",
+      "source_reddit_url": "https://www.reddit.com/r/Frugal/comments/1swfppz/update_on_how_to_cut_cost_based_on_your/",
+      "alias_status": "pending",
+      "d1_status": "not_uploaded"
+    },
+    {
+      "row_id": "one-theme-five-dinners-one-grocery-list_v1",
+      "article_slug": "one-theme-five-dinners-one-grocery-list",
+      "variant_slug": "one-grocery-list-five-dinners",
+      "destination": "/one-theme-five-dinners-one-grocery-list/",
+      "image": "/images/pins/one-theme-five-dinners-one-grocery-list_v1.jpg",
+      "pin_title": "Could One Grocery List Cover Five Dinners?",
+      "pin_description": "Five unrelated recipes create a grocery list with commitment issues. This taco-inspired theme week shares beans, corn, cabbage, lime, tortillas, and salsa across five different dinners.",
+      "alt_text": "Five dinners made with shared beans, corn, tortillas, cabbage, peppers, and lime with the question Could One Grocery List Cover Five Dinners?",
+      "source_reddit_url": "https://www.reddit.com/r/mealprep/comments/1tp64nz/switching_to_a_one_theme_per_week_system/",
+      "alias_status": "pending",
+      "d1_status": "not_uploaded"
+    },
+    {
+      "row_id": "why-grocery-bill-went-up-after-cooking-more_v1",
+      "article_slug": "why-grocery-bill-went-up-after-cooking-more",
+      "variant_slug": "grocery-bill-up-cooking-at-home",
+      "destination": "/why-grocery-bill-went-up-after-cooking-more/",
+      "image": "/images/pins/why-grocery-bill-went-up-after-cooking-more_v1.jpg",
+      "pin_title": "Why Did My Grocery Bill Go Up After I Started Cooking?",
+      "pin_description": "Groceries can rise while total food spending falls. Add takeout, delivery, work lunches, coffee, and groceries before deciding whether cooking at home costs more.",
+      "alt_text": "Grocery bags balanced against fewer takeout boxes with the question Why Did My Grocery Bill Go Up After I Started Cooking?",
+      "source_reddit_url": "https://www.reddit.com/r/Frugal/comments/1qgn67v/an_fyi_for_those_cooking_at_home_more/",
+      "alias_status": "pending",
+      "d1_status": "not_uploaded"
+    },
+    {
+      "row_id": "grocery-unit-price-calculator_v1",
+      "article_slug": null,
+      "variant_slug": "bigger-package-unit-price-check",
+      "destination": "/tools/grocery-unit-price-calculator/",
+      "image": "/images/pins/grocery-unit-price-calculator_v1.jpg",
+      "pin_title": "Is the Bigger Package Actually Cheaper?",
+      "pin_description": "The value-size package doesn't automatically have the lower unit price. Compare two packages by ounce, pound, volume, or count before the shelf tag gets away with it.",
+      "alt_text": "Two different sizes of oat containers beside a calculator and magnifying glass with the question Is the Bigger Package Actually Cheaper?",
+      "source_reddit_url": "https://www.reddit.com/r/Frugal/comments/1skd9y5/always_pay_attention_to_the_size_price_and_price/",
+      "alias_status": "pending",
+      "d1_status": "not_uploaded"
+    }
+  ]
+}

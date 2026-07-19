@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+
+const title = "Is Driving to a Cheaper Grocery Store Worth It? Calculator";
+const description = "Compare grocery savings with gas, parking, transit, and travel time. See the real break-even savings before making the extra trip.";
+
+const faq = [
+  ["How do I know if a cheaper grocery store is worth the drive?", "Estimate what the same basket saves, then subtract fuel, tolls, parking, transit fares, and any value you assign to the extra travel time. If the result stays positive, the trip saves money."],
+  ["What if I combine the grocery trip with another errand?", "Enter only the extra miles and minutes caused by the cheaper store. Charging the calculator for a trip you were already making is how perfectly reasonable errands get framed for crimes they didn't commit."],
+  ["Should I include the value of my time?", "It's optional. Set it to zero for a cash-only comparison, or enter an hourly amount if the extra drive replaces paid work, family time, or the quiet half hour you were hoping to keep."],
+  ["How should I estimate grocery basket savings?", "Compare the same products and quantities at both stores. A cheaper store can look miraculous when one basket quietly swaps salmon for chicken thighs. That's a food-swap comparison, not a store comparison."],
+  ["Does the calculator save my grocery or travel information?", "No. Everything runs in your browser and disappears when the page is closed or reset."],
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Grocery Trip Savings Calculator",
+    url: "https://www.daily-life-hacks.com/tools/grocery-trip-savings-calculator/",
+    description,
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Any",
+    browserRequirements: "Requires JavaScript",
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    publisher: { "@type": "Organization", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-5xl mx-auto px-4 py-10 md:py-16">
+    <nav class="text-sm mb-5" aria-label="Breadcrumb">
+      <a href="/tools/" class="underline" style="color:#F29B30;">Tools</a>
+      <span aria-hidden="true" style="color:var(--muted-color);"> / Grocery trip savings</span>
+    </nav>
+
+    <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">The store is cheaper. The trip might not be.</p>
+    <h1 class="text-3xl md:text-5xl font-bold mb-4 max-w-4xl" style="color:var(--heading-color);">Is Driving to a Cheaper Grocery Store Worth It?</h1>
+    <p class="text-lg max-w-3xl mb-8" style="color:var(--text-color);">Enter the basket savings, extra travel, and any fees. We'll show the cash result and the version that counts your time, because a $9 discount loses some swagger after a 50-minute detour.</p>
+
+    <section id="trip-calculator" class="rounded-2xl p-5 md:p-7 mb-10" style="background:var(--card-bg);border:1px solid var(--border-color);">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <label class="tool-label">Expected basket savings<span class="input-prefix"><span aria-hidden="true">$</span><input class="tool-input" id="trip-savings" type="number" min="0" step="0.01" inputmode="decimal" value="18" /></span></label>
+        <label class="tool-label">Extra round-trip miles<input class="tool-input" id="trip-miles" type="number" min="0" step="0.1" inputmode="decimal" value="16" /></label>
+        <label class="tool-label">Vehicle fuel economy<input class="tool-input" id="trip-mpg" type="number" min="0.1" step="0.1" inputmode="decimal" value="28" /><span class="hint">Miles per gallon</span></label>
+        <label class="tool-label">Gas price per gallon<span class="input-prefix"><span aria-hidden="true">$</span><input class="tool-input" id="trip-gas" type="number" min="0" step="0.01" inputmode="decimal" value="3.50" /></span></label>
+        <label class="tool-label">Parking, tolls, or transit<span class="input-prefix"><span aria-hidden="true">$</span><input class="tool-input" id="trip-fees" type="number" min="0" step="0.01" inputmode="decimal" value="0" /></span></label>
+        <label class="tool-label">Extra travel time<input class="tool-input" id="trip-minutes" type="number" min="0" step="1" inputmode="numeric" value="35" /><span class="hint">Minutes beyond your normal trip</span></label>
+        <label class="tool-label sm:col-span-2 lg:col-span-1">Optional value of your time<span class="input-prefix"><span aria-hidden="true">$</span><input class="tool-input" id="trip-time-value" type="number" min="0" step="0.01" inputmode="decimal" value="0" /></span><span class="hint">Per hour. Leave at $0 for cash only.</span></label>
+      </div>
+
+      <div id="trip-error" class="hidden rounded-xl p-4 mt-5 text-sm" role="alert" style="background:#fff4e5;color:#7a4300;border:1px solid #F29B30;"></div>
+      <div id="trip-result" class="rounded-xl p-5 mt-6" aria-live="polite" style="background:rgba(242,155,48,.10);border:2px solid #F29B30;">
+        <p class="text-sm font-bold uppercase tracking-wider mb-2" style="color:#a85e00;">The actual result</p>
+        <p id="trip-verdict" class="text-2xl md:text-3xl font-bold mb-4" style="color:var(--heading-color);"></p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div class="metric"><span>Fuel cost</span><strong id="trip-fuel"></strong></div>
+          <div class="metric"><span>Cash net savings</span><strong id="trip-cash"></strong></div>
+          <div class="metric"><span>Time cost</span><strong id="trip-time"></strong></div>
+          <div class="metric"><span>Full net savings</span><strong id="trip-full"></strong></div>
+        </div>
+        <p id="trip-break-even" class="mt-4" style="color:var(--text-color);"></p>
+      </div>
+      <div class="mt-5 flex flex-wrap gap-3 items-center">
+        <button id="trip-reset" type="button" class="rounded-xl px-5 py-2.5 font-semibold" style="border:1px solid var(--border-color);color:var(--text-color);">Reset example</button>
+        <p class="text-xs" style="color:var(--muted-color);">Nothing is saved or sent anywhere. The calculator has no interest in where you buy onions.</p>
+      </div>
+    </section>
+
+    <article class="prose-like max-w-3xl">
+      <h2>What does the grocery trip calculator count?</h2>
+      <p>It starts with the savings on the same basket. Then it subtracts fuel plus parking, tolls, or transit. If you enter a value for your time, it also prices the extra minutes. The formula is visible because mystery math belongs on shelf labels, not here.</p>
+
+      <h2>How should you compare two grocery stores?</h2>
+      <p>Use the same package sizes and the same foods. The <a href="/tools/grocery-unit-price-calculator/">unit price calculator</a> handles packages that refuse to use matching units, while the <a href="/tools/grocery-budget-calculator/">weekly food-cost planner</a> builds a basket from ten audited menus. If one store's cart contains different food, separate the store savings from the food swaps. Chicken thighs beating salmon isn't evidence that the parking lot is magical.</p>
+
+      <h2>When is the farther store still the better choice?</h2>
+      <p>A farther store can win when you buy enough of the foods that are genuinely cheaper, combine the trip with another errand, or visit less often. Our <a href="/is-driving-to-cheaper-grocery-store-worth-it/">full grocery-trip guide</a> shows how to run that decision without pretending every hour is worth zero dollars.</p>
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list">
+        {faq.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}
+      </div>
+    </article>
+  </main>
+  <Footer />
+
+  <style>
+    .hidden{display:none!important}.tool-label{display:flex;flex-direction:column;gap:.4rem;font-size:.875rem;font-weight:650;color:var(--text-color)}.tool-input{width:100%;border-radius:.75rem;padding:.7rem .8rem;background:var(--card-bg);border:1px solid var(--border-color);color:var(--text-color);outline:none}.tool-input:focus{box-shadow:0 0 0 2px #F29B30}.input-prefix{position:relative;display:block}.input-prefix>span{position:absolute;left:.8rem;top:.7rem;color:var(--muted-color)}.input-prefix .tool-input{padding-left:1.8rem}.hint{font-size:.72rem;font-weight:400;color:var(--muted-color)}.metric{border-radius:.75rem;padding:.9rem;background:var(--card-bg);border:1px solid var(--border-color)}.metric span{display:block;font-size:.75rem;color:var(--muted-color);margin-bottom:.25rem}.metric strong{font-size:1.3rem;color:var(--heading-color)}.prose-like h2{font-size:1.65rem;line-height:1.2;font-weight:700;margin:2.25rem 0 .7rem;color:var(--heading-color)}.prose-like p{line-height:1.75;margin:.7rem 0;color:var(--text-color)}.prose-like a{color:#F29B30;text-decoration:underline;font-weight:600}.faq-list details{margin:.65rem 0;border:1px solid var(--border-color);border-radius:.75rem;background:var(--card-bg);padding:0 1rem}.faq-list summary{cursor:pointer;font-weight:700;padding:1rem 0;color:var(--heading-color)}.faq-list p{margin:0 0 1rem}
+  </style>
+
+  <script is:inline>
+    (function(){
+      var root=document.getElementById('trip-calculator');if(!root)return;
+      var defaults={savings:18,miles:16,mpg:28,gas:3.5,fees:0,minutes:35,timeValue:0};
+      var ids={savings:'trip-savings',miles:'trip-miles',mpg:'trip-mpg',gas:'trip-gas',fees:'trip-fees',minutes:'trip-minutes',timeValue:'trip-time-value'};
+      function value(key){return Number(document.getElementById(ids[key]).value)}
+      function money(n){return (n<0?'-$':'$')+Math.abs(n).toFixed(2)}
+      function render(){
+        var x={};Object.keys(ids).forEach(function(key){x[key]=value(key)});var error=document.getElementById('trip-error'),result=document.getElementById('trip-result');error.classList.add('hidden');result.classList.add('hidden');
+        if(Object.keys(x).some(function(key){return !Number.isFinite(x[key])||x[key]<0})||x.mpg<=0){error.textContent='Enter numbers of zero or more, and fuel economy greater than zero.';error.classList.remove('hidden');return}
+        var fuel=x.miles/x.mpg*x.gas,cash=x.savings-fuel-x.fees,time=x.minutes/60*x.timeValue,full=cash-time,breakEven=fuel+x.fees+time;
+        document.getElementById('trip-fuel').textContent=money(fuel);document.getElementById('trip-cash').textContent=money(cash);document.getElementById('trip-time').textContent=money(time);document.getElementById('trip-full').textContent=money(full);
+        document.getElementById('trip-verdict').textContent=full>0?'The farther store saves '+money(full)+' per trip.':full<0?'The farther store costs '+money(Math.abs(full))+' more per trip.':'The two trips break even.';
+        document.getElementById('trip-break-even').textContent='Your basket needs to save at least '+money(breakEven)+' before the extra trip pays for itself'+(x.timeValue>0?', including the value you assigned to your time.':'. This is the cash-only version because time is set to $0.');result.classList.remove('hidden');
+      }
+      root.addEventListener('input',render);document.getElementById('trip-reset').addEventListener('click',function(){Object.keys(ids).forEach(function(key){document.getElementById(ids[key]).value=defaults[key]});render()});render();
+    })();
+  </script>
+</BaseLayout>

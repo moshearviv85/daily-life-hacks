@@ -83,7 +83,11 @@ Start with a list built around the staples, not around cravings. Our [budget gro
 
 Then plan the week before you enter the store. [Planning a full week of dinners](/plan-week-of-dinners-fewer-grocery-runs/) cuts you down to one shopping trip, and fewer trips is the single most underrated money saver, because every "quick stop for milk" comes home with four other things. For the trip itself, [how to make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/) covers the store-level tactics: unit prices, store brands, and the shelf games worth knowing.
 
+If the cheaper store is farther away, run the trip before you run the car. The guide to [whether a cheaper grocery store is worth the drive](/is-driving-to-cheaper-grocery-store-worth-it/) counts fuel, fees, and optional travel time instead of letting a $7 sale volunteer your entire Saturday morning.
+
 Before you write the list, run a real week through the [weekly food-cost planner](/tools/grocery-budget-calculator/). It scales the ten audited fiber and protein menus for your household, so you're starting with food quantities and a tracked subtotal instead of a small cloud of guilt following you through aisle seven.
+
+And compare the whole food budget, not one louder receipt. [Your grocery bill can rise after you start cooking more](/why-grocery-bill-went-up-after-cooking-more/) while takeout, work lunches, and delivery fall by much more. The supermarket isn't automatically guilty just because it printed the longest piece of paper.
 
 Three more moves that pay for themselves:
 
