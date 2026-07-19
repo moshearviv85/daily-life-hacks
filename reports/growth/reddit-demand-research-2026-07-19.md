@@ -4,7 +4,7 @@
 
 Three new article opportunities and one existing-tool opportunity were selected from 32 reviewed Reddit threads. Selection required visible demand, a clear non-medical problem, fit with the site's food-economics or meal-planning clusters, and a real content gap.
 
-No Reddit post, comment, outreach message, D1 write, pin queue mutation, or external publication occurred.
+The research phase made no Reddit post, comment, outreach message, D1 write, pin queue mutation, or external publication. After explicit release approval, commit `57fb22e` was deployed and the four question pins replaced four existing PENDING slots for July 20 through July 23. The outgoing rows were preserved as REVIEW, and no Pinterest post was dispatched manually.
 
 Reddit scores and comment counts are a 2026-07-19 snapshot and may be fuzzed or change. The Reddit JSON API returned 403 during research, so metrics were verified from visible Reddit pages and indexed page snapshots. Missing comment totals were not guessed.
 
