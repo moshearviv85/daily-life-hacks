@@ -83,7 +83,9 @@ Never trust the large, bold price tag alone. A massive box of cereal might be on
 
 Always look at the tiny unit-price sticker on the shelf edge. Cost per ounce, cost per pound, cost per 100 grams. That number strips away the marketing and tells you how much actual food you're getting.
 
-Often, two smaller bags beat the giant "Value Size" bag on unit price. Sometimes the mid-size wins. Do the math once and you'll stop trusting the word "family" on packaging. Family-sized usually means "we put more in a bag and hoped you wouldn't check."
+Often, two smaller bags beat the giant "Value Size" bag on unit price. Sometimes the mid-size wins. If the shelf tags use different units, run both packages through the [grocery unit price calculator](/tools/grocery-unit-price-calculator/). It does the decimal work while the value-size label stands there looking important.
+
+Do the math once and you'll stop trusting the word "family" on packaging. Family-sized usually means "we put more in a bag and hoped you wouldn't check."
 
 ## Skip the pre-cut tax
 

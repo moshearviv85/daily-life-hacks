@@ -15,7 +15,8 @@
       "pin_description": "A cheaper store only wins when the basket savings beat gas, parking, transit, and the extra time. Run your own numbers with the free grocery-trip calculator.",
       "alt_text": "Grocery bags, a road map, car keys, and a calculator with the question Is Driving to a Cheaper Grocery Store Worth It?",
       "source_reddit_url": "https://www.reddit.com/r/Frugal/comments/1swfppz/update_on_how_to_cut_cost_based_on_your/",
-      "alias_status": "pending",
+      "board_id": "1124140825679184036",
+      "alias_status": "registered_pending_deploy",
       "d1_status": "not_uploaded"
     },
     {
@@ -28,7 +29,8 @@
       "pin_description": "Five unrelated recipes create a grocery list with commitment issues. This taco-inspired theme week shares beans, corn, cabbage, lime, tortillas, and salsa across five different dinners.",
       "alt_text": "Five dinners made with shared beans, corn, tortillas, cabbage, peppers, and lime with the question Could One Grocery List Cover Five Dinners?",
       "source_reddit_url": "https://www.reddit.com/r/mealprep/comments/1tp64nz/switching_to_a_one_theme_per_week_system/",
-      "alias_status": "pending",
+      "board_id": "1124140825679184034",
+      "alias_status": "registered_pending_deploy",
       "d1_status": "not_uploaded"
     },
     {
@@ -41,20 +43,22 @@
       "pin_description": "Groceries can rise while total food spending falls. Add takeout, delivery, work lunches, coffee, and groceries before deciding whether cooking at home costs more.",
       "alt_text": "Grocery bags balanced against fewer takeout boxes with the question Why Did My Grocery Bill Go Up After I Started Cooking?",
       "source_reddit_url": "https://www.reddit.com/r/Frugal/comments/1qgn67v/an_fyi_for_those_cooking_at_home_more/",
-      "alias_status": "pending",
+      "board_id": "1124140825679184036",
+      "alias_status": "registered_pending_deploy",
       "d1_status": "not_uploaded"
     },
     {
       "row_id": "grocery-unit-price-calculator_v1",
-      "article_slug": null,
+      "article_slug": "how-to-make-grocery-shopping-cheaper",
       "variant_slug": "bigger-package-unit-price-check",
-      "destination": "/tools/grocery-unit-price-calculator/",
+      "destination": "/how-to-make-grocery-shopping-cheaper/",
       "image": "/images/pins/grocery-unit-price-calculator_v1.jpg",
       "pin_title": "Is the Bigger Package Actually Cheaper?",
       "pin_description": "The value-size package doesn't automatically have the lower unit price. Compare two packages by ounce, pound, volume, or count before the shelf tag gets away with it.",
       "alt_text": "Two different sizes of oat containers beside a calculator and magnifying glass with the question Is the Bigger Package Actually Cheaper?",
       "source_reddit_url": "https://www.reddit.com/r/Frugal/comments/1skd9y5/always_pay_attention_to_the_size_price_and_price/",
-      "alias_status": "pending",
+      "board_id": "1124140825679184036",
+      "alias_status": "registered_pending_deploy",
       "d1_status": "not_uploaded"
     }
   ]
