@@ -3,7 +3,7 @@
 ## Scope and evidence
 
 - Live crawl of all 226 URLs in `sitemap-0.xml`
-- Current local source audit of 207 article files
+- Initial local source audit of 207 article files; final clean integration against current `origin/main` audited 210
 - Google Search Console Page Indexing and Performance reports
 - Astro build output, routing tests, internal-link tests, JSON-LD parsing, and repository audits
 - Current `origin/main` comparison
@@ -19,14 +19,14 @@ The remaining growth problem is concentrated in crawl efficiency, article qualit
 ## Remediation completed in this run
 
 - Retired the generated tag-archive surface and removed article links into it. Regression tests lock both behaviors.
-- Reduced the on-page checklist from 68 affected articles to 0 of 207: no body below 800 words, no article with fewer than three H2 sections, no missing FAQ, and no body without an internal link.
-- Added reviewed 40-70 word quick answers to 72 priority articles, up from 0. Added or retained honest `dateModified` values only on reviewed files; 143 of 207 now have one.
+- Reduced the on-page checklist from 68 affected articles in the initial snapshot to 0 of 210 after clean integration: no body below 800 words, no article with fewer than three H2 sections, no missing FAQ, and no body without an internal link.
+- Added reviewed 40-70 word quick answers to 72 priority articles, up from 0 in the initial snapshot. Added or retained honest `dateModified` values only on reviewed files; 143 of 210 now have one.
 - Increased articles with body-level external citations from 17 to 32, concentrated on nutrition, food-safety, constipation, fiber, satiety, and weight-related claims.
-- Brought all 207 source titles to 60 characters or fewer and all excerpts to 160 characters or fewer; removed the forced title suffix in the shared layout.
+- Brought all 210 integrated source titles to 60 characters or fewer and all excerpts to 160 characters or fewer; removed the forced title suffix in the shared layout.
 - Corrected recipe JSON-LD: optional factual cuisine/category values, valid `PT0M` zero durations, and connected WebPage, Article/Recipe, Breadcrumb, FAQ, and Dataset identifiers.
 - Added sitemap `lastmod`, expanded the research hub to all six datasets, corrected `llms.txt` provenance claims, and expanded visible author/editorial/corrections disclosure.
 - Differentiated the overlapping food-prep, quick-dinner, and chickpea-curry pages by page title and intent without deleting URLs or inventing consolidation evidence.
-- Final local audit: 0 checklist issues, 0 titles above 60, 0 excerpts above 160, 0 controlled-cluster issues, 0 canonical articles missing from the built output, and 0 leaked alias HTML pages.
+- Final clean audit: 0 checklist issues across 210 articles, 0 titles above 60, 0 excerpts above 160, 0 controlled-cluster issues, 0 canonical articles missing from the built output, and 0 leaked alias HTML pages.
 
 ## P0 - must fix
 

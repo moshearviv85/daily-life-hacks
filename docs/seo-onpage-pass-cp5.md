@@ -8,7 +8,7 @@
 
 | Metric | Count |
 |--------|------:|
-| Articles scanned | 207 |
+| Articles scanned | 210 |
 | With ≥1 issue | 0 |
 | Missing FAQ | 0 |
 | No body internal links | 0 |

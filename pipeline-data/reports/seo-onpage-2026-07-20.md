@@ -1,6 +1,6 @@
 # On-page SEO pass (2026-07-20)
 
-Articles scanned: **207**
+Articles scanned: **210**
 With ≥1 checklist issue: **0**
 Missing FAQ: **0**
 No internal links in body: **0**

@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-07-20T04:52:17.259Z",
+  "generatedAt": "2026-07-20T04:57:57.773Z",
   "checkpoint": "CP1-baseline",
   "policy": "docs/pin-routing-policy.md",
   "targetModel": "pin-destination-301-to-canonical",
   "counts": {
-    "articles": 207,
-    "aliases": 581,
-    "routerBases": 106,
-    "routerVariants": 374,
+    "articles": 210,
+    "aliases": 585,
+    "routerBases": 110,
+    "routerVariants": 378,
     "variantsMissingFromAliases": 0,
     "orphanAliasesNotInRouter": 207,
     "aliasesPointingMissingArticle": 0,
-    "articlesWithoutRouterMapping": 101,
-    "articlesWithUnder4PinDestinations": 20,
+    "articlesWithoutRouterMapping": 100,
+    "articlesWithUnder4PinDestinations": 24,
     "variantBaseCollisions": 0
   },
   "samples": {
@@ -193,6 +193,14 @@
         "pinDestinations": 3
       },
       {
+        "base": "how-to-make-grocery-shopping-cheaper",
+        "pinDestinations": 1
+      },
+      {
+        "base": "is-driving-to-cheaper-grocery-store-worth-it",
+        "pinDestinations": 1
+      },
+      {
         "base": "meat-per-dollar-protein-ranked",
         "pinDestinations": 1
       },
@@ -206,6 +214,10 @@
       },
       {
         "base": "one-dollar-protein-what-it-buys",
+        "pinDestinations": 1
+      },
+      {
+        "base": "one-theme-five-dinners-one-grocery-list",
         "pinDestinations": 1
       },
       {
@@ -227,6 +239,10 @@
       {
         "base": "what-30-grams-of-fiber-costs-per-day",
         "pinDestinations": 3
+      },
+      {
+        "base": "why-grocery-bill-went-up-after-cooking-more",
+        "pinDestinations": 1
       }
     ],
     "collisions": []
