@@ -1,6 +1,6 @@
 ---
-title: "Baking Sheet Liners: Parchment, Silicone Mats, and When to Use Each"
-excerpt: "Stop guessing what goes on your pan. Here is a clear guide on baking sheet liners, comparing parchment paper and silicone mats, and when to use each for the best results."
+title: "Baking Sheet Liners: Parchment vs Silicone Mats"
+excerpt: "Compare parchment paper, silicone mats, foil, and bare pans so you can choose the right baking sheet liner for cookies, roasting, and sticky foods."
 category: "tips"
 tags:
   - baking

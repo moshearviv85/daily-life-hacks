@@ -1,5 +1,5 @@
 ---
-title: "Chicken Breast Is Overrated: 21 Animal Proteins Ranked by Real Cost"
+title: "Animal Protein per Dollar: 21 Foods Ranked"
 excerpt: "Chicken drumsticks top 21 animal proteins at 50.3 g per dollar. Eggs hit 34.4, milk 29.1, and bacon trails at 9.2. July 2026 prices."
 category: "nutrition"
 tags: ["cheapest animal protein", "animal protein per dollar", "budget protein", "eggs vs meat protein", "grocery data"]

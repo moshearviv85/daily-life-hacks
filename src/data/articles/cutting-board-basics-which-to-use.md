@@ -1,6 +1,6 @@
 ---
 title: "Cutting Board Basics: Which One to Use for What"
-excerpt: "Wood, plastic, or bamboo? Here is a no-nonsense guide to cutting board basics, which one to use for raw meat, and how to keep them from getting ruined."
+excerpt: "Choose a wood board for everyday prep and a washable second board for raw meat, then clean, dry, and replace each one at the right time."
 category: "tips"
 tags:
   - kitchen tips
@@ -10,7 +10,8 @@ tags:
 image: "/images/cutting-board-basics-which-to-use-main.jpg"
 imageAlt: "Various cutting boards including wood plastic and bamboo stacked on a kitchen counter"
 date: 2026-04-23
-dateModified: 2026-07-16
+dateModified: 2026-07-20
+quickAnswer: "Use a sturdy wood board for vegetables, bread, herbs, and cooked food, plus a separate plastic or nonporous board for raw meat and poultry. Wash boards with hot, soapy water after every use and sanitize after raw meat. Replace any board with deep grooves or cracks that are difficult to clean, and keep glass boards away from knife blades."
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -18,7 +19,7 @@ whatsHot: false
 mustRead: false
 faq:
  - question: "Is wood or plastic better for raw meat?"
-   answer: "Plastic is usually recommended for raw meat because it's dishwasher safe, making sanitization easier. Wood can absorb juices if not properly sealed, though some hardwoods have natural properties that help."
+   answer: "USDA guidance permits wood or nonporous cutting boards for raw meat. A separate plastic board is convenient because many models are dishwasher-safe, but check the manufacturer's instructions. Whichever material you use, wash and sanitize it after contact with raw meat or poultry."
  - question: "How often do I need to oil a wooden cutting board?"
    answer: "Usually once a month, or whenever the wood looks dry and dull. Use food-safe mineral oil, not olive oil, which can go rancid over time."
  - question: "Can I put my bamboo cutting board in the dishwasher?"
@@ -42,7 +43,7 @@ Wood is perfect for chopping vegetables, slicing bread, mincing herbs, and carvi
 
 ## The plastic board (the meat workhorse)
 
-Then you have plastic. Plastic boards aren't as gentle on knives as wood, but they have one massive advantage: you can throw them in the dishwasher. This makes them the absolute best choice for raw meat, poultry, and fish. When you cut raw chicken, bacteria gets everywhere. Being able to toss the board into a hot, sanitizing dishwasher cycle is a huge relief.
+Then you have plastic. Plastic boards aren't as gentle on knives as wood, but they are easy to dedicate to raw meat. Many are dishwasher-safe, although you should check the manufacturer's instructions before using a high-heat cycle. Keeping one board only for meat, poultry, and fish reduces the chance of transferring raw juices to bread, fruit, or other ready-to-eat food.
 
 The problem with plastic is that it scars. Over time, your knife will cut deep grooves into the surface. Those grooves become permanent homes for bacteria that a sponge can't reach. When a plastic board gets rough to the touch and deeply stained, it's time to throw it away and buy a new one. Don't get sentimental about plastic cutting boards. They're meant to be replaced.
 
@@ -58,6 +59,12 @@ One of the biggest frustrations with any cutting board is when it slides around 
 
 ## How to fix odors
 
-If your wooden board starts smelling like onions or garlic, don't panic. You don't need bleach or harsh chemicals. A quick scrub with coarse salt and half a lemon neutralizes the smell immediately. Just sprinkle the salt, use the lemon half like a sponge to scrub the board, and rinse it off. It smells great and pulls out the lingering oils.
+If your wooden board starts smelling like onions or garlic, a scrub with coarse salt and half a lemon can help deodorize it. Sprinkle the salt, use the lemon half like a sponge, then rinse and dry the board. This is an odor treatment, not a substitute for sanitizing after raw meat or poultry.
+
+## Clean and sanitize cutting boards correctly
+
+Wash every board with hot, soapy water after use, rinse it, and dry it thoroughly. After raw meat or poultry, USDA guidance recommends sanitizing with a solution of 1 tablespoon of unscented liquid chlorine bleach per gallon of water. Flood the clean surface, let it stand for several minutes, rinse with clean water, and air-dry or pat dry with clean paper towels. Never mix bleach with another cleaner.
+
+Deep grooves, cracks, and separated seams create areas that are hard to clean. Replace the board when those defects appear instead of trying to rescue a surface that is splitting. Apply the same clean-and-dry discipline to other kitchen workhorses; our guide to [seasoning a cast-iron skillet](/how-to-season-cast-iron-skillet-properly/) explains how to protect that surface without leaving excess oil behind.
 
 If you want a minimalist setup, buy two boards. Get one large, heavy wooden board for vegetables and daily prep, and one medium plastic board strictly for raw meat. Keep them separate, keep them clean, and your cooking routine will immediately feel more organized.

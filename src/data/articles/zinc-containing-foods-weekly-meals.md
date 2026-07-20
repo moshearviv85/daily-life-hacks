@@ -1,6 +1,6 @@
 ---
 title: "Zinc-Containing Foods to Rotate Into Weekly Meals"
-excerpt: "Zinc shows up in more places than oysters and supplement bottles. Here is a practical rotation of zinc-containing foods you can actually cook with, without turning dinner into a spreadsheet."
+excerpt: "Rotate zinc-containing foods such as beef, beans, dairy, eggs, seeds, and seafood into ordinary weekly meals without planning a separate menu."
 category: "nutrition"
 tags:
 - nutrition basics

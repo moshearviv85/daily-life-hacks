@@ -1,5 +1,5 @@
 ---
-title: "Lentil Curry: A High Fiber Vegan Dinner You'll Actually Crave"
+title: "Lentil Curry: A High-Fiber Vegan Dinner"
 excerpt: "This lentil curry high fiber vegan dinner is rich, warming, and done in one pot. It uses red lentils so you don't have to wait an hour for them to soften."
 category: "recipes"
 tags:

@@ -6,8 +6,9 @@ tags: ["prune juice alternatives", "constipation food options", "high fiber food
 image: "/images/prune-juice-alternatives-for-constipation-main.jpg"
 imageAlt: "A glass of prune juice beside green kiwifruit, pears, oats, and lentils on a kitchen counter"
 date: 2026-02-05
-dateModified: 2026-07-17
+dateModified: 2026-07-20
 author: "David Miller"
+quickAnswer: "Whole green kiwifruit has better direct human evidence than most prune-juice substitutes: a small four-week trial found improvements in several constipation measures with two kiwifruit daily. Whole pears, apples, oats, beans, and lentils are defensible fiber sources, but they aren't instant equivalents. Add fiber gradually, keep liquids in the day, and seek care for persistent symptoms or warning signs."
 featured: false
 editorsPick: false
 whatsHot: false

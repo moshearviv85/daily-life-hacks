@@ -11,7 +11,13 @@ tags:
 image: "/images/stuffed-portobello-mushrooms-quinoa-spinach-feta-main.jpg"
 imageAlt: "Baked portobello mushrooms filled with quinoa, spinach, and feta on a sheet pan"
 date: 2026-05-10
+dateModified: 2026-07-20
 author: "David Miller"
+quickAnswer: >-
+  Pre-roast seasoned portobello caps for eight minutes while quinoa cooks. Soften
+  onion and garlic, wilt spinach, then mix with peppers, lemon, herbs, quinoa,
+  feta, and breadcrumbs. Fill the caps and bake for another 12 to 15 minutes;
+  rest five minutes before serving.
 featured: false
 editorsPick: false
 whatsHot: false
@@ -96,6 +102,12 @@ The caps should feel firm and look smooth, not slimy or bruised. If the edges ar
 
 For quinoa, any color works. White quinoa is mild. Red quinoa has more chew. Tri-color quinoa is mostly there for visual ambition. Use what you already have.
 
+## How to choose portobello caps for stuffing
+
+Pick firm caps that are close to the same width so they finish at roughly the same time. Avoid packages with slimy spots or liquid pooled underneath. Wipe away dirt with a damp towel instead of soaking the mushrooms, which gives them more water to release in the oven.
+
+Scraping out the dark gills is optional. It makes more room for filling and keeps the quinoa lighter in color, but the gills are edible. Use the edge of a spoon and work gently so you do not split the cap.
+
 ## Easy variations
 
 Once you have the base, you can change the filling without rebuilding dinner from scratch.
@@ -119,5 +131,9 @@ If the mushrooms release liquid as they sit, spoon it off. Mushrooms are going t
 ## What to serve with them
 
 Keep the sides simple. A lemony salad works. Roasted broccoli or asparagus can share oven time. Crusty bread is excellent for catching any juices on the plate.
+
+For a fresh side with a little crunch, use this [pear salad with walnuts](/pear-salad-with-walnuts-fiber-rich/). If you want a second mushroom option for a mixed vegetarian table, [creamy mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/) uses the same earthy flavors in a softer, spoonable dish.
+
+Cool leftovers promptly and refrigerate them in a shallow, covered container. Reheat only what you plan to eat, and stop when the center is steaming hot. The caps soften after a night in the refrigerator, but a sheet pan gives them a better texture than the microwave.
 
 These stuffed portobello mushrooms with quinoa and feta sit right in the sweet spot: practical enough for Tuesday, polished enough for company, and forgiving enough that you don't need to hover over the oven like it's grading you.

@@ -1,6 +1,6 @@
 ---
-title: "Cooking Oils in the Kitchen: Smoke Points and Best Uses (Simple Chart)"
-excerpt: "Not all cooking oils belong in every pan. This simple guide covers smoke points, best uses, and when to swap so you stop ruining dinner with the wrong oil at the wrong heat."
+title: "Cooking Oil Smoke Points and Best Uses"
+excerpt: "Compare cooking oil smoke points and practical uses for sautéing, roasting, frying, dressings, and baking, with a simple chart for choosing the right bottle."
 category: "nutrition"
 tags:
 - cooking basics

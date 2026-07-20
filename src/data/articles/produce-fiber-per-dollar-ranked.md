@@ -1,5 +1,5 @@
 ---
-title: "Frozen Beats Fresh: Fruits and Vegetables Ranked by Fiber per Dollar"
+title: "Produce Ranked by Fiber per Dollar: Frozen vs. Fresh"
 excerpt: "Frozen green peas win at 17.6g of fiber per dollar across 22 fruits and vegetables; blueberries land last at 2.5g. Full July 2026 ranking."
 category: "nutrition"
 tags: ["high fiber vegetables", "high fiber fruits", "fiber per dollar", "budget produce", "cheap vegetables"]

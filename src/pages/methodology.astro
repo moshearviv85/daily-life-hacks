@@ -11,11 +11,13 @@ const methodologySchema = [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    "@id": "https://www.daily-life-hacks.com/methodology/#webpage",
     name: "How We Verify Our Numbers",
     url: "https://www.daily-life-hacks.com/methodology/",
     description,
     isPartOf: {
       "@type": "WebSite",
+      "@id": "https://www.daily-life-hacks.com/#website",
       name: "Daily Life Hacks",
       url: "https://www.daily-life-hacks.com",
     },
@@ -25,6 +27,7 @@ const methodologySchema = [
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://www.daily-life-hacks.com/#organization",
       name: "Daily Life Hacks",
       url: "https://www.daily-life-hacks.com",
     },
@@ -40,6 +43,9 @@ const methodologySchema = [
     </h1>
     <p class="text-lg mb-8" style="color: var(--muted-color);">
       Every data study on this site runs on the same rules. Here they are, in full, so you can check our work.
+    </p>
+    <p class="text-sm mb-8" style="color: var(--muted-color);">
+      Page last updated July 20, 2026.
     </p>
 
     <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
@@ -73,6 +79,11 @@ const methodologySchema = [
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">The self-audit before publish</h2>
       <p>
         Before any study goes live, every value gets re-verified against two independent USDA pulls. Two separate queries, two separate sessions, compared line by line. If the pulls disagree, the row gets flagged and resolved manually before publication. It's tedious. That's the point. A ranking is only useful if the boring rows are as accurate as the surprising ones.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Who is responsible for the review</h2>
+      <p>
+        David Miller, the site's founder and editor, runs the data checks and documents the sources. He isn't a registered dietitian or medical professional. This methodology is designed to make grocery-price and nutrient calculations inspectable; it doesn't turn a cost ranking into personal nutrition advice. Claims that depend on health guidance should point to a primary government or clinical source, and readers should use a qualified healthcare professional for decisions specific to them.
       </p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Every study ships its raw data</h2>
@@ -116,7 +127,22 @@ const methodologySchema = [
         <li>
           <a href="/tools/fiber-per-dollar-calculator/" class="underline" style="color: #F29B30;">The Fiber per Dollar Calculator</a> (runs on the same verified dataset)
         </li>
+        <li>
+          <a href="/what-30-grams-of-fiber-costs-per-day/" class="underline" style="color: #F29B30;">What 30 Grams of Fiber Costs Per Day</a>
+        </li>
+        <li>
+          <a href="/what-50-grams-of-protein-costs-per-day/" class="underline" style="color: #F29B30;">What 50 Grams of Protein Costs Per Day</a>
+        </li>
+        <li>
+          <a href="/protein-per-dollar-adjusted-for-quality/" class="underline" style="color: #F29B30;">Protein per Dollar Adjusted for Quality</a>
+        </li>
+        <li>
+          <a href="/fast-food-protein-per-dollar-ranked/" class="underline" style="color: #F29B30;">Fast Food Protein per Dollar</a>
+        </li>
       </ul>
+      <p>
+        Browse the complete collection and every available download on the <a href="/research/" class="underline" style="color: #F29B30;">research hub</a>.
+      </p>
 
       <p class="mt-10">
         Questions about the data, or spotted something that looks off? <a href="/contact/" class="underline" style="color: #F29B30;">Tell us</a>. Getting corrected beats being wrong.

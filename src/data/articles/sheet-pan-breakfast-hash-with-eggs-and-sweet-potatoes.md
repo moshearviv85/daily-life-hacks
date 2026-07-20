@@ -1,6 +1,6 @@
 ---
 title: "Sheet Pan Breakfast Hash with Eggs and Sweet Potatoes"
-excerpt: "One pan, minimal cleanup, and a breakfast that actually holds up. Here's how to get crispy sweet potatoes and perfectly set eggs without the stovetop juggling act."
+excerpt: "Roast sweet potatoes until crisp, add eggs at the right time, and finish a sheet pan breakfast hash without juggling three pans on the stove."
 category: recipes
 tags:
   - sheet pan breakfast

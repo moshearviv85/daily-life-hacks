@@ -1,6 +1,11 @@
 ---
 title: "Crispy Smashed Potato Salad With Dijon and Herbs"
-excerpt: "This crispy smashed potato salad with Dijon and herbs changes the game. Forget the soggy mayo version. We're talking crispy roasted potatoes tossed in a sharp, bright vinaigrette."
+excerpt: "Boil baby potatoes, smash and roast them until crisp, then toss the warm edges with Dijon vinaigrette, shallot, parsley, and chives."
+quickAnswer: >-
+  Simmer baby potatoes until fork-tender, cool briefly, then smash them on an
+  oiled sheet pan. Roast at 425 degrees F until the broken edges are crisp. Toss
+  the warm potatoes gently with olive oil, apple cider vinegar, Dijon, honey,
+  shallot, parsley, and chives just before serving.
 category: "recipes"
 tags:
 - quick meals
@@ -11,6 +16,7 @@ tags:
 image: "/images/crispy-smashed-potato-salad-dijon-herbs-main.jpg"
 imageAlt: "Crispy smashed potatoes tossed in a bowl with fresh herbs and mustard dressing"
 date: 2026-04-22
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -50,7 +56,7 @@ faq:
   - question: "What if I don't have a shallot?"
     answer: "Red onion is the best substitute. Mince it very finely. If raw onion is too sharp for you, soak the minced onion in the vinegar for ten minutes before adding the other dressing ingredients."
   - question: "Is this potato salad served warm or cold?"
-    answer: "It's best served warm or at room temperature. Because it uses a vinaigrette instead of mayonnaise, it doesn't get weird when it sits out, making it perfect for a barbecue or picnic."
+    answer: "It's best served warm or at room temperature. A vinaigrette keeps the texture lighter than mayonnaise, but the cooked potatoes still need normal food-safety handling and should not sit outside indefinitely."
   - question: "Can I use regular large potatoes instead of baby potatoes?"
     answer: "Not really. Large potatoes will fall apart completely when you try to smash them. Baby potatoes have the right skin-to-flesh ratio to hold together and get crispy edges."
 ---
@@ -89,3 +95,15 @@ Parsley adds a clean, grassy note, while chives give you that mild onion flavor 
 This crispy smashed potato salad with Dijon and herbs is best served warm or at room temperature. That makes it incredibly convenient if you're hosting dinner or taking it to a potluck. You don't have to worry about mayo spoiling in the sun, and you don't have to fight for fridge space. If you're building out a whole potluck spread, my [cold summer pasta salad](/easy-cold-summer-pasta-salad-potlucks/) plays by the same no-mayo rules.
 
 If you have leftovers, they will keep in the fridge for a few days. They won't be quite as crispy the next day, but the flavors actually deepen as they sit. You can eat them cold, or throw them in a hot skillet for a few minutes to crisp them back up. Just make sure you make a big batch, because people tend to pick at them straight from the bowl.
+
+## Keep potato salad cold at a potluck
+
+Vinaigrette does not make cooked potatoes shelf-stable. Keep the bowl refrigerated until serving, then return it to a cooler or refrigerator within two hours. When the outdoor temperature is above 90 degrees F, use a one-hour limit. A larger bowl of ice under the serving bowl buys useful chill time.
+
+For another portable salad with the same temperature rules, this [cold pasta salad guide](/how-to-pack-cold-pasta-salad-picnics/) covers containers, ice packs, and travel timing.
+
+## Re-crisp leftovers without burning the herbs
+
+Warm leftovers in a skillet over medium heat with a small splash of oil. Move the potatoes only after the underside has had time to brown. The herbs may darken, but the edges regain some of their crunch.
+
+If you know you will have leftovers, reserve a few roasted potatoes before dressing them. They reheat more cleanly and can become breakfast hash. For the whole-potato version, this [baked potato guide](/best-way-to-cook-baked-potatoes/) explains how to store and reheat extras.

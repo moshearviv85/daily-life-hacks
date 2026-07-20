@@ -1,8 +1,7 @@
 ---
 title: High Fiber Smoothies for Kids Picky Eaters
-excerpt: Wrangle those tiny taste buds with three super-stealthy, high-fiber smoothie
-  recipes kids will actually guzzle down, featuring spinach, banana, and strawberry
-  blends.
+excerpt: Make three high-fiber smoothies for picky kids using familiar banana,
+  strawberry, and cocoa flavors with simple texture adjustments.
 category: nutrition
 tags:
 - high fiber

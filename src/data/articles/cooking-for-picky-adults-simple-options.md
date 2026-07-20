@@ -1,6 +1,6 @@
 ---
 title: "What to Eat When You're Cooking for a Non-Adventurous Eater"
-excerpt: "Cooking for picky adults doesn't mean making separate meals forever. These simple options help you work with strong preferences instead of fighting them at the dinner table."
+excerpt: "Use flexible bases, separate toppings, and familiar textures when cooking for picky adults, without making a completely different meal for everyone."
 category: "nutrition"
 tags:
 - nutrition basics

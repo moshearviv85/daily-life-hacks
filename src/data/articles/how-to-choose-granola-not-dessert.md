@@ -1,6 +1,6 @@
 ---
 title: "How to Choose a Granola That Isn't Dessert"
-excerpt: "Most store-bought granola is closer to a cookie than a breakfast. Here's how to choose granola that's actually reasonable by reading labels like someone who's been burned before."
+excerpt: "Choose granola by checking serving size, added sugar, fiber, and ingredients, so breakfast does not quietly turn into a bowl of cookies."
 category: "nutrition"
 tags:
 - breakfast

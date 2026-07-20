@@ -11,8 +11,9 @@ tags:
 image: /images/artichoke-recipes-for-gut-health-main.jpg
 imageAlt: "Steamed whole artichokes served with a small bowl of lemon garlic dip"
 date: 2026-01-22
-dateModified: 2026-07-17
+dateModified: 2026-07-20
 author: "David Miller"
+quickAnswer: "Trim one inch from the top of each artichoke, snip the sharp leaf tips, rub cut surfaces with lemon, and steam stem-side up for 25 to 35 minutes. A center leaf should pull free easily and the base should feel tender. Artichokes provide fiber, but one serving isn't a treatment for digestive symptoms, and individual tolerance varies."
 featured: false
 editorsPick: false
 whatsHot: false
@@ -21,7 +22,7 @@ prepTime: 10 minutes
 cookTime: 25 minutes
 totalTime: 35 minutes
 servings: 4
-calories: 380
+calories: 240
 difficulty: Easy
 ingredients:
 - 4 medium globe artichokes
@@ -90,5 +91,15 @@ The lemon-garlic dip matters because artichokes are subtle. Lemon cuts through t
 Yes, but steam or boil them first until almost tender. Halve them, remove the choke, brush the cut sides with oil, and roast or grill until browned. Starting a raw whole artichoke on the grill is a long way to produce warm armor.
 
 Canned or jarred hearts are useful for pasta, salads, and dips, though they won't replace the pull-a-leaf experience. Rinse brined hearts and dry them before roasting. For another less-familiar ingredient handled without wellness mythology, read the guide to [natto](/natto-japanese-fermented-soybeans-gut-health/).
+
+## What usually goes wrong in the steamer?
+
+If the outer leaves are tender but the center is stubborn, the artichoke needs more time. Add hot water to the pot if the level is getting low, cover it again, and check in five-minute rounds. Letting the pot boil dry is an effective way to replace dinner with smoke-alarm cardio.
+
+If the leaves taste watery, the artichokes may have been boiled or left sitting in condensation. A steamer basket should hold them above the water, not give them a shallow bath. Rest cooked artichokes upside down for a minute so trapped water can drain before serving.
+
+For four very large artichokes, use a wide pot and avoid packing them tightly. Steam needs room to circulate. If your pot only fits two without forcing the lid, cook two batches rather than building a vegetable pressure vessel on the stove.
+
+The dip can be made while the artichokes steam. Keep it refrigerated until serving, especially if you use mayonnaise or yogurt. Put out only what you expect to use and refill the bowl if needed; nobody benefits from the full batch spending two hours beside a warm grill.
 
 Cooked whole artichokes keep in the refrigerator for up to three days. Store the dip separately. Reheat the artichokes gently or eat them chilled, then accept that this is one of the few foods where making a small pile of discarded leaves is the correct technique.

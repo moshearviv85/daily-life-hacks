@@ -1,6 +1,6 @@
 ---
-title: "How to Fix Oversalted Soup, Sauce, and Rice (Without Starting Over)"
-excerpt: "A heavy hand with the salt shaker doesn't have to mean dinner is ruined. Here are reliable ways to rescue oversalted soup, sauce, and rice before you throw the pot out."
+title: "How to Fix Oversalted Soup, Sauce, and Rice"
+excerpt: "Rescue oversalted soup, sauce, or rice with practical fixes that balance the pot without forcing you to throw out dinner and start again."
 category: "tips"
 tags:
 - soups and stews

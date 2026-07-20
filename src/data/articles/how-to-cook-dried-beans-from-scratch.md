@@ -2,6 +2,11 @@
 title: How to Cook Dried Beans From Scratch
 excerpt: Cooking dried beans from scratch is cheaper and simpler than it sounds. Soak,
   simmer, and season. Here's a straightforward method that works for most beans.
+quickAnswer: >-
+  Sort and rinse dried beans, soak them overnight if convenient, then cover with
+  fresh water and simmer gently until creamy inside. Start checking after 45
+  minutes and add hot water as needed. Salt the cooking water for flavor, but
+  wait to add acidic tomatoes or vinegar until the beans are tender.
 category: tips
 tags:
 - cooking basics
@@ -12,6 +17,7 @@ tags:
 image: /images/how-to-cook-dried-beans-from-scratch-main.jpg
 imageAlt: Pot of cooked beans with herbs
 date: 2026-03-15
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -24,19 +30,20 @@ faq:
     plan to leave them simmering on the stove for an extra hour or two.
 - question: When is the best time to add salt when learning how to cook dried beans
     from scratch?
-  answer: The best time to add salt is when the beans are almost fully tender. Salting
-    the water right at the beginning can sometimes prevent the skins from softening
-    properly, leaving you with tough beans.
+  answer: You can salt the soaking water or cooking water. Salt does not create the
+    same toughening problem as acidic ingredients. Tomatoes, vinegar, and citrus
+    are the ingredients to hold until the beans are tender.
 - question: How long do cooked beans last in the fridge?
   answer: Once cooked, beans stored in an airtight container with a little of their
     cooking liquid will stay fresh in the refrigerator for about 4 to 5 days. They
     also freeze exceptionally well.
-- question: Is this approach suitable for beginners?
-  answer: Yes, it is designed to be accessible. You can start small and gradually
-    incorporate more changes as you feel comfortable.
-- question: How long does it take to see results?
-  answer: Everyone is different, but many people notice positive changes within a
-    few weeks of consistent habits.
+- question: How much cooked beans does one pound make?
+  answer: One pound of dried beans usually yields about 5 to 6 cups cooked, depending
+    on the variety and age. Portion the extras with some cooking liquid before freezing.
+- question: Why are my dried beans still hard?
+  answer: Old beans take longer, hard water can slow softening, and acidic ingredients
+    added too early can keep skins firm. Continue simmering with enough hot water
+    and add tomatoes or vinegar only after the centers are creamy.
 ---
 Canned beans are undeniably convenient, but buying a bag of dried beans costs significantly less money and allows you to control exactly how mushy they get and how much salt goes into them. 
 
@@ -56,7 +63,7 @@ If you see a bunch of white foam rise to the top, just skim it off with a spoon 
 
 Start checking them around the 45-minute mark. Scoop one out, let it cool for a second, and taste it. If the water level in the pot gets too low while they cook, just pour in a little more hot water. 
 
-*Crucial rule:* Do not add your salt or acidic ingredients (like canned tomatoes or vinegar) into the pot until the beans are almost soft. Acid and salt early in the process can lock the skins and keep the beans tough forever.
+*Crucial rule:* Wait to add acidic ingredients such as canned tomatoes, vinegar, or citrus until the beans are tender. Salt can go into the soaking or cooking water and helps season the beans from within.
 ## Step Three: Season and Store
 
 Once the beans are perfectly soft to your liking, add a generous amount of salt and stir it in. If you want, you can also toss in a smashed clove of garlic, half an onion, or a bay leaf while they simmer to build up the flavor of the broth. 
@@ -64,3 +71,21 @@ Once the beans are perfectly soft to your liking, add a generous amount of salt 
 If you plan to use these beans in a recipe that is already heavily seasoned (like a spicy chili), you can just leave the beans plain and season them later. 
 
 You will get significantly more food out of a $2 bag of dried beans than you ever will from $2 worth of cans. You can cook a massive batch on a Sunday afternoon while you're doing other things around the house, stick them in the fridge, and use them all week in tacos, soups, and quick salads. A pot of [three-bean vegetarian chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) is the obvious first assignment for that Sunday batch. It's one of those minor kitchen skills that pays off constantly.
+
+## Can you cook dried beans without soaking?
+
+Yes. Rinse the beans, cover them with several inches of water, and simmer until tender. The tradeoff is time: unsoaked beans can take an extra hour or more, and the oldest beans in the bag may still lag behind. Keep the pot at a lazy simmer rather than a hard boil so the skins do not split while the centers catch up.
+
+Soaking is a scheduling tool, not a moral achievement. If you remember the night before, great. If you do not, use the quick-soak method or cook them longer. This [same-day quick-soak guide](/how-to-quick-soak-dried-beans-same-day/) gives exact timing when dinner cannot wait for tomorrow's better planning.
+
+## Build flavor into the cooking liquid
+
+Add half an onion, a few garlic cloves, a bay leaf, or sturdy herb stems while the beans simmer. Skip a complicated spice cabinet raid on the first batch. Beans absorb flavors slowly, and one onion plus enough salt does more useful work than twelve dusty jars competing for attention.
+
+Taste several beans before declaring the pot done. One bean can be tender while its stubborn neighbor still has a chalky center. When most are creamy throughout, turn off the heat and let them sit in the seasoned liquid for 15 minutes.
+
+## Store beans with their cooking liquid
+
+Cool cooked beans promptly and refrigerate them in a covered container with enough liquid to keep them moist. Use them within four to five days. For freezing, portion beans and liquid into meal-size containers, leave expansion room, label them, and freeze for up to a few months for best quality.
+
+Thaw overnight in the refrigerator or reheat gently from frozen with a splash of water. The batch can become [15-minute black bean tacos](/easy-black-bean-tacos-weeknight-dinner/), soup, salad, or a rice bowl without opening another can.

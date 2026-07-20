@@ -1,6 +1,11 @@
 ---
-title: "Beans and Rice: A Complete Protein Meal That Won't Break the Bank"
-excerpt: "This simple beans and rice complete protein meal is cheap, filling, and packed with flavor. No weird ingredients, just pantry staples working together perfectly."
+title: "Beans and Rice: A Complete Protein Meal on a Budget"
+excerpt: "Cook smoky black beans with onion and pepper, spoon them over rice, and finish with lime for a low-cost pantry dinner with complementary proteins."
+quickAnswer: >-
+  Cook rice separately while onion and bell pepper soften in a skillet. Toast
+  cumin, smoked paprika, oregano, and garlic, then simmer rinsed black beans with
+  broth for 10 minutes. Finish with lime juice or vinegar and spoon the beans
+  over rice. Beans and grains provide complementary essential amino acids.
 category: "recipes"
 tags:
 - high protein
@@ -11,7 +16,7 @@ tags:
 image: "/images/beans-and-rice-complete-protein-meal-main.jpg"
 imageAlt: "A hearty bowl of black beans and rice garnished with fresh cilantro and lime"
 date: 2026-04-08
-dateModified: 2026-07-16
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -85,7 +90,7 @@ Then, the acid. Do not skip the splash of lime juice or vinegar at the end. Bean
 
 ## Storage and meal prep
 
-This is aggressively good for meal prep. Make a double batch on Sunday. Portion it out into containers. It holds up in the fridge for almost a week and reheats in two minutes. 
+This is aggressively good for meal prep. Make a double batch on Sunday and portion it into shallow containers. Refrigerate promptly and use the portions within four days, or freeze the later meals.
 
 If you are packing this for work, let it cool completely before snapping the lids on your containers. Condensation is the enemy of good rice, turning it from pleasantly chewy to sad and waterlogged. 
 
@@ -97,4 +102,16 @@ Part of the appeal here is how ridiculous the cost per serving is. A bag of drie
 
 When groceries feel like a luxury, having a meal like this in your back pocket is essential. It frees up your budget for other things, like buying good olive oil or finally replacing that weird skillet that everything sticks to.
 
-You don't need a massive grocery haul to eat well. You just need a few basic ingredients and the willingness to let them get to know each other in a skillet. This beans and rice complete protein meal proves that cheap, healthy dinners don't have to taste like a compromise.
+You don't need a massive grocery haul to make a substantial dinner. You need a few basic ingredients and the willingness to let them get to know each other in a skillet.
+
+## Cook the rice for the schedule you have
+
+White rice fits the 35-minute recipe. Brown rice may take around 45 minutes, so start it earlier or use a batch you cooked ahead. Follow the package ratio because rice varieties are oddly committed to having different opinions about water.
+
+Cool extra rice promptly in a shallow container. The [leftover rice guide](/how-to-use-leftover-rice-creative-ideas/) covers safe cooling, reheating, and several ways to turn the second portion into a different meal.
+
+## Canned beans or dried beans both work
+
+Two rinsed 15-ounce cans keep this dinner fast. If you cooked beans from dry, use roughly three cups and add a little of their cooking liquid in place of broth. The [dried bean method](/how-to-cook-dried-beans-from-scratch/) gives you a larger batch for tacos, soup, and another round of rice bowls.
+
+Taste after the beans simmer. Add salt only as needed because canned beans and broth vary. Finish with lime or vinegar after the heat is off; that bright edge is what keeps an inexpensive bowl from tasting merely beige.

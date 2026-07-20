@@ -1,6 +1,6 @@
 ---
 title: "Frozen vs Fresh Produce: When Each Makes More Sense"
-excerpt: "The frozen vs fresh produce debate has a boring answer: it depends. Here's a practical breakdown of when to buy frozen, when fresh actually matters, and when it honestly doesn't."
+excerpt: "Compare frozen and fresh produce by cost, texture, shelf life, and cooking use so you know which version makes sense for the meal in front of you."
 category: "nutrition"
 tags:
   - grocery shopping

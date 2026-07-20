@@ -29,6 +29,8 @@ const articles = defineCollection({
     servings: z.coerce.number().optional(),
     calories: z.coerce.number().optional(),
     difficulty: z.enum(['Easy', 'Medium', 'Hard']).optional(),
+    recipeCategory: z.string().optional(),
+    recipeCuisine: z.string().optional(),
     ingredients: z.array(z.string()).optional(),
     steps: z.array(z.string()).optional(),
     faq: z.array(z.object({

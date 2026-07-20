@@ -6,7 +6,9 @@ tags: ["indian veg", "one pot meal", "vegetarian lunch", "easy weeknight dinner"
 image: "/images/simple-lunch-recipes-indian-veg-main.jpg"
 imageAlt: An overhead shot of a bowl of golden dal and rice, garnished with fresh cilantro and red chili flakes, on a wooden surface.
 date: 2026-05-31
+dateModified: 2026-07-20
 author: "David Miller"
+quickAnswer: "For a simple Indian vegetarian lunch, cook lentils and rice together with onion, tomato, cumin, turmeric, and enough water to keep the pot loose and spoonable. Use split red lentils for the quickest version. Finish with lemon and cilantro, then serve with yogurt, pickle, or chopped cucumber for contrast."
 featured: false
 prepTime: "10 minutes"
 cookTime: "30 minutes"
@@ -55,7 +57,7 @@ You know those nights when you want takeout, but you also want to feel like a re
 
 This isn't some complex, multi-pot affair that requires a trip to a specialty spice shop. This is a one-pot dal and rice situation that practically cooks itself. It’s hearty enough that nobody asks where the meat went, and it’s packed with enough fiber and protein to keep you from digging through the pantry looking for a snack an hour later. We’re talking about a quick, flavorful, and filling Indian veg lunch that you can whip up for today or meal prep for the week.
 
-### Why This One-Pot Wonder Works
+## Why This One-Pot Wonder Works
 
 Look, I’m all about efficiency, especially in the kitchen. If I can get a full meal with minimal cleanup, I’m in. This recipe, a kind of dal khichdi, checks all those boxes. Red lentils melt into the broth and make the whole thing thick and rich without you doing anything fancy. The basmati rice absorbs all those delicious flavors, and the result is something so comforting it feels like a hug in a bowl. It’s basically the bowl you'd pay fourteen bucks for near your office, except you made four of them on Sunday for roughly the same price.
 
@@ -72,7 +74,7 @@ Don't be intimidated by the idea of Indian spices. We're keeping it simple here,
 
 The key is to let these spices toast for a minute or so in the hot oil with the onion, garlic, and ginger. This process, called *tempering*, brings out their full flavor potential. Skip this step, and you're leaving a lot of flavor on the table.
 
-### Picking Your Lentils and Rice
+## Picking Your Lentils and Rice
 
 For this recipe, we're using red lentils and basmati rice. There’s a reason for that.
 
@@ -85,7 +87,7 @@ Could you use other lentils or rice? Sure, but it might change the cooking time 
 
 This is important. While we want the lentils and rice to be tender, we don't want mush. Keep an eye on it during the last few minutes of simmering. Once the liquid is mostly absorbed and the lentils and rice are tender, it's done. It will continue to thicken as it cools, so err on the side of slightly more liquid than you think you need. If it does get too thick, a splash of hot water or broth will loosen it right back up.
 
-### What to Serve With It
+## What to Serve With It
 
 This one-pot dal and rice is a complete meal on its own, but a few simple additions can really round it out.
 

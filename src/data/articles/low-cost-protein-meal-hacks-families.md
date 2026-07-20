@@ -1,6 +1,7 @@
 ---
 title: Low Cost Protein Meal Hacks for Families
-excerpt: Feeding a family on a budget doesn't mean skipping the protein. Discover practical ways to stretch meat and use plant-based swaps that your kids will actually eat.
+excerpt: Stretch your family protein budget with beans, eggs, smaller portions of meat,
+  and practical meal combinations that still feel like dinner.
 category: tips
 tags:
 - budget friendly

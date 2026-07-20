@@ -39,6 +39,22 @@ const studies = [
     title: "What 50 Grams of Protein Costs",
     text: "Five 50-gram days priced meal by meal. The fast-food version cost about 12 times more.",
   },
+  {
+    href: "/protein-per-dollar-adjusted-for-quality/",
+    eyebrow: "25 foods adjusted",
+    number: "DIAAS",
+    label: "protein quality added to the price math",
+    title: "Protein per Dollar, Adjusted for Quality",
+    text: "The cheap-protein ranking changes when digestibility and amino acid quality enter the spreadsheet.",
+  },
+  {
+    href: "/fast-food-protein-per-dollar-ranked/",
+    eyebrow: "30 menu items ranked",
+    number: "30",
+    label: "fast-food orders compared by protein value",
+    title: "Fast Food Protein per Dollar",
+    text: "A dated menu-price snapshot showing which orders buy protein and which mostly buy a logo.",
+  },
 ];
 
 const explainers = [
@@ -96,7 +112,7 @@ const researchSchema = [
 
     <section aria-labelledby="study-heading" class="mb-14">
       <div class="flex items-center gap-3 mb-5">
-        <h2 id="study-heading" class="text-2xl md:text-3xl font-bold" style="color:var(--heading-color);">The four core studies</h2>
+        <h2 id="study-heading" class="text-2xl md:text-3xl font-bold" style="color:var(--heading-color);">The six core studies</h2>
         <div class="h-px flex-1" style="background:var(--border-color);"></div>
       </div>
       <div class="grid md:grid-cols-2 gap-5">
@@ -140,6 +156,8 @@ const researchSchema = [
           <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-per-dollar-2026.csv">Protein per dollar CSV</a></li>
           <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/fiber-day-cost-2026.csv">30-gram fiber day CSV</a></li>
           <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-day-cost-2026.csv">50-gram protein day CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-quality-per-dollar-2026.csv">Quality-adjusted protein CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/fastfood-protein-per-dollar-2026.csv">Fast-food protein CSV</a></li>
         </ul>
       </div>
     </section>
@@ -151,6 +169,10 @@ const researchSchema = [
       </div>
       <a href="/methodology/" class="shrink-0 inline-flex justify-center rounded-lg px-5 py-3 font-bold text-white" style="background:#F29B30;">Read the methodology</a>
     </section>
+
+    <p class="mt-6 text-sm leading-relaxed" style="color:var(--muted-color);">
+      Daily Life Hacks founder and editor David Miller runs the data checks. Read <a href="/about/" class="font-bold underline" style="color:#F29B30;">who is responsible for the work</a>, including the site's expertise limits and correction process.
+    </p>
   </main>
   <Footer />
 </BaseLayout>

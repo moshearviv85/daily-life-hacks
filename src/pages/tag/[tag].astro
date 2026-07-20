@@ -1,98 +1,13 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Header from "../../components/Header.astro";
-import Footer from "../../components/Footer.astro";
-import ArticleCard from "../../components/ArticleCard.astro";
-import { getCollection } from "astro:content";
-import { isReleased, getReleaseTimestamp } from "../../content/release";
-
-export async function getStaticPaths() {
-  const allArticles = await getCollection("articles");
-  const released = allArticles.filter((a: any) => isReleased(a));
-
-  const tagMap = new Map<string, any[]>();
-  for (const article of released) {
-    for (const tag of article.data.tags) {
-      const slug = tag.toLowerCase().replace(/\s+/g, "-");
-      if (!tagMap.has(slug)) tagMap.set(slug, []);
-      tagMap.get(slug)!.push(article);
-    }
-  }
-
-  return Array.from(tagMap.entries()).map(([slug, articles]) => ({
-    params: { tag: slug },
-    props: {
-      tagName: articles[0].data.tags.find(
-        (t: string) => t.toLowerCase().replace(/\s+/g, "-") === slug
-      ),
-      articles: articles.sort(
-        (a: any, b: any) => getReleaseTimestamp(b) - getReleaseTimestamp(a)
-      ),
-    },
-  }));
+/**
+ * Tag archives are deliberately not emitted.
+ *
+ * The old taxonomy produced hundreds of thin, noindex pages. High-impression
+ * legacy tag URLs are handled explicitly by functions/[[path]].js; every
+ * other historical tag URL is allowed to become a real 404 after its internal
+ * links have been removed.
+ */
+export function getStaticPaths() {
+  return [];
 }
-
-const { tag } = Astro.params;
-const { tagName, articles } = Astro.props;
-
-const BATCH_SIZE = 12;
-const displayName = tagName
-  .split(" ")
-  .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
-  .join(" ");
-const title = `${displayName} Articles | Daily Life Hacks`;
-const description = `Browse our ${displayName.toLowerCase()} articles for practical tips, easy recipes, and everyday wellness advice.`;
 ---
-
-<BaseLayout title={title} description={description} robots="noindex, follow">
-  <Header />
-  <div class="max-w-6xl mx-auto px-4 py-12">
-    <header class="mb-12 text-center">
-      <p class="text-sm font-medium uppercase tracking-wider mb-2" style="color: var(--brand-color);">
-        Tag
-      </p>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[var(--heading-color)]">
-        {displayName}
-      </h1>
-      <p class="text-xl max-w-2xl mx-auto" style="color: var(--muted-color);">
-        {articles.length} {articles.length === 1 ? "article" : "articles"}
-      </p>
-    </header>
-
-    <div
-      id="articles-grid"
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-    >
-      {
-        articles.map((article: any, i: number) => (
-          <div
-            class="article-item"
-            data-index={i}
-            style={i >= BATCH_SIZE ? "display:none" : ""}
-          >
-            <ArticleCard
-              title={article.data.title}
-              excerpt={article.data.excerpt}
-              image={article.data.image}
-              imageAlt={article.data.imageAlt}
-              category={article.data.category}
-              slug={article.id}
-              date={article.data.date}
-              fillHeight={true}
-            />
-          </div>
-        ))
-      }
-    </div>
-
-    <div id="load-sentinel" class="h-4"></div>
-    <div
-      id="loading-spinner"
-      class="hidden text-center py-6 text-sm"
-      style="color: var(--muted-color);"
-    >
-      Loading more...
-    </div>
-  </div>
-  <Footer />
-</BaseLayout>

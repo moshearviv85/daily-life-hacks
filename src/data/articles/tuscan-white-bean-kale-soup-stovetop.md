@@ -1,6 +1,6 @@
 ---
 title: "Tuscan White Bean and Kale Soup (Simple Stovetop Version)"
-excerpt: "A pantry friendly Tuscan white bean kale soup you can make on the stovetop in under an hour. Chewy kale, creamy beans, and a broth that tastes like it simmered all afternoon."
+excerpt: "Cook Tuscan white bean and kale soup on the stovetop in under an hour, with creamy beans, sturdy greens, and a broth that tastes slow-simmered."
 category: "recipes"
 tags:
   - soups and stews

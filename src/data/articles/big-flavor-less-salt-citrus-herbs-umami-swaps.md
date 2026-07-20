@@ -1,6 +1,11 @@
 ---
-title: "Big Flavor With Less Salt: Citrus, Herbs, and Umami Pantry Swaps"
-excerpt: "Want big flavor with less salt without eating sad food? Use acid, herbs, and a few umami pantry staples. This guide gives simple swaps, quick formulas, and weeknight examples that taste like you tried harder than you did."
+title: "Big Flavor With Less Salt: Citrus, Herbs, and Umami"
+excerpt: "Use citrus, vinegar, herbs, spices, browning, and measured umami ingredients to build flavor before automatically reaching for more salt."
+quickAnswer: >-
+  Build flavor in layers: brown onions or vegetables, toast spices briefly, add
+  garlic or herbs for aroma, and finish with lemon or vinegar. Use salty umami
+  ingredients such as soy sauce, Parmesan, or miso in measured amounts, then taste
+  the finished food before adding more salt.
 category: "nutrition"
 tags:
 - nutrition basics
@@ -10,6 +15,7 @@ tags:
 image: "/images/big-flavor-less-salt-citrus-herbs-umami-swaps-main.jpg"
 imageAlt: "Kitchen counter with lemons herbs garlic soy sauce and spices for flavor building"
 date: 2026-04-16
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -135,3 +141,15 @@ Pick one of these for the week:
 * Add tomato paste to your next soup.
 
 You do not need to overhaul everything. If you only do one thing, add acid at the end of cooking and taste again before you reach for salt. Big flavor with less salt is mostly about remembering you have options.
+
+## Compare sodium where it actually changes
+
+Check labels on broth, canned beans, sauces, and seasoning blends because brands vary. Compare equal serving sizes, then choose the product that fits the full dish. A lower-sodium broth still leaves room for Parmesan or soy sauce later; a salty broth plus both can corner you before tasting begins.
+
+Rinse canned beans when the recipe does not need the canning liquid. Measure soy sauce instead of circling the pan with the bottle. If label math is the annoying part, this [beginner nutrition-label guide](/how-to-read-nutrition-labels-for-beginners/) explains serving size and Percent Daily Value.
+
+## Fix the balance before adding another pinch
+
+Taste for what is missing. Flat food may need lemon. Bitter greens may need fat or a small touch of sweetness. A thin soup may need more cooking time. Salt cannot repair every structural problem, though it will volunteer for the job.
+
+If the shaker already got away from you, use the specific options in this guide to [fixing oversalted soup, sauce, and rice](/fix-oversalted-soup-sauce-rice/) rather than adding random ingredients and hoping the pot forgets.

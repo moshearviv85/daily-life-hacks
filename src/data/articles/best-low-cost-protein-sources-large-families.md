@@ -1,6 +1,6 @@
 ---
 title: Best Low Cost Protein Sources for Large Families
-excerpt: Feeding a crowd doesn't have to break the bank. Discover the most affordable protein sources that actually keep everyone full without the grocery store sticker shock.
+excerpt: Compare low-cost protein sources for large families, including beans, eggs, chicken, lentils, dairy, and canned fish, with practical meal ideas.
 category: nutrition
 tags:
 - budget friendly

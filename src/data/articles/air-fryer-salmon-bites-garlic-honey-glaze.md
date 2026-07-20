@@ -1,14 +1,21 @@
 ---
 title: "Air Fryer Salmon Bites With Garlic Honey Glaze"
-excerpt: "Crispy on the outside and flaky inside, these air fryer salmon bites take less than ten minutes to cook. Tossed in a sweet and savory garlic honey glaze, they're the perfect quick dinner."
+excerpt: "Pat salmon dry, cut it into even cubes, air-fry without glaze, then toss the cooked bites with warm garlic, honey, and soy sauce."
+quickAnswer: >-
+  Pat salmon dry and cut it into one-inch cubes. Toss with oil and dry seasonings,
+  arrange in one uncrowded layer, and air-fry at 400 degrees F for 6 to 8 minutes.
+  Check the thickest pieces for 145 degrees F, then toss the cooked salmon with
+  the warmed garlic-honey glaze.
 category: "recipes"
 tags:
 - quick meals
 - dinner
 - salmon
+- air fryer
 image: "/images/air-fryer-salmon-bites-garlic-honey-glaze-main.jpg"
 imageAlt: "Sticky glazed air fryer salmon bites served over a bowl of rice with sesame seeds"
 date: 2026-04-08
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -92,4 +99,14 @@ But if you want a real dinner, serve them over a bowl of warm rice. The extra gl
 
 As a bonus, salmon happens to be one of the easiest [selenium-containing foods](/selenium-containing-foods-easy-ways/) to work into a regular week, so these bites are pulling double duty.
 
-Fast, healthy, and incredibly flavorful. That is the kind of weeknight cooking we can all get behind.
+## How do you know when salmon bites are done?
+
+Check the largest cube first. It should separate into moist flakes with gentle pressure and reach 145 degrees F in the center. Tiny cubes can finish before large ones, which is why even cutting matters more here than another minute on the timer.
+
+Pull finished pieces early if your batch is uneven. Air fryers continue moving fierce heat across the surface, and one extra round can take salmon from glossy to pencil eraser. If you cook fish often, an instant-read thermometer earns its drawer space quickly.
+
+## Store and reheat the glaze separately
+
+Refrigerate leftovers promptly in a covered container and use them within a few days. If you expect leftovers, glaze only the portion you are serving. Plain cooked bites reheat more evenly, while honey-coated pieces can darken before the center gets hot.
+
+Warm leftover salmon gently in the air fryer at a lower temperature or use short microwave bursts. Add fresh glaze after heating. For a cold option, flake the bites over this [cucumber edamame salad](/cucumber-edamame-salad-sesame/) and skip reheating entirely.

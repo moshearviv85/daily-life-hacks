@@ -20,7 +20,8 @@ function durationToIso(value?: string): string | undefined {
   const text = value.toLowerCase();
   const hours = Number(text.match(/(\d+)\s*h(?:ours?)?/)?.[1] ?? 0);
   const minutes = Number(text.match(/(\d+)\s*m(?:in(?:ute)?s?)?/)?.[1] ?? 0);
-  if (!hours && !minutes) return undefined;
+  const hasExplicitZeroDuration = /\b0\s*(?:h(?:ours?)?|m(?:in(?:ute)?s?)?)\b/.test(text);
+  if (!hours && !minutes) return hasExplicitZeroDuration ? "PT0M" : undefined;
   return `PT${hours ? `${hours}H` : ""}${minutes ? `${minutes}M` : ""}`;
 }
 
@@ -61,6 +62,9 @@ const isRecipe =
 
 const siteUrl = "https://www.daily-life-hacks.com";
 const articleUrl = `${siteUrl}/${article.id}/`;
+const webPageId = `${articleUrl}#webpage`;
+const articleEntityId = `${articleUrl}#${isRecipe ? "recipe" : "article"}`;
+const breadcrumbId = `${articleUrl}#breadcrumb`;
 const imageUrl = article.data.image.startsWith("http")
   ? article.data.image
   : `${siteUrl}${article.data.image}`;
@@ -96,6 +100,7 @@ const articleAuthor = authorName === "Daily Life Hacks Team"
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "@id": breadcrumbId,
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
     {
@@ -122,10 +127,9 @@ const jsonLd = isRecipe
   ? {
       "@context": "https://schema.org",
       "@type": "Recipe",
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": articleUrl,
-      },
+      "@id": articleEntityId,
+      mainEntityOfPage: { "@id": webPageId },
+      isPartOf: { "@id": webPageId },
       url: articleUrl,
       name: article.data.title,
       headline: article.data.title,
@@ -141,8 +145,8 @@ const jsonLd = isRecipe
       recipeYield: article.data.servings
         ? `${article.data.servings} servings`
         : undefined,
-      recipeCategory: "Healthy",
-      recipeCuisine: "American",
+      recipeCategory: article.data.recipeCategory,
+      recipeCuisine: article.data.recipeCuisine,
       nutrition: article.data.calories
         ? {
             "@type": "NutritionInformation",
@@ -170,10 +174,9 @@ const jsonLd = isRecipe
   : {
       "@context": "https://schema.org",
       "@type": "Article",
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": articleUrl,
-      },
+      "@id": articleEntityId,
+      mainEntityOfPage: { "@id": webPageId },
+      isPartOf: { "@id": webPageId },
       url: articleUrl,
       headline: article.data.title,
       name: article.data.title,
@@ -235,19 +238,35 @@ const DATASETS: Record<
   },
 };
 
-const allSchemas: any[] = [jsonLd, breadcrumbSchema];
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": webPageId,
+  url: articleUrl,
+  name: article.data.title,
+  description: article.data.excerpt,
+  inLanguage: "en-US",
+  breadcrumb: { "@id": breadcrumbId },
+  primaryImageOfPage: { "@type": "ImageObject", url: imageUrl },
+  mainEntity: { "@id": articleEntityId },
+  isPartOf: { "@id": `${siteUrl}/#website` },
+};
+
+const allSchemas: any[] = [webPageSchema, jsonLd, breadcrumbSchema];
 
 const dataset = DATASETS[article.id];
 if (dataset) {
   allSchemas.push({
     "@context": "https://schema.org",
     "@type": "Dataset",
+    "@id": `${articleUrl}#dataset`,
     name: dataset.name,
     description: article.data.excerpt,
     url: articleUrl,
     isAccessibleForFree: true,
     creator: publisherSchema,
     publisher: publisherSchema,
+    isPartOf: { "@id": webPageId },
     datePublished: publishedDate,
     dateModified: modifiedDate,
     keywords: article.data.tags?.join(", "),
@@ -267,6 +286,8 @@ if (article.data.faq && article.data.faq.length > 0) {
   allSchemas.push({
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": `${articleUrl}#faq`,
+    isPartOf: { "@id": webPageId },
     mainEntity: article.data.faq.map((item: any) => ({
       "@type": "Question",
       name: item.question,
@@ -564,13 +585,12 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
       !isRecipe && article.data.tags.length > 0 && (
         <div class="order-[25] mt-10 flex flex-wrap gap-2">
           {article.data.tags.map((tag: string) => (
-            <a
-              href={`/tag/${tag.toLowerCase().replace(/\s+/g, "-")}/`}
-              class="px-3 py-1 text-sm rounded-full transition-colors hover:opacity-80"
-              style="background-color: var(--input-bg); color: var(--muted-color); text-decoration: none;"
+            <span
+              class="px-3 py-1 text-sm rounded-full"
+              style="background-color: var(--input-bg); color: var(--muted-color);"
             >
               #{tag}
-            </a>
+            </span>
           ))}
         </div>
       )
@@ -643,13 +663,12 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
       isRecipe && article.data.tags.length > 0 && (
         <div class="order-[45] mt-10 flex flex-wrap gap-2">
           {article.data.tags.map((tag: string) => (
-            <a
-              href={`/tag/${tag.toLowerCase().replace(/\s+/g, "-")}/`}
-              class="px-3 py-1 text-sm rounded-full transition-colors hover:opacity-80"
-              style="background-color: var(--input-bg); color: var(--muted-color); text-decoration: none;"
+            <span
+              class="px-3 py-1 text-sm rounded-full"
+              style="background-color: var(--input-bg); color: var(--muted-color);"
             >
               #{tag}
-            </a>
+            </span>
           ))}
         </div>
       )

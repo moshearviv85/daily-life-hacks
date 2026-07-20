@@ -1,5 +1,5 @@
 ---
-title: "We Adjusted Cheap Protein for Quality. Beans Held On, Barely."
+title: "Cheap Protein Ranked After Adjusting for Quality"
 excerpt: "We re-ranked 25 cheap proteins by quality-adjusted grams per dollar using DIAAS. Pinto beans held first at 58 g per dollar. The cereal grains fell hard."
 category: "nutrition"
 tags: ["quality adjusted protein per dollar", "DIAAS", "protein quality", "budget protein", "cheapest protein sources"]

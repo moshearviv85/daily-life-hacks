@@ -1,6 +1,11 @@
 ---
 title: "Creamy Tomato Orzo With White Beans (One Pot)"
 excerpt: "This creamy tomato orzo with white beans is a cozy, one-pot dinner that comes together fast. It's basically the comfort of risotto without the endless stirring."
+quickAnswer: >-
+  Cook onion, garlic, and tomato paste until the paste darkens, then toast dry
+  orzo for one minute. Simmer it with tomatoes, broth, white beans, and oregano,
+  stirring every few minutes. When the pasta is tender, add cream, Parmesan, and
+  spinach, then loosen with broth as needed.
 category: "recipes"
 tags:
 - quick meals
@@ -10,7 +15,7 @@ tags:
 image: "/images/creamy-tomato-orzo-white-beans-one-pot-main.jpg"
 imageAlt: "Creamy tomato orzo with white beans in a large skillet"
 date: 2026-04-21
-dateModified: 2026-07-16
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -48,7 +53,7 @@ faq:
   - question: "What is orzo exactly?"
     answer: "Orzo looks like large grains of rice, but it's actually a type of short-cut pasta. Because of its shape, it cooks quickly and creates a creamy, risotto-like texture when cooked in broth."
   - question: "Can I make this dairy-free?"
-    answer: "Yes. Swap the heavy cream for full-fat coconut milk or a plain, unsweetened dairy-free creamer. Use a plant-based Parmesan alternative or just add a tablespoon of nutritional yeast for that savory flavor."
+    answer: "Yes. Swap the heavy cream for an unsweetened dairy-free creamer and use a plant-based grated cheese you already like. Check that both products are plain, since vanilla-flavored orzo is a mistake that announces itself immediately."
   - question: "Why is my orzo sticking to the pan?"
     answer: "Orzo releases starch as it cooks, which thickens the sauce but also makes it prone to sticking. The trick is to keep the heat at a gentle simmer and stir it every few minutes."
   - question: "Can I use chicken broth instead of vegetable broth?"
@@ -91,3 +96,15 @@ You don't have to hover over it constantly like a traditional risotto, but you d
 Once the orzo is tender, you finish it with a splash of cream and a handful of Parmesan. The cheese melts in, the cream smooths everything out, and the spinach wilts down in seconds. It's rich, it's tangy from the tomatoes, and it solves the dinner problem with minimal cleanup.
 
 If you have leftovers, store them in an airtight container for up to three days. Fair warning: the orzo will drink up almost all the remaining sauce in the fridge, so it will look more like a solid block the next day. To fix this, just put it in a pan or a microwave safe bowl, add a generous splash of broth or water, and reheat gently while stirring. It will relax right back into that comforting, creamy texture.
+
+## Choose a pan that gives the orzo room
+
+Use a deep 12-inch skillet or a medium Dutch oven. The broad surface lets you toast the orzo and makes scraping the bottom easier. A small saucepan can work, but it needs more frequent stirring because the pasta sits in a deeper, tighter layer.
+
+Keep the simmer gentle after adding the broth. A hard boil evaporates liquid before the pasta softens and spits tomato sauce across the stove. If the orzo is firm and the pan looks dry, add hot broth a quarter cup at a time.
+
+## Turn the leftovers into a second dinner
+
+Reheat the orzo with broth, then add frozen peas or chopped cooked vegetables. For a soupier bowl, add extra broth and simmer until everything is hot. A spoonful of lemon juice at the end can wake up the tomato flavor after refrigeration.
+
+Cool leftovers promptly before covering. If you have extra white beans rather than extra orzo, use them in this [beans and rice dinner](/beans-and-rice-complete-protein-meal/) or a quick salad instead of leaving half a can to become refrigerator decor.

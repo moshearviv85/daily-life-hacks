@@ -1,6 +1,6 @@
 ---
-title: "Quick Black Bean and Corn Salsa That Actually Tastes Good Cold"
-excerpt: "A no-cook salsa that comes together in 10 minutes flat. Black beans, corn, jalapeño, and a few smart shortcuts make this the side you throw together when you forgot to plan dinner."
+title: "Quick No-Cook Black Bean and Corn Salsa"
+excerpt: "Mix black beans, corn, jalapeño, lime, and pantry seasonings into a no-cook salsa that is ready in 10 minutes and holds up in the fridge."
 category: recipes
 tags:
   - no-cook

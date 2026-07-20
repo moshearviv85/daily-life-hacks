@@ -1,5 +1,5 @@
 ---
-title: "The Cereal Aisle Is Overcharging You: Breakfast Staples Ranked by Real Value"
+title: "Breakfast Staples per Dollar: Real Value Ranked"
 excerpt: "Whole wheat flour leads breakfast staples at 173.8 combined grams of protein and fiber per dollar. Oats hit 82.4, eggs 34.4, gala apples just 7.7."
 category: "nutrition"
 tags: ["cheap breakfast foods", "breakfast protein per dollar", "budget breakfast ideas", "oatmeal vs eggs cost", "grocery data"]

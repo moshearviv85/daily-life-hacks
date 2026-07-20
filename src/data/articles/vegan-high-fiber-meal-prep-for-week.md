@@ -1,6 +1,11 @@
 ---
 title: "Five-Day Vegan Meal Prep With Crispy Tofu and Quinoa"
 excerpt: "Prep five tofu, quinoa, and roasted vegetable lunches in 35 minutes, with storage tips that keep Thursday from tasting like leftovers."
+quickAnswer: >-
+  Cook quinoa while extra-firm tofu and chopped vegetables roast on separate sheet
+  pans. Press and cube the tofu, keep every piece in one layer, and cool all three
+  components before closing the containers. Refrigerate four portions and freeze
+  the fifth if it will not be eaten within four days.
 category: recipes
 tags:
 - high fiber
@@ -11,7 +16,7 @@ tags:
 image: /images/vegan-high-fiber-meal-prep-for-week-main.jpg
 imageAlt: "Five glass containers with roasted tofu quinoa broccoli and bell peppers"
 date: 2026-01-10
-dateModified: 2026-07-17
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -103,3 +108,11 @@ Keep four portions in sealed containers in the refrigerator. If the fifth bowl w
 To reheat, loosen the lid or remove it, microwave for 60 to 90 seconds, stir the quinoa and vegetables, then continue in short bursts. A teaspoon of water mixed into the quinoa can help it loosen. Don't pour it over the tofu unless crisp edges have personally offended you.
 
 Use the [weekly food-cost planner](/tools/grocery-budget-calculator/) when you want to place a batch like this beside the rest of the week. It won't shop for the bell peppers, sadly, but it will make the plan less theoretical.
+
+## How do you keep five lunches from tasting identical?
+
+Pack the base bowls the same, then change the finish. Add peanut sauce and lime to two portions, salsa and avocado to another, and a mustardy vinaigrette to the last two. Keep every sauce separate until lunch so the tofu does not spend four days marinating itself back into softness.
+
+Change the crunchy topping too. Peanuts, pumpkin seeds, scallions, or shredded cabbage take seconds to add and survive storage better than delicate herbs. One batch can feel like several lunches without asking you to cook several batches.
+
+If five portions are too many, halve the recipe rather than hoping Thursday's container will develop new charisma. Meal prep works when the quantity matches the number of meals you will actually eat.

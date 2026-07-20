@@ -1,5 +1,5 @@
 ---
-title: How to Stretch Meals for Large Families Without Adding Stress
+title: How to Stretch Meals for Large Families With Less Stress
 excerpt: Feeding a crowd on a budget doesn't have to mean eating cereal for dinner. Learn practical ways to bulk up recipes and make your grocery budget go further.
 category: tips
 tags:

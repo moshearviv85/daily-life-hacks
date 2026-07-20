@@ -11,7 +11,9 @@ tags:
 image: "/images/sheet-pan-ginger-tofu-broccoli-sticky-glaze-main.jpg"
 imageAlt: "Sheet pan with roasted tofu and broccoli tossed in a glossy ginger glaze"
 date: 2026-05-07
+dateModified: 2026-07-20
 author: "David Miller"
+quickAnswer: "For crisp sheet-pan tofu and broccoli, press extra-firm tofu for ten minutes, coat it lightly with cornstarch and oil, and roast it alone at 425°F for fifteen minutes. Flip the cubes, add well-dried broccoli, and roast ten minutes more. Toss everything with the simmered ginger glaze only at the end, then bake three minutes to set it."
 featured: false
 editorsPick: false
 whatsHot: false
@@ -20,7 +22,7 @@ prepTime: "15 minutes"
 cookTime: "25 minutes"
 totalTime: "40 minutes"
 servings: 4
-calories: 430
+calories: 300
 difficulty: "Easy"
 ingredients:
   - "1 (14 oz) block extra firm tofu"
@@ -122,5 +124,7 @@ For a brighter finish, squeeze lime over the pan right before serving. Not requi
 Tofu loses some crispness in the fridge. That's just the deal. The flavor still holds well, especially with the ginger glaze.
 
 For best leftovers, store tofu and broccoli separately from rice or noodles. Reheat in an oven or air fryer if you want some crispness back. The microwave is fine when you're hungry and patience has left the building, but it makes the tofu softer.
+
+Cool leftovers promptly and move them into shallow covered containers instead of leaving the sheet pan on the counter for the rest of the evening. Federal guidance says to refrigerate prepared food within two hours and eat leftovers within three to four days. [FoodSafety.gov explains the storage window](https://www.foodsafety.gov/blog/food-safety-and-eating-out). Write the date on the lid if your refrigerator has a habit of turning containers into anonymous gray boxes.
 
 This is the kind of weeknight dinner that gives you the satisfaction of takeout without waiting for a driver or pretending the delivery fee is normal. Sheet pan, sticky glaze, done.

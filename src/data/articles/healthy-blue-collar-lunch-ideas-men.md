@@ -1,5 +1,5 @@
 ---
-title: Healthy Blue Collar Lunch Ideas for Men That Actually Fill You Up
+title: Healthy Blue Collar Lunch Ideas That Fill You Up
 excerpt: Tired of soggy sandwiches and overpriced drive-thru burgers? These high-protein, packable lunch ideas for blue collar men keep energy steady all afternoon.
 category: recipes
 tags:

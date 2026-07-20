@@ -1,6 +1,11 @@
 ---
 title: Pear and Walnut Salad With Blue Cheese
 excerpt: Sweet pears, toasted walnuts, blue cheese, and balsamic dressing make a sharp, crunchy salad in 35 minutes.
+quickAnswer: >-
+  Use firm-ripe Bosc or Anjou pears, leave the peel on, and slice them thinly.
+  Toss with mixed greens, cooled toasted walnuts, blue cheese, and a balsamic-Dijon
+  vinaigrette just before serving. Prepare the dressing, nuts, and cheese ahead,
+  but wait to cut the pears and dress the greens.
 category: recipes
 tags:
 - high fiber
@@ -11,7 +16,7 @@ tags:
 image: /images/pear-salad-with-walnuts-fiber-rich-main.jpg
 imageAlt: Sliced pear, toasted walnuts, and blue cheese over mixed greens
 date: 2025-12-29
-dateModified: 2026-07-17
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -95,3 +100,15 @@ You can do most of the work early. Toast the walnuts, crumble the cheese, and mi
 Wait to slice the pears and dress the greens until you're ready to eat. If you must cut the fruit early, coat the slices with a little lemon juice and refrigerate them in a sealed container. The color may still change slightly, but they won't look like they spent the afternoon in a waiting room.
 
 Toss gently and serve right away. Pears, walnuts, blue cheese, and balsamic don't need a motivational speech. They just need the dressing added at the last minute.
+
+## How do you turn it into a full lunch?
+
+Add one cup of cooked lentils or chickpeas for four servings, or top each bowl with sliced chicken. The salad already has rich cheese and walnuts, so the extra ingredient should bring substance rather than another layer of fat. A scoop of cooked farro is another good option because its chewy texture can handle the soft pear.
+
+Serve bread on the side if lunch needs more heft. If you want a grain bowl built around similar sweet, sharp, and nutty contrasts, this [farro lunch bowl with lemon tahini](/farro-lunch-bowl-roasted-vegetables-lemon-tahini/) is designed to hold up in a container.
+
+## Keep the portions balanced
+
+Blue cheese and walnuts are assertive ingredients. Half a cup of each across four servings is enough to put some in every bite without burying the pears. Start with three-quarters of the dressing, toss, and add the rest only if the leaves still look dry.
+
+For a larger dinner table, double the greens and pears first, then increase the cheese and walnuts more cautiously. Otherwise the salad gets saltier and heavier instead of simply larger. A [homemade salad dressing guide](/healthy-homemade-indian-salad-dressing-recipes/) can give you a milder alternative when blue cheese is already doing plenty of work.

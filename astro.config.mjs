@@ -69,7 +69,31 @@ function loadSitemapExclusions() {
   return excluded;
 }
 
+function loadArticleLastModifiedDates() {
+  const articlesDir = join(__dirname, 'src/data/articles');
+  /** @type {Map<string, string>} */
+  const dates = new Map();
+
+  for (const file of readdirSync(articlesDir)) {
+    if (!file.endsWith('.md')) continue;
+    const slug = file.replace(/\.md$/, '');
+    const content = readFileSync(join(articlesDir, file), 'utf8');
+    const frontmatter = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    if (!frontmatter) continue;
+    const modified = frontmatter[1].match(/^dateModified:\s*(.+)$/m);
+    const published = frontmatter[1].match(/^date:\s*(.+)$/m);
+    const rawDate = (modified?.[1] || published?.[1] || '').trim().replace(/^['"]|['"]$/g, '');
+    if (!rawDate) continue;
+    const parsed = new Date(rawDate);
+    if (Number.isNaN(parsed.getTime())) continue;
+    dates.set(`/${slug}/`, parsed.toISOString());
+  }
+
+  return dates;
+}
+
 const excludedSitemapPaths = loadSitemapExclusions();
+const articleLastModifiedDates = loadArticleLastModifiedDates();
 
 /** @param {string} url */
 function shouldExcludeFromSitemap(url) {
@@ -90,6 +114,9 @@ export default defineConfig({
     sitemap({
       serialize(item) {
         if (shouldExcludeFromSitemap(item.url)) return undefined;
+        const pathname = new URL(item.url).pathname;
+        const lastmod = articleLastModifiedDates.get(pathname);
+        if (lastmod) return { ...item, lastmod };
         return item;
       },
     }),

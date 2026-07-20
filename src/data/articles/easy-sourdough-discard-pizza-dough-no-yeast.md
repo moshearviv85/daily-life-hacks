@@ -1,6 +1,11 @@
 ---
 title: Easy Sourdough Discard Pizza Dough Recipe No Yeast
-excerpt: Stop throwing away your starter. This sourdough discard pizza dough uses no yeast and no long rise times for a fast, crispy weeknight crust.
+excerpt: "Mix sourdough discard with flour, baking powder, salt, and oil, then roll it thin and bake hot for a crisp pizza crust without a yeast rise."
+quickAnswer: >-
+  Mix one cup of sourdough discard with flour, baking powder, salt, and olive oil.
+  Knead only until smooth, adjust sticky dough with flour one tablespoon at a
+  time, and roll it thin on parchment. Add restrained toppings and bake on a
+  preheated surface at 450 degrees F for 12 to 15 minutes.
 category: recipes
 tags:
 - quick meals
@@ -12,7 +17,7 @@ tags:
 image: "/images/easy-sourdough-discard-pizza-dough-no-yeast-main.jpg"
 imageAlt: A close-up, top-down view of a golden-brown pizza crust with airy edges on a wooden surface.
 date: 2026-04-28
-dateModified: 2026-07-18
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 prepTime: "10 minutes"
@@ -41,8 +46,8 @@ faq:
     answer: "Yes, you can use sourdough discard for pizza dough without adding commercial yeast. By using baking powder as a leavening agent, you get a quick rise that mimics the texture of traditional crust. The discard provides the characteristic tangy flavor, while the baking powder handles the lift, making it a fast alternative to long-fermented doughs."
   - question: "How do you make sourdough pizza crust crispy?"
     answer: "To get a crispy sourdough pizza crust, preheat your oven to at least 450°F and use a pizza stone or a preheated baking sheet. Rolling the dough thin and lightly brushing the edges with olive oil before baking also helps. The high heat quickly evaporates moisture, resulting in a firm, crunchy base rather than a soggy one."
-  - question: "Is sourdough discard pizza dough healthier than regular dough?"
-    answer: "Sourdough discard pizza dough may be easier on the digestive system for some people because the flour in the starter has already undergone a fermentation process. This process is thought to break down some of the gluten and phytic acid. Using discard is also a practical way to add more fermented foods to your diet without the sugar found in many store-bought crusts."
+  - question: "Is this the same as long-fermented sourdough pizza dough?"
+    answer: "No. This is a quick baking-powder crust that uses discard for flavor and waste reduction. It does not go through the long fermentation schedule of traditional sourdough pizza, so choose it for speed and texture rather than digestive claims."
   - question: "Why is my sourdough discard pizza dough tough?"
     answer: "Tough pizza dough usually happens from over-kneading or adding too much flour. Since this recipe doesn't rely on yeast development, you only need to knead it until the ingredients are fully incorporated. If you work the dough too long, the gluten becomes too tight, which results in a chewy or hard crust once it hits the oven heat."
 ---
@@ -71,9 +76,21 @@ Because this dough is on the thinner side, you have to be careful with the "swam
 - **White Pizza:** Ricotta, garlic, and a heavy hand of black pepper.
 - **The Leftover Special:** Whatever is in the deli drawer and a handful of spinach.
 
+## Use discard that smells normal
+
+Sourdough discard should smell tangy, yeasty, or mildly alcoholic. A dark liquid layer can happen during storage and may be stirred in or poured off. Discard the starter if you see fuzzy mold, pink or orange streaks, or an odor that is plainly rotten rather than sour.
+
+Keep discard covered in the refrigerator and use a clean utensil each time. This dough bakes immediately, so it is not a rescue plan for a contaminated starter. When in doubt, losing a cup of flour is cheaper than arguing with suspicious pink streaks.
+
+## Cool and store leftover pizza
+
+Refrigerate leftover slices promptly in a covered container. Reheat them in a skillet, toaster oven, or hot oven so the thin crust regains some snap. The microwave is fast, but it turns crisp crust into a flexible coaster.
+
+If you want a same-day dough with commercial yeast and more rise time, this [same-day sourdough pizza dough](/how-to-make-sourdough-pizza-dough-same-day/) uses a different schedule and produces a softer, airier crust.
+
 ## Baking for maximum crunch
 
-If you don't own a pizza stone, don't go out and buy one just for this. You can flip a standard baking sheet upside down and let it heat up in the oven for 20 minutes before you slide the pizza on. That hit of direct heat is what seals the bottom of the crust and prevents it from getting doughy.
+If you don't own a pizza stone, don't go out and buy one just for this. You can flip a standard baking sheet upside down and let it heat up in the oven for 20 minutes before you slide the pizza on. That hit of direct heat seals the bottom of the crust and keeps it from getting doughy.
 
 I always roll this out directly on parchment paper. It makes the transfer to the hot pan about a thousand percent less stressful. Nobody wants to spend their Tuesday night scraping raw dough off a hot oven rack because the "slide" technique failed.
 

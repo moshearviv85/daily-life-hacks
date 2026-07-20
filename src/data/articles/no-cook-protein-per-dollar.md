@@ -1,5 +1,5 @@
 ---
-title: "No Stove, No Problem: The Cheapest Proteins With Zero Cooking"
+title: "No-Cook Protein per Dollar: Cheapest Options Ranked"
 excerpt: "Peanut butter wins no-cook protein at 50.7 g per dollar. Canned black beans hit 30.1 and a $0.98 tuna can gives 22.4. July 2026 ranking."
 category: "nutrition"
 tags: ["no cook protein", "cheapest no cook protein", "protein per dollar", "budget protein", "pantry protein"]

@@ -15,7 +15,7 @@ Daily Life Hacks is a food and nutrition site run by David Miller. The content f
 
 ## Original Data Studies
 
-These are original analyses, not aggregated from other publishers. Nutrition values come from USDA FoodData Central (exact FDC IDs recorded per food). Prices come from BLS Average Price data cross-checked against Walmart national listings. All values use an as-purchased basis with USDA edible-fraction (refuse) adjustments. Full methodology: https://www.daily-life-hacks.com/methodology/
+These are original analyses, not aggregated from other publishers. Nutrition values come from USDA FoodData Central. Prices come from BLS Average Price data and dated Walmart national listings. All values use an as-purchased basis with USDA edible-fraction (refuse) adjustments. The current public CSVs expose the ranking inputs and price basis, but they do not yet include a FoodData Central ID, source URL, or observation date for every row. Full methodology and limitations: https://www.daily-life-hacks.com/methodology/
 
 - Fiber per Dollar study (53 foods ranked): https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/
 - Protein per Dollar study (49 sources ranked): https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/
@@ -27,11 +27,11 @@ These are original analyses, not aggregated from other publishers. Nutrition val
 - Fiber per dollar raw data: https://www.daily-life-hacks.com/data/fiber-per-dollar-2026.csv
 - Protein per dollar raw data: https://www.daily-life-hacks.com/data/protein-per-dollar-2026.csv
 
-Each CSV includes every food, source price, USDA source ID, and calculated per-dollar value used in the corresponding study.
+Each ranking CSV includes every food, nutrient value, package and price inputs, edible-fraction adjustment, price basis, and calculated per-dollar value used in the corresponding study. The current exports do not include a USDA source ID or source URL for every row.
 
 ## Data Verification
 
-All published figures are verified against USDA FoodData Central and BLS Average Price data, and the complete raw datasets are public, so every number is independently auditable. Prices are re-audited quarterly; BLS staple prices are tracked monthly. Errors are corrected publicly with dated correction notes in the affected study. Correction policy and audit process: https://www.daily-life-hacks.com/methodology/
+Published nutrition figures are checked against USDA FoodData Central, while prices use BLS Average Price data where available and dated retailer listings for other items. The public CSVs let readers inspect the calculations and price basis, subject to the source-detail limitations above. Prices are scheduled for a quarterly re-audit; relevant BLS staple prices are monitored monthly. Errors are corrected publicly with dated notes in the affected study. Correction policy and audit process: https://www.daily-life-hacks.com/methodology/
 
 ## Attribution
 

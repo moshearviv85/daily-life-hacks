@@ -13,6 +13,9 @@ const aboutSchema = [
     name: 'About Daily Life Hacks',
     url: 'https://www.daily-life-hacks.com/about/',
     description,
+    mainEntity: {
+      '@id': 'https://www.daily-life-hacks.com/about/#david-miller',
+    },
     isPartOf: {
       '@type': 'WebSite',
       name: 'Daily Life Hacks',
@@ -32,6 +35,7 @@ const aboutSchema = [
     ],
     founder: {
       '@type': 'Person',
+      '@id': 'https://www.daily-life-hacks.com/about/#david-miller',
       name: 'David Miller',
       url: 'https://www.daily-life-hacks.com/about/',
       jobTitle: 'Founder',
@@ -41,7 +45,7 @@ const aboutSchema = [
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': 'https://www.daily-life-hacks.com/about/',
+    '@id': 'https://www.daily-life-hacks.com/about/#david-miller',
     name: 'David Miller',
     url: 'https://www.daily-life-hacks.com/about/',
     jobTitle: 'Founder',
@@ -52,7 +56,7 @@ const aboutSchema = [
       url: 'https://www.daily-life-hacks.com',
     },
     knowsAbout: ['Grocery Cost Research', 'USDA Food Data', 'Budget Cooking', 'Meal Prep'],
-    description: 'Founder of Daily Life Hacks. Publishes grocery cost studies, practical recipes, and food tools with public source data.',
+    description: 'Founder and editor of Daily Life Hacks. Publishes grocery cost studies, practical recipes, and food tools with public source data. He is not a chef, registered dietitian, or medical professional.',
   },
 ];
 ---
@@ -93,6 +97,19 @@ const aboutSchema = [
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Who this site is for</h2>
       <p>
         If you want real food, minimal drama, and spreadsheets you don't have to build yourself, you're my people. You like useful numbers that make shopping and cooking less annoying, not turning your life into a wellness TED Talk.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Who writes and checks this</h2>
+      <p>
+        I write and edit Daily Life Hacks. I'm not a chef, registered dietitian, or medical professional, and I won't borrow one of those titles because it looks good under a headshot. For nutrition numbers, I go back to primary sources such as USDA FoodData Central, FDA guidance, and Bureau of Labor Statistics price data. For original cost studies, I publish the calculation rows and the price basis so you can inspect the work instead of taking my word for it.
+      </p>
+      <p>
+        The <a href="/methodology/" class="underline" style="color: #F29B30;">research methodology</a> explains the source hierarchy, calculation rules, limitations, refresh schedule, and correction policy. If a claim needs clinical interpretation or personal medical advice, this site isn't the final stop. That's a job for a qualified healthcare professional who knows you, not a guy with a grocery spreadsheet.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Corrections and source questions</h2>
+      <p>
+        When a published study changes, the affected article gets a dated correction note. If you spot a bad number, a broken source, or a claim that reaches farther than the evidence, <a href="/contact/" class="underline" style="color: #F29B30;">send it in</a>. Specific complaints are useful. "The internet disagrees" gives the spreadsheet less to work with.
       </p>
       <p>
         Start with the <a href="/research/" class="underline" style="color: #F29B30;">original research</a>, check <a href="/methodology/" class="underline" style="color: #F29B30;">how we verify the math</a>, or head to the <a href="/recipes/" class="underline" style="color: #F29B30;">recipes</a> when dinner is the more urgent problem. You can also <a href="/#newsletter" class="underline" style="color: #F29B30;">join the newsletter</a> and get the new stuff before it hits the site.

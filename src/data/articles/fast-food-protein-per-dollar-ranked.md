@@ -1,5 +1,5 @@
 ---
-title: "Fast Food Protein per Dollar: The Best Deal Is a Cup of Plain Chicken"
+title: "Fast Food Protein per Dollar: The Best Deals Ranked"
 excerpt: "We priced 30 protein-heavy menu items across 7 chains. The best drive-thru deal hits 8.4 grams per dollar. Dry pinto beans beat it by almost 12x."
 category: "nutrition"
 tags: ["fast food protein per dollar", "cheapest fast food protein", "high protein fast food", "protein on a budget", "grocery data"]

@@ -1,5 +1,5 @@
 ---
-title: "Beans, Tofu, or Lentils? 18 Plant Proteins Ranked by Real Cost"
+title: "18 Plant Proteins Ranked by Real Cost"
 excerpt: "Dry pinto beans lead 18 plant proteins at 97.9 g of protein per dollar. Tofu and tempeh sit at the bottom. Full ranking with July 2026 prices."
 category: "nutrition"
 tags: ["cheapest plant protein", "plant protein per dollar", "vegan protein on a budget", "budget plant based protein", "grocery data"]

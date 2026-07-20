@@ -1,6 +1,11 @@
 ---
 title: "Chicken and Veggie Lettuce Wraps With Quick Peanut Sauce"
-excerpt: "These chicken and veggie lettuce wraps are light, crunchy, and ready in 20 minutes. The quick peanut sauce is so good you'll want to put it on everything."
+excerpt: "Brown ground chicken with crisp vegetables, ginger, and garlic, then spoon it into dry lettuce cups with a quick peanut-soy sauce."
+quickAnswer: >-
+  Brown ground chicken until it reaches 165 degrees F, then add diced pepper,
+  carrots, scallion whites, garlic, and ginger. Spoon the filling into clean, dry
+  butter-lettuce leaves and drizzle with peanut butter, soy sauce, rice vinegar,
+  warm water, and optional sriracha mixed separately.
 category: "recipes"
 tags:
 - quick meals
@@ -11,6 +16,7 @@ tags:
 image: "/images/chicken-veggie-lettuce-wraps-peanut-sauce-main.jpg"
 imageAlt: "Chicken and veggie lettuce wraps drizzled with peanut sauce on a platter"
 date: 2026-04-17
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -100,3 +106,15 @@ Bring the skillet to the table with a plate of lettuce leaves and a bowl of the 
 If you're saving some for tomorrow's lunch, don't pre-assemble the wraps. The lettuce will turn into a soggy mess overnight. Keep the filling in a glass container, pack the sauce in a small jar, and put the lettuce in a zip-top bag with a paper towel to absorb moisture.
 
 It's a rare dinner that feels light, satisfies a craving for takeout, and leaves you with almost zero dishes to wash. That's a solid weeknight win.
+
+## How do you know the chicken is fully cooked?
+
+Break the ground chicken into small pieces and cook until no pink remains, then check the thickest cluster for 165 degrees F. Color alone is not a perfect test, especially once soy sauce darkens the filling. A thermometer ends the debate faster than staring at one suspicious crumb.
+
+Keep raw chicken tools away from the washed lettuce and finished sauce. Wash the cutting board, hands, and utensils before setting out the assembly plate. The lettuce is ready to eat, so it should not meet the spoon that handled raw meat.
+
+## Peanut-free sauce options
+
+For a peanut-free version, use sunflower seed butter if it is safe for your household. The thickness varies, so whisk in warm water one teaspoon at a time. For a lighter, non-creamy sauce, mix soy sauce, rice vinegar, sesame oil, ginger, and a small spoonful of honey.
+
+Check every packaged ingredient when cooking for an allergy, including sauce labels and shared-facility statements. If you want a different crunchy dinner without a creamy sauce, these [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) use cabbage, salsa, and lime.

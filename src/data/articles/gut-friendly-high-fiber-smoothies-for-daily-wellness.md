@@ -1,7 +1,7 @@
 ---
 title: Gut-Friendly Smoothie Blends for Daily Wellness
-excerpt: Smoothies are not magic potions, but they are a fast way to stack fiber-friendly
-  ingredients from fruit, oats, and seeds. These blends stay thick, not weirdly gritty.
+excerpt: Blend fruit, oats, seeds, and other fiber-rich ingredients into thick smoothies
+  that stay smooth instead of turning gritty or watery.
 category: nutrition
 tags:
 - high fiber

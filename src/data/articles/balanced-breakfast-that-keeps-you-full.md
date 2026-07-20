@@ -1,5 +1,5 @@
 ---
-title: "How to Build a Balanced Breakfast That Actually Holds You Over"
+title: "How to Build a Balanced Breakfast That Holds You Over"
 excerpt: "Stop crashing at ten in the morning. Learn how to build a balanced breakfast that keeps you full without requiring an hour of meal prep."
 category: "nutrition"
 tags:

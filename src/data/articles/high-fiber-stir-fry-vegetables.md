@@ -1,6 +1,11 @@
 ---
 title: "Best Vegetables for Stir-Fry and How to Keep Them Crisp"
 excerpt: "Broccoli, snap peas, and peppers cook in 12 minutes with a glossy ginger-soy sauce that doesn't turn the vegetables limp."
+quickAnswer: >-
+  Cut firm vegetables into even pieces, heat the widest pan you own, and cook
+  broccoli and peppers before quick-cooking snap peas. Work in batches when the
+  pan looks crowded. Add the ginger-soy sauce and cold-water cornstarch slurry
+  only when the vegetables are nearly done so they stay crisp.
 category: recipes
 tags:
 - high fiber
@@ -10,7 +15,7 @@ tags:
 image: /images/high-fiber-stir-fry-vegetables-main.jpg
 imageAlt: "Broccoli snap peas and bell peppers cooking in a wok with ginger soy sauce"
 date: 2026-02-19
-dateModified: 2026-07-17
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -98,3 +103,11 @@ Peanut butter also works in the sauce. Whisk in one tablespoon with the soy sauc
 Do the chopping ahead, not the frying. Store the broccoli and peppers together, keep the snap peas separate, and mix the sauce in a jar. Leave the cornstarch slurry for cooking time because it settles into wet cement if it sits too long.
 
 Cooked leftovers keep for about three days, though the texture is best on day one. Reheat them for two or three minutes in a hot skillet. The microwave works, but stop as soon as the food is hot. Snap peas have already given enough.
+
+## How should you cut vegetables for even cooking?
+
+Cut broccoli into florets no wider than about two inches and slice thick stems into coins. Keep pepper strips around half an inch wide. Leave snap peas whole after trimming the ends. The goal is not geometric perfection; it is avoiding one tree-sized broccoli floret that remains raw while every pepper strip gives up.
+
+If you add carrots, slice them thinly on a diagonal. Halve mushrooms only when they are large, and keep bok choy stems separate from the leaves so the stems can enter first. Put each timing group in its own bowl before heating the pan.
+
+For another fast vegetable dinner with the cutting work built into the recipe, these [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) use shredded cabbage and a skillet filling that is ready in about 15 minutes.

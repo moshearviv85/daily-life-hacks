@@ -1,5 +1,5 @@
 ---
-title: "Cottage Cheese vs Greek Yogurt: Taste, Uses, and Protein Compared"
+title: "Cottage Cheese vs Greek Yogurt: Protein and Uses"
 excerpt: "Deciding between cottage cheese vs Greek yogurt doesn't have to be confusing. Here's a practical breakdown of how to use both for better meals."
 category: "nutrition"
 tags:

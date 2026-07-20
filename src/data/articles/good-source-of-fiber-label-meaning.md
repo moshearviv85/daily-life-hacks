@@ -1,5 +1,5 @@
 ---
-title: "What 'Good Source of Fiber' Means on a Label (And What It Doesn't)"
+title: "What 'Good Source of Fiber' Means on Food Labels"
 excerpt: "FDA rules: 'good source of fiber' means 10 to 19% of the Daily Value, about 2.8 to 5.3 grams per serving. Here's what the claim doesn't tell you."
 category: "nutrition"
 tags:

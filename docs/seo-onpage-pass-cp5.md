@@ -1,6 +1,6 @@
 # SEO On-Page Pass (CP5.3)
 
-**Date:** 2026-07-16
+**Date:** 2026-07-20
 **Method:** Local frontmatter/body checklist (FAQ, imageAlt, excerpt, H2s, internal links, word count).
 **GSC:** Confirm pin destinations remain 301-only and “Duplicate without user-selected canonical” stays flat after deploy — manual in Search Console.
 
@@ -8,13 +8,13 @@
 
 | Metric | Count |
 |--------|------:|
-| Articles scanned | 205 |
-| With ≥1 issue | 69 |
+| Articles scanned | 207 |
+| With ≥1 issue | 0 |
 | Missing FAQ | 0 |
 | No body internal links | 0 |
-| Thin body (&lt;800 words) | 51 |
+| Thin body (&lt;800 words) | 0 |
 
-Full list: `pipeline-data/reports/seo-onpage-2026-07-16.*`
+Full list: `pipeline-data/reports/seo-onpage-2026-07-20.*`
 
 ## Structural fixes shipped with this pass
 

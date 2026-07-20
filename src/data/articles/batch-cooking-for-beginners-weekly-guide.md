@@ -13,8 +13,9 @@ image: /images/batch-cooking-for-beginners-weekly-guide-main.jpg
 imageAlt: Batch Cooking for Beginners Weekly Guide - multiple glass containers filled
   with pre-cooked grains, roasted vegetables, and proteins aligned on a counter
 date: 2026-01-06
-dateModified: 2026-07-17
+dateModified: 2026-07-20
 author: "David Miller"
+quickAnswer: "Batch cooking works best when you prepare flexible building blocks instead of five identical finished meals. In about 90 minutes, cook one grain, roast two pans of vegetables, prepare a simply seasoned protein, and mix two sauces. Cool everything promptly, store components separately, and combine them differently through the week."
 featured: false
 editorsPick: false
 whatsHot: false
@@ -67,7 +68,7 @@ Here is the master blueprint for taking back your evenings. (If you want more re
 
 The goal is to get in the kitchen, execute the plan, and get out. Set a timer for 90 minutes. Put on a podcast. Here is your exact workflow. 
 
-### Step 1: The Massive Carb Base
+## Step 1: The Massive Carb Base
 You need a foundational carbohydrate that's cheap, filling, and incredibly versatile. Put this on the stove or in the rice cooker the literal second you walk into the kitchen. 
 *   **The Action:** Cook three cups of brown rice, a massive pot of quinoa, or boil an entire box of whole wheat pasta. Don't season it heavily; just use salt. 
 *   **The Storage:** Once it cools, dump the entire batch into a very large airtight container. This will sit in your fridge and act as the base for almost every single meal this week. Here's [how to properly store cooked grains for meal prep](/how-to-properly-store-cooked-grains-for-meal-prep/) so that batch stays safe and doesn't dry into a brick. 
@@ -77,7 +78,7 @@ Washing and chopping vegetables on a Tuesday night is miserable. Doing it all at
 *   **The Action:** Preheat your oven to 400F (200C). Grab two huge, rimmed baking sheets. On one sheet, spread out three heads of broccoli chopped into florets. On the second sheet, spread out a mix of diced sweet potatoes, bell peppers, and red onions. Douse both sheets heavily in olive oil, salt, and black pepper. 
 *   **The Cook:** Roast them for 25-30 minutes until everything has dark, caramelized, crispy edges. Dump them all into a giant Tupperware container.
 
-### Step 3: The Neutral Protien
+## Step 3: The Neutral Protein
 If you're cooking meat, do it now. If you're doing plant-based, prep your beans. 
 *   **The Action:** Sear a family-pack of chicken thighs in a skillet, or bake two blocks of firm tofu on a third baking sheet. Don't cover them in teriyaki sauce or salsa right now! Season them simply with garlic powder and salt. You want them neutral so you can change the flavor profile later in the week.
 

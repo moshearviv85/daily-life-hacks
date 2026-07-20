@@ -11,17 +11,18 @@ tags:
 image: /images/tabbouleh-salad-high-fiber-bulgur-main.jpg
 imageAlt: Tabbouleh salad with bulgur, parsley, tomatoes, cucumber, and mint
 date: 2026-01-14
-dateModified: 2026-07-17
+dateModified: 2026-07-20
 author: "David Miller"
+quickAnswer: "For tabbouleh that tastes like herbs instead of grain filler, use fine bulgur, dry the parsley and mint thoroughly, and chop the vegetables small. Soak the bulgur in boiling water for 20 to 25 minutes, cool it, then toss everything with lemon and olive oil. A 30-minute refrigerator rest gives the grain time to absorb the dressing."
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-prepTime: 10 minutes
+prepTime: 25 minutes
 cookTime: 25 minutes
-totalTime: 35 minutes
+totalTime: 80 minutes
 servings: 4
-calories: 380
+calories: 320
 difficulty: Easy
 ingredients:
 - 1 cup fine bulgur wheat
@@ -110,3 +111,17 @@ If you're after a warmer grain bowl with less chopping, this [farro lunch bowl w
 Quinoa is the practical gluten-free substitute, but it changes the character of the salad. Cool it completely and use less than you think you need. Tabbouleh should still look green, not like a quinoa bowl that saw parsley across the room.
 
 Cauliflower rice can work for a grain-free variation, though it won't absorb the dressing like bulgur. Whatever you use, keep the herbs, tomatoes, cucumber, mint, and lemon in charge. That's the part that makes this tabbouleh rather than a general chopped salad with excellent public relations.
+
+## How do you scale tabbouleh without losing the ratio?
+
+Double the bulgur, herbs, vegetables, and dressing together. Don't double only the grain because it's the cheapest ingredient and then wonder why the bowl tastes like lemony breakfast cereal. The parsley should remain the visual majority.
+
+For a party, prep the pieces separately. Soak and cool the bulgur, wash and dry the herbs, and mix the lemon dressing in a jar. Chop the tomatoes and cucumber closer to serving so they don't spend half a day releasing water. Combine everything at least 30 minutes before the meal, then taste again after the rest.
+
+If you're transporting the salad, use a container with a tight lid and keep it cold. A wide, shallow container makes the final toss easier and prevents the bottom layer from becoming the official dressing reservoir.
+
+## What should leftovers look like?
+
+The herbs will soften overnight, but the salad should still smell fresh and lemony. Stir before serving because the dressing settles. If there's a large puddle, drain a little rather than adding more bulgur to an already finished salad.
+
+Store tabbouleh promptly in a covered container in the refrigerator. General [FoodSafety.gov guidance](https://www.foodsafety.gov/blog/food-safety-and-eating-out) says prepared leftovers should be refrigerated within two hours and eaten within three to four days. The herbs will usually lose their edge before the calendar does, so this is a recipe worth making near the day you want it.

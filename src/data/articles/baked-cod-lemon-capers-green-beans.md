@@ -1,6 +1,11 @@
 ---
 title: "Baked Cod With Lemon, Capers, and Green Beans (15-Min Prep)"
 excerpt: "This baked cod with lemon capers and green beans is a bright, easy dinner that cooks on one pan. It tastes fancy but takes almost no effort to throw together."
+quickAnswer: >-
+  Pat cod dry, season it, and place it beside oil-coated green beans on a large
+  sheet pan. Spoon over melted butter, lemon, garlic, capers, and oregano, then
+  bake at 400 degrees F for 12 to 15 minutes. Check the thickest fillet for 145
+  degrees F before serving.
 category: "recipes"
 tags:
 - quick meals
@@ -10,6 +15,7 @@ tags:
 image: "/images/baked-cod-lemon-capers-green-beans-main.jpg"
 imageAlt: "Baked cod fillets with lemon slices capers and green beans on a baking sheet"
 date: 2026-04-08
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -87,3 +93,15 @@ This baked cod with lemon, capers, and green beans is a light meal on its own. I
 A quick batch of couscous takes five minutes and is perfect for soaking up the extra lemon butter sauce from the pan. Quinoa or simple roasted potatoes are also great choices, especially if you start the potatoes on a separate pan before the fish goes in. Sometimes I just serve it with a thick slice of warm sourdough bread to drag through the juices. 
 
 If you are cooking for people with bigger appetites, double the green beans and add a big scoop of farro on the side. Don't overthink it. The fish is doing the heavy lifting, the green beans bring the crunch, and you get to look like a culinary genius with minimal effort.
+
+## Check thickness, not just the timer
+
+Cod fillets vary from thin tail pieces to thick center cuts. Start checking thin pieces at 10 minutes and remove them when they reach 145 degrees F in the center. A thick fillet may need the full 15 minutes or slightly longer.
+
+If one end is much thinner, fold it underneath before baking. That creates a more even package and keeps the tail from drying out while the center finishes. The fish should flake with light pressure, not collapse into dry white sawdust.
+
+## Store leftovers without drowning the beans
+
+Move leftovers into a shallow covered container and refrigerate promptly. Keep extra pan sauce separate if possible so the green beans do not spend the night soaking in butter and lemon.
+
+Reheat cod gently in a covered skillet or in short microwave intervals until hot. Leftover fish is also good cold in a sandwich or flaked over grains. For the rice-and-vegetable version of this one-pan idea, the [sheet-pan salmon dinner](/sheet-pan-salmon-and-vegetables-30-minutes/) gives the vegetables a timed head start.

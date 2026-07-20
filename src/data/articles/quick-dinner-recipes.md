@@ -11,7 +11,9 @@ tags:
 image: "/images/quick-dinner-recipes-main.jpg"
 imageAlt: Roasted chicken with broccoli, bell peppers, and tomatoes on a sheet pan
 date: 2026-05-28
+dateModified: 2026-07-20
 author: "David Miller"
+quickAnswer: "The fastest dependable dinner formula is protein plus quick-cooking vegetables on one hot sheet pan. Cut everything to similar sizes, season it before roasting, and leave enough space for browning. While it cooks, make one fresh finishing element such as lemon yogurt, salsa, or an herb dressing so the meal tastes complete without another pan."
 featured: false
 prepTime: "10 minutes"
 cookTime: "20 minutes"
@@ -54,7 +56,7 @@ You know those nights when you want to feel like a culinary genius, but your ene
 
 Let's be real, the idea of "quick dinner recipes" often conjures up images of sad desk salads or instant noodles. But quick doesn't have to mean boring or bland. This dish is hearty enough that nobody asks where the meat went (because it's right there, obviously), and packed with enough flavor that you'll actually want to eat it. Plus, the cleanup is almost nonexistent, which is a win in my book.
 
-### Why One-Pan Meals Are Your Weeknight MVP
+## Why One-Pan Meals Are Your Weeknight MVP
 
 Look, I'm not here to tell you to transform your life or find your inner chef. I'm here to tell you that some nights, you just need a meal on the table without a sink full of dishes staring you down. One-pan meals deliver on that promise. Everything cooks together, flavors mingle, and you're left with one pan to wash. It's efficient. It's practical. It's what dinner should be when you're short on time and patience.
 
@@ -66,13 +68,13 @@ The magic here isn't in some fancy technique or obscure ingredient. It's in the 
 
 Don't skimp on the olive oil. You need enough to really coat everything, not just drizzle. This helps create that lovely browning on the veggies and keeps the chicken from drying out. And salt and pepper, obviously. They're not just suggestions; they're essential.
 
-### Choosing Your Chicken and Veggies
+## Choosing Your Chicken and Veggies
 
 I usually go for boneless, skinless chicken breasts because that's what I usually have on hand, but thighs work just as well, maybe even better if you like your chicken extra juicy. Just make sure whatever you choose is cut into roughly 1-inch pieces so it cooks evenly and quickly. And if your chicken has a habit of coming out dry no matter what you do, this guide to the [best way to cook chicken](/best-way-to-cook-chicken/) fixes that for good.
 
 For the vegetables, I've gone with potatoes, broccoli, and red bell pepper because they're a solid combo that holds up well to roasting. But this is where you can play around a bit. Asparagus, green beans, or even some zucchini would also be good. Just make sure you're picking things that will cook in about 20-25 minutes. If you're using denser root vegetables like carrots or sweet potatoes, cut them smaller than the potatoes so they soften up in time.
 
-### Don't Crowd the Pan (Seriously)
+## Don't Crowd the Pan (Seriously)
 
 This is probably the most important rule for any sheet pan meal. If you pile everything up, it's going to steam instead of roast. And steamed chicken and veggies are just sad. You want a little caramelization, a little char on the edges of the broccoli. That's where the flavor lives. If your baking sheet isn't big enough to give everything a bit of breathing room, use two. It's worth the extra pan.
 

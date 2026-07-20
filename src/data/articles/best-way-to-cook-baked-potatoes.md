@@ -10,7 +10,7 @@ tags:
 image: "/images/best-way-to-cook-baked-potatoes-main.jpg"
 imageAlt: A perfectly baked russet potato is split open on a wooden board with melting butter and chives inside.
 date: 2026-05-31
-dateModified: 2026-07-17
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"
@@ -85,6 +85,18 @@ Add salt and butter to the hot center before piling on cold toppings. That first
 A crisp-skinned potato doesn't need a twelve-item topping bar. Butter, sour cream, chives, and black pepper cover the classic version. Shredded cheddar and cooked bacon make it dinner-adjacent. Leftover chili turns it into a full meal and clears one container from the refrigerator, which is frankly a double win.
 
 If you're serving several people, open and fluff every potato before putting out toppings. Otherwise, the first person gets a hot potato and everyone else spends dinner wrestling with a cooling rock.
+
+## What changes at 375, 400, and 425 degrees F
+
+You *can* bake a potato at 375 degrees F, but plan on 75 to 90 minutes and accept a softer skin. At 400 degrees F, most medium Russets land around 65 to 75 minutes. For the classic crisp-skin, fluffy-middle version, 425 degrees F is the better call. The higher heat gets the outside browned before the middle has time to turn cottony.
+
+This is also why a sheet pan full of potatoes takes longer than four potatoes straight on the rack. A crowded pan traps moisture around the bottoms. If you're feeding a group, use two racks and rotate the potatoes halfway through, or keep the batch modest. A baked potato bar sounds generous until everyone is waiting twenty extra minutes for the last two potatoes to quit being stubborn.
+
+## Make baked potatoes pull their weight tomorrow
+
+Bake a few extra on purpose. Cold baked potatoes are excellent for a skillet breakfast: cube them, cook in a little oil until the edges crisp, then add eggs or leftover vegetables. They also work in a fast soup or as the base for a loaded lunch with beans, cheese, and whatever is lurking in the refrigerator.
+
+For storage, cool them promptly, refrigerate in a covered container, and use them within a few days. Reheat whole potatoes in a 375 degree F oven or air fryer until hot through. The microwave is fine when you're in a hurry, but it turns that hard-won crisp skin into a damp handshake. Save it for the hash.
 
 ## What to do with leftover baked potatoes
 

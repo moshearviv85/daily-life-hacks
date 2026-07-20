@@ -1,14 +1,21 @@
 ---
 title: "Japanese-Inspired Cucumber and Edamame Salad With Sesame"
-excerpt: "This Japanese-inspired cucumber and edamame salad is crisp, refreshing, and packed with plant protein. A toasted sesame dressing brings it all together in under fifteen minutes."
+excerpt: "Salt and drain cucumbers, cook and cool shelled edamame, then toss both with rice vinegar, sesame oil, soy sauce, ginger, and sesame seeds."
+quickAnswer: >-
+  Salt sliced cucumbers for 10 minutes and squeeze out excess water. Cook frozen
+  shelled edamame according to its package, cool it, and whisk rice vinegar,
+  toasted sesame oil, soy sauce, honey, and ginger. Toss everything together and
+  add sesame seeds just before serving.
 category: "recipes"
 tags:
 - quick meals
 - salads
 - salad
+- edamame
 image: "/images/cucumber-edamame-salad-sesame-main.jpg"
 imageAlt: "Fresh cucumber and edamame salad tossed with sesame dressing in a wooden bowl"
 date: 2026-04-22
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -44,7 +51,7 @@ faq:
   - question: "Can I use regular slicing cucumbers instead of English or Persian?"
     answer: "You can, but you'll need to peel the thick, waxy skin and scoop out the large, watery seeds in the center. English and Persian cucumbers have thinner skins and fewer seeds, making them much easier to work with."
   - question: "Where do I find shelled edamame?"
-    answer: "Look in the freezer section of your grocery store, usually near the frozen peas and corn. Buying them already shelled (often labeled 'mukimame') saves you a ton of prep time."
+    answer: "Look in the freezer section, usually near frozen peas and corn. It may be labeled mukimame. Cook it according to the package directions, then cool it before adding it to the salad."
   - question: "Is this salad good the next day?"
     answer: "It holds up surprisingly well because of the salting step. The cucumbers lose a little bit of their snap by day two, but the edamame absorbs more of the ginger and soy flavor, which is a nice tradeoff."
   - question: "How can I make this a full meal?"
@@ -68,7 +75,7 @@ You'll be shocked at how much liquid drains out. By getting rid of that water, y
 
 A cucumber salad is refreshing, but it's not exactly filling. It's essentially crunchy water. Adding shelled edamame shifts the balance entirely. 
 
-Edamame brings a substantial dose of plant-based protein and a slightly creamy, firm texture that contrasts perfectly with the watery snap of the cucumber. They're satisfying. They make the salad feel like an actual side dish instead of just a garnish on the side of the plate. Buying them frozen and already shelled is the ultimate shortcut. Just run them under warm water in a strainer for a minute and they're good to go.
+Edamame brings plant-based protein and a slightly creamy, firm texture that contrasts with the watery snap of the cucumber. It makes the salad feel like an actual side dish instead of just garnish. Buying it frozen and already shelled is the useful shortcut. Follow the package cooking directions, drain it, and cool it before it meets the cucumbers.
 
 If you don't have edamame, you could technically swap in some chickpeas or white beans, but you lose that specific bright green, slightly grassy flavor that pairs so well with the sesame dressing. Stick with the edamame if you can.
 
@@ -85,3 +92,11 @@ Whisk it all together, toss in the dry cucumbers and the edamame, and you're don
 This Japanese-inspired cucumber and edamame salad plays nicely with almost anything. It's the perfect partner for grilled salmon, teriyaki chicken thighs, or even a simple bowl of rice and a fried egg. It's also exactly what you want next to a batch of [homemade dumplings](/healthy-homemade-dumpling-wrapper-recipe/) if you're taking on the whole make-your-own-wrapper project. I have eaten a massive bowl of it on its own for lunch and felt perfectly happy about it.
 
 If you want to prep it ahead of time, do the salting step, mix the dressing, but keep them in separate containers in the fridge until right before you eat. That guarantees maximum crunch when you finally sit down.
+
+## How should you store cucumber edamame salad?
+
+Refrigerate the cooked edamame and drained cucumbers promptly in separate covered containers. Keep the dressing in a small jar. Assemble only what you plan to serve because salt and vinegar continue pulling water from the cucumbers after mixing.
+
+Use leftovers within a few days and stir before serving. If the bowl becomes watery, drain a little liquid rather than adding more soy sauce, which makes the salad saltier without restoring the lost crunch.
+
+For another no-oven lunch with beans and a sharper dressing, this [pear and walnut salad](/pear-salad-with-walnuts-fiber-rich/) uses a balsamic-Dijon combination and can be assembled from prepared components.

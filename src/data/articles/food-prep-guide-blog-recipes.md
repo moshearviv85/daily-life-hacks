@@ -1,5 +1,5 @@
 ---
-title: Your Weekend Food Prep Playbook
+title: Sheet-Pan Chicken and Vegetables for Meal Prep
 excerpt: Cut down on weeknight cooking stress with a simple food prep guide. Learn how to plan, shop, and prep smarter for delicious, easy meals all week long.
 category: recipes
 tags:
@@ -11,8 +11,9 @@ tags:
 image: "/images/food-prep-guide-blog-recipes-main.jpg"
 imageAlt: An overhead shot shows roasted chicken, colorful bell peppers, and broccoli florets arranged on a wooden cutting board with containers of grains.
 date: 2026-06-03
-dateModified: 2026-07-16
+dateModified: 2026-07-20
 author: "David Miller"
+quickAnswer: "A useful weekly food-prep recipe should reheat well, keep its texture, and give you several ways to serve it. Start with one sturdy protein, a tray of vegetables, and a grain or bean base. Cool the components promptly, refrigerate them in shallow airtight containers, and add crisp toppings or sauces only when you eat."
 featured: false
 prepTime: "2 hours"
 cookTime: "1 hour"
@@ -61,7 +62,7 @@ The core idea here is to front-load the effort. Spend a concentrated block of ti
 
 For the complete system around this one batch, the [meal-prep guide for beginners](/meal-prep-for-beginners-complete-system/) connects the shopping list, cooking order, storage, and reheating so Wednesday lunch doesn't become a scavenger hunt.
 
-### Why This Roasted Chicken and Veggies Recipe Works for Meal Prep
+## Why This Roasted Chicken and Veggies Recipe Works for Meal Prep
 
 This isn't just a random recipe; it's designed with meal prep in mind. The chicken cooks quickly and stays juicy, especially if you cut it into even pieces. The vegetables, a mix of broccoli, bell peppers, sweet potato, and onion, roast beautifully together, getting tender and slightly caramelized without turning to mush. That's key for reheating. You don't want soggy vegetables on day three. Pairing it with a simple grain like quinoa or brown rice means you have a complete, balanced meal ready to go.
 
@@ -73,13 +74,13 @@ Before you even think about chopping an onion, take a few minutes to set up your
 
 Having your containers ready is also a big one. Square or rectangular containers tend to stack better in the fridge, maximizing space. Glass containers are great because they transition from fridge to microwave (or oven) without fuss, and they don't stain or hold odors like some plastic options. If you're using plastic, make sure they're microwave-safe.
 
-### Timing is Everything: A Quick Workflow
+## Timing is Everything: A Quick Workflow
 
 You're not trying to do everything at once. Think in phases. Start by preheating the oven and getting your baking sheets ready. While the oven heats, you can be chopping your chicken and tossing it with spices. Get that on one baking sheet. Then, move onto the vegetables. Chop them, toss with oil and seasoning, and get them on the second baking sheet.
 
 Once both sheets are in the oven, that's your downtime. Use this 20-25 minute window to cook your grain. If you have extra time, maybe you wash a few dishes, or even better, just sit down for a minute. When the timer goes off, everything should be done around the same time. Let things cool down a bit before you start portioning. This prevents condensation inside your containers, which can make food go bad faster.
 
-### Smart Storage and Reheating Tips
+## Smart Storage and Reheating Tips
 
 Storing your prepped meals correctly is just as important as cooking them well. Use those airtight containers we talked about. Make sure the food is cooled down before sealing and refrigerating. Putting hot food directly into the fridge can raise the internal temperature of the fridge, which isn't great for food safety or energy efficiency.
 
