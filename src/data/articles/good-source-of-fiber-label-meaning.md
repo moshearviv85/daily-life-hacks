@@ -49,7 +49,7 @@ The whole system fits in one table, and honestly it's easier to scan than to rea
 | "More fiber" or "Added fiber" | At least 10% DV (2.8 grams) more than the food it's compared to |
 | "Made with whole grains" | Nothing. It's not a fiber claim, and there's no fiber minimum |
 
-These numbers aren't opinions. They're federal thresholds, all based on the 28 gram Daily Value for fiber, and a product has to hit them before the wording goes on the box. That's the useful part. The less useful part is what they don't tell you.
+These numbers aren't opinions. They're federal thresholds, all based on the 28 gram Daily Value for fiber, and a product has to hit them before the wording goes on the box. If you're wondering where 28 grams came from, our [plain-English guide to the fiber and protein Daily Values](/fiber-protein-daily-values-explained/) follows the federal paperwork so you don't have to. That's the useful part. The less useful part is what the front of the box doesn't tell you.
 
 ## What the label leaves out
 

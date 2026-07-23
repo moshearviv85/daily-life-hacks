@@ -61,6 +61,8 @@ const LEGACY_GONE_PATHS = new Set([
   "feed",
   "hello-world",
   "most-very-important-guidance-skill-set",
+  "nuclear-electricity-benefits-and-negatives-really",
+  "reheat-pizza-crust-stays-crisp",
   "sample-page",
   "sample-page/feed",
   "usual-excuses-made-by-high-conflict-parents",

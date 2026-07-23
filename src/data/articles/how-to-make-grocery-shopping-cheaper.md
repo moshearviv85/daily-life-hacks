@@ -49,7 +49,7 @@ Walking into a grocery store right now feels a bit like walking into a trap. You
 
 Grocery stores are not designed for your convenience. They're psychological obstacle courses built to make you spend. The layout, the lighting, even the music are calibrated to slow you down and nudge your hand toward the endcap.
 
-If you're tired of staring at your bank statement every week, you have to change your approach. Figuring out how to make grocery shopping cheaper isn't about extreme couponing or driving to four different stores to save twelve cents on a can of soup. It's about outsmarting the store's design, buying the foods that actually deliver nutrition per dollar, and stopping the waste that quietly eats your budget after you get home.
+If you're tired of staring at your bank statement every week, you have to change your approach. Figuring out how to make grocery shopping cheaper isn't about extreme couponing or driving to four different stores to save twelve cents on a can of soup. We [ran the gas-and-miles math on the cheaper-store detour](/is-driving-to-cheaper-grocery-store-worth-it/), because a bargain stops being a bargain when the round trip eats it. The rest is about outsmarting the store's design, buying the foods that actually deliver nutrition per dollar, and stopping the waste that quietly eats your budget after you get home.
 
 For the bigger picture of building a cart that feeds you without draining the account, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) walks through the full system. This article is the aisle-level playbook: what to do before you leave the house, what to ignore once you're inside, and which habits actually move the total.
 
