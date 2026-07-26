@@ -98,12 +98,12 @@ function buildCanonicalUrl(targetPath, search = "") {
   return targetUrl.toString();
 }
 
-async function hasUsableKvRoute(env, slug) {
-  if (!env.ROUTES_KV || !slug) return false;
+async function getUsableKvRoute(env, slug) {
+  if (!env.ROUTES_KV || !slug) return null;
 
   try {
     const raw = await env.ROUTES_KV.get(slug);
-    if (!raw) return false;
+    if (!raw) return null;
 
     const routeConfig = JSON.parse(raw);
     const candidateType = routeConfig?.type;
@@ -114,12 +114,17 @@ async function hasUsableKvRoute(env, slug) {
         ? routeConfig.external_url.trim()
         : "";
 
-    return (
-      (candidateType === "external" && Boolean(candidateExternal)) ||
-      ((candidateType === "internal" || !candidateType) && Boolean(candidateBase))
-    );
+    if (candidateType === "external" && candidateExternal) {
+      return { type: "external", externalUrl: candidateExternal, baseSlug: "" };
+    }
+
+    if ((candidateType === "internal" || !candidateType) && candidateBase) {
+      return { type: "internal", externalUrl: "", baseSlug: candidateBase };
+    }
+
+    return null;
   } catch {
-    return false;
+    return null;
   }
 }
 
@@ -275,14 +280,22 @@ export async function onRequest(context) {
   // Versioned pin URLs normally fall through to the canonical article. Resolve
   // non-www variants here to avoid a host hop before that existing redirect.
   const earlyVersionMatch = path.match(/^(.+)-v(\d+)$/);
+  const earlyKvRoute =
+    url.hostname === "daily-life-hacks.com" &&
+    !shouldSkipRouting &&
+    earlyVersionMatch &&
+    (request.method === "GET" || request.method === "HEAD")
+      ? await getUsableKvRoute(env, fullPathSlug)
+      : null;
   if (
     url.hostname === "daily-life-hacks.com" &&
     !shouldSkipRouting &&
     earlyVersionMatch &&
     (request.method === "GET" || request.method === "HEAD") &&
-    !(await hasUsableKvRoute(env, fullPathSlug))
+    earlyKvRoute?.type !== "external"
   ) {
-    const earlyBaseSlug = earlyVersionMatch[1].slice(1);
+    const earlyBaseSlug =
+      earlyKvRoute?.baseSlug || earlyVersionMatch[1].slice(1);
     const earlyVersion = earlyVersionMatch[2];
 
     if (env.DB) {
@@ -294,7 +307,7 @@ export async function onRequest(context) {
         .bind(
           fullPathSlug,
           earlyBaseSlug,
-          "version_fallback_301",
+          earlyKvRoute ? "internal" : "version_fallback_301",
           earlyVersion,
           url.search || null,
           request.headers.get("Referer") || null,

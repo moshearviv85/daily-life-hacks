@@ -499,6 +499,37 @@ test("non-www versioned pin URLs redirect directly to canonical articles in one 
   assert.deepEqual(assets.calls, []);
 });
 
+test("non-www versioned URLs with internal KV routes redirect directly to canonical articles", async () => {
+  globalThis.__PIN_DEST_MAP = null;
+
+  const assets = makeAssets(new Set());
+  const routesKv = {
+    async get(key) {
+      assert.equal(key, "high-fiber-gluten-free-bread-recipe-v2");
+      return JSON.stringify({
+        type: "internal",
+        base_slug: "high-fiber-gluten-free-bread-recipe",
+      });
+    },
+  };
+  const response = await onRequest(
+    makeContext(
+      "https://daily-life-hacks.com/high-fiber-gluten-free-bread-recipe-v2?utm_source=bing",
+      {
+        ASSETS: assets,
+        ROUTES_KV: routesKv,
+      },
+    ),
+  );
+
+  assert.equal(response.status, 301);
+  assert.equal(
+    response.headers.get("location"),
+    "https://www.daily-life-hacks.com/high-fiber-gluten-free-bread-recipe/?utm_source=bing",
+  );
+  assert.deepEqual(assets.calls, []);
+});
+
 test("non-www versioned URLs keep usable KV routes ahead of fallback routing", async () => {
   globalThis.__PIN_DEST_MAP = null;
 
