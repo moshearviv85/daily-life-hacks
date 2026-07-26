@@ -70,7 +70,6 @@ const LEGACY_GONE_PATHS = new Set([
   "${p.slug}",
   "*",
   "api/event",
-  "cdn-cgi/l/email-protection",
   "feed",
   "hello-world",
   "most-very-important-guidance-skill-set",

@@ -61,8 +61,9 @@ The same audit found additional known legacy tag URLs that were still returning
 - `/tag/meatlessmonday/`
 - `/tag/vegetables/`
 
-`/cdn-cgi/l/email-protection` is crawler-generated noise rather than a real site
-page and now returns 410.
+`/cdn-cgi/l/email-protection` is crawler-generated noise under Cloudflare's
+reserved `/cdn-cgi/` path, not a real site page. It remains an intentional 404
+and is not a failed URL in the current validation sample.
 
 ## Dataset schema remediation
 

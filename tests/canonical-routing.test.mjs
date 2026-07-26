@@ -300,7 +300,6 @@ test("legacy garbage and removed supplement-adjacent URLs return gone", async ()
     "https://www.daily-life-hacks.com/$%7Ba.slug%7D",
     "https://www.daily-life-hacks.com/$%7Bp.slug%7D",
     "https://www.daily-life-hacks.com/api/event",
-    "https://www.daily-life-hacks.com/cdn-cgi/l/email-protection",
     "https://www.daily-life-hacks.com/feed/",
     "https://www.daily-life-hacks.com/hello-world/",
     "https://www.daily-life-hacks.com/nuclear-electricity-benefits-and-negatives-really/",
