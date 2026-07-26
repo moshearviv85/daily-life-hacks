@@ -88,9 +88,11 @@ def parse_dt(s):
     if not s:
         return None
     try:
-        return datetime.fromisoformat(s.replace("Z", "+00:00"))
+        d = datetime.fromisoformat(s.replace("Z", "+00:00"))
     except ValueError:
         return None
+    # Pinterest sometimes returns naive timestamps; normalise so comparisons work.
+    return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
 
 
 def main() -> int:
