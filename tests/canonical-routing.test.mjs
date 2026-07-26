@@ -239,6 +239,46 @@ test("legacy impression tag and pagination URLs redirect instead of returning go
       "https://www.daily-life-hacks.com/tips/1/",
       "https://www.daily-life-hacks.com/tips/",
     ],
+    [
+      "https://www.daily-life-hacks.com/nutrition/1/",
+      "https://www.daily-life-hacks.com/nutrition/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/flavorhacks/",
+      "https://www.daily-life-hacks.com/big-flavor-less-salt-citrus-herbs-umami-swaps/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/quinoarecipes/",
+      "https://www.daily-life-hacks.com/stuffed-portobello-mushrooms-quinoa-spinach-feta/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/pizzanight/",
+      "https://www.daily-life-hacks.com/high-fiber-pizza-crust-cauliflower/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/meatlessmonday/",
+      "https://www.daily-life-hacks.com/stuffed-portobello-mushrooms-quinoa-spinach-feta/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/chickenbowls/",
+      "https://www.daily-life-hacks.com/costco-rotisserie-chicken-meal-ideas-dinner/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/healthysnacks/",
+      "https://www.daily-life-hacks.com/grab-and-go-fridge-snack-drawer/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/homeorganization/",
+      "https://www.daily-life-hacks.com/how-to-organize-a-small-kitchen-on-a-budget/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/meals-large/",
+      "https://www.daily-life-hacks.com/how-to-stretch-meals-large-families/",
+    ],
+    [
+      "https://www.daily-life-hacks.com/tag/vegetables/",
+      "https://www.daily-life-hacks.com/high-fiber-stir-fry-vegetables/",
+    ],
   ];
 
   for (const [source, target] of cases) {
@@ -258,7 +298,9 @@ test("legacy impression tag and pagination URLs redirect instead of returning go
 test("legacy garbage and removed supplement-adjacent URLs return gone", async () => {
   const cases = [
     "https://www.daily-life-hacks.com/$%7Ba.slug%7D",
+    "https://www.daily-life-hacks.com/$%7Bp.slug%7D",
     "https://www.daily-life-hacks.com/api/event",
+    "https://www.daily-life-hacks.com/cdn-cgi/l/email-protection",
     "https://www.daily-life-hacks.com/feed/",
     "https://www.daily-life-hacks.com/hello-world/",
     "https://www.daily-life-hacks.com/nuclear-electricity-benefits-and-negatives-really/",
