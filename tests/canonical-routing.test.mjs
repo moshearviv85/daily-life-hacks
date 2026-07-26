@@ -398,6 +398,45 @@ test("pin destinations from Git registry 301 to canonical before KV/static", asy
   assert.deepEqual(assets.calls, []);
 });
 
+test("non-www Bing pin aliases redirect directly to canonical articles in one hop", async () => {
+  const cases = [
+    [
+      "nutritional-benefits-cold-pasta-salad-resistant-starch",
+      "easy-cold-summer-pasta-salad-potlucks",
+    ],
+    [
+      "how-to-revive-wilted-salad-greens",
+      "how-to-revive-wilted-lettuce-and-greens",
+    ],
+    [
+      "30-day-high-fiber-challenge-meal-plan-guide",
+      "30-day-high-fiber-challenge-meal-plan",
+    ],
+    [
+      "whole-wheat-vs-regular-pasta-fiber",
+      "whole-wheat-vs-white-pasta-fiber",
+    ],
+  ];
+  const pinDestinations = Object.fromEntries(cases);
+
+  for (const [source, target] of cases) {
+    const assets = makeAssets(new Set(), { pinDestinations });
+    const response = await onRequest(
+      makeContext(
+        `https://daily-life-hacks.com/${source}?utm_source=bing`,
+        { ASSETS: assets },
+      ),
+    );
+
+    assert.equal(response.status, 301);
+    assert.equal(
+      response.headers.get("location"),
+      `https://www.daily-life-hacks.com/${target}/?utm_source=bing`,
+    );
+    assert.deepEqual(assets.calls, []);
+  }
+});
+
 test("legacy KV internal pin routes 301 to canonical instead of noindex proxy", async () => {
   globalThis.__PIN_DEST_MAP = null;
 
@@ -439,4 +478,56 @@ test("versioned -vN pin URLs 301 to canonical article", async () => {
     response.headers.get("location"),
     "https://www.daily-life-hacks.com/demo-article/",
   );
+});
+
+test("non-www versioned pin URLs redirect directly to canonical articles in one hop", async () => {
+  globalThis.__PIN_DEST_MAP = null;
+
+  const assets = makeAssets(new Set(["/high-fiber-gluten-free-bread-recipe/"]));
+  const response = await onRequest(
+    makeContext(
+      "https://daily-life-hacks.com/high-fiber-gluten-free-bread-recipe-v2?utm_source=bing",
+      { ASSETS: assets },
+    ),
+  );
+
+  assert.equal(response.status, 301);
+  assert.equal(
+    response.headers.get("location"),
+    "https://www.daily-life-hacks.com/high-fiber-gluten-free-bread-recipe/?utm_source=bing",
+  );
+  assert.deepEqual(assets.calls, []);
+});
+
+test("non-www versioned URLs keep usable KV routes ahead of fallback routing", async () => {
+  globalThis.__PIN_DEST_MAP = null;
+
+  const assets = makeAssets(new Set());
+  const routesKv = {
+    async get(key) {
+      assert.equal(key, "demo-article-v2");
+      return JSON.stringify({
+        type: "external",
+        external_url: "https://example.com/offer",
+      });
+    },
+  };
+  const response = await onRequest(
+    makeContext("https://daily-life-hacks.com/demo-article-v2", {
+      ASSETS: assets,
+      ROUTES_KV: routesKv,
+    }),
+  );
+
+  assert.equal(response.status, 301);
+  assert.equal(
+    response.headers.get("location"),
+    "https://www.daily-life-hacks.com/demo-article-v2",
+  );
+  assert.deepEqual(assets.calls, [
+    {
+      url: "https://www.daily-life-hacks.com/demo-article-v2/",
+      method: "GET",
+    },
+  ]);
 });

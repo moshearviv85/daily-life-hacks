@@ -40,6 +40,8 @@ Let's look at the numbers. They're surprisingly similar.
 
 A standard half cup serving of plain, nonfat Greek yogurt usually gives you around ten to twelve grams of protein. A standard half cup of cottage cheese gives you about twelve to fourteen grams. They're both absolute heavyweights in the protein department. 
 
+If the tubs are now arguing with eggs and milk for your grocery dollar, our [dairy protein per dollar ranking](/dairy-protein-per-dollar-ranked/) settles that louder family dispute.
+
 The main nutritional difference is the sodium. Cottage cheese is salty. It has a significantly higher sodium content than Greek yogurt, which is naturally lower in sodium and much more tart. Greek yogurt also contains active cultures, which may support gut health, while only some brands of cottage cheese include live cultures. 
 
 ## Taste and texture reality

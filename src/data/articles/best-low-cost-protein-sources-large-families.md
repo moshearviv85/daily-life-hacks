@@ -32,7 +32,7 @@ I used to think that feeding a family of five meant I had to choose between a co
 If you are trying to hit those nutritional goals without your credit card crying for mercy, you need a strategy that goes beyond just buying whatever is on sale. Finding the best low cost protein sources for large families is about volume, satiety, and not having your kids stage a mutiny because you served "bean surprise" for the third night in a row.
 
 ## Eggs are the convenience play, not the price winner
-At the [May 2026 BLS average price](https://data.bls.gov/timeseries/APU0000708111) of $2.19 a dozen, eggs delivered about 34 grams of protein per dollar in our dataset. That's well behind dried beans and lentils, but eggs need no soaking and can become dinner before anyone starts negotiating for takeout. A dozen can anchor a vegetable frittata or a stack of pancakes without asking you to plan yesterday.
+At the [May 2026 BLS average price](https://data.bls.gov/timeseries/APU0000708111) of $2.19 a dozen, [eggs delivered about 34 grams of protein per dollar in our dataset](/eggs-vs-everything-protein-value/). That's well behind dried beans and lentils, but eggs need no soaking and can become dinner before anyone starts negotiating for takeout. A dozen can anchor a vegetable frittata or a stack of pancakes without asking you to plan yesterday.
 
 If you have a local warehouse club membership, buy the five-dozen pack. It looks intimidating in the fridge, but eggs stay fresh for weeks. Hard-boil a batch on Sunday and you've got an instant snack for the kid who claims they're starving five minutes after lunch. It beats a bag of chips every single time.
 
@@ -47,12 +47,12 @@ Canned tuna is the old standby, but canned pink salmon and sardines belong in th
 Check the bottom shelves of the canned meat aisle. That's where the larger "family size" cans of tuna usually hide. Avoid the fancy flavored pouches that cost twice as much for half the food. You're paying for the convenience of not having to use a can opener, which takes about six seconds of your life. Buy the big cans in water, drain them well, and add your own mayo and pickles.
 
 ## Check the drumsticks before the chicken breasts
-If your household isn't ready to go meatless, compare the whole poultry case instead of grabbing breast by reflex. In our price sample, bone-in drumsticks delivered about 50 grams of protein per dollar, boneless thighs about 28, and boneless breast about 25. Different price sources were used for those rows, so read that as a shopping order, not a promise about your store.
+If your household isn't ready to go meatless, [compare the whole meat case by protein per dollar](/meat-per-dollar-protein-ranked/) instead of grabbing chicken breast by reflex. In our price sample, bone-in drumsticks delivered about 50 grams of protein per dollar, boneless thighs about 28, and boneless breast about 25. Different price sources were used for those rows, so read that as a shopping order, not a promise about your store.
 
 **Buying Bulk:** Check the unit price on family packs, then compare it with the smaller tray and the frozen bag. A larger package only saves money if you portion or freeze what you will not cook in the next few days. Roast a tray on Sunday, shred the meat, and the same batch can cover salads, tacos, and sandwiches without pretending every night needs a fresh production crew.
 
 ## Peanut butter and pantry staples
-We often forget that the stuff sitting in the back of the pantry counts as protein. Peanut butter is calorie-dense and shelf-stable, making it a reliable backup when the fridge is looking thin. At the price used in our study, it delivered about 51 grams of protein per dollar. Whole-grain bread adds more protein and turns the jar into an actual lunch.
+We often forget that [the stuff sitting in the back of the pantry counts as protein](/shelf-stable-pantry-per-dollar/). Peanut butter is calorie-dense and shelf-stable, making it a reliable backup when the fridge is looking thin. At the price used in our study, it delivered about 51 grams of protein per dollar. Whole-grain bread adds more protein and turns the jar into an actual lunch.
 
 Greek yogurt is another useful option if the large tub beats the single cups on unit price. The plain version can stand in for sour cream on taco night or take honey and fruit at snack time. Check the protein line because brands and styles vary; the plain nonfat tub in our dataset landed at about 28 grams of protein per dollar.
 

@@ -81,6 +81,8 @@ This is where people blow their budgets. They buy highly perishable, incredibly 
 *   **Carrots and Onions:** These are the essential flavor builders for every single cheap meal you will ever make, and they cost pennies per pound. 
 *   **Frozen Spinach and Broccoli:** Don't be afraid of the frozen aisle. Frozen vegetables are convenient, easy to portion, and far less likely to wilt unseen in your crisper drawer.
 
+If cost is the tiebreaker, our [produce fiber per dollar ranking](/produce-fiber-per-dollar-ranked/) compares fresh and frozen options without giving the fancy berry carton bonus points for looking photogenic.
+
 ## The Flavor Makers (Invest Here)
 
 If you're basing your meals off intensely cheap items like beans, rice, and cabbage, you must invest a tiny bit of your budget into making them taste phenomenal. This is the difference between eating like a budget master and eating like a depressed college student. 

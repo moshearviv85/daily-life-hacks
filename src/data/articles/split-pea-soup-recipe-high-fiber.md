@@ -1,6 +1,6 @@
 ---
 title: How Much Fiber in a Cup of Split Pea Soup
-excerpt: "Forget the fancy stuff. This high fiber split pea soup is old-school comfort with about 16g fiber per bowl, cheap ingredients, and almost no drama"
+excerpt: "A cup of this split pea soup has about 6g fiber; a two-cup bowl has about 13g. Cheap ingredients, thick soup, almost no drama."
 category: recipes
 tags:
 - split pea soup
@@ -11,7 +11,7 @@ tags:
 image: /images/split-pea-soup-recipe-high-fiber-main.jpg
 imageAlt: Thick green split pea soup in a white bowl with carrots, celery, and parsley on top
 date: 2026-01-16
-dateModified: 2026-07-17
+dateModified: 2026-07-26
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -21,7 +21,7 @@ prepTime: 10 minutes
 cookTime: 45 minutes
 totalTime: 55 minutes
 servings: 4
-calories: 380
+calories: 250
 difficulty: Easy
 ingredients:
 - 1 tbsp olive oil
@@ -44,11 +44,11 @@ steps:
 - Ladle into bowls, garnish with fresh parsley, and serve hot.
 faq:
 - question: Is there a lot of fiber in split pea soup?
-  answer: Yes. Split peas are naturally high in dietary fiber, so a thick bowl of this soup can cover a big chunk of a typical daily fiber target. Exact grams depend on how thick you make it and how many vegetables you add. It's also filling enough that you might not be hunting snacks an hour later.
+  answer: Yes. This recipe works out to about 13 grams of fiber in a two-cup bowl. The exact number moves a little with the finished volume, because a soup simmered down to six cups isn't the same math as a brothier eight-cup pot.
 - question: How much fiber in a cup of split pea soup?
-  answer: A standard one-cup serving often lands around 8 to 10 grams of fiber, depending on thickness and add-ins. Carrots and celery nudge the number up. If your soup is brothier, expect the lower end of that range.
+  answer: One cup of this recipe has about 6 grams of fiber when the finished pot makes roughly eight cups. Simmer it longer and the number per cup climbs because you're removing water, not fiber. Soup math is rude like that.
 - question: How much fiber in a bowl of split pea soup?
-  answer: A typical bowl is closer to two cups, so you're often looking at roughly 16 to 20 grams of fiber. That's a serious portion of many people's daily fiber goal in one sitting. Pair it with water or a side of bread if you want the meal to feel complete.
+  answer: A two-cup bowl of this recipe has about 13 grams of fiber. That's one quarter of the pot, based on one cup of dry split peas plus the onion, carrots, and celery. A smaller cereal bowl will obviously hold less.
 - question: Can I make this soup ahead for the week?
   answer: Absolutely. It thickens in the fridge as the peas keep absorbing liquid. Store it up to four days in a sealed container. Reheat gently with a splash of broth or water to loosen it back to spoonable. The flavor usually gets better on day two.
 - question: Do I need a ham bone for good split pea soup?
@@ -59,7 +59,7 @@ Sometimes you just need a big bowl of something warm. Not a trendy smoothie. Not
 
 When the wind starts whistling and daylight clocks out at 3:30 PM, my brain flips to soup mode. And not just any soup. The classics. The kind that smells like somebody's grandma was in charge even if your grandma never made this exact pot. Split pea.
 
-Yeah, I know. Peas. They sound plain. Then they cook down into a thick, savory situation that feels like a blanket with a spoon. One hearty bowl of this high fiber split pea soup can land around 16 grams of fiber. That's not a cute garnish number. That's real grocery math. And dried split peas are cheap enough that the whole pot barely registers on the bill.
+Yeah, I know. Peas. They sound plain. Then they cook down into a thick, savory situation that feels like a blanket with a spoon. One two-cup bowl of this high fiber split pea soup lands around 13 grams of fiber. That's not a cute garnish number. That's real grocery math. And dried split peas are cheap enough that the whole pot barely registers on the bill.
 
 ## Why is split pea soup so satisfying?
 
@@ -73,7 +73,15 @@ I remember one winter with snow up to my knees when I made a huge batch. My room
 
 People ask how much fiber in a cup of split pea soup because the label math is weird when you're cooking from dried peas. Here's the practical version.
 
-Dried split peas are fiber dense before they ever hit the pot. As they soften, they thicken the broth, so a ladle of finished soup carries more plant material than a thin vegetable broth. A cup often lands in the 8 to 10 gram range. A full bowl closer to two cups can push toward 16 grams or more if you kept the soup thick and included the carrots and celery.
+| Portion from this recipe | Estimated fiber |
+|---|---:|
+| 1 cup | About 6g |
+| 2-cup bowl | About 13g |
+| Whole pot | About 51g |
+
+*Source: recipe calculation using USDA FoodData Central values for dry split peas, carrots, celery, and onion. The estimate assumes the finished pot makes about eight cups.*
+
+Dried split peas are fiber dense before they ever hit the pot. As they soften, they thicken the broth, so a ladle of finished soup carries more plant material than a thin vegetable broth. This recipe starts with about 44 grams of fiber in the peas alone. The vegetables bring the pot to roughly 51 grams. Divide that by an eight-cup finished pot and you get about 6 grams per cup, or close to 13 grams in a two-cup bowl.
 
 We ranked common foods by cost in the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/). Dried legumes keep embarrassing almost everything with a pretty package. Split peas belong in that same boring-hero category. You're not buying fiber theater. You're buying a bag of peas.
 
@@ -143,7 +151,7 @@ Don't overcomplicate a dish whose whole personality is "peas got soft and delici
 
 **Expecting thin soup to feel filling.** If it's watery, keep simmering uncovered for a bit, or mash some peas. Thickness is part of why this bowl satisfies.
 
-**Serving it with zero liquid elsewhere in the day.** Fiber works better when you're also drinking water or tea. Soup helps, but don't treat the bowl as your only fluid plan.
+**Serving it with zero liquid elsewhere in the day.** Soup contains liquid, but don't count the bowl as your only fluid plan.
 
 ## Where this fits in a high-fiber week
 
@@ -152,3 +160,5 @@ One pot of split pea soup covers multiple lunches. Pair it with oatmeal breakfas
 The [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) maps the grocery pattern. The [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) explains why a bag of split peas keeps showing up in that conversation. This pot is the Tuesday execution.
 
 Make it once when the weather turns mean. Freeze half. Eat the rest with bread and zero apologies. Thick, cheap, and quietly loaded with fiber. That's the whole pitch for this split pea soup recipe.
+
+<!-- sources: USDA FoodData Central SR Legacy FDC 172428, Peas, green, split, mature seeds, raw: 22.2g fiber and 364 kcal per 100g; USDA portion: 1 cup dry peas = 196g. USDA FoodData Central FDC 2709660, Carrots, raw: 2.9g fiber per 100g. FDC 2709778, Celery, raw: 1.6g fiber per 100g. FDC 2709795, Onions, raw: 1.7g fiber per 100g. FDC 171413, Olive oil: 884 kcal per 100g. Recipe estimate assumes 150g onion, 122g carrots, 80g celery, 13.5g oil, four servings, and about eight cups finished soup; broth brand may change calories. -->

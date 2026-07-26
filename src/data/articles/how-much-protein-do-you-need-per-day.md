@@ -44,6 +44,8 @@ A range of 0.5 to 0.8 grams per pound shows up a lot for people who exercise reg
 
 If you want the full shopping system behind this, read the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/). This article is the "how much" layer. That one is the cart.
 
+If the 50-gram number on Nutrition Facts labels is what's confusing you, our [fiber and protein Daily Value explainer](/fiber-protein-daily-values-explained/) shows where it came from and why it isn't a personalized target.
+
 ## What those grams look like on a plate
 
 Numbers only help if you can translate them into dinner.

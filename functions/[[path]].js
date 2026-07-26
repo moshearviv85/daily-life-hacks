@@ -98,6 +98,31 @@ function buildCanonicalUrl(targetPath, search = "") {
   return targetUrl.toString();
 }
 
+async function hasUsableKvRoute(env, slug) {
+  if (!env.ROUTES_KV || !slug) return false;
+
+  try {
+    const raw = await env.ROUTES_KV.get(slug);
+    if (!raw) return false;
+
+    const routeConfig = JSON.parse(raw);
+    const candidateType = routeConfig?.type;
+    const candidateBase =
+      typeof routeConfig?.base_slug === "string" ? routeConfig.base_slug.trim() : "";
+    const candidateExternal =
+      typeof routeConfig?.external_url === "string"
+        ? routeConfig.external_url.trim()
+        : "";
+
+    return (
+      (candidateType === "external" && Boolean(candidateExternal)) ||
+      ((candidateType === "internal" || !candidateType) && Boolean(candidateBase))
+    );
+  } catch {
+    return false;
+  }
+}
+
 async function applyProxyRobotsPolicy(proxyResponse, request) {
   const headers = new Headers(proxyResponse.headers);
   headers.set("X-Robots-Tag", PROXY_ROBOTS);
@@ -157,6 +182,7 @@ export async function onRequest(context) {
   const shouldSkipRouting = skipPatterns.some((pattern) => pattern.test(path));
 
   const legacyPath = normalizeLegacyPath(originalPathname);
+  const fullPathSlug = path.slice(1); // Remove leading slash
   const hasLegacyRule =
     LEGACY_PERMANENT_REDIRECTS.has(legacyPath) || LEGACY_GONE_PATHS.has(legacyPath);
 
@@ -188,46 +214,11 @@ export async function onRequest(context) {
     }
   }
 
-  if (url.hostname === "daily-life-hacks.com") {
-    url.hostname = "www.daily-life-hacks.com";
-    url.protocol = "https:";
-
-    if (
-      !shouldSkipRouting &&
-      (request.method === "GET" || request.method === "HEAD") &&
-      originalPathname !== "/" &&
-      !originalPathname.endsWith("/")
-    ) {
-      const canonicalUrl = new URL(`${path}/`, url.origin);
-      canonicalUrl.search = url.search;
-      const canonicalReq = new Request(canonicalUrl.toString(), {
-        method: request.method,
-        headers: request.headers,
-      });
-      const canonicalAsset = await env.ASSETS.fetch(canonicalReq);
-
-      if (
-        canonicalAsset.status !== 404 &&
-        canonicalAsset.headers.get("x-astro-reroute") !== "no"
-      ) {
-        return Response.redirect(canonicalUrl.toString(), 301);
-      }
-    }
-
-    return Response.redirect(url.toString(), 301);
-  }
-
-  if (shouldSkipRouting) {
-    return env.ASSETS.fetch(request);
-  }
-
-  const fullPathSlug = path.slice(1); // Remove leading slash
-
-  // --- 1b. PIN DESTINATIONS (Git registry → 301 to canonical) ---
-  // Single source of truth: public/data/pin-destinations-flat.json
-  // Takes precedence over ROUTES_KV proxy and static alias HTML (Checkpoint 2).
+  // Resolve Git-backed pin aliases before host canonicalization so old
+  // non-www pin URLs reach their canonical article in one redirect.
   if (
     fullPathSlug &&
+    !shouldSkipRouting &&
     (request.method === "GET" || request.method === "HEAD") &&
     env.ASSETS
   ) {
@@ -279,6 +270,78 @@ export async function onRequest(context) {
     } catch {
       // Missing map must not break normal routing.
     }
+  }
+
+  // Versioned pin URLs normally fall through to the canonical article. Resolve
+  // non-www variants here to avoid a host hop before that existing redirect.
+  const earlyVersionMatch = path.match(/^(.+)-v(\d+)$/);
+  if (
+    url.hostname === "daily-life-hacks.com" &&
+    !shouldSkipRouting &&
+    earlyVersionMatch &&
+    (request.method === "GET" || request.method === "HEAD") &&
+    !(await hasUsableKvRoute(env, fullPathSlug))
+  ) {
+    const earlyBaseSlug = earlyVersionMatch[1].slice(1);
+    const earlyVersion = earlyVersionMatch[2];
+
+    if (env.DB) {
+      const logPromise = env.DB.prepare(
+        `INSERT INTO pinterest_hits
+         (versioned_slug, base_slug, route_type, version, query_params, referrer, user_agent, country)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+      )
+        .bind(
+          fullPathSlug,
+          earlyBaseSlug,
+          "version_fallback_301",
+          earlyVersion,
+          url.search || null,
+          request.headers.get("Referer") || null,
+          request.headers.get("User-Agent") || null,
+          request.headers.get("CF-IPCountry") || null,
+        )
+        .run();
+      waitUntil(logPromise.catch(() => {}));
+    }
+
+    return Response.redirect(
+      buildCanonicalUrl(`/${earlyBaseSlug}/`, url.search),
+      301,
+    );
+  }
+
+  if (url.hostname === "daily-life-hacks.com") {
+    url.hostname = "www.daily-life-hacks.com";
+    url.protocol = "https:";
+
+    if (
+      !shouldSkipRouting &&
+      (request.method === "GET" || request.method === "HEAD") &&
+      originalPathname !== "/" &&
+      !originalPathname.endsWith("/")
+    ) {
+      const canonicalUrl = new URL(`${path}/`, url.origin);
+      canonicalUrl.search = url.search;
+      const canonicalReq = new Request(canonicalUrl.toString(), {
+        method: request.method,
+        headers: request.headers,
+      });
+      const canonicalAsset = await env.ASSETS.fetch(canonicalReq);
+
+      if (
+        canonicalAsset.status !== 404 &&
+        canonicalAsset.headers.get("x-astro-reroute") !== "no"
+      ) {
+        return Response.redirect(canonicalUrl.toString(), 301);
+      }
+    }
+
+    return Response.redirect(url.toString(), 301);
+  }
+
+  if (shouldSkipRouting) {
+    return env.ASSETS.fetch(request);
   }
 
   let routeConfig = null;

@@ -33,6 +33,8 @@ If you want to eat a giant bowl of something while watching TV, popcorn is the o
 
 The trick is to skip the movie theater butter that comes in those questionable plastic jugs. I use a light mist of olive oil or even a quick spray of lime juice to get seasonings to stick. Nutritional yeast is my go-to because it tastes vaguely like cheese but doesn't leave you feeling greasy. If you're feeling fancy, a dusting of smoked paprika or garlic powder works wonders, and these [healthy high fiber popcorn toppings](/high-fiber-popcorn-toppings-healthy/) go way beyond the salt shaker. Just don't blame me when you're still picking hulls out of your teeth an hour later.
 
+If the budget matters as much as the crunch, our [high-fiber snacks per dollar ranking](/high-fiber-snacks-per-dollar/) compares popcorn, chickpeas, nuts, fruit, and the rest of the 3 PM suspects.
+
 ## Beans that actually crunch
 
 Roasted chickpeas are the snack you didn't know you needed. When you roast them long enough, they lose that mushy texture and turn into little salt-bombs that actually have some protein and fiber. They're much sturdier than a potato chip, so you won't feel like you're eating air. Our [crispy roasted chickpeas recipe](/crispy-roasted-chickpeas-high-fiber-snack/) nails the texture every time.

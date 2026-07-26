@@ -73,6 +73,8 @@ People throw the phrase "complete protein" around a lot. Here's the deal, withou
 
 You don't even have to eat them in the exact same bite, but honestly, why wouldn't you? The texture of soft beans over slightly chewy rice is basically perfect.
 
+We priced 20 legume-and-grain combinations in our [cheapest complete protein pairs ranking](/cheapest-complete-protein-pairs/), because "beans are cheap" is useful and the receipt is better.
+
 The real secret here isn't the protein, though. It's the flavor base. If you just dump plain canned beans over plain rice, you will be sad. And we are actively trying to avoid sad dinners.
 
 ## The flavor engine
