@@ -19,23 +19,40 @@ import re
 from typing import Iterable
 
 
+# Fallbacks when no keyword rule matches. These must name boards that actually
+# exist and are actively used: "Gut Health Tips and Nutrition Charts" was the
+# old nutrition fallback and holds zero pins, so anything landing there was
+# effectively discarded.
 CATEGORY_TO_BOARD = {
-    "recipes":    "Easy Dinner Recipes",
-    "nutrition":  "Gut Health Tips and Nutrition Charts",
-    "tips":       "Healthy Meal Prep & Kitchen Tips",
+    "recipes":    "Easy Dinner Recipes",              # 8.2 imp/pin
+    "nutrition":  "Gut Health & Nutrition Tips",      # 2.0 imp/pin, 83 pins
+    "tips":       "Healthy Meal Prep & Kitchen Tips", # 0.6 imp/pin, 181 pins
 }
 
+# VERIFIED against the live account 2026-07-26 via scripts/list-boards.py.
+# The previous map had a three-way rotation: 032/034/036 were each pointing at
+# a different board than their name claimed, so gut-health pins landed on the
+# meal-prep board and vice versa. Re-verify with list-boards.py before editing.
 BOARD_NAME_TO_ID = {
-    "high fiber dinner and gut health recipes": "1124140825679184032",
-    "high-fiber-recipes": "1124140825679184032",
+    # 226 pins, 0.7 impressions/pin
     "high fiber recipes": "1124140825679184032",
-    "gut health tips and nutrition charts": "1124140825679184034",
-    "gut-health-nutrition-tips": "1124140825679184034",
-    "gut health & nutrition tips": "1124140825679184034",
-    "gut health and nutrition tips": "1124140825679184034",
-    "healthy meal prep & kitchen tips": "1124140825679184036",
-    "healthy breakfast, smoothies and snacks": "1124140825679184036",
-    "healthy breakfast smoothies and snacks": "1124140825679184036",
+    "high-fiber-recipes": "1124140825679184032",
+    # 2 pins - a separate, nearly empty board despite the similar name
+    "high fiber dinner and gut health recipes": "1124140825679097740",
+    # 83 pins, 2.0 impressions/pin
+    "gut health & nutrition tips": "1124140825679184036",
+    "gut health and nutrition tips": "1124140825679184036",
+    "gut-health-nutrition-tips": "1124140825679184036",
+    # 0 pins - distinct board, kept only so the name resolves rather than 404s
+    "gut health tips and nutrition charts": "1124140825679640840",
+    # 181 pins, 0.6 impressions/pin
+    "healthy meal prep & kitchen tips": "1124140825679184034",
+    "healthy breakfast, smoothies and snacks": "1124140825679184034",
+    "healthy breakfast smoothies and snacks": "1124140825679184034",
+    # 14 pins, 2.4 impressions/pin
+    "grocery math: food prices and nutrition data": "1124140825679640841",
+    "grocery math": "1124140825679640841",
+    # 12 pins, 8.2 impressions/pin - best performing board on the account
     "easy dinner recipes": "1124140825679548778",
     "easy-dinner-recipes": "1124140825679548778",
     "easy weeknight dinners": "1124140825679548778",
@@ -79,10 +96,19 @@ HIGH_FIBER_RECIPE_KEYWORDS = (
     "chia", "whole wheat", "oats", "oatmeal",
 )
 
+# Deliberately narrow. The old version included bare "fiber" and "nutrition",
+# which match nearly every article this site publishes, so this rule swallowed
+# most pins before they could reach a better-performing board.
 GUT_NUTRITION_KEYWORDS = (
-    "gut", "fiber", "nutrition", "sodium", "label", "cholesterol",
-    "chia", "whole wheat", "constipation", "prebiotic", "vitamin", "mineral",
+    "gut", "sodium", "label", "cholesterol", "constipation",
+    "prebiotic", "probiotic", "bloat", "digestion", "vitamin", "mineral",
     "satiety",
+)
+
+# Pins carrying an actual priced-data claim, which belong on the data board.
+GROCERY_MATH_KEYWORDS = (
+    "per dollar", "per-dollar", "we priced", "we ranked", "cost per",
+    "g/$", "grams per dollar", "priced 49", "priced 53", "priced 102",
 )
 
 RECIPE_KEYWORDS = (
@@ -126,23 +152,41 @@ def _contains_any(haystack: str, needles: Iterable[str]) -> bool:
 
 
 def board_for_pin(pin: dict, category: str) -> str:
+    """Route a pin to a board, best-performing and most specific boards first.
+
+    Measured 2026-07-26 across 561 live pins (impressions per pin):
+      Easy Dinner Recipes 8.2 · Food Storage 6.6 · High Protein 5.6 ·
+      Budget Meals 4.2 · Grocery Math 2.4 · Gut Health 2.0 ·
+      Healthy Meal Prep 0.6 · High Fiber Recipes 0.7
+
+    The old order checked the two broadest, worst-performing catchers
+    (GUT_NUTRITION, MEAL_PREP) before the recipe rule, so the best board on the
+    account received almost nothing: 405 of 561 pins piled into the two boards
+    that produce 0.6-0.7 impressions per pin, while the 8.2 board held 12.
+    Specific rules now run first and the broad catchers are last resorts.
+    """
     category = (category or "").lower()
     haystack = _pin_haystack(pin)
 
+    # Priced-data pins belong on the data board regardless of topic keywords.
+    if _contains_any(haystack, GROCERY_MATH_KEYWORDS):
+        return "Grocery Math: Food Prices and Nutrition Data"
     if _contains_any(haystack, BUDGET_KEYWORDS):
         return "Budget Meals and Grocery Hacks"
     if _contains_any(haystack, FOOD_STORAGE_KEYWORDS):
         return "Food Storage and Freezer Tips"
     if _contains_any(haystack, HIGH_PROTEIN_KEYWORDS):
         return "High Protein Meals and Smart Swaps"
-    if category == "recipes" and _contains_any(haystack, HIGH_FIBER_RECIPE_KEYWORDS):
-        return "High Fiber Dinner and Gut Health Recipes"
-    if _contains_any(haystack, GUT_NUTRITION_KEYWORDS):
-        return CATEGORY_TO_BOARD["nutrition"]
-    if _contains_any(haystack, MEAL_PREP_KEYWORDS):
-        return CATEGORY_TO_BOARD["tips"]
+    # Moved ahead of the broad catchers: an actual recipe belongs on the recipe
+    # board, and that board outperforms every catch-all by an order of magnitude.
     if _contains_any(haystack, RECIPE_KEYWORDS):
-        return CATEGORY_TO_BOARD["recipes"]
+        return "Easy Dinner Recipes"
+    if category == "recipes" and _contains_any(haystack, HIGH_FIBER_RECIPE_KEYWORDS):
+        return "High Fiber Recipes"
+    if _contains_any(haystack, GUT_NUTRITION_KEYWORDS):
+        return "Gut Health & Nutrition Tips"
+    if _contains_any(haystack, MEAL_PREP_KEYWORDS):
+        return "Healthy Meal Prep & Kitchen Tips"
     return category_to_board(category)
 
 
