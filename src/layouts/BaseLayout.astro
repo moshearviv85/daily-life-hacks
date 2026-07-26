@@ -304,13 +304,41 @@ const metaDescription =
             sessionStorage.setItem(key, "1");
           } catch (e) {}
 
+          // Classify the traffic source once per session-path so we can finally
+          // tell whether AI citations, Pinterest, or search actually send people.
+          var ref = "";
+          try { ref = document.referrer || ""; } catch (e) {}
+          var host = "";
+          try { host = ref ? new URL(ref).hostname.replace(/^www\./, "") : ""; } catch (e) {}
+          var source = "direct";
+          if (host) {
+            if (host === window.location.hostname.replace(/^www\./, "")) {
+              source = "internal";
+            } else if (/(chatgpt\.com|openai\.com|perplexity\.ai|copilot\.microsoft\.com|gemini\.google\.com|claude\.ai|you\.com|phind\.com|poe\.com)$/.test(host)) {
+              source = "ai:" + host;
+            } else if (/(^|\.)google\.|(^|\.)bing\.com$|duckduckgo\.com$|search\.yahoo\.|ecosia\.org$|brave\.com$/.test(host)) {
+              source = "search:" + host;
+            } else if (/pinterest\./.test(host)) {
+              source = "pinterest";
+            } else if (/reddit\.com$|redd\.it$/.test(host)) {
+              source = "reddit";
+            } else if (/(facebook|instagram|twitter|x\.com|tiktok|linkedin|threads)\./.test(host)) {
+              source = "social:" + host;
+            } else if (/(flipboard|feedly|news\.google|msn\.com)/.test(host)) {
+              source = "aggregator:" + host;
+            } else {
+              source = "referral:" + host;
+            }
+          }
+
           fetch("/api/event", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               event_type: "page_view",
               page: path,
-              source: "website",
+              source: source,
+              metadata: ref ? ref.slice(0, 200) : "",
             }),
             keepalive: true,
           }).catch(function () {});
