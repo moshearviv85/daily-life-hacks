@@ -9,7 +9,7 @@ Key: imageConfig.aspectRatio:"3:4" is set in the payload AND the prompt
      strongly reinforces portrait orientation.
      Landscape results are auto-detected, moved to trash, and retried once.
 """
-import os, json, requests, base64, io, time, csv, shutil, random
+import os, json, requests, base64, io, time, csv, shutil, random, re
 from datetime import datetime
 from PIL import Image
 from dotenv import load_dotenv
@@ -109,20 +109,29 @@ def is_portrait(path: str) -> bool:
         return False
 
 
-def build_prompt(title: str, scene: str, variant_num: int) -> str:
+def clean_alt_text(alt_text: str) -> str:
+    # Strip trailing "with text overlay saying '...'" so we keep only the visual description
+    if not alt_text:
+        return ""
+    cleaned = re.sub(r",?\s*with\s+text\s+overlay\s+saying.*$", "", alt_text, flags=re.IGNORECASE).strip()
+    return cleaned or alt_text
+
+
+def build_prompt(title: str, alt_text: str, scene: str, variant_num: int) -> str:
     style = VARIANT_STYLES[(variant_num - 1) % len(VARIANT_STYLES)]
+    image_subject = clean_alt_text(alt_text) or title
     return (
         f"PORTRAIT 3:4 vertical pin. Tall not wide. "
-        f"{title}. {scene}. {style}. Realistic food photography. "
-        f'Print ONLY the title text "{title}" in a large bold font on the image. '
+        f"Image shows: {image_subject}. {scene}. {style}. High-quality realistic photography. "
+        f'Print ONLY the text "{title}" in a large bold font as an overlay on the image. '
         "No other text, no logo, no watermark. "
         "Image must be taller than it is wide."
     )
 
 
-def generate_pin(title: str, scene: str, variant_num: int, pin_path: str, label: str) -> str:
+def generate_pin(title: str, alt_text: str, scene: str, variant_num: int, pin_path: str, label: str) -> str:
     """Generate one pin with up to one orientation-retry. Returns SUCCESS|QUOTA_LIMIT|ERROR."""
-    prompt  = build_prompt(title, scene, variant_num)
+    prompt  = build_prompt(title, alt_text, scene, variant_num)
     tmp     = pin_path + ".tmp.jpg"
 
     status = call_api(prompt, tmp)
@@ -233,6 +242,8 @@ def main():
                 mapped = router_mapping[slug][variant_key]
                 variant_title = mapped.get("title", article_title) if isinstance(mapped, dict) else mapped
 
+            variant_alt_text = item.get(f"pin_{variant_key}_alt_text") or alt_text
+
             if os.path.exists(pin_path) and is_portrait(pin_path):
                 print(f"  -> Pin v{v}/{PINS_PER_ARTICLE}: OK (exists, portrait).")
                 pin_paths.append(f"public/images/pins/{pin_filename}")
@@ -246,7 +257,7 @@ def main():
                 label  = f"{slug}_v{v}"
                 print(f"  -> Pin v{v}/{PINS_PER_ARTICLE} [{scene[:45]}]…")
 
-                status = generate_pin(variant_title, scene, v, pin_path, label)
+                status = generate_pin(variant_title, variant_alt_text, scene, v, pin_path, label)
 
                 if status == "QUOTA_LIMIT":
                     quota_hit = True

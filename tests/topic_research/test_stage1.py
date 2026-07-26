@@ -17,6 +17,7 @@ try:
         run_stage1,
         _extract_seeds,
         _build_stage1_prompt,
+        _merge_interests,
         _STAGE1_SCHEMA,
     )
     from scripts.topic_research.db import (
@@ -72,10 +73,23 @@ def _gemini_mock(payload: dict) -> MagicMock:
 
 
 def _make_audience_csv(tmp_path: Path) -> str:
-    """Deprecated stage1 compatibility input; run_stage1 no longer reads it."""
-    path = tmp_path / "audience.csv"
-    path.write_text("interest,percent,affinity\nmeal prep ideas,12,2.1\n", encoding="utf-8")
-    return str(path)
+    """Write a minimal valid Pinterest Audience Insights CSV and return its path."""
+    csv_path = tmp_path / "audience.csv"
+    csv_path.write_text(
+        "Audience View,Date,Aggregation,Audience Size\n"
+        "All Pinners,2024-01,monthly,500000\n"
+        "\n"
+        "Interests\n"
+        "Category,Bulk Sheet Category,Percent of audience,Affinity,Interest,Bulk Sheet Interest,Percent of audience,Affinity\n"
+        "Food & Drinks,food_drinks,42.5,1.2,high fiber recipes,high_fiber_recipes,18.3,3.5\n"
+        "Food & Drinks,food_drinks,42.5,1.2,meal prep ideas,meal_prep_ideas,14.0,2.8\n"
+        "\n"
+        "Age,Percent of audience\n"
+        "25-34,38.0\n"
+        "35-44,29.5\n",
+        encoding="utf-8",
+    )
+    return str(csv_path)
 
 
 # ── 1. module imports ─────────────────────────────────────────────────────────
@@ -406,7 +420,7 @@ def test_run_stage1_result_structure():
             patch("scripts.topic_research.stage1.generate", return_value=SAMPLE_GEMINI_RESPONSE),
         ):
             result = run_stage1(
-                audience_csv_path=audience_csv,
+                audience_csv_paths=[audience_csv],
                 db_path=db_path,
                 gemini_api_key="fake-key",
             )
@@ -427,7 +441,7 @@ def test_run_stage1_content_keywords_have_required_fields(tmp_path):
         patch("scripts.topic_research.stage1.generate", return_value=SAMPLE_GEMINI_RESPONSE),
     ):
         result = run_stage1(
-            audience_csv_path=audience_csv,
+            audience_csv_paths=[audience_csv],
             db_path=db_path,
             gemini_api_key="fake-key",
         )
@@ -437,3 +451,132 @@ def test_run_stage1_content_keywords_have_required_fields(tmp_path):
         assert "keyword" in kw
         assert "score" in kw
         assert "rationale" in kw
+
+
+# ── 6. _merge_interests ───────────────────────────────────────────────────────
+
+def test_merge_interests_empty_lists():
+    assert _merge_interests([]) == []
+    assert _merge_interests([[]]) == []
+
+
+def test_merge_interests_single_list():
+    result = _merge_interests([SAMPLE_INTERESTS])
+    assert len(result) == len(SAMPLE_INTERESTS)
+
+
+def test_merge_interests_deduplicates_keeps_higher_affinity():
+    low = [{"interest": "high fiber recipes", "affinity": 1.0, "percent": 5.0,
+             "category": "Food", "category_percent": 40.0, "category_affinity": 1.0}]
+    high = [{"interest": "high fiber recipes", "affinity": 5.0, "percent": 20.0,
+              "category": "Food", "category_percent": 40.0, "category_affinity": 1.0}]
+    result = _merge_interests([low, high])
+    assert len(result) == 1
+    assert result[0]["affinity"] == 5.0
+
+
+def test_merge_interests_deduplicates_keeps_higher_affinity_regardless_of_order():
+    high = [{"interest": "meal prep", "affinity": 4.0, "percent": 15.0,
+              "category": "Food", "category_percent": 40.0, "category_affinity": 1.0}]
+    low = [{"interest": "meal prep", "affinity": 1.5, "percent": 8.0,
+             "category": "Food", "category_percent": 40.0, "category_affinity": 1.0}]
+    result = _merge_interests([high, low])
+    assert len(result) == 1
+    assert result[0]["affinity"] == 4.0
+
+
+def test_merge_interests_combines_unique_entries():
+    csv_a = [{"interest": "high fiber recipes", "affinity": 3.5, "percent": 18.3,
+               "category": "Food", "category_percent": 42.5, "category_affinity": 1.2}]
+    csv_b = [{"interest": "gut health tips", "affinity": 2.1, "percent": 12.0,
+               "category": "Health", "category_percent": 30.0, "category_affinity": 1.1}]
+    result = _merge_interests([csv_a, csv_b])
+    interests = {r["interest"] for r in result}
+    assert "high fiber recipes" in interests
+    assert "gut health tips" in interests
+    assert len(result) == 2
+
+
+def test_merge_interests_skips_blank_interest_names():
+    blank = [{"interest": "", "affinity": 9.0, "percent": 99.0,
+               "category": "X", "category_percent": 1.0, "category_affinity": 1.0}]
+    result = _merge_interests([blank, SAMPLE_INTERESTS])
+    assert all(r["interest"] for r in result)
+
+
+def test_run_stage1_multi_csv_merges_interests(tmp_path):
+    """When two CSVs are provided, their interests are merged and duplicates resolved."""
+    csv1 = tmp_path / "audience1.csv"
+    csv1.write_text(
+        "Audience View,Date,Aggregation,Audience Size\n"
+        "All Pinners,2024-01,monthly,300000\n"
+        "\n"
+        "Interests\n"
+        "Category,Bulk Sheet Category,Percent of audience,Affinity,Interest,Bulk Sheet Interest,Percent of audience,Affinity\n"
+        "Food & Drinks,food_drinks,40.0,1.1,high fiber recipes,high_fiber_recipes,18.0,2.0\n"
+        "Food & Drinks,food_drinks,40.0,1.1,meal prep ideas,meal_prep_ideas,14.0,2.8\n"
+        "\n"
+        "Age,Percent of audience\n"
+        "25-34,40.0\n",
+        encoding="utf-8",
+    )
+    csv2 = tmp_path / "audience2.csv"
+    csv2.write_text(
+        "Audience View,Date,Aggregation,Audience Size\n"
+        "All Pinners,2024-02,monthly,200000\n"
+        "\n"
+        "Interests\n"
+        "Category,Bulk Sheet Category,Percent of audience,Affinity,Interest,Bulk Sheet Interest,Percent of audience,Affinity\n"
+        "Food & Drinks,food_drinks,42.0,1.2,high fiber recipes,high_fiber_recipes,19.0,4.5\n"
+        "Health & Fitness,health,30.0,1.0,gut health tips,gut_health_tips,12.0,2.1\n"
+        "\n"
+        "Age,Percent of audience\n"
+        "25-34,38.0\n",
+        encoding="utf-8",
+    )
+    db_path = str(tmp_path / "test.sqlite")
+
+    with (
+        patch("scripts.topic_research.stage1.fetch_all_subreddits", return_value=[]),
+        patch("scripts.topic_research.stage1.expand_seeds", return_value=[]),
+        patch("scripts.topic_research.stage1.fetch_all_trend_types", return_value=[]),
+        patch("scripts.topic_research.stage1.generate", return_value=SAMPLE_GEMINI_RESPONSE),
+    ):
+        result = run_stage1(
+            audience_csv_paths=[str(csv1), str(csv2)],
+            db_path=db_path,
+            gemini_api_key="fake-key",
+        )
+
+    # Verify run succeeded
+    assert isinstance(result["run_id"], int)
+
+    # Verify DB has interests persisted — unique count: high fiber recipes (merged), meal prep, gut health = 3
+    conn = open_db(db_path)
+    count = conn.execute(
+        "SELECT COUNT(*) FROM audience_interests WHERE run_id = ?",
+        (result["run_id"],),
+    ).fetchone()[0]
+    conn.close()
+    assert count == 3
+
+
+def test_run_stage1_backward_compat_single_csv_string(tmp_path):
+    """Passing audience_csv_path= (old single-string arg) still works."""
+    audience_csv = _make_audience_csv(tmp_path)
+    db_path = str(tmp_path / "test.sqlite")
+
+    with (
+        patch("scripts.topic_research.stage1.fetch_all_subreddits", return_value=[]),
+        patch("scripts.topic_research.stage1.expand_seeds", return_value=[]),
+        patch("scripts.topic_research.stage1.fetch_all_trend_types", return_value=[]),
+        patch("scripts.topic_research.stage1.generate", return_value=SAMPLE_GEMINI_RESPONSE),
+    ):
+        result = run_stage1(
+            audience_csv_path=audience_csv,
+            db_path=db_path,
+            gemini_api_key="fake-key",
+        )
+
+    assert isinstance(result["run_id"], int)
+    assert len(result["content_keywords"]) == 20

@@ -40,6 +40,7 @@ from scripts.topic_research.db import (
     insert_stage1_output,
     read_stage1_output,
 )
+from scripts.topic_research.sources.audience_csv import parse_audience_csv
 from scripts.topic_research.sources.audience_insights import fetch_audience_insights
 from scripts.topic_research.sources.reddit import fetch_all_subreddits
 from scripts.topic_research.sources.google_autocomplete import expand_seeds
@@ -76,7 +77,7 @@ _STAGE1_SCHEMA: dict[str, Any] = {
         },
         "board_keywords": {
             "type": "array",
-            "description": "20 best Pinterest board name keywords, ranked #1 first",
+            "description": "5 single-word Pinterest board search terms, ranked #1 first",
             "items": {
                 "type": "object",
                 "properties": {
@@ -150,15 +151,40 @@ PINTEREST TRENDING KEYWORDS (US, female 25-44, food & drinks):
 
 TASK: Analyze all signals above and output exactly:
 - 20 content_keywords: the best long-tail keyword phrases for writing blog articles (aim for 3-6 words, high search intent, practical / recipe / nutrition angle, suitable for American women 25-44 who cook at home). Score 0-100.
-- 20 board_keywords: the best Pinterest board name keywords for creating/joining boards in this niche (2-4 words, broad enough to hold many pins but specific enough to attract the right audience). Score 0-100.
+- 5 board_keywords: 2-word niche health/food THEME phrases used to search Pinterest boards — examples: "high fiber", "gut health", "meal prep", "clean eating", "healthy snacks". NOT generic food names like "pizza" or "soup". Think about what serious healthy-eating board curators name their boards. These 5 phrases will be searched in Pin Inspector to find influential boards with thousands of followers. Score 0-100.
 
-Rank each list #1 (best) to #20. Avoid YMYL medical claims. Avoid duplicate meanings. Prefer specific over generic."""
+Rank each list #1 (best) to #5 for board_keywords, #1 to #20 for content_keywords. Avoid YMYL medical claims. Avoid duplicate meanings. Prefer specific over generic."""
 
 
 # ── main orchestrator ──────────────────────────────────────────────────────────
 
+def _merge_interests(lists: list[list[dict[str, Any]]]) -> list[dict[str, Any]]:
+    """Merge multiple interests lists into one.
+
+    When two CSVs contain the same interest name (case-insensitive), the entry
+    with the higher affinity score wins. Entries with no affinity fall back to
+    percent for comparison.
+    """
+    merged: dict[str, dict[str, Any]] = {}
+    for interests in lists:
+        for row in interests:
+            key = (row.get("interest") or "").strip().lower()
+            if not key:
+                continue
+            existing = merged.get(key)
+            if existing is None:
+                merged[key] = row
+            else:
+                existing_aff = existing.get("affinity") or existing.get("percent") or 0
+                new_aff = row.get("affinity") or row.get("percent") or 0
+                if new_aff > existing_aff:
+                    merged[key] = row
+    return list(merged.values())
+
+
 def run_stage1(
     audience_csv_path: str | None = None,
+    audience_csv_paths: list[str] | None = None,
     db_path: str = _DB_PATH,
     gemini_api_key: str | None = None,
     pinterest_access_token: str | None = None,
@@ -167,7 +193,10 @@ def run_stage1(
     """Run stage 1 end-to-end.
 
     Args:
-        audience_csv_path: Deprecated — ignored. Kept for backwards compatibility.
+        audience_csv_path: (deprecated, use audience_csv_paths) Single CSV path for backward compat.
+        audience_csv_paths: List of Pinterest Audience Insights CSV export paths. All CSVs are parsed
+            and their interests merged (highest affinity wins on duplicates). Falls back to Pinterest
+            API when omitted.
         db_path: SQLite DB path. Defaults to pipeline-data/topic-research.sqlite.
         gemini_api_key: Gemini API key. Falls back to GEMINI_API_KEY env var.
         pinterest_access_token: Pinterest API token. Falls back to PINTEREST_ACCESS_TOKEN env var.
@@ -176,6 +205,13 @@ def run_stage1(
     Returns:
         dict with keys: run_id, content_keywords (list), board_keywords (list)
     """
+    # Normalize single-path compat arg into list form
+    csv_paths: list[str] = []
+    if audience_csv_paths:
+        csv_paths = list(audience_csv_paths)
+    elif audience_csv_path:
+        csv_paths = [audience_csv_path]
+
     # Resolve API keys
     api_key = gemini_api_key or os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
@@ -193,15 +229,22 @@ def run_stage1(
     print(f"[stage1] run_id={run_id}", file=sys.stderr)
 
     try:
-        # 1. Fetch audience insights from Pinterest API
-        print("[stage1] Fetching Pinterest Audience Insights...", file=sys.stderr)
-        if pinterest_token:
+        # 1. Load audience data — CSV(s) take priority, API is fallback
+        if csv_paths:
+            print(f"[stage1] Parsing {len(csv_paths)} audience CSV(s): {csv_paths}", file=sys.stderr)
+            interests_lists = [parse_audience_csv(p).get("interests", []) for p in csv_paths]
+            merged_interests = _merge_interests(interests_lists)
+            # Use metadata from first CSV for non-interests fields
+            first_audience = parse_audience_csv(csv_paths[0])
+            audience = {**first_audience, "interests": merged_interests}
+        elif pinterest_token:
+            print("[stage1] Fetching Pinterest Audience Insights from API...", file=sys.stderr)
             audience = fetch_audience_insights(pinterest_token)
         else:
             audience = {}
-            print("[stage1] No Pinterest token — skipping audience insights", file=sys.stderr)
+            print("[stage1] No audience source — proceeding with Reddit + Trends only", file=sys.stderr)
         interests = audience.get("interests", [])
-        print(f"[stage1] {len(interests)} interests fetched", file=sys.stderr)
+        print(f"[stage1] {len(interests)} interests loaded", file=sys.stderr)
 
         # Persist audience interests
         insert_audience_interests(conn, run_id, interests)
