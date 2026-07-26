@@ -18,13 +18,6 @@
     "budget nutrition",
     "open data"
   ],
-  "licenses": [
-    {
-      "name": "CC-BY-4.0",
-      "path": "https://creativecommons.org/licenses/by/4.0/",
-      "title": "Creative Commons Attribution 4.0 International"
-    }
-  ],
   "sources": [
     {
       "title": "USDA FoodData Central",
@@ -61,13 +54,6 @@
       "encoding": "utf-8",
       "bytes": 2146,
       "hash": "sha256:d90b7e5ac2c42e9963bc6f062adcf117e3f8233113c0bd0e0c4bf648e490f95b",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Animal Protein per Dollar, Ranked (2026)",
@@ -124,13 +110,6 @@
       "encoding": "utf-8",
       "bytes": 1138,
       "hash": "sha256:52a55126d7c9badc04083c79819d0f1eb95bd8577ffe22b09fd5b0ec99104b72",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Beans Ranked by Fiber and Protein per Dollar (2026)",
@@ -197,13 +176,6 @@
       "encoding": "utf-8",
       "bytes": 878,
       "hash": "sha256:bf3e387660abf3ebfde9d4fad6e8fae76e401365a7736ab1ffeecb1f33529056",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Breakfast Staples by Nutrition per Dollar (2026)",
@@ -270,13 +242,6 @@
       "encoding": "utf-8",
       "bytes": 1005,
       "hash": "sha256:f8b1d65016336481acf8c4ef33f4800c0dc9517f425834865d37d10d09cfc38a",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Canned vs Dry Beans, Cost Compared (2026)",
@@ -333,13 +298,6 @@
       "encoding": "utf-8",
       "bytes": 2967,
       "hash": "sha256:075bfb14833134d33e7df118c47fc21d93d9ee2144080b2429a8d0a018a2fa9d",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Cheapest Complete-Protein Pairings (2026)",
@@ -396,13 +354,6 @@
       "encoding": "utf-8",
       "bytes": 568,
       "hash": "sha256:414b08307c756d055abe1fe37c9f1ec15474cebf5fb1f6427bf26b8742aafe45",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Dairy and Egg Protein per Dollar, Ranked (2026)",
@@ -459,13 +410,6 @@
       "encoding": "utf-8",
       "bytes": 4770,
       "hash": "sha256:b1508d376085ff9aea9ee5ef4885419d1b3cf9c9364ebeb795201e01b1af0123",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Eggs vs Every Other Protein Source (2026)",
@@ -522,13 +466,6 @@
       "encoding": "utf-8",
       "bytes": 5654,
       "hash": "sha256:bdd53fa07268b08fa7cac3a31bd0066a08bc2d0833a54c52f849b073f6abf890",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Fast Food Protein per Dollar (2026)",
@@ -590,13 +527,6 @@
       "encoding": "utf-8",
       "bytes": 3055,
       "hash": "sha256:b3e9348ea31c964f6842158db323da21dc8362eded9ab61d94022231244b6903",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Cost of 30 Grams of Fiber per Day, Five Menus (2026)",
@@ -658,13 +588,6 @@
       "encoding": "utf-8",
       "bytes": 4523,
       "hash": "sha256:16903e580334ac794ceea9be38fdab63c232529bc7d2ea7094f83b9114cdbba9",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Fiber per Dollar: 53 Foods Ranked (2026)",
@@ -746,13 +669,6 @@
       "encoding": "utf-8",
       "bytes": 761,
       "hash": "sha256:380a61937c4f304ec1ae5473c817d198428bc8b76b57986a7c8937af0fca2fec",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Grains Ranked by Fiber per Dollar (2026)",
@@ -809,13 +725,6 @@
       "encoding": "utf-8",
       "bytes": 648,
       "hash": "sha256:08e4c173d54e4bf553e57a0cb4be08c55bff75893a9dc62cecefd0c030aa997d",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: High-Fiber Snacks Ranked by Cost (2026)",
@@ -872,13 +781,6 @@
       "encoding": "utf-8",
       "bytes": 1234,
       "hash": "sha256:5187f6438c6c99868cc4d64cf23311153a310127d5546ea0decb7a7166d9362c",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Meat per Dollar: 11 Cuts Ranked by Protein Value (2026)",
@@ -935,13 +837,6 @@
       "encoding": "utf-8",
       "bytes": 1486,
       "hash": "sha256:22a1b87c0e8b63a0f2299c68f73c02e1b562f2d4559cb2c3c634c01dd6dac077",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Cheapest Protein That Needs No Cooking (2026)",
@@ -998,13 +893,6 @@
       "encoding": "utf-8",
       "bytes": 1041,
       "hash": "sha256:6c639b301662bf59cbea8cdd1c5ee0151c63af7d231b20de6c462d2f59c7de09",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: What One Dollar of Fiber Buys (2026)",
@@ -1061,13 +949,6 @@
       "encoding": "utf-8",
       "bytes": 1490,
       "hash": "sha256:d9978c30be59f4ec5884d7d7bb5cf07c69207ee10d9df67333cf200964458013",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: What One Dollar of Protein Buys (2026)",
@@ -1124,13 +1005,6 @@
       "encoding": "utf-8",
       "bytes": 1765,
       "hash": "sha256:da1a22f328d6c142759aab04c13397b5d842a79dbecb64a8cfb288b8350a5ad4",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Plant Protein per Dollar: 18 Sources Ranked (2026)",
@@ -1187,13 +1061,6 @@
       "encoding": "utf-8",
       "bytes": 1377,
       "hash": "sha256:4cd75b0f26d35ab41d38f2c660233619564842be2248aa4eaa3afa4a8f3e3a4e",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Fruits and Vegetables Ranked by Fiber per Dollar (2026)",
@@ -1250,13 +1117,6 @@
       "encoding": "utf-8",
       "bytes": 2448,
       "hash": "sha256:aacd9c660d05fb8ae3456b8c407b2cbb9d921db20b552e6ebe12bfb10b3c1c51",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Cost of 50 Grams of Protein per Day, Five Menus (2026)",
@@ -1318,13 +1178,6 @@
       "encoding": "utf-8",
       "bytes": 5973,
       "hash": "sha256:99de92dc084c37ca100c2ffd1cde5eccc24e9ea83086277ce4085cde518af4f9",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Protein per Dollar: 49 Sources Ranked (2026)",
@@ -1406,13 +1259,6 @@
       "encoding": "utf-8",
       "bytes": 3204,
       "hash": "sha256:5c003c5f0e95d81f0c7623d972bd53851a33220c6023f81c7744855a3eb20c2d",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: Protein per Dollar Adjusted for Quality, DIAAS (2026)",
@@ -1479,13 +1325,6 @@
       "encoding": "utf-8",
       "bytes": 2575,
       "hash": "sha256:c486fb2f226a2e4e554485b42fb8245bc6fe25e408000fa99aa359c96b6a4c84",
-      "licenses": [
-        {
-          "name": "CC-BY-4.0",
-          "path": "https://creativecommons.org/licenses/by/4.0/",
-          "title": "Creative Commons Attribution 4.0 International"
-        }
-      ],
       "sources": [
         {
           "title": "Daily Life Hacks study: The Shelf-Stable Pantry, Ranked by Protein per Dollar (2026)",

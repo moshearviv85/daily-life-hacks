@@ -10,6 +10,7 @@ import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptImage from "../components/OptImage.astro";
 import { formatReleaseDate, isReleased } from "../content/release";
+import { DATASETS, findChartInBody } from "../content/datasets";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -191,148 +192,7 @@ const jsonLd = isRecipe
       publisher: publisherSchema,
     };
 
-/**
- * Data studies that publish a downloadable CSV get schema.org/Dataset
- * (Google Dataset Search + AI-citation surface). Keyed by article id;
- * entries for not-yet-published slugs are harmless.
- */
-const DATASETS: Record<
-  string,
-  { name: string; csv: string; variables: string[]; temporal: string }
-> = {
-  "animal-protein-per-dollar-ranked": {
-    name: "Every Animal Protein in Our Study, Ranked by Cost (21 foods, 2026)",
-    csv: "/data/animal-protein-per-dollar-ranked-2026.csv",
-    variables: ["protein grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "beans-double-win-fiber-protein": {
-    name: "Beans Win Twice: Fiber and Protein per Dollar (10 foods, 2026)",
-    csv: "/data/beans-double-win-fiber-protein-2026.csv",
-    variables: ["protein grams per dollar", "fiber grams per dollar", "combined grams per dollar"],
-    temporal: "2026",
-  },
-  "breakfast-staples-per-dollar": {
-    name: "Breakfast Staples Ranked by Nutrition per Dollar (9 foods, 2026)",
-    csv: "/data/breakfast-staples-per-dollar-2026.csv",
-    variables: ["protein grams per dollar", "fiber grams per dollar", "combined grams per dollar"],
-    temporal: "2026",
-  },
-  "canned-vs-dry-beans-cost": {
-    name: "Canned vs Dry Beans: What Convenience Actually Costs (10 foods, 2026)",
-    csv: "/data/canned-vs-dry-beans-cost-2026.csv",
-    variables: ["protein grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "cheapest-complete-protein-pairs": {
-    name: "Rice and Beans Math: The Cheapest Complete-Protein Combos (20 foods, 2026)",
-    csv: "/data/cheapest-complete-protein-pairs-2026.csv",
-    variables: ["combined protein grams per dollar (50/50 legume + grain split)"],
-    temporal: "2026",
-  },
-  "dairy-protein-per-dollar-ranked": {
-    name: "Dairy Protein per Dollar: Milk Beats the Hype (6 foods, 2026)",
-    csv: "/data/dairy-protein-per-dollar-ranked-2026.csv",
-    variables: ["protein grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "eggs-vs-everything-protein-value": {
-    name: "Eggs vs Everything: Where the Default Protein Really Ranks (49 foods, 2026)",
-    csv: "/data/eggs-vs-everything-protein-value-2026.csv",
-    variables: ["protein grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "grains-fiber-per-dollar-ranked": {
-    name: "Grains Ranked by Fiber per Dollar (11 foods, 2026)",
-    csv: "/data/grains-fiber-per-dollar-ranked-2026.csv",
-    variables: ["fiber grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "high-fiber-snacks-per-dollar": {
-    name: "High-Fiber Snacks Ranked by Cost (10 foods, 2026)",
-    csv: "/data/high-fiber-snacks-per-dollar-2026.csv",
-    variables: ["fiber grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "meat-per-dollar-protein-ranked": {
-    name: "Meat per Dollar: 11 Cuts Ranked by Protein Value (11 foods, 2026)",
-    csv: "/data/meat-per-dollar-protein-ranked-2026.csv",
-    variables: ["protein grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "no-cook-protein-per-dollar": {
-    name: "The Cheapest Protein That Needs Zero Cooking (15 foods, 2026)",
-    csv: "/data/no-cook-protein-per-dollar-2026.csv",
-    variables: ["protein grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "one-dollar-fiber-what-it-buys": {
-    name: "What One Dollar of Fiber Buys, Food by Food (15 foods, 2026)",
-    csv: "/data/one-dollar-fiber-what-it-buys-2026.csv",
-    variables: ["fiber grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "one-dollar-protein-what-it-buys": {
-    name: "What One Dollar of Protein Buys, Food by Food (15 foods, 2026)",
-    csv: "/data/one-dollar-protein-what-it-buys-2026.csv",
-    variables: ["protein grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "plant-protein-per-dollar-ranked": {
-    name: "Plant Protein per Dollar: 18 Sources Ranked (18 foods, 2026)",
-    csv: "/data/plant-protein-per-dollar-ranked-2026.csv",
-    variables: ["protein grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "produce-fiber-per-dollar-ranked": {
-    name: "Fruits and Vegetables Ranked by Fiber per Dollar (22 foods, 2026)",
-    csv: "/data/produce-fiber-per-dollar-ranked-2026.csv",
-    variables: ["fiber grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "shelf-stable-pantry-per-dollar": {
-    name: "The Shelf-Stable Pantry, Ranked by Protein per Dollar (27 foods, 2026)",
-    csv: "/data/shelf-stable-pantry-per-dollar-2026.csv",
-    variables: ["protein grams per dollar", "package price (USD)"],
-    temporal: "2026",
-  },
-  "fiber-per-dollar-cheapest-high-fiber-foods": {
-    name: "Fiber per Dollar: 53 High-Fiber Foods Ranked by Cost Efficiency (2026)",
-    csv: "/data/fiber-per-dollar-2026.csv",
-    variables: ["dietary fiber (g per 100g)", "price (USD)", "fiber grams per dollar"],
-    temporal: "2026",
-  },
-  "protein-per-dollar-cheapest-protein-sources": {
-    name: "Protein per Dollar: 49 Protein Sources Ranked by Cost Efficiency (2026)",
-    csv: "/data/protein-per-dollar-2026.csv",
-    variables: ["protein (g per 100g)", "price (USD)", "protein grams per dollar"],
-    temporal: "2026",
-  },
-  "what-30-grams-of-fiber-costs-per-day": {
-    name: "Daily Cost of 30 Grams of Fiber: 5 Real Menu Plans Priced (2026)",
-    csv: "/data/fiber-day-cost-2026.csv",
-    variables: ["dietary fiber (g per day)", "daily cost (USD)"],
-    temporal: "2026",
-  },
-  "what-50-grams-of-protein-costs-per-day": {
-    name: "Daily Cost of 50 Grams of Protein: 5 Real Menu Plans Priced (2026)",
-    csv: "/data/protein-day-cost-2026.csv",
-    variables: ["protein (g per day)", "daily cost (USD)"],
-    temporal: "2026",
-  },
-  "protein-per-dollar-adjusted-for-quality": {
-    name: "Protein per Dollar Adjusted for Quality (DIAAS): 25 Foods (2026)",
-    csv: "/data/protein-quality-per-dollar-2026.csv",
-    variables: ["protein grams per dollar", "DIAAS score", "quality-adjusted grams per dollar"],
-    temporal: "2026",
-  },
-  "fast-food-protein-per-dollar-ranked": {
-    name: "Fast Food Protein per Dollar: 30 Menu Items Ranked (2026)",
-    csv: "/data/fastfood-protein-per-dollar-2026.csv",
-    variables: ["protein (g per item)", "menu price (USD)", "protein grams per dollar"],
-    temporal: "2026",
-  },
-};
+
 
 const webPageSchema = {
   "@context": "https://schema.org",
@@ -357,11 +217,14 @@ if (dataset) {
     "@type": "Dataset",
     "@id": `${articleUrl}#dataset`,
     name: dataset.name,
-    description: article.data.excerpt,
+    /** The coined index name (method #60), so mentions stay attributable. */
+    ...(dataset.alternateName ? { alternateName: dataset.alternateName } : {}),
+    description: dataset.description,
     url: articleUrl,
     isAccessibleForFree: true,
     creator: publisherSchema,
     publisher: publisherSchema,
+    includedInDataCatalog: { "@id": `${siteUrl}/data/#catalog` },
     license: `${siteUrl}/methodology/#data-license`,
     datePublished: publishedDate,
     dateModified: modifiedDate,
@@ -377,6 +240,93 @@ if (dataset) {
     },
   });
 }
+
+/**
+ * Embeddable chart (growth method #18). Data studies with a chart get a
+ * standalone /embed/{slug}/ page plus a copy-paste snippet here.
+ *
+ * The snippet deliberately keeps the credit `<a>` OUTSIDE the iframe: iframe
+ * `src` passes no link equity, the visible anchor does. Do not "simplify"
+ * the snippet by dropping the paragraph.
+ */
+const chart = dataset ? findChartInBody(article.body ?? "") : null;
+const embedUrl = `${siteUrl}/embed/${article.id}/`;
+const embedSnippet = chart
+  ? `<iframe src="${embedUrl}" width="100%" height="520" style="border:0" loading="lazy" title="${dataset!.name.replace(/"/g, "&quot;")}"></iframe>\n<p>Chart: <a href="${articleUrl}">Daily Life Hacks</a> — free to reuse with credit (free to reuse with credit)</p>`
+  : null;
+
+/**
+ * "Cite this dataset" block (growth method #3).
+ *
+ * People already want to cite the numbers; without a ready string they invent a
+ * mangled one or skip the link. This hands them the exact wording, with the
+ * absolute URL, so the citation lands correctly and points at the study page
+ * (where the caveats live) rather than at a naked CSV.
+ */
+const citationYear = releaseDate.getFullYear();
+const citationText = dataset
+  ? `Daily Life Hacks. "${dataset.name}." ${citationYear}. ${articleUrl}. Please credit Daily Life Hacks with a link.`
+  : null;
+
+const citationCopyScript = `(function(){
+  var btn = document.getElementById("citation-copy-btn");
+  var box = document.getElementById("citation-text");
+  if (!btn || !box) return;
+  btn.addEventListener("click", function () {
+    var label = btn.textContent;
+    var done = function () {
+      btn.textContent = "Copied";
+      setTimeout(function () { btn.textContent = label; }, 2000);
+    };
+    var fallback = function () {
+      box.focus();
+      box.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(box.value).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+})();`;
+
+const embedCopyScript = `(function(){
+  var btn = document.getElementById("embed-copy-btn");
+  var box = document.getElementById("embed-snippet");
+  var block = document.getElementById("embed-block");
+  if (!btn || !box || !block) return;
+
+  // The chart is rendered from markdown, so the block cannot be authored next
+  // to it server-side. Move it there on load; without JS it stays at the end
+  // of the article, which is still a valid place for it.
+  var chart = document.querySelector('.article-content img[src*="-chart.jpg"]');
+  if (chart) {
+    var anchor = chart.closest("figure, p") || chart;
+    if (anchor.parentNode) {
+      anchor.parentNode.insertBefore(block, anchor.nextSibling);
+      block.classList.add("mb-8");
+    }
+  }
+
+  btn.addEventListener("click", function () {
+    var label = btn.textContent;
+    var done = function () {
+      btn.textContent = "Copied";
+      setTimeout(function () { btn.textContent = label; }, 2000);
+    };
+    var fallback = function () {
+      box.focus();
+      box.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(box.value).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+})();`;
 
 if (article.data.faq && article.data.faq.length > 0) {
   allSchemas.push({
@@ -675,6 +625,122 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
     <div class="article-content order-[20]">
       <Content />
     </div>
+
+    <!-- Cite this dataset (method #3: turn intent-to-cite into a correct, linked citation) -->
+    {
+      dataset && citationText && (
+        <aside
+          class="order-[21] mt-8 rounded-xl border p-4"
+          style="border-color: var(--border-color); background-color: var(--card-bg);"
+          aria-labelledby="citation-heading"
+        >
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h2
+              id="citation-heading"
+              class="text-sm font-bold"
+              style="color: var(--heading-color);"
+            >
+              Cite this dataset
+            </h2>
+            <span class="text-xs" style="color: var(--muted-color);">
+              {dataset.rows} rows &middot; free to reuse with credit
+            </span>
+          </div>
+          <p class="mt-1 text-xs" style="color: var(--muted-color);">
+            Free to reuse, including commercially. Just keep the credit and the link.
+          </p>
+          <p
+            class="mt-3 rounded-lg border p-3 font-mono text-xs leading-relaxed"
+            style="border-color: var(--border-color); background-color: var(--input-bg); color: var(--text-color);"
+          >
+            {citationText}
+          </p>
+          <textarea
+            readonly
+            rows="2"
+            id="citation-text"
+            class="sr-only"
+            tabindex="-1"
+            aria-hidden="true"
+          >{citationText}</textarea>
+          <div class="mt-3 flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              id="citation-copy-btn"
+              class="px-3 py-1.5 rounded-lg text-xs font-medium border"
+              style="border-color: #F29B30; color: #F29B30; background-color: transparent;"
+            >
+              Copy citation
+            </button>
+            <a href={dataset.csv} download class="text-xs underline" style="color: var(--muted-color);">
+              Download the CSV
+            </a>
+            <a href="/data/" class="text-xs underline" style="color: var(--muted-color);">
+              All datasets
+            </a>
+            <a href="/methodology/" class="text-xs underline" style="color: var(--muted-color);">
+              License terms
+            </a>
+          </div>
+        </aside>
+      )
+    }
+
+    {citationText && <script is:inline set:html={citationCopyScript} />}
+
+    <!-- Embed this chart (method #18: passive attribution links) -->
+    {
+      embedSnippet && (
+        <details id="embed-block" class="order-[22] mt-8 rounded-xl border border-[var(--border-color)] bg-[var(--card-bg)] overflow-hidden">
+          <summary class="flex justify-between items-center gap-3 cursor-pointer list-none p-4 text-sm font-medium text-[var(--heading-color)] hover:bg-[var(--input-bg)] transition-colors">
+            <span class="flex items-center gap-2">
+              <span class="text-[#F29B30]">●</span> Embed this chart on your site
+            </span>
+            <span class="text-xs font-normal" style="color: var(--muted-color);">
+              free with credit
+            </span>
+          </summary>
+          <div class="p-4 pt-0">
+            <p class="text-sm mb-3" style="color: var(--muted-color);">
+              Copy the code below. It includes the chart and a credit line back to
+              this study — please keep both.
+            </p>
+            <textarea
+              readonly
+              rows="4"
+              id="embed-snippet"
+              class="w-full rounded-lg border border-[var(--border-color)] p-3 font-mono text-xs leading-relaxed"
+              style="background-color: var(--input-bg); color: var(--text-color); resize: vertical;"
+              onclick="this.select()"
+              aria-label="Embed code for this chart"
+            >{embedSnippet}</textarea>
+            <div class="mt-3 flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                id="embed-copy-btn"
+                class="px-4 py-2 rounded-lg text-sm font-medium bg-[#F29B30] text-white hover:opacity-90 transition-opacity"
+              >
+                Copy embed code
+              </button>
+              <a
+                href={`/embed/${article.id}/`}
+                class="text-sm underline"
+                style="color: var(--muted-color);"
+                target="_blank"
+                rel="noopener"
+              >
+                Preview the embed
+              </a>
+              <span class="text-xs" style="color: var(--muted-color);">
+                Licensed free to reuse with credit
+              </span>
+            </div>
+          </div>
+        </details>
+      )
+    }
+
+    {embedSnippet && <script is:inline set:html={embedCopyScript} />}
 
     <!-- Tags -->
     {

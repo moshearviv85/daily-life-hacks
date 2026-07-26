@@ -1,0 +1,275 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+import {
+  STUDY_DATASETS,
+  TOTAL_DATA_ROWS,
+  DATA_LICENSE_URL,
+} from "../../content/datasets";
+
+/**
+ * The `/data/` hub (growth methods #62 + #9).
+ *
+ * Google Dataset Search is crawl-only. There is no submission form, so a page
+ * carrying valid schema.org/DataCatalog + Dataset markup is the entire entry
+ * ticket to that surface. Keep the markup valid; every Dataset `description`
+ * must stay 50+ characters or Google drops the node.
+ *
+ * Route note: `public/data/*.csv` still serves as static files. Astro builds this
+ * page to `dist/data/index.html`, which sits beside the CSVs without shadowing
+ * them, and `functions/[[path]].js` skips routing for any path ending in `.csv`.
+ */
+
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}/data/`;
+const catalogId = `${pageUrl}#catalog`;
+const organization = {
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  name: "Daily Life Hacks",
+  url: `${siteUrl}/`,
+};
+
+const articles = await getCollection("articles");
+const titleBySlug = new Map(articles.map((entry) => [entry.id, entry.data.title]));
+
+const datasets = STUDY_DATASETS.map((dataset) => ({
+  ...dataset,
+  articleUrl: `/${dataset.id}/`,
+  articleTitle: titleBySlug.get(dataset.id) ?? dataset.name,
+  fileName: dataset.csv.split("/").pop() ?? dataset.csv,
+}));
+
+const title = `Free Grocery Cost Datasets: ${datasets.length} CSVs, ${TOTAL_DATA_ROWS} Rows`;
+const description = `Download all ${datasets.length} of our original grocery cost datasets as raw CSV. ${TOTAL_DATA_ROWS} priced food rows, USDA nutrition data, free to reuse with credit.`;
+
+const catalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "DataCatalog",
+  "@id": catalogId,
+  name: "Daily Life Hacks Grocery Cost Data Catalog",
+  description: `Original, dated datasets pricing the nutrition value of American groceries. ${datasets.length} public CSV files covering ${TOTAL_DATA_ROWS} priced food rows, including the Fiber per Dollar Index and the Protein per Dollar Index, built from USDA FoodData Central nutrition data and 2026 US national retail prices.`,
+  url: pageUrl,
+  inLanguage: "en-US",
+  isAccessibleForFree: true,
+  license: DATA_LICENSE_URL,
+  publisher: organization,
+  creator: organization,
+  keywords:
+    "fiber per dollar, protein per dollar, grocery prices, food cost data, USDA FoodData Central, nutrition economics, open data",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  dataset: datasets.map((dataset) => ({
+    "@type": "Dataset",
+    "@id": `${siteUrl}${dataset.articleUrl}#dataset`,
+    name: dataset.name,
+    ...(dataset.alternateName ? { alternateName: dataset.alternateName } : {}),
+    description: dataset.description,
+    url: `${siteUrl}${dataset.articleUrl}`,
+    isAccessibleForFree: true,
+    license: DATA_LICENSE_URL,
+    creator: organization,
+    publisher: organization,
+    includedInDataCatalog: { "@id": catalogId },
+    variableMeasured: dataset.variables,
+    temporalCoverage: dataset.temporal,
+    spatialCoverage: "United States",
+    measurementTechnique: `${siteUrl}/methodology/`,
+    distribution: {
+      "@type": "DataDownload",
+      name: dataset.fileName,
+      encodingFormat: "text/csv",
+      contentUrl: `${siteUrl}${dataset.csv}`,
+    },
+  })),
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: "Public Grocery Cost Datasets",
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: organization,
+  mainEntity: { "@id": catalogId },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Data", item: pageUrl },
+  ],
+};
+
+const linkClass = "underline";
+const linkStyle = "color: #F29B30;";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalURL={pageUrl}
+  jsonLd={[webPageSchema, catalogSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main class="max-w-4xl mx-auto px-4 py-12 md:py-16">
+    <nav class="text-sm mb-6" style="color: var(--muted-color);" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#F29B30] transition-colors">Home</a>
+      <span class="mx-1">/</span>
+      <span style="color: var(--text-color);">Data</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      All {datasets.length} Datasets, Free to Download
+    </h1>
+    <p class="text-lg mb-8" style="color: var(--muted-color);">
+      Every ranking on this site runs on a spreadsheet. Here are all of them, {TOTAL_DATA_ROWS} rows
+      of priced food data, in raw CSV. No signup, no email, no gate.
+    </p>
+
+    <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
+      <p>
+        Most food sites will tell you beans are cheap protein and leave it there. We got annoyed
+        enough to actually price it. Every food in these files has a USDA nutrition record, a real
+        package price, and an edible-fraction adjustment so a pound of oranges doesn't get credit
+        for the peel. Then we divided. That's the whole trick.
+      </p>
+      <p>
+        Nutrition numbers come from <a href="https://fdc.nal.usda.gov/" class={linkClass} style={linkStyle} rel="noopener" target="_blank">USDA FoodData Central</a>.
+        Prices come from Bureau of Labor Statistics Average Price data where it exists, cross-checked
+        against national retail listings for the items BLS doesn't track. Everything is priced
+        as-purchased, at 2026 US national prices, and the full rulebook is on the
+        <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+      </p>
+      <p>
+        You can use any of it. Charts, tables, the raw numbers, all of it, including commercially.
+        The one thing we ask is credit with a link back to the study, which is what
+        <a href="/methodology/" class={linkClass} style={linkStyle}>our methodology</a> asks.
+        Journalists, students, dietitians, people settling an argument in a group chat: go ahead.
+      </p>
+
+      <h2 id="named-indexes" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        Two of these have names
+      </h2>
+      <p>
+        The two flagship rankings are named metrics, so you can point at them without describing them
+        every time. <strong>The Fiber per Dollar Index</strong> ranks 53 high-fiber foods by dietary
+        fiber grams per dollar. <strong>The Protein per Dollar Index</strong> does the same for 49
+        protein sources. Both get a full price re-audit every quarter, so when you cite one, cite the
+        year with it.
+      </p>
+
+      <h2 id="datasets" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        The {datasets.length} datasets
+      </h2>
+      <p class="text-base">
+        Each file is a plain CSV with a header row. The study column links to the write-up that
+        explains what the numbers mean and where each one came from.
+      </p>
+    </div>
+
+    <!-- `relative` matters: it makes this the containing block for any absolutely
+         positioned descendant (sr-only text), so overflow-x-auto actually clips
+         them instead of letting the whole page scroll sideways. -->
+    <div class="mt-6 relative overflow-x-auto rounded-2xl border" style="border-color: var(--border-color);">
+      <table class="w-full text-left text-sm" style="min-width: 44rem;">
+        <caption class="sr-only">
+          All {datasets.length} public Daily Life Hacks datasets with row counts, source study and
+          CSV download links
+        </caption>
+        <thead>
+          <tr style="background-color: var(--input-bg);">
+            <th scope="col" class="px-4 py-3 font-bold" style="color: var(--heading-color);">Dataset</th>
+            <th scope="col" class="px-4 py-3 font-bold text-right whitespace-nowrap" style="color: var(--heading-color);">Rows</th>
+            <th scope="col" class="px-4 py-3 font-bold whitespace-nowrap" style="color: var(--heading-color);">Study</th>
+            <th scope="col" class="px-4 py-3 font-bold whitespace-nowrap" style="color: var(--heading-color);">Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            datasets.map((dataset) => (
+              <tr class="border-t align-top" style="border-color: var(--border-color);">
+                <td class="px-4 py-4">
+                  <span class="block font-bold" style="color: var(--heading-color);">
+                    {dataset.name}
+                  </span>
+                  <span class="block mt-1 leading-relaxed" style="color: var(--muted-color);">
+                    {dataset.description}
+                  </span>
+                </td>
+                <td class="px-4 py-4 text-right font-bold tabular-nums whitespace-nowrap" style="color: var(--text-color);">
+                  {dataset.rows}
+                </td>
+                <td class="px-4 py-4">
+                  <a href={dataset.articleUrl} class={linkClass} style={linkStyle}>
+                    {dataset.articleTitle}
+                  </a>
+                </td>
+                <td class="px-4 py-4 whitespace-nowrap">
+                  <a
+                    class="inline-block rounded-full px-3 py-2 text-xs font-bold"
+                    style="color: #F29B30; border: 1px solid #F29B30;"
+                    href={dataset.csv}
+                    download
+                    title={dataset.fileName}
+                    aria-label={`Download ${dataset.fileName}`}
+                  >
+                    CSV
+                  </a>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="article-content space-y-6 text-lg mt-10" style="color: var(--text-color);">
+      <h2 id="how-to-cite" class="text-2xl font-bold mb-4" style="color: var(--heading-color);">
+        How to cite this data
+      </h2>
+      <p class="text-base">
+        Use the dataset name, the year, and a link to the study page it came from. Like this:
+      </p>
+      <p
+        class="text-sm rounded-xl border p-4 font-mono leading-relaxed"
+        style="border-color: var(--border-color); background-color: var(--input-bg); color: var(--text-color);"
+      >
+        Daily Life Hacks. "The Fiber per Dollar Index: 53 High-Fiber Foods Ranked by Cost Efficiency
+        (2026)." 2026. https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/.
+        Please credit Daily Life Hacks with a link.
+      </p>
+      <p class="text-base">
+        Every study page has a ready-made citation block with the exact wording for that dataset, so
+        you don't have to assemble it yourself. Link to the study rather than the CSV: the study is
+        where the caveats live, and a number without its caveats is how bad statistics get born.
+        Full terms are on the <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
+      </p>
+
+      <h2 id="machine-readable" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        For machines
+      </h2>
+      <p class="text-base">
+        If you're pulling this programmatically, start with
+        <a href="/data/datapackage.json" class={linkClass} style={linkStyle}>datapackage.json</a>,
+        a Frictionless Data descriptor listing every file, its fields, and its license in one place.
+        The <a href="/data/dataset-provenance.json" class={linkClass} style={linkStyle}>provenance file</a>
+        records when prices were observed and what the known limits are.
+      </p>
+      <p class="text-base">
+        Prices get a full re-audit every quarter, so the files change. If you cached a copy, re-pull
+        it before you publish anything from it. Spotted a number that looks wrong?
+        <a href="/contact/" class={linkClass} style={linkStyle}>Tell us</a>. Getting corrected beats
+        being wrong.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,179 @@
+---
+/**
+ * Standalone embeddable chart pages (growth method #18).
+ *
+ * Third parties iframe this URL; the copy-paste snippet on the study page
+ * carries the *visible* credit <a> that actually passes link equity. This
+ * page is intentionally chrome-free (no header/nav/footer), noindex, and
+ * frame-friendly — see public/_headers and functions/[[path]].js for the
+ * frame-ancestors exception scoped to /embed/*.
+ */
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import { DATASETS, findChartInBody } from "../../content/datasets";
+import type { ArticleChart } from "../../content/datasets";
+
+export async function getStaticPaths() {
+  const articles = await getCollection("articles");
+  return articles
+    .map((article) => ({
+      article,
+      dataset: DATASETS[article.id],
+      chart: findChartInBody(article.body ?? ""),
+    }))
+    .filter((entry) => Boolean(entry.dataset && entry.chart))
+    .map(({ article, chart }) => ({
+      params: { slug: article.id },
+      props: { article, chart: chart as ArticleChart },
+    }));
+}
+
+interface Props {
+  article: CollectionEntry<"articles">;
+  chart: ArticleChart;
+}
+
+const { article, chart } = Astro.props;
+const dataset = DATASETS[article.id];
+
+const siteUrl = "https://www.daily-life-hacks.com";
+const articleUrl = `${siteUrl}/${article.id}/`;
+const chartTitle = dataset.name;
+const sourceNote =
+  "Source: Daily Life Hacks, USDA FoodData Central + US store prices, July 2026";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <title>{chartTitle} — Daily Life Hacks</title>
+    <link rel="canonical" href={articleUrl} />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .embed {
+        background: #ffffff;
+        color: #1f2328;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 14px 16px 12px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .embed-title {
+        margin: 0 0 10px;
+        font-size: 15px;
+        line-height: 1.35;
+        font-weight: 700;
+        color: #1f2328;
+      }
+      .embed-figure {
+        margin: 0;
+      }
+      /**
+       * The snippet ships a fixed iframe height (520px). Charts range from 16:9
+       * to 5:4, so clamp to the frame instead of forcing a scrollbar: the tall
+       * ones letterbox, the wide ones are unaffected.
+       */
+      .embed-figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: calc(100vh - 120px);
+        object-fit: contain;
+        margin: 0 auto;
+        border-radius: 8px;
+      }
+      .embed-foot {
+        margin: 10px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 10px;
+        align-items: baseline;
+        justify-content: space-between;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #5b6169;
+      }
+      .embed-foot p {
+        margin: 0;
+      }
+      .embed-credit a {
+        color: #b56a10;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+      .embed-credit a:hover {
+        color: #f29b30;
+      }
+      @media (max-width: 480px) {
+        .embed {
+          padding: 12px;
+          border-radius: 10px;
+        }
+        .embed-title {
+          font-size: 14px;
+        }
+        .embed-foot {
+          font-size: 11px;
+        }
+      }
+      @media (prefers-color-scheme: dark) {
+        .embed {
+          background: #16181c;
+          border-color: #2c3037;
+          color: #e6e8ea;
+        }
+        .embed-title {
+          color: #f2f4f6;
+        }
+        .embed-foot {
+          color: #a3a9b2;
+        }
+        .embed-credit a {
+          color: #f29b30;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="embed">
+      <p class="embed-title">{chartTitle}</p>
+      <figure class="embed-figure">
+        <img
+          src={chart.src}
+          alt={chart.alt || chartTitle}
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+      <div class="embed-foot">
+        <p class="embed-source">{sourceNote}</p>
+        <p class="embed-credit">
+          <a href={articleUrl} target="_blank" rel="noopener">
+            See the full study on Daily Life Hacks →
+          </a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
