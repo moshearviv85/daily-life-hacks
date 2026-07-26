@@ -1,0 +1,3519 @@
+{
+  "generated": "2026-07-26",
+  "total_harvested": 12106,
+  "high_value": 848,
+  "uncovered": [
+    {
+      "query": "how long canned beans after best by date",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to eat healthy on a budget reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": true,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to get cheap protein powder reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": true,
+      "winnable_score": 6
+    },
+    {
+      "query": "what to eat healthy on a budget",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "what are the best fiber rich foods",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how much should your grocery budget be",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how much to budget for groceries monthly",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to buy groceries on a budget",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to save big on grocery budget",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to eat healthy on a budget",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to eat healthier on a budget",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "which oatmeal is best for overnight oats",
+      "engines": [
+        "bing",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "what is the best fiber foods",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "what are the best fiber foods",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to eat cheap and healthy",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to eat cheaply and healthy",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "is it cheaper to eat healthy",
+      "engines": [
+        "bing",
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to eat healthy for cheap",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "what should my grocery budget be",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how much to budget for groceries",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to make a grocery budget",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how much is the grocery budget",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to create a grocery budget",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to eat on a budget",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "which oatmeal is best for diabetics",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "are chicken thighs cheaper than breasts",
+      "engines": [
+        "bing",
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "are chicken breasts or thighs cheaper",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "which is the best fiber supplement",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "which lentils are the best",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to eat healthy cheap",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to calculate grocery budget",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to budget for groceries",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to budget on groceries",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "which frozen vegetables are best",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "are fiber supplements worth it",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "which fiber supplement is best",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "what's the best fiber supplement",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "which fiber supplement works best",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 6
+    },
+    {
+      "query": "how to heal gut reddit",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 5,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 6
+    },
+    {
+      "query": "do you really need 1 gram of protein per pound reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 11,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 5
+    },
+    {
+      "query": "what are the best foods to eat to improve gut health",
+      "engines": [
+        "google"
+      ],
+      "words": 11,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to meal plan on a budget for weight loss",
+      "engines": [
+        "google"
+      ],
+      "words": 10,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to grocery shop for a month on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 10,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the best way to save money on groceries",
+      "engines": [
+        "google"
+      ],
+      "words": 10,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what are smart ways to save money on groceries reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 10,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget and lose weight",
+      "engines": [
+        "google"
+      ],
+      "words": 10,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget and busy schedule",
+      "engines": [
+        "google"
+      ],
+      "words": 10,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a low budget in nigeria",
+      "engines": [
+        "google"
+      ],
+      "words": 10,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a low budget south africa",
+      "engines": [
+        "google"
+      ],
+      "words": 10,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget with picky eaters",
+      "engines": [
+        "google"
+      ],
+      "words": 10,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what are some ways to eat healthy on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 10,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much dried beans equal a 15 oz. can",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much rice and beans per person per day",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to meal plan on a budget for 1",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to meal plan on a budget for 2",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what should a grocery budget be for 2 people",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to budget groceries for a family of 5",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to budget groceries for a family of 4",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is a grocery budget for family of 3",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is average grocery budget for family of 5",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is a grocery budget for family of 4",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "is it cheaper to buy groceries or eat out",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what groceries should i buy on a tight budget",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget without cooking",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget in college",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget in singapore",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget in nigeria",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat well on a budget in paris",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what to buy to eat healthy on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "is it possible to eat healthy on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the best gut health food for dogs",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the best food for your gut health",
+      "engines": [
+        "google"
+      ],
+      "words": 9,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat more protein on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many dried beans equals 15 oz can",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much lentils can i eat per day",
+      "engines": [
+        "ddg",
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much lentils to sub for ground beef",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much lentils to cook for 2 people",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what to make for dinner cheap and healthy",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much grocery budget for family of 4",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much grocery budget for family of 2",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much grocery budget for family of 3",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much grocery budget for family of 5",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much grocery budget for family of 6",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is a grocery budget for one person",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on groceries every month",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on groceries in vietnam",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on groceries canada reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on groceries at walmart",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on groceries uk reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 5
+    },
+    {
+      "query": "how do you save money on groceries reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on groceries each month",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on groceries australia reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy and on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget uk",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "can you eat healthy on a low budget",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget philippines",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "can you eat healthy on a tight budget",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget australia",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat healthy on a budget recipes",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how do you eat healthy on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how do i eat healthy on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much protein to eat per day reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much oatmeal should i eat for breakfast",
+      "engines": [
+        "bing",
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many oatmeal creme pies in a box",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long to cook chicken thigh vs breast",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much cholesterol in chicken thigh vs breast",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much calories in chicken thigh vs breast",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why is leftover rice better for fried rice",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the best form of fiber supplement",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what are the best food for gut health",
+      "engines": [
+        "google"
+      ],
+      "words": 8,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to get protein on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the cheapest form of protein",
+      "engines": [
+        "bing"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the cheapest source of protein",
+      "engines": [
+        "bing"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is the cheapest protein powder",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the cheapest protein to buy",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "does costco have the cheapest protein powder",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is a cheap source of protein",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why is a high protein diet good",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat cheap on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to make beans from dry beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to prepare dry beans for cooking",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much dried beans equals 1 can",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much dried beans equals a can",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much dry beans equals one can",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much dry beans equal 1 can",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many dried beans equals 1 can",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many dried beans equal 1 can",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many dry beans equals a can",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long do dried beans last uncooked",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why don't my dried beans get soft",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to prepare dried beans for cooking",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which dried bean is highest in iron",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to cook dried bean curd sticks",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to cook dry beans without soaking",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to cook dry pinto beans reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to cook red kidney beans reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to make canned beans taste homemade",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to cook a can of beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to fancy up canned baked beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "do you have to cook canned beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is one can of beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is one serving of beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many ounces in can of beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is a can of beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many canned beans equal dried beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many baked beans in a can",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many cups in can of beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long canned beans last in fridge",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long should you cook canned beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long do opened canned beans last",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which canned beans has the most protein",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "can you eat canned beans without cooking",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much lentils to eat per day",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why is lentil soup good for you",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why is lentil dahl a good dish",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "does lentils have more protein than meat",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to cook rice and beans together",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to can red beans and rice",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much rice and beans per person",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to make rice and beans easy",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to make good rice and beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much beans and rice per person",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many calories in rice and beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is rice and beans in spanish",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "is rice and beans good for you",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "are beans and rice good for you",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what beans for red beans and rice",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "can you eat rice and beans everyday",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "is rice and beans a good diet",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "does rice and beans make you fat",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "can you live off rice and beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to meal plan on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long can you meal prep for",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to meal prep for a month",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why is it important to meal prep",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the cheapest meal prep service",
+      "engines": [
+        "bing"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is a cheap and healthy diet",
+      "engines": [
+        "bing"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why is unhealthy food cheaper than healthy",
+      "engines": [
+        "bing"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what should grocery budget be for 2",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to budget groceries for one person",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to shop groceries on a budget",
+      "engines": [
+        "bing"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save with grocery budgeting tips",
+      "engines": [
+        "bing"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much grocery budget for one person",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is a grocery budget for 2",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much should you budget for groceries",
+      "engines": [
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to create a budget for groceries",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on food budget",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how can people save money on groceries",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how can i save money on groceries",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on groceries 2026",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on groceries 2025",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money on groceries reddit",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": true,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save the most on groceries",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to save money at grocery stores",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "when should i save money on groceries",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "can you eat healthy on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "can i eat healthy on a budget",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much should you budget for food",
+      "engines": [
+        "bing"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much should my food budget be",
+      "engines": [
+        "bing"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is a serving of protein",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is 1 serving of protein",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is a gram of protein",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is one serving of protein",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much protein per day per lb",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is one gram of protein",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many grams of protein per serving",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much protein per day per kg",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is one serve of protein",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to calculate protein needed per day",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many pounds of protein per day",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much grams of protein per day",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many ounces of protein per day",
+      "engines": [
+        "bing",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many grams of protein per person",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many grams of protein per day",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many grams per day of protein",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many gram of protein per day",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why did protein powder get so expensive",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what has the most protein per serving",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much oatmeal is in a packet",
+      "engines": [
+        "bing",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much oatmeal should i eat daily",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is oatmeal called in the uk",
+      "engines": [
+        "bing",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what are the health benefits of oatmeal",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why is oatmeal good for your heart",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which oatmeal is best to lower cholesterol",
+      "engines": [
+        "bing"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "is it okay to eat oatmeal everyday",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is a serving of oatmeal",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why are eggs considered a complete protein",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "do eggs have a lot of protein",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "are eggs the cheapest source of protein",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to cook chicken thighs vs breasts",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much fat chicken thigh vs breast",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is cheaper chicken thighs or breasts",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is best chicken thigh or breast",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is better chicken breast or thigh",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "when to use chicken breast vs thigh",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long can you freeze frozen vegetables",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long can frozen vegetables be kept",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long frozen vegetables last in freezer",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long can frozen vegetables sit out",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long are cooked frozen vegetables good",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long is frozen vegetables good for",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why are some fruits and vegetables frozen",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why does my refrigerator freeze my vegetables",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which frozen vegetables are best for dogs",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "do you have to cook frozen vegetables",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much food storage do i need",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many food storage groups are there",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long can prepared food be stored",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the purpose of food storage",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why is food preparation and storage important",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what are the best food storage items",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "does leftover pizza need to be refrigerated",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "does leftover coffee need to be refrigerated",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what cheap food ideas for a party",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to get more protein at breakfast",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat more protein at breakfast",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much protein is good for breakfast",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much protein to eat for breakfast",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how many grams of protein for breakfast",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why should you eat protein for breakfast",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the benefit of eating beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "why are beans so good for you",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "is eating a can of beans healthy",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how much is a serving of beans",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "should i take fiber supplement with food",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "should you take fiber supplements with food",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long can you take fiber supplements",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long for fiber supplement to work",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "is it healthy to take fiber supplements",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "is it good to take fiber supplements",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what are the 10 most constipating foods",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long can you go with constipation",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long is too long for constipation",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "should you eat if you are constipated",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the best gut health diet",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which food is good for gut health",
+      "engines": [
+        "bing",
+        "ddg",
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to eat for a healthy gut",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long does gut take to heal",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long for food to fully digest",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long does food stay in intestines",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how long does food last in stomach",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the best gut health food",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what are the best gut health foods",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which foods are best for gut health",
+      "engines": [
+        "google"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to have a good gut health",
+      "engines": [
+        "bing",
+        "ddg"
+      ],
+      "words": 7,
+      "question": true,
+      "commercial": false,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to get cheap protein powder",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to get cheap protein bars",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "how to get cheap protein shakes",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "is protein powder cheaper than chicken",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the cheapest protein shake",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the cheapest protein bar",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what are the cheapest protein bars",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what are the cheapest protein shakes",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "what is the cheapest protein source",
+      "engines": [
+        "bing"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which is the cheapest protein powder",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which is the cheapest protein bar",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which is the cheapest protein food",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which is the cheapest protein brand",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "which protein is best and cheap",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    },
+    {
+      "query": "is protein powder cheaper than food",
+      "engines": [
+        "google"
+      ],
+      "words": 6,
+      "question": true,
+      "commercial": true,
+      "reddit_intent": false,
+      "winnable_score": 5
+    }
+  ]
+}
