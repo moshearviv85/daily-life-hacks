@@ -1,5 +1,5 @@
 ---
-title: "Snacks That Actually Fill You Up, Ranked by What They Cost"
+title: "Cheap High-Fiber Snacks That Actually Fill You Up"
 excerpt: "Popcorn kernels top 10 snack foods at 57.7g of fiber per dollar, 9.2x more than raisins at 6.3g. Ranked with real July 2026 prices."
 category: "nutrition"
 tags: ["high fiber snacks", "fiber per dollar", "cheap healthy snacks", "budget snacks", "snacks ranked"]

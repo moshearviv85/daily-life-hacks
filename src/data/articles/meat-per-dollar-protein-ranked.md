@@ -1,5 +1,5 @@
 ---
-title: "The Smartest Meat to Buy Right Now (It Isn't Chicken Breast)"
+title: "The Cheapest Meat for Protein (It Isn't Chicken Breast)"
 excerpt: "Bone-in chicken drumsticks lead 11 meat cuts at 50.3 g of protein per dollar. Bacon comes last at 9.2 g. Full July 2026 ranking with prices."
 category: "nutrition"
 tags: ["cheapest meat for protein", "meat protein per dollar", "budget protein", "cheap meat cuts", "grocery data"]

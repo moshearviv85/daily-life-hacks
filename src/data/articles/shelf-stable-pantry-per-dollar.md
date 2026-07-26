@@ -1,5 +1,5 @@
 ---
-title: "No Fridge Required: 27 Shelf-Stable Proteins Ranked by Value"
+title: "Cheap Shelf-Stable Protein: 27 Pantry Foods Ranked"
 excerpt: "Dry pinto beans lead 27 shelf-stable foods at 97.9g of protein per dollar. Canned black beans top the cans at 30.1g, and almonds trail at 14.8g."
 category: "nutrition"
 tags: ["shelf stable protein", "pantry protein sources", "protein per dollar", "cheap pantry staples", "grocery data"]

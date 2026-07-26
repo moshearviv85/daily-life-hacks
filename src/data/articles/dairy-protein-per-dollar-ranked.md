@@ -1,5 +1,5 @@
 ---
-title: "Dairy Protein per Dollar: Best Values Ranked"
+title: "The Cheapest Dairy Protein: Milk Beats Greek Yogurt"
 excerpt: "Eggs lead the dairy case at 34.4 g of protein per dollar, mozzarella hits 30.1, and plain whole milk at 29.1 beats Greek yogurt at 27.5."
 category: "nutrition"
 tags: ["cheapest dairy protein", "dairy protein per dollar", "eggs protein cost", "budget protein", "grocery data"]

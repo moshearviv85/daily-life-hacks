@@ -1,5 +1,5 @@
 ---
-title: "What One Dollar of Fiber Actually Buys, Food by Food"
+title: "The Cheapest Fiber Foods: What $1 Actually Buys"
 excerpt: "One dollar buys 77.8g of fiber as whole wheat flour, 71g as split peas, and 27.9g as canned black beans. Here's what $1 buys across 15 foods."
 category: "nutrition"
 tags: ["fiber per dollar", "cheap fiber foods", "budget nutrition", "grocery data", "fiber on a budget"]

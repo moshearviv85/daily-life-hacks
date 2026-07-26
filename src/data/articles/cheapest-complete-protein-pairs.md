@@ -1,5 +1,5 @@
 ---
-title: "Rice and Beans Math: Why the Oldest Budget Meal Still Wins"
+title: "The Cheapest Complete Protein: Rice and Beans Math"
 excerpt: "Split a dollar 50/50 between dry pinto beans and whole wheat flour and it buys 97.0 grams of protein. We ranked 20 legume and grain pairs this way."
 category: "nutrition"
 tags: ["complete protein combos", "rice and beans protein", "cheap vegetarian protein", "protein per dollar", "legumes and grains"]

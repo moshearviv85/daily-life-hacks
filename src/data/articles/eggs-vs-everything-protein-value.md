@@ -1,5 +1,5 @@
 ---
-title: "Eggs vs Other Foods: Protein Value Ranked"
+title: "Are Eggs the Cheapest Protein? We Ranked 49 Foods"
 excerpt: "Eggs deliver 34.4 g of protein per dollar and rank 19th of 49 foods. Every dried legume beats them; most meat, fish, and dairy don't."
 category: "nutrition"
 tags: ["are eggs cheap protein", "eggs protein per dollar", "egg prices 2026", "cheap protein sources", "eggs vs chicken protein"]

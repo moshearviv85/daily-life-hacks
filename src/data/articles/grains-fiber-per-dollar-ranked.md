@@ -1,5 +1,5 @@
 ---
-title: "Grains Ranked by Fiber per Dollar"
+title: "The Cheapest High-Fiber Grains, Ranked by Real Cost"
 excerpt: "Whole wheat flour tops 11 grains at 77.8g of fiber per dollar; quinoa lands last at 10.6g. The full ranking, with real July 2026 prices."
 category: "nutrition"
 tags: ["high fiber grains", "fiber per dollar", "cheapest whole grains", "budget groceries", "grains ranked"]
