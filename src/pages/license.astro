@@ -1,0 +1,186 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Data License: Use Our Numbers | Daily Life Hacks";
+const description =
+  "Every dataset and chart on Daily Life Hacks is published under CC BY 4.0. Republish it, remix it, use it commercially. Credit Daily Life Hacks with a link. Copy-paste attribution snippets included.";
+
+const licenseSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.daily-life-hacks.com/license/#webpage",
+    name: "Data License: Use Our Numbers",
+    url: "https://www.daily-life-hacks.com/license/",
+    description,
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": "https://www.daily-life-hacks.com/#website",
+      name: "Daily Life Hacks",
+      url: "https://www.daily-life-hacks.com",
+    },
+    about: {
+      "@type": "Thing",
+      name: "Open data licensing and attribution terms",
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": "https://www.daily-life-hacks.com/#organization",
+      name: "Daily Life Hacks",
+      url: "https://www.daily-life-hacks.com",
+    },
+    mainEntity: {
+      "@id": "https://www.daily-life-hacks.com/data/#dataset-collection",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": "https://www.daily-life-hacks.com/data/#dataset-collection",
+    name: "Daily Life Hacks Food Value Data",
+    alternateName: "Daily Life Hacks grocery cost datasets and charts",
+    description:
+      "The complete collection of public grocery cost datasets (CSV) and study charts published by Daily Life Hacks, covering fiber per dollar, protein per dollar, protein quality adjustment, daily menu costing, and category rankings, built on USDA FoodData Central nutrition values and BLS average price data.",
+    url: "https://www.daily-life-hacks.com/data/",
+    license: "https://creativecommons.org/licenses/by/4.0/",
+    creditText: "Daily Life Hacks",
+    isAccessibleForFree: true,
+    inLanguage: "en-US",
+    creator: {
+      "@type": "Organization",
+      "@id": "https://www.daily-life-hacks.com/#organization",
+      name: "Daily Life Hacks",
+      url: "https://www.daily-life-hacks.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": "https://www.daily-life-hacks.com/#organization",
+      name: "Daily Life Hacks",
+      url: "https://www.daily-life-hacks.com",
+    },
+    encodingFormat: ["text/csv", "image/jpeg"],
+    isBasedOn: [
+      "https://fdc.nal.usda.gov/",
+      "https://www.bls.gov/cpi/data.htm",
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={licenseSchema}>
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 py-12 md:py-16">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      Data License: Use Our Numbers
+    </h1>
+    <p class="text-lg mb-8" style="color: var(--muted-color);">
+      Take the data. Take the charts. Build something with them. Just say where they came from and link back.
+    </p>
+    <p class="text-sm mb-8" style="color: var(--muted-color);">
+      Page last updated July 26, 2026.
+    </p>
+
+    <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
+      <p>
+        We spend a lot of time pulling USDA nutrition values, checking shelf prices, and re-auditing rows that don't look right. Then we publish all of it as plain CSV files anyone can download. That's the whole point. Data nobody can check isn't evidence, it's a claim.
+      </p>
+      <p>
+        So here's the deal, in plain language before the legal version.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">The license</h2>
+      <p>
+        Every data file in <a href="/data/" class="underline" style="color: #F29B30;">our public data directory</a> and every chart image we publish is released under the <a href="https://creativecommons.org/licenses/by/4.0/" class="underline" style="color: #F29B30;" rel="license noopener" target="_blank">Creative Commons Attribution 4.0 International License (CC BY 4.0)</a>.
+      </p>
+      <p>
+        That's the standard open license used by governments, research institutions, and Wikipedia. Nothing custom, nothing weird, nothing you need a lawyer to read. If you've handled CC BY content before, you already know what to do here.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">What you're allowed to do</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Republish it.</strong> Post the tables, the numbers, the charts. On your blog, in your newsletter, in a slide deck, in a print magazine.</li>
+        <li><strong>Remix it.</strong> Re-chart it in your own colors. Filter it to the 12 foods your readers care about. Merge it with your own price data.</li>
+        <li><strong>Build on it.</strong> Feed it to a calculator, an app, a research paper, a classroom worksheet, a spreadsheet template.</li>
+        <li><strong>Make money from it.</strong> Commercial use is included. You don't need to ask us, you don't owe us a cut, and there's no separate business license to buy.</li>
+      </ul>
+      <p>
+        You also don't need our permission first. The license already granted it. If you want to tell us what you built, we'd genuinely like to see it, but that's a courtesy and not a requirement.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">The one condition</h2>
+      <p>
+        Credit <strong>Daily Life Hacks</strong>, and make the credit a working link. Point it at the specific study page you took the numbers from, or at <a href="https://www.daily-life-hacks.com/data/" class="underline" style="color: #F29B30;">https://www.daily-life-hacks.com/data/</a> if you used several datasets or you're crediting the collection as a whole.
+      </p>
+      <p>
+        The link matters more than the wording. A credit your readers can't follow doesn't let them check the methodology, and checking the methodology is the reason we publish any of this. Put the credit near the chart or table it belongs to, not buried in a footer twelve screens down.
+      </p>
+      <p>
+        If you changed the data, say so. Something like "adapted from Daily Life Hacks" or "prices converted to euros" is enough. We're not going to argue about phrasing. We just don't want a number we never published attributed to us.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Copy-paste attribution</h2>
+      <p>
+        Grab whichever one fits where you're publishing. Swap the study URL for the specific page you used.
+      </p>
+
+      <h3 class="text-xl font-bold mt-8 mb-3" style="color: var(--heading-color);">Plain text</h3>
+      <pre><code>Source: Daily Life Hacks, "Fiber per Dollar: 53 Foods Ranked" (2026).
+https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/
+Licensed under CC BY 4.0.</code></pre>
+
+      <h3 class="text-xl font-bold mt-8 mb-3" style="color: var(--heading-color);">HTML</h3>
+      <pre><code>&lt;p&gt;Source: &lt;a href="https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/"&gt;Daily Life Hacks, "Fiber per Dollar: 53 Foods Ranked"&lt;/a&gt;. Licensed &lt;a href="https://creativecommons.org/licenses/by/4.0/" rel="license"&gt;CC BY 4.0&lt;/a&gt;.&lt;/p&gt;</code></pre>
+
+      <h3 class="text-xl font-bold mt-8 mb-3" style="color: var(--heading-color);">Academic style</h3>
+      <pre><code>Miller, D. (2026). Fiber per dollar: 53 foods ranked [Data set].
+Daily Life Hacks. https://www.daily-life-hacks.com/data/fiber-per-dollar-2026.csv
+Licensed under CC BY 4.0.</code></pre>
+
+      <h3 class="text-xl font-bold mt-8 mb-3" style="color: var(--heading-color);">Crediting the whole collection</h3>
+      <pre><code>Source: Daily Life Hacks Food Value Data (2026).
+https://www.daily-life-hacks.com/data/
+Licensed under CC BY 4.0.</code></pre>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">How to cite one specific dataset</h2>
+      <p>
+        Every study ships its own CSV, and each file has a stable name and a permanent URL under <a href="/data/" class="underline" style="color: #F29B30;">/data/</a>. Cite the file, not a screenshot of it. The directory also carries a <code>datapackage.json</code> that lists every dataset, every column, and what each column means, so you can document exactly which version of which file you used.
+      </p>
+      <p>
+        Format the citation as: <strong>Daily Life Hacks</strong>, dataset name, year, direct CSV URL, CC BY 4.0. For example, the protein ranking lives at <a href="/data/protein-per-dollar-2026.csv" class="underline" style="color: #F29B30;">/data/protein-per-dollar-2026.csv</a> and the fiber ranking at <a href="/data/fiber-per-dollar-2026.csv" class="underline" style="color: #F29B30;">/data/fiber-per-dollar-2026.csv</a>.
+      </p>
+      <p>
+        Prices move. If your citation needs to survive a re-audit, include the date you downloaded the file. We re-audit prices quarterly and document every correction, and the details of how we do that are on the <a href="/methodology/" class="underline" style="color: #F29B30;">methodology page</a>.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">What this license does not cover</h2>
+      <p>
+        CC BY 4.0 applies to the data files and the charts. That's it. Two things are deliberately outside it:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><strong>Article text.</strong> The writing on this site, including recipes, guides, and study write-ups, is all rights reserved. Quote a sentence or two with a link the way anyone quotes anything. Don't republish whole articles.</li>
+        <li><strong>Photography and brand assets.</strong> Food photos, hero images, pin graphics, and the Daily Life Hacks logo are all rights reserved and not part of the open license.</li>
+      </ul>
+      <p>
+        The line is simple: if it's a number we calculated or a chart we generated from those numbers, it's yours under CC BY 4.0. If it's a sentence we wrote or a picture, it isn't.
+      </p>
+      <p>
+        One more thing worth being upfront about. The underlying nutrition figures come from <a href="https://fdc.nal.usda.gov/" class="underline" style="color: #F29B30;" rel="noopener" target="_blank">USDA FoodData Central</a> and the price figures largely from <a href="https://www.bls.gov/cpi/data.htm" class="underline" style="color: #F29B30;" rel="noopener" target="_blank">BLS Average Price data</a>, both US government sources in the public domain. What we're licensing is our selection, our pricing work, our calculations, our arrangement of it all, and the charts. The raw government facts were always free.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">No warranty, and one honest caveat</h2>
+      <p>
+        The data is provided as is. We audit hard and we publish corrections in public, but a grocery price snapshot isn't a live feed, and your store won't match ours to the penny. Check anything you're going to publish or make a decision on. If you find an error, <a href="/contact/" class="underline" style="color: #F29B30;">tell us</a> and we'll fix it and note the fix.
+      </p>
+      <p>
+        Nothing here is medical or nutritional advice, and the license doesn't change that. It's cost math on groceries.
+      </p>
+
+      <p class="mt-10">
+        Questions about reuse that this page didn't answer? <a href="/contact/" class="underline" style="color: #F29B30;">Ask</a>. The whole reason the data is public is so people use it.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

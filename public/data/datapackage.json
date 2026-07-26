@@ -1,0 +1,1535 @@
+{
+  "profile": "tabular-data-package",
+  "name": "daily-life-hacks-food-value-data",
+  "title": "Daily Life Hacks Food Value Data",
+  "description": "Every public dataset behind the Daily Life Hacks grocery cost studies: fiber per dollar, protein per dollar, protein quality adjusted with DIAAS, daily menu costing, and category-level rankings across produce, grains, legumes, dairy, meat, pantry staples and fast food.\n\nNutrient values come from USDA FoodData Central. Prices are US national figures: BLS Average Price data where the item is tracked, Walmart national listings otherwise, observed July 2026. Every ranking is calculated as-purchased, with USDA refuse percentages removed so peels, pits and bone are not counted as food.\n\nLicensed CC BY 4.0. Reuse it commercially if you want. Credit \"Daily Life Hacks\" with a link to the study page or to https://www.daily-life-hacks.com/data/. Full terms at https://www.daily-life-hacks.com/license/ and full methodology at https://www.daily-life-hacks.com/methodology/.",
+  "homepage": "https://www.daily-life-hacks.com/data/",
+  "version": "2026.1",
+  "created": "2026-07-26T00:00:00Z",
+  "keywords": [
+    "food prices",
+    "nutrition",
+    "protein per dollar",
+    "fiber per dollar",
+    "grocery costs",
+    "food economics",
+    "USDA FoodData Central",
+    "BLS average prices",
+    "budget nutrition",
+    "open data"
+  ],
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/",
+      "title": "Creative Commons Attribution 4.0 International"
+    }
+  ],
+  "sources": [
+    {
+      "title": "USDA FoodData Central",
+      "path": "https://fdc.nal.usda.gov/"
+    },
+    {
+      "title": "U.S. Bureau of Labor Statistics, Average Price Data",
+      "path": "https://www.bls.gov/cpi/data.htm"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Daily Life Hacks",
+      "path": "https://www.daily-life-hacks.com",
+      "role": "publisher",
+      "organization": "Daily Life Hacks"
+    },
+    {
+      "title": "David Miller",
+      "path": "https://www.daily-life-hacks.com/about/",
+      "role": "author",
+      "organization": "Daily Life Hacks"
+    }
+  ],
+  "resources": [
+    {
+      "name": "animal-protein-per-dollar-ranked-2026",
+      "path": "animal-protein-per-dollar-ranked-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Animal Protein per Dollar, Ranked (2026)",
+      "description": "21 animal-source foods (meat, poultry, eggs, dairy and seafood) ranked by grams of protein per US dollar. Prices are US national figures from BLS Average Price data where the item is tracked and Walmart national listings otherwise. Bone-in cuts have the USDA refuse percentage removed before ranking.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 2146,
+      "hash": "sha256:d90b7e5ac2c42e9963bc6f062adcf117e3f8233113c0bd0e0c4bf648e490f95b",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Animal Protein per Dollar, Ranked (2026)",
+          "path": "https://www.daily-life-hacks.com/animal-protein-per-dollar-ranked/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 21
+    },
+    {
+      "name": "beans-double-win-fiber-protein-2026",
+      "path": "beans-double-win-fiber-protein-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Beans Ranked by Fiber and Protein per Dollar (2026)",
+      "description": "10 legumes and legume products scored on both nutrients at once, pairing dry beans against their canned equivalents. Each row carries protein per dollar, fiber per dollar, and the two added together. Canned rows are measured drained.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 1138,
+      "hash": "sha256:52a55126d7c9badc04083c79819d0f1eb95bd8577ffe22b09fd5b0ec99104b72",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Beans Ranked by Fiber and Protein per Dollar (2026)",
+          "path": "https://www.daily-life-hacks.com/beans-double-win-fiber-protein/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Combined grams of protein plus fiber per US dollar spent."
+          },
+          {
+            "name": "protein_g_per_dollar",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "fiber_g_per_dollar",
+            "type": "number",
+            "description": "Grams of dietary fiber per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 10
+    },
+    {
+      "name": "breakfast-staples-per-dollar-2026",
+      "path": "breakfast-staples-per-dollar-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Breakfast Staples by Nutrition per Dollar (2026)",
+      "description": "9 common American breakfast foods (flour, oats, eggs, peanut butter, yogurt, fruit and similar) scored on protein per dollar and fiber per dollar. The fiber column is left blank for foods that carry effectively none.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 878,
+      "hash": "sha256:bf3e387660abf3ebfde9d4fad6e8fae76e401365a7736ab1ffeecb1f33529056",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Breakfast Staples by Nutrition per Dollar (2026)",
+          "path": "https://www.daily-life-hacks.com/breakfast-staples-per-dollar/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Combined grams of protein plus fiber per US dollar spent."
+          },
+          {
+            "name": "protein_g_per_dollar",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "fiber_g_per_dollar",
+            "type": "number",
+            "description": "Grams of dietary fiber per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 9
+    },
+    {
+      "name": "canned-vs-dry-beans-cost-2026",
+      "path": "canned-vs-dry-beans-cost-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Canned vs Dry Beans, Cost Compared (2026)",
+      "description": "10 rows pairing dry beans and lentils against the canned version of the same legume, ranked by grams of protein per US dollar, to quantify what the convenience of a can costs. Canned rows are measured drained.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 1005,
+      "hash": "sha256:f8b1d65016336481acf8c4ef33f4800c0dc9517f425834865d37d10d09cfc38a",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Canned vs Dry Beans, Cost Compared (2026)",
+          "path": "https://www.daily-life-hacks.com/canned-vs-dry-beans-cost/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 10
+    },
+    {
+      "name": "cheapest-complete-protein-pairs-2026",
+      "path": "cheapest-complete-protein-pairs-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Cheapest Complete-Protein Pairings (2026)",
+      "description": "20 legume-and-grain combinations scored as complete-protein pairings. Each row is a two-food combo whose score is a 50/50 split of the dollars between two already-audited single-food rows, so the package and package price columns are intentionally empty and the component values are named in price_basis.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 2967,
+      "hash": "sha256:075bfb14833134d33e7df118c47fc21d93d9ee2144080b2429a8d0a018a2fa9d",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Cheapest Complete-Protein Pairings (2026)",
+          "path": "https://www.daily-life-hacks.com/cheapest-complete-protein-pairs/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "The two-food pairing, written as 'Food A + Food B'."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Always 'combo'. Every row in this dataset is a pairing, not a single food."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Combined grams of protein per US dollar for the pairing, on a 50/50 split of the dollars between the two component foods."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Not applicable to a pairing. Always empty in this dataset."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Not applicable to a pairing. Always 0; the component package prices live in the single-food datasets."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "The two audited single-food rows the pairing score was derived from, with each one's protein per dollar."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 20
+    },
+    {
+      "name": "dairy-protein-per-dollar-ranked-2026",
+      "path": "dairy-protein-per-dollar-ranked-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Dairy and Egg Protein per Dollar, Ranked (2026)",
+      "description": "6 dairy-case staples (eggs, milk, cottage cheese, Greek yogurt, mozzarella and cheddar) ranked by grams of protein per US dollar.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 568,
+      "hash": "sha256:414b08307c756d055abe1fe37c9f1ec15474cebf5fb1f6427bf26b8742aafe45",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Dairy and Egg Protein per Dollar, Ranked (2026)",
+          "path": "https://www.daily-life-hacks.com/dairy-protein-per-dollar-ranked/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 6
+    },
+    {
+      "name": "eggs-vs-everything-protein-value-2026",
+      "path": "eggs-vs-everything-protein-value-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Eggs vs Every Other Protein Source (2026)",
+      "description": "The full 49-food protein ranking used to place eggs against every other source in the study, plant and animal, ordered by grams of protein per US dollar.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 4770,
+      "hash": "sha256:b1508d376085ff9aea9ee5ef4885419d1b3cf9c9364ebeb795201e01b1af0123",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Eggs vs Every Other Protein Source (2026)",
+          "path": "https://www.daily-life-hacks.com/eggs-vs-everything-protein-value/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 49
+    },
+    {
+      "name": "fastfood-protein-per-dollar-2026",
+      "path": "fastfood-protein-per-dollar-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Fast Food Protein per Dollar (2026)",
+      "description": "30 menu items from major US fast food chains ranked by grams of protein per US dollar. Protein figures come from each chain's own published nutrition data and prices from national averages or dated store menu snapshots. Both are recorded per row, and items from chains that publish no nutrition data were excluded.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 5654,
+      "hash": "sha256:bdd53fa07268b08fa7cac3a31bd0066a08bc2d0833a54c52f849b073f6abf890",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Fast Food Protein per Dollar (2026)",
+          "path": "https://www.daily-life-hacks.com/fast-food-protein-per-dollar-ranked/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "chain",
+            "type": "string",
+            "description": "Fast food chain the menu item belongs to."
+          },
+          {
+            "name": "item",
+            "type": "string",
+            "description": "Menu item name as the chain publishes it."
+          },
+          {
+            "name": "protein_g",
+            "type": "number",
+            "description": "Protein in grams per menu item as served."
+          },
+          {
+            "name": "price_usd",
+            "type": "number",
+            "description": "Menu price in US dollars for that item."
+          },
+          {
+            "name": "protein_g_per_dollar",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "description": "Where the nutrition figure came from, including the independent re-verification."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 30
+    },
+    {
+      "name": "fiber-day-cost-2026",
+      "path": "fiber-day-cost-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Cost of 30 Grams of Fiber per Day, Five Menus (2026)",
+      "description": "27 meal components making up 5 complete single-day menus, each built to reach roughly 30 grams of dietary fiber. Every row records the food, the grams used, the fiber that portion contributes, and what it cost at the audited price.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 3055,
+      "hash": "sha256:b3e9348ea31c964f6842158db323da21dc8362eded9ab61d94022231244b6903",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Cost of 30 Grams of Fiber per Day, Five Menus (2026)",
+          "path": "https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "day",
+            "type": "string",
+            "description": "Menu day label. Each day is one complete plan built to a single nutrient target."
+          },
+          {
+            "name": "meal",
+            "type": "string",
+            "description": "Meal slot the component belongs to within that day."
+          },
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "grams_used",
+            "type": "integer",
+            "description": "Grams of the food used in that meal component."
+          },
+          {
+            "name": "fiber_g",
+            "type": "number",
+            "description": "Grams of dietary fiber contributed by this meal component."
+          },
+          {
+            "name": "cost_usd",
+            "type": "number",
+            "description": "Cost in US dollars of this portion at the audited price."
+          },
+          {
+            "name": "basis",
+            "type": "string",
+            "description": "The parent dataset row the price and nutrient value were taken from."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 27
+    },
+    {
+      "name": "fiber-per-dollar-2026",
+      "path": "fiber-per-dollar-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Fiber per Dollar: 53 Foods Ranked (2026)",
+      "description": "The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dollar with the whole calculation exposed: USDA fiber per 100g, package size and price, package weight, edible fraction, and the derived price per 100 grams.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 4523,
+      "hash": "sha256:16903e580334ac794ceea9be38fdab63c232529bc7d2ea7094f83b9114cdbba9",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Fiber per Dollar: 53 Foods Ranked (2026)",
+          "path": "https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "rank",
+            "type": "integer",
+            "description": "Position in the ranking. 1 is the most nutrient per dollar."
+          },
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "fiber_g_per_100g",
+            "type": "number",
+            "description": "Dietary fiber in grams per 100 grams of the food as purchased, from USDA FoodData Central."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "package_weight_g",
+            "type": "number",
+            "description": "Net weight of that package in grams."
+          },
+          {
+            "name": "edible_fraction",
+            "type": "number",
+            "description": "Share of the purchased weight that is actually eaten, after USDA refuse (peels, pits, rinds, bone) is removed. 1.0 means no waste."
+          },
+          {
+            "name": "price_per_100g_usd",
+            "type": "number",
+            "description": "Price in US dollars per 100 grams of edible food."
+          },
+          {
+            "name": "fiber_g_per_dollar",
+            "type": "number",
+            "description": "Grams of dietary fiber per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 53
+    },
+    {
+      "name": "grains-fiber-per-dollar-ranked-2026",
+      "path": "grains-fiber-per-dollar-ranked-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Grains Ranked by Fiber per Dollar (2026)",
+      "description": "11 grains and grain products (whole wheat flour, popcorn, oats, barley, brown rice, pasta, quinoa and similar) ranked by grams of dietary fiber per US dollar.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 761,
+      "hash": "sha256:380a61937c4f304ec1ae5473c817d198428bc8b76b57986a7c8937af0fca2fec",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Grains Ranked by Fiber per Dollar (2026)",
+          "path": "https://www.daily-life-hacks.com/grains-fiber-per-dollar-ranked/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of dietary fiber per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 11
+    },
+    {
+      "name": "high-fiber-snacks-per-dollar-2026",
+      "path": "high-fiber-snacks-per-dollar-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "High-Fiber Snacks Ranked by Cost (2026)",
+      "description": "10 snackable foods ranked by grams of dietary fiber per US dollar, limited to items you would eat between meals with little or no preparation.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 648,
+      "hash": "sha256:08e4c173d54e4bf553e57a0cb4be08c55bff75893a9dc62cecefd0c030aa997d",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: High-Fiber Snacks Ranked by Cost (2026)",
+          "path": "https://www.daily-life-hacks.com/high-fiber-snacks-per-dollar/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of dietary fiber per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 10
+    },
+    {
+      "name": "meat-per-dollar-protein-ranked-2026",
+      "path": "meat-per-dollar-protein-ranked-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Meat per Dollar: 11 Cuts Ranked by Protein Value (2026)",
+      "description": "11 cuts of meat and poultry ranked by grams of protein per US dollar. Bone-in cuts have the USDA refuse percentage for bone and cartilage removed before the ranking, so they are not credited for weight nobody eats.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 1234,
+      "hash": "sha256:5187f6438c6c99868cc4d64cf23311153a310127d5546ea0decb7a7166d9362c",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Meat per Dollar: 11 Cuts Ranked by Protein Value (2026)",
+          "path": "https://www.daily-life-hacks.com/meat-per-dollar-protein-ranked/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 11
+    },
+    {
+      "name": "no-cook-protein-per-dollar-2026",
+      "path": "no-cook-protein-per-dollar-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Cheapest Protein That Needs No Cooking (2026)",
+      "description": "15 protein sources that need no cooking at all, ranked by grams of protein per US dollar. Scoped to foods edible straight from the package or the fridge.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 1486,
+      "hash": "sha256:22a1b87c0e8b63a0f2299c68f73c02e1b562f2d4559cb2c3c634c01dd6dac077",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Cheapest Protein That Needs No Cooking (2026)",
+          "path": "https://www.daily-life-hacks.com/no-cook-protein-per-dollar/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 15
+    },
+    {
+      "name": "one-dollar-fiber-what-it-buys-2026",
+      "path": "one-dollar-fiber-what-it-buys-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "What One Dollar of Fiber Buys (2026)",
+      "description": "15 foods showing what a single US dollar buys in grams of dietary fiber, ranked from most to least, spanning whole grains, dried and canned legumes, and produce.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 1041,
+      "hash": "sha256:6c639b301662bf59cbea8cdd1c5ee0151c63af7d231b20de6c462d2f59c7de09",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: What One Dollar of Fiber Buys (2026)",
+          "path": "https://www.daily-life-hacks.com/one-dollar-fiber-what-it-buys/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of dietary fiber per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 15
+    },
+    {
+      "name": "one-dollar-protein-what-it-buys-2026",
+      "path": "one-dollar-protein-what-it-buys-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "What One Dollar of Protein Buys (2026)",
+      "description": "15 foods showing what a single US dollar buys in grams of protein, ranked from most to least, spanning legumes, grains, dairy, eggs, meat and nuts.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 1490,
+      "hash": "sha256:d9978c30be59f4ec5884d7d7bb5cf07c69207ee10d9df67333cf200964458013",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: What One Dollar of Protein Buys (2026)",
+          "path": "https://www.daily-life-hacks.com/one-dollar-protein-what-it-buys/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 15
+    },
+    {
+      "name": "plant-protein-per-dollar-ranked-2026",
+      "path": "plant-protein-per-dollar-ranked-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Plant Protein per Dollar: 18 Sources Ranked (2026)",
+      "description": "18 plant protein sources (dried beans and lentils, grains, nuts, seeds and soy foods) ranked by grams of protein per US dollar.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 1765,
+      "hash": "sha256:da1a22f328d6c142759aab04c13397b5d842a79dbecb64a8cfb288b8350a5ad4",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Plant Protein per Dollar: 18 Sources Ranked (2026)",
+          "path": "https://www.daily-life-hacks.com/plant-protein-per-dollar-ranked/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 18
+    },
+    {
+      "name": "produce-fiber-per-dollar-ranked-2026",
+      "path": "produce-fiber-per-dollar-ranked-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Fruits and Vegetables Ranked by Fiber per Dollar (2026)",
+      "description": "22 fresh, frozen and dried fruits and vegetables ranked by grams of dietary fiber per US dollar. Edible fraction is applied first, so peels, pits and rinds do not flatter the heavy-waste items.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 1377,
+      "hash": "sha256:4cd75b0f26d35ab41d38f2c660233619564842be2248aa4eaa3afa4a8f3e3a4e",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Fruits and Vegetables Ranked by Fiber per Dollar (2026)",
+          "path": "https://www.daily-life-hacks.com/produce-fiber-per-dollar-ranked/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of dietary fiber per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 22
+    },
+    {
+      "name": "protein-day-cost-2026",
+      "path": "protein-day-cost-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Cost of 50 Grams of Protein per Day, Five Menus (2026)",
+      "description": "21 meal components making up 5 complete single-day menus, each built to reach roughly 50 grams of protein. Every row records the food, the grams used, the protein that portion contributes, and what it cost at the audited price.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 2448,
+      "hash": "sha256:aacd9c660d05fb8ae3456b8c407b2cbb9d921db20b552e6ebe12bfb10b3c1c51",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Cost of 50 Grams of Protein per Day, Five Menus (2026)",
+          "path": "https://www.daily-life-hacks.com/what-50-grams-of-protein-costs-per-day/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "day",
+            "type": "string",
+            "description": "Menu day label. Each day is one complete plan built to a single nutrient target."
+          },
+          {
+            "name": "meal",
+            "type": "string",
+            "description": "Meal slot the component belongs to within that day."
+          },
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "grams_used",
+            "type": "integer",
+            "description": "Grams of the food used in that meal component."
+          },
+          {
+            "name": "protein_g",
+            "type": "number",
+            "description": "Grams of protein contributed by this meal component."
+          },
+          {
+            "name": "cost_usd",
+            "type": "number",
+            "description": "Cost in US dollars of this portion at the audited price."
+          },
+          {
+            "name": "basis",
+            "type": "string",
+            "description": "The parent dataset row the price and nutrient value were taken from."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 21
+    },
+    {
+      "name": "protein-per-dollar-2026",
+      "path": "protein-per-dollar-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Protein per Dollar: 49 Sources Ranked (2026)",
+      "description": "The flagship protein dataset. 49 foods ranked by grams of protein per US dollar with the whole calculation exposed: USDA protein per 100g, package size and price, package weight, edible fraction, and the derived price per 100 grams.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 5973,
+      "hash": "sha256:99de92dc084c37ca100c2ffd1cde5eccc24e9ea83086277ce4085cde518af4f9",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Protein per Dollar: 49 Sources Ranked (2026)",
+          "path": "https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "rank",
+            "type": "integer",
+            "description": "Position in the ranking. 1 is the most nutrient per dollar."
+          },
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "protein_g_per_100g",
+            "type": "number",
+            "description": "Protein in grams per 100 grams of the food as purchased, from USDA FoodData Central."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "package_weight_g",
+            "type": "number",
+            "description": "Net weight of that package in grams."
+          },
+          {
+            "name": "edible_fraction",
+            "type": "number",
+            "description": "Share of the purchased weight that is actually eaten, after USDA refuse (peels, pits, rinds, bone) is removed. 1.0 means no waste."
+          },
+          {
+            "name": "price_per_100g_usd",
+            "type": "number",
+            "description": "Price in US dollars per 100 grams of edible food."
+          },
+          {
+            "name": "protein_g_per_dollar",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 49
+    },
+    {
+      "name": "protein-quality-per-dollar-2026",
+      "path": "protein-quality-per-dollar-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "Protein per Dollar Adjusted for Quality, DIAAS (2026)",
+      "description": "25 protein sources whose raw protein-per-dollar figure is multiplied by a published DIAAS digestibility score, capped at 1.00, to give usable protein per dollar. Every DIAAS value names the peer-reviewed measurement it came from.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 3204,
+      "hash": "sha256:5c003c5f0e95d81f0c7623d972bd53851a33220c6023f81c7744855a3eb20c2d",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: Protein per Dollar Adjusted for Quality, DIAAS (2026)",
+          "path": "https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "protein_g_per_dollar",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "diaas_score",
+            "type": "number",
+            "description": "DIAAS (Digestible Indispensable Amino Acid Score) for the protein source, as measured in the cited peer-reviewed study."
+          },
+          {
+            "name": "diaas_capped_for_multiplication",
+            "type": "number",
+            "description": "The DIAAS value capped at 1.00 before multiplying, so a complete protein is not credited above 100 percent usable."
+          },
+          {
+            "name": "diaas_method",
+            "type": "string",
+            "description": "Scoring method used for the quality adjustment."
+          },
+          {
+            "name": "diaas_source",
+            "type": "string",
+            "description": "Peer-reviewed study the DIAAS value was taken from."
+          },
+          {
+            "name": "adjusted_g_per_dollar",
+            "type": "number",
+            "description": "Protein grams per dollar multiplied by the capped DIAAS score: usable protein per US dollar."
+          },
+          {
+            "name": "notes",
+            "type": "string",
+            "description": "Free-text note on the amino acid profile or the proxy food used for scoring."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 25
+    },
+    {
+      "name": "shelf-stable-pantry-per-dollar-2026",
+      "path": "shelf-stable-pantry-per-dollar-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "The Shelf-Stable Pantry, Ranked by Protein per Dollar (2026)",
+      "description": "27 shelf-stable pantry foods ranked by grams of protein per US dollar. Nothing in this dataset needs refrigeration, so it doubles as a stock-up list.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 2575,
+      "hash": "sha256:c486fb2f226a2e4e554485b42fb8245bc6fe25e408000fa99aa359c96b6a4c84",
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: The Shelf-Stable Pantry, Ranked by Protein per Dollar (2026)",
+          "path": "https://www.daily-life-hacks.com/shelf-stable-pantry-per-dollar/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "description": "Grams of protein per US dollar spent, after the edible fraction is applied."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 27
+    }
+  ]
+}

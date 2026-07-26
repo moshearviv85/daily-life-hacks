@@ -1,0 +1,285 @@
+[
+  {
+    "file": "animal-protein-per-dollar-ranked-2026.csv",
+    "rows": 21,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "beans-double-win-fiber-protein-2026.csv",
+    "rows": 10,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "protein_g_per_dollar",
+      "fiber_g_per_dollar",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "breakfast-staples-per-dollar-2026.csv",
+    "rows": 9,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "protein_g_per_dollar",
+      "fiber_g_per_dollar",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "canned-vs-dry-beans-cost-2026.csv",
+    "rows": 10,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "cheapest-complete-protein-pairs-2026.csv",
+    "rows": 20,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "dairy-protein-per-dollar-ranked-2026.csv",
+    "rows": 6,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "eggs-vs-everything-protein-value-2026.csv",
+    "rows": 49,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "fastfood-protein-per-dollar-2026.csv",
+    "rows": 30,
+    "fields": [
+      "chain",
+      "item",
+      "protein_g",
+      "price_usd",
+      "protein_g_per_dollar",
+      "source",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "fiber-day-cost-2026.csv",
+    "rows": 27,
+    "fields": [
+      "day",
+      "meal",
+      "food",
+      "grams_used",
+      "fiber_g",
+      "cost_usd",
+      "basis"
+    ]
+  },
+  {
+    "file": "fiber-per-dollar-2026.csv",
+    "rows": 53,
+    "fields": [
+      "rank",
+      "food",
+      "category",
+      "fiber_g_per_100g",
+      "package",
+      "package_price_usd",
+      "package_weight_g",
+      "edible_fraction",
+      "price_per_100g_usd",
+      "fiber_g_per_dollar",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "grains-fiber-per-dollar-ranked-2026.csv",
+    "rows": 11,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "high-fiber-snacks-per-dollar-2026.csv",
+    "rows": 10,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "meat-per-dollar-protein-ranked-2026.csv",
+    "rows": 11,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "no-cook-protein-per-dollar-2026.csv",
+    "rows": 15,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "one-dollar-fiber-what-it-buys-2026.csv",
+    "rows": 15,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "one-dollar-protein-what-it-buys-2026.csv",
+    "rows": 15,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "plant-protein-per-dollar-ranked-2026.csv",
+    "rows": 18,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "produce-fiber-per-dollar-ranked-2026.csv",
+    "rows": 22,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "protein-day-cost-2026.csv",
+    "rows": 21,
+    "fields": [
+      "day",
+      "meal",
+      "food",
+      "grams_used",
+      "protein_g",
+      "cost_usd",
+      "basis"
+    ]
+  },
+  {
+    "file": "protein-per-dollar-2026.csv",
+    "rows": 49,
+    "fields": [
+      "rank",
+      "food",
+      "category",
+      "protein_g_per_100g",
+      "package",
+      "package_price_usd",
+      "package_weight_g",
+      "edible_fraction",
+      "price_per_100g_usd",
+      "protein_g_per_dollar",
+      "price_basis"
+    ]
+  },
+  {
+    "file": "protein-quality-per-dollar-2026.csv",
+    "rows": 25,
+    "fields": [
+      "food",
+      "protein_g_per_dollar",
+      "diaas_score",
+      "diaas_capped_for_multiplication",
+      "diaas_method",
+      "diaas_source",
+      "adjusted_g_per_dollar",
+      "notes"
+    ]
+  },
+  {
+    "file": "shelf-stable-pantry-per-dollar-2026.csv",
+    "rows": 27,
+    "fields": [
+      "food",
+      "category",
+      "value",
+      "package",
+      "package_price_usd",
+      "price_basis"
+    ]
+  }
+]
