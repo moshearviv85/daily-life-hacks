@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import { isReleased } from "../content/release";
 
 const SITE = "https://www.daily-life-hacks.com";
-const MAX_ITEMS = 40;
+const MAX_ITEMS = 25;  // MSN wants fewer than 30 fresh items
 
 function esc(value: string): string {
   return value
@@ -42,6 +42,7 @@ export const GET: APIRoute = async () => {
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
       <description>${esc(a.data.excerpt)}</description>
+      <content:encoded><![CDATA[<p><img src="${image}" alt="${a.data.imageAlt ?? a.data.title}" /></p><p>${a.data.excerpt}</p><p><a href="${url}">Read the full article with the data tables and sources.</a></p>]]></content:encoded>
       <pubDate>${pub}</pubDate>
       <category>${esc(category)}</category>
       <dc:creator>${esc(a.data.author ?? "David Miller")}</dc:creator>
@@ -58,6 +59,7 @@ export const GET: APIRoute = async () => {
 <rss version="2.0"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Daily Life Hacks</title>
