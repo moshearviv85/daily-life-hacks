@@ -60,3 +60,5 @@ kilo_settings.json
 __pycache__/
 **/__pycache__/
 *.pyc
+mcp-server/node_modules/
+mcp-server/build/

@@ -1,0 +1,28 @@
+day,meal,food,grams_used,fiber_g,cost_usd,basis
+Day 1: Rock-bottom dry goods,Breakfast,"Rolled oats, 60g dry (2/3 cup)",60,6.1,0.17,parent CSV: Old-fashioned rolled oats
+Day 1: Rock-bottom dry goods,Lunch,Split pea soup from 50g dry split peas (1/4 cup),50,11.1,0.16,parent CSV: Green split peas (dry)
+Day 1: Rock-bottom dry goods,Dinner,"Pinto beans, 60g dry (1/3 cup)",60,9.3,0.13,parent CSV: Pinto beans (dry)
+Day 1: Rock-bottom dry goods,Dinner,"Brown rice, 50g dry (1/4 cup)",50,1.8,0.1,parent CSV: Brown rice (dry)
+Day 1: Rock-bottom dry goods,Snack,"Popcorn, 25g kernels (2 tbsp)",25,3.6,0.06,parent CSV: Popcorn kernels
+Day 2: No-cook convenience,Breakfast,"Bran flakes, 45g (about 1.5 cups)",45,8.2,0.27,parent CSV: Bran flakes cereal
+Day 2: No-cook convenience,Lunch,"Whole wheat bread, 2 slices (52g)",52,3.1,0.18,parent CSV: 100% whole wheat bread
+Day 2: No-cook convenience,Lunch,"Peanut butter, 32g (2 tbsp)",32,1.6,0.14,parent CSV: Peanut butter
+Day 2: No-cook convenience,Lunch,"Prunes, 40g (about 5)",40,2.8,0.35,parent CSV: Prunes (dried plums)
+Day 2: No-cook convenience,Dinner,"Canned chickpeas, 1/2 can (220g)",220,10.6,0.49,parent CSV: Canned chickpeas
+Day 2: No-cook convenience,Snack,"Frozen green peas, 120g (3/4 cup), microwaved",120,5.4,0.31,parent CSV: Frozen green peas
+Day 3: Fresh produce lover,Breakfast,"Raspberries, one 6 oz box (170g)",170,11.1,2.48,parent CSV: Raspberries
+Day 3: Fresh produce lover,Breakfast,1 medium banana (185g with peel),185,3.1,0.26,parent CSV: Bananas
+Day 3: Fresh produce lover,Lunch,1 avocado (200g whole),200,9.9,0.95,parent CSV: Avocado
+Day 3: Fresh produce lover,Lunch,"Carrots, 100g",100,2.8,0.17,"parent CSV: Carrots (whole, bagged)"
+Day 3: Fresh produce lover,Dinner,1 small sweet potato (150g),150,4.5,0.32,parent CSV: Sweet potatoes
+Day 4: Restaurant day,Breakfast,Starbucks classic oatmeal with nut & fruit toppings,,6.0,4.25,chain nutrition pages + typical July 2026 menu prices
+Day 4: Restaurant day,Lunch,Wendy's plain baked potato,,7.0,3.29,chain nutrition pages + typical July 2026 menu prices
+Day 4: Restaurant day,Lunch,Wendy's large chili,,9.0,4.39,chain nutrition pages + typical July 2026 menu prices
+Day 4: Restaurant day,Dinner,Taco Bell bean burrito,,9.0,2.49,chain nutrition pages + typical July 2026 menu prices
+Day 5: Realistic mixed,Breakfast,"Rolled oats, 50g dry (1/2 cup)",50,5.1,0.14,parent CSV: Old-fashioned rolled oats
+Day 5: Realistic mixed,Breakfast,1 medium banana (185g with peel),185,3.1,0.26,parent CSV: Bananas
+Day 5: Realistic mixed,Lunch,"Whole wheat bread, 2 slices (52g)",52,3.1,0.18,parent CSV: 100% whole wheat bread
+Day 5: Realistic mixed,Lunch,"Peanut butter, 32g (2 tbsp)",32,1.6,0.14,parent CSV: Peanut butter
+Day 5: Realistic mixed,Lunch,1 medium apple (180g),180,3.9,0.51,parent CSV: Apples (gala)
+Day 5: Realistic mixed,Dinner,"Canned black beans, 1/2 can (220g)",220,12.3,0.44,parent CSV: Canned black beans
+Day 5: Realistic mixed,Dinner,"Frozen broccoli, 100g",100,3.0,0.32,parent CSV: Frozen broccoli florets

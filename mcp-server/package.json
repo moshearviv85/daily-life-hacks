@@ -1,0 +1,43 @@
+{
+  "name": "dlh-food-value-mcp",
+  "version": "0.1.0",
+  "description": "MCP server exposing the Daily Life Hacks Food Value Data: US grocery prices paired with USDA nutrient values, answering protein-per-dollar and fiber-per-dollar questions with full attribution.",
+  "type": "module",
+  "bin": {
+    "dlh-food-value-mcp": "build/index.js"
+  },
+  "main": "build/index.js",
+  "files": [
+    "build",
+    "data",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', 0o755)\"",
+    "start": "node build/index.js",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "modelcontextprotocol",
+    "food prices",
+    "nutrition",
+    "protein per dollar",
+    "fiber per dollar",
+    "usda",
+    "open data"
+  ],
+  "author": "David Miller (Daily Life Hacks)",
+  "homepage": "https://www.daily-life-hacks.com/data/",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.9.3"
+  }
+}

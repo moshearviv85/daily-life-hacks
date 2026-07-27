@@ -1,0 +1,10 @@
+food,category,value,protein_g_per_dollar,fiber_g_per_dollar,package,package_price_usd,price_basis
+Whole wheat flour,Grains & pantry,173.8,96.0,77.8,5 lb bag,3.12,"Walmart GV (fiber study, audited)"
+Old-fashioned rolled oats,Grains & pantry,82.4,46.6,35.8,42 oz canister,3.36,"Walmart GV (fiber study, audited)"
+Peanut butter,Nuts & seeds,62.1,50.7,11.4,40 oz jar,4.97,"Walmart GV (fiber study, audited)"
+Eggs (large),Eggs & dairy,34.4,34.4,,1 dozen (600 g edible),2.19,BLS US avg May 2026 (APU0000708111)
+Whole milk,Eggs & dairy,29.1,29.1,,1 gallon,4.22,BLS US avg May 2026 (APU0000709112)
+"Greek yogurt (plain, nonfat)",Eggs & dairy,27.5,27.5,,32 oz tub,3.36,Walmart GV Jul 2026
+Cottage cheese (4%),Eggs & dairy,26.3,26.3,,24 oz tub,2.87,Walmart GV Jul 2026
+Bananas,Fresh fruit,11.6,,11.6,per lb,0.65,BLS US avg
+Apples (gala),Fresh fruit,7.7,,7.7,per lb,1.28,Walmart

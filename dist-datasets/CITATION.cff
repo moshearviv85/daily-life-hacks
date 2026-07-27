@@ -1,0 +1,70 @@
+cff-version: 1.2.0
+message: >-
+  If you use this data, please cite it as below, credit "Daily Life Hacks", and
+  link back to the study page the numbers came from or to
+  https://www.daily-life-hacks.com/data/ so your readers can check the
+  methodology. Full terms of use:
+  https://www.daily-life-hacks.com/methodology/#data-license
+title: Daily Life Hacks Food Value Data
+type: dataset
+version: "2026.1"
+date-released: "2026-07-26"
+abstract: >-
+  Twenty-two datasets (474 rows) of US grocery prices paired with USDA nutrient
+  values, covering fiber per dollar, protein per dollar, protein quality
+  adjusted with DIAAS, daily menu costing, and category-level rankings across
+  produce, grains, legumes, dairy, meat, pantry staples and fast food. Nutrient
+  values come from USDA FoodData Central. Prices are US national figures: BLS
+  Average Price data where the item is tracked, Walmart national listings
+  otherwise, observed July 2026. Every ranking is calculated as-purchased, with
+  USDA refuse percentages removed so peels, pits and bone are not counted as
+  food. This data is free to use with attribution and a link back; it is not
+  released under an open licence, and the terms that apply are published at
+  https://www.daily-life-hacks.com/methodology/#data-license
+authors:
+  - given-names: David
+    family-names: Miller
+    affiliation: Daily Life Hacks
+    website: "https://www.daily-life-hacks.com/about/"
+  - name: Daily Life Hacks
+    website: "https://www.daily-life-hacks.com"
+contact:
+  - name: Daily Life Hacks
+    website: "https://www.daily-life-hacks.com/contact/"
+url: "https://www.daily-life-hacks.com/data/"
+keywords:
+  - food prices
+  - nutrition
+  - protein per dollar
+  - fiber per dollar
+  - grocery costs
+  - food economics
+  - USDA FoodData Central
+  - BLS average prices
+  - budget nutrition
+identifiers:
+  - type: url
+    value: "https://www.daily-life-hacks.com/data/"
+    description: Dataset landing page listing every published CSV.
+  - type: url
+    value: "https://www.daily-life-hacks.com/methodology/"
+    description: Full methodology, sourcing rules and correction policy.
+  - type: other
+    value: "https://www.daily-life-hacks.com/data/datapackage.json"
+    description: >-
+      Frictionless tabular-data-package descriptor with per-file field schemas
+      and SHA-256 checksums.
+references:
+  - type: database
+    title: FoodData Central
+    authors:
+      - name: >-
+          U.S. Department of Agriculture, Agricultural Research Service
+    url: "https://fdc.nal.usda.gov/"
+    notes: Source of all nutrient values.
+  - type: database
+    title: Consumer Price Index Average Price Data
+    authors:
+      - name: "U.S. Bureau of Labor Statistics"
+    url: "https://www.bls.gov/cpi/data.htm"
+    notes: Source of national average prices for tracked staple foods.
