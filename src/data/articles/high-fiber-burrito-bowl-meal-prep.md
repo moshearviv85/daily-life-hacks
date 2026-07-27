@@ -66,7 +66,7 @@ For the Sunday-to-Friday plan behind this bowl, the [complete meal-prep system f
 
 The secret to a meal prep bowl that doesn't suck is structure. You need a sturdy base. We're using quinoa here because it cooks fast and has a slightly nutty flavor that works great with Mexican spices. Plus, it brings extra fiber and protein to the party, though quinoa isn't the cheapest way to buy fiber, as [the comparison with whole wheat flour](/whole-wheat-flour-vs-quinoa-fiber-cost/) makes clear. If you hate quinoa, brown rice is totally fine.
 
-Then we load it up with black beans and corn. Beans are the undisputed champions of the high fiber world. They're cheap, they fill you up, and they soak up whatever flavor you throw at them. A little taco seasoning turns a plain can of beans into the best part of the meal.
+Then we load it up with black beans and corn. Beans are the undisputed champions of the high fiber world. They're cheap, they fill you up, and they soak up whatever flavor you throw at them. A little taco seasoning turns a plain can of beans into the best part of the meal. If eating the same bowl five days running sounds grim, [this lentil-and-quinoa bowl plan](/high-fiber-meal-prep-ideas-for-busy-weeks-2026/) is built to bend when the week changes on you.
 
 ## Cooking the vegetables right
 

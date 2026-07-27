@@ -39,7 +39,7 @@ This works best in dishes with heavy sauces, like bolognese or taco meat. When y
 
 Liquid doesn't keep people full, but fiber does. If you're serving a standard chicken noodle soup, it's basically flavored water with a few bits of floating debris. To make it a meal that actually lasts until bedtime, you need to bulk it up with heavy hitters like potatoes, beans, or cabbage.
 
-Adding a can of white beans to a soup adds creaminess and bulk without changing the flavor profile. Potatoes are another secret weapon because they're cheap and essentially flavor sponges. If you find yourself with a pot that looks a bit thin, throw in a handful of quick-cooking oats. They disappear into the broth and thicken it up beautifully while adding a little extra substance to every bowl.
+Adding a can of white beans to a soup adds creaminess and bulk without changing the flavor profile. Potatoes are another secret weapon because they're cheap and essentially flavor sponges. If you find yourself with a pot that looks a bit thin, throw in a handful of quick-cooking oats. They disappear into the broth and thicken it up beautifully while adding a little extra substance to every bowl. A slow cooker does all of this unattended, which is why [cheap crockpot meals for large families](/cheap-crockpot-meals-large-families/) lean on the same bulk staples: beans, potatoes, and cuts that need time more than attention.
 
 ## Embrace the power of the side dish
 

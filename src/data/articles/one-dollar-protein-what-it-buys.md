@@ -60,7 +60,7 @@ If drumsticks feel like a hassle, the one-pot route hides the effort: an [easy o
 
 Whole wheat flour is the quiet number two at 96.0 grams per dollar. A $3.12 five pound bag holds roughly 300 grams of protein, which nobody thinks about because flour doesn't get a spot on protein lists. It only pays out if you bake, but a loaf of [homemade sandwich bread](/easy-sandwich-bread-recipe-beginners/) collects the dividend, and it beats anything at the bakery counter on price.
 
-Oats belong in the same conversation at 46.6 grams per dollar, about 157 grams of protein in the $3.36 canister. If sweet oatmeal bores you, [savory oatmeal bowls](/savory-oatmeal-bowls-with-eggs-and-avocado/) handle oats like the grain they are instead of a dessert delivery system. And in the pasta aisle, whole wheat spaghetti (53.4) outscores regular (47.7), so the slightly darker box is also the better protein buy.
+Oats belong in the same conversation at 46.6 grams per dollar, about 157 grams of protein in the $3.36 canister, and that canister is the best actual breakfast in [our ranking of breakfast staples](/breakfast-staples-per-dollar/), beaten only by the flour again. If sweet oatmeal bores you, [savory oatmeal bowls](/savory-oatmeal-bowls-with-eggs-and-avocado/) handle oats like the grain they are instead of a dessert delivery system. And in the pasta aisle, whole wheat spaghetti (53.4) outscores regular (47.7), so the slightly darker box is also the better protein buy.
 
 ## What does a full day of protein cost at these prices?
 

@@ -40,7 +40,7 @@ DIAAS stands for Digestible Indispensable Amino Acid Score, the current standard
 
 ## How we ran the quality adjustment
 
-The base numbers didn't change. Protein per dollar is pulled verbatim from the [original study](/protein-per-dollar-cheapest-protein-sources/). Each food's DIAAS is a published value, capped at 1.0 for the math so nothing scores a quality bonus above its raw grams. Quality-adjusted protein per dollar is just the two multiplied together, an estimate of usable protein per dollar.
+The base numbers didn't change. Protein per dollar is pulled verbatim from the original 49-food study, the same audited rows behind [the plant protein ranking](/plant-protein-per-dollar-ranked/) that most of this table's winners come from. Each food's DIAAS is a published value, capped at 1.0 for the math so nothing scores a quality bonus above its raw grams. Quality-adjusted protein per dollar is just the two multiplied together, an estimate of usable protein per dollar.
 
 Every DIAAS value carries a named source, drawn from peer-reviewed work (Nosworthy on cooked pulses, the Phillips 2017 review, Herreman 2020, Rutherfurd 2015, Mathai 2017, Burd 2019) and the FAO 2013 report. The full [quality-adjusted CSV is public](/data/protein-quality-per-dollar-2026.csv), one row per food with the score and its citation. One caveat: DIAAS values shift between studies depending on the reference pattern and cooking method, so read these as solid estimates, not lab constants for your exact groceries.
 
@@ -82,7 +82,7 @@ DIAAS above 1.0 is shown for reference. It was capped at 1.0 in the math, so egg
 
 ## Why the grains fell and the animal proteins climbed
 
-**Chicken drumsticks were the big winner,** jumping from eleventh on the raw list to second. Their DIAAS is around 1.08 while legumes lose a third or more of their raw value. At roughly a dollar a pound in the bag, drumsticks quietly became the best animal-protein deal in the store once quality entered the math.
+**Chicken drumsticks were the big winner,** jumping from eleventh on the raw list to second. Their DIAAS is around 1.08 while legumes lose a third or more of their raw value. At roughly a dollar a pound in the bag, drumsticks quietly became the best animal-protein deal in the store once quality entered the math, and they led [the animal-protein-only ranking](/animal-protein-per-dollar-ranked/) before we adjusted anything.
 
 **The cereal grains took the worst beating.** Whole wheat flour was a near-tie for first on raw protein per dollar. Adjusted, it slid to seventh. Whole wheat spaghetti dropped about ten spots and whole wheat bread fell nine, because grains are limited by lysine. Peanut butter fell hardest of all, eleven spots, since its DIAAS sits near 0.43.
 
@@ -98,9 +98,9 @@ So the complaint is real, and it still doesn't knock beans off the top. It just 
 
 You don't need a spreadsheet at the register.
 
-* **Keep beans and lentils as the cheap baseline.** They still top the adjusted list, and a grain on the side handles the quality question. A batch of [easy black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) or a pot of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) does the work.
+* **Keep beans and lentils as the cheap baseline.** They still top the adjusted list, and a grain on the side handles the quality question. The same bags win the fiber spreadsheet too, which is the point of [beans scored on protein and fiber at once](/beans-double-win-fiber-protein/). A batch of [easy black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) or a pot of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) does the work.
 * **Make drumsticks or a whole bird your default meat.** They buy more usable protein per dollar than breast, thighs, or any ground meat here.
-* **Let eggs and dairy do the no-cook lifting.** A plate of [rice and beans](/quick-20-minute-high-fiber-meals-for-busy-days/) with an egg on top is cheap, fast, and covers the amino acid gap in one move.
+* **Let eggs and dairy do the no-cook lifting.** A plate of [rice and beans](/quick-20-minute-high-fiber-meals-for-busy-days/) with an egg on top is cheap, fast, and covers the amino acid gap in one move. [The rest of the stove-free lineup](/no-cook-protein-per-dollar/) is peanut butter, canned beans, and the dairy tubs.
 * **Don't overpay for the middle.** Peanut butter, whole wheat bread, and ground beef buy less usable protein than the shelf numbers suggest.
 
 The one-sentence version is nearly the same as last time, asterisk earned honestly: the dry goods aisle still wins even after you weight for quality, beans and rice close the gap the critics point to, and the humble drumstick is the meat counter's quiet bargain. Want the shopping system instead of another table? The [high-protein budget guide](/high-protein-on-a-budget-complete-guide/) turns all of this into a cart.

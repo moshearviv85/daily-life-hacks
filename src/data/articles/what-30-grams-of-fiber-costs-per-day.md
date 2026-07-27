@@ -64,11 +64,11 @@ This is the floor. Nobody's saying it's exciting. It is, however, 31.9 grams of 
 | Snack | Popcorn, 25g kernels (2 tbsp) | 3.6 g | $0.06 |
 | **Total** | | **31.9 g** | **$0.62** |
 
-The lunch is a small bowl of [split pea soup](/split-pea-soup-recipe-high-fiber/), which does more fiber work per penny than anything else in the store. If the dinner beans feel like a project, the [same-day quick soak](/how-to-quick-soak-dried-beans-same-day/) turns dry pintos into tonight's food instead of tomorrow's.
+The lunch is a small bowl of [split pea soup](/split-pea-soup-recipe-high-fiber/), which does more fiber work per penny than anything else in the store. If the dinner beans feel like a project, the [same-day quick soak](/how-to-quick-soak-dried-beans-same-day/) turns dry pintos into tonight's food instead of tomorrow's. That dinner, pintos over brown rice, is also one of the 20 legume-and-grain combinations we priced in [the cheapest complete protein math](/cheapest-complete-protein-pairs/).
 
 ## Day 2: The no-cook convenience day ($1.74)
 
-Zero pots. The most demanding step is a microwave and a can opener, and it still clears 30 grams.
+Zero pots. The most demanding step is a microwave and a can opener, and it still clears 30 grams. We ran the same no-stove rule on the protein side in [the cheapest protein you don't have to cook](/no-cook-protein-per-dollar/), where peanut butter and canned beans do most of the work.
 
 | Meal | Food + amount | Fiber | Cost |
 |---|---|---|---|
@@ -148,9 +148,9 @@ Then there are beans, the spreadsheet's recurring houseguest. Our [canned versus
 
 Don't pick one day and marry it. Steal the structure instead:
 
-* **Let one dry-goods item anchor each day.** Oats at breakfast or beans at dinner drops any day's cost by more, per gram, than any other single swap.
+* **Let one dry-goods item anchor each day.** Oats at breakfast or beans at dinner drops any day's cost by more, per gram, than any other single swap, and those beans are buying protein on the same dollar, which is why they also top [the plant protein ranking](/plant-protein-per-dollar-ranked/).
 * **Keep the no-cook day in your back pocket.** $1.74 and zero dishes is the honest answer for the weeks when cooking isn't happening.
-* **Treat the restaurant orders as emergency plays.** They're in our [fast food guide](/high-fiber-fast-food-options-guide/) for the days the drive-thru wins, not as a plan.
+* **Treat the restaurant orders as emergency plays.** They're there for the days the drive-thru wins, not as a plan, and [the same menus ranked on protein per dollar](/fast-food-protein-per-dollar-ranked/) come out just as lopsided against the grocery aisle.
 * **Want the full system?** The [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) turns these numbers into shopping lists and weekly routines.
 
 The whole study comes down to this: 30 grams of fiber is not expensive. It never was. The expensive part is paying someone else to open the can, and the drive-thru charges 23 times the dry goods aisle for the exact same nutrient. Now you know the exact markup.

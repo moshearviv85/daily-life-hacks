@@ -22,7 +22,7 @@ faq:
   - question: "Can kids eat high protein bread?"
     answer: "Most high protein breads are perfectly safe for children unless they have a specific allergy to ingredients like soy, nuts, or gluten. Since these breads are often denser and have more texture due to seeds and grains, some picky eaters might prefer them toasted or used in a familiar grilled cheese to mask the heartier consistency."
 ---
-I used to think bread was just a delivery vehicle for ham and mustard. It was the thing that kept my fingers dry and nothing more. Then I started looking at the nutrition labels on the standard supermarket loaves my kids like, and it was a ghost town of empty carbs. If you're trying to stay full past 2:00 PM without raiding the office snack drawer, the bread you choose for your sandwich matters more than the filling.
+I used to think bread was just a delivery vehicle for ham and mustard. It was the thing that kept my fingers dry and nothing more. Then I started looking at the nutrition labels on the standard supermarket loaves my kids like, and it was a ghost town of empty carbs. If you're trying to stay full past 2:00 PM without raiding the office snack drawer, the bread you choose for your sandwich matters more than the filling. If your afternoon happens on a job site instead of at a desk, the problem hits harder, and these [packable lunches built for a long shift](/healthy-blue-collar-lunch-ideas-men/) start from the same place.
 
 Finding the best high protein breads for healthy sandwiches doesn't mean you have to shop at a specialty health store or spend ten dollars on a loaf of frozen birdseed. You just need to know what to look for in the bread aisle while everyone else is fighting over the last bag of brioche buns.
 

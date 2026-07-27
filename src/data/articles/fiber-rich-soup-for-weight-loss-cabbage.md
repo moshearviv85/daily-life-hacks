@@ -118,7 +118,7 @@ Seasoning is the entire rehabilitation program for cabbage soup. Salt. Black pep
 
 If the broth still tastes flat after simmering, you probably used a weak broth or went shy on salt. Fix it in the pot, not with a speech about how healthy it is. Flavor first. Fiber rides along.
 
-Want it thicker? Mash a scoop of the beans against the side of the pot and stir. Want it brothier? Add water or more stock. Want it heartier? Stir in cooked barley or leftover brown rice at the end. Those swaps raise the fiber again and turn the soup into something that survives a cold night.
+Want it thicker? Mash a scoop of the beans against the side of the pot and stir. Want it brothier? Add water or more stock. Want it heartier? Stir in cooked barley or leftover brown rice at the end. Those swaps raise the fiber again and turn the soup into something that survives a cold night. And when the nights stop being cold, there's still a good case for [keeping the stockpot out well into spring](/health-benefits-eating-soup-in-spring/), just with a lighter hand on the starch.
 
 ## Meal prep, leftovers, and the "I forgot lunch" use case
 
@@ -130,7 +130,7 @@ If you're packing it for lunch, leave a little headspace in the container. Hot s
 
 ## Add-ins that keep the pot interesting
 
-Same base, different week. Stir in a cup of frozen green beans during the simmer. Add zucchini in the last ten minutes so it doesn't dissolve. Toss in a handful of chopped kale at the end if the fridge has greens looking tragic. Leftover cooked chicken or turkey can go in with the beans if you want more protein without changing the soup's personality.
+Same base, different week. Stir in a cup of frozen green beans during the simmer. Add zucchini in the last ten minutes so it doesn't dissolve. Toss in a handful of chopped kale at the end if the fridge has greens looking tragic. Once the produce aisle turns over to asparagus, peas, and spinach, these [spring vegetable soup recipes](/healthy-spring-vegetable-soup-recipes/) use the same thirty-minute structure with a lighter base. Leftover cooked chicken or turkey can go in with the beans if you want more protein without changing the soup's personality.
 
 I sometimes finish bowls with a spoon of grated Parmesan and a drizzle of olive oil. That doesn't cancel the fiber. It just makes you finish the bowl. If dairy isn't your thing, toasted pumpkin seeds on top give crunch and a little extra plant fat so the meal feels complete.
 

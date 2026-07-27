@@ -67,7 +67,7 @@ For more meals where a cheap can of beans does the heavy lifting, the [complete 
 
 ## Why this combo works
 
-White beans are mild. They soak up rosemary, garlic, and tomato without a fight. Kale gives you something green to feel smug about, and it holds up in the pot instead of dissolving into spinach mush in five minutes.
+White beans are mild. They soak up rosemary, garlic, and tomato without a fight. Kale gives you something green to feel smug about, and it holds up in the pot instead of dissolving into spinach mush in five minutes. Once the greens in the store turn lighter, [spring vegetable soup recipes](/healthy-spring-vegetable-soup-recipes/) build around that softer produce on purpose and finish in about half the time.
 
 Smashing part of the beans against the pot is the lazy person's thickener. You're not making a roux. You're not dirtying a blender. You're just pressing beans until the broth gets a little creamy. That's the whole trick.
 
@@ -90,7 +90,7 @@ Finish with lemon and the last drizzle of oil. Fat carries flavor. Acid lifts it
 * **More protein:** Add shredded rotisserie chicken in the last 5 minutes, or a can of drained tuna if you're feeling brave and a little chaotic.
 * **More bulk:** Toss in a cup of small pasta (like ditalini) during the simmer. Add extra broth because pasta drinks liquid like it's personal.
 * **Less heat:** Skip the red pepper flakes. The soup is still good. Promise.
-* **Herb swap:** Thyme works if rosemary isn't your thing. Fresh basil stirred in at the end is nice in summer when you're pretending the weather cooperates.
+* **Herb swap:** Thyme works if rosemary isn't your thing. Fresh basil stirred in at the end is nice in summer when you're pretending the weather cooperates, and it's part of why [soup still earns its spot well into spring](/health-benefits-eating-soup-in-spring/).
 
 If the pasta-in-soup idea is calling you, take it one step further. This [creamy tomato orzo with white beans](/creamy-tomato-orzo-white-beans-one-pot/) turns the same two cans into a one-pot dinner that's more stew than soup.
 

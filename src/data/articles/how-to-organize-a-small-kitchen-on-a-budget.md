@@ -92,7 +92,7 @@ A tiny kitchen doesn't have to stop you from cooking ahead, either. Here's [how 
 
 ## Maintenance beats motivation
 
-Motivation is weather. Systems are climate. A ten-minute reset after cooking saves you from a weekend deep clean you will dread. Wipe the counter, soak the pan, take the trash out if it is full. An organized kitchen also makes cooking faster, and these [food prep tips to save time](/food-prep-tips-to-save-time/) run on the same set-it-up-once logic.
+Motivation is weather. Systems are climate. A ten-minute reset after cooking saves you from a weekend deep clean you will dread. Wipe the counter, soak the pan, take the trash out if it is full. The sink is where that reset usually dies, so [keeping one basin clear for rinsing and prep](/kitchen-hacks-for-sink/) buys a small kitchen more usable space than another organizer will. An organized kitchen also makes cooking faster, and these [food prep tips to save time](/food-prep-tips-to-save-time/) run on the same set-it-up-once logic.
 
 ## Before you buy another gadget
 

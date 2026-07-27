@@ -33,7 +33,7 @@ Effective freezer organization tips for large family meals aren't about aestheti
 
 If you stack bags of soup or marinara on top of each other while they are soft, they freeze into a lumpy, frozen mountain range. You can't stack them, and you certainly can't find anything. Instead, fill your freezer bags, squeeze out every bit of air, and lay them flat on a baking sheet to freeze. 
 
-Once they are solid bricks, stand them up vertically in a bin like folders in a filing cabinet. This allows you to flip through your "files" and pull out tonight's dinner without moving fifteen other items. It also maximizes every square inch of shelf space. Vertical storage is the only way to keep track of multiple large family meals without losing your mind.
+Once they are solid bricks, stand them up vertically in a bin like folders in a filing cabinet. This allows you to flip through your "files" and pull out tonight's dinner without moving fifteen other items. It also maximizes every square inch of shelf space. Vertical storage is the only way to keep track of multiple large family meals without losing your mind. Those flat frozen bricks also pack into a cooler better than anything else, which is why they show up in most [camping meal hacks for large families](/camping-meal-hacks-large-families/): they save space and double as the ice.
 
 ## Inventory Is Not Just for Grocery Stores
 
@@ -45,7 +45,7 @@ When I take something out, I wipe it off the board. This prevents that awkward m
 
 Grouping food by "beef" or "chicken" is fine, but grouping by how you cook it is better for a busy household. I use large plastic bins to separate my freezer into functional zones. One bin is for "Slow Cooker Dumps," another is for "Instant Pot Ready," and a third is for "Heat and Eat" leftovers.
 
-**Slow Cooker Bin:** These are raw ingredients prepped in a bag that just need to be thawed and dumped into the crockpot.
+**Slow Cooker Bin:** These are raw ingredients prepped in a bag that just need to be thawed and dumped into the crockpot. Most [cheap crockpot meals for large families](/cheap-crockpot-meals-large-families/) bag up this way, since the cheap cuts and dry staples they run on freeze raw without complaint.
 **Pre-Cooked Bin:** Think lasagna, casseroles, or cooked taco meat that just needs a microwave or oven session. Most of my [cheap chicken casserole meals](/cheap-chicken-casserole-meals-large-families/) and batches of [budget ground beef dinners](/cheap-ground-beef-meals-large-families/) live in this bin.
 **Bulk Proteins:** This is where the raw meat lives, usually at the bottom or back since you don't grab it for a quick fix.
 

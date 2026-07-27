@@ -73,7 +73,7 @@ This sheet pan salmon and vegetables recipe is built for those nights when stand
 
 Salmon cooks notoriously fast and frankly doesn't need much help besides some olive oil, salt, and a little dried herb to taste great. On the other side of the pan, broccoli, zucchini, and cherry tomatoes roast beautifully at the exact same high heat without needing you to babysit them. 
 
-Starting the vegetables 10 minutes before the fish gives the veggies a crucial head start. This ensures the broccoli gets those nice crispy edges right around the same time the salmon finishes cooking. If everything went in at once, you'd either have raw vegetables or dry, overcooked fish. 
+Starting the vegetables 10 minutes before the fish gives the veggies a crucial head start. This ensures the broccoli gets those nice crispy edges right around the same time the salmon finishes cooking. If everything went in at once, you'd either have raw vegetables or dry, overcooked fish. The same staggered timing runs [one-pan lemon herb chicken and veggies](/quick-dinner-recipes/) when you want poultry instead of fish. 
 ## Picking the Right Salmon and Veggies
 
 When buying your fish, look for skin-on fillets. The skin acts as a protective layer against the hot metal of the pan, holding the fish together and keeping the flesh moist. You can just eat the meat right off the skin once it's on your plate. Try to buy fillets that are roughly the same thickness so nobody ends up with a dry piece while someone else has an undercooked one.
@@ -81,7 +81,7 @@ When buying your fish, look for skin-on fillets. The skin acts as a protective l
 If you aren't a fan of zucchini, you can easily swap in asparagus or fresh green beans. The main rule of sheet pan cooking is to keep your vegetable pieces cut to a similar size so they roast evenly. And when salmon prices are having a moment, this [baked cod with lemon, capers, and green beans](/baked-cod-lemon-capers-green-beans/) runs on the same one-pan logic for a few dollars less.
 ## Keeping the Flavor Simple
 
-There's no complicated glaze or reduction sauce to make here unless you really want to do the extra dishes. A hefty squeeze of fresh lemon juice right when it comes out of the oven is usually all the fish needs to brighten up. 
+There's no complicated glaze or reduction sauce to make here unless you really want to do the extra dishes. If a glaze is the point, cube the fish and make [air fryer salmon bites in garlic and honey](/air-fryer-salmon-bites-garlic-honey-glaze/), where the sauce goes on after cooking. A hefty squeeze of fresh lemon juice right when it comes out of the oven is usually all the fish needs to brighten up. 
 
 If you happen to have a little plain Greek yogurt, Dijon mustard, or an old jar of pesto in the fridge, a quick dollop on the side works nicely too. Leftover salmon and veggies will keep in the fridge for a day or two. Reheat it very gently in the microwave or enjoy it cold over a salad so the fish doesn't turn rubbery. It's one pan, one timer, and one less decision you have to make today.
 

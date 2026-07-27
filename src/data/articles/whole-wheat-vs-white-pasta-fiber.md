@@ -61,7 +61,7 @@ If you're comparing boxes at the store, keep the serving weights aligned. One br
 
 A wheat kernel has three parts: the bran (the fibrous outer layer), the germ (the little nutrient-dense engine), and the endosperm (the starchy middle). White flour is just the endosperm; milling removes the other two so the flour is finer, paler, and keeps longer on a shelf. It's the exact same trade that turns whole corn into regular grits, which we measured in our [oatmeal vs grits comparison](/oatmeal-vs-grits-fiber-content/): shelf life up, fiber out.
 
-Whole wheat pasta grinds the entire kernel, bran and all. That's the whole trick. Nothing added, nothing fortified, just less removed.
+Whole wheat pasta grinds the entire kernel, bran and all. That's the whole trick. Nothing added, nothing fortified, just less removed. It's the same reason intact grains like [amaranth, millet, and teff](/amaranth-millet-teff-beginner-cooking-guide/) arrive with their fiber attached; nobody milled the bran off them on the way to the bag.
 
 That distinction also explains why color isn't enough. A brown noodle can get its color from ingredients other than whole wheat, and a package covered in wheat stalks can still be a blend. Read the first ingredient and the fiber line. If the first ingredient says whole wheat or whole durum wheat and the box carries the 5 to 7 grams in the table, you're looking at the kind of pasta being compared here.
 

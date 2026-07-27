@@ -71,7 +71,7 @@ The boring-looking bags with plain oats on the label are sometimes the best ones
 
 Granola is dense. That's not a flaw, it's a feature, but it means a little goes a long way.
 
-* **Use it as a topping, not a base.** A few tablespoons over yogurt or a smoothie bowl adds crunch without the calorie load of a full cereal bowl.
+* **Use it as a topping, not a base.** A few tablespoons over yogurt or a smoothie bowl adds crunch without the calorie load of a full cereal bowl. The yogurt is doing the protein work, which is exactly the structure behind [a breakfast that holds you until lunch](/best-breakfast-foods-for-sustained-energy/): a protein, a fiber-rich carb, and a bit of fat.
 * **Mix it with a plain cereal.** Half puffed rice, half granola gives you texture without the density.
 * **Portion it.** A quarter cup in a small ramekin next to your yogurt looks like more than it is and helps you not absentmindedly eat half the bag.
 

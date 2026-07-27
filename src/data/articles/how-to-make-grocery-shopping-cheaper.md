@@ -63,7 +63,7 @@ You don't have to go full hermit. Some people do the bulk of the order online, t
 
 ## Make a list that survives the store
 
-A list only works if it's built around meals, not vibes. Before you write "chicken" and "lettuce," decide what you're actually cooking. Three dinners, two breakfasts you can repeat, and lunch leftovers from those dinners. Suddenly the list has a job.
+A list only works if it's built around meals, not vibes. Before you write "chicken" and "lettuce," decide what you're actually cooking. Three dinners, two breakfasts you can repeat, and lunch leftovers from those dinners. Suddenly the list has a job. Picking one flexible theme makes it easier still, because [five dinners can share tortillas, beans, corn, cabbage, and lime](/one-theme-five-dinners-one-grocery-list/) off a single short list instead of five separate ingredient sets.
 
 Check the fridge and pantry first. Half the overspend problem is buying a second jar of cumin when the first one is hiding behind the soy sauce. Once a week, do a two-minute inventory. It feels boring. It saves more than most coupons.
 
@@ -145,6 +145,6 @@ You don't need a color-coded binder. You need a repeatable loop:
 4. Order online or shop with the list in hand.
 5. Portion and freeze anything that won't get eaten soon.
 
-That rhythm is how people who aren't naturally organized still spend less. The goal isn't perfect optimization. It's fewer impulse buys, less waste, and a cart built around food you'll actually cook.
+That rhythm is how people who aren't naturally organized still spend less. And if your grocery total went up once you started cooking more, that isn't automatically a failure; [the takeout and delivery money simply moved onto the grocery line](/why-grocery-bill-went-up-after-cooking-more/), so compare total food spending before you panic. The goal isn't perfect optimization. It's fewer impulse buys, less waste, and a cart built around food you'll actually cook.
 
 Learning how to make grocery shopping cheaper is mostly a defensive mindset plus better defaults. Stick to your list, skip the marketing traps, buy the cheap nutrition first, and never, ever go shopping when you're hungry.

@@ -55,7 +55,7 @@ Just below the table's cutoff sit rolled oats at 46.6 grams per dollar, dry roas
 
 ## What's the best canned protein?
 
-Canned black beans, at 30.1 grams of protein per dollar from an $0.88 can. Canned kidney beans follow at 23.4 and canned chickpeas at 22.0, and a couple of those turned into [hummus you made yourself](/high-fiber-hummus-recipe-homemade/) beats the deli tub on price without asking much of you.
+Canned black beans, at 30.1 grams of protein per dollar from an $0.88 can. Canned kidney beans follow at 23.4 and canned chickpeas at 22.0, and a couple of those turned into [hummus you made yourself](/high-fiber-hummus-recipe-homemade/) beats the deli tub on price without asking much of you. Every one of those cans still loses to its own dry version by roughly two and a half to three times, which is the convenience tax we priced in [canned versus dry beans](/canned-vs-dry-beans-cost/).
 
 The fish shelf clusters tightly behind the bean cans. Chunk light tuna leads at 22.4 grams per dollar from a $0.98 can, canned pink salmon does 21.6, and sardines 20.2 at $1.12 a tin. When the numbers sit that close, buy the one you'll actually open. The frozen tilapia in our dataset scores 20.9, right in the same band, though at $17.47 for a 4 pound bag it's technically a freezer resident crashing the pantry party.
 
@@ -63,12 +63,12 @@ The fish shelf clusters tightly behind the bean cans. Chunk light tuna leads at 
 
 One of them is. Peanut butter at 50.7 grams of protein per dollar is the only nut product that hangs with the beans, and a 40 ounce jar at $4.97 is the most protein-dense thing in the pantry that requires zero cooking. Dry roasted peanuts hold a respectable 39.8 and sunflower kernels 31.7.
 
-Then there's almonds: 14.8 grams per dollar, dead last out of 27, from a $6.47 bag. Almonds are fine food. They're just a terrible protein strategy, and the grocery store has been quietly charging you a reputation premium on them.
+Then there's almonds: 14.8 grams per dollar, dead last out of 27, from a $6.47 bag. Almonds are fine food. They're just a terrible protein strategy, and the grocery store has been quietly charging you a reputation premium on them. Tofu and tempeh sit in the same unhappy neighborhood at 13.6 and 13.2 grams per dollar once you rank [the whole plant protein aisle](/plant-protein-per-dollar-ranked/).
 
 ## How do you actually stock a pantry from this list?
 
-Buy from the top and cook from the middle. The bags of pintos, lentils, and split peas are the foundation, and something like [a 20 minute pot of beans and rice](/quick-20-minute-high-fiber-meals-for-busy-days/) is what they're for. White rice at 48.0 grams per dollar isn't there for its own protein so much as for making the beans feel like dinner. Then the cans, the tuna, and the peanut butter are your no-effort layer for nights when soaking anything sounds like a personal insult.
+Buy from the top and cook from the middle. The bags of pintos, lentils, and split peas are the foundation, and something like [a 20 minute pot of beans and rice](/quick-20-minute-high-fiber-meals-for-busy-days/) is what they're for. White rice at 48.0 grams per dollar isn't there for its own protein so much as for making the beans feel like dinner. Then the cans, the tuna, and the peanut butter are your no-effort layer for nights when soaking anything sounds like a personal insult. Peanut butter happens to win [the ranking of protein you can eat without cooking](/no-cook-protein-per-dollar/) at 50.7 grams per dollar, and the bean cans and tuna hold their own there too.
 
-For scale, the FDA's Daily Value for protein is 50 grams. A single dollar of dry pintos buys nearly two of those. If you want the meal-by-meal version of that math, [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) runs it, and the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) turns the whole ranking into a shopping list. The pantry version of eating well isn't a sacrifice. It's mostly just beans, boxes, and refusing to pay for water.
+For scale, the FDA's Daily Value for protein is 50 grams. A single dollar of dry pintos buys nearly two of those, which is the top line of our list of [what one protein dollar actually buys](/one-dollar-protein-what-it-buys/). If you want the meal-by-meal version of that math, [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) runs it, and the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) turns the whole ranking into a shopping list. The pantry version of eating well isn't a sacrifice. It's mostly just beans, boxes, and refusing to pay for water.
 
 <!-- numbers-source: pipeline-data/derived-studies/shelf-stable-pantry-per-dollar.json -->

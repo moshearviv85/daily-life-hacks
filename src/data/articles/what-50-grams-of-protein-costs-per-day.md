@@ -64,7 +64,7 @@ This is the floor. Nobody's calling it dinner at a steakhouse. It is, however, 5
 | Snack | Peanut butter, 32g (2 tbsp) | 7.1 g | $0.14 |
 | **Total** | | **52.7 g** | **$0.82** |
 
-The beans and rice together aren't an accident. Eaten in the same day they cover each other's amino acid gaps, which is the whole reason [beans and rice count as a complete protein](/beans-and-rice-complete-protein-meal/). If the dinner beans feel like a project, that's a cooking problem, not a cost problem, and split pea soup does most of the day's protein work for the price of a stick of gum.
+The beans and rice together aren't an accident. Eaten in the same day they cover each other's amino acid gaps, which is the whole reason [beans and rice count as a complete protein](/beans-and-rice-complete-protein-meal/). If the dinner beans feel like a project, that's a cooking problem, not a cost problem, and split pea soup does most of the day's protein work for the price of a stick of gum. The oats at the top of the day are quietly pulling weight too, since they're one of the best values in [the breakfast staples ranking](/breakfast-staples-per-dollar/) once fiber counts alongside protein.
 
 ## Day 2: The no-cook convenience day ($2.05)
 
@@ -122,7 +122,7 @@ Nobody eats like Day 1 forever, and nobody should eat like Day 4 forever unless 
 | Drink | Whole milk, 1 cup (244g) | 7.7 g | $0.26 |
 | **Total** | | **51.7 g** | **$1.51** |
 
-A buck fifty. That's a recognizable day of food, no split-pea heroics required, and the beans, bread, and peanut butter bring more than one nutrient to the table.
+A buck fifty. That's a recognizable day of food, no split-pea heroics required, and the beans, bread, and peanut butter bring more than one nutrient to the table. Swapping that half can for dry beans would shave the total further, since [dry beans run about 2.7 times cheaper per gram of protein](/canned-vs-dry-beans-cost/), but then you're back to planning ahead by an evening.
 
 ## What the five days actually say
 
@@ -144,9 +144,9 @@ Convenience needs its own receipt. Compare [one dollar of protein](/one-dollar-p
 
 Don't pick one day and marry it. Steal the structure instead:
 
-* **Let one bean or lentil anchor each day.** A can of beans at dinner or a scoop of dry lentils in a soup drops any day's cost by more, per gram, than any other single swap.
+* **Let one bean or lentil anchor each day.** A can of beans at dinner or a scoop of dry lentils in a soup drops any day's cost by more, per gram, than any other single swap. It's also the swap that pays twice, because beans top [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/) as well as this one.
 * **Keep the no-cook day in your back pocket.** $2.05 and zero dishes is the honest answer for the weeks when cooking isn't happening.
-* **Compare the local app before ordering.** The McDouble worked in this recorded scenario, but restaurant prices vary. The grocery benchmarks stay on our [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) map.
+* **Compare the local app before ordering.** The McDouble worked in this recorded scenario, but restaurant prices vary. The grocery benchmarks move a lot less, and they survive even when you [re-rank every food for protein quality](/protein-per-dollar-adjusted-for-quality/) instead of raw grams.
 * **Want the full system?** The [complete guide to high protein on a budget](/high-protein-on-a-budget-complete-guide/) turns these numbers into shopping lists, and [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/) sorts out whether 50 grams is even your number.
 
 The whole study comes down to this: 50 grams of protein can be inexpensive in a grocery plan, including the meat-based scenario. In this specific comparison, the recorded restaurant day cost about 12 times the dry-goods day. That's a measured scenario, not a promise about every cart or every McDonald's.

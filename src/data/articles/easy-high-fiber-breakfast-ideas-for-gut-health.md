@@ -96,7 +96,7 @@ Avocado toast became a cliche because it photographs well and takes almost no sk
 
 Use actual whole grain bread and check the label for at least 3 grams of fiber per slice. Smash half an avocado with lemon, salt, and chili flakes. Add a sliced hard-boiled egg if you need more protein, or top with canned chickpeas you warmed in a pan with cumin for two minutes. Chickpeas turn "toast" into something that might keep you full until lunch.
 
-One slice with avocado alone is a snack pretending to be breakfast. Two slices with a protein topper is a meal. If the bread is soft white sandwich bread, you're mostly eating a delivery system for avocado. Upgrade the bread first.
+One slice with avocado alone is a snack pretending to be breakfast. Two slices with a protein topper is a meal. That pairing of protein and fiber is what separates [a breakfast that keeps you steady all morning](/best-breakfast-foods-for-sustained-energy/) from one that hands you straight back to the snack drawer. If the bread is soft white sandwich bread, you're mostly eating a delivery system for avocado. Upgrade the bread first.
 
 ## Chia pudding for the "I leave the house in nine minutes" crowd
 

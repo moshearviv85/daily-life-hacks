@@ -169,7 +169,7 @@ You don't need to thaw a frozen crust before topping it. Add a restrained layer 
 
 Refrigerated slices reheat best with dry heat. A skillet over medium-low heat restores the underside while a lid held slightly ajar helps warm the topping. A toaster oven or regular oven also works. The microwave is fast, but it softens the base. Sometimes two minutes matters more than crispness. Just know the tradeoff.
 
-If you're already processing and cooking one head of cauliflower, making a second crust can be a smart use of the mess. Double only if your towel, bowl, and baking space can handle the volume. Crowding two thick crusts onto one small pan creates uneven baking and defeats the point.
+If you're already processing and cooking one head of cauliflower, making a second crust can be a smart use of the mess. You can also rice the extra head and set it aside for dinner, since [cauliflower rice bowls](/high-fiber-cauliflower-rice-recipes/) start with the same food processor step and skip the towel entirely. Double only if your towel, bowl, and baking space can handle the volume. Crowding two thick crusts onto one small pan creates uneven baking and defeats the point.
 
 ## How to compare fiber numbers and labels
 

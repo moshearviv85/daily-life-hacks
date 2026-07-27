@@ -88,7 +88,7 @@ Please, do not skip rinsing the rice. It takes 30 seconds and keeps the grains f
 
 If the rice still looks a bit wet when your timer goes off, don't panic. Just put the lid back on and let it sit off the heat for another 5 minutes. The residual steam will finish the job.
 
-Leftovers keep well in the fridge for a few days. They reheat nicely in the microwave-just add a tiny splash of water or broth to loosen things up. It's a real dinner with minimal cleanup, which is exactly what a weeknight needs.
+Leftovers keep well in the fridge for a few days. They reheat nicely in the microwave-just add a tiny splash of water or broth to loosen things up. It's a real dinner with minimal cleanup, which is exactly what a weeknight needs. When even 45 minutes is more than the evening has, these [30-minute family dinners](/quick-dinner-recipes-for-family/) run on the same one-skillet logic.
 
 ## Brown the chicken without crowding the pot
 

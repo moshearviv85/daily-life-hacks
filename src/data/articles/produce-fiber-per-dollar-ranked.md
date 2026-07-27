@@ -45,7 +45,7 @@ Source: USDA FoodData Central + single-store prices, July 2026. Full methodology
 
 ## Which vegetables give you the most fiber per dollar?
 
-The winners are the unglamorous ones. Frozen green peas top the whole list, and a $2.32 bag keeps in the freezer until whenever you need it. Bagged whole carrots come in at 16.1 grams per dollar, $1.58 for two pounds, which makes them one of the few snacks that costs less than the vending machine and doesn't apologize for it.
+The winners are the unglamorous ones. Frozen green peas top the whole list, and a $2.32 bag keeps in the freezer until whenever you need it. Bagged whole carrots come in at 16.1 grams per dollar, $1.58 for two pounds, which makes them one of the few snacks that costs less than the vending machine and doesn't apologize for it. Only popcorn beats carrots in [our snack-only fiber ranking](/high-fiber-snacks-per-dollar/).
 
 Then there's green cabbage at 14.6 grams per dollar and $0.78 a pound. Cabbage is the produce section's best-kept secret: enormous, nearly indestructible in the fridge, and happy to become slaw, stir-fry, or a big pot of [cabbage soup](/fiber-rich-soup-for-weight-loss-cabbage/). Sweet potatoes follow at 13.9 grams per dollar, and if you want them before noon, this [sheet pan breakfast hash with eggs and sweet potatoes](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) is the move.
 
@@ -53,7 +53,7 @@ Then there's green cabbage at 14.6 grams per dollar and $0.78 a pound. Cabbage i
 
 Mostly, yes, and it isn't just the peas. Look at broccoli: frozen florets deliver 9.5 grams of fiber per dollar while fresh crowns manage 6.1. Same vegetable, different math, because the frozen bag costs $2.87 for 32 oz while fresh runs $1.94 a pound. Frozen green beans land at 11.2 grams per dollar, and frozen chopped spinach comes in at 8.4 with a $1.18 price tag that makes it the cheapest single item on this list.
 
-Frozen shelled edamame (8.3 grams per dollar) deserves a special mention because it doubles as a snack and a salad. This [cucumber and edamame salad with sesame](/cucumber-edamame-salad-sesame/) uses one $2.12 bag and takes less time than deciding what show to watch.
+Frozen shelled edamame (8.3 grams per dollar) deserves a special mention because it doubles as a snack and a salad. It's one of the few legumes in the freezer case, and legumes are the foods that [carry protein and fiber on the same dollar](/beans-double-win-fiber-protein/). This [cucumber and edamame salad with sesame](/cucumber-edamame-salad-sesame/) uses one $2.12 bag and takes less time than deciding what show to watch.
 
 The other frozen advantage doesn't show up in the table: nothing in the freezer turns to compost while you're busy. A bag of peas may quietly out-earn a bag of fresh greens just by surviving the week.
 
@@ -69,6 +69,6 @@ By this math, yes. Raspberries manage 4.5 grams of fiber per dollar, blackberrie
 
 The middle of the table has honorable mentions worth knowing: bagged chopped kale at 7.5 grams per dollar (it shines in this [Tuscan white bean and kale soup](/tuscan-white-bean-kale-soup-stovetop/)), yellow onions at 7.1, Brussels sprouts at 7.0, and russet potatoes with skin at 6.6 and just $0.89 a pound.
 
-Here's the honest takeaway: produce is where flavor and vitamins live, but even the best vegetable here can't touch dried beans and whole grains on fiber per dollar. Use this ranking to pick your produce smartly, then let the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) show you how the whole cart fits together. Buy the peas, the carrots, and the cabbage. Buy the berries because you like them. Just know which purchase is doing which job.
+Here's the honest takeaway: produce is where flavor and vitamins live, but even the best vegetable here can't touch dried beans and whole grains on fiber per dollar, and [the grain aisle has its own ranking](/grains-fiber-per-dollar-ranked/) if you want to see how far ahead it sits. Use this ranking to pick your produce smartly, check [what a single fiber dollar buys](/one-dollar-fiber-what-it-buys/) when the budget is tight, then let the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) show you how the whole cart fits together. Buy the peas, the carrots, and the cabbage. Buy the berries because you like them. Just know which purchase is doing which job.
 
 <!-- numbers-source: pipeline-data/derived-studies/produce-fiber-per-dollar-ranked.json -->

@@ -48,7 +48,7 @@ You find five unrelated recipes. One needs half a bunch of dill, another wants t
 
 A theme gives the week guardrails. You still choose different recipes, but they agree on the major groceries. The list gets shorter, the ingredients become easier to see, and leftover cabbage has somewhere to go besides a future apology.
 
-This is also why a theme works better than planning around five sale items. Sale items don't necessarily cooperate. A theme does.
+This is also why a theme works better than planning around five sale items. Sale items don't necessarily cooperate. A theme does. It cuts the mid-week store runs too, which is the whole point of [planning a week of dinners around fewer grocery trips](/plan-week-of-dinners-fewer-grocery-runs/).
 
 ## What belongs on the one grocery list?
 

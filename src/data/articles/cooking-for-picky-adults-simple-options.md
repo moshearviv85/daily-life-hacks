@@ -52,7 +52,7 @@ This is the strategy that saved our kitchen. You cook one base meal and add topp
 
 **Pasta.** Cook one pot of noodles. Offer two sauces: a simple butter and Parmesan option and a veggie-loaded marinara. Everybody wins.
 
-**Rice bowls.** White rice as the base. One side gets teriyaki chicken with broccoli and sriracha. The other gets plain grilled chicken with corn and cheese. Same effort, no argument.
+**Rice bowls.** White rice as the base. One side gets teriyaki chicken with broccoli and sriracha. The other gets plain grilled chicken with corn and cheese. Same effort, no argument. If you want something other than white rice under your own bowl, cook a small pot of [amaranth, millet, or teff](/amaranth-millet-teff-beginner-cooking-guide/) on the side. They each need their own water ratio and timing, so they were never going to share the rice pot anyway.
 
 **Sheet pan dinner.** Roast potatoes and one protein together. Put the "adventurous" vegetable on one half of the pan and the safe vegetable on the other. One sheet, two preferences.
 
