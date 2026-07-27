@@ -30,7 +30,7 @@ The soggy sandwich isn't a failure of your cooking skills, it is a failure of en
 
 The first rule of sandwich assembly is that bread is porous. If you put mustard or a juicy tomato directly against a slice of sourdough, that bread is going to act like a wick. You need a layer of fat to act as a shield.
 
-Spread your mayo, butter, or pesto from edge to edge. Don't just do a little dollop in the middle. You want a thin, continuous coat that fills the "pores" of the bread. Since oil and water don't mix, this fat layer prevents the water from the turkey or the lettuce from migrating into the crust. If you are trying to keep things lighter, a thin layer of mashed avocado or even a slice of hard cheese can serve as a physical barrier.
+Spread your mayo, butter, or pesto from edge to edge. Don't just do a little dollop in the middle. You want a thin, continuous coat that fills the "pores" of the bread. Since oil and water don't mix, this fat layer prevents the water from the turkey or the lettuce from migrating into the crust. If you are trying to keep things lighter, a thin layer of mashed avocado or even a slice of hard cheese can serve as a physical barrier. Peanut butter works the same way and brings protein along with it, though it's worth seeing [what peanut butter and almonds each cost per gram of protein](/peanut-butter-vs-almonds-protein-cost/) before you decide which one earns the pantry shelf.
 
 ## Layer your ingredients strategically
 
@@ -54,6 +54,6 @@ If you must toast, you have to let that bread get stone-cold before you assemble
 
 Not all bread is created equal when it comes to the long-haul lunch. A soft, fluffy white sandwich loaf is designed to be eaten immediately. It doesn't have the density to hold up against moisture for more than an hour or two. 
 
-If you know your sandwich is going to be sitting in a lunch box, opt for something with a bit more structural integrity. Sourdough, ciabatta, or a dense multi-grain loaf can handle a little moisture without falling apart. These breads have a tighter crumb and a sturdier crust that acts as a natural defense. It might take a bit more chewing, but at least you won't be eating your lunch with a fork because the bread dissolved.
+If you know your sandwich is going to be sitting in a lunch box, opt for something with a bit more structural integrity. Sourdough, ciabatta, or a dense multi-grain loaf can handle a little moisture without falling apart, and most of the [high-protein breads worth putting in a sandwich](/best-high-protein-breads-healthy-sandwiches/) sit in that same dense category. These breads have a tighter crumb and a sturdier crust that acts as a natural defense. It might take a bit more chewing, but at least you won't be eating your lunch with a fork because the bread dissolved.
 
 Packing a lunch shouldn't feel like a high-stakes science experiment, but a few small adjustments in how you stack your turkey and cheese go a long way. Use the fat as a barrier, keep the wet stuff in the middle, and for the love of all things holy, let your toast cool down. You might actually find yourself looking forward to that sandwich instead of just eating it because it is there. And once your structure is sound, have some fun with the fillings; my favorite [egg sandwich add-ins and toppings](/healthy-egg-sandwich-add-ins-toppings/) are a good place to start.

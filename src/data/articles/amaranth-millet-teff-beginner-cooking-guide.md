@@ -98,7 +98,7 @@ Millet is basically your \"swap it in\" grain. If you've been hunting for [healt
 * Stir fry leftovers over millet
 * Roasted vegetable bowl with a tahini lemon sauce
 
-If you cook millet fluffy, it plays well with anything saucy.
+If you cook millet fluffy, it plays well with anything saucy, and topping the bowl with beans is the cheapest way to make it filling, which is clearer once you see [how ground beef and beans compare on protein per dollar](/ground-beef-vs-beans-protein-cost/).
 
 ### Use teff like savory oatmeal
 

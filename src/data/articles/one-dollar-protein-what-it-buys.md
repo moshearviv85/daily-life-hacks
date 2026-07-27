@@ -48,11 +48,11 @@ Three more foods round out the 15: regular spaghetti at 47.7 grams per dollar, o
 
 Somewhere between 39.8 and 97.9 grams, if you shop from this list. For scale, the FDA's Daily Value for protein is 50 grams, and it's a labeling benchmark, not a prescription. Eleven of these 15 foods clear that entire benchmark on a single dollar.
 
-The dollar works hardest in the dry goods aisle. Beans and rice together are the oldest budget meal on the planet for a reason: legumes and grains complement each other's amino acid profiles, and both sides of the plate cost almost nothing. A pot of [beans and rice](/beans-and-rice-complete-protein-meal/) combines pintos at 97.9 grams per dollar with white rice at 48.0, which is about as efficient as a grocery dollar gets.
+The dollar works hardest in the dry goods aisle, which is why [the plant-only cut of this ranking](/plant-protein-per-dollar-ranked/) reads almost exactly like the top of this table. Beans and rice together are the oldest budget meal on the planet for a reason: legumes and grains complement each other's amino acid profiles, and both sides of the plate cost almost nothing. A pot of [beans and rice](/beans-and-rice-complete-protein-meal/) combines pintos at 97.9 grams per dollar with white rice at 48.0, which is about as efficient as a grocery dollar gets.
 
 ## Is any meat actually competitive here?
 
-One. Chicken drumsticks, bone-in, from the 5 pound bag, at 50.3 grams of protein per dollar. That number already subtracts the bone, so it's honest meat math, and it still beat peanut butter by a nose. The $5.46 bag carries roughly 275 grams of protein, which turns into a lot of dinners if you're willing to work around a drumstick instead of a boneless breast.
+One. Chicken drumsticks, bone-in, from the 5 pound bag, at 50.3 grams of protein per dollar. That number already subtracts the bone, so it's honest meat math, and it still beat peanut butter by a nose, the food that runs away with [the ranking of protein you don't have to cook](/no-cook-protein-per-dollar/). The $5.46 bag carries roughly 275 grams of protein, which turns into a lot of dinners if you're willing to work around a drumstick instead of a boneless breast. [The rest of the meat case](/meat-per-dollar-protein-ranked/) is ranked cut by cut, and the boneless breast doesn't win that one either.
 
 If drumsticks feel like a hassle, the one-pot route hides the effort: an [easy one-pot chicken and rice dinner](/easy-one-pot-chicken-and-rice-dinner/) stacks the only meat on this list on top of the rice that also made the list. Two overachievers, one pan.
 

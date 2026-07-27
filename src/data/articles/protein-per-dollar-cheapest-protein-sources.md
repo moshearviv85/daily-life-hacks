@@ -27,6 +27,14 @@ Dried pinto beans delivered the most protein per dollar in our 49-food grocery s
 
 Here's where those numbers come from. Last week I ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle embarrassed everything else in the store. Several readers asked the obvious follow-up: does the same thing happen with protein? So I built the second spreadsheet. Forty-nine common grocery foods, USDA protein numbers, current prices, one division problem. The result is a full ranking of the cheapest protein sources in the store, and yes, the beans repeat.
 
+## What is the cheapest source of protein per dollar?
+
+**Dried pinto beans, at 97.9 grams of protein per dollar.** A $3.97 four pound bag holds roughly 389 grams of protein. Whole wheat flour comes in second at 96.0, dry black beans third at 81.0.
+
+**The cheapest animal protein in the same sample is chicken drumsticks, at 50.3 grams per dollar**, and that's after subtracting the bone. Eggs land at 34.
+
+Bacon finishes 49th out of 49 at 9.2 grams per dollar. Same nutrient as the pinto beans, more than ten times the price.
+
 ## How we ran the numbers
 
 Same playbook as the fiber study, because it survived an audit and I'm not messing with it:

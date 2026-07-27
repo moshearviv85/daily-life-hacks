@@ -66,7 +66,7 @@ Melted cheese is good at its job, but it isn't the only way to keep a sandwich f
 
 **Avocado:** This is the obvious choice for a reason. Mash it with a little lime juice and salt so it stays on the bread instead of sliding out the back of the sandwich the moment you take a bite. Its job here is creaminess and grip.
 
-**Hummus:** Don't knock it until you try it. A schmear of roasted garlic or red pepper hummus adds moisture and a hit of protein. It acts as a barrier so the egg yolk doesn't immediately turn your toast into a sponge.
+**Hummus:** Don't knock it until you try it. A schmear of roasted garlic or red pepper hummus adds moisture and a hit of protein, though the eggs are still carrying that load, and carrying it cheaply, since [eggs hold up against Greek yogurt on protein per dollar](/eggs-vs-greek-yogurt-protein-cost/). It acts as a barrier so the egg yolk doesn't immediately turn your toast into a sponge.
 
 ## Adding a crunch factor
 

@@ -54,7 +54,7 @@ For another food-first rotation built from the same grocery-store cast, these [s
 
 **Beans, lentils, and chickpeas** are pantry staples for a reason. Chili, soup, grain bowls, and quick hummus all count as zinc-containing foods in weekly meals without requiring a new personality.
 
-**Cashews and almonds** are easy grab and go options. Portion them if you're the type who hears an open jar as a personal challenge.
+**Cashews and almonds** are easy grab and go options. Portion them if you're the type who hears an open jar as a personal challenge, and if you're buying nuts partly for the protein, [peanut butter and almonds don't land in the same place per dollar](/peanut-butter-vs-almonds-protein-cost/).
 
 **Whole grains** like oats, quinoa, and brown rice bring smaller amounts, but they still help when the week is a patchwork of bowls and leftovers. Overnight oats with milk or soy milk, plus pumpkin seeds, is a zinc-containing breakfast that takes almost no morning brain.
 
@@ -72,7 +72,7 @@ If you eat mostly plants, think in pairs: beans plus seeds, lentils plus whole g
 
 **Monday:** Bean or lentil soup, whole grain bread on the side.
 
-**Tuesday:** Tacos with beef or black beans, cabbage slaw, and a squeeze of lime. Canned beans count. This isn't a purity contest.
+**Tuesday:** Tacos with beef or black beans, cabbage slaw, and a squeeze of lime. Canned beans count. This isn't a purity contest, though the beef-or-beans decision is a budget one too, which is what [comparing ground beef and beans on protein per dollar](/ground-beef-vs-beans-protein-cost/) sorts out.
 
 **Wednesday:** Chicken thighs or beef in a one pan situation with vegetables.
 

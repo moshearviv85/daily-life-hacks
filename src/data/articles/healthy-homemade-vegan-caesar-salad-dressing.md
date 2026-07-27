@@ -84,7 +84,7 @@ Keeping a jar of this in the fridge makes the "what's for dinner" scramble less 
 
 Romaine is the obvious answer because the ribs stay crisp under a thick dressing. Dry the leaves well, tear them into large pieces, and toss with less dressing than you think. You can always add another spoonful. Removing dressing from an overloaded salad requires equipment nobody owns.
 
-For a full meal, add roasted chickpeas, baked tofu, white beans, or whatever protein you already planned to eat. Toasted breadcrumbs bring the crunch that croutons usually handle without requiring perfectly shaped cubes. If you're serving the dressing as a dip, leave it thicker and put cucumber, carrots, radishes, or roasted cauliflower beside it.
+For a full meal, add roasted chickpeas, baked tofu, white beans, or whatever protein you already planned to eat. If you're torn between the tofu and leftover chicken, [how the two compare on protein per dollar](/tofu-vs-chicken-protein-cost/) settles it on price. Toasted breadcrumbs bring the crunch that croutons usually handle without requiring perfectly shaped cubes. If you're serving the dressing as a dip, leave it thicker and put cucumber, carrots, radishes, or roasted cauliflower beside it.
 
 ## Make-ahead and allergy notes
 

@@ -108,7 +108,7 @@ If you're after a warmer grain bowl with less chopping, this [farro lunch bowl w
 
 ## Can you swap the bulgur?
 
-Quinoa is the practical gluten-free substitute, but it changes the character of the salad. Cool it completely and use less than you think you need. Tabbouleh should still look green, not like a quinoa bowl that saw parsley across the room.
+Quinoa is the practical gluten-free substitute, but it changes the character of the salad and costs more than the wheat it replaces, a gap the [quinoa versus whole wheat comparison on fiber per dollar](/whole-wheat-flour-vs-quinoa-fiber-cost/) lays out. Cool it completely and use less than you think you need. Tabbouleh should still look green, not like a quinoa bowl that saw parsley across the room.
 
 Cauliflower rice can work for a grain-free variation, though it won't absorb the dressing like bulgur. Whatever you use, keep the herbs, tomatoes, cucumber, mint, and lemon in charge. That's the part that makes this tabbouleh rather than a general chopped salad with excellent public relations.
 

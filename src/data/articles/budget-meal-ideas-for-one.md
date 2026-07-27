@@ -51,10 +51,10 @@ Let's say you roast a chicken breast or some sweet potatoes. Don't just plan on 
 
 This is probably the hardest part of cooking for one. You see a beautiful bunch of cilantro, but you only need a tablespoon. Or a bag of avocados, and you know three of them will be brown before you get to them.
 
-*   **Frozen is your friend:** Frozen vegetables (peas, corn, spinach, broccoli florets) are often cheaper, last a long time, and you can take out exactly what you need. Same goes for fruit for smoothies.
+*   **Frozen is your friend:** Frozen vegetables (peas, corn, spinach, broccoli florets) are often cheaper, last a long time, and you can take out exactly what you need. They also hold their own on [fiber per dollar against the fresh version](/frozen-vs-fresh-vegetables-fiber-cost/), which matters more when you're the only one eating. Same goes for fruit for smoothies.
 *   **Bulk bin smarts:** If your grocery store has bulk bins for things like rice, oats, pasta, or nuts, you can buy exact quantities. Need a quarter cup of lentils for a soup? Grab a quarter cup.
 *   **Smallest package first:** For highly perishable items like fresh herbs or certain dairy products, check for the smallest container. Sometimes it's worth paying a little more per ounce to avoid throwing half of it away.
-*   **Embrace canned goods:** Canned beans, diced tomatoes, tuna, and coconut milk are pantry powerhouses. They're inexpensive, last ages, and form the backbone of countless quick, budget-friendly meals. Think black bean soup, chickpea curry, or a simple tuna melt.
+*   **Embrace canned goods:** Canned beans, diced tomatoes, tuna, and coconut milk are pantry powerhouses. They're inexpensive, last ages, and form the backbone of countless quick, budget-friendly meals, and beans in particular look even better once you check [what beans and ground beef cost per gram of protein](/ground-beef-vs-beans-protein-cost/). Think black bean soup, chickpea curry, or a simple tuna melt.
 
 ## Use One-Pan Meals to Keep Portions Under Control
 

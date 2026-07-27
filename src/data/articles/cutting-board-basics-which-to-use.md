@@ -59,7 +59,7 @@ One of the biggest frustrations with any cutting board is when it slides around 
 
 ## How to fix odors
 
-If your wooden board starts smelling like onions or garlic, a scrub with coarse salt and half a lemon can help deodorize it. Sprinkle the salt, use the lemon half like a sponge, then rinse and dry the board. This is an odor treatment, not a substitute for sanitizing after raw meat or poultry.
+If your wooden board starts smelling like onions or garlic, a scrub with coarse salt and half a lemon can help deodorize it. Sprinkle the salt, use the lemon half like a sponge, then rinse and dry the board. This is an odor treatment, not a substitute for sanitizing after raw meat or poultry. Blenders pick up the same garlic and onion smell for the same reason, and there's [a way to clean one without scrubbing around the blades](/how-to-clean-blender-fast-no-scrub/).
 
 ## Clean and sanitize cutting boards correctly
 

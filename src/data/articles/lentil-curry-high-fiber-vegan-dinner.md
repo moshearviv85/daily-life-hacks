@@ -86,13 +86,13 @@ Yes, it has some fat. But paired with the massive amount of fiber from the lenti
 
 While this curry is hearty enough to eat completely on its own, adding a side makes it stretch further and feel like a proper feast.
 
-* **The classic grains:** A scoop of basmati rice or brown rice is the traditional move. The rice soaks up the creamy coconut broth perfectly. Quinoa is also great if you want an extra protein boost.
+* **The classic grains:** A scoop of basmati rice or brown rice is the traditional move. The rice soaks up the creamy coconut broth perfectly. Quinoa is also great if you want an extra protein boost, though it's the expensive choice, and [comparing quinoa with whole wheat flour on fiber per dollar](/whole-wheat-flour-vs-quinoa-fiber-cost/) shows what you're paying for.
 * **Warm bread:** If you can find good naan bread, warm it up in the oven or blister it directly over a gas burner. Tearing off a piece of warm bread and dragging it through the curry is arguably the best part of the meal.
 * **A cooling contrast:** A quick cucumber salad with a splash of vinegar, or a dollop of plain dairy-free yogurt on top of the curry, provides a cool contrast to the warm, heavily spiced stew.
 
 ## Small tweaks to make it yours
 
-* **Add more veggies:** Toss in some diced sweet potatoes, cauliflower florets, or chopped carrots when you add the broth. Just chop them small so they cook in the same time as the lentils. Root vegetables make this even heartier.
+* **Add more veggies:** Toss in some diced sweet potatoes, cauliflower florets, or chopped carrots when you add the broth. Just chop them small so they cook in the same time as the lentils. Root vegetables make this even heartier. If the cauliflower ends up being your favorite part, this [chickpea and cauliflower curry](/vegetarian-high-fiber-dinners-for-natural-relief/) is built around it instead.
 * **Swap the greens:** If you don't have spinach, finely chopped kale works perfectly. Just add it a few minutes earlier so it has time to soften. Swiss chard is another great option; just chop the stems finely and sauté them with the onions.
 * **The acid finish:** Do not skip the lime juice at the end. Rich, heavy dishes need a spark of acid to balance them out. A squeeze of fresh lime makes the flavors pop. If you are out of limes, a tiny splash of apple cider vinegar works in a pinch.
 * **Crunchy garnish:** Texture matters in a bowl of stew. Top your bowl with some toasted cashews, slivered almonds, or a sprinkle of roasted pumpkin seeds to break up the creaminess.

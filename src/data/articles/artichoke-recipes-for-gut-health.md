@@ -76,7 +76,7 @@ Artichokes provide dietary fiber and contain inulin-type carbohydrates. That mak
 
 A [double-blind crossover study indexed by PubMed](https://pubmed.ncbi.nlm.nih.gov/20591206/) tested 10 grams per day of purified very-long-chain inulin extracted from globe artichoke in 32 healthy adults. Researchers reported changes in several measured intestinal bacterial populations compared with maltodextrin. They also reported more mild and moderate bloating. The study tested an extracted ingredient for three-week periods, not this recipe, so it can't tell you what one steamed artichoke will do.
 
-The practical answer is simpler. Artichokes can be one fiber-containing vegetable in a varied diet. If a sudden fiber increase tends to make you uncomfortable, begin with a smaller portion. Our guide to [prebiotic foods beyond the buzzwords](/prebiotic-foods-beyond-the-buzzwords/) keeps the same distinction between an interesting food and a miracle story.
+The practical answer is simpler. Artichokes can be one fiber-containing vegetable in a varied diet, and since fresh globe artichokes aren't cheap, it's worth knowing [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) before you build a week of meals around produce. If a sudden fiber increase tends to make you uncomfortable, begin with a smaller portion. Our guide to [prebiotic foods beyond the buzzwords](/prebiotic-foods-beyond-the-buzzwords/) keeps the same distinction between an interesting food and a miracle story.
 
 ## What's the easiest way to eat a whole artichoke?
 

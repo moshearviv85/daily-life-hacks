@@ -61,7 +61,7 @@ Most gluten-free bread from the store is sad. There, I said it. It's usually ful
 
 But this one? This one actually works. It's a dense, hearty, seed-packed loaf that holds up to serious sandwich fillings and makes incredible toast. It doesn't rely on weird gums or fifteen different flours. It uses whole ingredients that happen to pack a massive fiber punch.
 
-For more ways to put oats, seeds, beans, and grains to work without wrecking the grocery budget, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) lays out the rest of the pantry.
+For more ways to put oats, seeds, beans, and grains to work without wrecking the grocery budget, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) lays out the rest of the pantry. If gluten isn't the reason you're here, [whole wheat flour and quinoa are worth pricing against each other for fiber](/whole-wheat-flour-vs-quinoa-fiber-cost/) before you fill the cart.
 
 ## How this bread actually holds together
 
@@ -75,7 +75,7 @@ The catch? You have to let the dough rest before you bake it. Two hours minimum.
 
 I'll be honest with you. Straight out of the fridge, this bread is dense. It's good, but it's heavy. The magic happens when you toast it.
 
-Throw a slice in the toaster until the edges get dark and crispy. The heat wakes up the natural oils in the sunflower seeds and nuts, making the whole kitchen smell amazing. A toasted slice of this with some peanut butter or mashed avocado is basically the perfect breakfast. It keeps you full for hours, thanks to the fiber and healthy fats.
+Throw a slice in the toaster until the edges get dark and crispy. The heat wakes up the natural oils in the sunflower seeds and nuts, making the whole kitchen smell amazing. A toasted slice of this with some peanut butter or mashed avocado is basically the perfect breakfast. It keeps you full for hours, thanks to the fiber and healthy fats. If you want the rest of the day to pull the same weight, this [30-day plan for adding fiber one meal at a time](/30-day-high-fiber-challenge-meal-plan/) starts at breakfast for exactly this reason.
 
 ## Simple swaps and variations
 

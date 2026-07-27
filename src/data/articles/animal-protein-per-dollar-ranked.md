@@ -55,11 +55,11 @@ Below the table: pork loin chops at 22.3, canned pink salmon at 21.6, frozen til
 
 They do, and this is the part people don't expect. Look at the top of the table again: after drumsticks, the next three spots belong to the dairy case. Eggs at 34.4 grams per dollar, mozzarella at 30.1, whole milk at 29.1. Boneless chicken thighs are the only other meat that cracks that group, at 27.7.
 
-Chicken breast, the default "I'm eating healthy" purchase, sits at 24.5. That means a $2.19 dozen of eggs, a $3.36 tub of Greek yogurt, and a $2.87 tub of cottage cheese all quietly outscore it. Your fridge staples are doing more work than the meat counter. Eggs also happen to be the most flexible item on this list; a [loaded egg sandwich](/healthy-egg-sandwich-add-ins-toppings/) or a [savory oatmeal bowl with eggs](/savory-oatmeal-bowls-with-eggs-and-avocado/) turns them into an actual meal instead of a sad snack.
+Chicken breast, the default "I'm eating healthy" purchase, sits at 24.5. That means a $2.19 dozen of eggs, a $3.36 tub of Greek yogurt, and a $2.87 tub of cottage cheese all quietly outscore it. Your fridge staples are doing more work than the meat counter, and the [dairy case broken out on its own](/dairy-protein-per-dollar-ranked/) makes that even harder to argue with. Eggs also happen to be the most flexible item on this list; a [loaded egg sandwich](/healthy-egg-sandwich-add-ins-toppings/) or a [savory oatmeal bowl with eggs](/savory-oatmeal-bowls-with-eggs-and-avocado/) turns them into an actual meal instead of a sad snack.
 
 ## Where does fish land in the ranking?
 
-Middle of the pack, every single time. Canned chunk light tuna leads the fish at 22.4 grams of protein per dollar, and honestly the $0.98 can is one of the most underrated things in the store. Canned pink salmon follows at 21.6, frozen tilapia at 20.9, and sardines at 20.2.
+Middle of the pack, every single time. Canned chunk light tuna leads the fish at 22.4 grams of protein per dollar, and honestly the $0.98 can is one of the most underrated things in the store. It also shows up near the top of [the protein you can eat without turning on the stove](/no-cook-protein-per-dollar/). Canned pink salmon follows at 21.6, frozen tilapia at 20.9, and sardines at 20.2.
 
 Notice what that means: the cheapest fish still loses to cottage cheese. Fish earns its cart spot on flavor and variety, not on protein math. Tilapia's case gets a lot stronger when it becomes [weeknight fish tacos with cabbage slaw](/easy-weeknight-fish-tacos-with-cabbage-slaw/), and a rotisserie bird at 26.7 grams per dollar stretches even further with these [rotisserie chicken dinner ideas](/costco-rotisserie-chicken-meal-ideas-dinner/).
 
@@ -67,12 +67,12 @@ Notice what that means: the cheapest fish still loses to cottage cheese. Fish ea
 
 Ground meat and bacon. Ground turkey (93/7) manages 15.6 grams per dollar at $5.46 for a 1 lb roll. Ground beef comes in at 11.5 for 80/20 and, painfully, 11.0 for the lean 93/7, because the leaner grind costs $8.62 a pound. Bacon closes the list at 9.2 grams per dollar.
 
-The pattern is simple: the more processing and marketing between the animal and your cart, the worse the protein math gets. A whole raw chicken at $2.04 per pound scores 25.3; the same species, ground and rolled into a tube, scores 15.6.
+The pattern is simple: the more processing and marketing between the animal and your cart, the worse the protein math gets. A whole raw chicken at $2.04 per pound scores 25.3; the same species, ground and rolled into a tube, scores 15.6. If you want the butcher counter pulled out and ranked cut by cut, that's [the meat-only per-dollar table](/meat-per-dollar-protein-ranked/).
 
 ## How do you turn this list into a grocery strategy?
 
 Anchor the week on the top of the table: drumsticks or a whole bird, a dozen eggs, a gallon of milk, one cultured dairy tub. Add fish for variety and ground meat for flavor, knowing they're not carrying the protein load. One dollar of drumsticks covers the full 50-gram FDA Daily Value on its own, so hitting your number could be cheaper than you think; [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) runs that exact math.
 
-For the plant side of the story, where the per-dollar numbers get even better, see the full [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) and the complete [high-protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
+For the plant side of the story, where the per-dollar numbers get even better, see [every plant protein ranked by cost](/plant-protein-per-dollar-ranked/) and the complete [high-protein on a budget guide](/high-protein-on-a-budget-complete-guide/). And if you want to know whether cheap protein is also good protein, we ran the same table again [adjusted for protein quality](/protein-per-dollar-adjusted-for-quality/).
 
 <!-- numbers-source: pipeline-data/derived-studies/animal-protein-per-dollar-ranked.json -->

@@ -57,12 +57,12 @@ For a standard pound of ground beef or turkey, you can usually toss in a full cu
 ## Mash your beans into the sauce
 Beans are fiber powerhouses, but the skins are a texture nightmare for a kid who hates "lumps." The solution is to stop serving them whole. If you're making a jarred pasta sauce or a mild chili, take a can of white beans or chickpeas, rinse them, and give them a quick buzz in the blender or a heavy mash with a fork.
 
-Stirring that bean paste into a red sauce adds creaminess and fiber without changing the flavor profile much. White beans in particular are very neutral. If you're worried about the color change, stick to darker beans for beef dishes and lighter beans for chicken or pasta dishes. It's an easy way to make kid-friendly meals with high fiber that don't look like health food.
+Stirring that bean paste into a red sauce adds creaminess and fiber without changing the flavor profile much. White beans in particular are very neutral. If you're worried about the color change, stick to darker beans for beef dishes and lighter beans for chicken or pasta dishes. It's an easy way to make kid-friendly meals with high fiber that don't look like health food, and it stretches the meat, which is the point of the [ground beef versus beans protein-per-dollar comparison](/ground-beef-vs-beans-protein-cost/).
 
 ## Swap the base slowly
 Jumping straight from bleached white flour pasta to 100% whole grain can be a shock to the system. The texture is toothier and the color is darker, which is a red flag for a picky eater. Instead of a total swap, try the half-and-half method. Boil two types of pasta in the same pot, starting the whole wheat ones a couple of minutes earlier if they have a longer cook time.
 
-When the pasta is covered in cheese or sauce, the visual difference is minimized. Over a few weeks, you can shift the ratio until they're used to the whole grain version. This same logic applies to brown rice or quinoa. Mixing them with white rice makes the transition less jarring and keeps the peace during the Tuesday night dinner rush.
+When the pasta is covered in cheese or sauce, the visual difference is minimized. Over a few weeks, you can shift the ratio until they're used to the whole grain version. This same logic applies to brown rice or quinoa, though it's worth checking [what quinoa and whole wheat flour each cost per gram of fiber](/whole-wheat-flour-vs-quinoa-fiber-cost/) if the grocery bill factors into the decision. Mixing them with white rice makes the transition less jarring and keeps the peace during the Tuesday night dinner rush.
 
 ## Focus on high-fiber finger foods
 Sometimes the best way to get fiber into a kid is to stop trying to hide it in a main dish and put it in the "sides" category. Kids love to dip things. Instead of standard fries, try roasting sweet potato wedges with the skins on. The skin is where a lot of the fiber lives, and when they're salty and crispy, most kids won't mind.

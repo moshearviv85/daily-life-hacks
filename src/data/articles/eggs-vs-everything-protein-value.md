@@ -43,13 +43,13 @@ Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, the May 2026 nat
 
 ## What actually beats eggs on protein per dollar?
 
-Eighteen foods, and the theme is obvious: if it's dry and it sits on an unrefrigerated shelf, it probably wins. Every dried legume beats eggs, from red lentils at 56.0 grams per dollar up to pintos at 97.9, which is nearly three times the egg number. Whole wheat flour (96.0), both spaghettis (53.4 and 47.7), peanut butter (50.7), white rice (48.0), oats (46.6), dry roasted peanuts (39.8), brown rice (36.6), and pearled barley (36.3) all finish ahead too. Even a loaf of 100% whole wheat bread edges past at 35.8.
+Eighteen foods, and the theme is obvious: if it's dry and it sits on an unrefrigerated shelf, it probably wins. Every dried legume beats eggs, from red lentils at 56.0 grams per dollar up to pintos at 97.9, which is nearly three times the egg number. We ranked that half of the store on its own in [the cheapest plant protein sources](/plant-protein-per-dollar-ranked/), where the dry bags lead and the refrigerated products with "protein" printed on the label finish last. Whole wheat flour (96.0), both spaghettis (53.4 and 47.7), peanut butter (50.7), white rice (48.0), oats (46.6), dry roasted peanuts (39.8), brown rice (36.6), and pearled barley (36.3) all finish ahead too. Even a loaf of 100% whole wheat bread edges past at 35.8.
 
-Exactly one meat cracks the list above eggs: bone-in chicken drumsticks at 50.3 grams per dollar, and that's after subtracting the bone. Everything else at the meat counter loses to the egg carton.
+Exactly one meat cracks the list above eggs: bone-in chicken drumsticks at 50.3 grams per dollar, and that's after subtracting the bone. Everything else at the meat counter loses to the egg carton, which you can watch happen cut by cut in [the meat-only protein ranking](/meat-per-dollar-protein-ranked/).
 
 ## What do eggs beat?
 
-Almost the entire animal side of the store. Here's how eggs stack up against the foods people usually cross-shop:
+Almost the entire animal side of the store, where eggs finish second only to bone-in drumsticks in [our cost ranking of 21 animal proteins](/animal-protein-per-dollar-ranked/). Here's how eggs stack up against the foods people usually cross-shop:
 
 | Food | Protein per $1 |
 |---|---|
@@ -67,7 +67,7 @@ Eggs beat chicken breast (24.5) by roughly 40 percent per dollar. They beat ever
 
 ## So are eggs still worth buying for protein?
 
-For my money, yes, because rank 19 undersells what eggs actually are: the cheapest protein that asks nothing of you. A dozen holds about 75 grams of protein for $2.19, call it 18 cents an egg, and there's no soaking, no simmering, no cutting board. Beans beat eggs on paper; eggs beat beans at breakfast when you're barely awake and negotiating with the coffee maker.
+For my money, yes, because rank 19 undersells what eggs actually are: the cheapest protein that asks nothing of you. A dozen holds about 75 grams of protein for $2.19, call it 18 cents an egg, and there's no soaking, no simmering, no cutting board. Skip the pan entirely and it's a different list, one that [peanut butter, canned beans, and the dairy tubs](/no-cook-protein-per-dollar/) run instead. Beans beat eggs on paper; eggs beat beans at breakfast when you're barely awake and negotiating with the coffee maker.
 
 They're also hard to get bored of. A [sheet pan breakfast hash](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) feeds a table from one pan, [cauliflower fried rice with eggs](/cauliflower-fried-rice-with-eggs/) turns them into dinner, and a good [egg sandwich](/healthy-egg-sandwich-add-ins-toppings/) is the entire reason some of us get out of bed.
 

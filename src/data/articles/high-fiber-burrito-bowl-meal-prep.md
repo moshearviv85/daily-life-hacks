@@ -64,7 +64,7 @@ For the Sunday-to-Friday plan behind this bowl, the [complete meal-prep system f
 
 ## The foundation of a good bowl
 
-The secret to a meal prep bowl that doesn't suck is structure. You need a sturdy base. We're using quinoa here because it cooks fast and has a slightly nutty flavor that works great with Mexican spices. Plus, it brings extra fiber and protein to the party. If you hate quinoa, brown rice is totally fine.
+The secret to a meal prep bowl that doesn't suck is structure. You need a sturdy base. We're using quinoa here because it cooks fast and has a slightly nutty flavor that works great with Mexican spices. Plus, it brings extra fiber and protein to the party, though quinoa isn't the cheapest way to buy fiber, as [the comparison with whole wheat flour](/whole-wheat-flour-vs-quinoa-fiber-cost/) makes clear. If you hate quinoa, brown rice is totally fine.
 
 Then we load it up with black beans and corn. Beans are the undisputed champions of the high fiber world. They're cheap, they fill you up, and they soak up whatever flavor you throw at them. A little taco seasoning turns a plain can of beans into the best part of the meal.
 
@@ -88,7 +88,7 @@ If you're adding sour cream, yogurt, or guacamole, keep those separate. Nobody w
 
 ## Customizing your prep
 
-* **Add more protein:** If you have leftover grilled chicken, baked tofu, or shredded pork, toss it in. This bowl is basically a blank canvas for whatever protein you have sitting in your fridge.
+* **Add more protein:** If you have leftover grilled chicken, baked tofu, or shredded pork, toss it in. This bowl is basically a blank canvas for whatever protein you have sitting in your fridge. If tofu is the direction you're heading, the [five-day vegan prep built on crispy tofu and quinoa](/vegan-high-fiber-meal-prep-for-week/) uses the same containers and the same Sunday.
 * **Go heavy on the greens:** Put a handful of sturdy greens like chopped kale or romaine at the bottom of the container. The heat from the beans and quinoa will slightly wilt them when you microwave it, which is actually a great texture.
 * **The cheese factor:** A sprinkle of cheddar or cotija cheese is great, but honestly, if you use a flavorful salsa, you might not even miss the dairy. A spoonful of nutritional yeast can also add a cheesy, savory flavor without the lactose.
 * **Crunchy toppings:** Bring a small baggie of crushed tortilla chips or roasted pumpkin seeds. Sprinkle them on right before you eat. A burrito bowl without some crunch feels a little incomplete.

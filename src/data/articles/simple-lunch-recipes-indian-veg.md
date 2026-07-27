@@ -55,7 +55,7 @@ faq:
 
 You know those nights when you want takeout, but you also want to feel like a responsible adult who eats vegetables? Or, more likely, those lunchtimes when you've got about thirty minutes before the next meeting and the thought of another sad desk salad makes you want to curl up and cry? Yeah, I've been there. A lot. That's why I'm a big believer in the power of a good, simple lunch recipe. Especially when it’s Indian-inspired and vegetarian.
 
-This isn't some complex, multi-pot affair that requires a trip to a specialty spice shop. This is a one-pot dal and rice situation that practically cooks itself. It’s hearty enough that nobody asks where the meat went, and it’s packed with enough fiber and protein to keep you from digging through the pantry looking for a snack an hour later. We’re talking about a quick, flavorful, and filling Indian veg lunch that you can whip up for today or meal prep for the week.
+This isn't some complex, multi-pot affair that requires a trip to a specialty spice shop. This is a one-pot dal and rice situation that practically cooks itself. It’s hearty enough that nobody asks where the meat went, and it’s packed with enough fiber and protein to keep you from digging through the pantry looking for a snack an hour later. Lentils do that work for pennies, which is the same argument behind [how beans compare with ground beef on protein per dollar](/ground-beef-vs-beans-protein-cost/). We’re talking about a quick, flavorful, and filling Indian veg lunch that you can whip up for today or meal prep for the week.
 
 ## Why This One-Pot Wonder Works
 
@@ -93,7 +93,7 @@ This one-pot dal and rice is a complete meal on its own, but a few simple additi
 
 *   **Fresh Cilantro:** A sprinkle of fresh, chopped cilantro at the end brightens everything up. Don't skip this, it makes a real difference.
 *   **Lime Wedges:** A squeeze of fresh lime juice adds a zesty, tangy counterpoint that cuts through the richness. It’s a small step that adds a lot of flavor.
-*   **Yogurt:** A dollop of plain yogurt or raita (yogurt with chopped cucumber and a little spice) on the side can be really refreshing, especially if you added the cayenne.
+*   **Yogurt:** A dollop of plain yogurt or raita (yogurt with chopped cucumber and a little spice) on the side can be really refreshing, especially if you added the cayenne. It's a quiet protein add too, though it's worth seeing [what a dollar of Greek yogurt buys next to a dollar of eggs](/eggs-vs-greek-yogurt-protein-cost/) before it becomes a daily habit.
 *   **Naan or Roti:** Tearing off a piece of warm bread and dragging it through the curry is arguably the best part of the meal.
 
 This kind of simple, flavorful, and easy-to-clean-up meal is exactly what I'm looking for on a busy day. It’s proof that eating well doesn’t have to be complicated or take hours in the kitchen. Rice-and-legume cooking like this shows up in kitchens all over the world for the same reason: it's cheap and it holds you. These [budget meal ideas for your Filipino kitchen](/budget-meal-ideas-philippines/) run the exact same playbook with a different spice drawer.

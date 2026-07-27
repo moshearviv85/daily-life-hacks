@@ -55,9 +55,9 @@ Use the [recipe cost calculator](/tools/recipe-cost-calculator/) before you scal
 
 ## Why dried beans are your best friend
 
-I know, soaking beans feels like a chore your grandmother did, but if you want to save money, it is non-negotiable. A bag of dried pinto or black beans costs next to nothing and swells to three times its size. You don't even really have to soak them if you're using a slow cooker for eight hours. Just rinse them, pick out the tiny rocks that inexplicably end up in the bag, and dump them in.
+I know, soaking beans feels like a chore your grandmother did, but if you want to save money, it is non-negotiable. A bag of dried pinto or black beans costs next to nothing and swells to three times its size. Before you default to the can out of habit, it's worth knowing [what the convenience of canned beans actually costs you per dollar](/canned-vs-dry-beans-cost/). You don't even really have to soak them if you're using a slow cooker for eight hours. Just rinse them, pick out the tiny rocks that inexplicably end up in the bag, and dump them in.
 
-Dried beans provide a significant amount of fiber and protein for a fraction of the cost of beef. When you cook them low and slow with a bit of smoked meat, they absorb all that fat and salt. It turns a "healthy" ingredient into something that feels indulgent. If you're worried about the texture, just make sure you don't add salt until the very end, or you might end up with beans that have the structural integrity of gravel.
+Dried beans provide a significant amount of fiber and protein for a fraction of the cost of beef, and if you've ever wondered [how far apart ground beef and beans really are on protein per dollar](/ground-beef-vs-beans-protein-cost/), the gap is not close. When you cook them low and slow with a bit of smoked meat, they absorb all that fat and salt. It turns a "healthy" ingredient into something that feels indulgent. If you're worried about the texture, just make sure you don't add salt until the very end, or you might end up with beans that have the structural integrity of gravel.
 
 ## The magic of the pork shoulder
 
@@ -71,7 +71,7 @@ If you see a pork shoulder or "butt" on sale for under two dollars a pound, buy 
 
 The secret to feeding a crowd isn't always more meat. It is about what you put under the meat. I have never met a kid who complained about a giant pile of mashed potatoes or a bowl of rice. If you have a gallon of chili but ten people to feed, you serve that chili over baked potatoes. It’s a trick as old as time, and it works because it fills the stomach without emptying the wallet.
 
-Pasta is another hero here. A slow-cooked meat sauce made with the cheapest ground beef you can find becomes something special after six hours of simmering. Toss it with two boxes of penne, and suddenly you have enough food to feed the neighborhood. It's about shifting the ratio so the expensive stuff acts as the flavor, not the bulk.
+Pasta is another hero here. A slow-cooked meat sauce made with the cheapest ground beef you can find becomes something special after six hours of simmering. Toss it with two boxes of penne, and suddenly you have enough food to feed the neighborhood. It's about shifting the ratio so the expensive stuff acts as the flavor, not the bulk. That ratio trick is the whole game, and there are [plenty of other ways to stretch a meal across a big household](/how-to-stretch-meals-large-families/) once you start thinking that way.
 
 ## Keeping it simple to avoid burnout
 

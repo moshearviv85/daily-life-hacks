@@ -72,7 +72,7 @@ Here's where people get tripped up. You've got three options at the store: fresh
 
 Canned corn is the easiest and cheapest, but it's also the softest. The kernels have been cooked once already, so they go mushy in the salsa. If you're using canned corn, drain it well and maybe even pat it dry with a paper towel. The water content dilutes your dressing and makes the whole thing soggy.
 
-Frozen corn thaws to a closer texture to fresh-still tender but with more body. Run it under warm water for 30 seconds to take the chill off, then drain it well. This is what I reach for most often because it's consistent, affordable, and always available.
+Frozen corn thaws to a closer texture to fresh-still tender but with more body. Run it under warm water for 30 seconds to take the chill off, then drain it well. This is what I reach for most often because it's consistent, affordable, and always available. The money side of that habit is what [the fiber-per-dollar comparison of frozen and fresh vegetables](/frozen-vs-fresh-vegetables-fiber-cost/) digs into.
 
 Fresh corn is the best texturally if you can get it in season. Cut the kernels off two ears and throw them in raw. You get that satisfying crunch and sweet corn flavor that canned versions can't touch. The tradeoff is that it's more expensive and only works when corn is actually good-mid summer into early fall. Out of season, fresh corn at the grocery store is usually mealy and tasteless.
 
@@ -132,7 +132,7 @@ Finally, don't forget the salt. A lot of no-cook dishes taste bland because the 
 
 Let me walk through what I actually grab at the store, because the options can be overwhelming if you're not prepared.
 
-For black beans, the canned section is your friend. Grab two 15-ounce cans. Check the expiration date on the can's edge-yes, really. Old beans taste flat and won't hold their shape as well. If you see "low-sodium" versions, those work fine and you control the salt. Regular cans are fine too.
+For black beans, the canned section is your friend. Grab two 15-ounce cans. If you're curious what that convenience buys you nutritionally, [ground beef and beans get compared on protein per dollar](/ground-beef-vs-beans-protein-cost/) in a separate piece. Check the expiration date on the can's edge-yes, really. Old beans taste flat and won't hold their shape as well. If you see "low-sodium" versions, those work fine and you control the salt. Regular cans are fine too.
 
 For corn, I usually grab frozen because it's the best balance of texture and convenience. Look for a bag of whole kernel corn in the freezer section. Avoid the kind with added butter or flavoring-you want plain corn. If you're using canned, grab a 15-ounce can of corn kernels and drain it well.
 

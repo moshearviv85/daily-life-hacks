@@ -52,7 +52,7 @@ Add frozen fruit for texture. Add a handful of greens if you want nutrients with
 
 Add oats or chia for fiber. If you hate chia texture, grind chia in a spice grinder first or use ground flax.
 
-Add protein if you need the smoothie to carry you to lunch. Greek yogurt, silken tofu, or a scoop of your preferred protein powder all work, depending on your goals and tolerance.
+Add protein if you need the smoothie to carry you to lunch. Greek yogurt, silken tofu, or a scoop of your preferred protein powder all work, depending on your goals and tolerance. Greek yogurt is the easy default, though [eggs and Greek yogurt sit in very different places on protein per dollar](/eggs-vs-greek-yogurt-protein-cost/) if the grocery bill is part of the decision.
 ## Two Blends Worth Repeating
 
 **Berry oat:** frozen mixed berries, half a banana, rolled oats, milk, pinch of salt. Blend until smooth.

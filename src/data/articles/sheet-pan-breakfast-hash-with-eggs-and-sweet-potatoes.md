@@ -75,7 +75,7 @@ This two-stage approach is non-negotiable if you want eggs that aren't rubbery. 
 
 For the wells, just push the vegetables aside with a spatula and crack the egg into the gap. The vegetables act as a little nest, which keeps the egg white contained and stops it from spreading into a watery mess across the pan. If you like your yolks runny, eight minutes is your target. Ten minutes gives you a jammy center. Twelve minutes and you're approaching fully set, which is fine if you're packing this for lunch and want no risk of runniness.
 
-One egg per person is the baseline. You can absolutely do two eggs if you've got bigger appetites or are feeding someone who needs more protein, but four wells fit comfortably on a standard sheet pan. More than that and you're crowding the eggs, which means uneven cooking. And if your usual weekday breakfast is a bagel sandwich from the drive-thru, it's worth checking [how much protein a bagel sandwich actually delivers](/how-much-protein-in-bagel-sandwich/); this pan usually wins that math for less money.
+One egg per person is the baseline, and if you're deciding how much of the protein budget goes to the egg carton, [eggs and Greek yogurt get compared per gram of protein](/eggs-vs-greek-yogurt-protein-cost/). You can absolutely do two eggs if you've got bigger appetites or are feeding someone who needs more protein, but four wells fit comfortably on a standard sheet pan. More than that and you're crowding the eggs, which means uneven cooking. And if your usual weekday breakfast is a bagel sandwich from the drive-thru, it's worth checking [how much protein a bagel sandwich actually delivers](/how-much-protein-in-bagel-sandwich/); this pan usually wins that math for less money.
 
 ## Seasoning Without Overcomplicating It
 
@@ -103,7 +103,7 @@ Protein add-ins are straightforward. Pre-cooked bacon bits or chopped cooked sau
 
 For a vegetarian version that still has some weight, add a handful of black beans during the last five minutes of roasting. They warm through without getting mushy. Feta cheese crumbles added in the last two minutes gives you that salty, tangy element that balances the sweet potato.
 
-If you're cooking for someone who doesn't eat eggs, this same vegetable base works great with canned chickpeas instead. Season them the same way, roast them until crispy, and serve with hot sauce and avocado.
+If you're cooking for someone who doesn't eat eggs, this same vegetable base works great with canned chickpeas instead, and there are more [make-ahead breakfast ideas without eggs](/make-ahead-breakfast-ideas-without-eggs/) if that's a permanent situation in your house. Season them the same way, roast them until crispy, and serve with hot sauce and avocado.
 
 ## Common Mistakes That Ruin This Dish
 

@@ -28,7 +28,7 @@ Finding healthy alternatives to white rice for dinner isn't about being a health
 ## Quinoa is the easiest transition
 If you can boil water, you can make quinoa. It's the most common swap for a reason. It cooks in about 15 minutes, which is faster than most long-grain white rices, and it has a neutral flavor that picks up whatever sauce you're throwing at it.
 
-Quinoa is often considered a powerhouse because it contains all nine essential amino acids. For those of us just trying to get through the week, the real benefit is the fiber. It keeps the household from raiding the snack cabinet an hour after the dishes are done. Just make sure you rinse it first, or it might taste a little like dirt, which is a quick way to lose the "healthy swap" argument with a picky eater.
+Quinoa is often considered a powerhouse because it contains all nine essential amino acids. For those of us just trying to get through the week, the real benefit is the fiber, though it's not the cheapest fiber on the shelf once you put [quinoa up against plain whole wheat flour](/whole-wheat-flour-vs-quinoa-fiber-cost/). It keeps the household from raiding the snack cabinet an hour after the dishes are done. Just make sure you rinse it first, or it might taste a little like dirt, which is a quick way to lose the "healthy swap" argument with a picky eater.
 
 ## Cauliflower rice for the high-volume eaters
 I was a skeptic about cauliflower rice for years. I don't like being lied to, and calling a pulverized vegetable "rice" feels like a lie. However, if you're looking to cut calories or just sneak a vegetable past someone who hates greens, this is the move.

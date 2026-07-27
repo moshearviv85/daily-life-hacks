@@ -59,7 +59,7 @@ Here is how we cheat the system. Chia seeds have this magical (and slightly weir
 
 When you heat up raspberries, they break down into a sweet, juicy sauce. Instead of boiling that sauce for an hour with cups of sugar and added commercial pectin to make it sticky, you just take it off the heat and stir in a couple tablespoons of chia seeds. The seeds drink up the hot fruit juice and thicken the whole thing naturally in a matter of minutes.
 
-Chia seeds add fiber and help the fruit mixture set, but they don't turn a spoonful of jam into a complete breakfast. Put it on oatmeal, yogurt, or toast with something more substantial when you're actually hungry.
+Chia seeds add fiber and help the fruit mixture set, but they don't turn a spoonful of jam into a complete breakfast. Put it on oatmeal, yogurt, or toast with something more substantial when you're actually hungry. Greek yogurt is the easy pick there, and it's worth seeing [how it compares to eggs on protein per dollar](/eggs-vs-greek-yogurt-protein-cost/) if breakfast is where your grocery money goes.
 
 ## The problem with standard jam
 
@@ -69,7 +69,7 @@ Here, the raspberries do the flavor work and the chia handles thickening. Both c
 
 ## Fresh versus frozen berries
 
-You don't need to wait for peak summer berry season to make this. Frozen raspberries work perfectly. In fact, they're often cheaper, picked at peak ripeness, and break down beautifully in the pan.
+You don't need to wait for peak summer berry season to make this. Frozen raspberries work perfectly. In fact, they're often cheaper, picked at peak ripeness, and break down beautifully in the pan. The same goes for the rest of that aisle, and [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) makes the case better than I can.
 
 If you use frozen berries, you don't even need to thaw them first. Just dump them straight from the bag into the saucepan. They will release a little more water than fresh berries, but the chia seeds will handle it easily. You might just need an extra minute on the stove to get the juices flowing.
 

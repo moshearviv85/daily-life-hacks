@@ -40,9 +40,9 @@ When you're scanning labels, check the ratio of fiber to protein. A good high pr
 
 ## Don't ignore the humble whole wheat
 
-If your family staged a mutiny the last time you brought home a loaf with visible seeds, you can still find decent protein in 100% whole wheat bread. The key is the word "whole." If the first ingredient is enriched wheat flour, you're basically eating a sugar-dusted cloud. If it says whole wheat flour, you're getting the entire grain, which naturally contains more protein than the processed stuff.
+If your family staged a mutiny the last time you brought home a loaf with visible seeds, you can still find decent protein in 100% whole wheat bread. The key is the word "whole." If the first ingredient is enriched wheat flour, you're basically eating a sugar-dusted cloud. If it says whole wheat flour, you're getting the entire grain, which naturally contains more protein and more fiber than the processed stuff. That flour is also one of the cheaper places to buy fiber, which you can see if you [compare whole wheat flour against quinoa on fiber per dollar](/whole-wheat-flour-vs-quinoa-fiber-cost/).
 
-Standard whole wheat usually lands around 3 to 4 grams of protein per slice. It's not the heavy hitter that sprouted grain is, but it's a massive upgrade from white bread. It's the "safe" middle ground for picky eaters who think anything brown is a health food conspiracy. I usually toast it a little longer than usual to give it some structural integrity for tuna melts.
+Standard whole wheat usually lands around 3 to 4 grams of protein per slice. It's not the heavy hitter that sprouted grain is, but it's a massive upgrade from white bread. It's the "safe" middle ground for picky eaters who think anything brown is a health food conspiracy. I usually toast it a little longer than usual to give it some structural integrity for tuna melts, which is also the first step in [keeping a packed sandwich from turning soggy by noon](/how-to-keep-sandwiches-from-getting-soggy/).
 
 ## How to spot a fake health bread
 

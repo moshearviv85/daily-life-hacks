@@ -49,9 +49,9 @@ If you want oatmeal, perfect. Oats bring the carbs and the fiber. Stir in a spoo
 
 Nobody's making a three course meal on a Tuesday. Here are a few ways to use the formula when you're rushing out the door.
 
-**The yogurt bowl:** Plain or low sugar yogurt gives you protein. Toss in a handful of berries for fiber and some walnuts for fat. It takes thirty seconds to assemble.
+**The yogurt bowl:** Plain or low sugar yogurt gives you protein, and if breakfast is where a chunk of your grocery money goes, it's worth seeing [how eggs and Greek yogurt compare on protein per dollar](/eggs-vs-greek-yogurt-protein-cost/). Toss in a handful of berries for fiber and some walnuts for fat. It takes thirty seconds to assemble.
 
-**The upgraded smoothie:** A banana and almond milk won't hold you over. Add a scoop of cottage cheese or a handful of hemp seeds for protein, and a spoonful of almond butter for fat. It blends up just as fast but works twice as hard.
+**The upgraded smoothie:** A banana and almond milk won't hold you over. Add a scoop of cottage cheese or a handful of hemp seeds for protein, and a spoonful of almond butter for fat. Plain peanut butter does the same job for less, which is the short version of [how peanut butter and almonds compare on protein per dollar](/peanut-butter-vs-almonds-protein-cost/). It blends up just as fast but works twice as hard.
 
 **Leftovers:** There's no law that says you have to eat traditional breakfast food. A leftover piece of chicken and a scoop of rice from last night's dinner is a perfectly balanced meal. It's fast, it's free, and it avoids food waste.
 

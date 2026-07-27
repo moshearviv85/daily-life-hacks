@@ -49,7 +49,7 @@ Check the ingredient list for the "ose" family: sucrose, glucose, and maltose. A
 
 ## Better options for your summer bowl
 
-You don't have to eat dry lettuce to avoid the sugar trap. Creamy dressings like Ranch, Caesar, and Blue Cheese are actually quite low in sugar because they rely on fat for flavor. While they are higher in calories, they won't give you the sugar crash that a sweet vinaigrette might. It is a trade-off that usually keeps you full longer.
+You don't have to eat dry lettuce to avoid the sugar trap. Creamy dressings like Ranch, Caesar, and Blue Cheese are actually quite low in sugar because they rely on fat for flavor, and a [homemade vegan Caesar](/healthy-homemade-vegan-caesar-salad-dressing/) keeps that trade in your hands instead of a factory's. While they are higher in calories, they won't give you the sugar crash that a sweet vinaigrette might. It is a trade-off that usually keeps you full longer.
 
 If you want to stick with a clear dressing, look for Greek or traditional Italian. These usually lead with soybean or olive oil and vinegar, using herbs like oregano and garlic for the heavy lifting instead of sweeteners. They provide that zingy hit of acid that makes a summer salad refreshing without making your teeth ache.
 
@@ -59,4 +59,4 @@ The most effective way to avoid hidden sugars in popular summer salad dressings 
 
 If you absolutely must have a little sweetness, you can control it. Adding a tiny drop of maple syrup to a homemade jar is still going to be significantly less sugar than what a factory pumps into a plastic bottle. Plus, real olive oil actually tastes like something, which is a nice change of pace from the bland vegetable oils used in the mass-produced versions. There are plenty of ways to [add flavor without more sugar](/add-flavor-without-more-sugar-tricks/), and most of them are already sitting in your spice rack.
 
-Getting the sugar out of your salad doesn't mean you have to suffer through a bowl of flavorless weeds. It just means being a little more skeptical of the labels that promise "light" or "fruity" flavors. Once you stop drenching your vegetables in corn syrup, you might actually start to taste the tomatoes and cucumbers you spent so much money on at the farmer's market.
+Getting the sugar out of your salad doesn't mean you have to suffer through a bowl of flavorless weeds. It just means being a little more skeptical of the labels that promise "light" or "fruity" flavors. Once you stop drenching your vegetables in corn syrup, you might actually start to taste the tomatoes and cucumbers you spent so much money on at the farmer's market. The vegetables are where the money in that bowl actually goes, and [frozen produce competes hard with fresh on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) if the weekly total is getting silly.

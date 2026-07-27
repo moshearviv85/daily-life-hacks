@@ -40,7 +40,7 @@ For a low-stakes place to start, these [20-minute bean and rice meals](/quick-20
 
 Before you try to expand anyone's menu, figure out what's already in it. Not in a clinical way. Just pay attention.
 
-Most non-adventurous eaters have a reliable rotation of about 15 to 20 foods they're happy with. Pasta, rice, bread, chicken, ground beef, potatoes, a few specific vegetables (often corn, carrots, or green beans), cheese, and certain sauces. That's a workable foundation.
+Most non-adventurous eaters have a reliable rotation of about 15 to 20 foods they're happy with. Pasta, rice, bread, chicken, ground beef, potatoes, a few specific vegetables (often corn, carrots, or green beans), cheese, and certain sauces. That's a workable foundation, and a cheap one, though it's worth knowing [how ground beef stacks up against beans on protein per dollar](/ground-beef-vs-beans-protein-cost/) before you build every dinner around the beef.
 
 Write it down if it helps. Not as a prescription, just as a reference. When you know the safe zone, you can cook inside it most of the time and push the edges gently when it feels right.
 
@@ -64,7 +64,7 @@ If someone's been eating plain pasta with butter for 30 years, handing them a Th
 
 Some practical entry points for cooking for picky adults with simple options:
 
-* **Roasted vegetables instead of raw.** Roasting makes carrots, sweet potatoes, and broccoli sweeter and softer. Many people who dislike raw vegetables are fine with roasted ones.
+* **Roasted vegetables instead of raw.** Roasting makes carrots, sweet potatoes, and broccoli sweeter and softer. Many people who dislike raw vegetables are fine with roasted ones. Frozen florets roast fine straight from the bag, and it's worth seeing [how frozen and fresh compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) before you pay for fresh every week.
 * **Mild spices first.** Garlic powder, onion powder, paprika, and Italian seasoning are low-risk flavor builders. Skip cumin, chili, and curry powder until trust is established.
 * **Sauces on the side.** Always. Let people dip, drizzle, or skip entirely. Control reduces anxiety.
 * **Blend it in.** Not in a sneaky way, but practically. Butternut squash blended into mac and cheese sauce, zucchini grated into meatloaf, or spinach blended into pesto are all moves that work if the texture stays familiar.

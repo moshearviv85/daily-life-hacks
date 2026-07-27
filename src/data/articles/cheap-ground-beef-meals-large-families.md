@@ -62,14 +62,14 @@ When the family packs come in three different weights, the [grocery unit price c
 If you want to feed eight people on two pounds of beef, you need to get comfortable with fillers. This isn't about being cheap for the sake of it; it's about physics. You can't make a pile of meat bigger without adding more meat, unless you use high-volume, low-cost ingredients.
 
 **Potatoes:** Diced small, they cook at the same rate as the beef and soak up all the fat and seasoning.
-**Lentils:** Cooked brown lentils have a texture remarkably similar to ground beef. You can swap out half the meat for lentils in a bolognese or chili and most kids won't even notice.
+**Lentils:** Cooked brown lentils have a texture remarkably similar to ground beef. You can swap out half the meat for lentils in a bolognese or chili and most kids won't even notice, and the math behind why that swap helps your budget is laid out in [how ground beef and beans compare on protein per dollar](/ground-beef-vs-beans-protein-cost/).
 **Oats:** My grandmother used to put old-fashioned oats in her meatloaf, and it wasn't just to be thrifty. It keeps the meat moist and doubles the size of the loaf.
 
 I usually aim for a 50/50 ratio of meat to "stuff." If I'm making a hash, I want a bite of potato for every bite of beef. It fills the stomach faster and keeps the grocery bill from hitting triple digits before Tuesday.
 
 ## One-Pot Wonders for High Volume
 
-When you're cooking for a crowd, the last thing you want is four different pans going at once. One-pot meals are the holy grail for tired parents. A massive skillet of "Poor Man's Skillet" (beef, cabbage, and onions) can feed a small army for under ten bucks. Cabbage is one of the cheapest vegetables per pound, and when it's sautéed in beef fat, it actually tastes like something people want to eat.
+When you're cooking for a crowd, the last thing you want is four different pans going at once. One-pot meals are the holy grail for tired parents. A massive skillet of "Poor Man's Skillet" (beef, cabbage, and onions) can feed a small army for under ten bucks. Cabbage is one of the cheapest vegetables per pound, and when it's sautéed in beef fat, it actually tastes like something people want to eat. That same per-pound thinking is worth applying in the freezer aisle, where [frozen and fresh vegetables land differently on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/).
 
 You can also lean heavily into rice-based dishes. A beef and broccoli stir-fry uses very little meat because the rice and the bulky florets do the heavy lifting. I keep a 20-pound bag of jasmine rice in the pantry specifically for these nights. It's an insurance policy against a hungry teenager.
 

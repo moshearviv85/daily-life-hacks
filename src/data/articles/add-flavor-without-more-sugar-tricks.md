@@ -50,7 +50,7 @@ My cousin puts a few drops in her pancake batter and skips the syrup entirely. I
 
 ## Citrus does the work sugar gets credit for
 
-Here's something that took me too long to learn. When a dish tastes flat, the answer usually isn't more sugar or more salt. It's acid. A squeeze of lemon or lime wakes up food the way opening a window wakes up a stuffy room.
+Here's something that took me too long to learn. When a dish tastes flat, the answer usually isn't more sugar or more salt. It's acid. A squeeze of lemon or lime wakes up food the way opening a window wakes up a stuffy room, and the same move is [how you get big flavor while dialing back the salt](/big-flavor-less-salt-citrus-herbs-umami-swaps/), not just the sugar.
 
 Roasted vegetables. Grain bowls. Grilled chicken. A simple soup. All of these get dramatically better with a hit of fresh citrus juice right before serving. But the real trick to add flavor without more sugar is the zest. The colored outer layer of the peel holds concentrated oils that deliver bright, intense flavor with zero tartness. Keep a microplane grater near your stove. Zest a lemon over pasta, over fish, over a pot of rice. It takes three seconds and changes the entire plate.
 

@@ -53,7 +53,7 @@ They are also great for kneading dough or rolling out pie crusts on your counter
 
 However, silicone has quirks. Because it is so slick, cookies tend to spread more on a mat than on parchment. Because it is thick, it acts as an insulator. This means the bottoms of your cookies or pastries might not get as brown and crispy as you want them to.
 
-For roasting vegetables, silicone is rarely the right choice. Vegetables release water as they cook. On a silicone mat, that water tends to pool, causing the vegetables to steam rather than caramelize and brown.
+For roasting vegetables, silicone is rarely the right choice. Vegetables release water as they cook, and frozen ones release even more, which matters if you stock the freezer after reading up on [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/). On a silicone mat, that water tends to pool, causing the vegetables to steam rather than caramelize and brown.
 
 ## When to use aluminum foil
 
@@ -65,7 +65,7 @@ But foil is fantastic for high-heat savory roasting. If you are broiling chicken
 
 Here is the cheat sheet to keep in your head.
 
-Use parchment paper for almost all baking. Cookies, cakes, breads, and anything where you want a nice browned bottom. Use it for roasting vegetables when you want easy cleanup and good browning, and definitely use it for this [sheet pan breakfast hash with eggs and sweet potatoes](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/), because nobody wants to scrub baked egg off bare metal.
+Use parchment paper for almost all baking. Cookies, cakes, breads like this [high-fiber gluten-free loaf that holds together](/high-fiber-gluten-free-bread-recipe/), and anything where you want a nice browned bottom. Use it for roasting vegetables when you want easy cleanup and good browning, and definitely use it for this [sheet pan breakfast hash with eggs and sweet potatoes](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/), because nobody wants to scrub baked egg off bare metal.
 
 Use silicone mats for sticky jobs. Candy making, macarons, kneading dough, or freezing things that you need to peel off later.
 

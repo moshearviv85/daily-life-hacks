@@ -58,7 +58,7 @@ Leeks are the unsung heroes here. They provide a mild, onion-like base that does
 
 ## Keeping the prep time under control
 
-If a recipe takes more than thirty minutes on a Tuesday, I'm probably not making it. The beauty of these ingredients is that they cook incredibly fast. Asparagus takes about five minutes to soften, and frozen peas are basically ready the second they hit the hot liquid. You aren't waiting for a pot of potatoes to finally give up the ghost and turn soft.
+If a recipe takes more than thirty minutes on a Tuesday, I'm probably not making it. The beauty of these ingredients is that they cook incredibly fast. Asparagus takes about five minutes to soften, and frozen peas are basically ready the second they hit the hot liquid. The freezer aisle isn't a downgrade here either, and [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) is worth knowing before you pay for the fresh version out of habit. You aren't waiting for a pot of potatoes to finally give up the ghost and turn soft.
 
 **Pro-tip:** Use an immersion blender. Dragging a hot pot of soup to a countertop blender is a recipe for a kitchen disaster and a potential trip to the urgent care. Blending just half the soup gives you a creamy texture without the need for heavy cream, which keeps the meal feeling light. It's a simple trick that makes the soup look like you tried much harder than you actually did.
 
@@ -66,7 +66,7 @@ If a recipe takes more than thirty minutes on a Tuesday, I'm probably not making
 
 We all have that one person at the table who picks out every visible "bit" of green. If you're dealing with a texture hater, blend the entire batch until it's completely smooth. It looks like a fancy bistro soup, and they won't be able to identify the individual vegetables they claim to dislike. 
 
-**Additions:** If your partner or kids complain that a vegetable soup isn't "real food," toss in some shredded rotisserie chicken or a can of white beans. The beans add a nice creaminess when blended and provide extra protein that might help keep everyone full. You can also top the bowls with a few parmesan crisps or a dollop of Greek yogurt to make it feel less like a side dish and more like a main event.
+**Additions:** If your partner or kids complain that a vegetable soup isn't "real food," toss in some shredded rotisserie chicken or a can of white beans. The beans add a nice creaminess when blended and provide extra protein that might help keep everyone full, usually for less money than the chicken, as [the beans versus ground beef comparison](/ground-beef-vs-beans-protein-cost/) lays out. You can also top the bowls with a few parmesan crisps or a dollop of Greek yogurt to make it feel less like a side dish and more like a main event.
 
 ## Making the most of your leftovers
 

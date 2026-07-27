@@ -39,7 +39,7 @@ Once they are solid bricks, stand them up vertically in a bin like folders in a 
 
 You think you will remember what is in that silver foil pan, but you won't. Three weeks from now, every frozen container looks like an identical block of ice. I keep a magnetic whiteboard on the side of the freezer. It is a simple list: what the meal is, how many servings it has, and the date it went in. 
 
-When I take something out, I wipe it off the board. This prevents that awkward moment where you realize you have zero backup meals left at 5:00 PM on a Monday. It also stops you from buying a second massive bag of chicken breasts when you already have three hidden under the frozen corn.
+When I take something out, I wipe it off the board. This prevents that awkward moment where you realize you have zero backup meals left at 5:00 PM on a Monday. It also stops you from buying a second massive bag of chicken breasts when you already have three hidden under the frozen corn. While you're buying in bulk, it's worth knowing that [thighs and breasts don't deliver protein at the same price](/chicken-thighs-vs-breast-protein-cost/), because a freezer full of the pricier cut is an expensive habit to freeze in place.
 
 ## Categorize by Cooking Method
 

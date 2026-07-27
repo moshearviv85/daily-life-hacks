@@ -27,6 +27,14 @@ Hitting 50 grams of protein in one day costs 82 cents if you build the day from 
 
 This is the fourth spreadsheet in the series. First we ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), then 49 foods by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/), then we priced [a full day of 30 grams of fiber](/what-30-grams-of-fiber-costs-per-day/). Protein got the same question fiber did: fine, beans win the ranking, but what does an actual *day* cost? So I priced five realistic ways to land at roughly 50 grams, meal by meal.
 
+## How much does it cost to eat 50 grams of protein in a day?
+
+**82 cents, if you build the day out of the dry goods aisle.** Oats, split pea soup, pinto beans and brown rice: 52.7 grams of protein, $0.82.
+
+**$9.97, if McDonald's builds it.** Same 53 grams, about 12 times the money.
+
+The days in between: $2.05 no-cook, $2.78 for the meat-eater day with eggs and chicken and beef in it, and $1.51 for the realistic mixed day. That meat day is the one worth staring at, because it puts animal protein on the plate three times and still comes in under three dollars.
+
 ## How we priced a 50-gram day
 
 No new grocery data collection, and that's the point. Every grocery number below reuses the audited dataset from the protein per dollar study: protein per 100 grams from [USDA FoodData Central](https://fdc.nal.usda.gov/), with Walmart listings and, where available, [BLS average-price series](https://www.bls.gov/cpi/factsheets/average-prices.htm). Each parent CSV row labels its actual price basis. The restaurant scenario uses McDonald's published product nutrition and a July 2026 menu-price snapshot recorded in the child dataset; McDonald's does not publish one national menu price.
@@ -72,7 +80,7 @@ Zero pots. The most demanding step is peeling the lid off a yogurt and opening a
 
 Convenience from a can and a dairy aisle costs about a dollar twenty more per day than cooking beans from scratch. Hold that thought until Day 4, where convenience from a drive-thru costs about eight dollars more.
 
-## Day 3: The meat-eater cook day ($2.77)
+## Day 3: The meat-eater cook day ($2.78)
 
 For the person who hears "protein" and thinks chicken, not chickpeas. This is animal protein, cooked at home, and it's the number that quietly kills the "eating protein is expensive" myth.
 
@@ -81,7 +89,7 @@ For the person who hears "protein" and thinks chicken, not chickpeas. This is an
 | Breakfast | 2 large eggs (100g) | 12.6 g | $0.37 |
 | Lunch | Chicken breast, 100g raw (3.5 oz) | 22.5 g | $0.92 |
 | Dinner | Ground beef 80/20, 100g (3.5 oz) | 17.2 g | $1.49 |
-| **Total** | | **52.2 g** | **$2.77** |
+| **Total** | | **52.3 g** | **$2.78** |
 
 Eggs, chicken, and beef, all cooked in your own kitchen, and the protein-carrying part of the day still lands under three bucks. The catch is portion size. These are modest 3.5-ounce servings, so a real plate stacks vegetables and a starch around them. But the protein itself? Cheap. The expensive version of this exact day is sitting in the next section.
 
@@ -112,7 +120,7 @@ Nobody eats like Day 1 forever, and nobody should eat like Day 4 forever unless 
 | Dinner | Canned black beans, 1/2 can (220g) | 13.3 g | $0.44 |
 | Dinner | Brown rice, 60g dry (1/3 cup) | 4.5 g | $0.12 |
 | Drink | Whole milk, 1 cup (244g) | 7.7 g | $0.26 |
-| **Total** | | **51.6 g** | **$1.51** |
+| **Total** | | **51.7 g** | **$1.51** |
 
 A buck fifty. That's a recognizable day of food, no split-pea heroics required, and the beans, bread, and peanut butter bring more than one nutrient to the table.
 
@@ -120,7 +128,7 @@ A buck fifty. That's a recognizable day of food, no split-pea heroics required, 
 
 **The spread is 12x.** $0.82 to $9.97 for the same job. If you only remember one number from this study, that's the one.
 
-**Home cooking beats the drive-thru even with meat on the plate.** The meat-eater cook day, eggs and chicken and beef included, costs $2.77. The fast-food day costs $9.97 for the same 50-ish grams. The difference isn't the animal protein. It's the person behind the counter and the rent on the building.
+**Home cooking beats the drive-thru even with meat on the plate.** The meat-eater cook day, eggs and chicken and beef included, costs $2.78. The fast-food day costs $9.97 for the same 50-ish grams. The difference isn't the animal protein. It's the person behind the counter and the rent on the building.
 
 **Convenience has two very different price tags.** The can-and-yogurt day costs $1.23 more than cooking dry beans. The drive-thru day costs $9.15 more. Cans are cheap convenience; cash registers are not.
 

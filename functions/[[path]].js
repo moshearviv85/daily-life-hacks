@@ -357,6 +357,44 @@ export async function onRequest(context) {
     return env.ASSETS.fetch(request);
   }
 
+  // --- EMBED ROUTES: must be frameable by third-party sites (growth #18) ---
+  // The sitewide `X-Frame-Options: SAMEORIGIN` in public/_headers would break
+  // every embed. Strip it for /embed/* only and swap in an explicit
+  // frame-ancestors policy. Every other path keeps SAMEORIGIN untouched.
+  if (path.startsWith("/embed/")) {
+    const embedUrl = new URL(`${path}/`, url.origin);
+    embedUrl.search = url.search;
+    const embedResponse = await env.ASSETS.fetch(
+      new Request(embedUrl.toString(), {
+        method: request.method,
+        headers: request.headers,
+      }),
+    );
+
+    if (embedResponse.status === 404) {
+      const notFoundReq = new Request(new URL("/404.html", url.origin).toString(), {
+        headers: request.headers,
+      });
+      const notFoundPage = await env.ASSETS.fetch(notFoundReq);
+      return new Response(notFoundPage.body, {
+        status: 404,
+        headers: notFoundPage.headers,
+      });
+    }
+
+    const embedHeaders = new Headers(embedResponse.headers);
+    embedHeaders.delete("X-Frame-Options");
+    embedHeaders.set("Content-Security-Policy", "frame-ancestors *");
+    embedHeaders.set("X-Robots-Tag", "noindex");
+    embedHeaders.set("Cache-Control", "public, max-age=3600");
+
+    return new Response(embedResponse.body, {
+      status: embedResponse.status,
+      statusText: embedResponse.statusText,
+      headers: embedHeaders,
+    });
+  }
+
   let routeConfig = null;
   let version = null;
   let baseSlug = null;

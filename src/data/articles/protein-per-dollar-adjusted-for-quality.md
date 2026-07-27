@@ -26,6 +26,14 @@ Dried pinto beans still bought the most usable protein per dollar in our sample,
 
 A few weeks ago I ranked 49 grocery foods by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and dried beans ran away with it. The pushback was fair. A gram of protein from beans isn't the same as a gram from eggs, because your body can't use all of it. So I took the audited numbers from that study, multiplied each by a published quality score, and rebuilt the ranking. Same prices, same grams, now weighted for what your body actually absorbs.
 
+## What is the cheapest source of protein per dollar after adjusting for quality?
+
+**Dried pinto beans, at 57.8 grams of usable protein per dollar.** They start at 97.9 grams per dollar and get docked hardest of anything in the study, down to a DIAAS of 0.59, and they still finish first.
+
+**Chicken drumsticks are second at 50.3 grams per dollar.** They lose nothing to the adjustment, because chicken scores above 1.0 and we capped every score at 1.0 rather than letting animal foods earn a bonus. Brown lentils come third at 49.0.
+
+So the quality adjustment closes the gap a lot. It doesn't flip the answer.
+
 ## What is DIAAS, in plain English?
 
 DIAAS stands for Digestible Indispensable Amino Acid Score, the current standard for grading protein quality. It answers two things at once: does a food carry the essential amino acids in the amounts your body needs, and how much of that protein do you actually absorb. A score of 1.0 means the protein covers your needs on its own. A score of 0.5 means the food is short somewhere, so half of that protein doesn't pull its weight. Eggs and dairy sit above 1.0. Most beans and grains land between 0.4 and 0.65. That spread is the whole story.

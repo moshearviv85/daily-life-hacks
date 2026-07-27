@@ -61,7 +61,7 @@ The chart is nice, but what you really need is this: match your heat level to th
 
 **Medium heat (sauteing, roasting at 375 to 425F):** Extra virgin olive oil, vegetable oil, canola oil. The workhorses of daily cooking.
 
-**Low heat or no heat (dressings, finishing, drizzling):** Extra virgin olive oil, toasted sesame oil, walnut oil, flaxseed oil. Flavor matters more than heat tolerance here.
+**Low heat or no heat (dressings, finishing, drizzling):** Extra virgin olive oil, toasted sesame oil, walnut oil, flaxseed oil. Flavor matters more than heat tolerance here, and if you build your dressings in a blender, oil is the residue that makes [cleaning a blender without scrubbing](/how-to-clean-blender-fast-no-scrub/) worth learning.
 
 **Baking:** Vegetable oil, canola oil, melted coconut oil, or butter depending on what flavor you want. Most baking doesn't exceed 425F so smoke point is rarely an issue.
 
@@ -72,7 +72,7 @@ You don't need seven oils cluttering the counter. Here's the minimalist setup:
 1. **Extra virgin olive oil** for everyday cooking at medium heat, salad dressings, and finishing.
 2. **A neutral high-heat oil** (avocado, vegetable, or canola) for searing, stir-fries, and anything that needs a screaming hot pan.
 
-That covers 90 percent of home cooking. If you want a third bottle, toasted sesame oil adds a lot of flavor to Asian-inspired dishes and only needs a teaspoon or two.
+That covers 90 percent of home cooking. If you want a third bottle, toasted sesame oil adds a lot of flavor to Asian-inspired dishes and only needs a teaspoon or two, the same small-lever trick as [reaching for cinnamon, vanilla, or citrus instead of more sugar](/add-flavor-without-more-sugar-tricks/).
 
 ## Common mistakes with cooking oils
 

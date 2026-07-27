@@ -48,7 +48,7 @@ Ingredient lists go in descending order by weight. For how to choose granola tha
 
 **First ingredient: whole oats.** Rolled oats, whole grain oats, or oat groats. If the first ingredient is sugar, honey, or a syrup, that's a sweetened oat product, not granola.
 
-**Next: nuts and seeds.** Almonds, pecans, walnuts, sunflower seeds, pumpkin seeds. These add protein, fat, and crunch. They're the reason granola is more filling than plain cereal.
+**Next: nuts and seeds.** Almonds, pecans, walnuts, sunflower seeds, pumpkin seeds. These add protein, fat, and crunch. They're the reason granola is more filling than plain cereal, and also the reason the bag costs what it does, which is worth remembering when you look at [which nuts actually give you protein per dollar](/peanut-butter-vs-almonds-protein-cost/).
 
 **Then: a fat.** Olive oil, coconut oil, or a nut butter. Oil is what makes granola cluster and crisp up in the oven. A little is normal. A lot means the calories climb fast.
 
@@ -77,6 +77,6 @@ Granola is dense. That's not a flaw, it's a feature, but it means a little goes 
 
 ## The homemade option (it's easier than you think)
 
-Three cups of rolled oats, a cup of mixed nuts, two tablespoons of oil, two tablespoons of maple syrup, a pinch of salt, and a teaspoon of cinnamon. Spread on a sheet pan. Bake at 325F for 20 to 25 minutes, stirring once halfway. Let it cool completely before you touch it (that's when it gets crunchy). Store in a jar.
+Three cups of rolled oats, a cup of mixed nuts, two tablespoons of oil, two tablespoons of maple syrup, a pinch of salt, and a teaspoon of cinnamon. Spread on a sheet pan. Bake at 325F for 20 to 25 minutes, stirring once halfway. Let it cool completely before you touch it (that's when it gets crunchy). Store in a jar. The cinnamon is doing more work than it looks like, because [warm spices make food read as sweeter than it is](/add-flavor-without-more-sugar-tricks/), which is how you get away with only two tablespoons of syrup.
 
 Total sugar: whatever you added, which you control. That's the point.

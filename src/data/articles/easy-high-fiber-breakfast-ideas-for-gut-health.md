@@ -120,7 +120,7 @@ You do not need imported granola, specialty cereals, or anything marketed as a g
 
 That matters for breakfast because the cheapest high-fiber foods are also the easiest to keep around. Rolled oats. Chia or flax. Frozen berries. Canned beans. Peanut butter. Whole grain bread. Build from that list and your morning routine stays affordable even when produce prices get dramatic.
 
-Frozen fruit counts. Canned beans count. Store-brand oats count. If the fancy version never makes it into the cart, you did not fail breakfast.
+Frozen fruit counts, and so does the rest of the freezer aisle once you compare [fiber per dollar on frozen versus fresh vegetables](/frozen-vs-fresh-vegetables-fiber-cost/). Canned beans count. Store-brand oats count. If the fancy version never makes it into the cart, you did not fail breakfast.
 
 ## Water, pace, and not turning breakfast into a personality
 

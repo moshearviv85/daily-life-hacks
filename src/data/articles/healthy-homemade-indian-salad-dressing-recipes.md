@@ -64,7 +64,7 @@ To make this, just toss your oil, lemon juice, turmeric, toasted cumin, and a ti
 
 ## Creamy yogurt and toasted spice dressing
 
-If you're a fan of thicker dressings but want to avoid the heavy mayo-slop of a typical Caesar, a yogurt-based Indian dressing is the answer. It’s cool, tangy, and works perfectly if you're serving something spicy on the side. Use plain Greek yogurt for the best texture. It has more structure than the watery stuff and adds a nice bit of protein to the bowl.
+If you're a fan of thicker dressings but want to avoid the heavy mayo-slop of a typical Caesar, a yogurt-based Indian dressing is the answer, and if it's the Caesar itself you're missing, there's a [lighter homemade vegan version of that dressing](/healthy-homemade-vegan-caesar-salad-dressing/) built on the same idea. It’s cool, tangy, and works perfectly if you're serving something spicy on the side. Use plain Greek yogurt for the best texture. It has more structure than the watery stuff and adds a nice bit of protein to the bowl, though if you're buying tubs mainly for that protein, [how yogurt measures up against eggs per dollar](/eggs-vs-greek-yogurt-protein-cost/) is worth knowing before the next grocery run.
 
 **Yogurt Tip:** If the dressing is too thick to pour, add a teaspoon of water at a time until it reaches the right consistency. 
 **Flavor Hack:** Add a handful of chopped cilantro or mint. It brightens the whole thing up and makes it feel like you actually tried.

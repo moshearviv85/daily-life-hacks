@@ -51,7 +51,7 @@ Grocery stores are not designed for your convenience. They're psychological obst
 
 If you're tired of staring at your bank statement every week, you have to change your approach. Figuring out how to make grocery shopping cheaper isn't about extreme couponing or driving to four different stores to save twelve cents on a can of soup. We [ran the gas-and-miles math on the cheaper-store detour](/is-driving-to-cheaper-grocery-store-worth-it/), because a bargain stops being a bargain when the round trip eats it. The rest is about outsmarting the store's design, buying the foods that actually deliver nutrition per dollar, and stopping the waste that quietly eats your budget after you get home.
 
-For the bigger picture of building a cart that feeds you without draining the account, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) walks through the full system. This article is the aisle-level playbook: what to do before you leave the house, what to ignore once you're inside, and which habits actually move the total.
+For the bigger picture of building a cart that feeds you without draining the account, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) walks through the full system. If you want a yardstick for whether your total is actually high, [what the government says a cheap healthy week costs](/usda-thrifty-food-plan-weekly-cost/) is the benchmark most people have never seen. This article is the aisle-level playbook: what to do before you leave the house, what to ignore once you're inside, and which habits actually move the total.
 
 ## Shop from the couch first
 

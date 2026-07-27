@@ -56,7 +56,7 @@ Tape this to the inside of a cabinet if you have to.
 
 Let's start with the easy stuff. The bulk ingredients. If a recipe calls for one pound of chicken, use two pounds. If it asks for one cup of rice, use two cups.
 
-Broth, water, canned tomatoes, beans, and large vegetables like potatoes and carrots scale up perfectly. You are simply increasing the volume of the food. These are the foundations of the dish, and the math applies to them directly.
+Broth, water, canned tomatoes, beans, and large vegetables like potatoes and carrots scale up perfectly, and leaning on beans instead of more meat keeps a double batch cheap, since [beans and ground beef aren't close on protein per dollar](/ground-beef-vs-beans-protein-cost/). You are simply increasing the volume of the food. These are the foundations of the dish, and the math applies to them directly.
 
 ## How much salt when you double a recipe?
 

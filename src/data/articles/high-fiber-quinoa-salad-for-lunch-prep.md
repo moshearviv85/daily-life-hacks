@@ -68,7 +68,7 @@ faq:
 ---
 Quinoa salad is one of those recipes that sounds like it belongs on a wellness poster, but it's really just a sturdy grain bowl that tolerates commuting. (If quinoa isn't your grain, my [farro lunch bowl with roasted vegetables and lemon tahini](/farro-lunch-bowl-roasted-vegetables-lemon-tahini/) works the same commuter-proof angle with a chewier bite.)
 
-If your goal is fiber, you want more than lettuce and hope. You want whole grains, legumes, and vegetables that still taste good after a night in the fridge.
+If your goal is fiber, you want more than lettuce and hope. You want whole grains, legumes, and vegetables that still taste good after a night in the fridge. Quinoa isn't the only grain that does that job, and [how whole wheat flour and quinoa compare on fiber per dollar](/whole-wheat-flour-vs-quinoa-fiber-cost/) is worth knowing before you buy another bag.
 
 For the full plan around this one lunch, the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) handles shopping, batch cooking, storage, and reheating without lining up twelve identical containers like a cafeteria display.
 ## Why This Combination Holds

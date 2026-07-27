@@ -115,7 +115,7 @@ If you want to add avocado, slice it thin and put it under the slaw so it doesn'
 
 ## What to Serve on the Side
 
-Fish tacos are pretty satisfying on their own, but if you want to round out the meal, keep it simple. A side of black beans, warmed up with a little cumin and garlic, works well. Mexican rice is the obvious choice if you want something more substantial. A simple bowl of sliced oranges with a sprinkle of chili powder is a classic pairing that cuts through the richness of the tacos.
+Fish tacos are pretty satisfying on their own, but if you want to round out the meal, keep it simple. A side of black beans, warmed up with a little cumin and garlic, works well, and beans are quietly doing more for the plate than people credit, which is the whole point of [comparing beans and ground beef on protein per dollar](/ground-beef-vs-beans-protein-cost/). Mexican rice is the obvious choice if you want something more substantial, though [there are other grains and swaps that work under a taco plate](/healthy-alternatives-white-rice-dinner/) if plain white rice feels like a waste of the space. A simple bowl of sliced oranges with a sprinkle of chili powder is a classic pairing that cuts through the richness of the tacos.
 
 For drinks, a Mexican lager is the obvious match. If you're not drinking, limeade or a simple sparkling water with lime works fine. The tacos have enough flavor that you don't need a complicated beverage situation.
 

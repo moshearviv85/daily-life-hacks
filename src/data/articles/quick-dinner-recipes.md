@@ -70,7 +70,7 @@ Don't skimp on the olive oil. You need enough to really coat everything, not jus
 
 ## Choosing Your Chicken and Veggies
 
-I usually go for boneless, skinless chicken breasts because that's what I usually have on hand, but thighs work just as well, maybe even better if you like your chicken extra juicy. Just make sure whatever you choose is cut into roughly 1-inch pieces so it cooks evenly and quickly. And if your chicken has a habit of coming out dry no matter what you do, this guide to the [best way to cook chicken](/best-way-to-cook-chicken/) fixes that for good.
+I usually go for boneless, skinless chicken breasts because that's what I usually have on hand, but thighs work just as well, maybe even better if you like your chicken extra juicy. Thighs are usually the cheaper cut, and the size of that gap shows up when you compare [what thighs and breast cost per gram of protein](/chicken-thighs-vs-breast-protein-cost/). Just make sure whatever you choose is cut into roughly 1-inch pieces so it cooks evenly and quickly. And if your chicken has a habit of coming out dry no matter what you do, this guide to the [best way to cook chicken](/best-way-to-cook-chicken/) fixes that for good.
 
 For the vegetables, I've gone with potatoes, broccoli, and red bell pepper because they're a solid combo that holds up well to roasting. But this is where you can play around a bit. Asparagus, green beans, or even some zucchini would also be good. Just make sure you're picking things that will cook in about 20-25 minutes. If you're using denser root vegetables like carrots or sweet potatoes, cut them smaller than the potatoes so they soften up in time.
 

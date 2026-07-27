@@ -69,13 +69,13 @@ Seafood is among the richest selenium sources you can buy. Three ounces of cooke
 
 Canned tuna is the practical option. It is cheap, shelf-stable, and turns into lunch in about four minutes if you have bread, crackers, or a sad bag of greens that needs a purpose. Salmon works for dinner if you want something that feels a little more planned.
 
-Eggs are the breakfast shortcut. Each large egg brings about 15 micrograms of selenium, so two eggs with toast isn't groundbreaking, but it quietly gets you more than halfway to the RDA. Scramble them, boil them, fold them into a breakfast sandwich, or put a fried egg over rice and vegetables when dinner has gone sideways.
+Eggs are the breakfast shortcut. Each large egg brings about 15 micrograms of selenium, so two eggs with toast isn't groundbreaking, but it quietly gets you more than halfway to the RDA. They pull the same weight on the grocery bill, which is what [the eggs against Greek yogurt comparison on protein per dollar](/eggs-vs-greek-yogurt-protein-cost/) is really measuring. Scramble them, boil them, fold them into a breakfast sandwich, or put a fried egg over rice and vegetables when dinner has gone sideways.
 
 That last one isn't fancy. It is survival cooking with a pan.
 
 ## Meat, dairy, beans, and grains still count
 
-Chicken and turkey bring selenium into the regular rotation without making dinner weird. Roast a tray of chicken thighs, slice turkey into sandwiches, or use ground turkey in chili. Nothing about this needs a special technique.
+Chicken and turkey bring selenium into the regular rotation without making dinner weird. Roast a tray of chicken thighs, slice turkey into sandwiches, or use ground turkey in chili. Nothing about this needs a special technique. Thighs are usually the better buy anyway, and [the price gap between thighs and breast per gram of protein](/chicken-thighs-vs-breast-protein-cost/) is bigger than most people assume at the meat counter.
 
 Beef and pork contribute too, especially in normal portions tucked into meals with vegetables and grains. Think chili, stir fry, tacos, or a simple pork tenderloin with roasted potatoes.
 

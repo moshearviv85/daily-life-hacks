@@ -67,7 +67,7 @@ faq:
 ---
 Homemade hummus turns creamy when you give it enough tahini, enough blending time, and a little cold liquid at the end. That's the whole operation. No chickpea peeling marathon. No specialty equipment beyond a food processor. No tiny refrigerated tub charging rent by the ounce.
 
-This version uses two cans of chickpeas and half a cup of tahini, so it has real body without becoming stiff. Fresh lemon and garlic keep it sharp. The texture should hold a swipe from a piece of pita but shouldn't grip the pita and refuse to let go.
+This version uses two cans of chickpeas and half a cup of tahini, so it has real body without becoming stiff. Fresh lemon and garlic keep it sharp. Two cans is also a couple of dollars of groceries, which is the general argument for beans once you see [how they compare with ground beef on protein per dollar](/ground-beef-vs-beans-protein-cost/). The texture should hold a swipe from a piece of pita but shouldn't grip the pita and refuse to let go.
 
 ## Why does homemade hummus turn grainy?
 
@@ -97,7 +97,7 @@ Paprika or sumac on top is optional. The olive oil drizzle isn't required either
 
 ## What can you do with extra chickpeas?
 
-If you have another can in the pantry, make [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) instead of letting it begin a six-month residency behind the pasta. For lunch, a scoop of hummus also works beside the beans and vegetables in this [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/).
+If you have another can in the pantry, make [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) instead of letting it begin a six-month residency behind the pasta. For lunch, a scoop of hummus also works beside the beans and vegetables in this [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/). If you'd rather turn that can into dinner, it does more work in a [chickpea and cauliflower curry](/vegetarian-high-fiber-dinners-for-natural-relief/).
 
 You can swap in roasted red pepper, a little cayenne, or a drained sun-dried tomato once the base texture is right. Make the plain batch first. It's much easier to judge a variation when you're not also trying to figure out why the original hummus resembles drywall compound.
 

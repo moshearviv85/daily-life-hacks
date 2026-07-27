@@ -87,7 +87,7 @@ If you have a random zucchini or half a head of cabbage sitting in the crisper d
 
 You could eat the chicken filling on its own and be perfectly happy. But the peanut sauce is the reason you'll make this recipe twice in one week.
 
-It's a dead simple mix of creamy peanut butter, soy sauce, rice vinegar, and warm water to thin it out. If you like heat, a squeeze of sriracha balances the richness of the peanut butter beautifully.
+It's a dead simple mix of creamy peanut butter, soy sauce, rice vinegar, and warm water to thin it out. A single jar stretches across a lot of dinners, which is why [peanut butter and almonds land so far apart on protein per dollar](/peanut-butter-vs-almonds-protein-cost/). If you like heat, a squeeze of sriracha balances the richness of the peanut butter beautifully.
 
 Natural peanut butter requires a little more whisking to come together, and you might need an extra splash of water to get a drizzling consistency. You want it thick enough to cling to the chicken, but thin enough to pour off a spoon.
 

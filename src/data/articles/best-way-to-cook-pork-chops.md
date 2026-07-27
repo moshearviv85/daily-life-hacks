@@ -68,7 +68,7 @@ Finally, the rest. It's tempting to cut into that beautiful chop right away, but
 
 The quality of your starting material makes a big difference. I always recommend bone-in pork chops, ideally about 1-inch thick. The bone helps insulate the meat, leading to more even cooking and often a juicier result. Thinner chops are harder to cook without overdoing them, and thicker ones will require a longer cook time and might benefit from a quick finish in the oven after searing.
 
-Look for chops that have good marbling – those little streaks of fat – as this also contributes to flavor and moisture. If you can find heritage breed pork, it often has superior flavor and texture, though it can be pricier. Don't stress too much about fat caps; you can trim them down to about 1/4 inch if they're excessively thick.
+Look for chops that have good marbling – those little streaks of fat – as this also contributes to flavor and moisture. If you can find heritage breed pork, it often has superior flavor and texture, though it can be pricier. Cut-to-cut price gaps like that show up in every meat case, which is the same question behind [what chicken thighs and breast each cost per gram of protein](/chicken-thighs-vs-breast-protein-cost/). Don't stress too much about fat caps; you can trim them down to about 1/4 inch if they're excessively thick.
 
 ## How to Get a Deep Brown Crust
 

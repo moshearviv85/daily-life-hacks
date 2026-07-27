@@ -43,11 +43,11 @@ First, pick the right spot. A lot of people use the bottom crisper drawer for th
 
 Next, figure out what goes inside. The rule is simple: everything in the drawer must be completely ready to eat. No peeling, no chopping, no washing required. If you put whole, unwashed carrots in the snack drawer, you have missed the point. You won't want to wash and peel them at four o'clock.
 
-Hard-boiled eggs are a solid anchor. Refrigerate them within two hours of cooking, date the container, and use them within one week. Eggs provide protein along with fat and other nutrients. String cheese or small cheese blocks are another practical option that brings both fat and protein to the mix.
+Hard-boiled eggs are a solid anchor. Refrigerate them within two hours of cooking, date the container, and use them within one week. Eggs provide protein along with fat and other nutrients, and they hold their own on [protein per dollar against Greek yogurt](/eggs-vs-greek-yogurt-protein-cost/) if you're stocking the drawer on a budget. String cheese or small cheese blocks are another practical option that brings both fat and protein to the mix.
 
 For produce, stick to things that hold up well after being prepped. Snap peas, cherry tomatoes, and mini bell peppers are excellent because they just need a quick wash and dry. Grapes are fantastic if you pull them off the stems and wash them ahead of time.
 
-If you like dips, portion them out. Don't put a massive tub of hummus in the drawer. Buy a pack of those tiny two-ounce condiment containers, or just use small glass jars. Fill a few with hummus, peanut butter, or yogurt ranch. When everything is pre-portioned, you just grab a mini container of dip and a handful of snap peas, and you're done.
+If you like dips, portion them out. Don't put a massive tub of hummus in the drawer. Buy a pack of those tiny two-ounce condiment containers, or just use small glass jars. Fill a few with hummus, peanut butter, or yogurt ranch. Peanut butter is the workhorse of that group, and [how it compares to almonds on protein per dollar](/peanut-butter-vs-almonds-protein-cost/) explains why it keeps showing up in snack rotations. When everything is pre-portioned, you just grab a mini container of dip and a handful of snap peas, and you're done.
 
 ## What to avoid
 

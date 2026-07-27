@@ -29,14 +29,14 @@ I used to think a "healthy" breakfast meant a bowl of oatmeal that tasted like w
 It's the ultimate survival tool for a Tuesday morning when the kids can't find their shoes and you've already reheated your coffee twice. But if you're trying to keep things balanced, you need to know what's actually happening under that toasted muffin. Here is the macronutrient breakdown of a healthy egg sandwich that won't leave you in a carb coma.
 
 ## The protein power of the eggs
-The eggs are the star of the show, obviously. Two large eggs provide about 12 to 14 grams of high-quality protein. Most of that protein is found in the whites, but don't go tossing the yolks just because some 1990s diet book told you to. The yolks contain fats and micronutrients that actually help you feel satisfied.
+The eggs are the star of the show, obviously. Two large eggs provide about 12 to 14 grams of high-quality protein, and if cost per gram matters to you as much as the gram count, [eggs and Greek yogurt are worth comparing side by side](/eggs-vs-greek-yogurt-protein-cost/). Most of that protein is found in the whites, but don't go tossing the yolks just because some 1990s diet book told you to. The yolks contain fats and micronutrients that actually help you feel satisfied.
 
 If you’re looking to hit that 20-gram protein threshold that nutritionists always talk about, you'll need a little help. Adding a slice of sharp cheddar or a couple of slices of Canadian bacon can easily bridge that gap. I usually stick to the two-egg rule because one egg just feels like a snack, and three eggs feel like I’m preparing for a marathon I didn’t sign up for.
 
 ## Choosing the right carbohydrate base
 The bread is where most people accidentally sabotage their morning. A giant bagel can pack 50 to 60 grams of simple carbohydrates, which is essentially a one-way ticket to a mid-morning energy crash. Switching to a whole wheat English muffin or two slices of sprouted grain bread drops that carb count to about 25 or 30 grams. If you're loyal to the bagel anyway, it's worth knowing [how much protein a bagel sandwich actually packs](/how-much-protein-in-bagel-sandwich/) so those carbs at least show up with backup.
 
-More importantly, those complex carbs bring fiber to the party. Fiber is the unsung hero of the macronutrient breakdown of a healthy egg sandwich because it slows down how fast your body processes those carbs. It keeps your energy steady so you don't snap at your coworker during the 11:00 AM Zoom call.
+More importantly, those complex carbs bring fiber to the party, the same upgrade you get from [choosing whole wheat pasta over white](/whole-wheat-vs-white-pasta-fiber/) at dinner. Fiber is the unsung hero of the macronutrient breakdown of a healthy egg sandwich because it slows down how fast your body processes those carbs. It keeps your energy steady so you don't snap at your coworker during the 11:00 AM Zoom call.
 
 ## Don't fear the healthy fats
 Fats get a bad rap, but they're essential for keeping you full. In a balanced sandwich, you’re looking for about 15 to 20 grams of fat. The eggs provide about 10 grams, and the rest usually comes from your cooking oil, cheese, or my personal favorite: avocado.

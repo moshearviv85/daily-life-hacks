@@ -31,7 +31,7 @@ We all know the rule. Every recipe on the internet tells you that you must use d
 
 It is good advice. It is structurally sound advice. But it is also highly annoying advice when it is 6 p.m. on a Tuesday, you are hungry right now, and past-you did not have the foresight to make a batch of rice on Monday. 
 
-If you try to cheat the system and dump steaming hot rice straight from the cooker into a skillet, you know exactly what happens. You do not get takeout style fried rice. You get a sticky, clumped together vegetable porridge. The soy sauce soaks unevenly, the egg turns into a weird paste, and you eat it in quiet frustration. 
+If you try to cheat the system and dump steaming hot rice straight from the cooker into a skillet, you know exactly what happens. You do not get takeout style fried rice. You get a sticky, clumped together vegetable porridge. The soy sauce soaks unevenly, the egg turns into a weird paste, and you eat it in quiet frustration. Adding more soy sauce to compensate only makes the bowl saltier, and [citrus, herbs, and umami swaps](/big-flavor-less-salt-citrus-herbs-umami-swaps/) are the better way to chase flavor when that happens. 
 
 The issue is moisture. Fresh rice is wet and its starches are highly active. You have to remove that surface moisture if you want the grains to separate and fry in the oil. 
 
@@ -79,4 +79,4 @@ Even with cooled rice, you will have some clumps. Do not try to smash them apart
 
 Before the rice goes into the skillet, use wet hands to gently massage and break apart any big chunks right there on the baking sheet. If the grains are separated before they hit the oil, your fried rice is going to toss beautifully. 
 
-You do not have to abandon your dinner plans just because you forgot to plan ahead. Spread it out, chill it down, and pretend it was yesterday's leftovers. And when you actually do have a container of day old rice staring at you, fried rice is only the beginning. These [creative ways to use leftover rice](/how-to-use-leftover-rice-creative-ideas/) cover the rest.
+You do not have to abandon your dinner plans just because you forgot to plan ahead. Spread it out, chill it down, and pretend it was yesterday's leftovers. The same spread-and-chill step may help if you are frying up quinoa, farro, or one of the other [stand-ins for white rice](/healthy-alternatives-white-rice-dinner/), since wet grains clump no matter what they are called. And when you actually do have a container of day old rice staring at you, fried rice is only the beginning. These [creative ways to use leftover rice](/how-to-use-leftover-rice-creative-ideas/) cover the rest.

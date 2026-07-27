@@ -51,7 +51,7 @@ It's a deliberately boring method. No serving-size games, no assumptions about y
 
 ## Why does whole wheat flour keep winning these rankings?
 
-Because at 96.0 grams of protein per dollar, flour nearly matches the pinto beans themselves at 97.9. Every other grain dilutes the beans: oats score 46.6 on their own, brown rice 36.6, pearled barley 36.3. Pair pintos with rice and the combo drops to 67.2. Pair them with flour and you barely lose anything, 97.0.
+Because at 96.0 grams of protein per dollar, flour nearly matches the pinto beans themselves at 97.9, and those two finish one and two in [the ranking of what a single protein dollar buys](/one-dollar-protein-what-it-buys/). Every other grain dilutes the beans: oats score 46.6 on their own, brown rice 36.6, pearled barley 36.3. Pair pintos with rice and the combo drops to 67.2. Pair them with flour and you barely lose anything, 97.0.
 
 The catch is the same one from our other studies: flour is an ingredient, not dinner. The flour pairs only pay off if you bake, which is less exotic than it sounds. Beans plus homemade bread, beans plus tortillas, lentils plus flatbread. Humanity ran on that menu for a very long time, and at these prices you can see why.
 
@@ -63,8 +63,8 @@ Here's the part I find genuinely freeing: the spread between the best pair and t
 
 ## How did we calculate the pairs?
 
-Protein values come from USDA FoodData Central and prices are July 2026 US figures from audited Walmart national listings, all pulled from our full [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). We limited the pool to dried legumes and whole grains, scored every legume-grain combination on the 50/50 dollar split, and kept the 20 pairs. The FDA's 50 gram Daily Value is a labeling benchmark rather than a personal target, but it's a useful yardstick when every pair on the list clears it with one dollar.
+Protein values come from USDA FoodData Central and prices are July 2026 US figures from audited Walmart national listings, the same audited rows that build [our ranking of 18 plant protein sources](/plant-protein-per-dollar-ranked/). We limited the pool to dried legumes and whole grains, scored every legume-grain combination on the 50/50 dollar split, and kept the 20 pairs. Dry only, because [the can charges several times more per gram of protein](/canned-vs-dry-beans-cost/) and would have dragged every pair down with it. The FDA's 50 gram Daily Value is a labeling benchmark rather than a personal target, but it's a useful yardstick when every pair on the list clears it with one dollar.
 
-If you're building actual meals out of this, the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) is the full playbook, and [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) prices out the daily version. The short answer stays the same either way: buy a bag of beans, buy a bag of something grainy, and let two of the cheapest foods in the store cover for each other.
+The legume half of every pair is also doing fiber work while it sits in the pot, which we scored separately in [protein and fiber per dollar across ten beans and lentils](/beans-double-win-fiber-protein/). If you're building actual meals out of this, the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) is the full playbook, and [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) prices out the daily version. The short answer stays the same either way: buy a bag of beans, buy a bag of something grainy, and let two of the cheapest foods in the store cover for each other.
 
 <!-- numbers-source: pipeline-data/derived-studies/cheapest-complete-protein-pairs.json -->

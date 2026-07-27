@@ -69,7 +69,7 @@ Finally, and this is a big one, it needs to be easy to reheat. Microwaving is us
 
 ## Why This Chicken and Quinoa Bowl Works
 
-This particular Chicken and Quinoa Bowl recipe checks all those boxes. It's a straightforward, one-pan (mostly) meal that delivers on flavor and longevity. The chicken, when cut into cubes, cooks quickly and reheats without becoming dry. The bell peppers and onions get tender-crisp enough to hold their own. And quinoa? It's a meal prep superstar. It cooks up fluffy and stays that way, absorbing flavors without turning into a sticky mess.
+This particular Chicken and Quinoa Bowl recipe checks all those boxes. It's a straightforward, one-pan (mostly) meal that delivers on flavor and longevity. The chicken, when cut into cubes, cooks quickly and reheats without becoming dry. Thighs stay more forgiving than breasts by day three, and they also shift [the protein-per-dollar math on the whole bowl](/chicken-thighs-vs-breast-protein-cost/). The bell peppers and onions get tender-crisp enough to hold their own. And quinoa? It's a meal prep superstar. It cooks up fluffy and stays that way, absorbing flavors without turning into a sticky mess, even if it's a pricey way to buy fiber next to [something as ordinary as whole wheat flour](/whole-wheat-flour-vs-quinoa-fiber-cost/).
 
 The seasoning blend here is simple but effective, giving you a savory, slightly smoky profile that pairs well with pretty much anything. Plus, you get a good balance of protein, fiber, and vegetables, which is exactly what you want for a satisfying meal that could help keep you feeling full.
 
@@ -81,7 +81,7 @@ Getting your food prep right isn't just about the recipe; it's about your techni
 
 Second, invest in good airtight containers. Glass containers are my go-to because they don't stain, don't hold odors, and can go straight from the fridge to the microwave or oven (if you're feeling fancy). Plastic works too, but make sure it's BPA-free and high quality.
 
-Finally, consider your weekly rotation. Even the best meal prep can get boring if you eat the exact same thing five days in a row. This recipe is versatile enough that you can easily swap the protein (shrimp or chickpeas work great) or change up the vegetables to keep things interesting. A different herb garnish or a squeeze of lime instead of lemon can also make a big difference.
+Finally, consider your weekly rotation. Even the best meal prep can get boring if you eat the exact same thing five days in a row. This recipe is versatile enough that you can easily swap the protein (shrimp or chickpeas work great) or change up the vegetables to keep things interesting, and if you want a week with no meat in it at all, [crispy tofu and quinoa cover five days of lunches](/vegan-high-fiber-meal-prep-for-week/) on the same logic. A different herb garnish or a squeeze of lime instead of lemon can also make a big difference.
 
 ## Making it Your Own: Variations and Additions
 

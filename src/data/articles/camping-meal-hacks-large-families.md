@@ -38,9 +38,9 @@ Dump the cereal into zip-top bags. Crack your eggs into a plastic water bottle b
 
 ## Pre-cook the heavy hitters
 
-The secret to successful camping meal hacks for large families is realizing that the campfire is for reheating, not for marathon cooking sessions. Browning three pounds of ground beef for tacos or sloppy joes at a campsite takes forever and creates a greasy mess you have to clean up with a lukewarm sponge.
+The secret to successful camping meal hacks for large families is realizing that the campfire is for reheating, not for marathon cooking sessions. Browning three pounds of ground beef for tacos or sloppy joes at a campsite takes forever and creates a greasy mess you have to clean up with a lukewarm sponge. Stretching that beef with a couple of cans of beans cuts the cost per plate too, since [beans and ground beef aren't close on protein per dollar](/ground-beef-vs-beans-protein-cost/).
 
-Do the messy stuff in your kitchen three days before you leave. Freeze the cooked meat flat in freezer bags. When you're at the site, you just toss that block into a skillet with a splash of water. It thaws, heats up, and dinner is served in ten minutes. This works for pasta sauces, chili, and even grilled chicken strips. You're not "cheating," you're being efficient enough to avoid a meltdown.
+Do the messy stuff in your kitchen three days before you leave. Freeze the cooked meat flat in freezer bags. When you're at the site, you just toss that block into a skillet with a splash of water. It thaws, heats up, and dinner is served in ten minutes. This works for pasta sauces, chili, and even grilled chicken strips, and it's the same batching habit that [stretches meals for a large family the rest of the year](/how-to-stretch-meals-large-families/). You're not "cheating," you're being efficient enough to avoid a meltdown.
 
 ## Foil packets are the ultimate crowd-pleaser
 

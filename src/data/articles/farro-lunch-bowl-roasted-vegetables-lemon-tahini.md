@@ -77,7 +77,7 @@ For the full Sunday-to-office setup around this bowl, the [complete meal-prep sy
 
 Farro holds up in the fridge. It reheats without turning into paste. And it plays nice with strong flavors, like lemon and garlic, without getting bullied.
 
-If you've only done quinoa bowls, farro is a fun change. Same vibe. Better texture. Slightly more "I went to a cafe once and remembered what joy feels like."
+If you've only done quinoa bowls, farro is a fun change. Same vibe. Better texture. Quinoa still earns pantry space, though it's worth knowing [what quinoa and whole wheat flour each cost per gram of fiber](/whole-wheat-flour-vs-quinoa-fiber-cost/) before you commit to another bag. Slightly more "I went to a cafe once and remembered what joy feels like."
 
 ## Roasted vegetables that actually stay good as leftovers
 
@@ -141,7 +141,7 @@ If you're microwaving at work, keep sauce on the side. Heat the grain and vegeta
 
 This farro lunch bowl is already hearty, but you can push it further:
 
-* Add leftover chicken, salmon, or tofu.
+* Add leftover chicken, salmon, or tofu. If you're picking between the first and the last, [how tofu and chicken compare on protein per dollar](/tofu-vs-chicken-protein-cost/) settles it on price.
 * Top with a fried egg if you're eating at home.
 * Add a handful of feta or goat cheese if you want extra richness.
 * Add sliced cucumber and cherry tomatoes right before eating for a cold crunch.

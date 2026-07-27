@@ -47,7 +47,7 @@ Before adding another scoop of beans, read the [practical guide to water and fib
 
 If you normally eat low fiber meals, a giant bean burrito is not a gentle step. It is a referendum.
 
-Try one swap at a time. Add vegetables to a meal you already eat. Switch one refined grain to a whole grain a few days a week. Add beans in quarter cup increments.
+Try one swap at a time. Add vegetables to a meal you already eat, and the frozen bag counts, which is worth remembering when you see [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/). Switch one refined grain to a whole grain a few days a week. Add beans in quarter cup increments.
 ## Rule Two: Water Is Part of the Fiber System
 
 Fiber pulls water into the digestive tract. If you increase fiber and your water intake stays flat, you might feel off even if the foods are healthy.
@@ -121,7 +121,7 @@ If you want examples that are not heroic:
 * swap white bread for whole grain once a day
 * add berries to yogurt instead of sugary cereal
 * add cooked lentils or chickpeas to a wrap or salad
-* replace some pasta with a bean-based sauce or extra vegetables
+* move some pasta nights to whole wheat, where [the fiber difference has actually been measured](/whole-wheat-vs-white-pasta-fiber/), or replace the pasta with a bean-based sauce or extra vegetables
 
 You are building a routine that is easy to repeat. That is how it sticks.
 

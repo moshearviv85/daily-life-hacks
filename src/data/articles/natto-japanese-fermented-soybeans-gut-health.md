@@ -49,7 +49,7 @@ Natto contains the fiber naturally present in soybeans, but the amount varies by
 
 The fermentation question is more complicated. A randomized human trial found that one specific *Bacillus subtilis* strain survived passage through the digestive tract, but the study used capsules, not natto, and didn't find an improvement in general digestive function. That means the result can't prove that every natto product improves gut health. You can read the [study abstract in PubMed](https://pubmed.ncbi.nlm.nih.gov/25062611/).
 
-Strain, dose, processing, storage, and the food itself all matter. Calling every fermented food a proven probiotic skips those details. The useful takeaway is smaller: natto is a fermented soybean food with fiber, protein, and a distinctive flavor. Eat it if it works in your meals, not because a headline promised a digestive transformation.
+Strain, dose, processing, storage, and the food itself all matter. Calling every fermented food a proven probiotic skips those details. The useful takeaway is smaller: natto is a fermented soybean food with fiber, protein, and a distinctive flavor. Soy earns its place on price as much as anything else, which is the point of putting [tofu and chicken side by side on protein per dollar](/tofu-vs-chicken-protein-cost/). Eat it if it works in your meals, not because a headline promised a digestive transformation.
 
 If natto turns out to be a step too far, these [artichoke recipes for gut health](/artichoke-recipes-for-gut-health/) offer a much less sticky way to put a fiber-containing vegetable on the table. Our guide to [prebiotic foods beyond the buzzwords](/prebiotic-foods-beyond-the-buzzwords/) also explains why food-specific evidence matters.
 

@@ -70,7 +70,7 @@ The trick is heat management. You need a hot pan. If your skillet is barely warm
 
 Also, do not cover the pan. Ever. A lid traps steam, and steam is the enemy of a good fried rice texture. You want the moisture to evaporate into the air, not rain back down on your dinner. 
 
-If you are using frozen cauliflower rice, this rule is twice as important. Do not thaw it. I repeat, do not leave it on the counter. Rip open the frozen bag and dump it straight into the hot skillet. 
+If you are using frozen cauliflower rice, this rule is twice as important. Do not thaw it. I repeat, do not leave it on the counter. Rip open the frozen bag and dump it straight into the hot skillet. Frozen isn't the lesser choice here either, and it's worth seeing [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) before you pay more for a head you have to rice yourself. 
 
 ## Building the flavor
 
@@ -94,7 +94,7 @@ Too much soy sauce adds liquid right back into the skillet, undoing all your har
 
 This cauliflower fried rice with eggs is light. It is a great side dish, but if you want it to carry you through the evening without wandering back to the kitchen at 9 p.m., you might want to bulk it up. 
 
-Tossing in some cooked shrimp or diced chicken breast takes two seconds. A handful of shelled edamame adds a nice pop of green and a solid protein bump. Sometimes I just fry an extra egg with a runny yolk and put it right on top, because a runny yolk fixes almost anything. 
+Tossing in some cooked shrimp or diced chicken breast takes two seconds. A handful of shelled edamame adds a nice pop of green and a solid protein bump, and if you're deciding between cubed tofu and chicken for that job, [the two land in different places on protein per dollar](/tofu-vs-chicken-protein-cost/). Sometimes I just fry an extra egg with a runny yolk and put it right on top, because a runny yolk fixes almost anything. 
 
 ## What about leftovers for work?
 

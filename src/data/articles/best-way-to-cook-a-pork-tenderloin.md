@@ -71,7 +71,7 @@ The other crucial part is the rest. I know, I know, you're hungry. But letting t
 
 ## How to Choose and Trim Pork Tenderloin
 
-When you're at the grocery store, look for a tenderloin that's relatively uniform in thickness. Some tenderloins can have a very thin "tail" end. If yours does, you can either tuck it under itself and tie it with kitchen twine to make it thicker, or just lop off the very thin end and save it for another use (like stir-fry). A consistent thickness means it will cook more evenly. Aim for a tenderloin that's between 1 and 1.5 pounds for this recipe; anything larger might need a few more minutes in the oven.
+When you're at the grocery store, look for a tenderloin that's relatively uniform in thickness, and glance at the price per pound while you're standing there, because lean cuts carry a premium in the pork case the same way [breast meat does over chicken thighs](/chicken-thighs-vs-breast-protein-cost/). Some tenderloins can have a very thin "tail" end. If yours does, you can either tuck it under itself and tie it with kitchen twine to make it thicker, or just lop off the very thin end and save it for another use (like stir-fry). A consistent thickness means it will cook more evenly. Aim for a tenderloin that's between 1 and 1.5 pounds for this recipe; anything larger might need a few more minutes in the oven.
 
 A quick note on silver skin: pork tenderloins usually have a thin, silvery membrane on one side called silver skin. It's tough and doesn't break down when cooked, so it's best to remove it. You can do this by sliding a small, sharp knife under one end of the silver skin, lifting it, and then carefully running the knife between the silver skin and the meat, angling the knife slightly upwards to avoid cutting into the tenderloin itself. Don't stress if you leave a little; it won't ruin your dinner.
 
@@ -116,7 +116,7 @@ Slice the pork only after its rest, then spoon the sauce over the medallions. If
 
 The pork spends only 10-15 minutes in the oven, so choose sides that won't demand a separate hour of negotiations. Thin green beans, asparagus, or broccoli can roast at 400°F on a second pan while the pork cooks and rests. Cut dense vegetables such as potatoes or carrots small and start them 20-25 minutes earlier.
 
-Rice, couscous, and a crisp salad also work because they don't compete for oven space. The practical move is to start the starch first, prep the pork while it cooks, and assemble anything cold during the rest. That 5-10 minute pause isn't dead time. It's when you finish the sauce, move vegetables to a bowl, and pretend the kitchen always looked this organized.
+Rice, couscous, a crisp salad, or any of the [quicker stand-ins for white rice](/healthy-alternatives-white-rice-dinner/) also work because they don't compete for oven space. The practical move is to start the starch first, prep the pork while it cooks, and assemble anything cold during the rest. That 5-10 minute pause isn't dead time. It's when you finish the sauce, move vegetables to a bowl, and pretend the kitchen always looked this organized.
 
 ## Store and Reheat Pork Tenderloin Without Drying It Out
 

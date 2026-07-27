@@ -135,7 +135,7 @@ Oil in the dough softens the crumb slightly and helps browning. Salt keeps it fr
 
 ## Making it a habit, not a project
 
-Same-day sourdough pizza works when you stop treating starter discard like a fragile science fair. Keep a jar in the fridge. When it's half full of discard and you're tired of tossing it, this dough is the reason it exists.
+Same-day sourdough pizza works when you stop treating starter discard like a fragile science fair. Keep a jar in the fridge. When it's half full of discard and you're tired of tossing it, this dough is the reason it exists. For the weeks you don't want pizza, these [easy sourdough discard recipes for beginners](/easy-sourdough-discard-recipes-beginners/) cover the rest of the jar.
 
 Start the mix after lunch. Stretch after school pickup or after you shut the laptop. Bake while a salad happens on the side. Nobody needs a 24-hour prediction model for carb cravings.
 

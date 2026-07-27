@@ -37,7 +37,7 @@ People assume fresh produce is more nutritious. It makes intuitive sense. But th
 
 A 2017 study in the *Journal of Food Composition and Analysis* compared nutrient levels in fresh and frozen produce over time. They found that frozen was comparable to or sometimes higher in certain vitamins, especially after fresh produce had been stored in a home refrigerator for five days. The difference wasn't massive either way.
 
-For most home cooks, the practical takeaway is: don't avoid frozen produce for nutritional reasons. That concern doesn't hold up.
+For most home cooks, the practical takeaway is: don't avoid frozen produce for nutritional reasons. That concern doesn't hold up. Cost is the more useful axis, which is what the breakdown of [fiber per dollar for frozen versus fresh vegetables](/frozen-vs-fresh-vegetables-fiber-cost/) actually measures.
 
 ## When fresh is the better choice
 

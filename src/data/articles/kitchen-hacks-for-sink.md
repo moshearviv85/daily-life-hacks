@@ -47,7 +47,7 @@ Why? Because water spots build up. Grime accumulates. A clean sink at night mean
 
 Ever tried to scrape a plate into the trash can while juggling a wet dish? It's a mess. Food bits drop on the floor, on the counter, sometimes even back into the clean side of the sink.
 
-Keep a small bowl, maybe a cereal bowl or a small mixing bowl, right next to your sink while you're clearing plates. All food scraps go into that bowl. When you're done clearing, you carry one bowl to the trash or compost. It's cleaner, faster, and keeps those stray bits out of your drain and off your floor. This is one of those kitchen hacks for sink management that just makes sense.
+Keep a small bowl, maybe a cereal bowl or a small mixing bowl, right next to your sink while you're clearing plates. All food scraps go into that bowl. When you're done clearing, you carry one bowl to the trash or compost. It's cleaner, faster, and keeps those stray bits out of your drain and off your floor. If most of what lands in that bowl is vegetable trimmings, buying more of your produce frozen cuts the prep mess down a lot, and [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) is worth a look before you assume fresh is the better buy. This is one of those kitchen hacks for sink management that just makes sense.
 
 ## Don't Let the Sponge Become Part of the Problem
 
@@ -60,6 +60,8 @@ Get a sponge holder. There are ones that suction to the side of the sink, hang o
 Sometimes, despite your best efforts, the drain gets a little funky. It happens. Before you reach for harsh chemicals, try this old-school remedy. Pour about half a cup of baking soda down the drain, followed by half a cup of white vinegar. It'll fizz like a science experiment gone right. Let it sit for 10-15 minutes, then flush it with hot water.
 
 This mixture can help break down minor grease and food particle buildup, and the baking soda may help neutralize odors. It's a cheap, non-toxic way to keep things smelling fresh and can be a good preventative measure once a week or so.
+
+The better move is keeping grease out of the drain in the first place. Pour cooled fat from a pound of ground beef into an old can and throw it away, or lean on beans more often, since [beans and ground beef are worth comparing on protein per dollar](/ground-beef-vs-beans-protein-cost/) and beans don't leave a slick behind in the pan.
 
 ## Keep the Counter Clear Around the Sink
 

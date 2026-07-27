@@ -66,7 +66,7 @@ When you're ready to eat, you can thaw slices at room temperature for about 20-3
 
 ## Match the Storage Method to the Bread
 
-A crackly sourdough boule and a soft sandwich loaf want different things. Keep a crusty loaf cut-side down on a clean board for the first day, or use a paper bag or bread box. That protects the exposed crumb while allowing the crust to breathe. Plastic keeps more moisture in, but it also softens the crust.
+A crackly sourdough boule and a soft sandwich loaf want different things, and if keeping a starter alive means you're pouring off discard every week, those [beginner sourdough discard recipes](/easy-sourdough-discard-recipes-beginners/) turn the overflow into something you'll store rather than something you'll throw out. Keep a crusty loaf cut-side down on a clean board for the first day, or use a paper bag or bread box. That protects the exposed crumb while allowing the crust to breathe. Plastic keeps more moisture in, but it also softens the crust.
 
 Soft sandwich bread, brioche, and rolls benefit from a tighter bag once they're completely cool. Their job is to stay pliable, not maintain a dramatic crust that can be heard from another room. Press excess air from the bag without crushing the loaf and close it securely.
 

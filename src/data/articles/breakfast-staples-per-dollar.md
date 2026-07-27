@@ -46,9 +46,9 @@ Quick fine print: the egg and dairy rows come from the protein study only, and t
 
 ## Which breakfast staple gives you the most nutrition per dollar?
 
-Flour, with the usual asterisk. Nobody eats flour for breakfast. Flour becomes breakfast, in pancakes, in [a loaf of sandwich bread you baked yourself](/easy-sandwich-bread-recipe-beginners/), in anything your grandmother would recognize. If you bake even occasionally, that $3.12 bag is quietly the most nutritious thing in your pantry per dollar. If you don't, skip to the oats.
+Flour, with the usual asterisk. Nobody eats flour for breakfast. Flour becomes breakfast, in pancakes, in [a loaf of sandwich bread you baked yourself](/easy-sandwich-bread-recipe-beginners/), in anything your grandmother would recognize. If you bake even occasionally, that $3.12 bag is quietly the most nutritious thing in your pantry per dollar, and it finishes second only to dry pinto beans in [the wider ranking of what one protein dollar buys](/one-dollar-protein-what-it-buys/). If you don't, skip to the oats.
 
-Oats are the real winner for people who want breakfast, not a project. At 82.4 combined grams per dollar, the canister beats peanut butter's 62.1 and lands more than ten times higher than the apples sitting next to it in the cart.
+Oats are the real winner for people who want breakfast, not a project. At 82.4 combined grams per dollar, the canister beats peanut butter's 62.1 and lands more than ten times higher than the apples sitting next to it in the cart. Peanut butter's consolation prize is that it wins [the ranking of protein you don't have to cook](/no-cook-protein-per-dollar/) outright.
 
 ## Is oatmeal actually the cheapest healthy breakfast?
 
@@ -58,13 +58,13 @@ The move that makes oats feel like food instead of penance is going savory. [Sav
 
 ## Are eggs, milk, and yogurt still worth buying?
 
-Yes, just know what they're for. Eggs at $2.19 a dozen score 34.4 grams of protein per dollar, the best animal number at the breakfast table. Whole milk rides behind at 29.1, and a $4.22 gallon is still one of the most casually underrated things in the store. Greek yogurt at 27.5 and cottage cheese at 26.3 round out the dairy case, close enough to each other that you should just buy the one you like.
+Yes, just know what they're for. Eggs at $2.19 a dozen score 34.4 grams of protein per dollar, the best animal number at the breakfast table and second only to bone-in drumsticks once you widen the frame to [every animal protein ranked by cost](/animal-protein-per-dollar-ranked/). Whole milk rides behind at 29.1, and a $4.22 gallon is still one of the most casually underrated things in the store. Greek yogurt at 27.5 and cottage cheese at 26.3 round out the dairy case, close enough to each other that you should just buy the one you like.
 
 None of them bring fiber to the table, though. That's why the smart breakfast isn't eggs or oats, it's eggs and something from the top of the list. [A sheet pan breakfast hash with eggs](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) is that idea in one pan.
 
 ## Why did fruit land at the bottom?
 
-Because fruit is mostly water and we're measuring grams per dollar. Bananas score 11.6 grams of fiber per dollar at $0.65 a pound, and gala apples 7.7 at $1.28 a pound. That's not an argument against fruit. It may still be the best thing in your cart for reasons this spreadsheet can't see. It's just an argument against buying fruit as your fiber plan when the oats deliver about three times the fiber per dollar of bananas without bruising in the bag.
+Because fruit is mostly water and we're measuring grams per dollar. Bananas score 11.6 grams of fiber per dollar at $0.65 a pound, and gala apples 7.7 at $1.28 a pound. That's not an argument against fruit. It may still be the best thing in your cart for reasons this spreadsheet can't see. It's just an argument against buying fruit as your fiber plan when the oats deliver about three times the fiber per dollar of bananas without bruising in the bag. If fiber is the specific job you're shopping for, [the shortlist of what a single fiber dollar buys](/one-dollar-fiber-what-it-buys/) is all dry goods, and no fruit makes it.
 
 ## How did we run the numbers?
 

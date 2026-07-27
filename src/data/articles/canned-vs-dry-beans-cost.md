@@ -22,7 +22,7 @@ faq:
 
 Dry pinto beans deliver 97.9 grams of protein per dollar. Canned chickpeas deliver 22.0. That 4.5x spread, based on USDA data and July 2026 prices, is the entire canned-versus-dry argument compressed into two numbers. Every dry bean in our 10-bean comparison beat every canned bean, and it wasn't a photo finish.
 
-These numbers come from our full [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), which priced the whole store. Here's the bean-only bracket:
+These numbers come from our full [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), which priced the whole store, and they're also what puts dried legumes in the first seven places of [the plant protein ranking](/plant-protein-per-dollar-ranked/). Here's the bean-only bracket:
 
 | Rank | Food | Type | Protein per $1 | Price |
 |---|---|---|---|---|
@@ -51,11 +51,11 @@ Put it in cart terms. Matching the protein in one $3.97 bag of dry pintos takes 
 
 Because a can is mostly water weight and someone else's labor. The 15.5 ounce can holds cooked beans swimming in liquid; the dry bag is beans all the way down. You're paying the packer to soak, simmer, can, and ship water across the country.
 
-The result is two completely separate leagues. Every dry bean in this sample lands between 56.0 and 97.9 grams of protein per dollar. Every canned one lands between 22.0 and 30.1. There's no overlap, no clever exception, no canned bean that sneaks into dry territory. The worst dry bean nearly doubles the best canned one.
+The result is two completely separate leagues. Every dry bean in this sample lands between 56.0 and 97.9 grams of protein per dollar. Every canned one lands between 22.0 and 30.1. There's no overlap, no clever exception, no canned bean that sneaks into dry territory. The worst dry bean nearly doubles the best canned one, and the best dry bean tops [the 15 foods we ranked by what one protein dollar buys](/one-dollar-protein-what-it-buys/).
 
 ## When does canned actually win?
 
-When the deciding factor is the clock, not the receipt. At $0.88 to $0.98 a can, canned beans are still cheap food in absolute terms; they just look expensive standing next to their dry siblings. A can of black beans becomes [black bean and corn salsa](/quick-black-bean-and-corn-salsa-no-cooking-required/) with zero cooking, or [weeknight black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) before anyone in the house gets grumpy. Canned chickpeas turn into [homemade hummus](/high-fiber-hummus-recipe-homemade/) in the time it takes the food processor to stop spinning.
+When the deciding factor is the clock, not the receipt. At $0.88 to $0.98 a can, canned beans are still cheap food in absolute terms; they just look expensive standing next to their dry siblings. A can of black beans becomes [black bean and corn salsa](/quick-black-bean-and-corn-salsa-no-cooking-required/) with zero cooking, or [weeknight black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) before anyone in the house gets grumpy. Canned chickpeas turn into [homemade hummus](/high-fiber-hummus-recipe-homemade/) in the time it takes the food processor to stop spinning. That's why cans place fourth in [the ranking of protein you don't have to cook](/no-cook-protein-per-dollar/), where an $0.88 can of black beans is the cheapest single item on the list.
 
 My honest setup is both: a shelf of dry beans for planned cooking, a few cans for the nights when planning didn't happen. The cans are insurance. The bags are the investment.
 
@@ -65,6 +65,6 @@ Skip the ones that need soaking. Brown lentils (77.7 grams per dollar) and green
 
 For actual beans, batch cooking is the trick. Simmer a whole bag on a Sunday, portion it, freeze it, and future-you gets canned-bean convenience at dry-bean prices. Those frozen portions drop straight into a [three bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) or a [Tuscan white bean and kale soup](/tuscan-white-bean-kale-soup-stovetop/), where navy beans quietly deliver their 75.9 grams per dollar without anyone noticing they were the frugal choice.
 
-The short version: dry beans are one of the few places in the store where a little labor buys you a genuinely large discount. If you want the wider map of where beans sit among everything else, our [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) puts these numbers to work across a full week of meals.
+The short version: dry beans are one of the few places in the store where a little labor buys you a genuinely large discount. Protein isn't the only thing in the bag, either: we scored the same beans on [protein and fiber per dollar at once](/beans-double-win-fiber-protein/), and the dry bags ran away with that ranking too. If you want the wider map of where beans sit among everything else, our [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) puts these numbers to work across a full week of meals.
 
 <!-- numbers-source: pipeline-data/derived-studies/canned-vs-dry-beans-cost.json -->

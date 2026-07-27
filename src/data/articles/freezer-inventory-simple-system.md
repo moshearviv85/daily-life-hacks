@@ -57,7 +57,7 @@ Keep it categorized loosely. Draw a line down the middle. Put "Raw Meat/Ingredie
 
 If you have a bottom drawer freezer, things get buried fast. It's a fundamental law of physics that whatever you need will be at the very bottom, under three bags of frozen corn and a mystery roast.
 
-To fix this, get two or three sturdy plastic bins that fit inside your freezer. These become your zones. One bin is for frozen vegetables and fruit. One bin is for raw meat. One bin is for pre-cooked meals and leftovers. 
+To fix this, get two or three sturdy plastic bins that fit inside your freezer. These become your zones. One bin is for frozen vegetables and fruit. One bin is for raw meat. One bin is for pre-cooked meals and leftovers. The vegetable bin usually holds the cheapest food in the freezer, which is the whole point of [the fiber-per-dollar case for frozen produce over fresh](/frozen-vs-fresh-vegetables-fiber-cost/). 
 
 When you need a vegetable, you just lift the vegetable bin and look through it. You're no longer digging through a chaotic pile of loose bags. It sounds almost too simple to matter, but separating categories physically stops the freezer from turning into an archaeological dig.
 

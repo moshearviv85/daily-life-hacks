@@ -45,17 +45,17 @@ Source: USDA FoodData Central + single-store prices, July 2026. Full methodology
 
 Because you're buying a whole grain at bulk-commodity prices and nobody told the snack aisle. A 2 lb bag of plain kernels runs $2.28, and the fiber math works out to 57.7 grams per dollar. Second place, carrots, manages 16.1. That's not a race, that's a lapping.
 
-The catch is the word "plain." This ranking is for kernels you pop yourself, on the stove or in a paper bag in the microwave, not the pre-bagged butter-blasted stuff. Popped at home, it's the rare snack that's genuinely cheap, genuinely high in fiber, and still feels like something you'd eat during a movie. If you want a second DIY snack in that same spirit, [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) scratch the crunchy-salty itch too.
+The catch is the word "plain." This ranking is for kernels you pop yourself, on the stove or in a paper bag in the microwave, not the pre-bagged butter-blasted stuff. Popped at home, it's the rare snack that's genuinely cheap, genuinely high in fiber, and still feels like something you'd eat during a movie. If you want a second DIY snack in that same spirit, [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) scratch the crunchy-salty itch too, and dry chickpeas are one of the bags that [win the protein table and the fiber table at the same time](/beans-double-win-fiber-protein/).
 
 ## Are nuts and seeds worth it for fiber?
 
-The cheap ones are. Dry roasted peanuts come in at 13.7 grams of fiber per dollar with a 16 oz jar at $2.78, and sunflower seed kernels land right behind at 13.1. Peanut butter holds its own at 11.4 grams per dollar, and the $4.97 jar is a 40 oz monster that lasts long enough to become a household member. It also anchors these [no-bake oat and flax energy balls](/no-bake-high-fiber-energy-balls-recipe/), which turn pantry staples into something that feels like a bakery purchase.
+The cheap ones are. Dry roasted peanuts come in at 13.7 grams of fiber per dollar with a 16 oz jar at $2.78, and sunflower seed kernels land right behind at 13.1. Peanut butter holds its own at 11.4 grams per dollar, and the $4.97 jar is a 40 oz monster that lasts long enough to become a household member. That same jar is the outright winner of [the ranking of protein you don't have to cook](/no-cook-protein-per-dollar/). It also anchors these [no-bake oat and flax energy balls](/no-bake-high-fiber-energy-balls-recipe/), which turn pantry staples into something that feels like a bakery purchase.
 
 Almonds are where the math turns on you. At $6.47 for a 16 oz bag, they manage 8.8 grams of fiber per dollar, behind bananas. Almonds are fine food with real fiber in them. They're just priced like a treasure, so buy them because you like them, not because a wellness post said they're a fiber snack.
 
 ## Is fresh fruit or dried fruit the better snack fiber deal?
 
-Fresh wins, which surprised me too. Bananas deliver 11.6 grams of fiber per dollar at $0.65 a pound, beating both prunes (8.1) and raisins (6.3). Gala apples at 7.7 grams per dollar essentially tie prunes while costing $1.28 a pound instead of $3.98 a bag.
+Fresh wins, which surprised me too. Bananas deliver 11.6 grams of fiber per dollar at $0.65 a pound, beating both prunes (8.1) and raisins (6.3), and they lead the fruit half of [the full fruit and vegetable ranking](/produce-fiber-per-dollar-ranked/) as well. Gala apples at 7.7 grams per dollar essentially tie prunes while costing $1.28 a pound instead of $3.98 a bag.
 
 Drying fruit concentrates the sugar and the price faster than it concentrates the value. Raisins at $3.34 for a 20 oz canister are the clearest example: last place at 6.3 grams per dollar, about a ninth of what popcorn gives you. Raisins aren't bad food. They're just an expensive place to shop for fiber.
 
@@ -63,6 +63,6 @@ Drying fruit concentrates the sugar and the price faster than it concentrates th
 
 Three purchases, under $7 total by these prices: popcorn kernels ($2.28), a bag of carrots ($1.58), and a jar of peanuts ($2.78). That covers salty-crunchy, fresh-crunchy, and rich, which is most of what a snack craving is asking for. Carrots get a serious upgrade from a batch of [homemade high-fiber hummus](/high-fiber-hummus-recipe-homemade/), and if your cravings show up after dinner, these [nighttime sweet tooth snack ideas](/healthy-sweet-tooth-snack-ideas-night/) lean on fruit and peanut butter rather than the cookie sleeve.
 
-The bigger picture: snacks are where fiber budgets quietly die, because the default options are refined and priced for convenience. Pick from the top half of this table and snacking starts working for your fiber intake instead of against it. If you want to see how snacks fit into a full day of cheap fiber, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) puts the whole plan together.
+The bigger picture: snacks are where fiber budgets quietly die, because the default options are refined and priced for convenience. Pick from the top half of this table and snacking starts working for your fiber intake instead of against it. Popcorn is the only snack here that also lands on [the shortlist of foods where a single dollar buys the most fiber](/one-dollar-fiber-what-it-buys/), which tells you how far the snack aisle sits from the dry goods aisle. If you want to see how snacks fit into a full day of cheap fiber, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) puts the whole plan together.
 
 <!-- numbers-source: pipeline-data/derived-studies/high-fiber-snacks-per-dollar.json -->

@@ -52,7 +52,7 @@ I’ve tried the "just eat a giant bowl of broccoli" trick. It works for about f
 
 ## Making the combo work in real life
 
-You don't need a degree in dietetics to make this work for dinner tonight. You just need to stop thinking about your plate as one thing or the other. If you’re making tacos, don't just do beef and cheese. Add black beans for that fiber hit. If you’re having a salad, don't just do greens and dressing. Throw in some leftover chicken or a few hard-boiled eggs. And if you'd rather have the pairing done for you, these [high protein high fiber meals for weight loss](/high-protein-high-fiber-meals-for-weight-loss/) are built on exactly this combo. 
+You don't need a degree in dietetics to make this work for dinner tonight. You just need to stop thinking about your plate as one thing or the other. If you’re making tacos, don't just do beef and cheese. Add black beans for that fiber hit, and if the grocery bill is part of the calculation, [how ground beef and beans compare on protein per dollar](/ground-beef-vs-beans-protein-cost/) is worth reading first. If you’re having a salad, don't just do greens and dressing. Throw in some leftover chicken or a few hard-boiled eggs. And if you'd rather have the pairing done for you, these [high protein high fiber meals for weight loss](/high-protein-high-fiber-meals-for-weight-loss/) are built on exactly this combo. 
 
 The goal is to build a meal with enough substance and enough plants to be worth repeating. Protein plus a fiber-rich food is a practical template, but it doesn't guarantee you'll want less or eat less. Hunger also responds to total energy, food form, sleep, routine, health, and the rest of the day's meals.
 

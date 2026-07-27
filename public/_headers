@@ -9,6 +9,15 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
+# Embeddable chart pages must be frameable by third parties (growth method #18).
+# Scoped to /embed/* only — the sitewide SAMEORIGIN above still protects
+# every other page. `!` unsets the inherited header for this path.
+/embed/*
+  ! X-Frame-Options
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex
+  Cache-Control: public, max-age=3600
+
 /images/*
   Cache-Control: public, max-age=300, must-revalidate
 

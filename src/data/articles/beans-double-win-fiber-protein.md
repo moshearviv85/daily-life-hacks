@@ -47,7 +47,7 @@ One honesty note about the table: the three canned rows only appear in our prote
 
 ## Which beans deliver the most protein and fiber per dollar?
 
-Pintos, and it's not particularly close. The gap between first place and last place on this list is 7.7x, and the top of the table is all bags, no cans.
+Pintos, and it's not particularly close. The gap between first place and last place on this list is 7.7x, and the top of the table is all bags, no cans. Widen the lens past legumes and nothing changes: dried beans and lentils hold the top seven spots in [the full plant protein ranking](/plant-protein-per-dollar-ranked/) too, with tofu and tempeh stuck at the bottom.
 
 The quiet surprise is green split peas. They actually edge out pintos on fiber per dollar, 71.0 grams to 70.8, and a bag costs $1.42. That's the cheapest entry ticket on the whole list. If you've only ever met split peas in [a pot of split pea soup](/split-pea-soup-recipe-high-fiber/), that's still the correct move, it just happens to be a financially brilliant one too.
 
@@ -57,7 +57,7 @@ Black beans take third at 139.1 combined grams per dollar, and they're the most 
 
 Dry pinto beans: 97.9 grams of protein per dollar. Canned black beans, the best can we scored: 30.1. You're paying more than triple per gram for someone else to add water.
 
-Same story inside a single food. Dry chickpeas score 56.7 grams of protein per dollar; canned chickpeas score 22.0. That's over two and a half times the value for the version that asks you to plan ahead by one evening.
+Same story inside a single food. Dry chickpeas score 56.7 grams of protein per dollar; canned chickpeas score 22.0. That's over two and a half times the value for the version that asks you to plan ahead by one evening, and we ran that matchup bean by bean in [what the convenience of the can actually costs](/canned-vs-dry-beans-cost/), where every dry bag beat every can.
 
 I'm not going to pretend cans are a mistake. A canned bean at 30.1 grams per dollar is still a solid buy, and some nights the can opener is the only kitchen skill you have left. Keep a few on the shelf. Just don't let them be the whole strategy when a $3.97 bag of pintos is sitting one shelf down doing 168.7 combined grams per dollar.
 
@@ -73,8 +73,8 @@ Chickpeas are the snack play. At 90.5 combined grams per dollar from a $1.64 bag
 
 Nutrient values come from USDA FoodData Central. Prices are July 2026 US figures, audited against Walmart national listings, and the combined score is just protein grams per dollar plus fiber grams per dollar. No weighting, no adjustments, one addition problem.
 
-For scale: the FDA's Daily Values are 28 grams of fiber and 50 grams of protein. One dollar of dry pintos buys about two and a half times that fiber benchmark and nearly two days' worth of the protein one. Those DVs are label math, not personal targets, but they make the point.
+For scale: the FDA's Daily Values are 28 grams of fiber and 50 grams of protein. One dollar of dry pintos buys about two and a half times that fiber benchmark and nearly two days' worth of the protein one, which is the same single-dollar lens we used on [the 15 cheapest fiber foods in the store](/one-dollar-fiber-what-it-buys/). Those DVs are label math, not personal targets, but they make the point.
 
-If you want to see what this looks like as an actual grocery week, the [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) builds the full plan, and [what 30 grams of fiber costs per day](/what-30-grams-of-fiber-costs-per-day/) runs the daily math. The beans will be waiting. They're shelf-stable like that.
+If you want to see what this looks like as an actual grocery week, the [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) builds the full plan, and [what 30 grams of fiber costs per day](/what-30-grams-of-fiber-costs-per-day/) runs the daily math. If you'd rather split the dollar between a bag of beans and a bag of grain, [the cheapest complete protein pairs](/cheapest-complete-protein-pairs/) scores 20 of those combinations. The beans will be waiting. They're shelf-stable like that.
 
 <!-- numbers-source: pipeline-data/derived-studies/beans-double-win-fiber-protein.json -->

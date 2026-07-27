@@ -60,7 +60,7 @@ If you have a jar of bubbly goo in your fridge and no desire to spend twelve hou
 If dinner sounds better than another breakfast stack, this [no-yeast sourdough discard pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/) turns the same jar into something that can carry cheese.
 
 ## Why you should stop tossing your discard
-The biggest hurdle for sourdough beginners is the maintenance. You're told to feed this thing daily, which leads to a massive buildup of excess starter. Throwing it away is the standard advice, but that's a waste of perfectly good fermented flour. 
+The biggest hurdle for sourdough beginners is the maintenance. You're told to feed this thing daily, which leads to a massive buildup of excess starter. Throwing it away is the standard advice, but that's a waste of perfectly good fermented flour, and flour is one of the cheapest sources of fiber you can buy, as [the fiber-per-dollar comparison between whole wheat flour and quinoa](/whole-wheat-flour-vs-quinoa-fiber-cost/) shows. 
 
 Using discard adds a specific depth of flavor that you can't get from a standard box mix. It provides a subtle tang and a tender crumb to things like muffins, crackers, and pancakes. Because the flour in the discard has already been sitting with water, it's hydrated and ready to go, which often results in a better texture in your quick breads.
 

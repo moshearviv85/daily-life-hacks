@@ -70,7 +70,7 @@ Don't leave it soaking wet on the counter. Put the clean, wet pan back on the st
 
 ## Cook the foods that strengthen the surface
 
-For the first several meals after seasoning, choose foods that use a little fat and release easily: sautéed vegetables, grilled cheese, cornbread, or roasted potatoes are practical options. Move the food with wood, silicone, or metal utensils without gouging at one spot. The pan will not become glass-slick overnight, but repeated cooking can gradually even out a sound seasoning layer.
+For the first several meals after seasoning, choose foods that use a little fat and release easily: sautéed vegetables, grilled cheese, cornbread, or roasted potatoes are practical options. Skip frozen vegetables for now, because they release water and steam the pan instead of searing, even though frozen bags earn their keep elsewhere on [fiber per dollar against fresh](/frozen-vs-fresh-vegetables-fiber-cost/). Move the food with wood, silicone, or metal utensils without gouging at one spot. The pan will not become glass-slick overnight, but repeated cooking can gradually even out a sound seasoning layer.
 
 Hold off on long, acidic simmers while the coating is new or visibly patchy. Tomato sauce, wine reductions, and vinegar-heavy braises can expose weak areas and may pick up a metallic taste. Once the surface is dark and consistent, brief acidic cooking is less troublesome. Whatever you cook, transfer leftovers to a storage container rather than leaving food in the skillet overnight.
 ## How to Fix Mistakes

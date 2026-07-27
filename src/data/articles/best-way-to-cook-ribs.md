@@ -70,7 +70,7 @@ The initial covered bake steams the ribs in their own juices and the added liqui
 
 ## The Dry Rub: Your Flavor Foundation
 
-A good dry rub is non-negotiable. It's the first punch of flavor that penetrates the meat. Don't skimp here, and don't be afraid to experiment. My go-to mix uses brown sugar for sweetness and caramelization, smoked paprika for that smoky depth (even if you're not smoking them), and a good dose of garlic and onion powder. The cayenne is optional, but I think a little heat always makes things more interesting.
+A good dry rub is non-negotiable. It's the first punch of flavor that penetrates the meat. Don't skimp here, and don't be afraid to experiment. My go-to mix uses brown sugar for sweetness and caramelization, smoked paprika for that smoky depth (even if you're not smoking them), and a good dose of garlic and onion powder. You can pull the brown sugar back and lean harder on the spices, since [warm spices and citrus zest carry plenty of flavor on their own](/add-flavor-without-more-sugar-tricks/). The cayenne is optional, but I think a little heat always makes things more interesting.
 
 The trick with the rub is to apply it generously. Think of it like a seasoned crust. Pat the ribs dry first, then a thin layer of mustard and apple cider vinegar creates a sticky surface for the rub to adhere to. It's a small step that makes a big difference. Don't worry, you won't taste the mustard in the final product; it's just a binder and a subtle tenderizer.
 

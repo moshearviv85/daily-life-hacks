@@ -72,7 +72,7 @@ Here's what one dollar buys, pulled straight from the ranking:
 
 ![Horizontal bar chart showing how many grams of protein one dollar buys across eight grocery foods](/images/protein-on-a-budget-value-chart.jpg)
 
-Two things jump out of that table. First, the top is a dry goods landslide, just like the fiber ranking. Second, the foods people instinctively reach for when they decide to "eat more protein" (chicken breast, ground beef) sit in the bottom half. Not bad foods. Just expensive ways to buy the nutrient.
+Two things jump out of that table. First, the top is a dry goods landslide, just like the fiber ranking. Second, the foods people instinctively reach for when they decide to "eat more protein" (chicken breast, ground beef) sit in the bottom half. Not bad foods. Just expensive ways to buy the nutrient. Even inside the chicken case the spread is real, which is why [thighs versus breast on protein cost](/chicken-thighs-vs-breast-protein-cost/) is worth two minutes before you shop.
 
 One benchmark worth keeping in your head while you read the rest: the [FDA's Daily Value for protein](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), the reference number on US nutrition labels, is 50 grams a day for a 2,000-calorie diet. That's a labeling fact, not personal advice, and [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/) is its own conversation. As a price yardstick, it means a dollar of pinto beans in this dataset carries almost twice that labeling benchmark.
 
@@ -86,13 +86,13 @@ The practical objection is always the same: dried beans take forever. Fair, but 
 
 Canned beans are the honest middle ground. They score lower per dollar because you're paying for water and a can, but they're still miles ahead of most meat, and a shelf of them is what stands between you and ordering pizza on a Wednesday. Our roundup of [low-cost protein meal hacks for families](/low-cost-protein-meal-hacks-families/) leans on them heavily, and if you're feeding a crowd, the guide to [low-cost protein for large families](/best-low-cost-protein-sources-large-families/) does the portion math.
 
-And a quiet word for peanut butter: at 50.7 grams of protein per dollar it outscores every meat in this sample. The jar in your pantry has been a protein bargain this whole time.
+And a quiet word for peanut butter: at 50.7 grams of protein per dollar it outscores every meat in this sample. The jar in your pantry has been a protein bargain this whole time, and against the nut everyone treats as the premium option, [peanut butter versus almonds on protein cost](/peanut-butter-vs-almonds-protein-cost/) is a rout.
 
 ## Eggs and dairy: the everyday workhorses
 
 Eggs are the food I'd defend in court. At the [May 2026 BLS average price](https://data.bls.gov/timeseries/APU0000708111) of $2.19 a dozen, they deliver about 34 grams of protein per dollar, second among the animal foods in this sample. A dozen holds roughly 75 grams of protein, cooks a dozen different ways, and never asks you to plan ahead. Scrambled at 7 AM, boiled on a salad at noon, folded into [freezer breakfast burritos](/high-protein-vegetarian-breakfast-burritos-you-can-freeze/) on Sunday. The workhorse label is earned.
 
-Dairy clusters tightly behind: whole milk at 29 grams per dollar, Greek yogurt at 27.5, cottage cheese at 26.3. The yogurt-versus-cottage-cheese question comes up constantly, so we wrote the [full comparison](/cottage-cheese-vs-greek-yogurt-protein-uses/); the short version is they're different tools, not competitors. And a block of part-skim mozzarella scores 30, which quietly beats every fresh meat except drumsticks.
+Dairy clusters tightly behind: whole milk at 29 grams per dollar, Greek yogurt at 27.5, cottage cheese at 26.3. The yogurt-versus-cottage-cheese question comes up constantly, so we wrote the [full comparison](/cottage-cheese-vs-greek-yogurt-protein-uses/); the short version is they're different tools, not competitors. If your breakfast decision is really yogurt or eggs, [we priced that one head to head](/eggs-vs-greek-yogurt-protein-cost/) too. And a block of part-skim mozzarella scores 30, which quietly beats every fresh meat except drumsticks.
 
 This category is also where lunch gets solved. A [high protein bagel sandwich](/high-protein-bagel-sandwich-ideas-lunch/) built on eggs and cheese costs a fraction of the deli version, and if you're curious what the numbers actually look like, we [counted the protein in a bagel sandwich](/how-much-protein-in-bagel-sandwich/) layer by layer.
 
@@ -116,7 +116,7 @@ Canned pink salmon scores 21.6 and sardines 20.2, so the whole canned fish shelf
 
 ## Tofu and the plant protein aisle: read the numbers first
 
-Here's the take that gets me in trouble: tofu was not a budget winner in this price sample. Extra firm tofu scored 13.6 grams of protein per dollar in our analysis, below chicken breast, canned tuna, and milk at the prices used. A $2.92 block holds about 40 grams of protein. Tempeh scores 13.2. These are fine foods with real uses; this one metric just did not put them near the top.
+Here's the take that gets me in trouble: tofu was not a budget winner in this price sample. Extra firm tofu scored 13.6 grams of protein per dollar in our analysis, below chicken breast, canned tuna, and milk at the prices used. If you want that argument on its own, [tofu against chicken on protein cost](/tofu-vs-chicken-protein-cost/) is the whole fight in one table. A $2.92 block holds about 40 grams of protein. Tempeh scores 13.2. These are fine foods with real uses; this one metric just did not put them near the top.
 
 The actual budget plant proteins are the boring ones: the dried legumes at the top of the table, frozen edamame at 18 grams per dollar, and TVP at 22.5, which is just defatted soy flour and costs less than it sounds like it should. If you're eating mostly or fully plant-based, our [plant-based protein guide](/plant-based-protein-sources-complete-guide/) maps the whole aisle, and the [beans vs chicken vs tofu comparison](/protein-per-serving-beans-chicken-tofu-compared/) puts the per-serving numbers side by side.
 

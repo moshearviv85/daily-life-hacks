@@ -101,6 +101,8 @@ function shouldExcludeFromSitemap(url) {
     const pathname = new URL(url).pathname;
     const normalized = pathname.length > 1 && pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
     if (normalized === '/tag' || normalized.startsWith('/tag/')) return true;
+    // Embeddable chart pages are noindex by design (growth method #18).
+    if (normalized === '/embed' || normalized.startsWith('/embed/')) return true;
     return excludedSitemapPaths.has(normalized);
   } catch {
     return false;

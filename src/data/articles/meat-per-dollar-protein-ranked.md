@@ -52,19 +52,19 @@ Source: USDA FoodData Central + single-store prices, July 2026. Full methodology
 
 Because the bag is absurdly cheap and the bone penalty isn't as big as it looks. That $5.46 bag works out to about $1.09 per pound, and even after tossing 33 percent of the weight as bone and cartilage, drumsticks land at 50.3 grams of protein per dollar. Breast at $4.17 per pound manages 24.5. So the "premium" cut delivers roughly half the protein for your money.
 
-Put another way: one dollar of drumsticks covers the full 50-gram FDA Daily Value for protein. One dollar of breast covers about half of it. If drumsticks feel like too much project, boneless thighs at 27.7 grams per dollar are the sweet spot between price and convenience, and they're the cut I'd throw at [the only chicken recipe you need for weeknights](/best-way-to-cook-chicken/).
+Put another way: one dollar of drumsticks covers the full 50-gram FDA Daily Value for protein. One dollar of breast covers about half of it. That makes drumsticks the best return of any meat on our list of [what a single dollar of protein buys](/one-dollar-protein-what-it-buys/). If drumsticks feel like too much project, boneless thighs at 27.7 grams per dollar are the sweet spot between price and convenience, and they're the cut I'd throw at [the only chicken recipe you need for weeknights](/best-way-to-cook-chicken/).
 
 ## Is rotisserie chicken actually a smart buy?
 
 Weirdly, yes. The $5.97 deli bird scored 26.7 grams of protein per dollar even after we subtracted 33 percent for bone and 13 percent for skin. That beats raw boneless breast at 24.5, and somebody else did the cooking. A raw whole chicken at $2.04 per pound comes in just under it at 25.3, so roasting your own saves you almost nothing on protein math.
 
-The catch with rotisserie is always the second half of the bird that dries out in the fridge. That's a solvable problem: here are [quick rotisserie chicken meal ideas](/costco-rotisserie-chicken-meal-ideas-dinner/) that use up the whole thing before it turns sad.
+The catch with rotisserie is always the second half of the bird that dries out in the fridge. That's a solvable problem: here are [quick rotisserie chicken meal ideas](/costco-rotisserie-chicken-meal-ideas-dinner/) that use up the whole thing before it turns sad. Let a chain fry that same bird and the math collapses: one KFC drumstick runs about 3.9 grams of protein per dollar against 50.3 for the grocery bag, which is the pattern running through [the fast food protein ranking](/fast-food-protein-per-dollar-ranked/).
 
 ## Why is ground beef such a weak protein deal?
 
 Look at rows 8 through 11 and it gets uncomfortable. A 1 lb roll of 93/7 ground turkey costs $5.46. That is the exact price of the entire 5 lb bag of drumsticks, and it delivers 15.6 grams of protein per dollar to the drumsticks' 50.3. Ground beef does worse: 11.5 grams per dollar for 80/20, and the leaner 93/7 actually drops to 11.0 because the price jumps to $8.62 per pound.
 
-None of this means never buy ground meat. Tacos exist. It means think of it as flavor, not as your protein workhorse, and stretch it with beans and rice like these [cheap ground beef meals for large families](/cheap-ground-beef-meals-large-families/) do. Ground turkey pulls the same trick in [make-ahead turkey meatballs](/healthy-turkey-meatballs-meal-prep/): one roll, a full week of lunches.
+None of this means never buy ground meat. Tacos exist. It means think of it as flavor, not as your protein workhorse, and stretch it with beans and rice like these [cheap ground beef meals for large families](/cheap-ground-beef-meals-large-families/) do. The beans doing the stretching carry roughly eight times the protein per dollar that 80/20 beef does, and [the full plant protein ranking](/plant-protein-per-dollar-ranked/) shows how far down that same list tofu and tempeh actually sit. Ground turkey pulls the same trick in [make-ahead turkey meatballs](/healthy-turkey-meatballs-meal-prep/): one roll, a full week of lunches.
 
 And bacon at 9.2 grams per dollar? Bacon is a condiment wearing a protein costume. Buy it for the smell, not the macros.
 
@@ -72,7 +72,7 @@ And bacon at 9.2 grams per dollar? Bacon is a condiment wearing a protein costum
 
 My honest playbook: drumsticks or a whole bird for the cheap bulk, boneless thighs for lazy weeknights, and boneless pork shoulder at 25.2 grams per dollar ($3.14 a pound) when you want something that isn't chicken. Pork loin chops at 22.3 are a respectable fallback, especially if you [cook pork chops properly](/best-way-to-cook-pork-chops/) instead of turning them into shoe leather.
 
-If you want the full picture beyond meat, the [main protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) shows what happens when beans enter the chat, and [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) turns these numbers into an actual daily budget. For the whole strategy, start with the [high-protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
+If you want the full picture beyond the meat case, the [wider animal protein ranking](/animal-protein-per-dollar-ranked/) sets these cuts against eggs, dairy, and canned fish, and [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) turns these numbers into an actual daily budget. For the whole strategy, start with the [high-protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
 
 The short version: the cheapest protein in the meat case has a bone in it, and the most expensive one comes with a breakfast marketing department.
 

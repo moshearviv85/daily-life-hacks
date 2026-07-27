@@ -83,7 +83,7 @@ Extra-firm tofu still carries a surprising amount of water. Press it before cutt
 
 Cut the cubes about one inch wide. Tiny cubes dry out before they brown, while huge cubes stay soft in the middle. Toss them gently in the marinade and arrange them in one layer. If two cubes are leaning against each other for emotional support, separate them.
 
-Flip the tofu halfway through. It won't become deep-fried restaurant tofu, and that's fine. You're looking for browned corners and a firm surface that holds up after refrigeration.
+Flip the tofu halfway through. It won't become deep-fried restaurant tofu, and that's fine. You're looking for browned corners and a firm surface that holds up after refrigeration. Tofu is also the reason these bowls stay cheap, and [how tofu compares with chicken on protein per dollar](/tofu-vs-chicken-protein-cost/) makes that concrete.
 
 ## How do you stop meal-prep bowls from getting watery?
 
@@ -95,7 +95,7 @@ If your broccoli releases a lot of water, roast it a few minutes longer after re
 
 ## Can you change the grain, vegetables, or sauce?
 
-Absolutely. Brown rice, farro, and barley all work, but cook them according to their own package directions. For vegetables, use cauliflower, Brussels sprouts, sweet potato, zucchini, or whatever is reasonably priced and not collapsing in the produce drawer.
+Absolutely. Brown rice, farro, and barley all work, but cook them according to their own package directions. For vegetables, use cauliflower, Brussels sprouts, sweet potato, zucchini, or whatever is reasonably priced and not collapsing in the produce drawer. Frozen bags count here too, and [the fiber-per-dollar comparison between frozen and fresh](/frozen-vs-fresh-vegetables-fiber-cost/) makes a decent case for them.
 
 The marinade can also change. Add grated ginger and lime, use a peanut sauce, or increase the red pepper if your desk lunch needs to wake you up. Edamame or chickpeas can make the bowls more substantial without adding another cooking project.
 

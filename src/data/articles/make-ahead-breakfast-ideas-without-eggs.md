@@ -55,13 +55,13 @@ The trick to making these not taste like soggy cardboard is the ratio. You want 
 
 If you don't have a sweet tooth in the morning, you aren't stuck with toast. Savory oatmeal is a thing, and it's actually quite good. Think of it like a quick risotto. You can prep a batch of steel-cut oats, then top them with black beans, avocado, and a little hot sauce when you're ready to eat.
 
-**Bean and Cheese Burritos:** These are the ultimate freezer hack. Skip the eggs and fill your tortillas with seasoned pinto beans, shredded cheddar, and sautéed peppers. Wrap them in foil and toss them in a freezer bag. Two minutes in the microwave and you have a hot, filling meal that doesn't involve a single shell. It's the kind of breakfast that actually sticks with you until lunch.
+**Bean and Cheese Burritos:** These are the ultimate freezer hack. Skip the eggs and fill your tortillas with seasoned pinto beans, shredded cheddar, and sautéed peppers. The beans are doing the protein work here, and they do it cheaply, as [the ground beef versus beans comparison](/ground-beef-vs-beans-protein-cost/) lays out. Wrap them in foil and toss them in a freezer bag. Two minutes in the microwave and you have a hot, filling meal that doesn't involve a single shell. It's the kind of breakfast that actually sticks with you until lunch.
 
 ## Why Texture Matters for Make-Ahead Meals
 
 One of the biggest hurdles with prepping breakfast in advance is the "mush factor." Nobody wants to eat a pile of damp bread. If you're making something like a breakfast parfait, keep the granola in a separate small container or a silicone muffin liner tucked inside the jar. This keeps the crunch intact until the second you're ready to eat.
 
-**Cottage Cheese Bowls:** This is an underrated hero. It has more protein than most yogurts and holds up perfectly in the fridge. I like to prep these with savory toppings like cucumber and cracked black pepper, or sweet ones like sliced peaches. If the texture of cottage cheese bothers you, you can whip it in a food blender for thirty seconds to make it smooth and airy. It changes the experience entirely.
+**Cottage Cheese Bowls:** This is an underrated hero. It has more protein than most yogurts and holds up perfectly in the fridge, and if you're building breakfast without eggs, [how eggs and Greek yogurt compare on protein per dollar](/eggs-vs-greek-yogurt-protein-cost/) is a useful benchmark for what you're replacing. I like to prep these with savory toppings like cucumber and cracked black pepper, or sweet ones like sliced peaches. If the texture of cottage cheese bothers you, you can whip it in a food blender for thirty seconds to make it smooth and airy. It changes the experience entirely.
 
 ## Baked Goods That Work Harder
 

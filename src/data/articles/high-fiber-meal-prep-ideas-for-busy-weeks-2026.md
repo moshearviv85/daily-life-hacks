@@ -92,7 +92,7 @@ If you are new to more fiber, ramp slowly so your digestion has time to adjust. 
 
 Roast a sheet pan of vegetables while lentils simmer. Cook quinoa in a rice cooker while you chop. Use pre washed greens if that is what gets you to eat them.
 
-If you hate chopping, buy frozen mixed vegetables and roast them straight from the bag. It is not cheating. It is survival.
+If you hate chopping, buy frozen mixed vegetables and roast them straight from the bag. It is not cheating. It is survival, and the [frozen versus fresh comparison on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) is worth reading before anyone feels guilty about the shortcut.
 ## Make It Feel Less Boring
 
 Change the sauce, not the whole plan. One day add salsa. Another day add a lemon yogurt drizzle. Another day add a spoon of pesto. Same containers, different mood.
@@ -139,7 +139,7 @@ Then mix one sauce into a bowl and leave the rest of the batch alone. You are no
 
 ## Vegetarian and Vegan Options Without Redoing the Whole Plan
 
-This meal prep is already vegetarian-friendly. If you want vegan:
+This meal prep is already vegetarian-friendly, and if you want a week built vegan from the start instead of adapted, [the five-day tofu and quinoa plan](/vegan-high-fiber-meal-prep-for-week/) already does that work. If you want vegan:
 * Skip feta and dairy yogurt
 * Add extra legumes or a bit more roasted vegetables for volume
 

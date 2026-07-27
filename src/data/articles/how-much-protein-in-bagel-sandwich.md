@@ -35,13 +35,13 @@ For the rest of the day's meals, the [complete high-protein budget guide](/high-
 
 Before you even crack an egg, you're starting with more protein than you might expect. A standard, medium-sized plain bagel from the grocery store usually packs about 9 to 11 grams of protein. This isn't because the bagel is a secret superfood: it's because bagels are dense and made with high-protein bread flour to get that specific chew. 
 
-If you opt for a whole wheat version, you might squeeze out an extra gram or two, but the difference is negligible for most of us. The real catch is that this protein isn't "complete," meaning it doesn't have all the amino acids your body needs on its own. It's a solid foundation, but if you stop at the bread, you're mostly just eating a giant ball of carbs that will leave you hunting for snacks by 10:30 AM.
+If you opt for a whole wheat version, you might squeeze out an extra gram or two, but the difference is negligible for most of us. If you want the bread itself doing more of the work, some of [the best high protein breads for sandwiches](/best-high-protein-breads-healthy-sandwiches/) are built for that job. The real catch is that this protein isn't "complete," meaning it doesn't have all the amino acids your body needs on its own. It's a solid foundation, but if you stop at the bread, you're mostly just eating a giant ball of carbs that will leave you hunting for snacks by 10:30 AM.
 
 ## Breaking down common bagel sandwich fillings
 
 This is where the math actually starts to matter. To get into the "high protein" territory, you have to look at what's inside. A classic bacon, egg, and cheese is the standard, but the ratios are usually skewed toward the fat. 
 
-**Eggs:** One large egg adds about 6 grams of protein. If you're making this at home, use two eggs to hit 12 grams right out of the gate. 
+**Eggs:** One large egg adds about 6 grams of protein. If you're making this at home, use two eggs to hit 12 grams right out of the gate. If cost is part of the calculation, [eggs and Greek yogurt are worth pricing against each other](/eggs-vs-greek-yogurt-protein-cost/) before you lock in a breakfast routine.
 **Cheese:** A single slice of cheddar or provolone adds about 5 to 7 grams. It's a decent boost, though it comes with a side of saturated fat.
 **Meat:** This is the variable that changes everything. Two slices of center-cut bacon only add about 4 grams. However, swapping that for two ounces of deli turkey or a turkey sausage patty can add 12 to 15 grams of protein.
 

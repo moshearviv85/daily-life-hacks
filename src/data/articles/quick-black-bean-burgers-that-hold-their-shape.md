@@ -133,10 +133,10 @@ You can also form the patties and freeze them raw. Place them on a tray, freeze 
 
 The base recipe is solid, but there's room to play around once you've made it a few times and understand how the mixture should feel.
 
-Want more texture? Add some corn, diced bell pepper, or chopped mushrooms. These add moisture, so you might need a bit more breadcrumbs to compensate.
+Want more texture? Add some corn, diced bell pepper, or chopped mushrooms. These add moisture, so you might need a bit more breadcrumbs to compensate. Frozen corn works fine here if you thaw and dry it first, and [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) is worth checking before you assume the fresh bin is the better deal.
 
 Want more heat? Chipotle in adobo, diced jalapeños, or cayenne all work. Start small and taste as you go.
 
 Want a different flavor profile? Swap the cumin and smoked paprika for taco seasoning, or go Mediterranean with oregano, basil, and feta. The beans are a blank enough canvas that they can handle quite a lot.
 
-If you're feeding someone who isn't sure about vegetarian burgers, this is the recipe to serve them. It doesn't taste like a compromise-it tastes like a good burger that happens to be made with beans. That's the whole point.
+If you're feeding someone who isn't sure about vegetarian burgers, this is the recipe to serve them. It doesn't taste like a compromise-it tastes like a good burger that happens to be made with beans. It's also a far cheaper dinner, which is easier to see when you put [beans and ground beef side by side on protein per dollar](/ground-beef-vs-beans-protein-cost/). That's the whole point.

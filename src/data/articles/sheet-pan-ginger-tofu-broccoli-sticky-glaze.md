@@ -65,7 +65,7 @@ faq:
     answer: "Yes. Store the tofu and broccoli away from rice or noodles if you want better texture. Reheat in the oven or air fryer when you can. The microwave works, but the tofu gets softer."
 ---
 
-Tofu has a reputation problem. It can be dry and sad, or it can be wet and sad, which is a remarkable range for one ingredient. This sheet pan ginger tofu and broccoli is built to avoid both outcomes.
+Tofu has a reputation problem. It can be dry and sad, or it can be wet and sad, which is a remarkable range for one ingredient. Price is a big part of why people keep trying anyway, and [how tofu stacks up against chicken per gram of protein](/tofu-vs-chicken-protein-cost/) explains the pull. This sheet pan ginger tofu and broccoli is built to avoid both outcomes.
 
 The tofu gets pressed, coated, and roasted first. The broccoli goes on the pan after the tofu has a head start. Then the sticky ginger glaze gets tossed on at the end so it clings instead of burning into a sugary crime scene.
 

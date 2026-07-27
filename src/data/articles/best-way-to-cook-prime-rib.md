@@ -87,7 +87,7 @@ After its nap, it's time for the fireworks. Crank your oven up to a blazing 450-
 
 ## Choose the Right Size Prime Rib Roast
 
-Plan on roughly 3/4 to 1 pound of bone-in roast per person, depending on how serious the side dishes are and whether you want leftovers. A four-bone roast usually feeds eight people comfortably. If half the table approaches dinner rolls as a competitive event, you'll probably have extra beef. This is not a tragedy.
+Plan on roughly 3/4 to 1 pound of bone-in roast per person, depending on how serious the side dishes are and whether you want leftovers. This is a splurge cut and priced like one, nothing like the everyday [beef and bean math](/ground-beef-vs-beans-protein-cost/) that carries the other 51 weeks of the year, so buy for the table you actually have. A four-bone roast usually feeds eight people comfortably. If half the table approaches dinner rolls as a competitive event, you'll probably have extra beef. This is not a tragedy.
 
 Look for a roast with an even fat cap and visible marbling through the cut surface. The exterior fat protects the top and adds flavor, but a cap much thicker than 1/2 inch doesn't need to come home intact. Ask the butcher to trim it, or do it carefully with a sharp knife.
 

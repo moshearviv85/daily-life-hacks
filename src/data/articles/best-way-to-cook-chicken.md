@@ -61,7 +61,7 @@ If you want to turn this skillet chicken into dinner without opening six more ta
 
 Most people mess up chicken breast by trying to cook a thick, uneven piece all at once. What happens? The outside dries out and gets tough while the inside slowly catches up. Or you undercook it because you’re scared of the former. Neither is a good time.
 
-My method fixes this. We’re going to thin out the chicken, season it simply, and cook it hot and fast. This ensures even cooking and a beautiful sear without turning it into a rubbery disc. No fancy equipment needed, just a good skillet and about five minutes of actual effort. This isn't trying to win a chef competition; it's trying to get protein on the table before anyone asks for cereal.
+My method fixes this. We’re going to thin out the chicken, season it simply, and cook it hot and fast. This ensures even cooking and a beautiful sear without turning it into a rubbery disc. No fancy equipment needed, just a good skillet and about five minutes of actual effort. This isn't trying to win a chef competition; it's trying to get protein on the table before anyone asks for cereal. Breast is the default here because it slices cleanly into cutlets, but boneless thighs take the same seasoning and the same thermometer, and [the two cuts don't land in the same place on protein per dollar](/chicken-thighs-vs-breast-protein-cost/).
 
 ## How to Slice Chicken Breasts Into Cutlets
 

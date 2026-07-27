@@ -72,7 +72,7 @@ A pinch of salt goes in the water. Don't skip this. It sounds small, but unsalte
 
 ## The Egg Situation
 
-The egg is doing real work in this bowl. It's not decoration. A single egg adds about 6 grams of protein, which is what turns this from a side dish into a legitimate breakfast. Most people need more protein in the morning, and this is an easy way to get it without eating meat.
+The egg is doing real work in this bowl. It's not decoration. A single egg adds about 6 grams of protein, which is what turns this from a side dish into a legitimate breakfast. Most people need more protein in the morning, and this is an easy way to get it without eating meat. Eggs are cheap protein too, though [eggs and Greek yogurt don't cost the same per gram of it](/eggs-vs-greek-yogurt-protein-cost/).
 
 You have options for how to cook it, and the choice affects the whole bowl:
 

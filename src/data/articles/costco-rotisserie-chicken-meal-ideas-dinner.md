@@ -46,7 +46,7 @@ faq:
 ---
 I have spent more time than I care to admit standing in the Costco checkout line, staring at a five-dollar bird and wondering if I actually have a plan for it. We all do it. It is the ultimate impulse buy that feels like a win until you get home and realize your kids won't just eat plain chicken three nights in a row.
 
-The beauty of a pre-cooked bird isn't just the price, it's the fact that the hardest part of dinner is already done. You don't need a culinary degree to make this work, you just need a few pantry staples and about fifteen minutes. Here are the five dinners, every one of them under 25 minutes:
+The beauty of a pre-cooked bird isn't just the price, it's the fact that the hardest part of dinner is already done. Raw chicken costs less per pound, and [thighs and breasts don't land in the same place on protein per dollar](/chicken-thighs-vs-breast-protein-cost/), but neither one cooks itself while you're stuck in traffic. You don't need a culinary degree to make this work, you just need a few pantry staples and about fifteen minutes. Here are the five dinners, every one of them under 25 minutes:
 
 Run your add-ons through the [recipe cost calculator](/tools/recipe-cost-calculator/) if you want to know whether the five-dollar bird stayed a bargain after pesto, tortillas, and the cheese aisle got involved.
 
@@ -59,7 +59,7 @@ Run your add-ons through the [recipe cost calculator](/tools/recipe-cost-calcula
 Here's how each one works before that bird becomes a sad, cold leftover in the back of your fridge.
 
 ## The Shortcut Chicken Stir-Fry
-The recipe at the top of this page is my go-to when the "what's for dinner" panic sets in at 5:30 PM. Using frozen vegetables means there is zero chopping involved. You are essentially just heating things up in a pan, which is about all the energy I can muster on a Tuesday.
+The recipe at the top of this page is my go-to when the "what's for dinner" panic sets in at 5:30 PM. Using frozen vegetables means there is zero chopping involved, and the freezer aisle holds up better than people assume once you look at [fiber per dollar for frozen versus fresh](/frozen-vs-fresh-vegetables-fiber-cost/). You are essentially just heating things up in a pan, which is about all the energy I can muster on a Tuesday.
 
 To make this work, don't overthink the sauce. A little soy sauce and garlic powder go a long way. If you want to get fancy, a squeeze of lime or a spoonful of peanut butter can change the whole profile. The chicken is already salty, so keep an eye on how much extra salt you add to the pan.
 
@@ -74,7 +74,7 @@ This is the "I forgot to go grocery shopping" special. Boil a box of penne or ro
 You can add a handful of cherry tomatoes or some baby spinach at the very end. The heat from the pasta will wilt the spinach just enough without turning it into mush. It is a solid way to get some greens on the plate without a separate side dish.
 
 ## The 10-Minute Chicken Salad
-Not every rotisserie chicken meal needs to be hot. For those nights when it's too warm to turn on the stove, chop the cold chicken and mix it with Greek yogurt or mayo, some Dijon mustard, and whatever crunchy thing you have in the pantry.
+Not every rotisserie chicken meal needs to be hot. For those nights when it's too warm to turn on the stove, chop the cold chicken and mix it with Greek yogurt or mayo, some Dijon mustard, and whatever crunchy thing you have in the pantry. Greek yogurt buys you protein that mayo doesn't, though [eggs and Greek yogurt don't cost the same per gram of it](/eggs-vs-greek-yogurt-protein-cost/) when you're stocking the fridge for the week.
 
 **Crunch options:**
 * **Celery:** The classic choice for a reason.

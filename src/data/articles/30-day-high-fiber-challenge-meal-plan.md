@@ -89,7 +89,7 @@ By weeks three and four, dinner becomes the target. Keep a few [quick 20-minute 
 Keep the breakfast and lunch habits that still feel useful. At dinner, add one fiber-rich component rather than rebuilding the entire plate.
 
 * **Taco night:** Stir black beans into the filling or serve them on the side.
-* **Pasta night:** Choose whole-wheat pasta, or add white beans and spinach to the sauce.
+* **Pasta night:** Choose whole-wheat pasta, since [the fiber difference between whole wheat and white pasta](/whole-wheat-vs-white-pasta-fiber/) is one of the easiest swaps on this list, or add white beans and spinach to the sauce.
 * **Soup night:** Use lentils, barley, or split peas so the bowl has more than broth and optimism.
 * **Sheet-pan night:** Roast broccoli, carrots, or Brussels sprouts beside the protein already on the tray.
 
@@ -99,7 +99,7 @@ Start with a portion you know you can finish comfortably. More isn't automatical
 
 The last nine days aren't a fiber Olympics. Look back at the meals that were easy, affordable, and comfortable, then repeat them. Keep two breakfasts, two lunches, and three dinners in rotation. That gives you enough variety without turning Sunday into a meal-prep hostage situation.
 
-A sample rotation might be oatmeal and berries or whole-grain toast and fruit for breakfast; lentil soup or a chickpea wrap for lunch; and bean chili, whole-wheat pasta, or roasted vegetables with brown rice for dinner. Frozen vegetables and canned beans count. Rinsing canned beans can improve the flavor and removes some of the packing liquid, but it doesn't make them morally superior groceries.
+A sample rotation might be oatmeal and berries or whole-grain toast and fruit for breakfast; lentil soup or a chickpea wrap for lunch; and bean chili, whole-wheat pasta, or roasted vegetables with brown rice for dinner. Frozen vegetables and canned beans count, and before you assume the produce aisle is the better buy, look at [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/). Rinsing canned beans can improve the flavor and removes some of the packing liquid, but it doesn't make them morally superior groceries.
 
 Use the Nutrition Facts label when packaged foods are involved. The [FDA lists 28 grams as the Daily Value for fiber](https://www.accessdata.fda.gov/scripts/InteractiveNutritionFactsLabel/assets/InteractiveNFL_DietaryFiber_October2021.pdf) on a 2,000-calorie diet, while noting that individual needs can differ. Treat that number as context, not a finish line you have to cross before bed.
 

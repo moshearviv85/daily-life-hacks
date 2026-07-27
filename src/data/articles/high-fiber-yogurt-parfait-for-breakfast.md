@@ -37,7 +37,7 @@ If granola is joining the jar, use this [guide to choosing granola that isn't de
 
 ## What adds fiber to a yogurt parfait?
 
-Yogurt generally isn't the fiber source. Fruit, seeds, nuts, bran cereal, and whole-grain granola are. That distinction matters because a container can say “Greek yogurt” in heroic lettering while the fiber line on the label still says zero.
+Yogurt generally isn't the fiber source. Fruit, seeds, nuts, bran cereal, and whole-grain granola are. Yogurt earns its place on protein instead, which is where [the comparison between eggs and Greek yogurt per dollar](/eggs-vs-greek-yogurt-protein-cost/) gets interesting. That distinction matters because a container can say “Greek yogurt” in heroic lettering while the fiber line on the label still says zero.
 
 Berries are an easy choice because you can use them fresh or frozen. Raspberries and blackberries hold their shape well enough to create a real fruit layer. Blueberries work too. Frozen berries release more juice as they thaw, which swirls through the yogurt and looks intentional even when you forgot to defrost them.
 
@@ -79,4 +79,4 @@ Granola already may contain added sugar, which is why plain yogurt gives you mor
 
 Diced apple or pear works well, especially with cinnamon and walnuts. Keep the peel on for texture. Sliced banana adds sweetness but becomes soft quickly, so add it in the morning rather than the night before.
 
-The formula doesn't need to become a lifestyle. Creamy base, fruit, one fiber-containing crunch, and perhaps seeds. Five minutes, one spoon, and no 10 AM excavation of the snack drawer required.
+The formula doesn't need to become a lifestyle. Creamy base, fruit, one fiber-containing crunch, and perhaps seeds. Five minutes, one spoon, and no 10 AM excavation of the snack drawer required, though if the drawer wins anyway, [popcorn and almonds aren't equally cheap ways to buy fiber](/popcorn-vs-almonds-fiber-cost/).

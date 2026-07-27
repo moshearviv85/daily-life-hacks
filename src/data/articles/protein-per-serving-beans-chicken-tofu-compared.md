@@ -68,7 +68,7 @@ If you are eating animal protein, it is usually the easiest way to get a big pro
 * **Black beans (1 cup cooked):** often around 12 to 15 g
 * **Chickpeas (1 cup cooked):** often around 12 to 15 g
 
-Plant protein works great. The trick is portion and pairing. A \"light\" bean portion can feel like not much protein. A real cup of lentils is a different story.
+Plant protein works great. The trick is portion and pairing. A \"light\" bean portion can feel like not much protein. A real cup of lentils is a different story, and on cost it isn't even a fair fight: [lentils versus chicken breast per dollar](/lentils-vs-chicken-breast-protein-cost/) puts a number on it.
 
 These are raw gram comparisons, which is useful but not the whole argument. Our [quality-adjusted protein-per-dollar ranking](/protein-per-dollar-adjusted-for-quality/) weights 25 foods for digestibility and amino acid quality, because the cheapest number on a label doesn't automatically do the most work.
 

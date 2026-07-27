@@ -40,7 +40,7 @@ Let's look at the numbers. They're surprisingly similar.
 
 A standard half cup serving of plain, nonfat Greek yogurt usually gives you around ten to twelve grams of protein. A standard half cup of cottage cheese gives you about twelve to fourteen grams. They're both absolute heavyweights in the protein department. 
 
-If the tubs are now arguing with eggs and milk for your grocery dollar, our [dairy protein per dollar ranking](/dairy-protein-per-dollar-ranked/) settles that louder family dispute.
+If the tubs are now arguing with eggs and milk for your grocery dollar, our [dairy protein per dollar ranking](/dairy-protein-per-dollar-ranked/) settles that louder family dispute, and the narrower question of [whether eggs or Greek yogurt buy you protein for less](/eggs-vs-greek-yogurt-protein-cost/) is worth a look if that's the swap you're actually weighing.
 
 The main nutritional difference is the sodium. Cottage cheese is salty. It has a significantly higher sodium content than Greek yogurt, which is naturally lower in sodium and much more tart. Greek yogurt also contains active cultures, which may support gut health, while only some brands of cottage cheese include live cultures. 
 
@@ -78,7 +78,7 @@ Cottage cheese, especially blended, is a fantastic substitute for ricotta. Use i
 
 When you buy either of these, the label matters. 
 
-Avoid the ones with fruit on the bottom. They're usually hiding a staggering amount of added sugar. You're much better off buying plain yogurt or plain cottage cheese and adding your own honey, fruit, or jam at home. This way, you control the sweetness. 
+Avoid the ones with fruit on the bottom. They're usually hiding a staggering amount of added sugar. You're much better off buying plain yogurt or plain cottage cheese and adding your own honey, fruit, or jam at home. This way, you control the sweetness, and cinnamon, vanilla, citrus zest, and cocoa are [ways to add flavor without reaching for more sugar](/add-flavor-without-more-sugar-tricks/) at all. 
 
 Also, don't fear the fat. Fat free versions are fine, but two percent or whole milk versions taste significantly better and often keep you full longer. The fat helps carry the flavor and improves the texture dramatically.
 

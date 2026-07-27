@@ -82,7 +82,7 @@ Add salt and butter to the hot center before piling on cold toppings. That first
 
 ## Toppings that don't bury the potato
 
-A crisp-skinned potato doesn't need a twelve-item topping bar. Butter, sour cream, chives, and black pepper cover the classic version. Shredded cheddar and cooked bacon make it dinner-adjacent. Leftover chili turns it into a full meal and clears one container from the refrigerator, which is frankly a double win.
+A crisp-skinned potato doesn't need a twelve-item topping bar. Butter, sour cream, chives, and black pepper cover the classic version. Shredded cheddar and cooked bacon make it dinner-adjacent. Leftover chili turns it into a full meal and clears one container from the refrigerator, which is frankly a double win. Chili built on beans instead of beef also costs less per serving, and [the protein-per-dollar gap between ground beef and beans](/ground-beef-vs-beans-protein-cost/) is bigger than the price stickers suggest.
 
 If you're serving several people, open and fluff every potato before putting out toppings. Otherwise, the first person gets a hot potato and everyone else spends dinner wrestling with a cooling rock.
 
@@ -94,7 +94,7 @@ This is also why a sheet pan full of potatoes takes longer than four potatoes st
 
 ## Make baked potatoes pull their weight tomorrow
 
-Bake a few extra on purpose. Cold baked potatoes are excellent for a skillet breakfast: cube them, cook in a little oil until the edges crisp, then add eggs or leftover vegetables. They also work in a fast soup or as the base for a loaded lunch with beans, cheese, and whatever is lurking in the refrigerator.
+Bake a few extra on purpose. Cold baked potatoes are excellent for a skillet breakfast: cube them, cook in a little oil until the edges crisp, then add eggs or leftover vegetables. Frozen vegetables work fine in that skillet since they're hitting high heat anyway, and [how frozen and fresh produce compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) is worth knowing before your next produce run. They also work in a fast soup or as the base for a loaded lunch with beans, cheese, and whatever is lurking in the refrigerator.
 
 For storage, cool them promptly, refrigerate in a covered container, and use them within a few days. Reheat whole potatoes in a 375 degree F oven or air fryer until hot through. The microwave is fine when you're in a hurry, but it turns that hard-won crisp skin into a damp handshake. Save it for the hash.
 

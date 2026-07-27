@@ -86,7 +86,7 @@ You need four things: creamy, crisp, sweet, and salty.
 
 The ricotta covers creamy. The toast covers crisp. Honey or maple syrup brings the sweetness, but go lightly. You want a drizzle, not a syrup incident.
 
-For crunch, add pistachios, sliced almonds, chia seeds, hemp hearts, or toasted walnuts. A soft topping on soft cheese gets boring fast. Crunch keeps every bite awake.
+For crunch, add pistachios, sliced almonds, chia seeds, hemp hearts, or toasted walnuts. Chia earns its keep on the savory side too, as these [savory chia seed breakfasts](/savory-chia-seed-recipes-breakfast/) show. A soft topping on soft cheese gets boring fast. Crunch keeps every bite awake.
 
 Then add a tiny pinch of flaky salt. It sounds like something a person with linen napkins would say, but it works. Salt makes the berries taste brighter and keeps the whole thing from reading as dessert only.
 
@@ -102,6 +102,6 @@ This also solves the picky-eater issue without a negotiation session. One person
 
 Ricotta and berry toast doesn't have to be breakfast. Cut the toast into smaller pieces and it becomes an afternoon snack plate or a low-effort brunch board.
 
-Add sliced cucumbers, a few nuts, and maybe some hard-boiled eggs on the side if you want it to feel more filling. Or keep it simple and let the toast do the job.
+Add sliced cucumbers, a few nuts, and maybe some hard-boiled eggs on the side if you want it to feel more filling. Nuts are the expensive way to get crunch onto a snack plate, which is the point of the [popcorn versus almonds comparison on fiber per dollar](/popcorn-vs-almonds-fiber-cost/). Or keep it simple and let the toast do the job.
 
 The best part is that nothing here asks much from you. Toast the bread, spread the ricotta, add fruit, finish with crunch and salt. It feels fresh and a little fancy without requiring you to wake up earlier, which is exactly the kind of breakfast math I support.

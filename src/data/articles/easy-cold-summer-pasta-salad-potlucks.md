@@ -75,11 +75,11 @@ Since the pasta is soft, you need vegetables that actually fight back. I use Eng
 
 You'll notice this recipe doesn't use mayonnaise. While I love a good macaroni salad, mayo-based dishes are high-maintenance at a summer BBQ. They get oily, they look unappealing after thirty minutes in the sun, and people get nervous about food safety the moment the temperature hits 80 degrees.
 
-A simple Italian vinaigrette is the workhorse of the easy cold summer pasta salad for potlucks. It's acidic and bright, but it does not replace refrigeration. If you want to whisk your own oil and vinegar, go ahead. A bottled dressing also works and saves a bowl.
+A simple Italian vinaigrette is the workhorse of the easy cold summer pasta salad for potlucks. It's acidic and bright, but it does not replace refrigeration. If you want to whisk your own oil and vinegar, go ahead. A bottled dressing also works and saves a bowl. If you want something creamier without dragging mayo to a hot backyard, a [homemade vegan Caesar dressing](/healthy-homemade-vegan-caesar-salad-dressing/) holds up better than the real thing.
 
 ## Making It Your Own Without the Drama
 
-The beauty of this dish is that it's basically a template. If your kids hate olives, leave them out. If you have some leftover grilled chicken in the fridge, chop it up and throw it in. The feta adds a nice salty kick, but fresh mozzarella pearls are a great alternative if you want something milder.
+The beauty of this dish is that it's basically a template. If your kids hate olives, leave them out. If you have some leftover grilled chicken in the fridge, chop it up and throw it in. The feta adds a nice salty kick, but fresh mozzarella pearls are a great alternative if you want something milder. Whole wheat rotini works here too and holds its shape cold, and it's worth seeing [what the fiber difference between whole wheat and white pasta actually comes to](/whole-wheat-vs-white-pasta-fiber/) before you decide whether the swap is worth it.
 
 Just remember that the pasta will drink up the dressing as it sits. If you're making this the night before, keep a little extra dressing on hand. Give it a quick toss right before you leave the house to wake up the flavors and give it that fresh, glossy look that makes people reach for the serving spoon first.
 

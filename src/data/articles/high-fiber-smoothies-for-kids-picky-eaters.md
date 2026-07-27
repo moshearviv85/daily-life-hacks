@@ -58,7 +58,7 @@ One day, I just stared at a bunch of spinach in the fridge. And then at a banana
 
 Okay, fiber. It's not just for grown-ups reading cereal boxes. Kids need it too! It helps them feel full (so maybe fewer requests for snacks five minutes after lunch, a mom can dream), keeps their digestive system happy and regular (which is a relief for everyone involved, am I right?), and may even help with steadier blood sugar levels throughout the day, which could mean fewer of those wild sugar crashes and subsequent meltdowns that nobody signed up for. Most kids don't get enough. A lot of kids, actually. So finding fun ways to sneak it in, well, that's just good parenting. (Smoothies are just the opening move; these [high-fiber dinners for picky kids](/high-fiber-dinner-recipes-picky-kids/) carry the same strategy all the way to the dinner table.)
 
-And veggies, like spinach? They're packed with it, alongside a bunch of other vital nutrients. But how do you get a kid who'd rather eat dirt (and sometimes does, let's be honest) to consume a leafy green? Blend it till it's unrecognizable and tastes like a milkshake. Genius.
+And veggies, like spinach? They're packed with it, alongside a bunch of other vital nutrients. Fruit does the same job with far less resistance, and [the fruits that carry the most fiber per bite](/best-high-fiber-fruits-for-weight-loss-list/) are mostly ones kids already ask for. But how do you get a kid who'd rather eat dirt (and sometimes does, let's be honest) to consume a leafy green? Blend it till it's unrecognizable and tastes like a milkshake. Genius.
 
 ## The Stealthy Smoothie Strategy: Tips for Veggie Disappearance
 
@@ -66,7 +66,7 @@ Before we get to the recipes, a few pro-tips from someone who has battled many a
 
 ### Choose Your Weapon (Ingredients, I Mean)
 
-**Frozen Fruit's Your Bestie:** Seriously. It makes the smoothie thick, cold, and eliminates the need for ice (which can water down the flavor). Berries, especially strawberries and raspberries, have a strong flavor that masks greens really well. Bananas are excellent for creaminess and sweetness.
+**Frozen Fruit's Your Bestie:** Seriously. It makes the smoothie thick, cold, and eliminates the need for ice (which can water down the flavor). Berries, especially strawberries and raspberries, have a strong flavor that masks greens really well. Bananas are excellent for creaminess and sweetness. Frozen spinach and cauliflower blend in the same way, and they're usually the cheaper buy, which you can see in this comparison of [what frozen and fresh vegetables cost per gram of fiber](/frozen-vs-fresh-vegetables-fiber-cost/).
 
 **A Liquid Base That Works:** Almond milk, oat milk, or even regular dairy milk if that's your jam. Sometimes a little fruit juice (100%, no added sugar) can help, but don't overdo it. Water works too, but it's less creamy.
 

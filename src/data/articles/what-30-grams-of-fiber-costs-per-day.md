@@ -27,6 +27,14 @@ Hitting 30 grams of fiber in one day costs 62 cents if you build the day from th
 
 This is the third spreadsheet in the series. First we ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), then 49 foods by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/). Readers kept asking the practical follow-up: fine, beans win, but what does an actual *day* cost? So I priced five realistic ways to land at roughly 30 grams, meal by meal.
 
+## How much does it cost to eat 30 grams of fiber in a day?
+
+**62 cents, if you build the day out of the dry goods aisle.** Oats for breakfast, split pea soup for lunch, pinto beans and brown rice for dinner: 31.9 grams of fiber, $0.62.
+
+**$14.42, if you let restaurants do it.** Same nutrient, same 31 grams, 23 times the money.
+
+The three days in between land at $1.74 no-cook, $4.18 fresh produce, and $1.99 for the mixed day that's closest to how people actually eat. Every one of those totals is the sum of priced line items you can check yourself in the [CSV](/data/fiber-day-cost-2026.csv).
+
 ## How we priced a 30-gram day
 
 No new data collection, and that's the point. Every grocery number below reuses the audited dataset from the fiber per dollar study: fiber per 100 grams from [USDA FoodData Central](https://fdc.nal.usda.gov/), and July 2026 US prices from Walmart national listings cross-checked against [BLS average-price data](https://www.bls.gov/cpi/factsheets/average-prices.htm), all re-verified on July 4, 2026. The restaurant day uses the fiber figures we already published in our [high fiber fast food guide](/high-fiber-fast-food-options-guide/), which come from each chain's own nutrition pages, matched to typical national menu prices as of July 2026. These are a dated national snapshot. Your local receipt is allowed to disagree with the spreadsheet.

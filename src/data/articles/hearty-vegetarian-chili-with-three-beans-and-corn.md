@@ -65,7 +65,7 @@ faq:
 
 The thing about vegetarian chili is that most of it is a sad, watery compromise. You ladle some into a bowl, look down, and it's basically bean soup with an identity crisis. There's nothing wrong with bean soup, but that's not what you signed up for when you wanted chili. You wanted something that hugs the spoon, something with actual weight to it, something that doesn't require a napkin tucked into your collar to keep your shirt dry.
 
-This recipe fixes that. It's built on three different beans for texture variety, uses corn for sweetness and bite, and gets its depth from a seasoning approach that treats the vegetarian base with the same respect you'd give a pot of beef chili. No apologies, no weird meat substitutes, just solid ingredients that taste like someone actually thought about what makes chili good.
+This recipe fixes that. It's built on three different beans for texture variety, uses corn for sweetness and bite, and gets its depth from a seasoning approach that treats the vegetarian base with the same respect you'd give a pot of beef chili. The beans carry more of the load than people expect, which makes more sense once you see [how beans and ground beef compare on protein per dollar](/ground-beef-vs-beans-protein-cost/). No apologies, no weird meat substitutes, just solid ingredients that taste like someone actually thought about what makes chili good.
 
 ## Why Three Beans Instead of One
 

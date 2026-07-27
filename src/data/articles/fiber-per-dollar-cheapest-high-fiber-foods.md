@@ -27,6 +27,14 @@ Dry green split peas are the cheapest high-fiber food you can cook and eat as-is
 
 The result is a full ranking of the cheapest high-fiber foods in the store, and the gap between the top and the bottom is honestly absurd. A dollar of fresh blueberries buys 2.5 grams of fiber against those 71 grams from split peas. Same nutrient, 28 times the price. If fiber were gasoline, that would be the difference between $3 a gallon and $85 a gallon, and we'd all be rioting.
 
+## What is the cheapest source of fiber per dollar?
+
+**Whole wheat flour, at 77.8 grams of fiber per dollar.** A $3.12 five pound bag carries about 243 grams of fiber. The catch is that flour is an ingredient, not dinner, so you only collect that fiber if you actually bake with it.
+
+**If you want the cheapest fiber you can cook and eat as-is, it's dry green split peas at 71.0 grams per dollar.** A $1.42 bag holds roughly 101 grams of fiber. Dry pinto beans are effectively tied at 70.8.
+
+At the other end of the same 53-food list, blueberries buy 2.5 grams of fiber per dollar. That's a 31-fold spread on one nutrient, in one store, on the same afternoon.
+
 ## How is fiber per dollar calculated?
 
 No mystery math here. Three steps:

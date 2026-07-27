@@ -46,7 +46,7 @@ If your soup is aggressively salty, the only true physical fix is dilution. You 
 
 If it's a broth based soup, add more water or unsalted stock. Start with half a cup, stir, and taste. The catch here is that dilution weakens every flavor, not just the salt. You're watering down the garlic, the herbs, and the umami. You will likely need to add a splash of olive oil, a dash of pepper, or some fresh herbs to build the flavor profile back up.
 
-If dilution isn't an option, use distraction. Acid is the opposite of salty on your palate. A squeeze of fresh lemon juice, a splash of apple cider vinegar, or even a dash of white wine vinegar can brighten the soup and mask the harshness of the salt. It won't remove the sodium, but it will trick your tongue into thinking the soup tastes balanced.
+If dilution isn't an option, use distraction. Acid is the opposite of salty on your palate. A squeeze of fresh lemon juice, a splash of apple cider vinegar, or even a dash of white wine vinegar can brighten the soup and mask the harshness of the salt. It won't remove the sodium, but it will trick your tongue into thinking the soup tastes balanced. That same trick works before anything goes wrong, which is the whole idea behind [building big flavor with citrus, herbs, and umami instead of salt](/big-flavor-less-salt-citrus-herbs-umami-swaps/).
 
 ## Fixing an oversalted sauce or stew
 
@@ -54,7 +54,7 @@ Sauces are trickier because you usually can't just add water without ruining the
 
 If you have an oversalted tomato sauce or a rich stew, dairy is your best friend. Stirring in a splash of heavy cream, a dollop of unsweetened yogurt, or a spoonful of sour cream works wonders. The fat coats the tongue and blunts the sharp edge of the salt. 
 
-If it's a chunky stew, you can add bulk. Toss in some unsalted canned beans, extra chopped vegetables, or diced potatoes (to actually eat, not to act as a magic sponge). Adding more physical food means there is less salt per bite. 
+If it's a chunky stew, you can add bulk. Toss in some unsalted canned beans, extra chopped vegetables, or diced potatoes (to actually eat, not to act as a magic sponge). Adding more physical food means there is less salt per bite, and beans are the cheapest way to do it once you look at [what they cost against ground beef per gram of protein](/ground-beef-vs-beans-protein-cost/). 
 
 ## What to do about oversalted rice or grains
 
