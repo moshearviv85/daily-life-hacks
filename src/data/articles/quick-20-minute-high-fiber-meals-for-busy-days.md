@@ -1,7 +1,7 @@
 ---
-title: Quick 20 Minute Bean & Rice Meals for Busy Days
+title: 20-Minute High Fiber Rice and Beans Meals
 excerpt: When the clock is screaming, you still deserve a real dinner. These 20-minute
-  bean-and-rice skillet meals are simple, filling, and easy to clean up.
+  rice and beans skillet meals are simple, filling, and easy to clean up.
 category: recipes
 tags:
 - high fiber

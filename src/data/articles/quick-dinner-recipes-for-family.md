@@ -1,5 +1,5 @@
 ---
-title: Dinner on the Table in 30 Minutes Flat
+title: Quick Dinner Ideas for the Family, Ready in 30 Minutes
 excerpt: Tired of takeout but short on time? These quick dinner recipes get real food on the table for your family, fast. No culinary acrobatics required.
 quickAnswer: >-
   Brown ground turkey or beef with onion, then add garlic, canned tomatoes, black

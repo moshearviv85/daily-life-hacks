@@ -1,7 +1,7 @@
 ---
-title: Meal Prep Bowls for Busy Weeks (2026)
-excerpt: Meal prep does not have to mean identical boxes of sadness. This lentil-quinoa-veg
-  plan stays flexible when your week goes sideways.
+title: High Fiber Meal Prep Bowls for Busy Weeks
+excerpt: High fiber meal prep doesn't have to mean identical boxes of sadness. This
+  lentil-quinoa-veg plan stays flexible when your week goes sideways.
 category: recipes
 tags:
 - high fiber

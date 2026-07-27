@@ -1,5 +1,5 @@
 ---
-title: Quinoa Lunch Salad That Stays Fresh
+title: High Fiber Quinoa Salad for Lunch Prep
 excerpt: This quinoa salad holds up in the fridge, travels well, and doesn't turn
   into a sad mush by Wednesday. Lemon, chickpeas, and crunch do the work.
 category: recipes

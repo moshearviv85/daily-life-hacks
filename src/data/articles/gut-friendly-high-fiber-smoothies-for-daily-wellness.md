@@ -1,5 +1,5 @@
 ---
-title: Gut-Friendly Smoothie Blends for Daily Wellness
+title: High Fiber Smoothies for Gut Health
 excerpt: Blend fruit, oats, seeds, and other fiber-rich ingredients into thick smoothies
   that stay smooth instead of turning gritty or watery.
 category: nutrition

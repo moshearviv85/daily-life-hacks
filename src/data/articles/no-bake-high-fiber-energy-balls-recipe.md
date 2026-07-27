@@ -1,5 +1,5 @@
 ---
-title: No-Bake Oat & Flax Energy Balls
+title: No-Bake High Fiber Energy Balls With Oats and Flax
 excerpt: These no-bake energy balls take one bowl and a few fridge ingredients. They
   are sweet enough to feel like a treat without a full baking project.
 category: recipes

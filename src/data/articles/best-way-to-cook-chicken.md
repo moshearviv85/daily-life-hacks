@@ -1,5 +1,5 @@
 ---
-title: The Only Chicken Recipe You Need for Easy Weeknight Dinners
+title: How to Cook Chicken Breast in a Skillet
 excerpt: Slice chicken breasts into even cutlets, season them, and cook them in a hot skillet to 165°F for a fast, reliable dinner base.
 quickAnswer: "Slice each chicken breast horizontally into two even cutlets, pat them dry, and season both sides. Cook the cutlets in a lightly oiled skillet over medium-high heat for 4 to 6 minutes per side, checking the thickest piece with a thermometer. Remove the chicken at 165°F and rest it for 5 minutes before slicing."
 category: recipes

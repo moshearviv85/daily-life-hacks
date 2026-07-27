@@ -1,7 +1,8 @@
 ---
-title: Pasta Alternatives That Still Feel Like Dinner
-excerpt: Chickpea pasta, lentil pasta, and whole wheat pasta are not the same swap.
-  Here is how to pick pasta alternatives and cook them so they still taste like dinner.
+title: High Fiber Pasta Alternatives That Still Feel Like Dinner
+excerpt: Chickpea pasta, lentil pasta, and whole wheat pasta aren't the same swap.
+  Here's how to pick high fiber pasta alternatives and cook them so they still taste
+  like dinner.
 category: nutrition
 tags:
 - high fiber

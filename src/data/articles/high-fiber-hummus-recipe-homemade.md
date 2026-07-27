@@ -1,5 +1,5 @@
 ---
-title: Creamy Homemade Hummus With Extra Chickpeas
+title: Creamy High Fiber Hummus, Made at Home
 excerpt: Two cans of chickpeas, plenty of tahini, and ice water make a creamy homemade hummus that doesn't eat your carrot stick.
 category: recipes
 tags:

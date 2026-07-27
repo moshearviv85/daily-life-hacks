@@ -1,5 +1,5 @@
 ---
-title: Crispy Roasted Chickpeas for Crunchy Snacking
+title: "Crispy Roasted Chickpeas: A High Fiber Snack"
 excerpt: Roasted chickpeas are cheap, crunchy, and easy to season. Dry them well,
   spread them out, and you get chip-style crunch without the guesswork.
 quickAnswer: >-

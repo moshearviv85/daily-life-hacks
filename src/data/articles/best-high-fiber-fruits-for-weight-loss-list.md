@@ -1,5 +1,5 @@
 ---
-title: Fiber-Rich Fruits for Feeling Full
+title: The Best High Fiber Fruits for Feeling Full
 excerpt: "No fruit melts fat on its own. These high fiber fruits help snacks feel more satisfying when you portion them and pair them with real meals"
 category: nutrition
 tags:

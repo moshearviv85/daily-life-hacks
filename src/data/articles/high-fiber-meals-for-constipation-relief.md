@@ -1,5 +1,5 @@
 ---
-title: What Are Good Sources of Fiber for Constipation
+title: "High Fiber Foods for Constipation: Start Here"
 excerpt: "These high-fiber meals use oats, beans, fruit, vegetables, and liquids as a gradual food-first approach to occasional constipation."
 category: nutrition
 tags:

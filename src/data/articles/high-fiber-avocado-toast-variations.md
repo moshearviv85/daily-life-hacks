@@ -1,5 +1,5 @@
 ---
-title: Avocado Toast Variations With Beans & Seeds
+title: High Fiber Avocado Toast With Beans and Seeds
 excerpt: Avocado toast doesn't have to be the same photo on repeat. These variations
   add beans, seeds, and crunch without a long ingredient list.
 category: recipes
