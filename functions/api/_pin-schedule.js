@@ -1,11 +1,15 @@
-// Set to three evenly spread pins/day (2026-07-19). Keep one pin per poster run
-// and the server cooldown so a delayed workflow cannot publish a burst.
-export const PIN_SCHEDULE_MIN_PER_DAY = 3;
-export const PIN_SCHEDULE_MAX_PER_DAY = 3;
-// 14:00 UTC = morning US Eastern; later slots cover afternoon and evening.
-export const PIN_SCHEDULE_START_HOUR_UTC = 14;
-export const PIN_SCHEDULE_WINDOW_MINUTES = 120;
-export const PIN_SCHEDULE_SLOT_SPACING_HOURS = 4;
+// Eight pins/day (2026-07-27, owner decision), spread across the US waking day
+// rather than clustered. Still one pin per poster run with the server cooldown,
+// so a delayed workflow can never publish a burst — burst posting was one of the
+// spam signals behind the 2026 distribution collapse, and cadence is only safe
+// while the spacing holds.
+export const PIN_SCHEDULE_MIN_PER_DAY = 8;
+export const PIN_SCHEDULE_MAX_PER_DAY = 8;
+// 12:00 UTC = 8am US Eastern. Eight slots two hours apart run to 02:00 UTC,
+// which is 8am to 10pm Eastern: the whole US browsing day, no overnight dead air.
+export const PIN_SCHEDULE_START_HOUR_UTC = 12;
+export const PIN_SCHEDULE_WINDOW_MINUTES = 90;
+export const PIN_SCHEDULE_SLOT_SPACING_HOURS = 2;
 
 export function formatDate(date) {
   return date.toISOString().slice(0, 10);

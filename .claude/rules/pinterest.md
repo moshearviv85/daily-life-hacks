@@ -71,13 +71,45 @@ If any step is missing:
 - **Naming:** base-slug is the article slug or existing alias slug from `row_id`, N is 1-4
 - **Must be committed and pushed** before auto-poster runs — the `image_url` points to the live site
 
-## Boards (3)
+## Boards — 40 live, 21 in the routing rules
 
-| Board | ID |
-|-------|------|
-| High Fiber Dinner and Gut Health Recipes | `1124140825679184034` |
-| Healthy Breakfast, Smoothies and Snacks | `1124140825679184032` |
-| Gut Health Tips and Nutrition Charts | `1124140825679184036` |
+Board choice is a distribution decision, not filing. Pinterest OmniSearchSage
+(arXiv 2404.16260) feeds the top 10 board titles of a pin into its search
+embedding, second in weight only to the pin's own text, and Pixie prunes
+high-entropy boards out of the recommendation graph entirely.
+
+**Never hardcode board IDs from memory or from this file.** Run
+`gh workflow run list-boards.yml` to read the live account, then update
+`BOARD_NAME_TO_ID` in `scripts/lib/d1_csv.py`. On 2026-07-26 that map held a
+three-way ID rotation and gut-health pins were landing on the meal-prep board
+for months.
+
+Routing lives in `BOARD_RULES` in `scripts/lib/d1_csv.py`. **Order is the
+contract:** first match wins, so any rule holding a broad token must sit below
+every rule that could legitimately claim a pin containing it. Re-run the
+simulation over `pin_briefs` after any edit. `board_name_to_id` raises on an
+unknown name rather than returning an empty string.
+
+Measured impressions per pin, 2026-07-26, 561 live pins: Easy Dinner 8.2 ·
+Food Storage 6.6 · High Protein 5.6 · Budget Meals 4.2 · Grocery Math 2.4 ·
+Gut Health 2.0 · High Fiber Recipes 0.7 · Meal Prep 0.6. Narrow boards beat
+broad ones by roughly 10x.
+
+**Pins cannot be moved between boards.** `PATCH /v5/pins` needs the
+`pin_edit` restricted feature and returns 401 for this app, so a mis-routed
+pin stays mis-routed. Route correctly at CSV time.
+
+## Cadence
+
+8 pins/day (2026-07-27), spread 12:00-02:00 UTC at 2-hour spacing, which is
+8am-10pm US Eastern. Constants in `functions/api/_pin-schedule.js`. One pin
+per poster run plus the server cooldown, so a delayed workflow cannot burst.
+Burst posting at 6-9/day was one of the spam signals behind the 2026
+distribution collapse — the cadence is only safe while the spacing holds.
+
+`scripts/reroute-pending-pins.py` re-routes the PENDING queue onto the current
+rules and interleaves it round-robin so consecutive pins never land on the same
+board.
 
 ## Auto-Poster — `post-pins.py`
 
