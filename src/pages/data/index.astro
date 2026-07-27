@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 import {
   STUDY_DATASETS,
   TOTAL_DATA_ROWS,
-  DATA_LICENSE_URL,
+  DATA_TERMS_URL,
 } from "../../content/datasets";
 
 /**
@@ -54,7 +54,7 @@ const catalogSchema = {
   url: pageUrl,
   inLanguage: "en-US",
   isAccessibleForFree: true,
-  license: DATA_LICENSE_URL,
+  license: DATA_TERMS_URL,
   publisher: organization,
   creator: organization,
   keywords:
@@ -68,7 +68,7 @@ const catalogSchema = {
     description: dataset.description,
     url: `${siteUrl}${dataset.articleUrl}`,
     isAccessibleForFree: true,
-    license: DATA_LICENSE_URL,
+    license: DATA_TERMS_URL,
     creator: organization,
     publisher: organization,
     includedInDataCatalog: { "@id": catalogId },
@@ -149,9 +149,9 @@ const linkStyle = "color: #F29B30;";
         <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
       </p>
       <p>
-        You can use any of it. Charts, tables, the raw numbers, all of it, including commercially.
-        The one thing we ask is credit with a link back to the study, which is what
-        <a href="/methodology/" class={linkClass} style={linkStyle}>our methodology</a> asks.
+        You're welcome to reuse the data. The one thing we ask is credit with a link back to the
+        study, so your readers can see how the number was built. Full terms are on the
+        <a href="/methodology/#data-license" class={linkClass} style={linkStyle}>methodology page</a>.
         Journalists, students, dietitians, people settling an argument in a group chat: go ahead.
       </p>
 
