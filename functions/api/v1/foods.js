@@ -16,6 +16,7 @@
  *   order     asc | desc                                  (default: desc for value, asc otherwise)
  *   limit     1-500                                       (default: 50)
  *   offset    >= 0                                        (default: 0)
+ *   unique    true to keep one row per food                (default: false)
  */
 
 import {
@@ -192,7 +193,21 @@ export async function onRequest(context) {
     return cmp === 0 ? tiebreak(a, b) : cmp * direction;
   });
 
-  const page = matched.slice(offset, offset + limit);
+  // A food genuinely appears in several studies, so an unfiltered
+  // ?nutrient=protein returns Pinto beans four times before anything else. The
+  // rows are all correct, but as a ranking it reads broken. unique=true keeps
+  // the first row per food, which after the sort above is the flagship index
+  // row rather than a category re-cut. Off by default so nothing is hidden
+  // from a caller who asked for a specific dataset.
+  const unique = ["1", "true", "yes"].includes(
+    (params.get("unique") || "").trim().toLowerCase(),
+  );
+  const deduped = unique
+    ? matched.filter((row, i, all) =>
+        all.findIndex((other) => other.food === row.food) === i)
+    : matched;
+
+  const page = deduped.slice(offset, offset + limit);
 
   const data = page.map((row) => {
     const dataset = index.datasets[row.dataset];
@@ -233,7 +248,7 @@ export async function onRequest(context) {
 
   return json({
     data,
-    total: matched.length,
+    total: deduped.length,
     count: data.length,
     meta: {
       ...baseMeta(index),

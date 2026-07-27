@@ -34,7 +34,9 @@
   "paths": {
     "/api/v1/foods": {
       "get": {
-        "tags": ["food-values"],
+        "tags": [
+          "food-values"
+        ],
         "operationId": "listFoods",
         "summary": "Query priced food rows",
         "description": "Returns food rows with their grams-per-dollar values. Filter by nutrient, by dataset, or by a food-name substring; sort and page through the result. Rows from the daily-menu datasets publish no per-dollar metric, so their `value` is null and they always sort last.",
@@ -44,7 +46,13 @@
             "in": "query",
             "required": false,
             "description": "Keep only rows that publish this nutrient's grams-per-dollar metric, and rank on it.",
-            "schema": { "type": "string", "enum": ["fiber", "protein"] },
+            "schema": {
+              "type": "string",
+              "enum": [
+                "fiber",
+                "protein"
+              ]
+            },
             "example": "fiber"
           },
           {
@@ -52,7 +60,9 @@
             "in": "query",
             "required": false,
             "description": "Dataset id (for example `grains-fiber-per-dollar-ranked-2026`) or the study slug (`grains-fiber-per-dollar-ranked`). List them with /api/v1/datasets.",
-            "schema": { "type": "string" },
+            "schema": {
+              "type": "string"
+            },
             "example": "fiber-per-dollar-2026"
           },
           {
@@ -60,7 +70,9 @@
             "in": "query",
             "required": false,
             "description": "Case-insensitive substring match on the food name.",
-            "schema": { "type": "string" },
+            "schema": {
+              "type": "string"
+            },
             "example": "beans"
           },
           {
@@ -70,7 +82,13 @@
             "description": "Field to sort on. `value` is the resolved grams-per-dollar figure, `price` is `price_usd`.",
             "schema": {
               "type": "string",
-              "enum": ["value", "food", "price", "rank", "dataset"],
+              "enum": [
+                "value",
+                "food",
+                "price",
+                "rank",
+                "dataset"
+              ],
               "default": "value"
             }
           },
@@ -79,21 +97,46 @@
             "in": "query",
             "required": false,
             "description": "Sort direction. Defaults to `desc` when sorting on `value`, `asc` otherwise. Null values always sort last.",
-            "schema": { "type": "string", "enum": ["asc", "desc"] }
+            "schema": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            }
           },
           {
             "name": "limit",
             "in": "query",
             "required": false,
             "description": "Page size.",
-            "schema": { "type": "integer", "minimum": 1, "maximum": 500, "default": 50 }
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500,
+              "default": 50
+            }
           },
           {
             "name": "offset",
             "in": "query",
             "required": false,
             "description": "Rows to skip before the page starts.",
-            "schema": { "type": "integer", "minimum": 0, "default": 0 }
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0
+            }
+          },
+          {
+            "name": "unique",
+            "in": "query",
+            "required": false,
+            "description": "Keep only the first row per food. A food can appear in several studies, so an unfiltered ranking otherwise repeats it.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
           }
         ],
         "responses": {
@@ -102,16 +145,22 @@
             "headers": {
               "Cache-Control": {
                 "description": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800",
-                "schema": { "type": "string" }
+                "schema": {
+                  "type": "string"
+                }
               },
               "Access-Control-Allow-Origin": {
                 "description": "Always `*`.",
-                "schema": { "type": "string" }
+                "schema": {
+                  "type": "string"
+                }
               }
             },
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/FoodsResponse" },
+                "schema": {
+                  "$ref": "#/components/schemas/FoodsResponse"
+                },
                 "examples": {
                   "topFiberPerDollar": {
                     "summary": "Three cheapest fiber sources",
@@ -121,11 +170,15 @@
                           "dataset": "fiber-per-dollar-2026",
                           "food": "Whole wheat flour",
                           "category": "Whole grains",
-                          "nutrients": ["fiber"],
+                          "nutrients": [
+                            "fiber"
+                          ],
                           "value": 77.8,
                           "value_metric": "fiber_g_per_dollar",
                           "unit": "grams of dietary fiber per US dollar",
-                          "metrics": { "fiber_g_per_dollar": 77.8 },
+                          "metrics": {
+                            "fiber_g_per_dollar": 77.8
+                          },
                           "package": "5 lb bag",
                           "price_usd": 3.12,
                           "price_basis": "Walmart GV",
@@ -164,7 +217,9 @@
             "description": "A query parameter is out of range or not recognised.",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/Error" },
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
                 "example": {
                   "error": "Unknown nutrient \"carbs\"",
                   "hint": "Supported values: fiber, protein."
@@ -176,7 +231,9 @@
             "description": "The requested dataset does not exist.",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/Error" },
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
                 "example": {
                   "error": "Unknown dataset \"pizza\"",
                   "hint": "GET /api/v1/datasets lists every valid id."
@@ -188,7 +245,9 @@
             "description": "The API is read-only.",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/Error" }
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
               }
             }
           },
@@ -196,7 +255,9 @@
             "description": "The data index could not be loaded.",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/Error" }
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
               }
             }
           }
@@ -205,7 +266,9 @@
     },
     "/api/v1/datasets": {
       "get": {
-        "tags": ["discovery"],
+        "tags": [
+          "discovery"
+        ],
         "operationId": "listDatasets",
         "summary": "List every dataset",
         "description": "The discovery endpoint. Returns all 22 datasets with row counts, the full field schema of each CSV, the raw CSV URL and the study article the numbers were published in.",
@@ -215,14 +278,22 @@
             "in": "query",
             "required": false,
             "description": "Keep only datasets that measure this nutrient.",
-            "schema": { "type": "string", "enum": ["fiber", "protein"] }
+            "schema": {
+              "type": "string",
+              "enum": [
+                "fiber",
+                "protein"
+              ]
+            }
           },
           {
             "name": "dataset",
             "in": "query",
             "required": false,
             "description": "Return a single dataset by id or study slug.",
-            "schema": { "type": "string" }
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -230,32 +301,50 @@
             "description": "The dataset catalog.",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/DatasetsResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/DatasetsResponse"
+                }
               }
             }
           },
           "400": {
             "description": "Unrecognised nutrient.",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/Error" } }
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
             }
           },
           "404": {
             "description": "The requested dataset does not exist.",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/Error" } }
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
             }
           },
           "405": {
             "description": "The API is read-only.",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/Error" } }
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
             }
           },
           "500": {
             "description": "The data index could not be loaded.",
             "content": {
-              "application/json": { "schema": { "$ref": "#/components/schemas/Error" } }
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
             }
           }
         }
@@ -266,31 +355,59 @@
     "schemas": {
       "Error": {
         "type": "object",
-        "required": ["error"],
+        "required": [
+          "error"
+        ],
         "properties": {
-          "error": { "type": "string", "description": "What went wrong." },
-          "hint": { "type": "string", "description": "How to fix the request." }
+          "error": {
+            "type": "string",
+            "description": "What went wrong."
+          },
+          "hint": {
+            "type": "string",
+            "description": "How to fix the request."
+          }
         }
       },
       "UpstreamSource": {
         "type": "object",
         "properties": {
-          "title": { "type": "string" },
-          "path": { "type": "string", "format": "uri" }
+          "title": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string",
+            "format": "uri"
+          }
         }
       },
       "Meta": {
         "type": "object",
         "description": "Carried on every response. `attribution` is the credit string we ask you to publish alongside the numbers.",
-        "required": ["api_version", "data_version", "attribution", "methodology_url"],
+        "required": [
+          "api_version",
+          "data_version",
+          "attribution",
+          "methodology_url"
+        ],
         "properties": {
-          "api_version": { "type": "string", "examples": ["v1"] },
+          "api_version": {
+            "type": "string",
+            "examples": [
+              "v1"
+            ]
+          },
           "data_version": {
             "type": "string",
             "description": "Version of the underlying data package. Bumped on each quarterly re-audit.",
-            "examples": ["2026.1"]
+            "examples": [
+              "2026.1"
+            ]
           },
-          "data_published": { "type": "string", "format": "date-time" },
+          "data_published": {
+            "type": "string",
+            "format": "date-time"
+          },
           "index_generated_at": {
             "type": "string",
             "format": "date-time",
@@ -299,9 +416,16 @@
           "source": {
             "type": "object",
             "properties": {
-              "name": { "type": "string" },
-              "publisher": { "type": "string" },
-              "url": { "type": "string", "format": "uri" },
+              "name": {
+                "type": "string"
+              },
+              "publisher": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
               "datapackage_url": {
                 "type": "string",
                 "format": "uri",
@@ -309,19 +433,37 @@
               },
               "upstream": {
                 "type": "array",
-                "items": { "$ref": "#/components/schemas/UpstreamSource" }
+                "items": {
+                  "$ref": "#/components/schemas/UpstreamSource"
+                }
               }
             }
           },
-          "methodology_url": { "type": "string", "format": "uri" },
-          "terms_url": { "type": "string", "format": "uri" },
-          "docs_url": { "type": "string", "format": "uri" },
-          "openapi_url": { "type": "string", "format": "uri" },
+          "methodology_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "terms_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "docs_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "openapi_url": {
+            "type": "string",
+            "format": "uri"
+          },
           "attribution": {
             "type": "string",
-            "examples": ["Data: Daily Life Hacks, https://www.daily-life-hacks.com/data/"]
+            "examples": [
+              "Data: Daily Life Hacks, https://www.daily-life-hacks.com/data/"
+            ]
           },
-          "attribution_html": { "type": "string" },
+          "attribution_html": {
+            "type": "string"
+          },
           "query": {
             "type": "object",
             "description": "The parameters as the API resolved them, defaults included."
@@ -329,14 +471,23 @@
           "datasets": {
             "type": "array",
             "description": "The datasets represented in this page of rows.",
-            "items": { "$ref": "#/components/schemas/DatasetRef" }
+            "items": {
+              "$ref": "#/components/schemas/DatasetRef"
+            }
           },
           "catalog": {
             "type": "object",
             "properties": {
-              "dataset_count": { "type": "integer" },
-              "row_count": { "type": "integer" },
-              "rows_endpoint": { "type": "string", "format": "uri" }
+              "dataset_count": {
+                "type": "integer"
+              },
+              "row_count": {
+                "type": "integer"
+              },
+              "rows_endpoint": {
+                "type": "string",
+                "format": "uri"
+              }
             }
           }
         }
@@ -344,76 +495,166 @@
       "DatasetRef": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
-          "name": { "type": "string" },
-          "title": { "type": "string" },
-          "rows_in_dataset": { "type": "integer" },
-          "csv_url": { "type": "string", "format": "uri" },
-          "study_url": { "type": ["string", "null"], "format": "uri" },
-          "temporal_coverage": { "type": "string" },
-          "spatial_coverage": { "type": "string" }
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "rows_in_dataset": {
+            "type": "integer"
+          },
+          "csv_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "study_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "temporal_coverage": {
+            "type": "string"
+          },
+          "spatial_coverage": {
+            "type": "string"
+          }
         }
       },
       "FoodRow": {
         "type": "object",
-        "required": ["dataset", "food", "nutrients", "metrics"],
+        "required": [
+          "dataset",
+          "food",
+          "nutrients",
+          "metrics"
+        ],
         "properties": {
           "dataset": {
             "type": "string",
             "description": "Id of the dataset this row came from.",
-            "examples": ["fiber-per-dollar-2026"]
+            "examples": [
+              "fiber-per-dollar-2026"
+            ]
           },
           "food": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Food item as sold at retail, including the form where the form changes the math."
           },
           "category": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Grocery category, or the chain for fast-food rows, or the menu day for daily-cost rows."
           },
           "nutrients": {
             "type": "array",
-            "items": { "type": "string", "enum": ["fiber", "protein"] }
+            "items": {
+              "type": "string",
+              "enum": [
+                "fiber",
+                "protein"
+              ]
+            }
           },
           "value": {
-            "type": ["number", "null"],
+            "type": [
+              "number",
+              "null"
+            ],
             "description": "The figure this row is ranked on: the requested nutrient's grams per dollar, or the dataset's headline metric when no nutrient was requested. Null for rows that publish no per-dollar metric."
           },
           "value_metric": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Which metric `value` came from.",
-            "examples": ["fiber_g_per_dollar"]
+            "examples": [
+              "fiber_g_per_dollar"
+            ]
           },
-          "unit": { "type": ["string", "null"], "examples": ["grams of dietary fiber per US dollar"] },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "examples": [
+              "grams of dietary fiber per US dollar"
+            ]
+          },
           "metrics": {
             "type": "object",
             "description": "Every per-dollar metric this row publishes.",
-            "additionalProperties": { "type": "number" },
+            "additionalProperties": {
+              "type": "number"
+            },
             "properties": {
-              "fiber_g_per_dollar": { "type": "number" },
-              "protein_g_per_dollar": { "type": "number" },
-              "combined_g_per_dollar": { "type": "number" },
-              "quality_adjusted_protein_g_per_dollar": { "type": "number" }
+              "fiber_g_per_dollar": {
+                "type": "number"
+              },
+              "protein_g_per_dollar": {
+                "type": "number"
+              },
+              "combined_g_per_dollar": {
+                "type": "number"
+              },
+              "quality_adjusted_protein_g_per_dollar": {
+                "type": "number"
+              }
             }
           },
           "package": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Package size the recorded price refers to."
           },
           "price_usd": {
-            "type": ["number", "null"],
+            "type": [
+              "number",
+              "null"
+            ],
             "description": "Shelf price, menu price, or portion cost in US dollars, depending on the dataset."
           },
           "price_basis": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "Where the price came from, the observation date, and any USDA refuse percentage applied."
           },
           "rank": {
-            "type": ["integer", "null"],
+            "type": [
+              "integer",
+              "null"
+            ],
             "description": "Published rank inside the source study, where the study publishes one."
           },
-          "study_url": { "type": ["string", "null"], "format": "uri" },
-          "csv_url": { "type": ["string", "null"], "format": "uri" },
+          "study_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "csv_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
           "fields": {
             "type": "object",
             "description": "The original CSV row, typed. Column names and meanings are described in the dataset's schema."
@@ -422,68 +663,151 @@
       },
       "FoodsResponse": {
         "type": "object",
-        "required": ["data", "total", "count", "meta"],
+        "required": [
+          "data",
+          "total",
+          "count",
+          "meta"
+        ],
         "properties": {
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/FoodRow" } },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FoodRow"
+            }
+          },
           "total": {
             "type": "integer",
             "description": "Rows matching the filters, before limit and offset."
           },
-          "count": { "type": "integer", "description": "Rows in this page." },
-          "meta": { "$ref": "#/components/schemas/Meta" }
+          "count": {
+            "type": "integer",
+            "description": "Rows in this page."
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
         }
       },
       "SchemaField": {
         "type": "object",
         "properties": {
-          "name": { "type": "string" },
-          "type": { "type": "string", "examples": ["string", "number", "integer"] },
-          "description": { "type": "string" }
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "examples": [
+              "string",
+              "number",
+              "integer"
+            ]
+          },
+          "description": {
+            "type": "string"
+          }
         }
       },
       "Dataset": {
         "type": "object",
-        "required": ["id", "name", "rows", "csv_url"],
+        "required": [
+          "id",
+          "name",
+          "rows",
+          "csv_url"
+        ],
         "properties": {
-          "id": { "type": "string", "examples": ["fiber-per-dollar-2026"] },
-          "name": { "type": "string" },
-          "title": { "type": "string" },
-          "description": { "type": "string" },
+          "id": {
+            "type": "string",
+            "examples": [
+              "fiber-per-dollar-2026"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
           "long_description": {
             "type": "string",
             "description": "The full descriptor text from datapackage.json."
           },
-          "rows": { "type": "integer" },
+          "rows": {
+            "type": "integer"
+          },
           "nutrients": {
             "type": "array",
-            "items": { "type": "string", "enum": ["fiber", "protein"] }
+            "items": {
+              "type": "string",
+              "enum": [
+                "fiber",
+                "protein"
+              ]
+            }
           },
           "metrics": {
             "type": "array",
             "description": "Per-dollar metric keys this dataset publishes.",
-            "items": { "type": "string" }
+            "items": {
+              "type": "string"
+            }
           },
           "primary_metric": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "description": "The dataset's headline metric. Null for the daily-menu datasets, which publish nutrient amounts and portion costs rather than a per-dollar figure."
           },
-          "temporal_coverage": { "type": "string", "examples": ["2026"] },
-          "spatial_coverage": { "type": "string", "examples": ["United States"] },
-          "csv_url": { "type": "string", "format": "uri" },
-          "csv_bytes": { "type": "integer" },
-          "csv_sha256": { "type": "string", "examples": ["sha256:d90b7e..."] },
+          "temporal_coverage": {
+            "type": "string",
+            "examples": [
+              "2026"
+            ]
+          },
+          "spatial_coverage": {
+            "type": "string",
+            "examples": [
+              "United States"
+            ]
+          },
+          "csv_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "csv_bytes": {
+            "type": "integer"
+          },
+          "csv_sha256": {
+            "type": "string",
+            "examples": [
+              "sha256:d90b7e..."
+            ]
+          },
           "study_url": {
-            "type": ["string", "null"],
+            "type": [
+              "string",
+              "null"
+            ],
             "format": "uri",
             "description": "The article that published this dataset."
           },
-          "api_url": { "type": "string", "format": "uri" },
+          "api_url": {
+            "type": "string",
+            "format": "uri"
+          },
           "schema": {
             "type": "object",
             "properties": {
               "fields": {
                 "type": "array",
-                "items": { "$ref": "#/components/schemas/SchemaField" }
+                "items": {
+                  "$ref": "#/components/schemas/SchemaField"
+                }
               }
             }
           }
@@ -491,12 +815,28 @@
       },
       "DatasetsResponse": {
         "type": "object",
-        "required": ["data", "total", "count", "meta"],
+        "required": [
+          "data",
+          "total",
+          "count",
+          "meta"
+        ],
         "properties": {
-          "data": { "type": "array", "items": { "$ref": "#/components/schemas/Dataset" } },
-          "total": { "type": "integer" },
-          "count": { "type": "integer" },
-          "meta": { "$ref": "#/components/schemas/Meta" }
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Dataset"
+            }
+          },
+          "total": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
         }
       }
     }
