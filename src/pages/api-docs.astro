@@ -1,0 +1,264 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { STUDY_DATASETS, TOTAL_DATA_ROWS, DATA_TERMS_URL } from "../content/datasets";
+
+/**
+ * Human documentation for the public JSON API (growth method #25).
+ *
+ * The machine-readable half is public/openapi.json (OpenAPI 3.1, validated).
+ * Keep both in sync: this page and the spec describe the same two endpoints
+ * implemented in functions/api/v1/.
+ */
+
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}/api-docs/`;
+const datasetCount = STUDY_DATASETS.length;
+
+const title = "Free Food Value API: No Key, No Limits, Just Attribution";
+const description = `A free JSON API over ${datasetCount} original grocery cost datasets and ${TOTAL_DATA_ROWS} priced food rows. No key, open CORS, OpenAPI 3.1 spec.`;
+
+const organization = {
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  name: "Daily Life Hacks",
+  url: `${siteUrl}/`,
+};
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    name: "Food Value API Documentation",
+    url: pageUrl,
+    description,
+    inLanguage: "en-US",
+    isPartOf: { "@type": "WebSite", "@id": `${siteUrl}/#website`, name: "Daily Life Hacks", url: siteUrl },
+    publisher: organization,
+    about: { "@type": "Thing", name: "Grocery nutrition cost data API" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebAPI",
+    "@id": `${pageUrl}#api`,
+    name: "Daily Life Hacks Food Value API",
+    description: `Free, keyless JSON API over ${datasetCount} original grocery cost datasets covering ${TOTAL_DATA_ROWS} priced food rows: fiber per dollar, protein per dollar, and DIAAS quality-adjusted protein, built from USDA FoodData Central nutrition data and 2026 US national retail prices.`,
+    documentation: pageUrl,
+    termsOfService: DATA_TERMS_URL,
+    isAccessibleForFree: true,
+    provider: organization,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "API", item: pageUrl },
+    ],
+  },
+];
+
+const linkStyle = "color: #F29B30;";
+
+const params = [
+  ["nutrient", "fiber or protein", "Keeps only the rows that publish that nutrient's grams-per-dollar number, and ranks on it."],
+  ["dataset", "a dataset id or a study slug", "One study at a time. Both fiber-per-dollar-2026 and fiber-per-dollar-cheapest-high-fiber-foods work."],
+  ["q", "any text", "Case-insensitive substring match on the food name. q=beans finds canned black beans."],
+  ["sort", "value, food, price, rank, dataset", "Defaults to value."],
+  ["order", "asc or desc", "Defaults to desc when you sort on value, asc otherwise."],
+  ["limit", "1 to 500", "Defaults to 50."],
+  ["offset", "0 or more", "Defaults to 0. Page with it."],
+];
+
+const curlDatasets = `curl "https://www.daily-life-hacks.com/api/v1/datasets"`;
+
+const curlFiber = `curl "https://www.daily-life-hacks.com/api/v1/foods?nutrient=fiber&dataset=fiber-per-dollar-2026&limit=3"`;
+
+const fiberResponse = `{
+  "data": [
+    {
+      "dataset": "fiber-per-dollar-2026",
+      "food": "Whole wheat flour",
+      "category": "Whole grains",
+      "nutrients": ["fiber"],
+      "value": 77.8,
+      "value_metric": "fiber_g_per_dollar",
+      "unit": "grams of dietary fiber per US dollar",
+      "metrics": { "fiber_g_per_dollar": 77.8 },
+      "package": "5 lb bag",
+      "price_usd": 3.12,
+      "price_basis": "Walmart GV",
+      "rank": 1,
+      "study_url": "https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/",
+      "csv_url": "https://www.daily-life-hacks.com/data/fiber-per-dollar-2026.csv",
+      "fields": {
+        "rank": 1,
+        "food": "Whole wheat flour",
+        "category": "Whole grains",
+        "fiber_g_per_100g": 10.7,
+        "package": "5 lb bag",
+        "package_price_usd": 3.12,
+        "package_weight_g": 2268,
+        "edible_fraction": 1,
+        "price_per_100g_usd": 0.138,
+        "fiber_g_per_dollar": 77.8,
+        "price_basis": "Walmart GV"
+      }
+    }
+  ],
+  "total": 53,
+  "count": 3,
+  "meta": {
+    "api_version": "v1",
+    "data_version": "2026.1",
+    "methodology_url": "https://www.daily-life-hacks.com/methodology/",
+    "attribution": "Data: Daily Life Hacks, https://www.daily-life-hacks.com/data/"
+  }
+}`;
+
+const curlJq = `curl -s "https://www.daily-life-hacks.com/api/v1/foods?nutrient=protein&dataset=protein-per-dollar-2026&limit=5" \\
+  | jq -r '.data[] | "\\(.value)\\tg protein per $1\\t\\(.food)"'`;
+
+const jqOutput = `97.9	g protein per $1	Pinto beans (dry)
+96	g protein per $1	Whole wheat flour
+81	g protein per $1	Black beans (dry)
+77.7	g protein per $1	Brown lentils (dry)
+75.9	g protein per $1	Navy beans (dry)`;
+
+const curlSearch = `curl "https://www.daily-life-hacks.com/api/v1/foods?q=lentils&nutrient=protein&sort=value&order=desc&limit=10"`;
+
+const jsExample = `const res = await fetch(
+  "https://www.daily-life-hacks.com/api/v1/foods?nutrient=fiber&limit=10"
+);
+const { data, total, meta } = await res.json();
+
+console.log(total, "rows match");
+console.log(data[0].food, data[0].value, meta.attribution);`;
+---
+
+<BaseLayout title={title} description={description} canonicalURL={pageUrl} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 py-12 md:py-16">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      The Food Value API
+    </h1>
+    <p class="text-lg mb-8" style="color: var(--muted-color);">
+      Every priced food row we've ever published, as JSON. Free, no key, no signup, no rate limit. Build whatever you want with it.
+    </p>
+
+    <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
+      <p>
+        We spent a lot of hours pricing groceries and dividing them by USDA nutrient values. {TOTAL_DATA_ROWS} rows across {datasetCount} datasets, all of it original, all of it dated, none of it scraped from someone else's blog. It's been sitting on this site as CSV files for a while now, which is great if you like CSV files and less great if you're trying to build something.
+      </p>
+      <p>
+        So here's the same data as an API. Two endpoints, open CORS, no authentication of any kind. You don't email us for a key. There's no key.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">The one thing we ask</h2>
+      <p>
+        Credit us with a live link. That's it. Every single response carries the exact string we'd like you to use, in <code>meta.attribution</code>, so you never have to guess:
+      </p>
+      <pre><code>Data: Daily Life Hacks, https://www.daily-life-hacks.com/data/</code></pre>
+      <p>
+        There's an HTML version in <code>meta.attribution_html</code> if you're dropping it under a chart. Reuse terms are on the <a href="/methodology/#data-license" style={linkStyle} class="underline">methodology page</a>, along with exactly how every number was calculated. If you're publishing our numbers, read that page. It'll save you from misdescribing what we measured.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Start here: what's in the box</h2>
+      <p>
+        The discovery endpoint lists all {datasetCount} datasets with row counts, the full column schema of each one, the raw CSV, and the study article the numbers came from.
+      </p>
+      <pre><code>{curlDatasets}</code></pre>
+      <p>
+        Filter it with <code>?nutrient=fiber</code> or <code>?nutrient=protein</code>, or pull a single one with <code>?dataset=</code>. Each entry hands you a ready-made <code>api_url</code> for the rows.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Then get the rows</h2>
+      <pre><code>{curlFiber}</code></pre>
+      <p>
+        Which gives you this. It's the real response with two of the three rows cut out, and the <code>meta</code> block shortened to the four fields you'll actually reach for:
+      </p>
+      <pre><code>{fiberResponse}</code></pre>
+      <p>
+        <code>value</code> is the number you probably came for. <code>fields</code> is the original CSV row, typed, so nothing is hidden behind our normalization. And <code>study_url</code> points at the article where a human explained what the number means.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Parameters for /api/v1/foods</h2>
+      <table>
+        <thead>
+          <tr><th>Parameter</th><th>Accepts</th><th>What it does</th></tr>
+        </thead>
+        <tbody>
+          {params.map(([name, accepts, does]) => (
+            <tr>
+              <td><code>{name}</code></td>
+              <td>{accepts}</td>
+              <td>{does}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p>
+        Bad parameters get a <code>400</code> with a <code>hint</code> field telling you what's actually allowed. Unknown datasets get a <code>404</code>. Nothing fails silently and returns an empty array while pretending everything's fine.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">A one-liner that does something useful</h2>
+      <p>The five cheapest protein sources we've priced, formatted for a terminal:</p>
+      <pre><code>{curlJq}</code></pre>
+      <pre><code>{jqOutput}</code></pre>
+      <p>
+        Yes, dry pinto beans really are the answer. They're the answer to a lot of these queries. Search for something specific instead:
+      </p>
+      <pre><code>{curlSearch}</code></pre>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">From the browser</h2>
+      <p>
+        CORS is open to every origin, so you can call this straight from a page with no proxy in the middle:
+      </p>
+      <pre><code>{jsExample}</code></pre>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Two things that'll confuse you if nobody warns you</h2>
+      <p>
+        <strong>The same food shows up more than once.</strong> Whole wheat flour appears in the flagship fiber index, in the grains cut, and in the breakfast staples study. Those are separate published studies, so they're separate rows, and we're not going to quietly delete four of them to make a list look tidier. Pin yourself to one study with <code>?dataset=</code> when you want a clean ranking. Results are ordered so the flagship index row comes first among duplicates.
+      </p>
+      <p>
+        <strong>Some rows have a null value.</strong> The two daily-menu datasets price complete days of eating, so their rows carry a nutrient amount and a portion cost instead of a grams-per-dollar figure. We could divide one by the other and hand you a number, but that number was never audited, so you get <code>null</code> and the raw columns in <code>fields</code>. Null values always sort last.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Limits, rates, and other things we don't have</h2>
+      <p>
+        There's no rate limit. There's no quota, no tier, and nothing to sign up for. Responses are cached at the edge for a day, so if your project hammers the same query it mostly isn't touching our servers at all. The only ceiling is <code>limit=500</code> per request, and <code>offset</code> gets you the rest.
+      </p>
+      <p>
+        If someone eventually abuses it hard enough to cost us money, we'll put a rate limit in front of it and say so here. That hasn't happened, and we'd rather build for the people using it properly.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Versions</h2>
+      <p>
+        The URL carries <code>/v1/</code>, and we won't break the shape of a <code>v1</code> response. New fields can show up; existing ones won't change meaning or disappear. That's the deal.
+      </p>
+      <p>
+        The <em>data</em> version is separate and lives in <code>meta.data_version</code>. Prices get a full re-audit every quarter, and when they move, that string moves with them. If you cache our numbers, cache that string next to them so you can tell when you're stale.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">For machines</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li><a href="/openapi.json" style={linkStyle} class="underline">openapi.json</a> is the full OpenAPI 3.1 spec. Point your client generator at it.</li>
+        <li><a href="/data/datapackage.json" style={linkStyle} class="underline">datapackage.json</a> is the Frictionless descriptor: every column of every CSV, described in plain English.</li>
+        <li><a href="/data/api-index-v1.json" style={linkStyle} class="underline">api-index-v1.json</a> is the whole thing in one file, which is what the API itself reads. Grab it if you'd rather not make requests at all.</li>
+        <li><a href="/data/" style={linkStyle} class="underline">The data page</a> has all {datasetCount} raw CSVs.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Where the numbers come from</h2>
+      <p>
+        Nutrients are USDA FoodData Central. Prices are US national figures: BLS Average Price data where the item is tracked, Walmart national listings where it isn't, observed July 2026. Everything is calculated as-purchased, with USDA refuse percentages taken out so you're not paying for banana peel. The <a href="/methodology/" style={linkStyle} class="underline">methodology page</a> has the whole thing, including what we got wrong and corrected.
+      </p>
+      <p>
+        Built something with it? <a href="/contact/" style={linkStyle} class="underline">Tell us</a>. We'd genuinely like to see it, and if you've found a row that looks wrong, we want to know that even more.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

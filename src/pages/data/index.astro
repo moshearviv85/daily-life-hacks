@@ -259,9 +259,14 @@ const linkStyle = "color: #F29B30;";
       <p class="text-base">
         If you're pulling this programmatically, start with
         <a href="/data/datapackage.json" class={linkClass} style={linkStyle}>datapackage.json</a>,
-        a Frictionless Data descriptor listing every file, its fields, and its license in one place.
+        a Frictionless Data descriptor listing every file and its fields in one place.
         The <a href="/data/dataset-provenance.json" class={linkClass} style={linkStyle}>provenance file</a>
         records when prices were observed and what the known limits are.
+      </p>
+      <p class="text-base">
+        There's also a free JSON API if you'd rather query than download. No key, no
+        sign-up, open CORS. See the <a href="/api-docs/" class={linkClass} style={linkStyle}>API
+        documentation</a> for the endpoints and some copy-paste examples.
       </p>
       <p class="text-base">
         Prices get a full re-audit every quarter, so the files change. If you cached a copy, re-pull

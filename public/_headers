@@ -32,3 +32,11 @@
 
 /rss.xml
   X-Robots-Tag: noindex
+
+# The CSVs are published for people to use. Without CORS, browser-side code
+# cannot fetch the very files we tell readers to grab.
+/data/*
+  Access-Control-Allow-Origin: *
+
+/openapi.json
+  Access-Control-Allow-Origin: *
