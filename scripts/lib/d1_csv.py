@@ -19,14 +19,11 @@ import re
 from typing import Iterable
 
 
-# Fallbacks when no keyword rule matches. These must name boards that actually
-# exist and are actively used: "Gut Health Tips and Nutrition Charts" was the
-# old nutrition fallback and holds zero pins, so anything landing there was
-# effectively discarded.
+# Fallbacks when no rule matches. Must name boards that exist and are used.
 CATEGORY_TO_BOARD = {
-    "recipes":    "Easy Dinner Recipes",              # 8.2 imp/pin
-    "nutrition":  "Gut Health & Nutrition Tips",      # 2.0 imp/pin, 83 pins
-    "tips":       "Healthy Meal Prep & Kitchen Tips", # 0.6 imp/pin, 181 pins
+    "recipes":   "Easy Dinner Recipes",                          # 8.2 imp/pin
+    "nutrition": "Nutrition Labels and Daily Values Explained",
+    "tips":      "Kitchen Tips and Cooking Hacks",
 }
 
 # VERIFIED against the live account 2026-07-26 via scripts/list-boards.py.
@@ -34,23 +31,37 @@ CATEGORY_TO_BOARD = {
 # a different board than their name claimed, so gut-health pins landed on the
 # meal-prep board and vice versa. Re-verify with list-boards.py before editing.
 BOARD_NAME_TO_ID = {
+    # 13 narrow boards created 2026-07-27 from the board-architecture report.
+    "cheap meals for large families": "1124140825679688282",
+    "healthy snacks for a sweet tooth": "1124140825679688283",
+    "high protein breakfast ideas": "1124140825679688284",
+    "high fiber breakfast ideas": "1124140825679688285",
+    "high protein lunch and sandwich ideas": "1124140825679688286",
+    "sheet pan and one pot dinner recipes": "1124140825679688287",
+    "bean and lentil recipes": "1124140825679688288",
+    "healthy soup recipes": "1124140825679688289",
+    "salad recipes and homemade dressings": "1124140825679688290",
+    "sourdough discard recipes and easy bread": "1124140825679688291",
+    "how to cook chicken, pork and beef": "1124140825679688292",
+    "high fiber snack ideas": "1124140825679688293",
+    "nutrition labels and daily values explained": "1124140825679688294",
     # 226 pins, 0.7 impressions/pin
-    "high fiber recipes": "1124140825679184032",
+    "high fiber dinner recipes": "1124140825679184032",
     "high-fiber-recipes": "1124140825679184032",
     # 2 pins - a separate, nearly empty board despite the similar name
-    "high fiber dinner and gut health recipes": "1124140825679097740",
+    "fiber per dollar: cheap high fiber foods": "1124140825679097740",
     # 83 pins, 2.0 impressions/pin
-    "gut health & nutrition tips": "1124140825679184036",
+    "gut health foods and fiber tips": "1124140825679184036",
     "gut health and nutrition tips": "1124140825679184036",
     "gut-health-nutrition-tips": "1124140825679184036",
     # 0 pins - distinct board, kept only so the name resolves rather than 404s
-    "gut health tips and nutrition charts": "1124140825679640840",
+    "grocery budget tips and shopping lists": "1124140825679640840",
     # 181 pins, 0.6 impressions/pin
-    "healthy meal prep & kitchen tips": "1124140825679184034",
+    "kitchen tips and cooking hacks": "1124140825679184034",
     "healthy breakfast, smoothies and snacks": "1124140825679184034",
     "healthy breakfast smoothies and snacks": "1124140825679184034",
     # 14 pins, 2.4 impressions/pin
-    "grocery math: food prices and nutrition data": "1124140825679640841",
+    "protein per dollar: cheap protein sources": "1124140825679640841",
     "grocery math": "1124140825679640841",
     # 12 pins, 8.2 impressions/pin - best performing board on the account
     "easy dinner recipes": "1124140825679548778",
@@ -70,52 +81,13 @@ BOARD_NAME_TO_ID = {
     "freezer tips": "1124140825679548781",
 }
 
-MEAL_PREP_KEYWORDS = (
-    "meal prep", "meal-prep", "breakfast", "smoothie", "snack", "lunch",
-    "sandwich", "organize", "organization", "kitchen", "picnic",
-    "make ahead", "batch cooking", "prep",
-)
 
-BUDGET_KEYWORDS = (
-    "budget", "cheap", "affordable", "grocery", "groceries", "save money",
-    "saving money", "frugal", "stretch",
-)
 
-FOOD_STORAGE_KEYWORDS = (
-    "freezer", "freeze", "storage", "store", "leftover", "leftovers",
-    "keep fresh", "shelf life",
-)
 
-HIGH_PROTEIN_KEYWORDS = (
-    "protein", "high protein", "high-protein", "egg", "eggs", "tofu",
-    "turkey", "greek yogurt", "cottage cheese",
-)
 
-HIGH_FIBER_RECIPE_KEYWORDS = (
-    "fiber", "high fiber", "high-fiber", "beans", "lentil", "lentils",
-    "chia", "whole wheat", "oats", "oatmeal",
-)
 
-# Deliberately narrow. The old version included bare "fiber" and "nutrition",
-# which match nearly every article this site publishes, so this rule swallowed
-# most pins before they could reach a better-performing board.
-GUT_NUTRITION_KEYWORDS = (
-    "gut", "sodium", "label", "cholesterol", "constipation",
-    "prebiotic", "probiotic", "bloat", "digestion", "vitamin", "mineral",
-    "satiety",
-)
 
-# Pins carrying an actual priced-data claim, which belong on the data board.
-GROCERY_MATH_KEYWORDS = (
-    "per dollar", "per-dollar", "we priced", "we ranked", "cost per",
-    "g/$", "grams per dollar", "priced 49", "priced 53", "priced 102",
-)
 
-RECIPE_KEYWORDS = (
-    "recipe", "dinner", "soup", "stew", "salad", "chicken", "pork", "beef",
-    "salmon", "beans", "lentil", "tofu", "vegetarian", "pizza", "pasta",
-    "rice", "bowl", "casserole", "dumpling", "bread", "sourdough",
-)
 
 
 def category_to_board(category: str) -> str:
@@ -132,7 +104,20 @@ def category_to_board(category: str) -> str:
 # ── articles CSV ─────────────────────────────────────────────────────────────
 
 def board_name_to_id(board_name: str) -> str:
-    return BOARD_NAME_TO_ID.get((board_name or "").strip().lower(), "")
+    """Resolve a board name to its live Pinterest ID.
+
+    Raises rather than returning "" : a silent empty ID during a board
+    migration sends pins nowhere, which is how the 2026-07-26 routing bug
+    went unnoticed.
+    """
+    key = (board_name or "").strip().lower()
+    board_id = BOARD_NAME_TO_ID.get(key, "")
+    if not board_id:
+        raise KeyError(
+            f"no live board ID for {board_name!r}. Run scripts/list-boards.py "
+            "and update BOARD_NAME_TO_ID."
+        )
+    return board_id
 
 
 def _pin_haystack(pin: dict) -> str:
@@ -151,43 +136,170 @@ def _contains_any(haystack: str, needles: Iterable[str]) -> bool:
     return any(needle in haystack for needle in needles)
 
 
+
+BOARD_RULES = (
+    # 1-2. Priced data. Must beat every topical rule: a per-dollar pin is a
+    # data pin first and a food pin second.
+    ("Protein Per Dollar: Cheap Protein Sources", (
+        "protein per dollar", "protein-per-dollar", "per dollar protein",
+        "cheapest protein", "cheapest animal protein", "cheapest dairy protein",
+        "protein cost", "protein-cost", "protein value", "protein per serving",
+        "cost per gram of protein", "50 grams of protein", "one dollar protein",
+        "one-dollar-protein", "complete protein pairs", "protein sources ranked",
+    )),
+    ("Fiber Per Dollar: Cheap High Fiber Foods", (
+        "fiber per dollar", "fiber-per-dollar", "per dollar fiber",
+        "cheapest high fiber", "cheapest fiber", "fiber cost", "fiber-cost",
+        "30 grams of fiber", "one dollar fiber", "one-dollar-fiber",
+        "fiber comparison",
+    )),
+    # 3. Audience rule. "families" is broad but the audience intent outranks
+    # the dish: a crockpot meal for eight belongs here, not on Sheet Pan.
+    ("Cheap Meals for Large Families", (
+        "large family", "large families", "for a crowd", "feed a crowd",
+        "feeding a crowd", "big family", "stretch meals", "families",
+    )),
+    # 4. Above the bean rule on purpose: black-bean-brownies is a dessert.
+    ("Healthy Snacks for a Sweet Tooth", (
+        "sweet tooth", "brownie", "brownies", "energy ball", "energy balls",
+        "dessert", "jam", "sweet snack", "sweet treat", "granola",
+    )),
+    # 5-7. Meal slot x attribute: the highest-intent shape on Pinterest.
+    ("High Protein Breakfast Ideas", (
+        "high protein breakfast", "protein breakfast", "breakfast burrito",
+        "breakfast hash", "egg sandwich", "savory oatmeal", "breakfast staples",
+        "balanced breakfast", "breakfast foods for sustained",
+        "make ahead breakfast", "make-ahead-breakfast",
+    )),
+    ("High Fiber Breakfast Ideas", (
+        "high fiber breakfast", "fiber breakfast", "chia pudding",
+        "overnight oats", "yogurt parfait", "avocado toast", "bran muffin",
+        "savory chia", "ricotta berry", "chia seed recipes",
+    )),
+    ("High Protein Lunch and Sandwich Ideas", (
+        "sandwich", "lunch", "bagel", "work lunch", "packed lunch", "lunch prep",
+        "lunch bowl", "burrito bowl", "wrap", "wraps",
+    )),
+    # 8-14. Recipe forms, narrow to broad.
+    ("Sheet Pan and One Pot Dinner Recipes", (
+        "sheet pan", "sheet-pan", "one pot", "one-pot", "skillet dinner",
+        "crockpot", "crock pot", "slow cooker", "risotto", "hands-off",
+    )),
+    ("Bean and Lentil Recipes", (
+        "bean", "beans", "lentil", "lentils", "chickpea", "chickpeas", "hummus",
+        "split pea", "black bean", "kidney bean", "white bean", "legume",
+        "rice and beans", "edamame", "natto", "soybean",
+    )),
+    ("Healthy Soup Recipes", (
+        "soup", "stew", "chili", "broth", "chowder", "bisque",
+    )),
+    ("Salad Recipes and Homemade Dressings", (
+        "picnic", "potluck", "potlucks", "pasta salad", "salad", "dressing",
+        "dressings", "slaw", "tabbouleh", "vinaigrette",
+    )),
+    ("Sourdough Discard Recipes and Easy Bread", (
+        "sourdough", "discard", "pizza dough", "bread recipe", "sandwich bread",
+        "dumpling wrapper", "homemade bread", "baking",
+    )),
+    ("How to Cook Chicken, Pork and Beef", (
+        "best way to cook", "how to cook chicken", "pork chop",
+        "pork tenderloin", "prime rib", "ribs", "baked potato",
+        "rotisserie chicken", "steak", "roast",
+    )),
+    ("High Fiber Dinner Recipes", (
+        "high fiber dinner", "fiber dinner", "high-fiber dinner",
+        "high fiber meal", "high fiber recipes", "vegetarian high fiber",
+        "vegan high fiber", "high fiber stir fry", "high fiber pizza",
+        "high fiber cauliflower", "high fiber quinoa", "quinoa", "farro",
+        "barley", "bulgur", "millet", "teff", "amaranth", "whole grain",
+        "high fiber pasta", "whole wheat", "stir fry", "stir-fry",
+    )),
+    ("High Protein Meals and Smart Swaps", (
+        "high protein", "high-protein", "protein meal", "protein swap",
+        "greek yogurt", "cottage cheese", "turkey meatball", "protein bread",
+    )),
+    # 15. Holds bare "recipe"/"recipes". Deliberately below every specific
+    # recipe-form board so it catches only genuinely unclassified recipes.
+    # This is the account's best board (8.2) and a good place to land.
+    ("Easy Dinner Recipes", (
+        "dinner", "weeknight", "tacos", "salmon", "cod", "fish", "chicken",
+        "tofu", "pasta", "orzo", "pizza", "casserole", "meatballs",
+        "portobello", "curry", "fried rice", "20-minute", "20 minute",
+        "quick dinner", "recipe", "recipes",
+    )),
+    # 16. Holds bare "snack". Below Sweet Tooth so sweet pins are claimed first.
+    ("High Fiber Snack Ideas", (
+        "snack", "snacks", "popcorn", "potato chips", "chips",
+        "roasted chickpeas",
+    )),
+    # 17-18. Storage and kitchen. Freezer before general storage: a freezer
+    # meal is a freezer pin even though it also matches "storage".
+    ("Food Storage and Freezer Tips", (
+        "freezer", "freeze", "frozen", "how to store", "storage", "keep fresh",
+        "fresh longer", "shelf life", "leftover", "leftovers", "food waste",
+        "wilted", "browning", "keep berries", "store cooked",
+    )),
+    ("Kitchen Tips and Cooking Hacks", (
+        "kitchen", "cast iron", "skillet", "cutting board", "blender",
+        "parchment", "baking sheet", "cookware", "utensil", "organize",
+        "organization", "oversalted", "seasoning", "cool rice", "preheat",
+        "clean", "tools",
+    )),
+    # 19-20. Budget. Grocery-logistics before general budget, and both below
+    # the per-dollar rules so priced data is never swallowed by "cost".
+    ("Grocery Budget Tips and Shopping Lists", (
+        "grocery", "groceries", "shopping list", "aldi", "costco", "thrifty",
+        "grocery bill", "pantry", "shelf stable", "shelf-stable", "meal plan",
+        "meal planning", "week of dinners", "grocery run",
+    )),
+    ("Budget Meals and Grocery Hacks", (
+        "budget", "cheap", "affordable", "save money", "saving money", "frugal",
+        "low cost", "low-cost", "cost", "for one", "cooking for one",
+    )),
+    # 21. Gut health. Narrow on purpose: the old version held bare "fiber"
+    # and "nutrition", which is exactly what caused the 405-pin pileup.
+    ("Gut Health Foods and Fiber Tips", (
+        "gut health", "gut-health", "gut friendly", "gut-friendly",
+        "constipation", "prebiotic", "probiotic", "fermented", "bloat",
+        "digestion", "digestive", "artichoke", "prune juice", "natural relief",
+        "smoothie", "smoothies", "tea",
+    )),
+    # 22. DEFERRED until the board exists with 20+ pins. Keep commented so the
+    # intended position in the order is not lost.
+    # ("Healthy Food Swaps and Alternatives", (
+    #     "alternative", "alternatives", "swap", "swaps", "hidden sugar",
+    #     "less salt", "less sugar", "sodium", "without more sugar", "substitute",
+    # )),
+    # 23. LAST. Holds bare "nutrition", so it must stay at the bottom.
+    ("Nutrition Labels and Daily Values Explained", (
+        "nutrition label", "label", "daily value", "daily values",
+        "how much protein", "macronutrient", "macro", "healthy fats",
+        "selenium", "zinc", "vitamin", "mineral", "smoke point", "cooking oil",
+        "nutrition facts", "satiety", "weight loss", "fiber intake",
+        "water and fiber", "challenge", "per day", "nutrition",
+    )),
+)
+
+
 def board_for_pin(pin: dict, category: str) -> str:
-    """Route a pin to a board, best-performing and most specific boards first.
+    """Route a pin to a board. First match in BOARD_RULES wins.
 
-    Measured 2026-07-26 across 561 live pins (impressions per pin):
-      Easy Dinner Recipes 8.2 · Food Storage 6.6 · High Protein 5.6 ·
-      Budget Meals 4.2 · Grocery Math 2.4 · Gut Health 2.0 ·
-      Healthy Meal Prep 0.6 · High Fiber Recipes 0.7
+    Ordering is the contract, not the keyword sets: a rule holding a broad
+    token sits below every rule that could legitimately claim a pin containing
+    it. The previous version had this inverted, and the two broadest catchers
+    swallowed 405 of 561 pins into the two boards that produce 0.6-0.7
+    impressions per pin while the account's best board (8.2) held 12.
 
-    The old order checked the two broadest, worst-performing catchers
-    (GUT_NUTRITION, MEAL_PREP) before the recipe rule, so the best board on the
-    account received almost nothing: 405 of 561 pins piled into the two boards
-    that produce 0.6-0.7 impressions per pin, while the 8.2 board held 12.
-    Specific rules now run first and the broad catchers are last resorts.
+    Board titles are a ranked Pinterest search feature: OmniSearchSage
+    (arXiv 2404.16260) feeds the top 10 board titles of a pin into its search
+    embedding, second in weight only to the pin's own text. Which board a pin
+    lands on is therefore a distribution decision, not filing.
     """
-    category = (category or "").lower()
     haystack = _pin_haystack(pin)
-
-    # Priced-data pins belong on the data board regardless of topic keywords.
-    if _contains_any(haystack, GROCERY_MATH_KEYWORDS):
-        return "Grocery Math: Food Prices and Nutrition Data"
-    if _contains_any(haystack, BUDGET_KEYWORDS):
-        return "Budget Meals and Grocery Hacks"
-    if _contains_any(haystack, FOOD_STORAGE_KEYWORDS):
-        return "Food Storage and Freezer Tips"
-    if _contains_any(haystack, HIGH_PROTEIN_KEYWORDS):
-        return "High Protein Meals and Smart Swaps"
-    # Moved ahead of the broad catchers: an actual recipe belongs on the recipe
-    # board, and that board outperforms every catch-all by an order of magnitude.
-    if _contains_any(haystack, RECIPE_KEYWORDS):
-        return "Easy Dinner Recipes"
-    if category == "recipes" and _contains_any(haystack, HIGH_FIBER_RECIPE_KEYWORDS):
-        return "High Fiber Recipes"
-    if _contains_any(haystack, GUT_NUTRITION_KEYWORDS):
-        return "Gut Health & Nutrition Tips"
-    if _contains_any(haystack, MEAL_PREP_KEYWORDS):
-        return "Healthy Meal Prep & Kitchen Tips"
-    return category_to_board(category)
+    for board, keywords in BOARD_RULES:
+        if _contains_any(haystack, keywords):
+            return board
+    return category_to_board((category or "").lower())
 
 
 ARTICLE_COLUMNS = (
