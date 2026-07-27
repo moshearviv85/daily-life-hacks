@@ -1,0 +1,36 @@
+name: Rename Boards
+
+# Manual. Renames boards and optionally moves pins between them.
+# Board titles are a ranked Pinterest search feature (OmniSearchSage), so one
+# rename changes the topic signal for every pin already on that board.
+# Dry run unless you type the confirm words.
+on:
+  workflow_dispatch:
+    inputs:
+      rename:
+        description: 'Type RENAME to apply the board renames.'
+        required: false
+        default: ''
+      move:
+        description: 'Type MOVE to apply pin moves from pipeline-data/pin-moves.json.'
+        required: false
+        default: ''
+
+jobs:
+  rename:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests
+      - env:
+          PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+          PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+          PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          RENAME_CONFIRM: ${{ github.event.inputs.rename }}
+          MOVE_CONFIRM: ${{ github.event.inputs.move }}
+        run: python scripts/rename-boards.py
