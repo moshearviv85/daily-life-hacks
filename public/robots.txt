@@ -1,23 +1,93 @@
+# daily-life-hacks.com
+#
+# Note on precedence: a crawler obeys ONLY the most specific group that names
+# it — it does not merge the `*` group in. So every named group below repeats
+# the same Disallow lines. Omitting them is how a named bot accidentally gets
+# access the wildcard group denies.
+
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
 
+# --- Search crawlers we actively want ------------------------------------
+# Bing is the highest-value non-Google index here: it serves DuckDuckGo,
+# Yahoo and AOL, and it is the grounding index behind Copilot.
+User-agent: bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Bing's ad-quality/preview crawler. Blocking it can suppress Bing surfaces.
+User-agent: adidxbot
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# --- AI answer engines ----------------------------------------------------
+# OAI-SearchBot builds the ChatGPT *search* index. It is a separate agent from
+# GPTBot (model training) and ChatGPT-User (live user-triggered fetches), and
+# it is the one that governs whether this site can be surfaced and cited in
+# ChatGPT search. It must be named explicitly, not left to the wildcard.
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Live fetch when a ChatGPT user follows or asks about a link.
+User-agent: ChatGPT-User
+Allow: /
 Disallow: /admin/
 Disallow: /.git/
 Disallow: /node_modules/
 
 User-agent: GPTBot
 Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Anthropic's live user-triggered fetch agent.
+User-agent: Claude-User
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Google's AI/Gemini grounding opt-in. Separate from Googlebot.
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Apple Intelligence / Siri grounding opt-in.
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
 
 User-agent: Bytespider
 Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
 
 Sitemap: https://www.daily-life-hacks.com/sitemap-index.xml

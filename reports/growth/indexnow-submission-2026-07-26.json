@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-07-27T04:02:59.638606+00:00",
+  "git_range": null,
+  "dry_run": false,
+  "eligible_urls": [
+    "https://www.daily-life-hacks.com/chicken-thighs-vs-breast-protein-cost/",
+    "https://www.daily-life-hacks.com/eggs-vs-greek-yogurt-protein-cost/",
+    "https://www.daily-life-hacks.com/frozen-vs-fresh-vegetables-fiber-cost/",
+    "https://www.daily-life-hacks.com/ground-beef-vs-beans-protein-cost/",
+    "https://www.daily-life-hacks.com/lentils-vs-chicken-breast-protein-cost/",
+    "https://www.daily-life-hacks.com/peanut-butter-vs-almonds-protein-cost/",
+    "https://www.daily-life-hacks.com/popcorn-vs-almonds-fiber-cost/",
+    "https://www.daily-life-hacks.com/rss.xml",
+    "https://www.daily-life-hacks.com/tofu-vs-chicken-protein-cost/",
+    "https://www.daily-life-hacks.com/whole-wheat-flour-vs-quinoa-fiber-cost/"
+  ],
+  "skipped": [],
+  "rejected_explicit_urls": [],
+  "ignored_source_paths": [],
+  "ok": true,
+  "submission": {
+    "attempted": true,
+    "ok": true,
+    "status": 200,
+    "body": ""
+  }
+}

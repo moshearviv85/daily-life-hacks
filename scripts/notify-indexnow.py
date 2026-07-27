@@ -33,6 +33,17 @@ INDEXNOW_ENDPOINT = "https://api.indexnow.org/indexnow"
 REPO_ROOT = Path(__file__).resolve().parent.parent
 PAGE_EXTENSIONS = {".astro", ".html", ".md", ".mdx"}
 
+# File-style endpoints that are real URLs but are NOT trailing-slash pages and
+# never appear in the sitemap. They are eligible only when the same build
+# actually produced the file, which keeps the fail-closed guarantee intact.
+# Maps public URL path -> file that must exist in the build output directory.
+FEED_PATHS = {"/rss.xml": "rss.xml"}
+
+# Only these suffixes are treated as files rather than directories. Anything
+# else keeps the site's `trailingSlash: 'always'` canonical form, so an article
+# slug that happens to contain a dot is still normalised to a trailing slash.
+FILE_SUFFIXES = (".xml", ".json", ".txt")
+
 
 def canonicalize_url(value: str) -> str | None:
     """Return the site's canonical host/trailing-slash URL, or None if unsafe."""
@@ -53,7 +64,9 @@ def canonicalize_url(value: str) -> str | None:
     if "?" in path or "#" in path:
         return None
     path = "/" + path.strip("/")
-    if path != "/":
+    # File-style endpoints (/rss.xml) must not be given a trailing slash: that
+    # would invent a URL the site does not serve.
+    if path != "/" and not path.lower().endswith(FILE_SUFFIXES):
         path += "/"
     return urlunsplit(("https", HOST, path, "", ""))
 
@@ -136,6 +149,16 @@ def load_sitemap_urls(sitemap_dir: Path) -> set[str]:
 
     if not urls:
         raise RuntimeError(f"No canonical page URLs found in {sitemap_dir}")
+
+    # Feeds are legitimate IndexNow targets but are never listed in the sitemap.
+    # Allow one only when this build actually emitted the file next to the
+    # sitemap, so a missing/renamed feed still fails closed.
+    for url_path, filename in FEED_PATHS.items():
+        if (sitemap_dir / filename).is_file():
+            canonical = canonicalize_url(url_path)
+            if canonical:
+                urls.add(canonical)
+
     return urls
 
 
@@ -161,29 +184,46 @@ def build_plan(
         if url:
             candidates.append({"url": url, "source": "--urls"})
         else:
-            skipped.append({"url": supplied, "reason": "not a canonical site URL"})
+            skipped.append(
+                {
+                    "url": supplied,
+                    "source": "--urls",
+                    "reason": "not a canonical site URL — pass an absolute "
+                    f"https://{HOST}/... URL",
+                }
+            )
 
     eligible: list[str] = []
     seen: set[str] = set()
     for candidate in candidates:
         url = candidate["url"]
         if url in seen:
-            skipped.append({"url": url, "reason": "duplicate"})
+            skipped.append({"url": url, "source": candidate["source"], "reason": "duplicate"})
             continue
         seen.add(url)
         if url not in sitemap_urls:
             skipped.append(
                 {
                     "url": url,
+                    "source": candidate["source"],
                     "reason": "not in built sitemap (unreleased, noindex, redirect, or missing)",
                 }
             )
             continue
         eligible.append(url)
 
+    # A URL the operator asked for by hand and did not get is a failure, not a
+    # footnote. Only duplicates are benign.
+    rejected_explicit = [
+        item
+        for item in skipped
+        if item.get("source") == "--urls" and item["reason"] != "duplicate"
+    ]
+
     return {
         "eligible_urls": sorted(eligible),
         "skipped": skipped,
+        "rejected_explicit_urls": rejected_explicit,
         "ignored_source_paths": sorted(ignored_sources),
     }
 
@@ -271,12 +311,19 @@ def main(argv: list[str] | None = None) -> int:
     print(f"Ignored non-page source paths: {len(plan['ignored_source_paths'])}")
     print(f"Skipped URL candidates: {len(plan['skipped'])}")
 
+    rejected = plan["rejected_explicit_urls"]
+    if rejected:
+        # Fail loudly: silently dropping a hand-supplied URL is the trap this
+        # script used to set.
+        for item in rejected:
+            print(f"  REJECTED --urls {item['url']}: {item['reason']}", file=sys.stderr)
+
     if args.dry_run or not urls:
-        report["ok"] = True
+        report["ok"] = not rejected
         report["submission"] = {"attempted": False, "reason": "dry-run" if args.dry_run else "no eligible URLs"}
         write_log(args.log_file, report)
         print("IndexNow: no HTTP request made.")
-        return 0
+        return 1 if rejected else 0
 
     key = os.environ.get("INDEXNOW_KEY", DEFAULT_INDEXNOW_KEY).strip()
     if not key:
@@ -287,11 +334,11 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     submission = submit_indexnow(urls, key)
-    report["ok"] = submission["ok"]
+    report["ok"] = submission["ok"] and not rejected
     report["submission"] = {"attempted": True, **submission}
     write_log(args.log_file, report)
     print(f"IndexNow response: status={submission['status']} ok={submission['ok']}")
-    return 0 if submission["ok"] else 1
+    return 0 if report["ok"] else 1
 
 
 if __name__ == "__main__":

@@ -1,0 +1,149 @@
+# Submit newly published / updated canonical URLs to IndexNow (Bing, Yandex,
+# Naver, Seznam, Yep — Google does not participate).
+#
+# WHY THIS EXISTS ALONGSIDE THE IndexNow STEP IN deploy-cloudflare-pages.yml
+#
+# That step diffs a Git range (github.event.before..sha) inside the deploy job.
+# It is correct for an ordinary successful push, but it loses URLs in three
+# situations this repo actually hits:
+#
+#   1. Scheduled rebuilds. An article with a future `publishAt` enters the
+#      sitemap on a later daily rebuild with no commit behind it. A Git diff
+#      finds nothing, so scheduled articles are never submitted at all.
+#   2. Failed deploys. The IndexNow step runs after "Build and verify routing";
+#      when the build fails the step never runs, and the *next* push diffs from
+#      a base after those commits — so their URLs are lost permanently. This is
+#      exactly what happened to the 9 comparison articles on 2026-07-26.
+#   3. Force-pushes / merges, where `github.event.before` is not a useful base.
+#
+# This workflow is state-based rather than event-based: it compares the sitemap
+# the current build produces against a cached snapshot of the last sitemap that
+# was successfully submitted. Nothing can be lost by a failed run, because the
+# snapshot only advances after a successful submission.
+#
+# It triggers on `workflow_run` after Deploy Cloudflare Pages *succeeds*, so it
+# covers push, scheduled and manual deploys alike, and it can never submit a
+# URL that is not actually live.
+#
+# NOT ENABLED YET — left for review. To adopt it, delete the "Notify IndexNow"
+# and "Upload IndexNow deploy report" steps from deploy-cloudflare-pages.yml so
+# the two paths do not both submit.
+
+name: IndexNow (sitemap diff)
+
+on:
+  workflow_run:
+    workflows: ["Deploy Cloudflare Pages"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Plan only, make no IndexNow request"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  # Never let two runs race on the snapshot cache.
+  group: indexnow-sitemap-diff
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    # Only after a *successful* production deploy. A failed deploy leaves the
+    # snapshot untouched, so the next successful one picks up everything that
+    # accumulated in the meantime.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout the commit that was deployed
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Rebuilding reproduces the exact sitemap that was just deployed,
+      # including the publishAt release gate evaluated at build time.
+      - name: Build
+        run: npm run build
+
+      - name: Restore previous sitemap snapshot
+        uses: actions/cache/restore@v4
+        with:
+          path: .indexnow
+          key: indexnow-sitemap-${{ github.run_id }}
+          restore-keys: |
+            indexnow-sitemap-
+
+      - name: Diff sitemap against the last submitted snapshot
+        id: diff
+        run: |
+          python scripts/indexnow-sitemap-diff.py \
+            --sitemap-dir dist \
+            --snapshot .indexnow/sitemap-snapshot.json \
+            --output .indexnow/changed-urls.txt \
+            --log-file indexnow-diff-report.json
+          COUNT=$(wc -l < .indexnow/changed-urls.txt | tr -d ' ')
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "Candidate URLs: $COUNT"
+
+      # notify-indexnow.py stays the single audited submission path: it
+      # re-checks every URL against the sitemap this build produced, rejects
+      # anything non-canonical, and now exits non-zero if a URL handed to it is
+      # dropped rather than skipping it silently.
+      - name: Submit to IndexNow
+        if: steps.diff.outputs.count != '0'
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: |
+          mapfile -t URLS < .indexnow/changed-urls.txt
+          python scripts/notify-indexnow.py \
+            $DRY_RUN \
+            --sitemap-dir dist \
+            --log-file indexnow-submission-report.json \
+            --urls "${URLS[@]}"
+
+      # Only reached when submission succeeded, so a failed submission is
+      # retried on the next deploy instead of being silently dropped.
+      - name: Advance the snapshot
+        if: success() && !inputs.dry_run
+        run: |
+          python scripts/indexnow-sitemap-diff.py \
+            --sitemap-dir dist \
+            --snapshot .indexnow/sitemap-snapshot.json \
+            --write-snapshot
+
+      - name: Save sitemap snapshot
+        if: success() && !inputs.dry_run
+        uses: actions/cache/save@v4
+        with:
+          path: .indexnow
+          key: indexnow-sitemap-${{ github.run_id }}
+
+      - name: Upload IndexNow reports
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: indexnow-sitemap-diff-${{ github.run_id }}
+          path: |
+            indexnow-diff-report.json
+            indexnow-submission-report.json
+          if-no-files-found: warn
+          retention-days: 30
