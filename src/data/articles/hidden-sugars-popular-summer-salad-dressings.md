@@ -6,13 +6,12 @@ tags:
 - nutrition basics
 - salads
 - salad dressings
-- salad
 - summer
-- dressings
 - hidden
 image: "/images/hidden-sugars-popular-summer-salad-dressings-main.jpg"
 imageAlt: A close-up photograph shows a healthy green salad in a wooden bowl with a thick, glossy red salad dressing being poured over it.
 date: 2026-04-28
+dateModified: 2026-07-28
 author: "David Miller"
 featured: false
 faq:
@@ -55,7 +54,7 @@ If you want to stick with a clear dressing, look for Greek or traditional Italia
 
 ## The five-minute kitchen fix
 
-The most effective way to avoid hidden sugars in popular summer salad dressings is to stop buying them entirely. I know, you're busy, and the bottled stuff is convenient. But whisking together some olive oil, dijon mustard, lemon juice, and salt takes about sixty seconds. It stays good in a jar in the fridge for a week, and you know exactly what is in it. If you want more than one jar in rotation, these [homemade high fiber salad dressings](/high-fiber-salad-dressings-homemade/) all follow the same sixty-second logic.
+The most effective way to avoid hidden sugars in popular summer salad dressings is to stop buying them entirely. I know, you're busy, and the bottled stuff is convenient. But whisking together some olive oil, dijon mustard, lemon juice, and salt takes about sixty seconds. It stays good in a jar in the fridge for a week, and you know exactly what's in it. If you want more than one jar in rotation, these [homemade high fiber salad dressings](/high-fiber-salad-dressings-homemade/) all follow the same sixty-second logic. Before you trust any fridge estimate, the [homemade dressing storage guide](/how-to-store-homemade-salad-dressing-safely/) separates the useful timelines from the mason-jar optimism.
 
 If you absolutely must have a little sweetness, you can control it. Adding a tiny drop of maple syrup to a homemade jar is still going to be significantly less sugar than what a factory pumps into a plastic bottle. Plus, real olive oil actually tastes like something, which is a nice change of pace from the bland vegetable oils used in the mass-produced versions. There are plenty of ways to [add flavor without more sugar](/add-flavor-without-more-sugar-tricks/), and most of them are already sitting in your spice rack.
 

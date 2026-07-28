@@ -11,6 +11,7 @@ tags:
 image: "/images/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes-main.jpg"
 imageAlt: A sheet pan filled with golden roasted sweet potato cubes and fried eggs topped with fresh rosemary, shot from above in bright natural light.
 date: 2026-06-17
+dateModified: 2026-07-28
 author: "David Miller"
 featured: false
 prepTime: "15 min"
@@ -93,7 +94,7 @@ The pan you use matters more than you'd think. A standard half sheet pan is 18x1
 
 Dark-colored pans absorb more heat and will give you more browning on the bottom of your sweet potatoes. Light-colored aluminum pans reflect heat and cook more evenly but may need a few extra minutes to get the same color. If your pan is old and warped, the heat distribution will be uneven, which means some sweet potatoes will burn while others steam. A warped pan is worth replacing if you make sheet pan meals regularly.
 
-Parchment paper is worth the small cost. It prevents sticking, makes cleanup essentially automatic, and the sweet potatoes still brown perfectly. Foil works too but can cause more browning on the bottom edges. Either way, line your pan. You're already doing one pan; don't make it harder than it needs to be.
+Parchment paper is worth the small cost. It prevents sticking, makes cleanup essentially automatic, and the sweet potatoes still brown perfectly. Foil works too but can cause more browning on the bottom edges. The [baking-sheet liner comparison](/baking-sheet-liners-parchment-silicone-when-to-use/) explains where parchment, foil, silicone, and bare metal each win, because apparently the pan drawer needed a playoff bracket. Either way, line your pan. You're already doing one pan; don't make it harder than it needs to be.
 
 ## Add-ins and Variations
 
