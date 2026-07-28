@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-07-19T16:33:52.650493Z",
+  "updatedAt": "2026-07-28T14:50:55Z",
   "articles": {
     "30-day-high-fiber-challenge-meal-plan": {
       "canonical": "30-day-high-fiber-challenge-meal-plan",
@@ -605,6 +605,34 @@
           "title": "",
           "origin": "legacy_orphan",
           "created_at": null
+        },
+        {
+          "id": "board-fill-eight-hours-low-eight-bowls",
+          "url_slug": "eight-hours-low-eight-bowls",
+          "title": "8 Hours on Low, One Bag of Dried Beans, 8 Bowls of Dinner",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-pork-shoulder-three-dinners-row",
+          "url_slug": "pork-shoulder-three-dinners-row",
+          "title": "Pork Shoulder Under $2 a Pound Turns Into Three Different Dinners",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-salt-beans-end-not-start",
+          "url_slug": "salt-beans-end-not-start",
+          "title": "Salt the Beans at the End or You Get Gravel",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-chili-over-baked-potatoes-stretch",
+          "url_slug": "chili-over-baked-potatoes-stretch",
+          "title": "A Gallon of Chili and Ten People? Serve It Over Baked Potatoes",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
         }
       ]
     },
@@ -638,6 +666,34 @@
           "title": "Stretch Ground Beef for 8 People on a Budget",
           "origin": "pin",
           "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "board-fill-fifty-fifty-beef-filler-ratio",
+          "url_slug": "fifty-fifty-beef-filler-ratio",
+          "title": "A 50/50 Ratio of Beef to Filler Feeds Twice the Table",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-seventy-three-twenty-seven-beef",
+          "url_slug": "seventy-three-twenty-seven-beef",
+          "title": "Don't Let the 73/27 Ground Beef Label Scare You Off",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-flat-pound-squares-twenty-minutes",
+          "url_slug": "flat-pound-squares-twenty-minutes",
+          "title": "Freeze Ground Beef in Flat One Pound Squares. They Thaw in 20 Minutes",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-rice-does-heavy-lifting-beef",
+          "url_slug": "rice-does-heavy-lifting-beef",
+          "title": "Beef and Broccoli Uses Almost No Beef. The Rice Does the Heavy Lifting",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
         }
       ]
     },
@@ -1050,6 +1106,34 @@
           "title": "Warm Potato Salad With Dijon Is the Summer Side You Need",
           "origin": "pin",
           "created_at": "2026-07-04 14:35:47"
+        },
+        {
+          "id": "board-fill-boil-smash-roast-425-salad",
+          "url_slug": "boil-smash-roast-425-salad",
+          "title": "Boil, Smash, Roast at 425F: Potato Salad With Actual Crunch",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-dress-potatoes-while-warm",
+          "url_slug": "dress-potatoes-while-warm",
+          "title": "Toss the Potatoes in Dijon Vinaigrette While They're Still Warm",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-potluck-two-hours-one-above-ninety",
+          "url_slug": "potluck-two-hours-one-above-ninety",
+          "title": "Potato Salad at a Potluck: Two Hours Out, One Hour Above 90 Degrees",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-two-twenty-calories-no-mayo",
+          "url_slug": "two-twenty-calories-no-mayo",
+          "title": "220 Calories a Serving of Potato Salad, and Not One Spoonful of Mayonnaise",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
         }
       ]
     },
@@ -1221,6 +1305,34 @@
           "url_slug": "easy-high-fiber-breakfast-ideas-for-gut-health-tips",
           "title": "",
           "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-eight-ten-grams-before-noon",
+          "url_slug": "eight-ten-grams-before-noon",
+          "title": "Aim for 8 to 10 Grams of Fiber Before Noon",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-oatmeal-four-chia-five-berries-eight",
+          "url_slug": "oatmeal-four-chia-five-berries-eight",
+          "title": "Oatmeal 4 Grams, a Spoon of Chia 5, a Cup of Raspberries 8",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-overnight-oats-ten-grams-eyes-open",
+          "url_slug": "overnight-oats-ten-grams-eyes-open",
+          "title": "Overnight Oats Can Clear 10 Grams of Fiber Before You Open Your Eyes",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-go-slow-not-twenty-grams",
+          "url_slug": "go-slow-not-twenty-grams",
+          "title": "Jumping From White Toast to 20 Grams of Fiber Is Why People Quit",
+          "origin": "board_fill_2026_07_28",
           "created_at": null
         }
       ]
@@ -1783,6 +1895,34 @@
           "title": "10 Seconds to Restock Each Morning Keeps This Working",
           "origin": "pin",
           "created_at": "2026-07-04 14:41:17"
+        },
+        {
+          "id": "board-fill-snack-bin-eye-level-visible",
+          "url_slug": "snack-bin-eye-level-visible",
+          "title": "Put the Snack Bin at Eye Level. Visibility Is Half the Battle",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-ready-to-eat-or-it-does-not-count",
+          "url_slug": "ready-to-eat-or-it-does-not-count",
+          "title": "If It Needs Washing or Peeling, It Doesn't Belong in the Snack Drawer",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-restock-three-four-days-only",
+          "url_slug": "restock-three-four-days-only",
+          "title": "Restock the Snack Drawer 3 to 4 Days at a Time",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-date-the-eggs-one-week",
+          "url_slug": "date-the-eggs-one-week",
+          "title": "Date the Hard-Boiled Eggs and Use Them Within One Week",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
         }
       ]
     },
@@ -1920,6 +2060,34 @@
           "title": "Satisfy Cravings: Salty and Crunchy Chip Alternatives",
           "origin": "pin",
           "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "board-fill-three-cups-popcorn-ninety-calories",
+          "url_slug": "three-cups-popcorn-ninety-calories",
+          "title": "Three Cups of Air-Popped Popcorn Is About 90 Calories",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-paper-thin-sweet-potato-three-hundred",
+          "url_slug": "paper-thin-sweet-potato-three-hundred",
+          "title": "Slice Sweet Potatoes Paper Thin and Bake Them at 300 Degrees",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-three-pm-brain-wants-salty",
+          "url_slug": "three-pm-brain-wants-salty",
+          "title": "At 3 PM Your Brain Wants Salty and Crunchy, Not a Lecture",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-store-veggie-chips-are-costume",
+          "url_slug": "store-veggie-chips-are-costume",
+          "title": "Most Store-Bought Veggie Chips Are Potato Starch Dyed Green",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
         }
       ]
     },
@@ -2450,6 +2618,34 @@
           "url_slug": "high-fiber-popcorn-toppings-healthy-tips",
           "title": "",
           "origin": "legacy_seo_variant",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-seven-popcorn-toppings-not-diet",
+          "url_slug": "seven-popcorn-toppings-not-diet",
+          "title": "7 Popcorn Toppings That Don't Taste Like Diet Food",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-eight-cups-one-tablespoon-seasoning",
+          "url_slug": "eight-cups-one-tablespoon-seasoning",
+          "title": "8 Cups of Popcorn, 1 to 2 Teaspoons of Oil, 1 Tablespoon of Seasoning",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-cocoa-goes-to-drywall-fast",
+          "url_slug": "cocoa-goes-to-drywall-fast",
+          "title": "Cocoa Goes From Pleasantly Dark to Drywall Dust With Impressive Speed",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-crush-sesame-or-it-sinks",
+          "url_slug": "crush-sesame-or-it-sinks",
+          "title": "Whole Sesame Seeds Race to the Bottom of the Bowl. Crush Some First",
+          "origin": "board_fill_2026_07_28",
           "created_at": null
         }
       ]
@@ -3210,6 +3406,34 @@
           "title": "Stop Ruining Baked Goods: Weigh Sourdough Discard",
           "origin": "pin",
           "created_at": "2026-04-28 15:58:10"
+        },
+        {
+          "id": "board-fill-one-cup-discard-227-grams",
+          "url_slug": "one-cup-discard-227-grams",
+          "title": "One Cup of Sourdough Discard Is About 227 Grams",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-half-cup-discard-113-grams",
+          "url_slug": "half-cup-discard-113-grams",
+          "title": "Half a Cup of Sourdough Discard Is About 113 Grams",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-tare-the-bowl-skip-the-cup",
+          "url_slug": "tare-the-bowl-skip-the-cup",
+          "title": "Put the Bowl on the Scale, Hit Tare, and Skip the Sticky Cup",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-tape-on-the-scale-conversions",
+          "url_slug": "tape-on-the-scale-conversions",
+          "title": "Sourdough Discard: 1 Cup Is 227g, Half a Cup Is 113g, a Quarter Cup Is 57g",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
         }
       ]
     },
@@ -3726,6 +3950,34 @@
           "title": "Stretch Ground Beef: 5 Smart Fillers for Family Meals",
           "origin": "pin",
           "created_at": "2026-04-28 15:58:11"
+        },
+        {
+          "id": "board-fill-use-one-pound-instead-two",
+          "url_slug": "use-one-pound-instead-two",
+          "title": "If the Recipe Calls for Two Pounds of Beef, Use One",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-cup-beans-two-thirds-rice",
+          "url_slug": "cup-beans-two-thirds-rice",
+          "title": "A Cup of Dry Beans and Two Thirds of a Cup of Rice Covers One Adult for a Day",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-quick-oats-thicken-thin-soup",
+          "url_slug": "quick-oats-thicken-thin-soup",
+          "title": "A Handful of Quick Oats Disappears Into Thin Soup and Thickens It",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-side-dish-does-heavy-lifting",
+          "url_slug": "side-dish-does-heavy-lifting",
+          "title": "The Side Dish Should Do the Heavy Lifting, Not the Meat",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
         }
       ]
     },
@@ -4444,6 +4696,34 @@
           "title": "Savory Chia Pudding: Sunday Prep Just Got Interesting",
           "origin": "pin",
           "created_at": "2026-07-04 14:55:47"
+        },
+        {
+          "id": "board-fill-three-tablespoons-chia-one-cup",
+          "url_slug": "three-tablespoons-chia-one-cup",
+          "title": "3 Tablespoons of Chia to 1 Cup of Liquid. That's the Ratio",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-stir-wait-five-stir-again",
+          "url_slug": "stir-wait-five-stir-again",
+          "title": "Stir Once, Wait 5 Minutes, Stir Again",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-chia-base-keeps-four-days",
+          "url_slug": "chia-base-keeps-four-days",
+          "title": "The Savory Chia Base Keeps About 4 Days in the Fridge",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-toppings-separate-until-you-eat",
+          "url_slug": "toppings-separate-until-you-eat",
+          "title": "Pack the Toppings Separately. Nobody Wants Pressed Avocado at 7 AM",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
         }
       ]
     },
@@ -4673,6 +4953,34 @@
           "title": "$1,018 a month. That's the government's food budget for a family of four.",
           "origin": "pin",
           "created_at": "2026-07-15T03:55:09.852794"
+        },
+        {
+          "id": "board-fill-two-thirty-five-week-household-four",
+          "url_slug": "two-thirty-five-week-household-four",
+          "title": "USDA Says a Household of Four Can Eat at Home for $235 a Week",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-eight-thirty-nine-person-per-day",
+          "url_slug": "eight-thirty-nine-person-per-day",
+          "title": "$235 a Week Works Out to $8.39 Per Person Per Day",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-usda-does-not-split-evenly",
+          "url_slug": "usda-does-not-split-evenly",
+          "title": "USDA Doesn't Split the Grocery Money Into Four Equal Envelopes",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-household-size-adjustments-usda",
+          "url_slug": "household-size-adjustments-usda",
+          "title": "Add 20 Percent for One Person, 10 for Two, 5 for Three",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
         }
       ]
     },
@@ -4869,6 +5177,303 @@
           "title": "Why Did My Grocery Bill Go Up After I Started Cooking?",
           "origin": "pin",
           "created_at": "2026-07-19T16:33:52.650493Z"
+        }
+      ]
+    },
+    "high-protein-vegetarian-breakfast-burritos-you-can-freeze": {
+      "canonical": "high-protein-vegetarian-breakfast-burritos-you-can-freeze",
+      "destinations": [
+        {
+          "id": "board-fill-six-eggs-six-burritos-freezer",
+          "url_slug": "six-eggs-six-burritos-freezer",
+          "title": "Six Eggs, Six Breakfast Burritos, Three Months in the Freezer",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-microwave-frozen-two-minutes-flip",
+          "url_slug": "microwave-frozen-two-minutes-flip",
+          "title": "Frozen Breakfast Burrito: 2 Minutes, Flip, 1 to 2 More",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-bake-before-freeze-seals-tortilla",
+          "url_slug": "bake-before-freeze-seals-tortilla",
+          "title": "Bake Breakfast Burritos 8 Minutes at 400F Before They See the Freezer",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-three-eighty-calories-no-meat",
+          "url_slug": "three-eighty-calories-no-meat",
+          "title": "380 Calories a Breakfast Burrito, No Meat Anywhere In It",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        }
+      ]
+    },
+    "savory-oatmeal-bowls-with-eggs-and-avocado": {
+      "canonical": "savory-oatmeal-bowls-with-eggs-and-avocado",
+      "destinations": [
+        {
+          "id": "board-fill-one-cup-oats-two-cups-broth",
+          "url_slug": "one-cup-oats-two-cups-broth",
+          "title": "1 Cup of Oats, 2 Cups of Broth, and Breakfast Stops Being Sweet",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-one-egg-six-grams-protein",
+          "url_slug": "one-egg-six-grams-protein",
+          "title": "One Egg Adds About 6 Grams of Protein to Savory Oatmeal",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-poach-three-four-minutes-yolk",
+          "url_slug": "poach-three-four-minutes-yolk",
+          "title": "Poach the Egg 3 to 4 Minutes and Let the Yolk Be the Sauce",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-savory-oatmeal-keeps-four-days",
+          "url_slug": "savory-oatmeal-keeps-four-days",
+          "title": "Savory Oatmeal Keeps 4 Days in the Fridge",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        }
+      ]
+    },
+    "sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes": {
+      "canonical": "sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes",
+      "destinations": [
+        {
+          "id": "board-fill-vegetables-first-eggs-last-hash",
+          "url_slug": "vegetables-first-eggs-last-hash",
+          "title": "Breakfast Hash Timing: Vegetables 25 to 30 Minutes, Eggs 8 to 12",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-single-layer-gaps-not-casserole",
+          "url_slug": "single-layer-gaps-not-casserole",
+          "title": "Single Layer, With Gaps, or the Sweet Potatoes Just Steam",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-half-sheet-pan-eighteen-thirteen",
+          "url_slug": "half-sheet-pan-eighteen-thirteen",
+          "title": "A Half Sheet Pan Is 18 by 13 Inches, and This Breakfast Hash Assumes It",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-let-oven-recover-ten-fifteen",
+          "url_slug": "let-oven-recover-ten-fifteen",
+          "title": "Your Oven Needs 10 to 15 Minutes to Recover After You Open the Door",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        }
+      ]
+    },
+    "high-fiber-avocado-toast-variations": {
+      "canonical": "high-fiber-avocado-toast-variations",
+      "destinations": [
+        {
+          "id": "board-fill-three-levers-avocado-toast-fiber",
+          "url_slug": "three-levers-avocado-toast-fiber",
+          "title": "Bread, Beans, Seeds: Three Levers That Make Avocado Toast a Real Meal",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-black-beans-lime-on-toast",
+          "url_slug": "black-beans-lime-on-toast",
+          "title": "Mashed Black Beans and Lime Turn Avocado Toast Into Actual Breakfast",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-hummus-under-avocado-no-soggy",
+          "url_slug": "hummus-under-avocado-no-soggy",
+          "title": "Spread Hummus Under the Avocado So the Toast Doesn't Go Soggy",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-five-day-toast-rotation",
+          "url_slug": "five-day-toast-rotation",
+          "title": "A 5 Day Avocado Toast Rotation So You Stop Repeating Yourself",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        }
+      ]
+    },
+    "grocery-budget-for-one-person-per-month": {
+      "canonical": "grocery-budget-for-one-person-per-month",
+      "destinations": [
+        {
+          "id": "board-fill-usda-one-adult-303-381",
+          "url_slug": "usda-one-adult-303-381",
+          "title": "USDA Puts One Adult at $303 to $381 a Month for Food at Home",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-twenty-percent-single-shopper-penalty",
+          "url_slug": "twenty-percent-single-shopper-penalty",
+          "title": "Shopping for One Costs 20 Percent More Per Person, and USDA Priced It",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-seventy-three-twenty-fifty-eight-twenty",
+          "url_slug": "seventy-three-twenty-fifty-eight-twenty",
+          "title": "$73.20 a Week for a Man, $58.20 for a Woman, Then Add 20 Percent",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-benchmark-is-food-at-home-only",
+          "url_slug": "benchmark-is-food-at-home-only",
+          "title": "That Grocery Benchmark Is Food at Home. Takeout Isn't In It",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        }
+      ]
+    },
+    "how-to-store-homemade-bread": {
+      "canonical": "how-to-store-homemade-bread",
+      "destinations": [
+        {
+          "id": "board-fill-crusty-bread-cut-side-down",
+          "url_slug": "crusty-bread-cut-side-down",
+          "title": "Crusty Homemade Bread Lives on the Counter, Cut Side Down",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-soft-loaf-three-four-days",
+          "url_slug": "soft-loaf-three-four-days",
+          "title": "Soft Homemade Bread Keeps 3 to 4 Days in Airtight Storage",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-freeze-slices-straight-to-toaster",
+          "url_slug": "freeze-slices-straight-to-toaster",
+          "title": "Freeze Homemade Bread in Slices. They Go Straight in the Toaster",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-three-hundred-oven-revives-stale",
+          "url_slug": "three-hundred-oven-revives-stale",
+          "title": "A 300F Oven for 5 to 10 Minutes Brings a Stale Loaf Back, Briefly",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        }
+      ]
+    },
+    "best-way-to-cook-chicken": {
+      "canonical": "best-way-to-cook-chicken",
+      "destinations": [
+        {
+          "id": "board-fill-four-six-minutes-side-165",
+          "url_slug": "four-six-minutes-side-165",
+          "title": "How to Cook Chicken Breast: Four to Six Minutes a Side, Pulled at 165F",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-even-cutlets-fix-dry-chicken",
+          "url_slug": "even-cutlets-fix-dry-chicken",
+          "title": "How to Cook Chicken Breast Without Drying It Out: Even Cutlets",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-twelve-inch-skillet-four-cutlets",
+          "url_slug": "twelve-inch-skillet-four-cutlets",
+          "title": "A 12-Inch Skillet Holds Four Thin Cutlets, and Not One More",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-rest-five-minutes-before-slicing",
+          "url_slug": "rest-five-minutes-before-slicing",
+          "title": "Rest the Chicken 5 Minutes or the Juice Ends Up on the Board",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        }
+      ]
+    },
+    "best-way-to-cook-pork-chops": {
+      "canonical": "best-way-to-cook-pork-chops",
+      "destinations": [
+        {
+          "id": "board-fill-pork-chops-145-rest-ten",
+          "url_slug": "pork-chops-145-rest-ten",
+          "title": "Pull Pork Chops at 145F and Rest Them 5 to 10 Minutes",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-bone-in-one-inch-chops",
+          "url_slug": "bone-in-one-inch-chops",
+          "title": "Bone-In Pork Chops About 1 Inch Thick Are the Ones That Survive a Skillet",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-butter-basting-two-three-minutes",
+          "url_slug": "butter-basting-two-three-minutes",
+          "title": "Butter Basting Pork Chops Is 2 to 3 Minutes of Spooning",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-thick-chops-finish-375-oven",
+          "url_slug": "thick-chops-finish-375-oven",
+          "title": "Pork Chops Thicker Than 1 1/4 Inches Need a 375F Oven Finish",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        }
+      ]
+    },
+    "easy-weeknight-fish-tacos-with-cabbage-slaw": {
+      "canonical": "easy-weeknight-fish-tacos-with-cabbage-slaw",
+      "destinations": [
+        {
+          "id": "board-fill-slaw-is-the-whole-point",
+          "url_slug": "slaw-is-the-whole-point",
+          "title": "The Cabbage Slaw Is the Whole Point of a Fish Taco",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-slaw-sits-fifteen-minutes",
+          "url_slug": "slaw-sits-fifteen-minutes",
+          "title": "Let the Cabbage Slaw Sit 15 Minutes. It Only Gets Better",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-twenty-minutes-no-fryer-tacos",
+          "url_slug": "twenty-minutes-no-fryer-tacos",
+          "title": "Fish Tacos With Cabbage Slaw in 20 Minutes, No Fryer",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
+        },
+        {
+          "id": "board-fill-red-cabbage-turns-everything-purple",
+          "url_slug": "red-cabbage-turns-everything-purple",
+          "title": "Red Cabbage Works Fine in a Slaw. It Also Turns Everything Purple",
+          "origin": "board_fill_2026_07_28",
+          "created_at": null
         }
       ]
     }
