@@ -1,0 +1,542 @@
+{
+  "schema_version": 1,
+  "cohort_id": "missing-heroes-2026-07-28",
+  "source_commit": "35f1c3aec0486fb066148faf74f13ce84817c948",
+  "asset_spec": {
+    "width": 1200,
+    "height": 675,
+    "format": "jpg",
+    "embedded_text": false,
+    "overlay_copy": null,
+    "shared_direction": "Editorial food illustration or art-directed still life with one clear visual joke. No charts, dashboards, orange data panels, fake receipts, package labels, or generated words.",
+    "brand_orange_usage": "Accent only, never the background or dominant field."
+  },
+  "evidence": {
+    "gsc_file": "daily-life-hacks.com-Performance-on-Search-2026-07-28.zip",
+    "gsc_window": "2026-04-29 through 2026-07-26",
+    "bing_url_file": "daily-life-hacks.com_SiteExplorerUrls_7_26_2026.csv",
+    "bing_query_file": "daily-life-hacks.com_KeywordReport_7_26_2026.csv",
+    "pinterest_file": "Pinterest Analytics overview 20260619-20260719 (1).csv",
+    "pinterest_window": "2026-06-19 through 2026-07-19",
+    "page_level_result": "All 17 article paths have zero page-level impressions and clicks in the available GSC and Bing URL exports.",
+    "pinterest_limit": "The export has board and top-pin data but no destination URL. Article-level Pinterest performance is unavailable, so board metrics are topical context only.",
+    "relevant_boards": [
+      {
+        "board": "Gut Health & Nutrition Tips",
+        "impressions": 173,
+        "engagements": 14,
+        "pin_clicks": 10,
+        "outbound_clicks": 2,
+        "saves": 2
+      },
+      {
+        "board": "High Protein Meals & Smart Swaps",
+        "impressions": 50,
+        "engagements": 2,
+        "pin_clicks": 1,
+        "outbound_clicks": 1,
+        "saves": 0
+      },
+      {
+        "board": "Grocery Math: Food Prices & Nutrition Data",
+        "impressions": 18,
+        "engagements": 2,
+        "pin_clicks": 2,
+        "outbound_clicks": 0,
+        "saves": 0
+      },
+      {
+        "board": "Budget Meals & Grocery Hacks",
+        "impressions": 16,
+        "engagements": 0,
+        "pin_clicks": 0,
+        "outbound_clicks": 0,
+        "saves": 0
+      }
+    ]
+  },
+  "generation_dependency": {
+    "approval_required": true,
+    "approval_scope": "Generate and visually review 17 new hero assets, then update article assets in a separate lane.",
+    "cost_usd": null,
+    "cost_note": "Unknown until an image provider, model, and regeneration allowance are selected. No generation call was made in this lane."
+  },
+  "articles": [
+    {
+      "priority": 1,
+      "slug": "tofu-vs-chicken-protein-cost",
+      "title": "Tofu vs Chicken: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/tofu-vs-chicken-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": { "source": "GSC", "query": "does tofu have more protein than chicken", "impressions": 1, "position": 48 },
+        "pinterest_board_context": ["High Protein Meals & Smart Swaps: 50 impressions", "Grocery Math: 18 impressions"],
+        "ranking_reason": "Only cohort topic with a direct GSC comparison query."
+      },
+      "brief": {
+        "promise": "Chicken wins protein per dollar by 1.8x, and quality adjustment widens the gap.",
+        "concept": "A playful grocery checkout race with an unbranded tofu block and chicken breast as runners; chicken crosses first while tofu remains visibly in the race.",
+        "composition": "Wide editorial illustration, checkout belt as racetrack, chicken right of center, tofu one step behind, open negative space above.",
+        "art_direction": "Warm mid-century editorial illustration, tactile paper texture, smart rather than childish.",
+        "palette": ["cream", "sage", "muted blue", "charcoal", "small orange accent"],
+        "must_include": ["extra-firm tofu block", "plain chicken breast", "grocery checkout cue", "clear chicken lead"],
+        "avoid": ["brand packaging", "nutrition labels", "charts", "generated text", "bodybuilder imagery"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Illustrated tofu block and chicken breast racing along a grocery checkout belt, with chicken slightly ahead"
+      }
+    },
+    {
+      "priority": 2,
+      "slug": "how-much-protein-in-peanut-butter",
+      "title": "How Much Protein Is in Peanut Butter?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-protein-in-peanut-butter-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": { "source": "Bing", "query": "is peanut butter a cheap protein when broke", "impressions": 1, "position": 5 },
+        "pinterest_board_context": ["High Protein Meals & Smart Swaps: 50 impressions"],
+        "ranking_reason": "Only cohort topic with a direct Bing query already at position 5."
+      },
+      "brief": {
+        "promise": "Two tablespoons provide about 7.1 grams of protein for roughly 14 cents.",
+        "concept": "Two loaded peanut-butter spoons sit in a tiny coin-operated diner booth, with a few real coins beside the plate.",
+        "composition": "Close still life, spoons as the unmistakable subject, jar softly out of focus, coins secondary, empty upper-right area.",
+        "art_direction": "Photographic editorial still life with slightly absurd miniature-set styling.",
+        "palette": ["peanut brown", "cream", "soft teal", "brushed silver", "small orange accent"],
+        "must_include": ["two tablespoons", "plain peanut butter", "small coin cue", "unbranded jar"],
+        "avoid": ["supplement tubs", "muscle imagery", "nutrition labels", "charts", "generated text"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Two spoons of peanut butter beside a few coins and an unbranded jar on a small diner-style table"
+      }
+    },
+    {
+      "priority": 3,
+      "slug": "best-high-fiber-foods-ranked-by-fiber-content",
+      "title": "The Best High Fiber Foods, Ranked by Fiber Content",
+      "category": "nutrition",
+      "image_path": "/images/best-high-fiber-foods-ranked-by-fiber-content-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["Gut Health & Nutrition Tips: 173 impressions"],
+        "ranking_reason": "Broadest fiber promise in the cohort and aligned with the strongest relevant nutrition board."
+      },
+      "brief": {
+        "promise": "Chia leads 53 measured grocery foods, followed by flaxseed, split peas, and bran flakes.",
+        "concept": "A grocery-store awards podium made from pantry shelves, with chia in first, flax in second, and split peas in third while blueberries watch from the cart.",
+        "composition": "Three-level podium centered, recognizable loose foods in simple bowls, grocery cart cropped at the side, generous breathing room.",
+        "art_direction": "Witty cut-paper editorial illustration with real food textures collaged into the scene.",
+        "palette": ["oatmeal", "deep green", "berry blue", "charcoal", "small orange ribbon"],
+        "must_include": ["chia seeds", "flaxseed", "split peas", "bran flakes", "blueberries"],
+        "avoid": ["numbered labels", "bar charts", "medals with text", "orange background", "generated packaging"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Chia seeds, flaxseed, and split peas displayed on a playful grocery shelf awards podium"
+      }
+    },
+    {
+      "priority": 4,
+      "slug": "frozen-vs-fresh-vegetables-fiber-cost",
+      "title": "Frozen vs Fresh Vegetables: Fiber Per Dollar Compared",
+      "category": "nutrition",
+      "image_path": "/images/frozen-vs-fresh-vegetables-fiber-cost-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["Gut Health & Nutrition Tips: 173 impressions", "Grocery Math: 18 impressions"],
+        "ranking_reason": "Strong fiber-board fit and an instantly legible freezer-versus-produce visual."
+      },
+      "brief": {
+        "promise": "Frozen peas deliver about 2.9x the fiber per dollar of fresh broccoli, with fresh carrots close behind.",
+        "concept": "A frosty bag of peas and a broccoli crown arm-wrestle across a kitchen counter while a bag of carrots waits like the quiet backup contender.",
+        "composition": "Peas left, broccoli right, clasped vegetable forms in the center, carrots in the background, no literal scoreboard.",
+        "art_direction": "Polished 3D editorial illustration with believable food texture and one restrained visual gag.",
+        "palette": ["pea green", "broccoli green", "frost blue", "carrot orange", "warm white"],
+        "must_include": ["frozen peas", "fresh broccoli", "bagged carrots", "freezer cue"],
+        "avoid": ["price tags", "brand bags", "charts", "human hands", "generated words"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Frozen peas and fresh broccoli in a playful arm-wrestling scene with carrots nearby"
+      }
+    },
+    {
+      "priority": 5,
+      "slug": "popcorn-vs-almonds-fiber-cost",
+      "title": "Popcorn vs Almonds: Which Snack Is Cheaper for Fiber?",
+      "category": "nutrition",
+      "image_path": "/images/popcorn-vs-almonds-fiber-cost-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["Gut Health & Nutrition Tips: 173 impressions", "Grocery Math: 18 impressions"],
+        "ranking_reason": "High relevant board reach and a strong snack-aisle contrast."
+      },
+      "brief": {
+        "promise": "Popcorn kernels deliver about 6.6x more fiber per dollar than almonds.",
+        "concept": "A movie-theater scene where popcorn spills across three seats while a tiny almond bag occupies one expensive velvet chair.",
+        "composition": "Wide cinema row, abundant popcorn on the left, small almond pouch on the right, aisle lights create depth.",
+        "art_direction": "Cinematic photographic surrealism, premium but funny.",
+        "palette": ["buttery cream", "deep burgundy", "navy", "warm brass", "small orange aisle light"],
+        "must_include": ["plain popcorn", "whole almonds", "movie theater cue", "obvious abundance contrast"],
+        "avoid": ["branded concession tubs", "calorie claims", "charts", "price text", "generated labels"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Popcorn filling several movie-theater seats beside a small bag of almonds on one chair"
+      }
+    },
+    {
+      "priority": 6,
+      "slug": "whole-wheat-flour-vs-quinoa-fiber-cost",
+      "title": "Whole Wheat Flour vs Quinoa: Which Fiber Is Cheaper?",
+      "category": "nutrition",
+      "image_path": "/images/whole-wheat-flour-vs-quinoa-fiber-cost-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["Gut Health & Nutrition Tips: 173 impressions", "Grocery Math: 18 impressions"],
+        "ranking_reason": "Strong fiber theme plus a useful cost-versus-convenience caveat that gives the hero a story."
+      },
+      "brief": {
+        "promise": "Whole wheat flour wins fiber per dollar by 7.3x, but quinoa reaches dinner with far less work.",
+        "concept": "A flour sack arrives with a rolling pin, mixing bowl, and oven mitt like a construction crew; quinoa sits ready in one steaming pot.",
+        "composition": "Split kitchen scene without a divider, flour workflow left, finished quinoa right, visual weight favoring the flour side.",
+        "art_direction": "Playful editorial still life using real props and subtle stop-motion character.",
+        "palette": ["wheat tan", "cream", "quinoa gold", "slate blue", "small orange mitt"],
+        "must_include": ["whole wheat flour", "rolling pin", "mixing bowl", "cooked quinoa pot"],
+        "avoid": ["health halos", "charts", "package text", "orange backdrop", "floating numbers"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Whole wheat flour with baking tools beside a single pot of cooked quinoa"
+      }
+    },
+    {
+      "priority": 7,
+      "slug": "ground-beef-vs-beans-protein-cost",
+      "title": "Ground Beef vs Beans: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/ground-beef-vs-beans-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["High Protein Meals & Smart Swaps: 50 impressions", "Grocery Math: 18 impressions"],
+        "ranking_reason": "Largest protein-cost contrast in the cohort and a clear smart-swap board fit."
+      },
+      "brief": {
+        "promise": "Dry pinto beans beat ground beef by 8.5x on protein per dollar and still lead after quality adjustment.",
+        "concept": "A grocery-cart tug-of-war where a small sack of pinto beans pulls a heavy tray of ground beef and a long trail of coins.",
+        "composition": "Beans left foreground, beef right, taut cart strap through center, coins establish cost without printed prices.",
+        "art_direction": "Bold editorial illustration with realistic food cutouts and exaggerated physics.",
+        "palette": ["pinto beige", "beef red", "forest green", "coin brass", "cream"],
+        "must_include": ["dry pinto beans", "plain ground beef", "grocery cart", "coin trail"],
+        "avoid": ["raw-meat gore", "brand trays", "charts", "floating numbers", "generated receipt text"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Pinto beans pulling ground beef and a trail of coins in a playful grocery-cart tug-of-war"
+      }
+    },
+    {
+      "priority": 8,
+      "slug": "chicken-thighs-vs-breast-protein-cost",
+      "title": "Chicken Thighs vs Breast: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/chicken-thighs-vs-breast-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["High Protein Meals & Smart Swaps: 50 impressions", "Grocery Math: 18 impressions"],
+        "ranking_reason": "Strong protein-board fit and a useful bone-in caveat."
+      },
+      "brief": {
+        "promise": "Bone-in drumsticks win by 2.1x, while boneless thighs barely beat breast.",
+        "concept": "Three chicken cuts wait at a grocery deli counter: drumsticks have a huge bargain basket, while boneless thigh and breast hold nearly matching small baskets.",
+        "composition": "Three-subject lineup, drumsticks visually dominant on the left, thigh and breast close together on the right.",
+        "art_direction": "Clean editorial clay illustration, food recognizable and appetizing, not raw-looking.",
+        "palette": ["warm cream", "roasted gold", "sage", "slate", "small orange basket"],
+        "must_include": ["bone-in drumsticks", "boneless thigh", "chicken breast", "different basket sizes"],
+        "avoid": ["butcher gore", "labels", "charts", "brand packaging", "generated text"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Drumsticks, boneless chicken thigh, and chicken breast lined up with different-size grocery baskets"
+      }
+    },
+    {
+      "priority": 9,
+      "slug": "lentils-vs-chicken-breast-protein-cost",
+      "title": "Lentils vs Chicken Breast: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/lentils-vs-chicken-breast-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["High Protein Meals & Smart Swaps: 50 impressions", "Grocery Math: 18 impressions"],
+        "ranking_reason": "Direct smart-swap fit with a visually clear plant-versus-meat comparison."
+      },
+      "brief": {
+        "promise": "Dry lentils deliver 3.2x more protein per dollar, and still about 2x after quality adjustment.",
+        "concept": "A kitchen seesaw where a modest scoop of lentils lifts a chicken breast plus a grocery coin purse.",
+        "composition": "Low seesaw angle, lentils on the grounded side, chicken and coin purse raised, uncluttered background.",
+        "art_direction": "Sophisticated paper-sculpture illustration with tactile grain texture.",
+        "palette": ["lentil brown", "cream", "dusty blue", "brass", "small orange pivot"],
+        "must_include": ["brown lentils", "plain chicken breast", "coin purse", "seesaw"],
+        "avoid": ["nutrition labels", "charts", "bodybuilder imagery", "brand packs", "generated words"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Brown lentils weighing down one side of a seesaw against chicken breast and a coin purse"
+      }
+    },
+    {
+      "priority": 10,
+      "slug": "eggs-vs-greek-yogurt-protein-cost",
+      "title": "Eggs vs Greek Yogurt: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/eggs-vs-greek-yogurt-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["High Protein Meals & Smart Swaps: 50 impressions"],
+        "ranking_reason": "Close comparison with a familiar breakfast visual, but no direct query signal."
+      },
+      "brief": {
+        "promise": "Eggs lead Greek yogurt by only 1.3x, making the practical choice nearly a tie.",
+        "concept": "An old-fashioned kitchen balance sits almost level with eggs on one tray and a plain bowl of Greek yogurt on the other.",
+        "composition": "Centered near-balanced scale, egg carton behind one side, yogurt spoon behind the other, morning window light.",
+        "art_direction": "Bright photographic still life with subtle miniature courtroom drama.",
+        "palette": ["egg shell", "yogurt white", "powder blue", "light wood", "small orange napkin"],
+        "must_include": ["large eggs", "plain Greek yogurt", "nearly level scale", "breakfast setting"],
+        "avoid": ["brand tubs", "protein powder", "charts", "labels", "perfect symmetry"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Eggs and a bowl of Greek yogurt sitting on an almost level kitchen balance"
+      }
+    },
+    {
+      "priority": 11,
+      "slug": "how-much-protein-in-a-can-of-beans",
+      "title": "How Much Protein Is in a Can of Beans?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-protein-in-a-can-of-beans-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["High Protein Meals & Smart Swaps: 50 impressions"],
+        "ranking_reason": "Useful single-answer protein topic, but absent from current page and query exports."
+      },
+      "brief": {
+        "promise": "One 88-cent can of black beans carries about 26.5 grams of protein and nearly a full fiber Daily Value.",
+        "concept": "An opened can behaves like a tiny bank vault, spilling black beans and a few coins onto a kitchen counter.",
+        "composition": "Can at lower left, beans flowing diagonally across frame, coins mixed sparingly, open space above.",
+        "art_direction": "Photographic surrealism with believable food and brushed-metal texture.",
+        "palette": ["black bean", "silver", "cream", "sage", "small orange can opener"],
+        "must_include": ["unbranded opened can", "black beans", "few coins", "can opener"],
+        "avoid": ["printed can label", "nutrition panel", "charts", "floating numbers", "medical imagery"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "An opened unbranded can spilling black beans and a few coins across a kitchen counter"
+      }
+    },
+    {
+      "priority": 12,
+      "slug": "how-much-protein-in-two-eggs",
+      "title": "How Much Protein Is in Two Eggs?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-protein-in-two-eggs-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["High Protein Meals & Smart Swaps: 50 impressions"],
+        "ranking_reason": "Common answer format, though current exports show no direct demand yet."
+      },
+      "brief": {
+        "promise": "Two large eggs provide about 12.6 grams of protein for roughly 37 cents.",
+        "concept": "Two eggs occupy one quarter of a four-section breakfast plate while the other three sections remain visibly empty.",
+        "composition": "Top-down plate, eggs in one quadrant, three clean quadrants, a few coins at the rim.",
+        "art_direction": "Minimal graphic food photography using real eggs and ceramic geometry.",
+        "palette": ["egg white", "yolk gold", "pale blue", "light gray", "small orange rim"],
+        "must_include": ["exactly two eggs", "four-section plate", "small coin cue"],
+        "avoid": ["printed percentages", "charts", "protein powder", "busy breakfast spread", "generated text"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Two cooked eggs filling one section of a four-part breakfast plate with coins near the rim"
+      }
+    },
+    {
+      "priority": 13,
+      "slug": "peanut-butter-vs-almonds-protein-cost",
+      "title": "Peanut Butter vs Almonds: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/peanut-butter-vs-almonds-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["High Protein Meals & Smart Swaps: 50 impressions", "Grocery Math: 18 impressions"],
+        "ranking_reason": "Clear grocery comparison, but weaker board reach and no direct query signal."
+      },
+      "brief": {
+        "promise": "Peanut butter gives 3.4x more protein per dollar even though almonds nearly match it by weight.",
+        "concept": "A peanut-butter jar and a small almond pouch wear nearly identical size tags, but the almond side drags an absurdly long coin chain.",
+        "composition": "Two subjects side by side on a pantry shelf, matching food portions above, contrasting coin burden below.",
+        "art_direction": "Clever editorial collage, refined enough for a magazine opener.",
+        "palette": ["peanut brown", "almond tan", "cream", "deep teal", "coin brass"],
+        "must_include": ["unbranded peanut butter", "whole almonds", "matching portion cue", "unequal coin cue"],
+        "avoid": ["brand labels", "charts", "price text", "protein claims", "generated packaging"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Peanut butter and almonds shown in similar portions with a much longer coin chain beside the almonds"
+      }
+    },
+    {
+      "priority": 14,
+      "slug": "how-much-rice-and-beans-per-person-per-day",
+      "title": "How Much Rice and Beans per Person, per Day",
+      "category": "nutrition",
+      "image_path": "/images/how-much-rice-and-beans-per-person-per-day-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["High Protein Meals & Smart Swaps: 50 impressions", "Budget Meals & Grocery Hacks: 16 impressions"],
+        "ranking_reason": "Practical pantry-planning visual, but no direct query or page evidence."
+      },
+      "brief": {
+        "promise": "One cup dry beans plus two-thirds cup dry brown rice costs about 64 cents per person per day.",
+        "concept": "A one-day pantry kit laid out like camping gear: one measured bean scoop, one smaller rice scoop, one pot, and a single place setting.",
+        "composition": "Overhead flat lay, measured scoops centered, pot and plate frame the edges, six coins arranged naturally.",
+        "art_direction": "Practical outdoor-catalog photography with a clean kitchen crossover.",
+        "palette": ["pinto beige", "brown rice", "olive", "steel", "small orange cloth"],
+        "must_include": ["one cup bean scoop", "two-thirds cup rice scoop", "one pot", "single place setting"],
+        "avoid": ["survival panic", "printed measurements", "charts", "brand sacks", "generated labels"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Measured scoops of dry beans and brown rice arranged with one pot and a single place setting"
+      }
+    },
+    {
+      "priority": 15,
+      "slug": "how-to-save-money-on-groceries-at-walmart",
+      "title": "How to Save Money on Groceries at Walmart",
+      "category": "tips",
+      "image_path": "/images/how-to-save-money-on-groceries-at-walmart-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["Grocery Math: 18 impressions", "Budget Meals & Grocery Hacks: 16 impressions"],
+        "ranking_reason": "Recognizable shopping intent, but the two relevant boards currently have limited reach."
+      },
+      "brief": {
+        "promise": "The biggest Walmart saving comes from choosing the right aisle and staple, not chasing coupons.",
+        "concept": "A blue big-box grocery aisle where a humble bag of beans rolls down a red carpet while pricier snack bags wait behind a velvet rope.",
+        "composition": "Low aisle perspective, beans centered, generic shelves blurred, no store logo or readable shelf tags.",
+        "art_direction": "Cinematic retail photography with a dry awards-night joke.",
+        "palette": ["retail blue", "cream", "bean beige", "red carpet", "small orange light"],
+        "must_include": ["generic blue big-box aisle", "dry bean bag", "shopping cart", "shelf context"],
+        "avoid": ["Walmart logo", "readable price tags", "brand packaging", "charts", "coupon collage"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A plain bag of dry beans on a red carpet in a generic blue big-box grocery aisle"
+      }
+    },
+    {
+      "priority": 16,
+      "slug": "grocery-budget-for-one-person-per-month",
+      "title": "Grocery Budget for One Person per Month",
+      "category": "tips",
+      "image_path": "/images/grocery-budget-for-one-person-per-month-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["Grocery Math: 18 impressions", "Budget Meals & Grocery Hacks: 16 impressions"],
+        "ranking_reason": "Broad budget topic, but no direct query signal and weak current board reach."
+      },
+      "brief": {
+        "promise": "USDA's one-adult monthly benchmark is roughly $303 to $381 and includes a 20 percent one-person surcharge.",
+        "concept": "A tiny one-seat grocery cart tries to carry four weeks of food bags while a normal family cart cruises past with more room.",
+        "composition": "Small cart foreground, four distinct weekly bags stacked carefully, larger cart soft in background, no numbers.",
+        "art_direction": "Smart editorial illustration with realistic grocery textures and understated absurdity.",
+        "palette": ["cream", "grocery green", "dusty blue", "kraft paper", "small orange wheel"],
+        "must_include": ["single-seat small cart", "four weekly grocery bags", "one-person cue"],
+        "avoid": ["cash piles", "USDA seal", "charts", "printed dollar amounts", "sad-person stereotype"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A small one-person grocery cart carrying four weekly grocery bags"
+      }
+    },
+    {
+      "priority": 17,
+      "slug": "how-to-grocery-shop-for-a-month-on-a-budget",
+      "title": "How to Grocery Shop for a Month on a Budget",
+      "category": "tips",
+      "image_path": "/images/how-to-grocery-shop-for-a-month-on-a-budget-main.jpg",
+      "local_file_exists": false,
+      "live": { "article_status": 200, "hero_status": 404, "hero_reference_occurrences": 7 },
+      "opportunity": {
+        "gsc_page": { "clicks": 0, "impressions": 0 },
+        "bing_page": { "clicks": 0, "impressions": 0 },
+        "query_signal": null,
+        "pinterest_board_context": ["Grocery Math: 18 impressions", "Budget Meals & Grocery Hacks: 16 impressions"],
+        "ranking_reason": "Useful visual concept, but no current page/query evidence and the relevant boards are still small."
+      },
+      "brief": {
+        "promise": "Eight audited shelf-stable staples cost $22.83 and cover a month of protein and fiber targets, but they aren't a complete diet.",
+        "concept": "Eight pantry staples pack themselves into one compact suitcase while a 30-day wall calendar watches from the kitchen.",
+        "composition": "Open suitcase centered with eight recognizable staples, calendar blurred and text-free behind it, fresh-food space left intentionally empty.",
+        "art_direction": "Bright editorial still life with stop-motion charm and honest pantry texture.",
+        "palette": ["kraft brown", "bean and grain neutrals", "sage", "sky blue", "small orange luggage tag"],
+        "must_include": ["exactly eight pantry staples", "one compact suitcase or crate", "month calendar cue", "empty space for the caveat"],
+        "avoid": ["complete-diet implication", "readable calendar text", "charts", "receipts", "brand packaging"],
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Eight shelf-stable pantry foods packed into a small suitcase with a monthly calendar in the background"
+      }
+    }
+  ]
+}
