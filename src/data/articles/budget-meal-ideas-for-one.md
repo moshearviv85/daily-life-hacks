@@ -29,6 +29,8 @@ I've been there. Staring at a recipe that serves four, trying to figure out how 
 
 Before you build the list, the [grocery budget calculator](/tools/grocery-budget-calculator/) gives your week a real spending ceiling instead of the classic "I'll just be careful" plan, and [what one person actually spends on groceries in a month](/grocery-budget-for-one-person-per-month/) is the number to sanity-check it against.
 
+If one person is actually a dorm room with a hot plate, use the [college-student version of this plan](/cheap-healthy-meals-for-college-students/). If you're feeding two, the [cheap meals for two guide](/cheap-healthy-meals-for-two/) handles the awkward half-packages and the nightly debate over who gets the last serving.
+
 ## What are the cheapest meals to cook for one person?
 
 The ones built from ingredients that show up in three different dinners. Eggs, a bag of rice, dry beans, frozen vegetables and one sturdy vegetable like cabbage will carry a solo week, because each of them turns into a frittata, a fried rice, a soup or a bowl without you buying anything extra.

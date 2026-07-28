@@ -48,7 +48,7 @@ Source: USDA FoodData Central. Brands vary, so the bag in your pantry gets the f
 
 Against the FDA's 28-gram Daily Value, a cooked cup of oatmeal provides about 14 percent before you add anything. A cup of regular grits may provide around 4 to 7 percent. Stone-ground grits can land between the two, but the label matters because milling and serving sizes aren't identical across brands.
 
-The phrase *one cup cooked* needs a little attention. A loose cup of oatmeal and a thick cup don't contain exactly the same amount of dry grain. Grits can be served almost pourable or firm enough to hold a spoon upright. Water changes the volume, not the amount of fiber that went into the pot.
+The phrase *one cup cooked* needs a little attention. A loose cup of oatmeal and a thick cup don't contain exactly the same amount of dry grain. Grits can be served almost pourable or firm enough to hold a spoon upright. Water changes the volume, not the amount of fiber that went into the pot. If breakfast starts with the dry container, [how much oatmeal counts as a serving](/how-much-oatmeal-is-a-serving/) gives you both the gram weight and the cooked yield before the measuring cup starts freelancing.
 
 For a cleaner comparison at home, check the dry serving on both packages. If your oats list 4 grams of fiber per 40-gram serving and your grits list 1 gram per 40-gram serving, the oats have four times as much before cooking. That package-level comparison is more reliable than arguing over whose breakfast bowl is deeper.
 
