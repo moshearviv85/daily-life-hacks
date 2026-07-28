@@ -24,10 +24,68 @@ import { CabbageV4 } from './compositions/CabbageV4';
 import { CabbageV5 } from './compositions/CabbageV5';
 import { FiberDollarV1 } from './compositions/FiberDollarV1';
 import { ProteinDollarV1 } from './compositions/ProteinDollarV1';
+import { BookReel } from './compositions/BookReel';
+
+const bookReelDefaults = {
+  bgImage: 'lastlight/book1_art.png',
+  bookLine: 'The Heir of Villa Valenti',
+  ctaLine: 'Book One · Out now on Kindle Unlimited',
+};
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        id="BookReel01"
+        component={BookReel}
+        durationInFrames={210}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          ...bookReelDefaults,
+          hook: 'He inherited the villa. She kept the keys.',
+          excerpt: [
+            '"The master suite is locked. I have the key. The door has been locked since the morning I found him."',
+            '"You may have the deed in eleven days. You will not have that key tonight."',
+          ],
+          highlight: 'You will not have that key tonight.',
+        }}
+      />
+      <Composition
+        id="BookReel02"
+        component={BookReel}
+        durationInFrames={210}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          ...bookReelDefaults,
+          hook: 'He was done with spreadsheets tonight.',
+          excerpt: [
+            'He kissed her. Or she kissed him.',
+            'That was the part his mind kept circling — not that he had kissed her, but that she had kissed him back.',
+          ],
+          highlight: 'she had kissed him back',
+        }}
+      />
+      <Composition
+        id="BookReel03"
+        component={BookReel}
+        durationInFrames={210}
+        fps={30}
+        width={1080}
+        height={1920}
+        defaultProps={{
+          ...bookReelDefaults,
+          hook: 'Some rooms stay locked for a reason.',
+          excerpt: [
+            'The grand piano sat under a cotton sheet she had washed herself, three times, because Enzo had not let her pay anyone to come into this room in his last year.',
+            'She lifted the corner of the sheet and let it fall. Dust came off it in a slow drift through a column of late sun.',
+          ],
+          highlight: 'she had washed herself, three times',
+        }}
+      />
       <Composition
         id="DlhShort01"
         component={DlhShort01}
