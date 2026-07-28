@@ -1,0 +1,467 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import DataProvenance from "../../../components/DataProvenance.astro";
+import { parseCsv, num, usd, round, breadcrumb, webAppSchema, toolPageSchema, SOURCE_LINE } from "../_lib/data";
+
+const PATH = "/tools/dried-beans-to-canned-converter/";
+
+/**
+ * The conversion is derived, not folklore.
+ *
+ * Every competitor cites a ratio ("1/2 cup dry = 1 can") with no source. We
+ * can do better: protein survives soaking, cooking and canning, so it works as
+ * a tracer. Grams of dry bean needed to match one can =
+ *   (can weight x canned protein per 100 g) / (dry protein per 100 g)
+ * Both nutrition figures and both prices come from the audited CSVs, so when
+ * the price study is re-run these numbers move on their own.
+ *
+ * Fiber gives a second, slightly higher estimate because USDA measures fiber
+ * in canned and dry legumes by different methods. We show both rather than
+ * pretending to a precision we don't have.
+ */
+const proteinRows = parseCsv("/data/protein-per-dollar-2026.csv");
+const fiberRows = parseCsv("/data/fiber-per-dollar-2026.csv");
+
+const fiberBy = new Map(fiberRows.map((r) => [r.food, r]));
+
+type Bean = {
+  food: string;
+  short: string;
+  pkg: string;
+  pkgPrice: number;
+  weightG: number;
+  proteinPer100: number;
+  fiberPer100: number;
+  pricePer100g: number;
+};
+
+function toBean(r: Record<string, string>): Bean {
+  const f = fiberBy.get(r.food);
+  return {
+    food: r.food,
+    short: r.food.replace(/^Canned /, "").replace(/ \(dry\)$/, ""),
+    pkg: r.package,
+    pkgPrice: num(r.package_price_usd),
+    weightG: num(r.package_weight_g),
+    proteinPer100: num(r.protein_g_per_100g),
+    fiberPer100: f ? num(f.fiber_g_per_100g) : 0,
+    pricePer100g: num(r.price_per_100g_usd),
+  };
+}
+
+const cannedBeans = proteinRows
+  .filter((r) => r.category === "Canned beans")
+  .map(toBean);
+
+const dryBeans = proteinRows
+  .filter((r) => r.category === "Dried beans & lentils")
+  .map(toBean);
+
+/** Grams of dry bean that carry the same protein as one whole can. */
+const dryGramsPerCan = (can: Bean, dry: Bean) =>
+  (can.weightG * can.proteinPer100) / 100 / (dry.proteinPer100 / 100);
+
+const fiberGramsPerCan = (can: Bean, dry: Bean) =>
+  dry.fiberPer100 > 0
+    ? (can.weightG * can.fiberPer100) / 100 / (dry.fiberPer100 / 100)
+    : 0;
+
+function convert(can: Bean, dry: Bean, cans: number) {
+  const grams = dryGramsPerCan(can, dry) * cans;
+  const dryCost = (grams / 100) * dry.pricePer100g;
+  const canCost = can.pkgPrice * cans;
+  return {
+    grams,
+    dryCost,
+    canCost,
+    saving: canCost - dryCost,
+    savingPct: canCost > 0 ? ((canCost - dryCost) / canCost) * 100 : 0,
+    cups: grams / 200, // dry beans run ~200 g per US cup across these varieties
+    fiberGrams: fiberGramsPerCan(can, dry) * cans,
+    proteinTotal: (can.weightG * can.proteinPer100) / 100 * cans,
+  };
+}
+
+// Server-rendered default so the page answers the question with zero JS.
+const defCan = cannedBeans.find((b) => b.food === "Canned black beans") ?? cannedBeans[0];
+const defDry = dryBeans.find((b) => b.food === "Black beans (dry)") ?? dryBeans[0];
+const def = convert(defCan, defDry, 1);
+
+// Full matrix: every canned bean against its cheapest sensible dry counterpart.
+const matrix = cannedBeans.map((can) => ({
+  can,
+  rows: dryBeans.map((dry) => ({ dry, ...convert(can, dry, 1) })),
+}));
+
+const title = "How Many Dried Beans Equal a Can? Converter + Cost";
+const description =
+  "Convert dried beans to canned and back. See exactly how many grams or cups of dry beans replace a 15.5 oz can, and what each one costs at real July 2026 US prices.";
+
+const schemas = [
+  toolPageSchema({ path: PATH, name: title, description }),
+  webAppSchema({
+    path: PATH,
+    name: "Dried Beans to Canned Beans Converter",
+    description,
+    featureList: [
+      "Convert cans of beans to grams and cups of dried beans",
+      "Compare the cost of dried beans against canned at real US grocery prices",
+      "Covers black beans, kidney beans and chickpeas against 7 dry legumes",
+      "Shareable result links",
+    ],
+  }),
+  breadcrumb(PATH, "Dried Beans to Canned Converter"),
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-4xl mx-auto px-4 py-12 md:py-16">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      How Many Dried Beans Equal a Can?
+    </h1>
+
+    <p class="text-lg mb-8" style="color: var(--text-color);">
+      Your recipe says two cans of black beans. You've got a four pound bag in the pantry
+      and no idea how much to scoop. This converter answers that, and then tells you the
+      part nobody mentions: what each version actually costs. Every price below is from our
+      July 2026 grocery study, not a guess.
+    </p>
+
+    <!--
+      Default result is rendered on the server. JS upgrades it; JS is not
+      required to read it. Crawlers, screen readers and people on a train all
+      get the same numbers.
+    -->
+    <section
+      id="bean-tool"
+      class="rounded-xl p-5 md:p-6 mb-8"
+      style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+    >
+      <h2 class="text-2xl font-bold mb-4" style="color: var(--heading-color);">
+        Swap the cans for the bag
+      </h2>
+
+      <form id="bean-form" class="grid sm:grid-cols-3 gap-3 mb-5">
+        <label class="flex flex-col gap-1">
+          <span class="text-sm font-semibold" style="color: var(--heading-color);">How many cans?</span>
+          <input
+            type="number" id="bean-cans" name="cans" value="1" min="0.5" max="50" step="0.5"
+            class="bean-input" />
+        </label>
+        <label class="flex flex-col gap-1">
+          <span class="text-sm font-semibold" style="color: var(--heading-color);">Cans of</span>
+          <select id="bean-canned" name="canned" class="bean-input">
+            {cannedBeans.map((b) => (
+              <option value={b.food} selected={b.food === defCan.food}>{b.short}</option>
+            ))}
+          </select>
+        </label>
+        <label class="flex flex-col gap-1">
+          <span class="text-sm font-semibold" style="color: var(--heading-color);">Replaced with dry</span>
+          <select id="bean-dry" name="dry" class="bean-input">
+            {dryBeans.map((b) => (
+              <option value={b.food} selected={b.food === defDry.food}>{b.short}</option>
+            ))}
+          </select>
+        </label>
+      </form>
+
+      <div id="bean-result" class="rounded-xl p-5" style="background: var(--page-bg); border: 1px solid var(--border-color);">
+        <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color:#F29B30;">The answer</p>
+        <p class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+          <span id="bean-cans-out">1</span> can of <span id="bean-canned-out">{defCan.short}</span>
+          = <span id="bean-grams-out">{round(def.grams, 0)}</span> g of dry
+          <span id="bean-dry-out">{defDry.short.toLowerCase()}</span>
+        </p>
+        <p class="mb-4" style="color: var(--text-color);">
+          That's about <strong><span id="bean-cups-out">{round(def.cups, 2)}</span> US cups</strong> measured dry,
+          and it carries the same <span id="bean-protein-out">{round(def.proteinTotal, 0)}</span> g of protein the can does.
+        </p>
+        <dl class="grid sm:grid-cols-3 gap-3 text-sm">
+          <div class="bean-stat">
+            <dt>Canned cost</dt>
+            <dd id="bean-cancost-out">{usd(def.canCost)}</dd>
+          </div>
+          <div class="bean-stat">
+            <dt>Dry cost</dt>
+            <dd id="bean-drycost-out">{usd(def.dryCost)}</dd>
+          </div>
+          <div class="bean-stat" style="border-color:#F29B30;">
+            <dt>You keep</dt>
+            <dd id="bean-saving-out">{usd(def.saving)} ({round(def.savingPct, 0)}%)</dd>
+          </div>
+        </dl>
+        <p class="mt-4 text-sm" style="color: var(--muted-color);">
+          <a id="bean-share" href={PATH} class="underline font-semibold" style="color:#F29B30;">Link to this result</a>
+          &mdash; the numbers travel in the URL.
+        </p>
+      </div>
+
+      <p class="mt-4 text-sm" style="color: var(--muted-color);">
+        Cups are figured at 200 g of dry beans per US cup, which holds across these varieties.
+        Weigh them if you want to be exact, because bean size moves the volume around more than you'd think.
+      </p>
+    </section>
+
+    <!-- Static matrix. Outside the interactive block, always in the HTML. -->
+    <section id="conversion-table" class="mt-14">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        Every can, every bean, already worked out
+      </h2>
+      <p class="mb-2" style="color: var(--text-color);">
+        One 15.5 oz can replaced by each dry legume we've priced. Grams are what you measure
+        out dry before soaking. The cost columns are what that quantity costs you at the
+        register, which is where dried beans stop being a lifestyle choice and start being
+        a rounding error on the grocery bill.
+      </p>
+      <p class="text-sm mb-8" style="color: var(--muted-color);">
+        {SOURCE_LINE} Method described on the
+        <a href="/methodology/" class="underline" style="color:#F29B30;">methodology page</a>.
+        Free to reuse with credit and a link.
+      </p>
+
+      {matrix.map((m) => (
+        <div class="mb-12">
+          <h3 class="text-xl font-bold mb-3" style="color: var(--heading-color);">
+            1 can of {m.can.short} ({m.can.pkg}, {usd(m.can.pkgPrice)}) becomes
+          </h3>
+          <div class="overflow-x-auto rounded-xl" style="border: 1px solid var(--border-color);">
+            <table class="w-full text-sm" style="min-width: 620px; border-collapse: collapse;">
+              <caption class="sr-only">
+                Dry legume quantity and cost equivalent to one {m.can.pkg} of {m.can.short},
+                matched on protein content, at July 2026 US grocery prices.
+              </caption>
+              <thead>
+                <tr style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);">
+                  <th scope="col" class="bean-th">Dry legume</th>
+                  <th scope="col" class="bean-th bean-num">Grams dry</th>
+                  <th scope="col" class="bean-th bean-num">Cups dry</th>
+                  <th scope="col" class="bean-th bean-num">Dry cost</th>
+                  <th scope="col" class="bean-th bean-num">Canned cost</th>
+                  <th scope="col" class="bean-th bean-num">Saved</th>
+                </tr>
+              </thead>
+              <tbody>
+                {m.rows.map((r) => (
+                  <tr style="border-bottom: 1px solid var(--border-color);">
+                    <th scope="row" class="bean-td" style="font-weight:600;text-align:left;">{r.dry.short}</th>
+                    <td class="bean-td bean-num" style="font-weight:700;">{round(r.grams, 0)} g</td>
+                    <td class="bean-td bean-num">{round(r.cups, 2)}</td>
+                    <td class="bean-td bean-num">{usd(r.dryCost)}</td>
+                    <td class="bean-td bean-num">{usd(r.canCost)}</td>
+                    <td class="bean-td bean-num" style="font-weight:700;color:#F29B30;">
+                      {usd(r.saving)} ({round(r.savingPct, 0)}%)
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        What these numbers actually mean
+      </h2>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">Why we match on protein instead of guessing a ratio</h3>
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Most bean conversion charts hand you a number with no explanation. Half a cup dry
+        equals a can, roughly, probably. We went a different way. Protein doesn't disappear
+        when you soak, boil or can a bean, so it works as a tracer. One {defCan.pkg} of
+        {" "}{defCan.short.toLowerCase()} carries {round(def.proteinTotal, 0)} g of protein.
+        Dry {defDry.short.toLowerCase()} run {defDry.proteinPer100} g of protein per 100 g.
+        Divide one by the other and you get {round(def.grams, 0)} g of dry beans, which is
+        the number in the box above. No folklore involved.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">The honest wobble in that number</h3>
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Run the same math on fiber instead of protein and you'd get
+        {" "}{round(fiberGramsPerCan(defCan, defDry), 0)} g rather than {round(def.grams, 0)} g.
+        That gap isn't a mistake, it's USDA measuring fiber in canned and dry legumes with
+        different methods. So treat the answer as a solid working figure, not a lab result.
+        For cooking it makes no difference. A pot of chili has never once cared about
+        fifteen grams of dry bean.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">Where the prices come from</h3>
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Both sides are priced from the same audited study: {defCan.pkg} of
+        {" "}{defCan.short.toLowerCase()} at {usd(defCan.pkgPrice)}, and dry
+        {" "}{defDry.short.toLowerCase()} at {usd(defDry.pkgPrice)} for the {defDry.pkg}.
+        Prices are US national grocery observations from July 2026, nutrition is USDA
+        FoodData Central, and the whole method is written up on the
+        {" "}<a href="/methodology/" class="underline" style="color:#F29B30;">methodology page</a>.
+        When we re-run the price study this page changes by itself, because it reads the
+        same CSV you can download below.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">So should you just buy dry?</h3>
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        On price it isn't close, and the table says so. What the table can't price is the
+        soak and the ninety minutes of simmering, and some nights that's the whole ballgame.
+        A reasonable middle: cook a big pot of dry beans when you're home anyway, freeze
+        them in can-sized portions, and keep a few actual cans for the nights when dinner
+        needs to happen in twenty minutes. You can also see how beans stack up against
+        everything else in the
+        {" "}<a href="/tools/fiber-per-dollar-calculator/" class="underline" style="color:#F29B30;">fiber and protein per dollar calculator</a>.
+      </p>
+    </section>
+
+    <DataProvenance
+      datasets={["protein-per-dollar-2026", "fiber-per-dollar-2026"]}
+      heading="The price snapshot behind this converter"
+    />
+  </main>
+  <Footer />
+
+  <style>
+    .bean-input {
+      width: 100%;
+      border-radius: 0.75rem;
+      padding: 0.55rem 0.75rem;
+      font-size: 0.95rem;
+      background: var(--page-bg);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+    }
+    .bean-input:focus-visible {
+      outline: 3px solid #f29b30;
+      outline-offset: 2px;
+    }
+    .bean-stat {
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.75rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+    }
+    .bean-stat dt {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted-color);
+      margin-bottom: 0.2rem;
+    }
+    .bean-stat dd {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--heading-color);
+    }
+    .bean-th {
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .bean-th.bean-num,
+    .bean-td.bean-num {
+      text-align: right;
+      white-space: nowrap;
+    }
+    .bean-td {
+      padding: 0.5rem 0.75rem;
+      vertical-align: top;
+    }
+    #bean-share:focus-visible,
+    .bean-input:focus-visible {
+      outline: 3px solid #f29b30;
+      outline-offset: 2px;
+    }
+    caption.sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+  </style>
+
+  <script is:inline define:vars={{ CANNED: cannedBeans, DRY: dryBeans, PATH }}>
+    (function () {
+      "use strict";
+      var cansEl = document.getElementById("bean-cans");
+      var cannedEl = document.getElementById("bean-canned");
+      var dryEl = document.getElementById("bean-dry");
+      if (!cansEl || !cannedEl || !dryEl) return;
+
+      var out = {
+        cans: document.getElementById("bean-cans-out"),
+        canned: document.getElementById("bean-canned-out"),
+        dry: document.getElementById("bean-dry-out"),
+        grams: document.getElementById("bean-grams-out"),
+        cups: document.getElementById("bean-cups-out"),
+        protein: document.getElementById("bean-protein-out"),
+        cancost: document.getElementById("bean-cancost-out"),
+        drycost: document.getElementById("bean-drycost-out"),
+        saving: document.getElementById("bean-saving-out"),
+        share: document.getElementById("bean-share"),
+      };
+
+      function find(list, food) {
+        for (var i = 0; i < list.length; i++) if (list[i].food === food) return list[i];
+        return list[0];
+      }
+      function usd(n) {
+        return "$" + n.toFixed(2);
+      }
+      function round(n, p) {
+        var f = Math.pow(10, p);
+        return Math.round(n * f) / f;
+      }
+
+      function render() {
+        var cans = parseFloat(cansEl.value);
+        if (!isFinite(cans) || cans <= 0) cans = 1;
+        var can = find(CANNED, cannedEl.value);
+        var dry = find(DRY, dryEl.value);
+
+        var proteinTotal = ((can.weightG * can.proteinPer100) / 100) * cans;
+        var grams = proteinTotal / (dry.proteinPer100 / 100);
+        var dryCost = (grams / 100) * dry.pricePer100g;
+        var canCost = can.pkgPrice * cans;
+        var saving = canCost - dryCost;
+        var pct = canCost > 0 ? (saving / canCost) * 100 : 0;
+
+        out.cans.textContent = String(cans);
+        out.canned.textContent = can.short;
+        out.dry.textContent = dry.short.toLowerCase();
+        out.grams.textContent = String(round(grams, 0));
+        out.cups.textContent = String(round(grams / 200, 2));
+        out.protein.textContent = String(round(proteinTotal, 0));
+        out.cancost.textContent = usd(canCost);
+        out.drycost.textContent = usd(dryCost);
+        out.saving.textContent = usd(saving) + " (" + round(pct, 0) + "%)";
+
+        // Encode the result so a link reopens exactly this answer.
+        var qs = new URLSearchParams({ cans: String(cans), canned: can.food, dry: dry.food });
+        var url = PATH + "?" + qs.toString();
+        out.share.setAttribute("href", url);
+        history.replaceState(null, "", url);
+      }
+
+      // Restore a shared result.
+      var params = new URLSearchParams(location.search);
+      if (params.get("cans")) cansEl.value = params.get("cans");
+      if (params.get("canned")) cannedEl.value = params.get("canned");
+      if (params.get("dry")) dryEl.value = params.get("dry");
+
+      ["input", "change"].forEach(function (evt) {
+        cansEl.addEventListener(evt, render);
+        cannedEl.addEventListener(evt, render);
+        dryEl.addEventListener(evt, render);
+      });
+      document.getElementById("bean-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+      });
+      render();
+    })();
+  </script>
+</BaseLayout>

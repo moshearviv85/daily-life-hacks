@@ -34,22 +34,31 @@ const itemListSchema = {
 const collectionPageSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
+    "@id": `${categoryUrl}#webpage`,
     name: "Nutrition Tips and Science-Backed Advice",
     url: categoryUrl,
     description,
-    isPartOf: {
-        "@type": "WebSite",
-        name: "Daily Life Hacks",
-        url: "https://www.daily-life-hacks.com/",
-    },
+    inLanguage: "en-US",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+    breadcrumb: { "@id": `${categoryUrl}#breadcrumb` },
     mainEntity: { "@id": `${categoryUrl}#item-list` },
+};
+const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${categoryUrl}#breadcrumb`,
+    itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+        { "@type": "ListItem", position: 2, name: "Nutrition", item: categoryUrl },
+    ],
 };
 ---
 
 <BaseLayout
     title={title}
     description={description}
-    jsonLd={[collectionPageSchema, itemListSchema]}
+    jsonLd={[collectionPageSchema, itemListSchema, breadcrumbSchema]}
 >
     <Header />
     <div class="max-w-6xl mx-auto px-4 py-12">
@@ -66,6 +75,11 @@ const collectionPageSchema = {
                 {description}
             </p>
         </header>
+
+        <!-- ArticleCard renders an h3. Without this h2 the outline jumps h1 -> h3. -->
+        <h2 class="text-2xl font-bold mb-6 text-[var(--heading-color)]">
+            All nutrition articles ({articles.length})
+        </h2>
 
         <div
             id="articles-grid"

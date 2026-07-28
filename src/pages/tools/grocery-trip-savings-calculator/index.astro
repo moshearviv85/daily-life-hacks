@@ -18,6 +18,9 @@ const schemas = [
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "@id": "https://www.daily-life-hacks.com/tools/grocery-trip-savings-calculator/#webapp",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    inLanguage: "en-US",
     name: "Grocery Trip Savings Calculator",
     url: "https://www.daily-life-hacks.com/tools/grocery-trip-savings-calculator/",
     description,
@@ -26,7 +29,7 @@ const schemas = [
     browserRequirements: "Requires JavaScript",
     isAccessibleForFree: true,
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    publisher: { "@type": "Organization", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
   },
   {
     "@context": "https://schema.org",
@@ -34,9 +37,19 @@ const schemas = [
     mainEntity: faq.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })),
   },
 ];
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.daily-life-hacks.com/tools/grocery-trip-savings-calculator/#breadcrumb",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+    { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.daily-life-hacks.com/tools/" },
+    { "@type": "ListItem", position: 3, name: "Grocery Trip Savings Calculator", item: "https://www.daily-life-hacks.com/tools/grocery-trip-savings-calculator/" },
+  ],
+};
 ---
 
-<BaseLayout title={title} description={description} jsonLd={schemas}>
+<BaseLayout title={title} description={description} jsonLd={[...schemas, breadcrumbSchema]}>
   <Header />
   <main class="max-w-5xl mx-auto px-4 py-10 md:py-16">
     <nav class="text-sm mb-5" aria-label="Breadcrumb">

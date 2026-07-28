@@ -11,40 +11,21 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { isReleased, getReleaseTimestamp } from '../content/release';
 
-const organizationSchema = {
+/**
+ * Organization + WebSite are emitted sitewide by BaseLayout, so they are NOT
+ * repeated here. The home page only adds the node that is specific to it.
+ */
+const homePageSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': 'https://www.daily-life-hacks.com/#organization',
-  name: 'Daily Life Hacks',
-  url: 'https://www.daily-life-hacks.com',
-  description: 'Audited grocery cost research, practical recipes, and interactive food tools built from USDA data and real shelf prices.',
-  logo: 'https://www.daily-life-hacks.com/logo.png',
-  sameAs: [
-    'https://www.pinterest.com/DavidMiller615/'
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'Customer Support',
-    url: 'https://www.daily-life-hacks.com/contact/'
-  }
-};
-
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': 'https://www.daily-life-hacks.com/#website',
-  name: 'Daily Life Hacks',
-  url: 'https://www.daily-life-hacks.com',
-  description: 'Grocery cost studies, practical recipes, and interactive food tools with public data and documented methodology.',
-  publisher: {
-    '@type': 'Organization',
-    '@id': 'https://www.daily-life-hacks.com/#organization',
-    name: 'Daily Life Hacks',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://www.daily-life-hacks.com/logo.png',
-    },
-  },
+  '@type': 'WebPage',
+  '@id': 'https://www.daily-life-hacks.com/#webpage',
+  url: 'https://www.daily-life-hacks.com/',
+  name: 'Daily Life Hacks | Grocery Cost Studies, Recipes and Food Tools',
+  description: 'Audited grocery cost studies, practical recipes, and interactive food tools built from real prices and USDA nutrition data.',
+  inLanguage: 'en-US',
+  isPartOf: { '@id': 'https://www.daily-life-hacks.com/#website' },
+  about: { '@id': 'https://www.daily-life-hacks.com/#organization' },
+  publisher: { '@id': 'https://www.daily-life-hacks.com/#organization' },
 };
 
 const allArticles = await getCollection('articles');
@@ -116,7 +97,7 @@ const badgeColor = (cat: string) => '#F29B30';
 <BaseLayout
   title="Daily Life Hacks | Grocery Cost Studies, Recipes and Food Tools"
   description="Audited grocery cost studies, practical recipes, and interactive food tools built from real prices and USDA nutrition data."
-  jsonLd={[organizationSchema, websiteSchema]}
+  jsonLd={[homePageSchema]}
 >
   <Header />
   <main class="pb-8">

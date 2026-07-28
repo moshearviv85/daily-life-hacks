@@ -1,0 +1,362 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import DataProvenance from "../components/DataProvenance.astro";
+import { parseCsv, num, usd, round, breadcrumb, SITE, SOURCE_LINE } from "./tools/_lib/data";
+
+const PATH = "/cheapest-protein-per-gram/";
+
+/**
+ * A ranked answer page, not a calculator.
+ *
+ * The demand is phrased "cheapest protein per gram" and "cheapest protein per
+ * pound", so both units are answered here on one page rather than split across
+ * two near-identical pages. The whole table is server-rendered: the point of
+ * this page is to be the one sourced, citable ranking in a search results page
+ * full of invented price tables, and a number that only exists after
+ * JavaScript runs cannot be cited.
+ *
+ * Every figure below is derived from protein-per-dollar-2026.csv. There is no
+ * calorie column anywhere in our datasets, so this page does not claim a
+ * per-calorie ranking.
+ */
+const rows = parseCsv("/data/protein-per-dollar-2026.csv");
+
+const G_PER_LB = 453.592;
+
+const foods = rows
+  .map((r) => {
+    const perDollar = num(r.protein_g_per_dollar);
+    return {
+      food: r.food,
+      category: r.category,
+      proteinPer100: num(r.protein_g_per_100g),
+      pricePer100g: num(r.price_per_100g_usd),
+      edibleFraction: num(r.edible_fraction),
+      perDollar,
+      /** Cents per gram of protein. */
+      centsPerGram: perDollar > 0 ? 100 / perDollar : 0,
+      /** Dollars per pound of pure protein. */
+      perLbProtein: perDollar > 0 ? G_PER_LB / perDollar : 0,
+      pkg: r.package,
+      pkgPrice: num(r.package_price_usd),
+      basis: r.price_basis,
+    };
+  })
+  .sort((a, b) => a.centsPerGram - b.centsPerGram);
+
+const cheapest = foods[0];
+const dearest = foods[foods.length - 1];
+const spread = dearest.centsPerGram / cheapest.centsPerGram;
+
+/** Cheapest row within each category, for the summary table. */
+const byCategory = Array.from(
+  foods.reduce((m, f) => {
+    if (!m.has(f.category)) m.set(f.category, f);
+    return m;
+  }, new Map<string, (typeof foods)[number]>())
+).map(([category, f]) => ({ category, ...f }));
+
+const under2c = foods.filter((f) => f.centsPerGram < 2).length;
+const boneIn = foods.filter((f) => f.edibleFraction < 1);
+
+const title = "Cheapest Protein Per Gram: 49 Foods Ranked (July 2026 Prices)";
+const description =
+  "The cheapest protein per gram and per pound, ranked across 49 foods at real July 2026 US grocery prices. USDA nutrition, audited prices, free CSV download.";
+
+const datasetSchema = {
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": `${SITE}${PATH}#dataset`,
+  name: "Cheapest protein per gram, 49 US grocery foods",
+  description,
+  url: `${SITE}${PATH}`,
+  inLanguage: "en-US",
+  license: `${SITE}/methodology/#data-license`,
+  isAccessibleForFree: true,
+  creator: { "@id": `${SITE}/#organization` },
+  publisher: { "@id": `${SITE}/#organization` },
+  temporalCoverage: "2026-07",
+  spatialCoverage: "United States",
+  variableMeasured: [
+    { "@type": "PropertyValue", name: "Cost per gram of protein", unitText: "USD cents per gram" },
+    { "@type": "PropertyValue", name: "Cost per pound of protein", unitText: "USD per pound" },
+    { "@type": "PropertyValue", name: "Protein grams per dollar", unitText: "grams per USD" },
+    { "@type": "PropertyValue", name: "Protein per 100 g", unitText: "grams" },
+  ],
+  distribution: [
+    {
+      "@type": "DataDownload",
+      encodingFormat: "text/csv",
+      contentUrl: `${SITE}/data/protein-per-dollar-2026.csv`,
+    },
+  ],
+};
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE}${PATH}#webpage`,
+  name: title,
+  url: `${SITE}${PATH}`,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${SITE}/#website` },
+  publisher: { "@id": `${SITE}/#organization` },
+  breadcrumb: { "@id": `${SITE}${PATH}#breadcrumb` },
+  mainEntity: { "@id": `${SITE}${PATH}#dataset` },
+  datePublished: "2026-07-28",
+};
+
+const schemas = [pageSchema, datasetSchema, breadcrumb(PATH, "Cheapest Protein Per Gram")];
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      Cheapest Protein Per Gram, Ranked
+    </h1>
+
+    <p class="text-lg mb-4" style="color: var(--text-color);">
+      {cheapest.food} costs {round(cheapest.centsPerGram, 2)} cents per gram of protein.
+      {dearest.food} costs {round(dearest.centsPerGram, 2)}. Same nutrient, same store, a
+      {round(spread, 0)}-fold difference in what you pay for it. Below is the full ranking of
+      {foods.length} foods, in cents per gram and dollars per pound of protein, priced in July 2026.
+    </p>
+
+    <p class="text-sm mb-8 p-4 rounded-xl" style="color: var(--muted-color); background: var(--card-bg); border:1px solid var(--border-color);">
+      {SOURCE_LINE} Prices observed July 2026. Read the
+      <a href="/methodology/" class="underline" style="color:#F29B30;">methodology</a>
+      or download the
+      <a href="/data/protein-per-dollar-2026.csv" class="underline" style="color:#F29B30;">raw CSV</a>.
+      Free to reuse with credit and a link.
+    </p>
+
+    <!-- Headline numbers, server-rendered. -->
+    <dl class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="cp-stat">
+        <dt>Cheapest per gram</dt>
+        <dd>{round(cheapest.centsPerGram, 2)}&cent;</dd>
+        <p>{cheapest.food}, {usd(cheapest.perLbProtein)} per lb of protein</p>
+      </div>
+      <div class="cp-stat">
+        <dt>Priciest per gram</dt>
+        <dd>{round(dearest.centsPerGram, 2)}&cent;</dd>
+        <p>{dearest.food}, {usd(dearest.perLbProtein)} per lb of protein</p>
+      </div>
+      <div class="cp-stat">
+        <dt>Under 2&cent; per gram</dt>
+        <dd>{under2c} of {foods.length}</dd>
+        <p>foods in the study clear that bar</p>
+      </div>
+    </dl>
+
+    <section id="ranking">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        All {foods.length} foods, cheapest protein first
+      </h2>
+      <p class="mb-6" style="color: var(--text-color);">
+        Cost per gram is the price of 100 g as purchased divided by the grams of protein in it,
+        after subtracting bone, shell and rind. Cost per pound is the same figure scaled to a
+        full pound of pure protein, which is the unit people tend to think in when they're
+        comparing a chicken pack to a bag of lentils.
+      </p>
+
+      <div class="overflow-x-auto rounded-xl" style="border: 1px solid var(--border-color);">
+        <table id="cp-table" class="w-full text-sm" style="min-width: 760px; border-collapse: collapse;">
+          <caption class="sr-only">
+            {foods.length} US grocery foods ranked by cost per gram of protein, July 2026 prices,
+            cheapest first. Includes cost per pound of protein, protein grams per dollar and
+            protein per 100 g.
+          </caption>
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);">
+              <th scope="col" class="cp-th">#</th>
+              <th scope="col" class="cp-th">Food</th>
+              <th scope="col" class="cp-th">Category</th>
+              <th scope="col" class="cp-th cp-num">Cents per gram</th>
+              <th scope="col" class="cp-th cp-num">$ per lb of protein</th>
+              <th scope="col" class="cp-th cp-num">Protein g per $1</th>
+              <th scope="col" class="cp-th cp-num">Protein per 100 g</th>
+              <th scope="col" class="cp-th">Priced as</th>
+            </tr>
+          </thead>
+          <tbody>
+            {foods.map((f, i) => (
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <td class="cp-td">{i + 1}</td>
+                <th scope="row" class="cp-td" style="font-weight:600;text-align:left;">{f.food}</th>
+                <td class="cp-td">{f.category}</td>
+                <td class="cp-td cp-num" style="font-weight:700;color:#F29B30;">{round(f.centsPerGram, 2)}&cent;</td>
+                <td class="cp-td cp-num" style="font-weight:700;">{usd(f.perLbProtein)}</td>
+                <td class="cp-td cp-num">{f.perDollar}</td>
+                <td class="cp-td cp-num">{f.proteinPer100} g</td>
+                <td class="cp-td">{f.pkg} &mdash; {usd(f.pkgPrice)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="by-category" class="mt-14">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        The cheapest protein in each category
+      </h2>
+      <p class="mb-6" style="color: var(--text-color);">
+        If you're not about to build a diet out of dried pinto beans, this is the more useful
+        cut: the best value in each aisle you were going to shop anyway.
+      </p>
+      <div class="overflow-x-auto rounded-xl" style="border: 1px solid var(--border-color);">
+        <table class="w-full text-sm" style="min-width: 620px; border-collapse: collapse;">
+          <caption class="sr-only">Cheapest protein source per gram within each food category, July 2026 US prices.</caption>
+          <thead>
+            <tr style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);">
+              <th scope="col" class="cp-th">Category</th>
+              <th scope="col" class="cp-th">Best value</th>
+              <th scope="col" class="cp-th cp-num">Cents per gram</th>
+              <th scope="col" class="cp-th cp-num">$ per lb of protein</th>
+            </tr>
+          </thead>
+          <tbody>
+            {byCategory.map((c) => (
+              <tr style="border-bottom: 1px solid var(--border-color);">
+                <th scope="row" class="cp-td" style="font-weight:600;text-align:left;">{c.category}</th>
+                <td class="cp-td">{c.food}</td>
+                <td class="cp-td cp-num" style="font-weight:700;color:#F29B30;">{round(c.centsPerGram, 2)}&cent;</td>
+                <td class="cp-td cp-num">{usd(c.perLbProtein)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        How to read this ranking
+      </h2>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">Cost per gram, and why bone matters</h3>
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Take the package price, divide by the grams inside, and you get a price per 100 g. Divide
+        that by the protein in 100 g and you get the cost of one gram of protein. The step most
+        rankings skip is the edible fraction. You pay for the bone in a drumstick and then put it
+        in the bin, so pricing bone-in meat by package weight makes it look better than it is.
+        {" "}{boneIn.length} of the {foods.length} foods here carry a refuse adjustment from USDA
+        data before the division happens, which is why some cuts sit lower than you'll see elsewhere.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">Per gram or per pound</h3>
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        They're the same number wearing different clothes. A pound of pure protein is 453.6 grams,
+        so {cheapest.food} at {round(cheapest.centsPerGram, 2)} cents a gram works out to
+        {" "}{usd(cheapest.perLbProtein)} for a pound of actual protein. Nobody sells a pound of
+        pure protein, which is exactly why the unit is useful for comparing across a shelf of
+        packages that all weigh different things.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">What this page deliberately does not tell you</h3>
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        There's no per-calorie column here, and that's not an oversight. Our price study measures
+        protein, fiber and cost; it doesn't carry an energy value for these foods, and we're not
+        going to paste in calorie figures from somewhere else and present them as part of an
+        audited dataset. If you want protein per calorie, get it from a nutrition database that
+        actually measured it.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">Cheap protein still has to get eaten</h3>
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The top of this table is dried legumes and flour, and that is a genuinely accurate answer
+        to the question "what is the cheapest protein per gram". It is not automatically an answer
+        to "what should I buy". Protein quality varies, plant sources are individually short on one
+        amino acid or another, and food nobody in the house will eat costs infinity per gram. The
+        {" "}<a href="/protein-per-dollar-adjusted-for-quality/" class="underline" style="color:#F29B30;">quality-adjusted ranking</a>
+        {" "}applies DIAAS scores to the same rows, and the
+        {" "}<a href="/protein-per-dollar-cheapest-protein-sources/" class="underline" style="color:#F29B30;">full study</a>
+        {" "}explains how everything was priced.
+      </p>
+
+      <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">Use the numbers</h3>
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The CSV behind this page is free to download and reuse with credit. If you'd rather poke at
+        the data interactively, the
+        {" "}<a href="/tools/fiber-per-dollar-calculator/" class="underline" style="color:#F29B30;">fiber and protein per dollar calculator</a>
+        {" "}sorts and compares the same rows, and the
+        {" "}<a href="/tools/dried-beans-to-canned-converter/" class="underline" style="color:#F29B30;">dried beans to canned converter</a>
+        {" "}handles the one conversion this table makes you want to do.
+      </p>
+    </section>
+
+    <DataProvenance
+      datasets={["protein-per-dollar-2026"]}
+      heading="The price snapshot behind this ranking"
+    />
+  </main>
+  <Footer />
+
+  <style>
+    .cp-stat { padding:1rem 1.1rem; border-radius:.9rem; background:var(--card-bg); border:1px solid var(--border-color); }
+    .cp-stat dt { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted-color); margin-bottom:.25rem; }
+    .cp-stat dd { font-size:1.9rem; font-weight:800; color:#F29B30; line-height:1.1; }
+    .cp-stat p { font-size:.82rem; color:var(--muted-color); margin-top:.3rem; }
+    .cp-th { padding:.6rem .75rem; text-align:left; font-weight:600; white-space:nowrap; }
+    .cp-th.cp-num, .cp-td.cp-num { text-align:right; white-space:nowrap; }
+    .cp-td { padding:.5rem .75rem; vertical-align:top; }
+    .cp-th[data-sort] { cursor:pointer; }
+    .cp-th[data-sort]:hover, .cp-th[data-sort]:focus-visible { color:#F29B30; }
+    .cp-th[data-sort]:focus-visible { outline:3px solid #f29b30; outline-offset:2px; }
+    caption.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  </style>
+
+  <!--
+    Sorting is a bonus, not a requirement. The table above is already complete,
+    ranked and readable with JavaScript switched off; this only re-orders rows
+    that are already in the HTML.
+  -->
+  <script is:inline>
+    (function () {
+      "use strict";
+      var table = document.getElementById("cp-table");
+      if (!table) return;
+      var heads = table.querySelectorAll("thead th");
+      var body = table.tBodies[0];
+      var dir = 1, active = -1;
+
+      function cellValue(row, i) {
+        var t = row.cells[i].textContent.replace(/[^0-9.\-]/g, "");
+        var n = parseFloat(t);
+        return isNaN(n) ? row.cells[i].textContent.trim().toLowerCase() : n;
+      }
+
+      Array.prototype.forEach.call(heads, function (th, i) {
+        if (i === 0 || i === heads.length - 1) return;
+        th.setAttribute("data-sort", "");
+        th.setAttribute("tabindex", "0");
+        th.setAttribute("role", "button");
+        th.setAttribute("aria-label", "Sort by " + th.textContent.trim());
+        function sort() {
+          dir = active === i ? -dir : 1;
+          active = i;
+          var rows = Array.prototype.slice.call(body.rows);
+          rows.sort(function (a, b) {
+            var x = cellValue(a, i), y = cellValue(b, i);
+            return x < y ? -dir : x > y ? dir : 0;
+          });
+          rows.forEach(function (r, n) {
+            r.cells[0].textContent = String(n + 1);
+            body.appendChild(r);
+          });
+          Array.prototype.forEach.call(heads, function (h) { h.removeAttribute("aria-sort"); });
+          th.setAttribute("aria-sort", dir === 1 ? "ascending" : "descending");
+        }
+        th.addEventListener("click", sort);
+        th.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); sort(); }
+        });
+      });
+    })();
+  </script>
+</BaseLayout>

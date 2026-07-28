@@ -6,41 +6,49 @@ import Footer from "../components/Footer.astro";
 const title = "About | Daily Life Hacks";
 const description = "Who's behind Daily Life Hacks. No drama, no miracle stories. Just practical food and a guy who's done with 14-step recipes.";
 
+/**
+ * Organization + WebSite come from BaseLayout's sitewide graph, so this page
+ * only defines what is unique to it: the ProfilePage wrapper, the Person node
+ * that every article's `author` points at by @id, and the founder edge back
+ * onto the shared Organization node.
+ *
+ * ProfilePage (not AboutPage) is the type Google currently documents for a page
+ * whose main entity is one person. Both are valid; ProfilePage is the one in
+ * the current rich-results gallery.
+ */
 const aboutSchema = [
   {
     '@context': 'https://schema.org',
-    '@type': 'AboutPage',
+    '@type': ['AboutPage', 'ProfilePage'],
+    '@id': 'https://www.daily-life-hacks.com/about/#webpage',
     name: 'About Daily Life Hacks',
     url: 'https://www.daily-life-hacks.com/about/',
     description,
+    inLanguage: 'en-US',
     mainEntity: {
       '@id': 'https://www.daily-life-hacks.com/about/#david-miller',
     },
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'Daily Life Hacks',
-      url: 'https://www.daily-life-hacks.com',
-    },
+    breadcrumb: { '@id': 'https://www.daily-life-hacks.com/about/#breadcrumb' },
+    isPartOf: { '@id': 'https://www.daily-life-hacks.com/#website' },
+    publisher: { '@id': 'https://www.daily-life-hacks.com/#organization' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    '@id': 'https://www.daily-life-hacks.com/about/#breadcrumb',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.daily-life-hacks.com/' },
+      { '@type': 'ListItem', position: 2, name: 'About', item: 'https://www.daily-life-hacks.com/about/' },
+    ],
   },
   {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': 'https://www.daily-life-hacks.com/#organization',
     name: 'Daily Life Hacks',
-    url: 'https://www.daily-life-hacks.com',
-    logo: 'https://www.daily-life-hacks.com/logo.png',
-    description: 'Audited grocery cost research, practical recipes, and interactive food tools built from public data and real shelf prices.',
-    sameAs: [
-      'https://www.pinterest.com/DavidMiller615/',
-    ],
-    founder: {
-      '@type': 'Person',
-      '@id': 'https://www.daily-life-hacks.com/about/#david-miller',
-      name: 'David Miller',
-      url: 'https://www.daily-life-hacks.com/about/',
-      jobTitle: 'Founder',
-      knowsAbout: ['Grocery Cost Research', 'USDA Food Data', 'Budget Cooking', 'Meal Prep'],
-    },
+    url: 'https://www.daily-life-hacks.com/',
+    /** The one edge this page adds to the sitewide Organization node. */
+    founder: { '@id': 'https://www.daily-life-hacks.com/about/#david-miller' },
   },
   {
     '@context': 'https://schema.org',
@@ -48,13 +56,9 @@ const aboutSchema = [
     '@id': 'https://www.daily-life-hacks.com/about/#david-miller',
     name: 'David Miller',
     url: 'https://www.daily-life-hacks.com/about/',
+    mainEntityOfPage: { '@id': 'https://www.daily-life-hacks.com/about/#webpage' },
     jobTitle: 'Founder',
-    worksFor: {
-      '@type': 'Organization',
-      '@id': 'https://www.daily-life-hacks.com/#organization',
-      name: 'Daily Life Hacks',
-      url: 'https://www.daily-life-hacks.com',
-    },
+    worksFor: { '@id': 'https://www.daily-life-hacks.com/#organization' },
     knowsAbout: ['Grocery Cost Research', 'USDA Food Data', 'Budget Cooking', 'Meal Prep'],
     description: 'Founder and editor of Daily Life Hacks. Publishes grocery cost studies, practical recipes, and food tools with public source data. He is not a chef, registered dietitian, or medical professional.',
   },

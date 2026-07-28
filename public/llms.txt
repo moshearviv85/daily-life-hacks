@@ -45,8 +45,8 @@ When citing figures or reusing the datasets, please attribute as "Daily Life Hac
 - Tips: https://www.daily-life-hacks.com/tips/
 - Tools: https://www.daily-life-hacks.com/tools/
 - Methodology: https://www.daily-life-hacks.com/methodology/
-- About: https://www.daily-life-hacks.com/about
-- Contact: https://www.daily-life-hacks.com/contact
+- About: https://www.daily-life-hacks.com/about/
+- Contact: https://www.daily-life-hacks.com/contact/
 - Sitemap: https://www.daily-life-hacks.com/sitemap-index.xml
 
 ## Content Guidelines

@@ -11,6 +11,9 @@ const schemas = [
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "@id": "https://www.daily-life-hacks.com/tools/recipe-cost-calculator/#webapp",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    inLanguage: "en-US",
     name: "Recipe Cost Calculator",
     url: "https://www.daily-life-hacks.com/tools/recipe-cost-calculator/",
     description,
@@ -19,11 +22,7 @@ const schemas = [
     browserRequirements: "Requires JavaScript",
     isAccessibleForFree: true,
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    publisher: {
-      "@type": "Organization",
-      name: "Daily Life Hacks",
-      url: "https://www.daily-life-hacks.com",
-    },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
   },
   {
     "@context": "https://schema.org",
@@ -41,9 +40,19 @@ const schemas = [
     })),
   },
 ];
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.daily-life-hacks.com/tools/recipe-cost-calculator/#breadcrumb",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+    { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.daily-life-hacks.com/tools/" },
+    { "@type": "ListItem", position: 3, name: "Recipe Cost Calculator", item: "https://www.daily-life-hacks.com/tools/recipe-cost-calculator/" },
+  ],
+};
 ---
 
-<BaseLayout title={title} description={description} jsonLd={schemas}>
+<BaseLayout title={title} description={description} jsonLd={[...schemas, breadcrumbSchema]}>
   <Header />
   <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
     <nav class="text-sm mb-5" aria-label="Breadcrumb">
@@ -73,7 +82,7 @@ const schemas = [
       <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
         <table class="w-full text-sm" style="min-width:940px;border-collapse:collapse;">
           <thead><tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);">
-            <th class="cell text-left">Ingredient</th><th class="cell text-left">Amount used</th><th class="cell text-left">Used unit</th><th class="cell text-left">Package size</th><th class="cell text-left">Package unit</th><th class="cell text-left">Package price</th><th class="cell text-right">Recipe cost</th><th class="cell"><span class="sr-only">Remove</span></th>
+            <th scope="col" class="cell text-left">Ingredient</th><th scope="col" class="cell text-left">Amount used</th><th scope="col" class="cell text-left">Used unit</th><th scope="col" class="cell text-left">Package size</th><th scope="col" class="cell text-left">Package unit</th><th scope="col" class="cell text-left">Package price</th><th scope="col" class="cell text-right">Recipe cost</th><th scope="col" class="cell"><span class="sr-only">Remove</span></th>
           </tr></thead>
           <tbody id="rc-rows"></tbody>
         </table>

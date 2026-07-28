@@ -14,12 +14,17 @@ const tools = [
   { href: "/recipes/", eyebrow: "Built into 80 recipes", visual: "4 → 7", title: "Scale the Recipe Before Dinner Gets Weird", text: "Change the number of people and the ingredient amounts move with you. No dividing 1/3 cup while someone asks when dinner is ready.", tier: "featured" },
   { href: "/tools/grocery-unit-price-calculator/", eyebrow: "79 foods from two studies", visual: "Good?", title: "Check Whether That Sale Tag Is Mostly Theater", text: "Enter the shelf price and package size, then compare it with our July 2026 snapshot. The yellow sticker doesn't get the final word.", tier: "featured" },
   { href: "/tools/grocery-trip-savings-calculator/", eyebrow: "Gas + fees + optional time", visual: "Worth it?", title: "See Whether the Cheaper Store Is Actually Cheaper", text: "Subtract the extra drive, parking, transit, and time from the basket savings. A distant sale doesn't get free transportation.", tier: "featured" },
+  { href: "/tools/dried-beans-to-canned-converter/", eyebrow: "Protein-matched conversion", visual: "1 can", title: "How Many Dried Beans Equal a Can?", text: "Your recipe wants two cans. Your pantry has a four pound bag. Get the grams, the cups, and the part nobody mentions: what each version costs.", tier: "featured" },
   { href: "/tools/recipe-cost-calculator/", eyebrow: "Advanced manual utility", visual: "$ / serving", title: "Find Out What Dinner Actually Cost", text: "Price every ingredient by the amount that reached the pot. It's the detailed option, for days when 'pretty cheap' isn't a number.", tier: "basic" },
 ];
 
 const schemas = [
-  { "@context": "https://schema.org", "@type": "CollectionPage", name: title, url: "https://www.daily-life-hacks.com/tools/", description, isPartOf: { "@type": "WebSite", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" }, publisher: { "@type": "Organization", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" } },
-  { "@context": "https://schema.org", "@type": "ItemList", name: "Daily Life Hacks grocery tools", itemListElement: tools.map((tool, index) => ({ "@type": "ListItem", position: index + 1, name: tool.title, url: `https://www.daily-life-hacks.com${tool.href}` })) },
+  { "@context": "https://schema.org", "@type": "CollectionPage", "@id": "https://www.daily-life-hacks.com/tools/#webpage", name: title, url: "https://www.daily-life-hacks.com/tools/", description, inLanguage: "en-US", isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" }, publisher: { "@id": "https://www.daily-life-hacks.com/#organization" }, breadcrumb: { "@id": "https://www.daily-life-hacks.com/tools/#breadcrumb" }, mainEntity: { "@id": "https://www.daily-life-hacks.com/tools/#item-list" } },
+  { "@context": "https://schema.org", "@type": "ItemList", "@id": "https://www.daily-life-hacks.com/tools/#item-list", name: "Daily Life Hacks grocery tools", numberOfItems: tools.length, itemListElement: tools.map((tool, index) => ({ "@type": "ListItem", position: index + 1, name: tool.title, url: `https://www.daily-life-hacks.com${tool.href}` })) },
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "@id": "https://www.daily-life-hacks.com/tools/#breadcrumb", itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+    { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.daily-life-hacks.com/tools/" },
+  ] },
 ];
 ---
 

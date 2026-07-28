@@ -1,0 +1,660 @@
+"""Visual brief generator — one persona, one call per article.
+
+Replaces the writer's responsibility for `imageAlt` and centralizes ALL
+visual outputs for a single article into one deterministic step.
+
+Per article, returns:
+  - hero  : { prompt, alt }
+  - pins  : 4 x { angle, title, prompt, alt }
+
+Stored as JSONL at pipeline-data/visual-briefs.jsonl (append-only).
+Designed for stable resume: skip-if-slug-already-present unless --force.
+
+Persona = food / lifestyle photographer for Pinterest. The persona has full
+creative freedom on surface, light, angle, framing — no scene library is
+injected. Hard rules:
+  - No "dish" / "food" / "subject" / "plate" forced into prompts (legacy
+    failure mode for non-recipe articles).
+  - Prompts must vary across the 5 outputs of THIS article (hero + 4 pins).
+  - Avoid wooden surfaces unless the article topic genuinely calls for one
+    (e.g. a sourdough loaf, a cutting-board moment).
+  - Alt text is for blind users + Google: factual, concise, 100-130 chars.
+  - Pin titles are scroll-stopping, max 60 chars, never include em-dashes
+    or emojis.
+
+CLI examples:
+  python scripts/generate_visual_brief.py --slugs easy-sourdough-discard-pizza-dough-no-yeast,how-to-keep-sandwiches-from-getting-soggy
+  python scripts/generate_visual_brief.py --sample 5
+  python scripts/generate_visual_brief.py --all
+  python scripts/generate_visual_brief.py --slugs ... --force
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import re
+import sqlite3
+import sys
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+SCRIPTS_DIR = REPO_ROOT / "scripts"
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+from stage_1_5 import openrouter as _or  # noqa: E402
+
+DEFAULT_DB = REPO_ROOT / "pipeline-data" / "topic-research.sqlite"
+OUTPUT_PATH = REPO_ROOT / "pipeline-data" / "visual-briefs.jsonl"
+ENV_PATH = REPO_ROOT / ".env"
+
+DEFAULT_MODEL = "google/gemini-2.5-flash"
+DEFAULT_TEMPERATURE = 0.85
+DEFAULT_MAX_TOKENS = 2000
+DEFAULT_TIMEOUT = 90
+
+
+SYSTEM_PROMPT = """You are TWO experts collaborating on every job:
+  1. A senior food and lifestyle photographer who shoots for Pinterest.
+  2. A Pinterest direct-response copywriter who has spent years studying
+     which pin titles stop the scroll and which get skipped.
+
+A pin = a photograph WITH OVERLAY TEXT. The title is rendered as actual
+typography on top of the photograph by the image model. The photograph is
+your photography deliverable. The title is your copywriting deliverable.
+The hero image is photography only, no overlay text.
+
+# YOUR JOB FOR EACH ARTICLE
+Produce 1 hero image brief + 4 pin briefs.
+Every brief has:
+  - prompt : description of the image to generate (you, the director,
+             briefing a junior shooter). 30 to 80 words.
+  - alt    : factual sentence describing what is literally in the frame,
+             for a blind reader and Google's image scanner. 100 to 130
+             characters. No marketing language, no opinions.
+Pin briefs additionally have:
+  - angle  : one of how-to, curiosity, listicle, contrast (one of each, no repeats)
+  - title  : the overlay text rendered ON the pin. 50 to 60 chars typical,
+             65 hard ceiling. Scroll-stopping and specific.
+
+# COPYWRITING CRAFT FOR PIN TITLES
+- Specific over generic. Use concrete nouns, named foods, named
+  situations, named contexts, named numbers. Avoid abstract category
+  language.
+- The first three words must hook. Pinterest readers scan left-to-right
+  and decide in under half a second. Start with a verb, a number, a
+  command, or a surprising noun. Never start with "How", "The Best",
+  "Easy", or other generic openers.
+- One core promise per title. Not two.
+- Title strategy per angle (one each, never blend):
+  * how-to    : a verb-first method promise. Reader learns a specific
+                action they can take.
+  * curiosity : a gap, secret, or contrarian claim. Reader needs to
+                click to close the gap.
+  * listicle  : a number leading the title plus a concrete payoff.
+                The number must be specific to this article's content.
+  * contrast  : a before/after, mistake/fix, or wrong/right framing.
+                Verb-first command is welcome but vary the verb.
+- Across THIS article's 4 titles, vary the opening word and the rhythm
+  so no two titles have the same shape.
+- Draw vocabulary from THIS article's content. Do not lean on generic
+  food-blog phrases.
+
+# IMAGE STRATEGY (THE PART THAT GOES WRONG MOST)
+- The visual subject of the image follows the article. A recipe shows the
+  finished plate or a cooking moment. A nutrition piece may show ingredients
+  side by side, a comparison, an open fridge, hands holding the food. A tip
+  or technique may show the action, the tool, or the before/after.
+- Across the 5 prompts you produce for this one article, VARY the surface,
+  the lighting, the angle, the composition. Do not default to wooden table /
+  wooden cutting board / glass jar in every brief.
+- Surfaces to draw from (not exhaustive — choose what fits): light marble,
+  dark slate, painted concrete, brushed steel, terracotta tile, linen cloth,
+  enamel tray, parchment paper, ceramic platter, painted wood (only if it
+  truly fits), open kitchen counter. Never default to one.
+- Lighting to draw from: morning window light, soft overcast, late-afternoon
+  warm, dramatic single source, even softbox.
+- Angles to draw from: 45-degree natural eye line, top-down flat lay,
+  extreme close-up, wide environmental, hands-in-frame mid-action.
+- The image must feel like a photograph a real human took on a real day, not
+  a stock render. Slight imperfection (a crumb, a wrinkled napkin, a smudge,
+  uneven garnish) is good. Magazine-cover-perfect is wrong.
+- Do NOT use the words "dish" / "food" / "subject" / "the meal" inside the
+  prompt — they confuse generators on non-recipe articles. Name the actual
+  thing instead (the loaf, the sandwich, the pour, the tray, the sauce, the
+  jar of dressing, the cutting board, etc.).
+
+# PIN IMAGE PROMPT MUST INSTRUCT THE GENERATOR TO RENDER THE TITLE
+This is critical. A pin without overlay text is not a pin.
+Inside each pin's `prompt` field:
+  1. First describe the photograph (as you would for a hero image).
+  2. Then add an explicit text-overlay instruction at the END.
+  3. The exact title string in that instruction must match the `title`
+     field of the same pin character-for-character.
+
+# TYPOGRAPHY VARIETY (this is non-negotiable)
+A scrolling Pinterest reader sees thousands of pins. If every pin in the
+feed uses the same font, color, and band layout, the brand reads as
+generic AI content. Vary the typography style across the 4 pins of THIS
+article. Each pin picks one style from the menu below, and no two pins
+in the same article use the same style.
+
+Typography style menu (pick one per pin, never repeat within an article):
+  A. BOLD-SANS-BAND : bold sans-serif white text inside a translucent
+     dark band across the [top OR bottom] of the image. Clean, modern,
+     reliable.
+  B. EDITORIAL-SERIF : large bold display serif headline, white with a
+     soft drop shadow, placed over the photo (no band). One word may be
+     italicized for emphasis. Magazine-cover energy.
+  C. HAND-LETTERED : warm hand-lettered or marker-style script in cream
+     or off-white, placed across a soft empty area of the image, with
+     small clean sans-serif sub-text underneath the headline. Cozy,
+     blog-friendly.
+  D. STICKER-BADGE : the title sits inside a colored circular or
+     rounded-rectangle sticker/badge in one corner, in clean bold
+     sans-serif. Use a brand-warm color (tomato, mustard, sage, terracotta,
+     slate-blue). Conversational call-out energy.
+  E. ACCENT-WORD-POP : large bold sans-serif text spanning most of the
+     frame, mostly white or cream, with ONE key word painted in an
+     accent color (mustard, tomato, deep teal). High contrast, no band.
+  F. VINTAGE-COOKBOOK : tall condensed serif in deep cream on a soft
+     cream or kraft-paper ribbon banner. Slightly retro, slightly
+     handwritten feel. Low contrast band, high contrast type.
+
+Format of the overlay instruction at the end of each pin's prompt:
+  Render the text "<exact title>" using the [STYLE NAME] treatment:
+  <one-sentence concrete description of what that looks like in this
+  specific photo>. The text must be prominent and legible from a small
+  Pinterest thumbnail.
+
+Example (style C on a sandwich photo):
+  Render the text "Pack Tuna So It Stays Crisp Till Lunch" using the
+  HAND-LETTERED treatment: warm cream marker-script across the upper-left
+  empty space above the sandwich, with a thin sans-serif word "lunchbox
+  fix" underneath. The text must be prominent and legible from a small
+  Pinterest thumbnail.
+
+The HERO prompt has NO overlay text. Hero is the photograph alone.
+
+# HARD RULES (no exceptions)
+- No em-dashes anywhere (use commas / periods / parentheses).
+- No emojis anywhere.
+- No medical claims, no supplements, no detox or cleanse language in titles.
+- No "dish/food/subject/the meal" placeholder words inside the image prompt.
+  Name the actual thing (the loaf, the sandwich, the pour, the tray, etc.).
+- Prompt is description, not instructions. Do not write "create an image
+  of..." or "render a photo of..." for the photo description part. Just
+  describe the scene. (The overlay-text instruction at the end IS allowed
+  to use "render" because it is directing the typography step.)
+
+# OUTPUT FORMAT
+Return ONLY a JSON object, no preamble, no commentary, no code fence.
+The object must match this exact shape:
+
+{
+  "hero": {
+    "prompt": "string, 30 to 80 words, vivid factual scene description",
+    "alt": "string, 100 to 130 chars, factual"
+  },
+  "pins": [
+    {"angle": "how-to",    "title": "string, max 65 chars", "prompt": "string with overlay instruction at end", "alt": "string"},
+    {"angle": "curiosity", "title": "string, max 65 chars", "prompt": "string with overlay instruction at end", "alt": "string"},
+    {"angle": "listicle",  "title": "string, max 65 chars", "prompt": "string with overlay instruction at end", "alt": "string"},
+    {"angle": "contrast",  "title": "string, max 65 chars", "prompt": "string with overlay instruction at end", "alt": "string"}
+  ]
+}
+"""
+
+
+USER_TEMPLATE = """Article slug: {slug}
+Article category: {category}
+Article title: {title}
+Article excerpt: {excerpt}
+
+Article opening (first paragraphs as written):
+\"\"\"
+{body_digest}
+\"\"\"
+
+Produce the visual brief JSON now.
+Reminder: vary surface and lighting across the 5 prompts. Do not default to
+wood. The angle types in the pins array must be in the order:
+how-to, curiosity, listicle, contrast.
+"""
+
+
+# ---------- IO helpers ----------
+
+def now_utc_iso() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def load_env_file(path: Path) -> None:
+    if not path.exists():
+        return
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, val = line.split("=", 1)
+        os.environ.setdefault(key.strip(), val.strip().strip("'").strip('"'))
+
+
+def connect_db(db_path: Path) -> sqlite3.Connection:
+    conn = sqlite3.connect(str(db_path), timeout=30.0)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+# ---------- article ingestion ----------
+
+FRONTMATTER_RE = re.compile(r"^---\s*\n(.*?)\n---\s*\n(.*)$", re.DOTALL)
+
+
+def parse_frontmatter(markdown: str) -> tuple[dict, str]:
+    """Return (front, body). front is a dict from a tolerant key:value parse,
+    body is the markdown after the closing ---. Best-effort, never raises."""
+    m = FRONTMATTER_RE.match(markdown.lstrip("﻿"))
+    if not m:
+        return {}, markdown
+    raw, body = m.group(1), m.group(2)
+    front: dict[str, str] = {}
+    for line in raw.splitlines():
+        if ":" not in line:
+            continue
+        k, _, v = line.partition(":")
+        k = k.strip()
+        v = v.strip().strip('"').strip("'")
+        if k and v and not k.startswith("-") and not line.startswith(" "):
+            front[k] = v
+    return front, body
+
+
+def first_paragraphs(body: str, max_words: int = 180) -> str:
+    """Return the first N words of the body (skipping headings)."""
+    text_lines = []
+    for line in body.splitlines():
+        s = line.strip()
+        if not s:
+            text_lines.append("")
+            continue
+        if s.startswith("#"):
+            continue
+        if s.startswith("```"):
+            continue
+        text_lines.append(s)
+    text = " ".join([t for t in text_lines if t]).strip()
+    words = text.split()
+    if len(words) <= max_words:
+        return text
+    return " ".join(words[:max_words]) + " ..."
+
+
+def fetch_articles(conn: sqlite3.Connection, slugs: list[str] | None) -> list[dict]:
+    """Return [{slug, category, topic, markdown}] from latest write_outputs row per slug."""
+    if slugs:
+        placeholders = ",".join("?" for _ in slugs)
+        rows = conn.execute(
+            f"SELECT slug, category, topic, markdown FROM write_outputs "
+            f"WHERE status='written' AND disqualified=0 AND slug IN ({placeholders}) "
+            f"GROUP BY slug ORDER BY MAX(id) DESC",
+            tuple(slugs),
+        ).fetchall()
+    else:
+        rows = conn.execute(
+            "SELECT slug, category, topic, markdown FROM write_outputs "
+            "WHERE status='written' AND disqualified=0 "
+            "GROUP BY slug ORDER BY MAX(id)"
+        ).fetchall()
+    return [dict(r) for r in rows]
+
+
+# ---------- output store ----------
+
+def load_existing_slugs(path: Path) -> set[str]:
+    if not path.exists():
+        return set()
+    out: set[str] = set()
+    for line in path.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        s = obj.get("slug")
+        if s:
+            out.add(s)
+    return out
+
+
+def append_brief(path: Path, record: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+# ---------- model call + parse ----------
+
+JSON_OBJECT_RE = re.compile(r"\{.*\}", re.DOTALL)
+
+
+def extract_json_object(text: str) -> dict:
+    """Tolerant JSON object extraction. Strips code fences, finds first {...}."""
+    cleaned = text.strip()
+    if cleaned.startswith("```"):
+        cleaned = re.sub(r"^```(?:json)?\s*", "", cleaned)
+        cleaned = re.sub(r"\s*```$", "", cleaned)
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError:
+        pass
+    m = JSON_OBJECT_RE.search(cleaned)
+    if not m:
+        raise ValueError(f"no JSON object found in response: {text[:300]!r}")
+    return json.loads(m.group(0))
+
+
+REQUIRED_PIN_ANGLES = ["how-to", "curiosity", "listicle", "contrast"]
+EM_DASH = "—"
+
+SLUG_STOPWORDS = {
+    "the", "a", "an", "is", "are", "be", "to", "of", "for", "on", "in",
+    "at", "by", "and", "or", "but", "this", "that", "these", "those",
+    "with", "without", "your", "you", "my", "i", "me", "we", "our",
+    "it", "its", "as", "from", "into", "so", "do", "does", "did",
+    "have", "has", "had", "will", "would", "should", "can", "just",
+    "actually", "really",
+}
+
+
+def slugify_pin_title(title: str, max_words: int = 5) -> str:
+    """Deterministic kebab-case slug from a pin title (drops common stopwords)."""
+    words = re.findall(r"[a-zA-Z0-9]+", title.lower())
+    meaningful = [w for w in words if w not in SLUG_STOPWORDS]
+    base = meaningful if len(meaningful) >= max_words else words
+    return "-".join(base[:max_words])[:60] or "untitled"
+
+
+def validate_brief(brief: dict) -> list[str]:
+    """Return a list of structural errors. Empty list = brief is well-formed."""
+    errs: list[str] = []
+    hero = brief.get("hero") or {}
+    if not isinstance(hero, dict):
+        errs.append("hero is not an object")
+    else:
+        if not (isinstance(hero.get("prompt"), str) and hero["prompt"].strip()):
+            errs.append("hero.prompt missing or empty")
+        if not (isinstance(hero.get("alt"), str) and hero["alt"].strip()):
+            errs.append("hero.alt missing or empty")
+        else:
+            if EM_DASH in hero["alt"] or EM_DASH in hero.get("prompt", ""):
+                errs.append("em-dash in hero")
+    pins = brief.get("pins")
+    if not isinstance(pins, list) or len(pins) != 4:
+        errs.append("pins must be a list of 4")
+        return errs
+    angles_seen: list[str] = []
+    for i, p in enumerate(pins):
+        if not isinstance(p, dict):
+            errs.append(f"pin[{i}] not an object")
+            continue
+        for k in ("angle", "title", "prompt", "alt"):
+            if not (isinstance(p.get(k), str) and p[k].strip()):
+                errs.append(f"pin[{i}].{k} missing or empty")
+        if p.get("angle") not in REQUIRED_PIN_ANGLES:
+            errs.append(f"pin[{i}].angle invalid: {p.get('angle')!r}")
+        else:
+            angles_seen.append(p["angle"])
+        title = p.get("title", "")
+        if len(title) > 70:
+            errs.append(f"pin[{i}].title too long ({len(title)} chars)")
+        for k in ("title", "prompt", "alt"):
+            if EM_DASH in p.get(k, ""):
+                errs.append(f"em-dash in pin[{i}].{k}")
+        # The pin's image prompt MUST tell the generator to render the title.
+        prompt_text = p.get("prompt", "")
+        if title and prompt_text and title not in prompt_text:
+            errs.append(f"pin[{i}].prompt does not contain the exact title for overlay")
+    if sorted(angles_seen) != sorted(REQUIRED_PIN_ANGLES):
+        errs.append(f"pin angles must be exactly {REQUIRED_PIN_ANGLES}, got {angles_seen}")
+    return errs
+
+
+def attach_pin_slugs(brief: dict) -> None:
+    """Add a deterministic kebab-case slug to each pin in-place."""
+    seen: set[str] = set()
+    for p in brief.get("pins") or []:
+        if not isinstance(p, dict):
+            continue
+        title = p.get("title") or ""
+        slug = slugify_pin_title(title) or p.get("angle", "pin")
+        # Guarantee uniqueness within this article (rare case: 2 titles slugify the same)
+        base = slug
+        n = 2
+        while slug in seen:
+            slug = f"{base}-{n}"
+            n += 1
+        seen.add(slug)
+        p["slug"] = slug
+
+
+def call_model(api_key: str, model_id: str, system: str, user: str,
+               temperature: float, max_tokens: int, timeout: int) -> tuple[dict, dict]:
+    resp, latency_ms = _or.call_with_retry(
+        api_key=api_key,
+        model_id=model_id,
+        system=system,
+        user=user,
+        temperature=temperature,
+        max_tokens=max_tokens,
+        timeout=timeout,
+        retries=2,
+        backoff_seconds=3.0,
+    )
+    text, finish = _or.extract_text(resp)
+    tokens_in, tokens_out, cost = _or.usage_cost(resp)
+    meta = {
+        "latency_ms": latency_ms,
+        "finish_reason": finish,
+        "tokens_in": tokens_in,
+        "tokens_out": tokens_out,
+        "cost_usd": cost,
+    }
+    brief = extract_json_object(text)
+    return brief, meta
+
+
+def call_with_full_retry(api_key: str, model_id: str, system: str, user: str,
+                         temperature: float, max_tokens: int, timeout: int,
+                         attempts: int = 3) -> tuple[dict | None, dict | None, list[str]]:
+    """Try to obtain a structurally-valid brief. Retries cover both:
+       - JSON parse failure (model returned malformed JSON)
+       - structural validation failure (well-formed JSON but missing
+         required fields, missing overlay instruction, bad angles, etc.)
+
+    Returns (brief, meta, problems). On success problems is [].
+    On final failure brief/meta may be None and problems describes why.
+    """
+    last_brief: dict | None = None
+    last_meta: dict | None = None
+    last_problems: list[str] = ["never attempted"]
+    for i in range(attempts):
+        t = temperature if i == 0 else max(0.4, temperature - 0.2 * i)
+        try:
+            brief, meta = call_model(api_key, model_id, system, user, t, max_tokens, timeout)
+        except (ValueError, json.JSONDecodeError) as exc:
+            last_problems = [f"json parse failure: {exc}"]
+            continue
+        except Exception as exc:
+            last_problems = [f"network/api failure: {exc}"]
+            continue
+        attach_pin_slugs(brief)
+        problems = validate_brief(brief)
+        last_brief, last_meta, last_problems = brief, meta, problems
+        if not problems:
+            return brief, meta, []
+    return last_brief, last_meta, last_problems
+
+
+# ---------- CLI ----------
+
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    p = argparse.ArgumentParser(description="Generate visual briefs for written articles.")
+    g = p.add_mutually_exclusive_group()
+    g.add_argument("--slugs", type=str, help="Comma-separated slugs to process")
+    g.add_argument("--sample", type=int, help="Process N articles spanning categories (recipes/nutrition/tips)")
+    g.add_argument("--all", action="store_true", help="Process every article in write_outputs")
+    p.add_argument("--model", type=str, default=DEFAULT_MODEL)
+    p.add_argument("--temperature", type=float, default=DEFAULT_TEMPERATURE)
+    p.add_argument("--max-tokens", type=int, default=DEFAULT_MAX_TOKENS)
+    p.add_argument("--timeout", type=int, default=DEFAULT_TIMEOUT)
+    p.add_argument("--db", type=Path, default=DEFAULT_DB)
+    p.add_argument("--output", type=Path, default=OUTPUT_PATH)
+    p.add_argument("--force", action="store_true", help="Regenerate briefs for slugs that already exist")
+    p.add_argument("--print-table", action="store_true",
+                   help="Print a one-line summary per article after generation")
+    args = p.parse_args(argv)
+    if not (args.slugs or args.sample or args.all):
+        args.sample = 5
+    return args
+
+
+def select_articles(conn: sqlite3.Connection, args: argparse.Namespace) -> list[dict]:
+    if args.slugs:
+        slugs = [s.strip() for s in args.slugs.split(",") if s.strip()]
+        return fetch_articles(conn, slugs)
+    rows = fetch_articles(conn, None)
+    if args.all:
+        return rows
+    n = args.sample or 5
+    by_cat: dict[str, list[dict]] = {}
+    for r in rows:
+        by_cat.setdefault(r["category"], []).append(r)
+    out: list[dict] = []
+    cats = list(by_cat.keys())
+    while len(out) < n and any(by_cat[c] for c in cats):
+        for c in cats:
+            if by_cat[c] and len(out) < n:
+                out.append(by_cat[c].pop(0))
+    return out
+
+
+def build_user_prompt(art: dict) -> str:
+    front, body = parse_frontmatter(art["markdown"] or "")
+    title = front.get("title") or art.get("topic") or art["slug"]
+    excerpt = front.get("excerpt") or ""
+    return USER_TEMPLATE.format(
+        slug=art["slug"],
+        category=art.get("category") or "",
+        title=title,
+        excerpt=excerpt,
+        body_digest=first_paragraphs(body, max_words=180),
+    )
+
+
+def fmt_brief_summary(slug: str, brief: dict) -> str:
+    pins = brief.get("pins") or []
+    hero_alt = (brief.get("hero") or {}).get("alt", "")
+    out = [f"{slug}", f"  hero alt: {hero_alt}"]
+    for p in pins:
+        out.append(
+            f"  PIN [{p.get('angle','?'):<9}] slug={p.get('slug','?')}\n"
+            f"      title: {p.get('title','')}"
+        )
+    return "\n".join(out)
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
+    load_env_file(ENV_PATH)
+    api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    if not api_key:
+        print("ERROR: OPENROUTER_API_KEY not set.", file=sys.stderr)
+        return 2
+
+    conn = connect_db(args.db)
+    arts = select_articles(conn, args)
+    if not arts:
+        print("No articles selected.", file=sys.stderr)
+        return 1
+
+    existing = load_existing_slugs(args.output)
+    todo = [a for a in arts if args.force or a["slug"] not in existing]
+    skipped = len(arts) - len(todo)
+
+    print(f"selected: {len(arts)}, to-generate: {len(todo)}, skipped (already in {args.output.name}): {skipped}")
+    print(f"model: {args.model} | temperature: {args.temperature}")
+
+    ok = err = 0
+    total_cost = 0.0
+    t0 = time.monotonic()
+    for i, art in enumerate(todo, 1):
+        slug = art["slug"]
+        cat = art.get("category", "?")
+        print(f"[{i}/{len(todo)}] {cat:<9} {slug}", flush=True)
+        user_prompt = build_user_prompt(art)
+        try:
+            brief, meta = call_with_json_retry(
+                api_key=api_key,
+                model_id=args.model,
+                system=SYSTEM_PROMPT,
+                user=user_prompt,
+                temperature=args.temperature,
+                max_tokens=args.max_tokens,
+                timeout=args.timeout,
+            )
+        except Exception as exc:
+            print(f"  ERROR: {exc}")
+            err += 1
+            continue
+        attach_pin_slugs(brief)
+        problems = validate_brief(brief)
+        if problems:
+            print(f"  STRUCTURAL PROBLEMS: {problems}")
+            err += 1
+            # still persist with status=invalid so we can inspect
+            record = {
+                "slug": slug,
+                "category": cat,
+                "model_id": args.model,
+                "created_at": now_utc_iso(),
+                "status": "invalid",
+                "problems": problems,
+                "brief": brief,
+                **{k: v for k, v in meta.items() if k != "cost_usd"},
+                "cost_usd": meta.get("cost_usd"),
+            }
+            append_brief(args.output, record)
+            continue
+
+        record = {
+            "slug": slug,
+            "category": cat,
+            "model_id": args.model,
+            "created_at": now_utc_iso(),
+            "status": "ok",
+            "brief": brief,
+            **{k: v for k, v in meta.items() if k != "cost_usd"},
+            "cost_usd": meta.get("cost_usd"),
+        }
+        append_brief(args.output, record)
+        ok += 1
+        if meta.get("cost_usd"):
+            total_cost += float(meta["cost_usd"])
+        if args.print_table:
+            print(fmt_brief_summary(slug, brief))
+
+    elapsed = time.monotonic() - t0
+    print(f"\nDONE — ok: {ok} | errors: {err} | skipped: {skipped} | "
+          f"cost: ${total_cost:.4f} | elapsed: {elapsed:.1f}s")
+    print(f"output: {args.output}")
+    return 0 if err == 0 else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

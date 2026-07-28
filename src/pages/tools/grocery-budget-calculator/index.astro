@@ -3,6 +3,71 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import DataProvenance from "../../../components/DataProvenance.astro";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+/**
+ * The planner fetches these CSVs at runtime, so without JS the page showed
+ * "Loading the published menus..." and not one number. The same rows are read
+ * at build time here and summarised as a static table below the tool, so the
+ * ten priced days are crawlable and quotable.
+ */
+function summariseDays(path: string, gramsCol: string) {
+  // process.cwd() is the project root during `astro build`. Do NOT use
+  // import.meta.url here: it resolves against the bundled module in dist/,
+  // whose depth differs per page.
+  const text = readFileSync(join(process.cwd(), "public", path), "utf-8");
+  const lines = text.trim().split(/\r?\n/);
+  const headers = lines[0].split(",").map((h) => h.trim());
+  const days = new Map<string, { grams: number; cost: number; foods: string[] }>();
+  for (const line of lines.slice(1)) {
+    const cells: string[] = [];
+    let field = "";
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (inQuotes) {
+        if (c === '"' && line[i + 1] === '"') { field += '"'; i++; }
+        else if (c === '"') inQuotes = false;
+        else field += c;
+      } else if (c === '"') inQuotes = true;
+      else if (c === ",") { cells.push(field); field = ""; }
+      else field += c;
+    }
+    cells.push(field);
+    const row: Record<string, string> = {};
+    headers.forEach((h, i) => (row[h] = (cells[i] ?? "").trim()));
+    if (!row.day) continue;
+    const entry = days.get(row.day) ?? { grams: 0, cost: 0, foods: [] };
+    entry.grams += Number(row[gramsCol]) || 0;
+    entry.cost += Number(row.cost_usd) || 0;
+    if (row.food) entry.foods.push(row.food.replace(/,.*$/, ""));
+    days.set(row.day, entry);
+  }
+  return [...days.entries()].map(([day, v]) => ({
+    day,
+    grams: Math.round(v.grams * 10) / 10,
+    cost: v.cost,
+    foods: v.foods.join(", "),
+  }));
+}
+
+const PRICED_DAYS = [
+  {
+    label: "Fiber",
+    target: "about 30 g of fiber",
+    csv: "/data/fiber-day-cost-2026.csv",
+    study: "/what-30-grams-of-fiber-costs-per-day/",
+    days: summariseDays("/data/fiber-day-cost-2026.csv", "fiber_g"),
+  },
+  {
+    label: "Protein",
+    target: "about 50 g of protein",
+    csv: "/data/protein-day-cost-2026.csv",
+    study: "/what-50-grams-of-protein-costs-per-day/",
+    days: summariseDays("/data/protein-day-cost-2026.csv", "protein_g"),
+  },
+];
 
 const title = "Weekly Fiber and Protein Cost Planner: Build a Real Food Week";
 const description = "Build a 7-day fiber or protein plan from 10 published menus. Change people and days to get food quantities, cost, and restaurant savings.";
@@ -19,6 +84,9 @@ const schemas = [
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "@id": "https://www.daily-life-hacks.com/tools/grocery-budget-calculator/#webapp",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    inLanguage: "en-US",
     name: "Weekly Fiber and Protein Cost Planner",
     url: "https://www.daily-life-hacks.com/tools/grocery-budget-calculator/",
     description,
@@ -27,7 +95,7 @@ const schemas = [
     browserRequirements: "Requires JavaScript",
     isAccessibleForFree: true,
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    publisher: { "@type": "Organization", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
   },
   {
     "@context": "https://schema.org",
@@ -35,9 +103,19 @@ const schemas = [
     mainEntity: faqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })),
   },
 ];
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.daily-life-hacks.com/tools/grocery-budget-calculator/#breadcrumb",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+    { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.daily-life-hacks.com/tools/" },
+    { "@type": "ListItem", position: 3, name: "Weekly Food Cost Planner", item: "https://www.daily-life-hacks.com/tools/grocery-budget-calculator/" },
+  ],
+};
 ---
 
-<BaseLayout title={title} description={description} jsonLd={schemas}>
+<BaseLayout title={title} description={description} jsonLd={[...schemas, breadcrumbSchema]}>
   <Header />
   <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
     <nav class="text-sm mb-5" aria-label="Breadcrumb">
@@ -92,7 +170,7 @@ const schemas = [
             <p class="text-sm mb-3" style="color:var(--muted-color);">Quantities are totals for everyone across the days you selected. Package sizes stay package sizes. A 15-ounce can doesn't become a 30-ounce can because four people are hungry.</p>
             <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
               <table class="w-full text-sm" style="min-width:560px;border-collapse:collapse;">
-                <thead><tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);"><th class="cell text-left">Food</th><th class="cell text-right">Total amount</th><th class="cell text-right">Tracked grams</th><th class="cell text-right">Consumed cost</th></tr></thead>
+                <thead><tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);"><th scope="col" class="cell text-left">Food</th><th scope="col" class="cell text-right">Total amount</th><th scope="col" class="cell text-right">Tracked grams</th><th scope="col" class="cell text-right">Consumed cost</th></tr></thead>
                 <tbody id="rwp-shopping"></tbody>
               </table>
             </div>
@@ -109,6 +187,58 @@ const schemas = [
         </div>
         <p class="mt-4 text-xs" style="color:var(--muted-color);">Your choices stay in this browser tab. Prices are the recorded July 2026 study prices, not a promise about today's shelf in your ZIP code.</p>
       </div>
+    </section>
+
+    <!--
+      Static copy of the ten priced days. Lives OUTSIDE #rwp-content (which
+      carries `hidden` until the fetch resolves) so the numbers exist in the
+      HTML for a crawler or an AI extractor with no JavaScript.
+    -->
+    <section id="priced-days" class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">
+        The ten priced days, before you scale anything
+      </h2>
+      <p class="mb-6" style="color:var(--text-color);">
+        These are the menus the planner above loads. Each one is a single day of food
+        for one person that carries the tracked nutrient target. Cost is consumed
+        cost: the value of the portion eaten, not the whole package at the register.
+        Prices observed July 2026 at US national grocery prices, nutrition values
+        from USDA FoodData Central.
+      </p>
+
+      {PRICED_DAYS.map((set) => (
+        <div class="mb-8">
+          <h3 class="text-xl font-bold mb-3" style="color:var(--heading-color);">
+            {set.label}: {set.days.length} ways to hit {set.target} in one day
+          </h3>
+          <div class="overflow-x-auto rounded-xl" style="border:1px solid var(--border-color);">
+            <table class="w-full text-sm" style="min-width:640px;border-collapse:collapse;">
+              <thead>
+                <tr style="background:var(--page-bg);border-bottom:1px solid var(--border-color);color:var(--heading-color);">
+                  <th scope="col" class="cell text-left">Menu day</th>
+                  <th scope="col" class="cell text-right">{set.label} (g)</th>
+                  <th scope="col" class="cell text-right">Cost per person</th>
+                  <th scope="col" class="cell text-left">Tracked foods</th>
+                </tr>
+              </thead>
+              <tbody>
+                {set.days.map((d) => (
+                  <tr style="border-bottom:1px solid var(--border-color);">
+                    <th scope="row" class="cell text-left" style="font-weight:600;">{d.day}</th>
+                    <td class="cell text-right">{d.grams}</td>
+                    <td class="cell text-right" style="font-weight:700;">${d.cost.toFixed(2)}</td>
+                    <td class="cell text-left" style="color:var(--muted-color);">{d.foods}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-2 text-sm" style="color:var(--muted-color);">
+            Full write-up: <a href={set.study} class="underline" style="color:#F29B30;">the {set.label.toLowerCase()} day cost study</a>.
+            Raw data: <a href={set.csv} class="underline" style="color:#F29B30;">{set.csv.split("/").pop()}</a>.
+          </p>
+        </div>
+      ))}
     </section>
 
     <div class="mb-12">

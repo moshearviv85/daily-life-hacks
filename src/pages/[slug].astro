@@ -61,6 +61,70 @@ const isRecipe =
   article.data.ingredients &&
   article.data.steps;
 
+/**
+ * Google lists `recipeCategory` and `recipeCuisine` as recommended Recipe
+ * properties and no article declares them. Rather than invent a value, derive
+ * one ONLY from an explicit authored tag — the tag is the author's own claim
+ * about the dish. Anything without a matching tag emits nothing.
+ */
+const MEAL_TYPE_BY_TAG: Record<string, string> = {
+  breakfast: "Breakfast",
+  brunch: "Brunch",
+  lunch: "Lunch",
+  dinner: "Dinner",
+  dinners: "Dinner",
+  supper: "Dinner",
+  dessert: "Dessert",
+  desserts: "Dessert",
+  snack: "Snack",
+  snacks: "Snack",
+  appetizer: "Appetizer",
+  appetizers: "Appetizer",
+  "side dish": "Side Dish",
+  "side dishes": "Side Dish",
+  sides: "Side Dish",
+  salad: "Salad",
+  salads: "Salad",
+  soup: "Soup",
+  soups: "Soup",
+  "main course": "Main Course",
+  drinks: "Beverage",
+  beverages: "Beverage",
+  smoothies: "Beverage",
+  bread: "Bread",
+  breads: "Bread",
+};
+
+const CUISINE_BY_TAG: Record<string, string> = {
+  mexican: "Mexican",
+  italian: "Italian",
+  asian: "Asian",
+  mediterranean: "Mediterranean",
+  american: "American",
+  indian: "Indian",
+  thai: "Thai",
+  greek: "Greek",
+  chinese: "Chinese",
+  japanese: "Japanese",
+  french: "French",
+  korean: "Korean",
+  "middle eastern": "Middle Eastern",
+  "tex-mex": "Tex-Mex",
+  southern: "Southern",
+  filipino: "Filipino",
+  spanish: "Spanish",
+};
+
+const normalizedTags = (article.data.tags ?? []).map((t: string) =>
+  t.trim().toLowerCase(),
+);
+const firstMatch = (map: Record<string, string>) => {
+  for (const tag of normalizedTags) if (map[tag]) return map[tag];
+  return undefined;
+};
+const recipeCategory = article.data.recipeCategory ?? firstMatch(MEAL_TYPE_BY_TAG);
+const recipeCuisine = article.data.recipeCuisine ?? firstMatch(CUISINE_BY_TAG);
+
 const siteUrl = "https://www.daily-life-hacks.com";
 const articleUrl = `${siteUrl}/${article.id}/`;
 const webPageId = `${articleUrl}#webpage`;
@@ -69,9 +133,20 @@ const breadcrumbId = `${articleUrl}#breadcrumb`;
 const imageUrl = article.data.image.startsWith("http")
   ? article.data.image
   : `${siteUrl}${article.data.image}`;
-const modifiedDate = (
-  article.data.dateModified ?? releaseDate
-).toISOString();
+const modifiedDateObj = article.data.dateModified ?? releaseDate;
+const modifiedDate = modifiedDateObj.toISOString();
+
+/**
+ * Freshness is one of the strongest measured correlates of AI citation, and an
+ * extractor reads the page text, not the JSON-LD. Both dates therefore have to
+ * be VISIBLE and machine-readable in the body, not schema-only.
+ */
+const longDate = (d: Date) =>
+  d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+const isoDay = (d: Date) => d.toISOString().slice(0, 10);
+const publishedLabel = longDate(releaseDate);
+const modifiedLabel = longDate(modifiedDateObj);
+const wasUpdated = modifiedLabel !== publishedLabel;
 
 const publisherSchema = {
   "@type": "Organization",
@@ -146,8 +221,8 @@ const jsonLd = isRecipe
       recipeYield: article.data.servings
         ? `${article.data.servings} servings`
         : undefined,
-      recipeCategory: article.data.recipeCategory,
-      recipeCuisine: article.data.recipeCuisine,
+      recipeCategory,
+      recipeCuisine,
       nutrition: article.data.calories
         ? {
             "@type": "NutritionInformation",
@@ -202,10 +277,14 @@ const webPageSchema = {
   name: article.data.title,
   description: article.data.excerpt,
   inLanguage: "en-US",
+  datePublished: publishedDate,
+  dateModified: modifiedDate,
   breadcrumb: { "@id": breadcrumbId },
   primaryImageOfPage: { "@type": "ImageObject", url: imageUrl },
   mainEntity: { "@id": articleEntityId },
+  /** Resolves because BaseLayout emits the #website node on every page. */
   isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": `${siteUrl}/#organization` },
 };
 
 const allSchemas: any[] = [webPageSchema, jsonLd, breadcrumbSchema];
@@ -224,7 +303,18 @@ if (dataset) {
     isAccessibleForFree: true,
     creator: publisherSchema,
     publisher: publisherSchema,
-    includedInDataCatalog: { "@id": `${siteUrl}/data/#catalog` },
+    /**
+     * Defined inline, not a bare `{"@id": ...}` pointer. Google resolves @id
+     * per page: the DataCatalog node only exists on /data/, so a pointer alone
+     * dangles on all 22 study pages and Dataset Search sees no catalog.
+     */
+    includedInDataCatalog: {
+      "@type": "DataCatalog",
+      "@id": `${siteUrl}/data/#catalog`,
+      name: "Daily Life Hacks Food Value Data",
+      url: `${siteUrl}/data/`,
+      publisher: { "@id": `${siteUrl}/#organization` },
+    },
     license: `${siteUrl}/methodology/#data-license`,
     datePublished: publishedDate,
     dateModified: modifiedDate,
@@ -489,15 +579,33 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
           )
         }
         <span>
-          {
-            releaseDate.toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-              year: "numeric",
-            })
-          }
+          Published <time datetime={isoDay(releaseDate)}>{publishedLabel}</time>
         </span>
+        {
+          wasUpdated && (
+            <>
+              <span>&bull;</span>
+              <span>
+                Updated{" "}
+                <time datetime={isoDay(modifiedDateObj)} class="font-medium">
+                  {modifiedLabel}
+                </time>
+              </span>
+            </>
+          )
+        }
       </p>
+      {
+        dataset && (
+          <p class="text-sm mt-2 leading-relaxed" style="color: var(--label-color);">
+            Source: Daily Life Hacks {dataset.name} ({dataset.rows} rows,
+            prices observed {dataset.temporal}, United States). Nutrition values
+            from USDA FoodData Central. Full{" "}
+            <a href="/methodology/" class="underline">methodology</a> and the{" "}
+            <a href={dataset.csv} class="underline">raw CSV</a> are public.
+          </p>
+        )
+      }
     </header>
 
     <!-- Quick Answer Block -->
@@ -518,6 +626,7 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
       data-article-url={articleUrl}
       data-article-title={article.data.title}
       data-schema-type={isRecipe ? "Recipe" : "Article"}
+      data-schema-id={articleEntityId}
     >
       <div class="flex flex-col gap-3">
         <div class="flex items-center gap-2">
@@ -947,19 +1056,25 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
         const pageUrl = widget.getAttribute("data-article-url") || "";
         const title = widget.getAttribute("data-article-title") || "";
         const schemaType = widget.getAttribute("data-schema-type") || "Article";
+        const schemaId = widget.getAttribute("data-schema-id") || "";
 
         if (
           count < MIN_RATING_COUNT_FOR_JSONLD ||
           !pageUrl ||
           !title ||
+          !schemaId ||
           !Number.isFinite(avg)
         ) {
           return;
         }
 
+        // Carries the SAME @id as the server-rendered Article/Recipe node so a
+        // parser merges the rating onto that entity. Without @id this emitted a
+        // second, unrelated entity of the same type on the page.
         const node = {
           "@context": "https://schema.org",
           "@type": schemaType,
+          "@id": schemaId,
           url: pageUrl,
           name: title,
           aggregateRating: {

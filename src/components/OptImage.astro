@@ -1,4 +1,26 @@
 ---
+/**
+ * Responsive image wrapper over the WebP variants produced by
+ * scripts/optimize-images.mjs.
+ *
+ * Two things this deliberately does that the naive version did not:
+ *
+ * 1. It reads public/images/opt/manifest.json, so the `srcset` advertises the
+ *    widths that were actually generated. Sources narrower than 1200px used to
+ *    get a `-1200w.webp` entry describing a file that is not 1200px wide,
+ *    which makes the browser pick the wrong candidate.
+ *
+ * 2. If no variants exist for a source it emits a plain `<img>` instead of a
+ *    `<picture>`. A `<source>` pointing at a 404 is NOT recoverable — the
+ *    browser commits to that source and renders a broken image. Nine article
+ *    heroes are currently missing from disk; without this guard they render
+ *    broken rather than merely absent.
+ *
+ * Intrinsic width/height are taken from the manifest when the caller does not
+ * pass them, so every image reserves its box and contributes no CLS.
+ */
+import { readFileSync } from "node:fs";
+
 interface Props {
   src: string;
   alt: string;
@@ -10,6 +32,23 @@ interface Props {
   decoding?: "async" | "sync" | "auto";
   fetchpriority?: "high" | "low" | "auto";
   [key: string]: any;
+}
+
+type ManifestEntry = {
+  width: number;
+  height: number;
+  variants: { w: number; file: string }[];
+};
+
+let manifest: Record<string, ManifestEntry> = {};
+try {
+  manifest = JSON.parse(
+    readFileSync(new URL("../../public/images/opt/manifest.json", import.meta.url), "utf8")
+  );
+} catch {
+  // `astro dev` without a prebuild, or a fresh checkout. Fall back to the
+  // plain <img>; correctness over cleverness.
+  manifest = {};
 }
 
 const {
@@ -25,22 +64,49 @@ const {
   ...rest
 } = Astro.props;
 
-const name = src.replace(/^\/images\//, "").replace(/\.jpg$/, "");
-const base = `/images/opt/${name}`;
-const srcset = `${base}-400w.webp 400w, ${base}-800w.webp 800w, ${base}-1200w.webp 1200w`;
+const entry = manifest[src];
+const variants = entry?.variants ?? [];
+
+// De-duplicate by real width: a 768px-wide source produces 400w + 768w, not
+// 400w/800w/1200w.
+const byWidth = new Map<number, string>();
+for (const v of variants) byWidth.set(v.w, v.file);
+const srcset = [...byWidth.entries()]
+  .sort((a, b) => a[0] - b[0])
+  .map(([w, file]) => `${file} ${w}w`)
+  .join(", ");
+
+const finalWidth = width ?? entry?.width;
+const finalHeight = height ?? entry?.height;
 ---
 
-<picture>
-  <source type="image/webp" srcset={srcset} sizes={sizes} />
-  <img
-    src={src}
-    alt={alt}
-    width={width}
-    height={height}
-    class={className}
-    loading={loading}
-    decoding={decoding}
-    fetchpriority={fetchpriority}
-    {...rest}
-  />
-</picture>
+{
+  srcset ? (
+    <picture>
+      <source type="image/webp" srcset={srcset} sizes={sizes} />
+      <img
+        src={src}
+        alt={alt}
+        width={finalWidth}
+        height={finalHeight}
+        class={className}
+        loading={loading}
+        decoding={decoding}
+        fetchpriority={fetchpriority}
+        {...rest}
+      />
+    </picture>
+  ) : (
+    <img
+      src={src}
+      alt={alt}
+      width={finalWidth}
+      height={finalHeight}
+      class={className}
+      loading={loading}
+      decoding={decoding}
+      fetchpriority={fetchpriority}
+      {...rest}
+    />
+  )
+}

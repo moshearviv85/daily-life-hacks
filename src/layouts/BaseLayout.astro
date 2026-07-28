@@ -13,7 +13,62 @@ interface Props {
   robots?: string;
   /** Open Graph type — articles only; everything else defaults to website. */
   ogType?: "article" | "website";
+  /**
+   * Emit the sitewide Organization + WebSite nodes. On by default.
+   *
+   * Every page-level schema on this site points at `#organization` and
+   * `#website` via `@id`. Google resolves `@id` PER PAGE, so a page that
+   * references those nodes without defining them has a dangling pointer and the
+   * article/recipe entity ends up connected to nothing. Emitting the two nodes
+   * everywhere is what makes those references resolve.
+   */
+  siteGraph?: boolean;
 }
+
+const SITE_URL = "https://www.daily-life-hacks.com";
+
+const ORGANIZATION_NODE = {
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "Daily Life Hacks",
+  url: `${SITE_URL}/`,
+  description:
+    "Audited grocery cost research, practical recipes, and interactive food tools built from USDA data and real shelf prices.",
+  logo: {
+    "@type": "ImageObject",
+    "@id": `${SITE_URL}/#logo`,
+    url: `${SITE_URL}/logo.png`,
+    contentUrl: `${SITE_URL}/logo.png`,
+    caption: "Daily Life Hacks",
+  },
+  image: { "@id": `${SITE_URL}/#logo` },
+  sameAs: ["https://www.pinterest.com/DavidMiller615/"],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Customer Support",
+    url: `${SITE_URL}/contact/`,
+  },
+};
+
+const WEBSITE_NODE = {
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: "Daily Life Hacks",
+  url: `${SITE_URL}/`,
+  description:
+    "Grocery cost studies, practical recipes, and interactive food tools with public data and documented methodology.",
+  inLanguage: "en-US",
+  publisher: { "@id": `${SITE_URL}/#organization` },
+};
+
+/**
+ * No `potentialAction`/`SearchAction` here on purpose: Google retired the
+ * sitelinks search box on 2024-11-21 and it now does nothing. Do not add it back.
+ */
+const SITE_GRAPH = {
+  "@context": "https://schema.org",
+  "@graph": [ORGANIZATION_NODE, WEBSITE_NODE],
+};
 
 const DEFAULT_ROBOTS =
   "index, follow, max-image-preview:large, max-snippet:-1";
@@ -31,7 +86,12 @@ const {
   jsonLd,
   robots = DEFAULT_ROBOTS,
   ogType = "website",
+  siteGraph = true,
 } = Astro.props;
+
+/** Sitewide entity graph first, then whatever the page declared. */
+const pageSchemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const allJsonLd = siteGraph ? [SITE_GRAPH, ...pageSchemas] : pageSchemas;
 
 const absoluteImage = image.startsWith("http")
   ? image
@@ -173,21 +233,13 @@ const metaDescription =
 
     <!-- JSON-LD Schema -->
     {
-      jsonLd && Array.isArray(jsonLd)
-        ? jsonLd.map((schema) => (
-            <script
-              is:inline
-              type="application/ld+json"
-              set:html={JSON.stringify(schema)}
-            />
-          ))
-        : jsonLd && (
-            <script
-              is:inline
-              type="application/ld+json"
-              set:html={JSON.stringify(jsonLd)}
-            />
-          )
+      allJsonLd.map((schema) => (
+        <script
+          is:inline
+          type="application/ld+json"
+          set:html={JSON.stringify(schema)}
+        />
+      ))
     }
 
     <!-- Robots -->

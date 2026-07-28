@@ -37,6 +37,9 @@ const schemas = [
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
+    "@id": "https://www.daily-life-hacks.com/tools/shopping-list-builder/#webapp",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    inLanguage: "en-US",
     name: "Multi-Recipe Shopping List Builder",
     url: "https://www.daily-life-hacks.com/tools/shopping-list-builder/",
     description,
@@ -45,7 +48,7 @@ const schemas = [
     browserRequirements: "Requires JavaScript",
     isAccessibleForFree: true,
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    publisher: { "@type": "Organization", name: "Daily Life Hacks", url: "https://www.daily-life-hacks.com" },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
   },
   {
     "@context": "https://schema.org",
@@ -57,9 +60,19 @@ const schemas = [
     })),
   },
 ];
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.daily-life-hacks.com/tools/shopping-list-builder/#breadcrumb",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+    { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.daily-life-hacks.com/tools/" },
+    { "@type": "ListItem", position: 3, name: "Shopping List Builder", item: "https://www.daily-life-hacks.com/tools/shopping-list-builder/" },
+  ],
+};
 ---
 
-<BaseLayout title={title} description={description} jsonLd={schemas}>
+<BaseLayout title={title} description={description} jsonLd={[...schemas, breadcrumbSchema]}>
   <Header />
   <main class="max-w-6xl mx-auto px-4 py-10 md:py-16">
     <nav class="text-sm mb-5" aria-label="Breadcrumb">

@@ -3,6 +3,67 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import DataProvenance from "../../components/DataProvenance.astro";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+/**
+ * The interactive tool fetches these CSVs at runtime, which means a crawler or
+ * an AI extractor with no JS saw a "Loading 102 rows..." placeholder and zero
+ * numbers. A calculator whose numbers are invisible cannot be cited or ranked.
+ *
+ * So the same rows are ALSO read at build time and rendered as a real static
+ * table below the tool. The JS tool is untouched and still owns the
+ * interactivity; this block owns the crawlability.
+ */
+function parseCsv(path: string) {
+  // process.cwd() is the project root during `astro build`. Do NOT use
+  // import.meta.url here: it resolves against the bundled module in dist/,
+  // whose depth differs per page.
+  const text = readFileSync(join(process.cwd(), "public", path), "utf-8");
+  const lines = text.trim().split(/\r?\n/);
+  const headers = lines[0].split(",").map((h) => h.trim());
+  return lines.slice(1).map((line) => {
+    // Fields may be quoted and contain commas.
+    const cells: string[] = [];
+    let field = "";
+    let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const c = line[i];
+      if (inQuotes) {
+        if (c === '"' && line[i + 1] === '"') { field += '"'; i++; }
+        else if (c === '"') inQuotes = false;
+        else field += c;
+      } else if (c === '"') inQuotes = true;
+      else if (c === ",") { cells.push(field); field = ""; }
+      else field += c;
+    }
+    cells.push(field);
+    const row: Record<string, string> = {};
+    headers.forEach((h, i) => (row[h] = (cells[i] ?? "").trim()));
+    return row;
+  });
+}
+
+const STATIC_TABLES = [
+  {
+    key: "fiber",
+    label: "Fiber",
+    perDollarCol: "fiber_g_per_dollar",
+    per100Col: "fiber_g_per_100g",
+    csv: "/data/fiber-per-dollar-2026.csv",
+    study: "/fiber-per-dollar-cheapest-high-fiber-foods/",
+    rows: parseCsv("/data/fiber-per-dollar-2026.csv"),
+  },
+  {
+    key: "protein",
+    label: "Protein",
+    perDollarCol: "protein_g_per_dollar",
+    per100Col: "protein_g_per_100g",
+    csv: "/data/protein-per-dollar-2026.csv",
+    study: "/protein-per-dollar-cheapest-protein-sources/",
+    rows: parseCsv("/data/protein-per-dollar-2026.csv"),
+  },
+];
 
 const title = "Fiber per Dollar Calculator (Protein Too): 102 Foods Priced";
 const description =
@@ -11,10 +72,15 @@ const description =
 const toolSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
+    "@id": "https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/#webapp",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    inLanguage: "en-US",
   name: "Fiber per Dollar and Protein per Dollar Calculator",
   url: "https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/",
   description,
-  applicationCategory: "UtilityApplication",
+  // Must come from Google's published list of supported app types.
+  // "UtilityApplication" is not on it; the correct token is the plural.
+  applicationCategory: "UtilitiesApplication",
   operatingSystem: "Any",
   browserRequirements: "Requires JavaScript",
   isAccessibleForFree: true,
@@ -23,15 +89,21 @@ const toolSchema = {
     price: "0",
     priceCurrency: "USD",
   },
-  publisher: {
-    "@type": "Organization",
-    name: "Daily Life Hacks",
-    url: "https://www.daily-life-hacks.com",
-  },
+  publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/#breadcrumb",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+    { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.daily-life-hacks.com/tools/" },
+    { "@type": "ListItem", position: 3, name: "Fiber per Dollar Calculator", item: "https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/" },
+  ],
 };
 ---
 
-<BaseLayout title={title} description={description} jsonLd={toolSchema}>
+<BaseLayout title={title} description={description} jsonLd={[toolSchema, breadcrumbSchema]}>
   <Header />
   <main class="max-w-4xl mx-auto px-4 py-12 md:py-16">
     <h1
@@ -142,18 +214,18 @@ const toolSchema = {
                 <tr
                   style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);"
                 >
-                  <th class="fpd-th" data-sort="food">Food</th>
-                  <th class="fpd-th" data-sort="category">Category</th>
-                  <th class="fpd-th fpd-num" data-sort="gpd">
+                  <th scope="col" class="fpd-th" data-sort="food">Food</th>
+                  <th scope="col" class="fpd-th" data-sort="category">Category</th>
+                  <th scope="col" class="fpd-th fpd-num" data-sort="gpd">
                     <span class="fpd-nutrient-word">Fiber</span> per $1
                   </th>
-                  <th class="fpd-th fpd-num" data-sort="p100">
+                  <th scope="col" class="fpd-th fpd-num" data-sort="p100">
                     Price / 100g
                   </th>
-                  <th class="fpd-th fpd-num" data-sort="goalcost">
+                  <th scope="col" class="fpd-th fpd-num" data-sort="goalcost">
                     $ for your week
                   </th>
-                  <th class="fpd-th"></th>
+                  <th scope="col" class="fpd-th"></th>
                 </tr>
               </thead>
               <tbody id="fpd-tbody"></tbody>
@@ -256,13 +328,84 @@ const toolSchema = {
           </div>
         </section>
 
-        <!-- ============ 4. Where the numbers come from ============ -->
-        <DataProvenance
-          datasets={["fiber-per-dollar-2026", "protein-per-dollar-2026"]}
-          heading="The price snapshot behind this planner"
-        />
       </div>
     </div>
+
+    <!--
+      Static, always-rendered copy of the same data.
+
+      This sits OUTSIDE #fpd-app on purpose: #fpd-content carries `hidden` until
+      the fetch resolves, so anything inside it is invisible to a crawler. These
+      tables are plain server-rendered HTML with th/scope, a caption, and the
+      source and observation date in text.
+    -->
+    <section id="published-ranking" class="mt-14">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        The published ranking, in full
+      </h2>
+      <p class="mb-2" style="color: var(--text-color);">
+        These are the same {STATIC_TABLES[0].rows.length + STATIC_TABLES[1].rows.length} rows
+        the calculator above loads. Fiber per dollar covers
+        {STATIC_TABLES[0].rows.length} foods; protein per dollar covers
+        {STATIC_TABLES[1].rows.length}. Grams per dollar is nutrient grams divided by
+        the price of 100 g as purchased, after the edible-fraction adjustment.
+      </p>
+      <p class="text-sm mb-8" style="color: var(--muted-color);">
+        Source: Daily Life Hacks grocery price study. Prices observed July 2026 at
+        US national grocery prices; nutrition values from USDA FoodData Central.
+        Method described on the <a href="/methodology/" class="underline" style="color:#F29B30;">methodology page</a>.
+        Free to reuse with credit and a link.
+      </p>
+
+      {STATIC_TABLES.map((t) => (
+        <div class="mb-12">
+          <h3 class="text-xl font-bold mb-3" style="color: var(--heading-color);">
+            {t.label} per dollar: {t.rows.length} foods ranked
+          </h3>
+          <div class="overflow-x-auto rounded-xl" style="border: 1px solid var(--border-color);">
+            <table class="w-full text-sm" style="min-width: 640px; border-collapse: collapse;">
+              <caption class="sr-only">
+                {t.label} grams per dollar for {t.rows.length} US grocery foods, July 2026 prices, ranked cheapest first.
+              </caption>
+              <thead>
+                <tr style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);">
+                  <th scope="col" class="fpd-th">#</th>
+                  <th scope="col" class="fpd-th">Food</th>
+                  <th scope="col" class="fpd-th">Category</th>
+                  <th scope="col" class="fpd-th fpd-num">{t.label} g per $1</th>
+                  <th scope="col" class="fpd-th fpd-num">{t.label} g per 100 g</th>
+                  <th scope="col" class="fpd-th fpd-num">Price per 100 g</th>
+                  <th scope="col" class="fpd-th">Priced as</th>
+                </tr>
+              </thead>
+              <tbody>
+                {t.rows.map((row, i) => (
+                  <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td class="fpd-td">{row.rank || String(i + 1)}</td>
+                    <th scope="row" class="fpd-td" style="font-weight:600;text-align:left;">{row.food}</th>
+                    <td class="fpd-td">{row.category}</td>
+                    <td class="fpd-td fpd-num" style="font-weight:700;">{row[t.perDollarCol]}</td>
+                    <td class="fpd-td fpd-num">{row[t.per100Col]}</td>
+                    <td class="fpd-td fpd-num">${row.price_per_100g_usd}</td>
+                    <td class="fpd-td">{row.package} &mdash; ${row.package_price_usd}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-3 text-sm" style="color: var(--muted-color);">
+            Full write-up: <a href={t.study} class="underline" style="color:#F29B30;">the {t.label.toLowerCase()} per dollar study</a>.
+            Raw data: <a href={t.csv} class="underline" style="color:#F29B30;">{t.csv.split("/").pop()}</a>.
+          </p>
+        </div>
+      ))}
+    </section>
+
+    <!-- Where the numbers come from. Outside #fpd-app so it renders without JS. -->
+    <DataProvenance
+      datasets={["fiber-per-dollar-2026", "protein-per-dollar-2026"]}
+      heading="The price snapshot behind this planner"
+    />
   </main>
   <Footer />
 
@@ -280,6 +423,22 @@ const toolSchema = {
     }
     .fpd-th[data-sort]:hover {
       color: #f29b30;
+    }
+    .fpd-td {
+      padding: 0.5rem 0.75rem;
+      vertical-align: top;
+    }
+    .fpd-td.fpd-num {
+      text-align: right;
+      white-space: nowrap;
+    }
+    #published-ranking caption.sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
     }
   </style>
 
