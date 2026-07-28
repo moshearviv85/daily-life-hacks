@@ -1,0 +1,227 @@
+{
+  "cohort_id": "manual-external-2026-07-28",
+  "prepared_at": "2026-07-28",
+  "status": "PREPARATION_ONLY",
+  "external_actions_performed": false,
+  "rules": {
+    "owner_performs_external_actions": true,
+    "canonical_direct_urls_only": true,
+    "capture_public_proof_before_live_status": true,
+    "measure_days": [7, 30, 60],
+    "stop_on_policy_or_claim_failure": true
+  },
+  "channels": [
+    {
+      "channel": "pinterest",
+      "status": "BLOCKED_ACCOUNT_AND_QUEUE",
+      "approval_gate": "PIN-1",
+      "release_plan": "One listed pin per day for eight consecutive eligible days. Do not add volume beyond the confirmed live daily cap.",
+      "prerequisites": [
+        "Owner confirms historical affiliate, cloaked, and off-domain pin cleanup.",
+        "Export the same-day automated queue and confirm these assets are absent.",
+        "Confirm current daily cap and reserve one existing slot per day.",
+        "Re-check every live article claim and canonical URL."
+      ],
+      "assets": [
+        {
+          "day": 1,
+          "slug": "cheap-crockpot-meals-large-families",
+          "variant": 5,
+          "asset_path": "public/images/pins/cheap-crockpot-meals-large-families_v5.jpg",
+          "board": "Cheap Meals for Large Families",
+          "title": "8 Hours on Low, One Bag of Dried Beans, 8 Bowls of Dinner",
+          "description": "Two pounds of dried pinto beans, a pound of smoked sausage, and 8 to 10 hours on low. That's dinner for 8 out of one slow cooker, at about 420 calories a bowl. Cheap crockpot meals for large families work because the crockpot doesn't care that the beans came from a bag instead of a can.",
+          "alt_text": "Cream text pin reading 8 hours on low, one bag of dried beans, 8 bowls of dinner, over a line about cheap crockpot meals for large families.",
+          "destination": "https://www.daily-life-hacks.com/cheap-crockpot-meals-large-families/?utm_source=pinterest&utm_medium=organic_pin&utm_campaign=board_recovery_2026_07&utm_content=cheap_crockpot_v5"
+        },
+        {
+          "day": 2,
+          "slug": "high-protein-vegetarian-breakfast-burritos-you-can-freeze",
+          "variant": 1,
+          "asset_path": "public/images/pins/high-protein-vegetarian-breakfast-burritos-you-can-freeze_v1.jpg",
+          "board": "High Protein Breakfast Ideas",
+          "title": "Six Eggs, Six Breakfast Burritos, Three Months in the Freezer",
+          "description": "Six eggs across six burritos, plus a can of black beans and a cup of shredded cheese doing the rest of the work. These high protein breakfast burritos hold up for about 3 months in the freezer. Vegetarian, roughly 380 calories each, and no drive-thru involved.",
+          "alt_text": "Cream text pin reading six eggs, six breakfast burritos, three months in the freezer.",
+          "destination": "https://www.daily-life-hacks.com/high-protein-vegetarian-breakfast-burritos-you-can-freeze/?utm_source=pinterest&utm_medium=organic_pin&utm_campaign=board_recovery_2026_07&utm_content=breakfast_burritos_v1"
+        },
+        {
+          "day": 3,
+          "slug": "grab-and-go-fridge-snack-drawer",
+          "variant": 5,
+          "asset_path": "public/images/pins/grab-and-go-fridge-snack-drawer_v5.jpg",
+          "board": "High Fiber Snack Ideas",
+          "title": "Put the Snack Bin at Eye Level. Visibility Is Half the Battle",
+          "description": "A clear bin on the middle shelf beats the bottom crisper every time, because things go to the crisper to die. When you open the door it should be the first thing you see. That's the entire idea behind a grab and go snack drawer.",
+          "alt_text": "Cream text pin reading put the snack bin at eye level, visibility is half the battle.",
+          "destination": "https://www.daily-life-hacks.com/grab-and-go-fridge-snack-drawer/?utm_source=pinterest&utm_medium=organic_pin&utm_campaign=board_recovery_2026_07&utm_content=snack_drawer_v5"
+        },
+        {
+          "day": 4,
+          "slug": "easy-high-fiber-breakfast-ideas-for-gut-health",
+          "variant": 6,
+          "asset_path": "public/images/pins/easy-high-fiber-breakfast-ideas-for-gut-health_v6.jpg",
+          "board": "High Fiber Breakfast Ideas",
+          "title": "Aim for 8 to 10 Grams of Fiber Before Noon",
+          "description": "You don't need to hit the whole day's fiber at breakfast. Roughly 8 to 10 grams in the morning already puts you ahead of most muffin and latte routines. Stack any two easy high fiber breakfast foods and you're there before you've properly woken up.",
+          "alt_text": "Cream text pin reading aim for 8 to 10 grams of fiber before noon.",
+          "destination": "https://www.daily-life-hacks.com/easy-high-fiber-breakfast-ideas-for-gut-health/?utm_source=pinterest&utm_medium=organic_pin&utm_campaign=board_recovery_2026_07&utm_content=fiber_breakfast_v6"
+        },
+        {
+          "day": 5,
+          "slug": "grocery-budget-for-one-person-per-month",
+          "variant": 1,
+          "asset_path": "public/images/pins/grocery-budget-for-one-person-per-month_v1.jpg",
+          "board": "Grocery Budget Tips and Shopping Lists",
+          "title": "USDA Puts One Adult at $303 to $381 a Month for Food at Home",
+          "description": "The thrifty benchmark works out to about $303 a month for a woman living alone and $381 for a man, using May 2026 prices. That range already includes the 20 percent USDA adds for one person households. Use it as a shape to compare your own grocery spending against, not as a quote.",
+          "alt_text": "Cream text pin reading USDA puts one adult at $303 to $381 a month for food at home.",
+          "destination": "https://www.daily-life-hacks.com/grocery-budget-for-one-person-per-month/?utm_source=pinterest&utm_medium=organic_pin&utm_campaign=board_recovery_2026_07&utm_content=grocery_budget_v1",
+          "release_gate": "Verify the live article's USDA month and one-person figures on release day."
+        },
+        {
+          "day": 6,
+          "slug": "how-to-store-homemade-bread",
+          "variant": 1,
+          "asset_path": "public/images/pins/how-to-store-homemade-bread_v1.jpg",
+          "board": "Sourdough Discard Recipes and Easy Bread",
+          "title": "Crusty Homemade Bread Lives on the Counter, Cut Side Down",
+          "description": "A crackly crust and a plastic bag are enemies. For the first day or two, set the loaf cut side down on a wooden surface or in a paper bag and leave it alone. Storing homemade bread is mostly about matching the method to the crust you worked for.",
+          "alt_text": "Cream text pin reading crusty homemade bread lives on the counter, cut side down.",
+          "destination": "https://www.daily-life-hacks.com/how-to-store-homemade-bread/?utm_source=pinterest&utm_medium=organic_pin&utm_campaign=board_recovery_2026_07&utm_content=bread_storage_v1"
+        },
+        {
+          "day": 7,
+          "slug": "best-way-to-cook-chicken",
+          "variant": 1,
+          "asset_path": "public/images/pins/best-way-to-cook-chicken_v1.jpg",
+          "board": "How to Cook Chicken, Pork and Beef",
+          "title": "How to Cook Chicken Breast: Four to Six Minutes a Side, Pulled at 165F",
+          "description": "The best way to cook chicken breast in a skillet is four to six minutes per side over real heat, pulled at an internal temperature of 165F. Put the thermometer into the thickest part from the side, not from the top, or you'll read the hot pan instead. Under 25 minutes from fridge to fork.",
+          "alt_text": "Cream text pin reading four to six minutes a side, and a thermometer at 165F.",
+          "destination": "https://www.daily-life-hacks.com/best-way-to-cook-chicken/?utm_source=pinterest&utm_medium=organic_pin&utm_campaign=board_recovery_2026_07&utm_content=chicken_v1",
+          "release_gate": "Verify the live article's timing and temperature guidance on release day."
+        },
+        {
+          "day": 8,
+          "slug": "easy-weeknight-fish-tacos-with-cabbage-slaw",
+          "variant": 1,
+          "asset_path": "public/images/pins/easy-weeknight-fish-tacos-with-cabbage-slaw_v1.jpg",
+          "board": "Salad Recipes and Homemade Dressings",
+          "title": "The Cabbage Slaw Is the Whole Point of a Fish Taco",
+          "description": "Mayonnaise, lime juice and a minced chipotle in adobo, tossed through two cups of shredded cabbage. That homemade dressing is what makes a fish taco feel like a full plate instead of fish in a tortilla. Make the slaw first and let it sit.",
+          "alt_text": "Cream text pin reading the cabbage slaw is the whole point, the fish is incidental.",
+          "destination": "https://www.daily-life-hacks.com/easy-weeknight-fish-tacos-with-cabbage-slaw/?utm_source=pinterest&utm_medium=organic_pin&utm_campaign=board_recovery_2026_07&utm_content=fish_tacos_v1"
+        }
+      ],
+      "proof": ["public_pin_url", "pin_screenshot", "published_at", "board", "destination_http_and_canonical", "pin_analytics_export"],
+      "kpi": {
+        "day_7": ["release_integrity", "impressions", "saves", "outbound_clicks"],
+        "day_30": ["cohort_impressions_vs_baseline", "saves", "outbound_clicks", "off_domain_share"],
+        "day_60": ["qualified_referral_growth", "trailing_30_day_account_impressions"]
+      },
+      "stop_rule": "Stop on a policy warning, duplicate scheduling, destination mismatch, or renewed off-domain spike. If trailing 30-day account impressions are below 5000 on 2026-09-15, stop old-account recovery and choose a clean account or reallocate."
+    },
+    {
+      "channel": "kaggle",
+      "status": "BLOCKED_LICENSE",
+      "approval_gate": "KAG-1",
+      "asset_source": "dist-datasets/",
+      "future_archive": "daily-life-hacks-food-value-data-2026.1.zip",
+      "title": "US Grocery Prices: Protein and Fiber per Dollar (2026)",
+      "description": "Twenty-two CSV files compare what US grocery dollars buy in protein, fiber, and practical meal cost. The July 2026 snapshot contains 474 rows, a data dictionary, methodology, source notes, charts, and worked examples. Nutrient values use USDA FoodData Central where tracked. Price inputs use BLS data where tracked and dated national retail listings otherwise. Refuse and edible fractions are documented because a banana peel is not a serving suggestion.",
+      "destination": "https://www.daily-life-hacks.com/data/?utm_source=kaggle&utm_medium=dataset&utm_campaign=food_value_data_2026_1",
+      "prerequisites": ["Owner selects an explicit license.", "Owner verifies Kaggle's current license form.", "Package metadata and CITATION.cff are updated to match.", "Archive hash is recorded."],
+      "proof": ["public_dataset_url", "license_screenshot", "file_manifest", "archive_sha256", "landing_url_check", "kaggle_metrics_export"],
+      "kpi": {"day_7": ["public_integrity"], "day_30": ["views", "downloads", "notebooks", "votes", "referred_sessions"], "day_60": ["views", "downloads", "notebooks", "referred_sessions"]},
+      "stop_rule": "After one metadata correction, freeze promotion at day 60 if the page has fewer than 100 views, zero downloads or notebooks, and zero referred sessions."
+    },
+    {
+      "channel": "zenodo",
+      "status": "BLOCKED_LICENSE_AND_IDENTITY",
+      "approval_gate": "ZEN-1",
+      "asset_source": "dist-datasets/",
+      "future_archive": "daily-life-hacks-food-value-data-2026.1.zip",
+      "title": "Daily Life Hacks Food Value Data: US Grocery Cost and Nutrient Value (2026.1)",
+      "resource_type": "Dataset",
+      "publication_date": "2026-07-26",
+      "destination": "https://www.daily-life-hacks.com/data/?utm_source=zenodo&utm_medium=repository&utm_campaign=food_value_data_2026_1",
+      "prerequisites": ["Owner selects an explicit file license.", "Owner confirms creator identity and affiliation.", "Owner reviews durable DOI publication.", "Archive hash is recorded."],
+      "proof": ["doi", "public_record_url", "license_screenshot", "creator_metadata", "archive_sha256", "landing_url_check"],
+      "kpi": {"day_7": ["record_integrity"], "day_30": ["views", "downloads", "citations", "referred_sessions"], "day_60": ["downloads", "citations", "referred_sessions"]},
+      "stop_rule": "Do not delete or churn a DOI record for low traffic. If all day-60 outcomes are zero, stop promotion and update only for a real dataset version."
+    },
+    {
+      "channel": "flipboard",
+      "status": "BLOCKED_ACCOUNT_APPROVAL",
+      "approval_gate": "FLIP-1",
+      "magazine_title": "Grocery Math: Food Prices and Nutrition Data",
+      "magazine_description": "What does a dollar actually buy at the grocery store? This magazine collects food-price data, budget meal math, USDA numbers, and practical recipes that survive a Tuesday. The spreadsheets are public because \"trust me\" isn't a methodology.",
+      "owned_stories": [
+        "https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/?utm_source=flipboard&utm_medium=magazine&utm_campaign=grocery_math_2026_1&utm_content=fiber_per_dollar",
+        "https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/?utm_source=flipboard&utm_medium=magazine&utm_campaign=grocery_math_2026_1&utm_content=protein_per_dollar",
+        "https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/?utm_source=flipboard&utm_medium=magazine&utm_campaign=grocery_math_2026_1&utm_content=30g_fiber_cost",
+        "https://www.daily-life-hacks.com/what-50-grams-of-protein-costs-per-day/?utm_source=flipboard&utm_medium=magazine&utm_campaign=grocery_math_2026_1&utm_content=50g_protein_cost",
+        "https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/?utm_source=flipboard&utm_medium=magazine&utm_campaign=grocery_math_2026_1&utm_content=protein_quality",
+        "https://www.daily-life-hacks.com/usda-thrifty-food-plan-weekly-cost/?utm_source=flipboard&utm_medium=magazine&utm_campaign=grocery_math_2026_1&utm_content=usda_thrifty"
+      ],
+      "prerequisites": ["Owner approves or creates the profile.", "Owner creates a public Magazine.", "Owner adds at least three reputable third-party stories.", "Every owned story resolves directly."],
+      "proof": ["public_magazine_url", "six_owned_item_urls", "analytics_export", "ga4_source_medium_report"],
+      "kpi": {"day_7": ["article_opens", "follows"], "day_30": ["25_owned_article_opens_or_5_follows"], "day_60": ["50_qualified_site_sessions_or_10_follows"]},
+      "stop_rule": "If owned stories have zero opens after 14 days, make one metadata and cover check. If day 60 has fewer than 10 site sessions and zero follows, freeze the Magazine."
+    },
+    {
+      "channel": "data_is_plural",
+      "status": "DEFERRED_DORMANT",
+      "approval_gate": null,
+      "brief": "Twenty-two small datasets compare what US grocery dollars buy in protein, fiber, and meal cost. The July 2026 release contains 474 rows plus source notes, a data dictionary, methodology, charts, and worked examples. The project documents price dates, edible fractions, and the difference between a useful comparison and pretending every grocery store charges the same thing.",
+      "destination": "https://www.daily-life-hacks.com/data/?utm_source=data_is_plural&utm_medium=newsletter&utm_campaign=food_value_data_2026_1",
+      "prerequisites": ["A new edition appears within 60 days.", "An explicit public submission route exists.", "Owner selects the dataset license."],
+      "proof": ["new_edition_url", "public_submission_instructions"],
+      "kpi": {"day_7": [], "day_30": [], "day_60": ["channel_reactivation_check"]},
+      "stop_rule": "Remain deferred while the publication is dormant or has no public submission route. Do not hunt personal contact details."
+    },
+    {
+      "channel": "youtube_shorts_and_tiktok",
+      "status": "DEFERRED_NEW_MASTER",
+      "approval_gate": "VIDEO-1",
+      "source_chart": "public/images/fiber-per-dollar-top-20-chart.jpg",
+      "destination_article": "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
+      "master_spec": "1080x1920, 25 to 35 seconds, watermark-free, chart-led, no realistic AI people, owner-cleared music",
+      "title": "We Ranked 53 Foods by Fiber per Dollar",
+      "script": "We priced 53 foods by grams of fiber per dollar. Whole wheat flour came first in this July 2026 snapshot at 77.8 grams per dollar. Dry split peas, pinto beans, black beans, and popcorn kernels filled the next seats. The produce aisle was invited. It just didn't win the spreadsheet. Full CSV and method at daily-life-hacks.com.",
+      "youtube_destination": "https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/?utm_source=youtube&utm_medium=shorts&utm_campaign=fiber_dollar_2026_1",
+      "tiktok_destination": "https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/?utm_source=tiktok&utm_medium=short_video&utm_campaign=fiber_dollar_2026_1",
+      "rejected_existing_masters": [
+        {"asset": "kinetic-video-bundle/projects/dlh-fiber-japan/output-v4-new.mp4", "reason": "Unhedged health, longevity, and inflammation claims."},
+        {"asset": "kinetic-video-bundle/projects/dlh-healthy-fats/output-v3-new.mp4", "reason": "Absolute weight and fat claims."},
+        {"asset": "kinetic-video-bundle/projects/dlh-cabbage/output-v5.mp4", "reason": "Supplement comparison and gut-health claims."},
+        {"asset": "kinetic-video-bundle/projects/dlh-short-01/output-v2.mp4", "reason": "Unhedged digestion, hunger, and energy claims."}
+      ],
+      "prerequisites": ["Render a new compliant master.", "Review every frame and the audio transcript.", "Confirm TikTok profile-link eligibility.", "Use AI disclosure if realistic AI visuals are added."],
+      "proof": ["master_sha256", "transcript", "visual_qa", "public_video_urls", "platform_analytics_exports", "ga4_source_medium_report"],
+      "kpi": {
+        "day_7": ["youtube_engaged_views", "youtube_viewed_vs_swiped", "average_percentage_viewed", "tiktok_views", "completion", "profile_visits", "follows", "site_sessions"],
+        "day_30": ["four_compliant_uploads", "youtube_median_250_engaged_views", "youtube_70_percent_average_viewed", "tiktok_median_500_views", "tiktok_5_profile_visits"],
+        "day_60": ["eight_compliant_uploads", "median_reach_trend", "10_subscribers_or_follows_or_10_site_sessions"]
+      },
+      "stop_rule": "Stop the format if eight compliant uploads have median meaningful views below 100 and zero subscribers, follows, profile visits, and referred sessions."
+    },
+    {
+      "channel": "reddit",
+      "status": "BLOCKED_LIVE_RULE_CHECK",
+      "approval_gate": "RED-1",
+      "target_candidate": "r/EatCheapAndHealthy",
+      "source_data": "dist-datasets/data/fiber-per-dollar-2026.csv",
+      "native_chart": "dist-datasets/charts/fiber-per-dollar-top-20-chart.jpg",
+      "title": "I priced 53 foods by grams of fiber per dollar. The dry-goods aisle was rude about it.",
+      "initial_link_policy": "No link in the initial post.",
+      "body_markdown": "Disclosure: I run Daily Life Hacks, and this is from a grocery-price dataset I built.\n\nI compared 53 foods using package price, package weight, edible fraction, and USDA fiber per 100 grams. This was a July 2026 US price snapshot, so it isn't a promise about your store.\n\n| Rank | Food | Fiber per dollar |\n|---:|---|---:|\n| 1 | Whole wheat flour | 77.8 g |\n| 2 | Green split peas, dry | 71.0 g |\n| 3 | Pinto beans, dry | 70.8 g |\n| 4 | Black beans, dry | 58.1 g |\n| 5 | Popcorn kernels | 57.7 g |\n\nThe useful part wasn't \"beans are cheap.\" Civilization had that scoop. It was seeing how much package size, edible waste, and the actual shelf price changed the order.\n\nIf the community wants it and the rules allow it, I'll add the full CSV and method in a comment. Otherwise, the table can stay here and earn its keep.",
+      "reply_destination_if_requested_and_allowed": "https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/?utm_source=reddit&utm_medium=community&utm_campaign=fiber_dollar_native_2026_1&utm_content=reply",
+      "prerequisites": ["Owner checks current subreddit rules on posting day.", "Owner confirms native chart, disclosure, and later links are allowed.", "Account has normal non-promotional participation.", "Owner posts and replies manually."],
+      "proof": ["rule_screenshot", "public_post_url", "post_screenshot", "moderation_state", "score", "substantive_comments", "link_requests", "referred_sessions"],
+      "kpi": {"day_7": ["removal_state", "score", "substantive_comments", "data_questions", "link_requests", "referred_sessions"], "day_30": ["second_post_only_if_first_survives_and_has_demand"], "day_60": ["two_posts_survive_and_produce_discussion_or_demand"]},
+      "stop_rule": "Stop immediately for removal, moderator warning, or rule conflict. Never repost a removed item elsewhere. Two removals or two posts with no substantive response end the format."
+    }
+  ]
+}
