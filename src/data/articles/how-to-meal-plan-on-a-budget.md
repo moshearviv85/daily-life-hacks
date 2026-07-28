@@ -6,7 +6,7 @@ tags: ["how to meal plan on a budget", "budget meal plan", "cheap meal plan", "w
 cluster: "weekly-budget-shopping"
 parentPillar: "eat-healthy-on-a-budget-complete-playbook"
 image: "/images/how-to-meal-plan-on-a-budget-main.jpg"
-imageAlt: "Handwritten weekly dinner plan on a notepad next to a bag of dry lentils and a box of pasta"
+imageAlt: "Dry lentils, pasta, fresh produce and empty meal-prep containers laid out on a kitchen counter"
 date: 2026-07-28
 author: "David Miller"
 featured: false

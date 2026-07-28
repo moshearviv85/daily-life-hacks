@@ -6,7 +6,7 @@ tags: ["grocery budget for one person", "monthly grocery budget", "food budget",
 cluster: "weekly-budget-shopping"
 parentPillar: "eat-healthy-on-a-budget-complete-playbook"
 image: "/images/grocery-budget-for-one-person-per-month-main.jpg"
-imageAlt: "Single-person grocery haul on a kitchen counter with a notebook showing a monthly food budget and a calculator"
+imageAlt: "A single-person grocery haul on a kitchen counter: dried beans, rice, eggs, frozen vegetables and fresh produce"
 date: 2026-07-27
 author: "David Miller"
 featured: false

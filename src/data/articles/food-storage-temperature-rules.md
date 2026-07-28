@@ -4,7 +4,7 @@ excerpt: "Three numbers cover most of home food storage safety: 40F in the fridg
 category: "tips"
 tags: ["food storage", "food safety", "kitchen basics", "refrigerator organization", "meal prep"]
 image: "/images/food-storage-temperature-rules-main.jpg"
-imageAlt: "An appliance thermometer clipped to a refrigerator shelf next to covered food containers"
+imageAlt: "A refrigerator shelf holding covered glass containers of leftovers and a carton of eggs"
 date: 2026-07-28
 author: "David Miller"
 featured: false

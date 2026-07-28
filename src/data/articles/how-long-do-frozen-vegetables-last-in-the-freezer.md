@@ -4,7 +4,7 @@ excerpt: "Frozen vegetables stay safe indefinitely at 0F, but quality slides aft
 category: "tips"
 tags: ["frozen vegetables", "freezer storage", "food storage", "food safety", "reduce food waste"]
 image: "/images/how-long-do-frozen-vegetables-last-in-the-freezer-main.jpg"
-imageAlt: "An open freezer drawer holding labeled bags of frozen peas, broccoli, and green beans"
+imageAlt: "Clear freezer bags of mixed vegetables and green peas stacked on a freezer shelf"
 date: 2026-07-28
 author: "David Miller"
 featured: false

@@ -4,7 +4,7 @@ excerpt: "USDA puts low-acid canned goods like beans at 2 to 5 years on the shel
 category: "tips"
 tags: ["canned beans", "food storage", "pantry staples", "food safety", "reduce food waste"]
 image: "/images/how-long-do-canned-beans-last-after-the-best-by-date-main.jpg"
-imageAlt: "Several cans of black beans and chickpeas stacked on a cool pantry shelf"
+imageAlt: "Plain tin cans stacked in a pantry cupboard beside a jar of dry beans"
 date: 2026-07-28
 author: "David Miller"
 featured: false

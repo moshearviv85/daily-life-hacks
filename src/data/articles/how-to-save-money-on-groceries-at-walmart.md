@@ -6,7 +6,7 @@ tags: ["save money on groceries", "walmart grocery prices", "grocery budget", "c
 cluster: "weekly-budget-shopping"
 parentPillar: "eat-healthy-on-a-budget-complete-playbook"
 image: "/images/how-to-save-money-on-groceries-at-walmart-main.jpg"
-imageAlt: "Walmart shopping cart holding a bag of dry pinto beans, whole wheat flour, oats, and canned black beans next to a receipt"
+imageAlt: "A shopping cart part-filled with pantry staples and fresh produce in a supermarket aisle"
 date: 2026-07-27
 author: "David Miller"
 featured: false

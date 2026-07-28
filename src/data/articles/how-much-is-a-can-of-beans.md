@@ -6,7 +6,7 @@ tags: ["how much is a can of beans", "canned beans price", "cheap protein", "gro
 cluster: "budget-protein"
 parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/how-much-is-a-can-of-beans-main.jpg"
-imageAlt: "Three cans of store brand beans on a grocery shelf with orange price tags below them"
+imageAlt: "Three plain tin cans on a kitchen counter, the middle one opened to show black beans"
 date: 2026-07-28
 author: "David Miller"
 featured: false
