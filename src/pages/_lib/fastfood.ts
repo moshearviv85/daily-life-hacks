@@ -246,11 +246,24 @@ export function chainSchemas(opts: {
         contentUrl: `${SITE}${CSV_PATH}`,
       },
     ],
+    // The parent study, as a nested Dataset. It needs its own description and
+    // distribution: the technical-SEO test walks every node recursively, and a
+    // Dataset without them is not eligible for Dataset Search either.
     isPartOf: {
       "@type": "Dataset",
       "@id": `${SITE}${CSV_PATH}#dataset`,
       name: `Fast food protein per dollar, ${STUDY_SIZE} items across ${STUDY_CHAINS} US chains`,
+      description: `Protein grams and menu prices for ${STUDY_SIZE} fast food items across ${STUDY_CHAINS} US chains, with protein per dollar computed for each. Protein from each chain's own published nutrition data, prices observed 2025 to 2026 with the basis named per row.`,
       url: `${SITE}${PARENT_PATH}`,
+      license: `${SITE}/methodology/#data-license`,
+      isAccessibleForFree: true,
+      distribution: [
+        {
+          "@type": "DataDownload",
+          encodingFormat: "text/csv",
+          contentUrl: `${SITE}${CSV_PATH}`,
+        },
+      ],
     },
   };
 
