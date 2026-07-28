@@ -1,0 +1,177 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ChainTable from "./_lib/ChainTable.astro";
+import ChainLimits from "./_lib/ChainLimits.astro";
+import {
+  CHAIN_PAGES, itemsFor, studyRank, chainSchemas, usd, round,
+  PARENT_PATH, CSV_PATH, STUDY_SIZE, STUDY_CHAINS, STUDY_BEST,
+} from "./_lib/fastfood";
+
+const page = CHAIN_PAGES.mcdonalds;
+const items = itemsFor(page.chain);
+
+const best = items[0];
+const worst = items[items.length - 1];
+const spread = best.perDollar / worst.perDollar;
+
+/* Named rows, looked up rather than hardcoded, so a CSV re-run moves the prose too. */
+const bigMac = items.find((i) => i.item === "Big Mac")!;
+const mcDouble = items.find((i) => i.item === "McDouble")!;
+const nuggets = items.find((i) => i.item === "Chicken McNuggets (10 pc)")!;
+const mcMuffin = items.find((i) => i.item === "Egg McMuffin")!;
+
+/* The Big Mac tax: what each extra gram of protein costs when you upgrade. */
+const macGramGap = bigMac.proteinG - mcDouble.proteinG;
+const macPriceGap = bigMac.priceUsd - mcDouble.priceUsd;
+const macCostPerExtraGram = macPriceGap / macGramGap;
+
+const title = `McDonald's Protein per Dollar: ${items.length} Items Ranked (July 2026 Prices)`;
+const description =
+  `Every McDonald's item we priced, ranked by grams of protein per dollar. The ${best.item} wins at ` +
+  `${best.perDollar} g per $1; the ${worst.item} is last at ${worst.perDollar}. Prices observed ${page.observed}, ` +
+  `basis stated per row. No calorie figures, because our dataset has none.`;
+
+const schemas = chainSchemas({ page, items, title, description });
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6" style="color: var(--muted-color);">
+      <a href="/" class="underline" style="color:#F29B30;">Home</a>
+      <span aria-hidden="true"> / </span>
+      <a href={PARENT_PATH} class="underline" style="color:#F29B30;">Fast food protein per dollar</a>
+      <span aria-hidden="true"> / </span>
+      <span>McDonald's</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      McDonald's Protein per Dollar, Ranked
+    </h1>
+
+    <p class="text-lg mb-4 leading-relaxed" style="color: var(--text-color);">
+      The best protein deal at McDonald's is the {best.item}: {best.proteinG} grams for {usd(best.priceUsd)},
+      which is {best.perDollar} grams of protein per dollar. The worst is the {worst.item} at {worst.perDollar}.
+      That's a {round(spread, 1)}-fold gap on one menu board, and it's the whole reason this page exists.
+      Below are all {items.length} McDonald's items we priced, ranked, with the date and the source behind
+      every number.
+    </p>
+
+    <p class="text-sm mb-8 p-4 rounded-xl" style="color: var(--muted-color); background: var(--card-bg); border:1px solid var(--border-color);">
+      <strong style="color:var(--heading-color);">Prices observed {page.observed}</strong> from a national-average
+      tracker, a la carte, with the exact basis stated on every row. Protein grams come from McDonald's own
+      published product nutrition. Fast-food prices are regional, so treat these as a national reference point
+      rather than your receipt. Full data in the
+      <a href={CSV_PATH} class="underline" style="color:#F29B30;">raw CSV</a>.
+    </p>
+
+    <dl class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="ff-stat">
+        <dt>Best value</dt>
+        <dd>{best.perDollar} g / $1</dd>
+        <p>{best.item}, {best.proteinG} g for {usd(best.priceUsd)}</p>
+      </div>
+      <div class="ff-stat">
+        <dt>Worst value</dt>
+        <dd>{worst.perDollar} g / $1</dd>
+        <p>{worst.item}, {worst.proteinG} g for {usd(worst.priceUsd)}</p>
+      </div>
+      <div class="ff-stat">
+        <dt>Spread on one menu</dt>
+        <dd>{round(spread, 1)}x</dd>
+        <p>between the best and worst of {items.length} priced items</p>
+      </div>
+    </dl>
+
+    <section id="ranking">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        All {items.length} McDonald's items, best protein value first
+      </h2>
+      <p class="mb-6" style="color: var(--text-color);">
+        One division problem per row: protein grams divided by the price. The rank column shows where each
+        item lands in the full {STUDY_SIZE}-item, {STUDY_CHAINS}-chain study.
+      </p>
+      <ChainTable items={items} chain={page.chain} observed={page.observed} studyRankOf={studyRank} />
+    </section>
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        What this actually means when you're standing at the counter
+      </h2>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Beef stacks win and everything else loses. That's the McDonald's story in one line. The two items at
+        the top of this table are both just beef patties with cheese, and the four below them are all paying
+        for something that isn't protein: a third bun, a coating, a bigger box, an English muffin.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The {bigMac.item} is the clearest example, and it's a little painful. It carries {bigMac.proteinG} grams
+        for {usd(bigMac.priceUsd)}. The {mcDouble.item} carries {mcDouble.proteinG} grams for {usd(mcDouble.priceUsd)}.
+        So the upgrade is {macGramGap} extra grams of protein for {usd(macPriceGap)}, which works out to about
+        {usd(macCostPerExtraGram)} per additional gram. You're not buying protein at that point. You're buying
+        the middle bun and the sauce, and honestly, if that's what you came for, fine. Just don't file it under
+        macros.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The {nuggets.item} number surprises people. {nuggets.proteinG} grams for {usd(nuggets.priceUsd)} is
+        {nuggets.perDollar} grams per dollar, which puts a ten-piece behind a single {mcDouble.item} that costs
+        two dollars less. Breading is cheap to make and expensive to buy, and that gap is the entire explanation.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        And then there's the {mcMuffin.item}, sitting dead last at {mcMuffin.perDollar} grams per dollar. It has
+        a reputation as the sensible protein breakfast of the American highway, and by this one measure it's the
+        weakest thing on this page. It's still a fine breakfast. It's just an expensive way to buy an egg.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        So the practical version: if the drive-thru is happening anyway and protein is the point, the two beef
+        stacks are the order. The {mcDouble.item} at {usd(mcDouble.priceUsd)} is the one I'd actually pick,
+        because it gets you within striking distance of the top ratio for less than half the price of the winner.
+        Everything below the top two on this table is a taste decision wearing a nutrition costume.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Worth keeping the scale in view, though. The best order at McDonald's, {best.perDollar} grams per dollar,
+        doesn't reach the top of the wider study, where {STUDY_BEST.chain}'s {STUDY_BEST.item} hits
+        {STUDY_BEST.perDollar}. And none of them are close to a grocery store, where the
+        <a href="/cheapest-protein-per-gram/" class="underline font-semibold" style="color:#F29B30;">cheapest protein per gram ranking</a>
+        starts an order of magnitude cheaper. This table is damage control, not a strategy.
+      </p>
+    </section>
+
+    <ChainLimits chain={page.chain} itemCount={items.length} observed={page.observed} />
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        Compare it to another menu
+      </h2>
+      <p class="mb-5 leading-relaxed" style="color: var(--text-color);">
+        McDonald's doesn't exist in isolation, and the interesting numbers show up when you put two menus next
+        to each other.
+      </p>
+      <ul class="space-y-3">
+        {page.siblings.map((s) => (
+          <li class="leading-relaxed" style="color: var(--text-color);">
+            <a href={s.path} class="underline font-semibold" style="color:#F29B30;">{s.label} protein per dollar</a>: {s.why}.
+          </li>
+        ))}
+        <li class="leading-relaxed" style="color: var(--text-color);">
+          <a href={PARENT_PATH} class="underline font-semibold" style="color:#F29B30;">The full {STUDY_SIZE}-item fast food ranking</a>: all {STUDY_CHAINS} chains in one table, plus how the best drive-thru order compares to a bag of dry beans.
+        </li>
+      </ul>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    .ff-stat { padding:1rem 1.1rem; border-radius:.9rem; background:var(--card-bg); border:1px solid var(--border-color); }
+    .ff-stat dt { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted-color); margin-bottom:.25rem; }
+    .ff-stat dd { font-size:1.9rem; font-weight:800; color:#F29B30; line-height:1.1; }
+    .ff-stat p { font-size:.82rem; color:var(--muted-color); margin-top:.3rem; }
+  </style>
+</BaseLayout>

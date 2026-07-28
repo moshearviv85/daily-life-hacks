@@ -1,0 +1,78 @@
+---
+/**
+ * The honest-limits block. Every chain page carries it.
+ *
+ * These statements are identical across the five pages on purpose. They are a
+ * disclosure, not content, and the facts genuinely do not vary by chain: the
+ * study is 30 items, none of our 22 datasets carries a calorie column, and
+ * fast-food pricing is regional everywhere.
+ *
+ * The chain-specific part goes in the default slot.
+ */
+import { STUDY_SIZE, STUDY_CHAINS, CSV_PATH, PARENT_PATH } from "./fastfood";
+
+interface Props {
+  chain: string;
+  itemCount: number;
+  observed: string;
+}
+
+const { chain, itemCount, observed } = Astro.props;
+---
+
+<section class="mt-14 max-w-3xl" id="what-this-doesnt-cover">
+  <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+    What this page doesn't cover
+  </h2>
+
+  <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+    Worth being blunt about the edges of this, because a food-cost page that
+    oversells itself is worth less than no page at all.
+  </p>
+
+  <ul class="list-disc pl-5 space-y-3 leading-relaxed" style="color: var(--text-color);">
+    <li>
+      <strong style="color:var(--heading-color);">It's {itemCount} items, not the {chain} menu.</strong>
+      The whole study is {STUDY_SIZE} protein-notable items across {STUDY_CHAINS} chains, picked because
+      they're the ones people actually order for protein. {chain} sells plenty of things that
+      aren't here, and some of them might beat the winner above. We didn't price them, so we're
+      not going to pretend to know.
+    </li>
+    <li>
+      <strong style="color:var(--heading-color);">There are no calorie numbers here, anywhere.</strong>
+      Not one of our 22 datasets carries a calorie column, so this page doesn't have one and
+      won't be getting one by borrowing figures from a nutrition site and quietly mixing them
+      into an audited table. If you want calories per dollar, get them from a source that
+      actually measured them.
+    </li>
+    <li>
+      <strong style="color:var(--heading-color);">The prices are a dated snapshot, not your receipt.</strong>
+      No chain publishes one national price. Every row above names its own basis: a national
+      average from a named tracker, or the chain's own online menu on a stated day. The window
+      for this page is {observed}. Your local drive-thru can sit a dollar or two either side of
+      these numbers, and if you're reading this a year from now, assume it does.
+    </li>
+    <li>
+      <strong style="color:var(--heading-color);">Protein per dollar is one number, and it isn't the only one.</strong>
+      This ranking says nothing about sodium, saturated fat, carbs, allergens, or whether the food
+      is any good. It answers exactly one question: which order turns the most of your money into
+      protein.
+    </li>
+    <li>
+      <strong style="color:var(--heading-color);">Combos, promos and app deals are out.</strong>
+      Prices are for the item on its own where the row says so. Bundle it into a meal or catch a
+      promo week and the maths moves, sometimes a lot.
+    </li>
+  </ul>
+
+  <p class="mt-5 leading-relaxed" style="color: var(--text-color);">
+    You can check all of it. The
+    <a href={CSV_PATH} class="underline font-semibold" style="color:#F29B30;">raw CSV</a>
+    holds every row with its source and price basis, the
+    <a href="/methodology/" class="underline font-semibold" style="color:#F29B30;">methodology page</a>
+    explains the pricing rules, and the
+    <a href={PARENT_PATH} class="underline font-semibold" style="color:#F29B30;">full {STUDY_SIZE}-item study</a>
+    puts {chain} next to the other six chains.
+    <slot />
+  </p>
+</section>

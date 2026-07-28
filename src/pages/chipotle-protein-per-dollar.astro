@@ -1,0 +1,190 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ChainTable from "./_lib/ChainTable.astro";
+import ChainLimits from "./_lib/ChainLimits.astro";
+import {
+  CHAIN_PAGES, itemsFor, studyRank, chainSchemas, usd, round,
+  PARENT_PATH, CSV_PATH, STUDY_SIZE, STUDY_CHAINS, STUDY_BEST,
+} from "./_lib/fastfood";
+
+const page = CHAIN_PAGES.chipotle;
+const items = itemsFor(page.chain);
+
+const best = items[0];
+const worst = items[items.length - 1];
+const spread = best.perDollar / worst.perDollar;
+
+const cup = items.find((i) => i.item.includes("High Protein Cup"))!;
+const doubleBowl = items.find((i) => i.item.includes("Double Chicken"))!;
+const chickenBowl = items.find((i) => i.item.startsWith("Chicken Burrito Bowl"))!;
+const steakBowl = items.find((i) => i.item.startsWith("Steak Burrito Bowl"))!;
+
+/* The double-protein add-on, priced on its own: what the second scoop alone returns. */
+const addOnGrams = doubleBowl.proteinG - chickenBowl.proteinG;
+const addOnPrice = doubleBowl.priceUsd - chickenBowl.priceUsd;
+const addOnPerDollar = addOnGrams / addOnPrice;
+
+/* The steak upgrade: more money, less protein. */
+const steakExtraCost = steakBowl.priceUsd - chickenBowl.priceUsd;
+const steakLostGrams = chickenBowl.proteinG - steakBowl.proteinG;
+
+const holdsStudyTop = STUDY_BEST.chain === page.chain;
+
+const title = `Chipotle Protein per Dollar: ${items.length} Orders Ranked (2026 Prices)`;
+const description =
+  `Chipotle's ${cup.item} is the best protein-per-dollar order in our whole fast food study at ` +
+  `${cup.perDollar} g per $1, and the ${worst.item} is one of the worst at ${worst.perDollar}. ` +
+  `Prices observed ${page.observed}, basis stated per row. No calorie figures, because our dataset has none.`;
+
+const schemas = chainSchemas({ page, items, title, description });
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6" style="color: var(--muted-color);">
+      <a href="/" class="underline" style="color:#F29B30;">Home</a>
+      <span aria-hidden="true"> / </span>
+      <a href={PARENT_PATH} class="underline" style="color:#F29B30;">Fast food protein per dollar</a>
+      <span aria-hidden="true"> / </span>
+      <span>Chipotle</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      Chipotle Protein per Dollar, Ranked
+    </h1>
+
+    <p class="text-lg mb-4 leading-relaxed" style="color: var(--text-color);">
+      Chipotle has the widest range of any chain we priced. The {cup.item} returns {cup.perDollar} grams of
+      protein per dollar{holdsStudyTop ? `, the best number in the entire ${STUDY_SIZE}-item study across all ${STUDY_CHAINS} chains` : ""}.
+      The {worst.item}, from the same counter, returns {worst.perDollar}. That's a {round(spread, 1)}-fold gap
+      between the best and worst thing you can order in one building. Here are all {items.length} Chipotle
+      orders we priced, with the date and source on every number.
+    </p>
+
+    <p class="text-sm mb-8 p-4 rounded-xl" style="color: var(--muted-color); background: var(--card-bg); border:1px solid var(--border-color);">
+      <strong style="color:var(--heading-color);">Prices observed {page.observed}.</strong> The cup price is
+      Chipotle's own published national weighted average from launch, which makes it the cleanest figure in the
+      study and also the oldest, so flag it as such. The bowl prices come from a tracker averaging thousands of
+      US stores. Protein grams come from Chipotle's own US nutrition facts, built up ingredient by ingredient,
+      which each row states. Full data in the
+      <a href={CSV_PATH} class="underline" style="color:#F29B30;">raw CSV</a>.
+    </p>
+
+    <dl class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="ff-stat">
+        <dt>Best value</dt>
+        <dd>{best.perDollar} g / $1</dd>
+        <p>{best.item}, {best.proteinG} g for {usd(best.priceUsd)}</p>
+      </div>
+      <div class="ff-stat">
+        <dt>Worst value</dt>
+        <dd>{worst.perDollar} g / $1</dd>
+        <p>{worst.item}, {worst.proteinG} g for {usd(worst.priceUsd)}</p>
+      </div>
+      <div class="ff-stat">
+        <dt>Spread on one menu</dt>
+        <dd>{round(spread, 1)}x</dd>
+        <p>the widest of any chain in the study</p>
+      </div>
+    </dl>
+
+    <section id="ranking">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        All {items.length} Chipotle orders, best protein value first
+      </h2>
+      <p class="mb-6" style="color: var(--text-color);">
+        One division problem per row: protein grams divided by the price. The rank column shows where each order
+        lands in the full {STUDY_SIZE}-item study across all {STUDY_CHAINS} chains.
+      </p>
+      <ChainTable items={items} chain={page.chain} observed={page.observed} studyRankOf={studyRank} />
+    </section>
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        What this actually means when you're standing at the counter
+      </h2>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Stop paying for the vehicle. Every number on this page is a version of that one idea. The {cup.item} is
+        the only thing in this entire study that's just the expensive part: {cup.proteinG} grams of adobo chicken
+        for {usd(cup.priceUsd)}, no rice, no beans, no tortilla, no bowl full of things that weigh a lot and
+        carry almost no protein. It wins by a mile because it's the only item that isn't subsidising its own
+        packaging.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The best trick on this page isn't on the menu board, though. Compare the {doubleBowl.item} with the
+        {" "}{chickenBowl.item}: {doubleBowl.proteinG} grams against {chickenBowl.proteinG} grams, for
+        {" "}{usd(addOnPrice)} more. That means the second scoop of chicken, on its own, delivers
+        {" "}{addOnGrams} grams of protein for {usd(addOnPrice)}, or about {round(addOnPerDollar, 1)} grams per
+        dollar. The add-on is a better deal than the bowl you're adding it to. That's why the double bowl at
+        {" "}{doubleBowl.perDollar} outranks the single bowl at {chickenBowl.perDollar} despite costing five
+        dollars more. If you're going to Chipotle for protein, double the meat and skip nothing else.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The steak bowl is the one that should annoy you. Swap chicken for steak in the same bowl and you pay
+        {" "}{usd(steakExtraCost)} more and get {steakLostGrams} grams <em>less</em> protein.
+        {" "}{chickenBowl.proteinG} grams for {usd(chickenBowl.priceUsd)} becomes {steakBowl.proteinG} grams for
+        {" "}{usd(steakBowl.priceUsd)}. The ratio falls from {chickenBowl.perDollar} to {steakBowl.perDollar}
+        grams per dollar, which is a bigger drop than anything McDonald's or Wendy's can do to you. Steak is a
+        flavour decision and a perfectly good one. It's just the single most expensive way to buy protein at
+        this chain.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The practical version: order the cup, or order a chicken bowl with double chicken. Those are the two
+        good answers and they're good for the same reason. Anything where the rice and the tortilla are doing
+        the volume work is a fine lunch and a poor protein purchase.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        One honest wrinkle about the winner. That {usd(cup.priceUsd)} is the national weighted average Chipotle
+        published itself when the cup launched, which is the most credible kind of price you can get, and it's
+        also the oldest figure in the study. Chipotle has raised prices since. If your store charges more, the
+        cup's ratio comes down accordingly, and it can still be the best thing on this table without hitting
+        {" "}{cup.perDollar}.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        And for scale: even the winner here, the single best fast-food protein deal in America by these numbers,
+        is beaten many times over by the top of the
+        <a href="/cheapest-protein-per-gram/" class="underline font-semibold" style="color:#F29B30;">grocery protein per gram ranking</a>.
+        Chipotle is the best of the drive-thrus. That's a smaller compliment than it sounds.
+      </p>
+    </section>
+
+    <ChainLimits chain={page.chain} itemCount={items.length} observed={page.observed} />
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        Compare it to another menu
+      </h2>
+      <p class="mb-5 leading-relaxed" style="color: var(--text-color);">
+        Chipotle takes the top spot in the study, but it also holds one of the worst rows in it. Both facts get
+        more interesting next to another chain.
+      </p>
+      <ul class="space-y-3">
+        {page.siblings.map((s) => (
+          <li class="leading-relaxed" style="color: var(--text-color);">
+            <a href={s.path} class="underline font-semibold" style="color:#F29B30;">{s.label} protein per dollar</a>: {s.why}.
+          </li>
+        ))}
+        <li class="leading-relaxed" style="color: var(--text-color);">
+          <a href={PARENT_PATH} class="underline font-semibold" style="color:#F29B30;">The full {STUDY_SIZE}-item fast food ranking</a>: all {STUDY_CHAINS} chains in one table, plus how the best drive-thru order compares to a bag of dry beans.
+        </li>
+      </ul>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    .ff-stat { padding:1rem 1.1rem; border-radius:.9rem; background:var(--card-bg); border:1px solid var(--border-color); }
+    .ff-stat dt { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted-color); margin-bottom:.25rem; }
+    .ff-stat dd { font-size:1.9rem; font-weight:800; color:#F29B30; line-height:1.1; }
+    .ff-stat p { font-size:.82rem; color:var(--muted-color); margin-top:.3rem; }
+  </style>
+</BaseLayout>

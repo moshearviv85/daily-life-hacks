@@ -1,0 +1,88 @@
+---
+/**
+ * The ranked table for one chain, plus the per-row receipts.
+ *
+ * Rendered entirely at build time. There is no client-side JavaScript on this
+ * component at all: the whole point of these pages is to be the one citable,
+ * dated fast-food price table in a results page full of undated ones, and a
+ * number that only exists after JavaScript runs cannot be cited by a crawler
+ * or read by an AI extractor.
+ *
+ * Every cell traces to public/data/fastfood-protein-per-dollar-2026.csv.
+ */
+import { usd, possessive, type Item } from "./fastfood";
+
+interface Props {
+  items: Item[];
+  chain: string;
+  /** Human-readable price-observation window, shown in the caption and above. */
+  observed: string;
+  /** Rank of each item within the full 30-item study. */
+  studyRankOf: (item: Item) => number;
+}
+
+const { items, chain, observed, studyRankOf } = Astro.props;
+---
+
+<div class="overflow-x-auto rounded-xl" style="border: 1px solid var(--border-color);">
+  <table class="w-full text-sm" style="min-width: 780px; border-collapse: collapse;">
+    <caption class="sr-only">
+      {items.length} {chain} menu items ranked by grams of protein per dollar, best value first.
+      Prices observed {observed}. Protein grams from {possessive(chain)} published nutrition data. Each row
+      states the exact price basis it was recorded from.
+    </caption>
+    <thead>
+      <tr style="border-bottom: 2px solid var(--border-color); color: var(--heading-color);">
+        <th scope="col" class="ff-th">#</th>
+        <th scope="col" class="ff-th">Menu item</th>
+        <th scope="col" class="ff-th ff-num">Protein</th>
+        <th scope="col" class="ff-th ff-num">Price</th>
+        <th scope="col" class="ff-th ff-num">Protein per $1</th>
+        <th scope="col" class="ff-th ff-num">Rank in study</th>
+        <th scope="col" class="ff-th">Price basis and date observed</th>
+      </tr>
+    </thead>
+    <tbody>
+      {items.map((it, i) => (
+        <tr style="border-bottom: 1px solid var(--border-color);">
+          <td class="ff-td">{i + 1}</td>
+          <th scope="row" class="ff-td" style="font-weight:600;text-align:left;">{it.item}</th>
+          <td class="ff-td ff-num">{it.proteinG} g</td>
+          <td class="ff-td ff-num">{usd(it.priceUsd)}</td>
+          <td class="ff-td ff-num" style="font-weight:700;color:#F29B30;">{it.perDollar} g</td>
+          <td class="ff-td ff-num" style="color:var(--muted-color);">{studyRankOf(it)} of 30</td>
+          <td class="ff-td ff-basis">{it.priceBasis}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<p class="text-sm mt-3" style="color: var(--muted-color);">
+  Protein per dollar is grams of protein divided by the menu price, nothing else. Prices observed
+  <strong style="color:var(--heading-color);">{observed}</strong>. Fast-food chains do not publish a
+  single national price, so every row above names the exact basis its price came from, and your
+  local number will differ.
+</p>
+
+<details class="mt-4 rounded-xl p-4" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+  <summary class="font-bold cursor-pointer" style="color: var(--heading-color);">
+    Where each protein figure came from
+  </summary>
+  <dl class="mt-3 text-sm space-y-3">
+    {items.map((it) => (
+      <div>
+        <dt class="font-semibold" style="color: var(--heading-color);">{it.item}</dt>
+        <dd style="color: var(--text-color);">{it.proteinSource}</dd>
+      </div>
+    ))}
+  </dl>
+</details>
+
+<style>
+  .ff-th { padding:.6rem .75rem; text-align:left; font-weight:600; white-space:nowrap; }
+  .ff-th.ff-num, .ff-td.ff-num { text-align:right; white-space:nowrap; }
+  .ff-td { padding:.55rem .75rem; vertical-align:top; }
+  .ff-td.ff-basis { font-size:.78rem; color:var(--muted-color); min-width:230px; white-space:normal; }
+  caption.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+</style>
