@@ -15,7 +15,28 @@ sys.modules[SPEC.name] = scorecard
 SPEC.loader.exec_module(scorecard)
 
 
-def _write_gsc_zip(path: Path, *, include_page_filter: bool = True):
+def _cohort_urls() -> list[str]:
+    return [
+        f"https://www.daily-life-hacks.com/recovery-page-{index}/"
+        for index in range(1, 21)
+    ]
+
+
+def _write_cohort(path: Path, urls: list[str] | None = None):
+    values = urls or _cohort_urls()
+    path.write_text(
+        "url,type\n" + "".join(f"{url},study\n" for url in values),
+        encoding="utf-8",
+    )
+
+
+def _write_gsc_zip(
+    path: Path,
+    *,
+    include_page_filter: bool = True,
+    filter_urls: list[str] | None = None,
+    generic_page_filter: bool = False,
+):
     start = date(2026, 7, 20)
     chart = ["Date,Clicks,Impressions,CTR,Position"]
     for index in range(8):
@@ -23,7 +44,12 @@ def _write_gsc_zip(path: Path, *, include_page_filter: bool = True):
         chart.append(f"{day.isoformat()},{index % 2},{10 + index},0%,{20 - index}")
     filters = ["Filter,Value", "Search type,Web", "Date,Custom"]
     if include_page_filter:
-        filters.append("Page,Custom regex: recovery cohort")
+        value = (
+            "Custom regex: recovery cohort"
+            if generic_page_filter
+            else "^(?:" + "|".join(filter_urls or _cohort_urls()) + ")$"
+        )
+        filters.append(f'Page,"{value}"')
     with zipfile.ZipFile(path, "w") as archive:
         archive.writestr("Chart.csv", "\n".join(chart) + "\n")
         archive.writestr("Filters.csv", "\n".join(filters) + "\n")
@@ -64,11 +90,12 @@ def _write_clarity_daily(path: Path):
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def _config():
+def _config(cohort_file: Path):
     return {
         "channels": {
             "gsc": {
                 "cohort_id": "recovery-20",
+                "cohort_file": str(cohort_file),
                 "file_patterns": ["*Performance-on-Search*.zip"],
                 "require_page_filter": True,
             },
@@ -94,13 +121,15 @@ def _config():
 
 
 def test_all_four_sources_compare_same_eight_day_window(tmp_path):
+    cohort = tmp_path / "cohort.csv"
+    _write_cohort(cohort)
     _write_gsc_zip(tmp_path / "site-Performance-on-Search.zip")
     _write_bing(tmp_path / "site_SearchPerformanceOverview_All_7_28_2026.csv")
     _write_pinterest(tmp_path / "Pinterest Analytics overview 20260720-20260727.csv")
     _write_clarity_daily(tmp_path / "Clarity_export.csv")
 
     target = date(2026, 7, 27)
-    snapshots = scorecard.build_snapshots([tmp_path], _config(), target)
+    snapshots = scorecard.build_snapshots([tmp_path], _config(cohort), target)
 
     assert [snapshot.status for snapshot in snapshots] == ["READY"] * 4
     for snapshot in snapshots:
@@ -110,20 +139,48 @@ def test_all_four_sources_compare_same_eight_day_window(tmp_path):
 
 
 def test_gsc_without_page_filter_is_not_treated_as_fixed_cohort(tmp_path):
+    cohort = tmp_path / "cohort.csv"
+    _write_cohort(cohort)
     path = tmp_path / "site-Performance-on-Search.zip"
     _write_gsc_zip(path, include_page_filter=False)
 
-    snapshot = scorecard.parse_gsc(path, _config()["channels"]["gsc"])
+    snapshot = scorecard.parse_gsc(path, _config(cohort)["channels"]["gsc"])
     snapshot = scorecard.finalize_snapshot(snapshot, date(2026, 7, 27))
 
     assert snapshot.status == "COHORT_MISMATCH"
     assert scorecard.compare(snapshot, date(2026, 7, 27)) == []
 
 
+def test_gsc_generic_page_filter_does_not_prove_the_fixed_cohort(tmp_path):
+    cohort = tmp_path / "cohort.csv"
+    _write_cohort(cohort)
+    path = tmp_path / "site-Performance-on-Search.zip"
+    _write_gsc_zip(path, generic_page_filter=True)
+
+    snapshot = scorecard.parse_gsc(path, _config(cohort)["channels"]["gsc"])
+
+    assert snapshot.status == "COHORT_MISMATCH"
+    assert "generic Page filter is not sufficient" in snapshot.note
+
+
+def test_gsc_cohort_file_must_have_exactly_20_unique_urls(tmp_path):
+    cohort = tmp_path / "cohort.csv"
+    _write_cohort(cohort, _cohort_urls()[:19])
+    path = tmp_path / "site-Performance-on-Search.zip"
+    _write_gsc_zip(path)
+
+    snapshot = scorecard.parse_gsc(path, _config(cohort)["channels"]["gsc"])
+
+    assert snapshot.status == "ERROR"
+    assert "exactly 20 unique URLs" in snapshot.note
+
+
 def test_missing_yesterday_is_stale_not_zero(tmp_path):
     path = tmp_path / "site_SearchPerformanceOverview_All_7_28_2026.csv"
     _write_bing(path)
-    snapshot = scorecard.parse_bing(path, _config()["channels"]["bing"])
+    cohort = tmp_path / "cohort.csv"
+    _write_cohort(cohort)
+    snapshot = scorecard.parse_bing(path, _config(cohort)["channels"]["bing"])
     snapshot = scorecard.finalize_snapshot(snapshot, date(2026, 7, 28))
 
     assert snapshot.status == "STALE"
@@ -139,7 +196,9 @@ def test_aggregate_clarity_export_is_explicitly_non_comparable(tmp_path):
         '"","Total sessions","701"\n',
         encoding="utf-8",
     )
-    snapshot = scorecard.parse_clarity(path, _config()["channels"]["clarity"])
+    cohort = tmp_path / "cohort.csv"
+    _write_cohort(cohort)
+    snapshot = scorecard.parse_clarity(path, _config(cohort)["channels"]["clarity"])
 
     assert snapshot.status == "NON_COMPARABLE"
     assert snapshot.aggregate["sessions"] == 701
@@ -176,7 +235,9 @@ def test_release_governance_lists_due_and_overdue(tmp_path):
             "status": "RELEASED",
             "published_at_utc": "2026-07-20T00:00:00Z",
             "channel": "pinterest",
+            "measurement_due_24h": "2026-07-21T00:00:00Z",
             "measurement_due_7d": "2026-07-27T00:00:00Z",
+            "measurement_due_14d": "2026-08-03T00:00:00Z",
             "measurement_due_30d": "2026-08-19T00:00:00Z",
         },
         {
@@ -210,5 +271,12 @@ def test_release_governance_lists_due_and_overdue(tmp_path):
     summary = scorecard.read_release_governance(ledger, date(2026, 7, 27))
 
     assert summary["published"] == 3
-    assert [item["release_id"] for item in summary["due"]] == ["rel-a"]
-    assert [item["release_id"] for item in summary["overdue"]] == ["rel-c"]
+    assert [(item["release_id"], item["checkpoint"]) for item in summary["due"]] == [
+        ("rel-a", "7d")
+    ]
+    assert ("rel-a", "24h") in {
+        (item["release_id"], item["checkpoint"]) for item in summary["overdue"]
+    }
+    assert ("rel-c", "7d") in {
+        (item["release_id"], item["checkpoint"]) for item in summary["overdue"]
+    }

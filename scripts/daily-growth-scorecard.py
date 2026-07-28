@@ -18,6 +18,7 @@ from dataclasses import dataclass, field
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterable
+from urllib.parse import urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = ROOT / "pipeline-data" / "growth-measurement" / "cohorts.json"
@@ -103,12 +104,76 @@ def _dict_rows(text: str) -> list[dict[str, str]]:
     return list(csv.DictReader(text.replace("\ufeff", "").splitlines()))
 
 
+def _normalize_cohort_url(value: str) -> str:
+    raw = str(value or "").strip()
+    parsed = urlsplit(raw)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        raise ValueError(f"invalid cohort URL: {raw!r}")
+    host = (parsed.hostname or "").lower()
+    if host not in {"daily-life-hacks.com", "www.daily-life-hacks.com"}:
+        raise ValueError(f"cohort URL is outside daily-life-hacks.com: {raw!r}")
+    path = re.sub(r"/+", "/", parsed.path or "/")
+    if not path.endswith("/"):
+        path += "/"
+    return urlunsplit(("https", "www.daily-life-hacks.com", path, "", ""))
+
+
+def _load_fixed_cohort(config: dict[str, Any]) -> set[str]:
+    raw_path = config.get("cohort_file")
+    if not raw_path:
+        raise ValueError("GSC cohort_file is required")
+    path = Path(raw_path)
+    if not path.is_absolute():
+        path = ROOT / path
+    if not path.is_file():
+        raise ValueError(f"GSC cohort_file not found: {path}")
+    rows = _dict_rows(path.read_text(encoding="utf-8-sig"))
+    if not rows or "url" not in rows[0]:
+        raise ValueError(f"GSC cohort_file must contain a url column: {path}")
+    urls = [_normalize_cohort_url(row.get("url", "")) for row in rows]
+    unique = set(urls)
+    if len(urls) != 20 or len(unique) != 20:
+        raise ValueError(
+            "GSC cohort_file must contain exactly 20 unique URLs "
+            f"(found {len(urls)} rows, {len(unique)} unique)"
+        )
+    return unique
+
+
+def _urls_from_page_filters(filter_rows: list[dict[str, str]]) -> set[str] | None:
+    values = [
+        str(row.get("Value", "")).strip()
+        for row in filter_rows
+        if str(row.get("Filter", "")).strip().lower() in {"page", "pages"}
+    ]
+    if not values:
+        return None
+    extracted: set[str] = set()
+    for value in values:
+        expression = re.sub(r"\\([./:?&=_~%#-])", r"\1", value)
+        urls = re.findall(
+            r"https?://[A-Za-z0-9.-]+(?::\d+)?/[A-Za-z0-9._~!$&'+,;=:@%/-]*",
+            expression,
+        )
+        if not urls:
+            return None
+        remainder = expression
+        for url in urls:
+            remainder = remainder.replace(url, "", 1)
+        remainder = re.sub(r"(?i)custom\s+regex\s*:", "", remainder)
+        if re.sub(r"[\s^$()?:|]", "", remainder):
+            return None
+        extracted.update(_normalize_cohort_url(url) for url in urls)
+    return extracted
+
+
 def parse_gsc(path: Path | None, config: dict[str, Any]) -> Snapshot:
     snap = Snapshot("gsc", config["cohort_id"], path)
     if path is None:
         snap.note = "לא נמצא ZIP של Performance on Search."
         return snap
     try:
+        expected_urls = _load_fixed_cohort(config)
         with zipfile.ZipFile(path) as archive:
             names = set(archive.namelist())
             if "Chart.csv" not in names:
@@ -120,19 +185,16 @@ def parse_gsc(path: Path | None, config: dict[str, Any]) -> Snapshot:
                 else ""
             )
         filter_rows = _dict_rows(filters) if filters else []
-        has_page_filter = any(
-            str(row.get("Filter", "")).strip().lower() in {"page", "pages"}
-            for row in filter_rows
-        )
-        if config.get("require_page_filter") and not has_page_filter:
+        filtered_urls = _urls_from_page_filters(filter_rows)
+        if filtered_urls != expected_urls:
             snap.status = "COHORT_MISMATCH"
             snap.note = (
-                "הייצוא נמצא, אך Filters.csv אינו מוכיח מסנן Page עבור קוהורט "
-                "20 הכתובות. נתוני כל האתר אינם תחליף לקוהורט הקבוע."
+                "Filters.csv does not prove the exact 20-URL cohort from "
+                f"{config['cohort_file']}; a generic Page filter is not sufficient."
             )
         else:
             snap.status = "READY"
-            snap.note = "מסנן Page קיים בייצוא והקוהורט מזוהה."
+            snap.note = "Filters.csv exactly matches all 20 URLs in the fixed cohort file."
         for row in _dict_rows(chart):
             day = _date(row.get("Date", ""))
             if not day:
@@ -367,12 +429,19 @@ def read_release_governance(ledger: Path, target: date) -> dict[str, Any]:
             rows.append(json.loads(raw))
         except json.JSONDecodeError:
             continue
+    def checkpoint_window(row: dict[str, Any]) -> str | None:
+        explicit = str(row.get("checkpoint_window") or "").lower()
+        if explicit in {"24h", "7d", "14d", "30d", "60d"}:
+            return explicit
+        raw_day = str(row.get("checkpoint_day", ""))
+        return f"{int(raw_day)}d" if raw_day.isdigit() else None
+
     completed = {
-        (row.get("release_id"), int(row.get("checkpoint_day")))
+        (row.get("release_id"), checkpoint_window(row))
         for row in rows
         if row.get("record_type") == "checkpoint"
         and row.get("release_id")
-        and str(row.get("checkpoint_day", "")).isdigit()
+        and checkpoint_window(row)
     }
     for row in rows:
         if row.get("record_type") == "checkpoint":
@@ -382,8 +451,8 @@ def read_release_governance(ledger: Path, target: date) -> dict[str, Any]:
         if not published or status not in {"POSTED", "PUBLISHED", "RELEASED"}:
             continue
         result["published"] += 1
-        for day in (7, 30, 60):
-            raw_due = row.get(f"measurement_due_{day}d")
+        for window in ("24h", "7d", "14d", "30d", "60d"):
+            raw_due = row.get(f"measurement_due_{window}")
             if not raw_due:
                 continue
             try:
@@ -393,10 +462,10 @@ def read_release_governance(ledger: Path, target: date) -> dict[str, Any]:
             item = {
                 "release_id": row.get("release_id") or row.get("queue_row_id") or row.get("pin_slug"),
                 "channel": row.get("channel"),
-                "checkpoint": day,
+                "checkpoint": window,
                 "due": due.isoformat(),
             }
-            if (item["release_id"], day) in completed:
+            if (item["release_id"], window) in completed:
                 continue
             if due == target:
                 result["due"].append(item)

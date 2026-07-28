@@ -23,34 +23,23 @@ function badRequest(origin, message) {
 }
 
 async function getRatingSnapshot(db, slug, userKey) {
-  const aggregate = await db
+  const snapshot = await db
     .prepare(
-      `SELECT ROUND(AVG(rating), 2) AS average, COUNT(*) AS count
+      `SELECT
+         ROUND(AVG(rating), 2) AS average,
+         COUNT(*) AS count,
+         MAX(CASE WHEN user_key = ? THEN rating END) AS user_rating
        FROM article_ratings
        WHERE slug = ?`,
     )
-    .bind(slug)
+    .bind(userKey || "", slug)
     .first();
-
-  let userRating = null;
-  if (userKey) {
-    const mine = await db
-      .prepare(
-        `SELECT rating
-         FROM article_ratings
-         WHERE slug = ? AND user_key = ?`,
-      )
-      .bind(slug, userKey)
-      .first();
-
-    userRating = mine?.rating ?? null;
-  }
 
   return {
     slug,
-    average: Number(aggregate?.average ?? 0),
-    count: Number(aggregate?.count ?? 0),
-    userRating,
+    average: Number(snapshot?.average ?? 0),
+    count: Number(snapshot?.count ?? 0),
+    userRating: userKey ? (snapshot?.user_rating ?? null) : null,
   };
 }
 

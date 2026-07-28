@@ -1,11 +1,10 @@
 # Submit newly published / updated canonical URLs to IndexNow (Bing, Yandex,
 # Naver, Seznam, Yep — Google does not participate).
 #
-# WHY THIS EXISTS ALONGSIDE THE IndexNow STEP IN deploy-cloudflare-pages.yml
+# WHY THIS IS THE ONLY INDEXNOW SUBMISSION WORKFLOW
 #
-# That step diffs a Git range (github.event.before..sha) inside the deploy job.
-# It is correct for an ordinary successful push, but it loses URLs in three
-# situations this repo actually hits:
+# A Git-range diff inside the deploy job is correct for an ordinary successful
+# push, but it loses URLs in three situations this repo actually hits:
 #
 #   1. Scheduled rebuilds. An article with a future `publishAt` enters the
 #      sitemap on a later daily rebuild with no commit behind it. A Git diff
@@ -25,9 +24,9 @@
 # covers push, scheduled and manual deploys alike, and it can never submit a
 # URL that is not actually live.
 #
-# NOT ENABLED YET — left for review. To adopt it, delete the "Notify IndexNow"
-# and "Upload IndexNow deploy report" steps from deploy-cloudflare-pages.yml so
-# the two paths do not both submit.
+# deploy-cloudflare-pages.yml deliberately does not submit to IndexNow. Keeping
+# submission here prevents duplicate requests for the same successful main
+# deploy while preserving state-based retries and report artifacts.
 
 name: IndexNow (sitemap diff)
 

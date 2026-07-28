@@ -112,7 +112,11 @@ def release_row(args: argparse.Namespace) -> dict[str, Any]:
         "external_id": args.external_id,
         "released_at_utc": iso_utc(released),
         "published_at_utc": iso_utc(released),
+        "measurement_due_24h": iso_utc(released + timedelta(hours=24)),
         "measurement_due_7d": iso_utc(released + timedelta(days=7)),
+        "measurement_due_14d": iso_utc(released + timedelta(days=14)),
+        # Compatibility fields for release rows created by the earlier
+        # 7d/30d/60d governance workflow.
         "measurement_due_30d": iso_utc(released + timedelta(days=30)),
         "measurement_due_60d": iso_utc(released + timedelta(days=60)),
         "decision": "pending",
@@ -130,10 +134,16 @@ def recommend_checkpoint(
 ) -> tuple[str, str]:
     if policy_incidents or destination_errors:
         return "STOP", "Policy or destination failure overrides traffic metrics."
+    if day == 1:
+        return "HOLD", "The 24-hour checkpoint verifies delivery; it is too early for a scale decision."
     if day == 7:
         if impressions == 0:
             return "ITERATE", "No distribution signal after seven days; inspect creative, indexing, and eligibility."
         return "HOLD", "Day 7 is a health check; keep the cohort stable until day 30."
+    if day == 14:
+        if impressions == 0:
+            return "ITERATE", "No distribution signal after 14 days; inspect creative, indexing, and eligibility."
+        return "HOLD", "Day 14 confirms distribution; keep the cohort stable for a longer outcome window."
     if day == 30:
         if releases >= 5 and impressions == 0:
             return "STOP", "At least five releases produced zero distribution after 30 days."
@@ -147,9 +157,21 @@ def recommend_checkpoint(
     return "ITERATE", "Day-60 evidence is insufficient to scale and not bad enough for a hard stop."
 
 
+def checkpoint_window(args: argparse.Namespace) -> str:
+    explicit = str(getattr(args, "window", "") or "").lower()
+    if explicit:
+        return explicit
+    day = getattr(args, "day", None)
+    if day is None:
+        raise ValueError("checkpoint requires --window or legacy --day")
+    return f"{int(day)}d"
+
+
 def checkpoint_row(args: argparse.Namespace) -> dict[str, Any]:
+    window = checkpoint_window(args)
+    day = int(window[:-1]) if window.endswith("d") else 1
     decision, reason = recommend_checkpoint(
-        day=args.day,
+        day=day,
         releases=args.releases,
         impressions=args.impressions,
         qualified_sessions=args.qualified_sessions,
@@ -159,11 +181,11 @@ def checkpoint_row(args: argparse.Namespace) -> dict[str, Any]:
     if args.decision:
         decision = args.decision.upper()
         reason = "Human override recorded; see note." if args.note else "Human override recorded."
-    return {
+    row = {
         "schema": "growth-checkpoint/v1",
         "record_type": "checkpoint",
         "release_id": token(args.release_id),
-        "checkpoint_day": args.day,
+        "checkpoint_window": window,
         "observed_at_utc": iso_utc(parse_utc(args.observed_at)),
         "released_items": args.releases,
         "impressions": args.impressions,
@@ -175,6 +197,9 @@ def checkpoint_row(args: argparse.Namespace) -> dict[str, Any]:
         "decision_reason": reason,
         "note": args.note or "",
     }
+    if window.endswith("d"):
+        row["checkpoint_day"] = day
+    return row
 
 
 def existing_release_ids(path: Path) -> set[str]:
@@ -194,10 +219,10 @@ def existing_release_ids(path: Path) -> set[str]:
     return ids
 
 
-def existing_checkpoints(path: Path) -> set[tuple[str, int]]:
+def existing_checkpoints(path: Path) -> set[tuple[str, str]]:
     if not path.is_file():
         return set()
-    checkpoints: set[tuple[str, int]] = set()
+    checkpoints: set[tuple[str, str]] = set()
     for line in path.read_text(encoding="utf-8").splitlines():
         raw = line.strip()
         if not raw or raw.startswith("#"):
@@ -206,12 +231,13 @@ def existing_checkpoints(path: Path) -> set[tuple[str, int]]:
             row = json.loads(raw)
         except json.JSONDecodeError:
             continue
-        if (
-            row.get("record_type") == "checkpoint"
-            and row.get("release_id")
-            and str(row.get("checkpoint_day", "")).isdigit()
-        ):
-            checkpoints.add((row["release_id"], int(row["checkpoint_day"])))
+        if row.get("record_type") != "checkpoint" or not row.get("release_id"):
+            continue
+        window = str(row.get("checkpoint_window") or "").lower()
+        if not window and str(row.get("checkpoint_day", "")).isdigit():
+            window = f"{int(row['checkpoint_day'])}d"
+        if window:
+            checkpoints.add((row["release_id"], window))
     return checkpoints
 
 
@@ -220,12 +246,17 @@ def append_row(path: Path, row: dict[str, Any]) -> None:
         if row["release_id"] in existing_release_ids(path):
             raise ValueError(f"duplicate release_id: {row['release_id']}")
     if row.get("record_type") == "checkpoint":
-        key = (row["release_id"], int(row["checkpoint_day"]))
+        window = str(row.get("checkpoint_window") or "").lower()
+        if not window and str(row.get("checkpoint_day", "")).isdigit():
+            window = f"{int(row['checkpoint_day'])}d"
+        if not window:
+            raise ValueError("checkpoint_window or checkpoint_day is required")
+        key = (row["release_id"], window)
         if row["release_id"] not in existing_release_ids(path):
             raise ValueError(f"checkpoint release_id not found: {row['release_id']}")
         if key in existing_checkpoints(path):
             raise ValueError(
-                f"duplicate checkpoint: {row['release_id']} day {row['checkpoint_day']}"
+                f"duplicate checkpoint: {row['release_id']} window {window}"
             )
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a", encoding="utf-8") as handle:
@@ -260,9 +291,22 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     release.add_argument("--released-at")
     _add_write_flags(release)
 
-    checkpoint = sub.add_parser("checkpoint", help="Preview or append a 7/30/60-day checkpoint.")
+    checkpoint = sub.add_parser(
+        "checkpoint",
+        help="Preview or append a 24h/7d/14d checkpoint (legacy 30d/60d supported).",
+    )
     checkpoint.add_argument("--release-id", required=True)
-    checkpoint.add_argument("--day", type=int, choices=(7, 30, 60), required=True)
+    checkpoint_timing = checkpoint.add_mutually_exclusive_group(required=True)
+    checkpoint_timing.add_argument(
+        "--window",
+        choices=("24h", "7d", "14d", "30d", "60d"),
+    )
+    checkpoint_timing.add_argument(
+        "--day",
+        type=int,
+        choices=(7, 30, 60),
+        help="Legacy alias for --window 7d/30d/60d.",
+    )
     checkpoint.add_argument("--releases", type=int, required=True)
     checkpoint.add_argument("--impressions", type=int, default=0)
     checkpoint.add_argument("--outbound-clicks", type=int, default=0)

@@ -33,7 +33,7 @@ def _args(**overrides):
     return argparse.Namespace(**values)
 
 
-def test_release_row_builds_full_utm_and_7_30_60_checkpoints():
+def test_release_row_builds_full_utm_and_compatible_checkpoints():
     row = release_log.release_row(_args())
 
     assert row["release_id"] == "rel-20260728-pinterest-beans-chart-v1"
@@ -42,7 +42,9 @@ def test_release_row_builds_full_utm_and_7_30_60_checkpoints():
     assert "utm_medium=organic-social" in row["utm_url"]
     assert "utm_campaign=2026-07-protein-cost" in row["utm_url"]
     assert "utm_content=beans-chart-v1" in row["utm_url"]
+    assert row["measurement_due_24h"] == "2026-07-29T12:00:00Z"
     assert row["measurement_due_7d"] == "2026-08-04T12:00:00Z"
+    assert row["measurement_due_14d"] == "2026-08-11T12:00:00Z"
     assert row["measurement_due_30d"] == "2026-08-27T12:00:00Z"
     assert row["measurement_due_60d"] == "2026-09-26T12:00:00Z"
 
@@ -114,3 +116,29 @@ def test_checkpoint_must_reference_existing_release_and_is_unique(tmp_path):
 
     with pytest.raises(ValueError, match="duplicate checkpoint"):
         release_log.append_row(ledger, checkpoint)
+
+
+def test_checkpoint_window_supports_canonical_24h_and_legacy_day():
+    common = {
+        "release_id": "rel-a",
+        "releases": 1,
+        "impressions": 10,
+        "outbound_clicks": 0,
+        "qualified_sessions": 0,
+        "policy_incidents": 0,
+        "destination_errors": 0,
+        "decision": None,
+        "observed_at": "2026-07-29T12:00:00Z",
+        "note": None,
+    }
+    canonical = release_log.checkpoint_row(
+        argparse.Namespace(**common, window="24h", day=None)
+    )
+    legacy = release_log.checkpoint_row(
+        argparse.Namespace(**common, window=None, day=30)
+    )
+
+    assert canonical["checkpoint_window"] == "24h"
+    assert "checkpoint_day" not in canonical
+    assert legacy["checkpoint_window"] == "30d"
+    assert legacy["checkpoint_day"] == 30
