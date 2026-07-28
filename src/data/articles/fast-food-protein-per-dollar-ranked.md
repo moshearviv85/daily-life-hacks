@@ -15,7 +15,7 @@ faq:
   - question: "Is fast food protein cheaper than grocery protein?"
     answer: "Not even close. Our audited grocery dataset puts dry pinto beans at 97.9 grams of protein per dollar, bone-in chicken drumsticks at 50.3, and large eggs at 34.4. The single best drive-thru deal we found delivers 8.4. That means the cheapest grocery protein beats the best fast-food protein by almost 12 to 1, and even eggs beat it by about 4 to 1."
   - question: "What is the cheapest high-protein fast food order under $3?"
-    answer: "Wendy's Jr. Bacon Cheeseburger was the standout in our snapshot: 18 grams of protein for $2.89, or 6.2 grams per dollar, the fourth-best ratio in the whole study. Taco Bell's Cheesy Bean and Rice Burrito costs even less at $1.59 with 9 grams, landing at 5.7 grams per dollar. Both prices vary by location, so check the app before you build a plan around them."
+    answer: "Wendy's [Jr. Bacon Cheeseburger](/wendys-protein-per-dollar/) was the standout in our snapshot: 18 grams of protein for $2.89, or 6.2 grams per dollar, the fourth-best ratio in the whole study. Taco Bell's Cheesy Bean and Rice Burrito costs even less at $1.59 with 9 grams, landing at 5.7 grams per dollar. Both prices vary by location, so check the app before you build a plan around them."
   - question: "How much protein is in a KFC 8-piece bucket?"
     answer: "About 160 grams for the Original Recipe bucket, based on KFC's own per-piece nutrition data: two breasts at 39 grams each, two thighs at 19, two drumsticks at 12, and two whole wings at 10. At the $21.99 tracker price we recorded in July 2026, that's 7.3 grams of protein per dollar, which may be the most practical bulk order in fast food."
   - question: "Will these prices match my local menu?"
@@ -28,7 +28,7 @@ This is the next spreadsheet in the series. We already ranked [49 grocery foods 
 
 ## What fast food has the most protein per dollar?
 
-Chipotle's High Protein Cup, at 8.4 grams of protein per dollar for 4 ounces of adobo chicken at $3.82. That's the best ratio among 30 protein-notable items priced across McDonald's, Chipotle, Taco Bell, Wendy's, Subway, KFC and Chick-fil-A in July 2026. The worst is Taco Bell's Crunchwrap Supreme at 2.3.
+Chipotle's High Protein Cup, at 8.4 grams of protein per dollar for 4 ounces of adobo chicken at $3.82. That's the best ratio among 30 protein-notable items priced across McDonald's, Chipotle, Taco Bell, Wendy's, Subway, KFC and Chick-fil-A in July 2026. The worst is [Taco Bell's Crunchwrap Supreme](/taco-bell-protein-per-dollar/) at 2.3.
 
 ## How we priced 30 menu items
 
@@ -59,15 +59,15 @@ Protein: chain-published nutrition data, July 2026. Prices: national-average tra
 
 ## Why did a side cup beat every sandwich?
 
-Because you're not paying for bread. The High Protein Cup is the one item in this study that's just the expensive part: meat, no bun, no tortilla, no lettuce doing volume work. Chipotle launched it in late 2025 and published the $3.82 national average price themselves, which makes it the cleanest data point in the whole table.
+Because you're not paying for bread. The High Protein Cup is the one item in this study that's just the expensive part: meat, no bun, no tortilla, no lettuce doing volume work. [Chipotle launched it in late 2025](/chipotle-protein-per-dollar/) and published the $3.82 national average price themselves, which makes it the cleanest data point in the whole table.
 
-The same logic explains KFC's podium sweep. A fried chicken breast is mostly chicken. Order it as a piece instead of a sandwich and you skip the markup on the architecture around it. The 8-piece bucket is the bulk version of that idea: 160 grams of protein in one box, which is roughly three days of the [FDA's 50-gram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) reference for a few cents over twenty bucks.
+The same logic explains [KFC's podium sweep](/kfc-protein-per-dollar/). A fried chicken breast is mostly chicken. Order it as a piece instead of a sandwich and you skip the markup on the architecture around it. The 8-piece bucket is the bulk version of that idea: 160 grams of protein in one box, which is roughly three days of the [FDA's 50-gram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) reference for a few cents over twenty bucks.
 
 The Jr. Bacon Cheeseburger at number four is the fun one. It's the cheapest item in the top 10 and it beat every big-name flagship burger. Dollar menus are quietly where the ratios live.
 
 ## Where does your protein money quietly die?
 
-The bottom of the table, and it's not subtle. Taco Bell's Crunchwrap Supreme came in dead last at 2.3 grams per dollar. Chipotle's steak bowl managed 2.8, because steak costs about two dollars more than chicken and carries 11 fewer grams. The Egg McMuffin, the most famous protein breakfast in America, landed at 3.2. Grocery eggs run 34.4 grams per dollar, more than ten times that, and they aren't even the best value on [the cheap breakfast staples list](/breakfast-staples-per-dollar/).
+The bottom of the table, and it's not subtle. Taco Bell's Crunchwrap Supreme came in dead last at 2.3 grams per dollar. Chipotle's steak bowl managed 2.8, because steak costs about two dollars more than chicken and carries 11 fewer grams. [The Egg McMuffin](/mcdonalds-protein-per-dollar/), the most famous protein breakfast in America, landed at 3.2. Grocery eggs run 34.4 grams per dollar, more than ten times that, and they aren't even the best value on [the cheap breakfast staples list](/breakfast-staples-per-dollar/).
 
 My favorite bad deal is the KFC drumstick. One piece: 12 grams for $3.08, about 3.9 grams per dollar. The grocery store sells a 5-pound bag of the same body part for 50.3 grams per dollar. Same drumstick, roughly 13 times the price once someone else fries it. That bag also tops [our meat counter ranking](/meat-per-dollar-protein-ranked/), where it beats boneless chicken breast by more than two to one. That one comparison is the entire fast-food economy in miniature.
 
