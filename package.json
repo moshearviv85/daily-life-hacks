@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/optimize-images.mjs && node scripts/build-api-index.mjs",
+    "prebuild": "node scripts/optimize-images.mjs && node scripts/build-api-index.mjs && node scripts/verify-data-foundation.mjs",
     "build:api-index": "node scripts/build-api-index.mjs",
+    "verify:data-foundation": "node scripts/verify-data-foundation.mjs",
     "build": "astro build",
     "verify:routing": "node scripts/verify-routing.mjs",
     "verify:internal-links": "node scripts/verify-internal-links.mjs",

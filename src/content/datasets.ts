@@ -23,6 +23,10 @@ export interface DatasetMeta {
   temporal: string;
 }
 
+/** Stable release identity shared by HTML schema, the API, and distribution packages. */
+export const DATA_VERSION = "2026.1";
+export const DATA_RELEASE_DATE = "2026-07-26";
+
 export const DATASETS: Record<string, DatasetMeta> = {
   "animal-protein-per-dollar-ranked": {
     name: "Every Animal Protein in Our Study, Ranked by Cost (21 foods, 2026)",

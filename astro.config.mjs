@@ -226,7 +226,7 @@ function sitemapPriorityFor(pathname) {
   if (pathname === '/') return 1.0;
   if (pillarPaths.has(pathname)) return 0.9;
   if (datasetPaths.has(pathname)) return 0.8;
-  if (derivedHubPaths.has(pathname) || pathname === '/data/') return 0.8;
+  if (derivedHubPaths.has(pathname) || pathname === '/data/' || pathname === '/statistics/') return 0.8;
   if (pathname.startsWith('/tools/') && pathname !== '/tools/') return 0.7;
   if (articleLastModifiedDates.has(pathname)) return 0.6;
   // /about/, /methodology/, /api-docs/, /tools/ — real pages, low relative rank.

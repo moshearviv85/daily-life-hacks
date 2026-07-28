@@ -278,7 +278,9 @@ async function main() {
     api_version: "v1",
     data_version: descriptor.version,
     data_created: descriptor.created,
-    generated_at: new Date().toISOString(),
+    // Use the release timestamp, not the wall clock. Identical source data must
+    // produce a byte-identical public index on every build.
+    generated_at: descriptor.created,
     generator: "scripts/build-api-index.mjs",
     name: descriptor.name,
     title: descriptor.title,

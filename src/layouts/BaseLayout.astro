@@ -151,6 +151,32 @@ const metaDescription =
       })();
     </script>
 
+    <!-- Track public dataset downloads without recording query strings or reader input. -->
+    <script is:inline>
+      (function () {
+        if (window.__dlhDatasetTrackerBound) return;
+        window.__dlhDatasetTrackerBound = true;
+
+        document.addEventListener('click', function (event) {
+          if (!(event.target instanceof Element)) return;
+          var link = event.target.closest('a[data-dataset-download]');
+          if (!link) return;
+
+          var fileName = (link.getAttribute('href') || '').split('/').pop() || 'unknown.csv';
+          var datasetId = link.getAttribute('data-dataset-id') || fileName.replace(/\.csv$/i, '');
+
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'dataset_download', {
+              dataset_id: datasetId,
+              file_name: fileName,
+              file_type: 'csv',
+              source_page: location.pathname,
+            });
+          }
+        }, true);
+      })();
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>

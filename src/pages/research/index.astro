@@ -2,42 +2,65 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import dataIndex from "../../../public/data/api-index-v1.json";
 
 const title = "Grocery Cost Research and Public Data | Daily Life Hacks";
 const description = "Explore our audited grocery cost studies, USDA-based rankings, priced daily menus, public CSV files, and plain-English source explainers.";
+
+const rows: any[] = dataIndex.rows;
+const metricLeader = (dataset: string, metric: string) =>
+  rows
+    .filter((row) => row.dataset === dataset && typeof row.metrics[metric] === "number")
+    .sort((a, b) => Number(b.metrics[metric]) - Number(a.metrics[metric]))[0];
+const dayTotals = (dataset: string) =>
+  Object.values(
+    rows
+      .filter((row) => row.dataset === dataset)
+      .reduce((totals: Record<string, { day: string; cost: number }>, row) => {
+        const day = String(row.fields.day);
+        totals[day] ??= { day, cost: 0 };
+        totals[day].cost += Number(row.fields.cost_usd);
+        return totals;
+      }, {}),
+  ).sort((a, b) => a.cost - b.cost);
+
+const fiberLeader = metricLeader("fiber-per-dollar-2026", "fiber_g_per_dollar");
+const proteinLeader = metricLeader("protein-per-dollar-2026", "protein_g_per_dollar");
+const fiberDays = dayTotals("fiber-day-cost-2026");
+const proteinDays = dayTotals("protein-day-cost-2026");
 
 const studies = [
   {
     href: "/fiber-per-dollar-cheapest-high-fiber-foods/",
     eyebrow: "53 foods ranked",
-    number: "71g",
-    label: "fiber per dollar from dry split peas",
+    number: `${Math.round(Number(fiberLeader.metrics.fiber_g_per_dollar))}g`,
+    label: `fiber per dollar from ${fiberLeader.food.toLowerCase()}`,
     title: "Fiber per Dollar",
     text: "We matched USDA fiber data to July 2026 grocery prices. The dry goods aisle won by an almost rude margin.",
   },
   {
     href: "/protein-per-dollar-cheapest-protein-sources/",
     eyebrow: "49 foods ranked",
-    number: "98g",
-    label: "protein per dollar from dry pinto beans",
+    number: `${Math.round(Number(proteinLeader.metrics.protein_g_per_dollar))}g`,
+    label: `protein per dollar from ${proteinLeader.food.toLowerCase()}`,
     title: "Protein per Dollar",
     text: "Beans, lentils, meat, dairy, and everything in between, compared with the same as-purchased rules.",
   },
   {
     href: "/what-30-grams-of-fiber-costs-per-day/",
     eyebrow: "5 complete day scenarios",
-    number: "$0.62",
+    number: `$${fiberDays[0].cost.toFixed(2)}`,
     label: "cheapest 30-gram fiber day",
     title: "What 30 Grams of Fiber Costs",
-    text: "Five ways to reach roughly 30 grams, from pantry staples to a $14.42 restaurant day.",
+    text: `Five ways to reach roughly 30 grams, from pantry staples to a $${fiberDays.at(-1)?.cost.toFixed(2)} restaurant day.`,
   },
   {
     href: "/what-50-grams-of-protein-costs-per-day/",
     eyebrow: "5 complete day scenarios",
-    number: "$0.82",
+    number: `$${proteinDays[0].cost.toFixed(2)}`,
     label: "cheapest 50-gram protein day",
     title: "What 50 Grams of Protein Costs",
-    text: "Five 50-gram days priced meal by meal. The fast-food version cost about 12 times more.",
+    text: `Five 50-gram days priced meal by meal. The restaurant version cost about ${(Number(proteinDays.at(-1)?.cost) / proteinDays[0].cost).toFixed(0)} times more.`,
   },
   {
     href: "/protein-per-dollar-adjusted-for-quality/",
@@ -108,6 +131,11 @@ const researchSchema = [
       <p class="text-lg md:text-xl leading-relaxed" style="color:var(--text-color);">
         These aren't recycled lists wearing a lab coat. We match USDA nutrition records to dated US prices, adjust for the part you actually eat, publish the CSV, and show the math. Sometimes the result is useful. Sometimes bacon owes everyone an apology.
       </p>
+      <p class="mt-5">
+        <a href="/statistics/" class="inline-flex rounded-lg px-5 py-3 font-bold text-white" style="background:#F29B30;">
+          See the current food cost statistics
+        </a>
+      </p>
     </section>
 
     <section aria-labelledby="study-heading" class="mb-14">
@@ -152,12 +180,12 @@ const researchSchema = [
         <h2 class="text-2xl font-bold mb-3 text-white">Don't trust a chart because it's orange.</h2>
         <p class="leading-relaxed mb-5 text-slate-200">Download the rows, check the prices, and find the exact place where we divided. “Trust me” remains a terrible spreadsheet column.</p>
         <ul class="space-y-3 font-semibold">
-          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/fiber-per-dollar-2026.csv">Fiber per dollar CSV</a></li>
-          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-per-dollar-2026.csv">Protein per dollar CSV</a></li>
-          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/fiber-day-cost-2026.csv">30-gram fiber day CSV</a></li>
-          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-day-cost-2026.csv">50-gram protein day CSV</a></li>
-          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-quality-per-dollar-2026.csv">Quality-adjusted protein CSV</a></li>
-          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/fastfood-protein-per-dollar-2026.csv">Fast-food protein CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/fiber-per-dollar-2026.csv" data-dataset-download data-dataset-id="fiber-per-dollar-2026">Fiber per dollar CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-per-dollar-2026.csv" data-dataset-download data-dataset-id="protein-per-dollar-2026">Protein per dollar CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/fiber-day-cost-2026.csv" data-dataset-download data-dataset-id="fiber-day-cost-2026">30-gram fiber day CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-day-cost-2026.csv" data-dataset-download data-dataset-id="protein-day-cost-2026">50-gram protein day CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/protein-quality-per-dollar-2026.csv" data-dataset-download data-dataset-id="protein-quality-per-dollar-2026">Quality-adjusted protein CSV</a></li>
+          <li><a class="underline decoration-[#F29B30] underline-offset-4" href="/data/fastfood-protein-per-dollar-2026.csv" data-dataset-download data-dataset-id="fastfood-protein-per-dollar-2026">Fast-food protein CSV</a></li>
         </ul>
       </div>
     </section>

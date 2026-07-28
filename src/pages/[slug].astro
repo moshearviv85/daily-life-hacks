@@ -10,7 +10,7 @@ import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptImage from "../components/OptImage.astro";
 import { formatReleaseDate, isReleased } from "../content/release";
-import { DATASETS, findChartInBody } from "../content/datasets";
+import { DATASETS, DATA_VERSION, findChartInBody } from "../content/datasets";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -300,6 +300,8 @@ if (dataset) {
     ...(dataset.alternateName ? { alternateName: dataset.alternateName } : {}),
     description: dataset.description,
     url: articleUrl,
+    identifier: `${articleUrl}#dataset`,
+    version: DATA_VERSION,
     isAccessibleForFree: true,
     creator: publisherSchema,
     publisher: publisherSchema,
@@ -325,6 +327,7 @@ if (dataset) {
     measurementTechnique: `${siteUrl}/methodology/`,
     distribution: {
       "@type": "DataDownload",
+      name: dataset.csv.split("/").pop(),
       encodingFormat: "text/csv",
       contentUrl: `${siteUrl}${dataset.csv}`,
     },
@@ -781,7 +784,14 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
             >
               Copy citation
             </button>
-            <a href={dataset.csv} download class="text-xs underline" style="color: var(--muted-color);">
+            <a
+              href={dataset.csv}
+              download
+              data-dataset-download
+              data-dataset-id={article.id}
+              class="text-xs underline"
+              style="color: var(--muted-color);"
+            >
               Download the CSV
             </a>
             <a href="/data/" class="text-xs underline" style="color: var(--muted-color);">
