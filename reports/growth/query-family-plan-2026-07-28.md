@@ -643,3 +643,223 @@ source edited, no commits. Measurement artefacts: `scratchpad/qfp_probe.py`,
 `qfp_family_size.json`, `qfp_arch.py`, `qfp_arch.json`; 14 live Google SERPs read
 through a rendering browser; RDAP lookups for 7 domains; Search Console export
 2026-04-29 → 2026-07-26.*
+
+---
+
+# Addendum A — The seven articles that fell between the categories
+
+**Date:** 2026-07-28 (same day, later pass)
+**Scope:** research only. No articles written, no site source edited, no commits.
+**Why this exists:** 40 articles shipped 2026-07-28. The classification in §2–§3 above
+covered 33 of them. These 7 sit between its categories, so each got its own live SERP read.
+
+**Method:** identical to §2 — signed out, `gl=us&hl=en&num=20`, read through a rendering
+browser, AI Overview presence and organic domain order extracted from the live DOM.
+`curl` remains blocked (Google returns a JS shell, Bing a Cloudflare challenge); nothing
+below is inferred from a failed fetch. **Same caveat as §2.1: one signed-out sample, one
+location, one day. This is a composition read, not rank tracking.**
+
+Three extra control SERPs were read to test specific claims rather than assert them:
+`healthy grocery shopping list`, `cheap high protein breakfast ideas`, and
+`cheapest high protein foods at walmart`. They are reported in A.3 and A.4.
+
+## A.1 The seven SERPs
+
+| # | Query | AIO? | Google's own panel? | Organic domains, in order | Page type that wins |
+|---:|---|:---:|---|---|---|
+| 1 | `how much is a can of beans` | **yes** — states $0.85–$1.60, cites Walmart | **yes — Shopping carousel** + price/store/brand filter chips | walmart.com, shop.goya.com, kroger.com, reddit.com, aldi.us, shop.pricechopper.com, delivery.gfsstore.com, beaninstitute.com, priceritemarketplace.com, shop.groceryoutlet.com, amazon.com, brookshires.com | **retailer product listing** |
+| 2 | `how much protein for breakfast` | **yes** — answers "20–30 g" | no | bswhealth.com, verywellhealth.com, **mdanderson.org**, **mayoclinichealthsystem.org**, webmd.com, hellolingo.com, health.com, share.upmc.com, phelpsmemorial.com, **nutrition.org**, colostate.edu extension, vogue.com | **hospital system article** |
+| 3 | `how to get more protein at breakfast` | **yes** — cites EatingWell | no | eatingwell.com, colostate.edu extension, cooking.nytimes.com, **reddit.com**, verywellhealth.com, goodrx.com, gobento.com, greensandproteins.com, momtrends.com, **fitness.stackexchange.com**, **ask.metafilter.com**, bswhealth.com, youtube.com, culinahealth.com | food-media listicle + forums |
+| 4 | `can you eat rice and beans everyday` | **yes** — **cites Reddit first** | no | **reddit.com**, **quora.com**, eatingwell.com, prevention.com, youtube.com, forum.schizophrenia.com, loseit.com, npr.org (2012), heart.org, facebook.com | **forum thread** |
+| 5 | `what beans for red beans and rice` | **yes** — cites Serious Eats + Camellia | **recipe carousel** | camelliabrand.com, seriouseats.com, allrecipes.com, reddit.com, budgetbytes.com, chilipeppermadness.com, kennethtemple.com, myforkinglife.com, thecountrycook.net, boudreauxsbackyard.com, bushbeans.com | **recipe blog / brand page** |
+| 6 | `how much protein in lentils` | **no — Google answers it itself** | **yes — USDA nutrition panel** | **fdc.nal.usda.gov #1**, lentils.org, reddit.com, healthline.com, pulses.org, camelliabrand.com, pmc.ncbi.nlm.nih.gov, urmc.rochester.edu, canr.msu.edu | **none — zero-click** |
+| 7 | `grocery shopping list for healthy eating on a budget` | **yes** | no | **my.clevelandclinic.org**, business.walmart.com, foodrepublic.com, chesapeakeregional.com, learnyourlipids.com, **bhf.org.uk**, eatingwell.com, nourishedbynic.com, hungryroot.com, **blanchfield.tricare.mil**, healthline.com, webmd.com, reddit.com, **nutrition.gov**, youtube.com | **institutional health article** |
+
+**AI Overview on 6 of 7.** The one exception is #6, and it is the worse case: Google
+renders the USDA panel instead, which needs no AIO.
+
+## A.2 What the panel on #6 actually looks like — §2.2(a) reproduced
+
+The brief asked whether the nutrition panel fires for lentils. **It does, exactly as
+predicted.** Verbatim from the live DOM, above all organic results:
+
+```
+Lentil/Protein Amount
+1.1 g   Protein
+[Lentils | Lentils, boiled | Lentils, pink | Lentils, sprouted | Lentils, sprouted, stir-fried]
+[1 tbsp (12.3 g) | 100 grams | 1 cup (198 g)]
+Sources include: USDA
+```
+
+Food picker, serving picker, USDA caption, and `fdc.nal.usda.gov` ranking #1 organic
+underneath. This is the §2.2(a) pattern with nothing softened. **`how much protein in X`
+is confirmed owned by USDA for a second food.**
+
+## A.3 The two control tests
+
+**(a) Does Google discard "on a budget", the way it discards "cheapest" on fiber (§2.2c)?**
+**Partly — and the modifier makes the SERP harder, not softer.**
+
+| | `healthy grocery shopping list` | `...for healthy eating on a budget` |
+|---|---|---|
+| Institutional head | **none** — culinahealth.com #1 | **my.clevelandclinic.org #1** |
+| Small blogs present | flourishingoverfifty, snackandbakery, eatbobos, shape | nourishedbynic, foodrepublic, learnyourlipids, hungryroot |
+
+Shared across both: **7 of ~14 domains** — webmd, healthline, reddit, youtube,
+`bhf.org.uk`, `nutrition.gov`, `blanchfield.tricare.mil`.
+
+Google keeps the same institutional spine across both, so the budget modifier does **not**
+create a distinct SERP — same direction as the fiber finding, though not the identical
+result set §2.2(c) reported. **The counterintuitive part: adding "on a budget" summoned
+Cleveland Clinic, which is absent from the plain query.** The budget framing pulls in
+health authority rather than pushing it away. Worth recording, because the site's whole
+instinct is the opposite.
+
+**(b) Does the breakfast family accept a price modifier?** **Yes — and this is the one
+genuinely good result in the addendum.**
+
+`cheap high protein breakfast ideas` returned **zero institutions** — no Mayo, no
+hospital, no `.gov`: reddit.com, gobento.com, health.com, culinahealth.com,
+greensandproteins.com, lifter-life.ae, instagram.com, facebook.com, eatingwell.com,
+therealfooddietitians.com, bbcgoodfood.com, colostate.edu, verywellhealth.com,
+cooking.nytimes.com.
+
+Compare `how much protein for breakfast` on the same day: MD Anderson, Mayo Clinic Health
+System, UPMC, Baylor Scott & White, Phelps Memorial. **Same topic, same session — the
+price modifier removes every hospital from the page.** On fiber the cost modifier was
+discarded; on breakfast it is honoured. §3.4's rule ("the price angle differentiates where
+the food is bought as a priced unit") now has a measured second confirming case.
+
+## A.4 The Walmart re-check §3.3 asked for
+
+**Claim under test:** `cheapest protein at {retailer}` is MARGINAL because supplement
+reviewers capture the SERP, winnable only if food intent is unmistakable in the title.
+
+**`how to save money on groceries at walmart`** (our page, published 2026-07-27):
+
+- AIO present, **primary citation Reddit**.
+- 10 organic domains: **reddit.com, facebook.com**, thepennyhoarder.com, walmart.com,
+  finance.yahoo.com, **quora.com, tiktok.com, youtube.com**, tastingtable.com,
+  **mx.pinterest.com**.
+- **6 of 10 are UGC/social.** The only real publishers are The Penny Hoarder, Yahoo
+  Finance and Tasting Table. No institution, no database site.
+- **Zero supplement contamination** — no protein powder, whey or isolate anywhere on the page.
+
+**So the supplement capture is driven by the token `protein` next to a retailer name, not
+by the retailer name.** Drop `protein` from the query and the supplement industry
+disappears completely.
+
+**But the optimistic half of §3.3's condition does not survive.** Control test
+`cheapest high protein foods at walmart` — food intent explicit in the query itself —
+still returned **muscletech.com, garagegymreviews.com, illuminatelabs.org** alongside
+walmart.com, tiktok, youtube, reddit, facebook, buzzfeed, theimpulsivebuy, costcuisine.
+**Adding the word "foods" does not clear the supplement reviewers.**
+
+**Revised verdict: MARGINAL stands, but for a different reason than §3.3 gave.**
+The obstacle on the money-intent phrasing is not competition — that SERP is weak. It is
+**intent mismatch**. The AIO answers with Walmart-app receipt scanning, Great Value
+swaps, cash-back stacking and clearance end caps. That is a coupon-tactics query. Our page
+leads with "Great Value dry pinto beans buy 97.9 g of protein per dollar" — a true and
+differentiated number, on a SERP that is not asking for it. We hold nothing on receipt
+scanning or cash-back apps and should not manufacture it.
+
+## A.5 Verdicts
+
+| # | Article | Verdict | Owner / condition |
+|---:|---|---|---|
+| 1 | `how-much-is-a-can-of-beans` | **WALL** | Google Shopping carousel + an AIO that states the price + retailer organic (Walmart, Kroger, Aldi, Amazon, Goya). Triple-owned. |
+| 2 | `how-much-protein-for-breakfast` | **WALL** | Hospital systems — MD Anderson, Mayo Clinic Health System, UPMC, Baylor Scott & White. YMYL dosage question. |
+| 3 | `how-to-get-more-protein-at-breakfast` | **MARGINAL** | Winnable only as a **priced** list. Condition measured, not assumed — see A.3(b). |
+| 4 | `can-you-eat-rice-and-beans-everyday` | **OPEN** | Reddit #1, Quora #2, AIO cites Reddit. Best of the seven. |
+| 5 | `what-beans-for-red-beans-and-rice` | **WALL** | Camellia Brand + Serious Eats + AllRecipes + Louisiana recipe blogs. Culinary-authenticity intent. |
+| 6 | `how-much-protein-in-lentils` | **WALL** | USDA, via Google's own panel. §2.2(a) confirmed. |
+| 7 | `grocery-shopping-list-...-budget` | **WALL** | Cleveland Clinic, `nutrition.gov`, BHF, TRICARE. |
+| — | `how-to-save-money-on-groceries-at-walmart` | **MARGINAL** | SERP is weak (6/10 UGC, no supplements). Blocker is intent mismatch, not competition. |
+
+**One OPEN, two MARGINAL, four WALL.** Against §2's base rate that is not an aberration —
+it is the same distribution, and for the same reason: five of these seven are health,
+lookup or shopping questions, and Google resolves all three to somebody other than us.
+
+## A.6 Keep or retarget
+
+**#4 — `can-you-eat-rice-and-beans-everyday` — OPEN. Invest here.**
+What the incumbents lack, named: **nobody on that page puts a number on it.** Reddit and
+Quora argue it, NPR's piece is from **2012**, Prevention writes about bowel movements. The
+#1 Quora thread is explicitly a money question — *"I'm planning on saving as much money as
+possible"* — and not one ranking page answers what a day of rice and beans costs. We hold
+both halves: `$0.32 for 23.8 g of protein`, and **DIAAS on 25 foods**. Rice-and-beans
+complementarity is a protein-quality question and DIAAS is the measure for it — §3.2 lists
+DIAAS-adjusted protein per dollar as an asset we have found **no other public dataset**
+publishing. This is the §5.2 pattern (weak SERP + a number nobody else computes) arriving
+outside the fast-food cluster. Give it the internal links.
+
+**#3 — `how-to-get-more-protein-at-breakfast` — MARGINAL, keep, retitle.**
+The article already prices every add-on (`7.1 g for 14 cents`, `12.6 g for 37 cents`) —
+the differentiator is in the body but not in the title. A.3(b) shows the cost framing
+strips every hospital off this SERP. Push the price into the title and let it also reach
+`cheap high protein breakfast ideas`, where the measured SERP has **no institution at all**.
+No rewrite needed; the asset is already on the page.
+
+**#2 — `how-much-protein-for-breakfast` — WALL, keep for linking, retarget the effort.**
+Do not expect traffic: MD Anderson and Mayo hold it and the AIO answers "20–30 g" outright.
+It is a legitimate cluster head — keep it, link #3 and #4 up to it. **Retarget to:**
+`cheap high protein breakfast` / `cheapest high protein breakfast` (A.3b: zero institutions).
+
+**#6 — `how-much-protein-in-lentils` — WALL, keep for coverage, retarget.**
+Google's panel answers the literal question above every result and USDA ranks #1 beneath
+it. But the article's own excerpt already contains the claim Google's panel **cannot**
+make: *"24.63 g per 100 g … for 32 cents. That beats every raw meat we priced."*
+**Retarget to:** `are lentils cheaper than meat` / `lentils protein per dollar`. That is a
+computed comparison, not a lookup — it passes §4.4's one-sentence test, and the current
+title does not.
+
+**#1 — `how-much-is-a-can-of-beans` — WALL, keep, retarget.**
+No article displaces walmart.com and a Shopping carousel on a price query. But note the
+**two non-retailers that did rank**: a Reddit thread titled *"Canned vs Dried Beans (cost
+breakdown)"* and `beaninstitute.com`'s dry-vs-canned cost page. That is the open sub-intent
+sitting inside this SERP. **Retarget to:** `canned vs dried beans cost` — which is also a
+`{A} vs {B}` comparison, the page type §4.4 says to build first when the gate opens, and
+§4.4's own worked example is literally the canned-vs-dry bean calculation.
+
+**#7 — `grocery-shopping-list-...-budget` — WALL, weakest of the seven, rewrite or retarget.**
+Cleveland Clinic and `nutrition.gov` hold the head, and A.3(a) shows the budget modifier
+pulls authority *in*. This is also the only one of the seven whose excerpt carries **no
+price at all** — so it does not even deploy the differentiator on a SERP where the
+differentiator would not have helped. Either rewrite it into an actually-priced list with
+the dated Walmart basis (which no incumbent has), or accept it as a hub that links down to
+the priced pages and expect nothing from it directly.
+
+**#5 — `what-beans-for-red-beans-and-rice` — WALL, and the one honest miss.**
+Camellia Brand is the Louisiana bean company the dish is made with; Serious Eats,
+AllRecipes, Budget Bytes and Kenneth Temple hold the rest. Google shows a recipe carousel,
+so it wants recipe-schema pages. **The price angle is orthogonal to the intent** — nobody
+choosing beans for red beans and rice is optimising cost per gram of protein; they want the
+dish to taste right. This is §2.2(c)'s failure mode in a new guise: not a differentiator
+that gets discarded, but a differentiator the query never asked for. No good retarget
+exists at the same slug. Keep it as an internal-link node into the beans cluster, invest
+nothing further, and treat it as the boundary marker — **it is the clearest example in the
+batch of a page whose topic our dataset cannot speak to.**
+
+## A.7 The one-paragraph version
+
+Of the seven, **one is a real opening** (`can you eat rice and beans everyday` — Reddit #1,
+Quora #2, the AIO citing Reddit, a twelve-year-old NPR piece ranking, and a money question
+at the top of the page that nobody has answered with a number). **Two are contested and
+winnable on a stated condition** (both breakfast pages, and the condition is measured:
+putting cost in the title strips every hospital off the SERP). **Four are walls**, and each
+is owned by exactly the kind of entity §3 predicted — USDA via Google's own panel for
+lentils, hospital systems for the protein-dosage question, Cleveland Clinic and
+`nutrition.gov` for the budget grocery list, and Camellia Brand plus the recipe blogs for
+red beans and rice. The Walmart verdict from §3.3 holds but its mechanism changes:
+supplement reviewers are summoned by the word *protein* beside a retailer, not by the
+retailer, and they do not clear when you add the word *foods*; the real blocker on
+`how to save money on groceries at walmart` is that the SERP wants coupon and cash-back
+tactics we have no data for. **The pattern across all seven is the pattern of §3.4:
+cost-per-nutrient differentiates where someone is choosing between priced units, and
+nowhere else.**
+
+---
+
+*Addendum A compiled 2026-07-28. Research only. No articles written, no site source edited,
+no commits. Artefacts: 10 live Google SERPs read through a rendering browser (7 targets +
+3 controls), signed out, `gl=us&hl=en`. `curl` confirmed blocked for both Google and Bing.*

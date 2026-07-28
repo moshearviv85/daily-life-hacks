@@ -1,6 +1,6 @@
 ---
-title: "How Much Is a Can of Beans? 2026 Prices"
-excerpt: "A 15.5 oz can of store brand black beans cost $0.88 in July 2026. Kidney beans and chickpeas ran $0.98. Here is what each can buys you."
+title: "What a Can of Beans Costs vs Cooking Dry"
+excerpt: "A 15.5 oz can of black beans cost $0.88 in July 2026. The same protein from dry beans costs $0.33. Here is what the convenience really buys."
 category: "nutrition"
 tags: ["how much is a can of beans", "canned beans price", "cheap protein", "grocery prices 2026", "grocery data"]
 cluster: "budget-protein"

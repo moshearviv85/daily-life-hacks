@@ -1,6 +1,6 @@
 ---
-title: "How Much Protein Is in Lentils?"
-excerpt: "Dry brown lentils carry 24.63 g of protein per 100 g, about 49% of the FDA Daily Value, for 32 cents. That beats every raw meat we priced."
+title: "Are Lentils Cheaper Protein Than Meat?"
+excerpt: "Dry brown lentils deliver 77.7 g of protein per dollar. Chicken breast delivers 24.5. Lentils beat every raw meat we priced, by 3.2x."
 category: "nutrition"
 tags: ["how much protein in lentils", "lentils protein", "high protein foods", "plant protein", "grocery data"]
 cluster: "budget-protein"

@@ -1,5 +1,5 @@
 ---
-title: "How to Get More Protein at Breakfast"
+title: "Cheap High Protein Breakfast Add-Ons, Priced"
 excerpt: "Two tablespoons of peanut butter add 7.1 g of protein for 14 cents. Two eggs add 12.6 g for 37 cents. Here's every add-on, priced."
 category: "nutrition"
 tags: ["how to get more protein at breakfast", "high protein breakfast", "breakfast protein", "budget breakfast", "grocery data"]
