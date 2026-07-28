@@ -446,6 +446,33 @@ export async function onRequest(context) {
     baseSlug = null;
   }
 
+  // Git-backed canonical pages always outrank stale KV aliases. Without this
+  // guard, a newly published article can be hijacked by an old Pinterest route
+  // that happens to use the same slug.
+  if (
+    isKvMatch &&
+    env.ASSETS &&
+    (request.method === "GET" || request.method === "HEAD")
+  ) {
+    const canonicalUrl = new URL(`${path}/`, url.origin);
+    canonicalUrl.search = url.search;
+    const canonicalAsset = await env.ASSETS.fetch(
+      new Request(canonicalUrl.toString(), {
+        method: request.method,
+        headers: request.headers,
+      }),
+    );
+
+    if (
+      canonicalAsset.status !== 404 &&
+      canonicalAsset.headers.get("x-astro-reroute") !== "no"
+    ) {
+      routeConfig = null;
+      isKvMatch = false;
+      baseSlug = null;
+    }
+  }
+
   // --- 3. FALLBACK: -v{n} PATTERN → 301 to canonical (Checkpoint 2) ---
   if (!isKvMatch) {
     const versionMatch = path.match(/^(.+)-v(\d+)$/);

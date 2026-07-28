@@ -463,6 +463,29 @@ test("legacy KV internal pin routes 301 to canonical instead of noindex proxy", 
   assert.equal(response.headers.get("x-robots-tag"), null);
 });
 
+test("a real canonical page outranks a stale KV alias with the same slug", async () => {
+  const assets = makeAssets(new Set(["/how-to-meal-plan-on-a-budget/"]));
+  const routesKv = {
+    async get(key) {
+      assert.equal(key, "how-to-meal-plan-on-a-budget");
+      return JSON.stringify({
+        type: "internal",
+        base_slug: "how-to-meal-prep-on-a-budget-for-one-person",
+      });
+    },
+  };
+
+  const response = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/how-to-meal-plan-on-a-budget/", {
+      ASSETS: assets,
+      ROUTES_KV: routesKv,
+    }),
+  );
+
+  assert.equal(response.status, 200);
+  assert.match(await response.text(), /how-to-meal-plan-on-a-budget/);
+});
+
 test("versioned -vN pin URLs 301 to canonical article", async () => {
   globalThis.__PIN_DEST_MAP = null;
 
