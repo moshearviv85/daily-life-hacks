@@ -116,7 +116,7 @@ test("pins-next blocks immediate row publishing during the cooldown window", asy
 
 test("pins-next blocks scheduled publishing after the daily post limit", async () => {
   const db = makeDb({
-    postedToday: 3,
+    postedToday: 8,
     latestPosted: { row_id: "previous-pin", published_date: minutesAgo(180) },
     duePins: [duePin],
   });
@@ -128,8 +128,8 @@ test("pins-next blocks scheduled publishing after the daily post limit", async (
 
   assert.equal(response.status, 204);
   assert.equal(response.headers.get("X-Pins-Reason"), "daily_scheduled_post_limit_reached");
-  assert.equal(response.headers.get("X-Pins-Posted-Today"), "3");
-  assert.equal(response.headers.get("X-Pins-Max-Scheduled-Posts-Per-Day"), "3");
+  assert.equal(response.headers.get("X-Pins-Posted-Today"), "8");
+  assert.equal(response.headers.get("X-Pins-Max-Scheduled-Posts-Per-Day"), "8");
   assert.equal(
     db.queries.some((sql) => sql.includes("status = 'PENDING'")),
     false,

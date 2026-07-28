@@ -7,8 +7,10 @@ export const PIN_SCHEDULE_MIN_PER_DAY = 8;
 export const PIN_SCHEDULE_MAX_PER_DAY = 8;
 // 12:00 UTC = 8am US Eastern. Eight slots two hours apart run to 02:00 UTC,
 // which is 8am to 10pm Eastern: the whole US browsing day, no overnight dead air.
+// Keep jitter below the 110-minute server cooldown so adjacent slots remain
+// publishable even at the closest possible offsets.
 export const PIN_SCHEDULE_START_HOUR_UTC = 12;
-export const PIN_SCHEDULE_WINDOW_MINUTES = 90;
+export const PIN_SCHEDULE_WINDOW_MINUTES = 10;
 export const PIN_SCHEDULE_SLOT_SPACING_HOURS = 2;
 
 export function formatDate(date) {
