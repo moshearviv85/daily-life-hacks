@@ -101,7 +101,7 @@ If you want thick, add oats first. If you want thick and creamy, add a spoon of 
 To keep your smoothie from being “just sweet,” add protein you actually tolerate:
 * Greek yogurt (tangy and thick)
 * Silken tofu (neutral)
-* Silken tofu for a dairy-free protein boost
+* Hemp seeds (dairy-free, and they don't make it gritty)
 
 Then keep sweeteners simple. Fruit sweetness is usually enough when the blend is balanced.
 
