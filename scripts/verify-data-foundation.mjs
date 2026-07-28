@@ -20,8 +20,12 @@ function json(path) {
   return JSON.parse(readFileSync(path, "utf8"));
 }
 
-function sha256(path) {
-  return `sha256:${createHash("sha256").update(readFileSync(path)).digest("hex")}`;
+function canonicalCsvBytes(path) {
+  return Buffer.from(readFileSync(path, "utf8").replace(/\r\n/g, "\n"), "utf8");
+}
+
+function sha256Csv(path) {
+  return `sha256:${createHash("sha256").update(canonicalCsvBytes(path)).digest("hex")}`;
 }
 
 function parseCsv(text) {
@@ -119,10 +123,10 @@ export function validateDataFoundation() {
         `${resource.name}: public CSV has ${body.length} rows, descriptor says ${resource.rowCount}`,
       );
     }
-    if (readFileSync(publicCsv).byteLength !== resource.bytes) {
+    if (canonicalCsvBytes(publicCsv).byteLength !== resource.bytes) {
       errors.push(`${resource.name}: public descriptor byte count is stale`);
     }
-    if (sha256(publicCsv) !== resource.hash) {
+    if (sha256Csv(publicCsv) !== resource.hash) {
       errors.push(`${resource.name}: public descriptor hash is stale`);
     }
 
@@ -154,7 +158,7 @@ export function validateDataFoundation() {
     ) {
       errors.push(`${resource.name}: public and standalone resource metadata differ`);
     }
-    if (sha256(publicCsv) !== sha256(distCsv)) {
+    if (sha256Csv(publicCsv) !== sha256Csv(distCsv)) {
       errors.push(`${resource.name}: public and standalone CSV contents differ`);
     }
   }

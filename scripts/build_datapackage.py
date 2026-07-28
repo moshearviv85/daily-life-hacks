@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 INVENTORY_PATH = ROOT / "pipeline-data" / "csv-inventory.json"
 DATA_DIR = ROOT / "public" / "data"
 OUTPUT_PATH = DATA_DIR / "datapackage.json"
+DIST_OUTPUT_PATH = ROOT / "dist-datasets" / "datapackage.json"
 
 SITE = "https://www.daily-life-hacks.com"
 
@@ -414,12 +415,13 @@ def read_csv(path: Path) -> tuple[list[str], list[list[str]]]:
     return rows[0], rows[1:]
 
 
-def sha256_of(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as fh:
-        for chunk in iter(lambda: fh.read(65536), b""):
-            digest.update(chunk)
-    return f"sha256:{digest.hexdigest()}"
+def canonical_csv_bytes(path: Path) -> bytes:
+    """Return the bytes GitHub Pages serves, independent of checkout OS."""
+    return path.read_bytes().replace(b"\r\n", b"\n")
+
+
+def sha256_of(data: bytes) -> str:
+    return f"sha256:{hashlib.sha256(data).hexdigest()}"
 
 
 def build_resource(entry: dict, problems: list[str]) -> dict:
@@ -463,6 +465,7 @@ def build_resource(entry: dict, problems: list[str]) -> dict:
         )
 
     study_url = f"{SITE}/{meta['study']}/"
+    csv_bytes = canonical_csv_bytes(path)
     return {
         "name": path.stem,
         "path": filename,
@@ -472,8 +475,8 @@ def build_resource(entry: dict, problems: list[str]) -> dict:
         "format": "csv",
         "mediatype": "text/csv",
         "encoding": "utf-8",
-        "bytes": path.stat().st_size,
-        "hash": sha256_of(path),
+        "bytes": len(csv_bytes),
+        "hash": sha256_of(csv_bytes),
         "sources": [
             {
                 "title": f"Daily Life Hacks study: {meta['title']}",
@@ -568,6 +571,13 @@ def render(package: dict) -> str:
     return json.dumps(package, indent=2, ensure_ascii=False) + "\n"
 
 
+def standalone_package(package: dict) -> dict:
+    standalone = json.loads(json.dumps(package))
+    for resource in standalone["resources"]:
+        resource["path"] = f"data/{resource['path']}"
+    return standalone
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -579,6 +589,7 @@ def main() -> int:
 
     package, problems = build_package()
     rendered = render(package)
+    dist_rendered = render(standalone_package(package))
 
     # Fail loudly rather than shipping a descriptor that lies about the data.
     if problems:
@@ -587,21 +598,37 @@ def main() -> int:
         return 1
 
     existing = OUTPUT_PATH.read_text(encoding="utf-8") if OUTPUT_PATH.exists() else None
+    dist_existing = (
+        DIST_OUTPUT_PATH.read_text(encoding="utf-8")
+        if DIST_OUTPUT_PATH.exists()
+        else None
+    )
 
     if args.check:
-        if existing != rendered:
-            print("datapackage.json is stale. Run scripts/build_datapackage.py", file=sys.stderr)
+        if existing != rendered or dist_existing != dist_rendered:
+            print(
+                "A datapackage.json is stale. Run scripts/build_datapackage.py",
+                file=sys.stderr,
+            )
             return 1
-        print(f"datapackage.json is up to date ({len(package['resources'])} resources)")
+        print(
+            f"Both datapackage.json files are up to date "
+            f"({len(package['resources'])} resources)"
+        )
         return 0
 
-    if existing == rendered:
-        print(f"datapackage.json unchanged ({len(package['resources'])} resources)")
+    if existing == rendered and dist_existing == dist_rendered:
+        print(
+            f"Both datapackage.json files unchanged "
+            f"({len(package['resources'])} resources)"
+        )
         return 0
 
     OUTPUT_PATH.write_text(rendered, encoding="utf-8")
+    DIST_OUTPUT_PATH.write_text(dist_rendered, encoding="utf-8")
     print(
-        f"wrote {OUTPUT_PATH.relative_to(ROOT).as_posix()} "
+        f"wrote {OUTPUT_PATH.relative_to(ROOT).as_posix()} and "
+        f"{DIST_OUTPUT_PATH.relative_to(ROOT).as_posix()} "
         f"({len(package['resources'])} resources, "
         f"{sum(r['rowCount'] for r in package['resources'])} data rows)"
     )
