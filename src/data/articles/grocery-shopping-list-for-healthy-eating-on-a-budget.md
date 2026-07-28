@@ -89,7 +89,7 @@ If cost is the tiebreaker, our [produce fiber per dollar ranking](/produce-fiber
 
 ## The Flavor Makers (Invest Here)
 
-If you're basing your meals off intensely cheap items like beans, rice, and cabbage, you must invest a tiny bit of your budget into making them taste phenomenal. This is the difference between eating like a budget master and eating like a depressed college student. 
+If you're basing your meals off intensely cheap items like beans, rice, and cabbage, you must invest a tiny bit of your budget into making them taste phenomenal. This is the difference between eating like a budget master and eating like a depressed college student, which is its own [whole category of cheap cooking](/cheap-healthy-meals-for-college-students/) when the kitchen is a microwave and a hot plate. 
 
 ## Add two or three flexible proteins
 
