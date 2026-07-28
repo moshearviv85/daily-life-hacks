@@ -118,6 +118,7 @@ export function nextQueueSlotFromPending(rows, now = new Date()) {
 export function scheduleRowsByRandomDayCount(rows, {
   startDate = new Date(),
   dayOffsetStart = 0,
+  firstDayCapacity = null,
   random = Math.random,
 } = {}) {
   const start = new Date(startDate);
@@ -130,7 +131,10 @@ export function scheduleRowsByRandomDayCount(rows, {
     const date = new Date(start);
     date.setUTCDate(date.getUTCDate() + dayOffset);
     const dateString = formatDate(date);
-    const pinsToday = randomPinsPerDay(random);
+    const generatedCapacity = randomPinsPerDay(random);
+    const pinsToday = dayOffset === dayOffsetStart && Number.isInteger(firstDayCapacity)
+      ? Math.max(0, Math.min(generatedCapacity, firstDayCapacity))
+      : generatedCapacity;
     for (let slotIndex = 0; slotIndex < pinsToday && index < rows.length; slotIndex += 1, index += 1) {
       scheduled.push({
         ...rows[index],

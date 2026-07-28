@@ -50,6 +50,19 @@ test("batch scheduling places exactly 8 pins on each full day", () => {
   }
 });
 
+test("batch scheduling can reserve today's slots for pins already posted", () => {
+  const rows = Array.from({ length: 15 }, (_, index) => ({ row_id: `pin-${index}` }));
+  const scheduled = scheduleRowsByRandomDayCount(rows, {
+    startDate: new Date("2026-07-28T00:00:00Z"),
+    firstDayCapacity: 6,
+    random: () => 0.5,
+  });
+
+  assert.equal(scheduled.filter((row) => row.scheduled_date === "2026-07-28").length, 6);
+  assert.equal(scheduled.filter((row) => row.scheduled_date === "2026-07-29").length, 8);
+  assert.equal(scheduled.filter((row) => row.scheduled_date === "2026-07-30").length, 1);
+});
+
 test("next queue slot does not duplicate a pin already scheduled in the current minute", () => {
   const next = nextQueueSlotFromPending([
     { row_id: "pin-a", scheduled_date: "2026-06-27", scheduled_time: "08:07" },

@@ -1,5 +1,9 @@
 import { isDashboardAuthorized } from "./_dashboard-auth.js";
-import { formatDate, scheduleRowsByRandomDayCount } from "./_pin-schedule.js";
+import {
+  formatDate,
+  pinsPerDayForDate,
+  scheduleRowsByRandomDayCount,
+} from "./_pin-schedule.js";
 
 /**
  * POST /api/pins-reschedule?key=SECRET
@@ -87,7 +91,23 @@ export async function onRequestPost(context) {
     ? new Date(`${results[0].scheduled_date}T00:00:00Z`)
     : today;
   const startDate = firstDate >= today ? firstDate : today;
-  const toUpdate = scheduleRowsByRandomDayCount(results, { startDate });
+  let postedToday = 0;
+  let firstDayCapacity = null;
+  if (formatDate(startDate) === formatDate(today)) {
+    const posted = await db.prepare(`
+      SELECT COUNT(*) AS count
+      FROM ${tableName}
+      WHERE status = 'POSTED'
+        AND published_date LIKE ?
+    `).bind(`${formatDate(today)}%`).first();
+    postedToday = Number(posted?.count || 0);
+    firstDayCapacity = Math.max(0, pinsPerDayForDate(formatDate(today)) - postedToday);
+  }
+
+  const toUpdate = scheduleRowsByRandomDayCount(results, {
+    startDate,
+    firstDayCapacity,
+  });
 
   for (const row of toUpdate) {
     await db.prepare(`
@@ -103,6 +123,8 @@ export async function onRequestPost(context) {
     rescheduled: toUpdate.length,
     schedule: "8 pins/day",
     start_date: formatDate(startDate),
+    posted_today: postedToday,
+    first_day_pending_capacity: firstDayCapacity,
   }), {
     headers: { "Content-Type": "application/json" },
   });
