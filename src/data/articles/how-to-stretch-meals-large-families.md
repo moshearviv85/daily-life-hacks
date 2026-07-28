@@ -45,7 +45,7 @@ Adding a can of white beans to a soup adds creaminess and bulk without changing 
 
 In many American households, the side dish is an afterthought: a pile of steamed broccoli or a bag of salad. If you want to stretch a main course, the side dish needs to do some heavy lifting. Instead of plain veggies, think about starches that can be made in massive quantities for pennies.
 
-**Rice and Grains:** A massive pot of seasoned yellow rice or buttered noodles can be the base that saves the night.
+**Rice and Grains:** A massive pot of seasoned yellow rice or buttered noodles can be the base that saves the night, and if you're scaling by head count instead of guessing, [a cup of dry beans and two thirds of a cup of dry rice covers one adult for a day](/how-much-rice-and-beans-per-person-per-day/).
 **Bread:** There is a reason restaurants give you bread before the meal. A cheap loaf of French bread from the grocery store bakery, sliced and toasted with a little garlic butter, can fill the gaps that a small portion of lasagna leaves behind.
 **Roasted Root Veggies:** Carrots and onions are some of the cheapest items in the produce aisle. Roasting them in large batches makes them sweet and satisfying enough to take up half the plate.
 

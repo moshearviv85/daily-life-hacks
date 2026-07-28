@@ -89,7 +89,7 @@ Run both numbers. If the store saves $14 in cash but only $1 after time, you kno
 
 The farther store usually gets more attractive as the basket grows, assuming the price advantage applies to the foods you're actually buying.
 
-A $2 difference on one bag of rice won't carry a 30-mile trip. A $25 difference across a two-week cart might. This is why comparing one flashy sale item tells you almost nothing about the full trip.
+A $2 difference on one bag of rice won't carry a 30-mile trip. A $25 difference across a two-week cart might, and the line items that move a number that size are the dry goods you buy every week, not the endcap: [here's where the real savings hide in a Walmart cart](/how-to-save-money-on-groceries-at-walmart/). This is why comparing one flashy sale item tells you almost nothing about the full trip.
 
 Build the week first. The [weekly food-cost planner](/tools/grocery-budget-calculator/) scales ten audited menus for your household, and the [healthy eating on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) gives you the larger shopping system. Then compare that actual list between stores.
 

@@ -1,6 +1,6 @@
 ---
 title: Camping Meal Hacks for Large Families
-excerpt: Feeding a crowd in the woods doesn't have to be a disaster. These practical camping meal hacks for large families will save your sanity and your cooler space.
+excerpt: 'Camping meal hacks for large families: prep at home, freeze the meat as its own ice block, and cook a crowd dinner without unpacking the whole cooler.'
 category: tips
 tags:
 - kitchen tips

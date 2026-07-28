@@ -59,7 +59,7 @@ Dry pinto beans: 97.9 grams of protein per dollar. Canned black beans, the best 
 
 Same story inside a single food. Dry chickpeas score 56.7 grams of protein per dollar; canned chickpeas score 22.0. That's over two and a half times the value for the version that asks you to plan ahead by one evening, and we ran that matchup bean by bean in [what the convenience of the can actually costs](/canned-vs-dry-beans-cost/), where every dry bag beat every can.
 
-I'm not going to pretend cans are a mistake. A canned bean at 30.1 grams per dollar is still a solid buy, and some nights the can opener is the only kitchen skill you have left. Keep a few on the shelf. Just don't let them be the whole strategy when a $3.97 bag of pintos is sitting one shelf down doing 168.7 combined grams per dollar.
+I'm not going to pretend cans are a mistake. A canned bean at 30.1 grams per dollar is still a solid buy, [one can carries about 26.5 grams of protein](/how-much-protein-in-a-can-of-beans/), and some nights the can opener is the only kitchen skill you have left. Keep a few on the shelf. Just don't let them be the whole strategy when a $3.97 bag of pintos is sitting one shelf down doing 168.7 combined grams per dollar.
 
 ## Which bean should you actually cook first?
 

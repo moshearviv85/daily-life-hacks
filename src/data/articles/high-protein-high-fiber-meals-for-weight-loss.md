@@ -34,6 +34,10 @@ You can't out-willpower biological hunger. If lunch leaves you empty, Wednesday 
 
 I spent years treating those two nutrients like separate hobbies. Protein for the gym. Fiber for "gut stuff." Then I started putting them on the same plate and the 3 PM snack raids got quieter. Not because I suddenly became disciplined. Because the food finally lasted.
 
+## What are good high protein, high fiber meals?
+
+Anything built on a legume base plus a lean protein plus a whole grain. Lentil chili, black bean burrito bowls, split pea soup with bread, chickpea pasta with chicken. Beans do both jobs at once, which is why they show up in nearly every meal on this list and why the grocery cost stays low.
+
 ## Why protein and fiber work better together
 
 They do different jobs, and that's the point.

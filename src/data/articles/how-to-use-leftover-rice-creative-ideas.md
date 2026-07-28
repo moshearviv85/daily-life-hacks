@@ -1,7 +1,6 @@
 ---
 title: 'How to Use Leftover Rice: Creative Ideas'
-excerpt: Leftover rice doesn't have to mean the same stir-fry every time. Here are
-  simple ways to use it in soups, salads, fritters, and more so nothing goes to waste.
+excerpt: 'Leftover rice ideas past the usual stir-fry: soups, fritters, rice salad, breakfast bowls. Cool it fast, keep it cold, and use it within four days.'
 quickAnswer: >-
   Cool cooked rice quickly in a shallow container, refrigerate it within two
   hours, and use it within three to four days. Cold rice works well in fried

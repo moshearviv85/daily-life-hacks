@@ -1,6 +1,6 @@
 ---
 title: "How to Eat Healthy on a Budget: The Complete Playbook"
-excerpt: "The full system for eating healthy on a budget: data-picked staples, a shopping method, batch cooking, and a real $60 week. No coupons required."
+excerpt: "A dollar of dry pinto beans buys 97.9g of protein; a dollar of bacon buys 9.2. The full budget system: data-picked staples, batch cooking, a real $60 week."
 category: "tips"
 tags: ["eat healthy on a budget", "budget meal planning", "cheap healthy food", "grocery budget", "budget cooking"]
 image: "/images/eat-healthy-on-a-budget-complete-playbook-main.jpg"
@@ -25,7 +25,7 @@ faq:
     answer: "For everyday cooking, frozen holds up very well. Vegetables are typically frozen within hours of harvest, so the nutrient loss is small, and the price difference is large: in our fiber study, frozen green peas delivered 17.6 grams of fiber per dollar versus 6.1 for fresh broccoli crowns. Buy fresh for what you'll eat this week and frozen for everything else, and you'll waste less of both."
 ---
 
-The simplest way to eat healthy on a budget is to build the cart around dry staples, plan seven dinners at once, batch-cook the slow ingredients, and stop paying for food you throw away. None of those moves involve coupons:
+Eating healthy on a budget comes down to buying nutrition by the gram instead of by the box. A dollar of dry pinto beans buys 97.9 grams of protein. A dollar of bacon buys 9.2. So you build the cart around dry staples, plan seven dinners at once, batch-cook the slow ingredients, and stop paying for food you throw away. None of those moves involve coupons:
 
 * **Shop the dry goods aisle first.** That's where beans, oats, rice, and lentils sell nutrition for pennies.
 * **Plan a full week, not a day.** One shopping trip feeds seven dinners instead of one.
@@ -38,15 +38,17 @@ I learned all four by force, not virtue. Money got tight one spring, I gave myse
 
 This isn't a homework assignment. It's a hub, so start with the problem that's costing you money now:
 
-* **The cart total makes no sense:** use the [shopping system](#the-shopping-system).
+* **The cart total makes no sense:** use the [shopping system](#how-do-you-shop-for-healthy-food-on-a-budget).
 * **You want better value from one nutrient:** use the complete [budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) or [budget protein guide](/high-protein-on-a-budget-complete-guide/).
-* **Cheap ingredients keep dying in the cabinet:** skip to the [cooking system](#the-cooking-system).
-* **Your fridge is where money goes to disappear:** start with [food-waste control](#stop-losing-money-you-already-spent).
+* **Cheap ingredients keep dying in the cabinet:** skip to the [cooking system](#how-do-you-cook-cheap-staples-so-they-get-eaten).
+* **Your fridge is where money goes to disappear:** start with [food-waste control](#how-do-you-stop-wasting-food-you-already-paid-for).
 * **You need a real-world benchmark:** compare the sample week below with [what the USDA Thrifty Food Plan says a low-cost week can cost](/usda-thrifty-food-plan-weekly-cost/).
 
 If you want to inspect the source trail before taking shopping advice from a man with strong feelings about beans, our [methodology page](/methodology/) explains how the price and nutrition datasets were built.
 
-## Let the numbers pick your staples
+## What are the cheapest healthy foods?
+
+The cheapest healthy foods in a US grocery store are dry beans, lentils and split peas. Dry pinto beans deliver 97.9 grams of protein per dollar and dry green split peas 71.0 grams of fiber per dollar, based on USDA nutrition data and July 2026 prices. Oats, rice, whole wheat pasta, eggs at 34.4 grams of protein per dollar and chicken drumsticks at 50.3 fill in behind them.
 
 Most budget eating advice is somebody's opinion. We wanted receipts, so we built two datasets: 49 foods ranked by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and 53 foods ranked by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), all from USDA nutrition data matched to real July 2026 prices. Then we published the spreadsheets so anyone can check the math.
 
@@ -75,7 +77,9 @@ Meanwhile the stuff at the bottom is the stuff the ads sell hardest. Ground beef
 
 If you want to run your own comparisons, the [fiber per dollar calculator](/tools/fiber-per-dollar-calculator/) does the nutrient math for you. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) settles the small-package-versus-big-package argument without making you divide decimals beside the cereal. And if fiber is your main gap, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) goes deep on that half of the equation.
 
-## The shopping system
+## How do you shop for healthy food on a budget?
+
+Shop the dry goods aisle first, bring a list built from the staples rather than from cravings, plan all seven dinners before you leave the house, and buy frozen for anything you won't eat within five days. One planned trip a week beats four improvised ones, because every quick stop for milk comes home with four other things.
 
 Cheap staples don't help if the rest of your cart undoes them. The shopping side of the playbook is a handful of habits that compound.
 
@@ -91,11 +95,13 @@ And compare the whole food budget, not one louder receipt. [Your grocery bill ca
 
 Three more moves that pay for themselves:
 
-* **Pick the right store.** If there's an Aldi near you, our [Aldi shopping hacks](/aldi-shopping-hacks-large-family-meals/) breakdown shows how far a cart stretches there.
+* **Pick the right store.** If there's an Aldi near you, our [Aldi shopping hacks](/aldi-shopping-hacks-large-family-meals/) breakdown shows how far a cart stretches there, and if it's a Walmart, [the Great Value dry goods are where the per-dollar winners hide](/how-to-save-money-on-groceries-at-walmart/).
 * **Buy frozen on purpose.** In our data, frozen green peas delivered nearly three times the fiber per dollar of fresh broccoli. [Frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/) covers when each one wins, and [the frozen versus fresh fiber-per-dollar breakdown](/frozen-vs-fresh-vegetables-fiber-cost/) shows how wide the gap gets.
 * **Read the label, not the front of the box.** The front is marketing. The back is math. [How to read nutrition labels](/how-to-read-nutrition-labels-for-beginners/) takes five minutes to learn and saves you from paying premium prices for oats with a mascot.
 
-## The cooking system
+## How do you cook cheap staples so they get eaten?
+
+Cook once and eat three times. One weekend session that produces a pot of beans, a batch of grains and one big main turns weeknights into assembly instead of cooking, which is the only reason a 22-cent-per-100-grams bag of dry beans ever becomes dinner on a Tuesday.
 
 Here's the honest catch with budget staples: a bag of dried beans is 22 cents per 100 grams and also completely inedible at 6 PM on a Tuesday. Cheap ingredients demand a system, because the whole reason takeout wins is that it's ready and your pintos aren't.
 
@@ -111,7 +117,9 @@ A few workhorse meals worth having on rotation:
 
 And when the pot looks a little small for the table, [how to stretch meals](/how-to-stretch-meals-large-families/) covers the honorable ways to make eight servings out of six.
 
-## Stop losing money you already spent
+## How do you stop wasting food you already paid for?
+
+Keep an eat-first shelf, store produce properly, revive what droops instead of binning it, and run a written freezer inventory. The cheapest groceries in your house are the ones already in your fridge, so waste prevention isn't a footnote to budget eating, it's roughly a third of it.
 
 The average American household throws out hundreds of dollars of food a year, which means the cheapest groceries in your house are the ones already in your fridge. Waste prevention isn't a side note to budget eating. It's a third of it.
 
@@ -121,7 +129,9 @@ Even the losses aren't always losses. [Wilted lettuce and greens can usually be 
 
 The freezer is the endgame. A [simple freezer inventory](/freezer-inventory-simple-system/) turns it from the place food goes to be forgotten into an actual pantry, one where the batch-cooked beans and the half-price chicken wait for you instead of expiring at you.
 
-## Common mistakes that backfire
+## Why does budget eating usually fail by Wednesday?
+
+Four mistakes account for almost all of it: buying cheap ingredients with no cooking plan, swapping every meal at once instead of dinners first, shopping hungry without a list, and accepting produce waste as normal. Every one is a system gap, not a character flaw, and each has a fix on this page.
 
 Budget eating has a familiar failure arc: enthusiastic Sunday, grim Wednesday, takeout by Friday, whole thing abandoned before payday. Having seen that arc up close more than once, I can tell you it's almost always one of the same four mistakes.
 
@@ -135,16 +145,18 @@ Budget eating has a familiar failure arc: enthusiastic Sunday, grim Wednesday, t
 
 None of these are character flaws. They're system gaps, and every one of them has a fix earlier on this page.
 
-## A realistic $60 week
+## What does a $60 grocery week actually look like?
 
-Here's roughly how I'd sketch a week for two adults on $60, using the same prices from our studies. The backbone costs about $25:
+About $25 buys the backbone for two adults: a 4 lb bag of pinto beans at $3.97, split peas at $1.42, a 5 lb bag of chicken drumsticks at $5.46, two dozen eggs at $4.38, a gallon of milk at $4.22, and roughly $6.00 of oats, rice and pasta. The other $35 buys produce and flexibility.
+
+Here's roughly how I'd sketch a week for two adults on $60, using the same prices from our studies. If you're feeding one, halving it won't quite work, because packages don't shrink to fit; [what a single person actually spends per month](/grocery-budget-for-one-person-per-month/) explains the gap. The backbone costs about $25:
 
 | Item | Price | What it delivers |
 |---|---|---|
 | Pinto beans, 4 lb bag | $3.97 | Around 389 grams of protein, plus serious fiber |
 | Green split peas, 16 oz bag | $1.42 | About 101 grams of fiber and a week of soup lunches |
-| Chicken drumsticks, 5 lb bag | $5.45 | The meat counter's best bargain at $1.09 per lb |
-| Eggs, two dozen | $4.40 | The easiest protein in the kitchen, zero prep drama |
+| Chicken drumsticks, 5 lb bag | $5.46 | The meat counter's best bargain at $1.09 per lb |
+| Eggs, two dozen | $4.38 | The easiest protein in the kitchen, zero prep drama |
 | Whole milk, 1 gallon | $4.22 | 123 grams of protein hiding in the fridge door |
 | Oats, rice, and whole wheat spaghetti | ~$6.00 | Every breakfast and dinner base for the week |
 | **Total** | **~$25** | The backbone of the whole week |

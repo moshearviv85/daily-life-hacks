@@ -56,7 +56,7 @@ You can push the math one step further. At 3 meals a day, $235 averages about $2
 
 USDA also adjusts for household size. It suggests adding 20% for 1 person, 10% for 2, and 5% for 3. Four people get no adjustment. Households of 5 or 6 subtract 5%, while 7 or more subtract 10%.
 
-That makes sense once you've cooked for one. A bottle of oil doesn't become one quarter of the price, and cilantro remains a full bunch even when half is planning to liquefy in the crisper drawer.
+That makes sense once you've cooked for one. A bottle of oil doesn't become one quarter of the price, and cilantro remains a full bunch even when half is planning to liquefy in the crisper drawer. Run that 20% adjustment all the way out and you get [the monthly grocery budget USDA implies for one adult](/grocery-budget-for-one-person-per-month/), somewhere between $303 and $381.
 
 ## What does one week at $235 actually look like?
 

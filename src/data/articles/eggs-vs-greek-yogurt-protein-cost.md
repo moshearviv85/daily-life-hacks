@@ -44,7 +44,7 @@ Which also means the result is fragile. Eggs are priced here at the May 2026 nat
 
 The yogurt does, which is the fact that surprises people.
 
-A dozen large eggs comes to about 600 grams of edible egg, so at 12.56 grams per 100 grams you're bringing home roughly 75 grams of protein for $2.19. That's about a day and a half of the FDA's 50 gram Daily Value. The 32 ounce tub of Greek yogurt holds 907 grams at 10.19 grams per 100 grams, which is about 92 grams of protein for $3.36.
+A dozen large eggs comes to about 600 grams of edible egg, so at 12.56 grams per 100 grams you're bringing home roughly 75 grams of protein for $2.19, or [about 12.6 grams in the two egg version of breakfast](/how-much-protein-in-two-eggs/). That's about a day and a half of the FDA's 50 gram Daily Value. The 32 ounce tub of Greek yogurt holds 907 grams at 10.19 grams per 100 grams, which is about 92 grams of protein for $3.36.
 
 So the tub wins on total protein and loses on efficiency. If you're buying for the week rather than optimizing per dollar, one tub covers more meals than one carton. If you're counting every dollar, the carton is the better rate.
 

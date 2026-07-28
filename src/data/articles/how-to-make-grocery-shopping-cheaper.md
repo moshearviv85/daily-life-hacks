@@ -53,6 +53,17 @@ If you're tired of staring at your bank statement every week, you have to change
 
 For the bigger picture of building a cart that feeds you without draining the account, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) walks through the full system. If you want a yardstick for whether your total is actually high, [what the government says a cheap healthy week costs](/usda-thrifty-food-plan-weekly-cost/) is the benchmark most people have never seen. This article is the aisle-level playbook: what to do before you leave the house, what to ignore once you're inside, and which habits actually move the total.
 
+## How do you make grocery shopping cheaper?
+
+Cut the number of decisions you make inside the store. Six moves do most of the work:
+
+1. **Build the list at home**, from what's already in the fridge and freezer.
+2. **Read the unit-price sticker**, not the shelf price.
+3. **Look above and below eye level**, where the cheaper brands are shelved.
+4. **Skip anything pre-cut, pre-washed or pre-portioned.**
+5. **Buy your protein and fiber from the dry goods aisle first.**
+6. **Never shop hungry, tired or bored.**
+
 ## Shop from the couch first
 
 This is the single most effective way to eliminate impulse buying. When you physically walk through a store, you're bombarded by endcap displays, colorful packaging, and the smell of the bakery. You grab things because they look good in the moment.
@@ -75,7 +86,7 @@ Supermarkets charge massive premiums to food brands for eye-level placement. The
 
 When you need oats, pasta, or canned tomatoes, force yourself to look at the bottom shelf or the top shelf. That's where they hide the store-brand items. The ingredients are often nearly identical to the expensive brand at eye level. They're cheaper because they don't fund a Super Bowl ad.
 
-Store brands aren't a personality trait. They're usually the same factory with different ink on the label. Start with dry goods and canned goods. If you hate a specific store-brand item, swap that one back. Don't pay brand tax on every aisle as a default.
+Store brands aren't a personality trait. They're usually the same factory with different ink on the label. Start with dry goods and canned goods, which is where the gap gets silly: [Great Value dry pinto beans buy 97.9 grams of protein per dollar](/how-to-save-money-on-groceries-at-walmart/), and nothing branded on that shelf is close. If you hate a specific store-brand item, swap that one back. Don't pay brand tax on every aisle as a default.
 
 ## Use the cost-per-ounce sticker like a grown-up
 

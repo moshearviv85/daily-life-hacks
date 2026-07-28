@@ -1,6 +1,6 @@
 ---
 title: The Best Way to Cook Ribs, Hands Down
-excerpt: Forget dry, tough ribs. This method delivers fall-off-the-bone tenderness and incredible flavor with minimal fuss, perfect for your next backyard gathering.
+excerpt: 'The best way to cook ribs: 3 hours 30 minutes low and slow, then a short blast of heat for the bark. No dry ribs and no guessing at the timer.'
 category: recipes
 tags:
   - pork ribs

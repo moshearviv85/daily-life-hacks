@@ -32,25 +32,29 @@ The real battle for your appetite isn't about willpower. It’s about satiety, w
 
 When price is part of the decision too, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) shows how to build the protein side of the plate without shopping like you just signed an endorsement deal.
 
-## How protein shuts down the hunger alarm
+## Does protein or fiber keep you fuller?
+
+Neither one reliably wins, and the controlled trials are less tidy than the internet suggests. High-protein meals raise fullness hormones without consistently reducing what people eat at the next meal, and fiber adds physical bulk without guaranteeing lower intake either. The practical answer is to use both in the same meal.
+
+## How does protein affect hunger?
 
 Protein can affect appetite signals, but the result isn't as tidy as "eat protein, stop eating." In a [randomized crossover trial of eight adults](https://pubmed.ncbi.nlm.nih.gov/23666746/), a high-protein breakfast raised PYY and GLP-1 more than high-fat or high-carbohydrate breakfasts, yet participants didn't eat significantly less at the later meal.
 
 Another [randomized crossover study in 25 men](https://pubmed.ncbi.nlm.nih.gov/23466396/) found that higher-protein test meals increased reported fullness and changed several appetite-related hormones. Even there, later energy intake didn't differ. Protein may help a meal feel more substantial, but there isn't a universal 25-gram switch that keeps every person's hunger silent.
 
-## Why fiber is the secret to physical fullness
+## Why does fiber make a meal feel fuller?
 
 Fiber isn't one substance with one predictable effect. Different fibers add bulk, hold water, change food texture, or get fermented, and the food carrying the fiber matters too. A bowl of oatmeal and a glass with isolated fiber aren't interchangeable just because both put a number on the label.
 
 Food form can change the result. In a [randomized crossover trial with 58 adults](https://pubmed.ncbi.nlm.nih.gov/19110020/), eating whole apple before lunch produced greater satiety and lower total meal energy intake than applesauce or apple juice. That's useful evidence for that apple-and-meal setup. It doesn't prove every fiber-rich food automatically reduces appetite.
 
-## The problem with picking a side
+## Should you choose protein or fiber?
 
 If you go all-in on protein and ignore plants, the meal may be low in fiber and variety. If you pile on fiber too quickly, you may end up uncomfortable. Neither outcome proves a clean split between "brain hunger" and "stomach hunger." Appetite is more complicated than two nutrients dividing the office.
 
 I’ve tried the "just eat a giant bowl of broccoli" trick. It works for about forty-five minutes until the volume passes through and I realize I haven't had any real substance. I’ve also tried the "just eat three hard-boiled eggs" trick. That leaves me feeling fueled but physically empty, which usually leads to me eating a sleeve of crackers just to feel like I actually had a meal.
 
-## Making the combo work in real life
+## How do you build a meal with both?
 
 You don't need a degree in dietetics to make this work for dinner tonight. You just need to stop thinking about your plate as one thing or the other. If you’re making tacos, don't just do beef and cheese. Add black beans for that fiber hit, and if the grocery bill is part of the calculation, [how ground beef and beans compare on protein per dollar](/ground-beef-vs-beans-protein-cost/) is worth reading first. If you’re having a salad, don't just do greens and dressing. Throw in some leftover chicken or a few hard-boiled eggs. And if you'd rather have the pairing done for you, these [high protein high fiber meals for weight loss](/high-protein-high-fiber-meals-for-weight-loss/) are built on exactly this combo. 
 

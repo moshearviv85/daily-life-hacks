@@ -1,8 +1,6 @@
 ---
 title: High Fiber Pasta Alternatives That Still Feel Like Dinner
-excerpt: Chickpea pasta, lentil pasta, and whole wheat pasta aren't the same swap.
-  Here's how to pick high fiber pasta alternatives and cook them so they still taste
-  like dinner.
+excerpt: "Chickpea, lentil and whole wheat pasta are not the same swap. How to pick a high fiber pasta alternative and cook it so it still tastes like dinner."
 category: nutrition
 tags:
 - high fiber
@@ -43,6 +41,10 @@ If you want more fiber but you still want a fork and a red sauce situation, past
 The bad news is legume pastas behave differently. Treat them like their own ingredient, not a perfect clone of semolina.
 
 If you're rebuilding more than pasta night, the [budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) sorts out which pantry staples earn their shelf space without turning dinner into a spreadsheet.
+## What is the best high fiber pasta alternative?
+
+Whole wheat pasta, if you want the swap to survive a family dinner. It carries 9.2 grams of fiber per 100 grams and delivers 35.4 grams of fiber per dollar in our ranking, and it behaves like pasta. Chickpea and red lentil pasta carry more protein but cook and taste differently enough that they need a sauce built for them.
+
 ## Chickpea Pasta
 
 Chickpea pasta tends to bring more protein and fiber than white pasta. Texture can be slightly grainier, which is not a moral failure.

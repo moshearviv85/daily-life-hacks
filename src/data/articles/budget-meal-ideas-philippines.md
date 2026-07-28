@@ -1,6 +1,6 @@
 ---
 title: Smart Budget Meal Ideas for Your Filipino Kitchen
-excerpt: "Stretch the grocery money with practical budget meal ideas for the Philippines - eggs, sardines, ginisa, rice, and market staples that still taste like dinner"
+excerpt: "Budget meal ideas for a Filipino kitchen built on eggs, sardines, ginisa and market staples. Cheap, filling, and still tastes like actual dinner."
 category: tips
 tags:
 - budget meals philippines

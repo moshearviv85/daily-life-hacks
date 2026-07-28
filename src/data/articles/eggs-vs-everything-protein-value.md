@@ -67,7 +67,7 @@ Eggs beat chicken breast (24.5) by roughly 40 percent per dollar. They beat ever
 
 ## So are eggs still worth buying for protein?
 
-For my money, yes, because rank 19 undersells what eggs actually are: the cheapest protein that asks nothing of you. A dozen holds about 75 grams of protein for $2.19, call it 18 cents an egg, and there's no soaking, no simmering, no cutting board. Skip the pan entirely and it's a different list, one that [peanut butter, canned beans, and the dairy tubs](/no-cook-protein-per-dollar/) run instead. Beans beat eggs on paper; eggs beat beans at breakfast when you're barely awake and negotiating with the coffee maker.
+For my money, yes, because rank 19 undersells what eggs actually are: the cheapest protein that asks nothing of you. A dozen holds about 75 grams of protein for $2.19, call it 18 cents an egg, [about 12.6 grams of protein in the standard two egg breakfast](/how-much-protein-in-two-eggs/), and there's no soaking, no simmering, no cutting board. Skip the pan entirely and it's a different list, one that [peanut butter, canned beans, and the dairy tubs](/no-cook-protein-per-dollar/) run instead. Beans beat eggs on paper; eggs beat beans at breakfast when you're barely awake and negotiating with the coffee maker.
 
 They're also hard to get bored of. A [sheet pan breakfast hash](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) feeds a table from one pan, [cauliflower fried rice with eggs](/cauliflower-fried-rice-with-eggs/) turns them into dinner, and a good [egg sandwich](/healthy-egg-sandwich-add-ins-toppings/) is the entire reason some of us get out of bed.
 

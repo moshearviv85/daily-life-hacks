@@ -1,6 +1,6 @@
 ---
 title: "Peppermint Ginger Tea: A Better 10-Minute Brew"
-excerpt: "Peppermint ginger tea is a caffeine-free, 10-minute brew. Research on peppermint leaf tea is limited, so treat digestive relief as a possibility, not a promise."
+excerpt: "Peppermint ginger tea is a 10-minute, caffeine-free brew. Research on peppermint leaf tea is limited, so treat digestive relief as a maybe, not a promise."
 category: nutrition
 tags:
   - herbal tea

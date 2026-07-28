@@ -325,7 +325,13 @@ def main(argv: list[str] | None = None) -> int:
         print("IndexNow: no HTTP request made.")
         return 1 if rejected else 0
 
-    key = os.environ.get("INDEXNOW_KEY", DEFAULT_INDEXNOW_KEY).strip()
+    # GitHub Actions sets an *empty* env var for a secret that is not configured,
+    # so `os.environ.get(name, default)` returns "" rather than the default and
+    # the fallback never fires. That silently broke every real submission from
+    # .github/workflows/indexnow-sitemap-diff.yml on 2026-07-27 (runs
+    # 30238449228, 30238655318, 30256943498 — all exited 1 with a URL in hand).
+    # An empty value must mean "not set", not "no key".
+    key = (os.environ.get("INDEXNOW_KEY") or "").strip() or DEFAULT_INDEXNOW_KEY
     if not key:
         report["ok"] = False
         report["submission"] = {"attempted": False, "reason": "INDEXNOW_KEY is empty"}

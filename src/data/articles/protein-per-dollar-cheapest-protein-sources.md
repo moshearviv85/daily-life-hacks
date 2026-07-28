@@ -1,6 +1,6 @@
 ---
 title: "Protein per Dollar: The Cheapest Protein Sources, Ranked"
-excerpt: "We ranked 49 common grocery foods by grams of protein per dollar, using USDA data and July 2026 prices. Beans crushed it. Bacon should apologize."
+excerpt: "A dollar of dry pinto beans buys 97.9g of protein. A dollar of bacon buys 9.2g. All 49 grocery foods ranked by protein per dollar, at July 2026 prices."
 category: "nutrition"
 tags: ["cheapest protein sources", "protein per dollar", "budget protein", "cheap protein on a budget", "grocery data"]
 cluster: "budget-protein"

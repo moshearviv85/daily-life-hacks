@@ -41,7 +41,7 @@ Protein takes longer to digest. It sends signals to your brain that you're satis
 
 Don't overcomplicate this. You don't need a spreadsheet to make breakfast. Just aim for three components: a carbohydrate, a protein, and a little bit of fat or fiber. 
 
-If you want toast, great. That's your carbohydrate. Now add eggs for protein and maybe a slice of avocado or a drizzle of olive oil for fat. If you're curious what that combo actually adds up to, here's the [macronutrient breakdown of a healthy egg sandwich](/macronutrient-breakdown-healthy-egg-sandwich/) with real numbers. 
+If you want toast, great. That's your carbohydrate. Now add eggs for protein, since [two of them carry about 12.6 grams](/how-much-protein-in-two-eggs/), and maybe a slice of avocado or a drizzle of olive oil for fat. If you're curious what that combo actually adds up to, here's the [macronutrient breakdown of a healthy egg sandwich](/macronutrient-breakdown-healthy-egg-sandwich/) with real numbers. 
 
 If you want oatmeal, perfect. Oats bring the carbs and the fiber. Stir in a spoonful of peanut butter for fat and some Greek yogurt or milk for protein. It's a simple plug and play system. You just look at your plate and ask yourself what's missing.
 

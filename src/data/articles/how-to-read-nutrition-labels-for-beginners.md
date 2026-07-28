@@ -62,6 +62,16 @@ Here is the brutal, honest truth: the vast majority of those massive claims on t
 
 If looking at that spreadsheet-like box makes your eyes glaze over, don't worry. You don't need a degree in chemistry. If you want to know how to read nutrition labels for beginners, you only really need to focus on three massive, highly specific things. 
 
+## How do you read a nutrition label?
+
+Read it in this order. Serving size first, then servings per container, then calories, then the two or three numbers you actually came for. Every figure on the panel is per serving, so a bottle listing 110 calories and 2.5 servings is really 275 if you drink the whole thing.
+
+1. **Serving size and servings per container.** Multiply everything else by this.
+2. **Calories**, for the amount you'll actually eat.
+3. **Added sugars**, which is a separate line from total sugars.
+4. **The ingredient list**, in descending order by weight.
+5. **Percent Daily Value**, for fast comparison between two products.
+
 ## The Number One Trap: Serving Size
 
 This is the oldest, most devious trick in the entire food industry playbook. You pick up a small, single-serve looking bottle of a delicious iced coffee or a "healthy" juice. You glance at the label and think, "Wow, only 110 calories. Perfect!" 

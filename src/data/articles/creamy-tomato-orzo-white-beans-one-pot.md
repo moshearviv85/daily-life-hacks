@@ -1,6 +1,6 @@
 ---
 title: "Creamy Tomato Orzo With White Beans (One Pot)"
-excerpt: "This creamy tomato orzo with white beans is a cozy, one-pot dinner that comes together fast. It's basically the comfort of risotto without the endless stirring."
+excerpt: "Creamy tomato orzo with white beans, one pot, 30 minutes, 4 servings. The orzo goes creamy by itself, so there is no endless risotto stirring."
 quickAnswer: >-
   Cook onion, garlic, and tomato paste until the paste darkens, then toast dry
   orzo for one minute. Simmer it with tomatoes, broth, white beans, and oregano,

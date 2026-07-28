@@ -85,7 +85,7 @@ If you have a random zucchini or half a head of cabbage sitting in the crisper d
 
 ## Let's talk about the peanut sauce
 
-You could eat the chicken filling on its own and be perfectly happy. But the peanut sauce is the reason you'll make this recipe twice in one week.
+You could eat the chicken filling on its own and be perfectly happy. But the peanut sauce is the reason you'll make this recipe twice in one week, and it quietly stacks protein on top of the chicken, because [two tablespoons of peanut butter carry about 7.1 grams](/how-much-protein-in-peanut-butter/).
 
 It's a dead simple mix of creamy peanut butter, soy sauce, rice vinegar, and warm water to thin it out. A single jar stretches across a lot of dinners, which is why [peanut butter and almonds land so far apart on protein per dollar](/peanut-butter-vs-almonds-protein-cost/). If you like heat, a squeeze of sriracha balances the richness of the peanut butter beautifully.
 

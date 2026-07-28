@@ -1,7 +1,7 @@
 ---
 title: 'Plant-Based Protein Sources: A Complete Guide'
-excerpt: You don't need meat at every meal to get enough protein. Here's a practical
-  list of plant-based protein sources with portions and ideas you can use every day.
+excerpt: A dollar of dry pinto beans buys 97.9g of protein. Tempeh buys 13.2g. Every
+  major plant-based protein source, ranked by protein per 100g and per dollar.
 category: nutrition
 tags:
 - high protein
@@ -39,35 +39,55 @@ faq:
   answer: Everyone is different, but many people notice positive changes within a
     few weeks of consistent habits.
 ---
-Going plant-based, or even just deciding to cut back on your meat intake a few days a week, does not mean you're doomed to eat sad, wilted salads for the rest of your life. 
+## What are the best plant-based protein sources?
 
-There is a surprisingly long list of plant-based protein sources that work perfectly in normal, everyday meals. We're talking about beans, lentils, tofu, tempeh, nuts, seeds, and even certain grains. This guide breaks down what they actually are, roughly how much protein they give you, and how to use them without turning dinner into a complicated science experiment.
+The most protein-dense plant foods by weight are dry brown lentils at 24.6 grams of protein per 100 grams, dry roasted peanuts at 24.4, dry green split peas at 23.1, peanut butter at 22.2, black beans at 21.6, almonds at 21.2, and dry pinto beans at 21.4. Tofu is the weakest of the well-known options at 10.0 grams per 100 grams.
 
-If grocery cost is the part nobody bothered to explain, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) shows how those same staples stack up when your checking account gets a vote.
-## The Heavy Lifters: Beans and Lentils
+That surprises people, because tofu is the food with "plant protein" printed on the front of the box and pinto beans are the food in a paper sack on the bottom shelf. The ranking below comes out of our own [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), where we priced 49 grocery foods and divided protein by price. If grocery cost is the part nobody bothered to explain, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) shows how these same staples stack up when your checking account gets a vote.
 
-Beans and lentils are the undisputed workhorses of plant protein. A standard cup of cooked black beans has around 15 grams of protein. Chickpeas and kidney beans land in the exact same ballpark. 
+| Plant protein | Protein per 100g | Protein per $1 |
+|---|---|---|
+| Brown lentils (dry) | 24.6 g | 77.7 g |
+| Dry roasted peanuts | 24.4 g | 39.8 g |
+| Green split peas (dry) | 23.1 g | 73.9 g |
+| Peanut butter | 22.2 g | 50.7 g |
+| Black beans (dry) | 21.6 g | 81.0 g |
+| Pinto beans (dry) | 21.4 g | 97.9 g |
+| Almonds | 21.2 g | 14.8 g |
+| Chickpeas (dry) | 20.5 g | 56.7 g |
+| Tempeh | 20.3 g | 13.2 g |
+| Quinoa (dry) | 14.1 g | 21.5 g |
+| Frozen shelled edamame | 11.2 g | 18.0 g |
+| Tofu (extra firm) | 10.0 g | 13.6 g |
 
-Lentils are especially great because they cook much faster than dried beans. You can throw them into soups, use them as a base for tacos, mix them into grain bowls, or toss them in pasta sauce. Canned beans are perfectly fine and save a ton of time; just give them a quick rinse in the sink to cut down on the excess sodium. If you do prefer cooking from dry, making a big batch on Sunday can honestly last you most of the week. Plus, they are an excellent source of dietary fiber, which might help keep you feeling full longer.
-## Tofu and Tempeh (Don't Be Afraid)
+Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
 
-Tofu is simply made from soybeans and usually comes in soft, firm, and extra-firm varieties. The firm and extra-firm types hold up incredibly well to frying, baking, and tossing into stir-fries. A 3-ounce serving offers about 8 to 9 grams of protein. 
+## How much protein is in beans and lentils?
 
-Tempeh is a slightly different beast. It's made from fermented soy (and sometimes mixed with grains). It’s much denser, has a firmer bite, and carries a nuttier taste, giving you roughly 15 to 16 grams of protein per 3 ounces. 
+Dry beans and lentils run 20 to 25 grams of protein per 100 grams before you cook them, which puts them level with almonds and ahead of tempeh. Dry brown lentils lead at 24.6 grams per 100 grams. Canned black beans read lower at 6.0 grams per 100 grams only because roughly two thirds of the can is water.
 
-The most important thing to know about both is that they are essentially flavor sponges. They taste like whatever marinade or sauce you cook them in. You don't have to love them immediately; try a few different preparations before you decide they aren't for you.
-## Nuts, Seeds, and Nut Butters
+Lentils are the easy on-ramp because they don't need soaking. Throw them into soups, use them as a base for tacos, mix them into grain bowls, or stir them into pasta sauce. Canned beans are perfectly fine and save a ton of time; give them a quick rinse to cut the sodium. Cooking from dry on a Sunday will carry you most of the week, and the price gap is real: a $0.88 can of black beans buys 30.1 grams of protein per dollar, while the dry bag buys 81.0. We priced that gap bean by bean in [canned versus dry beans](/canned-vs-dry-beans-cost/). Beans also carry serious fiber, which may help keep you full longer.
 
-Nuts and seeds aren't quite as protein-dense per serving as a bowl of beans or a slab of tofu, but they add up quickly. A quarter cup of almonds hands you about 6 grams of protein. Two tablespoons of standard peanut butter gives you around 7 to 8 grams. 
+## Do tofu and tempeh have more protein than beans?
 
-Pumpkin seeds, hemp seeds, and chia seeds also make solid contributions. They are ridiculously easy to use: grab a handful as a snack, stir them into oatmeal, toss them on salads, or blend them into sauces. Just keep an eye on your portion sizes if you are actively managing your calories, because nuts and seeds are highly calorie-dense due to their healthy fat content.
-## Whole Grains That Actually Help
+Tempeh roughly ties dry beans at 20.3 grams of protein per 100 grams. Tofu does not come close, at 10.0 grams per 100 grams, less than half of dry lentils. Per dollar the gap is wider still: tofu delivers 13.6 grams per dollar and tempeh 13.2, against 97.9 for dry pinto beans.
 
-Quinoa is often singled out in health articles because it contains all the essential amino acids and offers about 8 grams of protein per cooked cup. Other sturdy grains like farro, bulgur, and even standard whole wheat pasta add a few meaningful grams of protein per serving. 
+None of that makes them bad food. Extra-firm tofu holds up to frying, baking and stir-fries in a way a bean never will, and tempeh has a firmer bite and a nuttier taste. Both are flavor sponges that taste like whatever you cook them in, so try two or three preparations before you decide. Just buy them because you want to eat them, not because you think they're the protein bargain of the aisle. We ran the head-to-head in [tofu vs chicken](/tofu-vs-chicken-protein-cost/).
 
-Edamame (which are just young, green soybeans) is another incredibly easy option. A half-cup of shelled edamame has about 8 grams of protein. You can buy a bag frozen at the grocery store and steam or boil it in literal minutes for a fast snack.
-## Putting It All Together
+## Are nuts and seeds a good source of plant protein?
 
-Here is the best news: you do not have to meticulously combine specific foods at a single meal to form a "complete" protein. Eating a reasonable variety of plant-based protein sources over the course of the entire day usually gives your body exactly what it needs. And if you're wondering what "enough" even means, we broke down [how much protein you need per day](/how-much-protein-do-you-need-per-day/) so you can aim at an actual number instead of a vibe. 
+By weight, yes. Dry roasted peanuts carry 24.4 grams of protein per 100 grams and almonds 21.2, both ahead of dry pinto beans. By price they split hard: peanuts deliver 39.8 grams of protein per dollar and peanut butter 50.7, while almonds manage only 14.8. Sunflower seed kernels land in between at 31.7.
 
-A normal day might look like a bowl of oatmeal topped with nuts at breakfast, a hearty lentil soup or a bean-heavy bowl for lunch, and some crispy tofu or black bean tacos at dinner. It's highly doable, and it does not require a degree in nutrition. Start with the foods you already know you like, and build outward from there. And when you're ready to graduate past tacos, these [quick black bean burgers that hold their shape](/quick-black-bean-burgers-that-hold-their-shape/) put a can of those beans to serious work.
+So peanuts are the value pick and almonds are the splurge. We put the two side by side in [peanut butter vs almonds](/peanut-butter-vs-almonds-protein-cost/). Nuts and seeds are also easy to use badly, since they're calorie-dense enough that a handful while you cook turns into a meal you didn't notice eating. Stir them into oatmeal, scatter them on salads, blend them into sauces.
+
+## Which whole grains actually add protein?
+
+Grains are a supporting act, not the lead. Dry quinoa carries 14.1 grams of protein per 100 grams and whole wheat flour 13.2, both roughly half of dry lentils. Old-fashioned rolled oats sit at 13.2 as well. Frozen shelled edamame, which is really a bean wearing a snack costume, gives 11.2.
+
+Quinoa gets singled out because it carries all the essential amino acids, and it earns that. It just costs $5.97 for a 2 pound bag, which drags it down to 21.5 grams of protein per dollar against 96.0 for whole wheat flour. Edamame steams from frozen in a couple of minutes and is the single easiest plant protein to put in front of a skeptical kid.
+
+## Do you have to combine plant proteins at the same meal?
+
+No. You don't need to pair rice and beans in the same sitting to build a complete protein. Plant foods vary in their essential amino acid profiles, and [MedlinePlus recommends eating a varied mix](https://medlineplus.gov/ency/article/002465.htm) of beans, lentils, soy foods, nuts, seeds and whole grains across the day rather than engineering each plate.
+
+If you're wondering what "enough" even means, we broke down [how much protein you need per day](/how-much-protein-do-you-need-per-day/) so you can aim at an actual number instead of a vibe. A normal day might be oatmeal with peanut butter at breakfast, lentil soup or a bean bowl at lunch, and crispy tofu or black bean tacos at dinner. Start with the foods you already know you like and build outward. And when you're ready to graduate past tacos, these [quick black bean burgers that hold their shape](/quick-black-bean-burgers-that-hold-their-shape/) put a can of those beans to serious work.

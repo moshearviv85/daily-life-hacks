@@ -1,6 +1,6 @@
 ---
 title: "Cooking Oil Smoke Points and Best Uses"
-excerpt: "Compare cooking oil smoke points and practical uses for sautéing, roasting, frying, dressings, and baking, with a simple chart for choosing the right bottle."
+excerpt: "Smoke points for common cooking oils plus which bottle to grab for searing, roasting, frying, dressings and baking. One chart, no more guessing."
 category: "nutrition"
 tags:
 - cooking basics

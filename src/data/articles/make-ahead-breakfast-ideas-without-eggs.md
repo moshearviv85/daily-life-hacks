@@ -1,6 +1,6 @@
 ---
 title: Make Ahead Breakfast Ideas Without Eggs
-excerpt: Tired of the morning scramble? These egg-free, make-ahead breakfast ideas are perfect for busy mornings when you need to grab and go without the sulfur smell.
+excerpt: 'Make-ahead breakfast ideas without eggs: overnight oats, chia pudding, freezer muffins. 15 minutes of prep the night before, grab and go in the morning.'
 category: recipes
 tags:
 - breakfast

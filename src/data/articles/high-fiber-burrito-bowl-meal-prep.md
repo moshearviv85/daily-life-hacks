@@ -1,6 +1,6 @@
 ---
 title: "High Fiber Burrito Bowl Meal Prep for a Better Work Lunch"
-excerpt: "Stop buying sad salads at the food court. This high fiber burrito bowl meal prep comes together fast, keeps you full, and survives the fridge like a champion."
+excerpt: "A high fiber burrito bowl meal prep in 40 minutes that makes 4 lunches and survives the fridge. Beans, rice, and the layering order that stops sogginess."
 category: "recipes"
 tags:
 - high fiber

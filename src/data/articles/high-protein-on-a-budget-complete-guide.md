@@ -35,13 +35,15 @@ Pick the route that solves today's problem:
 
 * **You want the cheapest foods:** go to the [protein-per-dollar table](#what-is-the-cheapest-source-of-protein).
 * **Package sizes are making the shelf label useless:** start with that table, then use the unit-price tool linked below it.
-* **You need meals, not rankings:** start with [beans and lentils](#beans-and-lentils-the-champions-nobody-brags-about), [eggs and dairy](#eggs-and-dairy-the-everyday-workhorses), or the [$20 weekly backbone](#the-20-weekly-protein-backbone).
+* **You need meals, not rankings:** start with [beans and lentils](#why-do-beans-and-lentils-beat-every-meat-per-dollar), [eggs and dairy](#are-eggs-and-dairy-good-value-for-protein), or the [$20 weekly backbone](#what-does-a-20-weekly-protein-backbone-look-like).
 * **You need the full cart to stay under a limit:** use the broader [healthy budget playbook](/eat-healthy-on-a-budget-complete-playbook/), then price the cart with the budget tool in the weekly-backbone section.
 * **You want to audit the evidence:** read the [research methodology](/methodology/) and the plain-English explainer on [where the 50-gram Daily Value comes from](/fiber-protein-daily-values-explained/).
 
 Nobody has to read this from top to bottom while standing in a supermarket. That would be an odd use of frozen-food-aisle time.
 
-## The short answer
+## How do you eat high protein on a budget?
+
+Buy your baseline protein in the dry goods aisle. Dry pinto beans deliver 97.9 grams of protein per dollar, black beans 81.0 and brown lentils 77.7, against 9.2 for bacon and 11.5 for 80/20 ground beef. Let chicken drumsticks at 50.3 and eggs at 34.4 be the animal staples, and save the expensive cuts for when you actually want them.
 
 Protein has a marketing problem that runs in the opposite direction from fiber's. Fiber is invisible, so nobody sells it. Protein is fashionable, so everybody sells it, loudly, at a markup. The word on the front of a package is one of the most reliable price-inflation signals in the store.
 
@@ -78,7 +80,9 @@ One benchmark worth keeping in your head while you read the rest: the [FDA's Dai
 
 Want to run your own matchups? The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) compares any two foods from the dataset and builds a weekly basket from the dollars you assign. When two cartons or bags contain the same food in different sizes, the [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles that quieter checkout trap.
 
-## Beans and lentils: the champions nobody brags about
+## Why do beans and lentils beat every meat per dollar?
+
+Because you're buying them dry, with the water left out and no processing in the price. Every dried legume in our 49-food sample landed between 56.0 and 97.9 grams of protein per dollar. Not one animal food in the sample cracked 51. That gap is structural, not a sale.
 
 Every dried legume in the study landed between 56 and 98 grams of protein per dollar. Not one animal food in the sample cracked 51. That's the headline. Beans don't advertise, so the dry-goods aisle has to win with math.
 
@@ -88,7 +92,9 @@ Canned beans are the honest middle ground. They score lower per dollar because y
 
 And a quiet word for peanut butter: at 50.7 grams of protein per dollar it outscores every meat in this sample. The jar in your pantry has been a protein bargain this whole time, and against the nut everyone treats as the premium option, [peanut butter versus almonds on protein cost](/peanut-butter-vs-almonds-protein-cost/) is a rout.
 
-## Eggs and dairy: the everyday workhorses
+## Are eggs and dairy good value for protein?
+
+Yes, second only to chicken drumsticks among animal foods here. Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, part-skim mozzarella 30.1, whole milk 29.1, Greek yogurt 27.5 and 4% cottage cheese 26.3. All of them beat every fresh meat in the sample except drumsticks.
 
 Eggs are the food I'd defend in court. At the [May 2026 BLS average price](https://data.bls.gov/timeseries/APU0000708111) of $2.19 a dozen, they deliver about 34 grams of protein per dollar, second among the animal foods in this sample. A dozen holds roughly 75 grams of protein, cooks a dozen different ways, and never asks you to plan ahead. Scrambled at 7 AM, boiled on a salad at noon, folded into [freezer breakfast burritos](/high-protein-vegetarian-breakfast-burritos-you-can-freeze/) on Sunday. The workhorse label is earned.
 
@@ -98,7 +104,9 @@ This category is also where lunch gets solved. A [high protein bagel sandwich](/
 
 The close-up rankings settle two arguments the big table can't: [eggs versus the other 48 foods](/eggs-vs-everything-protein-value/) shows exactly where convenience overtakes raw value, and the [dairy protein ranking](/dairy-protein-per-dollar-ranked/) reveals why the plain gallon can beat a tub with louder packaging.
 
-## Chicken: buy the drumsticks, steal the rotisserie trick
+## Which chicken gives you the most protein per dollar?
+
+Bone-in drumsticks, at 50.3 grams of protein per dollar with a third of the package weight already subtracted for bone. Boneless skinless breast delivers 24.5, so drumsticks buy roughly twice the protein for the same money. A $5.97 rotisserie bird scores 26.7 and still beats raw breast.
 
 Chicken drumsticks led the meats in our sample at about 50 grams of protein per dollar, after subtracting a third of the package weight for bone. At $1.09 per pound in the 5 pound bag used here, they delivered about twice the per-dollar protein of boneless breast at its BLS average price. The catch is that nobody feels fancy serving drumsticks. My counterargument: crispy roasted drumsticks are objectively better eating than a dry sauteed breast, and this dataset agrees with me.
 
@@ -108,13 +116,17 @@ Ground turkey sits further down the list at 15.6 grams per dollar, but it earns 
 
 If the drumstick-versus-breast result still feels suspicious, the [animal protein ranking](/animal-protein-per-dollar-ranked/) compares eggs, dairy, fish, and poultry together, while the [meat counter ranking](/meat-per-dollar-protein-ranked/) keeps the contest strictly to cuts you'd bring home raw. Chicken breast doesn't get a ceremonial head start in either one.
 
-## Canned fish: the pantry's quiet overachiever
+## Is canned fish a cheap source of protein?
+
+It's mid-table, but it earns its shelf. Chunk light tuna in water delivers 22.4 grams of protein per dollar, canned pink salmon 21.6 and sardines 20.2. That's roughly the same value as boneless chicken breast at 24.5, except a 98-cent can needs no cooking, no fridge and keeps for years.
 
 Canned fish will never top a per-dollar ranking, but that's the wrong lens for it. Chunk light tuna delivers 22.4 grams of protein per dollar, and a 98-cent can holds about 22 grams of protein with zero cooking, zero refrigeration, and a shelf life measured in years. It's the protein equivalent of a spare tire.
 
 Canned pink salmon scores 21.6 and sardines 20.2, so the whole canned fish shelf clusters around the same value as boneless chicken. The difference is what happens at noon on a workday: the can wins because it's already there. Tuna salad, salmon patties, sardines on toast if you're brave. Our system for [prepping high-protein work lunches](/how-to-prep-high-protein-lunches-work/) keeps a couple of cans in the rotation for exactly the days when the prep didn't happen.
 
-## Tofu and the plant protein aisle: read the numbers first
+## Is tofu a cheap source of protein?
+
+No. Extra firm tofu delivered 13.6 grams of protein per dollar in this price sample and tempeh 13.2, which puts both below chicken breast at 24.5, canned tuna at 22.4 and whole milk at 29.1. The genuinely cheap plant proteins are dried legumes, TVP at 22.5 and frozen edamame at 18.0.
 
 Here's the take that gets me in trouble: tofu was not a budget winner in this price sample. Extra firm tofu scored 13.6 grams of protein per dollar in our analysis, below chicken breast, canned tuna, and milk at the prices used. If you want that argument on its own, [tofu against chicken on protein cost](/tofu-vs-chicken-protein-cost/) is the whole fight in one table. A $2.92 block holds about 40 grams of protein. Tempeh scores 13.2. These are fine foods with real uses; this one metric just did not put them near the top.
 
@@ -122,7 +134,7 @@ The actual budget plant proteins are the boring ones: the dried legumes at the t
 
 For the price-only view, the [plant protein ranking](/plant-protein-per-dollar-ranked/) compares the aisle without pretending tofu and lentils are interchangeable. They're not. One is a weeknight block you can sear; the other is a bag of tiny brown pebbles that becomes dinner after half an hour.
 
-## Do you need to pair proteins? The complete protein question
+## Do you need to pair proteins at the same meal?
 
 Short version: the pairing is real, the stress about it isn't.
 
@@ -130,9 +142,9 @@ Different plant foods bring different amino acid profiles, which is why beans an
 
 If you want the grocery math behind that plate, the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/) rank the combinations by cost instead of asking rice and beans to coast on their reputation. And if the amino acid worry is the thing actually nagging you, we reranked the whole store by [protein per dollar adjusted for quality (DIAAS)](/protein-per-dollar-adjusted-for-quality/); beans held first even after the quality haircut, which is the short answer to whether you should lose sleep over it.
 
-## The $20 weekly protein backbone
+## What does a $20 weekly protein backbone look like?
 
-Talk is cheap, so here's a receipt. Six items, all priced from our dataset:
+Six items from the dataset. Talk is cheap, so here's a receipt. Six items, all priced from our dataset:
 
 | Item | Price | Protein |
 |---|---|---|
@@ -156,9 +168,9 @@ If this protein backbone is only one slice of the household cart, compare it wit
 
 ![A practical weekly protein prep with roasted chicken drumsticks, lentils, eggs, peanut butter, whole wheat bread, and cottage cheese](/images/protein-budget-weekly-prep.jpg)
 
-## Where protein meets fiber
+## Which foods give you cheap protein and cheap fiber at once?
 
-One last thing the per-dollar lens reveals: the cheapest protein foods and the cheapest fiber foods are largely the same foods. Beans, lentils, split peas, and oats top both rankings. That's a genuinely useful coincidence, because meals built on them may help you stay full in a way that a plain chicken breast often doesn't; we dug into the [protein versus fiber satiety question](/high-protein-vs-high-fiber-satiety/) separately, and the honest answer is that the combination tends to beat either one alone.
+The same ones. Beans, lentils, split peas and oats sit near the top of both our protein-per-dollar and fiber-per-dollar rankings, so a pot of lentil soup is buying two nutrients with one dollar. One last thing the per-dollar lens reveals: the cheapest protein foods and the cheapest fiber foods are largely the same foods. Beans, lentils, split peas, and oats top both rankings. That's a genuinely useful coincidence, because meals built on them may help you stay full in a way that a plain chicken breast often doesn't; we dug into the [protein versus fiber satiety question](/high-protein-vs-high-fiber-satiety/) separately, and the honest answer is that the combination tends to beat either one alone.
 
 So if you're optimizing your cart, don't pick a team. A pot of lentil soup is playing for both sides at once, and our roundup of [high protein, high fiber meals](/high-protein-high-fiber-meals-for-weight-loss/) is built entirely from double-agents like that. The companion to this guide, [how to eat more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/), runs the same playbook from the fiber side, and you'll notice the shopping list barely changes.
 

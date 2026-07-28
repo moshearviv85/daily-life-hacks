@@ -1,6 +1,6 @@
 ---
 title: Healthy Alternatives to Potato Chips for Snacking
-excerpt: Tired of the grease but need the crunch? Discover easy, realistic alternatives to potato chips that satisfy your salt cravings without the mid-afternoon slump.
+excerpt: "Alternatives to potato chips that still crunch and still taste salty, without the 3 PM slump. Popcorn, roasted chickpeas and a few more worth keeping."
 category: nutrition
 tags:
 - nutrition basics

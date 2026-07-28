@@ -76,6 +76,6 @@ The "good source of fiber" claim mostly appears on packaged foods competing for 
 
 ## A quick reality check on daily fiber
 
-Most adults in the U.S. eat about 15 grams of fiber per day, which is well below the 25 to 34 gram range that many dietary guidelines suggest (USDA Dietary Guidelines, 2020). One product labeled "good source of fiber" isn't going to close that gap by itself. But combining a few decent sources across the day, actual beans, actual fruits, actual grains, does add up without needing to buy anything with a claim on it.
+Most adults in the U.S. eat about 15 grams of fiber per day, which is well below the 25 to 34 gram range that many dietary guidelines suggest (USDA Dietary Guidelines, 2020). One product labeled "good source of fiber" isn't going to close that gap by itself. But combining a few decent sources across the day, actual beans, actual fruits, actual grains, does add up without needing to buy anything with a claim on it, and [the foods carrying the most fiber per 100 grams](/best-high-fiber-foods-ranked-by-fiber-content/) are almost all in that unlabeled category.
 
 The label is a tool. A small one. Read it, use it, but don't let it do your thinking for you.

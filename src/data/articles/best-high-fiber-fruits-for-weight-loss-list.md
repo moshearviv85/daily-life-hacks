@@ -35,6 +35,10 @@ If you're trying to lose weight, fruit can be your friend or your sneaky sugar f
 
 This list is practical, not mystical. No fruit replaces your overall calorie balance. The best high fiber fruits for weight loss conversations are really about volume, habit, and not turning every afternoon into a juice situation.
 
+## Which fruits have the most fiber?
+
+Avocado leads the common supermarket fruits at 6.7 grams of fiber per 100 grams, then raspberries at 6.5, blackberries at 5.3, pears at 3.1, bananas at 2.6, and apples and oranges tied at 2.4, per USDA data. Widen it past the produce aisle and fruit sits well down [the ranking of grocery foods by fiber content](/best-high-fiber-foods-ranked-by-fiber-content/), where chia seeds hit 34.4 grams per 100 grams. Berries win on fiber density and lose badly on price: a dollar of raspberries buys 4.5 grams of fiber against 11.6 for bananas.
+
 ## Why fiber in fruit matters more than the "superfruit" story
 
 Fruit gets weird press. One week it's a health halo. The next week someone online acts like an apple is dessert sabotage. Both takes are louder than they need to be.

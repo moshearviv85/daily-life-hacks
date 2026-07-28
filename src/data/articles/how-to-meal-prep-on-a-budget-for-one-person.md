@@ -36,6 +36,10 @@ Cooking fresh every night for one person is its own scam. Single-serve packages 
 
 Same cheap ingredients. Different sauces. Different assemblies. Your brain gets variety. Your wallet gets the bulk-buy discount. That's the whole trick.
 
+## How do you meal prep on a budget for one person?
+
+Prep components, not finished meals. Cook one grain, one protein and one tray of vegetables, then make two or three sauces. Five containers of identical chicken and rice is what makes people quit by Wednesday; the same ingredients with a different sauce each day reads as four different dinners and costs the same.
+
 ## The component method (the only version I still use)
 
 Instead of five identical containers, cook three batches of flexible parts.
@@ -46,7 +50,7 @@ Instead of five identical containers, cook three batches of flexible parts.
 
 Those three pieces become bowls, wraps, skillet hashes, and "I threw an egg on it" dinners all week. You're not locked into Monday-you's mood.
 
-For the bigger grocery strategy behind this, use the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/). This article is the solo execution layer. That one is the cart.
+For the bigger grocery strategy behind this, use the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/). This article is the solo execution layer. That one is the cart, and [the monthly grocery budget for one person](/grocery-budget-for-one-person-per-month/) is the number the cart has to fit inside.
 
 ## The sauce box is the real variety engine
 

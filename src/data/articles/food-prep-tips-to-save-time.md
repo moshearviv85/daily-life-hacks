@@ -1,6 +1,6 @@
 ---
 title: 6 Food Prep Tips to Save Time During the Week
-excerpt: Spend less time cooking and more time living with these straightforward food prep tips. Get meals on the table faster without sacrificing flavor or your sanity.
+excerpt: 'Six food prep tips that actually save weeknight time: batch the slow things, prep once for three dinners, and stop washing produce you will not eat.'
 quickAnswer: >-
   Use one 60-minute prep block to chop two vegetables, cook one grain, roast one
   flexible protein, mix one sauce, and prepare eggs or another grab-and-go item.

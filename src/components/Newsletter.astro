@@ -21,7 +21,7 @@ const { articleCategory = "", articleBaseSlug = "" } = Astro.props;
       Free Meal Plan
     </div>
 
-    <h2 class="text-5xl font-bold mb-3" style="color: var(--heading-color);">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3" style="color: var(--heading-color);">
       Get the Free 7-Day High-Fiber Meal Plan
     </h2>
     <p class="text-lg mb-5" style="color: var(--muted-color);">
@@ -69,7 +69,7 @@ const { articleCategory = "", articleBaseSlug = "" } = Astro.props;
     </form>
 
     <!-- Success Message -->
-    <div id="footer-success" class="hidden max-w-md mx-auto py-6">
+    <div id="footer-success" class="hidden max-w-md mx-auto py-6" role="status" aria-live="polite">
       <div
         class="inline-flex items-center justify-center w-12 h-12 mb-3 rounded-full bg-green-100 text-green-500"
       >
@@ -182,6 +182,11 @@ const { articleCategory = "", articleBaseSlug = "" } = Astro.props;
         });
 
         if (res.ok) {
+          try {
+            localStorage.setItem("dlh_subscribed", "1");
+          } catch {
+            // Non-fatal: only used to stop the popup nagging subscribers.
+          }
           form.classList.add("hidden");
           successEl?.classList.remove("hidden");
           const thankYouContext = {

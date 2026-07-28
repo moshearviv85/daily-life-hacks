@@ -26,6 +26,10 @@ The best protein deal in the American drive-thru is a cup of plain chicken. Chip
 
 This is the next spreadsheet in the series. We already ranked [49 grocery foods by protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and priced [a full day of 50 grams of protein](/what-50-grams-of-protein-costs-per-day/), where one McDonald's day cost 12 times the dry-goods version. Readers kept asking the obvious follow-up: fine, but *which* fast food order wastes the least money? So I priced 30 protein-notable items across McDonald's, Chipotle, Taco Bell, Wendy's, Subway, KFC, and Chick-fil-A.
 
+## What fast food has the most protein per dollar?
+
+Chipotle's High Protein Cup, at 8.4 grams of protein per dollar for 4 ounces of adobo chicken at $3.82. That's the best ratio among 30 protein-notable items priced across McDonald's, Chipotle, Taco Bell, Wendy's, Subway, KFC and Chick-fil-A in July 2026. The worst is Taco Bell's Crunchwrap Supreme at 2.3.
+
 ## How we priced 30 menu items
 
 Two numbers per item, two very different levels of confidence.

@@ -55,6 +55,10 @@ We don't talk about the guilt associated with throwing out food enough. You buy 
 
 The average household literally throws away hundreds, if not thousands, of dollars of perfectly good food every single year simply due to bad storage and lack of planning. If you want to know how to reduce food waste at home, you don't need to start a massive composting farm in your backyard. You just need to implement three extremely basic rules in your own kitchen. 
 
+## How do you stop wasting food at home?
+
+Four habits do most of the work: keep a clear "eat me first" bin at eye level in the fridge, freeze anything you won't get to in the next three days, learn what date labels actually mean, and run a five-minute inventory before you write the shopping list. The cheapest groceries in your house are the ones you already own.
+
 ## Rule 1: The "Eat Me First" Bin
 
 The main reason food goes bad in our refrigerators is simply that we forget it genuinely exists. It gets pushed to the very back of the bottom shelf behind a giant carton of milk, and we never see it again until it's fuzzy. 

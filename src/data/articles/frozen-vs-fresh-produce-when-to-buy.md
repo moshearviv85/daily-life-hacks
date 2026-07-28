@@ -31,7 +31,9 @@ I've done this more times than I want to admit. Bought beautiful fresh green bea
 
 The frozen vs fresh produce question isn't really about which is "better." It's about which one you'll actually use before it goes bad.
 
-## The nutrition argument is mostly a tie
+## Is frozen produce as nutritious as fresh?
+
+Yes, close enough that it should not drive the decision. Frozen fruit and vegetables are picked at peak ripeness and flash-frozen within hours, while fresh produce is usually harvested early and spends days or weeks in transit. Cost and waste are the axes worth deciding on instead.
 
 People assume fresh produce is more nutritious. It makes intuitive sense. But the reality is less dramatic. Frozen fruits and vegetables are generally picked at peak ripeness and flash-frozen within hours. Fresh produce, on the other hand, is often harvested before it's fully ripe (to survive shipping), then spends days or weeks in transit, in warehouses, and on store shelves.
 
@@ -39,7 +41,7 @@ A 2017 study in the *Journal of Food Composition and Analysis* compared nutrient
 
 For most home cooks, the practical takeaway is: don't avoid frozen produce for nutritional reasons. That concern doesn't hold up. Cost is the more useful axis, which is what the breakdown of [fiber per dollar for frozen versus fresh vegetables](/frozen-vs-fresh-vegetables-fiber-cost/) actually measures.
 
-## When fresh is the better choice
+## When is fresh produce the better buy?
 
 Texture and appearance are where fresh shines. There's no frozen alternative to:
 
@@ -51,7 +53,7 @@ Texture and appearance are where fresh shines. There's no frozen alternative to:
 
 If the recipe involves eating the produce raw or cares about crunch, fresh is usually the move.
 
-## When frozen makes more sense
+## When is frozen produce the better buy?
 
 For anything that's going into a hot pan, a pot, a casserole, or a blender, frozen is often the smarter buy.
 
@@ -63,13 +65,13 @@ For anything that's going into a hot pan, a pot, a casserole, or a blender, froz
 
 The pattern here is simple: if you're cooking it, frozen is fine. If you're eating it raw, go fresh.
 
-## The waste factor
+## Which one do you actually throw away more of?
 
 This is the part nobody talks about enough. Americans waste an estimated 30 to 40 percent of the food supply, and produce is one of the biggest contributors (USDA Economic Research Service). Fresh produce has a short window. If your schedule is unpredictable or your meal plans change, frozen produce sits patiently in the freezer until you need it.
 
 I started keeping a bag of frozen broccoli and a bag of frozen mixed vegetables in the freezer at all times. They're my backup for nights when the fresh stuff is gone and I don't feel like going to the store. It's not exciting. It's reliable.
 
-## A practical hybrid strategy
+## What should you buy fresh and what should you buy frozen?
 
 You don't have to pick a side. The most reasonable approach is both.
 

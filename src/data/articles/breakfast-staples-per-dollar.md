@@ -48,7 +48,7 @@ Quick fine print: the egg and dairy rows come from the protein study only, and t
 
 Flour, with the usual asterisk. Nobody eats flour for breakfast. Flour becomes breakfast, in pancakes, in [a loaf of sandwich bread you baked yourself](/easy-sandwich-bread-recipe-beginners/), in anything your grandmother would recognize. If you bake even occasionally, that $3.12 bag is quietly the most nutritious thing in your pantry per dollar, and it finishes second only to dry pinto beans in [the wider ranking of what one protein dollar buys](/one-dollar-protein-what-it-buys/). If you don't, skip to the oats.
 
-Oats are the real winner for people who want breakfast, not a project. At 82.4 combined grams per dollar, the canister beats peanut butter's 62.1 and lands more than ten times higher than the apples sitting next to it in the cart. Peanut butter's consolation prize is that it wins [the ranking of protein you don't have to cook](/no-cook-protein-per-dollar/) outright.
+Oats are the real winner for people who want breakfast, not a project. At 82.4 combined grams per dollar, the canister beats peanut butter's 62.1 and lands more than ten times higher than the apples sitting next to it in the cart. Peanut butter's consolation prize is that it wins [the ranking of protein you don't have to cook](/no-cook-protein-per-dollar/) outright, though [a realistic two tablespoon serving only lands 7.1 grams of protein](/how-much-protein-in-peanut-butter/), so the per-dollar win needs a spoon to collect it.
 
 ## Is oatmeal actually the cheapest healthy breakfast?
 

@@ -31,6 +31,10 @@ If you are trying to hit a specific daily goal, you probably want to know if tha
 
 For the rest of the day's meals, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) compares the inexpensive staples that can do more work than a heroic stack of deli meat.
 
+## How much protein is in a bagel sandwich?
+
+A homemade turkey, egg and cheese on a plain bagel lands between 28 and 35 grams of protein. The bagel itself contributes about 9 to 11 grams, two eggs add about 12, a slice of cheese adds 5 to 7, and two ounces of deli turkey adds 12 to 15. Swap the turkey for two slices of bacon and you lose roughly 10 grams.
+
 ## The protein baseline of a plain bagel
 
 Before you even crack an egg, you're starting with more protein than you might expect. A standard, medium-sized plain bagel from the grocery store usually packs about 9 to 11 grams of protein. This isn't because the bagel is a secret superfood: it's because bagels are dense and made with high-protein bread flour to get that specific chew. 

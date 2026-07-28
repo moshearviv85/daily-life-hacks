@@ -34,6 +34,21 @@ Also, quick reality check: protein needs vary. Activity level varies. Appetite v
 
 Once the serving math makes sense, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) shows how beans, chicken, tofu, eggs, and the rest fit into an actual grocery plan.
 
+## How much protein is in a serving of beans, chicken and tofu?
+
+A 3 to 4 ounce serving of cooked chicken breast carries roughly 25 to 35 grams of protein, the same size serving of tofu about 10 to 18 grams, and a cup of cooked black beans about 12 to 15 grams. Chicken wins per serving. Beans close most of the gap once you count the rice, tortilla or bread that comes with them.
+
+| Serving | Protein |
+|---|---|
+| Chicken breast, cooked, 3 to 4 oz | 25 to 35 g |
+| Ground turkey, cooked, 3 to 4 oz | 20 to 30 g |
+| Canned tuna, 1 can drained | 20 to 30 g |
+| Tempeh, 3 to 4 oz | 15 to 20 g |
+| Lentils, 1 cup cooked | 15 to 18 g |
+| Black beans, 1 cup cooked | 12 to 15 g |
+| Eggs, 2 large | about 12 g |
+| Tofu, 3 to 4 oz | 10 to 18 g |
+
 ## What \"per serving\" means in real life
 
 Let's define a few servings that match how people actually scoop food onto plates:

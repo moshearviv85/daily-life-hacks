@@ -230,8 +230,38 @@
             tagEl = document.getElementById("popup-tag");
         }
 
+        function isSubscribed() {
+            try {
+                return localStorage.getItem("dlh_subscribed") === "1";
+            } catch {
+                return false;
+            }
+        }
+
+        function isDismissedRecently() {
+            try {
+                const at = Number(
+                    localStorage.getItem("newsletter_popup_dismissed_at"),
+                );
+                if (!at) return false;
+                return Date.now() - at < SUPPRESS_DAYS * 86400000;
+            } catch {
+                return false;
+            }
+        }
+
         function shouldSuppressPopup() {
-            // Check if shown in this browser session
+            // Never ask someone to sign up for something they already have.
+            if (isSubscribed()) return true;
+
+            // The thank-you page is the post-signup page. Popping the same
+            // offer there is the fastest way to look broken.
+            if (window.location.pathname.startsWith("/thank-you")) return true;
+
+            // Closed it recently? Leave them alone for a week.
+            if (isDismissedRecently()) return true;
+
+            // Already shown in this browser session
             return sessionStorage.getItem("newsletter_popup_shown") === "true";
         }
 
@@ -256,8 +286,16 @@
             popupContent.classList.remove("translate-y-0", "sm:scale-100");
             popupContent.classList.add("translate-y-full", "sm:scale-95");
 
-            // We no longer set a 7-day restriction.
-            // The popup will show again on the next visit.
+            // An explicit close is a "no". Honor it for SUPPRESS_DAYS instead
+            // of re-asking on every new browser session.
+            try {
+                localStorage.setItem(
+                    "newsletter_popup_dismissed_at",
+                    String(Date.now()),
+                );
+            } catch {
+                // Private mode / storage disabled: session guard still applies.
+            }
         }
 
         function handleExitIntent(e) {
@@ -346,6 +384,11 @@
                 });
 
                 if (res.ok) {
+                    try {
+                        localStorage.setItem("dlh_subscribed", "1");
+                    } catch {
+                        // Non-fatal: popup falls back to session suppression.
+                    }
                     form.classList.add("hidden");
                     successEl?.classList.remove("hidden");
                     setTimeout(() => redirectToThankYou("popup", signupContext), 250);

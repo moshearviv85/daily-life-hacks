@@ -31,6 +31,10 @@ I used to think that feeding a family of five meant I had to choose between a co
 
 If you are trying to hit those nutritional goals without your credit card crying for mercy, you need a strategy that goes beyond just buying whatever is on sale. Finding the best low cost protein sources for large families is about volume, satiety, and not having your kids stage a mutiny because you served "bean surprise" for the third night in a row.
 
+## What are the cheapest protein sources for a large family?
+
+Dry beans and lentils, then chicken drumsticks. In our 49-food ranking, dry pinto beans delivered 97.9 grams of protein per dollar, black beans 81.0 and brown lentils 77.7, while bone-in drumsticks led the meat counter at 50.3 and eggs came in at 34.4. Ground beef, the default family protein, managed 11.5.
+
 ## Eggs are the convenience play, not the price winner
 At the [May 2026 BLS average price](https://data.bls.gov/timeseries/APU0000708111) of $2.19 a dozen, [eggs delivered about 34 grams of protein per dollar in our dataset](/eggs-vs-everything-protein-value/). That's well behind dried beans and lentils, but eggs need no soaking and can become dinner before anyone starts negotiating for takeout. A dozen can anchor a vegetable frittata or a stack of pancakes without asking you to plan yesterday.
 

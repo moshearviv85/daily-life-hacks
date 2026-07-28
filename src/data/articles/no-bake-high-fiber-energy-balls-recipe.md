@@ -82,7 +82,7 @@ Kids tend to inhale these, by the way. If yours will happily eat oat balls but t
 
 These are still calorie dense because nut butter is calorie dense. That is not a moral statement. It is just math.
 
-Two balls with coffee can be a reasonable snack. Six balls because they are small is a different story, and we have all lived that story. And if your cravings run salty instead of sweet, these [healthy alternatives to potato chips](/healthy-alternatives-potato-chips-snacking/) cover the other side of the vending machine.
+Two balls with coffee can be a reasonable snack, and they bring protein along with the calories, since [two tablespoons of peanut butter carry about 7.1 grams](/how-much-protein-in-peanut-butter/). Six balls because they are small is a different story, and we have all lived that story. And if your cravings run salty instead of sweet, these [healthy alternatives to potato chips](/healthy-alternatives-potato-chips-snacking/) cover the other side of the vending machine.
 ## A Few “No-Stress” Tips So They Turn Out Right
 
 The goal is a mix that squeezes together and holds its shape.

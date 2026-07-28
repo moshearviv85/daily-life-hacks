@@ -68,7 +68,7 @@ Tacos don't have to automatically mean browning ground beef or chopping a mounta
 You open a couple of cans, warm the beans with a few standard pantry spices, and set out some tortillas. The entire operation goes from the cupboard to the table in about 15 minutes. It's not fussy, it's not complicated, and it gets the job done perfectly.
 ## Why Black Beans Belong in Tacos
 
-Black beans are an unsung hero of the pantry. They are incredibly cheap, shelf-stable, and bring a heavy dose of both protein and fiber to the table. 
+Black beans are an unsung hero of the pantry. They are incredibly cheap, shelf-stable, and bring a heavy dose of both protein and fiber to the table: [a single 15.5 ounce can runs about 26.5 grams of protein](/how-much-protein-in-a-can-of-beans/), so two cans feed a table without anyone missing the beef. 
 
 The real trick here is mashing about half of the beans right in the skillet while they heat up. This gives you a mixture that is thick and creamy enough to actually stay inside the tortilla, but still has enough whole beans to provide texture. You aren't trying to make authentic, slow-cooked refried beans from scratch; you're just heating and seasoning them quickly. The cumin and chili powder do all the heavy lifting for the flavor profile.
 ## Keeping the Meal Flexible

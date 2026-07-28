@@ -39,7 +39,7 @@ Most meal planning advice starts with recipes. Pick five, make a list, go buy it
 
 Organize your week by perishability instead. Fish, fresh herbs, and leafy greens go on Monday and Tuesday. That's when they're at their best. Midweek is for the hardy crew: carrots, cabbage, potatoes, broccoli, cauliflower. These can sit in the crisper for five or six days without drama. By Thursday and Friday, you're leaning on the pantry and freezer. Canned beans, frozen shrimp, dried pasta, eggs.
 
-This shelf life cascade means nothing goes bad before you get to it. It also means Friday's dinner doesn't require a sad emergency trip because the spinach turned to soup.
+This shelf life cascade means nothing goes bad before you get to it. It also means Friday's dinner doesn't require a sad emergency trip because the spinach turned to soup. Push the same logic out a few weeks and [one monthly haul covers the shelf-stable layer for about $23](/how-to-grocery-shop-for-a-month-on-a-budget/), leaving the short runs for perishables only.
 
 ## Overlap your ingredients on purpose
 

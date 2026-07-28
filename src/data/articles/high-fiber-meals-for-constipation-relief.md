@@ -37,6 +37,10 @@ The panic move is the pharmacy aisle: something chalky, dramatic, and designed t
 
 This is the kitchen version of the problem: add fiber gradually, keep liquids in the day, and use foods you tolerate. It isn't a diagnosis or a substitute for medical care when symptoms persist or warning signs appear.
 
+## How do you add more fiber without feeling worse?
+
+Slowly, and with water. [NIDDK advises adding fiber a little at a time](https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition) so your body can adjust, which in practice means one new fiber food per week rather than a mountain of raw kale on a Tuesday. Warm, soft, cooked vegetables tend to go down easier than raw ones.
+
 ## Start gentle, not heroic
 
 The biggest mistake is going from white bread and takeout to a mountain of raw kale and three cups of beans in one afternoon. Your gut notices. Gas, cramping, and a bad mood follow, and then you swear fiber "doesn't work for you."

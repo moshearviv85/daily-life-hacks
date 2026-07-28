@@ -1,6 +1,6 @@
 ---
 title: Healthy Homemade Indian Salad Dressing Recipes
-excerpt: Skip the bottled ranch and bring some heat to your greens with these healthy homemade Indian salad dressing recipes that take five minutes to whisk together.
+excerpt: "Indian-inspired salad dressings you whisk in 5 minutes flat. Yogurt-mint, tamarind and chaat masala, all cheaper and brighter than bottled ranch."
 category: recipes
 tags:
 - salads

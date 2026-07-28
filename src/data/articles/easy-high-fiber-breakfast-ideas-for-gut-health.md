@@ -54,7 +54,9 @@ A high fiber breakfast won't transform your digestion overnight, and I'm not goi
 
 Also, nobody has thirty quiet minutes to cook a fibrous feast at 6:30 AM. If you want easy high fiber breakfast ideas for gut health that survive a real weekday, they have to be fast, repeatable, and made from stuff you already buy at a normal grocery store. For the broader shopping strategy, our [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) covers how to hit higher fiber without turning breakfast into an expensive specialty aisle tour.
 
-## What "enough fiber" looks like before noon
+## How much fiber should you eat at breakfast?
+
+Aim for roughly 8 to 10 grams before noon and you're already ahead of most muffin-and-latte routines. A cup of cooked oatmeal lands around 4 grams, a tablespoon of chia seeds adds about 5, and a cup of raspberries brings roughly 8. Stack any two and breakfast is done.
 
 You don't need to hit your entire day's fiber at breakfast. Aim for roughly 8 to 10 grams in the morning and you're already ahead of most muffin-and-latte routines. A cup of cooked oatmeal lands around 4 grams. A tablespoon of chia seeds adds about 5. A cup of raspberries brings roughly 8. Stack two of those and you've built a breakfast that actually shows up.
 
@@ -114,7 +116,7 @@ Beans at breakfast sound weird until you try them once. Then they just taste lik
 
 Freeze a few assembled burritos wrapped in foil if your mornings are consistently rude. Reheat, eat, leave. No ceremony required.
 
-## Cheap fiber beats fancy breakfast food
+## What is the cheapest high-fiber breakfast?
 
 You do not need imported granola, specialty cereals, or anything marketed as a gut ritual. When we priced common foods for our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), oats, beans, lentils, and other dry goods crushed almost everything with a pretty package.
 

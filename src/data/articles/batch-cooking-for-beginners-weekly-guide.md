@@ -64,12 +64,16 @@ For the full system around that Sunday chopping, the [complete meal-prep guide f
 
 Here is the master blueprint for taking back your evenings. (If you want more ready-made combinations to plug into it, my [food prep guide and recipes](/food-prep-guide-recipes/) picks up where this blueprint leaves off.)
 
+## How do you batch cook for a whole week?
+
+One 90-minute session, four things going at once: a big pot of a grain, a tray of roasted vegetables, one neutral protein, and a sauce. Nothing gets assembled into finished meals. You build components, and weeknight dinner becomes assembly instead of cooking.
+
 ## The 90-Minute Sunday Sprint
 
 The goal is to get in the kitchen, execute the plan, and get out. Set a timer for 90 minutes. Put on a podcast. Here is your exact workflow. 
 
 ## Step 1: The Massive Carb Base
-You need a foundational carbohydrate that's cheap, filling, and incredibly versatile. Put this on the stove or in the rice cooker the literal second you walk into the kitchen. 
+You need a foundational carbohydrate that's cheap, filling, and incredibly versatile, and it's the one thing worth buying in monthly quantities, since [a month of shelf-stable staples runs about $22.83](/how-to-grocery-shop-for-a-month-on-a-budget/). Put this on the stove or in the rice cooker the literal second you walk into the kitchen. 
 *   **The Action:** Cook three cups of brown rice, a massive pot of quinoa, or boil an entire box of whole wheat pasta. Don't season it heavily; just use salt. 
 *   **The Storage:** Once it cools, dump the entire batch into a very large airtight container. This will sit in your fridge and act as the base for almost every single meal this week. Here's [how to properly store cooked grains for meal prep](/how-to-properly-store-cooked-grains-for-meal-prep/) so that batch stays safe and doesn't dry into a brick. 
 

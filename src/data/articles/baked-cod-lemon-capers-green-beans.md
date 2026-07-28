@@ -1,6 +1,6 @@
 ---
 title: "Baked Cod With Lemon, Capers, and Green Beans (15-Min Prep)"
-excerpt: "This baked cod with lemon capers and green beans is a bright, easy dinner that cooks on one pan. It tastes fancy but takes almost no effort to throw together."
+excerpt: "Baked cod with lemon, capers and green beans on one pan, 30 minutes start to finish, 4 servings. Tastes like a restaurant plate, dirties one dish."
 quickAnswer: >-
   Pat cod dry, season it, and place it beside oil-coated green beans on a large
   sheet pan. Spoon over melted butter, lemon, garlic, capers, and oregano, then

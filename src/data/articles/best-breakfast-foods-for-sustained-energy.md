@@ -47,6 +47,10 @@ faq:
 A frustrating amount of traditional breakfast options are just dessert disguised as a morning meal. Think about it: brightly colored sweet cereal, giant pastries, and flavored yogurt that is heavily loaded with added sugar. They taste fantastic for about ten minutes, and then an hour later, you're sitting at your desk dragging your feet and looking for coffee. 
 
 The fundamental idea behind eating for "sustained energy" is simple: include some protein and fiber, and go easier on the refined sugar. You don't need a special diet plan. I laid out the whole plate-building formula in my guide to [a balanced breakfast that actually keeps you full](/balanced-breakfast-that-keeps-you-full/), but here are practical breakfast foods that make a more substantial meal than a pastry and coffee alone.
+## What are the best breakfast foods for sustained energy?
+
+Pick one protein, one fiber-rich carbohydrate, and a little fat. Eggs, plain Greek yogurt, cottage cheese or beans for the protein; oats, fruit or whole-grain toast for the carbohydrate; nuts, seeds or avocado for the fat. It's the combination that carries you to lunch, not any single hero food.
+
 ## Eggs: The Reliable Classic
 
 Eggs give you a solid hit of both protein and fat in one neat little package. They are also highly flexible: you can scramble them, hard-boil a batch for the week, fold them into an omelet, or fry one to put on toast. 

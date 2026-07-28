@@ -65,9 +65,13 @@ Packaged convenience food can get expensive quickly, while basic ingredients are
 
 Start with the [grocery budget calculator](/tools/grocery-budget-calculator/) so the list has a number attached to it, not just twelve ambitious recipes and a vague sense of restraint.
 
+## What should be on a healthy grocery list on a budget?
+
+Five blocks, in this order: bulk carbohydrates (rice, oats, pasta), dry and canned beans, two or three flexible proteins, sturdy produce that keeps (cabbage, carrots, onions, potatoes), and frozen vegetables for everything else. Flavor goods (spices, vinegar, hot sauce) are the one place worth paying up, because they're what makes cheap food repeatable.
+
 ## The Core Strategy: Bulk Carbs and Beans
 
-Your primary source of calories and dense nutrition should come from the cheapest aisles in the store: the dry bulk section. 
+Your primary source of calories and dense nutrition should come from the cheapest aisles in the store: the dry bulk section. None of it spoils, which is why it's the one layer you can buy a month at a time; [eight of those staples run about $22.83](/how-to-grocery-shop-for-a-month-on-a-budget/). 
 
 *   **Brown Rice and Quinoa:** A massive five-pound bag of brown rice costs maybe four dollars and will provide the incredibly filling base for twenty different meals. 
 *   **Dry Beans and Lentils:** Stop buying cans if you're heavily restricting your budget. A bag of dry lentils costs nothing, provides massive amounts of protein and fiber, and absorbs whatever cheap spices you throw at it. Beans and lentils anchor our entire [plant-based protein sources guide](/plant-based-protein-sources-complete-guide/) for exactly this reason. 

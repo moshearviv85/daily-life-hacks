@@ -100,7 +100,7 @@ A quick tip for leftovers: sometimes rice gets a little dry in the fridge. When 
 
 ## The budget breakdown
 
-Part of the appeal here is how ridiculous the cost per serving is. A bag of dried rice and a couple of cans of beans cost less than a fancy coffee. Even if you splurge on the bell pepper and a fresh lime, you are looking at a dinner that costs maybe two dollars a plate. 
+Part of the appeal here is how ridiculous the cost per serving is. A bag of dried rice and a couple of cans of beans cost less than a fancy coffee. Even if you splurge on the bell pepper and a fresh lime, you are looking at a dinner that costs maybe two dollars a plate, and stripped back to just the dry weights, [a full day of rice and beans for one person lands around 64 cents](/how-much-rice-and-beans-per-person-per-day/). 
 
 When groceries feel like a luxury, having a meal like this in your back pocket is essential. It frees up your budget for other things, like buying good olive oil or finally replacing that weird skillet that everything sticks to.
 

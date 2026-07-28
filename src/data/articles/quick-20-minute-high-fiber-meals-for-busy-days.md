@@ -79,7 +79,7 @@ Fiber is the part of plant foods that your body does not fully break down, and t
 When you are slammed, fiber also plays well with simple meals. Beans, lentils, oats, and whole grains do not need a long speech. They just need heat and seasoning. If you want more proof, this [creamy tomato orzo with white beans](/creamy-tomato-orzo-white-beans-one-pot/) pulls off the same twenty-minute math in one pot.
 ## The Busy Night Game Plan
 
-Keep canned beans in the cupboard. Keep a pouch of cooked brown rice in the pantry or batch cook rice once a week. Keep frozen peppers or spinach for the nights when fresh produce is a fantasy.
+Keep canned beans in the cupboard. Keep a pouch of cooked brown rice in the pantry or batch cook rice once a week, and if you never know how much to cook, [one adult gets through about two thirds of a cup of dry rice a day](/how-much-rice-and-beans-per-person-per-day/). Keep frozen peppers or spinach for the nights when fresh produce is a fantasy.
 
 If you have those three categories, you can almost always build a skillet meal in twenty minutes. The whole trick works even better with a little weekend setup, and these [food prep tips to save time](/food-prep-tips-to-save-time/) shave those twenty minutes down further still.
 ## Variations That Still Stay Quick

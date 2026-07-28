@@ -42,7 +42,7 @@ The protein itself is a coin flip. Peanut butter carries 22.21 grams per 100 gra
 
 It narrows it, and this is the part peanut butter's fans skip. Protein quality gets scored with DIAAS, which tracks how much of a protein your body can actually use. Peanut butter scores 0.43, which is low, because peanuts run short on lysine. Run that through the price and the 50.7 drops to roughly 21.8 grams of quality-adjusted protein per dollar.
 
-We don't have an audited almond score in our dataset, so I'm not going to invent one to make the comparison tidier. What I'd say instead: at 14.8 grams per dollar before any quality adjustment, almonds are already the more expensive option by a wide margin, and no plausible score flips that. Think of peanut butter as a cheap protein booster rather than the backbone of your protein for the day. Two tablespoons on toast next to eggs or beans is the right use.
+We don't have an audited almond score in our dataset, so I'm not going to invent one to make the comparison tidier. What I'd say instead: at 14.8 grams per dollar before any quality adjustment, almonds are already the more expensive option by a wide margin, and no plausible score flips that. Think of peanut butter as a cheap protein booster rather than the backbone of your protein for the day. Two tablespoons on toast next to eggs or beans is the right use, and [that serving carries about 7.1 grams of protein](/how-much-protein-in-peanut-butter/), which is a booster, not a backbone.
 
 ## Are whole peanuts even better value?
 

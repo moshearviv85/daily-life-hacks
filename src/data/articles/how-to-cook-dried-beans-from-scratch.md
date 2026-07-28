@@ -1,7 +1,6 @@
 ---
 title: How to Cook Dried Beans From Scratch
-excerpt: Cooking dried beans from scratch is cheaper and simpler than it sounds. Soak,
-  simmer, and season. Here's a straightforward method that works for most beans.
+excerpt: 'How to cook dried beans from scratch: soak, simmer, season. One method that works for most beans, plus what to do the night you forgot to soak.'
 quickAnswer: >-
   Sort and rinse dried beans, soak them overnight if convenient, then cover with
   fresh water and simmer gently until creamy inside. Start checking after 45

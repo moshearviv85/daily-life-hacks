@@ -1,6 +1,6 @@
 ---
 title: "Fiber per Dollar: The Cheapest High-Fiber Foods, Ranked"
-excerpt: "We ranked 53 common grocery foods by grams of fiber per dollar, using USDA data and July 2026 prices. The winners cost pennies. The losers may surprise you."
+excerpt: "A dollar of dry split peas buys 71g of fiber. A dollar of blueberries buys 2.5g. All 53 grocery foods ranked by fiber per dollar, at July 2026 prices."
 category: "nutrition"
 tags: ["cheapest high fiber foods", "fiber per dollar", "budget groceries", "high fiber on a budget", "grocery data"]
 cluster: "budget-fiber"
@@ -135,7 +135,7 @@ Two honest caveats before you fill a cart with split peas.
 
 Whole wheat flour sits at number 1, and nobody eats flour with a spoon. It only counts if you bake, so treat it as a quiet upgrade: swap it into pancakes, muffins, and bread dough and the fiber tags along for pennies. If you want a number one you can actually put in a pot tonight, that's split peas at number 2. Same asterisk applies to whole wheat spaghetti at number 9, except that one you can boil and eat on a Tuesday.
 
-And ranking low doesn't make a food bad. Berries, avocados, and Brussels sprouts bring things to the table that a bag of navy beans never will. This list answers exactly one question: where each fiber dollar goes furthest. It's a map, not a meal plan.
+And ranking low doesn't make a food bad. Berries, avocados, and Brussels sprouts bring things to the table that a bag of navy beans never will. This list answers exactly one question: where each fiber dollar goes furthest. If the question you actually came in with is which foods simply hold the most fiber, [the same groceries ranked by fiber content](/best-high-fiber-foods-ranked-by-fiber-content/) sort into a different order entirely, with chia seeds on top at 34.4 grams per 100 grams. It's a map, not a meal plan.
 
 ![Bar chart of median fiber per dollar by grocery category, with dried beans and peas far ahead of whole grains, canned goods, and fresh produce](/images/fiber-per-dollar-by-category.jpg)
 
