@@ -1,0 +1,37 @@
+{
+  "schema": "daily-growth-cohorts/v1",
+  "fixed_since": "2026-07-23",
+  "channels": {
+    "gsc": {
+      "cohort_id": "search-recovery-20-20260723",
+      "cohort_file": "reports/growth/search-recovery-cohort-2026-07-23.csv",
+      "file_patterns": [
+        "*Performance-on-Search*.zip"
+      ],
+      "require_page_filter": true
+    },
+    "bing": {
+      "cohort_id": "bing-site-all",
+      "file_patterns": [
+        "*SearchPerformanceOverview_All*.csv"
+      ],
+      "require_filename_token": "_All_"
+    },
+    "pinterest": {
+      "cohort_id": "pinterest-account-all-pins-no-curated",
+      "file_patterns": [
+        "Pinterest Analytics overview*.csv"
+      ],
+      "required_metadata": {
+        "Claimed accounts": "All Pins",
+        "Curated content": "Not included"
+      }
+    },
+    "clarity": {
+      "cohort_id": "clarity-site-all",
+      "file_patterns": [
+        "Clarity_*.csv"
+      ]
+    }
+  }
+}
