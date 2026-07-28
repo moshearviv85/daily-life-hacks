@@ -62,13 +62,17 @@ test("primary article schemas retain canonical, image, language, and date signal
     4,
     "Recipe, Article, WebPage, and Dataset must share the modified date",
   );
-  assert.equal([...articlePage.matchAll(/image: \[imageUrl\]/g)].length, 2);
+  assert.equal(
+    [...articlePage.matchAll(/image: structuredImageUrls\.length \? structuredImageUrls : undefined/g)].length,
+    2,
+    "Recipe and Article must publish only image URLs that exist in this build",
+  );
   assert.equal(
     [...articlePage.matchAll(/inLanguage: "en-US"/g)].length,
     3,
     "Recipe, Article, and WebPage must use the same language signal",
   );
-  assert.match(articlePage, /thumbnailUrl: imageUrl/);
+  assert.match(articlePage, /thumbnailUrl: hasArticleImage \? imageUrl : undefined/);
   assert.match(
     articlePage,
     /Published <time datetime=\{isoDay\(releaseDate\)\}>\{publishedLabel\}<\/time>/,

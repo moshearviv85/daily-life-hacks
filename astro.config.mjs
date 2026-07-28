@@ -157,6 +157,7 @@ function loadArticleImages() {
     const unquote = (/** @type {string} */ v) => v.trim().replace(/^['"]|['"]$/g, '');
     const hero = frontmatter.match(/^image:\s*(.+)$/m);
     const heroAlt = frontmatter.match(/^imageAlt:\s*(.+)$/m);
+    const title = frontmatter.match(/^title:\s*(.+)$/m);
 
     /** @type {Map<string, string|undefined>} */
     const found = new Map();
@@ -170,6 +171,20 @@ function loadArticleImages() {
     }
     for (const m of body.matchAll(/<img[^>]+src=["'](\/images\/[^"']+)["']/g)) {
       if (!found.has(m[1])) found.set(m[1], undefined);
+    }
+
+    // A small set of recipe articles injects a real ingredients photo after
+    // hydration. Google does not scroll or trigger that client-side insertion,
+    // so the normal sitemap is the photo's only reliable discovery path. The
+    // existence check below keeps this fail-closed for every article that does
+    // not publish the optional asset.
+    const ingredientsImage = `/images/${slug}-ingredients.jpg`;
+    const articleTitle = title ? unquote(title[1]) : undefined;
+    if (!found.has(ingredientsImage)) {
+      found.set(
+        ingredientsImage,
+        articleTitle ? `${articleTitle} ingredients` : undefined,
+      );
     }
 
     /** @type {{url: string, caption?: string}[]} */

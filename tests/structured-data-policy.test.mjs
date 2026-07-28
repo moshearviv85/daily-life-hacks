@@ -18,8 +18,16 @@ test("zero-minute recipe durations remain valid ISO-8601 durations", () => {
 test("recipe category and cuisine are factual optional fields, not site-wide guesses", () => {
   assert.match(contentConfig, /recipeCategory:\s*z\.string\(\)\.optional\(\)/);
   assert.match(contentConfig, /recipeCuisine:\s*z\.string\(\)\.optional\(\)/);
-  assert.match(articleRoute, /recipeCategory:\s*article\.data\.recipeCategory/);
-  assert.match(articleRoute, /recipeCuisine:\s*article\.data\.recipeCuisine/);
+  assert.match(
+    articleRoute,
+    /const recipeCategory = article\.data\.recipeCategory \?\? firstMatch\(MEAL_TYPE_BY_TAG\)/,
+  );
+  assert.match(
+    articleRoute,
+    /const recipeCuisine = article\.data\.recipeCuisine \?\? firstMatch\(CUISINE_BY_TAG\)/,
+  );
+  assert.match(articleRoute, /^\s+recipeCategory,\s*$/m);
+  assert.match(articleRoute, /^\s+recipeCuisine,\s*$/m);
   assert.doesNotMatch(articleRoute, /recipeCategory:\s*["']Healthy["']/);
   assert.doesNotMatch(articleRoute, /recipeCuisine:\s*["']American["']/);
 });
