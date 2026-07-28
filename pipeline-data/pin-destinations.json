@@ -3347,13 +3347,6 @@
       "canonical": "how-to-meal-prep-on-a-budget-for-one-person",
       "destinations": [
         {
-          "id": "legacy-1",
-          "url_slug": "how-to-meal-plan-on-a-budget",
-          "title": "",
-          "origin": "legacy_orphan",
-          "created_at": null
-        },
-        {
           "id": "legacy-2",
           "url_slug": "how-to-meal-prep-at-trader-joes-on-a-budget-for-one-person",
           "title": "",
