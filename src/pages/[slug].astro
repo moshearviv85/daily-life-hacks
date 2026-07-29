@@ -6,13 +6,21 @@ import Newsletter from "../components/Newsletter.astro";
 import RecipeMetaBar from "../components/RecipeMetaBar.astro";
 import RecipeServingScaler from "../components/RecipeServingScaler.astro";
 import RelatedArticles from "../components/RelatedArticles.astro";
+import ArticleTableOfContents from "../components/ArticleTableOfContents.astro";
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptImage from "../components/OptImage.astro";
 import { formatReleaseDate, isReleased } from "../content/release";
-import { DATASETS, DATA_VERSION, findChartInBody } from "../content/datasets";
+import {
+  DATASETS,
+  DATA_LICENSE_URL,
+  DATA_TERMS_URL,
+  DATA_VERSION,
+  findChartInBody,
+} from "../content/datasets";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
+import { buildArticleToc } from "../content/article-toc.mjs";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -46,7 +54,8 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { Content } = await render(article);
+const { Content, headings } = await render(article);
+const tableOfContents = buildArticleToc(headings, article.body ?? "");
 const releaseDate = article.data.publishAt ?? article.data.date;
 /** True once publishAt (or date) is in the past; drives index/noindex at build time. */
 const released = isReleased(article);
@@ -333,7 +342,8 @@ if (dataset) {
       url: `${siteUrl}/data/`,
       publisher: { "@id": `${siteUrl}/#organization` },
     },
-    license: `${siteUrl}/methodology/#data-license`,
+    license: DATA_LICENSE_URL,
+    usageInfo: DATA_TERMS_URL,
     datePublished: publishedDate,
     dateModified: modifiedDate,
     keywords: article.data.tags?.join(", "),
@@ -741,6 +751,8 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
         </section>
       )
     }
+
+    <ArticleTableOfContents items={tableOfContents} />
 
     <!-- Recipe Card -->
     {

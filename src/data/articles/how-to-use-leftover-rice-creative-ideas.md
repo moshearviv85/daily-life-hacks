@@ -5,7 +5,7 @@ quickAnswer: >-
   Cool cooked rice quickly in a shallow container, refrigerate it within two
   hours, and use it within three to four days. Cold rice works well in fried
   rice, soup, fritters, stuffed vegetables, and grain salads. Reheat only the
-  portion you need until it is steaming hot throughout.
+  portion you need to 165 degrees Fahrenheit.
 category: tips
 tags:
   - cooking basics
@@ -15,7 +15,7 @@ tags:
 image: /images/how-to-use-leftover-rice-creative-ideas-main.jpg
 imageAlt: Bowl of fried rice made from leftover rice
 date: 2026-03-15
-dateModified: 2026-07-20
+dateModified: 2026-07-29
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -35,13 +35,13 @@ faq:
     in a rice salad. Just make sure you mix it with a flavorful vinaigrette to bring
     it back to life.
 - question: Can I reheat leftover rice more than once?
-  answer: Reheat only the amount you plan to eat. Repeated cooling and reheating
-    creates more opportunities for unsafe temperature handling and also dries the
-    grains into tiny white pebbles.
+  answer: Reheat only the amount you plan to eat, and take it to 165 degrees
+    Fahrenheit. Repeated cooling and reheating creates more opportunities for
+    unsafe temperature handling and also dries the grains into tiny white pebbles.
 - question: Can leftover rice be frozen?
   answer: Yes. Cool it quickly, portion it into flat freezer bags or containers,
-    label it, and freeze. Reheat from frozen with a spoonful of water until steaming
-    hot throughout.
+    label it, and freeze. Reheat from frozen with a spoonful of water until the
+    center reaches 165 degrees Fahrenheit.
 ---
 You made way too much rice. Again. 
 
@@ -66,17 +66,17 @@ Leftover rice acts as the perfect base for stuffing bell peppers, large tomatoes
 
 Cold rice works surprisingly well as the base for a hearty salad. Toss it in a bowl with chopped cucumbers, cherry tomatoes, fresh parsley, and a sharp vinaigrette. You can add chickpeas, crumbled feta cheese, or some toasted nuts for crunch. Because the rice is sturdy, this salad holds up beautifully in the fridge, meaning you can make a big batch on Monday and happily eat it for lunch on Tuesday and Wednesday. 
 
-The main rule of rice is food safety: try to get your extra rice into the fridge within a couple of hours of cooking it, and plan to use it up within a few days. With just a tiny bit of effort, a massive container of extra rice stops being a guilt-inducing waste and becomes the easiest part of your meal prep.
+The main rule of rice is food safety. [USDA's leftovers guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety) says to refrigerate leftovers within two hours and use refrigerated leftovers within three to four days. With just a tiny bit of effort, a massive container of extra rice stops being a guilt-inducing waste and becomes the easiest part of your meal prep.
 
 ## Cool leftover rice quickly
 
-Do not leave a deep pot of rice on the counter while dinner, dishes, and television happen around it. Spread the extra rice in a shallow container so heat escapes faster, then refrigerate it within two hours. This matters because cooked rice can contain bacterial spores that survive cooking; time at warm temperatures gives them a chance to grow.
+Don't leave a deep pot of rice on the counter while dinner, dishes, and television happen around it. Spread the extra rice in a shallow container so heat escapes faster, then refrigerate it within two hours. USDA recommends shallow containers for faster, more even cooling. A [CDC report on a fried-rice outbreak](https://www.cdc.gov/mmwr/preview/mmwrhtml/00025744.htm) also explains the rice-specific problem: *Bacillus cereus* spores may survive cooking, and holding cooked rice at room temperature gives the bacteria a chance to multiply. The refrigerator isn't a time machine.
 
 The full method is in this guide to [cooling rice for fried rice](/how-to-cool-rice-for-fried-rice/). The short version is shallow, prompt, and cold. The refrigerator is doing temperature control, not performing a miracle on a steaming stockpot.
 
 ## Reheat rice without drying it out
 
-Add about one tablespoon of water per cup of rice, cover loosely, and microwave in short intervals until steaming hot throughout. Stir halfway through so the cold center does not hide under a hot top layer. On the stove, use a covered skillet over low heat with the same small splash of water.
+Add about one tablespoon of water per cup of rice, cover loosely, and microwave in short intervals until the center reaches 165 degrees Fahrenheit. That's USDA's reheating temperature for leftovers, and it needs a food thermometer rather than optimism. Stir halfway through so the cold center does not hide under a hot top layer. On the stove, use a covered skillet over low heat with the same small splash of water.
 
 Reheat only the portion you will eat. For fried rice, the skillet heat and constant tossing handle the job. For soup, add cold rice near the end and simmer only until it is hot, or it will absorb the broth and swell into something closer to porridge.
 
@@ -85,3 +85,5 @@ Reheat only the portion you will eat. For fried rice, the skillet heat and const
 Pack cooled rice flat in freezer bags, press out the air, and label the amount and date. Flat bags freeze quickly and stack without creating the freezer equivalent of unstable geology. One- and two-cup portions are useful for fried rice, soup, or a side dish.
 
 Reheat from frozen with a little water, or thaw overnight in the refrigerator. If rice appears often in your weekly prep, the [cooked-grain storage guide](/how-to-properly-store-cooked-grains-for-meal-prep/) covers quinoa, barley, and farro too.
+
+<!-- sources: USDA FSIS, "Leftovers and Food Safety," https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety (2-hour refrigeration limit; 3-4 refrigerated days; 165 F reheating); CDC MMWR, "Bacillus cereus Food Poisoning Associated with Fried Rice at Two Child Day Care Centers -- Virginia, 1993," https://www.cdc.gov/mmwr/preview/mmwrhtml/00025744.htm (B. cereus spores may survive cooking; room-temperature holding permits growth) -->

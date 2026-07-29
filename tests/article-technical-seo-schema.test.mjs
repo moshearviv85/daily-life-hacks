@@ -98,8 +98,13 @@ test("Dataset schema remains attached to its canonical article and CSV", () => {
   assert.match(articlePage, /measurementTechnique: `\$\{siteUrl\}\/methodology\/`/);
   assert.match(
     datasetBlock[1],
-    /license: `\$\{siteUrl\}\/methodology\/#data-license`/,
-    "Dataset must identify the site's existing public-data reuse terms",
+    /license: DATA_LICENSE_URL/,
+    "Dataset must identify the machine-readable CC BY 4.0 license",
+  );
+  assert.match(
+    datasetBlock[1],
+    /usageInfo: DATA_TERMS_URL/,
+    "Dataset must link the human-readable scope and attribution terms",
   );
   assert.doesNotMatch(
     datasetBlock[1],
@@ -109,7 +114,7 @@ test("Dataset schema remains attached to its canonical article and CSV", () => {
   assert.match(
     methodologyPage,
     /<h2 id="data-license"[\s\S]*?>Every study ships its raw data<\/h2>/,
-    "The Dataset license URL must resolve to the published reuse terms",
+    "The methodology must preserve its stable reuse-terms anchor",
   );
 });
 

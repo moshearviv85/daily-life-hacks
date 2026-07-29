@@ -147,4 +147,4 @@ console.log(
 );
 console.log("\nSource: Daily Life Hacks Food Value Data (2026.1)");
 console.log("Study:  https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/");
-console.log("Terms:  https://www.daily-life-hacks.com/methodology/#data-license");
+console.log("Terms:  https://www.daily-life-hacks.com/data-reuse/");

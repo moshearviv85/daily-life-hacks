@@ -3,8 +3,11 @@ message: >-
   If you use this data, please cite it as below, credit "Daily Life Hacks", and
   link back to the study page the numbers came from or to
   https://www.daily-life-hacks.com/data/ so your readers can check the
-  methodology. Full terms of use:
-  https://www.daily-life-hacks.com/methodology/#data-license
+  methodology. The original Daily Life Hacks selection, arrangement,
+  calculations, field descriptions, and explanatory material are licensed
+  under Creative Commons Attribution 4.0 International. Upstream facts and
+  third-party material keep their own status and terms. Full scope:
+  https://www.daily-life-hacks.com/data-reuse/
 title: Daily Life Hacks Food Value Data
 type: dataset
 version: "2026.1"
@@ -18,9 +21,11 @@ abstract: >-
   Average Price data where the item is tracked, Walmart national listings
   otherwise, observed July 2026. Every ranking is calculated as-purchased, with
   USDA refuse percentages removed so peels, pits and bone are not counted as
-  food. This data is free to use with attribution and a link back; it is not
-  released under an open licence, and the terms that apply are published at
-  https://www.daily-life-hacks.com/methodology/#data-license
+  food. The original Daily Life Hacks contribution is licensed under Creative
+  Commons Attribution 4.0 International. Source facts and third-party material
+  aren't relicensed. Full scope is published at
+  https://www.daily-life-hacks.com/data-reuse/
+license: "https://creativecommons.org/licenses/by/4.0/"
 authors:
   - given-names: David
     family-names: Miller

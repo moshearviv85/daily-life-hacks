@@ -7,6 +7,7 @@ import {
   STUDY_DATASETS,
   TOTAL_DATA_ROWS,
   DATA_TERMS_URL,
+  DATA_LICENSE_URL,
   DATA_VERSION,
   DATA_RELEASE_DATE,
 } from "../../content/datasets";
@@ -58,7 +59,8 @@ const catalogSchema = {
   isAccessibleForFree: true,
   version: DATA_VERSION,
   dateModified: DATA_RELEASE_DATE,
-  license: DATA_TERMS_URL,
+  license: DATA_LICENSE_URL,
+  usageInfo: DATA_TERMS_URL,
   publisher: organization,
   creator: organization,
   keywords:
@@ -74,7 +76,8 @@ const catalogSchema = {
     identifier: `${siteUrl}${dataset.articleUrl}#dataset`,
     version: DATA_VERSION,
     isAccessibleForFree: true,
-    license: DATA_TERMS_URL,
+    license: DATA_LICENSE_URL,
+    usageInfo: DATA_TERMS_URL,
     creator: organization,
     publisher: organization,
     includedInDataCatalog: { "@id": catalogId },
@@ -155,9 +158,9 @@ const linkStyle = "color: #F29B30;";
         <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
       </p>
       <p>
-        You're welcome to reuse the data. The one thing we ask is credit with a link back to the
-        study, so your readers can see how the number was built. Full terms are on the
-        <a href="/methodology/#data-license" class={linkClass} style={linkStyle}>methodology page</a>.
+        You're welcome to reuse the data under CC BY 4.0. Credit Daily Life Hacks, link back to the
+        study, and say if you changed the material. The exact scope and copy-ready wording are on the
+        <a href="/data-reuse/" class={linkClass} style={linkStyle}>data reuse page</a>.
         Journalists, students, dietitians, people settling an argument in a group chat: go ahead.
       </p>
       <p>

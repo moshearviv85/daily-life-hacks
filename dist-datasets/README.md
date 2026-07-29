@@ -550,7 +550,7 @@ You're welcome to use this data. We ask for two things, and they're the same two
 1. Credit **Daily Life Hacks**.
 2. Link back to the study page the data came from, or to <https://www.daily-life-hacks.com/data/>, so whoever reads your version can check the methodology too.
 
-Full terms: <https://www.daily-life-hacks.com/methodology/#data-license>
+Full license scope and copy-ready attribution: <https://www.daily-life-hacks.com/data-reuse/>
 
 Copy-paste credit line:
 

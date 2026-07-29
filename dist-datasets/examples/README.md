@@ -84,7 +84,7 @@ Cheapest after quality adjustment:  Pinto beans (dry) ($0.87/50 g)
 
 Source: Daily Life Hacks Food Value Data (2026.1)
 Study:  https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/
-Terms:  https://www.daily-life-hacks.com/methodology/#data-license
+Terms:  https://www.daily-life-hacks.com/data-reuse/
 ```
 
 </details>
@@ -166,7 +166,7 @@ That day beats the 28 g Daily Value: yes.
 
 Source: Daily Life Hacks Food Value Data (2026.1)
 Study:  https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/
-Terms:  https://www.daily-life-hacks.com/methodology/#data-license
+Terms:  https://www.daily-life-hacks.com/data-reuse/
 ```
 
 </details>
@@ -179,4 +179,4 @@ in the baking aisle and $1.48 in the dried fruit aisle - a ten-fold spread for t
 ---
 
 Source: Daily Life Hacks Food Value Data (2026.1) - <https://www.daily-life-hacks.com/data/>
-Terms of use: <https://www.daily-life-hacks.com/methodology/#data-license>
+License scope and attribution: <https://www.daily-life-hacks.com/data-reuse/>

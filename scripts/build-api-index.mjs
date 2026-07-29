@@ -153,7 +153,12 @@ async function loadDatasetsModule() {
 
 async function main() {
   const descriptor = JSON.parse(readFileSync(join(DATA_DIR, "datapackage.json"), "utf8"));
-  const { DATASETS, DATA_TERMS_URL, STUDY_DATASET_ORDER } = await loadDatasetsModule();
+  const {
+    DATASETS,
+    DATA_LICENSE_URL,
+    DATA_TERMS_URL,
+    STUDY_DATASET_ORDER,
+  } = await loadDatasetsModule();
 
   /** csv filename -> article slug */
   const slugByCsv = new Map();
@@ -287,6 +292,10 @@ async function main() {
     homepage: descriptor.homepage,
     methodology_url: `${SITE}/methodology/`,
     terms_url: DATA_TERMS_URL,
+    license: "CC BY 4.0",
+    license_url: DATA_LICENSE_URL,
+    license_scope:
+      "Daily Life Hacks selection, arrangement, calculations, field descriptions, and explanatory material; upstream facts and third-party material retain their own status and terms.",
     datapackage_url: `${SITE}/data/datapackage.json`,
     docs_url: `${SITE}/api-docs/`,
     openapi_url: `${SITE}/openapi.json`,

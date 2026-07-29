@@ -5,7 +5,12 @@
     "version": "1.0.0",
     "summary": "Free JSON API over 22 original grocery cost datasets: fiber and protein per dollar, priced at US national retail.",
     "description": "A free, keyless, read-only JSON API over the Daily Life Hacks food value datasets: 22 CSVs and 474 priced food rows covering fiber per dollar, protein per dollar, DIAAS quality-adjusted protein, daily menu costs, and category rankings across produce, grains, legumes, dairy, meat, pantry staples and fast food.\n\nNutrient values come from USDA FoodData Central. Prices are US national figures (BLS Average Price data where the item is tracked, Walmart national listings otherwise), observed July 2026. Every ranking is calculated as-purchased with USDA refuse percentages removed.\n\nNo API key, no auth, no rate limit. CORS is open to every origin. In return we ask for attribution with a link: every response carries the exact string in `meta.attribution`.\n\nFull methodology: https://www.daily-life-hacks.com/methodology/\nHuman documentation: https://www.daily-life-hacks.com/api-docs/",
-    "termsOfService": "https://www.daily-life-hacks.com/methodology/#data-license",
+    "termsOfService": "https://www.daily-life-hacks.com/data-reuse/",
+    "license": {
+      "name": "CC BY 4.0",
+      "identifier": "CC-BY-4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    },
     "contact": {
       "name": "Daily Life Hacks",
       "url": "https://www.daily-life-hacks.com/contact/"
@@ -446,6 +451,23 @@
           "terms_url": {
             "type": "string",
             "format": "uri"
+          },
+          "license": {
+            "type": "string",
+            "examples": [
+              "CC BY 4.0"
+            ]
+          },
+          "license_url": {
+            "type": "string",
+            "format": "uri",
+            "examples": [
+              "https://creativecommons.org/licenses/by/4.0/"
+            ]
+          },
+          "license_scope": {
+            "type": "string",
+            "description": "What Daily Life Hacks licenses and which upstream or third-party material remains outside that grant."
           },
           "docs_url": {
             "type": "string",

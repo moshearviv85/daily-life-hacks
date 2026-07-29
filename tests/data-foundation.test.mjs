@@ -24,7 +24,7 @@ test("statistics hub is derived from the release instead of hand-copying winners
   assert.match(page, /summarizeDays\("protein-day-cost-2026", "protein_g"\)/);
   assert.match(page, /dataIndex\.row_count/);
   assert.match(page, /href="\/data\/"/);
-  assert.match(page, /href="\/methodology\/#data-license"/);
+  assert.match(page, /href="\/data-reuse\/"/);
   assert.doesNotMatch(page, /\u2014/);
 });
 

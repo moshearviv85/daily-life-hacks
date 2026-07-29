@@ -32,12 +32,11 @@ DIST_OUTPUT_PATH = ROOT / "dist-datasets" / "datapackage.json"
 
 SITE = "https://www.daily-life-hacks.com"
 
-# No `licenses` key is emitted, by owner decision (commit 207442c reverted the
-# CC BY licence and deleted /license/). Reuse terms are prose on the methodology
-# page. Do not re-add a Frictionless `licenses` block pointing at
-# creativecommons.org or {SITE}/license/ — the latter is a 404, and a licence
-# claim that links to a dead page is worse than no claim at all.
-TERMS_URL = f"{SITE}/methodology/#data-license"
+# The package licenses only Daily Life Hacks' original compilation and
+# explanatory contribution. The terms page preserves the upstream-rights
+# boundary and copy-ready attribution.
+TERMS_URL = f"{SITE}/data-reuse/"
+LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 
 # Fixed so re-runs stay byte-identical. Bump with the package version.
 PACKAGE_VERSION = "2026.1"
@@ -519,13 +518,23 @@ def build_package() -> tuple[dict, list[str]]:
             "listings otherwise, observed July 2026. Every ranking is calculated "
             "as-purchased, with USDA refuse percentages removed so peels, pits and bone are "
             "not counted as food.\n\n"
-            "You're welcome to reuse the data. Credit \"Daily Life Hacks\" with a link "
-            f"to the study page or to {SITE}/data/. Full terms at {TERMS_URL} and full "
+            "The original Daily Life Hacks selection, arrangement, calculations, field "
+            "descriptions, and explanatory material are licensed CC BY 4.0. Upstream "
+            "facts and third-party material keep their own status and terms. Credit "
+            "\"Daily Life Hacks\" with a link to the study page or to "
+            f"{SITE}/data/. Full scope at {TERMS_URL} and full "
             f"methodology at {SITE}/methodology/."
         ),
         "homepage": f"{SITE}/data/",
         "version": PACKAGE_VERSION,
         "created": PACKAGE_CREATED,
+        "licenses": [
+            {
+                "name": "CC-BY-4.0",
+                "path": LICENSE_URL,
+                "title": "Creative Commons Attribution 4.0 International",
+            }
+        ],
         "keywords": [
             "food prices",
             "nutrition",

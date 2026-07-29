@@ -14,7 +14,8 @@ import { fileURLToPath } from "node:url";
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const PUBLIC_DATA = join(ROOT, "public", "data");
 const DIST_ROOT = join(ROOT, "dist-datasets");
-const TERMS_URL = "https://www.daily-life-hacks.com/methodology/#data-license";
+const TERMS_URL = "https://www.daily-life-hacks.com/data-reuse/";
+const LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/";
 
 function json(path) {
   return JSON.parse(readFileSync(path, "utf8"));
@@ -84,6 +85,7 @@ export function validateDataFoundation() {
   const registrySource = readFileSync(join(ROOT, "src", "content", "datasets.ts"), "utf8");
   const articleRoute = readFileSync(join(ROOT, "src", "pages", "[slug].astro"), "utf8");
   const methodology = readFileSync(join(ROOT, "src", "pages", "methodology.astro"), "utf8");
+  const reusePage = readFileSync(join(ROOT, "src", "pages", "data-reuse.astro"), "utf8");
   const citation = readFileSync(join(DIST_ROOT, "CITATION.cff"), "utf8");
 
   const publicResources = publicPackage.resources || [];
@@ -217,10 +219,11 @@ export function validateDataFoundation() {
     }
   }
 
-  if ("licenses" in publicPackage || "licenses" in distPackage) {
-    errors.push(
-      "A formal machine-readable license was added without the owner-approved legal decision",
-    );
+  for (const descriptor of [publicPackage, distPackage]) {
+    const license = descriptor.licenses?.find((item) => item.name === "CC-BY-4.0");
+    if (!license || license.path !== LICENSE_URL) {
+      errors.push("data package is missing the machine-readable CC BY 4.0 license");
+    }
   }
   if (!publicPackage.description?.includes(TERMS_URL)) {
     errors.push("public datapackage doesn't point to the current reuse terms");
@@ -228,8 +231,21 @@ export function validateDataFoundation() {
   if (!methodology.includes('id="data-license"')) {
     errors.push("reuse-terms anchor is missing from /methodology/");
   }
-  if (!/not\s+released under an open licence/i.test(citation)) {
-    errors.push("CITATION.cff doesn't preserve the no-open-license clarification");
+  if (
+    !/selection,\s+arrangement,\s+calculations,\s+field descriptions/.test(reusePage) ||
+    !reusePage.includes("third-party content remain")
+  ) {
+    errors.push("reuse page doesn't preserve the owned-rights and third-party scope boundary");
+  }
+  if (!citation.includes("Creative Commons Attribution 4.0 International")) {
+    errors.push("CITATION.cff doesn't identify the CC BY 4.0 license");
+  }
+  if (
+    apiIndex.license_url !== LICENSE_URL ||
+    apiIndex.terms_url !== TERMS_URL ||
+    !apiIndex.license_scope?.includes("third-party material")
+  ) {
+    errors.push("API index license metadata is missing or incomplete");
   }
 
   for (const required of [

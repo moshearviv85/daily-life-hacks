@@ -1,0 +1,157 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { DATA_LICENSE_URL } from "../content/datasets";
+
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}/data-reuse/`;
+const title = "Data Reuse and Attribution | Daily Life Hacks";
+const description =
+  "Reuse Daily Life Hacks grocery cost datasets under CC BY 4.0, with a clear license scope and copy-ready attribution.";
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: "Daily Life Hacks Data Reuse and Attribution",
+    description,
+    inLanguage: "en-US",
+    dateModified: "2026-07-29",
+    license: DATA_LICENSE_URL,
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    publisher: { "@id": `${siteUrl}/#organization` },
+    breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "Data", item: `${siteUrl}/data/` },
+      { "@type": "ListItem", position: 3, name: "Reuse and attribution", item: pageUrl },
+    ],
+  },
+];
+
+const linkStyle = "color: #F29B30;";
+---
+
+<BaseLayout title={title} description={description} canonicalURL={pageUrl} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 py-12 md:py-16">
+    <nav class="text-sm mb-6" style="color: var(--muted-color);" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#F29B30] transition-colors">Home</a>
+      <span class="mx-1">/</span>
+      <a href="/data/" class="hover:text-[#F29B30] transition-colors">Data</a>
+      <span class="mx-1">/</span>
+      <span style="color: var(--text-color);">Reuse</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      Use the Data. Credit the Work.
+    </h1>
+    <p class="text-lg mb-8" style="color: var(--muted-color);">
+      You can copy, chart, analyze, and build on our grocery cost datasets, including for commercial
+      projects. We ask for a useful link, not a small ceremony involving three footnotes and a lawyer.
+    </p>
+
+    <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        What license applies?
+      </h2>
+      <p>
+        To the extent Daily Life Hacks owns copyright or database rights in the selection,
+        arrangement, calculations, field descriptions, and explanatory material in the
+        <a href="/data/" class="underline" style={linkStyle}>Daily Life Hacks Food Value Data</a>,
+        those contributions are licensed under
+        <a href={DATA_LICENSE_URL} class="underline" style={linkStyle} rel="license noopener" target="_blank">
+          Creative Commons Attribution 4.0 International
+        </a>
+        (CC BY 4.0).
+      </p>
+      <p>
+        CC BY 4.0 lets you share and adapt that material for any purpose, including commercial use,
+        as long as you give appropriate credit, link to the license, and indicate whether you made
+        changes. Don't imply that Daily Life Hacks endorses your project.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        What isn't covered by our license?
+      </h2>
+      <p>
+        We can license our work. We can't relicense somebody else's. USDA FoodData Central and
+        Bureau of Labor Statistics material is identified as source material and remains subject to
+        its own status and terms.
+        <a href="https://fdc.nal.usda.gov/api-guide/" class="underline" style={linkStyle} rel="noopener" target="_blank">
+          FoodData Central states
+        </a>
+        that its data is public domain and published under CC0 1.0.
+        <a href="https://www.bls.gov/opub/copyright-information.htm" class="underline" style={linkStyle} rel="noopener" target="_blank">
+          BLS states
+        </a>
+        that its published material is generally public domain, apart from identified third-party
+        photographs and illustrations.
+      </p>
+      <p>
+        Retailer names, product names, trademarks, chain nutrition material, and any other
+        third-party content remain the property of their respective owners. The license also doesn't
+        promise that facts, prices, or individual numbers are protected by copyright in your
+        jurisdiction. It grants the rights Daily Life Hacks has, no more and no less.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        Copy-ready attribution
+      </h2>
+      <p>
+        For a chart, article, app, or notebook, this does the job:
+      </p>
+      <pre><code>Data and calculations: Daily Life Hacks, [study title and URL], licensed CC BY 4.0. Changes: [describe changes or "none"].</code></pre>
+      <p>
+        If you're using several studies, link to the catalog instead:
+      </p>
+      <pre><code>Data and calculations: Daily Life Hacks Food Value Data, https://www.daily-life-hacks.com/data/, licensed CC BY 4.0. Changes: [describe changes or "none"].</code></pre>
+      <p>
+        Please also keep the USDA, BLS, retailer, or restaurant source credit that travels with the
+        rows you use. Removing the source and keeping the surprising number is how a useful chart
+        turns into internet confetti.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        Machine-readable files
+      </h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>
+          <a href="/data/datapackage.json" class="underline" style={linkStyle}>datapackage.json</a>
+          includes the package license, sources, field schemas, row counts, and file checksums.
+        </li>
+        <li>
+          <a href="/openapi.json" class="underline" style={linkStyle}>openapi.json</a>
+          documents the JSON API and its license metadata.
+        </li>
+        <li>
+          <a href="/api-docs/" class="underline" style={linkStyle}>API documentation</a>
+          has response examples and the attribution fields returned with every request.
+        </li>
+        <li>
+          <a href="/methodology/" class="underline" style={linkStyle}>Methodology</a>
+          explains how the calculations were built and where the inputs came from.
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        No warranty
+      </h2>
+      <p>
+        The datasets are provided as-is, without warranties. Grocery prices change, product
+        listings disappear, and mistakes can survive a spreadsheet longer than anyone would like.
+        Check the data version and observation date before publishing, and send corrections through
+        the <a href="/contact/" class="underline" style={linkStyle}>contact page</a>.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

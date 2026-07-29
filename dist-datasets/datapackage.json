@@ -2,10 +2,17 @@
   "profile": "tabular-data-package",
   "name": "daily-life-hacks-food-value-data",
   "title": "Daily Life Hacks Food Value Data",
-  "description": "Every public dataset behind the Daily Life Hacks grocery cost studies: fiber per dollar, protein per dollar, protein quality adjusted with DIAAS, daily menu costing, and category-level rankings across produce, grains, legumes, dairy, meat, pantry staples and fast food.\n\nNutrient values come from USDA FoodData Central. Prices are US national figures: BLS Average Price data where the item is tracked, Walmart national listings otherwise, observed July 2026. Every ranking is calculated as-purchased, with USDA refuse percentages removed so peels, pits and bone are not counted as food.\n\nYou're welcome to reuse the data. Credit \"Daily Life Hacks\" with a link to the study page or to https://www.daily-life-hacks.com/data/. Full terms at https://www.daily-life-hacks.com/methodology/#data-license and full methodology at https://www.daily-life-hacks.com/methodology/.",
+  "description": "Every public dataset behind the Daily Life Hacks grocery cost studies: fiber per dollar, protein per dollar, protein quality adjusted with DIAAS, daily menu costing, and category-level rankings across produce, grains, legumes, dairy, meat, pantry staples and fast food.\n\nNutrient values come from USDA FoodData Central. Prices are US national figures: BLS Average Price data where the item is tracked, Walmart national listings otherwise, observed July 2026. Every ranking is calculated as-purchased, with USDA refuse percentages removed so peels, pits and bone are not counted as food.\n\nThe original Daily Life Hacks selection, arrangement, calculations, field descriptions, and explanatory material are licensed CC BY 4.0. Upstream facts and third-party material keep their own status and terms. Credit \"Daily Life Hacks\" with a link to the study page or to https://www.daily-life-hacks.com/data/. Full scope at https://www.daily-life-hacks.com/data-reuse/ and full methodology at https://www.daily-life-hacks.com/methodology/.",
   "homepage": "https://www.daily-life-hacks.com/data/",
   "version": "2026.1",
   "created": "2026-07-26T00:00:00Z",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/",
+      "title": "Creative Commons Attribution 4.0 International"
+    }
+  ],
   "keywords": [
     "food prices",
     "nutrition",
