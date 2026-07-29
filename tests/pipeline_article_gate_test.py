@@ -254,10 +254,15 @@ def test_cloudflare_deploy_uses_configured_production_branch_and_live_proof():
     assert "/pages/projects/daily-life-hacks" in workflow
     assert "production_branch" in workflow
     assert "steps.pages_config.outputs.production_branch" in workflow
-    assert 'dist/deploy-meta.json' in workflow
-    assert workflow.index("Write deploy proof") < workflow.index("Build Pages Functions")
+    # The deploy proof moved from a static dist/deploy-meta.json to the
+    # /deploy-proof route (src/pages/deploy-proof.astro), which echoes the
+    # commit back as data-commit. Same guarantee: the workflow only passes once
+    # the live custom domain actually serves the SHA it just deployed.
+    assert "'/deploy-proof*' in routes['exclude']" in workflow
+    assert workflow.index("Build and verify routing") < workflow.index("Build Pages Functions")
     assert "Verify production custom domain" in workflow
-    assert "https://www.daily-life-hacks.com/deploy-meta.json" in workflow
+    assert "https://www.daily-life-hacks.com/deploy-proof/?expected=" in workflow
+    assert 'data-commit' in workflow
     assert 'LIVE_SHA' in workflow
 
 
