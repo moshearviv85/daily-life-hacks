@@ -92,14 +92,15 @@ test("calculator formulas and interaction hooks remain present", async () => {
   assert.match(budget, /restaurant\.cost\*planned\*people/);
 });
 
-test("calculator engagement is measured without sending entered values", async () => {
+test("calculator start and completion are measured without sending entered values", async () => {
   const layout = await readFile(
     path.join(root, "src/layouts/BaseLayout.astro"),
     "utf8",
   );
-  assert.match(layout, /'tool_engagement'/);
-  assert.match(layout, /tool_name: toolName/);
-  assert.match(layout, /sessionStorage\.getItem\(storageKey\)/);
+  assert.match(layout, /send\('tool_start'/);
+  assert.match(layout, /send\('tool_complete'/);
+  assert.match(layout, /tool_name: toolName\(\)/);
+  assert.match(layout, /sessionStorage\.getItem\(key\)/);
   assert.doesNotMatch(layout, /input_value|entered_price|recipe_name/);
 });
 

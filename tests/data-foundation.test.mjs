@@ -35,12 +35,15 @@ test("dataset downloads emit a privacy-safe GA4 event from every primary surface
     read("src/pages/research/index.astro"),
     read("src/pages/statistics/index.astro"),
     read("src/pages/[slug].astro"),
+    read("src/pages/food-value-database/index.astro"),
   ];
 
   assert.match(layout, /window\.gtag\('event', 'dataset_download'/);
   assert.match(layout, /dataset_id: datasetId/);
   assert.match(layout, /file_type: 'csv'/);
   assert.match(layout, /source_page: location\.pathname/);
+  assert.match(layout, /\^\\\/data\\\/\[\^\/\]\+\\\.csv\$/);
+  assert.match(layout, /url\.pathname\.split\('\/'\)/);
   assert.doesNotMatch(
     layout.match(/window\.gtag\('event', 'dataset_download', \{[\s\S]*?\}\);/)?.[0] ?? "",
     /search|query|referrer|textContent|innerText/,

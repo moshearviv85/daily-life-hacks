@@ -69,8 +69,12 @@ test("interactive states are labeled and announce changing results", () => {
 
 test("analytics records actions and counts, never search text or selected food names", () => {
   assert.match(page, /"food_database_action"/);
+  for (const action of ["search", "filter", "compare"]) {
+    assert.match(page, new RegExp(`track\\("${action}"`));
+  }
   assert.match(page, /result_count: visibleRows\(\)\.length/);
   assert.match(page, /selected_count: selected\.length/);
+  assert.match(page, /source_page: location\.pathname/);
   const trackingFunction = page.match(/function track\(action, details\) \{[\s\S]*?\n        \}/)?.[0] ?? "";
   assert.doesNotMatch(trackingFunction, /search\.value/);
   assert.doesNotMatch(trackingFunction, /food\.food/);

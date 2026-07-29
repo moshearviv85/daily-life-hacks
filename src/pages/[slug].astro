@@ -404,7 +404,18 @@ const embedCopyScript = `(function(){
   var btn = document.getElementById("embed-copy-btn");
   var box = document.getElementById("embed-snippet");
   var block = document.getElementById("embed-block");
+  var status = document.getElementById("embed-copy-status");
+  var datasetId = ${JSON.stringify(article.id)};
   if (!btn || !box || !block) return;
+
+  function trackCopy() {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", "chart_embed_code_copied", {
+      dataset_id: datasetId,
+      interaction_type: "copy_code",
+      source_page: location.pathname
+    });
+  }
 
   // The chart is rendered from markdown, so the block cannot be authored next
   // to it server-side. Move it there on load; without JS it stays at the end
@@ -422,12 +433,22 @@ const embedCopyScript = `(function(){
     var label = btn.textContent;
     var done = function () {
       btn.textContent = "Copied";
+      if (status) status.textContent = "Embed code copied.";
+      trackCopy();
       setTimeout(function () { btn.textContent = label; }, 2000);
     };
     var fallback = function () {
       box.focus();
       box.select();
-      try { document.execCommand("copy"); done(); } catch (e) {}
+      try {
+        if (document.execCommand("copy")) {
+          done();
+        } else if (status) {
+          status.textContent = "Copy failed. Select the code and copy it manually.";
+        }
+      } catch (e) {
+        if (status) status.textContent = "Copy failed. Select the code and copy it manually.";
+      }
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(box.value).then(done, fallback);
@@ -858,6 +879,7 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
               >
                 Copy embed code
               </button>
+              <span id="embed-copy-status" class="sr-only" role="status" aria-live="polite"></span>
               <a
                 href={`/embed/${article.id}/`}
                 class="text-sm underline"

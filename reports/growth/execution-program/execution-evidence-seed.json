@@ -1,0 +1,25 @@
+{
+  "rejection_decision_commit": "aaaf4c3779dbeaa959a7003b14be6d9526d29e17",
+  "verified_rows": [
+    {
+      "category": "Content & virality",
+      "title": "Public database / searchable directory",
+      "execution_status": "RELEASED",
+      "evidence_commit": "3ed83f5de04403d674a4e15e51589d2bcf68ebe9",
+      "live_url": "https://www.daily-life-hacks.com/food-value-database/",
+      "released_at": "2026-07-28T21:32:59+03:00",
+      "measurement_due": "2026-08-25T21:32:59+03:00",
+      "notes": "Commit adds the crawlable 79-food database plus discovery links and eight tests. Live URL returned HTTP 200 on 2026-07-29. Measurement due is the first 28-day search window."
+    },
+    {
+      "category": "Search engines",
+      "title": "D2. IndexNow",
+      "execution_status": "RELEASED",
+      "evidence_commit": "96005b6b3131328900cc84e37870aad6f625ceea",
+      "live_url": "https://github.com/moshearviv85/daily-life-hacks/actions/runs/30390366792",
+      "released_at": "2026-07-28T22:02:05+03:00",
+      "measurement_due": "2026-08-04T22:02:05+03:00",
+      "notes": "Commit enforces one post-deploy IndexNow owner and adds ownership tests. GitHub Actions run 30390366792 completed successfully. Measurement due is the first seven-day crawl-latency check."
+    }
+  ]
+}

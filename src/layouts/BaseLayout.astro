@@ -122,36 +122,118 @@ const metaDescription =
       }, 3500);
     </script>
 
-    <!-- Record one anonymous engagement event per calculator session. Input values are never sent. -->
+    <!-- Privacy-safe tool funnel. Values, search terms, and result text never leave the browser. -->
     <script is:inline>
       (function () {
         if (window.__dlhToolTrackerBound) return;
         window.__dlhToolTrackerBound = true;
 
+        var rootSelector = [
+          '#fpd-app',
+          '#bean-tool',
+          '#research-week-planner',
+          '#trip-calculator',
+          '#price-benchmark-app',
+          '#unit-price-app',
+          '#recipe-cost-app',
+          '#recipe-finder-app',
+          '#shopping-list-builder-app'
+        ].join(',');
+        var outputSelector = [
+          '[aria-live="polite"]',
+          '[id*="-result"]',
+          '[id*="-results"]',
+          '[id*="-totals"]',
+          '[id*="-verdict"]',
+          '#fpd-content',
+          '#rwp-content',
+          '#slb-list-content'
+        ].join(',');
+        var initialResults = new WeakMap();
+
+        function toolName() {
+          return location.pathname.split('/').filter(Boolean).pop() || 'unknown-tool';
+        }
+
+        function rememberOnce(key) {
+          try {
+            if (sessionStorage.getItem(key) === '1') return false;
+            sessionStorage.setItem(key, '1');
+          } catch (error) {
+            if (window[key]) return false;
+            window[key] = true;
+          }
+          return true;
+        }
+
+        function send(eventName, root, details) {
+          if (typeof window.gtag !== 'function') return;
+          var payload = {
+            tool_name: toolName(),
+            tool_variant: root.id || 'primary',
+            source_page: location.pathname
+          };
+          Object.keys(details || {}).forEach(function (key) {
+            payload[key] = details[key];
+          });
+          window.gtag('event', eventName, payload);
+        }
+
+        function resultFingerprint(root) {
+          return Array.prototype.map.call(root.querySelectorAll(outputSelector), function (node) {
+            if (node.hidden || node.classList.contains('hidden')) return '';
+            return (node.textContent || '').trim();
+          }).filter(Boolean).join('|');
+        }
+
+        function recordStartAndCompletion(root, interactionType) {
+          var name = toolName();
+          var variant = root.id || 'primary';
+          if (!initialResults.has(root)) {
+            initialResults.set(root, resultFingerprint(root));
+          }
+          if (rememberOnce('dlh-tool-start:' + name + ':' + variant)) {
+            send('tool_start', root, { interaction_type: interactionType });
+          }
+
+          requestAnimationFrame(function () {
+            var currentResult = resultFingerprint(root);
+            if (!currentResult || currentResult === initialResults.get(root)) return;
+            if (rememberOnce('dlh-tool-complete:' + name + ':' + variant)) {
+              send('tool_complete', root, {});
+            }
+          });
+        }
+
         function recordToolUse(event) {
           if (!location.pathname.startsWith('/tools/') || location.pathname === '/tools/') return;
           if (!(event.target instanceof Element)) return;
-          if (!event.target.closest('[id$="-app"]')) return;
+          var root = event.target.closest(rootSelector);
+          if (!root) return;
 
-          var toolName = location.pathname.split('/').filter(Boolean).pop();
-          var storageKey = 'dlh-tool-used:' + toolName;
-          if (sessionStorage.getItem(storageKey)) return;
-
-          sessionStorage.setItem(storageKey, '1');
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'tool_engagement', {
-              tool_name: toolName,
-              interaction_type: event.type,
+          var share = event.target.closest('[data-result-share]');
+          if (share) {
+            recordStartAndCompletion(root, event.type);
+            send('result_share', root, {
+              share_method: share.getAttribute('data-result-share') || 'unknown'
             });
+            return;
           }
+
+          if (!event.target.closest('input, select, textarea, button')) return;
+          recordStartAndCompletion(root, event.type);
         }
 
         document.addEventListener('input', recordToolUse, true);
+        document.addEventListener('change', recordToolUse, true);
         document.addEventListener('click', recordToolUse, true);
+        document.querySelectorAll(rootSelector).forEach(function (root) {
+          initialResults.set(root, resultFingerprint(root));
+        });
       })();
     </script>
 
-    <!-- Track public dataset downloads without recording query strings or reader input. -->
+    <!-- Track every public CSV download without recording query strings or reader input. -->
     <script is:inline>
       (function () {
         if (window.__dlhDatasetTrackerBound) return;
@@ -159,10 +241,19 @@ const metaDescription =
 
         document.addEventListener('click', function (event) {
           if (!(event.target instanceof Element)) return;
-          var link = event.target.closest('a[data-dataset-download]');
+          var link = event.target.closest('a[href]');
           if (!link) return;
 
-          var fileName = (link.getAttribute('href') || '').split('/').pop() || 'unknown.csv';
+          var url;
+          try {
+            url = new URL(link.getAttribute('href') || '', location.origin);
+          } catch (error) {
+            return;
+          }
+          if (!link.hasAttribute('data-dataset-download') &&
+              !/^\/data\/[^/]+\.csv$/i.test(url.pathname)) return;
+
+          var fileName = url.pathname.split('/').pop() || 'unknown.csv';
           var datasetId = link.getAttribute('data-dataset-id') || fileName.replace(/\.csv$/i, '');
 
           if (typeof window.gtag === 'function') {
@@ -247,8 +338,20 @@ const metaDescription =
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="Daily Life Hacks"
+      title="Daily Life Hacks RSS"
       href="https://www.daily-life-hacks.com/rss.xml"
+    />
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="Daily Life Hacks Atom"
+      href="https://www.daily-life-hacks.com/atom.xml"
+    />
+    <link
+      rel="alternate"
+      type="application/feed+json"
+      title="Daily Life Hacks JSON Feed"
+      href="https://www.daily-life-hacks.com/feed.json"
     />
 
     <!-- Sitemap -->

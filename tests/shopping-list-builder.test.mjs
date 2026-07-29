@@ -44,7 +44,8 @@ test("recipe selection is visibly clickable and can be removed from either surfa
 
 test("high-frequency interactions avoid rebuilding the full recipe grid", async () => {
   const source = await readFile(sourcePath, "utf8");
-  const addFunction = source.match(/function add\(slug\)\{(.*?)\}\n/s)?.[1] ?? "";
+  const addFunction =
+    source.match(/function add\(slug\)\{([\s\S]*?)\}\s*function textList/)?.[1] ?? "";
   const inputHandler = source.match(/root\.addEventListener\('input',function\(event\)\{(.*?)\}\);renderChoices/s)?.[1] ?? "";
 
   assert.match(source, /choiceNodes=Object\.create\(null\)/);
@@ -81,12 +82,19 @@ test("page includes WebApplication and matching five-entry FAQ schema", async ()
 
 test("privacy copy and anonymous tool analytics contract are preserved", async () => {
   const source = await readFile(sourcePath, "utf8");
+  const layout = await readFile(
+    path.join(process.cwd(), "src/layouts/BaseLayout.astro"),
+    "utf8",
+  );
   assert.match(source, /stay in this browser tab/);
   assert.match(source, /doesn't send recipe names, serving counts, or shopping-list contents/);
   assert.match(source, /id="shopping-list-builder-app"/);
-  assert.match(source, /window\.gtag\('event','tool_action',\{tool_name:'shopping-list-builder',action:'first_recipe_selected'\}\)/);
-  assert.match(source, /if\(state\.tracked\)return/);
-  const trackingCall = source.match(/window\.gtag\('event','tool_action',\{(.*?)\}\)/)?.[1] ?? "";
+  assert.match(layout, /'#shopping-list-builder-app'/);
+  assert.match(layout, /send\('tool_start'/);
+  assert.match(layout, /send\('tool_complete'/);
+  assert.doesNotMatch(source, /gtag\(/);
+  const trackingCall =
+    layout.match(/function send\(eventName, root, details\) \{[\s\S]*?\n        \}/)?.[0] ?? "";
   assert.doesNotMatch(trackingCall, /slug|title|servings|recipe\.title|recipe\.slug/);
   assert.doesNotMatch(source, /localStorage|fetch\(|XMLHttpRequest/);
 });

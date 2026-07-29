@@ -5,6 +5,9 @@ category: nutrition
 tags:
   - gut health
   - nutrition basics
+  - natto
+  - fermented soybeans
+  - Japanese food
 image: /images/natto-japanese-fermented-soybeans-gut-health-main.jpg
 imageAlt: A bowl of natto, sticky fermented Japanese soybeans, over rice
 date: 2026-04-04

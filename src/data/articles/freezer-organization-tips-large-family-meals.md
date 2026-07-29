@@ -5,11 +5,10 @@ category: tips
 tags:
 - food storage
 - large family
-- meals
 - family meals
-- family
 - freezer
 - large family meals
+- meal prep
 image: "/images/freezer-organization-tips-large-family-meals-main.jpg"
 imageAlt: A neatly organized open chest freezer filled with labeled food containers and vacuum-sealed meal prep bags.
 date: 2026-04-28

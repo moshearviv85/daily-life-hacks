@@ -513,7 +513,8 @@ const metric = (value: number | null, suffix = "g") =>
           var payload = {
             database_name: "food_value_2026",
             action: action,
-            result_count: visibleRows().length
+            result_count: visibleRows().length,
+            source_page: location.pathname
           };
           Object.keys(details || {}).forEach(function (key) { payload[key] = details[key]; });
           window.gtag("event", "food_database_action", payload);

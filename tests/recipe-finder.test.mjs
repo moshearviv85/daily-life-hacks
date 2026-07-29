@@ -4,6 +4,7 @@ import test from "node:test";
 
 const pagePath = new URL("../src/pages/tools/recipe-finder/index.astro", import.meta.url);
 const source = await readFile(pagePath, "utf8");
+const layout = await readFile(new URL("../src/layouts/BaseLayout.astro", import.meta.url), "utf8");
 
 test("recipe finder is built from released recipe frontmatter", () => {
   assert.match(source, /getCollection\("articles"\)/);
@@ -29,10 +30,13 @@ test("recipe finder includes utility SEO and structured data", () => {
 });
 
 test("analytics records usage without ingredient values", () => {
-  const analyticsCall = source.match(/gtag\('event','recipe_finder_used',[\s\S]*?\}\)/)?.[0] ?? "";
-  assert.match(analyticsCall, /tool_name:'recipe_finder'/);
-  assert.match(analyticsCall, /interaction_type:'ingredient_added'/);
-  assert.doesNotMatch(analyticsCall, /selected|ingredient_count|event\.target|value/);
+  assert.match(layout, /'#recipe-finder-app'/);
+  assert.match(layout, /send\('tool_start'/);
+  assert.match(layout, /send\('tool_complete'/);
+  assert.doesNotMatch(source, /gtag\(/);
+  const analyticsCall =
+    layout.match(/function send\(eventName, root, details\) \{[\s\S]*?\n        \}/)?.[0] ?? "";
+  assert.doesNotMatch(analyticsCall, /selected|ingredient_count|event\.target|\.value/);
 });
 
 test("David Miller hard bans stay out of UI copy", () => {

@@ -24,6 +24,13 @@ No method may disappear from the inventory.
   `03-distribution-people-risk-triage.csv`
 - Generated master backlog: `master-execution-backlog.csv`
 - Generated validation report: `coverage-report.json`
+- Execution status and proof: `execution-ledger.csv`
+- Explicit initial evidence: `execution-evidence-seed.json`
+- Execution summary: `execution-ledger-summary.md`
+
+The master backlog describes what should be done. The separate execution ledger
+records what has actually been proved. Rebuilding the backlog never overwrites
+execution state.
 
 ## Decision vocabulary
 
@@ -48,6 +55,27 @@ No method may disappear from the inventory.
 - Proof required
 - KPI
 - Phase
+
+## Execution evidence gate
+
+Run:
+
+```text
+python scripts/growth_execution_ledger.py --sync --verify-live --write-report
+```
+
+The ledger recognizes `NOT_STARTED`, `IN_PROGRESS`, `IMPLEMENTED`, `RELEASED`,
+`MEASURED`, `BLOCKED`, and `REJECTED`. Completion states require a full commit
+SHA reachable from `origin/main`. Released and measured rows additionally
+require a live HTTPS URL plus timezone-aware release and measurement dates.
+`MEASURED` rows must name their measurement evidence in the notes.
+Rows classified as `DEPENDENCY` or `MANUAL_EXTERNAL` start as `BLOCKED`, with
+their exact prerequisite and execution owner copied from the master backlog.
+Only `EXECUTE_NOW` and `QUEUE` rows without proof remain `NOT_STARTED`.
+
+The initial ledger is deliberately conservative. A live feature is not credited
+to a broad research method unless the commit, public surface, and method scope
+match without inference.
 
 ## End-to-end phases
 

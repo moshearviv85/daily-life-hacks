@@ -5,11 +5,10 @@ category: tips
 tags:
 - kitchen tips
 - salads
-- salad
-- pasta
 - pasta salad
 - cold pasta
 - cold pasta salad
+- picnic food
 image: "/images/how-to-pack-cold-pasta-salad-picnics-main.jpg"
 imageAlt: A close-up overhead shot of a colorful rotini pasta salad packed in a clear container for a picnic.
 date: 2026-04-28

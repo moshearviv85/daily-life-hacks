@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "master_rows": 601,
+  "ledger_rows": 601,
+  "decision_counts": {
+    "DEPENDENCY": 96,
+    "EXECUTE_NOW": 99,
+    "MANUAL_EXTERNAL": 111,
+    "QUEUE": 71,
+    "REJECT": 224
+  },
+  "execution_status_counts": {
+    "BLOCKED": 207,
+    "NOT_STARTED": 168,
+    "REJECTED": 224,
+    "RELEASED": 2
+  },
+  "executable_rows": 377,
+  "proved_executable_rows": 2,
+  "released_or_measured_rows": 2,
+  "unproved_executable_rows": 375,
+  "blocked_by_decision": {
+    "DEPENDENCY": 96,
+    "MANUAL_EXTERNAL": 111
+  },
+  "not_started_by_decision": {
+    "EXECUTE_NOW": 97,
+    "QUEUE": 71
+  },
+  "errors": []
+}

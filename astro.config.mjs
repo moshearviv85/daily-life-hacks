@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import rehypeArticleImages from './scripts/rehype-article-images.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -265,6 +266,9 @@ function shouldExcludeFromSitemap(url) {
 export default defineConfig({
   site: 'https://www.daily-life-hacks.com',
   trailingSlash: 'always',
+  markdown: {
+    rehypePlugins: [rehypeArticleImages],
+  },
   integrations: [
     sitemap({
       serialize(item) {
