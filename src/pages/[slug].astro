@@ -6,11 +6,21 @@ import Newsletter from "../components/Newsletter.astro";
 import RecipeMetaBar from "../components/RecipeMetaBar.astro";
 import RecipeServingScaler from "../components/RecipeServingScaler.astro";
 import RelatedArticles from "../components/RelatedArticles.astro";
+import ArticleTableOfContents from "../components/ArticleTableOfContents.astro";
 import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptImage from "../components/OptImage.astro";
 import { formatReleaseDate, isReleased } from "../content/release";
-import { DATASETS, findChartInBody } from "../content/datasets";
+import {
+  DATASETS,
+  DATA_LICENSE_URL,
+  DATA_TERMS_URL,
+  DATA_VERSION,
+  findChartInBody,
+} from "../content/datasets";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { buildArticleToc } from "../content/article-toc.mjs";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -44,7 +54,8 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { Content } = await render(article);
+const { Content, headings } = await render(article);
+const tableOfContents = buildArticleToc(headings, article.body ?? "");
 const releaseDate = article.data.publishAt ?? article.data.date;
 /** True once publishAt (or date) is in the past; drives index/noindex at build time. */
 const released = isReleased(article);
@@ -133,6 +144,18 @@ const breadcrumbId = `${articleUrl}#breadcrumb`;
 const imageUrl = article.data.image.startsWith("http")
   ? article.data.image
   : `${siteUrl}${article.data.image}`;
+const hasArticleImage =
+  article.data.image.startsWith("http") ||
+  existsSync(join(process.cwd(), "public", article.data.image.replace(/^\/+/, "")));
+const ingredientsImagePath = `/images/${article.id}-ingredients.jpg`;
+const hasIngredientsImage = existsSync(
+  join(process.cwd(), "public", ingredientsImagePath.replace(/^\/+/, "")),
+);
+const ingredientsImageUrl = `${siteUrl}${ingredientsImagePath}`;
+const structuredImageUrls = [
+  ...(hasArticleImage ? [imageUrl] : []),
+  ...(hasIngredientsImage ? [ingredientsImageUrl] : []),
+];
 const modifiedDateObj = article.data.dateModified ?? releaseDate;
 const modifiedDate = modifiedDateObj.toISOString();
 
@@ -210,8 +233,8 @@ const jsonLd = isRecipe
       name: article.data.title,
       headline: article.data.title,
       description: article.data.excerpt,
-      image: [imageUrl],
-      thumbnailUrl: imageUrl,
+      image: structuredImageUrls.length ? structuredImageUrls : undefined,
+      thumbnailUrl: hasArticleImage ? imageUrl : undefined,
       inLanguage: "en-US",
       datePublished: publishedDate,
       dateModified: modifiedDate,
@@ -257,8 +280,8 @@ const jsonLd = isRecipe
       headline: article.data.title,
       name: article.data.title,
       description: article.data.excerpt,
-      image: [imageUrl],
-      thumbnailUrl: imageUrl,
+      image: structuredImageUrls.length ? structuredImageUrls : undefined,
+      thumbnailUrl: hasArticleImage ? imageUrl : undefined,
       inLanguage: "en-US",
       keywords: article.data.tags?.join(", "),
       datePublished: publishedDate,
@@ -280,7 +303,9 @@ const webPageSchema = {
   datePublished: publishedDate,
   dateModified: modifiedDate,
   breadcrumb: { "@id": breadcrumbId },
-  primaryImageOfPage: { "@type": "ImageObject", url: imageUrl },
+  primaryImageOfPage: structuredImageUrls.length
+    ? { "@type": "ImageObject", url: structuredImageUrls[0] }
+    : undefined,
   mainEntity: { "@id": articleEntityId },
   /** Resolves because BaseLayout emits the #website node on every page. */
   isPartOf: { "@id": `${siteUrl}/#website` },
@@ -300,6 +325,8 @@ if (dataset) {
     ...(dataset.alternateName ? { alternateName: dataset.alternateName } : {}),
     description: dataset.description,
     url: articleUrl,
+    identifier: `${articleUrl}#dataset`,
+    version: DATA_VERSION,
     isAccessibleForFree: true,
     creator: publisherSchema,
     publisher: publisherSchema,
@@ -315,7 +342,8 @@ if (dataset) {
       url: `${siteUrl}/data/`,
       publisher: { "@id": `${siteUrl}/#organization` },
     },
-    license: `${siteUrl}/methodology/#data-license`,
+    license: DATA_LICENSE_URL,
+    usageInfo: DATA_TERMS_URL,
     datePublished: publishedDate,
     dateModified: modifiedDate,
     keywords: article.data.tags?.join(", "),
@@ -325,6 +353,7 @@ if (dataset) {
     measurementTechnique: `${siteUrl}/methodology/`,
     distribution: {
       "@type": "DataDownload",
+      name: dataset.csv.split("/").pop(),
       encodingFormat: "text/csv",
       contentUrl: `${siteUrl}${dataset.csv}`,
     },
@@ -385,7 +414,18 @@ const embedCopyScript = `(function(){
   var btn = document.getElementById("embed-copy-btn");
   var box = document.getElementById("embed-snippet");
   var block = document.getElementById("embed-block");
+  var status = document.getElementById("embed-copy-status");
+  var datasetId = ${JSON.stringify(article.id)};
   if (!btn || !box || !block) return;
+
+  function trackCopy() {
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", "chart_embed_code_copied", {
+      dataset_id: datasetId,
+      interaction_type: "copy_code",
+      source_page: location.pathname
+    });
+  }
 
   // The chart is rendered from markdown, so the block cannot be authored next
   // to it server-side. Move it there on load; without JS it stays at the end
@@ -403,12 +443,22 @@ const embedCopyScript = `(function(){
     var label = btn.textContent;
     var done = function () {
       btn.textContent = "Copied";
+      if (status) status.textContent = "Embed code copied.";
+      trackCopy();
       setTimeout(function () { btn.textContent = label; }, 2000);
     };
     var fallback = function () {
       box.focus();
       box.select();
-      try { document.execCommand("copy"); done(); } catch (e) {}
+      try {
+        if (document.execCommand("copy")) {
+          done();
+        } else if (status) {
+          status.textContent = "Copy failed. Select the code and copy it manually.";
+        }
+      } catch (e) {
+        if (status) status.textContent = "Copy failed. Select the code and copy it manually.";
+      }
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(box.value).then(done, fallback);
@@ -446,7 +496,7 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
 <BaseLayout
   title={article.data.title}
   description={article.data.excerpt}
-  image={article.data.image}
+  image={hasArticleImage ? article.data.image : "/logo.png"}
   canonicalURL={articleUrl}
   jsonLd={publishedSchemas}
   robots={robotsMeta}
@@ -456,6 +506,7 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
   <main
     class="max-w-3xl mx-auto px-4 py-10 flex flex-col"
     data-base-slug={article.id}
+    data-article-title={article.data.title}
     data-release-root={pendingRelease ? "true" : "false"}
     data-release-at={pendingRelease ? releaseIso : undefined}
   >
@@ -503,7 +554,7 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
     <div id="release-content" style={pendingRelease ? "display: none;" : undefined}>
 
     <!-- Featured Image — top of article -->
-    {(() => {
+    {hasArticleImage && (() => {
       const featuredPageUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
       const featuredMediaUrl = new URL(article.data.image, Astro.site || Astro.url.origin).href;
       const featuredDesc = `${article.data.title} - ${article.data.excerpt} | Daily Life Hacks`;
@@ -701,6 +752,8 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
       )
     }
 
+    <ArticleTableOfContents items={tableOfContents} />
+
     <!-- Recipe Card -->
     {
       false && isRecipe && (
@@ -781,7 +834,14 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
             >
               Copy citation
             </button>
-            <a href={dataset.csv} download class="text-xs underline" style="color: var(--muted-color);">
+            <a
+              href={dataset.csv}
+              download
+              data-dataset-download
+              data-dataset-id={article.id}
+              class="text-xs underline"
+              style="color: var(--muted-color);"
+            >
               Download the CSV
             </a>
             <a href="/data/" class="text-xs underline" style="color: var(--muted-color);">
@@ -831,6 +891,7 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
               >
                 Copy embed code
               </button>
+              <span id="embed-copy-status" class="sr-only" role="status" aria-live="polite"></span>
               <a
                 href={`/embed/${article.id}/`}
                 class="text-sm underline"
@@ -1209,6 +1270,7 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
       if (!content || !main) return;
 
       const slug = main.getAttribute("data-base-slug");
+      const articleTitle = main.getAttribute("data-article-title");
       if (!slug) return;
 
       const paragraphs = Array.from(content.querySelectorAll("p, ul, ol, blockquote, h2, h3"));
@@ -1221,7 +1283,9 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
       wrapper.style.cssText = "margin:2rem 0;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08)";
 
       const img = document.createElement("img");
-      img.alt = "Ingredients";
+      img.alt = articleTitle
+        ? `${articleTitle} ingredients`
+        : "Recipe ingredients";
       img.loading = "lazy";
       img.style.cssText = "width:100%;display:block;max-height:520px;object-fit:cover";
       img.onerror = () => { wrapper.remove(); };

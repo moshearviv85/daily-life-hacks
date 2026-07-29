@@ -29,13 +29,10 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          # IndexNow compares the complete push range after a verified main deploy.
-          fetch-depth: 0
+        uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "20"
           cache: npm
@@ -69,10 +66,11 @@ jobs:
           python -c "import json; routes=json.load(open('dist/_routes.json')); assert '/deploy-proof*' in routes['exclude'], routes"
 
       - name: Publish to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 91c501fca325c556efd161e4f904d443
+          wranglerVersion: "3.114.17"
           command: pages deploy dist --project-name=daily-life-hacks --branch=${{ github.ref_name == 'main' && steps.pages_config.outputs.production_branch || github.ref_name }}
 
       - name: Verify production custom domain
@@ -89,23 +87,3 @@ jobs:
           done
           echo "Production custom domain did not reach commit $GITHUB_SHA"
           exit 1
-
-      - name: Notify IndexNow about changed canonical pages
-        if: github.ref_name == 'main' && github.event_name == 'push'
-        continue-on-error: true
-        run: |
-          python scripts/notify-indexnow.py \
-            --base "${{ github.event.before }}" \
-            --head "$GITHUB_SHA" \
-            --sitemap-dir dist \
-            --log-file indexnow-deploy-report.json
-
-      - name: Upload IndexNow deploy report
-        if: always() && github.ref_name == 'main' && github.event_name == 'push'
-        continue-on-error: true
-        uses: actions/upload-artifact@v4
-        with:
-          name: indexnow-deploy-${{ github.sha }}
-          path: indexnow-deploy-report.json
-          if-no-files-found: warn
-          retention-days: 30

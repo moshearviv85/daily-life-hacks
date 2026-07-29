@@ -1,0 +1,408 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import dataIndex from "../../../public/data/api-index-v1.json";
+import { DATA_RELEASE_DATE, DATA_VERSION } from "../../content/datasets";
+
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}/statistics/`;
+const title = "Food Cost Statistics: 2026 Grocery Value Data";
+const description =
+  "See 2026 food cost statistics from 474 published rows, including protein per dollar, fiber per dollar, daily menu costs, and raw CSV sources.";
+
+const rows: any[] = dataIndex.rows;
+
+const ranked = (dataset: string, metric: string, count = 10) =>
+  rows
+    .filter((row) => row.dataset === dataset && typeof row.metrics[metric] === "number")
+    .sort((a, b) => Number(b.metrics[metric]) - Number(a.metrics[metric]))
+    .slice(0, count);
+
+const summarizeDays = (dataset: string, nutrientField: string) =>
+  Object.values(
+    rows
+      .filter((row) => row.dataset === dataset)
+      .reduce(
+        (
+          totals: Record<string, { day: string; cost: number; nutrient: number }>,
+          row,
+        ) => {
+          const day = String(row.fields.day);
+          totals[day] ??= { day, cost: 0, nutrient: 0 };
+          totals[day].cost += Number(row.fields.cost_usd);
+          totals[day].nutrient += Number(row.fields[nutrientField]);
+          return totals;
+        },
+        {},
+      ),
+  ).sort((a, b) => a.cost - b.cost);
+
+const fiberTop = ranked("fiber-per-dollar-2026", "fiber_g_per_dollar");
+const proteinTop = ranked("protein-per-dollar-2026", "protein_g_per_dollar");
+const qualityTop = ranked(
+  "protein-quality-per-dollar-2026",
+  "quality_adjusted_protein_g_per_dollar",
+  5,
+);
+const fastFoodTop = ranked("fastfood-protein-per-dollar-2026", "protein_g_per_dollar", 5);
+const fiberDays = summarizeDays("fiber-day-cost-2026", "fiber_g");
+const proteinDays = summarizeDays("protein-day-cost-2026", "protein_g");
+const topFiberValue = Number(fiberTop[0].metrics.fiber_g_per_dollar);
+const topProteinValue = Number(proteinTop[0].metrics.protein_g_per_dollar);
+const topQualityValue = Number(qualityTop[0].metrics.quality_adjusted_protein_g_per_dollar);
+const topFastFoodValue = Number(fastFoodTop[0].metrics.protein_g_per_dollar);
+
+const organization = {
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  name: "Daily Life Hacks",
+  url: `${siteUrl}/`,
+};
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    name: title,
+    url: pageUrl,
+    description,
+    inLanguage: "en-US",
+    dateModified: DATA_RELEASE_DATE,
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    publisher: organization,
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Daily Life Hacks 2026 food cost statistics",
+      numberOfItems: 4,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Fiber per Dollar Index",
+          url: `${siteUrl}/fiber-per-dollar-cheapest-high-fiber-foods/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Protein per Dollar Index",
+          url: `${siteUrl}/protein-per-dollar-cheapest-protein-sources/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Cost of 30 Grams of Fiber",
+          url: `${siteUrl}/what-30-grams-of-fiber-costs-per-day/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Cost of 50 Grams of Protein",
+          url: `${siteUrl}/what-50-grams-of-protein-costs-per-day/`,
+        },
+      ],
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "Statistics", item: pageUrl },
+    ],
+  },
+];
+
+const linkClass = "font-bold underline decoration-[#F29B30] underline-offset-4";
+const compactDay = (day: string) => day.replace(/^Day \d+:\s*/, "");
+---
+
+<BaseLayout title={title} description={description} canonicalURL={pageUrl} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+    <nav class="text-sm mb-6" style="color:var(--muted-color);" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#F29B30] transition-colors">Home</a>
+      <span class="mx-1">/</span>
+      <span style="color:var(--text-color);">Statistics</span>
+    </nav>
+
+    <section class="max-w-4xl">
+      <p class="text-sm font-bold uppercase tracking-[0.16em] mb-3" style="color:#F29B30;">
+        2026 food cost statistics
+      </p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-5" style="color:var(--heading-color);">
+        What a Dollar Actually Buys at the Grocery Store
+      </h1>
+      <p class="text-xl leading-relaxed" style="color:var(--text-color);">
+        In our July 2026 price snapshot, $1 bought {topProteinValue.toFixed(1)} grams of
+        protein from {proteinTop[0].food.toLowerCase()} or {topFiberValue.toFixed(1)} grams
+        of fiber from {fiberTop[0].food.toLowerCase()}. The spreadsheet has opinions.
+        Apparently one of them is that the dry-goods aisle deserves better lighting.
+      </p>
+      <p class="mt-4 leading-relaxed" style="color:var(--muted-color);">
+        This page summarizes {dataIndex.row_count} published rows across {dataIndex.dataset_count}
+        datasets. It's a dated US price study, not a live quote for your ZIP code. Every table
+        links to the study and the raw CSV, because a statistic without a receipt is just a number
+        wearing a tie.
+      </p>
+      <p class="mt-4 leading-relaxed" style="color:var(--text-color);">
+        Looking for one food instead of the highlights? Search the
+        <a href="/food-value-database/" class={linkClass}>79-food value database</a> and compare
+        price, protein, fiber, and grams per dollar in the same table.
+      </p>
+    </section>
+
+    <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 my-10" aria-label="Headline statistics">
+      <article class="rounded-2xl p-5" style="background:var(--card-bg);border:1px solid var(--border-color);">
+        <p class="text-4xl font-extrabold" style="color:#F29B30;">{topProteinValue.toFixed(1)}g</p>
+        <h2 class="font-bold mt-2" style="color:var(--heading-color);">Most protein per $1</h2>
+        <p class="text-sm mt-1" style="color:var(--muted-color);">{proteinTop[0].food}, as purchased</p>
+      </article>
+      <article class="rounded-2xl p-5" style="background:var(--card-bg);border:1px solid var(--border-color);">
+        <p class="text-4xl font-extrabold" style="color:#F29B30;">{topFiberValue.toFixed(1)}g</p>
+        <h2 class="font-bold mt-2" style="color:var(--heading-color);">Most fiber per $1</h2>
+        <p class="text-sm mt-1" style="color:var(--muted-color);">{fiberTop[0].food}, as purchased</p>
+      </article>
+      <article class="rounded-2xl p-5" style="background:var(--card-bg);border:1px solid var(--border-color);">
+        <p class="text-4xl font-extrabold" style="color:#F29B30;">${fiberDays[0].cost.toFixed(2)}</p>
+        <h2 class="font-bold mt-2" style="color:var(--heading-color);">Cheapest 30g fiber day</h2>
+        <p class="text-sm mt-1" style="color:var(--muted-color);">Five audited food portions</p>
+      </article>
+      <article class="rounded-2xl p-5" style="background:var(--card-bg);border:1px solid var(--border-color);">
+        <p class="text-4xl font-extrabold" style="color:#F29B30;">${proteinDays[0].cost.toFixed(2)}</p>
+        <h2 class="font-bold mt-2" style="color:var(--heading-color);">Cheapest 50g protein day</h2>
+        <p class="text-sm mt-1" style="color:var(--muted-color);">Four audited food portions</p>
+      </article>
+    </section>
+
+    <p class="text-sm mb-10" style="color:var(--muted-color);">
+      Source: Daily Life Hacks Food Value Data, version {DATA_VERSION}. Nutrition values use USDA
+      FoodData Central. Prices use BLS Average Price data where available and dated national retail
+      listings otherwise. Read the <a href="/methodology/" class={linkClass}>methodology</a>.
+    </p>
+
+    <section class="grid lg:grid-cols-2 gap-7 mb-14">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold mb-2" style="color:var(--heading-color);">
+          Which foods provide the most fiber per dollar?
+        </h2>
+        <p class="mb-5" style="color:var(--muted-color);">
+          {fiberTop[0].food} leads this 53-food snapshot at {topFiberValue.toFixed(1)} grams per dollar. Dry peas and
+          beans take most of the next seats. Produce is invited, but it isn't controlling the aux
+          cord.
+        </p>
+        <div class="relative overflow-x-auto rounded-2xl border" style="border-color:var(--border-color);">
+          <table class="w-full text-sm">
+            <thead style="background:var(--input-bg);">
+              <tr>
+                <th class="text-left p-3" scope="col">Rank</th>
+                <th class="text-left p-3" scope="col">Food</th>
+                <th class="text-right p-3" scope="col">Fiber per $1</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fiberTop.map((row, index) => (
+                <tr class="border-t" style="border-color:var(--border-color);">
+                  <td class="p-3">{index + 1}</td>
+                  <td class="p-3 font-semibold">{row.food}</td>
+                  <td class="p-3 text-right tabular-nums">{Number(row.metrics.fiber_g_per_dollar).toFixed(1)}g</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-sm">
+          <a href="/fiber-per-dollar-cheapest-high-fiber-foods/" class={linkClass}>Read the 53-food study</a>
+          <span aria-hidden="true"> · </span>
+          <a
+            href="/data/fiber-per-dollar-2026.csv"
+            download
+            data-dataset-download
+            data-dataset-id="fiber-per-dollar-2026"
+            class={linkClass}
+          >Download the CSV</a>
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold mb-2" style="color:var(--heading-color);">
+          Which foods provide the most protein per dollar?
+        </h2>
+        <p class="mb-5" style="color:var(--muted-color);">
+          {proteinTop[0].food} leads at {topProteinValue.toFixed(1)} grams per dollar. Whole wheat flour is second, which is
+          probably not what the guy selling a tiny protein cookie expected to hear today.
+        </p>
+        <div class="relative overflow-x-auto rounded-2xl border" style="border-color:var(--border-color);">
+          <table class="w-full text-sm">
+            <thead style="background:var(--input-bg);">
+              <tr>
+                <th class="text-left p-3" scope="col">Rank</th>
+                <th class="text-left p-3" scope="col">Food</th>
+                <th class="text-right p-3" scope="col">Protein per $1</th>
+              </tr>
+            </thead>
+            <tbody>
+              {proteinTop.map((row, index) => (
+                <tr class="border-t" style="border-color:var(--border-color);">
+                  <td class="p-3">{index + 1}</td>
+                  <td class="p-3 font-semibold">{row.food}</td>
+                  <td class="p-3 text-right tabular-nums">{Number(row.metrics.protein_g_per_dollar).toFixed(1)}g</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-sm">
+          <a href="/protein-per-dollar-cheapest-protein-sources/" class={linkClass}>Read the 49-food study</a>
+          <span aria-hidden="true"> · </span>
+          <a
+            href="/data/protein-per-dollar-2026.csv"
+            download
+            data-dataset-download
+            data-dataset-id="protein-per-dollar-2026"
+            class={linkClass}
+          >Download the CSV</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-14">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">
+        How much does a full day of fiber or protein cost?
+      </h2>
+      <p class="max-w-4xl mb-6" style="color:var(--muted-color);">
+        The ingredient choices matter more than the target. Our five fiber menus ranged from
+        ${fiberDays[0].cost.toFixed(2)} to ${fiberDays.at(-1)?.cost.toFixed(2)}. The five protein
+        menus ranged from ${proteinDays[0].cost.toFixed(2)} to ${proteinDays.at(-1)?.cost.toFixed(2)}.
+        Same rough targets. Wildly different receipts.
+      </p>
+      <div class="grid lg:grid-cols-2 gap-7">
+        <div class="relative overflow-x-auto rounded-2xl border" style="border-color:var(--border-color);">
+          <table class="w-full text-sm">
+            <caption class="text-left p-4 font-bold text-lg" style="color:var(--heading-color);">
+              Five days reaching roughly 30g of fiber
+            </caption>
+            <thead style="background:var(--input-bg);">
+              <tr>
+                <th class="text-left p-3" scope="col">Day style</th>
+                <th class="text-right p-3" scope="col">Fiber</th>
+                <th class="text-right p-3" scope="col">Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fiberDays.map((day) => (
+                <tr class="border-t" style="border-color:var(--border-color);">
+                  <td class="p-3 font-semibold">{compactDay(day.day)}</td>
+                  <td class="p-3 text-right tabular-nums">{day.nutrient.toFixed(1)}g</td>
+                  <td class="p-3 text-right tabular-nums">${day.cost.toFixed(2)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="relative overflow-x-auto rounded-2xl border" style="border-color:var(--border-color);">
+          <table class="w-full text-sm">
+            <caption class="text-left p-4 font-bold text-lg" style="color:var(--heading-color);">
+              Five days reaching roughly 50g of protein
+            </caption>
+            <thead style="background:var(--input-bg);">
+              <tr>
+                <th class="text-left p-3" scope="col">Day style</th>
+                <th class="text-right p-3" scope="col">Protein</th>
+                <th class="text-right p-3" scope="col">Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              {proteinDays.map((day) => (
+                <tr class="border-t" style="border-color:var(--border-color);">
+                  <td class="p-3 font-semibold">{compactDay(day.day)}</td>
+                  <td class="p-3 text-right tabular-nums">{day.nutrient.toFixed(1)}g</td>
+                  <td class="p-3 text-right tabular-nums">${day.cost.toFixed(2)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="mt-4 text-sm">
+        <a href="/what-30-grams-of-fiber-costs-per-day/" class={linkClass}>Read the fiber-day study</a>
+        <span aria-hidden="true"> · </span>
+        <a href="/what-50-grams-of-protein-costs-per-day/" class={linkClass}>Read the protein-day study</a>
+      </p>
+    </section>
+
+    <section class="grid lg:grid-cols-2 gap-7 mb-14">
+      <div class="rounded-2xl p-6" style="background:var(--card-bg);border:1px solid var(--border-color);">
+        <h2 class="text-2xl font-bold mb-2" style="color:var(--heading-color);">
+          What changes after protein quality is included?
+        </h2>
+        <p class="mb-5" style="color:var(--muted-color);">
+          The quality-adjusted ranking multiplies the price result by a published DIAAS score.
+          {qualityTop[0].food} still leads this 25-food cut at {topQualityValue.toFixed(1)} adjusted grams per dollar, but the gap
+          tightens considerably.
+        </p>
+        <ol class="space-y-3">
+          {qualityTop.map((row, index) => (
+            <li class="flex justify-between gap-4 border-t pt-3 first:border-t-0 first:pt-0" style="border-color:var(--border-color);">
+              <span><strong>{index + 1}. {row.food}</strong></span>
+              <span class="tabular-nums whitespace-nowrap">{Number(row.metrics.quality_adjusted_protein_g_per_dollar).toFixed(1)}g/$1</span>
+            </li>
+          ))}
+        </ol>
+        <p class="mt-5 text-sm">
+          <a href="/protein-per-dollar-adjusted-for-quality/" class={linkClass}>Read the DIAAS-adjusted study</a>
+        </p>
+      </div>
+
+      <div class="rounded-2xl p-6" style="background:var(--card-bg);border:1px solid var(--border-color);">
+        <h2 class="text-2xl font-bold mb-2" style="color:var(--heading-color);">
+          Which fast-food orders buy the most protein per dollar?
+        </h2>
+        <p class="mb-5" style="color:var(--muted-color);">
+          {fastFoodTop[0].category}'s {fastFoodTop[0].food} led our dated 30-item menu snapshot at {topFastFoodValue.toFixed(1)} grams per dollar.
+          That's useful when the drive-thru is already happening. It doesn't make a drive-thru
+          cheaper than a bag of beans.
+        </p>
+        <ol class="space-y-3">
+          {fastFoodTop.map((row, index) => (
+            <li class="flex justify-between gap-4 border-t pt-3 first:border-t-0 first:pt-0" style="border-color:var(--border-color);">
+              <span><strong>{index + 1}. {row.food}</strong><small class="block" style="color:var(--muted-color);">{row.category}</small></span>
+              <span class="tabular-nums whitespace-nowrap">{Number(row.metrics.protein_g_per_dollar).toFixed(1)}g/$1</span>
+            </li>
+          ))}
+        </ol>
+        <p class="mt-5 text-sm">
+          <a href="/fast-food-protein-per-dollar-ranked/" class={linkClass}>Read the 30-item fast-food study</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="rounded-2xl p-6 md:p-8" style="background:rgba(242,155,48,0.10);border:1px solid rgba(242,155,48,0.35);">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color:var(--heading-color);">
+        Can I download and cite these food cost statistics?
+      </h2>
+      <p class="max-w-4xl leading-relaxed" style="color:var(--text-color);">
+        Yes. The <a href="/data/" class={linkClass}>public data catalog</a> has all
+        {dataIndex.dataset_count} CSV files, row counts, source studies, citation wording, the
+        Frictionless data package, and the API documentation. Read the
+        <a href="/data-reuse/" class={linkClass}>license scope and attribution terms</a> before republishing.
+        The current release is {DATA_VERSION}, observed in July 2026. Prices move. Spreadsheets,
+        tragically, don't get to tell grocery stores to hold still.
+      </p>
+    </section>
+
+    <section class="mt-10 max-w-4xl text-sm leading-relaxed" style="color:var(--muted-color);">
+      <h2 class="text-xl font-bold mb-2" style="color:var(--heading-color);">Limits of this snapshot</h2>
+      <p>
+        These are national comparison figures built from BLS prices where available and dated
+        national retail listings where BLS doesn't track the item. They aren't a census of every
+        store, brand, sale, or ZIP code. Package sizes change, local prices wander off, and a sale
+        can flip two close rows. Use the figures for comparison, cite the release date, and check
+        the raw file before publishing a number.
+      </p>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

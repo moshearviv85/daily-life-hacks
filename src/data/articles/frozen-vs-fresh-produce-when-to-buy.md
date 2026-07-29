@@ -5,6 +5,8 @@ category: "nutrition"
 tags:
   - grocery shopping
   - nutrition basics
+  - frozen vegetables
+  - food waste
 image: "/images/frozen-vs-fresh-produce-when-to-buy-main.jpg"
 imageAlt: "Split image of fresh vegetables on one side and frozen vegetables in bags on the other"
 date: 2026-04-25
@@ -64,6 +66,8 @@ For anything that's going into a hot pan, a pot, a casserole, or a blender, froz
 * **Cauliflower rice.** If you're using it, frozen is already riced and ready to go for [high fiber cauliflower rice recipes](/high-fiber-cauliflower-rice-recipes/).
 
 The pattern here is simple: if you're cooking it, frozen is fine. If you're eating it raw, go fresh.
+
+The bag still gets the final vote. Our guide to [whether frozen vegetables need cooking](/do-you-have-to-cook-frozen-vegetables/) separates ready-to-eat products from bags that expect a real trip through the stove, because "frozen" isn't a food-safety instruction.
 
 ## Which one do you actually throw away more of?
 

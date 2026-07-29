@@ -17,7 +17,7 @@ tags:
 image: /images/crispy-roasted-chickpeas-high-fiber-snack-main.jpg
 imageAlt: Bowl of golden roasted chickpeas with spices
 date: 2026-03-30
-dateModified: 2026-07-20
+dateModified: 2026-07-28
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -64,6 +64,8 @@ faq:
     texture depends on how dry they are when they go in.
 ---
 If you want a high fiber snack that feels like junk food cosplay, roasted chickpeas are the move. They crunch, they carry spice, and they do not require a culinary degree.
+
+If chickpeas aren't tonight's answer, the [crunchy chip alternatives guide](/healthy-alternatives-potato-chips-snacking/) has the rest of the salty lineup. Nobody needs to pretend a cucumber slice is a potato chip.
 
 The whole operation lives or dies on dryness. Wet chickpeas steam in the oven and come out sad. Dry chickpeas roast.
 

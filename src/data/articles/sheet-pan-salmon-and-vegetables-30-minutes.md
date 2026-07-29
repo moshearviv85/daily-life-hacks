@@ -15,7 +15,7 @@ tags:
 image: /images/sheet-pan-salmon-and-vegetables-30-minutes-main.jpg
 imageAlt: Sheet pan with salmon fillets and roasted vegetables
 date: 2026-03-15
-dateModified: 2026-07-20
+dateModified: 2026-07-28
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -72,6 +72,8 @@ This sheet pan salmon and vegetables recipe is built for those nights when stand
 ## Why This Combo Actually Works
 
 Salmon cooks notoriously fast and frankly doesn't need much help besides some olive oil, salt, and a little dried herb to taste great. On the other side of the pan, broccoli, zucchini, and cherry tomatoes roast beautifully at the exact same high heat without needing you to babysit them. 
+
+Salmon also appears in our [plain-English selenium foods guide](/selenium-containing-foods-easy-ways/) alongside eggs, chicken, grains, and beans. Dinner doesn't need a mineral-themed costume to count.
 
 Starting the vegetables 10 minutes before the fish gives the veggies a crucial head start. This ensures the broccoli gets those nice crispy edges right around the same time the salmon finishes cooking. If everything went in at once, you'd either have raw vegetables or dry, overcooked fish. The same staggered timing runs [one-pan lemon herb chicken and veggies](/quick-dinner-recipes/) when you want poultry instead of fish. 
 ## Picking the Right Salmon and Veggies

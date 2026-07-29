@@ -147,6 +147,83 @@ class NotifyIndexNowTests(unittest.TestCase):
                 ["https://www.daily-life-hacks.com/demo/"],
             )
 
+    def test_file_style_endpoints_keep_their_extension(self):
+        self.assertEqual(
+            notify_indexnow.canonicalize_url("/rss.xml"),
+            "https://www.daily-life-hacks.com/rss.xml",
+        )
+        self.assertEqual(
+            notify_indexnow.canonicalize_url("https://www.daily-life-hacks.com/rss.xml"),
+            "https://www.daily-life-hacks.com/rss.xml",
+        )
+        # Article slugs are unaffected and still get the canonical trailing slash.
+        self.assertEqual(
+            notify_indexnow.canonicalize_url("/demo"),
+            "https://www.daily-life-hacks.com/demo/",
+        )
+
+    def test_feed_is_eligible_only_when_the_build_emitted_it(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            (root / "sitemap-0.xml").write_text(
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                "<url><loc>https://www.daily-life-hacks.com/demo/</loc></url>"
+                "</urlset>",
+                encoding="utf-8",
+            )
+
+            self.assertNotIn(
+                "https://www.daily-life-hacks.com/rss.xml",
+                notify_indexnow.load_sitemap_urls(root),
+            )
+
+            (root / "rss.xml").write_text("<rss/>", encoding="utf-8")
+            self.assertIn(
+                "https://www.daily-life-hacks.com/rss.xml",
+                notify_indexnow.load_sitemap_urls(root),
+            )
+
+    def test_rejected_explicit_url_fails_loudly(self):
+        plan = notify_indexnow.build_plan(
+            changed_paths=[],
+            explicit_urls=["https://example.com/nope/", "/missing/"],
+            sitemap_urls={"https://www.daily-life-hacks.com/demo/"},
+        )
+        self.assertEqual(plan["eligible_urls"], [])
+        self.assertEqual(len(plan["rejected_explicit_urls"]), 2)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            (root / "sitemap-0.xml").write_text(
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                "<url><loc>https://www.daily-life-hacks.com/demo/</loc></url>"
+                "</urlset>",
+                encoding="utf-8",
+            )
+            log_path = root / "report.json"
+            status = notify_indexnow.main(
+                [
+                    "--urls",
+                    "/missing/",
+                    "--sitemap-dir",
+                    str(root),
+                    "--log-file",
+                    str(log_path),
+                    "--dry-run",
+                ]
+            )
+
+        self.assertEqual(status, 1)
+
+    def test_changed_source_paths_are_never_treated_as_explicit_rejections(self):
+        plan = notify_indexnow.build_plan(
+            changed_paths=["src/data/articles/future.md"],
+            explicit_urls=[],
+            sitemap_urls={"https://www.daily-life-hacks.com/demo/"},
+        )
+        self.assertEqual(plan["eligible_urls"], [])
+        self.assertEqual(plan["rejected_explicit_urls"], [])
+
     def test_submit_logs_indexnow_http_status(self):
         with patch.object(notify_indexnow, "urlopen", return_value=FakeResponse()) as mocked:
             result = notify_indexnow.submit_indexnow(

@@ -1,0 +1,1689 @@
+{
+  "schema_version": 2,
+  "cohort_id": "missing-heroes-2026-07-28",
+  "source_commit": "efeeefb7efbf45626f55a339230790cb4030a9f9",
+  "asset_spec": {
+    "width": 1200,
+    "height": 675,
+    "format": "jpg",
+    "embedded_text": false,
+    "overlay_copy": null,
+    "shared_direction": "One clear editorial food scene. No charts, dashboards, orange data cards, fake receipts, package labels, or generated words.",
+    "brand_orange_usage": "Accent only, never the background or dominant field."
+  },
+  "evidence": {
+    "checked_at": "2026-07-28",
+    "gsc_file": "daily-life-hacks.com-Performance-on-Search-2026-07-28.zip",
+    "gsc_window": "2026-04-29 through 2026-07-26",
+    "gsc_page_result": "None of the 57 URLs appears in Pages.csv. This is unavailable page-level evidence, not 57 measured zeroes.",
+    "bing_url_file": "daily-life-hacks.com_SiteExplorerUrls_7_26_2026.csv",
+    "bing_page_result": "One URL appears with 0 impressions and 0 clicks; 56 URLs aren't listed and therefore don't have a page-level measurement in this export.",
+    "live_result": "56 article URLs returned 200 and referenced the missing hero seven times; how-to-meal-plan-on-a-budget returned 301 to an older page. All 57 hero URLs returned 404.",
+    "pinterest_file": "Pinterest Analytics overview 20260619-20260719 (1).csv",
+    "pinterest_limit": "The export doesn't contain destination URLs, so it can't provide article-level evidence for this cohort."
+  },
+  "generation_dependency": {
+    "approval_required": true,
+    "approval_scope": "Generate and visually review 56 live-page heroes. Resolve the redirected meal-plan URL before producing its asset.",
+    "cost_usd": null,
+    "cost_note": "No image provider, paid generation call, or public mutation was used in this lane."
+  },
+  "articles": [
+    {
+      "priority": 1,
+      "slug": "tofu-vs-chicken-protein-cost",
+      "title": "Tofu vs Chicken: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/tofu-vs-chicken-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "An unbranded tofu block and chicken breast race down a grocery checkout belt, with chicken crossing slightly ahead.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "An unbranded tofu block and chicken breast race down a grocery checkout belt, with chicken crossing slightly ahead."
+      }
+    },
+    {
+      "priority": 2,
+      "slug": "how-much-protein-in-peanut-butter",
+      "title": "How Much Protein Is in Peanut Butter?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-protein-in-peanut-butter-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Two loaded peanut butter spoons sit in a miniature coin-operated diner booth.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Two loaded peanut butter spoons sit in a miniature coin-operated diner booth."
+      }
+    },
+    {
+      "priority": 3,
+      "slug": "best-high-fiber-foods-ranked-by-fiber-content",
+      "title": "The Best High Fiber Foods, Ranked by Fiber Content",
+      "category": "nutrition",
+      "image_path": "/images/best-high-fiber-foods-ranked-by-fiber-content-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Chia, split peas, and bran flakes share a grocery-shelf awards podium while blueberries arrive with a very small trophy.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Chia, split peas, and bran flakes share a grocery-shelf awards podium while blueberries arrive with a very small trophy."
+      }
+    },
+    {
+      "priority": 4,
+      "slug": "can-you-eat-rice-and-beans-everyday",
+      "title": "Can You Eat Rice and Beans Every Day?",
+      "category": "nutrition",
+      "image_path": "/images/can-you-eat-rice-and-beans-everyday-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A familiar rice-and-beans bowl reports for duty on a seven-day calendar while a few empty ingredient chairs show what one meal can't cover.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A familiar rice-and-beans bowl reports for duty on a seven-day calendar while a few empty ingredient chairs show what one meal can't cover."
+      }
+    },
+    {
+      "priority": 5,
+      "slug": "can-you-refreeze-frozen-vegetables-after-thawing",
+      "title": "Can You Refreeze Frozen Vegetables After Thawing?",
+      "category": "tips",
+      "image_path": "/images/can-you-refreeze-frozen-vegetables-after-thawing-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A bag of vegetables reaches a fork in the road between a refrigerator door and a sunny kitchen counter.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A bag of vegetables reaches a fork in the road between a refrigerator door and a sunny kitchen counter."
+      }
+    },
+    {
+      "priority": 6,
+      "slug": "canned-beans-vs-dried-beans-nutrition",
+      "title": "Canned Beans vs Dried Beans Nutrition",
+      "category": "nutrition",
+      "image_path": "/images/canned-beans-vs-dried-beans-nutrition-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "The same black bean appears twice, once swimming in an open can and once carrying its own dry pantry sack.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "The same black bean appears twice, once swimming in an open can and once carrying its own dry pantry sack."
+      }
+    },
+    {
+      "priority": 7,
+      "slug": "cheap-dinner-ideas-cost-per-serving",
+      "title": "Cheap Dinner Ideas: What Each One Costs",
+      "category": "tips",
+      "image_path": "/images/cheap-dinner-ideas-cost-per-serving-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Ten modest dinner plates line up at a tiny checkout, led by split pea soup carrying the lightest coin purse.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Ten modest dinner plates line up at a tiny checkout, led by split pea soup carrying the lightest coin purse."
+      }
+    },
+    {
+      "priority": 8,
+      "slug": "cheap-dinner-ideas-for-a-family-of-4",
+      "title": "Cheap Dinner Ideas for a Family of 4",
+      "category": "tips",
+      "image_path": "/images/cheap-dinner-ideas-for-a-family-of-4-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "One generous pot of beans and rice serves four mismatched place settings without filling a luxury-size shopping cart.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "One generous pot of beans and rice serves four mismatched place settings without filling a luxury-size shopping cart."
+      }
+    },
+    {
+      "priority": 9,
+      "slug": "cheap-healthy-meals-for-college-students",
+      "title": "Cheap Healthy Meals for College Students",
+      "category": "tips",
+      "image_path": "/images/cheap-healthy-meals-for-college-students-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A dorm microwave and one battered pot run a tiny campus kitchen with oats, peanut butter, beans, and rice waiting their turn.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A dorm microwave and one battered pot run a tiny campus kitchen with oats, peanut butter, beans, and rice waiting their turn."
+      }
+    },
+    {
+      "priority": 10,
+      "slug": "cheap-healthy-meals-for-two",
+      "title": "Cheap Healthy Meals for Two",
+      "category": "tips",
+      "image_path": "/images/cheap-healthy-meals-for-two-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Two dinner plates split oversized grocery packages at a kitchen table, with neat leftovers packed beside them.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Two dinner plates split oversized grocery packages at a kitchen table, with neat leftovers packed beside them."
+      }
+    },
+    {
+      "priority": 11,
+      "slug": "cheap-healthy-meals-with-leftovers",
+      "title": "Cheap Healthy Meals With Leftovers",
+      "category": "tips",
+      "image_path": "/images/cheap-healthy-meals-with-leftovers-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A split pea soup pot sends tomorrow's portions into a tidy row of glass containers like a small lunch assembly line.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A split pea soup pot sends tomorrow's portions into a tidy row of glass containers like a small lunch assembly line."
+      }
+    },
+    {
+      "priority": 12,
+      "slug": "cheap-lunch-ideas-cost-per-box",
+      "title": "Cheap Lunch Ideas and What They Cost",
+      "category": "tips",
+      "image_path": "/images/cheap-lunch-ideas-cost-per-box-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Nine lunch boxes queue at a checkout while a peanut butter sandwich and banana confidently take the shortest receipt lane.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Nine lunch boxes queue at a checkout while a peanut butter sandwich and banana confidently take the shortest receipt lane."
+      }
+    },
+    {
+      "priority": 13,
+      "slug": "chicken-thighs-vs-breast-protein-cost",
+      "title": "Chicken Thighs vs Breast: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/chicken-thighs-vs-breast-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Three plain chicken cuts carry bargain baskets of visibly different sizes, with the bone-in dark meat basket fullest.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Three plain chicken cuts carry bargain baskets of visibly different sizes, with the bone-in dark meat basket fullest."
+      }
+    },
+    {
+      "priority": 14,
+      "slug": "do-you-have-to-cook-canned-beans",
+      "title": "Do You Have to Cook Canned Beans?",
+      "category": "tips",
+      "image_path": "/images/do-you-have-to-cook-canned-beans-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "An open can of rinsed beans sits ready beside an unplugged stove, looking mildly pleased that no pan is required.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "An open can of rinsed beans sits ready beside an unplugged stove, looking mildly pleased that no pan is required."
+      }
+    },
+    {
+      "priority": 15,
+      "slug": "do-you-have-to-cook-frozen-vegetables",
+      "title": "Do You Have to Cook Frozen Vegetables?",
+      "category": "tips",
+      "image_path": "/images/do-you-have-to-cook-frozen-vegetables-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A frosty vegetable bag waits at a tiny finish line just before a steaming pan, showing that blanching wasn't the final lap.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A frosty vegetable bag waits at a tiny finish line just before a steaming pan, showing that blanching wasn't the final lap."
+      }
+    },
+    {
+      "priority": 16,
+      "slug": "does-leftover-pizza-need-to-be-refrigerated",
+      "title": "Does Leftover Pizza Need to Be Refrigerated?",
+      "category": "tips",
+      "image_path": "/images/does-leftover-pizza-need-to-be-refrigerated-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A pizza slice chooses between an open refrigerator and a dark overnight countertop under a kitchen clock.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A pizza slice chooses between an open refrigerator and a dark overnight countertop under a kitchen clock."
+      }
+    },
+    {
+      "priority": 17,
+      "slug": "easy-cheap-healthy-meals",
+      "title": "Easy Cheap Healthy Meals: The Plate Rule",
+      "category": "tips",
+      "image_path": "/images/easy-cheap-healthy-meals-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Three ingredient groups click together like sturdy building blocks: a pantry anchor, a grain base, and a vegetable.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Three ingredient groups click together like sturdy building blocks: a pantry anchor, a grain base, and a vegetable."
+      }
+    },
+    {
+      "priority": 18,
+      "slug": "eggs-vs-greek-yogurt-protein-cost",
+      "title": "Eggs vs Greek Yogurt: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/eggs-vs-greek-yogurt-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Two eggs and a plain bowl of Greek yogurt sit on an almost level kitchen balance with a few coins underneath.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Two eggs and a plain bowl of Greek yogurt sit on an almost level kitchen balance with a few coins underneath."
+      }
+    },
+    {
+      "priority": 19,
+      "slug": "food-storage-temperature-rules",
+      "title": "Food Storage Temperature: 40F, 0F, and the 2-Hour Rule",
+      "category": "tips",
+      "image_path": "/images/food-storage-temperature-rules-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A refrigerator, freezer, and kitchen timer stand like three calm crossing guards for leftovers.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A refrigerator, freezer, and kitchen timer stand like three calm crossing guards for leftovers."
+      }
+    },
+    {
+      "priority": 20,
+      "slug": "foods-highest-in-protein-per-100-grams",
+      "title": "Foods Highest in Protein per 100 Grams, Ranked",
+      "category": "nutrition",
+      "image_path": "/images/foods-highest-in-protein-per-100-grams-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Lentils, chicken breast, and eggs step onto a grocery scale podium, with the dry lentils narrowly taking the top platform.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Lentils, chicken breast, and eggs step onto a grocery scale podium, with the dry lentils narrowly taking the top platform."
+      }
+    },
+    {
+      "priority": 21,
+      "slug": "frozen-vs-fresh-vegetables-fiber-cost",
+      "title": "Frozen vs Fresh Vegetables: Fiber Per Dollar Compared",
+      "category": "nutrition",
+      "image_path": "/images/frozen-vs-fresh-vegetables-fiber-cost-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Frozen peas arm-wrestle fresh broccoli across a kitchen table while a bag of carrots referees.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Frozen peas arm-wrestle fresh broccoli across a kitchen table while a bag of carrots referees."
+      }
+    },
+    {
+      "priority": 22,
+      "slug": "grocery-budget-for-one-person-per-month",
+      "title": "Grocery Budget for One Person per Month",
+      "category": "tips",
+      "image_path": "/images/grocery-budget-for-one-person-per-month-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A tiny one-person cart tries to carry four weekly grocery bags arranged beneath a plain monthly wall calendar.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A tiny one-person cart tries to carry four weekly grocery bags arranged beneath a plain monthly wall calendar."
+      }
+    },
+    {
+      "priority": 23,
+      "slug": "ground-beef-vs-beans-protein-cost",
+      "title": "Ground Beef vs Beans: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/ground-beef-vs-beans-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Pinto beans pull ground beef and a trail of coins in a playful grocery-cart tug-of-war.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Pinto beans pull ground beef and a trail of coins in a playful grocery-cart tug-of-war."
+      }
+    },
+    {
+      "priority": 24,
+      "slug": "high-protein-meals-on-a-budget",
+      "title": "High Protein Meals on a Budget",
+      "category": "nutrition",
+      "image_path": "/images/high-protein-meals-on-a-budget-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A rice-and-beans bowl and a beef-and-rice bowl reach the same finish flag, but one drags a much heavier coin bag.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A rice-and-beans bowl and a beef-and-rice bowl reach the same finish flag, but one drags a much heavier coin bag."
+      }
+    },
+    {
+      "priority": 25,
+      "slug": "how-long-can-rice-and-beans-sit-out",
+      "title": "How Long Can Rice and Beans Sit Out?",
+      "category": "tips",
+      "image_path": "/images/how-long-can-rice-and-beans-sit-out-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A pot of rice and beans races a two-hour kitchen timer toward an open refrigerator door.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A pot of rice and beans races a two-hour kitchen timer toward an open refrigerator door."
+      }
+    },
+    {
+      "priority": 26,
+      "slug": "how-long-do-canned-beans-last-after-the-best-by-date",
+      "title": "How Long Do Canned Beans Last After the Best By Date?",
+      "category": "tips",
+      "image_path": "/images/how-long-do-canned-beans-last-after-the-best-by-date-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A clean undented bean can waits patiently on a pantry shelf while a dented, swollen can is ushered toward the exit.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A clean undented bean can waits patiently on a pantry shelf while a dented, swollen can is ushered toward the exit."
+      }
+    },
+    {
+      "priority": 27,
+      "slug": "how-long-do-dried-beans-last",
+      "title": "How Long Do Dried Beans Last?",
+      "category": "tips",
+      "image_path": "/images/how-long-do-dried-beans-last-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A sealed jar of dried beans sits comfortably through changing calendar pages while moisture waits outside the pantry.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A sealed jar of dried beans sits comfortably through changing calendar pages while moisture waits outside the pantry."
+      }
+    },
+    {
+      "priority": 28,
+      "slug": "how-long-do-frozen-vegetables-last-in-the-freezer",
+      "title": "How Long Do Frozen Vegetables Last in the Freezer?",
+      "category": "tips",
+      "image_path": "/images/how-long-do-frozen-vegetables-last-in-the-freezer-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A vegetable bag stays safe inside a frosty freezer while its bright colors slowly fade across twelve calendar tabs.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A vegetable bag stays safe inside a frosty freezer while its bright colors slowly fade across twelve calendar tabs."
+      }
+    },
+    {
+      "priority": 29,
+      "slug": "how-long-do-leftovers-last-in-the-fridge",
+      "title": "How Long Do Leftovers Last in the Fridge?",
+      "category": "tips",
+      "image_path": "/images/how-long-do-leftovers-last-in-the-fridge-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Four leftover containers occupy four dated refrigerator shelves before a fifth shelf turns into a polite exit ramp.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Four leftover containers occupy four dated refrigerator shelves before a fifth shelf turns into a polite exit ramp."
+      }
+    },
+    {
+      "priority": 30,
+      "slug": "how-long-do-opened-canned-beans-last",
+      "title": "How Long Do Opened Canned Beans Last?",
+      "category": "tips",
+      "image_path": "/images/how-long-do-opened-canned-beans-last-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Half a can of beans transfers into a covered glass container and settles into a four-day refrigerator calendar.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Half a can of beans transfers into a covered glass container and settles into a four-day refrigerator calendar."
+      }
+    },
+    {
+      "priority": 31,
+      "slug": "how-much-dried-beans-per-person",
+      "title": "How Much Dried Beans per Person?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-dried-beans-per-person-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A measured scoop of dry beans divides a four-pound pantry sack into twenty tidy place settings.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A measured scoop of dry beans divides a four-pound pantry sack into twenty tidy place settings."
+      }
+    },
+    {
+      "priority": 32,
+      "slug": "how-much-food-storage-do-you-need-per-person",
+      "title": "How Much Food Storage Do You Need Per Person?",
+      "category": "tips",
+      "image_path": "/images/how-much-food-storage-do-you-need-per-person-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "One person's pantry kit stacks two weeks of plain staples beside fourteen one-gallon water jugs.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "One person's pantry kit stacks two weeks of plain staples beside fourteen one-gallon water jugs."
+      }
+    },
+    {
+      "priority": 33,
+      "slug": "how-much-is-a-can-of-beans",
+      "title": "How Much Is a Can of Beans? 2026 Prices",
+      "category": "nutrition",
+      "image_path": "/images/how-much-is-a-can-of-beans-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Three unbranded bean cans sit on a grocery conveyor with a small group of real coins beside each one.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Three unbranded bean cans sit on a grocery conveyor with a small group of real coins beside each one."
+      }
+    },
+    {
+      "priority": 34,
+      "slug": "how-much-lentils-per-person-per-day",
+      "title": "How Much Lentils per Person, per Day?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-lentils-per-person-per-day-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A 100-gram scoop of dry lentils fills one place setting while the rest of the bag portions itself into four companions.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A 100-gram scoop of dry lentils fills one place setting while the rest of the bag portions itself into four companions."
+      }
+    },
+    {
+      "priority": 35,
+      "slug": "how-much-oatmeal-is-a-serving",
+      "title": "How Much Oatmeal Is a Serving?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-oatmeal-is-a-serving-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "One 60-gram scoop leaves an oatmeal canister and lands in a breakfast bowl while nineteen scoops wait behind it.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "One 60-gram scoop leaves an oatmeal canister and lands in a breakfast bowl while nineteen scoops wait behind it."
+      }
+    },
+    {
+      "priority": 36,
+      "slug": "how-much-protein-for-breakfast",
+      "title": "How Much Protein for Breakfast? The Actual Grams",
+      "category": "nutrition",
+      "image_path": "/images/how-much-protein-for-breakfast-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Two eggs clear one quarter of a four-section breakfast plate while a lonely toast slice misses the line.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Two eggs clear one quarter of a four-section breakfast plate while a lonely toast slice misses the line."
+      }
+    },
+    {
+      "priority": 37,
+      "slug": "how-much-protein-in-a-can-of-beans",
+      "title": "How Much Protein Is in a Can of Beans?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-protein-in-a-can-of-beans-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A bean can opens like a small pantry bank vault and releases beans beside a modest pile of coins.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A bean can opens like a small pantry bank vault and releases beans beside a modest pile of coins."
+      }
+    },
+    {
+      "priority": 38,
+      "slug": "how-much-protein-in-lentils",
+      "title": "How Much Protein Is in Lentils?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-protein-in-lentils-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A 100-gram scoop of dry lentils confidently outweighs several familiar grocery proteins on an old kitchen scale.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A 100-gram scoop of dry lentils confidently outweighs several familiar grocery proteins on an old kitchen scale."
+      }
+    },
+    {
+      "priority": 39,
+      "slug": "how-much-protein-in-oatmeal",
+      "title": "How Much Protein Is in Oatmeal?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-protein-in-oatmeal-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A plain oatmeal bowl arrives at breakfast with a small protein badge while the eggs look unexpectedly interested.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A plain oatmeal bowl arrives at breakfast with a small protein badge while the eggs look unexpectedly interested."
+      }
+    },
+    {
+      "priority": 40,
+      "slug": "how-much-protein-in-two-eggs",
+      "title": "How Much Protein Is in Two Eggs?",
+      "category": "nutrition",
+      "image_path": "/images/how-much-protein-in-two-eggs-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Two eggs occupy one quarter of a four-section breakfast plate, with the other sections still conspicuously empty.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Two eggs occupy one quarter of a four-section breakfast plate, with the other sections still conspicuously empty."
+      }
+    },
+    {
+      "priority": 41,
+      "slug": "how-much-rice-and-beans-per-person-per-day",
+      "title": "How Much Rice and Beans per Person, per Day",
+      "category": "nutrition",
+      "image_path": "/images/how-much-rice-and-beans-per-person-per-day-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A one-day pantry kit lays out measured beans, rice, one pot, and one plate with no survivalist drama.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A one-day pantry kit lays out measured beans, rice, one pot, and one plate with no survivalist drama."
+      }
+    },
+    {
+      "priority": 42,
+      "slug": "how-to-cook-frozen-vegetables-without-the-mush",
+      "title": "How to Cook Frozen Vegetables Without the Mush",
+      "category": "tips",
+      "image_path": "/images/how-to-cook-frozen-vegetables-without-the-mush-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Frozen vegetables leap directly from bag to a hot pan while a puddle and thawing bowl are left behind.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Frozen vegetables leap directly from bag to a hot pan while a puddle and thawing bowl are left behind."
+      }
+    },
+    {
+      "priority": 43,
+      "slug": "how-to-eat-cheap-at-home",
+      "title": "How to Eat Cheap at Home",
+      "category": "tips",
+      "image_path": "/images/how-to-eat-cheap-at-home-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Beans, oats, rice, and eggs run a tiny home kitchen while takeout waits outside with an oversized cash register.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Beans, oats, rice, and eggs run a tiny home kitchen while takeout waits outside with an oversized cash register."
+      }
+    },
+    {
+      "priority": 44,
+      "slug": "how-to-freeze-fresh-vegetables-at-home",
+      "title": "How to Freeze Fresh Vegetables at Home",
+      "category": "tips",
+      "image_path": "/images/how-to-freeze-fresh-vegetables-at-home-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Vegetables move through four clear kitchen stations: boiling pot, ice bath, drying towel, and flat freezer tray.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Vegetables move through four clear kitchen stations: boiling pot, ice bath, drying towel, and flat freezer tray."
+      }
+    },
+    {
+      "priority": 45,
+      "slug": "how-to-get-more-protein-at-breakfast",
+      "title": "How to Get More Protein at Breakfast",
+      "category": "nutrition",
+      "image_path": "/images/how-to-get-more-protein-at-breakfast-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A plain breakfast tray gains peanut butter and two eggs like practical add-on modules, each carrying a few coins.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A plain breakfast tray gains peanut butter and two eggs like practical add-on modules, each carrying a few coins."
+      }
+    },
+    {
+      "priority": 46,
+      "slug": "how-to-grocery-shop-for-a-month-on-a-budget",
+      "title": "How to Grocery Shop for a Month on a Budget",
+      "category": "tips",
+      "image_path": "/images/how-to-grocery-shop-for-a-month-on-a-budget-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Eight pantry staples pack themselves into one small suitcase beneath a simple month calendar.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Eight pantry staples pack themselves into one small suitcase beneath a simple month calendar."
+      }
+    },
+    {
+      "priority": 47,
+      "slug": "how-to-save-money-on-groceries-at-walmart",
+      "title": "How to Save Money on Groceries at Walmart",
+      "category": "tips",
+      "image_path": "/images/how-to-save-money-on-groceries-at-walmart-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "A plain bean bag gets red-carpet treatment in a generic blue big-box aisle while almonds wait behind the velvet rope.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "A plain bean bag gets red-carpet treatment in a generic blue big-box aisle while almonds wait behind the velvet rope."
+      }
+    },
+    {
+      "priority": 48,
+      "slug": "lentils-vs-chicken-breast-protein-cost",
+      "title": "Lentils vs Chicken Breast: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/lentils-vs-chicken-breast-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Lentils lift chicken breast and a coin purse on a sturdy kitchen seesaw.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Lentils lift chicken breast and a coin purse on a sturdy kitchen seesaw."
+      }
+    },
+    {
+      "priority": 49,
+      "slug": "nutritional-value-of-beans-compared",
+      "title": "Nutritional Value of Beans: 10 Types Compared",
+      "category": "nutrition",
+      "image_path": "/images/nutritional-value-of-beans-compared-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Ten distinct beans gather for a pantry family portrait, each in a plain scoop with no package labels.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Ten distinct beans gather for a pantry family portrait, each in a plain scoop with no package labels."
+      }
+    },
+    {
+      "priority": 50,
+      "slug": "peanut-butter-vs-almonds-protein-cost",
+      "title": "Peanut Butter vs Almonds: Which Is Cheaper Protein?",
+      "category": "nutrition",
+      "image_path": "/images/peanut-butter-vs-almonds-protein-cost-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Matching portions of peanut butter and almonds stand together while the almonds drag a much longer coin chain.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Matching portions of peanut butter and almonds stand together while the almonds drag a much longer coin chain."
+      }
+    },
+    {
+      "priority": 51,
+      "slug": "popcorn-vs-almonds-fiber-cost",
+      "title": "Popcorn vs Almonds: Which Snack Is Cheaper for Fiber?",
+      "category": "nutrition",
+      "image_path": "/images/popcorn-vs-almonds-fiber-cost-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Popcorn fills several movie seats beside one small almond bag holding a very expensive ticket.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Popcorn fills several movie seats beside one small almond bag holding a very expensive ticket."
+      }
+    },
+    {
+      "priority": 52,
+      "slug": "what-beans-for-red-beans-and-rice",
+      "title": "What Beans for Red Beans and Rice?",
+      "category": "tips",
+      "image_path": "/images/what-beans-for-red-beans-and-rice-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Small red beans and kidney beans audition beside one steaming rice pot while unrelated beans wait backstage.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Small red beans and kidney beans audition beside one steaming rice pot while unrelated beans wait backstage."
+      }
+    },
+    {
+      "priority": 53,
+      "slug": "which-dried-beans-have-the-most-protein",
+      "title": "Which Dried Beans Have the Most Protein?",
+      "category": "nutrition",
+      "image_path": "/images/which-dried-beans-have-the-most-protein-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Navy, black, and pinto beans climb a pantry podium while lentils watch from a guest chair outside the bean contest.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Navy, black, and pinto beans climb a pantry podium while lentils watch from a guest chair outside the bean contest."
+      }
+    },
+    {
+      "priority": 54,
+      "slug": "which-foods-are-complete-proteins",
+      "title": "Which Foods Are Complete Proteins?",
+      "category": "nutrition",
+      "image_path": "/images/which-foods-are-complete-proteins-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Eggs, milk, beef, chicken, beans, and peanut butter assemble a grocery relay team with different baton handoffs.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Eggs, milk, beef, chicken, beans, and peanut butter assemble a grocery relay team with different baton handoffs."
+      }
+    },
+    {
+      "priority": 55,
+      "slug": "which-lentils-are-the-best",
+      "title": "Which Lentils Are the Best? Brown, Red, Split",
+      "category": "nutrition",
+      "image_path": "/images/which-lentils-are-the-best-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Brown, red, and split lentils line up at a pantry checkout, with brown lentils carrying the lightest coin bag.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Brown, red, and split lentils line up at a pantry checkout, with brown lentils carrying the lightest coin bag."
+      }
+    },
+    {
+      "priority": 56,
+      "slug": "whole-wheat-flour-vs-quinoa-fiber-cost",
+      "title": "Whole Wheat Flour vs Quinoa: Which Fiber Is Cheaper?",
+      "category": "nutrition",
+      "image_path": "/images/whole-wheat-flour-vs-quinoa-fiber-cost-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 200,
+        "redirect_location": null,
+        "hero_status": 404,
+        "hero_reference_occurrences": 7
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "not_listed"
+        },
+        "interpretation": "Not listed isn't the same as a measured zero. The available exports provide no page-level observation for this URL."
+      },
+      "brief": {
+        "concept": "Whole wheat flour arrives with a small baking crew while quinoa sits ready in one lunch bowl.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Whole wheat flour arrives with a small baking crew while quinoa sits ready in one lunch bowl."
+      }
+    },
+    {
+      "priority": 57,
+      "slug": "how-to-meal-plan-on-a-budget",
+      "title": "How to Meal Plan on a Budget",
+      "category": "tips",
+      "image_path": "/images/how-to-meal-plan-on-a-budget-main.jpg",
+      "local_file_exists": false,
+      "live": {
+        "checked_at": "2026-07-28",
+        "article_status": 301,
+        "redirect_location": "https://www.daily-life-hacks.com/how-to-meal-prep-on-a-budget-for-one-person/",
+        "hero_status": 404,
+        "hero_reference_occurrences": 0
+      },
+      "search_evidence": {
+        "gsc_page_export": "not_listed",
+        "bing_url_export": {
+          "status": "listed",
+          "impressions": 0,
+          "clicks": 0,
+          "last_crawled": "2026-04-03"
+        },
+        "interpretation": "The available Bing row records zero impressions and clicks. The live source URL now redirects, so image production should wait for the canonical decision."
+      },
+      "brief": {
+        "concept": "Seven dinner cards form a calm weekly path from pantry shelf to shopping basket, with the total settled before checkout.",
+        "art_direction": "Wide editorial food illustration or art-directed still life, smart and slightly dry, with orange used only as a small accent.",
+        "embedded_text": false,
+        "overlay_copy": null,
+        "alt_draft": "Seven dinner cards form a calm weekly path from pantry shelf to shopping basket, with the total settled before checkout."
+      }
+    }
+  ]
+}

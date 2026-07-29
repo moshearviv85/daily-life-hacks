@@ -1,0 +1,187 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ChainTable from "./_lib/ChainTable.astro";
+import ChainLimits from "./_lib/ChainLimits.astro";
+import {
+  CHAIN_PAGES, itemsFor, studyRank, chainSchemas, usd, round,
+  PARENT_PATH, CSV_PATH, STUDY_SIZE, STUDY_CHAINS, STUDY_WORST,
+} from "./_lib/fastfood";
+
+const page = CHAIN_PAGES.tacoBell;
+const items = itemsFor(page.chain);
+
+const best = items[0];
+const worst = items[items.length - 1];
+const spread = best.perDollar / worst.perDollar;
+
+const cheesyBean = items.find((i) => i.item === "Cheesy Bean and Rice Burrito")!;
+const beanBurrito = items.find((i) => i.item === "Bean Burrito")!;
+const beefy = items.find((i) => i.item === "Beefy 5-Layer Burrito")!;
+const quesadilla = items.find((i) => i.item === "Chicken Quesadilla")!;
+const crunchwrap = items.find((i) => i.item === "Crunchwrap Supreme")!;
+
+/* Cheapest item on the page, by menu price rather than by ratio. */
+const cheapest = [...items].sort((a, b) => a.priceUsd - b.priceUsd)[0];
+/* How many of the winner it takes to reach a 30 g serve. */
+const toThirty = Math.ceil(30 / best.proteinG);
+const toThirtyCost = toThirty * best.priceUsd;
+/* Is the chain's worst item also the worst in the whole study? */
+const worstOverall = STUDY_WORST.chain === page.chain && STUDY_WORST.item === worst.item;
+
+const title = `Taco Bell Protein per Dollar: ${items.length} Items Ranked (April 2026 Prices)`;
+const description =
+  `Every Taco Bell item we priced, ranked by grams of protein per dollar. The ${best.item} leads at ` +
+  `${best.perDollar} g per $1 and the ${worst.item} is last at ${worst.perDollar}. Prices observed ` +
+  `${page.observed}, basis stated per row. No calorie figures, because our dataset has none.`;
+
+const schemas = chainSchemas({ page, items, title, description });
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6" style="color: var(--muted-color);">
+      <a href="/" class="underline" style="color:#F29B30;">Home</a>
+      <span aria-hidden="true"> / </span>
+      <a href={PARENT_PATH} class="underline" style="color:#F29B30;">Fast food protein per dollar</a>
+      <span aria-hidden="true"> / </span>
+      <span>Taco Bell</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      Taco Bell Protein per Dollar, Ranked
+    </h1>
+
+    <p class="text-lg mb-4 leading-relaxed" style="color: var(--text-color);">
+      At Taco Bell the two cheapest things on the menu are the two best protein deals, and the flagship is the
+      worst. The {best.item} costs {usd(best.priceUsd)} and returns {best.perDollar} grams of protein per dollar.
+      The {worst.item} costs {usd(worst.priceUsd)} and returns {worst.perDollar}{worstOverall ? `, which is dead last across all ${STUDY_SIZE} items we priced at every chain` : ""}.
+      That's a {round(spread, 1)}-fold spread on one menu board. Here are all {items.length} Taco Bell items we
+      priced, with the date and source on every number.
+    </p>
+
+    <p class="text-sm mb-8 p-4 rounded-xl" style="color: var(--muted-color); background: var(--card-bg); border:1px solid var(--border-color);">
+      <strong style="color:var(--heading-color);">Prices observed {page.observed}</strong> from Taco Bell store
+      menu snapshots, and this is the chain where location matters most: several rows below record a real
+      observed range across stores, not a single national figure. Protein grams come from Taco Bell's own
+      published product nutrition labels. Full data in the
+      <a href={CSV_PATH} class="underline" style="color:#F29B30;">raw CSV</a>.
+    </p>
+
+    <dl class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="ff-stat">
+        <dt>Best value</dt>
+        <dd>{best.perDollar} g / $1</dd>
+        <p>{best.item}, {best.proteinG} g for {usd(best.priceUsd)}</p>
+      </div>
+      <div class="ff-stat">
+        <dt>Worst value</dt>
+        <dd>{worst.perDollar} g / $1</dd>
+        <p>{worst.item}, {worst.proteinG} g for {usd(worst.priceUsd)}</p>
+      </div>
+      <div class="ff-stat">
+        <dt>Spread on one menu</dt>
+        <dd>{round(spread, 1)}x</dd>
+        <p>between the best and worst of {items.length} priced items</p>
+      </div>
+    </dl>
+
+    <section id="ranking">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        All {items.length} Taco Bell items, best protein value first
+      </h2>
+      <p class="mb-6" style="color: var(--text-color);">
+        One division problem per row: protein grams divided by the price. The rank column shows where each item
+        lands in the full {STUDY_SIZE}-item study across all {STUDY_CHAINS} chains.
+      </p>
+      <ChainTable items={items} chain={page.chain} observed={page.observed} studyRankOf={studyRank} />
+    </section>
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        What this actually means when you're standing at the counter
+      </h2>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Beans win. That's the finding, and it's a little funny given how much of Taco Bell's menu is built
+        around beef and chicken. The {beanBurrito.item} and the {cheesyBean.item} are the two cheapest items we
+        priced here and they're also the two best ratios, at {beanBurrito.perDollar} and {cheesyBean.perDollar}
+        grams per dollar. The {beefy.item} manages {beefy.perDollar}. The {quesadilla.item}, which is the most
+        expensive thing on this page at {usd(quesadilla.priceUsd)}, manages {quesadilla.perDollar}.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Now the important asterisk, because a ratio on its own can talk you into something silly. The
+        {" "}{best.item} is {best.proteinG} grams of protein. That is not a meal, it's a snack with good
+        arithmetic. To get to a 30 gram serve you'd be ordering {toThirty} of them, which comes to about
+        {" "}{usd(toThirtyCost)} and a genuinely alarming volume of rice. Best value per dollar and enough
+        protein to matter are two different questions, and Taco Bell's value menu answers the first one much
+        better than the second.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The {crunchwrap.item} is the one I'd point at. {crunchwrap.proteinG} grams for {usd(crunchwrap.priceUsd)}.
+        It's the chain's signature item, it's the thing on all the posters, and by this measure it's the weakest
+        row {worstOverall ? `in the entire ${STUDY_SIZE}-item study` : "on this page"}. There's a lot of tortilla
+        in a Crunchwrap, and a tostada shell, and sour cream, and you're paying flagship pricing for all of it.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The {quesadilla.item} is the quieter disappointment. It's real chicken, it costs
+        {" "}{usd(quesadilla.priceUsd)}, and it still lands at {quesadilla.perDollar} grams per dollar, behind
+        two burritos that cost under three dollars. Cheese is heavy and cheese is not protein-dense per dollar,
+        and that's most of the explanation.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        So the practical version: at Taco Bell, order down the menu, not up. The cheapest item on this page,
+        the {cheapest.item} at {usd(cheapest.priceUsd)}, is also the best value on it, which almost never
+        happens at a drive-thru. Two bean burritos beat one Crunchwrap on both protein and price, and it isn't
+        close. Just don't confuse a good ratio with a real amount of food.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        One more thing that only shows up if you read the price column carefully. Taco Bell's value items had
+        the widest store-to-store range of anything we recorded: the {cheesyBean.item} was seen between $1.29
+        and {usd(cheesyBean.priceUsd)} depending on the store. At those prices a thirty cent difference moves
+        the ratio by a lot, so this is the one chain where your local number could genuinely reorder the top of
+        this table.
+      </p>
+    </section>
+
+    <ChainLimits chain={page.chain} itemCount={items.length} observed={page.observed} />
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        Compare it to another menu
+      </h2>
+      <p class="mb-5 leading-relaxed" style="color: var(--text-color);">
+        The Taco Bell numbers only really land when you put them next to a chain selling the same food at four
+        times the price.
+      </p>
+      <ul class="space-y-3">
+        {page.siblings.map((s) => (
+          <li class="leading-relaxed" style="color: var(--text-color);">
+            <a href={s.path} class="underline font-semibold" style="color:#F29B30;">{s.label} protein per dollar</a>: {s.why}.
+          </li>
+        ))}
+        <li class="leading-relaxed" style="color: var(--text-color);">
+          <a href={PARENT_PATH} class="underline font-semibold" style="color:#F29B30;">The full {STUDY_SIZE}-item fast food ranking</a>: all {STUDY_CHAINS} chains in one table, plus how the best drive-thru order compares to a bag of dry beans.
+        </li>
+        <li class="leading-relaxed" style="color: var(--text-color);">
+          <a href="/cheapest-protein-per-gram/" class="underline font-semibold" style="color:#F29B30;">Cheapest protein per gram at the grocery store</a>: where a bag of the same dry beans sits, and it is not a flattering comparison for anybody on this page.
+        </li>
+      </ul>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    .ff-stat { padding:1rem 1.1rem; border-radius:.9rem; background:var(--card-bg); border:1px solid var(--border-color); }
+    .ff-stat dt { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted-color); margin-bottom:.25rem; }
+    .ff-stat dd { font-size:1.9rem; font-weight:800; color:#F29B30; line-height:1.1; }
+    .ff-stat p { font-size:.82rem; color:var(--muted-color); margin-top:.3rem; }
+  </style>
+</BaseLayout>

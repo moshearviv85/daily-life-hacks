@@ -33,9 +33,9 @@ Each ranking CSV includes every food, nutrient value, package and price inputs, 
 
 Published nutrition figures are checked against USDA FoodData Central, while prices use BLS Average Price data where available and dated retailer listings for other items. The public CSVs let readers inspect the calculations and price basis, subject to the source-detail limitations above. Prices are scheduled for a quarterly re-audit; relevant BLS staple prices are monitored monthly. Errors are corrected publicly with dated notes in the affected study. Correction policy and audit process: https://www.daily-life-hacks.com/methodology/
 
-## Attribution
+## Attribution and license
 
-When citing figures or reusing the datasets, please attribute as "Daily Life Hacks" and link to the specific study URL (preferred) or https://www.daily-life-hacks.com/. Example: "Source: Daily Life Hacks, Fiber per Dollar study, https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/".
+The original Daily Life Hacks selection, arrangement, calculations, field descriptions, and explanatory material are licensed under CC BY 4.0. Source facts and third-party material keep their own status and terms. When citing figures or reusing the datasets, attribute "Daily Life Hacks" and link to the specific study URL (preferred) or https://www.daily-life-hacks.com/data/. Mark any changes. Full scope and copy-ready attribution: https://www.daily-life-hacks.com/data-reuse/.
 
 ## Key URLs
 

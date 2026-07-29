@@ -78,7 +78,7 @@ A list only works if it's built around meals, not vibes. Before you write "chick
 
 Check the fridge and pantry first. Half the overspend problem is buying a second jar of cumin when the first one is hiding behind the soy sauce. Once a week, do a two-minute inventory. It feels boring. It saves more than most coupons.
 
-Then stick to the list like it's a contract with your future self. If something isn't on it, it needs a real reason to get in the cart, not "it was on the endcap and the packaging looked friendly."
+Then stick to the list like it's a contract with your checking account. If something isn't on it, it needs a real reason to get in the cart, not "it was on the endcap and the packaging looked friendly."
 
 ## Ignore eye-level shelving
 
@@ -140,7 +140,7 @@ This is not a punishment week. It's inventory management with dinner attached. K
 
 ## Stop shopping hungry, tired, or bored
 
-Hungry shopping is a classic self-own. Everything looks essential when your blood sugar is negotiating with a bakery display. Eat something first. Even a banana and peanut butter at home counts.
+Hungry shopping is a classic self-own. Everything looks essential when the bakery display starts negotiating with you. Eat something first. Even a banana and peanut butter at home counts.
 
 Tired shopping is almost as bad. You grab convenience food because decision-making is offline. If you only have energy for a fifteen-minute run, do pickup or stick to a short list of staples. Bored shopping is how decorative crackers enter your life.
 

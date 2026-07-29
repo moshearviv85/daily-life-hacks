@@ -1,0 +1,45 @@
+{
+  "rejection_decision_commit": "aaaf4c3779dbeaa959a7003b14be6d9526d29e17",
+  "verified_rows": [
+    {
+      "category": "Content & virality",
+      "title": "Public database / searchable directory",
+      "execution_status": "RELEASED",
+      "evidence_commit": "3ed83f5de04403d674a4e15e51589d2bcf68ebe9",
+      "live_url": "https://www.daily-life-hacks.com/food-value-database/",
+      "released_at": "2026-07-28T21:32:59+03:00",
+      "measurement_due": "2026-08-25T21:32:59+03:00",
+      "notes": "Commit adds the crawlable 79-food database plus discovery links and eight tests. Live URL returned HTTP 200 on 2026-07-29. Measurement due is the first 28-day search window."
+    },
+    {
+      "category": "Search engines",
+      "title": "D2. IndexNow",
+      "execution_status": "RELEASED",
+      "evidence_commit": "96005b6b3131328900cc84e37870aad6f625ceea",
+      "live_url": "https://github.com/moshearviv85/daily-life-hacks/actions/runs/30390366792",
+      "released_at": "2026-07-28T22:02:05+03:00",
+      "measurement_due": "2026-08-04T22:02:05+03:00",
+      "notes": "Commit enforces one post-deploy IndexNow owner and adds ownership tests. GitHub Actions run 30390366792 completed successfully. Measurement due is the first seven-day crawl-latency check."
+    },
+    {
+      "category": "People & partnerships",
+      "title": "C5. Open dataset with an attribution-requiring license",
+      "execution_status": "RELEASED",
+      "evidence_commit": "659803fc94732fdc0403ee2c67ab530218f20e14",
+      "live_url": "https://www.daily-life-hacks.com/data-reuse/",
+      "released_at": "2026-07-29T06:52:40+03:00",
+      "measurement_due": "2026-08-26T06:52:40+03:00",
+      "notes": "Commit publishes scoped CC BY 4.0 reuse terms, copy-ready attribution, Dataset and API license metadata, and machine-readable package/CITATION proof. Live URL returned HTTP 200 on 2026-07-29. Traffic, downloads, citations, and referring domains remain unmeasured until the 28-day cohort closes."
+    },
+    {
+      "category": "Content & virality",
+      "title": "Skimmable structure, jump links and table of contents",
+      "execution_status": "RELEASED",
+      "evidence_commit": "659803fc94732fdc0403ee2c67ab530218f20e14",
+      "live_url": "https://www.daily-life-hacks.com/whole-wheat-vs-white-pasta-fiber/",
+      "released_at": "2026-07-29T06:52:40+03:00",
+      "measurement_due": "2026-08-26T06:52:40+03:00",
+      "notes": "Commit adds server-rendered accessible contents navigation to 86 long articles. The proof URL exposes seven jump links and every target ID resolved live on 2026-07-29. Search and engagement impact remain unmeasured until the 28-day cohort closes."
+    }
+  ]
+}

@@ -15,7 +15,7 @@ tags:
 image: "/images/big-flavor-less-salt-citrus-herbs-umami-swaps-main.jpg"
 imageAlt: "Kitchen counter with lemons herbs garlic soy sauce and spices for flavor building"
 date: 2026-04-16
-dateModified: 2026-07-20
+dateModified: 2026-07-28
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -141,6 +141,8 @@ Pick one of these for the week:
 * Add tomato paste to your next soup.
 
 You do not need to overhaul everything. If you only do one thing, add acid at the end of cooking and taste again before you reach for salt. Big flavor with less salt is mostly about remembering you have options.
+
+If you're scaling dinner for a crowd, the [double-recipe seasoning guide](/how-to-double-recipe-seasoning-without-guessing/) starts salt and strong spices at 1.5 times, then lets tasting handle the final argument.
 
 ## Compare sodium where it actually changes
 

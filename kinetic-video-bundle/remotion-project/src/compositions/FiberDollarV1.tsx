@@ -30,7 +30,7 @@ export const FiberDollarV1: React.FC = () => {
         wordTimings={transcript.words}
         speechFile="dlh-fiber-dollar/speech-v3.mp3"
         musicFile="dlh-fiber-dollar/music-v2.mp3"
-        musicVolume={0.18}
+        musicVolume={0.28}
         imageCues={[
           { time: 0, src: 'dlh-fiber-dollar/images/bg-main.jpg' },
         ]}

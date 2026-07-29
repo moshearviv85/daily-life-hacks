@@ -9,11 +9,10 @@ tags:
 - sourdough
 - pizza dough
 - same day
-- dough
 image: "/images/how-to-make-sourdough-pizza-dough-same-day-main.jpg"
 imageAlt: Hands stretching a soft ball of sourdough pizza dough on a floured wooden board beside a jar of starter discard
 date: 2026-04-28
-dateModified: 2026-07-12
+dateModified: 2026-07-28
 author: "David Miller"
 featured: false
 faq:
@@ -54,6 +53,8 @@ This makes enough dough for two personal pizzas or one large sheet-pan pizza.
 - 1 tablespoon olive oil, plus more for the bowl
 
 Bread flour gives you more chew and a taller rim. All-purpose still works and is what most people already have. Don't drive to three stores for a specialty bag because a blog told you to.
+
+If fiber is part of the flour decision, the [pizza crust comparison](/comparing-fiber-content-different-pizza-crusts/) puts white, whole wheat, chickpea, and cauliflower crusts on the same scoreboard.
 
 ## Same-day timeline (about 3.5 to 4 hours)
 
@@ -106,6 +107,8 @@ Slide the pizza onto the hot surface. Bake 8 to 12 minutes depending on thicknes
 No stone? Use a preheated sheet pan. Or stretch the dough on parchment, top it, and launch parchment and all onto the hot pan. Pull the paper after a couple minutes if you want a crisper underside.
 
 Broiler for the last minute can blister the top, but watch it like a hawk. "Just one more second" is how you invent charcoal garnish.
+
+If tomorrow's lunch survives tonight, refrigerate it within two hours. The full answer to [whether leftover pizza needs refrigeration](/does-leftover-pizza-need-to-be-refrigerated/) is less romantic than leaving the box on the counter, but much easier than arguing with food-safety guidance.
 
 ## Toppings that respect a weeknight
 

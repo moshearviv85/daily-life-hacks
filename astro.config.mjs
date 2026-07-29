@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import rehypeArticleImages from './scripts/rehype-article-images.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -157,6 +158,7 @@ function loadArticleImages() {
     const unquote = (/** @type {string} */ v) => v.trim().replace(/^['"]|['"]$/g, '');
     const hero = frontmatter.match(/^image:\s*(.+)$/m);
     const heroAlt = frontmatter.match(/^imageAlt:\s*(.+)$/m);
+    const title = frontmatter.match(/^title:\s*(.+)$/m);
 
     /** @type {Map<string, string|undefined>} */
     const found = new Map();
@@ -170,6 +172,20 @@ function loadArticleImages() {
     }
     for (const m of body.matchAll(/<img[^>]+src=["'](\/images\/[^"']+)["']/g)) {
       if (!found.has(m[1])) found.set(m[1], undefined);
+    }
+
+    // A small set of recipe articles injects a real ingredients photo after
+    // hydration. Google does not scroll or trigger that client-side insertion,
+    // so the normal sitemap is the photo's only reliable discovery path. The
+    // existence check below keeps this fail-closed for every article that does
+    // not publish the optional asset.
+    const ingredientsImage = `/images/${slug}-ingredients.jpg`;
+    const articleTitle = title ? unquote(title[1]) : undefined;
+    if (!found.has(ingredientsImage)) {
+      found.set(
+        ingredientsImage,
+        articleTitle ? `${articleTitle} ingredients` : undefined,
+      );
     }
 
     /** @type {{url: string, caption?: string}[]} */
@@ -226,7 +242,7 @@ function sitemapPriorityFor(pathname) {
   if (pathname === '/') return 1.0;
   if (pillarPaths.has(pathname)) return 0.9;
   if (datasetPaths.has(pathname)) return 0.8;
-  if (derivedHubPaths.has(pathname) || pathname === '/data/') return 0.8;
+  if (derivedHubPaths.has(pathname) || pathname === '/data/' || pathname === '/statistics/') return 0.8;
   if (pathname.startsWith('/tools/') && pathname !== '/tools/') return 0.7;
   if (articleLastModifiedDates.has(pathname)) return 0.6;
   // /about/, /methodology/, /api-docs/, /tools/ — real pages, low relative rank.
@@ -250,6 +266,9 @@ function shouldExcludeFromSitemap(url) {
 export default defineConfig({
   site: 'https://www.daily-life-hacks.com',
   trailingSlash: 'always',
+  markdown: {
+    rehypePlugins: [rehypeArticleImages],
+  },
   integrations: [
     sitemap({
       serialize(item) {

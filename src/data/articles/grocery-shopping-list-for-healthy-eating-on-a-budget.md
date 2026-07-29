@@ -1,6 +1,6 @@
 ---
 title: Grocery Shopping List for Healthy Eating on a Budget
-excerpt: "Build a lower-cost grocery list around beans, eggs, grains, sturdy produce, and frozen vegetables, then turn it into flexible meals."
+excerpt: "A week of groceries built on the foods that carry the most protein and fiber per dollar, with July 2026 prices on every item on the list."
 quickAnswer: >-
   Start with oats, rice, lentils, beans, eggs, and one affordable meat or tofu.
   Add sturdy produce such as cabbage, carrots, onions, apples, and bananas, plus
@@ -89,7 +89,7 @@ If cost is the tiebreaker, our [produce fiber per dollar ranking](/produce-fiber
 
 ## The Flavor Makers (Invest Here)
 
-If you're basing your meals off intensely cheap items like beans, rice, and cabbage, you must invest a tiny bit of your budget into making them taste phenomenal. This is the difference between eating like a budget master and eating like a depressed college student. 
+If you're basing your meals off intensely cheap items like beans, rice, and cabbage, you must invest a tiny bit of your budget into making them taste phenomenal. This is the difference between eating like a budget master and eating like a depressed college student, which is its own [whole category of cheap cooking](/cheap-healthy-meals-for-college-students/) when the kitchen is a microwave and a hot plate.
 
 ## Add two or three flexible proteins
 

@@ -95,7 +95,7 @@ def main():
           f"(${cost_for_target(float(cheapest_adj['adjusted_g_per_dollar'])):.2f}/50 g)")
     print("\nSource: Daily Life Hacks Food Value Data (2026.1)")
     print("Study:  https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/")
-    print("Terms:  https://www.daily-life-hacks.com/methodology/#data-license")
+    print("Terms:  https://www.daily-life-hacks.com/data-reuse/")
 
 
 if __name__ == "__main__":

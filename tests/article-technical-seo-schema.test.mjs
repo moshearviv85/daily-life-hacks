@@ -13,7 +13,10 @@ const methodologyPage = readFileSync(
 
 test("Article and Recipe schemas share the visible author and organization publisher", () => {
   assert.match(articlePage, /const authorName = article\.data\.author \?\? "David Miller"/);
-  assert.match(articlePage, /"@type": "Person",[\s\S]*?"@id": `\$\{siteUrl\}\/about\/`/);
+  assert.match(
+    articlePage,
+    /"@type": "Person",[\s\S]*?"@id": `\$\{siteUrl\}\/about\/#david-miller`/,
+  );
   assert.match(articlePage, /name: authorName,[\s\S]*?url: `\$\{siteUrl\}\/about\/`/);
   assert.equal(
     [...articlePage.matchAll(/author: articleAuthor/g)].length,
@@ -49,18 +52,30 @@ test("primary article schemas retain canonical, image, language, and date signal
     3,
     "Recipe, Article, and WebPage.mainEntity must share the canonical entity id",
   );
-  assert.equal([...articlePage.matchAll(/datePublished: publishedDate/g)].length, 3);
-  assert.equal([...articlePage.matchAll(/dateModified: modifiedDate/g)].length, 3);
-  assert.equal([...articlePage.matchAll(/image: \[imageUrl\]/g)].length, 2);
+  assert.equal(
+    [...articlePage.matchAll(/datePublished: publishedDate/g)].length,
+    4,
+    "Recipe, Article, WebPage, and Dataset must share the publication date",
+  );
+  assert.equal(
+    [...articlePage.matchAll(/dateModified: modifiedDate/g)].length,
+    4,
+    "Recipe, Article, WebPage, and Dataset must share the modified date",
+  );
+  assert.equal(
+    [...articlePage.matchAll(/image: structuredImageUrls\.length \? structuredImageUrls : undefined/g)].length,
+    2,
+    "Recipe and Article must publish only image URLs that exist in this build",
+  );
   assert.equal(
     [...articlePage.matchAll(/inLanguage: "en-US"/g)].length,
     3,
     "Recipe, Article, and WebPage must use the same language signal",
   );
-  assert.match(articlePage, /thumbnailUrl: imageUrl/);
+  assert.match(articlePage, /thumbnailUrl: hasArticleImage \? imageUrl : undefined/);
   assert.match(
     articlePage,
-    /releaseDate\.toLocaleDateString\("en-US"/,
+    /Published <time datetime=\{isoDay\(releaseDate\)\}>\{publishedLabel\}<\/time>/,
     "The visible byline date must match the schema datePublished release date",
   );
   assert.doesNotMatch(articlePage, /article\.data\.date\.toLocaleDateString/);
@@ -68,20 +83,28 @@ test("primary article schemas retain canonical, image, language, and date signal
 
 test("Dataset schema remains attached to its canonical article and CSV", () => {
   const datasetBlock = articlePage.match(
-    /if \(dataset\) \{([\s\S]*?)\r?\n\}\r?\n\r?\nif \(article\.data\.faq/,
+    /if \(dataset\) \{([\s\S]*?)\r?\n\}\r?\n\r?\n\/\*\*[\s\S]*?Embeddable chart/,
   );
 
   assert.ok(datasetBlock, "Dataset schema block must remain present");
   assert.match(articlePage, /"@type": "Dataset"/);
   assert.match(articlePage, /url: articleUrl/);
+  assert.match(articlePage, /identifier: `\$\{articleUrl\}#dataset`/);
+  assert.match(articlePage, /version: DATA_VERSION/);
   assert.match(articlePage, /creator: publisherSchema/);
   assert.match(articlePage, /"@type": "DataDownload"/);
+  assert.match(articlePage, /name: dataset\.csv\.split\("\/"\)\.pop\(\)/);
   assert.match(articlePage, /contentUrl: `\$\{siteUrl\}\$\{dataset\.csv\}`/);
   assert.match(articlePage, /measurementTechnique: `\$\{siteUrl\}\/methodology\/`/);
   assert.match(
     datasetBlock[1],
-    /license: `\$\{siteUrl\}\/methodology\/#data-license`/,
-    "Dataset must identify the site's existing public-data reuse terms",
+    /license: DATA_LICENSE_URL/,
+    "Dataset must identify the machine-readable CC BY 4.0 license",
+  );
+  assert.match(
+    datasetBlock[1],
+    /usageInfo: DATA_TERMS_URL/,
+    "Dataset must link the human-readable scope and attribution terms",
   );
   assert.doesNotMatch(
     datasetBlock[1],
@@ -91,7 +114,7 @@ test("Dataset schema remains attached to its canonical article and CSV", () => {
   assert.match(
     methodologyPage,
     /<h2 id="data-license"[\s\S]*?>Every study ships its raw data<\/h2>/,
-    "The Dataset license URL must resolve to the published reuse terms",
+    "The methodology must preserve its stable reuse-terms anchor",
   );
 });
 

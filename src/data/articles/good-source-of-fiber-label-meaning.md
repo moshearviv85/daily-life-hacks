@@ -10,7 +10,7 @@ tags:
 image: "/images/good-source-of-fiber-label-meaning-main.jpg"
 imageAlt: "Close up of a nutrition facts label on a food package with fiber highlighted"
 date: 2026-04-25
-dateModified: 2026-07-16
+dateModified: 2026-07-29
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -24,11 +24,11 @@ faq:
   - question: "What is the difference between 'good source' and 'excellent source' of fiber?"
     answer: "An 'excellent source' (or 'high in') claim means 20 percent or more of the Daily Value per serving, so at least about 5.6 grams. 'Good source' is the tier below that, at 10 to 19 percent."
   - question: "Can a food with added fiber use the 'good source' claim?"
-    answer: "Yes. The claim is based on total fiber per serving, whether it's naturally occurring or added. Some products add isolated fibers like inulin or chicory root to reach the threshold. The Nutrition Facts panel shows total dietary fiber but doesn't always separate natural from added."
+    answer: "Yes, if the fiber counted on the Nutrition Facts label meets FDA's dietary-fiber definition and the product reaches the claim threshold. FDA includes intrinsic plant fiber plus specific isolated or synthetic fibers, with enforcement discretion for additional named fibers such as inulin."
   - question: "Should I only buy foods labeled 'good source of fiber'?"
     answer: "No. Plenty of naturally high-fiber foods like beans, lentils, and whole fruits don't carry front-of-package claims because they don't need them. The label is a marketing tool. The Nutrition Facts panel is more useful for comparing."
 ---
-On a U.S. food label, "good source of fiber" means one serving gives you 10 to 19 percent of the Daily Value for dietary fiber, and since the DV is 28 grams, that works out to 2.8 to 5.3 grams per serving. The tier above it, "high in fiber" or "excellent source of fiber," requires 20 percent of the DV or more, so at least 5.6 grams per serving. Both come straight from the FDA's nutrient content claim rules (21 CFR 101.54), and they apply to every product in the store.
+On a U.S. food label, "good source of fiber" means one serving gives you 10 to 19 percent of the Daily Value for dietary fiber, and since [FDA lists the fiber DV as 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), that works out to 2.8 to 5.3 grams per serving. The tier above it, "high in fiber" or "excellent source of fiber," requires 20 percent of the DV or more, so at least 5.6 grams per serving. Both come straight from [FDA's nutrient content claim rule, 21 CFR 101.54](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54), and they apply when FDA-regulated food labels use those claims.
 
 That's the answer. Now the part the label doesn't mention.
 
@@ -45,23 +45,23 @@ The whole system fits in one table, and honestly it's easier to scan than to rea
 | What the package says | What the FDA requires per serving |
 |---|---|
 | "Good source of fiber", "Contains fiber", "Provides fiber" | 10 to 19% of the Daily Value: 2.8 to 5.3 grams |
-| "High in fiber", "Excellent source of fiber", "Rich in fiber" | 20% DV or more: at least 5.6 grams, about what two slices of 100% whole wheat bread deliver |
+| "High in fiber", "Excellent source of fiber", "Rich in fiber" | 20% DV or more: at least 5.6 grams |
 | "More fiber" or "Added fiber" | At least 10% DV (2.8 grams) more than the food it's compared to |
-| "Made with whole grains" | Nothing. It's not a fiber claim, and there's no fiber minimum |
+| "Made with whole grains" | It's not one of the fiber claims in 21 CFR 101.54, so the phrase doesn't establish a fiber minimum |
 
-These numbers aren't opinions. They're federal thresholds, all based on the 28 gram Daily Value for fiber, and a product has to hit them before the wording goes on the box. If you're wondering where 28 grams came from, our [plain-English guide to the fiber and protein Daily Values](/fiber-protein-daily-values-explained/) follows the federal paperwork so you don't have to. That's the useful part. The less useful part is what the front of the box doesn't tell you.
+These aren't opinion numbers. Section 101.54 sets the claim thresholds, and FDA's current reference page lists the 28 gram DV. [FDA's whole-grain guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements) handles those statements separately. In other words, "made with whole grains" isn't a secret fiber claim wearing a wheat-colored jacket. Our [plain-English guide to the fiber and protein Daily Values](/fiber-protein-daily-values-explained/) follows the rest of the federal paperwork so you don't have to.
 
 ## What the label leaves out
 
 **Serving size tricks.** A serving of crackers might be listed as 6 crackers. But if you normally eat 12 (no judgment, we've all been there), the fiber per actual eating occasion is double what's printed. Or, more commonly, the serving is tiny to keep the calories low and the fiber percentage high enough to qualify for the claim.
 
-**Natural vs added fiber.** The good source of fiber label meaning doesn't distinguish between fiber already in the food and fiber added during manufacturing. Chicory root fiber (inulin), polydextrose, and soluble corn fiber are common additions. They bump the number, but whether isolated fibers behave the same as intact plant fiber is still debated (a 2017 review in *Nutrients* on isolated versus intact fibers raised questions). The honest answer: it depends on the type and amount.
+**Natural vs added fiber.** The front-of-package claim doesn't tell you where the fiber came from. [FDA's dietary-fiber Q&A](https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/questions-and-answers-dietary-fiber) says the Nutrition Facts number may include fiber that's intrinsic and intact in plants, plus isolated or synthetic fibers that meet FDA's definition. FDA also names additional fibers, including inulin and polydextrose, that it currently allows manufacturers to count under enforcement discretion. So yes, an added fiber may help a product reach the threshold, but not every random nondigestible carbohydrate gets to join the club.
 
 **The rest of the ingredient list.** A snack bar can be a "good source of fiber" while also containing 12 grams of added sugar. The fiber claim doesn't mean the product is healthy overall. It means one specific nutrient hit a threshold. That's it.
 
 ## How to actually use this information at the store
 
-Don't ignore the claim entirely. It's a reasonable starting filter. But treat it like a first question, not the final answer.
+Don't ignore the claim entirely. It's a reasonable starting filter. But use it as a first question, not the final answer.
 
 * **Flip the box.** Check the Nutrition Facts panel for total dietary fiber per serving. Compare products using that number, not the front-of-package claim. If the whole panel still reads like tax paperwork, our [beginner's guide to reading nutrition labels](/how-to-read-nutrition-labels-for-beginners/) walks through it line by line.
 * **Look at the ingredient list.** If the first few ingredients are whole grains, beans, nuts, or vegetables, the fiber is probably coming from the food itself. If you see chicory root extract or inulin halfway down, the product may be leaning on added fiber to hit the claim.
@@ -74,8 +74,10 @@ A can of black beans has about 8 grams of fiber per half-cup serving. A medium p
 
 The "good source of fiber" claim mostly appears on packaged foods competing for your attention. Whole foods like fruits, vegetables, legumes, and whole grains are naturally high in fiber without a marketing budget. My friend Jess once ditched a brand of "fiber enriched" white bread after realizing regular whole wheat from the bakery had more fiber and fewer ingredients.
 
-## A quick reality check on daily fiber
+## A quick reality check on the daily math
 
-Most adults in the U.S. eat about 15 grams of fiber per day, which is well below the 25 to 34 gram range that many dietary guidelines suggest (USDA Dietary Guidelines, 2020). One product labeled "good source of fiber" isn't going to close that gap by itself. But combining a few decent sources across the day, actual beans, actual fruits, actual grains, does add up without needing to buy anything with a claim on it, and [the foods carrying the most fiber per 100 grams](/best-high-fiber-foods-ranked-by-fiber-content/) are almost all in that unlabeled category.
+FDA's 28 gram Daily Value makes the package claim easier to size up. A product with 3 grams gives you roughly 11 percent of that number. That's enough for "good source," but it still leaves 25 grams in the rest of the day's math. Combining beans, fruit, and grains can add up without requiring every package to shout at you, and [the foods carrying the most fiber per 100 grams](/best-high-fiber-foods-ranked-by-fiber-content/) are mostly in that unlabeled category.
 
 The label is a tool. A small one. Read it, use it, but don't let it do your thinking for you.
+
+<!-- sources: 21 CFR 101.54, https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54; FDA Daily Values, https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels; FDA Dietary Fiber Q&A, https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/questions-and-answers-dietary-fiber; FDA Whole Grain Label Statements, https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements -->

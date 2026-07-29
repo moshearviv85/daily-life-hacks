@@ -10,6 +10,8 @@ import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { isReleased, getReleaseTimestamp } from '../content/release';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 
 /**
  * Organization + WebSite are emitted sitewide by BaseLayout, so they are NOT
@@ -30,6 +32,9 @@ const homePageSchema = {
 
 const allArticles = await getCollection('articles');
 type Article = CollectionEntry<'articles'>;
+const hasShippedImage = (image: string) =>
+  image.startsWith('http') ||
+  existsSync(join(process.cwd(), 'public', image.replace(/^\/+/, '')));
 const releasedArticles = allArticles.filter((article: Article) => isReleased(article));
 const sorted = releasedArticles.sort(
   (a: Article, b: Article) => getReleaseTimestamp(b) - getReleaseTimestamp(a),
@@ -39,7 +44,7 @@ const releaseFeedRows = allArticles
     slug: article.id,
     title: article.data.title,
     excerpt: article.data.excerpt,
-    image: article.data.image,
+    image: hasShippedImage(article.data.image) ? article.data.image : '',
     imageAlt: article.data.imageAlt,
     category: article.data.category,
     date: article.data.date.toISOString(),

@@ -1,0 +1,188 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ChainTable from "./_lib/ChainTable.astro";
+import ChainLimits from "./_lib/ChainLimits.astro";
+import {
+  CHAIN_PAGES, itemsFor, studyRank, chainSchemas, usd, round,
+  PARENT_PATH, CSV_PATH, STUDY_SIZE, STUDY_CHAINS, ALL_RANKED,
+} from "./_lib/fastfood";
+
+const page = CHAIN_PAGES.kfc;
+const items = itemsFor(page.chain);
+
+const best = items[0];
+const worst = items[items.length - 1];
+const spread = best.perDollar / worst.perDollar;
+
+const breast = items.find((i) => i.item.includes("Breast"))!;
+const bucket = items.find((i) => i.item.includes("Bucket"))!;
+const tenders = items.find((i) => i.item.includes("Tenders"))!;
+const drumstick = items.find((i) => i.item.includes("Drumstick"))!;
+const bowl = items.find((i) => i.item === "Famous Bowl")!;
+
+/* KFC holds two of the top three places in the whole 30-item study. */
+const topThree = items.filter((i) => studyRank(i) <= 3).length;
+/* Same bird, two cuts, priced separately. */
+const cutGap = breast.perDollar / drumstick.perDollar;
+/* The cross-chain comparison, read from the CSV rather than typed from memory. */
+const mcNuggets = ALL_RANKED.find((i) => i.item === "Chicken McNuggets (10 pc)")!;
+
+const title = `KFC Protein per Dollar: ${items.length} Items Ranked (2026 Prices)`;
+const description =
+  `Every KFC item we priced, ranked by grams of protein per dollar. The ${best.item} leads at ` +
+  `${best.perDollar} g per $1 and the 8-piece bucket carries ${bucket.proteinG} g for ${usd(bucket.priceUsd)}. ` +
+  `Prices observed ${page.observed}, basis stated per row. No calorie figures, because our dataset has none.`;
+
+const schemas = chainSchemas({ page, items, title, description });
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6" style="color: var(--muted-color);">
+      <a href="/" class="underline" style="color:#F29B30;">Home</a>
+      <span aria-hidden="true"> / </span>
+      <a href={PARENT_PATH} class="underline" style="color:#F29B30;">Fast food protein per dollar</a>
+      <span aria-hidden="true"> / </span>
+      <span>KFC</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      KFC Protein per Dollar, Ranked
+    </h1>
+
+    <p class="text-lg mb-4 leading-relaxed" style="color: var(--text-color);">
+      KFC is the best-value chicken counter in this study, and it isn't close. The {best.item} delivers
+      {best.proteinG} grams of protein for {usd(best.priceUsd)}, or {best.perDollar} grams per dollar, and
+      {topThree} of the top three spots in the entire {STUDY_SIZE}-item, {STUDY_CHAINS}-chain ranking are KFC
+      items. Then the same menu drops to {worst.perDollar} at the bottom. Here are all {items.length} KFC items
+      we priced, with the date and source on every number.
+    </p>
+
+    <p class="text-sm mb-8 p-4 rounded-xl" style="color: var(--muted-color); background: var(--card-bg); border:1px solid var(--border-color);">
+      <strong style="color:var(--heading-color);">Prices observed {page.observed}</strong>, and unlike the other
+      chains here they don't all come from one day or one tracker, so each row states its own basis. Protein
+      grams come from KFC's full published nutrition guide. Fast-food prices are regional, so treat these as a
+      national reference point rather than your receipt. Full data in the
+      <a href={CSV_PATH} class="underline" style="color:#F29B30;">raw CSV</a>.
+    </p>
+
+    <dl class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="ff-stat">
+        <dt>Best value</dt>
+        <dd>{best.perDollar} g / $1</dd>
+        <p>{best.item}, {best.proteinG} g for {usd(best.priceUsd)}</p>
+      </div>
+      <div class="ff-stat">
+        <dt>Biggest single haul</dt>
+        <dd>{bucket.proteinG} g</dd>
+        <p>the {bucket.item} for {usd(bucket.priceUsd)}</p>
+      </div>
+      <div class="ff-stat">
+        <dt>Spread on one menu</dt>
+        <dd>{round(spread, 1)}x</dd>
+        <p>between the best and worst of {items.length} priced items</p>
+      </div>
+    </dl>
+
+    <section id="ranking">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        All {items.length} KFC items, best protein value first
+      </h2>
+      <p class="mb-6" style="color: var(--text-color);">
+        One division problem per row: protein grams divided by the price. The rank column shows where each item
+        lands in the full {STUDY_SIZE}-item study across all {STUDY_CHAINS} chains.
+      </p>
+      <ChainTable items={items} chain={page.chain} observed={page.observed} studyRankOf={studyRank} />
+    </section>
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        What this actually means when you're standing at the counter
+      </h2>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Buy the bird by the piece, not by the concept. Everything at the top of this table is chicken with
+        nothing built around it, and everything at the bottom is chicken that somebody assembled into
+        something.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The single sharpest number on this page is the cut gap. A breast runs
+        {" "}{breast.perDollar} grams per dollar and a drumstick runs {drumstick.perDollar}. Same bird, same
+        fryer, same coating, same counter, and roughly a {round(cutGap, 1)}-fold difference in what your money
+        turns into. A drumstick is {drumstick.proteinG} grams for {usd(drumstick.priceUsd)}. A breast is
+        {" "}{breast.proteinG} grams for {usd(breast.priceUsd)}. You're paying about {usd(drumstick.priceUsd)} for
+        a piece that is mostly bone and skin, and the menu gives you no reason to notice.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        One caveat I'd rather flag than bury: that drumstick price is the weakest data point in the whole study.
+        It comes from a single tracker rather than the two or three that back the other rows, and our dataset
+        marks it as an estimate. The direction of the finding is safe. The exact size of the gap is not.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The {bucket.item} is the one genuinely useful bulk order in American fast food. {bucket.proteinG} grams
+        of protein in a single box for {usd(bucket.priceUsd)}, which is {bucket.perDollar} grams per dollar and
+        third-best in the entire study. That figure isn't a bucket-level nutrition label, by the way. It's built
+        up piece by piece from KFC's own per-piece data, two breasts plus two thighs plus two drumsticks plus two
+        wings, which is exactly why the drumstick's mediocre ratio doesn't sink it: the breasts carry the box.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        {tenders.item} at {tenders.perDollar} grams per dollar sit in the middle, and they're the item worth
+        knowing about if you compare across chains. {mcNuggets.item} at McDonald's get you
+        {" "}{mcNuggets.perDollar} grams per dollar. Three KFC tenders get you {tenders.perDollar}. Same idea,
+        same format, and the gap is not subtle.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The {bowl.item} is the honest disappointment here at {bowl.perDollar}. It's the most food on the menu by
+        volume and it's near the bottom by protein value, because most of what's in the bowl is potato, gravy
+        and corn. Our price basis notes it ran frequent $5 promo pricing through 2026, which would move it up
+        this table if you catch one, and the number above is the regular price rather than the deal.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The practical version: order pieces, order the breast if there's a choice, and if you're feeding more
+        than yourself, the bucket is the only fast-food order in this whole study I'd call genuinely efficient.
+        A pile of fried chicken is still fried chicken, but per dollar of protein it beats every sandwich in
+        the country. If you want to see how far that is from a supermarket, the
+        <a href="/cheapest-protein-per-gram/" class="underline font-semibold" style="color:#F29B30;">cheapest protein per gram ranking</a>
+        {" "}prices the same body parts raw.
+      </p>
+    </section>
+
+    <ChainLimits chain={page.chain} itemCount={items.length} observed={page.observed} />
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        Compare it to another menu
+      </h2>
+      <p class="mb-5 leading-relaxed" style="color: var(--text-color);">
+        KFC wins this study on chicken. Here's who it beat, and by how much.
+      </p>
+      <ul class="space-y-3">
+        {page.siblings.map((s) => (
+          <li class="leading-relaxed" style="color: var(--text-color);">
+            <a href={s.path} class="underline font-semibold" style="color:#F29B30;">{s.label} protein per dollar</a>: {s.why}.
+          </li>
+        ))}
+        <li class="leading-relaxed" style="color: var(--text-color);">
+          <a href={PARENT_PATH} class="underline font-semibold" style="color:#F29B30;">The full {STUDY_SIZE}-item fast food ranking</a>: all {STUDY_CHAINS} chains in one table, plus how the best drive-thru order compares to a bag of dry beans.
+        </li>
+      </ul>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    .ff-stat { padding:1rem 1.1rem; border-radius:.9rem; background:var(--card-bg); border:1px solid var(--border-color); }
+    .ff-stat dt { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted-color); margin-bottom:.25rem; }
+    .ff-stat dd { font-size:1.9rem; font-weight:800; color:#F29B30; line-height:1.1; }
+    .ff-stat p { font-size:.82rem; color:var(--muted-color); margin-top:.3rem; }
+  </style>
+</BaseLayout>

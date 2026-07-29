@@ -1,0 +1,192 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ChainTable from "./_lib/ChainTable.astro";
+import ChainLimits from "./_lib/ChainLimits.astro";
+import {
+  CHAIN_PAGES, itemsFor, studyRank, chainSchemas, usd, round,
+  PARENT_PATH, CSV_PATH, STUDY_SIZE, STUDY_CHAINS, ALL_RANKED,
+} from "./_lib/fastfood";
+
+const page = CHAIN_PAGES.wendys;
+const items = itemsFor(page.chain);
+
+const best = items[0];
+const worst = items[items.length - 1];
+const spread = best.perDollar / worst.perDollar;
+
+const jrBacon = items.find((i) => i.item === "Jr. Bacon Cheeseburger")!;
+const spicyChicken = items.find((i) => i.item === "Spicy Chicken Sandwich")!;
+const davesSingle = items.find((i) => i.item === "Dave's Single")!;
+const chili = items.find((i) => i.item.startsWith("Chili"))!;
+
+const jrBaconStudyRank = studyRank(jrBacon);
+
+/**
+ * Is Wendy's really the tightest menu in the study, or does it just feel that
+ * way? Computed rather than asserted: best/worst ratio within every chain that
+ * has at least three priced rows.
+ */
+const chainSpreads = [...new Set(ALL_RANKED.map((i) => i.chain))]
+  .map((chain) => {
+    const rows = ALL_RANKED.filter((i) => i.chain === chain);
+    return { chain, n: rows.length, spread: rows[0].perDollar / rows[rows.length - 1].perDollar };
+  })
+  .filter((c) => c.n >= 3)
+  .sort((a, b) => a.spread - b.spread);
+const tightest = chainSpreads[0];
+const widest = chainSpreads[chainSpreads.length - 1];
+const isTightest = tightest.chain === page.chain;
+
+const title = `Wendy's Protein per Dollar: ${items.length} Items Ranked (July 2026 Prices)`;
+const description =
+  `Every Wendy's item we priced, ranked by grams of protein per dollar, from the ${best.item} at ` +
+  `${best.perDollar} g per $1 down to ${worst.perDollar}. The tightest menu in our fast food study. ` +
+  `Prices from Wendy's own national menu, observed ${page.observed}. No calorie figures, because our dataset has none.`;
+
+const schemas = chainSchemas({ page, items, title, description });
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="max-w-5xl mx-auto px-4 py-12 md:py-16">
+    <nav aria-label="Breadcrumb" class="text-sm mb-6" style="color: var(--muted-color);">
+      <a href="/" class="underline" style="color:#F29B30;">Home</a>
+      <span aria-hidden="true"> / </span>
+      <a href={PARENT_PATH} class="underline" style="color:#F29B30;">Fast food protein per dollar</a>
+      <span aria-hidden="true"> / </span>
+      <span>Wendy's</span>
+    </nav>
+
+    <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      Wendy's Protein per Dollar, Ranked
+    </h1>
+
+    <p class="text-lg mb-4 leading-relaxed" style="color: var(--text-color);">
+      Wendy's is the one chain in this study where the order barely matters. Every item we priced lands between
+      {" "}{worst.perDollar} and {best.perDollar} grams of protein per dollar, a spread of just
+      {" "}{round(spread, 2)}x{isTightest ? `, the tightest of any chain we priced` : ""}. For comparison,
+      {" "}{widest.chain} runs a {round(widest.spread, 1)}-fold gap between its best and worst rows. Here are all
+      {" "}{items.length} Wendy's items we priced, with the date and source on every number.
+    </p>
+
+    <p class="text-sm mb-8 p-4 rounded-xl" style="color: var(--muted-color); background: var(--card-bg); border:1px solid var(--border-color);">
+      <strong style="color:var(--heading-color);">Prices observed {page.observed}</strong>, and these are the
+      best-sourced prices in the whole study: they come from Wendy's own national baseline menu on
+      order.wendys.com on a single stated day, a la carte, rather than from a third-party tracker averaging
+      other people's guesses. Protein grams come from the same national menu nutrition data. Franchise pricing
+      still varies by location. Full data in the
+      <a href={CSV_PATH} class="underline" style="color:#F29B30;">raw CSV</a>.
+    </p>
+
+    <dl class="grid sm:grid-cols-3 gap-4 mb-10">
+      <div class="ff-stat">
+        <dt>Best value</dt>
+        <dd>{best.perDollar} g / $1</dd>
+        <p>{best.item}, {best.proteinG} g for {usd(best.priceUsd)}</p>
+      </div>
+      <div class="ff-stat">
+        <dt>Worst value</dt>
+        <dd>{worst.perDollar} g / $1</dd>
+        <p>{worst.item}, {worst.proteinG} g for {usd(worst.priceUsd)}</p>
+      </div>
+      <div class="ff-stat">
+        <dt>Spread on one menu</dt>
+        <dd>{round(spread, 2)}x</dd>
+        <p>tightest of the {chainSpreads.length} chains with enough rows to compare</p>
+      </div>
+    </dl>
+
+    <section id="ranking">
+      <h2 class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
+        All {items.length} Wendy's items, best protein value first
+      </h2>
+      <p class="mb-6" style="color: var(--text-color);">
+        One division problem per row: protein grams divided by the price. The rank column shows where each item
+        lands in the full {STUDY_SIZE}-item study across all {STUDY_CHAINS} chains.
+      </p>
+      <ChainTable items={items} chain={page.chain} observed={page.observed} studyRankOf={studyRank} />
+    </section>
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        What this actually means when you're standing at the counter
+      </h2>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        Order whatever you want. That's a genuinely unusual conclusion for one of these pages, and it's what the
+        numbers say. At McDonald's the gap between the smart order and the dumb one is nearly two to one. At
+        Chipotle it's three to one. At Wendy's it's {round(spread, 2)} to one, which is close enough to nothing
+        that picking by ratio would be a strange way to run your life.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        If you want the technically correct answer, it's the {jrBacon.item}: {jrBacon.proteinG} grams for
+        {" "}{usd(jrBacon.priceUsd)}, which is {jrBacon.perDollar} grams per dollar and the number
+        {" "}{jrBaconStudyRank} row in the entire {STUDY_SIZE}-item study. It's also the cheapest thing on this
+        page. That keeps happening across chains, and it's the most useful pattern in the whole dataset: the
+        small cheap burger nobody photographs quietly beats the flagship almost everywhere.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The {chili.item} deserves a mention because it's doing something none of the others are.
+        {" "}{chili.proteinG} grams for {usd(chili.priceUsd)} at {chili.perDollar} grams per dollar, which puts
+        it level with the {davesSingle.item} while costing two dollars less. It's beans and beef in a cup, so
+        the ratio is not a shock. If you're at Wendy's and you want protein without a bun involved, that's the
+        order, and it's the closest thing to a grocery-store food anybody on this menu sells.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        The {davesSingle.item} and the {spicyChicken.item} land at {davesSingle.perDollar} and
+        {" "}{spicyChicken.perDollar}, which is to say they land in the same place. The chicken sandwich has
+        {" "}{spicyChicken.proteinG} grams, the burger has {davesSingle.proteinG}, and the price difference
+        cancels the protein difference almost exactly. Pick on taste.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        One caution about the headline finding, because it's the kind of thing that's easy to oversell. We
+        priced {items.length} Wendy's items, not the Wendy's menu. A tight spread across four items is real but
+        it's four items, and there are plenty of things behind that counter, from breakfast to the big combo
+        stacks, that we didn't price and that could easily sit outside this band. What the four do show is that
+        Wendy's core lineup is consistently decent value, which is more than most of the chains here manage.
+      </p>
+
+      <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
+        And the usual scale check: {best.perDollar} grams per dollar is a good drive-thru number and a poor
+        number generally. The
+        <a href="/cheapest-protein-per-gram/" class="underline font-semibold" style="color:#F29B30;">cheapest protein per gram ranking</a>
+        {" "}prices the raw ingredients, and the top of that list makes this whole page look like a rounding error.
+      </p>
+    </section>
+
+    <ChainLimits chain={page.chain} itemCount={items.length} observed={page.observed} />
+
+    <section class="mt-14 max-w-3xl">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4" style="color: var(--heading-color);">
+        Compare it to another menu
+      </h2>
+      <p class="mb-5 leading-relaxed" style="color: var(--text-color);">
+        A consistent menu is only interesting next to an inconsistent one.
+      </p>
+      <ul class="space-y-3">
+        {page.siblings.map((s) => (
+          <li class="leading-relaxed" style="color: var(--text-color);">
+            <a href={s.path} class="underline font-semibold" style="color:#F29B30;">{s.label} protein per dollar</a>: {s.why}.
+          </li>
+        ))}
+        <li class="leading-relaxed" style="color: var(--text-color);">
+          <a href={PARENT_PATH} class="underline font-semibold" style="color:#F29B30;">The full {STUDY_SIZE}-item fast food ranking</a>: all {STUDY_CHAINS} chains in one table, plus how the best drive-thru order compares to a bag of dry beans.
+        </li>
+      </ul>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    .ff-stat { padding:1rem 1.1rem; border-radius:.9rem; background:var(--card-bg); border:1px solid var(--border-color); }
+    .ff-stat dt { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--muted-color); margin-bottom:.25rem; }
+    .ff-stat dd { font-size:1.9rem; font-weight:800; color:#F29B30; line-height:1.1; }
+    .ff-stat p { font-size:.82rem; color:var(--muted-color); margin-top:.3rem; }
+  </style>
+</BaseLayout>

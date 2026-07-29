@@ -1,0 +1,1660 @@
+[
+ {
+  "food": "100% whole wheat bread",
+  "protein_q": 0,
+  "fiber_q": 0,
+  "vs_q": 0,
+  "vs_examples": [],
+  "protein_examples": [],
+  "fiber_examples": []
+ },
+ {
+  "food": "almonds",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "almonds vs walnuts",
+   "almonds vs cashews",
+   "almonds vs peanuts",
+   "almonds vs pistachios",
+   "almonds vs walnuts nutrition",
+   "almonds vs pecans"
+  ],
+  "protein_examples": [
+   "how much protein in almonds",
+   "how much protein in almonds per 100g",
+   "how much protein in almonds 1 cup"
+  ],
+  "fiber_examples": [
+   "how much fiber in almonds",
+   "how much fiber in almonds 1 cup",
+   "how much fiber in almonds 1 4 cup"
+  ]
+ },
+ {
+  "food": "apples",
+  "protein_q": 4,
+  "fiber_q": 5,
+  "vs_q": 10,
+  "vs_examples": [
+   "apples vs oranges",
+   "apples vs bananas",
+   "apples vs pears",
+   "apples vs pears nutrition",
+   "apples vs applesauce",
+   "apples vs bananas nutrition"
+  ],
+  "protein_examples": [
+   "how much protein in apples",
+   "how much protein in applesauce",
+   "how much protein in apples and peanut butter"
+  ],
+  "fiber_examples": [
+   "how much fiber in apples",
+   "how much fiber in applesauce",
+   "how much fiber in applesauce cup"
+  ]
+ },
+ {
+  "food": "avocado",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "avocado vs olive oil",
+   "avocado vs guacamole",
+   "avocado vs pear",
+   "avocado vs banana",
+   "avocado vs canola oil",
+   "avocado vs guava"
+  ],
+  "protein_examples": [
+   "how much protein in avocado",
+   "how much protein in avocado toast",
+   "how much protein in avocado half"
+  ],
+  "fiber_examples": [
+   "how much fiber in avocado",
+   "how much fiber in avocado toast",
+   "how much fiber in avocado per 100g"
+  ]
+ },
+ {
+  "food": "bacon",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 9,
+  "vs_examples": [
+   "bacon vs ham",
+   "bacon vs pork belly",
+   "bacon vs canadian bacon",
+   "bacon vs pancetta",
+   "bacon vs turkey bacon",
+   "bacon vs pork"
+  ],
+  "protein_examples": [
+   "how much protein in bacon",
+   "how much protein in bacon slice",
+   "how much protein in bacon strip"
+  ],
+  "fiber_examples": [
+   "how much fiber in bacon",
+   "how much fiber in bacon and eggs",
+   "how much fiber in turkey bacon"
+  ]
+ },
+ {
+  "food": "bananas",
+  "protein_q": 2,
+  "fiber_q": 3,
+  "vs_q": 10,
+  "vs_examples": [
+   "bananas vs plantains",
+   "bananas vs party animals",
+   "bananas vs clowns",
+   "bananas vs firefighters",
+   "bananas vs tailgaters",
+   "bananas vs organic bananas"
+  ],
+  "protein_examples": [
+   "how much protein in bananas",
+   "how much protein in bananas a whey"
+  ],
+  "fiber_examples": [
+   "how much fiber in bananas",
+   "how much fiber in bananas and blueberries",
+   "how much fiber in bananas and apples"
+  ]
+ },
+ {
+  "food": "black beans",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "black beans vs pinto beans",
+   "black beans vs kidney beans",
+   "black beans vs pinto beans nutrition",
+   "black beans vs refried beans",
+   "black beans vs black turtle beans",
+   "black beans vs red kidney beans"
+  ],
+  "protein_examples": [
+   "how much protein in black beans",
+   "how much protein in black beans 1 cup",
+   "how much protein in black beans per 100g"
+  ],
+  "fiber_examples": [
+   "how much fiber in black beans",
+   "how much fiber in black beans 1 cup",
+   "how much fiber in black beans 1 2 cup"
+  ]
+ },
+ {
+  "food": "blackberries",
+  "protein_q": 8,
+  "fiber_q": 8,
+  "vs_q": 10,
+  "vs_examples": [
+   "blackberries vs blueberries",
+   "blackberries vs raspberries",
+   "blackberries vs black raspberries",
+   "blackberries vs mulberries",
+   "blackberries vs raspberries nutrition",
+   "blackberries vs blueberries nutrition"
+  ],
+  "protein_examples": [
+   "how much protein in blackberries",
+   "how much protein in blackberries per 100g",
+   "how much protein in 10 blackberries"
+  ],
+  "fiber_examples": [
+   "how much fiber in blackberries",
+   "how much fiber in blackberries 1 cup",
+   "how much fiber in blackberries and raspberries"
+  ]
+ },
+ {
+  "food": "blueberries",
+  "protein_q": 5,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "blueberries vs blackberries",
+   "blueberries vs wild blueberries",
+   "blueberries vs raspberries",
+   "blueberries vs strawberries",
+   "blueberries vs raspberries nutrition",
+   "blueberries vs blackberries nutrition"
+  ],
+  "protein_examples": [
+   "how much protein in blueberries",
+   "how much protein in blueberries 1 cup",
+   "how much protein in blueberries and strawberries"
+  ],
+  "fiber_examples": [
+   "how much fiber in blueberries",
+   "how much fiber in blueberries 1 cup",
+   "how much fiber in blueberries and raspberries"
+  ]
+ },
+ {
+  "food": "bran flakes cereal",
+  "protein_q": 1,
+  "fiber_q": 1,
+  "vs_q": 0,
+  "vs_examples": [],
+  "protein_examples": [
+   "how many calories in bran flakes cereal"
+  ],
+  "fiber_examples": [
+   "how much fiber in bran flakes cereal"
+  ]
+ },
+ {
+  "food": "brown lentils",
+  "protein_q": 5,
+  "fiber_q": 2,
+  "vs_q": 10,
+  "vs_examples": [
+   "brown lentils vs green lentils",
+   "brown lentils vs red lentils",
+   "brown lentils vs black lentils",
+   "brown lentils vs puy lentils",
+   "brown lentils vs red lentils nutrition",
+   "brown lentils vs yellow lentils"
+  ],
+  "protein_examples": [
+   "how much protein in brown lentils",
+   "how much protein in brown lentils per 100g",
+   "how much protein in cooked brown lentils"
+  ],
+  "fiber_examples": [
+   "how much fiber in brown lentils",
+   "how much fiber in 1 cup brown lentils"
+  ]
+ },
+ {
+  "food": "brown rice",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "brown rice vs white rice",
+   "brown rice vs white rice nutrition",
+   "brown rice vs white rice calories",
+   "brown rice vs red rice",
+   "brown rice vs basmati rice",
+   "brown rice vs quinoa"
+  ],
+  "protein_examples": [
+   "how much protein in brown rice",
+   "how much protein in brown rice cooked",
+   "how much protein in brown rice per 100g"
+  ],
+  "fiber_examples": [
+   "how much fiber in brown rice",
+   "how much fiber in brown rice vs white rice",
+   "how much fiber in brown rice cooked"
+  ]
+ },
+ {
+  "food": "brussels sprouts",
+  "protein_q": 1,
+  "fiber_q": 3,
+  "vs_q": 7,
+  "vs_examples": [
+   "brussels sprouts vs cabbage",
+   "brussels sprouts vs broccoli",
+   "brussels sprouts vs broccoli nutrition",
+   "brussels sprouts vs artichoke",
+   "brussels sprouts vs kale nutrition",
+   "brussels sprouts vs brussel sprouts"
+  ],
+  "protein_examples": [
+   "how much protein in brussels sprouts"
+  ],
+  "fiber_examples": [
+   "how much fiber in brussels sprouts",
+   "how much fiber in brussels sprouts 1 cup",
+   "how much fiber in roasted brussels sprouts"
+  ]
+ },
+ {
+  "food": "bulgur wheat",
+  "protein_q": 10,
+  "fiber_q": 6,
+  "vs_q": 10,
+  "vs_examples": [
+   "bulgur wheat vs quinoa",
+   "bulgur wheat vs rice",
+   "bulgur wheat vs couscous",
+   "bulgur wheat vs buckwheat",
+   "bulgur wheat vs brown rice",
+   "bulgur wheat vs farro"
+  ],
+  "protein_examples": [
+   "how much protein in bulgur wheat",
+   "how much protein in bulgur wheat per 100g",
+   "how much protein in 100g bulgur wheat"
+  ],
+  "fiber_examples": [
+   "how much fiber in bulgur wheat",
+   "how much fibre in bulgur wheat per 100g",
+   "how much fibre in 100g bulgur wheat"
+  ]
+ },
+ {
+  "food": "canned black beans",
+  "protein_q": 6,
+  "fiber_q": 6,
+  "vs_q": 3,
+  "vs_examples": [
+   "canned black beans vs dry",
+   "canned black beans vs fresh",
+   "canned black beans vs kidney beans"
+  ],
+  "protein_examples": [
+   "how much protein in canned black beans",
+   "how much protein in 100g canned black beans",
+   "how much protein in 1 cup canned black beans"
+  ],
+  "fiber_examples": [
+   "how much fiber in canned black beans",
+   "how much soluble fiber in canned black beans",
+   "how much fiber in a cup of canned black beans"
+  ]
+ },
+ {
+  "food": "canned chickpeas",
+  "protein_q": 4,
+  "fiber_q": 3,
+  "vs_q": 6,
+  "vs_examples": [
+   "canned chickpeas vs dry",
+   "canned chickpeas vs fresh",
+   "canned chickpeas vs boiled chickpeas",
+   "canned chickpeas vs soaked",
+   "canned chickpeas vs dried nutrition",
+   "canned chickpeas vs cooked"
+  ],
+  "protein_examples": [
+   "how much protein in canned chickpeas",
+   "protein in 100g canned chickpeas",
+   "how much protein in 200g canned chickpeas"
+  ],
+  "fiber_examples": [
+   "how much fiber in canned chickpeas",
+   "how much fiber in 1 cup canned chickpeas",
+   "how much fiber in 1 2 cup canned chickpeas"
+  ]
+ },
+ {
+  "food": "canned kidney beans",
+  "protein_q": 3,
+  "fiber_q": 1,
+  "vs_q": 1,
+  "vs_examples": [
+   "canned kidney beans vs dry"
+  ],
+  "protein_examples": [
+   "how much protein in canned kidney beans",
+   "how much protein in a cup of canned kidney beans",
+   "how many grams of protein in canned kidney beans"
+  ],
+  "fiber_examples": [
+   "how much fiber in canned kidney beans"
+  ]
+ },
+ {
+  "food": "canned pink salmon",
+  "protein_q": 2,
+  "fiber_q": 0,
+  "vs_q": 4,
+  "vs_examples": [
+   "canned pink salmon vs sockeye salmon",
+   "canned pink salmon vs tuna",
+   "canned pink salmon vs red salmon",
+   "canned pink salmon vs canned sardines"
+  ],
+  "protein_examples": [
+   "how much protein in canned pink salmon",
+   "how many calories in canned pink salmon"
+  ],
+  "fiber_examples": []
+ },
+ {
+  "food": "canned pumpkin",
+  "protein_q": 3,
+  "fiber_q": 8,
+  "vs_q": 7,
+  "vs_examples": [
+   "canned pumpkin vs pumpkin pie filling",
+   "canned pumpkin vs pumpkin puree",
+   "canned pumpkin vs sweet potato",
+   "canned pumpkin vs fresh",
+   "canned pumpkin vs pumpkin powder",
+   "canned pumpkin vs sweet potato for dogs"
+  ],
+  "protein_examples": [
+   "how much protein in canned pumpkin",
+   "does canned pumpkin have protein",
+   "what is the nutritional value of canned pumpkin"
+  ],
+  "fiber_examples": [
+   "how much fiber in canned pumpkin",
+   "how much soluble fiber in canned pumpkin",
+   "how much fiber in a cup of canned pumpkin"
+  ]
+ },
+ {
+  "food": "canned tuna",
+  "protein_q": 9,
+  "fiber_q": 4,
+  "vs_q": 10,
+  "vs_examples": [
+   "canned tuna vs canned salmon",
+   "canned tuna vs sardines",
+   "canned tuna vs canned chicken",
+   "canned tuna vs fresh tuna",
+   "canned tuna vs pouch",
+   "canned tuna vs chicken breast"
+  ],
+  "protein_examples": [
+   "how much protein in canned tuna",
+   "how much protein in canned tuna in water",
+   "how much protein in canned tuna in oil"
+  ],
+  "fiber_examples": [
+   "how much fiber in canned tuna",
+   "how much fibre in canned tuna",
+   "how many grams of fiber in canned tuna"
+  ]
+ },
+ {
+  "food": "carrots",
+  "protein_q": 7,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "carrots vs sweet potatoes",
+   "carrots vs potatoes",
+   "carrots vs broccoli",
+   "carrots vs sweet potato nutrition",
+   "carrots vs baby carrots",
+   "carrots vs parsnips"
+  ],
+  "protein_examples": [
+   "how much protein in carrots",
+   "how much protein in carrots 1 cup",
+   "how much protein in carrots per 100g"
+  ],
+  "fiber_examples": [
+   "how much fiber in carrots",
+   "how much fiber in carrots 1 cup",
+   "how much fiber in carrots per 100g"
+  ]
+ },
+ {
+  "food": "cheddar cheese",
+  "protein_q": 10,
+  "fiber_q": 5,
+  "vs_q": 10,
+  "vs_examples": [
+   "cheddar cheese vs american cheese",
+   "cheddar cheese vs mozzarella cheese",
+   "cheddar cheese vs normal cheese",
+   "cheddar cheese vs parmesan cheese",
+   "cheddar cheese vs processed cheese",
+   "cheddar cheese vs tasty cheese"
+  ],
+  "protein_examples": [
+   "how much protein in cheddar cheese",
+   "create a nutritional breakdown of cheddar cheese focusing on protein",
+   "how much protein in cheddar cheese slice"
+  ],
+  "fiber_examples": [
+   "how much fiber in cheddar cheese",
+   "how much fiber in sharp cheddar cheese",
+   "how much fiber in a slice of cheddar cheese"
+  ]
+ },
+ {
+  "food": "chia seeds",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "chia seeds vs sabja seeds",
+   "chia seeds vs flax seeds",
+   "chia seeds vs basil seeds",
+   "chia seeds vs psyllium husk",
+   "chia seeds vs sabja seeds benefits",
+   "chia seeds vs sabja seeds which is best"
+  ],
+  "protein_examples": [
+   "how much protein in chia seeds",
+   "how much protein in chia seeds 1 tbsp",
+   "how much protein in chia seeds per tablespoon"
+  ],
+  "fiber_examples": [
+   "how much fiber in chia seeds",
+   "how much fiber in chia seeds 1 tbsp",
+   "how much fiber in chia seeds 2 tbsp"
+  ]
+ },
+ {
+  "food": "chicken breast",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "chicken breast vs thigh",
+   "chicken breast vs tenderloin",
+   "chicken breast vs thigh nutrition",
+   "chicken breast vs thigh protein",
+   "chicken breast vs thigh calories",
+   "chicken breast vs tenders"
+  ],
+  "protein_examples": [
+   "how much protein in chicken breast",
+   "how much protein in chicken breast per 100g",
+   "how much protein in chicken breast 200g"
+  ],
+  "fiber_examples": [
+   "how much fiber in chicken breast",
+   "how much fiber in chicken breast per 100g",
+   "how many fiber in chicken breast"
+  ]
+ },
+ {
+  "food": "chicken drumsticks",
+  "protein_q": 1,
+  "fiber_q": 3,
+  "vs_q": 10,
+  "vs_examples": [
+   "chicken drumsticks vs thighs",
+   "chicken drumsticks vs chicken legs",
+   "chicken drumsticks vs wings",
+   "chicken drumsticks vs breast",
+   "chicken drumsticks vs chicken lollipop",
+   "chicken drumsticks vs leg quarters"
+  ],
+  "protein_examples": [
+   "how much protein in chicken drumsticks"
+  ],
+  "fiber_examples": [
+   "how many chicken drumsticks in 100g",
+   "how much protein in 3 chicken drumsticks",
+   "how much protein in 5 chicken drumsticks"
+  ]
+ },
+ {
+  "food": "chicken thighs",
+  "protein_q": 10,
+  "fiber_q": 3,
+  "vs_q": 10,
+  "vs_examples": [
+   "chicken thighs vs breast",
+   "chicken thighs vs breast nutrition",
+   "chicken thighs vs breast protein",
+   "chicken thighs vs drumsticks",
+   "chicken thighs vs breast calories",
+   "chicken thighs vs breast macros"
+  ],
+  "protein_examples": [
+   "how much protein in chicken thighs",
+   "how much protein in chicken thighs boneless skinless",
+   "how much protein in chicken thighs per ounce"
+  ],
+  "fiber_examples": [
+   "how much fiber in chicken thighs",
+   "how much fiber in 2 chicken thighs",
+   "how many grams of fiber in chicken thighs"
+  ]
+ },
+ {
+  "food": "chickpeas",
+  "protein_q": 10,
+  "fiber_q": 8,
+  "vs_q": 10,
+  "vs_examples": [
+   "chickpeas vs garbanzo beans",
+   "chickpeas vs garbanzo",
+   "chickpeas vs lentils",
+   "chickpeas vs black beans",
+   "chickpeas vs chana",
+   "chickpeas vs black chana"
+  ],
+  "protein_examples": [
+   "how much protein in chickpeas",
+   "how much protein in chickpeas per 100g",
+   "how much protein in chickpeas 1 cup"
+  ],
+  "fiber_examples": [
+   "how much fiber in chickpeas",
+   "how much fiber in chickpeas 1 cup",
+   "how much fiber in chickpeas can"
+  ]
+ },
+ {
+  "food": "chopped dates",
+  "protein_q": 0,
+  "fiber_q": 0,
+  "vs_q": 1,
+  "vs_examples": [
+   "chopped dates vs whole dates"
+  ],
+  "protein_examples": [],
+  "fiber_examples": []
+ },
+ {
+  "food": "chopped kale",
+  "protein_q": 3,
+  "fiber_q": 2,
+  "vs_q": 0,
+  "vs_examples": [],
+  "protein_examples": [
+   "how much protein in 1 cup chopped kale",
+   "chopped kale nutrition",
+   "1 cup chopped kale nutrition"
+  ],
+  "fiber_examples": [
+   "how much fiber in 1 cup chopped kale",
+   "how much fiber in 2 cups of chopped kale"
+  ]
+ },
+ {
+  "food": "cottage cheese",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "cottage cheese vs greek yogurt",
+   "cottage cheese vs greek yogurt protein",
+   "cottage cheese vs ricotta",
+   "cottage cheese vs greek yogurt nutrition",
+   "cottage cheese vs cream cheese",
+   "cottage cheese vs paneer"
+  ],
+  "protein_examples": [
+   "how much protein in cottage cheese",
+   "how much protein in cottage cheese 1 cup",
+   "how much protein in cottage cheese per 100g"
+  ],
+  "fiber_examples": [
+   "how much fiber in cottage cheese",
+   "how much fiber in cottage cheese 1 cup",
+   "how much fibre in cottage cheese"
+  ]
+ },
+ {
+  "food": "dry roasted peanuts",
+  "protein_q": 7,
+  "fiber_q": 4,
+  "vs_q": 8,
+  "vs_examples": [
+   "dry roasted peanuts vs cocktail peanuts",
+   "dry roasted peanuts vs regular peanuts",
+   "dry roasted peanuts vs salted peanuts",
+   "dry roasted peanuts vs roasted peanuts",
+   "dry roasted peanuts vs boiled peanuts",
+   "dry roasted peanuts vs raw peanuts"
+  ],
+  "protein_examples": [
+   "how much protein in dry roasted peanuts",
+   "how much protein in 1 cup dry roasted peanuts",
+   "how much protein in a handful of dry roasted peanuts"
+  ],
+  "fiber_examples": [
+   "how much fiber in dry roasted peanuts",
+   "are dry roasted peanuts high in fiber",
+   "are dry roasted peanuts a good source of fiber"
+  ]
+ },
+ {
+  "food": "eggs",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "eggs vs egg whites",
+   "eggs vs chicken protein",
+   "eggs vs whey protein",
+   "eggs vs chicken",
+   "eggs vs protein powder",
+   "eggs vs oatmeal for breakfast"
+  ],
+  "protein_examples": [
+   "how much protein in eggs",
+   "how much protein in eggs scrambled",
+   "how much protein in eggs per 100g"
+  ],
+  "fiber_examples": [
+   "how much fiber in eggs",
+   "how much fiber in eggs per 100g",
+   "how much fiber in eggs and bacon"
+  ]
+ },
+ {
+  "food": "fresh broccoli crowns",
+  "protein_q": 0,
+  "fiber_q": 0,
+  "vs_q": 0,
+  "vs_examples": [],
+  "protein_examples": [],
+  "fiber_examples": []
+ },
+ {
+  "food": "frozen broccoli florets",
+  "protein_q": 1,
+  "fiber_q": 0,
+  "vs_q": 2,
+  "vs_examples": [
+   "frozen broccoli florets vs fresh",
+   "frozen broccoli florets vs cuts"
+  ],
+  "protein_examples": [
+   "how many calories in frozen broccoli florets"
+  ],
+  "fiber_examples": []
+ },
+ {
+  "food": "frozen chopped spinach",
+  "protein_q": 3,
+  "fiber_q": 0,
+  "vs_q": 3,
+  "vs_examples": [
+   "frozen chopped spinach vs fresh",
+   "frozen chopped spinach vs cut leaf",
+   "frozen chopped spinach vs fresh baby spinach"
+  ],
+  "protein_examples": [
+   "how many calories in frozen chopped spinach",
+   "frozen chopped spinach nutrition",
+   "is frozen chopped spinach cooked"
+  ],
+  "fiber_examples": []
+ },
+ {
+  "food": "frozen green beans",
+  "protein_q": 2,
+  "fiber_q": 2,
+  "vs_q": 2,
+  "vs_examples": [
+   "frozen green beans vs fresh",
+   "frozen green beans vs canned"
+  ],
+  "protein_examples": [
+   "how much protein in frozen green beans",
+   "how many calories in frozen green beans"
+  ],
+  "fiber_examples": [
+   "how much fiber in frozen green beans",
+   "how much fiber does frozen green beans have"
+  ]
+ },
+ {
+  "food": "frozen green peas",
+  "protein_q": 2,
+  "fiber_q": 1,
+  "vs_q": 3,
+  "vs_examples": [
+   "frozen green peas vs fresh",
+   "frozen green peas vs canned",
+   "frozen green peas vs dried green peas"
+  ],
+  "protein_examples": [
+   "how much protein in frozen green peas",
+   "how much protein in a cup of frozen green peas"
+  ],
+  "fiber_examples": [
+   "how much fiber in frozen green peas"
+  ]
+ },
+ {
+  "food": "frozen shelled edamame",
+  "protein_q": 0,
+  "fiber_q": 0,
+  "vs_q": 0,
+  "vs_examples": [],
+  "protein_examples": [],
+  "fiber_examples": []
+ },
+ {
+  "food": "frozen tilapia fillets",
+  "protein_q": 1,
+  "fiber_q": 0,
+  "vs_q": 0,
+  "vs_examples": [],
+  "protein_examples": [
+   "are frozen tilapia fillets healthy"
+  ],
+  "fiber_examples": []
+ },
+ {
+  "food": "greek yogurt",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "greek yogurt vs regular yogurt",
+   "greek yogurt vs cottage cheese",
+   "greek yogurt vs labneh",
+   "greek yogurt vs bio yogurt",
+   "greek yogurt vs curd",
+   "greek yogurt vs greek style yogurt"
+  ],
+  "protein_examples": [
+   "how much protein in greek yogurt",
+   "how much protein in greek yogurt 1 cup",
+   "how much protein in greek yogurt per 100g"
+  ],
+  "fiber_examples": [
+   "how much fiber in greek yogurt",
+   "how much fiber in greek yogurt 1 cup",
+   "how much fiber in plain greek yogurt"
+  ]
+ },
+ {
+  "food": "green cabbage",
+  "protein_q": 2,
+  "fiber_q": 8,
+  "vs_q": 10,
+  "vs_examples": [
+   "green cabbage vs red cabbage",
+   "green cabbage vs napa cabbage",
+   "green cabbage vs savoy cabbage",
+   "green cabbage vs white cabbage",
+   "green cabbage vs purple cabbage",
+   "green cabbage vs lettuce"
+  ],
+  "protein_examples": [
+   "how much protein in green cabbage",
+   "green cabbage nutrition 100g"
+  ],
+  "fiber_examples": [
+   "how much fiber in green cabbage",
+   "how much fiber in green cabbage 1 cup",
+   "how much fiber in cooked green cabbage"
+  ]
+ },
+ {
+  "food": "green split peas",
+  "protein_q": 4,
+  "fiber_q": 1,
+  "vs_q": 7,
+  "vs_examples": [
+   "green split peas vs lentils",
+   "green split peas vs yellow split peas",
+   "green split peas vs yellow split peas nutrition",
+   "green split peas vs green peas",
+   "green split peas vs red lentils",
+   "green split peas vs lentils nutrition"
+  ],
+  "protein_examples": [
+   "how much protein in green split peas",
+   "how much protein in a cup of cooked green split peas",
+   "how many calories in green split peas"
+  ],
+  "fiber_examples": [
+   "how much fiber in green split peas"
+  ]
+ },
+ {
+  "food": "ground beef",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "ground beef vs ground chuck",
+   "ground beef vs ground turkey",
+   "ground beef vs mince",
+   "ground beef vs ground sirloin",
+   "ground beef vs ground chicken",
+   "ground beef vs ground pork"
+  ],
+  "protein_examples": [
+   "how much protein in ground beef",
+   "create a nutritional breakdown for common serving sizes of ground beef",
+   "how much protein in ground beef 1 cup"
+  ],
+  "fiber_examples": [
+   "how much fiber in ground beef",
+   "how much fiber in ground beef 1 cup",
+   "how much fiber in lean ground beef"
+  ]
+ },
+ {
+  "food": "ground turkey",
+  "protein_q": 10,
+  "fiber_q": 9,
+  "vs_q": 10,
+  "vs_examples": [
+   "ground turkey vs ground beef",
+   "ground turkey vs ground chicken",
+   "ground turkey vs ground beef protein",
+   "ground turkey vs ground beef nutrition",
+   "ground turkey vs ground beef calories",
+   "ground turkey vs chicken breast"
+  ],
+  "protein_examples": [
+   "how much protein in ground turkey",
+   "how much protein in ground turkey 1 cup",
+   "how much protein in ground turkey cooked"
+  ],
+  "fiber_examples": [
+   "how much fiber in ground turkey",
+   "protein and fiber in ground turkey",
+   "how much fiber in 1 cup ground turkey"
+  ]
+ },
+ {
+  "food": "mozzarella",
+  "protein_q": 10,
+  "fiber_q": 6,
+  "vs_q": 10,
+  "vs_examples": [
+   "mozzarella vs burrata",
+   "mozzarella vs cheddar",
+   "mozzarella vs buffalo mozzarella",
+   "mozzarella vs cheddar cheese",
+   "mozzarella vs parmesan",
+   "mozzarella vs provolone"
+  ],
+  "protein_examples": [
+   "how much protein in mozzarella cheese",
+   "how much protein in mozzarella sticks",
+   "how much protein in mozzarella ball"
+  ],
+  "fiber_examples": [
+   "how much fiber in mozzarella cheese",
+   "how much fiber in mozzarella sticks",
+   "how much fibre in mozzarella"
+  ]
+ },
+ {
+  "food": "navy beans",
+  "protein_q": 6,
+  "fiber_q": 8,
+  "vs_q": 10,
+  "vs_examples": [
+   "navy beans vs great northern beans",
+   "navy beans vs cannellini beans",
+   "navy beans vs pinto beans",
+   "navy beans vs northern beans",
+   "navy beans vs white beans",
+   "navy beans vs white kidney beans"
+  ],
+  "protein_examples": [
+   "how much protein in navy beans",
+   "how much protein in navy beans 1 cup",
+   "how much protein in white navy beans"
+  ],
+  "fiber_examples": [
+   "how much fiber in navy beans",
+   "how much fiber in navy beans 1 cup",
+   "how much soluble fiber in navy beans"
+  ]
+ },
+ {
+  "food": "oat bran",
+  "protein_q": 9,
+  "fiber_q": 9,
+  "vs_q": 10,
+  "vs_examples": [
+   "oat bran vs oatmeal",
+   "oat bran vs rolled oats",
+   "oat bran vs wheat bran",
+   "oat bran vs oats",
+   "oat bran vs steel cut oats",
+   "oat bran vs psyllium husk"
+  ],
+  "protein_examples": [
+   "how much protein in oat bran",
+   "how much protein in oat bran cereal",
+   "how much protein in 100g oat bran"
+  ],
+  "fiber_examples": [
+   "how much fiber in oat bran",
+   "how much fiber in oat bran cereal",
+   "how much fiber in oat bran muffin"
+  ]
+ },
+ {
+  "food": "old-fashioned rolled oats",
+  "protein_q": 0,
+  "fiber_q": 0,
+  "vs_q": 1,
+  "vs_examples": [
+   "old-fashioned rolled oats vs quick oats"
+  ],
+  "protein_examples": [],
+  "fiber_examples": []
+ },
+ {
+  "food": "oranges",
+  "protein_q": 1,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "oranges vs mandarins",
+   "oranges vs tangerines",
+   "oranges vs clementines",
+   "oranges vs grapefruit",
+   "oranges vs apples",
+   "oranges vs orange juice"
+  ],
+  "protein_examples": [
+   "how much protein in oranges"
+  ],
+  "fiber_examples": [
+   "how much fiber in oranges",
+   "how much fiber in mandarin oranges",
+   "how much fiber in 2 oranges"
+  ]
+ },
+ {
+  "food": "peanut butter",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "peanut butter vs almond butter",
+   "peanut butter vs peanut butter spread",
+   "peanut butter vs peanuts",
+   "peanut butter vs peanut butter powder",
+   "peanut butter vs nutella",
+   "peanut butter vs almond butter nutrition"
+  ],
+  "protein_examples": [
+   "how much protein in peanut butter",
+   "how much protein in peanut butter 1 tbsp",
+   "how much protein in peanut butter sandwich"
+  ],
+  "fiber_examples": [
+   "how much fiber in peanut butter",
+   "how much fiber in peanut butter and jelly sandwich",
+   "how much fiber in peanut butter powder"
+  ]
+ },
+ {
+  "food": "pearled barley",
+  "protein_q": 2,
+  "fiber_q": 4,
+  "vs_q": 10,
+  "vs_examples": [
+   "pearled barley vs hulled barley",
+   "pearled barley vs farro",
+   "pearled barley vs barley",
+   "pearled barley vs pot barley",
+   "pearled barley vs italian barley",
+   "pearled barley vs rice"
+  ],
+  "protein_examples": [
+   "how much protein in pearled barley",
+   "is pearled barley nutritious"
+  ],
+  "fiber_examples": [
+   "how much fiber in pearled barley",
+   "how much fiber in a cup of pearled barley",
+   "is pearled barley high in fiber"
+  ]
+ },
+ {
+  "food": "pears",
+  "protein_q": 3,
+  "fiber_q": 5,
+  "vs_q": 10,
+  "vs_examples": [
+   "pears vs apples",
+   "pears vs dove soap",
+   "pears vs dove",
+   "pears vs pals",
+   "pears vs apples nutrition",
+   "pears vs dove soap which is better"
+  ],
+  "protein_examples": [
+   "how much protein in pears",
+   "how much protein in canned pears",
+   "how much protein in 2 pears"
+  ],
+  "fiber_examples": [
+   "how much fiber in pears",
+   "how much fiber in canned pears",
+   "how much fiber in 2 pears"
+  ]
+ },
+ {
+  "food": "pinto beans",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "pinto beans vs black beans",
+   "pinto beans vs black beans nutrition",
+   "pinto beans vs kidney beans",
+   "pinto beans vs baked beans",
+   "pinto beans vs rajma",
+   "pinto beans vs cannellini beans"
+  ],
+  "protein_examples": [
+   "how much protein in pinto beans",
+   "how much protein in pinto beans cooked",
+   "how much protein in pinto beans 1 cup"
+  ],
+  "fiber_examples": [
+   "how much fiber in pinto beans",
+   "how much fiber in pinto beans cooked",
+   "how much fiber in pinto beans 1 cup"
+  ]
+ },
+ {
+  "food": "popcorn kernels",
+  "protein_q": 2,
+  "fiber_q": 6,
+  "vs_q": 5,
+  "vs_examples": [
+   "popcorn kernels vs corn",
+   "popcorn kernels vs regular corn",
+   "popcorn kernels vs sweet corn",
+   "popcorn kernels vs corn on the cob",
+   "popcorn kernels vs microwave popcorn"
+  ],
+  "protein_examples": [
+   "how much protein in popcorn kernels",
+   "how much popcorn kernels for one serving"
+  ],
+  "fiber_examples": [
+   "how much fiber in popcorn kernels",
+   "how much fiber in 1 2 cup popcorn kernels",
+   "how much fiber in 1 3 cup popcorn kernels"
+  ]
+ },
+ {
+  "food": "pork loin chops",
+  "protein_q": 4,
+  "fiber_q": 0,
+  "vs_q": 9,
+  "vs_examples": [
+   "pork loin chops vs pork chops",
+   "pork loin chops vs pork rib chops",
+   "pork loin chops vs center cut",
+   "pork loin chops vs shoulder chops",
+   "pork loin chops vs tenderloin",
+   "pork loin chops vs pork sirloin chops"
+  ],
+  "protein_examples": [
+   "how much protein in pork loin chops",
+   "how much protein in 2 pork loin chops",
+   "how much protein in two pork loin chops"
+  ],
+  "fiber_examples": []
+ },
+ {
+  "food": "pork shoulder butt roast",
+  "protein_q": 0,
+  "fiber_q": 0,
+  "vs_q": 0,
+  "vs_examples": [],
+  "protein_examples": [],
+  "fiber_examples": []
+ },
+ {
+  "food": "prunes",
+  "protein_q": 9,
+  "fiber_q": 9,
+  "vs_q": 10,
+  "vs_examples": [
+   "prunes vs dates",
+   "prunes vs plums",
+   "prunes vs raisins",
+   "prunes vs prune juice",
+   "prunes vs figs",
+   "prunes vs raisins for constipation"
+  ],
+  "protein_examples": [
+   "how much protein in prunes",
+   "how much protein in 5 prunes",
+   "how much protein in 4 prunes"
+  ],
+  "fiber_examples": [
+   "how much fiber in prunes",
+   "how much fiber in prunes for constipation",
+   "how much fiber in prunes per day"
+  ]
+ },
+ {
+  "food": "quinoa",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "quinoa vs buckwheat",
+   "quinoa vs rice",
+   "quinoa vs bulgur",
+   "quinoa vs rice nutrition",
+   "quinoa vs couscous",
+   "quinoa vs brown rice"
+  ],
+  "protein_examples": [
+   "how much protein in quinoa",
+   "how much protein in quinoa cooked",
+   "how much protein in quinoa 1 cup"
+  ],
+  "fiber_examples": [
+   "how much fiber in quinoa",
+   "how much fiber in quinoa 1 cup",
+   "how much fiber in quinoa cooked"
+  ]
+ },
+ {
+  "food": "raisins",
+  "protein_q": 3,
+  "fiber_q": 3,
+  "vs_q": 10,
+  "vs_examples": [
+   "raisins vs sultanas",
+   "raisins vs grapes",
+   "raisins vs dates",
+   "raisins vs currants",
+   "raisins vs prunes",
+   "raisins vs sultanas vs currants"
+  ],
+  "protein_examples": [
+   "how much protein in raisins",
+   "how much protein in raisins per 100g",
+   "how much protein in raisins 1 cup"
+  ],
+  "fiber_examples": [
+   "how much fiber in raisins",
+   "how much fiber in raisins 1 cup",
+   "how much fiber in raisins per 100g"
+  ]
+ },
+ {
+  "food": "raspberries",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "raspberries vs blackberries",
+   "raspberries vs blueberries",
+   "raspberries vs strawberries",
+   "raspberries vs blackberries nutrition",
+   "raspberries vs blueberries nutrition",
+   "raspberries vs blackberries fiber"
+  ],
+  "protein_examples": [
+   "how much protein in raspberries",
+   "how much protein in raspberries per 100g",
+   "how much protein in raspberries 1 cup"
+  ],
+  "fiber_examples": [
+   "how much fiber in raspberries",
+   "how much fiber in raspberries and blueberries",
+   "how much fiber in raspberries 1 cup"
+  ]
+ },
+ {
+  "food": "red lentils",
+  "protein_q": 8,
+  "fiber_q": 7,
+  "vs_q": 10,
+  "vs_examples": [
+   "red lentils vs green lentils",
+   "red lentils vs brown lentils",
+   "red lentils vs regular lentils",
+   "red lentils vs red split lentils",
+   "red lentils vs green lentils nutrition",
+   "red lentils vs brown lentils nutrition"
+  ],
+  "protein_examples": [
+   "how much protein in red lentils",
+   "how much protein in red lentils per 100g",
+   "how much protein in red lentils 1 cup"
+  ],
+  "fiber_examples": [
+   "how much fiber in red lentils",
+   "how much fiber in red lentils 1 cup",
+   "how much fiber in red lentils cooked"
+  ]
+ },
+ {
+  "food": "rotisserie chicken",
+  "protein_q": 10,
+  "fiber_q": 4,
+  "vs_q": 10,
+  "vs_examples": [
+   "rotisserie chicken vs roast chicken",
+   "rotisserie chicken vs grilled chicken",
+   "rotisserie chicken vs chicken breast",
+   "rotisserie chicken vs baked chicken",
+   "rotisserie chicken vs lechon manok",
+   "rotisserie chicken vs roasted chicken calories"
+  ],
+  "protein_examples": [
+   "how much protein in rotisserie chicken",
+   "how much protein in rotisserie chicken breast",
+   "how much protein in rotisserie chicken leg"
+  ],
+  "fiber_examples": [
+   "how much fiber in rotisserie chicken",
+   "how many grams of fiber in rotisserie chicken",
+   "how many grams is a rotisserie chicken"
+  ]
+ },
+ {
+  "food": "russet potatoes",
+  "protein_q": 6,
+  "fiber_q": 2,
+  "vs_q": 10,
+  "vs_examples": [
+   "russet potatoes vs yellow potatoes",
+   "russet potatoes vs idaho",
+   "russet potatoes vs gold potatoes",
+   "russet potatoes vs sweet potatoes",
+   "russet potatoes vs white potatoes",
+   "russet potatoes vs red potatoes"
+  ],
+  "protein_examples": [
+   "how much protein in russet potatoes",
+   "how much protein in 2 russet potatoes",
+   "protein in 3 russet potatoes"
+  ],
+  "fiber_examples": [
+   "how much fiber in russet potatoes",
+   "how much fiber in 2 russet potatoes"
+  ]
+ },
+ {
+  "food": "sardines",
+  "protein_q": 10,
+  "fiber_q": 6,
+  "vs_q": 10,
+  "vs_examples": [
+   "sardines vs anchovies",
+   "sardines vs mackerel",
+   "sardines vs sprats",
+   "sardines vs tuna",
+   "sardines vs herring",
+   "sardines vs salmon"
+  ],
+  "protein_examples": [
+   "how much protein in sardines",
+   "how much protein in sardines can",
+   "how much protein in sardines in water"
+  ],
+  "fiber_examples": [
+   "how much fiber in sardines",
+   "how much fiber in canned sardines",
+   "how much fiber does sardines have"
+  ]
+ },
+ {
+  "food": "spaghetti",
+  "protein_q": 10,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "spaghetti vs linguine",
+   "spaghetti vs noodles",
+   "spaghetti vs spaghettini",
+   "spaghetti vs pasta",
+   "spaghetti vs angel hair",
+   "spaghetti vs bolognese"
+  ],
+  "protein_examples": [
+   "how much protein in spaghetti",
+   "how much protein in spaghetti squash",
+   "how much protein in spaghetti bolognese"
+  ],
+  "fiber_examples": [
+   "how much fiber in spaghetti squash",
+   "how much fiber in spaghetti",
+   "how much fiber in spaghetti noodles"
+  ]
+ },
+ {
+  "food": "strawberries",
+  "protein_q": 5,
+  "fiber_q": 10,
+  "vs_q": 10,
+  "vs_examples": [
+   "strawberries vs blueberries",
+   "strawberries vs blueberries nutrition",
+   "strawberries vs raspberries",
+   "strawberries vs raspberries nutrition",
+   "strawberries vs blackberries",
+   "strawberries vs bananas"
+  ],
+  "protein_examples": [
+   "how much protein in strawberries",
+   "how much protein in strawberries and blueberries",
+   "how much protein in strawberries 1 cup"
+  ],
+  "fiber_examples": [
+   "how much fiber in strawberries",
+   "how much fiber in strawberries 1 cup",
+   "how much fiber in strawberries and blueberries"
+  ]
+ },
+ {
+  "food": "sunflower seed kernels",
+  "protein_q": 2,
+  "fiber_q": 1,
+  "vs_q": 0,
+  "vs_examples": [],
+  "protein_examples": [
+   "how much protein in sunflower seed kernels",
+   "how many calories in sunflower seed kernels"
+  ],
+  "fiber_examples": [
+   "how much fiber in sunflower seed kernels"
+  ]
+ },
+ {
+  "food": "sweet potatoes",
+  "protein_q": 3,
+  "fiber_q": 5,
+  "vs_q": 10,
+  "vs_examples": [
+   "sweet potatoes vs yams",
+   "sweet potatoes vs potatoes",
+   "sweet potatoes vs potatoes nutrition",
+   "sweet potatoes vs white potatoes",
+   "sweet potatoes vs regular potatoes",
+   "sweet potatoes vs rice"
+  ],
+  "protein_examples": [
+   "how much protein in sweet potatoes",
+   "how much protein in sweet potatoes 1 cup",
+   "how much protein in sweet potatoes per 100g"
+  ],
+  "fiber_examples": [
+   "how much fiber in sweet potatoes",
+   "how much fiber in sweet potatoes with skin",
+   "how much fiber in sweet potatoes without skin"
+  ]
+ },
+ {
+  "food": "tempeh",
+  "protein_q": 10,
+  "fiber_q": 8,
+  "vs_q": 10,
+  "vs_examples": [
+   "tempeh vs tofu",
+   "tempeh vs seitan",
+   "tempeh vs tofu protein",
+   "tempeh vs natto",
+   "tempeh vs tofu vs seitan",
+   "tempeh vs tofu nutrition"
+  ],
+  "protein_examples": [
+   "how much protein in tempeh",
+   "how much protein in tempeh per 100g",
+   "how much protein in tempeh vs tofu"
+  ],
+  "fiber_examples": [
+   "how much fiber in tempeh",
+   "how much soluble fiber in tempeh",
+   "how much fibre in 100g tempeh"
+  ]
+ },
+ {
+  "food": "tofu",
+  "protein_q": 10,
+  "fiber_q": 9,
+  "vs_q": 10,
+  "vs_examples": [
+   "tofu vs paneer",
+   "tofu vs chicken protein",
+   "tofu vs tempeh",
+   "tofu vs paneer protein",
+   "tofu vs chicken",
+   "tofu vs paneer price"
+  ],
+  "protein_examples": [
+   "how much protein in tofu",
+   "how much protein in tofu per 100g",
+   "how much protein in tofu block"
+  ],
+  "fiber_examples": [
+   "how much fiber in tofu",
+   "how much fiber in tofu block",
+   "how much fiber in tofu 1 cup"
+  ]
+ },
+ {
+  "food": "tvp",
+  "protein_q": 9,
+  "fiber_q": 4,
+  "vs_q": 9,
+  "vs_examples": [
+   "tvp vs soy curls",
+   "tvp vs tofu",
+   "tvp vs soya chunks",
+   "tvp vs seitan",
+   "tvp vs ground beef nutrition",
+   "tvp vs tofu nutrition"
+  ],
+  "protein_examples": [
+   "how much protein in tvp",
+   "how much protein in tvp per 100g",
+   "how many protein in tvp"
+  ],
+  "fiber_examples": [
+   "how much fiber in tvp",
+   "how much fibre in tvp",
+   "is tvp high in fiber"
+  ]
+ },
+ {
+  "food": "white rice",
+  "protein_q": 10,
+  "fiber_q": 8,
+  "vs_q": 10,
+  "vs_examples": [
+   "white rice vs brown rice",
+   "white rice vs jasmine rice",
+   "white rice vs brown rice nutrition",
+   "white rice vs brown rice calories",
+   "white rice vs basmati rice",
+   "white rice vs quinoa"
+  ],
+  "protein_examples": [
+   "how much protein in white rice",
+   "how much protein in white rice 1 cup",
+   "how much protein in white rice per 100g"
+  ],
+  "fiber_examples": [
+   "how much fiber in white rice",
+   "how much fiber in white rice cooked",
+   "how much fiber in white rice vs brown rice"
+  ]
+ },
+ {
+  "food": "whole chicken",
+  "protein_q": 10,
+  "fiber_q": 1,
+  "vs_q": 9,
+  "vs_examples": [
+   "whole chicken vs chicken breast",
+   "whole chicken vs cornish hen",
+   "whole chicken vs rotisserie",
+   "whole chicken vs whole roasting chicken",
+   "whole chicken vs whole turkey",
+   "whole chicken vs half chicken"
+  ],
+  "protein_examples": [
+   "how much protein in whole chicken",
+   "how much protein in whole chicken breast",
+   "how much protein in whole chicken leg"
+  ],
+  "fiber_examples": [
+   "how much fiber is in a whole chicken"
+  ]
+ },
+ {
+  "food": "whole flaxseed",
+  "protein_q": 0,
+  "fiber_q": 1,
+  "vs_q": 5,
+  "vs_examples": [
+   "whole flaxseed vs flaxseed meal",
+   "whole flaxseed vs ground",
+   "whole flaxseed vs milled",
+   "whole flaxseed vs golden flaxseed",
+   "whole flaxseed vs ground flax seeds"
+  ],
+  "protein_examples": [],
+  "fiber_examples": [
+   "how much fiber in whole flaxseed"
+  ]
+ },
+ {
+  "food": "whole milk",
+  "protein_q": 10,
+  "fiber_q": 5,
+  "vs_q": 10,
+  "vs_examples": [
+   "whole milk vs 2",
+   "whole milk vs 2 percent",
+   "whole milk vs skim milk",
+   "whole milk vs full cream milk",
+   "whole milk vs half and half",
+   "whole milk vs fresh milk"
+  ],
+  "protein_examples": [
+   "how much protein in whole milk",
+   "how much protein in whole milk greek yogurt",
+   "how much protein in whole milk yogurt"
+  ],
+  "fiber_examples": [
+   "how much fiber in whole milk",
+   "how much fiber in whole milk yogurt",
+   "how much fiber in 1 cup whole milk"
+  ]
+ },
+ {
+  "food": "whole wheat flour",
+  "protein_q": 3,
+  "fiber_q": 5,
+  "vs_q": 10,
+  "vs_examples": [
+   "whole wheat flour vs all purpose flour",
+   "whole wheat flour vs bread flour",
+   "whole wheat flour vs white flour",
+   "whole wheat flour vs wholemeal flour",
+   "whole wheat flour vs wheat flour",
+   "whole wheat flour vs plain flour"
+  ],
+  "protein_examples": [
+   "how much protein in whole wheat flour",
+   "how much protein in 100g whole wheat flour",
+   "how much protein in white whole wheat flour"
+  ],
+  "fiber_examples": [
+   "how much fiber in whole wheat flour",
+   "how much fiber in white whole wheat flour",
+   "how much soluble fiber in whole wheat flour"
+  ]
+ },
+ {
+  "food": "whole wheat spaghetti",
+  "protein_q": 1,
+  "fiber_q": 2,
+  "vs_q": 1,
+  "vs_examples": [
+   "whole wheat spaghetti vs regular"
+  ],
+  "protein_examples": [
+   "how much protein in whole wheat spaghetti"
+  ],
+  "fiber_examples": [
+   "how much fiber in whole wheat spaghetti",
+   "how many grams of fiber in whole wheat spaghetti"
+  ]
+ },
+ {
+  "food": "yellow onions",
+  "protein_q": 1,
+  "fiber_q": 1,
+  "vs_q": 8,
+  "vs_examples": [
+   "yellow onions vs white onions",
+   "yellow onions vs sweet onions",
+   "yellow onions vs red onions",
+   "yellow onions vs spanish onions",
+   "yellow onions vs brown onions",
+   "yellow onions vs shallots"
+  ],
+  "protein_examples": [
+   "how much protein in yellow onions"
+  ],
+  "fiber_examples": [
+   "how much fiber in yellow onions"
+  ]
+ }
+]

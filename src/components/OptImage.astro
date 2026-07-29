@@ -19,7 +19,8 @@
  * Intrinsic width/height are taken from the manifest when the caller does not
  * pass them, so every image reserves its box and contributes no CLS.
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 
 interface Props {
   src: string;
@@ -66,6 +67,9 @@ const {
 
 const entry = manifest[src];
 const variants = entry?.variants ?? [];
+const sourceExists =
+  !src.startsWith("/") ||
+  existsSync(join(process.cwd(), "public", src.replace(/^\/+/, "")));
 
 // De-duplicate by real width: a 768px-wide source produces 400w + 768w, not
 // 400w/800w/1200w.
@@ -81,7 +85,15 @@ const finalHeight = height ?? entry?.height;
 ---
 
 {
-  srcset ? (
+  !sourceExists ? (
+    <span
+      role="img"
+      aria-label={alt}
+      class={`${className ?? ""} flex items-center justify-center bg-gradient-to-br from-orange-50 to-slate-100 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:from-slate-800 dark:to-slate-900 dark:text-slate-300`}
+    >
+      Daily Life Hacks
+    </span>
+  ) : srcset ? (
     <picture>
       <source type="image/webp" srcset={srcset} sizes={sizes} />
       <img

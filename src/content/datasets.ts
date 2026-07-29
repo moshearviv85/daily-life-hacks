@@ -23,6 +23,10 @@ export interface DatasetMeta {
   temporal: string;
 }
 
+/** Stable release identity shared by HTML schema, the API, and distribution packages. */
+export const DATA_VERSION = "2026.1";
+export const DATA_RELEASE_DATE = "2026-07-26";
+
 export const DATASETS: Record<string, DatasetMeta> = {
   "animal-protein-per-dollar-ranked": {
     name: "Every Animal Protein in Our Study, Ranked by Cost (21 foods, 2026)",
@@ -234,16 +238,16 @@ export const DATASETS: Record<string, DatasetMeta> = {
 export const FIBER_INDEX_NAME = "the Fiber per Dollar Index";
 export const PROTEIN_INDEX_NAME = "the Protein per Dollar Index";
 
+/** Human-readable reuse terms, including the exact scope and attribution examples. */
+export const DATA_TERMS_URL = "https://www.daily-life-hacks.com/data-reuse/";
+
 /**
- * Reuse terms live on the methodology page, at the #data-license anchor.
- *
- * Deliberately NOT a CC BY URL. A formal open licence was built and then
- * reverted by owner decision (commit 207442c), which also deleted /license/.
- * Do not point this at creativecommons.org or /license/ again without the
- * owner saying so: /license/ is a 404, and a licence claim linking to a dead
- * page is worse than no claim at all.
+ * Machine-readable license for the original Daily Life Hacks contribution to
+ * the datasets: selection, arrangement, calculations, field descriptions and
+ * explanatory material. Upstream facts and third-party material aren't
+ * relicensed; /data-reuse/ spells that boundary out.
  */
-export const DATA_TERMS_URL = "https://www.daily-life-hacks.com/methodology/#data-license";
+export const DATA_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/";
 
 /** Display order on /data/: the two named indexes first, then day-cost studies, then category cuts. */
 export const STUDY_DATASET_ORDER: string[] = [

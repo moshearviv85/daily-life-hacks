@@ -23,14 +23,10 @@
  * entry is missing, the image is left exactly as it was — no <picture>
  * pointing at a file that does not exist.
  *
- * NOT YET WIRED UP. To enable, in astro.config.mjs:
- *
- *   import rehypeArticleImages from './scripts/rehype-article-images.mjs';
- *   ...
- *   export default defineConfig({
- *     markdown: { rehypePlugins: [rehypeArticleImages] },
- *     ...
- *   });
+ * Wired into Astro's Markdown pipeline in astro.config.mjs. Keep the original
+ * JPEG on the `<img>`: Pinterest metadata, schema.org image URLs, and Google
+ * Images discovery continue to use the stable source asset while browsers can
+ * choose the smaller responsive WebP.
  */
 import { readFileSync } from "node:fs";
 import { join } from "node:path";

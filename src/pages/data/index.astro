@@ -7,6 +7,9 @@ import {
   STUDY_DATASETS,
   TOTAL_DATA_ROWS,
   DATA_TERMS_URL,
+  DATA_LICENSE_URL,
+  DATA_VERSION,
+  DATA_RELEASE_DATE,
 } from "../../content/datasets";
 
 /**
@@ -54,7 +57,10 @@ const catalogSchema = {
   url: pageUrl,
   inLanguage: "en-US",
   isAccessibleForFree: true,
-  license: DATA_TERMS_URL,
+  version: DATA_VERSION,
+  dateModified: DATA_RELEASE_DATE,
+  license: DATA_LICENSE_URL,
+  usageInfo: DATA_TERMS_URL,
   publisher: organization,
   creator: organization,
   keywords:
@@ -67,8 +73,11 @@ const catalogSchema = {
     ...(dataset.alternateName ? { alternateName: dataset.alternateName } : {}),
     description: dataset.description,
     url: `${siteUrl}${dataset.articleUrl}`,
+    identifier: `${siteUrl}${dataset.articleUrl}#dataset`,
+    version: DATA_VERSION,
     isAccessibleForFree: true,
-    license: DATA_TERMS_URL,
+    license: DATA_LICENSE_URL,
+    usageInfo: DATA_TERMS_URL,
     creator: organization,
     publisher: organization,
     includedInDataCatalog: { "@id": catalogId },
@@ -149,10 +158,22 @@ const linkStyle = "color: #F29B30;";
         <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
       </p>
       <p>
-        You're welcome to reuse the data. The one thing we ask is credit with a link back to the
-        study, so your readers can see how the number was built. Full terms are on the
-        <a href="/methodology/#data-license" class={linkClass} style={linkStyle}>methodology page</a>.
+        You're welcome to reuse the data under CC BY 4.0. Credit Daily Life Hacks, link back to the
+        study, and say if you changed the material. The exact scope and copy-ready wording are on the
+        <a href="/data-reuse/" class={linkClass} style={linkStyle}>data reuse page</a>.
         Journalists, students, dietitians, people settling an argument in a group chat: go ahead.
+      </p>
+      <p>
+        Want the useful numbers before opening 22 files? The
+        <a href="/statistics/" class={linkClass} style={linkStyle}>food cost statistics page</a>
+        pulls the current leaders and daily-cost ranges straight from this release. No hand-copied
+        winner that quietly went stale three corrections ago.
+      </p>
+      <p>
+        Need to find one food or compare four of them without opening a CSV? The
+        <a href="/food-value-database/" class={linkClass} style={linkStyle}>food value database</a>
+        joins the protein and fiber rankings into one searchable table. Missing measurements stay
+        missing. Nobody gets bonus protein because a blank cell looked lonely.
       </p>
 
       <h2 id="named-indexes" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
@@ -218,6 +239,8 @@ const linkStyle = "color: #F29B30;";
                     style="color: #F29B30; border: 1px solid #F29B30;"
                     href={dataset.csv}
                     download
+                    data-dataset-download
+                    data-dataset-id={dataset.id}
                     title={dataset.fileName}
                     aria-label={`Download ${dataset.fileName}`}
                   >

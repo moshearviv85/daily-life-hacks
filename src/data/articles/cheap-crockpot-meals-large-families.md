@@ -12,7 +12,7 @@ tags:
 image: "/images/cheap-crockpot-meals-large-families-main.jpg"
 imageAlt: A large slow cooker is filled with a hearty stew, surrounded by dried beans, potatoes, and onions.
 date: 2026-04-28
-dateModified: 2026-07-16
+dateModified: 2026-07-28
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
@@ -58,6 +58,8 @@ Use the [recipe cost calculator](/tools/recipe-cost-calculator/) before you scal
 I know, soaking beans feels like a chore your grandmother did, but if you want to save money, it is non-negotiable. A bag of dried pinto or black beans costs next to nothing and swells to three times its size. Before you default to the can out of habit, it's worth knowing [what the convenience of canned beans actually costs you per dollar](/canned-vs-dry-beans-cost/). You don't even really have to soak them if you're using a slow cooker for eight hours. Just rinse them, pick out the tiny rocks that inexplicably end up in the bag, and dump them in.
 
 Dried beans provide a significant amount of fiber and protein for a fraction of the cost of beef, and if you've ever wondered [how far apart ground beef and beans really are on protein per dollar](/ground-beef-vs-beans-protein-cost/), the gap is not close. When you cook them low and slow with a bit of smoked meat, they absorb all that fat and salt. It turns a "healthy" ingredient into something that feels indulgent. If you're worried about the texture, just make sure you don't add salt until the very end, or you might end up with beans that have the structural integrity of gravel.
+
+For the wider grocery aisle, the [low-cost protein guide for large families](/best-low-cost-protein-sources-large-families/) ranks beans, lentils, drumsticks, eggs, and canned fish by the numbers. The meat case doesn't get to grade its own homework.
 
 ## The magic of the pork shoulder
 

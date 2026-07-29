@@ -1,0 +1,30 @@
+{
+  "source_count": 601,
+  "source_unique_count": 601,
+  "triage_count": 601,
+  "covered_unique_count": 601,
+  "missing_count": 0,
+  "duplicate_count": 0,
+  "unexpected_count": 0,
+  "decision_counts": {
+    "DEPENDENCY": 96,
+    "EXECUTE_NOW": 99,
+    "MANUAL_EXTERNAL": 111,
+    "QUEUE": 71,
+    "REJECT": 224
+  },
+  "category_counts": {
+    "Communities & forums": 66,
+    "Content & virality": 75,
+    "Distribution surfaces": 85,
+    "Hacks, myths & folklore": 123,
+    "People & partnerships": 73,
+    "Search engines": 99,
+    "Social platforms": 80
+  },
+  "missing": [],
+  "duplicates": [],
+  "unexpected": [],
+  "errors": [],
+  "status": "PASS"
+}

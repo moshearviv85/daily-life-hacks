@@ -153,7 +153,12 @@ async function loadDatasetsModule() {
 
 async function main() {
   const descriptor = JSON.parse(readFileSync(join(DATA_DIR, "datapackage.json"), "utf8"));
-  const { DATASETS, DATA_TERMS_URL, STUDY_DATASET_ORDER } = await loadDatasetsModule();
+  const {
+    DATASETS,
+    DATA_LICENSE_URL,
+    DATA_TERMS_URL,
+    STUDY_DATASET_ORDER,
+  } = await loadDatasetsModule();
 
   /** csv filename -> article slug */
   const slugByCsv = new Map();
@@ -278,13 +283,19 @@ async function main() {
     api_version: "v1",
     data_version: descriptor.version,
     data_created: descriptor.created,
-    generated_at: new Date().toISOString(),
+    // Use the release timestamp, not the wall clock. Identical source data must
+    // produce a byte-identical public index on every build.
+    generated_at: descriptor.created,
     generator: "scripts/build-api-index.mjs",
     name: descriptor.name,
     title: descriptor.title,
     homepage: descriptor.homepage,
     methodology_url: `${SITE}/methodology/`,
     terms_url: DATA_TERMS_URL,
+    license: "CC BY 4.0",
+    license_url: DATA_LICENSE_URL,
+    license_scope:
+      "Daily Life Hacks selection, arrangement, calculations, field descriptions, and explanatory material; upstream facts and third-party material retain their own status and terms.",
     datapackage_url: `${SITE}/data/datapackage.json`,
     docs_url: `${SITE}/api-docs/`,
     openapi_url: `${SITE}/openapi.json`,
