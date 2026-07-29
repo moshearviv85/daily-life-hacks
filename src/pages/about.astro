@@ -49,6 +49,7 @@ const aboutSchema = [
     url: 'https://www.daily-life-hacks.com/',
     /** The one edge this page adds to the sitewide Organization node. */
     founder: { '@id': 'https://www.daily-life-hacks.com/about/#david-miller' },
+    publishingPrinciples: 'https://www.daily-life-hacks.com/editorial-policy/',
   },
   {
     '@context': 'https://schema.org',
@@ -57,7 +58,7 @@ const aboutSchema = [
     name: 'David Miller',
     url: 'https://www.daily-life-hacks.com/about/',
     mainEntityOfPage: { '@id': 'https://www.daily-life-hacks.com/about/#webpage' },
-    jobTitle: 'Founder',
+    jobTitle: 'Founder and Editor',
     worksFor: { '@id': 'https://www.daily-life-hacks.com/#organization' },
     knowsAbout: ['Grocery Cost Research', 'USDA Food Data', 'Budget Cooking', 'Meal Prep'],
     description: 'Founder and editor of Daily Life Hacks. Publishes grocery cost studies, practical recipes, and food tools with public source data. He is not a chef, registered dietitian, or medical professional.',
@@ -108,7 +109,7 @@ const aboutSchema = [
         I write and edit Daily Life Hacks. I'm not a chef, registered dietitian, or medical professional, and I won't borrow one of those titles because it looks good under a headshot. For nutrition numbers, I go back to primary sources such as USDA FoodData Central, FDA guidance, and Bureau of Labor Statistics price data. For original cost studies, I publish the calculation rows and the price basis so you can inspect the work instead of taking my word for it.
       </p>
       <p>
-        The <a href="/methodology/" class="underline" style="color: #F29B30;">research methodology</a> explains the source hierarchy, calculation rules, limitations, refresh schedule, and correction policy. If a claim needs clinical interpretation or personal medical advice, this site isn't the final stop. That's a job for a qualified healthcare professional who knows you, not a guy with a grocery spreadsheet.
+        The <a href="/methodology/" class="underline" style="color: #F29B30;">research methodology</a> explains the source hierarchy, calculation rules, limitations, refresh schedule, and correction process. The <a href="/editorial-policy/" class="underline" style="color: #F29B30;">editorial standards</a> explain how recipes, explainers, tools, automation, and updates are handled. If a claim needs clinical interpretation or personal medical advice, this site isn't the final stop. That's a job for a qualified healthcare professional who knows you, not a guy with a grocery spreadsheet.
       </p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Corrections and source questions</h2>

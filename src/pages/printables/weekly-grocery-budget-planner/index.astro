@@ -1,0 +1,166 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+
+const title = "Free Weekly Grocery Budget and Meal Planner PDF";
+const description = "Download a free two-page grocery budget planner with a seven-day meal plan, pantry check, shopping list, and checkout math.";
+const downloadPath = "/downloads/weekly-grocery-budget-planner.pdf";
+const faqs = [
+  ["What is included in the grocery budget planner?", "The PDF has two pages: a seven-day dinner plan with a pantry check and budget guardrail, plus a categorized shopping list and planned-versus-actual checkout math."],
+  ["Is the weekly grocery planner free?", "Yes. The two-page PDF is free to download and print. It doesn't require an email address, an account, or a dramatic commitment to color-coded meal prep."],
+  ["Can I use the planner for any household size?", "Yes. Write in your household size and weekly budget, then plan dinners and quantities around the people you're actually feeding."],
+  ["Does the PDF calculate recipe quantities?", "No. Paper remains stubbornly bad at arithmetic. Use our shopping list builder to choose recipes, change servings, and combine their ingredients before transferring the list."],
+  ["Can I use the planner with Daily Life Hacks cost data?", "Yes. The grocery budget calculator turns our published priced menus into a seven-day plan, and the food value database compares 79 foods from our cost studies."],
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.daily-life-hacks.com/printables/weekly-grocery-budget-planner/#webpage",
+    name: title,
+    description,
+    url: "https://www.daily-life-hacks.com/printables/weekly-grocery-budget-planner/",
+    inLanguage: "en-US",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+    mainEntity: { "@id": "https://www.daily-life-hacks.com/printables/weekly-grocery-budget-planner/#download" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "DigitalDocument",
+    "@id": "https://www.daily-life-hacks.com/printables/weekly-grocery-budget-planner/#download",
+    name: "Weekly Grocery Budget and Meal Planner",
+    description: "A two-page printable grocery budget, meal plan, pantry check, and categorized shopping list.",
+    url: `https://www.daily-life-hacks.com${downloadPath}`,
+    encodingFormat: "application/pdf",
+    isAccessibleForFree: true,
+    inLanguage: "en-US",
+    author: { "@type": "Person", name: "David Miller" },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(([name, answer]) => ({
+      "@type": "Question",
+      name,
+      acceptedAnswer: { "@type": "Answer", text: answer },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+      { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.daily-life-hacks.com/tools/" },
+      { "@type": "ListItem", position: 3, name: "Weekly Grocery Budget Planner", item: "https://www.daily-life-hacks.com/printables/weekly-grocery-budget-planner/" },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main>
+    <section class="hero">
+      <div class="max-w-6xl mx-auto px-4 py-12 md:py-20 grid lg:grid-cols-[1.05fr_.95fr] gap-10 items-center">
+        <div>
+          <nav class="text-sm mb-5" aria-label="Breadcrumb">
+            <a href="/tools/">Tools</a>
+            <span aria-hidden="true"> / Weekly grocery budget planner</span>
+          </nav>
+          <p class="eyebrow">Two printable pages. Zero signup.</p>
+          <h1>Plan the Week Before the Grocery Cart Starts Freelancing</h1>
+          <p class="answer">This free two-page PDF gives you a seven-day dinner plan, a pantry-first check, a categorized shopping list, and the budget math to compare what you planned with what the register actually charged.</p>
+          <div class="actions">
+            <a
+              href={downloadPath}
+              download
+              class="download-button"
+              data-printable-download="weekly-grocery-budget-planner.pdf"
+            >
+              Download the free planner (PDF)
+            </a>
+            <span>US Letter, 2 pages</span>
+          </div>
+        </div>
+
+        <div class="preview" aria-label="Preview of the two printable planner pages">
+          <div class="paper paper-one">
+            <strong>WEEKLY GROCERY BUDGET</strong>
+            <span class="tiny-line"></span><span class="tiny-line short"></span>
+            <div class="tiny-grid">{Array.from({ length: 21 }).map(() => <i></i>)}</div>
+          </div>
+          <div class="paper paper-two">
+            <strong>SHOP + CHECK</strong>
+            <div class="tiny-list">{Array.from({ length: 16 }).map(() => <i></i>)}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-5xl mx-auto px-4 py-14">
+      <div class="grid md:grid-cols-3 gap-5">
+        <article class="feature">
+          <span>1</span>
+          <h2>Check the kitchen first</h2>
+          <p>Record the produce, protein, pantry staples, leftovers, and freezer food already waiting. The cheapest duplicate purchase is the one you don't make.</p>
+        </article>
+        <article class="feature">
+          <span>2</span>
+          <h2>Give every dinner a job</h2>
+          <p>Plan seven dinners, decide which ones create leftovers, and write down only what each meal still needs. Optimism is lovely. It isn't a meal plan.</p>
+        </article>
+        <article class="feature">
+          <span>3</span>
+          <h2>Make the receipt answer back</h2>
+          <p>Compare planned and actual spending at checkout, then leave one note for next week. That's how a budget becomes evidence instead of a recurring surprise.</p>
+        </article>
+      </div>
+
+      <div class="tool-pair">
+        <div>
+          <p class="eyebrow">Paper meets actual data</p>
+          <h2>The planner handles the week. These tools handle the math.</h2>
+          <p>Use the <a href="/tools/shopping-list-builder/">shopping list builder</a> to choose recipes, change the servings, and combine ingredients. Then use the <a href="/tools/grocery-budget-calculator/">grocery budget calculator</a> to build seven days from our priced menus, or compare 79 foods in the <a href="/food-value-database/">food value database</a>.</p>
+        </div>
+        <a
+          href={downloadPath}
+          download
+          class="secondary-download"
+          data-printable-download="weekly-grocery-budget-planner.pdf"
+        >
+          Get the printable
+          <small>No email gate. The PDF simply downloads. A rare moment of administrative peace.</small>
+        </a>
+      </div>
+
+      <section class="faq">
+        <h2>Frequently asked questions</h2>
+        {faqs.map(([question, answer]) => (
+          <details>
+            <summary>{question}</summary>
+            <p>{answer}</p>
+          </details>
+        ))}
+      </section>
+    </section>
+  </main>
+  <Footer />
+
+  <style>
+    .hero{background:linear-gradient(145deg,rgba(242,155,48,.12),transparent 60%)}nav a,.tool-pair a{color:#a85e00;text-decoration:underline;font-weight:700}nav span{color:var(--muted-color)}.eyebrow{color:#a85e00;font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:.8rem}.hero h1{font-size:clamp(2.3rem,5.4vw,4.6rem);line-height:1.01;letter-spacing:-.04em;font-weight:900;color:var(--heading-color);max-width:13ch}.answer{font-size:1.1rem;line-height:1.75;color:var(--text-color);max-width:42rem;margin-top:1.25rem}.actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-top:1.8rem}.actions span{font-size:.85rem;color:var(--muted-color)}.download-button{display:inline-flex;border-radius:.8rem;padding:.9rem 1.2rem;background:#F29B30;color:#fff;font-weight:900;box-shadow:0 10px 24px rgba(168,94,0,.2);transition:transform .16s,box-shadow .16s}.download-button:hover,.download-button:focus-visible{transform:translateY(-2px);box-shadow:0 14px 30px rgba(168,94,0,.28);outline:2px solid #a85e00;outline-offset:3px}.download-button:active{transform:scale(.97)}.preview{position:relative;min-height:410px}.paper{position:absolute;width:280px;height:362px;background:#fff;border:1px solid #d5dbe3;box-shadow:0 18px 45px rgba(15,23,42,.16);padding:24px;color:#243447}.paper strong{font-size:.8rem;border-left:7px solid #F29B30;padding-left:10px}.paper-one{left:0;top:0;transform:rotate(-5deg)}.paper-two{right:0;bottom:0;transform:rotate(5deg)}.tiny-line{display:block;height:1px;background:#94a3b8;margin-top:35px}.tiny-line.short{width:60%;margin-top:14px}.tiny-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:30px}.tiny-grid i{height:26px;border:1px solid #cbd5e1;background:#f8fafc}.tiny-list{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:32px}.tiny-list i{height:27px;border-bottom:1px solid #cbd5e1}.feature{padding:1.35rem;border-radius:1rem;border:1px solid var(--border-color);background:var(--card-bg)}.feature>span{display:flex;width:2rem;height:2rem;border-radius:99px;align-items:center;justify-content:center;background:#F29B30;color:#fff;font-weight:900}.feature h2{font-size:1.25rem;font-weight:900;color:var(--heading-color);margin:.9rem 0 .5rem}.feature p,.tool-pair p{line-height:1.7;color:var(--text-color)}.tool-pair{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.6fr);gap:2rem;align-items:center;margin:4rem 0;padding:2rem;border-radius:1.2rem;background:var(--card-bg);border:1px solid var(--border-color)}.tool-pair h2,.faq h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.1;font-weight:900;color:var(--heading-color);margin-bottom:1rem}.secondary-download{display:flex!important;flex-direction:column;gap:.55rem;padding:1.2rem;border-radius:1rem;background:rgba(242,155,48,.12);border:1px solid rgba(242,155,48,.7);text-decoration:none!important;font-size:1.15rem}.secondary-download small{font-size:.78rem;line-height:1.5;color:var(--muted-color);font-weight:600}.faq{max-width:52rem}.faq details{margin:.7rem 0;border:1px solid var(--border-color);border-radius:.8rem;padding:0 1rem;background:var(--card-bg)}.faq summary{cursor:pointer;padding:1rem 0;font-weight:900;color:var(--heading-color)}.faq p{padding:0 0 1rem;line-height:1.7;color:var(--text-color)}@media(max-width:850px){.preview{min-height:355px}.paper{width:240px;height:310px}.tool-pair{grid-template-columns:1fr}}@media(max-width:520px){.preview{min-height:300px}.paper{width:205px;height:270px;padding:18px}.paper-one{left:0}.paper-two{right:0}.tiny-grid{margin-top:20px}.tiny-grid i{height:18px}.tool-pair{padding:1.3rem}}@media(prefers-reduced-motion:reduce){.download-button{transition:none}.download-button:hover{transform:none}}
+  </style>
+
+  <script is:inline>
+    document.addEventListener("click", function (event) {
+      var target = event.target instanceof Element ? event.target.closest("[data-printable-download]") : null;
+      if (!target || typeof window.gtag !== "function") return;
+      window.gtag("event", "printable_download", {
+        file_name: target.getAttribute("data-printable-download"),
+        source_page: window.location.pathname
+      });
+    });
+  </script>
+</BaseLayout>

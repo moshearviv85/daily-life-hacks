@@ -4,7 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const title = "Contact Us | Daily Life Hacks";
-const description = "Get in touch with the Daily Life Hacks team.";
+const description = "Contact Daily Life Hacks about a correction, source question, recipe, tool, partnership, or other site issue.";
 ---
 
 <BaseLayout title={title} description={description} robots="noindex, follow">
@@ -20,10 +20,10 @@ const description = "Get in touch with the Daily Life Hacks team.";
                     class="text-lg mb-6 space-y-2"
                     style="color: var(--text-color)"
                 >
-                    <span class="block">Have a question about a recipe?</span>
-                    <span class="block">Want to partner with us?</span>
-                    <span class="block">Or just want to say hi?</span>
-                    <span class="block">We'd love to hear from you!</span>
+                    <span class="block">Found a number that looks wrong?</span>
+                    <span class="block">Have a source question or recipe problem?</span>
+                    <span class="block">Want to discuss a partnership?</span>
+                    <span class="block">Email is the straightest route to David.</span>
                 </p>
 
                 <div class="space-y-4">
@@ -36,6 +36,18 @@ const description = "Get in touch with the Daily Life Hacks team.";
                             >hello@daily-life-hacks.com</a
                         >
                     </div>
+                    <div>
+                        <h2 class="font-bold text-lg">Reporting a correction</h2>
+                        <p class="leading-relaxed" style="color: var(--text-color);">
+                            Include the page URL, the exact sentence or number,
+                            and the source you think contradicts it. A screenshot
+                            helps. "Wrong!" gives the spreadsheet surprisingly
+                            little to work with.
+                        </p>
+                        <p class="mt-2 text-sm" style="color: var(--muted-color);">
+                            Read our <a href="/editorial-policy/" class="underline" style="color:#F29B30;">editorial and correction standards</a>.
+                        </p>
+                    </div>
                 </div>
             </div>
 
@@ -46,7 +58,9 @@ const description = "Get in touch with the Daily Life Hacks team.";
                 <h2 class="text-2xl font-bold mb-4">Email us directly</h2>
                 <p class="mb-6 leading-relaxed" style="color: var(--text-color);">
                     Email is the most reliable way to reach us. The button below
-                    opens a new message in your email app.
+                    opens a new message in your email app. For corrections,
+                    putting "Correction request" in the subject line helps us
+                    separate a broken number from a broken lunch.
                 </p>
                 <a
                     href="mailto:hello@daily-life-hacks.com?subject=Daily%20Life%20Hacks%20message"

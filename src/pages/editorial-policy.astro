@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Editorial Standards and Corrections | Daily Life Hacks";
+const description =
+  "How Daily Life Hacks sources, reviews, updates, and corrects recipes, food explainers, and original grocery cost research.";
+
+const siteUrl = "https://www.daily-life-hacks.com";
+const pageUrl = `${siteUrl}/editorial-policy/`;
+
+const editorialSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: "Editorial Standards and Corrections",
+    description,
+    inLanguage: "en-US",
+    dateModified: "2026-07-29",
+    isPartOf: { "@id": `${siteUrl}/#website` },
+    publisher: { "@id": `${siteUrl}/#organization` },
+    breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+    about: [
+      { "@type": "Thing", name: "Editorial standards" },
+      { "@type": "Thing", name: "Corrections policy" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+      { "@type": "ListItem", position: 2, name: "Editorial Standards", item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={editorialSchema}>
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 py-12 md:py-16">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      Editorial Standards and Corrections
+    </h1>
+    <p class="text-lg mb-3" style="color: var(--muted-color);">
+      The short version: name the source, show the math, label the limits, and fix the page when the evidence says it's wrong.
+    </p>
+    <p class="text-sm mb-8" style="color: var(--muted-color);">
+      Page last updated July 29, 2026.
+    </p>
+
+    <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
+      <p>
+        Daily Life Hacks publishes recipes, plain-English food explainers, interactive tools, and original grocery cost studies. Those aren't the same product, so they don't all need the same checklist. A bean converter needs tested arithmetic. A food-safety answer needs a current government source. A recipe needs steps that don't suddenly introduce an onion nobody bought.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        Who is responsible for the content?
+      </h2>
+      <p>
+        David Miller is the site's founder and editor. He writes and edits the public content and is responsible for the final publishing decision. He's not a chef, registered dietitian, or medical professional, and the site doesn't pretend otherwise. The <a href="/about/" class="underline" style="color:#F29B30;">About page</a> explains who David is, what he covers, and where his expertise stops.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        What sources do we use?
+      </h2>
+      <p>
+        For nutrition values, prices, label rules, and food safety, we prefer primary sources. That usually means USDA FoodData Central, USDA food-safety guidance, FDA regulations and guidance, Bureau of Labor Statistics price data, or a restaurant's own published nutrition information. A source should be named close to the claim it supports, not buried six screens down like a parking receipt.
+      </p>
+      <p>
+        Original grocery cost studies follow the calculation rules on the <a href="/methodology/" class="underline" style="color:#F29B30;">methodology page</a>. The ranking rows are published as downloadable CSV files on the <a href="/data/" class="underline" style="color:#F29B30;">data page</a>, including the price basis and observation period. That lets you inspect the result instead of accepting "we ran the numbers" as a personality trait.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        How are different kinds of pages checked?
+      </h2>
+      <ul class="list-disc pl-6 space-y-3">
+        <li><strong>Data studies:</strong> source rows, units, price dates, edible-fraction adjustments, calculations, ranking order, and public downloads are checked against the documented methodology.</li>
+        <li><strong>Food explainers:</strong> numerical claims should identify a primary source and separate what the source says from the site's plain-English interpretation.</li>
+        <li><strong>Recipes:</strong> the ingredient list, quantities, servings, times, temperatures, and instructions need to agree with one another. Garlic can't just materialize in step four.</li>
+        <li><strong>Interactive tools:</strong> formulas and source assumptions should be visible on the page, with links to the underlying study or methodology when published site data is used.</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        Do automation and AI tools help make the site?
+      </h2>
+      <p>
+        Software and AI tools may help organize research, check calculations, prepare drafts, format pages, or produce supporting assets. They aren't listed as authors and they don't get the final publishing credit. David remains responsible for what appears under his name, including the part where a confident draft can still be confidently wrong.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        How do corrections work?
+      </h2>
+      <p>
+        If a factual error changes a number, ranking, instruction, or central takeaway, we correct the page and update its visible modified date. Material corrections get a dated note on the affected page. When an original dataset is affected, the public file should be corrected with the page rather than leaving two versions of the truth wandering around the site.
+      </p>
+      <p>
+        To report a problem, use the <a href="/contact/" class="underline" style="color:#F29B30;">contact page</a> or email <a href="mailto:hello@daily-life-hacks.com?subject=Correction%20request" class="underline" style="color:#F29B30;">hello@daily-life-hacks.com</a>. Include the page URL, the exact sentence or number, and the source you think contradicts it. A screenshot helps too. "This seems wrong" is a start, but it leaves the spreadsheet doing detective work.
+      </p>
+
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        What this site doesn't do
+      </h2>
+      <p>
+        Daily Life Hacks doesn't provide personal medical advice. Food and nutrition pages should explain sources and practical tradeoffs without turning a general number into a diagnosis or promise. If a decision depends on your health history, medication, allergy, or treatment plan, a qualified healthcare professional who knows your situation is the right person to ask.
+      </p>
+
+      <p class="mt-10">
+        Want to inspect the work instead of reading another policy page? Start with the <a href="/research/" class="underline" style="color:#F29B30;">original research hub</a>, then open the raw data. Policies are useful. Receipts are better.
+      </p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
