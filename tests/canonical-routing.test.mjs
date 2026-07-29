@@ -166,6 +166,41 @@ test("high-impression aliases redirect to canonical articles", async () => {
   }
 });
 
+test("legacy Pinterest landing slugs redirect directly to their live canonical articles", async () => {
+  const cases = [
+    [
+      "family-meal-prep-stop-takeout",
+      "camping-meal-hacks-large-families",
+    ],
+    [
+      "genius-summer-crockpot-hacks-you",
+      "cheap-crockpot-meals-large-families",
+    ],
+  ];
+
+  for (const method of ["GET", "HEAD"]) {
+    for (const [source, target] of cases) {
+      const assets = makeAssets(new Set());
+      const response = await onRequest(
+        makeRequestContext(
+          new Request(
+            `https://daily-life-hacks.com/${source}/?utm_source=pinterest&utm_medium=social`,
+            { method },
+          ),
+          { ASSETS: assets },
+        ),
+      );
+
+      assert.equal(response.status, 301);
+      assert.equal(
+        response.headers.get("location"),
+        `https://www.daily-life-hacks.com/${target}/?utm_source=pinterest&utm_medium=social`,
+      );
+      assert.deepEqual(assets.calls, []);
+    }
+  }
+});
+
 test("legacy removed and off-topic URLs return gone without hitting static assets", async () => {
   const assets = makeAssets(new Set());
 

@@ -24,6 +24,8 @@ const LEGACY_PERMANENT_REDIRECTS = new Map([
   ["artichoke-recipes-for-gut-health-guide", "/artichoke-recipes-for-gut-health/"],
   ["avoid-sodium-shock-rotisserie-chicken", "/big-flavor-less-salt-citrus-herbs-umami-swaps/"],
   ["simple-snack-portioning-guide", "/grab-and-go-fridge-snack-drawer/"],
+  ["family-meal-prep-stop-takeout", "/camping-meal-hacks-large-families/"],
+  ["genius-summer-crockpot-hacks-you", "/cheap-crockpot-meals-large-families/"],
   ["recipes/1", "/recipes/"],
   ["recipes/2", "/recipes/"],
   ["nutrition/1", "/nutrition/"],
