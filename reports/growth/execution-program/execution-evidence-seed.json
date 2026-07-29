@@ -40,6 +40,36 @@
       "released_at": "2026-07-29T06:52:40+03:00",
       "measurement_due": "2026-08-26T06:52:40+03:00",
       "notes": "Commit adds server-rendered accessible contents navigation to 86 long articles. The proof URL exposes seven jump links and every target ID resolved live on 2026-07-29. Search and engagement impact remain unmeasured until the 28-day cohort closes."
+    },
+    {
+      "category": "Content & virality",
+      "title": "Printables and PDF downloads",
+      "execution_status": "RELEASED",
+      "evidence_commit": "e2bdb294988fdab40213ec0c7833ef217bf723e1",
+      "live_url": "https://www.daily-life-hacks.com/printables/weekly-grocery-budget-planner/",
+      "released_at": "2026-07-29T07:19:53+03:00",
+      "measurement_due": "2026-08-26T07:19:53+03:00",
+      "notes": "Commit ships a two-page printable grocery budget and meal planner, crawlable landing page, contextual tool links, private download telemetry, and visual PDF QA. The landing page and application/pdf download returned HTTP 200 after deploy run 30421858939. Organic sessions and downloads remain unmeasured until the 28-day cohort closes."
+    },
+    {
+      "category": "Search engines",
+      "title": "A11. E-E-A-T signals (author identity, credentials, sourcing, About/Contact)",
+      "execution_status": "RELEASED",
+      "evidence_commit": "e2bdb294988fdab40213ec0c7833ef217bf723e1",
+      "live_url": "https://www.daily-life-hacks.com/editorial-policy/",
+      "released_at": "2026-07-29T07:19:53+03:00",
+      "measurement_due": "2026-08-26T07:19:53+03:00",
+      "notes": "Commit publishes truthful editorial, sourcing, automation, correction, and medical-boundary standards; adds persistent discovery links and publishingPrinciples schema; and preserves the intentional contact-page noindex. The policy and article schema were verified live after deploy run 30421858939. Search and engagement impact remain unmeasured until the 28-day cohort closes."
+    },
+    {
+      "category": "Search engines",
+      "title": "A8. Index bloat pruning / content pruning",
+      "execution_status": "IMPLEMENTED",
+      "evidence_commit": "e2bdb294988fdab40213ec0c7833ef217bf723e1",
+      "live_url": "",
+      "released_at": "",
+      "measurement_due": "",
+      "notes": "The version-controlled pruning matrix audited all 267 unique articles against sitemap presence, observed search or link evidence, conservative thinness rules, intent similarity, and the protected recovery cohort. It found zero defensible MERGE, NOINDEX, or REMOVE candidates, so no destructive change was made. Re-run only with newer query, crawl, or duplication evidence."
     }
   ]
 }

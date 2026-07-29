@@ -11,20 +11,21 @@
   },
   "execution_status_counts": {
     "BLOCKED": 207,
-    "NOT_STARTED": 166,
+    "IMPLEMENTED": 1,
+    "NOT_STARTED": 163,
     "REJECTED": 224,
-    "RELEASED": 4
+    "RELEASED": 6
   },
   "executable_rows": 377,
-  "proved_executable_rows": 4,
-  "released_or_measured_rows": 4,
-  "unproved_executable_rows": 373,
+  "proved_executable_rows": 7,
+  "released_or_measured_rows": 6,
+  "unproved_executable_rows": 370,
   "blocked_by_decision": {
     "DEPENDENCY": 96,
     "MANUAL_EXTERNAL": 111
   },
   "not_started_by_decision": {
-    "EXECUTE_NOW": 95,
+    "EXECUTE_NOW": 92,
     "QUEUE": 71
   },
   "errors": []

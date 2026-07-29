@@ -112,7 +112,7 @@ f393c9eb02bc24a8e2c4,Content & virality,Original imagery vs stock,NOT_STARTED,,,
 8bfaf59a7a93296882de,Content & virality,Original research / proprietary data study,NOT_STARTED,,,,,,,
 0fce5493ba4cd9b0ac9f,Content & virality,"Practical value / ""useful"" sharing (STEPPS)",NOT_STARTED,,,,,,,
 640c3d7f5e48fdc0d6ad,Content & virality,Price-shock moment hijacking (the strongest timing play here),NOT_STARTED,,,,,,,
-5f1747b70c892ce4481d,Content & virality,Printables and PDF downloads,NOT_STARTED,,,,,,,
+5f1747b70c892ce4481d,Content & virality,Printables and PDF downloads,RELEASED,e2bdb294988fdab40213ec0c7833ef217bf723e1,https://www.daily-life-hacks.com/printables/weekly-grocery-budget-planner/,2026-07-29T07:19:53+03:00,2026-08-26T07:19:53+03:00,,,"Commit ships a two-page printable grocery budget and meal planner, crawlable landing page, contextual tool links, private download telemetry, and visual PDF QA. The landing page and application/pdf download returned HTTP 200 after deploy run 30421858939. Organic sessions and downloads remain unmeasured until the 28-day cohort closes."
 d832f0b06b6db4578735,Content & virality,Public API / open data endpoint,NOT_STARTED,,,,,,,
 3f9a34e333e50e5b1c41,Content & virality,Public database / searchable directory,RELEASED,3ed83f5de04403d674a4e15e51589d2bcf68ebe9,https://www.daily-life-hacks.com/food-value-database/,2026-07-28T21:32:59+03:00,2026-08-25T21:32:59+03:00,,,Commit adds the crawlable 79-food database plus discovery links and eight tests. Live URL returned HTTP 200 on 2026-07-29. Measurement due is the first 28-day search window.
 120596754d4b2f7315bd,Content & virality,"Quizzes and ""what your X says about you""",NOT_STARTED,,,,,,,
@@ -423,7 +423,7 @@ bec92a167283c70eff12,People & partnerships,I4. Who-to-follow / suggested-account
 2fd127b8ea427cab8748,People & partnerships,Method index,REJECTED,aaaf4c3779dbeaa959a7003b14be6d9526d29e17,,,,,,Rejected by the version-controlled triage decision. Reopen only if its documented premise changes.
 06a90c79daf00a13a3cc,Search engines,"A1. On-page optimization (title tag, H1, intro, entity coverage)",NOT_STARTED,,,,,,,
 10e436838d8ed60ec0cf,Search engines,A10. Core Web Vitals / page experience,NOT_STARTED,,,,,,,
-a517fb938c3e9ad07ce7,Search engines,"A11. E-E-A-T signals (author identity, credentials, sourcing, About/Contact)",NOT_STARTED,,,,,,,
+a517fb938c3e9ad07ce7,Search engines,"A11. E-E-A-T signals (author identity, credentials, sourcing, About/Contact)",RELEASED,e2bdb294988fdab40213ec0c7833ef217bf723e1,https://www.daily-life-hacks.com/editorial-policy/,2026-07-29T07:19:53+03:00,2026-08-26T07:19:53+03:00,,,"Commit publishes truthful editorial, sourcing, automation, correction, and medical-boundary standards; adds persistent discovery links and publishingPrinciples schema; and preserves the intentional contact-page noindex. The policy and article schema were verified live after deploy run 30421858939. Search and engagement impact remain unmeasured until the 28-day cohort closes."
 51bc06f6e4fc8a261147,Search engines,A12. Original data / statistics as a ranking and link asset,NOT_STARTED,,,,,,,
 7e937b1e7f8697791303,Search engines,"A2. Technical SEO baseline (indexability, canonicals, sitemap, robots)",NOT_STARTED,,,,,,,
 8d0491ed8f1237f43944,Search engines,A3. Long-tail / low-competition query targeting,NOT_STARTED,,,,,,,
@@ -431,7 +431,7 @@ a517fb938c3e9ad07ce7,Search engines,"A11. E-E-A-T signals (author identity, cred
 bcdba526fe158db58d1b,Search engines,"A5. Internal linking (contextual, in-prose)",NOT_STARTED,,,,,,,
 c8432caf03b161c71f9c,Search engines,A6. Content refreshing and re-dating,NOT_STARTED,,,,,,,
 12b679ef8fa2be8e9521,Search engines,A7. Keyword cannibalization fixes (consolidation / merging),BLOCKED,,,,,"Do not start until its gate is met. Fixed article inventory, GSC/Bing query export, URL-level quality rubric, and rollback-safe change list.",SEO/content lead,Named dependency is unresolved.
-c11a5fcdd7db00eb9b7b,Search engines,A8. Index bloat pruning / content pruning,NOT_STARTED,,,,,,,
+c11a5fcdd7db00eb9b7b,Search engines,A8. Index bloat pruning / content pruning,IMPLEMENTED,e2bdb294988fdab40213ec0c7833ef217bf723e1,,,,,,"The version-controlled pruning matrix audited all 267 unique articles against sitemap presence, observed search or link evidence, conservative thinness rules, intent similarity, and the protected recovery cohort. It found zero defensible MERGE, NOINDEX, or REMOVE candidates, so no destructive change was made. Re-run only with newer query, crawl, or duplication evidence."
 56ba3bcb436d5cb75615,Search engines,A9. Crawl budget optimization,REJECTED,aaaf4c3779dbeaa959a7003b14be6d9526d29e17,,,,,,Rejected by the version-controlled triage decision. Reopen only if its documented premise changes.
 29eea35341d7142764c4,Search engines,B1. Featured snippet (position zero),BLOCKED,,,,,"Do not start until its gate is met. Named owner, baseline measurement, and a bounded acceptance test.",SEO/content lead,Named dependency is unresolved.
 6a4be4fb149f0c88946e,Search engines,B10. Local pack / map pack,REJECTED,aaaf4c3779dbeaa959a7003b14be6d9526d29e17,,,,,,Rejected by the version-controlled triage decision. Reopen only if its documented premise changes.

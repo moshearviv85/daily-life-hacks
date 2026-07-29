@@ -7,19 +7,19 @@ Validation: **PASS**
 - Master backlog rows: 601
 - Ledger rows: 601
 - Executable rows: 377
-- Executable rows with implementation proof: 4
-- Released or measured executable rows: 4
-- Executable rows without completion proof: 373
+- Executable rows with implementation proof: 7
+- Released or measured executable rows: 6
+- Executable rows without completion proof: 370
 
 ## Execution status
 
 - BLOCKED: 207
-- IMPLEMENTED: 0
+- IMPLEMENTED: 1
 - IN_PROGRESS: 0
 - MEASURED: 0
-- NOT_STARTED: 166
+- NOT_STARTED: 163
 - REJECTED: 224
-- RELEASED: 4
+- RELEASED: 6
 
 ## Blocking breakdown
 
@@ -28,7 +28,7 @@ Validation: **PASS**
 
 Rows awaiting direct execution:
 
-- EXECUTE_NOW: 95
+- EXECUTE_NOW: 92
 - QUEUE: 71
 
 A row is never counted as implemented, released, measured, or rejected
