@@ -165,6 +165,30 @@ def test_sync_preserves_existing_evidence_and_only_seeds_named_rows():
     assert by_title["Manual method"]["execution_status"] == "BLOCKED"
 
 
+def test_verified_seed_promotes_an_existing_not_started_row():
+    existing = [row("Released method", "NOT_STARTED")]
+    seeded_row = row(
+        "Released method",
+        "RELEASED",
+        evidence_commit=GOOD_COMMIT,
+        live_url="https://example.com/released/",
+        released_at="2026-07-29T06:52:40+03:00",
+        measurement_due="2026-08-26T06:52:40+03:00",
+        notes="New release proof.",
+    )
+    seed = {
+        "rejection_decision_commit": GOOD_COMMIT,
+        "verified_rows": [seeded_row],
+    }
+
+    synced = ledger.synchronize(MASTER, existing, seed)
+    by_title = {item["title"]: item for item in synced}
+
+    assert by_title["Released method"]["execution_status"] == "RELEASED"
+    assert by_title["Released method"]["evidence_commit"] == GOOD_COMMIT
+    assert by_title["Released method"]["notes"] == "New release proof."
+
+
 def test_summary_does_not_count_rejections_as_implementation():
     summary = ledger.build_summary(MASTER, valid_rows(), [])
     assert summary["executable_rows"] == 3

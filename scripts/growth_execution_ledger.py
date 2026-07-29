@@ -260,13 +260,13 @@ def synchronize(
 
     for master in master_rows:
         key = (master["category"], master["title"])
-        if key in existing:
-            row = {field: existing[key].get(field, "") for field in LEDGER_FIELDS}
-            row["method_id"] = method_id(*key)
-            row["category"], row["title"] = key
-        elif key in release_seed:
+        if key in release_seed:
             seeded = release_seed[key]
             row = {field: str(seeded.get(field, "")).strip() for field in LEDGER_FIELDS}
+            row["method_id"] = method_id(*key)
+            row["category"], row["title"] = key
+        elif key in existing:
+            row = {field: existing[key].get(field, "") for field in LEDGER_FIELDS}
             row["method_id"] = method_id(*key)
             row["category"], row["title"] = key
         elif master["decision"] == "REJECT":

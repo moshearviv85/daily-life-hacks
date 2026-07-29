@@ -121,7 +121,7 @@ d832f0b06b6db4578735,Content & virality,Public API / open data endpoint,NOT_STAR
 28b9664d3d88eabb6367,Content & virality,Reverse-engineering someone else's viral hit,NOT_STARTED,,,,,,,
 2d57b5cca660a5a9b728,Content & virality,Seasonal content calendar (publish 60–90 days early),NOT_STARTED,,,,,,,
 c6eeb76bdc74065cd8b1,Content & virality,Silly generators,REJECTED,aaaf4c3779dbeaa959a7003b14be6d9526d29e17,,,,,,Rejected by the version-controlled triage decision. Reopen only if its documented premise changes.
-183a0dcc88d73b3dbc3c,Content & virality,"Skimmable structure, jump links and table of contents",NOT_STARTED,,,,,,,
+183a0dcc88d73b3dbc3c,Content & virality,"Skimmable structure, jump links and table of contents",RELEASED,659803fc94732fdc0403ee2c67ab530218f20e14,https://www.daily-life-hacks.com/whole-wheat-vs-white-pasta-fiber/,2026-07-29T06:52:40+03:00,2026-08-26T06:52:40+03:00,,,Commit adds server-rendered accessible contents navigation to 86 long articles. The proof URL exposes seven jump links and every target ID resolved live on 2026-07-29. Search and engagement impact remain unmeasured until the 28-day cohort closes.
 1402b6559bb8e2885d9a,Content & virality,Social currency — make the sharer look smart,NOT_STARTED,,,,,,,
 e7983e7a312bc8519e67,Content & virality,Spreadsheet templates (Google Sheets / Excel),NOT_STARTED,,,,,,,
 45ed42319ab77260f899,Content & virality,Statistics roundup page,NOT_STARTED,,,,,,,
@@ -373,7 +373,7 @@ a273aa29054089ffa30a,People & partnerships,C1. The statistics page strategy,NOT_
 2a3023aa3b84d6104821,People & partnerships,C2. Original research / data study as link bait,NOT_STARTED,,,,,,,
 d11418bcaea33e02917c,People & partnerships,C3. Being the only source for a number (owning a metric),NOT_STARTED,,,,,,,
 8cba65b5394a2ac9ac08,People & partnerships,C4. Data journalism pickup,BLOCKED,,,,,"Named owner, baseline metrics, one tracked landing URL, and a 30-day test window.",Growth operations,Named dependency is unresolved.
-ffe0ed268fa75c87921f,People & partnerships,C5. Open dataset with an attribution-requiring license,NOT_STARTED,,,,,,,
+ffe0ed268fa75c87921f,People & partnerships,C5. Open dataset with an attribution-requiring license,RELEASED,659803fc94732fdc0403ee2c67ab530218f20e14,https://www.daily-life-hacks.com/data-reuse/,2026-07-29T06:52:40+03:00,2026-08-26T06:52:40+03:00,,,"Commit publishes scoped CC BY 4.0 reuse terms, copy-ready attribution, Dataset and API license metadata, and machine-readable package/CITATION proof. Live URL returned HTTP 200 on 2026-07-29. Traffic, downloads, citations, and referring domains remain unmeasured until the 28-day cohort closes."
 d88901bb3fc8cc6a04be,People & partnerships,C6. DOI registration and academic citation (Zenodo),BLOCKED,,,,,"Validated CSV/data dictionary, methodology page, explicit license, stable canonical study URLs.",Founder or partnerships lead,Manual or external execution is required.
 6fdda10bfd41316b0b87,People & partnerships,C7. Wikipedia citation,REJECTED,aaaf4c3779dbeaa959a7003b14be6d9526d29e17,,,,,,Rejected by the version-controlled triage decision. Reopen only if its documented premise changes.
 74167169d9567d064797,People & partnerships,C8. Being cited by AI assistants and LLM answers,NOT_STARTED,,,,,,,

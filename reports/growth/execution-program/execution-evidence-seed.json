@@ -20,6 +20,26 @@
       "released_at": "2026-07-28T22:02:05+03:00",
       "measurement_due": "2026-08-04T22:02:05+03:00",
       "notes": "Commit enforces one post-deploy IndexNow owner and adds ownership tests. GitHub Actions run 30390366792 completed successfully. Measurement due is the first seven-day crawl-latency check."
+    },
+    {
+      "category": "People & partnerships",
+      "title": "C5. Open dataset with an attribution-requiring license",
+      "execution_status": "RELEASED",
+      "evidence_commit": "659803fc94732fdc0403ee2c67ab530218f20e14",
+      "live_url": "https://www.daily-life-hacks.com/data-reuse/",
+      "released_at": "2026-07-29T06:52:40+03:00",
+      "measurement_due": "2026-08-26T06:52:40+03:00",
+      "notes": "Commit publishes scoped CC BY 4.0 reuse terms, copy-ready attribution, Dataset and API license metadata, and machine-readable package/CITATION proof. Live URL returned HTTP 200 on 2026-07-29. Traffic, downloads, citations, and referring domains remain unmeasured until the 28-day cohort closes."
+    },
+    {
+      "category": "Content & virality",
+      "title": "Skimmable structure, jump links and table of contents",
+      "execution_status": "RELEASED",
+      "evidence_commit": "659803fc94732fdc0403ee2c67ab530218f20e14",
+      "live_url": "https://www.daily-life-hacks.com/whole-wheat-vs-white-pasta-fiber/",
+      "released_at": "2026-07-29T06:52:40+03:00",
+      "measurement_due": "2026-08-26T06:52:40+03:00",
+      "notes": "Commit adds server-rendered accessible contents navigation to 86 long articles. The proof URL exposes seven jump links and every target ID resolved live on 2026-07-29. Search and engagement impact remain unmeasured until the 28-day cohort closes."
     }
   ]
 }
