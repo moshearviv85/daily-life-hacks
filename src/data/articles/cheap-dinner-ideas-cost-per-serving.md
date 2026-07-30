@@ -8,6 +8,7 @@ parentPillar: "eat-healthy-on-a-budget-complete-playbook"
 image: "/images/cheap-dinner-ideas-cost-per-serving-main.jpg"
 imageAlt: "Bowl of split pea soup and a plate of rice and beans on a kitchen counter beside a bag of dry pinto beans"
 date: 2026-07-28
+dateModified: 2026-07-30
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -28,7 +29,7 @@ faq:
 
 The cheapest real dinner in our price data is split pea soup at about $0.28 a serving, and pinto beans with brown rice sits right behind it at $0.32 with 23.8 grams of protein on the plate. Most cheap dinner ideas lists never tell you what a plate costs. So we priced ten of them.
 
-Every number below comes from the same two datasets this site runs on: USDA nutrition joined to dated US store prices. Nobody publishes cost per gram of protein, so we built it. Here's what that looks like when you turn it back into dinner.
+Every number in the ten-dinner table below comes from the USDA-backed rows of our protein and fiber datasets, joined to dated US store prices. Nobody publishes cost per gram of protein, so we built it. Here's what that looks like when you turn it back into dinner.
 
 | Dinner | What's in one serving | Cost | Protein | Fiber |
 |---|---|---|---|---|

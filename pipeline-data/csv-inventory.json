@@ -127,7 +127,14 @@
       "edible_fraction",
       "price_per_100g_usd",
       "fiber_g_per_dollar",
-      "price_basis"
+      "price_basis",
+      "nutrition_source_status",
+      "nutrition_source_type",
+      "nutrition_source_id",
+      "nutrition_source_url",
+      "nutrition_source_description",
+      "nutrition_source_form",
+      "nutrition_source_note"
     ]
   },
   {
@@ -253,7 +260,14 @@
       "edible_fraction",
       "price_per_100g_usd",
       "protein_g_per_dollar",
-      "price_basis"
+      "price_basis",
+      "nutrition_source_status",
+      "nutrition_source_type",
+      "nutrition_source_id",
+      "nutrition_source_url",
+      "nutrition_source_description",
+      "nutrition_source_form",
+      "nutrition_source_note"
     ]
   },
   {

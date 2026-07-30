@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 
 const title = "How We Verify Our Numbers | Daily Life Hacks";
 const description =
-  "The full methodology behind our grocery data studies: USDA and BLS sources, as-purchased pricing rules, edible-fraction adjustments, public CSVs, and our correction policy.";
+  "The methodology behind our food-cost studies: USDA and BLS grocery inputs, chain-published restaurant nutrition, price rules, public CSVs, and our correction policy.";
 
 const methodologySchema = [
   {
@@ -16,12 +16,12 @@ const methodologySchema = [
     url: "https://www.daily-life-hacks.com/methodology/",
     description,
     inLanguage: "en-US",
-    dateModified: "2026-07-29",
+    dateModified: "2026-07-30",
     isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
     breadcrumb: { "@id": "https://www.daily-life-hacks.com/methodology/#breadcrumb" },
     about: {
       "@type": "Thing",
-      name: "Grocery nutrition economics data methodology",
+      name: "Food cost and nutrition data methodology",
     },
     publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
   },
@@ -44,51 +44,83 @@ const methodologySchema = [
       How We Verify Our Numbers
     </h1>
     <p class="text-lg mb-8" style="color: var(--muted-color);">
-      Every data study on this site runs on the same rules. Here they are, in full, so you can check our work.
+      The studies use one calculation framework, but not one source list. Grocery foods and
+      restaurant menu items have separate provenance and verification rules below.
     </p>
     <p class="text-sm mb-8" style="color: var(--muted-color);">
-      Page last updated July 29, 2026.
+      Page last updated July 30, 2026.
     </p>
 
     <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
       <p>
-        When we publish a number like "black beans give you 10.4 grams of fiber per dollar," that number didn't come from vibes. It came from a specific USDA database entry divided by a specific shelf price, and both of those are documented. This page explains exactly where the numbers come from, how we handle the annoying edge cases, and what happens when we get one wrong.
+        When we publish a number like "black beans give you 10.4 grams of fiber per dollar," that
+        grocery number comes from a USDA nutrition record divided by a documented shelf price. A
+        fast-food number starts somewhere else: the restaurant chain's published nutrition data and
+        a documented menu-price observation. This page explains both tracks, the math they share,
+        and what happens when we get one wrong.
       </p>
       <p>
-        Two of these rankings run often enough that we gave them names: <strong>the Fiber per Dollar Index</strong> (53 foods scored on dietary fiber grams per dollar) and <strong>the Protein per Dollar Index</strong> (49 sources scored on protein grams per dollar). Same rules below, same quarterly re-audit, and every file behind them sits on the <a href="/data/" class="underline" style="color: #F29B30;">data page</a>.
+        Two grocery rankings run often enough that we gave them names: <strong>the Fiber per Dollar Index</strong> (53 foods scored on dietary fiber grams per dollar) and <strong>the Protein per Dollar Index</strong> (49 sources scored on protein grams per dollar). They use the grocery rules below and a scheduled quarterly price re-audit. Their files sit on the <a href="/data/" class="underline" style="color: #F29B30;">data page</a>.
       </p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Where the data comes from</h2>
       <ul class="list-disc pl-6 space-y-2">
         <li>
-          <strong>Nutrition data:</strong> <a href="https://fdc.nal.usda.gov/" class="underline" style="color: #F29B30;" rel="noopener" target="_blank">USDA FoodData Central</a>. For each food we use the Foundation or SR Legacy entry, and we record the exact FDC ID so anyone can pull the same record we did.
+          <strong>Grocery nutrition:</strong> <a href="https://fdc.nal.usda.gov/" class="underline" style="color: #F29B30;" rel="noopener" target="_blank">USDA FoodData Central</a>. The fiber- and protein-per-dollar flagship exports now expose FoodData Central IDs and direct record links for 83 rows: 74 exact matches and 9 disclosed proxies. A proxy is a close source match, not verification of the exact priced brand, form, or preparation. The other 19 flagship rows are unresolved and do not support an exact record lookup. Other grocery exports may still omit IDs on rows that have not received this row-level matching audit.
         </li>
         <li>
-          <strong>Prices:</strong> Bureau of Labor Statistics Average Price data where it exists, cross-checked against Walmart national listings for items BLS doesn't track. We use national figures, not the fancy grocery store two blocks from a marina.
+          <strong>Grocery prices:</strong> Bureau of Labor Statistics Average Price data where it exists, cross-checked against Walmart national listings for items BLS doesn't track. We use national figures, not the fancy grocery store two blocks from a marina.
         </li>
         <li>
-          <strong>Restaurant and chain items:</strong> the chain's own published nutrition pages, pulled on a recorded date. If a chain doesn't publish numbers, the item doesn't go in the study.
+          <strong>Restaurant nutrition and prices:</strong> nutrition comes from the restaurant
+          chain's published product pages, nutrition PDFs, or nutrition tables. The fast-food CSV
+          records the source and price basis for each menu item. Prices use the chain's online menu
+          where available, or a documented 2026 menu or national price-tracker observation.
+        </li>
+        <li>
+          <strong>Protein-quality inputs:</strong> the quality-adjusted dataset keeps the grocery
+          protein-per-dollar values as its base, then adds a DIAAS score for each row. The
+          <code>diaas_source</code> field names the source used for that score. Those entries include
+          individual journal studies, review articles, and the FAO 2013 report. These aren't one
+          source type: the FAO report is an institutional report, and several rows use a cited food
+          proxy that is disclosed in the <code>notes</code> field.
         </li>
       </ul>
 
-      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">The as-purchased rule</h2>
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">The grocery as-purchased rule</h2>
       <p>
-        Every calculation uses the food as it sits in your cart, not as it sits on a lab bench. Dry lentils are priced and measured dry. Canned beans are measured drained, because nobody eats the can liquid on purpose. If a study compares cooked values, it says so explicitly and shows the conversion. Mixing "per 100g cooked" with "per 100g dry" is how you get rankings that look impressive and mean nothing, so we don't do it.
+        Grocery calculations use the food as it sits in your cart, not as it sits on a lab bench. Dry lentils are priced and measured dry. Canned beans are measured drained, because nobody eats the can liquid on purpose. If a grocery study compares cooked values, it says so explicitly and shows the conversion. Mixing "per 100g cooked" with "per 100g dry" is how you get rankings that look impressive and mean nothing, so we don't do it.
       </p>
 
-      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Edible-fraction adjustments</h2>
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Grocery edible-fraction adjustments</h2>
       <p>
         A pound of oranges is not a pound of orange. Peels, pits, rinds, and bones come out of the math before anything gets ranked. We apply USDA refuse percentages to adjust the price to the part you actually eat. This matters more than people expect: skipping this step quietly flatters foods with heavy waste, like avocados and winter squash.
       </p>
 
-      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">The self-audit before publish</h2>
+      <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Verification status by source class</h2>
       <p>
-        Before any study goes live, every value gets re-verified against two independent USDA pulls. Two separate queries, two separate sessions, compared line by line. If the pulls disagree, the row gets flagged and resolved manually before publication. It's tedious. That's the point. A ranking is only useful if the boring rows are as accurate as the surprising ones.
+        <strong>Grocery studies:</strong> the study page states the date and scope of any documented
+        nutrition or price recheck. The July 4, 2026 fiber audit, for example, rechecked the
+        published fiber values against FoodData Central and corrected six affected foods. We don't
+        turn that documented audit into a blanket verification claim for every grocery row.
+      </p>
+      <p>
+        <strong>Restaurant studies:</strong> the fast-food study uses chain-published nutrition
+        sources recorded in its CSV. The CSV documents independent second-source checks for 2 of
+        the top 5 items. One additional top-five item was checked against a second endpoint from the
+        same chain, which isn't an independent source. We don't claim independent checks for the
+        other rows.
+      </p>
+      <p>
+        <strong>Protein-quality study:</strong> every published DIAAS row exposes its
+        <code>diaas_method</code>, <code>diaas_score</code>, <code>diaas_source</code>, and any proxy
+        limitation in <code>notes</code>. A field-level citation documents provenance; it doesn't
+        mean we independently reproduced the underlying digestibility study.
       </p>
 
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Who is responsible for the review</h2>
       <p>
-        David Miller, the site's founder and editor, runs the data checks and documents the sources. He isn't a registered dietitian or medical professional. This methodology is designed to make grocery-price and nutrient calculations inspectable; it doesn't turn a cost ranking into personal nutrition advice. Claims that depend on health guidance should point to a primary government or clinical source, and readers should use a qualified healthcare professional for decisions specific to them.
+        David Miller, the site's founder and editor, runs the data checks and documents the sources. He isn't a registered dietitian or medical professional. This methodology is designed to make food-price and nutrient calculations inspectable; it doesn't turn a cost ranking into personal nutrition advice. Claims that depend on health guidance should point to a primary government or clinical source, and readers should use a qualified healthcare professional for decisions specific to them.
       </p>
       <p>
         This page covers the math and source rules for original research. The <a href="/editorial-policy/" class="underline" style="color: #F29B30;">editorial standards</a> cover authorship, recipes, explainers, tools, automation, and the sitewide correction process.
@@ -96,7 +128,13 @@ const methodologySchema = [
 
       <h2 id="data-license" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Every study ships its raw data</h2>
       <p>
-        Each data study publishes the comparison dataset as a public CSV: food, category, nutrient value, package size, recorded price, edible fraction, price per 100 grams, grams per dollar, and the price basis. The current public exports don't include the FoodData Central ID column, so we're not going to pretend they do. No "data available on request." The rows used for the ranking are right there.
+        Each data study publishes its comparison rows as a public CSV. Grocery files include the
+        fields their math needs, such as food, nutrient value, package price, edible fraction, and
+        grams per dollar. The fast-food file instead records chain, menu item, protein, observed
+        price, grams per dollar, nutrition source, and price basis. The field sets differ because
+        the inputs differ. The protein-quality file adds DIAAS method, score, field-level source,
+        adjusted value, and proxy notes. No "data available on request." The rows used for the
+        rankings are right there.
       </p>
       <ul class="list-disc pl-6 space-y-2">
         <li>
@@ -104,6 +142,12 @@ const methodologySchema = [
         </li>
         <li>
           <a href="/data/protein-per-dollar-2026.csv" class="underline" style="color: #F29B30;">protein-per-dollar-2026.csv</a> (raw data for the protein study)
+        </li>
+        <li>
+          <a href="/data/fastfood-protein-per-dollar-2026.csv" class="underline" style="color: #F29B30;">fastfood-protein-per-dollar-2026.csv</a> (raw data for the restaurant study)
+        </li>
+        <li>
+          <a href="/data/protein-quality-per-dollar-2026.csv" class="underline" style="color: #F29B30;">protein-quality-per-dollar-2026.csv</a> (raw data with field-level DIAAS sources)
         </li>
       </ul>
       <p>
@@ -120,8 +164,8 @@ const methodologySchema = [
 
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">How often the numbers get refreshed</h2>
       <ul class="list-disc pl-6 space-y-2">
-        <li><strong>Quarterly:</strong> full price re-audit of every study. Grocery prices move, and a per-dollar ranking with stale prices is just a per-nothing ranking.</li>
-        <li><strong>Monthly:</strong> BLS Price Watch, tracking the latest BLS Average Price releases for the staple foods our studies depend on.</li>
+        <li><strong>Quarterly:</strong> scheduled price re-audit for the published cost studies. Grocery shelves and restaurant menus both move, and a per-dollar ranking with stale prices is just a per-nothing ranking.</li>
+        <li><strong>Monthly:</strong> BLS Price Watch for the staple grocery foods covered by BLS Average Price releases.</li>
       </ul>
 
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">The studies this applies to</h2>

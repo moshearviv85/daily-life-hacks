@@ -34,7 +34,7 @@ Chipotle's High Protein Cup, at 8.4 grams of protein per dollar for 4 ounces of 
 
 Two numbers per item, two very different levels of confidence.
 
-**Protein** comes from each chain's own published nutrition data: product pages, official nutrition PDFs, and the nutrition tables the chains embed on their own sites. No third-party guesses. For the top five items we re-verified the numbers against a second independent source before publishing.
+**Protein** comes from each chain's own published nutrition data: product pages, official nutrition PDFs, and the nutrition tables the chains embed on their own sites. No third-party guesses. The CSV documents independent second-source checks for 2 of the top 5 items. One additional item, McDonald's Double Quarter Pounder, was checked against a second McDonald's endpoint. That's a same-chain check, not an independent one. The other two top-five rows rely on the chain sources recorded in the CSV.
 
 **Price** is messier, because no chain publishes one national price. Each row in the dataset records exactly what its price is: a national-average tracker snapshot, the chain's own online menu baseline, or a documented store menu from 2026. Your local drive-thru will differ, sometimes by a lot, and a couple of McDonald's prices here differ from our 50-gram day study because that one used a single-store snapshot while this uses national averages. Subway's numbers reflect its current published sandwich builds, which run generous on meat.
 

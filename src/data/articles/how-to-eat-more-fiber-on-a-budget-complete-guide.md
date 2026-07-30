@@ -7,7 +7,7 @@ cluster: "budget-fiber"
 image: "/images/how-to-eat-more-fiber-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry pinto beans, split peas, red lentils, oats, and popcorn kernels on a wooden table beside a bag of frozen peas and a loaf of whole wheat bread"
 date: 2026-07-07
-dateModified: 2026-07-17
+dateModified: 2026-07-30
 author: "David Miller"
 featured: false
 faq:
@@ -58,7 +58,7 @@ We published the full 53-food ranking in our [fiber per dollar study](/fiber-per
 | Whole wheat flour | 77.8 g |
 | Green split peas (dry) | 71.0 g |
 | Pinto beans (dry) | 70.8 g |
-| Popcorn kernels | 57.7 g |
+| Popcorn kernels — unresolved form match | 57.7 g recorded, not verified |
 | Rolled oats | 35.8 g |
 | Frozen green peas | 17.6 g |
 | Fresh broccoli crowns | 6.1 g |
@@ -66,7 +66,7 @@ We published the full 53-food ranking in our [fiber per dollar study](/fiber-per
 
 ![Horizontal bar chart showing how many grams of fiber one dollar buys across eight grocery foods](/images/fiber-on-a-budget-value-chart.jpg)
 
-A few notes on that table. Whole wheat flour is technically the winner, but flour is an ingredient, not dinner; it only counts if you bake, so swap it into pancakes and muffins and let the fiber tag along for pennies. Put it up against the grain everyone assumes is the healthy choice and [the flour-versus-quinoa gap](/whole-wheat-flour-vs-quinoa-fiber-cost/) is not remotely close. That makes dry green split peas the real champion among foods you can put in a pot tonight: one $1.42 bag holds around 101 grams of fiber, or about three and a half Daily Values. That's spreadsheet context, not a three-day menu. Pinto beans sit within a rounding error of the peas and are arguably more versatile. Popcorn is the sleeper hit of the whole list, a snack that outranks lentils. Rolled oats are breakfast, solved, for about 28 cents per 100 grams. And frozen green peas deliver nearly triple what fresh broccoli crowns do, which is why the freezer aisle quietly beats the produce section.
+A few notes on that table. Whole wheat flour is technically the winner, but flour is an ingredient, not dinner; it only counts if you bake, so swap it into pancakes and muffins and let the fiber tag along for pennies. Put it up against the grain everyone assumes is the healthy choice and [the flour-versus-quinoa gap](/whole-wheat-flour-vs-quinoa-fiber-cost/) is not remotely close. That makes dry green split peas the real champion among foods you can put in a pot tonight: one $1.42 bag holds around 101 grams of fiber, or about three and a half Daily Values. That's spreadsheet context, not a three-day menu. Pinto beans sit within a rounding error of the peas and are arguably more versatile. The popcorn row is unresolved because it combines air-popped nutrition data with an unpopped-kernel price, so its recorded 57.7 cannot support a rank against lentils. Rolled oats are breakfast, solved, for about 28 cents per 100 grams. And frozen green peas deliver nearly triple what fresh broccoli crowns do, which is why the freezer aisle quietly beats the produce section.
 
 At the very bottom sit fresh blueberries at 2.5 grams per dollar, and price isn't carrying the blame here: [ranked on fiber content alone](/best-high-fiber-foods-ranked-by-fiber-content/) they still only manage 2.4 grams per 100 grams. Berries aren't bad food. They're just a terrible fiber strategy. Buy them because you love them, not for the grams. Bananas are the exception that proves the rule: at just under 12 grams of fiber per dollar, they're the best fresh fruit value on the list, which is exactly why one shows up in the sample day below.
 
@@ -133,9 +133,9 @@ The failure point for most people isn't the recipes. It's the Wednesday night wh
 
 ## What are the cheapest high-fiber snacks?
 
-Popcorn kernels, at 57.7 grams of fiber per dollar, which is fifth on our entire 53-food ranking and ahead of every vegetable in the store. Dry chickpeas at 33.8 grams per dollar roast into something with chip-style crunch. Almonds, the snack with the healthy reputation, manage only 8.8. Snacks are where most fiber plans go to die, because the snack aisle is engineered to win. The counter is having cheap crunchy things that are already made.
+Among exact-source snack rows, whole carrots lead at 16.1 grams of fiber per dollar. Dry chickpeas at 33.8 grams per dollar roast into something with chip-style crunch, although that requires cooking rather than opening a ready-made snack. The table's 57.7-gram popcorn result is unresolved because its nutrition value and priced form do not match. Snacks are where most fiber plans go to die, because the snack aisle is engineered to win. The counter is having cheap crunchy things ready.
 
-Popcorn is the budget MVP here. Kernels rank fifth on our entire list, ahead of every vegetable in the store, and the [popcorn topping ideas](/high-fiber-popcorn-toppings-healthy/) keep it from becoming a butter delivery system. If you need convincing that this swap matters, the [popcorn vs potato chips comparison](/popcorn-vs-potato-chips-fiber-comparison/) does the math. Almonds get treated as the responsible snack, but [popcorn against almonds on fiber per dollar](/popcorn-vs-almonds-fiber-cost/) is a much less flattering matchup than the almond marketing suggests.
+Popcorn can still be an inexpensive whole-grain snack, and the [popcorn topping ideas](/high-fiber-popcorn-toppings-healthy/) keep it from becoming a butter delivery system. The [popcorn vs potato chips comparison](/popcorn-vs-potato-chips-fiber-comparison/) supports the ounce-for-ounce fiber difference for air-popped popcorn, while the [popcorn against almonds](/popcorn-vs-almonds-fiber-cost/) page explains why the current source audit cannot support a per-dollar winner.
 
 Two more that earn their shelf space: [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/), which turn a 33.8-grams-per-dollar dry good into something with chip-style crunch, and [no-bake energy balls](/no-bake-high-fiber-energy-balls-recipe/) for the 3 PM moment when you'd otherwise raid the vending machine.
 

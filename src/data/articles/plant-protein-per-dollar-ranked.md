@@ -6,6 +6,7 @@ tags: ["cheapest plant protein", "plant protein per dollar", "vegan protein on a
 image: "/images/plant-protein-per-dollar-ranked-main.jpg"
 imageAlt: "Ceramic bowls of pinto beans, black beans, red lentils, and chickpeas with a block of tofu on a cutting board"
 date: 2026-07-13
+dateModified: 2026-07-30
 author: "David Miller"
 faq:
   - question: "What is the cheapest plant-based protein?"
@@ -41,21 +42,21 @@ This ranking is the plant-only cut of our full [protein per dollar study](/prote
 
 ![Bar chart ranking 18 plant proteins by protein per dollar](/images/plant-protein-per-dollar-ranked-chart.jpg)
 
-*Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
+*Source audit: joining these 18 foods to the flagship protein dataset yields 13 exact USDA matches, 0 close USDA proxies, and 5 unresolved rows. Proxy and unresolved rows are not independently re-verified. TVP is unresolved: this derivative retains the recorded 50.0 grams per 100 grams, but the current product page works out to about 52.2, so 50.0 is not label-verified. Prices are dated July 2026 observations. Full methodology at [/methodology/](/methodology/).*
 
-The six foods below the cutoff, in order: TVP at 22.5 grams per dollar, canned chickpeas at 22.0, frozen shelled edamame at 18.0, almonds at 14.8, extra firm tofu at 13.6, and tempeh at 13.2.
+The six foods below the cutoff, in order: the unresolved TVP row at a recorded 22.5 grams per dollar, canned chickpeas at 22.0, frozen shelled edamame at 18.0, almonds at 14.8, extra firm tofu at 13.6, and tempeh at 13.2.
 
 ## What's the cheapest plant-based protein?
 
 Dried legumes, and it isn't close. The top seven spots all belong to the dry goods aisle, running from red lentils at 56.0 grams per dollar up to pinto beans at 97.9. One $3.97 bag of pintos holds roughly 389 grams of protein, almost eight times the FDA's 50 gram Daily Value, and it'll wait patiently in your pantry until you're ready. That same bag is carrying 70.8 grams of fiber per dollar alongside the protein, which is how beans end up taking [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/) as well.
 
-Lentils are where I'd point anyone who finds dry beans intimidating, because red lentils skip the soak entirely and melt into whatever you're cooking. A pot of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) is the easiest way to cash in that 56.0 grams per dollar, and [split pea soup](/split-pea-soup-recipe-high-fiber/) runs the same play with split peas at 73.9.
+Lentils are a practical starting point for anyone who finds dry beans intimidating, because red lentils skip the soak entirely and melt into whatever you're cooking. A pot of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) is the easiest way to cash in that 56.0 grams per dollar, and [split pea soup](/split-pea-soup-recipe-high-fiber/) runs the same play with split peas at 73.9.
 
 ## Why do tofu and tempeh rank so low?
 
 Because you're paying brand-name prices for water and refrigeration. A $2.92 block of extra firm tofu holds about 40 grams of protein. A $1.44 bag of brown lentils holds about 112 grams. Half the price, nearly triple the protein, and nobody had to keep it cold on the truck. Priced by the dollar it's 77.7 grams as lentils against 13.6 as tofu, the same view we laid out across [the 15 cheapest protein foods in the store](/one-dollar-protein-what-it-buys/).
 
-Tempeh tells the same story at $3.48 for an 8 ounce pack. Even TVP, which is basically protein confetti, lands at just 22.5 grams per dollar because the 10 ounce bag costs $6.30 at the store we priced. None of this makes soy foods bad. [Sheet pan ginger tofu](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/) is in my regular rotation because it tastes great, not because it's thrifty. And if you want soy in its strangest breakfast form, the [guide to natto](/natto-japanese-fermented-soybeans-gut-health/) explains the sticky fermented version. Just don't buy tofu believing it's the budget move. The budget move is beans.
+Tempeh tells the same story at $3.48 for an 8 ounce pack. The unresolved TVP row lands at a recorded 22.5 grams per dollar because the 10 ounce bag costs $6.30 at the store we priced; its underlying 50.0 grams per 100 grams is not supported by the current product page. None of this makes soy foods bad. [Sheet pan ginger tofu](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/) shows how tofu can earn its place for texture and flavor rather than thrift. And if you want soy in its strangest breakfast form, the [guide to natto](/natto-japanese-fermented-soybeans-gut-health/) explains the sticky fermented version. Just don't buy tofu believing it's the budget move. The budget move is beans.
 
 ## Are canned beans a decent middle ground?
 
@@ -63,7 +64,7 @@ Decent, yes. A $0.88 can of black beans delivers 30.1 grams of protein per dolla
 
 ## Is peanut butter actually a good protein buy?
 
-Better than I expected. The $4.97 jar, all 40 ounces of it, works out to 50.7 grams of protein per dollar, which beats every plant food here except the dried legumes. It also wins [the ranking of protein that needs no cooking](/no-cook-protein-per-dollar/) outright, because nothing else you can eat straight from the container comes close. That jar holds roughly 252 grams of protein total, which is a lot of sandwiches. Dry roasted peanuts land at 39.8 and sunflower seed kernels at 31.7, both respectable for things you eat by the handful.
+By this metric, yes. The $4.97 jar, all 40 ounces of it, works out to 50.7 grams of protein per dollar, which beats every plant food here except the dried legumes. It also wins [the ranking of protein that needs no cooking](/no-cook-protein-per-dollar/) outright, because nothing else you can eat straight from the container comes close. That jar holds roughly 252 grams of protein total, which is a lot of sandwiches. Dry roasted peanuts land at 39.8 and sunflower seed kernels at 31.7, both respectable for things you eat by the handful.
 
 Almonds are the trap. At $6.47 for a 16 ounce bag they deliver 14.8 grams of protein per dollar, barely ahead of tofu. Eat almonds because you like almonds. If you want a snack that pulls real protein weight for pocket change, [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) start from a $1.64 bag that carries 56.7 grams per dollar.
 

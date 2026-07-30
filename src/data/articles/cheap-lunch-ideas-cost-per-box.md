@@ -8,6 +8,7 @@ parentPillar: "eat-healthy-on-a-budget-complete-playbook"
 image: "/images/cheap-lunch-ideas-cost-per-box-main.jpg"
 imageAlt: "Packed lunch container with beans and rice, a banana, and a peanut butter sandwich on a counter"
 date: 2026-07-28
+dateModified: 2026-07-30
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -23,7 +24,7 @@ faq:
   - question: "How much protein can a cheap lunch actually have?"
     answer: "More than most people expect. A tuna sandwich showed 28.4 g, a Greek yogurt and oats bowl 22.6 g for $0.74, and a chickpea and cabbage salad 21.5 g for $0.60. The FDA Daily Value for protein is 50 g, so one cheap lunch can cover close to half a day."
   - question: "What is the cheapest way to add fiber to a packed lunch?"
-    answer: "Popcorn was the cheapest fiber we priced, at 57.7 g per dollar, which puts a 25 g portion of kernels near six cents for about 3.6 g of fiber. A half can of black beans adds 12.3 g of fiber for about $0.44, and a banana adds roughly 3.1 g for around a quarter."
+    answer: "In the exact-source snack rows, whole carrots led at 16.1 grams of fiber per dollar. The earlier 57.7-gram popcorn calculation is excluded because it paired air-popped nutrition data with the price of unpopped kernels. A banana adds roughly 3.1 grams of fiber for around a quarter."
 ---
 
 The cheapest packed lunch in our price data is leftover split pea soup at about $0.28, and a peanut butter sandwich with a banana costs $0.59 without touching a stove. If you want protein, a tuna sandwich runs $1.16 and carries 28.4 grams. Those are shelf prices, not estimates.
@@ -42,7 +43,7 @@ Let's be honest about the work lunch situation. You either spend twelve dollars 
 | Tuna sandwich | 1 can tuna, 2 slices whole wheat bread | $1.16 | 28.4 g |
 | Sardines on toast | 1 tin sardines, 2 slices bread | $1.30 | 29.1 g |
 
-*Source: USDA FoodData Central + US store prices, July 2026. Full methodology at [/methodology/](/methodology/). Protein counted only for the components we have priced.*
+*Source audit: Nutrition and price inputs reuse the July 2026 protein and fiber studies; row-level exact, proxy, and unresolved statuses remain those of the parent datasets. The popcorn-kernel fiber calculation is excluded because its nutrition and priced forms do not match. Full methodology at [/methodology/](/methodology/). Protein is counted only for the components we priced.*
 
 ## What are cheap lunch ideas that need no cooking?
 

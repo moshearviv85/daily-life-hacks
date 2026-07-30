@@ -10,6 +10,8 @@ import {
   DATA_LICENSE_URL,
   DATA_VERSION,
   DATA_RELEASE_DATE,
+  describeDatasetProvenance,
+  getDatasetProvenance,
 } from "../../content/datasets";
 
 /**
@@ -40,20 +42,21 @@ const titleBySlug = new Map(articles.map((entry) => [entry.id, entry.data.title]
 
 const datasets = STUDY_DATASETS.map((dataset) => ({
   ...dataset,
+  provenance: getDatasetProvenance(dataset),
   articleUrl: `/${dataset.id}/`,
   articleTitle: titleBySlug.get(dataset.id) ?? dataset.name,
   fileName: dataset.csv.split("/").pop() ?? dataset.csv,
 }));
 
-const title = `Free Grocery Cost Datasets: ${datasets.length} CSVs, ${TOTAL_DATA_ROWS} Rows`;
-const description = `Download all ${datasets.length} of our original grocery cost datasets as raw CSV. ${TOTAL_DATA_ROWS} priced food rows, USDA nutrition data, free to reuse with credit.`;
+const title = `Free Food Cost Datasets: ${datasets.length} CSVs, ${TOTAL_DATA_ROWS} Rows`;
+const description = `Download all ${datasets.length} of our original food cost datasets as raw CSV. ${TOTAL_DATA_ROWS} priced rows with nutrition sourced mainly from USDA, plus documented restaurant-chain, product-label, and research inputs. Free to reuse with credit.`;
 
 const catalogSchema = {
   "@context": "https://schema.org",
   "@type": "DataCatalog",
   "@id": catalogId,
-  name: "Daily Life Hacks Grocery Cost Data Catalog",
-  description: `Original, dated datasets pricing the nutrition value of American groceries. ${datasets.length} public CSV files covering ${TOTAL_DATA_ROWS} priced food rows, including the Fiber per Dollar Index and the Protein per Dollar Index, built from USDA FoodData Central nutrition data and 2026 US national retail prices.`,
+  name: "Daily Life Hacks Food Cost Data Catalog",
+  description: `Original, dated datasets pricing the nutrition value of American groceries and fast-food menus. ${datasets.length} public CSV files cover ${TOTAL_DATA_ROWS} priced rows. Grocery rows generally use USDA FoodData Central; three datasets carry one unresolved recorded TVP product-label value. Restaurant rows use the chains' published nutrition data; mixed menu-plan datasets combine USDA and restaurant sources. The protein-quality dataset names its additional row-level literature and institutional sources.`,
   url: pageUrl,
   inLanguage: "en-US",
   isAccessibleForFree: true,
@@ -64,14 +67,14 @@ const catalogSchema = {
   publisher: organization,
   creator: organization,
   keywords:
-    "fiber per dollar, protein per dollar, grocery prices, food cost data, USDA FoodData Central, nutrition economics, open data",
+    "fiber per dollar, protein per dollar, grocery prices, fast food prices, food cost data, USDA FoodData Central, restaurant nutrition data, nutrition economics, open data",
   isPartOf: { "@id": `${siteUrl}/#website` },
   dataset: datasets.map((dataset) => ({
     "@type": "Dataset",
     "@id": `${siteUrl}${dataset.articleUrl}#dataset`,
     name: dataset.name,
     ...(dataset.alternateName ? { alternateName: dataset.alternateName } : {}),
-    description: dataset.description,
+    description: `${dataset.description} ${describeDatasetProvenance(dataset.provenance)}`,
     url: `${siteUrl}${dataset.articleUrl}`,
     identifier: `${siteUrl}${dataset.articleUrl}#dataset`,
     version: DATA_VERSION,
@@ -99,7 +102,7 @@ const webPageSchema = {
   "@type": "CollectionPage",
   "@id": `${pageUrl}#webpage`,
   url: pageUrl,
-  name: "Public Grocery Cost Datasets",
+  name: "Public Food Cost Datasets",
   description,
   inLanguage: "en-US",
   isPartOf: { "@id": `${siteUrl}/#website` },
@@ -146,15 +149,20 @@ const linkStyle = "color: #F29B30;";
     <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
       <p>
         Most food sites will tell you beans are cheap protein and leave it there. We got annoyed
-        enough to actually price it. Every food in these files has a USDA nutrition record, a real
-        package price, and an edible-fraction adjustment so a pound of oranges doesn't get credit
-        for the peel. Then we divided. That's the whole trick.
+        enough to actually price it. Grocery nutrition generally comes from USDA FoodData Central.
+        Three published datasets carry the same recorded TVP product-label value; that row is
+        unresolved because the current product page works out to about 52.2 rather than the recorded
+        50.0 grams per 100 grams. Each priced food also has a package-price source and, where relevant,
+        an edible-fraction adjustment so a pound of oranges doesn't get credit for the peel. The
+        fast-food ranking uses nutrition published by each restaurant chain and documented menu-price
+        observations. Then we divided. That's the whole trick.
       </p>
       <p>
-        Nutrition numbers come from <a href="https://fdc.nal.usda.gov/" class={linkClass} style={linkStyle} rel="noopener" target="_blank">USDA FoodData Central</a>.
-        Prices come from Bureau of Labor Statistics Average Price data where it exists, cross-checked
-        against national retail listings for the items BLS doesn't track. Everything is priced
-        as-purchased, at 2026 US national prices, and the full rulebook is on the
+        Grocery nutrition numbers generally come from <a href="https://fdc.nal.usda.gov/" class={linkClass} style={linkStyle} rel="noopener" target="_blank">USDA FoodData Central</a>.
+        Grocery prices come from Bureau of Labor Statistics Average Price data where it exists,
+        cross-checked against national retail listings for the items BLS doesn't track. The
+        fast-food study uses each chain's published nutrition data and documented July 2026 menu
+        and price-tracker observations. The full rulebook is on the
         <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
       </p>
       <p>
@@ -223,6 +231,22 @@ const linkStyle = "color: #F29B30;";
                   </span>
                   <span class="block mt-1 leading-relaxed" style="color: var(--muted-color);">
                     {dataset.description}
+                  </span>
+                  <span class="block mt-1 text-xs leading-relaxed" style="color: var(--label-color);">
+                    {
+                      dataset.provenance.nutritionSourceIsPrimary
+                        ? "Primary nutrition source: "
+                        : "Nutrition source: "
+                    }
+                    {dataset.provenance.nutritionSource}.
+                    {
+                      dataset.provenance.additionalSourceNote &&
+                        ` ${dataset.provenance.additionalSourceNote}.`
+                    }
+                    {
+                      dataset.provenance.sourceAuditSummary &&
+                        ` ${dataset.provenance.sourceAuditSummary}.`
+                    }
                   </span>
                 </td>
                 <td class="px-4 py-4 text-right font-bold tabular-nums whitespace-nowrap" style="color: var(--text-color);">

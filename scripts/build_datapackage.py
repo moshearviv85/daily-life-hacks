@@ -173,8 +173,9 @@ DATASETS: dict[str, dict] = {
         "study": "fiber-per-dollar-cheapest-high-fiber-foods",
         "description": (
             "The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US "
-            "dollar with the whole calculation exposed: USDA fiber per 100g, package size and "
-            "price, package weight, edible fraction, and the derived price per 100 grams."
+            "dollar with the whole calculation exposed: recorded fiber per 100g, package size "
+            "and price, package weight, edible fraction, derived price per 100 grams, and "
+            "row-level nutrition provenance status."
         ),
         "fields": {},
     },
@@ -269,8 +270,9 @@ DATASETS: dict[str, dict] = {
         "study": "protein-per-dollar-cheapest-protein-sources",
         "description": (
             "The flagship protein dataset. 49 foods ranked by grams of protein per US dollar "
-            "with the whole calculation exposed: USDA protein per 100g, package size and "
-            "price, package weight, edible fraction, and the derived price per 100 grams."
+            "with the whole calculation exposed: recorded protein per 100g, package size and "
+            "price, package weight, edible fraction, derived price per 100 grams, and "
+            "row-level nutrition provenance status."
         ),
         "fields": {},
     },
@@ -318,12 +320,34 @@ FIELD_DESCRIPTIONS: dict[str, str] = {
     "price_basis": (
         "Source and observation date for the price, plus any USDA refuse percentage applied."
     ),
+    "nutrition_source_status": (
+        "Row-level nutrition provenance status: exact, proxy, or unresolved."
+    ),
+    "nutrition_source_type": (
+        "Authoritative nutrition source class, or Unresolved when no unique matching record was established."
+    ),
+    "nutrition_source_id": (
+        "USDA FoodData Central identifier for exact and proxy rows; empty for unresolved rows."
+    ),
+    "nutrition_source_url": (
+        "Direct authoritative record URL, or the current manufacturer page for the unresolved TVP label row."
+    ),
+    "nutrition_source_description": (
+        "Food description from the linked authoritative record, preserved verbatim for auditability."
+    ),
+    "nutrition_source_form": (
+        "Preparation or physical form supported by the linked nutrient record; Not resolved when no unique record was established."
+    ),
+    "nutrition_source_note": (
+        "Row-specific disclosure for proxy and unresolved matches, including the exact ambiguity or mismatch."
+    ),
     "fiber_g_per_100g": (
-        "Dietary fiber in grams per 100 grams of the food as purchased, from USDA "
-        "FoodData Central."
+        "Recorded dietary fiber in grams per 100 grams; use the nutrition_source fields "
+        "in the flagship CSV to inspect its FoodData Central match status."
     ),
     "protein_g_per_100g": (
-        "Protein in grams per 100 grams of the food as purchased, from USDA FoodData Central."
+        "Recorded protein in grams per 100 grams; use the nutrition_source fields in the "
+        "flagship CSV to inspect its FoodData Central or manufacturer-label status."
     ),
     "protein_g_per_dollar": PROTEIN_PER_DOLLAR,
     "fiber_g_per_dollar": FIBER_PER_DOLLAR,
@@ -513,9 +537,12 @@ def build_package() -> tuple[dict, list[str]]:
             "per dollar, protein per dollar, protein quality adjusted with DIAAS, daily "
             "menu costing, and category-level rankings across produce, grains, legumes, "
             "dairy, meat, pantry staples and fast food.\n\n"
-            "Nutrient values come from USDA FoodData Central. Prices are US national "
-            "figures: BLS Average Price data where the item is tracked, Walmart national "
-            "listings otherwise, observed July 2026. Every ranking is calculated "
+            "Grocery nutrient values primarily trace to USDA FoodData Central; the flagship "
+            "files expose exact, proxy, and unresolved row-level status, and documented "
+            "product-label exceptions remain labeled as such. Restaurant values come from "
+            "chain-published nutrition. Prices are US national figures: BLS Average Price "
+            "data where the item is tracked, Walmart national listings otherwise, observed "
+            "July 2026. Every ranking is calculated "
             "as-purchased, with USDA refuse percentages removed so peels, pits and bone are "
             "not counted as food.\n\n"
             "The original Daily Life Hacks selection, arrangement, calculations, field "

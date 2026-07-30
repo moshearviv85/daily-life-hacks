@@ -29,6 +29,12 @@ type FoodRow = {
   fiberPerDollar: number | null;
   proteinMeasured: boolean;
   fiberMeasured: boolean;
+  proteinSourceStatus: string;
+  proteinSourceForm: string;
+  proteinSourceNote: string;
+  fiberSourceStatus: string;
+  fiberSourceForm: string;
+  fiberSourceNote: string;
 };
 
 const sourceRows = (dataIndex.rows as SourceRow[]).filter((row) =>
@@ -83,17 +89,29 @@ for (const row of sourceRows) {
     fiberPerDollar: null,
     proteinMeasured: false,
     fiberMeasured: false,
+    proteinSourceStatus: "",
+    proteinSourceForm: "",
+    proteinSourceNote: "",
+    fiberSourceStatus: "",
+    fiberSourceForm: "",
+    fiberSourceNote: "",
   };
 
   if (row.dataset === "protein-per-dollar-2026") {
     existing.proteinPer100g = numberOrNull(row.fields.protein_g_per_100g);
     existing.proteinPerDollar = numberOrNull(row.fields.protein_g_per_dollar);
     existing.proteinMeasured = true;
+    existing.proteinSourceStatus = String(row.fields.nutrition_source_status ?? "");
+    existing.proteinSourceForm = String(row.fields.nutrition_source_form ?? "");
+    existing.proteinSourceNote = String(row.fields.nutrition_source_note ?? "");
   }
   if (row.dataset === "fiber-per-dollar-2026") {
     existing.fiberPer100g = numberOrNull(row.fields.fiber_g_per_100g);
     existing.fiberPerDollar = numberOrNull(row.fields.fiber_g_per_dollar);
     existing.fiberMeasured = true;
+    existing.fiberSourceStatus = String(row.fields.nutrition_source_status ?? "");
+    existing.fiberSourceForm = String(row.fields.nutrition_source_form ?? "");
+    existing.fiberSourceNote = String(row.fields.nutrition_source_note ?? "");
   }
 
   byFood.set(key, existing);
@@ -144,6 +162,17 @@ const schemas = [
 
 const metric = (value: number | null, suffix = "g") =>
   value === null ? null : `${value.toFixed(1)}${suffix}`;
+const sourceSummary = (
+  measured: boolean,
+  status: string,
+  form: string,
+  note: string,
+) => {
+  if (!measured) return "Not measured";
+  if (status === "exact") return `Exact USDA match${form ? ` — ${form}` : ""}`;
+  if (status === "proxy") return `Close USDA proxy${note ? ` — ${note}` : ""}`;
+  return `Unresolved — recorded only${note ? `. ${note}` : ""}`;
+};
 ---
 
 <BaseLayout title={title} description={description} canonicalURL={pageUrl} jsonLd={schemas}>
@@ -172,6 +201,12 @@ const metric = (value: number | null, suffix = "g") =>
         {bothCount} foods appear in both studies, so those get both nutrient columns. A blank
         measurement isn't secretly zero. It means that food wasn't measured in that ranking.
         Spreadsheets are already bossy enough without making up numbers.
+      </p>
+      <p class="mt-4 leading-relaxed" style="color:var(--muted-color);">
+        Each measured nutrient keeps its row-level exact, proxy, or unresolved source status.
+        Unresolved numbers remain visible as recorded observations, but they are not verified
+        winners. Popcorn's fiber row is unresolved because its 14.5 g/100 g value is for
+        air-popped popcorn while its 57.7 g/$ price calculation uses unpopped kernels.
       </p>
     </section>
 
@@ -289,6 +324,7 @@ const metric = (value: number | null, suffix = "g") =>
             <tr>
               <th scope="col" class="sticky-food">Food</th>
               <th scope="col">Category</th>
+              <th scope="col">Nutrition source match</th>
               <th scope="col" class="number-cell">Package price</th>
               <th scope="col" class="number-cell">Price / 100g</th>
               <th scope="col" class="number-cell">Protein / 100g</th>
@@ -319,12 +355,42 @@ const metric = (value: number | null, suffix = "g") =>
                   <span class="block source-note">Price basis: {food.priceBasis || "See source CSV"}</span>
                 </th>
                 <td>{food.category}</td>
+                <td class="source-status-cell">
+                  {food.proteinMeasured && (
+                    <span class="block">
+                      <strong>Protein:</strong>{" "}
+                      {sourceSummary(
+                        food.proteinMeasured,
+                        food.proteinSourceStatus,
+                        food.proteinSourceForm,
+                        food.proteinSourceNote,
+                      )}
+                    </span>
+                  )}
+                  {food.fiberMeasured && (
+                    <span class="block mt-1">
+                      <strong>Fiber:</strong>{" "}
+                      {sourceSummary(
+                        food.fiberMeasured,
+                        food.fiberSourceStatus,
+                        food.fiberSourceForm,
+                        food.fiberSourceNote,
+                      )}
+                    </span>
+                  )}
+                </td>
                 <td class="number-cell">{food.packagePrice === null ? <span class="not-measured">Not measured</span> : `$${food.packagePrice.toFixed(2)}`}</td>
                 <td class="number-cell">{food.pricePer100g === null ? <span class="not-measured">Not measured</span> : `$${food.pricePer100g.toFixed(2)}`}</td>
                 <td class="number-cell">{metric(food.proteinPer100g) ?? <span class="not-measured">Not measured</span>}</td>
-                <td class="number-cell">{metric(food.fiberPer100g) ?? <span class="not-measured">Not measured</span>}</td>
+                <td class="number-cell">
+                  {metric(food.fiberPer100g) ?? <span class="not-measured">Not measured</span>}
+                  {food.fiberSourceStatus === "unresolved" && <span class="block source-flag">Recorded, unresolved</span>}
+                </td>
                 <td class="number-cell value-cell">{metric(food.proteinPerDollar) ?? <span class="not-measured">Not measured</span>}</td>
-                <td class="number-cell value-cell">{metric(food.fiberPerDollar) ?? <span class="not-measured">Not measured</span>}</td>
+                <td class="number-cell value-cell">
+                  {metric(food.fiberPerDollar) ?? <span class="not-measured">Not measured</span>}
+                  {food.fiberSourceStatus === "unresolved" && <span class="block source-flag">Recorded, unresolved</span>}
+                </td>
                 <td>
                   <button
                     type="button"
@@ -419,10 +485,11 @@ const metric = (value: number | null, suffix = "g") =>
     />
 
     <p class="mt-6 text-sm leading-relaxed" style="color:var(--muted-color);">
-      Data version {DATA_VERSION}. Nutrition values use USDA FoodData Central. Prices use BLS
-      Average Price data where available and dated national retail listings otherwise. Read the
-      <a class="text-link" href="/methodology/">methodology and correction policy</a>. This isn't a
-      live quote for your store, ZIP code, sale, or package size.
+      Data version {DATA_VERSION}. USDA FoodData Central is the primary grocery nutrition source;
+      every displayed nutrient keeps its exact, proxy, or unresolved source status and mismatch
+      note. Prices use BLS Average Price data where available and dated national retail listings
+      otherwise. Read the <a class="text-link" href="/methodology/">methodology and correction
+      policy</a>. This isn't a live quote for your store, ZIP code, sale, or package size.
     </p>
   </main>
   <Footer />
@@ -450,6 +517,8 @@ const metric = (value: number | null, suffix = "g") =>
     .food-table .value-cell{font-weight:700;color:var(--heading-color)}
     .package-note{margin-top:.2rem;font-size:.72rem;font-weight:400;color:var(--muted-color)}
     .source-note{margin-top:.18rem;font-size:.68rem;font-weight:400;line-height:1.3;color:var(--muted-color)}
+    .source-status-cell{min-width:18rem;font-size:.72rem;line-height:1.35;color:var(--muted-color)}
+    .source-flag{margin-top:.2rem;font-size:.68rem;font-weight:400;color:#a85e00}
     .not-measured{font-size:.72rem;font-weight:400;color:var(--muted-color)}
     .info-card{padding:1.25rem;border-radius:1rem;background:var(--card-bg);border:1px solid var(--border-color)}
     .info-card h2{font-size:1.35rem;font-weight:700;color:var(--heading-color)}
@@ -506,6 +575,17 @@ const metric = (value: number | null, suffix = "g") =>
             : type === "money"
               ? "$" + Number(value).toFixed(2)
               : Number(value).toFixed(1) + "g";
+        }
+
+        function sourceMatch(food, nutrient) {
+          var measured = food[nutrient + "Measured"];
+          var status = food[nutrient + "SourceStatus"];
+          var form = food[nutrient + "SourceForm"];
+          var note = food[nutrient + "SourceNote"];
+          if (!measured) return "Not measured";
+          if (status === "exact") return "Exact USDA match" + (form ? " - " + form : "");
+          if (status === "proxy") return "Close USDA proxy" + (note ? " - " + note : "");
+          return "Unresolved - recorded only" + (note ? ". " + note : "");
         }
 
         function track(action, details) {
@@ -609,7 +689,9 @@ const metric = (value: number | null, suffix = "g") =>
             ["Protein per 100g", function (food) { return display(food.proteinPer100g); }],
             ["Fiber per 100g", function (food) { return display(food.fiberPer100g); }],
             ["Protein per $1", function (food) { return display(food.proteinPerDollar); }],
-            ["Fiber per $1", function (food) { return display(food.fiberPerDollar); }]
+            ["Fiber per $1", function (food) { return display(food.fiberPerDollar); }],
+            ["Protein source match", function (food) { return sourceMatch(food, "protein"); }],
+            ["Fiber source match", function (food) { return sourceMatch(food, "fiber"); }]
           ];
 
           compareTable.innerHTML =

@@ -6,6 +6,7 @@ tags: ["are eggs cheap protein", "eggs protein per dollar", "egg prices 2026", "
 image: "/images/eggs-vs-everything-protein-value-main.jpg"
 imageAlt: "A carton of brown eggs surrounded by bowls of beans, canned tuna, peanut butter, and chicken drumsticks"
 date: 2026-07-13
+dateModified: 2026-07-30
 author: "David Miller"
 faq:
   - question: "Are eggs the cheapest protein?"
@@ -39,7 +40,7 @@ Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, the May 2026 nat
 
 ![Bar chart of the full ranking for eggs vs everything protein value](/images/eggs-vs-everything-protein-value-chart.jpg)
 
-*Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
+*Source audit: joining these 49 foods to the flagship protein dataset yields 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows. Proxy and unresolved rows are not independently re-verified. TVP is unresolved: this derivative retains the recorded 50.0 grams per 100 grams, but the current product page works out to about 52.2, so 50.0 is not label-verified. Prices are dated July 2026 observations. Full methodology at [/methodology/](/methodology/).*
 
 ## What actually beats eggs on protein per dollar?
 
@@ -67,7 +68,7 @@ Eggs beat chicken breast (24.5) by roughly 40 percent per dollar. They beat ever
 
 ## So are eggs still worth buying for protein?
 
-For my money, yes, because rank 19 undersells what eggs actually are: the cheapest protein that asks nothing of you. A dozen holds about 75 grams of protein for $2.19, call it 18 cents an egg, [about 12.6 grams of protein in the standard two egg breakfast](/how-much-protein-in-two-eggs/), and there's no soaking, no simmering, no cutting board. Skip the pan entirely and it's a different list, one that [peanut butter, canned beans, and the dairy tubs](/no-cook-protein-per-dollar/) run instead. Beans beat eggs on paper; eggs beat beans at breakfast when you're barely awake and negotiating with the coffee maker.
+Rank 19 undersells the convenience: eggs are the cheapest protein in this sample that asks almost nothing of the cook. A dozen holds about 75 grams of protein for $2.19, call it 18 cents an egg, [about 12.6 grams of protein in the standard two egg breakfast](/how-much-protein-in-two-eggs/), and there's no soaking, no simmering, no cutting board. Skip the pan entirely and it's a different list, one that [peanut butter, canned beans, and the dairy tubs](/no-cook-protein-per-dollar/) run instead. Beans beat eggs on paper; eggs beat beans at breakfast when you're barely awake and negotiating with the coffee maker.
 
 They're also hard to get bored of. A [sheet pan breakfast hash](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) feeds a table from one pan, [cauliflower fried rice with eggs](/cauliflower-fried-rice-with-eggs/) turns them into dinner, and a good [egg sandwich](/healthy-egg-sandwich-add-ins-toppings/) is the entire reason some of us get out of bed.
 

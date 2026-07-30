@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/protein-per-dollar-cheapest-protein-sources-main.jpg"
 imageAlt: "Playful editorial illustration of dried beans, eggs, and chicken competing for space on a grocery scale"
 date: 2026-07-06
-dateModified: 2026-07-17
+dateModified: 2026-07-30
 author: "David Miller"
 faq:
   - question: "What is the cheapest protein source?"
@@ -20,12 +20,12 @@ faq:
   - question: "What is the cheapest animal protein?"
     answer: "Chicken drumsticks led the animal foods in our 49-food sample. At $1.09 per pound in a 5 pound bag, they deliver about 50 grams of protein per dollar even after removing 33 percent of the weight for bone. Eggs came next at 34 grams per dollar, then a block of mozzarella at 30, whole milk at 29, and boneless chicken thighs at 28. A whole rotisserie chicken scored 27, which beat raw breast at the price points used in this dataset."
   - question: "How is protein per dollar calculated?"
-    answer: "We took each food's protein content per 100 grams from USDA FoodData Central, matched it to a typical July 2026 US price per package (audited Walmart national listings plus Bureau of Labor Statistics average prices), and divided total protein in the package by its price. Everything is measured as purchased: raw meat, dry beans, whole packages. For bone-in items we counted only the edible portion, using USDA refuse percentages."
+    answer: "We matched each food's protein content per 100 grams to a typical July 2026 US package price and divided total protein in the package by its price. Everything is measured as purchased, and bone-in items use USDA refuse percentages for the edible portion. The current row-level source audit found 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows. Proxies and unresolved rows are not counted as independently re-verified. TVP is one of the unresolved rows because its recorded label value no longer matches the current product page."
 ---
 
-Dried pinto beans delivered the most protein per dollar in our 49-food grocery sample, at about 98 grams based on USDA protein data and July 2026 prices. Bacon sits at the bottom of the same ranking at 9. That's the same nutrient at more than ten times the price, and the expensive version is the one everyone photographs on burgers.
+Dried pinto beans delivered the most protein per dollar in our 49-food July 2026 grocery sample, at about 98 grams. Bacon sits at the bottom of the same ranking at 9. That's the same nutrient at more than ten times the price, and the expensive version is the one everyone photographs on burgers.
 
-Here's where those numbers come from. Last week I ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle embarrassed everything else in the store. Several readers asked the obvious follow-up: does the same thing happen with protein? So I built the second spreadsheet. Forty-nine common grocery foods, USDA protein numbers, current prices, one division problem. The result is a full ranking of the cheapest protein sources in the store, and yes, the beans repeat.
+Here's where those numbers come from. Last week I ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle embarrassed everything else in the store. Several readers asked the obvious follow-up: does the same thing happen with protein? So I built the second spreadsheet. Forty-nine common grocery foods, current prices, one division problem, and a row-level source audit that separates 36 exact USDA matches from 5 close USDA proxies and 8 unresolved entries. The result is a full ranking of the cheapest protein sources in the store, and yes, the beans repeat.
 
 ## What is the cheapest source of protein per dollar?
 
@@ -39,7 +39,7 @@ Bacon finishes 49th out of 49 at 9.2 grams per dollar. Same nutrient as the pint
 
 Same playbook as the fiber study, because it survived an audit and I'm not messing with it:
 
-* **Protein content:** grams of protein per 100 grams of each food, from [USDA FoodData Central](https://fdc.nal.usda.gov/) SR Legacy entries. Spot checks against the current USDA API matched the published values after rounding. The public CSV does not yet include the FDC ID for every row, so a reader can verify the math but cannot reproduce every source lookup from that file alone.
+* **Protein content:** the current row-level source audit links 36 of 49 values to exact [USDA FoodData Central](https://fdc.nal.usda.gov/) records and 5 to close USDA proxies. The remaining 8 are unresolved. A proxy differs from the priced food in a material detail such as form, cut, or preparation, so it is not an exact match. An unresolved row has no acceptable row-level match in the current audit and is not counted as independently re-verified. TVP is unresolved: the dataset records 50.0 grams per 100 grams from an earlier product label, while the current product page works out to about 52.2 grams per 100 grams. The CSV documents every status and the reason for each proxy or unresolved result.
 * **Prices:** for the 23 foods that also appeared in the fiber study, we reused the prices audited on July 4, 2026. New items use May 2026 [BLS average-price series](https://www.bls.gov/cpi/factsheets/average-prices.htm) where available and July 2026 Walmart national listings for the rest. BLS average prices and retailer listings are different kinds of price evidence, so every CSV row labels which basis it uses instead of pretending they are interchangeable.
 * **The math:** total grams of protein in the package, divided by the package price. For bone-in items we only counted the edible portion, using USDA refuse data: a raw whole chicken yields about 61 percent edible meat and skin, drumsticks lose 33 percent to bone, and a rotisserie chicken gives up 33 percent to bone and 13 percent to skin if you're eating the meat.
 
@@ -47,13 +47,13 @@ One basis rule matters enough to spell out. Everything is measured **as purchase
 
 The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv), read the site's [grocery-data methodology](/methodology/), and check the calculations yourself. The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) lets you compare any two rows or build a basket without wrestling the CSV. The [weekly food-cost planner](/tools/grocery-budget-calculator/) takes the next step and scales our five audited 50-gram days for the number of people you're feeding.
 
-*Data last verified July 2026 (dual independent USDA pulls). Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
+*Source audit updated July 2026: 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows. Proxy and unresolved rows are not independently re-verified. Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
 
 ![Horizontal bar chart ranking the top 20 cheapest protein sources by grams of protein per dollar](/images/protein-per-dollar-top-20-chart.jpg)
 
 ## The full ranking: 49 protein sources by protein per dollar
 
-Protein values in this table come from USDA FoodData Central, and every price is a July 2026 US figure, audited against Walmart shelf listings and BLS national averages.
+This table contains 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved protein-source rows. The raw CSV identifies the status and evidence for each row; proxy and unresolved rows are not independently re-verified. Price entries are July 2026 US figures checked against Walmart shelf listings and BLS national averages.
 
 | Rank | Food | Protein (g per 100g) | Price per 100g | Protein per $1 |
 |---|---|---|---|---|

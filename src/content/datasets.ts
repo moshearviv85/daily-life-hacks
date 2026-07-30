@@ -6,6 +6,26 @@
  * Shared by src/pages/[slug].astro (Dataset schema + embed snippet) and
  * src/pages/embed/[slug].astro (standalone embeddable chart pages).
  */
+export interface DatasetProvenance {
+  /** Controls how source-specific copy is described and audited. */
+  nutritionSourceClass:
+    | "grocery"
+    | "restaurant"
+    | "mixed"
+    | "mixed-label"
+    | "mixed-research";
+  /** Human-readable source used for the nutrition values in this dataset. */
+  nutritionSource: string;
+  /** Primary source URL when one source covers the dataset. */
+  nutritionSourceUrl?: string;
+  /** True when the named source covers most rows but is not a complete row-level claim. */
+  nutritionSourceIsPrimary?: boolean;
+  /** Field-specific provenance that doesn't fit the primary nutrition source. */
+  additionalSourceNote?: string;
+  /** Dataset-specific row-level matching result and its verification limit. */
+  sourceAuditSummary?: string;
+}
+
 export interface DatasetMeta {
   name: string;
   /** The coined index name, where the metric has one (method #60). */
@@ -21,6 +41,41 @@ export interface DatasetMeta {
   rows: number;
   variables: string[];
   temporal: string;
+  /**
+   * Omitting provenance declares a grocery-only dataset and applies the USDA
+   * default below. Restaurant and mixed datasets must provide an explicit class.
+   */
+  provenance?: DatasetProvenance;
+}
+
+export const DEFAULT_GROCERY_DATASET_PROVENANCE: DatasetProvenance = {
+  nutritionSourceClass: "grocery",
+  nutritionSource: "USDA FoodData Central",
+  nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+};
+
+export function getDatasetProvenance(dataset: DatasetMeta): DatasetProvenance {
+  return dataset.provenance ?? DEFAULT_GROCERY_DATASET_PROVENANCE;
+}
+
+export function describeDatasetProvenance(
+  provenance: DatasetProvenance,
+): string {
+  const sourceLabel = provenance.nutritionSourceIsPrimary
+    ? "Primary nutrition source"
+    : "Nutrition source";
+
+  return [
+    `${sourceLabel}: ${provenance.nutritionSource}.`,
+    provenance.additionalSourceNote
+      ? `${provenance.additionalSourceNote}.`
+      : "",
+    provenance.sourceAuditSummary
+      ? `${provenance.sourceAuditSummary}.`
+      : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 }
 
 /** Stable release identity shared by HTML schema, the API, and distribution packages. */
@@ -90,6 +145,16 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 49,
     variables: ["protein grams per dollar", "package price (USD)"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "mixed-label",
+      nutritionSource: "USDA FoodData Central",
+      nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+      nutritionSourceIsPrimary: true,
+      additionalSourceNote:
+        "TVP is unresolved: its recorded product-label value no longer matches the current product page",
+      sourceAuditSummary:
+        "Joined to the flagship protein audit: 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows; proxy and unresolved rows are not independently re-verified",
+    },
   },
   "grains-fiber-per-dollar-ranked": {
     name: "Grains Ranked by Fiber per Dollar (11 foods, 2026)",
@@ -99,6 +164,16 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 11,
     variables: ["fiber grams per dollar", "package price (USD)"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "grocery",
+      nutritionSource: "USDA FoodData Central",
+      nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+      nutritionSourceIsPrimary: true,
+      additionalSourceNote:
+        "Popcorn is unresolved: its 14.5-gram value matches air-popped popcorn, while the priced item is unpopped kernels",
+      sourceAuditSummary:
+        "Joined to the flagship fiber audit: 9 exact USDA matches, 1 close USDA proxy, and 1 unresolved row; proxy and unresolved rows are not independently re-verified",
+    },
   },
   "high-fiber-snacks-per-dollar": {
     name: "High-Fiber Snacks Ranked by Cost (10 foods, 2026)",
@@ -108,6 +183,16 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 10,
     variables: ["fiber grams per dollar", "package price (USD)"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "grocery",
+      nutritionSource: "USDA FoodData Central",
+      nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+      nutritionSourceIsPrimary: true,
+      additionalSourceNote:
+        "Popcorn is unresolved: its 14.5-gram value matches air-popped popcorn, while the priced item is unpopped kernels",
+      sourceAuditSummary:
+        "Joined to the flagship fiber audit: 6 exact USDA matches, 0 close USDA proxies, and 4 unresolved rows; unresolved rows are not independently re-verified",
+    },
   },
   "meat-per-dollar-protein-ranked": {
     name: "Meat per Dollar: 11 Cuts Ranked by Protein Value (11 foods, 2026)",
@@ -135,6 +220,16 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 15,
     variables: ["fiber grams per dollar", "package price (USD)"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "grocery",
+      nutritionSource: "USDA FoodData Central",
+      nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+      nutritionSourceIsPrimary: true,
+      additionalSourceNote:
+        "Popcorn is unresolved: its 14.5-gram value matches air-popped popcorn, while the priced item is unpopped kernels",
+      sourceAuditSummary:
+        "Joined to the flagship fiber audit: 12 exact USDA matches, 1 close USDA proxy, and 2 unresolved rows; proxy and unresolved rows are not independently re-verified",
+    },
   },
   "one-dollar-protein-what-it-buys": {
     name: "What One Dollar of Protein Buys, Food by Food (15 foods, 2026)",
@@ -153,6 +248,16 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 18,
     variables: ["protein grams per dollar", "package price (USD)"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "mixed-label",
+      nutritionSource: "USDA FoodData Central",
+      nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+      nutritionSourceIsPrimary: true,
+      additionalSourceNote:
+        "TVP is unresolved: its recorded product-label value no longer matches the current product page",
+      sourceAuditSummary:
+        "Joined to the flagship protein audit: 13 exact USDA matches, 0 close USDA proxies, and 5 unresolved rows; proxy and unresolved rows are not independently re-verified",
+    },
   },
   "produce-fiber-per-dollar-ranked": {
     name: "Fruits and Vegetables Ranked by Fiber per Dollar (22 foods, 2026)",
@@ -181,6 +286,14 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 53,
     variables: ["dietary fiber (g per 100g)", "price (USD)", "fiber grams per dollar"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "grocery",
+      nutritionSource: "USDA FoodData Central",
+      nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+      nutritionSourceIsPrimary: true,
+      sourceAuditSummary:
+        "Current row-level source audit: 38 exact USDA matches, 4 close USDA proxies, and 11 unresolved rows; proxy and unresolved rows are not independently re-verified",
+    },
   },
   "protein-per-dollar-cheapest-protein-sources": {
     name: "The Protein per Dollar Index: 49 Protein Sources Ranked by Cost Efficiency (2026)",
@@ -191,6 +304,16 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 49,
     variables: ["protein (g per 100g)", "price (USD)", "protein grams per dollar"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "mixed-label",
+      nutritionSource: "USDA FoodData Central",
+      nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+      nutritionSourceIsPrimary: true,
+      additionalSourceNote:
+        "TVP is unresolved: its recorded product-label value no longer matches the current product page",
+      sourceAuditSummary:
+        "Current row-level source audit: 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows; proxy and unresolved rows are not independently re-verified",
+    },
   },
   "what-30-grams-of-fiber-costs-per-day": {
     name: "Daily Cost of 30 Grams of Fiber: 5 Real Menu Plans Priced (2026)",
@@ -200,6 +323,13 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 27,
     variables: ["dietary fiber (g per day)", "daily cost (USD)"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "mixed",
+      nutritionSource:
+        "USDA FoodData Central and restaurant chains' published nutrition data",
+      sourceAuditSummary:
+        "The 23 grocery rows join to the flagship fiber audit: 16 exact USDA matches, 1 close USDA proxy, and 6 unresolved rows; the 4 restaurant rows use chain-published nutrition data",
+    },
   },
   "what-50-grams-of-protein-costs-per-day": {
     name: "Daily Cost of 50 Grams of Protein: 5 Real Menu Plans Priced (2026)",
@@ -209,6 +339,11 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 21,
     variables: ["protein (g per day)", "daily cost (USD)"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "mixed",
+      nutritionSource:
+        "USDA FoodData Central and McDonald's published nutrition data",
+    },
   },
   "protein-per-dollar-adjusted-for-quality": {
     name: "Protein per Dollar Adjusted for Quality (DIAAS): 25 Foods (2026)",
@@ -218,6 +353,13 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 25,
     variables: ["protein grams per dollar", "DIAAS score", "quality-adjusted grams per dollar"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "mixed-research",
+      nutritionSource: "USDA FoodData Central",
+      nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+      additionalSourceNote:
+        "DIAAS values use the row-level literature and institutional sources cited in the raw CSV",
+    },
   },
   "fast-food-protein-per-dollar-ranked": {
     name: "Fast Food Protein per Dollar: 30 Menu Items Ranked (2026)",
@@ -227,6 +369,10 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 30,
     variables: ["protein (g per item)", "menu price (USD)", "protein grams per dollar"],
     temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "restaurant",
+      nutritionSource: "each chain's published nutrition data",
+    },
   },
 };
 

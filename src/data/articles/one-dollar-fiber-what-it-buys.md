@@ -6,7 +6,7 @@ tags: ["fiber per dollar", "cheap fiber foods", "budget nutrition", "grocery dat
 image: "/images/one-dollar-fiber-what-it-buys-main.jpg"
 imageAlt: "A stack of coins next to a mound of whole wheat flour, split peas, and popcorn kernels on a counter"
 date: 2026-07-13
-dateModified: 2026-07-17
+dateModified: 2026-07-30
 author: "David Miller"
 faq:
   - question: "How many grams of fiber can one dollar buy?"
@@ -18,7 +18,7 @@ faq:
   - question: "Are chia seeds worth the price for fiber?"
     answer: "Surprisingly, yes. Despite a $9.44 price for a 32 oz bag, chia seeds deliver 33.1 grams of fiber per dollar because they're so concentrated. That puts them in the same range as dry lentils and chickpeas, which cost a fraction as much per bag."
   - question: "How were these numbers calculated?"
-    answer: "Fiber content comes from USDA FoodData Central, prices from typical July 2026 US listings (mostly Walmart store brands, cross-checked where possible). We divided the total grams of fiber in each package by its price to get grams of fiber per dollar."
+    answer: "We joined these 15 rows to the flagship source audit, which found 12 exact USDA matches, 1 close proxy, and 2 unresolved rows. We divided the recorded fiber in each package by its July 2026 price, but proxy and unresolved results are not independently re-verified. Popcorn is unresolved because its nutrition value is for air-popped popcorn while the priced item is unpopped kernels."
 ---
 
 One dollar buys 77.8 grams of fiber if you spend it on whole wheat flour, and 27.9 grams if you spend it on canned black beans. That's the full range across the 15 cheapest fiber foods in our data, based on USDA fiber values and July 2026 prices. And here's the part that reframes the whole grocery store: even the *last-place* food on this list hands you just under a full day of fiber, measured against the 28-gram daily value, for a single dollar.
@@ -31,7 +31,7 @@ This is the elite tier of our full [fiber per dollar study](/fiber-per-dollar-ch
 | 2 | Green split peas (dry) | 71.0 g | 16 oz bag | $1.42 |
 | 3 | Pinto beans (dry) | 70.8 g | 4 lb bag | $3.97 |
 | 4 | Black beans (dry) | 58.1 g | 2 lb bag | $2.42 |
-| 5 | Popcorn kernels | 57.7 g | 2 lb bag | $2.28 |
+| 5* | Popcorn kernels — unresolved form match | 57.7 g recorded, not verified | 2 lb bag | $2.28 |
 | 6 | Pearled barley (dry) | 57.1 g | 16 oz bag | $1.24 |
 | 7 | Navy beans (dry) | 52.0 g | 2 lb bag | $2.67 |
 | 8 | Old-fashioned rolled oats | 35.8 g | 42 oz canister | $3.36 |
@@ -40,7 +40,7 @@ This is the elite tier of our full [fiber per dollar study](/fiber-per-dollar-ch
 | 11 | Brown lentils (dry) | 33.7 g | 16 oz bag | $1.44 |
 | 12 | Chia seeds | 33.1 g | 32 oz bag | $9.44 |
 
-Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at /methodology/.
+*Source audit: Joined to the flagship fiber audit: 12 exact USDA matches, 1 close USDA proxy, and 2 unresolved rows. Proxy and unresolved rows are not independently re-verified. Popcorn's 14.5 g/100 g value matches air-popped popcorn, not the unpopped kernels priced here, so 57.7 g/$ is a recorded but unverified result. Full methodology at [/methodology/](/methodology/).*
 
 ![Bar chart of fiber grams per single dollar across 15 foods](/images/one-dollar-fiber-what-it-buys-chart.jpg)
 
@@ -62,7 +62,7 @@ Dry pinto beans are statistically the same deal at 70.8 grams per dollar, and th
 
 No, and that's the quiet good news of this list. Canned black beans finished fifteenth out of 15, and they still deliver 27.9 grams of fiber per dollar at $0.88 a can. Last place in this crowd would be a podium finish anywhere else in the store. The can does still charge you for the favor: dry beans buy roughly 2.6 to 2.7 times the protein per dollar their canned versions do, a gap we took apart in [the canned versus dry comparison](/canned-vs-dry-beans-cost/).
 
-The grains on the list are just as low-effort. Popcorn kernels (57.7 grams per dollar) pop in minutes. Pearled barley (57.1) simmers unattended, and this [hands-off mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/) proves it can be dinner-party food. Rolled oats (35.8) and whole wheat spaghetti (35.4) are already in your pantry rotation. Brown lentils at 33.7 grams per dollar cook in a fraction of the time regular beans do, which is why a weeknight [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) exists at all. Dry chickpeas sit right there too at 33.8.
+The grains on the list are just as low-effort. Pearled barley (57.1 grams per dollar) simmers unattended, and this [hands-off mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/) proves it can be dinner-party food. Rolled oats (35.8) and whole wheat spaghetti (35.4) are already in your pantry rotation. The popcorn row records 57.7, but its air-popped nutrition value does not match the unpopped kernels priced, so it is not a verified rank. Brown lentils at 33.7 grams per dollar cook in a fraction of the time regular beans do, which is why a weeknight [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) exists at all. Dry chickpeas sit right there too at 33.8.
 
 ## Are the expensive-looking foods on this list actually expensive?
 

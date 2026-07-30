@@ -17,7 +17,7 @@ const pageUrl = `${siteUrl}/api-docs/`;
 const datasetCount = STUDY_DATASETS.length;
 
 const title = "Free Food Value API: No Key, No Limits, Just Attribution";
-const description = `A free JSON API over ${datasetCount} original grocery cost datasets and ${TOTAL_DATA_ROWS} priced food rows. No key, open CORS, OpenAPI 3.1 spec.`;
+const description = `A free JSON API over ${datasetCount} original food-cost datasets and ${TOTAL_DATA_ROWS} priced rows, with documented USDA, restaurant-chain, product-label, and DIAAS sources.`;
 
 const organization = {
   "@type": "Organization",
@@ -37,14 +37,14 @@ const schemas = [
     inLanguage: "en-US",
     isPartOf: { "@type": "WebSite", "@id": `${siteUrl}/#website`, name: "Daily Life Hacks", url: siteUrl },
     publisher: organization,
-    about: { "@type": "Thing", name: "Grocery nutrition cost data API" },
+    about: { "@type": "Thing", name: "Food nutrition and cost data API" },
   },
   {
     "@context": "https://schema.org",
     "@type": "WebAPI",
     "@id": `${pageUrl}#api`,
     name: "Daily Life Hacks Food Value API",
-    description: `Free, keyless JSON API over ${datasetCount} original grocery cost datasets covering ${TOTAL_DATA_ROWS} priced food rows: fiber per dollar, protein per dollar, and DIAAS quality-adjusted protein, built from USDA FoodData Central nutrition data and 2026 US national retail prices.`,
+    description: `Free, keyless JSON API over ${datasetCount} food-cost datasets covering ${TOTAL_DATA_ROWS} priced rows. Grocery nutrition generally uses USDA FoodData Central, restaurant rows use chain-published nutrition, three datasets carry one unresolved recorded TVP product-label value, and DIAAS rows cite literature or the FAO 2013 report.`,
     documentation: pageUrl,
     termsOfService: DATA_TERMS_URL,
     isAccessibleForFree: true,
@@ -147,11 +147,19 @@ console.log(data[0].food, data[0].value, meta.attribution);`;
     </h1>
     <p class="text-lg mb-8" style="color: var(--muted-color);">
       Every priced food row we've ever published, as JSON. Free, no key, no signup, no rate limit. Build whatever you want with it.
-    </p>
+      </p>
 
     <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
       <p>
-        We spent a lot of hours pricing groceries and dividing them by USDA nutrient values. {TOTAL_DATA_ROWS} rows across {datasetCount} datasets, all of it original, all of it dated, none of it scraped from someone else's blog. It's been sitting on this site as CSV files for a while now, which is great if you like CSV files and less great if you're trying to build something.
+        We spent a lot of hours pricing groceries and restaurant orders, then matching each row to
+        its documented nutrition source. Grocery nutrition generally uses USDA FoodData Central,
+        restaurant rows use chain-published nutrition, and three published datasets carry the same
+        recorded TVP product-label value. That row is unresolved because the current product page
+        works out to about 52.2 rather than the recorded 50.0 grams per 100 grams. DIAAS adjustments
+        cite row-level literature or the FAO 2013 report. That's
+        {TOTAL_DATA_ROWS} dated rows across {datasetCount} datasets. They've been sitting on this
+        site as CSV files for a while now, which is great if you like CSV files and less great if
+        you're trying to build something.
       </p>
       <p>
         So here's the same data as an API. Two endpoints, open CORS, no authentication of any kind. You don't email us for a key. There's no key.
@@ -253,7 +261,15 @@ console.log(data[0].food, data[0].value, meta.attribution);`;
 
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Where the numbers come from</h2>
       <p>
-        Nutrients are USDA FoodData Central. Prices are US national figures: BLS Average Price data where the item is tracked, Walmart national listings where it isn't, observed July 2026. Everything is calculated as-purchased, with USDA refuse percentages taken out so you're not paying for banana peel. The <a href="/methodology/" style={linkStyle} class="underline">methodology page</a> has the whole thing, including what we got wrong and corrected.
+        Sources follow the row. Grocery nutrition generally comes from USDA FoodData Central. Three
+        published datasets carry the same recorded TVP product-label value; that row is unresolved
+        because the current product page works out to about 52.2 rather than the recorded 50.0 grams
+        per 100 grams. Restaurant rows use chain-published nutrition data. DIAAS values cite the
+        row-level literature or FAO 2013 source recorded in the CSV.
+        Grocery prices use BLS Average Price data where available and dated national retail
+        listings for the rest. Restaurant prices are dated menu observations and can vary by
+        location. Grocery rows are calculated as purchased, with USDA refuse percentages applied
+        where relevant so you're not paying for banana peel. The <a href="/methodology/" style={linkStyle} class="underline">methodology page</a> has the whole thing, including what we got wrong and corrected.
       </p>
       <p>
         Built something with it? <a href="/contact/" style={linkStyle} class="underline">Tell us</a>. We'd genuinely like to see it, and if you've found a row that looks wrong, we want to know that even more.

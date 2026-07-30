@@ -4,8 +4,8 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import dataIndex from "../../../public/data/api-index-v1.json";
 
-const title = "Grocery Cost Research and Public Data | Daily Life Hacks";
-const description = "Explore our audited grocery cost studies, USDA-based rankings, priced daily menus, public CSV files, and plain-English source explainers.";
+const title = "Food Cost Research and Public Data | Daily Life Hacks";
+const description = "Explore food-cost studies with USDA grocery data, restaurant nutrition, an unresolved recorded TVP label value, and row-level DIAAS sources.";
 
 const rows: any[] = dataIndex.rows;
 const metricLeader = (dataset: string, metric: string) =>
@@ -97,7 +97,7 @@ const researchSchema = [
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Daily Life Hacks Grocery Cost Research",
+    name: "Daily Life Hacks Food Cost Research",
     url: "https://www.daily-life-hacks.com/research/",
     description,
     isPartOf: {
@@ -109,7 +109,7 @@ const researchSchema = [
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Daily Life Hacks grocery cost studies",
+    name: "Daily Life Hacks food cost studies",
     itemListElement: studies.map((study, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -126,10 +126,15 @@ const researchSchema = [
     <section class="max-w-3xl mb-10">
       <p class="text-sm font-bold uppercase tracking-[0.16em] mb-3" style="color:#F29B30;">Original research</p>
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-5" style="color:var(--heading-color);">
-        We priced the groceries. You get the spreadsheet.
+        We priced the groceries and menus. You get the spreadsheet.
       </h1>
       <p class="text-lg md:text-xl leading-relaxed" style="color:var(--text-color);">
-        These aren't recycled lists wearing a lab coat. We match USDA nutrition records to dated US prices, adjust for the part you actually eat, publish the CSV, and show the math. Sometimes the result is useful. Sometimes bacon owes everyone an apology.
+        These aren't recycled lists wearing a lab coat. Grocery nutrition generally comes from
+        USDA FoodData Central, and restaurant rows use chain-published nutrition. Three published
+        datasets carry the same recorded TVP product-label value; that row is unresolved because the
+        current product page works out to about 52.2 rather than the recorded 50.0 grams per 100
+        grams. DIAAS adjustments cite row-level literature or the FAO 2013 report. We publish the CSV
+        and show the math. Sometimes the result is useful. Sometimes bacon owes everyone an apology.
       </p>
       <p class="mt-5">
         <a href="/statistics/" class="inline-flex rounded-lg px-5 py-3 font-bold text-white" style="background:#F29B30;">
@@ -193,7 +198,7 @@ const researchSchema = [
     <section class="rounded-2xl p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-5" style="background:rgba(242,155,48,0.10);border:1px solid rgba(242,155,48,0.35);">
       <div class="max-w-3xl">
         <h2 class="text-2xl font-bold mb-2" style="color:var(--heading-color);">How we check the math</h2>
-        <p class="leading-relaxed" style="color:var(--text-color);">USDA records, dated price snapshots, edible-fraction adjustments, correction notes, and the refresh schedule all live on one page. The boring details are where a ranking earns the right to exist.</p>
+        <p class="leading-relaxed" style="color:var(--text-color);">USDA grocery records, chain-published restaurant nutrition, product-label exceptions, DIAAS literature and FAO citations, dated prices, and correction notes all live on one page. The boring details are where a ranking earns the right to exist.</p>
       </div>
       <a href="/methodology/" class="shrink-0 inline-flex justify-center rounded-lg px-5 py-3 font-bold text-white" style="background:#F29B30;">Read the methodology</a>
     </section>

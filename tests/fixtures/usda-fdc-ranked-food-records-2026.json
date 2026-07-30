@@ -1,0 +1,471 @@
+{
+  "generated_from": [
+    {
+      "dataset": "USDA FoodData Central SR Legacy",
+      "release": "April 2018 final",
+      "download_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip"
+    },
+    {
+      "dataset": "USDA FoodData Central Foundation",
+      "release": "April 2026",
+      "download_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip"
+    }
+  ],
+  "records": [
+    {
+      "fdc_id": 167755,
+      "data_type": "sr_legacy_food",
+      "description": "Raspberries, raw",
+      "protein_g_per_100g": 1.2,
+      "fiber_g_per_100g": 6.5
+    },
+    {
+      "fdc_id": 167762,
+      "data_type": "sr_legacy_food",
+      "description": "Strawberries, raw",
+      "protein_g_per_100g": 0.67,
+      "fiber_g_per_100g": 2
+    },
+    {
+      "fdc_id": 167839,
+      "data_type": "sr_legacy_food",
+      "description": "Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, raw",
+      "protein_g_per_100g": 21.55,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 167849,
+      "data_type": "sr_legacy_food",
+      "description": "Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean and fat, raw",
+      "protein_g_per_100g": 17.42,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 168162,
+      "data_type": "sr_legacy_food",
+      "description": "Plums, dried (prunes), uncooked",
+      "protein_g_per_100g": 2.18,
+      "fiber_g_per_100g": 7.1
+    },
+    {
+      "fdc_id": 168277,
+      "data_type": "sr_legacy_food",
+      "description": "Pork, cured, bacon, unprepared",
+      "protein_g_per_100g": 13.66,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 168410,
+      "data_type": "sr_legacy_food",
+      "description": "Edamame, frozen, unprepared",
+      "protein_g_per_100g": 11.22,
+      "fiber_g_per_100g": 4.8
+    },
+    {
+      "fdc_id": 168411,
+      "data_type": "sr_legacy_food",
+      "description": "Edamame, frozen, prepared",
+      "protein_g_per_100g": 11.91,
+      "fiber_g_per_100g": 5.2
+    },
+    {
+      "fdc_id": 168421,
+      "data_type": "sr_legacy_food",
+      "description": "Kale, raw",
+      "protein_g_per_100g": 2.92,
+      "fiber_g_per_100g": 4.1
+    },
+    {
+      "fdc_id": 168482,
+      "data_type": "sr_legacy_food",
+      "description": "Sweet potato, raw, unprepared (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 1.57,
+      "fiber_g_per_100g": 3
+    },
+    {
+      "fdc_id": 168872,
+      "data_type": "sr_legacy_food",
+      "description": "Oat bran, raw",
+      "protein_g_per_100g": 17.3,
+      "fiber_g_per_100g": 15.4
+    },
+    {
+      "fdc_id": 168874,
+      "data_type": "sr_legacy_food",
+      "description": "Quinoa, uncooked",
+      "protein_g_per_100g": 14.12,
+      "fiber_g_per_100g": 7
+    },
+    {
+      "fdc_id": 168893,
+      "data_type": "sr_legacy_food",
+      "description": "Wheat flour, whole-grain (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 13.21,
+      "fiber_g_per_100g": 10.7
+    },
+    {
+      "fdc_id": 169118,
+      "data_type": "sr_legacy_food",
+      "description": "Pears, raw",
+      "protein_g_per_100g": 0.36,
+      "fiber_g_per_100g": 3.1
+    },
+    {
+      "fdc_id": 169287,
+      "data_type": "sr_legacy_food",
+      "description": "Spinach, frozen, chopped or leaf, unprepared (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 3.63,
+      "fiber_g_per_100g": 2.9
+    },
+    {
+      "fdc_id": 169414,
+      "data_type": "sr_legacy_food",
+      "description": "Seeds, flaxseed",
+      "protein_g_per_100g": 18.29,
+      "fiber_g_per_100g": 27.3
+    },
+    {
+      "fdc_id": 169703,
+      "data_type": "sr_legacy_food",
+      "description": "Rice, brown, long-grain, raw (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 7.54,
+      "fiber_g_per_100g": 3.6
+    },
+    {
+      "fdc_id": 169738,
+      "data_type": "sr_legacy_food",
+      "description": "Pasta, whole-wheat, dry (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 13.87,
+      "fiber_g_per_100g": 9.2
+    },
+    {
+      "fdc_id": 169975,
+      "data_type": "sr_legacy_food",
+      "description": "Cabbage, raw",
+      "protein_g_per_100g": 1.28,
+      "fiber_g_per_100g": 2.5
+    },
+    {
+      "fdc_id": 170016,
+      "data_type": "sr_legacy_food",
+      "description": "Peas, green, frozen, unprepared (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 5.22,
+      "fiber_g_per_100g": 4.5
+    },
+    {
+      "fdc_id": 170027,
+      "data_type": "sr_legacy_food",
+      "description": "Potatoes, russet, flesh and skin, raw (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 2.14,
+      "fiber_g_per_100g": 1.3
+    },
+    {
+      "fdc_id": 170284,
+      "data_type": "sr_legacy_food",
+      "description": "Barley, pearled, raw",
+      "protein_g_per_100g": 9.91,
+      "fiber_g_per_100g": 15.6
+    },
+    {
+      "fdc_id": 170379,
+      "data_type": "sr_legacy_food",
+      "description": "Broccoli, raw",
+      "protein_g_per_100g": 2.82,
+      "fiber_g_per_100g": 2.6
+    },
+    {
+      "fdc_id": 170383,
+      "data_type": "sr_legacy_food",
+      "description": "Brussels sprouts, raw",
+      "protein_g_per_100g": 3.38,
+      "fiber_g_per_100g": 3.8
+    },
+    {
+      "fdc_id": 170393,
+      "data_type": "sr_legacy_food",
+      "description": "Carrots, raw",
+      "protein_g_per_100g": 0.93,
+      "fiber_g_per_100g": 2.8
+    },
+    {
+      "fdc_id": 170554,
+      "data_type": "sr_legacy_food",
+      "description": "Seeds, chia seeds, dried",
+      "protein_g_per_100g": 16.54,
+      "fiber_g_per_100g": 34.4
+    },
+    {
+      "fdc_id": 170562,
+      "data_type": "sr_legacy_food",
+      "description": "Seeds, sunflower seed kernels, dried",
+      "protein_g_per_100g": 20.78,
+      "fiber_g_per_100g": 8.6
+    },
+    {
+      "fdc_id": 170567,
+      "data_type": "sr_legacy_food",
+      "description": "Nuts, almonds",
+      "protein_g_per_100g": 21.15,
+      "fiber_g_per_100g": 12.5
+    },
+    {
+      "fdc_id": 170688,
+      "data_type": "sr_legacy_food",
+      "description": "Bulgur, dry",
+      "protein_g_per_100g": 12.29,
+      "fiber_g_per_100g": 12.5
+    },
+    {
+      "fdc_id": 170894,
+      "data_type": "sr_legacy_food",
+      "description": "Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 10.19,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 171054,
+      "data_type": "sr_legacy_food",
+      "description": "Chicken, broilers or fryers, meat only, cooked, roasted",
+      "protein_g_per_100g": 28.93,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 171077,
+      "data_type": "sr_legacy_food",
+      "description": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
+      "protein_g_per_100g": 22.5,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 171244,
+      "data_type": "sr_legacy_food",
+      "description": "Cheese, mozzarella, low moisture, part-skim",
+      "protein_g_per_100g": 23.75,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 171287,
+      "data_type": "sr_legacy_food",
+      "description": "Egg, whole, raw, fresh",
+      "protein_g_per_100g": 12.56,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 171447,
+      "data_type": "sr_legacy_food",
+      "description": "Chicken, broilers or fryers, meat and skin, raw",
+      "protein_g_per_100g": 18.6,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 171705,
+      "data_type": "sr_legacy_food",
+      "description": "Avocados, raw, all commercial varieties",
+      "protein_g_per_100g": 2,
+      "fiber_g_per_100g": 6.7
+    },
+    {
+      "fdc_id": 171711,
+      "data_type": "sr_legacy_food",
+      "description": "Blueberries, raw",
+      "protein_g_per_100g": 0.74,
+      "fiber_g_per_100g": 2.4
+    },
+    {
+      "fdc_id": 171726,
+      "data_type": "sr_legacy_food",
+      "description": "Dates, deglet noor",
+      "protein_g_per_100g": 2.45,
+      "fiber_g_per_100g": 8
+    },
+    {
+      "fdc_id": 172179,
+      "data_type": "sr_legacy_food",
+      "description": "Cheese, cottage, creamed, large or small curd",
+      "protein_g_per_100g": 11.12,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 172373,
+      "data_type": "sr_legacy_food",
+      "description": "Chicken, broilers or fryers, drumstick, meat and skin, raw",
+      "protein_g_per_100g": 18.08,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 172420,
+      "data_type": "sr_legacy_food",
+      "description": "Lentils, raw",
+      "protein_g_per_100g": 24.63,
+      "fiber_g_per_100g": 10.7
+    },
+    {
+      "fdc_id": 172428,
+      "data_type": "sr_legacy_food",
+      "description": "Peas, green, split, mature seeds, raw",
+      "protein_g_per_100g": 23.12,
+      "fiber_g_per_100g": 22.2
+    },
+    {
+      "fdc_id": 172688,
+      "data_type": "sr_legacy_food",
+      "description": "Bread, whole-wheat, commercially prepared",
+      "protein_g_per_100g": 12.45,
+      "fiber_g_per_100g": 6
+    },
+    {
+      "fdc_id": 172850,
+      "data_type": "sr_legacy_food",
+      "description": "Turkey, ground, 93% lean, 7% fat, raw",
+      "protein_g_per_100g": 18.73,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 173110,
+      "data_type": "sr_legacy_food",
+      "description": "Beef, ground, 93% lean meat / 7% fat, raw",
+      "protein_g_per_100g": 20.85,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 173414,
+      "data_type": "sr_legacy_food",
+      "description": "Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 22.87,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 173627,
+      "data_type": "sr_legacy_food",
+      "description": "Chicken, broilers or fryers, dark meat, thigh, meat only, raw",
+      "protein_g_per_100g": 19.66,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 173690,
+      "data_type": "sr_legacy_food",
+      "description": "Fish, salmon, pink, canned, total can contents",
+      "protein_g_per_100g": 19.68,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 173709,
+      "data_type": "sr_legacy_food",
+      "description": "Fish, tuna, light, canned in water, drained solids (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 19.44,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 173734,
+      "data_type": "sr_legacy_food",
+      "description": "Beans, black, mature seeds, raw",
+      "protein_g_per_100g": 21.6,
+      "fiber_g_per_100g": 15.5
+    },
+    {
+      "fdc_id": 173741,
+      "data_type": "sr_legacy_food",
+      "description": "Beans, kidney, all types, mature seeds, canned",
+      "protein_g_per_100g": 5.22,
+      "fiber_g_per_100g": 4.3
+    },
+    {
+      "fdc_id": 173745,
+      "data_type": "sr_legacy_food",
+      "description": "Beans, navy, mature seeds, raw",
+      "protein_g_per_100g": 22.33,
+      "fiber_g_per_100g": 15.3
+    },
+    {
+      "fdc_id": 173756,
+      "data_type": "sr_legacy_food",
+      "description": "Chickpeas (garbanzo beans, bengal gram), mature seeds, raw",
+      "protein_g_per_100g": 20.47,
+      "fiber_g_per_100g": 12.2
+    },
+    {
+      "fdc_id": 173888,
+      "data_type": "sr_legacy_food",
+      "description": "Cereals ready-to-eat, POST Bran Flakes",
+      "protein_g_per_100g": 9.9,
+      "fiber_g_per_100g": 18.3
+    },
+    {
+      "fdc_id": 173904,
+      "data_type": "sr_legacy_food",
+      "description": "Cereals, oats, regular and quick, not fortified, dry",
+      "protein_g_per_100g": 13.15,
+      "fiber_g_per_100g": 10.1
+    },
+    {
+      "fdc_id": 173944,
+      "data_type": "sr_legacy_food",
+      "description": "Bananas, raw",
+      "protein_g_per_100g": 1.09,
+      "fiber_g_per_100g": 2.6
+    },
+    {
+      "fdc_id": 173946,
+      "data_type": "sr_legacy_food",
+      "description": "Blackberries, raw",
+      "protein_g_per_100g": 1.39,
+      "fiber_g_per_100g": 5.3
+    },
+    {
+      "fdc_id": 174036,
+      "data_type": "sr_legacy_food",
+      "description": "Beef, ground, 80% lean meat / 20% fat, raw",
+      "protein_g_per_100g": 17.17,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 174272,
+      "data_type": "sr_legacy_food",
+      "description": "Tempeh",
+      "protein_g_per_100g": 20.29,
+      "fiber_g_per_100g": null
+    },
+    {
+      "fdc_id": 174284,
+      "data_type": "sr_legacy_food",
+      "description": "Lentils, pink or red, raw",
+      "protein_g_per_100g": 23.91,
+      "fiber_g_per_100g": 10.8
+    },
+    {
+      "fdc_id": 174290,
+      "data_type": "sr_legacy_food",
+      "description": "Tofu, extra firm, prepared with nigari",
+      "protein_g_per_100g": 9.98,
+      "fiber_g_per_100g": 1
+    },
+    {
+      "fdc_id": 175139,
+      "data_type": "sr_legacy_food",
+      "description": "Fish, sardine, Atlantic, canned in oil, drained solids with bone",
+      "protein_g_per_100g": 24.62,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 175176,
+      "data_type": "sr_legacy_food",
+      "description": "Fish, tilapia, raw",
+      "protein_g_per_100g": 20.08,
+      "fiber_g_per_100g": 0
+    },
+    {
+      "fdc_id": 175199,
+      "data_type": "sr_legacy_food",
+      "description": "Beans, pinto, mature seeds, raw (Includes foods for USDA's Food Distribution Program)",
+      "protein_g_per_100g": 21.42,
+      "fiber_g_per_100g": 15.5
+    },
+    {
+      "fdc_id": 2758980,
+      "data_type": "foundation_food",
+      "description": "Raisins, dark, seedless",
+      "protein_g_per_100g": null,
+      "fiber_g_per_100g": 3.679
+    }
+  ]
+}

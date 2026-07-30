@@ -7,12 +7,12 @@ cluster: "budget-protein"
 image: "/images/high-protein-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry beans and lentils beside a carton of eggs, a whole chicken, canned fish, a block of tofu, and a tub of cottage cheese on a wooden table"
 date: 2026-07-08
-dateModified: 2026-07-17
+dateModified: 2026-07-30
 author: "David Miller"
 featured: false
 faq:
   - question: "What is the cheapest way to get protein?"
-    answer: "Dried beans and lentils. In our 49-food pricing analysis, every dried legume landed between 56 and 98 grams of protein per dollar, with dried pinto beans on top at about 98. For comparison, chicken breast delivered about 24.5 grams per dollar and ground beef about 11.5. All figures use USDA protein data and July 2026 US prices."
+    answer: "Dried beans and lentils. In our 49-food pricing analysis, every dried legume landed between 56 and 98 grams of protein per dollar, with dried pinto beans on top at about 98. For comparison, chicken breast delivered about 24.5 grams per dollar and ground beef about 11.5. Those cited foods use USDA protein data and July 2026 US prices."
   - question: "How much protein do I need a day?"
     answer: "The FDA's Daily Value for protein, the number used on US nutrition labels, is 50 grams per day for a 2,000-calorie diet. That's a labeling reference point, not a personal prescription, since individual needs vary. Our $20 basket contains about 1,047 grams of protein in total; it's a price example, not a recommended one-person weekly target."
   - question: "Are eggs still a cheap protein?"
@@ -27,7 +27,7 @@ Dried beans and lentils delivered the highest protein return in our 49-food groc
 
 Those three facts are the whole strategy. Everything else in this guide is the practical part: which foods to buy, what to do with them, and how to build a week of eating around them without feeling like you're serving punishment rations.
 
-Here's where the numbers come from. We priced 49 common grocery foods against USDA protein data and ranked every one by grams of protein per dollar, the same way we did for fiber. The full ranking lives in our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), the raw data is public if you want to [check the math yourself](/data/protein-per-dollar-2026.csv), and the companion [50-gram daily-cost study](/what-50-grams-of-protein-costs-per-day/) turns those rows into five meal-by-meal scenarios, and when the drive-thru is happening anyway, we ranked [fast food protein per dollar across seven chains](/fast-food-protein-per-dollar-ranked/) so you can order the least-wasteful one. This guide is the playbook built on top of that data.
+Here's where the numbers come from. We priced 49 common grocery foods and ranked them by grams of protein per dollar, the same way we did for fiber. The current row-level audit found 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows. TVP is unresolved: the file retains a recorded 50.0 grams per 100 grams, while the current product page works out to about 52.2. The full ranking lives in our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), the raw data is public if you want to [check the math yourself](/data/protein-per-dollar-2026.csv), and the companion [50-gram daily-cost study](/what-50-grams-of-protein-costs-per-day/) turns those rows into five meal-by-meal scenarios, and when the drive-thru is happening anyway, we ranked [fast food protein per dollar across seven chains](/fast-food-protein-per-dollar-ranked/) so you can order the least-wasteful one. This guide is the playbook built on top of that data.
 
 **Where should you start?**
 

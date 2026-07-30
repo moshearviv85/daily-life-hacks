@@ -225,6 +225,7 @@ const breadcrumbSchema = {
                   <th scope="col" class="fpd-th fpd-num" data-sort="goalcost">
                     $ for your week
                   </th>
+                  <th scope="col" class="fpd-th">Source match</th>
                   <th scope="col" class="fpd-th"></th>
                 </tr>
               </thead>
@@ -352,7 +353,10 @@ const breadcrumbSchema = {
       </p>
       <p class="text-sm mb-8" style="color: var(--muted-color);">
         Source: Daily Life Hacks grocery price study. Prices observed July 2026 at
-        US national grocery prices; nutrition values from USDA FoodData Central.
+        US national grocery prices. USDA FoodData Central is the primary nutrition source,
+        but each row keeps its exact, proxy, or unresolved source status. The fiber audit has
+        38 exact matches, 4 close proxies, and 11 unresolved rows; unresolved values remain
+        visible as recorded observations and are not used as verified winners or projections.
         Method described on the <a href="/methodology/" class="underline" style="color:#F29B30;">methodology page</a>.
         Free to reuse with credit and a link.
       </p>
@@ -376,6 +380,7 @@ const breadcrumbSchema = {
                   <th scope="col" class="fpd-th fpd-num">{t.label} g per 100 g</th>
                   <th scope="col" class="fpd-th fpd-num">Price per 100 g</th>
                   <th scope="col" class="fpd-th">Priced as</th>
+                  <th scope="col" class="fpd-th">Source match</th>
                 </tr>
               </thead>
               <tbody>
@@ -384,10 +389,31 @@ const breadcrumbSchema = {
                     <td class="fpd-td">{row.rank || String(i + 1)}</td>
                     <th scope="row" class="fpd-td" style="font-weight:600;text-align:left;">{row.food}</th>
                     <td class="fpd-td">{row.category}</td>
-                    <td class="fpd-td fpd-num" style="font-weight:700;">{row[t.perDollarCol]}</td>
-                    <td class="fpd-td fpd-num">{row[t.per100Col]}</td>
+                    <td class="fpd-td fpd-num" style="font-weight:700;">
+                      {row[t.perDollarCol]}
+                      {row.nutrition_source_status === "unresolved" && <span class="block text-xs font-normal">recorded, not verified</span>}
+                    </td>
+                    <td class="fpd-td fpd-num">
+                      {row[t.per100Col]}
+                      {row.nutrition_source_status === "unresolved" && <span class="block text-xs">recorded, not verified</span>}
+                    </td>
                     <td class="fpd-td fpd-num">${row.price_per_100g_usd}</td>
                     <td class="fpd-td">{row.package} &mdash; ${row.package_price_usd}</td>
+                    <td class="fpd-td">
+                      <strong style={row.nutrition_source_status === "unresolved" ? "color:#a85e00;" : ""}>
+                        {row.nutrition_source_status === "exact"
+                          ? "Exact USDA match"
+                          : row.nutrition_source_status === "proxy"
+                            ? "Close USDA proxy"
+                            : "Unresolved — recorded only"}
+                      </strong>
+                      {row.nutrition_source_form && row.nutrition_source_form !== "Not resolved" && (
+                        <span class="block text-xs mt-1">Form: {row.nutrition_source_form}</span>
+                      )}
+                      {row.nutrition_source_note && (
+                        <span class="block text-xs mt-1">{row.nutrition_source_note}</span>
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -513,6 +539,9 @@ const breadcrumbSchema = {
         var foodKey = headers.indexOf("food");
         var catKey = headers.indexOf("category");
         var priceKey = headers.indexOf("price_per_100g_usd");
+        var statusKey = headers.indexOf("nutrition_source_status");
+        var formKey = headers.indexOf("nutrition_source_form");
+        var noteKey = headers.indexOf("nutrition_source_note");
         headers.forEach(function (h, idx) {
           if (/_g_per_dollar$/.test(h)) gpdKey = idx;
           if (/_g_per_100g$/.test(h)) p100gKey = idx;
@@ -530,6 +559,9 @@ const breadcrumbSchema = {
             gpd: gpd,
             p100: isFinite(p100) ? p100 : null,
             gPer100: p100gKey >= 0 ? parseFloat(r[p100gKey]) : null,
+            sourceStatus: statusKey >= 0 ? (r[statusKey] || "").toLowerCase() : "",
+            sourceForm: formKey >= 0 ? r[formKey] : "",
+            sourceNote: noteKey >= 0 ? r[noteKey] : "",
           });
         }
         return foods.length ? foods : null;
@@ -550,6 +582,22 @@ const breadcrumbSchema = {
       function money(n) {
         if (!isFinite(n)) return "-";
         return "$" + (n >= 100 ? Math.round(n) : n.toFixed(2));
+      }
+
+      function isUnresolved(food) {
+        return food && food.sourceStatus === "unresolved";
+      }
+
+      function sourceSummary(food) {
+        if (!food || !food.sourceStatus) return "Source status not supplied.";
+        if (food.sourceStatus === "exact") {
+          return "Exact USDA match" + (food.sourceForm ? " — " + food.sourceForm : "");
+        }
+        if (food.sourceStatus === "proxy") {
+          return "Close USDA proxy" + (food.sourceNote ? " — " + food.sourceNote : "");
+        }
+        return "Unresolved — recorded only" +
+          (food.sourceNote ? ". " + food.sourceNote : "");
       }
 
       /* ---------- App ---------- */
@@ -584,6 +632,9 @@ const breadcrumbSchema = {
         }
         function top3Names() {
           return foods()
+            .filter(function (f) {
+              return f.sourceStatus === "exact";
+            })
             .slice()
             .sort(function (a, b) {
               return b.gpd - a.gpd;
@@ -655,6 +706,7 @@ const breadcrumbSchema = {
             .map(function (f) {
               var topIdx = tops.indexOf(f.food);
               var isTop = topIdx >= 0;
+              var unresolved = isUnresolved(f);
               var badge = isTop
                 ? '<span class="ml-2 rounded-full px-2 py-0.5 text-xs font-bold text-white" style="background-color:#F29B30;">#' +
                   (topIdx + 1) +
@@ -673,18 +725,23 @@ const breadcrumbSchema = {
                 "</td>" +
                 '<td class="px-3 py-2 text-right font-semibold" style="color:var(--heading-color);">' +
                 f.gpd.toFixed(1) +
-                "g</td>" +
+                (unresolved ? 'g <span class="block text-xs font-normal">recorded, not verified</span>' : "g") +
+                "</td>" +
                 '<td class="px-3 py-2 text-right" style="color:var(--text-color);">' +
                 (f.p100 !== null ? money(f.p100) : "-") +
                 "</td>" +
                 '<td class="px-3 py-2 text-right" style="color:var(--text-color);">' +
-                money(state.goal / f.gpd) +
+                (unresolved ? "Not calculated" : money(state.goal / f.gpd)) +
+                "</td>" +
+                '<td class="px-3 py-2 text-xs" style="color:var(--muted-color);">' +
+                esc(sourceSummary(f)) +
                 "</td>" +
                 '<td class="px-2 py-2 text-center"><button type="button" data-add="' +
                 esc(f.food) +
                 '" title="Add to basket" aria-label="Add ' +
                 esc(f.food) +
-                ' to basket" class="rounded-full w-7 h-7 text-sm font-bold" style="border:1px solid #F29B30;color:#F29B30;">+</button></td>' +
+                ' to basket" class="rounded-full w-7 h-7 text-sm font-bold" style="border:1px solid #F29B30;color:#F29B30;"' +
+                (unresolved ? ' disabled aria-disabled="true">-</button></td>' : ">+</button></td>") +
                 "</tr>"
               );
             })
@@ -694,8 +751,11 @@ const breadcrumbSchema = {
         }
 
         /* ---------- Compare ---------- */
-        function fillSelect(sel, selected) {
-          sel.innerHTML = foods()
+        function fillSelect(sel, selected, resolvedOnly) {
+          var options = resolvedOnly
+            ? foods().filter(function (f) { return !isUnresolved(f); })
+            : foods();
+          sel.innerHTML = options
             .map(function (f) {
               return (
                 '<option value="' +
@@ -704,6 +764,7 @@ const breadcrumbSchema = {
                 (f.food === selected ? " selected" : "") +
                 ">" +
                 esc(f.food) +
+                (isUnresolved(f) ? " - unresolved recorded value" : "") +
                 "</option>"
               );
             })
@@ -711,6 +772,9 @@ const breadcrumbSchema = {
         }
 
         function verdictLine(a, b) {
+          if (isUnresolved(a) || isUnresolved(b)) {
+            return "No verified winner: at least one selected row is unresolved. The recorded number stays visible, but it is not used for a winner or cost projection.";
+          }
           var nutrient = cfg().label.toLowerCase();
           var hi = a.gpd >= b.gpd ? a : b;
           var lo = a.gpd >= b.gpd ? b : a;
@@ -763,12 +827,17 @@ const breadcrumbSchema = {
                 "</p>" +
                 '<p class="text-2xl font-bold" style="color:#F29B30;">' +
                 f.gpd.toFixed(1) +
-                'g <span class="text-sm font-normal" style="color:var(--muted-color);">per $1</span></p>' +
+                'g <span class="text-sm font-normal" style="color:var(--muted-color);">per $1' +
+                (isUnresolved(f) ? " - recorded, not verified" : "") +
+                "</span></p>" +
                 '<p class="text-sm mt-2" style="color:var(--text-color);">' +
-                money(dv / f.gpd) +
-                " to hit " +
-                dv +
-                "g (a full day)</p>" +
+                (isUnresolved(f)
+                  ? "Goal cost not calculated."
+                  : money(dv / f.gpd) + " to hit " + dv + "g (a full day)") +
+                "</p>" +
+                '<p class="text-xs mt-2" style="color:var(--muted-color);">' +
+                esc(sourceSummary(f)) +
+                "</p>" +
                 "</div>"
               );
             })
@@ -864,10 +933,11 @@ const breadcrumbSchema = {
         }
 
         function addToBasket(name) {
+          var food = byName(name);
           var exists = state.basket.some(function (i) {
             return i.food === name;
           });
-          if (!exists && byName(name)) {
+          if (!exists && food && !isUnresolved(food)) {
             state.basket.push({ food: name, dollars: 2 });
           }
           renderBasket();
@@ -905,7 +975,14 @@ const breadcrumbSchema = {
             el("fpd-cmp-b"),
             list[list.length - 1] && list[list.length - 1].food
           );
-          fillSelect(el("fpd-basket-select"), list[0] && list[0].food);
+          var firstBasketFood = list.find(function (f) {
+            return !isUnresolved(f);
+          });
+          fillSelect(
+            el("fpd-basket-select"),
+            firstBasketFood && firstBasketFood.food,
+            true
+          );
           renderCompare();
           renderBasket();
         }

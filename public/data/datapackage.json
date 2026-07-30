@@ -2,7 +2,7 @@
   "profile": "tabular-data-package",
   "name": "daily-life-hacks-food-value-data",
   "title": "Daily Life Hacks Food Value Data",
-  "description": "Every public dataset behind the Daily Life Hacks grocery cost studies: fiber per dollar, protein per dollar, protein quality adjusted with DIAAS, daily menu costing, and category-level rankings across produce, grains, legumes, dairy, meat, pantry staples and fast food.\n\nNutrient values come from USDA FoodData Central. Prices are US national figures: BLS Average Price data where the item is tracked, Walmart national listings otherwise, observed July 2026. Every ranking is calculated as-purchased, with USDA refuse percentages removed so peels, pits and bone are not counted as food.\n\nThe original Daily Life Hacks selection, arrangement, calculations, field descriptions, and explanatory material are licensed CC BY 4.0. Upstream facts and third-party material keep their own status and terms. Credit \"Daily Life Hacks\" with a link to the study page or to https://www.daily-life-hacks.com/data/. Full scope at https://www.daily-life-hacks.com/data-reuse/ and full methodology at https://www.daily-life-hacks.com/methodology/.",
+  "description": "Every public dataset behind the Daily Life Hacks grocery cost studies: fiber per dollar, protein per dollar, protein quality adjusted with DIAAS, daily menu costing, and category-level rankings across produce, grains, legumes, dairy, meat, pantry staples and fast food.\n\nGrocery nutrient values primarily trace to USDA FoodData Central; the flagship files expose exact, proxy, and unresolved row-level status, and documented product-label exceptions remain labeled as such. Restaurant values come from chain-published nutrition. Prices are US national figures: BLS Average Price data where the item is tracked, Walmart national listings otherwise, observed July 2026. Every ranking is calculated as-purchased, with USDA refuse percentages removed so peels, pits and bone are not counted as food.\n\nThe original Daily Life Hacks selection, arrangement, calculations, field descriptions, and explanatory material are licensed CC BY 4.0. Upstream facts and third-party material keep their own status and terms. Credit \"Daily Life Hacks\" with a link to the study page or to https://www.daily-life-hacks.com/data/. Full scope at https://www.daily-life-hacks.com/data-reuse/ and full methodology at https://www.daily-life-hacks.com/methodology/.",
   "homepage": "https://www.daily-life-hacks.com/data/",
   "version": "2026.1",
   "created": "2026-07-26T00:00:00Z",
@@ -532,8 +532,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 3027,
-      "hash": "sha256:e42370d51bffdf86aa229c76606378639ddee10ea897aa9b837631a49786778c",
+      "bytes": 3042,
+      "hash": "sha256:39616569d77a941ebac3ca1627e41297ea107eaa1bd15819dc47e3afe468a751",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cost of 30 Grams of Fiber per Day, Five Menus (2026)",
@@ -589,12 +589,12 @@
       "path": "fiber-per-dollar-2026.csv",
       "profile": "tabular-data-resource",
       "title": "Fiber per Dollar: 53 Foods Ranked (2026)",
-      "description": "The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dollar with the whole calculation exposed: USDA fiber per 100g, package size and price, package weight, edible fraction, and the derived price per 100 grams.",
+      "description": "The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dollar with the whole calculation exposed: recorded fiber per 100g, package size and price, package weight, edible fraction, derived price per 100 grams, and row-level nutrition provenance status.",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 4469,
-      "hash": "sha256:4f0918d1a042c276426aa2ccf330abf3f8cf652dbcfae79fead396404f34733f",
+      "bytes": 13788,
+      "hash": "sha256:624ea28756029b478a3bd578ee4e384e69bf1541196ad25021a7b50100b9f2e8",
       "sources": [
         {
           "title": "Daily Life Hacks study: Fiber per Dollar: 53 Foods Ranked (2026)",
@@ -621,7 +621,7 @@
           {
             "name": "fiber_g_per_100g",
             "type": "number",
-            "description": "Dietary fiber in grams per 100 grams of the food as purchased, from USDA FoodData Central."
+            "description": "Recorded dietary fiber in grams per 100 grams; use the nutrition_source fields in the flagship CSV to inspect its FoodData Central match status."
           },
           {
             "name": "package",
@@ -657,6 +657,41 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "nutrition_source_status",
+            "type": "string",
+            "description": "Row-level nutrition provenance status: exact, proxy, or unresolved."
+          },
+          {
+            "name": "nutrition_source_type",
+            "type": "string",
+            "description": "Authoritative nutrition source class, or Unresolved when no unique matching record was established."
+          },
+          {
+            "name": "nutrition_source_id",
+            "type": "string",
+            "description": "USDA FoodData Central identifier for exact and proxy rows; empty for unresolved rows."
+          },
+          {
+            "name": "nutrition_source_url",
+            "type": "string",
+            "description": "Direct authoritative record URL, or the current manufacturer page for the unresolved TVP label row."
+          },
+          {
+            "name": "nutrition_source_description",
+            "type": "string",
+            "description": "Food description from the linked authoritative record, preserved verbatim for auditability."
+          },
+          {
+            "name": "nutrition_source_form",
+            "type": "string",
+            "description": "Preparation or physical form supported by the linked nutrient record; Not resolved when no unique record was established."
+          },
+          {
+            "name": "nutrition_source_note",
+            "type": "string",
+            "description": "Row-specific disclosure for proxy and unresolved matches, including the exact ambiguity or mismatch."
           }
         ],
         "missingValues": [
@@ -1179,12 +1214,12 @@
       "path": "protein-per-dollar-2026.csv",
       "profile": "tabular-data-resource",
       "title": "Protein per Dollar: 49 Sources Ranked (2026)",
-      "description": "The flagship protein dataset. 49 foods ranked by grams of protein per US dollar with the whole calculation exposed: USDA protein per 100g, package size and price, package weight, edible fraction, and the derived price per 100 grams.",
+      "description": "The flagship protein dataset. 49 foods ranked by grams of protein per US dollar with the whole calculation exposed: recorded protein per 100g, package size and price, package weight, edible fraction, derived price per 100 grams, and row-level nutrition provenance status.",
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 5923,
-      "hash": "sha256:c433f36be904e7db2e4cae870c65c7f54d2be2130341ee2b73c854b729e3fb66",
+      "bytes": 15724,
+      "hash": "sha256:fede2dff6d8a5ef139769b87a2482b639fbaaca2a474a78b3c5dad680408290b",
       "sources": [
         {
           "title": "Daily Life Hacks study: Protein per Dollar: 49 Sources Ranked (2026)",
@@ -1211,7 +1246,7 @@
           {
             "name": "protein_g_per_100g",
             "type": "number",
-            "description": "Protein in grams per 100 grams of the food as purchased, from USDA FoodData Central."
+            "description": "Recorded protein in grams per 100 grams; use the nutrition_source fields in the flagship CSV to inspect its FoodData Central or manufacturer-label status."
           },
           {
             "name": "package",
@@ -1247,6 +1282,41 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "nutrition_source_status",
+            "type": "string",
+            "description": "Row-level nutrition provenance status: exact, proxy, or unresolved."
+          },
+          {
+            "name": "nutrition_source_type",
+            "type": "string",
+            "description": "Authoritative nutrition source class, or Unresolved when no unique matching record was established."
+          },
+          {
+            "name": "nutrition_source_id",
+            "type": "string",
+            "description": "USDA FoodData Central identifier for exact and proxy rows; empty for unresolved rows."
+          },
+          {
+            "name": "nutrition_source_url",
+            "type": "string",
+            "description": "Direct authoritative record URL, or the current manufacturer page for the unresolved TVP label row."
+          },
+          {
+            "name": "nutrition_source_description",
+            "type": "string",
+            "description": "Food description from the linked authoritative record, preserved verbatim for auditability."
+          },
+          {
+            "name": "nutrition_source_form",
+            "type": "string",
+            "description": "Preparation or physical form supported by the linked nutrient record; Not resolved when no unique record was established."
+          },
+          {
+            "name": "nutrition_source_note",
+            "type": "string",
+            "description": "Row-specific disclosure for proxy and unresolved matches, including the exact ambiguity or mismatch."
           }
         ],
         "missingValues": [

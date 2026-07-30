@@ -8,13 +8,13 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/what-30-grams-of-fiber-costs-per-day-main.jpg"
 imageAlt: "Editorial illustration contrasting a pantry basket of oats, beans, and popcorn with an oversized restaurant receipt"
 date: 2026-07-08
-dateModified: 2026-07-17
+dateModified: 2026-07-30
 author: "David Miller"
 faq:
   - question: "How much does it cost to eat 30 grams of fiber a day?"
     answer: "Anywhere from 62 cents to $14.42, based on USDA fiber data and July 2026 US prices. A day built on dry goods like oats, split peas, and pinto beans costs about $0.62 in fiber-carrying foods. A realistic mixed day with fruit, a peanut butter sandwich, and canned beans runs about $1.99. Getting the same 30 grams entirely from restaurant meals costs around $14.42 at typical menu prices."
   - question: "What is the cheapest way to get fiber daily?"
-    answer: "The dry goods aisle, by a landslide. Our cheapest 30-gram day used rolled oats at breakfast, split pea soup at lunch, pinto beans with brown rice at dinner, and popcorn as a snack, and the fiber-carrying foods totaled 62 cents. That matches our fiber per dollar study, where dried beans, split peas, and whole grains took eleven of the top twelve spots."
+    answer: "The dry goods aisle, by a landslide. Our cheapest 30-gram day used rolled oats at breakfast, split pea soup at lunch, and pinto beans, brown rice, and pearled barley at dinner; the fiber-carrying foods totaled 62 cents. All five foods in this day have exact USDA matches in the parent audit."
   - question: "Is it cheaper to get fiber from groceries or restaurants?"
     answer: "Groceries, and it isn't close. In our July 2026 numbers, a 31-gram restaurant day (Starbucks oatmeal, Wendy's chili and baked potato, Taco Bell bean burrito) cost $14.42, about 23 times the 62-cent dry goods day and about 7 times the $1.99 realistic mixed day. To be fair, the restaurant total buys complete meals, but per gram of fiber the gap is still enormous."
   - question: "Can you get 30 grams of fiber a day without cooking?"
@@ -37,7 +37,7 @@ The three days in between land at $1.74 no-cook, $4.18 fresh produce, and $1.99 
 
 ## How we priced a 30-gram day
 
-No new data collection, and that's the point. Every grocery number below reuses the audited dataset from the fiber per dollar study: fiber per 100 grams from [USDA FoodData Central](https://fdc.nal.usda.gov/), and July 2026 US prices from Walmart national listings cross-checked against [BLS average-price data](https://www.bls.gov/cpi/factsheets/average-prices.htm), all re-verified on July 4, 2026. The restaurant day uses the fiber figures we already published in our [high fiber fast food guide](/high-fiber-fast-food-options-guide/), which come from each chain's own nutrition pages, matched to typical national menu prices as of July 2026. These are a dated national snapshot. Your local receipt is allowed to disagree with the spreadsheet.
+No new data collection, and that's the point. Every grocery number below reuses the audited dataset from the fiber per dollar study, with July 2026 US prices from Walmart national listings cross-checked against [BLS average-price data](https://www.bls.gov/cpi/factsheets/average-prices.htm). Across the 23 grocery rows used in these menus, the parent audit has 16 exact [USDA FoodData Central](https://fdc.nal.usda.gov/) matches, 1 close proxy, and 6 unresolved rows; proxy and unresolved rows are not independently re-verified. The four restaurant rows use each chain's published nutrition data and typical national menu prices as of July 2026. These are a dated national snapshot. Your local receipt is allowed to disagree with the spreadsheet.
 
 Three ground rules so nobody has to squint at the math:
 
@@ -61,7 +61,7 @@ This is the floor. Nobody's saying it's exciting. It is, however, 31.9 grams of 
 | Lunch | Split pea soup from 50g dry split peas | 11.1 g | $0.16 |
 | Dinner | Pinto beans, 60g dry (1/3 cup) | 9.3 g | $0.13 |
 | Dinner | Brown rice, 50g dry (1/4 cup) | 1.8 g | $0.10 |
-| Snack | Popcorn, 25g kernels (2 tbsp) | 3.6 g | $0.06 |
+| Dinner | Pearled barley, 23g dry (about 2 tbsp) | 3.6 g | $0.06 |
 | **Total** | | **31.9 g** | **$0.62** |
 
 The lunch is a small bowl of [split pea soup](/split-pea-soup-recipe-high-fiber/), which does more fiber work per penny than anything else in the store. If the dinner beans feel like a project, the [same-day quick soak](/how-to-quick-soak-dried-beans-same-day/) turns dry pintos into tonight's food instead of tomorrow's. That dinner, pintos over brown rice, is also one of the 20 legume-and-grain combinations we priced in [the cheapest complete protein math](/cheapest-complete-protein-pairs/).

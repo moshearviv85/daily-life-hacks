@@ -2,7 +2,7 @@
 
 **22 datasets. 474 rows. Every grocery price and nutrient number behind the Daily Life Hacks cost studies, with the receipts attached.**
 
-When we publish a line like "black beans give you 10.4 grams of fiber per dollar," that number didn't come from vibes. It came from a specific USDA FoodData Central entry divided by a specific shelf price, and both of those are written down in the row. This repo is where the rows live.
+When we publish a line like "black beans give you 10.4 grams of fiber per dollar," the source and shelf-price trail should be inspectable. The two flagship CSVs now carry a row-level nutrition status: an exact FoodData Central match, a disclosed proxy, or an unresolved reason. This repo is where those rows live.
 
 Two of these rankings run often enough that they got names: the **Fiber per Dollar Index** (53 foods scored on dietary fiber grams per dollar) and the **Protein per Dollar Index** (49 sources scored on protein grams per dollar). Everything else in here is a category cut, a head-to-head, or a daily-menu costing built on the same rules.
 
@@ -34,7 +34,7 @@ It's US national retail pricing, observed July 2026, against USDA nutrient value
 
 Six rules. They're the whole reason this data is worth reusing.
 
-**1. Nutrients come from USDA FoodData Central.** Not from a package label, not from a nutrition app that scraped a package label.
+**1. Nutrition provenance is explicit.** USDA FoodData Central is the primary source. The flagship CSVs link every established match by FDC ID and the official API record endpoint using USDA's public `DEMO_KEY`, label narrower proxy records, and leave ambiguous or conflicting rows unresolved. The TVP row separately links the current manufacturer page and discloses that its current label does not reproduce the dataset value.
 
 **2. Prices are US national figures.** BLS Average Price data where the item is tracked (those rows carry the series ID, like `APU0000708111`). Walmart national listings where it isn't. Observed July 2026. Every row states which one it used in `price_basis`, so you can tell a government series apart from a retailer listing at a glance.
 
@@ -42,7 +42,7 @@ Six rules. They're the whole reason this data is worth reusing.
 
 **4. Refuse comes out before ranking.** A pound of oranges is not a pound of orange. Peels, pits, rinds and bone are removed using USDA refuse percentages before anything gets ranked. Skipping this step quietly flatters foods with heavy waste, like avocados, winter squash and bone-in cuts. Where it was applied, the row says so: `USDA SR28 refuse: 33% bone and cartilage`.
 
-**5. Two independent pulls per value.** Every nutrient value was re-verified against two separate USDA queries in two separate sessions, compared line by line. Disagreements got flagged and resolved by hand before publication. It's tedious. That's the point - a ranking is only useful if the boring rows are as accurate as the surprising ones.
+**5. Match status travels with the row.** The July 30 provenance pass produced 74 exact matches, 9 linked proxies with a food/form difference disclosed, and 19 unresolved rows across the 102 flagship rows. “Unresolved” is a result, not a blank to paper over: each one names the conflicting records, value mismatch, or missing evidence.
 
 **6. Corrections are public and dated.** On July 4 2026 an adversarial audit of the fiber study caught six values that needed fixing. They were fixed, the affected foods were re-ranked, and a correction note went into the article. That audit is now a standard pre-publish step. Nothing gets quietly swapped.
 
@@ -63,7 +63,7 @@ Most of the ranking files share a common shape:
 | `package_price_usd` | Shelf price in USD for that package |
 | `price_basis` | Where the price came from, when it was observed, and any refuse percentage applied |
 
-The two index files (`fiber-per-dollar-2026.csv`, `protein-per-dollar-2026.csv`) are wider - they expose the whole calculation chain: `fiber_g_per_100g` / `protein_g_per_100g`, `package_weight_g`, `edible_fraction`, `price_per_100g_usd`, and then the derived `*_g_per_dollar`. If you want to check our arithmetic rather than trust it, start there.
+The two index files (`fiber-per-dollar-2026.csv`, `protein-per-dollar-2026.csv`) are wider - they expose the whole calculation chain plus `nutrition_source_status`, source type, FDC ID, official URL, official description, record form, and a row-specific note. If you want to check our arithmetic and source match rather than trust either one, start there.
 
 The per-file field schemas below are generated from `datapackage.json`, which is the authoritative version.
 
@@ -259,12 +259,12 @@ The full 49-food protein ranking used to place eggs against every other source i
 
 ### 10. Fiber per Dollar: 53 Foods Ranked (2026)
 
-The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dollar with the whole calculation exposed: USDA fiber per 100g, package size and price, package weight, edible fraction, and the derived price per 100 grams.
+The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dollar with the whole calculation exposed: recorded fiber per 100g, package size and price, package weight, edible fraction, derived price per 100 grams, and row-level nutrition provenance status.
 
 ![Fiber per Dollar: 53 Foods Ranked (2026)](charts/fiber-per-dollar-top-20-chart.jpg)
 
 - **File:** [`data/fiber-per-dollar-2026.csv`](data/fiber-per-dollar-2026.csv)
-- **Rows:** 53 (header excluded) &nbsp;|&nbsp; **Size:** 4,523 bytes
+- **Rows:** 53 (header excluded) &nbsp;|&nbsp; **Size:** 13,368 bytes
 - **Chart:** [`charts/fiber-per-dollar-top-20-chart.jpg`](charts/fiber-per-dollar-top-20-chart.jpg)
 - **Study:** <https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/>
 
@@ -273,7 +273,7 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 | `rank` | integer | Position in the ranking. 1 is the most nutrient per dollar. |
 | `food` | string | Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math. |
 | `category` | string | Grocery category the food was grouped under for this ranking. |
-| `fiber_g_per_100g` | number | Dietary fiber in grams per 100 grams of the food as purchased, from USDA FoodData Central. |
+| `fiber_g_per_100g` | number | Recorded dietary fiber in grams per 100 grams; use the nutrition_source fields in the flagship CSV to inspect its FoodData Central match status. |
 | `package` | string | Package size the recorded price refers to, as sold on the shelf. |
 | `package_price_usd` | number | Shelf price in US dollars for that package. |
 | `package_weight_g` | number | Net weight of that package in grams. |
@@ -281,6 +281,13 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 | `price_per_100g_usd` | number | Price in US dollars per 100 grams of edible food. |
 | `fiber_g_per_dollar` | number | Grams of dietary fiber per US dollar spent, after the edible fraction is applied. |
 | `price_basis` | string | Source and observation date for the price, plus any USDA refuse percentage applied. |
+| `nutrition_source_status` | string | Row-level nutrition provenance status: exact, proxy, or unresolved. |
+| `nutrition_source_type` | string | Authoritative nutrition source class, or Unresolved when no unique matching record was established. |
+| `nutrition_source_id` | string | USDA FoodData Central identifier for exact and proxy rows; empty for unresolved rows. |
+| `nutrition_source_url` | string | Direct FoodData Central API record URL using USDA's public DEMO_KEY, or the current manufacturer page for the unresolved TVP label row. |
+| `nutrition_source_description` | string | Food description from the linked authoritative record, preserved verbatim for auditability. |
+| `nutrition_source_form` | string | Preparation or physical form supported by the linked nutrient record; Not resolved when no unique record was established. |
+| `nutrition_source_note` | string | Row-specific disclosure for proxy and unresolved matches, including the exact ambiguity or mismatch. |
 
 ### 11. Grains Ranked by Fiber per Dollar (2026)
 
@@ -465,12 +472,12 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 
 ### 20. Protein per Dollar: 49 Sources Ranked (2026)
 
-The flagship protein dataset. 49 foods ranked by grams of protein per US dollar with the whole calculation exposed: USDA protein per 100g, package size and price, package weight, edible fraction, and the derived price per 100 grams.
+The flagship protein dataset. 49 foods ranked by grams of protein per US dollar with the whole calculation exposed: recorded protein per 100g, package size and price, package weight, edible fraction, derived price per 100 grams, and row-level nutrition provenance status.
 
 ![Protein per Dollar: 49 Sources Ranked (2026)](charts/protein-per-dollar-top-20-chart.jpg)
 
 - **File:** [`data/protein-per-dollar-2026.csv`](data/protein-per-dollar-2026.csv)
-- **Rows:** 49 (header excluded) &nbsp;|&nbsp; **Size:** 5,973 bytes
+- **Rows:** 49 (header excluded) &nbsp;|&nbsp; **Size:** 15,314 bytes
 - **Chart:** [`charts/protein-per-dollar-top-20-chart.jpg`](charts/protein-per-dollar-top-20-chart.jpg)
 - **Study:** <https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/>
 
@@ -479,7 +486,7 @@ The flagship protein dataset. 49 foods ranked by grams of protein per US dollar 
 | `rank` | integer | Position in the ranking. 1 is the most nutrient per dollar. |
 | `food` | string | Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math. |
 | `category` | string | Grocery category the food was grouped under for this ranking. |
-| `protein_g_per_100g` | number | Protein in grams per 100 grams of the food as purchased, from USDA FoodData Central. |
+| `protein_g_per_100g` | number | Recorded protein in grams per 100 grams; use the nutrition_source fields in the flagship CSV to inspect its FoodData Central or manufacturer-label status. |
 | `package` | string | Package size the recorded price refers to, as sold on the shelf. |
 | `package_price_usd` | number | Shelf price in US dollars for that package. |
 | `package_weight_g` | number | Net weight of that package in grams. |
@@ -487,6 +494,13 @@ The flagship protein dataset. 49 foods ranked by grams of protein per US dollar 
 | `price_per_100g_usd` | number | Price in US dollars per 100 grams of edible food. |
 | `protein_g_per_dollar` | number | Grams of protein per US dollar spent, after the edible fraction is applied. |
 | `price_basis` | string | Source and observation date for the price, plus any USDA refuse percentage applied. |
+| `nutrition_source_status` | string | Row-level nutrition provenance status: exact, proxy, or unresolved. |
+| `nutrition_source_type` | string | Authoritative nutrition source class, or Unresolved when no unique matching record was established. |
+| `nutrition_source_id` | string | USDA FoodData Central identifier for exact and proxy rows; empty for unresolved rows. |
+| `nutrition_source_url` | string | Direct FoodData Central API record URL using USDA's public DEMO_KEY, or the current manufacturer page for the unresolved TVP label row. |
+| `nutrition_source_description` | string | Food description from the linked authoritative record, preserved verbatim for auditability. |
+| `nutrition_source_form` | string | Preparation or physical form supported by the linked nutrient record; Not resolved when no unique record was established. |
+| `nutrition_source_note` | string | Row-specific disclosure for proxy and unresolved matches, including the exact ambiguity or mismatch. |
 
 ### 21. Protein per Dollar Adjusted for Quality, DIAAS (2026)
 
@@ -590,7 +604,7 @@ When you cite a single ranking rather than the whole collection, cite the study 
 - **It's a July 2026 snapshot.** Grocery prices move. A per-dollar ranking with stale prices is a per-nothing ranking. Prices get a full re-audit quarterly and the BLS staples get checked monthly, so check the version before you build on it.
 - **It's US national.** Regional pricing swings hard, especially on produce and dairy.
 - **Walmart-sourced rows are one retailer.** They're labeled as such in `price_basis`. BLS rows are national averages and carry more weight.
-- **The public exports don't carry the FoodData Central ID column.** We're not going to pretend they do. The nutrient values trace to FDC; the row-level ID isn't in the export yet.
+- **Not every flagship row has a defensible FoodData Central ID.** Exact and proxy rows carry the ID and official link. Unresolved rows deliberately leave the ID blank and explain why, so an ambiguous salt/enrichment variant or a form mismatch does not become false precision.
 - **Cost rankings aren't nutrition advice.** Cheapest protein per dollar is a shopping fact, not a diet plan.
 
 ---

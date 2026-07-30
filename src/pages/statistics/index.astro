@@ -117,6 +117,17 @@ const schemas = [
 
 const linkClass = "font-bold underline decoration-[#F29B30] underline-offset-4";
 const compactDay = (day: string) => day.replace(/^Day \d+:\s*/, "");
+const nutritionStatus = (row: any) =>
+  String(row.fields?.nutrition_source_status ?? "").toLowerCase();
+const nutritionStatusDetail = (row: any) => {
+  const status = nutritionStatus(row);
+  const note = String(row.fields?.nutrition_source_note ?? "");
+  const form = String(row.fields?.nutrition_source_form ?? "");
+
+  if (status === "exact") return `Exact USDA match${form ? `: ${form}` : ""}`;
+  if (status === "proxy") return `Close USDA proxy${note ? `: ${note}` : ""}`;
+  return `Unresolved, recorded only${note ? `. ${note}` : ""}`;
+};
 ---
 
 <BaseLayout title={title} description={description} canonicalURL={pageUrl} jsonLd={schemas}>
@@ -178,9 +189,11 @@ const compactDay = (day: string) => day.replace(/^Day \d+:\s*/, "");
     </section>
 
     <p class="text-sm mb-10" style="color:var(--muted-color);">
-      Source: Daily Life Hacks Food Value Data, version {DATA_VERSION}. Nutrition values use USDA
-      FoodData Central. Prices use BLS Average Price data where available and dated national retail
-      listings otherwise. Read the <a href="/methodology/" class={linkClass}>methodology</a>.
+      Source: Daily Life Hacks Food Value Data, version {DATA_VERSION}. USDA FoodData Central is
+      the primary grocery nutrition source, with exact, proxy, and unresolved status retained per
+      row. The fiber audit contains 38 exact matches, 4 close proxies, and 11 unresolved rows.
+      Prices use BLS Average Price data where available and dated national retail listings
+      otherwise. Read the <a href="/methodology/" class={linkClass}>methodology</a>.
     </p>
 
     <section class="grid lg:grid-cols-2 gap-7 mb-14">
@@ -191,23 +204,35 @@ const compactDay = (day: string) => day.replace(/^Day \d+:\s*/, "");
         <p class="mb-5" style="color:var(--muted-color);">
           {fiberTop[0].food} leads this 53-food snapshot at {topFiberValue.toFixed(1)} grams per dollar. Dry peas and
           beans take most of the next seats. Produce is invited, but it isn't controlling the aux
-          cord.
+          cord. The table preserves published rank and recorded values, but unresolved rows cannot
+          establish a verified winner. Popcorn's 57.7-gram row is unresolved because its nutrition
+          value is for air-popped popcorn while its price is for unpopped kernels.
         </p>
         <div class="relative overflow-x-auto rounded-2xl border" style="border-color:var(--border-color);">
           <table class="w-full text-sm">
+            <caption class="sr-only">
+              Top recorded fiber-per-dollar rows with row-level nutrition source status.
+            </caption>
             <thead style="background:var(--input-bg);">
               <tr>
                 <th class="text-left p-3" scope="col">Rank</th>
                 <th class="text-left p-3" scope="col">Food</th>
                 <th class="text-right p-3" scope="col">Fiber per $1</th>
+                <th class="text-left p-3" scope="col">Source match</th>
               </tr>
             </thead>
             <tbody>
               {fiberTop.map((row, index) => (
                 <tr class="border-t" style="border-color:var(--border-color);">
-                  <td class="p-3">{index + 1}</td>
+                  <td class="p-3">{row.rank ?? index + 1}</td>
                   <td class="p-3 font-semibold">{row.food}</td>
-                  <td class="p-3 text-right tabular-nums">{Number(row.metrics.fiber_g_per_dollar).toFixed(1)}g</td>
+                  <td class="p-3 text-right tabular-nums">
+                    {Number(row.metrics.fiber_g_per_dollar).toFixed(1)}g
+                    {nutritionStatus(row) === "unresolved" && <span class="block text-xs">recorded, not verified</span>}
+                  </td>
+                  <td class="p-3 text-xs" style="color:var(--muted-color);">
+                    {nutritionStatusDetail(row)}
+                  </td>
                 </tr>
               ))}
             </tbody>

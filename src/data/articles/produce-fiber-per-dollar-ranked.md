@@ -6,6 +6,7 @@ tags: ["high fiber vegetables", "high fiber fruits", "fiber per dollar", "budget
 image: "/images/produce-fiber-per-dollar-ranked-main.jpg"
 imageAlt: "A bag of frozen green peas with frost beside fresh raspberries, an avocado, and leafy greens"
 date: 2026-07-13
+dateModified: 2026-07-30
 author: "David Miller"
 faq:
   - question: "What vegetable has the most fiber per dollar?"
@@ -45,7 +46,7 @@ Source: USDA FoodData Central + single-store prices, July 2026. Full methodology
 
 ## Which vegetables give you the most fiber per dollar?
 
-The winners are the unglamorous ones. Frozen green peas top the whole list, and a $2.32 bag keeps in the freezer until whenever you need it. Bagged whole carrots come in at 16.1 grams per dollar, $1.58 for two pounds, which makes them one of the few snacks that costs less than the vending machine and doesn't apologize for it. Only popcorn beats carrots in [our snack-only fiber ranking](/high-fiber-snacks-per-dollar/).
+The winners are the unglamorous ones. Frozen green peas top the whole list, and a $2.32 bag keeps in the freezer until whenever you need it. Bagged whole carrots come in at 16.1 grams per dollar, $1.58 for two pounds, which makes them one of the few snacks that costs less than the vending machine and doesn't apologize for it. Carrots are the highest exact-source result in [our snack-only fiber ranking](/high-fiber-snacks-per-dollar/); the recorded popcorn row above them is unresolved because its nutrition and priced forms do not match.
 
 Then there's green cabbage at 14.6 grams per dollar and $0.78 a pound. Cabbage is the produce section's best-kept secret: enormous, nearly indestructible in the fridge, and happy to become slaw, stir-fry, or a big pot of [cabbage soup](/fiber-rich-soup-for-weight-loss-cabbage/). Sweet potatoes follow at 13.9 grams per dollar, and if you want them before noon, this [sheet pan breakfast hash with eggs and sweet potatoes](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) is the move.
 

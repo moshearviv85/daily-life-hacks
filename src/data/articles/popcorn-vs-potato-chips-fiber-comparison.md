@@ -11,7 +11,7 @@ tags:
 image: /images/popcorn-vs-potato-chips-fiber-comparison-main.jpg
 imageAlt: Bowl of air-popped popcorn next to a small pile of potato chips for a fiber comparison
 date: 2026-02-07
-dateModified: 2026-07-17
+dateModified: 2026-07-30
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -87,9 +87,9 @@ The nutrition table gives you a winner, but kitchens don't operate like spreadsh
 
 ## What does each cost per gram of fiber?
 
-Popcorn isn't just the fiber winner, it's one of the cheapest fiber sources in the entire store. When we priced 53 foods for our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), popcorn kernels ranked fifth overall at about 58 grams of fiber per dollar, from a $2.28 two-pound bag.
+The ounce-for-ounce nutrition comparison above supports air-popped popcorn as the fiber winner over chips. It does not verify popcorn's cost per gram of fiber. Our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/) records kernels at about 58 grams per dollar, but that row is unresolved because the 14.5-gram USDA value describes air-popped popcorn while the $2.28 price describes a two-pound bag of unpopped kernels.
 
-Chips? A typical 8-ounce bag runs $3 to $4 and carries about 10 grams of fiber total. Call it 3 grams of fiber per dollar, and that's being friendly. Popcorn kernels deliver nearly twenty times the fiber for the same money. There aren't many swaps in a grocery store with a gap that wide, and it's exactly the kind of quiet win we build the whole cart around in our [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/).
+Chips? A typical 8-ounce bag runs $3 to $4 and carries about 10 grams of fiber total. That does not make the old “nearly twenty times” popcorn comparison valid: a same-form kernel nutrition match or measured popped yield is still needed. The supported takeaway is narrower and useful—air-popped popcorn has more fiber per ounce than plain salted potato chips—not a verified per-dollar multiple.
 
 That price gap is biggest when you buy plain kernels. Pre-popped popcorn comes with labor, packaging, oil, seasoning, and a bag full of air built into the price. It may still beat chips on fiber, but it won't deliver the same pantry economics as the $2.28 bag in the study.
 

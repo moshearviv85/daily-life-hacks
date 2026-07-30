@@ -16,7 +16,9 @@ import {
   DATA_LICENSE_URL,
   DATA_TERMS_URL,
   DATA_VERSION,
+  describeDatasetProvenance,
   findChartInBody,
+  getDatasetProvenance,
 } from "../content/datasets";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
@@ -317,6 +319,7 @@ const webPageSchema = {
 const allSchemas: any[] = [webPageSchema, jsonLd, breadcrumbSchema];
 
 const dataset = DATASETS[article.id];
+const datasetProvenance = dataset ? getDatasetProvenance(dataset) : null;
 if (dataset) {
   allSchemas.push({
     "@context": "https://schema.org",
@@ -325,7 +328,7 @@ if (dataset) {
     name: dataset.name,
     /** The coined index name (method #60), so mentions stay attributable. */
     ...(dataset.alternateName ? { alternateName: dataset.alternateName } : {}),
-    description: dataset.description,
+    description: `${dataset.description} ${describeDatasetProvenance(datasetProvenance!)}`,
     url: articleUrl,
     identifier: `${articleUrl}#dataset`,
     version: DATA_VERSION,
@@ -649,11 +652,36 @@ const publishedSchemas = released && !isVariant ? allSchemas : undefined;
         }
       </p>
       {
-        dataset && (
+        dataset && datasetProvenance && (
           <p class="text-sm mt-2 leading-relaxed" style="color: var(--label-color);">
             Source: Daily Life Hacks {dataset.name} ({dataset.rows} rows,
-            prices observed {dataset.temporal}, United States). Nutrition values
-            from USDA FoodData Central. Full{" "}
+            prices observed {dataset.temporal}, United States).{" "}
+            {
+              datasetProvenance.nutritionSourceIsPrimary
+                ? "Primary nutrition source: "
+                : "Nutrition values from "
+            }
+            {
+              datasetProvenance.nutritionSourceUrl ? (
+                <a
+                  href={datasetProvenance.nutritionSourceUrl}
+                  class="underline"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  {datasetProvenance.nutritionSource}
+                </a>
+              ) : (
+                datasetProvenance.nutritionSource
+              )
+            }.{" "}
+            {datasetProvenance.additionalSourceNote && (
+              <>{datasetProvenance.additionalSourceNote}. </>
+            )}
+            {datasetProvenance.sourceAuditSummary && (
+              <>{datasetProvenance.sourceAuditSummary}. </>
+            )}
+            Full{" "}
             <a href="/methodology/" class="underline">methodology</a> and the{" "}
             <a href={dataset.csv} class="underline">raw CSV</a> are public.
           </p>
