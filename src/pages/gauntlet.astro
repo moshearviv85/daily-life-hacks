@@ -1,0 +1,1010 @@
+---
+/**
+ * /gauntlet — PRIVATE internal progress dashboard for the SEO improvement program.
+ *
+ * PRIVACY CONTRACT (all four must hold together):
+ *   1. `<meta name="robots" content="noindex, nofollow" />` below — same literal
+ *      pattern as src/pages/dashboard.astro and src/pages/deploy-proof.astro.
+ *   2. `/gauntlet` is listed in `loadSitemapExclusions()` in astro.config.mjs, so
+ *      the page never enters sitemap-index.xml.
+ *   3. Nothing links here. Not Header.astro, not Footer.astro, not any article.
+ *      The URL is the only way in.
+ *   4. public/robots.txt is deliberately NOT changed. `/dashboard` is not listed
+ *      there either — that is the existing convention, and it is the correct one:
+ *      a `Disallow` would stop crawlers from fetching the page and therefore stop
+ *      them from ever reading the noindex directive.
+ *
+ * Every file read is guarded. A missing or malformed report renders an empty
+ * state; it must never break the build.
+ */
+import { readFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const root = join(__dirname, '../..');
+
+type ReadResult<T> = { data: T; found: boolean; error: string | null };
+
+function readJson<T>(relPath: string, fallback: T): ReadResult<T> {
+  try {
+    const raw = readFileSync(join(root, relPath), 'utf8');
+    return { data: JSON.parse(raw) as T, found: true, error: null };
+  } catch (err: any) {
+    const missing = err?.code === 'ENOENT';
+    return {
+      data: fallback,
+      found: false,
+      error: missing ? null : String(err?.message ?? err),
+    };
+  }
+}
+
+function readText(relPath: string): string | null {
+  try {
+    return readFileSync(join(root, relPath), 'utf8');
+  } catch {
+    return null;
+  }
+}
+
+// ── Sources ───────────────────────────────────────────────────────────────
+const COHORT_PATH = 'reports/gauntlet/baseline-demand-cohort.json';
+const EVIDENCE_PATH = 'reports/gauntlet/baseline-evidence.json';
+const TRIAGE_PATH = 'reports/growth/gsc-coverage-triage-2026-07-29.md';
+const PROGRESS_PATH = 'reports/gauntlet/progress.json';
+const HARNESS_PATH = 'reports/gauntlet/harness-results.json';
+
+// ── Demand cohort ─────────────────────────────────────────────────────────
+type CohortRow = {
+  slug: string;
+  url?: string;
+  title?: string;
+  impr?: number;
+  pos?: number;
+  cit?: number;
+  words?: number;
+  inl?: number;
+};
+
+const cohortRead = readJson<CohortRow[]>(COHORT_PATH, []);
+const cohort = Array.isArray(cohortRead.data) ? cohortRead.data : [];
+const cohortSorted = [...cohort].sort((a, b) => (b.impr ?? 0) - (a.impr ?? 0));
+const cohortZeroCit = cohort.filter((r) => (r.cit ?? 0) === 0);
+const cohortImpressions = cohort.reduce((sum, r) => sum + (r.impr ?? 0), 0);
+
+// ── Baseline: GSC coverage triage (markdown table) ────────────────────────
+const triageRaw = readText(TRIAGE_PATH);
+
+function triageMetric(label: string): number | null {
+  if (!triageRaw) return null;
+  const m = triageRaw.match(
+    new RegExp(`^\\|\\s*${label}\\s*\\|\\s*([\\d,]+)\\s*\\|`, 'mi'),
+  );
+  if (!m?.[1]) return null;
+  const n = Number(m[1].replace(/,/g, ''));
+  return Number.isFinite(n) ? n : null;
+}
+
+const triageDate = triageRaw?.match(/^Date checked:\s*(.+)$/m)?.[1]?.trim() ?? null;
+
+// ── Baseline: corpus / citation evidence ──────────────────────────────────
+type Evidence = {
+  captured?: string;
+  git_head?: string;
+  search_console?: {
+    as_of?: string;
+    indexed?: number;
+    not_indexed?: number;
+    search_impressions?: number;
+    note?: string;
+  };
+  corpus?: {
+    articles?: number;
+    articles_with_authoritative_citation?: number;
+    articles_with_zero_authoritative_citation?: number;
+    zero_citation_pct?: number;
+    citation_domains_counted?: string[];
+  };
+  demand_cohort?: {
+    articles_with_any_impressions?: number;
+    of_those_zero_citations?: number;
+    source?: string;
+  };
+  diagnosis?: { the_bottleneck?: string; not_the_bottleneck?: string[] };
+};
+
+const evidenceRead = readJson<Evidence>(EVIDENCE_PATH, {});
+const evidence = evidenceRead.data ?? {};
+
+const indexed = evidence.search_console?.indexed ?? triageMetric('Indexed');
+const notIndexed = evidence.search_console?.not_indexed ?? triageMetric('Not indexed');
+const impressions =
+  evidence.search_console?.search_impressions ?? triageMetric('Search impressions');
+const gscAsOf = evidence.search_console?.as_of ?? triageDate;
+
+const corpusTotal = evidence.corpus?.articles ?? null;
+const corpusZeroCit = evidence.corpus?.articles_with_zero_authoritative_citation ?? null;
+const corpusWithCit = evidence.corpus?.articles_with_authoritative_citation ?? null;
+const zeroCitPct =
+  evidence.corpus?.zero_citation_pct ??
+  (corpusTotal && corpusZeroCit ? (corpusZeroCit / corpusTotal) * 100 : null);
+const citationDomains = evidence.corpus?.citation_domains_counted ?? [];
+const bottleneck = evidence.diagnosis?.the_bottleneck ?? null;
+const notBottleneck = evidence.diagnosis?.not_the_bottleneck ?? [];
+
+// ── Completed changes ─────────────────────────────────────────────────────
+type ProgressEntry = {
+  slug?: string;
+  rounds?: number;
+  verdict?: string;
+  citations_added?: number;
+  scores?: Record<string, number | string>;
+  before?: Record<string, number | string>;
+  after?: Record<string, number | string>;
+  [key: string]: unknown;
+};
+
+const progressRead = readJson<any>(PROGRESS_PATH, null);
+const progressRaw = progressRead.data;
+const progress: ProgressEntry[] = Array.isArray(progressRaw)
+  ? progressRaw
+  : Array.isArray(progressRaw?.entries)
+    ? progressRaw.entries
+    : Array.isArray(progressRaw?.articles)
+      ? progressRaw.articles
+      : Array.isArray(progressRaw?.pages)
+        ? progressRaw.pages
+        : [];
+
+const progressSlugs = new Set(
+  progress.map((p) => String(p.slug ?? '')).filter(Boolean),
+);
+const totalCitationsAdded = progress.reduce(
+  (sum, p) => sum + (Number(p.citations_added) || 0),
+  0,
+);
+const totalRounds = progress.reduce((sum, p) => sum + (Number(p.rounds) || 0), 0);
+
+/** Union of score keys across entries, so an added metric renders without a code change. */
+const scoreKeys = Array.from(
+  new Set(progress.flatMap((p) => Object.keys(p.scores ?? {}))),
+);
+const beforeAfterKeys = Array.from(
+  new Set(
+    progress.flatMap((p) => [
+      ...Object.keys(p.before ?? {}),
+      ...Object.keys(p.after ?? {}),
+    ]),
+  ),
+);
+
+function verdictTone(verdict: unknown): string {
+  const v = String(verdict ?? '').toLowerCase();
+  if (/pass|ship|approved|done|accept/.test(v)) return 'bg-emerald-100 text-emerald-800';
+  if (/fail|reject|block/.test(v)) return 'bg-rose-100 text-rose-800';
+  if (/hold|review|pending|retry|revis/.test(v)) return 'bg-amber-100 text-amber-800';
+  return 'bg-slate-200 text-slate-700';
+}
+
+function fmtCell(v: unknown): string {
+  if (v === null || v === undefined || v === '') return '—';
+  if (typeof v === 'number') return Number.isInteger(v) ? String(v) : v.toFixed(2);
+  return String(v);
+}
+
+// ── Test harness results ──────────────────────────────────────────────────
+const harnessRead = readJson<any>(HARNESS_PATH, null);
+const harnessRaw = harnessRead.data;
+const harnessRows: Record<string, any>[] = Array.isArray(harnessRaw)
+  ? harnessRaw
+  : Array.isArray(harnessRaw?.results)
+    ? harnessRaw.results
+    : Array.isArray(harnessRaw?.tests)
+      ? harnessRaw.tests
+      : Array.isArray(harnessRaw?.checks)
+        ? harnessRaw.checks
+      : [];
+const harnessCols = Array.from(
+  new Set(
+    harnessRows.flatMap((r) =>
+      r && typeof r === 'object' ? Object.keys(r) : [],
+    ),
+  ),
+).filter((k) => {
+  // Keep the table scannable: nested objects go to the raw dump, not a column.
+  const sample = harnessRows.find((r) => r?.[k] !== undefined)?.[k];
+  return sample === null || typeof sample !== 'object';
+});
+/** File is present but holds no recognizable rows — dump it rather than hide it. */
+const harnessEmptyArray =
+  harnessRead.found && Array.isArray(harnessRaw) && harnessRaw.length === 0;
+const harnessUnrenderable =
+  harnessRead.found && harnessRows.length === 0 && !harnessEmptyArray;
+
+function statusTone(v: unknown): string {
+  const s = String(v ?? '').toLowerCase();
+  if (/^(pass|passed|ok|true|green)$/.test(s)) return 'bg-emerald-100 text-emerald-800';
+  if (/^(fail|failed|error|false|red)$/.test(s)) return 'bg-rose-100 text-rose-800';
+  if (/skip|pending|todo/.test(s)) return 'bg-amber-100 text-amber-800';
+  return '';
+}
+
+// ── Remaining gaps + next action ──────────────────────────────────────────
+const remainingZeroCit = cohortZeroCit
+  .filter((r) => !progressSlugs.has(r.slug))
+  .sort((a, b) => (b.impr ?? 0) - (a.impr ?? 0));
+const remainingImpressions = remainingZeroCit.reduce(
+  (sum, r) => sum + (r.impr ?? 0),
+  0,
+);
+const coveredZeroCit = cohortZeroCit.length - remainingZeroCit.length;
+const coveragePct = cohortZeroCit.length
+  ? (coveredZeroCit / cohortZeroCit.length) * 100
+  : 0;
+const nextAction = remainingZeroCit[0] ?? null;
+
+/** An explicit next-action override in progress.json wins over the computed pick. */
+const declaredNextAction =
+  (!Array.isArray(progressRaw) &&
+    (progressRaw?.next_action ?? progressRaw?.next_highest_impact_action)) ||
+  null;
+
+const num = (n: number | null | undefined) =>
+  typeof n === 'number' && Number.isFinite(n) ? n.toLocaleString('en-US') : '—';
+
+const generatedAt = new Date().toISOString().replace('T', ' ').slice(0, 16) + ' UTC';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gauntlet — Internal Progress</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e293b'/%3E%3Crect x='7' y='18' width='4' height='8' fill='%23F29B30'/%3E%3Crect x='14' y='12' width='4' height='14' fill='%23F29B30'/%3E%3Crect x='21' y='6' width='4' height='20' fill='%23F29B30'/%3E%3C/svg%3E"
+    />
+    <style>
+      :root {
+        --brand: #f29b30;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #f1f5f9;
+        color: #1e293b;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 2rem 1rem 5rem;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+      }
+      .rule {
+        height: 3px;
+        width: 44px;
+        background: var(--brand);
+        border-radius: 999px;
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        color: #0f172a;
+        letter-spacing: -0.01em;
+      }
+      p {
+        margin: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.875rem;
+      }
+      thead th {
+        position: sticky;
+        top: 0;
+        background: #f8fafc;
+        text-align: left;
+        font-weight: 600;
+        color: #475569;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 0.6rem 0.75rem;
+        border-bottom: 1px solid #e2e8f0;
+        white-space: nowrap;
+      }
+      tbody td {
+        padding: 0.55rem 0.75rem;
+        border-bottom: 1px solid #f1f5f9;
+        vertical-align: top;
+      }
+      tbody tr:hover {
+        background: #f8fafc;
+      }
+      .num {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+      .zero-cit {
+        background: #fff7ed;
+        box-shadow: inset 3px 0 0 0 var(--brand);
+      }
+      .zero-cit:hover {
+        background: #ffedd5;
+      }
+      .scroll {
+        overflow: auto;
+        max-height: 620px;
+        border-radius: 10px;
+        border: 1px solid #e2e8f0;
+      }
+      .scroll-x {
+        overflow-x: auto;
+        border-radius: 10px;
+        border: 1px solid #e2e8f0;
+      }
+      .pill {
+        display: inline-block;
+        padding: 0.1rem 0.5rem;
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .empty {
+        border: 1px dashed #cbd5e1;
+        border-radius: 10px;
+        background: #f8fafc;
+        padding: 1.75rem 1.25rem;
+        text-align: center;
+        color: #64748b;
+        font-size: 0.875rem;
+      }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.8em;
+        background: #f1f5f9;
+        border-radius: 4px;
+        padding: 0.08rem 0.3rem;
+      }
+      pre {
+        margin: 0;
+        padding: 1rem;
+        background: #0f172a;
+        color: #e2e8f0;
+        border-radius: 10px;
+        overflow: auto;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        max-height: 380px;
+      }
+      details > summary {
+        cursor: pointer;
+        font-size: 0.8rem;
+        color: #475569;
+        font-weight: 600;
+      }
+      .stat-grid {
+        display: grid;
+        gap: 0.75rem;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      }
+      .stat {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 10px;
+        padding: 0.9rem 1rem;
+      }
+      .stat-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #64748b;
+        font-weight: 600;
+      }
+      .stat-value {
+        font-size: 1.65rem;
+        font-weight: 700;
+        color: #0f172a;
+        line-height: 1.15;
+        margin-top: 0.15rem;
+        font-variant-numeric: tabular-nums;
+      }
+      .stat-note {
+        font-size: 0.72rem;
+        color: #94a3b8;
+        margin-top: 0.15rem;
+      }
+      .bar {
+        height: 8px;
+        border-radius: 999px;
+        background: #e2e8f0;
+        overflow: hidden;
+      }
+      .bar > span {
+        display: block;
+        height: 100%;
+        background: var(--brand);
+      }
+      section + section {
+        margin-top: 1.75rem;
+      }
+      .sec-head {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.85rem;
+      }
+      .sec-head h2 {
+        font-size: 1.05rem;
+      }
+      .sec-head .meta {
+        font-size: 0.78rem;
+        color: #64748b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- ── Header ─────────────────────────────────────────────────── -->
+      <header style="margin-bottom:1.75rem">
+        <div class="rule"></div>
+        <h1 style="font-size:1.6rem;font-weight:800;margin-top:.7rem">
+          Gauntlet — SEO Improvement Program
+        </h1>
+        <p style="color:#64748b;font-size:.875rem;margin-top:.35rem">
+          Private internal tracker. Not indexed, not in the sitemap, not linked
+          from anywhere. Rendered at build time from files in
+          <code>reports/</code>.
+        </p>
+        <p style="color:#94a3b8;font-size:.75rem;margin-top:.5rem">
+          Built {generatedAt}
+          {evidence.git_head && <> · baseline HEAD <code>{evidence.git_head}</code></>}
+        </p>
+      </header>
+
+      <!-- ── BASELINE ───────────────────────────────────────────────── -->
+      <section>
+        <div class="sec-head">
+          <h2>Baseline</h2>
+          <span class="meta">
+            Google Search Console{gscAsOf ? ` · ${gscAsOf}` : ''}
+          </span>
+        </div>
+
+        {
+          indexed === null && notIndexed === null && corpusTotal === null ? (
+            <div class="empty">
+              No baseline evidence found. Expected <code>{EVIDENCE_PATH}</code>{' '}
+              or <code>{TRIAGE_PATH}</code>.
+            </div>
+          ) : (
+            <>
+              <div class="stat-grid">
+                <div class="stat">
+                  <div class="stat-label">Indexed</div>
+                  <div class="stat-value">{num(indexed)}</div>
+                  <div class="stat-note">Google-known URLs</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Not indexed</div>
+                  <div class="stat-value" style="color:#b91c1c">{num(notIndexed)}</div>
+                  <div class="stat-note">incl. aliases &amp; retired paths</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Search impressions</div>
+                  <div class="stat-value" style="color:#b91c1c">{num(impressions)}</div>
+                  <div class="stat-note">reporting-window total</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Corpus</div>
+                  <div class="stat-value">{num(corpusTotal)}</div>
+                  <div class="stat-note">articles</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Zero-citation</div>
+                  <div class="stat-value" style="color:#b45309">
+                    {num(corpusZeroCit)}
+                  </div>
+                  <div class="stat-note">
+                    {zeroCitPct !== null ? `${zeroCitPct.toFixed(1)}% of corpus` : '—'}
+                  </div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">With citation</div>
+                  <div class="stat-value" style="color:#047857">
+                    {num(corpusWithCit)}
+                  </div>
+                  <div class="stat-note">authoritative source cited</div>
+                </div>
+              </div>
+
+              <div
+                class="card"
+                style="margin-top:1rem;padding:1.15rem 1.25rem;border-left:4px solid var(--brand)"
+              >
+                <div
+                  style="font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#b45309;font-weight:700"
+                >
+                  The headline gap
+                </div>
+                <p style="margin-top:.45rem;font-size:.95rem;line-height:1.55">
+                  {
+                    corpusZeroCit !== null && corpusTotal !== null ? (
+                      <>
+                        <strong>
+                          {num(corpusZeroCit)} of {num(corpusTotal)} articles (
+                          {zeroCitPct !== null ? Math.round(zeroCitPct) : '—'}%)
+                        </strong>{' '}
+                        carry zero authoritative citation.{' '}
+                      </>
+                    ) : null
+                  }
+                  {
+                    cohort.length > 0 ? (
+                      <>
+                        <strong>
+                          {num(cohortZeroCit.length)} of the {num(cohort.length)}{' '}
+                          articles that have any search demand
+                        </strong>{' '}
+                        have zero citations.
+                      </>
+                    ) : null
+                  }
+                </p>
+                {
+                  bottleneck && (
+                    <p style="margin-top:.6rem;font-size:.83rem;color:#475569;line-height:1.55">
+                      {bottleneck}
+                    </p>
+                  )
+                }
+                {
+                  citationDomains.length > 0 && (
+                    <p style="margin-top:.6rem;font-size:.75rem;color:#94a3b8">
+                      Counted as authoritative: {citationDomains.join(', ')}
+                    </p>
+                  )
+                }
+              </div>
+
+              {
+                notBottleneck.length > 0 && (
+                  <details style="margin-top:.85rem">
+                    <summary>Ruled out as the bottleneck ({notBottleneck.length})</summary>
+                    <ul style="margin:.5rem 0 0;padding-left:1.1rem;font-size:.82rem;color:#475569;line-height:1.7">
+                      {notBottleneck.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </details>
+                )
+              }
+            </>
+          )
+        }
+      </section>
+
+      <!-- ── DEMAND COHORT ──────────────────────────────────────────── -->
+      <section>
+        <div class="sec-head">
+          <h2>Demand cohort</h2>
+          <span class="meta">
+            {
+              cohort.length > 0
+                ? `${cohort.length} articles with measurable search demand · ${num(cohortImpressions)} impressions · ${cohortZeroCit.length} with zero citations`
+                : 'no data'
+            }
+          </span>
+        </div>
+
+        {
+          cohort.length === 0 ? (
+            <div class="empty">
+              No demand cohort found. Expected <code>{COHORT_PATH}</code>.
+              {cohortRead.error && <div style="margin-top:.4rem;color:#b91c1c">{cohortRead.error}</div>}
+            </div>
+          ) : (
+            <>
+              <p style="font-size:.78rem;color:#64748b;margin-bottom:.6rem">
+                Sorted by impressions, descending. Highlighted rows have zero
+                authoritative citations.
+              </p>
+              <div class="scroll">
+                <table>
+                  <thead>
+                    <tr>
+                      <th style="width:2.5rem" class="num">#</th>
+                      <th>Slug</th>
+                      <th class="num">Impressions</th>
+                      <th class="num">Position</th>
+                      <th class="num">Citations</th>
+                      <th class="num">Words</th>
+                      <th class="num">Inbound</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cohortSorted.map((row, i) => (
+                      <tr class={(row.cit ?? 0) === 0 ? 'zero-cit' : undefined}>
+                        <td class="num" style="color:#94a3b8">{i + 1}</td>
+                        <td>
+                          <code>{row.slug}</code>
+                          {row.title && (
+                            <div style="color:#64748b;font-size:.76rem;margin-top:.15rem">
+                              {row.title}
+                            </div>
+                          )}
+                        </td>
+                        <td class="num" style="font-weight:600">
+                          {num(row.impr ?? null)}
+                        </td>
+                        <td class="num">
+                          {typeof row.pos === 'number' ? row.pos.toFixed(1) : '—'}
+                        </td>
+                        <td class="num">
+                          {(row.cit ?? 0) === 0 ? (
+                            <span class="pill" style="background:#fed7aa;color:#9a3412">0</span>
+                          ) : (
+                            <span class="pill" style="background:#d1fae5;color:#065f46">
+                              {row.cit}
+                            </span>
+                          )}
+                        </td>
+                        <td class="num" style="color:#64748b">{num(row.words ?? null)}</td>
+                        <td class="num" style="color:#64748b">{num(row.inl ?? null)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          )
+        }
+      </section>
+
+      <!-- ── COMPLETED CHANGES ──────────────────────────────────────── -->
+      <section>
+        <div class="sec-head">
+          <h2>Completed changes</h2>
+          <span class="meta">
+            {
+              progress.length > 0
+                ? `${progress.length} article${progress.length === 1 ? '' : 's'} · ${totalCitationsAdded} citations added · ${totalRounds} review rounds`
+                : 'nothing recorded yet'
+            }
+          </span>
+        </div>
+
+        {
+          progress.length === 0 ? (
+            <div class="empty">
+              <div style="font-weight:600;color:#475569">No completed work recorded.</div>
+              <div style="margin-top:.4rem">
+                Waiting on <code>{PROGRESS_PATH}</code>. Expected shape:
+              </div>
+              <div style="margin-top:.6rem;text-align:left;max-width:640px;margin-inline:auto">
+                <pre>{`[
+  {
+    "slug": "high-fiber-fast-food-options-guide",
+    "rounds": 2,
+    "verdict": "PASS",
+    "citations_added": 4,
+    "scores":  { "eeat": 8.5, "aeo": 7.0 },
+    "before":  { "impr": 462, "pos": 13.87, "cit": 0 },
+    "after":   { "impr": 462, "pos": 13.87, "cit": 4 }
+  }
+]`}</pre>
+              </div>
+              {progressRead.error && (
+                <div style="margin-top:.6rem;color:#b91c1c">
+                  File present but unreadable: {progressRead.error}
+                </div>
+              )}
+              {progressRead.found && progress.length === 0 && !progressRead.error && (
+                <div style="margin-top:.6rem;color:#b45309">
+                  File found but contained no entries.
+                </div>
+              )}
+            </div>
+          ) : (
+            <div class="scroll-x">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Slug</th>
+                    <th class="num">Rounds</th>
+                    <th>Verdict</th>
+                    <th class="num">Citations added</th>
+                    {scoreKeys.map((k) => (
+                      <th class="num">{k}</th>
+                    ))}
+                    {beforeAfterKeys.map((k) => (
+                      <th class="num">{k} (before → after)</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {progress.map((entry) => (
+                    <tr>
+                      <td><code>{entry.slug ?? '—'}</code></td>
+                      <td class="num">{fmtCell(entry.rounds)}</td>
+                      <td>
+                        <span class={`pill ${verdictTone(entry.verdict)}`}>
+                          {entry.verdict ?? '—'}
+                        </span>
+                      </td>
+                      <td class="num" style="font-weight:600">
+                        {fmtCell(entry.citations_added)}
+                      </td>
+                      {scoreKeys.map((k) => (
+                        <td class="num">{fmtCell(entry.scores?.[k])}</td>
+                      ))}
+                      {beforeAfterKeys.map((k) => (
+                        <td class="num">
+                          <span style="color:#94a3b8">{fmtCell(entry.before?.[k])}</span>
+                          <span style="color:#cbd5e1"> → </span>
+                          <span style="font-weight:600">{fmtCell(entry.after?.[k])}</span>
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )
+        }
+      </section>
+
+      <!-- ── TEST RESULTS ───────────────────────────────────────────── -->
+      <section>
+        <div class="sec-head">
+          <h2>Test results</h2>
+          <span class="meta">
+            {harnessRows.length > 0 ? `${harnessRows.length} rows` : 'no harness output'}
+          </span>
+        </div>
+
+        {
+          !harnessRead.found ? (
+            <div class="empty">
+              No harness output. Expected <code>{HARNESS_PATH}</code>.
+              {harnessRead.error && (
+                <div style="margin-top:.4rem;color:#b91c1c">{harnessRead.error}</div>
+              )}
+            </div>
+          ) : harnessEmptyArray ? (
+            <div class="empty">
+              <code>{HARNESS_PATH}</code> exists but recorded no test runs yet.
+            </div>
+          ) : harnessUnrenderable ? (
+            <>
+              <p style="font-size:.78rem;color:#64748b;margin-bottom:.5rem">
+                Harness file found but its shape is not a recognized results
+                array. Raw contents:
+              </p>
+              <pre>{JSON.stringify(harnessRaw, null, 2)}</pre>
+            </>
+          ) : (
+            <div class="scroll-x">
+              <table>
+                <thead>
+                  <tr>
+                    {harnessCols.map((c) => (
+                      <th class={typeof harnessRows[0]?.[c] === 'number' ? 'num' : undefined}>
+                        {c}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {harnessRows.map((row) => (
+                    <tr>
+                      {harnessCols.map((c) => {
+                        const tone = statusTone(row?.[c]);
+                        return (
+                          <td class={typeof row?.[c] === 'number' ? 'num' : undefined}>
+                            {tone ? (
+                              <span class={`pill ${tone}`}>{fmtCell(row?.[c])}</span>
+                            ) : (
+                              fmtCell(row?.[c])
+                            )}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )
+        }
+      </section>
+
+      <!-- ── REMAINING GAPS ─────────────────────────────────────────── -->
+      <section>
+        <div class="sec-head">
+          <h2>Remaining gaps</h2>
+          <span class="meta">
+            {
+              cohortZeroCit.length > 0
+                ? `${remainingZeroCit.length} of ${cohortZeroCit.length} demand articles still uncited`
+                : 'no cohort data'
+            }
+          </span>
+        </div>
+
+        {
+          cohortZeroCit.length === 0 ? (
+            <div class="empty">
+              Nothing to compute — the demand cohort is empty.
+            </div>
+          ) : (
+            <>
+              <div class="stat-grid" style="margin-bottom:1rem">
+                <div class="stat">
+                  <div class="stat-label">Closed</div>
+                  <div class="stat-value" style="color:#047857">{coveredZeroCit}</div>
+                  <div class="stat-note">zero-citation demand articles fixed</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Open</div>
+                  <div class="stat-value" style="color:#b45309">
+                    {remainingZeroCit.length}
+                  </div>
+                  <div class="stat-note">still carrying zero citations</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Impressions at stake</div>
+                  <div class="stat-value">{num(remainingImpressions)}</div>
+                  <div class="stat-note">on still-uncited articles</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Cohort coverage</div>
+                  <div class="stat-value">{coveragePct.toFixed(0)}%</div>
+                  <div class="bar" style="margin-top:.5rem">
+                    <span style={`width:${Math.max(coveragePct, 0).toFixed(1)}%`}></span>
+                  </div>
+                </div>
+              </div>
+
+              <details>
+                <summary>
+                  Open zero-citation articles by impressions ({remainingZeroCit.length})
+                </summary>
+                <div class="scroll" style="margin-top:.6rem;max-height:420px">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Slug</th>
+                        <th class="num">Impressions</th>
+                        <th class="num">Position</th>
+                        <th class="num">Words</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {remainingZeroCit.map((row) => (
+                        <tr>
+                          <td><code>{row.slug}</code></td>
+                          <td class="num" style="font-weight:600">{num(row.impr ?? null)}</td>
+                          <td class="num">
+                            {typeof row.pos === 'number' ? row.pos.toFixed(1) : '—'}
+                          </td>
+                          <td class="num" style="color:#64748b">{num(row.words ?? null)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            </>
+          )
+        }
+      </section>
+
+      <!-- ── NEXT ACTION ────────────────────────────────────────────── -->
+      <section>
+        <div class="sec-head">
+          <h2>Next highest-impact action</h2>
+        </div>
+
+        {
+          declaredNextAction ? (
+            <div class="card" style="padding:1.15rem 1.25rem;border-left:4px solid var(--brand)">
+              <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#b45309;font-weight:700">
+                Declared in progress.json
+              </div>
+              <p style="margin-top:.45rem;font-size:.95rem;line-height:1.55">
+                {typeof declaredNextAction === 'string' ? (
+                  declaredNextAction
+                ) : (
+                  <pre style="margin-top:.5rem">{JSON.stringify(declaredNextAction, null, 2)}</pre>
+                )}
+              </p>
+            </div>
+          ) : nextAction ? (
+            <div class="card" style="padding:1.15rem 1.25rem;border-left:4px solid var(--brand)">
+              <div style="font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#b45309;font-weight:700">
+                Highest-demand article still carrying zero citations
+              </div>
+              <p style="margin-top:.5rem;font-size:1.05rem;font-weight:700;color:#0f172a">
+                {nextAction.title ?? nextAction.slug}
+              </p>
+              <p style="margin-top:.25rem"><code>{nextAction.slug}</code></p>
+              <div class="stat-grid" style="margin-top:.9rem">
+                <div class="stat">
+                  <div class="stat-label">Impressions</div>
+                  <div class="stat-value">{num(nextAction.impr ?? null)}</div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Avg. position</div>
+                  <div class="stat-value">
+                    {typeof nextAction.pos === 'number' ? nextAction.pos.toFixed(1) : '—'}
+                  </div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Citations</div>
+                  <div class="stat-value" style="color:#b45309">
+                    {nextAction.cit ?? 0}
+                  </div>
+                </div>
+                <div class="stat">
+                  <div class="stat-label">Words</div>
+                  <div class="stat-value">{num(nextAction.words ?? null)}</div>
+                </div>
+              </div>
+              <p style="margin-top:.85rem;font-size:.83rem;color:#475569;line-height:1.55">
+                Add authoritative sourcing to this article next: it has the most
+                measurable search demand of any article still carrying zero
+                authoritative citations.
+              </p>
+            </div>
+          ) : cohortZeroCit.length > 0 ? (
+            <div class="empty">
+              Every zero-citation article in the demand cohort is accounted for in{' '}
+              <code>{PROGRESS_PATH}</code>. Re-derive the cohort to find the next
+              target.
+            </div>
+          ) : (
+            <div class="empty">
+              No cohort data, so no action can be derived. Expected{' '}
+              <code>{COHORT_PATH}</code>.
+            </div>
+          )
+        }
+      </section>
+
+      <footer
+        style="margin-top:2.5rem;padding-top:1rem;border-top:1px solid #e2e8f0;font-size:.75rem;color:#94a3b8;line-height:1.7"
+      >
+        <div>
+          Private page — <code>noindex, nofollow</code>, excluded from
+          sitemap-index.xml, unlinked from the site.
+        </div>
+        <div>
+          Sources: <code>{COHORT_PATH}</code> · <code>{EVIDENCE_PATH}</code> ·{' '}
+          <code>{TRIAGE_PATH}</code> · <code>{PROGRESS_PATH}</code> ·{' '}
+          <code>{HARNESS_PATH}</code>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

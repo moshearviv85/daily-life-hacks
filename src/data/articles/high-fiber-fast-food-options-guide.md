@@ -10,7 +10,7 @@ tags:
 - nutrition basics
 image: /images/high-fiber-fast-food-options-guide-main.jpg
 imageAlt: "Fast-casual grain bowl with black beans, greens, sweet potato, seeds, fruit, and a wrap at a serving counter"
-quickAnswer: "The highest-fiber verified custom order is a Chipotle veggie bowl with both beans at 25 grams. The highest ready-made single item is Chick-fil-A's Cool Wrap at 14 grams, including its dressing."
+quickAnswer: "Across ten orders checked against each chain's own U.S. nutrition data on July 30, 2026, the most fiber came from a custom Chipotle veggie bowl with brown rice, black beans, pinto beans, fajita vegetables, guacamole, and romaine: 25 grams, 89% of the FDA's 28-gram Daily Value, at 725 calories and 1,130 milligrams of sodium. Of the fixed menu items among those ten, Subway's Veggie Patty Protein Bowl carries the most fiber at 19 grams for 540 calories and 1,550 milligrams of sodium, at participating locations only."
 date: 2026-01-21
 dateModified: 2026-07-30
 author: "David Miller"
@@ -20,63 +20,87 @@ whatsHot: false
 mustRead: false
 faq:
 - question: Which fast food order has the most fiber?
-  answer: Among the current orders verified here, a custom Chipotle veggie bowl with brown rice, black beans, pinto beans, fajita vegetables, guacamole, and romaine has 25 grams of fiber. That total uses Chipotle's standard published portions. It is a custom build, not a fixed menu item, so the scoop sizes you receive can vary.
+  answer: Of the ten orders verified against official chain data on July 30, 2026, a custom Chipotle veggie bowl with brown rice, black beans, pinto beans, fajita vegetables, guacamole, and romaine has the most fiber at 25 grams. That total uses Chipotle's standard published portions. It is a custom build, not a fixed menu item, so the scoop sizes you receive can vary.
 - question: Does the Chick-fil-A Cool Wrap have 14 grams of fiber?
   answer: Chick-fil-A's current U.S. product page lists the Cool Wrap menu item at 14 grams of fiber, 660 calories, 43 grams of protein, and 1,420 milligrams of sodium. The page's ingredient list includes the Avocado Lime Ranch dressing. Nutrition can change with location or customization, so match the listed build.
+- question: What is the highest-fiber single item at a fast food chain?
+  answer: Of the ten orders verified against official chain data on July 30, 2026, Subway's Veggie Patty Protein Bowl carries the most fiber in a fixed menu item at 19 grams, listed in Subway's U.S. nutrition tables dated January 2026 at 540 calories, 22 grams of protein, and 1,550 milligrams of sodium. Subway marks the Veggie Patty as a participating-locations item, so call ahead. Chick-fil-A's Chicken Tortilla Soup is close behind at 17 grams for 280 calories, with 24 grams of protein and 1,060 milligrams of sodium, but Chick-fil-A's product page lists it as a seasonal item, and Chick-fil-A's customer support page says the last run went from November 10, 2025 to March 7, 2026.
 - question: How much fiber is in Panera's Mediterranean Veggie sandwich?
-  answer: Panera's U.S. nutrition guide effective June 17, 2026 lists a whole Mediterranean Veggie on Tomato Basil at 8 grams of fiber. The same entry lists 520 calories, 18 grams of protein, and 1,260 milligrams of sodium. Older 10-gram figures no longer match that current guide.
+  answer: Panera's U.S. nutrition guide effective June 17, 2026 lists a whole Mediterranean Veggie on Tomato Basil at 8 grams of fiber. The same entry lists 520 calories, 18 grams of protein, and 1,260 milligrams of sodium.
 - question: Is 10 grams of fiber high for a fast food meal?
   answer: Ten grams is about 36 percent of the FDA's 28-gram Daily Value. The FDA uses 20 percent Daily Value or more as a general guide for a high amount of a nutrient. That describes the fiber number, not the whole meal, so calories, protein, sodium, portion size, and your full day still deserve a look.
-- question: Does Wendy's baked potato and chili have 10 grams of fiber?
-  answer: The total here is for a Plain Baked Potato plus Wendy's published Small Chili build, including the default Saltine Packet. Eating the potato, chili, and packet gives the listed 550 calories, 10 grams of fiber, 26 grams of protein, and 1,090 milligrams of sodium. If you skip the packet or change the build, use the updated total in Wendy's nutrition panel.
 ---
-Fast-food fiber lists age badly. Menus change, portions move, and a gram count without the exact build is basically trivia wearing a nutrition label.
+Fast-food fiber lists age badly. Menus change, portions move, and a gram count without the exact build is trivia wearing a nutrition label.
 
-Here is the answer up front: the highest-fiber verified custom order below is a Chipotle veggie bowl with both beans at **25 grams of fiber**. The highest ready-made single item is the **Chick-fil-A Cool Wrap at 14 grams**, including its Avocado Lime Ranch dressing. Every row ties the exact order to a current official U.S. chain source checked on the date shown.
+Answer up front: the highest-fiber custom order below is a Chipotle veggie bowl with both beans at **25 grams of fiber**. Of the ten orders verified against official chain data on July 30, 2026, no fixed menu item wins outright. Subway's Veggie Patty Protein Bowl carries the most fiber at 19 grams, but that's 540 calories, 1,550 milligrams of sodium, and participating locations only. Chick-fil-A's Chicken Tortilla Soup does 17 grams in 280 calories with 24 grams of protein, but it's seasonal.
 
-The [FDA Daily Value for dietary fiber is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). The FDA also uses 20% Daily Value or more as a general guide for a high amount of a nutrient. That makes the math useful, but it does not turn one column into a grade for the whole meal.
+The [FDA Daily Value for dietary fiber is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), and 20% or more of it counts as a high amount. The FDA's label guide calls fiber a [dietary component of public health concern](https://www.accessdata.fda.gov/scripts/InteractiveNutritionFactsLabel/assets/InteractiveNFL_DietaryFiber_October2021.pdf) because most Americans fall short. One column isn't a grade for the whole meal.
 
 ## Verified high-fiber fast food orders
 
 | Chain | Exact order or build | Fiber | Calories | Protein | Sodium | Checked | Official source |
 |---|---|---:|---:|---:|---:|---|---|
-| Chipotle | Veggie burrito bowl: brown rice, black beans, pinto beans, fajita vegetables, guacamole, romaine; no salsa | 25 g (89% DV) | 725 | 23 g | 1,130 mg | 2026-07-30 | [U.S. nutrition guide](https://www.chipotle.com/content/dam/chipotle/menu/nutrition/US-Nutrition-Facts-Paper-Menu-3-2025.pdf) |
-| Chick-fil-A | Chick-fil-A Cool Wrap with included Avocado Lime Ranch dressing | 14 g (50% DV) | 660 | 43 g | 1,420 mg | 2026-07-30 | [Cool Wrap nutrition](https://www.chick-fil-a.com/menu/entrees/chick-fil-a-cool-wrap) |
-| Wendy's | Plain Baked Potato plus Small Chili, including the default Saltine Packet; totals assume the packet is eaten | 10 g (36% DV) | 550 | 26 g | 1,090 mg | 2026-07-30 | [Baked potato](https://order.wendys.com/us/en/national/menu/fries-sides/plain-baked-potato) + [Small Chili](https://order.wendys.com/us/en/national/menu/fries-sides/chili) |
-| Panera | Whole Mediterranean Veggie on Tomato Basil | 8 g (29% DV) | 520 | 18 g | 1,260 mg | 2026-07-30 | [U.S. nutrition guide](https://www.panerabread.com/content/dam/panerabread/documents/c6-26-nutrition-guide.pdf) |
-| Panera | Steel Cut Oatmeal with Strawberries, Pecans & Cinnamon Crunch Topping | 7 g (25% DV) | 330 | 8 g | 170 mg | 2026-07-30 | [U.S. nutrition guide](https://www.panerabread.com/content/dam/panerabread/documents/c6-26-nutrition-guide.pdf) |
-| Starbucks | Rolled & Steel-Cut Oatmeal, plain standard recipe | 4 g (14% DV) | 160 | 5 g | 125 mg | 2026-07-30 | [Oatmeal nutrition](https://www.starbucks.com/menu/product/301/single/nutrition) |
+| Chipotle | Veggie burrito bowl: brown rice, black beans, pinto beans, fajita vegetables, guacamole, romaine; no salsa | 25 g (89% DV) | 725 | 23 g | 1,130 mg | 2026-07-30 | [Guide](https://www.chipotle.com/content/dam/chipotle/menu/nutrition/US-Nutrition-Facts-Paper-Menu-3-2025.pdf) |
+| Subway | Veggie Patty Protein Bowl: footlong patty portion, lettuce, spinach, tomatoes, onions, green peppers, cucumbers, olives; no dressing or cheese; participating locations only | 19 g (68% DV) | 540 | 22 g | 1,550 mg | 2026-07-30 | [Tables](https://media.subway.com/dam/urn:aaid:aem:2278372c-147b-42f2-8edc-7d8d94d1f07e/original/as/us-nutrition-en.pdf) |
+| Chick-fil-A | Chicken Tortilla Soup, cup portion; seasonal item, last run Nov. 10, 2025 to March 7, 2026 | 17 g (61% DV) | 280 | 24 g | 1,060 mg | 2026-07-30 | [Nutrition](https://www.chick-fil-a.com/menu/sides/chicken-tortilla-soup) + [Dates](https://www.chick-fil-a.com/customer-support/our-food/our-menu/when-and-where-is-the-chicken-tortilla-soup-available) |
+| Chick-fil-A | Chick-fil-A Cool Wrap with included Avocado Lime Ranch dressing | 14 g (50% DV) | 660 | 43 g | 1,420 mg | 2026-07-30 | [Nutrition](https://www.chick-fil-a.com/menu/entrees/chick-fil-a-cool-wrap) |
+| Panera | Green Goddess Chicken Wrap, Grab N Go section | 14 g (50% DV) | 460 | 32 g | 1,340 mg | 2026-07-30 | [Guide](https://www.panerabread.com/content/dam/panerabread/documents/c6-26-nutrition-guide.pdf) |
+| Panera | Chicken Caesar Wrap, Grab N Go section | 14 g (50% DV) | 480 | 32 g | 1,510 mg | 2026-07-30 | [Guide](https://www.panerabread.com/content/dam/panerabread/documents/c6-26-nutrition-guide.pdf) |
+| Wendy's | Plain Baked Potato plus Small Chili; Wendy's lists the Small Chili at 280 calories and the Saltine Packet as a default component, without breaking the packet out separately | 10 g (36% DV) | 550 | 26 g | 1,090 mg | 2026-07-30 | [Potato](https://order.wendys.com/us/en/national/menu/fries-sides/plain-baked-potato) + [Chili](https://order.wendys.com/us/en/national/menu/fries-sides/chili) |
+| Panera | Whole Mediterranean Veggie on Tomato Basil | 8 g (29% DV) | 520 | 18 g | 1,260 mg | 2026-07-30 | [Guide](https://www.panerabread.com/content/dam/panerabread/documents/c6-26-nutrition-guide.pdf) |
+| Panera | Steel Cut Oatmeal with Strawberries, Pecans & Cinnamon Crunch Topping | 7 g (25% DV) | 330 | 8 g | 170 mg | 2026-07-30 | [Guide](https://www.panerabread.com/content/dam/panerabread/documents/c6-26-nutrition-guide.pdf) |
+| Starbucks | Rolled & Steel-Cut Oatmeal, plain standard recipe | 4 g (14% DV) | 160 | 5 g | 125 mg | 2026-07-30 | [Nutrition](https://www.starbucks.com/menu/product/301/single/nutrition) |
 
-The Chipotle and Wendy's rows are sums of the listed components in their official nutrition materials. The other rows use the chains' published totals for the named item. Chain values are rounded, and actual portions can vary. If a local app shows a different build, trust the build in front of you.
+The Chipotle and Wendy's rows sum components; the rest use published totals. Panera's figures come from the guide effective 6/17/2026, Subway's from tables dated January 2026, Chipotle's from its 3/2025 paper menu chart, which carries an OCT-2024 revision code. Chick-fil-A's site returns a 403 to automated requests, so its figures get re-checked against Internet Archive captures of Chick-fil-A's own pages. The soup's numbers come from the [product page as captured July 22, 2026](https://web.archive.org/web/20260722171744/https://www.chick-fil-a.com/menu/sides/chicken-tortilla-soup); its seasonal dates come from Chick-fil-A's [availability answer as captured April 15, 2026](https://web.archive.org/web/20260415044030/https://www.chick-fil-a.com/customer-support/our-food/our-menu/when-and-where-is-the-chicken-tortilla-soup-available), the page that actually carries them. The product page only calls it a seasonal item. Panera's PDF is not blocked: it downloads in full, all 36 pages, to a plain automated request, and Panera sources four rows here, so all four come straight out of that file.
 
-The Starbucks oatmeal stays in the table as a practical fallback, not as an FDA-level "high" fiber item. Four grams is 14% of the 28-gram Daily Value. Honest labels are more useful than stretching the headline.
+## Which fast food order has the most fiber?
 
-## The custom-order winner and single-item winner
+Chipotle, but only with the full build above. Skip either bean and the headline drops.
 
-Chipotle takes the top spot only when you order the full build: brown rice, black beans, pinto beans, fajita vegetables, guacamole, and romaine, with no salsa. Using Chipotle's published standard portions, that adds up to 25 grams of fiber, 725 calories, 23 grams of protein, and 1,130 milligrams of sodium.
+Among fixed menu items it's a split decision. Subway's bowl carries the most fiber at 19 grams, and Subway footnotes that section: the numbers assume the vegetables listed above, no dressing, no cheese. A build, not a scoop.
 
-Both beans are doing most of the work. The guacamole adds another 6 grams, while the brown rice, fajita vegetables, and romaine supply the rest. Skip one bean or the guacamole and the 25-gram headline no longer applies. Custom-order math is annoyingly literal like that.
+Chick-fil-A's Chicken Tortilla Soup gives up 2 grams of fiber and wins everywhere else: half the calories, 490 fewer milligrams of sodium, 2 more grams of protein. The catch is the calendar. Chick-fil-A calls it seasonal, and [its own support page](https://www.chick-fil-a.com/customer-support/our-food/our-menu/when-and-where-is-the-chicken-tortilla-soup-available) dates the last run November 10, 2025 to March 7, 2026, so in July it's a plan for later, not lunch.
 
-Chick-fil-A's Cool Wrap is the ready-made winner in this verified set. Its current page lists 14 grams of fiber, 660 calories, 43 grams of protein, and 1,420 milligrams of sodium. The listed item includes Avocado Lime Ranch dressing, so those numbers should not be presented as the wrap by itself.
+## Which fast food item has the most fiber per calorie?
 
-## Wendy's is now a 10-gram combo
+Panera's Vegetarian Black Bean Soup, and it isn't close. The [guide effective June 17, 2026](https://www.panerabread.com/content/dam/panerabread/documents/c6-26-nutrition-guide.pdf) lists the bowl, a cup and a half, at **18 grams of fiber for 140 calories**, with 8 grams of protein.
 
-The current Wendy's numbers do not support the older claim that a baked potato plus chili delivers 16 grams of fiber. The live U.S. page lists the Plain Baked Potato at 7 grams. Wendy's published 280-calorie Small Chili build includes a default Saltine Packet and lists 3 grams of fiber, 19 grams of protein, and 1,050 milligrams of sodium.
+Fiber per calorie flips it. All ten orders from the table above, plus that soup:
 
-Together, the potato, Small Chili, and eaten Saltine Packet provide the table's 10 grams of fiber, 550 calories, 26 grams of protein, and 1,090 milligrams of sodium. Skip the packet and that four-number total no longer describes your order. It is still a straightforward order. Just do not give it six imaginary grams because an older list did.
+| Order | Fiber per 100 calories |
+|---|---:|
+| Panera Vegetarian Black Bean Soup, bowl | 12.9 g |
+| Chick-fil-A Chicken Tortilla Soup, cup | 6.1 g |
+| Subway Veggie Patty Protein Bowl | 3.5 g |
+| Chipotle veggie bowl, both beans | 3.4 g |
+| Panera Green Goddess Chicken Wrap | 3.0 g |
+| Panera Chicken Caesar Wrap | 2.9 g |
+| Starbucks Rolled & Steel-Cut Oatmeal | 2.5 g |
+| Chick-fil-A Cool Wrap | 2.1 g |
+| Panera Steel Cut Oatmeal with Strawberries, Pecans & Cinnamon Crunch Topping | 2.1 g |
+| Wendy's potato plus Small Chili | 1.8 g |
+| Panera Mediterranean Veggie, whole | 1.5 g |
 
-## Panera's Mediterranean Veggie has 8 grams
+That soup sits out of the main table because it isn't a meal: 8 grams of protein is a side dish wearing a bowl. The tortilla soup answers that objection at half the density, with 24 grams. Pair it with a protein and you land in the same place, in any month.
 
-Panera's current U.S. guide, effective June 17, 2026, lists the whole Mediterranean Veggie on Tomato Basil at **8 grams of fiber**, not 10. It also lists 520 calories, 18 grams of protein, and 1,260 milligrams of sodium.
+## How much fiber is in Wendy's baked potato and chili?
 
-For breakfast, the standard Steel Cut Oatmeal with strawberries, pecans, and cinnamon crunch topping reaches 7 grams of fiber with 330 calories and 170 milligrams of sodium. That is a very different meal from the sandwich, which is exactly why the table keeps calories, protein, and sodium beside the fiber number.
+Ten grams for the pair: the U.S. pages list the Plain Baked Potato at 7 grams and the Small Chili at 3 more.
 
-## How to use these numbers without fooling yourself
+Together the potato and Small Chili provide the table's 10 grams of fiber, 550 calories, 26 grams of protein, and 1,090 milligrams of sodium. Wendy's ships a Saltine Packet as a default component and publishes no nutrition line for it, so the page can't say whether the packet sits inside the 280 or on top.
 
-Match the order word for word. "Chipotle bowl" is not specific enough, and "oatmeal with toppings" can describe several different builds. The detail is the data.
+## How much fiber is in Panera's Mediterranean Veggie?
 
-Then scan the full row. A higher fiber count does not automatically mean lower calories or lower sodium. The Cool Wrap, for example, leads the ready-made items on fiber and protein here, while Panera's oatmeal has far less sodium. Those are separate facts, not a health contest.
+Panera's current U.S. guide, effective June 17, 2026, lists the whole Mediterranean Veggie on Tomato Basil at **8 grams of fiber**, not 10, plus 520 calories and 1,260 milligrams of sodium. Its Steel Cut Oatmeal lists 7 grams for 330 calories. Same fiber neighborhood, wildly different meal.
 
-Finally, check the date. Rows without a reproducible current official source for fiber, calories, protein, and sodium were removed from this update. That is why this list is shorter than the usual roundup padded with calculator echoes and numbers that have been copied since flip phones were exciting.
+## How to order fiber when this list goes stale
 
-If price is the next question, the [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) compares grocery staples with a documented dataset. For another restaurant lens, the [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) keeps the same exact-order discipline.
+Menus move. These rules don't.
+
+1. **Beans do the work.** Chipotle lists 7 grams of fiber per 4 ounces of black beans, 8 for pinto. Together they're 15 grams before anything else.
+2. **Read the sodium.** Every pick here except the two oatmeals clears 1,000 milligrams against a [2,300-milligram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels).
+3. **Check the calendar.** Soup is where the fiber hides at the chicken chains, and soup gets pulled in spring.
+
+Taco Bell is the honest gap: both of its nutrition URLs redirected to a corporate page on yum.com on July 30, 2026, with no per-item fiber table.
+
+If price is the next question, the [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) and the [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) keep the same exact-order discipline.

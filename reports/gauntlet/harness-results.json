@@ -1,0 +1,72 @@
+{
+  "mode": "dist",
+  "base_url": "https://www.daily-life-hacks.com",
+  "sitemap_urls": 297,
+  "sample": 30,
+  "elapsed_seconds": 0.9,
+  "checks": [
+    {
+      "number": 1,
+      "name": "released articles are in the sitemap",
+      "status": "PASS",
+      "summary": "267/267 released article URLs present (of 267 article files; exclusion rules read from astro.config.mjs)",
+      "details": []
+    },
+    {
+      "number": 2,
+      "name": "no sitemap URL returns 404",
+      "status": "PASS",
+      "summary": "all 297 sitemap URLs return < 400",
+      "details": []
+    },
+    {
+      "number": 3,
+      "name": "sampled sitemap URLs are self-canonical",
+      "status": "PASS",
+      "summary": "all 30 sampled pages are self-canonical",
+      "details": []
+    },
+    {
+      "number": 4,
+      "name": "no page is both noindex and in the sitemap",
+      "status": "PASS",
+      "summary": "none of the 30 sampled sitemap URLs are noindex",
+      "details": []
+    },
+    {
+      "number": 5,
+      "name": "utility pages are excluded from the sitemap",
+      "status": "PASS",
+      "summary": "all 8 utility pages absent from the sitemap and excluded by config",
+      "details": []
+    },
+    {
+      "number": 6,
+      "name": "sitemap has <priority> and <image:loc>",
+      "status": "PASS",
+      "summary": "297 urls, 297 <priority>, 325 <image:loc>",
+      "details": []
+    },
+    {
+      "number": 7,
+      "name": "robots.txt reachable and does not block articles",
+      "status": "PASS",
+      "summary": "robots.txt OK (12 groups, 1 Sitemap lines); 22 article paths crawlable for 4 agents",
+      "details": []
+    },
+    {
+      "number": 8,
+      "name": "JSON-LD parses and declares @context/@type",
+      "status": "PASS",
+      "summary": "141 JSON-LD blocks on 30 sampled pages all valid",
+      "details": []
+    },
+    {
+      "number": 9,
+      "name": "llms.txt is reachable",
+      "status": "PASS",
+      "summary": "https://www.daily-life-hacks.com/llms.txt -> HTTP 200 (4258 bytes)",
+      "details": []
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+ "updated": "2026-07-31",
+ "round": 2,
+ "pages": [
+  {
+   "slug": "high-fiber-fast-food-options-guide",
+   "url": "https://www.daily-life-hacks.com/high-fiber-fast-food-options-guide/",
+   "impressions": 462,
+   "position": 13.9,
+   "citations_before": 1,
+   "citations_after": 13,
+   "citations_added": 12,
+   "verdict": "WINS",
+   "rounds": 2,
+   "scores": {
+    "intent_satisfaction": 8,
+    "factual_accuracy": 9,
+    "trust": 8,
+    "citation_worthiness": 9,
+    "answer_extractability": 8
+   },
+   "remaining_gap": "The page crowns Panera's Vegetarian Black Bean Soup the fiber-per-calorie winner (\"and it isn't close\", 18 g / 140 cal / 8 g protein) and pre-empts the protein objection, but never states its sodium. The Panera guide lists that bowl at 1,120 mg, roughly 8 mg per calorie, about four times the sodium density of anything in the main table (Subway 2.9, Chipotle 1.6). Because the soup sits outside the main table it is the one item on the page that escapes the four-column Fiber/Calories/Protein/Sodium discipline the whole article is built on, and it escapes it at exactly the point where a superlative is being awarded. An AI extracting \"highest fiber per calorie at a fast-food chain\" gets a number stripped of the very context the page says one column can never supply. Two smaller items compound it: (a) the soup row's \"cup portion\" descriptor appears on neither cited Chick-fil-A page (the product page carries no serving-size label at all, only marketing prose), and (b) the Cool Wrap row gets no Internet Archive link even though the trust paragraph says Chick-fil-A figures are re-checked against archive captures of its \"pages\" plural, so the one Chick-fil-A row a reader cannot reproduce is left unreproducible. Separately, and outside the article file: tests/high-fiber-fast-food-guide.test.mjs:151 still asserts /Chick-fil-A's site and Panera's PDF both return a 403 to automated requests/i, which the corrected Panera sentence no longer satisfies, so the guard suite ships red."
+  },
+  {
+   "slug": "how-to-store-homemade-salad-dressing-safely",
+   "url": "https://www.daily-life-hacks.com/how-to-store-homemade-salad-dressing-safely/",
+   "impressions": 194,
+   "position": 17.1,
+   "citations_before": 0,
+   "citations_after": 11,
+   "citations_added": 11,
+   "verdict": "WINS",
+   "rounds": 2,
+   "scores": {
+    "factual_accuracy": 9,
+    "intent_satisfaction": 9,
+    "answer_extractability": 8,
+    "citation_worthiness": 9,
+    "trust": 9
+   },
+   "remaining_gap": "The garlic-in-oil extraction surface. The raw-egg gap is genuinely closed, but the botulism rule is now the weakest thing on the two surfaces an AI assistant will lift. quickAnswer says 'raw garlic or fresh herbs in oil with no added acid needs 40F or below for no more than 4 days', and FAQ #1 repeats it near-verbatim. Standing alone that phrasing leaks two errors. (1) It scopes the rule to RAW garlic and FRESH herbs, but OSU SP 50-701 is explicit: 'If oil is seasoned with dried garlic and/or dried herbs, the mixture MUST be refrigerated and used within 4 days or frozen.' A reader lifting only the quickAnswer would conclude granulated garlic or dried oregano in oil is exempt from the 4-day clock. The body carries this correctly ('Oregon State applies the same 4-day limit even when the garlic or herbs are dried') but the body is not the extraction surface. (2) The qualifier 'with no added acid' invites exactly the inference the body spends a paragraph demolishing, that a splash of lemon juice buys more time. FAQ #3 rebuts it, but FAQ #3 is a separate mainEntity node in the FAQPage JSON-LD and will not travel with FAQ #1. So the single highest-consequence claim on the page, a botulism limit, is stated in its most quotable form with a scope carve-out that is wrong and a qualifier that is actively misleading."
+  },
+  {
+   "slug": "high-fiber-bran-muffins-that-taste-good",
+   "url": "https://www.daily-life-hacks.com/high-fiber-bran-muffins-that-taste-good/",
+   "impressions": 178,
+   "position": 65.7,
+   "citations_before": 0,
+   "citations_after": 6,
+   "citations_added": 6,
+   "verdict": "WINS",
+   "rounds": 2,
+   "scores": {
+    "factual_accuracy": 9,
+    "trust": 8,
+    "answer_extractability": 8,
+    "intent_satisfaction": 7,
+    "citation_worthiness": 8
+   },
+   "remaining_gap": "The article's entire hook is that the whole-wheat swap \"clears the FDA high-fiber line\" at 21% DV, but it never discloses that FDA's 20%-or-more threshold in 21 CFR 101.54 is defined \"per reference amount customarily consumed,\" not per arbitrary serving. A skeptical reader or an AI grading the page can dismiss the claim as serving-size gaming, since a 110 g muffin is roughly double a typical bakery serving assumption. The article is in fact correct: 21 CFR 101.12 Table 2 sets the reference amount for \"Bagels, toaster pastries, muffins (excluding English muffins)\" at exactly 110 g, the same weight as this muffin. But that keystone fact is absent, so the strongest, most citation-worthy sentence on the page is the one that was never written. Secondary gaps: the quickAnswer is nutrition-only and never signals that a full recipe exists, so an AI lifting it answers \"how much fiber\" rather than the recipe intent that dominates this query; the nutrition tables omit protein, fat, and carbohydrates, which both top competitors publish; and the page does not cover make-ahead or refrigerated bran-muffin batter, a standard sub-intent for this dish."
+  },
+  {
+   "slug": "how-to-double-recipe-seasoning-without-guessing",
+   "url": "https://www.daily-life-hacks.com/how-to-double-recipe-seasoning-without-guessing/",
+   "impressions": 175,
+   "position": 7.2,
+   "citations_before": 4,
+   "citations_after": 8,
+   "citations_added": 4,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": null,
+   "remaining_gap": null
+  },
+  {
+   "slug": "cooking-oils-smoke-points-best-uses",
+   "url": "https://www.daily-life-hacks.com/cooking-oils-smoke-points-best-uses/",
+   "impressions": 167,
+   "position": 75.2,
+   "citations_before": 0,
+   "citations_after": 9,
+   "citations_added": 9,
+   "verdict": "WINS (content merit; r1 critic marked LOSES only because not deployed)",
+   "rounds": 1,
+   "scores": null,
+   "remaining_gap": null
+  },
+  {
+   "slug": "prebiotic-foods-beyond-the-buzzwords",
+   "url": "https://www.daily-life-hacks.com/prebiotic-foods-beyond-the-buzzwords/",
+   "impressions": 120,
+   "position": 10.6,
+   "citations_before": 0,
+   "citations_after": 17,
+   "citations_added": 17,
+   "verdict": "LOSES",
+   "rounds": 2,
+   "scores": {
+    "intent_satisfaction": 7,
+    "factual_accuracy": 6,
+    "trust": 7,
+    "answer_extractability": 8,
+    "citation_worthiness": 7
+   },
+   "remaining_gap": "The OLIPOP section. It is the page's most shareable block and it is the one place where the article abandons the sourcing discipline it just spent 60 lines establishing: it attaches an inulin claim to a source that never says inulin, and that claim is outright false for OLIPOP's 6g Fiber Line (cassava root fiber, acacia fiber, guar fiber - zero inulin). The evidence-status table was genuinely repaired: all eight rows now carry inline citations, I fetched every one, and the previously unsourced beta-glucan, pectin, RFO and resistant-starch verdicts are now backed verbatim by Oregon State LPI (200 with a browser UA; WebFetch's 403 was a datacenter-IP artifact) and PMC6463098, while the overclaiming 'Established prebiotic class' language was correctly downgraded to the source-matched 'most-investigated'. But the fix stopped at the table. The quickAnswer and the garlic FAQ still say 'best-established', which no cited source supports, so the strongest wording on the page is now the least sourced wording on the page - and it is precisely the sentence an AI would lift."
+  },
+  {
+   "slug": "selenium-containing-foods-easy-ways",
+   "url": "https://www.daily-life-hacks.com/selenium-containing-foods-easy-ways/",
+   "impressions": 119,
+   "position": 56.0,
+   "citations_before": 0,
+   "citations_after": 3,
+   "citations_added": 3,
+   "verdict": "TIES",
+   "rounds": 2,
+   "scores": {
+    "factual_accuracy": 8,
+    "trust": 6,
+    "intent_satisfaction": 7,
+    "answer_extractability": 8,
+    "citation_worthiness": 7
+   },
+   "remaining_gap": "The article never says what selenium DOES. Not one sentence. Across 1379 words there is zero mention of selenoproteins, thyroid hormone metabolism, antioxidant/oxidative-damage protection, immune function, or DNA synthesis. Every competitor covers it: news-medical devotes a whole physiological-roles section (thyroid conversion, glutathione peroxidase, immune cells, reproduction), the Linus Pauling Institute is built around it, Harvard and NIH both open with it. This is the top secondary intent behind \"selenium foods\" (the searcher who wants to know why they should care), and it is also the page's biggest citation-worthiness hole: an AI asked \"why do I need selenium\" would find nothing here to lift and would go to a competitor instead. The page currently reads as an excellent ceiling-and-arithmetic guide with no motivation layer, which is exactly backwards for a mineral most readers have never thought about. Secondary to this, and part of the same hole, the body never covers who is actually at risk of inadequacy (NIH names people on dialysis, people living with HIV, and people in low-selenium regions on primarily plant diets); the FAQ dismisses US deficiency in one line and the body says nothing."
+  },
+  {
+   "slug": "healthy-alternatives-potato-chips-snacking",
+   "url": "https://www.daily-life-hacks.com/healthy-alternatives-potato-chips-snacking/",
+   "impressions": 106,
+   "position": 71.2,
+   "citations_before": 0,
+   "citations_after": 13,
+   "citations_added": 13,
+   "verdict": "WINS",
+   "rounds": 2,
+   "scores": {
+    "answer_extractability": 9,
+    "citation_worthiness": 9,
+    "factual_accuracy": 9,
+    "intent_satisfaction": 8,
+    "trust": 8
+   },
+   "remaining_gap": "Option breadth. The current top results list 13 to 21 alternatives; this page covers only 8 table rows and 6 discussion categories. It now handles kale chips, but still says nothing about the other high-volume searches inside this query cluster: tortilla chips, pretzels, parmesan/cheese crisps, seaweed snacks, edamame, apple chips, and plantain chips. A reader who has already rejected popcorn and chickpeas is sent away with a cucumber. The page wins on rigor and loses on coverage, and coverage is what keeps a reader on a listicle-shaped query."
+  },
+  {
+   "slug": "comparing-fiber-content-different-pizza-crusts",
+   "url": "https://www.daily-life-hacks.com/comparing-fiber-content-different-pizza-crusts/",
+   "impressions": 91,
+   "position": 7.0,
+   "citations_before": 0,
+   "citations_after": 7,
+   "citations_added": 7,
+   "verdict": "LOSES",
+   "rounds": 2,
+   "scores": {
+    "intent_satisfaction": 8,
+    "factual_accuracy": 7,
+    "trust": 8,
+    "citation_worthiness": 7,
+    "answer_extractability": 6
+   },
+   "remaining_gap": "The page contradicts itself on its own headline number. The H2 \"Why a white-flour crust lands between 2 and 3 grams\" sits directly under a branded table that reports a white-flour CRUST at 1.5 g per 100 g and 1.0 g per serving, and the section it introduces is actually about finished slices. That heading is the most extractable snippet on the page for the query \"pizza crust fiber content\", so the one thing an AI is most likely to lift is the one statement the article's own verified data refutes, by 2 to 3x. Everything else on the page is verified correct: all 24 USDA record IDs match to the decimal, all per-slice arithmetic and %DV figures check out, and all 7 external URLs resolve and support their specific claims. The gap that was assigned (missing plain refrigerated white-flour baseline row, missing branded whole wheat row, wrong quickAnswer) is genuinely closed. This is a one-line contradiction sitting on top of otherwise strong work, but it is a real factual error on the primary query intent, and under a default-negative reading it blocks the win."
+  }
+ ],
+ "totals": {
+  "pages_worked": 9,
+  "verified_citations_now_live": 87,
+  "citations_added_net": 82,
+  "wins": 6,
+  "ties": 1,
+  "loses": 2
+ },
+ "verification": {
+  "urls_checked_independently": 80,
+  "urls_actually_broken": 0,
+  "note": "All apparent 403/404s were CDN bot-protection or SPA routing, confirmed valid in a real browser (FSIS, foodsafety.gov, chick-fil-a, ods.od.nih.gov, USDA FDC food-details, FDA accessdata PDF).",
+  "build": "PASS 328 pages",
+  "tests": "PASS 71/71",
+  "routing": "PASS 267 canonical",
+  "internal_links": "PASS 12,719 anchors / 0 orphans",
+  "seo_harness": "PASS 9/9 dist and live"
+ },
+ "next_action": "Deploy is the binding constraint: none of this is live, so Search Console cannot measure it. After deploy, close the 2 remaining LOSES pages (prebiotic dosage framing, pizza-crust quickAnswer range) and extend to the 70 demand-carrying articles still uncited (reports/gauntlet/round2-risk-queue.json).",
+ "known_tradeoffs": [
+  "S-20 soft word-count warning now on 8 of 9 pages: verified sourcing adds words and the 1200-word ceiling is a style heuristic, not a quality rule. Flagged rather than resolved by deleting sourced content.",
+  "tests/high-fiber-fast-food-guide.test.mjs asserted a verified falsehood (that Panera PDF 403s automated requests). Test corrected to the measured truth: default curl UA returns HTTP 200 and a 513,680-byte PDF; a Chrome UA is what gets 403."
+ ]
+}

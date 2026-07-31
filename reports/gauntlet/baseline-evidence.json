@@ -1,0 +1,50 @@
+{
+  "captured": "2026-07-30",
+  "git_head": "1b5ac28 feat: strengthen nutrition source provenance",
+  "search_console": {
+    "as_of": "2026-07-24 (export in gsc-coverage-triage-2026-07-29.md)",
+    "indexed": 119,
+    "not_indexed": 535,
+    "search_impressions": 9,
+    "note": "Google-known URL totals, includes aliases/retired paths, not canonical sitemap inventory"
+  },
+  "corpus": {
+    "articles": 267,
+    "articles_with_authoritative_citation": 52,
+    "articles_with_zero_authoritative_citation": 215,
+    "zero_citation_pct": 80.5,
+    "citation_domains_counted": [
+      "nih.gov", "usda.gov", "fda.gov", "cdc.gov", "niddk", "pubmed", "who.int", "ncbi", "fdc.nal"
+    ]
+  },
+  "demand_cohort": {
+    "articles_with_any_impressions": 93,
+    "of_those_zero_citations": 79,
+    "source": "reports/growth/article-pruning-matrix-2026-07-29.csv (GSC 3m + Bing)"
+  },
+  "technical_baseline_verified_locally": {
+    "build": "PASS - 327 pages in 68.11s",
+    "guard_tests": "PASS - 38/38 (high-fiber-fast-food-guide, how-to-double-recipe-seasoning, dataset-source-provenance, article-ranked-data-tables)",
+    "verify_technical_seo": "PASS",
+    "verify_routing": "PASS - 267 canonical pages, leakedAliasHtml=0, unmigratedVariants=0",
+    "verify_internal_links": "PASS - 12720 internal anchors across 327 files, rendered orphans=0, inbound<=1: 0, contextual inbound=0: 0"
+  },
+  "live_production_baseline": {
+    "sitemap_loc": 297,
+    "sitemap_priority": 297,
+    "sitemap_image_loc": 650,
+    "scheduled_article_404_bug": "FIXED - /how-much-protein-in-two-eggs/ returns 200; scheduled daily Pages build confirmed in CI at 08:48",
+    "ai_crawlers": "all return 200 (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, bingbot, Googlebot, Google-Extended, meta-externalagent, Amazonbot, Applebot, Bytespider)",
+    "ttfb_ms": "~90-200"
+  },
+  "diagnosis": {
+    "not_the_bottleneck": [
+      "page speed (TTFB ~120ms, 17.7KB brotli homepage)",
+      "crawler access (no edge blocking, robots.txt allows all named AI crawlers)",
+      "internal linking (0 orphans, 0 under-linked pages)",
+      "sitemap health (297/297 priority, 650 image tags)",
+      "thin content / pruning (0 articles met merge or noindex gates)"
+    ],
+    "the_bottleneck": "215 of 267 articles (81%) carry zero authoritative citation. 79 of the 93 articles that have measurable search demand have zero citations. On a YMYL nutrition site making precise gram, temperature and food-safety claims, this is simultaneously the E-E-A-T (SEO), sourced-answer (AEO) and citation-worthiness (GEO) constraint."
+  }
+}

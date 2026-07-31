@@ -1,86 +1,97 @@
 ---
 title: How to Store Homemade Salad Dressing Safely
-excerpt: How long homemade salad dressing really lasts in the fridge, type by type, plus the one garlic mistake that's an actual safety risk, not just a taste one.
+excerpt: How long homemade salad dressing really lasts in the fridge, type by type, plus the raw-garlic-in-oil rule that is an actual safety risk, not just a taste one.
+quickAnswer: >-
+  How long homemade salad dressing keeps depends entirely on what's in it.
+  A simple vinaigrette holds up to 2 weeks refrigerated; add fresh onion, herbs,
+  or citrus juice and it's about 1 week. Creamy mayo or dairy dressings get 3 to
+  4 days. No federal chart lists homemade dressing, so treat those three as
+  quality windows drawn from the closest published references. Two cases are
+  safety limits, not quality windows: raw-egg dressing like classic Caesar or
+  aioli should be a same-day job, because USDA advises against eating raw eggs
+  at all and allows 24 hours only for dishes you then cook to 160°F; and raw
+  garlic or fresh herbs in oil with no added acid needs 40°F or below for no
+  more than 4 days, or the freezer.
 category: tips
 tags:
-- food storage
-- salads
-- salad dressings
-- salad
-- salad dressing
-- homemade salad
 - homemade salad dressing
+- food storage
+- food safety
+- salad dressings
+- kitchen tips
 image: "/images/how-to-store-homemade-salad-dressing-safely-main.jpg"
 imageAlt: A clear glass bottle filled with golden salad dressing stands on a light wooden cutting board, surrounded by a lemon half and a garlic clove.
 date: 2026-04-28
+dateModified: 2026-07-30
 author: "David Miller"
 featured: false
 faq:
+  - question: "How long does homemade salad dressing last in the fridge?"
+    answer: "It depends on what's in it. No federal cold-storage chart lists homemade dressing, so the vinaigrette numbers come from a single answer on Cooperative Extension's Ask Extension service: up to 2 weeks for a simple vinaigrette, up to 1 week once fresh onions, herbs, or citrus juice go in. Treat those as quality windows. For creamy mayo or dairy dressings, FoodSafety.gov's 3-to-4-day window for egg, chicken, ham, tuna, and macaroni salads is the closest published match. Two cases are tighter for safety rather than quality. Raw-egg dressing such as classic Caesar or homemade aioli is a same-day job: USDA advises against eating raw or undercooked eggs at all, and its 24-hour window applies only to dishes you then cook to 160°F. Raw garlic or fresh herbs in oil with no added acid needs 40°F or below for no more than 4 days, or freeze it."
   - question: "Do you need to refrigerate homemade salad dressing?"
-    answer: "Yes, all of it, every time. Store-bought bottles survive on a shelf because of preservatives and processing that your mason jar doesn't have. Even a plain oil and vinegar mix keeps better cold, since heat and light turn oil rancid. Anything with fresh garlic, herbs, dairy, or citrus juice must go straight into the fridge after you make it."
-  - question: "How long does homemade vinaigrette last in the fridge?"
-    answer: "A plain oil and vinegar dressing with dried spices stays fresh for about two weeks in an airtight container in the refrigerator. Add fresh minced garlic, shallots, or fresh herbs and that drops to about three to five days. The vinegar acts as a mild preservative, but it can't keep fresh aromatics from breaking down."
-  - question: "How long does creamy or dairy-based homemade dressing last?"
-    answer: "Anything with mayo, sour cream, yogurt, or buttermilk is good for about five to seven days, assuming your fridge runs at 40 degrees Fahrenheit or below. If it smells sour or the texture turns clumpy in a way it wasn't on day one, toss it. Dairy is not something worth gambling on to save two dollars of ingredients."
+    answer: "Yes. Store-bought bottles survive on a shelf because of preservatives and processing your mason jar doesn't have. FDA advises keeping the refrigerator at 40°F or below and getting perishable food back in the fridge within 2 hours. Anything with fresh garlic, herbs, dairy, or citrus juice goes straight into the fridge after you make it, and USDA says not to store perishable foods in the door, where temperatures swing the most."
   - question: "Is homemade garlic in oil dangerous?"
-    answer: "It can be if you store it wrong. Garlic stored in oil without acid creates a low-oxygen environment where the bacteria that causes botulism can grow, and room temperature makes it worse. The FDA and USDA both advise keeping any garlic-in-oil mixture refrigerated and using it within three to four days. A vinaigrette that's at least one-third vinegar or lemon juice is acidic enough to be a different story, but splashing a little acid into a mostly-oil garlic mixture is not a substitute for the fridge."
-  - question: "Can you freeze homemade salad dressing?"
-    answer: "Freezing is generally not recommended because the emulsion usually breaks during thawing. Dairy-based dressings like ranch or blue cheese often separate and turn grainy after being frozen. Oil-based vinaigrettes might survive the freezer better, but they still need vigorous whisking or blending once thawed to get their texture back."
-  - question: "Why does my olive oil dressing turn solid in the fridge?"
-    answer: "Extra virgin olive oil contains natural waxes that solidify at cold temperatures, which makes your dressing look cloudy or thick. That's a normal physical reaction, not a sign it has gone bad. Set the jar on the counter for 15 to 20 minutes before dinner, or run the closed jar under warm tap water, and it pours like new."
+    answer: "It can be if you store it wrong. Oregon State University Extension explains that low-acid foods like garlic stored in oil create an oxygen-free environment that suits Clostridium botulinum, and the National Center for Home Food Preservation warns that garlic-in-oil mixtures kept at room temperature are at risk for botulism. Oregon State says to refrigerate it and use it within 4 days or freeze it for longer storage. The National Center for Home Food Preservation is more specific: 40°F or lower, no more than 4 days. Only tested acidification procedures make an infused oil shelf stable, and splashing in lemon juice is not one of them."
+  - question: "How long does creamy or dairy-based homemade dressing last?"
+    answer: "Plan on 3 to 4 days. There's no federal window for homemade dressing specifically, but FoodSafety.gov's cold storage chart gives 3 to 4 days for egg, chicken, ham, tuna, and macaroni salads, the closest mayo-bound comparison. USDA's own refrigeration page says 3 to 5 for the same category, so the shorter number is the safer default. Keep the fridge at 40°F or below, and remember that FDA warns food can make you sick even when it doesn't look, smell, or taste spoiled."
+  - question: "Can you make homemade Caesar dressing with raw egg?"
+    answer: "You can, but USDA advises against it. Classic Caesar and homemade aioli are built on raw egg yolk, and USDA's Food Safety and Inspection Service advises everyone against eating raw or undercooked egg yolks and whites or products containing raw or undercooked eggs, naming Caesar salad and homemade mayonnaise specifically. FSIS says to cook dishes containing raw eggs immediately, or refrigerate and cook them within 24 hours, which is far tighter than the 3-to-4-day window for other creamy dressings. If you want it uncooked, FSIS points to pasteurized in-shell eggs or egg products, which may be used safely without cooking, or heating the eggs with the liquid ingredients to 160°F before combining."
 ---
-Homemade salad dressing lasts anywhere from 3 days to 2 weeks in the fridge, depending on what's in it. A plain vinaigrette holds up to 2 weeks, dairy-based dressings get 5 to 7 days, and anything with fresh garlic is on a 3 to 5 day clock. All of it needs refrigeration, no exceptions.
+Store-bought Zesty Italian can sit in a pantry for a year and shrug. Your mason jar of lemon-garlic vinaigrette cannot. Homemade dressing is fresh, once-living ingredients with nothing holding the line behind them, unlike the bottled stuff packed with stabilizers and [more sugar than you'd guess](/hidden-sugars-popular-summer-salad-dressings/).
 
-I used to be the guy who bought those plastic bottles of "Zesty Italian" that could probably survive a nuclear winter on a pantry shelf. Then I realized making a vinaigrette takes about thirty seconds and doesn't involve ingredients I can't pronounce. But the first time I made a big batch of honey mustard, I stared at the leftovers and realized I had no idea when it would officially become a science project in the back of my fridge.
+Most of the time this is a waste-and-taste question. Once in a while, specifically when raw garlic meets a lot of oil, it's an actual food safety question. Here's how to tell those apart.
 
-Storing homemade salad dressing safely isn't about being a kitchen snob. It's about not wasting expensive olive oil, and not serving your family something that's turned. Unlike the store-bought stuff packed with stabilizers and [more sugar than you'd guess](/hidden-sugars-popular-summer-salad-dressings/), your homemade version is a ticking clock of fresh ingredients.
+## How long does homemade salad dressing last?
 
-## How long each type of dressing lasts
+| Dressing type | Keep it | Where the number comes from |
+|---|---|---|
+| Plain vinaigrette (oil, vinegar, dried herbs and spices) | Up to 2 weeks | [Cooperative Extension: simple vinaigrettes keep up to 2 weeks refrigerated](https://ask.extension.org/kb/faq.php?id=292098) |
+| Vinaigrette with fresh garlic, shallots, onion, or fresh herbs | Up to 1 week | Same Extension answer, for dressings "made with fresh ingredients, like onions and herbs" |
+| Citrus-forward dressing with fresh lemon or lime juice | Up to 1 week | [Same Extension answer](https://ask.extension.org/kb/faq.php?id=292098): the dressing in that question contained lemon juice, and it is the "fresh ingredients" case assigned 1 week |
+| Creamy dressing (mayo, sour cream, yogurt, buttermilk) | 3 to 4 days | Closest mayo-bound comparison: [FoodSafety.gov gives 3 to 4 days](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) for egg, chicken, ham, tuna, and macaroni salads; [USDA's own page says 3 to 5](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/refrigeration) |
+| Raw-egg dressing (classic Caesar, homemade mayo or aioli) | Same day, or use pasteurized eggs | [USDA FSIS advises against foods with raw or undercooked eggs](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/eggs/shell-eggs-farm-table), naming Caesar salad and homemade mayonnaise |
+| Raw garlic or fresh herbs in oil, no added acid (infused oil, garlic confit, pesto) | 4 days, fridge only, or freeze | [Oregon State University Extension](https://extension.oregonstate.edu/catalog/pub/sp-50-701-herbs-vegetables-oil) and the [National Center for Home Food Preservation](https://nchfp.uga.edu/how/freeze/vegetable/freezing-garlic-in-oil/) |
 
-Here's the short answer, before we get into the why:
+Worth being honest about the limits: the federal cold-storage chart doesn't list homemade salad dressing at all, so those rows lean on the closest published references. Read the top four as quality windows. The raw-egg row and the garlic-in-oil row are the two safety limits.
 
-| Dressing type | Fridge life |
-|---|---|
-| Plain vinaigrette (oil, vinegar, dried spices) | Up to 2 weeks |
-| Vinaigrette with fresh garlic, shallots, or herbs | 3 to 5 days |
-| Citrus-based (fresh lemon or lime juice) | About 1 week |
-| Dairy-based (ranch, blue cheese, buttermilk, yogurt) | 5 to 7 days |
-| Garlic or herbs sitting in oil, no acid | 3 to 4 days, fridge only |
+The pattern is simple. More acid buys you time. More fresh, once-living ingredients takes it away. Oil, red wine vinegar, and dried oregano coasts for two weeks. A ranch with fresh dill and buttermilk is on a much shorter clock.
 
-The pattern is simple: the more acid, the longer it lasts. The more fresh, once-living ingredients, the shorter. A jar of oil, red wine vinegar, and dried oregano is nearly indestructible for two weeks. A ranch with fresh dill and buttermilk is on a five-day clock the second you whisk it.
+## Do you have to refrigerate homemade salad dressing?
 
-## Do you need to refrigerate homemade salad dressing?
+Anything with fresh produce, dairy, or egg in it, yes. That part isn't a preference. A plain oil, vinegar, and dried-herb vinaigrette is the one case where the perishable-food rules don't squarely apply, and we still keep it cold by default rather than sort out which jar is which. FDA advises keeping your refrigerator [at 40°F or below](https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety) and getting perishable food back in the cold within 2 hours. Oil keeps better cool and dark too. UC Davis recommends storing olive oil [in a cool, dark place](https://ucfoodquality.ucdavis.edu/olive-oil/olive-oil-myths-and-facts) to slow oxidation.
 
-Yes. All of it. I know the oil and vinegar cruet looks great on the kitchen table, but that's a recipe for rancidity. Light and heat are the enemies of oil, and everything else in your dressing, anything that once lived in a garden or came from a cow, needs cold to stay safe.
+One placement detail nobody mentions: USDA says [don't store perishable foods in the door](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/refrigeration), because door bin temperatures fluctuate more than the main cabinet. That door is exactly where most people park the dressing jar. Move it to a shelf.
 
-Store-bought bottles get away with shelf life because of preservatives and industrial processing. Your mason jar has neither. That's the whole trade: better taste, shorter clock, mandatory fridge.
+Use glass while you're at it. Plastic absorbs odors and stains, and glass is non-reactive, which matters when the jar is half vinegar. A 16-ounce mason jar is the right size for a weekly batch.
 
-**Dairy-based dressings** are the strictest about this. Anything with mayo, sour cream, yogurt, or buttermilk gets 5 to 7 days, assuming your fridge holds 40 degrees Fahrenheit or below. If it smells slightly sour or looks clumpy in a way it didn't on day one, toss it. I'm not a fan of gambling with dairy. If you love creamy dressings but hate the short clock, a [tahini-based vegan Caesar](/healthy-homemade-vegan-caesar-salad-dressing/) gets you the creaminess without the dairy countdown.
+## The raw garlic in oil rule you actually need to know
 
-## The garlic-in-oil rule you actually need to know
+This is the one real safety issue here. [Oregon State University Extension](https://extension.oregonstate.edu/catalog/pub/sp-50-701-herbs-vegetables-oil) explains that low-acid foods stored in oil create "an oxygen-free environment which is perfect for growth" of *Clostridium botulinum*. The National Center for Home Food Preservation adds that [garlic-in-oil mixtures left at room temperature](https://nchfp.uga.edu/how/freeze/vegetable/freezing-garlic-in-oil/) are at risk for the development of botulism.
 
-This one's a real safety fact, not fridge trivia. Garlic stored in oil without acid creates a low-oxygen environment where the bacteria that causes botulism can grow. Room temperature makes it dramatically worse. That's why the FDA and USDA both advise refrigerating any garlic-in-oil mixture and using it within 3 to 4 days. That trendy jar of garlic confit oil sitting on the counter? That's the one situation in this whole article where "eh, it's probably fine" is the wrong call.
+So the rule is short. Homemade flavored oils, including pesto and that trendy jar of garlic confit, go in the fridge and get used [within 4 days](https://extension.oregonstate.edu/catalog/pub/sp-50-701-herbs-vegetables-oil), or into the freezer for longer storage. Oregon State applies the same 4-day limit even when the garlic or herbs are dried, which surprises people. Label the container with the date you made it and the date four days later when it has to be used or frozen.
 
-The fix is easy. If your dressing is mostly oil with raw garlic in it, keep it refrigerated and use it within 3 to 4 days. Acid does change the math, but only in real quantities: a vinaigrette that's at least one-third vinegar or lemon juice is acidic enough to keep that bacteria in check. Casually adding a splash of lemon to a mostly-oil garlic mixture is not a substitute for refrigeration. A standard vinaigrette with a real pour of vinegar is a very different situation than garlic cloves drowning in plain olive oil.
+Commercial garlic-in-oil is either acidified during manufacturing or made with specific microbial inhibitors, which is why it can sit on a store shelf. Your kitchen isn't doing that, and splashing lemon juice into a jar of garlic and oil is not acidification. For a shelf-stable infused oil there is a tested Extension procedure, published as PNW 664, [Making Garlic- and Herb-Infused Oils at Home](https://catalog.extension.oregonstate.edu/pnw664). It covers a specific, limited set of herbs, and the directions have to be followed exactly. Read the publication itself before trying it, not a summary of it.
 
-Fresh herbs and shallots follow a gentler version of the same rule. They may start to ferment or break down after 3 to 5 days, and garlic loses its punch and starts tasting "old" fast. If you want a batch to last the full week, use garlic powder and dried herbs, and add the fresh stuff right before serving.
+The line to watch is whether you've made a dressing or an infused oil. If you could pour it over a salad and taste the acid, it's a dressing, and Extension guidance puts fresh-ingredient dressings at one week. If it's basically garlic sitting in fat, it's an infused oil, and that caps at 4 days.
 
-## Choose the right container from the start
+## Creamy dressings get the shortest quality window
 
-If you're still using plastic Tupperware for your dressings, stop. Plastic absorbs odors and stains, and unless you want your next batch of fruit salad to taste faintly of last week's garlic-heavy Caesar, you need glass. Glass is non-reactive, which matters because most dressings are heavy on acids like vinegar or citrus juice that can pull "off" flavors out of cheap plastic.
+Anything with mayo, sour cream, yogurt, or buttermilk is on a 3 to 4 day plan, borrowed from the federal listing for egg, chicken, ham, tuna, and macaroni salads. The two government pages disagree by a day, 3 to 4 on FoodSafety.gov versus 3 to 5 on USDA's refrigeration page, so take the shorter one.
 
-**Mason jars** are the gold standard: airtight seal, dishwasher-safe, and a 16-ounce jar is the right size for a weekly batch. Just use a clean lid every time. Those metal rings rust if they sit in the fridge with acidic residue on them.
+One creamy dressing sits in its own category: a real Caesar or a homemade aioli is raw egg yolk. USDA's Food Safety and Inspection Service [advises everyone against foods containing raw or undercooked eggs](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/eggs/shell-eggs-farm-table), naming Caesar salad and homemade mayonnaise specifically. FSIS says to cook dishes containing raw eggs immediately, or refrigerate and cook them within 24 hours, a much tighter clock than the 3 to 4 days above, and that assumes the dish gets cooked at all. The fix FSIS offers is pasteurized in-shell eggs or egg products, which "may be used safely without cooking", or heating the eggs with the liquid ingredients to 160°F before you combine everything. Want to skip the raw egg and the dairy clock in one move? A [tahini-based vegan Caesar](/healthy-homemade-vegan-caesar-salad-dressing/) does both.
 
-## When your vinaigrette turns solid, don't panic
+## Why your vinaigrette turns solid in the fridge
 
-You'll inevitably pull your vinaigrette out of the fridge and find it has turned into a cloudy, semi-solid sludge. Don't throw it away. This just means you used good extra virgin olive oil, because the natural waxes in quality oil solidify when cold.
+You'll pull the jar out and find a cloudy, semi-solid sludge. Don't throw it away. UC Davis says it's normal for olive oil [to get cloudy or to solidify in cold temperatures](https://ucfoodquality.ucdavis.edu/olive-oil/olive-oil-myths-and-facts) because of waxes naturally present in olives, and that this doesn't affect the oil's quality or safety. Cloudy and thick, though, not a solid brick.
 
-Set the jar on the counter while you prep the rest of the meal, or run it under warm water for a minute if the kids are starving and the chicken is already hitting the table. Give it a violent shake to re-emulsify, and you're back in business.
+What it doesn't do is prove you bought the good stuff. That "real olive oil solidifies in the fridge" trick gets repeated constantly, and UC Davis Olive Center testing found the [fridge test unreliable](https://www.ucdavis.edu/news/our-own-%E2%80%98dr-olive%E2%80%99-contradicts-dr-oz-%E2%80%98fridge-test%E2%80%99) for detecting either the purity or the quality of olive oil. That's why the test fails: their samples never fully solidified, even after 180 hours cold. Set the jar on the counter for 15 to 20 minutes, shake it hard, and pour.
 
-## Signs your dressing has gone bad
+## How to tell when dressing has gone bad
 
-Trust your senses over any date scribbled on masking tape. If the oil smells metallic, soapy, or like wet cardboard, it's rancid. Any fuzzy growth on the surface or the rim means the whole jar goes, no scraping.
+Here's the uncomfortable part. FDA warns that [food can make you very sick even when it doesn't look, smell, or taste spoiled](https://www.fda.gov/food/buy-store-serve-safe-food/refrigerator-thermometers-cold-facts-about-food-safety), so your nose is a backup system, not the primary one. Write the date on the lid and go by that first.
 
-Separation, on the other hand, is totally normal. We aren't adding xanthan gum here. A quick shake should bring it back together. If it stays broken despite a hard shake, the dairy proteins or the mustard have degraded and it's done.
+That said, obvious signals still count. If the oil smells metallic, soapy, or like wet cardboard, it's gone rancid. Any fuzzy growth means the whole jar goes in the trash, not a scrape-and-save operation. USDA is direct about this for high-moisture foods: they [can be contaminated below the surface](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/molds-food-are-they-dangerous), and mold roots run deeper than the part you can see.
 
-Keeping a jar of something homemade in the fridge door makes a Tuesday night salad feel a lot less like a chore, and if you're picking what to whisk up next, these [homemade dressings with an extra fiber kick](/high-fiber-salad-dressings-homemade/) are where I'd start. That same jar earns its keep in summer too, especially once you know [how to pack a cold pasta salad for picnics](/how-to-pack-cold-pasta-salad-picnics/) so it arrives crisp instead of questionable. Stick to glass, watch the fresh ingredients, and give the jar a good shake before you pour, because the best part of the dressing always tries to hide at the bottom.
+Separation is fine. We aren't adding xanthan gum here. A hard shake should bring it back. If it stays broken after that, the mustard or the dairy proteins have given up.
+
+Keeping a jar of something homemade in the fridge makes a Tuesday night salad feel less like a chore, and if you're picking what to whisk up next, these [homemade dressings with an extra fiber kick](/high-fiber-salad-dressings-homemade/) are where I'd start. That same jar earns its keep in summer, especially once you know [how to pack a cold pasta salad for picnics](/how-to-pack-cold-pasta-salad-picnics/) so it arrives crisp instead of questionable. Glass jar, shelf not door, date on the lid, and the garlic-in-oil clock in the back of your mind.

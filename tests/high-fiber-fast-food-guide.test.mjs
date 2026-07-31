@@ -42,9 +42,10 @@ test("guide has complete dated rows with direct official sources", () => {
     "order.wendys.com",
     "www.panerabread.com",
     "www.starbucks.com",
+    "media.subway.com",
   ]);
 
-  assert.equal(rows.length, 6);
+  assert.equal(rows.length, 10);
 
   for (const row of rows) {
     assert.equal(row.length, 8, `incomplete table row: ${row.join(" | ")}`);
@@ -82,23 +83,134 @@ test("requested current corrections and winner distinctions are explicit", () =>
   );
   assert.match(
     article,
-    /highest-fiber verified custom order[^.]+Chipotle[^.]+25 grams/i,
+    /highest-fiber custom order[^.]+Chipotle[^.]+25 grams/i,
+  );
+  // No single "ready-made leader" crown: Subway wins on raw fiber, the
+  // Chick-fil-A soup wins on calories, sodium, protein and fiber per calorie,
+  // so the two are presented side by side with both caveats attached.
+  assert.doesNotMatch(article, /ready-made leader/i);
+  assert.match(article, /no fixed menu item wins outright/i);
+  assert.match(
+    article,
+    /Subway's Veggie Patty Protein Bowl carries the most fiber at 19 grams/i,
+  );
+  assert.match(article, /\*\*8 grams of fiber\*\*, not 10/i);
+
+  // Superlatives must state their real scope, never "in the table"/"checked here".
+  assert.doesNotMatch(article, /(?:highest|leads|winner|best)[^.\n]{0,60}\bin the table\b/i);
+  assert.doesNotMatch(article, /(?:highest|leads|winner|best)[^.\n]{0,60}\bchecked here\b/i);
+});
+
+test("the Chick-fil-A soup row is present, sourced to the chain, and flagged seasonal", () => {
+  // Chick-fil-A's own page lists the cup at 280 cal / 17 g fiber / 24 g protein
+  // / 1,060 mg sodium. Restaurant menu facts never come from USDA.
+  assert.match(
+    article,
+    /\| Chick-fil-A \| Chicken Tortilla Soup[^|\n]*\| 17 g \(61% DV\) \| 280 \| 24 g \| 1,060 mg \|/,
+  );
+  assert.doesNotMatch(article, /usda/i);
+
+  const rows = extractTable(article);
+  const soupRow = rows.find(([, build]) => build.startsWith("Chicken Tortilla Soup"));
+  assert.ok(soupRow, "missing Chick-fil-A Chicken Tortilla Soup row");
+
+  // Chick-fil-A calls it a seasonal item; the run ended 2026-03-07, so the row
+  // must carry that limit rather than reading as a year-round order.
+  assert.match(soupRow[1], /seasonal/i);
+  assert.match(soupRow[1], /cup portion/i);
+  assert.match(soupRow[7], /https:\/\/www\.chick-fil-a\.com\/menu\/sides\/chicken-tortilla-soup/);
+  assert.match(article, /last run[^.\n]{0,60}March 7, 2026/i);
+
+  // It also has to appear in the fiber-per-calorie ranking, above Subway.
+  assert.match(article, /\| Chick-fil-A Chicken Tortilla Soup, cup \| 6\.1 g \|/);
+});
+
+test("quickAnswer carries the same scope as the body", () => {
+  const quick = article.match(/^quickAnswer: "([\s\S]*?)"$/m);
+  assert.ok(quick, "missing quickAnswer");
+  const answer = quick[1];
+
+  // The most-extracted field must not out-claim what was actually verified.
+  assert.match(answer, /ten orders/i);
+  assert.match(answer, /July 30, 2026/);
+  assert.doesNotMatch(answer, /leads the ready-made items/i);
+  assert.doesNotMatch(answer, /tops the list/i);
+
+  // Self-contained: fiber, calories and sodium for both crowned orders.
+  assert.match(answer, /25 grams/);
+  assert.match(answer, /725 calories/);
+  assert.match(answer, /1,130 milligrams/);
+  assert.match(answer, /19 grams/);
+  assert.match(answer, /540 calories/);
+  assert.match(answer, /1,550 milligrams/);
+});
+
+test("source fetchability is disclosed honestly, per host", () => {
+  // Chick-fil-A's site does 403 automated fetches, so its figures must be
+  // re-checked against Internet Archive captures.
+  assert.match(article, /Chick-fil-A's site returns a 403 to automated requests/i);
+  assert.match(article, /web\.archive\.org/i);
+
+  // Panera's PDF is NOT blocked: a plain automated request returns the full
+  // 36-page file (verified 2026-07-31: default curl UA -> HTTP 200, 513,680
+  // bytes, %PDF-1.6; a Chrome UA string is what gets 403'd). The earlier
+  // assertion here required the article to state the opposite, which is why
+  // it is gone. Panera sources four rows, so that dependence stays stated.
+  assert.match(article, /Panera's PDF is not blocked/i);
+  assert.match(article, /Panera sources four rows/i);
+  assert.doesNotMatch(
+    article,
+    /Chick-fil-A's site and Panera's PDF both return a 403/i,
+  );
+});
+
+test("the Subway build is spelled out ingredient by ingredient", () => {
+  const rows = extractTable(article);
+  const subwayRow = rows.find(([chain]) => chain === "Subway");
+
+  assert.ok(subwayRow, "missing Subway table row");
+  for (const part of [
+    "footlong patty portion",
+    "lettuce",
+    "spinach",
+    "tomatoes",
+    "onions",
+    "green peppers",
+    "cucumbers",
+    "olives",
+    "no dressing or cheese",
+    "participating locations only",
+  ]) {
+    assert.ok(
+      subwayRow[1].includes(part),
+      `Subway build cell is missing "${part}"`,
+    );
+  }
+});
+
+test("the two Panera Grab N Go wraps that tie the Cool Wrap are present", () => {
+  assert.match(
+    article,
+    /\| Panera \| Green Goddess Chicken Wrap[^|\n]*\| 14 g \(50% DV\) \| 460 \| 32 g \| 1,340 mg \|/,
   );
   assert.match(
     article,
-    /highest ready-made single item[^.]+Chick-fil-A Cool Wrap at 14 grams/i,
+    /\| Panera \| Chicken Caesar Wrap[^|\n]*\| 14 g \(50% DV\) \| 480 \| 32 g \| 1,510 mg \|/,
   );
-  assert.match(article, /\*\*8 grams of fiber\*\*, not 10/i);
+  assert.match(
+    article,
+    /\| Subway \|[^|\n]+\| 19 g \(68% DV\) \| 540 \| 22 g \| 1,550 mg \|/,
+  );
 });
 
-test("Wendy's tuple names the saltine-inclusive Small Chili build", () => {
+test("Wendy's tuple describes the Saltine Packet only as far as Wendy's publishes it", () => {
   const rows = extractTable(article);
   const wendysRow = rows.find(([chain]) => chain === "Wendy's");
 
   assert.ok(wendysRow, "missing Wendy's table row");
   assert.deepEqual(wendysRow.slice(0, 6), [
     "Wendy's",
-    "Plain Baked Potato plus Small Chili, including the default Saltine Packet; totals assume the packet is eaten",
+    "Plain Baked Potato plus Small Chili; Wendy's lists the Small Chili at 280 calories and the Saltine Packet as a default component, without breaking the packet out separately",
     "10 g (36% DV)",
     "550",
     "26 g",
@@ -106,9 +218,14 @@ test("Wendy's tuple names the saltine-inclusive Small Chili build", () => {
   ]);
   assert.match(
     article,
-    /potato, Small Chili, and eaten Saltine Packet provide the table's 10 grams of fiber, 550 calories, 26 grams of protein, and 1,090 milligrams of sodium/i,
+    /potato and Small Chili provide the table's 10 grams of fiber, 550 calories, 26 grams of protein, and 1,090 milligrams of sodium/i,
   );
   assert.doesNotMatch(article, /default 280-calorie Chili/i);
+
+  // Wendy's never states whether the packet is inside its published totals.
+  assert.doesNotMatch(article, /totals assume the packet is eaten/i);
+  assert.doesNotMatch(article, /eaten Saltine Packet/i);
+  assert.doesNotMatch(article, /which includes a default Saltine Packet/i);
 });
 
 test("guide cites the FDA benchmark and avoids unsupported legacy claims", () => {
@@ -129,6 +246,10 @@ test("guide cites the FDA benchmark and avoids unsupported legacy claims", () =>
     /nothing else in the drive-thru universe comes close/i,
     /\bI dug through\b/i,
     /\bI (?:researched|tested|verified|calculated)\b/i,
+    // Legacy figures nobody can source: state only what the current guide says.
+    /older lists keep repeating/i,
+    /Older 10-gram figures/i,
+    /not a 16-gram one/i,
   ];
 
   for (const claim of bannedClaims) {
