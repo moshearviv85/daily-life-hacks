@@ -1,6 +1,6 @@
 ---
 title: "What a Day of 30 Grams of Fiber Actually Costs"
-excerpt: "We priced five real ways to hit 30 grams of fiber in one day, from 62 cents to $14.42. Same fiber, 23 times the price. Every number is audited."
+excerpt: "We priced five real ways to hit 30 grams of fiber in one day, from 62 cents to $14.42. Same fiber, 23 times the price. Every grocery fiber figure traces to USDA data."
 category: "nutrition"
 tags: ["cost of fiber per day", "30 grams of fiber a day", "fiber on a budget", "cheap high fiber meals", "grocery data"]
 cluster: "budget-fiber"
@@ -99,7 +99,7 @@ One detail worth staring at: the raspberry box is 59 percent of the day's entire
 
 ## Day 4: The restaurant day ($14.42)
 
-Nothing home-cooked, nothing from a grocery store. Fiber figures are the ones we verified from chain nutrition pages in our fast food guide; prices are typical national menu prices from July 2026, so your city will wobble a dollar or two in either direction.
+Nothing home-cooked, nothing from a grocery store. Prices are typical national menu prices from July 2026, so your city will wobble a dollar or two in either direction.
 
 | Meal | Food + amount | Fiber | Cost |
 |---|---|---|---|
@@ -108,6 +108,8 @@ Nothing home-cooked, nothing from a grocery store. Fiber figures are the ones we
 | Lunch | Wendy's large chili | 9.0 g | $4.39 |
 | Dinner | Taco Bell bean burrito | 9.0 g | $2.49 |
 | **Total** | | **31.0 g** | **$14.42** |
+
+Be careful with those fiber numbers, because only one of them is a figure we verified ourselves. Our [high fiber fast food guide](/high-fiber-fast-food-options-guide/) confirms the Wendy's plain baked potato at 7 grams off Wendy's own page. The other three are the builds people actually order, and they sit outside what we checked: the guide publishes the Starbucks oatmeal *plain* at 4 grams rather than built with toppings, and the Wendy's chili in the *Small* size at 3 grams rather than large. Taco Bell is a genuine dead end, since both of its nutrition URLs redirected to a corporate page in July 2026 with no per-item fiber table anywhere. So read this day as a realistic order, not as four sourced measurements.
 
 And honestly, this is the *smart* version of the restaurant day. These are the best fiber orders in fast food, picked from menus that are mostly fiber deserts. The one-stop alternative is a Chipotle bowl with brown rice, double beans, and guacamole at about 25 grams, but at roughly $12.75 for the chicken version with guac, that single bowl costs more than twenty rock-bottom days.
 

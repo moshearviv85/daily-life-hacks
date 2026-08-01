@@ -28,7 +28,7 @@ faq:
 
 Among true dried beans, navy beans carry the most protein at 22.33 grams per 100 grams, followed by black at 21.6 and pinto at 21.42. Widen it to all dry pulses and [brown lentils](/how-much-protein-in-lentils/) take it at 24.63, with green split peas at 23.12. Chickpeas come last of the group at 20.47.
 
-The spread between first and last is under four grams, which is worth knowing before you drive across town for a specific bag.
+Top to bottom, the whole table spans about four grams, 4.2 to be exact, and among the true beans it's under a gram. Worth knowing before you drive across town for a specific bag.
 
 | Dry pulse | Protein per 100 g | Fiber per 100 g | Price per 100 g | Protein per dollar |
 |---|---|---|---|---|

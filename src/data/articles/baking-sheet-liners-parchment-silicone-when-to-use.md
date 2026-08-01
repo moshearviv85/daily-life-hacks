@@ -1,74 +1,93 @@
 ---
 title: "Baking Sheet Liners: Parchment vs Silicone Mats"
-excerpt: "Compare parchment paper, silicone mats, foil, and bare pans so you can choose the right baking sheet liner for cookies, roasting, and sticky foods."
+excerpt: "Parchment paper vs silicone baking mat, with the heat ratings manufacturers actually publish and a side-by-side cookie test that settles the spreading question."
 category: "tips"
 tags:
   - baking
   - kitchen tips
+  - cooking basics
+  - parchment paper
+  - silicone baking mat
 image: "/images/baking-sheet-liners-parchment-silicone-when-to-use-main.jpg"
 imageAlt: "Baking sheet half lined with parchment paper and half with a silicone baking mat"
 date: 2026-04-08
 author: "David Miller"
+quickAnswer: "Parchment is the default. It releases cleanly, browns bottoms well, and you throw it away. Reach for a silicone mat for sticky work like caramel and macarons. For cookies, King Arthur's side-by-side test found mats gave the least spread and foil the most. Neither liner has a universal heat limit. Reynolds rates its parchment to 425 degrees Fahrenheit and says never use it under a broiler or in a toaster oven. Published silicone ceilings run from 375 degrees on Wilton's bakeware chart to 500 degrees for King Arthur's mat, so check your brand. For broiling, line the pan with foil, never the oven floor."
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
   - question: "Can I use wax paper instead of parchment paper in the oven?"
-    answer: "Absolutely not. Wax paper is coated in wax, which will melt and smoke in the oven. It is only for cold storage or wrapping sandwiches. Always use parchment for baking."
+    answer: "Not as an exposed liner. Reynolds says it doesn't recommend direct exposure to oven heat, with one narrow exception: wax paper may be used as a pan liner when baking cakes, bread, brownies or any baked food in which the dough or batter completely covers the lining. If any of the paper is bare and facing the oven, use parchment instead."
   - question: "Are silicone baking mats safe to use at high temperatures?"
-    answer: "Most silicone mats are safe up to 450 degrees Fahrenheit, but you should check the specific brand guidelines. For broiling or very high heat roasting, foil or a bare pan is safer."
+    answer: "There is no single answer, because manufacturers publish different ceilings. Wilton's own bakeware guide lists its silicone bakeware as oven safe up to 375 degrees Fahrenheit, while King Arthur's silicone rolling mat is listed oven-safe to 500 degrees. Find your brand's number before you trust it, and use foil for broiling."
   - question: "Why do my cookies spread too much on a silicone mat?"
-    answer: "Silicone is extremely slick, giving cookie dough nothing to grip as it bakes. This can cause some doughs to spread wider and flatter than they would on parchment."
+    answer: "The mat may not be the reason. King Arthur baked the same dough on foil, a greased pan, a bare pan, parchment and a silicone mat, and the mat gave the least spread of the lot while foil gave the most. If your cookies are going flat, look at dough temperature, butter softness and how much you packed the flour first."
   - question: "Can I cut parchment paper to fit my pan?"
-    answer: "Yes, cutting it to the exact size of the pan bottom is actually best. If the paper hangs over the edges, it can catch the air currents in a convection oven and fold over your food."
+    answer: "Yes, and sizing it to the pan bottom is the safer habit anyway. Reynolds warns never to let parchment touch an open flame or the sides of the oven, so trailing overhang is worth trimming."
   - question: "How do I clean a silicone baking mat?"
-    answer: "Wash it with warm soapy water and a soft sponge. Do not use abrasive scrubbers or knives on it, as cutting the silicone exposes the fiberglass mesh inside and ruins the mat."
+    answer: "Wash it with warm soapy water and a soft sponge. Don't use abrasive scrubbers or cut on it. Nordic Ware describes its mat as food-grade silicone with an encapsulated fiber core, and once you slice through the silicone and expose that core, the mat is done."
 ---
-If you spend any time cooking or baking, you eventually have to decide how to line your pans. A bare metal sheet pan is a recipe for scrubbing baked-on mess for twenty minutes, so we use liners. But staring at a drawer full of options can be confusing.
+A bare metal sheet pan is a recipe for scrubbing baked-on mess for twenty minutes, so we use liners. Then you open the drawer and there are three options and no obvious rule.
 
-Understanding the battle of baking sheet liners, mainly parchment versus silicone mats, saves you time, saves your food, and saves your sponges.
-
-I bought my first silicone baking mat thinking it would replace parchment paper forever. It did not. I ended up with weirdly flat cookies and roasted vegetables that steamed instead of browning. Then I went back to parchment for everything, which felt wasteful. The truth is, they both have specific jobs. Once you know which one to reach for, your oven results get remarkably consistent.
+I bought my first silicone baking mat thinking it would replace parchment paper forever. It did not. Then I went back to parchment for everything, which felt wasteful. They both have specific jobs, and most of what gets repeated online about them is somebody's brand spec quoted as if it were physics.
 
 ## The case for parchment paper
 
-Parchment paper is paper treated with a super thin layer of silicone. It is non-stick, heat resistant, and disposable.
+Parchment paper is, in [Reynolds' own words](https://www.reynoldsbrands.com/tips-and-how-tos/wax-paper-vs-parchment-paper), "paper with a food-safe silicone coating that makes it heat-resistant and non-stick." It's thin, disposable, and it releases almost anything.
 
-Parchment is the undisputed champion of baking. If you are making cookies, cakes, or brownies, parchment is what you want. It gives the dough a slightly textured surface to grip, which helps cookies rise rather than spread out into a thin puddle.
+Parchment is the workhorse of baking. Cookies, cakes, brownies. Line the bottom of a cake tin with it and the cake pops out instead of leaving half itself behind. Being thin matters too: a sheet of paper doesn't sit between your food and the hot pan the way a thick mat does.
 
-It also breathes slightly better than a thick mat. This means the bottoms of your baked goods get beautifully golden brown without becoming overly greasy. When you bake a cake, lining the bottom of the tin with parchment guarantees it will pop out perfectly every single time.
+For messy savory roasting, parchment is brilliant. Sticky sweet potatoes, a glazed piece of salmon, whatever. It's exactly why the paper goes down first for this [sheet pan ginger tofu and broccoli with sticky glaze](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/). When dinner's done, you throw the paper away and rinse the pan.
 
-For messy savory roasting, parchment is brilliant. If you are roasting sticky sweet potatoes or a piece of salmon with a glaze, parchment handles the mess. It is exactly why the paper goes down first for this [sheet pan ginger tofu and broccoli with sticky glaze](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/). When dinner is done, you throw the paper away and give the pan a quick rinse. No scrubbing required.
-
-The only downside to parchment is that it is a consumable. You have to keep buying it, and it has a temperature limit. Most parchment paper is safe up to 425 or 450 degrees Fahrenheit. If you stick it under the broiler, it will turn black and crumble.
+The downside is that it's a consumable, and it has a real ceiling. [Reynolds rates its parchment rolls to 425 degrees Fahrenheit](https://www.reynoldsbrands.com/products/parchment-paper/parchment-paper-rolls) and is blunt about the rest: "Never touch the parchment paper to an open flame or to the sides of the oven, and do not use with a broiling unit or toaster oven."
 
 ## The case for silicone baking mats
 
-Silicone mats are reusable, thick, flexible liners made of fiberglass mesh covered in food-grade silicone. They are heavier, incredibly slick, and last for years if you care for them right.
+Silicone mats are reusable, flexible, and built around a reinforcing core. Nordic Ware describes its [Deluxe Silicone Baking Mat](https://www.nordicware.com/products/deluxe-silicone-baking-mat/) as "food-grade silicone with an encapsulated fiber core," and backs it with a five-year warranty. Treated well, a mat outlives a lot of your other gear.
 
-Silicone mats are amazing for anything sticky or delicate that you do not want to tear. If you are making candy, working with caramel, or baking delicate macarons, a silicone mat is your best friend. Nothing sticks to it. Literally nothing.
+Mats are the right call for anything sticky. Candy, caramel, brittle, macarons. Nothing grabs onto them.
 
-They are also great for kneading dough or rolling out pie crusts on your counter. The mat grips the counter slightly, giving you a perfect non-stick work surface that you can just wash in the sink afterward.
+They're also great for kneading dough or rolling pie crust on the counter, then rinsing the whole thing in the sink.
 
-However, silicone has quirks. Because it is so slick, cookies tend to spread more on a mat than on parchment. Because it is thick, it acts as an insulator. This means the bottoms of your cookies or pastries might not get as brown and crispy as you want them to.
+Now the part everybody gets backwards. The internet insists cookies spread more on silicone. [King Arthur Baking ran the same dough on five surfaces](https://www.kingarthurbaking.com/blog/2022/12/01/keep-cookies-from-spreading), and the silicone mat gave the *least* spread of the lot, producing cookies that were "thick and chewy" and perfectly round. Foil gave the most, so flat that they "looked like a different cookie recipe altogether." Parchment landed in the middle, spreading "just enough while maintaining a nicely domed center." That's one dough on one day, not a law of nature, but it's a real side-by-side test and it points the opposite direction from the folklore. If your cookies are going flat, check your butter and your flour before you blame the mat.
 
-For roasting vegetables, silicone is rarely the right choice. Vegetables release water as they cook, and frozen ones release even more, which matters if you stock the freezer after reading up on [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/). On a silicone mat, that water tends to pool, causing the vegetables to steam rather than caramelize and brown.
+Where I still reach for parchment is crisp bottoms, since a mat is thicker than a sheet of paper. That's a preference call rather than a rule, because King Arthur's testers got browned bottoms on the mat too.
+
+For roasting vegetables, silicone is rarely my choice. Vegetables release water as they cook, and frozen ones release even more, which matters if you stock the freezer after reading up on [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/). That water tends to pool on the mat instead of hitting hot metal, and pooled water means steaming instead of caramelizing.
+
+## What the heat ratings actually say
+
+There is no universal number for either liner, which is why "silicone is good to 450" is such a stubborn piece of bad advice. It's one company's spec wearing a lab coat. Here's what manufacturers actually publish:
+
+- Reynolds parchment paper rolls: 425 degrees Fahrenheit, and never under a broiler or in a toaster oven.
+- [Wilton's own bakeware guide](https://wilton.com/baking-inspiration/wilton-bakeware-comparison-chart-and-guide/) lists its silicone bakeware as oven safe up to 375 degrees.
+- [King Arthur's silicone rolling mat](https://shop.kingarthurbaking.com/items/rolling-mat), which doubles as a baking mat, is listed oven-safe to 500 degrees.
+- Nordic Ware sells a [three-piece cookie baking set](https://www.nordicware.com/products/naturals-3-piece-cookie-baking-set/) where "the full set is oven safe up to 425 F, while the pan itself is designed for use up to 500 F." The liner is the limiting part, not the metal.
+
+That's a 125-degree spread between published silicone numbers from two reputable brands. Read the sleeve your mat came in. If it's long gone and you can't find a number online for that exact product, don't push it past a normal 375 to 400 degree bake.
 
 ## When to use aluminum foil
 
-We have to mention foil, even though it is not a traditional baking liner. Aluminum foil is not non-stick. If you bake cookies on foil, you will be scraping them off with a chisel.
+Foil deserves a mention even though it isn't really a baking liner. Standard foil is not non-stick, and King Arthur's test is the proof: cookies baked on foil came out flatter than anything else they tried. Reynolds does sell a separate Non-Stick Foil, and for [those foils specifically](https://www.reynoldsbrands.com/tips-and-how-tos/aluminum-foil-guide) you "always place your foods toward the dull side."
 
-But foil is fantastic for high-heat savory roasting. If you are broiling chicken wings or roasting potatoes at 450 degrees, foil is the answer. It reflects heat, helping things get crispy, and it handles temperatures that would destroy parchment or degrade silicone. Just remember to use a little oil so your food does not weld itself to the foil.
+While we're here, kill the shiny-side myth. Reynolds says plainly that "both sides of aluminum foil reflect heat and heat foods at virtually identical rates," and the difference in appearance "is due to manufacturing, not functionality."
+
+What foil is genuinely good for is heat that would end a sheet of parchment. Broiling chicken wings, blasting potatoes at 450. Parchment isn't rated for a broiler and a mat might not be either, so foil takes that job. Just brush a little oil on it first.
+
+## Don't line the oven itself
+
+This is the one nobody mentions, and it's the only part of this article that can cost you an appliance. [GE Appliances is direct about it](https://products.geappliances.com/appliance/gea-support-search-content?contentId=17043): "Do not use aluminum foil to line oven bottoms. The foil will trap heat below, and disrupt the performance of the oven." GE adds that "the same is true for similar items such as silicone oven liners," that foil "can melt and permanently damage the oven bottom," and that damage from improper foil use isn't covered by the warranty.
+
+If you're trying to catch a drip, GE's own allowance is to put a sheet on a lower rack several inches below the food, without covering an entire rack and keeping it at least an inch and a half from the oven walls.
 
 ## Making the choice simple
 
-Here is the cheat sheet to keep in your head.
+Use parchment for almost all baking. Cookies, cakes, breads like this [high-fiber gluten-free loaf that holds together](/high-fiber-gluten-free-bread-recipe/), and roasting vegetables when you want easy cleanup and browning. Definitely use it for this [sheet pan breakfast hash with eggs and sweet potatoes](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/), because nobody wants to scrub baked egg off bare metal. Keep it at or under your brand's rating, and keep it away from the broiler.
 
-Use parchment paper for almost all baking. Cookies, cakes, breads like this [high-fiber gluten-free loaf that holds together](/high-fiber-gluten-free-bread-recipe/), and anything where you want a nice browned bottom. Use it for roasting vegetables when you want easy cleanup and good browning, and definitely use it for this [sheet pan breakfast hash with eggs and sweet potatoes](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/), because nobody wants to scrub baked egg off bare metal.
+Use a silicone mat for sticky jobs and for cookies you want thick and round. Candy, caramel, macarons, kneading, rolling.
 
-Use silicone mats for sticky jobs. Candy making, macarons, kneading dough, or freezing things that you need to peel off later.
+Use foil for broiling and aggressive heat, on the pan and never on the oven floor.
 
-Use foil for high heat and broiling. Roasting meats, crispy potatoes, and anything that needs aggressive heat without melting your liner.
-
-You do not have to pick a team. Having a roll of parchment and one silicone mat in your kitchen gives you the tools to handle literally anything your oven throws at you. You just have to know which tool to grab.
+You don't have to pick a team. A roll of parchment and one silicone mat covers basically everything your oven will throw at you. You just have to know which one to grab, and what temperature your particular liner is actually rated for.

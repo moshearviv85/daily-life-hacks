@@ -1,0 +1,298 @@
+{
+  "schema_version": "1.0",
+  "report": "subject-mismatch-audit",
+  "generated": "2026-08-01",
+  "generated_by": "manual audit, assisted by three throwaway scanners (candidate selection, basis-axis conflict, superlative-vs-argmax). No detector was committed.",
+  "defect_class": {
+    "name": "SUBJECT MISMATCH",
+    "definition": "Two numbers are each individually correct but describe different objects, states, bases or scopes, and the framing implies they describe the same thing.",
+    "why_numeric_detector_is_blind": "scripts/audit_extraction_surfaces.py compares canonical quantities between quickAnswer/faq[0] and the body. Every finding below involves numbers that are individually true, so no equality or range test fires. Three of the four also live outside the two surfaces the detector reads, and one turns on a bare integer count ('six'), which carries no unit the detector recognises.",
+    "already_covered_elsewhere_not_reported_here": [
+      "quantity on quickAnswer/faq[0] with no equal value in body (UNSUPPORTED)",
+      "body value stricter than the surface admits, storage-time and internal-temperature scales (PERMISSIVE_TIME / PERMISSIVE_TEMP)"
+    ]
+  },
+  "scope": {
+    "articles_total": 267,
+    "articles_containing_markdown_tables": 115,
+    "mechanical_sweeps_covered": 267,
+    "hand_inspected_articles": 35,
+    "hand_read_in_full_or_near_full": 24,
+    "claim_level_triage_only": 11
+  },
+  "selection_rule": {
+    "statement": "From src/data/articles/*.md, keep every article that (a) contains at least one Markdown table, (b) has at least one table with 3 or more data rows, so a ranking or comparison exists, and (c) has at least one H2/H3/H4 heading containing a digit, a unit token (g, gram, mg, calorie, cup, oz, serving, slice, day, week, percent, dollar, per) or a superlative. Rank the survivors by 3*(numeric headings) + 4*(superlative headings) + 2*(unit-bearing table header cells) + min(max table rows, 8) + 0.5*min(comparison-word hits, 12), and hand-inspect the top of that list.",
+    "eligible_articles": 77,
+    "validation_of_the_rule": "comparing-fiber-content-different-pizza-crusts, the already-fixed motivating defect, ranks #1 of 77 under this rule. Its heading now reads 'How much fiber is in a slice of pizza, by crust type' over a table carrying both 'Fiber per 100 g' and 'Fiber per slice', so the fix is present and no longer flags.",
+    "known_blind_spot": "The rule requires a table. Subject mismatch between two prose sentences, or between a quickAnswer and a prose claim with no table involved, is outside this sample."
+  },
+  "methods": [
+    {
+      "name": "basis-axis conflict scan",
+      "target": "A heading or its lead-in prose asserts a measurement basis (per 100 g, per serving, per ounce, per calorie, dry, cooked, canned) that differs from the basis carried by the header of the table directly beneath it, on the same axis.",
+      "coverage": "all 115 table-bearing articles",
+      "raw_hits": 3,
+      "survived_triage": 0
+    },
+    {
+      "name": "superlative vs column argmax",
+      "target": "A sentence containing a max-word or min-word names exactly one row label of a nearby table and quotes that row's value for some column, while a different row holds the extreme of that column.",
+      "coverage": "all 115 table-bearing articles, every numeric column of every table with 3 or more rows",
+      "raw_hits": 23,
+      "survived_triage": 0,
+      "note": "All 23 dissolved on reading. Twenty-two were correctly scoped superlatives the scanner could not see the scope of ('the best can we scored', 'the cheapest decent meal on this list', 'the most of any cut here', 'Among true dried beans', 'Of the fixed menu items among those ten'). One, which-dried-beans-have-the-most-protein, was correctly scoped in the flagged sentence; the real defect in that article is a different sentence found by hand."
+    },
+    {
+      "name": "direction-word scan",
+      "target": "up to / at least / no more than / minimum of / maximum of near a table, where the direction word inverts meaning without changing the number.",
+      "coverage": "all 115 table-bearing articles",
+      "raw_hits": 1,
+      "survived_triage": 0
+    },
+    {
+      "name": "hand inspection",
+      "target": "Every heading, lead-in sentence, superlative and provenance sentence read against the data beneath it.",
+      "coverage": "35 articles",
+      "survived_triage": 4
+    }
+  ],
+  "false_positive_discipline": {
+    "machine_signals_triaged": 27,
+    "machine_signals_that_survived": 0,
+    "machine_false_positive_rate": "27 of 27, 100 percent",
+    "interpretation": "Every mechanical signal died on contact with the prose. This corpus scopes its superlatives unusually well: the sentence almost always carries an explicit limiter ('among true dried beans', 'the best can we scored', 'of the fixed menu items among those ten', 'the most of any cut here'). A committed detector built on either of these shapes would, at this precision, be noise. All four surviving findings came from reading, and three of them require reading a second file or doing arithmetic the table does not print.",
+    "reported_findings": 4,
+    "of_which_high_confidence": 2,
+    "of_which_moderate_confidence": 1,
+    "of_which_low_confidence": 1
+  },
+  "findings": [
+    {
+      "id": "SM-01",
+      "rank": 1,
+      "severity": "high",
+      "confidence": "high",
+      "verdict": "REAL DEFECT",
+      "shape": "provenance sentence whose subject is broader than the source it names; the named source affirmatively disclaims one of the figures",
+      "file": "src/data/articles/what-30-grams-of-fiber-costs-per-day.md",
+      "location": "line 100, lead-in sentence under the H2 at line 99",
+      "exact_heading": "## Day 4: The restaurant day ($14.42)",
+      "exact_claim": "Nothing home-cooked, nothing from a grocery store. Fiber figures are the ones we verified from chain nutrition pages in our fast food guide; prices are typical national menu prices from July 2026, so your city will wobble a dollar or two in either direction.",
+      "exact_conflicting_data": [
+        {
+          "row": "| Breakfast | Starbucks classic oatmeal with nut and fruit toppings | 6.0 g | $4.25 |",
+          "guide_says": "| Starbucks | Rolled & Steel-Cut Oatmeal, plain standard recipe | 4 g (14% DV) | 160 | 5 g | 125 mg | 2026-07-30 |",
+          "mismatch": "the guide publishes the PLAIN oatmeal at 4 g. The with-toppings build at 6.0 g is not in the guide."
+        },
+        {
+          "row": "| Lunch | Wendy's large chili | 9.0 g | $4.39 |",
+          "guide_says": "Ten grams for the pair: the U.S. pages list the Plain Baked Potato at 7 grams and the Small Chili at 3 more.",
+          "mismatch": "the guide carries the SMALL chili at 3 g only. There is no large-chili figure anywhere in the guide."
+        },
+        {
+          "row": "| Dinner | Taco Bell bean burrito | 9.0 g | $2.49 |",
+          "guide_says": "Taco Bell is the honest gap: both of its nutrition URLs redirected to a corporate page on yum.com on July 30, 2026, with no per-item fiber table.",
+          "mismatch": "the guide states in writing that it could not obtain Taco Bell fiber data. The sentence attributes a Taco Bell figure to it anyway."
+        },
+        {
+          "row": "| Lunch | Wendy's plain baked potato | 7.0 g | $3.29 |",
+          "guide_says": "the U.S. pages list the Plain Baked Potato at 7 grams",
+          "mismatch": "none. This is the one row of four whose provenance claim holds."
+        }
+      ],
+      "cross_file_reference": "src/data/articles/high-fiber-fast-food-options-guide.md, table at lines 47-52, prose at lines 88 and 104",
+      "why_the_numeric_detector_cannot_see_it": "Each of the four fiber values may well be individually correct against the chains' own pages. Nothing in the article contradicts anything else in the article. The defect is entirely in the scope of the word 'verified' and the identity of the source, which no quantity comparison touches. The claim also sits in body prose, not in quickAnswer or faq[0], the only two surfaces the detector reads.",
+      "extraction_risk": "The same four items and the $14.42 total are restated in faq[0] at line 19: 'a 31-gram restaurant day (Starbucks oatmeal, Wendy's chili and baked potato, Taco Bell bean burrito) cost $14.42'. That FAQ answer ships inside FAQPage JSON-LD, so the Day 4 numbers are already the article's most liftable content, resting on an attribution three quarters of which does not hold.",
+      "not_a_fix_suggestion_but_the_options": "Either narrow the sentence to name what the guide actually verified and cite the Starbucks / large-chili / Taco Bell figures to their own sources, or drop the rows whose sources cannot be named. Do not add a URL that has not been fetched and confirmed to carry the specific figure.",
+      "requires": "human decision plus first-hand source checking. Not auto-fixable."
+    },
+    {
+      "id": "SM-02",
+      "rank": 2,
+      "severity": "moderate",
+      "confidence": "high",
+      "verdict": "REAL DEFECT",
+      "shape": "summary sentence whose subject scope is ambiguous between two readings; on the natural reading it is arithmetically false against the table directly beneath it",
+      "file": "src/data/articles/which-dried-beans-have-the-most-protein.md",
+      "location": "line 31, the second sentence of the article, sitting directly above the table at lines 33-41",
+      "exact_claim": "The spread between first and last is under four grams, which is worth knowing before you drive across town for a specific bag.",
+      "preceding_sentence_that_sets_the_scope": "Among true dried beans, navy beans carry the most protein at 22.33 grams per 100 grams, followed by black at 21.6 and pinto at 21.42. Widen it to all dry pulses and brown lentils take it at 24.63, with green split peas at 23.12. Chickpeas come last of the group at 20.47.",
+      "exact_conflicting_data": {
+        "table_first_row": "| Brown lentils | 24.63 g | 10.7 g | $0.32 | 77.7 g |",
+        "table_last_row": "| Chickpeas | 20.47 g | 12.2 g | $0.36 | 56.7 g |",
+        "actual_spread_grams": 4.16
+      },
+      "analysis": "The sentence immediately follows a clause that widened the frame to all dry pulses and named chickpeas as 'last of the group'. On that reading, 'first and last' means the table's first and last rows, 24.63 and 20.47, a spread of 4.16 g, which is not under four grams. On the only other available reading, 'first and last' means the true dried beans alone, navy 22.33 to pinto 21.42, a spread of 0.91 g, for which 'under four grams' is true but a strange and uninformative way to say it. The sentence is therefore either false or materially misleading about which set it describes.",
+      "why_the_numeric_detector_cannot_see_it": "'four grams' is a derived spread, not a value printed anywhere in the article. The detector's support test looks for an equal or containing quantity in the body; it would find plenty of gram values and could never establish that the subtraction the sentence implies gives 4.16. Both endpoints are correct.",
+      "extraction_risk": "Second sentence of the article, immediately above the ranking table. High lift probability for the query the article targets.",
+      "magnitude": "false by 0.16 g on the natural reading. Small, but it is the sentence telling the reader the choice does not matter."
+    },
+    {
+      "id": "SM-03",
+      "rank": 3,
+      "severity": "low-moderate",
+      "confidence": "moderate",
+      "verdict": "REAL DEFECT, though a rhetorical reading is available",
+      "shape": "a cross-category ratio framed as a within-category ratio",
+      "file": "src/data/articles/fast-food-protein-per-dollar-ranked.md",
+      "location": "closing paragraph of the H2 'So is fast food protein ever worth it?'",
+      "exact_claim": "The honest use of this table is damage control: when the drive-thru is happening anyway, the difference between the best order and the worst one is almost 4x on the same menu board.",
+      "exact_conflicting_data": {
+        "study_best": "| 1 | Chipotle High Protein Cup (4 oz chicken) | 32 g | $3.82 | 8.4 g |",
+        "study_worst": "Taco Bell's Crunchwrap Supreme came in dead last at 2.3 grams per dollar.",
+        "global_ratio": 3.65,
+        "within_chain_ratios_derivable_from_the_article": {
+          "Chipotle": "8.4 (High Protein Cup) vs 2.8 (steak bowl) = 3.0x",
+          "Taco Bell": "5.7 (Cheesy Bean and Rice Burrito) vs 2.3 (Crunchwrap Supreme) = 2.5x",
+          "KFC": "7.6 (Original Recipe breast) vs 3.9 (drumstick) = 1.9x",
+          "McDonald's": "5.9 (Double Quarter Pounder) vs 3.2 (Egg McMuffin) = 1.8x"
+        }
+      },
+      "analysis": "8.4 and 2.3 are both correct, and 'almost 4x' is a fair description of 3.65. But they come from two different chains. The qualifier 'on the same menu board' asserts that the spread is available inside one restaurant, and no chain shown in the article reaches 4x; the widest is Chipotle at 3.0x. The sentence is also the practical instruction the section closes on, which is the reading a user is most likely to act on.",
+      "why_the_numeric_detector_cannot_see_it": "3.65 is a derived ratio of two body values, and the defect is in a five-word prepositional phrase with no number in it at all.",
+      "counter_reading": "'on the same menu board' could be read as loose idiom for 'at the drive-thru' rather than a literal within-chain claim. That is why this is flagged moderate rather than high confidence. It is still the one phrase in the article that a careful reader can falsify from the article's own table."
+    },
+    {
+      "id": "SM-04",
+      "rank": 4,
+      "severity": "low",
+      "confidence": "high on the arithmetic, moderate on whether it matters",
+      "verdict": "REAL but minor; error runs in the conservative direction",
+      "shape": "a count in a summary sentence does not match the rows beneath it",
+      "file": "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
+      "location": "first bullet of the H2 'What the numbers actually say'",
+      "exact_claim": "**The beans won again.** Six of the top eight foods are dried legumes, same aisle that ran the fiber table.",
+      "exact_conflicting_data": {
+        "top_eight_rows": [
+          "| 1 | Pinto beans (dry) | 21.4 g | $0.22 | 97.9 g |",
+          "| 2 | Whole wheat flour | 13.2 g | $0.14 | 96.0 g |",
+          "| 3 | Black beans (dry) | 21.6 g | $0.27 | 81.0 g |",
+          "| 4 | Brown lentils (dry) | 24.6 g | $0.32 | 77.7 g |",
+          "| 5 | Navy beans (dry) | 22.3 g | $0.29 | 75.9 g |",
+          "| 6 | Green split peas (dry) | 23.1 g | $0.31 | 73.9 g |",
+          "| 7 | Chickpeas (dry) | 20.5 g | $0.36 | 56.7 g |",
+          "| 8 | Red lentils (dry) | 23.9 g | $0.43 | 56.0 g |"
+        ],
+        "actual_count_of_dried_legumes": 7,
+        "only_non_legume_in_the_top_eight": "whole wheat flour"
+      },
+      "analysis": "Seven of the top eight are dried legumes, not six. The only reading that yields six is one that excludes green split peas from 'legumes', which is botanically wrong and is contradicted by the site's own usage: which-dried-beans-have-the-most-protein groups split peas under 'all dry pulses'. The claim understates the article's own result, so nobody is misled toward a worse purchase.",
+      "why_the_numeric_detector_cannot_see_it": "'Six' and 'eight' are bare integers. The detector's unit list is g, mg, day, week, month, hour, minute, degrees F, percent and dollars; a count carries none of them and is discarded before any comparison runs.",
+      "extraction_risk": "low. Body prose, bolded lead-in, plausible pull-quote but not a surface the FAQ schema ships."
+    }
+  ],
+  "observations_not_defects": [
+    {
+      "id": "OBS-01",
+      "file": "src/data/articles/chicken-thighs-vs-breast-protein-cost.md",
+      "note": "The comparison table's row label reads 'Protein per 100 g' with no raw-or-cooked qualifier. The underlying values (breast 22.5, thighs 19.66, drumsticks 18.08) are USDA raw-basis figures, confirmed by foods-highest-in-protein-per-100-grams which labels the same records 'raw'. The sister article protein-per-serving-beans-chicken-tofu-compared makes a point of this exact trap: 'USDA lists raw boneless skinless chicken breast at 22.5 grams per 100 grams and the same breast cooked and roasted at 31.0.'",
+      "verdict": "NOT a defect. No sentence in the article claims a cooked subject, the price-per-100-g column is on the same raw purchase-weight basis so the per-dollar arithmetic is internally consistent, and the ranking is basis-invariant. This is a labelling gap that would become a defect only if a cooked figure were ever introduced alongside it.",
+      "action": "none required"
+    },
+    {
+      "id": "OBS-02",
+      "file": "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
+      "note": "Line 122 already carries a self-disclosed instance of exactly this defect class, correctly handled: 'Popcorn is an unresolved lead, not a verified winner. The recorded row lands at number 5, but its 14.5-gram value describes air-popped popcorn while the price is for unpopped kernels. Until those forms are reconciled, the 57.7-gram result cannot support a rank against lentils, oats, or vegetables.'",
+      "verdict": "This is the corpus catching a subject mismatch on itself and refusing to rank on it. Evidence that the editorial process has already been hardened against this failure mode, and part of why the machine false-positive rate here is 100 percent."
+    }
+  ],
+  "cleared_false_alarms": [
+    {
+      "file": "src/data/articles/popcorn-vs-potato-chips-fiber-comparison.md",
+      "signal": "quickAnswer states 'about 4.1 grams' vs 'about 0.9 gram' per ounce and calls it 'roughly 4.7 times the fiber'. 4.1 divided by 0.9 is 4.56, which looks like a ratio computed on one basis and attached to another.",
+      "verdict": "FALSE ALARM. Fiber per ounce is fiber per 100 g scaled by a constant, so the ratio is identical on both bases: 14.5 / 3.1 = 4.68, which rounds to 4.7. The apparent 4.56 is an artifact of the displayed rounding, not a basis switch."
+    },
+    {
+      "file": "src/data/articles/high-fiber-fast-food-options-guide.md",
+      "signal": "H2 'Which fast food item has the most fiber per calorie?' is answered with Panera's Vegetarian Black Bean Soup, which is not a row of the main ten-order table; and 'Subway's Veggie Patty Protein Bowl carries the most fiber at 19 grams' sits above a table whose maximum is Chipotle at 25 g.",
+      "verdict": "FALSE ALARM, both. The soup is introduced as 'All ten orders from the table above, plus that soup', and the Subway claim is scoped in the same sentence and in the quickAnswer as 'Of the fixed menu items among those ten', the Chipotle row being an explicitly custom build. This article is the most rigorously scoped in the sample."
+    },
+    {
+      "file": "src/data/articles/high-fiber-pizza-crust-cauliflower.md",
+      "signal": "Homemade crust at 5.8 g per quarter-serving compared against store crusts at 1 to 2 g per serving, where the homemade quarter starts from 227 g of raw cauliflower and a store serving is 48 to 63 g of finished product.",
+      "verdict": "FALSE ALARM. The article states the disparity itself: 'Serving size is the other half of the trick. A quarter of this crust starts from about 227 grams of raw cauliflower. A store crust serving is 48 to 63 grams of finished product, total.' The comparison table is also headed 'Bare crust, nothing on top', which is the precise guard the original pizza-crust defect lacked."
+    },
+    {
+      "file": "src/data/articles/sheet-pan-salmon-and-vegetables-30-minutes.md",
+      "signal": "basis-axis scanner flagged serving language in the lead-in over a per-100-g table.",
+      "verdict": "FALSE ALARM. The table's first header cell reads 'Raw salmon, per 100 g'. The basis is stated in the table itself."
+    },
+    {
+      "file": "src/data/articles/beans-double-win-fiber-protein.md",
+      "signal": "'Canned black beans, the best can we scored: 30.1' flagged against a column whose maximum is pinto beans (dry) at 97.9.",
+      "verdict": "FALSE ALARM. Scoped by 'the best can we scored', under an H2 reading 'Why do dry beans beat canned by three to one?'."
+    },
+    {
+      "file": "src/data/articles/eggs-vs-everything-protein-value.md",
+      "signal": "'They beat every dairy product, including whole milk at 29.1' flagged against an eggs-at-34.4 maximum.",
+      "verdict": "FALSE ALARM. Scoped to dairy; eggs are the subject doing the beating, not a candidate for the scoped maximum."
+    },
+    {
+      "file": "src/data/articles/how-to-eat-more-fiber-on-a-budget-complete-guide.md",
+      "signal": "'Old-fashioned rolled oats deliver 35.8 grams of fiber per dollar and sit in the top ten of our whole 53-food ranking.'",
+      "verdict": "FALSE ALARM. Verified against fiber-per-dollar-cheapest-high-fiber-foods.md line 67: oats are rank 8 of 53."
+    },
+    {
+      "file": "src/data/articles/best-high-fiber-foods-ranked-by-fiber-content.md",
+      "signal": "'At the bottom, russet potatoes managed 1.3 and yellow onions 1.7' flagged as a wrong minimum.",
+      "verdict": "FALSE ALARM. Russet at 1.3 is the actual minimum; the scanner anchored on the second food named in the sentence."
+    },
+    {
+      "file": "src/data/articles/protein-per-serving-beans-chicken-tofu-compared.md",
+      "signal": "per-100-g figures in the lead-in over a per-serving table.",
+      "verdict": "FALSE ALARM, and the strongest counter-example in the corpus. The article converts explicitly ('USDA puts cooked chicken breast at 31.0 grams of protein per 100 grams, so a 3 to 4 ounce portion carries about 26 to 35 grams'), devotes an entire H2 to the trap ('Raw or cooked? The same chicken breast has two numbers'), and closes with 'Compare foods by the same unit. Per 100 g is the cleanest comparison. Per serving is the most useful for real meals. Pick one and stay consistent.'"
+    },
+    {
+      "file": "src/data/articles/cheap-dinner-ideas-cost-per-serving.md, cheap-healthy-meals-for-college-students.md, breakfast-staples-per-dollar.md, foods-highest-in-protein-per-100-grams.md, frozen-vs-fresh-vegetables-fiber-cost.md, how-much-protein-in-peanut-butter.md, how-to-double-recipe-seasoning-without-guessing.md, do-you-have-to-cook-canned-beans.md, chicken-thighs-vs-breast-protein-cost.md",
+      "signal": "assorted argmax and basis flags",
+      "verdict": "FALSE ALARMS. Causes: 'cheapest' is a minimum word the scanner had in its maximum list; superlatives scoped by 'on this list' or 'here'; transposed tables where rows are metrics and columns are foods; and cross-article comparisons the scanner read as in-table claims."
+    }
+  ],
+  "articles_inspected": {
+    "hand_read_in_full_or_near_full": [
+      "comparing-fiber-content-different-pizza-crusts",
+      "what-30-grams-of-fiber-costs-per-day",
+      "what-50-grams-of-protein-costs-per-day",
+      "which-dried-beans-have-the-most-protein",
+      "high-fiber-fast-food-options-guide",
+      "nutritional-value-of-beans-compared",
+      "produce-fiber-per-dollar-ranked",
+      "selenium-containing-foods-easy-ways",
+      "foods-highest-in-protein-per-100-grams",
+      "protein-per-serving-beans-chicken-tofu-compared",
+      "popcorn-vs-potato-chips-fiber-comparison",
+      "oatmeal-vs-grits-fiber-content",
+      "canned-beans-vs-dried-beans-nutrition",
+      "how-much-protein-in-two-eggs",
+      "which-lentils-are-the-best",
+      "how-much-protein-in-lentils",
+      "high-fiber-pizza-crust-cauliflower",
+      "fast-food-protein-per-dollar-ranked",
+      "how-much-protein-do-you-need-per-day",
+      "sheet-pan-salmon-and-vegetables-30-minutes",
+      "food-storage-temperature-rules",
+      "how-much-is-a-can-of-beans",
+      "chicken-thighs-vs-breast-protein-cost",
+      "fiber-per-dollar-cheapest-high-fiber-foods"
+    ],
+    "claim_level_triage_only": [
+      "protein-per-dollar-cheapest-protein-sources",
+      "beans-double-win-fiber-protein",
+      "best-high-fiber-foods-ranked-by-fiber-content",
+      "breakfast-staples-per-dollar",
+      "cheap-dinner-ideas-cost-per-serving",
+      "cheap-healthy-meals-for-college-students",
+      "eggs-vs-everything-protein-value",
+      "frozen-vs-fresh-vegetables-fiber-cost",
+      "how-much-protein-in-peanut-butter",
+      "how-to-double-recipe-seasoning-without-guessing",
+      "how-to-eat-more-fiber-on-a-budget-complete-guide",
+      "do-you-have-to-cook-canned-beans"
+    ]
+  },
+  "edits_made": "none. This run was detection and triage only, as instructed. No article file was modified, so the validator was not run; there is nothing to validate.",
+  "recommendation": {
+    "automatable": "none of the four. Each turns on scope words, a second file, or arithmetic the table does not print. A committed detector for this class would, on this corpus, fire 27 false alarms for every real finding.",
+    "highest_value_next_step": "SM-01 only. It is the one finding with a food-data provenance consequence, it is restated inside FAQPage JSON-LD, and resolving it requires fetching each chain's own page for the Starbucks with-toppings oatmeal, the Wendy's large chili and the Taco Bell bean burrito, then either citing those directly or removing the rows. The other three are copy corrections a human can make in under a minute each without touching a source."
+  }
+}
