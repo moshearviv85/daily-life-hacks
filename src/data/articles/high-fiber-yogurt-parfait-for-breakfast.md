@@ -17,12 +17,12 @@ featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
-quickAnswer: "Plain Greek yogurt contributes zero fiber. USDA lists plain whole-milk Greek yogurt at 0.0 grams per 100 grams, so every gram in a parfait comes from the layers on top. A typical build of 1 cup plain Greek yogurt, 1/2 cup fresh raspberries (4.0 g), 1 tablespoon chia seeds (3.6 g) and 1/2 cup granola at USDA's survey average (4.1 g) totals about 11.7 grams, roughly 42 percent of the FDA's 28-gram Daily Value. Swap in strawberries, ground flax and a low-fiber granola and the identical-looking bowl lands near 5.4 grams, just under the 5.6 grams FDA counts as high in fiber. The granola decides it, so compare fiber per 100 grams rather than per label serving, because label servings run from 1/4 cup to 2/3 cup. For make-ahead, keep the granola in a separate container, hold the jar at 40°F or below, and don't leave it out longer than 2 hours, or 1 hour if it's above 90°F. No federal cold-storage chart lists a time for an assembled parfait, so let the date on the yogurt container cap how far ahead you batch."
+quickAnswer: "Plain Greek yogurt contributes zero fiber. USDA lists plain whole-milk Greek yogurt at 0.0 grams per 100 grams, so every gram in a parfait comes from the layers on top. A typical build of 1 cup plain Greek yogurt, 1/2 cup fresh raspberries (4.0 g), 1 tablespoon chia seeds (4.1 g) and 1/2 cup granola at USDA's survey average (4.1 g) totals about 12.2 grams, roughly 44 percent of the FDA's 28-gram Daily Value. Swap in strawberries, ground flax and a low-fiber granola and the identical-looking bowl lands near 5.4 grams, just under the 5.6 grams FDA counts as high in fiber. The granola decides it, so compare fiber per 100 grams rather than per label serving, because label servings run from 1/4 cup to 2/3 cup. For make-ahead, keep the granola in a separate container, hold the jar at 40°F or below, and don't leave it out longer than 2 hours, or 1 hour if it's above 90°F. No federal cold-storage chart lists a time for an assembled parfait, so let the date on the yogurt container cap how far ahead you batch."
 faq:
 - question: How much fiber is in a high-fiber yogurt parfait?
-  answer: "Using USDA values, a build of 1 cup plain Greek yogurt, 1/2 cup fresh raspberries, 1 tablespoon chia seeds and 1/2 cup granola at USDA's survey average comes to about 11.7 grams, roughly 42 percent of the FDA's 28-gram Daily Value. The realistic range for the same-looking bowl is about 5 to 13 grams, because the granola and the berry you pick move it more than anything else. The yogurt itself contributes 0 grams."
+  answer: "Using USDA values, a build of 1 cup plain Greek yogurt, 1/2 cup fresh raspberries, 1 tablespoon chia seeds and 1/2 cup granola at USDA's survey average comes to about 12.2 grams, roughly 44 percent of the FDA's 28-gram Daily Value. The realistic range for the same-looking bowl is about 5 to 14 grams, because the granola and the berry you pick move it more than anything else. The yogurt itself contributes 0 grams."
 - question: How do I add more fiber to a yogurt parfait?
-  answer: "Berries, seeds and granola do all of it. USDA puts plain Greek yogurt at 0.0 grams of fiber per 100 grams, so it's the protein layer, not the fiber layer. Per 1/2 cup, fresh raspberries add about 4.0 grams and blackberries 3.8, against 1.8 for blueberries and 1.5 for strawberries. A tablespoon of chia seeds adds about 3.6 grams, ground flaxseed about 1.9."
+  answer: "Berries, seeds and granola do all of it. USDA puts plain Greek yogurt at 0.0 grams of fiber per 100 grams, so it's the protein layer, not the fiber layer. Per 1/2 cup, fresh raspberries add about 4.0 grams and blackberries 3.8, against 1.8 for blueberries and 1.5 for strawberries. A tablespoon of chia seeds adds about 4.1 grams, ground flaxseed about 1.9."
 - question: How do I pick a high-fiber granola?
   answer: "Compare fiber per 100 grams, not per serving, because label servings run from 1/4 cup to 2/3 cup and that alone can triple or halve the printed number. In USDA's branded label data, Nature Valley Oats 'n Honey lists 1 gram of fiber for a 1/4 cup serving, which is about 2 grams if you pour a 1/2 cup. Quaker Simply Granola lists 4.8 grams for a 1/2 cup and Bear Naked Original Cinnamon 5.5 grams for its own 1/2 cup. Same aisle, roughly triple the fiber."
 - question: Can I prepare a yogurt parfait the night before?
@@ -54,7 +54,7 @@ Fiber per 100 grams and the cup weights both come from [USDA FoodData Central](h
 
 Now add three of them up. Raspberries plus chia plus average granola is 12.2 grams, about 44 percent of the FDA's [28-gram Daily Value for fiber](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). Strawberries plus ground flax plus a weak granola is 5.4 grams. Same jar, same five minutes, less than half the fiber. For context, NIH's MedlinePlus notes Americans [average about 16 grams of fiber a day](https://medlineplus.gov/ency/article/002470.htm) against a 21 to 38 gram recommendation.
 
-One more line from that FDA page worth keeping: 20 percent of the Daily Value or more per serving counts as high. For fiber that's 5.6 grams. The lazy build misses it. Trade up to the best granola in the next table and the same jar reaches 13.1 grams, which is more than double the bar.
+One more line from that FDA page worth keeping: 20 percent of the Daily Value or more per serving counts as high. For fiber that's 5.6 grams. The lazy build misses it. Trade up to the best granola in the next table and the same jar reaches 13.6 grams, which is more than double the bar.
 
 ## Why the yogurt layer contributes nothing
 
@@ -83,7 +83,7 @@ Fresh berries can sit right in the yogurt. Frozen fruit goes on top so the juice
 * **1 cup plain Greek yogurt:** Full-fat or 2%, whichever texture you like. Fiber contribution: zero, and that's fine.
 * **1/2 cup raspberries or blackberries:** The two highest-fiber berries in the table above, roughly 4 grams.
 * **1/2 cup granola:** Somewhere between 2 and 5.5 grams depending on the bag. This is your variable.
-* **1 tablespoon chia seeds or ground flax:** 3.6 grams or 1.9 grams respectively.
+* **1 tablespoon chia seeds or ground flax:** 4.1 grams or 1.9 grams respectively.
 * **A small drizzle of maple syrup or honey:** Optional. Taste it first, ripe fruit may be enough.
 
 Spoon in half the yogurt, half the berries, the seeds, then the rest. Granola goes on at the last second. You can make stripes in a clear jar if that brings you joy, but it tastes the same in the chipped cereal bowl.

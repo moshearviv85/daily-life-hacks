@@ -1,6 +1,6 @@
 {
  "updated": "2026-07-31",
- "round": 3,
+ "round": 4,
  "pages": [
   {
    "slug": "high-fiber-fast-food-options-guide",
@@ -181,6 +181,66 @@
    "remaining_gap": "The page never scales to a large family, which is the second half of its own title and query. The intro sets up a family of five, and then every single number in the article is an abstract \"grams of protein per dollar\" ratio: there is not one figure expressed per person, per meal, or per week. A parent searching \"cheap protein sources for families\" wants to know how many pounds of dry beans or drumsticks feeds five people and what that costs for a week, and the article makes them do that arithmetic themselves. The competitors are worse (Healthline, Cheapskate Cook and the rest publish zero protein-per-dollar math and zero citations, and Cheapskate Cook cites nothing at all), which is why this still wins, but household scaling is the one thing a genuinely family-targeted page must have and this one does not. The secondary gap is bulk: 2042 words and 9 H2s (both Tier 2 validator warnings) for a payload that is essentially one ranking plus one ladder."
   },
   {
+   "slug": "good-source-of-fiber-label-meaning",
+   "url": "https://www.daily-life-hacks.com/good-source-of-fiber-label-meaning/",
+   "impressions": 83,
+   "position": 7.4,
+   "citations_before": 8,
+   "citations_after": 13,
+   "citations_added": 5,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "intent_satisfaction": 9,
+    "factual_accuracy": 9,
+    "trust": 8,
+    "answer_extractability": 9,
+    "citation_worthiness": 8
+   },
+   "quick_answer_added": true,
+   "remaining_gap": "The quickAnswer measures the threshold against \"one serving,\" but 21 CFR 101.54(c)(1) measures it against the reference amount customarily consumed (RACC), a standard portion FDA fixes by food category. The body draws this distinction explicitly (\"FDA scores these thresholds against a reference amount customarily consumed\") and the comparison table header says \"per reference amount,\" so the quickAnswer is the loosest statement of the rule on the page. Because the quickAnswer is the element AI assistants lift verbatim, the one paragraph most likely to be reproduced is the one that erases the page's sharpest technical point. It also invites the exact misreading the body works to prevent, that a brand could shrink the serving to reach the claim."
+  },
+  {
+   "slug": "gut-health-tea-peppermint-ginger",
+   "url": "https://www.daily-life-hacks.com/gut-health-tea-peppermint-ginger/",
+   "impressions": 77,
+   "position": 12.9,
+   "citations_before": 2,
+   "citations_after": 4,
+   "citations_added": 2,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "intent_satisfaction": 8,
+    "factual_accuracy": 9,
+    "trust": 8,
+    "answer_extractability": 8,
+    "citation_worthiness": 7
+   },
+   "quick_answer_added": true,
+   "remaining_gap": "The page asserts the peppermint-oil-vs-peppermint-leaf gap qualitatively but never quantifies it, so it wins the argument without owning the fact. The line 'Nobody has measured what 3 ginger coins actually leave behind in your mug' is rhetorically strong but is an appeal to absent evidence where a real, verifiable order-of-magnitude comparison exists: the IBS trials NCCIH cites used 180-225 mg of enteric-coated peppermint oil three times daily (roughly 540-675 mg/day), while a 1 teaspoon leaf infusion delivers only a small fraction of the leaf's volatile oil. That single quantified contrast is the most citation-worthy and most liftable fact this page could own, it is precisely what the entire article is arguing, and no competitor in the top-3 has it. Right now the page's citations (NCCIH peppermint-oil, NCCIH ginger, NCCIH IBS) are all sources a competitor could cite equally well, which is why citation_worthiness is the weakest axis despite the page being the most accurate result in the set. Secondary gap: pregnancy nausea is the single most common real-world reason people search ginger tea for digestive relief, and NCCIH explicitly supports it ('ginger may be helpful for nausea and vomiting associated with pregnancy'), yet the article mentions it only in passing inside an evidence-limitations paragraph and gives the reader no guidance."
+  },
+  {
+   "slug": "how-to-revive-wilted-lettuce-and-greens",
+   "url": "https://www.daily-life-hacks.com/how-to-revive-wilted-lettuce-and-greens/",
+   "impressions": 73,
+   "position": 28.2,
+   "citations_before": 2,
+   "citations_after": 5,
+   "citations_added": 3,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "intent_satisfaction": 9,
+    "factual_accuracy": 7,
+    "trust": 8,
+    "answer_extractability": 9,
+    "citation_worthiness": 8
+   },
+   "quick_answer_added": true,
+   "remaining_gap": "The page never addresses the WARM/HOT-WATER revival method, which is the single most prominent competing claim in the live SERP and the one question a comparison-shopping reader arrives with. Two of the current top results push it (one asserts 110-140F revives greens in under 15 minutes; The Chopping Block ran a side-by-side and landed on ~105F for 5 minutes, beating the ice bath on speed). The article's opening line, 'That's the whole rescue operation. No lemon juice, no special powder,' implicitly claims to have swept the alternatives, yet the one real alternative goes unmentioned. A reader who saw the hot-water tip elsewhere gets no adjudication and leaves to find one. This is also the cheapest available win: the hot-water proponents are poorly sourced (The Chopping Block explicitly says it found 'essentially no results' when searching for documentation, and traced the tip to a YouTube video), so a short, honestly-hedged paragraph that names the method, credits the speed advantage, and notes the evidence is thinner than for the cold soak would let this page own the comparison outright rather than look incomplete next to it."
+  },
+  {
    "slug": "high-fiber-yogurt-parfait-for-breakfast",
    "url": "https://www.daily-life-hacks.com/high-fiber-yogurt-parfait-for-breakfast/",
    "impressions": 52,
@@ -198,6 +258,26 @@
     "citation_worthiness": 6
    },
    "remaining_gap": "The chia tablespoon weight is fabricated by record confusion: the article tells the reader USDA publishes a 168 g cup for chia, and USDA does not (record 170554 has only a 1 oz portion; 168 g is flaxseed record 169414's 'cup, whole'). That single wrong gram weight is the only unverified number on the page, and it propagates into all three headline totals (11.7 g, 42 percent DV, 13.1 g) which sit in the excerpt, quickAnswer and faq[0], exactly the text an AI assistant lifts. Everything else checks out: 14 of 15 FDC record IDs match to the gram, the FDA 28 g DV and 20 percent 'high' threshold are quoted correctly, the 40 F / 2 hour / 1 hour above 90 F numbers match FDA verbatim, and the refusal to invent a make-ahead window ('no federal cold-storage chart lists a time for an assembled parfait') is verified true against the archived FoodSafety.gov chart and is the most trust-earning sentence on the page. Extraction-surface check passes on safety: quickAnswer and faq[3] are no more permissive than the body and are conservative relative to FDA. Secondary gap: for a recipe-intent query served by recipe carousels, the page gives no yield, no prep time and no calorie or protein total for the actual build, so it loses to today.com and Parade on pure recipe intent even while beating them decisively on sourcing."
+  },
+  {
+   "slug": "popcorn-vs-potato-chips-fiber-comparison",
+   "url": "https://www.daily-life-hacks.com/popcorn-vs-potato-chips-fiber-comparison/",
+   "impressions": 43,
+   "position": 8.6,
+   "citations_before": 2,
+   "citations_after": 6,
+   "citations_added": 4,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "intent_satisfaction": 8,
+    "factual_accuracy": 9,
+    "trust": 9,
+    "answer_extractability": 9,
+    "citation_worthiness": 8
+   },
+   "quick_answer_added": true,
+   "remaining_gap": "The page gives a USDA number for every variant of the losing food (fried chips, baked chips, even raw russet potato) but only one variant of the winning food. Air-popped is the sole popcorn figure. Oil-popped and microwave popcorn, which is what most Americans searching this query actually eat, get prose hedges (\"salted or buttered popcorn move the numbers\", \"movie theater butter versions can double the calories\") and no gram figure at all. A reader holding a bag of microwave popcorn cannot answer their own question from this page, and the 4.7x headline silently assumes the least common preparation. Related and compounding it: the closing sentence says \"a bag of kernels gives you about 4.7 times the fiber ounce for ounce\", which applies the air-popped density to kernels as sold. That is precisely the form mismatch the article's own cost section spends three paragraphs disowning, and that the sibling page popcorn-vs-almonds-fiber-cost marks unresolved, so the article contradicts its own integrity standard in its most quoted line."
   },
   {
    "slug": "oatmeal-vs-grits-fiber-content",
@@ -255,6 +335,46 @@
     "trust": 8
    },
    "remaining_gap": "Query intent breadth. The primary query is plural, \"cheap crockpot MEALS for large families\", and searchers arriving on it want a browsable list of dinner ideas. This page delivers exactly one complete recipe (pinto beans and smoked sausage) plus three one-line pork shoulder treatments and a pasta-sauce mention. The current top organic result (largefamilytable.com) lists roughly 85 to 90 distinct recipes organized by protein. On every quality axis this article wins decisively: that competitor carries zero external citations, zero price or cost data, no protein-per-dollar economics, no dried-bean PHA warning, and no thawing rule, offering only a single unsourced \"165 degrees\" aside. This page is a rigorously sourced food-safety and protein-economics essay wrapped around one recipe. That is more trustworthy and far more citation-worthy, but it under-serves the plural noun in the head term, and it is the only axis where the incumbent genuinely beats it."
+  },
+  {
+   "slug": "how-to-keep-sandwiches-from-getting-soggy",
+   "url": "https://www.daily-life-hacks.com/how-to-keep-sandwiches-from-getting-soggy/",
+   "impressions": 27,
+   "position": 20.1,
+   "citations_before": 0,
+   "citations_after": 2,
+   "citations_added": 2,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "intent_satisfaction": 8,
+    "factual_accuracy": 9,
+    "trust": 8,
+    "answer_extractability": 8,
+    "citation_worthiness": 8
+   },
+   "quick_answer_added": true,
+   "remaining_gap": "The page raises the central safety question and never answers it. It establishes a 7:00 AM to 12:30 PM window, correctly says that \"blows straight past 2 hours,\" then says \"pack an ice source\" and stops. It never states the mechanism that resolves the conflict: an ice source in an insulated bag works by holding the food below 40 F, so the 2-hour room-temperature clock does not start. As written, a careful reader (and any AI lifting the quickAnswer) concludes the article's own recommended lunch violates the USDA rule it just cited. The quickAnswer is the worse offender because it drops the insulated-bag qualifier entirely, leaving \"pack an ice source\" as an unsourced implied guarantee for a 5.5-hour hold. Secondary gap: the FAQ answers a container/wrapping question (hard-sided containers, parchment, beeswax wrap) that has no corresponding section anywhere in the body, so the page's most competitive completeness win is buried in schema markup instead of prose."
+  },
+  {
+   "slug": "protein-per-serving-beans-chicken-tofu-compared",
+   "url": "https://www.daily-life-hacks.com/protein-per-serving-beans-chicken-tofu-compared/",
+   "impressions": 24,
+   "position": 20.8,
+   "citations_before": 0,
+   "citations_after": 17,
+   "citations_added": 17,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "intent_satisfaction": 8,
+    "factual_accuracy": 9,
+    "trust": 7,
+    "answer_extractability": 8,
+    "citation_worthiness": 7
+   },
+   "quick_answer_added": true,
+   "remaining_gap": "The tofu range, which is the page's single most original and most load-bearing claim, is its least verifiable content. The table row \"Tofu, firm or extra firm, 3 to 4 oz | 8 to 20 g\" links only FDC 172475, which is firm/calcium sulfate at 17.3 g/100 g and supports the 20 g top end but says nothing about the 8 g bottom end; the record that justifies it (174290, extra firm/nigari, 9.98 g/100 g) is cited two sections later and never in the row. Compounding this, the claim that carries the whole section, \"Branded records at FoodData Central put extra firm tofu from Nasoya, Kroger, Whole Foods, Wegmans and Pulmuone between 9.41 and 10.9 grams per 100 grams,\" names five retailers and a precise numeric band with zero links. I independently confirmed Nasoya at 10.1 g/100 g (8.0 g protein per 79 g serving), so the claim appears sound, but the page hands the reader nothing to check. That matters because this is precisely where the current top result (pinchofwellness.com) is wrong, presenting 17 g/100 g as \"tofu\" with no coagulant caveat, so the correction is this page's main competitive advantage and it is the one part a skeptical reader or an AI assistant cannot verify from the page itself."
   },
   {
    "slug": "sheet-pan-salmon-and-vegetables-30-minutes",
@@ -316,12 +436,13 @@
   }
  ],
  "totals": {
-  "pages_worked": 18,
-  "verified_citations_now_live": 146,
-  "citations_added_net": 141,
-  "wins": 11,
+  "pages_worked": 24,
+  "verified_citations_now_live": 193,
+  "citations_added_net": 174,
+  "wins": 17,
   "ties": 2,
-  "extraction_defects_fixed": 3
+  "extraction_defects_fixed": 4,
+  "quick_answers_added": 6
  },
  "verification": {
   "urls_checked_independently": 80,
@@ -333,20 +454,21 @@
   "internal_links": "PASS 12,719 anchors / 0 orphans",
   "seo_harness": "PASS 9/9 dist and live"
  },
- "next_action": "Deploy round 3, then continue the 45 remaining demand-carrying uncited articles. The sitewide detector cannot see wrong-subject headings (the pizza-crust defect shape); that class is still unaudited.",
+ "next_action": "38 demand-carrying articles remain uncited, and 46 of the 93 demand articles still lack a quickAnswer. The wrong-subject-heading defect class (the pizza-crust shape) is still unaudited sitewide: it is numerically invisible and needs a different detector.",
  "known_tradeoffs": [
   "S-20 soft word-count warning now on 8 of 9 pages: verified sourcing adds words and the 1200-word ceiling is a style heuristic, not a quality rule. Flagged rather than resolved by deleting sourced content.",
   "tests/high-fiber-fast-food-guide.test.mjs asserted a verified falsehood (that Panera PDF 403s automated requests). Test corrected to the measured truth: default curl UA returns HTTP 200 and a 513,680-byte PDF; a Chrome UA is what gets 403."
  ],
  "sitewide_audit": {
   "articles_scanned": 267,
-  "with_quickAnswer": 81,
+  "with_quickAnswer": 92,
   "flagged_before": 25,
-  "flagged_after": 22,
+  "flagged_after": 23,
   "permissive_drift_before": 8,
   "permissive_drift_after": 6,
   "false_positive_rate_top12": "67%",
   "real_defects_found_and_fixed": 3,
-  "detector": "scripts/audit_extraction_surfaces.py"
+  "detector": "scripts/audit_extraction_surfaces.py",
+  "note": "The detector caught an inconsistency the orchestrator itself introduced: after correcting the parfait chia row from 3.6 to 4.1 g, the quickAnswer and two FAQ answers still carried the old totals. Fixed."
  }
 }

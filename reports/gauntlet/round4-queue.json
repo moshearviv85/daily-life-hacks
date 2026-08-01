@@ -1,0 +1,385 @@
+[
+ {
+  "risk": 9,
+  "impr": 22.0,
+  "slug": "split-pea-soup-recipe-high-fiber",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 9,
+  "impr": 18.0,
+  "slug": "how-to-preheat-skillet-even-browning",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 3,
+  "impr": 15.0,
+  "slug": "best-breakfast-foods-for-sustained-energy",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 13,
+  "impr": 14.0,
+  "slug": "costco-rotisserie-chicken-meal-ideas-dinner",
+  "signals": [
+   "raw-food",
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 6,
+  "impr": 11.0,
+  "slug": "amaranth-millet-teff-beginner-cooking-guide",
+  "signals": [
+   "thaw-reheat",
+   "storage-window"
+  ]
+ },
+ {
+  "risk": 3,
+  "impr": 10.0,
+  "slug": "easy-sourdough-discard-recipes-beginners",
+  "signals": [
+   "room-temp"
+  ]
+ },
+ {
+  "risk": 3,
+  "impr": 10.0,
+  "slug": "whole-wheat-vs-white-pasta-fiber",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 9,
+  "impr": 8.0,
+  "slug": "gluten-free-sourdough-discard-pizza-dough",
+  "signals": [
+   "thaw-reheat",
+   "room-temp"
+  ]
+ },
+ {
+  "risk": 6,
+  "impr": 8.0,
+  "slug": "high-fiber-salad-dressings-homemade",
+  "signals": [
+   "storage-window"
+  ]
+ },
+ {
+  "risk": 4,
+  "impr": 8.0,
+  "slug": "high-fiber-smoothies-for-kids-picky-eaters",
+  "signals": [
+   "metabolic-claim"
+  ]
+ },
+ {
+  "risk": 10,
+  "impr": 7.0,
+  "slug": "high-fiber-hummus-recipe-homemade",
+  "signals": [
+   "raw-food",
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 16,
+  "impr": 6.0,
+  "slug": "healthy-blue-collar-lunch-ideas-men",
+  "signals": [
+   "thaw-reheat",
+   "room-temp",
+   "metabolic-claim"
+  ]
+ },
+ {
+  "risk": 12,
+  "impr": 6.0,
+  "slug": "how-to-keep-bread-fresh-longer-without-mold",
+  "signals": [
+   "thaw-reheat",
+   "storage-window"
+  ]
+ },
+ {
+  "risk": 6,
+  "impr": 6.0,
+  "slug": "high-fiber-pasta-alternatives",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 4,
+  "impr": 6.0,
+  "slug": "aldi-shopping-hacks-large-family-meals",
+  "signals": [
+   "vulnerable-group"
+  ]
+ },
+ {
+  "risk": 21,
+  "impr": 5.0,
+  "slug": "fiber-rich-soup-for-weight-loss-cabbage",
+  "signals": [
+   "thaw-reheat",
+   "gut-immune-claim",
+   "weight-claim"
+  ]
+ },
+ {
+  "risk": 16,
+  "impr": 5.0,
+  "slug": "black-bean-brownies-hidden-fiber-dessert",
+  "signals": [
+   "thaw-reheat",
+   "room-temp",
+   "metabolic-claim"
+  ]
+ },
+ {
+  "risk": 13,
+  "impr": 5.0,
+  "slug": "high-fiber-stir-fry-vegetables",
+  "signals": [
+   "raw-food",
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 11,
+  "impr": 5.0,
+  "slug": "freezer-inventory-simple-system",
+  "signals": [
+   "raw-food",
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 10,
+  "impr": 5.0,
+  "slug": "gut-friendly-high-fiber-smoothies-for-daily-wellness",
+  "signals": [
+   "metabolic-claim",
+   "gut-immune-claim"
+  ]
+ },
+ {
+  "risk": 17,
+  "impr": 4.0,
+  "slug": "healthy-homemade-dumpling-wrapper-recipe",
+  "signals": [
+   "temp-danger-zone",
+   "raw-food",
+   "thaw-reheat",
+   "room-temp"
+  ]
+ },
+ {
+  "risk": 9,
+  "impr": 4.0,
+  "slug": "cottage-cheese-vs-greek-yogurt-protein-uses",
+  "signals": [
+   "thaw-reheat",
+   "gut-immune-claim",
+   "weight-claim"
+  ]
+ },
+ {
+  "risk": 21,
+  "impr": 3.0,
+  "slug": "baked-cod-lemon-capers-green-beans",
+  "signals": [
+   "temp-danger-zone",
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 12,
+  "impr": 3.0,
+  "slug": "how-to-freeze-bananas-for-smoothies",
+  "signals": [
+   "thaw-reheat",
+   "room-temp"
+  ]
+ },
+ {
+  "risk": 9,
+  "impr": 3.0,
+  "slug": "easy-one-pot-chicken-and-rice-dinner",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 9,
+  "impr": 3.0,
+  "slug": "no-bake-high-fiber-energy-balls-recipe",
+  "signals": [
+   "thaw-reheat",
+   "room-temp"
+  ]
+ },
+ {
+  "risk": 4,
+  "impr": 3.0,
+  "slug": "high-protein-bagel-sandwich-ideas-lunch",
+  "signals": [
+   "metabolic-claim"
+  ]
+ },
+ {
+  "risk": 3,
+  "impr": 3.0,
+  "slug": "plan-week-of-dinners-fewer-grocery-runs",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 17,
+  "impr": 2.0,
+  "slug": "air-fryer-salmon-bites-garlic-honey-glaze",
+  "signals": [
+   "temp-danger-zone",
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 12,
+  "impr": 2.0,
+  "slug": "cutting-board-basics-which-to-use",
+  "signals": [
+   "raw-food"
+  ]
+ },
+ {
+  "risk": 9,
+  "impr": 2.0,
+  "slug": "lentil-curry-high-fiber-vegan-dinner",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 9,
+  "impr": 2.0,
+  "slug": "vegan-high-fiber-meal-prep-for-week",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 4,
+  "impr": 2.0,
+  "slug": "healthy-alternatives-white-rice-dinner",
+  "signals": [
+   "vulnerable-group"
+  ]
+ },
+ {
+  "risk": 3,
+  "impr": 2.0,
+  "slug": "how-to-season-cast-iron-skillet-properly",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 22,
+  "impr": 1.0,
+  "slug": "grab-and-go-fridge-snack-drawer",
+  "signals": [
+   "temp-danger-zone",
+   "raw-food",
+   "storage-window",
+   "room-temp"
+  ]
+ },
+ {
+  "risk": 21,
+  "impr": 1.0,
+  "slug": "healthy-turkey-meatballs-meal-prep",
+  "signals": [
+   "temp-danger-zone",
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 11,
+  "impr": 1.0,
+  "slug": "zinc-containing-foods-weekly-meals",
+  "signals": [
+   "vulnerable-group",
+   "gut-immune-claim"
+  ]
+ },
+ {
+  "risk": 10,
+  "impr": 1.0,
+  "slug": "batch-cooking-for-beginners-weekly-guide",
+  "signals": [
+   "temp-danger-zone",
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 9,
+  "impr": 1.0,
+  "slug": "how-to-meal-prep-on-a-budget-for-one-person",
+  "signals": [
+   "thaw-reheat",
+   "storage-window"
+  ]
+ },
+ {
+  "risk": 7,
+  "impr": 1.0,
+  "slug": "how-to-reduce-food-waste-at-home-easy-tips",
+  "signals": [
+   "vulnerable-group",
+   "room-temp"
+  ]
+ },
+ {
+  "risk": 6,
+  "impr": 1.0,
+  "slug": "high-fiber-gluten-free-bread-recipe",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 4,
+  "impr": 1.0,
+  "slug": "animal-protein-per-dollar-ranked",
+  "signals": [
+   "raw-food"
+  ]
+ },
+ {
+  "risk": 3,
+  "impr": 1.0,
+  "slug": "cucumber-edamame-salad-sesame",
+  "signals": [
+   "thaw-reheat"
+  ]
+ },
+ {
+  "risk": 3,
+  "impr": 1.0,
+  "slug": "pear-salad-with-walnuts-fiber-rich",
+  "signals": [
+   "thaw-reheat"
+  ]
+ }
+]

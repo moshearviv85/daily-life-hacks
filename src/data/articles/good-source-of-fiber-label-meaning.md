@@ -9,8 +9,17 @@ tags:
 - food labels
 image: "/images/good-source-of-fiber-label-meaning-main.jpg"
 imageAlt: "Close up of a nutrition facts label on a food package with fiber highlighted"
+quickAnswer: >-
+  On a U.S. label, "good source of fiber" is a regulated phrase, not marketing
+  mush. It means a standard FDA reference portion carries 10 to 19 percent of
+  fiber's 28 gram Daily Value, so 2.8 to 5.3 grams. FDA scores it against that
+  reference amount rather than whatever serving the brand prints, so a company
+  cannot shrink the serving into a claim. "High in fiber" or "excellent source"
+  needs 20 percent or more, at least 5.6 grams. That's all it promises. It says nothing
+  about added sugar, and if you see a total fat figure printed right next to the
+  claim, that's the FDA making the brand admit the food isn't low fat.
 date: 2026-04-25
-dateModified: 2026-07-29
+dateModified: 2026-08-01
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -32,28 +41,30 @@ On a U.S. food label, "good source of fiber" means one serving gives you 10 to 1
 
 That's the answer. Now the part the label doesn't mention.
 
-I stood in the cereal aisle for way too long last week. Two boxes, almost the same price, both screaming about fiber on the front. One said "good source of fiber." The other said "made with whole grains." I grabbed both, flipped them over, and one had 3 grams per serving. The other had 1 gram. Same aisle, same promises, very different math. Whole grain math stays messy outside the cereal aisle too. We ran the numbers on [oatmeal vs grits fiber content](/oatmeal-vs-grits-fiber-content/) and the two are not even close.
+I stood in the cereal aisle for way too long last week. Two boxes, almost the same price, both screaming about fiber. One said "good source of fiber." The other said "made with whole grains." I flipped them over: 3 grams per serving vs 1 gram. Same aisle, same promises, very different math. That messiness follows whole grains around, and we ran the numbers on [oatmeal vs grits](/oatmeal-vs-grits-fiber-content/) too.
 
-Front-of-package claims are marketing. That's not cynical, that's just how packaging works. But the phrase "good source of fiber" is one of the more regulated ones, which means it actually has rules behind it. Knowing those rules can save you from buying granola bars that are basically cookies with a health halo. Granola is the worst offender in the whole store, which is why we wrote a separate guide on [choosing a granola that isn't secretly dessert](/how-to-choose-granola-not-dessert/).
+Front-of-package claims are marketing. That's not cynical, that's just how packaging works. But "good source of fiber" is one of the regulated ones, which means it has rules behind it. Knowing them saves you from granola bars that are basically cookies with a health halo, which is why we wrote a separate guide on [choosing a granola that isn't secretly dessert](/how-to-choose-granola-not-dessert/).
 
-Once you've decoded the box, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) helps you compare the beans, grains, fruit, and other foods that don't arrive wearing a billboard.
+Once you've decoded the box, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) covers the foods that don't arrive wearing a billboard.
 
 ## What does the FDA require for each fiber claim?
 
-The whole system fits in one table, and honestly it's easier to scan than to read:
+The whole system fits in one table:
 
-| What the package says | What the FDA requires per serving |
+| What the package says | What the FDA requires per reference amount |
 |---|---|
 | "Good source of fiber", "Contains fiber", "Provides fiber" | 10 to 19% of the Daily Value: 2.8 to 5.3 grams |
 | "High in fiber", "Excellent source of fiber", "Rich in fiber" | 20% DV or more: at least 5.6 grams |
 | "More fiber" or "Added fiber" | At least 10% DV (2.8 grams) more than the food it's compared to |
 | "Made with whole grains" | It's not one of the fiber claims in 21 CFR 101.54, so the phrase doesn't establish a fiber minimum |
 
-These aren't opinion numbers. Section 101.54 sets the claim thresholds, and FDA's current reference page lists the 28 gram DV. [FDA's whole-grain guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements) handles those statements separately. In other words, "made with whole grains" isn't a secret fiber claim wearing a wheat-colored jacket. Our [plain-English guide to the fiber and protein Daily Values](/fiber-protein-daily-values-explained/) follows the rest of the federal paperwork so you don't have to.
+These aren't opinion numbers. Section 101.54 sets the thresholds, and the 28 gram Daily Value is written into [FDA's labeling regulations](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9). Two footnotes. If a guide quotes 2.5 grams for "good source" and 5 grams for "high," it's using the old 25 gram Daily Value from before the 2016 label overhaul. And meat and poultry answer to USDA, not FDA, though [USDA's parallel rule](https://www.ecfr.gov/current/title-9/chapter-III/subchapter-A/part-317/subpart-B/section-317.354) uses the same 10 to 19 percent and 20 percent cutoffs. [FDA's whole-grain guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements) handles those statements separately, so "made with whole grains" isn't a secret fiber claim wearing a wheat-colored jacket. Our [plain-English guide to the fiber and protein Daily Values](/fiber-protein-daily-values-explained/) follows the rest of the federal paperwork so you don't have to.
 
 ## What the label leaves out
 
-**Serving size tricks.** A serving of crackers might be listed as 6 crackers. But if you normally eat 12 (no judgment, we've all been there), the fiber per actual eating occasion is double what's printed. Or, more commonly, the serving is tiny to keep the calories low and the fiber percentage high enough to qualify for the claim.
+**Serving size.** A serving of crackers might be listed as 6 crackers. If you normally eat 12 (no judgment, we've all been there), you're getting double the printed fiber and double everything else. One thing brands can't do is shrink their way into a claim: FDA scores these thresholds against a reference amount customarily consumed, a standard portion it sets by food category, and a smaller portion would only mean fewer grams.
+
+**The fat tell.** Almost nobody mentions this one. If a product makes a fiber claim and isn't "low fat" (3 grams or less per reference amount), [101.54(d)](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54) forces the label to disclose total fat per serving right next to the claim, in type at least half the size of the claim. So that small "contains 9g total fat per serving" trailing after "Good source of fiber" isn't the brand being generous. It's a required confession.
 
 **Natural vs added fiber.** The front-of-package claim doesn't tell you where the fiber came from. [FDA's dietary-fiber Q&A](https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/questions-and-answers-dietary-fiber) says the Nutrition Facts number may include fiber that's intrinsic and intact in plants, plus isolated or synthetic fibers that meet FDA's definition. FDA also names additional fibers, including inulin and polydextrose, that it currently allows manufacturers to count under enforcement discretion. So yes, an added fiber may help a product reach the threshold, but not every random nondigestible carbohydrate gets to join the club.
 
@@ -61,23 +72,22 @@ These aren't opinion numbers. Section 101.54 sets the claim thresholds, and FDA'
 
 ## How to actually use this information at the store
 
-Don't ignore the claim entirely. It's a reasonable starting filter. But use it as a first question, not the final answer.
+Don't ignore the claim. It's a reasonable starting filter, but a first question, not the final answer.
 
 * **Flip the box.** Check the Nutrition Facts panel for total dietary fiber per serving. Compare products using that number, not the front-of-package claim. If the whole panel still reads like tax paperwork, our [beginner's guide to reading nutrition labels](/how-to-read-nutrition-labels-for-beginners/) walks through it line by line.
 * **Look at the ingredient list.** If the first few ingredients are whole grains, beans, nuts, or vegetables, the fiber is probably coming from the food itself. If you see chicory root extract or inulin halfway down, the product may be leaning on added fiber to hit the claim.
 * **Check added sugars.** A "good source of fiber" cereal with 14 grams of added sugar per serving is a cereal that happens to have some fiber. Context matters.
-* **Compare serving sizes.** Two breads can both say "good source of fiber" but use different serving sizes. One slice vs two slices changes the math.
 
 ## Foods that don't need the label (and why that matters)
 
-A can of black beans has about 8 grams of fiber per half-cup serving. A medium pear has around 6 grams, and there are plenty more numbers like that in our [list of the best high fiber fruits](/best-high-fiber-fruits-for-weight-loss-list/). A cup of cooked lentils? Roughly 15 grams (USDA FoodData Central). None of these carry a flashy front label. They don't need one. They also happen to be the cheapest fiber in the store: when we priced it out in our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried beans and lentils crushed every packaged product with a claim on the front.
+A can of black beans has about 8 grams of fiber per half-cup serving. A medium pear has about 5.5 grams, and there are plenty more numbers like that in our [list of the best high fiber fruits](/best-high-fiber-fruits-for-weight-loss-list/). A cup of cooked lentils? Roughly 15 grams, per [USDA FoodData Central](https://fdc.nal.usda.gov/food-details/172421/nutrients). None of these carry a flashy front label. They don't need one. They're also the cheapest fiber in the store: in our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried beans and lentils crushed every packaged product with a claim on the front.
 
-The "good source of fiber" claim mostly appears on packaged foods competing for your attention. Whole foods like fruits, vegetables, legumes, and whole grains are naturally high in fiber without a marketing budget. My friend Jess once ditched a brand of "fiber enriched" white bread after realizing regular whole wheat from the bakery had more fiber and fewer ingredients.
+The "good source of fiber" claim mostly appears on packaged foods competing for your attention. Whole foods like fruits, vegetables, legumes, and whole grains are naturally high in fiber without a marketing budget.
 
 ## A quick reality check on the daily math
 
-FDA's 28 gram Daily Value makes the package claim easier to size up. A product with 3 grams gives you roughly 11 percent of that number. That's enough for "good source," but it still leaves 25 grams in the rest of the day's math. Combining beans, fruit, and grains can add up without requiring every package to shout at you, and [the foods carrying the most fiber per 100 grams](/best-high-fiber-foods-ranked-by-fiber-content/) are mostly in that unlabeled category.
+A product with 3 grams gives you roughly 11 percent of the 28 gram Daily Value. Enough for "good source," sure, but it leaves 25 grams for the rest of the day. Beans, fruit, and grains close that gap fast, and [the foods carrying the most fiber per 100 grams](/best-high-fiber-foods-ranked-by-fiber-content/) are mostly in that unlabeled category.
 
 The label is a tool. A small one. Read it, use it, but don't let it do your thinking for you.
 
-<!-- sources: 21 CFR 101.54, https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54; FDA Daily Values, https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels; FDA Dietary Fiber Q&A, https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/questions-and-answers-dietary-fiber; FDA Whole Grain Label Statements, https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements -->
+<!-- sources: 21 CFR 101.54, https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54; 21 CFR 101.9 (DRV table, dietary fiber 28 g), https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9; 9 CFR 317.354 (USDA meat/poultry parallel rule), https://www.ecfr.gov/current/title-9/chapter-III/subchapter-A/part-317/subpart-B/section-317.354; FDA Daily Values, https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels; FDA Dietary Fiber Q&A, https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/questions-and-answers-dietary-fiber; FDA Whole Grain Label Statements, https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements; USDA FoodData Central: pears raw 169118, black turtle beans canned 175188, lentils cooked 172421 -->

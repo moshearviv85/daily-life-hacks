@@ -2,10 +2,10 @@
   "generated_by": "scripts/audit_extraction_surfaces.py",
   "articles_dir": "src/data/articles",
   "articles_scanned": 267,
-  "articles_with_quick_answer": 81,
-  "articles_flagged": 22,
+  "articles_with_quick_answer": 92,
+  "articles_flagged": 23,
   "permissive_findings": 6,
-  "unsupported_findings": 16,
+  "unsupported_findings": 17,
   "flagged": [
     {
       "slug": "how-to-store-homemade-salad-dressing-safely",
@@ -267,6 +267,55 @@
       "counts": {
         "unsupported": 0,
         "permissive": 1
+      }
+    },
+    {
+      "slug": "high-fiber-pizza-crust-cauliflower",
+      "path": "src/data/articles/high-fiber-pizza-crust-cauliflower.md",
+      "title": "High Fiber Cauliflower Pizza Crust That Actually Gets Crispy",
+      "category": "recipes",
+      "score": 5.0,
+      "safety_bonus": 3.0,
+      "safety_markers": [
+        "refrigerat",
+        "thaw",
+        "40  F"
+      ],
+      "has_quick_answer": true,
+      "faq_count": 5,
+      "faq0_question": "How much fiber is in a cauliflower pizza crust?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "quickAnswer",
+          "quantity": {
+            "text": "14 grams",
+            "unit": "g",
+            "family": "MASS",
+            "low": 14.0,
+            "high": 14.0,
+            "canonical_low": 14.0,
+            "canonical_high": 14.0,
+            "context": "cause one quarter starts from about 227 grams of raw cauliflower at 2 grams of fiber per 100 grams plus about 14 grams of almond flour at 9.3, with no rice or tapioca starch diluting it. That figure is ingredient arithme",
+            "source": "quickAnswer"
+          },
+          "nearest_body_value": {
+            "text": "16 grams",
+            "unit": "g",
+            "family": "MASS",
+            "low": 16.0,
+            "high": 16.0,
+            "canonical_low": 16.0,
+            "canonical_high": 16.0,
+            "context": "t. A 1 to 2 gram store crust sits at 4 to 7 percent. And NIH's MedlinePlus notes that Americans average about 16 grams of fiber a day against a 21 to 38 gram recommendation, so no single dinner settles this. When you're ",
+            "source": "body:prose"
+          },
+          "points": 2.0
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
       }
     },
     {
@@ -1149,7 +1198,6 @@
     "high-fiber-meal-prep-ideas-for-busy-weeks-2026",
     "high-fiber-meals-for-constipation-relief",
     "high-fiber-pasta-alternatives",
-    "high-fiber-pizza-crust-cauliflower",
     "high-fiber-popcorn-toppings-healthy",
     "high-fiber-quinoa-salad-for-lunch-prep",
     "high-fiber-raspberry-jam-recipe-chia",

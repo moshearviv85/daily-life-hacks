@@ -10,8 +10,15 @@ tags:
   - potato chips
 image: /images/popcorn-vs-potato-chips-fiber-comparison-main.jpg
 imageAlt: Bowl of air-popped popcorn next to a small pile of potato chips for a fiber comparison
+quickAnswer: >-
+  Ounce for ounce, air-popped popcorn has about 4.1 grams of fiber. Plain salted
+  potato chips have about 0.9 gram. That's roughly 4.7 times the fiber, at about
+  108 calories per ounce versus 149 for chips, per USDA FoodData Central. Per 100
+  calories it's about 3.7 grams versus 0.6. And an ounce of popcorn is about 3.5
+  cups, an actual bowl, while an ounce of chips is about 22 chips. Baked chips
+  don't close the gap: USDA puts them near 1.3 grams of fiber per ounce.
 date: 2026-02-07
-dateModified: 2026-07-30
+dateModified: 2026-08-01
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -19,17 +26,17 @@ whatsHot: false
 mustRead: false
 faq:
   - question: "Does popcorn or potato chips have more fiber?"
-    answer: "Popcorn, and it isn't close. USDA FoodData Central lists air-popped popcorn at roughly 14.5 grams of fiber per 100 grams, which works out to about 4.1 grams per ounce. Plain salted potato chips land around 0.9 gram per ounce. Ounce for ounce, popcorn delivers about 4.7 times the fiber."
+    answer: "Popcorn, and it isn't close. USDA FoodData Central lists air-popped popcorn at 14.5 grams of fiber per 100 grams, which works out to about 4.1 grams per ounce. Plain salted potato chips sit at 3.1 grams per 100 grams, about 0.9 gram per ounce. Ounce for ounce, popcorn delivers about 4.7 times the fiber."
   - question: "How much fiber is in 3 cups of air-popped popcorn?"
-    answer: "About 3.5 grams, from roughly 24 grams of popped corn, for around 90 to 100 calories. That's more fiber than a typical serving of chips at well under half the calories, and 3 cups is an actual bowl, not a sad handful."
+    answer: "About 3.5 grams, from roughly 24 grams of popped corn, for about 93 calories. USDA lists a cup of air-popped popcorn at 8 grams. That's four times the fiber of a full ounce of potato chips at under two thirds the calories, and 3 cups is an actual bowl, not a sad handful."
   - question: "Is popcorn a whole grain?"
-    answer: "Yes. A popcorn kernel is the entire corn grain, bran and germ included, and the bran is where most of the fiber lives. Potato chips start as a whole potato but lose ground through peeling, slicing thin, and frying in oil."
+    answer: "Yes. A popcorn kernel is the entire corn grain, bran and germ included, and the bran is where most of the fiber lives. Potato chips start as a whole potato but lose ground because peeling, slicing thin, and frying multiply the calories far faster than they concentrate the fiber."
   - question: "Does switching from chips to popcorn actually matter?"
     answer: "If you snack most days, it adds up. Swapping one ounce of chips for three cups of air-popped popcorn adds about 2.6 grams of fiber and saves around 56 calories per swap. Do that five times a week and you've added fiber without eating anything you didn't want."
   - question: "Are baked potato chips as good as popcorn for fiber?"
-    answer: "Baked chips cut the fat, but they don't add fiber. They're still peeled, processed potato, usually 1 to 2 grams of fiber per ounce. Popcorn keeps the fiber lead regardless of how the chips are cooked."
+    answer: "Baked chips cut the fat, but they don't close the fiber gap. USDA lists plain baked potato chips at 4.8 grams of fiber per 100 grams, which is about 1.3 grams per ounce and roughly 131 calories. Better than the 0.9 gram in fried chips, still well under popcorn's 4.1. Popcorn keeps the fiber lead regardless of how the chips are cooked."
 ---
-Ounce for ounce, air-popped popcorn has about 4.7 times the fiber of plain salted potato chips: roughly 4.1 grams per ounce versus about 0.9 gram, based on USDA FoodData Central numbers. And because popped corn is mostly air by volume, a real bowl of it, 3 cups, runs about 93 calories while the same calorie budget buys you maybe 12 chips.
+Ounce for ounce, air-popped popcorn has about 4.7 times the fiber of plain salted potato chips: roughly 4.1 grams per ounce versus about 0.9 gram, based on USDA FoodData Central numbers. And because popped corn is mostly air by volume, a real bowl of it, 3 cups, runs about 93 calories while the same calorie budget buys you roughly 17 grams of chips, or about 14 of them.
 
 That's the comparison in two sentences. The rest is why it works, what it costs, and the one way people ruin it.
 
@@ -37,13 +44,16 @@ That's the comparison in two sentences. The rest is why it works, what it costs,
 
 | | Air-popped popcorn | Potato chips |
 |---|---|---|
+| Fiber per 100g | 14.5g | 3.1g |
 | Fiber per ounce (28g) | ~4.1g | ~0.9g |
 | Calories per ounce | ~108 | ~149 |
-| What an ounce looks like | About 3.5 cups popped | 15 to 20 chips |
+| Fat per ounce | ~1.3g | ~9.5g |
+| Sodium per ounce | ~2mg | ~148mg |
+| What an ounce looks like | About 3.5 cups popped | About 22 chips |
 | Fiber per 100 calories | ~3.7g | ~0.6g |
 | Whole grain? | Yes, the entire kernel | No, peeled and fried potato |
 
-Source: USDA FoodData Central entries [167959, air-popped popcorn](https://fdc.nal.usda.gov/food-details/167959/nutrients) and [169677, plain salted potato chips](https://fdc.nal.usda.gov/food-details/169677/nutrients). Flavored chips and buttered microwave popcorn move the numbers.
+Source: USDA FoodData Central entries [167959, air-popped popcorn](https://fdc.nal.usda.gov/food-details/167959/nutrients) and [169677, plain salted potato chips](https://fdc.nal.usda.gov/food-details/169677/nutrients), both unflavored. The per-ounce rows are the USDA per-100-gram values scaled to a 28-gram serving, and the cup and chip counts are USDA's own listed portions for those same entries. Flavored chips, salted or buttered popcorn, and any brand's particular slice thickness move the numbers.
 
 ![Horizontal bar chart comparing fiber in equal 1-ounce servings: air-popped popcorn at 4.1 grams and potato chips at 0.9 gram](/images/popcorn-vs-chips-fiber-chart.jpg)
 
@@ -51,7 +61,7 @@ The fiber-per-100-calories row is the one that matters if you snack in front of 
 
 ## Serving size is where this comparison gets slippery
 
-An ounce is an ounce on a nutrition label, but it doesn't look remotely the same in a bowl. Popcorn spreads that ounce across about 3.5 cups because each popped kernel is mostly empty space. Chips pack the same weight into a tight pile of 15 to 20 pieces. That's why comparing "one bowl" of each is useless unless the bowls were weighed first.
+An ounce is an ounce on a nutrition label, but it doesn't look remotely the same in a bowl. Popcorn spreads that ounce across about 3.5 cups because each popped kernel is mostly empty space. USDA puts a cup of air-popped popcorn at 8 grams. Chips pack the same weight into a tight pile that USDA counts as about 22 pieces, though thicker kettle cuts run fewer per ounce and your bag's label may say something different. That's why comparing "one bowl" of each is useless unless the bowls were weighed first.
 
 This matters most with packaged popcorn. The serving on the label may be listed as popped cups, grams, a fraction of the bag, or some combination of all three. Look at the gram weight first. Cups are helpful for picturing the portion, but grams are what let you compare one product with another without doing snack algebra in the grocery aisle.
 
@@ -63,13 +73,23 @@ For chips, the trap is the bag. A family-size bag doesn't become one serving bec
 
 Popcorn is a whole grain. Each kernel is the complete corn grain with its bran still attached, and bran is where the fiber lives. Nothing gets peeled, refined, or stripped on the way to your bowl. Heat, pop, done.
 
-A potato chip takes a rougher route. The potato gets peeled (there goes a chunk of the fiber), sliced thin, and fried, which concentrates calories while the fiber stays flat. Nothing evil happened, but the math at the end is what it is: more calories, less fiber, smaller serving.
+A potato chip takes a rougher route. Peeling, slicing thin, and frying pulls out water and adds oil, so both fiber and calories get concentrated. The problem is that they don't get concentrated at the same rate. USDA lists [raw russet potato, flesh and skin](https://fdc.nal.usda.gov/food-details/170027/nutrients) at 1.3 grams of fiber and 79 calories per 100 grams, which works out to about 1.6 grams of fiber per 100 calories. Chips come out at 3.1 grams of fiber and 532 calories per 100 grams, or about 0.6 gram per 100 calories. The potato didn't get less fibrous. The fiber just got badly outnumbered.
+
+Baking instead of frying helps, but not as much as the front of the bag implies. USDA lists [plain baked potato chips](https://fdc.nal.usda.gov/food-details/2709434/nutrients) at 4.8 grams of fiber and 469 calories per 100 grams, which is about 1.3 grams of fiber and 131 calories per ounce. Real improvement over the fried version's 0.9 gram and 149 calories. Still only about a third of what an ounce of popcorn brings.
 
 This is the same pattern we found across the whole snack aisle when we ranked [healthy alternatives to potato chips](/healthy-alternatives-potato-chips-snacking/): the closer a snack is to the intact plant, the better the fiber math gets.
 
 The whole-grain point doesn't mean popcorn wins every snack decision. It means it wins this specific measurement. Chips bring a dense salty crunch that popcorn doesn't fully copy, and pretending otherwise is how you end up eating popcorn first and chips ten minutes later. If you genuinely want chips, have chips. If what you want is a long, crunchy snack while your hands are busy with a keyboard or a remote, popcorn is usually the better tool.
 
-Calories deserve the same practical treatment. Air-popped popcorn packs fewer calories into a bigger bowl, so the same calorie budget buys a snack that actually lasts a while. That's useful when the experience of snacking matters as much as the first bite. It isn't a moral score. There are days when a compact snack is more convenient, and a small bag of chips survives a backpack better than a container of popcorn that has been crushed into salty packing material.
+None of that is a moral score. There are days when a compact snack is more convenient, and a small bag of chips survives a backpack better than a container of popcorn that has been crushed into salty packing material.
+
+## Does the fiber gap actually change how full you feel?
+
+There's one small trial that tested exactly this matchup. Researchers gave 35 normal-weight adults water, 1 cup of popcorn, 6 cups of popcorn, or 1 cup of potato chips on separate days. The 6 cups of popcorn came to 27 grams and 100 calories. The cup of chips came to 28 grams and 150 calories. People reported less hunger and more satisfaction after the popcorn, and the authors concluded that [popcorn exerted a stronger effect on short-term satiety than potato chips](https://pmc.ncbi.nlm.nih.gov/articles/PMC3502142/).
+
+Thirty-five people over a few sessions isn't proof of anything permanent, and subjective hunger ratings are exactly as squishy as they sound. But it lines up with what the volume numbers already suggest: the bowl that takes longer to eat and weighs less per calorie may leave you feeling like you snacked. That's the practical version of the fiber gap.
+
+For scale, MedlinePlus puts the [daily recommended fiber intake](https://medlineplus.gov/ency/patientinstructions/000193.htm) at 38 grams a day for men and 25 grams for women aged 19 to 50, and lists popcorn under high-fiber grains. An ounce of air-popped popcorn covers roughly a tenth to a sixth of that. An ounce of chips covers about 2 to 4 percent.
 
 ## Which snack fits the situation?
 
@@ -89,9 +109,11 @@ The nutrition table gives you a winner, but kitchens don't operate like spreadsh
 
 The ounce-for-ounce nutrition comparison above supports air-popped popcorn as the fiber winner over chips. It does not verify popcorn's cost per gram of fiber. Our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/) records kernels at about 58 grams per dollar, but that row is unresolved because the 14.5-gram USDA value describes air-popped popcorn while the $2.28 price describes a two-pound bag of unpopped kernels.
 
-Chips? A typical 8-ounce bag runs $3 to $4 and carries about 10 grams of fiber total. That does not make the old “nearly twenty times” popcorn comparison valid: a same-form kernel nutrition match or measured popped yield is still needed. The supported takeaway is narrower and useful—air-popped popcorn has more fiber per ounce than plain salted potato chips—not a verified per-dollar multiple.
+Chips? USDA counts an 8-ounce bag as 227 grams, and at 3.1 grams of fiber per 100 grams that whole bag holds about 7 grams of fiber. That's the entire bag, not a serving. Whatever you paid for it, 7 grams is what's in there.
 
-That price gap is biggest when you buy plain kernels. Pre-popped popcorn comes with labor, packaging, oil, seasoning, and a bag full of air built into the price. It may still beat chips on fiber, but it won't deliver the same pantry economics as the $2.28 bag in the study.
+What we still can't tell you is the per-dollar multiple. The old "nearly twenty times cheaper" line is not supported, because it would need either a USDA nutrition record for kernels as sold or a measured popped yield to connect the two forms. The verified claim is narrower and still useful: air-popped popcorn has more fiber per ounce, and more fiber per calorie, than plain salted potato chips.
+
+Whatever popcorn's cost advantage turns out to be, it's biggest when you buy plain kernels. Pre-popped popcorn comes with labor, packaging, oil, seasoning, and a bag full of air built into the price. It may still beat chips on fiber, but it won't deliver the same pantry economics as the $2.28 bag in the study.
 
 Think about cost per snack, too. Kernels let you make the amount you need and put the rest back on the shelf. A large chip bag can technically do the same thing, but chip bags have a strange ability to remain open on the counter until the serving plan becomes theoretical. A jar or clipped bag of kernels creates a natural stop because the next batch still has to be cooked.
 
@@ -111,7 +133,7 @@ Stovetop popcorn needs attention but not ceremony. Use a pot with a lid, keep th
 
 ## How to compare labels without getting played
 
-Start with the serving weight. Find 28 grams or the closest comparable amount on each package, then read fiber and calories from the same serving. Don't compare three cups of one product with "about 18 chips" of another unless the weights match.
+Start with the serving weight. Find 28 grams or the closest comparable amount on each package, then read fiber and calories from the same serving. Don't compare three cups of one product with a chip count on another unless the gram weights match.
 
 Next, check the product description. Plain air-popped popcorn is the reference in the table. Kettle corn adds sugar. Cheese coatings, caramel, and heavy butter flavoring change the calorie and ingredient picture. They don't erase the grain's fiber, but they turn a clean comparison into a different snack category.
 
@@ -121,4 +143,4 @@ Finally, ignore front-of-package language until you've read the panel. "Whole gr
 
 And if the craving hits when you're out of the house, the same label-reading habit is the whole game. Our [high fiber fast food guide](/high-fiber-fast-food-options-guide/) covers what to grab when the pantry isn't an option.
 
-Chips aren't the enemy. Sometimes only a chip will do, and that's a normal way to live. But if the crunch is what you're actually after, a $2.28 bag of kernels covers a month of snacking, triples your fiber per handful, and lets you eat a bowl instead of rationing 15 chips like they're contraband.
+Chips aren't the enemy. Sometimes only a chip will do, and that's a normal way to live. But if the crunch is what you're actually after, air-popped popcorn gives you about 4.7 times the fiber ounce for ounce, at fewer calories and a fraction of the sodium, and lets you eat an actual bowl instead of rationing chips like they're contraband.
