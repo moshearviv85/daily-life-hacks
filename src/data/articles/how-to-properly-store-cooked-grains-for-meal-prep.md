@@ -11,7 +11,7 @@ author: "David Miller"
 featured: false
 faq:
   - question: "How long do cooked grains last in the fridge?"
-    answer: "Most cooked grains last 4 to 5 days refrigerated in an airtight container. White rice and jasmine rice tend to hold up best, while softer grains like quinoa may dry out or become slightly mushy by day 4."
+    answer: "Plan on 3 to 4 days refrigerated in an airtight container. That is the window FoodSafety.gov gives for cooked leftovers, and cooked grains are leftovers like anything else. Within that window the differences are about texture rather than safety: white and jasmine rice hold up best, brown rice starts tasting flat around day 4, and softer grains like quinoa and millet dry out fastest."
   - question: "Can you freeze cooked grains?"
     answer: "Yes, and you should if you want them to last beyond a week. Spread cooled grains on a baking sheet to freeze individually, then transfer to freezer bags. They'll keep for 3 to 6 months. Thaw overnight in the fridge or microwave directly from frozen."
   - question: "Should you rinse grains before storing?"
@@ -70,7 +70,7 @@ One middle-ground option: store in the fridge for three days, then freeze whatev
 
 Numbers vary based on the grain, the storage conditions, and how well you sealed them, but here's a realistic timeline.
 
-White rice and jasmine rice hold up best-they'll last 5 to 6 days in the fridge and still be decent on day 5. Brown rice has more oils and will start to taste off around day 4. Quinoa and millet are softer and tend to dry out faster; aim for 3 to 4 days max. Farro and barley have a chewier texture that holds up reasonably well for 4 to 5 days. That's part of why this [farro lunch bowl with roasted vegetables and lemon tahini](/farro-lunch-bowl-roasted-vegetables-lemon-tahini/) works so well as prep; the grain is basically built for day three. Barley pulls the same trick in this [creamy mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/), which honestly tastes even better after a night in the fridge.
+Set the outer limit first: [FoodSafety.gov gives cooked leftovers 3 to 4 days](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) in the fridge, and [USDA says the same](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety), 3 to 4 days refrigerated or 3 to 4 months frozen. Cooked grains sit under that rule like any other leftover. So read the per-grain differences below as texture, not as permission to stretch the window. White and jasmine rice hold their bite best right through day 4. Brown rice has more oils and starts to taste flat around day 4. Quinoa and millet are softer and dry out fastest, so eat those first. Farro and barley stay chewy and are the most forgiving. That's part of why this [farro lunch bowl with roasted vegetables and lemon tahini](/farro-lunch-bowl-roasted-vegetables-lemon-tahini/) works so well as prep; the grain is basically built for day three. Barley pulls the same trick in this [creamy mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/), which honestly tastes even better after a night in the fridge.
 
 If price is deciding which grain gets the permanent meal-prep slot, our [grain fiber per dollar ranking](/grains-fiber-per-dollar-ranked/) puts the whole aisle on one receipt.
 

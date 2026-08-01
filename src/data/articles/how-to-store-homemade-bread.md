@@ -18,7 +18,7 @@ author: "David Miller"
 featured: false
 faq:
   - question: "How long does homemade bread last at room temperature?"
-    answer: "Generally, homemade bread will stay fresh for about 2-3 days at room temperature. This can vary based on the ingredients, humidity, and how well it's stored. Leaner loaves tend to dry out faster than enriched breads."
+    answer: "It depends on the loaf. A crusty lean loaf is at its best for 1 to 2 days at room temperature, while a soft enriched sandwich loaf holds for 3 to 4 days. Leaner doughs dry out faster because there is no fat or sugar holding moisture in, and humidity and how tightly you wrap it move both numbers. Past those windows, freezing beats the fridge, which stales bread faster."
   - question: "Should I store homemade bread in the refrigerator?"
     answer: "No, avoid storing homemade bread in the refrigerator. The cold temperature causes the starch in bread to recrystallize rapidly, making it stale much faster than if left at room temperature. This is true for most types of bread."
   - question: "What's the best way to store bread for more than a few days?"

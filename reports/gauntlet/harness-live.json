@@ -2,8 +2,8 @@
   "mode": "live",
   "base_url": "https://www.daily-life-hacks.com",
   "sitemap_urls": 297,
-  "sample": 25,
-  "elapsed_seconds": 7.42,
+  "sample": 30,
+  "elapsed_seconds": 11.96,
   "checks": [
     {
       "number": 1,
@@ -23,14 +23,14 @@
       "number": 3,
       "name": "sampled sitemap URLs are self-canonical",
       "status": "PASS",
-      "summary": "all 25 sampled pages are self-canonical",
+      "summary": "all 30 sampled pages are self-canonical",
       "details": []
     },
     {
       "number": 4,
       "name": "no page is both noindex and in the sitemap",
       "status": "PASS",
-      "summary": "none of the 25 sampled sitemap URLs are noindex",
+      "summary": "none of the 30 sampled sitemap URLs are noindex",
       "details": []
     },
     {
@@ -58,7 +58,7 @@
       "number": 8,
       "name": "JSON-LD parses and declares @context/@type",
       "status": "PASS",
-      "summary": "114 JSON-LD blocks on 25 sampled pages all valid",
+      "summary": "141 JSON-LD blocks on 30 sampled pages all valid",
       "details": []
     },
     {

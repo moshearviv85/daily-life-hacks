@@ -1,0 +1,1283 @@
+{
+  "generated_by": "scripts/audit_extraction_surfaces.py",
+  "articles_dir": "src/data/articles",
+  "articles_scanned": 267,
+  "articles_with_quick_answer": 81,
+  "articles_flagged": 22,
+  "permissive_findings": 6,
+  "unsupported_findings": 16,
+  "flagged": [
+    {
+      "slug": "how-to-store-homemade-salad-dressing-safely",
+      "path": "src/data/articles/how-to-store-homemade-salad-dressing-safely.md",
+      "title": "How to Store Homemade Salad Dressing Safely",
+      "category": "tips",
+      "score": 8.0,
+      "safety_bonus": 3.0,
+      "safety_markers": [
+        "refrigerat",
+        "botulism",
+        "raw egg",
+        "40  F",
+        "spoil"
+      ],
+      "has_quick_answer": true,
+      "faq_count": 5,
+      "faq0_question": "How long does homemade salad dressing last in the fridge?",
+      "findings": [
+        {
+          "kind": "PERMISSIVE_TIME",
+          "surface": "quickAnswer",
+          "detail": {
+            "surface_floor": {
+              "text": "4 days",
+              "unit": "day",
+              "family": "TIME",
+              "low": 4.0,
+              "high": 4.0,
+              "canonical_low": 5760.0,
+              "canonical_high": 5760.0,
+              "context": "n cook to 160°F; and raw garlic or fresh herbs in oil with no added acid needs 40°F or below for no more than 4 days, or the freezer.",
+              "source": "quickAnswer"
+            },
+            "body_floor": {
+              "text": "24 hours",
+              "unit": "hour",
+              "family": "TIME",
+              "low": 24.0,
+              "high": 24.0,
+              "canonical_low": 1440.0,
+              "canonical_high": 1440.0,
+              "context": "e specifically. FSIS says to cook dishes containing raw eggs immediately, or refrigerate and cook them within 24 hours, a much tighter clock than the 3 to 4 days above, and that assumes the dish gets cooked at all. The f",
+              "source": "body:prose"
+            },
+            "ratio": 4.0
+          },
+          "points": 5.0
+        }
+      ],
+      "counts": {
+        "unsupported": 0,
+        "permissive": 1
+      }
+    },
+    {
+      "slug": "freezer-organization-tips-large-family-meals",
+      "path": "src/data/articles/freezer-organization-tips-large-family-meals.md",
+      "title": "Freezer Organization Tips for Large Family Meals",
+      "category": "tips",
+      "score": 7.0,
+      "safety_bonus": 3.0,
+      "safety_markers": [
+        "refrigerat",
+        "thaw"
+      ],
+      "has_quick_answer": false,
+      "faq_count": 4,
+      "faq0_question": "How long can you freeze prepped family meals?",
+      "findings": [
+        {
+          "kind": "PERMISSIVE_TIME",
+          "surface": "faq[0].answer",
+          "detail": {
+            "surface_floor": {
+              "text": "two to three months",
+              "unit": "month",
+              "family": "TIME",
+              "low": 2.0,
+              "high": 3.0,
+              "canonical_low": 86400.0,
+              "canonical_high": 129600.0,
+              "context": "USDA lists two to three months for casseroles, soups, and stews, and three to four months for frozen dinners and entrees. Those times are ab",
+              "source": "faq[0].answer"
+            },
+            "body_floor": {
+              "text": "fourteen days",
+              "unit": "day",
+              "family": "TIME",
+              "low": 14.0,
+              "high": 14.0,
+              "canonical_low": 20160.0,
+              "canonical_high": 20160.0,
+              "context": "hanging baskets or stackable crates. The top layer should always be the stuff you plan to eat within the next fourteen days. If you have a side-by-side freezer, eye-level shelves are prime real estate. Reserve these for ",
+              "source": "body:prose"
+            },
+            "ratio": 4.29
+          },
+          "points": 4.0
+        }
+      ],
+      "counts": {
+        "unsupported": 0,
+        "permissive": 1
+      }
+    },
+    {
+      "slug": "how-long-do-frozen-vegetables-last-in-the-freezer",
+      "path": "src/data/articles/how-long-do-frozen-vegetables-last-in-the-freezer.md",
+      "title": "How Long Do Frozen Vegetables Last in the Freezer?",
+      "category": "tips",
+      "score": 7.0,
+      "safety_bonus": 3.0,
+      "safety_markers": [
+        "refrigerat",
+        "thaw",
+        "40  F",
+        "spoil",
+        "discard"
+      ],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "How long can you freeze frozen vegetables before they go bad?",
+      "findings": [
+        {
+          "kind": "PERMISSIVE_TIME",
+          "surface": "faq[0].answer",
+          "detail": {
+            "surface_floor": {
+              "text": "8 to 12 months",
+              "unit": "month",
+              "family": "TIME",
+              "low": 8.0,
+              "high": 12.0,
+              "canonical_low": 345600.0,
+              "canonical_high": 518400.0,
+              "context": "nly. For eating quality, the National Center for Home Food Preservation puts fruits and vegetables at roughly 8 to 12 months, and Illinois Extension lists commercially frozen vegetables at 8 months.",
+              "source": "faq[0].answer"
+            },
+            "body_floor": {
+              "text": "2 days",
+              "unit": "day",
+              "family": "TIME",
+              "low": 2.0,
+              "high": 2.0,
+              "canonical_low": 2880.0,
+              "canonical_high": 2880.0,
+              "context": "e chart. ## What about a power outage? FSIS gives real numbers here: a full freezer will usually keep about 2 days if the door stays shut, and a half-full freezer about a day. Grouping the packages close together helps t",
+              "source": "body:prose"
+            },
+            "ratio": 120.0
+          },
+          "points": 4.0
+        }
+      ],
+      "counts": {
+        "unsupported": 0,
+        "permissive": 1
+      }
+    },
+    {
+      "slug": "how-long-do-opened-canned-beans-last",
+      "path": "src/data/articles/how-long-do-opened-canned-beans-last.md",
+      "title": "How Long Do Opened Canned Beans Last?",
+      "category": "tips",
+      "score": 7.0,
+      "safety_bonus": 3.0,
+      "safety_markers": [
+        "refrigerat",
+        "thaw",
+        "bacteria",
+        "spoil"
+      ],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "How long do opened canned beans last in the fridge?",
+      "findings": [
+        {
+          "kind": "PERMISSIVE_TIME",
+          "surface": "faq[0].answer",
+          "detail": {
+            "surface_floor": {
+              "text": "three to four days",
+              "unit": "day",
+              "family": "TIME",
+              "low": 3.0,
+              "high": 4.0,
+              "canonical_low": 4320.0,
+              "canonical_high": 5760.0,
+              "context": "FoodSafety.gov advises using refrigerated leftovers within three to four days, and opened canned beans sit in that same category once the seal is broken. Move them out of the can into a c",
+              "source": "faq[0].answer"
+            },
+            "body_floor": {
+              "text": "within a day",
+              "unit": "day",
+              "family": "TIME",
+              "low": 1.0,
+              "high": 1.0,
+              "canonical_low": 1440.0,
+              "canonical_high": 1440.0,
+              "context": "e, and a surface layer of beans drying out in the air. Leftovers stored that way pick up a faint tinny flavor within a day. Any covered container works. Keep the liquid with them if you're not eating them right away, sin",
+              "source": "body:prose"
+            },
+            "ratio": 3.0
+          },
+          "points": 4.0
+        }
+      ],
+      "counts": {
+        "unsupported": 0,
+        "permissive": 1
+      }
+    },
+    {
+      "slug": "quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff",
+      "path": "src/data/articles/quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff.md",
+      "title": "Quick and Easy Stir-Fry Sauce Recipes (No Bottled Stuff!)",
+      "category": "recipes",
+      "score": 5.0,
+      "safety_bonus": 1.0,
+      "safety_markers": [
+        "thaw"
+      ],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "Can I make these sauces ahead of time?",
+      "findings": [
+        {
+          "kind": "PERMISSIVE_TIME",
+          "surface": "faq[0].answer",
+          "detail": {
+            "surface_floor": {
+              "text": "two weeks",
+              "unit": "week",
+              "family": "TIME",
+              "low": 2.0,
+              "high": 2.0,
+              "canonical_low": 20160.0,
+              "canonical_high": 20160.0,
+              "context": "Yes. All five sauces keep in a sealed container in the fridge for up to two weeks. Give them a shake or stir before using since some ingredients may settle.",
+              "source": "faq[0].answer"
+            },
+            "body_floor": {
+              "text": "three to four days",
+              "unit": "day",
+              "family": "TIME",
+              "low": 3.0,
+              "high": 4.0,
+              "canonical_low": 4320.0,
+              "canonical_high": 5760.0,
+              "context": "settled to the bottom. If you've already mixed the sauce with the stir-fry, leftovers keep in the fridge for three to four days. The vegetables will soften as they sit, so expect a different texture when you reheat. A qu",
+              "source": "body:prose"
+            },
+            "ratio": 4.67
+          },
+          "points": 4.0
+        }
+      ],
+      "counts": {
+        "unsupported": 0,
+        "permissive": 1
+      }
+    },
+    {
+      "slug": "healthy-turkey-meatballs-meal-prep",
+      "path": "src/data/articles/healthy-turkey-meatballs-meal-prep.md",
+      "title": "Healthy Turkey Meatballs for Meal Prep",
+      "category": "recipes",
+      "score": 4.5,
+      "safety_bonus": 3.0,
+      "safety_markers": [
+        "refrigerat",
+        "thaw"
+      ],
+      "has_quick_answer": true,
+      "faq_count": 5,
+      "faq0_question": "How do you keep turkey meatballs from getting dry?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "99%",
+            "unit": "pct",
+            "family": "PERCENT",
+            "low": 99.0,
+            "high": 99.0,
+            "canonical_low": 99.0,
+            "canonical_high": 99.0,
+            "context": "The secret to healthy turkey meatballs meal prep is not overmixing the meat and avoiding 99% lean turkey. Sticking with 93% lean gives just enough moisture, and the egg and breadcrumbs help bind it toge",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "93%",
+            "unit": "pct",
+            "family": "PERCENT",
+            "low": 93.0,
+            "high": 93.0,
+            "canonical_low": 93.0,
+            "canonical_high": 93.0,
+            "context": "1 lb ground turkey (93% lean) 1/2 cup breadcrumbs 1 large egg, lightly beaten 2 cloves garlic, minced 2 tbsp chopped fresh parsley (o",
+            "source": "body:recipe-card"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "30-day-high-fiber-challenge-meal-plan",
+      "path": "src/data/articles/30-day-high-fiber-challenge-meal-plan.md",
+      "title": "30 Day High Fiber Challenge Meal Plan",
+      "category": "nutrition",
+      "score": 4.0,
+      "safety_bonus": 0.0,
+      "safety_markers": [],
+      "has_quick_answer": true,
+      "faq_count": 5,
+      "faq0_question": "How do I start a 30 day high fiber challenge meal plan without feeling bloated?",
+      "findings": [
+        {
+          "kind": "PERMISSIVE_TIME",
+          "surface": "faq[0].answer",
+          "detail": {
+            "surface_floor": {
+              "text": "30 day",
+              "unit": "day",
+              "family": "TIME",
+              "low": 30.0,
+              "high": 30.0,
+              "canonical_low": 43200.0,
+              "canonical_high": 43200.0,
+              "context": "ay one. Drinking enough water throughout the day may help keep the change comfortable. Following a structured 30 day high fiber challenge meal plan guide can help you space out your portions safely.",
+              "source": "faq[0].answer"
+            },
+            "body_floor": {
+              "text": "one-week",
+              "unit": "week",
+              "family": "TIME",
+              "low": 1.0,
+              "high": 1.0,
+              "canonical_low": 10080.0,
+              "canonical_high": 10080.0,
+              "context": "stop. If it makes meals easier, keep it. Small steady changes beat an overhaul you abandon by Thursday. ## A one-week experiment that actually teaches you something Pick one habit you can repeat without drama. Maybe it's",
+              "source": "body:prose"
+            },
+            "ratio": 4.29
+          },
+          "points": 4.0
+        }
+      ],
+      "counts": {
+        "unsupported": 0,
+        "permissive": 1
+      }
+    },
+    {
+      "slug": "cheap-dinner-ideas-cost-per-serving",
+      "path": "src/data/articles/cheap-dinner-ideas-cost-per-serving.md",
+      "title": "Cheap Dinner Ideas: What Each One Costs",
+      "category": "tips",
+      "score": 2.5,
+      "safety_bonus": 1.0,
+      "safety_markers": [
+        "spoil"
+      ],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "What are the cheapest dinner ideas you can actually make?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "19 g",
+            "unit": "g",
+            "family": "MASS",
+            "low": 19.0,
+            "high": 19.0,
+            "canonical_low": 19.0,
+            "canonical_high": 19.0,
+            "context": "lit peas, followed by pinto beans and brown rice at $0.32 and black bean tacos at $0.41. All three land above 19 g of protein a serving, so the low price isn't coming from a smaller plate.",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "19.4 g",
+            "unit": "g",
+            "family": "MASS",
+            "low": 19.4,
+            "high": 19.4,
+            "canonical_low": 19.4,
+            "canonical_high": 19.4,
+            "context": "dry brown rice | $0.32 | 23.8 g | 16.1 g | | Black bean tacos | 90 g dry black beans, cabbage slaw | $0.41 | 19.4 g | 16.4 g | | Barley bowl with an egg | 60 g barley, frozen broccoli, 1 egg | $0.66 | 12.2 g | 12.4 g | |",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "costco-rotisserie-chicken-meal-ideas-dinner",
+      "path": "src/data/articles/costco-rotisserie-chicken-meal-ideas-dinner.md",
+      "title": "5 Quick Costco Rotisserie Chicken Meal Ideas for Busy Nights",
+      "category": "recipes",
+      "score": 2.5,
+      "safety_bonus": 1.0,
+      "safety_markers": [
+        "refrigerat"
+      ],
+      "has_quick_answer": false,
+      "faq_count": 4,
+      "faq0_question": "How long is a Costco rotisserie chicken good for in the fridge?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "three to four days",
+            "unit": "day",
+            "family": "TIME",
+            "low": 3.0,
+            "high": 4.0,
+            "canonical_low": 4320.0,
+            "canonical_high": 5760.0,
+            "context": "A Costco rotisserie chicken stays fresh for three to four days in an airtight container in the refrigerator, which is the USDA's standard window for cooked poultry. To main",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "25 minutes",
+            "unit": "minute",
+            "family": "TIME",
+            "low": 25.0,
+            "high": 25.0,
+            "canonical_low": 25.0,
+            "canonical_high": 25.0,
+            "context": "just need a few pantry staples and about fifteen minutes. Here are the five dinners, every one of them under 25 minutes: Run your add-ons through the recipe cost calculator if you want to know whether the five-dollar bir",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "food-prep-guide-recipes",
+      "path": "src/data/articles/food-prep-guide-recipes.md",
+      "title": "Chicken and Quinoa Meal Prep Bowls",
+      "category": "recipes",
+      "score": 2.5,
+      "safety_bonus": 1.0,
+      "safety_markers": [
+        "refrigerat"
+      ],
+      "has_quick_answer": true,
+      "faq_count": 5,
+      "faq0_question": "How long do these meal prep bowls last in the fridge?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "4 days",
+            "unit": "day",
+            "family": "TIME",
+            "low": 4.0,
+            "high": 4.0,
+            "canonical_low": 5760.0,
+            "canonical_high": 5760.0,
+            "context": "These chicken and quinoa bowls will stay fresh in an airtight container in the refrigerator for up to 4 days. Make sure they cool completely before sealing them up for storage.",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "five days",
+            "unit": "day",
+            "family": "TIME",
+            "low": 5.0,
+            "high": 5.0,
+            "canonical_low": 7200.0,
+            "canonical_high": 7200.0,
+            "context": "inally, consider your weekly rotation. Even the best meal prep can get boring if you eat the exact same thing five days in a row. This recipe is versatile enough that you can easily swap the protein (shrimp or chickpeas ",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "healthy-spring-vegetable-soup-recipes",
+      "path": "src/data/articles/healthy-spring-vegetable-soup-recipes.md",
+      "title": "Healthy Spring Vegetable Soup Recipes for Busy Weeknights",
+      "category": "recipes",
+      "score": 2.5,
+      "safety_bonus": 1.0,
+      "safety_markers": [
+        "thaw"
+      ],
+      "has_quick_answer": false,
+      "faq_count": 4,
+      "faq0_question": "Can I freeze spring vegetable soup?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "three months",
+            "unit": "month",
+            "family": "TIME",
+            "low": 3.0,
+            "high": 3.0,
+            "canonical_low": 129600.0,
+            "canonical_high": 129600.0,
+            "context": "it is best to freeze the soup immediately after cooling. It may stay fresh in an airtight container for up to three months.",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "two-hour",
+            "unit": "hour",
+            "family": "TIME",
+            "low": 2.0,
+            "high": 2.0,
+            "canonical_low": 120.0,
+            "canonical_high": 120.0,
+            "context": "doesn't turn into a smoothie. Getting a decent dinner on the table shouldn't require a culinary degree or a two-hour window of free time. This soup is about as straightforward as it gets, using the stuff that's actually ",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "make-ahead-breakfast-ideas-without-eggs",
+      "path": "src/data/articles/make-ahead-breakfast-ideas-without-eggs.md",
+      "title": "Make Ahead Breakfast Ideas Without Eggs",
+      "category": "recipes",
+      "score": 2.5,
+      "safety_bonus": 1.0,
+      "safety_markers": [
+        "refrigerat"
+      ],
+      "has_quick_answer": false,
+      "faq_count": 4,
+      "faq0_question": "How long do egg-free make-ahead breakfasts last in the fridge?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "three to five days",
+            "unit": "day",
+            "family": "TIME",
+            "low": 3.0,
+            "high": 5.0,
+            "canonical_low": 4320.0,
+            "canonical_high": 7200.0,
+            "context": "Most oat-based or grain-based breakfasts will stay fresh for about three to five days when stored in airtight containers. If you are using fresh fruit, it might get a bit soft by day four, so you",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "four-hour",
+            "unit": "hour",
+            "family": "TIME",
+            "low": 4.0,
+            "high": 4.0,
+            "canonical_low": 240.0,
+            "canonical_high": 240.0,
+            "context": "at's been sitting in your freezer since last summer. Getting a head start on the week doesn't have to mean a four-hour meal prep session that leaves your kitchen looking like a disaster zone. Most of these options take l",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "quick-black-bean-burgers-that-hold-their-shape",
+      "path": "src/data/articles/quick-black-bean-burgers-that-hold-their-shape.md",
+      "title": "Quick Black Bean Burgers That Actually Hold Together",
+      "category": "recipes",
+      "score": 2.5,
+      "safety_bonus": 1.0,
+      "safety_markers": [
+        "thaw"
+      ],
+      "has_quick_answer": false,
+      "faq_count": 4,
+      "faq0_question": "Can I make these ahead and refrigerate?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "3 days",
+            "unit": "day",
+            "family": "TIME",
+            "low": 3.0,
+            "high": 3.0,
+            "canonical_low": 4320.0,
+            "canonical_high": 4320.0,
+            "context": "Yes. Form the patties and store them layered with parchment paper in an airtight container for up to 3 days. Cook them straight from the fridge-you may need an extra minute per side.",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "four days",
+            "unit": "day",
+            "family": "TIME",
+            "low": 4.0,
+            "high": 4.0,
+            "canonical_low": 5760.0,
+            "canonical_high": 5760.0,
+            "context": "l to storage, which makes it a legitimate meal prep option. Cooked patties will last in the fridge for up to four days in an airtight container. I recommend layering them with parchment paper so they don't stick together",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "aldi-shopping-hacks-large-family-meals",
+      "path": "src/data/articles/aldi-shopping-hacks-large-family-meals.md",
+      "title": "Aldi Shopping Hacks for Large Family Meals",
+      "category": "tips",
+      "score": 1.5,
+      "safety_bonus": 0.0,
+      "safety_markers": [],
+      "has_quick_answer": false,
+      "faq_count": 4,
+      "faq0_question": "How much can you save shopping at Aldi for a large family?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "30 to 50 percent",
+            "unit": "pct",
+            "family": "PERCENT",
+            "low": 30.0,
+            "high": 50.0,
+            "canonical_low": 30.0,
+            "canonical_high": 50.0,
+            "context": "Shopping at Aldi for a large family may reduce your monthly grocery bill by 30 to 50 percent compared to traditional supermarkets. This is largely due to their private-label model and lower overhead cos",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": null,
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "animal-protein-per-dollar-ranked",
+      "path": "src/data/articles/animal-protein-per-dollar-ranked.md",
+      "title": "The Cheapest Animal Protein: 21 Foods Ranked by Cost",
+      "category": "nutrition",
+      "score": 1.5,
+      "safety_bonus": 0.0,
+      "safety_markers": [],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "What is the cheapest animal protein?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "33 percent",
+            "unit": "pct",
+            "family": "PERCENT",
+            "low": 33.0,
+            "high": 33.0,
+            "canonical_low": 33.0,
+            "canonical_high": 33.0,
+            "context": "cken drumsticks, at 50.3 grams of protein per dollar in our July 2026 ranking of 21 animal foods. That's with 33 percent of the weight already subtracted for bone. Eggs came second at 34.4 grams per dollar, then a block ",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "4%",
+            "unit": "pct",
+            "family": "PERCENT",
+            "low": 4.0,
+            "high": 4.0,
+            "canonical_low": 4.0,
+            "canonical_high": 4.0,
+            "context": "tub | | 7 | Rotisserie chicken (whole, cooked) | 26.7 g | $5.97 | whole bird (36 oz) | | 8 | Cottage cheese (4%) | 26.3 g | $2.87 | 24 oz tub | | 9 | Whole chicken (raw) | 25.3 g | $2.04 | per lb | | 10 | Pork shoulder b",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "can-you-eat-rice-and-beans-everyday",
+      "path": "src/data/articles/can-you-eat-rice-and-beans-everyday.md",
+      "title": "Can You Eat Rice and Beans Every Day?",
+      "category": "nutrition",
+      "score": 1.5,
+      "safety_bonus": 0.0,
+      "safety_markers": [],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "Can you eat rice and beans every day?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "$0.32",
+            "unit": "usd",
+            "family": "MONEY",
+            "low": 0.32,
+            "high": 0.32,
+            "canonical_low": 0.32,
+            "canonical_high": 0.32,
+            "context": "built from 90 grams of dry pinto beans and 60 grams of dry brown rice came to 23.8 grams of protein for about $0.32 in our audited day costing, roughly 48 percent of the FDA's 50 gram Daily Value from one plate.",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "$0.20",
+            "unit": "usd",
+            "family": "MONEY",
+            "low": 0.2,
+            "high": 0.2,
+            "canonical_low": 0.2,
+            "canonical_high": 0.2,
+            "context": "t place. In our day costing work, the bean and rice portion of one dinner ran 90 grams of dry pinto beans at $0.20 for 19.3 grams of protein, plus 60 grams of dry brown rice at $0.12 for 4.5 grams. Thirty two cents, 23.8",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "eat-healthy-on-a-budget-complete-playbook",
+      "path": "src/data/articles/eat-healthy-on-a-budget-complete-playbook.md",
+      "title": "How to Eat Healthy on a Budget: The Complete Playbook",
+      "category": "tips",
+      "score": 1.5,
+      "safety_bonus": 0.0,
+      "safety_markers": [],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "How do you eat healthy on $50 a week?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "$20",
+            "unit": "usd",
+            "family": "MONEY",
+            "low": 20.0,
+            "high": 20.0,
+            "canonical_low": 20.0,
+            "canonical_high": 20.0,
+            "context": ": a bag of pinto beans, a bag of rice, oats, eggs, and a 5 pound bag of chicken drumsticks together run about $20 and cover most of your protein and fiber. Spend the rest on frozen vegetables, bananas, cabbage, carrots, ",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "$25",
+            "unit": "usd",
+            "family": "MONEY",
+            "low": 25.0,
+            "high": 25.0,
+            "canonical_low": 25.0,
+            "canonical_high": 25.0,
+            "context": "every one of them has a fix earlier on this page. ## What does a $60 grocery week actually look like? About $25 buys the backbone for two adults: a 4 lb bag of pinto beans at $3.97, split peas at $1.42, a 5 lb bag of chi",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "how-much-dried-beans-per-person",
+      "path": "src/data/articles/how-much-dried-beans-per-person.md",
+      "title": "How Much Dried Beans per Person?",
+      "category": "nutrition",
+      "score": 1.5,
+      "safety_bonus": 0.0,
+      "safety_markers": [],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "How much dried beans do you need per person?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "45 grams",
+            "unit": "g",
+            "family": "MASS",
+            "low": 45.0,
+            "high": 45.0,
+            "canonical_low": 45.0,
+            "canonical_high": 45.0,
+            "context": "that's 19.3 grams of protein, about 14 grams of fiber, and roughly 20 cents at July 2026 prices. Halve it to 45 grams when beans are a side or one component in a mixed pot.",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "50 gram",
+            "unit": "g",
+            "family": "MASS",
+            "low": 50.0,
+            "high": 50.0,
+            "canonical_low": 50.0,
+            "canonical_high": 50.0,
+            "context": "h. That's 388.6 grams of protein and 281.2 grams of fiber out of one bag, or close to eight days of the FDA's 50 gram protein Daily Value for under four dollars. Twenty cents a portion is the number to keep. Nothing else",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "how-much-protein-in-a-can-of-beans",
+      "path": "src/data/articles/how-much-protein-in-a-can-of-beans.md",
+      "title": "How Much Protein Is in a Can of Beans?",
+      "category": "nutrition",
+      "score": 1.5,
+      "safety_bonus": 0.0,
+      "safety_markers": [],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "Which canned beans have the most protein?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "100 grams",
+            "unit": "g",
+            "family": "MASS",
+            "low": 100.0,
+            "high": 100.0,
+            "canonical_low": 100.0,
+            "canonical_high": 100.0,
+            "context": "Of the three we priced, canned black beans led at 6.03 grams of protein per 100 grams, which works out to about 26.5 grams in a 15.5 ounce can. Canned kidney beans came next at 22.9 grams per can",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "81.0 grams",
+            "unit": "g",
+            "family": "MASS",
+            "low": 81.0,
+            "high": 81.0,
+            "canonical_low": 81.0,
+            "canonical_high": 81.0,
+            "context": "beans worth it compared to dry? For your wallet, no. For your Tuesday, absolutely. Dry black beans returned 81.0 grams of protein per dollar. The canned version returned 30.1. That's about 2.7 times more protein for the ",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "how-to-preheat-skillet-even-browning",
+      "path": "src/data/articles/how-to-preheat-skillet-even-browning.md",
+      "title": "How to Preheat a Skillet for More Even Browning",
+      "category": "tips",
+      "score": 1.5,
+      "safety_bonus": 0.0,
+      "safety_markers": [],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "How long does it take to properly preheat a skillet?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "one minute",
+            "unit": "minute",
+            "family": "TIME",
+            "low": 1.0,
+            "high": 1.0,
+            "canonical_low": 1.0,
+            "canonical_high": 1.0,
+            "context": "It depends on the pan. A thin non-stick pan might take one minute. A heavy cast iron skillet can take three to five minutes over medium heat to get evenly hot.",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "two or three minutes",
+            "unit": "minute",
+            "family": "TIME",
+            "low": 2.0,
+            "high": 3.0,
+            "canonical_low": 2.0,
+            "canonical_high": 3.0,
+            "context": "learning how to season a cast iron skillet properly before blaming the pan. A stainless steel pan might take two or three minutes. ## When to add the oil This is where people get confused. For most cooking in stainless s",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "how-to-prep-high-protein-lunches-work",
+      "path": "src/data/articles/how-to-prep-high-protein-lunches-work.md",
+      "title": "How to Prep High Protein Lunches for Work",
+      "category": "tips",
+      "score": 1.5,
+      "safety_bonus": 0.0,
+      "safety_markers": [],
+      "has_quick_answer": false,
+      "faq_count": 4,
+      "faq0_question": "How much protein should be in a work lunch?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "20 to 30 grams",
+            "unit": "g",
+            "family": "MASS",
+            "low": 20.0,
+            "high": 30.0,
+            "canonical_low": 20.0,
+            "canonical_high": 30.0,
+            "context": "Aiming for 20 to 30 grams of protein per meal may help with satiety throughout the afternoon. This usually looks like a palm-sized port",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": null,
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    },
+    {
+      "slug": "one-dollar-protein-what-it-buys",
+      "path": "src/data/articles/one-dollar-protein-what-it-buys.md",
+      "title": "The Cheapest Protein Foods: What $1 Actually Buys",
+      "category": "nutrition",
+      "score": 1.5,
+      "safety_bonus": 0.0,
+      "safety_markers": [],
+      "has_quick_answer": false,
+      "faq_count": 5,
+      "faq0_question": "What food gives you the most protein for a dollar?",
+      "findings": [
+        {
+          "kind": "UNSUPPORTED",
+          "surface": "faq[0].answer",
+          "quantity": {
+            "text": "389 grams",
+            "unit": "g",
+            "family": "MASS",
+            "low": 389.0,
+            "high": 389.0,
+            "canonical_low": 389.0,
+            "canonical_high": 389.0,
+            "context": "7.9 grams of protein per dollar based on USDA data and July 2026 prices. A $3.97 four pound bag holds roughly 389 grams of protein. Whole wheat flour finished just behind at 96.0 grams per dollar, though that one only co",
+            "source": "faq[0].answer"
+          },
+          "nearest_body_value": {
+            "text": "300 grams",
+            "unit": "g",
+            "family": "MASS",
+            "low": 300.0,
+            "high": 300.0,
+            "canonical_low": 300.0,
+            "canonical_high": 300.0,
+            "context": "ls? Whole wheat flour is the quiet number two at 96.0 grams per dollar. A $3.12 five pound bag holds roughly 300 grams of protein, which nobody thinks about because flour doesn't get a spot on protein lists. It only pays",
+            "source": "body:prose"
+          },
+          "points": 1.5
+        }
+      ],
+      "counts": {
+        "unsupported": 1,
+        "permissive": 0
+      }
+    }
+  ],
+  "clean": [
+    "add-flavor-without-more-sugar-tricks",
+    "air-fryer-salmon-bites-garlic-honey-glaze",
+    "amaranth-millet-teff-beginner-cooking-guide",
+    "artichoke-recipes-for-gut-health",
+    "baked-cod-lemon-capers-green-beans",
+    "baking-sheet-liners-parchment-silicone-when-to-use",
+    "balanced-breakfast-that-keeps-you-full",
+    "batch-cooking-for-beginners-weekly-guide",
+    "beans-and-rice-complete-protein-meal",
+    "beans-double-win-fiber-protein",
+    "best-breakfast-foods-for-sustained-energy",
+    "best-high-fiber-foods-ranked-by-fiber-content",
+    "best-high-fiber-fruits-for-weight-loss-list",
+    "best-high-protein-breads-healthy-sandwiches",
+    "best-low-cost-protein-sources-large-families",
+    "best-way-to-cook-a-pork-tenderloin",
+    "best-way-to-cook-baked-potatoes",
+    "best-way-to-cook-chicken",
+    "best-way-to-cook-pork-chops",
+    "best-way-to-cook-prime-rib",
+    "best-way-to-cook-ribs",
+    "best-way-to-store-avocados-to-stop-browning",
+    "big-flavor-less-salt-citrus-herbs-umami-swaps",
+    "black-bean-brownies-hidden-fiber-dessert",
+    "breakfast-staples-per-dollar",
+    "budget-meal-ideas-for-one",
+    "budget-meal-ideas-philippines",
+    "camping-meal-hacks-large-families",
+    "can-you-refreeze-frozen-vegetables-after-thawing",
+    "canned-beans-vs-dried-beans-nutrition",
+    "canned-vs-dry-beans-cost",
+    "cauliflower-fried-rice-with-eggs",
+    "cheap-chicken-casserole-meals-large-families",
+    "cheap-crockpot-meals-large-families",
+    "cheap-dinner-ideas-for-a-family-of-4",
+    "cheap-ground-beef-meals-large-families",
+    "cheap-healthy-meals-for-college-students",
+    "cheap-healthy-meals-for-two",
+    "cheap-healthy-meals-with-leftovers",
+    "cheap-lunch-ideas-cost-per-box",
+    "cheapest-complete-protein-pairs",
+    "chia-pudding-variations-for-breakfast",
+    "chicken-thighs-vs-breast-protein-cost",
+    "chicken-veggie-lettuce-wraps-peanut-sauce",
+    "comparing-fiber-content-different-pizza-crusts",
+    "cooking-for-picky-adults-simple-options",
+    "cooking-oils-smoke-points-best-uses",
+    "cottage-cheese-vs-greek-yogurt-protein-uses",
+    "creamy-mushroom-barley-risotto-hands-off",
+    "creamy-tomato-orzo-white-beans-one-pot",
+    "crispy-roasted-chickpeas-high-fiber-snack",
+    "crispy-smashed-potato-salad-dijon-herbs",
+    "cucumber-edamame-salad-sesame",
+    "cutting-board-basics-which-to-use",
+    "dairy-protein-per-dollar-ranked",
+    "do-you-have-to-cook-canned-beans",
+    "do-you-have-to-cook-frozen-vegetables",
+    "does-leftover-pizza-need-to-be-refrigerated",
+    "easy-black-bean-tacos-weeknight-dinner",
+    "easy-cheap-healthy-meals",
+    "easy-cold-summer-pasta-salad-potlucks",
+    "easy-high-fiber-breakfast-ideas-for-gut-health",
+    "easy-one-pot-chicken-and-rice-dinner",
+    "easy-sandwich-bread-recipe-beginners",
+    "easy-sourdough-discard-pizza-dough-no-yeast",
+    "easy-sourdough-discard-recipes-beginners",
+    "easy-weeknight-fish-tacos-with-cabbage-slaw",
+    "eggs-vs-everything-protein-value",
+    "eggs-vs-greek-yogurt-protein-cost",
+    "farro-lunch-bowl-roasted-vegetables-lemon-tahini",
+    "fast-food-protein-per-dollar-ranked",
+    "fiber-per-dollar-cheapest-high-fiber-foods",
+    "fiber-protein-daily-values-explained",
+    "fiber-rich-soup-for-weight-loss-cabbage",
+    "fix-oversalted-soup-sauce-rice",
+    "food-prep-guide-blog-recipes",
+    "food-prep-tips-to-save-time",
+    "food-storage-temperature-rules",
+    "foods-highest-in-protein-per-100-grams",
+    "freezer-inventory-simple-system",
+    "freezer-meal-prep-ideas-for-beginners",
+    "frozen-vs-fresh-produce-when-to-buy",
+    "frozen-vs-fresh-vegetables-fiber-cost",
+    "gluten-free-sourdough-discard-pizza-dough",
+    "good-source-of-fiber-label-meaning",
+    "grab-and-go-fridge-snack-drawer",
+    "grains-fiber-per-dollar-ranked",
+    "grocery-budget-for-one-person-per-month",
+    "grocery-shopping-list-for-healthy-eating-on-a-budget",
+    "ground-beef-vs-beans-protein-cost",
+    "gut-friendly-high-fiber-smoothies-for-daily-wellness",
+    "gut-health-tea-peppermint-ginger",
+    "health-benefits-eating-soup-in-spring",
+    "healthy-alternatives-potato-chips-snacking",
+    "healthy-alternatives-white-rice-dinner",
+    "healthy-blue-collar-lunch-ideas-men",
+    "healthy-egg-sandwich-add-ins-toppings",
+    "healthy-fats-list-foods-to-eat-daily",
+    "healthy-homemade-dumpling-wrapper-recipe",
+    "healthy-homemade-indian-salad-dressing-recipes",
+    "healthy-homemade-vegan-caesar-salad-dressing",
+    "healthy-sweet-tooth-snack-ideas-night",
+    "hearty-vegetarian-chili-with-three-beans-and-corn",
+    "hidden-sugars-popular-summer-salad-dressings",
+    "high-fiber-avocado-toast-variations",
+    "high-fiber-bran-muffins-that-taste-good",
+    "high-fiber-burrito-bowl-meal-prep",
+    "high-fiber-cauliflower-rice-recipes",
+    "high-fiber-dinner-recipes-picky-kids",
+    "high-fiber-fast-food-options-guide",
+    "high-fiber-gluten-free-bread-recipe",
+    "high-fiber-hummus-recipe-homemade",
+    "high-fiber-meal-prep-ideas-for-busy-weeks-2026",
+    "high-fiber-meals-for-constipation-relief",
+    "high-fiber-pasta-alternatives",
+    "high-fiber-pizza-crust-cauliflower",
+    "high-fiber-popcorn-toppings-healthy",
+    "high-fiber-quinoa-salad-for-lunch-prep",
+    "high-fiber-raspberry-jam-recipe-chia",
+    "high-fiber-salad-dressings-homemade",
+    "high-fiber-smoothies-for-kids-picky-eaters",
+    "high-fiber-snacks-per-dollar",
+    "high-fiber-stir-fry-vegetables",
+    "high-fiber-yogurt-parfait-for-breakfast",
+    "high-protein-bagel-sandwich-ideas-lunch",
+    "high-protein-high-fiber-meals-for-weight-loss",
+    "high-protein-meals-on-a-budget",
+    "high-protein-on-a-budget-complete-guide",
+    "high-protein-vegetarian-breakfast-burritos-you-can-freeze",
+    "high-protein-vs-high-fiber-satiety",
+    "how-long-can-rice-and-beans-sit-out",
+    "how-long-do-canned-beans-last-after-the-best-by-date",
+    "how-long-do-dried-beans-last",
+    "how-long-do-leftovers-last-in-the-fridge",
+    "how-much-food-storage-do-you-need-per-person",
+    "how-much-is-a-can-of-beans",
+    "how-much-lentils-per-person-per-day",
+    "how-much-oatmeal-is-a-serving",
+    "how-much-protein-do-you-need-per-day",
+    "how-much-protein-for-breakfast",
+    "how-much-protein-in-bagel-sandwich",
+    "how-much-protein-in-lentils",
+    "how-much-protein-in-oatmeal",
+    "how-much-protein-in-peanut-butter",
+    "how-much-protein-in-two-eggs",
+    "how-much-rice-and-beans-per-person-per-day",
+    "how-to-choose-granola-not-dessert",
+    "how-to-clean-blender-fast-no-scrub",
+    "how-to-cook-dried-beans-from-scratch",
+    "how-to-cook-frozen-vegetables-without-the-mush",
+    "how-to-cool-rice-for-fried-rice",
+    "how-to-double-recipe-seasoning-without-guessing",
+    "how-to-eat-cheap-at-home",
+    "how-to-eat-more-fiber-on-a-budget-complete-guide",
+    "how-to-freeze-bananas-for-smoothies",
+    "how-to-freeze-fresh-vegetables-at-home",
+    "how-to-get-more-protein-at-breakfast",
+    "how-to-grocery-shop-for-a-month-on-a-budget",
+    "how-to-increase-fiber-intake-without-gas",
+    "how-to-keep-bread-fresh-longer-without-mold",
+    "how-to-keep-sandwiches-from-getting-soggy",
+    "how-to-make-grocery-shopping-cheaper",
+    "how-to-make-sourdough-pizza-dough-same-day",
+    "how-to-meal-plan-on-a-budget",
+    "how-to-meal-prep-on-a-budget-for-one-person",
+    "how-to-measure-sourdough-discard-grams",
+    "how-to-organize-a-small-kitchen-on-a-budget",
+    "how-to-pack-cold-pasta-salad-picnics",
+    "how-to-pack-lunch-crisp-sandwiches-salads",
+    "how-to-pack-salad-for-work-not-soggy",
+    "how-to-properly-store-cooked-grains-for-meal-prep",
+    "how-to-quick-soak-dried-beans-same-day",
+    "how-to-read-nutrition-labels-for-beginners",
+    "how-to-reduce-food-waste-at-home-easy-tips",
+    "how-to-revive-wilted-lettuce-and-greens",
+    "how-to-save-money-on-groceries-at-walmart",
+    "how-to-season-cast-iron-skillet-properly",
+    "how-to-store-fresh-ginger",
+    "how-to-store-fresh-herbs-to-last-longer",
+    "how-to-store-fruits-and-vegetables-properly",
+    "how-to-store-homemade-bread",
+    "how-to-stretch-meals-large-families",
+    "how-to-use-leftover-rice-creative-ideas",
+    "is-driving-to-cheaper-grocery-store-worth-it",
+    "keep-berries-fresh-longer-when-to-wash",
+    "kitchen-hacks-for-sink",
+    "kitchen-tools-that-save-time-and-money",
+    "lentil-curry-high-fiber-vegan-dinner",
+    "lentils-vs-chicken-breast-protein-cost",
+    "low-cost-protein-meal-hacks-families",
+    "macronutrient-breakdown-healthy-egg-sandwich",
+    "meal-prep-for-beginners-complete-system",
+    "meat-per-dollar-protein-ranked",
+    "natto-japanese-fermented-soybeans-gut-health",
+    "no-bake-high-fiber-energy-balls-recipe",
+    "no-cook-protein-per-dollar",
+    "nutritional-value-of-beans-compared",
+    "oatmeal-vs-grits-fiber-content",
+    "one-dollar-fiber-what-it-buys",
+    "one-theme-five-dinners-one-grocery-list",
+    "peanut-butter-vs-almonds-protein-cost",
+    "pear-salad-with-walnuts-fiber-rich",
+    "plan-week-of-dinners-fewer-grocery-runs",
+    "plant-based-protein-sources-complete-guide",
+    "plant-protein-per-dollar-ranked",
+    "popcorn-vs-almonds-fiber-cost",
+    "popcorn-vs-potato-chips-fiber-comparison",
+    "prebiotic-foods-beyond-the-buzzwords",
+    "produce-fiber-per-dollar-ranked",
+    "protein-per-dollar-adjusted-for-quality",
+    "protein-per-dollar-cheapest-protein-sources",
+    "protein-per-serving-beans-chicken-tofu-compared",
+    "prune-juice-alternatives-for-constipation",
+    "quick-20-minute-high-fiber-meals-for-busy-days",
+    "quick-black-bean-and-corn-salsa-no-cooking-required",
+    "quick-dinner-recipes-for-family",
+    "quick-dinner-recipes",
+    "ricotta-berry-toast-bar-no-cook",
+    "savory-chia-seed-recipes-breakfast",
+    "savory-oatmeal-bowls-with-eggs-and-avocado",
+    "selenium-containing-foods-easy-ways",
+    "sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes",
+    "sheet-pan-ginger-tofu-broccoli-sticky-glaze",
+    "sheet-pan-salmon-and-vegetables-30-minutes",
+    "shelf-stable-pantry-per-dollar",
+    "simple-lunch-recipes-indian-veg",
+    "split-pea-soup-recipe-high-fiber",
+    "stuffed-portobello-mushrooms-quinoa-spinach-feta",
+    "tabbouleh-salad-high-fiber-bulgur",
+    "tofu-vs-chicken-protein-cost",
+    "tuscan-white-bean-kale-soup-stovetop",
+    "usda-thrifty-food-plan-weekly-cost",
+    "vegan-high-fiber-meal-prep-for-week",
+    "vegetarian-high-fiber-dinners-for-natural-relief",
+    "water-and-fiber-the-golden-rule",
+    "what-30-grams-of-fiber-costs-per-day",
+    "what-50-grams-of-protein-costs-per-day",
+    "what-beans-for-red-beans-and-rice",
+    "which-dried-beans-have-the-most-protein",
+    "which-foods-are-complete-proteins",
+    "which-lentils-are-the-best",
+    "whole-wheat-flour-vs-quinoa-fiber-cost",
+    "whole-wheat-vs-white-pasta-fiber",
+    "why-grocery-bill-went-up-after-cooking-more",
+    "zinc-containing-foods-weekly-meals"
+  ]
+}

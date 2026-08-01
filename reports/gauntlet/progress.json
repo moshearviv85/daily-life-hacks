@@ -1,6 +1,6 @@
 {
  "updated": "2026-07-31",
- "round": 2,
+ "round": 3,
  "pages": [
   {
    "slug": "high-fiber-fast-food-options-guide",
@@ -160,15 +160,168 @@
     "answer_extractability": 6
    },
    "remaining_gap": "The page contradicts itself on its own headline number. The H2 \"Why a white-flour crust lands between 2 and 3 grams\" sits directly under a branded table that reports a white-flour CRUST at 1.5 g per 100 g and 1.0 g per serving, and the section it introduces is actually about finished slices. That heading is the most extractable snippet on the page for the query \"pizza crust fiber content\", so the one thing an AI is most likely to lift is the one statement the article's own verified data refutes, by 2 to 3x. Everything else on the page is verified correct: all 24 USDA record IDs match to the decimal, all per-slice arithmetic and %DV figures check out, and all 7 external URLs resolve and support their specific claims. The gap that was assigned (missing plain refrigerated white-flour baseline row, missing branded whole wheat row, wrong quickAnswer) is genuinely closed. This is a one-line contradiction sitting on top of otherwise strong work, but it is a real factual error on the primary query intent, and under a default-negative reading it blocks the win."
+  },
+  {
+   "slug": "best-low-cost-protein-sources-large-families",
+   "url": "https://www.daily-life-hacks.com/best-low-cost-protein-sources-large-families/",
+   "impressions": 85,
+   "position": 12.5,
+   "citations_before": 0,
+   "citations_after": 9,
+   "citations_added": 9,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "factual_accuracy": 9,
+    "trust": 8,
+    "intent_satisfaction": 7,
+    "answer_extractability": 8,
+    "citation_worthiness": 9
+   },
+   "remaining_gap": "The page never scales to a large family, which is the second half of its own title and query. The intro sets up a family of five, and then every single number in the article is an abstract \"grams of protein per dollar\" ratio: there is not one figure expressed per person, per meal, or per week. A parent searching \"cheap protein sources for families\" wants to know how many pounds of dry beans or drumsticks feeds five people and what that costs for a week, and the article makes them do that arithmetic themselves. The competitors are worse (Healthline, Cheapskate Cook and the rest publish zero protein-per-dollar math and zero citations, and Cheapskate Cook cites nothing at all), which is why this still wins, but household scaling is the one thing a genuinely family-targeted page must have and this one does not. The secondary gap is bulk: 2042 words and 9 H2s (both Tier 2 validator warnings) for a payload that is essentially one ranking plus one ladder."
+  },
+  {
+   "slug": "high-fiber-yogurt-parfait-for-breakfast",
+   "url": "https://www.daily-life-hacks.com/high-fiber-yogurt-parfait-for-breakfast/",
+   "impressions": 52,
+   "position": 64.4,
+   "citations_before": 0,
+   "citations_after": 6,
+   "citations_added": 6,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "intent_satisfaction": 7,
+    "factual_accuracy": 6,
+    "trust": 7,
+    "answer_extractability": 8,
+    "citation_worthiness": 6
+   },
+   "remaining_gap": "The chia tablespoon weight is fabricated by record confusion: the article tells the reader USDA publishes a 168 g cup for chia, and USDA does not (record 170554 has only a 1 oz portion; 168 g is flaxseed record 169414's 'cup, whole'). That single wrong gram weight is the only unverified number on the page, and it propagates into all three headline totals (11.7 g, 42 percent DV, 13.1 g) which sit in the excerpt, quickAnswer and faq[0], exactly the text an AI assistant lifts. Everything else checks out: 14 of 15 FDC record IDs match to the gram, the FDA 28 g DV and 20 percent 'high' threshold are quoted correctly, the 40 F / 2 hour / 1 hour above 90 F numbers match FDA verbatim, and the refusal to invent a make-ahead window ('no federal cold-storage chart lists a time for an assembled parfait') is verified true against the archived FoodSafety.gov chart and is the most trust-earning sentence on the page. Extraction-surface check passes on safety: quickAnswer and faq[3] are no more permissive than the body and are conservative relative to FDA. Secondary gap: for a recipe-intent query served by recipe carousels, the page gives no yield, no prep time and no calorie or protein total for the actual build, so it loses to today.com and Parade on pure recipe intent even while beating them decisively on sourcing."
+  },
+  {
+   "slug": "oatmeal-vs-grits-fiber-content",
+   "url": "https://www.daily-life-hacks.com/oatmeal-vs-grits-fiber-content/",
+   "impressions": 30,
+   "position": 19,
+   "citations_before": 0,
+   "citations_after": 19,
+   "citations_added": 19,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "intent_satisfaction": 8,
+    "factual_accuracy": 8,
+    "trust": 8,
+    "answer_extractability": 6,
+    "citation_worthiness": 9
+   },
+   "remaining_gap": "The extraction surface contradicts the article's own table on the single most liftable number. quickAnswer, excerpt, faq[0] and the body intro all say \"cooked regular grits at 1.6 to 2.4 grams,\" and quickAnswer compounds it with \"depending on whether it's yellow, white or instant corn,\" which files instant (a milling form) as a corn color. The body table is unambiguous that regular/quick grits are 1.6 to 2.1 g (FDC 171672 yellow, FDC 171655 white) and that 2.4 g is instant (FDC 173897). So the range an AI assistant will lift is MORE PERMISSIVE than the strictest value the body supports for the food it names, and it is inflated by the one record that is not a generic commodity entry at all: FDC 173897 is a Quaker-branded legacy record presented throughout as generic \"Grits, instant, plain,\" and it is what drives both the 2.4 g upper bound and the counterintuitive \"instant grits beat regular grits\" hook. On a page whose entire thesis is that the milling form determines the fiber, the summary block violates that thesis. The error propagates a fourth time into the body as \"a cooked cup of regular grits covers about 6 to 9 percent,\" where 9 percent is again the instant value. Not safety-relevant (dietary fiber carries no acute hazard), so this is not grounds for LOSES, but it is the one defect standing between this page and a clean sweep."
+  },
+  {
+   "slug": "high-fiber-pizza-crust-cauliflower",
+   "url": "https://www.daily-life-hacks.com/high-fiber-pizza-crust-cauliflower/",
+   "impressions": 28,
+   "position": 8.1,
+   "citations_before": 0,
+   "citations_after": 5,
+   "citations_added": 5,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "intent_satisfaction": 8,
+    "factual_accuracy": 7,
+    "trust": 8,
+    "answer_extractability": 8,
+    "citation_worthiness": 8
+   },
+   "remaining_gap": "The page's central causal argument is attached to the wrong products. Its whole store-bought thesis is \"refined starches are why boxed cauliflower crusts underdeliver,\" but the only crust that actually ties plain white dough (365 Whole Foods Market, FDC 2425029, 1.8 g/100 g) is bound with chickpea flour, mozzarella and potato flour, not the rice flour, corn starch and tapioca starch the article blames. The article instead quotes the ingredient lists of Urban Farmer and PICS, the two crusts that scored highest, to explain a third crust's low number, and the same wrong generalization is restated as fact in the gluten FAQ. A skeptical reader who opens one FDC record catches it, and it is the single thing undermining an otherwise unusually well-sourced page. Secondary to it: the recipe never states the finished gram weight of a quarter crust, so readers cannot run the per-100-gram comparison the article explicitly instructs them to run two paragraphs later."
+  },
+  {
+   "slug": "cheap-crockpot-meals-large-families",
+   "url": "https://www.daily-life-hacks.com/cheap-crockpot-meals-large-families/",
+   "impressions": 28,
+   "position": 47.2,
+   "citations_before": 0,
+   "citations_after": 9,
+   "citations_added": 9,
+   "verdict": "WINS",
+   "rounds": 1,
+   "scores": {
+    "answer_extractability": 8,
+    "citation_worthiness": 8,
+    "factual_accuracy": 9,
+    "intent_satisfaction": 6,
+    "trust": 8
+   },
+   "remaining_gap": "Query intent breadth. The primary query is plural, \"cheap crockpot MEALS for large families\", and searchers arriving on it want a browsable list of dinner ideas. This page delivers exactly one complete recipe (pinto beans and smoked sausage) plus three one-line pork shoulder treatments and a pasta-sauce mention. The current top organic result (largefamilytable.com) lists roughly 85 to 90 distinct recipes organized by protein. On every quality axis this article wins decisively: that competitor carries zero external citations, zero price or cost data, no protein-per-dollar economics, no dried-bean PHA warning, and no thawing rule, offering only a single unsourced \"165 degrees\" aside. This page is a rigorously sourced food-safety and protein-economics essay wrapped around one recipe. That is more trustworthy and far more citation-worthy, but it under-serves the plural noun in the head term, and it is the only axis where the incumbent genuinely beats it."
+  },
+  {
+   "slug": "sheet-pan-salmon-and-vegetables-30-minutes",
+   "url": "https://www.daily-life-hacks.com/sheet-pan-salmon-and-vegetables-30-minutes/",
+   "impressions": 18,
+   "position": 0,
+   "citations_before": 0,
+   "citations_after": 9,
+   "citations_added": 9,
+   "verdict": "TIES",
+   "rounds": 1,
+   "scores": {
+    "intent_satisfaction": 6,
+    "factual_accuracy": 9,
+    "trust": 8,
+    "answer_extractability": 8,
+    "citation_worthiness": 9
+   },
+   "remaining_gap": "Cook time never scales with fillet thickness. The recipe steps, the frontmatter cookTime, and the quickAnswer all hand the reader one flat window (10 to 12 minutes for the fish), and the quickAnswer is what an AI assistant will lift verbatim. Real supermarket fillets run roughly 0.5 inch at the tail to 1.5 inches at a center cut, a 2x to 3x spread in cook time. The body gestures at the problem (\"start checking after eight minutes\", \"fold the narrow end underneath\", \"pull thin fillets as soon as they are ready\") but never converts it into numbers, so a reader with a thick center cut who follows the flat 10 to 12 minutes and does not own a thermometer lands under 145 F on a page whose entire safety argument rests on 145 F. The competitor I checked (themediterraneandish.com) does give thickness-tiered timing, so this is a gap against the current top result, not just an abstract nitpick. Secondary, smaller gaps: salt and pepper are \"to taste\" with no gram or teaspoon anchor, which hurts reproducibility, and the vitamin D sentence applies raw-basis USDA values to a cooked fillet without saying so."
+  },
+  {
+   "slug": "how-to-properly-store-cooked-grains-for-meal-prep",
+   "url": "https://www.daily-life-hacks.com/how-to-properly-store-cooked-grains-for-meal-prep/",
+   "impressions": 0,
+   "position": 0,
+   "citations_before": 0,
+   "citations_after": 2,
+   "citations_added": 2,
+   "verdict": "EXTRACTION-SURFACE DEFECT FIXED",
+   "rounds": 1,
+   "scores": null,
+   "remaining_gap": "Found by sitewide detector, not by demand ranking."
+  },
+  {
+   "slug": "how-to-store-homemade-bread",
+   "url": "https://www.daily-life-hacks.com/how-to-store-homemade-bread/",
+   "impressions": 0,
+   "position": 0,
+   "citations_before": 0,
+   "citations_after": 0,
+   "citations_added": 0,
+   "verdict": "EXTRACTION-SURFACE DEFECT FIXED",
+   "rounds": 1,
+   "scores": null,
+   "remaining_gap": "Found by sitewide detector, not by demand ranking."
+  },
+  {
+   "slug": "healthy-homemade-indian-salad-dressing-recipes",
+   "url": "https://www.daily-life-hacks.com/healthy-homemade-indian-salad-dressing-recipes/",
+   "impressions": 0,
+   "position": 0,
+   "citations_before": 0,
+   "citations_after": 0,
+   "citations_added": 0,
+   "verdict": "EXTRACTION-SURFACE DEFECT FIXED",
+   "rounds": 1,
+   "scores": null,
+   "remaining_gap": "Found by sitewide detector, not by demand ranking."
   }
  ],
  "totals": {
-  "pages_worked": 9,
-  "verified_citations_now_live": 87,
-  "citations_added_net": 82,
-  "wins": 6,
-  "ties": 1,
-  "loses": 2
+  "pages_worked": 18,
+  "verified_citations_now_live": 146,
+  "citations_added_net": 141,
+  "wins": 11,
+  "ties": 2,
+  "extraction_defects_fixed": 3
  },
  "verification": {
   "urls_checked_independently": 80,
@@ -180,9 +333,20 @@
   "internal_links": "PASS 12,719 anchors / 0 orphans",
   "seo_harness": "PASS 9/9 dist and live"
  },
- "next_action": "Deploy is the binding constraint: none of this is live, so Search Console cannot measure it. After deploy, close the 2 remaining LOSES pages (prebiotic dosage framing, pizza-crust quickAnswer range) and extend to the 70 demand-carrying articles still uncited (reports/gauntlet/round2-risk-queue.json).",
+ "next_action": "Deploy round 3, then continue the 45 remaining demand-carrying uncited articles. The sitewide detector cannot see wrong-subject headings (the pizza-crust defect shape); that class is still unaudited.",
  "known_tradeoffs": [
   "S-20 soft word-count warning now on 8 of 9 pages: verified sourcing adds words and the 1200-word ceiling is a style heuristic, not a quality rule. Flagged rather than resolved by deleting sourced content.",
   "tests/high-fiber-fast-food-guide.test.mjs asserted a verified falsehood (that Panera PDF 403s automated requests). Test corrected to the measured truth: default curl UA returns HTTP 200 and a 513,680-byte PDF; a Chrome UA is what gets 403."
- ]
+ ],
+ "sitewide_audit": {
+  "articles_scanned": 267,
+  "with_quickAnswer": 81,
+  "flagged_before": 25,
+  "flagged_after": 22,
+  "permissive_drift_before": 8,
+  "permissive_drift_after": 6,
+  "false_positive_rate_top12": "67%",
+  "real_defects_found_and_fixed": 3,
+  "detector": "scripts/audit_extraction_surfaces.py"
+ }
 }

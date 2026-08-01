@@ -1,6 +1,6 @@
 ---
 title: "High Fiber Cauliflower Pizza Crust That Actually Gets Crispy"
-excerpt: "A crisp cauliflower crust with about 6g of fiber per quarter-crust serving. The secret is squeezing out the water before baking. About 55 minutes."
+excerpt: "A crisp cauliflower crust with about 5.8 grams of fiber per quarter-crust serving, calculated from USDA values. The secret is squeezing the water out first."
 category: recipes
 tags:
 - high fiber
@@ -11,8 +11,9 @@ tags:
 image: /images/high-fiber-pizza-crust-cauliflower-main.jpg
 imageAlt: Crispy golden cauliflower pizza crust topped with tomato sauce, mozzarella, and basil
 date: 2026-01-02
-dateModified: 2026-07-13
+dateModified: 2026-07-31
 author: "David Miller"
+quickAnswer: "Store-bought cauliflower pizza crust carries about 1 to 2 grams of fiber per serving. Three supermarket crusts in USDA's Branded Foods label data report 1.8 to 4.2 grams per 100 grams, and a serving is only 48 to 63 grams, so all three land at 1 or 2 grams, next to 1 gram for a plain refrigerated white-flour crust. This homemade crust runs higher, about 5.8 grams per quarter-crust serving and roughly 23 grams in the full untopped crust, because one quarter starts from about 227 grams of raw cauliflower at 2 grams of fiber per 100 grams plus about 14 grams of almond flour at 9.3, with no rice or tapioca starch diluting it. That figure is ingredient arithmetic on USDA values, not a lab analysis of a finished crust."
 featured: false
 editorsPick: false
 whatsHot: false
@@ -68,13 +69,13 @@ steps:
   a slice. Slice it up and dig in.
 faq:
 - question: "How much fiber is in a cauliflower pizza crust?"
-  answer: "This homemade crust lands around 6 grams of fiber per serving, with one serving defined as one quarter of the untopped crust. Two pounds of trimmed cauliflower contributes roughly 18 grams and the almond flour contributes about 6 grams, for approximately 24 grams in the full crust. Exact numbers vary with the cauliflower and almond flour brand."
+  answer: "It depends entirely on whether it came out of a box. Three supermarket cauliflower crusts in USDA's Branded Foods label data report 1.8 to 4.2 grams of fiber per 100 grams, and since a serving runs only 48 to 63 grams, all three land at 1 or 2 grams per serving. Pillsbury's plain refrigerated white-flour crust in the same dataset is 1 gram. This homemade crust comes out near 5.8 grams per quarter-crust serving, about 23 grams in the full untopped crust, because roughly 18 grams come from two pounds of trimmed cauliflower and about 5 from a half cup of almond flour. That's ingredient arithmetic on USDA values rather than a lab analysis, so treat it as a close estimate."
 - question: "Why is my cauliflower pizza crust soggy?"
   answer: "Almost always leftover water. Cooked riced cauliflower holds a shocking amount of it, and every drop you don't wring out ends up steaming your crust. Squeeze it in a kitchen towel until nothing drips, bake on parchment, and pre-bake the crust fully before topping."
 - question: "Can I freeze cauliflower pizza crust?"
-  answer: "Yes, and it's the move that makes this a weeknight food. Bake the crust completely, cool it, wrap tightly, and freeze. On pizza night, top it and bake straight from frozen, adding a few minutes to the final bake."
+  answer: "Yes, and it's the move that makes this a weeknight food. Bake the crust completely, cool it, wrap it tightly, and freeze at 0°F or below. FoodSafety.gov's cold storage chart gives pizza one to two months in the freezer. On pizza night, top it and bake straight from frozen until the cheese melts and a thermometer in the center reads 165°F, which is the temperature FDA lists for leftovers and casseroles."
 - question: "Is cauliflower crust gluten-free?"
-  answer: "This recipe is, since it binds with almond flour, Parmesan, and egg instead of wheat. Store-bought cauliflower crusts often add rice flour or wheat starch, so if gluten matters to you, the ingredient list on the box is the only answer that counts."
+  answer: "This recipe is, since it binds with almond flour, Parmesan, and egg instead of wheat. Store-bought crusts vary. The three cauliflower crusts in USDA's Branded Foods data lean on rice flour, corn starch, potato starch and tapioca starch for structure, none of which contain gluten, but the word cauliflower on the front of a box isn't a gluten claim. If gluten matters to you, the ingredient list and the certification on the package are the only answers that count."
 - question: "Does cauliflower crust taste like cauliflower?"
   answer: "A little, in the way a good corn tortilla tastes like corn. The oregano, garlic, and Parmesan pull it toward pizza territory, and once there's sauce and melted cheese on top, most people stop asking. Keep toppings light so the crisp survives."
 ---
@@ -82,7 +83,7 @@ A high fiber cauliflower pizza crust has one job before it gets anywhere near sa
 
 I learned this after making three soft crusts in a row and blaming everything except the obvious problem. I blamed the parchment. I blamed the oven. I gave the egg a suspicious look. The cauliflower was holding the water the whole time.
 
-This version lands at roughly 6 grams of fiber per quarter-crust serving before toppings. The real payoff, though, is texture. Get the moisture, thickness, and topping load right and you can pick up a slice with one hand. That's a modest standard for pizza and a major achievement for a vegetable pretending to be dough.
+This version works out to about 5.8 grams of fiber per quarter-crust serving before toppings, which is roughly three times what the better supermarket cauliflower crusts deliver per serving. The math is below and it's deliberately boring. The real payoff, though, is texture. Get the moisture, thickness, and topping load right and you can pick up a slice with one hand. That's a modest standard for pizza and a major achievement for a vegetable pretending to be dough.
 
 ## Crisp cauliflower crust starts with moisture control
 
@@ -133,9 +134,7 @@ Use your fingertips or the flat bottom of a measuring cup to compress the mixtur
 
 Keep the outer rim just a little thicker. It protects the edge from overbrowning and gives each slice something firm to hold. Avoid building a tall pizzeria-style lip, though. Cauliflower doesn't have the internal structure to support a dramatic crust border, and a thick ridge can stay soft inside.
 
-For more even browning, shape the base to a consistent thickness before worrying about whether the edge looks photogenic. Thin translucent patches will crisp quickly and then become brittle while thicker areas are still setting. Run your hand lightly over the surface. If you feel a hill, press it toward a low spot.
-
-After the first bake, don't cover a pale center with toppings and hope the second bake handles it. Sauce and cheese slow surface drying. The untopped base should already look like something you'd be willing to eat.
+Thin translucent patches crisp fast and turn brittle while thicker areas are still setting, so run your hand lightly over the surface and press any hill toward a low spot. And after the first bake, don't cover a pale center with toppings and hope the second bake handles it. Sauce and cheese slow surface drying. The untopped base should already look like something you'd be willing to eat.
 
 ## Choose toppings that don't undo the squeeze
 
@@ -145,7 +144,7 @@ Thick sauce works better than watery sauce. If the jar separates and leaves a pu
 
 Low-moisture mozzarella is the easiest cheese for a crisp result. Fresh mozzarella tastes excellent, but it carries more water. If you use it, blot the pieces with a paper towel and space them apart instead of covering every inch. The same rule applies to ricotta: small spoonfuls, not a white blanket.
 
-Vegetables deserve a little planning. Mushrooms, spinach, zucchini, eggplant, and fresh tomatoes all release water as they heat. Saute, roast, or drain them first, then let visible steam escape before they go on the crust. Roasted peppers from a jar should be patted dry. Frozen spinach should be thawed and squeezed. Yes, this recipe contains more squeezing. Apparently that's the theme.
+Vegetables deserve planning. Mushrooms, spinach, zucchini, eggplant, and fresh tomatoes all release water as they heat, so saute, roast, or drain them first and let the steam escape. Pat jarred roasted peppers dry. Thaw and squeeze frozen spinach. Yes, this recipe contains more squeezing. Apparently that's the theme.
 
 Reliable combinations include:
 
@@ -163,40 +162,61 @@ The crust is the labor-intensive part, so making it ahead is sensible. A fully b
 
 For short storage, place parchment between the crust and the container or wrapping so the surface doesn't stick. Refrigerate it flat. A bent warm crust tends to remember the bend, which is a charming quality in a person and an annoying one in pizza.
 
+Now the part recipe blogs skip. FDA's [safe food handling guidance](https://www.fda.gov/food/buy-store-serve-safe-food/safe-food-handling) says to refrigerate or freeze perishables within two hours of cooking, one hour if it's above 90°F where you are, and to keep the refrigerator at 40°F or below and the freezer at 0°F or below. Once it's in there, [FoodSafety.gov's cold storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) gives pizza three to four days in the refrigerator and one to two months in the freezer. Those windows apply to the bare baked crust and to leftover topped slices alike. Cooling on the counter overnight because you got distracted isn't a storage method.
+
 For freezing, keep the baked crust flat until solid. A sheet pan or cutting board provides support during the first stage. Once frozen, wrap it tightly and protect it from being crushed by the bag of peas that always seems to migrate to the worst possible spot. Parchment between multiple crusts keeps them separate.
 
-You don't need to thaw a frozen crust before topping it. Add a restrained layer of toppings and bake until the center is hot and the cheese is melted. The exact extra time depends on topping load and freezer temperature, so use the center temperature and edge color as your guide rather than staring at the clock like it's going to apologize.
+You don't need to thaw a frozen crust before topping it. Add a restrained layer of toppings and bake until the cheese is melted and a thermometer pushed into the center reads 165°F, the temperature FDA lists for leftovers and casseroles on that same page. The extra time depends on topping load and freezer temperature, so use the thermometer and the edge color as your guide rather than staring at the clock like it's going to apologize.
 
-Refrigerated slices reheat best with dry heat. A skillet over medium-low heat restores the underside while a lid held slightly ajar helps warm the topping. A toaster oven or regular oven also works. The microwave is fast, but it softens the base. Sometimes two minutes matters more than crispness. Just know the tradeoff.
+Refrigerated slices reheat best with dry heat, and they go to 165°F too. A skillet over medium-low heat restores the underside while a lid held slightly ajar helps warm the topping. A toaster oven or regular oven also works. The microwave is fast, but it softens the base. Sometimes two minutes matters more than crispness. Just know the tradeoff.
 
 If you're already processing and cooking one head of cauliflower, making a second crust can be a smart use of the mess. You can also rice the extra head and set it aside for dinner, since [cauliflower rice bowls](/high-fiber-cauliflower-rice-recipes/) start with the same food processor step and skip the towel entirely. Double only if your towel, bowl, and baking space can handle the volume. Crowding two thick crusts onto one small pan creates uneven baking and defeats the point.
 
 ## How to compare fiber numbers and labels
 
-The estimate for this recipe is about 6 grams of fiber per serving, with one serving defined as one quarter of the crust before toppings. Roughly 18 grams comes from the two pounds of trimmed cauliflower and about 6 grams comes from the almond flour. That puts the full untopped crust near 24 grams before it's divided into four servings.
+This crust comes out at about 5.8 grams of fiber per serving, with one serving defined as one quarter of the crust before toppings. That's ingredient arithmetic on USDA numbers, not a lab analysis of a finished crust, so read it as a close estimate rather than a label value.
 
-Exact numbers can shift with the cauliflower and almond flour brand, and toppings change the calorie count. The frontmatter estimate of 185 calories is for one quarter of the crust before sauce, cheese, or other toppings.
+Here's the arithmetic. [USDA FoodData Central](https://fdc.nal.usda.gov/food-search/) puts raw cauliflower at 2 grams of fiber per 100 grams (record 169986) and almond flour at 9.3 grams per 100 grams (Foundation record 2261420), both checked 2026-07-31. Two pounds of trimmed florets is 907 grams, so about 18 grams of fiber. A half cup of almond flour is roughly 56 grams on the labels that publish a cup measure, so about 5 grams. Parmesan and egg contribute none.
 
 | Fiber source in the full crust | Approximate fiber |
 |---|---:|
-| Two pounds trimmed cauliflower | About 18g |
-| Half cup almond flour | About 6g |
-| Full untopped crust | About 24g |
-| One quarter of the crust | About 6g |
+| Two pounds trimmed cauliflower (907 g) | About 18 g |
+| Half cup almond flour (about 56 g) | About 5 g |
+| Parmesan and egg | 0 g |
+| **Full untopped crust** | **About 23 g** |
+| **One quarter of the crust** | **About 5.8 g** |
 
-![Horizontal bar chart showing where the cauliflower crust fiber comes from: about 18 grams from cauliflower and 6 grams from almond flour, for about 24 grams in the full crust](/images/cauliflower-crust-fiber-comparison.jpg)
+![Horizontal bar chart showing where the cauliflower crust fiber comes from: about 18 grams from trimmed cauliflower and about 5 grams from almond flour, for roughly 23 grams in the full untopped crust](/images/cauliflower-crust-fiber-comparison.jpg)
 
-When you compare a packaged cauliflower crust, ignore the vegetable photo on the front for a minute. Turn the box around. Check the serving size in grams, fiber per serving, and first several ingredients. Many commercial cauliflower crusts use rice flour, tapioca starch, cornstarch, or wheat flour for structure. That doesn't make them bad products. It does mean the word *cauliflower* doesn't tell you the fiber number or whether the product is gluten-free.
+Toppings change the calorie count. The 185 calories listed above is for one quarter of the crust before sauce, cheese, or anything else.
 
-Compare equal serving weights when possible. If one label defines a serving as 55 grams and another uses 110 grams, the larger serving may show more fiber simply because it's twice as much food. You can divide fiber grams by serving grams and multiply by 100 for a rough per-100-gram comparison. It's not exciting math, but neither is paying extra for a green box that delivers the same fiber as white bread. The same question applies to the rest of the pantry, which is why it's worth seeing where [whole wheat flour and quinoa land against each other on fiber per dollar](/whole-wheat-flour-vs-quinoa-fiber-cost/) before you decide which bag is the smart buy.
+Now the comparison that actually matters, because the freezer aisle is where most people meet this crust. USDA's Branded Foods dataset carries the label numbers manufacturers submit themselves, and here's how three cauliflower crusts stack up against plain refrigerated white dough.
 
-Also check whether the nutrition panel covers the crust alone or a topped pizza. Cheese and meat add weight without adding meaningful fiber, so fiber per serving can look lower on a complete pizza than on a crust-only label. For a broader side-by-side breakdown, see our guide to [fiber in different pizza crusts](/comparing-fiber-content-different-pizza-crusts/).
+| Bare crust, nothing on top | Fiber per 100 g | Serving | Fiber per serving |
+|---|---:|---|---:|
+| This recipe, homemade | not measured | 1/4 crust from 2 lb cauliflower | About 5.8 g |
+| Urban Farmer cauliflower crust | 4.2 g | 48 g (1/4 crust) | 2.0 g |
+| PICS cauliflower crust | 3.2 g | 63 g | 2.0 g |
+| 365 Whole Foods Market cauliflower crust | 1.8 g | 56 g (1/4 crust) | 1.0 g |
+| Pillsbury Classic refrigerated white-flour crust | 1.5 g | 65 g (1/6 crust) | 1.0 g |
+
+Records 1985746, 2424592, 2425029 and 2738511 at [FoodData Central](https://fdc.nal.usda.gov/food-search/), checked 2026-07-31. Single-brand label figures, not lab-analyzed averages, so a recipe change moves a row.
+
+Look at the bottom two rows. One cauliflower crust ties plain white dough. The reason is in the ingredient lists: Urban Farmer's runs cauliflower, corn starch, brown rice flour, white rice flour, water, tapioca starch, and the PICS crust goes cauliflower, water, corn flour, rice flour, potato starch. Those refined starches carry close to no fiber, and they're there to make the vegetable behave like dough. The homemade version skips them because the towel does that job instead.
+
+Serving size is the other half of the trick. A quarter of this crust starts from about 227 grams of raw cauliflower. A store crust serving is 48 to 63 grams of finished product, total. That's a much bigger plate of vegetable, which is most of why the number moves.
+
+Worth some perspective before anyone gets excited. FDA's [Daily Value for fiber is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), and the same page calls 20 percent of a Daily Value "high" for a nutrient, which puts the bar at 5.6 grams a serving. This crust sits just past it. A 1 to 2 gram store crust sits at 4 to 7 percent. And NIH's MedlinePlus notes that [Americans average about 16 grams of fiber a day](https://medlineplus.gov/ency/article/002470.htm) against a 21 to 38 gram recommendation, so no single dinner settles this.
+
+When you're standing in the aisle, ignore the vegetable photo and turn the box around. Check the serving size in grams, fiber per serving, and the first several ingredients. Compare equal weights: divide fiber grams by serving grams and multiply by 100. It's not exciting math, but neither is paying extra for a green box that delivers the same fiber as white bread. The same question applies to the rest of the pantry, which is why it's worth seeing where [whole wheat flour and quinoa land against each other on fiber per dollar](/whole-wheat-flour-vs-quinoa-fiber-cost/) before you decide which bag is the smart buy.
+
+Also check whether the panel covers the crust alone or a topped pizza. Cheese and meat add weight without adding fiber, so fiber per serving can look lower on a complete pizza than on a crust-only label. For the full side-by-side, including what finished slices actually measure, see our guide to [fiber in different pizza crusts](/comparing-fiber-content-different-pizza-crusts/).
 
 Fiber is one factor, not the only score. Taste, price, allergens, preparation time, and whether the crust remains intact between plate and mouth all count too.
 
 ## Build a meal around the pizza
 
-One quarter of the crust is the stated serving, but the right amount on your plate depends on toppings and what you serve with it. A lightly topped quarter-crust and a substantial side salad make a different meal from a cheese-heavy half crust eaten over the sink. Both have happened in real kitchens.
+One quarter of the crust is the stated serving, but a lightly topped quarter with a substantial side salad makes a different meal from a cheese-heavy half crust eaten over the sink. Both have happened in real kitchens.
 
 For more fiber without overloading the crust, put the extra food beside it. A chopped salad with chickpeas, a tray of roasted broccoli, or a simple white bean and tomato salad can round out the plate, and if you're roasting from a freezer bag rather than the produce aisle, [here's how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/). These sides may also help the meal feel more substantial without asking the cauliflower base to carry six toppings and a personal dream.
 
