@@ -44,13 +44,58 @@ suppression that never recovers, is the textbook signature of Google's **scaled 
 spam policy. Bing was unaffected over the same period, which rules out a technical or crawl fault
 and points at a Google-specific policy action.
 
-**UNVERIFIED and unverifiable by Claude:** whether a MANUAL ACTION is actually recorded. That page
-is only visible when signed in to the owner's Google account.
+**RESOLVED 2026-08-01: the owner checked. Manual actions: "No issues detected". Security issues:
+"No issues detected". There is NO penalty. The scaled-content-abuse hypothesis above is therefore
+NOT the explanation, and the paragraphs below it about a reconsideration request do not apply.**
 
-### The only first action that matters
+### What the evidence actually points to instead
 
-**Open Search Console > Security & Manual Actions.** It takes 60 seconds. Nobody has ever checked it
-in this repo's entire history.
+`git log` on `functions/[[path]].js`, the Cloudflare Pages routing worker, shows two commits landing
+on the morning of the collapse itself:
+
+- `ba85365` 2026-05-18 06:31 "fix canonical handling for routed pin pages"
+- `1576633` 2026-05-18 06:41 "avoid noindex on canonical kv routes"
+
+The second carries this comment in the diff:
+
+> A few legacy KV entries map a canonical slug to itself. Those must behave like normal article
+> pages so search engines can index the canonical URL.
+
+In plain terms: **canonical article URLs were being handled as pin routes and served `noindex`.**
+Googlebot crawling during that window would have been told not to index the site's real articles.
+That is a mechanism that produces exactly this shape: instant, site-wide, sustained, and invisible
+to Bing if Bing did not recrawl in the same window.
+
+This was not a one-off. The same file kept getting indexability fixes for another ten weeks:
+`3e24b05` (06-14 "clean crawled-not-indexed noise"), `399156b` (06-14 "align proxy robots meta"),
+`29f091a`/`6ab8569` (07-26 "collapse internal KV redirect hops"), `7fe1a1d` (07-28 "protect canonical
+pages from stale KV aliases"), `3321522` (07-29 "restore two legacy pin redirects"). A routing layer
+that leaked non-indexable states onto canonical URLs repeatedly, over months.
+
+### Current state, verified 2026-08-01
+
+All **297** sitemap URLs were fetched with a Googlebot user agent. Every one returns HTTP 200 and
+**none** serves a `noindex` robots meta. Problems found: **0**. The indexability defect is fixed today.
+
+### So why has it not recovered?
+
+Because being crawlable again is not the same as being re-evaluated. With **zero backlinks**, Google
+has little reason to spend crawl budget re-testing a site it already demoted, which is consistent
+with the 109 URLs sitting in "Discovered, currently not indexed" while being healthy, self-canonical
+and in the sitemap.
+
+**This diagnosis is materially more hopeful than a penalty:** there is nothing to appeal, nothing
+"wrong" with the content in Google's eyes that a reviewer flagged, and the technical cause has been
+identified and closed. What is missing is a reason for Google to come back and look.
+
+**Still UNVERIFIED:** whether the bulk publication pattern (43 articles on 2026-04-28, 40 on
+2026-07-28) contributed independently. It is plausible and worth avoiding regardless, but it is not
+proven and should not be treated as established.
+
+### The first action, now completed
+
+**Search Console > Security & Manual Actions was checked on 2026-08-01. Both clean.** That closes the
+penalty branch and points the recovery at re-crawl and re-evaluation, not at an appeal.
 
 - **If a manual action is listed** (likely "Thin content with little or no added value" or "Scaled
   content abuse"): a reconsideration request is the entire recovery path. No amount of link
