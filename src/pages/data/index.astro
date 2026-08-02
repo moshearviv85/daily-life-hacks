@@ -300,6 +300,31 @@ const linkStyle = "color: #F29B30;";
         Full terms are on the <a href="/methodology/" class={linkClass} style={linkStyle}>methodology page</a>.
       </p>
 
+      <h2 id="who-publishes" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        Who publishes this, and who to tell when it's wrong
+      </h2>
+      <p class="text-base">
+        <strong>Daily Life Hacks is the publisher of record</strong> for every dataset on this page.
+        The datasets are published under the site's name rather than an individual byline, the way a
+        statistical agency or a research group publishes: the accountable party is the organization,
+        and the work is checkable because the sources are attached to every row rather than because
+        of whose name is on the front.
+      </p>
+      <p class="text-base">
+        That only means something if you can reach someone. Corrections and source questions go to
+        <a href="mailto:hello@daily-life-hacks.com" class={linkClass} style={linkStyle}>hello@daily-life-hacks.com</a>,
+        and they get read. If you think row 17 is wrong, send the row, the value you have, and the
+        source you got it from. A corrected value gets a dated note in the affected study rather than
+        a silent edit, so anyone who cited the old number can see what changed and when.
+      </p>
+      <p class="text-base">
+        We also flag our own unfinished work instead of hiding it. Each ranking CSV carries a
+        <code>nutrition_source_status</code> column, and rows marked <code>unresolved</code> are ones
+        where we have not yet tied the nutrient value to a specific source record with confidence.
+        They are visible on purpose. A dataset that never admits to a loose end is usually one that
+        has not been checked.
+      </p>
+
       <h2 id="machine-readable" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
         For machines
       </h2>

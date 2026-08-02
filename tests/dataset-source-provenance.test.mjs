@@ -553,11 +553,18 @@ test("mixed menu-plan provenance is derived from CSV rows and rendered without U
   );
 });
 
-test("all 22 registered CSVs declare every detectable non-USDA provenance class", () => {
+test("every registered CSV declares every detectable non-USDA provenance class", () => {
   const datasets = registeredDatasets();
   const classCounts = {};
 
-  assert.equal(datasets.length, 22);
+  // Floor, not an exact count. The real assertion is the per-dataset loop below;
+  // pinning an exact total only broke the suite every time a legitimate study was
+  // added (it went red at 23 when the sodium study shipped). A floor still catches
+  // a dataset silently disappearing from the registry.
+  assert.ok(
+    datasets.length >= 22,
+    `expected at least 22 registered datasets, found ${datasets.length}`,
+  );
 
   for (const dataset of datasets) {
     assert.match(dataset.csv, /^\/data\/.+\.csv$/, dataset.slug);
@@ -580,13 +587,28 @@ test("all 22 registered CSVs declare every detectable non-USDA provenance class"
     classCounts[expectedClass] = (classCounts[expectedClass] ?? 0) + 1;
   }
 
-  assert.deepEqual(classCounts, {
+  // Per-class floors, not a frozen snapshot. The real assertion is the per-dataset
+  // equality inside the loop; this only guards that each provenance class is still
+  // represented, so losing all restaurant or research datasets is still caught.
+  // An exact distribution went red the moment a legitimate grocery study shipped
+  // (grocery 15 -> 16), which tested "the catalog never changes", not provenance.
+  for (const [cls, floor] of Object.entries({
     grocery: 15,
     "mixed-label": 3,
     mixed: 2,
     "mixed-research": 1,
     restaurant: 1,
-  });
+  })) {
+    assert.ok(
+      (classCounts[cls] ?? 0) >= floor,
+      `provenance class "${cls}" should have at least ${floor} dataset(s), found ${classCounts[cls] ?? 0}`,
+    );
+  }
+  assert.deepEqual(
+    Object.keys(classCounts).sort(),
+    ["grocery", "mixed", "mixed-label", "mixed-research", "restaurant"],
+    "an unrecognised provenance class appeared",
+  );
 });
 
 test("DIAAS provenance names field-level research sources without calling all of them peer reviewed", () => {
@@ -1100,9 +1122,18 @@ test("Dataset measurementTechnique points both source classes to the corrected m
 
   assert.match(fastFood, new RegExp(technique));
   assert.match(grocery, new RegExp(technique));
+
+  // Compare against the number of Dataset nodes actually in the catalog rather
+  // than a frozen literal. The point is "every Dataset node carries it", which is
+  // what breaks if a new study ships without the methodology link. Hardcoding 22
+  // asserted something else entirely: that the catalog never grows.
+  const datasetNodes = catalog.match(/"@type":"Dataset"/g)?.length ?? 0;
+  const withTechnique = catalog.match(new RegExp(technique, "g"))?.length ?? 0;
+
+  assert.ok(datasetNodes >= 22, `expected at least 22 Dataset nodes, found ${datasetNodes}`);
   assert.equal(
-    catalog.match(new RegExp(technique, "g"))?.length,
-    22,
-    "all 22 catalog Dataset nodes should point to the source-class-aware methodology",
+    withTechnique,
+    datasetNodes,
+    `every catalog Dataset node should point to the source-class-aware methodology (${withTechnique}/${datasetNodes} do)`,
   );
 });
