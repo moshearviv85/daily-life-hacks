@@ -1,0 +1,391 @@
+{
+ "schema_version": 1,
+ "generated": "2026-08-02",
+ "title": "BLS Average Price item to USDA FoodData Central nutrient map",
+ "purpose": "Pipeline input for scripts/build_bls_timeseries.py. Each matched entry pairs one BLS Average Price food item with one USDA FoodData Central record and states, in full, how the BLS priced unit converts to grams of edible food. Skipped entries stay in this file on purpose: a public gap is an honest outcome, a forced match is not.",
+ "conventions": {
+  "grams_per_priced_unit": "Gross grams of product in the unit BLS prices, BEFORE any refuse is removed. For a per lb. (453.6 gm) item this is 453.6 by definition. For per doz. eggs and per gal. milk it is derived from the FDC record's own published portion weights, never from an outside constant.",
+  "edible_fraction": "Share of grams_per_priced_unit that is edible food. 1.0 for boneless, peel-free, refuse-free items. Below 1.0 only where the USDA record itself publishes a yield or refuse figure that can be cited.",
+  "edible_grams_per_priced_unit": "grams_per_priced_unit * edible_fraction. This is the quantity the per-dollar identity divides by. It is not stored here; the script derives it so the two documented inputs stay independently checkable.",
+  "convention_normalization_note": "The upstream mapping pass recorded whole chicken (item 706111) as grams_per_priced_unit = 276 together with edible_fraction = 0.61, which would apply the same yield twice. This file normalizes that single row to the convention used by every other row and by the published flagship CSV public/data/protein-per-dollar-2026.csv: grams_per_priced_unit = 453.6 (the gross priced pound stated in the BLS unit string) and edible_fraction = 0.61 (the FDC record's own yield of 276.0 g meat and skin per 453.6 g ready-to-cook bird, 276.0 / 453.6 = 0.6085, published in the repo as 0.61). No value was invented: 453.6 comes from the BLS unit string, 0.61 comes from the FDC record and the existing repo CSV, and the product 453.6 * 0.61 = 276.7 g reproduces the record's 276.0 g yield to within 0.25 percent and reproduces the flagship row's published 25.3 g protein per dollar.",
+  "protein_and_fiber_basis": "Grams per 100 g of edible food, as USDA publishes them.",
+  "value_precision": "Where the repo already carried a full-precision SR Legacy value for the same FDC record, that value is used. Otherwise the value comes from https://fdc.nal.usda.gov/portal-data/external/{fdc_id}, which rounds to 3 significant figures. Every entry states which."
+ },
+ "sources": {
+  "prices": "U.S. Bureau of Labor Statistics, Average Price Data (AP), public API v2, keyless",
+  "nutrients": "USDA FoodData Central, SR Legacy unless stated otherwise",
+  "bls_series_id_format": "AP + U + 4-char area code + 6-char item code"
+ },
+ "coverage_note": "This file carries 20 matched items across three food groups: meat-poultry-fish (12), dairy-eggs (5), grains-pantry-legumes (3). The upstream mapping payload delivered to the build agent was truncated part-way through the third grains item, so any further grains, legume, produce, or pantry mappings that were produced were never received and are absent here rather than guessed. See truncation_disclosure below.",
+ "truncation_disclosure": {
+  "affected_group": "grains-pantry-legumes",
+  "detail": "The mapping payload was cut off mid-sentence inside the conversion_note for item 701322 (Spaghetti and macaroni). All six numeric fields for that item arrived intact and are recorded verbatim; only the tail of its prose note is missing, and the note is marked accordingly. Any matched or skipped items after 701322 in that group, and any additional groups (produce, pantry, legumes, fruit, vegetables), were never delivered. The curated item file pipeline-data/bls/ap.item.food.tsv lists 67 food items; 20 are mapped here and 15 are documented as skipped, leaving 32 items neither mapped nor adjudicated. Those 32 are NOT skipped-with-a-reason, they are unprocessed, and the distinction is preserved so nobody reads this file as a finished census."
+ },
+ "matched": [
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "703112",
+   "bls_item_name": "Ground beef, 100% beef, per lb. (453.6 gm)",
+   "fdc_id": "174036",
+   "fdc_description": "Beef, ground, 80% lean meat / 20% fat, raw",
+   "protein_g_per_100g": 17.17,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "BLS unit string states per lb. (453.6 gm), so grams_per_priced_unit = 453.6 directly. Ground beef is boneless, edible_fraction = 1.0. Mapping supplied by the orchestrator as already verified in the repo. Raw record matched to a raw retail grind. Fiber 0.0 g per 100 g is a published USDA value, not a gap.",
+   "value_source": "existing repo CSV (full precision); fiber 0.0 read from portal-data",
+   "protein_source_note": "17.17 from public/data/protein-per-dollar-2026.csv (SR Legacy full precision); portal-data rounds the same record to 17.2"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "703113",
+   "bls_item_name": "Ground beef, lean and extra lean, per lb. (453.6 gm)",
+   "fdc_id": "173110",
+   "fdc_description": "Beef, ground, 93% lean meat / 7% fat, raw",
+   "protein_g_per_100g": 20.85,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) converts directly to 453.6 g. Boneless grind, edible_fraction = 1.0. Mapping supplied by the orchestrator as already verified in the repo. Raw record matched to a raw retail grind.",
+   "value_source": "existing repo CSV (full precision); fiber 0.0 read from portal-data",
+   "protein_source_note": "20.85 from public/data/protein-per-dollar-2026.csv; portal-data rounds to 20.8"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "703213",
+   "bls_item_name": "Chuck roast, USDA Choice, boneless, per lb. (453.6 gm)",
+   "fdc_id": "168661",
+   "fdc_description": "Beef, chuck eye roast, boneless, America's Beef Roast, separable lean and fat, trimmed to 0\" fat, choice, raw",
+   "protein_g_per_100g": 19.1,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) converts directly to 453.6 g. BLS prices the cut boneless, so edible_fraction = 1.0 and no refuse applies. Record is raw, choice, boneless, separable lean and fat, which is the form sold at retail (the buyer pays for the fat), matching the repo convention used for pork loin chops FDC 167839. PROXY, documented: BLS item 703213 is a category, and SR Legacy publishes two boneless choice raw chuck roast records, this one (URMIS #1095, chuck eye roast) and FDC 170814 (URMIS #1151/1158, under blade pot roast or steak). The two report 19.1 and 19.2 g protein per 100 g, a 0.5% spread, so the sub-cut choice does not materially affect the value.",
+   "value_source": "portal-data (3 sig figs)",
+   "protein_source_note": "Portal-data rounds to 3 significant figures; no full-precision value for this record exists in the repo CSVs"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "703311",
+   "bls_item_name": "Round roast, USDA Choice, boneless, per lb. (453.6 gm)",
+   "fdc_id": "173983",
+   "fdc_description": "Beef, round, top round roast, boneless, separable lean and fat, trimmed to 0\" fat, choice, raw",
+   "protein_g_per_100g": 23.5,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) converts directly to 453.6 g. Boneless as priced, so edible_fraction = 1.0. Raw, choice, boneless, separable lean and fat record matched to a raw retail cut. PROXY, documented: SR Legacy publishes two boneless choice raw round roast records, this one (URMIS #2366, top round roast) and FDC 171746 (URMIS #2295, eye of round roast), reporting 23.5 and 23.3 g protein per 100 g, a 0.9% spread, so the sub-cut choice does not materially affect the value. The third common retail round roast, bottom round, exists in SR Legacy only as separable lean only (FDC 174058), which is the wrong trim for a retail price, so it was not used.",
+   "value_source": "portal-data (3 sig figs)",
+   "protein_source_note": "Portal-data rounds to 3 significant figures"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "703432",
+   "bls_item_name": "Beef for stew, boneless, per lb. (453.6 gm)",
+   "fdc_id": "170810",
+   "fdc_description": "Beef, chuck for stew, separable lean and fat, choice, raw",
+   "protein_g_per_100g": 21.6,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) converts directly to 453.6 g. Stew beef is sold boneless and the BLS item says boneless, so edible_fraction = 1.0. USDA record is raw, choice, separable lean and fat, and is USDA's only stew-beef record, so there is no sub-cut ambiguity here. Retail stew beef is cut from the chuck, matching the record.",
+   "value_source": "portal-data (3 sig figs)",
+   "protein_source_note": "Portal-data rounds to 3 significant figures"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "703511",
+   "bls_item_name": "Steak, round, USDA Choice, boneless, per lb. (453.6 gm)",
+   "fdc_id": "173980",
+   "fdc_description": "Beef, round, top round steak, boneless, separable lean and fat, trimmed to 0\" fat, choice, raw",
+   "protein_g_per_100g": 23.5,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) converts directly to 453.6 g. Boneless as priced, so edible_fraction = 1.0. Raw, choice, boneless, separable lean and fat. PROXY, documented: SR Legacy publishes two boneless choice raw round steak records, this one (URMIS #2368, top round steak) and FDC 173985 (URMIS #2296, eye of round steak), reporting 23.5 and 23.2 g protein per 100 g, a 1.3% spread, so the sub-cut choice does not materially affect the value. The bone-in full-cut round steak record FDC 168694 was rejected because BLS prices this item boneless.",
+   "value_source": "portal-data (3 sig figs)",
+   "protein_source_note": "Portal-data rounds to 3 significant figures"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "703613",
+   "bls_item_name": "Steak, sirloin, USDA Choice, boneless, per lb. (453.6 gm)",
+   "fdc_id": "168728",
+   "fdc_description": "Beef, top sirloin, steak, separable lean and fat, trimmed to 1/8\" fat, choice, raw",
+   "protein_g_per_100g": 19.9,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) converts directly to 453.6 g. Top sirloin steak is a boneless retail cut, matching the BLS boneless specification, so edible_fraction = 1.0. Raw, choice, separable lean and fat. Strongest identity evidence in the group: this record's own USDA Common Names field reads URMIS #2237, Sirloin steak, Sirloin strip, which is literally the BLS item wording. The narrower cap-steak records (FDC 174707 / 172174, biceps femoris, URMIS #2236) were rejected as a specific sub-cut rather than the retail sirloin steak.",
+   "value_source": "portal-data (3 sig figs)",
+   "protein_source_note": "Portal-data rounds to 3 significant figures"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "704111",
+   "bls_item_name": "Bacon, sliced, per lb. (453.6 gm)",
+   "fdc_id": "168277",
+   "fdc_description": "Pork, cured, bacon, unprepared",
+   "protein_g_per_100g": 13.66,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) converts directly to 453.6 g. Sliced bacon is boneless, edible_fraction = 1.0. Record is unprepared (uncooked), matching the raw retail pack as priced, not the cooked-bacon records FDC 167914 / 168321. Mapping supplied by the orchestrator as already verified in the repo.",
+   "value_source": "existing repo CSV (full precision); fiber 0.0 read from portal-data",
+   "protein_source_note": "13.66 from public/data/protein-per-dollar-2026.csv; portal-data rounds to 13.7"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "704212",
+   "bls_item_name": "Chops, boneless, per lb. (453.6 gm)",
+   "fdc_id": "167839",
+   "fdc_description": "Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, raw",
+   "protein_g_per_100g": 21.55,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) converts directly to 453.6 g. Boneless as priced, so edible_fraction = 1.0. Fresh raw pork record matched to a raw retail cut. This BLS item sits in the pork block and means boneless pork chops. The same FDC record is already used in public/data/protein-per-dollar-2026.csv for the parallel BLS pork chop series APU0000FD3101, so this mapping is consistent with published site data. SERIES CROSS-REFERENCE: the flagship protein-per-dollar dataset prices boneless pork chops from APU0000FD3101 ('All Pork Chops'), while this series is APU0000704212 ('Chops, boneless'). Both are live and they differ: 2026-M06 is 4.336 and 4.555 respectively. Same food, same FDC record, two BLS definitions, so the two datasets will show slightly different per-dollar figures on purpose. This dataset uses the boneless-specific series because it matches the FDC record's boneless form exactly.",
+   "value_source": "existing repo CSV (full precision); fiber 0.0 read from portal-data",
+   "protein_source_note": "21.55 from public/data/protein-per-dollar-2026.csv; portal-data rounds to 21.6"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "704312",
+   "bls_item_name": "Ham, boneless, excluding canned, per lb. (453.6 gm)",
+   "fdc_id": "168295",
+   "fdc_description": "Pork, cured, ham, boneless, extra lean and regular, unheated",
+   "protein_g_per_100g": 18.3,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) converts directly to 453.6 g. Boneless as priced, so edible_fraction = 1.0. Record matches the BLS item on all three specifications: boneless, cured ham, and not canned. It is the composite of extra lean and regular fat levels, which is the right choice for a BLS category price that spans both, and it is unheated, meaning as sold rather than cooked (the roasted counterparts FDC 168296 / 167871 / 167872 were rejected).",
+   "value_source": "portal-data (3 sig figs)",
+   "protein_source_note": "Portal-data rounds to 3 significant figures"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "706111",
+   "bls_item_name": "Chicken, fresh, whole, per lb. (453.6 gm)",
+   "fdc_id": "171447",
+   "fdc_description": "Chicken, broilers or fryers, meat and skin, raw",
+   "protein_g_per_100g": 18.6,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 0.61,
+   "conversion_note": "BLS prices the whole ready-to-cook bird per lb. (453.6 gm), so grams_per_priced_unit = 453.6 gross. The edible fraction comes from the FDC record itself, not from an outside assumption: record 171447 publishes the household measure 1 unit (yield from 1 lb ready-to-cook chicken) = 276.0 g of meat and skin, so 276.0 / 453.6 = 0.6085, published in the repo flagship CSV as 0.61. Edible grams per priced pound therefore work out to 453.6 * 0.61 = 276.7 g, reproducing the record's 276.0 g yield to within 0.25 percent. Raw record matched to a raw priced bird. NORMALIZED: the upstream mapping pass recorded grams_per_priced_unit = 276 alongside edible_fraction = 0.61, which would apply the yield twice; this entry restates the same two published facts on the repo's gross-weight convention so the per-dollar identity is applied once. Cross-check: 18.6 * 0.61 * 4.536 / 2.04 = 25.2 g protein per dollar, matching the 25.3 published in public/data/protein-per-dollar-2026.csv row 28.",
+   "value_source": "existing repo CSV (full precision); yield measure re-verified on portal-data",
+   "protein_source_note": "18.60 from public/data/protein-per-dollar-2026.csv, same as the portal value 18.6"
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "FF1101",
+   "bls_item_name": "Chicken breast, boneless, per lb. (453.6 gm)",
+   "fdc_id": "171077",
+   "fdc_description": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
+   "protein_g_per_100g": 22.5,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) converts directly to 453.6 g. Boneless and skinless as priced, so no refuse and edible_fraction = 1.0. Raw record matched to a raw retail pack. This mapping is already published in public/data/protein-per-dollar-2026.csv against BLS series APU0000FF1101.",
+   "value_source": "existing repo CSV (full precision); fiber 0.0 read from portal-data",
+   "protein_source_note": "22.50 from public/data/protein-per-dollar-2026.csv, same as the portal value 22.5"
+  },
+  {
+   "group": "dairy-eggs",
+   "bls_item_code": "708111",
+   "bls_item_name": "Eggs, grade A, large, per doz.",
+   "fdc_id": "171287",
+   "fdc_description": "Egg, whole, raw, fresh",
+   "protein_g_per_100g": 12.56,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 600.0,
+   "edible_fraction": 1.0,
+   "conversion_note": "BLS prices a dozen grade A large eggs. FDC 171287 publishes its own portion weight for a large egg, 50.0 g, so a dozen is 12 x 50.0 = 600 g. The record carries totalRefuse = 0 and is the whole egg contents without shell, so the 600 g is already edible weight and edible_fraction is 1.0 by the same convention the repo flagship CSV uses for this identical row (package_weight_g 600, edible_fraction 1.0).",
+   "value_source": "existing repo CSV (full precision); fiber 0.0 from portal-data"
+  },
+  {
+   "group": "dairy-eggs",
+   "bls_item_code": "709112",
+   "bls_item_name": "Milk, fresh, whole, fortified, per gal. (3.8 lit)",
+   "fdc_id": "171265",
+   "fdc_description": "Milk, whole, 3.25% milkfat, with added vitamin D",
+   "protein_g_per_100g": 3.15,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 3904.0,
+   "edible_fraction": 1.0,
+   "conversion_note": "Volume to mass conversion taken from the FDC record's own portion weights rather than an outside density figure. FDC 171265 publishes quart = 976.0 g, so 1 US gallon = 4 quarts = 3904 g. Cross-checked independently against the same record's fl oz = 30.5 g, giving 128 fl oz = 3904 g. The two published portions agree exactly. Implied density is 3904 g / 3785.41 mL = 1.031 g/mL, consistent with published whole milk density, but no external density constant was needed. The BLS item name specifies fortified, which selects the with-added-vitamin-D record over FDC 172217 (without added vitamin A and vitamin D); both report identical 3.15 g protein, so the variant choice does not move the value.",
+   "value_source": "existing repo CSV (full precision); fiber 0.0 from portal-data"
+  },
+  {
+   "group": "dairy-eggs",
+   "bls_item_code": "710211",
+   "bls_item_name": "American processed cheese, per lb. (453.6 gm)",
+   "fdc_id": "171290",
+   "fdc_description": "Cheese, pasteurized process, American, without added vitamin D",
+   "protein_g_per_100g": 18.1,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) is a direct mass unit, no conversion needed, and totalRefuse = 0 so edible_fraction is 1.0. Record selection is a standard-of-identity match: BLS says American processed cheese, and FDC 171290 is the only record in the block whose description is exactly 'Cheese, pasteurized process, American'. The neighbouring records are legally distinct lower-cheese-content categories and were rejected on that basis: 171289 cheese product (16.1 g protein), 171291 and 171252 cheese food (16.9), 171254 cheese spread (16.4). There is no 'with added vitamin D' variant inside the true process cheese category, so 171290 is unique and the vitamin qualifier creates no ambiguity. Residual caveat worth carrying in the published notes: some retail American singles are labelled cheese food or cheese product rather than process cheese, and would sit nearer 16 g protein, but the BLS item name specifies processed cheese.",
+   "value_source": "portal-data (3 sig figs)"
+  },
+  {
+   "group": "dairy-eggs",
+   "bls_item_code": "710212",
+   "bls_item_name": "Cheddar cheese, natural, per lb. (453.6 gm)",
+   "fdc_id": "173414",
+   "fdc_description": "Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",
+   "protein_g_per_100g": 22.87,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) is a direct mass unit, no conversion needed. FDC 173414 reports totalRefuse = 0, so edible_fraction is 1.0. Reuses the verified mapping already carried in the repo flagship CSVs. Portal-data rounds this to 22.9; the 22.87 full-precision SR Legacy value from public/data/protein-per-dollar-2026.csv is used instead.",
+   "value_source": "existing repo CSV (full precision); fiber 0.0 from portal-data"
+  },
+  {
+   "group": "dairy-eggs",
+   "bls_item_code": "FS1101",
+   "bls_item_name": "Butter, stick, per lb. (453.6 gm)",
+   "fdc_id": "173410",
+   "fdc_description": "Butter, salted",
+   "protein_g_per_100g": 0.85,
+   "fiber_g_per_100g": 0.0,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "Per lb. (453.6 gm) is a direct mass unit, no conversion needed; totalRefuse = 0 so edible_fraction is 1.0. Cross-check on the unit: the record publishes stick = 113.0 g, and 4 sticks = 452 g, consistent with the priced pound. The BLS item name does not state salted or unsalted, but that ambiguity is provably immaterial here: FDC 173410 (Butter, salted) and FDC 173430 (Butter, without salt) both report 0.85 g protein and 0.0 g fiber per 100 g, so no choice between them can change either published value. This is the same reasoning the repo already applies to its peanut butter row. Salted is cited as the dominant retail stick product. FS1101 is the live successor to the retired item 710111. Note that butter is a near-zero-protein, zero-fiber row; that is a real measured value, not a gap.",
+   "value_source": "portal-data (3 sig figs); SR Legacy publishes 0.85 at full precision"
+  },
+  {
+   "group": "grains-pantry-legumes",
+   "bls_item_code": "701111",
+   "bls_item_name": "Flour, white, all purpose, per lb. (453.6 gm)",
+   "fdc_id": "168894",
+   "fdc_description": "Wheat flour, white, all-purpose, enriched, bleached (SR Legacy, NDB 20081)",
+   "protein_g_per_100g": 10.3,
+   "fiber_g_per_100g": 2.7,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "BLS unit string states the pound explicitly as 453.6 gm, so grams_per_priced_unit = 453.6 with no derivation. Flour is sold as-is with no refuse; the FDC record publishes totalRefuse = 0, so edible_fraction = 1.0. Record choice: US retail all-purpose flour is normally enriched and bleached, but the BLS price record does not state enrichment or bleaching. This does not affect the values, because all three SR Legacy all-purpose white flour records report identical figures at portal precision (168894 enriched bleached, 168936 enriched unbleached, 169761 unenriched: all 10.3 g protein and 2.7 g fiber per 100 g). Enrichment adds B vitamins and iron, not protein or fiber. Both values are portal-rounded to 3 significant figures; no full-precision value for white all-purpose flour exists in the repo CSVs (those carry whole wheat flour, FDC 168893, only). The newer Foundation record 789890 reports 10.9 g protein from a separate analysis and publishes no fiber; SR Legacy was used for consistency with every other row in this dataset.",
+   "value_source": "portal-data (3 sig figs)"
+  },
+  {
+   "group": "grains-pantry-legumes",
+   "bls_item_code": "701312",
+   "bls_item_name": "Rice, white, long grain, uncooked, per lb. (453.6 gm)",
+   "fdc_id": "168877",
+   "fdc_description": "Rice, white, long-grain, regular, raw, enriched (SR Legacy, NDB 20044)",
+   "protein_g_per_100g": 7.13,
+   "fiber_g_per_100g": 1.3,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "BLS unit string states the pound explicitly as 453.6 gm, so grams_per_priced_unit = 453.6. BLS prices the uncooked bag and the FDC record is raw, so the dry-versus-cooked basis matches directly; no cooking yield factor is applied. No refuse (record totalRefuse = 0), so edible_fraction = 1.0. Protein 7.13 is carried at full precision from public/data/protein-per-dollar-2026.csv, which already cites this same record; the portal rounds it to 7.13 as well. Fiber 1.3 is portal-rounded to 3 significant figures because no repo CSV carries white rice fiber. Record choice: US retail long-grain white rice is normally sold enriched but the BLS description does not say so; the repo already documents that the unenriched record 169756 reports the identical 7.13 g protein, so the ambiguity does not move the protein value.",
+   "value_source": "protein from existing repo CSV (full precision); fiber from portal-data (3 sig figs)"
+  },
+  {
+   "group": "grains-pantry-legumes",
+   "bls_item_code": "701322",
+   "bls_item_name": "Spaghetti and macaroni, per lb. (453.6 gm)",
+   "fdc_id": "169736",
+   "fdc_description": "Pasta, dry, enriched (SR Legacy, NDB 20120)",
+   "protein_g_per_100g": 13.04,
+   "fiber_g_per_100g": 3.2,
+   "grams_per_priced_unit": 453.6,
+   "edible_fraction": 1.0,
+   "conversion_note": "BLS unit string states the pound explicitly as 453.6 gm, so grams_per_priced_unit = 453.6. BLS prices the dry box and the FDC record is dry, so the basis matches and no cooking yield factor is applied. Pasta has no refuse, so edible_fraction = 1.0. [NOTE TRUNCATED IN TRANSMISSION: the upstream mapping payload was cut off mid-sentence at this point. Every numeric field above arrived intact and is recorded verbatim; the remainder of the original justification prose, which discussed the enriched-versus-unenriched record choice, was not received. The first three sentences of this note are a restatement of the unambiguous unit facts, not a reconstruction of the missing reasoning. Re-run the mapping pass for this item if the full audit trail is required for the DOI package.]",
+   "value_source": "protein from existing repo CSV (full precision); fiber from portal-data (3 sig figs)"
+  }
+ ],
+ "skipped": [
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "703111",
+   "bls_item_name": "Ground chuck, 100% beef, per lb. (453.6 gm)",
+   "why": "No USDA counterpart. A search of SR Legacy, Foundation Foods and FNDDS for ground chuck returns zero records: USDA publishes ground beef only by fat percentage (70/30 through 97/3) plus grass-fed, never by primal. Retail ground chuck is not a fixed composition, so choosing a fat level would be an invented conversion. Mapping it to FDC 174036 (80/20) would also duplicate the mapping already used for BLS 703112 without any independent evidence. This series is live and useful (114 monthly points, 2026-M06 at 6.975 per lb), so it is worth revisiting only if a defensible fat-level source appears."
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "703425",
+   "bls_item_name": "Steak, rib eye, USDA Choice, boneless, per lb. (453.6 gm)",
+   "why": "No price to pair with a nutrient record. BLS series APU0000703425 returns zero data points for 2017 through 2026 at the U.S. city average area, so the item is not published nationally. Secondary reason: SR Legacy offers two boneless choice raw rib eye records, FDC 173403 (lip off, trimmed to 0 inch fat, 18.7 g protein) and FDC 173393 (lip-on, trimmed to 1/8 inch fat, 18.4 g), with no documented basis to pick one. If BLS ever publishes this series, FDC 173403 is the closer description match because it is a steak record rather than a steak/roast record and is close-trimmed like modern retail."
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "704413",
+   "bls_item_name": "Shoulder picnic, bone-in, smoked, per lb. (453.6 gm)",
+   "why": "Two independent blockers. First, form: SR Legacy publishes cured arm picnic only as roasted (FDC 167879 lean and fat, 167880 lean only). There is no unheated cured picnic record, and BLS prices the uncooked smoked picnic, so matching a roasted record would violate the raw-versus-cooked rule for this group. The fresh raw record FDC 168255 is uncured, which is the wrong product. Second, conversion: the item is bone-in and USDA refuse percentages are not exposed on the portal-data endpoint (the repo already documents this limitation in public/data/fiber-per-dollar-2026.csv), so no edible fraction can be sourced. BLS series also returns zero data points for 2017 through 2026."
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "704421",
+   "bls_item_name": "Sausage, fresh, loose, per lb. (453.6 gm)",
+   "why": "No price and a form mismatch. BLS series APU0000704421 returns zero data points for 2017 through 2026 at the U.S. city average. Additionally the BLS item is loose (bulk) fresh sausage of unstated species, while USDA's generic raw record is FDC 172934, Pork sausage, link/patty, unprepared, which fixes both the species and the form. Remaining USDA raw sausage records are named varieties (Italian mild raw FDC 171631, chorizo raw FDC 173859) that are narrower than the BLS item."
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "705111",
+   "bls_item_name": "Frankfurters, all meat or all beef, per lb. (453.6 gm)",
+   "why": "The BLS item deliberately spans two product types that USDA prices apart, and the gap is material. Unheated records: FDC 173862 Frankfurter, beef, unheated at 11.7 g protein per 100 g versus FDC 173875 Frankfurter, meat and poultry, unheated at 9.72 g, with FDC 172968 Frankfurter, meat at 10.3 g. That is a spread of up to 20%, and BLS publishes no weighting between all-beef and all-meat franks, so any single record would be a guess of unknown direction. Series is also effectively dead: last point 2025-M10 and its value is returned as a dash."
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "705121",
+   "bls_item_name": "Bologna, all beef or mixed, per lb. (453.6 gm)",
+   "why": "Same category-spanning problem as frankfurters, and larger. FDC 172012 Bologna, beef reports 10.9 g protein per 100 g while FDC 172013 Bologna, beef and pork reports 15.2 g, a 39% spread, and the BLS item explicitly covers both with no published mix. Choosing either would move the protein-per-dollar figure by roughly a third. Series is also effectively dead: last point 2025-M10 with a dash value."
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "705142",
+   "bls_item_name": "Lamb and mutton, bone-in, per lb. (453.6 gm)",
+   "why": "Three blockers. Conversion: the item is bone-in and USDA refuse percentages are not published on the portal-data endpoint, so no edible fraction can be documented. Identity: the closest USDA record, FDC 172545 Lamb, composite of trimmed retail cuts, separable lean and fat, trimmed to 1/8 inch fat, choice, raw, is a trimmed edible-portion composite of lamb only and carries no mutton, while the BLS item is lamb and mutton combined. Price: BLS series APU0000705142 returns zero data points for 2017 through 2026."
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "706211",
+   "bls_item_name": "Chicken breast, bone-in, per lb. (453.6 gm)",
+   "why": "Conversion cannot be documented. The nutrient match is clean (FDC 171474, Chicken, broilers or fryers, breast, meat and skin, raw, 20.8 g protein per 100 g), but the priced unit is bone-in and the record's totalRefuse field reads 0 on the portal-data endpoint, which does not publish USDA refuse. The record's own household measures do not help: 0.5 breast, bone removed = 145 g and 0.5 breast, bone removed (yield from 1 lb ready-to-cook chicken) = 87 g both describe yields from the whole bird, not the meat-and-skin share of a bone-in breast pack, so unlike whole chicken FDC 171447 there is no self-contained yield to divide by 453.6. Price: BLS series APU0000706211 also returns zero data points for 2017 through 2026."
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "706212",
+   "bls_item_name": "Chicken legs, bone-in, per lb. (453.6 gm)",
+   "why": "Conversion cannot be documented, and this is the most painful skip in the group because the series is live and cheap (114 monthly points, 2026-M06 at 1.688 per lb). The nutrient match is clean (FDC 172378, Chicken, broilers or fryers, leg, meat and skin, raw, 16.4 g protein per 100 g) but the priced unit is bone-in and portal-data returns totalRefuse 0, publishing no refuse percentage. The record's measures (1 leg with skin = 344 g, drumstick with skin = 111 g, thigh with skin = 185 g, back with skin = 49 g) are part weights that do not state the bone share, so no edible fraction can be derived from the record itself. Reinstate this row only with a citable USDA refuse figure, matching the SR28 refuse citation the repo already uses for drumsticks FDC 172373. REVISIT PATH, recorded rather than acted on: this site already publishes a bone-in poultry row with a citable refuse figure, protein-per-dollar row 11, chicken drumsticks, edible_fraction 0.67 sourced as 'USDA SR28 refuse: 33% bone and cartilage' against FDC 172373. That precedent is NOT reused here because a whole leg is drumstick plus thigh and carries a different bone ratio than a drumstick alone, so the 33% figure is not transferable without a leg-specific refuse source. Resolve by reading the SR28 refuse value for the leg record itself, then this row can ship."
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "706311",
+   "bls_item_name": "Turkey, frozen, whole, per lb. (453.6 gm)",
+   "why": "Conversion cannot be documented. FDC 171081, Turkey, whole, meat and skin, raw (21.6 g protein per 100 g) is the right food and the right form, but the priced unit is a bone-in ready-to-cook bird, portal-data returns totalRefuse 0, and the record's only measures are 1 bird = 5002 g and 4 oz = 113 g, neither of which states the yield per pound of ready-to-cook bird. That is precisely the measure that made whole chicken FDC 171447 convertible, and turkey lacks it. Price is also thin and seasonal: the series returns 39 points with the latest, 2025-M10, carrying a dash value."
+  },
+  {
+   "group": "meat-poultry-fish",
+   "bls_item_code": "707111",
+   "bls_item_name": "Tuna, light, chunk, per lb. (453.6 gm)",
+   "why": "Drained-versus-net ambiguity that USDA's own data cannot settle, plus a dead series. USDA publishes canned light tuna only as drained solids (FDC 173709, 19.44 g protein per 100 g in the repo CSV), with no total-can-contents record for tuna of the kind that exists for pink salmon (FDC 173690). BLS prices canned goods on package net weight, which includes the packing water, so a drained fraction is required. The record's own measures conflict: 1 can = 165 g against 1 can (12.5 oz), drained = 315 g, which implies 88.9% of net weight, while current retail labels run nearer 80% (a 5 oz net can declaring 4 oz drained, the basis the repo used for its Walmart row). No defensible single factor, so the row is left out. Price: BLS series APU0000707111 returns only 8 points and ends at 2017-M09."
+  },
+  {
+   "group": "dairy-eggs",
+   "bls_item_code": "709213",
+   "bls_item_name": "Milk, fresh, low fat, per gal. (3.8 lit)",
+   "why": "DISCONTINUED SERIES, the disqualifying reason. APU0000709213 returns zero data points from the BLS API for 2025-2026 and also zero for 2015-2024, so it has no current or recent history at the U.S. city average area and cannot participate in a self-refreshing dataset. Retired in the same 2018 BLS item-structure revision that started FJ4101 and FS1101, and unlike butter and yogurt it has no live successor in the curated item file. A secondary reason would have applied even if the series were live: BLS publishes no milkfat specification for 'low fat'. FDA labelling reserves lowfat milk for 1% milkfat and requires 2% to be sold as reduced fat, which points to FDC 746772 (Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D, protein 3.38, cup = 246.0 g, hence 16 cups = 3936 g per gallon), but that record is Foundation Foods rather than SR Legacy, publishes no dietary fiber value, and the BLS series predates the 1998 labelling rule. Recording the groundwork here so the row can be added if BLS ever revives a low fat milk series."
+  },
+  {
+   "group": "dairy-eggs",
+   "bls_item_code": "710111",
+   "bls_item_name": "Butter, salted, grade AA, stick, per lb. (453.6 gm)",
+   "why": "DISCONTINUED SERIES. APU0000710111 returns zero data points for 2025-2026 and zero for 2015-2024. Superseded by FJ-era item FS1101 (Butter, stick, per lb.), which begins 2018-M04 and is live through 2026-M06. The underlying food is NOT lost from the dataset: it is captured by the matched FS1101 row, mapped to FDC 173410. Including both codes would double-count the same butter price and would put a dead series into a dataset whose entire premise is monthly self-refresh."
+  },
+  {
+   "group": "dairy-eggs",
+   "bls_item_code": "710122",
+   "bls_item_name": "Yogurt, natural, fruit flavored, per 8 oz. (226.8 gm)",
+   "why": "DISCONTINUED SERIES. APU0000710122 returns zero data points for 2025-2026 and zero for 2015-2024. Superseded by FJ4101 (Yogurt, per 8 oz.), which begins 2018-M04. The successor is itself skipped on match grounds, see the FJ4101 entry, so this food is genuinely absent from the dataset rather than relocated."
+  },
+  {
+   "group": "dairy-eggs",
+   "bls_item_code": "FJ4101",
+   "bls_item_name": "Yogurt, per 8 oz. (226.8 gm)",
+   "why": "LIVE SERIES BUT NO DEFENSIBLE SINGLE USDA COUNTERPART, so it is left out rather than forced. The unit is unproblematic: per 8 oz. (226.8 gm) is a direct mass unit. The match is the problem. The BLS item name is bare 'Yogurt' with no fat level and no plain-versus-flavored specification, and USDA's yogurt records are stratified along BOTH axes, with protein per 100 g spanning roughly 3.5 to 9.5 across them: 171284 plain whole milk 3.47, 171304 Greek plain whole milk 9.00, 172208 chocolate nonfat 3.53, 172219 vanilla low fat 4.93. Worse, USDA subdivides fruit yogurt by protein content itself, 171285 'fruit, low fat, 10 grams protein per 8 ounce' at 4.37 versus 171286 'fruit, low fat, 11g protein/8 oz' at 4.86, so selecting a record would literally be selecting the answer this dataset is supposed to measure. Inheriting the retired 710122 'fruit flavored' wording would not rescue it, because BLS broadened the item definition when it renamed the series and the fat level is still unstated either way. No single record is defensible; a citable DOI package should not carry a coin flip."
+  }
+ ],
+ "unprocessed_items_note": "The remaining items in pipeline-data/bls/ap.item.food.tsv (bread, cookies, crackers, fruit, vegetables, canned goods, sugar, peanut butter, potato chips, pork and beans, romaine lettuce, and the rest of the grains and legumes block) are neither matched nor skipped here. They were not adjudicated, because the upstream mapping payload was truncated before those groups were delivered. Do not read their absence as a judgement that no defensible match exists."
+}

@@ -1,0 +1,86 @@
+name: BLS Nutrition per Dollar Monthly Refresh
+
+# Rebuilds the BLS nutrition-per-dollar time series from the federal Average
+# Price survey, for the U.S. city average plus the four census regions, over
+# the last 10 years. This is the dataset that refreshes itself: the whole point
+# of it is that the numbers are never a stale snapshot.
+#
+# The BLS public API v2 works WITHOUT a key. Do not add one as a secret unless
+# somebody registers for it; the keyless limits (25 series and 10 years per
+# request) are already respected inside the script.
+#
+# BLS publishes the previous month's Average Price data around mid-month, so
+# this runs on the 21st, a day after the existing Price Watch job, to avoid two
+# jobs hammering the same API in the same hour.
+#
+# Registration files (datapackage, API index, dist mirror) are NOT regenerated
+# here. They carry byte counts and sha256 hashes of every CSV, and rebuilding
+# them from a cron job would let a data change rewrite the release descriptors
+# with nobody looking. This job commits the two CSVs only; a human runs
+# `npm run prebuild` and re-checks the data foundation before a release.
+
+on:
+  schedule:
+    - cron: '0 10 21 * *'   # 10:00 UTC on the 21st of every month
+  workflow_dispatch:        # manual trigger
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bls-monthly-refresh
+  cancel-in-progress: false
+
+env:
+  PYTHONUNBUFFERED: "1"
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # No pip install: the script is standard library only, on purpose, so
+      # this job cannot break on a dependency it does not need.
+
+      - name: Rebuild the BLS time series
+        run: python scripts/build_bls_timeseries.py --years 10
+
+      - name: Commit only if the CSVs actually changed
+        run: |
+          set -euo pipefail
+
+          MONTHLY="public/data/bls-nutrition-per-dollar-monthly.csv"
+          LATEST="public/data/bls-nutrition-per-dollar-latest.csv"
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -- "$MONTHLY" "$LATEST"
+
+          if git diff --cached --quiet; then
+            echo "No change in the BLS CSVs. BLS has not published a new month yet, or the revisions were identical. Nothing to commit."
+            exit 0
+          fi
+
+          LATEST_MONTH="$(python -c "
+          import csv
+          with open('public/data/bls-nutrition-per-dollar-latest.csv', encoding='utf-8', newline='') as fh:
+              dates = [row['date'][:7] for row in csv.DictReader(fh)]
+          print(max(dates) if dates else 'unknown')
+          ")"
+
+          git commit -m "chore(data): refresh BLS nutrition-per-dollar series through ${LATEST_MONTH}"
+          git push origin HEAD:main
+
+          echo "Committed. Latest BLS month in the dataset: ${LATEST_MONTH}"
+          echo "Reminder: run \`npm run prebuild\` and \`node scripts/verify-data-foundation.mjs\` before the next data release so the datapackage hashes, the API index and the dist-datasets mirror match these CSVs."

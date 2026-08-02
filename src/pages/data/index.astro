@@ -43,7 +43,7 @@ const titleBySlug = new Map(articles.map((entry) => [entry.id, entry.data.title]
 const datasets = STUDY_DATASETS.map((dataset) => ({
   ...dataset,
   provenance: getDatasetProvenance(dataset),
-  articleUrl: `/${dataset.id}/`,
+  articleUrl: dataset.studyUrl ?? `/${dataset.id}/`,
   articleTitle: titleBySlug.get(dataset.id) ?? dataset.name,
   fileName: dataset.csv.split("/").pop() ?? dataset.csv,
 }));

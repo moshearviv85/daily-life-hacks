@@ -80,6 +80,107 @@ DATASETS: dict[str, dict] = {
             "value": "Combined grams of protein plus fiber per US dollar spent.",
         },
     },
+    "bls-nutrition-per-dollar-latest.csv": {
+        "title": "BLS Nutrition per Dollar, Latest Month by Region",
+        # This dataset has no narrative study article yet. Every other resource
+        # points at the article that published it; this one points at the
+        # methodology page, which is where its rules are written down, rather
+        # than at a URL that does not exist.
+        "study_path": "methodology",
+        "description": (
+            "Protein and fiber per US dollar for every BLS Average Price food item that has "
+            "a defensible USDA FoodData Central match, at the most recent month BLS has "
+            "published, for the U.S. city average and the four census regions. Prices are "
+            "not a shelf snapshot from one retailer: they are the federal Average Price "
+            "survey, and this file is rebuilt from the BLS public API every month. Each row "
+            "carries the price, the grams in the priced unit, the edible fraction, the "
+            "resulting price per 100 grams of edible food, and the USDA record ID, so any "
+            "number in it can be recomputed from the row itself. Items whose priced unit "
+            "cannot be converted to grams from a citable source, and items where the BLS "
+            "category spans USDA records that disagree materially, are left out on purpose "
+            "and listed with reasons in pipeline-data/bls/bls-food-nutrient-map.json."
+        ),
+        "fields": {
+            "bls_series_id": (
+                "BLS Average Price series ID, built as AP + U + area_code + bls_item_code. "
+                "Query it directly at api.bls.gov to reproduce the price."
+            ),
+            "bls_item_code": (
+                "BLS item code, the last six characters of the series ID. Alphanumeric: the "
+                "post-2018 items begin with letters, for example FS1101 for stick butter."
+            ),
+            "bls_item_name": (
+                "BLS item name, verbatim, including the priced unit. The unit is part of the "
+                "item definition and is what grams_per_priced_unit converts."
+            ),
+            "area_code": (
+                "BLS area code as a zero-padded string. 0000 is the U.S. city average; 0100, "
+                "0200, 0300 and 0400 are the Northeast, Midwest, South and West census regions."
+            ),
+            "area_name": "Human-readable area name for area_code, from the BLS AP area file.",
+            "year": "Calendar year of the price observation.",
+            "period": (
+                "BLS period code for the observation month, M01 through M12. The M13 annual "
+                "average is excluded, because this is a monthly file."
+            ),
+            "date": (
+                "First day of the observation month in ISO 8601 form, so the series can be "
+                "charted on a time axis without reparsing year and period."
+            ),
+            "price_usd": (
+                "BLS published average price in US dollars for ONE priced unit of the item, "
+                "meaning one pound, one dozen or one gallon as the item name states."
+            ),
+            "grams_per_priced_unit": (
+                "Gross grams of product in that priced unit, before refuse is removed. Taken "
+                "from the BLS unit string where it states the grams, and otherwise derived "
+                "from the USDA record's own published portion weights."
+            ),
+            "edible_fraction": (
+                "Share of grams_per_priced_unit that is edible food. 1.0 where there is no "
+                "refuse. Below 1.0 only where the USDA record itself publishes the yield."
+            ),
+            "edible_grams_per_priced_unit": (
+                "grams_per_priced_unit multiplied by edible_fraction: the grams of edible "
+                "food a shopper gets for price_usd."
+            ),
+            "price_per_100g_usd": (
+                "100 x price_usd / edible_grams_per_priced_unit. US dollars per 100 grams of "
+                "edible food, which is what makes items priced per pound, per dozen and per "
+                "gallon comparable to each other."
+            ),
+            "fdc_id": (
+                "USDA FoodData Central record ID supplying the nutrient values for this item. "
+                "Records are SR Legacy unless the map says otherwise."
+            ),
+            "fdc_description": (
+                "USDA record description, verbatim, so the food identity behind the numbers "
+                "can be checked without opening FoodData Central."
+            ),
+            "protein_g_per_100g": (
+                "Grams of protein per 100 grams of edible food, from the USDA record named in "
+                "fdc_id."
+            ),
+            "fiber_g_per_100g": (
+                "Grams of dietary fiber per 100 grams of edible food, from the USDA record "
+                "named in fdc_id. A published 0.0 for meat and dairy is a measured value, not "
+                "a missing one."
+            ),
+            "protein_g_per_dollar": (
+                "protein_g_per_100g divided by price_per_100g_usd. The edible fraction is "
+                "already inside price_per_100g_usd and must not be applied a second time."
+            ),
+            "fiber_g_per_dollar": (
+                "fiber_g_per_100g divided by price_per_100g_usd. The edible fraction is "
+                "already inside price_per_100g_usd and must not be applied a second time."
+            ),
+            "value_source": (
+                "Where the nutrient values came from: a full-precision value already audited "
+                "in a Daily Life Hacks flagship CSV, or the USDA portal endpoint, which "
+                "rounds to three significant figures."
+            ),
+        },
+    },
     "breakfast-staples-per-dollar-2026.csv": {
         "title": "Breakfast Staples by Nutrition per Dollar (2026)",
         "study": "breakfast-staples-per-dollar",
@@ -432,11 +533,22 @@ FORCE_NUMBER = {
     "diaas_capped_for_multiplication",
 }
 
+# Zero-padded identifier codes. These parse as integers but are not quantities:
+# calling BLS area code "0000" an integer would licence a consumer to drop the
+# leading zeros and break every series ID rebuilt from the column.
+FORCE_STRING = {
+    "area_code",
+    "fdc_id",
+}
+
+
 
 def infer_type(values: list[str], column: str) -> str:
     """Infer a Table Schema type from the column's non-empty values."""
     present = [v.strip() for v in values if v is not None and v.strip() != ""]
     if not present:
+        return "string"
+    if column in FORCE_STRING:
         return "string"
     is_integer = True
     is_number = True
@@ -514,7 +626,11 @@ def build_resource(entry: dict, problems: list[str]) -> dict:
             }
         )
 
-    study_url = f"{SITE}/{meta['study']}/"
+    # Most resources are published by a study article, so the source link is
+    # that article. A dataset with no article yet declares "study_path" instead,
+    # pointing at a page that actually exists rather than at a future slug.
+    study_path = meta.get("study_path") or meta["study"]
+    study_url = f"{SITE}/{study_path}/"
     csv_bytes = canonical_csv_bytes(path)
     return {
         "name": path.stem,

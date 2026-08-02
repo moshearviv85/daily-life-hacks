@@ -37,6 +37,12 @@ export interface DatasetMeta {
    */
   description: string;
   csv: string;
+  /**
+   * Where /data/ links for the study behind this CSV. Defaults to `/{id}/`,
+   * the article that published it. Set it only for a dataset that has no
+   * article yet, so the catalog never ships a link to a slug that 404s.
+   */
+  studyUrl?: string;
   /** Data rows, header excluded. Mirrors pipeline-data/csv-inventory.json. */
   rows: number;
   variables: string[];
@@ -100,6 +106,33 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 10,
     variables: ["protein grams per dollar", "fiber grams per dollar", "combined grams per dollar"],
     temporal: "2026",
+  },
+  "bls-nutrition-per-dollar": {
+    name: "BLS Nutrition per Dollar: Federal Food Prices by Region, Refreshed Monthly",
+    description:
+      "Protein and fiber per dollar for the BLS Average Price food items that carry a defensible USDA match, at the latest published month, for the US city average and the four census regions. Rebuilt from the BLS public API every month, so it is a live series rather than a one-retailer snapshot.",
+    csv: "/data/bls-nutrition-per-dollar-latest.csv",
+    // No study article yet. Point at the methodology page rather than a slug
+    // that does not exist; swap this for the article id once one is written.
+    studyUrl: "/methodology/",
+    rows: 92,
+    variables: [
+      "protein grams per dollar",
+      "fiber grams per dollar",
+      "BLS average price (USD per priced unit)",
+      "price per 100g of edible food (USD)",
+      "census region",
+    ],
+    temporal: "2017/2026, refreshed monthly",
+    provenance: {
+      nutritionSourceClass: "grocery",
+      nutritionSource: "USDA FoodData Central",
+      nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+      additionalSourceNote:
+        "Prices are the US Bureau of Labor Statistics Average Price survey, pulled from the keyless BLS public API v2, not retailer shelf prices; the full monthly history back to 2017 ships alongside this file as bls-nutrition-per-dollar-monthly.csv",
+      sourceAuditSummary:
+        "20 of the 67 curated BLS food items carry a documented USDA match and a documented unit conversion; 15 more were adjudicated and rejected with reasons, and the remaining items are not yet adjudicated, all recorded in pipeline-data/bls/bls-food-nutrient-map.json",
+    },
   },
   "breakfast-staples-per-dollar": {
     name: "Breakfast Staples Ranked by Nutrition per Dollar (9 foods, 2026)",
@@ -428,6 +461,7 @@ export const STUDY_DATASET_ORDER: string[] = [
   "what-30-grams-of-fiber-costs-per-day",
   "what-50-grams-of-protein-costs-per-day",
   "low-sodium-budget-foods-ranked",
+  "bls-nutrition-per-dollar",
   "protein-per-dollar-adjusted-for-quality",
   "fast-food-protein-per-dollar-ranked",
   "eggs-vs-everything-protein-value",
