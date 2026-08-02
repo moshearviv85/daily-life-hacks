@@ -1,0 +1,584 @@
+{
+ "167755": {
+  "description": "Raspberries, raw",
+  "dataType": "SR Legacy",
+  "kcal": 52.0,
+  "protein_g": 1.2,
+  "fiber_g": 6.5,
+  "potassium_mg": 151.0,
+  "sodium_mg": 1.0
+ },
+ "167762": {
+  "description": "Strawberries, raw",
+  "dataType": "SR Legacy",
+  "kcal": 32.0,
+  "protein_g": 0.67,
+  "fiber_g": 2.0,
+  "potassium_mg": 153.0,
+  "sodium_mg": 1.0
+ },
+ "167839": {
+  "description": "Pork, fresh, loin, top loin (chops), boneless, separable lean and fat, raw",
+  "dataType": "SR Legacy",
+  "kcal": 155.0,
+  "protein_g": 21.55,
+  "fiber_g": 0.0,
+  "potassium_mg": 373.0,
+  "sodium_mg": 48.0
+ },
+ "167849": {
+  "description": "Pork, fresh, shoulder, (Boston butt), blade (steaks), separable lean and fat, raw",
+  "dataType": "SR Legacy",
+  "kcal": 186.0,
+  "protein_g": 17.42,
+  "fiber_g": 0.0,
+  "potassium_mg": 318.0,
+  "sodium_mg": 61.0
+ },
+ "168162": {
+  "description": "Plums, dried (prunes), uncooked",
+  "dataType": "SR Legacy",
+  "kcal": 240.0,
+  "protein_g": 2.18,
+  "fiber_g": 7.1,
+  "potassium_mg": 732.0,
+  "sodium_mg": 2.0
+ },
+ "168277": {
+  "description": "Pork, cured, bacon, unprepared",
+  "dataType": "SR Legacy",
+  "kcal": 393.0,
+  "protein_g": 13.66,
+  "fiber_g": 0.0,
+  "potassium_mg": 201.0,
+  "sodium_mg": 751.0
+ },
+ "168410": {
+  "description": "Edamame, frozen, unprepared",
+  "dataType": "SR Legacy",
+  "kcal": 109.0,
+  "protein_g": 11.22,
+  "fiber_g": 4.8,
+  "potassium_mg": 482.0,
+  "sodium_mg": 6.0
+ },
+ "168411": {
+  "description": "Edamame, frozen, prepared",
+  "dataType": "SR Legacy",
+  "kcal": 121.0,
+  "protein_g": 11.91,
+  "fiber_g": 5.2,
+  "potassium_mg": 436.0,
+  "sodium_mg": 6.0
+ },
+ "168421": {
+  "description": "Kale, raw",
+  "dataType": "SR Legacy",
+  "kcal": 35.0,
+  "protein_g": 2.92,
+  "fiber_g": 4.1,
+  "potassium_mg": 348.0,
+  "sodium_mg": 53.0
+ },
+ "168482": {
+  "description": "Sweet potato, raw, unprepared (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 86.0,
+  "protein_g": 1.57,
+  "fiber_g": 3.0,
+  "potassium_mg": 337.0,
+  "sodium_mg": 55.0
+ },
+ "168872": {
+  "description": "Oat bran, raw",
+  "dataType": "SR Legacy",
+  "kcal": 246.0,
+  "protein_g": 17.3,
+  "fiber_g": 15.4,
+  "potassium_mg": 566.0,
+  "sodium_mg": 4.0
+ },
+ "168874": {
+  "description": "Quinoa, uncooked",
+  "dataType": "SR Legacy",
+  "kcal": 368.0,
+  "protein_g": 14.12,
+  "fiber_g": 7.0,
+  "potassium_mg": 563.0,
+  "sodium_mg": 5.0
+ },
+ "168893": {
+  "description": "Wheat flour, whole-grain (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 340.0,
+  "protein_g": 13.21,
+  "fiber_g": 10.7,
+  "potassium_mg": 363.0,
+  "sodium_mg": 2.0
+ },
+ "169118": {
+  "description": "Pears, raw",
+  "dataType": "SR Legacy",
+  "kcal": 57.0,
+  "protein_g": 0.36,
+  "fiber_g": 3.1,
+  "potassium_mg": 116.0,
+  "sodium_mg": 1.0
+ },
+ "169287": {
+  "description": "Spinach, frozen, chopped or leaf, unprepared (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 29.0,
+  "protein_g": 3.63,
+  "fiber_g": 2.9,
+  "potassium_mg": 346.0,
+  "sodium_mg": 74.0
+ },
+ "169414": {
+  "description": "Seeds, flaxseed",
+  "dataType": "SR Legacy",
+  "kcal": 534.0,
+  "protein_g": 18.29,
+  "fiber_g": 27.3,
+  "potassium_mg": 813.0,
+  "sodium_mg": 30.0
+ },
+ "169703": {
+  "description": "Rice, brown, long-grain, raw (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 367.0,
+  "protein_g": 7.54,
+  "fiber_g": 3.6,
+  "potassium_mg": 250.0,
+  "sodium_mg": 5.0
+ },
+ "169738": {
+  "description": "Pasta, whole-wheat, dry (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 352.0,
+  "protein_g": 13.87,
+  "fiber_g": 9.2,
+  "potassium_mg": 434.0,
+  "sodium_mg": 6.0
+ },
+ "169975": {
+  "description": "Cabbage, raw",
+  "dataType": "SR Legacy",
+  "kcal": 25.0,
+  "protein_g": 1.28,
+  "fiber_g": 2.5,
+  "potassium_mg": 170.0,
+  "sodium_mg": 18.0
+ },
+ "170016": {
+  "description": "Peas, green, frozen, unprepared (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 77.0,
+  "protein_g": 5.22,
+  "fiber_g": 4.5,
+  "potassium_mg": 153.0,
+  "sodium_mg": 108.0
+ },
+ "170027": {
+  "description": "Potatoes, russet, flesh and skin, raw (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 79.0,
+  "protein_g": 2.14,
+  "fiber_g": 1.3,
+  "potassium_mg": 417.0,
+  "sodium_mg": 5.0
+ },
+ "170284": {
+  "description": "Barley, pearled, raw",
+  "dataType": "SR Legacy",
+  "kcal": 352.0,
+  "protein_g": 9.91,
+  "fiber_g": 15.6,
+  "potassium_mg": 280.0,
+  "sodium_mg": 9.0
+ },
+ "170379": {
+  "description": "Broccoli, raw",
+  "dataType": "SR Legacy",
+  "kcal": 34.0,
+  "protein_g": 2.82,
+  "fiber_g": 2.6,
+  "potassium_mg": 316.0,
+  "sodium_mg": 33.0
+ },
+ "170383": {
+  "description": "Brussels sprouts, raw",
+  "dataType": "SR Legacy",
+  "kcal": 43.0,
+  "protein_g": 3.38,
+  "fiber_g": 3.8,
+  "potassium_mg": 389.0,
+  "sodium_mg": 25.0
+ },
+ "170393": {
+  "description": "Carrots, raw",
+  "dataType": "SR Legacy",
+  "kcal": 41.0,
+  "protein_g": 0.93,
+  "fiber_g": 2.8,
+  "potassium_mg": 320.0,
+  "sodium_mg": 69.0
+ },
+ "170554": {
+  "description": "Seeds, chia seeds, dried",
+  "dataType": "SR Legacy",
+  "kcal": 486.0,
+  "protein_g": 16.54,
+  "fiber_g": 34.4,
+  "potassium_mg": 407.0,
+  "sodium_mg": 16.0
+ },
+ "170562": {
+  "description": "Seeds, sunflower seed kernels, dried",
+  "dataType": "SR Legacy",
+  "kcal": 584.0,
+  "protein_g": 20.78,
+  "fiber_g": 8.6,
+  "potassium_mg": 645.0,
+  "sodium_mg": 9.0
+ },
+ "170567": {
+  "description": "Nuts, almonds",
+  "dataType": "SR Legacy",
+  "kcal": 579.0,
+  "protein_g": 21.15,
+  "fiber_g": 12.5,
+  "potassium_mg": 733.0,
+  "sodium_mg": 1.0
+ },
+ "170688": {
+  "description": "Bulgur, dry",
+  "dataType": "SR Legacy",
+  "kcal": 342.0,
+  "protein_g": 12.29,
+  "fiber_g": 12.5,
+  "potassium_mg": 410.0,
+  "sodium_mg": 17.0
+ },
+ "170894": {
+  "description": "Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 59.0,
+  "protein_g": 10.19,
+  "fiber_g": 0.0,
+  "potassium_mg": 141.0,
+  "sodium_mg": 36.0
+ },
+ "171054": {
+  "description": "Chicken, broilers or fryers, meat only, cooked, roasted",
+  "dataType": "SR Legacy",
+  "kcal": 190.0,
+  "protein_g": 28.93,
+  "fiber_g": 0.0,
+  "potassium_mg": 243.0,
+  "sodium_mg": 86.0
+ },
+ "171077": {
+  "description": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, raw",
+  "dataType": "SR Legacy",
+  "kcal": 120.0,
+  "protein_g": 22.5,
+  "fiber_g": 0.0,
+  "potassium_mg": 334.0,
+  "sodium_mg": 45.0
+ },
+ "171244": {
+  "description": "Cheese, mozzarella, low moisture, part-skim",
+  "dataType": "SR Legacy",
+  "kcal": 295.0,
+  "protein_g": 23.75,
+  "fiber_g": 0.0,
+  "potassium_mg": 188.0,
+  "sodium_mg": 666.0
+ },
+ "171287": {
+  "description": "Egg, whole, raw, fresh",
+  "dataType": "SR Legacy",
+  "kcal": 143.0,
+  "protein_g": 12.56,
+  "fiber_g": 0.0,
+  "potassium_mg": 138.0,
+  "sodium_mg": 142.0
+ },
+ "171447": {
+  "description": "Chicken, broilers or fryers, meat and skin, raw",
+  "dataType": "SR Legacy",
+  "kcal": 215.0,
+  "protein_g": 18.6,
+  "fiber_g": 0.0,
+  "potassium_mg": 189.0,
+  "sodium_mg": 70.0
+ },
+ "171705": {
+  "description": "Avocados, raw, all commercial varieties",
+  "dataType": "SR Legacy",
+  "kcal": 160.0,
+  "protein_g": 2.0,
+  "fiber_g": 6.7,
+  "potassium_mg": 485.0,
+  "sodium_mg": 7.0
+ },
+ "171711": {
+  "description": "Blueberries, raw",
+  "dataType": "SR Legacy",
+  "kcal": 57.0,
+  "protein_g": 0.74,
+  "fiber_g": 2.4,
+  "potassium_mg": 77.0,
+  "sodium_mg": 1.0
+ },
+ "171726": {
+  "description": "Dates, deglet noor",
+  "dataType": "SR Legacy",
+  "kcal": 282.0,
+  "protein_g": 2.45,
+  "fiber_g": 8.0,
+  "potassium_mg": 656.0,
+  "sodium_mg": 2.0
+ },
+ "172179": {
+  "description": "Cheese, cottage, creamed, large or small curd",
+  "dataType": "SR Legacy",
+  "kcal": 98.0,
+  "protein_g": 11.12,
+  "fiber_g": 0.0,
+  "potassium_mg": 104.0,
+  "sodium_mg": 315.0
+ },
+ "172373": {
+  "description": "Chicken, broilers or fryers, drumstick, meat and skin, raw",
+  "dataType": "SR Legacy",
+  "kcal": 161.0,
+  "protein_g": 18.08,
+  "fiber_g": 0.0,
+  "potassium_mg": 211.0,
+  "sodium_mg": 106.0
+ },
+ "172420": {
+  "description": "Lentils, raw",
+  "dataType": "SR Legacy",
+  "kcal": 352.0,
+  "protein_g": 24.63,
+  "fiber_g": 10.7,
+  "potassium_mg": 677.0,
+  "sodium_mg": 6.0
+ },
+ "172428": {
+  "description": "Peas, green, split, mature seeds, raw",
+  "dataType": "SR Legacy",
+  "kcal": 364.0,
+  "protein_g": 23.12,
+  "fiber_g": 22.2,
+  "potassium_mg": 852.0,
+  "sodium_mg": 5.0
+ },
+ "172688": {
+  "description": "Bread, whole-wheat, commercially prepared",
+  "dataType": "SR Legacy",
+  "kcal": 252.0,
+  "protein_g": 12.45,
+  "fiber_g": 6.0,
+  "potassium_mg": 254.0,
+  "sodium_mg": 455.0
+ },
+ "172850": {
+  "description": "Turkey, ground, 93% lean, 7% fat, raw",
+  "dataType": "SR Legacy",
+  "kcal": 150.0,
+  "protein_g": 18.73,
+  "fiber_g": 0.0,
+  "potassium_mg": 213.0,
+  "sodium_mg": 69.0
+ },
+ "173110": {
+  "description": "Beef, ground, 93% lean meat / 7% fat, raw",
+  "dataType": "SR Legacy",
+  "kcal": 152.0,
+  "protein_g": 20.85,
+  "fiber_g": 0.0,
+  "potassium_mg": 336.0,
+  "sodium_mg": 66.0
+ },
+ "173414": {
+  "description": "Cheese, cheddar (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 403.0,
+  "protein_g": 22.87,
+  "fiber_g": 0.0,
+  "potassium_mg": 76.0,
+  "sodium_mg": 653.0
+ },
+ "173627": {
+  "description": "Chicken, broilers or fryers, dark meat, thigh, meat only, raw",
+  "dataType": "SR Legacy",
+  "kcal": 121.0,
+  "protein_g": 19.66,
+  "fiber_g": 0.0,
+  "potassium_mg": 242.0,
+  "sodium_mg": 95.0
+ },
+ "173690": {
+  "description": "Fish, salmon, pink, canned, total can contents",
+  "dataType": "SR Legacy",
+  "kcal": 129.0,
+  "protein_g": 19.68,
+  "fiber_g": 0.0,
+  "potassium_mg": 344.0,
+  "sodium_mg": 403.0
+ },
+ "173709": {
+  "description": "Fish, tuna, light, canned in water, drained solids (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 86.0,
+  "protein_g": 19.44,
+  "fiber_g": 0.0,
+  "potassium_mg": 179.0,
+  "sodium_mg": 247.0
+ },
+ "173734": {
+  "description": "Beans, black, mature seeds, raw",
+  "dataType": "SR Legacy",
+  "kcal": 341.0,
+  "protein_g": 21.6,
+  "fiber_g": 15.5,
+  "potassium_mg": 1483.0,
+  "sodium_mg": 5.0
+ },
+ "173741": {
+  "description": "Beans, kidney, all types, mature seeds, canned",
+  "dataType": "SR Legacy",
+  "kcal": 84.0,
+  "protein_g": 5.22,
+  "fiber_g": 4.3,
+  "potassium_mg": 237.0,
+  "sodium_mg": 296.0
+ },
+ "173745": {
+  "description": "Beans, navy, mature seeds, raw",
+  "dataType": "SR Legacy",
+  "kcal": 337.0,
+  "protein_g": 22.33,
+  "fiber_g": 15.3,
+  "potassium_mg": 1185.0,
+  "sodium_mg": 5.0
+ },
+ "173756": {
+  "description": "Chickpeas (garbanzo beans, bengal gram), mature seeds, raw",
+  "dataType": "SR Legacy",
+  "kcal": 378.0,
+  "protein_g": 20.47,
+  "fiber_g": 12.2,
+  "potassium_mg": 718.0,
+  "sodium_mg": 24.0
+ },
+ "173888": {
+  "description": "Cereals ready-to-eat, POST Bran Flakes",
+  "dataType": "SR Legacy",
+  "kcal": 328.0,
+  "protein_g": 9.9,
+  "fiber_g": 18.3,
+  "potassium_mg": 533.0,
+  "sodium_mg": 540.0
+ },
+ "173904": {
+  "description": "Cereals, oats, regular and quick, not fortified, dry",
+  "dataType": "SR Legacy",
+  "kcal": 379.0,
+  "protein_g": 13.15,
+  "fiber_g": 10.1,
+  "potassium_mg": 362.0,
+  "sodium_mg": 6.0
+ },
+ "173944": {
+  "description": "Bananas, raw",
+  "dataType": "SR Legacy",
+  "kcal": 89.0,
+  "protein_g": 1.09,
+  "fiber_g": 2.6,
+  "potassium_mg": 358.0,
+  "sodium_mg": 1.0
+ },
+ "173946": {
+  "description": "Blackberries, raw",
+  "dataType": "SR Legacy",
+  "kcal": 43.0,
+  "protein_g": 1.39,
+  "fiber_g": 5.3,
+  "potassium_mg": 162.0,
+  "sodium_mg": 1.0
+ },
+ "174036": {
+  "description": "Beef, ground, 80% lean meat / 20% fat, raw",
+  "dataType": "SR Legacy",
+  "kcal": 254.0,
+  "protein_g": 17.17,
+  "fiber_g": 0.0,
+  "potassium_mg": 270.0,
+  "sodium_mg": 66.0
+ },
+ "174272": {
+  "description": "Tempeh",
+  "dataType": "SR Legacy",
+  "kcal": 192.0,
+  "protein_g": 20.29,
+  "potassium_mg": 412.0,
+  "sodium_mg": 9.0
+ },
+ "174284": {
+  "description": "Lentils, pink or red, raw",
+  "dataType": "SR Legacy",
+  "kcal": 358.0,
+  "protein_g": 23.91,
+  "fiber_g": 10.8,
+  "potassium_mg": 668.0,
+  "sodium_mg": 7.0
+ },
+ "174290": {
+  "description": "Tofu, extra firm, prepared with nigari",
+  "dataType": "SR Legacy",
+  "kcal": 83.0,
+  "protein_g": 9.98,
+  "fiber_g": 1.0,
+  "potassium_mg": 130.0,
+  "sodium_mg": 4.0
+ },
+ "175139": {
+  "description": "Fish, sardine, Atlantic, canned in oil, drained solids with bone",
+  "dataType": "SR Legacy",
+  "kcal": 208.0,
+  "protein_g": 24.62,
+  "fiber_g": 0.0,
+  "potassium_mg": 397.0,
+  "sodium_mg": 307.0
+ },
+ "175176": {
+  "description": "Fish, tilapia, raw",
+  "dataType": "SR Legacy",
+  "kcal": 96.0,
+  "protein_g": 20.08,
+  "fiber_g": 0.0,
+  "potassium_mg": 302.0,
+  "sodium_mg": 52.0
+ },
+ "175199": {
+  "description": "Beans, pinto, mature seeds, raw (Includes foods for USDA's Food Distribution Program)",
+  "dataType": "SR Legacy",
+  "kcal": 347.0,
+  "protein_g": 21.42,
+  "fiber_g": 15.5,
+  "potassium_mg": 1393.0,
+  "sodium_mg": 12.0
+ },
+ "2758980": {
+  "description": "Raisins, dark, seedless",
+  "dataType": "Foundation",
+  "fiber_g": 3.679,
+  "potassium_mg": 936.0,
+  "sodium_mg": 13.17
+ }
+}

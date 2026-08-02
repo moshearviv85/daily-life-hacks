@@ -295,5 +295,29 @@
       "package_price_usd",
       "price_basis"
     ]
+  },
+  {
+    "file": "sodium-per-dollar-2026.csv",
+    "rows": 56,
+    "fields": [
+      "rank_lowest_sodium_first",
+      "food",
+      "category",
+      "sodium_mg_per_100g",
+      "sodium_mg_per_dollar",
+      "fiber_g_per_100g",
+      "protein_g_per_100g",
+      "package",
+      "package_price_usd",
+      "package_weight_g",
+      "edible_fraction",
+      "price_per_100g_usd",
+      "price_basis",
+      "nutrition_source_status",
+      "nutrition_source_type",
+      "nutrition_source_id",
+      "nutrition_source_url",
+      "nutrition_source_description"
+    ]
   }
 ]

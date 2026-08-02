@@ -39,8 +39,8 @@ TERMS_URL = f"{SITE}/data-reuse/"
 LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 
 # Fixed so re-runs stay byte-identical. Bump with the package version.
-PACKAGE_VERSION = "2026.1"
-PACKAGE_CREATED = "2026-07-26T00:00:00Z"
+PACKAGE_VERSION = "2026.2"
+PACKAGE_CREATED = "2026-08-02T00:00:00Z"
 
 
 # --------------------------------------------------------------------------
@@ -179,6 +179,18 @@ DATASETS: dict[str, dict] = {
         ),
         "fields": {},
     },
+    "sodium-per-dollar-2026.csv": {
+        "title": "The Sodium Index: 56 Budget Staples (2026)",
+        "study": "low-sodium-budget-foods-ranked",
+        "description": (
+            "Sodium added to the audited price basket. 56 staples ranked lowest sodium "
+            "first, each row carrying milligrams of sodium per 100g as purchased, sodium "
+            "per dollar, the package price and price per 100 grams from the parent "
+            "studies, and the fiber or protein value recorded for the same USDA record. "
+            "Only rows the parent studies matched exactly to a USDA record are included."
+        ),
+        "fields": {},
+    },
     "grains-fiber-per-dollar-ranked-2026.csv": {
         "title": "Grains Ranked by Fiber per Dollar (2026)",
         "study": "grains-fiber-per-dollar-ranked",
@@ -304,6 +316,21 @@ DATASETS: dict[str, dict] = {
 
 FIELD_DESCRIPTIONS: dict[str, str] = {
     "rank": "Position in the ranking. 1 is the most nutrient per dollar.",
+    "rank_lowest_sodium_first": (
+        "Position in the sodium ranking. 1 is the LOWEST sodium food, which inverts "
+        "the rank column used by the per-dollar studies."
+    ),
+    "sodium_mg_per_100g": (
+        "Milligrams of sodium per 100 grams of the food as purchased, from the USDA "
+        "FoodData Central record named in nutrition_source_id. Dry goods are measured "
+        "dry, matching the basis the price uses."
+    ),
+    "sodium_mg_per_dollar": (
+        "Milligrams of sodium per US dollar spent, derived from sodium_mg_per_100g and "
+        "price_per_100g_usd. Included for consistency with the rest of the series, but "
+        "it rewards cheapness rather than saltiness, so it ranks inexpensive low-sodium "
+        "produce alongside genuinely salty foods. Use sodium_mg_per_100g to compare foods."
+    ),
     "food": (
         "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) "
         "where the form changes the math."

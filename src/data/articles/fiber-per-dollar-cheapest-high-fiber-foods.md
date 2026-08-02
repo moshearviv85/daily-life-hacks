@@ -150,4 +150,6 @@ Don't overhaul anything. Just let the top of the table cover the boring baseline
 
 If you want to turn the ranking into actual meals, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) handles the shopping routine. The follow-up study on [what 30 grams of fiber costs in a day](/what-30-grams-of-fiber-costs-per-day/) shows five ways to use the same dataset, from dry goods to drive-thru food. For the rest of the cart, our [healthy eating on a budget shopping list](/grocery-shopping-list-for-healthy-eating-on-a-budget/) pairs well with this table.
 
+One more thing this table turned out to be right about by accident. When we later ran [sodium across the same priced basket](/low-sodium-budget-foods-ranked/), the foods at the top here came back at 2 to 12 mg of sodium per 100 g. Whole wheat flour, the fiber winner, is the lowest-sodium grain in the study. Cheapest and least salty are the same shelf.
+
 The whole analysis comes down to one sentence: the cheapest high-fiber foods in America live in the dry goods aisle, they cost about a quarter per 100 grams, and the store has been hiding them at knee level below the fancy stuff the whole time. Now you have the receipts.

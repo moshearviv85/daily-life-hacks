@@ -79,8 +79,8 @@ export function describeDatasetProvenance(
 }
 
 /** Stable release identity shared by HTML schema, the API, and distribution packages. */
-export const DATA_VERSION = "2026.1";
-export const DATA_RELEASE_DATE = "2026-07-26";
+export const DATA_VERSION = "2026.2";
+export const DATA_RELEASE_DATE = "2026-08-02";
 
 export const DATASETS: Record<string, DatasetMeta> = {
   "animal-protein-per-dollar-ranked": {
@@ -173,6 +173,32 @@ export const DATASETS: Record<string, DatasetMeta> = {
         "Popcorn is unresolved: its 14.5-gram value matches air-popped popcorn, while the priced item is unpopped kernels",
       sourceAuditSummary:
         "Joined to the flagship fiber audit: 9 exact USDA matches, 1 close USDA proxy, and 1 unresolved row; proxy and unresolved rows are not independently re-verified",
+    },
+  },
+  "low-sodium-budget-foods-ranked": {
+    name: "The Sodium Index: 56 Budget Staples Ranked Lowest Sodium First (2026)",
+    alternateName: "Sodium Index",
+    description:
+      "Fifty-six budget grocery staples ranked by sodium milligrams per 100 g, joined to the audited price basket so each row also carries package price, price per 100 g, sodium per dollar, and the fiber or protein value from the parent studies.",
+    csv: "/data/sodium-per-dollar-2026.csv",
+    rows: 56,
+    variables: [
+      "sodium (mg per 100g)",
+      "sodium mg per dollar",
+      "price (USD)",
+      "dietary fiber (g per 100g)",
+      "protein (g per 100g)",
+    ],
+    temporal: "2026",
+    provenance: {
+      nutritionSourceClass: "grocery",
+      nutritionSource: "USDA FoodData Central",
+      nutritionSourceUrl: "https://fdc.nal.usda.gov/",
+      nutritionSourceIsPrimary: true,
+      additionalSourceNote:
+        "Sodium was pulled on 2026-08-02 from the same USDA record each row already cited in the fiber and protein studies; only rows those studies marked as exact matches were eligible, so 56 of 102 parent rows qualified",
+      sourceAuditSummary:
+        "Every row is an exact USDA match, and the same pull reproduced all 74 fiber and protein values already audited into the parent CSVs with zero mismatches, confirming record identity",
     },
   },
   "high-fiber-snacks-per-dollar": {
@@ -401,6 +427,7 @@ export const STUDY_DATASET_ORDER: string[] = [
   "protein-per-dollar-cheapest-protein-sources",
   "what-30-grams-of-fiber-costs-per-day",
   "what-50-grams-of-protein-costs-per-day",
+  "low-sodium-budget-foods-ranked",
   "protein-per-dollar-adjusted-for-quality",
   "fast-food-protein-per-dollar-ranked",
   "eggs-vs-everything-protein-value",

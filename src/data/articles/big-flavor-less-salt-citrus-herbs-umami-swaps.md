@@ -39,6 +39,8 @@ Salt is not just seasoning. It boosts aroma. It makes flavors feel louder. It co
 
 This is the big flavor with less salt guide. It is not about eating unsalted sadness. It is about turning the knobs you forgot you have: acid, herbs, spices, browning, and umami.
 
+Worth saying up front: the salt shaker probably isn't your biggest source. When we [measured sodium across 56 budget staples](/low-sodium-budget-foods-ranked/), 48 of them came in under 150 mg per 100 g, and the load was concentrated in a short list of cured meat, cheese, commercial bread and cans. The cooking below is about making the food taste like something. Where the sodium actually comes from is a shopping question.
+
 ## The three knobs: acid, aroma, umami
 
 ### 1) Acid (citrus and vinegar)

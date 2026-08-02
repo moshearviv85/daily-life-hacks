@@ -63,7 +63,7 @@ On protein and fiber, only what the water dilutes and whatever goes down the sin
 
 The part we cannot speak to is everything else. We hold no vitamin data, no mineral data, no iron figures. If somebody tells you canned beans lose a specific percentage of some nutrient, they read that somewhere we didn't, and [USDA FoodData Central](https://fdc.nal.usda.gov/) is where you'd go to check it rather than here.
 
-The one real trade with cans is sodium, since most are packed with salt added. Rinsing removes some of it, and no salt added cans exist on the same shelf for about the same money. We didn't audit sodium, so that's guidance rather than data.
+The one real trade with cans is sodium, since most are packed with salt added. We've since put a number on it: the USDA record for canned kidney beans is 296 mg of sodium per 100 g against 5 mg for dry black beans, which is where that comparison sits in [the sodium ranking of 56 budget staples](/low-sodium-budget-foods-ranked/). Worth knowing that the canned figure is total can contents, liquid included, so it's the before-you-drain number. Rinsing removes some of it, and no salt added cans exist on the same shelf for about the same money.
 
 ## Which is better value, canned or dried?
 

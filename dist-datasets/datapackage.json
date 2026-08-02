@@ -4,8 +4,8 @@
   "title": "Daily Life Hacks Food Value Data",
   "description": "Every public dataset behind the Daily Life Hacks grocery cost studies: fiber per dollar, protein per dollar, protein quality adjusted with DIAAS, daily menu costing, and category-level rankings across produce, grains, legumes, dairy, meat, pantry staples and fast food.\n\nGrocery nutrient values primarily trace to USDA FoodData Central; the flagship files expose exact, proxy, and unresolved row-level status, and documented product-label exceptions remain labeled as such. Restaurant values come from chain-published nutrition. Prices are US national figures: BLS Average Price data where the item is tracked, Walmart national listings otherwise, observed July 2026. Every ranking is calculated as-purchased, with USDA refuse percentages removed so peels, pits and bone are not counted as food.\n\nThe original Daily Life Hacks selection, arrangement, calculations, field descriptions, and explanatory material are licensed CC BY 4.0. Upstream facts and third-party material keep their own status and terms. Credit \"Daily Life Hacks\" with a link to the study page or to https://www.daily-life-hacks.com/data/. Full scope at https://www.daily-life-hacks.com/data-reuse/ and full methodology at https://www.daily-life-hacks.com/methodology/.",
   "homepage": "https://www.daily-life-hacks.com/data/",
-  "version": "2026.1",
-  "created": "2026-07-26T00:00:00Z",
+  "version": "2026.2",
+  "created": "2026-08-02T00:00:00Z",
   "licenses": [
     {
       "name": "CC-BY-4.0",
@@ -1446,6 +1446,122 @@
         ]
       },
       "rowCount": 27
+    },
+    {
+      "name": "sodium-per-dollar-2026",
+      "path": "data/sodium-per-dollar-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "The Sodium Index: 56 Budget Staples (2026)",
+      "description": "Sodium added to the audited price basket. 56 staples ranked lowest sodium first, each row carrying milligrams of sodium per 100g as purchased, sodium per dollar, the package price and price per 100 grams from the parent studies, and the fiber or protein value recorded for the same USDA record. Only rows the parent studies matched exactly to a USDA record are included.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 14468,
+      "hash": "sha256:189c1e716eec39d695041f83b656fa00bc70853c997d3569f3673420e0c80b7b",
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: The Sodium Index: 56 Budget Staples (2026)",
+          "path": "https://www.daily-life-hacks.com/low-sodium-budget-foods-ranked/"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "rank_lowest_sodium_first",
+            "type": "integer",
+            "description": "Position in the sodium ranking. 1 is the LOWEST sodium food, which inverts the rank column used by the per-dollar studies."
+          },
+          {
+            "name": "food",
+            "type": "string",
+            "description": "Food item as sold at retail, including the form (dry, canned, frozen, bone-in) where the form changes the math."
+          },
+          {
+            "name": "category",
+            "type": "string",
+            "description": "Grocery category the food was grouped under for this ranking."
+          },
+          {
+            "name": "sodium_mg_per_100g",
+            "type": "number",
+            "description": "Milligrams of sodium per 100 grams of the food as purchased, from the USDA FoodData Central record named in nutrition_source_id. Dry goods are measured dry, matching the basis the price uses."
+          },
+          {
+            "name": "sodium_mg_per_dollar",
+            "type": "number",
+            "description": "Milligrams of sodium per US dollar spent, derived from sodium_mg_per_100g and price_per_100g_usd. Included for consistency with the rest of the series, but it rewards cheapness rather than saltiness, so it ranks inexpensive low-sodium produce alongside genuinely salty foods. Use sodium_mg_per_100g to compare foods."
+          },
+          {
+            "name": "fiber_g_per_100g",
+            "type": "number",
+            "description": "Recorded dietary fiber in grams per 100 grams; use the nutrition_source fields in the flagship CSV to inspect its FoodData Central match status."
+          },
+          {
+            "name": "protein_g_per_100g",
+            "type": "number",
+            "description": "Recorded protein in grams per 100 grams; use the nutrition_source fields in the flagship CSV to inspect its FoodData Central or manufacturer-label status."
+          },
+          {
+            "name": "package",
+            "type": "string",
+            "description": "Package size the recorded price refers to, as sold on the shelf."
+          },
+          {
+            "name": "package_price_usd",
+            "type": "number",
+            "description": "Shelf price in US dollars for that package."
+          },
+          {
+            "name": "package_weight_g",
+            "type": "number",
+            "description": "Net weight of that package in grams."
+          },
+          {
+            "name": "edible_fraction",
+            "type": "number",
+            "description": "Share of the purchased weight that is actually eaten, after USDA refuse (peels, pits, rinds, bone) is removed. 1.0 means no waste."
+          },
+          {
+            "name": "price_per_100g_usd",
+            "type": "number",
+            "description": "Price in US dollars per 100 grams of edible food."
+          },
+          {
+            "name": "price_basis",
+            "type": "string",
+            "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "nutrition_source_status",
+            "type": "string",
+            "description": "Row-level nutrition provenance status: exact, proxy, or unresolved."
+          },
+          {
+            "name": "nutrition_source_type",
+            "type": "string",
+            "description": "Authoritative nutrition source class, or Unresolved when no unique matching record was established."
+          },
+          {
+            "name": "nutrition_source_id",
+            "type": "string",
+            "description": "USDA FoodData Central identifier for exact and proxy rows; empty for unresolved rows."
+          },
+          {
+            "name": "nutrition_source_url",
+            "type": "string",
+            "description": "Direct authoritative record URL, or the current manufacturer page for the unresolved TVP label row."
+          },
+          {
+            "name": "nutrition_source_description",
+            "type": "string",
+            "description": "Food description from the linked authoritative record, preserved verbatim for auditability."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 56
     }
   ]
 }
