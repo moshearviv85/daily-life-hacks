@@ -21,7 +21,7 @@ faq:
   - question: "Do rice and beans make a complete protein?"
     answer: "Legumes and grains complement each other's amino acid profiles, which is the reason the pairing has fed people for centuries. Splitting a dollar evenly between dry pinto beans and dry brown rice bought 67.2 grams of protein in our pairing study. Splitting it between pinto beans and whole wheat flour bought 97.0, the highest pair we tested."
   - question: "What is missing from a rice and beans diet?"
-    answer: "We cannot answer that from our own data, because our 22 datasets cover protein, fiber, and price only. No vitamins, no minerals, no iron. What we can say is that adding cheap produce is not expensive: frozen green peas returned 17.6 grams of fiber per dollar and frozen green beans 11.2, so variety does not have to cost much."
+    answer: "We cannot answer that from our own data, because our 22 datasets cover protein, fiber, and price only. No vitamins, no minerals, no iron. What we can say is that adding cheap produce is not expensive: frozen green peas returned 17.6 grams of fiber per dollar and frozen green beans 10.8, so variety does not have to cost much."
   - question: "How much does a day of rice and beans cost?"
     answer: "Less than most people expect. The bean and rice portion of one dinner came to about $0.32 in our audited day costing, and a fiber focused version using 60 grams of dry pinto beans and 50 grams of dry brown rice came to $0.23 for 11.1 grams of fiber. Those are ingredient costs at July 2026 prices, not a full day of eating."
 ---
@@ -69,7 +69,7 @@ The variety problem is the one that actually ends these experiments. Nobody quit
 
 The other thing worth flagging is the fiber ramp. Eating this every day is a large jump in fiber for most people, and going from a low intake to 25 or 30 grams overnight is uncomfortable. Build up across a couple of weeks instead, and read [how to increase fiber intake without gas](/how-to-increase-fiber-intake-without-gas/) before you commit to a bowl a night.
 
-Adding produce doesn't blow up the budget either. Frozen green peas returned 17.6 grams of fiber per dollar and frozen green beans 11.2, both from our [produce fiber ranking](/produce-fiber-per-dollar-ranked/). A bag of frozen vegetables stirred into the pot costs almost nothing and changes the plate.
+Adding produce doesn't blow up the budget either. Frozen green peas returned 17.6 grams of fiber per dollar and frozen green beans 10.8, both from our [produce fiber ranking](/produce-fiber-per-dollar-ranked/). A bag of frozen vegetables stirred into the pot costs almost nothing and changes the plate.
 
 ## How to eat it every day without hating it
 

@@ -14,7 +14,7 @@ faq:
   - question: "Why is quinoa so expensive per gram of fiber?"
     answer: "Two reasons stack up. A 2 pound bag ran $5.97, or about 66 cents per 100 grams, roughly 4.8 times the 13.8 cents per 100 grams that whole wheat flour cost. Quinoa also carries less fiber per 100 grams, 7.0 against 10.7 for the flour. Higher price and lower density together produce the 7.3 times gap."
   - question: "What is the cheapest whole grain for fiber?"
-    answer: "Whole wheat flour leads this sample at 77.8 grams of fiber per dollar. Pearled barley is the next verified row at 57.1. The table records popcorn kernels at 57.7, but that result is unresolved because the nutrition value is for air-popped popcorn while the priced item is unpopped kernels."
+    answer: "Whole wheat flour leads this sample at 77.8 grams of fiber per dollar, and pearled barley is the next row at 57.1. Popcorn kernels come third at 51.3. That popcorn row is a proxy: USDA's nutrition value is for air-popped popcorn while the priced item is unpopped kernels, so we converted it to a kernel basis, which is what moved it behind barley."
   - question: "Should I stop buying quinoa?"
     answer: "Not necessarily. Quinoa carries 14.12 grams of protein per 100 grams in our protein study, slightly above whole wheat flour at 13.21, and it supplies a fuller amino acid profile on its own than most grains do. It's also naturally gluten free. Those may be worth the price to you, but they're the reasons to buy it, not the fiber."
   - question: "Is baking your own bread cheaper than buying it?"
@@ -31,7 +31,7 @@ Whole wheat flour delivers 77.8 grams of fiber per dollar. Dry quinoa delivers 1
 | Price | $3.12 | $5.97 |
 | Cost per 100 g | $0.14 | $0.66 |
 
-*Source audit: The flour and quinoa comparison uses exact USDA matches and single-store US prices from July 2026. In the wider grain table below, popcorn is unresolved: its 14.5 g/100 g value is for air-popped popcorn, not the unpopped kernels priced, so the recorded 57.7 g/$ is not a verified comparison. Full methodology at [/methodology/](/methodology/).*
+*Source audit: The flour and quinoa comparison uses exact USDA matches and single-store US prices from July 2026. In the wider grain table below, popcorn is a proxy: USDA's 14.5 g/100 g value is for air-popped popcorn, not the unpopped kernels priced, so we converted it to a kernel basis of 12.9 g/100 g, which puts the row at 51.3 g/$ rather than the 57.7 first published. Full methodology at [/methodology/](/methodology/).*
 
 ## Why is whole wheat flour 7.3 times cheaper for fiber?
 
@@ -60,8 +60,8 @@ Barley. This is the useful part of the whole comparison.
 | Grain | Package and price | Fiber per $1 |
 |---|---|---|
 | Whole wheat flour | 5 lb bag, $3.12 | 77.8 g |
-| Popcorn kernels — unresolved form match | 2 lb bag, $2.28 | 57.7 g recorded, not verified |
 | Pearled barley (dry) | 16 oz bag, $1.24 | 57.1 g |
+| Popcorn kernels (proxy, converted to kernel basis) | 2 lb bag, $2.28 | 51.3 g |
 | Old-fashioned rolled oats | 42 oz canister, $3.36 | 35.8 g |
 | Whole wheat spaghetti | 16 oz box, $1.18 | 35.4 g |
 | Bulgur wheat (dry) | 24 oz bag, $3.49 | 24.4 g |

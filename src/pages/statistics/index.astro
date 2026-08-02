@@ -191,7 +191,7 @@ const nutritionStatusDetail = (row: any) => {
     <p class="text-sm mb-10" style="color:var(--muted-color);">
       Source: Daily Life Hacks Food Value Data, version {DATA_VERSION}. USDA FoodData Central is
       the primary grocery nutrition source, with exact, proxy, and unresolved status retained per
-      row. The fiber audit contains 38 exact matches, 4 close proxies, and 11 unresolved rows.
+      row. The fiber audit contains 42 exact matches, 9 close proxies, and 2 unresolved rows.
       Prices use BLS Average Price data where available and dated national retail listings
       otherwise. Read the <a href="/methodology/" class={linkClass}>methodology</a>.
     </p>
@@ -204,9 +204,10 @@ const nutritionStatusDetail = (row: any) => {
         <p class="mb-5" style="color:var(--muted-color);">
           {fiberTop[0].food} leads this 53-food snapshot at {topFiberValue.toFixed(1)} grams per dollar. Dry peas and
           beans take most of the next seats. Produce is invited, but it isn't controlling the aux
-          cord. The table preserves published rank and recorded values, but unresolved rows cannot
-          establish a verified winner. Popcorn's 57.7-gram row is unresolved because its nutrition
-          value is for air-popped popcorn while its price is for unpopped kernels.
+          cord. The table preserves published rank and recorded values, but proxy and unresolved
+          rows cannot establish a verified winner. Popcorn's 51.3-gram row is unresolved because its
+          nutrition value is for air-popped popcorn while its price is for unpopped kernels, so we
+          converted it to a kernel basis.
         </p>
         <div class="relative overflow-x-auto rounded-2xl border" style="border-color:var(--border-color);">
           <table class="w-full text-sm">

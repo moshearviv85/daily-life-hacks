@@ -32,9 +32,9 @@ This trips people up constantly, and the confusion is fair. Dry beans genuinely 
 
 | Canned bean (15.5 oz can, 439 g) | Price | Protein per $1 | Fiber per $1 |
 |---|---|---|---|
-| Black beans | $0.88 | 30.1 g | 27.9 g |
+| Black beans | $0.88 | 30.1 g | 34.4 g |
 | Kidney beans | $0.98 | 23.4 g | 19.3 g |
-| Chickpeas | $0.98 | 22.0 g | 21.5 g |
+| Chickpeas | $0.98 | 22.0 g | 19.7 g |
 
 *Source: USDA FoodData Central + US store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 
@@ -56,7 +56,7 @@ The one time I'd argue for real heat is when you want texture. Beans crisped in 
 
 Yes, and honestly this is one of the more useful facts in a grocery store. In our [no-cook protein ranking](/no-cook-protein-per-dollar/), an 88 cent can of black beans is the cheapest package on the list, and it returns 30.1 grams of protein per dollar. Twenty-six grams of protein, about 53 percent of the FDA's 50 gram Daily Value, with no stove involved.
 
-The fiber number is the one that surprises people. That same can holds roughly 24.6 grams of fiber, close to the whole 28 gram Daily Value, which is more than most people get in a day from anything. If you're not used to that, one full can in a sitting can be uncomfortable. Ramp up slowly, and read [how to increase fiber intake without gas](/how-to-increase-fiber-intake-without-gas/) before you commit to a can a day.
+The fiber number is the one that surprises people. That same can holds roughly 30.3 grams of fiber, past the whole 28 gram Daily Value, which is more than most people get in a day from anything. If you're not used to that, one full can in a sitting can be uncomfortable. Ramp up slowly, and read [how to increase fiber intake without gas](/how-to-increase-fiber-intake-without-gas/) before you commit to a can a day.
 
 One rule that isn't about cooking. The FDA advises throwing out cans that are [swollen, leaking, punctured, deeply rusted, or dented badly enough that they won't stack or open normally](https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely). A dinged corner is fine. A can with a bulging lid is not a can you open.
 

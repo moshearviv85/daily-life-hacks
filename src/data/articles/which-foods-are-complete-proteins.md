@@ -37,7 +37,7 @@ Those are the numbers. Here's what to do with them.
 | Ground beef | 1.11 | none | 11.5 g |
 | Chicken | 1.08 | none | 24.5 to 50.3 g |
 | Canned tuna | 1.00 | none | 22.4 g |
-| Soy (tofu, TVP) | 0.90 | none listed | 13.6 to 22.5 g |
+| Soy (tofu, TVP) | 0.90 | none listed | 13.6 to 23.4 g |
 | Chickpeas | 0.83 | tryptophan | 56.7 g |
 | Lentils | 0.63 | sulfur amino acids | 56.0 to 77.7 g |
 | White rice | 0.60 | lysine | 48.0 g |

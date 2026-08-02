@@ -44,7 +44,7 @@ const schemas = [
     "@type": "WebAPI",
     "@id": `${pageUrl}#api`,
     name: "Daily Life Hacks Food Value API",
-    description: `Free, keyless JSON API over ${datasetCount} food-cost datasets covering ${TOTAL_DATA_ROWS} priced rows. Grocery nutrition generally uses USDA FoodData Central, restaurant rows use chain-published nutrition, three datasets carry one unresolved recorded TVP product-label value, and DIAAS rows cite literature or the FAO 2013 report.`,
+    description: `Free, keyless JSON API over ${datasetCount} food-cost datasets covering ${TOTAL_DATA_ROWS} priced rows. Grocery nutrition generally uses USDA FoodData Central, restaurant rows use chain-published nutrition, three datasets carry a TVP value sourced to the manufacturer label because USDA publishes no record for it, and DIAAS rows cite literature or the FAO 2013 report.`,
     documentation: pageUrl,
     termsOfService: DATA_TERMS_URL,
     isAccessibleForFree: true,
@@ -154,8 +154,8 @@ console.log(data[0].food, data[0].value, meta.attribution);`;
         We spent a lot of hours pricing groceries and restaurant orders, then matching each row to
         its documented nutrition source. Grocery nutrition generally uses USDA FoodData Central,
         restaurant rows use chain-published nutrition, and three published datasets carry the same
-        recorded TVP product-label value. That row is unresolved because the current product page
-        works out to about 52.2 rather than the recorded 50.0 grams per 100 grams. DIAAS adjustments
+        recorded TVP product-label value. USDA publishes no textured vegetable protein record at all,
+        so that row cites the manufacturer's own label and is labelled as such. DIAAS adjustments
         cite row-level literature or the FAO 2013 report. That's
         {TOTAL_DATA_ROWS} dated rows across {datasetCount} datasets. They've been sitting on this
         site as CSV files for a while now, which is great if you like CSV files and less great if
@@ -262,9 +262,8 @@ console.log(data[0].food, data[0].value, meta.attribution);`;
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Where the numbers come from</h2>
       <p>
         Sources follow the row. Grocery nutrition generally comes from USDA FoodData Central. Three
-        published datasets carry the same recorded TVP product-label value; that row is unresolved
-        because the current product page works out to about 52.2 rather than the recorded 50.0 grams
-        per 100 grams. Restaurant rows use chain-published nutrition data. DIAAS values cite the
+        published datasets carry the same recorded TVP product-label value; USDA publishes no textured
+        vegetable protein record, so that row cites the manufacturer's own label and says so. Restaurant rows use chain-published nutrition data. DIAAS values cite the
         row-level literature or FAO 2013 source recorded in the CSV.
         Grocery prices use BLS Average Price data where available and dated national retail
         listings for the rest. Restaurant prices are dated menu observations and can vary by

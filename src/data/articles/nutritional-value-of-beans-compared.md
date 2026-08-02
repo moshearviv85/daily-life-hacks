@@ -39,9 +39,9 @@ The canned rows in that table look weak. They aren't. They're carrying water, an
 | Black beans | Dry | 21.60 g | 15.5 g | $2.42 / 2 lb | 81.0 g |
 | Pinto beans | Dry | 21.42 g | 15.5 g | $3.97 / 4 lb | 97.9 g |
 | Chickpeas | Dry | 20.47 g | 12.2 g | $1.64 / 16 oz | 56.7 g |
-| Black beans | Canned | 6.03 g | 5.6 g | $0.88 / can | 30.1 g |
+| Black beans | Canned | 6.03 g | 6.9 g | $0.88 / can | 30.1 g |
 | Kidney beans | Canned | 5.22 g | 4.3 g | $0.98 / can | 23.4 g |
-| Chickpeas | Canned | 4.92 g | 4.8 g | $0.98 / can | 22.0 g |
+| Chickpeas | Canned | 4.92 g | 4.4 g | $0.98 / can | 22.0 g |
 
 *Source: USDA FoodData Central + US store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 

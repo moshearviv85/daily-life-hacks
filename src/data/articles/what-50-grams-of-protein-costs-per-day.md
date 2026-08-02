@@ -1,6 +1,6 @@
 ---
 title: "What a Day of 50 Grams of Protein Actually Costs"
-excerpt: "We priced five real ways to hit 50 grams of protein in one day, from 82 cents to $9.97. Same protein, 12 times the price. Every grocery number is audited."
+excerpt: "We priced five real ways to hit 50 grams of protein in one day, from 82 cents to $13.23. Same protein, 16 times the price. Every grocery number is audited."
 category: "nutrition"
 tags: ["cost of protein per day", "50 grams of protein a day", "protein on a budget", "cheap high protein foods", "grocery data"]
 cluster: "budget-protein"
@@ -12,18 +12,18 @@ dateModified: 2026-07-17
 author: "David Miller"
 faq:
   - question: "How much does it cost to eat 50 grams of protein a day?"
-    answer: "Anywhere from 82 cents to $9.97, based on USDA protein data and July 2026 US prices. A day built from the dry goods aisle (oats, split peas, pinto beans, peanut butter) costs about $0.82 in protein-carrying foods. A realistic mixed day with eggs, a peanut butter sandwich, beans, and milk runs about $1.51. Getting the same 50 grams from the smartest cheap fast-food orders runs about $9.97."
+    answer: "Anywhere from 82 cents to $13.23, based on USDA protein data and July 2026 US prices. A day built from the dry goods aisle (oats, split peas, pinto beans, peanut butter) costs about $0.82 in protein-carrying foods. A realistic mixed day with eggs, a peanut butter sandwich, beans, and milk runs about $1.51. Getting the same 50 grams from the smartest cheap fast-food orders runs about $13.23."
   - question: "What is the cheapest source of protein?"
-    answer: "Dried beans and lentils, by a wide margin. In our audited protein per dollar dataset, dry pinto beans deliver about 98 grams of protein per dollar and dry split peas about 74. For comparison, chicken breast lands near 25 and ground beef near 12. At the $3.19 menu-price snapshot used here, the McDouble works out to about 7 grams per dollar."
+    answer: "Dried beans and lentils, by a wide margin. In our audited protein per dollar dataset, dry pinto beans deliver about 98 grams of protein per dollar and dry split peas about 74. For comparison, chicken breast lands near 25 and ground beef near 12. At the $3.99 menu-price snapshot used here, the McDouble works out to about 5.5 grams per dollar."
   - question: "Is it cheaper to get protein from groceries or fast food?"
-    answer: "In these five July 2026 scenarios, the grocery days were cheaper. A 53-gram McDonald's day using one recorded menu-price snapshot cost $9.97, about 12 times the 82-cent dry goods day and about 7 times the $1.51 realistic mixed day. The restaurant total buys prepared sandwiches, not just protein-carrying ingredients, and local menu prices vary."
+    answer: "In these five July 2026 scenarios, the grocery days were cheaper. A 53-gram McDonald's day using one recorded menu-price snapshot cost $13.23, about 16 times the 82-cent dry goods day and about 9 times the $1.51 realistic mixed day. The restaurant total buys prepared sandwiches, not just protein-carrying ingredients, and local menu prices vary."
   - question: "Can you hit 50 grams of protein a day without cooking?"
     answer: "Yes, for about $2.05. Our no-cook day used a single-serve Greek yogurt at breakfast, a can of tuna with two slices of whole wheat bread at lunch, and a glass of whole milk. That's 53 grams without turning on a stove, which may make a higher-protein routine easier to stick with."
   - question: "How much does a year of high-protein eating cost?"
     answer: "Multiply the daily numbers by 365 and the spread gets loud. The dry goods day costs about $299 a year in protein-carrying foods, the realistic mixed day about $552, the no-cook day about $749, the meat-eater cook day about $1,011, and the daily fast-food day about $3,639. Same 50-ish grams every day, wildly different receipts."
 ---
 
-Hitting 50 grams of protein in one day costs 82 cents if you build the day from the dry goods aisle, and $9.97 if you let McDonald's do it for you. Same nutrient, same day, about 12 times the price. That's the whole study in two sentences, and the rest of this article is the receipts.
+Hitting 50 grams of protein in one day costs 82 cents if you build the day from the dry goods aisle, and $13.23 if you let McDonald's do it for you. Same nutrient, same day, about 16 times the price. That's the whole study in two sentences, and the rest of this article is the receipts.
 
 This is the fourth spreadsheet in the series. First we ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), then 49 foods by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/), then we priced [a full day of 30 grams of fiber](/what-30-grams-of-fiber-costs-per-day/). Protein got the same question fiber did: fine, beans win the ranking, but what does an actual *day* cost? So I priced five realistic ways to land at roughly 50 grams, meal by meal.
 
@@ -31,7 +31,7 @@ This is the fourth spreadsheet in the series. First we ranked 53 foods by [fiber
 
 **82 cents, if you build the day out of the dry goods aisle.** Oats, split pea soup, pinto beans and brown rice: 52.7 grams of protein, $0.82.
 
-**$9.97, if McDonald's builds it.** Same 53 grams, about 12 times the money.
+**$13.23, if McDonald's builds it.** Same 53 grams, about 16 times the money.
 
 The days in between: $2.05 no-cook, $2.78 for the meat-eater day with eggs and chicken and beef in it, and $1.51 for the realistic mixed day. That meat day is the one worth staring at, because it puts animal protein on the plate three times and still comes in under three dollars.
 
@@ -49,7 +49,7 @@ The full dataset is public. Download the raw CSV [here](/data/protein-day-cost-2
 
 *Data last verified July 12, 2026. Menu prices re-checked at each quarterly re-audit; next: October 2026.*
 
-![Horizontal bar chart comparing five ways to eat roughly 50 grams of protein, from an 82-cent dry-goods day to a $9.97 fast-food day](/images/what-50-grams-of-protein-costs-five-ways-chart.jpg)
+![Horizontal bar chart comparing five ways to eat roughly 50 grams of protein, from an 82-cent dry-goods day to a $13.23 fast-food day](/images/what-50-grams-of-protein-costs-five-ways-chart.jpg)
 
 ## Day 1: The rock-bottom dry goods day ($0.82)
 
@@ -93,18 +93,18 @@ For the person who hears "protein" and thinks chicken, not chickpeas. This is an
 
 Eggs, chicken, and beef, all cooked in your own kitchen, and the protein-carrying part of the day still lands under three bucks. The catch is portion size. These are modest 3.5-ounce servings, so a real plate stacks vegetables and a starch around them. But the protein itself? Cheap. The expensive version of this exact day is sitting in the next section.
 
-## Day 4: The fast-food day ($9.97)
+## Day 4: The fast-food day ($13.23)
 
 Nothing home-cooked, nothing from a grocery store. Protein figures come from McDonald's product pages; the prices are one July 2026 menu snapshot recorded in our CSV, not a national McDonald's price. Check the local app before treating this total as your receipt.
 
 | Meal | Food + amount | Protein | Cost |
 |---|---|---|---|
-| Breakfast | [McDonald's Egg McMuffin](https://www.mcdonalds.com/us/en-us/product/egg-mcmuffin.html) | 17.0 g | $3.79 |
-| Lunch | [McDonald's McDouble](https://www.mcdonalds.com/us/en-us/product/mcdouble.html) | 22.0 g | $3.19 |
-| Dinner | [McDonald's McChicken](https://www.mcdonalds.com/us/en-us/product/mcchicken.html) | 14.0 g | $2.99 |
-| **Total** | | **53.0 g** | **$9.97** |
+| Breakfast | [McDonald's Egg McMuffin](https://www.mcdonalds.com/us/en-us/product/egg-mcmuffin.html) | 17.0 g | $5.35 |
+| Lunch | [McDonald's McDouble](https://www.mcdonalds.com/us/en-us/product/mcdouble.html) | 22.0 g | $3.99 |
+| Dinner | [McDonald's McChicken](https://www.mcdonalds.com/us/en-us/product/mcchicken.html) | 14.0 g | $3.89 |
+| **Total** | | **53.0 g** | **$13.23** |
 
-At the $3.19 price recorded in this dataset, the McDouble comes in around 7 grams of protein per dollar against pinto beans at 98. That's useful scenario math, not a universal menu ranking. Restaurant prices change by location, while the grocery rows use the package prices documented in the parent CSV. If the drive-thru is more your reality than the dry-goods aisle, we ranked [fast food protein per dollar across seven chains](/fast-food-protein-per-dollar-ranked/) so you can at least order the smart way; the best deal on any national menu we priced turned out to be a plain cup of chicken.
+At the $3.99 price recorded in this dataset, the McDouble comes in around 5.5 grams of protein per dollar against pinto beans at 98. That's useful scenario math, not a universal menu ranking. Restaurant prices change by location, while the grocery rows use the package prices documented in the parent CSV. If the drive-thru is more your reality than the dry-goods aisle, we ranked [fast food protein per dollar across seven chains](/fast-food-protein-per-dollar-ranked/) so you can at least order the smart way; the best deal on any national menu we priced turned out to be a plain cup of chicken.
 
 ![Bar chart of protein per dollar for the foods behind the five days, with pinto beans at 98 grams per dollar far ahead of chicken, ground beef, and McDonald's items near the bottom](/images/protein-per-dollar-groceries-vs-drivethru.jpg)
 
@@ -126,9 +126,9 @@ A buck fifty. That's a recognizable day of food, no split-pea heroics required, 
 
 ## What the five days actually say
 
-**The spread is 12x.** $0.82 to $9.97 for the same job. If you only remember one number from this study, that's the one.
+**The spread is 16x.** $0.82 to $13.23 for the same job. If you only remember one number from this study, that's the one.
 
-**Home cooking beats the drive-thru even with meat on the plate.** The meat-eater cook day, eggs and chicken and beef included, costs $2.78. The fast-food day costs $9.97 for the same 50-ish grams. The difference isn't the animal protein. It's the person behind the counter and the rent on the building.
+**Home cooking beats the drive-thru even with meat on the plate.** The meat-eater cook day, eggs and chicken and beef included, costs $2.78. The fast-food day costs $13.23 for the same 50-ish grams. The difference isn't the animal protein. It's the person behind the counter and the rent on the building.
 
 **Convenience has two very different price tags.** The can-and-yogurt day costs $1.23 more than cooking dry beans. The drive-thru day costs $9.15 more. Cans are cheap convenience; cash registers are not.
 
@@ -149,4 +149,4 @@ Don't pick one day and marry it. Steal the structure instead:
 * **Compare the local app before ordering.** The McDouble worked in this recorded scenario, but restaurant prices vary. The grocery benchmarks move a lot less, and they survive even when you [re-rank every food for protein quality](/protein-per-dollar-adjusted-for-quality/) instead of raw grams.
 * **Want the full system?** The [complete guide to high protein on a budget](/high-protein-on-a-budget-complete-guide/) turns these numbers into shopping lists, and [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/) sorts out whether 50 grams is even your number.
 
-The whole study comes down to this: 50 grams of protein can be inexpensive in a grocery plan, including the meat-based scenario. In this specific comparison, the recorded restaurant day cost about 12 times the dry-goods day. That's a measured scenario, not a promise about every cart or every McDonald's.
+The whole study comes down to this: 50 grams of protein can be inexpensive in a grocery plan, including the meat-based scenario. In this specific comparison, the recorded restaurant day cost about 16 times the dry-goods day. That's a measured scenario, not a promise about every cart or every McDonald's.

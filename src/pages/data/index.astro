@@ -56,7 +56,7 @@ const catalogSchema = {
   "@type": "DataCatalog",
   "@id": catalogId,
   name: "Daily Life Hacks Food Cost Data Catalog",
-  description: `Original, dated datasets pricing the nutrition value of American groceries and fast-food menus. ${datasets.length} public CSV files cover ${TOTAL_DATA_ROWS} priced rows. Grocery rows generally use USDA FoodData Central; three datasets carry one unresolved recorded TVP product-label value. Restaurant rows use the chains' published nutrition data; mixed menu-plan datasets combine USDA and restaurant sources. The protein-quality dataset names its additional row-level literature and institutional sources.`,
+  description: `Original, dated datasets pricing the nutrition value of American groceries and fast-food menus. ${datasets.length} public CSV files cover ${TOTAL_DATA_ROWS} priced rows. Grocery rows generally use USDA FoodData Central; three datasets carry a TVP value sourced to the manufacturer label, since USDA publishes no record for it. Restaurant rows use the chains' published nutrition data; mixed menu-plan datasets combine USDA and restaurant sources. The protein-quality dataset names its additional row-level literature and institutional sources.`,
   url: pageUrl,
   inLanguage: "en-US",
   isAccessibleForFree: true,
@@ -151,8 +151,8 @@ const linkStyle = "color: #F29B30;";
         Most food sites will tell you beans are cheap protein and leave it there. We got annoyed
         enough to actually price it. Grocery nutrition generally comes from USDA FoodData Central.
         Three published datasets carry the same recorded TVP product-label value; that row is
-        unresolved because the current product page works out to about 52.2 rather than the recorded
-        50.0 grams per 100 grams. Each priced food also has a package-price source and, where relevant,
+        sourced to the manufacturer's own label rather than USDA, which publishes no textured
+        vegetable protein record at all, and it is labelled that way in the data. Each priced food also has a package-price source and, where relevant,
         an edible-fraction adjustment so a pound of oranges doesn't get credit for the peel. The
         fast-food ranking uses nutrition published by each restaurant chain and documented menu-price
         observations. Then we divided. That's the whole trick.

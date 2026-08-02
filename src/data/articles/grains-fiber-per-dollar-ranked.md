@@ -10,9 +10,9 @@ dateModified: 2026-07-30
 author: "David Miller"
 faq:
   - question: "What grain has the most fiber per dollar?"
-    answer: "Whole wheat flour leads this sample at 77.8 grams of fiber per dollar based on an exact USDA match and July 2026 prices. Among grains you can cook and eat as-is, pearled barley is the highest verified row at 57.1. The recorded popcorn result of 57.7 is unresolved because its nutrition value is for air-popped popcorn while the priced item is unpopped kernels."
+    answer: "Whole wheat flour leads this sample at 77.8 grams of fiber per dollar based on an exact USDA match and July 2026 prices. Among grains you can cook and eat as-is, pearled barley leads at 57.1, with popcorn kernels third at 51.3, an unresolved row whose value we derived. Popcorn's figure is unresolved: its USDA value describes air-popped popcorn, so the kernel number is our conversion rather than a published one."
   - question: "Is popcorn really a high-fiber whole grain?"
-    answer: "Popcorn is a whole grain, but this dataset cannot verify 57.7 grams of fiber per dollar for kernels. The nutrition row is for air-popped popcorn and the $2.28 price is for a 2 lb bag of unpopped kernels, so that recorded comparison remains unresolved."
+    answer: "Yes, and it ranks third in this sample at 51.3 grams of fiber per dollar for a $2.28 two pound bag of kernels. That figure is unresolved rather than an exact match, because the USDA record is for air-popped popcorn and the popping-yield correction that puts it on a kernel basis is ours, not USDA's."
   - question: "Why is quinoa ranked last for fiber per dollar?"
     answer: "Price, not nutrition. Quinoa delivers about 10.6 grams of fiber per dollar because a 2 lb bag costs around $5.97. Pearled barley costs $1.24 for a 16 oz bag and delivers 57.1 grams per dollar, more than five times as much fiber for the same money."
   - question: "Are rolled oats a good budget source of fiber?"
@@ -21,15 +21,15 @@ faq:
     answer: "It's the second-lowest grain in our ranking at 17.3 grams of fiber per dollar, with a 20 oz loaf around $1.97. That's still respectable, but the flour it's made from delivers 77.8 grams per dollar, so baking your own could more than quadruple your fiber per dollar."
 ---
 
-Whole wheat flour leads this grain sample at 77.8 grams of fiber per dollar based on an exact USDA match and July 2026 grocery prices. One caveat before you sprint to the baking aisle: it's flour. You only collect that fiber if you actually bake with it. Among grains you can cook and eat tonight, pearled barley is the highest verified row at 57.1 grams per dollar. The recorded popcorn result of 57.7 is unresolved because it combines air-popped nutrition data with the price of unpopped kernels.
+Whole wheat flour leads this grain sample at 77.8 grams of fiber per dollar based on an exact USDA match and July 2026 grocery prices. One caveat before you sprint to the baking aisle: it's flour. You only collect that fiber if you actually bake with it. Among grains you can cook and eat tonight, pearled barley leads at 57.1 grams per dollar, with popcorn kernels third at 51.3, a derived and unresolved figure. Popcorn's row is unresolved: we corrected the air-popped USDA value onto the unpopped-kernel basis we actually priced, which cost it the second slot and is our calculation rather than a USDA figure.
 
 We ranked 11 common grains by grams of fiber per dollar, pulled from our full [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/) of the whole grocery store. The spread inside this single aisle is 7.3x from top to bottom. Same shelf, same food group, wildly different math.
 
 | Rank | Grain | Fiber per $1 | Package | Price |
 |---|---|---|---|---|
 | 1 | Whole wheat flour | 77.8 g | 5 lb bag | $3.12 |
-| 2* | Popcorn kernels — unresolved form match | 57.7 g recorded, not verified | 2 lb bag | $2.28 |
-| 3 | Pearled barley (dry) | 57.1 g | 16 oz bag | $1.24 |
+| 2 | Pearled barley (dry) | 57.1 g | 16 oz bag | $1.24 |
+| 3* | Popcorn kernels (unresolved, derived) | 51.3 g | 2 lb bag | $2.28 |
 | 4 | Old-fashioned rolled oats | 35.8 g | 42 oz canister | $3.36 |
 | 5 | Whole wheat spaghetti | 35.4 g | 16 oz box | $1.18 |
 | 6 | Bran flakes cereal | 30.1 g | 17.3 oz box | $2.98 |
@@ -39,7 +39,7 @@ We ranked 11 common grains by grams of fiber per dollar, pulled from our full [f
 | 10 | 100% whole wheat bread | 17.3 g | 20 oz loaf | $1.97 |
 | 11 | Quinoa (dry) | 10.6 g | 2 lb bag | $5.97 |
 
-*Source audit: Joined to the flagship fiber audit: 9 exact USDA matches, 1 close USDA proxy, and 1 unresolved row. Proxy and unresolved rows are not independently re-verified. Popcorn's 14.5 g/100 g value matches air-popped popcorn, not the unpopped kernels priced here, so 57.7 g/$ is a recorded but unverified result. Full methodology at [/methodology/](/methodology/).*
+*Source audit: Joined to the flagship fiber audit: 9 exact USDA matches, 1 close USDA proxy, and 1 unresolved row. Proxy rows are not independently re-verified. Popcorn's USDA record (FDC 167959) is air-popped popcorn, so we converted it to the unpopped-kernel basis priced here; that puts the row at 12.9 g/100 g and 51.3 g/$. Full methodology at [/methodology/](/methodology/).*
 
 ![Bar chart ranking 11 grains by fiber per dollar](/images/grains-fiber-per-dollar-ranked-chart.jpg)
 
@@ -47,9 +47,9 @@ We ranked 11 common grains by grams of fiber per dollar, pulled from our full [f
 
 On paper, whole wheat flour, and it isn't close. A 5 lb bag runs $3.12 and quietly beats everything else in the aisle. A single dollar of it holds almost three days' worth of the 28-gram daily value, which makes it the best dollar in the store on our list of [what $1 of fiber actually buys](/one-dollar-fiber-what-it-buys/). The obvious problem is that nobody eats flour off a spoon. If you bake even occasionally, an [easy sandwich bread](/easy-sandwich-bread-recipe-beginners/) turns that bag into the cheapest fiber you'll ever eat. If your oven is mostly storage for pans, skip to the next two.
 
-Popcorn is a whole grain, but the recorded 57.7-gram result is not source-resolved. The table paired the $2.28 two-pound bag of kernels with an air-popped USDA nutrition row, so it cannot support a verified rank or a multiple against raisins. Pearled barley, at 57.1 grams per dollar, is the next exact-source result.
+Popcorn is a whole grain, and it lands third here at 51.3 grams per dollar for a $2.28 two-pound bag of kernels. That row is unresolved: the USDA nutrition record is air-popped popcorn, so we converted it onto the kernel basis we priced, which pulled the value down from the 57.7 we first published and dropped popcorn behind barley. USDA publishes nothing for unpopped kernels, so the figure is ours.
 
-Pearled barley sits right behind at 57.1 grams per dollar, and the 16 oz bag costs $1.24. That's lunch-money territory. If barley sounds like something from your grandmother's soup pot, this [mostly hands-off mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/) is the rebrand it deserves.
+Pearled barley takes second at 57.1 grams per dollar, and the 16 oz bag costs $1.24. That's lunch-money territory. If barley sounds like something from your grandmother's soup pot, this [mostly hands-off mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/) is the rebrand it deserves.
 
 ## Why is quinoa ranked last?
 
@@ -67,6 +67,6 @@ Bran flakes hold their own for a boxed cereal at 30.1 grams per dollar, and if y
 
 They're the bottom of the cook-and-eat pack, at 17.5 and 17.3 grams per dollar. Neither is a bad purchase. A $1.97 loaf of 100% whole wheat bread is still doing honest work in your kitchen, and brown rice at $1.87 for a 2 lb bag feeds a family cheaply. They're just not fiber bargains next to barley. Buy them for what they are, not for the fiber math.
 
-A practical way to shop this list is to grab barley and oats, then choose popcorn for taste rather than the unresolved per-dollar rank. If you're building a whole week around cheap fiber, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) does the planning for you, and our breakdown of [what a full day of fiber costs](/what-30-grams-of-fiber-costs-per-day/) shows what these per-dollar numbers look like on an actual plate. The grain aisle is quietly one of the best fiber deals in the store. You just have to walk past the quinoa to find it.
+A practical way to shop this list is to grab barley and oats, then add popcorn, which still earns third place on the math. If you're building a whole week around cheap fiber, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) does the planning for you, and our breakdown of [what a full day of fiber costs](/what-30-grams-of-fiber-costs-per-day/) shows what these per-dollar numbers look like on an actual plate. The grain aisle is quietly one of the best fiber deals in the store. You just have to walk past the quinoa to find it.
 
 <!-- numbers-source: pipeline-data/derived-studies/grains-fiber-per-dollar-ranked.json -->

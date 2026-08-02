@@ -11,7 +11,7 @@ faq:
   - question: "Do frozen vegetables have more fiber than fresh?"
     answer: "Per dollar, usually yes. Frozen green peas delivered 17.6 grams of fiber per dollar in our July 2026 sample versus 6.1 for fresh broccoli crowns, a gap of about 2.9 times. Comparing the same vegetable both ways is cleaner: frozen broccoli florets came in at 9.5 grams per dollar against 6.1 for fresh crowns, roughly 1.6 times more fiber for the same money."
   - question: "Which frozen vegetable has the most fiber per dollar?"
-    answer: "Green peas, by a wide margin. A 32 ounce bag at $2.32 works out to 17.6 grams of fiber per dollar, which was the best figure any vegetable posted in our study, frozen or fresh. The next frozen bag down was green beans at 11.2, then broccoli florets at 9.5 and chopped spinach at 8.4."
+    answer: "Green peas, by a wide margin. A 32 ounce bag at $2.32 works out to 17.6 grams of fiber per dollar, which was the best figure any vegetable posted in our study, frozen or fresh. The next frozen bag down was green beans at 10.8, then broccoli florets at 9.5 and chopped spinach at 8.4."
   - question: "Is fresh broccoli a waste of money for fiber?"
     answer: "Not a waste, just expensive per gram. Fresh broccoli crowns landed at 6.1 grams of fiber per dollar because a pound cost $1.94 and the crowns carry 2.6 grams of fiber per 100 grams. If you want raw crunch or roasted florets with browned edges, that premium may be worth paying. If the fiber is the point, the frozen bag does more per dollar."
   - question: "What is the cheapest fresh vegetable for fiber?"
@@ -50,7 +50,7 @@ Just the peas, mostly. Here's where the rest of the vegetables landed:
 | Carrots (whole, bagged) | 2 lb bag, $1.58 | 16.1 g |
 | Green cabbage | per lb, $0.78 | 14.6 g |
 | Sweet potatoes | per lb, $0.98 | 13.9 g |
-| Frozen green beans | 32 oz bag, $2.18 | 11.2 g |
+| Frozen green beans | 32 oz bag, $2.18 | 10.8 g |
 | Frozen broccoli florets | 32 oz bag, $2.87 | 9.5 g |
 | Frozen chopped spinach | 12 oz bag, $1.18 | 8.4 g |
 | Frozen shelled edamame | 12 oz bag, $2.12 | 8.3 g |

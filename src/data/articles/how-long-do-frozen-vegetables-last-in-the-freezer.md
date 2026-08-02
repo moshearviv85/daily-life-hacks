@@ -71,7 +71,7 @@ When the power comes back, the test is temperature, not time. Food that's still 
 
 Buy the bag you'll actually finish inside a year, and don't buy a second one because it was on sale.
 
-Frozen vegetables are one of the few grocery categories where the cheap option is also the patient one. In our July 2026 price sample, frozen green peas delivered 17.6 grams of fiber per dollar, frozen green beans 11.2, and frozen broccoli florets 9.5. The full comparison with the fresh aisle is in [frozen vs fresh vegetables on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/), and the broader case for the freezer aisle is in [frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/).
+Frozen vegetables are one of the few grocery categories where the cheap option is also the patient one. In our July 2026 price sample, frozen green peas delivered 17.6 grams of fiber per dollar, frozen green beans 10.8, and frozen broccoli florets 9.5. The full comparison with the fresh aisle is in [frozen vs fresh vegetables on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/), and the broader case for the freezer aisle is in [frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/).
 
 *Cost figures: USDA FoodData Central nutrient values plus single-store US prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 

@@ -20,12 +20,12 @@ faq:
   - question: "What is the cheapest animal protein?"
     answer: "Chicken drumsticks led the animal foods in our 49-food sample. At $1.09 per pound in a 5 pound bag, they deliver about 50 grams of protein per dollar even after removing 33 percent of the weight for bone. Eggs came next at 34 grams per dollar, then a block of mozzarella at 30, whole milk at 29, and boneless chicken thighs at 28. A whole rotisserie chicken scored 27, which beat raw breast at the price points used in this dataset."
   - question: "How is protein per dollar calculated?"
-    answer: "We matched each food's protein content per 100 grams to a typical July 2026 US package price and divided total protein in the package by its price. Everything is measured as purchased, and bone-in items use USDA refuse percentages for the edible portion. The current row-level source audit found 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows. Proxies and unresolved rows are not counted as independently re-verified. TVP is one of the unresolved rows because its recorded label value no longer matches the current product page."
+    answer: "We matched each food's protein content per 100 grams to a typical July 2026 US package price and divided total protein in the package by its price. Everything is measured as purchased, and bone-in items use USDA refuse percentages for the edible portion. The current row-level source audit found 39 exact USDA matches and 10 close proxies, with no unresolved rows left. Proxies are not counted as independently re-verified. TVP is a proxy rather than an exact match because USDA publishes no TVP record at all, so its 52.17 grams per 100 grams comes from the manufacturer label."
 ---
 
 Dried pinto beans delivered the most protein per dollar in our 49-food July 2026 grocery sample, at about 98 grams. Bacon sits at the bottom of the same ranking at 9. That's the same nutrient at more than ten times the price, and the expensive version is the one everyone photographs on burgers.
 
-Here's where those numbers come from. Last week I ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle embarrassed everything else in the store. Several readers asked the obvious follow-up: does the same thing happen with protein? So I built the second spreadsheet. Forty-nine common grocery foods, current prices, one division problem, and a row-level source audit that separates 36 exact USDA matches from 5 close USDA proxies and 8 unresolved entries. The result is a full ranking of the cheapest protein sources in the store, and yes, the beans repeat.
+Here's where those numbers come from. Last week I ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle embarrassed everything else in the store. Several readers asked the obvious follow-up: does the same thing happen with protein? So I built the second spreadsheet. Forty-nine common grocery foods, current prices, one division problem, and a row-level source audit that separates 39 exact USDA matches from 10 close proxies, with no unresolved entries left. The result is a full ranking of the cheapest protein sources in the store, and yes, the beans repeat.
 
 ## What is the cheapest source of protein per dollar?
 
@@ -39,7 +39,7 @@ Bacon finishes 49th out of 49 at 9.2 grams per dollar. Same nutrient as the pint
 
 Same playbook as the fiber study, because it survived an audit and I'm not messing with it:
 
-* **Protein content:** the current row-level source audit links 36 of 49 values to exact [USDA FoodData Central](https://fdc.nal.usda.gov/) records and 5 to close USDA proxies. The remaining 8 are unresolved. A proxy differs from the priced food in a material detail such as form, cut, or preparation, so it is not an exact match. An unresolved row has no acceptable row-level match in the current audit and is not counted as independently re-verified. TVP is unresolved: the dataset records 50.0 grams per 100 grams from an earlier product label, while the current product page works out to about 52.2 grams per 100 grams. The CSV documents every status and the reason for each proxy or unresolved result.
+* **Protein content:** the current row-level source audit links 39 of 49 values to exact [USDA FoodData Central](https://fdc.nal.usda.gov/) records and 10 to close proxies. No rows are left unresolved. A proxy differs from the priced food in a material detail such as form, cut, or preparation, so it is not an exact match and is not counted as independently re-verified. TVP is the clearest example: USDA publishes no TVP record at all, so the row now carries 52.17 grams per 100 grams straight from the manufacturer label, up from the 50.0 an earlier label reported. The CSV documents every status and the reason for each proxy result.
 * **Prices:** for the 23 foods that also appeared in the fiber study, we reused the prices audited on July 4, 2026. New items use May 2026 [BLS average-price series](https://www.bls.gov/cpi/factsheets/average-prices.htm) where available and July 2026 Walmart national listings for the rest. BLS average prices and retailer listings are different kinds of price evidence, so every CSV row labels which basis it uses instead of pretending they are interchangeable.
 * **The math:** total grams of protein in the package, divided by the package price. For bone-in items we only counted the edible portion, using USDA refuse data: a raw whole chicken yields about 61 percent edible meat and skin, drumsticks lose 33 percent to bone, and a rotisserie chicken gives up 33 percent to bone and 13 percent to skin if you're eating the meat.
 
@@ -47,13 +47,13 @@ One basis rule matters enough to spell out. Everything is measured **as purchase
 
 The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv), read the site's [grocery-data methodology](/methodology/), and check the calculations yourself. The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) lets you compare any two rows or build a basket without wrestling the CSV. The [weekly food-cost planner](/tools/grocery-budget-calculator/) takes the next step and scales our five audited 50-gram days for the number of people you're feeding.
 
-*Source audit updated July 2026: 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows. Proxy and unresolved rows are not independently re-verified. Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
+*Source audit updated July 2026: 39 exact USDA matches and 10 close proxies, with no unresolved rows. Proxy rows are not independently re-verified. Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
 
 ![Horizontal bar chart ranking the top 20 cheapest protein sources by grams of protein per dollar](/images/protein-per-dollar-top-20-chart.jpg)
 
 ## The full ranking: 49 protein sources by protein per dollar
 
-This table contains 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved protein-source rows. The raw CSV identifies the status and evidence for each row; proxy and unresolved rows are not independently re-verified. Price entries are July 2026 US figures checked against Walmart shelf listings and BLS national averages.
+This table contains 39 exact USDA matches and 10 close proxies, with no unresolved protein-source rows. The raw CSV identifies the status and evidence for each row; proxy rows are not independently re-verified. Price entries are July 2026 US figures checked against Walmart shelf listings and BLS national averages.
 
 | Rank | Food | Protein (g per 100g) | Price per 100g | Protein per $1 |
 |---|---|---|---|---|
@@ -87,8 +87,8 @@ This table contains 36 exact USDA matches, 5 close USDA proxies, and 8 unresolve
 | 28 | Whole chicken (raw) | 18.6 g | $0.45 | 25.3 g |
 | 29 | Pork shoulder butt roast (boneless) | 17.4 g | $0.69 | 25.2 g |
 | 30 | Chicken breast (boneless, skinless) | 22.5 g | $0.92 | 24.5 g |
-| 31 | Canned kidney beans | 5.2 g | $0.22 | 23.4 g |
-| 32 | TVP (textured vegetable protein) | 50.0 g | $2.23 | 22.5 g |
+| 31 | TVP (textured vegetable protein) | 52.2 g | $2.23 | 23.4 g |
+| 32 | Canned kidney beans | 5.2 g | $0.22 | 23.4 g |
 | 33 | Canned tuna (chunk light, in water) | 19.4 g | $0.87 | 22.4 g |
 | 34 | Pork loin chops (boneless) | 21.6 g | $0.97 | 22.3 g |
 | 35 | Canned chickpeas | 4.9 g | $0.22 | 22.0 g |
@@ -119,7 +119,7 @@ Protein per $1 accounts for edible portion on bone-in items, so drumsticks are s
 
 **Dried beats canned by three to one.** Dry pinto beans, 98 grams per dollar; canned black beans, 30. Canned still beats every ground meat in the store, so keep the shelf stocked for lazy nights. But the gap is the price of convenience, and it's steep. We priced it bean by bean in [canned versus dry beans](/canned-vs-dry-beans-cost/), and not one can in that sample got near the cheapest bag.
 
-**Ground beef is a rough way to buy protein.** The bottom three spots are 80/20 ground beef, 93/7 ground beef, and bacon, all between 9 and 12 grams per dollar. Nobody buys bacon for protein, but plenty of people believe a pound of ground beef is the default protein move. At $6.75 a pound, every dollar you hand over buys less protein than the same dollar spent on canned beans, frozen peas, or a box of spaghetti. Point that dollar at fiber instead and it stretches even further: [the 15 cheapest fiber foods](/one-dollar-fiber-what-it-buys/) run from 27.9 grams per dollar up to 77.8.
+**Ground beef is a rough way to buy protein.** The bottom three spots are 80/20 ground beef, 93/7 ground beef, and bacon, all between 9 and 12 grams per dollar. Nobody buys bacon for protein, but plenty of people believe a pound of ground beef is the default protein move. At $6.75 a pound, every dollar you hand over buys less protein than the same dollar spent on canned beans, frozen peas, or a box of spaghetti. Point that dollar at fiber instead and it stretches even further: [the 15 cheapest fiber foods](/one-dollar-fiber-what-it-buys/) run from 28.5 grams per dollar up to 77.8.
 
 If you just want the winner from each corner of the store, here's the shortlist:
 

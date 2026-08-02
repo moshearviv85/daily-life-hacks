@@ -11,9 +11,9 @@ Day 2: No-cook convenience,Snack,"Whole milk, 1 cup (244g)",244,7.7,0.26,parent 
 Day 3: Meat-eater cook day,Breakfast,"2 large eggs (100g)",100,12.6,0.37,parent CSV: Eggs (large)
 Day 3: Meat-eater cook day,Lunch,"Chicken breast, 100g raw (3.5 oz)",100,22.5,0.92,parent CSV: Chicken breast (boneless skinless)
 Day 3: Meat-eater cook day,Dinner,"Ground beef 80/20, 100g (3.5 oz)",100,17.2,1.49,parent CSV: Ground beef (80/20)
-Day 4: Restaurant day,Breakfast,McDonald's Egg McMuffin,,17.0,3.79,McDonald's official nutrition + typical July 2026 US menu price
-Day 4: Restaurant day,Lunch,McDonald's McDouble,,22.0,3.19,McDonald's official nutrition + typical July 2026 US menu price
-Day 4: Restaurant day,Dinner,McDonald's McChicken,,14.0,2.99,McDonald's official nutrition + typical July 2026 US menu price
+Day 4: Restaurant day,Breakfast,McDonald's Egg McMuffin,,17.0,5.35,"McDonald's official nutrition (mcdonalds.com, Jul 2026); price: PriceListo national average, Jul 6 2026 snapshot, a la carte; same row as fastfood-protein-per-dollar-2026.csv"
+Day 4: Restaurant day,Lunch,McDonald's McDouble,,22.0,3.99,"McDonald's official nutrition (mcdonalds.com, Jul 2026); price: PriceListo national average, Jul 6 2026 snapshot, a la carte; same row as fastfood-protein-per-dollar-2026.csv"
+Day 4: Restaurant day,Dinner,McDonald's McChicken,,14.0,3.89,"McDonald's official nutrition (mcdonalds.com, Jul 2026); price: PriceListo national average, Jul 6 2026 snapshot, a la carte; same row as fastfood-protein-per-dollar-2026.csv"
 Day 5: Realistic mixed,Breakfast,"2 large eggs (100g)",100,12.6,0.37,parent CSV: Eggs (large)
 Day 5: Realistic mixed,Lunch,"Peanut butter, 32g (2 tbsp)",32,7.1,0.14,parent CSV: Peanut butter
 Day 5: Realistic mixed,Lunch,"Whole wheat bread, 2 slices (52g)",52,6.5,0.18,parent CSV: 100% whole wheat bread

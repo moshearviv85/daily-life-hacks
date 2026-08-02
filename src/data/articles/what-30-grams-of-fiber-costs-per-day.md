@@ -18,7 +18,7 @@ faq:
   - question: "Is it cheaper to get fiber from groceries or restaurants?"
     answer: "Groceries, and it isn't close. In our July 2026 numbers, a 31-gram restaurant day (Starbucks oatmeal, Wendy's chili and baked potato, Taco Bell bean burrito) cost $14.42, about 23 times the 62-cent dry goods day and about 7 times the $1.99 realistic mixed day. To be fair, the restaurant total buys complete meals, but per gram of fiber the gap is still enormous."
   - question: "Can you get 30 grams of fiber a day without cooking?"
-    answer: "Yes, for about $1.74. Our no-cook day used bran flakes at breakfast, a peanut butter sandwich on whole wheat with prunes at lunch, half a can of chickpeas at dinner, and microwaved frozen peas as the vegetable. That's 31.7 grams without turning on a stove, and it may help make a high fiber routine easier to stick with."
+    answer: "Yes, for about $1.74. Our no-cook day used bran flakes at breakfast, a peanut butter sandwich on whole wheat with prunes at lunch, half a can of chickpeas at dinner, and microwaved frozen peas as the vegetable. That's 30.8 grams without turning on a stove, and it may help make a high fiber routine easier to stick with."
   - question: "How much does a year of high fiber eating cost?"
     answer: "Multiply the daily numbers by 365 and the spread gets loud. The dry goods day costs about $226 a year in fiber-carrying foods, the no-cook day about $635, the realistic mixed day about $726, the fresh produce day about $1,526, and the restaurant day about $5,263. Same 30-ish grams every day, wildly different receipts."
 ---
@@ -37,13 +37,13 @@ The three days in between land at $1.74 no-cook, $4.18 fresh produce, and $1.99 
 
 ## How we priced a 30-gram day
 
-No new data collection, and that's the point. Every grocery number below reuses the audited dataset from the fiber per dollar study, with July 2026 US prices from Walmart national listings cross-checked against [BLS average-price data](https://www.bls.gov/cpi/factsheets/average-prices.htm). Across the 23 grocery rows used in these menus, the parent audit has 16 exact [USDA FoodData Central](https://fdc.nal.usda.gov/) matches, 1 close proxy, and 6 unresolved rows; proxy and unresolved rows are not independently re-verified. The four restaurant rows use each chain's published nutrition data and typical national menu prices as of July 2026. These are a dated national snapshot. Your local receipt is allowed to disagree with the spreadsheet.
+No new data collection, and that's the point. Every grocery number below reuses the audited dataset from the fiber per dollar study, with July 2026 US prices from Walmart national listings cross-checked against [BLS average-price data](https://www.bls.gov/cpi/factsheets/average-prices.htm). Across the 23 grocery rows used in these menus, the parent audit has 18 exact [USDA FoodData Central](https://fdc.nal.usda.gov/) matches and 5 close proxies, with no unresolved rows left; proxy rows are not independently re-verified. The four restaurant rows use each chain's published nutrition data and typical national menu prices as of July 2026. These are a dated national snapshot. Your local receipt is allowed to disagree with the spreadsheet.
 
 Three ground rules so nobody has to squint at the math:
 
 * **We priced the fiber-carrying foods only.** The 62-cent day assumes your pantry supplies salt, oil, and whatever protein lands next to the beans. The restaurant day buys complete meals, so it gets a built-in head start in the fairness department and still loses by a mile.
 * **Dry goods are measured dry, fruit is measured as purchased.** Fiber on peeled fruit counts only the edible portion, same as the parent study. You can't eat a banana peel no matter what the sticker says.
-* **Every day lands between 31 and 32.1 grams.** The [FDA's Daily Value is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels); 30 is the round number everyone actually searches for. All five plans clear both.
+* **Every day lands between 30.8 and 35 grams.** The [FDA's Daily Value is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels); 30 is the round number everyone actually searches for. All five plans clear both.
 
 The full dataset is public. Download the raw CSV [here](/data/fiber-day-cost-2026.csv), check any row against the [parent dataset](/data/fiber-per-dollar-2026.csv), or run your own matchups in the [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/). If you want these five days to behave like an actual household week, the [weekly food-cost planner](/tools/grocery-budget-calculator/) scales every menu by people and days. No retyping oats into a tiny box seven times.
 
@@ -76,9 +76,9 @@ Zero pots. The most demanding step is a microwave and a can opener, and it still
 | Lunch | Whole wheat bread, 2 slices (52g) | 3.1 g | $0.18 |
 | Lunch | Peanut butter, 32g (2 tbsp) | 1.6 g | $0.14 |
 | Lunch | Prunes, 40g (about 5) | 2.8 g | $0.35 |
-| Dinner | Canned chickpeas, 1/2 can (220g) | 10.6 g | $0.49 |
+| Dinner | Canned chickpeas, 1/2 can (220g) | 9.7 g | $0.49 |
 | Snack | Frozen green peas, 120g, microwaved | 5.4 g | $0.31 |
-| **Total** | | **31.7 g** | **$1.74** |
+| **Total** | | **30.8 g** | **$1.74** |
 
 Convenience from a can costs about a dollar more per day than cooking from scratch. Hold that thought until Day 4, where convenience from a drive-thru costs twelve dollars more.
 
@@ -124,9 +124,9 @@ Nobody eats like Day 1 forever, and nobody should eat like Day 4 forever unless 
 | Lunch | Whole wheat bread, 2 slices (52g) | 3.1 g | $0.18 |
 | Lunch | Peanut butter, 32g (2 tbsp) | 1.6 g | $0.14 |
 | Lunch | 1 medium apple | 3.9 g | $0.51 |
-| Dinner | Canned black beans, 1/2 can (220g) | 12.3 g | $0.44 |
+| Dinner | Canned black beans, 1/2 can (220g) | 15.2 g | $0.44 |
 | Dinner | Frozen broccoli, 100g | 3.0 g | $0.32 |
-| **Total** | | **32.1 g** | **$1.99** |
+| **Total** | | **35.0 g** | **$1.99** |
 
 Two bucks. That's a completely normal day of food, no split-pea heroics required, and the fiber may help keep you full enough that the vending machine stops being part of your afternoon.
 

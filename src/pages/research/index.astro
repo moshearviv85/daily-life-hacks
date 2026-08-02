@@ -5,7 +5,7 @@ import Footer from "../../components/Footer.astro";
 import dataIndex from "../../../public/data/api-index-v1.json";
 
 const title = "Food Cost Research and Public Data | Daily Life Hacks";
-const description = "Explore food-cost studies with USDA grocery data, restaurant nutrition, an unresolved recorded TVP label value, and row-level DIAAS sources.";
+const description = "Explore food-cost studies with USDA grocery data, restaurant nutrition, a manufacturer-label TVP value, and row-level DIAAS sources.";
 
 const rows: any[] = dataIndex.rows;
 const metricLeader = (dataset: string, metric: string) =>
@@ -131,9 +131,8 @@ const researchSchema = [
       <p class="text-lg md:text-xl leading-relaxed" style="color:var(--text-color);">
         These aren't recycled lists wearing a lab coat. Grocery nutrition generally comes from
         USDA FoodData Central, and restaurant rows use chain-published nutrition. Three published
-        datasets carry the same recorded TVP product-label value; that row is unresolved because the
-        current product page works out to about 52.2 rather than the recorded 50.0 grams per 100
-        grams. DIAAS adjustments cite row-level literature or the FAO 2013 report. We publish the CSV
+        datasets carry the same recorded TVP product-label value; USDA publishes no textured vegetable
+        protein record, so that row cites the manufacturer's own label and says so. DIAAS adjustments cite row-level literature or the FAO 2013 report. We publish the CSV
         and show the math. Sometimes the result is useful. Sometimes bacon owes everyone an apology.
       </p>
       <p class="mt-5">

@@ -40,7 +40,7 @@ Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, the May 2026 nat
 
 ![Bar chart of the full ranking for eggs vs everything protein value](/images/eggs-vs-everything-protein-value-chart.jpg)
 
-*Source audit: joining these 49 foods to the flagship protein dataset yields 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows. Proxy and unresolved rows are not independently re-verified. TVP is unresolved: this derivative retains the recorded 50.0 grams per 100 grams, but the current product page works out to about 52.2, so 50.0 is not label-verified. Prices are dated July 2026 observations. Full methodology at [/methodology/](/methodology/).*
+*Source audit: joining these 49 foods to the flagship protein dataset yields 39 exact USDA matches and 10 close USDA proxies, with no unresolved rows left. Proxy rows are not independently re-verified. TVP is one of those proxies: USDA publishes no textured vegetable protein record at all, so its 52.17 grams per 100 grams comes straight off the manufacturer's Nutrition Facts panel (1/4 cup, 23 g, 12 g protein). Prices are dated July 2026 observations. Full methodology at [/methodology/](/methodology/).*
 
 ## What actually beats eggs on protein per dollar?
 

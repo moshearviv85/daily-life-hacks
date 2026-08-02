@@ -130,7 +130,7 @@ const tables = [
       "| Food | Protein per 100 g | USDA form / status | Price per 100 g | Nutrition source |",
     renderedHeader: "Protein per 100 g",
     metric: "protein_g_per_100g",
-    expectedStatuses: { exact: 36, proxy: 5, unresolved: 8 },
+    expectedStatuses: { exact: 39, proxy: 10, unresolved: 0 },
     expectedRow: (row) => [
       row.food,
       `${row.protein_g_per_100g} g`,
@@ -151,7 +151,7 @@ const tables = [
       "| Food | Fiber per 100 g | USDA form / status | Category | Nutrition source |",
     renderedHeader: "Fiber per 100 g",
     metric: "fiber_g_per_100g",
-    expectedStatuses: { exact: 38, proxy: 4, unresolved: 11 },
+    expectedStatuses: { exact: 42, proxy: 9, unresolved: 2 },
     expectedRow: (row) => [
       row.food,
       `${row.fiber_g_per_100g} g`,
@@ -236,6 +236,34 @@ for (const table of tables) {
         } else {
           assert.equal(row.nutrition_source_type, "Unresolved");
         }
+        continue;
+      }
+
+      // A row can be legitimately sourced to something other than USDA at ANY status,
+      // not just "unresolved". TVP is the live case: FoodData Central publishes no
+      // textured vegetable protein record at all, so the row cites the manufacturer's
+      // own label and is graded "proxy" rather than pretending to a USDA match. Keying
+      // this branch off status alone forced such a row to invent an FDC ID, which is
+      // the opposite of what the provenance columns exist to prevent.
+      if (row.nutrition_source_type === "Manufacturer label") {
+        assert.equal(
+          row.nutrition_source_id,
+          "",
+          `${row.food} is label-sourced and must not claim an FDC ID`,
+        );
+        assert.ok(
+          row.nutrition_source_url,
+          `${row.food} is label-sourced and needs the label URL`,
+        );
+        assert.ok(
+          row.nutrition_source_note.length >= 40,
+          `${row.food} needs a disclosure explaining why it is not a USDA record`,
+        );
+        assert.match(
+          row.nutrition_source_note,
+          /NOT A USDA RECORD/i,
+          `${row.food} must state plainly that it is not USDA-sourced`,
+        );
         continue;
       }
 
@@ -378,8 +406,13 @@ for (const table of tables) {
     ]
       .map((match) => match[1])
       .sort();
+    // Every row that CLAIMS a USDA record must render its direct API link. Rows that
+    // carry no FDC ID are excluded rather than assumed: "not unresolved" is not the
+    // same as "USDA-sourced". TVP is proxy-status but label-sourced, because USDA
+    // publishes no textured vegetable protein record, so it has no ID to render and
+    // the old filter silently expected an empty string in the link list.
     const expectedFdcIds = sourceRows
-      .filter((row) => row.nutrition_source_status !== "unresolved")
+      .filter((row) => /^FDC \d+$/.test(row.nutrition_source_id))
       .map((row) => row.nutrition_source_id.replace("FDC ", ""))
       .sort();
     assert.deepEqual(

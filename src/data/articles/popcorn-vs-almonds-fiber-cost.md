@@ -1,6 +1,6 @@
 ---
-title: "Popcorn vs Almonds: Can We Verify Which Fiber Is Cheaper?"
-excerpt: "Almonds return 8.8g of fiber per dollar in our sample. The recorded 57.7g popcorn result is unresolved because its nutrition and priced forms do not match."
+title: "Popcorn vs Almonds: Which One Buys More Fiber Per Dollar?"
+excerpt: "Popcorn kernels return 51.3g of fiber per dollar against 8.8g for almonds, about 5.8 times more. Almonds are a snack you buy for other reasons."
 category: "nutrition"
 tags: ["popcorn vs almonds", "cheap high fiber snacks", "fiber per dollar", "popcorn fiber", "almonds fiber"]
 image: "/images/popcorn-vs-almonds-fiber-cost-main.jpg"
@@ -10,9 +10,9 @@ dateModified: 2026-07-30
 author: "David Miller"
 faq:
   - question: "Does popcorn have more fiber than almonds?"
-    answer: "Our current data cannot verify the per-dollar winner. USDA lists air-popped popcorn at 14.5 grams of fiber per 100 grams, while the price in our study is for unpopped kernels. Almonds have an exact-source result of 8.8 grams per dollar, but the recorded 57.7-gram popcorn result should not be compared with it until the popcorn forms are reconciled."
+    answer: "Per dollar, popcorn wins and it is not close. A two pound bag of kernels returns 51.3 grams of fiber per dollar against 8.8 for almonds, about 5.8 times more. USDA publishes no record for unpopped kernels, so our study converts its air-popped record of 14.5 grams per 100 grams to a kernel basis of 12.9 grams per 100 grams. That row is flagged as a proxy rather than an exact match."
   - question: "How much fiber is in a bag of popcorn kernels?"
-    answer: "We cannot calculate that from the current source match. The USDA value used in the study describes air-popped popcorn, not a bag of unpopped kernels, so multiplying 14.5 grams per 100 grams by the kernel bag weight would mix two different forms."
+    answer: "About 117 grams in a two pound bag. At the kernel-basis figure of 12.9 grams of fiber per 100 grams, 907 grams of kernels carry roughly 117 grams of fiber, or more than four times the FDA's 28 gram Daily Value. Those kernels pop into roughly 809 grams of air-popped corn carrying the same fiber, since popping drives off water and does not destroy fiber."
   - question: "Are almonds a bad value for fiber?"
     answer: "Expensive rather than bad. Almonds carry a solid 12.5 grams of fiber per 100 grams, but a 16 ounce bag ran $6.47, which is $1.43 per 100 grams and drops them to 8.8 grams of fiber per dollar. That ranked 36th of the 53 foods in our study, behind peanuts, sunflower seeds, and peanut butter."
   - question: "What is the cheapest nut or seed for fiber?"
@@ -21,27 +21,27 @@ faq:
     answer: "Plain popped corn is a whole grain, bran included, and at 14.5 grams of fiber per 100 grams it may help you hit a daily fiber target without much effort. What you add matters more than the corn does. Butter and heavy oil change the calorie math fast, while salt, chili powder, or nutritional yeast do not."
 ---
 
-This study cannot currently verify whether popcorn or almonds buys more fiber per dollar. Almonds have an exact-source result of 8.8 grams per dollar. The popcorn row records 57.7, but it pairs a USDA value for air-popped popcorn with the price of unpopped kernels. That form mismatch means the old 6.6-times claim is unsupported.
+Popcorn kernels buy about 5.8 times more fiber per dollar than almonds: 51.3 grams versus 8.8, based on USDA fiber data and July 2026 prices. The popcorn figure sits on a kernel basis, which is the part that took the longest to get right.
 
 | | Popcorn kernels | Almonds |
 |---|---|---|
-| **Fiber per $1** | **57.7 g recorded, not verified** | **8.8 g** |
-| Fiber per 100 g | 14.5 g for air-popped popcorn, not kernels | 12.5 g |
+| **Fiber per $1** | **51.3 g** | **8.8 g** |
+| Fiber per 100 g | 12.9 g, kernel basis | 12.5 g |
 | What you buy | 2 lb bag | 16 oz bag |
 | Price | $2.28 | $6.47 |
 | Cost per 100 g | $0.25 | $1.43 |
 
-*Source audit: The almond row is an exact USDA match. The popcorn row is unresolved because its 14.5 g/100 g value describes air-popped popcorn while the $2.28 price describes unpopped kernels. The recorded 57.7 g/$ and 6.6x comparison are not verified. Full methodology at [/methodology/](/methodology/).*
+*Source audit: The almond row is an exact USDA match. The popcorn row is a proxy, because USDA publishes no nutrition record for unpopped kernels at all. Full methodology at [/methodology/](/methodology/).*
 
-## Why can't we verify the old 6.6x claim?
+## Where does the 5.8x gap come from?
 
-The two popcorn inputs describe different forms. USDA's 14.5-gram value is for air-popped popcorn, whose weight reflects moisture loss and expansion during cooking. The store price is for unpopped kernels. A valid cost comparison needs a nutrition record for kernels as sold or a documented popped yield that connects the two.
+Mostly from the price tag, not the fiber. Almonds carry 12.5 grams of fiber per 100 grams and kernels carry 12.9, which is a rounding error between them. The bag of almonds cost $1.43 per 100 grams. The kernels cost 25 cents. That is the whole story: almost the same fiber density at roughly a sixth of the price.
 
-Almonds cost $1.43 per 100 grams in this sample, while kernels cost 25 cents. Those prices are usable, but applying the air-popped fiber density directly to the kernel bag is not. Price alone cannot resolve the mismatch.
+Getting the popcorn density right was the fussy part. USDA's only popcorn records are for popped or prepared forms, and the air-popped record reads 14.5 grams of fiber per 100 grams. That number describes corn that has already lost most of its water, so applying it straight to a bag of kernels would flatter popcorn. Fiber is dry matter and survives popping, so the study converts: the air-popped record is 3.32 percent water, giving 15.0 grams of fiber per 100 grams of dry matter, and kernels as sold run about 13.75 percent moisture, which lands at 12.9 grams per 100 grams. Branded label records for plain kernels read 13.2 to 13.3, close enough to confirm the method.
 
-The same limitation blocks the bag-total claim. Multiplying the air-popped value by the unpopped bag weight produces the recorded 132 grams, but it does not verify how much fiber is in that kernel bag. We have removed that result from the answer.
+Run it on the bag and you get 117 grams of fiber in 907 grams of kernels, which pop into about 809 grams of air-popped corn carrying that same 117 grams. Same fiber, different weight, which is exactly why the form matters.
 
-The parent [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/) preserves popcorn's published fifth-place observation for transparency and marks it unresolved. It should not be treated as a current verified rank.
+The parent [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/) now ranks popcorn seventh of 53 foods on that corrected basis, behind the dry beans and pearled barley rather than ahead of them. It is still the cheapest fiber in the store that you would actually eat out of a bowl in front of a screen.
 
 ## When are almonds still the right buy?
 

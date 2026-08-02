@@ -151,9 +151,9 @@ export const DATASETS: Record<string, DatasetMeta> = {
       nutritionSourceUrl: "https://fdc.nal.usda.gov/",
       nutritionSourceIsPrimary: true,
       additionalSourceNote:
-        "TVP is unresolved: its recorded product-label value no longer matches the current product page",
+        "TVP is a proxy: USDA publishes no textured vegetable protein record at all, so the row is sourced to the manufacturer label at 52.17 grams per 100 grams",
       sourceAuditSummary:
-        "Joined to the flagship protein audit: 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows; proxy and unresolved rows are not independently re-verified",
+        "Joined to the flagship protein audit: 39 exact USDA matches and 10 close proxies, with no unresolved rows; proxy rows are not independently re-verified",
     },
   },
   "grains-fiber-per-dollar-ranked": {
@@ -170,7 +170,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
       nutritionSourceUrl: "https://fdc.nal.usda.gov/",
       nutritionSourceIsPrimary: true,
       additionalSourceNote:
-        "Popcorn is unresolved: its 14.5-gram value matches air-popped popcorn, while the priced item is unpopped kernels",
+        "Popcorn is unresolved: its 14.5-gram USDA value matches air-popped popcorn while the priced item is unpopped kernels, so it was converted to a kernel basis of 12.9 grams per 100 grams and that figure is our calculation rather than a published record",
       sourceAuditSummary:
         "Joined to the flagship fiber audit: 9 exact USDA matches, 1 close USDA proxy, and 1 unresolved row; proxy and unresolved rows are not independently re-verified",
     },
@@ -215,9 +215,9 @@ export const DATASETS: Record<string, DatasetMeta> = {
       nutritionSourceUrl: "https://fdc.nal.usda.gov/",
       nutritionSourceIsPrimary: true,
       additionalSourceNote:
-        "Popcorn is unresolved: its 14.5-gram value matches air-popped popcorn, while the priced item is unpopped kernels",
+        "Popcorn is unresolved: its 14.5-gram USDA value matches air-popped popcorn while the priced item is unpopped kernels, so it was converted to a kernel basis of 12.9 grams per 100 grams and that figure is our calculation rather than a published record",
       sourceAuditSummary:
-        "Joined to the flagship fiber audit: 6 exact USDA matches, 0 close USDA proxies, and 4 unresolved rows; unresolved rows are not independently re-verified",
+        "Joined to the flagship fiber audit: 7 exact USDA matches, 2 close USDA proxies, and 1 unresolved row; proxy and unresolved rows are not independently re-verified",
     },
   },
   "meat-per-dollar-protein-ranked": {
@@ -252,9 +252,9 @@ export const DATASETS: Record<string, DatasetMeta> = {
       nutritionSourceUrl: "https://fdc.nal.usda.gov/",
       nutritionSourceIsPrimary: true,
       additionalSourceNote:
-        "Popcorn is unresolved: its 14.5-gram value matches air-popped popcorn, while the priced item is unpopped kernels",
+        "Popcorn is unresolved: its 14.5-gram USDA value matches air-popped popcorn while the priced item is unpopped kernels, so it was converted to a kernel basis of 12.9 grams per 100 grams and that figure is our calculation rather than a published record",
       sourceAuditSummary:
-        "Joined to the flagship fiber audit: 12 exact USDA matches, 1 close USDA proxy, and 2 unresolved rows; proxy and unresolved rows are not independently re-verified",
+        "Joined to the flagship fiber audit: 12 exact USDA matches, 2 close USDA proxies, and 1 unresolved row; proxy and unresolved rows are not independently re-verified",
     },
   },
   "one-dollar-protein-what-it-buys": {
@@ -280,9 +280,9 @@ export const DATASETS: Record<string, DatasetMeta> = {
       nutritionSourceUrl: "https://fdc.nal.usda.gov/",
       nutritionSourceIsPrimary: true,
       additionalSourceNote:
-        "TVP is unresolved: its recorded product-label value no longer matches the current product page",
+        "TVP is a proxy: USDA publishes no textured vegetable protein record at all, so the row is sourced to the manufacturer label at 52.17 grams per 100 grams",
       sourceAuditSummary:
-        "Joined to the flagship protein audit: 13 exact USDA matches, 0 close USDA proxies, and 5 unresolved rows; proxy and unresolved rows are not independently re-verified",
+        "Joined to the flagship protein audit: 13 exact USDA matches and 5 close proxies, with no unresolved rows; proxy rows are not independently re-verified",
     },
   },
   "produce-fiber-per-dollar-ranked": {
@@ -318,7 +318,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
       nutritionSourceUrl: "https://fdc.nal.usda.gov/",
       nutritionSourceIsPrimary: true,
       sourceAuditSummary:
-        "Current row-level source audit: 38 exact USDA matches, 4 close USDA proxies, and 11 unresolved rows; proxy and unresolved rows are not independently re-verified",
+        "Current row-level source audit: 42 exact USDA matches, 9 close USDA proxies, and 2 unresolved rows; proxy and unresolved rows are not independently re-verified",
     },
   },
   "protein-per-dollar-cheapest-protein-sources": {
@@ -336,9 +336,9 @@ export const DATASETS: Record<string, DatasetMeta> = {
       nutritionSourceUrl: "https://fdc.nal.usda.gov/",
       nutritionSourceIsPrimary: true,
       additionalSourceNote:
-        "TVP is unresolved: its recorded product-label value no longer matches the current product page",
+        "TVP is a proxy: USDA publishes no textured vegetable protein record at all, so the row is sourced to the manufacturer label at 52.17 grams per 100 grams",
       sourceAuditSummary:
-        "Current row-level source audit: 36 exact USDA matches, 5 close USDA proxies, and 8 unresolved rows; proxy and unresolved rows are not independently re-verified",
+        "Current row-level source audit: 39 exact USDA matches and 10 close proxies, with no unresolved rows; proxy rows are not independently re-verified",
     },
   },
   "what-30-grams-of-fiber-costs-per-day": {
@@ -354,7 +354,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
       nutritionSource:
         "USDA FoodData Central and restaurant chains' published nutrition data",
       sourceAuditSummary:
-        "The 23 grocery rows join to the flagship fiber audit: 16 exact USDA matches, 1 close USDA proxy, and 6 unresolved rows; the 4 restaurant rows use chain-published nutrition data",
+        "The 23 grocery rows join to the flagship fiber audit: 18 exact USDA matches and 5 close USDA proxies, with no unresolved rows; the 4 restaurant rows use chain-published nutrition data",
     },
   },
   "what-50-grams-of-protein-costs-per-day": {

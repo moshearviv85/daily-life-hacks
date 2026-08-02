@@ -532,8 +532,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 3042,
-      "hash": "sha256:39616569d77a941ebac3ca1627e41297ea107eaa1bd15819dc47e3afe468a751",
+      "bytes": 3041,
+      "hash": "sha256:0ede410b2df3cd80db41bf044e62576924386f301f2dbcca385c7ab06f5cf250",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cost of 30 Grams of Fiber per Day, Five Menus (2026)",
@@ -593,8 +593,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 13788,
-      "hash": "sha256:624ea28756029b478a3bd578ee4e384e69bf1541196ad25021a7b50100b9f2e8",
+      "bytes": 18904,
+      "hash": "sha256:d022bc8003c6d3e1205978b6a487b3391942cd4626d1a44351a12e2778b14aa8",
       "sources": [
         {
           "title": "Daily Life Hacks study: Fiber per Dollar: 53 Foods Ranked (2026)",
@@ -710,7 +710,7 @@
       "mediatype": "text/csv",
       "encoding": "utf-8",
       "bytes": 749,
-      "hash": "sha256:c689b91663b7d68f783f711ff85b8efd1fe4433a41f6e619a61c20834a167960",
+      "hash": "sha256:814a25bf273b140db02b7903671641513e55de1e1cc10825f604068c41c75bf8",
       "sources": [
         {
           "title": "Daily Life Hacks study: Grains Ranked by Fiber per Dollar (2026)",
@@ -766,7 +766,7 @@
       "mediatype": "text/csv",
       "encoding": "utf-8",
       "bytes": 637,
-      "hash": "sha256:e9236e0f6a619fdf7cd6fc9a5a55102108ea7168dfe64b26db7402c94113df10",
+      "hash": "sha256:22dbd8093f30adbab2892111a3c39713d8cefb5e065ee4216172a9bf832e4813",
       "sources": [
         {
           "title": "Daily Life Hacks study: High-Fiber Snacks Ranked by Cost (2026)",
@@ -934,7 +934,7 @@
       "mediatype": "text/csv",
       "encoding": "utf-8",
       "bytes": 1025,
-      "hash": "sha256:5c975f02bd302e3497f20b9ca03774f450686395a2906d74eb9a265320311bd1",
+      "hash": "sha256:9db008a86627c7fab31a35986c4fe4372ac0842dfa8e0d6556e5246f0bacb5cc",
       "sources": [
         {
           "title": "Daily Life Hacks study: What One Dollar of Fiber Buys (2026)",
@@ -1046,7 +1046,7 @@
       "mediatype": "text/csv",
       "encoding": "utf-8",
       "bytes": 1746,
-      "hash": "sha256:9108d589386a310abed5893af6b2d903561c0c4caaa88f84d2870fd08aad9bda",
+      "hash": "sha256:6f0f9203ddc9acdb8f62b25d530afd9cbdf23eb0f0efacdc4c3a6f7a35749d46",
       "sources": [
         {
           "title": "Daily Life Hacks study: Plant Protein per Dollar: 18 Sources Ranked (2026)",
@@ -1102,7 +1102,7 @@
       "mediatype": "text/csv",
       "encoding": "utf-8",
       "bytes": 1354,
-      "hash": "sha256:200b0fd6a9ddb202fa23d36713da87c68605779aa1803e3ebadc1d678a44ad92",
+      "hash": "sha256:65381fa08542aa0ccda8857b93bedc99d277d2090556c022dd81abd297e6111d",
       "sources": [
         {
           "title": "Daily Life Hacks study: Fruits and Vegetables Ranked by Fiber per Dollar (2026)",
@@ -1157,8 +1157,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2448,
-      "hash": "sha256:aacd9c660d05fb8ae3456b8c407b2cbb9d921db20b552e6ebe12bfb10b3c1c51",
+      "bytes": 2787,
+      "hash": "sha256:f8d625925bb365c014f159ba20e1dd0c06890c6b2f3ff3b3f5d1bcd6e878eeec",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cost of 50 Grams of Protein per Day, Five Menus (2026)",
@@ -1218,8 +1218,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 15724,
-      "hash": "sha256:fede2dff6d8a5ef139769b87a2482b639fbaaca2a474a78b3c5dad680408290b",
+      "bytes": 20763,
+      "hash": "sha256:7a41adce0ef59977c1250b550dfb97aa7ded22c3701909a9810644b1e4d8ad9a",
       "sources": [
         {
           "title": "Daily Life Hacks study: Protein per Dollar: 49 Sources Ranked (2026)",

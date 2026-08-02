@@ -24,7 +24,7 @@ faq:
 
 The best protein deal in the American drive-thru is a cup of plain chicken. Chipotle's High Protein Cup, 4 ounces of adobo chicken for $3.82, delivers 8.4 grams of protein per dollar, and nothing else on any national menu we priced comes close. That's the answer. The rest of this article is how we got it, and why a bag of dry pinto beans still beats that winner by almost 12 to 1.
 
-This is the next spreadsheet in the series. We already ranked [49 grocery foods by protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and priced [a full day of 50 grams of protein](/what-50-grams-of-protein-costs-per-day/), where one McDonald's day cost 12 times the dry-goods version. Readers kept asking the obvious follow-up: fine, but *which* fast food order wastes the least money? So I priced 30 protein-notable items across McDonald's, Chipotle, Taco Bell, Wendy's, Subway, KFC, and Chick-fil-A.
+This is the next spreadsheet in the series. We already ranked [49 grocery foods by protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and priced [a full day of 50 grams of protein](/what-50-grams-of-protein-costs-per-day/), where one McDonald's day cost 16 times the dry-goods version. Readers kept asking the obvious follow-up: fine, but *which* fast food order wastes the least money? So I priced 30 protein-notable items across McDonald's, Chipotle, Taco Bell, Wendy's, Subway, KFC, and Chick-fil-A.
 
 ## What fast food has the most protein per dollar?
 
@@ -36,7 +36,7 @@ Two numbers per item, two very different levels of confidence.
 
 **Protein** comes from each chain's own published nutrition data: product pages, official nutrition PDFs, and the nutrition tables the chains embed on their own sites. No third-party guesses. The CSV documents independent second-source checks for 2 of the top 5 items. One additional item, McDonald's Double Quarter Pounder, was checked against a second McDonald's endpoint. That's a same-chain check, not an independent one. The other two top-five rows rely on the chain sources recorded in the CSV.
 
-**Price** is messier, because no chain publishes one national price. Each row in the dataset records exactly what its price is: a national-average tracker snapshot, the chain's own online menu baseline, or a documented store menu from 2026. Your local drive-thru will differ, sometimes by a lot, and a couple of McDonald's prices here differ from our 50-gram day study because that one used a single-store snapshot while this uses national averages. Subway's numbers reflect its current published sandwich builds, which run generous on meat.
+**Price** is messier, because no chain publishes one national price. Each row in the dataset records exactly what its price is: a national-average tracker snapshot, the chain's own online menu baseline, or a documented store menu from 2026. Your local drive-thru will differ, sometimes by a lot. The McDonald's rows here use the same July 2026 national-average snapshot as our 50-gram day study, so the two articles quote the same menu prices. Subway's numbers reflect its current published sandwich builds, which run generous on meat.
 
 Then one division problem per item: protein grams divided by price. Here's the top 10.
 

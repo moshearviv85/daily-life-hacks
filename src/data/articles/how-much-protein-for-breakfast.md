@@ -81,7 +81,7 @@ Oats bring 6.1 grams of fiber in a 60 gram bowl, about 22 percent of the 28 gram
 
 ## What's the cheapest way to hit the number?
 
-Oats and eggs, then peanut butter to top it up. Across breakfast staples, whole wheat flour leads on combined protein and fiber per dollar at 173.8 grams, oats hit 82.4, peanut butter 62.1, and eggs 34.4. Gala apples come in at 7.7, which tells you something about fruit as a breakfast anchor. The full ranking is in [the cheapest high-protein breakfast foods](/breakfast-staples-per-dollar/).
+Oats and eggs, then peanut butter to top it up. Across breakfast staples, whole wheat flour leads on combined protein and fiber per dollar at 173.8 grams, oats hit 82.4, peanut butter 62.1, and eggs 34.4. Gala apples come in at 7.3, which tells you something about fruit as a breakfast anchor. The full ranking is in [the cheapest high-protein breakfast foods](/breakfast-staples-per-dollar/).
 
 If breakfast is where your protein day falls apart, the fix is one cheap addition to something you already eat rather than a new routine. [How to get more protein at breakfast](/how-to-get-more-protein-at-breakfast/) is the add-on list with grams and prices, and the whole-cart version is [high protein on a budget](/high-protein-on-a-budget-complete-guide/).
 

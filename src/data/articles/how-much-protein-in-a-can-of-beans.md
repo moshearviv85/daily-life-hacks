@@ -19,22 +19,22 @@ faq:
   - question: "How much protein is in a can of black beans?"
     answer: "About 26.5 grams in a 15.5 ounce can, based on USDA data at 6.03 grams of protein per 100 grams and a 439 gram net weight. That is roughly 53 percent of the FDA's 50 gram Daily Value, from a can that cost $0.88 in July 2026."
   - question: "How much fiber is in a can of beans?"
-    answer: "Canned black beans carried the most in our data at about 24.6 grams per can, close to the FDA's 28 gram fiber Daily Value. Canned chickpeas came in at 21.1 grams per can and canned kidney beans at 18.9. Increasing fiber quickly may cause some discomfort, so building up gradually could be more comfortable."
+    answer: "Canned black beans carried the most in our data at about 30.3 grams per can, which clears the FDA's 28 gram fiber Daily Value on its own. Canned chickpeas came in at 19.3 grams per can and canned kidney beans at 18.9. Increasing fiber quickly may cause some discomfort, so building up gradually could be more comfortable."
   - question: "Are canned beans as good as dried beans for protein?"
     answer: "The beans are the same food; the price is not. Dry black beans returned 81.0 grams of protein per dollar against 30.1 for canned, about a 2.7 times gap, because a can is largely water and someone else's cooking time. If money is the constraint, dry wins. If time is the constraint, canned is still cheap food."
   - question: "Should you count the liquid in the can?"
     answer: "Our figures use the 439 gram net weight of a 15.5 ounce can, not a drained weight, so they describe the can as sold. Draining and rinsing removes some liquid and a little of the sodium, and it will lower the gram total you actually eat somewhat. Read these numbers as the ceiling for one can."
 ---
 
-A 15.5 ounce can of black beans carries about 26.5 grams of protein. That's roughly 53 percent of the FDA's 50 gram Daily Value, from a can that cost $0.88 in July 2026. It also brings about 24.6 grams of fiber, which is nearly the entire 28 gram Daily Value from one 88 cent can.
+A 15.5 ounce can of black beans carries about 26.5 grams of protein. That's roughly 53 percent of the FDA's 50 gram Daily Value, from a can that cost $0.88 in July 2026. It also brings about 30.3 grams of fiber, which clears the entire 28 gram Daily Value from one 88 cent can.
 
 That second number is the one nobody expects. Beans get filed under "cheap protein" and quietly do more work on fiber. Here are the three canned beans in our dataset, priced and measured.
 
 | Canned bean (15.5 oz can) | Price | Protein per can | Fiber per can | Protein per $1 |
 |---|---|---|---|---|
-| Black beans | $0.88 | 26.5 g | 24.6 g | 30.1 g |
+| Black beans | $0.88 | 26.5 g | 30.3 g | 30.1 g |
 | Kidney beans | $0.98 | 22.9 g | 18.9 g | 23.4 g |
-| Chickpeas | $0.98 | 21.6 g | 21.1 g | 22.0 g |
+| Chickpeas | $0.98 | 21.6 g | 19.3 g | 22.0 g |
 
 *Source: USDA FoodData Central + US store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 
@@ -48,9 +48,9 @@ Within those three, the spread is smaller than people expect. Twenty-two to twen
 
 ## How much fiber is in a can of beans?
 
-Between 18.9 and 24.6 grams, which is the part of the label most people skip.
+Between 18.9 and 30.3 grams, which is the part of the label most people skip.
 
-A can of black beans at 24.6 grams sits at about 88 percent of the FDA's 28 gram fiber Daily Value. One can. For 88 cents. In the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) canned black beans placed 15th of 53 foods at 27.9 grams per dollar, ahead of every fresh fruit and every fresh vegetable we priced.
+A can of black beans at 30.3 grams clears the FDA's 28 gram fiber Daily Value outright, at about 108 percent of it. One can. For 88 cents. In the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) canned black beans placed 10th of 53 foods at 34.4 grams per dollar, ahead of every fresh fruit and every fresh vegetable we priced.
 
 If you're currently nowhere near 28 grams a day, dropping a whole can into dinner is a big jump. That can be uncomfortable, and the fix is gradual rather than heroic. We wrote up the sensible version in [how to increase fiber intake without gas](/how-to-increase-fiber-intake-without-gas/), and the short answer involves more water and more patience.
 
@@ -72,6 +72,6 @@ Chickpeas are the versatile one. A can becomes [homemade hummus](/high-fiber-hum
 
 One habit worth building: rinse them. It knocks down the canning liquid, cuts some of the sodium, and stops your dinner tasting faintly like the inside of a can. The gram totals in our table describe the can as sold, so what ends up on the plate after draining will be a little lower.
 
-Twenty-six grams of protein and twenty-four grams of fiber for 88 cents is not a compromise you should feel bad about. It's just a slightly more expensive version of the cheapest food in the store, and the extra cost buys you back an hour. The full map of where beans sit against everything else lives in [our high protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
+Twenty-six grams of protein and thirty grams of fiber for 88 cents is not a compromise you should feel bad about. It's just a slightly more expensive version of the cheapest food in the store, and the extra cost buys you back an hour. The full map of where beans sit against everything else lives in [our high protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-day-cost-2026.csv -->

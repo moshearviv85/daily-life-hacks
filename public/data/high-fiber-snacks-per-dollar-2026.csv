@@ -1,5 +1,5 @@
 food,category,value,package,package_price_usd,price_basis
-Popcorn kernels,Whole grains,57.7,2 lb bag,2.28,Walmart GV
+Popcorn kernels,Whole grains,51.3,2 lb bag,2.28,Walmart GV
 "Carrots (whole, bagged)",Fresh vegetables,16.1,2 lb bag,1.58,Walmart
 Dry roasted peanuts,Nuts & seeds,13.7,16 oz jar,2.78,Walmart GV
 Sunflower seed kernels,Nuts & seeds,13.1,16 oz bag,2.98,Walmart
@@ -7,5 +7,5 @@ Bananas,Fresh fruit,11.6,per lb,0.65,BLS US avg
 Peanut butter,Nuts & seeds,11.4,40 oz jar,4.97,Walmart GV
 Almonds,Nuts & seeds,8.8,16 oz bag,6.47,Walmart GV
 Prunes (dried plums),Dried fruit,8.1,16 oz bag,3.98,Walmart
-Apples (gala),Fresh fruit,7.7,per lb,1.28,Walmart
+Apples (gala),Fresh fruit,7.3,per lb,1.28,Walmart
 Raisins,Dried fruit,6.3,20 oz canister,3.34,Walmart GV

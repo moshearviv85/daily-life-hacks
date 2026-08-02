@@ -1,6 +1,6 @@
 ---
 title: "Protein per 100 Grams in Our 49-Food Price Study"
-excerpt: "In our July 2026 price study of 49 grocery foods, the TVP row led at 50.0 g of protein per 100 g, but its label provenance remains unresolved; every row now shows its source status."
+excerpt: "In our July 2026 price study of 49 grocery foods, the TVP row led at 52.17 g of protein per 100 g, sourced to the manufacturer label because USDA publishes no TVP record at all."
 category: "nutrition"
 tags: ["foods highest in protein", "protein per 100g", "high protein foods", "protein content", "grocery data"]
 cluster: "budget-protein"
@@ -15,35 +15,35 @@ whatsHot: false
 mustRead: false
 faq:
   - question: "Which food led protein per 100 grams in your 49-food July 2026 study?"
-    answer: "The TVP row led our 49-food July 2026 study at 50.0 grams per 100 grams, but we could not verify that figure against the current manufacturer label, which works out to about 52.2. Among rows with an exact USDA food-and-form match in the study, dry brown lentils led at 24.63 g, followed by canned sardines in oil, drained, at 24.62 g."
+    answer: "The TVP row led our 49-food July 2026 study at 52.17 grams per 100 grams, taken from the current manufacturer label because USDA FoodData Central publishes no TVP record at all. Among rows with an exact USDA food-and-form match in the study, dry brown lentils led at 24.63 g, followed by canned sardines in oil, drained, at 24.62 g."
   - question: "Which plant foods ranked highest in protein in your July 2026 study?"
-    answer: "Within our 49-food dataset, the unresolved TVP row is first at the recorded 50.0 g per 100 g. Among plant rows with exact USDA food-and-form matches, dry brown lentils led at 24.63 g, followed by dry red lentils at 23.91 g and dry green split peas at 23.12 g. The dry versus raw forms matter when comparing them with chicken breast."
+    answer: "Within our 49-food dataset, the label-sourced TVP row is first at 52.17 g per 100 g. Among plant rows with exact USDA food-and-form matches, dry brown lentils led at 24.63 g, followed by dry red lentils at 23.91 g and dry green split peas at 23.12 g. The dry versus raw forms matter when comparing them with chicken breast."
   - question: "Where did eggs rank in your 49-food study?"
     answer: "Large eggs ranked 36th of the 49 foods in our July 2026 study, at 12.56 g of protein per 100 g. A large egg is roughly 50 g, so it carries about 6.3 g. Eggs are convenient and complete, but this dataset did not place them among its most protein-dense entries by weight."
   - question: "Can this 49-food study show which serving has the most protein?"
     answer: "No. The table compares 100 g of each listed form, not standardized servings. A 100 g portion of dry brown lentils carries about 24.6 g of protein, while 100 g of large eggs carries 12.56 g. Use the density table for equal-weight comparisons, not for a claim about every possible serving."
   - question: "Was the protein-density leader also cheapest in your 49-food study?"
-    answer: "No. In our 49-food dataset, the unresolved TVP row leads the recorded density column at 50.0 g per 100 g but ranks 32nd on protein per dollar at 22.5 g per dollar. Pinto beans, which have an exact USDA match, lead the value ranking at 97.9 g per dollar. Density and price answer different questions."
+    answer: "No. In our 49-food dataset, the label-sourced TVP row leads the density column at 52.17 g per 100 g but ranks 31st on protein per dollar at 23.4 g per dollar. Pinto beans, which have an exact USDA match, lead the value ranking at 97.9 g per dollar. Density and price answer different questions."
 ---
 
-In our July 2026 US price study of 49 grocery foods, the TVP row led at 50.0 grams of protein per 100 grams. That number is not currently verified: the manufacturer's current 12-gram-per-23-gram label works out to about 52.2, and we did not establish an archived label matching 50.0. Among rows with an exact USDA food-and-form match in our 49-food study, dry brown lentils led at 24.63, followed by canned sardines in oil, drained, at 24.62. This is a bounded grocery comparison, not a claim about every food sold worldwide.
+In our July 2026 US price study of 49 grocery foods, the TVP row led at 52.17 grams of protein per 100 grams. That figure is a proxy, not a USDA match: the manufacturer's current 12-gram-per-23-gram label works out to 52.17, and USDA FoodData Central publishes no textured vegetable protein record to check it against. Among rows with an exact USDA food-and-form match in our 49-food study, dry brown lentils led at 24.63, followed by canned sardines in oil, drained, at 24.62. This is a bounded grocery comparison, not a claim about every food sold worldwide.
 
 One thing to get straight before the table. This ranks foods by protein density, not by price. The cheapest-per-dollar question is a different study and we ran that one separately.
 
 | Food | Protein per 100 g | USDA form / status | Price per 100 g | Nutrition source |
 |---|---|---|---|---|
-| TVP (textured vegetable protein) | 50.0 g | Not resolved | $2.226 | [Manufacturer page](https://www.bobsredmill.com/product/tvp-textured-veg-protein) · unresolved mismatch |
+| TVP (textured vegetable protein) | 52.17 g | Dry textured defatted soy flour, as sold | $2.226 | [Manufacturer label](https://www.bobsredmill.com/product/tvp-textured-veg-protein) · proxy, no USDA record exists |
 | Rotisserie chicken (whole, cooked) | 28.93 g | Meat only, cooked, roasted | $0.585 | [FDC 171054](https://api.nal.usda.gov/fdc/v1/food/171054?api_key=DEMO_KEY) · proxy |
 | Brown lentils (dry) | 24.63 g | Raw | $0.317 | [FDC 172420](https://api.nal.usda.gov/fdc/v1/food/172420?api_key=DEMO_KEY) |
 | Sardines (canned in oil, drained) | 24.62 g | Canned in oil, drained solids with bone | $1.217 | [FDC 175139](https://api.nal.usda.gov/fdc/v1/food/175139?api_key=DEMO_KEY) |
-| Dry roasted peanuts | 24.35 g | Not resolved | $0.612 | Unresolved · see CSV reason |
+| Dry roasted peanuts | 24.35 g | Dry-roasted, with salt | $0.612 | [FDC 174262](https://api.nal.usda.gov/fdc/v1/food/174262?api_key=DEMO_KEY) · proxy |
 | Red lentils (dry) | 23.91 g | Raw | $0.427 | [FDC 174284](https://api.nal.usda.gov/fdc/v1/food/174284?api_key=DEMO_KEY) |
 | Mozzarella (low-moisture part-skim) | 23.75 g | Low-moisture, part-skim | $0.789 | [FDC 171244](https://api.nal.usda.gov/fdc/v1/food/171244?api_key=DEMO_KEY) |
 | Green split peas (dry) | 23.12 g | Mature seeds, raw | $0.313 | [FDC 172428](https://api.nal.usda.gov/fdc/v1/food/172428?api_key=DEMO_KEY) |
 | Cheddar cheese | 22.87 g | Cheddar | $1.253 | [FDC 173414](https://api.nal.usda.gov/fdc/v1/food/173414?api_key=DEMO_KEY) |
 | Chicken breast (boneless, skinless) | 22.5 g | Breast, skinless, boneless, meat only, raw | $0.919 | [FDC 171077](https://api.nal.usda.gov/fdc/v1/food/171077?api_key=DEMO_KEY) |
 | Navy beans (dry) | 22.33 g | Mature seeds, raw | $0.294 | [FDC 173745](https://api.nal.usda.gov/fdc/v1/food/173745?api_key=DEMO_KEY) |
-| Peanut butter | 22.21 g | Not resolved | $0.438 | Unresolved · see CSV reason |
+| Peanut butter | 22.21 g | Smooth style, with salt | $0.438 | [FDC 174266](https://api.nal.usda.gov/fdc/v1/food/174266?api_key=DEMO_KEY) · proxy |
 | Black beans (dry) | 21.6 g | Mature seeds, raw | $0.267 | [FDC 173734](https://api.nal.usda.gov/fdc/v1/food/173734?api_key=DEMO_KEY) |
 | Pork loin chops (boneless) | 21.55 g | Top-loin chop, boneless, lean and fat, raw | $0.967 | [FDC 167839](https://api.nal.usda.gov/fdc/v1/food/167839?api_key=DEMO_KEY) |
 | Pinto beans (dry) | 21.42 g | Mature seeds, raw | $0.219 | [FDC 175199](https://api.nal.usda.gov/fdc/v1/food/175199?api_key=DEMO_KEY) |
@@ -57,7 +57,7 @@ One thing to get straight before the table. This ranks foods by protein density,
 | Chicken thighs (boneless, skinless) | 19.66 g | Thigh, meat only, raw | $0.709 | [FDC 173627](https://api.nal.usda.gov/fdc/v1/food/173627?api_key=DEMO_KEY) |
 | Canned tuna (chunk light, in water) | 19.44 g | Canned in water, drained solids | $0.867 | [FDC 173709](https://api.nal.usda.gov/fdc/v1/food/173709?api_key=DEMO_KEY) |
 | Ground turkey (93/7) | 18.73 g | Raw, 93% lean / 7% fat | $1.203 | [FDC 172850](https://api.nal.usda.gov/fdc/v1/food/172850?api_key=DEMO_KEY) |
-| Whole chicken (raw) | 18.6 g | Meat and skin, raw | $0.449 | [FDC 171447](https://api.nal.usda.gov/fdc/v1/food/171447?api_key=DEMO_KEY) · proxy |
+| Whole chicken (raw) | 18.6 g | Meat and skin, raw | $0.449 | [FDC 171447](https://api.nal.usda.gov/fdc/v1/food/171447?api_key=DEMO_KEY) |
 | Chicken drumsticks (bone-in) | 18.08 g | Drumstick, meat and skin, raw | $0.241 | [FDC 172373](https://api.nal.usda.gov/fdc/v1/food/172373?api_key=DEMO_KEY) |
 | Pork shoulder butt roast (boneless) | 17.42 g | Boston butt blade steak, lean and fat, raw | $0.692 | [FDC 167849](https://api.nal.usda.gov/fdc/v1/food/167849?api_key=DEMO_KEY) · proxy |
 | Ground beef (80/20) | 17.17 g | Raw, 80% lean / 20% fat | $1.487 | [FDC 174036](https://api.nal.usda.gov/fdc/v1/food/174036?api_key=DEMO_KEY) |
@@ -66,27 +66,27 @@ One thing to get straight before the table. This ranks foods by protein density,
 | Bacon | 13.66 g | Cured bacon, unprepared | $1.478 | [FDC 168277](https://api.nal.usda.gov/fdc/v1/food/168277?api_key=DEMO_KEY) |
 | Whole wheat flour | 13.21 g | Whole-grain flour | $0.138 | [FDC 168893](https://api.nal.usda.gov/fdc/v1/food/168893?api_key=DEMO_KEY) |
 | Old-fashioned rolled oats | 13.15 g | Regular or quick oats, dry | $0.282 | [FDC 173904](https://api.nal.usda.gov/fdc/v1/food/173904?api_key=DEMO_KEY) |
-| Spaghetti (regular, dry) | 13.04 g | Not resolved | $0.273 | Unresolved · see CSV reason |
+| Spaghetti (regular, dry) | 13.04 g | Dry pasta, enriched | $0.273 | [FDC 169736](https://api.nal.usda.gov/fdc/v1/food/169736?api_key=DEMO_KEY) · proxy |
 | Eggs (large) | 12.56 g | Whole, raw, fresh | $0.365 | [FDC 171287](https://api.nal.usda.gov/fdc/v1/food/171287?api_key=DEMO_KEY) |
 | 100% whole wheat bread | 12.45 g | Whole-wheat, commercially prepared | $0.347 | [FDC 172688](https://api.nal.usda.gov/fdc/v1/food/172688?api_key=DEMO_KEY) |
 | Frozen shelled edamame | 11.22 g | Frozen, unprepared | $0.624 | [FDC 168410](https://api.nal.usda.gov/fdc/v1/food/168410?api_key=DEMO_KEY) |
-| Cottage cheese (4%) | 11.12 g | Creamed, large or small curd | $0.422 | [FDC 172179](https://api.nal.usda.gov/fdc/v1/food/172179?api_key=DEMO_KEY) · proxy |
+| Cottage cheese (4%) | 11.12 g | Creamed, large or small curd | $0.422 | [FDC 172179](https://api.nal.usda.gov/fdc/v1/food/172179?api_key=DEMO_KEY) |
 | Greek yogurt (plain, nonfat) | 10.19 g | Plain, nonfat | $0.37 | [FDC 170894](https://api.nal.usda.gov/fdc/v1/food/170894?api_key=DEMO_KEY) |
 | Tofu (extra firm) | 9.98 g | Extra firm, prepared with nigari | $0.736 | [FDC 174290](https://api.nal.usda.gov/fdc/v1/food/174290?api_key=DEMO_KEY) |
 | Pearled barley (dry) | 9.91 g | Pearled, raw | $0.273 | [FDC 170284](https://api.nal.usda.gov/fdc/v1/food/170284?api_key=DEMO_KEY) |
 | Brown rice (dry) | 7.54 g | Long-grain, raw | $0.206 | [FDC 169703](https://api.nal.usda.gov/fdc/v1/food/169703?api_key=DEMO_KEY) |
-| White rice (long grain, dry) | 7.13 g | Not resolved | $0.149 | Unresolved · see CSV reason |
-| Canned black beans | 6.03 g | Not resolved | $0.2 | Unresolved · see CSV reason |
+| White rice (long grain, dry) | 7.13 g | Long-grain, regular, raw | $0.149 | [FDC 168877](https://api.nal.usda.gov/fdc/v1/food/168877?api_key=DEMO_KEY) · proxy |
+| Canned black beans | 6.03 g | Mature seeds, canned | $0.2 | [FDC 175188](https://api.nal.usda.gov/fdc/v1/food/175188?api_key=DEMO_KEY) · proxy |
 | Canned kidney beans | 5.22 g | All types, mature seeds, canned | $0.223 | [FDC 173741](https://api.nal.usda.gov/fdc/v1/food/173741?api_key=DEMO_KEY) |
 | Frozen green peas | 5.22 g | Frozen, unprepared | $0.256 | [FDC 170016](https://api.nal.usda.gov/fdc/v1/food/170016?api_key=DEMO_KEY) |
-| Canned chickpeas | 4.92 g | Not resolved | $0.223 | Unresolved · see CSV reason |
-| Whole milk | 3.15 g | Not resolved | $0.108 | Unresolved · see CSV reason |
+| Canned chickpeas | 4.92 g | Mature seeds, canned, solids and liquids | $0.223 | [FDC 175206](https://api.nal.usda.gov/fdc/v1/food/175206?api_key=DEMO_KEY) · proxy |
+| Whole milk | 3.15 g | Whole, 3.25% milkfat, with added vitamin D | $0.108 | [FDC 171265](https://api.nal.usda.gov/fdc/v1/food/171265?api_key=DEMO_KEY) |
 
-*Provenance checked July 30, 2026: 36 rows have an exact USDA FoodData Central food-and-form match, 5 use a linked FDC proxy with the mismatch disclosed, and 8 remain unresolved. The [49-row raw CSV](/data/protein-per-dollar-2026.csv) contains the official description, record URL, form, status, and row-specific note. See the full [/methodology/](/methodology/).*
+*Provenance checked July 30, 2026: 39 rows have an exact USDA FoodData Central food-and-form match and 10 use a proxy with the mismatch disclosed. No rows remain unresolved. The [49-row raw CSV](/data/protein-per-dollar-2026.csv) contains the official description, record URL, form, status, and row-specific note. See the full [/methodology/](/methodology/).*
 
 ## Which food led protein per 100 grams in our 49-food study?
 
-The TVP row led our July 2026 comparison at 50.0 grams, with a large asterisk. The current Bob's Red Mill page lists 12 grams in a 23 gram serving, or about 52.2 grams per 100 grams. We could not establish an archived label that supports the dataset's 50.0, so the table marks that row unresolved instead of treating the old note as proof.
+The TVP row led our July 2026 comparison at 52.17 grams, with an asterisk that is worth reading. The current Bob's Red Mill page lists 12 grams in a 23 gram serving, which is 52.17 grams per 100 grams, and that label is now the row's source. USDA FoodData Central publishes no textured vegetable protein record at all, so there is nothing to cross-check it against and the table marks the row a proxy rather than an exact match.
 
 The 28.93-gram rotisserie row is also labeled as a proxy because its USDA record covers roasted chicken meat only, while a whole bird supplied the price and edible-yield math. Among exact food-and-form matches in our 49-food study, dry brown lentils led at 24.63 grams and drained canned sardines followed at 24.62. The next entries cluster tightly, and the gap between raw chicken breast and dry black beans is about one gram.
 
@@ -100,7 +100,7 @@ Greek yogurt at 10.19 and cottage cheese at 11.12 are in the same boat. Wet food
 
 ## Are the dried beans getting an unfair advantage?
 
-Partly, and you deserve to know how. The form column now reports the form in the linked USDA nutrition record, not merely the wording on the priced package. “Exact” means food, state, and displayed nutrient value match that record. “Proxy” means the numeric record is identified but its cut, brand, or price form differs and the CSV says how. “Not resolved” means we found either multiple plausible records or no official value that matched, so we did not choose an ID.
+Partly, and you deserve to know how. The form column now reports the form in the linked USDA nutrition record, not merely the wording on the priced package. “Exact” means food, state, and displayed nutrient value match that record. “Proxy” means the source is identified but its cut, brand, or price form differs from the priced package, and the CSV says how. “Not resolved” means we found either multiple plausible records or no official value that matched, so we did not choose an ID. No row in this table currently carries that status.
 
 So when brown lentils beat chicken breast, that's 100 grams of dry lentils against 100 grams of raw chicken. Cook the lentils and they take on water, and the protein per 100 grams of the finished pot drops a long way. Cook the chicken and it loses water and climbs. Our dataset doesn't include cooked yields, so we're not going to invent them.
 

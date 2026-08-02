@@ -1,6 +1,6 @@
 ---
 title: "The Cheapest High-Protein Breakfast Foods, Ranked"
-excerpt: "Whole wheat flour leads breakfast staples at 173.8 combined grams of protein and fiber per dollar. Oats hit 82.4, eggs 34.4, gala apples just 7.7."
+excerpt: "Whole wheat flour leads breakfast staples at 173.8 combined grams of protein and fiber per dollar. Oats hit 82.4, eggs 34.4, gala apples just 7.3."
 category: "nutrition"
 tags: ["cheap breakfast foods", "breakfast protein per dollar", "budget breakfast ideas", "oatmeal vs eggs cost", "grocery data"]
 cluster: "budget-protein"
@@ -19,10 +19,10 @@ faq:
   - question: "Why is whole wheat flour ranked first for breakfast?"
     answer: "Because a $3.12 five pound bag delivers 96.0 grams of protein and 77.8 grams of fiber per dollar, 173.8 grams combined, more than double the next food on the list. The catch is that flour is an ingredient, not a breakfast, so it only counts if you actually bake pancakes or bread with it."
   - question: "Is fruit a waste of money at breakfast?"
-    answer: "Not a waste, just a different job. Bananas deliver 11.6 grams of fiber per dollar and gala apples 7.7, the bottom of our ranking. Fruit may still earn its place for flavor and everything else it brings, but if you're buying grams of protein and fiber, the oats canister does it for far less."
+    answer: "Not a waste, just a different job. Bananas deliver 11.6 grams of fiber per dollar and gala apples 7.3, the bottom of our ranking. Fruit may still earn its place for flavor and everything else it brings, but if you're buying grams of protein and fiber, the oats canister does it for far less."
 ---
 
-Whole wheat flour is the best breakfast deal in the store, at 96.0 grams of protein and 77.8 grams of fiber per dollar, 173.8 grams combined. The worst deal on the same list is gala apples at 7.7 grams. That's a 22.6x spread inside one grocery run, between two things people put in the same shopping cart without blinking.
+Whole wheat flour is the best breakfast deal in the store, at 96.0 grams of protein and 77.8 grams of fiber per dollar, 173.8 grams combined. The worst deal on the same list is gala apples at 7.3 grams. That's a 23.8x spread inside one grocery run, between two things people put in the same shopping cart without blinking.
 
 This ranking crosses our two grocery studies, [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), and pulls out the 9 foods that actually show up at American breakfast tables. The combined score is plain addition: total grams of protein and fiber one dollar buys, added together.
 
@@ -36,7 +36,7 @@ This ranking crosses our two grocery studies, [protein per dollar](/protein-per-
 | Greek yogurt (plain, nonfat) | 27.5 g | not scored | 27.5 g | 32 oz tub, $3.36 |
 | Cottage cheese (4%) | 26.3 g | not scored | 26.3 g | 24 oz tub, $2.87 |
 | Bananas | not scored | 11.6 g | 11.6 g | per lb, $0.65 |
-| Apples (gala) | not scored | 7.7 g | 7.7 g | per lb, $1.28 |
+| Apples (gala) | not scored | 7.3 g | 7.3 g | per lb, $1.28 |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
 
@@ -64,7 +64,7 @@ None of them bring fiber to the table, though. That's why the smart breakfast is
 
 ## Why did fruit land at the bottom?
 
-Because fruit is mostly water and we're measuring grams per dollar. Bananas score 11.6 grams of fiber per dollar at $0.65 a pound, and gala apples 7.7 at $1.28 a pound. That's not an argument against fruit. It may still be the best thing in your cart for reasons this spreadsheet can't see. It's just an argument against buying fruit as your fiber plan when the oats deliver about three times the fiber per dollar of bananas without bruising in the bag. If fiber is the specific job you're shopping for, [the shortlist of what a single fiber dollar buys](/one-dollar-fiber-what-it-buys/) is all dry goods, and no fruit makes it.
+Because fruit is mostly water and we're measuring grams per dollar. Bananas score 11.6 grams of fiber per dollar at $0.65 a pound, and gala apples 7.3 at $1.28 a pound. That's not an argument against fruit. It may still be the best thing in your cart for reasons this spreadsheet can't see. It's just an argument against buying fruit as your fiber plan when the oats deliver about three times the fiber per dollar of bananas without bruising in the bag. If fiber is the specific job you're shopping for, [the shortlist of what a single fiber dollar buys](/one-dollar-fiber-what-it-buys/) is all dry goods, and no fruit makes it.
 
 ## How did we run the numbers?
 

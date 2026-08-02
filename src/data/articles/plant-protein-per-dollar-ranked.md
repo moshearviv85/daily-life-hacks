@@ -38,13 +38,13 @@ This ranking is the plant-only cut of our full [protein per dollar study](/prote
 | 9 | Dry roasted peanuts | 39.8 g | 16 oz jar | $2.78 |
 | 10 | Sunflower seed kernels | 31.7 g | 16 oz bag | $2.98 |
 | 11 | Canned black beans | 30.1 g | 15.5 oz can | $0.88 |
-| 12 | Canned kidney beans | 23.4 g | 15.5 oz can | $0.98 |
+| 12 | TVP (textured vegetable protein) | 23.4 g | 10 oz bag | $6.30 |
 
 ![Bar chart ranking 18 plant proteins by protein per dollar](/images/plant-protein-per-dollar-ranked-chart.jpg)
 
-*Source audit: joining these 18 foods to the flagship protein dataset yields 13 exact USDA matches, 0 close USDA proxies, and 5 unresolved rows. Proxy and unresolved rows are not independently re-verified. TVP is unresolved: this derivative retains the recorded 50.0 grams per 100 grams, but the current product page works out to about 52.2, so 50.0 is not label-verified. Prices are dated July 2026 observations. Full methodology at [/methodology/](/methodology/).*
+*Source audit: joining these 18 foods to the flagship protein dataset yields 13 exact USDA matches and 5 close proxies, with no unresolved rows. Proxy rows are not independently re-verified. TVP is a proxy: USDA FoodData Central publishes no textured vegetable protein record at all, so the row is sourced to the manufacturer label at 52.17 grams per 100 grams. Prices are dated July 2026 observations. Full methodology at [/methodology/](/methodology/).*
 
-The six foods below the cutoff, in order: the unresolved TVP row at a recorded 22.5 grams per dollar, canned chickpeas at 22.0, frozen shelled edamame at 18.0, almonds at 14.8, extra firm tofu at 13.6, and tempeh at 13.2.
+The six foods below the cutoff, in order: canned kidney beans at 23.4 grams per dollar, canned chickpeas at 22.0, frozen shelled edamame at 18.0, almonds at 14.8, extra firm tofu at 13.6, and tempeh at 13.2.
 
 ## What's the cheapest plant-based protein?
 
@@ -56,7 +56,7 @@ Lentils are a practical starting point for anyone who finds dry beans intimidati
 
 Because you're paying brand-name prices for water and refrigeration. A $2.92 block of extra firm tofu holds about 40 grams of protein. A $1.44 bag of brown lentils holds about 112 grams. Half the price, nearly triple the protein, and nobody had to keep it cold on the truck. Priced by the dollar it's 77.7 grams as lentils against 13.6 as tofu, the same view we laid out across [the 15 cheapest protein foods in the store](/one-dollar-protein-what-it-buys/).
 
-Tempeh tells the same story at $3.48 for an 8 ounce pack. The unresolved TVP row lands at a recorded 22.5 grams per dollar because the 10 ounce bag costs $6.30 at the store we priced; its underlying 50.0 grams per 100 grams is not supported by the current product page. None of this makes soy foods bad. [Sheet pan ginger tofu](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/) shows how tofu can earn its place for texture and flavor rather than thrift. And if you want soy in its strangest breakfast form, the [guide to natto](/natto-japanese-fermented-soybeans-gut-health/) explains the sticky fermented version. Just don't buy tofu believing it's the budget move. The budget move is beans.
+Tempeh tells the same story at $3.48 for an 8 ounce pack. TVP lands at 23.4 grams per dollar because the 10 ounce bag costs $6.30 at the store we priced, even though it is the densest thing in the sample at 52.17 grams of protein per 100 grams. That density figure comes off the manufacturer label rather than a USDA record, because USDA publishes none for TVP. None of this makes soy foods bad. [Sheet pan ginger tofu](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/) shows how tofu can earn its place for texture and flavor rather than thrift. And if you want soy in its strangest breakfast form, the [guide to natto](/natto-japanese-fermented-soybeans-gut-health/) explains the sticky fermented version. Just don't buy tofu believing it's the budget move. The budget move is beans.
 
 ## Are canned beans a decent middle ground?
 

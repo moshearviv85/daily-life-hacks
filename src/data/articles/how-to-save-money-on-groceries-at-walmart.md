@@ -39,7 +39,7 @@ Almost every price on this site starts life as a Walmart Great Value shelf tag. 
 | Whole wheat spaghetti | 16 oz box | $1.18 | 53.4 g | 35.4 g |
 | Peanut butter | 40 oz jar | $4.97 | 50.7 g | 11.4 g |
 | Rolled oats | 42 oz canister | $3.36 | 46.6 g | 35.8 g |
-| Canned black beans | 15.5 oz can | $0.88 | 30.1 g | 27.9 g |
+| Canned black beans | 15.5 oz can | $0.88 | 30.1 g | 34.4 g |
 | Frozen green peas | 32 oz bag | $2.32 | 20.4 g | 17.6 g |
 | Almonds | 16 oz bag | $6.47 | 14.8 g | 8.8 g |
 

@@ -73,7 +73,7 @@ Parts of it flip hard. The top doesn't.
 | 19 | Whole wheat spaghetti | 53.4 | 0.45 | 24.0 |
 | 20 | Canned tuna (in water) | 22.4 | 1.00 | 22.4 |
 | 21 | Peanut butter | 50.7 | 0.43 | 21.8 |
-| 22 | TVP (soy) | 22.5 | 0.90 | 20.2 |
+| 22 | TVP (soy) | 23.4 | 0.90 | 21.1 |
 | 23 | 100% whole wheat bread | 35.8 | 0.45 | 16.1 |
 | 24 | Tofu (extra firm) | 13.6 | 0.90 | 12.2 |
 | 25 | Ground beef (80/20) | 11.5 | 1.11 | 11.5 |

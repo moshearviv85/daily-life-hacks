@@ -73,12 +73,27 @@ function csvSourceClasses(relativePath) {
   );
 }
 
+// A manufacturer-label row is now declared in the dedicated nutrition_source_type
+// column on the audited flagship CSVs ("Manufacturer label"), while the derivative
+// exports that lack those columns still carry it inline in price_basis ("label
+// value"). Both spellings mean the same provenance class, so detect either one
+// rather than dropping the signal when a CSV gains proper source columns.
+function isProductLabelRow(row, header) {
+  const priceBasisIndex = header.indexOf("price_basis");
+  const sourceTypeIndex = header.indexOf("nutrition_source_type");
+
+  return (
+    (priceBasisIndex >= 0 && /label value/i.test(row[priceBasisIndex] ?? "")) ||
+    (sourceTypeIndex >= 0 &&
+      /manufacturer label/i.test(row[sourceTypeIndex] ?? ""))
+  );
+}
+
 function csvProvenanceSignals(relativePath) {
   const lines = read(relativePath).trim().split(/\r?\n/);
   const header = parseCsvLine(lines[0]);
   const basisIndex = header.indexOf("basis");
   const sourceIndex = header.indexOf("source");
-  const priceBasisIndex = header.indexOf("price_basis");
   const diaasSourceIndex = header.indexOf("diaas_source");
   const signals = new Set();
 
@@ -91,7 +106,7 @@ function csvProvenanceSignals(relativePath) {
     if (sourceIndex >= 0 && /nutrition|\.com\b|official/i.test(row[sourceIndex] ?? "")) {
       signals.add("restaurant");
     }
-    if (priceBasisIndex >= 0 && /label value/i.test(row[priceBasisIndex] ?? "")) {
+    if (isProductLabelRow(row, header)) {
       signals.add("product-label");
     }
     if (diaasSourceIndex >= 0 && (row[diaasSourceIndex] ?? "").trim()) {
@@ -105,16 +120,38 @@ function csvProvenanceSignals(relativePath) {
 function csvProductLabelCounts(relativePath) {
   const lines = read(relativePath).trim().split(/\r?\n/);
   const header = parseCsvLine(lines[0]);
-  const priceBasisIndex = header.indexOf("price_basis");
   const rows = lines.slice(1).map(parseCsvLine);
 
   return {
     total: rows.length,
-    productLabel: rows.filter((row) =>
-      /label value/i.test(row[priceBasisIndex] ?? ""),
-    ).length,
+    productLabel: rows.filter((row) => isProductLabelRow(row, header)).length,
   };
 }
+
+// A provenance class that has emptied out is still a claim the copy has to make,
+// and no page writes "0 unresolved rows"; it writes "no unresolved rows". Building
+// the expected wording from the CSV-derived count keeps the assertion honest for
+// zero without letting a bare "0" match the "0" inside a number like "10".
+const countWord = (count) => (count > 0 ? String(count) : "(?:no|zero)");
+
+// The protein copy writes "10 close proxies"; the fiber copy writes "10 close USDA
+// proxies". Same audit class, so the word USDA is optional here. The numbers are
+// still pinned to the CSV-derived counts, which is what this claim protects.
+const statusClaimFor = (counts) =>
+  new RegExp(
+    `${counts.exact} exact USDA matches[^.]{0,120}` +
+      `${countWord(counts.proxy)} close (?:USDA )?prox(?:y|ies)[^.]{0,120}` +
+      `${countWord(counts.unresolved)} unresolved rows?`,
+    "i",
+  );
+
+// A surface only disclaims re-verification for the classes it actually contains.
+// With the protein file's unresolved rows now resolved away, its copy correctly
+// says "proxy rows are not independently re-verified" with no "and unresolved".
+const reverificationClaimFor = (counts) =>
+  counts.unresolved > 0
+    ? /proxy and unresolved rows are not independently re-verified/i
+    : /proxy rows are not independently re-verified/i;
 
 function csvNutritionSourceAudit(relativePath) {
   const lines = read(relativePath).trim().split(/\r?\n/);
@@ -130,17 +167,31 @@ function csvNutritionSourceAudit(relativePath) {
     `${relativePath} should declare nutrition_source_status`,
   );
 
-  const counts = rows.reduce((result, row) => {
-    const status = row[statusIndex];
-    result[status] = (result[status] ?? 0) + 1;
-    return result;
-  }, {});
+  // Seeded with all three classes so a class that empties out reports 0 rather than
+  // vanishing from the object. An absent key would let a deepEqual against a
+  // three-key expectation fail for the wrong reason, or quietly pass a `?? 0`.
+  const counts = rows.reduce(
+    (result, row) => {
+      const status = row[statusIndex];
+      result[status] = (result[status] ?? 0) + 1;
+      return result;
+    },
+    { exact: 0, proxy: 0, unresolved: 0 },
+  );
 
   return {
     counts,
     total: rows.length,
     statusFor(food) {
       return rows.find((row) => row[foodIndex] === food)?.[statusIndex] ?? "";
+    },
+    // Full header-keyed record, so provenance columns (source type, FDC id, note)
+    // can be asserted directly instead of being re-parsed in each test.
+    rowFor(food) {
+      const row = rows.find((cells) => cells[foodIndex] === food);
+      return row
+        ? Object.fromEntries(header.map((key, index) => [key, row[index]]))
+        : undefined;
     },
   };
 }
@@ -298,7 +349,7 @@ test("ordinary rendered grocery studies retain the USDA source link", () => {
   );
 });
 
-test("data catalog scopes USDA grocery provenance and discloses the unresolved TVP value", () => {
+test("data catalog scopes USDA grocery provenance and discloses the manufacturer-label TVP source", () => {
   const html = read("dist/data/index.html");
   const main = visibleMain(html);
   const catalog = jsonLdNodes(html).find(
@@ -314,11 +365,19 @@ test("data catalog scopes USDA grocery provenance and discloses the unresolved T
     main,
     /three[^.]{0,100}datasets[^.]{0,100}recorded TVP product-label value/i,
   );
+  // TVP is no longer an unresolved label mismatch. USDA FoodData Central publishes
+  // no textured vegetable protein record at all, so the row is a documented
+  // non-USDA source: the manufacturer's own label at 52.17 g per 100 g. The catalog
+  // must still scope the exception to three datasets and name the label as its
+  // source; it must no longer describe it as unresolved.
   assert.match(
     catalog.description,
-    /three[^.]{0,100}datasets[^.]{0,100}unresolved recorded TVP product-label value/i,
+    /three[^.]{0,100}datasets[^.]{0,120}TVP value sourced to the manufacturer label/i,
   );
-  assert.match(main, /unresolved[^.]{0,160}52\.2[^.]{0,160}50\.0/i);
+  assert.match(catalog.description, /USDA publishes no record for it/i);
+  assert.match(main, /publishes\s+no\s+textured\s+vegetable\s+protein\s+record/i);
+  assert.match(main, /manufacturer(?:&#39;|&#8217;|'|’)s\s+own\s+label/i);
+  assert.match(main, /52\.17\s+grams\s+per\s+100\s+grams/i);
   assert.match(main, /Grocery nutrition numbers generally come from/i);
   assert.match(main, /fast-food study uses each chain's published nutrition data/i);
   assert.doesNotMatch(main, universalGroceryUsda);
@@ -345,7 +404,20 @@ test("API, Guides, and Research expose all four source classes without USDA-only
       /three[^.]{0,100}datasets[^.]{0,100}recorded TVP product-label value/i,
       label,
     );
-    assert.match(main, /unresolved[^.]{0,160}52\.2[^.]{0,160}50\.0/i, label);
+    // Same replacement as on /data/: the exception these pages have to disclose is
+    // "USDA publishes no TVP record, so that row cites the manufacturer's label",
+    // not the retired 50.0-vs-52.2 mismatch. These three pages summarise rather
+    // than quote the density, so 52.17 is asserted on /data/ only.
+    assert.match(
+      main,
+      /publishes\s+no\s+textured\s+vegetable\s+protein\s+record/i,
+      label,
+    );
+    assert.match(
+      main,
+      /manufacturer(?:&#39;|&#8217;|'|’)s\s+own\s+label/i,
+      label,
+    );
     assert.match(main, /DIAAS/i, label);
     assert.match(main, /FAO\s+2013/i, label);
     assert.doesNotMatch(main, universalUsdaOnly, label);
@@ -359,15 +431,21 @@ test("API, Guides, and Research expose all four source classes without USDA-only
   assert.ok(apiSchema, "rendered /api-docs/ should include a WebAPI node");
   assert.match(apiSchema.description, /USDA FoodData Central/i);
   assert.match(apiSchema.description, /chain-published nutrition/i);
+  // Machine-readable copy of the same corrected exception.
   assert.match(
     apiSchema.description,
-    /three datasets carry one unresolved recorded TVP product-label value/i,
+    /three datasets carry a TVP value sourced to the manufacturer label because USDA publishes no record for it/i,
   );
   assert.match(apiSchema.description, /DIAAS rows cite literature or the FAO 2013 report/i);
   assert.doesNotMatch(apiSchema.description, /built from USDA FoodData Central/i);
 });
 
-test("TVP studies disclose the unresolved label mismatch and derivative joined statuses", () => {
+test("TVP studies disclose the manufacturer-label source and derivative joined statuses", () => {
+  // Expected counts are the post-T1 audit of the protein CSV (49 rows: 39 exact,
+  // 10 proxy, 0 unresolved) and, for the two derivatives, the same statuses joined
+  // through the parent food names. Plant protein joins 18 of those foods, eggs
+  // joins all 49. TVP moved unresolved -> proxy, which is why plant protein's proxy
+  // count went 0 -> 5 and both unresolved columns emptied out.
   const studies = [
     {
       slug: "protein-per-dollar-cheapest-protein-sources",
@@ -375,21 +453,21 @@ test("TVP studies disclose the unresolved label mismatch and derivative joined s
       source:
         "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
       derivative: false,
-      expected: { exact: 36, proxy: 5, unresolved: 8 },
+      expected: { exact: 39, proxy: 10, unresolved: 0 },
     },
     {
       slug: "plant-protein-per-dollar-ranked",
       csv: "public/data/plant-protein-per-dollar-ranked-2026.csv",
       source: "src/data/articles/plant-protein-per-dollar-ranked.md",
       derivative: true,
-      expected: { exact: 13, proxy: 0, unresolved: 5 },
+      expected: { exact: 13, proxy: 5, unresolved: 0 },
     },
     {
       slug: "eggs-vs-everything-protein-value",
       csv: "public/data/eggs-vs-everything-protein-value-2026.csv",
       source: "src/data/articles/eggs-vs-everything-protein-value.md",
       derivative: true,
-      expected: { exact: 36, proxy: 5, unresolved: 8 },
+      expected: { exact: 39, proxy: 10, unresolved: 0 },
     },
   ];
   const universalUsdaOnly =
@@ -403,35 +481,40 @@ test("TVP studies disclose the unresolved label mismatch and derivative joined s
     const audit = derivative
       ? joinedNutritionSourceAudit(csv)
       : csvNutritionSourceAudit(csv);
-    const statusClaim = new RegExp(
-      `${audit.counts.exact} exact USDA matches[^.]{0,120}` +
-        `${audit.counts.proxy} close USDA prox(?:y|ies)[^.]{0,120}` +
-        `${audit.counts.unresolved} unresolved rows?`,
-      "i",
-    );
+    const statusClaim = statusClaimFor(audit.counts);
 
     assert.equal(counts.productLabel, 1, `${slug} should have one label row`);
     assert.deepEqual(audit.counts, expected, slug);
+    // TVP is a proxy now, not unresolved: the row cites a real published source
+    // (the manufacturer's label), it just is not a USDA record.
     assert.equal(
       audit.statusFor("TVP (textured vegetable protein)"),
-      "unresolved",
+      "proxy",
       slug,
     );
     assert.match(sourceMarkdown, statusClaim, `${slug} source counts`);
     assert.match(main, statusClaim, `${slug} rendered counts`);
+    // Replaces the old "TVP discloses a label mismatch" assertions. There is no
+    // mismatch left to disclose, so what these studies must still say is that the
+    // row is a proxy, that USDA publishes no TVP record at all, and that the 52.17
+    // figure is the manufacturer's own label rather than a USDA value.
+    assert.match(main, /TVP is (?:a|one of those) prox(?:y|ies)/i, slug);
     assert.match(
-      main,
-      /TVP[^.]{0,200}unresolved/i,
+      `${sourceMarkdown}\n${main}`,
+      /publishes\s+no\s+(?:textured vegetable protein|TVP)\s+record/i,
       slug,
     );
     assert.match(
       `${sourceMarkdown}\n${main}`,
-      /TVP[^.]{0,220}(?:recorded product-label value|recorded 50\.0)[^.]{0,220}(?:no longer matches|current product page)/i,
+      /manufacturer(?:&#39;|&#8217;|'|’)?s?(?: own)?\s+(?:label|Nutrition Facts panel)/i,
       slug,
     );
+    assert.match(`${sourceMarkdown}\n${main}`, /52\.17/, slug);
+    // The retracted 50.0 g per 100 g figure matched neither the label nor any USDA
+    // record, so it must not come back as TVP's density anywhere.
     assert.doesNotMatch(
       `${sourceMarkdown}\n${main}`,
-      /USDA FoodData Central for \d+ rows;\s*TVP uses 50\.0 grams per 100 grams from the product nutrition label/i,
+      /TVP[^.]{0,160}50\.0 grams per 100 grams/i,
       slug,
     );
     assert.doesNotMatch(main, universalUsdaOnly, slug);
@@ -449,27 +532,73 @@ test("TVP studies disclose the unresolved label mismatch and derivative joined s
     if (derivative) {
       const caption = sourceCaption(html);
       assert.match(caption, statusClaim, slug);
-      assert.match(caption, /50\.0 is not label-verified/i, slug);
-    } else {
-      assert.match(main, /TVP[^.]{0,200}unresolved/i, slug);
+      // The caption used to warn that the recorded 50.0 was not label-verified.
+      // The corrected 52.17 IS the label value, so the caption now has to carry the
+      // non-USDA provenance instead of a verification warning about a dead number.
+      assert.match(caption, /TVP is (?:a|one of those) prox(?:y|ies)/i, slug);
+      assert.match(
+        caption,
+        /publishes\s+no\s+(?:textured vegetable protein|TVP)\s+record/i,
+        slug,
+      );
+      assert.match(caption, /52\.17/, slug);
     }
   }
+
+  // Rule-1 replacement at the data layer for the retired "label mismatch" claim.
+  // What has to stay true of the one non-USDA row in the flagship protein CSV:
+  // it announces that it is not a USDA record, it carries no FoodData Central id
+  // it is not entitled to, and it names the manufacturer label as its source.
+  const proteinAudit = csvNutritionSourceAudit(
+    "public/data/protein-per-dollar-2026.csv",
+  );
+  const tvp = proteinAudit.rowFor("TVP (textured vegetable protein)");
+
+  assert.ok(tvp, "protein CSV should still carry the TVP row");
+  assert.equal(tvp.nutrition_source_status, "proxy");
+  assert.equal(tvp.nutrition_source_type, "Manufacturer label");
+  assert.equal(
+    tvp.nutrition_source_id,
+    "",
+    "a manufacturer-label row must not claim a FoodData Central id",
+  );
+  assert.match(tvp.nutrition_source_note, /^NOT A USDA RECORD\b/);
+  assert.equal(tvp.protein_g_per_100g, "52.17");
 });
 
 test("guides derived from the 49-food protein study retain the TVP exception", () => {
+  // Derived from the CSV rather than frozen at 36/5/8. These guides quote the
+  // flagship protein audit, so the numbers they owe the reader are whatever that
+  // audit currently says (39 exact, 10 proxy, no unresolved rows).
+  const counts = csvNutritionSourceAudit(
+    "public/data/protein-per-dollar-2026.csv",
+  ).counts;
+
   for (const slug of [
     "eat-healthy-on-a-budget-complete-playbook",
     "high-protein-on-a-budget-complete-guide",
   ]) {
     const main = visibleMain(renderedArticle(slug));
-    assert.match(main, /36 exact USDA matches/i, slug);
-    assert.match(main, /5 close USDA proxies/i, slug);
-    assert.match(main, /8 unresolved rows/i, slug);
+    assert.match(main, new RegExp(`${counts.exact} exact USDA matches`, "i"), slug);
     assert.match(
       main,
-      /TVP[^.]{0,160}unresolved[^.]{0,160}50\.0[^.]{0,160}52\.2/i,
+      new RegExp(`${countWord(counts.proxy)} close (?:USDA )?proxies`, "i"),
       slug,
     );
+    assert.match(
+      main,
+      new RegExp(`${countWord(counts.unresolved)} unresolved rows?`, "i"),
+      slug,
+    );
+    // The exception the guides must keep is no longer "TVP is unresolved because
+    // 50.0 does not match 52.2". It is "TVP is a proxy because USDA has no record
+    // for it, so the 52.17 figure comes off the manufacturer's label".
+    assert.match(
+      main,
+      /TVP[^.]{0,80}prox(?:y|ies)[^.]{0,200}publishes no (?:textured vegetable protein|TVP) record/i,
+      slug,
+    );
+    assert.match(main, /52\.17/, slug);
     assert.doesNotMatch(main, /all from USDA nutrition data/i, slug);
     assert.doesNotMatch(
       main,
@@ -675,7 +804,12 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
       source:
         "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
       csv: "public/data/fiber-per-dollar-2026.csv",
-      counts: { exact: 38, proxy: 4, unresolved: 11 },
+      // Exact counts stay exact here: this test IS the per-CSV status audit.
+      // Post-T1 the fiber file resolves 42 rows to exact FDC records and 9 to
+      // proxies, and deliberately keeps 2 unresolved (popcorn kernels, whose
+      // 12.9 g/100g is derived rather than published, and frozen shelled edamame,
+      // which moved proxy -> unresolved).
+      counts: { exact: 42, proxy: 9, unresolved: 2 },
       total: 53,
     },
     {
@@ -683,7 +817,10 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
       source:
         "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
       csv: "public/data/protein-per-dollar-2026.csv",
-      counts: { exact: 36, proxy: 5, unresolved: 8 },
+      // T1 resolved every previously unresolved protein row: 39 exact FDC records
+      // and 10 proxies, one of which (TVP) is a manufacturer label because USDA
+      // publishes no textured vegetable protein record.
+      counts: { exact: 39, proxy: 10, unresolved: 0 },
       total: 49,
     },
   ];
@@ -705,7 +842,12 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
 
     for (const [status, count] of Object.entries(study.counts)) {
       const statusWord = status === "proxy" ? "prox(?:y|ies)" : status;
-      const statusClaim = new RegExp(`${count}[^.]{0,80}${statusWord}`, "i");
+      // countWord keeps the claim assertable when a class empties out: the copy
+      // says "no unresolved rows", never "0 unresolved rows".
+      const statusClaim = new RegExp(
+        `${countWord(count)}[^.]{0,80}${statusWord}`,
+        "i",
+      );
       assert.match(source, statusClaim, `${study.slug} source ${status}`);
       assert.match(rendered, statusClaim, `${study.slug} rendered ${status}`);
     }
@@ -715,11 +857,16 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
       /proxy[^.]{0,160}(?:not|isn't)[^.]{0,100}(?:exact|independently re-verified)/i,
       `${study.slug} should define the limit of a proxy`,
     );
-    assert.match(
-      publicClaims,
-      /unresolved[^.]{0,180}(?:not|no)[^.]{0,100}(?:match|independently re-verified)/i,
-      `${study.slug} should define the limit of an unresolved row`,
-    );
+    // Only demanded of a study that still has unresolved rows. The protein file no
+    // longer has any, so there is no unresolved limit for it to define; the proxy
+    // limit above is still required of both.
+    if (study.counts.unresolved > 0) {
+      assert.match(
+        publicClaims,
+        /unresolved[^.]{0,180}(?:not|no)[^.]{0,100}(?:match|independently re-verified)/i,
+        `${study.slug} should define the limit of an unresolved row`,
+      );
+    }
     for (const claim of universalVerificationClaims) {
       assert.doesNotMatch(publicClaims, claim, study.slug);
     }
@@ -732,17 +879,33 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
     renderedArticle(studies[0].slug),
   )}`;
 
+  // Popcorn kept unresolved status deliberately. Its 12.9 g per 100 g is DERIVED
+  // from FDC 167959 (air-popped) by a popping-yield conversion to the as-sold
+  // kernel basis; no published record supplies 12.9, so nothing can resolve it.
+  // The copy therefore must not promote it to a resolved USDA proxy.
   assert.equal(fiberAudit.statusFor("Popcorn kernels"), "unresolved");
-  assert.match(fiberClaims, /popcorn is unresolved/i);
+  assert.match(
+    fiberClaims,
+    /popcorn[^.]{0,60}(?:is|remains|stays) unresolved/i,
+    "fiber copy should still call popcorn unresolved",
+  );
+  assert.doesNotMatch(
+    fiberClaims,
+    /popcorn is (?:now )?a proxy/i,
+    "fiber copy must not present the derived popcorn figure as a resolved USDA proxy",
+  );
 });
 
-test("fiber derivatives preserve the popcorn observation only as an unresolved form mismatch", () => {
+test("fiber derivatives preserve the popcorn observation only as an unresolved derived value", () => {
+  // Joined statuses recomputed after T1 resolved 18 of the 19 open fiber rows.
+  // Each derivative now carries exactly one unresolved row, and in all three that
+  // row is popcorn kernels.
   const studies = [
     {
       slug: "high-fiber-snacks-per-dollar",
       source: "src/data/articles/high-fiber-snacks-per-dollar.md",
       csv: "public/data/high-fiber-snacks-per-dollar-2026.csv",
-      expected: { exact: 6, proxy: 0, unresolved: 4 },
+      expected: { exact: 7, proxy: 2, unresolved: 1 },
     },
     {
       slug: "grains-fiber-per-dollar-ranked",
@@ -754,7 +917,7 @@ test("fiber derivatives preserve the popcorn observation only as an unresolved f
       slug: "one-dollar-fiber-what-it-buys",
       source: "src/data/articles/one-dollar-fiber-what-it-buys.md",
       csv: "public/data/one-dollar-fiber-what-it-buys-2026.csv",
-      expected: { exact: 12, proxy: 1, unresolved: 2 },
+      expected: { exact: 12, proxy: 2, unresolved: 1 },
     },
   ];
   const dataHtml = read("dist/data/index.html");
@@ -783,26 +946,26 @@ test("fiber derivatives preserve the popcorn observation only as an unresolved f
         dataset["@id"] ===
         `https://www.daily-life-hacks.com/${study.slug}/#dataset`,
     );
-    const statusClaim = new RegExp(
-      `${audit.counts.exact} exact USDA matches[^.]{0,120}` +
-        `${audit.counts.proxy} close USDA prox(?:y|ies)[^.]{0,120}` +
-        `${audit.counts.unresolved} unresolved rows?`,
-      "i",
-    );
+    const statusClaim = statusClaimFor(audit.counts);
 
     assert.deepEqual(audit.counts, study.expected, study.slug);
     assert.equal(audit.statusFor("Popcorn kernels"), "unresolved", study.slug);
     assert.match(source, statusClaim, `${study.slug} source audit counts`);
     assert.match(main, statusClaim, `${study.slug} rendered audit counts`);
     assert.match(caption, statusClaim, `${study.slug} source caption`);
+    // The disclosure moved from "USDA's 14.5 is air-popped while we priced unpopped
+    // kernels" to naming the record it was derived from: FDC 167959 (air-popped),
+    // converted onto the unpopped-kernel basis, landing at 12.9 g/100g.
     assert.match(
       `${source}\n${main}`,
-      /14\.5[^.]{0,100}air-popped popcorn[^.]{0,160}unpopped kernels/i,
-      `${study.slug} direct form mismatch`,
+      /FDC 167959[^.]{0,120}air-popped popcorn[^.]{0,200}unpopped[- ]kernel/i,
+      `${study.slug} derived-basis disclosure`,
     );
+    // The recorded result is now 51.3 g per dollar, and because 12.9 is our own
+    // conversion rather than a published figure, the row stays unresolved.
     assert.match(
       `${source}\n${main}`,
-      /57\.7[^.]{0,100}(?:recorded|not verified|unverified|cannot)/i,
+      /51\.3[^.]{0,160}(?:unresolved|derived|our calculation|not verified)/i,
       `${study.slug} recorded-result boundary`,
     );
     assert.match(header, statusClaim, `${study.slug} article header`);
@@ -863,11 +1026,21 @@ test("the cheapest fiber menu no longer depends on the unresolved popcorn row", 
   );
 
   assert.equal(audit.total, 23);
-  assert.deepEqual(audit.counts, { exact: 16, proxy: 1, unresolved: 6 });
+  // The 23 grocery rows behind these menus join to the post-T1 fiber audit as 18
+  // exact and 5 proxy. None of them is unresolved now, which is exactly the point
+  // of this test: the menu never leaned on the popcorn row.
+  assert.deepEqual(audit.counts, { exact: 18, proxy: 5, unresolved: 0 });
   assert.equal(audit.foods.includes("Popcorn kernels"), false);
+  // Built from the join rather than hardcoded, so the article stays pinned to
+  // whatever the parent audit currently says about these same 23 rows.
   assert.match(
     source,
-    /23 grocery rows[\s\S]{0,250}16 exact[\s\S]{0,250}1 close proxy[\s\S]{0,250}6 unresolved rows/i,
+    new RegExp(
+      `${audit.total} grocery rows[\\s\\S]{0,250}${audit.counts.exact} exact` +
+        `[\\s\\S]{0,250}${countWord(audit.counts.proxy)} close prox(?:y|ies)` +
+        `[\\s\\S]{0,250}${countWord(audit.counts.unresolved)} unresolved rows`,
+      "i",
+    ),
   );
   assert.match(
     source,
@@ -876,7 +1049,7 @@ test("the cheapest fiber menu no longer depends on the unresolved popcorn row", 
   assert.doesNotMatch(source, /Popcorn,\s*25g kernels/i);
 });
 
-test("public data tools expose popcorn's unresolved form mismatch wherever its values appear", () => {
+test("public data tools expose popcorn's unresolved derived value wherever it appears", () => {
   const calculatorHtml = read(
     "dist/tools/fiber-per-dollar-calculator/index.html",
   );
@@ -897,6 +1070,18 @@ test("public data tools expose popcorn's unresolved form mismatch wherever its v
   const databaseSource = read(
     "src/pages/food-value-database/index.astro",
   );
+  // Popcorn's published figures are read out of the CSV instead of frozen at
+  // 57.7 / 14.5 / rank 5. The unit error (USDA's air-popped fiber density divided
+  // by the price of unpopped kernels) was corrected to a derived kernel-basis
+  // 12.9 g/100g, 51.3 g per dollar, rank 7. What these surfaces owe the reader is
+  // whatever the CSV currently publishes, plus the unresolved status.
+  const fiberAudit = csvNutritionSourceAudit(
+    "public/data/fiber-per-dollar-2026.csv",
+  );
+  const popcorn = fiberAudit.rowFor("Popcorn kernels");
+
+  assert.ok(popcorn, "fiber CSV should still carry the popcorn row");
+  assert.equal(fiberAudit.statusFor("Popcorn kernels"), "unresolved");
 
   for (const [surface, main, row] of [
     ["calculator", calculatorMain, calculatorRow],
@@ -904,16 +1089,28 @@ test("public data tools expose popcorn's unresolved form mismatch wherever its v
     ["food database", databaseMain, databaseRow],
   ]) {
     assert.ok(row, `${surface} should render the popcorn row`);
-    assert.match(row, /57\.7/, `${surface} recorded value`);
+    assert.match(
+      row,
+      new RegExp(popcorn.fiber_g_per_dollar.replace(".", "\\.")),
+      `${surface} recorded value`,
+    );
     assert.match(
       row,
       /(?:unresolved|recorded,\s*(?:not verified|unresolved))/i,
       `${surface} status`,
     );
+    // The reason changed from a bare form mismatch to a stated derivation: the
+    // published 12.9 is our conversion of FDC 167959's air-popped value onto the
+    // as-sold kernel basis, and each surface has to say it is not a USDA figure.
     assert.match(
       `${main}\n${row}`,
-      /14\.5[^.]{0,120}air-popped popcorn[^.]{0,180}unpopped kernels/i,
-      `${surface} mismatch reason`,
+      /12\.9[\s\S]{0,60}DERIVED, not quoted[\s\S]{0,80}FDC 167959[\s\S]{0,120}air-popped/i,
+      `${surface} derived-basis reason`,
+    );
+    assert.match(
+      `${main}\n${row}`,
+      /Treat it as our calculation, not as a USDA figure/i,
+      `${surface} must not present the derived value as a USDA figure`,
     );
     assert.doesNotMatch(
       main,
@@ -923,9 +1120,21 @@ test("public data tools expose popcorn's unresolved form mismatch wherever its v
   }
 
   assert.match(calculatorMain, /Source match/i);
-  assert.match(calculatorMain, /38 exact matches/i);
-  assert.match(calculatorMain, /4 close proxies/i);
-  assert.match(calculatorMain, /11 unresolved rows/i);
+  // Derived from the fiber CSV instead of frozen at 38/4/11: the calculator
+  // summarises the same audit, so its numbers must track it (42 exact, 9 proxy,
+  // 2 unresolved after T1).
+  assert.match(
+    calculatorMain,
+    new RegExp(`${fiberAudit.counts.exact} exact matches`, "i"),
+  );
+  assert.match(
+    calculatorMain,
+    new RegExp(`${countWord(fiberAudit.counts.proxy)} close proxies`, "i"),
+  );
+  assert.match(
+    calculatorMain,
+    new RegExp(`${countWord(fiberAudit.counts.unresolved)} unresolved rows?`, "i"),
+  );
   assert.match(
     calculatorSource,
     /No verified winner: at least one selected row is unresolved/i,
@@ -942,15 +1151,22 @@ test("public data tools expose popcorn's unresolved form mismatch wherever its v
     "calculator basket should exclude unresolved projections",
   );
 
-  assert.match(statisticsRow, />5<\/td>/i);
+  // Rank read from the CSV, not frozen at 5. Correcting the unit error dropped
+  // popcorn from rank 5 to rank 7, behind pearled barley and navy beans.
+  assert.match(statisticsRow, new RegExp(`>${popcorn.rank}</td>`, "i"));
   assert.match(statisticsMain, /published rank and recorded values/i);
   assert.match(
     statisticsMain,
-    /unresolved rows\s+cannot\s+establish a verified winner/i,
+    /unresolved\s+rows\s+cannot\s+establish a verified winner/i,
   );
 
   assert.match(databaseMain, /Nutrition source match/i);
-  assert.match(databaseRow, /14\.5g/i);
+  // Density read from the CSV, not frozen at 14.5g: the published per-100g figure
+  // is now the derived kernel-basis 12.9g.
+  assert.match(
+    databaseRow,
+    new RegExp(`${popcorn.fiber_g_per_100g.replace(".", "\\.")}g`, "i"),
+  );
   assert.match(databaseRow, /Recorded,\s*unresolved/i);
   assert.match(databaseSource, /\["Fiber source match"/);
   assert.match(databaseSource, /fiberSourceStatus/);
@@ -960,16 +1176,21 @@ test("flagship provenance metadata carries CSV-derived audit limits across every
   const studies = [
     {
       slug: "fiber-per-dollar-cheapest-high-fiber-foods",
+      // Post-T1 per-CSV audit: 42 exact, 9 proxy, 2 deliberately unresolved.
       csv: "public/data/fiber-per-dollar-2026.csv",
-      expected: { exact: 38, proxy: 4, unresolved: 11 },
+      expected: { exact: 42, proxy: 9, unresolved: 2 },
       extraClaim: null,
     },
     {
       slug: "protein-per-dollar-cheapest-protein-sources",
+      // Post-T1 per-CSV audit: 39 exact, 10 proxy, nothing unresolved left.
       csv: "public/data/protein-per-dollar-2026.csv",
-      expected: { exact: 36, proxy: 5, unresolved: 8 },
+      expected: { exact: 39, proxy: 10, unresolved: 0 },
+      // The old claim guarded a mismatch that no longer exists. The exception that
+      // still has to reach every surface is that TVP is a proxy sourced to the
+      // manufacturer label at 52.17 g/100g because USDA has no record for it.
       extraClaim:
-        /TVP is unresolved[^.]{0,160}recorded product-label value no longer matches the current product page/i,
+        /TVP is a proxy:[^.]{0,200}sourced to the manufacturer label at 52\.17 grams per 100 grams/i,
     },
   ];
   const dataHtml = read("dist/data/index.html");
@@ -992,12 +1213,7 @@ test("flagship provenance metadata carries CSV-derived audit limits across every
         dataset["@id"] ===
         `https://www.daily-life-hacks.com/${study.slug}/#dataset`,
     );
-    const statusClaim = new RegExp(
-      `${audit.counts.exact} exact USDA matches[^.]{0,120}` +
-        `${audit.counts.proxy} close USDA prox(?:y|ies)[^.]{0,120}` +
-        `${audit.counts.unresolved} unresolved rows`,
-      "i",
-    );
+    const statusClaim = statusClaimFor(audit.counts);
     const surfaces = {
       header,
       "visible catalog row": row,
@@ -1016,9 +1232,12 @@ test("flagship provenance metadata carries CSV-derived audit limits across every
         `${study.slug} ${surface}`,
       );
       assert.match(text, statusClaim, `${study.slug} ${surface}`);
+      // Scoped to the classes the study actually has. With no unresolved protein
+      // rows left, its surfaces correctly say "proxy rows are not independently
+      // re-verified"; the fiber surfaces still have to name both classes.
       assert.match(
         text,
-        /proxy and unresolved rows are not independently re-verified/i,
+        reverificationClaimFor(audit.counts),
         `${study.slug} ${surface}`,
       );
       assert.doesNotMatch(
@@ -1057,11 +1276,33 @@ test("methodology reports the flagship FDC-link coverage derived from both CSVs"
   const rendered = visibleMain(read("dist/methodology/index.html"));
   const publicClaims = `${source}\n${rendered}`;
 
-  assert.deepEqual(combined, { exact: 74, proxy: 9, unresolved: 19 });
-  assert.equal(linked, 83);
+  // Combined post-T1 audit of the two flagship CSVs (53 fiber + 49 protein = 102
+  // rows): 81 exact, 19 proxy, 2 unresolved. T1 closed 18 of the 19 open rows.
+  assert.deepEqual(combined, { exact: 81, proxy: 19, unresolved: 2 });
+
+  // The methodology sentence is specifically about rows that expose an FDC ID and a
+  // direct record link, which is NOT the same set as exact+proxy. TVP is proxy-status
+  // but label-sourced, so it is resolved and still has no FDC ID to link. Counting
+  // exact+proxy here would demand the page claim 100 links when only 99 exist.
+  const fdcLinkedRows = [
+    "public/data/fiber-per-dollar-2026.csv",
+    "public/data/protein-per-dollar-2026.csv",
+  ].reduce((total, path) => {
+    const lines = read(path).trim().split(/\r?\n/);
+    const header = parseCsvLine(lines[0]);
+    const idIndex = header.indexOf("nutrition_source_id");
+    return (
+      total +
+      lines
+        .slice(1)
+        .map(parseCsvLine)
+        .filter((row) => /^FDC \d+$/.test((row[idIndex] ?? "").trim())).length
+    );
+  }, 0);
+  assert.equal(fdcLinkedRows, 99);
 
   for (const text of [source, rendered]) {
-    assert.match(text, new RegExp(`${linked}[^.]{0,80}rows`, "i"));
+    assert.match(text, new RegExp(`${fdcLinkedRows}[^.]{0,80}rows`, "i"));
     assert.match(text, new RegExp(`${combined.exact}[^.]{0,80}exact`, "i"));
     assert.match(text, new RegExp(`${combined.proxy}[^.]{0,80}prox`, "i"));
     assert.match(

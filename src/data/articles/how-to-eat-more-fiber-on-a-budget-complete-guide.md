@@ -18,7 +18,7 @@ faq:
   - question: "How much fiber should I eat per day?"
     answer: "The FDA's Daily Value for fiber is 28 grams per day. Individual needs vary, and federal guidance lists a range of roughly 22 to 34 grams for adults depending on age and sex. Americans average about 16 grams, so the practical move for many people is closing the gap gradually."
   - question: "Are dried beans really worth the effort over canned?"
-    answer: "If cost is the priority, yes. In our analysis, dry pinto beans delivered about 2.5 times more fiber per dollar than canned black beans, roughly 71 grams per dollar versus 28. Canned beans are still a solid value and much better than most fresh options, so keep some on the shelf for lazy nights. A same-day quick soak also removes the overnight planning problem."
+    answer: "If cost is the priority, yes. In our analysis, dry pinto beans delivered about twice as much fiber per dollar as canned black beans, roughly 71 grams per dollar versus 34. Canned beans are still a solid value and much better than most fresh options, so keep some on the shelf for lazy nights. A same-day quick soak also removes the overnight planning problem."
   - question: "How fast should I increase my fiber intake?"
     answer: "Slowly. Jumping from roughly 16 grams a day to 35 overnight may cause gas, bloating, or cramps. Federal health guidance recommends adding fiber a little at a time and drinking enough liquids as you increase it."
 ---
@@ -58,7 +58,7 @@ We published the full 53-food ranking in our [fiber per dollar study](/fiber-per
 | Whole wheat flour | 77.8 g |
 | Green split peas (dry) | 71.0 g |
 | Pinto beans (dry) | 70.8 g |
-| Popcorn kernels — unresolved form match | 57.7 g recorded, not verified |
+| Popcorn kernels | 51.3 g |
 | Rolled oats | 35.8 g |
 | Frozen green peas | 17.6 g |
 | Fresh broccoli crowns | 6.1 g |
@@ -66,11 +66,11 @@ We published the full 53-food ranking in our [fiber per dollar study](/fiber-per
 
 ![Horizontal bar chart showing how many grams of fiber one dollar buys across eight grocery foods](/images/fiber-on-a-budget-value-chart.jpg)
 
-A few notes on that table. Whole wheat flour is technically the winner, but flour is an ingredient, not dinner; it only counts if you bake, so swap it into pancakes and muffins and let the fiber tag along for pennies. Put it up against the grain everyone assumes is the healthy choice and [the flour-versus-quinoa gap](/whole-wheat-flour-vs-quinoa-fiber-cost/) is not remotely close. That makes dry green split peas the real champion among foods you can put in a pot tonight: one $1.42 bag holds around 101 grams of fiber, or about three and a half Daily Values. That's spreadsheet context, not a three-day menu. Pinto beans sit within a rounding error of the peas and are arguably more versatile. The popcorn row is unresolved because it combines air-popped nutrition data with an unpopped-kernel price, so its recorded 57.7 cannot support a rank against lentils. Rolled oats are breakfast, solved, for about 28 cents per 100 grams. And frozen green peas deliver nearly triple what fresh broccoli crowns do, which is why the freezer aisle quietly beats the produce section.
+A few notes on that table. Whole wheat flour is technically the winner, but flour is an ingredient, not dinner; it only counts if you bake, so swap it into pancakes and muffins and let the fiber tag along for pennies. Put it up against the grain everyone assumes is the healthy choice and [the flour-versus-quinoa gap](/whole-wheat-flour-vs-quinoa-fiber-cost/) is not remotely close. That makes dry green split peas the real champion among foods you can put in a pot tonight: one $1.42 bag holds around 101 grams of fiber, or about three and a half Daily Values. That's spreadsheet context, not a three-day menu. Pinto beans sit within a rounding error of the peas and are arguably more versatile. The popcorn row is flagged as a proxy rather than an exact match, because USDA publishes no nutrition record for unpopped kernels; converting the air-popped record to a kernel basis lands popcorn at 51.3 grams per dollar and seventh place overall. Rolled oats are breakfast, solved, for about 28 cents per 100 grams. And frozen green peas deliver nearly triple what fresh broccoli crowns do, which is why the freezer aisle quietly beats the produce section.
 
 At the very bottom sit fresh blueberries at 2.5 grams per dollar, and price isn't carrying the blame here: [ranked on fiber content alone](/best-high-fiber-foods-ranked-by-fiber-content/) they still only manage 2.4 grams per 100 grams. Berries aren't bad food. They're just a terrible fiber strategy. Buy them because you love them, not for the grams. Bananas are the exception that proves the rule: at just under 12 grams of fiber per dollar, they're the best fresh fruit value on the list, which is exactly why one shows up in the sample day below.
 
-One more number worth knowing: dry beans beat canned by about 2.5 times per dollar. Canned is still a genuinely good middle option, and if the only thing keeping you from dry beans is the overnight soak, the [same-day quick soak method](/how-to-quick-soak-dried-beans-same-day/) deletes that excuse in about an hour.
+One more number worth knowing: dry beans beat canned by about 2 times per dollar. Canned is still a genuinely good middle option, and if the only thing keeping you from dry beans is the overnight soak, the [same-day quick soak method](/how-to-quick-soak-dried-beans-same-day/) deletes that excuse in about an hour.
 
 Want to run your own matchups? The [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/) compares any two foods and does the nutrient math for you. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles the other question that tiny shelf labels make unnecessarily annoying: which package is actually cheaper per ounce. And if you're rebuilding the whole grocery run, not just the fiber part, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) and this [budget shopping list](/grocery-shopping-list-for-healthy-eating-on-a-budget/) cover the rest of the cart.
 
@@ -84,7 +84,7 @@ Under three dollars if you build it from dry goods. Talk is cheap. So is this. H
 | Breakfast | One banana | 3.1 | $0.17 |
 | Lunch | Split pea soup, a third of a cup dry peas (65 g) | 14.4 | $0.20 |
 | Lunch | One carrot, tossed in the soup | 1.7 | $0.10 |
-| Snack | Popcorn, three tablespoons of kernels (30 g) | 4.4 | $0.08 |
+| Snack | Popcorn, three tablespoons of kernels (30 g) | 3.9 | $0.08 |
 | Dinner | Pinto beans, a quarter cup dry (50 g) | 7.8 | $0.11 |
 | Dinner | Brown rice, a quarter cup dry | 1.8 | $0.11 |
 | **Total** | | **~37** | **$0.88** |
@@ -133,9 +133,9 @@ The failure point for most people isn't the recipes. It's the Wednesday night wh
 
 ## What are the cheapest high-fiber snacks?
 
-Among exact-source snack rows, whole carrots lead at 16.1 grams of fiber per dollar. Dry chickpeas at 33.8 grams per dollar roast into something with chip-style crunch, although that requires cooking rather than opening a ready-made snack. The table's 57.7-gram popcorn result is unresolved because its nutrition value and priced form do not match. Snacks are where most fiber plans go to die, because the snack aisle is engineered to win. The counter is having cheap crunchy things ready.
+Popcorn kernels lead the snack rows outright at 51.3 grams of fiber per dollar, though on a proxy source rather than an exact USDA match. Among exact-source snack rows, whole carrots lead at 16.1 grams of fiber per dollar. Dry chickpeas at 33.8 grams per dollar roast into something with chip-style crunch, although that requires cooking rather than opening a ready-made snack. Snacks are where most fiber plans go to die, because the snack aisle is engineered to win. The counter is having cheap crunchy things ready.
 
-Popcorn can still be an inexpensive whole-grain snack, and the [popcorn topping ideas](/high-fiber-popcorn-toppings-healthy/) keep it from becoming a butter delivery system. The [popcorn vs potato chips comparison](/popcorn-vs-potato-chips-fiber-comparison/) supports the ounce-for-ounce fiber difference for air-popped popcorn, while the [popcorn against almonds](/popcorn-vs-almonds-fiber-cost/) page explains why the current source audit cannot support a per-dollar winner.
+Popcorn can still be an inexpensive whole-grain snack, and the [popcorn topping ideas](/high-fiber-popcorn-toppings-healthy/) keep it from becoming a butter delivery system. The [popcorn vs potato chips comparison](/popcorn-vs-potato-chips-fiber-comparison/) supports the ounce-for-ounce fiber difference for air-popped popcorn, while the [popcorn against almonds](/popcorn-vs-almonds-fiber-cost/) page puts kernels at about 5.8 times the fiber per dollar of almonds.
 
 Two more that earn their shelf space: [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/), which turn a 33.8-grams-per-dollar dry good into something with chip-style crunch, and [no-bake energy balls](/no-bake-high-fiber-energy-balls-recipe/) for the 3 PM moment when you'd otherwise raid the vending machine.
 

@@ -64,7 +64,7 @@ The one real exception NDSU flags is corn on the cob, which should be thawed par
 
 ## Is any of this worth the trouble?
 
-For the price, yes. In our July 2026 price check, frozen green peas delivered 17.6 grams of fiber per dollar and frozen green beans 11.2, against 6.1 for fresh broccoli crowns. That's in [frozen vs fresh vegetables on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/), and the wider case for the freezer aisle sits in [frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/).
+For the price, yes. In our July 2026 price check, frozen green peas delivered 17.6 grams of fiber per dollar and frozen green beans 10.8, against 6.1 for fresh broccoli crowns. That's in [frozen vs fresh vegetables on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/), and the wider case for the freezer aisle sits in [frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/).
 
 *Cost figures: USDA FoodData Central nutrient values plus single-store US prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 

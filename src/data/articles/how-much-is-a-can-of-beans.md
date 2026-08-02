@@ -21,7 +21,7 @@ faq:
   - question: "Is a can of beans cheaper than dried beans?"
     answer: "Not per gram of protein. Canned black beans returned 30.1 grams of protein per dollar against 81.0 for the same bean bought dry, about a 2.7 times gap. In absolute terms a can is still very cheap food at $0.88. You are paying for someone else's cooking time and for shipping the water the beans were cooked in."
   - question: "Which canned beans are the cheapest?"
-    answer: "Of the three we priced, canned black beans were both the cheapest can at $0.88 and the best value at 30.1 grams of protein and 27.9 grams of fiber per dollar. Kidney beans and chickpeas both sat at $0.98. We only audited those three, so we cannot say where canned cannellini, pinto, or navy beans land."
+    answer: "Of the three we priced, canned black beans were both the cheapest can at $0.88 and the best value at 30.1 grams of protein and 34.4 grams of fiber per dollar. Kidney beans and chickpeas both sat at $0.98. We only audited those three, so we cannot say where canned cannellini, pinto, or navy beans land."
   - question: "How much protein do you get for a dollar of canned beans?"
     answer: "About 22 to 30 grams depending on the bean, which is more than most animal proteins return for the same dollar. Canned black beans led our three at 30.1 grams per dollar. That may help if you are trying to raise protein intake without raising the grocery bill, though dry beans still return roughly two and a half times more."
 ---
@@ -62,7 +62,7 @@ Here's the thing though. A can at 88 cents is still one of the cheapest sources 
 
 ## What does a can of beans actually get you?
 
-About 26.5 grams of protein and 24.6 grams of fiber from the black beans, which is roughly 53 percent of the FDA's 50 gram protein Daily Value and 88 percent of the 28 gram fiber Daily Value. From one can. For 88 cents.
+About 26.5 grams of protein and 30.3 grams of fiber from the black beans, which is roughly 53 percent of the FDA's 50 gram protein Daily Value and slightly over 100 percent of the 28 gram fiber Daily Value. From one can. For 88 cents.
 
 That fiber number is the one nobody expects, and it puts canned black beans ahead of every fresh fruit and vegetable we priced in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). If you're currently nowhere near 28 grams a day, a whole can at once is a jump your gut may notice, so build up gradually.
 
@@ -70,7 +70,7 @@ We broke the per can gram totals down properly in [how much protein is in a can 
 
 ## Which can is the best value?
 
-Black beans, on every measure we have. Cheapest can, most protein per dollar at 30.1 grams, most fiber per dollar at 27.9 grams. That's a clean sweep, and it happens to be the most useful bean in a home kitchen anyway.
+Black beans, on every measure we have. Cheapest can, most protein per dollar at 30.1 grams, most fiber per dollar at 34.4 grams. That's a clean sweep, and it happens to be the most useful bean in a home kitchen anyway.
 
 Kidney beans and chickpeas both landed at $0.98 with slightly lower returns, 23.4 and 22.0 grams of protein per dollar. The gap is real but it's small enough that you should buy the bean your recipe wants. Chickpeas become [hummus](/high-fiber-hummus-recipe-homemade/) and [roasted chickpea snacks](/crispy-roasted-chickpeas-high-fiber-snack/). Kidney beans are chili beans, which is why they show up in [three bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/). Black beans go into everything else.
 

@@ -20,7 +20,7 @@ faq:
   - question: "What are good cheap dinner ideas for a family of four under $10?"
     answer: "Most of the dinners on this list feed four for well under $10. A pot of pinto beans and brown rice for four priced out at $1.52 total, black bean tacos at $2.00, and drumsticks with rice and peas at $3.76. Even a three can chili came in at $3.72 for four servings."
   - question: "Are cheap dinners actually filling?"
-    answer: "The bean dinners carried the most volume for the money. Split pea soup showed 20.8 g of protein and 20.0 g of fiber a serving at $0.28, and pasta with black beans hit 27.1 g of protein with 21.5 g of fiber for $0.70. Protein and fiber together may help a meal hold longer than a plate of plain starch."
+    answer: "The bean dinners carried the most volume for the money. Split pea soup showed 20.8 g of protein and 20.0 g of fiber a serving at $0.28, and pasta with black beans hit 27.1 g of protein with 24.4 g of fiber for $0.70. Protein and fiber together may help a meal hold longer than a plate of plain starch."
   - question: "How much should a cheap dinner cost per person?"
     answer: "Our costed dinners ran from $0.28 to $1.88 a serving, and the whole spread comes down to the anchor. A dry bean anchor kept dinners under about $0.60. Ground beef pushed the same shape of plate to $1.88 because beef ran $6.75 a pound and returned only 11.5 g of protein per dollar."
   - question: "Is it cheaper to cook dinner or buy fast food?"
@@ -39,7 +39,7 @@ Every number in the ten-dinner table below comes from the USDA-backed rows of ou
 | Barley bowl with an egg | 60 g barley, frozen broccoli, 1 egg | $0.66 | 12.2 g | 12.4 g |
 | Navy bean stew | 90 g navy beans, carrot, onion | $0.56 | 20.1 g | 17.4 g |
 | Lentil soup | 90 g brown lentils, carrot, onion | $0.58 | 22.2 g | 13.3 g |
-| Pasta with black beans | 100 g whole wheat spaghetti, half a can of beans | $0.70 | 27.1 g | 21.5 g |
+| Pasta with black beans | 100 g whole wheat spaghetti, half a can of beans | $0.70 | 27.1 g | 24.4 g |
 | Drumsticks, rice, peas | 200 g drumsticks, 60 g rice, 120 g peas | $0.88 | 34.8 g | 5.4 g |
 | Chicken thigh, rice, cabbage | 113 g boneless thigh, rice, cabbage | $1.15 | 26.5 g | 3.8 g |
 | Ground beef, rice, peas | 100 g beef 80/20, rice, peas | $1.88 | 27.7 g | 5.4 g |
