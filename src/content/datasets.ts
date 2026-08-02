@@ -198,7 +198,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
       additionalSourceNote:
         "Sodium was pulled on 2026-08-02 from the same USDA record each row already cited in the fiber and protein studies; only rows those studies marked as exact matches were eligible, so 56 of 102 parent rows qualified",
       sourceAuditSummary:
-        "Every row is an exact USDA match, and the same pull reproduced all 74 fiber and protein values already audited into the parent CSVs with zero mismatches, confirming record identity",
+        "Every row is an exact USDA match, and the same pull reproduced all 74 fiber and protein values those records carry (38 fiber, 36 protein across the 56 foods) exactly as audited into the parent CSVs, with zero mismatches, confirming record identity",
     },
   },
   "high-fiber-snacks-per-dollar": {
