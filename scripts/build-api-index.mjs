@@ -259,8 +259,14 @@ async function main() {
       temporal_coverage: meta?.temporal ?? "2026",
       spatial_coverage: "United States",
       csv_url: `${SITE}/data/${fileName}`,
-      study_url: articleSlug ? `${SITE}/${articleSlug}/` : null,
-      article_slug: articleSlug,
+      // A dataset with no study article yet declares `studyUrl` in the
+      // registry so the API never advertises a slug that 404s.
+      study_url: meta?.studyUrl
+        ? `${SITE}${meta.studyUrl}`
+        : articleSlug
+          ? `${SITE}/${articleSlug}/`
+          : null,
+      article_slug: meta?.studyUrl ? null : articleSlug,
       api_url: `${SITE}/api/v1/foods?dataset=${resource.name}`,
       bytes: resource.bytes,
       hash: resource.hash,
