@@ -1,6 +1,6 @@
 ---
-title: "High-Fiber Fast Food Orders With Verified Nutrition"
-excerpt: "Compare verified high-fiber fast food orders by fiber, calories, protein, and sodium, with a dated official U.S. source for every row."
+title: "High-Fiber Fast Food: The Best Orders at 6 Chains"
+excerpt: "The best high-fiber fast food orders at 6 chains, ranked by fiber with calories, protein and sodium beside them, and a dated official source for every number."
 category: nutrition
 tags:
 - high fiber fast food
