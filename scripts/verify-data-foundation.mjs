@@ -7,13 +7,14 @@
  */
 
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { basename, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const PUBLIC_DATA = join(ROOT, "public", "data");
 const DIST_ROOT = join(ROOT, "dist-datasets");
+const MCP_DATA_ROOT = join(ROOT, "mcp-server", "data");
 const TERMS_URL = "https://www.daily-life-hacks.com/data-reuse/";
 const LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/";
 
@@ -162,6 +163,17 @@ export function validateDataFoundation() {
     }
     if (sha256Csv(publicCsv) !== sha256Csv(distCsv)) {
       errors.push(`${resource.name}: public and standalone CSV contents differ`);
+    }
+
+    // The MCP server ships its own copy of these CSVs and nothing kept it in
+    // sync, so it silently served pre-correction values (the popcorn unit error
+    // and the unsupported TVP density) for as long as they existed upstream.
+    // Only files it actually mirrors are checked; it does not carry every CSV.
+    const mcpCsv = join(MCP_DATA_ROOT, basename(resource.path));
+    if (existsSync(mcpCsv) && sha256Csv(publicCsv) !== sha256Csv(mcpCsv)) {
+      errors.push(
+        `${resource.name}: mcp-server/data copy is stale against public/data`,
+      );
     }
   }
 
