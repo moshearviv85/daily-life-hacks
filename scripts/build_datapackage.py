@@ -649,6 +649,18 @@ def build_resource(entry: dict, problems: list[str]) -> dict:
                 "path": study_url,
             }
         ],
+        # Repeated per resource, not only on the package. A consumer that pulls a
+        # single CSV never reads the package wrapper, so a package-level licence
+        # is invisible to exactly the machine audience these files are published
+        # for. The Frictionless spec allows licences at both levels for this
+        # reason, and the terms are identical to the package's.
+        "licenses": [
+            {
+                "name": "CC-BY-4.0",
+                "path": LICENSE_URL,
+                "title": "Creative Commons Attribution 4.0 International",
+            }
+        ],
         "schema": {
             "fields": fields,
             "missingValues": [""],

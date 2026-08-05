@@ -259,6 +259,12 @@ async function main() {
       temporal_coverage: meta?.temporal ?? "2026",
       spatial_coverage: "United States",
       csv_url: `${SITE}/data/${fileName}`,
+      // Repeated per dataset, not only at the top of the index. A client that
+      // pulls one dataset object never sees the index wrapper, so a top-level
+      // licence is invisible to exactly the machine audience this API exists
+      // for. Same terms as the index-level declaration.
+      license: "CC BY 4.0",
+      license_url: DATA_LICENSE_URL,
       // A dataset with no study article yet declares `studyUrl` in the
       // registry so the API never advertises a slug that 404s.
       study_url: meta?.studyUrl
