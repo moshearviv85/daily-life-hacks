@@ -1,5 +1,5 @@
 {
- "updated": "2026-07-31",
+ "updated": "2026-08-12",
  "round": 4,
  "pages": [
   {
@@ -454,7 +454,7 @@
   "internal_links": "PASS 12,719 anchors / 0 orphans",
   "seo_harness": "PASS 9/9 dist and live"
  },
- "next_action": "38 demand-carrying articles remain uncited, and 46 of the 93 demand articles still lack a quickAnswer. The wrong-subject-heading defect class (the pizza-crust shape) is still unaudited sitewide: it is numerically invisible and needs a different detector.",
+ "next_action": "Monitoring only. Nothing further is actionable by Claude or the owner this week. Next checkpoint ~2026-08-19: pull a fresh Coverage export and read one number, indexed count (121 now, 119 was the baseline). If it keeps climbing, the remaining constraint is crawl budget, which is bought with links: T2-T5 of the authority plan (Zenodo DOI, Hugging Face, data.world, Data Is Plural, r/datasets) are unblocked and need owner accounts only. Queued for the next deploy that is needed anyway, not worth one on its own: recipeCategory is missing on 42 of 80 recipe pages.",
  "known_tradeoffs": [
   "S-20 soft word-count warning now on 8 of 9 pages: verified sourcing adds words and the 1200-word ceiling is a style heuristic, not a quality rule. Flagged rather than resolved by deleting sourced content.",
   "tests/high-fiber-fast-food-guide.test.mjs asserted a verified falsehood (that Panera PDF 403s automated requests). Test corrected to the measured truth: default curl UA returns HTTP 200 and a 513,680-byte PDF; a Chrome UA is what gets 403."
@@ -470,5 +470,55 @@
   "real_defects_found_and_fixed": 3,
   "detector": "scripts/audit_extraction_surfaces.py",
   "note": "The detector caught an inconsistency the orchestrator itself introduced: after correcting the parfait chia row from 3.6 to 4.1 g, the quickAnswer and two FAQ answers still carried the old totals. Fixed."
+ },
+ "recovery": {
+  "headline": "Both channels recovered. Two separate technical causes, both found and fixed.",
+  "google": {
+   "cause": "functions/[[path]].js served noindex on canonical article URLs from 2026-05-18. Impressions fell 210/day to 2/day in 48 hours and stayed there for ~10 weeks. No Google penalty: manual actions and security issues both clean, confirmed by the owner.",
+   "fix_verified": "All sitemap URLs return 200 with index,follow to a Googlebot user agent. seo_regression_check.py --live passes 9/9.",
+   "impressions_per_day": {
+    "2026-07-31": 2,
+    "2026-08-03": 11,
+    "2026-08-06": 17,
+    "2026-08-09": 18
+   },
+   "pages_with_impressions": {
+    "2026-08-03": 22,
+    "2026-08-05": 32,
+    "2026-08-09": 37
+   },
+   "indexed": {
+    "baseline_2026-07-24": 119,
+    "trough": 118,
+    "2026-08-06": 121
+   },
+   "clicks": "First clicks since the collapse: 2026-08-06 (1), 2026-08-09 (2, on bran-muffins and easy-sourdough-discard).",
+   "accelerant": "50 URL-inspection index requests submitted by the owner across 2026-08-01..08-12. Requested pages returned at positions 2 to 15; an untouched, unrequested control page sat at 55 to 64."
+  },
+  "bing_ai_citations": {
+   "cause": "CC BY licence metadata stripped from datapackage.json on 2026-07-26 20:21. Citations fell 46 to 3 the next day and averaged ~5/day for 10 days.",
+   "why_the_first_restore_failed": "The licence was restored on 2026-07-29 at the PACKAGE level only. An AI consumer fetches a single CSV or one dataset object and never reads the wrapper, so it still saw no licence.",
+   "fix": "Declared per resource on 2026-08-05: datapackage.json 1 -> 25 declarations, and every dataset object in api-index-v1.json.",
+   "result_per_day": {
+    "2026-08-05": 3,
+    "2026-08-06": 7,
+    "2026-08-07": 28,
+    "2026-08-08": 33,
+    "2026-08-09": 23,
+    "2026-08-10": 45
+   },
+   "verdict": "Fully recovered. Pre-collapse typical range was 20-47/day with a peak of 51. Four sustained days at 23-45 confirm it. Clean natural experiment: the prediction was made in advance and a893205 was the only commit deployed in the window."
+  }
+ },
+ "still_not_indexed_breakdown_2026-08-09": {
+  "total": 605,
+  "excluded_by_noindex": 179,
+  "discovered_not_crawled": 178,
+  "page_with_redirect": 79,
+  "not_found_404": 70,
+  "alternative_page_proper_canonical": 64,
+  "crawled_not_indexed": 34,
+  "redirect_error": 1,
+  "note": "The 179 noindex entries are historical residue from the routing bug, not current state: no sitemap URL serves noindex today. Index requests force revalidation. The 178 discovered-not-crawled are a crawl-budget queue and index requests will NOT fix them; that needs links."
  }
 }
