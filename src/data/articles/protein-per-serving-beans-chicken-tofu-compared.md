@@ -1,6 +1,6 @@
 ---
-title: "Protein per Serving: Beans, Chicken, and Tofu Compared"
-excerpt: "Beans, chicken, tofu and pantry staples compared per real serving, with every gram traced to a named USDA FoodData Central record."
+title: "Protein per Serving: Chicken 26-35g, Beans 15g, Tofu 8-20g"
+excerpt: "USDA cooked servings: chicken breast 26 to 35 grams of protein, a cup of black beans about 15 grams, tofu 8 to 20 grams depending on the block."
 quickAnswer: >-
   Chicken wins per serving, but the gap is smaller than most comparisons make it
   look. USDA puts 3 to 4 ounces of cooked chicken breast at 26 to 35 grams of
@@ -14,7 +14,7 @@ tags: ["ProteinGuide", "MealPlanning", "PantryStaples", "BalancedMeals", "Nutrit
 image: "/images/protein-per-serving-beans-chicken-tofu-compared-main.jpg"
 imageAlt: "Plate with chicken tofu beans and grains arranged as protein portion examples"
 date: 2026-04-07
-dateModified: 2026-08-01
+dateModified: 2026-08-18
 publishAt: 2026-04-09T00:00:00.000Z
 author: "David Miller"
 featured: false

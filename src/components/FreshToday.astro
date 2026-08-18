@@ -57,6 +57,10 @@ const articlesJson = JSON.stringify(articles);
     return new Date(article.publishAt || article.date).getTime();
   }
 
+  function articleHref(slug) {
+    return "/" + String(slug || "").replace(/^\/+|\/+$/g, "") + "/";
+  }
+
   function buildCard(category, article) {
     const label = category === "recipes" ? "Recipe" : category === "tips" ? "Tip" : "Nutrition";
 
@@ -69,22 +73,26 @@ const articlesJson = JSON.stringify(articles);
       `;
     }
 
-    return `
-      <a href="/${article.slug}/" class="group block overflow-hidden rounded-xl border transition-shadow duration-300 hover:shadow-lg" style="border-color: var(--border-color); background-color: var(--card-bg);">
-        ${article.image ? `<div class="aspect-video overflow-hidden">
+    // Concatenate the href so crawlers never see a literal template-placeholder URL in the homepage HTML.
+    const media = article.image ? `<div class="aspect-video overflow-hidden">
           <picture>
             <source type="image/webp" srcset="${article.image.replace(/^\/images\//, '/images/opt/').replace(/\.jpg$/, '-400w.webp')} 400w, ${article.image.replace(/^\/images\//, '/images/opt/').replace(/\.jpg$/, '-800w.webp')} 800w, ${article.image.replace(/^\/images\//, '/images/opt/').replace(/\.jpg$/, '-1200w.webp')} 1200w" sizes="(max-width: 768px) 100vw, 400px" />
             <img src="${article.image}" alt="${article.imageAlt}" width="800" height="450" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
           </picture>
-        </div>` : `<div class="aspect-video flex items-center justify-center bg-gradient-to-br from-orange-50 to-slate-100 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:from-slate-800 dark:to-slate-900 dark:text-slate-300" role="img" aria-label="${article.imageAlt}">Daily Life Hacks</div>`}
-        <div class="p-4">
+        </div>` : `<div class="aspect-video flex items-center justify-center bg-gradient-to-br from-orange-50 to-slate-100 text-xs font-semibold uppercase tracking-wider text-slate-500 dark:from-slate-800 dark:to-slate-900 dark:text-slate-300" role="img" aria-label="${article.imageAlt}">Daily Life Hacks</div>`;
+
+    return (
+      '<a href="' +
+      articleHref(article.slug) +
+      '" class="group block overflow-hidden rounded-xl border transition-shadow duration-300 hover:shadow-lg" style="border-color: var(--border-color); background-color: var(--card-bg);">' +
+      media +
+      `<div class="p-4">
           <p class="text-xs font-bold uppercase tracking-widest mb-2" style="color: #F29B30;">${label}</p>
           <h3 class="text-lg font-bold leading-snug mb-2" style="color: var(--heading-color);">${article.title}</h3>
           <p class="text-sm leading-relaxed mb-3" style="color: var(--muted-color);">${article.excerpt}</p>
           <p class="text-xs" style="color: var(--label-color);">Released ${formatDate(article.publishAt || article.date)}</p>
-        </div>
-      </a>
-    `;
+        </div></a>`
+    );
   }
 
   function renderFreshToday() {

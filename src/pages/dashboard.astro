@@ -1397,6 +1397,15 @@ const IS_PRODUCTION_DASHBOARD = window.location.hostname === 'www.daily-life-hac
   || window.location.hostname === 'daily-life-hacks.com';
 const DASHBOARD_QUEUE = IS_PRODUCTION_DASHBOARD ? 'production' : 'staging';
 
+/** Site path without writing an unrendered template-literal href into the HTML source. Google was crawling those placeholders as 404s. */
+function sitePath(slug) {
+  return "/" + String(slug || "").replace(/^\/+|\/+$/g, "") + "/";
+}
+
+function siteAnchor(slug, label, style) {
+  return '<a href="' + sitePath(slug) + '" target="_blank" style="' + style + '">' + label + "</a>";
+}
+
 function initDashboardEnvironment() {
   const envBadge = document.getElementById('env-badge');
   if (envBadge) {
@@ -1769,13 +1778,13 @@ function renderBuildData() {
 
   // Missing web image table
   el('missing-web-tbody').innerHTML = d.images.missingWeb.map(a =>
-    `<tr><td><a href="/${a.slug}/" target="_blank" style="color:var(--orange);text-decoration:none">${a.slug}</a></td>
+    `<tr><td>${siteAnchor(a.slug, a.slug, "color:var(--orange);text-decoration:none")}</td>
      <td>${a.category}</td><td>${a.pub ? '<span class="badge badge-green">LIVE</span>' : '<span class="badge badge-gray">draft</span>'}</td></tr>`
   ).join('') || '<tr><td colspan="3" class="empty">None missing!</td></tr>';
 
   // Missing pin image table
   el('missing-pin-tbody').innerHTML = d.images.missingPin.map(a =>
-    `<tr><td><a href="/${a.slug}/" target="_blank" style="color:var(--orange);text-decoration:none">${a.slug}</a></td>
+    `<tr><td>${siteAnchor(a.slug, a.slug, "color:var(--orange);text-decoration:none")}</td>
      <td>${a.category}</td><td>${a.pub ? '<span class="badge badge-green">LIVE</span>' : '<span class="badge badge-gray">draft</span>'}</td></tr>`
   ).join('') || '<tr><td colspan="3" class="empty">None missing!</td></tr>';
 
@@ -1790,7 +1799,7 @@ function renderBuildData() {
       const pub = new Date(a.publishAt + 'T00:00:00');
       const daysLeft = Math.round((pub - today) / 86400000);
       return `<tr>
-        <td><a href="/${a.slug}/" target="_blank" style="color:var(--orange);text-decoration:none">${a.title}</a></td>
+        <td>${siteAnchor(a.slug, a.title, "color:var(--orange);text-decoration:none")}</td>
         <td>${a.category}</td>
         <td><strong>${a.publishAt}</strong></td>
         <td><span class="badge ${daysLeft <= 3 ? 'badge-red' : daysLeft <= 7 ? 'badge-orange' : 'badge-blue'}">${daysLeft}d</span></td>
@@ -1802,7 +1811,7 @@ function renderBuildData() {
   if (d.articles.lastPub) {
     const lp = d.articles.lastPub;
     el('last-pub-info').innerHTML = `
-      <strong><a href="/${lp.slug}" target="_blank" style="color:var(--orange);text-decoration:none">${lp.title}</a></strong>
+      <strong>${siteAnchor(lp.slug, lp.title, "color:var(--orange);text-decoration:none")}</strong>
       <span style="margin-left:.75rem" class="badge badge-blue">${lp.category}</span>
       <span style="margin-left:.75rem;color:var(--muted);font-size:.85rem">${lp.date}</span>`;
   }
@@ -2261,7 +2270,7 @@ function renderArticlesTable(rows) {
     <thead><tr><th>#</th><th>Title</th><th>Category</th><th>Date</th><th>Status</th></tr></thead>
     <tbody>${rows.map((a, i) => `<tr>
       <td style="color:var(--muted)">${i+1}</td>
-      <td><a href="/${a.slug}/" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600">${a.title}</a></td>
+      <td>${siteAnchor(a.slug, a.title, "color:var(--orange);text-decoration:none;font-weight:600")}</td>
       <td><span class="badge badge-gray">${a.category}</span></td>
       <td style="white-space:nowrap;color:var(--muted)">${a.date ?? '—'}</td>
       <td>${a.pub ? '<span class="badge badge-green">LIVE</span>' : a.publishAt ? `<span class="badge badge-orange">📅 ${a.publishAt}</span>` : '<span class="badge badge-gray">draft</span>'}</td>
@@ -2277,7 +2286,7 @@ function renderScheduledTable(rows) {
       const d = new Date(a.publishAt + 'T00:00:00');
       const dl = Math.round((d - today) / 86400000);
       return `<tr>
-        <td><a href="/${a.slug}/" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600">${a.title}</a></td>
+        <td>${siteAnchor(a.slug, a.title, "color:var(--orange);text-decoration:none;font-weight:600")}</td>
         <td><span class="badge badge-gray">${a.category}</span></td>
         <td><strong>${a.publishAt}</strong></td>
         <td><span class="badge ${dl<=3?'badge-red':dl<=7?'badge-orange':'badge-blue'}">${dl}d</span></td>
@@ -2295,7 +2304,7 @@ function renderPinsTable(rows) {
       <td style="font-weight:600;max-width:180px">${p.title}</td>
       <td><span class="badge badge-gray">${p.category}</span></td>
       <td style="font-size:.72rem;color:var(--muted);max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${p.board}">${p.board}</td>
-      <td><a href="/${p.slug}" target="_blank" style="color:var(--orange);text-decoration:none;font-size:.75rem">${p.slug}</a></td>
+      <td>${siteAnchor(p.slug, p.slug, "color:var(--orange);text-decoration:none;font-size:.75rem")}</td>
       <td><span class="badge badge-gray">${p.status}</span></td>
     </tr>`).join('')}</tbody>
   </table>`;
@@ -2307,7 +2316,7 @@ function renderImagesTable(rows) {
     <thead><tr><th>#</th><th>Article</th><th>Web Image</th><th>Pin Images</th></tr></thead>
     <tbody>${rows.map((img, i) => `<tr>
       <td style="color:var(--muted)">${i+1}</td>
-      <td><a href="/${img.slug}" target="_blank" style="color:var(--orange);text-decoration:none;font-weight:600;font-size:.8rem">${img.title}</a>
+      <td>${siteAnchor(img.slug, img.title, "color:var(--orange);text-decoration:none;font-weight:600;font-size:.8rem")}
         <div style="font-size:.7rem;color:var(--muted)">${img.slug}</div></td>
       <td>${img.hasWeb
         ? `<a href="${img.webPath}" target="_blank" style="color:var(--green);font-size:.8rem">✅ view</a>`
