@@ -122,6 +122,8 @@ test("production pipeline pin statuses are labeled as metadata, not live queue",
   assert.match(dashboard, /Pipeline metadata only\. Check the Pinterest Auto-Poster panel for the real production queue\./);
   assert.match(dashboard, /Staging pipeline status only\. This is not a live Pinterest production queue\./);
   assert.equal(dashboard.includes(">${publishStatus}</span>`"), false);
+  assert.equal(dashboard.includes('href="/${'), false);
+  assert.equal(dashboard.includes("href='/${"), false);
 });
 
 test("production dashboard gates pipeline pin publishing until production assets are live", () => {
