@@ -1,6 +1,6 @@
 ---
 title: "Oatmeal vs Grits: Which Has More Fiber? The Actual Numbers"
-excerpt: "USDA puts a cooked cup of oatmeal at 4.0g of fiber and a cooked cup of grits at 1.6 to 2.4g, depending on the type. Roughly double, not quadruple. Here's the full breakdown."
+excerpt: "A cooked cup of oatmeal has 4.0g fiber vs 1.6-2.4g in a cooked cup of grits, USDA. Roughly double, not quadruple. Milling, not the grain, makes the gap."
 category: nutrition
 tags:
   - fiber
@@ -11,7 +11,7 @@ tags:
 image: /images/oatmeal-vs-grits-fiber-content-main.jpg
 imageAlt: Bowl of oatmeal next to a bowl of grits on a breakfast table for a fiber comparison
 date: 2026-02-03
-dateModified: 2026-07-31
+dateModified: 2026-08-20
 author: "David Miller"
 featured: false
 editorsPick: false

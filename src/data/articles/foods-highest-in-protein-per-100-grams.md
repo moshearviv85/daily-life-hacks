@@ -1,6 +1,6 @@
 ---
 title: "Protein per 100 Grams in Our 49-Food Price Study"
-excerpt: "In our July 2026 price study of 49 grocery foods, the TVP row led at 52.17 g of protein per 100 g, sourced to the manufacturer label because USDA publishes no TVP record at all."
+excerpt: "TVP led our 49-food July 2026 grocery study at 52.17g protein per 100g (label proxy). Exact USDA matches: dry brown lentils 24.63g, drained sardines 24.62g."
 category: "nutrition"
 tags: ["foods highest in protein", "protein per 100g", "high protein foods", "protein content", "grocery data"]
 cluster: "budget-protein"
@@ -8,14 +8,15 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/foods-highest-in-protein-per-100-grams-main.jpg"
 imageAlt: "Bags of dry lentils, peanuts, and beans lined up beside a block of cheese and a pack of chicken breast on a counter"
 date: 2026-07-28
+dateModified: 2026-08-20
 author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: "Which food led protein per 100 grams in your 49-food July 2026 study?"
-    answer: "The TVP row led our 49-food July 2026 study at 52.17 grams per 100 grams, taken from the current manufacturer label because USDA FoodData Central publishes no TVP record at all. Among rows with an exact USDA food-and-form match in the study, dry brown lentils led at 24.63 g, followed by canned sardines in oil, drained, at 24.62 g."
+  - question: "Which foods have the most protein per 100 grams in your 49-food study?"
+    answer: "In our 49-food July 2026 grocery study, the TVP row led at 52.17 grams per 100 grams, taken from the current manufacturer label because USDA FoodData Central publishes no TVP record at all. Among rows with an exact USDA food-and-form match, dry brown lentils led at 24.63 g, followed by canned sardines in oil, drained, at 24.62 g."
   - question: "Which plant foods ranked highest in protein in your July 2026 study?"
     answer: "Within our 49-food dataset, the label-sourced TVP row is first at 52.17 g per 100 g. Among plant rows with exact USDA food-and-form matches, dry brown lentils led at 24.63 g, followed by dry red lentils at 23.91 g and dry green split peas at 23.12 g. The dry versus raw forms matter when comparing them with chicken breast."
   - question: "Where did eggs rank in your 49-food study?"

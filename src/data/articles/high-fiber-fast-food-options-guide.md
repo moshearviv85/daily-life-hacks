@@ -1,6 +1,6 @@
 ---
 title: "High-Fiber Fast Food: The Best Orders at 6 Chains"
-excerpt: "The best high-fiber fast food orders at 6 chains, ranked by fiber with calories, protein and sodium beside them, and a dated official source for every number."
+excerpt: "Highest-fiber fast food we checked: Chipotle veggie bowl 25g, Subway Veggie Patty Protein Bowl 19g. Ten orders, 6 chains, official nutrition dated July 2026."
 category: nutrition
 tags:
 - high fiber fast food
@@ -12,7 +12,7 @@ image: /images/high-fiber-fast-food-options-guide-main.jpg
 imageAlt: "Fast-casual grain bowl with black beans, greens, sweet potato, seeds, fruit, and a wrap at a serving counter"
 quickAnswer: "Across ten orders checked against each chain's own U.S. nutrition data on July 30, 2026, the most fiber came from a custom Chipotle veggie bowl with brown rice, black beans, pinto beans, fajita vegetables, guacamole, and romaine: 25 grams, 89% of the FDA's 28-gram Daily Value, at 725 calories and 1,130 milligrams of sodium. Of the fixed menu items among those ten, Subway's Veggie Patty Protein Bowl carries the most fiber at 19 grams for 540 calories and 1,550 milligrams of sodium, at participating locations only."
 date: 2026-01-21
-dateModified: 2026-07-30
+dateModified: 2026-08-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -20,7 +20,7 @@ whatsHot: false
 mustRead: false
 faq:
 - question: Which fast food order has the most fiber?
-  answer: Of the ten orders verified against official chain data on July 30, 2026, a custom Chipotle veggie bowl with brown rice, black beans, pinto beans, fajita vegetables, guacamole, and romaine has the most fiber at 25 grams. That total uses Chipotle's standard published portions. It is a custom build, not a fixed menu item, so the scoop sizes you receive can vary.
+  answer: A custom Chipotle veggie bowl with brown rice, black beans, pinto beans, fajita vegetables, guacamole, and romaine has the most fiber at 25 grams, of the ten orders verified against official chain data on July 30, 2026. That total uses Chipotle's standard published portions. It's a custom build, not a fixed menu item, so the scoop sizes you receive can vary. Of the fixed menu items, Subway's Veggie Patty Protein Bowl carries 19 grams.
 - question: Does the Chick-fil-A Cool Wrap have 14 grams of fiber?
   answer: Chick-fil-A's current U.S. product page lists the Cool Wrap menu item at 14 grams of fiber, 660 calories, 43 grams of protein, and 1,420 milligrams of sodium. The page's ingredient list includes the Avocado Lime Ranch dressing. Nutrition can change with location or customization, so match the listed build.
 - question: What is the highest-fiber single item at a fast food chain?
