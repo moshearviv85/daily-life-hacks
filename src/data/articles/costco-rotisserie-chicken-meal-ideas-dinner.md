@@ -1,6 +1,6 @@
 ---
 title: 5 Quick Costco Rotisserie Chicken Meal Ideas for Busy Nights
-excerpt: Stop staring at that plastic container on your counter. Turn your Costco rotisserie chicken into five fast, family-friendly dinners without the stress.
+excerpt: "Five Costco rotisserie chicken dinners in about 15 minutes: stir-fry, tacos, pesto pasta, no-cook salad, and naan pizzas. Shred it warm, eat it all week."
 category: recipes
 tags:
 - quick meals
@@ -12,7 +12,7 @@ tags:
 image: "/images/costco-rotisserie-chicken-meal-ideas-dinner-main.jpg"
 imageAlt: Pulled rotisserie chicken and fresh vegetables are arranged on a light wooden cutting board.
 date: 2026-04-28
-dateModified: 2026-07-16
+dateModified: 2026-08-20
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
@@ -35,6 +35,8 @@ steps:
   - Add the shredded chicken and cooked rice to the pan, stirring to combine.
   - Pour in the soy sauce and garlic powder, tossing everything together for 2 to 3 minutes until steaming.
 faq:
+  - question: "What can I make with Costco rotisserie chicken for dinner?"
+    answer: "Five fast dinners: a frozen-veg stir-fry, weeknight tacos, jar-pesto pasta, a 10-minute no-cook chicken salad, and naan flatbread pizzas. Each one is under 25 minutes once the bird is shredded. Shred it while it's still warm and you've got three nights of protein before the rest of the groceries are put away."
   - question: "How long is a Costco rotisserie chicken good for in the fridge?"
     answer: "A Costco rotisserie chicken stays fresh for three to four days in an airtight container in the refrigerator, which is the USDA's standard window for cooked poultry. To maintain the best quality, shred the meat off the bone while it is still warm before chilling. That makes it much easier to portion out for dinners through the week."
   - question: "Can you freeze rotisserie chicken for later use?"
@@ -44,6 +46,8 @@ faq:
   - question: "What is the best way to reheat rotisserie chicken without drying it out?"
     answer: "To keep the meat moist, reheat it in the oven at 350 degrees Fahrenheit with a splash of chicken broth or water in the bottom of the dish, covered tightly with foil. If you are using a microwave, cover the chicken with a damp paper towel and heat in short 30-second bursts. Adding a sauce or incorporating it into a moist dish like a stew also helps."
 ---
+Five Costco rotisserie chicken dinners, each under 25 minutes: stir-fry, tacos, pesto pasta, no-cook chicken salad, and naan pizzas.
+
 I have spent more time than I care to admit standing in the Costco checkout line, staring at a five-dollar bird and wondering if I actually have a plan for it. We all do it. It is the ultimate impulse buy that feels like a win until you get home and realize your kids won't just eat plain chicken three nights in a row.
 
 The beauty of a pre-cooked bird isn't just the price, it's the fact that the hardest part of dinner is already done. Raw chicken costs less per pound, and [thighs and breasts don't land in the same place on protein per dollar](/chicken-thighs-vs-breast-protein-cost/), but neither one cooks itself while you're stuck in traffic. You don't need a culinary degree to make this work, you just need a few pantry staples and about fifteen minutes. Here are the five dinners, every one of them under 25 minutes:

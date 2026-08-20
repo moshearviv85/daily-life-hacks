@@ -1,6 +1,6 @@
 ---
 title: "Fiber per 100 Grams in Our 53-Food Price Study"
-excerpt: "In our July 2026 price study of 53 grocery foods, chia seeds led at 34.4 g of fiber per 100 g, followed by whole flaxseed and dry split peas."
+excerpt: "Chia seeds led our 53-food July 2026 study at 34.4g fiber per 100g, then whole flaxseed at 27.3g and dry split peas at 22.2g. Dry weight, not servings."
 category: "nutrition"
 tags: ["high fiber foods", "best high fiber foods", "fiber content", "high fiber foods list", "grocery data"]
 cluster: "budget-fiber"
@@ -8,14 +8,15 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/best-high-fiber-foods-ranked-by-fiber-content-main.jpg"
 imageAlt: "Bowls of chia seeds, flaxseed, dry split peas, bran flakes, and dry black beans arranged in order on a wooden board"
 date: 2026-07-27
+dateModified: 2026-08-20
 author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: "Which food led fiber per 100 grams in your 53-food July 2026 study?"
-    answer: "Chia seeds led our July 2026 price study at 34.4 grams of fiber per 100 grams. Whole flaxseed came second at 27.3 grams and dry green split peas third at 22.2. Those forms are dry, which is part of why they concentrate more fiber by weight than the fresh produce in this 53-food comparison."
+  - question: "What foods are highest in fiber per 100 grams in your 53-food study?"
+    answer: "Chia seeds led our July 2026 price study of 53 grocery foods at 34.4 grams of fiber per 100 grams. Whole flaxseed came second at 27.3 grams and dry green split peas third at 22.2. Those forms are dry, which is part of why they concentrate more fiber by weight than the fresh produce in this 53-food comparison."
   - question: "Which foods from your 53-food study are practical for regular meals?"
     answer: "The ones you will actually finish. Within our study, dry green split peas carried 22.2 grams per 100 grams and dry black beans 15.5. The bran-flakes row is 18.3, but it uses a brand-specific POST USDA record as a proxy for the priced Great Value cereal. Spreading fiber across the day rather than loading it into one meal may feel more comfortable."
   - question: "Which fruits and vegetables ranked highest in your 53-food study?"

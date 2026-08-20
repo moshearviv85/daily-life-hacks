@@ -41,16 +41,16 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   const pizza = articleFrontmatter("comparing-fiber-content-different-pizza-crusts");
   assert.match(pizza.title, /2\.7g/);
   assert.match(pizza.title, /4\.2-5\.1g/);
-  assert.match(pizza.excerpt, /2\.7 grams/);
-  assert.match(pizza.excerpt, /4\.2 to 5\.1 grams/);
+  assert.match(pizza.excerpt, /2\.7g/);
+  assert.match(pizza.excerpt, /4\.2-5\.1g/);
 
   const protein = articleFrontmatter("protein-per-serving-beans-chicken-tofu-compared");
   assert.match(protein.title, /26-35g/);
   assert.match(protein.title, /15g/);
   assert.match(protein.title, /8-20g/);
-  assert.match(protein.excerpt, /26 to 35 grams/);
-  assert.match(protein.excerpt, /15 grams/);
-  assert.match(protein.excerpt, /8 to 20 grams/);
+  assert.match(protein.excerpt, /26-35g/);
+  assert.match(protein.excerpt, /15g/);
+  assert.match(protein.excerpt, /8-20g/);
 });
 
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
