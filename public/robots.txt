@@ -90,4 +90,5 @@ Disallow: /admin/
 Disallow: /.git/
 Disallow: /node_modules/
 
+# IndexNow key: /bfae002c508721fed055bda08154ede6.txt
 Sitemap: https://www.daily-life-hacks.com/sitemap-index.xml
