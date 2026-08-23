@@ -195,8 +195,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 25400,
-      "hash": "sha256:6bfe0f38bd6320ff15331a0751de966024fef2cab22a3c54edb238a04f90893c",
+      "bytes": 25403,
+      "hash": "sha256:2dd60b3048ff90d99df57320ba24edf1d72070f6a92f6b6b8828b2189a057607",
       "sources": [
         {
           "title": "Daily Life Hacks study: BLS Nutrition per Dollar, Latest Month by Region",
