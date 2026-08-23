@@ -4,8 +4,8 @@
  *
  * The old taxonomy produced hundreds of thin, noindex pages. High-impression
  * legacy tag URLs are handled explicitly by functions/[[path]].js; every
- * other historical tag URL is allowed to become a real 404 after its internal
- * links have been removed.
+ * other /tag or /tag/* path returns 410 so crawlers drop the leftover
+ * archives instead of keeping soft 404s.
  */
 export function getStaticPaths() {
   return [];

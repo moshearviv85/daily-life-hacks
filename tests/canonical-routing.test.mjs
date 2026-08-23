@@ -364,6 +364,30 @@ test("legacy garbage and removed supplement-adjacent URLs return gone", async ()
   }
 });
 
+test("unmapped WordPress tag archives return gone after explicit closest-hub 301s", async () => {
+  const cases = [
+    "https://www.daily-life-hacks.com/tag/",
+    "https://www.daily-life-hacks.com/tag",
+    "https://www.daily-life-hacks.com/tag/produceprep/",
+    "https://www.daily-life-hacks.com/tag/produceprep",
+    "https://www.daily-life-hacks.com/tag/unknown-leftover/",
+  ];
+
+  for (const source of cases) {
+    const assets = makeAssets(new Set());
+    const response = await onRequest(
+      makeContext(source, {
+        ASSETS: assets,
+      }),
+    );
+
+    assert.equal(response.status, 410);
+    assert.equal(response.headers.get("location"), null);
+    assert.equal(response.headers.get("x-robots-tag"), "noindex, follow");
+    assert.deepEqual(assets.calls, []);
+  }
+});
+
 test("search query garbage redirects to the homepage canonical URL", async () => {
   const assets = makeAssets(new Set());
 
