@@ -94,6 +94,11 @@ function normalizeLegacyPath(pathname) {
   return pathname.replace(/^\/+/, "").replace(/\/+$/, "");
 }
 
+/** WordPress tag archives that were never given a closest-hub 301. */
+function isRetiredTagArchive(legacyPath) {
+  return legacyPath === "tag" || legacyPath.startsWith("tag/");
+}
+
 function buildCanonicalUrl(targetPath, search = "") {
   const targetUrl = new URL(targetPath, CANONICAL_ORIGIN);
   targetUrl.search = search;
@@ -191,7 +196,9 @@ export async function onRequest(context) {
   const legacyPath = normalizeLegacyPath(originalPathname);
   const fullPathSlug = path.slice(1); // Remove leading slash
   const hasLegacyRule =
-    LEGACY_PERMANENT_REDIRECTS.has(legacyPath) || LEGACY_GONE_PATHS.has(legacyPath);
+    LEGACY_PERMANENT_REDIRECTS.has(legacyPath) ||
+    LEGACY_GONE_PATHS.has(legacyPath) ||
+    isRetiredTagArchive(legacyPath);
 
   if (
     (!shouldSkipRouting || hasLegacyRule) &&
@@ -210,7 +217,7 @@ export async function onRequest(context) {
       return Response.redirect(buildCanonicalUrl(legacyTarget, url.search), 301);
     }
 
-    if (LEGACY_GONE_PATHS.has(legacyPath)) {
+    if (LEGACY_GONE_PATHS.has(legacyPath) || isRetiredTagArchive(legacyPath)) {
       return new Response(null, {
         status: 410,
         headers: {
