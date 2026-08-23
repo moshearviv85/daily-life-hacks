@@ -65,3 +65,16 @@ test("API index generation is reproducible for one versioned data release", () =
     /build-api-index\.mjs && node scripts\/verify-data-foundation\.mjs/,
   );
 });
+
+test("BLS monthly refresh regenerates registration files when CSVs change", () => {
+  const workflow = read(".github/workflows/bls-monthly-refresh.yml");
+
+  assert.match(workflow, /python scripts\/build_datapackage\.py/);
+  assert.match(workflow, /node scripts\/build-api-index\.mjs/);
+  assert.match(workflow, /node scripts\/verify-data-foundation\.mjs/);
+  assert.match(workflow, /dist-datasets\/data\/bls-nutrition-per-dollar-latest\.csv/);
+  assert.doesNotMatch(
+    workflow,
+    /Registration files \(datapackage, API index, dist mirror\) are NOT regenerated/,
+  );
+});

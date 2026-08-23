@@ -13,11 +13,14 @@ name: BLS Nutrition per Dollar Monthly Refresh
 # this runs on the 21st, a day after the existing Price Watch job, to avoid two
 # jobs hammering the same API in the same hour.
 #
-# Registration files (datapackage, API index, dist mirror) are NOT regenerated
-# here. They carry byte counts and sha256 hashes of every CSV, and rebuilding
-# them from a cron job would let a data change rewrite the release descriptors
-# with nobody looking. This job commits the two CSVs only; a human runs
-# `npm run prebuild` and re-checks the data foundation before a release.
+# When the two CSVs change, this job also regenerates and commits the matching
+# registration files: datapackage hashes (public + standalone), the API index,
+# and the dist-datasets CSV mirror. Committing the CSVs alone left those
+# descriptors stale after the 2026-08-21 refresh (commit 6f88319). Then
+# `node scripts/verify-data-foundation.mjs` failed, Cloudflare Pages
+# `npm run build:checked` failed Saturday and Sunday, and IndexNow (Bing)
+# skipped two days. An unreviewed hash update of files this job just wrote is
+# better than a broken production deploy. Push to main is intentional.
 
 on:
   schedule:
@@ -49,13 +52,50 @@ jobs:
         with:
           python-version: '3.11'
 
-      # No pip install: the script is standard library only, on purpose, so
-      # this job cannot break on a dependency it does not need.
+      # No pip install: the timeseries script is standard library only, on
+      # purpose, so this job cannot break on a dependency it does not need.
 
       - name: Rebuild the BLS time series
         run: python scripts/build_bls_timeseries.py --years 10
 
-      - name: Commit only if the CSVs actually changed
+      - name: Detect CSV changes
+        id: csv
+        run: |
+          set -euo pipefail
+          MONTHLY="public/data/bls-nutrition-per-dollar-monthly.csv"
+          LATEST="public/data/bls-nutrition-per-dollar-latest.csv"
+          if git diff --quiet -- "$MONTHLY" "$LATEST"; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No change in the BLS CSVs. BLS has not published a new month yet, or the revisions were identical. Nothing to commit."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "BLS CSVs changed. Registration files will be regenerated and committed with them."
+          fi
+
+      # build-api-index.mjs imports esbuild (via Astro) to load datasets.ts.
+      - name: Set up Node
+        if: steps.csv.outputs.changed == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install Node dependencies
+        if: steps.csv.outputs.changed == 'true'
+        run: npm ci
+
+      - name: Mirror CSVs and regenerate registration files
+        if: steps.csv.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          cp -- public/data/bls-nutrition-per-dollar-monthly.csv dist-datasets/data/
+          cp -- public/data/bls-nutrition-per-dollar-latest.csv dist-datasets/data/
+          python scripts/build_datapackage.py
+          node scripts/build-api-index.mjs
+          node scripts/verify-data-foundation.mjs
+
+      - name: Commit CSVs and matching registration files
+        if: steps.csv.outputs.changed == 'true'
         run: |
           set -euo pipefail
 
@@ -65,10 +105,17 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add -- "$MONTHLY" "$LATEST"
+          git add -- \
+            "$MONTHLY" \
+            "$LATEST" \
+            dist-datasets/data/bls-nutrition-per-dollar-monthly.csv \
+            dist-datasets/data/bls-nutrition-per-dollar-latest.csv \
+            public/data/datapackage.json \
+            dist-datasets/datapackage.json \
+            public/data/api-index-v1.json
 
           if git diff --cached --quiet; then
-            echo "No change in the BLS CSVs. BLS has not published a new month yet, or the revisions were identical. Nothing to commit."
+            echo "Registration rebuild produced no file changes after the CSV update. Nothing to commit."
             exit 0
           fi
 
@@ -83,4 +130,4 @@ jobs:
           git push origin HEAD:main
 
           echo "Committed. Latest BLS month in the dataset: ${LATEST_MONTH}"
-          echo "Reminder: run \`npm run prebuild\` and \`node scripts/verify-data-foundation.mjs\` before the next data release so the datapackage hashes, the API index and the dist-datasets mirror match these CSVs."
+          echo "Registration files (datapackage, API index, dist-datasets mirror) were regenerated with the CSVs."
