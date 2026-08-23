@@ -1,6 +1,6 @@
 ---
 title: "Protein per Serving: Chicken 26-35g, Beans 15g, Tofu 8-20g"
-excerpt: "USDA cooked servings: chicken breast 26 to 35 grams of protein, a cup of black beans about 15 grams, tofu 8 to 20 grams depending on the block."
+excerpt: "USDA cooked servings: chicken breast 26-35g protein, a cup of black beans about 15g, tofu 8-20g per 3-4 oz. Named FoodData Central records, cooked basis."
 quickAnswer: >-
   Chicken wins per serving, but the gap is smaller than most comparisons make it
   look. USDA puts 3 to 4 ounces of cooked chicken breast at 26 to 35 grams of
@@ -14,7 +14,7 @@ tags: ["ProteinGuide", "MealPlanning", "PantryStaples", "BalancedMeals", "Nutrit
 image: "/images/protein-per-serving-beans-chicken-tofu-compared-main.jpg"
 imageAlt: "Plate with chicken tofu beans and grains arranged as protein portion examples"
 date: 2026-04-07
-dateModified: 2026-08-18
+dateModified: 2026-08-20
 publishAt: 2026-04-09T00:00:00.000Z
 author: "David Miller"
 featured: false
@@ -22,8 +22,8 @@ editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: "What is a normal protein serving size?"
-    answer: "A common reference is 3 to 4 ounces of cooked meat, poultry, or fish, about 3/4 to 1 cup of cooked beans or lentils, or 3 to 4 ounces of tofu. In USDA terms that is roughly 26 to 35 grams of protein from cooked chicken breast, about 15 to 18 grams from a cup of cooked beans or lentils, and 8 to 20 grams from tofu depending on the block. Your needs and appetite vary, so use these as starting points, not rules."
+  - question: "How much protein is in a serving of chicken vs beans vs tofu?"
+    answer: "USDA cooked servings put 3 to 4 ounces of chicken breast at 26 to 35 grams of protein, a cup of cooked black beans at about 15 grams, and tofu at 8 to 20 grams for the same 3 to 4 ounces. A cup of cooked lentils is about 18 grams. Tofu's range is the block: typical US extra firm sits near 8 to 11 grams, and 20 is USDA's calcium sulfate firm tofu, not the default."
   - question: "Is plant protein \"complete\"?"
     answer: "Some plant proteins like soy are considered complete. For most people, the bigger picture is variety across the day. Beans plus grains, tofu plus vegetables, and mixed meals can cover your bases without needing a perfect spreadsheet."
   - question: "Why do protein numbers look different on labels versus cooked portions?"
@@ -34,9 +34,11 @@ faq:
     answer: "Try a bean and rice bowl with salsa and cheese, or a tuna and white bean salad, or a tofu stir fry with frozen vegetables. Simple food wins."
 ---
 
+Cooked USDA servings put chicken breast at 26 to 35 grams of protein for 3 to 4 ounces, a cup of black beans at about 15 grams, and tofu at 8 to 20 grams for the same 3 to 4 ounces. That's the comparison. The rest is the named records, the raw-versus-cooked trap, and why tofu swings so hard.
+
 Protein math is the kind of thing people swear they do "in their head." Then they eat toast for lunch and wonder why they are hunting for snacks at 3 p.m.
 
-This is a practical protein per serving guide so you can look at beans, chicken, tofu, and pantry staples and think, "oh, that is what that means." Every number below traces to a specific USDA FoodData Central record with the cooked state named, because raw versus cooked moves these figures more than most charts admit.
+Every number below traces to a specific USDA FoodData Central record with the cooked state named, because raw versus cooked moves these figures more than most charts admit.
 
 If you're wondering what your daily target should even be, here's [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/). Once the serving math makes sense, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) turns it into a grocery plan.
 

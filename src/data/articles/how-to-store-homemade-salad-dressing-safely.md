@@ -1,6 +1,6 @@
 ---
 title: How to Store Homemade Salad Dressing Safely
-excerpt: How long homemade salad dressing really lasts in the fridge, type by type, plus the raw-garlic-in-oil rule that is an actual safety risk, not just a taste one.
+excerpt: "Refrigerate homemade dressing. Simple vinaigrette lasts up to 2 weeks; fresh garlic or herbs, 1 week; creamy mayo or dairy, 3-4 days. Garlic-in-oil: 4 days."
 quickAnswer: >-
   How long homemade salad dressing keeps depends entirely on what's in it.
   A simple vinaigrette holds up to 2 weeks refrigerated; add fresh onion, herbs,
@@ -22,12 +22,12 @@ tags:
 image: "/images/how-to-store-homemade-salad-dressing-safely-main.jpg"
 imageAlt: A clear glass bottle filled with golden salad dressing stands on a light wooden cutting board, surrounded by a lemon half and a garlic clove.
 date: 2026-04-28
-dateModified: 2026-07-30
+dateModified: 2026-08-20
 author: "David Miller"
 featured: false
 faq:
   - question: "How long does homemade salad dressing last in the fridge?"
-    answer: "It depends on what's in it. No federal cold-storage chart lists homemade dressing, so the vinaigrette numbers come from a single answer on Cooperative Extension's Ask Extension service: up to 2 weeks for a simple vinaigrette, up to 1 week once fresh onions, herbs, or citrus juice go in. Treat those as quality windows. For creamy mayo or dairy dressings, FoodSafety.gov's 3-to-4-day window for egg, chicken, ham, tuna, and macaroni salads is the closest published match. Two cases are tighter for safety rather than quality. Raw-egg dressing such as classic Caesar or homemade aioli is a same-day job: USDA advises against eating raw or undercooked eggs at all, and its 24-hour window applies only to dishes you then cook to 160°F. Raw garlic or fresh herbs in oil with no added acid needs 40°F or below for no more than 4 days, or freeze it."
+    answer: "A simple vinaigrette lasts up to 2 weeks refrigerated; add fresh onion, herbs, or citrus juice and it's about 1 week. Creamy mayo or dairy dressings get 3 to 4 days. No federal chart lists homemade dressing, so treat those as quality windows from the closest published references. Two tighter safety cases: raw-egg dressing like classic Caesar or aioli should be a same-day job, and raw garlic or fresh herbs in oil with no added acid needs 40°F or below for no more than 4 days, or the freezer."
   - question: "Do you need to refrigerate homemade salad dressing?"
     answer: "Yes. Store-bought bottles survive on a shelf because of preservatives and processing your mason jar doesn't have. FDA advises keeping the refrigerator at 40°F or below and getting perishable food back in the fridge within 2 hours. Anything with fresh garlic, herbs, dairy, or citrus juice goes straight into the fridge after you make it, and USDA says not to store perishable foods in the door, where temperatures swing the most."
   - question: "Is homemade garlic in oil dangerous?"
@@ -37,6 +37,8 @@ faq:
   - question: "Can you make homemade Caesar dressing with raw egg?"
     answer: "You can, but USDA advises against it. Classic Caesar and homemade aioli are built on raw egg yolk, and USDA's Food Safety and Inspection Service advises everyone against eating raw or undercooked egg yolks and whites or products containing raw or undercooked eggs, naming Caesar salad and homemade mayonnaise specifically. FSIS says to cook dishes containing raw eggs immediately, or refrigerate and cook them within 24 hours, which is far tighter than the 3-to-4-day window for other creamy dressings. If you want it uncooked, FSIS points to pasteurized in-shell eggs or egg products, which may be used safely without cooking, or heating the eggs with the liquid ingredients to 160°F before combining."
 ---
+Refrigerate homemade salad dressing. A simple vinaigrette holds up to 2 weeks in the fridge; add fresh onion, herbs, or citrus juice and it's about 1 week. Creamy mayo or dairy dressings get 3 to 4 days. Raw-egg Caesar is a same-day job, and raw garlic in oil with no acid is 4 days at 40°F or below, or the freezer.
+
 Store-bought Zesty Italian can sit in a pantry for a year and shrug. Your mason jar of lemon-garlic vinaigrette cannot. Homemade dressing is fresh, once-living ingredients with nothing holding the line behind them, unlike the bottled stuff packed with stabilizers and [more sugar than you'd guess](/hidden-sugars-popular-summer-salad-dressings/).
 
 Most of the time this is a waste-and-taste question. Once in a while, specifically when raw garlic meets a lot of oil, it's an actual food safety question. Here's how to tell those apart.

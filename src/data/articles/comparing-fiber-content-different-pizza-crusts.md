@@ -1,6 +1,6 @@
 ---
 title: "Pizza Crust Fiber: 2.7g Regular Slice, 4.2-5.1g Whole Wheat"
-excerpt: "A regular restaurant cheese pizza slice has about 2.7 grams of fiber. Whole wheat crust slices run 4.2 to 5.1 grams in USDA data."
+excerpt: "A regular restaurant cheese pizza slice has 2.7g fiber. Whole wheat crust slices run 4.2-5.1g in USDA data. Whole slice, not crust alone. Thin crust: 2.0g."
 category: nutrition
 tags:
 - high fiber
@@ -11,13 +11,13 @@ tags:
 image: "/images/comparing-fiber-content-different-pizza-crusts-main.jpg"
 imageAlt: Three distinct pizza crust cross-sections are shown from above, revealing their varied textures and compositions.
 date: 2026-04-28
-dateModified: 2026-08-18
+dateModified: 2026-08-20
 author: "David Miller"
 featured: false
 quickAnswer: "For the crust by itself, among the mainstream supermarket crusts in USDA's branded label data a serving runs roughly 1 to 5 grams of fiber depending on the base: about 1 gram for a plain refrigerated white-flour crust, 1 to 2 grams for cauliflower, 2 to 3 grams for whole wheat, and 5 grams for sprouted whole grain. Specialty high-fiber crusts built on wheat protein and oat fiber go well past that. For finished slices, USDA's FNDDS 2021-2023 data puts one large slice of cheese pizza on a regular restaurant crust at about 2.7 grams (2.3 g per 100 g), a thin-crust slice at about 2.0 grams, and a whole wheat crust slice at 4.2 to 5.1 grams, crust plus sauce and cheese together rather than the crust alone. Even the highest whole wheat slice stays under the 5.6 grams that would make a serving high in fiber by FDA's 20% Daily Value rule."
 faq:
-  - question: "Does pizza crust have fiber?"
-    answer: "Yes, but less than most people assume. USDA's FNDDS 2021-2023 data puts cheese pizza on a regular restaurant crust at 2.3 grams of fiber per 100 grams, which works out to about 2.7 grams for a large slice, or roughly 10 percent of the FDA's 28-gram Daily Value. That number covers the whole slice, sauce and cheese included, so the crust itself accounts for a bit less."
+  - question: "How much fiber is in pizza crust by type?"
+    answer: "USDA's FNDDS 2021-2023 data puts one large slice of cheese pizza on a regular restaurant crust at about 2.7 grams of fiber, a thin-crust slice at about 2.0 grams, and a whole wheat crust slice at 4.2 to 5.1 grams. That's the whole slice, sauce and cheese included. Stuffed crust sits at 2.5 grams per slice and thick restaurant crust at 2.9."
   - question: "Which pizza crust has the most fiber?"
     answer: "Whole wheat, out of the finished slices USDA analyzes for national averages. Whole wheat crust cheese pizza runs 3.5 to 3.9 grams of fiber per 100 grams, or 4.2 to 5.1 grams per slice, against 2.2 to 2.3 grams per 100 grams for regular restaurant crust. Crust-only label data in USDA's Branded Foods dataset goes higher still: Banza's chickpea crust reports 6.2 grams per 100 grams and Angelic Bakehouse's sprouted whole grain crust 10 grams. Those are manufacturer-submitted numbers for bare crust, not lab-analyzed national averages for a finished pizza, so the two sets don't compare directly."
   - question: "Is cauliflower pizza crust actually higher in fiber than white crust?"
