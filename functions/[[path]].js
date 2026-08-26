@@ -81,6 +81,10 @@ const LEGACY_GONE_PATHS = new Set([
   "sample-page/feed",
   "usual-excuses-made-by-high-conflict-parents",
   "wp-admin/*",
+  "wp-login.php",
+  "author",
+  "category/uncategorized",
+  "page/2",
   "overnight-oats-without-protein-powder-3-ways",
   "ten-minute-kitchen-reset-routine",
   "tag/crisp",
@@ -92,6 +96,23 @@ const LEGACY_GONE_PATHS = new Set([
 
 function normalizeLegacyPath(pathname) {
   return pathname.replace(/^\/+/, "").replace(/\/+$/, "");
+}
+
+/** Exact set match, plus `prefix/*` entries matching the prefix and nested paths. */
+function isLegacyGonePath(legacyPath) {
+  if (!legacyPath) return false;
+  if (LEGACY_GONE_PATHS.has(legacyPath)) return true;
+
+  for (const pattern of LEGACY_GONE_PATHS) {
+    if (!pattern.endsWith("/*")) continue;
+    const prefix = pattern.slice(0, -2);
+    if (!prefix) continue;
+    if (legacyPath === prefix || legacyPath.startsWith(`${prefix}/`)) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 /** WordPress tag archives that were never given a closest-hub 301. */
@@ -197,7 +218,7 @@ export async function onRequest(context) {
   const fullPathSlug = path.slice(1); // Remove leading slash
   const hasLegacyRule =
     LEGACY_PERMANENT_REDIRECTS.has(legacyPath) ||
-    LEGACY_GONE_PATHS.has(legacyPath) ||
+    isLegacyGonePath(legacyPath) ||
     isRetiredTagArchive(legacyPath);
 
   if (
@@ -217,7 +238,7 @@ export async function onRequest(context) {
       return Response.redirect(buildCanonicalUrl(legacyTarget, url.search), 301);
     }
 
-    if (LEGACY_GONE_PATHS.has(legacyPath) || isRetiredTagArchive(legacyPath)) {
+    if (isLegacyGonePath(legacyPath) || isRetiredTagArchive(legacyPath)) {
       return new Response(null, {
         status: 410,
         headers: {
