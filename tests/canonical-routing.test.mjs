@@ -347,6 +347,13 @@ test("legacy garbage and removed supplement-adjacent URLs return gone", async ()
     "https://www.daily-life-hacks.com/sample-page/",
     "https://www.daily-life-hacks.com/sample-page/feed/",
     "https://www.daily-life-hacks.com/wp-admin/*",
+    "https://www.daily-life-hacks.com/wp-admin/",
+    "https://www.daily-life-hacks.com/wp-admin",
+    "https://www.daily-life-hacks.com/wp-admin/css/login.min.css",
+    "https://www.daily-life-hacks.com/wp-login.php",
+    "https://www.daily-life-hacks.com/author/",
+    "https://www.daily-life-hacks.com/category/uncategorized/",
+    "https://www.daily-life-hacks.com/page/2/",
   ];
 
   for (const source of cases) {
@@ -362,6 +369,20 @@ test("legacy garbage and removed supplement-adjacent URLs return gone", async ()
     assert.equal(response.headers.get("x-robots-tag"), "noindex, follow");
     assert.deepEqual(assets.calls, []);
   }
+});
+
+test("live dashboard page is not treated as a gone WordPress leftover", async () => {
+  const assets = makeAssets(new Set(["/dashboard/"]));
+
+  const response = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/dashboard/", {
+      ASSETS: assets,
+    }),
+  );
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("location"), null);
+  assert.notEqual(response.headers.get("x-robots-tag"), "noindex, follow");
 });
 
 test("unmapped WordPress tag archives return gone after explicit closest-hub 301s", async () => {
