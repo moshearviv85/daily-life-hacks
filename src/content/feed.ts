@@ -1,5 +1,6 @@
 import { getCollection } from "astro:content";
 import { isReleased } from "./release";
+import { isIndexPruned } from "./index-prune.js";
 
 export const FEED_SITE = "https://www.daily-life-hacks.com";
 export const FEED_TITLE = "Daily Life Hacks";
@@ -22,7 +23,7 @@ export function absoluteFeedImage(image: string): string {
 
 export async function getFeedArticles() {
   return (await getCollection("articles"))
-    .filter((article) => isReleased(article))
+    .filter((article) => isReleased(article) && !isIndexPruned(article.id))
     .sort((a, b) => {
       const aDate = (a.data.dateModified ?? a.data.publishAt ?? a.data.date).valueOf();
       const bDate = (b.data.dateModified ?? b.data.publishAt ?? b.data.date).valueOf();

@@ -2,6 +2,11 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
+import {
+  INDEX_KEEP_PATHS,
+  INDEX_PRUNE_SLUGS,
+  INDEX_PROTECTED_SLUGS,
+} from "../src/content/index-prune.js";
 
 const ROOT = new URL("../", import.meta.url);
 const DIST = new URL("../dist/", import.meta.url);
@@ -235,4 +240,63 @@ test("Dataset and Recipe nodes retain current rich-result requirements", () => {
 
   assert.ok(datasets > 0, "expected Dataset nodes in indexable output");
   assert.ok(recipes > 0, "expected Recipe nodes in indexable output");
+});
+
+function locFor(path) {
+  const normalized = String(path).replace(/^\/+|\/+$/g, "");
+  return `${SITE}/${normalized}/`;
+}
+
+function robotsFor(url) {
+  return (metaContent(readFileSync(distHtmlFor(url), "utf8"), "robots") ?? "").toLowerCase();
+}
+
+test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay indexed", () => {
+  const entries = new Set(sitemapEntries().map((entry) => entry.loc));
+  const samplePrune = "cheap-dinner-ideas-cost-per-serving";
+  const keepFlagship = "fiber-per-dollar-cheapest-high-fiber-foods";
+
+  assert.equal(INDEX_PRUNE_SLUGS.size, 107);
+  assert.ok(!entries.has(locFor(samplePrune)), `${samplePrune} leaked into sitemap`);
+  assert.ok(existsSync(distHtmlFor(locFor(samplePrune))), `${samplePrune} must stay live`);
+  const pruneRobots = robotsFor(locFor(samplePrune));
+  assert.ok(pruneRobots.includes("noindex"), `${samplePrune} missing noindex`);
+  assert.ok(pruneRobots.includes("follow"), `${samplePrune} missing follow`);
+  assert.ok(!pruneRobots.includes("nofollow"), `${samplePrune} must remain follow`);
+
+  let noindexed = 0;
+  for (const slug of INDEX_PRUNE_SLUGS) {
+    const url = locFor(slug);
+    assert.ok(!entries.has(url), `pruned slug leaked into sitemap: ${slug}`);
+    assert.ok(existsSync(distHtmlFor(url)), `pruned page was deleted: ${slug}`);
+    const robots = robotsFor(url);
+    assert.ok(robots.includes("noindex"), `missing noindex: ${slug}`);
+    assert.ok(robots.includes("follow"), `missing follow: ${slug}`);
+    assert.ok(!robots.includes("nofollow"), `nofollow on live prune page: ${slug}`);
+    noindexed += 1;
+  }
+  assert.equal(noindexed, 107);
+
+  assert.ok(entries.has(locFor(keepFlagship)), `${keepFlagship} missing from sitemap`);
+  const keepRobots = robotsFor(locFor(keepFlagship));
+  assert.ok(keepRobots.includes("index"), `${keepFlagship} missing index`);
+  assert.ok(!keepRobots.includes("noindex"), `${keepFlagship} was noindexed`);
+  assert.ok(keepRobots.includes("follow"), `${keepFlagship} missing follow`);
+
+  for (const path of INDEX_KEEP_PATHS) {
+    const url = locFor(path);
+    assert.ok(entries.has(url), `KEEP URL missing from sitemap: ${path}`);
+    assert.ok(existsSync(distHtmlFor(url)), `KEEP page missing from dist: ${path}`);
+    const robots = robotsFor(url);
+    assert.ok(!robots.includes("noindex"), `KEEP URL was noindexed: ${path}`);
+    assert.ok(robots.includes("index"), `KEEP URL missing index: ${path}`);
+  }
+
+  for (const slug of INDEX_PROTECTED_SLUGS) {
+    const url = locFor(slug);
+    assert.ok(entries.has(url), `protected slug missing from sitemap: ${slug}`);
+    assert.ok(!robotsFor(url).includes("noindex"), `protected slug was noindexed: ${slug}`);
+  }
+
+  assert.ok(entries.has(`${SITE}/`), "homepage missing from sitemap");
 });

@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptImage from "./OptImage.astro";
 import { getReleaseTimestamp, isReleased } from "../content/release";
+import { isIndexPruned } from "../content/index-prune.js";
 import {
   CONTENT_CLUSTERS,
   inferLegacyCluster,
@@ -50,10 +51,11 @@ const allArticles = await getCollection("articles");
  * - Pin destinations are runtime 301s (CP2 Phase B), never collection ids.
  * - isReleased filters out future-dated (publishAt) articles that are
  *   still noindexed.
+ * - isIndexPruned filters the GSC thin-URL set (same noindex policy).
  * - The current article itself is excluded (no self-links).
  */
 const candidates = allArticles.filter(
-  (a) => a.id !== article.id && isReleased(a),
+  (a) => a.id !== article.id && isReleased(a) && !isIndexPruned(a.id),
 );
 
 const scored = candidates
