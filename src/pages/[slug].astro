@@ -11,6 +11,7 @@ import { getCollection, render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import OptImage from "../components/OptImage.astro";
 import { formatReleaseDate, isReleased } from "../content/release";
+import { isIndexPruned } from "../content/index-prune.js";
 import {
   DATASETS,
   DATA_LICENSE_URL,
@@ -493,9 +494,11 @@ if (article.data.faq && article.data.faq.length > 0) {
 const currentSlug = Astro.params.slug;
 /** Built pages are canonical-only (CP2 Phase B); keep guard if path ever drifts. */
 const isVariant = Boolean(currentSlug && currentSlug !== article.id);
-const robotsMeta = (!released || isVariant) ? "noindex, follow" : undefined;
+/** GSC thin-URL prune: live for humans, noindex + out of sitemap. */
+const indexPruned = isIndexPruned(article.id);
+const robotsMeta = (!released || isVariant || indexPruned) ? "noindex, follow" : undefined;
 /** Do not advertise rich-result entities for hidden or non-canonical pages. */
-const publishedSchemas = released && !isVariant ? allSchemas : undefined;
+const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : undefined;
 ---
 
 <BaseLayout

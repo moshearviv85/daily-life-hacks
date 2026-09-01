@@ -121,11 +121,11 @@ test("Dataset schema remains attached to its canonical article and CSV", () => {
 test("future and variant pages are noindex and do not emit rich-result schemas", () => {
   assert.match(
     articlePage,
-    /const robotsMeta = \(!released \|\| isVariant\) \? "noindex, follow" : undefined/,
+    /const robotsMeta = \(!released \|\| isVariant \|\| indexPruned\) \? "noindex, follow" : undefined/,
   );
   assert.match(
     articlePage,
-    /const publishedSchemas = released && !isVariant \? allSchemas : undefined/,
+    /const publishedSchemas = released && !isVariant && !indexPruned \? allSchemas : undefined/,
   );
   assert.match(articlePage, /jsonLd=\{publishedSchemas\}/);
   assert.match(articlePage, /canonicalURL=\{articleUrl\}/);

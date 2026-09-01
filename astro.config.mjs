@@ -6,6 +6,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import rehypeArticleImages from './scripts/rehype-article-images.mjs';
+import { INDEX_PRUNE_SLUGS } from './src/content/index-prune.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -67,6 +68,11 @@ function loadSitemapExclusions() {
     const content = readFileSync(join(articlesDir, file), 'utf8');
     const publishAt = getPublishAtFromMarkdown(content);
     if (!publishAt || publishAt.getTime() <= now) continue;
+    addPath(slug);
+  }
+
+  // GSC thin-URL prune: live pages, but not a sitemap discovery target.
+  for (const slug of INDEX_PRUNE_SLUGS) {
     addPath(slug);
   }
 
