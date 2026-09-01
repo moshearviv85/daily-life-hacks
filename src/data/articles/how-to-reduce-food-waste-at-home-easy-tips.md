@@ -71,7 +71,7 @@ The main reason food goes bad in our refrigerators is simply that we forget it g
 
 The freezer is essentially a pause button on expiration dates. Most people severely underutilize it. 
 
-*   **Dying Fruit:** If those bananas are going black, peel them, slice them into massive chunks, and freeze them flat on a tray for future smoothies. 
+*   **Dying Fruit:** If those bananas are going black, peel them, slice them into massive chunks, and freeze them flat on a tray for future smoothies. Half an avocado browns before you remember it exists, so [store cut avocados with the wrap pressed against the flesh](/best-way-to-store-avocados-to-stop-browning/) if you're saving it for tomorrow. 
 *   **Wilting Greens:** Limp but not slimy? An ice water soak can often [revive wilted lettuce and greens](/how-to-revive-wilted-lettuce-and-greens/) before you write them off. If your fresh spinach is past that point and just starting to look a tiny bit sad, stuff the entire remaining bag into the freezer. You can't use it for a crisp salad anymore, but it's perfect for throwing directly into soups, stews, or pasta sauces frozen.
 *   **Stale Bread:** Slice the entire loaf of bread the second you get it home and freeze it in a heavy-duty bag. Take out only exactly the slices you need to pop straight into the toaster. And if mold always beats staleness to your loaf, here's [how to keep bread fresh longer without mold](/how-to-keep-bread-fresh-longer-without-mold/). 
 

@@ -171,12 +171,19 @@ test("client-injected ingredient photos remain discoverable in their article sit
 
   for (const filename of ingredientFiles) {
     const slug = filename.replace(/-ingredients\.jpg$/, "");
+    const entry = entries.get(`/${slug}/`);
     // Pruned pages stay live with noindex, follow and are correctly absent from
     // the sitemap. Their ingredient photos remain on disk for humans; they are
     // not a Search discovery target. Indexable articles still must advertise
     // the photo in their sitemap entry.
-    if (isIndexPruned(slug)) continue;
-    const entry = entries.get(`/${slug}/`);
+    if (isIndexPruned(slug)) {
+      assert.equal(
+        entry,
+        undefined,
+        `pruned recipe leaked into sitemap via ingredients photo: ${filename}`,
+      );
+      continue;
+    }
     assert.ok(entry, `ingredients photo has no canonical article: ${filename}`);
     assert.ok(
       entry.images.includes(`${SITE}/images/${filename}`),
