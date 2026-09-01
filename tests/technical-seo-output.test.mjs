@@ -6,6 +6,7 @@ import {
   INDEX_KEEP_PATHS,
   INDEX_PRUNE_SLUGS,
   INDEX_PROTECTED_SLUGS,
+  isIndexPruned,
 } from "../src/content/index-prune.js";
 
 const ROOT = new URL("../", import.meta.url);
@@ -170,6 +171,11 @@ test("client-injected ingredient photos remain discoverable in their article sit
 
   for (const filename of ingredientFiles) {
     const slug = filename.replace(/-ingredients\.jpg$/, "");
+    // Pruned pages stay live with noindex, follow and are correctly absent from
+    // the sitemap. Their ingredient photos remain on disk for humans; they are
+    // not a Search discovery target. Indexable articles still must advertise
+    // the photo in their sitemap entry.
+    if (isIndexPruned(slug)) continue;
     const entry = entries.get(`/${slug}/`);
     assert.ok(entry, `ingredients photo has no canonical article: ${filename}`);
     assert.ok(
