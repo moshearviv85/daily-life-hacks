@@ -1,6 +1,6 @@
 ---
-title: "Popcorn Has 4.1g Fiber per Ounce vs 0.9g in Potato Chips"
-excerpt: "Air-popped popcorn has 4.1g fiber per ounce vs 0.9g in plain salted potato chips. USDA: about 108 calories vs 149. That's about 4.7 times the fiber per ounce."
+title: "Popcorn vs Potato Chips: 108 Calories vs 149, 4.1g Fiber"
+excerpt: "Air-popped popcorn has about 108 calories per ounce vs 149 in potato chips, and 4.1g fiber vs 0.9g. USDA FoodData Central, ounce for ounce."
 category: nutrition
 tags:
   - high fiber
@@ -18,7 +18,7 @@ quickAnswer: >-
   cups, an actual bowl, while an ounce of chips is about 22 chips. Baked chips
   don't close the gap: USDA puts them near 1.3 grams of fiber per ounce.
 date: 2026-02-07
-dateModified: 2026-08-20
+dateModified: 2026-09-01
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -36,7 +36,7 @@ faq:
   - question: "Are baked potato chips as good as popcorn for fiber?"
     answer: "Baked chips cut the fat, but they don't close the fiber gap. USDA lists plain baked potato chips at 4.8 grams of fiber per 100 grams, which is about 1.3 grams per ounce and roughly 131 calories. Better than the 0.9 gram in fried chips, still well under popcorn's 4.1. Popcorn keeps the fiber lead regardless of how the chips are cooked."
 ---
-Ounce for ounce, air-popped popcorn has about 4.7 times the fiber of plain salted potato chips: roughly 4.1 grams per ounce versus about 0.9 gram, based on USDA FoodData Central numbers. And because popped corn is mostly air by volume, a real bowl of it, 3 cups, runs about 93 calories while the same calorie budget buys you roughly 17 grams of chips, or about 14 of them.
+Air-popped popcorn has about 108 calories per ounce versus about 149 in plain salted potato chips, and about 4.1 grams of fiber versus 0.9 gram, per USDA FoodData Central. Because popped corn is mostly air by volume, a real bowl of it, 3 cups, runs about 93 calories while the same calorie budget buys you roughly 17 grams of chips, or about 14 of them.
 
 That's the comparison in two sentences. The rest is why it works, what it costs, and the one way people ruin it.
 

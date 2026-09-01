@@ -33,10 +33,26 @@ function articleFrontmatter(slug) {
 
 test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   const popcorn = articleFrontmatter("popcorn-vs-potato-chips-fiber-comparison");
-  assert.match(popcorn.title, /4\.1g/);
-  assert.match(popcorn.title, /0\.9g/);
+  assert.match(popcorn.title, /108/);
+  assert.match(popcorn.title, /149/);
+  assert.match(popcorn.title, /[Cc]alories/);
+  const titleLower = popcorn.title.toLowerCase();
+  const calorieAt = titleLower.indexOf("calorie");
+  const fiberAt = titleLower.search(/fiber/);
+  assert.ok(calorieAt !== -1, "popcorn title should mention calories");
+  assert.ok(
+    fiberAt === -1 || calorieAt < fiberAt,
+    "popcorn title should lead with calories, not fiber",
+  );
+  assert.match(popcorn.excerpt, /108/);
+  assert.match(popcorn.excerpt, /149/);
   assert.match(popcorn.excerpt, /4\.1g/);
   assert.match(popcorn.excerpt, /0\.9g/);
+  const excerptLower = popcorn.excerpt.toLowerCase();
+  assert.ok(
+    excerptLower.indexOf("calorie") < excerptLower.search(/fiber|4\.1g/),
+    "popcorn meta should put calories before fiber so the SERP snippet is not truncated",
+  );
 
   const pizza = articleFrontmatter("comparing-fiber-content-different-pizza-crusts");
   assert.match(pizza.title, /2\.7g/);
