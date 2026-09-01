@@ -17,13 +17,17 @@ import { join } from 'node:path';
  * Organization + WebSite are emitted sitewide by BaseLayout, so they are NOT
  * repeated here. The home page only adds the node that is specific to it.
  */
+const HOME_TITLE = 'Cheapest Fiber and Protein per Grocery Dollar | USDA + Real US Prices';
+const HOME_DESCRIPTION =
+  'We ranked grocery foods by fiber and protein per dollar using USDA nutrition data and real US prices. Dried beans win both lists.';
+
 const homePageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   '@id': 'https://www.daily-life-hacks.com/#webpage',
   url: 'https://www.daily-life-hacks.com/',
-  name: 'Daily Life Hacks | Grocery Cost Studies, Recipes and Food Tools',
-  description: 'Audited grocery cost studies, practical recipes, and interactive food tools built from real prices and USDA nutrition data.',
+  name: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   inLanguage: 'en-US',
   isPartOf: { '@id': 'https://www.daily-life-hacks.com/#website' },
   about: { '@id': 'https://www.daily-life-hacks.com/#organization' },
@@ -100,17 +104,89 @@ const badgeColor = (cat: string) => '#F29B30';
 ---
 
 <BaseLayout
-  title="Daily Life Hacks | Grocery Cost Studies, Recipes and Food Tools"
-  description="Audited grocery cost studies, practical recipes, and interactive food tools built from real prices and USDA nutrition data."
+  title={HOME_TITLE}
+  description={HOME_DESCRIPTION}
   jsonLd={[homePageSchema]}
 >
   <Header />
   <main class="pb-8">
 
-    <!-- SEO: Main H1 Heading -->
-    <div class="sr-only">
-      <h1>Grocery Cost Studies, Practical Recipes, and Food Tools</h1>
-    </div>
+    <section class="w-full max-w-6xl mx-auto px-4 pt-8 pb-4">
+      <p class="text-sm font-bold uppercase tracking-[0.16em] mb-3" style="color:#F29B30;">Grocery nutrition per dollar</p>
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-5" style="color: var(--heading-color);">
+        Cheapest Fiber and Protein per Grocery Dollar
+      </h1>
+      <p class="text-lg md:text-xl leading-relaxed max-w-3xl" style="color: var(--text-color);">
+        A dollar of dry split peas buys about 71 grams of fiber, and a dollar of dried pinto beans buys about 98 grams of protein. We matched USDA nutrition data to real US grocery prices, then ranked the store so you can see what your dollar actually buys.
+      </p>
+      <p class="mt-4 text-base sm:text-lg leading-relaxed max-w-3xl" style="color: var(--text-color);">
+        Start with
+        <a href="/fiber-per-dollar-cheapest-high-fiber-foods/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">the cheapest high-fiber foods</a>
+        and
+        <a href="/protein-per-dollar-cheapest-protein-sources/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">the cheapest protein sources</a>.
+      </p>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a
+          href="/fiber-per-dollar-cheapest-high-fiber-foods/"
+          class="group overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-lg flex flex-col"
+          style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+        >
+          <div class="overflow-hidden relative aspect-video shrink-0">
+            <OptImage
+              src="/images/fiber-per-dollar-cheapest-high-fiber-foods-main.jpg"
+              alt="Fiber per dollar data study comparing cheap high fiber foods"
+              width={640}
+              height={360}
+              sizes="(max-width: 768px) 100vw, 560px"
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+              data-pin-nopin="true"
+            />
+            <span class="absolute bottom-2 left-2 px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider text-white leading-none z-10" style="background-color: #F29B30;">Data Study</span>
+          </div>
+          <div class="p-4 flex-1 flex flex-col gap-1.5">
+            <h2 class="font-bold text-lg leading-tight group-hover:text-[#F29B30] transition-colors duration-200" style="color: var(--heading-color);">Fiber per Dollar: 53 Foods Ranked</h2>
+            <p class="text-sm leading-snug" style="color: var(--muted-color);">53 grocery foods ranked by grams of fiber a dollar buys. The dry goods aisle wins, and it's not close.</p>
+            <span class="mt-1 font-bold" style="color:#F29B30;">Read the fiber study →</span>
+          </div>
+        </a>
+        <a
+          href="/protein-per-dollar-cheapest-protein-sources/"
+          class="group overflow-hidden rounded-xl transition-shadow duration-300 hover:shadow-lg flex flex-col"
+          style="background-color: var(--card-bg); border: 1px solid var(--border-color);"
+        >
+          <div class="overflow-hidden relative aspect-video shrink-0">
+            <OptImage
+              src="/images/protein-per-dollar-cheapest-protein-sources-main.jpg"
+              alt="Protein per dollar data study comparing cheap protein sources"
+              width={640}
+              height={360}
+              sizes="(max-width: 768px) 100vw, 560px"
+              class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              loading="eager"
+              decoding="async"
+              data-pin-nopin="true"
+            />
+            <span class="absolute bottom-2 left-2 px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-wider text-white leading-none z-10" style="background-color: #F29B30;">Data Study</span>
+          </div>
+          <div class="p-4 flex-1 flex flex-col gap-1.5">
+            <h2 class="font-bold text-lg leading-tight group-hover:text-[#F29B30] transition-colors duration-200" style="color: var(--heading-color);">Protein per Dollar: 49 Sources Ranked</h2>
+            <p class="text-sm leading-snug" style="color: var(--muted-color);">49 protein sources compared by cost per gram. Dried beans beat the stuff near the deli counter.</p>
+            <span class="mt-1 font-bold" style="color:#F29B30;">Read the protein study →</span>
+          </div>
+        </a>
+      </div>
+
+      <p class="mt-5 text-base leading-relaxed" style="color: var(--text-color);">
+        Want to shop from the ranking?
+        <a href="/tools/grocery-budget-calculator/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">Use the grocery budget calculator</a>
+        or
+        <a href="/research/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">see every study and download the data</a>.
+      </p>
+    </section>
 
     <!-- Mobile-only Category Quick Nav (Sticky-like) -->
     <nav class="lg:hidden flex justify-center gap-3 py-4 px-4 sticky top-[60px] z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-orange-100 dark:border-orange-900/20 mb-2 overflow-x-auto whitespace-nowrap">
@@ -120,7 +196,7 @@ const badgeColor = (cat: string) => '#F29B30';
       <a href="/tips/" class="px-4 py-2 rounded-full text-sm font-bold shadow-sm transition-all active:scale-95 border-2 border-[#F29B30] text-[#F29B30] bg-white dark:bg-slate-900">Tips</a>
     </nav>
 
-    <!-- Hero: Featured article + Must Read sidebar -->
+    <!-- Hero: Featured article + Must Read sidebar (kept, demoted below flagships) -->
     <HeroSection featured={featured} mustReads={mustReads} />
 
     <FreshToday articles={releaseFeed} />

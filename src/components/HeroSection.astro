@@ -30,8 +30,7 @@ const badgeColor = (cat: string) => '#F29B30';
           slug={featured.id}
           size="lg"
           date={featured.data.date}
-          loading="eager"
-          fetchpriority="high"
+          loading="lazy"
         />
       </div>
     )}
