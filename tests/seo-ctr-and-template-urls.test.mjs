@@ -95,6 +95,39 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   );
 });
 
+test("canned vs dry beans title matches cost query and on-page protein-per-dollar numbers", () => {
+  const beans = articleFrontmatter("canned-vs-dry-beans-cost");
+  const titleLower = beans.title.toLowerCase();
+  const excerptLower = beans.excerpt.toLowerCase();
+  assert.match(beans.title, /[Cc]anned/);
+  assert.match(beans.title, /\bvs\b/i);
+  assert.match(beans.title, /\bdry\b/i);
+  assert.match(beans.title, /[Cc]ost/);
+  assert.match(beans.title, /97\.9g/);
+  assert.match(beans.title, /22g/);
+  assert.ok(
+    titleLower.indexOf("canned") < titleLower.indexOf("vs"),
+    "beans title should lead with canned vs dry, not convenience",
+  );
+  assert.ok(
+    titleLower.indexOf("vs") < titleLower.indexOf("cost"),
+    "beans title should state the vs comparison before cost",
+  );
+  assert.equal(
+    titleLower.includes("convenience"),
+    false,
+    "beans title should not spend the SERP on convenience instead of cost",
+  );
+
+  assert.match(beans.excerpt, /[Cc]anned vs dry beans cost/);
+  assert.match(beans.excerpt, /97\.9g/);
+  assert.match(beans.excerpt, /22g/);
+  assert.ok(
+    excerptLower.indexOf("canned vs dry beans cost") < excerptLower.indexOf("97.9g"),
+    "beans meta should put the cost query before the protein-per-dollar numbers",
+  );
+});
+
 test("homemade salad dressing title matches refrigerate and how-long queries", () => {
   const dressing = articleFrontmatter("how-to-store-homemade-salad-dressing-safely");
   const titleLower = dressing.title.toLowerCase();
