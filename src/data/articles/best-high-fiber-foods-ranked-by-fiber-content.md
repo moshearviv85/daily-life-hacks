@@ -1,6 +1,6 @@
 ---
-title: "Fiber per 100 Grams in Our 53-Food Price Study"
-excerpt: "Chia seeds led our 53-food July 2026 study at 34.4g fiber per 100g, then whole flaxseed at 27.3g and dry split peas at 22.2g. Dry weight, not servings."
+title: "Best High-Fiber Foods per 100g: Chia 34.4g, Flax 27.3g, Split Peas 22.2g"
+excerpt: "Best high-fiber foods ranked by fiber per 100g: chia seeds 34.4g, whole flaxseed 27.3g, dry split peas 22.2g. USDA dry weight, 53-food study, not servings."
 category: "nutrition"
 tags: ["high fiber foods", "best high fiber foods", "fiber content", "high fiber foods list", "grocery data"]
 cluster: "budget-fiber"
@@ -8,7 +8,7 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/best-high-fiber-foods-ranked-by-fiber-content-main.jpg"
 imageAlt: "Bowls of chia seeds, flaxseed, dry split peas, bran flakes, and dry black beans arranged in order on a wooden board"
 date: 2026-07-27
-dateModified: 2026-08-20
+dateModified: 2026-09-02
 author: "David Miller"
 featured: false
 editorsPick: false

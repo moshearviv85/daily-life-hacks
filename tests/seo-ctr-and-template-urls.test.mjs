@@ -67,6 +67,32 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   assert.match(protein.excerpt, /26-35g/);
   assert.match(protein.excerpt, /15g/);
   assert.match(protein.excerpt, /8-20g/);
+
+  const fiberFoods = articleFrontmatter("best-high-fiber-foods-ranked-by-fiber-content");
+  const fiberTitleLower = fiberFoods.title.toLowerCase();
+  const fiberExcerptLower = fiberFoods.excerpt.toLowerCase();
+  assert.match(fiberFoods.title, /[Bb]est [Hh]igh-?[Ff]iber [Ff]oods/);
+  assert.match(fiberFoods.title, /per 100g/i);
+  assert.match(fiberFoods.title, /34\.4g/);
+  assert.match(fiberFoods.title, /27\.3g/);
+  assert.match(fiberFoods.title, /22\.2g/);
+  assert.ok(
+    fiberTitleLower.indexOf("best high-fiber foods") < fiberTitleLower.indexOf("34.4g"),
+    "fiber ranking title should lead with the search query, not the study frame",
+  );
+  assert.equal(
+    fiberTitleLower.includes("53-food price study"),
+    false,
+    "fiber ranking title should not lead with the 53-food study frame",
+  );
+  assert.match(fiberFoods.excerpt, /[Bb]est high-fiber foods/);
+  assert.match(fiberFoods.excerpt, /34\.4g/);
+  assert.match(fiberFoods.excerpt, /27\.3g/);
+  assert.match(fiberFoods.excerpt, /22\.2g/);
+  assert.ok(
+    fiberExcerptLower.indexOf("best high-fiber foods") < fiberExcerptLower.indexOf("34.4g"),
+    "fiber ranking meta should put the ranking query before the USDA numbers",
+  );
 });
 
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
