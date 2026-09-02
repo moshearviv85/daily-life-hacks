@@ -95,6 +95,23 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   );
 });
 
+test("homemade salad dressing title matches refrigerate and how-long queries", () => {
+  const dressing = articleFrontmatter("how-to-store-homemade-salad-dressing-safely");
+  const titleLower = dressing.title.toLowerCase();
+  assert.match(dressing.title, /refrigerat|fridge/i);
+  assert.match(dressing.title, /how long|lasts/i);
+  assert.ok(
+    titleLower.search(/refrigerat|fridge/) < titleLower.search(/how long|lasts/),
+    "dressing title should lead with refrigerate language, then how-long",
+  );
+
+  assert.match(dressing.excerpt, /[Rr]efrigerat/);
+  assert.match(dressing.excerpt, /2 weeks/);
+  assert.match(dressing.excerpt, /1 week/);
+  assert.match(dressing.excerpt, /3-4 days/);
+  assert.match(dressing.excerpt, /[Gg]arlic-in-oil:\s*4 days/);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
