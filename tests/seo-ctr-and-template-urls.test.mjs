@@ -93,6 +93,32 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
     fiberExcerptLower.indexOf("best high-fiber foods") < fiberExcerptLower.indexOf("34.4g"),
     "fiber ranking meta should put the ranking query before the USDA numbers",
   );
+
+  const proteinDensity = articleFrontmatter("foods-highest-in-protein-per-100-grams");
+  const proteinTitleLower = proteinDensity.title.toLowerCase();
+  const proteinExcerptLower = proteinDensity.excerpt.toLowerCase();
+  assert.match(proteinDensity.title, /[Ff]oods [Hh]ighest in [Pp]rotein/);
+  assert.match(proteinDensity.title, /per 100g/i);
+  assert.match(proteinDensity.title, /52\.17g/);
+  assert.match(proteinDensity.title, /proxy/i);
+  assert.ok(
+    proteinTitleLower.indexOf("foods highest in protein") < proteinTitleLower.indexOf("52.17g"),
+    "protein density title should lead with the search query, not the study frame",
+  );
+  assert.equal(
+    proteinTitleLower.includes("49-food price study"),
+    false,
+    "protein density title should not lead with the 49-food study frame",
+  );
+  assert.match(proteinDensity.excerpt, /[Ff]oods highest in protein/);
+  assert.match(proteinDensity.excerpt, /52\.17g/);
+  assert.match(proteinDensity.excerpt, /proxy/i);
+  assert.match(proteinDensity.excerpt, /24\.63g/);
+  assert.match(proteinDensity.excerpt, /24\.62g/);
+  assert.ok(
+    proteinExcerptLower.indexOf("foods highest in protein") < proteinExcerptLower.indexOf("52.17g"),
+    "protein density meta should put the ranking query before the table numbers",
+  );
 });
 
 test("canned vs dry beans title matches cost query and on-page protein-per-dollar numbers", () => {
