@@ -99,10 +99,10 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   const proteinExcerptLower = proteinDensity.excerpt.toLowerCase();
   assert.match(proteinDensity.title, /[Ff]oods [Hh]ighest in [Pp]rotein/);
   assert.match(proteinDensity.title, /per 100g/i);
-  assert.match(proteinDensity.title, /52\.17g/);
-  assert.match(proteinDensity.title, /proxy/i);
+  assert.match(proteinDensity.title, /49-Food Study/);
   assert.ok(
-    proteinTitleLower.indexOf("foods highest in protein") < proteinTitleLower.indexOf("52.17g"),
+    proteinTitleLower.indexOf("foods highest in protein") <
+      proteinTitleLower.indexOf("49-food study"),
     "protein density title should lead with the search query, not the study frame",
   );
   assert.equal(
@@ -115,6 +115,7 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   assert.match(proteinDensity.excerpt, /proxy/i);
   assert.match(proteinDensity.excerpt, /24\.63g/);
   assert.match(proteinDensity.excerpt, /24\.62g/);
+  assert.match(proteinDensity.excerpt, /July 2026/);
   assert.ok(
     proteinExcerptLower.indexOf("foods highest in protein") < proteinExcerptLower.indexOf("52.17g"),
     "protein density meta should put the ranking query before the table numbers",
