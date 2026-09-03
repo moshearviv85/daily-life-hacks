@@ -21,6 +21,7 @@ const LEGACY_PERMANENT_REDIRECTS = new Map([
   ["sourdough-discard-nutrition-facts-health-benefits", "/easy-sourdough-discard-recipes-beginners/"],
   ["rotisserie-chicken-nutrition-facts-sodium-content", "/costco-rotisserie-chicken-meal-ideas-dinner/"],
   ["oatmeal-vs-grits-fiber-content-guide", "/oatmeal-vs-grits-fiber-content/"],
+  ["protein-per-dollar-cheapest-high-protein-foods", "/protein-per-dollar-cheapest-protein-sources/"],
   ["artichoke-recipes-for-gut-health-guide", "/artichoke-recipes-for-gut-health/"],
   ["avoid-sodium-shock-rotisserie-chicken", "/big-flavor-less-salt-citrus-herbs-umami-swaps/"],
   ["simple-snack-portioning-guide", "/grab-and-go-fridge-snack-drawer/"],

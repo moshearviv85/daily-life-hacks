@@ -138,6 +138,28 @@ test("legacy redirects canonicalize non-www host in one hop", async () => {
   assert.deepEqual(assets.calls, []);
 });
 
+test("wrong protein flagship slug redirects to the live protein-per-dollar article", async () => {
+  const sources = [
+    "https://www.daily-life-hacks.com/protein-per-dollar-cheapest-high-protein-foods/",
+    "https://www.daily-life-hacks.com/protein-per-dollar-cheapest-high-protein-foods",
+  ];
+  const target =
+    "https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/";
+
+  for (const source of sources) {
+    const assets = makeAssets(new Set());
+    const response = await onRequest(
+      makeContext(source, {
+        ASSETS: assets,
+      }),
+    );
+
+    assert.equal(response.status, 301);
+    assert.equal(response.headers.get("location"), target);
+    assert.deepEqual(assets.calls, []);
+  }
+});
+
 test("high-impression aliases redirect to canonical articles", async () => {
   const cases = [
     [
