@@ -30,7 +30,7 @@ I used to think the secret to not eating my body weight in chips at 9:00 PM was 
 
 The real battle for your appetite isn't about willpower. It’s about satiety, which is just a fancy way of saying "how long can I go before I want to bite someone's head off." When we talk about staying full, the conversation usually pits high protein vs high fiber for satiety as if they’re rivals in a boxing match. The truth is they’re more like a comedy duo: they work better when they’re together, but they have very different ways of getting the job done.
 
-When price is part of the decision too, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) shows how to build the protein side of the plate without shopping like you just signed an endorsement deal.
+When price is part of the decision too, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) shows how to build the protein side of the plate without shopping like you just signed an endorsement deal. The receipt-level ranking of those staples is in [protein per dollar](/protein-per-dollar-cheapest-protein-sources/).
 
 ## Does protein or fiber keep you fuller?
 

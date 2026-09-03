@@ -29,7 +29,7 @@ faq:
 
 In our July 2026 US price study of 49 grocery foods, the TVP row led at 52.17 grams of protein per 100 grams. That figure is a proxy, not a USDA match: the manufacturer's current 12-gram-per-23-gram label works out to 52.17, and USDA FoodData Central publishes no textured vegetable protein record to check it against. Among rows with an exact USDA food-and-form match in our 49-food study, dry brown lentils led at 24.63, followed by canned sardines in oil, drained, at 24.62. This is a bounded grocery comparison, not a claim about every food sold worldwide.
 
-One thing to get straight before the table. This ranks foods by protein density, not by price. The cheapest-per-dollar question is a different study and we ran that one separately.
+One thing to get straight before the table. This ranks foods by protein density, not by price. The cheapest-per-dollar question is a different study, and we ran that one separately as the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/).
 
 | Food | Protein per 100 g | USDA form / status | Price per 100 g | Nutrition source |
 |---|---|---|---|---|
