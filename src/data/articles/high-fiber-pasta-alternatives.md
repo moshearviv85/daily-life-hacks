@@ -43,7 +43,7 @@ The bad news is legume pastas behave differently. Treat them like their own ingr
 If you're rebuilding more than pasta night, the [budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) sorts out which pantry staples earn their shelf space without turning dinner into a spreadsheet.
 ## What is the best high fiber pasta alternative?
 
-Whole wheat pasta, if you want the swap to survive a family dinner. It carries 9.2 grams of fiber per 100 grams and delivers 35.4 grams of fiber per dollar in our ranking, and it behaves like pasta. Chickpea and red lentil pasta carry more protein but cook and taste differently enough that they need a sauce built for them.
+Whole wheat pasta, if you want the swap to survive a family dinner. It carries 9.2 grams of fiber per 100 grams and delivers 35.4 grams of fiber per dollar in our [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), and it behaves like pasta. Chickpea and red lentil pasta carry more protein but cook and taste differently enough that they need a sauce built for them.
 
 ## Chickpea Pasta
 
