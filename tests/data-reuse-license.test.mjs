@@ -13,6 +13,8 @@ test("reuse page gives a scoped CC BY grant and copy-ready attribution", () => {
   assert.match(page, /Data and calculations: Daily Life Hacks/);
   assert.match(page, /Changes: \[describe changes or "none"\]/);
   assert.match(page, /rel="license noopener"/);
+  assert.match(page, /HUGGINGFACE_DATASET_URL/);
+  assert.match(page, /mirrors the fiber and protein flagship CSVs/);
   assert.doesNotMatch(page, /\u2014/);
 });
 

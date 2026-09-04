@@ -10,6 +10,12 @@ const methodologyPage = readFileSync(
   new URL("../src/pages/methodology.astro", import.meta.url),
   "utf8",
 );
+const datasetsRegistry = readFileSync(
+  new URL("../src/content/datasets.ts", import.meta.url),
+  "utf8",
+);
+const huggingfaceDatasetUrl =
+  "https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar";
 
 test("Article and Recipe schemas share the visible author and organization publisher", () => {
   assert.match(articlePage, /const authorName = article\.data\.author \?\? "David Miller"/);
@@ -92,9 +98,18 @@ test("Dataset schema remains attached to its canonical article and CSV", () => {
   assert.match(articlePage, /identifier: `\$\{articleUrl\}#dataset`/);
   assert.match(articlePage, /version: DATA_VERSION/);
   assert.match(articlePage, /creator: publisherSchema/);
-  assert.match(articlePage, /"@type": "DataDownload"/);
-  assert.match(articlePage, /name: dataset\.csv\.split\("\/"\)\.pop\(\)/);
-  assert.match(articlePage, /contentUrl: `\$\{siteUrl\}\$\{dataset\.csv\}`/);
+  assert.match(articlePage, /distribution: datasetDistributions\(dataset, siteUrl\)/);
+  assert.match(
+    articlePage,
+    /sameAs: dataset\.huggingfaceMirror \? HUGGINGFACE_DATASET_URL : undefined/,
+  );
+  assert.match(datasetsRegistry, /"@type": "DataDownload"/);
+  assert.match(datasetsRegistry, /contentUrl: `\$\{siteUrl\}\$\{dataset\.csv\}`/);
+  assert.match(
+    datasetsRegistry,
+    /contentUrl: huggingfaceCsv/,
+    "Hugging Face file URLs must be extra DataDownload nodes, not replacements",
+  );
   assert.match(articlePage, /measurementTechnique: `\$\{siteUrl\}\/methodology\/`/);
   assert.match(
     datasetBlock[1],
@@ -115,6 +130,62 @@ test("Dataset schema remains attached to its canonical article and CSV", () => {
     methodologyPage,
     /<h2 id="data-license"[\s\S]*?>Every study ships its raw data<\/h2>/,
     "The methodology must preserve its stable reuse-terms anchor",
+  );
+});
+
+test("fiber and protein flagships link the public Hugging Face dataset mirror", () => {
+  const fiber = readFileSync(
+    new URL(
+      "../src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  const protein = readFileSync(
+    new URL(
+      "../src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+  const sourdough = readFileSync(
+    new URL(
+      "../src/data/articles/easy-sourdough-discard-recipes-beginners.md",
+      import.meta.url,
+    ),
+    "utf8",
+  );
+
+  for (const [name, source] of [
+    ["fiber flagship", fiber],
+    ["protein flagship", protein],
+  ]) {
+    assert.match(source, /\/data\/(?:fiber|protein)-per-dollar-2026\.csv/);
+    assert.match(
+      source,
+      new RegExp(huggingfaceDatasetUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+      `${name} must link the Hugging Face mirror`,
+    );
+    assert.match(source, /mirror on Hugging Face \(CC-BY-4\.0\)/);
+  }
+
+  assert.match(
+    datasetsRegistry,
+    /HUGGINGFACE_DATASET_URL =\s*"https:\/\/huggingface\.co\/datasets\/moshiko123\/daily-life-hacks-grocery-nutrition-per-dollar"/,
+  );
+  assert.match(
+    datasetsRegistry,
+    /"fiber-per-dollar-cheapest-high-fiber-foods": \{[\s\S]*?huggingfaceMirror: true/,
+  );
+  assert.match(
+    datasetsRegistry,
+    /"protein-per-dollar-cheapest-protein-sources": \{[\s\S]*?huggingfaceMirror: true/,
+  );
+  assert.match(articlePage, /Hugging Face mirror \(CC-BY-4\.0\)/);
+  assert.doesNotMatch(
+    sourdough,
+    /huggingface\.co/,
+    "sourdough article must stay untouched",
   );
 });
 

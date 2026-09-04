@@ -250,6 +250,61 @@ test("Dataset and Recipe nodes retain current rich-result requirements", () => {
   assert.ok(recipes > 0, "expected Recipe nodes in indexable output");
 });
 
+test("fiber and protein flagships publish the Hugging Face dataset mirror in HTML and Dataset JSON-LD", () => {
+  const hf =
+    "https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar";
+  const flagships = [
+    {
+      slug: "fiber-per-dollar-cheapest-high-fiber-foods",
+      csv: `${SITE}/data/fiber-per-dollar-2026.csv`,
+      huggingfaceCsv: `${hf}/resolve/main/fiber-per-dollar-2026.csv`,
+    },
+    {
+      slug: "protein-per-dollar-cheapest-protein-sources",
+      csv: `${SITE}/data/protein-per-dollar-2026.csv`,
+      huggingfaceCsv: `${hf}/resolve/main/protein-per-dollar-2026.csv`,
+    },
+  ];
+
+  for (const flagship of flagships) {
+    const html = readFileSync(distHtmlFor(`${SITE}/${flagship.slug}/`), "utf8");
+    assert.match(html, new RegExp(hf.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.match(html, /mirror on Hugging Face \(CC-BY-4\.0\)/);
+
+    const datasetNodes = [];
+    for (const block of jsonLdBlocks(html, `${SITE}/${flagship.slug}/`)) {
+      visit(block, (node) => {
+        if (node["@type"] === "Dataset") datasetNodes.push(node);
+      });
+    }
+    assert.ok(datasetNodes.length > 0, `missing Dataset JSON-LD: ${flagship.slug}`);
+    for (const node of datasetNodes) {
+      const downloads = Array.isArray(node.distribution)
+        ? node.distribution
+        : [node.distribution];
+      const contentUrls = downloads.map((item) => item?.contentUrl);
+      assert.ok(
+        contentUrls.includes(flagship.csv),
+        `${flagship.slug} dropped the on-site CSV DataDownload`,
+      );
+      assert.ok(
+        contentUrls.includes(flagship.huggingfaceCsv),
+        `${flagship.slug} missing Hugging Face CSV DataDownload`,
+      );
+      assert.equal(node.sameAs, hf, `${flagship.slug} Dataset sameAs should be the HF page`);
+    }
+  }
+
+  const sourdough = readFileSync(
+    distHtmlFor(`${SITE}/easy-sourdough-discard-recipes-beginners/`),
+    "utf8",
+  );
+  assert.doesNotMatch(sourdough, /huggingface\.co/);
+
+  const dataHub = readFileSync(distHtmlFor(`${SITE}/data/`), "utf8");
+  assert.match(dataHub, new RegExp(hf.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+});
+
 function locFor(path) {
   const normalized = String(path).replace(/^\/+|\/+$/g, "");
   return `${SITE}/${normalized}/`;

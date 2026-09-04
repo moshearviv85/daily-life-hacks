@@ -4,7 +4,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import DataProvenance from "../../components/DataProvenance.astro";
 import dataIndex from "../../../public/data/api-index-v1.json";
-import { DATA_RELEASE_DATE, DATA_VERSION } from "../../content/datasets";
+import { DATA_RELEASE_DATE, DATA_VERSION, HUGGINGFACE_DATASET_URL } from "../../content/datasets";
 
 type SourceRow = {
   dataset: string;
@@ -459,6 +459,10 @@ const sourceSummary = (
         <p>
           Download both source files, inspect the assumptions, or use the JSON API. No signup.
           The CSV doesn't need your email address to remember how commas work.
+          Same files also sit on a
+          <a href={HUGGINGFACE_DATASET_URL} class="underline" rel="noopener" target="_blank">
+            mirror on Hugging Face (CC-BY-4.0)
+          </a>.
         </p>
       </div>
       <div class="flex flex-wrap gap-2">

@@ -17,6 +17,8 @@ import {
   DATA_LICENSE_URL,
   DATA_TERMS_URL,
   DATA_VERSION,
+  HUGGINGFACE_DATASET_URL,
+  datasetDistributions,
   describeDatasetProvenance,
   findChartInBody,
   getDatasetProvenance,
@@ -357,12 +359,8 @@ if (dataset) {
     temporalCoverage: dataset.temporal,
     spatialCoverage: "United States",
     measurementTechnique: `${siteUrl}/methodology/`,
-    distribution: {
-      "@type": "DataDownload",
-      name: dataset.csv.split("/").pop(),
-      encodingFormat: "text/csv",
-      contentUrl: `${siteUrl}${dataset.csv}`,
-    },
+    distribution: datasetDistributions(dataset, siteUrl),
+    sameAs: dataset.huggingfaceMirror ? HUGGINGFACE_DATASET_URL : undefined,
   });
 }
 
@@ -877,6 +875,19 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
             >
               Download the CSV
             </a>
+            {
+              dataset.huggingfaceMirror && (
+                <a
+                  href={HUGGINGFACE_DATASET_URL}
+                  class="text-xs underline"
+                  style="color: var(--muted-color);"
+                  rel="noopener"
+                  target="_blank"
+                >
+                  Hugging Face mirror (CC-BY-4.0)
+                </a>
+              )
+            }
             <a href="/data/" class="text-xs underline" style="color: var(--muted-color);">
               All datasets
             </a>
