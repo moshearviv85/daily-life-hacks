@@ -32,7 +32,7 @@ jobs:
         run: npm run build:checked
 
       - name: Canonical routing unit tests
-        run: node --test tests/canonical-routing.test.mjs tests/index-prune-policy.test.mjs tests/article-technical-seo-schema.test.mjs
+        run: node --test tests/canonical-routing.test.mjs tests/index-prune-policy.test.mjs tests/article-technical-seo-schema.test.mjs tests/flagship-inbound-crawl.test.mjs
 
       - name: Pipeline workflow contract tests
         run: |
