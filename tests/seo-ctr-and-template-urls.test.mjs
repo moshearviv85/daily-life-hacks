@@ -145,6 +145,20 @@ test("homemade salad dressing title matches refrigerate and how-long queries", (
   assert.match(dressing.excerpt, /[Gg]arlic-in-oil:\s*4 days/);
 });
 
+test("food value database title and meta lead with nutrition-per-dollar intent", () => {
+  const page = readFileSync(join(ROOT, "src/pages/food-value-database/index.astro"), "utf8");
+  const title = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
+  const description = page.match(/const description =\s*`([^`]+)`/)?.[1] ?? "";
+
+  assert.match(title, /^Nutrition per Dollar:/);
+  assert.match(title, /Protein and Fiber Database/);
+  assert.equal(title.includes("Compare"), false, "title should not lead with generic compare");
+  assert.match(description, /^Nutrition per dollar for \$\{foods\.length\} grocery foods/);
+  assert.match(description, /protein and fiber per \$1/);
+  assert.match(description, /July 2026 US prices plus USDA FoodData Central/);
+  assert.match(description, /Not USDA-endorsed/);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),

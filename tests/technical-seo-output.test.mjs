@@ -308,3 +308,18 @@ test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay 
 
   assert.ok(entries.has(`${SITE}/`), "homepage missing from sitemap");
 });
+
+test("food value database SERP copy leads with nutrition-per-dollar intent", () => {
+  const html = readFileSync(distHtmlFor(`${SITE}/food-value-database/`), "utf8");
+  const title = html.match(/<title>([^<]+)<\/title>/i)?.[1] ?? "";
+  const description = metaContent(html, "description") ?? "";
+
+  assert.match(title, /^Nutrition per Dollar:/);
+  assert.match(title, /Protein and Fiber Database/);
+  assert.equal(title.includes("Compare"), false);
+  assert.match(description, /^Nutrition per dollar for 79 grocery foods/);
+  assert.match(description, /protein and fiber per \$1/);
+  assert.match(description, /July 2026 US prices plus USDA FoodData Central/);
+  assert.match(description, /Not USDA-endorsed/);
+  assert.ok(description.length <= 160, `clamped meta too long: ${description.length}`);
+});

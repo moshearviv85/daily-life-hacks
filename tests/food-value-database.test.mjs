@@ -106,6 +106,27 @@ test("public copy avoids David Miller hard bans", () => {
   assert.doesNotMatch(page, /your .* will thank you/i);
 });
 
+test("title and meta lead with nutrition-per-dollar grocery database intent", () => {
+  const title = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
+  const description = page.match(/const description =\s*`([^`]+)`/)?.[1] ?? "";
+  const renderedTitle = title.replace("${foods.length}", String(uniqueNames.size));
+  const renderedDescription = description.replaceAll("${foods.length}", String(uniqueNames.size));
+
+  assert.match(renderedTitle, /^Nutrition per Dollar:/);
+  assert.match(renderedTitle, /Protein and Fiber Database/);
+  assert.equal(renderedTitle.includes("Compare"), false, "title should not spend the SERP on generic compare");
+  assert.ok(renderedTitle.length <= 60, `title too long for SERP: ${renderedTitle.length}`);
+
+  assert.match(renderedDescription, /^Nutrition per dollar for \d+ grocery foods/);
+  assert.match(renderedDescription, /protein and fiber per \$1/);
+  assert.match(renderedDescription, /July 2026 US prices plus USDA FoodData Central/);
+  assert.match(renderedDescription, /Not USDA-endorsed/);
+  assert.ok(
+    renderedDescription.length <= 160,
+    `meta exceeds BaseLayout clamp: ${renderedDescription.length}`,
+  );
+});
+
 test("the database has inbound discovery links from data, statistics, tools, and footer", () => {
   for (const file of [
     "src/pages/data/index.astro",
