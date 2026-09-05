@@ -28,6 +28,7 @@ import { join } from "node:path";
 import { buildArticleToc } from "../content/article-toc.mjs";
 import { getFlagshipEngagement } from "../content/flagship-engagement.mjs";
 import StudyLead from "../components/StudyLead.astro";
+import StudyEmailCapture from "../components/StudyEmailCapture.astro";
 import StudyNextStep from "../components/StudyNextStep.astro";
 
 function inlineMd(text: string): string {
@@ -714,6 +715,20 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
         )
       }
     </header>
+
+    {
+      flagship?.emailCapture && (
+        <StudyEmailCapture
+          kicker={flagship.emailCapture.kicker}
+          title={flagship.emailCapture.title}
+          text={flagship.emailCapture.text}
+          buttonLabel={flagship.emailCapture.buttonLabel}
+          articleCategory={article.data.category}
+          articleBaseSlug={article.id}
+          emailSegment={flagship.emailCapture.emailSegment}
+        />
+      )
+    }
 
     <!-- Quick Answer Block -->
     {article.data.quickAnswer && !flagship && (

@@ -101,6 +101,10 @@ function getKitTagIds(env, { category, source, email_segment }) {
 
   if (source === "footer") rawIds.push(env.KIT_TAG_SOURCE_FOOTER || DEFAULT_KIT_TAG_IDS.sourceFooter);
   if (source === "popup") rawIds.push(env.KIT_TAG_SOURCE_POPUP || DEFAULT_KIT_TAG_IDS.sourcePopup);
+  // Optional: create the tag in Kit, then set KIT_TAG_SOURCE_INLINE. No invented default ID.
+  if (source === "inline" && env.KIT_TAG_SOURCE_INLINE) {
+    rawIds.push(env.KIT_TAG_SOURCE_INLINE);
+  }
 
   const segmentEnvMap = {
     "recipes-breakfast": env.KIT_TAG_SEGMENT_RECIPES_BREAKFAST || DEFAULT_KIT_TAG_IDS.recipesBreakfast,
