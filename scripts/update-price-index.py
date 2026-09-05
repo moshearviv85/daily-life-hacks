@@ -51,17 +51,26 @@ GRAMS_PER_12OZ = 340.194
 #
 # Only foods where a BLS AP series *genuinely* corresponds are mapped. Everything
 # else keeps its audited Walmart price. Deliberately NOT mapped (verified against
-# the live API, 2026-07): apples (APU0000711111 ended 2017), carrots (712404 ended
-# 1997), cabbage (712401 ended 2012), peanut butter (716141 ended 2017), canned
-# tuna (707111 ended 2017), yellow onions (712406) and pears (711414) — series
-# exist but recent months report "-" (no value). White flour / white pasta / white
-# rice series do NOT correspond to the whole-wheat items in the fiber study.
+# the live API, 2026-07 and re-checked 2026-09): apples (APU0000711111 ended 2017),
+# carrots (712404 ended 1997), cabbage (712401 ended 2012), peanut butter (716141
+# ended 2017), canned tuna (707111 ended 2017), yellow onions (712406) and pears
+# (711414) — series exist but recent months report "-" (no value). White flour
+# (APU0000701111) does NOT correspond to whole wheat flour in either flagship
+# study. Whole-wheat pasta has no matching BLS series; white pasta/rice series
+# are mapped only to the white-rice and regular-spaghetti rows.
+#
+# Dried beans use APU0000714233 ("Beans, dried, any type, per lb"). That is a
+# category average, not a pinto-specific series. The price_basis string says so.
+#
+# Keys must match the published CSV `food` column after norm(), not a guessed
+# short name. The 2026-07 Price Watch report missed eggs, chicken, rice, and
+# spaghetti because the keys here did not match the live rows.
 #
 # "unit_g": the BLS price covers this many grams -> package price scales by weight.
 # "per_package": the BLS price IS the package price (count/volume series);
 #                "expect_package" guards against a mismatched package definition.
 SERIES_MAP = {
-    # ── fiber-per-dollar-2026.csv (verified live, May 2026 data) ──
+    # ── fiber + protein dry beans / produce / bread ──
     "pinto beans (dry)":            {"series": "APU0000714233", "unit_g": GRAMS_PER_LB},   # Beans, dried, any type, per lb
     "black beans (dry)":            {"series": "APU0000714233", "unit_g": GRAMS_PER_LB},
     "navy beans (dry)":             {"series": "APU0000714233", "unit_g": GRAMS_PER_LB},
@@ -71,16 +80,18 @@ SERIES_MAP = {
     "russet potatoes (with skin)":  {"series": "APU0000712112", "unit_g": GRAMS_PER_LB},   # Potatoes, white, per lb
     "strawberries":                 {"series": "APU0000711415", "unit_g": GRAMS_PER_12OZ}, # Strawberries, dry pint, per 12 oz
 
-    # ── protein-per-dollar-2026.csv candidates (series verified live; food names
-    #    are best guesses — unused entries are listed in the report, so mismatched
-    #    names surface as soon as the protein CSV lands and are easy to fix) ──
-    "eggs (grade a, large)":        {"series": "APU0000708111", "per_package": True, "expect_package": "dozen"},   # per dozen
-    "whole milk":                   {"series": "APU0000709112", "per_package": True, "expect_package": "gallon"},  # per gallon
-    "ground beef":                  {"series": "APU0000703112", "unit_g": GRAMS_PER_LB},   # Ground beef, 100% beef, per lb
-    "whole chicken":                {"series": "APU0000706111", "unit_g": GRAMS_PER_LB},   # Chicken, fresh, whole, per lb
-    "chicken breast (boneless)":    {"series": "APU0000FF1101", "unit_g": GRAMS_PER_LB},   # Chicken breast, boneless, per lb
-    "white rice (dry)":             {"series": "APU0000701312", "unit_g": GRAMS_PER_LB},   # Rice, white, long grain, per lb
-    "spaghetti":                    {"series": "APU0000701322", "unit_g": GRAMS_PER_LB},   # Spaghetti and macaroni, per lb
+    # ── protein-per-dollar-2026.csv (names match the published food column) ──
+    "eggs (large)":                 {"series": "APU0000708111", "per_package": True, "expect_package": "dozen"},
+    "whole milk":                   {"series": "APU0000709112", "per_package": True, "expect_package": "gallon"},
+    "ground beef (80/20)":          {"series": "APU0000703112", "unit_g": GRAMS_PER_LB},   # Ground beef, 100% beef, per lb
+    "ground beef (93/7)":           {"series": "APU0000703113", "unit_g": GRAMS_PER_LB},   # Ground beef, lean and extra lean
+    "whole chicken (raw)":          {"series": "APU0000706111", "unit_g": GRAMS_PER_LB},   # Chicken, fresh, whole, per lb
+    "chicken breast (boneless, skinless)": {"series": "APU0000FF1101", "unit_g": GRAMS_PER_LB},
+    "white rice (long grain, dry)": {"series": "APU0000701312", "unit_g": GRAMS_PER_LB},   # Rice, white, long grain, per lb
+    "spaghetti (regular, dry)":     {"series": "APU0000701322", "unit_g": GRAMS_PER_LB},   # Spaghetti and macaroni, per lb
+    "pork loin chops (boneless)":   {"series": "APU0000FD3101", "unit_g": GRAMS_PER_LB},   # All pork chops (flagship series)
+    "cheddar cheese":               {"series": "APU0000710212", "unit_g": GRAMS_PER_LB},
+    "bacon":                        {"series": "APU0000704111", "unit_g": GRAMS_PER_LB},
 }
 
 
@@ -170,7 +181,7 @@ def process_csv(path: Path, bls_latest: dict, notes: list[str]) -> dict | None:
 
     nutrient = detect_nutrient(fieldnames)
     per_dollar_col = f"{nutrient}_g_per_dollar" if nutrient else None
-    if not nutrient or per_dollar_col not in fieldnames:
+    if "food" not in (fieldnames or []) or not nutrient or per_dollar_col not in fieldnames:
         notes.append(f"{path.name}: could not detect nutrient columns — file skipped.")
         return None
 
@@ -198,9 +209,16 @@ def process_csv(path: Path, bls_latest: dict, notes: list[str]) -> dict | None:
             new_price = round(info["value"] * float(row["package_weight_g"]) / cfg["unit_g"], 2)
 
         old_price = float(row["package_price_usd"])
-        new_basis = f'BLS AP {cfg["series"]} {info["month"][:3]}-{info["year"]}'
-        if new_price != old_price or row["price_basis"] != new_basis:
-            price_changes.append((row["food"], old_price, new_price, row["price_basis"], new_basis))
+        # Keep the published "BLS US avg Month YYYY (APU…)" style so a refresh
+        # does not invent a second basis dialect. Preserve any "; …" suffix
+        # already on the row (whole-chicken yield note).
+        old_basis = row["price_basis"]
+        suffix = ""
+        if ";" in old_basis:
+            suffix = old_basis[old_basis.index(";"):]
+        new_basis = f'BLS US avg {info["month"]} {info["year"]} ({cfg["series"]}){suffix}'
+        if new_price != old_price or old_basis != new_basis:
+            price_changes.append((row["food"], old_price, new_price, old_basis, new_basis))
         row["package_price_usd"] = f"{new_price:.2f}"
         row["price_basis"] = new_basis
 
@@ -326,9 +344,16 @@ def main() -> int:
                              "(keeps the published ranking on its single consistent price basis)")
     args = parser.parse_args()
 
-    csv_paths = sorted(DATA_DIR.glob("*-per-dollar-*.csv"))
+    # Live ranking CSVs only. Derived slices and the BLS timeseries share the
+    # *-per-dollar-* glob but are not independently priced; they are synced
+    # from these two files after the flagship refresh.
+    csv_paths = [
+        DATA_DIR / "fiber-per-dollar-2026.csv",
+        DATA_DIR / "protein-per-dollar-2026.csv",
+    ]
+    csv_paths = [p for p in csv_paths if p.exists()]
     if not csv_paths:
-        print("No *-per-dollar-*.csv datasets found under public/data/ — nothing to do.")
+        print("No flagship *-per-dollar-2026.csv datasets found under public/data/ — nothing to do.")
         return 0
     print(f"Datasets found: {', '.join(p.name for p in csv_paths)}")
 

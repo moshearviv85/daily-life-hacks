@@ -1,22 +1,22 @@
 food,category,value,package,package_price_usd,price_basis
 Chicken drumsticks (bone-in),Meat & poultry,50.3,5 lb bag,5.46,Walmart Jul 2026; USDA SR28 refuse: 33% bone and cartilage
-Eggs (large),Eggs & dairy,34.4,1 dozen (600 g edible),2.19,BLS US avg May 2026 (APU0000708111)
+Eggs (large),Eggs & dairy,34.4,1 dozen (600 g edible),2.19,BLS US avg July 2026 (APU0000708111)
 Mozzarella (low-moisture part-skim),Eggs & dairy,30.1,16 oz block,3.58,Walmart GV Jul 2026
-Whole milk,Eggs & dairy,29.1,1 gallon,4.22,BLS US avg May 2026 (APU0000709112)
+Whole milk,Eggs & dairy,28.5,1 gallon,4.31,BLS US avg July 2026 (APU0000709112)
 "Chicken thighs (boneless, skinless)",Meat & poultry,27.7,per lb,3.22,Walmart Jul 2026
 "Greek yogurt (plain, nonfat)",Eggs & dairy,27.5,32 oz tub,3.36,Walmart GV Jul 2026
 "Rotisserie chicken (whole, cooked)",Meat & poultry,26.7,"whole bird (36 oz, cooked)",5.97,"Walmart deli Jul 2026; USDA SR28 refuse (roasted, meat only): 33% bone + 13% skin"
 Cottage cheese (4%),Eggs & dairy,26.3,24 oz tub,2.87,Walmart GV Jul 2026
-Whole chicken (raw),Meat & poultry,25.3,per lb,2.04,BLS US avg May 2026 (APU0000706111); USDA FDC 171447 yield: 276 g meat+skin per lb ready-to-cook
+Whole chicken (raw),Meat & poultry,25.6,per lb,2.01,BLS US avg July 2026 (APU0000706111); USDA FDC 171447 yield: 276 g meat+skin per lb ready-to-cook
 Pork shoulder butt roast (boneless),Meat & poultry,25.2,per lb,3.14,Walmart (Smithfield) Jul 2026
-"Chicken breast (boneless, skinless)",Meat & poultry,24.5,per lb,4.17,BLS US avg May 2026 (APU0000FF1101)
+"Chicken breast (boneless, skinless)",Meat & poultry,24.6,per lb,4.16,BLS US avg July 2026 (APU0000FF1101)
+Pork loin chops (boneless),Meat & poultry,23.0,per lb,4.25,BLS US avg July 2026 (APU0000FD3101)
 "Canned tuna (chunk light, in water)",Fish (canned & frozen),22.4,5 oz can (113 g drained),0.98,Walmart GV Jul 2026
-Pork loin chops (boneless),Meat & poultry,22.3,per lb,4.39,BLS US avg May 2026 (APU0000FD3101)
 Canned pink salmon,Fish (canned & frozen),21.6,14.75 oz can,3.8,Walmart GV Jul 2026
 Frozen tilapia fillets,Fish (canned & frozen),20.9,4 lb bag,17.47,Walmart GV Jul 2026
 "Sardines (canned in oil, drained)",Fish (canned & frozen),20.2,3.75 oz can (92 g drained),1.12,Walmart Jul 2026
-Cheddar cheese,Eggs & dairy,18.2,per lb,5.69,BLS US avg May 2026 (APU0000710212)
+Cheddar cheese,Eggs & dairy,18.1,per lb,5.75,BLS US avg July 2026 (APU0000710212)
 Ground turkey (93/7),Meat & poultry,15.6,1 lb roll,5.46,Walmart (Jennie-O) Jul 2026
-Ground beef (80/20),Meat & poultry,11.5,per lb,6.75,BLS US avg May 2026 (APU0000703112)
-Ground beef (93/7),Meat & poultry,11.0,per lb,8.62,BLS US avg May 2026 (APU0000703113)
-Bacon,Meat & poultry,9.2,per lb,6.71,BLS US avg May 2026 (APU0000704111)
+Ground beef (80/20),Meat & poultry,11.3,per lb,6.89,BLS US avg July 2026 (APU0000703112)
+Ground beef (93/7),Meat & poultry,11.2,per lb,8.42,BLS US avg July 2026 (APU0000703113)
+Bacon,Meat & poultry,9.4,per lb,6.59,BLS US avg July 2026 (APU0000704111)

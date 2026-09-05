@@ -1,11 +1,11 @@
 food,category,value,protein_g_per_dollar,fiber_g_per_dollar,package,package_price_usd,price_basis
-Pinto beans (dry),Dried beans & lentils,168.7,97.9,70.8,4 lb bag,3.97,"Walmart GV (fiber study, audited)"
 Green split peas (dry),Dried beans & lentils,144.9,73.9,71.0,16 oz bag,1.42,"Walmart GV (fiber study, audited)"
-Black beans (dry),Dried beans & lentils,139.1,81.0,58.1,2 lb bag,2.42,"Walmart GV (fiber study, audited)"
-Navy beans (dry),Dried beans & lentils,127.9,75.9,52.0,2 lb bag,2.67,"Walmart GV (fiber study, audited)"
 Brown lentils (dry),Dried beans & lentils,111.4,77.7,33.7,16 oz bag,1.44,"Walmart GV (fiber study, audited)"
+Navy beans (dry),Dried beans & lentils,101.0,59.9,41.1,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233)
+Black beans (dry),Dried beans & lentils,99.6,58.0,41.6,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233)
+Pinto beans (dry),Dried beans & lentils,99.3,57.6,41.7,4 lb bag,6.75,BLS US avg July 2026 (APU0000714233)
 Chickpeas (dry),Dried beans & lentils,90.5,56.7,33.8,16 oz bag,1.64,"Walmart (fiber study, audited)"
 Red lentils (dry),Dried beans & lentils,81.3,56.0,25.3,16 oz bag,1.94,"Walmart (fiber study, audited)"
-Canned black beans,Canned beans,30.1,30.1,,15.5 oz can,0.88,"Walmart GV (fiber study, audited)"
-Canned kidney beans,Canned beans,23.4,23.4,,15.5 oz can,0.98,"Walmart GV (fiber study, audited)"
-Canned chickpeas,Canned beans,22.0,22.0,,15.5 oz can,0.98,"Walmart GV (fiber study, audited)"
+Canned black beans,Canned beans,64.5,30.1,34.4,15.5 oz can,0.88,"Walmart GV (fiber study, audited)"
+Canned kidney beans,Canned beans,42.7,23.4,19.3,15.5 oz can,0.98,"Walmart GV (fiber study, audited)"
+Canned chickpeas,Canned beans,41.7,22.0,19.7,15.5 oz can,0.98,"Walmart GV (fiber study, audited)"

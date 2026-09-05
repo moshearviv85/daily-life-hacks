@@ -152,10 +152,63 @@ test("flagship highlight and shortlist numbers match the published CSVs", () => 
 
   const protein = FLAGSHIP_ENGAGEMENT["protein-per-dollar-cheapest-protein-sources"];
   const fiber = FLAGSHIP_ENGAGEMENT["fiber-per-dollar-cheapest-high-fiber-foods"];
-  assert.match(protein.nextStep.text, /71\.0 grams of fiber/);
-  assert.match(protein.nextStep.text, /2\.5/);
-  assert.match(fiber.nextStep.text, /97\.9 grams/);
-  assert.match(fiber.nextStep.text, /9\.2/);
+  const proteinRows = parseCsv(read(protein.csv));
+  const fiberRows = parseCsv(read(fiber.csv));
+  const proteinByFood = new Map(proteinRows.map((row) => [row.food, row]));
+  const fiberByFood = new Map(fiberRows.map((row) => [row.food, row]));
+  const splitPeas = fiberByFood.get("Green split peas (dry)");
+  const blueberries = fiberByFood.get("Blueberries");
+  const flour = proteinByFood.get("Whole wheat flour");
+  const bacon = proteinByFood.get("Bacon");
+  assert.match(protein.nextStep.text, new RegExp(`${splitPeas.fiber_g_per_dollar} grams of fiber`));
+  assert.match(protein.nextStep.text, new RegExp(blueberries.fiber_g_per_dollar.replace(".", "\\.")));
+  assert.match(fiber.nextStep.text, new RegExp(`${flour.protein_g_per_dollar} grams`));
+  assert.match(fiber.nextStep.text, new RegExp(bacon.protein_g_per_dollar.replace(".", "\\.")));
+});
+
+test("flagship ranking tables lock food, rank, and grams-per-dollar to the live CSVs", () => {
+  const tables = [
+    {
+      slug: "protein-per-dollar-cheapest-protein-sources",
+      article: "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
+      csv: "public/data/protein-per-dollar-2026.csv",
+      header: "| Rank | Food | Protein (g per 100g) | Price per 100g | Protein per $1 |",
+      column: "protein_g_per_dollar",
+    },
+    {
+      slug: "fiber-per-dollar-cheapest-high-fiber-foods",
+      article: "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
+      csv: "public/data/fiber-per-dollar-2026.csv",
+      header: "| Rank | Food | Fiber (g per 100g) | Price per 100g | Fiber per $1 |",
+      column: "fiber_g_per_dollar",
+    },
+  ];
+
+  for (const table of tables) {
+    const rows = parseCsv(read(table.csv));
+    const markdown = read(table.article);
+    const start = markdown.indexOf(table.header);
+    assert.notEqual(start, -1, `${table.slug} missing ranking table`);
+    const lines = [];
+    for (const line of markdown.slice(start).split(/\r?\n/).slice(2)) {
+      if (!line.startsWith("|")) break;
+      lines.push(line);
+    }
+    assert.equal(lines.length, rows.length, `${table.slug} table length drifted from CSV`);
+    for (const [index, row] of rows.entries()) {
+      const cells = lines[index]
+        .slice(1, -1)
+        .split("|")
+        .map((cell) => cell.trim());
+      assert.equal(cells[0], row.rank, `${table.slug} rank ${row.rank}`);
+      assert.equal(cells[1], row.food, `${table.slug} food ${row.food}`);
+      assert.equal(
+        cells[4],
+        `${row[table.column]} g`,
+        `${table.slug} ${row.food} should show ${row[table.column]} g from the CSV`,
+      );
+    }
+  }
 });
 
 test("reusable pull-quote and jump components stay honest buttons and anchors", () => {

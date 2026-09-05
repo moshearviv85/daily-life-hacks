@@ -113,7 +113,7 @@ const fiberResponse = `{
   "count": 3,
   "meta": {
     "api_version": "v1",
-    "data_version": "2026.1",
+    "data_version": "2026.3",
     "methodology_url": "https://www.daily-life-hacks.com/methodology/",
     "attribution": "Data: Daily Life Hacks, https://www.daily-life-hacks.com/data/"
   }
@@ -122,11 +122,11 @@ const fiberResponse = `{
 const curlJq = `curl -s "https://www.daily-life-hacks.com/api/v1/foods?nutrient=protein&dataset=protein-per-dollar-2026&limit=5" \\
   | jq -r '.data[] | "\\(.value)\\tg protein per $1\\t\\(.food)"'`;
 
-const jqOutput = `97.9	g protein per $1	Pinto beans (dry)
-96	g protein per $1	Whole wheat flour
-81	g protein per $1	Black beans (dry)
+const jqOutput = `96	g protein per $1	Whole wheat flour
 77.7	g protein per $1	Brown lentils (dry)
-75.9	g protein per $1	Navy beans (dry)`;
+73.9	g protein per $1	Green split peas (dry)
+59.9	g protein per $1	Navy beans (dry)
+58	g protein per $1	Black beans (dry)`;
 
 const curlSearch = `curl "https://www.daily-life-hacks.com/api/v1/foods?q=lentils&nutrient=protein&sort=value&order=desc&limit=10"`;
 
