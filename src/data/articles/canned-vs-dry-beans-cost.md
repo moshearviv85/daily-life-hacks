@@ -6,7 +6,7 @@ tags: ["canned vs dry beans", "dry beans cost", "canned beans price", "cheap pro
 image: "/images/canned-vs-dry-beans-cost-main.jpg"
 imageAlt: "Open cans of black beans next to a burlap sack of dry black beans on a wooden counter"
 date: 2026-07-13
-dateModified: 2026-09-02
+dateModified: 2026-09-05
 author: "David Miller"
 faq:
   - question: "Are dry beans cheaper than canned beans?"
@@ -66,6 +66,6 @@ Skip the ones that need soaking. Brown lentils (77.7 grams per dollar) and green
 
 For actual beans, batch cooking is the trick. Simmer a whole bag on a Sunday, portion it, freeze it, and future-you gets canned-bean convenience at dry-bean prices. If you're choosing the bag by protein instead of bean loyalty, [the dried-bean protein comparison](/which-dried-beans-have-the-most-protein/) puts eight varieties on the same 100-gram line. Those frozen portions drop straight into a [three bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) or a [Tuscan white bean and kale soup](/tuscan-white-bean-kale-soup-stovetop/), where navy beans quietly deliver their 75.9 grams per dollar without anyone noticing they were the frugal choice.
 
-The short version: dry beans are one of the few places in the store where a little labor buys you a genuinely large discount. Protein isn't the only thing in the bag, either: we scored the same beans on [protein and fiber per dollar at once](/beans-double-win-fiber-protein/), and the dry bags ran away with that ranking too. If you want the wider map of where beans sit among everything else, our [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) puts these numbers to work across a full week of meals.
+The short version: dry beans are one of the few places in the store where a little labor buys you a genuinely large discount. Protein isn't the only thing in the bag, either: dry pintos bought 70.8 grams of fiber per dollar in the [fiber ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), and canned black beans bought 34.4. We also scored the same beans on [protein and fiber per dollar at once](/beans-double-win-fiber-protein/), and the dry bags ran away with that ranking too. If you want the wider map of where beans sit among everything else, our [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) puts these numbers to work across a full week of meals.
 
 <!-- numbers-source: pipeline-data/derived-studies/canned-vs-dry-beans-cost.json -->

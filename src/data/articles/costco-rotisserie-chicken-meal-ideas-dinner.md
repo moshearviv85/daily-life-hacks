@@ -12,7 +12,7 @@ tags:
 image: "/images/costco-rotisserie-chicken-meal-ideas-dinner-main.jpg"
 imageAlt: Pulled rotisserie chicken and fresh vegetables are arranged on a light wooden cutting board.
 date: 2026-04-28
-dateModified: 2026-08-20
+dateModified: 2026-09-05
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
@@ -50,7 +50,7 @@ Five Costco rotisserie chicken dinners, each under 25 minutes: stir-fry, tacos, 
 
 I have spent more time than I care to admit standing in the Costco checkout line, staring at a five-dollar bird and wondering if I actually have a plan for it. We all do it. It is the ultimate impulse buy that feels like a win until you get home and realize your kids won't just eat plain chicken three nights in a row.
 
-The beauty of a pre-cooked bird isn't just the price, it's the fact that the hardest part of dinner is already done. Raw chicken costs less per pound, and [thighs and breasts don't land in the same place on protein per dollar](/chicken-thighs-vs-breast-protein-cost/), but a whole rotisserie bird still returned 26.7 grams per dollar in our [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), and neither raw cut cooks itself while you're stuck in traffic. You don't need a culinary degree to make this work, you just need a few pantry staples and about fifteen minutes. Here are the five dinners, every one of them under 25 minutes:
+The beauty of a pre-cooked bird isn't just the price, it's the fact that the hardest part of dinner is already done. Raw chicken costs less per pound, and [thighs and breasts don't land in the same place on protein per dollar](/chicken-thighs-vs-breast-protein-cost/), but a whole rotisserie bird still returned 26.7 grams per dollar in our [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). That 26.7 figure is the July 2026 study bird at $5.97, not the warehouse sticker you stared at in the checkout line, and neither raw cut cooks itself while you're stuck in traffic. You don't need a culinary degree to make this work, you just need a few pantry staples and about fifteen minutes. Here are the five dinners, every one of them under 25 minutes:
 
 Run your add-ons through the [recipe cost calculator](/tools/recipe-cost-calculator/) if you want to know whether the five-dollar bird stayed a bargain after pesto, tortillas, and the cheese aisle got involved.
 

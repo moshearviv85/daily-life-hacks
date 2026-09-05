@@ -16,7 +16,7 @@ tags:
 image: "/images/beans-and-rice-complete-protein-meal-main.jpg"
 imageAlt: "A hearty bowl of black beans and rice garnished with fresh cilantro and lime"
 date: 2026-04-08
-dateModified: 2026-07-20
+dateModified: 2026-09-05
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -100,9 +100,11 @@ A quick tip for leftovers: sometimes rice gets a little dry in the fridge. When 
 
 ## The budget breakdown
 
-Part of the appeal here is how ridiculous the cost per serving is. A bag of dried rice and a couple of cans of beans cost less than a fancy coffee. Even if you splurge on the bell pepper and a fresh lime, you are looking at a dinner that costs maybe two dollars a plate, and stripped back to just the dry weights, [a full day of rice and beans for one person lands around 64 cents](/how-much-rice-and-beans-per-person-per-day/). 
+The two cans in this recipe were $0.88 each in the July 2026 grocery sample, $1.76 for the pot. Together they carried about 53 grams of protein on the whole-can basis the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) uses, which is 30.1 grams per dollar. White rice in that same sample returned 48.0 grams of protein per dollar. I'm not pricing the bell pepper or the lime, because they aren't in the spreadsheet.
 
-When groceries feel like a luxury, having a meal like this in your back pocket is essential. It frees up your budget for other things, like buying good olive oil or finally replacing that weird skillet that everything sticks to.
+Those cans also bought 34.4 grams of fiber per dollar in the [fiber ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Same aisle, second nutrient, no extra trip.
+
+When groceries feel like a luxury, a dinner you can price from a public CSV is a useful thing to have in your back pocket. It frees up the rest of the cart for olive oil, or for finally replacing that skillet everything sticks to.
 
 You don't need a massive grocery haul to make a substantial dinner. You need a few basic ingredients and the willingness to let them get to know each other in a skillet.
 

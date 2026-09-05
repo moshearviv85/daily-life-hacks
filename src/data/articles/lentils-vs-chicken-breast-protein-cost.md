@@ -6,6 +6,7 @@ tags: ["lentils vs chicken breast", "cheapest protein per dollar", "lentils prot
 image: "/images/lentils-vs-chicken-breast-protein-cost-main.jpg"
 imageAlt: "A bowl of dry brown lentils next to two raw boneless skinless chicken breasts on a wooden counter"
 date: 2026-07-26
+dateModified: 2026-09-05
 author: "David Miller"
 faq:
   - question: "Are lentils cheaper protein than chicken breast?"
@@ -60,6 +61,6 @@ More often than the numbers make it look. Chicken breast gives you the highest-q
 
 Chicken also wins on the boring stuff that decides what actually gets cooked. It shreds into salads, it grills, it survives picky eaters, and [a properly cooked chicken breast](/best-way-to-cook-chicken/) is a dinner without needing anything else on the plate. If lentils twice a week and [one-pot chicken and rice](/easy-one-pot-chicken-and-rice-dinner/) on Thursday is what keeps the kitchen running, that's a better plan than an all-lentil spreadsheet you abandon in nine days.
 
-Buy the lentils because they're cheap and they may add fiber your week is probably short on. Buy the chicken because you'll eat it. The households that spend the least on protein aren't the ones that picked a side, they're the ones that let the cheap stuff carry the volume. For the full ranking, see our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), and for how to build a week around it, the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) has the strategy.
+Buy the lentils because they're cheap and they may add fiber your week is probably short on. Dry brown lentils bought 33.7 grams of fiber per dollar in the [fiber ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Buy the chicken because you'll eat it. The households that spend the least on protein aren't the ones that picked a side, they're the ones that let the cheap stuff carry the volume. For the full ranking, see our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), and for how to build a week around it, the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) has the strategy.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv -->

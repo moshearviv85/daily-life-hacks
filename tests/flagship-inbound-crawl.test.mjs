@@ -13,6 +13,11 @@ const requiredLinks = [
   ["savory-chia-seed-recipes-breakfast", fiberFlagship],
   ["costco-rotisserie-chicken-meal-ideas-dinner", proteinFlagship],
   ["how-to-keep-sandwiches-from-getting-soggy", proteinFlagship],
+  ["beans-and-rice-complete-protein-meal", proteinFlagship],
+  ["beans-and-rice-complete-protein-meal", fiberFlagship],
+  ["high-protein-on-a-budget-complete-guide", fiberFlagship],
+  ["lentils-vs-chicken-breast-protein-cost", fiberFlagship],
+  ["canned-vs-dry-beans-cost", fiberFlagship],
 ];
 
 function articleBody(slug) {

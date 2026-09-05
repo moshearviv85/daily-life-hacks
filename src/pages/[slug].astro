@@ -27,8 +27,10 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { buildArticleToc } from "../content/article-toc.mjs";
 import { getFlagshipEngagement } from "../content/flagship-engagement.mjs";
+import { getMealProteinCost } from "../content/meal-protein-cost.mjs";
 import StudyLead from "../components/StudyLead.astro";
 import StudyNextStep from "../components/StudyNextStep.astro";
+import MealProteinCost from "../components/MealProteinCost.astro";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -496,6 +498,7 @@ const flagship = getFlagshipEngagement(article.id);
 const flagshipLeadHighlight = flagship?.highlights.find(
   (highlight) => highlight.place === "lead",
 );
+const mealCost = getMealProteinCost(article.id);
 
 const currentSlug = Astro.params.slug;
 /** Built pages are canonical-only (CP2 Phase B); keep guard if path ever drifts. */
@@ -674,6 +677,13 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
               jumpHref={flagship.rankingJump.href}
               jumpLabel={flagship.rankingJump.label}
             />
+          </div>
+        )
+      }
+      {
+        !flagship && mealCost && (
+          <div class="mt-5">
+            <MealProteinCost mealCost={mealCost} />
           </div>
         )
       }

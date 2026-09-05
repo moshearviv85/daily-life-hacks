@@ -7,7 +7,7 @@ cluster: "budget-protein"
 image: "/images/high-protein-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry beans and lentils beside a carton of eggs, a whole chicken, canned fish, a block of tofu, and a tub of cottage cheese on a wooden table"
 date: 2026-07-08
-dateModified: 2026-07-30
+dateModified: 2026-09-05
 author: "David Miller"
 featured: false
 faq:
@@ -170,12 +170,12 @@ If this protein backbone is only one slice of the household cart, compare it wit
 
 ## Which foods give you cheap protein and cheap fiber at once?
 
-The same ones. Beans, lentils, split peas and oats sit near the top of both our protein-per-dollar and fiber-per-dollar rankings, so a pot of lentil soup is buying two nutrients with one dollar. One last thing the per-dollar lens reveals: the cheapest protein foods and the cheapest fiber foods are largely the same foods. Beans, lentils, split peas, and oats top both rankings. That's a genuinely useful coincidence, because meals built on them may help you stay full in a way that a plain chicken breast often doesn't; we dug into the [protein versus fiber satiety question](/high-protein-vs-high-fiber-satiety/) separately, and the honest answer is that the combination tends to beat either one alone.
+The same ones. Beans, lentils, split peas and oats sit near the top of both our protein-per-dollar ranking and the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), so a pot of lentil soup is buying two nutrients with one dollar. One last thing the per-dollar lens reveals: the cheapest protein foods and the cheapest fiber foods are largely the same foods. Beans, lentils, split peas, and oats top both tables. That's a genuinely useful coincidence, because meals built on them may help you stay full in a way that a plain chicken breast often doesn't; we dug into the [protein versus fiber satiety question](/high-protein-vs-high-fiber-satiety/) separately, and the honest answer is that the combination tends to beat either one alone.
 
 So if you're optimizing your cart, don't pick a team. A pot of lentil soup is playing for both sides at once, and our roundup of [high protein, high fiber meals](/high-protein-high-fiber-meals-for-weight-loss/) is built entirely from double-agents like that. The companion to this guide, [how to eat more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/), runs the same playbook from the fiber side, and you'll notice the shopping list barely changes.
 
 ## Start with the drumsticks and a bag of beans
 
-You don't need to restructure your kitchen this week. Grab the 5 pound bag of drumsticks and a bag of pinto beans, about $9.50 at the prices used here, and you have a serious protein base while you figure out the rest at your own pace. Add a dozen eggs and the three-item subtotal reaches about $11.62. No package needs "PROTEIN" printed across the front in gym-bro type.
+You don't need to restructure your kitchen this week. Grab the 5 pound bag of drumsticks and a bag of pinto beans, $9.43 at the July 2026 study prices ($5.46 plus $3.97), and you have a serious protein base while you figure out the rest at your own pace. Add a dozen eggs and the three-item subtotal reaches about $11.62. No package needs "PROTEIN" printed across the front in gym-bro type.
 
 The store has been running this sale forever. It's just held in the aisles nobody photographs.
