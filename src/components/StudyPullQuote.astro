@@ -1,0 +1,17 @@
+---
+interface Props {
+  value: string;
+  claim: string;
+  disclosure: string;
+}
+
+const { value, claim, disclosure } = Astro.props;
+---
+
+<figure class="study-pull-quote">
+  <blockquote>
+    <p class="study-pull-quote-value">{value}</p>
+    <p class="study-pull-quote-claim">{claim}</p>
+  </blockquote>
+  <figcaption class="study-pull-quote-note">{disclosure}</figcaption>
+</figure>

@@ -21,6 +21,9 @@ test("article-content CSS covers reading UX essentials", () => {
     "overflow-x: auto",
     "overflow-x: clip",
     "scroll-margin-top",
+    ".study-pull-quote",
+    ".ranking-table-wrap",
+    ".study-ranking-jump",
   ]) {
     assert.ok(css.includes(needle), `missing CSS rule for ${needle}`);
   }

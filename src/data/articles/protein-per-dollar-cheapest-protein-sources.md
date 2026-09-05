@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/protein-per-dollar-cheapest-protein-sources-main.jpg"
 imageAlt: "Playful editorial illustration of dried beans, eggs, and chicken competing for space on a grocery scale"
 date: 2026-07-06
-dateModified: 2026-09-04
+dateModified: 2026-09-05
 author: "David Miller"
 faq:
   - question: "What is the cheapest protein source?"
@@ -25,7 +25,7 @@ faq:
 
 Dried pinto beans delivered the most protein per dollar in our 49-food July 2026 grocery sample, at about 98 grams. Bacon sits at the bottom of the same ranking at 9. That's the same nutrient at more than ten times the price, and the expensive version is the one everyone photographs on burgers.
 
-Here's where those numbers come from. Last week I ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle embarrassed everything else in the store. Several readers asked the obvious follow-up: does the same thing happen with protein? So I built the second spreadsheet. Forty-nine common grocery foods, current prices, one division problem, and a row-level source audit that separates 39 exact USDA matches from 10 close proxies, with no unresolved entries left. The result is a full ranking of the cheapest protein sources in the store, and yes, the beans repeat.
+Here's where those numbers come from. Last week I ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle embarrassed everything else in the store. Several readers asked the obvious follow-up: does the same thing happen with protein? So I built the second spreadsheet. Forty-nine common grocery foods, current prices, one division problem, and a row-level source audit that separates 39 exact USDA matches from 10 close proxies, with no unresolved entries left. The result is a [full ranking](#full-ranking) of the cheapest protein sources in the store, and yes, the beans repeat.
 
 ## What is the cheapest source of protein per dollar?
 
@@ -34,20 +34,6 @@ Here's where those numbers come from. Last week I ranked 53 foods by [fiber per 
 **The cheapest animal protein in the same sample is chicken drumsticks, at 50.3 grams per dollar**, and that's after subtracting the bone. Eggs land at 34.
 
 Bacon finishes 49th out of 49 at 9.2 grams per dollar. Same nutrient as the pinto beans, more than ten times the price.
-
-## How we ran the numbers
-
-Same playbook as the fiber study, because it survived an audit and I'm not messing with it:
-
-* **Protein content:** the current row-level source audit links 39 of 49 values to exact [USDA FoodData Central](https://fdc.nal.usda.gov/) records and 10 to close proxies. No rows are left unresolved. A proxy differs from the priced food in a material detail such as form, cut, or preparation, so it is not an exact match and is not counted as independently re-verified. TVP is the clearest example: USDA publishes no TVP record at all, so the row now carries 52.17 grams per 100 grams straight from the manufacturer label, up from the 50.0 an earlier label reported. The CSV documents every status and the reason for each proxy result.
-* **Prices:** for the 23 foods that also appeared in the fiber study, we reused the prices audited on July 4, 2026. New items use May 2026 [BLS average-price series](https://www.bls.gov/cpi/factsheets/average-prices.htm) where available and July 2026 Walmart national listings for the rest. BLS average prices and retailer listings are different kinds of price evidence, so every CSV row labels which basis it uses instead of pretending they are interchangeable.
-* **The math:** total grams of protein in the package, divided by the package price. For bone-in items we only counted the edible portion, using USDA refuse data: a raw whole chicken yields about 61 percent edible meat and skin, drumsticks lose 33 percent to bone, and a rotisserie chicken gives up 33 percent to bone and 13 percent to skin if you're eating the meat.
-
-One basis rule matters enough to spell out. Everything is measured **as purchased**: raw meat, dry beans, the package in your cart. Cooked chicken shows more protein per 100 grams than raw chicken because roasting drives off water, not because protein appeared from nowhere. Ranking cooked values against raw prices is how these comparisons usually go wrong, so we didn't.
-
-The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv), read the site's [grocery-data methodology](/methodology/), and check the calculations yourself. Same files sit on a [mirror on Hugging Face (CC-BY-4.0)](https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar). The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) lets you compare any two rows or build a basket without wrestling the CSV. The [weekly food-cost planner](/tools/grocery-budget-calculator/) takes the next step and scales our five audited 50-gram days for the number of people you're feeding.
-
-*Source audit updated July 2026: 39 exact USDA matches and 10 close proxies, with no unresolved rows. Proxy rows are not independently re-verified. Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
 
 ![Horizontal bar chart ranking the top 20 cheapest protein sources by grams of protein per dollar](/images/protein-per-dollar-top-20-chart.jpg)
 
@@ -108,6 +94,20 @@ This table contains 39 exact USDA matches and 10 close proxies, with no unresolv
 | 49 | Bacon | 13.7 g | $1.48 | 9.2 g |
 
 Protein per $1 accounts for edible portion on bone-in items, so drumsticks are scored on the meat, not the skeleton.
+
+## How we ran the numbers
+
+Same playbook as the fiber study, because it survived an audit and I'm not messing with it:
+
+* **Protein content:** the current row-level source audit links 39 of 49 values to exact [USDA FoodData Central](https://fdc.nal.usda.gov/) records and 10 to close proxies. No rows are left unresolved. A proxy differs from the priced food in a material detail such as form, cut, or preparation, so it is not an exact match and is not counted as independently re-verified. TVP is the clearest example: USDA publishes no TVP record at all, so the row now carries 52.17 grams per 100 grams straight from the manufacturer label, up from the 50.0 an earlier label reported. The CSV documents every status and the reason for each proxy result.
+* **Prices:** for the 23 foods that also appeared in the fiber study, we reused the prices audited on July 4, 2026. New items use May 2026 [BLS average-price series](https://www.bls.gov/cpi/factsheets/average-prices.htm) where available and July 2026 Walmart national listings for the rest. BLS average prices and retailer listings are different kinds of price evidence, so every CSV row labels which basis it uses instead of pretending they are interchangeable.
+* **The math:** total grams of protein in the package, divided by the package price. For bone-in items we only counted the edible portion, using USDA refuse data: a raw whole chicken yields about 61 percent edible meat and skin, drumsticks lose 33 percent to bone, and a rotisserie chicken gives up 33 percent to bone and 13 percent to skin if you're eating the meat.
+
+One basis rule matters enough to spell out. Everything is measured **as purchased**: raw meat, dry beans, the package in your cart. Cooked chicken shows more protein per 100 grams than raw chicken because roasting drives off water, not because protein appeared from nowhere. Ranking cooked values against raw prices is how these comparisons usually go wrong, so we didn't.
+
+The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv), read the site's [grocery-data methodology](/methodology/), and check the calculations yourself. Same files sit on a [mirror on Hugging Face (CC-BY-4.0)](https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar). The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) lets you compare any two rows or build a basket without wrestling the CSV. The [weekly food-cost planner](/tools/grocery-budget-calculator/) takes the next step and scales our five audited 50-gram days for the number of people you're feeding.
+
+*Source audit updated July 2026: 39 exact USDA matches and 10 close proxies, with no unresolved rows. Proxy rows are not independently re-verified. Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
 
 ## What the numbers actually say
 

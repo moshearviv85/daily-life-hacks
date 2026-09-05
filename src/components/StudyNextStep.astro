@@ -1,0 +1,26 @@
+---
+interface Link {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  kicker: string;
+  title: string;
+  text: string;
+  primary: Link;
+  secondary: Link;
+}
+
+const { kicker, title, text, primary, secondary } = Astro.props;
+---
+
+<aside class="study-next-step" aria-labelledby="study-next-step-title">
+  <p class="study-next-step-kicker">{kicker}</p>
+  <h2 id="study-next-step-title" class="study-next-step-title">{title}</h2>
+  <p class="study-next-step-text">{text}</p>
+  <p class="study-next-step-actions">
+    <a class="study-next-step-primary" href={primary.href}>{primary.label}</a>
+    <a class="study-next-step-secondary" href={secondary.href}>{secondary.label}</a>
+  </p>
+</aside>

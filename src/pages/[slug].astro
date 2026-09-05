@@ -26,6 +26,9 @@ import {
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { buildArticleToc } from "../content/article-toc.mjs";
+import { getFlagshipEngagement } from "../content/flagship-engagement.mjs";
+import StudyLead from "../components/StudyLead.astro";
+import StudyNextStep from "../components/StudyNextStep.astro";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -489,6 +492,11 @@ if (article.data.faq && article.data.faq.length > 0) {
   });
 }
 
+const flagship = getFlagshipEngagement(article.id);
+const flagshipLeadHighlight = flagship?.highlights.find(
+  (highlight) => highlight.place === "lead",
+);
+
 const currentSlug = Astro.params.slug;
 /** Built pages are canonical-only (CP2 Phase B); keep guard if path ever drifts. */
 const isVariant = Boolean(currentSlug && currentSlug !== article.id);
@@ -602,19 +610,23 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
 
     <!-- Article Header -->
     <header class="mb-8">
-      <span
-        class="inline-block px-3 py-1 text-xs font-bold rounded uppercase tracking-widest mb-4 text-white"
+      <a
+        href={`/${article.data.category}/`}
+        class="inline-block px-3 py-1 text-xs font-bold rounded uppercase tracking-widest mb-4 text-white hover:opacity-90"
         style="background-color: #F29B30;"
       >
         {article.data.category}
-      </span>
+      </a>
       <h1
         class="text-3xl md:text-4xl font-bold leading-tight mb-4"
         style="color: var(--heading-color);"
       >
         {article.data.title}
       </h1>
-      <p class="text-lg leading-relaxed" style="color: var(--muted-color);">
+      <p
+        class="text-lg leading-relaxed"
+        style={flagship ? "color: var(--text-color); font-weight: 500;" : "color: var(--muted-color);"}
+      >
         {article.data.excerpt}
       </p>
       <p
@@ -690,8 +702,20 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
       }
     </header>
 
+    {
+      flagship && flagshipLeadHighlight && (
+        <StudyLead
+          kicker={flagship.lead.kicker}
+          highlight={flagshipLeadHighlight}
+          disclosure={flagship.disclosure}
+          jumpHref={flagship.rankingJump.href}
+          jumpLabel={flagship.rankingJump.label}
+        />
+      )
+    }
+
     <!-- Quick Answer Block -->
-    {article.data.quickAnswer && (
+    {article.data.quickAnswer && !flagship && (
       <div class="mb-8 rounded-xl border-l-4 border-[#F29B30] p-5" style="background-color: var(--input-bg);">
         <h2 class="text-lg font-bold mb-2" style="color: var(--heading-color);">Here's the Deal</h2>
         <p class="leading-relaxed" style="color: var(--text-color);">{article.data.quickAnswer}</p>
@@ -718,6 +742,8 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
                 type="button"
                 class="rating-star p-0.5"
                 data-value={String(i + 1)}
+                disabled
+                aria-disabled="true"
                 aria-label={`Rate ${i + 1} ${i === 0 ? "star" : "stars"}`}
               >
                 <span class="relative block h-5 w-5">
@@ -759,6 +785,11 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
         >
           Yeah, this is a little awkward. No ratings yet. People probably rushed to make this and forgot to come back. Do us a solid, drop a quick rating, and help the next hungry person skip the guesswork.
         </p>
+        <noscript>
+          <p class="text-sm leading-relaxed" style="color: var(--muted-color);">
+            Ratings need JavaScript, so the stars stay off until then. The study above does not.
+          </p>
+        </noscript>
       </div>
     </section>
 
@@ -818,6 +849,20 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
     <div class="article-content order-[20]">
       <Content />
     </div>
+
+    {
+      flagship && (
+        <div class="order-[20]">
+          <StudyNextStep
+            kicker={flagship.nextStep.kicker}
+            title={flagship.nextStep.title}
+            text={flagship.nextStep.text}
+            primary={flagship.nextStep.primary}
+            secondary={flagship.nextStep.secondary}
+          />
+        </div>
+      )
+    }
 
     <!-- Cite this dataset (method #3: turn intent-to-cite into a correct, linked citation) -->
     {
@@ -1118,6 +1163,10 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
       if (!slug) return;
 
       const stars = Array.from(widget.querySelectorAll(".rating-star"));
+      stars.forEach((star) => {
+        star.disabled = false;
+        star.removeAttribute("aria-disabled");
+      });
       const copy = document.getElementById("rating-copy");
       const average = document.getElementById("rating-average");
       const countLabel = document.getElementById("rating-count");
