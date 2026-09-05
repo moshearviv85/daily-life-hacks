@@ -1,0 +1,28 @@
+---
+import StudyPullQuote from "./StudyPullQuote.astro";
+
+interface Highlight {
+  value: string;
+  claim: string;
+}
+
+interface Props {
+  kicker: string;
+  highlight: Highlight;
+  disclosure: string;
+  jumpHref: string;
+  jumpLabel: string;
+}
+
+const { kicker, highlight, disclosure, jumpHref, jumpLabel } = Astro.props;
+---
+
+<aside class="study-lead" aria-label="Study short answer">
+  <p class="study-lead-kicker">{kicker}</p>
+  <StudyPullQuote
+    value={highlight.value}
+    claim={highlight.claim}
+    disclosure={disclosure}
+  />
+  <a class="study-ranking-jump" href={jumpHref}>{jumpLabel}</a>
+</aside>

@@ -8,7 +8,7 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/fiber-per-dollar-cheapest-high-fiber-foods-main.jpg"
 imageAlt: "Playful editorial illustration of a grocery cart overflowing with beans and whole grains balanced against a single dollar"
 date: 2026-07-04
-dateModified: 2026-09-04
+dateModified: 2026-09-05
 author: "David Miller"
 faq:
   - question: "What food has the most fiber per dollar?"
@@ -25,7 +25,7 @@ faq:
 
 Dry green split peas are the cheapest high-fiber food you can cook and eat as-is, at about 71 grams of fiber per dollar in our July 2026 grocery dataset. Whole wheat flour technically takes the number one spot at 78 grams per dollar, but you only collect that fiber if you bake with it. Here's how I know: I built a spreadsheet nobody asked for. I took 53 foods from a normal American grocery run, matched their published fiber values to current prices, and calculated exactly how many grams of fiber one dollar buys. The row-level source audit below separates exact USDA matches from proxies and unresolved entries.
 
-The result is a full ranking of the cheapest high-fiber foods in the store, and the gap between the top and the bottom is honestly absurd. A dollar of fresh blueberries buys 2.5 grams of fiber against those 71 grams from split peas. Same nutrient, 28 times the price. If fiber were gasoline, that would be the difference between $3 a gallon and $85 a gallon, and we'd all be rioting.
+The result is a [full ranking](#full-ranking) of the cheapest high-fiber foods in the store, and the gap between the top and the bottom is honestly absurd. A dollar of fresh blueberries buys 2.5 grams of fiber against those 71 grams from split peas. Same nutrient, 28 times the price. If fiber were gasoline, that would be the difference between $3 a gallon and $85 a gallon, and we'd all be rioting.
 
 ## What is the cheapest source of fiber per dollar?
 
@@ -34,20 +34,6 @@ The result is a full ranking of the cheapest high-fiber foods in the store, and 
 **If you want the cheapest fiber you can cook and eat as-is, it's dry green split peas at 71.0 grams per dollar.** A $1.42 bag holds roughly 101 grams of fiber. Dry pinto beans are effectively tied at 70.8.
 
 At the other end of the same 53-food list, blueberries buy 2.5 grams of fiber per dollar. That's a 31-fold spread on one nutrient, in one store, on the same afternoon.
-
-## How is fiber per dollar calculated?
-
-No mystery math here. Three steps:
-
-* **Fiber content:** the current row-level source audit links 42 of 53 values to exact [USDA FoodData Central](https://fdc.nal.usda.gov/) records and 9 to close USDA proxies. The remaining 2 are unresolved. A proxy can differ in brand, variety, form, or preparation, so it is not an exact match. An unresolved row has no acceptable row-level match in the current audit and is not counted as independently re-verified. Popcorn remains unresolved: the only USDA record, FDC 167959, describes air-popped popcorn, so we applied a popping-yield correction to put it on the same basis as the unpopped kernels we priced, which lands at 12.9 grams per 100 grams. Because no published record supplies that number, the row is not claimed as a USDA match. For dry goods like beans and oats, the intended basis is fiber per 100 grams as sold in the bag, so the price and fiber are measured on the same basis.
-* **Prices:** typical US prices collected in July 2026, mostly from Walmart.com national listings (store brand where one exists), cross-checked against Bureau of Labor Statistics average price data. The [BLS average-price methodology](https://www.bls.gov/cpi/factsheets/average-prices.htm) explains an important limitation: these are estimates of price levels built from eligible retail observations, not a promise about the price at your store. Some values here are national averages, rounded. Your receipt will move. The broad tiers may move less.
-* **The math:** total grams of fiber in the package, divided by the package price. For foods with peels, cores, or pits (bananas, oranges, avocados, apples, pears), we only counted the edible portion, because you can't eat a banana peel no matter what the per-pound sticker implies.
-
-One more thing, because a data article that can't admit mistakes isn't a data article. Our latest row-level source audit found 42 exact USDA matches, 9 close USDA proxies, and 2 unresolved rows (popcorn kernels, whose value is derived rather than quoted, and frozen shelled edamame, which moved backwards from proxy to unresolved). Proxy and unresolved rows are not described as independently re-verified. We also checked the price entries against current shelf listings and corrected several figures (split peas, whole wheat spaghetti, russet potatoes, canned kidney beans, bran flakes, and flaxseed). The table below reflects that audit instead of hiding its gaps.
-
-The full dataset is public. You can download the raw CSV [here](/data/fiber-per-dollar-2026.csv) and check every number yourself. Same files sit on a [mirror on Hugging Face (CC-BY-4.0)](https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar). Or skip the spreadsheet and use the [protein and fiber value planner](/tools/fiber-per-dollar-calculator/), which compares foods and builds a basket from the same 53-row dataset. Once the winners have to feed actual people, the [weekly food-cost planner](/tools/grocery-budget-calculator/) turns our five audited 30-gram days into a scaled food list instead of another theoretical ranking.
-
-*Source audit updated July 2026: 42 exact USDA matches, 9 close USDA proxies, and 2 unresolved rows. Proxy and unresolved rows are not independently re-verified. Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
 
 ![Horizontal bar chart ranking the top 20 cheapest high-fiber foods by grams of fiber per dollar](/images/fiber-per-dollar-top-20-chart.jpg)
 
@@ -112,6 +98,20 @@ This table contains 42 exact USDA matches, 9 close USDA proxies, and 2 unresolve
 | 53 | Blueberries | 2.4 g | $0.95 | 2.5 g |
 
 Fiber per $1 accounts for edible portion on fresh fruit, so bananas are scored on the fruit, not the peel.
+
+## How is fiber per dollar calculated?
+
+No mystery math here. Three steps:
+
+* **Fiber content:** the current row-level source audit links 42 of 53 values to exact [USDA FoodData Central](https://fdc.nal.usda.gov/) records and 9 to close USDA proxies. The remaining 2 are unresolved. A proxy can differ in brand, variety, form, or preparation, so it is not an exact match. An unresolved row has no acceptable row-level match in the current audit and is not counted as independently re-verified. Popcorn remains unresolved: the only USDA record, FDC 167959, describes air-popped popcorn, so we applied a popping-yield correction to put it on the same basis as the unpopped kernels we priced, which lands at 12.9 grams per 100 grams. Because no published record supplies that number, the row is not claimed as a USDA match. For dry goods like beans and oats, the intended basis is fiber per 100 grams as sold in the bag, so the price and fiber are measured on the same basis.
+* **Prices:** typical US prices collected in July 2026, mostly from Walmart.com national listings (store brand where one exists), cross-checked against Bureau of Labor Statistics average price data. The [BLS average-price methodology](https://www.bls.gov/cpi/factsheets/average-prices.htm) explains an important limitation: these are estimates of price levels built from eligible retail observations, not a promise about the price at your store. Some values here are national averages, rounded. Your receipt will move. The broad tiers may move less.
+* **The math:** total grams of fiber in the package, divided by the package price. For foods with peels, cores, or pits (bananas, oranges, avocados, apples, pears), we only counted the edible portion, because you can't eat a banana peel no matter what the per-pound sticker implies.
+
+One more thing, because a data article that can't admit mistakes isn't a data article. Our latest row-level source audit found 42 exact USDA matches, 9 close USDA proxies, and 2 unresolved rows (popcorn kernels, whose value is derived rather than quoted, and frozen shelled edamame, which moved backwards from proxy to unresolved). Proxy and unresolved rows are not described as independently re-verified. We also checked the price entries against current shelf listings and corrected several figures (split peas, whole wheat spaghetti, russet potatoes, canned kidney beans, bran flakes, and flaxseed). The ranking above reflects that audit instead of hiding its gaps.
+
+The full dataset is public. You can download the raw CSV [here](/data/fiber-per-dollar-2026.csv) and check every number yourself. Same files sit on a [mirror on Hugging Face (CC-BY-4.0)](https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar). Or skip the spreadsheet and use the [protein and fiber value planner](/tools/fiber-per-dollar-calculator/), which compares foods and builds a basket from the same 53-row dataset. Once the winners have to feed actual people, the [weekly food-cost planner](/tools/grocery-budget-calculator/) turns our five audited 30-gram days into a scaled food list instead of another theoretical ranking.
+
+*Source audit updated July 2026: 42 exact USDA matches, 9 close USDA proxies, and 2 unresolved rows. Proxy and unresolved rows are not independently re-verified. Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
 
 ## What are the cheapest high-fiber foods per dollar?
 
