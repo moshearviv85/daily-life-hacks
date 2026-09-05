@@ -665,6 +665,19 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
         }
       </p>
       {
+        flagship && flagshipLeadHighlight && (
+          <div class="mt-5">
+            <StudyLead
+              kicker={flagship.lead.kicker}
+              highlight={flagshipLeadHighlight}
+              disclosure={flagship.disclosure}
+              jumpHref={flagship.rankingJump.href}
+              jumpLabel={flagship.rankingJump.label}
+            />
+          </div>
+        )
+      }
+      {
         dataset && datasetProvenance && (
           <p class="text-sm mt-2 leading-relaxed" style="color: var(--label-color);">
             Source: Daily Life Hacks {dataset.name} ({dataset.rows} rows,
@@ -701,18 +714,6 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
         )
       }
     </header>
-
-    {
-      flagship && flagshipLeadHighlight && (
-        <StudyLead
-          kicker={flagship.lead.kicker}
-          highlight={flagshipLeadHighlight}
-          disclosure={flagship.disclosure}
-          jumpHref={flagship.rankingJump.href}
-          jumpLabel={flagship.rankingJump.label}
-        />
-      )
-    }
 
     <!-- Quick Answer Block -->
     {article.data.quickAnswer && !flagship && (

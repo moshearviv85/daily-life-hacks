@@ -382,7 +382,7 @@ img {
 /* ── Infinite scroll animation (used by category pages) ── */
 /* ── Flagship study engagement (lead, pull-quote, ranking table) ── */
 .study-lead {
-  margin: 0 0 2rem;
+  margin: 0 0 1.25rem;
 }
 
 .study-lead-kicker,
@@ -528,11 +528,21 @@ img {
 .article-content table.ranking-table {
   display: table;
   width: 100%;
-  min-width: 36rem;
+  min-width: 32rem;
   margin: 0;
   border: 0;
   border-radius: 0;
   overflow: visible;
+}
+
+.article-content .ranking-table th,
+.article-content .ranking-table td {
+  min-width: 0;
+}
+
+.article-content .ranking-table th:nth-child(2),
+.article-content .ranking-table td:nth-child(2) {
+  min-width: 8.5rem;
 }
 
 .article-content .ranking-table thead th {
@@ -541,20 +551,6 @@ img {
   z-index: 3;
   background: var(--sidebar-bg);
   box-shadow: 0 1px 0 var(--border-color);
-}
-
-.article-content .ranking-table th:first-child,
-.article-content .ranking-table td:first-child {
-  position: sticky;
-  left: 0;
-  z-index: 1;
-  background: inherit;
-  box-shadow: 1px 0 0 var(--border-color);
-}
-
-.article-content .ranking-table thead th:first-child {
-  z-index: 4;
-  background: var(--sidebar-bg);
 }
 
 .article-content .ranking-table tbody tr {
@@ -569,13 +565,17 @@ img {
   font-weight: 600;
 }
 
+.article-content .ranking-table .ranking-row-top td:first-child {
+  box-shadow: inset 4px 0 0 #F29B30;
+}
+
 .article-content .ranking-table .ranking-row-top-1 td {
-  background: color-mix(in srgb, #F29B30 16%, var(--card-bg));
+  background: color-mix(in srgb, #F29B30 20%, var(--card-bg));
 }
 
 .article-content .ranking-table .ranking-row-top-2 td,
 .article-content .ranking-table .ranking-row-top-3 td {
-  background: color-mix(in srgb, #F29B30 9%, var(--card-bg));
+  background: color-mix(in srgb, #F29B30 11%, var(--card-bg));
 }
 
 .article-content .ranking-table .ranking-row-top5 td {
