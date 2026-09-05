@@ -41,7 +41,7 @@ The soggy sandwich isn't a failure of your cooking skills, it's a failure of eng
 
 Bread is porous. Put mustard or a juicy tomato directly against a slice of sourdough and that bread acts like a wick. You need a layer of fat as a shield.
 
-Spread your mayo, butter, or pesto from edge to edge. Not a dollop in the middle. You want a thin, continuous coat that fills the "pores" of the bread. Since oil and water don't mix, this fat layer keeps water from the turkey or the lettuce from migrating into the crust. If you're keeping things lighter, mashed avocado or a slice of hard cheese works as a physical barrier. Peanut butter works the same way and brings protein along with it, though it's worth seeing [what peanut butter and almonds each cost per gram of protein](/peanut-butter-vs-almonds-protein-cost/) before you decide which one earns the pantry shelf.
+Spread your mayo, butter, or pesto from edge to edge. Not a dollop in the middle. You want a thin, continuous coat that fills the "pores" of the bread. Since oil and water don't mix, this fat layer keeps water from the turkey or the lettuce from migrating into the crust. If you're keeping things lighter, mashed avocado or a slice of hard cheese works as a physical barrier. Peanut butter works the same way and brings protein along with it, and in our [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) the jar returned 50.7 grams per dollar, which is why it's worth seeing [what peanut butter and almonds each cost per gram of protein](/peanut-butter-vs-almonds-protein-cost/) before you decide which one earns the pantry shelf.
 
 ## Layer your ingredients strategically
 
