@@ -148,6 +148,14 @@ test("flagship highlight and shortlist numbers match the published CSVs", () => 
     assert.equal(config.rankingJump.label, "See the full ranking");
     assert.match(config.nextStep.primary.href, /^\/(?:fiber|protein)-per-dollar-/);
     assert.equal(config.nextStep.secondary.href, "/food-value-database/");
+    assert.ok(config.emailCapture, `${slug} is missing study-specific email capture copy`);
+    assert.match(config.emailCapture.title, /ranking updates/i);
+    assert.match(config.emailCapture.text, /October 2026/);
+    assert.match(config.emailCapture.text, /BLS/);
+    assert.match(config.emailCapture.text, /Same newsletter as the footer form/);
+    assert.doesNotMatch(config.emailCapture.title, /subscribe/i);
+    assert.doesNotMatch(config.emailCapture.text, /limited time|only \d+ spots|act now|last chance/i);
+    assert.equal(config.emailCapture.buttonLabel, "Email me ranking updates");
   }
 
   const protein = FLAGSHIP_ENGAGEMENT["protein-per-dollar-cheapest-protein-sources"];
@@ -156,12 +164,19 @@ test("flagship highlight and shortlist numbers match the published CSVs", () => 
   assert.match(protein.nextStep.text, /2\.5/);
   assert.match(fiber.nextStep.text, /97\.9 grams/);
   assert.match(fiber.nextStep.text, /9\.2/);
+  assert.match(protein.emailCapture.text, /pinto beans/i);
+  assert.match(protein.emailCapture.text, /drumsticks/i);
+  assert.equal(protein.emailCapture.emailSegment, "pillar-protein");
+  assert.match(fiber.emailCapture.text, /split peas/i);
+  assert.match(fiber.emailCapture.text, /whole wheat flour/i);
+  assert.equal(fiber.emailCapture.emailSegment, "pillar-fiber");
 });
 
 test("reusable pull-quote and jump components stay honest buttons and anchors", () => {
   const pullQuote = read("src/components/StudyPullQuote.astro");
   const lead = read("src/components/StudyLead.astro");
   const nextStep = read("src/components/StudyNextStep.astro");
+  const emailCapture = read("src/components/StudyEmailCapture.astro");
   const slugPage = read("src/pages/[slug].astro");
 
   assert.match(pullQuote, /class="study-pull-quote"/);
@@ -177,8 +192,16 @@ test("reusable pull-quote and jump components stay honest buttons and anchors", 
   assert.match(nextStep, /href=\{primary\.href\}/);
   assert.match(nextStep, /href=\{secondary\.href\}/);
 
+  assert.match(emailCapture, /class="study-email-capture"/);
+  assert.match(emailCapture, /fetch\("\/api\/subscribe"/);
+  assert.match(emailCapture, /source: "inline"/);
+  assert.match(emailCapture, /href="\/privacy\/"/);
+  assert.doesNotMatch(emailCapture, /kit\.com|convertkit|beehiiv/i);
+
   assert.match(slugPage, /getFlagshipEngagement/);
   assert.match(slugPage, /<StudyLead/);
+  assert.match(slugPage, /<StudyEmailCapture/);
+  assert.match(slugPage, /flagship\?\.emailCapture/);
   assert.match(slugPage, /<StudyNextStep/);
   assert.match(slugPage, /href=\{`\/\$\{article\.data\.category\}\/`\}/);
   assert.match(slugPage, /disabled\s*\n\s*aria-disabled="true"/);
@@ -196,6 +219,7 @@ test("article CSS covers pull quotes, ranking jump, and table stay-power", () =>
     ".ranking-row-top",
     ".ranking-shortlist",
     ".study-next-step",
+    ".study-email-capture",
     "#full-ranking",
   ]) {
     assert.ok(css.includes(needle), `missing CSS for ${needle}`);
@@ -291,7 +315,29 @@ test("rendered flagship pages expose the jump target when dist exists", () => {
     assert.match(html, /class="[^"]*ranking-table[^"]*"/);
     assert.match(html, /id="rank-1"/);
     assert.match(html, /class="[^"]*study-next-step[^"]*"/);
+    assert.match(html, /class="[^"]*study-email-capture[^"]*"/);
+    assert.match(html, /id="study-email-form"/);
     assert.match(html, /href="\/food-value-database\/"/);
     assert.doesNotMatch(html, /protein-per-dollar-cheapest-high-protein-foods/);
   }
+});
+
+test("inline study signup is limited to the two flagship slugs", () => {
+  const slugPage = read("src/pages/[slug].astro");
+  const sourdough = read(
+    "src/data/articles/easy-sourdough-discard-recipes-beginners.md",
+  );
+  const protein = read(
+    "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
+  );
+  const fiber = read(
+    "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
+  );
+
+  assert.match(slugPage, /flagship\?\.emailCapture/);
+  assert.doesNotMatch(sourdough, /study-email-capture|Email me ranking updates/);
+  assert.doesNotMatch(protein, /study-email-capture/);
+  assert.doesNotMatch(fiber, /study-email-capture/);
+  assert.match(protein, /Protein per Dollar: The Cheapest Protein Sources, Ranked/);
+  assert.match(fiber, /Fiber per Dollar: The Cheapest High-Fiber Foods, Ranked/);
 });

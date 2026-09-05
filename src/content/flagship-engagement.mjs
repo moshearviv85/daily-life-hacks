@@ -88,6 +88,13 @@ export const FLAGSHIP_ENGAGEMENT = {
         label: "Search the food value database",
       },
     },
+    emailCapture: {
+      kicker: "Price watch",
+      title: "Get an email when this protein ranking updates",
+      text: "Next scheduled re-audit is October 2026. Monthly BLS checks flag drift before then. If dry pinto beans or chicken drumsticks change places, that's the note. Same newsletter as the footer form. Unsubscribe whenever.",
+      buttonLabel: "Email me ranking updates",
+      emailSegment: "pillar-protein",
+    },
   },
   "fiber-per-dollar-cheapest-high-fiber-foods": {
     metric: "fiber",
@@ -167,6 +174,13 @@ export const FLAGSHIP_ENGAGEMENT = {
         href: "/food-value-database/",
         label: "Search the food value database",
       },
+    },
+    emailCapture: {
+      kicker: "Price watch",
+      title: "Get an email when this fiber ranking updates",
+      text: "Next scheduled re-audit is October 2026. Monthly BLS checks flag drift before then. If split peas or whole wheat flour change places, that's the note. Same newsletter as the footer form. Unsubscribe whenever.",
+      buttonLabel: "Email me ranking updates",
+      emailSegment: "pillar-fiber",
     },
   },
 };
