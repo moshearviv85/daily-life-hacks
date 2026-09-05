@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { DATA_LICENSE_URL } from "../content/datasets";
+import { DATA_LICENSE_URL, HUGGINGFACE_DATASET_URL } from "../content/datasets";
 
 const siteUrl = "https://www.daily-life-hacks.com";
 const pageUrl = `${siteUrl}/data-reuse/`;
@@ -127,6 +127,12 @@ const linkStyle = "color: #F29B30;";
         <li>
           <a href="/data/datapackage.json" class="underline" style={linkStyle}>datapackage.json</a>
           includes the package license, sources, field schemas, row counts, and file checksums.
+        </li>
+        <li>
+          <a href={HUGGINGFACE_DATASET_URL} class="underline" style={linkStyle} rel="noopener" target="_blank">
+            Hugging Face dataset
+          </a>
+          mirrors the fiber and protein flagship CSVs under CC BY 4.0.
         </li>
         <li>
           <a href="/openapi.json" class="underline" style={linkStyle}>openapi.json</a>

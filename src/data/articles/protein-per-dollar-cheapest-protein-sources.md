@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/protein-per-dollar-cheapest-protein-sources-main.jpg"
 imageAlt: "Playful editorial illustration of dried beans, eggs, and chicken competing for space on a grocery scale"
 date: 2026-07-06
-dateModified: 2026-07-30
+dateModified: 2026-09-04
 author: "David Miller"
 faq:
   - question: "What is the cheapest protein source?"
@@ -45,7 +45,7 @@ Same playbook as the fiber study, because it survived an audit and I'm not messi
 
 One basis rule matters enough to spell out. Everything is measured **as purchased**: raw meat, dry beans, the package in your cart. Cooked chicken shows more protein per 100 grams than raw chicken because roasting drives off water, not because protein appeared from nowhere. Ranking cooked values against raw prices is how these comparisons usually go wrong, so we didn't.
 
-The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv), read the site's [grocery-data methodology](/methodology/), and check the calculations yourself. The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) lets you compare any two rows or build a basket without wrestling the CSV. The [weekly food-cost planner](/tools/grocery-budget-calculator/) takes the next step and scales our five audited 50-gram days for the number of people you're feeding.
+The full dataset is public. You can download the raw CSV [here](/data/protein-per-dollar-2026.csv), read the site's [grocery-data methodology](/methodology/), and check the calculations yourself. Same files sit on a [mirror on Hugging Face (CC-BY-4.0)](https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar). The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) lets you compare any two rows or build a basket without wrestling the CSV. The [weekly food-cost planner](/tools/grocery-budget-calculator/) takes the next step and scales our five audited 50-gram days for the number of people you're feeding.
 
 *Source audit updated July 2026: 39 exact USDA matches and 10 close proxies, with no unresolved rows. Proxy rows are not independently re-verified. Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
 

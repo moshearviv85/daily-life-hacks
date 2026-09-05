@@ -8,7 +8,7 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/fiber-per-dollar-cheapest-high-fiber-foods-main.jpg"
 imageAlt: "Playful editorial illustration of a grocery cart overflowing with beans and whole grains balanced against a single dollar"
 date: 2026-07-04
-dateModified: 2026-07-30
+dateModified: 2026-09-04
 author: "David Miller"
 faq:
   - question: "What food has the most fiber per dollar?"
@@ -45,7 +45,7 @@ No mystery math here. Three steps:
 
 One more thing, because a data article that can't admit mistakes isn't a data article. Our latest row-level source audit found 42 exact USDA matches, 9 close USDA proxies, and 2 unresolved rows (popcorn kernels, whose value is derived rather than quoted, and frozen shelled edamame, which moved backwards from proxy to unresolved). Proxy and unresolved rows are not described as independently re-verified. We also checked the price entries against current shelf listings and corrected several figures (split peas, whole wheat spaghetti, russet potatoes, canned kidney beans, bran flakes, and flaxseed). The table below reflects that audit instead of hiding its gaps.
 
-The full dataset is public. You can download the raw CSV [here](/data/fiber-per-dollar-2026.csv) and check every number yourself. Or skip the spreadsheet and use the [protein and fiber value planner](/tools/fiber-per-dollar-calculator/), which compares foods and builds a basket from the same 53-row dataset. Once the winners have to feed actual people, the [weekly food-cost planner](/tools/grocery-budget-calculator/) turns our five audited 30-gram days into a scaled food list instead of another theoretical ranking.
+The full dataset is public. You can download the raw CSV [here](/data/fiber-per-dollar-2026.csv) and check every number yourself. Same files sit on a [mirror on Hugging Face (CC-BY-4.0)](https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar). Or skip the spreadsheet and use the [protein and fiber value planner](/tools/fiber-per-dollar-calculator/), which compares foods and builds a basket from the same 53-row dataset. Once the winners have to feed actual people, the [weekly food-cost planner](/tools/grocery-budget-calculator/) turns our five audited 30-gram days into a scaled food list instead of another theoretical ranking.
 
 *Source audit updated July 2026: 42 exact USDA matches, 9 close USDA proxies, and 2 unresolved rows. Proxy and unresolved rows are not independently re-verified. Next scheduled price re-audit: October 2026. Monthly BLS checks flag drift in between.*
 

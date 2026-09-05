@@ -52,6 +52,11 @@ export interface DatasetMeta {
    * default below. Restaurant and mixed datasets must provide an explicit class.
    */
   provenance?: DatasetProvenance;
+  /**
+   * True when this CSV is also published on the public Hugging Face dataset.
+   * Currently the fiber and protein flagships only.
+   */
+  huggingfaceMirror?: boolean;
 }
 
 export const DEFAULT_GROCERY_DATASET_PROVENANCE: DatasetProvenance = {
@@ -342,6 +347,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "The full Fiber per Dollar Index: 53 high-fiber foods ranked by dietary fiber grams per dollar, with package prices, edible fractions and price per 100g.",
     csv: "/data/fiber-per-dollar-2026.csv",
+    huggingfaceMirror: true,
     rows: 53,
     variables: ["dietary fiber (g per 100g)", "price (USD)", "fiber grams per dollar"],
     temporal: "2026",
@@ -360,6 +366,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "The full Protein per Dollar Index: 49 protein sources ranked by protein grams per dollar, with package prices, edible fractions and price per 100g.",
     csv: "/data/protein-per-dollar-2026.csv",
+    huggingfaceMirror: true,
     rows: 49,
     variables: ["protein (g per 100g)", "price (USD)", "protein grams per dollar"],
     temporal: "2026",
@@ -443,6 +450,10 @@ export const DATASETS: Record<string, DatasetMeta> = {
 export const FIBER_INDEX_NAME = "the Fiber per Dollar Index";
 export const PROTEIN_INDEX_NAME = "the Protein per Dollar Index";
 
+/** Public Hugging Face mirror of the fiber and protein flagship CSVs. */
+export const HUGGINGFACE_DATASET_URL =
+  "https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar";
+
 /** Human-readable reuse terms, including the exact scope and attribution examples. */
 export const DATA_TERMS_URL = "https://www.daily-life-hacks.com/data-reuse/";
 
@@ -453,6 +464,42 @@ export const DATA_TERMS_URL = "https://www.daily-life-hacks.com/data-reuse/";
  * relicensed; /data-reuse/ spells that boundary out.
  */
 export const DATA_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/";
+
+export function huggingfaceCsvUrl(
+  dataset: Pick<DatasetMeta, "csv" | "huggingfaceMirror">,
+): string | undefined {
+  if (!dataset.huggingfaceMirror) return undefined;
+  const fileName = dataset.csv.split("/").pop();
+  return fileName ? `${HUGGINGFACE_DATASET_URL}/resolve/main/${fileName}` : undefined;
+}
+
+/** schema.org DataDownload list: on-site CSV first, Hugging Face file URL when mirrored. */
+export function datasetDistributions(dataset: DatasetMeta, siteUrl: string) {
+  const fileName = dataset.csv.split("/").pop() ?? dataset.csv;
+  const distributions: Array<{
+    "@type": "DataDownload";
+    name: string;
+    encodingFormat: string;
+    contentUrl: string;
+  }> = [
+    {
+      "@type": "DataDownload",
+      name: fileName,
+      encodingFormat: "text/csv",
+      contentUrl: `${siteUrl}${dataset.csv}`,
+    },
+  ];
+  const huggingfaceCsv = huggingfaceCsvUrl(dataset);
+  if (huggingfaceCsv) {
+    distributions.push({
+      "@type": "DataDownload",
+      name: `${fileName} (Hugging Face mirror)`,
+      encodingFormat: "text/csv",
+      contentUrl: huggingfaceCsv,
+    });
+  }
+  return distributions;
+}
 
 /** Display order on /data/: the two named indexes first, then day-cost studies, then category cuts. */
 export const STUDY_DATASET_ORDER: string[] = [

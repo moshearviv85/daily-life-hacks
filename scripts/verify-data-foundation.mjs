@@ -264,12 +264,23 @@ export function validateDataFoundation() {
     '"@type": "Dataset"',
     'identifier: `${articleUrl}#dataset`',
     "version: DATA_VERSION",
-    '"@type": "DataDownload"',
-    'encodingFormat: "text/csv"',
-    "contentUrl:",
     "license:",
   ]) {
     if (!articleRoute.includes(required)) {
+      errors.push(`canonical Dataset schema is missing: ${required}`);
+    }
+  }
+  if (!articleRoute.includes("distribution: datasetDistributions(dataset, siteUrl)")) {
+    errors.push(
+      "canonical Dataset schema no longer emits DataDownload via datasetDistributions()",
+    );
+  }
+  for (const required of [
+    '"@type": "DataDownload"',
+    'encodingFormat: "text/csv"',
+    "contentUrl:",
+  ]) {
+    if (!registrySource.includes(required)) {
       errors.push(`canonical Dataset schema is missing: ${required}`);
     }
   }
