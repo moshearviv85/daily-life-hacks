@@ -7,6 +7,7 @@ interface Highlight {
 }
 
 interface MealCost {
+  slug: string;
   kicker: string;
   highlight: Highlight;
   disclosure: string;
@@ -34,7 +35,11 @@ const extraLinks = [
 ].filter(Boolean);
 ---
 
-<aside class="meal-protein-cost" aria-label={mealCost.kicker}>
+<aside
+  class="meal-protein-cost"
+  aria-label={mealCost.kicker}
+  data-meal-protein-cost={mealCost.slug}
+>
   <StudyLead
     kicker={mealCost.kicker}
     highlight={mealCost.highlight}

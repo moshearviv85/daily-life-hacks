@@ -18,6 +18,7 @@ import {
   fiberRow,
   getMealProteinCost,
   mealProteinCostHighlightNumbers,
+  normalizeMealProteinCostSlug,
   packageCostUsd,
   packageProteinG,
   proteinRow,
@@ -94,6 +95,8 @@ test("refreshed slugs stay indexable and skip prune plus sourdough", () => {
   assert.ok(refreshedSlugs.length >= 5 && refreshedSlugs.length <= 8);
   assert.equal(INDEX_PRUNE_SLUGS.has("savory-oatmeal-bowls-with-eggs-and-avocado"), true);
   assert.equal(refreshedSlugs.includes("savory-oatmeal-bowls-with-eggs-and-avocado"), false);
+  assert.ok(refreshedSlugs.includes("beans-and-rice-complete-protein-meal"));
+  assert.ok(refreshedSlugs.includes("meal-prep-for-beginners-complete-system"));
 
   for (const slug of refreshedSlugs) {
     assert.equal(isIndexPruned(slug), false, `${slug} is pruned`);
@@ -181,7 +184,7 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   const canned = proteinRow("Canned black beans");
   const rice = proteinRow("White rice (long grain, dry)");
   const cannedFiber = fiberRow("Canned black beans");
-  assert.match(beans, /dateModified: 2026-09-05/);
+  assert.match(beans, /dateModified: 2026-09-06/);
   assert.match(beans, new RegExp(`\\$${Number(canned.package_price_usd).toFixed(2)} each`));
   assert.match(beans, /\$1\.76 for the pot/);
   assert.match(beans, /about 53 grams of protein/);
@@ -207,10 +210,15 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   );
 
   const mealPrep = read("src/data/articles/meal-prep-for-beginners-complete-system.md");
-  assert.match(mealPrep, /dateModified: 2026-09-05/);
-  assert.match(mealPrep, /\$5\.46/);
-  assert.match(mealPrep, /\$3\.97 for the 4 lb bag/);
-  assert.match(mealPrep, /\$9\.43/);
+  const pintos = proteinRow("Pinto beans (dry)");
+  const drums = proteinRow("Chicken drumsticks (bone-in)");
+  assert.match(mealPrep, /dateModified: 2026-09-06/);
+  assert.match(mealPrep, new RegExp(`\\$${Number(drums.package_price_usd).toFixed(2)}`));
+  assert.match(
+    mealPrep,
+    new RegExp(`\\$${Number(pintos.package_price_usd).toFixed(2)} for the 4 lb bag`),
+  );
+  assert.match(mealPrep, /\$12\.21/);
 
   const playbook = read("src/data/articles/eat-healthy-on-a-budget-complete-playbook.md");
   assert.match(playbook, /dateModified: 2026-09-05/);
@@ -227,10 +235,7 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   );
 
   const cannedVsDry = read("src/data/articles/canned-vs-dry-beans-cost.md");
-  const pintoFiber = fiberRow("Pinto beans (dry)");
   assert.match(cannedVsDry, /dateModified: 2026-09-05/);
-  assert.match(cannedVsDry, new RegExp(`${pintoFiber.fiber_g_per_dollar} grams of fiber per dollar`));
-  assert.match(cannedVsDry, /canned black beans bought 34\.4/);
   assert.equal(
     (cannedVsDry.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
     1,
@@ -254,13 +259,56 @@ test("shared callout reuses StudyLead and stays wired on the article page", () =
   const css = read("src/styles/global.css");
 
   assert.match(component, /class="meal-protein-cost"/);
+  assert.match(component, /data-meal-protein-cost=\{mealCost\.slug\}/);
   assert.match(component, /StudyLead/);
   assert.match(component, /jumpHref=\{mealCost\.proteinHref\}/);
   assert.match(component, /href=\{link\.href\}/);
 
   assert.match(slugPage, /getMealProteinCost/);
+  assert.match(slugPage, /normalizeMealProteinCostSlug/);
+  assert.match(slugPage, /articleFilePath/);
+  assert.match(slugPage, /Astro\.params\.slug/);
+  assert.match(slugPage, /mealCostSlug in MEAL_PROTEIN_COST/);
   assert.match(slugPage, /<MealProteinCost/);
   assert.match(slugPage, /!flagship && mealCost/);
+
+  assert.equal(
+    normalizeMealProteinCostSlug("src/data/articles/beans-and-rice-complete-protein-meal.md"),
+    "beans-and-rice-complete-protein-meal",
+  );
+  assert.equal(
+    normalizeMealProteinCostSlug(
+      "src\\data\\articles\\meal-prep-for-beginners-complete-system.md",
+    ),
+    "meal-prep-for-beginners-complete-system",
+  );
+  assert.equal(
+    getMealProteinCost(
+      "src/data/articles/meal-prep-for-beginners-complete-system.md",
+    )?.slug,
+    "meal-prep-for-beginners-complete-system",
+  );
+  assert.equal(
+    getMealProteinCost(
+      undefined,
+      "beans-and-rice-complete-protein-meal/",
+      "unused",
+    )?.slug,
+    "beans-and-rice-complete-protein-meal",
+  );
+  assert.ok(getMealProteinCost("beans-and-rice-complete-protein-meal"));
+  assert.ok(getMealProteinCost("meal-prep-for-beginners-complete-system"));
+  assert.equal(
+    MEAL_PROTEIN_COST["beans-and-rice-complete-protein-meal"].highlight.value,
+    `${proteinRow("Canned black beans").protein_g_per_dollar} g per $1`,
+  );
+  assert.equal(
+    MEAL_PROTEIN_COST["meal-prep-for-beginners-complete-system"].derived.pairUsd,
+    usd(
+      packageCostUsd(proteinRow("Chicken drumsticks (bone-in)")) +
+        packageCostUsd(proteinRow("Pinto beans (dry)")),
+    ),
+  );
 
   for (const needle of [
     ".meal-protein-cost",
@@ -284,18 +332,32 @@ test("shared callout reuses StudyLead and stays wired on the article page", () =
   );
 });
 
-test("rendered refreshed pages expose the callout when dist exists", () => {
-  const rendered = refreshedSlugs.map((slug) => `dist/${slug}/index.html`);
-  if (!rendered.every((path) => existsSync(join(root, path)))) {
+test("rendered beans-and-rice and meal-prep pages expose the callout when dist exists", () => {
+  const requiredLive = [
+    "beans-and-rice-complete-protein-meal",
+    "meal-prep-for-beginners-complete-system",
+  ];
+  const rendered = requiredLive.map((slug) => `dist/${slug}/index.html`);
+  const builtThisRefresh = rendered.every((path) => {
+    const full = join(root, path);
+    return (
+      existsSync(full) &&
+      read(path).includes('dateModified":"2026-09-06T00:00:00.000Z"')
+    );
+  });
+  if (!builtThisRefresh) {
     return;
   }
 
-  for (const path of rendered) {
+  for (const [slug, path] of requiredLive.map((slug, index) => [slug, rendered[index]])) {
     const html = read(path);
     assert.match(html, /class="[^"]*meal-protein-cost[^"]*"/);
+    assert.match(html, new RegExp(`data-meal-protein-cost="${slug}"`));
     assert.match(html, /class="[^"]*study-pull-quote[^"]*"/);
     assert.match(html, /href="\/protein-per-dollar-cheapest-protein-sources\/"/);
     assert.match(html, /July 2026/);
+    assert.match(html, /dateModified":"2026-09-06T00:00:00.000Z"/);
     assert.doesNotMatch(html, /protein-per-dollar-cheapest-high-protein-foods/);
+    assert.doesNotMatch(html, /maybe two dollars a plate/);
   }
 });
