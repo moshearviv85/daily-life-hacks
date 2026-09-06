@@ -1,11 +1,11 @@
 food,category,value,package,package_price_usd,price_basis
 Whole wheat flour,Whole grains,77.8,5 lb bag,3.12,Walmart GV
 Green split peas (dry),Dried beans & peas,71.0,16 oz bag,1.42,Walmart GV
-Pinto beans (dry),Dried beans & peas,70.8,4 lb bag,3.97,Walmart GV
-Black beans (dry),Dried beans & peas,58.1,2 lb bag,2.42,Walmart GV
 Pearled barley (dry),Whole grains,57.1,16 oz bag,1.24,Walmart GV
-Navy beans (dry),Dried beans & peas,52.0,2 lb bag,2.67,Walmart GV
 Popcorn kernels,Whole grains,51.3,2 lb bag,2.28,Walmart GV
+Pinto beans (dry),Dried beans & peas,41.7,4 lb bag,6.75,BLS US avg July 2026 (APU0000714233)
+Black beans (dry),Dried beans & peas,41.6,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233)
+Navy beans (dry),Dried beans & peas,41.1,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233)
 Old-fashioned rolled oats,Whole grains,35.8,42 oz canister,3.36,Walmart GV
 Whole wheat spaghetti,Whole grains,35.4,16 oz box,1.18,Walmart GV
 Canned black beans,Canned,34.4,15.5 oz can,0.88,Walmart GV

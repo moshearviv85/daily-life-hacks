@@ -11,7 +11,7 @@ test("public, API, and standalone data packages reconcile exactly", () => {
   assert.deepEqual(result.errors, []);
   assert.equal(result.datasetCount, 24);
   assert.equal(result.rowCount, 622);
-  assert.equal(result.dataVersion, "2026.2");
+  assert.equal(result.dataVersion, "2026.3");
 });
 
 test("statistics hub is derived from the release instead of hand-copying winners", () => {

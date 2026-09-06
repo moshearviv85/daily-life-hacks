@@ -431,3 +431,31 @@ for (const table of tables) {
     );
   });
 }
+
+test("protein-density value copy follows the live protein-per-dollar CSV", () => {
+  const rows = parseCsv(read("public/data/protein-per-dollar-2026.csv"));
+  const byFood = new Map(rows.map((row) => [row.food, row]));
+  const leader = rows.find((row) => row.rank === "1");
+  const tvp = byFood.get("TVP (textured vegetable protein)");
+  const article = read("src/data/articles/foods-highest-in-protein-per-100-grams.md");
+
+  assert.ok(leader, "protein CSV is missing rank 1");
+  assert.ok(tvp, "protein CSV is missing TVP");
+  assert.match(
+    article,
+    new RegExp(`leads the value ranking at ${leader.protein_g_per_dollar} g per dollar`),
+  );
+  assert.match(
+    article,
+    new RegExp(
+      `ranks ${tvp.rank}th on protein per dollar at ${tvp.protein_g_per_dollar} g per dollar`,
+    ),
+  );
+  assert.match(
+    article,
+    new RegExp(
+      `${leader.food} led our 49-food value ranking at ${leader.protein_g_per_dollar} grams of protein per dollar`,
+    ),
+  );
+  assert.doesNotMatch(article, /97\.9/);
+});

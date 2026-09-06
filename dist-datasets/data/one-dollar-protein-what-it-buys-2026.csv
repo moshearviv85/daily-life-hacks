@@ -1,16 +1,16 @@
 food,category,value,package,package_price_usd,price_basis
-Pinto beans (dry),Dried beans & lentils,97.9,4 lb bag,3.97,"Walmart GV (fiber study, audited)"
 Whole wheat flour,Grains & pantry,96.0,5 lb bag,3.12,"Walmart GV (fiber study, audited)"
-Black beans (dry),Dried beans & lentils,81.0,2 lb bag,2.42,"Walmart GV (fiber study, audited)"
 Brown lentils (dry),Dried beans & lentils,77.7,16 oz bag,1.44,"Walmart GV (fiber study, audited)"
-Navy beans (dry),Dried beans & lentils,75.9,2 lb bag,2.67,"Walmart GV (fiber study, audited)"
 Green split peas (dry),Dried beans & lentils,73.9,16 oz bag,1.42,"Walmart GV (fiber study, audited)"
+Navy beans (dry),Dried beans & lentils,59.9,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233)
+Black beans (dry),Dried beans & lentils,58.0,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233)
+Pinto beans (dry),Dried beans & lentils,57.6,4 lb bag,6.75,BLS US avg July 2026 (APU0000714233)
 Chickpeas (dry),Dried beans & lentils,56.7,16 oz bag,1.64,"Walmart (fiber study, audited)"
 Red lentils (dry),Dried beans & lentils,56.0,16 oz bag,1.94,"Walmart (fiber study, audited)"
 Whole wheat spaghetti,Grains & pantry,53.4,16 oz box,1.18,"Walmart GV (fiber study, audited)"
 Peanut butter,Nuts & seeds,50.7,40 oz jar,4.97,"Walmart GV (fiber study, audited)"
 Chicken drumsticks (bone-in),Meat & poultry,50.3,5 lb bag,5.46,Walmart Jul 2026; USDA SR28 refuse: 33% bone and cartilage
-"White rice (long grain, dry)",Grains & pantry,48.0,5 lb bag,3.37,Walmart GV Jul 2026
-"Spaghetti (regular, dry)",Grains & pantry,47.7,16 oz box,1.24,Walmart GV Jul 2026
 Old-fashioned rolled oats,Grains & pantry,46.6,42 oz canister,3.36,"Walmart GV (fiber study, audited)"
+"Spaghetti (regular, dry)",Grains & pantry,42.9,16 oz box,1.38,BLS US avg July 2026 (APU0000701322)
 Dry roasted peanuts,Nuts & seeds,39.8,16 oz jar,2.78,"Walmart GV (fiber study, audited)"
+"White rice (long grain, dry)",Grains & pantry,29.4,5 lb bag,5.50,BLS US avg July 2026 (APU0000701312)

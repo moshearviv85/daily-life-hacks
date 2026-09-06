@@ -1,6 +1,6 @@
 ---
 title: "Protein per Dollar: The Cheapest Protein Sources, Ranked"
-excerpt: "A dollar of dry pinto beans buys 97.9g of protein. A dollar of bacon buys 9.2g. All 49 grocery foods ranked by protein per dollar, at July 2026 prices."
+excerpt: "A dollar of whole wheat flour buys 96.0g of protein. A dollar of bacon buys 9.4g. All 49 grocery foods ranked by protein per dollar, at July 2026 prices."
 category: "nutrition"
 tags: ["cheapest protein sources", "protein per dollar", "budget protein", "cheap protein on a budget", "grocery data"]
 cluster: "budget-protein"
@@ -12,86 +12,86 @@ dateModified: 2026-09-05
 author: "David Miller"
 faq:
   - question: "What is the cheapest protein source?"
-    answer: "In our sample of 49 common US grocery foods, dried pinto beans came out on top at about 98 grams of protein per dollar, based on USDA protein data and July 2026 prices. A $3.97 four pound bag holds roughly 389 grams of protein. Whole wheat flour finished within a rounding error at 96 grams per dollar, but that only counts if you bake. Dried lentils, black beans, and split peas fill out the top of the list, all between 56 and 81 grams per dollar."
+    answer: "In our sample of 49 common US grocery foods, whole wheat flour came out on top at 96.0 grams of protein per dollar, based on USDA protein data and July 2026 prices. That only counts if you bake. Among foods you cook and eat as-is, dry brown lentils lead at 77.7 grams per dollar from a $1.44 bag. Dry split peas, navy beans, and black beans fill out the next seats, from 73.9 down to 58.0 grams per dollar."
   - question: "What are the cheapest ways to get protein at the grocery store?"
-    answer: "Start in the dry goods aisle: dried beans, lentils, and split peas all deliver 56 to 98 grams of protein per dollar. Peanut butter lands at 51. Among animal foods, chicken drumsticks are the standout at about 50 grams per dollar even after subtracting the bone, followed by eggs at 34 and whole milk at 29. Ground beef and bacon sit at the bottom, at 9 to 12 grams per dollar."
+    answer: "Start in the dry goods aisle: dried lentils, split peas, and beans all deliver 56 to 78 grams of protein per dollar. Peanut butter lands at 51. Among animal foods, chicken drumsticks are the standout at about 50 grams per dollar even after subtracting the bone, followed by eggs at 34 and whole milk at 29. Ground beef and bacon sit at the bottom, at 9 to 11 grams per dollar."
   - question: "Does tofu have more protein than chicken?"
-    answer: "No, and it isn't close. Extra firm tofu carries about 10 grams of protein per 100 grams, while boneless skinless chicken breast carries 22.5 grams raw, per USDA data. Per dollar, chicken breast delivered about 24.5 grams of protein and tofu about 13.6 in our July 2026 numbers. Tofu still earns a spot for plenty of other reasons; it just isn't the protein bargain people assume it is."
+    answer: "No, and it isn't close. Extra firm tofu carries about 10 grams of protein per 100 grams, while boneless skinless chicken breast carries 22.5 grams raw, per USDA data. Per dollar, chicken breast delivered about 24.6 grams of protein and tofu about 13.6 in our July 2026 numbers. Tofu still earns a spot for plenty of other reasons; it just isn't the protein bargain people assume it is."
   - question: "What is the cheapest animal protein?"
     answer: "Chicken drumsticks led the animal foods in our 49-food sample. At $1.09 per pound in a 5 pound bag, they deliver about 50 grams of protein per dollar even after removing 33 percent of the weight for bone. Eggs came next at 34 grams per dollar, then a block of mozzarella at 30, whole milk at 29, and boneless chicken thighs at 28. A whole rotisserie chicken scored 27, which beat raw breast at the price points used in this dataset."
   - question: "How is protein per dollar calculated?"
-    answer: "We matched each food's protein content per 100 grams to a typical July 2026 US package price and divided total protein in the package by its price. Everything is measured as purchased, and bone-in items use USDA refuse percentages for the edible portion. The current row-level source audit found 39 exact USDA matches and 10 close proxies, with no unresolved rows left. Proxies are not counted as independently re-verified. TVP is a proxy rather than an exact match because USDA publishes no TVP record at all, so its 52.17 grams per 100 grams comes from the manufacturer label."
+    answer: "We matched each food's protein content per 100 grams to a July 2026 US package price and divided total protein in the package by its price. Where a matching BLS Average Price series exists, we used the latest published national average. Foods BLS does not track keep their Walmart store-check. Everything is measured as purchased, and bone-in items use USDA refuse percentages for the edible portion. The current row-level source audit found 39 exact USDA matches and 10 close proxies, with no unresolved rows left. Proxies are not counted as independently re-verified. TVP is a proxy rather than an exact match because USDA publishes no TVP record at all, so its 52.17 grams per 100 grams comes from the manufacturer label."
 ---
 
-Dried pinto beans delivered the most protein per dollar in our 49-food July 2026 grocery sample, at about 98 grams. Bacon sits at the bottom of the same ranking at 9. That's the same nutrient at more than ten times the price, and the expensive version is the one everyone photographs on burgers.
+Whole wheat flour delivered the most protein per dollar in our 49-food July 2026 grocery sample, at 96.0 grams. That only counts if you bake. Among foods you cook and eat as-is, dry brown lentils lead at 77.7. Bacon sits at the bottom of the same ranking at 9.4. That's the same nutrient at about ten times the price, and the expensive version is the one everyone photographs on burgers.
 
 Here's where those numbers come from. Last week I ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and the dry goods aisle embarrassed everything else in the store. Several readers asked the obvious follow-up: does the same thing happen with protein? So I built the second spreadsheet. Forty-nine common grocery foods, current prices, one division problem, and a row-level source audit that separates 39 exact USDA matches from 10 close proxies, with no unresolved entries left. The result is a [full ranking](#full-ranking) of the cheapest protein sources in the store, and yes, the beans repeat.
 
 ## What is the cheapest source of protein per dollar?
 
-**Dried pinto beans, at 97.9 grams of protein per dollar.** A $3.97 four pound bag holds roughly 389 grams of protein. Whole wheat flour comes in second at 96.0, dry black beans third at 81.0.
+**Whole wheat flour, at 96.0 grams of protein per dollar.** A $3.12 five pound bag holds about 300 grams of protein. The catch is the same one from the fiber study: flour is an ingredient, not dinner.
 
-**The cheapest animal protein in the same sample is chicken drumsticks, at 50.3 grams per dollar**, and that's after subtracting the bone. Eggs land at 34.
+**If you want the cheapest protein you can cook and eat as-is, it's dry brown lentils at 77.7 grams per dollar.** A $1.44 bag holds roughly 112 grams of protein. Dry split peas sit right behind at 73.9.
 
-Bacon finishes 49th out of 49 at 9.2 grams per dollar. Same nutrient as the pinto beans, more than ten times the price.
+Bacon finishes 49th out of 49 at 9.4 grams per dollar. Same nutrient as the flour, about ten times the price.
 
 ![Horizontal bar chart ranking the top 20 cheapest protein sources by grams of protein per dollar](/images/protein-per-dollar-top-20-chart.jpg)
 
 ## The full ranking: 49 protein sources by protein per dollar
 
-This table contains 39 exact USDA matches and 10 close proxies, with no unresolved protein-source rows. The raw CSV identifies the status and evidence for each row; proxy rows are not independently re-verified. Price entries are July 2026 US figures checked against Walmart shelf listings and BLS national averages.
+This table contains 39 exact USDA matches and 10 close proxies, with no unresolved protein-source rows. The raw CSV identifies the status and evidence for each row; proxy rows are not independently re-verified. Price entries use July 2026 BLS US city averages where a matching Average Price series exists. Whole-wheat bread still uses its latest published BLS month, May 2026. Foods BLS does not track keep their Walmart store-check.
 
 | Rank | Food | Protein (g per 100g) | Price per 100g | Protein per $1 |
 |---|---|---|---|---|
-| 1 | Pinto beans (dry) | 21.4 g | $0.22 | 97.9 g |
-| 2 | Whole wheat flour | 13.2 g | $0.14 | 96.0 g |
-| 3 | Black beans (dry) | 21.6 g | $0.27 | 81.0 g |
-| 4 | Brown lentils (dry) | 24.6 g | $0.32 | 77.7 g |
-| 5 | Navy beans (dry) | 22.3 g | $0.29 | 75.9 g |
-| 6 | Green split peas (dry) | 23.1 g | $0.31 | 73.9 g |
+| 1 | Whole wheat flour | 13.2 g | $0.14 | 96.0 g |
+| 2 | Brown lentils (dry) | 24.6 g | $0.32 | 77.7 g |
+| 3 | Green split peas (dry) | 23.1 g | $0.31 | 73.9 g |
+| 4 | Navy beans (dry) | 22.3 g | $0.37 | 59.9 g |
+| 5 | Black beans (dry) | 21.6 g | $0.37 | 58.0 g |
+| 6 | Pinto beans (dry) | 21.4 g | $0.37 | 57.6 g |
 | 7 | Chickpeas (dry) | 20.5 g | $0.36 | 56.7 g |
 | 8 | Red lentils (dry) | 23.9 g | $0.43 | 56.0 g |
 | 9 | Whole wheat spaghetti | 13.9 g | $0.26 | 53.4 g |
 | 10 | Peanut butter | 22.2 g | $0.44 | 50.7 g |
 | 11 | Chicken drumsticks (bone-in) | 18.1 g | $0.24 | 50.3 g |
-| 12 | White rice (long grain, dry) | 7.1 g | $0.15 | 48.0 g |
-| 13 | Spaghetti (regular, dry) | 13.0 g | $0.27 | 47.7 g |
-| 14 | Old-fashioned rolled oats | 13.2 g | $0.28 | 46.6 g |
-| 15 | Dry roasted peanuts | 24.4 g | $0.61 | 39.8 g |
-| 16 | Brown rice (dry) | 7.5 g | $0.21 | 36.6 g |
-| 17 | Pearled barley (dry) | 9.9 g | $0.27 | 36.3 g |
-| 18 | 100% whole wheat bread | 12.5 g | $0.35 | 35.8 g |
-| 19 | Eggs (large) | 12.6 g | $0.37 | 34.4 g |
-| 20 | Sunflower seed kernels | 20.8 g | $0.66 | 31.7 g |
-| 21 | Canned black beans | 6.0 g | $0.20 | 30.1 g |
-| 22 | Mozzarella (low-moisture part-skim) | 23.8 g | $0.79 | 30.1 g |
-| 23 | Whole milk | 3.2 g | $0.11 | 29.1 g |
-| 24 | Chicken thighs (boneless, skinless) | 19.7 g | $0.71 | 27.7 g |
-| 25 | Greek yogurt (plain, nonfat) | 10.2 g | $0.37 | 27.5 g |
-| 26 | Rotisserie chicken (whole, cooked) | 28.9 g | $0.58 | 26.7 g |
-| 27 | Cottage cheese (4%) | 11.1 g | $0.42 | 26.3 g |
-| 28 | Whole chicken (raw) | 18.6 g | $0.45 | 25.3 g |
-| 29 | Pork shoulder butt roast (boneless) | 17.4 g | $0.69 | 25.2 g |
-| 30 | Chicken breast (boneless, skinless) | 22.5 g | $0.92 | 24.5 g |
-| 31 | TVP (textured vegetable protein) | 52.2 g | $2.23 | 23.4 g |
-| 32 | Canned kidney beans | 5.2 g | $0.22 | 23.4 g |
+| 12 | Old-fashioned rolled oats | 13.2 g | $0.28 | 46.6 g |
+| 13 | Spaghetti (regular, dry) | 13.0 g | $0.30 | 42.9 g |
+| 14 | Dry roasted peanuts | 24.4 g | $0.61 | 39.8 g |
+| 15 | Brown rice (dry) | 7.5 g | $0.21 | 36.6 g |
+| 16 | Pearled barley (dry) | 9.9 g | $0.27 | 36.3 g |
+| 17 | Eggs (large) | 12.6 g | $0.37 | 34.4 g |
+| 18 | Sunflower seed kernels | 20.8 g | $0.66 | 31.7 g |
+| 19 | Canned black beans | 6.0 g | $0.20 | 30.1 g |
+| 20 | Mozzarella (low-moisture part-skim) | 23.8 g | $0.79 | 30.1 g |
+| 21 | White rice (long grain, dry) | 7.1 g | $0.24 | 29.4 g |
+| 22 | Whole milk | 3.2 g | $0.11 | 28.5 g |
+| 23 | Chicken thighs (boneless, skinless) | 19.7 g | $0.71 | 27.7 g |
+| 24 | Greek yogurt (plain, nonfat) | 10.2 g | $0.37 | 27.5 g |
+| 25 | Rotisserie chicken (whole, cooked) | 28.9 g | $0.59 | 26.7 g |
+| 26 | Cottage cheese (4%) | 11.1 g | $0.42 | 26.3 g |
+| 27 | Whole chicken (raw) | 18.6 g | $0.44 | 25.6 g |
+| 28 | Pork shoulder butt roast (boneless) | 17.4 g | $0.69 | 25.2 g |
+| 29 | Chicken breast (boneless, skinless) | 22.5 g | $0.92 | 24.6 g |
+| 30 | TVP (textured vegetable protein) | 52.2 g | $2.23 | 23.4 g |
+| 31 | Canned kidney beans | 5.2 g | $0.22 | 23.4 g |
+| 32 | Pork loin chops (boneless) | 21.6 g | $0.94 | 23.0 g |
 | 33 | Canned tuna (chunk light, in water) | 19.4 g | $0.87 | 22.4 g |
-| 34 | Pork loin chops (boneless) | 21.6 g | $0.97 | 22.3 g |
-| 35 | Canned chickpeas | 4.9 g | $0.22 | 22.0 g |
-| 36 | Canned pink salmon | 19.7 g | $0.91 | 21.6 g |
-| 37 | Quinoa (dry) | 14.1 g | $0.66 | 21.5 g |
-| 38 | Frozen tilapia fillets | 20.1 g | $0.96 | 20.9 g |
-| 39 | Frozen green peas | 5.2 g | $0.26 | 20.4 g |
-| 40 | Sardines (canned in oil, drained) | 24.6 g | $1.22 | 20.2 g |
-| 41 | Cheddar cheese | 22.9 g | $1.25 | 18.2 g |
+| 34 | Canned chickpeas | 4.9 g | $0.22 | 22.0 g |
+| 35 | Canned pink salmon | 19.7 g | $0.91 | 21.6 g |
+| 36 | Quinoa (dry) | 14.1 g | $0.66 | 21.5 g |
+| 37 | Frozen tilapia fillets | 20.1 g | $0.96 | 20.9 g |
+| 38 | Frozen green peas | 5.2 g | $0.26 | 20.4 g |
+| 39 | Sardines (canned in oil, drained) | 24.6 g | $1.22 | 20.2 g |
+| 40 | 100% whole wheat bread | 12.5 g | $0.62 | 20.1 g |
+| 41 | Cheddar cheese | 22.9 g | $1.27 | 18.1 g |
 | 42 | Frozen shelled edamame | 11.2 g | $0.62 | 18.0 g |
 | 43 | Ground turkey (93/7) | 18.7 g | $1.20 | 15.6 g |
 | 44 | Almonds | 21.2 g | $1.43 | 14.8 g |
 | 45 | Tofu (extra firm) | 10.0 g | $0.74 | 13.6 g |
 | 46 | Tempeh | 20.3 g | $1.53 | 13.2 g |
-| 47 | Ground beef (80/20) | 17.2 g | $1.49 | 11.5 g |
-| 48 | Ground beef (93/7) | 20.9 g | $1.90 | 11.0 g |
-| 49 | Bacon | 13.7 g | $1.48 | 9.2 g |
+| 47 | Ground beef (80/20) | 17.2 g | $1.52 | 11.3 g |
+| 48 | Ground beef (93/7) | 20.9 g | $1.86 | 11.2 g |
+| 49 | Bacon | 13.7 g | $1.45 | 9.4 g |
 
 Protein per $1 accounts for edible portion on bone-in items, so drumsticks are scored on the meat, not the skeleton.
 
@@ -100,7 +100,7 @@ Protein per $1 accounts for edible portion on bone-in items, so drumsticks are s
 Same playbook as the fiber study, because it survived an audit and I'm not messing with it:
 
 * **Protein content:** the current row-level source audit links 39 of 49 values to exact [USDA FoodData Central](https://fdc.nal.usda.gov/) records and 10 to close proxies. No rows are left unresolved. A proxy differs from the priced food in a material detail such as form, cut, or preparation, so it is not an exact match and is not counted as independently re-verified. TVP is the clearest example: USDA publishes no TVP record at all, so the row now carries 52.17 grams per 100 grams straight from the manufacturer label, up from the 50.0 an earlier label reported. The CSV documents every status and the reason for each proxy result.
-* **Prices:** for the 23 foods that also appeared in the fiber study, we reused the prices audited on July 4, 2026. New items use May 2026 [BLS average-price series](https://www.bls.gov/cpi/factsheets/average-prices.htm) where available and July 2026 Walmart national listings for the rest. BLS average prices and retailer listings are different kinds of price evidence, so every CSV row labels which basis it uses instead of pretending they are interchangeable.
+* **Prices:** [BLS Average Price series](https://www.bls.gov/cpi/factsheets/average-prices.htm) where a matching APU exists, using the latest published month as of September 5, 2026. For most mapped foods that is July 2026. Whole-wheat bread's series last published in May 2026. August 2026 had not been released yet. Dried beans use APU0000714233, "Beans, dried, any type, per lb," which is a category average rather than a pinto-specific series. Foods BLS does not track keep their audited Walmart store-check. Every CSV row labels which basis it uses.
 * **The math:** total grams of protein in the package, divided by the package price. For bone-in items we only counted the edible portion, using USDA refuse data: a raw whole chicken yields about 61 percent edible meat and skin, drumsticks lose 33 percent to bone, and a rotisserie chicken gives up 33 percent to bone and 13 percent to skin if you're eating the meat.
 
 One basis rule matters enough to spell out. Everything is measured **as purchased**: raw meat, dry beans, the package in your cart. Cooked chicken shows more protein per 100 grams than raw chicken because roasting drives off water, not because protein appeared from nowhere. Ranking cooked values against raw prices is how these comparisons usually go wrong, so we didn't.
@@ -111,21 +111,21 @@ The full dataset is public. You can download the raw CSV [here](/data/protein-pe
 
 ## What the numbers actually say
 
-**The beans won again.** Seven of the top eight foods are dried legumes, and whole wheat flour is the only thing breaking the run. Same aisle that ran the fiber table. Dried pinto beans take the crown this time at about 98 grams of protein per dollar. One $3.97 four pound bag holds roughly 389 grams of protein, nearly eight times the [FDA's 50 gram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). That's a labeling benchmark, not a personal target. Our [Daily Value explainer](/fiber-protein-daily-values-explained/) unpacks the 50 gram figure without pretending one federal label number fits every human. Whole wheat flour technically ties at 96, but flour is an ingredient, not dinner, so it keeps its asterisk from the fiber study. Because the same aisle wins both spreadsheets, we scored the beans on [protein and fiber per dollar at once](/beans-double-win-fiber-protein/), where dry pintos land at 168.7 combined grams.
+**The dry goods aisle won again.** Seven of the top eight foods are dried legumes, and whole wheat flour is the only thing breaking the run, this time from the number one seat. Same aisle that ran the fiber table. Flour takes the crown at 96.0 grams of protein per dollar if you bake. Dry brown lentils are the food you can put in a pot tonight, at 77.7. One $1.44 bag holds roughly 112 grams of protein, more than twice the [FDA's 50 gram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). That's a labeling benchmark, not a personal target. Our [Daily Value explainer](/fiber-protein-daily-values-explained/) unpacks the 50 gram figure without pretending one federal label number fits every human. Because the same aisle wins both spreadsheets, we scored the beans on [protein and fiber per dollar at once](/beans-double-win-fiber-protein/), where dry split peas now lead at 144.9 combined grams.
 
-**Chicken drumsticks are the meat counter's best-kept secret in this sample.** At $1.09 per pound in the 5 pound bag, drumsticks deliver about 50 grams of protein per dollar even after we subtracted a third of the weight for bone. That's about double chicken breast, which lands at 24.5 using the BLS average price in this dataset. Breast is leaner and easier; drumsticks bought far more protein per dollar here. Your call.
+**Chicken drumsticks are the meat counter's best-kept secret in this sample.** At $1.09 per pound in the 5 pound bag, drumsticks deliver about 50 grams of protein per dollar even after we subtracted a third of the weight for bone. That's about double chicken breast, which lands at 24.6 using the July 2026 BLS average in this dataset. Breast is leaner and easier; drumsticks bought far more protein per dollar here. Your call.
 
-**Eggs are the easiest animal protein, not the cheapest.** At $2.19 a dozen (May 2026 average, the calmest egg prices in a while), eggs score 34 grams per dollar. Only drumsticks beat them among animal foods without handing you a cutting board and a raw chicken. Milk quietly rides right behind at 29; a $4.22 gallon holds 123 grams of protein, which surprised me enough to check it twice.
+**Eggs are the easiest animal protein, not the cheapest.** At $2.19 a dozen (July 2026 BLS average), eggs score 34 grams per dollar. Only drumsticks beat them among animal foods without handing you a cutting board and a raw chicken. Milk quietly rides right behind at 28.5; a $4.31 gallon still holds about 123 grams of protein, which surprised me enough to check it twice.
 
-**Dried beats canned by three to one.** Dry pinto beans, 98 grams per dollar; canned black beans, 30. Canned still beats every ground meat in the store, so keep the shelf stocked for lazy nights. But the gap is the price of convenience, and it's steep. We priced it bean by bean in [canned versus dry beans](/canned-vs-dry-beans-cost/), and not one can in that sample got near the cheapest bag.
+**Dried still beats canned, just not by the old three-to-one poster.** Dry brown lentils, 77.7 grams per dollar; canned black beans, 30.1. Canned still beats every ground meat in the store, so keep the shelf stocked for lazy nights. The gap is the price of convenience. We priced it bean by bean in [canned versus dry beans](/canned-vs-dry-beans-cost/).
 
-**Ground beef is a rough way to buy protein.** The bottom three spots are 80/20 ground beef, 93/7 ground beef, and bacon, all between 9 and 12 grams per dollar. Nobody buys bacon for protein, but plenty of people believe a pound of ground beef is the default protein move. At $6.75 a pound, every dollar you hand over buys less protein than the same dollar spent on canned beans, frozen peas, or a box of spaghetti. Point that dollar at fiber instead and it stretches even further: [the 15 cheapest fiber foods](/one-dollar-fiber-what-it-buys/) run from 28.5 grams per dollar up to 77.8.
+**Ground beef is a rough way to buy protein.** The bottom three spots are 80/20 ground beef, 93/7 ground beef, and bacon, all between 9.4 and 11.3 grams per dollar. Nobody buys bacon for protein, but plenty of people believe a pound of ground beef is the default protein move. At $6.89 a pound, every dollar you hand over buys less protein than the same dollar spent on canned beans, frozen peas, or a box of spaghetti. Point that dollar at fiber instead and it stretches even further: [the 15 cheapest fiber foods](/one-dollar-fiber-what-it-buys/) still run up to 77.8.
 
 If you just want the winner from each corner of the store, here's the shortlist:
 
 | Category | Best value | Protein per $1 |
 |---|---|---|
-| Legumes | Pinto beans (dry) | 97.9 g |
+| Legumes | Brown lentils (dry) | 77.7 g |
 | Meat and poultry | Chicken drumsticks (bone-in) | 50.3 g |
 | Eggs and dairy | Eggs (large) | 34.4 g |
 | Fish | Canned tuna (chunk light, in water) | 22.4 g |
@@ -143,9 +143,9 @@ No, and this question drives real traffic, so here are the numbers side by side:
 | | Protein per 100g | Protein per $1 |
 |---|---|---|
 | Tofu (extra firm) | 10.0 g | 13.6 g |
-| Chicken breast (boneless, skinless) | 22.5 g | 24.5 g |
+| Chicken breast (boneless, skinless) | 22.5 g | 24.6 g |
 
-Raw chicken breast carries more than twice the protein per 100 grams and nearly double the protein per dollar. Tofu is fine. It's just not a protein bargain, and neither is tempeh at 13.2 grams per dollar. The cheap plant proteins are beans, lentils, and peanut butter, all of which may also help keep you full between meals. If fullness is the thing you're actually shopping for, we compared [high protein vs high fiber for satiety](/high-protein-vs-high-fiber-satiety/) and the answer isn't one or the other.
+Raw chicken breast carries more than twice the protein per 100 grams and nearly double the protein per dollar. Tofu is fine. It's just not a protein bargain, and neither is tempeh at 13.2 grams per dollar. The cheap plant proteins are lentils, beans, and peanut butter, all of which may also help keep you full between meals. If fullness is the thing you're actually shopping for, we compared [high protein vs high fiber for satiety](/high-protein-vs-high-fiber-satiety/) and the answer isn't one or the other.
 
 ## The fine print on plant protein
 
@@ -159,7 +159,7 @@ Also worth saying: ranking low doesn't make a food bad. Sardines, tempeh, and Gr
 
 Don't build a bean-only menu out of spite. Let the top of the table carry the cheap baseline and buy the rest because you like eating it.
 
-* **Anchor the pantry with two bags.** Pintos and lentils, about $5.40 total, hold as much protein as six and a half pounds of ground beef that would cost you $43.
+* **Anchor the pantry with two bags.** Lentils and split peas, about $2.86 total, hold as much protein as you used to expect from a much louder pile of meat.
 * **Make drumsticks or a whole bird the default meat.** Both land in the top tier of animal foods. If dinner needs to be done already, the rotisserie chicken at 27 grams per dollar still beats raw breast at average prices.
 * **Keep eggs, milk, and cottage cheese doing quiet work.** All three sit in the 26 to 34 range with zero prep drama. If you're deciding between the tubs, our [cottage cheese vs Greek yogurt](/cottage-cheese-vs-greek-yogurt-protein-uses/) breakdown settles it, and [the cheapest breakfast staples ranked](/breakfast-staples-per-dollar/) covers what else earns a place before noon.
 * **Feeding a crowd?** We wrote a full playbook on [low-cost protein for large families](/best-low-cost-protein-sources-large-families/) that pairs well with this table.

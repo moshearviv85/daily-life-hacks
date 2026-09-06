@@ -39,8 +39,8 @@ TERMS_URL = f"{SITE}/data-reuse/"
 LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 
 # Fixed so re-runs stay byte-identical. Bump with the package version.
-PACKAGE_VERSION = "2026.2"
-PACKAGE_CREATED = "2026-08-02T00:00:00Z"
+PACKAGE_VERSION = "2026.3"
+PACKAGE_CREATED = "2026-09-05T00:00:00Z"
 
 
 # --------------------------------------------------------------------------

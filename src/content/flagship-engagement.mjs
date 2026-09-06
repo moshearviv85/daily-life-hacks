@@ -24,14 +24,14 @@ export const FLAGSHIP_ENGAGEMENT = {
     },
     highlights: [
       {
-        id: "pinto-vs-bacon",
+        id: "flour-vs-bacon",
         place: "lead",
-        value: "97.9 g vs 9.2 g",
+        value: "96.0 g vs 9.4 g",
         claim:
-          "One dollar of dry pinto beans bought 97.9 grams of protein. One dollar of bacon bought 9.2.",
+          "One dollar of whole wheat flour bought 96.0 grams of protein. One dollar of bacon bought 9.4.",
         numbers: [
-          { food: "Pinto beans (dry)", grams: "97.9" },
-          { food: "Bacon", grams: "9.2" },
+          { food: "Whole wheat flour", grams: "96.0" },
+          { food: "Bacon", grams: "9.4" },
         ],
       },
       {
@@ -39,10 +39,10 @@ export const FLAGSHIP_ENGAGEMENT = {
         place: "after-answer",
         value: "50.3 g after the bone",
         claim:
-          "Chicken drumsticks bought 50.3 grams of protein per dollar even after subtracting the bone. Boneless chicken breast bought 24.5 at the BLS average price in this dataset.",
+          "Chicken drumsticks bought 50.3 grams of protein per dollar even after subtracting the bone. Boneless chicken breast bought 24.6 at the BLS average price in this dataset.",
         numbers: [
           { food: "Chicken drumsticks (bone-in)", grams: "50.3" },
-          { food: "Chicken breast (boneless, skinless)", grams: "24.5" },
+          { food: "Chicken breast (boneless, skinless)", grams: "24.6" },
         ],
       },
     ],
@@ -51,9 +51,9 @@ export const FLAGSHIP_ENGAGEMENT = {
       items: [
         {
           label: "Legumes",
-          food: "Pinto beans (dry)",
-          grams: "97.9",
-          rank: 1,
+          food: "Brown lentils (dry)",
+          grams: "77.7",
+          rank: 2,
         },
         {
           label: "Meat and poultry",
@@ -65,7 +65,7 @@ export const FLAGSHIP_ENGAGEMENT = {
           label: "Eggs and dairy",
           food: "Eggs (large)",
           grams: "34.4",
-          rank: 19,
+          rank: 17,
         },
         {
           label: "Fish",
@@ -151,14 +151,14 @@ export const FLAGSHIP_ENGAGEMENT = {
           label: "Best fresh fruit",
           food: "Bananas",
           grams: "11.6",
-          rank: 29,
+          rank: 28,
         },
       ],
     },
     nextStep: {
       kicker: "Continue the study",
       title: "Protein did the same thing",
-      text: "The follow-up spreadsheet ranked 49 foods by protein per dollar. Dry pinto beans bought 97.9 grams. Bacon bought 9.2. The food value database lets you search both rankings without opening two tabs.",
+      text: "The follow-up spreadsheet ranked 49 foods by protein per dollar. Whole wheat flour bought 96.0 grams. Bacon bought 9.4. The food value database lets you search both rankings without opening two tabs.",
       primary: {
         href: "/protein-per-dollar-cheapest-protein-sources/",
         label: "Read the protein ranking",

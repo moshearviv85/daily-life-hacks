@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/foods-highest-in-protein-per-100-grams-main.jpg"
 imageAlt: "Bags of dry lentils, peanuts, and beans lined up beside a block of cheese and a pack of chicken breast on a counter"
 date: 2026-07-28
-dateModified: 2026-08-20
+dateModified: 2026-09-05
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -24,7 +24,7 @@ faq:
   - question: "Can this 49-food study show which serving has the most protein?"
     answer: "No. The table compares 100 g of each listed form, not standardized servings. A 100 g portion of dry brown lentils carries about 24.6 g of protein, while 100 g of large eggs carries 12.56 g. Use the density table for equal-weight comparisons, not for a claim about every possible serving."
   - question: "Was the protein-density leader also cheapest in your 49-food study?"
-    answer: "No. In our 49-food dataset, the label-sourced TVP row leads the density column at 52.17 g per 100 g but ranks 31st on protein per dollar at 23.4 g per dollar. Pinto beans, which have an exact USDA match, lead the value ranking at 97.9 g per dollar. Density and price answer different questions."
+    answer: "No. In our 49-food dataset, the label-sourced TVP row leads the density column at 52.17 g per 100 g but ranks 30th on protein per dollar at 23.4 g per dollar. Whole wheat flour, which has an exact USDA match, leads the value ranking at 96.0 g per dollar. Density and price answer different questions."
 ---
 
 In our July 2026 US price study of 49 grocery foods, the TVP row led at 52.17 grams of protein per 100 grams. That figure is a proxy, not a USDA match: the manufacturer's current 12-gram-per-23-gram label works out to 52.17, and USDA FoodData Central publishes no textured vegetable protein record to check it against. Among rows with an exact USDA food-and-form match in our 49-food study, dry brown lentils led at 24.63, followed by canned sardines in oil, drained, at 24.62. This is a bounded grocery comparison, not a claim about every food sold worldwide.
@@ -41,15 +41,15 @@ One thing to get straight before the table. This ranks foods by protein density,
 | Red lentils (dry) | 23.91 g | Raw | $0.427 | [FDC 174284](https://api.nal.usda.gov/fdc/v1/food/174284?api_key=DEMO_KEY) |
 | Mozzarella (low-moisture part-skim) | 23.75 g | Low-moisture, part-skim | $0.789 | [FDC 171244](https://api.nal.usda.gov/fdc/v1/food/171244?api_key=DEMO_KEY) |
 | Green split peas (dry) | 23.12 g | Mature seeds, raw | $0.313 | [FDC 172428](https://api.nal.usda.gov/fdc/v1/food/172428?api_key=DEMO_KEY) |
-| Cheddar cheese | 22.87 g | Cheddar | $1.253 | [FDC 173414](https://api.nal.usda.gov/fdc/v1/food/173414?api_key=DEMO_KEY) |
-| Chicken breast (boneless, skinless) | 22.5 g | Breast, skinless, boneless, meat only, raw | $0.919 | [FDC 171077](https://api.nal.usda.gov/fdc/v1/food/171077?api_key=DEMO_KEY) |
-| Navy beans (dry) | 22.33 g | Mature seeds, raw | $0.294 | [FDC 173745](https://api.nal.usda.gov/fdc/v1/food/173745?api_key=DEMO_KEY) |
+| Cheddar cheese | 22.87 g | Cheddar | $1.267 | [FDC 173414](https://api.nal.usda.gov/fdc/v1/food/173414?api_key=DEMO_KEY) |
+| Chicken breast (boneless, skinless) | 22.5 g | Breast, skinless, boneless, meat only, raw | $0.916 | [FDC 171077](https://api.nal.usda.gov/fdc/v1/food/171077?api_key=DEMO_KEY) |
+| Navy beans (dry) | 22.33 g | Mature seeds, raw | $0.373 | [FDC 173745](https://api.nal.usda.gov/fdc/v1/food/173745?api_key=DEMO_KEY) |
 | Peanut butter | 22.21 g | Smooth style, with salt | $0.438 | [FDC 174266](https://api.nal.usda.gov/fdc/v1/food/174266?api_key=DEMO_KEY) · proxy |
-| Black beans (dry) | 21.6 g | Mature seeds, raw | $0.267 | [FDC 173734](https://api.nal.usda.gov/fdc/v1/food/173734?api_key=DEMO_KEY) |
-| Pork loin chops (boneless) | 21.55 g | Top-loin chop, boneless, lean and fat, raw | $0.967 | [FDC 167839](https://api.nal.usda.gov/fdc/v1/food/167839?api_key=DEMO_KEY) |
-| Pinto beans (dry) | 21.42 g | Mature seeds, raw | $0.219 | [FDC 175199](https://api.nal.usda.gov/fdc/v1/food/175199?api_key=DEMO_KEY) |
+| Black beans (dry) | 21.6 g | Mature seeds, raw | $0.373 | [FDC 173734](https://api.nal.usda.gov/fdc/v1/food/173734?api_key=DEMO_KEY) |
+| Pork loin chops (boneless) | 21.55 g | Top-loin chop, boneless, lean and fat, raw | $0.936 | [FDC 167839](https://api.nal.usda.gov/fdc/v1/food/167839?api_key=DEMO_KEY) |
+| Pinto beans (dry) | 21.42 g | Mature seeds, raw | $0.372 | [FDC 175199](https://api.nal.usda.gov/fdc/v1/food/175199?api_key=DEMO_KEY) |
 | Almonds | 21.15 g | Almonds | $1.425 | [FDC 170567](https://api.nal.usda.gov/fdc/v1/food/170567?api_key=DEMO_KEY) |
-| Ground beef (93/7) | 20.85 g | Raw, 93% lean / 7% fat | $1.899 | [FDC 173110](https://api.nal.usda.gov/fdc/v1/food/173110?api_key=DEMO_KEY) |
+| Ground beef (93/7) | 20.85 g | Raw, 93% lean / 7% fat | $1.855 | [FDC 173110](https://api.nal.usda.gov/fdc/v1/food/173110?api_key=DEMO_KEY) |
 | Sunflower seed kernels | 20.78 g | Sunflower seed kernels, dried | $0.656 | [FDC 170562](https://api.nal.usda.gov/fdc/v1/food/170562?api_key=DEMO_KEY) |
 | Chickpeas (dry) | 20.47 g | Mature seeds, raw | $0.361 | [FDC 173756](https://api.nal.usda.gov/fdc/v1/food/173756?api_key=DEMO_KEY) |
 | Tempeh | 20.29 g | Tempeh | $1.533 | [FDC 174272](https://api.nal.usda.gov/fdc/v1/food/174272?api_key=DEMO_KEY) |
@@ -58,30 +58,30 @@ One thing to get straight before the table. This ranks foods by protein density,
 | Chicken thighs (boneless, skinless) | 19.66 g | Thigh, meat only, raw | $0.709 | [FDC 173627](https://api.nal.usda.gov/fdc/v1/food/173627?api_key=DEMO_KEY) |
 | Canned tuna (chunk light, in water) | 19.44 g | Canned in water, drained solids | $0.867 | [FDC 173709](https://api.nal.usda.gov/fdc/v1/food/173709?api_key=DEMO_KEY) |
 | Ground turkey (93/7) | 18.73 g | Raw, 93% lean / 7% fat | $1.203 | [FDC 172850](https://api.nal.usda.gov/fdc/v1/food/172850?api_key=DEMO_KEY) |
-| Whole chicken (raw) | 18.6 g | Meat and skin, raw | $0.449 | [FDC 171447](https://api.nal.usda.gov/fdc/v1/food/171447?api_key=DEMO_KEY) |
+| Whole chicken (raw) | 18.6 g | Meat and skin, raw | $0.443 | [FDC 171447](https://api.nal.usda.gov/fdc/v1/food/171447?api_key=DEMO_KEY) |
 | Chicken drumsticks (bone-in) | 18.08 g | Drumstick, meat and skin, raw | $0.241 | [FDC 172373](https://api.nal.usda.gov/fdc/v1/food/172373?api_key=DEMO_KEY) |
 | Pork shoulder butt roast (boneless) | 17.42 g | Boston butt blade steak, lean and fat, raw | $0.692 | [FDC 167849](https://api.nal.usda.gov/fdc/v1/food/167849?api_key=DEMO_KEY) · proxy |
-| Ground beef (80/20) | 17.17 g | Raw, 80% lean / 20% fat | $1.487 | [FDC 174036](https://api.nal.usda.gov/fdc/v1/food/174036?api_key=DEMO_KEY) |
+| Ground beef (80/20) | 17.17 g | Raw, 80% lean / 20% fat | $1.518 | [FDC 174036](https://api.nal.usda.gov/fdc/v1/food/174036?api_key=DEMO_KEY) |
 | Quinoa (dry) | 14.12 g | Uncooked | $0.658 | [FDC 168874](https://api.nal.usda.gov/fdc/v1/food/168874?api_key=DEMO_KEY) |
 | Whole wheat spaghetti | 13.87 g | Whole-wheat pasta, dry | $0.26 | [FDC 169738](https://api.nal.usda.gov/fdc/v1/food/169738?api_key=DEMO_KEY) |
-| Bacon | 13.66 g | Cured bacon, unprepared | $1.478 | [FDC 168277](https://api.nal.usda.gov/fdc/v1/food/168277?api_key=DEMO_KEY) |
+| Bacon | 13.66 g | Cured bacon, unprepared | $1.452 | [FDC 168277](https://api.nal.usda.gov/fdc/v1/food/168277?api_key=DEMO_KEY) |
 | Whole wheat flour | 13.21 g | Whole-grain flour | $0.138 | [FDC 168893](https://api.nal.usda.gov/fdc/v1/food/168893?api_key=DEMO_KEY) |
 | Old-fashioned rolled oats | 13.15 g | Regular or quick oats, dry | $0.282 | [FDC 173904](https://api.nal.usda.gov/fdc/v1/food/173904?api_key=DEMO_KEY) |
-| Spaghetti (regular, dry) | 13.04 g | Dry pasta, enriched | $0.273 | [FDC 169736](https://api.nal.usda.gov/fdc/v1/food/169736?api_key=DEMO_KEY) · proxy |
+| Spaghetti (regular, dry) | 13.04 g | Dry pasta, enriched | $0.304 | [FDC 169736](https://api.nal.usda.gov/fdc/v1/food/169736?api_key=DEMO_KEY) · proxy |
 | Eggs (large) | 12.56 g | Whole, raw, fresh | $0.365 | [FDC 171287](https://api.nal.usda.gov/fdc/v1/food/171287?api_key=DEMO_KEY) |
-| 100% whole wheat bread | 12.45 g | Whole-wheat, commercially prepared | $0.347 | [FDC 172688](https://api.nal.usda.gov/fdc/v1/food/172688?api_key=DEMO_KEY) |
+| 100% whole wheat bread | 12.45 g | Whole-wheat, commercially prepared | $0.621 | [FDC 172688](https://api.nal.usda.gov/fdc/v1/food/172688?api_key=DEMO_KEY) |
 | Frozen shelled edamame | 11.22 g | Frozen, unprepared | $0.624 | [FDC 168410](https://api.nal.usda.gov/fdc/v1/food/168410?api_key=DEMO_KEY) |
 | Cottage cheese (4%) | 11.12 g | Creamed, large or small curd | $0.422 | [FDC 172179](https://api.nal.usda.gov/fdc/v1/food/172179?api_key=DEMO_KEY) |
 | Greek yogurt (plain, nonfat) | 10.19 g | Plain, nonfat | $0.37 | [FDC 170894](https://api.nal.usda.gov/fdc/v1/food/170894?api_key=DEMO_KEY) |
 | Tofu (extra firm) | 9.98 g | Extra firm, prepared with nigari | $0.736 | [FDC 174290](https://api.nal.usda.gov/fdc/v1/food/174290?api_key=DEMO_KEY) |
 | Pearled barley (dry) | 9.91 g | Pearled, raw | $0.273 | [FDC 170284](https://api.nal.usda.gov/fdc/v1/food/170284?api_key=DEMO_KEY) |
 | Brown rice (dry) | 7.54 g | Long-grain, raw | $0.206 | [FDC 169703](https://api.nal.usda.gov/fdc/v1/food/169703?api_key=DEMO_KEY) |
-| White rice (long grain, dry) | 7.13 g | Long-grain, regular, raw | $0.149 | [FDC 168877](https://api.nal.usda.gov/fdc/v1/food/168877?api_key=DEMO_KEY) · proxy |
+| White rice (long grain, dry) | 7.13 g | Long-grain, regular, raw | $0.243 | [FDC 168877](https://api.nal.usda.gov/fdc/v1/food/168877?api_key=DEMO_KEY) · proxy |
 | Canned black beans | 6.03 g | Mature seeds, canned | $0.2 | [FDC 175188](https://api.nal.usda.gov/fdc/v1/food/175188?api_key=DEMO_KEY) · proxy |
 | Canned kidney beans | 5.22 g | All types, mature seeds, canned | $0.223 | [FDC 173741](https://api.nal.usda.gov/fdc/v1/food/173741?api_key=DEMO_KEY) |
 | Frozen green peas | 5.22 g | Frozen, unprepared | $0.256 | [FDC 170016](https://api.nal.usda.gov/fdc/v1/food/170016?api_key=DEMO_KEY) |
 | Canned chickpeas | 4.92 g | Mature seeds, canned, solids and liquids | $0.223 | [FDC 175206](https://api.nal.usda.gov/fdc/v1/food/175206?api_key=DEMO_KEY) · proxy |
-| Whole milk | 3.15 g | Whole, 3.25% milkfat, with added vitamin D | $0.108 | [FDC 171265](https://api.nal.usda.gov/fdc/v1/food/171265?api_key=DEMO_KEY) |
+| Whole milk | 3.15 g | Whole, 3.25% milkfat, with added vitamin D | $0.11 | [FDC 171265](https://api.nal.usda.gov/fdc/v1/food/171265?api_key=DEMO_KEY) |
 
 *Provenance checked July 30, 2026: 39 rows have an exact USDA FoodData Central food-and-form match and 10 use a proxy with the mismatch disclosed. No rows remain unresolved. The [49-row raw CSV](/data/protein-per-dollar-2026.csv) contains the official description, record URL, form, status, and row-specific note. See the full [/methodology/](/methodology/).*
 
@@ -109,9 +109,9 @@ What survives the caveat is the shopping math. A 16 ounce bag of [brown lentils]
 
 ## Which foods combined protein density and low price in this study?
 
-Dry pinto beans led our 49-food value ranking at 97.9 grams of protein per dollar, with whole wheat flour close behind at 96.0. Dry black beans returned 81.0, dry brown lentils 77.7, and dry navy beans 75.9. That puts four dry legumes in the study's top five for value.
+Whole wheat flour led our 49-food value ranking at 96.0 grams of protein per dollar. Dry brown lentils sit second at 77.7, then dry split peas at 73.9. Dry navy beans and dry black beans, now priced on the BLS dried-beans-any-type average, land at 59.9 and 58.0. That still puts four dry legumes in this study's top five value seats, just not the first one.
 
-Meanwhile cheddar sits high on density at 22.87 grams and returns just 18.2 grams per dollar, because it costs $1.25 per 100 grams. Sardines are dense and pricey. Almonds at 21.15 grams per 100 grams return 14.8 per dollar, which is one of the worst deals in the set.
+Meanwhile cheddar sits high on density at 22.87 grams and returns just 18.1 grams per dollar, because it costs $1.27 per 100 grams. Sardines are dense and pricey. Almonds at 21.15 grams per 100 grams return 14.8 per dollar, which is one of the worst deals in the set.
 
 In this study, the clearest density-and-value overlap is dry legumes, dry roasted peanuts, and peanut butter at 22.21 grams per 100 grams. The full plant-side list is in [the cheapest plant protein ranking](/plant-protein-per-dollar-ranked/), and the shopping version of all of it lives in [our high protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
 

@@ -90,8 +90,8 @@ export function describeDatasetProvenance(
 }
 
 /** Stable release identity shared by HTML schema, the API, and distribution packages. */
-export const DATA_VERSION = "2026.2";
-export const DATA_RELEASE_DATE = "2026-08-02";
+export const DATA_VERSION = "2026.3";
+export const DATA_RELEASE_DATE = "2026-09-05";
 
 export const DATASETS: Record<string, DatasetMeta> = {
   "animal-protein-per-dollar-ranked": {
