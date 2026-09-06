@@ -1,0 +1,63 @@
+---
+import StudyLead from "./StudyLead.astro";
+
+interface Highlight {
+  value: string;
+  claim: string;
+}
+
+interface MealCost {
+  kicker: string;
+  highlight: Highlight;
+  disclosure: string;
+  proteinHref: string;
+  proteinLabel: string;
+  fiberHref?: string | null;
+  fiberLabel?: string | null;
+  dbHref?: string | null;
+  dbLabel?: string | null;
+  lines?: string[];
+}
+
+interface Props {
+  mealCost: MealCost;
+}
+
+const { mealCost } = Astro.props;
+const extraLinks = [
+  mealCost.fiberHref && mealCost.fiberLabel
+    ? { href: mealCost.fiberHref, label: mealCost.fiberLabel }
+    : null,
+  mealCost.dbHref && mealCost.dbLabel
+    ? { href: mealCost.dbHref, label: mealCost.dbLabel }
+    : null,
+].filter(Boolean);
+---
+
+<aside class="meal-protein-cost" aria-label={mealCost.kicker}>
+  <StudyLead
+    kicker={mealCost.kicker}
+    highlight={mealCost.highlight}
+    disclosure={mealCost.disclosure}
+    jumpHref={mealCost.proteinHref}
+    jumpLabel={mealCost.proteinLabel}
+  />
+  {
+    mealCost.lines?.length ? (
+      <ul class="meal-protein-cost-lines">
+        {mealCost.lines.map((line) => (
+          <li>{line}</li>
+        ))}
+      </ul>
+    ) : null
+  }
+  {
+    extraLinks.length > 0 && (
+      <p class="meal-protein-cost-more">
+        {extraLinks.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+      </p>
+    )
+  }
+</aside>

@@ -6,7 +6,7 @@ tags: ["meal prep for beginners", "sunday meal prep", "batch cooking", "meal pla
 image: "/images/meal-prep-for-beginners-complete-system-main.jpg"
 imageAlt: "Glass meal prep containers filled with colorful prepped meals on a counter next to a rice pot and a sheet pan of roasted vegetables"
 date: 2026-07-07
-dateModified: 2026-07-17
+dateModified: 2026-09-05
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -144,7 +144,7 @@ As for boredom, the components are already doing the heavy lifting. But keep one
 
 ## Is meal prep actually cheaper?
 
-Meal prep gets sold as a health habit, but honestly, the money argument might be stronger. Take two ingredients in this guide at the prices from our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/): chicken drumsticks run $1.09 per pound in the 5 pound bag, and dried pinto beans cost about 22 cents per 100 grams. That doesn't prove every packed lunch is cheaper. Sauces, produce, cooking losses, and food you don't eat still count, which is why the complete cost per serving matters more than one exciting line on a receipt.
+Meal prep gets sold as a health habit, but honestly, the money argument might be stronger. Take two ingredients in this guide at the prices from our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/): chicken drumsticks run $1.09 per pound in the 5 pound bag ($5.46), and dried pinto beans cost about 22 cents per 100 grams ($3.97 for the 4 lb bag). Those two Sunday packages are $9.43. That doesn't prove every packed lunch is cheaper. Sauces, produce, cooking losses, and food you don't eat still count, which is why the complete cost per serving matters more than one exciting line on a receipt.
 
 Those grocery figures use the source-and-price process documented on our [methodology page](/methodology/). Prices move, package sizes get weird, and the shelf label occasionally seems designed by a person who dislikes division. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles that comparison with the price in front of you.
 

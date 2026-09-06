@@ -6,7 +6,7 @@ tags: ["eat healthy on a budget", "budget meal planning", "cheap healthy food", 
 image: "/images/eat-healthy-on-a-budget-complete-playbook-main.jpg"
 imageAlt: "Paper grocery bag with vegetables, bags of dry beans, eggs, and bananas next to a receipt and pencil on a kitchen table"
 date: 2026-07-07
-dateModified: 2026-07-30
+dateModified: 2026-09-05
 author: "David Miller"
 featured: false
 editorsPick: false
