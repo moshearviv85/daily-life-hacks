@@ -3,7 +3,15 @@ import { glob } from 'astro/loaders';
 import { CONTENT_CLUSTER_IDS, CONTENT_PARENT_PILLARS } from './content/clusters';
 
 const articles = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/data/articles' }),
+  loader: glob({
+    pattern: '*.md',
+    base: './src/data/articles',
+    // Filename only. Without this, a stale Content Layer cache can keep a
+    // second entry for the same file (seen on beans-and-rice and meal-prep)
+    // and the later id wins.
+    generateId: ({ entry }) =>
+      entry.replace(/\\/g, '/').replace(/^.*\//, '').replace(/\.md$/i, ''),
+  }),
   schema: z.object({
     title: z.string(),
     excerpt: z.string(),

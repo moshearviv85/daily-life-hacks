@@ -16,7 +16,7 @@ tags:
 image: "/images/beans-and-rice-complete-protein-meal-main.jpg"
 imageAlt: "A hearty bowl of black beans and rice garnished with fresh cilantro and lime"
 date: 2026-04-08
-dateModified: 2026-09-05
+dateModified: 2026-09-06
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -100,7 +100,7 @@ A quick tip for leftovers: sometimes rice gets a little dry in the fridge. When 
 
 ## The budget breakdown
 
-The two cans in this recipe were $0.88 each in the July 2026 grocery sample, $1.76 for the pot. Together they carried about 53 grams of protein on the whole-can basis the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) uses, which is 30.1 grams per dollar. White rice in that same sample returned 48.0 grams of protein per dollar. I'm not pricing the bell pepper or the lime, because they aren't in the spreadsheet.
+The two cans in this recipe were $0.88 each in the July 2026 grocery sample, $1.76 for the pot. Together they carried about 53 grams of protein on the whole-can basis the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) uses, which is 30.1 grams per dollar. White rice in that same sample returned 29.4 grams of protein per dollar. I'm not pricing the bell pepper or the lime, because they aren't in the spreadsheet.
 
 Those cans also bought 34.4 grams of fiber per dollar in the [fiber ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Same aisle, second nutrient, no extra trip.
 
