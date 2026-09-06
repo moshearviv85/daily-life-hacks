@@ -264,6 +264,10 @@ test("shared callout reuses StudyLead and stays wired on the article page", () =
   assert.match(component, /jumpHref=\{mealCost\.proteinHref\}/);
   assert.match(component, /href=\{link\.href\}/);
 
+  const contentConfig = read("src/content.config.ts");
+  assert.match(contentConfig, /generateId:/);
+  assert.match(contentConfig, /entry\.replace/);
+
   assert.match(slugPage, /getMealProteinCost/);
   assert.match(slugPage, /normalizeMealProteinCostSlug/);
   assert.match(slugPage, /articleFilePath/);
