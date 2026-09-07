@@ -481,13 +481,13 @@ export function huggingfaceCsvUrl(
   return fileName ? `${HUGGINGFACE_DATASET_URL}/resolve/main/${fileName}` : undefined;
 }
 
-/** schema.org DataDownload list: on-site CSV first, Hugging Face file URL when mirrored. */
+/** schema.org DataDownload list: on-site CSV first, Hugging Face dataset page + file when mirrored. */
 export function datasetDistributions(dataset: DatasetMeta, siteUrl: string) {
   const fileName = dataset.csv.split("/").pop() ?? dataset.csv;
   const distributions: Array<{
     "@type": "DataDownload";
     name: string;
-    encodingFormat: string;
+    encodingFormat?: string;
     contentUrl: string;
     license: string;
   }> = [
@@ -499,6 +499,14 @@ export function datasetDistributions(dataset: DatasetMeta, siteUrl: string) {
       license: DATA_LICENSE_URL,
     },
   ];
+  if (dataset.huggingfaceMirror) {
+    distributions.push({
+      "@type": "DataDownload",
+      name: "Hugging Face dataset",
+      contentUrl: HUGGINGFACE_DATASET_URL,
+      license: DATA_LICENSE_URL,
+    });
+  }
   const huggingfaceCsv = huggingfaceCsvUrl(dataset);
   if (huggingfaceCsv) {
     distributions.push({
@@ -699,6 +707,49 @@ export function buildDatasetSchema({
     citation: datasetCitationText(dataset, siteUrl),
     ...(sameAs ? { sameAs } : {}),
   };
+}
+
+export interface StudyCitation {
+  apa: string;
+  bibtex: string;
+}
+
+/**
+ * Copy-ready APA and BibTeX for a flagship study page. Points at the live
+ * study URL, not the naked CSV.
+ *
+ * Zenodo DOI not assigned yet. Do not invent a doi field until one exists.
+ */
+export function studyCitation(opts: {
+  title: string;
+  year: number;
+  url: string;
+  version: string;
+  bibtexKey: string;
+}): StudyCitation {
+  const apa = `Miller, D. (${opts.year}). ${opts.title} (Version ${opts.version}) [Data set]. Daily Life Hacks. ${opts.url}`;
+  const bibtex = [
+    `@dataset{${opts.bibtexKey},`,
+    `  author       = {Miller, David},`,
+    `  title        = {${opts.title}},`,
+    `  year         = {${opts.year}},`,
+    `  version      = {${opts.version}},`,
+    `  publisher    = {Daily Life Hacks},`,
+    `  url          = {${opts.url}},`,
+    `  note         = {CC-BY-4.0}`,
+    `}`,
+  ].join("\n");
+  return { apa, bibtex };
+}
+
+export function flagshipBibtexKey(articleId: string, year: number): string {
+  if (articleId === "fiber-per-dollar-cheapest-high-fiber-foods") {
+    return `miller_fiber_per_dollar_${year}`;
+  }
+  if (articleId === "protein-per-dollar-cheapest-protein-sources") {
+    return `miller_protein_per_dollar_${year}`;
+  }
+  return `miller_${articleId.replace(/-/g, "_")}_${year}`;
 }
 
 /** Display order on /data/: the two named indexes first, then day-cost studies, then category cuts. */
