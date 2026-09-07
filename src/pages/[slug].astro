@@ -21,7 +21,9 @@ import {
   datasetDistributions,
   describeDatasetProvenance,
   findChartInBody,
+  flagshipBibtexKey,
   getDatasetProvenance,
+  studyCitation,
 } from "../content/datasets";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
@@ -34,6 +36,7 @@ import {
 } from "../content/meal-protein-cost.mjs";
 import StudyLead from "../components/StudyLead.astro";
 import StudyNextStep from "../components/StudyNextStep.astro";
+import StudyCite from "../components/StudyCite.astro";
 import MealProteinCost from "../components/MealProteinCost.astro";
 
 function inlineMd(text: string): string {
@@ -331,6 +334,7 @@ const webPageSchema = {
 const allSchemas: any[] = [webPageSchema, jsonLd, breadcrumbSchema];
 
 const dataset = DATASETS[article.id];
+const flagship = getFlagshipEngagement(article.id);
 const datasetProvenance = dataset ? getDatasetProvenance(dataset) : null;
 if (dataset) {
   allSchemas.push({
@@ -345,7 +349,7 @@ if (dataset) {
     identifier: `${articleUrl}#dataset`,
     version: DATA_VERSION,
     isAccessibleForFree: true,
-    creator: publisherSchema,
+    creator: flagship ? articleAuthor : publisherSchema,
     publisher: publisherSchema,
     /**
      * Defined inline, not a bare `{"@id": ...}` pointer. Google resolves @id
@@ -388,17 +392,30 @@ const embedSnippet = chart
   : null;
 
 /**
- * "Cite this dataset" block (growth method #3).
+ * "Cite this study" on the two flagships (growth method #3); other study
+ * pages keep the shorter dataset credit line.
  *
  * People already want to cite the numbers; without a ready string they invent a
- * mangled one or skip the link. This hands them the exact wording, with the
- * absolute URL, so the citation lands correctly and points at the study page
- * (where the caveats live) rather than at a naked CSV.
+ * mangled one or skip the link. This hands them APA and BibTeX pointing at the
+ * live study URL (where the caveats live) rather than at a naked CSV.
+ *
+ * Zenodo DOI not assigned yet. Do not invent a doi field until one exists.
  */
 const citationYear = releaseDate.getFullYear();
-const citationText = dataset
-  ? `Daily Life Hacks. "${dataset.name}." ${citationYear}. ${articleUrl}. Please credit Daily Life Hacks with a link.`
-  : null;
+const flagshipCitation =
+  flagship && dataset
+    ? studyCitation({
+        title: dataset.name,
+        year: citationYear,
+        url: articleUrl,
+        version: DATA_VERSION,
+        bibtexKey: flagshipBibtexKey(article.id, citationYear),
+      })
+    : null;
+const citationText =
+  dataset && !flagshipCitation
+    ? `Daily Life Hacks. "${dataset.name}." ${citationYear}. ${articleUrl}. Please credit Daily Life Hacks with a link.`
+    : null;
 
 const citationCopyScript = `(function(){
   var btn = document.getElementById("citation-copy-btn");
@@ -498,7 +515,6 @@ if (article.data.faq && article.data.faq.length > 0) {
   });
 }
 
-const flagship = getFlagshipEngagement(article.id);
 const flagshipLeadHighlight = flagship?.highlights.find(
   (highlight) => highlight.place === "lead",
 );
@@ -895,7 +911,21 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
       )
     }
 
-    <!-- Cite this dataset (method #3: turn intent-to-cite into a correct, linked citation) -->
+    <!-- Cite this study (flagships) or the shorter dataset credit (other studies) -->
+    {
+      flagshipCitation && dataset && (
+        <div class="order-[21]">
+          <StudyCite
+            apa={flagshipCitation.apa}
+            bibtex={flagshipCitation.bibtex}
+            csvHref={dataset.csv}
+            datasetId={article.id}
+            huggingfaceUrl={dataset.huggingfaceMirror ? HUGGINGFACE_DATASET_URL : undefined}
+            rows={dataset.rows}
+          />
+        </div>
+      )
+    }
     {
       dataset && citationText && (
         <aside

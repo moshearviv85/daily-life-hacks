@@ -671,6 +671,92 @@ img {
   text-underline-offset: 0.15em;
 }
 
+.study-cite {
+  margin: 2rem 0 0;
+  padding: 1rem 1.1rem 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.875rem;
+  background: var(--card-bg);
+}
+
+.study-cite-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 0.75rem;
+}
+
+.study-cite-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.study-cite-meta,
+.study-cite-note,
+.study-cite-label,
+.study-cite-link {
+  color: var(--muted-color);
+}
+
+.study-cite-meta {
+  font-size: 0.75rem;
+}
+
+.study-cite-note {
+  margin: 0.4rem 0 0.75rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.study-cite-label {
+  margin: 0.55rem 0 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.study-cite-block {
+  margin: 0;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.6rem;
+  background: var(--input-bg);
+  color: var(--text-color);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.study-cite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.study-cite-copy {
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #F29B30;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #F29B30;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.study-cite-link {
+  font-size: 0.75rem;
+  text-underline-offset: 0.15em;
+}
+
 .rating-star:disabled {
   cursor: default;
   opacity: 0.65;
