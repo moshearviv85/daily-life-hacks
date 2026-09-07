@@ -27,7 +27,11 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { buildArticleToc } from "../content/article-toc.mjs";
 import { getFlagshipEngagement } from "../content/flagship-engagement.mjs";
-import { getMealProteinCost } from "../content/meal-protein-cost.mjs";
+import {
+  MEAL_PROTEIN_COST,
+  getMealProteinCost,
+  normalizeMealProteinCostSlug,
+} from "../content/meal-protein-cost.mjs";
 import StudyLead from "../components/StudyLead.astro";
 import StudyNextStep from "../components/StudyNextStep.astro";
 import MealProteinCost from "../components/MealProteinCost.astro";
@@ -498,7 +502,23 @@ const flagship = getFlagshipEngagement(article.id);
 const flagshipLeadHighlight = flagship?.highlights.find(
   (highlight) => highlight.place === "lead",
 );
-const mealCost = getMealProteinCost(article.id);
+const articleFilePath =
+  "filePath" in article
+    ? String((article as { filePath?: string }).filePath ?? "")
+    : "";
+const mealCost = getMealProteinCost(
+  article.id,
+  Astro.params.slug,
+  articleFilePath,
+);
+const mealCostSlug = normalizeMealProteinCostSlug(
+  Astro.params.slug ?? article.id,
+);
+if (!mealCost && mealCostSlug in MEAL_PROTEIN_COST) {
+  throw new Error(
+    `meal-protein-cost: ${mealCostSlug} is mapped but lookup missed (id=${article.id}, filePath=${articleFilePath})`,
+  );
+}
 
 const currentSlug = Astro.params.slug;
 /** Built pages are canonical-only (CP2 Phase B); keep guard if path ever drifts. */

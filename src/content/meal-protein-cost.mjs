@@ -415,8 +415,28 @@ function assertRefreshSafety() {
 
 assertRefreshSafety();
 
-export function getMealProteinCost(slug) {
-  return MEAL_PROTEIN_COST[slug] ?? null;
+/**
+ * Live HTML for the two missing pages still has data-slug equal to the
+ * filename, so an exact article.id hit should work. Production still shipped
+ * pre-refresh HTML for those two paths. Normalize every candidate (id, route
+ * slug, file path, `.md` suffix) so a later Content Layer id shape cannot
+ * silently drop the callout again.
+ */
+export function normalizeMealProteinCostSlug(value) {
+  return String(value ?? "")
+    .replace(/\\/g, "/")
+    .replace(/\/+$/g, "")
+    .replace(/^.*\//, "")
+    .replace(/\.md$/i, "")
+    .trim();
+}
+
+export function getMealProteinCost(...candidates) {
+  for (const raw of candidates.flat()) {
+    const key = normalizeMealProteinCostSlug(raw);
+    if (key && MEAL_PROTEIN_COST[key]) return MEAL_PROTEIN_COST[key];
+  }
+  return null;
 }
 
 export function mealProteinCostHighlightNumbers(config) {
