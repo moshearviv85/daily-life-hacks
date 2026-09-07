@@ -392,8 +392,8 @@ const embedSnippet = chart
   : null;
 
 /**
- * "Cite this study" on the two flagships (growth method #3); other study
- * pages keep the shorter dataset credit line.
+ * Copy-ready APA and BibTeX on the two flagships (growth method #3); other
+ * study pages keep the shorter dataset credit line.
  *
  * People already want to cite the numbers; without a ready string they invent a
  * mangled one or skip the link. This hands them APA and BibTeX pointing at the
@@ -911,7 +911,7 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
       )
     }
 
-    <!-- Cite this study (flagships) or the shorter dataset credit (other studies) -->
+    <!-- Flagship APA/BibTeX citation; other studies keep the short dataset credit -->
     {
       flagshipCitation && dataset && (
         <div class="order-[21]">
