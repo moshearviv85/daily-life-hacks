@@ -49,7 +49,7 @@ Those are ingredient costs, not a full day of eating, and they assume you cook f
 
 ## Is rice and beans good for you?
 
-On the two things we measure, it holds up. Dry pinto beans topped our entire 49 food [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) at 97.9 grams per dollar and also delivered 70.8 grams of fiber per dollar, which is a combination almost nothing else in a grocery store manages. We wrote that double up in [beans win twice](/beans-double-win-fiber-protein/).
+On the two things we measure, it holds up. Dry pinto beans topped our entire 49 food [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) at 97.9 grams per dollar and also delivered 70.8 grams of [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), which is a combination almost nothing else in a grocery store manages. We wrote that double up in [beans win twice](/beans-double-win-fiber-protein/).
 
 Now the limit, and it's a real one. Our 22 datasets cover protein, fiber, and price. That's it. No vitamins, no minerals, no iron figures, no calorie column anywhere. So when somebody asks whether you can live on rice and beans, we can tell you the protein and fiber math works and we cannot tell you anything about the rest. If micronutrients are your question, [USDA FoodData Central](https://fdc.nal.usda.gov/) is the source, not us.
 
