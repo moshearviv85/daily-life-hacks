@@ -86,7 +86,7 @@ Yes, it has some fat. But paired with the massive amount of fiber from the lenti
 
 While this curry is hearty enough to eat completely on its own, adding a side makes it stretch further and feel like a proper feast.
 
-* **The classic grains:** A scoop of basmati rice or brown rice is the traditional move. The rice soaks up the creamy coconut broth perfectly. Quinoa is also great if you want an extra protein boost, though it's the expensive choice, and [comparing quinoa with whole wheat flour on fiber per dollar](/whole-wheat-flour-vs-quinoa-fiber-cost/) shows what you're paying for.
+* **The classic grains:** A scoop of basmati rice or brown rice is the traditional move. The rice soaks up the creamy coconut broth perfectly. Quinoa is also great if you want an extra protein boost, though it's the expensive choice, and [comparing quinoa with whole wheat flour on fiber per dollar](/whole-wheat-flour-vs-quinoa-fiber-cost/) shows what you're paying for. The 53-food version of that question is the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
 * **Warm bread:** If you can find good naan bread, warm it up in the oven or blister it directly over a gas burner. Tearing off a piece of warm bread and dragging it through the curry is arguably the best part of the meal.
 * **A cooling contrast:** A quick cucumber salad with a splash of vinegar, or a dollop of plain dairy-free yogurt on top of the curry, provides a cool contrast to the warm, heavily spiced stew.
 
