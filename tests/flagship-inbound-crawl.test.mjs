@@ -18,6 +18,9 @@ const requiredLinks = [
   ["high-protein-on-a-budget-complete-guide", fiberFlagship],
   ["lentils-vs-chicken-breast-protein-cost", fiberFlagship],
   ["canned-vs-dry-beans-cost", fiberFlagship],
+  ["how-to-eat-more-fiber-on-a-budget-complete-guide", proteinFlagship],
+  ["lentil-curry-high-fiber-vegan-dinner", fiberFlagship],
+  ["frozen-vs-fresh-produce-when-to-buy", fiberFlagship],
 ];
 
 function articleBody(slug) {
@@ -58,4 +61,24 @@ test("edited articles do not reintroduce the retired protein flagship slug", () 
       `${slug} should not mention ${retiredProteinSlug}`,
     );
   }
+});
+
+test("nutrition hub cites both flagships in the intro, not only article cards", () => {
+  const hubPath = join(process.cwd(), "src", "pages", "nutrition", "index.astro");
+  assert.equal(existsSync(hubPath), true, "missing nutrition hub");
+  const source = readFileSync(hubPath, "utf8");
+  const headerEnd = source.indexOf("All nutrition articles");
+  assert.ok(headerEnd > 0, "nutrition hub should keep the article-grid heading");
+  const intro = source.slice(0, headerEnd);
+  assert.equal(
+    (intro.match(/href="\/fiber-per-dollar-cheapest-high-fiber-foods\/"/g) ?? [])
+      .length,
+    1,
+  );
+  assert.equal(
+    (intro.match(/href="\/protein-per-dollar-cheapest-protein-sources\/"/g) ?? [])
+      .length,
+    1,
+  );
+  assert.equal(source.includes(retiredProteinSlug), false);
 });
