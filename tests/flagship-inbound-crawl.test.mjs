@@ -18,6 +18,15 @@ const requiredLinks = [
   ["high-protein-on-a-budget-complete-guide", fiberFlagship],
   ["lentils-vs-chicken-breast-protein-cost", fiberFlagship],
   ["canned-vs-dry-beans-cost", fiberFlagship],
+  ["high-protein-vs-high-fiber-satiety", proteinFlagship],
+  ["high-protein-vs-high-fiber-satiety", fiberFlagship],
+  ["vegan-high-fiber-meal-prep-for-week", fiberFlagship],
+  ["high-fiber-burrito-bowl-meal-prep", fiberFlagship],
+  ["plant-protein-per-dollar-ranked", proteinFlagship],
+  ["plant-protein-per-dollar-ranked", fiberFlagship],
+  ["cheapest-complete-protein-pairs", proteinFlagship],
+  ["cheapest-complete-protein-pairs", fiberFlagship],
+  ["cottage-cheese-vs-greek-yogurt-protein-uses", proteinFlagship],
 ];
 
 function articleBody(slug) {
