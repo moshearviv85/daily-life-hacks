@@ -48,7 +48,7 @@ The six foods below the cutoff, in order: canned kidney beans at 23.4 grams per 
 
 ## What's the cheapest plant-based protein?
 
-Dried legumes, and it isn't close. The top seven spots all belong to the dry goods aisle, running from red lentils at 56.0 grams per dollar up to pinto beans at 97.9. One $3.97 bag of pintos holds roughly 389 grams of protein, almost eight times the FDA's 50 gram Daily Value, and it'll wait patiently in your pantry until you're ready. That same bag is carrying 70.8 grams of fiber per dollar alongside the protein, which is how beans end up taking [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/) as well.
+Dried legumes, and it isn't close. The top seven spots all belong to the dry goods aisle, running from red lentils at 56.0 grams per dollar up to pinto beans at 97.9. One $3.97 bag of pintos holds roughly 389 grams of protein, almost eight times the FDA's 50 gram Daily Value, and it'll wait patiently in your pantry until you're ready. That same bag is carrying 70.8 grams of [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) alongside the protein, which is how beans end up taking [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/) as well.
 
 Lentils are a practical starting point for anyone who finds dry beans intimidating, because red lentils skip the soak entirely and melt into whatever you're cooking. A pot of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) is the easiest way to cash in that 56.0 grams per dollar, and [split pea soup](/split-pea-soup-recipe-high-fiber/) runs the same play with split peas at 73.9.
 
