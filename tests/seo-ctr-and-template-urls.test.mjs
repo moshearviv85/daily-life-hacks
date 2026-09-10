@@ -128,21 +128,42 @@ test("canned vs dry beans title matches cost query and on-page protein-per-dolla
   );
 });
 
-test("homemade salad dressing title matches refrigerate and how-long queries", () => {
+test("homemade salad dressing title matches oil-and-vinegar refrigerate query", () => {
   const dressing = articleFrontmatter("how-to-store-homemade-salad-dressing-safely");
   const titleLower = dressing.title.toLowerCase();
+  const excerptLower = dressing.excerpt.toLowerCase();
+  const oilVinegarAt = titleLower.search(/oil\s*(?:and|&)\s*vinegar/);
+  const homemadeAt = titleLower.indexOf("homemade salad dressing");
+  assert.ok(oilVinegarAt !== -1, "dressing title should name oil-and-vinegar");
   assert.match(dressing.title, /refrigerat|fridge/i);
   assert.match(dressing.title, /how long|lasts/i);
+  assert.ok(
+    dressing.title.length <= 60,
+    `dressing title should be ≤60 chars, got ${dressing.title.length}`,
+  );
+  assert.ok(
+    oilVinegarAt < titleLower.search(/refrigerat|fridge/),
+    "dressing title should lead with oil-and-vinegar before refrigerate language",
+  );
   assert.ok(
     titleLower.search(/refrigerat|fridge/) < titleLower.search(/how long|lasts/),
     "dressing title should lead with refrigerate language, then how-long",
   );
+  assert.ok(
+    homemadeAt === -1 || oilVinegarAt < homemadeAt,
+    "oil-and-vinegar should lead before generic homemade salad dressing if both appear",
+  );
 
+  assert.match(dressing.excerpt, /oil\s*(?:and|&)\s*vinegar/i);
   assert.match(dressing.excerpt, /[Rr]efrigerat/);
   assert.match(dressing.excerpt, /2 weeks/);
   assert.match(dressing.excerpt, /1 week/);
   assert.match(dressing.excerpt, /3-4 days/);
   assert.match(dressing.excerpt, /[Gg]arlic-in-oil:\s*4 days/);
+  assert.ok(
+    excerptLower.search(/oil\s*(?:and|&)\s*vinegar/) < excerptLower.search(/2 weeks/),
+    "dressing meta should put oil-and-vinegar before the storage windows",
+  );
 });
 
 test("food value database title and meta lead with nutrition-per-dollar intent", () => {
