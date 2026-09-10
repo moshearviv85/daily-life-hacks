@@ -254,6 +254,35 @@ test("high-protein high-fiber meals title leads with meals for weight-loss query
   );
 });
 
+test("costco rotisserie chicken title leads with the meals query", () => {
+  const page = articleFrontmatter("costco-rotisserie-chicken-meal-ideas-dinner");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+  assert.match(page.title, /^Rotisserie Chicken Meals:/);
+  assert.match(page.title, /\b5\b/);
+  assert.match(page.title, /Quick/);
+  assert.match(page.title, /Costco/);
+  assert.equal(
+    titleLower.indexOf("rotisserie chicken meals"),
+    0,
+    "title should lead with rotisserie chicken meals so the GSC query is not buried after Costco",
+  );
+  assert.equal(
+    titleLower.startsWith("5 quick costco"),
+    false,
+    "title should not spend the SERP prefix on 5 Quick Costco",
+  );
+  assert.match(page.excerpt, /^Rotisserie chicken meals/);
+  assert.match(page.excerpt, /Costco/);
+  assert.match(page.excerpt, /quantities for four/);
+  assert.match(page.excerpt, /stir-fry/);
+  assert.match(page.excerpt, /tacos/);
+  assert.ok(
+    excerptLower.indexOf("rotisserie chicken meals") < excerptLower.indexOf("costco"),
+    "meta should put rotisserie chicken meals before Costco",
+  );
+});
+
 test("homemade salad dressing title matches oil-and-vinegar refrigerate query", () => {
   const dressing = articleFrontmatter("how-to-store-homemade-salad-dressing-safely");
   const titleLower = dressing.title.toLowerCase();
