@@ -145,6 +145,39 @@ test("homemade salad dressing title matches refrigerate and how-long queries", (
   assert.match(dressing.excerpt, /[Gg]arlic-in-oil:\s*4 days/);
 });
 
+test("soggy sandwich title leads with prevent query", () => {
+  const page = articleFrontmatter("how-to-keep-sandwiches-from-getting-soggy");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+  const preventAt = titleLower.indexOf("prevent");
+  const keepAt = titleLower.search(/\bkeep\b/);
+  const soggyAt = titleLower.indexOf("soggy");
+
+  assert.ok(preventAt !== -1, "sandwich title should say prevent");
+  assert.match(page.title, /sandwiches/i);
+  assert.match(page.title, /soggy/i);
+  assert.ok(
+    page.title.length <= 60,
+    `sandwich title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    preventAt < soggyAt,
+    "sandwich title should lead with prevent before soggy",
+  );
+  assert.ok(
+    keepAt === -1 || preventAt < keepAt,
+    "sandwich title should lead with prevent, not keep",
+  );
+
+  assert.match(page.excerpt, /prevent/i);
+  assert.match(page.excerpt, /soggy/i);
+  assert.match(page.excerpt, /sandwiches/i);
+  assert.ok(
+    excerptLower.indexOf("prevent") < excerptLower.indexOf("soggy"),
+    "sandwich meta should put prevent before soggy",
+  );
+});
+
 test("food value database title and meta lead with nutrition-per-dollar intent", () => {
   const page = readFileSync(join(ROOT, "src/pages/food-value-database/index.astro"), "utf8");
   const title = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
