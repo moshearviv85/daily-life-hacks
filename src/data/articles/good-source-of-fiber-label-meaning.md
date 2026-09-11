@@ -1,6 +1,6 @@
 ---
-title: "What 'Good Source of Fiber' Means on Food Labels"
-excerpt: "FDA rules: 'good source of fiber' means 10 to 19% of the Daily Value, about 2.8 to 5.3 grams per serving. Here's what the claim doesn't tell you."
+title: "High Fiber Label: Minimum 5.6 Grams Per Serving"
+excerpt: "A food labeled high fiber needs at least 5.6 grams per serving (20% DV). Good source is 2.8 to 5.3 grams. Textbooks quoting 5 grams used the old 25g DV."
 category: "nutrition"
 tags:
 - high fiber
@@ -19,7 +19,7 @@ quickAnswer: >-
   about added sugar, and if you see a total fat figure printed right next to the
   claim, that's the FDA making the brand admit the food isn't low fat.
 date: 2026-04-25
-dateModified: 2026-08-01
+dateModified: 2026-09-11
 author: "David Miller"
 featured: false
 editorsPick: false
