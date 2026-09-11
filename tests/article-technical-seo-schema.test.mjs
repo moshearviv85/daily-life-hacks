@@ -189,6 +189,50 @@ test("fiber and protein flagships link the public Hugging Face dataset mirror", 
   );
 });
 
+test("flagship CSV landing pages exist and catalog Dataset helpers stay distinct from article schema", () => {
+  const landingPage = readFileSync(
+    new URL("../src/pages/data/[stem]/index.astro", import.meta.url),
+    "utf8",
+  );
+  const dataCatalog = readFileSync(
+    new URL("../src/pages/data/index.astro", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(datasetsRegistry, /export function buildDatasetSchema/);
+  assert.match(datasetsRegistry, /export function datasetDistributionPath/);
+  assert.match(datasetsRegistry, /name: "David Miller"/);
+  assert.match(datasetsRegistry, /creditText: DATASET_CREDIT_TEXT/);
+  assert.match(datasetsRegistry, /temporalCoverage: "2026-07\/2026-09"/);
+  assert.match(
+    datasetsRegistry,
+    /license: DATA_LICENSE_URL,/,
+    "DataDownload nodes must carry the CC BY 4.0 license",
+  );
+  assert.match(landingPage, /huggingfaceMirroredDatasets/);
+  assert.match(landingPage, /buildDatasetSchema/);
+  assert.match(landingPage, /Cite this dataset/);
+  assert.match(landingPage, /Download CSV/);
+  assert.match(landingPage, /Hugging Face mirror/);
+  assert.doesNotMatch(
+    landingPage,
+    /easy-sourdough-discard-recipes-beginners/,
+    "CSV landing pages must not mention sourdough",
+  );
+  assert.match(dataCatalog, /buildDatasetSchema/);
+  assert.match(dataCatalog, /datasetDistributionPath/);
+  assert.match(
+    articlePage,
+    /creator: publisherSchema/,
+    "Article Dataset creator stays on the study template; PR #34 owns the flagship Person swap",
+  );
+  assert.doesNotMatch(
+    articlePage,
+    /buildDatasetSchema/,
+    "Study articles keep their existing Dataset block so cite-this-study work can land separately",
+  );
+});
+
 test("future and variant pages are noindex and do not emit rich-result schemas", () => {
   assert.match(
     articlePage,

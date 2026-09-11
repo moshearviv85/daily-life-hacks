@@ -1,0 +1,244 @@
+---
+/**
+ * Dataset-primary landing pages for the two Hugging Face-mirrored flagship CSVs.
+ *
+ * Google Dataset Search is crawl-only. Study pages already mix Article + Dataset.
+ * These routes exist so crawlers get a page whose main entity is the Dataset,
+ * with a direct contentUrl, license, creator, and sameAs pointing at Hugging Face.
+ * Other CSVs stay as files next to /data/; we are not multiplying thin download URLs.
+ */
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import {
+  DATA_LICENSE_URL,
+  DATA_RELEASE_DATE,
+  DATA_VERSION,
+  HUGGINGFACE_DATASET_URL,
+  buildDatasetSchema,
+  datasetCitationText,
+  datasetCsvFileName,
+  datasetCsvStem,
+  datasetDistributionPath,
+  datasetStudyPath,
+  describeDatasetProvenance,
+  getDatasetProvenance,
+  huggingfaceMirroredDatasets,
+} from "../../../content/datasets";
+
+export function getStaticPaths() {
+  return huggingfaceMirroredDatasets().map((dataset) => ({
+    params: { stem: datasetCsvStem(dataset) },
+    props: { dataset },
+  }));
+}
+
+const { dataset } = Astro.props;
+const siteUrl = "https://www.daily-life-hacks.com";
+const landingPath = datasetDistributionPath(dataset);
+if (!landingPath) {
+  throw new Error(`Missing dataset landing path for ${dataset.id}`);
+}
+const pageUrl = `${siteUrl}${landingPath}`;
+const catalogId = `${siteUrl}/data/#catalog`;
+const studyPath = datasetStudyPath(dataset);
+const fileName = datasetCsvFileName(dataset);
+const citation = datasetCitationText(dataset, siteUrl);
+const title = `${dataset.alternateName ?? dataset.name} CSV`;
+const description = `${dataset.description} ${dataset.rows} rows, free CSV, CC BY 4.0. Hugging Face mirror included.`;
+
+const datasetSchema = {
+  "@context": "https://schema.org",
+  ...buildDatasetSchema({
+    dataset,
+    siteUrl,
+    pageUrl,
+    catalogId,
+    inlineCatalog: true,
+  }),
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${pageUrl}#webpage`,
+  url: pageUrl,
+  name: title,
+  description,
+  inLanguage: "en-US",
+  isPartOf: { "@id": `${siteUrl}/#website` },
+  publisher: { "@id": `${siteUrl}/#organization` },
+  mainEntity: { "@id": datasetSchema["@id"] },
+  dateModified: DATA_RELEASE_DATE,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": `${pageUrl}#breadcrumb`,
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 2, name: "Data", item: `${siteUrl}/data/` },
+    { "@type": "ListItem", position: 3, name: fileName, item: pageUrl },
+  ],
+};
+
+const citationCopyScript = `(function(){
+  var btn = document.getElementById("citation-copy-btn");
+  var box = document.getElementById("citation-text");
+  if (!btn || !box) return;
+  btn.addEventListener("click", function () {
+    var label = btn.textContent;
+    var done = function () {
+      btn.textContent = "Copied";
+      setTimeout(function () { btn.textContent = label; }, 2000);
+    };
+    var fallback = function () {
+      box.focus();
+      box.select();
+      try { document.execCommand("copy"); done(); } catch (e) {}
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(box.value).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+})();`;
+
+const linkClass = "underline";
+const linkStyle = "color: #F29B30;";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalURL={pageUrl}
+  jsonLd={[webPageSchema, datasetSchema, breadcrumbSchema]}
+>
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 py-12 md:py-16">
+    <nav class="text-sm mb-6" style="color: var(--muted-color);" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#F29B30] transition-colors">Home</a>
+      <span class="mx-1">/</span>
+      <a href="/data/" class="hover:text-[#F29B30] transition-colors">Data</a>
+      <span class="mx-1">/</span>
+      <span style="color: var(--text-color);">{fileName}</span>
+    </nav>
+
+    <p class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#F29B30;">
+      Public dataset · v{DATA_VERSION} · CC BY 4.0
+    </p>
+    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
+      {dataset.name}
+    </h1>
+    <p class="text-lg mb-8" style="color: var(--muted-color);">
+      {dataset.rows} rows. Free CSV. No signup. The write-up with the caveats lives on the study
+      page; this page is the file, the license, and the citation.
+    </p>
+
+    <div class="flex flex-wrap items-center gap-3 mb-10">
+      <a
+        class="inline-block rounded-full px-4 py-2 text-sm font-bold"
+        style="color: #111; background-color: #F29B30;"
+        href={dataset.csv}
+        download
+        data-dataset-download
+        data-dataset-id={dataset.id}
+        aria-label={`Download ${fileName}`}
+      >
+        Download CSV
+      </a>
+      <a
+        class="inline-block rounded-full px-4 py-2 text-sm font-bold"
+        style="color: #F29B30; border: 1px solid #F29B30;"
+        href={HUGGINGFACE_DATASET_URL}
+        rel="noopener"
+        target="_blank"
+      >
+        Hugging Face mirror
+      </a>
+      <a href={studyPath} class={`${linkClass} text-sm`} style={linkStyle}>
+        Study write-up
+      </a>
+      <a href="/data/" class={`${linkClass} text-sm`} style={linkStyle}>
+        All datasets
+      </a>
+    </div>
+
+    <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
+      <p>
+        {dataset.description} {describeDatasetProvenance(getDatasetProvenance(dataset))}
+      </p>
+      <p class="text-base">
+        Prices cover the United States, version {DATA_VERSION}, last modified {DATA_RELEASE_DATE}.
+        You're free to reuse the Daily Life Hacks contribution under
+        <a href={DATA_LICENSE_URL} class={linkClass} style={linkStyle} rel="license noopener" target="_blank">
+          CC BY 4.0
+        </a>.
+        Credit Daily Life Hacks, link back to the study, and say if you changed the material. The
+        exact scope is on the
+        <a href="/data-reuse/" class={linkClass} style={linkStyle}>data reuse page</a>.
+      </p>
+
+      <h2 id="fields" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        What the columns measure
+      </h2>
+      <ul class="list-disc pl-5 text-base space-y-1">
+        {dataset.variables.map((variable) => <li>{variable}</li>)}
+      </ul>
+
+      <p class="text-base">
+        Point at the study, not the naked CSV. The caveats live there.
+      </p>
+    </div>
+
+    <aside
+      class="mt-6 rounded-xl border p-4"
+      style="border-color: var(--border-color); background-color: var(--card-bg);"
+      aria-labelledby="citation-heading"
+    >
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <h2
+          id="citation-heading"
+          class="text-sm font-bold"
+          style="color: var(--heading-color);"
+        >
+          Cite this dataset
+        </h2>
+        <span class="text-xs" style="color: var(--muted-color);">
+          {dataset.rows} rows · CC BY 4.0
+        </span>
+      </div>
+      <p
+        class="mt-3 rounded-lg border p-3 font-mono text-xs leading-relaxed"
+        style="border-color: var(--border-color); background-color: var(--input-bg); color: var(--text-color);"
+      >
+        {citation}
+      </p>
+      <textarea
+        readonly
+        rows="2"
+        id="citation-text"
+        class="sr-only"
+        tabindex="-1"
+        aria-hidden="true"
+      >{citation}</textarea>
+      <div class="mt-3 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          id="citation-copy-btn"
+          class="px-3 py-1.5 rounded-lg text-xs font-medium border"
+          style="border-color: #F29B30; color: #F29B30; background-color: transparent;"
+        >
+          Copy citation
+        </button>
+        <a href="/methodology/" class="text-xs underline" style="color: var(--muted-color);">
+          License terms
+        </a>
+      </div>
+    </aside>
+  </main>
+  <script is:inline set:html={citationCopyScript} />
+  <Footer />
+</BaseLayout>

@@ -303,6 +303,85 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
 
   const dataHub = readFileSync(distHtmlFor(`${SITE}/data/`), "utf8");
   assert.match(dataHub, new RegExp(hf.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+
+  const catalog = jsonLdBlocks(dataHub, `${SITE}/data/`).find(
+    (node) => node["@type"] === "DataCatalog",
+  );
+  assert.ok(catalog, "rendered /data/ should include a DataCatalog node");
+  assert.equal(catalog.isAccessibleForFree, true);
+  assert.equal(catalog.license, "https://creativecommons.org/licenses/by/4.0/");
+  assert.equal(catalog.creditText, "Credit Daily Life Hacks with a link. Licensed under CC BY 4.0.");
+  assert.ok(Array.isArray(catalog.keywords));
+  assert.ok(catalog.keywords.includes("Hugging Face"));
+  assert.ok(catalog.keywords.includes("fiber per dollar"));
+
+  for (const flagship of flagships) {
+    const landingUrl = flagship.csv.replace(/\.csv$/, "/");
+    const landingHtml = readFileSync(distHtmlFor(landingUrl), "utf8");
+    assert.match(landingHtml, /Cite this dataset/);
+    assert.match(landingHtml, /Download CSV/);
+    assert.match(landingHtml, new RegExp(hf.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.doesNotMatch(landingHtml, /easy-sourdough-discard-recipes-beginners/);
+
+    const landingDatasets = [];
+    for (const block of jsonLdBlocks(landingHtml, landingUrl)) {
+      visit(block, (node) => {
+        if (node["@type"] === "Dataset") landingDatasets.push(node);
+      });
+    }
+    assert.equal(landingDatasets.length, 1, `${landingUrl} should have one Dataset node`);
+    const landingNode = landingDatasets[0];
+    const sameAs = Array.isArray(landingNode.sameAs)
+      ? landingNode.sameAs
+      : [landingNode.sameAs];
+    assert.ok(sameAs.includes(hf), `${landingUrl} sameAs should include Hugging Face`);
+    assert.ok(
+      sameAs.includes(`${SITE}/${flagship.slug}/`),
+      `${landingUrl} sameAs should include the study URL`,
+    );
+    assert.equal(landingNode.license, "https://creativecommons.org/licenses/by/4.0/");
+    assert.equal(landingNode.isAccessibleForFree, true);
+    assert.equal(landingNode.temporalCoverage, "2026-07/2026-09");
+    assert.equal(landingNode.creator?.name, "David Miller");
+    assert.equal(landingNode.publisher?.name, "Daily Life Hacks");
+    assert.ok(Array.isArray(landingNode.keywords));
+    assert.ok(landingNode.keywords.includes("Hugging Face"));
+    const downloads = Array.isArray(landingNode.distribution)
+      ? landingNode.distribution
+      : [landingNode.distribution];
+    const contentUrls = downloads.map((item) => item?.contentUrl);
+    assert.ok(contentUrls.includes(flagship.csv), `${landingUrl} missing on-site CSV contentUrl`);
+    assert.ok(
+      contentUrls.includes(flagship.huggingfaceCsv),
+      `${landingUrl} missing Hugging Face CSV contentUrl`,
+    );
+    assert.ok(
+      downloads.every((item) => item?.encodingFormat === "text/csv"),
+      `${landingUrl} DataDownload encodingFormat should be text/csv`,
+    );
+    assert.ok(
+      downloads.every(
+        (item) => item?.license === "https://creativecommons.org/licenses/by/4.0/",
+      ),
+      `${landingUrl} DataDownload license should be CC-BY-4.0`,
+    );
+
+    const catalogNode = catalog.dataset.find(
+      (node) => node["@id"] === `${SITE}/${flagship.slug}/#dataset`,
+    );
+    assert.ok(catalogNode, `catalog missing Dataset node for ${flagship.slug}`);
+    assert.equal(catalogNode.url, landingUrl);
+    assert.equal(catalogNode.creator?.name, "David Miller");
+    assert.equal(catalogNode.temporalCoverage, "2026-07/2026-09");
+    const catalogSameAs = Array.isArray(catalogNode.sameAs)
+      ? catalogNode.sameAs
+      : [catalogNode.sameAs];
+    assert.ok(catalogSameAs.includes(hf), `catalog sameAs missing HF for ${flagship.slug}`);
+  }
+
+  const sitemapLocs = new Set(sitemapEntries().map((entry) => entry.loc));
+  assert.ok(sitemapLocs.has(`${SITE}/data/fiber-per-dollar-2026/`));
+  assert.ok(sitemapLocs.has(`${SITE}/data/protein-per-dollar-2026/`));
 });
 
 function locFor(path) {
