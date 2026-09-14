@@ -1,5 +1,5 @@
 ---
-title: "Peppermint Ginger Tea: A Better 10-Minute Brew"
+title: "Gut Health Tea: Peppermint and Ginger in 10 Minutes"
 excerpt: "Peppermint and ginger tea: 3 ginger coins, 1 tsp mint, 12 oz hot water, covered 5-10 minutes. Caffeine-free, about 10-20 cents a cup. Gut claims stay unproven."
 category: nutrition
 tags:
