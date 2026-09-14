@@ -18,6 +18,8 @@ const requiredLinks = [
   ["high-protein-on-a-budget-complete-guide", fiberFlagship],
   ["lentils-vs-chicken-breast-protein-cost", fiberFlagship],
   ["canned-vs-dry-beans-cost", fiberFlagship],
+  ["can-you-eat-rice-and-beans-everyday", proteinFlagship],
+  ["can-you-eat-rice-and-beans-everyday", fiberFlagship],
 ];
 
 function articleBody(slug) {
