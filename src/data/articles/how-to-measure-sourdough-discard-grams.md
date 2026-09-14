@@ -10,7 +10,7 @@ tags:
 image: "/images/how-to-measure-sourdough-discard-grams-main.jpg"
 imageAlt: A digital kitchen scale weighing a glass bowl of sourdough discard in grams
 date: 2026-04-28
-dateModified: 2026-07-18
+dateModified: 2026-09-14
 author: "David Miller"
 featured: false
 faq:
@@ -25,69 +25,64 @@ faq:
   - question: Can you measure cold sourdough discard straight from the fridge?
     answer: Yes. Put the bowl on a digital scale, press tare, and add the cold discard until you reach the recipe's gram amount. Temperature changes how easily it pours, but it doesn't change the target weight.
 ---
-**One cup of sourdough discard is about 227 grams.** Half a cup is about 113 grams, and a quarter cup is about 57 grams. Those conversions assume a typical 100% hydration starter, meaning equal weights of flour and water.
 
-If you're about to lower a measuring cup into a jar of discard, stop. You've already washed enough sticky things this week.
+Half a cup of sourdough discard is about **113 grams**, and one cup is about **227 grams**. If you're holding a sticky measuring cup over the sink, the scale is the easier option.
 
-| Sourdough discard volume | Weight to use |
+Use the calculator above to convert your amount and see how much flour and water it contains. The cup conversion assumes a stirred starter; the flour-and-water calculation assumes **100% hydration**, or equal weights of each.
+
+## Sourdough discard cups to grams
+
+| US volume | Approximate discard weight |
 |---|---:|
-| 1 cup | 227 grams |
-| 3/4 cup | 170 grams |
-| 2/3 cup | 151 grams |
-| 1/2 cup | 113 grams |
-| 1/3 cup | 76 grams |
-| 1/4 cup | 57 grams |
+| 2 tablespoons | 28 g |
+| 1/4 cup | 57 g |
+| 1/3 cup | 76 g |
+| 1/2 cup | 113 g |
+| 2/3 cup | 151 g |
+| 3/4 cup | 170 g |
+| 1 cup | 227 g |
+| 1 1/2 cups | 341 g |
 
-*Source: [King Arthur Baking's sourdough starter recipe](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe) gives 1 cup as 227 grams. Smaller amounts above are proportional conversions rounded to the nearest gram.*
+The starting point is [King Arthur Baking's starter conversion](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe), which uses 227 grams for one cup. The other rows are proportional amounts rounded to a whole gram.
 
-## How do you weigh sourdough discard without making a mess?
+This is a practical conversion, not an exact density for every jar. A bubbly starter fills more space than the same starter stirred flat. When a recipe supplies its own gram weight, follow that weight.
 
-Put your mixing bowl directly on a digital scale and press the **tare** or **zero** button. When the display reads 0, spoon or pour the discard into the bowl until you hit the recipe's number.
+## How to weigh discard without another dirty cup
 
-That's it. No measuring cup. No scraping a measuring cup into a bowl. No discovering a fossilized stripe of starter on the faucet tomorrow morning.
+Put the mixing bowl on a scale, press **tare**, and add discard until the display reaches your target. Cold discard is fine to weigh; it just pours more slowly.
 
-If you overshoot by 4 or 5 grams, scoop a little back into the jar. For pancakes and crackers, a few grams usually won't start an international incident. For a dough where hydration matters, get closer to the target.
+If the recipe calls for half a cup and supplies no weight, aim for 113 grams. If it says half a cup is 120 grams, use its stated 120 grams. The author has chosen a different volume conversion, and splitting the difference adds a variable you didn't need.
 
-This direct-to-bowl method is especially useful for [no-yeast sourdough discard pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/), where too much wet discard means adding more flour and slowly inventing a different recipe.
+Stir before measuring by cup so large bubbles don't distort the amount. Stir before portioning from a separated jar too, so you're taking a representative mixture of flour and water rather than mostly liquid from the top.
 
-## Why isn't every cup of sourdough discard exactly 227 grams?
+## How much flour and water are in the discard?
 
-A cup is a volume. A gram is a weight. Sourdough discard is full of bubbles, and bubbles are terrible at following measuring instructions.
+For **100% hydration discard**, divide its weight by two.
 
-Fresh, active starter can fill a cup with more air and less actual starter. Cold discard that's been stirred flat can pack more tightly. Whole-grain starters may also behave differently from starters made with all-purpose flour. The 227-gram number is a useful conversion, not a law enforced by a tiny baking police department.
+| Discard weight | Flour already present | Water already present |
+|---|---:|---:|
+| 50 g | 25 g | 25 g |
+| 100 g | 50 g | 50 g |
+| 113 g | 56.5 g | 56.5 g |
+| 200 g | 100 g | 100 g |
+| 227 g | 113.5 g | 113.5 g |
 
-When a recipe supplies both cups and grams, use the grams. When it supplies only cups, stir the discard down before measuring by volume or use the table above as a practical starting point.
+For example, adding 100 grams of this discard to a recipe contributes 50 grams of flour and 50 grams of water. Subtracting those from the recipe preserves the ingredient balance on paper, but acidity and fermentation still affect the result. It isn't a promise that any cake or cookie recipe will behave the same.
 
-## How many grams is half a cup of sourdough discard?
+A starter at another hydration needs different math: **flour = discard weight ÷ (1 + hydration ÷ 100)**. Water is the remaining weight. A 150-gram starter at 50% hydration contains 100 grams flour and 50 grams water. The calculator above stays at 100% hydration deliberately.
 
-Half a cup is about **113 grams**. If you've seen 120 or 125 grams elsewhere, that recipe may be using a different house conversion or a denser starter. Don't average five websites together like you're setting an interest rate. Use the conversion chosen by the recipe you're actually making.
+## Scale a recipe to the jar you have
 
-If the recipe gives no weight, 113 grams is a defensible default because it comes directly from the 227-gram cup used by King Arthur Baking. Write it on a piece of tape near your scale if you make discard recipes often:
+Divide the discard you have by the amount the recipe requests. That's your batch multiplier.
 
-**1 cup = 227g. 1/2 cup = 113g. 1/4 cup = 57g.**
+If you have **150 grams** and the recipe needs **227 grams**, the multiplier is about **0.66**. Multiply the other ingredients by that number too. Don't simply reduce the discard while keeping all the flour.
 
-That's the entire cheat sheet. Your refrigerator doesn't need another laminated chart.
+Eggs are the awkward part. Beat an egg, weigh it, and use the required fraction, or choose a recipe that fits a whole egg. Pan size and cooking time don't scale in a straight line with ingredient weight.
 
-## Does sourdough hydration change the conversion?
+## Which recipe fits 113 or 227 grams?
 
-Yes. The table works best for 100% hydration starter, which is fed equal weights of flour and water. A stiffer starter contains less water and may weigh differently by volume. A very liquid starter can settle differently too.
+With about **113 grams**, make one [skillet flatbread](/easy-sourdough-discard-recipes-beginners/#skillet-flatbread-with-half-a-cup). It uses a small pan and doesn't ask you to divide an egg.
 
-You don't need to calculate hydration to use a recipe that already gives grams. Just weigh the requested amount. Hydration becomes relevant when you're converting a cup-based recipe and your starter is noticeably thicker or thinner than the recipe author's.
+With **227 grams**, choose the [pancake or cracker recipes](/easy-sourdough-discard-recipes-beginners/), or the [thin discard pizza crust](/easy-sourdough-discard-pizza-dough-no-yeast/). Pancakes take about 20 minutes; the crackers take about an hour plus cooling. Pick by both the jar and the clock.
 
-For a forgiving batch of pancakes, that difference may not matter much. For [gluten-free sourdough discard pizza dough](/gluten-free-sourdough-discard-pizza-dough/), the extra moisture can change whether the dough holds together or spreads across the parchment like spackle with ambitions.
-
-## Can you measure cold discard straight from the fridge?
-
-Absolutely. Cold discard is thicker and more annoying to pour, but 113 grams is still 113 grams. Set the bowl on the scale, tare it, and use a silicone spatula to move the discard from jar to bowl.
-
-If there's a gray liquid layer on top, check the recipe's guidance before deciding whether to stir it in or pour it off because that choice changes the water going into the dough. If you see pink or orange discoloration, fuzzy mold, or get a rotten smell, don't use the discard. The scale can't rescue a contaminated jar. It's a scale, not a priest.
-
-## What if a recipe lists cups but not grams?
-
-Use 227 grams per cup as your starting point, then make a note on the recipe after you bake it. If the batter was too loose, use slightly less next time. If the dough was dry, use slightly more.
-
-Better yet, start with recipes that already give useful measurements. This collection of [easy sourdough discard recipes for beginners](/easy-sourdough-discard-recipes-beginners/) gives you practical places to use the jar before it becomes a second refrigerator tenant. Once the actual bake is done, [store homemade bread properly](/how-to-store-homemade-bread/) so all that careful weighing doesn't end with a stale loaf on Thursday.
-
-The point of grams isn't to make baking feel more serious. It's to remove one slippery variable and one dirty measuring cup. That's the kind of precision I can support.
-
-<!-- sources: King Arthur Baking, "Sourdough Starter Recipe" (227g equals 1 cup); King Arthur Baking, "How to build the exact amount of ripe sourdough starter for a recipe" (227g equals 1 cup and 150g equals 2/3 cup); proportional conversions rounded to nearest gram. -->
+Keep your discard covered in the refrigerator and label its collection date. Use a maintained, established starter, and discard a jar with mold, pink or orange discoloration, or a rotten smell. Weighing a questionable jar more precisely doesn't make it usable.

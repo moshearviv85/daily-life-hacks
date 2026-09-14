@@ -251,6 +251,8 @@
         }
 
         function shouldSuppressPopup() {
+            // Readers following a recipe or using a calculator need the content visible.
+            if (document.querySelector('#recipe, [data-kitchen-calculator]')) return true;
             // Never ask someone to sign up for something they already have.
             if (isSubscribed()) return true;
 
@@ -266,7 +268,7 @@
         }
 
         function showPopup() {
-            if (!popup || !popupContent) return;
+            if (!popup || !popupContent || shouldSuppressPopup()) return;
 
             // Mark as shown for the rest of this browser session
             sessionStorage.setItem("newsletter_popup_shown", "true");
@@ -300,7 +302,7 @@
 
         function handleExitIntent(e) {
             if (e.clientY <= 0) {
-                // If they move cursor up, always show popup instead of checking suppression
+                // Re-check suppression after navigation or a reader's dismissal.
                 showPopup();
                 document.removeEventListener("mouseleave", handleExitIntent);
                 clearTimeout(showTimeout);

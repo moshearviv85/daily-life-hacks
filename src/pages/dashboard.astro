@@ -2406,10 +2406,10 @@ async function loadPinterestAnalytics() {
     // Cache note
     const note = el('pa-cache-note');
     if (data.stale) {
-      note.textContent = `⚠️ Stale cache from ${data.cachedAt ? new Date(data.cachedAt + 'Z').toLocaleString() : '?'} — Pinterest API error`;
+      note.textContent = `Stale snapshot: ${data.cachedAt ? new Date(data.cachedAt).toLocaleString() : 'unavailable'}. ${data.scope || ''}`;
       note.style.color = 'var(--red, #e55)';
     } else if (data.fromCache) {
-      note.textContent = `Cached · ${data.cachedAt ? new Date(data.cachedAt + 'Z').toLocaleString() : ''}`;
+      note.textContent = `Updated ${data.cachedAt ? new Date(data.cachedAt).toLocaleString() : 'unknown'}. ${data.scope || ''}`;
       note.style.color = '';
     } else {
       const range = data.startDate && data.endDate ? ` (${data.startDate} → ${data.endDate})` : '';

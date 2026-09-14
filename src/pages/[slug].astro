@@ -35,6 +35,7 @@ import {
 import StudyLead from "../components/StudyLead.astro";
 import StudyNextStep from "../components/StudyNextStep.astro";
 import MealProteinCost from "../components/MealProteinCost.astro";
+import KitchenCalculator from "../components/KitchenCalculator.astro";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -839,7 +840,7 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
             difficulty={article.data.difficulty}
           />
           <p class="p-5 text-sm leading-relaxed" style="color: var(--muted-color);">
-            Full ingredients and instructions are at the end of the article.
+            <a href="#recipe" class="font-bold underline underline-offset-4">Jump to ingredients and instructions ↓</a>
           </p>
         </section>
       )
@@ -877,6 +878,8 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
     }
 
     <!-- Article Content -->
+    {['how-to-measure-sourdough-discard-grams', 'easy-sourdough-discard-recipes-beginners'].includes(article.id) && <KitchenCalculator kind="discard" />}
+    {article.id === 'protein-per-serving-beans-chicken-tofu-compared' && <KitchenCalculator kind="protein" />}
     <div class="article-content order-[20]">
       <Content />
     </div>
@@ -1051,7 +1054,7 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
     <!-- Recipe Card -->
     {
       isRecipe && (
-        <div class="order-[30] mt-10 mb-10 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
+        <div id="recipe" class="order-[30] mt-10 mb-10 scroll-mt-24 border-2 border-[#F29B30] rounded-2xl overflow-hidden bg-[var(--card-bg)] shadow-sm">
           <RecipeMetaBar
             prepTime={article.data.prepTime}
             cookTime={article.data.cookTime}

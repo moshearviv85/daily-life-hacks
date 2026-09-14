@@ -1,6 +1,6 @@
 ---
-title: "Protein per Serving: Chicken 26-35g, Beans 15g, Tofu 8-20g"
-excerpt: "USDA cooked servings: chicken breast 26-35g protein, a cup of black beans about 15g, tofu 8-20g per 3-4 oz. Named FoodData Central records, cooked basis."
+title: "Protein per Serving: Chicken, Beans, Tofu + Calculator"
+excerpt: "Compare protein in cooked chicken, beans, and tofu, then calculate your portion from the label. Includes raw vs cooked weights and 25 g examples."
 quickAnswer: >-
   Chicken wins per serving, but the gap is smaller than most comparisons make it
   look. USDA puts 3 to 4 ounces of cooked chicken breast at 26 to 35 grams of
@@ -14,7 +14,7 @@ tags: ["ProteinGuide", "MealPlanning", "PantryStaples", "BalancedMeals", "Nutrit
 image: "/images/protein-per-serving-beans-chicken-tofu-compared-main.jpg"
 imageAlt: "Plate with chicken tofu beans and grains arranged as protein portion examples"
 date: 2026-04-07
-dateModified: 2026-08-20
+dateModified: 2026-09-14
 publishAt: 2026-04-09T00:00:00.000Z
 author: "David Miller"
 featured: false
@@ -70,11 +70,21 @@ Most protein charts skip this, and it's the single biggest source of confusion. 
 
 So a number is only useful if you know which side of the stove it's standing on. The table above is cooked, because cooked is what lands on the plate. Our [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) uses raw weights on purpose, since raw pounds are what you pay for at the register. Same chicken, two honest bases. Quietly mixing them is how anybody can "prove" whatever they wanted to prove.
 
-## Why tofu swings from 8 grams to 20
+## How much food gives you 25 grams of protein?
 
-Tofu is the one food here where the word on the tub barely predicts the number, and it's the coagulant doing the work. USDA's [firm tofu made with calcium sulfate](https://fdc.nal.usda.gov/food-details/172475/nutrients) carries 17.3 grams per 100 grams. Its [extra firm tofu made with nigari](https://fdc.nal.usda.gov/food-details/174290/nutrients) carries 9.98. Nearly double, same shelf, and "extra firm" is the one that loses.
+Use the calculator above with the label on your own food. Here are three examples using the records already cited on this page. The 25-gram amount is a comparison point, not a personal intake recommendation.
 
-American blocks mostly sit near that lower figure. Branded records at FoodData Central put extra firm tofu from Nasoya, Kroger, Whole Foods, Wegmans and Pulmuone between 9.41 and 10.9 grams per 100 grams. So for a 3 to 4 ounce slab off a typical US block, plan on 8 to 11 grams and call 20 the ceiling, not the default. Flip the tub over and read it.
+| Food and basis | Protein per 100 g | Food for about 25 g protein |
+|---|---:|---:|
+| Chicken breast, cooked and roasted | 31.0 g | 81 g, about 2.9 oz |
+| Extra firm tofu with nigari, USDA record 174290 | 9.98 g | 251 g, about 8.9 oz |
+| Firm tofu with calcium sulfate, USDA record 172475 | 17.3 g | 145 g, about 5.1 oz |
+
+**Formula: desired protein ÷ protein per label serving × label serving weight.** If your tofu label says 10 grams protein per 100 grams, 25 grams protein takes 250 grams tofu. For a 400-gram block, that's about five-eighths of the package.
+
+Don't infer the protein amount from firmness or the coagulant alone. The two USDA records describe different foods; they don't prove that changing a coagulant doubles protein. Water content and the actual product formulation matter. Check the tub you bought.
+
+For mixed meals, count each ingredient once. If beans already contribute 15 grams, you need another 10 grams to reach that example 25-gram total, not another full 25. The [rotisserie chicken dinner portions](/costco-rotisserie-chicken-meal-ideas-dinner/) give you quantities to use this with.
 
 ## What "per serving" means in real life
 
@@ -111,4 +121,4 @@ Two rules:
 
 If a label says 7 g of protein but the serving is 1/3 cup, don't blame the food. Blame the serving size fantasy.
 
-If you only do one thing after reading this protein per serving beans chicken tofu compared guide, build one repeatable meal that you like. Repeat beats perfect. Every time.
+Use the label's serving weight, keep raw and cooked values separate, and calculate the amount you actually put on the plate.

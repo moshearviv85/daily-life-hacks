@@ -41,7 +41,7 @@ test("thank-you page delivers and measures the promised meal plan", () => {
   assert.match(page, /href: "\/downloads\/7-day-high-fiber-meal-plan\.pdf"/);
   assert.match(page, /data-lead-magnet-download/);
   assert.match(page, /event_type: "lead_magnet_download"/);
-  assert.match(page, /One useful email a week/);
+  assert.match(page, /(?:One useful|Then about one) email a week/);
   assert.doesNotMatch(page, /One email a day/);
   assert.doesNotMatch(page, /PDF meal plans are coming next/);
 });

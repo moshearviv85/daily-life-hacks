@@ -533,7 +533,7 @@ export async function onRequest(context) {
 
       return Response.redirect(buildCanonicalUrl(`/${baseSlug}/`, url.search), 301);
     } else {
-      // --- 4. PASS THROUGH: log page_view to funnel_events (server-side, no JS needed) ---
+      // --- 4. PASS THROUGH: log successful HTML requests as diagnostics, never page views ---
       if (
         (request.method === "GET" || request.method === "HEAD") &&
         originalPathname !== "/" &&
@@ -555,21 +555,6 @@ export async function onRequest(context) {
         }
       }
 
-      if (env.DB && request.method === "GET") {
-        const pagePath = path || "/";
-        const metadata = JSON.stringify({
-          referrer: request.headers.get("Referer") || null,
-          user_agent: request.headers.get("User-Agent") || null,
-          country: request.headers.get("CF-IPCountry") || null,
-          query_params: url.search || null,
-        });
-        const pageViewPromise = env.DB.prepare(
-          `INSERT INTO funnel_events (event_type, page, source, metadata) VALUES (?, ?, ?, ?)`
-        )
-          .bind("page_view", pagePath, detectTrafficSource(request, url), metadata)
-          .run();
-        waitUntil(pageViewPromise.catch(() => {}));
-      }
       const assetUrl = new URL(path === "/" ? "/" : `${path}/`, url.origin);
       assetUrl.search = url.search;
       const assetReq = new Request(assetUrl.toString(), {
@@ -586,6 +571,22 @@ export async function onRequest(context) {
           status: 404,
           headers: notFoundPage.headers,
         });
+      }
+
+      if (env.DB && request.method === "GET" && assetResponse.status === 200 && (assetResponse.headers.get("Content-Type") || "").includes("text/html")) {
+        const pagePath = path || "/";
+        const metadata = JSON.stringify({
+          referrer: request.headers.get("Referer") || null,
+          user_agent: request.headers.get("User-Agent") || null,
+          country: request.headers.get("CF-IPCountry") || null,
+          query_params: url.search || null,
+        });
+        const requestLogPromise = env.DB.prepare(
+          `INSERT INTO funnel_events (event_type, page, source, metadata) VALUES (?, ?, ?, ?)`
+        )
+          .bind("server_request", pagePath, detectTrafficSource(request, url), metadata)
+          .run();
+        waitUntil(requestLogPromise.catch(() => {}));
       }
 
       return assetResponse;

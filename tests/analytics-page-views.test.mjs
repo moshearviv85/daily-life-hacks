@@ -25,7 +25,7 @@ function fakeDb(eventRows) {
           bind(start, endExclusive) {
             return {
               async all() {
-                assert.match(sql, /event_type\s*=\s*'page_view'/);
+                assert.match(sql, /event_type\s*=\s*'browser_page_view'/);
                 assert.match(sql, /datetime\(created_at\)\s*>=\s*datetime\(\?1\)/);
                 assert.match(sql, /datetime\(created_at\)\s*<\s*datetime\(\?2\)/);
                 const startMs = Date.parse(start);
@@ -34,7 +34,7 @@ function fakeDb(eventRows) {
                 for (const row of eventRows) {
                   const timestamp = sqliteTimestampToMs(row.created_at);
                   if (
-                    row.event_type === "page_view" &&
+                    row.event_type === "browser_page_view" &&
                     timestamp >= startMs &&
                     timestamp < endMs
                   ) {
@@ -53,8 +53,10 @@ function fakeDb(eventRows) {
 
       return {
         async first() {
+          if (sql.includes("MIN(created_at)")) return { started_at: "2026-07-05 00:00:00" };
           return { count: eventRows.length };
         },
+        bind() { return this; },
         async all() {
           return { results: [] };
         },
@@ -80,8 +82,9 @@ test("analytics API excludes other event types and both out-of-window boundaries
   assert.equal(response.status, 200);
   const body = await response.json();
 
-  assert.equal(body.page_views_window.event_type, "page_view");
+  assert.equal(body.page_views_window.event_type, "browser_page_view");
   assert.equal(body.page_views_window.days, 7);
+  assert.equal(body.page_views_window.full_window_observed, true);
   assert.equal(body.page_views_by_day.length, 7);
   assert.deepEqual(body.page_views_by_day, [
     { day: "2026-07-06", count: 1 },

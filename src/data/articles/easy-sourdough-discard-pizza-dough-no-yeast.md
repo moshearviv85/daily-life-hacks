@@ -1,11 +1,10 @@
 ---
-title: Easy Sourdough Discard Pizza Dough Recipe No Yeast
+title: Sourdough Discard Pizza Dough Without Added Yeast
 excerpt: "Mix sourdough discard with flour, baking powder, salt, and oil, then roll it thin and bake hot for a crisp pizza crust without a yeast rise."
 quickAnswer: >-
-  Mix one cup of sourdough discard with flour, baking powder, salt, and olive oil.
-  Knead only until smooth, adjust sticky dough with flour one tablespoon at a
-  time, and roll it thin on parchment. Add restrained toppings and bake on a
-  preheated surface at 450 degrees F for 12 to 15 minutes.
+  Use 227 grams of 100% hydration discard, 180 grams of flour, and 75 grams of
+  water, plus baking powder, salt, and oil. This makes one thin 12-inch crust
+  without a yeast rise. Allow about 40 minutes including oven preheating.
 category: recipes
 tags:
 - quick meals
@@ -17,33 +16,34 @@ tags:
 image: "/images/easy-sourdough-discard-pizza-dough-no-yeast-main.jpg"
 imageAlt: A close-up, top-down view of a golden-brown pizza crust with airy edges on a wooden surface.
 date: 2026-04-28
-dateModified: 2026-07-20
+dateModified: 2026-09-14
 author: "David Miller"
 featured: false
-prepTime: "10 minutes"
+prepTime: "25 minutes"
 cookTime: "15 minutes"
-totalTime: "25 minutes"
+totalTime: "40 minutes"
 servings: 2
-calories: 280
+calories: 595
 difficulty: "Easy"
 ingredients:
-  - 1 cup sourdough discard (unfed, room temperature)
-  - 1.5 cups all-purpose flour (plus more for dusting)
+  - 227 g sourdough discard, 100% hydration
+  - 180 g all-purpose flour, plus a little for dusting
+  - 75 g water
   - 1 tsp baking powder
   - 1/2 tsp fine sea salt
   - 1 tbsp olive oil
   - 1/2 tsp garlic powder (optional)
 steps:
-  - Preheat your oven to 450°F (230°C). If using a pizza stone, place it in the oven now.
+  - Put a heavy baking sheet on the middle rack and preheat the oven to 450 degrees F. Allow at least 20 minutes for the pan to heat while you mix and rest the dough.
   - In a large bowl, whisk together the flour, baking powder, salt, and garlic powder.
-  - Add the sourdough discard and olive oil to the dry ingredients.
-  - Stir with a fork until a shaggy dough forms, then use your hands to knead it for about 2 minutes until smooth.
-  - If the dough is too sticky, add flour one tablespoon at a time. It should be tacky but not glue-like.
-  - Roll the dough out on a piece of parchment paper to your desired thickness, usually about 12 inches across.
-  - Add your toppings and bake for 12 to 15 minutes until the edges are golden brown and the cheese is bubbly.
+  - Stir the discard, water, and olive oil together, then mix them into the dry ingredients until no loose flour remains.
+  - Knead gently for about 1 minute, cover, and rest for 10 minutes. The dough should feel soft and slightly tacky. If dry crumbs remain, add water a teaspoon at a time.
+  - Roll into a thin 12-inch circle on parchment rated for 450 degrees F. Dust lightly with flour only if the dough sticks to the rolling pin.
+  - Add a thin layer of sauce and light toppings. Transfer the pizza and parchment to the hot baking sheet using a second baking sheet as a tray.
+  - Bake for 12 to 15 minutes, until the bottom is browned and the center has no wet dough. Thick or wet toppings may need longer. Let stand for 2 minutes before slicing.
 faq:
   - question: "Can you use sourdough discard for pizza dough without yeast?"
-    answer: "Yes, you can use sourdough discard for pizza dough without adding commercial yeast. By using baking powder as a leavening agent, you get a quick rise that mimics the texture of traditional crust. The discard provides the characteristic tangy flavor, while the baking powder handles the lift, making it a fast alternative to long-fermented doughs."
+    answer: "Yes, without adding commercial yeast. An established sourdough starter already contains wild yeast, so this is not literally yeast-free. Baking powder supplies the quick lift here and the dough goes into the oven without a fermentation rise. Expect a thin, relatively dense crust rather than a puffy bread-style rim."
   - question: "How do you make sourdough pizza crust crispy?"
     answer: "To get a crispy sourdough pizza crust, preheat your oven to at least 450°F and use a pizza stone or a preheated baking sheet. Rolling the dough thin and lightly brushing the edges with olive oil before baking also helps. The high heat quickly evaporates moisture, resulting in a firm, crunchy base rather than a soggy one."
   - question: "Is this the same as long-fermented sourdough pizza dough?"
@@ -51,47 +51,70 @@ faq:
   - question: "Why is my sourdough discard pizza dough tough?"
     answer: "Tough pizza dough usually happens from over-kneading or adding too much flour. Since this recipe doesn't rely on yeast development, you only need to knead it until the ingredients are fully incorporated. If you work the dough too long, the gluten becomes too tight, which results in a chewy or hard crust once it hits the oven heat."
 ---
-I used to feel a weird sense of personal failure every time I poured half my sourdough starter down the drain. It felt like throwing away a pet, or at least a very expensive hobby. Then I realized my kids don't actually care about a 24-hour cold ferment or "open crumb" structures. They just want pizza, and they want it before someone has a meltdown.
 
-This easy sourdough discard pizza dough recipe no yeast is my favorite way to clear out the fridge and get dinner moving. It skips the six-hour wait and the temperamental yeast packets in favor of immediate gratification. You get the tang of the sourdough without the drama of the scheduling.
+Pizza at the end of the day is a reasonable request. Remembering to start dough that morning is a separate skill. This sourdough discard pizza dough uses baking powder and a short rest, so there's no yeast rise to schedule.
 
-## Why skip the yeast in sourdough pizza?
+It makes **one thin 12-inch crust, two meal servings**, in about 40 minutes including preheating. Expect a modest rim and a crisp base rather than an airy pizzeria crust. There's no added commercial yeast, though the starter itself contains wild yeast.
 
-Most people think sourdough discard is just a flavoring agent, but it's actually the workhorse of your pantry. When you use this easy sourdough discard pizza dough recipe no yeast, you're relying on the acidity of the starter and a hit of baking powder to do the heavy lifting. This means you can go from a bowl of flour to a hot oven in about ten minutes.
+## What goes into this sourdough discard pizza dough?
 
-If you've ever forgotten to start your dough the night before, this is your safety net. It doesn't have the massive air bubbles of a Neapolitan style crust, but it has a sturdy, cracker-like crunch that actually holds up to a mountain of pepperoni. Plus, it's a great way to use up that discard that's been sitting in the back of your fridge for a week.
+For the original two-serving batch, use these amounts. The recipe card scales the gram amounts if you change the servings.
 
-## Getting the texture right with discard
+| Ingredient | Weight | Approximate US measure |
+|---|---:|---|
+| Stirred discard, 100% hydration | 227 g | 1 cup |
+| All-purpose flour | 180 g | 1 1/2 cups, spooned and leveled |
+| Water | 75 g | 5 tablespoons |
+| Olive oil | About 14 g | 1 tablespoon |
 
-The hydration of your starter matters here. If your discard is watery, you're going to need a bit more flour than the recipe calls for. I usually start with the base measurements and then add flour a tablespoon at a time. You want the dough to feel like a Post-it note: sticky enough to cling to your finger for a second, but clean enough to pull away without leaving a mess. If you'd rather remove one variable before the flour bag comes out, [weigh the sourdough discard in grams](/how-to-measure-sourdough-discard-grams/) directly in the mixing bowl.
+You'll also need 1 teaspoon baking powder and 1/2 teaspoon fine salt. Garlic powder is optional. Keep sauce and toppings separate when you work out quantities or calories.
 
-**Pro-tip:** Don't overwork this. This isn't a traditional bread dough where you're trying to build massive gluten networks. If you knead it like you're angry at it, the crust will turn out like a piece of plywood. Just get it smooth and stop.
+**The added water matters.** At 100% hydration, 227 grams of discard contains about 113.5 grams each of flour and water. Once you add another 180 grams of flour, discard alone doesn't supply enough water for this dough. The extra 75 grams brings the flour-and-water ratio to about 64% hydration.
 
-## Choosing the best toppings for a thin crust
+That's the useful math behind a soft dough. The [discard weight guide](/how-to-measure-sourdough-discard-grams/) explains the conversion if your starter is unusually thick or bubbly.
 
-Because this dough is on the thinner side, you have to be careful with the "swamp factor." Loading it down with watery vegetables or a half-inch of sauce will turn the middle into a sad, floppy mess. I prefer a light layer of sauce and high-moisture mozzarella that's been patted dry with a paper towel.
+## Start the oven before the mixing bowl
 
-**Topping Ideas:**
-- **Classic:** Thinly sliced pepperoni and a sprinkle of dried oregano.
-- **White Pizza:** Ricotta, garlic, and a heavy hand of black pepper.
-- **The Leftover Special:** Whatever is in the deli drawer and a handful of spinach.
+Put a heavy baking sheet in the oven and heat to 450 degrees F. Give the pan at least 20 minutes while you mix the dough and let it rest for 10 minutes. A pizza stone may need a longer preheat according to its maker.
 
-## Use discard that smells normal
+The rest makes rolling easier. If the dough keeps shrinking back, cover it and wait another five minutes instead of wrestling it into shape.
 
-Sourdough discard should smell tangy, yeasty, or mildly alcoholic. A dark liquid layer can happen during storage and may be stirred in or poured off. Discard the starter if you see fuzzy mold, pink or orange streaks, or an odor that is plainly rotten rather than sour.
+Use parchment rated for the oven temperature and trim away long overhanging edges. Slide the pizza onto the hot pan using another baking sheet as your transfer tray. Keep your hands and the oven door out of the transfer path.
 
-Keep discard covered in the refrigerator and use a clean utensil each time. This dough bakes immediately, so it is not a rescue plan for a contaminated starter. When in doubt, losing a cup of flour is cheaper than arguing with suspicious pink streaks.
+## Soft dough, thin center
 
-## Cool and store leftover pizza
+After mixing, the dough should hold together without dry pockets. It can feel slightly tacky. If it crumbles, add water one teaspoon at a time; if it sticks badly after resting, dust the rolling surface lightly.
 
-Refrigerate leftover slices promptly in a covered container. Reheat them in a skillet, toaster oven, or hot oven so the thin crust regains some snap. The microwave is fast, but it turns crisp crust into a flexible coaster.
+Roll the center thin and even, about 1/8 inch where practical. Leaving a thick lump in the middle while thinning the edges is how you get a pizza that's simultaneously burned and underdone. An impressive achievement, but an unhelpful one.
 
-If you want a same-day dough with commercial yeast and more rise time, this [same-day sourdough pizza dough](/how-to-make-sourdough-pizza-dough-same-day/) uses a different schedule and produces a softer, airier crust.
+This is a quick crust. Baking powder supplies the immediate lift. It doesn't need the long kneading or fermentation schedule of [same-day sourdough pizza dough](/how-to-make-sourdough-pizza-dough-same-day/).
 
-## Baking for maximum crunch
+## How much sauce and cheese?
 
-If you don't own a pizza stone, don't go out and buy one just for this. You can flip a standard baking sheet upside down and let it heat up in the oven for 20 minutes before you slide the pizza on. That hit of direct heat seals the bottom of the crust and keeps it from getting doughy.
+For one 12-inch pizza, start with **1/4 cup thick sauce and 3/4 cup shredded low-moisture mozzarella**. Add a small handful of cooked or thinly sliced toppings. Those amounts are a starting point, not part of the crust's calorie estimate.
 
-I always roll this out directly on parchment paper. It makes the transfer to the hot pan about a thousand percent less stressful. Nobody wants to spend their Tuesday night scraping raw dough off a hot oven rack because the "slide" technique failed.
+Pat wet mozzarella dry. Cook watery mushrooms first, and drain cooked vegetables. More toppings need more oven time and make the center harder to crisp.
 
-You don't need a culinary degree or a three-day fermentation schedule to make a decent dinner. This crust gets the job done using what you already have in the jar on your counter. It’s fast, it’s cheap, and it’s one less thing ending up in the kitchen sink at the end of the week. And if someone at your table can't do wheat, my [gluten-free sourdough discard pizza dough](/gluten-free-sourdough-discard-pizza-dough/) keeps them in the pizza rotation too.
+Leftover chicken works well in a light layer. The [rotisserie chicken dinner guide](/costco-rotisserie-chicken-meal-ideas-dinner/) gives portions for chicken pizzas and other meals when you have more than one dinner's worth.
+
+## Why is the middle still soft?
+
+| Problem | Likely reason | Next move |
+|---|---|---|
+| Dry, crumbly dough | Too much flour or missing water | Add water a teaspoon at a time before rolling |
+| Dough keeps springing back | It needs more rest | Cover for another 5 minutes |
+| Golden cheese, pale bottom | The pan wasn't hot enough or the crust is too thick | Keep baking until the bottom browns; use a hot pan next time |
+| Wet center under the toppings | Too much sauce or moisture | Use less sauce and drain toppings; don't serve wet dough |
+| Hard crust throughout | Too much dusting flour or a very long bake | Measure flour by weight and check the base earlier |
+
+The 12 to 15 minute bake time is a guide for a thin, lightly topped pizza. Check the underside with a spatula. The bottom should be browned and the center cooked through.
+
+## Servings, calories, and leftovers
+
+The crust ingredients work out to roughly **1,190 calories for the whole crust, or 595 for half**, before toppings. That's an ingredient estimate using about 293.5 grams of total flour and one tablespoon oil. A small-looking pizza can still contain a substantial amount of flour.
+
+Use discard from an established, maintained starter. Don't use a jar with mold, pink or orange patches, or a rotten odor, and don't taste the raw dough.
+
+Refrigerate leftover pizza within two hours, or one hour above 90 degrees F. Use refrigerated leftovers within three to four days and reheat to 165 degrees F, following [USDA leftover guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety). A hot skillet or toaster oven helps the base crisp again.
+
+If you only have half a cup of discard, scale the crust down or make the [small skillet flatbread](/easy-sourdough-discard-recipes-beginners/#skillet-flatbread-with-half-a-cup). There's no need to feed a whole starter just to use up its leftovers.

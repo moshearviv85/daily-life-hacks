@@ -1,0 +1,69 @@
+---
+interface Props { kind: 'discard' | 'protein'; }
+const { kind } = Astro.props;
+---
+<section class="kitchen-calculator order-[19]" data-kitchen-calculator={kind} aria-labelledby={`calculator-${kind}`}>
+  <p class="eyebrow">Use what's in your kitchen</p>
+  <h2 id={`calculator-${kind}`}>{kind === 'discard' ? 'Weigh your discard, pick your recipe' : 'Turn your package label into a portion'}</h2>
+  {kind === 'discard' ? <>
+    <p>For a starter fed equal weights of flour and water. Cup conversions are approximate; use your recipe's gram weight when provided.</p>
+    <div class="fields">
+      <label>Amount of discard<input data-amount type="number" min="0" max="10000" step="any" value="113" inputmode="decimal" /></label>
+      <label>Unit<select data-unit><option value="grams">Grams</option><option value="cups">US cups</option></select></label>
+    </div>
+    <output aria-live="polite">113 g is about 0.50 US cup, containing 56.5 g flour and 56.5 g water.</output>
+    <p class="calculator-note">Compare: 113 g for one skillet flatbread; 227 g for the pancake, cracker, or pizza batch.</p>
+    <a href="/easy-sourdough-discard-recipes-beginners/#choose-a-sourdough-discard-recipe-for-the-amount-you-have">Choose a discard recipe →</a>
+  </> : <>
+    <p>Copy protein and serving weight from the same label. This calculates food weight; it doesn't set your daily protein needs.</p>
+    <div class="fields">
+      <label>Protein you want (g)<input data-target type="number" min="0.1" max="200" step="any" value="25" inputmode="decimal" /></label>
+      <label>Protein per label serving (g)<input data-protein type="number" min="0.1" max="100" step="any" value="10" inputmode="decimal" /></label>
+      <label>Label serving weight (g)<input data-weight type="number" min="0.1" max="2000" step="any" value="100" inputmode="decimal" /></label>
+    </div>
+    <output aria-live="polite">At 10 g protein per 100 g, 25 g protein takes 250 g of food (8.8 oz, or 2.50 label servings).</output>
+    <p class="calculator-note">Example label values only. Use cooked values for cooked food, and raw values for raw food.</p>
+  </>}
+  <noscript><p>The examples above work without JavaScript. For your own amount, use the conversion tables and formulas in the article.</p></noscript>
+</section>
+<style>
+  .kitchen-calculator{margin:1.5rem 0 2rem;padding:clamp(1.1rem,3vw,1.75rem);border:1px solid var(--border-color);border-top:4px solid #F29B30;border-radius:1rem;background:var(--card-bg);color:var(--text-color)}
+  .eyebrow{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted-color)}
+  h2{font-size:1.5rem;font-weight:750;line-height:1.25;color:var(--heading-color);margin:.5rem 0 .75rem}
+  p{line-height:1.6}.fields{display:flex;flex-wrap:wrap;gap:1rem;margin:1.25rem 0}label{flex:1 1 150px;display:flex;flex-direction:column;gap:.5rem;font-size:.875rem;font-weight:600}
+  input,select{width:100%;min-height:46px;padding:.7rem;border:1px solid var(--border-color);border-radius:.5rem;background:var(--input-bg);color:var(--heading-color);font:inherit;font-size:1rem}
+  input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #F29B30;outline-offset:3px}
+  output{display:block;font-size:1.2rem;font-weight:700;line-height:1.5;color:var(--heading-color)}.calculator-note{font-size:.875rem;margin:.75rem 0;color:var(--muted-color)}a{text-decoration:underline;text-underline-offset:3px;font-weight:600}
+</style>
+<script>
+  import { discardAmounts, proteinPortion } from '../lib/kitchen-math.js';
+  function bootCalculators() {
+    document.querySelectorAll<HTMLElement>('[data-kitchen-calculator]').forEach(root => {
+      if (root.dataset.ready) return;
+      root.dataset.ready = 'true';
+      let tracked = false;
+      const value = (key: string) => Number(root.querySelector<HTMLInputElement>(`[data-${key}]`)?.value || NaN);
+      const output = root.querySelector('output')!;
+      function render(event?: Event) {
+        if (root.dataset.kitchenCalculator === 'discard') {
+          const unit = root.querySelector<HTMLSelectElement>('[data-unit]')!.value;
+          const result = discardAmounts(value('amount'), unit);
+          output.textContent = result ? `${result.grams.toFixed(1)} g is about ${result.cups.toFixed(2)} US cup(s), containing ${result.flour.toFixed(1)} g flour and ${result.water.toFixed(1)} g water.` : 'Enter a valid amount of discard.';
+        } else {
+          const result = proteinPortion(value('target'), value('protein'), value('weight'));
+          output.textContent = result ? `${value('target')} g protein takes ${result.grams.toFixed(0)} g of this food (${result.ounces.toFixed(1)} oz, or ${result.servings.toFixed(2)} label servings).` : 'Enter a positive number in all three fields.';
+        }
+        if (event?.isTrusted && !tracked) {
+          tracked = true;
+          fetch('/api/event', { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+            body: JSON.stringify({ event_type: 'kitchen_calculator_used', page: location.pathname, source: root.dataset.kitchenCalculator }) }).catch(() => {});
+        }
+      }
+      root.addEventListener('input', render);
+      root.addEventListener('change', render);
+      render();
+    });
+  }
+  bootCalculators();
+  document.addEventListener('astro:page-load', bootCalculators);
+</script>

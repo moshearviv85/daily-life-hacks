@@ -1,6 +1,6 @@
 /**
  * GSC 27 Aug 2026: 158 URLs were "Discovered – currently not indexed".
- * These 107 thin URLs stay live for humans (no 410, no delete) but must be
+ * These 106 thin URLs stay live for humans (no 410, no delete) but must be
  * `noindex, follow` and out of the sitemap so crawl budget concentrates on
  * the 51 KEEP money URLs (flagships + per-dollar cluster + tools/hubs).
  *
@@ -86,7 +86,6 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "how-to-make-sourdough-pizza-dough-same-day",
   "how-to-meal-plan-on-a-budget",
   "how-to-meal-prep-on-a-budget-for-one-person",
-  "how-to-measure-sourdough-discard-grams",
   "how-to-organize-a-small-kitchen-on-a-budget",
   "how-to-prep-high-protein-lunches-work",
   "how-to-properly-store-cooked-grains-for-meal-prep",
@@ -177,7 +176,7 @@ export const INDEX_KEEP_PATHS = new Set([
 
 /**
  * Ranking or out-of-scope URLs that must never enter the prune set.
- * Two thin sourdough slugs are in INDEX_PRUNE_SLUGS on purpose; the rest stay.
+ * The discard conversion page was upgraded with a calculator on 2026-09-14 and restored.
  */
 export const INDEX_PROTECTED_SLUGS = new Set([
   "popcorn-vs-potato-chips-fiber-comparison",
@@ -186,6 +185,7 @@ export const INDEX_PROTECTED_SLUGS = new Set([
   "easy-sourdough-discard-pizza-dough-no-yeast",
   "easy-sourdough-discard-recipes-beginners",
   "gluten-free-sourdough-discard-pizza-dough",
+  "how-to-measure-sourdough-discard-grams",
 ]);
 
 export function normalizeIndexPath(value) {
@@ -213,8 +213,8 @@ function assertPruneSafety() {
       `index-prune: KEEP/protected slug leaked into prune set: ${collisions.join(", ")}`,
     );
   }
-  if (INDEX_PRUNE_SLUGS.size !== 107) {
-    throw new Error(`index-prune: expected 107 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
+  if (INDEX_PRUNE_SLUGS.size !== 106) {
+    throw new Error(`index-prune: expected 106 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
   }
   if (INDEX_KEEP_PATHS.size !== 51) {
     throw new Error(`index-prune: expected 51 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
