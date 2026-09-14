@@ -21,6 +21,7 @@ test("reuse page gives a scoped CC BY grant and copy-ready attribution", () => {
 test("data catalog, article datasets, package and API expose one license", () => {
   const registry = read("src/content/datasets.ts");
   const dataPage = read("src/pages/data/index.astro");
+  const landingPage = read("src/pages/data/[stem]/index.astro");
   const articlePage = read("src/pages/[slug].astro");
   const openapi = JSON.parse(read("public/openapi.json"));
   const datapackage = JSON.parse(read("public/data/datapackage.json"));
@@ -30,6 +31,8 @@ test("data catalog, article datasets, package and API expose one license", () =>
   assert.match(registry, /DATA_LICENSE_URL = "https:\/\/creativecommons\.org\/licenses\/by\/4\.0\/"/);
   assert.match(dataPage, /license: DATA_LICENSE_URL/);
   assert.match(dataPage, /usageInfo: DATA_TERMS_URL/);
+  assert.match(landingPage, /DATA_LICENSE_URL/);
+  assert.match(landingPage, /rel="license noopener"/);
   assert.match(articlePage, /license: DATA_LICENSE_URL/);
   assert.match(articlePage, /usageInfo: DATA_TERMS_URL/);
   assert.equal(openapi.info.termsOfService, "https://www.daily-life-hacks.com/data-reuse/");

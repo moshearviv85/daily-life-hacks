@@ -46,7 +46,13 @@ export interface DatasetMeta {
   /** Data rows, header excluded. Mirrors pipeline-data/csv-inventory.json. */
   rows: number;
   variables: string[];
+  /** Human-facing observation window, also the schema fallback. */
   temporal: string;
+  /**
+   * ISO 8601 period for Dataset `temporalCoverage`. Use this when `temporal`
+   * is a display year ("2026") and the priced window is a real interval.
+   */
+  temporalCoverage?: string;
   /**
    * Omitting provenance declares a grocery-only dataset and applies the USDA
    * default below. Restaurant and mixed datasets must provide an explicit class.
@@ -351,6 +357,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 53,
     variables: ["dietary fiber (g per 100g)", "price (USD)", "fiber grams per dollar"],
     temporal: "2026",
+    temporalCoverage: "2026-07/2026-09",
     provenance: {
       nutritionSourceClass: "grocery",
       nutritionSource: "USDA FoodData Central",
@@ -370,6 +377,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     rows: 49,
     variables: ["protein (g per 100g)", "price (USD)", "protein grams per dollar"],
     temporal: "2026",
+    temporalCoverage: "2026-07/2026-09",
     provenance: {
       nutritionSourceClass: "mixed-label",
       nutritionSource: "USDA FoodData Central",
@@ -481,12 +489,14 @@ export function datasetDistributions(dataset: DatasetMeta, siteUrl: string) {
     name: string;
     encodingFormat: string;
     contentUrl: string;
+    license: string;
   }> = [
     {
       "@type": "DataDownload",
       name: fileName,
       encodingFormat: "text/csv",
       contentUrl: `${siteUrl}${dataset.csv}`,
+      license: DATA_LICENSE_URL,
     },
   ];
   const huggingfaceCsv = huggingfaceCsvUrl(dataset);
@@ -496,9 +506,199 @@ export function datasetDistributions(dataset: DatasetMeta, siteUrl: string) {
       name: `${fileName} (Hugging Face mirror)`,
       encodingFormat: "text/csv",
       contentUrl: huggingfaceCsv,
+      license: DATA_LICENSE_URL,
     });
   }
   return distributions;
+}
+
+export const DATASET_SITE_URL = "https://www.daily-life-hacks.com";
+
+/** Pen name already used on /about/. Flagship Dataset `creator` points here. */
+export const DATASET_PERSON_CREATOR = {
+  "@type": "Person" as const,
+  "@id": `${DATASET_SITE_URL}/about/#david-miller`,
+  name: "David Miller",
+  url: `${DATASET_SITE_URL}/about/`,
+  jobTitle: "Founder and Editor",
+};
+
+export const DATASET_ORGANIZATION = {
+  "@type": "Organization" as const,
+  "@id": `${DATASET_SITE_URL}/#organization`,
+  name: "Daily Life Hacks",
+  url: `${DATASET_SITE_URL}/`,
+};
+
+export const DATASET_CREDIT_TEXT =
+  "Credit Daily Life Hacks with a link. Licensed under CC BY 4.0.";
+
+export function datasetCsvFileName(
+  dataset: Pick<DatasetMeta, "csv">,
+): string {
+  return dataset.csv.split("/").pop() ?? dataset.csv;
+}
+
+export function datasetCsvStem(dataset: Pick<DatasetMeta, "csv">): string {
+  return datasetCsvFileName(dataset).replace(/\.csv$/i, "");
+}
+
+/**
+ * HTML landing page for a Hugging Face-mirrored CSV. Other datasets stay on
+ * the catalog row + study page so we do not multiply thin download URLs.
+ */
+export function datasetDistributionPath(
+  dataset: Pick<DatasetMeta, "csv" | "huggingfaceMirror">,
+): string | undefined {
+  if (!dataset.huggingfaceMirror) return undefined;
+  return `/data/${datasetCsvStem(dataset)}/`;
+}
+
+export function datasetTemporalCoverage(dataset: DatasetMeta): string {
+  return dataset.temporalCoverage ?? dataset.temporal;
+}
+
+export function datasetStudyPath(
+  dataset: DatasetMeta & { id: string },
+): string {
+  return dataset.studyUrl ?? `/${dataset.id}/`;
+}
+
+const FLAGSHIP_DATASET_KEYWORDS: Record<string, string[]> = {
+  "fiber-per-dollar-cheapest-high-fiber-foods": [
+    "fiber per dollar",
+    "Fiber per Dollar Index",
+    "high-fiber foods",
+    "dietary fiber",
+    "cheapest high-fiber foods",
+    "grocery prices",
+    "nutrition per dollar",
+    "USDA FoodData Central",
+    "food cost data",
+    "open data",
+    "Hugging Face",
+    "United States grocery",
+  ],
+  "protein-per-dollar-cheapest-protein-sources": [
+    "protein per dollar",
+    "Protein per Dollar Index",
+    "cheapest protein sources",
+    "protein grams per dollar",
+    "grocery prices",
+    "nutrition per dollar",
+    "USDA FoodData Central",
+    "food cost data",
+    "open data",
+    "Hugging Face",
+    "United States grocery",
+  ],
+};
+
+export function datasetKeywords(dataset: DatasetMeta & { id: string }): string[] {
+  return (
+    FLAGSHIP_DATASET_KEYWORDS[dataset.id] ?? [
+      ...dataset.variables,
+      "grocery prices",
+      "food cost data",
+      "United States",
+    ]
+  );
+}
+
+export function datasetSameAs(
+  dataset: Pick<DatasetMeta, "huggingfaceMirror">,
+  extra: string[] = [],
+): string[] | undefined {
+  const urls = [
+    ...(dataset.huggingfaceMirror ? [HUGGINGFACE_DATASET_URL] : []),
+    ...extra,
+  ].filter((url, index, list) => url && list.indexOf(url) === index);
+  return urls.length ? urls : undefined;
+}
+
+export function datasetCreator(
+  dataset: Pick<DatasetMeta, "huggingfaceMirror">,
+) {
+  return dataset.huggingfaceMirror
+    ? DATASET_PERSON_CREATOR
+    : DATASET_ORGANIZATION;
+}
+
+export function datasetCitationText(
+  dataset: DatasetMeta & { id: string },
+  siteUrl: string = DATASET_SITE_URL,
+): string {
+  const year = DATA_RELEASE_DATE.slice(0, 4);
+  const studyUrl = `${siteUrl}${datasetStudyPath(dataset)}`;
+  return `Daily Life Hacks. "${dataset.name}." ${year}. ${studyUrl}. Please credit Daily Life Hacks with a link.`;
+}
+
+type DatasetSchemaOptions = {
+  dataset: DatasetMeta & { id: string };
+  siteUrl: string;
+  /** Page that this JSON-LD block is embedded on. */
+  pageUrl: string;
+  catalogId: string;
+  /** Inline the catalog node when this page is not /data/. */
+  inlineCatalog?: boolean;
+};
+
+/**
+ * Shared Dataset JSON-LD for /data/ and the flagship CSV landing pages.
+ * Study article schema stays in [slug].astro so PR #34 can keep extending it.
+ */
+export function buildDatasetSchema({
+  dataset,
+  siteUrl,
+  pageUrl,
+  catalogId,
+  inlineCatalog = false,
+}: DatasetSchemaOptions) {
+  const studyUrl = `${siteUrl}${datasetStudyPath(dataset)}`;
+  const datasetId = `${studyUrl}#dataset`;
+  const landingPath = datasetDistributionPath(dataset);
+  const landingUrl = landingPath ? `${siteUrl}${landingPath}` : undefined;
+  const sameAs = datasetSameAs(
+    dataset,
+    [landingUrl, studyUrl].filter(
+      (url): url is string => Boolean(url) && url !== pageUrl,
+    ),
+  );
+
+  return {
+    "@type": "Dataset" as const,
+    "@id": datasetId,
+    name: dataset.name,
+    ...(dataset.alternateName ? { alternateName: dataset.alternateName } : {}),
+    description: `${dataset.description} ${describeDatasetProvenance(getDatasetProvenance(dataset))}`,
+    url: pageUrl,
+    identifier: datasetId,
+    version: DATA_VERSION,
+    isAccessibleForFree: true,
+    license: DATA_LICENSE_URL,
+    usageInfo: DATA_TERMS_URL,
+    creditText: DATASET_CREDIT_TEXT,
+    creator: datasetCreator(dataset),
+    publisher: DATASET_ORGANIZATION,
+    includedInDataCatalog: inlineCatalog
+      ? {
+          "@type": "DataCatalog",
+          "@id": catalogId,
+          name: "Daily Life Hacks Food Cost Data Catalog",
+          url: `${siteUrl}/data/`,
+          publisher: { "@id": `${siteUrl}/#organization` },
+        }
+      : { "@id": catalogId },
+    keywords: datasetKeywords(dataset),
+    variableMeasured: dataset.variables,
+    temporalCoverage: datasetTemporalCoverage(dataset),
+    spatialCoverage: "United States",
+    measurementTechnique: `${siteUrl}/methodology/`,
+    distribution: datasetDistributions(dataset, siteUrl),
+    dateModified: DATA_RELEASE_DATE,
+    citation: datasetCitationText(dataset, siteUrl),
+    ...(sameAs ? { sameAs } : {}),
+  };
 }
 
 /** Display order on /data/: the two named indexes first, then day-cost studies, then category cuts. */
@@ -539,6 +739,10 @@ export const STUDY_DATASETS: Array<DatasetMeta & { id: string }> = [
 
 /** Total data rows published across every CSV, header rows excluded. */
 export const TOTAL_DATA_ROWS = STUDY_DATASETS.reduce((sum, d) => sum + d.rows, 0);
+
+export function huggingfaceMirroredDatasets() {
+  return STUDY_DATASETS.filter((dataset) => dataset.huggingfaceMirror);
+}
 
 
 /** Chart discovered inside an article body. */

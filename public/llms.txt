@@ -25,7 +25,10 @@ These are original analyses, not aggregated from other publishers. Nutrition val
 ## Datasets (public CSV, free to reuse)
 
 - Fiber per dollar raw data: https://www.daily-life-hacks.com/data/fiber-per-dollar-2026.csv
+- Fiber per Dollar dataset page: https://www.daily-life-hacks.com/data/fiber-per-dollar-2026/
 - Protein per dollar raw data: https://www.daily-life-hacks.com/data/protein-per-dollar-2026.csv
+- Protein per Dollar dataset page: https://www.daily-life-hacks.com/data/protein-per-dollar-2026/
+- Hugging Face mirror (fiber and protein flagships): https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar
 
 Each ranking CSV includes every food, nutrient value, package and price inputs, edible-fraction adjustment, price basis, and calculated per-dollar value used in the corresponding study. The current exports do not include a USDA source ID or source URL for every row.
 
