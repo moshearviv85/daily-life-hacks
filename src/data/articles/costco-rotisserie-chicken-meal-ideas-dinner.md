@@ -1,6 +1,6 @@
 ---
-title: 5 Quick Costco Rotisserie Chicken Meal Ideas for Busy Nights
-excerpt: "Five Costco rotisserie chicken dinners with quantities for four: stir-fry, tacos, pesto pasta, chicken salad, and naan pizzas. Portion once, choose tonight's meal."
+title: "Rotisserie Chicken Meals: 5 Quick Costco Meal Ideas"
+excerpt: "Rotisserie chicken meals from Costco with quantities for four: stir-fry, tacos, pesto pasta, chicken salad, and naan pizzas. Portion once, choose tonight's meal."
 category: recipes
 tags:
 - quick meals
