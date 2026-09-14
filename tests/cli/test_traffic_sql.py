@@ -1,9 +1,24 @@
 """Run the production queries against SQLite, the storage engine used by D1."""
 import re
+import ast
 import sqlite3
+from types import SimpleNamespace
+import pytest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def test_failed_pinterest_fetch_cannot_publish_a_partial_fresh_snapshot():
+    source = (ROOT / "scripts/fetch-pinterest-analytics.py").read_text(encoding="utf-8")
+    function = next(n for n in ast.parse(source).body if isinstance(n, ast.FunctionDef) and n.name == "fetch_top_pins")
+    scope = {
+        "API_BASE": "https://example.test",
+        "requests": SimpleNamespace(get=lambda *args, **kwargs: SimpleNamespace(ok=False, status_code=503, text="unavailable")),
+    }
+    exec(compile(ast.Module(body=[function], type_ignores=[]), "fetch_top_pins", "exec"), scope)
+    with pytest.raises(RuntimeError, match="existing cache was not replaced"):
+        scope["fetch_top_pins"]("test-token", "2026-06-17", "2026-09-14", "SAVE")
 
 
 def test_browser_series_excludes_old_mixed_requests_and_incomplete_today():
