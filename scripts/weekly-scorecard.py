@@ -78,7 +78,7 @@ METRICS = [
     ("email_subscribers",           "Email subscribers (total)",         5,    25,    "auto"),
     ("reddit_comment_karma",        "Reddit comment karma",              5,    50,    "auto"),
     ("ai_citations_day",            "AI citations/day (Bing)",           0,    10,    "manual"),
-    ("page_views_7d",               "Site page views (last 7 complete UTC days)", 0, None, "auto"),
+    ("browser_page_views_7d",       "Browser page views (7 complete UTC days; v2)", None, None, "auto"),
 ]
 
 MANUAL_INSTRUCTIONS = {
@@ -239,8 +239,8 @@ def parse_page_views_7d(data):
     """Validate and sum the API's exact seven-complete-UTC-day page-view series."""
     window = data.get("page_views_window") or {}
     rows = data.get("page_views_by_day") or []
-    if window.get("event_type") != "page_view":
-        raise ValueError("page_views_window.event_type must be page_view")
+    if window.get("event_type") != "browser_page_view":
+        raise ValueError("page_views_window.event_type must be browser_page_view")
     if window.get("timezone") != "UTC" or window.get("complete_days") is not True:
         raise ValueError("page-view window must contain complete UTC days")
     if window.get("days") != 7 or len(rows) != 7:
@@ -256,9 +256,12 @@ def parse_page_views_7d(data):
     if actual_days != expected_days:
         raise ValueError("page-view rows must cover each UTC day exactly once in order")
 
+    if window.get("full_window_observed") is not True:
+        return None, "N/A (browser measurement v2 has not covered 7 complete UTC days)"
+
     total = sum(int(row.get("count") or 0) for row in rows)
     source = (
-        "auto (/api/analytics page_views_by_day; event_type=page_view; "
+        "auto (/api/analytics page_views_by_day; event_type=browser_page_view; "
         f"UTC window [{window['start']}, {window['end_exclusive']}); 7 complete days)"
     )
     return total, source
@@ -359,7 +362,7 @@ def main():
     values["email_subscribers"], notes["email_subscribers"] = fetch_subscribers()
 
     log("[4/4] Site page views — last 7 complete UTC days (/api/analytics)")
-    values["page_views_7d"], notes["page_views_7d"] = fetch_page_views_7d()
+    values["browser_page_views_7d"], notes["browser_page_views_7d"] = fetch_page_views_7d()
 
     for key in ("google_impressions_day", "google_clicks_day", "ai_citations_day"):
         values[key] = None
@@ -381,9 +384,10 @@ def main():
         cur = values.get(key)
         cur_str = str(cur) if cur is not None else "_fill in_" if mode == "manual" else "N/A"
         target_str = str(target) if target is not None else "— (info only)"
+        baseline_str = str(baseline) if baseline is not None else "N/A (new series)"
         prog = pct_progress(cur, target)
         arrow = trend_arrow(cur, previous.get(key))
-        lines.append(f"| {label} | {baseline} | {cur_str} | {target_str} | {prog} | {arrow} |")
+        lines.append(f"| {label} | {baseline_str} | {cur_str} | {target_str} | {prog} | {arrow} |")
 
     lines.append("")
     lines.append("## Notes per metric")

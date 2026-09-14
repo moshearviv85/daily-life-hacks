@@ -17,16 +17,12 @@ export async function onRequestPost(context) {
   }
 
   const { pins } = await request.json().catch(() => ({}));
-  if (!pins?.length) {
+  if (!Array.isArray(pins) || !pins.length || pins.length > 150 || pins.some(p => !p || !p.pin_id)) {
     return Response.json({ error: "No pins data" }, { status: 400 });
   }
 
   const now = new Date().toISOString();
-  let saved = 0;
-
-  for (const p of pins) {
-    if (!p.pin_id) continue;
-    await env.DB.prepare(
+  const statements = pins.map(p => env.DB.prepare(
       `INSERT INTO pinterest_analytics_cache
          (pin_id, pin_title, pin_url, pin_link, created_at, impressions, outbound_clicks, saves, cached_at)
        VALUES (?,?,?,?,?,?,?,?,?)
@@ -42,9 +38,14 @@ export async function onRequestPost(context) {
       p.pin_id, p.pin_title || "", p.pin_url || "",
       p.pin_link || "", p.created_at || "",
       p.impressions || 0, p.outbound_clicks || 0, p.saves || 0, now
-    ).run().catch(() => null);
-    saved++;
+    ));
+
+  // Publish a whole snapshot or fail; never report swallowed write errors as success.
+  try {
+    await env.DB.batch(statements);
+  } catch {
+    return Response.json({ error: 'Snapshot was not saved' }, { status: 500 });
   }
 
-  return Response.json({ ok: true, saved });
+  return Response.json({ ok: true, saved: statements.length });
 }

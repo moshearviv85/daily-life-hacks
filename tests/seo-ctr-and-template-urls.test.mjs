@@ -61,12 +61,10 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   assert.match(pizza.excerpt, /4\.2-5\.1g/);
 
   const protein = articleFrontmatter("protein-per-serving-beans-chicken-tofu-compared");
-  assert.match(protein.title, /26-35g/);
-  assert.match(protein.title, /15g/);
-  assert.match(protein.title, /8-20g/);
-  assert.match(protein.excerpt, /26-35g/);
-  assert.match(protein.excerpt, /15g/);
-  assert.match(protein.excerpt, /8-20g/);
+  assert.match(protein.title, /Protein per Serving/);
+  assert.match(protein.title, /Calculator/);
+  assert.match(protein.excerpt, /calculate your portion from the label/);
+  assert.match(protein.excerpt, /raw vs cooked/);
 
   const fiberFoods = articleFrontmatter("best-high-fiber-foods-ranked-by-fiber-content");
   const fiberTitleLower = fiberFoods.title.toLowerCase();

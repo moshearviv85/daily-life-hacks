@@ -5,7 +5,7 @@
 export const PAGE_VIEWS_BY_DAY_SQL = `
   SELECT date(created_at) as day, COUNT(*) as count
   FROM funnel_events
-  WHERE event_type = 'page_view'
+  WHERE event_type = 'browser_page_view'
     AND datetime(created_at) >= datetime(?1)
     AND datetime(created_at) < datetime(?2)
   GROUP BY date(created_at)
@@ -42,7 +42,7 @@ export function fillUtcDaySeries(rows, window) {
 export async function onRequestGet(context) {
   const { request, env } = context;
   const url = new URL(request.url);
-  const key = url.searchParams.get("key");
+  const key = request.headers.get("x-api-key") || url.searchParams.get("key");
 
   const keyIsSet = typeof env.STATS_KEY === "string" && env.STATS_KEY.length > 0;
   if (!keyIsSet || key !== env.STATS_KEY) {
@@ -79,6 +79,15 @@ export async function onRequestGet(context) {
       .bind(pageViewWindow.start.toISOString(), pageViewWindow.endExclusive.toISOString())
       .all();
     const pageViewsByDay = fillUtcDaySeries(pageViews?.results, pageViewWindow);
+    const started = await env.DB.prepare(
+      "SELECT MIN(created_at) AS started_at FROM funnel_events WHERE event_type = 'browser_page_view'"
+    ).first();
+    const pageViewsByPage = await env.DB.prepare(`
+      SELECT page, source, COUNT(*) AS count FROM funnel_events
+      WHERE event_type = 'browser_page_view'
+        AND datetime(created_at) >= datetime(?1) AND datetime(created_at) < datetime(?2)
+      GROUP BY page, source ORDER BY count DESC LIMIT 200
+    `).bind(pageViewWindow.start.toISOString(), pageViewWindow.endExclusive.toISOString()).all();
     const byPage = await env.DB.prepare(
       "SELECT page, COUNT(*) as count FROM funnel_events WHERE page IS NOT NULL AND page != '' GROUP BY page ORDER BY count DESC LIMIT 50"
     ).all();
@@ -92,8 +101,14 @@ export async function onRequestGet(context) {
         by_event_type: byType?.results ?? [],
         by_day: byDay?.results ?? [],
         page_views_by_day: pageViewsByDay,
+        page_views_by_page_and_source: pageViewsByPage?.results ?? [],
         page_views_window: {
-          event_type: "page_view",
+          event_type: "browser_page_view",
+          measurement_version: 2,
+          collection_started_at: started?.started_at ?? null,
+          full_window_observed: Boolean(started?.started_at &&
+            new Date(String(started.started_at).replace(' ', 'T').replace(/Z?$/, 'Z')) <= pageViewWindow.start),
+          definition: "Visible, indexable page executions in a browser; once per navigation. Not unique users or verified humans. Historical page_view events mix server requests and browser events and are excluded.",
           timezone: "UTC",
           start: pageViewWindow.start.toISOString(),
           end_exclusive: pageViewWindow.endExclusive.toISOString(),
@@ -102,8 +117,9 @@ export async function onRequestGet(context) {
         },
         by_page: byPage?.results ?? [],
         recent: recent?.results ?? [],
+        raw_event_note: "total, by_event_type, by_day, by_page and recent are diagnostic events, not audience totals.",
       }, null, 2),
-      { headers: { "Content-Type": "application/json" } }
+      { headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } }
     );
   } catch (err) {
     return new Response(JSON.stringify({ error: err.message }), {

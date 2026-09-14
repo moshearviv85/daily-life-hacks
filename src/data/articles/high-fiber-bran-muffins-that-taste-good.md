@@ -1,6 +1,6 @@
 ---
-title: High Fiber Bran Muffins That Taste Good
-excerpt: "Bran muffins don't have to taste like cardboard. USDA values put this batch at 4.7 g fiber and 299 calories per muffin, plus the one swap that clears the FDA high-fiber line."
+title: Moist High-Fiber Bran Muffins With Whole Wheat
+excerpt: "Moist high-fiber bran muffins with whole wheat, raisins, and a 10-minute bran soak. About 5.9 g fiber per large muffin, with clear swaps and freezer tips."
 category: recipes
 tags:
 - bran muffins
@@ -10,9 +10,9 @@ tags:
 - fiber
 image: /images/high-fiber-bran-muffins-that-taste-good-main.jpg
 imageAlt: Golden bran muffins with raisins cooling on a wire rack beside a jar of honey
-quickAnswer: "Using USDA FoodData Central values, one muffin from this 12-muffin batch has about 4.7 grams of fiber, 299 calories, 19.9 grams of added sugars, and 369 milligrams of sodium. That is 17% of the FDA's 28-gram Daily Value for fiber, which lands in FDA's good-source tier of 10 to 19%, not its high tier of 20% or more. Swap the 1 1/2 cups of all-purpose flour for whole wheat flour and the same muffin comes to about 5.9 grams of fiber, 21% of the Daily Value, which clears the high-fiber line at 293 calories."
+quickAnswer: "Soak wheat bran and oat bran in buttermilk for 10 minutes, then mix with whole wheat flour, honey, oil, eggs, and raisins. Bake at 400 degrees F for 18 to 22 minutes. The original batch makes 12 large muffins, estimated at 5.9 g fiber and 293 calories each."
 date: 2025-12-28
-dateModified: 2026-07-31
+dateModified: 2026-09-14
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -22,12 +22,12 @@ prepTime: 25 minutes
 cookTime: 20 minutes
 totalTime: 45 minutes
 servings: 12
-calories: 299
+calories: 293
 difficulty: Easy
 ingredients:
 - 1 ½ cups wheat bran
 - ½ cup oat bran
-- 1 ½ cups all-purpose flour (whole wheat flour adds about 1.2 g fiber per muffin)
+- 1 ½ cups whole wheat flour, spooned and leveled
 - ½ cup granulated sugar
 - 2 teaspoons baking soda
 - ½ teaspoon salt
@@ -48,110 +48,86 @@ steps:
 - Whisk the honey, oil, eggs, and vanilla into the soaked bran mixture.
 - Add the dry ingredients and the raisins to the wet bowl. Stir just until combined.
   Don't overmix.
-- Divide batter evenly among muffin cups, about 110 g each (they'll be fairly full).
+- Divide the batter among 12 large muffin cups. If using a smaller standard tin, fill each cup no more than three-quarters full and bake any extra batter separately. More muffins means smaller servings.
 - Bake 18-22 minutes, until a toothpick inserted in the center comes out clean or
   with a few moist crumbs.
 - Cool in the pan for a few minutes, then move to a wire rack.
 faq:
-- question: How much fiber is in a high fiber bran muffin?
-  answer: Using USDA FoodData Central values for every ingredient, one muffin from
-    this 12-muffin batch carries about 4.7 grams of fiber. The FDA's Daily Value for
-    dietary fiber is 28 grams, so that is roughly 17%. FDA labeling rules call 10 to
-    19% of the Daily Value a good source and 20% or more high, so as written these
-    are a good source. Baking them with whole wheat flour instead of all-purpose raises
-    the muffin to about 5.9 grams, or 21%.
-- question: How do I make high fiber bran muffins that taste good instead of like
-    cardboard?
-  answer: Moisture is the whole game. Buttermilk, honey, oil, and a bake time you
-    actually respect keep the crumb soft instead of dusty. Stirring the bran into the
-    buttermilk and letting it sit 10 minutes before you mix is the single biggest
-    upgrade. Don't overbake, and don't skimp on the raisins or other mix-ins that bring
-    sweetness and chew.
-- question: Are bran muffins actually good for you?
-  answer: They bring real fiber, and most Americans are short on it. MedlinePlus says
-    Americans average about 16 grams of fiber a day against a recommendation of 21 to
-    38 grams for older children, adolescents, and adults. But this muffin also carries
-    about 19.9 grams of added sugars, which is roughly 40% of the FDA's 50-gram Daily
-    Value, and about 369 milligrams of sodium. Bran on the label doesn't automatically
-    mean low sugar.
-- question: What kind of bran should I use for baking muffins?
-  answer: Wheat bran is the fiber heavyweight. USDA lists crude wheat bran at 42.8
-    grams of dietary fiber per 100 grams against 15.4 grams for raw oat bran, so a
-    58-gram cup of wheat bran brings about 24.8 grams of fiber and a 94-gram cup of
-    oat bran about 14.5 grams. Oat bran is milder and a little sweeter. This recipe
-    uses both so you get fiber without a one-note texture.
-- question: Can I freeze high fiber bran muffins for later?
-  answer: Yes. Cool them completely, bag them airtight, and freeze. USDA's Food Safety
-    and Inspection Service says food stored constantly at 0°F stays safe indefinitely
-    and that published freezer times are for quality only, so the usual three-month
-    window is about taste and texture, not safety. Reheat one in the microwave for
-    20 to 30 seconds, or thaw on the counter.
+- question: How much fiber is in each bran muffin?
+  answer: The whole wheat version is estimated at about 5.9 grams of fiber per muffin when the batch makes 12 large muffins. Using all-purpose flour lowers that to about 4.7 grams. These are ingredient calculations, not laboratory measurements; your flour weights, mix-ins, and final muffin count change the result.
+- question: Can I use bran cereal instead of wheat bran?
+  answer: Not as a direct volume swap in this recipe. Wheat bran and oat bran are the unprocessed baking ingredients, while bran cereal may include sugar, flour, and other ingredients and absorbs liquid differently. Use plain bran here, or choose a recipe written for the cereal on your shelf.
+- question: Why are my bran muffins dry?
+  answer: Start by checking the bran soak, flour measurement, and baking time. Bran needs time to absorb liquid before baking. Spoon flour into the measuring cup instead of packing it, mix only until the dry streaks disappear, and check a muffin at the early end of the baking window.
+- question: Can I make these bran muffins less sweet?
+  answer: You can omit the half cup of granulated sugar while keeping the honey and raisins. The whole wheat version then works out to roughly 261 calories and 11.6 grams of added sugar per large muffin. Expect less sweetness and some change in texture; don't remove both the sugar and honey without adjusting the recipe.
+- question: Can I freeze bran muffins?
+  answer: Yes. Cool them completely, freeze in a single layer, then bag them with the date. Use within about three months for best quality. Thaw a muffin before warming it gently; a frozen large muffin will need longer than a small room-temperature one.
 ---
+A bran muffin can have plenty of fiber and still be something you want with coffee. The useful part is moisture: soak the bran, measure the flour lightly, and stop baking when the center is set.
 
-My first bran muffin was a texture crime. Dry, dense, faintly sweet the way cardboard is faintly sweet if you squint. Then I had one that was moist, smelled like cinnamon and honey, and vanished before my coffee did. Same ingredient family, completely different outcome.
+This whole wheat version makes **12 large muffins**, estimated at **5.9 grams of fiber and 293 calories each**. The recipe card below gives the ingredients and steps. Use the jump link if the oven is already warming.
 
-Here's the part most bran muffin recipes skip: the actual numbers. Run against USDA values, one muffin from this batch of 12 lands at **4.7 grams of fiber**, 299 calories, 19.9 grams of added sugars, and 369 milligrams of sodium. The [FDA's Daily Value for dietary fiber is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), so 4.7 grams is about 17% of a day.
+## The 10-minute soak makes these bran muffins softer
 
-That matters, because [FDA labeling rules](https://www.govinfo.gov/content/pkg/CFR-2025-title21-vol2/pdf/CFR-2025-title21-vol2-sec101-54.pdf) reserve "high," "rich in," and "excellent source of" for 20% or more of the Daily Value, and give 10 to 19% the phrase "good source." So the version written above is a good source of fiber, not technically a high-fiber food. One swap fixes that, and it's already sitting in the ingredient list.
+Mix the wheat bran and oat bran with the buttermilk before starting the other ingredients. Leave it for 10 minutes. That gives the bran a chance to absorb liquid before the batter reaches the oven.
 
-## How much fiber is in a bran muffin?
+Use plain wheat bran and oat bran, not crushed breakfast cereal. They have different ingredients, textures, and absorbency. A box with “bran” on the front isn't automatically a cup-for-cup substitute.
 
-| Version | Fiber per muffin | % of 28 g DV | FDA tier | Calories | Added sugars | Sodium |
-|---|---:|---:|---|---:|---:|---:|
-| As written, all-purpose flour | 4.7 g | 17% | Good source | 299 | 19.9 g | 369 mg |
-| Whole wheat flour instead | 5.9 g | 21% | High | 293 | 19.9 g | 369 mg |
-| Whole wheat flour, no granulated sugar | 5.9 g | 21% | High | 261 | 11.6 g | 369 mg |
+Honey, oil, eggs, and raisins also help keep the crumb from feeling dry. Whole wheat flour absorbs liquid differently from all-purpose, so don't pack the cup and then blame the bran.
 
-Those figures come from summing every ingredient at its USDA per-100-gram value and dividing by 12. The fiber numbers are published in USDA's National Agricultural Library [total dietary fiber table](https://www.nal.usda.gov/sites/default/files/page-files/Total_Dietary_Fiber.pdf); the calories, sodium, sugars, and cup weights come from the matching [USDA FoodData Central](https://fdc.nal.usda.gov/) SR Legacy records (wheat bran 169722, oat bran 168872, all-purpose flour 168894, whole-grain flour 168893, raisins 168165, honey 169640, sugar 169655, lowfat buttermilk 170874, baking soda 175040, salt 173468). Optional cinnamon isn't counted.
+## Muffin size changes the numbers
 
-Two caveats. It's ingredient math, not a lab test on a baked muffin, so your scoop sizes move it. And it assumes 12 muffins out of roughly 1,330 grams of batter, about 110 grams per cup. Make 10 bigger ones and every column goes up by a fifth.
+The estimate assumes the whole batch becomes 12 large muffins. Use deep muffin cups; if your standard tin would overflow, fill cups no more than three-quarters full and bake the extra batter separately.
 
-## Which bran actually carries the fiber?
+| Batch divided into | Estimated fiber each | Estimated calories each |
+|---|---:|---:|
+| 12 large muffins | 5.9 g | 293 |
+| 15 smaller muffins | 4.7 g | 234 |
+| 18 small muffins | 3.9 g | 195 |
 
-| Ingredient | 1 cup weighs | Fiber per 100 g | Fiber per cup |
-|---|---:|---:|---:|
-| Wheat bran, crude | 58 g | 42.8 g | 24.8 g |
-| Oat bran, raw | 94 g | 15.4 g | 14.5 g |
-| Whole wheat flour | 120 g | 10.7 g | 12.8 g |
-| Raisins, dark seedless | 145 g | 4.5 g | 6.5 g |
-| All-purpose flour, enriched | 125 g | 2.7 g | 3.4 g |
+The amounts come from summing ingredients and dividing by the actual muffin count. Smaller muffins need an earlier doneness check. The oven doesn't know you changed the serving size.
 
-Wheat bran is the heavyweight and it isn't close. That's also why the flour line is the lever: swapping 1 ½ cups of all-purpose for whole wheat trades 3.4 grams of fiber per cup for 12.8, and that alone moves the muffin from 17% to 21% of the Daily Value.
+For the original batch, the flour estimate uses about 180 grams whole wheat flour, 87 grams wheat bran, and 47 grams oat bran. Those weights are more repeatable than densely packed scoops.
 
-The two brans behave differently, too. MedlinePlus files wheat bran under insoluble fiber, which it says "appears to speed the passage of foods through the stomach and intestines and adds bulk to the stool," and oat bran under soluble fiber, which slows digestion and has been [linked to lower cholesterol](https://medlineplus.gov/ency/article/002470.htm). Using both isn't just a texture call.
+## Ingredient swaps that change the result
 
-## Why bran muffins taste like cardboard
+| Change to the original batch | What to expect |
+|---|---|
+| All-purpose flour instead of whole wheat | A lighter texture; about 4.7 g fiber and 299 calories per large muffin |
+| Omit the granulated sugar, keep honey | Less sweet; about 5.9 g fiber and 261 calories per large muffin |
+| Chopped dates instead of raisins | A different flavor and nutrition estimate |
+| Add chopped nuts | More crunch, plus extra calories; the published estimate no longer applies |
+| Bran cereal instead of plain bran | Don't swap directly; use a cereal-specific recipe |
 
-Bran is just the outer layer of the grain. High in fiber, not automatically delicious. Your job as the person holding the mixing bowl is to surround it with buttermilk, honey, oil, eggs, and raisins so the crumb stays soft and something sweet interrupts every other bite. Skip those supports and you're baking a lecture.
+If you don't have buttermilk, put 1 tablespoon lemon juice or vinegar in a measuring jug and add milk to reach 1 1/2 cups. Rest for five minutes before soaking the bran. The flavor and thickness won't be identical.
 
-Buttermilk is doing real labor. The acidity tenderizes the crumb and reacts with the baking soda for lift. No buttermilk in the fridge? Stir a tablespoon of lemon juice or vinegar into milk and wait five minutes. Not identical, close enough that breakfast still happens.
+The full recipe has both sugar and honey. Whole wheat flour doesn't turn it into a low-sugar breakfast: the original large muffin has an estimated 19.9 grams of added sugars.
 
-The move that helps every single time: stir the bran into the buttermilk and let it sit 10 minutes before anything else joins the party. The bran hydrates instead of drinking the batter dry in the oven. That's the difference between "health muffin" and "I would pack this for work."
+## Mix briefly, then check the oven early
 
-## How do you mix bran muffins so they stay tender?
+Whisk the dry ingredients separately so baking soda and salt are distributed. Combine them with the wet mixture and raisins just until you no longer see dry flour. Stop there. Smooth batter isn't the goal.
 
-Whisk the dry ingredients in one bowl, build the wet ones on top of the soaked bran in the other, then combine gently. Stop when the dry flour streaks disappear. A few lumps are fine. A perfectly smooth batter means you overmixed and they'll bake up tough.
+Bake at 400 degrees F, checking at 18 minutes. A toothpick in the center should come out clean or with moist crumbs, not wet batter. If you made smaller muffins, begin checking sooner.
 
-Fill the cups almost full, about 110 grams each. These don't explode into bakery skyscrapers, but they need enough batter to feel like a real muffin and not a sad button. Bake at 400°F for 18 to 22 minutes and pull them when a toothpick comes out clean or with a few moist crumbs. Overbaking is the express lane back to sawdust. Cool in the pan a few minutes, then move to a rack, because a hot tin steams the bottoms and makes the liners peel like a bad decision.
+Let them settle in the tin for a few minutes, then move them to a rack. Cooling completely before closing a storage container helps avoid damp tops.
 
-## How much sugar is in a bran muffin?
+## Fix a dry, dense, or crumbly batch
 
-More than the word "bran" suggests. The ½ cup of granulated sugar plus the ½ cup of honey works out to about 19.9 grams of added sugars per muffin, roughly 40% of the FDA's 50-gram Daily Value for added sugars. That's the honest trade for a bran muffin somebody finishes.
+**Dry all the way through:** check whether you packed the flour, skipped the soak, or baked past the center's doneness. A weighed flour amount removes one variable next time.
 
-If you want it down, cut the granulated sugar and keep the honey. That drops the muffin to about 11.6 grams of added sugars and 261 calories with the fiber untouched. Honey is doing moisture work, not just sweetness, so cutting both usually backfires unless you're adding mashed banana.
+**Tough or tunneled inside:** mix less after adding the flour. A few lumps are fine.
 
-Sodium is the other number nobody prints. About 369 milligrams per muffin, 16% of the 2,300-milligram Daily Value, and roughly 57% of it is the baking soda rather than the salt. The half teaspoon of salt is the easy thing to skip if you're watching it, which brings the muffin to about 272 milligrams. The soda is doing the lifting, so that one stays.
+**Brown outside, wet inside:** the cups may be too full or the oven may run hot. Make smaller portions next time, and finish the current batch at a lower temperature while checking the centers.
 
-Worth knowing before you eat three at once: MedlinePlus notes Americans average about 16 grams of fiber a day against a 21 to 38 gram recommendation, and advises you "add fiber gradually over a period of a few weeks to avoid stomach distress" and drink plenty of fluids. Going from toast to a mega-batch overnight is how people decide bran doesn't agree with them.
+**Muffins stuck to the liner:** let them cool before peeling. Warm, moist muffins can cling even when the recipe itself is fine.
 
-## How long do bran muffins keep?
+## Store the breakfast you'll actually eat
 
-Counter, airtight, two days. Fridge, about five. Freeze the rest the day you bake.
+Once cool, keep a small amount airtight for the next day or two and freeze the rest. About three months is a useful freezer quality target. [USDA distinguishes freezer quality limits from safety at a constant 0 degrees F](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety).
 
-The three-month freezer rule you see everywhere is a quality window, not a safety deadline. USDA's Food Safety and Inspection Service is blunt about it: ["Food stored constantly at 0 °F will always be safe. Only the quality suffers with lengthy freezer storage."](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety) Its freezer chart says the same thing, that the listed times are for quality only. Label the bag with a date because a muffin you find in March will taste tired, not because it turned dangerous.
+Thaw and warm gently. If a muffin is a little dry, split and toast it rather than microwaving it until it turns rubbery.
 
-If they dry out by day three, split one and toast it. Butter or peanut butter on the cut side fixes more sins than people admit.
+For another way to use baking ingredients already in the kitchen, try the [sourdough discard pancakes](/easy-sourdough-discard-recipes-beginners/). For the grocery side, the [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) compares the foods behind the recipes.
 
-Swaps that barely move the math: walnuts or pecans for crunch, orange zest to wake everything up, chopped dates or dried cranberries for the raisins one for one. Dairy-free? Fortified soy milk plus acid for the buttermilk stand-in, and stay with oil.
-
-These work because they stop treating bran like a personality and start treating it like an ingredient. Moist batter, enough sweetness, fruit in the mix, and now a fiber number you can actually check. If you're stacking cheap fiber through the whole day, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) is the map, and [fiber per dollar across common foods](/fiber-per-dollar-cheapest-high-fiber-foods/) shows why a bag of bran keeps winning that aisle.
+*Nutrition method: estimates use USDA FoodData Central SR Legacy records for wheat bran (169722), oat bran (168872), whole-grain flour (168893), all-purpose flour (168894), raisins (168165), honey (169640), sugar (169655), and lowfat buttermilk (170874), plus eggs, oil, baking soda, and salt. [USDA's dietary fiber table](https://www.nal.usda.gov/sites/default/files/page-files/Total_Dietary_Fiber.pdf) provides the fiber values. Optional cinnamon and other substitutions are excluded. These are calculations, not a lab analysis of the baked muffins.*

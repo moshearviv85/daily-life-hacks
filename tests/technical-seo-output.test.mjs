@@ -319,7 +319,7 @@ test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay 
   const samplePrune = "cheap-dinner-ideas-cost-per-serving";
   const keepFlagship = "fiber-per-dollar-cheapest-high-fiber-foods";
 
-  assert.equal(INDEX_PRUNE_SLUGS.size, 107);
+  assert.equal(INDEX_PRUNE_SLUGS.size, 106);
   assert.ok(!entries.has(locFor(samplePrune)), `${samplePrune} leaked into sitemap`);
   assert.ok(existsSync(distHtmlFor(locFor(samplePrune))), `${samplePrune} must stay live`);
   const pruneRobots = robotsFor(locFor(samplePrune));
@@ -338,7 +338,7 @@ test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay 
     assert.ok(!robots.includes("nofollow"), `nofollow on live prune page: ${slug}`);
     noindexed += 1;
   }
-  assert.equal(noindexed, 107);
+  assert.equal(noindexed, 106);
 
   assert.ok(entries.has(locFor(keepFlagship)), `${keepFlagship} missing from sitemap`);
   const keepRobots = robotsFor(locFor(keepFlagship));

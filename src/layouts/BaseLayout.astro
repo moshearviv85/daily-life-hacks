@@ -484,71 +484,10 @@ const metaDescription =
       }
     </script>
 
-    <!-- Page view tracking (client-side) -->
-    <script is:inline>
-      function sendPageView() {
-        try {
-          var path =
-            typeof window !== "undefined" && window.location
-              ? window.location.pathname
-              : "";
-          if (!path) return;
-
-          // Prevent spamming duplicates on the same path in one tab/session.
-          var key = "pv_sent:" + path;
-          try {
-            if (sessionStorage.getItem(key) === "1") return;
-            sessionStorage.setItem(key, "1");
-          } catch (e) {}
-
-          // Classify the traffic source once per session-path so we can finally
-          // tell whether AI citations, Pinterest, or search actually send people.
-          var ref = "";
-          try { ref = document.referrer || ""; } catch (e) {}
-          var host = "";
-          try { host = ref ? new URL(ref).hostname.replace(/^www\./, "") : ""; } catch (e) {}
-          var source = "direct";
-          if (host) {
-            if (host === window.location.hostname.replace(/^www\./, "")) {
-              source = "internal";
-            } else if (/(chatgpt\.com|openai\.com|perplexity\.ai|copilot\.microsoft\.com|gemini\.google\.com|claude\.ai|you\.com|phind\.com|poe\.com)$/.test(host)) {
-              source = "ai:" + host;
-            } else if (/(^|\.)google\.|(^|\.)bing\.com$|duckduckgo\.com$|search\.yahoo\.|ecosia\.org$|brave\.com$/.test(host)) {
-              source = "search:" + host;
-            } else if (/pinterest\./.test(host)) {
-              source = "pinterest";
-            } else if (/reddit\.com$|redd\.it$/.test(host)) {
-              source = "reddit";
-            } else if (/(facebook|instagram|twitter|x\.com|tiktok|linkedin|threads)\./.test(host)) {
-              source = "social:" + host;
-            } else if (/(flipboard|feedly|news\.google|msn\.com)/.test(host)) {
-              source = "aggregator:" + host;
-            } else {
-              source = "referral:" + host;
-            }
-          }
-
-          fetch("/api/event", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              event_type: "page_view",
-              page: path,
-              source: source,
-              metadata: ref ? ref.slice(0, 200) : "",
-            }),
-            keepalive: true,
-          }).catch(function () {});
-        } catch (e) {}
-      }
-
-      // Send immediately when this script runs.
-      sendPageView();
-
-      // Also send on initial page load and on Astro navigations.
-      window.addEventListener("load", sendPageView);
-      document.addEventListener("astro:page-load", sendPageView);
-      document.addEventListener("astro:after-swap", sendPageView);
+    <!-- Browser events are separate from server request diagnostics. -->
+    <script>
+      import { startPageTracking } from "../lib/browser-traffic.js";
+      startPageTracking();
     </script>
   </body>
 </html>

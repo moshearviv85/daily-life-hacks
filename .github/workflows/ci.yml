@@ -38,3 +38,8 @@ jobs:
         run: |
           pip install pytest
           python -m pytest tests/pipeline_article_gate_test.py -q
+
+      - name: Traffic measurement and calculator regression tests
+        run: |
+          node --test tests/analytics-page-views.test.mjs tests/traffic-recovery.test.mjs tests/conversion-funnel.test.mjs
+          python -m pytest tests/cli/test_weekly_scorecard.py tests/cli/test_traffic_sql.py -q

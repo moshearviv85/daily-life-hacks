@@ -83,7 +83,7 @@ def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
     print(f"  top_pins [{sort_by}] → {resp.status_code}")
     if not resp.ok:
         print(f"  ERROR: {resp.text[:500]}")
-        return []
+        raise RuntimeError("Pinterest analytics request failed; existing cache was not replaced")
 
     data  = resp.json()
     items = data.get("pins") or []

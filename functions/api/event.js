@@ -30,6 +30,21 @@ export async function onRequestPost(context) {
     const body = await request.json();
     const eventType = body.event_type;
 
+    if (eventType === 'browser_page_view') {
+      // CORS by itself doesn't reject writes. Only accept this metric from the site.
+      if (!allowedOrigins.has(origin)) {
+        return Response.json({ error: 'Origin not allowed' }, { status: 403 });
+      }
+      if (typeof body.page !== 'string' || !/^\/(?!\/)[^?#\s]*$/.test(body.page) || body.page.length > 500 ||
+          typeof body.source !== 'string' || body.source.length > 100 ||
+          body.metadata?.measurement_version !== 2) {
+        return Response.json({ error: 'Invalid browser page view' }, { status: 400 });
+      }
+      if (/bot|crawler|spider|headless|DLH-owner-audit/i.test(request.headers.get('User-Agent') || '')) {
+        return Response.json({ ok: true, skipped: 'automation' });
+      }
+    }
+
     if (!eventType) {
       return new Response(
         JSON.stringify({ error: "event_type is required" }),
