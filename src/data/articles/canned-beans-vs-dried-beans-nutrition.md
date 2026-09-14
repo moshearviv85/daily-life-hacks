@@ -1,6 +1,6 @@
 ---
-title: "Canned Beans vs Dried Beans Nutrition"
-excerpt: "Same bean, different water. Dry black beans hold 21.6 g of protein per 100 g against 6.0 g canned, and return 81.0 g per dollar against 30.1 g."
+title: "Canned Beans or Dry Beans: Nutrition"
+excerpt: "Canned beans or dry beans: same bean, different water. Dry black beans hold 21.6 g of protein per 100 g vs 6.0 g canned, and 81.0 g per dollar vs 30.1 g."
 category: "nutrition"
 tags: ["canned beans vs dried beans", "dried beans nutrition", "canned beans nutrition", "protein per dollar", "grocery data"]
 cluster: "budget-protein"
@@ -8,6 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/canned-beans-vs-dried-beans-nutrition-main.jpg"
 imageAlt: "A measuring bowl of dry black beans beside an opened can of black beans on a kitchen scale"
 date: 2026-07-28
+dateModified: 2026-09-14
 author: "David Miller"
 featured: false
 editorsPick: false
