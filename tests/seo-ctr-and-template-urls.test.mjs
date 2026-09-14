@@ -93,6 +93,45 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   );
 });
 
+test("canned beans vs dried beans nutrition title leads with or-dry-beans query", () => {
+  const beans = articleFrontmatter("canned-beans-vs-dried-beans-nutrition");
+  const titleLower = beans.title.toLowerCase();
+  const excerptLower = beans.excerpt.toLowerCase();
+
+  assert.match(beans.title, /^Canned Beans or Dry Beans/);
+  assert.ok(
+    beans.title.length <= 60,
+    `nutrition beans title too long for SERP: ${beans.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("canned beans or dry beans"),
+    "nutrition beans title should lead with GSC query canned beans or dry beans",
+  );
+  assert.ok(
+    titleLower.indexOf("canned beans or dry beans") < titleLower.indexOf("nutrition"),
+    "nutrition should trail the ranking query, not lead the SERP title",
+  );
+  assert.equal(
+    titleLower.startsWith("canned beans vs dried"),
+    false,
+    "nutrition beans title should not lead with vs dried, which under-matches or dry beans",
+  );
+
+  assert.match(beans.excerpt, /[Cc]anned beans or dry beans/);
+  assert.match(beans.excerpt, /21\.6 g/);
+  assert.match(beans.excerpt, /6\.0 g/);
+  assert.match(beans.excerpt, /81\.0 g/);
+  assert.match(beans.excerpt, /30\.1 g/);
+  assert.ok(
+    excerptLower.indexOf("canned beans or dry beans") < excerptLower.indexOf("21.6"),
+    "beans nutrition meta should put the ranking query before the USDA numbers",
+  );
+  assert.ok(
+    beans.excerpt.length <= 160,
+    `nutrition beans meta too long: ${beans.excerpt.length}`,
+  );
+});
+
 test("canned vs dry beans title matches cost query and on-page protein-per-dollar numbers", () => {
   const beans = articleFrontmatter("canned-vs-dry-beans-cost");
   const titleLower = beans.title.toLowerCase();
