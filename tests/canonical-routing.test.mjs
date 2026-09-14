@@ -374,8 +374,34 @@ test("legacy garbage and removed supplement-adjacent URLs return gone", async ()
     "https://www.daily-life-hacks.com/wp-admin/css/login.min.css",
     "https://www.daily-life-hacks.com/wp-login.php",
     "https://www.daily-life-hacks.com/author/",
+    "https://www.daily-life-hacks.com/author/admin/",
+    "https://www.daily-life-hacks.com/category/",
     "https://www.daily-life-hacks.com/category/uncategorized/",
+    "https://www.daily-life-hacks.com/page/",
+    "https://www.daily-life-hacks.com/page/1/",
     "https://www.daily-life-hacks.com/page/2/",
+    "https://www.daily-life-hacks.com/page/3/",
+    "https://www.daily-life-hacks.com/xmlrpc.php",
+    "https://www.daily-life-hacks.com/xmlrpc.php/",
+    "https://www.daily-life-hacks.com/wp-json",
+    "https://www.daily-life-hacks.com/wp-json/wp/v2/",
+    "https://www.daily-life-hacks.com/wp-content",
+    "https://www.daily-life-hacks.com/wp-content/uploads/",
+    "https://www.daily-life-hacks.com/wp-includes",
+    "https://www.daily-life-hacks.com/wp-includes/js/jquery.js",
+    "https://www.daily-life-hacks.com/wp-cron.php",
+    "https://www.daily-life-hacks.com/wp-register.php",
+    "https://www.daily-life-hacks.com/wp-signup.php",
+    "https://www.daily-life-hacks.com/trackback/",
+    "https://www.daily-life-hacks.com/comments",
+    "https://www.daily-life-hacks.com/comments/feed/",
+    "https://www.daily-life-hacks.com/index.php",
+    "https://www.daily-life-hacks.com/readme.html",
+    "https://www.daily-life-hacks.com/license.txt",
+    "https://www.daily-life-hacks.com/blog/",
+    "https://www.daily-life-hacks.com/wordpress/",
+    "https://www.daily-life-hacks.com/admin/",
+    "https://www.daily-life-hacks.com/admin/index.php",
   ];
 
   for (const source of cases) {
@@ -398,6 +424,36 @@ test("live dashboard page is not treated as a gone WordPress leftover", async ()
 
   const response = await onRequest(
     makeContext("https://www.daily-life-hacks.com/dashboard/", {
+      ASSETS: assets,
+    }),
+  );
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("location"), null);
+  assert.notEqual(response.headers.get("x-robots-tag"), "noindex, follow");
+});
+
+test("Astro category hubs stay live and are not treated as WordPress /category/* leftovers", async () => {
+  const assets = makeAssets(new Set(["/recipes/", "/nutrition/", "/tips/"]));
+
+  for (const hub of ["recipes", "nutrition", "tips"]) {
+    const response = await onRequest(
+      makeContext(`https://www.daily-life-hacks.com/${hub}/`, {
+        ASSETS: assets,
+      }),
+    );
+
+    assert.equal(response.status, 200);
+    assert.equal(response.headers.get("location"), null);
+    assert.notEqual(response.headers.get("x-robots-tag"), "noindex, follow");
+  }
+});
+
+test("atom feed stays live and is not treated as a gone WordPress leftover", async () => {
+  const assets = makeAssets(new Set(["/atom.xml"]));
+
+  const response = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/atom.xml", {
       ASSETS: assets,
     }),
   );
