@@ -143,6 +143,41 @@ test("homemade salad dressing title matches refrigerate and how-long queries", (
   assert.match(dressing.excerpt, /[Gg]arlic-in-oil:\s*4 days/);
 });
 
+test("fiber label title leads with high-fiber minimum grams query", () => {
+  const page = articleFrontmatter("good-source-of-fiber-label-meaning");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+  const highFiberAt = titleLower.search(/high fiber/);
+  const goodSourceAt = titleLower.search(/good source/);
+
+  assert.ok(highFiberAt !== -1, "fiber label title should name high fiber");
+  assert.match(page.title, /5\.6/);
+  assert.match(page.title, /[Mm]inimum/);
+  assert.match(page.title, /[Gg]ram/);
+  assert.match(page.title, /[Ss]erving/);
+  assert.ok(
+    page.title.length <= 60,
+    `fiber label title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    goodSourceAt === -1 || highFiberAt < goodSourceAt,
+    "fiber label title should lead with high fiber, not good source",
+  );
+  assert.ok(
+    highFiberAt < titleLower.indexOf("5.6"),
+    "fiber label title should put high fiber before the 5.6g minimum",
+  );
+
+  assert.match(page.excerpt, /high fiber/i);
+  assert.match(page.excerpt, /5\.6/);
+  assert.match(page.excerpt, /2\.8 to 5\.3/);
+  assert.match(page.excerpt, /5 grams/);
+  assert.ok(
+    excerptLower.search(/high fiber/) < excerptLower.search(/good source|2\.8/),
+    "fiber label meta should put high fiber before good source",
+  );
+});
+
 test("food value database title and meta lead with nutrition-per-dollar intent", () => {
   const page = readFileSync(join(ROOT, "src/pages/food-value-database/index.astro"), "utf8");
   const title = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
