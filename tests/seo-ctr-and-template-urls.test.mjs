@@ -157,6 +157,35 @@ test("food value database title and meta lead with nutrition-per-dollar intent",
   assert.match(description, /Not USDA-endorsed/);
 });
 
+test("artichoke recipe title leads with the macrobiotic artichoke recipe query", () => {
+  const artichoke = articleFrontmatter("artichoke-recipes-for-gut-health");
+  const titleLower = artichoke.title.toLowerCase();
+  const excerptLower = artichoke.excerpt.toLowerCase();
+
+  assert.match(artichoke.title, /^Macrobiotic Artichoke Recipe:/);
+  assert.ok(
+    artichoke.title.length <= 60,
+    `artichoke title too long for SERP: ${artichoke.title.length}`,
+  );
+  assert.match(artichoke.title, /[Ss]team/);
+  assert.match(artichoke.title, /[Ll]emon-?[Gg]arlic/);
+  assert.ok(
+    titleLower.indexOf("macrobiotic artichoke recipe") === 0,
+    "artichoke title should lead with the GSC query",
+  );
+  assert.equal(
+    titleLower.includes("how to steam artichokes"),
+    false,
+    "artichoke title should not spend the SERP on how-to steam instead of the ranking query",
+  );
+
+  assert.match(artichoke.excerpt, /[Mm]acrobiotic artichoke recipe/);
+  assert.ok(
+    excerptLower.indexOf("macrobiotic artichoke recipe") === 0,
+    "artichoke meta should put the ranking query first",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
