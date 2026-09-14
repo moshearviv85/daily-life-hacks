@@ -97,7 +97,11 @@ test("Dataset schema remains attached to its canonical article and CSV", () => {
   assert.match(articlePage, /url: articleUrl/);
   assert.match(articlePage, /identifier: `\$\{articleUrl\}#dataset`/);
   assert.match(articlePage, /version: DATA_VERSION/);
-  assert.match(articlePage, /creator: publisherSchema/);
+  assert.match(
+    articlePage,
+    /creator: flagship \? articleAuthor : publisherSchema/,
+    "Flagship Dataset creator is David Miller; other studies keep the organization",
+  );
   assert.match(articlePage, /distribution: datasetDistributions\(dataset, siteUrl\)/);
   assert.match(
     articlePage,
@@ -105,6 +109,11 @@ test("Dataset schema remains attached to its canonical article and CSV", () => {
   );
   assert.match(datasetsRegistry, /"@type": "DataDownload"/);
   assert.match(datasetsRegistry, /contentUrl: `\$\{siteUrl\}\$\{dataset\.csv\}`/);
+  assert.match(
+    datasetsRegistry,
+    /contentUrl: HUGGINGFACE_DATASET_URL/,
+    "Hugging Face dataset page must be a DataDownload URL",
+  );
   assert.match(
     datasetsRegistry,
     /contentUrl: huggingfaceCsv/,
@@ -186,6 +195,40 @@ test("fiber and protein flagships link the public Hugging Face dataset mirror", 
     sourdough,
     /huggingface\.co/,
     "sourdough article must stay untouched",
+  );
+});
+
+test("flagships get a visible Cite this study block with APA and BibTeX", () => {
+  const cite = readFileSync(
+    new URL("../src/components/StudyCite.astro", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(articlePage, /import StudyCite from "\.\.\/components\/StudyCite\.astro"/);
+  assert.match(articlePage, /flagshipCitation && dataset/);
+  assert.match(articlePage, /studyCitation\(/);
+  assert.match(articlePage, /flagshipBibtexKey\(article\.id, citationYear\)/);
+  assert.match(cite, /Cite this study/);
+  assert.match(cite, /id="citation-apa"/);
+  assert.match(cite, /id="citation-bibtex"/);
+  assert.match(cite, /Copy APA/);
+  assert.match(cite, /Copy BibTeX/);
+  assert.match(datasetsRegistry, /export function studyCitation/);
+  assert.match(datasetsRegistry, /Miller, D\. \(\$\{opts\.year\}\)/);
+  assert.match(datasetsRegistry, /@dataset\{\$\{opts\.bibtexKey\},/);
+  assert.match(
+    datasetsRegistry,
+    /Zenodo DOI not assigned yet\. Do not invent a doi field until one exists\./,
+  );
+  assert.doesNotMatch(
+    datasetsRegistry.slice(datasetsRegistry.indexOf("export function studyCitation")),
+    /^\s*doi\s*=/m,
+    "visible BibTeX must not invent a DOI",
+  );
+  assert.doesNotMatch(
+    cite,
+    /10\.5281|zenodo\.org|https:\/\/doi\.org/i,
+    "cite block must not show a fake DOI",
   );
 });
 
