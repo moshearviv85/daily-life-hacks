@@ -1,0 +1,198 @@
+---
+/**
+ * Compact flagship signup. Posts to the same /api/subscribe Kit proxy as
+ * Newsletter.astro / NewsletterPopup.astro. Do not point this at a new ESP.
+ */
+interface Props {
+  kicker: string;
+  title: string;
+  text: string;
+  buttonLabel: string;
+  articleCategory?: string;
+  articleBaseSlug?: string;
+  emailSegment?: string;
+}
+
+const {
+  kicker,
+  title,
+  text,
+  buttonLabel,
+  articleCategory = "nutrition",
+  articleBaseSlug = "",
+  emailSegment = "",
+} = Astro.props;
+---
+
+<aside class="study-email-capture" aria-labelledby="study-email-title" data-study-email-capture>
+  <p class="study-email-kicker">{kicker}</p>
+  <h2 id="study-email-title" class="study-email-title">{title}</h2>
+  <p class="study-email-text">{text}</p>
+
+  <form id="study-email-form" class="study-email-form">
+    <div class="study-email-row">
+      <label for="study-email-input" class="sr-only">Email address</label>
+      <input
+        id="study-email-input"
+        name="email"
+        type="email"
+        autocomplete="email"
+        inputmode="email"
+        placeholder="Enter your email"
+        required
+        class="study-email-input"
+      />
+      <button
+        id="study-email-submit"
+        type="submit"
+        class="study-email-submit"
+      >
+        {buttonLabel}
+      </button>
+    </div>
+    <label class="study-email-consent">
+      <input
+        id="study-email-consent"
+        name="consent"
+        type="checkbox"
+        required
+        class="study-email-consent-input"
+      />
+      <span>
+        I agree to receive email newsletters and accept the
+        <a href="/privacy/" class="underline hover:text-[#F29B30]">Privacy Policy</a>.
+        You can unsubscribe at any time.
+      </span>
+    </label>
+  </form>
+
+  <div id="study-email-success" class="study-email-success hidden" role="status" aria-live="polite">
+    <p class="study-email-success-title">You're in.</p>
+    <p class="study-email-success-text">Hang on one second. We'll send you to the confirmation page.</p>
+  </div>
+</aside>
+
+<script define:vars={{ articleCategory, articleBaseSlug, emailSegment }}>
+  function getStoredSignupContext() {
+    try {
+      const raw = sessionStorage.getItem("newsletter_signup_context");
+      if (!raw) return {};
+
+      const parsed = JSON.parse(raw);
+      if (parsed.page && parsed.page !== window.location.pathname) {
+        return {};
+      }
+
+      return {
+        category: parsed.category || "",
+        base_slug: parsed.base_slug || "",
+        variant_slug: parsed.variant_slug || "",
+        email_segment: parsed.email_segment || "",
+      };
+    } catch {
+      return {};
+    }
+  }
+
+  function redirectToThankYou(source, context) {
+    const params = new URLSearchParams({ source });
+    if (context.category) params.set("category", context.category);
+    if (context.email_segment) params.set("segment", context.email_segment);
+
+    try {
+      sessionStorage.removeItem("newsletter_signup_context");
+    } catch {
+      // Ignore storage cleanup failures.
+    }
+
+    window.location.href = `/thank-you?${params.toString()}`;
+  }
+
+  function setupStudyEmailForm() {
+    const root = document.querySelector("[data-study-email-capture]");
+    const form = document.getElementById("study-email-form");
+    const emailInput = document.getElementById("study-email-input");
+    const submitBtn = document.getElementById("study-email-submit");
+    const successEl = document.getElementById("study-email-success");
+
+    if (!form || !root) return;
+
+    try {
+      if (localStorage.getItem("dlh_subscribed") === "1") {
+        root.hidden = true;
+        return;
+      }
+    } catch {
+      // Private mode: keep the form visible.
+    }
+
+    if (form.dataset.bound === "true") return;
+    form.dataset.bound = "true";
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!emailInput || !emailInput.value) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = "Sending...";
+
+      try {
+        fetch("/api/event", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            event_type: "signup_started",
+            source: "inline",
+            page: window.location.pathname,
+            metadata: {
+              location: "flagship-study-email",
+            },
+          }),
+        }).catch(() => {});
+
+        const signupContext = getStoredSignupContext();
+        const mergedCategory = signupContext.category || articleCategory || "";
+        const mergedBaseSlug = signupContext.base_slug || articleBaseSlug || "";
+        const mergedSegment = signupContext.email_segment || emailSegment || "";
+        const res = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: emailInput.value,
+            source: "inline",
+            page: window.location.pathname,
+            ...signupContext,
+            category: mergedCategory,
+            base_slug: mergedBaseSlug,
+            email_segment: mergedSegment,
+          }),
+        });
+
+        if (res.ok) {
+          try {
+            localStorage.setItem("dlh_subscribed", "1");
+          } catch {
+            // Non-fatal: only used to stop the popup nagging subscribers.
+          }
+          form.classList.add("hidden");
+          successEl?.classList.remove("hidden");
+          const thankYouContext = {
+            ...signupContext,
+            category: mergedCategory,
+            base_slug: mergedBaseSlug,
+            email_segment: mergedSegment,
+          };
+          setTimeout(() => redirectToThankYou("inline", thankYouContext), 250);
+        } else {
+          submitBtn.innerText = "Try Again";
+          submitBtn.disabled = false;
+        }
+      } catch {
+        submitBtn.innerText = "Try Again";
+        submitBtn.disabled = false;
+      }
+    });
+  }
+
+  document.addEventListener("astro:page-load", setupStudyEmailForm);
+</script>
