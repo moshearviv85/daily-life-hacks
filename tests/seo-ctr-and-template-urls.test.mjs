@@ -143,6 +143,49 @@ test("homemade salad dressing title matches refrigerate and how-long queries", (
   assert.match(dressing.excerpt, /[Gg]arlic-in-oil:\s*4 days/);
 });
 
+test("bran muffin title leads with fiber-amount query", () => {
+  const page = articleFrontmatter("high-fiber-bran-muffins-that-taste-good");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+  const howMuchAt = titleLower.indexOf("how much fiber");
+  const branMuffinAt = titleLower.indexOf("bran muffin");
+  const moistAt = titleLower.search(/\bmoist\b/);
+  const wholeWheatAt = titleLower.indexOf("whole wheat");
+
+  assert.ok(howMuchAt !== -1, "bran muffin title should say how much fiber");
+  assert.match(page.title, /bran muffin/i);
+  assert.match(page.title, /5\.9g/);
+  assert.ok(
+    page.title.length <= 60,
+    `bran muffin title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    howMuchAt < branMuffinAt,
+    "bran muffin title should lead with how much fiber before bran muffin",
+  );
+  assert.ok(
+    moistAt === -1,
+    "bran muffin title should not spend the SERP on moist",
+  );
+  assert.ok(
+    wholeWheatAt === -1,
+    "bran muffin title should not spend the SERP on whole wheat",
+  );
+
+  assert.match(page.excerpt, /how much fiber/i);
+  assert.match(page.excerpt, /bran muffin/i);
+  assert.match(page.excerpt, /high-fiber muffin recipe/i);
+  assert.match(page.excerpt, /5\.9 g/);
+  assert.ok(
+    excerptLower.indexOf("how much fiber") < excerptLower.indexOf("5.9"),
+    "bran muffin meta should put the fiber-amount query before the 5.9 g estimate",
+  );
+  assert.ok(
+    excerptLower.indexOf("how much fiber") < excerptLower.indexOf("moist"),
+    "bran muffin meta should put the fiber-amount query before moist",
+  );
+});
+
 test("food value database title and meta lead with nutrition-per-dollar intent", () => {
   const page = readFileSync(join(ROOT, "src/pages/food-value-database/index.astro"), "utf8");
   const title = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
