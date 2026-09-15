@@ -126,6 +126,46 @@ test("canned vs dry beans title matches cost query and on-page protein-per-dolla
   );
 });
 
+test("high-protein high-fiber meals title leads with meals for weight-loss query", () => {
+  const page = articleFrontmatter("high-protein-high-fiber-meals-for-weight-loss");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+
+  assert.match(page.title, /[Hh]igh [Pp]rotein/);
+  assert.match(page.title, /[Hh]igh [Ff]iber/);
+  assert.match(page.title, /[Mm]eals/);
+  assert.match(page.title, /[Ww]eight [Ll]oss/);
+  assert.ok(
+    titleLower.indexOf("high protein") < titleLower.indexOf("high fiber"),
+    "title should lead with high-protein, then high-fiber",
+  );
+  assert.ok(
+    titleLower.indexOf("high fiber") < titleLower.indexOf("meals"),
+    "title should lead with high-protein high-fiber meals, not a diet definition",
+  );
+  assert.ok(
+    titleLower.indexOf("meals") < titleLower.indexOf("weight loss"),
+    "title should state meals before weight-loss intent",
+  );
+  assert.equal(
+    titleLower.includes("what is"),
+    false,
+    "title should not spend the SERP on a diet definition",
+  );
+  assert.equal(
+    titleLower.includes("diet"),
+    false,
+    "title should not lead with diet instead of meals",
+  );
+
+  assert.match(page.excerpt, /^High protein high fiber meals for weight loss/i);
+  assert.ok(
+    excerptLower.indexOf("high protein high fiber meals for weight loss") <
+      excerptLower.indexOf("diet salad"),
+    "meta should put the meals query before the salad hook",
+  );
+});
+
 test("homemade salad dressing title matches refrigerate and how-long queries", () => {
   const dressing = articleFrontmatter("how-to-store-homemade-salad-dressing-safely");
   const titleLower = dressing.title.toLowerCase();
