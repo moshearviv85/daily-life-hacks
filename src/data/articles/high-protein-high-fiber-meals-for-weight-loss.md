@@ -1,6 +1,6 @@
 ---
-title: What Is a High Protein High Fiber Diet
-excerpt: "Starving an hour after a diet salad is not a willpower problem. High protein high fiber meals for weight loss keep you full without the spreadsheet drama"
+title: "High Protein High Fiber Meals for Weight Loss"
+excerpt: "High protein high fiber meals for weight loss keep you full without the spreadsheet drama. Starving an hour after a diet salad is not a willpower problem"
 category: nutrition
 tags:
 - high protein high fiber
@@ -11,7 +11,7 @@ tags:
 image: /images/high-protein-high-fiber-meals-for-weight-loss-main.jpg
 imageAlt: Bowl of lentil stew with grilled chicken, roasted vegetables, and brown rice on a wooden table
 date: 2026-02-25
-dateModified: 2026-07-12
+dateModified: 2026-09-15
 author: "David Miller"
 featured: false
 editorsPick: false
