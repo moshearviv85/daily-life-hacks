@@ -36,11 +36,23 @@ _RETRYABLE = (
     requests.exceptions.ConnectionError,
 )
 
+def _response_json(resp):
+    try:
+        data = resp.json()
+    except (ValueError, TypeError, AttributeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _is_pinterest_code_12(resp):
+    return _response_json(resp).get("code") == 12
+
+
 def request_with_retry(method, url, *, timeout, retries=3, backoff=2.0, label="", **kwargs):
-    """HTTP request with retries on Timeout, ConnectionError, and 5xx.
+    """HTTP request with retries on Timeout, ConnectionError, 5xx, and Pinterest code 12.
 
     Returns the Response, or None if every attempt failed with a retryable error.
-    Non-5xx HTTP responses are returned immediately so the caller can handle 4xx.
+    Other non-5xx HTTP responses are returned immediately so the caller can handle 4xx.
     """
     last_err = None
     for attempt in range(1, retries + 1):
@@ -50,9 +62,11 @@ def request_with_retry(method, url, *, timeout, retries=3, backoff=2.0, label=""
             last_err = f"{type(e).__name__}: {e}"
             print(f"  WARNING: {label} attempt {attempt}/{retries} — {last_err}")
         else:
-            if resp.status_code < 500:
+            if resp.status_code < 500 and not _is_pinterest_code_12(resp):
                 return resp
             last_err = f"HTTP {resp.status_code}"
+            if _is_pinterest_code_12(resp):
+                last_err += " code 12"
             print(f"  WARNING: {label} attempt {attempt}/{retries} — {last_err}: {resp.text[:200]}")
         if attempt < retries:
             wait = backoff * (2 ** (attempt - 1))
@@ -102,6 +116,12 @@ def get_access_token():
 # ── Fetch top pins analytics ───────────────────────────────────────────────────
 
 def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
+    """Return pin items for one sort metric, or None if the request failed.
+
+    None means retries were exhausted or the response was non-ok (including
+    Pinterest JSON code 12). An HTTP 200 with an empty pin list returns [] so
+    main() can still hard-fail that as missing analytics authorization.
+    """
     resp = request_with_retry(
         "GET",
         f"{API_BASE}/user_account/analytics/top_pins",
@@ -117,15 +137,15 @@ def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
         label=f"top_pins [{sort_by}]",
     )
     if resp is None:
-        print(f"  top_pins [{sort_by}] → no response")
-        return []
+        print(f"  top_pins [{sort_by}] → no response after retries")
+        return None
     print(f"  top_pins [{sort_by}] → {resp.status_code}")
-    if not resp.ok:
-        print(f"  ERROR: {resp.text[:500]}")
-        raise RuntimeError("Pinterest analytics request failed; existing cache was not replaced")
+    body = _response_json(resp)
+    if not resp.ok or body.get("code") == 12:
+        print(f"  ERROR: {(getattr(resp, 'text', '') or '')[:500]}")
+        return None
 
-    data  = resp.json()
-    items = data.get("pins") or []
+    items = body.get("pins") or []
     print(f"  Got {len(items)} pins")
     return items
 
@@ -140,8 +160,12 @@ def main():
 
     # Fetch top 50 pins by each metric (3 API calls total)
     pins_by_id = {}
+    top_pins_request_failed = False
     for sort_by in ["IMPRESSION", "OUTBOUND_CLICK", "SAVE"]:
         items = fetch_top_pins(access_token, start_date, end_date, sort_by)
+        if items is None:
+            top_pins_request_failed = True
+            items = []
         for item in items:
             pin_id = item.get("pin_id") or ""
             if not pin_id or pin_id in pins_by_id:
@@ -164,6 +188,17 @@ def main():
     print(f"\nUnique pins collected: {len(results)}")
 
     if not results:
+        if top_pins_request_failed:
+            # Distinguishes a Pinterest outage (5xx / code 12 / timeout) from an
+            # authorized empty payload. OpenAPI: 200 = success, 403 = not
+            # authorized. org_analytics is a rate-limit category, not a scope.
+            print(
+                "WARNING: Pinterest top_pins failed after retries "
+                "(timeout, HTTP 5xx, code 12, or non-ok). "
+                "Existing cache was not replaced. Exiting 0 so this scheduled "
+                "flake does not fail main CI."
+            )
+            sys.exit(0)
         print("No data returned. Token may be missing org_analytics scope.")
         sys.exit(1)
 
