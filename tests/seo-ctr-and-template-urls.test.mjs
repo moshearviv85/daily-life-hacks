@@ -93,6 +93,34 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   );
 });
 
+test("protein-per-100g title leads with ranking intent and keeps on-page numbers", () => {
+  const protein = articleFrontmatter("foods-highest-in-protein-per-100-grams");
+  const titleLower = protein.title.toLowerCase();
+  const excerptLower = protein.excerpt.toLowerCase();
+  assert.match(protein.title, /[Hh]ighest [Pp]rotein [Ff]oods/);
+  assert.match(protein.title, /per 100g/i);
+  assert.match(protein.title, /49-Food Study/);
+  assert.ok(
+    titleLower.indexOf("highest protein foods") < titleLower.indexOf("49-food"),
+    "protein ranking title should lead with the search query, not the study frame",
+  );
+  assert.equal(
+    titleLower.startsWith("protein per 100"),
+    false,
+    "protein ranking title should not bury highest-protein intent behind study framing",
+  );
+
+  assert.match(protein.excerpt, /[Hh]ighest protein foods per 100g/);
+  assert.match(protein.excerpt, /52\.17g/);
+  assert.match(protein.excerpt, /24\.63g/);
+  assert.match(protein.excerpt, /24\.62g/);
+  assert.match(protein.excerpt, /label proxy/);
+  assert.ok(
+    excerptLower.indexOf("highest protein foods") < excerptLower.indexOf("52.17g"),
+    "protein ranking meta should put the ranking query before the density numbers",
+  );
+});
+
 test("canned vs dry beans title matches cost query and on-page protein-per-dollar numbers", () => {
   const beans = articleFrontmatter("canned-vs-dry-beans-cost");
   const titleLower = beans.title.toLowerCase();
