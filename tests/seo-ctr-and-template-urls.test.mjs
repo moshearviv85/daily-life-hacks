@@ -55,10 +55,23 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   );
 
   const pizza = articleFrontmatter("comparing-fiber-content-different-pizza-crusts");
+  const pizzaTitleLower = pizza.title.toLowerCase();
+  const pizzaExcerptLower = pizza.excerpt.toLowerCase();
+  assert.match(pizza.title, /[Cc]omparing [Ff]iber/);
+  assert.match(pizza.title, /[Dd]ifferent [Pp]izza [Cc]rusts/);
   assert.match(pizza.title, /2\.7g/);
   assert.match(pizza.title, /4\.2-5\.1g/);
+  assert.ok(
+    pizzaTitleLower.indexOf("comparing") < pizzaTitleLower.indexOf("2.7g"),
+    "pizza title should lead with the compare query, not gram snippets",
+  );
+  assert.match(pizza.excerpt, /[Cc]omparing [Ff]iber/);
   assert.match(pizza.excerpt, /2\.7g/);
   assert.match(pizza.excerpt, /4\.2-5\.1g/);
+  assert.ok(
+    pizzaExcerptLower.indexOf("comparing") < pizzaExcerptLower.indexOf("2.7g"),
+    "pizza meta should put the compare query before the USDA numbers",
+  );
 
   const protein = articleFrontmatter("protein-per-serving-beans-chicken-tofu-compared");
   assert.match(protein.title, /Protein per Serving/);
