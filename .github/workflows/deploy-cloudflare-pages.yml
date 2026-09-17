@@ -1,4 +1,7 @@
-# Build + deploy to Cloudflare Pages via Wrangler (bypasses fragile Git integration UI).
+# Build + deploy to Cloudflare Pages via Wrangler Direct Upload (bypasses fragile Git
+# integration UI). Every run re-asserts Pages Git auto-deploy is disabled so the
+# Cloudflare GitHub App cannot post false-red "Cloudflare Pages" checks on healthy
+# Direct Upload deploys. See docs/cloudflare-deploy-source-of-truth.md.
 # Required GitHub repo secret: CLOUDFLARE_API_TOKEN (Permissions: Cloudflare Pages — Edit)
 #
 # Daily run: rebuilds from origin/main. At build time, publishAt / isReleased() and sitemap
@@ -49,10 +52,109 @@ jobs:
           PROJECT_JSON=$(curl -fsS \
             -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
             "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/daily-life-hacks")
+          printf '%s' "$PROJECT_JSON" > "$RUNNER_TEMP/pages-project.json"
           PRODUCTION_BRANCH=$(python -c "import json,sys; d=json.load(sys.stdin); assert d.get('success') is True, d; print(d['result']['production_branch'])" <<< "$PROJECT_JSON")
           test -n "$PRODUCTION_BRANCH"
           echo "production_branch=$PRODUCTION_BRANCH" >> "$GITHUB_OUTPUT"
           echo "Cloudflare Pages production branch: $PRODUCTION_BRANCH"
+
+      - name: Disable Cloudflare Pages Git auto-deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 91c501fca325c556efd161e4f904d443
+        run: |
+          python <<'PY'
+          import json
+          import os
+          import sys
+          import urllib.error
+          import urllib.request
+
+          token = os.environ["CLOUDFLARE_API_TOKEN"]
+          account_id = os.environ["CLOUDFLARE_ACCOUNT_ID"]
+          project_path = os.path.join(os.environ["RUNNER_TEMP"], "pages-project.json")
+          with open(project_path, encoding="utf-8") as handle:
+              payload = json.load(handle)
+          assert payload.get("success") is True, payload
+
+          source = (payload.get("result") or {}).get("source") or {}
+          source_type = source.get("type")
+          config = dict(source.get("config") or {})
+          deployments_enabled = config.get("deployments_enabled")
+          production_deployments_enabled = config.get("production_deployments_enabled")
+
+          def log(message):
+              print(message, flush=True)
+
+          if not source_type:
+              log("Cloudflare Pages Git auto-deploy already absent (no Git source); skipping PATCH.")
+              sys.exit(0)
+
+          owner = config.get("owner")
+          repo_name = config.get("repo_name")
+          log(
+              "Cloudflare Pages Git source: "
+              f"type={source_type} owner={owner} repo={repo_name} "
+              f"deployments_enabled={deployments_enabled} "
+              f"production_deployments_enabled={production_deployments_enabled}"
+          )
+          if not owner or not repo_name:
+              raise SystemExit(
+                  "Refusing to PATCH Pages source: owner/repo missing from GET response."
+              )
+
+          already_disabled = (
+              deployments_enabled is False
+              and production_deployments_enabled is not True
+          )
+          if already_disabled:
+              log("Cloudflare Pages Git auto-deploy already disabled; skipping PATCH.")
+              sys.exit(0)
+
+          config["deployments_enabled"] = False
+          config["production_deployments_enabled"] = False
+          body = json.dumps({"source": {"type": source_type, "config": config}}).encode()
+          url = (
+              f"https://api.cloudflare.com/client/v4/accounts/{account_id}"
+              "/pages/projects/daily-life-hacks"
+          )
+          request = urllib.request.Request(
+              url,
+              data=body,
+              method="PATCH",
+              headers={
+                  "Authorization": f"Bearer {token}",
+                  "Content-Type": "application/json",
+              },
+          )
+          log(
+              "Disabling Cloudflare Pages Git auto-deploy "
+              "(source.config.deployments_enabled=false, "
+              "production_deployments_enabled=false)."
+          )
+          try:
+              with urllib.request.urlopen(request) as response:
+                  raw = response.read()
+          except urllib.error.HTTPError as error:
+              detail = error.read().decode("utf-8", errors="replace")[:2000]
+              raise SystemExit(f"Pages project PATCH failed HTTP {error.code}: {detail}") from error
+
+          patched = json.loads(raw)
+          assert patched.get("success") is True, patched
+          patched_config = ((patched.get("result") or {}).get("source") or {}).get("config") or {}
+          patched_deployments = patched_config.get("deployments_enabled")
+          patched_production = patched_config.get("production_deployments_enabled")
+          log(
+              "Disabled Cloudflare Pages Git auto-deploy "
+              f"(deployments_enabled={patched_deployments}, "
+              f"production_deployments_enabled={patched_production})."
+          )
+          if patched_deployments is not False and patched_production is not False:
+              raise SystemExit(
+                  "PATCH succeeded but Git auto-deploy is still enabled: "
+                  f"{patched_config}"
+              )
+          PY
 
       - name: Build and verify routing
         run: npm run build:checked
