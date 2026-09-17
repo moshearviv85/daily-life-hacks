@@ -74,10 +74,19 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   );
 
   const protein = articleFrontmatter("protein-per-serving-beans-chicken-tofu-compared");
-  assert.match(protein.title, /Protein per Serving/);
-  assert.match(protein.title, /Calculator/);
-  assert.match(protein.excerpt, /calculate your portion from the label/);
-  assert.match(protein.excerpt, /raw vs cooked/);
+  assert.match(protein.title, /26-35g/);
+  assert.match(protein.title, /15g/);
+  assert.match(protein.title, /8-20g/);
+  assert.match(protein.title, /\bvs\b/i);
+  const proteinTitle = protein.title.toLowerCase();
+  assert.ok(
+    proteinTitle.indexOf("vs") < proteinTitle.indexOf("26-35"),
+    "protein title should lead with vs query language, then the serving numbers",
+  );
+  assert.match(protein.excerpt, /26-35g/);
+  assert.match(protein.excerpt, /15g/);
+  assert.match(protein.excerpt, /8-20g/);
+  assert.match(protein.excerpt, /\bvs\b/i);
 
   const fiberFoods = articleFrontmatter("best-high-fiber-foods-ranked-by-fiber-content");
   const fiberTitleLower = fiberFoods.title.toLowerCase();

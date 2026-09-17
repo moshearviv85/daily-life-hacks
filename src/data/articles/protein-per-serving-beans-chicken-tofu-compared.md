@@ -1,6 +1,6 @@
 ---
-title: "Protein per Serving: Chicken, Beans, Tofu + Calculator"
-excerpt: "Compare protein in cooked chicken, beans, and tofu, then calculate your portion from the label. Includes raw vs cooked weights and 25 g examples."
+title: "Chicken vs Beans vs Tofu: 26-35g vs 15g vs 8-20g Protein"
+excerpt: "Chicken breast has 26-35g protein per 3-4 oz vs about 15g in a cup of black beans vs 8-20g in tofu. USDA FoodData Central, cooked servings."
 quickAnswer: >-
   Chicken wins per serving, but the gap is smaller than most comparisons make it
   look. USDA puts 3 to 4 ounces of cooked chicken breast at 26 to 35 grams of
