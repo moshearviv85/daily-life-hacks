@@ -16,7 +16,7 @@ This is the right first staging path because it reuses the exact production buil
 
 ## Current Deploy Flow
 
-Production and staging are both deployed by `.github/workflows/deploy-cloudflare-pages.yml`.
+Production and staging are both deployed by `.github/workflows/deploy-cloudflare-pages.yml` via Wrangler Direct Upload. Cloudflare Pages Git auto-deploy stays disabled; see `docs/cloudflare-deploy-source-of-truth.md`.
 
 - Push to `main` deploys production.
 - Push to `staging` deploys a Cloudflare Pages preview deployment.
