@@ -56,7 +56,7 @@ Compare that to how most fiber actually gets bought in America, in the form of f
 
 If you bake, it's flour, full stop. If you don't, spend it on dry green split peas: 71.0 grams of fiber per dollar, $1.42 for a 16 oz bag, no soaking required despite what the bag's vibe suggests. One pot of [split pea soup](/split-pea-soup-recipe-high-fiber/) converts that bag into several lunches that cost less than a vending machine run.
 
-Dry pinto beans are statistically the same deal at 70.8 grams per dollar, and the 4 lb bag at $3.97 is the bulk buy that keeps on giving. Those same pintos carry 97.9 grams of protein per dollar on top of the fiber, which is why they win [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/) outright. Dry black beans (58.1 grams per dollar) split the difference between value and versatility. Cook a pot on Sunday and they carry [weeknight black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) without complaint.
+Dry pinto beans are statistically the same deal at 70.8 grams per dollar, and the 4 lb bag at $3.97 is the bulk buy that keeps on giving. Those same pintos carry [97.9 grams of protein per dollar](/protein-per-dollar-cheapest-protein-sources/) on top of the fiber, which is why they win [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/) outright. Dry black beans (58.1 grams per dollar) split the difference between value and versatility. Cook a pot on Sunday and they carry [weeknight black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) without complaint.
 
 ## Do you have to cook dried beans to win here?
 

@@ -38,6 +38,10 @@ const requiredLinks = [
   ["how-to-cook-dried-beans-from-scratch", fiberFlagship],
   ["high-fiber-quinoa-salad-for-lunch-prep", fiberFlagship],
   ["high-protein-bagel-sandwich-ideas-lunch", proteinFlagship],
+  ["one-dollar-fiber-what-it-buys", proteinFlagship],
+  ["one-dollar-fiber-what-it-buys", fiberFlagship],
+  ["high-fiber-snacks-per-dollar", proteinFlagship],
+  ["high-fiber-snacks-per-dollar", fiberFlagship],
 ];
 
 function articleBody(slug) {
@@ -114,6 +118,7 @@ const leftoverToolPages = [
   ["tools hub intro", ["tools", "index.astro"]],
   ["dried beans converter", ["tools", "dried-beans-to-canned-converter", "index.astro"]],
   ["grocery budget calculator", ["tools", "grocery-budget-calculator", "index.astro"]],
+  ["recipe cost calculator", ["tools", "recipe-cost-calculator", "index.astro"]],
 ];
 
 test("leftover tool pages cite each flagship once in the page source", () => {
@@ -128,6 +133,37 @@ test("leftover tool pages cite each flagship once in the page source", () => {
       htmlHrefMatches(source, proteinFlagship).length,
       1,
       `${label} should link to /${proteinFlagship}/ exactly once`,
+    );
+    assert.equal(source.includes(retiredProteinSlug), false);
+  }
+});
+
+test("KEEP grocery protein-per-gram ranking cites the fiber flagship once", () => {
+  const source = pageSource("cheapest-protein-per-gram.astro");
+  assert.equal(htmlHrefMatches(source, fiberFlagship).length, 1);
+  assert.equal(htmlHrefMatches(source, proteinFlagship).length, 1);
+  assert.equal(source.includes(retiredProteinSlug), false);
+});
+
+test("KEEP chain protein pages inherit one grocery flagship href from ChainLimits", () => {
+  const limits = pageSource("_lib", "ChainLimits.astro");
+  assert.equal(htmlHrefMatches(limits, proteinFlagship).length, 1);
+  assert.equal(htmlHrefMatches(limits, fiberFlagship).length, 0);
+  assert.equal(limits.includes(retiredProteinSlug), false);
+
+  const chainPages = [
+    ["chipotle-protein-per-dollar.astro"],
+    ["kfc-protein-per-dollar.astro"],
+    ["mcdonalds-protein-per-dollar.astro"],
+    ["taco-bell-protein-per-dollar.astro"],
+    ["wendys-protein-per-dollar.astro"],
+  ];
+  for (const segments of chainPages) {
+    const source = pageSource(...segments);
+    assert.equal(
+      htmlHrefMatches(source, proteinFlagship).length,
+      0,
+      `${segments[0]} should inherit the grocery flagship href from ChainLimits, not duplicate it`,
     );
     assert.equal(source.includes(retiredProteinSlug), false);
   }
