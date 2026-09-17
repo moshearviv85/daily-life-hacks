@@ -1,5 +1,5 @@
 # Build + deploy to Cloudflare Pages via Wrangler Direct Upload (bypasses fragile Git
-# integration UI). Every run re-asserts Pages Git auto-deploy is disabled so the
+# integration UI). Every run re-asserts the Pages Git source is unlinked so the
 # Cloudflare GitHub App cannot post false-red "Cloudflare Pages" checks on healthy
 # Direct Upload deploys. See docs/cloudflare-deploy-source-of-truth.md.
 # Required GitHub repo secret: CLOUDFLARE_API_TOKEN (Permissions: Cloudflare Pages — Edit)
@@ -58,7 +58,7 @@ jobs:
           echo "production_branch=$PRODUCTION_BRANCH" >> "$GITHUB_OUTPUT"
           echo "Cloudflare Pages production branch: $PRODUCTION_BRANCH"
 
-      - name: Disable Cloudflare Pages Git auto-deploy
+      - name: Unlink Cloudflare Pages Git source
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 91c501fca325c556efd161e4f904d443
@@ -72,104 +72,119 @@ jobs:
 
           token = os.environ["CLOUDFLARE_API_TOKEN"]
           account_id = os.environ["CLOUDFLARE_ACCOUNT_ID"]
+          project_name = "daily-life-hacks"
           project_path = os.path.join(os.environ["RUNNER_TEMP"], "pages-project.json")
           with open(project_path, encoding="utf-8") as handle:
               payload = json.load(handle)
           assert payload.get("success") is True, payload
 
-          result = payload.get("result") or {}
-          source = result.get("source") or {}
-          source_type = source.get("type")
-          config = dict(source.get("config") or {})
-          deployments_enabled = config.get("deployments_enabled")
-          production_deployments_enabled = config.get("production_deployments_enabled")
-          preview_deployment_setting = config.get("preview_deployment_setting")
-
           def log(message):
               print(message, flush=True)
 
-          if not source_type:
-              log("Cloudflare Pages Git auto-deploy already absent (no Git source); skipping PATCH.")
+          def git_source(project):
+              result = (project or {}).get("result") or {}
+              src = result.get("source")
+              if not isinstance(src, dict):
+                  return None
+              config = src.get("config") or {}
+              if src.get("type") or config.get("repo_name") or config.get("owner"):
+                  return src
+              return None
+
+          def request_json(method, url, body=None):
+              data = None if body is None else json.dumps(body).encode()
+              request = urllib.request.Request(
+                  url,
+                  data=data,
+                  method=method,
+                  headers={
+                      "Authorization": f"Bearer {token}",
+                      "Content-Type": "application/json",
+                  },
+              )
+              try:
+                  with urllib.request.urlopen(request) as response:
+                      raw = response.read()
+                      code = response.status
+              except urllib.error.HTTPError as error:
+                  raw = error.read()
+                  code = error.code
+              text = raw.decode("utf-8", errors="replace")
+              if not text.strip():
+                  parsed = {"success": code < 400, "result": None}
+              else:
+                  try:
+                      parsed = json.loads(text)
+                  except json.JSONDecodeError:
+                      parsed = {
+                          "success": False,
+                          "errors": [{"message": text[:2000]}],
+                      }
+              return code, parsed, text[:2000]
+
+          project_url = (
+              f"https://api.cloudflare.com/client/v4/accounts/{account_id}"
+              f"/pages/projects/{project_name}"
+          )
+          # Unlink subresource only. Never DELETE project_url itself.
+          source_url = f"{project_url}/source"
+
+          current = git_source(payload)
+          if current is None:
+              log("Cloudflare Pages Git source already absent; skipping unlink.")
               sys.exit(0)
 
-          owner = config.get("owner")
-          repo_name = config.get("repo_name")
-          production_branch = config.get("production_branch") or result.get("production_branch")
+          config = dict(current.get("config") or {})
           log(
               "Cloudflare Pages Git source: "
-              f"type={source_type} owner={owner} repo={repo_name} "
-              f"production_branch={production_branch} "
-              f"deployments_enabled={deployments_enabled} "
-              f"production_deployments_enabled={production_deployments_enabled} "
-              f"preview_deployment_setting={preview_deployment_setting}"
+              f"type={current.get('type')} owner={config.get('owner')} "
+              f"repo={config.get('repo_name')} "
+              f"production_branch={config.get('production_branch')} "
+              f"deployments_enabled={config.get('deployments_enabled')} "
+              f"production_deployments_enabled={config.get('production_deployments_enabled')} "
+              f"preview_deployment_setting={config.get('preview_deployment_setting')}"
           )
-          if not owner or not repo_name or not production_branch:
-              raise SystemExit(
-                  "Refusing to PATCH Pages source: type/owner/repo/production_branch "
-                  "missing from GET response."
-              )
 
-          already_disabled = (
-              deployments_enabled is False
-              and production_deployments_enabled is False
-              and preview_deployment_setting == "none"
+          # Clearing source (not just auto-deploy flags) is required: a linked
+          # GitHub repo still lets the Cloudflare GitHub App post false-red
+          # "Cloudflare Pages" checks. PATCH null follows this same endpoint's
+          # documented delete convention (env vars: set the key to null).
+          log("Unlinking Cloudflare Pages Git source via PATCH source=null.")
+          patch_code, patched, patch_text = request_json(
+              "PATCH", project_url, {"source": None}
           )
-          if already_disabled:
-              log("Cloudflare Pages Git auto-deploy already disabled; skipping PATCH.")
+          # Confirm from GET: PATCH bodies may omit source even when it remains.
+          get_code, refreshed, get_text = request_json("GET", project_url)
+          if (
+              patched.get("success") is True
+              and refreshed.get("success") is True
+              and git_source(refreshed) is None
+          ):
+              log("Unlinked Cloudflare Pages Git source (PATCH source=null).")
               sys.exit(0)
 
-          # Keep the linked GitHub repo; only disable automatic Git deployments.
-          # Prefer granular flags; also set deprecated deployments_enabled for compatibility.
-          config["owner"] = owner
-          config["repo_name"] = repo_name
-          config["production_branch"] = production_branch
-          config["production_deployments_enabled"] = False
-          config["preview_deployment_setting"] = "none"
-          config["deployments_enabled"] = False
-          body = json.dumps({"source": {"type": source_type, "config": config}}).encode()
-          url = (
-              f"https://api.cloudflare.com/client/v4/accounts/{account_id}"
-              "/pages/projects/daily-life-hacks"
-          )
-          request = urllib.request.Request(
-              url,
-              data=body,
-              method="PATCH",
-              headers={
-                  "Authorization": f"Bearer {token}",
-                  "Content-Type": "application/json",
-              },
-          )
           log(
-              "Disabling Cloudflare Pages Git auto-deploy "
-              "(production_deployments_enabled=false, "
-              "preview_deployment_setting=none, "
-              "deployments_enabled=false)."
+              f"PATCH source=null did not clear Git source "
+              f"(HTTP {patch_code}, success={patched.get('success')}); "
+              "trying DELETE /pages/projects/.../source."
           )
-          try:
-              with urllib.request.urlopen(request) as response:
-                  raw = response.read()
-          except urllib.error.HTTPError as error:
-              detail = error.read().decode("utf-8", errors="replace")[:2000]
-              raise SystemExit(f"Pages project PATCH failed HTTP {error.code}: {detail}") from error
+          delete_code, deleted, delete_text = request_json("DELETE", source_url)
+          get_code, refreshed, get_text = request_json("GET", project_url)
+          if (
+              deleted.get("success") is True
+              and refreshed.get("success") is True
+              and git_source(refreshed) is None
+          ):
+              log("Unlinked Cloudflare Pages Git source via DELETE /source.")
+              sys.exit(0)
 
-          patched = json.loads(raw)
-          assert patched.get("success") is True, patched
-          patched_config = ((patched.get("result") or {}).get("source") or {}).get("config") or {}
-          patched_deployments = patched_config.get("deployments_enabled")
-          patched_production = patched_config.get("production_deployments_enabled")
-          patched_preview = patched_config.get("preview_deployment_setting")
-          log(
-              "Disabled Cloudflare Pages Git auto-deploy "
-              f"(production_deployments_enabled={patched_production}, "
-              f"preview_deployment_setting={patched_preview}, "
-              f"deployments_enabled={patched_deployments})."
+          raise SystemExit(
+              "Failed to unlink Cloudflare Pages Git source. "
+              "Direct Upload is unchanged, but a linked Git source still false-reds. "
+              f"PATCH HTTP {patch_code}: {patch_text} "
+              f"DELETE HTTP {delete_code}: {delete_text} "
+              f"GET HTTP {get_code}: {get_text}"
           )
-          if patched_production is not False or patched_preview != "none":
-              raise SystemExit(
-                  "PATCH succeeded but Git auto-deploy is still enabled: "
-                  f"{patched_config}"
-              )
           PY
 
       - name: Build and verify routing
