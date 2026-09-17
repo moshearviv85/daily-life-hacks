@@ -289,6 +289,37 @@ test("food value database title and meta lead with nutrition-per-dollar intent",
   assert.match(description, /Not USDA-endorsed/);
 });
 
+test("rice and beans everyday title matches healthy everyday query", () => {
+  const rice = articleFrontmatter("can-you-eat-rice-and-beans-everyday");
+  const titleLower = rice.title.toLowerCase();
+  const excerptLower = rice.excerpt.toLowerCase();
+  assert.match(rice.title, /[Hh]ealthy/);
+  assert.match(rice.title, /[Rr]ice and [Bb]eans/);
+  assert.match(rice.title, /every day|everyday/i);
+  assert.ok(
+    titleLower.indexOf("healthy") < titleLower.indexOf("rice and beans"),
+    "rice and beans title should lead with healthy intent, not the old can-you-eat question",
+  );
+  assert.ok(
+    titleLower.indexOf("rice and beans") < titleLower.search(/every day|everyday/),
+    "rice and beans title should keep rice and beans before every day",
+  );
+  assert.equal(
+    /^can you eat rice and beans every day\?$/.test(titleLower),
+    false,
+    "rice and beans title should not be the old can-you-eat SERP that missed healthy",
+  );
+
+  assert.match(rice.excerpt, /is it healthy to eat rice and beans every day/i);
+  assert.match(rice.excerpt, /protein and fiber/i);
+  assert.match(rice.excerpt, /\$0\.32/);
+  assert.match(rice.excerpt, /23\.8/);
+  assert.ok(
+    excerptLower.indexOf("healthy") < excerptLower.indexOf("0.32"),
+    "rice and beans meta should put the healthy everyday query before the protein cost numbers",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
