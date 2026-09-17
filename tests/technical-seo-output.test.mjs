@@ -291,8 +291,34 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
         contentUrls.includes(flagship.huggingfaceCsv),
         `${flagship.slug} missing Hugging Face CSV DataDownload`,
       );
+      assert.ok(
+        contentUrls.includes(hf),
+        `${flagship.slug} missing Hugging Face dataset page DataDownload`,
+      );
       assert.equal(node.sameAs, hf, `${flagship.slug} Dataset sameAs should be the HF page`);
+      assert.equal(
+        node.license,
+        "https://creativecommons.org/licenses/by/4.0/",
+        `${flagship.slug} Dataset license should be CC-BY-4.0`,
+      );
+      assert.equal(
+        node.creator?.name,
+        "David Miller",
+        `${flagship.slug} Dataset creator should be David Miller`,
+      );
     }
+
+    assert.match(html, /Cite this study/);
+    assert.match(html, /Miller, D\. \(2026\)\./);
+    assert.match(html, /\[Data set\]/);
+    assert.match(html, /@dataset\{miller_(?:fiber|protein)_per_dollar_2026,/);
+    assert.match(
+      html,
+      new RegExp(
+        `${SITE}/${flagship.slug}/`.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+      ),
+    );
+    assert.doesNotMatch(html, /10\.5281|zenodo\.org/i);
   }
 
   const sourdough = readFileSync(
@@ -300,6 +326,17 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
     "utf8",
   );
   assert.doesNotMatch(sourdough, /huggingface\.co/);
+  assert.doesNotMatch(sourdough, /Cite this study/);
+
+  const otherStudy = readFileSync(
+    distHtmlFor(`${SITE}/animal-protein-per-dollar-ranked/`),
+    "utf8",
+  );
+  assert.doesNotMatch(
+    otherStudy,
+    /Cite this study/,
+    "APA/BibTeX cite block is flagship-only",
+  );
 
   const dataHub = readFileSync(distHtmlFor(`${SITE}/data/`), "utf8");
   assert.match(dataHub, new RegExp(hf.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
@@ -356,8 +393,15 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
       `${landingUrl} missing Hugging Face CSV contentUrl`,
     );
     assert.ok(
-      downloads.every((item) => item?.encodingFormat === "text/csv"),
-      `${landingUrl} DataDownload encodingFormat should be text/csv`,
+      contentUrls.includes(hf),
+      `${landingUrl} missing Hugging Face dataset page DataDownload`,
+    );
+    const csvDownloads = downloads.filter((item) =>
+      String(item?.contentUrl ?? "").endsWith(".csv"),
+    );
+    assert.ok(
+      csvDownloads.every((item) => item?.encodingFormat === "text/csv"),
+      `${landingUrl} CSV DataDownload encodingFormat should be text/csv`,
     );
     assert.ok(
       downloads.every(

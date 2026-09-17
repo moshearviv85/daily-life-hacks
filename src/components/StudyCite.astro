@@ -1,0 +1,119 @@
+---
+interface Props {
+  apa: string;
+  bibtex: string;
+  csvHref: string;
+  datasetId: string;
+  huggingfaceUrl?: string;
+  rows: number;
+}
+
+const { apa, bibtex, csvHref, datasetId, huggingfaceUrl, rows } = Astro.props;
+---
+
+<aside
+  class="study-cite"
+  aria-labelledby="citation-heading"
+>
+  <div class="study-cite-header">
+    <h2 id="citation-heading" class="study-cite-title">Cite this study</h2>
+    <span class="study-cite-meta">{rows} rows · CC-BY-4.0</span>
+  </div>
+  <p class="study-cite-note">
+    Copy the APA line or the BibTeX. Both point at this page, where the caveats live.
+  </p>
+
+  <p class="study-cite-label" id="citation-apa-label">APA</p>
+  <pre class="study-cite-block" aria-labelledby="citation-apa-label">{apa}</pre>
+  <textarea
+    readonly
+    rows="3"
+    id="citation-apa"
+    class="sr-only"
+    tabindex="-1"
+    aria-hidden="true"
+  >{apa}</textarea>
+
+  <p class="study-cite-label" id="citation-bibtex-label">BibTeX</p>
+  <pre class="study-cite-block study-cite-block-code" aria-labelledby="citation-bibtex-label">{bibtex}</pre>
+  <textarea
+    readonly
+    rows="8"
+    id="citation-bibtex"
+    class="sr-only"
+    tabindex="-1"
+    aria-hidden="true"
+  >{bibtex}</textarea>
+
+  <div class="study-cite-actions">
+    <button
+      type="button"
+      class="study-cite-copy"
+      data-copy-target="citation-apa"
+    >
+      Copy APA
+    </button>
+    <button
+      type="button"
+      class="study-cite-copy"
+      data-copy-target="citation-bibtex"
+    >
+      Copy BibTeX
+    </button>
+    <a
+      href={csvHref}
+      download
+      data-dataset-download
+      data-dataset-id={datasetId}
+      class="study-cite-link"
+    >
+      Download the CSV
+    </a>
+    {
+      huggingfaceUrl && (
+        <a
+          href={huggingfaceUrl}
+          class="study-cite-link"
+          rel="noopener"
+          target="_blank"
+        >
+          Hugging Face mirror (CC-BY-4.0)
+        </a>
+      )
+    }
+    <a href="/data-reuse/" class="study-cite-link">License terms</a>
+  </div>
+</aside>
+
+<script is:inline>
+  (function () {
+    var root = document.querySelector(".study-cite");
+    if (!root) return;
+    root.querySelectorAll("[data-copy-target]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var target = document.getElementById(btn.getAttribute("data-copy-target"));
+        if (!target) return;
+        var label = btn.textContent;
+        var done = function () {
+          btn.textContent = "Copied";
+          setTimeout(function () {
+            btn.textContent = label;
+          }, 2000);
+        };
+        var fallback = function () {
+          target.focus();
+          target.select();
+          try {
+            document.execCommand("copy");
+            done();
+          } catch (e) {}
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(target.value).then(done, fallback);
+        } else {
+          fallback();
+        }
+      });
+    });
+  })();
+</script>
