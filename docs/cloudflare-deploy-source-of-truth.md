@@ -24,7 +24,13 @@ Example on `main` tip `e322346` (2026-09-17):
 
 That red check is a Git-integration false negative, not a site-breaking GHA build failure.
 
-The deploy workflow PATCHes the Pages project on every main/staging (and scheduled) run so `source.config.deployments_enabled` stays `false`. It also sets `production_deployments_enabled` to `false` when the API returns that field. Direct Upload is unchanged.
+The deploy workflow PATCHes the Pages project on every main/staging (and scheduled) run. It keeps the linked GitHub repo (`source.type`, `owner`, `repo_name`, `production_branch`) and only disables automatic Git deployments:
+
+- `source.config.production_deployments_enabled: false`
+- `source.config.preview_deployment_setting: "none"`
+- `source.config.deployments_enabled: false` (deprecated compatibility flag)
+
+Wrangler Direct Upload is unchanged and remains the only publisher.
 
 ## How to judge live health
 

@@ -77,11 +77,13 @@ jobs:
               payload = json.load(handle)
           assert payload.get("success") is True, payload
 
-          source = (payload.get("result") or {}).get("source") or {}
+          result = payload.get("result") or {}
+          source = result.get("source") or {}
           source_type = source.get("type")
           config = dict(source.get("config") or {})
           deployments_enabled = config.get("deployments_enabled")
           production_deployments_enabled = config.get("production_deployments_enabled")
+          preview_deployment_setting = config.get("preview_deployment_setting")
 
           def log(message):
               print(message, flush=True)
@@ -92,27 +94,38 @@ jobs:
 
           owner = config.get("owner")
           repo_name = config.get("repo_name")
+          production_branch = config.get("production_branch") or result.get("production_branch")
           log(
               "Cloudflare Pages Git source: "
               f"type={source_type} owner={owner} repo={repo_name} "
+              f"production_branch={production_branch} "
               f"deployments_enabled={deployments_enabled} "
-              f"production_deployments_enabled={production_deployments_enabled}"
+              f"production_deployments_enabled={production_deployments_enabled} "
+              f"preview_deployment_setting={preview_deployment_setting}"
           )
-          if not owner or not repo_name:
+          if not owner or not repo_name or not production_branch:
               raise SystemExit(
-                  "Refusing to PATCH Pages source: owner/repo missing from GET response."
+                  "Refusing to PATCH Pages source: type/owner/repo/production_branch "
+                  "missing from GET response."
               )
 
           already_disabled = (
               deployments_enabled is False
-              and production_deployments_enabled is not True
+              and production_deployments_enabled is False
+              and preview_deployment_setting == "none"
           )
           if already_disabled:
               log("Cloudflare Pages Git auto-deploy already disabled; skipping PATCH.")
               sys.exit(0)
 
-          config["deployments_enabled"] = False
+          # Keep the linked GitHub repo; only disable automatic Git deployments.
+          # Prefer granular flags; also set deprecated deployments_enabled for compatibility.
+          config["owner"] = owner
+          config["repo_name"] = repo_name
+          config["production_branch"] = production_branch
           config["production_deployments_enabled"] = False
+          config["preview_deployment_setting"] = "none"
+          config["deployments_enabled"] = False
           body = json.dumps({"source": {"type": source_type, "config": config}}).encode()
           url = (
               f"https://api.cloudflare.com/client/v4/accounts/{account_id}"
@@ -129,8 +142,9 @@ jobs:
           )
           log(
               "Disabling Cloudflare Pages Git auto-deploy "
-              "(source.config.deployments_enabled=false, "
-              "production_deployments_enabled=false)."
+              "(production_deployments_enabled=false, "
+              "preview_deployment_setting=none, "
+              "deployments_enabled=false)."
           )
           try:
               with urllib.request.urlopen(request) as response:
@@ -144,12 +158,14 @@ jobs:
           patched_config = ((patched.get("result") or {}).get("source") or {}).get("config") or {}
           patched_deployments = patched_config.get("deployments_enabled")
           patched_production = patched_config.get("production_deployments_enabled")
+          patched_preview = patched_config.get("preview_deployment_setting")
           log(
               "Disabled Cloudflare Pages Git auto-deploy "
-              f"(deployments_enabled={patched_deployments}, "
-              f"production_deployments_enabled={patched_production})."
+              f"(production_deployments_enabled={patched_production}, "
+              f"preview_deployment_setting={patched_preview}, "
+              f"deployments_enabled={patched_deployments})."
           )
-          if patched_deployments is not False and patched_production is not False:
+          if patched_production is not False or patched_preview != "none":
               raise SystemExit(
                   "PATCH succeeded but Git auto-deploy is still enabled: "
                   f"{patched_config}"
