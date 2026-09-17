@@ -36,7 +36,7 @@ When the tubs come in different sizes and both are wearing sale stickers, the [g
 
 ## Which has more protein, cottage cheese or Greek yogurt?
 
-Cottage cheese, but barely. A half cup of cottage cheese carries about 12 to 14 grams of protein against 10 to 12 grams for plain nonfat Greek yogurt. Per dollar the order flips: Greek yogurt delivers 27.5 grams of protein per dollar and 4% cottage cheese 26.3, using USDA data and July 2026 prices. The real difference is sodium, not protein.
+Cottage cheese, but barely. A half cup of cottage cheese carries about 12 to 14 grams of protein against 10 to 12 grams for plain nonfat Greek yogurt. Per dollar the order flips: Greek yogurt delivers 27.5 grams of [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and 4% cottage cheese 26.3, using USDA data and July 2026 prices. The real difference is sodium, not protein.
 
 | | Protein per 1/2 cup | Protein per $1 |
 |---|---|---|

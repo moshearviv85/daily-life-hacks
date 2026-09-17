@@ -95,7 +95,7 @@ If your broccoli releases a lot of water, roast it a few minutes longer after re
 
 ## Can you change the grain, vegetables, or sauce?
 
-Absolutely. Brown rice, farro, and barley all work, but cook them according to their own package directions. For vegetables, use cauliflower, Brussels sprouts, sweet potato, zucchini, or whatever is reasonably priced and not collapsing in the produce drawer. Frozen bags count here too, and [the fiber-per-dollar comparison between frozen and fresh](/frozen-vs-fresh-vegetables-fiber-cost/) makes a decent case for them.
+Absolutely. Brown rice, farro, and barley all work, but cook them according to their own package directions. For vegetables, use cauliflower, Brussels sprouts, sweet potato, zucchini, or whatever is reasonably priced and not collapsing in the produce drawer. Frozen bags count here too, and [the fiber-per-dollar comparison between frozen and fresh](/frozen-vs-fresh-vegetables-fiber-cost/) makes a decent case for them. The wider staple ranking is our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), where dried beans and oats keep beating pretty produce.
 
 The marinade can also change. Add grated ginger and lime, use a peanut sauce, or increase the red pepper if your desk lunch needs to wake you up. Edamame or chickpeas can make the bowls more substantial without adding another cooking project.
 

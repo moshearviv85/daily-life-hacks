@@ -20,6 +20,15 @@ const requiredLinks = [
   ["canned-vs-dry-beans-cost", fiberFlagship],
   ["can-you-eat-rice-and-beans-everyday", proteinFlagship],
   ["can-you-eat-rice-and-beans-everyday", fiberFlagship],
+  ["high-protein-vs-high-fiber-satiety", proteinFlagship],
+  ["high-protein-vs-high-fiber-satiety", fiberFlagship],
+  ["vegan-high-fiber-meal-prep-for-week", fiberFlagship],
+  ["high-fiber-burrito-bowl-meal-prep", fiberFlagship],
+  ["plant-protein-per-dollar-ranked", proteinFlagship],
+  ["plant-protein-per-dollar-ranked", fiberFlagship],
+  ["cheapest-complete-protein-pairs", proteinFlagship],
+  ["cheapest-complete-protein-pairs", fiberFlagship],
+  ["cottage-cheese-vs-greek-yogurt-protein-uses", proteinFlagship],
 ];
 
 function articleBody(slug) {
