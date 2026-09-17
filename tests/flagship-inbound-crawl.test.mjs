@@ -32,6 +32,12 @@ const requiredLinks = [
   ["how-to-eat-more-fiber-on-a-budget-complete-guide", proteinFlagship],
   ["lentil-curry-high-fiber-vegan-dinner", fiberFlagship],
   ["frozen-vs-fresh-produce-when-to-buy", fiberFlagship],
+  ["easy-black-bean-tacos-weeknight-dinner", proteinFlagship],
+  ["easy-black-bean-tacos-weeknight-dinner", fiberFlagship],
+  ["how-to-cook-dried-beans-from-scratch", proteinFlagship],
+  ["how-to-cook-dried-beans-from-scratch", fiberFlagship],
+  ["high-fiber-quinoa-salad-for-lunch-prep", fiberFlagship],
+  ["high-protein-bagel-sandwich-ideas-lunch", proteinFlagship],
 ];
 
 function articleBody(slug) {
@@ -92,4 +98,37 @@ test("nutrition hub cites both flagships in the intro, not only article cards", 
     1,
   );
   assert.equal(source.includes(retiredProteinSlug), false);
+});
+
+function pageSource(...segments) {
+  const pagePath = join(process.cwd(), "src", "pages", ...segments);
+  assert.equal(existsSync(pagePath), true, `missing page: ${segments.join("/")}`);
+  return readFileSync(pagePath, "utf8");
+}
+
+function htmlHrefMatches(source, slug) {
+  return source.match(new RegExp(`href="/${slug}/"`, "g")) ?? [];
+}
+
+const leftoverToolPages = [
+  ["tools hub intro", ["tools", "index.astro"]],
+  ["dried beans converter", ["tools", "dried-beans-to-canned-converter", "index.astro"]],
+  ["grocery budget calculator", ["tools", "grocery-budget-calculator", "index.astro"]],
+];
+
+test("leftover tool pages cite each flagship once in the page source", () => {
+  for (const [label, segments] of leftoverToolPages) {
+    const source = pageSource(...segments);
+    assert.equal(
+      htmlHrefMatches(source, fiberFlagship).length,
+      1,
+      `${label} should link to /${fiberFlagship}/ exactly once`,
+    );
+    assert.equal(
+      htmlHrefMatches(source, proteinFlagship).length,
+      1,
+      `${label} should link to /${proteinFlagship}/ exactly once`,
+    );
+    assert.equal(source.includes(retiredProteinSlug), false);
+  }
 });
