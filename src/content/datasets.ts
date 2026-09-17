@@ -503,6 +503,7 @@ export function datasetDistributions(dataset: DatasetMeta, siteUrl: string) {
     distributions.push({
       "@type": "DataDownload",
       name: "Hugging Face dataset",
+      encodingFormat: "text/html",
       contentUrl: HUGGINGFACE_DATASET_URL,
       license: DATA_LICENSE_URL,
     });

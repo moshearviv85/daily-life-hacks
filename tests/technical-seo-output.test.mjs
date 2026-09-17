@@ -393,8 +393,15 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
       `${landingUrl} missing Hugging Face CSV contentUrl`,
     );
     assert.ok(
-      downloads.every((item) => item?.encodingFormat === "text/csv"),
-      `${landingUrl} DataDownload encodingFormat should be text/csv`,
+      contentUrls.includes(hf),
+      `${landingUrl} missing Hugging Face dataset page DataDownload`,
+    );
+    const csvDownloads = downloads.filter((item) =>
+      String(item?.contentUrl ?? "").endsWith(".csv"),
+    );
+    assert.ok(
+      csvDownloads.every((item) => item?.encodingFormat === "text/csv"),
+      `${landingUrl} CSV DataDownload encodingFormat should be text/csv`,
     );
     assert.ok(
       downloads.every(
