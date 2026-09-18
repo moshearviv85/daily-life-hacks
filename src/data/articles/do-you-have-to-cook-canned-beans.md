@@ -38,6 +38,8 @@ This trips people up constantly, and the confusion is fair. Dry beans genuinely 
 
 *Source: USDA FoodData Central + US store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 
+Those canned rows are the convenience slice of the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) and the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Dry bags still win both lists. The can is what you open when you don't have an hour.
+
 ## Are canned beans already cooked?
 
 Yes, and the reason is the whole point of a can. Low acid foods like beans are sealed and then heat processed under [the FDA's thermal processing rule for hermetically sealed containers](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-113). That heat step is what lets a can sit in a cupboard for years without a refrigerator anywhere near it.
