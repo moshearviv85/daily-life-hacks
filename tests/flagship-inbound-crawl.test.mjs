@@ -56,6 +56,13 @@ const requiredLinks = [
   ["chicken-thighs-vs-breast-protein-cost", "cheapest-protein-per-gram"],
   ["one-dollar-protein-what-it-buys", proteinFlagship],
   ["one-dollar-protein-what-it-buys", "one-dollar-fiber-what-it-buys"],
+  ["how-much-dried-beans-per-person", proteinFlagship],
+  ["how-much-dried-beans-per-person", fiberFlagship],
+  ["how-much-oatmeal-is-a-serving", proteinFlagship],
+  ["how-much-oatmeal-is-a-serving", fiberFlagship],
+  ["how-much-protein-for-breakfast", proteinFlagship],
+  ["how-much-protein-for-breakfast", fiberFlagship],
+  ["which-foods-are-complete-proteins", proteinFlagship],
 ];
 
 function articleBody(slug) {
@@ -232,6 +239,49 @@ test("guides hub cites both flagships above the fold, plus dataset landings", ()
   assert.equal(htmlHrefMatches(intro, "one-dollar-fiber-what-it-buys").length, 0);
   assert.equal(htmlHrefMatches(source, "one-dollar-fiber-what-it-buys").length, 1);
   assert.equal(htmlHrefMatches(source, "cheapest-protein-per-gram").length, 1);
+  assert.equal(source.includes(retiredProteinSlug), false);
+});
+
+test("data hub names both flagship indexes with hrefs before the dataset table", () => {
+  const source = pageSource("data", "index.astro");
+  const headerEnd = source.indexOf('id="datasets"');
+  assert.ok(headerEnd > 0, "data hub should keep the datasets heading");
+  const intro = source.slice(0, headerEnd);
+  assert.equal(
+    htmlHrefMatches(intro, fiberFlagship).length,
+    1,
+    "data hub intro should link the fiber flagship once",
+  );
+  assert.equal(
+    htmlHrefMatches(intro, proteinFlagship).length,
+    1,
+    "data hub intro should link the protein flagship once",
+  );
+  assert.equal(source.includes(retiredProteinSlug), false);
+});
+
+test("research hub intro cites both flagships before the study cards", () => {
+  const source = pageSource("research", "index.astro");
+  const headerEnd = source.indexOf('id="study-heading"');
+  assert.ok(headerEnd > 0, "research hub should keep the study heading");
+  const intro = source.slice(0, headerEnd);
+  assert.equal(
+    htmlHrefMatches(intro, fiberFlagship).length,
+    1,
+    "research hub intro should link the fiber flagship once",
+  );
+  assert.equal(
+    htmlHrefMatches(intro, proteinFlagship).length,
+    1,
+    "research hub intro should link the protein flagship once",
+  );
+  assert.equal(source.includes(retiredProteinSlug), false);
+});
+
+test("data reuse page cites both flagship studies once", () => {
+  const source = pageSource("data-reuse.astro");
+  assert.equal(htmlHrefMatches(source, fiberFlagship).length, 1);
+  assert.equal(htmlHrefMatches(source, proteinFlagship).length, 1);
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 
