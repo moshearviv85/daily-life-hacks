@@ -77,11 +77,11 @@ Notice how none of those cost a dollar. High protein breakfast is one of the few
 
 It seems to, at least for how long a breakfast holds. Protein gets all the attention and the eggs have zero fiber, which is the gap nobody mentions.
 
-Oats bring 6.1 grams of fiber in a 60 gram bowl, about 22 percent of the 28 gram Daily Value. Half a can of black beans brings a serious contribution alongside its 13.3 grams of protein. Two slices of whole wheat toast add 3.1 grams. Pairing a protein source with a fiber source is the whole trick behind [a breakfast that keeps you full](/balanced-breakfast-that-keeps-you-full/), and it may do more for a ten o'clock crash than adding a fourth egg.
+Oats bring 6.1 grams of fiber in a 60 gram bowl, about 22 percent of the 28 gram Daily Value. Half a can of black beans brings a serious contribution alongside its 13.3 grams of protein. Two slices of whole wheat toast add 3.1 grams. Pairing a protein source with a fiber source is the whole trick behind [a breakfast that keeps you full](/balanced-breakfast-that-keeps-you-full/), and it may do more for a ten o'clock crash than adding a fourth egg. The grocery-wide version of that fiber math is the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
 
 ## What's the cheapest way to hit the number?
 
-Oats and eggs, then peanut butter to top it up. Across breakfast staples, whole wheat flour leads on combined protein and fiber per dollar at 173.8 grams, oats hit 82.4, peanut butter 62.1, and eggs 34.4. Gala apples come in at 7.3, which tells you something about fruit as a breakfast anchor. The full ranking is in [the cheapest high-protein breakfast foods](/breakfast-staples-per-dollar/).
+Oats and eggs, then peanut butter to top it up. Across breakfast staples, whole wheat flour leads on combined protein and fiber per dollar at 173.8 grams, oats hit 82.4, peanut butter 62.1, and eggs 34.4. Gala apples come in at 7.3, which tells you something about fruit as a breakfast anchor. The grocery-wide ranking those breakfast numbers sit inside is the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), and the breakfast cut is in [the cheapest high-protein breakfast foods](/breakfast-staples-per-dollar/).
 
 If breakfast is where your protein day falls apart, the fix is one cheap addition to something you already eat rather than a new routine. [How to get more protein at breakfast](/how-to-get-more-protein-at-breakfast/) is the add-on list with grams and prices, and the whole-cart version is [high protein on a budget](/high-protein-on-a-budget-complete-guide/).
 

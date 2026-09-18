@@ -54,7 +54,7 @@ About 19.9. A 42 ounce canister is 1191 grams at $3.36, so 60 gram servings work
 
 That whole canister is 156.6 grams of protein and 120.3 grams of fiber. Put differently, one $3.36 purchase covers more than three days of the FDA's 50 gram protein Daily Value and more than four days of its 28 gram fiber Daily Value, if you were eating nothing but oats, which would be a bleak experiment.
 
-The per-dollar version: 46.6 grams of protein per dollar and 35.8 grams of fiber per dollar. That ranks oats second among breakfast staples in [the cheapest high-protein breakfast foods](/breakfast-staples-per-dollar/), behind only whole wheat flour.
+The per-dollar version: [46.6 grams of protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and [35.8 grams of fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/). That ranks oats second among breakfast staples in [the cheapest high-protein breakfast foods](/breakfast-staples-per-dollar/), behind only whole wheat flour.
 
 ## How much oatmeal should you eat for breakfast?
 
