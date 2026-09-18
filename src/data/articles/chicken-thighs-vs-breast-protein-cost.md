@@ -37,7 +37,7 @@ Bone-in chicken drumsticks deliver 50.3 grams of protein per dollar. Boneless sk
 
 Drumsticks, by a lot, and the number that gets it there is the shelf price. A 5 pound bag of bone-in drumsticks costs $5.46. A single pound of boneless skinless breast costs $4.17 at the May 2026 national average. That's about 24 cents per 100 grams against about 92 cents.
 
-Breast fights back on density and loses anyway. It carries 22.5 grams of protein per 100 grams, the most of any cut here, while drumstick meat carries 18.08. So you're getting less protein per bite from the drumstick and still ending up with twice as much protein per dollar. Price is doing all the work.
+Breast fights back on density and loses anyway. It carries 22.5 grams of protein per 100 grams, the most of any cut here, while drumstick meat carries 18.08. So you're getting less protein per bite from the drumstick and still ending up with twice as much protein per dollar. Price is doing all the work. The same cents-per-gram view across all 49 foods is in the [cheapest protein per gram ranking](/cheapest-protein-per-gram/).
 
 Boneless skinless thighs are the interesting middle. At $3.22 a pound they land at 27.7 grams per dollar, roughly 13 percent better than breast. Real, but nothing you'd reorganize your kitchen over. Take the bone out and you hand most of the savings back to the store.
 
