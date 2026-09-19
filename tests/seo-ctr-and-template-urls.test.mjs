@@ -33,9 +33,14 @@ function articleFrontmatter(slug) {
 
 test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   const popcorn = articleFrontmatter("popcorn-vs-potato-chips-fiber-comparison");
+  assert.match(popcorn.title, /^Chips vs Popcorn Calories/);
   assert.match(popcorn.title, /108/);
   assert.match(popcorn.title, /149/);
   assert.match(popcorn.title, /[Cc]alories/);
+  assert.ok(
+    popcorn.title.length <= 60,
+    `popcorn title too long for SERP: ${popcorn.title.length}`,
+  );
   const titleLower = popcorn.title.toLowerCase();
   const calorieAt = titleLower.indexOf("calorie");
   const fiberAt = titleLower.search(/fiber/);
@@ -44,6 +49,20 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
     fiberAt === -1 || calorieAt < fiberAt,
     "popcorn title should lead with calories, not fiber",
   );
+  assert.ok(
+    titleLower.indexOf("chips vs popcorn calories") === 0,
+    "popcorn title should lead with chips vs popcorn calories query",
+  );
+  assert.ok(
+    titleLower.indexOf("149") < titleLower.indexOf("108"),
+    "popcorn title should put chips calories (149) before popcorn (108)",
+  );
+  assert.equal(
+    titleLower.startsWith("popcorn vs"),
+    false,
+    "popcorn title should not lead popcorn-first and miss chips vs popcorn calories",
+  );
+  assert.match(popcorn.excerpt, /[Cc]hips vs popcorn calories/);
   assert.match(popcorn.excerpt, /108/);
   assert.match(popcorn.excerpt, /149/);
   assert.match(popcorn.excerpt, /4\.1g/);
@@ -52,6 +71,14 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   assert.ok(
     excerptLower.indexOf("calorie") < excerptLower.search(/fiber|4\.1g/),
     "popcorn meta should put calories before fiber so the SERP snippet is not truncated",
+  );
+  assert.ok(
+    excerptLower.indexOf("chips vs popcorn calories") < excerptLower.indexOf("149"),
+    "popcorn meta should put chips vs popcorn calories before the USDA numbers",
+  );
+  assert.ok(
+    popcorn.excerpt.length <= 160,
+    `popcorn meta too long: ${popcorn.excerpt.length}`,
   );
 
   const pizza = articleFrontmatter("comparing-fiber-content-different-pizza-crusts");
