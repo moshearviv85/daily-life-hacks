@@ -10,6 +10,7 @@ import {
   type ContentClusterId,
 } from "../../content/clusters";
 import { resolveArticleCluster } from "../../content/relatedArticleScoring.js";
+import { HUGGINGFACE_DATASET_URL } from "../../content/datasets";
 
 const title = "Complete Guides | Daily Life Hacks";
 const description =
@@ -73,9 +74,26 @@ const guidesSchema = {
     <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--heading-color);">
       Guides
     </h1>
-    <p class="text-lg mb-10" style="color: var(--text-color);">
+    <p class="text-lg mb-5" style="color: var(--text-color);">
       Four complete playbooks. Pick the job you care about, then use the linked
-      articles for the next step. Grocery nutrition generally comes from USDA FoodData Central;
+      articles for the next step.
+    </p>
+    <p class="text-lg mb-5" style="color: var(--text-color);">
+      The fiber and protein playbooks keep landing on the same July 2026 grocery math:
+      {" "}
+      <a href="/fiber-per-dollar-cheapest-high-fiber-foods/" class="underline" style="color: #F29B30;">53 foods ranked by fiber per dollar</a>
+      {" "}and the{" "}
+      <a href="/cheapest-protein-per-gram/" class="underline" style="color: #F29B30;">cheapest protein per gram ranking</a>
+      {" "}of the 49-food protein table. If you want to cite or reuse the rows, start at the
+      {" "}
+      <a href="/data/fiber-per-dollar-2026/" class="underline" style="color: #F29B30;">fiber CSV</a>,
+      {" "}the{" "}
+      <a href="/data/protein-per-dollar-2026/" class="underline" style="color: #F29B30;">protein CSV</a>,
+      {" "}or the{" "}
+      <a href={HUGGINGFACE_DATASET_URL} class="underline" style="color: #F29B30;" rel="noopener" target="_blank">Hugging Face mirror</a>.
+    </p>
+    <p class="text-lg mb-10" style="color: var(--text-color);">
+      Grocery nutrition generally comes from USDA FoodData Central;
       restaurant comparisons use chain-published nutrition, and three published datasets carry the
       same recorded TVP product-label value. USDA publishes no textured vegetable protein record, so
       that row cites the manufacturer's own label and is labelled as such. DIAAS inputs cite
@@ -106,6 +124,21 @@ const guidesSchema = {
               <p class="mb-5" style="color: var(--muted-color);">
                 {cluster.blurb}
               </p>
+              {
+                cluster.id === "budget-fiber" && (
+                  <p class="mb-5" style="color: var(--text-color);">
+                    The short $1 cut is{" "}
+                    <a
+                      href="/one-dollar-fiber-what-it-buys/"
+                      class="underline"
+                      style="color: #F29B30;"
+                    >
+                      what one dollar of fiber buys
+                    </a>
+                    .
+                  </p>
+                )
+              }
               <a
                 href={`/${cluster.parentPillar}/`}
                 class="inline-flex font-bold mb-6"

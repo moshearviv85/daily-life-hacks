@@ -52,6 +52,10 @@ const requiredLinks = [
   ["hearty-vegetarian-chili-with-three-beans-and-corn", fiberFlagship],
   ["high-fiber-hummus-recipe-homemade", proteinFlagship],
   ["high-fiber-hummus-recipe-homemade", fiberFlagship],
+  ["protein-per-dollar-cheapest-protein-sources", "cheapest-protein-per-gram"],
+  ["chicken-thighs-vs-breast-protein-cost", "cheapest-protein-per-gram"],
+  ["one-dollar-protein-what-it-buys", proteinFlagship],
+  ["one-dollar-protein-what-it-buys", "one-dollar-fiber-what-it-buys"],
 ];
 
 function articleBody(slug) {
@@ -95,6 +99,16 @@ test("sourdough stays out of the flagship crawl-path bet", () => {
       hrefMatches(body, proteinFlagship).length,
       0,
       `${slug} should not link to /${proteinFlagship}/`,
+    );
+    assert.equal(
+      hrefMatches(body, "cheapest-protein-per-gram").length,
+      0,
+      `${slug} should not link to /cheapest-protein-per-gram/`,
+    );
+    assert.equal(
+      hrefMatches(body, "one-dollar-fiber-what-it-buys").length,
+      0,
+      `${slug} should not link to /one-dollar-fiber-what-it-buys/`,
     );
   }
 });
@@ -194,6 +208,30 @@ test("KEEP grocery protein-per-gram ranking cites the fiber flagship once", () =
   const source = pageSource("cheapest-protein-per-gram.astro");
   assert.equal(htmlHrefMatches(source, fiberFlagship).length, 1);
   assert.equal(htmlHrefMatches(source, proteinFlagship).length, 1);
+  assert.equal(source.includes(retiredProteinSlug), false);
+});
+
+test("guides hub cites both flagships above the fold, plus dataset landings", () => {
+  const source = pageSource("guides", "index.astro");
+  const headerEnd = source.indexOf("space-y-10");
+  assert.ok(headerEnd > 0, "guides hub should keep the cluster list");
+  const intro = source.slice(0, headerEnd);
+  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 1);
+  assert.equal(htmlHrefMatches(intro, "cheapest-protein-per-gram").length, 1);
+  assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 0);
+  assert.equal(
+    (intro.match(/href="\/data\/fiber-per-dollar-2026\/"/g) ?? []).length,
+    1,
+  );
+  assert.equal(
+    (intro.match(/href="\/data\/protein-per-dollar-2026\/"/g) ?? []).length,
+    1,
+  );
+  assert.equal(intro.includes("HUGGINGFACE_DATASET_URL"), true);
+  assert.equal(source.includes('../../content/datasets'), true);
+  assert.equal(htmlHrefMatches(intro, "one-dollar-fiber-what-it-buys").length, 0);
+  assert.equal(htmlHrefMatches(source, "one-dollar-fiber-what-it-buys").length, 1);
+  assert.equal(htmlHrefMatches(source, "cheapest-protein-per-gram").length, 1);
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 

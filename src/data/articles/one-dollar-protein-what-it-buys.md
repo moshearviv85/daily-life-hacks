@@ -21,7 +21,7 @@ faq:
     answer: "In our sample, yes. Whole wheat spaghetti delivered 53.4 grams of protein per dollar versus 47.7 for regular spaghetti at July 2026 prices, so the whole wheat box was the better protein buy as well as the higher fiber one."
 ---
 
-One dollar buys 97.9 grams of protein if you hand it to the dry pinto beans, nearly two days of the FDA's 50 gram Daily Value from a single dollar bill. Hand that same dollar to dry roasted peanuts, the last-place finisher in this 15-food cut, and you still walk away with 39.8 grams. These are the overachievers: the foods from our full [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) where a buck goes furthest, at July 2026 prices.
+One dollar buys 97.9 grams of protein if you hand it to the dry pinto beans, nearly two days of the FDA's 50 gram Daily Value from a single dollar bill. Hand that same dollar to dry roasted peanuts, the last-place finisher in this 15-food cut, and you still walk away with 39.8 grams. These are the overachievers: the foods from our full [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) where a buck goes furthest, at July 2026 prices. The matching fiber dollar is [what $1 of fiber buys](/one-dollar-fiber-what-it-buys/).
 
 | Rank | Food | Protein per $1 | Package | Price |
 |---|---|---|---|---|
