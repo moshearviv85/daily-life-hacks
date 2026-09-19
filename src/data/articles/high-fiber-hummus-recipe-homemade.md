@@ -67,7 +67,7 @@ faq:
 ---
 Homemade hummus turns creamy when you give it enough tahini, enough blending time, and a little cold liquid at the end. That's the whole operation. No chickpea peeling marathon. No specialty equipment beyond a food processor. No tiny refrigerated tub charging rent by the ounce.
 
-This version uses two cans of chickpeas and half a cup of tahini, so it has real body without becoming stiff. Fresh lemon and garlic keep it sharp. Two cans is also a couple of dollars of groceries, which is the general argument for beans once you see [how they compare with ground beef on protein per dollar](/ground-beef-vs-beans-protein-cost/). The texture should hold a swipe from a piece of pita but shouldn't grip the pita and refuse to let go.
+This version uses two cans of chickpeas and half a cup of tahini, so it has real body without becoming stiff. Fresh lemon and garlic keep it sharp. Two cans is also a couple of dollars of groceries, which is the general argument for beans once you see [how they compare with ground beef on protein per dollar](/ground-beef-vs-beans-protein-cost/). The dry bag is cheaper still, which is why chickpeas show up on both the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) and the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). The texture should hold a swipe from a piece of pita but shouldn't grip the pita and refuse to let go.
 
 ## Why does homemade hummus turn grainy?
 

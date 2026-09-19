@@ -42,6 +42,16 @@ const requiredLinks = [
   ["one-dollar-fiber-what-it-buys", fiberFlagship],
   ["high-fiber-snacks-per-dollar", proteinFlagship],
   ["high-fiber-snacks-per-dollar", fiberFlagship],
+  ["how-to-eat-cheap-at-home", proteinFlagship],
+  ["how-to-eat-cheap-at-home", fiberFlagship],
+  ["do-you-have-to-cook-canned-beans", proteinFlagship],
+  ["do-you-have-to-cook-canned-beans", fiberFlagship],
+  ["how-to-quick-soak-dried-beans-same-day", proteinFlagship],
+  ["how-to-quick-soak-dried-beans-same-day", fiberFlagship],
+  ["hearty-vegetarian-chili-with-three-beans-and-corn", proteinFlagship],
+  ["hearty-vegetarian-chili-with-three-beans-and-corn", fiberFlagship],
+  ["high-fiber-hummus-recipe-homemade", proteinFlagship],
+  ["high-fiber-hummus-recipe-homemade", fiberFlagship],
 ];
 
 function articleBody(slug) {
@@ -65,15 +75,33 @@ test("ranking pages keep one honest in-body href to each required flagship", () 
   }
 });
 
+const sourdoughSlugs = [
+  "easy-sourdough-discard-recipes-beginners",
+  "easy-sourdough-discard-pizza-dough-no-yeast",
+  "gluten-free-sourdough-discard-pizza-dough",
+  "how-to-make-sourdough-pizza-dough-same-day",
+  "how-to-measure-sourdough-discard-grams",
+];
+
 test("sourdough stays out of the flagship crawl-path bet", () => {
-  const body = articleBody("easy-sourdough-discard-recipes-beginners");
-  assert.equal(hrefMatches(body, fiberFlagship).length, 0);
-  assert.equal(hrefMatches(body, proteinFlagship).length, 0);
+  for (const slug of sourdoughSlugs) {
+    const body = articleBody(slug);
+    assert.equal(
+      hrefMatches(body, fiberFlagship).length,
+      0,
+      `${slug} should not link to /${fiberFlagship}/`,
+    );
+    assert.equal(
+      hrefMatches(body, proteinFlagship).length,
+      0,
+      `${slug} should not link to /${proteinFlagship}/`,
+    );
+  }
 });
 
 test("edited articles do not reintroduce the retired protein flagship slug", () => {
   const sources = new Set(requiredLinks.map(([source]) => source));
-  sources.add("easy-sourdough-discard-recipes-beginners");
+  for (const slug of sourdoughSlugs) sources.add(slug);
 
   for (const slug of sources) {
     assert.equal(
@@ -101,6 +129,30 @@ test("nutrition hub cites both flagships in the intro, not only article cards", 
       .length,
     1,
   );
+  assert.equal(source.includes(retiredProteinSlug), false);
+});
+
+test("recipes hub cites both flagships in the intro, not only recipe cards", () => {
+  const source = pageSource("recipes", "index.astro");
+  const headerEnd = source.indexOf("Cooking for two instead of six");
+  assert.ok(headerEnd > 0, "recipes hub should keep the servings callout");
+  const intro = source.slice(0, headerEnd);
+  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 1);
+  assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 1);
+  assert.equal(htmlHrefMatches(source, fiberFlagship).length, 1);
+  assert.equal(htmlHrefMatches(source, proteinFlagship).length, 1);
+  assert.equal(source.includes(retiredProteinSlug), false);
+});
+
+test("tips hub cites both flagships in the intro, not only article cards", () => {
+  const source = pageSource("tips", "index.astro");
+  const headerEnd = source.indexOf("All kitchen and money-saving tips");
+  assert.ok(headerEnd > 0, "tips hub should keep the article-grid heading");
+  const intro = source.slice(0, headerEnd);
+  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 1);
+  assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 1);
+  assert.equal(htmlHrefMatches(source, fiberFlagship).length, 1);
+  assert.equal(htmlHrefMatches(source, proteinFlagship).length, 1);
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 
