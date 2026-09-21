@@ -169,42 +169,46 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   );
 });
 
-test("canned beans vs dried beans nutrition title leads with or-dry-beans query", () => {
+test("canned beans vs dried beans nutrition title leads with dried-vs-canned query", () => {
   const beans = articleFrontmatter("canned-beans-vs-dried-beans-nutrition");
   const titleLower = beans.title.toLowerCase();
   const excerptLower = beans.excerpt.toLowerCase();
 
-  assert.match(beans.title, /^Canned Beans or Dry Beans/);
+  assert.match(beans.title, /^Dried Beans vs Canned Beans: Nutrition Compared$/);
   assert.ok(
     beans.title.length <= 60,
     `nutrition beans title too long for SERP: ${beans.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("canned beans or dry beans"),
-    "nutrition beans title should lead with GSC query canned beans or dry beans",
+    titleLower.startsWith("dried beans vs canned beans"),
+    "nutrition beans title should lead with GSC query dried beans vs canned beans",
   );
   assert.ok(
-    titleLower.indexOf("canned beans or dry beans") < titleLower.indexOf("nutrition"),
+    titleLower.indexOf("dried beans vs canned beans") < titleLower.indexOf("nutrition"),
     "nutrition should trail the ranking query, not lead the SERP title",
   );
   assert.equal(
-    titleLower.startsWith("canned beans vs dried"),
+    /^canned beans or dry beans/.test(titleLower),
     false,
-    "nutrition beans title should not lead with vs dried, which under-matches or dry beans",
+    "nutrition beans title should not lead with canned beans or dry beans",
   );
 
-  assert.match(beans.excerpt, /[Cc]anned beans or dry beans/);
+  assert.match(beans.excerpt, /[Dd]ried beans vs canned beans/);
   assert.match(beans.excerpt, /21\.6 g/);
   assert.match(beans.excerpt, /6\.0 g/);
   assert.match(beans.excerpt, /81\.0 g/);
   assert.match(beans.excerpt, /30\.1 g/);
   assert.ok(
-    excerptLower.indexOf("canned beans or dry beans") < excerptLower.indexOf("21.6"),
+    excerptLower.indexOf("dried beans vs canned beans") < excerptLower.indexOf("21.6"),
     "beans nutrition meta should put the ranking query before the USDA numbers",
   );
   assert.ok(
     beans.excerpt.length <= 160,
     `nutrition beans meta too long: ${beans.excerpt.length}`,
+  );
+  assert.ok(
+    excerptLower.indexOf("dried beans vs canned beans") === 0,
+    "beans nutrition meta should put dried beans vs canned beans first",
   );
 });
 
