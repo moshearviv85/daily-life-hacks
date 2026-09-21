@@ -424,6 +424,51 @@ test("soggy sandwich title leads with prevent query", () => {
   );
 });
 
+test("packed lunch title leads with soggy sandwiches and wilted salads", () => {
+  const page = articleFrontmatter("how-to-pack-lunch-crisp-sandwiches-salads");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+
+  assert.match(page.title, /^Pack Lunch Without Soggy Sandwiches or Wilted Salads$/);
+  assert.ok(
+    page.title.length <= 60,
+    `packed lunch title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.indexOf("pack lunch without") === 0,
+    "packed lunch title should lead with pack lunch without, not stay-crisp how-to",
+  );
+  assert.ok(
+    titleLower.indexOf("soggy sandwiches") !== -1,
+    "packed lunch title should name soggy sandwiches",
+  );
+  assert.ok(
+    titleLower.indexOf("wilted salads") !== -1,
+    "packed lunch title should name wilted salads",
+  );
+  assert.equal(
+    /^how to pack lunch so sandwiches and salads stay crisp$/.test(titleLower),
+    false,
+    "packed lunch title should not be the old stay-crisp SERP",
+  );
+
+  assert.match(page.excerpt, /pack lunch without/i);
+  assert.match(page.excerpt, /soggy sandwiches/i);
+  assert.match(page.excerpt, /wilted salads/i);
+  assert.ok(
+    page.excerpt.length <= 160,
+    `packed lunch meta too long: ${page.excerpt.length}`,
+  );
+  assert.ok(
+    excerptLower.indexOf("pack lunch without") === 0,
+    "packed lunch meta should put pack lunch without first",
+  );
+  assert.ok(
+    excerptLower.indexOf("soggy sandwiches") < excerptLower.indexOf("wilted salads"),
+    "packed lunch meta should keep soggy sandwiches before wilted salads",
+  );
+});
+
 test("food value database title and meta lead with nutrition-per-dollar intent", () => {
   const page = readFileSync(join(ROOT, "src/pages/food-value-database/index.astro"), "utf8");
   const title = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
