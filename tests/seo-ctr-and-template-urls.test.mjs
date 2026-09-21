@@ -428,6 +428,37 @@ test("soggy sandwich title leads with prevent query", () => {
   );
 });
 
+test("savory chia title leads with chia seed recipes query", () => {
+  const page = articleFrontmatter("savory-chia-seed-recipes-breakfast");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+
+  assert.match(page.title, /^Savory Chia Seed Recipes for Breakfast$/);
+  assert.ok(
+    page.title.length <= 60,
+    `savory chia title too long for SERP: ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("savory chia seed recipes"),
+    "savory chia title should lead with GSC query savory chia seed recipes",
+  );
+  assert.equal(
+    titleLower.includes("pudding"),
+    false,
+    "savory chia title should not force pudding and miss chia seed recipes",
+  );
+
+  assert.match(page.excerpt, /savory chia seed recipes/i);
+  assert.ok(
+    excerptLower.indexOf("savory chia seed recipes") !== -1,
+    "savory chia meta should name chia seed recipes, not lead with pudding recipes",
+  );
+  assert.ok(
+    page.excerpt.length <= 160,
+    `savory chia meta too long: ${page.excerpt.length}`,
+  );
+});
+
 test("packed lunch title leads with soggy sandwiches and wilted salads", () => {
   const page = articleFrontmatter("how-to-pack-lunch-crisp-sandwiches-salads");
   const titleLower = page.title.toLowerCase();
