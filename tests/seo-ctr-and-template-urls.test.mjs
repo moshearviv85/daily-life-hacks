@@ -677,6 +677,53 @@ test("popcorn toppings title leads with high fiber", () => {
   );
 });
 
+test("yogurt title leads with high fiber yogurt, not parfait framing", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/high-fiber-yogurt-parfait-for-breakfast.md"),
+    "utf8",
+  );
+  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
+  const excerpt = raw.match(/^excerpt:\s*(.+)$/m)?.[1]?.replace(/^"|"$/g, "");
+  assert.ok(title, "yogurt article is missing a quoted title");
+  assert.ok(excerpt, "yogurt article is missing an excerpt");
+  const titleLower = title.toLowerCase();
+
+  assert.equal(
+    title,
+    "High Fiber Yogurt: How to Add Fiber (Plain Greek Is 0g)",
+  );
+  assert.ok(
+    title.length <= 60,
+    `yogurt title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.equal(title.length, 55);
+  assert.ok(
+    titleLower.indexOf("high fiber yogurt") === 0,
+    "yogurt title should lead with high fiber yogurt",
+  );
+  assert.ok(
+    titleLower.indexOf("how to add fiber") > titleLower.indexOf("high fiber yogurt"),
+    "yogurt title should put how to add fiber after the query lead",
+  );
+  assert.match(title, /Plain Greek Is 0g/);
+  assert.equal(
+    /^high[ -]fiber yogurt parfait/.test(titleLower),
+    false,
+    "yogurt title should not lead with the parfait framing",
+  );
+  assert.equal(
+    /layer by layer/.test(titleLower),
+    false,
+    "yogurt title should not use the old layer-by-layer SERP",
+  );
+  assert.match(raw, /^dateModified: 2026-09-22$/m);
+  assert.equal(
+    excerpt.toLowerCase().includes("the real gram count, layer by layer"),
+    false,
+    "yogurt meta should not hard-sell the old layer-by-layer title",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
