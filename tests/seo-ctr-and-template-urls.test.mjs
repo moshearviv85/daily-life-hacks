@@ -588,7 +588,13 @@ test("fiber label title leads with high-fiber minimum grams query", () => {
   const excerptLower = page.excerpt.toLowerCase();
   const highFiberAt = titleLower.search(/high fiber/);
   const goodSourceAt = titleLower.search(/good source/);
+  const quizFiveAt = titleLower.search(/\b5\b/);
+  const currentFiveSixAt = titleLower.indexOf("5.6");
 
+  assert.equal(
+    page.title,
+    "High Fiber Label Minimum: 5 or 5.6 Grams Per Serving",
+  );
   assert.ok(highFiberAt !== -1, "fiber label title should name high fiber");
   assert.match(page.title, /5\.6/);
   assert.match(page.title, /[Mm]inimum/);
@@ -603,17 +609,31 @@ test("fiber label title leads with high-fiber minimum grams query", () => {
     "fiber label title should lead with high fiber, not good source",
   );
   assert.ok(
-    highFiberAt < titleLower.indexOf("5.6"),
-    "fiber label title should put high fiber before the 5.6g minimum",
+    highFiberAt < quizFiveAt && quizFiveAt < currentFiveSixAt,
+    "fiber label title should put high fiber, then the quiz 5g answer, then 5.6g",
+  );
+  assert.equal(
+    /^high fiber label: minimum 5\.6 grams per serving$/.test(titleLower),
+    false,
+    "fiber label title should not lead with 5.6g and miss the quiz 5 gram answer",
   );
 
   assert.match(page.excerpt, /high fiber/i);
+  assert.match(page.excerpt, /must contain a minimum of 5 grams per serving/i);
   assert.match(page.excerpt, /5\.6/);
   assert.match(page.excerpt, /2\.8 to 5\.3/);
   assert.match(page.excerpt, /5 grams/);
   assert.ok(
     excerptLower.search(/high fiber/) < excerptLower.search(/good source|2\.8/),
     "fiber label meta should put high fiber before good source",
+  );
+  assert.ok(
+    excerptLower.indexOf("5 grams") < excerptLower.indexOf("5.6"),
+    "fiber label meta should put the quiz 5 grams answer before 5.6g",
+  );
+  assert.ok(
+    page.excerpt.length <= 160,
+    `fiber label meta too long: ${page.excerpt.length}`,
   );
 });
 
