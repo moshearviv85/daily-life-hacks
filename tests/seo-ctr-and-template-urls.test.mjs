@@ -637,6 +637,46 @@ test("fiber label title leads with high-fiber minimum grams query", () => {
   );
 });
 
+test("popcorn toppings title leads with high fiber", () => {
+  const page = articleFrontmatter("high-fiber-popcorn-toppings-healthy");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+
+  assert.equal(page.title, "High Fiber Popcorn Toppings That Taste Good");
+  assert.ok(
+    page.title.length <= 60,
+    `popcorn toppings title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.indexOf("high fiber") === 0,
+    "popcorn toppings title should lead with high fiber",
+  );
+  assert.ok(
+    titleLower.indexOf("high fiber") < titleLower.indexOf("popcorn toppings"),
+    "popcorn toppings title should put high fiber before popcorn toppings",
+  );
+  assert.equal(
+    /diet food/.test(titleLower),
+    false,
+    "popcorn toppings title should not use the diet-food angle",
+  );
+  assert.equal(
+    /^7 popcorn toppings that don't taste like diet food$/.test(titleLower),
+    false,
+    "popcorn toppings title should not be the old diet-food SERP",
+  );
+
+  assert.equal(
+    excerptLower.startsWith("don't taste like diet") || excerptLower.includes("diet food"),
+    false,
+    "popcorn toppings meta should not lead with the old diet-food framing",
+  );
+  assert.ok(
+    page.excerpt.length <= 160,
+    `popcorn toppings meta too long: ${page.excerpt.length}`,
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
