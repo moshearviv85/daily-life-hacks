@@ -395,36 +395,40 @@ test("bran muffin title leads with fiber-amount query", () => {
   );
 });
 
-test("soggy sandwich title leads with prevent query", () => {
+test("soggy sandwich title leads with keep query", () => {
   const page = articleFrontmatter("how-to-keep-sandwiches-from-getting-soggy");
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
-  const preventAt = titleLower.indexOf("prevent");
-  const keepAt = titleLower.search(/\bkeep\b/);
-  const soggyAt = titleLower.indexOf("soggy");
 
-  assert.ok(preventAt !== -1, "sandwich title should say prevent");
-  assert.match(page.title, /sandwiches/i);
-  assert.match(page.title, /soggy/i);
+  assert.match(page.title, /^How to Keep Sandwiches From Getting Soggy$/);
   assert.ok(
     page.title.length <= 60,
     `sandwich title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    preventAt < soggyAt,
-    "sandwich title should lead with prevent before soggy",
+    titleLower.startsWith("how to keep sandwiches from getting soggy"),
+    "sandwich title should lead with GSC query how to keep sandwiches from getting soggy",
   );
-  assert.ok(
-    keepAt === -1 || preventAt < keepAt,
-    "sandwich title should lead with prevent, not keep",
+  assert.equal(
+    titleLower.startsWith("how to prevent"),
+    false,
+    "sandwich title should not lead with prevent",
   );
 
-  assert.match(page.excerpt, /prevent/i);
+  assert.match(page.excerpt, /^How to keep sandwiches from getting soggy/i);
   assert.match(page.excerpt, /soggy/i);
   assert.match(page.excerpt, /sandwiches/i);
   assert.ok(
-    excerptLower.indexOf("prevent") < excerptLower.indexOf("soggy"),
-    "sandwich meta should put prevent before soggy",
+    page.excerpt.length <= 160,
+    `sandwich meta too long: ${page.excerpt.length}`,
+  );
+  assert.ok(
+    excerptLower.indexOf("how to keep") === 0,
+    "sandwich meta should put how to keep first",
+  );
+  assert.ok(
+    excerptLower.indexOf("keep") < excerptLower.indexOf("soggy"),
+    "sandwich meta should put keep before soggy",
   );
 });
 

@@ -1,6 +1,6 @@
 ---
-title: "How to Prevent Sandwiches From Getting Soggy"
-excerpt: "How to prevent sandwiches from getting soggy: fat barrier edge to edge, dry-to-wet stacking, blot tomatoes, and pack it cold so lunch stays firm."
+title: "How to Keep Sandwiches From Getting Soggy"
+excerpt: "How to keep sandwiches from getting soggy: fat barrier edge to edge, dry-to-wet stacking, blot tomatoes, and pack it cold so lunch stays firm."
 category: tips
 tags:
 - food storage
@@ -10,7 +10,7 @@ tags:
 image: "/images/how-to-keep-sandwiches-from-getting-soggy-main.jpg"
 imageAlt: A cross-section of a deli sandwich, showing a layer of spread protecting the bread from moist fillings like tomato and lettuce.
 date: 2026-04-28
-dateModified: 2026-09-11
+dateModified: 2026-09-22
 author: "David Miller"
 quickAnswer: >-
   Spread fat edge to edge first, butter, mayo, pesto, even peanut butter. That thin
