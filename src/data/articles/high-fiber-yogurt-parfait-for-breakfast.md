@@ -1,5 +1,5 @@
 ---
-title: "High-Fiber Yogurt Parfait: The Real Gram Count, Layer by Layer"
+title: "High Fiber Yogurt: How to Add Fiber (Plain Greek Is 0g)"
 excerpt: Plain Greek yogurt brings zero fiber. Here's what each layer actually adds in USDA numbers, and why one parfait hits 13 grams while an identical bowl stops at 5.
 category: nutrition
 tags:
@@ -11,7 +11,7 @@ tags:
 image: /images/high-fiber-yogurt-parfait-for-breakfast-main.jpg
 imageAlt: Greek yogurt parfait layered with berries, granola, and seeds
 date: 2026-01-05
-dateModified: 2026-07-31
+dateModified: 2026-09-22
 author: "David Miller"
 featured: false
 editorsPick: false
