@@ -1,5 +1,5 @@
 ---
-title: "7 Popcorn Toppings That Don't Taste Like Diet Food"
+title: "High Fiber Popcorn Toppings That Taste Good"
 excerpt: "Give plain popcorn a real personality with chili-lime, cocoa-cinnamon, Parmesan-pepper, and four more toppings worth movie night."
 category: nutrition
 tags:
@@ -11,7 +11,7 @@ tags:
 image: /images/high-fiber-popcorn-toppings-healthy-main.jpg
 imageAlt: "Bowls of popcorn with chili lime cinnamon cocoa and savory seasonings"
 date: 2026-02-01
-dateModified: 2026-07-20
+dateModified: 2026-09-22
 author: "David Miller"
 quickAnswer: "Season warm popcorn with a light mist of oil, then add a finely ground blend in two rounds so it sticks evenly. For an 8-cup bowl, start with 1 to 2 teaspoons of oil and 1 tablespoon of seasoning. Chili-lime, Parmesan-pepper, cocoa-cinnamon, and crushed berry blends add real flavor without requiring sticky syrup."
 featured: false
