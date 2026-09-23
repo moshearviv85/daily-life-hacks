@@ -2359,6 +2359,38 @@ test("grains fiber ranking title puts fiber-per-dollar grams in the SERP", () =>
   );
 });
 
+test("protein per dollar ranking title puts protein grams per dollar in the SERP", () => {
+  const page = articleFrontmatter("protein-per-dollar-cheapest-protein-sources");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Protein per $: Whole Wheat Flour 96.0g vs Lentils 77.7g",
+  );
+  assert.equal(page.title.length, 55);
+  assert.ok(
+    page.title.length <= 60,
+    `protein per dollar ranking title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("protein per $"),
+    "protein per dollar ranking title should lead with protein per $",
+  );
+  assert.ok(
+    titleLower.indexOf("96.0g") < titleLower.indexOf("77.7g"),
+    "protein per dollar ranking title should put whole wheat flour (96.0g) before brown lentils (77.7g)",
+  );
+  assert.match(page.title, /96\.0g/);
+  assert.match(page.title, /77\.7g/);
+  assert.match(page.title, /Whole Wheat Flour/);
+  assert.match(page.title, /Lentils/);
+  assert.equal(
+    /^protein per dollar: the cheapest protein sources, ranked$/.test(titleLower),
+    false,
+    "protein per dollar ranking title should not stay on the soft cheapest-sources-ranked SERP",
+  );
+});
+
 test("produce fiber ranking title puts fiber-per-dollar grams in the SERP", () => {
   const page = articleFrontmatter("produce-fiber-per-dollar-ranked");
   const titleLower = page.title.toLowerCase();
