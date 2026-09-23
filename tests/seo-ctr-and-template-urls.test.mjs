@@ -1331,6 +1331,52 @@ test("high fiber breakfast title leads with breakfast ideas for gut health", () 
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
+test("egg sandwich add-ins title leads with add-ins and toppings", () => {
+  const page = articleFrontmatter("healthy-egg-sandwich-add-ins-toppings");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/healthy-egg-sandwich-add-ins-toppings.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(page.title, "Egg Sandwich Add-Ins and Toppings");
+  assert.equal(page.title.length, 33);
+  assert.ok(
+    page.title.length <= 60,
+    `egg sandwich add-ins title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("egg sandwich add-ins"),
+    "egg sandwich add-ins title should lead with egg sandwich add-ins",
+  );
+  assert.ok(
+    titleLower.indexOf("add-ins") < titleLower.indexOf("toppings"),
+    "egg sandwich add-ins title should put add-ins before toppings",
+  );
+  assert.equal(
+    titleLower.includes("healthy"),
+    false,
+    "egg sandwich add-ins title should not spend the SERP on healthy",
+  );
+  assert.equal(
+    titleLower.includes("that taste good"),
+    false,
+    "egg sandwich add-ins title should not spend the SERP on that taste good",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "egg sandwich add-ins title should not use a best superlative",
+  );
+  assert.equal(
+    /^healthy egg sandwich add-ins that taste good$/.test(titleLower),
+    false,
+    "egg sandwich add-ins title should not be the old healthy taste-good SERP",
+  );
+  assert.match(raw, /^date: 2026-04-28$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
