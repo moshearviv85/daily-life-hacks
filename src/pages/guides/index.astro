@@ -10,6 +10,7 @@ import {
   type ContentClusterId,
 } from "../../content/clusters";
 import { resolveArticleCluster } from "../../content/relatedArticleScoring.js";
+import { isGuideHubSpoke } from "../../content/guideHubSpokes.js";
 import { HUGGINGFACE_DATASET_URL } from "../../content/datasets";
 
 const title = "Complete Guides | Daily Life Hacks";
@@ -33,6 +34,7 @@ const pillarIds = new Set<string>(
 
 for (const article of released) {
   if (pillarIds.has(article.id)) continue;
+  if (!isGuideHubSpoke(article.id)) continue;
   const hay = [article.data.title, ...article.data.tags, article.id].join(" ");
   const resolution = resolveArticleCluster({
     articleId: article.id,
@@ -104,7 +106,7 @@ const guidesSchema = {
     <div class="space-y-10 mb-16">
       {
         CONTENT_CLUSTERS.map((cluster) => {
-          const spokes = spokesByCluster[cluster.id].slice(0, 8);
+          const spokes = spokesByCluster[cluster.id];
           return (
             <section
               class="rounded-xl p-6 md:p-8"

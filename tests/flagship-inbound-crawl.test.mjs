@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
+import { INDEX_KEEP_PATHS, INDEX_PRUNE_SLUGS } from "../src/content/index-prune.js";
+import { isGuideHubSpoke } from "../src/content/guideHubSpokes.js";
 
 const articleDirectory = join(process.cwd(), "src", "data", "articles");
 const fiberFlagship = "fiber-per-dollar-cheapest-high-fiber-foods";
@@ -245,6 +247,67 @@ test("guides hub cites both flagships above the fold, plus dataset landings", ()
   assert.equal(htmlHrefMatches(source, "one-dollar-fiber-what-it-buys").length, 1);
   assert.equal(htmlHrefMatches(source, "cheapest-protein-per-gram").length, 1);
   assert.equal(source.includes(retiredProteinSlug), false);
+  assert.match(source, /isGuideHubSpoke\(article\.id\)/);
+  assert.doesNotMatch(source, /\.slice\(0,\s*8\)/);
+});
+
+const keepChainPages = [
+  "chipotle-protein-per-dollar",
+  "kfc-protein-per-dollar",
+  "mcdonalds-protein-per-dollar",
+  "taco-bell-protein-per-dollar",
+  "wendys-protein-per-dollar",
+];
+
+test("research and statistics hubs link each KEEP chain page once", () => {
+  for (const slug of keepChainPages) {
+    assert.equal(INDEX_KEEP_PATHS.has(slug), true, slug);
+    assert.equal(INDEX_PRUNE_SLUGS.has(slug), false, slug);
+  }
+
+  for (const segments of [
+    ["research", "index.astro"],
+    ["statistics", "index.astro"],
+  ]) {
+    const source = pageSource(...segments);
+    for (const slug of keepChainPages) {
+      assert.equal(
+        htmlHrefMatches(source, slug).length,
+        1,
+        `${segments.join("/")} should link /${slug}/ once`,
+      );
+    }
+  }
+});
+
+test("guides hub spokes stay on KEEP paths and skip pruned slugs", () => {
+  for (const slug of INDEX_PRUNE_SLUGS) {
+    assert.equal(isGuideHubSpoke(slug), false, slug);
+  }
+
+  const requiredSpokes = [
+    "plant-based-protein-sources-complete-guide",
+    "protein-per-dollar-cheapest-protein-sources",
+    "fiber-per-dollar-cheapest-high-fiber-foods",
+    "one-dollar-protein-what-it-buys",
+    "produce-fiber-per-dollar-ranked",
+    "popcorn-vs-almonds-fiber-cost",
+    "whole-wheat-flour-vs-quinoa-fiber-cost",
+    "grains-fiber-per-dollar-ranked",
+    "high-fiber-snacks-per-dollar",
+    "tofu-vs-chicken-protein-cost",
+    "shelf-stable-pantry-per-dollar",
+    "usda-thrifty-food-plan-weekly-cost",
+  ];
+  for (const slug of requiredSpokes) {
+    assert.equal(INDEX_KEEP_PATHS.has(slug), true, slug);
+    assert.equal(isGuideHubSpoke(slug), true, slug);
+  }
+
+  assert.equal(isGuideHubSpoke("how-much-protein-in-lentils"), false);
+  assert.equal(isGuideHubSpoke("cheap-dinner-ideas-for-a-family-of-4"), false);
+  assert.equal(isGuideHubSpoke("fast-food-protein-per-dollar-ranked"), false);
+  assert.equal(isGuideHubSpoke("what-30-grams-of-fiber-costs-per-day"), false);
 });
 
 test("data hub names both flagship indexes with hrefs before the dataset table", () => {
