@@ -2868,6 +2868,34 @@ test("eat healthy on a budget title puts protein-per-dollar grams in the SERP", 
   assert.equal(INDEX_PRUNE_SLUGS.has("eat-healthy-on-a-budget-complete-playbook"), false);
 });
 
+test("usda thrifty food plan title puts the family weekly cost in the SERP", () => {
+  const page = articleFrontmatter("usda-thrifty-food-plan-weekly-cost");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "USDA Thrifty Plan: Family of 4 ≈ $235/week",
+  );
+  assert.equal(page.title.length, 42);
+  assert.ok(
+    page.title.length <= 60,
+    `usda thrifty food plan title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("usda thrifty plan"),
+    "usda thrifty food plan title should lead with usda thrifty plan",
+  );
+  assert.match(page.title, /Family of 4/);
+  assert.match(page.title, /\$235\/week/);
+  assert.equal(
+    /^grocery budget for a family of 4: what usda says$/.test(titleLower),
+    false,
+    "usda thrifty food plan title should not stay on the soft grocery-budget SERP",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("usda-thrifty-food-plan-weekly-cost"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("usda-thrifty-food-plan-weekly-cost"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),

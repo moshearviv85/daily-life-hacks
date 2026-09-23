@@ -1,5 +1,5 @@
 ---
-title: "Grocery Budget for a Family of 4: What USDA Says"
+title: "USDA Thrifty Plan: Family of 4 ≈ $235/week"
 excerpt: "USDA says its reference family of four can eat at home for $235 a week. Here's what that grocery budget buys, assumes, and quietly leaves out."
 category: "nutrition"
 tags: ["USDA Thrifty Food Plan", "weekly grocery budget", "family food cost", "food economics", "budget meal planning"]
