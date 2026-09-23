@@ -1,5 +1,5 @@
 ---
-title: "Whole Wheat Flour vs Quinoa: Which Fiber Is Cheaper?"
+title: "Whole Wheat Flour vs Quinoa: 77.8g vs 10.6g Fiber per Dollar"
 excerpt: "Whole wheat flour gives 77.8 g of fiber per dollar; quinoa gives 10.6. Flour wins by 7.3x, but you can't build a lunch salad out of flour."
 category: "nutrition"
 tags: ["whole wheat flour vs quinoa", "cheap high fiber grains", "fiber per dollar", "quinoa cost", "budget whole grains"]
