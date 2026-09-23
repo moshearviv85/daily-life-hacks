@@ -2607,6 +2607,46 @@ test("mcdonald's protein per dollar title puts protein-per-dollar grams in the S
   assert.equal(INDEX_PRUNE_SLUGS.has("mcdonalds-protein-per-dollar"), false);
 });
 
+test("kfc protein per dollar title puts protein-per-dollar grams in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/kfc-protein-per-dollar.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+
+  assert.equal(
+    title,
+    "KFC Protein per $: Chicken Breast 7.6g vs 8pc Bucket 7.3g",
+  );
+  assert.equal(title.length, 57);
+  assert.ok(
+    title.length <= 60,
+    `kfc protein per dollar title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("kfc protein per $"),
+    "kfc protein per dollar title should lead with kfc protein per $",
+  );
+  assert.ok(
+    titleLower.indexOf("7.6g") < titleLower.indexOf("7.3g"),
+    "kfc protein per dollar title should put the Original Recipe Chicken Breast (7.6g per $) before the 8 pc Bucket (7.3g per $)",
+  );
+  assert.match(title, /7\.6g/);
+  assert.match(title, /7\.3g/);
+  assert.match(title, /Chicken Breast/);
+  assert.match(title, /8pc Bucket/);
+  assert.equal(
+    /^kfc protein per dollar: 5 items ranked \(2026 prices\)$/.test(titleLower),
+    false,
+    "kfc protein per dollar title should not stay on the soft items-ranked SERP",
+  );
+  assert.match(
+    page,
+    /Every KFC item we priced, ranked by grams of protein per dollar\. The \$\{best\.item\} leads at/,
+  );
+  assert.match(page, /KFC Protein per Dollar, Ranked/);
+  assert.equal(INDEX_KEEP_PATHS.has("kfc-protein-per-dollar"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("kfc-protein-per-dollar"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
