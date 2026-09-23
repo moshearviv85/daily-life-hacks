@@ -2295,6 +2295,38 @@ test("fiber per dollar ranking title puts fiber grams per dollar in the SERP", (
   );
 });
 
+test("high-fiber snacks title puts fiber-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("high-fiber-snacks-per-dollar");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "High-Fiber Snacks per $: Popcorn 51.3g vs Carrots 16.1g",
+  );
+  assert.equal(page.title.length, 55);
+  assert.ok(
+    page.title.length <= 60,
+    `high-fiber snacks title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("high-fiber snacks per $"),
+    "high-fiber snacks title should lead with high-fiber snacks per $",
+  );
+  assert.ok(
+    titleLower.indexOf("51.3g") < titleLower.indexOf("16.1g"),
+    "high-fiber snacks title should put popcorn (51.3g) before carrots (16.1g)",
+  );
+  assert.match(page.title, /51\.3g/);
+  assert.match(page.title, /16\.1g/);
+  assert.match(page.title, /Popcorn/);
+  assert.match(page.title, /Carrots/);
+  assert.equal(
+    /^cheap high-fiber snacks that actually fill you up$/.test(titleLower),
+    false,
+    "high-fiber snacks title should not stay on the soft fill-you-up SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
