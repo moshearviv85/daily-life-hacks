@@ -1806,6 +1806,36 @@ test("stir-fry vegetables title drops the leading Best superlative", () => {
   );
 });
 
+test("popcorn vs almonds fiber-cost title puts grams per dollar in the SERP", () => {
+  const page = articleFrontmatter("popcorn-vs-almonds-fiber-cost");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Popcorn vs Almonds: 51.3g vs 8.8g Fiber per Dollar",
+  );
+  assert.equal(page.title.length, 50);
+  assert.ok(
+    page.title.length <= 60,
+    `popcorn vs almonds title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("popcorn vs almonds"),
+    "popcorn vs almonds title should lead with popcorn vs almonds",
+  );
+  assert.ok(
+    titleLower.indexOf("51.3g") < titleLower.indexOf("8.8g"),
+    "popcorn vs almonds title should put popcorn fiber grams before almonds",
+  );
+  assert.match(page.title, /51\.3g/);
+  assert.match(page.title, /8\.8g/);
+  assert.equal(
+    /^popcorn vs almonds: which one buys more fiber per dollar\?$/.test(titleLower),
+    false,
+    "popcorn vs almonds title should not stay on the soft question SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),

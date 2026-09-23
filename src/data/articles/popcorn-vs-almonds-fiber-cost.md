@@ -1,5 +1,5 @@
 ---
-title: "Popcorn vs Almonds: Which One Buys More Fiber Per Dollar?"
+title: "Popcorn vs Almonds: 51.3g vs 8.8g Fiber per Dollar"
 excerpt: "Popcorn kernels return 51.3g of fiber per dollar against 8.8g for almonds, about 5.8 times more. Almonds are a snack you buy for other reasons."
 category: "nutrition"
 tags: ["popcorn vs almonds", "cheap high fiber snacks", "fiber per dollar", "popcorn fiber", "almonds fiber"]
