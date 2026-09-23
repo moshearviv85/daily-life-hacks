@@ -81,25 +81,6 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
     `popcorn meta too long: ${popcorn.excerpt.length}`,
   );
 
-  const pizza = articleFrontmatter("comparing-fiber-content-different-pizza-crusts");
-  const pizzaTitleLower = pizza.title.toLowerCase();
-  const pizzaExcerptLower = pizza.excerpt.toLowerCase();
-  assert.match(pizza.title, /[Cc]omparing [Ff]iber/);
-  assert.match(pizza.title, /[Dd]ifferent [Pp]izza [Cc]rusts/);
-  assert.match(pizza.title, /2\.7g/);
-  assert.match(pizza.title, /4\.2-5\.1g/);
-  assert.ok(
-    pizzaTitleLower.indexOf("comparing") < pizzaTitleLower.indexOf("2.7g"),
-    "pizza title should lead with the compare query, not gram snippets",
-  );
-  assert.match(pizza.excerpt, /[Cc]omparing [Ff]iber/);
-  assert.match(pizza.excerpt, /2\.7g/);
-  assert.match(pizza.excerpt, /4\.2-5\.1g/);
-  assert.ok(
-    pizzaExcerptLower.indexOf("comparing") < pizzaExcerptLower.indexOf("2.7g"),
-    "pizza meta should put the compare query before the USDA numbers",
-  );
-
   const protein = articleFrontmatter("protein-per-serving-beans-chicken-tofu-compared");
   assert.match(protein.title, /26-35g/);
   assert.match(protein.title, /15g/);
@@ -774,6 +755,47 @@ test("cooking oil smoke points title leads with smoke point chart", () => {
     "smoke point title should not spend the SERP on cites-its-sources",
   );
   assert.match(raw, /^dateModified: 2026-09-23$/m);
+});
+
+test("pizza crust fiber title leads with which crust has more fiber", () => {
+  const page = articleFrontmatter("comparing-fiber-content-different-pizza-crusts");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/comparing-fiber-content-different-pizza-crusts.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+
+  assert.equal(page.title, "Pizza Crust Fiber: Which Has More? 2.7g vs 4.2-5.1g");
+  assert.equal(page.title.length, 51);
+  assert.ok(
+    page.title.length <= 60,
+    `pizza crust title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("pizza crust fiber"),
+    "pizza crust title should lead with pizza crust fiber",
+  );
+  assert.ok(
+    titleLower.indexOf("which has more") < titleLower.indexOf("2.7g"),
+    "pizza crust title should put which-has-more before the USDA grams",
+  );
+  assert.match(page.title, /2\.7g/);
+  assert.match(page.title, /4\.2-5\.1g/);
+  assert.equal(
+    titleLower.includes("comparing fiber in different"),
+    false,
+    "pizza crust title should not lead with Comparing Fiber in Different",
+  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+
+  assert.match(page.excerpt, /[Cc]omparing [Ff]iber/);
+  assert.match(page.excerpt, /2\.7g/);
+  assert.match(page.excerpt, /4\.2-5\.1g/);
+  assert.ok(
+    excerptLower.indexOf("comparing") < excerptLower.indexOf("2.7g"),
+    "pizza meta should put the compare query before the USDA numbers",
+  );
 });
 
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
