@@ -1928,6 +1928,37 @@ test("lentils vs chicken breast title puts protein-per-dollar grams in the SERP"
   );
 });
 
+test("peanut butter vs almonds title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("peanut-butter-vs-almonds-protein-cost");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Peanut Butter vs Almonds: 50.7g vs 14.8g Protein per Dollar",
+  );
+  assert.equal(page.title.length, 59);
+  assert.ok(
+    page.title.length <= 60,
+    `peanut butter vs almonds title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("peanut butter vs almonds"),
+    "peanut butter vs almonds title should lead with peanut butter vs almonds",
+  );
+  assert.ok(
+    titleLower.indexOf("50.7g") < titleLower.indexOf("14.8g"),
+    "peanut butter vs almonds title should put peanut butter (50.7g) before almonds (14.8g)",
+  );
+  assert.match(page.title, /50\.7g/);
+  assert.match(page.title, /14\.8g/);
+  assert.match(page.title, /Protein per Dollar/);
+  assert.equal(
+    /^peanut butter vs almonds: which is cheaper protein\?$/.test(titleLower),
+    false,
+    "peanut butter vs almonds title should not stay on the soft question SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
