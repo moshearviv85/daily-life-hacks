@@ -737,6 +737,36 @@ test("yogurt title leads with high fiber yogurt, not parfait framing", () => {
   );
 });
 
+test("cooking oil smoke points title leads with smoke point chart", () => {
+  const page = articleFrontmatter("cooking-oils-smoke-points-best-uses");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/cooking-oils-smoke-points-best-uses.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(page.title, "Smoke Point Chart: Cooking Oil Smoke Points");
+  assert.equal(page.title.length, 43);
+  assert.ok(
+    page.title.length <= 60,
+    `smoke point title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("smoke point chart"),
+    "smoke point title should lead with the smoke point chart query",
+  );
+  assert.ok(
+    titleLower.includes("cooking oil smoke points"),
+    "smoke point title should name cooking oil smoke points",
+  );
+  assert.equal(
+    titleLower.includes("cites its sources"),
+    false,
+    "smoke point title should not spend the SERP on cites-its-sources",
+  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
