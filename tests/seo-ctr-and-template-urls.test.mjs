@@ -3061,6 +3061,71 @@ test("recipe cost calculator title puts the $10.50 batch example in the SERP", (
   assert.equal(INDEX_PRUNE_SLUGS.has("recipe-cost-calculator"), false);
 });
 
+test("recipe finder title puts the searchable recipe count in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/tools/recipe-finder/index.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+  const now = Date.now();
+  let count = 0;
+  for (const file of readdirSync(join(ROOT, "src/data/articles"))) {
+    if (!file.endsWith(".md")) continue;
+    const raw = readFileSync(join(ROOT, "src/data/articles", file), "utf8");
+    const fm = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1];
+    if (!fm) continue;
+    const category = fm.match(/^category:\s*"?([^"\n]+)"?/m)?.[1]?.trim();
+    if (category !== "recipes") continue;
+    const release = fm.match(/^publishAt:\s*(\d{4}-\d{2}-\d{2})/m)?.[1]
+      ?? fm.match(/^date:\s*(\d{4}-\d{2}-\d{2})/m)?.[1];
+    if (!release || Date.parse(`${release}T00:00:00.000Z`) > now) continue;
+    const servings = Number(fm.match(/^servings:\s*"?(\d+(?:\.\d+)?)"?/m)?.[1]);
+    if (!Number.isFinite(servings) || servings <= 0) continue;
+    const lines = fm.split("\n");
+    const start = lines.findIndex((line) => /^ingredients:\s*$/.test(line));
+    let ingredients = 0;
+    if (start !== -1) {
+      for (let i = start + 1; i < lines.length; i++) {
+        if (/^\s*-\s+\S/.test(lines[i])) {
+          ingredients += 1;
+          continue;
+        }
+        if (lines[i].trim() === "") continue;
+        break;
+      }
+    }
+    if (ingredients === 0) continue;
+    count += 1;
+  }
+
+  assert.equal(count, 80);
+  assert.equal(title, "Recipe Finder by Ingredients: 80 Recipes");
+  assert.equal(title, `Recipe Finder by Ingredients: ${count} Recipes`);
+  assert.equal(title.length, 40);
+  assert.ok(
+    title.length <= 60,
+    `recipe finder title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("recipe finder by ingredients"),
+    "recipe finder title should lead with recipe finder by ingredients",
+  );
+  assert.match(title, /80 Recipes/);
+  assert.equal(
+    /^recipe finder by ingredients: use what you have$/.test(titleLower),
+    false,
+    "recipe finder title should not stay on the soft use-what-you-have SERP",
+  );
+  assert.match(page, /\{recipes\.length\} real recipes/);
+  assert.match(page, /It currently searches \$\{recipes\.length\} published recipes/);
+  assert.match(page, /<h1[^>]*>You've Already Got Dinner\. Let's Find the Recipe\.<\/h1>/);
+  assert.equal(
+    page.match(/const description = "([^"]+)"/)?.[1],
+    "Enter the ingredients you have and find published recipes ranked by overlap, with the missing groceries shown before you open the recipe.",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("tools/recipe-finder"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("tools/recipe-finder"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("recipe-finder"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
