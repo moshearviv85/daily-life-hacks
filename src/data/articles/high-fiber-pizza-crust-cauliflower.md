@@ -1,5 +1,5 @@
 ---
-title: "High Fiber Cauliflower Pizza Crust That Actually Gets Crispy"
+title: "Is Cauliflower Pizza Crust High in Fiber? About 5.8g"
 excerpt: "Homemade cauliflower pizza crust: about 5.8g fiber per quarter-crust from USDA ingredient math. Store-bought cauliflower crusts land at 1-2g per serving."
 category: recipes
 tags:
@@ -11,7 +11,7 @@ tags:
 image: /images/high-fiber-pizza-crust-cauliflower-main.jpg
 imageAlt: Crispy golden cauliflower pizza crust topped with tomato sauce, mozzarella, and basil
 date: 2026-01-02
-dateModified: 2026-08-20
+dateModified: 2026-09-23
 author: "David Miller"
 quickAnswer: "Store-bought cauliflower pizza crust carries about 1 to 2 grams of fiber per serving. Three supermarket crusts in USDA's Branded Foods label data report 1.8 to 4.2 grams per 100 grams, and a serving is only 48 to 63 grams, so all three land at 1 or 2 grams, next to 1 gram for a plain refrigerated white-flour crust. This homemade crust runs higher, about 5.8 grams per quarter-crust serving and roughly 23 grams in the full untopped crust, because one quarter starts from about 227 grams of raw cauliflower at 2 grams of fiber per 100 grams plus about 14 grams of almond flour at 9.3, with no rice or tapioca starch diluting it. That figure is ingredient arithmetic on USDA values, not a lab analysis of a finished crust."
 featured: false

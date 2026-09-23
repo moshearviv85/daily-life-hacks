@@ -911,6 +911,49 @@ test("protein density title leads with highest protein foods per 100g", () => {
   );
 });
 
+test("cauliflower pizza crust title leads with is it high in fiber", () => {
+  const page = articleFrontmatter("high-fiber-pizza-crust-cauliflower");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/high-fiber-pizza-crust-cauliflower.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Is Cauliflower Pizza Crust High in Fiber? About 5.8g",
+  );
+  assert.equal(page.title.length, 52);
+  assert.ok(
+    page.title.length <= 60,
+    `cauliflower crust title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("is cauliflower pizza crust high in fiber"),
+    "cauliflower crust title should lead with the is-it-high-fiber question",
+  );
+  assert.ok(
+    titleLower.indexOf("is cauliflower pizza crust high in fiber") <
+      titleLower.indexOf("5.8g"),
+    "cauliflower crust title should put the question before the 5.8g estimate",
+  );
+  assert.match(page.title, /About 5\.8g/);
+  assert.equal(
+    titleLower.includes("that actually gets crispy"),
+    false,
+    "cauliflower crust title should not spend the SERP on that actually gets crispy",
+  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+
+  assert.match(page.excerpt, /about 5\.8g fiber per quarter-crust/i);
+  assert.match(page.excerpt, /1-2g per serving/);
+  assert.ok(
+    excerptLower.indexOf("5.8g") < excerptLower.indexOf("1-2g"),
+    "cauliflower crust meta should put the homemade 5.8g estimate before store-bought 1-2g",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
