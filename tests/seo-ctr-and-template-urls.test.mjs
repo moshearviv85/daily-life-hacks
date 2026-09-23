@@ -3,6 +3,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { extname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
+import { INDEX_KEEP_PATHS, INDEX_PRUNE_SLUGS } from "../src/content/index-prune.js";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
 const LEAK = /(?:href|src)=["']\/\$\{/;
@@ -2524,6 +2525,46 @@ test("no-cook protein title puts protein-per-dollar grams in the SERP", () => {
     false,
     "no-cook protein title should not stay on the soft cheapest-options-ranked SERP",
   );
+});
+
+test("chipotle protein per dollar title puts protein-per-dollar grams in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/chipotle-protein-per-dollar.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+
+  assert.equal(
+    title,
+    "Chipotle Protein per $: Protein Cup 8.4g vs Double Bowl 5.3g",
+  );
+  assert.equal(title.length, 60);
+  assert.ok(
+    title.length <= 60,
+    `chipotle protein per dollar title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("chipotle protein per $"),
+    "chipotle protein per dollar title should lead with chipotle protein per $",
+  );
+  assert.ok(
+    titleLower.indexOf("8.4g") < titleLower.indexOf("5.3g"),
+    "chipotle protein per dollar title should put the High Protein Cup (8.4g per $) before the Double Chicken Burrito Bowl (5.3g per $)",
+  );
+  assert.match(title, /8\.4g/);
+  assert.match(title, /5\.3g/);
+  assert.match(title, /Protein Cup/);
+  assert.match(title, /Double Bowl/);
+  assert.equal(
+    /^chipotle protein per dollar: 4 orders ranked \(2026 prices\)$/.test(titleLower),
+    false,
+    "chipotle protein per dollar title should not stay on the soft orders-ranked SERP",
+  );
+  assert.match(
+    page,
+    /Chipotle's \$\{cup\.item\} is the best protein-per-dollar order in our whole fast food study at/,
+  );
+  assert.match(page, /Chipotle Protein per Dollar, Ranked/);
+  assert.equal(INDEX_KEEP_PATHS.has("chipotle-protein-per-dollar"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("chipotle-protein-per-dollar"), false);
 });
 
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
