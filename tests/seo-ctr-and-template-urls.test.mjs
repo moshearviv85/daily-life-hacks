@@ -39,9 +39,9 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   const popcorn = articleFrontmatter("popcorn-vs-potato-chips-fiber-comparison");
   assert.equal(
     popcorn.title,
-    "Chips vs Popcorn: Which Has Fewer Calories? 149 vs 108",
+    "Chips vs Popcorn: 4.1g vs 0.9g Fiber (108 vs 149 Cal)",
   );
-  assert.equal(popcorn.title.length, 54);
+  assert.equal(popcorn.title.length, 53);
   assert.ok(
     popcorn.title.length <= 60,
     `popcorn title too long for SERP: ${popcorn.title.length}`,
@@ -51,15 +51,26 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
     titleLower.startsWith("chips vs popcorn"),
     "popcorn title should lead with chips vs popcorn",
   );
+  assert.match(popcorn.title, /4\.1g/);
+  assert.match(popcorn.title, /0\.9g/);
   assert.ok(
-    titleLower.indexOf("which has fewer calories") < titleLower.indexOf("149"),
-    "popcorn title should put which-has-fewer before the USDA calories",
+    titleLower.indexOf("4.1g") < titleLower.indexOf("0.9g"),
+    "popcorn title should put popcorn fiber (4.1g) before chips fiber (0.9g)",
+  );
+  assert.ok(
+    titleLower.indexOf("fiber") < titleLower.indexOf("108"),
+    "popcorn title should surface fiber before the calorie figures",
   );
   assert.match(popcorn.title, /149/);
   assert.match(popcorn.title, /108/);
   assert.ok(
-    titleLower.indexOf("149") < titleLower.indexOf("108"),
-    "popcorn title should put chips calories (149) before popcorn (108)",
+    titleLower.indexOf("108") < titleLower.indexOf("149"),
+    "popcorn title should put popcorn calories (108) before chips (149)",
+  );
+  assert.equal(
+    /^chips vs popcorn: which has fewer calories\? 149 vs 108$/.test(titleLower),
+    false,
+    "popcorn title should not be the calories-only SERP",
   );
   assert.equal(
     /^chips vs popcorn calories: 149 vs 108 \(plus fiber\)$/.test(titleLower),
