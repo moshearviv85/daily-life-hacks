@@ -2052,6 +2052,37 @@ test("chicken thighs vs breast title puts protein-per-dollar grams in the SERP",
   );
 });
 
+test("frozen vs fresh vegetables title puts fiber-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("frozen-vs-fresh-vegetables-fiber-cost");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Frozen vs Fresh Vegetables: 17.6g vs 6.1g Fiber per Dollar",
+  );
+  assert.equal(page.title.length, 58);
+  assert.ok(
+    page.title.length <= 60,
+    `frozen vs fresh vegetables title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("frozen vs fresh vegetables"),
+    "frozen vs fresh vegetables title should lead with frozen vs fresh vegetables",
+  );
+  assert.ok(
+    titleLower.indexOf("17.6g") < titleLower.indexOf("6.1g"),
+    "frozen vs fresh vegetables title should put frozen green peas (17.6g) before fresh broccoli crowns (6.1g)",
+  );
+  assert.match(page.title, /17\.6g/);
+  assert.match(page.title, /6\.1g/);
+  assert.match(page.title, /Fiber per Dollar/);
+  assert.equal(
+    /^frozen vs fresh vegetables: fiber per dollar compared$/.test(titleLower),
+    false,
+    "frozen vs fresh vegetables title should not stay on the gram-free compared SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
