@@ -1031,6 +1031,39 @@ test("fiber and protein daily values title leads with why the daily fiber goal i
   assert.match(page.excerpt, /50g/);
 });
 
+test("water and fiber title leads with how much water you need", () => {
+  const page = articleFrontmatter("water-and-fiber-the-golden-rule");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/water-and-fiber-the-golden-rule.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(page.title, "How Much Water Do You Need With Fiber?");
+  assert.equal(page.title.length, 38);
+  assert.ok(
+    page.title.length <= 60,
+    `water and fiber title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("how much water do you need with fiber"),
+    "water and fiber title should lead with how much water do you need with fiber",
+  );
+  assert.equal(
+    titleLower.includes("golden rule gets wrong"),
+    false,
+    "water and fiber title should not use the golden rule gets wrong SERP",
+  );
+  assert.equal(
+    titleLower.includes("golden rule"),
+    false,
+    "water and fiber title should not spend the SERP on golden rule",
+  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+
+  assert.match(page.excerpt, /isn't a magic water-to-fiber ratio/i);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
