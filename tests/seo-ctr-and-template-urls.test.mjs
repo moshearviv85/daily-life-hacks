@@ -2021,6 +2021,37 @@ test("tofu vs chicken title puts protein-per-dollar grams in the SERP", () => {
   );
 });
 
+test("chicken thighs vs breast title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("chicken-thighs-vs-breast-protein-cost");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Chicken Thighs vs Breast: 50.3g vs 24.5g Protein per Dollar",
+  );
+  assert.equal(page.title.length, 59);
+  assert.ok(
+    page.title.length <= 60,
+    `chicken thighs vs breast title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("chicken thighs vs breast"),
+    "chicken thighs vs breast title should lead with chicken thighs vs breast",
+  );
+  assert.ok(
+    titleLower.indexOf("50.3g") < titleLower.indexOf("24.5g"),
+    "chicken thighs vs breast title should put drumsticks (50.3g) before breast (24.5g)",
+  );
+  assert.match(page.title, /50\.3g/);
+  assert.match(page.title, /24\.5g/);
+  assert.match(page.title, /Protein per Dollar/);
+  assert.equal(
+    /^chicken thighs vs breast: which is cheaper protein\?$/.test(titleLower),
+    false,
+    "chicken thighs vs breast title should not stay on the soft question SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
