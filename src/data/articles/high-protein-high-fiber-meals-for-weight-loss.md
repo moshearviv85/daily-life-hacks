@@ -1,5 +1,5 @@
 ---
-title: "How to Build High Protein High Fiber Meals for Weight Loss"
+title: "High Protein High Fiber Meals: 30–40g Protein Template"
 excerpt: "High protein high fiber meals for weight loss keep you full without the spreadsheet drama. Starving an hour after a diet salad is not a willpower problem"
 category: nutrition
 tags:

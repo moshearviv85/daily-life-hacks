@@ -301,7 +301,7 @@ test("canned vs dry beans title matches cost query and on-page protein-per-dolla
   );
 });
 
-test("high-protein high-fiber meals title leads with how to build", () => {
+test("high-protein high-fiber meals title leads with the 30–40g protein template", () => {
   const page = articleFrontmatter("high-protein-high-fiber-meals-for-weight-loss");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/high-protein-high-fiber-meals-for-weight-loss.md"),
@@ -312,20 +312,16 @@ test("high-protein high-fiber meals title leads with how to build", () => {
 
   assert.equal(
     page.title,
-    "How to Build High Protein High Fiber Meals for Weight Loss",
+    "High Protein High Fiber Meals: 30–40g Protein Template",
   );
-  assert.equal(page.title.length, 58);
+  assert.equal(page.title.length, 54);
   assert.ok(
     page.title.length <= 60,
     `protein fiber meals title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("how to build"),
-    "title should lead with how to build, not a flat keyword stack",
-  );
-  assert.ok(
-    titleLower.indexOf("how to build") < titleLower.indexOf("high protein"),
-    "title should put the how-to lead before high protein",
+    titleLower.startsWith("high protein high fiber meals"),
+    "title should lead with high protein high fiber meals, not a soft how-to",
   );
   assert.ok(
     titleLower.indexOf("high protein") < titleLower.indexOf("high fiber"),
@@ -336,8 +332,28 @@ test("high-protein high-fiber meals title leads with how to build", () => {
     "title should put high fiber before meals",
   );
   assert.ok(
-    titleLower.indexOf("meals") < titleLower.indexOf("weight loss"),
-    "title should state meals before weight-loss intent",
+    titleLower.indexOf("meals") < titleLower.indexOf("30"),
+    "title should put meals before the protein gram range",
+  );
+  assert.match(page.title, /30\u201340g/);
+  assert.equal(
+    page.title.includes("30-40g"),
+    false,
+    "title should use the en dash in the 30–40g protein range, not a hyphen",
+  );
+  assert.ok(
+    titleLower.indexOf("30") < titleLower.indexOf("protein template"),
+    "title should put the gram range before protein template",
+  );
+  assert.equal(
+    titleLower.startsWith("how to build"),
+    false,
+    "title should not spend the SERP on a soft how-to lead",
+  );
+  assert.equal(
+    /^how to build high protein high fiber meals for weight loss$/.test(titleLower),
+    false,
+    "title should not be the old how-to weight-loss SERP",
   );
   assert.equal(
     /^high protein high fiber meals for weight loss$/.test(titleLower),
