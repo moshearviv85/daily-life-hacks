@@ -3396,6 +3396,60 @@ test("methodology title puts the on-page protein source count in the SERP", () =
   assert.equal(INDEX_PRUNE_SLUGS.has("methodology"), false);
 });
 
+test("statistics title puts the lead protein-per-dollar grams in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/statistics/index.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+  const data = JSON.parse(readFileSync(join(ROOT, "public/data/api-index-v1.json"), "utf8"));
+  const proteinTop = data.rows
+    .filter(
+      (row) =>
+        row.dataset === "protein-per-dollar-2026" &&
+        typeof row.metrics?.protein_g_per_dollar === "number",
+    )
+    .sort(
+      (a, b) =>
+        Number(b.metrics.protein_g_per_dollar) - Number(a.metrics.protein_g_per_dollar),
+    );
+  const leadGrams = Number(proteinTop[0].metrics.protein_g_per_dollar).toFixed(1);
+
+  assert.equal(proteinTop[0].food, "Whole wheat flour");
+  assert.equal(leadGrams, "96.0");
+  assert.match(page, /Most protein per \$1/);
+  assert.match(page, /\{topProteinValue\.toFixed\(1\)\}g/);
+  assert.equal(title, "Food Cost Statistics: $1 Buys 96.0g Protein");
+  assert.equal(title, `Food Cost Statistics: $1 Buys ${leadGrams}g Protein`);
+  assert.equal(title.length, 43);
+  assert.ok(
+    title.length <= 60,
+    `statistics title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("food cost statistics"),
+    "statistics title should lead with food cost statistics",
+  );
+  assert.match(title, /96\.0g/);
+  assert.match(title, /\$1 Buys/);
+  assert.match(title, /Protein/);
+  assert.equal(
+    /^food cost statistics: 2026 grocery value data$/.test(titleLower),
+    false,
+    "statistics title should not stay on the soft 2026 grocery value data SERP",
+  );
+  assert.equal(page.includes("| Daily Life Hacks"), false);
+  assert.match(page, /<BaseLayout title=\{title\}/);
+  assert.match(
+    page,
+    /<h1[^>]*>\s*What a Dollar Actually Buys at the Grocery Store\s*<\/h1>/,
+  );
+  assert.equal(
+    page.match(/const description =\s*"([^"]+)"/)?.[1],
+    "See 2026 food cost statistics from 474 published rows, including protein per dollar, fiber per dollar, daily menu costs, and raw CSV sources.",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("statistics"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("statistics"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
