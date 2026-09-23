@@ -2834,6 +2834,40 @@ test("plant-based protein sources title puts protein-per-dollar grams in the SER
   assert.equal(INDEX_PRUNE_SLUGS.has("plant-based-protein-sources-complete-guide"), false);
 });
 
+test("eat healthy on a budget title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("eat-healthy-on-a-budget-complete-playbook");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Eat Healthy on a Budget: Pinto 97.9g vs Bacon 9.2g",
+  );
+  assert.equal(page.title.length, 50);
+  assert.ok(
+    page.title.length <= 60,
+    `eat healthy on a budget title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("eat healthy on a budget"),
+    "eat healthy on a budget title should lead with eat healthy on a budget",
+  );
+  assert.ok(
+    titleLower.indexOf("97.9g") < titleLower.indexOf("9.2g"),
+    "eat healthy on a budget title should put dry pinto beans (97.9g per $) before bacon (9.2g per $)",
+  );
+  assert.match(page.title, /97\.9g/);
+  assert.match(page.title, /9\.2g/);
+  assert.match(page.title, /Pinto/);
+  assert.match(page.title, /Bacon/);
+  assert.equal(
+    /^how to eat healthy on a budget: the complete playbook$/.test(titleLower),
+    false,
+    "eat healthy on a budget title should not stay on the soft complete-playbook SERP",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("eat-healthy-on-a-budget-complete-playbook"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("eat-healthy-on-a-budget-complete-playbook"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
