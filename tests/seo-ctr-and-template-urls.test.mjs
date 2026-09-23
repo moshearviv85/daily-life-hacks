@@ -32,36 +32,46 @@ function articleFrontmatter(slug) {
 }
 
 test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
+  const popcornRaw = readFileSync(
+    join(ROOT, "src/data/articles/popcorn-vs-potato-chips-fiber-comparison.md"),
+    "utf8",
+  );
   const popcorn = articleFrontmatter("popcorn-vs-potato-chips-fiber-comparison");
-  assert.match(popcorn.title, /^Chips vs Popcorn Calories/);
-  assert.match(popcorn.title, /108/);
-  assert.match(popcorn.title, /149/);
-  assert.match(popcorn.title, /[Cc]alories/);
+  assert.equal(
+    popcorn.title,
+    "Chips vs Popcorn: Which Has Fewer Calories? 149 vs 108",
+  );
+  assert.equal(popcorn.title.length, 54);
   assert.ok(
     popcorn.title.length <= 60,
     `popcorn title too long for SERP: ${popcorn.title.length}`,
   );
   const titleLower = popcorn.title.toLowerCase();
-  const calorieAt = titleLower.indexOf("calorie");
-  const fiberAt = titleLower.search(/fiber/);
-  assert.ok(calorieAt !== -1, "popcorn title should mention calories");
   assert.ok(
-    fiberAt === -1 || calorieAt < fiberAt,
-    "popcorn title should lead with calories, not fiber",
+    titleLower.startsWith("chips vs popcorn"),
+    "popcorn title should lead with chips vs popcorn",
   );
   assert.ok(
-    titleLower.indexOf("chips vs popcorn calories") === 0,
-    "popcorn title should lead with chips vs popcorn calories query",
+    titleLower.indexOf("which has fewer calories") < titleLower.indexOf("149"),
+    "popcorn title should put which-has-fewer before the USDA calories",
   );
+  assert.match(popcorn.title, /149/);
+  assert.match(popcorn.title, /108/);
   assert.ok(
     titleLower.indexOf("149") < titleLower.indexOf("108"),
     "popcorn title should put chips calories (149) before popcorn (108)",
   );
   assert.equal(
+    /^chips vs popcorn calories: 149 vs 108 \(plus fiber\)$/.test(titleLower),
+    false,
+    "popcorn title should not be the old flat calorie comparison",
+  );
+  assert.equal(
     titleLower.startsWith("popcorn vs"),
     false,
-    "popcorn title should not lead popcorn-first and miss chips vs popcorn calories",
+    "popcorn title should not lead popcorn-first and miss chips vs popcorn",
   );
+  assert.match(popcornRaw, /^dateModified: 2026-09-23$/m);
   assert.match(popcorn.excerpt, /[Cc]hips vs popcorn calories/);
   assert.match(popcorn.excerpt, /108/);
   assert.match(popcorn.excerpt, /149/);
