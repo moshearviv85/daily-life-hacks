@@ -1,5 +1,5 @@
 ---
-title: "Chips vs Popcorn Calories: 149 vs 108 (Plus Fiber)"
+title: "Chips vs Popcorn: Which Has Fewer Calories? 149 vs 108"
 excerpt: "Chips vs popcorn calories: potato chips have about 149 per ounce vs 108 in air-popped popcorn, and 0.9g fiber vs 4.1g. USDA FoodData Central."
 category: nutrition
 tags:
@@ -18,7 +18,7 @@ quickAnswer: >-
   cups, an actual bowl, while an ounce of chips is about 22 chips. Baked chips
   don't close the gap: USDA puts them near 1.3 grams of fiber per ounce.
 date: 2026-02-07
-dateModified: 2026-09-18
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false
