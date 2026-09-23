@@ -487,14 +487,22 @@ test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay 
   assert.ok(entries.has(`${SITE}/`), "homepage missing from sitemap");
 });
 
-test("food value database SERP copy leads with nutrition-per-dollar intent", () => {
+test("food value database SERP copy leads with protein and fiber per dollar", () => {
   const html = readFileSync(distHtmlFor(`${SITE}/food-value-database/`), "utf8");
   const title = html.match(/<title>([^<]+)<\/title>/i)?.[1] ?? "";
+  const ogTitle =
+    html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i)?.[1] ??
+    html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:title["']/i)?.[1] ??
+    "";
+  const h1 = html.match(/<h1[^>]*>([^<]+)<\/h1>/i)?.[1]?.trim() ?? "";
   const description = metaContent(html, "description") ?? "";
 
-  assert.match(title, /^Nutrition per Dollar:/);
-  assert.match(title, /Protein and Fiber Database/);
+  assert.equal(title, "Protein and Fiber per Dollar: 79 Foods Ranked");
+  assert.equal(ogTitle, title);
+  assert.equal(h1, title);
+  assert.equal(/\bdatabase\b/i.test(title), false);
   assert.equal(title.includes("Compare"), false);
+  assert.match(html, /"dateModified":"2026-09-23"/);
   assert.match(description, /^Nutrition per dollar for 79 grocery foods/);
   assert.match(description, /protein and fiber per \$1/);
   assert.match(description, /July 2026 US prices plus USDA FoodData Central/);

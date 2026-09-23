@@ -479,14 +479,47 @@ test("packed lunch title leads with soggy sandwiches and wilted salads", () => {
   );
 });
 
-test("food value database title and meta lead with nutrition-per-dollar intent", () => {
+test("food value database title leads with protein and fiber per dollar", () => {
   const page = readFileSync(join(ROOT, "src/pages/food-value-database/index.astro"), "utf8");
-  const title = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
+  const titleTemplate = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
   const description = page.match(/const description =\s*`([^`]+)`/)?.[1] ?? "";
+  const title = titleTemplate.replaceAll("${foods.length}", "79");
+  const titleLower = title.toLowerCase();
 
-  assert.match(title, /^Nutrition per Dollar:/);
-  assert.match(title, /Protein and Fiber Database/);
-  assert.equal(title.includes("Compare"), false, "title should not lead with generic compare");
+  assert.equal(title, "Protein and Fiber per Dollar: 79 Foods Ranked");
+  assert.equal(title.length, 45);
+  assert.ok(
+    title.length <= 60,
+    `food value title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("protein and fiber per dollar"),
+    "food value title should lead with protein and fiber per dollar",
+  );
+  assert.ok(
+    titleLower.indexOf("protein and fiber per dollar") < titleLower.indexOf("79 foods ranked"),
+    "food value title should put the per-dollar answer before the 79-food count",
+  );
+  assert.match(title, /79 Foods Ranked/);
+  assert.equal(
+    /\bdatabase\b/.test(titleLower),
+    false,
+    "food value title should not spend the SERP on database",
+  );
+  assert.equal(
+    /^nutrition per dollar: \d+-food protein and fiber database$/.test(titleLower),
+    false,
+    "food value title should not be the old database SERP",
+  );
+  assert.match(page, /<h1[^>]*>\s*\{title\}\s*<\/h1>/);
+  assert.match(page, /const dateModified = "2026-09-23";/);
+  assert.match(page, /dateModified,/);
+  assert.equal(
+    page.includes("DATA_RELEASE_DATE"),
+    false,
+    "food value page dateModified should be the title refresh, not the dataset release date",
+  );
+
   assert.match(description, /^Nutrition per dollar for \$\{foods\.length\} grocery foods/);
   assert.match(description, /protein and fiber per \$1/);
   assert.match(description, /July 2026 US prices plus USDA FoodData Central/);
