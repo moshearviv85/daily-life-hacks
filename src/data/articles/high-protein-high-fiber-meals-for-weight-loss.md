@@ -1,5 +1,5 @@
 ---
-title: "High Protein High Fiber Meals for Weight Loss"
+title: "How to Build High Protein High Fiber Meals for Weight Loss"
 excerpt: "High protein high fiber meals for weight loss keep you full without the spreadsheet drama. Starving an hour after a diet salad is not a willpower problem"
 category: nutrition
 tags:
@@ -11,7 +11,7 @@ tags:
 image: /images/high-protein-high-fiber-meals-for-weight-loss-main.jpg
 imageAlt: Bowl of lentil stew with grilled chicken, roasted vegetables, and brown rice on a wooden table
 date: 2026-02-25
-dateModified: 2026-09-15
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false

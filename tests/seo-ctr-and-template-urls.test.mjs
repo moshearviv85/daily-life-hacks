@@ -274,26 +274,53 @@ test("canned vs dry beans title matches cost query and on-page protein-per-dolla
   );
 });
 
-test("high-protein high-fiber meals title leads with meals for weight-loss query", () => {
+test("high-protein high-fiber meals title leads with how to build", () => {
   const page = articleFrontmatter("high-protein-high-fiber-meals-for-weight-loss");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/high-protein-high-fiber-meals-for-weight-loss.md"),
+    "utf8",
+  );
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
 
-  assert.match(page.title, /[Hh]igh [Pp]rotein/);
-  assert.match(page.title, /[Hh]igh [Ff]iber/);
-  assert.match(page.title, /[Mm]eals/);
-  assert.match(page.title, /[Ww]eight [Ll]oss/);
+  assert.equal(
+    page.title,
+    "How to Build High Protein High Fiber Meals for Weight Loss",
+  );
+  assert.equal(page.title.length, 58);
+  assert.ok(
+    page.title.length <= 60,
+    `protein fiber meals title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("how to build"),
+    "title should lead with how to build, not a flat keyword stack",
+  );
+  assert.ok(
+    titleLower.indexOf("how to build") < titleLower.indexOf("high protein"),
+    "title should put the how-to lead before high protein",
+  );
   assert.ok(
     titleLower.indexOf("high protein") < titleLower.indexOf("high fiber"),
-    "title should lead with high-protein, then high-fiber",
+    "title should put high protein before high fiber",
   );
   assert.ok(
     titleLower.indexOf("high fiber") < titleLower.indexOf("meals"),
-    "title should lead with high-protein high-fiber meals, not a diet definition",
+    "title should put high fiber before meals",
   );
   assert.ok(
     titleLower.indexOf("meals") < titleLower.indexOf("weight loss"),
     "title should state meals before weight-loss intent",
+  );
+  assert.equal(
+    /^high protein high fiber meals for weight loss$/.test(titleLower),
+    false,
+    "title should not be the old flat keyword stack",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "title should not use a best superlative",
   );
   assert.equal(
     titleLower.includes("what is"),
@@ -305,6 +332,7 @@ test("high-protein high-fiber meals title leads with meals for weight-loss query
     false,
     "title should not lead with diet instead of meals",
   );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /^High protein high fiber meals for weight loss/i);
   assert.ok(
