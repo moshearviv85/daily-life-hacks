@@ -1,5 +1,5 @@
 ---
-title: "Lentils vs Chicken Breast: Which Is Cheaper Protein?"
+title: "Lentils vs Chicken Breast: 77.7g vs 24.5g Protein per Dollar"
 excerpt: "Dry brown lentils deliver 77.7 g of protein per dollar. Chicken breast delivers 24.5. Lentils win by 3.2x, and still win by 2x after quality."
 category: "nutrition"
 tags: ["lentils vs chicken breast", "cheapest protein per dollar", "lentils protein cost", "chicken breast price", "budget protein sources"]
