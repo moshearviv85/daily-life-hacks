@@ -1,5 +1,5 @@
 ---
-title: "Eggs vs Greek Yogurt: Which Is Cheaper Protein?"
+title: "Eggs vs Greek Yogurt: 34.4g vs 27.5g Protein per Dollar"
 excerpt: "Eggs deliver 34.4 g of protein per dollar; Greek yogurt 27.5. Eggs win by only 1.3x, close enough that the tiebreaker is what you'll actually eat."
 category: "nutrition"
 tags: ["eggs vs greek yogurt", "cheap protein sources", "protein per dollar", "greek yogurt protein", "egg protein cost"]
