@@ -98,25 +98,41 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   const protein = articleFrontmatter("protein-per-serving-beans-chicken-tofu-compared");
   assert.equal(
     protein.title,
-    "Which Has More Protein Per Serving: Chicken, Beans, Tofu?",
+    "Chicken vs Beans vs Tofu: Protein Per Serving (26–35g)",
   );
-  assert.equal(protein.title.length, 57);
+  assert.equal(protein.title.length, 54);
   assert.ok(
     protein.title.length <= 60,
     `protein title too long for SERP: ${protein.title.length}`,
   );
   const proteinTitle = protein.title.toLowerCase();
   assert.ok(
-    proteinTitle.startsWith("which has more protein per serving"),
-    "protein title should lead with which has more protein per serving",
+    proteinTitle.startsWith("chicken vs beans vs tofu"),
+    "protein title should lead with chicken vs beans vs tofu",
   );
   assert.ok(
-    proteinTitle.indexOf("which has more") < proteinTitle.indexOf("chicken"),
-    "protein title should put which-has-more before the foods",
+    proteinTitle.indexOf("chicken vs beans vs tofu") <
+      proteinTitle.indexOf("protein per serving"),
+    "protein title should put the foods before protein per serving",
+  );
+  assert.ok(
+    proteinTitle.indexOf("protein per serving") < proteinTitle.indexOf("26"),
+    "protein title should put protein per serving before the chicken gram range",
+  );
+  assert.match(protein.title, /\(26\u201335g\)/);
+  assert.equal(
+    protein.title.includes("26-35g"),
+    false,
+    "protein title should use the en dash already in the cooked chicken range, not a hyphen",
   );
   assert.match(protein.title, /[Cc]hicken/);
   assert.match(protein.title, /[Bb]eans/);
   assert.match(protein.title, /[Tt]ofu/);
+  assert.equal(
+    /^which has more protein per serving: chicken, beans, tofu\?$/.test(proteinTitle),
+    false,
+    "protein title should not be the old which-has-more question SERP",
+  );
   assert.equal(
     /^chicken vs beans vs tofu: 26-35g vs 15g vs 8-20g protein$/.test(proteinTitle),
     false,
