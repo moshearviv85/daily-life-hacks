@@ -2567,6 +2567,46 @@ test("chipotle protein per dollar title puts protein-per-dollar grams in the SER
   assert.equal(INDEX_PRUNE_SLUGS.has("chipotle-protein-per-dollar"), false);
 });
 
+test("mcdonald's protein per dollar title puts protein-per-dollar grams in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/mcdonalds-protein-per-dollar.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+
+  assert.equal(
+    title,
+    "McDonald's Protein per $: Double QP 5.9g vs McDouble 5.5g",
+  );
+  assert.equal(title.length, 57);
+  assert.ok(
+    title.length <= 60,
+    `mcdonald's protein per dollar title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("mcdonald's protein per $"),
+    "mcdonald's protein per dollar title should lead with mcdonald's protein per $",
+  );
+  assert.ok(
+    titleLower.indexOf("5.9g") < titleLower.indexOf("5.5g"),
+    "mcdonald's protein per dollar title should put the Double Quarter Pounder with Cheese (5.9g per $) before the McDouble (5.5g per $)",
+  );
+  assert.match(title, /5\.9g/);
+  assert.match(title, /5\.5g/);
+  assert.match(title, /Double QP/);
+  assert.match(title, /McDouble/);
+  assert.equal(
+    /^mcdonald's protein per dollar: 6 items ranked \(july 2026 prices\)$/.test(titleLower),
+    false,
+    "mcdonald's protein per dollar title should not stay on the soft items-ranked SERP",
+  );
+  assert.match(
+    page,
+    /Every McDonald's item we priced, ranked by grams of protein per dollar\. The \$\{best\.item\} wins at/,
+  );
+  assert.match(page, /McDonald's Protein per Dollar, Ranked/);
+  assert.equal(INDEX_KEEP_PATHS.has("mcdonalds-protein-per-dollar"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("mcdonalds-protein-per-dollar"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
