@@ -2263,6 +2263,38 @@ test("one-dollar protein title puts protein grams per dollar in the SERP", () =>
   );
 });
 
+test("fiber per dollar ranking title puts fiber grams per dollar in the SERP", () => {
+  const page = articleFrontmatter("fiber-per-dollar-cheapest-high-fiber-foods");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Fiber per Dollar: Whole Wheat Flour 77.8g, Split Peas 71.0g",
+  );
+  assert.equal(page.title.length, 59);
+  assert.ok(
+    page.title.length <= 60,
+    `fiber per dollar ranking title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("fiber per dollar"),
+    "fiber per dollar ranking title should lead with fiber per dollar",
+  );
+  assert.ok(
+    titleLower.indexOf("77.8g") < titleLower.indexOf("71.0g"),
+    "fiber per dollar ranking title should put whole wheat flour (77.8g) before green split peas (71.0g)",
+  );
+  assert.match(page.title, /77\.8g/);
+  assert.match(page.title, /71\.0g/);
+  assert.match(page.title, /Whole Wheat Flour/);
+  assert.match(page.title, /Split Peas/);
+  assert.equal(
+    /^fiber per dollar: the cheapest high-fiber foods, ranked$/.test(titleLower),
+    false,
+    "fiber per dollar ranking title should not stay on the soft cheapest-foods-ranked SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
