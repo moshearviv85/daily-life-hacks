@@ -280,6 +280,33 @@ test("research and statistics hubs link each KEEP chain page once", () => {
   }
 });
 
+test("homepage lead links each KEEP chain page and the plant-protein guide once", () => {
+  const source = pageSource("index.astro");
+  const mainStart = source.indexOf("<main");
+  const hero = source.indexOf("<HeroSection");
+  assert.ok(mainStart !== -1 && hero > mainStart, "homepage lead should sit above HeroSection");
+  const lead = source.slice(mainStart, hero);
+  const homepageKeepLinks = [
+    ...keepChainPages,
+    "plant-based-protein-sources-complete-guide",
+  ];
+
+  for (const slug of homepageKeepLinks) {
+    assert.equal(INDEX_KEEP_PATHS.has(slug), true, slug);
+    assert.equal(INDEX_PRUNE_SLUGS.has(slug), false, slug);
+    assert.equal(
+      htmlHrefMatches(lead, slug).length,
+      1,
+      `homepage lead should link /${slug}/ once`,
+    );
+    assert.equal(
+      htmlHrefMatches(source, slug).length,
+      1,
+      `homepage should link /${slug}/ once`,
+    );
+  }
+});
+
 test("guides hub spokes stay on KEEP paths and skip pruned slugs", () => {
   for (const slug of INDEX_PRUNE_SLUGS) {
     assert.equal(isGuideHubSpoke(slug), false, slug);
