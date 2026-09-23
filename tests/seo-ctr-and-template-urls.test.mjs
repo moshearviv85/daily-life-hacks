@@ -1183,6 +1183,39 @@ test("selenium foods title leads with how much you need", () => {
   assert.match(page.excerpt, /55 mcg/);
 });
 
+test("prune juice alternatives title leads with the constipation query", () => {
+  const page = articleFrontmatter("prune-juice-alternatives-for-constipation");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/prune-juice-alternatives-for-constipation.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(page.title, "Prune Juice Alternatives for Constipation");
+  assert.equal(page.title.length, 41);
+  assert.ok(
+    page.title.length <= 60,
+    `prune juice alternatives title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("prune juice alternatives"),
+    "prune juice alternatives title should lead with prune juice alternatives",
+  );
+  assert.ok(
+    titleLower.indexOf("for constipation") > titleLower.indexOf("prune juice alternatives"),
+    "prune juice alternatives title should put for constipation after the alternatives lead",
+  );
+  assert.equal(
+    titleLower.includes("with actual evidence"),
+    false,
+    "prune juice alternatives title should not spend the SERP on with actual evidence",
+  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+
+  assert.match(page.excerpt, /sorbitol/);
+  assert.match(page.excerpt, /kiwifruit/);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),

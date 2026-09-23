@@ -1,12 +1,12 @@
 ---
-title: "Prune Juice Alternatives With Actual Evidence"
+title: "Prune Juice Alternatives for Constipation"
 excerpt: "Prune juice works through sorbitol, not fiber. Here's what trials actually show about kiwifruit, whole prunes, mineral water, and the juice swaps nobody tested."
 category: nutrition
 tags: ["prune juice alternatives", "constipation food options", "high fiber foods", "kiwifruit", "nutrition basics"]
 image: "/images/prune-juice-alternatives-for-constipation-main.jpg"
 imageAlt: "A glass of prune juice beside green kiwifruit, pears, oats, and lentils on a kitchen counter"
 date: 2026-02-05
-dateModified: 2026-08-01
+dateModified: 2026-09-23
 author: "David Miller"
 quickAnswer: "If prune juice is out, two green kiwifruit a day is the swap with the strongest human evidence: a 2024 review of 23 studies found kiwifruit produced modestly more weekly bowel movements than the standard fiber comparator, though certainty was rated low. Whole prunes at about 100 g a day and high mineral-content water also have trial support. Prune juice mostly supplies sorbitol, not fiber, because it's filtered. Whole pears, apples, oats, and beans are solid fiber, just not instant equivalents. Add fiber gradually, keep liquids in the day, and get persistent symptoms or bleeding checked."
 featured: false
