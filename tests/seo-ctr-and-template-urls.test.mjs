@@ -422,11 +422,8 @@ test("bran muffin title leads with high fiber bran muffins", () => {
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
 
-  assert.equal(
-    page.title,
-    "High Fiber Bran Muffins That Taste Good (About 5.9g Each)",
-  );
-  assert.equal(page.title.length, 57);
+  assert.equal(page.title, "High Fiber Bran Muffins (About 5.9g Each)");
+  assert.equal(page.title.length, 41);
   assert.ok(
     page.title.length <= 60,
     `bran muffin title should be ≤60 chars, got ${page.title.length}`,
@@ -435,7 +432,21 @@ test("bran muffin title leads with high fiber bran muffins", () => {
     titleLower.startsWith("high fiber bran muffins"),
     "bran muffin title should lead with high fiber bran muffins",
   );
+  assert.ok(
+    titleLower.indexOf("bran muffins") < titleLower.indexOf("5.9g"),
+    "bran muffin title should put bran muffins before the 5.9g fiber amount",
+  );
   assert.match(page.title, /5\.9g/);
+  assert.equal(
+    titleLower.includes("that taste good"),
+    false,
+    "bran muffin title should not spend the SERP on that taste good",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "bran muffin title should not use a best superlative",
+  );
   assert.equal(
     titleLower.startsWith("how much fiber"),
     false,
@@ -450,6 +461,11 @@ test("bran muffin title leads with high fiber bran muffins", () => {
     titleLower.includes("whole wheat"),
     false,
     "bran muffin title should not spend the SERP on whole wheat",
+  );
+  assert.equal(
+    /^high fiber bran muffins that taste good \(about 5\.9g each\)$/.test(titleLower),
+    false,
+    "bran muffin title should not keep the old that-taste-good fluff",
   );
 
   assert.ok(
@@ -466,6 +482,7 @@ test("bran muffin title leads with high fiber bran muffins", () => {
     page.excerpt.length <= 160,
     `bran muffin meta too long: ${page.excerpt.length}`,
   );
+  assert.match(raw, /^date: 2025-12-28$/m);
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
