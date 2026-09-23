@@ -1,5 +1,5 @@
 ---
-title: "Chicken Thighs vs Breast: Which Is Cheaper Protein?"
+title: "Chicken Thighs vs Breast: 50.3g vs 24.5g Protein per Dollar"
 excerpt: "Bone-in drumsticks deliver 50.3 g of protein per dollar. Chicken breast delivers 24.5. Dark meat wins 2.1x, but boneless thighs only reach 27.7."
 category: "nutrition"
 tags: ["chicken thighs vs breast", "chicken drumsticks protein cost", "cheapest protein per dollar", "chicken breast price 2026", "budget protein sources"]
