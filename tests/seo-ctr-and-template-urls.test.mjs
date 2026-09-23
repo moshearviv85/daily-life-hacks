@@ -2964,6 +2964,64 @@ test("dried beans converter title puts the 15.5 oz can size in the SERP", () => 
   assert.equal(INDEX_PRUNE_SLUGS.has("dried-beans-to-canned-converter"), false);
 });
 
+test("grocery trip calculator title puts the sample cash savings in the SERP", () => {
+  const page = readFileSync(
+    join(ROOT, "src/pages/tools/grocery-trip-savings-calculator/index.astro"),
+    "utf8",
+  );
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+  const input = (id) => Number(page.match(new RegExp(`id="${id}"[^>]*value="([^"]+)"`))?.[1]);
+  const savings = input("trip-savings");
+  const miles = input("trip-miles");
+  const mpg = input("trip-mpg");
+  const gas = input("trip-gas");
+  const fees = input("trip-fees");
+  const timeValue = input("trip-time-value");
+  const fuel = (miles / mpg) * gas;
+  const cashNet = savings - fuel - fees;
+
+  assert.equal(savings, 18);
+  assert.equal(miles, 16);
+  assert.equal(mpg, 28);
+  assert.equal(gas, 3.5);
+  assert.equal(fees, 0);
+  assert.equal(timeValue, 0);
+  assert.equal(fuel, 2);
+  assert.equal(cashNet, 16);
+  assert.equal(
+    title,
+    "Is Driving to a Cheaper Grocery Store Worth It? Save $16",
+  );
+  assert.equal(title.length, 56);
+  assert.ok(
+    title.length <= 60,
+    `grocery trip calculator title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("is driving to a cheaper grocery store worth it"),
+    "grocery trip calculator title should lead with the driving-to-a-cheaper-store query",
+  );
+  assert.match(title, /Save \$16/);
+  assert.equal(
+    /^is driving to a cheaper grocery store worth it\? calculator$/.test(titleLower),
+    false,
+    "grocery trip calculator title should not stay on the soft calculator SERP",
+  );
+  assert.match(
+    page,
+    /<h1[^>]*>Is Driving to a Cheaper Grocery Store Worth It\?<\/h1>/,
+  );
+  assert.match(page, /a \$9 discount loses some swagger after a 50-minute detour/);
+  assert.equal(
+    page.match(/const description = "([^"]+)"/)?.[1],
+    "Compare grocery savings with gas, parking, transit, and travel time. See the real break-even savings before making the extra trip.",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("tools/grocery-trip-savings-calculator"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("tools/grocery-trip-savings-calculator"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("grocery-trip-savings-calculator"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
