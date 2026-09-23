@@ -2423,6 +2423,38 @@ test("produce fiber ranking title puts fiber-per-dollar grams in the SERP", () =
   );
 });
 
+test("shelf-stable pantry title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("shelf-stable-pantry-per-dollar");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Shelf-Stable Protein per $: Pinto 97.9g vs Flour 96.0g",
+  );
+  assert.equal(page.title.length, 54);
+  assert.ok(
+    page.title.length <= 60,
+    `shelf-stable pantry title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("shelf-stable protein per $"),
+    "shelf-stable pantry title should lead with shelf-stable protein per $",
+  );
+  assert.ok(
+    titleLower.indexOf("97.9g") < titleLower.indexOf("96.0g"),
+    "shelf-stable pantry title should put dry pinto beans (97.9g) before whole wheat flour (96.0g)",
+  );
+  assert.match(page.title, /97\.9g/);
+  assert.match(page.title, /96\.0g/);
+  assert.match(page.title, /Pinto/);
+  assert.match(page.title, /Flour/);
+  assert.equal(
+    /^cheap shelf-stable protein: 27 pantry foods ranked$/.test(titleLower),
+    false,
+    "shelf-stable pantry title should not stay on the soft 27-pantry-foods-ranked SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
