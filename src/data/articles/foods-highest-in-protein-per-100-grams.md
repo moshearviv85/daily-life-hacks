@@ -1,5 +1,5 @@
 ---
-title: "Foods Highest in Protein per 100g: 49-Food Study"
+title: "Highest Protein Foods per 100g: TVP 52.17g"
 excerpt: "Foods highest in protein per 100g: TVP 52.17g (label proxy). Exact USDA matches: dry brown lentils 24.63g, drained sardines 24.62g. 49-food July 2026 study."
 category: "nutrition"
 tags: ["foods highest in protein", "protein per 100g", "high protein foods", "protein content", "grocery data"]
@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/foods-highest-in-protein-per-100-grams-main.jpg"
 imageAlt: "Bags of dry lentils, peanuts, and beans lined up beside a block of cheese and a pack of chicken breast on a counter"
 date: 2026-07-28
-dateModified: 2026-09-07
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false
