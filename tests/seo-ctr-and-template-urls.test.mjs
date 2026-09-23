@@ -3022,6 +3022,45 @@ test("grocery trip calculator title puts the sample cash savings in the SERP", (
   assert.equal(INDEX_PRUNE_SLUGS.has("grocery-trip-savings-calculator"), false);
 });
 
+test("recipe cost calculator title puts the $10.50 batch example in the SERP", () => {
+  const page = readFileSync(
+    join(ROOT, "src/pages/tools/recipe-cost-calculator/index.astro"),
+    "utf8",
+  );
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+
+  assert.equal(title, "Recipe Cost Calculator: $10.50 per Batch");
+  assert.equal(title.length, 40);
+  assert.ok(
+    title.length <= 60,
+    `recipe cost calculator title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("recipe cost calculator"),
+    "recipe cost calculator title should lead with recipe cost calculator",
+  );
+  assert.match(title, /\$10\.50/);
+  assert.match(title, /per Batch/);
+  assert.equal(
+    /^recipe cost calculator: cost per batch and serving$/.test(titleLower),
+    false,
+    "recipe cost calculator title should not stay on the soft cost-per-batch-and-serving SERP",
+  );
+  assert.match(
+    page,
+    /A \$10 subtotal with a 5% buffer becomes \$10\.50\./,
+  );
+  assert.match(page, /<h1[^>]*>What Did That Recipe Actually Cost\?<\/h1>/);
+  assert.match(
+    page,
+    /https:\/\/www\.daily-life-hacks\.com\/tools\/recipe-cost-calculator\//,
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("tools/recipe-cost-calculator"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("tools/recipe-cost-calculator"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("recipe-cost-calculator"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
