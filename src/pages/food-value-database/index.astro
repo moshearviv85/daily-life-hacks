@@ -4,7 +4,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import DataProvenance from "../../components/DataProvenance.astro";
 import dataIndex from "../../../public/data/api-index-v1.json";
-import { DATA_RELEASE_DATE, DATA_VERSION, HUGGINGFACE_DATASET_URL } from "../../content/datasets";
+import { DATA_VERSION, HUGGINGFACE_DATASET_URL } from "../../content/datasets";
 
 type SourceRow = {
   dataset: string;
@@ -126,7 +126,8 @@ const serializedFoods = JSON.stringify(foods).replace(/</g, "\\u003c");
 
 const siteUrl = "https://www.daily-life-hacks.com";
 const pageUrl = `${siteUrl}/food-value-database/`;
-const title = `Nutrition per Dollar: ${foods.length}-Food Protein and Fiber Database`;
+const title = `Protein and Fiber per Dollar: ${foods.length} Foods Ranked`;
+const dateModified = "2026-09-23";
 const description =
   `Nutrition per dollar for ${foods.length} grocery foods: protein and fiber per $1 in a searchable table. July 2026 US prices plus USDA FoodData Central. Not USDA-endorsed.`;
 
@@ -139,7 +140,7 @@ const schemas = [
     url: pageUrl,
     description,
     inLanguage: "en-US",
-    dateModified: DATA_RELEASE_DATE,
+    dateModified,
     isPartOf: { "@id": `${siteUrl}/#website` },
     publisher: { "@id": `${siteUrl}/#organization` },
     breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
@@ -189,7 +190,7 @@ const sourceSummary = (
         {foods.length} foods. Two audited rankings. One useful table.
       </p>
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-5" style="color:var(--heading-color);">
-        Search Grocery Foods by Price, Protein, Fiber, and Value
+        {title}
       </h1>
       <p class="text-xl leading-relaxed" style="color:var(--text-color);">
         This database compares {foods.length} unique grocery foods from our July 2026 US price

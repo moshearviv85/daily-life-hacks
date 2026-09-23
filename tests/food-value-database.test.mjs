@@ -114,10 +114,16 @@ test("title and meta lead with nutrition-per-dollar grocery database intent", ()
   const renderedTitle = title.replace("${foods.length}", String(uniqueNames.size));
   const renderedDescription = description.replaceAll("${foods.length}", String(uniqueNames.size));
 
-  assert.match(renderedTitle, /^Nutrition per Dollar:/);
-  assert.match(renderedTitle, /Protein and Fiber Database/);
+  assert.equal(renderedTitle, "Protein and Fiber per Dollar: 79 Foods Ranked");
+  assert.equal(renderedTitle.length, 45);
+  assert.equal(
+    /\bdatabase\b/i.test(renderedTitle),
+    false,
+    "title should not spend the SERP on database",
+  );
   assert.equal(renderedTitle.includes("Compare"), false, "title should not spend the SERP on generic compare");
   assert.ok(renderedTitle.length <= 60, `title too long for SERP: ${renderedTitle.length}`);
+  assert.match(page, /const dateModified = "2026-09-23";/);
 
   assert.match(renderedDescription, /^Nutrition per dollar for \d+ grocery foods/);
   assert.match(renderedDescription, /protein and fiber per \$1/);
