@@ -1,5 +1,5 @@
 ---
-title: Best Breakfast Foods for Sustained Energy
+title: "Breakfast Foods for Sustained Energy"
 excerpt: "Build breakfast with protein, fiber-rich carbohydrates, and some fat for a more substantial morning meal without powders or complicated rules."
 quickAnswer: >-
   Choose one protein such as eggs, plain Greek yogurt, cottage cheese, or beans;
@@ -15,7 +15,7 @@ tags:
 image: /images/best-breakfast-foods-for-sustained-energy-main.jpg
 imageAlt: Breakfast plate with eggs, whole grain toast, and fruit
 date: 2026-03-15
-dateModified: 2026-07-20
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false

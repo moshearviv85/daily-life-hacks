@@ -1538,6 +1538,44 @@ test("high protein breads title leads with high protein breads for sandwiches", 
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
+test("breakfast energy title drops the leading Best superlative", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/best-breakfast-foods-for-sustained-energy.md"),
+    "utf8",
+  );
+  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
+  assert.ok(title, "best-breakfast-foods-for-sustained-energy is missing a quoted title");
+  const titleLower = title.toLowerCase();
+
+  assert.equal(title, "Breakfast Foods for Sustained Energy");
+  assert.equal(title.length, 36);
+  assert.ok(
+    title.length <= 60,
+    `breakfast energy title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("breakfast foods for sustained energy"),
+    "breakfast energy title should lead with breakfast foods for sustained energy",
+  );
+  assert.equal(
+    titleLower.startsWith("best "),
+    false,
+    "breakfast energy title should not lead with Best ",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "breakfast energy title should not use a best superlative",
+  );
+  assert.equal(
+    /^best breakfast foods for sustained energy$/.test(titleLower),
+    false,
+    "breakfast energy title should not be the old Best breakfast foods SERP",
+  );
+  assert.match(raw, /^date: 2026-03-15$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
