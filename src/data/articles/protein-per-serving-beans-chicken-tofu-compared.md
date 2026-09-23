@@ -1,5 +1,5 @@
 ---
-title: "Chicken vs Beans vs Tofu: 26-35g vs 15g vs 8-20g Protein"
+title: "Which Has More Protein Per Serving: Chicken, Beans, Tofu?"
 excerpt: "Chicken breast has 26-35g protein per 3-4 oz vs about 15g in a cup of black beans vs 8-20g in tofu. USDA FoodData Central, cooked servings."
 quickAnswer: >-
   Chicken wins per serving, but the gap is smaller than most comparisons make it
@@ -14,7 +14,7 @@ tags: ["ProteinGuide", "MealPlanning", "PantryStaples", "BalancedMeals", "Nutrit
 image: "/images/protein-per-serving-beans-chicken-tofu-compared-main.jpg"
 imageAlt: "Plate with chicken tofu beans and grains arranged as protein portion examples"
 date: 2026-04-07
-dateModified: 2026-09-14
+dateModified: 2026-09-23
 publishAt: 2026-04-09T00:00:00.000Z
 author: "David Miller"
 featured: false
