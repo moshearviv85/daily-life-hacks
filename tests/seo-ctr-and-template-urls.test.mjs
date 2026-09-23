@@ -2114,6 +2114,36 @@ test("dairy protein ranking title puts protein-per-dollar grams in the SERP", ()
   );
 });
 
+test("meat protein ranking title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("meat-per-dollar-protein-ranked");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Cheapest Meat Protein: Drumsticks 50.3g vs Breast 24.5g",
+  );
+  assert.equal(page.title.length, 55);
+  assert.ok(
+    page.title.length <= 60,
+    `meat protein ranking title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("cheapest meat protein"),
+    "meat protein ranking title should lead with cheapest meat protein",
+  );
+  assert.ok(
+    titleLower.indexOf("50.3g") < titleLower.indexOf("24.5g"),
+    "meat protein ranking title should put drumsticks (50.3g) before chicken breast (24.5g)",
+  );
+  assert.match(page.title, /50\.3g/);
+  assert.match(page.title, /24\.5g/);
+  assert.equal(
+    /^the cheapest meat for protein \(it isn't chicken breast\)$/.test(titleLower),
+    false,
+    "meat protein ranking title should not stay on the soft chicken-breast SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
