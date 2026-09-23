@@ -1,5 +1,5 @@
 ---
-title: "Cooking Oil Smoke Points: A Chart That Cites Its Sources"
+title: "Smoke Point Chart: Cooking Oil Smoke Points"
 excerpt: "Smoke points for 22 refined oils and fats plus measured figures for cold-pressed bottles, each traced to the lab table it came from, and which oil to grab for searing, frying and baking."
 quickAnswer: >-
   Smoke point is the temperature where an oil starts breaking down and giving
@@ -25,7 +25,7 @@ tags:
 image: "/images/cooking-oils-smoke-points-best-uses-main.jpg"
 imageAlt: "Several bottles of cooking oils lined up on a kitchen counter with labels visible"
 date: 2026-04-19
-dateModified: 2026-07-30
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false
