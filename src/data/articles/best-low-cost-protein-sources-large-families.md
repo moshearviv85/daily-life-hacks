@@ -1,5 +1,5 @@
 ---
-title: Best Low Cost Protein Sources for Large Families
+title: "Low Cost Protein Sources for Large Families"
 excerpt: Compare low-cost protein sources for large families, including beans, eggs, chicken, lentils, dairy, and canned fish, with practical meal ideas.
 category: nutrition
 tags:
@@ -15,7 +15,7 @@ image: "/images/best-low-cost-protein-sources-large-families-main.jpg"
 imageAlt: A wicker basket filled with brown and white eggs sits on a wooden table.
 quickAnswer: "Dried beans and lentils are the cheapest protein a family can buy. In our July 2026 sample of 49 foods, dry pinto beans delivered 97.9 grams of protein per dollar and brown lentils 77.7, against 50.3 for bone-in chicken drumsticks, 34.4 for eggs and 11.5 for 80/20 ground beef. USDA MyPlate counts a quarter cup of cooked beans, one egg, or one tablespoon of peanut butter as one ounce-equivalent of protein foods, the same unit as an ounce of chicken. Cook poultry to 165F, and use cooked beans or chicken within 3 to 4 days."
 date: 2026-04-28
-dateModified: 2026-07-31
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 faq:

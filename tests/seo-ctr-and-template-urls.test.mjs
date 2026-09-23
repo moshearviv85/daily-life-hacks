@@ -1576,6 +1576,44 @@ test("breakfast energy title drops the leading Best superlative", () => {
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
+test("low cost protein families title drops the leading Best superlative", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/best-low-cost-protein-sources-large-families.md"),
+    "utf8",
+  );
+  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
+  assert.ok(title, "best-low-cost-protein-sources-large-families is missing a quoted title");
+  const titleLower = title.toLowerCase();
+
+  assert.equal(title, "Low Cost Protein Sources for Large Families");
+  assert.equal(title.length, 43);
+  assert.ok(
+    title.length <= 60,
+    `low cost protein families title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("low cost protein sources for large families"),
+    "low cost protein families title should lead with low cost protein sources for large families",
+  );
+  assert.equal(
+    titleLower.startsWith("best "),
+    false,
+    "low cost protein families title should not lead with Best ",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "low cost protein families title should not use a best superlative",
+  );
+  assert.equal(
+    /^best low cost protein sources for large families$/.test(titleLower),
+    false,
+    "low cost protein families title should not be the old Best low cost protein SERP",
+  );
+  assert.match(raw, /^date: 2026-04-28$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
