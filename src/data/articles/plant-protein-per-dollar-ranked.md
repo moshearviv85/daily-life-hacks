@@ -1,5 +1,5 @@
 ---
-title: "The Cheapest Plant Protein: 18 Sources Ranked"
+title: "Cheapest Plant Protein: Pinto 97.9g vs Black Beans 81.0g"
 excerpt: "Dry pinto beans lead 18 plant proteins at 97.9 g of protein per dollar. Tofu and tempeh sit at the bottom. Full ranking with July 2026 prices."
 category: "nutrition"
 tags: ["cheapest plant protein", "plant protein per dollar", "vegan protein on a budget", "budget plant based protein", "grocery data"]

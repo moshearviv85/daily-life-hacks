@@ -2144,6 +2144,36 @@ test("meat protein ranking title puts protein-per-dollar grams in the SERP", () 
   );
 });
 
+test("plant protein ranking title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("plant-protein-per-dollar-ranked");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Cheapest Plant Protein: Pinto 97.9g vs Black Beans 81.0g",
+  );
+  assert.equal(page.title.length, 56);
+  assert.ok(
+    page.title.length <= 60,
+    `plant protein ranking title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("cheapest plant protein"),
+    "plant protein ranking title should lead with cheapest plant protein",
+  );
+  assert.ok(
+    titleLower.indexOf("97.9g") < titleLower.indexOf("81.0g"),
+    "plant protein ranking title should put dry pinto beans (97.9g) before dry black beans (81.0g)",
+  );
+  assert.match(page.title, /97\.9g/);
+  assert.match(page.title, /81\.0g/);
+  assert.equal(
+    /^the cheapest plant protein: 18 sources ranked$/.test(titleLower),
+    false,
+    "plant protein ranking title should not stay on the soft 18-sources SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
