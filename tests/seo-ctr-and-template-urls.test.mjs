@@ -2647,6 +2647,46 @@ test("kfc protein per dollar title puts protein-per-dollar grams in the SERP", (
   assert.equal(INDEX_PRUNE_SLUGS.has("kfc-protein-per-dollar"), false);
 });
 
+test("taco bell protein per dollar title puts protein-per-dollar grams in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/taco-bell-protein-per-dollar.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+
+  assert.equal(
+    title,
+    "Taco Bell Protein per $: Cheesy Bean 5.7g vs Bean Burrito 5.2g",
+  );
+  assert.equal(title.length, 62);
+  assert.ok(
+    title.length <= 62,
+    `taco bell protein per dollar title should be ≤62 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("taco bell protein per $"),
+    "taco bell protein per dollar title should lead with taco bell protein per $",
+  );
+  assert.ok(
+    titleLower.indexOf("5.7g") < titleLower.indexOf("5.2g"),
+    "taco bell protein per dollar title should put the Cheesy Bean and Rice Burrito (5.7g per $) before the Bean Burrito (5.2g per $)",
+  );
+  assert.match(title, /5\.7g/);
+  assert.match(title, /5\.2g/);
+  assert.match(title, /Cheesy Bean/);
+  assert.match(title, /Bean Burrito/);
+  assert.equal(
+    /^taco bell protein per dollar: 5 items ranked \(april 2026 prices\)$/.test(titleLower),
+    false,
+    "taco bell protein per dollar title should not stay on the soft items-ranked SERP",
+  );
+  assert.match(
+    page,
+    /Every Taco Bell item we priced, ranked by grams of protein per dollar\. The \$\{best\.item\} leads at/,
+  );
+  assert.match(page, /Taco Bell Protein per Dollar, Ranked/);
+  assert.equal(INDEX_KEEP_PATHS.has("taco-bell-protein-per-dollar"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("taco-bell-protein-per-dollar"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
