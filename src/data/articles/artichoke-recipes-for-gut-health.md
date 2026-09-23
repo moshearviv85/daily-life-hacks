@@ -1,5 +1,5 @@
 ---
-title: "Macrobiotic Artichoke Recipe: Steam With Lemon-Garlic Dip"
+title: "Artichoke Recipes for Gut Health"
 excerpt: "Macrobiotic artichoke recipe: steam whole artichokes until the leaves pull free, then serve them with a sharp lemon-garlic dip and none of the usual guesswork."
 category: recipes
 tags:
@@ -11,7 +11,7 @@ tags:
 image: /images/artichoke-recipes-for-gut-health-main.jpg
 imageAlt: "Steamed whole artichokes served with a small bowl of lemon garlic dip"
 date: 2026-01-22
-dateModified: 2026-09-10
+dateModified: 2026-09-23
 author: "David Miller"
 quickAnswer: "Trim one inch from the top of each artichoke, snip the sharp leaf tips, rub cut surfaces with lemon, and steam stem-side up for 25 to 35 minutes. A center leaf should pull free easily and the base should feel tender. Artichokes provide fiber, but one serving isn't a treatment for digestive symptoms, and individual tolerance varies."
 featured: false
