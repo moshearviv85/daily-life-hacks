@@ -1413,7 +1413,7 @@ test("prune juice alternatives title leads with the constipation query", () => {
   assert.match(page.excerpt, /kiwifruit/);
 });
 
-test("indian salad dressing title leads with indian salad dressing recipes", () => {
+test("indian salad dressing title leads with 5-minute yogurt-mint and tamarind", () => {
   const page = articleFrontmatter("healthy-homemade-indian-salad-dressing-recipes");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/healthy-homemade-indian-salad-dressing-recipes.md"),
@@ -1421,34 +1421,46 @@ test("indian salad dressing title leads with indian salad dressing recipes", () 
   );
   const titleLower = page.title.toLowerCase();
 
-  assert.equal(page.title, "Indian Salad Dressing Recipes (Homemade)");
-  assert.equal(page.title.length, 40);
+  assert.equal(
+    page.title,
+    "Indian Salad Dressing in 5 Minutes: Yogurt-Mint & Tamarind",
+  );
+  assert.equal(page.title.length, 58);
   assert.ok(
     page.title.length <= 60,
     `indian salad dressing title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("indian salad dressing recipes"),
-    "indian salad dressing title should lead with indian salad dressing recipes",
+    titleLower.startsWith("indian salad dressing in 5 minutes"),
+    "indian salad dressing title should lead with the 5-minute dressing query",
   );
   assert.ok(
-    titleLower.indexOf("indian salad dressing recipes") < titleLower.indexOf("homemade"),
-    "indian salad dressing title should put the recipe query before homemade",
+    titleLower.indexOf("5 minutes") < titleLower.indexOf("yogurt-mint"),
+    "indian salad dressing title should put 5 minutes before yogurt-mint",
+  );
+  assert.ok(
+    titleLower.indexOf("yogurt-mint") < titleLower.indexOf("tamarind"),
+    "indian salad dressing title should put yogurt-mint before tamarind",
   );
   assert.equal(
     titleLower.startsWith("homemade"),
     false,
-    "indian salad dressing title should not stack homemade in front of the recipe query",
+    "indian salad dressing title should not stack homemade in front of the query",
   );
   assert.equal(
     titleLower.includes("healthy"),
     false,
-    "indian salad dressing title should not stack healthy in front of the recipe query",
+    "indian salad dressing title should not stack healthy in front of the query",
   );
   assert.equal(
     titleLower.includes("best"),
     false,
     "indian salad dressing title should not use a best superlative",
+  );
+  assert.equal(
+    /^indian salad dressing recipes \(homemade\)$/.test(titleLower),
+    false,
+    "indian salad dressing title should not be the old homemade recipes SERP",
   );
   assert.equal(
     /^healthy homemade indian salad dressing recipes$/.test(titleLower),
@@ -1457,6 +1469,10 @@ test("indian salad dressing title leads with indian salad dressing recipes", () 
   );
   assert.match(raw, /^date: 2026-04-28$/m);
   assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(
+    raw,
+    /^excerpt: "Indian-inspired salad dressings you whisk in 5 minutes flat\. Yogurt-mint, tamarind and chaat masala, all cheaper and brighter than bottled ranch\."$/m,
+  );
 });
 
 test("high fiber breakfast title leads with breakfast ideas for gut health", () => {
