@@ -1,5 +1,5 @@
 ---
-title: "The Cheapest High-Fiber Grains, Ranked by Real Cost"
+title: "Grains Fiber per $: Whole Wheat Flour 77.8g vs Barley 57.1g"
 excerpt: "Whole wheat flour tops 11 grains at 77.8g of fiber per dollar; quinoa lands last at 10.6g. The full ranking, with real July 2026 prices."
 category: "nutrition"
 tags: ["high fiber grains", "fiber per dollar", "cheapest whole grains", "budget groceries", "grains ranked"]
