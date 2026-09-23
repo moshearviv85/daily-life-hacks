@@ -1897,6 +1897,37 @@ test("flour vs quinoa fiber-cost title puts grams per dollar in the SERP", () =>
   );
 });
 
+test("lentils vs chicken breast title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("lentils-vs-chicken-breast-protein-cost");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Lentils vs Chicken Breast: 77.7g vs 24.5g Protein per Dollar",
+  );
+  assert.equal(page.title.length, 60);
+  assert.ok(
+    page.title.length <= 60,
+    `lentils vs chicken title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("lentils vs chicken breast"),
+    "lentils vs chicken title should lead with lentils vs chicken breast",
+  );
+  assert.ok(
+    titleLower.indexOf("77.7g") < titleLower.indexOf("24.5g"),
+    "lentils vs chicken title should put dry brown lentils (77.7g) before chicken breast (24.5g)",
+  );
+  assert.match(page.title, /77\.7g/);
+  assert.match(page.title, /24\.5g/);
+  assert.match(page.title, /Protein per Dollar/);
+  assert.equal(
+    /^lentils vs chicken breast: which is cheaper protein\?$/.test(titleLower),
+    false,
+    "lentils vs chicken title should not stay on the soft question SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
