@@ -3190,6 +3190,55 @@ test("shopping list builder title puts the recipe count in the SERP", () => {
   assert.equal(INDEX_PRUNE_SLUGS.has("shopping-list-builder"), false);
 });
 
+test("weekly grocery budget planner title puts the page count and week length in the SERP", () => {
+  const page = readFileSync(
+    join(ROOT, "src/pages/printables/weekly-grocery-budget-planner/index.astro"),
+    "utf8",
+  );
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+  const pdf = readFileSync(
+    join(ROOT, "public/downloads/weekly-grocery-budget-planner.pdf"),
+  );
+  const pdfPages = (pdf.toString("latin1").match(/\/Type\s*\/Page(?!s)/g) ?? []).length;
+
+  assert.equal(pdfPages, 2);
+  assert.match(page, /US Letter, 2 pages/);
+  assert.match(page, /two-page/);
+  assert.match(page, /seven-day/);
+  assert.match(page, /Plan seven dinners/);
+  assert.equal(title, "Free 2-Page 7-Day Grocery Budget Planner PDF");
+  assert.equal(title.length, 44);
+  assert.ok(
+    title.length <= 60,
+    `weekly grocery budget planner title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("free 2-page"),
+    "weekly grocery budget planner title should lead with free 2-page",
+  );
+  assert.match(title, /2-Page/);
+  assert.match(title, /7-Day/);
+  assert.match(title, /Planner/);
+  assert.match(title, /PDF/);
+  assert.equal(
+    /^free weekly grocery budget and meal planner pdf$/.test(titleLower),
+    false,
+    "weekly grocery budget planner title should not stay on the soft meal-planner SERP",
+  );
+  assert.match(
+    page,
+    /<h1>Plan the Week Before the Grocery Cart Starts Freelancing<\/h1>/,
+  );
+  assert.equal(
+    page.match(/const description = "([^"]+)"/)?.[1],
+    "Download a free two-page grocery budget planner with a seven-day meal plan, pantry check, shopping list, and checkout math.",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("printables/weekly-grocery-budget-planner"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("printables/weekly-grocery-budget-planner"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("weekly-grocery-budget-planner"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
