@@ -1,5 +1,5 @@
 ---
-title: "Pack Lunch Without Soggy Sandwiches or Wilted Salads"
+title: "How to Pack Lunch Without Soggy Sandwiches or Wilted Salads"
 excerpt: "Pack lunch without soggy sandwiches or wilted salads: fat barrier on the bread, wet fillings in the center, dressing packed separate, greens on top."
 category: "tips"
 tags: ["MealPrep", "LunchIdeas", "KitchenHacks", "FoodStorage", "WorkLunch"]
@@ -7,7 +7,7 @@ image: "/images/how-to-pack-lunch-crisp-sandwiches-salads-main.jpg"
 imageAlt: "Freshly packed lunch box with a crisp sandwich and vibrant salad"
 date: 2026-04-07
 publishAt: 2026-04-08T00:00:00.000Z
-dateModified: 2026-09-21
+dateModified: 2026-09-23
 author: "Daily Life Hacks Team"
 featured: false
 editorsPick: false
