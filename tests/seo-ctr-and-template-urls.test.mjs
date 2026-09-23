@@ -2727,6 +2727,40 @@ test("wendys protein per dollar title puts protein-per-dollar grams in the SERP"
   assert.equal(INDEX_PRUNE_SLUGS.has("wendys-protein-per-dollar"), false);
 });
 
+test("high protein on a budget title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("high-protein-on-a-budget-complete-guide");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "High Protein on a Budget: Pinto 97.9g vs Bacon 9.2g",
+  );
+  assert.equal(page.title.length, 51);
+  assert.ok(
+    page.title.length <= 60,
+    `high protein on a budget title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("high protein on a budget"),
+    "high protein on a budget title should lead with high protein on a budget",
+  );
+  assert.ok(
+    titleLower.indexOf("97.9g") < titleLower.indexOf("9.2g"),
+    "high protein on a budget title should put dry pinto beans (97.9g per $) before bacon (9.2g per $)",
+  );
+  assert.match(page.title, /97\.9g/);
+  assert.match(page.title, /9\.2g/);
+  assert.match(page.title, /Pinto/);
+  assert.match(page.title, /Bacon/);
+  assert.equal(
+    /^high protein on a budget: the complete guide$/.test(titleLower),
+    false,
+    "high protein on a budget title should not stay on the soft complete-guide SERP",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("high-protein-on-a-budget-complete-guide"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("high-protein-on-a-budget-complete-guide"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
