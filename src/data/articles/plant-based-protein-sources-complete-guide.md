@@ -1,5 +1,5 @@
 ---
-title: 'Plant-Based Protein Sources: A Complete Guide'
+title: "Plant-Based Protein: Pinto 97.9g vs Tempeh 13.2g"
 excerpt: A dollar of dry pinto beans buys 97.9g of protein. Tempeh buys 13.2g. Every
   major plant-based protein source, ranked by protein per 100g and per dollar.
 category: nutrition
