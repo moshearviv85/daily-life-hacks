@@ -2200,6 +2200,38 @@ test("complete protein pairs title puts rice-and-beans grams per dollar in the S
   );
 });
 
+test("one-dollar fiber title puts fiber grams per dollar in the SERP", () => {
+  const page = articleFrontmatter("one-dollar-fiber-what-it-buys");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Fiber for $1: Whole Wheat Flour 77.8g vs Split Peas 71.0g",
+  );
+  assert.equal(page.title.length, 57);
+  assert.ok(
+    page.title.length <= 60,
+    `one-dollar fiber title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("fiber for $1"),
+    "one-dollar fiber title should lead with fiber for $1",
+  );
+  assert.ok(
+    titleLower.indexOf("77.8g") < titleLower.indexOf("71.0g"),
+    "one-dollar fiber title should put whole wheat flour (77.8g) before green split peas (71.0g)",
+  );
+  assert.match(page.title, /77\.8g/);
+  assert.match(page.title, /71\.0g/);
+  assert.match(page.title, /Whole Wheat Flour/);
+  assert.match(page.title, /Split Peas/);
+  assert.equal(
+    /^the cheapest fiber foods: what \$1 actually buys$/.test(titleLower),
+    false,
+    "one-dollar fiber title should not stay on the soft what-$1-actually-buys SERP",
+  );
+});
+
 test("one-dollar protein title puts protein grams per dollar in the SERP", () => {
   const page = articleFrontmatter("one-dollar-protein-what-it-buys");
   const titleLower = page.title.toLowerCase();
