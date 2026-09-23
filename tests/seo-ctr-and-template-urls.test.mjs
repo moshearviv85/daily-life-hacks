@@ -2359,6 +2359,38 @@ test("grains fiber ranking title puts fiber-per-dollar grams in the SERP", () =>
   );
 });
 
+test("produce fiber ranking title puts fiber-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("produce-fiber-per-dollar-ranked");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Produce Fiber per $: Frozen Peas 17.6g vs Carrots 16.1g",
+  );
+  assert.equal(page.title.length, 55);
+  assert.ok(
+    page.title.length <= 60,
+    `produce fiber ranking title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("produce fiber per $"),
+    "produce fiber ranking title should lead with produce fiber per $",
+  );
+  assert.ok(
+    titleLower.indexOf("17.6g") < titleLower.indexOf("16.1g"),
+    "produce fiber ranking title should put frozen green peas (17.6g) before bagged carrots (16.1g)",
+  );
+  assert.match(page.title, /17\.6g/);
+  assert.match(page.title, /16\.1g/);
+  assert.match(page.title, /Frozen Peas/);
+  assert.match(page.title, /Carrots/);
+  assert.equal(
+    /^the cheapest high-fiber vegetables and fruits, ranked$/.test(titleLower),
+    false,
+    "produce fiber ranking title should not stay on the soft ranked SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),

@@ -1,5 +1,5 @@
 ---
-title: "The Cheapest High-Fiber Vegetables and Fruits, Ranked"
+title: "Produce Fiber per $: Frozen Peas 17.6g vs Carrots 16.1g"
 excerpt: "Frozen green peas win at 17.6g of fiber per dollar across 22 fruits and vegetables; blueberries land last at 2.5g. Full July 2026 ranking."
 category: "nutrition"
 tags: ["high fiber vegetables", "high fiber fruits", "fiber per dollar", "budget produce", "cheap vegetables"]
