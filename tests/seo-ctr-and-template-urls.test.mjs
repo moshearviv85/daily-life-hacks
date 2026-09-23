@@ -523,25 +523,51 @@ test("soggy sandwich title leads with keep query", () => {
   );
 });
 
-test("savory chia title leads with chia seed recipes query", () => {
+test("savory chia title locks the not-sweet breakfast differentiator", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/savory-chia-seed-recipes-breakfast.md"),
+    "utf8",
+  );
   const page = articleFrontmatter("savory-chia-seed-recipes-breakfast");
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
 
-  assert.match(page.title, /^Savory Chia Seed Recipes for Breakfast$/);
+  assert.equal(page.title, "Savory Chia Breakfast Recipes (Not Sweet)");
+  assert.equal(page.title.length, 41);
   assert.ok(
     page.title.length <= 60,
     `savory chia title too long for SERP: ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("savory chia seed recipes"),
-    "savory chia title should lead with GSC query savory chia seed recipes",
+    titleLower.startsWith("savory chia breakfast recipes"),
+    "savory chia title should lead with savory chia breakfast recipes",
+  );
+  assert.ok(
+    titleLower.includes("(not sweet)"),
+    "savory chia title should name the not-sweet differentiator",
   );
   assert.equal(
     titleLower.includes("pudding"),
     false,
-    "savory chia title should not force pudding and miss chia seed recipes",
+    "savory chia title should not force pudding",
   );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "savory chia title should not use a best superlative",
+  );
+  assert.equal(
+    titleLower.includes("healthy"),
+    false,
+    "savory chia title should not spend the SERP on healthy",
+  );
+  assert.equal(
+    /^savory chia seed recipes for breakfast$/.test(titleLower),
+    false,
+    "savory chia title should not be the old seed recipes for breakfast SERP",
+  );
+  assert.match(raw, /^date: 2026-04-28$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /savory chia seed recipes/i);
   assert.ok(
