@@ -1,5 +1,5 @@
 ---
-title: "High Protein on a Budget: The Complete Guide"
+title: "High Protein on a Budget: Pinto 97.9g vs Bacon 9.2g"
 excerpt: "Dried beans deliver up to 98 grams of protein per dollar and bacon delivers 9. Here's the complete guide to high protein on a budget, with real prices."
 category: "nutrition"
 tags: ["high protein on a budget", "cheap protein sources", "protein per dollar", "budget protein", "budget groceries"]
