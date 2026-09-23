@@ -778,7 +778,7 @@ test("artichoke recipe title leads with artichoke recipes for gut health", () =>
   );
 });
 
-test("rice and beans everyday title leads with can you eat", () => {
+test("rice and beans everyday title puts cost and protein grams in the SERP", () => {
   const rice = articleFrontmatter("can-you-eat-rice-and-beans-everyday");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/can-you-eat-rice-and-beans-everyday.md"),
@@ -787,15 +787,29 @@ test("rice and beans everyday title leads with can you eat", () => {
   const titleLower = rice.title.toLowerCase();
   const excerptLower = rice.excerpt.toLowerCase();
 
-  assert.equal(rice.title, "Can You Eat Rice and Beans Every Day?");
-  assert.equal(rice.title.length, 37);
+  assert.equal(
+    rice.title,
+    "Rice and Beans Every Day? $0.32 Dinner, 23.8g Protein",
+  );
+  assert.equal(rice.title.length, 53);
   assert.ok(
     rice.title.length <= 60,
     `rice and beans title should be ≤60 chars, got ${rice.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("can you eat rice and beans every day"),
-    "rice and beans title should lead with the can-you-eat everyday query",
+    titleLower.startsWith("rice and beans every day"),
+    "rice and beans title should lead with rice and beans every day",
+  );
+  assert.ok(
+    titleLower.indexOf("$0.32") < titleLower.indexOf("23.8g"),
+    "rice and beans title should put the dinner cost before the protein grams",
+  );
+  assert.match(rice.title, /\$0\.32/);
+  assert.match(rice.title, /23\.8g/);
+  assert.equal(
+    /^can you eat rice and beans every day\?$/.test(titleLower),
+    false,
+    "rice and beans title should not stay on the soft question SERP",
   );
   assert.equal(
     titleLower.startsWith("is it healthy"),
