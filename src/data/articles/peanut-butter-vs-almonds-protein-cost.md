@@ -1,5 +1,5 @@
 ---
-title: "Peanut Butter vs Almonds: Which Is Cheaper Protein?"
+title: "Peanut Butter vs Almonds: 50.7g vs 14.8g Protein per Dollar"
 excerpt: "Peanut butter delivers 50.7 g of protein per dollar. Almonds deliver 14.8. Peanut butter wins by 3.4x, even though the two are nearly tied by weight."
 category: "nutrition"
 tags: ["peanut butter vs almonds", "cheapest protein per dollar", "peanut butter protein cost", "almonds price 2026", "budget protein sources"]
