@@ -502,25 +502,55 @@ test("bran muffin title leads with high fiber bran muffins", () => {
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
-test("soggy sandwich title leads with keep query", () => {
+test("soggy sandwich title locks the fat barrier differentiator", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/how-to-keep-sandwiches-from-getting-soggy.md"),
+    "utf8",
+  );
   const page = articleFrontmatter("how-to-keep-sandwiches-from-getting-soggy");
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
 
-  assert.match(page.title, /^How to Keep Sandwiches From Getting Soggy$/);
-  assert.ok(
-    page.title.length <= 60,
-    `sandwich title should be ≤60 chars, got ${page.title.length}`,
+  assert.equal(
+    page.title,
+    "How to Keep Sandwiches From Getting Soggy (Fat Barrier First)",
   );
+  assert.equal(page.title.length, 61);
   assert.ok(
     titleLower.startsWith("how to keep sandwiches from getting soggy"),
     "sandwich title should lead with GSC query how to keep sandwiches from getting soggy",
+  );
+  assert.ok(
+    titleLower.includes("(fat barrier first)"),
+    "sandwich title should name the fat barrier differentiator",
   );
   assert.equal(
     titleLower.startsWith("how to prevent"),
     false,
     "sandwich title should not lead with prevent",
   );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "sandwich title should not use a best superlative",
+  );
+  assert.equal(
+    titleLower.includes("healthy"),
+    false,
+    "sandwich title should not spend the SERP on healthy",
+  );
+  assert.equal(
+    titleLower.includes("homemade"),
+    false,
+    "sandwich title should not spend the SERP on homemade",
+  );
+  assert.equal(
+    /^how to keep sandwiches from getting soggy$/.test(titleLower),
+    false,
+    "sandwich title should not be the old generic SERP",
+  );
+  assert.match(raw, /^date: 2026-04-28$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /^How to keep sandwiches from getting soggy/i);
   assert.match(page.excerpt, /soggy/i);
