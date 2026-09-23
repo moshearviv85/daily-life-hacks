@@ -1,12 +1,12 @@
 ---
-title: "Water and Fiber: What the Golden Rule Gets Wrong"
+title: "How Much Water Do You Need With Fiber?"
 excerpt: "There isn't a magic water-to-fiber ratio. Here's what official guidance and a human trial actually say about fluids, fiber, and constipation."
 category: nutrition
 tags: ["water and fiber", "fiber intake", "hydration", "constipation food guidance", "nutrition basics"]
 image: "/images/water-and-fiber-the-golden-rule-main.jpg"
 imageAlt: "A glass of water beside oatmeal, lentils, pears, and vegetables on a kitchen table"
 date: 2026-02-11
-dateModified: 2026-07-20
+dateModified: 2026-09-23
 author: "David Miller"
 quickAnswer: "There isn't an evidence-based water-to-fiber ratio. NIDDK recommends adding fiber gradually and drinking enough liquids for your size, health, activity, and climate. Food moisture and other beverages contribute to total water too. More water isn't a guaranteed constipation fix, and symptoms that persist or come with bleeding, constant pain, vomiting, fever, or unplanned weight loss need medical attention."
 featured: false
