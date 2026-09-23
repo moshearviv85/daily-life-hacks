@@ -1420,6 +1420,43 @@ test("high fiber smoothies title leads with high fiber smoothies for picky kids"
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
+test("high fiber fast food title leads with what to order at 6 chains", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/high-fiber-fast-food-options-guide.md"),
+    "utf8",
+  );
+  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
+  assert.ok(title, "high-fiber-fast-food-options-guide is missing a quoted title");
+  const titleLower = title.toLowerCase();
+
+  assert.equal(title, "High-Fiber Fast Food: What to Order at 6 Chains");
+  assert.equal(title.length, 47);
+  assert.ok(
+    title.length <= 60,
+    `high fiber fast food title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("high-fiber fast food"),
+    "high fiber fast food title should lead with high-fiber fast food",
+  );
+  assert.ok(
+    titleLower.indexOf("what to order") < titleLower.indexOf("6 chains"),
+    "high fiber fast food title should put what to order before 6 chains",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "high fiber fast food title should not use a best superlative",
+  );
+  assert.equal(
+    /^high-fiber fast food: the best orders at 6 chains$/.test(titleLower),
+    false,
+    "high fiber fast food title should not be the old best orders SERP",
+  );
+  assert.match(raw, /^date: 2026-01-21$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),

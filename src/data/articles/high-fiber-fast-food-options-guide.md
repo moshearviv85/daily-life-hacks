@@ -1,5 +1,5 @@
 ---
-title: "High-Fiber Fast Food: The Best Orders at 6 Chains"
+title: "High-Fiber Fast Food: What to Order at 6 Chains"
 excerpt: "Highest-fiber fast food we checked: Chipotle veggie bowl 25g, Subway Veggie Patty Protein Bowl 19g. Ten orders, 6 chains, official nutrition dated July 2026."
 category: nutrition
 tags:
@@ -12,7 +12,7 @@ image: /images/high-fiber-fast-food-options-guide-main.jpg
 imageAlt: "Fast-casual grain bowl with black beans, greens, sweet potato, seeds, fruit, and a wrap at a serving counter"
 quickAnswer: "Across ten orders checked against each chain's own U.S. nutrition data on July 30, 2026, the most fiber came from a custom Chipotle veggie bowl with brown rice, black beans, pinto beans, fajita vegetables, guacamole, and romaine: 25 grams, 89% of the FDA's 28-gram Daily Value, at 725 calories and 1,130 milligrams of sodium. Of the fixed menu items among those ten, Subway's Veggie Patty Protein Bowl carries the most fiber at 19 grams for 540 calories and 1,550 milligrams of sodium, at participating locations only."
 date: 2026-01-21
-dateModified: 2026-08-20
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false
