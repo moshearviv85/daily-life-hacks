@@ -1,5 +1,5 @@
 ---
-title: "Cheap High-Fiber Snacks That Actually Fill You Up"
+title: "High-Fiber Snacks per $: Popcorn 51.3g vs Carrots 16.1g"
 excerpt: "Home-popped popcorn leads 10 snacks at 51.3g of fiber per dollar, with carrots topping the exact-source rows at 16.1g. Ranked with July 2026 prices."
 category: "nutrition"
 tags: ["high fiber snacks", "fiber per dollar", "cheap healthy snacks", "budget snacks", "snacks ranked"]
