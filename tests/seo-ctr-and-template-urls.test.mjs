@@ -2455,6 +2455,45 @@ test("shelf-stable pantry title puts protein-per-dollar grams in the SERP", () =
   );
 });
 
+test("cheapest protein per gram title puts cost-per-gram dollars in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/cheapest-protein-per-gram.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const description = page.match(/const description =\s*\n\s*"([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+
+  assert.equal(
+    title,
+    "Protein per Gram: Flour $0.0104 vs Lentils $0.0129",
+  );
+  assert.equal(title.length, 50);
+  assert.ok(
+    title.length <= 60,
+    `cheapest protein per gram title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("protein per gram"),
+    "cheapest protein per gram title should lead with protein per gram",
+  );
+  assert.ok(
+    titleLower.indexOf("$0.0104") < titleLower.indexOf("$0.0129"),
+    "cheapest protein per gram title should put whole wheat flour ($0.0104/g, 1.04¢) before brown lentils ($0.0129/g, 1.29¢)",
+  );
+  assert.match(title, /\$0\.0104/);
+  assert.match(title, /\$0\.0129/);
+  assert.match(title, /Flour/);
+  assert.match(title, /Lentils/);
+  assert.equal(
+    /^cheapest protein per gram: 49 foods ranked \(july 2026 prices\)$/.test(titleLower),
+    false,
+    "cheapest protein per gram title should not stay on the soft 49-foods-ranked SERP",
+  );
+  assert.equal(
+    description,
+    "The cheapest protein per gram and per pound, ranked across 49 foods at real July 2026 US grocery prices. USDA nutrition, audited prices, free CSV download.",
+  );
+  assert.match(page, /const PATH = "\/cheapest-protein-per-gram\/"/);
+});
+
 test("no-cook protein title puts protein-per-dollar grams in the SERP", () => {
   const page = articleFrontmatter("no-cook-protein-per-dollar");
   const titleLower = page.title.toLowerCase();
