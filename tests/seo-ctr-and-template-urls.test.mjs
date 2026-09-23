@@ -3126,6 +3126,70 @@ test("recipe finder title puts the searchable recipe count in the SERP", () => {
   assert.equal(INDEX_PRUNE_SLUGS.has("recipe-finder"), false);
 });
 
+test("shopping list builder title puts the recipe count in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/tools/shopping-list-builder/index.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+  const now = Date.now();
+  let count = 0;
+  for (const file of readdirSync(join(ROOT, "src/data/articles"))) {
+    if (!file.endsWith(".md")) continue;
+    const raw = readFileSync(join(ROOT, "src/data/articles", file), "utf8");
+    const fm = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1];
+    if (!fm) continue;
+    const category = fm.match(/^category:\s*"?([^"\n]+)"?/m)?.[1]?.trim();
+    if (category !== "recipes") continue;
+    const release = fm.match(/^publishAt:\s*(\d{4}-\d{2}-\d{2})/m)?.[1]
+      ?? fm.match(/^date:\s*(\d{4}-\d{2}-\d{2})/m)?.[1];
+    if (!release || Date.parse(`${release}T00:00:00.000Z`) > now) continue;
+    const servings = Number(fm.match(/^servings:\s*"?(\d+(?:\.\d+)?)"?/m)?.[1]);
+    if (!Number.isFinite(servings) || servings <= 0) continue;
+    const lines = fm.split("\n");
+    const start = lines.findIndex((line) => /^ingredients:\s*$/.test(line));
+    let ingredients = 0;
+    if (start !== -1) {
+      for (let i = start + 1; i < lines.length; i++) {
+        if (/^\s*-\s+\S/.test(lines[i])) {
+          ingredients += 1;
+          continue;
+        }
+        if (lines[i].trim() === "") continue;
+        break;
+      }
+    }
+    if (ingredients === 0) continue;
+    count += 1;
+  }
+
+  assert.equal(count, 80);
+  assert.equal(title, "Shopping List Builder: 80 Recipes, One List");
+  assert.equal(title, `Shopping List Builder: ${count} Recipes, One List`);
+  assert.equal(title.length, 43);
+  assert.ok(
+    title.length <= 60,
+    `shopping list builder title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("shopping list builder"),
+    "shopping list builder title should lead with shopping list builder",
+  );
+  assert.match(title, /80 Recipes/);
+  assert.equal(
+    /^multi-recipe shopping list builder: scale and combine ingredients$/.test(titleLower),
+    false,
+    "shopping list builder title should not stay on the soft scale-and-combine SERP",
+  );
+  assert.match(page, /\{recipes\.length\} real recipes\. One grocery list\./);
+  assert.match(
+    page,
+    /Choose from \$\{recipes\.length\} recipes, change the servings, and combine their ingredients into one printable shopping list\./,
+  );
+  assert.match(page, /<h1[^>]*>Several Recipes\. One List\. Nobody Needs Five Notes\.<\/h1>/);
+  assert.equal(INDEX_KEEP_PATHS.has("tools/shopping-list-builder"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("tools/shopping-list-builder"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("shopping-list-builder"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
