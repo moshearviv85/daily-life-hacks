@@ -2327,6 +2327,38 @@ test("high-fiber snacks title puts fiber-per-dollar grams in the SERP", () => {
   );
 });
 
+test("grains fiber ranking title puts fiber-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("grains-fiber-per-dollar-ranked");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Grains Fiber per $: Whole Wheat Flour 77.8g vs Barley 57.1g",
+  );
+  assert.equal(page.title.length, 59);
+  assert.ok(
+    page.title.length <= 60,
+    `grains fiber ranking title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("grains fiber per $"),
+    "grains fiber ranking title should lead with grains fiber per $",
+  );
+  assert.ok(
+    titleLower.indexOf("77.8g") < titleLower.indexOf("57.1g"),
+    "grains fiber ranking title should put whole wheat flour (77.8g) before pearled barley (57.1g)",
+  );
+  assert.match(page.title, /77\.8g/);
+  assert.match(page.title, /57\.1g/);
+  assert.match(page.title, /Whole Wheat Flour/);
+  assert.match(page.title, /Barley/);
+  assert.equal(
+    /^the cheapest high-fiber grains, ranked by real cost$/.test(titleLower),
+    false,
+    "grains fiber ranking title should not stay on the soft ranked-by-real-cost SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
