@@ -182,29 +182,45 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   );
 });
 
-test("canned beans vs dried beans nutrition title leads with dried-vs-canned query", () => {
+test("canned beans vs dried beans nutrition title leads with are dried beans better", () => {
   const beans = articleFrontmatter("canned-beans-vs-dried-beans-nutrition");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/canned-beans-vs-dried-beans-nutrition.md"),
+    "utf8",
+  );
   const titleLower = beans.title.toLowerCase();
   const excerptLower = beans.excerpt.toLowerCase();
 
-  assert.match(beans.title, /^Dried Beans vs Canned Beans: Nutrition Compared$/);
+  assert.equal(beans.title, "Are Dried Beans Better Than Canned?");
+  assert.equal(beans.title.length, 35);
   assert.ok(
     beans.title.length <= 60,
     `nutrition beans title too long for SERP: ${beans.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("dried beans vs canned beans"),
-    "nutrition beans title should lead with GSC query dried beans vs canned beans",
+    titleLower.startsWith("are dried beans better than canned"),
+    "nutrition beans title should lead with are dried beans better than canned",
   );
   assert.ok(
-    titleLower.indexOf("dried beans vs canned beans") < titleLower.indexOf("nutrition"),
-    "nutrition should trail the ranking query, not lead the SERP title",
+    titleLower.indexOf("better") < titleLower.indexOf("canned"),
+    "nutrition beans title should put better before canned",
+  );
+  assert.equal(
+    titleLower.includes("nutrition compared"),
+    false,
+    "nutrition beans title should not use the nutrition compared SERP lead",
+  );
+  assert.equal(
+    /^dried beans vs canned beans: nutrition compared$/.test(titleLower),
+    false,
+    "nutrition beans title should not be the old nutrition compared SERP",
   );
   assert.equal(
     /^canned beans or dry beans/.test(titleLower),
     false,
     "nutrition beans title should not lead with canned beans or dry beans",
   );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(beans.excerpt, /[Dd]ried beans vs canned beans/);
   assert.match(beans.excerpt, /21\.6 g/);
