@@ -1,5 +1,5 @@
 ---
-title: "How to Eat More Fiber on a Budget: The Complete Guide"
+title: "Fiber on a Budget: Flour 77.8g vs Split Peas 71.0g"
 excerpt: "Americans average about 16 grams of fiber a day against a 28 gram Daily Value. Here's how to close the gap cheaply, with real prices and real math."
 category: "nutrition"
 tags: ["how to eat more fiber on a budget", "high fiber on a budget", "cheap high fiber foods", "fiber per dollar", "budget groceries"]
