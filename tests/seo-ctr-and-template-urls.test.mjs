@@ -2200,6 +2200,37 @@ test("complete protein pairs title puts rice-and-beans grams per dollar in the S
   );
 });
 
+test("one-dollar protein title puts protein grams per dollar in the SERP", () => {
+  const page = articleFrontmatter("one-dollar-protein-what-it-buys");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Protein for $1: Pinto 97.9g vs Whole Wheat Flour 96.0g",
+  );
+  assert.equal(page.title.length, 54);
+  assert.ok(
+    page.title.length <= 60,
+    `one-dollar protein title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("protein for $1"),
+    "one-dollar protein title should lead with protein for $1",
+  );
+  assert.ok(
+    titleLower.indexOf("97.9g") < titleLower.indexOf("96.0g"),
+    "one-dollar protein title should put dry pinto beans (97.9g) before whole wheat flour (96.0g)",
+  );
+  assert.match(page.title, /97\.9g/);
+  assert.match(page.title, /96\.0g/);
+  assert.match(page.title, /Whole Wheat Flour/);
+  assert.equal(
+    /^the cheapest protein foods: what \$1 actually buys$/.test(titleLower),
+    false,
+    "one-dollar protein title should not stay on the soft what-$1-actually-buys SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
