@@ -1,5 +1,5 @@
 ---
-title: "The Cheapest Protein Foods: What $1 Actually Buys"
+title: "Protein for $1: Pinto 97.9g vs Whole Wheat Flour 96.0g"
 excerpt: "One dollar buys 97.9 g of protein as dry pinto beans, 50.3 g as chicken drumsticks, 39.8 g as peanuts. 15 foods ranked at July 2026 prices."
 category: "nutrition"
 tags: ["protein per dollar", "cheap protein foods", "budget protein groceries", "cheap high protein foods", "grocery data"]
