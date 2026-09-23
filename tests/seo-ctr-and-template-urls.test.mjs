@@ -1614,6 +1614,52 @@ test("low cost protein families title drops the leading Best superlative", () =>
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
+test("stir-fry vegetables title drops the leading Best superlative", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/high-fiber-stir-fry-vegetables.md"),
+    "utf8",
+  );
+  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
+  assert.ok(title, "high-fiber-stir-fry-vegetables is missing a quoted title");
+  const titleLower = title.toLowerCase();
+
+  assert.equal(title, "Vegetables for Stir-Fry (And How to Keep Them Crisp)");
+  assert.equal(title.length, 52);
+  assert.ok(
+    title.length <= 60,
+    `stir-fry vegetables title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("vegetables for stir-fry"),
+    "stir-fry vegetables title should lead with vegetables for stir-fry",
+  );
+  assert.ok(
+    titleLower.indexOf("stir-fry") < titleLower.indexOf("how to keep them crisp"),
+    "stir-fry vegetables title should keep the crisp how-to after the vegetable query",
+  );
+  assert.equal(
+    titleLower.startsWith("best "),
+    false,
+    "stir-fry vegetables title should not lead with Best ",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "stir-fry vegetables title should not use a best superlative",
+  );
+  assert.equal(
+    /^best vegetables for stir-fry and how to keep them crisp$/.test(titleLower),
+    false,
+    "stir-fry vegetables title should not be the old Best vegetables SERP",
+  );
+  assert.match(raw, /^date: 2026-02-19$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(
+    raw,
+    /^excerpt: "Broccoli, snap peas, and peppers cook in 12 minutes with a glossy ginger-soy sauce that doesn't turn the vegetables limp\."$/m,
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),

@@ -1,5 +1,5 @@
 ---
-title: "Best Vegetables for Stir-Fry and How to Keep Them Crisp"
+title: "Vegetables for Stir-Fry (And How to Keep Them Crisp)"
 excerpt: "Broccoli, snap peas, and peppers cook in 12 minutes with a glossy ginger-soy sauce that doesn't turn the vegetables limp."
 quickAnswer: >-
   Cut firm vegetables into even pieces, heat the widest pan you own, and cook
@@ -15,7 +15,7 @@ tags:
 image: /images/high-fiber-stir-fry-vegetables-main.jpg
 imageAlt: "Broccoli snap peas and bell peppers cooking in a wok with ginger soy sauce"
 date: 2026-02-19
-dateModified: 2026-07-20
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false
