@@ -2455,6 +2455,38 @@ test("shelf-stable pantry title puts protein-per-dollar grams in the SERP", () =
   );
 });
 
+test("no-cook protein title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("no-cook-protein-per-dollar");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "No-Cook Protein per $: PB 50.7g vs Peanuts 39.8g",
+  );
+  assert.equal(page.title.length, 48);
+  assert.ok(
+    page.title.length <= 60,
+    `no-cook protein title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("no-cook protein per $"),
+    "no-cook protein title should lead with no-cook protein per $",
+  );
+  assert.ok(
+    titleLower.indexOf("50.7g") < titleLower.indexOf("39.8g"),
+    "no-cook protein title should put peanut butter (50.7g) before dry roasted peanuts (39.8g)",
+  );
+  assert.match(page.title, /50\.7g/);
+  assert.match(page.title, /39\.8g/);
+  assert.match(page.title, /PB/);
+  assert.match(page.title, /Peanuts/);
+  assert.equal(
+    /^no-cook protein per dollar: cheapest options ranked$/.test(titleLower),
+    false,
+    "no-cook protein title should not stay on the soft cheapest-options-ranked SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
