@@ -1290,6 +1290,47 @@ test("indian salad dressing title leads with indian salad dressing recipes", () 
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
+test("high fiber breakfast title leads with breakfast ideas for gut health", () => {
+  const page = articleFrontmatter("easy-high-fiber-breakfast-ideas-for-gut-health");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/easy-high-fiber-breakfast-ideas-for-gut-health.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(page.title, "High Fiber Breakfast Ideas for Gut Health");
+  assert.equal(page.title.length, 41);
+  assert.ok(
+    page.title.length <= 60,
+    `high fiber breakfast title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("high fiber breakfast ideas"),
+    "high fiber breakfast title should lead with high fiber breakfast ideas",
+  );
+  assert.ok(
+    titleLower.indexOf("breakfast ideas") < titleLower.indexOf("gut health"),
+    "high fiber breakfast title should put breakfast ideas before gut health",
+  );
+  assert.equal(
+    titleLower.startsWith("easy"),
+    false,
+    "high fiber breakfast title should not lead with the easy high fiber stack",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "high fiber breakfast title should not use a best superlative",
+  );
+  assert.equal(
+    /^easy high fiber breakfast ideas for gut health$/.test(titleLower),
+    false,
+    "high fiber breakfast title should not be the old easy high fiber stack",
+  );
+  assert.match(raw, /^date: 2026-02-15$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
