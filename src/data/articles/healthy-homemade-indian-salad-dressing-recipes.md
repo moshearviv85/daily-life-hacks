@@ -1,5 +1,5 @@
 ---
-title: Healthy Homemade Indian Salad Dressing Recipes
+title: "Indian Salad Dressing Recipes (Homemade)"
 excerpt: "Indian-inspired salad dressings you whisk in 5 minutes flat. Yogurt-mint, tamarind and chaat masala, all cheaper and brighter than bottled ranch."
 category: recipes
 tags:
@@ -10,6 +10,7 @@ tags:
 image: "/images/healthy-homemade-indian-salad-dressing-recipes-main.jpg"
 imageAlt: A close-up, overhead shot of a golden Indian-inspired salad dressing beautifully drizzled over a bowl of fresh mixed green salad.
 date: 2026-04-28
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"
