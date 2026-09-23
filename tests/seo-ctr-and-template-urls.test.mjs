@@ -1080,6 +1080,44 @@ test("water and fiber title leads with how much water you need", () => {
   assert.match(page.excerpt, /isn't a magic water-to-fiber ratio/i);
 });
 
+test("oatmeal vs grits title leads with which has more fiber", () => {
+  const page = articleFrontmatter("oatmeal-vs-grits-fiber-content");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/oatmeal-vs-grits-fiber-content.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+
+  assert.equal(page.title, "Oatmeal vs Grits: Which Has More Fiber?");
+  assert.equal(page.title.length, 39);
+  assert.ok(
+    page.title.length <= 60,
+    `oatmeal vs grits title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("oatmeal vs grits"),
+    "oatmeal vs grits title should lead with oatmeal vs grits",
+  );
+  assert.ok(
+    titleLower.indexOf("which has more fiber") > titleLower.indexOf("oatmeal vs grits"),
+    "oatmeal vs grits title should put which has more fiber after the foods",
+  );
+  assert.equal(
+    titleLower.includes("the actual numbers"),
+    false,
+    "oatmeal vs grits title should not spend the SERP on the actual numbers",
+  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+
+  assert.match(page.excerpt, /4\.0g/);
+  assert.match(page.excerpt, /1\.6-2\.4g/);
+  assert.ok(
+    excerptLower.indexOf("4.0g") < excerptLower.indexOf("1.6-2.4g"),
+    "oatmeal vs grits meta should put oatmeal 4.0g before the grits range",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
