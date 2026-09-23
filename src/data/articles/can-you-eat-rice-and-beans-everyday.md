@@ -1,5 +1,5 @@
 ---
-title: "Is It Healthy to Eat Rice and Beans Every Day?"
+title: "Can You Eat Rice and Beans Every Day?"
 excerpt: "Is it healthy to eat rice and beans every day? On protein and fiber, yes. One dinner ran about $0.32 for 23.8 g of protein. It won't cover everything."
 category: "nutrition"
 tags: ["can you eat rice and beans everyday", "rice and beans nutrition", "cheap meals", "budget protein", "grocery data"]
@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/can-you-eat-rice-and-beans-everyday-main.jpg"
 imageAlt: "A bowl of pinto beans over brown rice with lime wedges and cilantro on a kitchen table"
 date: 2026-07-28
-dateModified: 2026-09-14
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false
