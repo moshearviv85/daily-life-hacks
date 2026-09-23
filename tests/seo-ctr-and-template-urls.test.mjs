@@ -1378,6 +1378,48 @@ test("egg sandwich add-ins title leads with add-ins and toppings", () => {
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
+test("high fiber smoothies title leads with high fiber smoothies for picky kids", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/high-fiber-smoothies-for-kids-picky-eaters.md"),
+    "utf8",
+  );
+  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
+  assert.ok(title, "high-fiber-smoothies-for-kids-picky-eaters is missing a quoted title");
+  const titleLower = title.toLowerCase();
+
+  assert.equal(title, "High Fiber Smoothies for Picky Kids");
+  assert.equal(title.length, 35);
+  assert.ok(
+    title.length <= 60,
+    `high fiber smoothies title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("high fiber smoothies"),
+    "high fiber smoothies title should lead with high fiber smoothies",
+  );
+  assert.ok(
+    titleLower.indexOf("smoothies") < titleLower.indexOf("for picky kids"),
+    "high fiber smoothies title should put smoothies before for picky kids",
+  );
+  assert.equal(
+    titleLower.includes("kids picky eaters"),
+    false,
+    "high fiber smoothies title should not stack kids picky eaters",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "high fiber smoothies title should not use a best superlative",
+  );
+  assert.equal(
+    /^high fiber smoothies for kids picky eaters$/.test(titleLower),
+    false,
+    "high fiber smoothies title should not be the old kids picky eaters stack",
+  );
+  assert.match(raw, /^date: 2026-02-16$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
