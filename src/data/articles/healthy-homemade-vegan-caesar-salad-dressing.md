@@ -1,5 +1,5 @@
 ---
-title: Healthy Homemade Vegan Caesar Salad Dressing
+title: "Vegan Caesar Salad Dressing"
 excerpt: Skip the bottled stuff and the raw eggs. This creamy vegan Caesar dressing uses simple pantry staples to get that classic tangy flavor without the dairy.
 category: recipes
 tags:
@@ -12,7 +12,7 @@ tags:
 image: "/images/healthy-homemade-vegan-caesar-salad-dressing-main.jpg"
 imageAlt: A single romaine lettuce leaf coated in creamy vegan Caesar dressing rests on a wooden surface.
 date: 2026-04-28
-dateModified: 2026-07-20
+dateModified: 2026-09-23
 author: "David Miller"
 quickAnswer: "This vegan Caesar dressing gets its creamy texture from soaked cashews, while lemon, Dijon, capers, garlic, and a small amount of nutritional yeast supply the sharp, savory flavor. Blend for a full minute, then thin it one tablespoon at a time. It contains no egg, dairy, or anchovy, but it does contain tree nuts and should stay refrigerated."
 featured: false
