@@ -1,5 +1,5 @@
 ---
-title: "Ground Beef vs Beans: Which Is Cheaper Protein?"
+title: "Ground Beef vs Beans: 11.5g vs 97.9g Protein per Dollar"
 excerpt: "Dry pinto beans deliver 97.9 g of protein per dollar. Ground beef delivers 11.5. Beans win by 8.5x, and still win by 5x after quality."
 category: "nutrition"
 tags: ["ground beef vs beans", "cheapest protein per dollar", "pinto beans protein cost", "ground beef price 2026", "budget protein sources"]

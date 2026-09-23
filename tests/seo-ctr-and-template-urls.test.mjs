@@ -312,6 +312,37 @@ test("canned vs dry beans title matches cost query and on-page protein-per-dolla
   );
 });
 
+test("ground beef vs beans title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("ground-beef-vs-beans-protein-cost");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Ground Beef vs Beans: 11.5g vs 97.9g Protein per Dollar",
+  );
+  assert.equal(page.title.length, 55);
+  assert.ok(
+    page.title.length <= 60,
+    `beef vs beans title too long for SERP: ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("ground beef vs beans"),
+    "beef vs beans title should lead with ground beef vs beans",
+  );
+  assert.ok(
+    titleLower.indexOf("11.5g") < titleLower.indexOf("97.9g"),
+    "beef vs beans title should put ground beef (11.5g) before dry pinto beans (97.9g)",
+  );
+  assert.match(page.title, /11\.5g/);
+  assert.match(page.title, /97\.9g/);
+  assert.match(page.title, /Protein per Dollar/);
+  assert.equal(
+    /^ground beef vs beans: which is cheaper protein\?$/.test(titleLower),
+    false,
+    "beef vs beans title should not stay on the soft question SERP",
+  );
+});
+
 test("high-protein high-fiber meals title leads with the 30–40g protein template", () => {
   const page = articleFrontmatter("high-protein-high-fiber-meals-for-weight-loss");
   const raw = readFileSync(
