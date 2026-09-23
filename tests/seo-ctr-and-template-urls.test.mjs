@@ -1332,18 +1332,19 @@ test("high fiber breakfast title leads with breakfast ideas for gut health", () 
 });
 
 test("egg sandwich add-ins title leads with add-ins and toppings", () => {
-  const page = articleFrontmatter("healthy-egg-sandwich-add-ins-toppings");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/healthy-egg-sandwich-add-ins-toppings.md"),
     "utf8",
   );
-  const titleLower = page.title.toLowerCase();
+  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
+  assert.ok(title, "healthy-egg-sandwich-add-ins-toppings is missing a quoted title");
+  const titleLower = title.toLowerCase();
 
-  assert.equal(page.title, "Egg Sandwich Add-Ins and Toppings");
-  assert.equal(page.title.length, 33);
+  assert.equal(title, "Egg Sandwich Add-Ins and Toppings");
+  assert.equal(title.length, 33);
   assert.ok(
-    page.title.length <= 60,
-    `egg sandwich add-ins title should be ≤60 chars, got ${page.title.length}`,
+    title.length <= 60,
+    `egg sandwich add-ins title should be ≤60 chars, got ${title.length}`,
   );
   assert.ok(
     titleLower.startsWith("egg sandwich add-ins"),
