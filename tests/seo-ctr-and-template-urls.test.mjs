@@ -2174,6 +2174,32 @@ test("plant protein ranking title puts protein-per-dollar grams in the SERP", ()
   );
 });
 
+test("complete protein pairs title puts rice-and-beans grams per dollar in the SERP", () => {
+  const page = articleFrontmatter("cheapest-complete-protein-pairs");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Cheapest Complete Protein: Rice & Beans 67.2g per Dollar",
+  );
+  assert.equal(page.title.length, 56);
+  assert.ok(
+    page.title.length <= 60,
+    `complete protein pairs title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("cheapest complete protein"),
+    "complete protein pairs title should lead with cheapest complete protein",
+  );
+  assert.match(page.title, /67\.2g/);
+  assert.match(page.title, /per Dollar/);
+  assert.equal(
+    /^the cheapest complete protein: rice and beans math$/.test(titleLower),
+    false,
+    "complete protein pairs title should not stay on the soft rice-and-beans-math SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),

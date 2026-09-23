@@ -1,5 +1,5 @@
 ---
-title: "The Cheapest Complete Protein: Rice and Beans Math"
+title: "Cheapest Complete Protein: Rice & Beans 67.2g per Dollar"
 excerpt: "Split a dollar 50/50 between dry pinto beans and whole wheat flour and it buys 97.0 grams of protein. We ranked 20 legume and grain pairs this way."
 category: "nutrition"
 tags: ["complete protein combos", "rice and beans protein", "cheap vegetarian protein", "protein per dollar", "legumes and grains"]
