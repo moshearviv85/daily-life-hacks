@@ -1867,6 +1867,36 @@ test("popcorn vs almonds fiber-cost title puts grams per dollar in the SERP", ()
   );
 });
 
+test("flour vs quinoa fiber-cost title puts grams per dollar in the SERP", () => {
+  const page = articleFrontmatter("whole-wheat-flour-vs-quinoa-fiber-cost");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Whole Wheat Flour vs Quinoa: 77.8g vs 10.6g Fiber per Dollar",
+  );
+  assert.equal(page.title.length, 60);
+  assert.ok(
+    page.title.length <= 60,
+    `flour vs quinoa title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("whole wheat flour vs quinoa"),
+    "flour vs quinoa title should lead with whole wheat flour vs quinoa",
+  );
+  assert.ok(
+    titleLower.indexOf("77.8g") < titleLower.indexOf("10.6g"),
+    "flour vs quinoa title should put flour fiber grams before quinoa",
+  );
+  assert.match(page.title, /77\.8g/);
+  assert.match(page.title, /10\.6g/);
+  assert.equal(
+    /^whole wheat flour vs quinoa: which fiber is cheaper\?$/.test(titleLower),
+    false,
+    "flour vs quinoa title should not stay on the soft question SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
