@@ -888,7 +888,7 @@ test("yogurt title leads with high fiber yogurt, not parfait framing", () => {
     false,
     "yogurt title should not use the old layer-by-layer SERP",
   );
-  assert.match(raw, /^dateModified: 2026-09-22$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
   assert.equal(
     excerpt.toLowerCase().includes("the real gram count, layer by layer"),
     false,

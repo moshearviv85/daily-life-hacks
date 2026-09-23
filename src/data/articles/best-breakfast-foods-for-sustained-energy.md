@@ -89,7 +89,7 @@ Compare added sugar, fiber, and protein on cereal, yogurt, and bread labels. Ser
 
 Flavored yogurt may still fit your breakfast, but compare it with plain yogurt plus fruit. Granola varies even more. This guide to [choosing granola that isn't dessert](/how-to-choose-granola-not-dessert/) explains what to check before a decorative handful becomes half the bowl.
 
-If you're choosing between oats, eggs, yogurt, and cereal with a cartoon tiger on the box, our [breakfast staples per dollar ranking](/breakfast-staples-per-dollar/) shows what a dollar actually buys.
+If you're choosing between oats, eggs, yogurt, and cereal with a cartoon tiger on the box, our [breakfast staples per dollar ranking](/breakfast-staples-per-dollar/) shows what a dollar actually buys at breakfast. Eggs land at 34 grams of protein per dollar in the wider [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), behind the dry lentils.
 
 ## Match breakfast to the morning ahead
 

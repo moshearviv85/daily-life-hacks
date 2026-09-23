@@ -34,7 +34,7 @@ Plain popcorn is a blank canvas, which sounds elegant until you eat three handfu
 
 The best popcorn toppings bring salt, acidity, heat, or a little sweetness without requiring a caramel thermometer and a sink full of hardened sugar. Pop the corn, add just enough oil to make the seasoning stick, and choose a direction.
 
-Popcorn already sits comfortably in a budget snack rotation. Our [popcorn versus potato chips comparison](/popcorn-vs-potato-chips-fiber-comparison/) covers the numbers. This page handles the far more urgent issue of making the bowl worth eating.
+Popcorn already sits comfortably in a budget snack rotation. Our [popcorn versus potato chips comparison](/popcorn-vs-potato-chips-fiber-comparison/) covers the ounce-for-ounce numbers. Kernels themselves buy 51.3 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). This page handles the far more urgent issue of making the bowl worth eating.
 
 ## How do you make popcorn seasoning stick?
 
