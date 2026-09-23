@@ -2795,6 +2795,45 @@ test("fiber on a budget title puts fiber-per-dollar grams in the SERP", () => {
   assert.equal(INDEX_PRUNE_SLUGS.has("how-to-eat-more-fiber-on-a-budget-complete-guide"), false);
 });
 
+test("plant-based protein sources title puts protein-per-dollar grams in the SERP", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/plant-based-protein-sources-complete-guide.md"),
+    "utf8",
+  );
+  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
+  assert.ok(title, "plant-based protein sources is missing a quoted title");
+  const titleLower = title.toLowerCase();
+
+  assert.equal(
+    title,
+    "Plant-Based Protein: Pinto 97.9g vs Tempeh 13.2g",
+  );
+  assert.equal(title.length, 48);
+  assert.ok(
+    title.length <= 60,
+    `plant-based protein title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("plant-based protein"),
+    "plant-based protein title should lead with plant-based protein",
+  );
+  assert.ok(
+    titleLower.indexOf("97.9g") < titleLower.indexOf("13.2g"),
+    "plant-based protein title should put dry pinto beans (97.9g per $) before tempeh (13.2g per $)",
+  );
+  assert.match(title, /97\.9g/);
+  assert.match(title, /13\.2g/);
+  assert.match(title, /Pinto/);
+  assert.match(title, /Tempeh/);
+  assert.equal(
+    /^plant-based protein sources: a complete guide$/.test(titleLower),
+    false,
+    "plant-based protein title should not stay on the soft complete-guide SERP",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("plant-based-protein-sources-complete-guide"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("plant-based-protein-sources-complete-guide"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
