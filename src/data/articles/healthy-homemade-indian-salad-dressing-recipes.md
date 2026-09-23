@@ -1,5 +1,5 @@
 ---
-title: "Indian Salad Dressing Recipes (Homemade)"
+title: "Indian Salad Dressing in 5 Minutes: Yogurt-Mint & Tamarind"
 excerpt: "Indian-inspired salad dressings you whisk in 5 minutes flat. Yogurt-mint, tamarind and chaat masala, all cheaper and brighter than bottled ranch."
 category: recipes
 tags:
