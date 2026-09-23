@@ -1,5 +1,5 @@
 ---
-title: "Frozen vs Fresh Vegetables: Fiber Per Dollar Compared"
+title: "Frozen vs Fresh Vegetables: 17.6g vs 6.1g Fiber per Dollar"
 excerpt: "Frozen green peas give 17.6 g of fiber per dollar; fresh broccoli crowns give 6.1. Frozen wins by 2.9x, but bagged carrots beat most of the freezer."
 category: "nutrition"
 tags: ["frozen vs fresh vegetables", "cheap high fiber vegetables", "fiber per dollar", "grocery budget", "frozen vegetables"]
