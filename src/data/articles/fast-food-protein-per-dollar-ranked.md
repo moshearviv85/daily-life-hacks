@@ -1,5 +1,5 @@
 ---
-title: "Fast Food Protein per Dollar: The Best Deals Ranked"
+title: "Which Fast Food Has the Best Protein per Dollar? 8.4g"
 excerpt: "Chipotle's High Protein Cup hits 8.4g protein per dollar among 30 items at 7 chains. KFC breast is 7.6. Dry pinto beans still beat the winner by almost 12x."
 category: "nutrition"
 tags: ["fast food protein per dollar", "cheapest fast food protein", "high protein fast food", "protein on a budget", "grocery data"]
@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/fast-food-protein-per-dollar-ranked-main.jpg"
 imageAlt: "Overhead spread of fast food on a wood table, including a double cheeseburger, fried chicken, a meatball sub, a cup of chili, and a chicken burrito bowl next to dollar bills and coins"
 date: 2026-07-16
-dateModified: 2026-08-20
+dateModified: 2026-09-23
 author: "David Miller"
 faq:
   - question: "Which fast food item has the most protein per dollar?"

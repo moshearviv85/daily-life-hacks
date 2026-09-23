@@ -954,6 +954,43 @@ test("cauliflower pizza crust title leads with is it high in fiber", () => {
   );
 });
 
+test("fast food protein per dollar title leads with which has the best", () => {
+  const page = articleFrontmatter("fast-food-protein-per-dollar-ranked");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/fast-food-protein-per-dollar-ranked.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Which Fast Food Has the Best Protein per Dollar? 8.4g",
+  );
+  assert.equal(page.title.length, 53);
+  assert.ok(
+    page.title.length <= 60,
+    `fast food protein title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("which fast food has the best protein per dollar"),
+    "fast food protein title should lead with which fast food has the best protein per dollar",
+  );
+  assert.ok(
+    titleLower.indexOf("which fast food has the best") < titleLower.indexOf("8.4g"),
+    "fast food protein title should put the which-has-best question before the 8.4g leader",
+  );
+  assert.match(page.title, /8\.4g/);
+  assert.equal(
+    titleLower.includes("the best deals ranked"),
+    false,
+    "fast food protein title should not use the old best deals ranked SERP",
+  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+
+  assert.match(page.excerpt, /8\.4g protein per dollar/);
+  assert.match(page.excerpt, /7\.6/);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
