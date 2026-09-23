@@ -789,10 +789,15 @@ test("fiber label title leads with high-fiber minimum grams query", () => {
 
 test("popcorn toppings title leads with high fiber", () => {
   const page = articleFrontmatter("high-fiber-popcorn-toppings-healthy");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/high-fiber-popcorn-toppings-healthy.md"),
+    "utf8",
+  );
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
 
-  assert.equal(page.title, "High Fiber Popcorn Toppings That Taste Good");
+  assert.equal(page.title, "High Fiber Popcorn Toppings");
+  assert.equal(page.title.length, 27);
   assert.ok(
     page.title.length <= 60,
     `popcorn toppings title should be ≤60 chars, got ${page.title.length}`,
@@ -806,6 +811,16 @@ test("popcorn toppings title leads with high fiber", () => {
     "popcorn toppings title should put high fiber before popcorn toppings",
   );
   assert.equal(
+    titleLower.includes("that taste good"),
+    false,
+    "popcorn toppings title should not spend the SERP on that taste good",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "popcorn toppings title should not use a best superlative",
+  );
+  assert.equal(
     /diet food/.test(titleLower),
     false,
     "popcorn toppings title should not use the diet-food angle",
@@ -814,6 +829,11 @@ test("popcorn toppings title leads with high fiber", () => {
     /^7 popcorn toppings that don't taste like diet food$/.test(titleLower),
     false,
     "popcorn toppings title should not be the old diet-food SERP",
+  );
+  assert.equal(
+    /^high fiber popcorn toppings that taste good$/.test(titleLower),
+    false,
+    "popcorn toppings title should not keep the old that-taste-good fluff",
   );
 
   assert.equal(
@@ -825,6 +845,8 @@ test("popcorn toppings title leads with high fiber", () => {
     page.excerpt.length <= 160,
     `popcorn toppings meta too long: ${page.excerpt.length}`,
   );
+  assert.match(raw, /^date: 2026-02-01$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
 test("yogurt title leads with high fiber yogurt, not parfait framing", () => {
