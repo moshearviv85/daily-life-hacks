@@ -1,5 +1,5 @@
 ---
-title: "Tofu vs Chicken: Which Is Cheaper Protein?"
+title: "Tofu vs Chicken: 13.6g vs 24.5g Protein per Dollar"
 excerpt: "Chicken breast delivers 24.5 g of protein per dollar. Extra firm tofu delivers 13.6. Chicken wins by 1.8x, and quality scoring widens the gap."
 category: "nutrition"
 tags: ["tofu vs chicken", "cheapest protein per dollar", "tofu protein cost", "chicken breast price 2026", "plant protein on a budget"]

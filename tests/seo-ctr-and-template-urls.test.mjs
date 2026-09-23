@@ -1990,6 +1990,37 @@ test("peanut butter vs almonds title puts protein-per-dollar grams in the SERP",
   );
 });
 
+test("tofu vs chicken title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("tofu-vs-chicken-protein-cost");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Tofu vs Chicken: 13.6g vs 24.5g Protein per Dollar",
+  );
+  assert.equal(page.title.length, 50);
+  assert.ok(
+    page.title.length <= 60,
+    `tofu vs chicken title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("tofu vs chicken"),
+    "tofu vs chicken title should lead with tofu vs chicken",
+  );
+  assert.ok(
+    titleLower.indexOf("13.6g") < titleLower.indexOf("24.5g"),
+    "tofu vs chicken title should put extra firm tofu (13.6g) before chicken breast (24.5g)",
+  );
+  assert.match(page.title, /13\.6g/);
+  assert.match(page.title, /24\.5g/);
+  assert.match(page.title, /Protein per Dollar/);
+  assert.equal(
+    /^tofu vs chicken: which is cheaper protein\?$/.test(titleLower),
+    false,
+    "tofu vs chicken title should not stay on the soft question SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
