@@ -11,7 +11,7 @@ tags:
 image: /images/high-fiber-yogurt-parfait-for-breakfast-main.jpg
 imageAlt: Greek yogurt parfait layered with berries, granola, and seeds
 date: 2026-01-05
-dateModified: 2026-09-22
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -60,7 +60,7 @@ One more line from that FDA page worth keeping: 20 percent of the Daily Value or
 
 USDA lists plain whole-milk Greek yogurt at 0.0 grams of fiber per 100 grams and plain nonfat at 0.0 as well (records 171304 and 170894). Zero. Not "a little." The container can say Greek yogurt in heroic lettering and the fiber line still reads nothing.
 
-What it does bring is 9.0 grams of protein per 100 grams for the whole-milk version and 10.2 for nonfat, which is why [the comparison between eggs and Greek yogurt per dollar](/eggs-vs-greek-yogurt-protein-cost/) gets interesting. Yogurt is the protein layer. Stop asking it to be the fiber layer.
+What it does bring is 9.0 grams of protein per 100 grams for the whole-milk version and 10.2 for nonfat, which is why [the comparison between eggs and Greek yogurt per dollar](/eggs-vs-greek-yogurt-protein-cost/) gets interesting. Yogurt is the protein layer. Stop asking it to be the fiber layer. Berries and seeds have to buy that fiber, and they don't cost the same per gram. Chia seeds land at 33.1 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Raspberries land at 4.5.
 
 ## Your granola decides the total
 

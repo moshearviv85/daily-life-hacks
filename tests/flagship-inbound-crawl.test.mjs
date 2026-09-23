@@ -63,6 +63,11 @@ const requiredLinks = [
   ["how-much-protein-for-breakfast", proteinFlagship],
   ["how-much-protein-for-breakfast", fiberFlagship],
   ["which-foods-are-complete-proteins", proteinFlagship],
+  ["high-fiber-popcorn-toppings-healthy", fiberFlagship],
+  ["high-fiber-yogurt-parfait-for-breakfast", fiberFlagship],
+  ["healthy-alternatives-potato-chips-snacking", fiberFlagship],
+  ["best-high-protein-breads-healthy-sandwiches", proteinFlagship],
+  ["best-breakfast-foods-for-sustained-energy", proteinFlagship],
 ];
 
 function articleBody(slug) {

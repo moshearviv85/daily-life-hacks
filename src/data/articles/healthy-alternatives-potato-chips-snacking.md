@@ -11,7 +11,7 @@ tags:
 image: "/images/healthy-alternatives-potato-chips-snacking-main.jpg"
 imageAlt: A large white bowl overflows with fluffy, air-popped popcorn, with some kernels suspended in mid-air.
 date: 2026-04-28
-dateModified: 2026-07-31
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 quickAnswer: "Ounce for ounce, USDA FoodData Central lists plain salted potato chips at 149 calories, 0.9 gram of fiber and 148 mg of sodium. Air-popped popcorn at the same weight is 108 calories, 4.1 grams of fiber and 2 mg of sodium, so popcorn is the swap that moves every number at once. Roasted chickpeas and lightly salted almonds also add fiber. Sweet potato chips and bagged veggie chips mostly don't: fried sweet potato chips carry the same 149 calories per ounce as regular chips, and the store veggie chips and veggie straws logged in USDA's Branded Foods data list more sodium per ounce than the chips they replace."
@@ -53,7 +53,7 @@ Everything below is one ounce, 28 grams, the serving size on a standard chip bag
 
 All values are USDA FoodData Central per-100-gram figures converted to 28 grams: [chips](https://fdc.nal.usda.gov/food-details/169677/nutrients), [popcorn](https://fdc.nal.usda.gov/food-details/167959/nutrients), [almonds](https://fdc.nal.usda.gov/food-details/168596/nutrients), [sunflower kernels](https://fdc.nal.usda.gov/food-details/169418/nutrients), [pumpkin seeds](https://fdc.nal.usda.gov/food-details/169415/nutrients), [sweet potato chips](https://fdc.nal.usda.gov/food-details/174783/nutrients), [kale chips](https://fdc.nal.usda.gov/food-details/2042741/nutrients), [veggie chips](https://fdc.nal.usda.gov/food-details/2064843/nutrients), [veggie straws](https://fdc.nal.usda.gov/food-details/1876680/nutrients), [chickpeas](https://fdc.nal.usda.gov/food-details/173757/nutrients), [cucumber](https://fdc.nal.usda.gov/food-details/168409/nutrients). The kale and the two veggie rows are Branded Foods records, so those numbers come off an older manufacturer label rather than a lab, and other brands will read differently. Flavored chips, salted sweet potato chips and buttered popcorn all shift things.
 
-For scale, the [FDA Daily Value for dietary fiber is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) and for sodium it's 2,300 mg. So an ounce of popcorn is about 15 percent of a day's fiber, an ounce of chips about 3 percent, and that ounce of store veggie chips about 11 percent of the day's sodium. Our deeper [popcorn vs potato chips fiber comparison](/popcorn-vs-potato-chips-fiber-comparison/) has the receipts on that one matchup.
+For scale, the [FDA Daily Value for dietary fiber is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) and for sodium it's 2,300 mg. So an ounce of popcorn is about 15 percent of a day's fiber, an ounce of chips about 3 percent, and that ounce of store veggie chips about 11 percent of the day's sodium. Our deeper [popcorn vs potato chips fiber comparison](/popcorn-vs-potato-chips-fiber-comparison/) has the receipts on that one matchup. Cost is a separate question: the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) prices kernels against the rest of the grocery cart, not just the chip aisle.
 
 ## Why is air-popped popcorn the default swap?
 
