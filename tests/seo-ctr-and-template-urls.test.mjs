@@ -1457,6 +1457,48 @@ test("high fiber fast food title leads with what to order at 6 chains", () => {
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
+test("high protein breads title leads with high protein breads for sandwiches", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/best-high-protein-breads-healthy-sandwiches.md"),
+    "utf8",
+  );
+  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
+  assert.ok(title, "best-high-protein-breads-healthy-sandwiches is missing a quoted title");
+  const titleLower = title.toLowerCase();
+
+  assert.equal(title, "High Protein Breads for Sandwiches");
+  assert.equal(title.length, 34);
+  assert.ok(
+    title.length <= 60,
+    `high protein breads title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("high protein breads"),
+    "high protein breads title should lead with high protein breads",
+  );
+  assert.ok(
+    titleLower.indexOf("breads") < titleLower.indexOf("for sandwiches"),
+    "high protein breads title should put breads before for sandwiches",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "high protein breads title should not use a best superlative",
+  );
+  assert.equal(
+    titleLower.includes("healthy"),
+    false,
+    "high protein breads title should not spend the SERP on healthy",
+  );
+  assert.equal(
+    /^best high protein breads for healthy sandwiches$/.test(titleLower),
+    false,
+    "high protein breads title should not be the old best healthy sandwiches stack",
+  );
+  assert.match(raw, /^date: 2026-04-28$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),

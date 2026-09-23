@@ -1,5 +1,5 @@
 ---
-title: Best High Protein Breads for Healthy Sandwiches
+title: "High Protein Breads for Sandwiches"
 excerpt: Stop settling for flimsy white bread. We found the best high protein breads that actually hold a sandwich together without taste like cardboard.
 category: nutrition
 tags:
@@ -10,6 +10,7 @@ tags:
 image: "/images/best-high-protein-breads-healthy-sandwiches-main.jpg"
 imageAlt: A thick, diagonal slice of sprouted grain bread rests on a linen napkin next to a small wooden cutting board, with loose grains scattered nearby.
 date: 2026-04-28
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 faq:
