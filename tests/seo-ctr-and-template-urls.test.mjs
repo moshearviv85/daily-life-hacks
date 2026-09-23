@@ -91,16 +91,38 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
     `popcorn meta too long: ${popcorn.excerpt.length}`,
   );
 
+  const proteinRaw = readFileSync(
+    join(ROOT, "src/data/articles/protein-per-serving-beans-chicken-tofu-compared.md"),
+    "utf8",
+  );
   const protein = articleFrontmatter("protein-per-serving-beans-chicken-tofu-compared");
-  assert.match(protein.title, /26-35g/);
-  assert.match(protein.title, /15g/);
-  assert.match(protein.title, /8-20g/);
-  assert.match(protein.title, /\bvs\b/i);
+  assert.equal(
+    protein.title,
+    "Which Has More Protein Per Serving: Chicken, Beans, Tofu?",
+  );
+  assert.equal(protein.title.length, 57);
+  assert.ok(
+    protein.title.length <= 60,
+    `protein title too long for SERP: ${protein.title.length}`,
+  );
   const proteinTitle = protein.title.toLowerCase();
   assert.ok(
-    proteinTitle.indexOf("vs") < proteinTitle.indexOf("26-35"),
-    "protein title should lead with vs query language, then the serving numbers",
+    proteinTitle.startsWith("which has more protein per serving"),
+    "protein title should lead with which has more protein per serving",
   );
+  assert.ok(
+    proteinTitle.indexOf("which has more") < proteinTitle.indexOf("chicken"),
+    "protein title should put which-has-more before the foods",
+  );
+  assert.match(protein.title, /[Cc]hicken/);
+  assert.match(protein.title, /[Bb]eans/);
+  assert.match(protein.title, /[Tt]ofu/);
+  assert.equal(
+    /^chicken vs beans vs tofu: 26-35g vs 15g vs 8-20g protein$/.test(proteinTitle),
+    false,
+    "protein title should not be the old flat three-way gram SERP",
+  );
+  assert.match(proteinRaw, /^dateModified: 2026-09-23$/m);
   assert.match(protein.excerpt, /26-35g/);
   assert.match(protein.excerpt, /15g/);
   assert.match(protein.excerpt, /8-20g/);
