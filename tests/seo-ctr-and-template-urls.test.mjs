@@ -1928,6 +1928,37 @@ test("lentils vs chicken breast title puts protein-per-dollar grams in the SERP"
   );
 });
 
+test("eggs vs Greek yogurt title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("eggs-vs-greek-yogurt-protein-cost");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Eggs vs Greek Yogurt: 34.4g vs 27.5g Protein per Dollar",
+  );
+  assert.equal(page.title.length, 55);
+  assert.ok(
+    page.title.length <= 60,
+    `eggs vs Greek yogurt title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("eggs vs greek yogurt"),
+    "eggs vs Greek yogurt title should lead with eggs vs greek yogurt",
+  );
+  assert.ok(
+    titleLower.indexOf("34.4g") < titleLower.indexOf("27.5g"),
+    "eggs vs Greek yogurt title should put eggs (34.4g) before Greek yogurt (27.5g)",
+  );
+  assert.match(page.title, /34\.4g/);
+  assert.match(page.title, /27\.5g/);
+  assert.match(page.title, /Protein per Dollar/);
+  assert.equal(
+    /^eggs vs greek yogurt: which is cheaper protein\?$/.test(titleLower),
+    false,
+    "eggs vs Greek yogurt title should not stay on the soft question SERP",
+  );
+});
+
 test("peanut butter vs almonds title puts protein-per-dollar grams in the SERP", () => {
   const page = articleFrontmatter("peanut-butter-vs-almonds-protein-cost");
   const titleLower = page.title.toLowerCase();
