@@ -391,6 +391,6 @@ test("inline study signup is limited to the two flagship slugs", () => {
   assert.doesNotMatch(sourdough, /study-email-capture|Email me ranking updates/);
   assert.doesNotMatch(protein, /study-email-capture/);
   assert.doesNotMatch(fiber, /study-email-capture/);
-  assert.match(protein, /Protein per Dollar: The Cheapest Protein Sources, Ranked/);
+  assert.match(protein, /Protein per \$: Whole Wheat Flour 96\.0g vs Lentils 77\.7g/);
   assert.match(fiber, /Fiber per Dollar: Whole Wheat Flour 77\.8g, Split Peas 71\.0g/);
 });

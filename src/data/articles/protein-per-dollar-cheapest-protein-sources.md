@@ -1,5 +1,5 @@
 ---
-title: "Protein per Dollar: The Cheapest Protein Sources, Ranked"
+title: "Protein per $: Whole Wheat Flour 96.0g vs Lentils 77.7g"
 excerpt: "A dollar of whole wheat flour buys 96.0g of protein. A dollar of bacon buys 9.4g. All 49 grocery foods ranked by protein per dollar, at July 2026 prices."
 category: "nutrition"
 tags: ["cheapest protein sources", "protein per dollar", "budget protein", "cheap protein on a budget", "grocery data"]
