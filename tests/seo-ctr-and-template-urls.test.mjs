@@ -765,7 +765,7 @@ test("food value database title leads with protein and fiber per dollar", () => 
   assert.match(description, /Not USDA-endorsed/);
 });
 
-test("artichoke recipe title leads with artichoke recipes for gut health", () => {
+test("artichoke recipe title leads with the macrobiotic steam method", () => {
   const artichoke = articleFrontmatter("artichoke-recipes-for-gut-health");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/artichoke-recipes-for-gut-health.md"),
@@ -774,25 +774,32 @@ test("artichoke recipe title leads with artichoke recipes for gut health", () =>
   const titleLower = artichoke.title.toLowerCase();
   const excerptLower = artichoke.excerpt.toLowerCase();
 
-  assert.equal(artichoke.title, "Artichoke Recipes for Gut Health");
-  assert.equal(artichoke.title.length, 32);
+  assert.equal(
+    artichoke.title,
+    "Macrobiotic Artichoke Recipe: Steam Until Leaves Pull Free",
+  );
+  assert.equal(artichoke.title.length, 58);
   assert.ok(
     artichoke.title.length <= 60,
     `artichoke title should be ≤60 chars, got ${artichoke.title.length}`,
   );
   assert.ok(
+    titleLower.startsWith("macrobiotic artichoke recipe"),
+    "artichoke title should lead with the macrobiotic artichoke recipe query",
+  );
+  assert.ok(
+    titleLower.includes("steam until leaves pull free"),
+    "artichoke title should name the steam-until-leaves-pull-free method",
+  );
+  assert.equal(
     titleLower.startsWith("artichoke recipes for gut health"),
-    "artichoke title should lead with artichoke recipes for gut health",
+    false,
+    "artichoke title should not lead with the old gut-health SERP",
   );
   assert.equal(
-    titleLower.includes("macrobiotic"),
+    /^artichoke recipes for gut health$/.test(titleLower),
     false,
-    "artichoke title should not spend the SERP on macrobiotic",
-  );
-  assert.equal(
-    /^macrobiotic artichoke recipe:/.test(titleLower),
-    false,
-    "artichoke title should not be the old macrobiotic steam-and-dip SERP",
+    "artichoke title should not be the old gut-health SERP",
   );
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 

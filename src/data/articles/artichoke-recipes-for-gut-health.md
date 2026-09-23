@@ -1,5 +1,5 @@
 ---
-title: "Artichoke Recipes for Gut Health"
+title: "Macrobiotic Artichoke Recipe: Steam Until Leaves Pull Free"
 excerpt: "Macrobiotic artichoke recipe: steam whole artichokes until the leaves pull free, then serve them with a sharp lemon-garlic dip and none of the usual guesswork."
 category: recipes
 tags:
