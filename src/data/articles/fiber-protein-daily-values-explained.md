@@ -1,12 +1,12 @@
 ---
-title: "Where the 28g Fiber and 50g Protein Targets Come From"
+title: "Why the Daily Fiber Goal Is 28g (Protein 50g)"
 excerpt: "FDA gets 28g fiber and 50g protein from tidy 2,000-calorie label math. The numbers are useful, but they aren't a personality test."
 category: "nutrition"
 tags: ["FDA Daily Value", "28 grams fiber", "50 grams protein", "nutrition label math", "food cost targets"]
 image: "/images/fiber-protein-daily-values-explained-main.jpg"
 imageAlt: "Playful editorial illustration of a magnifying glass examining a nutrition label beside beans, oats, eggs, and chicken"
 date: 2026-07-14
-dateModified: 2026-07-17
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false

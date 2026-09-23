@@ -991,6 +991,46 @@ test("fast food protein per dollar title leads with which has the best", () => {
   assert.match(page.excerpt, /7\.6/);
 });
 
+test("fiber and protein daily values title leads with why the daily fiber goal is 28g", () => {
+  const page = articleFrontmatter("fiber-protein-daily-values-explained");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/fiber-protein-daily-values-explained.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(page.title, "Why the Daily Fiber Goal Is 28g (Protein 50g)");
+  assert.equal(page.title.length, 45);
+  assert.ok(
+    page.title.length <= 60,
+    `daily values title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("why the daily fiber goal is 28g"),
+    "daily values title should lead with why the daily fiber goal is 28g",
+  );
+  assert.ok(
+    titleLower.indexOf("28g") < titleLower.indexOf("50g"),
+    "daily values title should put the 28g fiber figure before protein 50g",
+  );
+  assert.match(page.title, /28g/);
+  assert.match(page.title, /50g/);
+  assert.equal(
+    titleLower.includes("come from"),
+    false,
+    "daily values title should not use the old where-it-comes-from SERP",
+  );
+  assert.equal(
+    titleLower.includes("explained"),
+    false,
+    "daily values title should not spend the SERP on explained",
+  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+
+  assert.match(page.excerpt, /28g/);
+  assert.match(page.excerpt, /50g/);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
