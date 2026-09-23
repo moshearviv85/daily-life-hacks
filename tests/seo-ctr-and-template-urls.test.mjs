@@ -1139,6 +1139,50 @@ test("oatmeal vs grits title leads with which has more fiber", () => {
   );
 });
 
+test("selenium foods title leads with how much you need", () => {
+  const page = articleFrontmatter("selenium-containing-foods-easy-ways");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/selenium-containing-foods-easy-ways.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Selenium Foods: How Much You Need (Brazil Nut Limits)",
+  );
+  assert.equal(page.title.length, 53);
+  assert.ok(
+    page.title.length <= 60,
+    `selenium foods title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("selenium foods"),
+    "selenium foods title should lead with selenium foods",
+  );
+  assert.ok(
+    titleLower.indexOf("how much you need") < titleLower.indexOf("brazil nut"),
+    "selenium foods title should put how much you need before the brazil nut limit",
+  );
+  assert.equal(
+    titleLower.includes("what to eat"),
+    false,
+    "selenium foods title should not spend the SERP on what to eat",
+  );
+  assert.equal(
+    /^selenium foods: what to eat, how much you need, and brazil nut limits$/.test(
+      titleLower,
+    ),
+    false,
+    "selenium foods title should not be the old three-clause comma stack",
+  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
+
+  assert.match(page.excerpt, /Brazil nuts/);
+  assert.match(page.excerpt, /400 mcg/);
+  assert.match(page.excerpt, /55 mcg/);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
