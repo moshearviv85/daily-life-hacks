@@ -352,47 +352,60 @@ test("homemade salad dressing title matches oil-and-vinegar refrigerate query", 
   );
 });
 
-test("bran muffin title leads with fiber-amount query", () => {
+test("bran muffin title leads with high fiber bran muffins", () => {
   const page = articleFrontmatter("high-fiber-bran-muffins-that-taste-good");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/high-fiber-bran-muffins-that-taste-good.md"),
+    "utf8",
+  );
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
-  const howMuchAt = titleLower.indexOf("how much fiber");
-  const branMuffinAt = titleLower.indexOf("bran muffin");
-  const moistAt = titleLower.search(/\bmoist\b/);
-  const wholeWheatAt = titleLower.indexOf("whole wheat");
 
-  assert.ok(howMuchAt !== -1, "bran muffin title should say how much fiber");
-  assert.match(page.title, /bran muffin/i);
-  assert.match(page.title, /5\.9g/);
+  assert.equal(
+    page.title,
+    "High Fiber Bran Muffins That Taste Good (About 5.9g Each)",
+  );
+  assert.equal(page.title.length, 57);
   assert.ok(
     page.title.length <= 60,
     `bran muffin title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    howMuchAt < branMuffinAt,
-    "bran muffin title should lead with how much fiber before bran muffin",
+    titleLower.startsWith("high fiber bran muffins"),
+    "bran muffin title should lead with high fiber bran muffins",
   );
-  assert.ok(
-    moistAt === -1,
+  assert.match(page.title, /5\.9g/);
+  assert.equal(
+    titleLower.startsWith("how much fiber"),
+    false,
+    "bran muffin title should not lead with the fiber-amount question",
+  );
+  assert.equal(
+    /\bmoist\b/.test(titleLower),
+    false,
     "bran muffin title should not spend the SERP on moist",
   );
-  assert.ok(
-    wholeWheatAt === -1,
+  assert.equal(
+    titleLower.includes("whole wheat"),
+    false,
     "bran muffin title should not spend the SERP on whole wheat",
   );
 
-  assert.match(page.excerpt, /how much fiber/i);
-  assert.match(page.excerpt, /bran muffin/i);
-  assert.match(page.excerpt, /high-fiber muffin recipe/i);
+  assert.ok(
+    excerptLower.startsWith("high fiber bran muffins"),
+    "bran muffin meta should lead with high fiber bran muffins",
+  );
+  assert.match(page.excerpt, /high fiber muffin recipe/i);
   assert.match(page.excerpt, /5\.9 g/);
   assert.ok(
-    excerptLower.indexOf("how much fiber") < excerptLower.indexOf("5.9"),
-    "bran muffin meta should put the fiber-amount query before the 5.9 g estimate",
+    excerptLower.indexOf("high fiber bran muffins") < excerptLower.indexOf("5.9"),
+    "bran muffin meta should put the query before the 5.9 g estimate",
   );
   assert.ok(
-    excerptLower.indexOf("how much fiber") < excerptLower.indexOf("moist"),
-    "bran muffin meta should put the fiber-amount query before moist",
+    page.excerpt.length <= 160,
+    `bran muffin meta too long: ${page.excerpt.length}`,
   );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
 test("soggy sandwich title leads with keep query", () => {
