@@ -128,23 +128,50 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   assert.match(protein.excerpt, /8-20g/);
   assert.match(protein.excerpt, /\bvs\b/i);
 
+  const fiberRaw = readFileSync(
+    join(ROOT, "src/data/articles/best-high-fiber-foods-ranked-by-fiber-content.md"),
+    "utf8",
+  );
   const fiberFoods = articleFrontmatter("best-high-fiber-foods-ranked-by-fiber-content");
   const fiberTitleLower = fiberFoods.title.toLowerCase();
   const fiberExcerptLower = fiberFoods.excerpt.toLowerCase();
-  assert.match(fiberFoods.title, /[Bb]est [Hh]igh-?[Ff]iber [Ff]oods/);
-  assert.match(fiberFoods.title, /per 100g/i);
-  assert.match(fiberFoods.title, /34\.4g/);
-  assert.match(fiberFoods.title, /27\.3g/);
-  assert.match(fiberFoods.title, /22\.2g/);
+  assert.equal(
+    fiberFoods.title,
+    "Which Foods Have the Most Fiber per 100g? Chia 34.4g",
+  );
+  assert.equal(fiberFoods.title.length, 52);
   assert.ok(
-    fiberTitleLower.indexOf("best high-fiber foods") < fiberTitleLower.indexOf("34.4g"),
-    "fiber ranking title should lead with the search query, not the study frame",
+    fiberFoods.title.length <= 60,
+    `fiber ranking title should be ≤60 chars, got ${fiberFoods.title.length}`,
+  );
+  assert.ok(
+    fiberTitleLower.startsWith("which foods have the most fiber per 100g"),
+    "fiber ranking title should lead with which foods have the most fiber",
+  );
+  assert.ok(
+    fiberTitleLower.indexOf("which foods have the most fiber") <
+      fiberTitleLower.indexOf("34.4g"),
+    "fiber ranking title should put the question before the chia figure",
+  );
+  assert.match(fiberFoods.title, /Chia 34\.4g/);
+  assert.equal(
+    /27\.3g/.test(fiberFoods.title),
+    false,
+    "fiber ranking title should not list flax 27.3g in a three-food comma lead",
   );
   assert.equal(
-    fiberTitleLower.includes("53-food price study"),
+    /22\.2g/.test(fiberFoods.title),
     false,
-    "fiber ranking title should not lead with the 53-food study frame",
+    "fiber ranking title should not list split peas 22.2g in a three-food comma lead",
   );
+  assert.equal(
+    /^best high-fiber foods per 100g: chia 34\.4g, flax 27\.3g, split peas 22\.2g$/.test(
+      fiberTitleLower,
+    ),
+    false,
+    "fiber ranking title should not be the old three-food comma-list SERP",
+  );
+  assert.match(fiberRaw, /^dateModified: 2026-09-23$/m);
   assert.match(fiberFoods.excerpt, /[Bb]est high-fiber foods/);
   assert.match(fiberFoods.excerpt, /34\.4g/);
   assert.match(fiberFoods.excerpt, /27\.3g/);
