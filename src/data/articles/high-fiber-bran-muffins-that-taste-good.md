@@ -1,6 +1,6 @@
 ---
-title: "How Much Fiber in a Bran Muffin? About 5.9g Each"
-excerpt: "How much fiber is in a bran muffin? This high-fiber muffin recipe estimates 5.9 g per large muffin, with a 10-minute bran soak so they stay moist."
+title: "High Fiber Bran Muffins That Taste Good (About 5.9g Each)"
+excerpt: "High fiber bran muffins that taste good. This high fiber muffin recipe estimates about 5.9 g of fiber per large muffin."
 category: recipes
 tags:
 - bran muffins
@@ -12,7 +12,7 @@ image: /images/high-fiber-bran-muffins-that-taste-good-main.jpg
 imageAlt: Golden bran muffins with raisins cooling on a wire rack beside a jar of honey
 quickAnswer: "Soak wheat bran and oat bran in buttermilk for 10 minutes, then mix with whole wheat flour, honey, oil, eggs, and raisins. Bake at 400 degrees F for 18 to 22 minutes. The original batch makes 12 large muffins, estimated at 5.9 g fiber and 293 calories each."
 date: 2025-12-28
-dateModified: 2026-09-15
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false
