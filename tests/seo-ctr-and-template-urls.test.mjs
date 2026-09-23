@@ -2761,6 +2761,40 @@ test("high protein on a budget title puts protein-per-dollar grams in the SERP",
   assert.equal(INDEX_PRUNE_SLUGS.has("high-protein-on-a-budget-complete-guide"), false);
 });
 
+test("fiber on a budget title puts fiber-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("how-to-eat-more-fiber-on-a-budget-complete-guide");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Fiber on a Budget: Flour 77.8g vs Split Peas 71.0g",
+  );
+  assert.equal(page.title.length, 50);
+  assert.ok(
+    page.title.length <= 60,
+    `fiber on a budget title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("fiber on a budget"),
+    "fiber on a budget title should lead with fiber on a budget",
+  );
+  assert.ok(
+    titleLower.indexOf("77.8g") < titleLower.indexOf("71.0g"),
+    "fiber on a budget title should put whole wheat flour (77.8g per $) before dry green split peas (71.0g per $)",
+  );
+  assert.match(page.title, /77\.8g/);
+  assert.match(page.title, /71\.0g/);
+  assert.match(page.title, /Flour/);
+  assert.match(page.title, /Split Peas/);
+  assert.equal(
+    /^how to eat more fiber on a budget: the complete guide$/.test(titleLower),
+    false,
+    "fiber on a budget title should not stay on the soft complete-guide SERP",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("how-to-eat-more-fiber-on-a-budget-complete-guide"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("how-to-eat-more-fiber-on-a-budget-complete-guide"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
