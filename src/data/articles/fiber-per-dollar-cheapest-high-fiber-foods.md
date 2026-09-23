@@ -1,5 +1,5 @@
 ---
-title: "Fiber per Dollar: The Cheapest High-Fiber Foods, Ranked"
+title: "Fiber per Dollar: Whole Wheat Flour 77.8g, Split Peas 71.0g"
 excerpt: "A dollar of dry split peas buys 71g of fiber. A dollar of blueberries buys 2.5g. All 53 grocery foods ranked by fiber per dollar, at July 2026 prices."
 category: "nutrition"
 tags: ["cheapest high fiber foods", "fiber per dollar", "budget groceries", "high fiber on a budget", "grocery data"]
