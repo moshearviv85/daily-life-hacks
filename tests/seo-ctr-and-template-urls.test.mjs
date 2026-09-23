@@ -398,7 +398,7 @@ test("costco rotisserie chicken title leads with the meals query", () => {
   );
 });
 
-test("homemade salad dressing title leads with how long in the fridge", () => {
+test("homemade salad dressing title puts the fridge windows in the title", () => {
   const dressing = articleFrontmatter("how-to-store-homemade-salad-dressing-safely");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/how-to-store-homemade-salad-dressing-safely.md"),
@@ -409,17 +409,16 @@ test("homemade salad dressing title leads with how long in the fridge", () => {
 
   assert.equal(
     dressing.title,
-    "How Long Does Homemade Salad Dressing Last in the Fridge?",
+    "Homemade Salad Dressing Fridge Life: 2 Weeks, 1 Week, or 3–4 Days",
   );
-  assert.equal(dressing.title.length, 57);
+  assert.equal(dressing.title.length, 65);
   assert.ok(
-    dressing.title.length <= 60,
-    `dressing title should be ≤60 chars, got ${dressing.title.length}`,
+    titleLower.startsWith("homemade salad dressing fridge life"),
+    "dressing title should lead with homemade salad dressing fridge life",
   );
-  assert.ok(
-    titleLower.startsWith("how long does homemade salad dressing last in the fridge"),
-    "dressing title should lead with the how-long homemade salad dressing fridge query",
-  );
+  assert.match(dressing.title, /2 Weeks/);
+  assert.match(dressing.title, /1 Week/);
+  assert.match(dressing.title, /3\u20134 Days/);
   assert.match(dressing.title, /fridge/i);
   assert.equal(
     /oil\s*(?:and|&)\s*vinegar/.test(titleLower),
