@@ -2896,6 +2896,38 @@ test("usda thrifty food plan title puts the family weekly cost in the SERP", () 
   assert.equal(INDEX_PRUNE_SLUGS.has("usda-thrifty-food-plan-weekly-cost"), false);
 });
 
+test("meal prep for beginners title puts the 8-meal 90-minute system in the SERP", () => {
+  const page = articleFrontmatter("meal-prep-for-beginners-complete-system");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Meal Prep for Beginners: 8 Meals in 90 Minutes",
+  );
+  assert.equal(page.title.length, 46);
+  assert.ok(
+    page.title.length <= 60,
+    `meal prep for beginners title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("meal prep for beginners"),
+    "meal prep for beginners title should lead with meal prep for beginners",
+  );
+  assert.ok(
+    titleLower.indexOf("8 meals") < titleLower.indexOf("90 minutes"),
+    "meal prep for beginners title should put the eight-meal count before the 90-minute session",
+  );
+  assert.match(page.title, /8 Meals/);
+  assert.match(page.title, /90 Minutes/);
+  assert.equal(
+    /^meal prep for beginners: the complete system$/.test(titleLower),
+    false,
+    "meal prep for beginners title should not stay on the soft complete-system SERP",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("meal-prep-for-beginners-complete-system"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("meal-prep-for-beginners-complete-system"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),

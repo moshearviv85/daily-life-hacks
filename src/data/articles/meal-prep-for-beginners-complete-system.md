@@ -1,5 +1,5 @@
 ---
-title: "Meal Prep for Beginners: The Complete System"
+title: "Meal Prep for Beginners: 8 Meals in 90 Minutes"
 excerpt: "Two bases, two proteins, two sauces, 90 minutes on Sunday. The mix-and-match system that keeps meal prep from turning into five sad identical lunches."
 category: "tips"
 tags: ["meal prep for beginners", "sunday meal prep", "batch cooking", "meal planning", "meal prep containers"]
