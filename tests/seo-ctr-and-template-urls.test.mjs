@@ -2687,6 +2687,46 @@ test("taco bell protein per dollar title puts protein-per-dollar grams in the SE
   assert.equal(INDEX_PRUNE_SLUGS.has("taco-bell-protein-per-dollar"), false);
 });
 
+test("wendys protein per dollar title puts protein-per-dollar grams in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/wendys-protein-per-dollar.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+
+  assert.equal(
+    title,
+    "Wendy's Protein per $: Jr. Bacon 6.2g vs Spicy Chicken 5.7g",
+  );
+  assert.equal(title.length, 59);
+  assert.ok(
+    title.length <= 62,
+    `wendys protein per dollar title should be ≤62 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("wendy's protein per $"),
+    "wendys protein per dollar title should lead with wendy's protein per $",
+  );
+  assert.ok(
+    titleLower.indexOf("6.2g") < titleLower.indexOf("5.7g"),
+    "wendys protein per dollar title should put the Jr. Bacon Cheeseburger (6.2g per $) before the Spicy Chicken Sandwich (5.7g per $)",
+  );
+  assert.match(title, /6\.2g/);
+  assert.match(title, /5\.7g/);
+  assert.match(title, /Jr\. Bacon/);
+  assert.match(title, /Spicy Chicken/);
+  assert.equal(
+    /^wendy's protein per dollar: 4 items ranked \(july 2026 prices\)$/.test(titleLower),
+    false,
+    "wendys protein per dollar title should not stay on the soft items-ranked SERP",
+  );
+  assert.match(
+    page,
+    /Every Wendy's item we priced, ranked by grams of protein per dollar, from the \$\{best\.item\} at/,
+  );
+  assert.match(page, /Wendy's Protein per Dollar, Ranked/);
+  assert.equal(INDEX_KEEP_PATHS.has("wendys-protein-per-dollar"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("wendys-protein-per-dollar"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
