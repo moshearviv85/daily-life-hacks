@@ -564,26 +564,31 @@ test("artichoke recipe title leads with the macrobiotic artichoke recipe query",
   );
 });
 
-test("rice and beans everyday title matches healthy everyday query", () => {
+test("rice and beans everyday title leads with can you eat", () => {
   const rice = articleFrontmatter("can-you-eat-rice-and-beans-everyday");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/can-you-eat-rice-and-beans-everyday.md"),
+    "utf8",
+  );
   const titleLower = rice.title.toLowerCase();
   const excerptLower = rice.excerpt.toLowerCase();
-  assert.match(rice.title, /[Hh]ealthy/);
-  assert.match(rice.title, /[Rr]ice and [Bb]eans/);
-  assert.match(rice.title, /every day|everyday/i);
+
+  assert.equal(rice.title, "Can You Eat Rice and Beans Every Day?");
+  assert.equal(rice.title.length, 37);
   assert.ok(
-    titleLower.indexOf("healthy") < titleLower.indexOf("rice and beans"),
-    "rice and beans title should lead with healthy intent, not the old can-you-eat question",
+    rice.title.length <= 60,
+    `rice and beans title should be ≤60 chars, got ${rice.title.length}`,
   );
   assert.ok(
-    titleLower.indexOf("rice and beans") < titleLower.search(/every day|everyday/),
-    "rice and beans title should keep rice and beans before every day",
+    titleLower.startsWith("can you eat rice and beans every day"),
+    "rice and beans title should lead with the can-you-eat everyday query",
   );
   assert.equal(
-    /^can you eat rice and beans every day\?$/.test(titleLower),
+    titleLower.startsWith("is it healthy"),
     false,
-    "rice and beans title should not be the old can-you-eat SERP that missed healthy",
+    "rice and beans title should not lead with the old Is It Healthy SERP",
   );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(rice.excerpt, /is it healthy to eat rice and beans every day/i);
   assert.match(rice.excerpt, /protein and fiber/i);
