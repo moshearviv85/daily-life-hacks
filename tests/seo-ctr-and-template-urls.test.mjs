@@ -314,31 +314,35 @@ test("costco rotisserie chicken title leads with the meals query", () => {
   );
 });
 
-test("homemade salad dressing title matches oil-and-vinegar refrigerate query", () => {
+test("homemade salad dressing title leads with how long in the fridge", () => {
   const dressing = articleFrontmatter("how-to-store-homemade-salad-dressing-safely");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/how-to-store-homemade-salad-dressing-safely.md"),
+    "utf8",
+  );
   const titleLower = dressing.title.toLowerCase();
   const excerptLower = dressing.excerpt.toLowerCase();
-  const oilVinegarAt = titleLower.search(/oil\s*(?:and|&)\s*vinegar/);
-  const homemadeAt = titleLower.indexOf("homemade salad dressing");
-  assert.ok(oilVinegarAt !== -1, "dressing title should name oil-and-vinegar");
-  assert.match(dressing.title, /refrigerat|fridge/i);
-  assert.match(dressing.title, /how long|lasts/i);
+
+  assert.equal(
+    dressing.title,
+    "How Long Does Homemade Salad Dressing Last in the Fridge?",
+  );
+  assert.equal(dressing.title.length, 57);
   assert.ok(
     dressing.title.length <= 60,
     `dressing title should be ≤60 chars, got ${dressing.title.length}`,
   );
   assert.ok(
-    oilVinegarAt < titleLower.search(/refrigerat|fridge/),
-    "dressing title should lead with oil-and-vinegar before refrigerate language",
+    titleLower.startsWith("how long does homemade salad dressing last in the fridge"),
+    "dressing title should lead with the how-long homemade salad dressing fridge query",
   );
-  assert.ok(
-    titleLower.search(/refrigerat|fridge/) < titleLower.search(/how long|lasts/),
-    "dressing title should lead with refrigerate language, then how-long",
+  assert.match(dressing.title, /fridge/i);
+  assert.equal(
+    /oil\s*(?:and|&)\s*vinegar/.test(titleLower),
+    false,
+    "dressing title should not lead with oil-and-vinegar-only framing",
   );
-  assert.ok(
-    homemadeAt === -1 || oilVinegarAt < homemadeAt,
-    "oil-and-vinegar should lead before generic homemade salad dressing if both appear",
-  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(dressing.excerpt, /oil\s*(?:and|&)\s*vinegar/i);
   assert.match(dressing.excerpt, /[Rr]efrigerat/);

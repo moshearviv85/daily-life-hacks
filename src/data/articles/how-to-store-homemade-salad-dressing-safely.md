@@ -1,5 +1,5 @@
 ---
-title: "Does Oil and Vinegar Dressing Need Refrigeration? How Long"
+title: "How Long Does Homemade Salad Dressing Last in the Fridge?"
 excerpt: "Refrigerate oil and vinegar dressing. Vinaigrette lasts up to 2 weeks; fresh garlic or herbs, 1 week; creamy mayo or dairy, 3-4 days. Garlic-in-oil: 4 days."
 quickAnswer: >-
   How long homemade salad dressing keeps depends entirely on what's in it.
@@ -22,7 +22,7 @@ tags:
 image: "/images/how-to-store-homemade-salad-dressing-safely-main.jpg"
 imageAlt: A clear glass bottle filled with golden salad dressing stands on a light wooden cutting board, surrounded by a lemon half and a garlic clove.
 date: 2026-04-28
-dateModified: 2026-09-10
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 faq:
