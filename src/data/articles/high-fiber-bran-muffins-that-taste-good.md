@@ -1,5 +1,5 @@
 ---
-title: "High Fiber Bran Muffins That Taste Good (About 5.9g Each)"
+title: "High Fiber Bran Muffins (About 5.9g Each)"
 excerpt: "High fiber bran muffins that taste good. This high fiber muffin recipe estimates about 5.9 g of fiber per large muffin."
 category: recipes
 tags:
