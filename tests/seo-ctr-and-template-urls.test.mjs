@@ -209,7 +209,7 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
   );
 });
 
-test("canned beans vs dried beans nutrition title leads with are dried beans better", () => {
+test("canned beans vs dried beans nutrition title puts protein grams per 100g in the SERP", () => {
   const beans = articleFrontmatter("canned-beans-vs-dried-beans-nutrition");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/canned-beans-vs-dried-beans-nutrition.md"),
@@ -218,19 +218,30 @@ test("canned beans vs dried beans nutrition title leads with are dried beans bet
   const titleLower = beans.title.toLowerCase();
   const excerptLower = beans.excerpt.toLowerCase();
 
-  assert.equal(beans.title, "Are Dried Beans Better Than Canned?");
-  assert.equal(beans.title.length, 35);
+  assert.equal(
+    beans.title,
+    "Dried vs Canned Beans: 21.6g vs 6.0g Protein per 100g",
+  );
+  assert.equal(beans.title.length, 53);
   assert.ok(
     beans.title.length <= 60,
     `nutrition beans title too long for SERP: ${beans.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("are dried beans better than canned"),
-    "nutrition beans title should lead with are dried beans better than canned",
+    titleLower.startsWith("dried vs canned beans"),
+    "nutrition beans title should lead with dried vs canned beans",
   );
   assert.ok(
-    titleLower.indexOf("better") < titleLower.indexOf("canned"),
-    "nutrition beans title should put better before canned",
+    titleLower.indexOf("21.6g") < titleLower.indexOf("6.0g"),
+    "nutrition beans title should put dry protein (21.6g) before canned (6.0g)",
+  );
+  assert.match(beans.title, /21\.6g/);
+  assert.match(beans.title, /6\.0g/);
+  assert.match(beans.title, /Protein per 100g/);
+  assert.equal(
+    /^are dried beans better than canned\?$/.test(titleLower),
+    false,
+    "nutrition beans title should not stay on the soft question SERP",
   );
   assert.equal(
     titleLower.includes("nutrition compared"),
