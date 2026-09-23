@@ -601,32 +601,43 @@ test("food value database title leads with protein and fiber per dollar", () => 
   assert.match(description, /Not USDA-endorsed/);
 });
 
-test("artichoke recipe title leads with the macrobiotic artichoke recipe query", () => {
+test("artichoke recipe title leads with artichoke recipes for gut health", () => {
   const artichoke = articleFrontmatter("artichoke-recipes-for-gut-health");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/artichoke-recipes-for-gut-health.md"),
+    "utf8",
+  );
   const titleLower = artichoke.title.toLowerCase();
   const excerptLower = artichoke.excerpt.toLowerCase();
 
-  assert.match(artichoke.title, /^Macrobiotic Artichoke Recipe:/);
+  assert.equal(artichoke.title, "Artichoke Recipes for Gut Health");
+  assert.equal(artichoke.title.length, 32);
   assert.ok(
     artichoke.title.length <= 60,
-    `artichoke title too long for SERP: ${artichoke.title.length}`,
+    `artichoke title should be ≤60 chars, got ${artichoke.title.length}`,
   );
-  assert.match(artichoke.title, /[Ss]team/);
-  assert.match(artichoke.title, /[Ll]emon-?[Gg]arlic/);
   assert.ok(
-    titleLower.indexOf("macrobiotic artichoke recipe") === 0,
-    "artichoke title should lead with the GSC query",
+    titleLower.startsWith("artichoke recipes for gut health"),
+    "artichoke title should lead with artichoke recipes for gut health",
   );
   assert.equal(
-    titleLower.includes("how to steam artichokes"),
+    titleLower.includes("macrobiotic"),
     false,
-    "artichoke title should not spend the SERP on how-to steam instead of the ranking query",
+    "artichoke title should not spend the SERP on macrobiotic",
   );
+  assert.equal(
+    /^macrobiotic artichoke recipe:/.test(titleLower),
+    false,
+    "artichoke title should not be the old macrobiotic steam-and-dip SERP",
+  );
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(artichoke.excerpt, /[Mm]acrobiotic artichoke recipe/);
+  assert.match(artichoke.excerpt, /steam/i);
+  assert.match(artichoke.excerpt, /lemon-garlic/i);
   assert.ok(
     excerptLower.indexOf("macrobiotic artichoke recipe") === 0,
-    "artichoke meta should put the ranking query first",
+    "artichoke meta stays on the existing excerpt lead",
   );
 });
 
