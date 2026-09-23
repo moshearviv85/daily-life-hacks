@@ -3308,6 +3308,53 @@ test("tools hub title puts the on-page recipe count in the SERP", () => {
   assert.equal(INDEX_PRUNE_SLUGS.has("tools"), false);
 });
 
+test("api docs title puts the on-page dataset count in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/api-docs.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+  const datasetsSource = readFileSync(join(ROOT, "src/content/datasets.ts"), "utf8");
+  const datasetsBlock = datasetsSource.match(/export const DATASETS:[\s\S]*?\n\};/)?.[0] ?? "";
+  const ids = [...datasetsBlock.matchAll(/^\s{2}"([a-z0-9-]+)": \{/gm)].map((match) => match[1]);
+  const order = [
+    ...(datasetsSource.match(/export const STUDY_DATASET_ORDER: string\[\] = \[([\s\S]*?)\];/)?.[1] ?? "")
+      .matchAll(/"([a-z0-9-]+)"/g),
+  ].map((match) => match[1]);
+
+  assert.equal(ids.length, 24);
+  assert.equal(order.length, ids.length);
+  assert.deepEqual(new Set(order), new Set(ids));
+  assert.match(page, /const datasetCount = STUDY_DATASETS\.length;/);
+  assert.match(page, /dated rows across \{datasetCount\} datasets/);
+  assert.match(page, /lists all \{datasetCount\} datasets/);
+  assert.equal(title, "Free Food Value API: 24 Datasets, No Key");
+  assert.equal(title, `Free Food Value API: ${ids.length} Datasets, No Key`);
+  assert.equal(title.length, 40);
+  assert.ok(
+    title.length <= 60,
+    `api docs title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("free food value api"),
+    "api docs title should lead with free food value api",
+  );
+  assert.match(title, /24 Datasets/);
+  assert.match(title, /No Key/);
+  assert.equal(
+    /^free food value api: no key, no limits, just attribution$/.test(titleLower),
+    false,
+    "api docs title should not stay on the soft no-limits attribution SERP",
+  );
+  assert.equal(page.includes("No Key, No Limits, Just Attribution"), false);
+  assert.match(page, /<BaseLayout title=\{title\}/);
+  assert.match(page, /<h1[^>]*>\s*The Food Value API\s*<\/h1>/);
+  assert.match(
+    page,
+    /const description = `A free JSON API over \$\{datasetCount\} original food-cost datasets and \$\{TOTAL_DATA_ROWS\} priced rows, with documented USDA, restaurant-chain, product-label, and DIAAS sources\.`;/,
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("api-docs"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("api-docs"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
