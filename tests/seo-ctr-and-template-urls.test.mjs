@@ -3355,6 +3355,47 @@ test("api docs title puts the on-page dataset count in the SERP", () => {
   assert.equal(INDEX_PRUNE_SLUGS.has("api-docs"), false);
 });
 
+test("methodology title puts the on-page protein source count in the SERP", () => {
+  const page = readFileSync(join(ROOT, "src/pages/methodology.astro"), "utf8");
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+  const csv = readFileSync(join(ROOT, "public/data/protein-per-dollar-2026.csv"), "utf8");
+  const sourceCount = csv
+    .trim()
+    .split(/\r?\n/)
+    .slice(1)
+    .filter((line) => line.length > 0).length;
+
+  assert.equal(sourceCount, 49);
+  assert.match(page, /49 sources scored on protein grams per dollar/);
+  assert.match(page, /Protein per Dollar: 49 Sources Ranked/);
+  assert.equal(title, "How We Verify Our Numbers: 49 Sources");
+  assert.equal(title, `How We Verify Our Numbers: ${sourceCount} Sources`);
+  assert.equal(title.length, 37);
+  assert.ok(
+    title.length <= 60,
+    `methodology title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("how we verify our numbers"),
+    "methodology title should lead with how we verify our numbers",
+  );
+  assert.match(title, /49 Sources/);
+  assert.equal(
+    /^how we verify our numbers \| daily life hacks$/.test(titleLower),
+    false,
+    "methodology title should not stay on the soft how-we-verify SERP",
+  );
+  assert.match(page, /<BaseLayout title=\{title\}/);
+  assert.match(page, /<h1[^>]*>\s*How We Verify Our Numbers\s*<\/h1>/);
+  assert.equal(
+    page.match(/const description =\s*"([^"]+)"/)?.[1],
+    "The methodology behind our food-cost studies: USDA and BLS grocery inputs, chain-published restaurant nutrition, price rules, public CSVs, and our correction policy.",
+  );
+  assert.equal(INDEX_KEEP_PATHS.has("methodology"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("methodology"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
