@@ -2083,6 +2083,37 @@ test("frozen vs fresh vegetables title puts fiber-per-dollar grams in the SERP",
   );
 });
 
+test("dairy protein ranking title puts protein-per-dollar grams in the SERP", () => {
+  const page = articleFrontmatter("dairy-protein-per-dollar-ranked");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Cheapest Dairy Protein: Milk 29.1g vs Yogurt 27.5g per $",
+  );
+  assert.equal(page.title.length, 56);
+  assert.ok(
+    page.title.length <= 60,
+    `dairy protein ranking title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("cheapest dairy protein"),
+    "dairy protein ranking title should lead with cheapest dairy protein",
+  );
+  assert.ok(
+    titleLower.indexOf("29.1g") < titleLower.indexOf("27.5g"),
+    "dairy protein ranking title should put whole milk (29.1g) before Greek yogurt (27.5g)",
+  );
+  assert.match(page.title, /29\.1g/);
+  assert.match(page.title, /27\.5g/);
+  assert.match(page.title, /per \$/);
+  assert.equal(
+    /^the cheapest dairy protein: milk beats greek yogurt$/.test(titleLower),
+    false,
+    "dairy protein ranking title should not stay on the soft milk-beats-yogurt SERP",
+  );
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
