@@ -2928,6 +2928,42 @@ test("meal prep for beginners title puts the 8-meal 90-minute system in the SERP
   assert.equal(INDEX_PRUNE_SLUGS.has("meal-prep-for-beginners-complete-system"), false);
 });
 
+test("dried beans converter title puts the 15.5 oz can size in the SERP", () => {
+  const page = readFileSync(
+    join(ROOT, "src/pages/tools/dried-beans-to-canned-converter/index.astro"),
+    "utf8",
+  );
+  const title = page.match(/const title = "([^"]+)"/)?.[1] ?? "";
+  const titleLower = title.toLowerCase();
+
+  assert.equal(title, "How Many Dried Beans Equal a 15.5 oz Can?");
+  assert.equal(title.length, 41);
+  assert.ok(
+    title.length <= 60,
+    `dried beans converter title should be ≤60 chars, got ${title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("how many dried beans"),
+    "dried beans converter title should lead with how many dried beans",
+  );
+  assert.match(title, /15\.5 oz/);
+  assert.match(title, /Equal/);
+  assert.equal(
+    /^how many dried beans equal a can\? converter \+ cost$/.test(titleLower),
+    false,
+    "dried beans converter title should not stay on the soft converter-plus-cost SERP",
+  );
+  assert.match(
+    page,
+    /how many grams or cups of dry beans replace a 15\.5 oz can/,
+  );
+  assert.match(page, /One 15\.5 oz can replaced by each dry legume/);
+  assert.match(page, /const PATH = "\/tools\/dried-beans-to-canned-converter\/"/);
+  assert.equal(INDEX_KEEP_PATHS.has("tools/dried-beans-to-canned-converter"), true);
+  assert.equal(INDEX_PRUNE_SLUGS.has("tools/dried-beans-to-canned-converter"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("dried-beans-to-canned-converter"), false);
+});
+
 test("homepage and dashboard sources do not leak template-placeholder hrefs", () => {
   const files = [
     ...walkSource(join(ROOT, "src")),
