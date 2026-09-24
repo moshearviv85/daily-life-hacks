@@ -313,6 +313,47 @@ test("canned vs dry beans title matches cost query and on-page protein-per-dolla
   );
 });
 
+test("beans double-win title puts the combined grams leader in the SERP", () => {
+  const page = articleFrontmatter("beans-double-win-fiber-protein");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/beans-double-win-fiber-protein.md"),
+    "utf8",
+  );
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "Beans Protein and Fiber per $: Split Peas 144.9g",
+  );
+  assert.equal(page.title.length, 48);
+  assert.ok(
+    page.title.length <= 60,
+    `beans double-win title too long for SERP: ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("beans protein and fiber per $"),
+    "beans double-win title should lead with beans protein and fiber per $",
+  );
+  assert.ok(
+    titleLower.indexOf("beans protein and fiber") < titleLower.indexOf("144.9g"),
+    "beans double-win title should put the query before the combined leader",
+  );
+  assert.match(page.title, /144\.9g/);
+  assert.match(page.title, /Split Peas/);
+  assert.equal(
+    /^beans win twice: protein and fiber per dollar, ranked$/.test(titleLower),
+    false,
+    "beans double-win title should not stay on the soft ranked SERP",
+  );
+  assert.equal(titleLower.includes("97.9"), false);
+  assert.equal(titleLower.includes("70.8"), false);
+  assert.match(raw, /^dateModified: 2026-09-24$/m);
+  assert.match(page.excerpt, /144\.9 combined grams per dollar/);
+  assert.match(page.excerpt, /57\.6g of protein/);
+  assert.match(page.excerpt, /41\.7g of fiber/);
+  assert.match(page.excerpt, /99\.3 grams combined/);
+});
+
 test("ground beef vs beans title puts protein-per-dollar grams in the SERP", () => {
   const page = articleFrontmatter("ground-beef-vs-beans-protein-cost");
   const titleLower = page.title.toLowerCase();

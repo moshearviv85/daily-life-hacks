@@ -9,6 +9,7 @@ import {
   FLAGSHIP_RANKING_ANCHOR,
   flagshipHighlightNumbers,
 } from "../src/content/flagship-engagement.mjs";
+import { isIndexPruned } from "../src/content/index-prune.js";
 import { applyRankingTables } from "../scripts/rehype-ranking-tables.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -271,6 +272,103 @@ test("protein flagship FAQ quotes the ranking table grams per dollar", () => {
     read("src/pages/[slug].astro"),
     /acceptedAnswer:\s*\{\s*"@type": "Answer",\s*text: item\.answer/,
   );
+});
+
+test("beans double-win FAQ quotes the combined CSV and stays indexable", () => {
+  const markdown = read("src/data/articles/beans-double-win-fiber-protein.md");
+  const faq = markdown.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
+  assert.ok(faq.includes("question:"), "beans double-win is missing FAQ frontmatter");
+  assert.equal(isIndexPruned("beans-double-win-fiber-protein"), false);
+
+  const rows = parseCsv(read("public/data/beans-double-win-fiber-protein-2026.csv"));
+  const leader = rows[0];
+  const pinto = rows.find((row) => row.food === "Pinto beans (dry)");
+  assert.equal(leader.food, "Green split peas (dry)");
+  assert.equal(leader.value, "144.9");
+  assert.equal(pinto.protein_g_per_dollar, "57.6");
+  assert.equal(pinto.fiber_g_per_dollar, "41.7");
+  assert.equal(pinto.value, "99.3");
+
+  for (const value of [
+    leader.value,
+    leader.protein_g_per_dollar,
+    leader.fiber_g_per_dollar,
+    pinto.protein_g_per_dollar,
+    pinto.fiber_g_per_dollar,
+    pinto.value,
+  ]) {
+    assert.match(
+      faq,
+      new RegExp(value.replace(".", "\\.")),
+      `FAQ should quote ${value} from the double-win CSV`,
+    );
+  }
+
+  assert.doesNotMatch(faq, /97\.9/);
+  assert.doesNotMatch(faq, /70\.8/);
+  assert.doesNotMatch(faq, /168\.7/);
+  assert.doesNotMatch(markdown, /97\.9|70\.8|168\.7|\$3\.97/);
+  assert.match(read("src/pages/[slug].astro"), /"@type": "FAQPage"/);
+  assert.match(
+    read("src/pages/[slug].astro"),
+    /publishedSchemas = released && !isVariant && !indexPruned \? allSchemas/,
+  );
+});
+
+test("fiber flagship FAQ quotes the ranking table grams per dollar", () => {
+  const markdown = read(
+    "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
+  );
+  const faq = markdown.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
+  assert.ok(faq.includes("question:"), "fiber flagship is missing FAQ frontmatter");
+  const header = "| Rank | Food | Fiber (g per 100g) | Price per 100g | Fiber per $1 |";
+  const start = markdown.indexOf(header);
+  assert.notEqual(start, -1, "fiber flagship is missing its ranking table");
+  const tableGrams = new Map();
+  for (const line of markdown.slice(start).split(/\r?\n/).slice(2)) {
+    if (!line.startsWith("|")) break;
+    const cells = line
+      .slice(1, -1)
+      .split("|")
+      .map((cell) => cell.trim());
+    tableGrams.set(cells[1], cells[4].replace(/ g$/, ""));
+  }
+
+  const quoted = [
+    "Whole wheat flour",
+    "Green split peas (dry)",
+    "Pearled barley (dry)",
+    "Popcorn kernels",
+    "Pinto beans (dry)",
+    "Canned black beans",
+    "Bananas",
+    "Blueberries",
+  ];
+  for (const food of quoted) {
+    const grams = tableGrams.get(food);
+    assert.ok(grams, `missing table row for ${food}`);
+    assert.match(
+      faq,
+      new RegExp(grams.replace(".", "\\.")),
+      `FAQ should quote ${food} at ${grams} g per dollar`,
+    );
+  }
+
+  const rows = parseCsv(read("public/data/fiber-per-dollar-2026.csv"));
+  const csvGrams = new Map(rows.map((row) => [row.food, row.fiber_g_per_dollar]));
+  for (const food of quoted) {
+    assert.equal(
+      tableGrams.get(food),
+      csvGrams.get(food),
+      `${food} table grams drifted from fiber-per-dollar-2026.csv`,
+    );
+  }
+
+  assert.doesNotMatch(faq, /roughly 78/);
+  assert.doesNotMatch(faq, /about 71 grams/);
+  assert.doesNotMatch(faq, /just under 12/);
+  assert.doesNotMatch(faq, /97\.9/);
+  assert.doesNotMatch(faq, /70\.8/);
 });
 
 test("high-protein budget guide FAQ quotes its on-page protein table grams", () => {
