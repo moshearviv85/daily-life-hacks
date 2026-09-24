@@ -26,6 +26,14 @@ const dayTotals = (dataset: string) =>
 
 const fiberLeader = metricLeader("fiber-per-dollar-2026", "fiber_g_per_dollar");
 const proteinLeader = metricLeader("protein-per-dollar-2026", "protein_g_per_dollar");
+const qualityLeader = metricLeader(
+  "protein-quality-per-dollar-2026",
+  "quality_adjusted_protein_g_per_dollar",
+);
+const qualityFood = qualityLeader.food.replace(/ \([^)]*\)$/, "");
+const qualityGrams = Number(
+  qualityLeader.metrics.quality_adjusted_protein_g_per_dollar,
+).toFixed(1);
 const fiberDays = dayTotals("fiber-day-cost-2026");
 const proteinDays = dayTotals("protein-day-cost-2026");
 
@@ -65,10 +73,10 @@ const studies = [
   {
     href: "/protein-per-dollar-adjusted-for-quality/",
     eyebrow: "25 foods adjusted",
-    number: "DIAAS",
-    label: "protein quality added to the price math",
+    number: `${qualityGrams}g`,
+    label: `adjusted grams per dollar from ${qualityFood.toLowerCase()}`,
     title: "Protein per Dollar, Adjusted for Quality",
-    text: "The cheap-protein ranking changes when digestibility and amino acid quality enter the spreadsheet.",
+    text: `${qualityFood} lead at ${qualityGrams} adjusted grams per dollar once a published DIAAS score enters the spreadsheet.`,
   },
   {
     href: "/fast-food-protein-per-dollar-ranked/",

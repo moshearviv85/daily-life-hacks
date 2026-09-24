@@ -354,6 +354,156 @@ test("beans double-win title puts the combined grams leader in the SERP", () => 
   assert.match(page.excerpt, /99\.3 grams combined/);
 });
 
+function parseSimpleCsv(source) {
+  const records = [];
+  let record = [];
+  let field = "";
+  let quoted = false;
+  for (let index = 0; index < source.length; index += 1) {
+    const character = source[index];
+    if (quoted) {
+      if (character === '"' && source[index + 1] === '"') {
+        field += '"';
+        index += 1;
+      } else if (character === '"') {
+        quoted = false;
+      } else {
+        field += character;
+      }
+      continue;
+    }
+    if (character === '"') {
+      quoted = true;
+    } else if (character === ",") {
+      record.push(field);
+      field = "";
+    } else if (character === "\n") {
+      record.push(field.replace(/\r$/, ""));
+      records.push(record);
+      record = [];
+      field = "";
+    } else {
+      field += character;
+    }
+  }
+  if (field.length > 0 || record.length > 0) {
+    record.push(field.replace(/\r$/, ""));
+    records.push(record);
+  }
+  const [headers, ...rows] = records.filter((row) => row.some((cell) => cell !== ""));
+  return rows.map((row) =>
+    Object.fromEntries(headers.map((header, index) => [header, row[index]])),
+  );
+}
+
+test("quality-adjusted protein title puts the CSV leader in the SERP", () => {
+  const slug = "protein-per-dollar-adjusted-for-quality";
+  const page = articleFrontmatter(slug);
+  const raw = readFileSync(join(ROOT, "src/data/articles", `${slug}.md`), "utf8");
+  const titleLower = page.title.toLowerCase();
+  const rows = parseSimpleCsv(
+    readFileSync(join(ROOT, "public/data/protein-quality-per-dollar-2026.csv"), "utf8"),
+  );
+  const leader = rows[0];
+  const runnerUp = rows[1];
+  assert.equal(leader.food, "Chicken drumsticks (bone-in)");
+  assert.equal(leader.adjusted_g_per_dollar, "50.3");
+  assert.equal(runnerUp.food, "Brown lentils (dry)");
+  assert.equal(runnerUp.adjusted_g_per_dollar, "49.0");
+
+  assert.equal(
+    page.title,
+    "Cheap Protein, Adjusted: Drumsticks 50.3g vs Lentils 49.0g",
+  );
+  assert.equal(page.title.length, 58);
+  assert.ok(page.title.length <= 60, `quality-adjusted title too long: ${page.title.length}`);
+  assert.ok(
+    titleLower.startsWith("cheap protein"),
+    "quality-adjusted title should lead with cheap protein",
+  );
+  assert.ok(
+    titleLower.indexOf("50.3g") < titleLower.indexOf("49.0g"),
+    "quality-adjusted title should put drumsticks (50.3g) before lentils (49.0g)",
+  );
+  assert.match(page.title, /50\.3g/);
+  assert.match(page.title, /49\.0g/);
+  assert.equal(
+    /^cheap protein ranked after adjusting for quality$/.test(titleLower),
+    false,
+    "quality-adjusted title should not stay on the soft ranked SERP",
+  );
+  assert.equal(titleLower.includes("97.9"), false);
+  assert.equal(titleLower.includes("70.8"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has(slug), false);
+  assert.match(raw, /\| 1 \| Chicken drumsticks \(bone-in\) \| 50\.3 \| 1\.08 \| 50\.3 \|/);
+  assert.match(raw, /\| 2 \| Brown lentils \(dry\) \| 77\.7 \| 0\.63 \| 49\.0 \|/);
+  const faq = raw.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
+  assert.match(faq, /50\.3 grams of quality-adjusted protein per dollar/);
+  assert.match(faq, /Brown lentils came second at 49\.0/);
+  assert.doesNotMatch(faq, /97\.9|70\.8/);
+  assert.match(page.excerpt, /Drumsticks lead at 50\.3 g/);
+  assert.match(page.excerpt, /Brown lentils are next at 49\.0/);
+});
+
+test("50-gram protein day title puts the CSV cost range in the SERP", () => {
+  const slug = "what-50-grams-of-protein-costs-per-day";
+  const page = articleFrontmatter(slug);
+  const raw = readFileSync(join(ROOT, "src/data/articles", `${slug}.md`), "utf8");
+  const titleLower = page.title.toLowerCase();
+  const rows = parseSimpleCsv(
+    readFileSync(join(ROOT, "public/data/protein-day-cost-2026.csv"), "utf8"),
+  );
+  const totals = new Map();
+  for (const row of rows) {
+    totals.set(row.day, (totals.get(row.day) ?? 0) + Number(row.cost_usd));
+  }
+  const ranked = [...totals.entries()].sort((a, b) => a[1] - b[1]);
+  const cheapest = ranked[0][1];
+  const dearest = ranked.at(-1)[1];
+  assert.equal(ranked[0][0], "Day 1: Rock-bottom dry goods");
+  assert.equal(cheapest.toFixed(2), "0.82");
+  assert.equal(ranked.at(-1)[0], "Day 4: Restaurant day");
+  assert.equal(dearest.toFixed(2), "13.23");
+
+  assert.equal(page.title, "What 50 Grams of Protein Costs: $0.82 vs $13.23");
+  assert.equal(page.title.length, 47);
+  assert.ok(page.title.length <= 60, `50-gram day title too long: ${page.title.length}`);
+  assert.ok(
+    titleLower.startsWith("what 50 grams of protein costs"),
+    "50-gram day title should lead with what 50 grams of protein costs",
+  );
+  assert.ok(
+    titleLower.indexOf("$0.82") < titleLower.indexOf("$13.23"),
+    "50-gram day title should put the dry-goods day ($0.82) before the fast-food day ($13.23)",
+  );
+  assert.equal(
+    /^what a day of 50 grams of protein actually costs$/.test(titleLower),
+    false,
+    "50-gram day title should not stay on the soft actually-costs SERP",
+  );
+  assert.equal(titleLower.includes("97.9"), false);
+  assert.equal(titleLower.includes("70.8"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has(slug), false);
+  assert.match(raw, /\*\*52\.7 g\*\* \| \*\*\$0\.82\*\*/);
+  assert.match(raw, /\*\*53\.0 g\*\* \| \*\*\$13\.23\*\*/);
+  const faq = raw.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
+  assert.match(faq, /82 cents to \$13\.23/);
+  assert.match(faq, /96\.0 grams of protein per dollar/);
+  assert.match(faq, /brown lentils deliver 77\.7/);
+  assert.match(faq, /dry pinto beans 57\.6/);
+  assert.doesNotMatch(faq, /97\.9|70\.8/);
+  assert.match(page.excerpt, /from 82 cents to \$13\.23/);
+});
+
+test("research hub quality card shows the adjusted-grams CSV leader", () => {
+  const source = readFileSync(join(ROOT, "src/pages/research/index.astro"), "utf8");
+  assert.match(source, /protein-quality-per-dollar-2026/);
+  assert.match(source, /quality_adjusted_protein_g_per_dollar/);
+  assert.match(source, /number: `\$\{qualityGrams\}g`/);
+  assert.doesNotMatch(source, /number:\s*"DIAAS"/);
+  assert.match(source, /DIAAS adjustments cite/);
+});
+
 test("ground beef vs beans title puts protein-per-dollar grams in the SERP", () => {
   const page = articleFrontmatter("ground-beef-vs-beans-protein-cost");
   const titleLower = page.title.toLowerCase();

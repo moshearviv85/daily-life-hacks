@@ -1,5 +1,5 @@
 ---
-title: "Cheap Protein Ranked After Adjusting for Quality"
+title: "Cheap Protein, Adjusted: Drumsticks 50.3g vs Lentils 49.0g"
 excerpt: "We re-ranked 25 cheap proteins by quality-adjusted grams per dollar using DIAAS. Drumsticks lead at 50.3 g. Brown lentils are next at 49.0."
 category: "nutrition"
 tags: ["quality adjusted protein per dollar", "DIAAS", "protein quality", "budget protein", "cheapest protein sources"]

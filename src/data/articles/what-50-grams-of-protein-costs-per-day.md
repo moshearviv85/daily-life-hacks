@@ -1,5 +1,5 @@
 ---
-title: "What a Day of 50 Grams of Protein Actually Costs"
+title: "What 50 Grams of Protein Costs: $0.82 vs $13.23"
 excerpt: "We priced five real ways to hit 50 grams of protein in one day, from 82 cents to $13.23. Same protein, 16 times the price. Every grocery number is audited."
 category: "nutrition"
 tags: ["cost of protein per day", "50 grams of protein a day", "protein on a budget", "cheap high protein foods", "grocery data"]
