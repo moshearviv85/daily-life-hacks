@@ -2733,7 +2733,7 @@ test("high protein on a budget title puts protein-per-dollar grams in the SERP",
 
   assert.equal(
     page.title,
-    "High Protein on a Budget: Pinto 97.9g vs Bacon 9.2g",
+    "High Protein on a Budget: Pinto 57.6g vs Bacon 9.4g",
   );
   assert.equal(page.title.length, 51);
   assert.ok(
@@ -2745,11 +2745,11 @@ test("high protein on a budget title puts protein-per-dollar grams in the SERP",
     "high protein on a budget title should lead with high protein on a budget",
   );
   assert.ok(
-    titleLower.indexOf("97.9g") < titleLower.indexOf("9.2g"),
-    "high protein on a budget title should put dry pinto beans (97.9g per $) before bacon (9.2g per $)",
+    titleLower.indexOf("57.6g") < titleLower.indexOf("9.4g"),
+    "high protein on a budget title should put dry pinto beans (57.6g per $) before bacon (9.4g per $)",
   );
-  assert.match(page.title, /97\.9g/);
-  assert.match(page.title, /9\.2g/);
+  assert.match(page.title, /57\.6g/);
+  assert.match(page.title, /9\.4g/);
   assert.match(page.title, /Pinto/);
   assert.match(page.title, /Bacon/);
   assert.equal(

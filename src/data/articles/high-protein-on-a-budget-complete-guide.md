@@ -1,29 +1,29 @@
 ---
-title: "High Protein on a Budget: Pinto 97.9g vs Bacon 9.2g"
-excerpt: "Dried beans deliver up to 98 grams of protein per dollar and bacon delivers 9. Here's the complete guide to high protein on a budget, with real prices."
+title: "High Protein on a Budget: Pinto 57.6g vs Bacon 9.4g"
+excerpt: "Dry pinto beans deliver 57.6 grams of protein per dollar and bacon delivers 9.4. Here's the complete guide to high protein on a budget, with real prices."
 category: "nutrition"
 tags: ["high protein on a budget", "cheap protein sources", "protein per dollar", "budget protein", "budget groceries"]
 cluster: "budget-protein"
 image: "/images/high-protein-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry beans and lentils beside a carton of eggs, a whole chicken, canned fish, a block of tofu, and a tub of cottage cheese on a wooden table"
 date: 2026-07-08
-dateModified: 2026-09-05
+dateModified: 2026-09-24
 author: "David Miller"
 featured: false
 faq:
   - question: "What is the cheapest way to get protein?"
-    answer: "Dried beans and lentils. In our 49-food pricing analysis, every dried legume landed between 56.0 and 97.9 grams of protein per dollar, with dried pinto beans on top at 97.9. For comparison, chicken breast delivered 24.5 grams per dollar and ground beef 11.5. Those cited foods use USDA protein data and July 2026 US prices."
+    answer: "Dried beans and lentils. In our 49-food pricing analysis, every dried legume landed between 56.0 and 77.7 grams of protein per dollar. Brown lentils led that group at 77.7, and dried pinto beans landed at 57.6. For comparison, chicken breast delivered 24.6 grams per dollar and ground beef 11.3. Those cited foods use USDA protein data and July 2026 US prices."
   - question: "How much protein do I need a day?"
-    answer: "The FDA's Daily Value for protein, the number used on US nutrition labels, is 50 grams per day for a 2,000-calorie diet. That's a labeling reference point, not a personal prescription, since individual needs vary. Our $20 basket contains about 1,047 grams of protein in total; it's a price example, not a recommended one-person weekly target."
+    answer: "The FDA's Daily Value for protein, the number used on US nutrition labels, is 50 grams per day for a 2,000-calorie diet. That's a labeling reference point, not a personal prescription, since individual needs vary. Our $22.86 basket contains about 1,047 grams of protein in total; it's a price example, not a recommended one-person weekly target."
   - question: "Are eggs still a cheap protein?"
     answer: "Yes. At the May 2026 BLS average of $2.19 per dozen, large eggs delivered 34.4 grams of protein per dollar in our analysis, second among the animal foods in our sample after chicken drumsticks. A dozen holds roughly 75 grams of protein, and the combination of price, convenience, and versatility keeps eggs useful even when they don't win the full ranking."
   - question: "Is canned tuna a good cheap protein?"
     answer: "It's a solid middle-of-the-pack value. Chunk light tuna delivered 22.4 grams of protein per dollar in our July 2026 numbers, with a 98-cent can holding roughly 22 grams of protein. That's less than half what dried beans deliver per dollar, but tuna needs zero cooking, keeps for years in the pantry, and turns into lunch in about ninety seconds."
   - question: "What is the cheapest meat for protein?"
-    answer: "Chicken drumsticks led the meats in our 49-food sample. At $1.09 per pound in a 5 pound bag, drumsticks delivered 50.3 grams of protein per dollar even after subtracting 33 percent of the weight for bone. That was about double boneless chicken breast at 24.5 grams per dollar and more than four times ground beef at 11.5."
+    answer: "Chicken drumsticks led the meats in our 49-food sample. At $1.09 per pound in a 5 pound bag, drumsticks delivered 50.3 grams of protein per dollar even after subtracting 33 percent of the weight for bone. That was about double boneless chicken breast at 24.6 grams per dollar and more than four times ground beef at 11.3."
 ---
 
-Dried beans and lentils delivered the highest protein return in our 49-food grocery sample, at 56 to 98 grams per dollar based on USDA data and July 2026 prices. Among the meats we tested, chicken drumsticks led at about 50 grams per dollar, and eggs are the everyday workhorse at 34.
+Dried legumes in our 49-food grocery sample landed between 56 and 78 grams of protein per dollar, based on USDA data and July 2026 prices. Among the meats we tested, chicken drumsticks led at about 50 grams per dollar, and eggs are the everyday workhorse at 34.
 
 Those three facts are the whole strategy. Everything else in this guide is the practical part: which foods to buy, what to do with them, and how to build a week of eating around them without feeling like you're serving punishment rations.
 
@@ -35,7 +35,7 @@ Pick the route that solves today's problem:
 
 * **You want the cheapest foods:** go to the [protein-per-dollar table](#what-is-the-cheapest-source-of-protein).
 * **Package sizes are making the shelf label useless:** start with that table, then use the unit-price tool linked below it.
-* **You need meals, not rankings:** start with [beans and lentils](#why-do-beans-and-lentils-beat-every-meat-per-dollar), [eggs and dairy](#are-eggs-and-dairy-good-value-for-protein), or the [$20 weekly backbone](#what-does-a-20-weekly-protein-backbone-look-like).
+* **You need meals, not rankings:** start with [beans and lentils](#why-do-beans-and-lentils-beat-every-meat-per-dollar), [eggs and dairy](#are-eggs-and-dairy-good-value-for-protein), or the [$23 weekly backbone](#what-does-a-23-weekly-protein-backbone-look-like).
 * **You need the full cart to stay under a limit:** use the broader [healthy budget playbook](/eat-healthy-on-a-budget-complete-playbook/), then price the cart with the budget tool in the weekly-backbone section.
 * **You want to audit the evidence:** read the [research methodology](/methodology/) and the plain-English explainer on [where the 50-gram Daily Value comes from](/fiber-protein-daily-values-explained/).
 
@@ -43,11 +43,11 @@ Nobody has to read this from top to bottom while standing in a supermarket. That
 
 ## How do you eat high protein on a budget?
 
-Buy your baseline protein in the dry goods aisle. Dry pinto beans deliver 97.9 grams of protein per dollar, black beans 81.0 and brown lentils 77.7, against 9.2 for bacon and 11.5 for 80/20 ground beef. Let chicken drumsticks at 50.3 and eggs at 34.4 be the animal staples, and save the expensive cuts for when you actually want them.
+Buy your baseline protein in the dry goods aisle. Dry brown lentils deliver 77.7 grams of protein per dollar, black beans 58.0 and pinto beans 57.6, against 9.4 for bacon and 11.3 for 80/20 ground beef. Let chicken drumsticks at 50.3 and eggs at 34.4 be the animal staples, and save the expensive cuts for when you actually want them.
 
 Protein has a marketing problem that runs in the opposite direction from fiber's. Fiber is invisible, so nobody sells it. Protein is fashionable, so everybody sells it, loudly, at a markup. The word on the front of a package is one of the most reliable price-inflation signals in the store.
 
-Meanwhile the highest-return protein in this sample sits in the same dusty bags as the cheapest fiber: dried pinto beans at about 98 grams of protein per dollar, black beans at 81, brown lentils at 78. Bacon, the protein everyone photographs, sits at 9. Same nutrient, more than ten times the price in this dataset.
+Meanwhile the highest-return dried legumes in this sample sit in the same dusty bags as the cheapest fiber: brown lentils at 77.7 grams of protein per dollar, black beans at 58.0, dried pinto beans at 57.6. Bacon, the protein everyone photographs, sits at 9.4. Same nutrient, about eight times the price in this dataset.
 
 So the fix fits in one sentence: buy your baseline protein in the dry goods aisle, let drumsticks and eggs be your animal staples, and save the expensive stuff for when you actually want it. If you're rebuilding the whole grocery run and not just the protein line, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the rest of the cart.
 
@@ -57,34 +57,34 @@ Here's what one dollar buys, pulled straight from the ranking:
 
 | Food | Protein per $1 |
 |---|---|
-| Pinto beans (dry) | 97.9 g |
 | Brown lentils (dry) | 77.7 g |
 | Green split peas (dry) | 73.9 g |
+| Pinto beans (dry) | 57.6 g |
 | Peanut butter | 50.7 g |
 | Chicken drumsticks (bone-in) | 50.3 g |
 | Eggs (large) | 34.4 g |
-| Whole milk | 29.1 g |
+| Whole milk | 28.5 g |
 | Greek yogurt (plain, nonfat) | 27.5 g |
 | Rotisserie chicken | 26.7 g |
-| Chicken breast (boneless, skinless) | 24.5 g |
+| Chicken breast (boneless, skinless) | 24.6 g |
 | Canned tuna (chunk light) | 22.4 g |
 | Tofu (extra firm) | 13.6 g |
-| Ground beef (80/20) | 11.5 g |
-| Bacon | 9.2 g |
+| Ground beef (80/20) | 11.3 g |
+| Bacon | 9.4 g |
 
 ![Horizontal bar chart showing how many grams of protein one dollar buys across eight grocery foods](/images/protein-on-a-budget-value-chart.jpg)
 
 Two things jump out of that table. First, the top is a dry goods landslide, just like the fiber ranking. Second, the foods people instinctively reach for when they decide to "eat more protein" (chicken breast, ground beef) sit in the bottom half. Not bad foods. Just expensive ways to buy the nutrient. Even inside the chicken case the spread is real, which is why [thighs versus breast on protein cost](/chicken-thighs-vs-breast-protein-cost/) is worth two minutes before you shop.
 
-One benchmark worth keeping in your head while you read the rest: the [FDA's Daily Value for protein](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), the reference number on US nutrition labels, is 50 grams a day for a 2,000-calorie diet. That's a labeling fact, not personal advice, and [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/) is its own conversation. As a price yardstick, it means a dollar of pinto beans in this dataset carries almost twice that labeling benchmark.
+One benchmark worth keeping in your head while you read the rest: the [FDA's Daily Value for protein](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), the reference number on US nutrition labels, is 50 grams a day for a 2,000-calorie diet. That's a labeling fact, not personal advice, and [how much protein you actually need per day](/how-much-protein-do-you-need-per-day/) is its own conversation. As a price yardstick, it means a dollar of brown lentils in this dataset carries 77.7 grams, about one and a half times that labeling benchmark.
 
 Want to run your own matchups? The [protein and fiber value planner](/tools/fiber-per-dollar-calculator/) compares any two foods from the dataset and builds a weekly basket from the dollars you assign. When two cartons or bags contain the same food in different sizes, the [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles that quieter checkout trap.
 
 ## Why do beans and lentils beat every meat per dollar?
 
-Because you're buying them dry, with the water left out and no processing in the price. Every dried legume in our 49-food sample landed between 56.0 and 97.9 grams of protein per dollar. Not one animal food in the sample cracked 51. That gap is structural, not a sale.
+Because you're buying them dry, with the water left out and no processing in the price. Every dried legume in our 49-food sample landed between 56.0 and 77.7 grams of protein per dollar. Not one animal food in the sample cracked 51. That gap is structural, not a sale.
 
-Every dried legume in the study landed between 56 and 98 grams of protein per dollar. Not one animal food in the sample cracked 51. That's the headline. Beans don't advertise, so the dry-goods aisle has to win with math.
+Every dried legume in the study landed between 56 and 78 grams of protein per dollar. Not one animal food in the sample cracked 51. That's the headline. Beans don't advertise, so the dry-goods aisle has to win with math.
 
 The practical objection is always the same: dried beans take forever. Fair, but forever is mostly unattended pot time, and there are two fixes. Learn the basic routine once with our guide to [cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/), and when you didn't plan ahead last night, the [same-day quick soak](/how-to-quick-soak-dried-beans-same-day/) gets you from bag to pot in about an hour. Cook a big batch on Sunday, freeze half, and dried beans start behaving like convenience food.
 
@@ -94,11 +94,11 @@ And a quiet word for peanut butter: at 50.7 grams of protein per dollar it outsc
 
 ## Are eggs and dairy good value for protein?
 
-Yes, second only to chicken drumsticks among animal foods here. Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, part-skim mozzarella 30.1, whole milk 29.1, Greek yogurt 27.5 and 4% cottage cheese 26.3. All of them beat every fresh meat in the sample except drumsticks.
+Yes, second only to chicken drumsticks among animal foods here. Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, part-skim mozzarella 30.1, whole milk 28.5, Greek yogurt 27.5 and 4% cottage cheese 26.3. All of them beat every fresh meat in the sample except drumsticks.
 
 Eggs are the food I'd defend in court. At the [May 2026 BLS average price](https://data.bls.gov/timeseries/APU0000708111) of $2.19 a dozen, they deliver about 34 grams of protein per dollar, second among the animal foods in this sample. A dozen holds roughly 75 grams of protein, cooks a dozen different ways, and never asks you to plan ahead. Scrambled at 7 AM, boiled on a salad at noon, folded into [freezer breakfast burritos](/high-protein-vegetarian-breakfast-burritos-you-can-freeze/) on Sunday. The workhorse label is earned.
 
-Dairy clusters tightly behind: whole milk at 29 grams per dollar, Greek yogurt at 27.5, cottage cheese at 26.3. The yogurt-versus-cottage-cheese question comes up constantly, so we wrote the [full comparison](/cottage-cheese-vs-greek-yogurt-protein-uses/); the short version is they're different tools, not competitors. If your breakfast decision is really yogurt or eggs, [we priced that one head to head](/eggs-vs-greek-yogurt-protein-cost/) too. And a block of part-skim mozzarella scores 30, which quietly beats every fresh meat except drumsticks.
+Dairy clusters tightly behind: whole milk at 28.5 grams per dollar, Greek yogurt at 27.5, cottage cheese at 26.3. The yogurt-versus-cottage-cheese question comes up constantly, so we wrote the [full comparison](/cottage-cheese-vs-greek-yogurt-protein-uses/); the short version is they're different tools, not competitors. If your breakfast decision is really yogurt or eggs, [we priced that one head to head](/eggs-vs-greek-yogurt-protein-cost/) too. And a block of part-skim mozzarella scores 30, which quietly beats every fresh meat except drumsticks.
 
 This category is also where lunch gets solved. A [high protein bagel sandwich](/high-protein-bagel-sandwich-ideas-lunch/) built on eggs and cheese costs a fraction of the deli version, and if you're curious what the numbers actually look like, we [counted the protein in a bagel sandwich](/how-much-protein-in-bagel-sandwich/) layer by layer.
 
@@ -106,7 +106,7 @@ The close-up rankings settle two arguments the big table can't: [eggs versus the
 
 ## Which chicken gives you the most protein per dollar?
 
-Bone-in drumsticks, at 50.3 grams of protein per dollar with a third of the package weight already subtracted for bone. Boneless skinless breast delivers 24.5, so drumsticks buy roughly twice the protein for the same money. A $5.97 rotisserie bird scores 26.7 and still beats raw breast.
+Bone-in drumsticks, at 50.3 grams of protein per dollar with a third of the package weight already subtracted for bone. Boneless skinless breast delivers 24.6, so drumsticks buy roughly twice the protein for the same money. A $5.97 rotisserie bird scores 26.7 and still beats raw breast.
 
 Chicken drumsticks led the meats in our sample at about 50 grams of protein per dollar, after subtracting a third of the package weight for bone. At $1.09 per pound in the 5 pound bag used here, they delivered about twice the per-dollar protein of boneless breast at its BLS average price. The catch is that nobody feels fancy serving drumsticks. My counterargument: crispy roasted drumsticks are objectively better eating than a dry sauteed breast, and this dataset agrees with me.
 
@@ -118,7 +118,7 @@ If the drumstick-versus-breast result still feels suspicious, the [animal protei
 
 ## Is canned fish a cheap source of protein?
 
-It's mid-table, but it earns its shelf. Chunk light tuna in water delivers 22.4 grams of protein per dollar, canned pink salmon 21.6 and sardines 20.2. That's roughly the same value as boneless chicken breast at 24.5, except a 98-cent can needs no cooking, no fridge and keeps for years.
+It's mid-table, but it earns its shelf. Chunk light tuna in water delivers 22.4 grams of protein per dollar, canned pink salmon 21.6 and sardines 20.2. That's roughly the same value as boneless chicken breast at 24.6, except a 98-cent can needs no cooking, no fridge and keeps for years.
 
 Canned fish will never top a per-dollar ranking, but that's the wrong lens for it. Chunk light tuna delivers 22.4 grams of protein per dollar, and a 98-cent can holds about 22 grams of protein with zero cooking, zero refrigeration, and a shelf life measured in years. It's the protein equivalent of a spare tire.
 
@@ -126,7 +126,7 @@ Canned pink salmon scores 21.6 and sardines 20.2, so the whole canned fish shelf
 
 ## Is tofu a cheap source of protein?
 
-No. Extra firm tofu delivered 13.6 grams of protein per dollar in this price sample and tempeh 13.2, which puts both below chicken breast at 24.5, canned tuna at 22.4 and whole milk at 29.1. The genuinely cheap plant proteins are dried legumes, TVP at 23.4 and frozen edamame at 18.0.
+No. Extra firm tofu delivered 13.6 grams of protein per dollar in this price sample and tempeh 13.2, which puts both below chicken breast at 24.6, canned tuna at 22.4 and whole milk at 28.5. The genuinely cheap plant proteins are dried legumes, TVP at 23.4 and frozen edamame at 18.0.
 
 Here's the take that gets me in trouble: tofu was not a budget winner in this price sample. Extra firm tofu scored 13.6 grams of protein per dollar in our analysis, below chicken breast, canned tuna, and milk at the prices used. If you want that argument on its own, [tofu against chicken on protein cost](/tofu-vs-chicken-protein-cost/) is the whole fight in one table. A $2.92 block holds about 40 grams of protein. Tempeh scores 13.2. These are fine foods with real uses; this one metric just did not put them near the top.
 
@@ -142,21 +142,21 @@ Different plant foods bring different amino acid profiles, which is why beans an
 
 If you want the grocery math behind that plate, the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/) rank the combinations by cost instead of asking rice and beans to coast on their reputation. And if the amino acid worry is the thing actually nagging you, we reranked the whole store by [protein per dollar adjusted for quality (DIAAS)](/protein-per-dollar-adjusted-for-quality/); beans held first even after the quality haircut, which is the short answer to whether you should lose sleep over it.
 
-## What does a $20 weekly protein backbone look like?
+## What does a $23 weekly protein backbone look like?
 
 Six items from the dataset. Talk is cheap, so here's a receipt. Six items, all priced from our dataset:
 
 | Item | Price | Protein |
 |---|---|---|
 | Chicken drumsticks, 5 lb bag | $5.46 | ~275 g |
-| Pinto beans (dry), 4 lb bag | $3.97 | ~389 g |
+| Pinto beans (dry), 4 lb bag | $6.75 | ~389 g |
 | Eggs, 2 dozen | $4.38 | ~151 g |
 | Brown lentils (dry), 16 oz bag | $1.44 | ~112 g |
 | Canned tuna, 2 cans | $1.96 | ~44 g |
 | Cottage cheese, 24 oz tub | $2.87 | ~76 g |
-| **Total** | **$20.08** | **~1,047 g** |
+| **Total** | **$22.86** | **~1,047 g** |
 
-Call it twenty bucks. That's about 1,047 grams of protein in the basket, or roughly 150 grams a day if one person divided it evenly across seven days. That is three times the FDA labeling benchmark, not a recommended target. The point is the price capacity: the backbone costs $20, and everything you add after that (vegetables, fruit, sauces, the fun stuff) can be chosen for the meals you actually want.
+Call it twenty-three bucks. That's about 1,047 grams of protein in the basket, or roughly 150 grams a day if one person divided it evenly across seven days. That is three times the FDA labeling benchmark, not a recommended target. The point is the price capacity: the backbone costs $22.86, and everything you add after that (vegetables, fruit, sauces, the fun stuff) can be chosen for the meals you actually want.
 
 ![Horizontal bar chart showing the protein supplied by six foods in a 20 dollar weekly grocery backbone, led by pinto beans and chicken drumsticks](/images/protein-budget-weekly-backbone.jpg)
 
@@ -176,6 +176,6 @@ So if you're optimizing your cart, don't pick a team. A pot of lentil soup is pl
 
 ## Start with the drumsticks and a bag of beans
 
-You don't need to restructure your kitchen this week. Grab the 5 pound bag of drumsticks and a bag of pinto beans, $9.43 at the July 2026 study prices ($5.46 plus $3.97), and you have a serious protein base while you figure out the rest at your own pace. Add a dozen eggs and the three-item subtotal reaches about $11.62. No package needs "PROTEIN" printed across the front in gym-bro type.
+You don't need to restructure your kitchen this week. Grab the 5 pound bag of drumsticks and a bag of pinto beans, $12.21 at the July 2026 study prices ($5.46 plus $6.75), and you have a serious protein base while you figure out the rest at your own pace. Add a dozen eggs and the three-item subtotal reaches about $14.40. No package needs "PROTEIN" printed across the front in gym-bro type.
 
 The store has been running this sale forever. It's just held in the aisles nobody photographs.
