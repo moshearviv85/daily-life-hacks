@@ -1164,32 +1164,32 @@ test("packed lunch title leads with how to pack without soggy sandwiches", () =>
   );
 });
 
-test("food value database title leads with protein and fiber per dollar", () => {
+test("food value database title leads with food value and grocery cost", () => {
   const page = readFileSync(join(ROOT, "src/pages/food-value-database/index.astro"), "utf8");
   const titleTemplate = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
   const description = page.match(/const description =\s*`([^`]+)`/)?.[1] ?? "";
   const title = titleTemplate.replaceAll("${foods.length}", "79");
   const titleLower = title.toLowerCase();
 
-  assert.equal(title, "Protein and Fiber per Dollar: 79 Foods Ranked");
-  assert.equal(title.length, 45);
+  assert.equal(title, "Food Value Database: Grocery Cost for 79 Foods");
+  assert.equal(title.length, 46);
   assert.ok(
     title.length <= 60,
     `food value title should be ≤60 chars, got ${title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("protein and fiber per dollar"),
-    "food value title should lead with protein and fiber per dollar",
+    titleLower.startsWith("food value database"),
+    "food value title should lead with food value database",
   );
   assert.ok(
-    titleLower.indexOf("protein and fiber per dollar") < titleLower.indexOf("79 foods ranked"),
-    "food value title should put the per-dollar answer before the 79-food count",
+    titleLower.includes("grocery cost"),
+    "food value title should include grocery cost",
   );
-  assert.match(title, /79 Foods Ranked/);
+  assert.match(title, /79 Foods/);
   assert.equal(
-    /\bdatabase\b/.test(titleLower),
+    /^protein and fiber per dollar: 79 foods ranked$/.test(titleLower),
     false,
-    "food value title should not spend the SERP on database",
+    "food value title should not drop food-value and grocery-cost language",
   );
   assert.equal(
     /^nutrition per dollar: \d+-food protein and fiber database$/.test(titleLower),
@@ -1197,7 +1197,7 @@ test("food value database title leads with protein and fiber per dollar", () => 
     "food value title should not be the old database SERP",
   );
   assert.match(page, /<h1[^>]*>\s*\{title\}\s*<\/h1>/);
-  assert.match(page, /const dateModified = "2026-09-23";/);
+  assert.match(page, /const dateModified = "2026-09-24";/);
   assert.match(page, /dateModified,/);
   assert.equal(
     page.includes("DATA_RELEASE_DATE"),

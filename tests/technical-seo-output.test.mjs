@@ -487,7 +487,7 @@ test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay 
   assert.ok(entries.has(`${SITE}/`), "homepage missing from sitemap");
 });
 
-test("food value database SERP copy leads with protein and fiber per dollar", () => {
+test("food value database SERP copy leads with food value and grocery cost", () => {
   const html = readFileSync(distHtmlFor(`${SITE}/food-value-database/`), "utf8");
   const title = html.match(/<title>([^<]+)<\/title>/i)?.[1] ?? "";
   const ogTitle =
@@ -497,12 +497,13 @@ test("food value database SERP copy leads with protein and fiber per dollar", ()
   const h1 = html.match(/<h1[^>]*>([^<]+)<\/h1>/i)?.[1]?.trim() ?? "";
   const description = metaContent(html, "description") ?? "";
 
-  assert.equal(title, "Protein and Fiber per Dollar: 79 Foods Ranked");
+  assert.equal(title, "Food Value Database: Grocery Cost for 79 Foods");
   assert.equal(ogTitle, title);
   assert.equal(h1, title);
-  assert.equal(/\bdatabase\b/i.test(title), false);
+  assert.match(title, /^Food Value Database:/);
+  assert.match(title, /Grocery Cost/);
   assert.equal(title.includes("Compare"), false);
-  assert.match(html, /"dateModified":"2026-09-23"/);
+  assert.match(html, /"dateModified":"2026-09-24"/);
   assert.match(description, /^Nutrition per dollar for 79 grocery foods/);
   assert.match(description, /protein and fiber per \$1/);
   assert.match(description, /July 2026 US prices plus USDA FoodData Central/);
