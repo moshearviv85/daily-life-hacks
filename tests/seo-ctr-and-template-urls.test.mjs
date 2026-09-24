@@ -550,6 +550,116 @@ test("30-gram fiber day title puts the CSV cost range in the SERP", () => {
   assert.doesNotMatch(raw, /97\.9|70\.8/);
 });
 
+test("breakfast staples title leads with combined grams from the flagship CSVs", () => {
+  const slug = "breakfast-staples-per-dollar";
+  const page = articleFrontmatter(slug);
+  const raw = readFileSync(join(ROOT, "src/data/articles", `${slug}.md`), "utf8");
+  const protein = parseSimpleCsv(
+    readFileSync(join(ROOT, "public/data/protein-per-dollar-2026.csv"), "utf8"),
+  );
+  const fiber = parseSimpleCsv(
+    readFileSync(join(ROOT, "public/data/fiber-per-dollar-2026.csv"), "utf8"),
+  );
+  const food = (rows, name) => {
+    const match = rows.find((row) => row.food === name);
+    assert.ok(match, `${name} missing from flagship CSV`);
+    return match;
+  };
+  const flourProtein = food(protein, "Whole wheat flour").protein_g_per_dollar;
+  const flourFiber = food(fiber, "Whole wheat flour").fiber_g_per_dollar;
+  const oatsProtein = food(protein, "Old-fashioned rolled oats").protein_g_per_dollar;
+  const oatsFiber = food(fiber, "Old-fashioned rolled oats").fiber_g_per_dollar;
+  const flourCombined = (Number(flourProtein) + Number(flourFiber)).toFixed(1);
+  const oatsCombined = (Number(oatsProtein) + Number(oatsFiber)).toFixed(1);
+  const pinto = food(protein, "Pinto beans (dry)");
+  const pintoFiber = food(fiber, "Pinto beans (dry)");
+
+  assert.equal(flourProtein, "96.0");
+  assert.equal(flourFiber, "77.8");
+  assert.equal(flourCombined, "173.8");
+  assert.equal(oatsProtein, "46.6");
+  assert.equal(oatsFiber, "35.8");
+  assert.equal(oatsCombined, "82.4");
+  assert.equal(pinto.protein_g_per_dollar, "57.6");
+  assert.equal(pintoFiber.fiber_g_per_dollar, "41.7");
+
+  const expected = `Cheapest Breakfast: Flour ${flourCombined}g vs Oats ${oatsCombined}g Combined`;
+  assert.equal(page.title, expected);
+  assert.equal(page.title.length, 55);
+  assert.ok(page.title.length <= 60, `breakfast title too long: ${page.title.length}`);
+  assert.ok(
+    page.title.toLowerCase().startsWith("cheapest breakfast"),
+    "breakfast title should lead with cheapest breakfast",
+  );
+  assert.ok(
+    page.title.indexOf("173.8g") < page.title.indexOf("82.4g"),
+    "breakfast title should put flour combined grams before oats",
+  );
+  assert.match(page.title, /Combined/);
+  assert.equal(page.title.includes(flourProtein), false);
+  assert.equal(page.title.includes(flourFiber), false);
+  assert.equal(
+    /^the cheapest high-protein breakfast foods, ranked$/.test(page.title.toLowerCase()),
+    false,
+    "breakfast title should not stay on the soft ranked SERP",
+  );
+  assert.equal(page.title.includes("97.9"), false);
+  assert.equal(page.title.includes("70.8"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has(slug), false);
+  const milk = food(protein, "Whole milk");
+  assert.equal(milk.protein_g_per_dollar, "28.5");
+  assert.equal(milk.package_price_usd, "4.31");
+  assert.match(raw, /Whole milk \| 28\.5 g/);
+  assert.match(raw, /\$4\.31/);
+  assert.doesNotMatch(raw, /29\.1|\$4\.22/);
+});
+
+test("eggs vs everything title leads with protein-per-dollar grams from the flagship CSV", () => {
+  const slug = "eggs-vs-everything-protein-value";
+  const page = articleFrontmatter(slug);
+  const protein = parseSimpleCsv(
+    readFileSync(join(ROOT, "public/data/protein-per-dollar-2026.csv"), "utf8"),
+  );
+  const food = (name) => {
+    const match = protein.find((row) => row.food === name);
+    assert.ok(match, `${name} missing from protein CSV`);
+    return match.protein_g_per_dollar;
+  };
+  const flour = food("Whole wheat flour");
+  const eggs = food("Eggs (large)");
+  const pinto = food("Pinto beans (dry)");
+
+  assert.equal(flour, "96.0");
+  assert.equal(eggs, "34.4");
+  assert.equal(pinto, "57.6");
+
+  const expected = `Are Eggs the Cheapest Protein? Flour ${flour}g vs Eggs ${eggs}g`;
+  assert.equal(page.title, expected);
+  assert.equal(page.title.length, 56);
+  assert.ok(page.title.length <= 60, `eggs title too long: ${page.title.length}`);
+  assert.ok(
+    page.title.toLowerCase().startsWith("are eggs the cheapest protein"),
+    "eggs title should lead with are eggs the cheapest protein",
+  );
+  assert.ok(
+    page.title.indexOf(`${flour}g`) < page.title.indexOf(`${eggs}g`),
+    "eggs title should put the flour leader before the egg figure",
+  );
+  assert.equal(
+    page.title.toLowerCase().includes("combined"),
+    false,
+    "eggs title is protein per dollar, not a protein-plus-fiber combined score",
+  );
+  assert.equal(
+    /^are eggs the cheapest protein\? we ranked 49 foods$/.test(page.title.toLowerCase()),
+    false,
+    "eggs title should not stay on the soft 49-foods count SERP",
+  );
+  assert.equal(page.title.includes("97.9"), false);
+  assert.equal(page.title.includes("70.8"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has(slug), false);
+});
+
 test("research hub quality card shows the adjusted-grams CSV leader", () => {
   const source = readFileSync(join(ROOT, "src/pages/research/index.astro"), "utf8");
   assert.match(source, /protein-quality-per-dollar-2026/);
