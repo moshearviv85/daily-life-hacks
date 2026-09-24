@@ -1,6 +1,6 @@
 ---
 title: "Cheapest Breakfast: Flour 173.8g vs Oats 82.4g Combined"
-excerpt: "Whole wheat flour leads breakfast staples at 173.8 combined grams of protein and fiber per dollar. Oats hit 82.4, eggs 34.4, gala apples just 7.3."
+excerpt: "Whole wheat flour leads at 173.8 combined grams of protein and fiber per dollar. Oats hit 82.4 combined, eggs 34.4 protein g/$, apples 7.3 fiber g/$."
 category: "nutrition"
 tags: ["cheap breakfast foods", "breakfast protein per dollar", "budget breakfast ideas", "oatmeal vs eggs cost", "grocery data"]
 cluster: "budget-protein"
@@ -12,7 +12,7 @@ dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "What is the cheapest high protein breakfast?"
-    answer: "Whole wheat flour leads the 9 breakfast staples at 173.8 grams combined per dollar, 96.0 grams of protein plus 77.8 grams of fiber, from a $3.12 five pound bag. Rolled oats are next at 82.4 grams combined, 46.6 grams of protein plus 35.8 grams of fiber, from a $3.36 canister. Peanut butter delivers 50.7 grams of protein per dollar, and eggs 34.4 at $2.19 a dozen. Flour only counts if you bake. Oats are the one you can pour in a pot."
+    answer: "Whole wheat flour leads on protein at 96.0 grams of protein per dollar from a $3.12 five pound bag, and only if you bake. Peanut butter delivers 50.7 grams of protein per dollar, rolled oats deliver 46.6, and eggs land at 34.4 at $2.19 a dozen. Combined is a separate protein-plus-fiber sum, not the protein score: flour is 173.8 grams combined, 96.0 grams of protein plus 77.8 grams of fiber, and oats are 82.4 grams combined, 46.6 grams of protein plus 35.8 grams of fiber."
   - question: "Is oatmeal cheaper than eggs for protein?"
     answer: "Yes, in our July 2026 numbers. Rolled oats deliver 46.6 grams of protein per dollar from a $3.36 canister, versus 34.4 grams for eggs at $2.19 a dozen. Oats also add 35.8 grams of fiber per dollar, which eggs can't match. Eggs still win on convenience and on being eggs."
   - question: "Are eggs a good value right now?"
@@ -23,7 +23,7 @@ faq:
     answer: "Not a waste, just a different job. Bananas deliver 11.6 grams of fiber per dollar and gala apples 7.3, the bottom of the ranking. Rolled oats deliver 82.4 grams combined per dollar, 46.6 grams of protein plus 35.8 grams of fiber. Fruit may still earn its place for flavor, but the oats canister buys more protein and fiber per dollar than either one."
 ---
 
-Whole wheat flour is the best breakfast deal in the store, at 96.0 grams of protein and 77.8 grams of fiber per dollar, 173.8 grams combined. The worst deal on the same list is gala apples at 7.3 grams. That's a 23.8x spread inside one grocery run, between two things people put in the same shopping cart without blinking.
+Whole wheat flour is the best breakfast deal in the store, at 96.0 grams of protein and 77.8 grams of fiber per dollar, 173.8 grams combined. Gala apples sit at the bottom of the fiber column, at 7.3 grams of fiber per dollar. Same cart, two different scores, and nobody blinks.
 
 This ranking crosses our two grocery studies, [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), and pulls out the 9 foods that actually show up at American breakfast tables. The combined score is plain addition: total grams of protein and fiber one dollar buys, added together.
 
@@ -32,18 +32,18 @@ This ranking crosses our two grocery studies, [protein per dollar](/protein-per-
 | Whole wheat flour | 96.0 g | 77.8 g | 173.8 g | 5 lb bag, $3.12 |
 | Old-fashioned rolled oats | 46.6 g | 35.8 g | 82.4 g | 42 oz canister, $3.36 |
 | Peanut butter | 50.7 g | 11.4 g | 62.1 g | 40 oz jar, $4.97 |
-| Eggs (large) | 34.4 g | not scored | 34.4 g | 1 dozen, $2.19 |
-| Whole milk | 28.5 g | not scored | 28.5 g | 1 gallon, $4.31 |
-| Greek yogurt (plain, nonfat) | 27.5 g | not scored | 27.5 g | 32 oz tub, $3.36 |
-| Cottage cheese (4%) | 26.3 g | not scored | 26.3 g | 24 oz tub, $2.87 |
-| Bananas | not scored | 11.6 g | 11.6 g | per lb, $0.65 |
-| Apples (gala) | not scored | 7.3 g | 7.3 g | per lb, $1.28 |
+| Eggs (large) | 34.4 g | not scored | — | 1 dozen, $2.19 |
+| Whole milk | 28.5 g | not scored | — | 1 gallon, $4.31 |
+| Greek yogurt (plain, nonfat) | 27.5 g | not scored | — | 32 oz tub, $3.36 |
+| Cottage cheese (4%) | 26.3 g | not scored | — | 24 oz tub, $2.87 |
+| Bananas | not scored | 11.6 g | — | per lb, $0.65 |
+| Apples (gala) | not scored | 7.3 g | — | per lb, $1.28 |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
 
 ![Bar chart ranking 9 breakfast staples by protein plus fiber per dollar](/images/breakfast-staples-per-dollar-chart.jpg)
 
-Quick fine print: the egg and dairy rows come from the protein study only, and the fruit rows from the fiber study only, so their combined scores count the one metric on record. The top three carry both.
+Quick fine print: eggs and dairy come from the protein study only, and the fruit rows from the fiber study only. Combined is a dash on those rows, because that column is only the protein-plus-fiber sum. The top three carry both.
 
 ## Which breakfast staple gives you the most nutrition per dollar?
 

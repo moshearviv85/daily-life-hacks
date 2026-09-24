@@ -612,6 +612,64 @@ test("breakfast staples title leads with combined grams from the flagship CSVs",
   assert.match(raw, /Whole milk \| 28\.5 g/);
   assert.match(raw, /\$4\.31/);
   assert.doesNotMatch(raw, /29\.1|\$4\.22/);
+  assert.doesNotMatch(raw, /97\.9|70\.8/);
+
+  const highProtein = raw.match(
+    /question: "What is the cheapest high protein breakfast\?"\n\s+answer: "([^"]+)"/,
+  )?.[1];
+  assert.ok(highProtein, "missing cheapest high protein breakfast FAQ");
+  const proteinAt = highProtein.indexOf("96.0 grams of protein per dollar");
+  const combinedAt = highProtein.indexOf("173.8");
+  assert.ok(
+    proteinAt >= 0 && combinedAt > proteinAt,
+    "high-protein FAQ must answer with flour protein/$ (96.0) before any combined sum",
+  );
+  assert.match(
+    highProtein,
+    /separate protein-plus-fiber sum[\s\S]*173\.8 grams combined, 96\.0 grams of protein plus 77\.8 grams of fiber/,
+  );
+  assert.doesNotMatch(highProtein, /at 173\.8 grams combined per dollar/);
+
+  assert.match(page.excerpt, /82\.4 combined/);
+  assert.match(page.excerpt, /34\.4 protein g\/\$/);
+  assert.match(page.excerpt, /7\.3 fiber g\/\$/);
+  assert.doesNotMatch(page.excerpt, /82\.4, eggs 34\.4/);
+  assert.ok(page.excerpt.length <= 160, `breakfast dek too long to keep unit labels in the snippet: ${page.excerpt.length}`);
+
+  const tableStart = raw.indexOf(
+    "| Food | Protein per $1 | Fiber per $1 | Combined per $1 | Package |",
+  );
+  assert.ok(tableStart >= 0, "breakfast comparison table missing");
+  const tableRows = [];
+  for (const line of raw.slice(tableStart).split("\n")) {
+    if (!line.startsWith("|")) break;
+    if (line.includes("|---")) continue;
+    const cells = line.split("|").slice(1, -1).map((cell) => cell.trim());
+    if (cells[0] === "Food") continue;
+    tableRows.push(cells);
+  }
+  assert.equal(tableRows.length, 9);
+  for (const [food, protein, fiber, combined] of tableRows) {
+    const missingNutrient = /not scored/i.test(fiber) || /not scored/i.test(protein);
+    if (missingNutrient) {
+      assert.equal(
+        /\d/.test(combined),
+        false,
+        `${food} Combined must stay empty when fiber or protein is not scored, got ${JSON.stringify(combined)}`,
+      );
+      assert.match(combined, /^(?:|—|-|–)$/);
+    } else {
+      assert.match(combined, /^\d+\.\d g$/, `${food} Combined should be a protein+fiber sum`);
+    }
+  }
+  const eggsRow = tableRows.find((row) => row[0] === "Eggs (large)");
+  const milkRow = tableRows.find((row) => row[0] === "Whole milk");
+  assert.equal(eggsRow[2], "not scored");
+  assert.equal(eggsRow[3], "—");
+  assert.notEqual(eggsRow[3], eggsRow[1]);
+  assert.equal(milkRow[2], "not scored");
+  assert.equal(milkRow[3], "—");
+  assert.notEqual(milkRow[3], "28.5 g");
 });
 
 test("eggs vs everything title leads with protein-per-dollar grams from the flagship CSV", () => {
@@ -2378,35 +2436,46 @@ test("tofu vs chicken title puts protein-per-dollar grams in the SERP", () => {
   );
 });
 
-test("chicken thighs vs breast title puts protein-per-dollar grams in the SERP", () => {
-  const page = articleFrontmatter("chicken-thighs-vs-breast-protein-cost");
+test("chicken thighs vs breast title attributes 50.3g to drumsticks", () => {
+  const slug = "chicken-thighs-vs-breast-protein-cost";
+  const page = articleFrontmatter(slug);
+  const raw = readFileSync(join(ROOT, "src/data/articles", `${slug}.md`), "utf8");
   const titleLower = page.title.toLowerCase();
+  const articlePage = readFileSync(join(ROOT, "src/pages/[slug].astro"), "utf8");
+  const layout = readFileSync(join(ROOT, "src/layouts/BaseLayout.astro"), "utf8");
 
-  assert.equal(
-    page.title,
-    "Chicken Thighs vs Breast: 50.3g vs 24.6g Protein per Dollar",
-  );
-  assert.equal(page.title.length, 59);
+  assert.equal(page.title, "Drumsticks vs Breast: 50.3g vs 24.6g Protein per Dollar");
+  assert.equal(page.title.length, 55);
   assert.ok(
     page.title.length <= 60,
-    `chicken thighs vs breast title should be ≤60 chars, got ${page.title.length}`,
+    `chicken title should be ≤60 chars, got ${page.title.length}`,
   );
+  assert.match(page.title, /Drumsticks/);
+  assert.match(page.title, /50\.3g/);
   assert.ok(
-    titleLower.startsWith("chicken thighs vs breast"),
-    "chicken thighs vs breast title should lead with chicken thighs vs breast",
+    titleLower.indexOf("drumsticks") < titleLower.indexOf("50.3g"),
+    "title should name drumsticks before 50.3g",
   );
   assert.ok(
     titleLower.indexOf("50.3g") < titleLower.indexOf("24.6g"),
-    "chicken thighs vs breast title should put drumsticks (50.3g) before breast (24.6g)",
+    "title should put drumsticks (50.3g) before breast (24.6g)",
   );
-  assert.match(page.title, /50\.3g/);
-  assert.match(page.title, /24\.6g/);
-  assert.match(page.title, /Protein per Dollar/);
+  assert.equal(
+    /thighs/i.test(page.title) && /50\.3/.test(page.title),
+    false,
+    "title string must not pair thighs with 50.3",
+  );
   assert.equal(
     /^chicken thighs vs breast: which is cheaper protein\?$/.test(titleLower),
     false,
     "chicken thighs vs breast title should not stay on the soft question SERP",
   );
+  assert.match(articlePage, /title=\{article\.data\.title\}/);
+  assert.match(articlePage, /<h1[\s\S]*?\{article\.data\.title\}/);
+  assert.match(layout, /<meta property="og:title" content=\{title\} \/>/);
+  assert.match(raw, /Bone-in chicken drumsticks deliver 50\.3 grams/);
+  assert.match(raw, /boneless skinless thighs only reach 27\.7 grams/);
+  assert.match(raw, /\| 50\.3 g \| 27\.7 g \| 24\.6 g \|/);
 });
 
 test("frozen vs fresh vegetables title puts fiber-per-dollar grams in the SERP", () => {
