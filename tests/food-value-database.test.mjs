@@ -108,22 +108,24 @@ test("public copy avoids David Miller hard bans", () => {
   assert.doesNotMatch(page, /your .* will thank you/i);
 });
 
-test("title and meta lead with nutrition-per-dollar grocery database intent", () => {
+test("title and meta lead with food value grocery cost database intent", () => {
   const title = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
   const description = page.match(/const description =\s*`([^`]+)`/)?.[1] ?? "";
   const renderedTitle = title.replace("${foods.length}", String(uniqueNames.size));
   const renderedDescription = description.replaceAll("${foods.length}", String(uniqueNames.size));
 
-  assert.equal(renderedTitle, "Protein and Fiber per Dollar: 79 Foods Ranked");
-  assert.equal(renderedTitle.length, 45);
+  assert.equal(renderedTitle, "Food Value Database: Grocery Cost for 79 Foods");
+  assert.equal(renderedTitle.length, 46);
+  assert.match(renderedTitle, /^Food Value Database:/);
+  assert.match(renderedTitle, /Grocery Cost/);
   assert.equal(
-    /\bdatabase\b/i.test(renderedTitle),
+    /^protein and fiber per dollar: 79 foods ranked$/i.test(renderedTitle),
     false,
-    "title should not spend the SERP on database",
+    "title should not drop food-value and grocery-cost language",
   );
   assert.equal(renderedTitle.includes("Compare"), false, "title should not spend the SERP on generic compare");
   assert.ok(renderedTitle.length <= 60, `title too long for SERP: ${renderedTitle.length}`);
-  assert.match(page, /const dateModified = "2026-09-23";/);
+  assert.match(page, /const dateModified = "2026-09-24";/);
 
   assert.match(renderedDescription, /^Nutrition per dollar for \d+ grocery foods/);
   assert.match(renderedDescription, /protein and fiber per \$1/);
