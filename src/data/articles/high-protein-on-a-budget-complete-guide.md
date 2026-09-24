@@ -12,15 +12,15 @@ author: "David Miller"
 featured: false
 faq:
   - question: "What is the cheapest way to get protein?"
-    answer: "Dried beans and lentils. In our 49-food pricing analysis, every dried legume landed between 56 and 98 grams of protein per dollar, with dried pinto beans on top at about 98. For comparison, chicken breast delivered about 24.5 grams per dollar and ground beef about 11.5. Those cited foods use USDA protein data and July 2026 US prices."
+    answer: "Dried beans and lentils. In our 49-food pricing analysis, every dried legume landed between 56.0 and 97.9 grams of protein per dollar, with dried pinto beans on top at 97.9. For comparison, chicken breast delivered 24.5 grams per dollar and ground beef 11.5. Those cited foods use USDA protein data and July 2026 US prices."
   - question: "How much protein do I need a day?"
     answer: "The FDA's Daily Value for protein, the number used on US nutrition labels, is 50 grams per day for a 2,000-calorie diet. That's a labeling reference point, not a personal prescription, since individual needs vary. Our $20 basket contains about 1,047 grams of protein in total; it's a price example, not a recommended one-person weekly target."
   - question: "Are eggs still a cheap protein?"
-    answer: "Yes. At the May 2026 BLS average of $2.19 per dozen, large eggs delivered about 34 grams of protein per dollar in our analysis, second among the animal foods in our sample after chicken drumsticks. A dozen holds roughly 75 grams of protein, and the combination of price, convenience, and versatility keeps eggs useful even when they don't win the full ranking."
+    answer: "Yes. At the May 2026 BLS average of $2.19 per dozen, large eggs delivered 34.4 grams of protein per dollar in our analysis, second among the animal foods in our sample after chicken drumsticks. A dozen holds roughly 75 grams of protein, and the combination of price, convenience, and versatility keeps eggs useful even when they don't win the full ranking."
   - question: "Is canned tuna a good cheap protein?"
-    answer: "It's a solid middle-of-the-pack value. Chunk light tuna delivered about 22.4 grams of protein per dollar in our July 2026 numbers, with a 98-cent can holding roughly 22 grams of protein. That's less than half what dried beans deliver per dollar, but tuna needs zero cooking, keeps for years in the pantry, and turns into lunch in about ninety seconds."
+    answer: "It's a solid middle-of-the-pack value. Chunk light tuna delivered 22.4 grams of protein per dollar in our July 2026 numbers, with a 98-cent can holding roughly 22 grams of protein. That's less than half what dried beans deliver per dollar, but tuna needs zero cooking, keeps for years in the pantry, and turns into lunch in about ninety seconds."
   - question: "What is the cheapest meat for protein?"
-    answer: "Chicken drumsticks led the meats in our 49-food sample. At $1.09 per pound in a 5 pound bag, drumsticks delivered about 50 grams of protein per dollar even after subtracting 33 percent of the weight for bone. That was about double boneless chicken breast at 24.5 grams per dollar and more than four times ground beef at 11.5."
+    answer: "Chicken drumsticks led the meats in our 49-food sample. At $1.09 per pound in a 5 pound bag, drumsticks delivered 50.3 grams of protein per dollar even after subtracting 33 percent of the weight for bone. That was about double boneless chicken breast at 24.5 grams per dollar and more than four times ground beef at 11.5."
 ---
 
 Dried beans and lentils delivered the highest protein return in our 49-food grocery sample, at 56 to 98 grams per dollar based on USDA data and July 2026 prices. Among the meats we tested, chicken drumsticks led at about 50 grams per dollar, and eggs are the everyday workhorse at 34.
