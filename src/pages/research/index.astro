@@ -36,6 +36,8 @@ const qualityGrams = Number(
 ).toFixed(1);
 const fiberDays = dayTotals("fiber-day-cost-2026");
 const proteinDays = dayTotals("protein-day-cost-2026");
+const cheapestFiberDay = fiberDays[0].cost.toFixed(2);
+const priciestFiberDay = fiberDays.at(-1).cost.toFixed(2);
 
 const studies = [
   {
@@ -57,10 +59,10 @@ const studies = [
   {
     href: "/what-30-grams-of-fiber-costs-per-day/",
     eyebrow: "5 complete day scenarios",
-    number: `$${fiberDays[0].cost.toFixed(2)}`,
+    number: `$${cheapestFiberDay}`,
     label: "cheapest 30-gram fiber day",
-    title: "What 30 Grams of Fiber Costs",
-    text: `Five ways to reach roughly 30 grams, from pantry staples to a $${fiberDays.at(-1)?.cost.toFixed(2)} restaurant day.`,
+    title: `What 30 Grams of Fiber Costs: $${cheapestFiberDay} vs $${priciestFiberDay}`,
+    text: `Five ways to reach roughly 30 grams, from pantry staples to a $${priciestFiberDay} restaurant day.`,
   },
   {
     href: "/what-50-grams-of-protein-costs-per-day/",
@@ -165,6 +167,20 @@ const researchSchema = [
           class="font-bold underline underline-offset-4 decoration-[#F29B30]"
           style="color:#F29B30;"
         >split peas at 144.9 combined grams</a>.
+        The animal cut of that protein table leads with
+        {" "}
+        <a
+          href="/animal-protein-per-dollar-ranked/"
+          class="font-bold underline underline-offset-4 decoration-[#F29B30]"
+          style="color:#F29B30;"
+        >drumsticks at 50.3g per dollar</a>.
+        The fiber-day card prices 30 grams of fiber at
+        {" "}
+        <a
+          href="/what-30-grams-of-fiber-costs-per-day/"
+          class="font-bold underline underline-offset-4 decoration-[#F29B30]"
+          style="color:#F29B30;"
+        >$0.62 vs $14.42</a>.
       </p>
       <p class="mt-5">
         <a href="/statistics/" class="inline-flex rounded-lg px-5 py-3 font-bold text-white" style="background:#F29B30;">
