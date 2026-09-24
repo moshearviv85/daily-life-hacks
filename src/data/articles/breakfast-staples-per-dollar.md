@@ -1,5 +1,5 @@
 ---
-title: "The Cheapest High-Protein Breakfast Foods, Ranked"
+title: "Cheapest Breakfast: Flour 173.8g vs Oats 82.4g Combined"
 excerpt: "Whole wheat flour leads breakfast staples at 173.8 combined grams of protein and fiber per dollar. Oats hit 82.4, eggs 34.4, gala apples just 7.3."
 category: "nutrition"
 tags: ["cheap breakfast foods", "breakfast protein per dollar", "budget breakfast ideas", "oatmeal vs eggs cost", "grocery data"]
@@ -8,6 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/breakfast-staples-per-dollar-main.jpg"
 imageAlt: "A breakfast table with steaming oatmeal topped with banana, fried eggs, peanut butter, and a glass of milk"
 date: 2026-07-13
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "What is the cheapest high protein breakfast?"
@@ -15,7 +16,7 @@ faq:
   - question: "Is oatmeal cheaper than eggs for protein?"
     answer: "Yes, in our July 2026 numbers. Rolled oats deliver 46.6 grams of protein per dollar from a $3.36 canister, versus 34.4 grams for eggs at $2.19 a dozen. Oats also add 35.8 grams of fiber per dollar, which eggs can't match. Eggs still win on convenience and on being eggs."
   - question: "Are eggs a good value right now?"
-    answer: "At $2.19 a dozen, the May 2026 national average, eggs score 34.4 grams of protein per dollar. That beats whole milk at 29.1, Greek yogurt at 27.5, and cottage cheese at 26.3, making eggs the strongest animal protein at the breakfast table in this dataset."
+    answer: "At $2.19 a dozen, the July 2026 national average, eggs score 34.4 grams of protein per dollar. That beats whole milk at 28.5, Greek yogurt at 27.5, and cottage cheese at 26.3, making eggs the strongest animal protein at the breakfast table in this dataset."
   - question: "Why is whole wheat flour ranked first for breakfast?"
     answer: "Because a $3.12 five pound bag delivers 96.0 grams of protein and 77.8 grams of fiber per dollar, 173.8 grams combined, more than double the next food on the list. The catch is that flour is an ingredient, not a breakfast, so it only counts if you actually bake pancakes or bread with it."
   - question: "Is fruit a waste of money at breakfast?"
@@ -32,7 +33,7 @@ This ranking crosses our two grocery studies, [protein per dollar](/protein-per-
 | Old-fashioned rolled oats | 46.6 g | 35.8 g | 82.4 g | 42 oz canister, $3.36 |
 | Peanut butter | 50.7 g | 11.4 g | 62.1 g | 40 oz jar, $4.97 |
 | Eggs (large) | 34.4 g | not scored | 34.4 g | 1 dozen, $2.19 |
-| Whole milk | 29.1 g | not scored | 29.1 g | 1 gallon, $4.22 |
+| Whole milk | 28.5 g | not scored | 28.5 g | 1 gallon, $4.31 |
 | Greek yogurt (plain, nonfat) | 27.5 g | not scored | 27.5 g | 32 oz tub, $3.36 |
 | Cottage cheese (4%) | 26.3 g | not scored | 26.3 g | 24 oz tub, $2.87 |
 | Bananas | not scored | 11.6 g | 11.6 g | per lb, $0.65 |
@@ -58,7 +59,7 @@ The move that makes oats feel like food instead of penance is going savory. [Sav
 
 ## Are eggs, milk, and yogurt still worth buying?
 
-Yes, just know what they're for. Eggs at $2.19 a dozen score 34.4 grams of protein per dollar, the best animal number at the breakfast table and second only to bone-in drumsticks once you widen the frame to [every animal protein ranked by cost](/animal-protein-per-dollar-ranked/). Whole milk rides behind at 29.1, and a $4.22 gallon is still one of the most casually underrated things in the store. Greek yogurt at 27.5 and cottage cheese at 26.3 round out the dairy case, close enough to each other that you should just buy the one you like.
+Yes, just know what they're for. Eggs at $2.19 a dozen score 34.4 grams of protein per dollar, the best animal number at the breakfast table and second only to bone-in drumsticks once you widen the frame to [every animal protein ranked by cost](/animal-protein-per-dollar-ranked/). Whole milk rides behind at 28.5, and a $4.31 gallon is still one of the most casually underrated things in the store. Greek yogurt at 27.5 and cottage cheese at 26.3 round out the dairy case, close enough to each other that you should just buy the one you like.
 
 None of them bring fiber to the table, though. That's why the smart breakfast isn't eggs or oats, it's eggs and something from the top of the list. [A sheet pan breakfast hash with eggs](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) is that idea in one pan.
 
