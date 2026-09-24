@@ -99,6 +99,62 @@ test("homepage, guides, and research link animal and fiber-day leads from the CS
   }
 });
 
+test("homepage, guides, and research link breakfast combined and eggs protein leads", () => {
+  const breakfast = parseCsv(
+    readFileSync(join(root, "public/data/breakfast-staples-per-dollar-2026.csv"), "utf8"),
+  );
+  const flour = breakfast.find((row) => row.food === "Whole wheat flour");
+  const oats = breakfast.find((row) => row.food === "Old-fashioned rolled oats");
+  assert.ok(flour, "breakfast CSV should include whole wheat flour");
+  assert.ok(oats, "breakfast CSV should include rolled oats");
+  assert.equal(flour.value, "173.8");
+  assert.equal(flour.protein_g_per_dollar, "96.0");
+  assert.equal(flour.fiber_g_per_dollar, "77.8");
+  assert.equal(
+    (Number(flour.protein_g_per_dollar) + Number(flour.fiber_g_per_dollar)).toFixed(1),
+    flour.value,
+    "173.8 is protein plus fiber, so hub copy has to keep Combined on that anchor",
+  );
+  assert.equal(oats.value, "82.4");
+
+  const eggsRows = parseCsv(
+    readFileSync(join(root, "public/data/eggs-vs-everything-protein-value-2026.csv"), "utf8"),
+  );
+  const eggsFlour = eggsRows.find((row) => row.food === "Whole wheat flour");
+  const eggs = eggsRows.find((row) => row.food === "Eggs (large)");
+  assert.ok(eggsFlour, "eggs CSV should include whole wheat flour");
+  assert.ok(eggs, "eggs CSV should include large eggs");
+  assert.equal(eggsFlour.value, "96.0");
+  assert.equal(eggs.value, "34.4");
+
+  for (const file of hubs) {
+    const source = readFileSync(join(root, file), "utf8");
+    const breakfastLinks = anchorTexts(source, "/breakfast-staples-per-dollar/");
+    const eggsLinks = anchorTexts(source, "/eggs-vs-everything-protein-value/");
+
+    assert.equal(
+      breakfastLinks.length,
+      1,
+      `${file} should link the breakfast staples study once`,
+    );
+    assert.equal(
+      eggsLinks.length,
+      1,
+      `${file} should link the eggs protein study once`,
+    );
+    assert.match(breakfastLinks[0], /173\.8g/);
+    assert.match(breakfastLinks[0], /Combined/);
+    assert.match(breakfastLinks[0], /82\.4g/);
+    assert.match(eggsLinks[0], /96\.0g/);
+    assert.match(eggsLinks[0], /34\.4g/);
+    assert.equal(
+      /97\.9|70\.8|29\.1/.test(`${breakfastLinks[0]} ${eggsLinks[0]}`),
+      false,
+      `${file} breakfast and eggs link copy should not quote retired figures`,
+    );
+  }
+});
+
 test("research fiber-day card title uses the same CSV day range", () => {
   const source = readFileSync(
     join(root, "src/pages/research/index.astro"),
