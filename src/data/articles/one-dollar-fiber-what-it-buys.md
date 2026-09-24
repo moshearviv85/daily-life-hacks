@@ -6,7 +6,7 @@ tags: ["fiber per dollar", "cheap fiber foods", "budget nutrition", "grocery dat
 image: "/images/one-dollar-fiber-what-it-buys-main.jpg"
 imageAlt: "A stack of coins next to a mound of whole wheat flour, split peas, and popcorn kernels on a counter"
 date: 2026-07-13
-dateModified: 2026-07-30
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "How many grams of fiber can one dollar buy?"
@@ -56,11 +56,11 @@ Compare that to how most fiber actually gets bought in America, in the form of f
 
 If you bake, it's flour, full stop. If you don't, spend it on dry green split peas: 71.0 grams of fiber per dollar, $1.42 for a 16 oz bag, no soaking required despite what the bag's vibe suggests. One pot of [split pea soup](/split-pea-soup-recipe-high-fiber/) converts that bag into several lunches that cost less than a vending machine run.
 
-Dry pinto beans are statistically the same deal at 70.8 grams per dollar, and the 4 lb bag at $3.97 is the bulk buy that keeps on giving. Those same pintos carry [97.9 grams of protein per dollar](/protein-per-dollar-cheapest-protein-sources/) on top of the fiber, which is why they win [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/) outright. Dry black beans (58.1 grams per dollar) split the difference between value and versatility. Cook a pot on Sunday and they carry [weeknight black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) without complaint.
+Dry pinto beans are statistically the same deal at 70.8 grams per dollar, and the 4 lb bag at $3.97 is the bulk buy that keeps on giving. Those same pintos carry [57.6 grams of protein per dollar](/protein-per-dollar-cheapest-protein-sources/) on top of the fiber. Dry split peas, not the pintos, lead [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/). Dry black beans (58.1 grams per dollar) split the difference between value and versatility. Cook a pot on Sunday and they carry [weeknight black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) without complaint.
 
 ## Do you have to cook dried beans to win here?
 
-No, and that's the quiet good news of this list. Canned black beans finished tenth out of 15 in our latest audit, delivering 34.4 grams of fiber per dollar at $0.88 a can. That is a day and a quarter of fiber from something you open with a can opener. The can does still charge you for the favor: dry beans buy roughly 2.6 to 2.7 times the protein per dollar their canned versions do, a gap we took apart in [the canned versus dry comparison](/canned-vs-dry-beans-cost/).
+No, and that's the quiet good news of this list. Canned black beans finished tenth out of 15 in our latest audit, delivering 34.4 grams of fiber per dollar at $0.88 a can. That is a day and a quarter of fiber from something you open with a can opener. The can does still charge you for the favor: dry black beans buy about 1.9 times the protein per dollar of the canned version, and dry chickpeas about 2.6 times, a gap we took apart in [the canned versus dry comparison](/canned-vs-dry-beans-cost/).
 
 The grains on the list are just as low-effort. Pearled barley (57.1 grams per dollar) simmers unattended, and this [hands-off mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/) proves it can be dinner-party food. Rolled oats (35.8) and whole wheat spaghetti (35.4) are already in your pantry rotation. The popcorn row lands at 51.3, an unresolved figure we derived rather than quoted, down from the 57.7 we first published, because its air-popped USDA value had to be converted onto the unpopped-kernel basis we priced; that makes it unresolved rather than an exact match. Brown lentils at 33.7 grams per dollar cook in a fraction of the time regular beans do, which is why a weeknight [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) exists at all. Dry chickpeas sit right there too at 33.8.
 

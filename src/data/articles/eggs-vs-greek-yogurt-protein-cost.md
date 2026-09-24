@@ -6,18 +6,19 @@ tags: ["eggs vs greek yogurt", "cheap protein sources", "protein per dollar", "g
 image: "/images/eggs-vs-greek-yogurt-protein-cost-main.jpg"
 imageAlt: "A carton of open brown eggs beside a tub of plain Greek yogurt with a spoon on a kitchen counter"
 date: 2026-07-26
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "Are eggs cheaper protein than Greek yogurt?"
-    answer: "Slightly. Eggs delivered 34.4 grams of protein per dollar at the May 2026 average of $2.19 a dozen, versus 27.5 for a $3.36 tub of plain nonfat Greek yogurt. That's a gap of about 1.3 times, which is small enough that a sale on either one flips the result."
+    answer: "Slightly. Eggs delivered 34.4 grams of protein per dollar at the July 2026 average of $2.19 a dozen, versus 27.5 for a $3.36 tub of plain nonfat Greek yogurt. That's a gap of about 1.3 times, which is small enough that a sale on either one flips the result."
   - question: "How much protein is in a dozen eggs versus a tub of Greek yogurt?"
     answer: "A dozen large eggs holds roughly 75 grams of protein across about 600 grams of edible egg, using the USDA figure of 12.56 grams per 100 grams. A 32 ounce tub of plain nonfat Greek yogurt holds about 92 grams at 10.19 grams per 100 grams. The tub carries more total protein, it just costs $1.17 more."
   - question: "Why do eggs beat Greek yogurt on protein per dollar?"
     answer: "Not on price, which is nearly identical. Eggs cost about 36.5 cents per 100 grams and the yogurt about 37 cents. Eggs win on density, carrying 12.56 grams of protein per 100 grams against 10.19 for the yogurt. Same money per gram of food, roughly 23 percent more protein packed into it."
   - question: "Is cottage cheese cheaper protein than Greek yogurt?"
-    answer: "They're essentially tied. Cottage cheese at 4 percent milkfat delivered 26.3 grams of protein per dollar from a $2.87 tub of 24 ounces, versus 27.5 for Greek yogurt. Whole milk beat both at 29.1 grams per dollar, which surprises most people who think of milk as a beverage rather than a protein source."
+    answer: "They're essentially tied. Cottage cheese at 4 percent milkfat delivered 26.3 grams of protein per dollar from a $2.87 tub of 24 ounces, versus 27.5 for Greek yogurt. Whole milk beat both at 28.5 grams per dollar, which surprises most people who think of milk as a beverage rather than a protein source."
   - question: "Should I buy eggs or Greek yogurt for protein on a budget?"
-    answer: "Buy whichever one gets eaten. The 1.3 times gap is smaller than the difference between a carton you cook and a tub that expires unopened. If money is the only factor, dried legumes and whole wheat flour beat both by a wide margin, running 73.9 to 97.9 grams of protein per dollar in the same study."
+    answer: "Buy whichever one gets eaten. The 1.3 times gap is smaller than the difference between a carton you cook and a tub that expires unopened. If money is the only factor, whole wheat flour at 96.0 grams of protein per dollar and dried legumes from 56.0 to 77.7 beat both by a wide margin in the same study."
 ---
 
 Eggs deliver 34.4 grams of protein per dollar. Plain nonfat Greek yogurt delivers 27.5. Eggs win by about 1.3 times, using USDA figures and 2026 prices, which is the closest matchup we've looked at and honestly close enough that the real answer is "either one, and here's how to pick."
@@ -38,7 +39,7 @@ Look at the last row of that table. Eggs cost 36.5 cents per 100 grams of food. 
 
 The entire gap comes from density. Eggs pack 12.56 grams of protein into 100 grams; the yogurt packs 10.19. That's about 23 percent more protein riding in the same weight, and that's the whole 1.3 times advantage. No hidden factor, no processing story, no water weight argument.
 
-Which also means the result is fragile. Eggs are priced here at the May 2026 national average of $2.19 a dozen, and anyone who shopped in the last few years knows that number moves like a stock ticker. A dollar swing either direction rearranges this ranking completely. Our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) has eggs at 19th of 49 foods and the yogurt at 25th, six spots apart in a list where the leader is nearly three times the winner here.
+Which also means the result is fragile. Eggs are priced here at the July 2026 national average of $2.19 a dozen, and anyone who shopped in the last few years knows that number moves like a stock ticker. A dollar swing either direction rearranges this ranking completely. Our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) has eggs at 17th of 49 foods and the yogurt at 24th, seven spots apart in a list where the leader is nearly three times the winner here.
 
 ## Which one puts more protein in the fridge?
 
@@ -68,15 +69,15 @@ Not much, and one thing that will annoy you.
 |---|---|---|
 | Eggs (large) | 1 dozen, $2.19 | 34.4 g |
 | Mozzarella (low-moisture part-skim) | 16 oz block, $3.58 | 30.1 g |
-| Whole milk | 1 gallon, $4.22 | 29.1 g |
+| Whole milk | 1 gallon, $4.31 | 28.5 g |
 | Greek yogurt (plain, nonfat) | 32 oz tub, $3.36 | 27.5 g |
 | Cottage cheese (4%) | 24 oz tub, $2.87 | 26.3 g |
-| Cheddar cheese | per lb, $5.69 | 18.2 g |
+| Cheddar cheese | per lb, $5.75 | 18.1 g |
 
-Whole milk at 29.1 grams of protein per dollar quietly beats both Greek yogurt and cottage cheese, mostly because a gallon is 3,904 grams of food for $4.22. Nobody thinks of milk as a protein buy. The gallon holds about 123 grams of it.
+Whole milk at 28.5 grams of protein per dollar quietly beats both Greek yogurt and cottage cheese, mostly because a gallon is 3,904 grams of food for $4.31. Nobody thinks of milk as a protein buy. The gallon holds about 123 grams of it.
 
 Cottage cheese at 26.3 lands within a rounding error of the yogurt, so pick between those two on taste and use rather than price. We broke that one down separately in [cottage cheese vs Greek yogurt](/cottage-cheese-vs-greek-yogurt-protein-uses/).
 
-The wider view is that this whole shelf is mid-table. Dried legumes and whole wheat flour run 73.9 to 97.9 grams of protein per dollar, roughly two to three times what any of these managed, which is the point we made in [where eggs really rank](/eggs-vs-everything-protein-value/). The [dairy protein ranking](/dairy-protein-per-dollar-ranked/) has the rest of the case, and the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) puts the cheap stuff to work across a full week.
+The wider view is that this whole shelf is mid-table. Whole wheat flour runs 96.0 grams of protein per dollar and dried legumes run 56.0 to 77.7, from about one and a half times the eggs up to nearly three times, which is the point we made in [where eggs really rank](/eggs-vs-everything-protein-value/). The [dairy protein ranking](/dairy-protein-per-dollar-ranked/) has the rest of the case, and the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) puts the cheap stuff to work across a full week.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv -->

@@ -1,33 +1,34 @@
 ---
-title: "Chicken Thighs vs Breast: 50.3g vs 24.5g Protein per Dollar"
-excerpt: "Bone-in drumsticks deliver 50.3 g of protein per dollar. Chicken breast delivers 24.5. Dark meat wins 2.1x, but boneless thighs only reach 27.7."
+title: "Chicken Thighs vs Breast: 50.3g vs 24.6g Protein per Dollar"
+excerpt: "Bone-in drumsticks deliver 50.3 g of protein per dollar. Chicken breast delivers 24.6. Dark meat wins 2.0x, but boneless thighs only reach 27.7."
 category: "nutrition"
 tags: ["chicken thighs vs breast", "chicken drumsticks protein cost", "cheapest protein per dollar", "chicken breast price 2026", "budget protein sources"]
 image: "/images/chicken-thighs-vs-breast-protein-cost-main.jpg"
 imageAlt: "Raw bone-in chicken drumsticks and thighs on one side of a wooden counter and boneless skinless chicken breasts on the other"
 date: 2026-07-26
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "Are chicken thighs cheaper protein than chicken breast?"
-    answer: "It depends entirely on the bone. Bone-in chicken drumsticks delivered 50.3 grams of protein per dollar in our July 2026 pricing versus 24.5 for boneless skinless chicken breast, a 2.1x win. Boneless skinless thighs only reached 27.7 grams per dollar, which is about 13 percent better than breast rather than double."
+    answer: "It depends entirely on the bone. Bone-in chicken drumsticks delivered 50.3 grams of protein per dollar in our July 2026 pricing versus 24.6 for boneless skinless chicken breast, a 2.0x win. Boneless skinless thighs only reached 27.7 grams per dollar, which is about 13 percent better than breast rather than double."
   - question: "Does the bone count against protein per dollar?"
     answer: "It does, and we subtracted it. The drumstick figure already removes 33 percent of the package weight as bone and cartilage using USDA refuse data, so the 50.3 grams per dollar is edible meat only. Even after that haircut, a 5 pound bag at $5.46 still beats every other cut at the meat counter."
   - question: "How much protein is in chicken thighs vs breast?"
     answer: "Breast is denser. Boneless skinless chicken breast carries 22.5 grams of protein per 100 grams, boneless skinless thighs carry 19.66, and the meat from bone-in drumsticks carries 18.08. Dark meat wins on price per dollar, not on protein per bite, so breast may suit you better if you want more protein in less food."
   - question: "Is dark meat protein lower quality than breast?"
-    answer: "No. All chicken cuts score the same 1.08 on DIAAS, which measures how usable a protein is, so quality does not break the tie here. That makes this comparison unusually clean: the only thing separating drumsticks at 50.3 grams per dollar from breast at 24.5 is what the store charges."
+    answer: "No. All chicken cuts score the same 1.08 on DIAAS, which measures how usable a protein is, so quality does not break the tie here. That makes this comparison unusually clean: the only thing separating drumsticks at 50.3 grams per dollar from breast at 24.6 is what the store charges."
   - question: "Is a whole chicken cheaper than chicken breast?"
-    answer: "Yes, though less than you would guess. A raw whole chicken delivered 25.3 grams of protein per dollar at $2.04 a pound after subtracting bone, and a cooked rotisserie bird delivered 26.7 at $5.97. Both beat chicken breast at 24.5, but neither comes close to the 50.3 from a bag of drumsticks."
+    answer: "Yes, though less than you would guess. A raw whole chicken delivered 25.6 grams of protein per dollar at $2.01 a pound after subtracting bone, and a cooked rotisserie bird delivered 26.7 at $5.97. Both beat chicken breast at 24.6, but neither comes close to the 50.3 from a bag of drumsticks."
 ---
 
-Bone-in chicken drumsticks deliver 50.3 grams of protein per dollar. Boneless skinless chicken breast delivers 24.5. Dark meat wins by 2.1x, and that figure already subtracts the bone. The honest caveat is that most of the win is the bone, not the dark meat: boneless skinless thighs only reach 27.7 grams per dollar, which is barely ahead of breast.
+Bone-in chicken drumsticks deliver 50.3 grams of protein per dollar. Boneless skinless chicken breast delivers 24.6. Dark meat wins by 2.0x, and that figure already subtracts the bone. The honest caveat is that most of the win is the bone, not the dark meat: boneless skinless thighs only reach 27.7 grams per dollar, which is barely ahead of breast.
 
 | | Drumsticks (bone-in) | Thighs (boneless, skinless) | Breast (boneless, skinless) |
 |---|---|---|---|
-| Protein per $1 | 50.3 g | 27.7 g | 24.5 g |
+| Protein per $1 | 50.3 g | 27.7 g | 24.6 g |
 | Protein per 100 g | 18.08 g | 19.66 g | 22.5 g |
 | Package | 5 lb bag | per lb | per lb |
-| Price | $5.46 | $3.22 | $4.17 |
+| Price | $5.46 | $3.22 | $4.16 |
 | Price per 100 g | $0.24 | $0.71 | $0.92 |
 | DIAAS (protein quality) | 1.08 | 1.08 | 1.08 |
 
@@ -35,7 +36,7 @@ Bone-in chicken drumsticks deliver 50.3 grams of protein per dollar. Boneless sk
 
 ## Which is actually cheaper per gram of protein?
 
-Drumsticks, by a lot, and the number that gets it there is the shelf price. A 5 pound bag of bone-in drumsticks costs $5.46. A single pound of boneless skinless breast costs $4.17 at the May 2026 national average. That's about 24 cents per 100 grams against about 92 cents.
+Drumsticks, by a lot, and the number that gets it there is the shelf price. A 5 pound bag of bone-in drumsticks costs $5.46. A single pound of boneless skinless breast costs $4.16 at the July 2026 national average. That's about 24 cents per 100 grams against about 92 cents.
 
 Breast fights back on density and loses anyway. It carries 22.5 grams of protein per 100 grams, the most of any cut here, while drumstick meat carries 18.08. So you're getting less protein per bite from the drumstick and still ending up with twice as much protein per dollar. Price is doing all the work. The same cents-per-gram view across all 49 foods is in the [cheapest protein per gram ranking](/cheapest-protein-per-gram/).
 
@@ -45,7 +46,7 @@ Boneless skinless thighs are the interesting middle. At $3.22 a pound they land 
 
 Because you're buying weight you can't eat, and we already accounted for that. The drumstick number subtracts 33 percent of the package as bone and cartilage using USDA refuse data, so 50.3 grams per dollar is edible meat only. No thumb on the scale.
 
-What's left after that haircut is still the best deal at the meat counter, which tells you how much you're paying for the butchering. Deboning is labor, and labor is the most expensive ingredient in the store. The same pattern shows up on whole birds: a raw whole chicken came in at 25.3 grams per dollar at $2.04 a pound, and a cooked rotisserie bird at 26.7 for $5.97. Both edge past breast. Neither gets near the drumstick bag.
+What's left after that haircut is still the best deal at the meat counter, which tells you how much you're paying for the butchering. Deboning is labor, and labor is the most expensive ingredient in the store. The same pattern shows up on whole birds: a raw whole chicken came in at 25.6 grams per dollar at $2.01 a pound, and a cooked rotisserie bird at 26.7 for $5.97. Both edge past breast. Neither gets near the drumstick bag.
 
 ## Does protein quality change the ranking?
 

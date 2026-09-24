@@ -219,13 +219,14 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   assert.match(mealPrep, /\$12\.21/);
 
   const playbook = read("src/data/articles/eat-healthy-on-a-budget-complete-playbook.md");
-  assert.match(playbook, /dateModified: 2026-09-05/);
-  assert.match(playbook, /97\.9 grams of protein/);
-  assert.match(playbook, /9\.2/);
+  assert.match(playbook, /dateModified: 2026-09-24/);
+  assert.match(playbook, /57\.6 grams of protein/);
+  assert.match(playbook, /9\.4/);
+  assert.doesNotMatch(playbook, /97\.9/);
 
   const lentils = read("src/data/articles/lentils-vs-chicken-breast-protein-cost.md");
   const lentilFiber = fiberRow("Brown lentils (dry)");
-  assert.match(lentils, /dateModified: 2026-09-05/);
+  assert.match(lentils, /dateModified: 2026-09-24/);
   assert.match(lentils, new RegExp(`${lentilFiber.fiber_g_per_dollar} grams of fiber per dollar`));
   assert.equal(
     (lentils.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
@@ -233,7 +234,7 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   );
 
   const cannedVsDry = read("src/data/articles/canned-vs-dry-beans-cost.md");
-  assert.match(cannedVsDry, /dateModified: 2026-09-05/);
+  assert.match(cannedVsDry, /dateModified: 2026-09-24/);
   assert.equal(
     (cannedVsDry.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
     1,

@@ -1,12 +1,12 @@
 ---
-title: "Eat Healthy on a Budget: Pinto 97.9g vs Bacon 9.2g"
-excerpt: "A dollar of dry pinto beans buys 97.9g of protein; a dollar of bacon buys 9.2. The full budget system: data-picked staples, batch cooking, a real $60 week."
+title: "Eat Healthy on a Budget: Pinto 57.6g vs Bacon 9.4g"
+excerpt: "A dollar of dry pinto beans buys 57.6g of protein; a dollar of bacon buys 9.4. The full budget system: data-picked staples, batch cooking, a real $60 week."
 category: "tips"
 tags: ["eat healthy on a budget", "budget meal planning", "cheap healthy food", "grocery budget", "budget cooking"]
 image: "/images/eat-healthy-on-a-budget-complete-playbook-main.jpg"
 imageAlt: "Paper grocery bag with vegetables, bags of dry beans, eggs, and bananas next to a receipt and pencil on a kitchen table"
 date: 2026-07-07
-dateModified: 2026-09-05
+dateModified: 2026-09-24
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -14,18 +14,18 @@ whatsHot: false
 mustRead: false
 faq:
   - question: "How do you eat healthy on $50 a week?"
-    answer: "Build the week on dry staples first: a bag of pinto beans, a bag of rice, oats, eggs, and a 5 pound bag of chicken drumsticks together run about $20 and cover most of your protein and fiber. Spend the rest on frozen vegetables, bananas, cabbage, carrots, onions, milk, and bread. Cook in batches so nothing gets eaten out. It's tighter than $60 but the same system works; you mostly lose the extras, not the nutrition."
+    answer: "Build the week on dry staples first: a bag of pinto beans, a bag of rice, oats, eggs, and a 5 pound bag of chicken drumsticks together run about $23 at the July 2026 study prices and cover most of your protein and fiber. Spend the rest on frozen vegetables, bananas, cabbage, carrots, onions, milk, and bread. Cook in batches so nothing gets eaten out. It's tighter than $60 but the same system works; you mostly lose the extras, not the nutrition."
   - question: "What are the cheapest healthy foods?"
-    answer: "By our numbers, dried beans and lentils lead everything. Pinto beans deliver about 98 grams of protein per dollar and split peas about 71 grams of fiber per dollar, based on USDA data and July 2026 prices. After the dry aisle: oats, brown rice, whole wheat pasta, eggs at 34 grams of protein per dollar, chicken drumsticks at about 50, whole milk, frozen peas, bananas, cabbage, and carrots. That short list can carry most of a week."
+    answer: "By our numbers, dried beans and lentils lead the protein list among foods you can actually simmer. Brown lentils deliver 77.7 grams of protein per dollar and dry pinto beans 57.6, and split peas about 71 grams of fiber per dollar, based on USDA data and July 2026 prices. After the dry aisle: oats, brown rice, whole wheat pasta, eggs at 34 grams of protein per dollar, chicken drumsticks at about 50, whole milk, frozen peas, bananas, cabbage, and carrots. That short list can carry most of a week."
   - question: "Is eating healthy really more expensive than eating junk?"
-    answer: "Per shopping cart it can look that way. Per nutrient, it's the opposite. We ranked 49 foods by protein per dollar and 53 by fiber per dollar, and the cheapest sources of both were unglamorous whole foods: dried beans, split peas, oats, eggs, drumsticks. Bacon delivers about 9 grams of protein per dollar; pinto beans deliver 98. The expensive way to eat healthy is buying the photogenic version of it."
+    answer: "Per shopping cart it can look that way. Per nutrient, it's the opposite. We ranked 49 foods by protein per dollar and 53 by fiber per dollar, and the cheapest sources of both were unglamorous whole foods: dried beans, split peas, oats, eggs, drumsticks. Bacon delivers 9.4 grams of protein per dollar; pinto beans deliver 57.6. The expensive way to eat healthy is buying the photogenic version of it."
   - question: "What should I buy first when starting to eat healthy on a budget?"
-    answer: "Two bags from the dry goods aisle: pinto beans and split peas or lentils, roughly $5.50 total. Add a canister of oats, a dozen eggs, a bag of rice, and a 5 pound bag of chicken drumsticks and you've spent about $17 on the backbone of two weeks of meals. Everything after that (frozen vegetables, fruit, dairy) is filling in around a base that's already cheap and solid."
+    answer: "Two bags from the dry goods aisle: brown lentils and split peas, $1.44 and $1.42. Add a canister of oats, a dozen eggs, a bag of brown rice, and a 5 pound bag of chicken drumsticks and you've spent about $16 on the backbone of two weeks of meals. Everything after that (frozen vegetables, fruit, dairy) is filling in around a base that's already cheap and solid."
   - question: "Are frozen vegetables as healthy as fresh ones?"
     answer: "For everyday cooking, frozen holds up very well. Vegetables are typically frozen within hours of harvest, so the nutrient loss is small, and the price difference is large: in our fiber study, frozen green peas delivered 17.6 grams of fiber per dollar versus 6.1 for fresh broccoli crowns. Buy fresh for what you'll eat this week and frozen for everything else, and you'll waste less of both."
 ---
 
-Eating healthy on a budget comes down to buying nutrition by the gram instead of by the box. A dollar of dry pinto beans buys 97.9 grams of protein. A dollar of bacon buys 9.2. So you build the cart around dry staples, plan seven dinners at once, batch-cook the slow ingredients, and stop paying for food you throw away. None of those moves involve coupons:
+Eating healthy on a budget comes down to buying nutrition by the gram instead of by the box. A dollar of dry pinto beans buys 57.6 grams of protein. A dollar of bacon buys 9.4. So you build the cart around dry staples, plan seven dinners at once, batch-cook the slow ingredients, and stop paying for food you throw away. None of those moves involve coupons:
 
 * **Shop the dry goods aisle first.** That's where beans, oats, rice, and lentils sell nutrition for pennies.
 * **Plan a full week, not a day.** One shopping trip feeds seven dinners instead of one.
@@ -48,11 +48,11 @@ If you want to inspect the source trail before taking shopping advice from a man
 
 ## What are the cheapest healthy foods?
 
-The cheapest healthy foods in a US grocery store are dry beans, lentils and split peas. Dry pinto beans deliver 97.9 grams of protein per dollar and dry green split peas 71.0 grams of fiber per dollar, based on USDA nutrition data and July 2026 prices. Oats, rice, whole wheat pasta, eggs at 34.4 grams of protein per dollar and chicken drumsticks at 50.3 fill in behind them.
+The cheapest healthy foods in a US grocery store are dry beans, lentils and split peas. Dry brown lentils deliver 77.7 grams of protein per dollar, dry pinto beans 57.6, and dry green split peas 71.0 grams of fiber per dollar, based on USDA nutrition data and July 2026 prices. Oats, rice, whole wheat pasta, eggs at 34.4 grams of protein per dollar and chicken drumsticks at 50.3 fill in behind them.
 
 Most budget eating advice is somebody's opinion. We wanted receipts, so we built two datasets: 49 foods ranked by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and 53 foods ranked by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/). The current row-level audits found 42 exact USDA matches, 10 close USDA proxies, and 1 unresolved row in the fiber file; the protein file has 39 exact USDA matches and 10 close proxies, with no unresolved rows left. The TVP row is a proxy: USDA publishes no textured vegetable protein record at all, so the protein file now carries 52.17 grams per 100 grams straight from the manufacturer label. We matched the datasets to July 2026 prices, then published the spreadsheets so anyone can check the math and the open source gaps.
 
-Both tables told the same story. A dollar of dried pinto beans buys about 98 grams of protein. A dollar of bacon buys 9.2. Same nutrient, ten times the price. On the fiber side, dry split peas deliver about 71 grams of fiber per dollar while fresh blueberries deliver 2.5. That's a 28x gap between two foods sitting in the same store.
+Both tables told the same story. A dollar of dried pinto beans buys 57.6 grams of protein. A dollar of bacon buys 9.4. Same nutrient, about six times the price. On the fiber side, dry split peas deliver about 71 grams of fiber per dollar while fresh blueberries deliver 2.5. That's a 28x gap between two foods sitting in the same store.
 
 The winners repeat across both studies, which is exactly what you want in a staple. Dried beans, lentils, and split peas dominate the top of both lists. Oats, whole wheat pasta, and rice fill in behind them. Among animal foods, chicken drumsticks are the meat counter's best bargain at about 50 grams of protein per dollar even after subtracting the bone, and eggs are the easiest at 34. Nothing on that list is exotic. It's the least photogenic aisle in the store, quietly winning.
 
@@ -60,20 +60,20 @@ Here's the shortlist in one table, straight from the two datasets:
 
 | Food | Protein g per $1 | Fiber g per $1 | Approx price |
 |---|---|---|---|
-| Pinto beans (dry) | 97.9 | 70.8 | $3.97 for a 4 lb bag |
+| Pinto beans (dry) | 57.6 | 41.7 | $6.75 for a 4 lb bag |
 | Green split peas (dry) | 73.9 | 71.0 | $1.42 for a 16 oz bag |
 | Whole wheat spaghetti | 53.4 | 35.4 | $1.18 for a 16 oz box |
 | Chicken drumsticks (bone-in) | 50.3 | - | $1.09 per lb in a 5 lb bag |
 | Rolled oats | 46.6 | 35.8 | $3.36 for a 42 oz canister |
 | Eggs (large) | 34.4 | - | $2.19 per dozen |
-| Whole milk | 29.1 | - | $4.22 per gallon |
-| Bacon (the anti-example) | 9.2 | - | $6.71 per lb |
+| Whole milk | 28.5 | - | $4.31 per gallon |
+| Bacon (the anti-example) | 9.4 | - | $6.59 per lb |
 
 ![Side-by-side bar charts comparing grams of protein and fiber bought for one dollar across five grocery staples](/images/eat-healthy-on-a-budget-value-chart.jpg)
 
-A few more findings worth keeping in your back pocket. Dried beans beat canned by roughly three to one on protein (98 grams per dollar versus 30), so canned is the convenience tax, not the crime; it still outscores every ground meat in the store. Whole milk surprised me at 29 grams of protein per dollar, which means a $4.22 gallon holds 123 grams of protein without making any fuss about it. Whole wheat flour technically topped both tables (96 on protein, 78 on fiber), but flour only counts if you bake, so it wears a permanent asterisk. The fiber table also records popcorn at 51 grams per dollar, and that row is unresolved: it started from air-popped nutrition data, so we converted it to the unpopped-kernel basis the price describes, which makes the number our calculation. The correction cost popcorn two places, and it now lands seventh rather than fifth.
+A few more findings worth keeping in your back pocket. Brown lentils at 77.7 grams per dollar are about 2.6 times canned black beans at 30.1, and dry pintos at 57.6 are just under double, so canned is the convenience tax, not the crime; it still outscores every ground meat in the store. Whole milk surprised me at 28.5 grams of protein per dollar, which means a $4.31 gallon holds 123 grams of protein without making any fuss about it. Whole wheat flour technically topped both tables (96 on protein, 77.8 on fiber), but flour only counts if you bake, so it wears a permanent asterisk. The fiber table also records popcorn at 51 grams per dollar, and that row is unresolved: it started from air-popped nutrition data, so we converted it to the unpopped-kernel basis the price describes, which makes the number our calculation. The correction cost popcorn two places, and it now lands seventh rather than fifth.
 
-Meanwhile the stuff at the bottom is the stuff the ads sell hardest. Ground beef at 80/20 delivers about 11.5 grams of protein per dollar, roughly one eighth of what pinto beans manage. Fresh berries anchor the bottom of the fiber table. None of those foods are bad. They're just terrible places to send a tight grocery dollar and pretend it's the nutrition budget.
+Meanwhile the stuff at the bottom is the stuff the ads sell hardest. Ground beef at 80/20 delivers 11.3 grams of protein per dollar, about a fifth of what pinto beans manage. Fresh berries anchor the bottom of the fiber table. None of those foods are bad. They're just terrible places to send a tight grocery dollar and pretend it's the nutrition budget.
 
 If you want to run your own comparisons, the [fiber per dollar calculator](/tools/fiber-per-dollar-calculator/) does the nutrient math for you. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) settles the small-package-versus-big-package argument without making you divide decimals beside the cereal. And if fiber is your main gap, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) goes deep on that half of the equation.
 
@@ -103,7 +103,7 @@ Three more moves that pay for themselves:
 
 Cook once and eat three times. One weekend session that produces a pot of beans, a batch of grains and one big main turns weeknights into assembly instead of cooking, which is the only reason a 22-cent-per-100-grams bag of dry beans ever becomes dinner on a Tuesday.
 
-Here's the honest catch with budget staples: a bag of dried beans is 22 cents per 100 grams and also completely inedible at 6 PM on a Tuesday. Cheap ingredients demand a system, because the whole reason takeout wins is that it's ready and your pintos aren't.
+Here's the honest catch with budget staples: a bag of dried pintos is 37 cents per 100 grams and also completely inedible at 6 PM on a Tuesday. Cheap ingredients demand a system, because the whole reason takeout wins is that it's ready and your pintos aren't.
 
 The fix is cooking once and eating three times. [Batch cooking for beginners](/batch-cooking-for-beginners-weekly-guide/) is the full weekly method, and its big sibling, the [meal prep complete system](/meal-prep-for-beginners-complete-system/), turns it into a routine you can run on autopilot. The short version: one cooking session on the weekend produces a pot of beans, a batch of grains, and one big main, and suddenly weeknights are assembly instead of cooking. Open the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) or [turkey meatball meal prep](/healthy-turkey-meatballs-meal-prep/) and change the servings above the ingredient list before you shop. The amounts scale automatically, because multiplying eleven ingredients by 1.5 is not anyone's preferred Sunday hobby.
 
@@ -147,21 +147,21 @@ None of these are character flaws. They're system gaps, and every one of them ha
 
 ## What does a $60 grocery week actually look like?
 
-About $25 buys the backbone for two adults: a 4 lb bag of pinto beans at $3.97, split peas at $1.42, a 5 lb bag of chicken drumsticks at $5.46, two dozen eggs at $4.38, a gallon of milk at $4.22, and roughly $6.00 of oats, rice and pasta. The other $35 buys produce and flexibility.
+About $28 buys the backbone for two adults: a 4 lb bag of pinto beans at $6.75, split peas at $1.42, a 5 lb bag of chicken drumsticks at $5.46, two dozen eggs at $4.38, a gallon of milk at $4.31, and roughly $6.00 of oats, rice and pasta. The other $32 buys produce and flexibility.
 
-Here's roughly how I'd sketch a week for two adults on $60, using the same prices from our studies. If you're feeding one, halving it won't quite work, because packages don't shrink to fit; [what a single person actually spends per month](/grocery-budget-for-one-person-per-month/) explains the gap. The backbone costs about $25:
+Here's roughly how I'd sketch a week for two adults on $60, using the same prices from our studies. If you're feeding one, halving it won't quite work, because packages don't shrink to fit; [what a single person actually spends per month](/grocery-budget-for-one-person-per-month/) explains the gap. The backbone costs about $28:
 
 | Item | Price | What it delivers |
 |---|---|---|
-| Pinto beans, 4 lb bag | $3.97 | Around 389 grams of protein, plus serious fiber |
+| Pinto beans, 4 lb bag | $6.75 | Around 389 grams of protein, plus serious fiber |
 | Green split peas, 16 oz bag | $1.42 | About 101 grams of fiber and a week of soup lunches |
 | Chicken drumsticks, 5 lb bag | $5.46 | The meat counter's best bargain at $1.09 per lb |
 | Eggs, two dozen | $4.38 | The easiest protein in the kitchen, zero prep drama |
-| Whole milk, 1 gallon | $4.22 | 123 grams of protein hiding in the fridge door |
+| Whole milk, 1 gallon | $4.31 | 123 grams of protein hiding in the fridge door |
 | Oats, rice, and whole wheat spaghetti | ~$6.00 | Every breakfast and dinner base for the week |
-| **Total** | **~$25** | The backbone of the whole week |
+| **Total** | **~$28** | The backbone of the whole week |
 
-The remaining $35 buys produce and flexibility: bananas, cabbage, carrots, onions, a couple bags of frozen vegetables, canned tomatoes, peanut butter, bread, and a block of cheese. Peanut butter earns that slot on the numbers, and [peanut butter against almonds on protein cost](/peanut-butter-vs-almonds-protein-cost/) explains why the fancier nut doesn't make the list.
+The remaining $32 buys produce and flexibility: bananas, cabbage, carrots, onions, a couple bags of frozen vegetables, canned tomatoes, peanut butter, bread, and a block of cheese. Peanut butter earns that slot on the numbers, and [peanut butter against almonds on protein cost](/peanut-butter-vs-almonds-protein-cost/) explains why the fancier nut doesn't make the list.
 
 The day-to-day looks something like this:
 

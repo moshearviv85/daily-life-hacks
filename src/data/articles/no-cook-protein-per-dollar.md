@@ -8,6 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/no-cook-protein-per-dollar-main.jpg"
 imageAlt: "An open jar of peanut butter, canned tuna, yogurt, and a glass of milk on a sunny kitchen counter"
 date: 2026-07-13
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "What is the cheapest protein that requires no cooking?"
@@ -36,7 +37,7 @@ Top 12 of the 15, ready to eat straight from the package.
 | 2 | Dry roasted peanuts | 39.8 g | $2.78 | 16 oz jar |
 | 3 | Sunflower seed kernels | 31.7 g | $2.98 | 16 oz bag |
 | 4 | Canned black beans | 30.1 g | $0.88 | 15.5 oz can |
-| 5 | Whole milk | 29.1 g | $4.22 | 1 gallon |
+| 5 | Whole milk | 28.5 g | $4.31 | 1 gallon |
 | 6 | Greek yogurt (plain, nonfat) | 27.5 g | $3.36 | 32 oz tub |
 | 7 | Rotisserie chicken (whole, cooked) | 26.7 g | $5.97 | whole bird (36 oz) |
 | 8 | Cottage cheese (4%) | 26.3 g | $2.87 | 24 oz tub |
@@ -49,13 +50,13 @@ Source: USDA FoodData Central + single-store prices, July 2026. Full methodology
 
 ![Bar chart ranking 15 no-cook proteins by protein per dollar](/images/no-cook-protein-per-dollar-chart.jpg)
 
-Rounding out the list: sardines at 20.2 grams per dollar, cheddar at 18.2, and almonds at 14.8.
+Rounding out the list: sardines at 20.2 grams per dollar, cheddar at 18.1, and almonds at 14.8.
 
 One dollar of peanut butter covers the FDA's entire 50-gram Daily Value for protein, with a little left over. No pan, no timer, no dishes beyond the spoon you're going to pretend you didn't lick.
 
 ## Are canned beans really no-cook protein?
 
-They're the sleeper hit of this whole ranking. Canned beans are fully cooked before they're sealed, so "preparation" means opening the can and rinsing. Black beans lead at 30.1 grams of protein per dollar, and at $0.88 a can they're the cheapest single item on the entire list; [that one can holds about 26.5 grams of protein](/how-much-protein-in-a-can-of-beans/), roughly half the FDA's Daily Value. Kidney beans give 23.4 and chickpeas 22.0, both at $0.98. The dry versions of those same beans buy several times more protein per dollar, which is [what the convenience of the can actually costs](/canned-vs-dry-beans-cost/).
+They're the sleeper hit of this whole ranking. Canned beans are fully cooked before they're sealed, so "preparation" means opening the can and rinsing. Black beans lead at 30.1 grams of protein per dollar, and at $0.88 a can they're the cheapest single item on the entire list; [that one can holds about 26.5 grams of protein](/how-much-protein-in-a-can-of-beans/), roughly half the FDA's Daily Value. Kidney beans give 23.4 and chickpeas 22.0, both at $0.98. The dry versions of those same beans buy about twice the protein per dollar, and more for chickpeas, which is [what the convenience of the can actually costs](/canned-vs-dry-beans-cost/).
 
 Cold, they're better than you'd guess. A [black bean and corn salsa that needs no cooking](/quick-black-bean-and-corn-salsa-no-cooking-required/) is basically this study in bowl form, and canned chickpeas blitz straight into [homemade hummus](/high-fiber-hummus-recipe-homemade/) without ever seeing heat. That's protein plus fiber for under a dollar a can, the [double win beans pull off across both of our grocery spreadsheets](/beans-double-win-fiber-protein/), and the kind of math that makes the snack aisle look embarrassing.
 
@@ -63,13 +64,13 @@ Cold, they're better than you'd guess. A [black bean and corn salsa that needs n
 
 Canned tuna at 22.4 grams of protein per dollar is the best fish here, and the $0.98 can might be the most efficient protein purchase you can make with a single dollar bill. Pink salmon follows at 21.6 and sardines at 20.2. None of them beat the beans, but they win on variety, and a pantry with only peanut butter in it gets old fast.
 
-The rotisserie chicken is this list's technicality: cooked, yes, but not by you. At 26.7 grams per dollar for the $5.97 bird, it beats every fish in the study without coming near the bone-in drumsticks that top [our ranking of 21 animal proteins](/animal-protein-per-dollar-ranked/), and shredding it cold into [lettuce wraps with peanut sauce](/chicken-veggie-lettuce-wraps-peanut-sauce/) is a no-stove dinner that doesn't feel like a compromise. The dairy tubs slot in right around it: milk at 29.1, Greek yogurt at 27.5, cottage cheese at 26.3.
+The rotisserie chicken is this list's technicality: cooked, yes, but not by you. At 26.7 grams per dollar for the $5.97 bird, it beats every fish in the study without coming near the bone-in drumsticks that top [our ranking of 21 animal proteins](/animal-protein-per-dollar-ranked/), and shredding it cold into [lettuce wraps with peanut sauce](/chicken-veggie-lettuce-wraps-peanut-sauce/) is a no-stove dinner that doesn't feel like a compromise. The dairy tubs slot in right around it: milk at 28.5, Greek yogurt at 27.5, cottage cheese at 26.3.
 
 ## Which no-cook proteins aren't worth it?
 
-Almonds. I like them, my trail mix likes them, but at $6.47 a pound they deliver 14.8 grams of protein per dollar, dead last of the 15. Dry roasted peanuts cost $2.78 for the same 16 oz and deliver 39.8. That's more than double the protein for less than half the price, and they live on the same shelf. Cheddar at 18.2 grams per dollar has the same problem: perfectly good food, mediocre protein math.
+Almonds. I like them, my trail mix likes them, but at $6.47 a pound they deliver 14.8 grams of protein per dollar, dead last of the 15. Dry roasted peanuts cost $2.78 for the same 16 oz and deliver 39.8. That's more than double the protein for less than half the price, and they live on the same shelf. Cheddar at 18.1 grams per dollar has the same problem: perfectly good food, mediocre protein math.
 
-The pattern for the whole category: nut butters, seeds, canned beans, and dairy tubs carry the value, while the fancy nuts and fancy cheese are there for pleasure. Take the fridge out of it and the same shape holds across [27 pantry foods ranked on protein per dollar](/shelf-stable-pantry-per-dollar/), where dry beans lead and almonds finish last again. Build snacks around the winners, like [no-bake energy balls](/no-bake-high-fiber-energy-balls-recipe/) with peanut butter or a [ricotta and berry toast bar](/ricotta-berry-toast-bar-no-cook/) when you want something that looks like effort.
+The pattern for the whole category: nut butters, seeds, canned beans, and dairy tubs carry the value, while the fancy nuts and fancy cheese are there for pleasure. Take the fridge out of it and the same shape holds across [27 pantry foods ranked on protein per dollar](/shelf-stable-pantry-per-dollar/), where whole wheat flour and dried legumes lead and almonds finish last again. Build snacks around the winners, like [no-bake energy balls](/no-bake-high-fiber-energy-balls-recipe/) with peanut butter or a [ricotta and berry toast bar](/ricotta-berry-toast-bar-no-cook/) when you want something that looks like effort.
 
 For the day-level budget version of this math, see [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/), and for the full stove-included strategy there's the [high-protein on a budget guide](/high-protein-on-a-budget-complete-guide/). The stove is optional. The protein doesn't have to be expensive.
 
