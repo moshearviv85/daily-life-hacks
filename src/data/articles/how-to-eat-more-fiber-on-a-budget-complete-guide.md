@@ -7,18 +7,18 @@ cluster: "budget-fiber"
 image: "/images/how-to-eat-more-fiber-on-a-budget-complete-guide-main.jpg"
 imageAlt: "Glass jars of dry pinto beans, split peas, red lentils, oats, and popcorn kernels on a wooden table beside a bag of frozen peas and a loaf of whole wheat bread"
 date: 2026-07-07
-dateModified: 2026-07-30
+dateModified: 2026-09-24
 author: "David Miller"
 featured: false
 faq:
   - question: "How can I get 30 grams of fiber a day cheaply?"
-    answer: "Build the day around dry goods. In our pricing analysis, a bowl of oatmeal with a banana (about 7 grams of fiber), split pea soup at lunch (about 16 grams), air-popped popcorn as a snack (about 4 grams), and pinto beans with brown rice at dinner (about 10 grams) adds up to roughly 37 grams. The core ingredients cost about 88 cents at typical July 2026 prices."
+    answer: "Build the day around dry goods. In our pricing analysis, a bowl of oatmeal with a banana (about 7 grams of fiber), split pea soup at lunch (about 16 grams), air-popped popcorn as a snack (about 4 grams), and pinto beans with brown rice at dinner (about 10 grams) adds up to roughly 37 grams. The core ingredients cost about 96 cents at typical July 2026 prices."
   - question: "What is the cheapest source of fiber?"
-    answer: "In our 53-food analysis, whole wheat flour technically won at about 78 grams of fiber per dollar, but you only get that fiber if you bake with it. Among foods you can cook and eat as-is, dry green split peas lead at about 71 grams per dollar, with dry pinto beans right behind at 70.8. All figures use USDA fiber data and July 2026 US prices."
+    answer: "In our 53-food analysis, whole wheat flour won at 77.8 grams of fiber per dollar, but you only collect that fiber if you bake with it. Among foods you can cook and eat as-is, dry green split peas lead at 71.0 grams per dollar. Pearled barley is next at 57.1, and dry pinto beans sit at 41.7 after the BLS dried-beans price. All figures use USDA fiber data and July 2026 US prices."
   - question: "How much fiber should I eat per day?"
     answer: "The FDA's Daily Value for fiber is 28 grams per day. Individual needs vary, and federal guidance lists a range of roughly 22 to 34 grams for adults depending on age and sex. Americans average about 16 grams, so the practical move for many people is closing the gap gradually."
   - question: "Are dried beans really worth the effort over canned?"
-    answer: "If cost is the priority, yes. In our analysis, dry pinto beans delivered about twice as much fiber per dollar as canned black beans, roughly 71 grams per dollar versus 34. Canned beans are still a solid value and much better than most fresh options, so keep some on the shelf for lazy nights. A same-day quick soak also removes the overnight planning problem."
+    answer: "If cost is the priority, the gap is narrower than the old poster. Dry pinto beans deliver 41.7 grams of fiber per dollar and canned black beans deliver 34.4. Canned beans are still a solid value and much better than most fresh options, so keep some on the shelf for lazy nights. A same-day quick soak also removes the overnight planning problem."
   - question: "How fast should I increase my fiber intake?"
     answer: "Slowly. Jumping from roughly 16 grams a day to 35 overnight may cause gas, bloating, or cramps. Federal health guidance recommends adding fiber a little at a time and drinking enough liquids as you increase it."
 ---
@@ -57,8 +57,8 @@ We published the full 53-food ranking in our [fiber per dollar study](/fiber-per
 |---|---|
 | Whole wheat flour | 77.8 g |
 | Green split peas (dry) | 71.0 g |
-| Pinto beans (dry) | 70.8 g |
 | Popcorn kernels | 51.3 g |
+| Pinto beans (dry) | 41.7 g |
 | Rolled oats | 35.8 g |
 | Frozen green peas | 17.6 g |
 | Fresh broccoli crowns | 6.1 g |
@@ -66,11 +66,11 @@ We published the full 53-food ranking in our [fiber per dollar study](/fiber-per
 
 ![Horizontal bar chart showing how many grams of fiber one dollar buys across eight grocery foods](/images/fiber-on-a-budget-value-chart.jpg)
 
-A few notes on that table. Whole wheat flour is technically the winner, but flour is an ingredient, not dinner; it only counts if you bake, so swap it into pancakes and muffins and let the fiber tag along for pennies. Put it up against the grain everyone assumes is the healthy choice and [the flour-versus-quinoa gap](/whole-wheat-flour-vs-quinoa-fiber-cost/) is not remotely close. That makes dry green split peas the real champion among foods you can put in a pot tonight: one $1.42 bag holds around 101 grams of fiber, or about three and a half Daily Values. That's spreadsheet context, not a three-day menu. Pinto beans sit within a rounding error of the peas and are arguably more versatile. The popcorn row is flagged as a proxy rather than an exact match, because USDA publishes no nutrition record for unpopped kernels; converting the air-popped record to a kernel basis lands popcorn at 51.3 grams per dollar and seventh place overall. Rolled oats are breakfast, solved, for about 28 cents per 100 grams. And frozen green peas deliver nearly triple what fresh broccoli crowns do, which is why the freezer aisle quietly beats the produce section.
+A few notes on that table. Whole wheat flour is technically the winner, but flour is an ingredient, not dinner; it only counts if you bake, so swap it into pancakes and muffins and let the fiber tag along for pennies. Put it up against the grain everyone assumes is the healthy choice and [the flour-versus-quinoa gap](/whole-wheat-flour-vs-quinoa-fiber-cost/) is not remotely close. That makes dry green split peas the real champion among foods you can put in a pot tonight: one $1.42 bag holds around 101 grams of fiber, or about three and a half Daily Values. That's spreadsheet context, not a three-day menu. Pinto beans land at 41.7 grams per dollar. The peas win the fiber dollar; the pintos are the bean you can put under rice all week. The popcorn row stays unresolved rather than an exact USDA match, because USDA publishes no nutrition record for unpopped kernels. Converting the air-popped record (FDC 167959) onto the kernel basis lands popcorn at 51.3 grams per dollar and fourth place overall. Rolled oats are breakfast, solved, for about 28 cents per 100 grams. And frozen green peas deliver nearly triple what fresh broccoli crowns do, which is why the freezer aisle quietly beats the produce section.
 
 At the very bottom sit fresh blueberries at 2.5 grams per dollar, and price isn't carrying the blame here: [ranked on fiber content alone](/best-high-fiber-foods-ranked-by-fiber-content/) they still only manage 2.4 grams per 100 grams. Berries aren't bad food. They're just a terrible fiber strategy. Buy them because you love them, not for the grams. Bananas are the exception that proves the rule: at just under 12 grams of fiber per dollar, they're the best fresh fruit value on the list, which is exactly why one shows up in the sample day below.
 
-One more number worth knowing: dry beans beat canned by about 2 times per dollar. Canned is still a genuinely good middle option, and if the only thing keeping you from dry beans is the overnight soak, the [same-day quick soak method](/how-to-quick-soak-dried-beans-same-day/) deletes that excuse in about an hour.
+One more number worth knowing: dry pinto beans buy 41.7 grams of fiber per dollar and canned black beans buy 34.4. Canned is still a genuinely good middle option, and if the only thing keeping you from dry beans is the overnight soak, the [same-day quick soak method](/how-to-quick-soak-dried-beans-same-day/) deletes that excuse in about an hour.
 
 Want to run your own matchups? The [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/) compares any two foods and does the nutrient math for you. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles the other question that tiny shelf labels make unnecessarily annoying: which package is actually cheaper per ounce. And if you're rebuilding the whole grocery run, not just the fiber part, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) and this [budget shopping list](/grocery-shopping-list-for-healthy-eating-on-a-budget/) cover the rest of the cart.
 
@@ -85,13 +85,13 @@ Under three dollars if you build it from dry goods. Talk is cheap. So is this. H
 | Lunch | Split pea soup, a third of a cup dry peas (65 g) | 14.4 | $0.20 |
 | Lunch | One carrot, tossed in the soup | 1.7 | $0.10 |
 | Snack | Popcorn, three tablespoons of kernels (30 g) | 3.9 | $0.08 |
-| Dinner | Pinto beans, a quarter cup dry (50 g) | 7.8 | $0.11 |
+| Dinner | Pinto beans, a quarter cup dry (50 g) | 7.8 | $0.19 |
 | Dinner | Brown rice, a quarter cup dry | 1.8 | $0.11 |
-| **Total** | | **~37** | **$0.88** |
+| **Total** | | **~37** | **$0.96** |
 
 Read that again. Thirty-seven grams, which clears the 28 gram Daily Value with room to spare, and the fiber-carrying ingredients cost less than a dollar.
 
-![Horizontal bar chart showing breakfast, lunch, snack, and dinner adding up to about 37 grams of fiber for 88 cents](/images/fiber-budget-day-breakdown.jpg)
+![Horizontal bar chart showing breakfast, lunch, snack, and dinner adding up to about 37 grams of fiber for 96 cents](/images/fiber-budget-day-breakdown.jpg)
 
 Two honest caveats. First, this is the fiber skeleton, not everything you'd eat. Add milk for the oats, oil and an onion for the soup, eggs or whatever protein you like at dinner, and you're still comfortably under three dollars for the day's core food. Second, if you're currently near the 16 gram national average, don't jump to 37 tomorrow. More on that in the mistakes section, because stomach drama is a lousy onboarding experience.
 
