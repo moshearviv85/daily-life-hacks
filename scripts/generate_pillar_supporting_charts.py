@@ -296,6 +296,183 @@ def fiber_day_chart():
     )
 
 
+def short_food(food):
+    return (
+        food.replace(" (dry)", "")
+        .replace(" (large)", "")
+        .replace(" (bone-in)", "")
+        .replace(" (80/20)", "")
+        .replace("Old-fashioned ", "")
+        .replace("Chicken ", "")
+    )
+
+
+def beans_double_win_chart():
+    rows = load_csv("beans-double-win-fiber-protein-2026.csv")
+    labels = []
+    values = []
+    for row in rows:
+        protein = PROTEIN[row["food"]]
+        fiber = FIBER[row["food"]]
+        if protein["protein_g_per_dollar"] != row["protein_g_per_dollar"]:
+            raise SystemExit(f"{row['food']} protein drifted from the flagship CSV")
+        if fiber["fiber_g_per_dollar"] != row["fiber_g_per_dollar"]:
+            raise SystemExit(f"{row['food']} fiber drifted from the flagship CSV")
+        if protein["package_price_usd"] != row["package_price_usd"]:
+            raise SystemExit(f"{row['food']} package price drifted from the flagship CSV")
+        combined = float(row["protein_g_per_dollar"]) + float(row["fiber_g_per_dollar"])
+        if f"{combined:.1f}" != row["value"]:
+            raise SystemExit(f"{row['food']} combined {row['value']} != {combined:.1f}")
+        labels.append(short_food(row["food"]))
+        values.append(float(row["value"]))
+    horizontal_chart(
+        "Beans Ranked by Fiber and Protein per Dollar",
+        "Combined grams per dollar. July 2026 prices.",
+        labels,
+        values,
+        "beans-double-win-fiber-protein-chart.jpg",
+        "USDA FoodData Central + July 2026 US grocery prices",
+        left=0.28,
+        prefix="Source",
+    )
+
+
+def eggs_vs_everything_chart():
+    rows = load_csv("eggs-vs-everything-protein-value-2026.csv")[:10]
+    labels = []
+    values = []
+    for row in rows:
+        parent = PROTEIN[row["food"]]
+        if parent["protein_g_per_dollar"] != row["value"]:
+            raise SystemExit(f"{row['food']} drifted from the protein CSV")
+        labels.append(short_food(row["food"]))
+        values.append(float(row["value"]))
+    horizontal_chart(
+        "What Beats Eggs on Protein per Dollar",
+        "Top 10 of 49 foods. Eggs rank 17th at 34.4 g.",
+        labels,
+        values,
+        "eggs-vs-everything-protein-value-chart.jpg",
+        "USDA FoodData Central + July 2026 US grocery prices",
+        left=0.32,
+        prefix="Source",
+    )
+
+
+def family_protein_ladder_chart():
+    foods = [
+        ("Brown lentils (dry)", "Brown lentils"),
+        ("Pinto beans (dry)", "Pinto beans"),
+        ("Peanut butter", "Peanut butter"),
+        ("Chicken drumsticks (bone-in)", "Drumsticks"),
+        ("Eggs (large)", "Eggs"),
+        ("Canned tuna (chunk light, in water)", "Canned tuna"),
+    ]
+    horizontal_chart(
+        "A Family Protein Ladder",
+        "Grams of protein per dollar. One job each, not one food for every night.",
+        [label for _, label in foods],
+        [protein_of(food) for food, _ in foods],
+        "family-protein-ladder.jpg",
+        "USDA FoodData Central + July 2026 US grocery prices",
+        figsize=(12, 6.2),
+        left=0.24,
+        prefix="Source",
+    )
+
+
+def quality_adjusted_chart():
+    rows = load_csv("protein-quality-per-dollar-2026.csv")[:8]
+    labels = [short_food(row["food"]) for row in rows]
+    adjusted = [float(row["adjusted_g_per_dollar"]) for row in rows]
+    raw = [float(row["protein_g_per_dollar"]) for row in rows]
+    fig, ax = plt.subplots(figsize=(12, 6.75), facecolor="white")
+    fig.subplots_adjust(left=0.28, right=0.94, top=0.79, bottom=0.13)
+    y = list(range(len(labels)))
+    ax.barh([index + 0.18 for index in y], raw, color="#F8D3A5", height=0.34, label="Raw g per $")
+    ax.barh([index - 0.18 for index in y], adjusted, color=ORANGE, height=0.34, label="Adjusted g per $")
+    ax.set_yticks(y, labels)
+    ax.invert_yaxis()
+    ax.set_title("Quality-Adjusted Protein per Dollar", loc="left", color=SLATE, pad=28)
+    ax.text(
+        0,
+        1.035,
+        "DIAAS applied, capped at 1.0. July 2026 prices.",
+        transform=ax.transAxes,
+        color=MUTED,
+        fontsize=12,
+    )
+    ax.spines[:].set_visible(False)
+    ax.tick_params(axis="x", bottom=False, labelbottom=False)
+    ax.tick_params(axis="y", length=0, labelsize=11)
+    ax.set_xlim(0, max(raw) * 1.22)
+    for index, value in enumerate(adjusted):
+        ax.text(
+            value + max(raw) * 0.015,
+            index - 0.18,
+            f"{value:g} g",
+            va="center",
+            color=SLATE,
+            fontsize=10,
+            fontweight="bold",
+        )
+    ax.legend(frameon=False, loc="lower right")
+    save(
+        fig,
+        "protein-per-dollar-adjusted-for-quality-chart.jpg",
+        "USDA FoodData Central, published DIAAS scores, July 2026 prices",
+        prefix="Source",
+    )
+
+
+def groceries_vs_drivethru_chart():
+    # Menu bars stay on the recorded July 2026 McDonald's snapshot in the
+    # 50-gram day article (17 g / $5.35, 22 g / $3.99, 14 g / $3.89).
+    # Grocery bars are read from the protein CSV.
+    grocery = [
+        ("Green split peas (dry)", "Green split peas"),
+        ("Pinto beans (dry)", "Pinto beans (dry)"),
+        ("Peanut butter", "Peanut butter"),
+        ("Old-fashioned rolled oats", "Rolled oats"),
+        ("Brown rice (dry)", "Brown rice"),
+        ("Eggs (large)", "Large eggs"),
+        ("Whole milk", "Whole milk"),
+        ("Greek yogurt (plain, nonfat)", "Greek yogurt"),
+        ("Chicken breast (boneless, skinless)", "Chicken breast"),
+        ("Canned tuna (chunk light, in water)", "Canned tuna"),
+        ("100% whole wheat bread", "Whole wheat bread"),
+        ("Ground beef (80/20)", "Ground beef 80/20"),
+    ]
+    menu = [
+        ("McDouble", 5.5),
+        ("McChicken", 3.6),
+        ("Egg McMuffin", 3.2),
+    ]
+    rows = [(label, protein_of(food)) for food, label in grocery] + menu
+    rows.sort(key=lambda row: row[1], reverse=True)
+    horizontal_chart(
+        "Protein per Dollar: Groceries vs. the Drive-Thru",
+        "Grams of protein from one dollar. Grocery rows from the July 2026 CSV.",
+        [label for label, _ in rows],
+        [value for _, value in rows],
+        "protein-per-dollar-groceries-vs-drivethru.jpg",
+        "USDA FoodData Central + July 2026 grocery prices and one menu snapshot",
+        figsize=(12, 8.6),
+        left=0.30,
+        prefix="Source",
+    )
+
+
+def refresh_stale_snapshot_charts():
+    setup()
+    OUT.mkdir(parents=True, exist_ok=True)
+    beans_double_win_chart()
+    eggs_vs_everything_chart()
+    family_protein_ladder_chart()
+    quality_adjusted_chart()
+    groceries_vs_drivethru_chart()
+
+
 def main():
     setup()
     OUT.mkdir(parents=True, exist_ok=True)
@@ -340,6 +517,7 @@ def main():
     one_dollar_fiber_chart()
     fiber_day_chart()
     meal_prep_chart()
+    refresh_stale_snapshot_charts()
 
 
 if __name__ == "__main__":

@@ -95,7 +95,7 @@ Common failure modes:
 
 ## What's the cheapest way to hit your protein target?
 
-Eggs, dried or canned beans and lentils, chicken thighs, Greek yogurt, cottage cheese and canned fish. Our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) ranked 49 grocery foods and dry pinto beans led at 97.9 grams of protein per dollar, with eggs at 34.4 and chicken drumsticks at 50.3. You do not need a boutique butcher to hit how much protein you need per day.
+Eggs, dried or canned beans and lentils, chicken thighs, Greek yogurt, cottage cheese and canned fish. Our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) ranked 49 grocery foods. Whole wheat flour led at 96.0 grams of protein per dollar, brown lentils delivered 77.7, and dry pinto beans 57.6, with eggs at 34.4 and chicken drumsticks at 50.3. You don't need a boutique butcher to hit how much protein you need per day.
 
 **Cheap defaults that earn fridge space:**
 

@@ -13,14 +13,14 @@ cluster: budget-protein
 parentPillar: high-protein-on-a-budget-complete-guide
 image: "/images/best-low-cost-protein-sources-large-families-main.jpg"
 imageAlt: A wicker basket filled with brown and white eggs sits on a wooden table.
-quickAnswer: "Dried beans and lentils are the cheapest protein a family can buy. In our July 2026 sample of 49 foods, dry pinto beans delivered 97.9 grams of protein per dollar and brown lentils 77.7, against 50.3 for bone-in chicken drumsticks, 34.4 for eggs and 11.5 for 80/20 ground beef. USDA MyPlate counts a quarter cup of cooked beans, one egg, or one tablespoon of peanut butter as one ounce-equivalent of protein foods, the same unit as an ounce of chicken. Cook poultry to 165F, and use cooked beans or chicken within 3 to 4 days."
+quickAnswer: "Dried beans and lentils are among the cheapest proteins a family can buy. In our July 2026 sample of 49 foods, brown lentils delivered 77.7 grams of protein per dollar and dry pinto beans 57.6, against 50.3 for bone-in chicken drumsticks, 34.4 for eggs and 11.3 for 80/20 ground beef. Whole wheat flour led the full list at 96.0. USDA MyPlate counts a quarter cup of cooked beans, one egg, or one tablespoon of peanut butter as one ounce-equivalent of protein foods, the same unit as an ounce of chicken. Cook poultry to 165F, and use cooked beans or chicken within 3 to 4 days."
 date: 2026-04-28
-dateModified: 2026-09-23
+dateModified: 2026-09-24
 author: "David Miller"
 featured: false
 faq:
   - question: "What is the cheapest protein per gram for families?"
-    answer: "Dried beans and lentils led our 49-food protein-per-dollar sample, with dry pinto beans at about 98 grams of protein per dollar and brown lentils near 78. Eggs landed at about 34 grams per dollar using the May 2026 BLS average price of $2.19 a dozen, while canned tuna landed near 22 using the July 2026 price in our dataset. The protein values behind those figures come from USDA FoodData Central."
+    answer: "Brown lentils led the foods you can simmer, at 77.7 grams of protein per dollar, and dry pinto beans delivered 57.6. Whole wheat flour led the full 49-food sample at 96.0. Eggs landed at 34.4 grams per dollar using the July 2026 BLS average price of $2.19 a dozen, while canned tuna landed at 22.4. The protein values behind those figures come from USDA FoodData Central."
   - question: "How can I make meat stretch further in family meals?"
     answer: "You can make meat stretch by using the 'half-and-half' method, where you replace half of the ground meat in recipes with cooked lentils or finely chopped mushrooms. This adds bulk and fiber while maintaining the flavor profile your family expects. Adding oats to meatloaf or extra beans to chili are other practical ways to feed more people with less meat. Whatever the mix, USDA still wants ground beef, pork, lamb and veal cooked to 160F and all poultry to 165F."
   - question: "Are frozen meats cheaper than fresh for large groups?"
@@ -36,7 +36,7 @@ If you are trying to hit those nutritional goals without your credit card crying
 
 ## What are the cheapest protein sources for a large family?
 
-Dry beans and lentils, then chicken drumsticks. In our [49-food protein-per-dollar ranking](/protein-per-dollar-cheapest-protein-sources/), dry pinto beans delivered 97.9 grams of protein per dollar, black beans 81.0 and brown lentils 77.7, while bone-in drumsticks led the meat counter at 50.3 and eggs came in at 34.4. Ground beef, the default family protein, managed 11.5. Every protein figure underneath those numbers comes from USDA FoodData Central: [raw pinto beans are 21.4 g of protein per 100 g](https://fdc.nal.usda.gov/food-details/175199/nutrients) and [raw lentils are 24.6](https://fdc.nal.usda.gov/food-details/172420/nutrients).
+Dry beans and lentils, then chicken drumsticks. In our [49-food protein-per-dollar ranking](/protein-per-dollar-cheapest-protein-sources/), brown lentils delivered 77.7 grams of protein per dollar, black beans 58.0 and dry pinto beans 57.6, while bone-in drumsticks led the meat counter at 50.3 and eggs came in at 34.4. Ground beef, the default family protein, managed 11.3. Whole wheat flour led the full list at 96.0. Every protein figure underneath those numbers comes from USDA FoodData Central: [raw pinto beans are 21.4 g of protein per 100 g](https://fdc.nal.usda.gov/food-details/175199/nutrients) and [raw lentils are 24.6](https://fdc.nal.usda.gov/food-details/172420/nutrients).
 
 Cheap doesn't mean token, either. USDA MyPlate counts [a quarter cup of cooked beans, one egg, or one tablespoon of peanut butter as one ounce-equivalent](https://www.myplate.gov/eat-healthy/protein-foods) of protein foods, the same unit as an ounce of cooked chicken. MyPlate's general guidance puts adults at 5 to 7 ounce-equivalents a day and kids ages 4 to 8 at 3 to 5 and a half. That's a target you can hit out of a bean pot.
 
@@ -69,16 +69,16 @@ Greek yogurt is worth it if the large tub beats the single cups on unit price. T
 
 ## Build a protein ladder instead of betting on one food
 
-The cheapest item is not supposed to carry every meal. Pinto beans win the spreadsheet, but a family that wants beans seven nights a week is either unusually committed or lying to itself. A better system is a ladder: one dirt-cheap base, one easy backup, one meat option, and one zero-cook option.
+The cheapest item is not supposed to carry every meal. Brown lentils win the cooked-food spreadsheet at 77.7 grams per dollar, but a family that wants lentils seven nights a week is either unusually committed or lying to itself. A better system is a ladder: one dirt-cheap base, one easy backup, one meat option, and one zero-cook option.
 
 | Job in the kitchen | Food | Protein per dollar in our sample | Why it earns the spot |
 |---|---|---:|---|
-| Cheapest cooked base | Dry pinto beans | 98 g | Big batches, freezer-friendly, works in tacos, soup, and rice bowls |
-| Fast dry good | Brown lentils | 78 g | No soaking, and a quarter cup cooked is a full ounce-equivalent |
-| Pantry lunch | Peanut butter | 51 g | No cooking, long shelf life, one tablespoon is an ounce-equivalent |
-| Meat night | Chicken drumsticks | 50 g | Best meat result in the sample, even after accounting for bone |
-| Ten-minute dinner | Eggs | 34 g | One egg is an ounce-equivalent, and they're hard to ruin |
-| Emergency lunch | Canned tuna | 22 g | Opens in seconds, and chunk light is an FDA Best Choice |
+| Cheapest cooked base | Brown lentils | 77.7 g | No soaking, and a quarter cup cooked is a full ounce-equivalent |
+| Big-batch base | Dry pinto beans | 57.6 g | Big batches, freezer-friendly, works in tacos, soup, and rice bowls |
+| Pantry lunch | Peanut butter | 50.7 g | No cooking, long shelf life, one tablespoon is an ounce-equivalent |
+| Meat night | Chicken drumsticks | 50.3 g | Best meat result in the sample, even after accounting for bone |
+| Ten-minute dinner | Eggs | 34.4 g | One egg is an ounce-equivalent, and they're hard to ruin |
+| Emergency lunch | Canned tuna | 22.4 g | Opens in seconds, and chunk light is an FDA Best Choice |
 
 That column is built from July 2026 Walmart and BLS prices divided into USDA FoodData Central protein values. The whole sheet is published as a [downloadable CSV](/data/protein-per-dollar-2026.csv) if you want to check our arithmetic.
 

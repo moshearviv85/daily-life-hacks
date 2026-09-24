@@ -259,12 +259,12 @@ test("canned beans vs dried beans nutrition title puts protein grams per 100g in
     false,
     "nutrition beans title should not lead with canned beans or dry beans",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-24$/m);
 
   assert.match(beans.excerpt, /[Dd]ried beans vs canned beans/);
   assert.match(beans.excerpt, /21\.6 g/);
   assert.match(beans.excerpt, /6\.0 g/);
-  assert.match(beans.excerpt, /81\.0 g/);
+  assert.match(beans.excerpt, /58\.0 g/);
   assert.match(beans.excerpt, /30\.1 g/);
   assert.ok(
     excerptLower.indexOf("dried beans vs canned beans") < excerptLower.indexOf("21.6"),
@@ -882,7 +882,7 @@ test("rice and beans everyday title puts cost and protein grams in the SERP", ()
     false,
     "rice and beans title should not lead with the old Is It Healthy SERP",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-24$/m);
 
   assert.match(rice.excerpt, /is it healthy to eat rice and beans every day/i);
   assert.match(rice.excerpt, /protein and fiber/i);
@@ -1251,7 +1251,7 @@ test("fast food protein per dollar title leads with which has the best", () => {
     false,
     "fast food protein title should not use the old best deals ranked SERP",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-24$/m);
 
   assert.match(page.excerpt, /8\.4g protein per dollar/);
   assert.match(page.excerpt, /7\.6/);
@@ -1789,7 +1789,7 @@ test("low cost protein families title drops the leading Best superlative", () =>
     "low cost protein families title should not be the old Best low cost protein SERP",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-24$/m);
 });
 
 test("stir-fry vegetables title drops the leading Best superlative", () => {

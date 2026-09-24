@@ -11,9 +11,9 @@ tags:
 - meals large
 image: "/images/cheap-crockpot-meals-large-families-main.jpg"
 imageAlt: A large slow cooker is filled with a hearty stew, surrounded by dried beans, potatoes, and onions.
-quickAnswer: "The cheapest crockpot meals for a big household run on dried beans, lentils, and bone-in chicken rather than premium cuts. In our July 2026 price sample, dry pinto beans delivered 97.9 grams of protein per dollar and bone-in chicken drumsticks 50.3, against 25.2 for boneless pork shoulder and 11.5 for 80/20 ground beef. Two safety steps come first: FDA says slow cookers don't get hot enough to destroy the lectin in dried kidney beans, so soak dried beans at least 5 hours and boil them in fresh water for 30 minutes before they go in the pot, and USDA says to always thaw meat or poultry before putting it into a slow cooker."
+quickAnswer: "The cheapest crockpot meals for a big household run on dried beans, lentils, and bone-in chicken rather than premium cuts. In our July 2026 price sample, brown lentils delivered 77.7 grams of protein per dollar and dry pinto beans 57.6, against 50.3 for bone-in chicken drumsticks, 25.2 for boneless pork shoulder and 11.3 for 80/20 ground beef. Two safety steps come first: FDA says slow cookers don't get hot enough to destroy the lectin in dried kidney beans, so soak dried beans at least 5 hours and boil them in fresh water for 30 minutes before they go in the pot, and USDA says to always thaw meat or poultry before putting it into a slow cooker."
 date: 2026-04-28
-dateModified: 2026-07-31
+dateModified: 2026-09-24
 author: "David Miller"
 featured: false
 prepTime: "40 minutes"
@@ -44,7 +44,7 @@ steps:
   - "Serve in bowls as is, or over a large pot of white rice to stretch the meal even further. Refrigerate leftovers in shallow covered containers within 2 hours."
 faq:
   - question: "How can I make slow cooker meals cheaper for a big family?"
-    answer: "Dried beans and lentils are the cheapest way in. In our July 2026 price sample, dry pinto beans delivered 97.9 grams of protein per dollar and brown lentils 77.7, against 25.2 for boneless pork shoulder and 11.5 for 80/20 ground beef. Buying pantry staples in bulk and using water or bouillon instead of boxed broth trims the per-meal cost further. One safety step comes first: FDA says slow cookers don't get hot enough to destroy the lectin in dried kidney beans, so soak dried beans at least 5 hours and boil them in fresh water for at least 30 minutes before they go in the pot."
+    answer: "Dried beans and lentils are the cheapest way in. In our July 2026 price sample, brown lentils delivered 77.7 grams of protein per dollar and dry pinto beans 57.6, against 25.2 for boneless pork shoulder and 11.3 for 80/20 ground beef. Buying pantry staples in bulk and using water or bouillon instead of boxed broth trims the per-meal cost further. One safety step comes first: FDA says slow cookers don't get hot enough to destroy the lectin in dried kidney beans, so soak dried beans at least 5 hours and boil them in fresh water for at least 30 minutes before they go in the pot."
   - question: "What are the best cheap meats for a crockpot?"
     answer: "Bone-in chicken drumsticks and thighs first, then pork shoulder. Drumsticks led the meat rows of our July 2026 sample at about 50 grams of protein per dollar, roughly double boneless pork shoulder butt at 25.2, so the internet's favorite cheap crockpot roast isn't actually the budget winner. Pork shoulder still earns a spot because the fat and connective tissue keep it moist over a long cook. Whatever you pick, thaw it first and use a thermometer: USDA lists 165°F for all poultry and 145°F with a 3-minute rest for pork roasts."
   - question: "Can I use frozen meat in the slow cooker?"
@@ -66,12 +66,12 @@ The pot doesn't save you money. The shopping list does. We ranked 49 foods by gr
 
 | Crockpot protein | Price in our July 2026 sample | Protein per dollar | USDA safe minimum internal temperature |
 |---|---|---:|---|
-| Dry pinto beans | $3.97 / 4 lb bag | 97.9 g | Not a meat temp: boil 30 min before slow cooking |
 | Brown lentils (dry) | $1.44 / 16 oz bag | 77.7 g | Not a meat temp |
+| Dry pinto beans | $6.75 / 4 lb bag | 57.6 g | Not a meat temp: boil 30 min before slow cooking |
 | Chicken drumsticks, bone-in | $5.46 / 5 lb bag | 50.3 g | 165°F |
 | Chicken thighs, boneless | $3.22 / lb | 27.7 g | 165°F |
 | Pork shoulder butt roast | $3.14 / lb | 25.2 g | 145°F, then rest 3 minutes |
-| Ground beef, 80/20 | $6.75 / lb | 11.5 g | 160°F |
+| Ground beef, 80/20 | $6.89 / lb | 11.3 g | 160°F |
 
 *Prices and protein-per-dollar figures come from our [49-food ranking](/protein-per-dollar-cheapest-protein-sources/) and its [downloadable CSV](/data/protein-per-dollar-2026.csv). Temperatures come from the [USDA FSIS safe minimum internal temperature chart](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart).*
 
