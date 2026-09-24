@@ -273,6 +273,66 @@ test("protein flagship FAQ quotes the ranking table grams per dollar", () => {
   );
 });
 
+test("high-protein budget guide FAQ quotes its on-page protein table grams", () => {
+  const markdown = read("src/data/articles/high-protein-on-a-budget-complete-guide.md");
+  const faq = markdown.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
+  assert.ok(faq.includes("question:"), "high-protein guide is missing FAQ frontmatter");
+  const header = "| Food | Protein per $1 |";
+  const start = markdown.indexOf(header);
+  assert.notEqual(start, -1, "high-protein guide is missing its protein table");
+  const tableGrams = new Map();
+  for (const line of markdown.slice(start).split(/\r?\n/).slice(2)) {
+    if (!line.startsWith("|")) break;
+    const cells = line
+      .slice(1, -1)
+      .split("|")
+      .map((cell) => cell.trim());
+    const grams = cells[1].replace(/ g$/, "");
+    tableGrams.set(cells[0], grams);
+  }
+
+  const quoted = [
+    "Pinto beans (dry)",
+    "Chicken drumsticks (bone-in)",
+    "Eggs (large)",
+    "Chicken breast (boneless, skinless)",
+    "Canned tuna (chunk light)",
+    "Ground beef (80/20)",
+  ];
+  for (const food of quoted) {
+    const grams = tableGrams.get(food);
+    assert.ok(grams, `missing table row for ${food}`);
+    assert.match(
+      faq,
+      new RegExp(grams.replace(".", "\\.")),
+      `FAQ should quote ${food} at ${grams} g per dollar`,
+    );
+  }
+
+  assert.match(markdown, /between 56\.0 and 97\.9 grams of protein per dollar/);
+  assert.match(faq, /between 56\.0 and 97\.9 grams of protein per dollar/);
+  assert.doesNotMatch(faq, /between 56 and 98/);
+  assert.doesNotMatch(faq, /about 98/);
+  assert.doesNotMatch(faq, /about 34 grams/);
+  assert.doesNotMatch(faq, /about 50 grams/);
+  assert.doesNotMatch(faq, /about 22\.4/);
+
+  const rows = parseCsv(read("public/data/protein-per-dollar-2026.csv"));
+  const csvGrams = new Map(rows.map((row) => [row.food, row.protein_g_per_dollar]));
+  const sharedWithCsv = [
+    ["Chicken drumsticks (bone-in)", "Chicken drumsticks (bone-in)"],
+    ["Eggs (large)", "Eggs (large)"],
+    ["Canned tuna (chunk light)", "Canned tuna (chunk light, in water)"],
+  ];
+  for (const [tableFood, csvFood] of sharedWithCsv) {
+    assert.equal(
+      tableGrams.get(tableFood),
+      csvGrams.get(csvFood),
+      `${tableFood} table grams should still match the CSV before the FAQ quotes them`,
+    );
+  }
+});
+
 test("reusable pull-quote and jump components stay honest buttons and anchors", () => {
   const pullQuote = read("src/components/StudyPullQuote.astro");
   const lead = read("src/components/StudyLead.astro");
