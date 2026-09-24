@@ -225,6 +225,54 @@ test("flagship ranking tables lock food, rank, and grams-per-dollar to the live 
   }
 });
 
+test("protein flagship FAQ quotes the ranking table grams per dollar", () => {
+  const markdown = read(
+    "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
+  );
+  const faq = markdown.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
+  assert.ok(faq.includes("question:"), "protein flagship is missing FAQ frontmatter");
+  const rows = parseCsv(read("public/data/protein-per-dollar-2026.csv"));
+  const grams = new Map(rows.map((row) => [row.food, row.protein_g_per_dollar]));
+  const quoted = [
+    "Whole wheat flour",
+    "Brown lentils (dry)",
+    "Red lentils (dry)",
+    "Peanut butter",
+    "Chicken drumsticks (bone-in)",
+    "Eggs (large)",
+    "Mozzarella (low-moisture part-skim)",
+    "Whole milk",
+    "Chicken thighs (boneless, skinless)",
+    "Rotisserie chicken (whole, cooked)",
+    "Chicken breast (boneless, skinless)",
+    "Tofu (extra firm)",
+    "Ground beef (80/20)",
+    "Bacon",
+  ];
+
+  for (const food of quoted) {
+    const value = grams.get(food);
+    assert.ok(value, `missing CSV row for ${food}`);
+    assert.match(
+      faq,
+      new RegExp(value.replace(".", "\\.")),
+      `FAQ should quote ${food} at ${value} g per dollar`,
+    );
+  }
+
+  assert.match(faq, /10\.0 grams of protein per 100 grams/);
+  assert.match(faq, /22\.5 grams raw/);
+  assert.doesNotMatch(faq, /lands at 51(?!\.)/);
+  assert.doesNotMatch(faq, /whole milk at 29(?!\.)/);
+  assert.doesNotMatch(faq, /mozzarella at 30(?!\.)/);
+  assert.doesNotMatch(faq, /thighs at 28(?!\.)/);
+  assert.match(read("src/pages/[slug].astro"), /"@type": "FAQPage"/);
+  assert.match(
+    read("src/pages/[slug].astro"),
+    /acceptedAnswer:\s*\{\s*"@type": "Answer",\s*text: item\.answer/,
+  );
+});
+
 test("reusable pull-quote and jump components stay honest buttons and anchors", () => {
   const pullQuote = read("src/components/StudyPullQuote.astro");
   const lead = read("src/components/StudyLead.astro");
