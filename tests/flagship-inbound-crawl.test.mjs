@@ -355,6 +355,68 @@ test("data hub names both flagship indexes with hrefs before the dataset table",
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 
+test("homepage, guides, and research each link the beans double-win page once", () => {
+  const doubleWin = "beans-double-win-fiber-protein";
+  assert.equal(INDEX_PRUNE_SLUGS.has(doubleWin), false, doubleWin);
+  const csv = readFileSync(
+    join(process.cwd(), "public", "data", "beans-double-win-fiber-protein-2026.csv"),
+    "utf8",
+  );
+  const [headerLine, ...lines] = csv.trim().split(/\n/);
+  const headers = headerLine.split(",");
+  const valueIndex = headers.indexOf("value");
+  const foodIndex = headers.indexOf("food");
+  const leader = lines
+    .map((line) => {
+      const cells = [];
+      let field = "";
+      let quoted = false;
+      for (const character of line) {
+        if (character === '"') {
+          quoted = !quoted;
+          continue;
+        }
+        if (character === "," && !quoted) {
+          cells.push(field);
+          field = "";
+          continue;
+        }
+        field += character;
+      }
+      cells.push(field);
+      return cells;
+    })
+    .find((cells) => cells[foodIndex] === "Green split peas (dry)");
+  assert.ok(leader, "beans CSV should include green split peas");
+  const combinedGrams = leader[valueIndex];
+  assert.equal(combinedGrams, "144.9");
+  const anchor = new RegExp(
+    `split peas at ${combinedGrams.replace(".", "\\.")} combined grams`,
+  );
+
+  const homepage = pageSource("index.astro");
+  const mainStart = homepage.indexOf("<main");
+  const hero = homepage.indexOf("<HeroSection");
+  assert.ok(mainStart !== -1 && hero > mainStart, "homepage lead should sit above HeroSection");
+  const lead = homepage.slice(mainStart, hero);
+  assert.equal(htmlHrefMatches(lead, doubleWin).length, 1, "homepage lead");
+  assert.equal(htmlHrefMatches(homepage, doubleWin).length, 1, "homepage");
+  assert.match(lead, anchor);
+
+  for (const segments of [
+    ["guides", "index.astro"],
+    ["research", "index.astro"],
+  ]) {
+    const source = pageSource(...segments);
+    assert.equal(
+      htmlHrefMatches(source, doubleWin).length,
+      1,
+      `${segments.join("/")} should link /${doubleWin}/ once`,
+    );
+    assert.match(source, anchor);
+  }
+});
+
 test("research hub intro cites both flagships before the study cards", () => {
   const source = pageSource("research", "index.astro");
   const headerEnd = source.indexOf('id="study-heading"');
