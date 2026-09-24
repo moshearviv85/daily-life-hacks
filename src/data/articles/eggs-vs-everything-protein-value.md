@@ -18,7 +18,7 @@ faq:
   - question: "Are eggs cheaper protein than ground beef?"
     answer: "By a lot. Eggs delivered 34.4 grams of protein per dollar versus 11.3 for 80/20 ground beef and 11.2 for 93/7 in our sample, so eggs bought about three times the protein per dollar. Bacon finished dead last of all 49 foods at 9.4."
   - question: "What foods beat eggs on protein per dollar?"
-    answer: "Sixteen foods in our 49-food sample, almost all from the dry goods aisle: every dried legume (56.0 to 77.7 grams per dollar), whole wheat flour at 96.0, both spaghettis, peanut butter at 50.7, brown rice, oats, barley, and peanuts. The only meat above eggs was bone-in chicken drumsticks at 50.3."
+    answer: "Sixteen foods in the 49-food sample beat eggs at 34.4 grams of protein per dollar. Whole wheat flour leads at 96.0. Every dried legume beats that too, from red lentils at 56.0 to brown lentils at 77.7, including dry pinto beans at 57.6. Whole wheat spaghetti is 53.4 and regular spaghetti is 42.9. Peanut butter is 50.7, bone-in chicken drumsticks 50.3, rolled oats 46.6, dry roasted peanuts 39.8, brown rice 36.6, and pearled barley 36.3. Drumsticks are the only meat above eggs."
 ---
 
 Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, the July 2026 national average, which lands them 17th out of the 49 grocery foods in our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/). That's the whole story in one sentence: eggs are good value, not great value, and everything that beats them lives in the dry goods aisle. Here's the top of the ranking eggs didn't crack:

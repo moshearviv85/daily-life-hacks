@@ -12,15 +12,15 @@ dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "What is the cheapest high protein breakfast?"
-    answer: "Among the 9 staples we scored, rolled oats are the best real-world answer at 46.6 grams of protein per dollar, plus another 35.8 grams of fiber. Peanut butter delivers 50.7 grams of protein per dollar, and eggs 34.4 at $2.19 a dozen. Whole wheat flour technically wins at 96.0, but only if you bake."
+    answer: "Whole wheat flour leads the 9 breakfast staples at 173.8 grams combined per dollar, 96.0 grams of protein plus 77.8 grams of fiber, from a $3.12 five pound bag. Rolled oats are next at 82.4 grams combined, 46.6 grams of protein plus 35.8 grams of fiber, from a $3.36 canister. Peanut butter delivers 50.7 grams of protein per dollar, and eggs 34.4 at $2.19 a dozen. Flour only counts if you bake. Oats are the one you can pour in a pot."
   - question: "Is oatmeal cheaper than eggs for protein?"
     answer: "Yes, in our July 2026 numbers. Rolled oats deliver 46.6 grams of protein per dollar from a $3.36 canister, versus 34.4 grams for eggs at $2.19 a dozen. Oats also add 35.8 grams of fiber per dollar, which eggs can't match. Eggs still win on convenience and on being eggs."
   - question: "Are eggs a good value right now?"
-    answer: "At $2.19 a dozen, the July 2026 national average, eggs score 34.4 grams of protein per dollar. That beats whole milk at 28.5, Greek yogurt at 27.5, and cottage cheese at 26.3, making eggs the strongest animal protein at the breakfast table in this dataset."
+    answer: "At $2.19 a dozen, the July 2026 national average, eggs score 34.4 grams of protein per dollar. That beats whole milk at 28.5 grams per dollar from a $4.31 gallon, Greek yogurt at 27.5, and cottage cheese at 26.3, making eggs the strongest animal protein at the breakfast table in this dataset."
   - question: "Why is whole wheat flour ranked first for breakfast?"
-    answer: "Because a $3.12 five pound bag delivers 96.0 grams of protein and 77.8 grams of fiber per dollar, 173.8 grams combined, more than double the next food on the list. The catch is that flour is an ingredient, not a breakfast, so it only counts if you actually bake pancakes or bread with it."
+    answer: "Because a $3.12 five pound bag delivers 96.0 grams of protein and 77.8 grams of fiber per dollar, 173.8 grams combined. Rolled oats are next at 82.4 grams combined, 46.6 grams of protein plus 35.8 grams of fiber from a $3.36 canister. Flour is an ingredient, not a breakfast, so it only counts if you actually bake pancakes or bread with it."
   - question: "Is fruit a waste of money at breakfast?"
-    answer: "Not a waste, just a different job. Bananas deliver 11.6 grams of fiber per dollar and gala apples 7.3, the bottom of our ranking. Fruit may still earn its place for flavor and everything else it brings, but if you're buying grams of protein and fiber, the oats canister does it for far less."
+    answer: "Not a waste, just a different job. Bananas deliver 11.6 grams of fiber per dollar and gala apples 7.3, the bottom of the ranking. Rolled oats deliver 82.4 grams combined per dollar, 46.6 grams of protein plus 35.8 grams of fiber. Fruit may still earn its place for flavor, but the oats canister buys more protein and fiber per dollar than either one."
 ---
 
 Whole wheat flour is the best breakfast deal in the store, at 96.0 grams of protein and 77.8 grams of fiber per dollar, 173.8 grams combined. The worst deal on the same list is gala apples at 7.3 grams. That's a 23.8x spread inside one grocery run, between two things people put in the same shopping cart without blinking.
