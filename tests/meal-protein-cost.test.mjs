@@ -202,8 +202,6 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   assert.doesNotMatch(beans, /maybe two dollars a plate/);
 
   const highProtein = read("src/data/articles/high-protein-on-a-budget-complete-guide.md");
-  assert.match(highProtein, /dateModified: 2026-09-05/);
-  assert.match(highProtein, /\$9\.43 at the July 2026 study prices \(\$5\.46 plus \$3\.97\)/);
   assert.equal(
     (highProtein.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
     1,
@@ -239,6 +237,44 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   assert.equal(
     (cannedVsDry.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
     1,
+  );
+});
+
+test("high-protein guide starter prices and callout follow the protein CSV", () => {
+  const highProtein = read("src/data/articles/high-protein-on-a-budget-complete-guide.md");
+  const pintos = proteinRow("Pinto beans (dry)");
+  const drums = proteinRow("Chicken drumsticks (bone-in)");
+  const eggs = proteinRow("Eggs (large)");
+  const pair = packageCostUsd(drums) + packageCostUsd(pintos);
+  const trio = pair + packageCostUsd(eggs);
+  const basket =
+    pair +
+    packageCostUsd(eggs, 2) +
+    packageCostUsd(proteinRow("Brown lentils (dry)")) +
+    packageCostUsd(proteinRow("Canned tuna (chunk light, in water)"), 2) +
+    packageCostUsd(proteinRow("Cottage cheese (4%)"));
+  const escapeUsd = (amount) => usd(amount).replaceAll("$", "\\$");
+
+  assert.match(highProtein, /dateModified: 2026-09-24/);
+  assert.match(
+    highProtein,
+    new RegExp(
+      `${escapeUsd(pair)} at the July 2026 study prices \\(${escapeUsd(packageCostUsd(drums))} plus ${escapeUsd(packageCostUsd(pintos))}\\)`,
+    ),
+  );
+  assert.match(highProtein, new RegExp(`reaches about ${escapeUsd(trio)}`));
+  assert.match(highProtein, new RegExp(`\\*\\*Total\\*\\* \\| \\*\\*${escapeUsd(basket)}\\*\\*`));
+  assert.match(
+    MEAL_PROTEIN_COST["high-protein-on-a-budget-complete-guide"].highlight.claim,
+    new RegExp(escapeUsd(packageCostUsd(pintos))),
+  );
+  assert.equal(
+    MEAL_PROTEIN_COST["high-protein-on-a-budget-complete-guide"].highlight.value,
+    `${pintos.protein_g_per_dollar} g vs ${proteinRow("Bacon").protein_g_per_dollar} g`,
+  );
+  assert.doesNotMatch(
+    MEAL_PROTEIN_COST["high-protein-on-a-budget-complete-guide"].highlight.claim,
+    /\$20 backbone/,
   );
 });
 

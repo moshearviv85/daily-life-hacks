@@ -218,7 +218,7 @@ function buildHighProtein() {
     kicker: "Protein cost for this cart",
     highlight: {
       value: `${pintos.protein_g_per_dollar} g vs ${bacon.protein_g_per_dollar} g`,
-      claim: `A dollar of dry pinto beans bought ${pintos.protein_g_per_dollar} grams of protein in the July 2026 sample. A dollar of bacon bought ${bacon.protein_g_per_dollar}. The $20 backbone on this page uses those same package prices.`,
+      claim: `A dollar of dry pinto beans bought ${pintos.protein_g_per_dollar} grams of protein in the July 2026 sample. A dollar of bacon bought ${bacon.protein_g_per_dollar}. The weekly backbone on this page uses that same ${usd(packageCostUsd(pintos))} pinto bag.`,
     },
     disclosure: DISCLOSURE,
     proteinHref: PROTEIN_FLAGSHIP_HREF,

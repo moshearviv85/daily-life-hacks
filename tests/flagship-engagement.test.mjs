@@ -309,28 +309,61 @@ test("high-protein budget guide FAQ quotes its on-page protein table grams", () 
     );
   }
 
-  assert.match(markdown, /between 56\.0 and 97\.9 grams of protein per dollar/);
-  assert.match(faq, /between 56\.0 and 97\.9 grams of protein per dollar/);
+  const rows = parseCsv(read("public/data/protein-per-dollar-2026.csv"));
+  const csvGrams = new Map(rows.map((row) => [row.food, row.protein_g_per_dollar]));
+  const legumes = rows.filter((row) => row.category === "Dried beans & lentils");
+  const legumeValues = legumes.map((row) => Number(row.protein_g_per_dollar));
+  const legumeMin = Math.min(...legumeValues).toFixed(1);
+  const legumeMax = Math.max(...legumeValues).toFixed(1);
+  const legumeRange = `between ${legumeMin} and ${legumeMax} grams of protein per dollar`;
+  assert.match(markdown, new RegExp(legumeRange.replaceAll(".", "\\.")));
+  assert.match(faq, new RegExp(legumeRange.replaceAll(".", "\\.")));
   assert.doesNotMatch(faq, /between 56 and 98/);
+  assert.doesNotMatch(faq, /97\.9/);
   assert.doesNotMatch(faq, /about 98/);
   assert.doesNotMatch(faq, /about 34 grams/);
   assert.doesNotMatch(faq, /about 50 grams/);
   assert.doesNotMatch(faq, /about 22\.4/);
 
-  const rows = parseCsv(read("public/data/protein-per-dollar-2026.csv"));
-  const csvGrams = new Map(rows.map((row) => [row.food, row.protein_g_per_dollar]));
-  const sharedWithCsv = [
-    ["Chicken drumsticks (bone-in)", "Chicken drumsticks (bone-in)"],
-    ["Eggs (large)", "Eggs (large)"],
-    ["Canned tuna (chunk light)", "Canned tuna (chunk light, in water)"],
-  ];
-  for (const [tableFood, csvFood] of sharedWithCsv) {
+  const csvName = {
+    "Rotisserie chicken": "Rotisserie chicken (whole, cooked)",
+    "Canned tuna (chunk light)": "Canned tuna (chunk light, in water)",
+  };
+  const tableValues = [];
+  for (const [tableFood, grams] of tableGrams) {
+    const sourceFood = csvName[tableFood] ?? tableFood;
+    const csvValue = csvGrams.get(sourceFood);
+    assert.ok(csvValue, `no CSV row for table food ${tableFood}`);
     assert.equal(
-      tableGrams.get(tableFood),
-      csvGrams.get(csvFood),
-      `${tableFood} table grams should still match the CSV before the FAQ quotes them`,
+      grams,
+      csvValue,
+      `${tableFood} table grams drifted from protein-per-dollar-2026.csv`,
+    );
+    tableValues.push(Number(csvValue));
+  }
+  for (let index = 1; index < tableValues.length; index += 1) {
+    assert.ok(
+      tableValues[index] <= tableValues[index - 1],
+      "high-protein guide table should stay in descending CSV order",
     );
   }
+
+  const pinto = csvGrams.get("Pinto beans (dry)");
+  const bacon = csvGrams.get("Bacon");
+  const breast = csvGrams.get("Chicken breast (boneless, skinless)");
+  const beef = csvGrams.get("Ground beef (80/20)");
+  assert.match(markdown, new RegExp(`Pinto ${pinto}g vs Bacon ${bacon}g`));
+  assert.match(faq, new RegExp(`dried pinto beans landed at ${pinto}`));
+  assert.match(faq, new RegExp(`chicken breast delivered ${breast}`));
+  assert.match(faq, new RegExp(`ground beef ${beef}`));
+  assert.match(
+    markdown,
+    new RegExp(
+      `\\| Pinto beans \\(dry\\), 4 lb bag \\| \\$${Number(
+        rows.find((row) => row.food === "Pinto beans (dry)").package_price_usd,
+      ).toFixed(2)} \\|`,
+    ),
+  );
 });
 
 test("reusable pull-quote and jump components stay honest buttons and anchors", () => {
