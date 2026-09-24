@@ -100,7 +100,7 @@ If you want exact grams, use a scale. If you don't, these rough portions still b
 
 ## Why beans look "low" until you count the whole meal
 
-Beans bring protein, but they also bring carbs and fiber. They're a meal base, not a protein supplement. And the plate keeps adding: a cup of [cooked white rice](https://fdc.nal.usda.gov/food-details/168878/nutrients) is about 4 more grams on its own.
+Beans bring protein, but they also bring carbs and fiber. Dry pinto beans return 41.7 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), fifth of 53 foods. They're a meal base, not a protein supplement. And the plate keeps adding: a cup of [cooked white rice](https://fdc.nal.usda.gov/food-details/168878/nutrients) is about 4 more grams on its own.
 
 Compare a half cup of beans to a whole chicken breast and the beans look bad. That's not the right comparison. Compare a full bowl to a full bowl. On cost it isn't even close: [lentils versus chicken breast per dollar](/lentils-vs-chicken-breast-protein-cost/) puts a number on it, and our [quality-adjusted protein-per-dollar ranking](/protein-per-dollar-adjusted-for-quality/) weights 25 foods for digestibility, because the cheapest number on a label doesn't automatically do the most work.
 

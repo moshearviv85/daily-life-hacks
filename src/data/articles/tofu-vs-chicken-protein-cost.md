@@ -51,7 +51,7 @@ Compare that with our [lentils vs chicken breast matchup](/lentils-vs-chicken-br
 
 Pretty much, and the soy aisle itself proves it. TVP, the dry crumbles that cook into chili without anyone noticing, delivered 23.4 grams of protein per dollar, nearly level with chicken. Frozen shelled edamame came in at 18.0. Then tofu at 13.6 and tempeh at 13.2. Same bean, four prices, and the more processing and refrigeration involved, the worse the number gets.
 
-Zoom out past soy and the comparison stops being close. Dry brown lentils delivered 77.7 grams of protein per dollar, dry pintos 57.6. A [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) or a pot of [beans and rice](/beans-and-rice-complete-protein-meal/) crushes both foods in this article on cost. If the goal is eating less meat without spending more, legumes are the tool. Tofu losing to chicken tells you about tofu, not about plants.
+Zoom out past soy and the comparison stops being close. Dry brown lentils delivered 77.7 grams of protein per dollar, dry pintos 57.6. A [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) or a pot of [beans and rice](/beans-and-rice-complete-protein-meal/) crushes both foods in this article on cost, and those bags also sit in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), which neither tofu nor chicken can touch. If the goal is eating less meat without spending more, legumes are the tool. Tofu losing to chicken tells you about tofu, not about plants.
 
 ## When is tofu still the right buy?
 

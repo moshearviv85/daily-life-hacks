@@ -113,7 +113,7 @@ Whole wheat flour led our 49-food value ranking at 96.0 grams of protein per dol
 
 Meanwhile cheddar sits high on density at 22.87 grams and returns just 18.1 grams per dollar, because it costs $1.27 per 100 grams. Sardines are dense and pricey. Almonds at 21.15 grams per 100 grams return 14.8 per dollar, which is one of the worst deals in the set.
 
-In this study, the clearest density-and-value overlap is dry legumes, dry roasted peanuts, and peanut butter at 22.21 grams per 100 grams. The full plant-side list is in [the cheapest plant protein ranking](/plant-protein-per-dollar-ranked/), and the shopping version of all of it lives in [our high protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
+In this study, the clearest density-and-value overlap is dry legumes, dry roasted peanuts, and peanut butter at 22.21 grams per 100 grams. Dry green split peas, at 23.12 grams of protein per 100 grams in this table, are also the cook-and-eat leader on the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) at 71.0 grams of fiber per dollar. Density and the other nutrient's price tag agree on that bag. The full plant-side list is in [the cheapest plant protein ranking](/plant-protein-per-dollar-ranked/), and the shopping version of all of it lives in [our high protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
 
 ## Why this 49-food study does not rank servings
 
