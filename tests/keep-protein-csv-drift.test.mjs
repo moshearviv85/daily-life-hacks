@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -277,6 +278,23 @@ test("protein flagship five-dollar caption matches five times the CSV rows", () 
     markdown,
     new RegExp(`Five dollars of dry pinto beans buys ${pintoFive} grams`),
   );
+  const lentilFive = String(
+    Math.round(Number(proteinRow("Brown lentils (dry)").protein_g_per_dollar) * 5),
+  );
+  assert.match(
+    markdown,
+    new RegExp(`from ${lentilFive} grams for dried brown lentils`),
+  );
+  assert.doesNotMatch(markdown, /from 288 grams for dried pinto beans down to/);
   assert.doesNotMatch(markdown, /490 grams/);
   assert.doesNotMatch(markdown, /46 grams for bacon/);
+  const chart = readFileSync(
+    join(root, "public/images/protein-per-dollar-five-dollars.jpg"),
+  );
+  const chartHash = createHash("sha256").update(chart).digest("hex");
+  assert.notEqual(
+    chartHash,
+    "627c211daf0d79f73a9078866b2a3a78e88cf1579062ccbddc997f919da4a683",
+    "five-dollar chart still has the pre-BLS 490g/46g bars",
+  );
 });

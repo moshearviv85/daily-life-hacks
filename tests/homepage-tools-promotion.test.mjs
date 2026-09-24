@@ -2,6 +2,35 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
+function csvCells(line) {
+  const cells = [];
+  let field = "";
+  let quoted = false;
+  for (let index = 0; index < line.length; index += 1) {
+    const character = line[index];
+    if (character === '"') {
+      quoted = !quoted;
+      continue;
+    }
+    if (character === "," && !quoted) {
+      cells.push(field);
+      field = "";
+      continue;
+    }
+    field += character;
+  }
+  cells.push(field);
+  return cells;
+}
+
+function csvRow(csv, food) {
+  const [header, ...lines] = csv.trim().split(/\n/);
+  const headers = csvCells(header);
+  const line = lines.find((row) => csvCells(row)[headers.indexOf("food")] === food);
+  assert.ok(line, `missing CSV row for ${food}`);
+  return Object.fromEntries(headers.map((name, index) => [name, csvCells(line)[index]]));
+}
+
 test("homepage sends research readers to the priced weekly planner", async () => {
   const source = await readFile("src/pages/index.astro", "utf8");
   assert.match(source, /href="\/tools\/grocery-budget-calculator\/"/);
@@ -46,6 +75,55 @@ test("homepage leads with a visible grocery-dollar H1 and flagship study links",
   );
   assert.match(source, /href="\/tools\/grocery-budget-calculator\/"/);
   assert.match(source, /href="\/research\/"/);
+});
+
+test("homepage does not cite the pre-BLS 97.9 protein-per-dollar snapshot", async () => {
+  const source = await readFile("src/pages/index.astro", "utf8");
+  const proteinCsv = await readFile("public/data/protein-per-dollar-2026.csv", "utf8");
+  const fiberCsv = await readFile("public/data/fiber-per-dollar-2026.csv", "utf8");
+  const flour = csvRow(proteinCsv, "Whole wheat flour").protein_g_per_dollar;
+  const lentils = csvRow(proteinCsv, "Brown lentils (dry)").protein_g_per_dollar;
+  const pinto = csvRow(proteinCsv, "Pinto beans (dry)").protein_g_per_dollar;
+  const tempeh = csvRow(proteinCsv, "Tempeh").protein_g_per_dollar;
+  const splitPeas = csvRow(fiberCsv, "Green split peas (dry)").fiber_g_per_dollar;
+
+  assert.equal(pinto, "57.6");
+  assert.equal(flour, "96.0");
+  assert.equal(lentils, "77.7");
+  assert.doesNotMatch(source, /97\.9/);
+  assert.doesNotMatch(source, /about 98 grams of protein/);
+  assert.match(source, new RegExp(`${splitPeas} grams of fiber`));
+  assert.match(source, new RegExp(`${flour} grams of protein`));
+  assert.match(source, new RegExp(`${lentils} grams of protein per dollar`));
+  assert.match(source, new RegExp(`dry pinto beans buy ${pinto}`));
+  assert.match(source, new RegExp(`tempeh buys ${tempeh}`));
+});
+
+test("one-dollar fiber page matches the fiber CSV and drops the 70.8 pinto snapshot", async () => {
+  const article = await readFile("src/data/articles/one-dollar-fiber-what-it-buys.md", "utf8");
+  const derived = await readFile("public/data/one-dollar-fiber-what-it-buys-2026.csv", "utf8");
+  const parent = await readFile("public/data/fiber-per-dollar-2026.csv", "utf8");
+  const [header, ...lines] = derived.trim().split(/\n/);
+  const headers = csvCells(header);
+
+  assert.doesNotMatch(article, /70\.8/);
+  assert.doesNotMatch(article, /\$3\.97/);
+  for (const line of lines) {
+    const row = Object.fromEntries(headers.map((name, index) => [name, csvCells(line)[index]]));
+    const parentRow = csvRow(parent, row.food);
+    assert.equal(parentRow.fiber_g_per_dollar, row.value, row.food);
+    assert.equal(parentRow.package_price_usd, row.package_price_usd, row.food);
+    assert.match(article, new RegExp(`${row.value.replace(".", "\\.")} g`));
+    assert.match(article, new RegExp(`\\$${row.package_price_usd.replace(".", "\\.")}`));
+  }
+
+  const fiberGuide = await readFile(
+    "src/data/articles/how-to-eat-more-fiber-on-a-budget-complete-guide.md",
+    "utf8",
+  );
+  assert.doesNotMatch(fiberGuide, /70\.8/);
+  assert.match(fiberGuide, /41\.7/);
+  assert.match(fiberGuide, /\$0\.96/);
 });
 
 test("recipes index advertises the scaler where people choose a recipe", async () => {

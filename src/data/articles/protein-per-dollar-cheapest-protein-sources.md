@@ -134,7 +134,7 @@ That shortlist is the quick answer. The department-by-department answer is messi
 
 Three everyday questions deserved their own math: [what one dollar of protein buys](/one-dollar-protein-what-it-buys/), whether [eggs are actually cheap protein](/eggs-vs-everything-protein-value/), and which [no-cook proteins](/no-cook-protein-per-dollar/) still earn their shelf space. The same 49 foods, inverted into cents per gram and dollars per pound of protein, live on the [cheapest protein per gram ranking](/cheapest-protein-per-gram/). For meals rather than ingredients, the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/) show what happens when the spreadsheet finally has to become dinner.
 
-![Bar chart comparing how many total grams of protein five dollars buys across ten common foods, from 288 grams for dried pinto beans down to 47 grams for bacon](/images/protein-per-dollar-five-dollars.jpg)
+![Bar chart comparing how many total grams of protein five dollars buys across ten common foods, from 389 grams for dried brown lentils down to 47 grams for bacon, including 288 grams for dried pinto beans](/images/protein-per-dollar-five-dollars.jpg)
 
 Five dollars of dry pinto beans buys 288 grams of protein in this dataset, and five dollars of bacon buys 47.
 
