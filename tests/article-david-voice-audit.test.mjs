@@ -35,7 +35,9 @@ test("all published articles stay clear of stale AI voice markers", async () => 
 
   const failures = [];
   for (const file of files) {
-    const source = await readFile(path.join(articleDir, file), "utf8");
+    const source = (await readFile(path.join(articleDir, file), "utf8"))
+      // A lone em dash in a table cell is a missing-value mark, not prose.
+      .replace(/\| — \|/g, "| |");
     for (const [label, pattern] of staleVoicePatterns) {
       if (pattern.test(source)) failures.push(`${file}: ${label}`);
     }

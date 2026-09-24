@@ -151,6 +151,25 @@ test("breakfast FAQ quotes combined lead figures from its CSV", () => {
     faq,
     /96\.0 grams combined|46\.6 grams combined|34\.4 grams combined|28\.5 grams combined/,
   );
+
+  const highProtein = faq.match(
+    /question: "What is the cheapest high protein breakfast\?"\n\s+answer: "([^"]+)"/,
+  )?.[1];
+  assert.ok(highProtein, "missing cheapest high protein breakfast FAQ");
+  const proteinAt = highProtein.indexOf(`${flour.protein_g_per_dollar} grams of protein per dollar`);
+  const combinedAt = highProtein.indexOf(flourCombined);
+  assert.ok(
+    proteinAt >= 0 && combinedAt > proteinAt,
+    "high-protein FAQ must answer with protein per dollar before the combined sum",
+  );
+  assert.match(highProtein, /separate protein-plus-fiber sum/);
+  assert.match(
+    highProtein,
+    new RegExp(
+      `${escapeRegExp(flourCombined)} grams combined, ${escapeRegExp(flour.protein_g_per_dollar)} grams of protein plus ${escapeRegExp(flour.fiber_g_per_dollar)} grams of fiber`,
+    ),
+  );
+  assert.doesNotMatch(highProtein, /at 173\.8 grams combined per dollar/);
 });
 
 test("eggs FAQ quotes protein lead figures from its CSV", () => {
