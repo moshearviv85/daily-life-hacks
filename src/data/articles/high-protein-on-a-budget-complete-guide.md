@@ -140,7 +140,7 @@ Short version: the pairing is real, the stress about it isn't.
 
 Different plant foods bring different amino acid profiles, which is why beans and grains make such a practical team. But the part people overcomplicate is timing: [MedlinePlus says you don't need to combine them at the same meal](https://medlineplus.gov/ency/article/002465.htm). Eat a varied mix of beans, lentils, soy foods, nuts, seeds, and whole grains across the day. Our [beans and rice complete protein](/beans-and-rice-complete-protein-meal/) page handles the kitchen version of that advice.
 
-If you want the grocery math behind that plate, the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/) rank the combinations by cost instead of asking rice and beans to coast on their reputation. And if the amino acid worry is the thing actually nagging you, we reranked the whole store by [protein per dollar adjusted for quality (DIAAS)](/protein-per-dollar-adjusted-for-quality/); beans held first even after the quality haircut, which is the short answer to whether you should lose sleep over it.
+If you want the grocery math behind that plate, the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/) rank the combinations by cost instead of asking rice and beans to coast on their reputation. And if the amino acid worry is the thing actually nagging you, we reranked the whole store by [protein per dollar adjusted for quality (DIAAS)](/protein-per-dollar-adjusted-for-quality/); bone-in drumsticks led that adjusted list at 50.3 grams, with brown lentils at 49.0, which is the short answer to whether you should lose sleep over it.
 
 ## What does a $23 weekly protein backbone look like?
 

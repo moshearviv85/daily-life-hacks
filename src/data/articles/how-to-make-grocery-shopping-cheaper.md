@@ -86,7 +86,7 @@ Supermarkets charge massive premiums to food brands for eye-level placement. The
 
 When you need oats, pasta, or canned tomatoes, force yourself to look at the bottom shelf or the top shelf. That's where they hide the store-brand items. The ingredients are often nearly identical to the expensive brand at eye level. They're cheaper because they don't fund a Super Bowl ad.
 
-Store brands aren't a personality trait. They're usually the same factory with different ink on the label. Start with dry goods and canned goods, which is where the gap gets silly: [Great Value dry pinto beans buy 97.9 grams of protein per dollar](/how-to-save-money-on-groceries-at-walmart/), and nothing branded on that shelf is close. If you hate a specific store-brand item, swap that one back. Don't pay brand tax on every aisle as a default.
+Store brands aren't a personality trait. They're usually the same factory with different ink on the label. Start with dry goods and canned goods, which is where the gap gets silly: [dry pinto beans buy 57.6 grams of protein per dollar](/protein-per-dollar-cheapest-protein-sources/) from a $6.75 four pound bag in our July 2026 sample, and the branded snack aisle isn't close. If you hate a specific store-brand item, swap that one back. Don't pay brand tax on every aisle as a default.
 
 ## Use the cost-per-ounce sticker like a grown-up
 

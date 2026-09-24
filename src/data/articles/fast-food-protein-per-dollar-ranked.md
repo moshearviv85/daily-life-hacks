@@ -1,6 +1,6 @@
 ---
 title: "Which Fast Food Has the Best Protein per Dollar? 8.4g"
-excerpt: "Chipotle's High Protein Cup hits 8.4g protein per dollar among 30 items at 7 chains. KFC breast is 7.6. Dry pinto beans still beat the winner by almost 12x."
+excerpt: "Chipotle's High Protein Cup hits 8.4g protein per dollar among 30 items at 7 chains. KFC breast is 7.6. Dry pinto beans still beat the winner by about 7x."
 category: "nutrition"
 tags: ["fast food protein per dollar", "cheapest fast food protein", "high protein fast food", "protein on a budget", "grocery data"]
 cluster: "budget-protein"
@@ -8,13 +8,13 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/fast-food-protein-per-dollar-ranked-main.jpg"
 imageAlt: "Overhead spread of fast food on a wood table, including a double cheeseburger, fried chicken, a meatball sub, a cup of chili, and a chicken burrito bowl next to dollar bills and coins"
 date: 2026-07-16
-dateModified: 2026-09-23
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "Which fast food item has the most protein per dollar?"
     answer: "In our July 2026 pricing of 30 items across 7 chains, Chipotle's High Protein Cup wins: 4 ounces of adobo chicken with 32 grams of protein for $3.82, which works out to 8.4 grams per dollar. KFC's Original Recipe breast is second at 7.6, and the KFC 8-piece bucket, chicken only, is third at 7.3. All protein figures come from the chains' own published nutrition data."
   - question: "Is fast food protein cheaper than grocery protein?"
-    answer: "Not even close. Our audited grocery dataset puts dry pinto beans at 97.9 grams of protein per dollar, bone-in chicken drumsticks at 50.3, and large eggs at 34.4. The single best drive-thru deal we found delivers 8.4. That means the cheapest grocery protein beats the best fast-food protein by almost 12 to 1, and even eggs beat it by about 4 to 1."
+    answer: "Not even close. Our audited grocery dataset puts whole wheat flour at 96.0 grams of protein per dollar, dry pinto beans at 57.6, bone-in chicken drumsticks at 50.3, and large eggs at 34.4. The single best drive-thru deal we found delivers 8.4. Flour beats that deal by about 11 to 1, dry pintos by about 7 to 1, and eggs by about 4 to 1."
   - question: "What is the cheapest high-protein fast food order under $3?"
     answer: "Wendy's [Jr. Bacon Cheeseburger](/wendys-protein-per-dollar/) was the standout in our snapshot: 18 grams of protein for $2.89, or 6.2 grams per dollar, the fourth-best ratio in the whole study. Taco Bell's Cheesy Bean and Rice Burrito costs even less at $1.59 with 9 grams, landing at 5.7 grams per dollar. Both prices vary by location, so check the app before you build a plan around them."
   - question: "How much protein is in a KFC 8-piece bucket?"
@@ -23,7 +23,7 @@ faq:
     answer: "Probably not exactly. Fast-food chains do not publish one national price, so every row in our dataset records its price basis: national-average trackers, the chains' own online menus, or documented store snapshots from 2026. Your local number could sit a dollar or two in either direction. The protein figures are steadier, since those come straight from each chain's published nutrition data."
 ---
 
-The best protein deal in the American drive-thru is a cup of plain chicken. Chipotle's High Protein Cup, 4 ounces of adobo chicken for $3.82, delivers 8.4 grams of protein per dollar, and nothing else on any national menu we priced comes close. That's the answer. The rest of this article is how we got it, and why a bag of dry pinto beans still beats that winner by almost 12 to 1.
+The best protein deal in the American drive-thru is a cup of plain chicken. Chipotle's High Protein Cup, 4 ounces of adobo chicken for $3.82, delivers 8.4 grams of protein per dollar, and nothing else on any national menu we priced comes close. That's the answer. The rest of this article is how we got it, and why a bag of dry pinto beans still beats that winner by about 7 to 1.
 
 This is the next spreadsheet in the series. We already ranked [49 grocery foods by protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and priced [a full day of 50 grams of protein](/what-50-grams-of-protein-costs-per-day/), where one McDonald's day cost 16 times the dry-goods version. Readers kept asking the obvious follow-up: fine, but *which* fast food order wastes the least money? So I priced 30 protein-notable items across McDonald's, Chipotle, Taco Bell, Wendy's, Subway, KFC, and Chick-fil-A.
 
@@ -74,7 +74,7 @@ My favorite bad deal is the KFC drumstick. One piece: 12 grams for $3.08, about 
 
 ## So is fast food protein ever worth it?
 
-As protein per dollar? No, and it's not a close race. Dry pinto beans deliver 97.9 grams per dollar, plain grocery drumsticks 50.3, large eggs 34.4. Those three come straight off our list of [what a single dollar of protein buys](/one-dollar-protein-what-it-buys/). The best drive-thru deal in America gets 8.4. Groceries win by almost 12x at the top and by 4x even against eggs, which nobody has ever called a budget hack.
+As protein per dollar? No, and it's not a close race. Whole wheat flour delivers 96.0 grams per dollar, dry pinto beans 57.6, plain grocery drumsticks 50.3, large eggs 34.4. Those come straight off our list of [what a single dollar of protein buys](/one-dollar-protein-what-it-buys/). The best drive-thru deal in America gets 8.4. Groceries win by about 11x at the top, about 7x for the pintos, and by 4x even against eggs, which nobody has ever called a budget hack.
 
 But nobody orders a Crunchwrap for the macros. The honest use of this table is damage control: when the drive-thru is happening anyway, the difference between the best order here and the worst one is almost 4x, and even inside a single chain it runs up to 3x. Order the cup of chicken, the piece of fried chicken, or the small cheeseburger, and skip the steak bowl.
 
