@@ -1,5 +1,5 @@
 ---
-title: "Beans Protein and Fiber per $: Split Peas 144.9g"
+title: "Beans Protein and Fiber per $: Split Peas 144.9g Combined"
 excerpt: "Dry split peas lead this cut at 144.9 combined grams per dollar. Dry pinto beans deliver 57.6g of protein plus 41.7g of fiber, 99.3 grams combined, from a $6.75 four pound bag."
 category: "nutrition"
 tags: ["beans protein and fiber", "protein per dollar", "fiber per dollar", "cheapest beans", "grocery data"]

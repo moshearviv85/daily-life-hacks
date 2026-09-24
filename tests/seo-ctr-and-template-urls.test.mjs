@@ -323,9 +323,9 @@ test("beans double-win title puts the combined grams leader in the SERP", () => 
 
   assert.equal(
     page.title,
-    "Beans Protein and Fiber per $: Split Peas 144.9g",
+    "Beans Protein and Fiber per $: Split Peas 144.9g Combined",
   );
-  assert.equal(page.title.length, 48);
+  assert.equal(page.title.length, 57);
   assert.ok(
     page.title.length <= 60,
     `beans double-win title too long for SERP: ${page.title.length}`,
@@ -338,8 +338,17 @@ test("beans double-win title puts the combined grams leader in the SERP", () => 
     titleLower.indexOf("beans protein and fiber") < titleLower.indexOf("144.9g"),
     "beans double-win title should put the query before the combined leader",
   );
-  assert.match(page.title, /144\.9g/);
+  assert.match(
+    page.title,
+    /144\.9g Combined$/,
+    "144.9g is protein plus fiber, so the SERP title must say Combined next to the number",
+  );
   assert.match(page.title, /Split Peas/);
+  assert.equal(
+    titleLower.includes("77.8"),
+    false,
+    "beans double-win title should not blur the fiber-per-dollar flour ranking",
+  );
   assert.equal(
     /^beans win twice: protein and fiber per dollar, ranked$/.test(titleLower),
     false,
