@@ -1,6 +1,6 @@
 ---
-title: "The Cheapest Animal Protein: 21 Foods Ranked by Cost"
-excerpt: "Chicken drumsticks top 21 animal proteins at 50.3 g per dollar. Eggs hit 34.4, milk 29.1, and bacon trails at 9.2. July 2026 prices."
+title: "Cheapest Animal Protein: Drumsticks 50.3g vs Eggs 34.4g"
+excerpt: "Chicken drumsticks top 21 animal proteins at 50.3 g per dollar. Eggs hit 34.4, milk 28.5, and bacon trails at 9.4. July 2026 prices."
 category: "nutrition"
 tags: ["cheapest animal protein", "animal protein per dollar", "budget protein", "eggs vs meat protein", "grocery data"]
 cluster: "budget-protein"
@@ -8,21 +8,22 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/animal-protein-per-dollar-ranked-main.jpg"
 imageAlt: "A table spread with roasted drumsticks, brown eggs, a glass of milk, canned sardines, and cheese"
 date: 2026-07-13
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "What is the cheapest animal protein?"
-    answer: "Bone-in chicken drumsticks, at 50.3 grams of protein per dollar in our July 2026 ranking of 21 animal foods. That's with 33 percent of the weight already subtracted for bone. Eggs came second at 34.4 grams per dollar, then a block of part-skim mozzarella at 30.1 and whole milk at 29.1."
+    answer: "Bone-in chicken drumsticks, at 50.3 grams of protein per dollar in our July 2026 ranking of 21 animal foods. That's with 33 percent of the weight already subtracted for bone. Eggs came second at 34.4 grams per dollar, then a block of part-skim mozzarella at 30.1 and whole milk at 28.5."
   - question: "Are eggs still a cheap source of protein?"
-    answer: "Yes. At $2.19 a dozen (BLS US average, May 2026), large eggs delivered 34.4 grams of protein per dollar, second only to chicken drumsticks among the 21 animal foods we ranked. No other meat, fish, or dairy item came within striking distance of them except drumsticks at 50.3."
+    answer: "Yes. At $2.19 a dozen (BLS US average, July 2026), large eggs delivered 34.4 grams of protein per dollar, second only to chicken drumsticks among the 21 animal foods we ranked. No other meat, fish, or dairy item came within striking distance of them except drumsticks at 50.3."
   - question: "Is canned tuna a good protein value?"
     answer: "It's the best fish in our ranking. A $0.98 can of chunk light tuna (113 g drained) works out to 22.4 grams of protein per dollar, ahead of canned pink salmon at 21.6, frozen tilapia at 20.9, and sardines at 20.2. All fish trailed eggs and most dairy, though."
   - question: "Is dairy or meat cheaper for protein?"
-    answer: "Dairy holds its own. Mozzarella at 30.1 grams per dollar and whole milk at 29.1 beat every meat cut except bone-in drumsticks at 50.3 and boneless thighs at 27.7. Greek yogurt at 27.5 and cottage cheese at 26.3 also outscored chicken breast at 24.5."
+    answer: "Dairy holds its own. Mozzarella at 30.1 grams per dollar and whole milk at 28.5 beat every meat cut except bone-in drumsticks at 50.3. Boneless thighs are next at 27.7, still under the gallon. Greek yogurt at 27.5 and cottage cheese at 26.3 also outscored chicken breast at 24.6."
   - question: "What is the worst animal protein per dollar?"
-    answer: "Bacon, at 9.2 grams of protein per dollar ($6.71 per pound). Ground beef sits just above it: 11.5 grams per dollar for 80/20 and 11.0 for 93/7. The spread from drumsticks at the top to bacon at the bottom is 5.5x for the same nutrient."
+    answer: "Bacon, at 9.4 grams of protein per dollar ($6.59 per pound). Ground beef sits just above it: 11.3 grams per dollar for 80/20 and 11.2 for 93/7. The spread from drumsticks at the top to bacon at the bottom is 5.4x for the same nutrient."
 ---
 
-The cheapest animal protein in our 21-food ranking is the bone-in chicken drumstick, at 50.3 grams of protein per dollar. Eggs take second at 34.4, a block of mozzarella lands third at 30.1, and bacon props up the bottom at 9.2. Top to bottom, that's a 5.5x spread for the exact same macro, based on USDA data and July 2026 US prices.
+The cheapest animal protein in our 21-food ranking is the bone-in chicken drumstick, at 50.3 grams of protein per dollar. Eggs take second at 34.4, a block of mozzarella lands third at 30.1, and bacon props up the bottom at 9.4. Top to bottom, that's a 5.4x spread for the exact same macro, based on USDA data and July 2026 US prices.
 
 This is the animal-foods cut of our full [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/). Dried beans win the overall contest, but plenty of people want their protein to have had a pulse, so here's every meat, egg, dairy, and fish item from the dataset in one honest lineup.
 
@@ -35,27 +36,27 @@ Here's the top 12 of 21. All values count edible portion only.
 | 1 | Chicken drumsticks (bone-in) | 50.3 g | $5.46 | 5 lb bag |
 | 2 | Eggs (large) | 34.4 g | $2.19 | 1 dozen |
 | 3 | Mozzarella (low-moisture part-skim) | 30.1 g | $3.58 | 16 oz block |
-| 4 | Whole milk | 29.1 g | $4.22 | 1 gallon |
+| 4 | Whole milk | 28.5 g | $4.31 | 1 gallon |
 | 5 | Chicken thighs (boneless, skinless) | 27.7 g | $3.22 | per lb |
 | 6 | Greek yogurt (plain, nonfat) | 27.5 g | $3.36 | 32 oz tub |
 | 7 | Rotisserie chicken (whole, cooked) | 26.7 g | $5.97 | whole bird (36 oz) |
 | 8 | Cottage cheese (4%) | 26.3 g | $2.87 | 24 oz tub |
-| 9 | Whole chicken (raw) | 25.3 g | $2.04 | per lb |
+| 9 | Whole chicken (raw) | 25.6 g | $2.01 | per lb |
 | 10 | Pork shoulder butt roast (boneless) | 25.2 g | $3.14 | per lb |
-| 11 | Chicken breast (boneless, skinless) | 24.5 g | $4.17 | per lb |
-| 12 | Canned tuna (chunk light, in water) | 22.4 g | $0.98 | 5 oz can |
+| 11 | Chicken breast (boneless, skinless) | 24.6 g | $4.16 | per lb |
+| 12 | Pork loin chops (boneless) | 23.0 g | $4.25 | per lb |
 
 Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).
 
 ![Bar chart ranking 21 animal proteins by protein per dollar](/images/animal-protein-per-dollar-ranked-chart.jpg)
 
-Below the table: pork loin chops at 22.3, canned pink salmon at 21.6, frozen tilapia at 20.9, sardines at 20.2, cheddar at 18.2, ground turkey at 15.6, ground beef at 11.5 (80/20) and 11.0 (93/7), and bacon dead last at 9.2.
+Below the table: canned tuna at 22.4, canned pink salmon at 21.6, frozen tilapia at 20.9, sardines at 20.2, cheddar at 18.1, ground turkey at 15.6, ground beef at 11.3 (80/20) and 11.2 (93/7), and bacon dead last at 9.4.
 
 ## Do eggs and dairy really beat most meat?
 
-They do, and this is the part people don't expect. Look at the top of the table again: after drumsticks, the next three spots belong to the dairy case. Eggs at 34.4 grams per dollar, mozzarella at 30.1, whole milk at 29.1. Boneless chicken thighs are the only other meat that cracks that group, at 27.7.
+They do, and this is the part people don't expect. Look at the top of the table again: after drumsticks, the next three spots belong to the dairy case. Eggs at 34.4 grams per dollar, mozzarella at 30.1, whole milk at 28.5. Boneless chicken thighs are the next meat, at 27.7, just under the gallon.
 
-Chicken breast, the default "I'm eating healthy" purchase, sits at 24.5. That means a $2.19 dozen of eggs, a $3.36 tub of Greek yogurt, and a $2.87 tub of cottage cheese all quietly outscore it. Your fridge staples are doing more work than the meat counter, and the [dairy case broken out on its own](/dairy-protein-per-dollar-ranked/) makes that even harder to argue with. Eggs also happen to be the most flexible item on this list; a [loaded egg sandwich](/healthy-egg-sandwich-add-ins-toppings/) or a [savory oatmeal bowl with eggs](/savory-oatmeal-bowls-with-eggs-and-avocado/) turns them into an actual meal instead of a sad snack.
+Chicken breast, the default "I'm eating healthy" purchase, sits at 24.6. That means a $2.19 dozen of eggs, a $3.36 tub of Greek yogurt, and a $2.87 tub of cottage cheese all quietly outscore it. Your fridge staples are doing more work than the meat counter, and the [dairy case broken out on its own](/dairy-protein-per-dollar-ranked/) makes that even harder to argue with. Eggs also happen to be the most flexible item on this list; a [loaded egg sandwich](/healthy-egg-sandwich-add-ins-toppings/) or a [savory oatmeal bowl with eggs](/savory-oatmeal-bowls-with-eggs-and-avocado/) turns them into an actual meal instead of a sad snack.
 
 ## Where does fish land in the ranking?
 
@@ -65,9 +66,9 @@ Notice what that means: the cheapest fish still loses to cottage cheese. Fish ea
 
 ## What's at the bottom, and why?
 
-Ground meat and bacon. Ground turkey (93/7) manages 15.6 grams per dollar at $5.46 for a 1 lb roll. Ground beef comes in at 11.5 for 80/20 and, painfully, 11.0 for the lean 93/7, because the leaner grind costs $8.62 a pound. Bacon closes the list at 9.2 grams per dollar.
+Ground meat and bacon. Ground turkey (93/7) manages 15.6 grams per dollar at $5.46 for a 1 lb roll. Ground beef comes in at 11.3 for 80/20 and, painfully, 11.2 for the lean 93/7, because the leaner grind costs $8.42 a pound. Bacon closes the list at 9.4 grams per dollar.
 
-The pattern is simple: the more processing and marketing between the animal and your cart, the worse the protein math gets. A whole raw chicken at $2.04 per pound scores 25.3; the same species, ground and rolled into a tube, scores 15.6. If you want the butcher counter pulled out and ranked cut by cut, that's [the meat-only per-dollar table](/meat-per-dollar-protein-ranked/).
+The pattern is simple: the more processing and marketing between the animal and your cart, the worse the protein math gets. A whole raw chicken at $2.01 per pound scores 25.6; the same species, ground and rolled into a tube, scores 15.6. If you want the butcher counter pulled out and ranked cut by cut, that's [the meat-only per-dollar table](/meat-per-dollar-protein-ranked/).
 
 ## How do you turn this list into a grocery strategy?
 

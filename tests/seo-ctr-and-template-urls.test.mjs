@@ -504,6 +504,52 @@ test("50-gram protein day title puts the CSV cost range in the SERP", () => {
   assert.match(page.excerpt, /from 82 cents to \$13\.23/);
 });
 
+test("30-gram fiber day title puts the CSV cost range in the SERP", () => {
+  const slug = "what-30-grams-of-fiber-costs-per-day";
+  const page = articleFrontmatter(slug);
+  const raw = readFileSync(join(ROOT, "src/data/articles", `${slug}.md`), "utf8");
+  const titleLower = page.title.toLowerCase();
+  const rows = parseSimpleCsv(
+    readFileSync(join(ROOT, "public/data/fiber-day-cost-2026.csv"), "utf8"),
+  );
+  const totals = new Map();
+  for (const row of rows) {
+    totals.set(row.day, (totals.get(row.day) ?? 0) + Number(row.cost_usd));
+  }
+  const ranked = [...totals.entries()].sort((a, b) => a[1] - b[1]);
+  assert.equal(ranked[0][0], "Day 1: Rock-bottom dry goods");
+  assert.equal(ranked[0][1].toFixed(2), "0.62");
+  assert.equal(ranked.at(-1)[0], "Day 4: Restaurant day");
+  assert.equal(ranked.at(-1)[1].toFixed(2), "14.42");
+
+  assert.equal(page.title, "What 30 Grams of Fiber Costs: $0.62 vs $14.42");
+  assert.equal(page.title.length, 45);
+  assert.ok(page.title.length <= 60, `fiber day title too long: ${page.title.length}`);
+  assert.ok(
+    titleLower.startsWith("what 30 grams of fiber costs"),
+    "fiber day title should lead with what 30 grams of fiber costs",
+  );
+  assert.ok(
+    titleLower.indexOf("$0.62") < titleLower.indexOf("$14.42"),
+    "fiber day title should put the dry-goods day ($0.62) before the restaurant day ($14.42)",
+  );
+  assert.equal(
+    /^what a day of 30 grams of fiber actually costs$/.test(titleLower),
+    false,
+    "fiber day title should not stay on the soft actually-costs SERP",
+  );
+  assert.equal(titleLower.includes("97.9"), false);
+  assert.equal(titleLower.includes("70.8"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has(slug), false);
+  const faq = raw.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
+  assert.match(faq, /62 cents to \$14\.42/);
+  assert.match(faq, /about \$0\.62 in fiber-carrying foods/);
+  assert.match(faq, /around \$14\.42 at typical menu prices/);
+  assert.match(raw, /\*\*31\.9 g\*\* \| \*\*\$0\.62\*\*/);
+  assert.match(raw, /\*\*31\.0 g\*\* \| \*\*\$14\.42\*\*/);
+  assert.doesNotMatch(raw, /97\.9|70\.8/);
+});
+
 test("research hub quality card shows the adjusted-grams CSV leader", () => {
   const source = readFileSync(join(ROOT, "src/pages/research/index.astro"), "utf8");
   assert.match(source, /protein-quality-per-dollar-2026/);
@@ -2343,6 +2389,94 @@ test("meat protein ranking title puts protein-per-dollar grams in the SERP", () 
     false,
     "meat protein ranking title should not stay on the soft chicken-breast SERP",
   );
+});
+
+test("animal protein ranking title and table match the protein-per-dollar CSV", () => {
+  const slug = "animal-protein-per-dollar-ranked";
+  const page = articleFrontmatter(slug);
+  const raw = readFileSync(join(ROOT, "src/data/articles", `${slug}.md`), "utf8");
+  const titleLower = page.title.toLowerCase();
+  const rows = parseSimpleCsv(
+    readFileSync(join(ROOT, "public/data/protein-per-dollar-2026.csv"), "utf8"),
+  );
+  const animals = rows.filter((row) =>
+    ["Meat & poultry", "Eggs & dairy", "Fish (canned & frozen)"].includes(row.category),
+  );
+  assert.equal(animals.length, 21);
+  assert.equal(animals[0].food, "Chicken drumsticks (bone-in)");
+  assert.equal(animals[0].protein_g_per_dollar, "50.3");
+  assert.equal(animals[1].food, "Eggs (large)");
+  assert.equal(animals[1].protein_g_per_dollar, "34.4");
+  assert.equal(animals[3].food, "Whole milk");
+  assert.equal(animals[3].protein_g_per_dollar, "28.5");
+  assert.equal(animals[3].package_price_usd, "4.31");
+  assert.equal(animals[10].food, "Chicken breast (boneless, skinless)");
+  assert.equal(animals[10].protein_g_per_dollar, "24.6");
+  assert.equal(animals[11].food, "Pork loin chops (boneless)");
+  assert.equal(animals[11].protein_g_per_dollar, "23.0");
+  assert.equal(animals.at(-1).food, "Bacon");
+  assert.equal(animals.at(-1).protein_g_per_dollar, "9.4");
+  assert.equal(animals.at(-1).package_price_usd, "6.59");
+
+  assert.equal(
+    page.title,
+    "Cheapest Animal Protein: Drumsticks 50.3g vs Eggs 34.4g",
+  );
+  assert.equal(page.title.length, 55);
+  assert.ok(
+    page.title.length <= 60,
+    `animal protein ranking title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("cheapest animal protein"),
+    "animal protein ranking title should lead with cheapest animal protein",
+  );
+  assert.ok(
+    titleLower.indexOf("50.3g") < titleLower.indexOf("34.4g"),
+    "animal protein ranking title should put drumsticks (50.3g) before eggs (34.4g)",
+  );
+  assert.equal(
+    /^the cheapest animal protein: 21 foods ranked by cost$/.test(titleLower),
+    false,
+    "animal protein ranking title should not stay on the soft ranked-by-cost SERP",
+  );
+  assert.equal(titleLower.includes("97.9"), false);
+  assert.equal(titleLower.includes("70.8"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has(slug), false);
+  assert.match(page.excerpt, /milk 28\.5/);
+  assert.match(page.excerpt, /bacon trails at 9\.4/);
+  assert.doesNotMatch(page.excerpt, /29\.1|9\.2|97\.9|70\.8/);
+
+  for (const row of animals.slice(0, 12)) {
+    const price = Number(row.package_price_usd).toFixed(2);
+    const food = row.food.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    assert.match(
+      raw,
+      new RegExp(`\\| ${food} \\| ${row.protein_g_per_dollar} g \\| \\$${price} \\|`),
+      `${row.food} should show ${row.protein_g_per_dollar} g at $${price}`,
+    );
+  }
+  assert.doesNotMatch(
+    raw,
+    /\| Canned tuna \(chunk light, in water\) \|/,
+    "pork loin at 23.0 g outranks tuna, so tuna should leave the top-12 table",
+  );
+  const faq = raw.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
+  assert.match(faq, /whole milk at 28\.5/);
+  assert.match(faq, /chicken breast at 24\.6/);
+  assert.match(faq, /Bacon, at 9\.4 grams of protein per dollar \(\$6\.59 per pound\)/);
+  assert.match(faq, /11\.3 grams per dollar for 80\/20 and 11\.2 for 93\/7/);
+  assert.match(faq, /spread from drumsticks at the top to bacon at the bottom is 5\.4x/);
+  assert.match(faq, /BLS US average, July 2026/);
+  assert.doesNotMatch(faq, /29\.1|24\.5|9\.2|97\.9|70\.8/);
+  assert.match(raw, /whole milk at 28\.5/);
+  assert.match(raw, /sits at 24\.6/);
+  assert.match(raw, /costs \$8\.42 a pound/);
+  assert.match(raw, /\$2\.01 per pound scores 25\.6/);
+  assert.match(raw, /cheddar at 18\.1/);
+  assert.match(raw, /ground beef at 11\.3 \(80\/20\) and 11\.2 \(93\/7\)/);
+  assert.doesNotMatch(raw, /(?<!\d)(?:29\.1|24\.5|22\.3|18\.2|11\.5|11\.0|25\.3|9\.2)(?!\d)/);
+  assert.doesNotMatch(raw, /97\.9|70\.8|5\.5x/);
 });
 
 test("plant protein ranking title puts protein-per-dollar grams in the SERP", () => {
