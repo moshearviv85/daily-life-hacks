@@ -70,6 +70,15 @@ const requiredLinks = [
   ["healthy-alternatives-potato-chips-snacking", fiberFlagship],
   ["best-high-protein-breads-healthy-sandwiches", proteinFlagship],
   ["best-breakfast-foods-for-sustained-energy", proteinFlagship],
+  ["best-high-fiber-foods-ranked-by-fiber-content", proteinFlagship],
+  ["good-source-of-fiber-label-meaning", proteinFlagship],
+  ["high-fiber-yogurt-parfait-for-breakfast", proteinFlagship],
+  ["oatmeal-vs-grits-fiber-content", proteinFlagship],
+  ["foods-highest-in-protein-per-100-grams", fiberFlagship],
+  ["protein-per-serving-beans-chicken-tofu-compared", fiberFlagship],
+  ["fast-food-protein-per-dollar-ranked", fiberFlagship],
+  ["chicken-thighs-vs-breast-protein-cost", fiberFlagship],
+  ["tofu-vs-chicken-protein-cost", fiberFlagship],
 ];
 
 function articleBody(slug) {

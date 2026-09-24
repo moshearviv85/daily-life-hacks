@@ -74,7 +74,7 @@ My favorite bad deal is the KFC drumstick. One piece: 12 grams for $3.08, about 
 
 ## So is fast food protein ever worth it?
 
-As protein per dollar? No, and it's not a close race. Whole wheat flour delivers 96.0 grams per dollar, dry pinto beans 57.6, plain grocery drumsticks 50.3, large eggs 34.4. Those come straight off our list of [what a single dollar of protein buys](/one-dollar-protein-what-it-buys/). The best drive-thru deal in America gets 8.4. Groceries win by about 11x at the top, about 7x for the pintos, and by 4x even against eggs, which nobody has ever called a budget hack.
+As protein per dollar? No, and it's not a close race. Whole wheat flour delivers 96.0 grams per dollar, dry pinto beans 57.6, plain grocery drumsticks 50.3, large eggs 34.4. Those come straight off our list of [what a single dollar of protein buys](/one-dollar-protein-what-it-buys/). The same dry pintos return 41.7 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), a second spreadsheet no item on this menu is competing in. The best drive-thru deal in America gets 8.4. Groceries win by about 11x at the top, about 7x for the pintos, and by 4x even against eggs, which nobody has ever called a budget hack.
 
 But nobody orders a Crunchwrap for the macros. The honest use of this table is damage control: when the drive-thru is happening anyway, the difference between the best order here and the worst one is almost 4x, and even inside a single chain it runs up to 3x. Order the cup of chicken, the piece of fried chicken, or the small cheeseburger, and skip the steak bowl.
 

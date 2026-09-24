@@ -48,7 +48,7 @@ Those are USDA per-100-gram values scaled by USDA's own cup weights, which aren'
 
 ![Horizontal bar chart of USDA fiber values per cooked cup: rolled and instant oatmeal at 4.0 grams, instant grits at 2.4, white grits at 2.1, yellow grits at 1.6](/images/oatmeal-vs-grits-fiber-chart.jpg)
 
-Against the FDA's [28-gram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) for dietary fiber, a cooked cup of oatmeal covers about 14 percent before you add anything. A cooked cup of regular grits covers about 6 to 9 percent.
+Against the FDA's [28-gram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) for dietary fiber, a cooked cup of oatmeal covers about 14 percent before you add anything. A cooked cup of regular grits covers about 6 to 9 percent. The protein column runs the same direction, just smaller: 5.9 grams in a cooked cup of rolled oats against 2.9 to 4.4 for grits. If the question is grams per dollar instead of per cup, the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) prices those oats against beans, eggs, and chicken.
 
 One warning about dry numbers, because this is where most comparison articles quietly fall apart. USDA's own dry-grits records don't agree with each other: [white enriched grits](https://fdc.nal.usda.gov/food-details/171654/nutrients) list 4.6 grams per 100 grams while [yellow grits](https://fdc.nal.usda.gov/food-details/171670/nutrients) list 1.6. Same product category, triple the spread. The cooked-cup values are far more consistent, so that's the comparison worth trusting.
 
