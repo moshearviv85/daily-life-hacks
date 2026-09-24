@@ -1,54 +1,54 @@
 ---
-title: "Protein for $1: Pinto 97.9g vs Whole Wheat Flour 96.0g"
-excerpt: "One dollar buys 97.9 g of protein as dry pinto beans, 50.3 g as chicken drumsticks, 39.8 g as peanuts. 15 foods ranked at July 2026 prices."
+title: "Protein for $1: Flour 96.0g vs Lentils 77.7g"
+excerpt: "One dollar buys 96.0 g of protein as whole wheat flour, 77.7 g as brown lentils, 50.3 g as chicken drumsticks. 15 foods ranked at July 2026 prices."
 category: "nutrition"
 tags: ["protein per dollar", "cheap protein foods", "budget protein groceries", "cheap high protein foods", "grocery data"]
 image: "/images/one-dollar-protein-what-it-buys-main.jpg"
 imageAlt: "A stack of coins surrounded by dried pinto beans, brown eggs, and a scoop of rolled oats on a wooden table"
 date: 2026-07-13
-dateModified: 2026-07-17
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "What food gives you the most protein for a dollar?"
-    answer: "Dry pinto beans, at 97.9 grams of protein per dollar based on USDA data and July 2026 prices. A $3.97 four pound bag holds roughly 389 grams of protein. Whole wheat flour finished just behind at 96.0 grams per dollar, though that one only counts if you bake."
+    answer: "Whole wheat flour, at 96.0 grams of protein per dollar based on USDA data and July 2026 prices. A $3.12 five pound bag holds roughly 300 grams of protein, though you only collect it if you bake. Dry brown lentils finished second at 77.7 grams per dollar from a $1.44 bag."
   - question: "How much protein does a dollar of chicken buy?"
     answer: "About 50.3 grams if you buy bone-in drumsticks in the 5 pound bag, which was $5.46 in July 2026. That figure already subtracts the bone weight, and it made drumsticks the only meat to crack our top 15 protein-per-dollar foods."
   - question: "Is whole wheat flour really a top protein source?"
-    answer: "Per dollar, yes: 96.0 grams of protein per dollar, second only to dry pinto beans in our sample. The catch is that flour is an ingredient, not dinner. A $3.12 five pound bag holds roughly 300 grams of protein, but you only collect if you actually bake with it."
+    answer: "Per dollar, yes, and it finished first: 96.0 grams of protein per dollar in our sample. The catch is that flour is an ingredient, not dinner. A $3.12 five pound bag holds roughly 300 grams of protein, but you only collect if you actually bake with it."
   - question: "How cheap can a full day of protein get?"
-    answer: "Using the FDA's 50 gram Daily Value as a benchmark rather than a personal target, dry pinto beans at 97.9 grams per dollar could cover it for about $0.51 a day at July 2026 prices. Chicken drumsticks could do it for about a dollar."
+    answer: "Using the FDA's 50 gram Daily Value as a benchmark rather than a personal target, whole wheat flour at 96.0 grams per dollar could cover it for about $0.52 a day at July 2026 prices. Chicken drumsticks could do it for about a dollar."
   - question: "Does whole wheat pasta have more protein per dollar than regular?"
-    answer: "In our sample, yes. Whole wheat spaghetti delivered 53.4 grams of protein per dollar versus 47.7 for regular spaghetti at July 2026 prices, so the whole wheat box was the better protein buy as well as the higher fiber one."
+    answer: "In our sample, yes. Whole wheat spaghetti delivered 53.4 grams of protein per dollar versus 42.9 for regular spaghetti at July 2026 prices, so the whole wheat box was the better protein buy as well as the higher fiber one."
 ---
 
-One dollar buys 97.9 grams of protein if you hand it to the dry pinto beans, nearly two days of the FDA's 50 gram Daily Value from a single dollar bill. Hand that same dollar to dry roasted peanuts, the last-place finisher in this 15-food cut, and you still walk away with 39.8 grams. These are the overachievers: the foods from our full [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) where a buck goes furthest, at July 2026 prices. The matching fiber dollar is [what $1 of fiber buys](/one-dollar-fiber-what-it-buys/).
+One dollar buys 96.0 grams of protein if you hand it to whole wheat flour, nearly two days of the FDA's 50 gram Daily Value from a single dollar bill. Hand that same dollar to white rice, the last-place finisher in this 15-food cut, and you still walk away with 29.4 grams. These are the overachievers: the foods from our full [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) where a buck goes furthest, at July 2026 prices. The matching fiber dollar is [what $1 of fiber buys](/one-dollar-fiber-what-it-buys/).
 
 | Rank | Food | Protein per $1 | Package | Price |
 |---|---|---|---|---|
-| 1 | Pinto beans (dry) | 97.9 g | 4 lb bag | $3.97 |
-| 2 | Whole wheat flour | 96.0 g | 5 lb bag | $3.12 |
-| 3 | Black beans (dry) | 81.0 g | 2 lb bag | $2.42 |
-| 4 | Brown lentils (dry) | 77.7 g | 16 oz bag | $1.44 |
-| 5 | Navy beans (dry) | 75.9 g | 2 lb bag | $2.67 |
-| 6 | Green split peas (dry) | 73.9 g | 16 oz bag | $1.42 |
+| 1 | Whole wheat flour | 96.0 g | 5 lb bag | $3.12 |
+| 2 | Brown lentils (dry) | 77.7 g | 16 oz bag | $1.44 |
+| 3 | Green split peas (dry) | 73.9 g | 16 oz bag | $1.42 |
+| 4 | Navy beans (dry) | 59.9 g | 2 lb bag | $3.38 |
+| 5 | Black beans (dry) | 58.0 g | 2 lb bag | $3.38 |
+| 6 | Pinto beans (dry) | 57.6 g | 4 lb bag | $6.75 |
 | 7 | Chickpeas (dry) | 56.7 g | 16 oz bag | $1.64 |
 | 8 | Red lentils (dry) | 56.0 g | 16 oz bag | $1.94 |
 | 9 | Whole wheat spaghetti | 53.4 g | 16 oz box | $1.18 |
 | 10 | Peanut butter | 50.7 g | 40 oz jar | $4.97 |
 | 11 | Chicken drumsticks (bone-in) | 50.3 g | 5 lb bag | $5.46 |
-| 12 | White rice (long grain, dry) | 48.0 g | 5 lb bag | $3.37 |
+| 12 | Old-fashioned rolled oats | 46.6 g | 42 oz canister | $3.36 |
 
 ![Bar chart of protein grams per single dollar across 15 foods](/images/one-dollar-protein-what-it-buys-chart.jpg)
 
 *Source: USDA FoodData Central + single-store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 
-Three more foods round out the 15: regular spaghetti at 47.7 grams per dollar, old-fashioned rolled oats at 46.6, and dry roasted peanuts at 39.8.
+Three more foods round out the 15: regular spaghetti at 42.9 grams per dollar, dry roasted peanuts at 39.8, and white rice at 29.4.
 
 ## How much protein can one dollar actually buy?
 
-Somewhere between 39.8 and 97.9 grams, if you shop from this list. For scale, the FDA's Daily Value for protein is 50 grams, and it's a labeling benchmark, not a prescription. Eleven of these 15 foods clear that entire benchmark on a single dollar.
+Somewhere between 29.4 and 96.0 grams, if you shop from this list. For scale, the FDA's Daily Value for protein is 50 grams, and it's a labeling benchmark, not a prescription. Eleven of these 15 foods clear that entire benchmark on a single dollar.
 
-The dollar works hardest in the dry goods aisle, which is why [the plant-only cut of this ranking](/plant-protein-per-dollar-ranked/) reads almost exactly like the top of this table. Beans and rice together are the oldest budget meal on the planet for a reason: legumes and grains complement each other's amino acid profiles, and both sides of the plate cost almost nothing. A pot of [beans and rice](/beans-and-rice-complete-protein-meal/) combines pintos at 97.9 grams per dollar with white rice at 48.0, which is about as efficient as a grocery dollar gets.
+The dollar works hardest in the dry goods aisle, which is why [the plant-only cut of this ranking](/plant-protein-per-dollar-ranked/) reads almost exactly like the legume rows of this table. Beans and rice together are the oldest budget meal on the planet for a reason: legumes and grains complement each other's amino acid profiles, and both sides of the plate cost almost nothing. A pot of [beans and rice](/beans-and-rice-complete-protein-meal/) combines pintos at 57.6 grams per dollar with white rice at 29.4, which is still a cheap dinner, just not the top of this list anymore.
 
 ## Is any meat actually competitive here?
 
@@ -58,13 +58,13 @@ If drumsticks feel like a hassle, the one-pot route hides the effort: an [easy o
 
 ## Which pantry staples are secretly protein deals?
 
-Whole wheat flour is the quiet number two at 96.0 grams per dollar. A $3.12 five pound bag holds roughly 300 grams of protein, which nobody thinks about because flour doesn't get a spot on protein lists. It only pays out if you bake, but a loaf of [homemade sandwich bread](/easy-sandwich-bread-recipe-beginners/) collects the dividend, and it beats anything at the bakery counter on price.
+Whole wheat flour is number one at 96.0 grams per dollar. A $3.12 five pound bag holds roughly 300 grams of protein, which nobody thinks about because flour doesn't get a spot on protein lists. It only pays out if you bake, but a loaf of [homemade sandwich bread](/easy-sandwich-bread-recipe-beginners/) collects the dividend, and it beats anything at the bakery counter on price.
 
-Oats belong in the same conversation at 46.6 grams per dollar, about 157 grams of protein in the $3.36 canister, and that canister is the best actual breakfast in [our ranking of breakfast staples](/breakfast-staples-per-dollar/), beaten only by the flour again. If sweet oatmeal bores you, [savory oatmeal bowls](/savory-oatmeal-bowls-with-eggs-and-avocado/) handle oats like the grain they are instead of a dessert delivery system. And in the pasta aisle, whole wheat spaghetti (53.4) outscores regular (47.7), so the slightly darker box is also the better protein buy.
+Oats belong in the same conversation at 46.6 grams per dollar, about 157 grams of protein in the $3.36 canister, and that canister is the best actual breakfast in [our ranking of breakfast staples](/breakfast-staples-per-dollar/), beaten only by the flour again. If sweet oatmeal bores you, [savory oatmeal bowls](/savory-oatmeal-bowls-with-eggs-and-avocado/) handle oats like the grain they are instead of a dessert delivery system. And in the pasta aisle, whole wheat spaghetti (53.4) outscores regular (42.9), so the slightly darker box is also the better protein buy.
 
 ## What does a full day of protein cost at these prices?
 
-Take the 50 gram Daily Value as a yardstick. Covered entirely by dry pinto beans, it costs about $0.51 a day. Covered by drumsticks, about a dollar. Nobody eats a single food all day, but the yardstick shows how low the floor sits when you build meals around this list; we ran the fuller version of that math in [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/). At the other end, the [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) shows the best drive-thru option topping out at 8.4 grams per dollar. Convenience has apparently hired a very confident accountant.
+Take the 50 gram Daily Value as a yardstick. Covered entirely by whole wheat flour, it costs about $0.52 a day. Covered by drumsticks, about a dollar. Nobody eats a single food all day, but the yardstick shows how low the floor sits when you build meals around this list; we ran the fuller version of that math in [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/). At the other end, the [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) shows the best drive-thru option topping out at 8.4 grams per dollar. Convenience has apparently hired a very confident accountant.
 
 The bigger lesson from the whole dataset is that price and protein aren't strangers, they're just filed in different aisles. Test the foods you already buy in the [protein and fiber value planner](/tools/fiber-per-dollar-calculator/), then use the [weekly food-cost planner](/tools/grocery-budget-calculator/) to scale our audited 50-gram days for your household. For the shopping and cooking system around those numbers, the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) is the place to start.
 

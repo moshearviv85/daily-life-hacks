@@ -1,37 +1,37 @@
 ---
-title: "Cheapest Plant Protein: Pinto 97.9g vs Black Beans 81.0g"
-excerpt: "Dry pinto beans lead 18 plant proteins at 97.9 g of protein per dollar. Tofu and tempeh sit at the bottom. Full ranking with July 2026 prices."
+title: "Cheapest Plant Protein: Lentils 77.7g vs Split Peas 73.9g"
+excerpt: "Dry brown lentils lead 18 plant proteins at 77.7 g of protein per dollar. Tofu and tempeh sit at the bottom. Full ranking with July 2026 prices."
 category: "nutrition"
 tags: ["cheapest plant protein", "plant protein per dollar", "vegan protein on a budget", "budget plant based protein", "grocery data"]
 image: "/images/plant-protein-per-dollar-ranked-main.jpg"
 imageAlt: "Ceramic bowls of pinto beans, black beans, red lentils, and chickpeas with a block of tofu on a cutting board"
 date: 2026-07-13
-dateModified: 2026-07-30
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "What is the cheapest plant-based protein?"
-    answer: "In our 18-food sample, dry pinto beans came out on top at 97.9 grams of protein per dollar, using USDA data and July 2026 prices. A $3.97 four pound bag holds roughly 389 grams of protein. Dry black beans (81.0), brown lentils (77.7), navy beans (75.9), and green split peas (73.9) round out the top five."
+    answer: "In our 18-food sample, dry brown lentils came out on top at 77.7 grams of protein per dollar, using USDA data and July 2026 prices. A $1.44 sixteen ounce bag holds roughly 112 grams of protein. Green split peas (73.9), navy beans (59.9), black beans (58.0), and pinto beans (57.6) round out the top five."
   - question: "Is tofu a cheap protein source?"
-    answer: "Not per dollar. Extra firm tofu delivered about 13.6 grams of protein per dollar in our July 2026 sample, and tempeh came in at 13.2, both at the bottom of the 18 plant foods we ranked. Dry pinto beans delivered about seven times more protein for the same money. Tofu may still earn a spot in your rotation for texture and convenience; it just isn't the bargain people assume."
+    answer: "Not per dollar. Extra firm tofu delivered about 13.6 grams of protein per dollar in our July 2026 sample, and tempeh came in at 13.2, both at the bottom of the 18 plant foods we ranked. Dry brown lentils delivered about six times more protein for the same money. Tofu may still earn a spot in your rotation for texture and convenience; it just isn't the bargain people assume."
   - question: "Are dried beans cheaper than canned beans for protein?"
-    answer: "Yes, by a wide margin. Dry black beans delivered 81.0 grams of protein per dollar in our sample, while canned black beans delivered 30.1. That's roughly 2.7 times more protein for the same money, in exchange for cooking them yourself."
+    answer: "Yes, though the gap is smaller than it used to look. Dry black beans delivered 58.0 grams of protein per dollar in our sample, while canned black beans delivered 30.1. That's about 1.9 times more protein for the same money, in exchange for cooking them yourself."
   - question: "Is peanut butter a good source of protein per dollar?"
     answer: "It's the best non-legume plant source we found. At $4.97 for a 40 ounce jar, peanut butter delivered about 50.7 grams of protein per dollar, which beat every soy food in the sample. Dry roasted peanuts followed at 39.8 grams per dollar."
   - question: "How much protein is in a bag of dried pinto beans?"
-    answer: "A $3.97 four pound bag holds roughly 389 grams of protein, based on USDA figures. That's almost eight times the FDA's 50 gram Daily Value, which is a labeling benchmark rather than a personal target, from one bag that keeps for ages in the pantry."
+    answer: "A $6.75 four pound bag holds roughly 389 grams of protein, based on USDA figures. That's almost eight times the FDA's 50 gram Daily Value, which is a labeling benchmark rather than a personal target, from one bag that keeps for ages in the pantry. Brown lentils are the better protein-per-dollar buy in this sample, at 77.7 grams per dollar from a $1.44 bag."
 ---
 
-Dry pinto beans are the cheapest plant protein at the grocery store, delivering 97.9 grams of protein per dollar based on USDA data and July 2026 prices. Tempeh, the food that sits in the refrigerated case with "protein" printed confidently on the label, finished last in our 18-food sample at 13.2 grams per dollar. That's a 7.4x spread inside the same category, and the foods marketed hardest as plant protein are the ones stuck at the bottom.
+Dry brown lentils are the cheapest plant protein at the grocery store, delivering 77.7 grams of protein per dollar based on USDA data and July 2026 prices. Tempeh, the food that sits in the refrigerated case with "protein" printed confidently on the label, finished last in our 18-food sample at 13.2 grams per dollar. That's a 5.9x spread inside the same category, and the foods marketed hardest as plant protein are the ones stuck at the bottom.
 
 This ranking is the plant-only cut of our full [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), which scored the whole store, meat counter included. The [animal side of that ranking](/animal-protein-per-dollar-ranked/) runs separately, and its winner, bone-in chicken drumsticks at 50.3 grams per dollar, still trails all seven of the dried legumes below. Here's how the top 12 plant sources shake out:
 
 | Rank | Food | Protein per $1 | Package | Price |
 |---|---|---|---|---|
-| 1 | Pinto beans (dry) | 97.9 g | 4 lb bag | $3.97 |
-| 2 | Black beans (dry) | 81.0 g | 2 lb bag | $2.42 |
-| 3 | Brown lentils (dry) | 77.7 g | 16 oz bag | $1.44 |
-| 4 | Navy beans (dry) | 75.9 g | 2 lb bag | $2.67 |
-| 5 | Green split peas (dry) | 73.9 g | 16 oz bag | $1.42 |
+| 1 | Brown lentils (dry) | 77.7 g | 16 oz bag | $1.44 |
+| 2 | Green split peas (dry) | 73.9 g | 16 oz bag | $1.42 |
+| 3 | Navy beans (dry) | 59.9 g | 2 lb bag | $3.38 |
+| 4 | Black beans (dry) | 58.0 g | 2 lb bag | $3.38 |
+| 5 | Pinto beans (dry) | 57.6 g | 4 lb bag | $6.75 |
 | 6 | Chickpeas (dry) | 56.7 g | 16 oz bag | $1.64 |
 | 7 | Red lentils (dry) | 56.0 g | 16 oz bag | $1.94 |
 | 8 | Peanut butter | 50.7 g | 40 oz jar | $4.97 |
@@ -48,7 +48,7 @@ The six foods below the cutoff, in order: canned kidney beans at 23.4 grams per 
 
 ## What's the cheapest plant-based protein?
 
-Dried legumes, and it isn't close. The top seven spots all belong to the dry goods aisle, running from red lentils at 56.0 grams per dollar up to pinto beans at 97.9. One $3.97 bag of pintos holds roughly 389 grams of protein, almost eight times the FDA's 50 gram Daily Value, and it'll wait patiently in your pantry until you're ready. That same bag is carrying 70.8 grams of [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) alongside the protein, which is how beans end up taking [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/) as well.
+Dried legumes, and it isn't close. The top seven spots all belong to the dry goods aisle, running from red lentils at 56.0 grams per dollar up to brown lentils at 77.7. One $1.44 bag of brown lentils holds roughly 112 grams of protein, a bit more than twice the FDA's 50 gram Daily Value, and it'll wait patiently in your pantry until you're ready. A $6.75 bag of pintos still holds roughly 389 grams, and that same bag is carrying 41.7 grams of [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) alongside the protein. Split peas, not pintos, take [the combined protein-and-fiber ranking](/beans-double-win-fiber-protein/).
 
 Lentils are a practical starting point for anyone who finds dry beans intimidating, because red lentils skip the soak entirely and melt into whatever you're cooking. A pot of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) is the easiest way to cash in that 56.0 grams per dollar, and [split pea soup](/split-pea-soup-recipe-high-fiber/) runs the same play with split peas at 73.9.
 
@@ -60,7 +60,7 @@ Tempeh tells the same story at $3.48 for an 8 ounce pack. TVP lands at 23.4 gram
 
 ## Are canned beans a decent middle ground?
 
-Decent, yes. A $0.88 can of black beans delivers 30.1 grams of protein per dollar, which more than doubles tofu and beats every nut here except peanuts. Canned kidney beans (23.4) and canned chickpeas (22.0) trail behind. Set that against dry black beans at 81.0 and you can see exactly what the can charges you; we broke that gap down in [canned vs dry beans](/canned-vs-dry-beans-cost/). But on a night when [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) need to hit the table before anyone starts negotiating for cereal, the can earns its keep.
+Decent, yes. A $0.88 can of black beans delivers 30.1 grams of protein per dollar, which more than doubles tofu and beats every nut here except peanuts. Canned kidney beans (23.4) and canned chickpeas (22.0) trail behind. Set that against dry black beans at 58.0 and you can see exactly what the can charges you; we broke that gap down in [canned vs dry beans](/canned-vs-dry-beans-cost/). But on a night when [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) need to hit the table before anyone starts negotiating for cereal, the can earns its keep.
 
 ## Is peanut butter actually a good protein buy?
 

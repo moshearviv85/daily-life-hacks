@@ -288,7 +288,7 @@ test("canned vs dry beans title matches cost query and on-page protein-per-dolla
   assert.match(beans.title, /\bvs\b/i);
   assert.match(beans.title, /\bdry\b/i);
   assert.match(beans.title, /[Cc]ost/);
-  assert.match(beans.title, /97\.9g/);
+  assert.match(beans.title, /77\.7g/);
   assert.match(beans.title, /22g/);
   assert.ok(
     titleLower.indexOf("canned") < titleLower.indexOf("vs"),
@@ -305,10 +305,10 @@ test("canned vs dry beans title matches cost query and on-page protein-per-dolla
   );
 
   assert.match(beans.excerpt, /[Cc]anned vs dry beans cost/);
-  assert.match(beans.excerpt, /97\.9g/);
+  assert.match(beans.excerpt, /77\.7g/);
   assert.match(beans.excerpt, /22g/);
   assert.ok(
-    excerptLower.indexOf("canned vs dry beans cost") < excerptLower.indexOf("97.9g"),
+    excerptLower.indexOf("canned vs dry beans cost") < excerptLower.indexOf("77.7g"),
     "beans meta should put the cost query before the protein-per-dollar numbers",
   );
 });
@@ -319,7 +319,7 @@ test("ground beef vs beans title puts protein-per-dollar grams in the SERP", () 
 
   assert.equal(
     page.title,
-    "Ground Beef vs Beans: 11.5g vs 97.9g Protein per Dollar",
+    "Ground Beef vs Beans: 11.3g vs 57.6g Protein per Dollar",
   );
   assert.equal(page.title.length, 55);
   assert.ok(
@@ -331,11 +331,11 @@ test("ground beef vs beans title puts protein-per-dollar grams in the SERP", () 
     "beef vs beans title should lead with ground beef vs beans",
   );
   assert.ok(
-    titleLower.indexOf("11.5g") < titleLower.indexOf("97.9g"),
-    "beef vs beans title should put ground beef (11.5g) before dry pinto beans (97.9g)",
+    titleLower.indexOf("11.3g") < titleLower.indexOf("57.6g"),
+    "beef vs beans title should put ground beef (11.3g) before dry pinto beans (57.6g)",
   );
-  assert.match(page.title, /11\.5g/);
-  assert.match(page.title, /97\.9g/);
+  assert.match(page.title, /11\.3g/);
+  assert.match(page.title, /57\.6g/);
   assert.match(page.title, /Protein per Dollar/);
   assert.equal(
     /^ground beef vs beans: which is cheaper protein\?$/.test(titleLower),
@@ -1904,7 +1904,7 @@ test("lentils vs chicken breast title puts protein-per-dollar grams in the SERP"
 
   assert.equal(
     page.title,
-    "Lentils vs Chicken Breast: 77.7g vs 24.5g Protein per Dollar",
+    "Lentils vs Chicken Breast: 77.7g vs 24.6g Protein per Dollar",
   );
   assert.equal(page.title.length, 60);
   assert.ok(
@@ -1916,11 +1916,11 @@ test("lentils vs chicken breast title puts protein-per-dollar grams in the SERP"
     "lentils vs chicken title should lead with lentils vs chicken breast",
   );
   assert.ok(
-    titleLower.indexOf("77.7g") < titleLower.indexOf("24.5g"),
-    "lentils vs chicken title should put dry brown lentils (77.7g) before chicken breast (24.5g)",
+    titleLower.indexOf("77.7g") < titleLower.indexOf("24.6g"),
+    "lentils vs chicken title should put dry brown lentils (77.7g) before chicken breast (24.6g)",
   );
   assert.match(page.title, /77\.7g/);
-  assert.match(page.title, /24\.5g/);
+  assert.match(page.title, /24\.6g/);
   assert.match(page.title, /Protein per Dollar/);
   assert.equal(
     /^lentils vs chicken breast: which is cheaper protein\?$/.test(titleLower),
@@ -1997,7 +1997,7 @@ test("tofu vs chicken title puts protein-per-dollar grams in the SERP", () => {
 
   assert.equal(
     page.title,
-    "Tofu vs Chicken: 13.6g vs 24.5g Protein per Dollar",
+    "Tofu vs Chicken: 13.6g vs 24.6g Protein per Dollar",
   );
   assert.equal(page.title.length, 50);
   assert.ok(
@@ -2009,11 +2009,11 @@ test("tofu vs chicken title puts protein-per-dollar grams in the SERP", () => {
     "tofu vs chicken title should lead with tofu vs chicken",
   );
   assert.ok(
-    titleLower.indexOf("13.6g") < titleLower.indexOf("24.5g"),
-    "tofu vs chicken title should put extra firm tofu (13.6g) before chicken breast (24.5g)",
+    titleLower.indexOf("13.6g") < titleLower.indexOf("24.6g"),
+    "tofu vs chicken title should put extra firm tofu (13.6g) before chicken breast (24.6g)",
   );
   assert.match(page.title, /13\.6g/);
-  assert.match(page.title, /24\.5g/);
+  assert.match(page.title, /24\.6g/);
   assert.match(page.title, /Protein per Dollar/);
   assert.equal(
     /^tofu vs chicken: which is cheaper protein\?$/.test(titleLower),
@@ -2028,7 +2028,7 @@ test("chicken thighs vs breast title puts protein-per-dollar grams in the SERP",
 
   assert.equal(
     page.title,
-    "Chicken Thighs vs Breast: 50.3g vs 24.5g Protein per Dollar",
+    "Chicken Thighs vs Breast: 50.3g vs 24.6g Protein per Dollar",
   );
   assert.equal(page.title.length, 59);
   assert.ok(
@@ -2040,11 +2040,11 @@ test("chicken thighs vs breast title puts protein-per-dollar grams in the SERP",
     "chicken thighs vs breast title should lead with chicken thighs vs breast",
   );
   assert.ok(
-    titleLower.indexOf("50.3g") < titleLower.indexOf("24.5g"),
-    "chicken thighs vs breast title should put drumsticks (50.3g) before breast (24.5g)",
+    titleLower.indexOf("50.3g") < titleLower.indexOf("24.6g"),
+    "chicken thighs vs breast title should put drumsticks (50.3g) before breast (24.6g)",
   );
   assert.match(page.title, /50\.3g/);
-  assert.match(page.title, /24\.5g/);
+  assert.match(page.title, /24\.6g/);
   assert.match(page.title, /Protein per Dollar/);
   assert.equal(
     /^chicken thighs vs breast: which is cheaper protein\?$/.test(titleLower),
@@ -2090,7 +2090,7 @@ test("dairy protein ranking title puts protein-per-dollar grams in the SERP", ()
 
   assert.equal(
     page.title,
-    "Cheapest Dairy Protein: Milk 29.1g vs Yogurt 27.5g per $",
+    "Cheapest Dairy Protein: Milk 28.5g vs Yogurt 27.5g per $",
   );
   assert.equal(page.title.length, 56);
   assert.ok(
@@ -2102,10 +2102,10 @@ test("dairy protein ranking title puts protein-per-dollar grams in the SERP", ()
     "dairy protein ranking title should lead with cheapest dairy protein",
   );
   assert.ok(
-    titleLower.indexOf("29.1g") < titleLower.indexOf("27.5g"),
-    "dairy protein ranking title should put whole milk (29.1g) before Greek yogurt (27.5g)",
+    titleLower.indexOf("28.5g") < titleLower.indexOf("27.5g"),
+    "dairy protein ranking title should put whole milk (28.5g) before Greek yogurt (27.5g)",
   );
-  assert.match(page.title, /29\.1g/);
+  assert.match(page.title, /28\.5g/);
   assert.match(page.title, /27\.5g/);
   assert.match(page.title, /per \$/);
   assert.equal(
@@ -2121,7 +2121,7 @@ test("meat protein ranking title puts protein-per-dollar grams in the SERP", () 
 
   assert.equal(
     page.title,
-    "Cheapest Meat Protein: Drumsticks 50.3g vs Breast 24.5g",
+    "Cheapest Meat Protein: Drumsticks 50.3g vs Breast 24.6g",
   );
   assert.equal(page.title.length, 55);
   assert.ok(
@@ -2133,11 +2133,11 @@ test("meat protein ranking title puts protein-per-dollar grams in the SERP", () 
     "meat protein ranking title should lead with cheapest meat protein",
   );
   assert.ok(
-    titleLower.indexOf("50.3g") < titleLower.indexOf("24.5g"),
-    "meat protein ranking title should put drumsticks (50.3g) before chicken breast (24.5g)",
+    titleLower.indexOf("50.3g") < titleLower.indexOf("24.6g"),
+    "meat protein ranking title should put drumsticks (50.3g) before chicken breast (24.6g)",
   );
   assert.match(page.title, /50\.3g/);
-  assert.match(page.title, /24\.5g/);
+  assert.match(page.title, /24\.6g/);
   assert.equal(
     /^the cheapest meat for protein \(it isn't chicken breast\)$/.test(titleLower),
     false,
@@ -2151,9 +2151,9 @@ test("plant protein ranking title puts protein-per-dollar grams in the SERP", ()
 
   assert.equal(
     page.title,
-    "Cheapest Plant Protein: Pinto 97.9g vs Black Beans 81.0g",
+    "Cheapest Plant Protein: Lentils 77.7g vs Split Peas 73.9g",
   );
-  assert.equal(page.title.length, 56);
+  assert.equal(page.title.length, 57);
   assert.ok(
     page.title.length <= 60,
     `plant protein ranking title should be ≤60 chars, got ${page.title.length}`,
@@ -2163,11 +2163,11 @@ test("plant protein ranking title puts protein-per-dollar grams in the SERP", ()
     "plant protein ranking title should lead with cheapest plant protein",
   );
   assert.ok(
-    titleLower.indexOf("97.9g") < titleLower.indexOf("81.0g"),
-    "plant protein ranking title should put dry pinto beans (97.9g) before dry black beans (81.0g)",
+    titleLower.indexOf("77.7g") < titleLower.indexOf("73.9g"),
+    "plant protein ranking title should put dry brown lentils (77.7g) before green split peas (73.9g)",
   );
-  assert.match(page.title, /97\.9g/);
-  assert.match(page.title, /81\.0g/);
+  assert.match(page.title, /77\.7g/);
+  assert.match(page.title, /73\.9g/);
   assert.equal(
     /^the cheapest plant protein: 18 sources ranked$/.test(titleLower),
     false,
@@ -2181,9 +2181,9 @@ test("complete protein pairs title puts rice-and-beans grams per dollar in the S
 
   assert.equal(
     page.title,
-    "Cheapest Complete Protein: Rice & Beans 67.2g per Dollar",
+    "Cheapest Complete Protein: Lentils & Flour 86.8g per Dollar",
   );
-  assert.equal(page.title.length, 56);
+  assert.equal(page.title.length, 59);
   assert.ok(
     page.title.length <= 60,
     `complete protein pairs title should be ≤60 chars, got ${page.title.length}`,
@@ -2192,7 +2192,7 @@ test("complete protein pairs title puts rice-and-beans grams per dollar in the S
     titleLower.startsWith("cheapest complete protein"),
     "complete protein pairs title should lead with cheapest complete protein",
   );
-  assert.match(page.title, /67\.2g/);
+  assert.match(page.title, /86\.8g/);
   assert.match(page.title, /per Dollar/);
   assert.equal(
     /^the cheapest complete protein: rice and beans math$/.test(titleLower),
@@ -2239,9 +2239,9 @@ test("one-dollar protein title puts protein grams per dollar in the SERP", () =>
 
   assert.equal(
     page.title,
-    "Protein for $1: Pinto 97.9g vs Whole Wheat Flour 96.0g",
+    "Protein for $1: Flour 96.0g vs Lentils 77.7g",
   );
-  assert.equal(page.title.length, 54);
+  assert.equal(page.title.length, 44);
   assert.ok(
     page.title.length <= 60,
     `one-dollar protein title should be ≤60 chars, got ${page.title.length}`,
@@ -2251,12 +2251,13 @@ test("one-dollar protein title puts protein grams per dollar in the SERP", () =>
     "one-dollar protein title should lead with protein for $1",
   );
   assert.ok(
-    titleLower.indexOf("97.9g") < titleLower.indexOf("96.0g"),
-    "one-dollar protein title should put dry pinto beans (97.9g) before whole wheat flour (96.0g)",
+    titleLower.indexOf("96.0g") < titleLower.indexOf("77.7g"),
+    "one-dollar protein title should put whole wheat flour (96.0g) before dry brown lentils (77.7g)",
   );
-  assert.match(page.title, /97\.9g/);
   assert.match(page.title, /96\.0g/);
-  assert.match(page.title, /Whole Wheat Flour/);
+  assert.match(page.title, /77\.7g/);
+  assert.match(page.title, /Flour/);
+  assert.match(page.title, /Lentils/);
   assert.equal(
     /^the cheapest protein foods: what \$1 actually buys$/.test(titleLower),
     false,
@@ -2430,9 +2431,9 @@ test("shelf-stable pantry title puts protein-per-dollar grams in the SERP", () =
 
   assert.equal(
     page.title,
-    "Shelf-Stable Protein per $: Pinto 97.9g vs Flour 96.0g",
+    "Shelf-Stable Protein per $: Flour 96.0g vs Lentils 77.7g",
   );
-  assert.equal(page.title.length, 54);
+  assert.equal(page.title.length, 56);
   assert.ok(
     page.title.length <= 60,
     `shelf-stable pantry title should be ≤60 chars, got ${page.title.length}`,
@@ -2442,13 +2443,13 @@ test("shelf-stable pantry title puts protein-per-dollar grams in the SERP", () =
     "shelf-stable pantry title should lead with shelf-stable protein per $",
   );
   assert.ok(
-    titleLower.indexOf("97.9g") < titleLower.indexOf("96.0g"),
-    "shelf-stable pantry title should put dry pinto beans (97.9g) before whole wheat flour (96.0g)",
+    titleLower.indexOf("96.0g") < titleLower.indexOf("77.7g"),
+    "shelf-stable pantry title should put whole wheat flour (96.0g) before dry brown lentils (77.7g)",
   );
-  assert.match(page.title, /97\.9g/);
   assert.match(page.title, /96\.0g/);
-  assert.match(page.title, /Pinto/);
+  assert.match(page.title, /77\.7g/);
   assert.match(page.title, /Flour/);
+  assert.match(page.title, /Lentils/);
   assert.equal(
     /^cheap shelf-stable protein: 27 pantry foods ranked$/.test(titleLower),
     false,
@@ -2806,9 +2807,9 @@ test("plant-based protein sources title puts protein-per-dollar grams in the SER
 
   assert.equal(
     title,
-    "Plant-Based Protein: Pinto 97.9g vs Tempeh 13.2g",
+    "Plant-Based Protein: Lentils 77.7g vs Tempeh 13.2g",
   );
-  assert.equal(title.length, 48);
+  assert.equal(title.length, 50);
   assert.ok(
     title.length <= 60,
     `plant-based protein title should be ≤60 chars, got ${title.length}`,
@@ -2818,12 +2819,12 @@ test("plant-based protein sources title puts protein-per-dollar grams in the SER
     "plant-based protein title should lead with plant-based protein",
   );
   assert.ok(
-    titleLower.indexOf("97.9g") < titleLower.indexOf("13.2g"),
-    "plant-based protein title should put dry pinto beans (97.9g per $) before tempeh (13.2g per $)",
+    titleLower.indexOf("77.7g") < titleLower.indexOf("13.2g"),
+    "plant-based protein title should put dry brown lentils (77.7g per $) before tempeh (13.2g per $)",
   );
-  assert.match(title, /97\.9g/);
+  assert.match(title, /77\.7g/);
   assert.match(title, /13\.2g/);
-  assert.match(title, /Pinto/);
+  assert.match(title, /Lentils/);
   assert.match(title, /Tempeh/);
   assert.equal(
     /^plant-based protein sources: a complete guide$/.test(titleLower),
@@ -2840,7 +2841,7 @@ test("eat healthy on a budget title puts protein-per-dollar grams in the SERP", 
 
   assert.equal(
     page.title,
-    "Eat Healthy on a Budget: Pinto 97.9g vs Bacon 9.2g",
+    "Eat Healthy on a Budget: Pinto 57.6g vs Bacon 9.4g",
   );
   assert.equal(page.title.length, 50);
   assert.ok(
@@ -2852,11 +2853,11 @@ test("eat healthy on a budget title puts protein-per-dollar grams in the SERP", 
     "eat healthy on a budget title should lead with eat healthy on a budget",
   );
   assert.ok(
-    titleLower.indexOf("97.9g") < titleLower.indexOf("9.2g"),
-    "eat healthy on a budget title should put dry pinto beans (97.9g per $) before bacon (9.2g per $)",
+    titleLower.indexOf("57.6g") < titleLower.indexOf("9.4g"),
+    "eat healthy on a budget title should put dry pinto beans (57.6g per $) before bacon (9.4g per $)",
   );
-  assert.match(page.title, /97\.9g/);
-  assert.match(page.title, /9\.2g/);
+  assert.match(page.title, /57\.6g/);
+  assert.match(page.title, /9\.4g/);
   assert.match(page.title, /Pinto/);
   assert.match(page.title, /Bacon/);
   assert.equal(
