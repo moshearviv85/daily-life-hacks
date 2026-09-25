@@ -1052,7 +1052,7 @@ test("soggy sandwich title locks the fat barrier differentiator", () => {
   );
 });
 
-test("savory chia title locks the not-sweet breakfast differentiator", () => {
+test("savory chia title leads with seed pudding and the on-page fiber", () => {
   const raw = readFileSync(
     join(ROOT, "src/data/articles/savory-chia-seed-recipes-breakfast.md"),
     "utf8",
@@ -1061,24 +1061,30 @@ test("savory chia title locks the not-sweet breakfast differentiator", () => {
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
 
-  assert.equal(page.title, "Savory Chia Breakfast Recipes (Not Sweet)");
-  assert.equal(page.title.length, 41);
+  assert.equal(
+    page.title,
+    "Savory Chia Seed Pudding Recipes (About 16g Fiber)",
+  );
+  assert.equal(page.title.length, 50);
   assert.ok(
     page.title.length <= 60,
     `savory chia title too long for SERP: ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("savory chia breakfast recipes"),
-    "savory chia title should lead with savory chia breakfast recipes",
+    titleLower.startsWith("savory chia seed pudding"),
+    "savory chia title should lead with savory chia seed pudding",
   );
   assert.ok(
-    titleLower.includes("(not sweet)"),
-    "savory chia title should name the not-sweet differentiator",
-  );
-  assert.equal(
     titleLower.includes("pudding"),
-    false,
-    "savory chia title should not force pudding",
+    "savory chia title should name pudding, the missing GSC term",
+  );
+  assert.ok(
+    titleLower.includes("chia seed"),
+    "savory chia title should keep chia seed in the lead",
+  );
+  assert.ok(
+    titleLower.includes("(about 16g fiber)"),
+    "savory chia title should use the on-page bowl fiber, hedged as about",
   );
   assert.equal(
     titleLower.includes("best"),
@@ -1091,17 +1097,30 @@ test("savory chia title locks the not-sweet breakfast differentiator", () => {
     "savory chia title should not spend the SERP on healthy",
   );
   assert.equal(
+    /^savory chia breakfast recipes \(not sweet\)$/.test(titleLower),
+    false,
+    "savory chia title should not stay on the breakfast recipes not-sweet SERP",
+  );
+  assert.equal(
     /^savory chia seed recipes for breakfast$/.test(titleLower),
     false,
     "savory chia title should not be the old seed recipes for breakfast SERP",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-25$/m);
+  assert.match(raw, /clears 16 grams of fiber/);
 
-  assert.match(page.excerpt, /savory chia seed recipes/i);
+  assert.match(page.excerpt, /^Savory chia seed recipes/i);
+  assert.match(page.excerpt, /pudding/i);
+  assert.match(page.excerpt, /4 hours/);
+  assert.match(page.excerpt, /clears 16 grams of fiber/);
   assert.ok(
-    excerptLower.indexOf("savory chia seed recipes") !== -1,
-    "savory chia meta should name chia seed recipes, not lead with pudding recipes",
+    excerptLower.indexOf("savory chia seed recipes") === 0,
+    "savory chia meta should lead with savory chia seed recipes",
+  );
+  assert.ok(
+    excerptLower.indexOf("savory chia seed recipes") < excerptLower.indexOf("pudding"),
+    "savory chia meta should name chia seed recipes before pudding",
   );
   assert.ok(
     page.excerpt.length <= 160,
