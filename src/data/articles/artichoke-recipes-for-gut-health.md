@@ -76,7 +76,7 @@ Artichokes provide dietary fiber and contain inulin-type carbohydrates. That mak
 
 A [double-blind crossover study indexed by PubMed](https://pubmed.ncbi.nlm.nih.gov/20591206/) tested 10 grams per day of purified very-long-chain inulin extracted from globe artichoke in 32 healthy adults. Researchers reported changes in several measured intestinal bacterial populations compared with maltodextrin. They also reported more mild and moderate bloating. The study tested an extracted ingredient for three-week periods, not this recipe, so it can't tell you what one steamed artichoke will do.
 
-The practical answer is simpler. Artichokes can be one fiber-containing vegetable in a varied diet, and since fresh globe artichokes aren't cheap, it's worth knowing [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) before you build a week of meals around produce. If a sudden fiber increase tends to make you uncomfortable, begin with a smaller portion. Our guide to [prebiotic foods beyond the buzzwords](/prebiotic-foods-beyond-the-buzzwords/) keeps the same distinction between an interesting food and a miracle story.
+The practical answer is simpler. Artichokes can be one fiber-containing vegetable in a varied diet, and since fresh globe artichokes aren't cheap, it's worth knowing [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) before you build a week of meals around produce. Fresh artichokes aren't in the 53-food [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Whole wheat flour leads that list at 77.8 grams of fiber per dollar, and dry split peas are right behind at 71.0. If a sudden fiber increase tends to make you uncomfortable, begin with a smaller portion. Our guide to [prebiotic foods beyond the buzzwords](/prebiotic-foods-beyond-the-buzzwords/) keeps the same distinction between an interesting food and a miracle story.
 
 ## What's the easiest way to eat a whole artichoke?
 
@@ -84,7 +84,7 @@ Pull off one leaf, dip the fleshy end, and scrape that end between your teeth. D
 
 Under those leaves is the fuzzy choke. Scrape it out with a spoon and don't eat it. The heart underneath is the payoff: tender, mild, and considerably less work than the previous 20 leaves suggested.
 
-The lemon-garlic dip matters because artichokes are subtle. Lemon cuts through the creamy base, Dijon adds sharpness, and garlic makes the whole ritual taste intentional. Greek yogurt gives you a tangier dip; mayonnaise gives you a richer one. Both understand the assignment.
+The lemon-garlic dip matters because artichokes are subtle. Lemon cuts through the creamy base, Dijon adds sharpness, and garlic makes the whole ritual taste intentional. Greek yogurt gives you a tangier dip; mayonnaise gives you a richer one. Plain nonfat Greek yogurt, the tub we priced, returns 27.5 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). Both understand the assignment.
 
 ## Can you roast or grill artichokes instead?
 

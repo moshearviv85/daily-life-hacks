@@ -128,6 +128,6 @@ Once cool, keep a small amount airtight for the next day or two and freeze the r
 
 Thaw and warm gently. If a muffin is a little dry, split and toast it rather than microwaving it until it turns rubbery.
 
-For another way to use baking ingredients already in the kitchen, try the [sourdough discard pancakes](/easy-sourdough-discard-recipes-beginners/). For the grocery side, the [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) compares the foods behind the recipes.
+For another way to use baking ingredients already in the kitchen, try the [sourdough discard pancakes](/easy-sourdough-discard-recipes-beginners/). For the grocery side, the [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) compares the foods behind the recipes. Whole wheat flour, the flour in this batter, leads the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) at 96.0 grams of protein per dollar.
 
 *Nutrition method: estimates use USDA FoodData Central SR Legacy records for wheat bran (169722), oat bran (168872), whole-grain flour (168893), all-purpose flour (168894), raisins (168165), honey (169640), sugar (169655), and lowfat buttermilk (170874), plus eggs, oil, baking soda, and salt. [USDA's dietary fiber table](https://www.nal.usda.gov/sites/default/files/page-files/Total_Dietary_Fiber.pdf) provides the fiber values. Optional cinnamon and other substitutions are excluded. These are calculations, not a lab analysis of the baked muffins.*
