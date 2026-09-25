@@ -79,6 +79,18 @@ const requiredLinks = [
   ["fast-food-protein-per-dollar-ranked", fiberFlagship],
   ["chicken-thighs-vs-breast-protein-cost", fiberFlagship],
   ["tofu-vs-chicken-protein-cost", fiberFlagship],
+  ["canned-beans-vs-dried-beans-nutrition", fiberFlagship],
+  ["canned-beans-vs-dried-beans-nutrition", proteinFlagship],
+  ["how-to-keep-sandwiches-from-getting-soggy", fiberFlagship],
+  ["savory-chia-seed-recipes-breakfast", proteinFlagship],
+  ["how-to-pack-lunch-crisp-sandwiches-salads", fiberFlagship],
+  ["how-to-pack-lunch-crisp-sandwiches-salads", proteinFlagship],
+  ["high-fiber-bran-muffins-that-taste-good", fiberFlagship],
+  ["high-fiber-bran-muffins-that-taste-good", proteinFlagship],
+  ["artichoke-recipes-for-gut-health", fiberFlagship],
+  ["artichoke-recipes-for-gut-health", proteinFlagship],
+  ["comparing-fiber-content-different-pizza-crusts", fiberFlagship],
+  ["comparing-fiber-content-different-pizza-crusts", proteinFlagship],
 ];
 
 function articleBody(slug) {

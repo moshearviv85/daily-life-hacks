@@ -52,7 +52,7 @@ Salads are structurally fragile. The greens want to wilt the second they look at
 
 Rule number one: The dressing is always packed separately. Always. Buy a set of tiny leakproof containers and keep your vinaigrette quarantined until exactly one minute before you eat.
 
-Rule number two: Layering matters. If you are packing a salad in a tall container or a mason jar, the heaviest, wettest ingredients go at the absolute bottom. Think cucumbers, cherry tomatoes, beans, and carrots. Next goes your protein, like chicken or chickpeas.
+Rule number two: Layering matters. If you are packing a salad in a tall container or a mason jar, the heaviest, wettest ingredients go at the absolute bottom. Think cucumbers, cherry tomatoes, beans, and carrots. Next goes your protein, like chicken or chickpeas. Canned chickpeas, the form you'd actually pack, return 19.7 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) and 22.0 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/).
 
 The delicate leafy greens go at the very top, as far away from the moisture as possible. If you pack it this way, the lettuce stays dry and fluffy. When it is time for lunch, you just dump the whole thing into a bowl, add the dressing, and mix.
 
