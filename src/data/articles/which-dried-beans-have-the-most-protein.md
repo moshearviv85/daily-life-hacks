@@ -1,5 +1,5 @@
 ---
-title: "Which Dried Beans Have the Most Protein?"
+title: "Which Dried Beans Have the Most Protein? Navy 22.33g per 100g"
 excerpt: "Dry navy beans lead the true beans at 22.33 g of protein per 100 g, ahead of black at 21.6 and pinto at 21.42. Lentils beat all of them at 24.63."
 category: "nutrition"
 tags: ["which dried beans have the most protein", "dried beans protein", "beans per 100g", "plant protein", "grocery data"]
