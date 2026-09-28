@@ -103,4 +103,4 @@ Menus move. These rules don't.
 
 Taco Bell is the honest gap: both of its nutrition URLs redirected to a corporate page on yum.com on July 30, 2026, with no per-item fiber table.
 
-If price is the next question, the [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) and the [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) keep the same exact-order discipline.
+If price is the next question, the [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) and the [fast-food protein-per-dollar ranking](/fast-food-protein-per-dollar-ranked/) keep the same exact-order discipline. At the grocery store, the [49-food protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) puts dry pinto beans at 57.6 grams per dollar, which is the bag you cook at home rather than the scoop on the line.
