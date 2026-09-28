@@ -1,5 +1,5 @@
 ---
-title: How Much Protein Do You Need Per Day?
+title: "How Much Protein Do You Need Per Day? 0.36g/lb (~54g at 150 lb)"
 excerpt: "The common baseline is 0.36g of protein per pound, about 54g at 150 pounds. Active adults often aim for 0.5 to 0.8g per pound. Here is how to hit it."
 category: nutrition
 tags:
