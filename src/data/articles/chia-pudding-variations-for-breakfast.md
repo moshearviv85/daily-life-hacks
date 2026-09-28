@@ -120,7 +120,7 @@ Protein and cup weights come from [USDA FoodData Central](https://fdc.nal.usda.g
 
 The chia itself contributes about 8 grams of protein at the 1/4 cup measure, using that same tablespoon conversion. So the dairy or soy jar lands near 15 to 16 grams of protein. The identical-looking almond milk jar lands near 9. Same jar, same photo, different breakfast.
 
-If the lighter version leaves you hungry, stir in Greek yogurt, add nuts or nut butter, or eat leftover eggs with it. Food-first add-ons. I learned this after proudly eating a tiny sweet chia cup and then demolishing crackers at 10:15. The pudding wasn't useless. It was incomplete.
+If the lighter version leaves you hungry, stir in Greek yogurt, add nuts or nut butter, or eat leftover eggs with it. Food-first add-ons. Plain nonfat Greek yogurt returns 27.5 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), and a dozen large eggs return 34.4. I learned this after proudly eating a tiny sweet chia cup and then demolishing crackers at 10:15. The pudding wasn't useless. It was incomplete.
 
 ## Make-ahead without the Sunday meltdown
 
