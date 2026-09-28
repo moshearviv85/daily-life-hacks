@@ -116,3 +116,5 @@ So, they liked the first one? Great! Let's add a little more berry goodness. Thi
 2. Add the banana, both types of frozen berries, and chia seeds if you're using them.
 3. Blend, blend, blend until everything is creamy and vibrant. Adjust milk for thickness.
 4. Serve it up. They'll be none the wiser. My kid calls this the "purple potion."
+
+That spoon of chia is doing more work than another handful of berries. Chia seeds return 33.1 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). The strawberries turning the first cup pink land at 2.7.

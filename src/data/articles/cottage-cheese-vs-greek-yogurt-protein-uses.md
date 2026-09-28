@@ -63,7 +63,7 @@ Cottage cheese is lumpy. There's no getting around the curds. It's savory, salty
 
 Because of its tangy flavor profile, Greek yogurt is your best friend for anything sweet or bright. 
 
-Use it as the base for a parfait with berries and granola. Mix it into your overnight oats for creaminess. Use it to tone down a spicy taco by dolloping it on top instead of sour cream. It also bakes incredibly well, keeping muffins and cakes moist without adding heavy oil. If a recipe needs a bright, acidic lift, grab the yogurt.
+Use it as the base for a parfait with berries and granola. Mix it into your overnight oats for creaminess. Those oats are the fiber in that bowl: old-fashioned rolled oats return 35.8 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Use it to tone down a spicy taco by dolloping it on top instead of sour cream. It also bakes incredibly well, keeping muffins and cakes moist without adding heavy oil. If a recipe needs a bright, acidic lift, grab the yogurt.
 
 ## When should you use cottage cheese?
 

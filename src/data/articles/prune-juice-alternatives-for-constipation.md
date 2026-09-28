@@ -69,7 +69,7 @@ Pick two or three ordinary places to add fiber and leave the rest alone.
 * **Dinner:** vegetables plus beans, lentils, or a whole grain, like this [lentil curry](/lentil-curry-high-fiber-vegan-dinner/).
 * **Drinks:** water and other liquids across the day, based on thirst, meals, and activity.
 
-NIDDK says adults generally need 22 to 34 grams of fiber a day depending on age and sex, added gradually. The FDA's Nutrition Facts Daily Value is 28 grams on a 2,000-calorie diet. Reference points, not a challenge to inhale 28 grams of bran before lunch. Our [high-fiber meals guide](/high-fiber-meals-for-constipation-relief/) does the plate-level work, and our [fiber-per-dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/) handles the grocery math.
+NIDDK says adults generally need 22 to 34 grams of fiber a day depending on age and sex, added gradually. The FDA's Nutrition Facts Daily Value is 28 grams on a 2,000-calorie diet. Reference points, not a challenge to inhale 28 grams of bran before lunch. Our [high-fiber meals guide](/high-fiber-meals-for-constipation-relief/) does the plate-level work, and our [fiber-per-dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/) handles the grocery math. The lentil soup and bean bowls in that day are a protein buy too: dry brown lentils return 77.7 grams per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/).
 
 ## Does more fiber always mean a better result?
 

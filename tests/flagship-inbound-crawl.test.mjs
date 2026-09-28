@@ -99,6 +99,27 @@ const requiredLinks = [
   ["cheap-crockpot-meals-large-families", fiberFlagship],
   ["whole-wheat-vs-white-pasta-fiber", fiberFlagship],
   ["whole-wheat-vs-white-pasta-fiber", proteinFlagship],
+  ["gut-health-tea-peppermint-ginger", fiberFlagship],
+  ["high-fiber-smoothies-for-kids-picky-eaters", fiberFlagship],
+  ["high-fiber-pizza-crust-cauliflower", proteinFlagship],
+  ["prune-juice-alternatives-for-constipation", proteinFlagship],
+  ["chia-pudding-variations-for-breakfast", proteinFlagship],
+  ["protein-per-dollar-adjusted-for-quality", fiberFlagship],
+  ["cottage-cheese-vs-greek-yogurt-protein-uses", fiberFlagship],
+];
+
+// Clarity / GSC donors with no honest flagship fit on 2026-09-28.
+// Storage, smoke points, and a fiber-only snack comparison do not ask
+// the grocery question either ranking answers. Eggs, yogurt, and milk
+// on the tea and smoothie pages are flavor or texture, not a protein price.
+const unfitFlagshipLinks = [
+  ["how-to-store-homemade-salad-dressing-safely", fiberFlagship],
+  ["how-to-store-homemade-salad-dressing-safely", proteinFlagship],
+  ["cooking-oils-smoke-points-best-uses", fiberFlagship],
+  ["cooking-oils-smoke-points-best-uses", proteinFlagship],
+  ["gut-health-tea-peppermint-ginger", proteinFlagship],
+  ["high-fiber-smoothies-for-kids-picky-eaters", proteinFlagship],
+  ["popcorn-vs-potato-chips-fiber-comparison", proteinFlagship],
 ];
 
 function articleBody(slug) {
@@ -118,6 +139,17 @@ test("ranking pages keep one honest in-body href to each required flagship", () 
       matches.length,
       1,
       `${source} should link to /${target}/ exactly once`,
+    );
+  }
+});
+
+test("clarity donors without an honest flagship fit stay unlinked", () => {
+  for (const [source, target] of unfitFlagshipLinks) {
+    const matches = hrefMatches(articleBody(source), target);
+    assert.equal(
+      matches.length,
+      0,
+      `${source} should not link to /${target}/`,
     );
   }
 });
