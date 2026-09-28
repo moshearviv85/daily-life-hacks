@@ -91,6 +91,14 @@ const requiredLinks = [
   ["artichoke-recipes-for-gut-health", proteinFlagship],
   ["comparing-fiber-content-different-pizza-crusts", fiberFlagship],
   ["comparing-fiber-content-different-pizza-crusts", proteinFlagship],
+  ["high-fiber-fast-food-options-guide", fiberFlagship],
+  ["high-fiber-fast-food-options-guide", proteinFlagship],
+  ["healthy-alternatives-potato-chips-snacking", proteinFlagship],
+  ["best-low-cost-protein-sources-large-families", fiberFlagship],
+  ["cheap-crockpot-meals-large-families", proteinFlagship],
+  ["cheap-crockpot-meals-large-families", fiberFlagship],
+  ["whole-wheat-vs-white-pasta-fiber", fiberFlagship],
+  ["whole-wheat-vs-white-pasta-fiber", proteinFlagship],
 ];
 
 function articleBody(slug) {

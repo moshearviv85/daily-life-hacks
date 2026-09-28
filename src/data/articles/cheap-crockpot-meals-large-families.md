@@ -103,7 +103,7 @@ The other rule gets broken constantly in the name of convenience. USDA's [slow c
 
 The secret to feeding a crowd isn't more meat. It's what you put under the meat. If you have a gallon of chili but ten people to feed, you serve that chili over baked potatoes. It fills the stomach without emptying the wallet.
 
-The beans pull their weight in there, too. A cup of cooked pinto beans runs about 245 calories with roughly 15 grams of protein and 15 grams of fiber, according to [USDA FoodData Central](https://fdc.nal.usda.gov/food-details/175200/nutrients). That's a filler doing a protein's job.
+The beans pull their weight in there, too. A cup of cooked pinto beans runs about 245 calories with roughly 15 grams of protein and 15 grams of fiber, according to [USDA FoodData Central](https://fdc.nal.usda.gov/food-details/175200/nutrients). That's a filler doing a protein's job. Dry, before the pot, the same pintos return 41.7 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
 
 Pasta is the other hero. A slow-cooked meat sauce made with the cheapest ground beef you can find becomes something special after six hours. Toss it with two boxes of penne and you can feed the neighborhood. Shift the ratio so the expensive stuff is the flavor, not the bulk, and there are [plenty of other ways to stretch a meal across a big household](/how-to-stretch-meals-large-families/) once you start thinking that way.
 

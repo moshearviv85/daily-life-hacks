@@ -113,7 +113,7 @@ Portion context matters here. White pasta with beans, vegetables, and a substant
 
 ## The cost and convenience tradeoff
 
-Whole wheat wins unusually cleanly on cost because there generally isn't a large premium. If the difference at your store is about four extra cents per serving, the added fiber is a cheap upgrade. If the only whole wheat option is a costly specialty brand, the decision changes. Buy the affordable white pasta and spend the difference on beans or vegetables that the household will eat.
+Whole wheat wins unusually cleanly on cost because there generally isn't a large premium. A 16-ounce box of whole wheat spaghetti in our sample cost $1.18 and returned 35.4 grams of fiber per dollar, ninth in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). The same box returned 53.4 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), ahead of regular dry spaghetti at 42.9, even though a cooked serving of each looks almost tied on the protein line. If the difference at your store is about four extra cents per serving, the added fiber is a cheap upgrade. If the only whole wheat option is a costly specialty brand, the decision changes. Buy the affordable white pasta and spend the difference on beans or vegetables that the household will eat.
 
 Preparation time is essentially tied. Both go into boiling water, both need tasting, and both use the same colander. Whole wheat may ask for that extra minute mentioned earlier, but it doesn't create a new cooking task. This is why the swap is more realistic than advice that requires a new ingredient, a new appliance, and the emotional stability to meal prep every Sunday.
 

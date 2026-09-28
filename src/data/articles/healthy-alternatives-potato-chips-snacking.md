@@ -77,7 +77,7 @@ Making your own is the better move if you own a mandoline. Slice sweet potatoes 
 
 On fiber and protein, yes, and it isn't close. Half a cup of cooked chickpeas, 82 grams, is about 134 calories, 6.2 grams of fiber and 7.3 grams of protein before anything hits the oven. That's around seven times the fiber of an ounce of chips for fewer calories. Roasting removes water and adds whatever oil and salt you use, so the honest measurement happens before the pan, not after.
 
-**Pro tip:** dry them thoroughly with a paper towel first. If they're even a little damp they steam instead of crisping, which is a tragedy. Roast at 400 degrees Fahrenheit for 25 to 35 minutes until golden, then let them cool, because they crisp more as they sit. Our [crispy roasted chickpeas recipe](/crispy-roasted-chickpeas-high-fiber-snack/) nails the texture, and it finally uses that can of garbanzo beans that's been in your pantry since the Obama administration.
+**Pro tip:** dry them thoroughly with a paper towel first. If they're even a little damp they steam instead of crisping, which is a tragedy. Roast at 400 degrees Fahrenheit for 25 to 35 minutes until golden, then let them cool, because they crisp more as they sit. Our [crispy roasted chickpeas recipe](/crispy-roasted-chickpeas-high-fiber-snack/) nails the texture, and it finally uses that can of garbanzo beans that's been in your pantry since the Obama administration. The can itself is priced in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/): canned chickpeas return 22.0 grams of protein per dollar, so that 7.3 grams in the half cup isn't a fluke.
 
 ## Which nuts and seeds are worth it, and which are saltier than chips?
 
