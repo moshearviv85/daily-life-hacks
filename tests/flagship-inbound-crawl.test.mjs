@@ -111,9 +111,10 @@ const requiredLinks = [
 
 // Re-checked 2026-09-29 against the live articles and the July 2026 CSVs.
 // Salad dressing links fiber once, above: the close already points at the
-// high-fiber dressing jars, and a teaspoon of chia is an exact row (33.1 g
-// per dollar). Protein stays off that page. Yogurt is a 3-to-4-day fridge
-// ingredient, and "dairy proteins" is the broken emulsion, not a price.
+// high-fiber dressing jars, and chia seeds (the teaspoon those jars start
+// with) are an exact row at 33.1 g per dollar. Protein stays off that page.
+// Yogurt is a 3-to-4-day fridge ingredient, and "dairy proteins" is the
+// broken emulsion, not a price.
 // Smoke-point oils are not rows in either ranking. Peanut, sunflower,
 // almond, and sesame oils are not the peanut, seed, or almond foods.
 // Popcorn already links the fiber flagship. Kernels are not in the protein
