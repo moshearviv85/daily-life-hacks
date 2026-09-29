@@ -93,7 +93,7 @@ Keep the breakfast and lunch habits that still feel useful. At dinner, add one f
 * **Soup night:** Use lentils, barley, or split peas so the bowl has more than broth and optimism.
 * **Sheet-pan night:** Roast broccoli, carrots, or Brussels sprouts beside the protein already on the tray.
 
-Start with a portion you know you can finish comfortably. More isn't automatically better, especially if the first two weeks already changed your intake substantially.
+Start with a portion you know you can finish comfortably. More isn't automatically better, especially if the first two weeks already changed your intake substantially. Split peas in that soup are doing two jobs. Green split peas return 73.9 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), and the old-fashioned rolled oats from week one return 46.6.
 
 ## Week Four: Build a routine you can repeat
 

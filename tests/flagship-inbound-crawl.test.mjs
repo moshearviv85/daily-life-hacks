@@ -107,6 +107,11 @@ const requiredLinks = [
   ["protein-per-dollar-adjusted-for-quality", fiberFlagship],
   ["cottage-cheese-vs-greek-yogurt-protein-uses", fiberFlagship],
   ["how-to-store-homemade-salad-dressing-safely", fiberFlagship],
+  ["how-to-pack-salad-for-work-not-soggy", fiberFlagship],
+  ["how-to-pack-salad-for-work-not-soggy", proteinFlagship],
+  ["keep-berries-fresh-longer-when-to-wash", fiberFlagship],
+  ["30-day-high-fiber-challenge-meal-plan", proteinFlagship],
+  ["how-to-revive-wilted-lettuce-and-greens", fiberFlagship],
 ];
 
 // Re-checked 2026-09-29 against the live articles and the July 2026 CSVs.
@@ -121,6 +126,14 @@ const requiredLinks = [
 // study, chips were never priced, and a pinch of hard cheese is not a
 // protein-study row. Eggs, yogurt, and milk on the tea and smoothie pages
 // stay flavor or texture, not a protein price.
+// Berry storage links fiber once, above: raspberries, blackberries,
+// strawberries, and blueberries are exact rows at 4.5, 4.0, 2.7, and 2.5
+// grams per dollar. The yogurt line is a handful of raspberries, and none
+// of the berries are protein-study rows.
+// Wilted lettuce links fiber once via kale, the only green on that page
+// in the study (bagged chopped kale, 7.5 grams per dollar). Lettuce,
+// chard, arugula, and herbs are not rows, and nothing on the page is a
+// protein-study food.
 const unfitFlagshipLinks = [
   ["how-to-store-homemade-salad-dressing-safely", proteinFlagship],
   ["cooking-oils-smoke-points-best-uses", fiberFlagship],
@@ -128,6 +141,8 @@ const unfitFlagshipLinks = [
   ["gut-health-tea-peppermint-ginger", proteinFlagship],
   ["high-fiber-smoothies-for-kids-picky-eaters", proteinFlagship],
   ["popcorn-vs-potato-chips-fiber-comparison", proteinFlagship],
+  ["keep-berries-fresh-longer-when-to-wash", proteinFlagship],
+  ["how-to-revive-wilted-lettuce-and-greens", proteinFlagship],
 ];
 
 function articleBody(slug) {
