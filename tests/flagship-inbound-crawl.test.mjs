@@ -106,14 +106,22 @@ const requiredLinks = [
   ["chia-pudding-variations-for-breakfast", proteinFlagship],
   ["protein-per-dollar-adjusted-for-quality", fiberFlagship],
   ["cottage-cheese-vs-greek-yogurt-protein-uses", fiberFlagship],
+  ["how-to-store-homemade-salad-dressing-safely", fiberFlagship],
 ];
 
-// Clarity / GSC donors with no honest flagship fit on 2026-09-28.
-// Storage, smoke points, and a fiber-only snack comparison do not ask
-// the grocery question either ranking answers. Eggs, yogurt, and milk
-// on the tea and smoothie pages are flavor or texture, not a protein price.
+// Re-checked 2026-09-29 against the live articles and the July 2026 CSVs.
+// Salad dressing links fiber once, above: the close already points at the
+// high-fiber dressing jars, and chia seeds (the teaspoon those jars start
+// with) are an exact row at 33.1 g per dollar. Protein stays off that page.
+// Yogurt is a 3-to-4-day fridge ingredient, and "dairy proteins" is the
+// broken emulsion, not a price.
+// Smoke-point oils are not rows in either ranking. Peanut, sunflower,
+// almond, and sesame oils are not the peanut, seed, or almond foods.
+// Popcorn already links the fiber flagship. Kernels are not in the protein
+// study, chips were never priced, and a pinch of hard cheese is not a
+// protein-study row. Eggs, yogurt, and milk on the tea and smoothie pages
+// stay flavor or texture, not a protein price.
 const unfitFlagshipLinks = [
-  ["how-to-store-homemade-salad-dressing-safely", fiberFlagship],
   ["how-to-store-homemade-salad-dressing-safely", proteinFlagship],
   ["cooking-oils-smoke-points-best-uses", fiberFlagship],
   ["cooking-oils-smoke-points-best-uses", proteinFlagship],
