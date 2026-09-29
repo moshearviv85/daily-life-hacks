@@ -1763,7 +1763,7 @@ test("water and fiber title leads with how much water you need", () => {
   assert.match(page.excerpt, /isn't a magic water-to-fiber ratio/i);
 });
 
-test("oatmeal vs grits title leads with which has more fiber", () => {
+test("oatmeal vs grits title leads with cooked-cup fiber grams", () => {
   const page = articleFrontmatter("oatmeal-vs-grits-fiber-content");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/oatmeal-vs-grits-fiber-content.md"),
@@ -1771,20 +1771,40 @@ test("oatmeal vs grits title leads with which has more fiber", () => {
   );
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
+  const beforeTitle = "Oatmeal vs Grits: Which Has More Fiber?";
+  const afterTitle = "Oatmeal 4.0g vs Grits 1.6\u20132.4g Fiber per Cooked Cup";
 
-  assert.equal(page.title, "Oatmeal vs Grits: Which Has More Fiber?");
-  assert.equal(page.title.length, 39);
+  assert.equal(beforeTitle, "Oatmeal vs Grits: Which Has More Fiber?");
+  assert.equal(beforeTitle.length, 39);
+  assert.equal(page.title, afterTitle);
+  assert.notEqual(page.title, beforeTitle);
+  assert.equal(page.title.length, 51);
   assert.ok(
     page.title.length <= 60,
     `oatmeal vs grits title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("oatmeal vs grits"),
-    "oatmeal vs grits title should lead with oatmeal vs grits",
+    titleLower.startsWith("oatmeal 4.0g vs grits"),
+    "oatmeal vs grits title should lead with oatmeal 4.0g vs grits",
   );
   assert.ok(
-    titleLower.indexOf("which has more fiber") > titleLower.indexOf("oatmeal vs grits"),
-    "oatmeal vs grits title should put which has more fiber after the foods",
+    titleLower.indexOf("4.0g") < titleLower.indexOf("1.6"),
+    "oatmeal vs grits title should put oatmeal 4.0g before the grits range",
+  );
+  assert.match(page.title, /1\.6\u20132\.4g/);
+  assert.equal(
+    page.title.includes("1.6-2.4g"),
+    false,
+    "oatmeal vs grits title should use the en dash for the grits range, not a hyphen",
+  );
+  assert.ok(
+    titleLower.indexOf("fiber") < titleLower.indexOf("cooked cup"),
+    "oatmeal vs grits title should put fiber before cooked cup",
+  );
+  assert.equal(
+    /^oatmeal vs grits: which has more fiber\?$/.test(titleLower),
+    false,
+    "oatmeal vs grits title should not be the old which-has-more question SERP",
   );
   assert.equal(
     titleLower.includes("the actual numbers"),
@@ -1799,6 +1819,7 @@ test("oatmeal vs grits title leads with which has more fiber", () => {
     excerptLower.indexOf("4.0g") < excerptLower.indexOf("1.6-2.4g"),
     "oatmeal vs grits meta should put oatmeal 4.0g before the grits range",
   );
+  assert.match(page.excerpt, /[Rr]oughly double/);
 });
 
 test("selenium foods title leads with how much you need", () => {
