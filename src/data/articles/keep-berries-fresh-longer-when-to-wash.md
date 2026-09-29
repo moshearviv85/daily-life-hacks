@@ -26,7 +26,7 @@ faq:
    answer: "Discard that berry rather than cutting around it. USDA FSIS puts soft, high-moisture fruits and vegetables in the discard column because they can be contaminated below the surface. Don't sniff it, bag it before it goes in the trash, and check the berries it was touching, since mold spreads quickly in produce."
 ---
 
-Buying fresh berries feels like a small luxury. You stand in the grocery store looking at those vibrant red strawberries and deep blue blueberries, and you picture yourself eating them all week. Then you put them in the fridge. Two days later you open the door and half of them are wearing a fuzzy sweater of mold. It's frustrating. You spent good money, and now you're throwing it in the trash.
+Buying fresh berries feels like a small luxury. You stand in the grocery store looking at those vibrant red strawberries and deep blue blueberries, and you picture yourself eating them all week. Then you put them in the fridge. Two days later you open the door and half of them are wearing a fuzzy sweater of mold. It's frustrating. You spent good money, and now you're throwing it in the trash. That money wasn't buying cheap fiber. Strawberries, blueberries, raspberries, and blackberries all sit at the bottom of the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/): raspberries 4.5 grams per dollar, blackberries 4.0, strawberries 2.7, blueberries 2.5.
 
 Most berry advice online blames moisture and stops there. Moisture matters, but it isn't the whole story, and the single most-repeated berry hack on the internet is a lot thinner than it looks once you check it. So here's what the food safety agencies and the postharvest researchers actually say.
 

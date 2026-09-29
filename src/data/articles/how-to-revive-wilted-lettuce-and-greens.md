@@ -74,6 +74,8 @@ The method works best on greens that are limp but otherwise sound:
 - Spinach and arugula are delicate, so check them at 5 minutes.
 - Parsley and cilantro can recover well after you trim the stem ends.
 
+Kale is the only green on that list in the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/). A 16 ounce bag of chopped kale returns 7.5 grams of fiber per dollar.
+
 Spring mix is the unreliable roommate here. Some leaves recover while others already crossed into mush. Sort it before soaking, then dry it gently.
 
 ## When should you throw wilted lettuce away?

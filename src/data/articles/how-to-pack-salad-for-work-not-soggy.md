@@ -63,7 +63,7 @@ Spring mix is lovely for about nine minutes. After that, it starts behaving like
 
 Kale holds up well, especially if it's chopped small. Cabbage is nearly indestructible. Romaine gives you crunch and still feels like a classic salad. Shredded Brussels sprouts are great if you like a hearty texture and don't mind a little chew.
 
-Baby spinach is acceptable for same-day salads, but it wilts fast around dressing, tomatoes, or warm protein. Use it when you're packing in the morning and eating by noon. For multi-day meal prep, let cabbage do the heavy lifting. Cabbage was built for this nonsense. And if your greens went limp before you even packed them, you can usually [revive wilted lettuce and greens](/how-to-revive-wilted-lettuce-and-greens/) with ten minutes in ice water instead of tossing the bag.
+Baby spinach is acceptable for same-day salads, but it wilts fast around dressing, tomatoes, or warm protein. Use it when you're packing in the morning and eating by noon. For multi-day meal prep, let cabbage do the heavy lifting. Cabbage was built for this nonsense, and it's the better fiber buy in that group. Green cabbage returns 14.6 grams of fiber per dollar in the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), ahead of bagged chopped kale at 7.5. Lettuce never made that table. And if your greens went limp before you even packed them, you can usually [revive wilted lettuce and greens](/how-to-revive-wilted-lettuce-and-greens/) with ten minutes in ice water instead of tossing the bag.
 
 ## Keep wet and warm things under control
 
@@ -85,7 +85,7 @@ Same goes for delicate herbs. Parsley, cilantro, basil, and dill taste brighter 
 
 A work salad needs enough substance to carry you past 2 PM. Otherwise it's just a crunchy apology.
 
-Add protein, grains, beans, or a hearty fat. Chicken, eggs, tuna, tofu, chickpeas, quinoa, farro, feta, avocado, and nuts all help. The goal isn't to make the salad enormous. The goal is to make it useful. And some weeks, skip the lettuce problem entirely: this [easy cold summer pasta salad](/easy-cold-summer-pasta-salad-potlucks/) shrugs off dressing and sits happily in the fridge for days.
+Add protein, grains, beans, or a hearty fat. Chicken, eggs, tuna, tofu, chickpeas, quinoa, farro, feta, avocado, and nuts all help. A dozen large eggs returns 34.4 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), canned chunk-light tuna returns 22.4, and extra-firm tofu returns 13.6. Farro and feta never made that ranking. The goal isn't to make the salad enormous. The goal is to make it useful. And some weeks, skip the lettuce problem entirely: this [easy cold summer pasta salad](/easy-cold-summer-pasta-salad-potlucks/) shrugs off dressing and sits happily in the fridge for days.
 
 If you're using saucy protein, pack it separately or bury it in the middle layer away from the greens. Buffalo chicken directly on romaine at 8 AM is how lunch turns into a swamp.
 
