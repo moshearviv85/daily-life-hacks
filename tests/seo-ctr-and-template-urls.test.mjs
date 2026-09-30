@@ -1489,7 +1489,7 @@ test("popcorn toppings title leads with high fiber", () => {
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
-test("yogurt title leads with high fiber yogurt, not parfait framing", () => {
+test("yogurt title leads with the 13g parfait fiber win", () => {
   const raw = readFileSync(
     join(ROOT, "src/data/articles/high-fiber-yogurt-parfait-for-breakfast.md"),
     "utf8",
@@ -1499,29 +1499,36 @@ test("yogurt title leads with high fiber yogurt, not parfait framing", () => {
   assert.ok(title, "yogurt article is missing a quoted title");
   assert.ok(excerpt, "yogurt article is missing an excerpt");
   const titleLower = title.toLowerCase();
+  const excerptLower = excerpt.toLowerCase();
+  const beforeTitle = "High Fiber Yogurt: How to Add Fiber (Plain Greek Is 0g)";
+  const afterTitle = "13g High Fiber Yogurt Parfait (Plain Greek Is 0g)";
 
-  assert.equal(
-    title,
-    "High Fiber Yogurt: How to Add Fiber (Plain Greek Is 0g)",
-  );
+  assert.equal(beforeTitle, "High Fiber Yogurt: How to Add Fiber (Plain Greek Is 0g)");
+  assert.equal(beforeTitle.length, 55);
+  assert.equal(title, afterTitle);
+  assert.notEqual(title, beforeTitle);
   assert.ok(
     title.length <= 60,
     `yogurt title should be ≤60 chars, got ${title.length}`,
   );
-  assert.equal(title.length, 55);
+  assert.equal(title.length, 49);
   assert.ok(
-    titleLower.indexOf("high fiber yogurt") === 0,
-    "yogurt title should lead with high fiber yogurt",
+    titleLower.startsWith("13g"),
+    "yogurt title should lead with the 13g parfait fiber win",
   );
   assert.ok(
-    titleLower.indexOf("how to add fiber") > titleLower.indexOf("high fiber yogurt"),
-    "yogurt title should put how to add fiber after the query lead",
+    titleLower.indexOf("13g") < titleLower.indexOf("high fiber yogurt"),
+    "yogurt title should put 13g before the high fiber yogurt query",
+  );
+  assert.ok(
+    titleLower.includes("high fiber yogurt parfait"),
+    "yogurt title should keep the high fiber yogurt query on the parfait",
   );
   assert.match(title, /Plain Greek Is 0g/);
   assert.equal(
-    /^high[ -]fiber yogurt parfait/.test(titleLower),
+    /^high fiber yogurt: how to add fiber/.test(titleLower),
     false,
-    "yogurt title should not lead with the parfait framing",
+    "yogurt title should not keep the old how-to-add-fiber SERP",
   );
   assert.equal(
     /layer by layer/.test(titleLower),
@@ -1529,8 +1536,10 @@ test("yogurt title leads with high fiber yogurt, not parfait framing", () => {
     "yogurt title should not use the old layer-by-layer SERP",
   );
   assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(excerpt, /13 grams/);
+  assert.match(excerptLower, /zero fiber/);
   assert.equal(
-    excerpt.toLowerCase().includes("the real gram count, layer by layer"),
+    excerptLower.includes("the real gram count, layer by layer"),
     false,
     "yogurt meta should not hard-sell the old layer-by-layer title",
   );
