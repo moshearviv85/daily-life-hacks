@@ -170,10 +170,16 @@ test("derived meal totals recompute from study package prices", () => {
 
 test("article bodies lock the new highlight numbers and honest flagship links", () => {
   const costco = read("src/data/articles/costco-rotisserie-chicken-meal-ideas-dinner.md");
-  assert.match(costco, /dateModified: 2026-09-05/);
-  assert.match(costco, /26\.7 grams per dollar/);
-  assert.match(costco, /\$5\.97/);
-  assert.match(costco, /July 2026/);
+  const costcoCallout = MEAL_PROTEIN_COST["costco-rotisserie-chicken-meal-ideas-dinner"];
+  assert.match(costco, /dateModified: 2026-09-30/);
+  assert.match(costco, /\$5\.97 Costco Rotisserie Chicken: ~160g Protein/);
+  assert.match(costco, /about 160 grams of edible protein after bone and skin/);
+  assert.match(costco, /\$1\.49/);
+  assert.match(costco, /40 grams/);
+  assert.match(costcoCallout.highlight.claim, /\$5\.97/);
+  assert.match(costcoCallout.highlight.claim, /about 160 grams/);
+  assert.match(costcoCallout.highlight.value, /26\.7 g per \$1/);
+  assert.match(costcoCallout.disclosure, /July 2026/);
   assert.equal(
     (costco.match(/\]\(\/protein-per-dollar-cheapest-protein-sources\/\)/g) ?? []).length,
     1,

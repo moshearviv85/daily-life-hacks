@@ -842,32 +842,77 @@ test("high-protein high-fiber meals title leads with the 30–40g protein templa
   );
 });
 
-test("costco rotisserie chicken title leads with the meals query", () => {
+test("costco rotisserie chicken title leads with the study protein cost", () => {
   const page = articleFrontmatter("costco-rotisserie-chicken-meal-ideas-dinner");
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/costco-rotisserie-chicken-meal-ideas-dinner.md"),
+    "utf8",
+  );
   const titleLower = page.title.toLowerCase();
   const excerptLower = page.excerpt.toLowerCase();
-  assert.match(page.title, /^Rotisserie Chicken Meals:/);
-  assert.match(page.title, /\b5\b/);
-  assert.match(page.title, /Quick/);
-  assert.match(page.title, /Costco/);
-  assert.equal(
-    titleLower.indexOf("rotisserie chicken meals"),
-    0,
-    "title should lead with rotisserie chicken meals so the GSC query is not buried after Costco",
-  );
-  assert.equal(
-    titleLower.startsWith("5 quick costco"),
-    false,
-    "title should not spend the SERP prefix on 5 Quick Costco",
-  );
-  assert.match(page.excerpt, /^Rotisserie chicken meals/);
-  assert.match(page.excerpt, /Costco/);
-  assert.match(page.excerpt, /quantities for four/);
-  assert.match(page.excerpt, /stir-fry/);
-  assert.match(page.excerpt, /tacos/);
+  const beforeTitle = "Rotisserie Chicken Meals: 5 Quick Costco Meal Ideas";
+  const afterTitle = "$5.97 Costco Rotisserie Chicken: ~160g Protein";
+
+  assert.equal(beforeTitle.length, 51);
+  assert.equal(page.title, afterTitle);
+  assert.notEqual(page.title, beforeTitle);
+  assert.equal(page.title.length, 46);
   assert.ok(
-    excerptLower.indexOf("rotisserie chicken meals") < excerptLower.indexOf("costco"),
-    "meta should put rotisserie chicken meals before Costco",
+    page.title.length <= 60,
+    `costco rotisserie title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    page.title.startsWith("$5.97"),
+    "title should lead with the $5.97 study price",
+  );
+  assert.ok(
+    titleLower.indexOf("$5.97") < titleLower.indexOf("costco"),
+    "title should put $5.97 before Costco",
+  );
+  assert.ok(
+    titleLower.indexOf("costco") < titleLower.indexOf("rotisserie"),
+    "title should keep Costco with rotisserie for the query",
+  );
+  assert.ok(
+    titleLower.indexOf("rotisserie") < titleLower.indexOf("~160g"),
+    "title should put rotisserie before the ~160g protein figure",
+  );
+  assert.match(page.title, /~160g Protein/);
+  assert.equal(
+    titleLower.includes("5 quick"),
+    false,
+    "title should not spend the SERP on 5 Quick",
+  );
+  assert.equal(
+    /^rotisserie chicken meals: 5 quick costco meal ideas$/.test(titleLower),
+    false,
+    "title should not be the old soft 5 Quick Costco meal ideas SERP",
+  );
+  assert.match(raw, /^dateModified: 2026-09-30$/m);
+
+  assert.match(
+    page.excerpt,
+    /^One study rotisserie bird cost \$5\.97 and carried about 160 grams of edible protein after bone and skin\./,
+  );
+  assert.match(page.excerpt, /\$1\.49/);
+  assert.match(page.excerpt, /40 grams/);
+  assert.match(page.excerpt, /split four ways/);
+  assert.ok(
+    excerptLower.indexOf("$5.97") < excerptLower.indexOf("160 grams"),
+    "meta should put $5.97 before the 160 gram figure",
+  );
+  assert.ok(
+    excerptLower.indexOf("160 grams") < excerptLower.indexOf("40 grams"),
+    "meta should put the whole-bird grams before the per-person grams",
+  );
+  assert.ok(
+    page.excerpt.length <= 155,
+    `costco rotisserie meta too long: ${page.excerpt.length}`,
+  );
+  assert.equal(
+    excerptLower.includes("5 quick"),
+    false,
+    "meta should not keep the soft 5 Quick framing",
   );
 });
 

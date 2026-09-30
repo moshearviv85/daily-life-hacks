@@ -1,6 +1,6 @@
 ---
-title: "Rotisserie Chicken Meals: 5 Quick Costco Meal Ideas"
-excerpt: "Rotisserie chicken meals from Costco with quantities for four: stir-fry, tacos, pesto pasta, chicken salad, and naan pizzas. Portion once, choose tonight's meal."
+title: "$5.97 Costco Rotisserie Chicken: ~160g Protein"
+excerpt: "One study rotisserie bird cost $5.97 and carried about 160 grams of edible protein after bone and skin. That's about $1.49 and 40 grams split four ways."
 category: recipes
 tags:
 - quick meals
@@ -12,7 +12,7 @@ tags:
 image: "/images/costco-rotisserie-chicken-meal-ideas-dinner-main.jpg"
 imageAlt: Pulled rotisserie chicken and fresh vegetables are arranged on a light wooden cutting board.
 date: 2026-04-28
-dateModified: 2026-09-14
+dateModified: 2026-09-30
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
