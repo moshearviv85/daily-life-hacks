@@ -2136,28 +2136,43 @@ test("high fiber smoothies title leads with high fiber smoothies for picky kids"
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
-test("high fiber fast food title leads with what to order at 6 chains", () => {
+test("high fiber fast food title leads with Chipotle 25g and Subway 19g", () => {
+  const page = articleFrontmatter("high-fiber-fast-food-options-guide");
   const raw = readFileSync(
     join(ROOT, "src/data/articles/high-fiber-fast-food-options-guide.md"),
     "utf8",
   );
-  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
-  assert.ok(title, "high-fiber-fast-food-options-guide is missing a quoted title");
-  const titleLower = title.toLowerCase();
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+  const beforeTitle = "High-Fiber Fast Food: What to Order at 6 Chains";
+  const afterTitle = "Chipotle 25g, Subway 19g: High-Fiber Fast Food";
 
-  assert.equal(title, "High-Fiber Fast Food: What to Order at 6 Chains");
-  assert.equal(title.length, 47);
+  assert.equal(beforeTitle.length, 47);
+  assert.equal(page.title, afterTitle);
+  assert.notEqual(page.title, beforeTitle);
+  assert.equal(page.title.length, 46);
   assert.ok(
-    title.length <= 60,
-    `high fiber fast food title should be ≤60 chars, got ${title.length}`,
+    page.title.length <= 60,
+    `high fiber fast food title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("high-fiber fast food"),
-    "high fiber fast food title should lead with high-fiber fast food",
+    page.title.startsWith("Chipotle 25g"),
+    "high fiber fast food title should lead with Chipotle 25g",
   );
   assert.ok(
-    titleLower.indexOf("what to order") < titleLower.indexOf("6 chains"),
-    "high fiber fast food title should put what to order before 6 chains",
+    titleLower.indexOf("chipotle 25g") < titleLower.indexOf("subway 19g"),
+    "high fiber fast food title should put Chipotle 25g before Subway 19g",
+  );
+  assert.ok(
+    titleLower.indexOf("subway 19g") < titleLower.indexOf("high-fiber fast food"),
+    "high fiber fast food title should put the gram figures before the query",
+  );
+  assert.match(page.title, /25g/);
+  assert.match(page.title, /19g/);
+  assert.equal(
+    titleLower.includes("6 chains"),
+    false,
+    "high fiber fast food title should not spend the SERP on 6 chains",
   );
   assert.equal(
     titleLower.includes("best"),
@@ -2165,12 +2180,30 @@ test("high fiber fast food title leads with what to order at 6 chains", () => {
     "high fiber fast food title should not use a best superlative",
   );
   assert.equal(
+    /^high-fiber fast food: what to order at 6 chains$/.test(titleLower),
+    false,
+    "high fiber fast food title should not be the old 6 chains SERP",
+  );
+  assert.equal(
     /^high-fiber fast food: the best orders at 6 chains$/.test(titleLower),
     false,
     "high fiber fast food title should not be the old best orders SERP",
   );
   assert.match(raw, /^date: 2026-01-21$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-30$/m);
+
+  assert.match(page.excerpt, /Chipotle veggie bowl 25g/);
+  assert.match(page.excerpt, /Subway Veggie Patty Protein Bowl 19g/);
+  assert.match(page.excerpt, /Ten orders, 6 chains/);
+  assert.ok(
+    excerptLower.indexOf("chipotle veggie bowl 25g") <
+      excerptLower.indexOf("subway veggie patty protein bowl 19g"),
+    "meta should put the Chipotle 25g bowl before the Subway 19g bowl",
+  );
+  assert.ok(
+    page.excerpt.length <= 160,
+    `high fiber fast food meta too long: ${page.excerpt.length}`,
+  );
 });
 
 test("high protein breads title leads with high protein breads for sandwiches", () => {
