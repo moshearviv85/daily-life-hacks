@@ -1,6 +1,6 @@
 ---
-title: "Cottage Cheese vs Greek Yogurt: Protein and Uses"
-excerpt: "Deciding between cottage cheese vs Greek yogurt doesn't have to be confusing. Here's a practical breakdown of how to use both for better meals."
+title: "12-14g vs 10-12g Protein: Cottage Cheese vs Greek Yogurt"
+excerpt: "A half cup of cottage cheese carries about 12 to 14 grams of protein against 10 to 12 grams for plain nonfat Greek yogurt."
 category: "nutrition"
 tags:
 - nutrition basics
@@ -10,7 +10,7 @@ tags:
 image: "/images/cottage-cheese-vs-greek-yogurt-protein-uses-main.jpg"
 imageAlt: "A bowl of cottage cheese next to a bowl of Greek yogurt on a kitchen counter"
 date: 2026-04-20
-dateModified: 2026-07-16
+dateModified: 2026-10-01
 author: "David Miller"
 featured: false
 editorsPick: false

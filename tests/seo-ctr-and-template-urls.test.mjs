@@ -2334,6 +2334,80 @@ test("chia pudding breakfast title leads with the on-page jar fiber", () => {
   assert.match(raw, /^dateModified: 2026-10-01$/m);
 });
 
+test("cottage cheese vs Greek yogurt title leads with half-cup protein grams", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/cottage-cheese-vs-greek-yogurt-protein-uses.md"),
+    "utf8",
+  );
+  const page = articleFrontmatter("cottage-cheese-vs-greek-yogurt-protein-uses");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+  const layout = readFileSync(join(ROOT, "src/layouts/BaseLayout.astro"), "utf8");
+  const articlePage = readFileSync(join(ROOT, "src/pages/[slug].astro"), "utf8");
+
+  assert.equal(
+    page.title,
+    "12-14g vs 10-12g Protein: Cottage Cheese vs Greek Yogurt",
+  );
+  assert.equal(page.title.length, 56);
+  assert.ok(
+    page.title.length <= 60,
+    `cottage vs Greek yogurt title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("12-14g vs 10-12g protein"),
+    "cottage vs Greek yogurt title should lead with 12-14g vs 10-12g protein",
+  );
+  assert.ok(
+    titleLower.indexOf("12-14g") < titleLower.indexOf("10-12g"),
+    "cottage vs Greek yogurt title should put cottage cheese 12-14g before Greek yogurt 10-12g",
+  );
+  assert.ok(
+    titleLower.indexOf("10-12g") < titleLower.indexOf("cottage cheese"),
+    "cottage vs Greek yogurt title should put the gram comparison before the food names",
+  );
+  assert.match(page.title, /Cottage Cheese vs Greek Yogurt/);
+  assert.equal(
+    /^cottage cheese vs greek yogurt: protein and uses$/.test(titleLower),
+    false,
+    "cottage vs Greek yogurt title should not stay on the gram-free protein and uses SERP",
+  );
+  assert.equal(
+    titleLower.includes("per dollar"),
+    false,
+    "cottage vs Greek yogurt title should use the half-cup grams, not the per-dollar flip",
+  );
+  assert.match(
+    raw,
+    /A half cup of cottage cheese carries about 12 to 14 grams of protein against 10 to 12 grams for plain nonfat Greek yogurt\./,
+  );
+  assert.match(raw, /\| Cottage cheese \(4%\) \| 12 to 14 g \| 26\.3 g \|/);
+  assert.match(raw, /\| Greek yogurt \(plain, nonfat\) \| 10 to 12 g \| 27\.5 g \|/);
+  assert.match(raw, /^date: 2026-04-20$/m);
+  assert.match(raw, /^dateModified: 2026-10-01$/m);
+
+  assert.equal(
+    page.excerpt,
+    "A half cup of cottage cheese carries about 12 to 14 grams of protein against 10 to 12 grams for plain nonfat Greek yogurt.",
+  );
+  assert.ok(
+    excerptLower.startsWith("a half cup of cottage cheese"),
+    "cottage vs Greek yogurt meta should lead with the half-cup cottage cheese figure",
+  );
+  assert.ok(
+    excerptLower.indexOf("12 to 14 grams") < excerptLower.indexOf("10 to 12 grams"),
+    "cottage vs Greek yogurt meta should put 12 to 14 grams before 10 to 12 grams",
+  );
+  assert.ok(
+    page.excerpt.length <= 160,
+    `cottage vs Greek yogurt meta too long: ${page.excerpt.length}`,
+  );
+  assert.match(layout, /<title>\{title\}<\/title>/);
+  assert.match(layout, /<meta property="og:title" content=\{title\} \/>/);
+  assert.match(articlePage, /title=\{article\.data\.title\}/);
+  assert.match(articlePage, /<h1[\s\S]*?\{article\.data\.title\}[\s\S]*?<\/h1>/);
+});
+
 test("breakfast energy title drops the leading Best superlative", () => {
   const raw = readFileSync(
     join(ROOT, "src/data/articles/best-breakfast-foods-for-sustained-energy.md"),
