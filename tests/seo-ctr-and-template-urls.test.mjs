@@ -2215,29 +2215,33 @@ test("high fiber fast food title leads with Chipotle 25g and Subway 19g", () => 
   );
 });
 
-test("high protein breads title leads with high protein breads for sandwiches", () => {
+test("high protein breads title leads with 5-7g protein per slice", () => {
   const raw = readFileSync(
     join(ROOT, "src/data/articles/best-high-protein-breads-healthy-sandwiches.md"),
     "utf8",
   );
-  const title = raw.match(/^title:\s*"([^"]+)"/m)?.[1];
-  assert.ok(title, "best-high-protein-breads-healthy-sandwiches is missing a quoted title");
-  const titleLower = title.toLowerCase();
+  const page = articleFrontmatter("best-high-protein-breads-healthy-sandwiches");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
 
-  assert.equal(title, "High Protein Breads for Sandwiches");
-  assert.equal(title.length, 34);
+  assert.equal(
+    page.title,
+    "5-7g Protein per Slice: High Protein Breads for Sandwiches",
+  );
+  assert.equal(page.title.length, 58);
   assert.ok(
-    title.length <= 60,
-    `high protein breads title should be ≤60 chars, got ${title.length}`,
+    page.title.length <= 60,
+    `high protein breads title should be ≤60 chars, got ${page.title.length}`,
   );
   assert.ok(
-    titleLower.startsWith("high protein breads"),
-    "high protein breads title should lead with high protein breads",
+    titleLower.startsWith("5-7g protein per slice"),
+    "high protein breads title should lead with 5-7g protein per slice",
   );
   assert.ok(
-    titleLower.indexOf("breads") < titleLower.indexOf("for sandwiches"),
-    "high protein breads title should put breads before for sandwiches",
+    titleLower.indexOf("5-7g") < titleLower.indexOf("high protein breads"),
+    "high protein breads title should put 5-7g before high protein breads",
   );
+  assert.match(page.title, /5-7g/);
   assert.equal(
     titleLower.includes("best"),
     false,
@@ -2249,12 +2253,35 @@ test("high protein breads title leads with high protein breads for sandwiches", 
     "high protein breads title should not spend the SERP on healthy",
   );
   assert.equal(
+    /^high protein breads for sandwiches$/.test(titleLower),
+    false,
+    "high protein breads title should not be the old gram-free SERP",
+  );
+  assert.equal(
     /^best high protein breads for healthy sandwiches$/.test(titleLower),
     false,
     "high protein breads title should not be the old best healthy sandwiches stack",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-10-01$/m);
+
+  assert.match(page.excerpt, /^5 to 7 grams of protein per slice/);
+  assert.match(page.excerpt, /sometimes/);
+  assert.match(page.excerpt, /about 5 grams/);
+  assert.match(page.excerpt, /about 10 grams/);
+  assert.ok(
+    excerptLower.indexOf("5 to 7 grams") < excerptLower.indexOf("about 5 grams"),
+    "high protein breads meta should put 5 to 7 grams before the typical 5 gram loaf",
+  );
+  assert.ok(
+    excerptLower.indexOf("about 5 grams") < excerptLower.indexOf("about 10 grams"),
+    "high protein breads meta should put the 5 gram slice before the 10 gram sandwich",
+  );
+  assert.ok(
+    page.excerpt.length <= 160,
+    `high protein breads meta too long: ${page.excerpt.length}`,
+  );
+  assert.equal(page.excerpt.length, 145);
 });
 
 test("breakfast energy title drops the leading Best superlative", () => {
