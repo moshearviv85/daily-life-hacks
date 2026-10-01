@@ -2284,6 +2284,56 @@ test("high protein breads title leads with 5-7g protein per slice", () => {
   assert.equal(page.excerpt.length, 145);
 });
 
+test("chia pudding breakfast title leads with the on-page jar fiber", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/chia-pudding-variations-for-breakfast.md"),
+    "utf8",
+  );
+  const page = articleFrontmatter("chia-pudding-variations-for-breakfast");
+  const titleLower = page.title.toLowerCase();
+
+  assert.equal(
+    page.title,
+    "16-17g Fiber: Chia Pudding Enough for Breakfast",
+  );
+  assert.equal(page.title.length, 47);
+  assert.ok(
+    page.title.length <= 60,
+    `chia pudding title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("16-17g fiber"),
+    "chia pudding title should lead with 16-17g fiber",
+  );
+  assert.ok(
+    titleLower.indexOf("16-17g") < titleLower.indexOf("chia pudding"),
+    "chia pudding title should put 16-17g before chia pudding",
+  );
+  assert.ok(
+    titleLower.includes("enough for breakfast"),
+    "chia pudding title should keep enough for breakfast",
+  );
+  assert.equal(
+    titleLower.includes("?"),
+    false,
+    "chia pudding title should not stay in question form",
+  );
+  assert.equal(
+    titleLower.includes("best"),
+    false,
+    "chia pudding title should not use a best superlative",
+  );
+  assert.equal(
+    /^is chia seed pudding enough for breakfast$/.test(titleLower),
+    false,
+    "chia pudding title should not be the old gram-free question SERP",
+  );
+  assert.match(raw, /somewhere around 16 to 17 grams of fiber/);
+  assert.match(raw, /9\.8 grams of fiber/);
+  assert.match(raw, /^date: 2026-02-23$/m);
+  assert.match(raw, /^dateModified: 2026-10-01$/m);
+});
+
 test("breakfast energy title drops the leading Best superlative", () => {
   const raw = readFileSync(
     join(ROOT, "src/data/articles/best-breakfast-foods-for-sustained-energy.md"),
