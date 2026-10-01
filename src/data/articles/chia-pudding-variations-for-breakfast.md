@@ -1,5 +1,5 @@
 ---
-title: Is Chia Seed Pudding Enough for Breakfast
+title: "16-17g Fiber: Chia Pudding Enough for Breakfast"
 excerpt: "Tired of the same breakfast loop? These chia pudding variations - chocolate, berry, mango, vanilla - are high fiber, make-ahead, and actually filling"
 category: nutrition
 tags:
@@ -11,7 +11,7 @@ tags:
 image: /images/chia-pudding-variations-for-breakfast-main.jpg
 imageAlt: Four jars of chia pudding topped with cocoa, berries, mango, and vanilla yogurt
 date: 2026-02-23
-dateModified: 2026-08-01
+dateModified: 2026-10-01
 author: "David Miller"
 quickAnswer: "The base never changes: 1/4 cup chia seeds to 1 cup liquid, whisked, whisked again after five minutes, then chilled at least four hours. Four variations cover most cravings: cocoa with a pinch of salt, mashed berries, mango with lime, and vanilla with cinnamon. USDA puts one ounce of dried chia at 9.8 grams of fiber, about 35 percent of the FDA's 28-gram Daily Value, so start at 3 tablespoons if your diet is low fiber, and drink water. Keep jars at 40°F or below and eat within 3 to 4 days, or the milk's date, whichever is sooner. Never eat the seeds dry."
 featured: false
