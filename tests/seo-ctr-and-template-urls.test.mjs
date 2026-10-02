@@ -2408,6 +2408,84 @@ test("cottage cheese vs Greek yogurt title leads with half-cup protein grams", (
   assert.match(articlePage, /<h1[\s\S]*?\{article\.data\.title\}[\s\S]*?<\/h1>/);
 });
 
+test("bagel sandwich lunch title leads with 10-12g protein per bagel", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/high-protein-bagel-sandwich-ideas-lunch.md"),
+    "utf8",
+  );
+  const page = articleFrontmatter("high-protein-bagel-sandwich-ideas-lunch");
+  const titleLower = page.title.toLowerCase();
+  const excerptLower = page.excerpt.toLowerCase();
+  const layout = readFileSync(join(ROOT, "src/layouts/BaseLayout.astro"), "utf8");
+  const articlePage = readFileSync(join(ROOT, "src/pages/[slug].astro"), "utf8");
+
+  assert.equal(
+    page.title,
+    "10-12g Protein per Bagel: High Protein Sandwich Ideas",
+  );
+  assert.equal(page.title.length, 53);
+  assert.ok(
+    page.title.length <= 60,
+    `bagel sandwich title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("10-12g protein per bagel"),
+    "bagel sandwich title should lead with 10-12g protein per bagel",
+  );
+  assert.ok(
+    titleLower.indexOf("10-12g") < titleLower.indexOf("per bagel"),
+    "bagel sandwich title should put 10-12g before per bagel",
+  );
+  assert.ok(
+    titleLower.indexOf("per bagel") < titleLower.indexOf("sandwich ideas"),
+    "bagel sandwich title should scope the grams to the bagel before sandwich ideas",
+  );
+  assert.equal(
+    /^high protein bagel sandwich ideas for a better lunch$/.test(titleLower),
+    false,
+    "bagel sandwich title should not stay on the gram-free better lunch SERP",
+  );
+  assert.equal(
+    titleLower.includes("better lunch"),
+    false,
+    "bagel sandwich title should not spend the SERP on better lunch",
+  );
+  assert.match(
+    raw,
+    /Some brands use pea protein or extra gluten to get the count up to 10 or 12 grams per bagel\./,
+  );
+  assert.match(raw, /^date: 2026-04-28$/m);
+  assert.match(raw, /^dateModified: 2026-10-02$/m);
+
+  assert.equal(
+    page.excerpt,
+    "10 or 12 grams per bagel when some brands add pea protein or extra gluten. These lunch ideas start from that high-protein bagel.",
+  );
+  assert.ok(
+    excerptLower.startsWith("10 or 12 grams per bagel"),
+    "bagel sandwich meta should lead with 10 or 12 grams per bagel",
+  );
+  assert.ok(
+    excerptLower.indexOf("10 or 12 grams") < excerptLower.indexOf("pea protein"),
+    "bagel sandwich meta should put the gram figure before pea protein",
+  );
+  assert.ok(
+    excerptLower.includes("extra gluten"),
+    "bagel sandwich meta should keep the extra gluten source",
+  );
+  assert.ok(
+    page.excerpt.length <= 160,
+    `bagel sandwich meta too long: ${page.excerpt.length}`,
+  );
+  assert.equal(page.excerpt.length, 128);
+  assert.match(layout, /<title>\{title\}<\/title>/);
+  assert.match(layout, /<meta property="og:title" content=\{title\} \/>/);
+  assert.match(layout, /<meta name="twitter:title" content=\{title\} \/>/);
+  assert.match(articlePage, /title=\{article\.data\.title\}/);
+  assert.match(articlePage, /description=\{article\.data\.excerpt\}/);
+  assert.match(articlePage, /<h1[\s\S]*?\{article\.data\.title\}[\s\S]*?<\/h1>/);
+});
+
 test("breakfast energy title drops the leading Best superlative", () => {
   const raw = readFileSync(
     join(ROOT, "src/data/articles/best-breakfast-foods-for-sustained-energy.md"),
