@@ -30,6 +30,8 @@ GH_PAT        = os.environ.get("GH_PAT", "")
 GH_REPO       = os.environ.get("GITHUB_REPOSITORY", "")
 
 API_BASE = "https://api.pinterest.com/v5"
+TRANSIENT_ATTEMPTS = 3
+PINTEREST_TRANSIENT_CODE = 12
 
 # ── Token ──────────────────────────────────────────────────────────────────────
 
@@ -67,28 +69,101 @@ def get_access_token():
 
 # ── Fetch top pins analytics ───────────────────────────────────────────────────
 
-def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50):
-    resp = requests.get(
-        f"{API_BASE}/user_account/analytics/top_pins",
-        headers={"Authorization": f"Bearer {access_token}"},
-        params={
-            "start_date":   start_date,
-            "end_date":     end_date,
-            "sort_by":      sort_by,
-            "num_of_pins":  num,
-            "metric_types": "IMPRESSION,OUTBOUND_CLICK,SAVE,PIN_CLICK",
-        },
-        timeout=20,
-    )
-    print(f"  top_pins [{sort_by}] → {resp.status_code}")
-    if not resp.ok:
-        print(f"  ERROR: {resp.text[:500]}")
+def _response_json(resp):
+    try:
+        data = resp.json()
+    except (ValueError, TypeError, AttributeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def _is_retryable_exception(exc):
+    name = type(exc).__name__
+    if name in {
+        "Timeout",
+        "ConnectTimeout",
+        "ReadTimeout",
+        "ConnectionError",
+        "ChunkedEncodingError",
+        "SSLError",
+    }:
+        return True
+    try:
+        return isinstance(exc, requests.exceptions.RequestException)
+    except AttributeError:
+        return False
+
+
+def _is_transient_response(resp, body):
+    status = getattr(resp, "status_code", 0) or 0
+    if status >= 500:
+        return True
+    if body.get("code") == PINTEREST_TRANSIENT_CODE:
+        return True
+    return False
+
+
+def fetch_top_pins(access_token, start_date, end_date, sort_by, num=50, attempts=TRANSIENT_ATTEMPTS):
+    """
+    Return pin items for one sort metric.
+
+    Transient Pinterest failures (HTTP 5xx, JSON code 12, connection/timeouts)
+    are retried with short exponential backoff. Exhausted retries return None
+    so the caller can leave the existing cache in place and soft-exit.
+    Successful HTTP 200s with an empty pin list return [] (missing org_analytics
+    still fails hard in main). Non-transient HTTP errors raise RuntimeError.
+    """
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            resp = requests.get(
+                f"{API_BASE}/user_account/analytics/top_pins",
+                headers={"Authorization": f"Bearer {access_token}"},
+                params={
+                    "start_date":   start_date,
+                    "end_date":     end_date,
+                    "sort_by":      sort_by,
+                    "num_of_pins":  num,
+                    "metric_types": "IMPRESSION,OUTBOUND_CLICK,SAVE,PIN_CLICK",
+                },
+                timeout=20,
+            )
+        except Exception as exc:
+            if not _is_retryable_exception(exc):
+                raise
+            last_error = exc
+            print(f"  top_pins [{sort_by}] → {type(exc).__name__}: {exc} (attempt {attempt}/{attempts})")
+            if attempt < attempts:
+                delay = 2 ** (attempt - 1)
+                print(f"  Transient error; retrying in {delay}s...")
+                time.sleep(delay)
+                continue
+            print(f"  WARNING: {sort_by} failed after {attempts} attempts ({type(exc).__name__})")
+            return None
+
+        print(f"  top_pins [{sort_by}] → {resp.status_code} (attempt {attempt}/{attempts})")
+        body = _response_json(resp)
+        if resp.ok and body.get("code") != PINTEREST_TRANSIENT_CODE:
+            items = body.get("pins") or []
+            print(f"  Got {len(items)} pins")
+            return items
+
+        preview = (getattr(resp, "text", "") or "")[:500]
+        print(f"  ERROR: {preview}")
+        last_error = preview or f"HTTP {getattr(resp, 'status_code', '?')}"
+        if _is_transient_response(resp, body) and attempt < attempts:
+            delay = 2 ** (attempt - 1)
+            print(f"  Transient Pinterest error; retrying in {delay}s...")
+            time.sleep(delay)
+            continue
+        if _is_transient_response(resp, body):
+            print(f"  WARNING: {sort_by} failed after {attempts} attempts (transient API error)")
+            return None
+
         raise RuntimeError("Pinterest analytics request failed; existing cache was not replaced")
 
-    data  = resp.json()
-    items = data.get("pins") or []
-    print(f"  Got {len(items)} pins")
-    return items
+    print(f"  WARNING: {sort_by} failed after {attempts} attempts ({last_error})")
+    return None
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
@@ -103,6 +178,15 @@ def main():
     pins_by_id = {}
     for sort_by in ["IMPRESSION", "OUTBOUND_CLICK", "SAVE"]:
         items = fetch_top_pins(access_token, start_date, end_date, sort_by)
+        if items is None:
+            # Transient Pinterest flake (5xx / code 12 / timeout). Leave D1 cache
+            # untouched so a partial or empty snapshot cannot replace good data.
+            print(
+                "WARNING: Pinterest analytics request failed after retries "
+                f"(metric={sort_by}); existing cache was not replaced. "
+                "Exiting 0 so this scheduled flake does not fail main CI."
+            )
+            sys.exit(0)
         for item in items:
             pin_id = item.get("pin_id") or ""
             if not pin_id or pin_id in pins_by_id:
