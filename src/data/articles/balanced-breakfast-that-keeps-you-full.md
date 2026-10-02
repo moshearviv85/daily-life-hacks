@@ -43,13 +43,13 @@ Don't overcomplicate this. You don't need a spreadsheet to make breakfast. Just 
 
 If you want toast, great. That's your carbohydrate. Now add eggs for protein, since [two of them carry about 12.6 grams](/how-much-protein-in-two-eggs/), and maybe a slice of avocado or a drizzle of olive oil for fat. If you're curious what that combo actually adds up to, here's the [macronutrient breakdown of a healthy egg sandwich](/macronutrient-breakdown-healthy-egg-sandwich/) with real numbers. 
 
-If you want oatmeal, perfect. Oats bring the carbs and the fiber. Stir in a spoonful of peanut butter for fat and some Greek yogurt or milk for protein. It's a simple plug and play system. You just look at your plate and ask yourself what's missing.
+If you want oatmeal, perfect. Oats bring the carbs and the fiber. Old-fashioned rolled oats return 35.8 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Stir in a spoonful of peanut butter for fat and some Greek yogurt or milk for protein. It's a simple plug and play system. You just look at your plate and ask yourself what's missing.
 
 ## Realistic examples for normal mornings
 
 Nobody's making a three course meal on a Tuesday. Here are a few ways to use the formula when you're rushing out the door.
 
-**The yogurt bowl:** Plain or low sugar yogurt gives you protein, and if breakfast is where a chunk of your grocery money goes, it's worth seeing [how eggs and Greek yogurt compare on protein per dollar](/eggs-vs-greek-yogurt-protein-cost/). Toss in a handful of berries for fiber and some walnuts for fat. It takes thirty seconds to assemble.
+**The yogurt bowl:** Plain or low sugar yogurt gives you protein, and if breakfast is where a chunk of your grocery money goes, it's worth seeing [how eggs and Greek yogurt compare on protein per dollar](/eggs-vs-greek-yogurt-protein-cost/). Eggs return 34.4 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), and plain nonfat Greek yogurt returns 27.5. Toss in a handful of berries for fiber and some walnuts for fat. It takes thirty seconds to assemble.
 
 **The upgraded smoothie:** A banana and almond milk won't hold you over. Add a scoop of cottage cheese or a handful of hemp seeds for protein, and a spoonful of almond butter for fat. Plain peanut butter does the same job for less, which is the short version of [how peanut butter and almonds compare on protein per dollar](/peanut-butter-vs-almonds-protein-cost/). It blends up just as fast but works twice as hard.
 
