@@ -45,7 +45,7 @@ If you opt for a whole wheat version, you might squeeze out an extra gram or two
 
 This is where the math actually starts to matter. To get into the "high protein" territory, you have to look at what's inside. A classic bacon, egg, and cheese is the standard, but the ratios are usually skewed toward the fat. 
 
-**Eggs:** One large egg adds about 6 grams of protein. If you're making this at home, use two eggs to hit 12 grams right out of the gate. If cost is part of the calculation, [eggs and Greek yogurt are worth pricing against each other](/eggs-vs-greek-yogurt-protein-cost/) before you lock in a breakfast routine.
+**Eggs:** One large egg adds about 6 grams of protein. If you're making this at home, use two eggs to hit 12 grams right out of the gate. If cost is part of the calculation, [eggs and Greek yogurt are worth pricing against each other](/eggs-vs-greek-yogurt-protein-cost/) before you lock in a breakfast routine. In the full [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), eggs return 34.4 grams per dollar and plain nonfat Greek yogurt returns 27.5.
 **Cheese:** A single slice of cheddar or provolone adds about 5 to 7 grams. It's a decent boost, though it comes with a side of saturated fat.
 **Meat:** This is the variable that changes everything. Two slices of center-cut bacon only add about 4 grams. However, swapping that for two ounces of deli turkey or a turkey sausage patty can add 12 to 15 grams of protein.
 

@@ -61,7 +61,7 @@ Most gluten-free bread from the store is sad. There, I said it. It's usually ful
 
 But this one? This one actually works. It's a dense, hearty, seed-packed loaf that holds up to serious sandwich fillings and makes incredible toast. It doesn't rely on weird gums or fifteen different flours. It uses whole ingredients that happen to pack a massive fiber punch.
 
-For more ways to put oats, seeds, beans, and grains to work without wrecking the grocery budget, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) lays out the rest of the pantry. If gluten isn't the reason you're here, [whole wheat flour and quinoa are worth pricing against each other for fiber](/whole-wheat-flour-vs-quinoa-fiber-cost/) before you fill the cart.
+For more ways to put oats, seeds, beans, and grains to work without wrecking the grocery budget, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) lays out the rest of the pantry. Rolled oats, chia seeds, and whole flaxseed in this loaf return 35.8, 33.1, and 28.5 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). If gluten isn't the reason you're here, [whole wheat flour and quinoa are worth pricing against each other for fiber](/whole-wheat-flour-vs-quinoa-fiber-cost/) before you fill the cart.
 
 ## How this bread actually holds together
 

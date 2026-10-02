@@ -112,6 +112,15 @@ const requiredLinks = [
   ["keep-berries-fresh-longer-when-to-wash", fiberFlagship],
   ["30-day-high-fiber-challenge-meal-plan", proteinFlagship],
   ["how-to-revive-wilted-lettuce-and-greens", fiberFlagship],
+  ["eggs-vs-everything-protein-value", fiberFlagship],
+  ["high-fiber-gluten-free-bread-recipe", fiberFlagship],
+  ["best-breakfast-foods-for-sustained-energy", fiberFlagship],
+  ["high-protein-bagel-sandwich-ideas-lunch", fiberFlagship],
+  ["how-much-protein-in-bagel-sandwich", proteinFlagship],
+  ["balanced-breakfast-that-keeps-you-full", proteinFlagship],
+  ["balanced-breakfast-that-keeps-you-full", fiberFlagship],
+  ["quick-20-minute-high-fiber-meals-for-busy-days", proteinFlagship],
+  ["quick-20-minute-high-fiber-meals-for-busy-days", fiberFlagship],
 ];
 
 // Re-checked 2026-09-29 against the live articles and the July 2026 CSVs.
@@ -134,6 +143,11 @@ const requiredLinks = [
 // in the study (bagged chopped kale, 7.5 grams per dollar). Lettuce,
 // chard, arugula, and herbs are not rows, and nothing on the page is a
 // protein-study food.
+// Re-checked 2026-10-02. Gluten-free seed bread credits the loaf to fiber
+// and fat. Psyllium is not a study row, and peanut butter there is a
+// topping, not a protein price. The bagel-sandwich protein page's whole
+// wheat line is an extra gram or two of protein. A bagel is not the
+// 100% whole wheat loaf, so fiber stays off that page.
 const unfitFlagshipLinks = [
   ["how-to-store-homemade-salad-dressing-safely", proteinFlagship],
   ["cooking-oils-smoke-points-best-uses", fiberFlagship],
@@ -143,6 +157,8 @@ const unfitFlagshipLinks = [
   ["popcorn-vs-potato-chips-fiber-comparison", proteinFlagship],
   ["keep-berries-fresh-longer-when-to-wash", proteinFlagship],
   ["how-to-revive-wilted-lettuce-and-greens", proteinFlagship],
+  ["high-fiber-gluten-free-bread-recipe", proteinFlagship],
+  ["how-much-protein-in-bagel-sandwich", fiberFlagship],
 ];
 
 function articleBody(slug) {
