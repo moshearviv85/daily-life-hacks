@@ -4,6 +4,13 @@ import { extname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { INDEX_KEEP_PATHS, INDEX_PRUNE_SLUGS } from "../src/content/index-prune.js";
+import {
+  aboutGrams,
+  fiberRow,
+  packageCostUsd,
+  packageProteinG,
+  proteinRow,
+} from "../src/content/meal-protein-cost.mjs";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
 const LEAK = /(?:href|src)=["']\/\$\{/;
@@ -2484,6 +2491,75 @@ test("bagel sandwich lunch title leads with 10-12g protein per bagel", () => {
   assert.match(articlePage, /title=\{article\.data\.title\}/);
   assert.match(articlePage, /description=\{article\.data\.excerpt\}/);
   assert.match(articlePage, /<h1[\s\S]*?\{article\.data\.title\}[\s\S]*?<\/h1>/);
+});
+
+test("beans and rice title leads with 30.1g protein per dollar", () => {
+  const raw = readFileSync(
+    join(ROOT, "src/data/articles/beans-and-rice-complete-protein-meal.md"),
+    "utf8",
+  );
+  const page = articleFrontmatter("beans-and-rice-complete-protein-meal");
+  const canned = proteinRow("Canned black beans");
+  const rice = proteinRow("White rice (long grain, dry)");
+  const cannedFiber = fiberRow("Canned black beans");
+  const twoCanProtein = aboutGrams(packageProteinG(canned) * 2);
+  const twoCanUsd = packageCostUsd(canned, 2).toFixed(2);
+  const titleLower = page.title.toLowerCase();
+  const layout = readFileSync(join(ROOT, "src/layouts/BaseLayout.astro"), "utf8");
+  const articlePage = readFileSync(join(ROOT, "src/pages/[slug].astro"), "utf8");
+
+  assert.equal(canned.protein_g_per_dollar, "30.1");
+  assert.equal(canned.package_price_usd, "0.88");
+  assert.equal(twoCanProtein, "53");
+  assert.equal(twoCanUsd, "1.76");
+  assert.equal(rice.protein_g_per_dollar, "29.4");
+  assert.equal(cannedFiber.fiber_g_per_dollar, "34.4");
+  assert.equal(
+    page.title,
+    `${canned.protein_g_per_dollar}g Protein per $: Beans and Rice Complete Meal`,
+  );
+  assert.equal(page.title, "30.1g Protein per $: Beans and Rice Complete Meal");
+  assert.equal(page.title.length, 49);
+  assert.ok(
+    page.title.length <= 60,
+    `beans and rice title should be ≤60 chars, got ${page.title.length}`,
+  );
+  assert.ok(
+    titleLower.startsWith("30.1g protein per $"),
+    "beans and rice title should lead with 30.1g protein per $",
+  );
+  assert.ok(
+    titleLower.indexOf("30.1g protein") < titleLower.indexOf("beans and rice"),
+    "beans and rice title should put the protein rate before the meal name",
+  );
+  assert.ok(
+    titleLower.includes("complete meal"),
+    "beans and rice title should keep the complete meal query",
+  );
+  assert.equal(
+    /^beans and rice: a complete protein meal on a budget$/.test(titleLower),
+    false,
+    "beans and rice title should not stay on the soft budget SERP",
+  );
+  assert.equal(
+    titleLower.includes("on a budget"),
+    false,
+    "beans and rice title should not spend the SERP on a budget",
+  );
+  assert.match(raw, /\$0\.88 each/);
+  assert.match(raw, /\$1\.76 for the pot/);
+  assert.match(raw, /about 53 grams of protein/);
+  assert.match(raw, /30\.1 grams per dollar/);
+  assert.match(raw, /29\.4 grams of protein per dollar/);
+  assert.match(raw, /34\.4 grams of fiber per dollar/);
+  assert.doesNotMatch(raw, /sourdough/);
+  assert.match(layout, /<title>\{title\}<\/title>/);
+  assert.match(layout, /<meta property="og:title" content=\{title\} \/>/);
+  assert.match(layout, /<meta name="twitter:title" content=\{title\} \/>/);
+  assert.match(articlePage, /title=\{article\.data\.title\}/);
+  assert.match(articlePage, /<h1[\s\S]*?\{article\.data\.title\}[\s\S]*?<\/h1>/);
+  assert.match(articlePage, /headline: article\.data\.title/);
+  assert.match(articlePage, /name: article\.data\.title/);
 });
 
 test("breakfast energy title drops the leading Best superlative", () => {

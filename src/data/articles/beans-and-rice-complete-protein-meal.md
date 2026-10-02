@@ -1,5 +1,5 @@
 ---
-title: "Beans and Rice: A Complete Protein Meal on a Budget"
+title: "30.1g Protein per $: Beans and Rice Complete Meal"
 excerpt: "Cook smoky black beans with onion and pepper, spoon them over rice, and finish with lime for a low-cost pantry dinner with complementary proteins."
 quickAnswer: >-
   Cook rice separately while onion and bell pepper soften in a skillet. Toast
