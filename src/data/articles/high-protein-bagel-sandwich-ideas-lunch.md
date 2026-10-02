@@ -1,6 +1,6 @@
 ---
-title: High Protein Bagel Sandwich Ideas for a Better Lunch
-excerpt: Bored of the same old turkey wrap? These high protein bagel sandwich ideas use simple ingredients to keep you full without a mid-afternoon energy crash.
+title: "10-12g Protein per Bagel: High Protein Sandwich Ideas"
+excerpt: "10 or 12 grams per bagel when some brands add pea protein or extra gluten. These lunch ideas start from that high-protein bagel."
 category: recipes
 tags:
 - high protein
@@ -12,7 +12,7 @@ tags:
 image: "/images/high-protein-bagel-sandwich-ideas-lunch-main.jpg"
 imageAlt: A sliced high-protein bagel sandwich with egg, greens, tomato, and turkey on a wooden cutting board.
 date: 2026-04-28
-dateModified: 2026-07-16
+dateModified: 2026-10-02
 author: "David Miller"
 featured: false
 prepTime: "10 minutes"
