@@ -111,3 +111,10 @@ Label the jar with the oldest collection date and refrigerate it covered. Plan t
 Use discard from an established starter, not the mixture from the first days of building a culture. [King Arthur's starter guide](https://www.kingarthurbaking.com/learn/guides/sourdough/create) says to throw out starter with mold, pink or orange discoloration, or a putrid smell. Don't try to bake those problems away.
 
 Discard still contains raw flour. [The FDA advises against tasting raw flour, dough, or batter](https://www.fda.gov/consumers/consumer-updates/raw-doughs-raw-deal-and-could-make-you-sick). Cook these recipes through, then judge the flavor. The jar doesn't need to be emptied in one heroic baking session.
+
+## More sourdough discard guides
+
+- [What to make with 100, 227, or 500 grams of discard](/what-to-make-with-sourdough-discard-by-amount/)
+- [Whether discard from a new starter is usable yet](/can-you-use-sourdough-discard-from-a-new-starter/)
+- [How long discard lasts in the fridge, and when to freeze it](/how-long-does-sourdough-discard-last/)
+- [Discard versus an active, ripe starter](/sourdough-discard-vs-active-starter/)

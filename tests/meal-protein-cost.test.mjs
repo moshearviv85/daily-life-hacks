@@ -89,6 +89,10 @@ const sourdoughSlugs = [
   "gluten-free-sourdough-discard-pizza-dough",
   "how-to-make-sourdough-pizza-dough-same-day",
   "how-to-measure-sourdough-discard-grams",
+  "what-to-make-with-sourdough-discard-by-amount",
+  "can-you-use-sourdough-discard-from-a-new-starter",
+  "how-long-does-sourdough-discard-last",
+  "sourdough-discard-vs-active-starter",
 ];
 
 test("refreshed slugs stay indexable and skip prune plus sourdough", () => {
