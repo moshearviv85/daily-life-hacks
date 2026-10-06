@@ -207,6 +207,32 @@ async function subscribeWithKit(env, payload) {
   };
 }
 
+async function readSubscribeBody(request) {
+  let raw;
+  try {
+    raw = await request.text();
+  } catch {
+    return { error: "Request body could not be read. Send JSON with an email field." };
+  }
+
+  if (!raw.trim()) {
+    return { error: "Request body is empty. Send JSON with an email field." };
+  }
+
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return { error: "Request body could not be parsed. Send JSON with an email field." };
+  }
+
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+    return { error: "Request body must be a JSON object with an email field." };
+  }
+
+  return { value: parsed };
+}
+
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -222,6 +248,11 @@ export async function onRequestPost(context) {
     return new Response(null, { headers: corsHeaders });
   }
 
+  const bodyResult = await readSubscribeBody(request);
+  if (bodyResult.error) {
+    return jsonResponse({ error: bodyResult.error }, 400, corsHeaders);
+  }
+
   try {
     const {
       email,
@@ -231,7 +262,7 @@ export async function onRequestPost(context) {
       base_slug,
       variant_slug,
       email_segment,
-    } = await request.json();
+    } = bodyResult.value;
 
     if (!email || !email.includes("@")) {
       return jsonResponse({ error: "Valid email required" }, 400, corsHeaders);
