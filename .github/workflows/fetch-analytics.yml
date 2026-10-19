@@ -23,6 +23,8 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      # Retries 5xx/code-12; empty results from failed top_pins exit 0.
+      # All-200 empty still exits 1. Token/save failures still exit 1.
       - name: Fetch Pinterest analytics
         env:
           PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
