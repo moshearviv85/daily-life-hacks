@@ -93,9 +93,10 @@ const isRecipe =
 
 /**
  * Google lists `recipeCategory` and `recipeCuisine` as recommended Recipe
- * properties and no article declares them. Rather than invent a value, derive
- * one ONLY from an explicit authored tag — the tag is the author's own claim
- * about the dish. Anything without a matching tag emits nothing.
+ * properties. Cuisine is emitted only from an authored value or an exact
+ * cuisine tag. `recipeCategory` is always present: the post's own value, then
+ * a meal type named by the post category or a tag (exact tag, then a phrase
+ * inside the category or a tag), then Main Course.
  */
 const MEAL_TYPE_BY_TAG: Record<string, string> = {
   breakfast: "Breakfast",
@@ -152,7 +153,31 @@ const firstMatch = (map: Record<string, string>) => {
   for (const tag of normalizedTags) if (map[tag]) return map[tag];
   return undefined;
 };
-const recipeCategory = article.data.recipeCategory ?? firstMatch(MEAL_TYPE_BY_TAG);
+const mealTypeKeysByLength = Object.keys(MEAL_TYPE_BY_TAG).sort(
+  (a, b) => b.length - a.length,
+);
+const sourceNamesMealType = (source: string, key: string) => {
+  const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?:^|[^a-z0-9])${escaped}(?:[^a-z0-9]|$)`).test(source);
+};
+/** Meal type named inside the category or a tag, after exact tags miss. */
+const derivedRecipeCategory = () => {
+  const sources = [article.data.category.toLowerCase(), ...normalizedTags];
+  for (const source of sources) {
+    for (const key of mealTypeKeysByLength) {
+      if (source !== key && sourceNamesMealType(source, key)) {
+        return MEAL_TYPE_BY_TAG[key];
+      }
+    }
+  }
+  return undefined;
+};
+const authoredRecipeCategory = article.data.recipeCategory?.trim();
+const recipeCategory =
+  authoredRecipeCategory ||
+  firstMatch(MEAL_TYPE_BY_TAG) ||
+  derivedRecipeCategory() ||
+  "Main Course";
 const recipeCuisine = article.data.recipeCuisine ?? firstMatch(CUISINE_BY_TAG);
 
 const siteUrl = "https://www.daily-life-hacks.com";
