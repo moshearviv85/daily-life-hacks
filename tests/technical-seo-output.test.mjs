@@ -228,6 +228,15 @@ test("Dataset and Recipe nodes retain current rich-result requirements", () => {
         if (node["@type"] === "Recipe") {
           recipes += 1;
           assert.ok(node.name, `Recipe missing name: ${entry.loc}`);
+          assert.equal(
+            typeof node.recipeCategory,
+            "string",
+            `Recipe missing recipeCategory: ${entry.loc}`,
+          );
+          assert.ok(
+            node.recipeCategory.trim(),
+            `Recipe recipeCategory is blank: ${entry.loc}`,
+          );
           assert.ok(
             Array.isArray(node.image) && node.image.length > 0,
             `Recipe missing image: ${entry.loc}`,
@@ -248,6 +257,28 @@ test("Dataset and Recipe nodes retain current rich-result requirements", () => {
 
   assert.ok(datasets > 0, "expected Dataset nodes in indexable output");
   assert.ok(recipes > 0, "expected Recipe nodes in indexable output");
+});
+
+test("reported recipe posts publish a derived recipeCategory", () => {
+  const expected = {
+    "beans-and-rice-complete-protein-meal": "Main Course",
+    "best-way-to-cook-chicken": "Dinner",
+    "easy-sourdough-discard-recipes-beginners": "Main Course",
+    "split-pea-soup-recipe-high-fiber": "Soup",
+    "quick-20-minute-high-fiber-meals-for-busy-days": "Main Course",
+  };
+
+  for (const [slug, category] of Object.entries(expected)) {
+    const url = `${SITE}/${slug}/`;
+    const html = readFileSync(distHtmlFor(url), "utf8");
+    const categories = [];
+    for (const block of jsonLdBlocks(html, url)) {
+      visit(block, (node) => {
+        if (node["@type"] === "Recipe") categories.push(node.recipeCategory);
+      });
+    }
+    assert.deepEqual(categories, [category], slug);
+  }
 });
 
 test("fiber and protein flagships publish the Hugging Face dataset mirror in HTML and Dataset JSON-LD", () => {

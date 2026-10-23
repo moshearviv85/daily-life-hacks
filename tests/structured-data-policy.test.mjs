@@ -15,13 +15,18 @@ test("zero-minute recipe durations remain valid ISO-8601 durations", () => {
   assert.match(articleRoute, /hasExplicitZeroDuration[\s\S]*?return hasExplicitZeroDuration \? "PT0M" : undefined;/);
 });
 
-test("recipe category and cuisine are factual optional fields, not site-wide guesses", () => {
+test("recipe category is always present; cuisine stays a factual optional field", () => {
   assert.match(contentConfig, /recipeCategory:\s*z\.string\(\)\.optional\(\)/);
   assert.match(contentConfig, /recipeCuisine:\s*z\.string\(\)\.optional\(\)/);
   assert.match(
     articleRoute,
-    /const recipeCategory = article\.data\.recipeCategory \?\? firstMatch\(MEAL_TYPE_BY_TAG\)/,
+    /const authoredRecipeCategory = article\.data\.recipeCategory\?\.trim\(\)/,
   );
+  assert.match(
+    articleRoute,
+    /authoredRecipeCategory \|\|\s*firstMatch\(MEAL_TYPE_BY_TAG\) \|\|\s*derivedRecipeCategory\(\) \|\|\s*"Main Course"/,
+  );
+  assert.match(articleRoute, /article\.data\.category\.toLowerCase\(\), \.\.\.normalizedTags/);
   assert.match(
     articleRoute,
     /const recipeCuisine = article\.data\.recipeCuisine \?\? firstMatch\(CUISINE_BY_TAG\)/,
