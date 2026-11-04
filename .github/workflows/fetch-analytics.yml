@@ -23,6 +23,8 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      # Script retries Pinterest 5xx/code-12, then soft-exits 0 so scheduled
+      # flakes do not fail main CI. Auth and save errors still exit 1.
       - name: Fetch Pinterest analytics
         env:
           PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
