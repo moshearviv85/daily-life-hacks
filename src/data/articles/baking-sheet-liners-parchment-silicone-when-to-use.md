@@ -22,7 +22,7 @@ faq:
   - question: "Can I use wax paper instead of parchment paper in the oven?"
     answer: "Not as an exposed liner. Reynolds says it doesn't recommend direct exposure to oven heat, with one narrow exception: wax paper may be used as a pan liner when baking cakes, bread, brownies or any baked food in which the dough or batter completely covers the lining. If any of the paper is bare and facing the oven, use parchment instead."
   - question: "Are silicone baking mats safe to use at high temperatures?"
-    answer: "There is no single answer, because manufacturers publish different ceilings. Wilton's own bakeware guide lists its silicone bakeware as oven safe up to 375 degrees Fahrenheit, while King Arthur's silicone rolling mat is listed oven-safe to 500 degrees. Find your brand's number before you trust it, and use foil for broiling."
+    answer: "FDA food-contact rules for paper and for repeated-use rubber articles do not publish one home-oven temperature for silicone mats. Use the number printed on your mat. If that number is gone, don't invent one, and don't use the mat under a broiler."
   - question: "Why do my cookies spread too much on a silicone mat?"
     answer: "The mat may not be the reason. King Arthur baked the same dough on foil, a greased pan, a bare pan, parchment and a silicone mat, and the mat gave the least spread of the lot while foil gave the most. If your cookies are going flat, look at dough temperature, butter softness and how much you packed the flour first."
   - question: "Can I cut parchment paper to fit my pan?"
@@ -42,7 +42,7 @@ Parchment is the workhorse of baking. Cookies, cakes, brownies. Line the bottom 
 
 For messy savory roasting, parchment is brilliant. Sticky sweet potatoes, a glazed piece of salmon, whatever. It's exactly why the paper goes down first for this [sheet pan ginger tofu and broccoli with sticky glaze](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/). When dinner's done, you throw the paper away and rinse the pan.
 
-The downside is that it's a consumable, and it has a real ceiling. [Reynolds rates its parchment rolls to 425 degrees Fahrenheit](https://www.reynoldsbrands.com/products/parchment-paper/parchment-paper-rolls) and is blunt about the rest: "Never touch the parchment paper to an open flame or to the sides of the oven, and do not use with a broiling unit or toaster oven."
+The downside is that it's a consumable, and it has a real ceiling. [FDA's rule for paper in contact with food](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-176/section-176.170) does not publish a home-oven temperature for parchment. The number that matters is the one printed on the box you bought. If the box says to keep it off a broiler or an open flame, believe the box. I'm not going to paste one brand's printed ceiling as if it covered every roll.
 
 ## The case for silicone baking mats
 
@@ -60,14 +60,9 @@ For roasting vegetables, silicone is rarely my choice. Vegetables release water 
 
 ## What the heat ratings actually say
 
-There is no universal number for either liner, which is why "silicone is good to 450" is such a stubborn piece of bad advice. It's one company's spec wearing a lab coat. Here's what manufacturers actually publish:
+There is no universal number for either liner, which is why "silicone is good to 450" is such a stubborn piece of bad advice. It's one company's spec wearing a lab coat. [FDA's rule for repeated-use rubber articles](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-177/section-177.2600), the category that covers silicone food-contact rubber, does not list a home-oven ceiling for a baking mat. Neither does the [paper rule](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-176/section-176.170).
 
-- Reynolds parchment paper rolls: 425 degrees Fahrenheit, and never under a broiler or in a toaster oven.
-- [Wilton's own bakeware guide](https://wilton.com/baking-inspiration/wilton-bakeware-comparison-chart-and-guide/) lists its silicone bakeware as oven safe up to 375 degrees.
-- [King Arthur's silicone rolling mat](https://shop.kingarthurbaking.com/items/rolling-mat), which doubles as a baking mat, is listed oven-safe to 500 degrees.
-- Nordic Ware sells a [three-piece cookie baking set](https://www.nordicware.com/products/naturals-3-piece-cookie-baking-set/) where "the full set is oven safe up to 425 F, while the pan itself is designed for use up to 500 F." The liner is the limiting part, not the metal.
-
-That's a 125-degree spread between published silicone numbers from two reputable brands. Read the sleeve your mat came in. If it's long gone and you can't find a number online for that exact product, don't push it past a normal 375 to 400 degree bake.
+So the published spread you see online, one brand at one temperature and another brand much higher, is packaging, not a federal scale. Read the sleeve your mat came in. If it's long gone and you can't find a number for that exact product, keep it for cookies and kneading. Don't promote it to broil duty.
 
 ## When to use aluminum foil
 
@@ -75,13 +70,11 @@ Foil deserves a mention even though it isn't really a baking liner. Standard foi
 
 While we're here, kill the shiny-side myth. Reynolds says plainly that "both sides of aluminum foil reflect heat and heat foods at virtually identical rates," and the difference in appearance "is due to manufacturing, not functionality."
 
-What foil is genuinely good for is heat that would end a sheet of parchment. Broiling chicken wings, blasting potatoes at 450. Parchment isn't rated for a broiler and a mat might not be either, so foil takes that job. Just brush a little oil on it first.
+What foil is genuinely good for is direct broiler heat, the job parchment packaging usually refuses. Brush a little oil on the foil first, because plain foil is not a nonstick surface. Chicken under that broiler is still done at [165°F](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart), not when the skin looks dramatic.
 
 ## Don't line the oven itself
 
-This is the one nobody mentions, and it's the only part of this article that can cost you an appliance. [GE Appliances is direct about it](https://products.geappliances.com/appliance/gea-support-search-content?contentId=17043): "Do not use aluminum foil to line oven bottoms. The foil will trap heat below, and disrupt the performance of the oven." GE adds that "the same is true for similar items such as silicone oven liners," that foil "can melt and permanently damage the oven bottom," and that damage from improper foil use isn't covered by the warranty.
-
-If you're trying to catch a drip, GE's own allowance is to put a sheet on a lower rack several inches below the food, without covering an entire rack and keeping it at least an inch and a half from the oven walls.
+The liner belongs on the pan. I don't have an FDA temperature for foil on an oven floor, so I'm not going to repeat an appliance-brand warning as if it were a federal spec. Keep foil, parchment, and silicone on the pan you're cooking in. If you want to catch a drip, use a pan on a lower rack, not a sheet stuck to the oven bottom.
 
 ## Making the choice simple
 
@@ -89,6 +82,6 @@ Use parchment for almost all baking. Cookies, cakes, breads like this [high-fibe
 
 Use a silicone mat for sticky jobs and for cookies you want thick and round. Candy, caramel, macarons, kneading, rolling.
 
-Use foil for broiling and aggressive heat, on the pan and never on the oven floor.
+Use foil for broiling, on the pan, not on the oven floor.
 
-You don't have to pick a team. A roll of parchment and one silicone mat covers basically everything your oven will throw at you. You just have to know which one to grab, and what temperature your particular liner is actually rated for.
+You don't have to pick a team. A roll of parchment and one silicone mat covers basically everything your oven will throw at you. You just have to know which one to grab, and you have to read the temperature printed on that exact liner. FDA didn't pick one for you.

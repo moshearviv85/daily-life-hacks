@@ -11,7 +11,7 @@ tags:
 image: /images/how-to-increase-fiber-intake-without-gas-main.jpg
 imageAlt: Bowl of oats with fruit and nuts on a kitchen counter
 date: 2026-03-30
-dateModified: 2026-07-16
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -38,7 +38,7 @@ faq:
     slowly again. If symptoms are sharp, persistent, or scary, do not guess and ask
     a qualified clinician.
 ---
-Fiber is one of those nutrients that sounds wholesome until your stomach files a complaint. If you want more fiber with less drama, you need a boring plan: gradual change, consistent water, and fewer heroic one day leaps.
+Fiber is one of those nutrients that sounds wholesome until your stomach files a complaint. The adult Adequate Intake is [25 grams a day for women 19 to 50 and 38 grams for men](https://www.nationalacademies.org/cdn/materials/9fb9fae6-337c-4b7c-9821-2c81d1f65ad0), and the FDA Daily Value is [28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). Jumping there in one meal is how you meet the gas. Gut bacteria ferment the new fiber, and that fermentation can produce gas ([Eswaran et al., 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3705355/)). If you want more fiber with less drama, you need a boring plan: gradual change, consistent water, and fewer heroic one day leaps.
 
 This is not a challenge culture article. This is a keep your pants comfortable article.
 Before adding another scoop of beans, read the [practical guide to water and fiber](/water-and-fiber-the-golden-rule/) so the gradual plan includes the glass sitting next to the plate.
@@ -109,11 +109,9 @@ Going out does not mean you have to skip fiber. It just means you plan the appro
 
 If you order something that is heavy on beans and your stomach is sensitive that day, balance the rest of the meal with simpler foods you tolerate well.
 
-## What If You’re Using Supplements?
+## Stay with food
 
-If you use fiber supplements (like powders), go slower than you think. Mix into enough liquid so it does not get thick fast.
-
-If you have medical conditions, talk with a qualified clinician about what makes sense for you.
+This is a food plan. Beans, oats, fruit, and cooked vegetables are the fiber. A cup of cooked lentils already has [about 16 grams](https://fdc.nal.usda.gov/food-details/172421/nutrients), so you don't need a powder to make the ramp real. If a clinician has you on a separate fiber product, ask them how fast to increase it. I'm not going to give mixing instructions for one.
 
 ## A Practical “Swap List” You Can Reuse
 

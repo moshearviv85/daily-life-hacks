@@ -15,7 +15,7 @@ tags:
 image: "/images/big-flavor-less-salt-citrus-herbs-umami-swaps-main.jpg"
 imageAlt: "Kitchen counter with lemons herbs garlic soy sauce and spices for flavor building"
 date: 2026-04-16
-dateModified: 2026-07-28
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -39,7 +39,7 @@ Salt is not just seasoning. It boosts aroma. It makes flavors feel louder. It co
 
 This is the big flavor with less salt guide. It is not about eating unsalted sadness. It is about turning the knobs you forgot you have: acid, herbs, spices, browning, and umami.
 
-Worth saying up front: the salt shaker probably isn't your biggest source. When we [measured sodium across 56 budget staples](/low-sodium-budget-foods-ranked/), 48 of them came in under 150 mg per 100 g, and the load was concentrated in a short list of cured meat, cheese, commercial bread and cans. The cooking below is about making the food taste like something. Where the sodium actually comes from is a shopping question.
+Worth saying up front: the salt shaker probably isn't your biggest source. Cooked lentils made without salt have [2 milligrams of sodium per 100 grams](https://fdc.nal.usda.gov/food-details/172421/nutrients). Canned black beans have [384 milligrams per 100 grams](https://fdc.nal.usda.gov/food-details/175188/nutrients), about 17 percent of the FDA's [2,300 milligram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). The shopping version of that comparison is [sodium across budget staples](/low-sodium-budget-foods-ranked/). The cooking below is about making the food taste like something.
 
 ## The three knobs: acid, aroma, umami
 

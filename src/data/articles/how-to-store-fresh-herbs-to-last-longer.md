@@ -16,7 +16,7 @@ image: /images/how-to-store-fresh-herbs-to-last-longer-main.jpg
 imageAlt: How to Store Fresh Herbs to Last Longer - fresh cilantro standing upright
   in a glass jar of water
 date: 2026-02-18
-dateModified: 2026-07-20
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -36,8 +36,9 @@ faq:
 - question: How should I store woody herbs like rosemary and thyme?
   answer: Woody herbs don't need a water glass to stay fresh in the fridge. Instead,
     wrap them loosely in a slightly damp paper towel and place them inside a resealable
-    plastic bag or airtight container. Store them in your fridge's crisper drawer
-    to keep them vibrant for a few weeks.
+    plastic bag or airtight container. FoodKeeper's refrigerator time for fresh herbs
+    is 7 to 10 days from purchase, not a few weeks. Store them in the crisper and
+    use them inside that window.
 - question: Why do my fresh herbs get slimy in the fridge, and how can I stop it?
   answer: Herbs usually get slimy because of excess moisture and a lack of proper
     airflow. To prevent this, make sure they're completely dry before you put them
@@ -60,7 +61,7 @@ Soft herbs are the ones with tender green stems. Think cilantro, parsley, basil,
 1. **The Trim:** As soon as you get home from the store, leave the rubber band on the bunch. Take a sharp pair of kitchen scissors and snip about half an inch off the absolute bottom of the stems. 
 2. **The Jar:** Fill a small glass jar or a heavy water glass with about an inch of cold water. Place the bunch of herbs right into the water so just the freshly cut ends are submerged. Make sure no actual leaves are touching the water, or they will rot instantly.
 3. **The Tent:** Take a small plastic sandwich bag (or even the produce bag they came in) and loosely drape it over the top of the herbs like a little greenhouse tent. 
-4. **The Location:** Put cilantro and parsley right into the fridge. They can last two to three weeks like this. **Exception:** Basil hates the cold. Keep it in a flower-style jar, but leave the jar sitting out on your kitchen counter at room temperature.
+4. **The Location:** Put cilantro and parsley right into the fridge. [FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app) gives fresh herbs 7 to 10 days in the refrigerator from the day you buy them, not two or three weeks. **Exception:** Basil hates the cold. Keep it in a flower-style jar, but leave the jar sitting out on your kitchen counter at room temperature. The 7 to 10 day line is the fridge record. It is not a counter promise for basil.
 
 A jar of living cilantro and scallions also means weeknight stir fry gets its proper fresh finish. These quick and easy stir-fry sauce recipes handle the rest of the equation. 
 
@@ -82,7 +83,7 @@ Remove any yellow, bruised, or slimy leaves while you are there. One collapsing 
 
 ## Check the jar instead of forgetting it
 
-Change the water every two or three days, or sooner if it turns cloudy. Trim the stems again if the ends look dark. Keep the bag loose over the leaves so moisture can escape, and move the jar away from the coldest back wall of the refrigerator where tender leaves may freeze.
+Change the water every two or three days, or sooner if it turns cloudy. Trim the stems again if the ends look dark. Keep the bag loose over the leaves so moisture can escape, and move the jar away from the coldest back wall of the refrigerator where tender leaves may freeze. The refrigerator itself needs to be at [40°F or below](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts), which is the temperature those storage times assume.
 
 Basil is the exception worth remembering. Keep it at room temperature, out of harsh direct sun. Cold air darkens basil leaves quickly. If the bunch starts to droop, trim the stems and replace the water just as you would with flowers.
 

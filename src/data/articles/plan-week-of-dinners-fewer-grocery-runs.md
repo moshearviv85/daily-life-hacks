@@ -6,7 +6,7 @@ tags: ["MealPlanning", "GroceryHacks", "DinnerIdeas", "TimeSaving", "FoodWaste"]
 image: "/images/plan-week-of-dinners-fewer-grocery-runs-main.jpg"
 imageAlt: "A kitchen counter with a simple grocery list next to fresh vegetables and pantry staples"
 date: 2026-04-08
-dateModified: 2026-07-16
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -37,9 +37,9 @@ For the full system behind those habits, the [complete healthy-eating-on-a-budge
 
 Most meal planning advice starts with recipes. Pick five, make a list, go buy it all. That sounds logical but it ignores the fact that food expires on its own schedule, not yours.
 
-Organize your week by perishability instead. Fish, fresh herbs, and leafy greens go on Monday and Tuesday. That's when they're at their best. Midweek is for the hardy crew: carrots, cabbage, potatoes, broccoli, cauliflower. These can sit in the crisper for five or six days without drama. By Thursday and Friday, you're leaning on the pantry and freezer. Canned beans, frozen shrimp, dried pasta, eggs.
+Organize your week by perishability instead. Fatty fish such as salmon is a [1 to 3 day refrigerator food](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts), so it belongs on Monday or Tuesday. Fresh herbs are a [7 to 10 day FoodKeeper refrigerator food](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app), and they still taste better early. Midweek is for the hardy crew: carrots, cabbage, potatoes, broccoli, cauliflower. I'm not going to put a day count on that hardy group, because the chart doesn't give those vegetables one shared number. By Thursday and Friday, you're leaning on the pantry and freezer. Canned beans, frozen shrimp, dried pasta, eggs.
 
-This shelf life cascade means nothing goes bad before you get to it. It also means Friday's dinner doesn't require a sad emergency trip because the spinach turned to soup. Push the same logic out a few weeks and one monthly haul covers the shelf-stable layer for about $23, leaving the short runs for perishables only.
+This shelf life cascade means the short-clock foods get eaten first. It also means Friday's dinner doesn't require a sad emergency trip because the spinach turned to soup. Push the same logic out a few weeks and one monthly haul covers the shelf-stable layer, leaving the short runs for perishables only.
 
 ## Overlap your ingredients on purpose
 

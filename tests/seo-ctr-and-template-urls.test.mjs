@@ -775,7 +775,7 @@ test("high-protein high-fiber meals title leads with the 30–40g protein templa
     false,
     "title should not lead with diet instead of meals",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(page.excerpt, /^High protein high fiber meals for weight loss/i);
   assert.ok(
@@ -1953,7 +1953,7 @@ test("high fiber breakfast title leads with breakfast ideas for gut health", () 
     "high fiber breakfast title should not be the old easy high fiber stack",
   );
   assert.match(raw, /^date: 2026-02-15$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 });
 
 test("egg sandwich add-ins title leads with add-ins and toppings", () => {
@@ -2042,7 +2042,7 @@ test("high fiber smoothies title leads with high fiber smoothies for picky kids"
     "high fiber smoothies title should not be the old kids picky eaters stack",
   );
   assert.match(raw, /^date: 2026-02-16$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 });
 
 test("high fiber fast food title leads with Chipotle 25g and Subway 19g", () => {
@@ -2163,7 +2163,7 @@ test("high protein breads title leads with 5-7g protein per slice", () => {
     "high protein breads title should not be the old best healthy sandwiches stack",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-10-01$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(page.excerpt, /^5 to 7 grams of protein per slice/);
   assert.match(page.excerpt, /sometimes/);
@@ -2490,7 +2490,7 @@ test("breakfast energy title drops the leading Best superlative", () => {
     "breakfast energy title should not be the old Best breakfast foods SERP",
   );
   assert.match(raw, /^date: 2026-03-15$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 });
 
 test("low cost protein families title drops the leading Best superlative", () => {
