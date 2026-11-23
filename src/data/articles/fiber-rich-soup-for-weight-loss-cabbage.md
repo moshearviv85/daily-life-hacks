@@ -11,7 +11,7 @@ tags:
 image: /images/fiber-rich-soup-for-weight-loss-cabbage-main.jpg
 imageAlt: Pot of tomato cabbage soup with cannellini beans and carrots on a stove
 date: 2026-02-13
-dateModified: 2026-11-23
+dateModified: 2026-07-12
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -83,7 +83,7 @@ Remember that cabbage soup era? The one where people lived on a pot of pale vege
 
 Cabbage itself is fine. Cheap, fibrous, available in every grocery store that still sells produce. Fiber from cabbage and beans may help you feel fuller after a meal, which is useful if you're trying to eat in a way that supports weight management without turning dinner into a spreadsheet. What you don't need is a "lose ten pounds by Friday" broth that makes you resent vegetables for a month.
 
-This fiber rich soup for weight loss cabbage style is the glow-up: crushed tomatoes, garlic, herbs, cannellini beans, and enough cabbage to look ridiculous in the pot before it wilts. It's dinner. Not a dare. For the shopping system behind cheap high-fiber staples, start with the [how to eat more fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/).
+This fiber rich soup for weight loss cabbage style is the glow-up: crushed tomatoes, garlic, herbs, cannellini beans, and enough cabbage to look ridiculous in the pot before it wilts. It's dinner. Not a dare. For the shopping system behind cheap high-fiber staples, start with the [how to eat more fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/).
 
 ## Why this isn't Aunt Mildred's cabbage soup
 
@@ -143,6 +143,6 @@ It is not a cleanse. It is not a seven-day cabbage-only challenge. It is not goi
 
 What it can do is give you a high-volume, high-fiber, low-drama meal that costs pocket change per bowl and may help you stay full longer than a sad side salad. Pair it with the rest of a normal day of food. Eat it for lunch with fruit afterward. Eat it for dinner with toast. Skip the part where you announce a detox to group chat.
 
-If you're rebuilding the grocery cart around fiber that doesn't wreck the budget, the [complete fiber-on-a-budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) covers the shopping side while this pot covers Tuesday night.
+If you're rebuilding the grocery cart around fiber that doesn't wreck the budget, the [complete fiber-on-a-budget guide](/what-30-grams-of-fiber-costs-per-day/) covers the shopping side while this pot covers Tuesday night.
 
 That's the upgrade. Same vegetable that starred in the diet-soup nightmare. Completely different outcome. One pot, real flavor, beans in the mix, and leftovers that don't feel like a penalty.

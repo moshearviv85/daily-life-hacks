@@ -265,14 +265,14 @@ async function main() {
       // for. Same terms as the index-level declaration.
       license: "CC BY 4.0",
       license_url: DATA_LICENSE_URL,
-      // A dataset with no study article yet declares `studyUrl` in the
-      // registry so the API never advertises a slug that 404s.
+      // studyUrl keeps Dataset citations on /data/ or /methodology/ when the
+      // old study article now redirects. article_slug still resolves ?dataset=.
       study_url: meta?.studyUrl
         ? `${SITE}${meta.studyUrl}`
         : articleSlug
           ? `${SITE}/${articleSlug}/`
           : null,
-      article_slug: meta?.studyUrl ? null : articleSlug,
+      article_slug: articleSlug,
       api_url: `${SITE}/api/v1/foods?dataset=${resource.name}`,
       bytes: resource.bytes,
       hash: resource.hash,

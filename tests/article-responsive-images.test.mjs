@@ -33,7 +33,7 @@ test("every in-article image has a truthful responsive WebP picture", () => {
   const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
   const images = bodyImages();
 
-  assert.ok(images.length >= 41, `expected the full in-article image cohort, found ${images.length}`);
+  assert.ok(images.length >= 29, `expected the full in-article image cohort, found ${images.length}`);
 
   for (const image of images) {
     const entry = manifest[image.src];

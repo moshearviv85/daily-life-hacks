@@ -9,6 +9,7 @@ image: "/images/foods-highest-in-protein-per-100-grams-main.jpg"
 imageAlt: "Bags of dry lentils, peanuts, and beans lined up beside a block of cheese and a pack of chicken breast on a counter"
 date: 2026-07-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -29,7 +30,7 @@ faq:
 
 In our July 2026 US price study of 49 grocery foods, the TVP row led at 52.17 grams of protein per 100 grams. That figure is a proxy, not a USDA match: the manufacturer's current 12-gram-per-23-gram label works out to 52.17, and USDA FoodData Central publishes no textured vegetable protein record to check it against. Among rows with an exact USDA food-and-form match in our 49-food study, dry brown lentils led at 24.63, followed by canned sardines in oil, drained, at 24.62. This is a bounded grocery comparison, not a claim about every food sold worldwide.
 
-One thing to get straight before the table. This ranks foods by protein density, not by price. The cheapest-per-dollar question is a different study, and we ran that one separately as the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/).
+One thing to get straight before the table. This ranks foods by protein density, not by price. The cheapest-per-dollar question is a different study, and we ran that one separately as the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/).
 
 | Food | Protein per 100 g | USDA form / status | Price per 100 g | Nutrition source |
 |---|---|---|---|---|
@@ -140,7 +141,7 @@ Whole wheat flour led our 49-food value ranking at 96.0 grams of protein per dol
 
 Meanwhile cheddar sits high on density at 22.87 grams and returns just 18.1 grams per dollar, because it costs $1.27 per 100 grams. Sardines are dense and pricey. Almonds at 21.15 grams per 100 grams return 14.8 per dollar, which is one of the worst deals in the set.
 
-In this study, the clearest density-and-value overlap is dry legumes, dry roasted peanuts, and peanut butter at 22.21 grams per 100 grams. Dry green split peas, at 23.12 grams of protein per 100 grams in this table, are also the cook-and-eat leader on the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) at 71.0 grams of fiber per dollar. Density and the other nutrient's price tag agree on that bag. The full plant-side list is in [the cheapest plant protein ranking](/protein-per-dollar-cheapest-protein-sources/#plant), and the shopping version of all of it lives in [our high protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
+In this study, the clearest density-and-value overlap is dry legumes, dry roasted peanuts, and peanut butter at 22.21 grams per 100 grams. Dry green split peas, at 23.12 grams of protein per 100 grams in this table, are also the cook-and-eat leader on the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) at 71.0 grams of fiber per dollar. Density and the other nutrient's price tag agree on that bag. The full plant-side list is in [the cheapest plant protein ranking](/protein-per-dollar-adjusted-for-quality/#plant), and the shopping version of all of it lives in [our high protein on a budget guide](/protein-per-dollar-adjusted-for-quality/).
 
 ## Common portions, not 100 gram slabs
 

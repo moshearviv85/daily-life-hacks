@@ -16,7 +16,7 @@ image: /images/how-to-reduce-food-waste-at-home-easy-tips-main.jpg
 imageAlt: How to Reduce Food Waste at Home - a clear glass fridge container showing
   crisp brightly colored vegetables
 date: 2026-04-28
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -65,7 +65,7 @@ The main reason food goes bad in our refrigerators is simply that we forget it g
 
 1. **The Setup:** Go to a discount store and buy one medium-sized, clear plastic bin. 
 2. **The Placement:** Put it front-and-center on the middle shelf of your fridge perfectly at eye level. Label it "Eat Me First" with a piece of tape. 
-3. **The Habit:** Every single time you open the fridge and notice half an onion, a yogurt cup expiring tomorrow, or leftover rice, physically move it into this specific bin. When you're looking for a snack or starting dinner, you're strictly required to check the bin before opening anything new. That container of leftover rice alone has a dozen second lives, and these [creative ideas for leftover rice](/how-to-use-leftover-rice-creative-ideas/) will help you clear the bin faster. 
+3. **The Habit:** Every single time you open the fridge and notice half an onion, a yogurt cup expiring tomorrow, or leftover rice, physically move it into this specific bin. When you're looking for a snack or starting dinner, you're strictly required to check the bin before opening anything new. That container of leftover rice alone has a dozen second lives, and these creative ideas for leftover rice will help you clear the bin faster. 
 
 ## Rule 2: Learn to Love the Freezer
 

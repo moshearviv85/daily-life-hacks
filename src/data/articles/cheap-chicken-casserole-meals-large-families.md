@@ -61,7 +61,7 @@ I used to think "large family" was a relative term until I watched my sister fee
 
 Cheap chicken casserole meals for large families aren't about culinary innovation. They're about survival with flavor. High volume. Low cost. A taste profile that doesn't trigger a dinner-table rebellion. If it can be built from pantry stuff and leftover chicken, that's a win.
 
-For the wider grocery strategy behind feeding people without draining the account, use the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/). This article is the casserole layer of that same problem.
+For the wider grocery strategy behind feeding people without draining the account, use the eat healthy on a budget playbook. This article is the casserole layer of that same problem.
 
 ## The art of stretching the protein
 
@@ -71,7 +71,7 @@ The biggest line item in any casserole is the meat. If you're trying to feed eig
 
 **Beans** disappear into a creamy chicken sauce better than people expect. Cannellini beans or chickpeas add bulk without turning dinner into a chili argument. It's a cheap way to add substance without another pack of poultry.
 
-When we looked at grocery protein costs for the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), eggs, legumes, and cheaper cuts kept beating fancy packaged options. Casserole logic is the same: stretch the expensive part with staples that still taste like dinner.
+When we looked at grocery protein costs for the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/), eggs, legumes, and cheaper cuts kept beating fancy packaged options. Casserole logic is the same: stretch the expensive part with staples that still taste like dinner.
 
 ## Why rotisserie chicken isn't always the enemy
 
@@ -158,6 +158,6 @@ Time. Volume. Predictability. A way to use leftover chicken before it becomes a 
 
 It will not win a plated-dinner contest. It will fill teenagers, reheat without tragedy, and keep the grocery total in a zone you can live with. Most nights, that's the actual assignment.
 
-If you want the cart-level thinking behind all of this - beans, eggs, sales, staples, not just one pan - the [budget playbook](/eat-healthy-on-a-budget-complete-playbook/) spells it out. Tonight you only need a bowl, a baking dish, and enough chicken to stretch.
+If you want the cart-level thinking behind all of this - beans, eggs, sales, staples, not just one pan - the budget playbook spells it out. Tonight you only need a bowl, a baking dish, and enough chicken to stretch.
 
 You don't need a Pinterest kitchen or an organic-only pantry to feed your people. A warm casserole that empties and a few dollars left for coffee tomorrow morning still counts as a clean win.

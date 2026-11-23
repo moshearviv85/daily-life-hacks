@@ -25,7 +25,7 @@ faq:
 
 Here's a thing I assumed for years and never checked: that eating cheap meant eating salty. Ramen, canned soup, boxed everything. Cheap food is salty food, right? That's the whole cliche.
 
-So I put sodium numbers on all 56 foods in our audited price basket, and the cliche fell apart in about four minutes. The foods that win our [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/) and [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) rankings are the same foods sitting at the very bottom of the sodium list. Whole wheat flour, the cheapest fiber in the entire study at 78 grams per dollar, contains 2 mg of sodium per 100 g. Dry split peas: 5 mg. Extra firm tofu: 4 mg.
+So I put sodium numbers on all 56 foods in our audited price basket, and the cliche fell apart in about four minutes. The foods that win our [fiber per dollar](/what-30-grams-of-fiber-costs-per-day/) and [protein per dollar](/protein-per-dollar-adjusted-for-quality/) rankings are the same foods sitting at the very bottom of the sodium list. Whole wheat flour, the cheapest fiber in the entire study at 78 grams per dollar, contains 2 mg of sodium per 100 g. Dry split peas: 5 mg. Extra firm tofu: 4 mg.
 
 The salt shows up somewhere else entirely, and once you see where, the grocery aisle reads differently.
 

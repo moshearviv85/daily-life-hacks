@@ -74,7 +74,7 @@ You build a decent salad. Crunchy greens, roasted chickpeas, cherry tomatoes, ma
 
 That is how a lot of "healthy" lunches go sideways. Not because salad is fake. Because the bottle is doing too much sugar and not enough actual flavor. High fiber salad dressings homemade style fix the imbalance. You control the ingredients. You taste lemon, garlic, sesame, pepper. You can add seeds or bean puree if you want more fiber clinging to the greens instead of hiding in a soft drink's cousin.
 
-This tahini lemon dressing is my default. Five minutes. One bowl. No stove. It turns a pile of vegetables into something people finish. For the bigger habit of building cheap fiber into lunches, the [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) is the shopping backbone.
+This tahini lemon dressing is my default. Five minutes. One bowl. No stove. It turns a pile of vegetables into something people finish. For the bigger habit of building cheap fiber into lunches, the [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) is the shopping backbone.
 
 ## Why bottled dressings keep failing the taste test
 
@@ -104,7 +104,7 @@ Tahini already brings some fiber because sesame paste is still a seed product, n
 * **White bean puree:** A spoon of blended cannellini beans makes the dressing creamier and adds fiber that basically disappears into the texture.
 * **Hummus thinned with lemon and water:** Not fancy. Extremely effective on chopped salads.
 
-These are foods, not packets of fiber dust. That's intentional. When we ranked [cheap fiber sources by dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), beans and other whole staples kept winning. Your dressing can borrow that same logic in spoon-sized form.
+These are foods, not packets of fiber dust. That's intentional. When we ranked [cheap fiber sources by dollar](/what-30-grams-of-fiber-costs-per-day/), beans and other whole staples kept winning. Your dressing can borrow that same logic in spoon-sized form.
 
 ## Other dressings worth keeping in rotation
 
@@ -128,7 +128,7 @@ Chickpeas or black beans. Shredded cabbage. Carrots. Cucumber. Leftover roasted 
 
 Office lunch tip: pack the dressing in a separate small jar if your greens are delicate. Sturdy chopped salads can handle being dressed ahead and usually taste better after a short sit. Soggy spring mix does not.
 
-If you're building these lunches on a budget, beans again do the heavy lifting. They're the same pantry item showing up in the [fiber budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) for a reason. Dressing is the flavor. Beans are the staying power.
+If you're building these lunches on a budget, beans again do the heavy lifting. They're the same pantry item showing up in the [fiber budget guide](/what-30-grams-of-fiber-costs-per-day/) for a reason. Dressing is the flavor. Beans are the staying power.
 
 ## How much dressing is enough
 

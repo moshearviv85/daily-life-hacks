@@ -48,6 +48,7 @@ import MealProteinCost from "../components/MealProteinCost.astro";
 import KitchenCalculator from "../components/KitchenCalculator.astro";
 import { newsletterSignupForArticle } from "../content/newsletter-variant.mjs";
 import { contextualFlagshipLinkAllowed } from "../content/contextual-flagship-links.mjs";
+import { pickModifiedDate } from "../content/modified-date.mjs";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -245,7 +246,15 @@ const structuredImageUrls = [
   ...(aiHeroImageObject ? [aiHeroImageObject] : hasArticleImage ? [imageUrl] : []),
   ...(hasIngredientsImage ? [ingredientsImageUrl] : []),
 ];
-const modifiedDateObj = article.data.dateModified ?? releaseDate;
+// substantiveUpdate is the only field that advances the public modified day.
+// Legacy dateModified stays in place for pages reviewed before that field
+// existed. Link, citation, title, author, caption, and template edits do not
+// set substantiveUpdate, so schema and the visible Updated line stay put.
+const modifiedDateObj = pickModifiedDate(
+  article.data.substantiveUpdate,
+  article.data.dateModified,
+  releaseDate,
+);
 const modifiedDate = modifiedDateObj.toISOString();
 
 /**

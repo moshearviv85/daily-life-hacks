@@ -95,7 +95,7 @@ If the sauce gets too thick, add one tablespoon of water. If it's still thin aft
 
 ## What can you add to make this a full dinner?
 
-Serve the vegetables over rice, quinoa, or noodles and add tofu, edamame, chicken, or shrimp. For tofu, cook the cubes first and remove them before the vegetables go in. This [sheet-pan ginger tofu and broccoli](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/) is a useful reference when you want the tofu crisp without monitoring a wok.
+Serve the vegetables over rice, quinoa, or noodles and add tofu, edamame, chicken, or shrimp. For tofu, cook the cubes first and remove them before the vegetables go in. This sheet-pan ginger tofu and broccoli is a useful reference when you want the tofu crisp without monitoring a wok.
 
 Peanut butter also works in the sauce. Whisk in one tablespoon with the soy sauce, then add a splash more water. It makes the sauce richer and gives noodles something substantial to hold onto.
 

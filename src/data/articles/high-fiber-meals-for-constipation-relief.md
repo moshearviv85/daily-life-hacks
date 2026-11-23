@@ -47,7 +47,7 @@ The biggest mistake is going from white bread and takeout to a mountain of raw k
 
 [NIDDK advises adding fiber a little at a time](https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition) so your body can adjust. Add a bowl of oatmeal. Add a pear. Try a small portion of beans at dinner before making them the main event. The goal is a repeatable change, not a single heroic salad.
 
-If you want the broader shopping system behind this, our [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) is the pillar. Same idea: cheap staples, real grams, no specialty aisle required.
+If you want the broader shopping system behind this, our [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) is the pillar. Same idea: cheap staples, real grams, no specialty aisle required.
 
 ## Chia pudding that actually earns the fridge space
 
@@ -77,7 +77,7 @@ Learning which high fiber meals for constipation relief feel soothing versus agg
 
 **Breakfast:** Oatmeal with chia and berries. Or whole-grain toast with peanut butter and an apple. Or yogurt with pear and a spoon of ground flax if you already like it. Keep it simple enough that you'll repeat it.
 
-**Lunch:** Lentil soup, leftover chili, a chickpea wrap with lots of vegetables, or a rice-and-bean bowl. Canned beans are fine. Rinse them if the liquid bothers you.
+**Lunch:** Lentil soup, leftover chili, a chickpea wrap with lots of vegetables, or a rice-and-bean bowl. Canned beans are fine. Rinse them if the liquid bothers you. The cabbage version of that soup is the [fiber-rich cabbage soup](/fiber-rich-soup-for-weight-loss-cabbage/).
 
 **Dinner:** The roasted vegetable tray above, black bean chili, or pasta with white beans and spinach stirred into the sauce. Whole-wheat pasta adds fiber without asking you to invent a new personality.
 
@@ -87,7 +87,7 @@ None of this requires a specialty product with a cartoon intestine on the label.
 
 ## Beans without the dread
 
-Beans are one of the cheapest fiber sources in the store. We spelled that out in the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), where dried beans keep embarrassing almost everything else on a cost-per-gram basis.
+Beans are one of the cheapest fiber sources in the store. We spelled that out in the [fiber per dollar study](/what-30-grams-of-fiber-costs-per-day/), where dried beans keep embarrassing almost everything else on a cost-per-gram basis.
 
 If beans usually wreck you, don't start with a burrito challenge. Start with:
 
@@ -124,9 +124,9 @@ That's it. No juice fast. No fancy powders. Just meals that bring fiber and flui
 
 ## Budget and access still matter
 
-Frozen vegetables count. Canned beans count. Store brands count. If the fancy pear isn't in season, an apple with the skin on still brings fiber. The [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) walks through building a cart that hits the number without pretending everyone shops at the same store.
+Frozen vegetables count. Canned beans count. Store brands count. If the fancy pear isn't in season, an apple with the skin on still brings fiber. The [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) walks through building a cart that hits the number without pretending everyone shops at the same store.
 
-For the protein side of cheap staples, the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) is useful when you want chili with more substance than a bowl of vegetables alone. Beans bring both protein and fiber in one pot. How full you feel and how your digestion responds still varies.
+For the protein side of cheap staples, the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/) is useful when you want chili with more substance than a bowl of vegetables alone. Beans bring both protein and fiber in one pot. How full you feel and how your digestion responds still varies.
 
 ## Keep the bar realistic
 

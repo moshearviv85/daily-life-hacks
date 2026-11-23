@@ -83,10 +83,13 @@ test("homepage links animal and fiber-day leads from the CSVs", () => {
     const fiber = anchorTexts(source, "/what-30-grams-of-fiber-costs-per-day/");
 
     assert.equal(animal.length, 1, `${file} should link the animal ranking once`);
-    assert.equal(fiber.length, 1, `${file} should link the fiber-day study once`);
+    assert.equal(fiber.length, 4, `${file} should link the fiber-day study four times`);
     assert.match(animal[0], /drumsticks/i);
     assert.match(animal[0], /50\.3g/);
-    assert.match(fiber[0], /\$0\.62 vs \$14\.42/);
+    assert.ok(
+      fiber.some((text) => /\$0\.62 vs \$14\.42/.test(text)),
+      `${file} should keep the $0.62 vs $14.42 fiber-day anchor`,
+    );
     assert.equal(
       /97\.9|70\.8|29\.1|\b9\.2\b/.test(`${animal[0]} ${fiber[0]}`),
       false,
@@ -164,13 +167,13 @@ test("header drops Guides and footer sends readers to nutrition and data", () =>
   assert.match(footer, />Data</);
 });
 
-test("nutrition hub shows the four playbooks in a Start here row", () => {
+test("nutrition hub Start here cards link the four indexable studies", () => {
   const source = readFileSync(join(root, "src/pages/nutrition/index.astro"), "utf8");
-  const playbooks = [
-    "how-to-eat-more-fiber-on-a-budget-complete-guide",
-    "high-protein-on-a-budget-complete-guide",
-    "eat-healthy-on-a-budget-complete-playbook",
-    "meal-prep-for-beginners-complete-system",
+  const startHere = [
+    ["budget-fiber", "/what-30-grams-of-fiber-costs-per-day/"],
+    ["budget-protein", "/protein-per-dollar-adjusted-for-quality/"],
+    ["weekly-budget-shopping", "/usda-thrifty-food-plan-weekly-cost/"],
+    ["meal-prep-food-storage", "/plan-week-of-dinners-fewer-grocery-runs/"],
   ];
 
   assert.match(
@@ -184,9 +187,18 @@ test("nutrition hub shows the four playbooks in a Start here row", () => {
   assert.match(source, /id="start-here"/);
   assert.match(source, />\s*Start here\s*</);
   assert.match(source, /CONTENT_CLUSTERS\.map\(\(cluster\)/);
-  assert.match(source, /href=\{`\/\$\{cluster\.parentPillar\}\/`\}/);
-  const clusters = readFileSync(join(root, "src/content/clusters.ts"), "utf8");
-  for (const slug of playbooks) {
-    assert.match(clusters, new RegExp(`parentPillar: "${slug}"`));
+  assert.match(source, /href=\{clusterHref\[cluster\.id\]\}/);
+  assert.doesNotMatch(source, /href=\{`\/\$\{cluster\.parentPillar\}\/`\}/);
+  for (const [id, href] of startHere) {
+    assert.match(source, new RegExp(`"${id}": "${href.replaceAll("/", "\\/")}"`));
+  }
+  for (const slug of [
+    "how-to-eat-more-fiber-on-a-budget-complete-guide",
+    "high-protein-on-a-budget-complete-guide",
+    "eat-healthy-on-a-budget-complete-playbook",
+    "meal-prep-for-beginners-complete-system",
+  ]) {
+    assert.equal(source.includes(`href="/${slug}/"`), false, slug);
+    assert.equal(source.includes(`"${slug}"`), false, slug);
   }
 });

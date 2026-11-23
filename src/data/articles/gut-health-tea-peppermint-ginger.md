@@ -13,6 +13,7 @@ imageAlt: Homemade peppermint and ginger tea steeping in a glass mug on a kitche
 quickAnswer: "Peppermint ginger tea is 1 cup of water, a 1-inch piece of fresh ginger sliced and bruised, and 1 tablespoon of fresh peppermint or one tea bag. Simmer the ginger 5 to 7 minutes, take it off the heat, add the mint, and steep covered 5 to 7 minutes, then strain. It's caffeine-free and about 10 to 20 cents a cup. On gut health, be honest. IBS trials used enteric-coated peppermint-oil capsules, not tea. If you get reflux, mint can make heartburn worse, so skip it. Refrigerate strained tea up to 3 days."
 date: 2026-02-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -109,7 +110,7 @@ For an office drawer, bags also win. Keep peppermint bags at work, bring a few f
 
 ## What this tea won't do
 
-Peppermint ginger tea won't replace a varied diet. If meals are low in fiber, the cup is a pleasant side habit, not the plan. Beans, oats, vegetables, fruit, and enough fluid do more of the everyday work. A bag of dry pintos returns 41.7 grams of fiber per dollar and old-fashioned oats 35.8 in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
+Peppermint ginger tea won't replace a varied diet. If meals are low in fiber, the cup is a pleasant side habit, not the plan. Beans, oats, vegetables, fruit, and enough fluid do more of the everyday work. A bag of dry pintos returns 41.7 grams of fiber per dollar and old-fashioned oats 35.8 in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/).
 
 It also won't erase a rough meal. Tea after loaded nachos is a peace treaty, not a pardon. The cup might feel comfortable. It doesn't make the portion smaller.
 

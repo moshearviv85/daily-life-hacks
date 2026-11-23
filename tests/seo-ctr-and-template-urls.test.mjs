@@ -319,7 +319,7 @@ test("beans double-win title puts the combined grams leader in the SERP", () => 
   );
   assert.equal(titleLower.includes("97.9"), false);
   assert.equal(titleLower.includes("70.8"), false);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-24$/m);
   assert.match(page.excerpt, /144\.9 combined grams per dollar/);
   assert.match(page.excerpt, /57\.6g of protein/);
   assert.match(page.excerpt, /41\.7g of fiber/);
@@ -759,7 +759,7 @@ test("high-protein high-fiber meals title leads with the 30–40g protein templa
     false,
     "title should not lead with diet instead of meals",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /^High protein high fiber meals for weight loss/i);
   assert.ok(
@@ -1204,7 +1204,7 @@ test("artichoke recipe title leads with the steam-until-leaves method", () => {
     false,
     "artichoke title should not be the old gut-health SERP",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(artichoke.excerpt, /[Mm]acrobiotic artichoke recipe/);
   assert.match(artichoke.excerpt, /steam/i);
@@ -1498,7 +1498,7 @@ test("pizza crust fiber title leads with which crust has more fiber", () => {
     false,
     "pizza crust title should not lead with Comparing Fiber in Different",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /[Cc]omparing [Ff]iber/);
   assert.match(page.excerpt, /2\.7g/);
@@ -1590,7 +1590,7 @@ test("cauliflower pizza crust title leads with is it high in fiber", () => {
     false,
     "cauliflower crust title should not spend the SERP on that actually gets crispy",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /about 5\.8g fiber per quarter-crust/i);
   assert.match(page.excerpt, /1-2g per serving/);
@@ -1795,7 +1795,7 @@ test("selenium foods title leads with how much you need", () => {
     false,
     "selenium foods title should not be the old three-clause comma stack",
   );
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 
   assert.match(page.excerpt, /Brazil nuts/);
   assert.match(page.excerpt, /400 mcg/);
@@ -1890,7 +1890,7 @@ test("indian salad dressing title leads with 5-minute yogurt-mint and tamarind",
     "indian salad dressing title should not be the old healthy homemade stack",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
   assert.match(
     raw,
     /^excerpt: "Indian-inspired salad dressings you whisk in 5 minutes flat\. Yogurt-mint, tamarind and chaat masala, all cheaper and brighter than bottled ranch\."$/m,
@@ -1935,7 +1935,7 @@ test("high fiber breakfast title leads with breakfast ideas for gut health", () 
     "high fiber breakfast title should not be the old easy high fiber stack",
   );
   assert.match(raw, /^date: 2026-02-15$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
 test("egg sandwich add-ins title leads with add-ins and toppings", () => {
@@ -1982,7 +1982,7 @@ test("egg sandwich add-ins title leads with add-ins and toppings", () => {
     "egg sandwich add-ins title should not be the old healthy taste-good SERP",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
 test("high fiber smoothies title leads with high fiber smoothies for picky kids", () => {
@@ -2024,7 +2024,7 @@ test("high fiber smoothies title leads with high fiber smoothies for picky kids"
     "high fiber smoothies title should not be the old kids picky eaters stack",
   );
   assert.match(raw, /^date: 2026-02-16$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
 test("high fiber fast food title leads with the fast-food query", () => {
@@ -2141,7 +2141,7 @@ test("high protein breads title leads with 5-7g protein per slice", () => {
     "high protein breads title should not be the old best healthy sandwiches stack",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-10-01$/m);
 
   assert.match(page.excerpt, /^5 to 7 grams of protein per slice/);
   assert.match(page.excerpt, /sometimes/);
@@ -2409,7 +2409,7 @@ test("breakfast energy title drops the leading Best superlative", () => {
     "breakfast energy title should not be the old Best breakfast foods SERP",
   );
   assert.match(raw, /^date: 2026-03-15$/m);
-  assert.match(raw, /^dateModified: 2026-11-23$/m);
+  assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
 test("low cost protein families title drops the leading Best superlative", () => {
@@ -2613,130 +2613,45 @@ test("complete protein pairs title puts rice-and-beans grams per dollar in the S
   );
 });
 
-test("fiber per dollar ranking title puts fiber grams per dollar in the SERP", () => {
-  const page = articleFrontmatter("fiber-per-dollar-cheapest-high-fiber-foods");
-  const titleLower = page.title.toLowerCase();
+function assertConsolidatedArticle(slug, target) {
+  assert.equal(existsSync(join(ROOT, "src/data/articles", `${slug}.md`)), false, slug);
+  assert.equal(existsSync(join(ROOT, "dist", slug, "index.html")), false, slug);
+  assert.equal(INDEX_KEEP_PATHS.has(slug), false, slug);
+  assert.equal(INDEX_PRUNE_SLUGS.has(slug), false, slug);
+  const redirects = readFileSync(join(ROOT, "public/_redirects"), "utf8");
+  const redirectCopy = readFileSync(join(ROOT, "functions/site-redirects.js"), "utf8");
+  for (const source of [redirects, redirectCopy]) {
+    assert.match(source, new RegExp(`^/${slug} ${target} 301$`, "m"), slug);
+    assert.match(source, new RegExp(`^/${slug}/ ${target} 301$`, "m"), slug);
+  }
+}
 
-  assert.equal(
-    page.title,
-    "Fiber per Dollar: Flour, Then Split Peas",
-  );
-  assert.equal(page.title.length, 40);
-  assert.ok(
-    page.title.length <= 60,
-    `fiber per dollar ranking title should be ≤60 chars, got ${page.title.length}`,
-  );
-  assert.ok(
-    titleLower.startsWith("fiber per dollar"),
-    "fiber per dollar ranking title should lead with fiber per dollar",
-  );
-  assert.match(page.title, /Flour/);
-  assert.match(page.title, /Split Peas/);
-  assert.equal(
-    /77\.8g/.test(page.title),
-    false,
-    "fiber per dollar ranking title should not stuff the raw gram pair",
-  );
-  assert.equal(
-    /^fiber per dollar: the cheapest high-fiber foods, ranked$/.test(titleLower),
-    false,
-    "fiber per dollar ranking title should not stay on the soft cheapest-foods-ranked SERP",
+test("fiber per dollar ranking title puts fiber grams per dollar in the SERP", () => {
+  assertConsolidatedArticle(
+    "fiber-per-dollar-cheapest-high-fiber-foods",
+    "/what-30-grams-of-fiber-costs-per-day/",
   );
 });
 
 test("protein per dollar ranking title puts protein grams per dollar in the SERP", () => {
-  const page = articleFrontmatter("protein-per-dollar-cheapest-protein-sources");
-  const titleLower = page.title.toLowerCase();
-
-  assert.equal(
-    page.title,
-    "Protein per Dollar: Flour, Then Lentils",
-  );
-  assert.equal(page.title.length, 39);
-  assert.ok(
-    page.title.length <= 60,
-    `protein per dollar ranking title should be ≤60 chars, got ${page.title.length}`,
-  );
-  assert.ok(
-    titleLower.startsWith("protein per dollar"),
-    "protein per dollar ranking title should lead with protein per dollar",
-  );
-  assert.match(page.title, /Flour/);
-  assert.match(page.title, /Lentils/);
-  assert.equal(
-    /96\.0g vs /.test(page.title),
-    false,
-    "protein per dollar ranking title should not be a raw gram-pair SERP",
-  );
-  assert.equal(
-    /^protein per dollar: the cheapest protein sources, ranked$/.test(titleLower),
-    false,
-    "protein per dollar ranking title should not stay on the soft cheapest-sources-ranked SERP",
+  assertConsolidatedArticle(
+    "protein-per-dollar-cheapest-protein-sources",
+    "/protein-per-dollar-adjusted-for-quality/",
   );
 });
 
 test("high protein on a budget title puts protein-per-dollar grams in the SERP", () => {
-  const page = articleFrontmatter("high-protein-on-a-budget-complete-guide");
-  const titleLower = page.title.toLowerCase();
-
-  assert.equal(
-    page.title,
-    "High Protein on a Budget: Pinto Beans Beat Bacon",
+  assertConsolidatedArticle(
+    "high-protein-on-a-budget-complete-guide",
+    "/protein-per-dollar-adjusted-for-quality/",
   );
-  assert.equal(page.title.length, 48);
-  assert.ok(
-    page.title.length <= 60,
-    `high protein on a budget title should be ≤60 chars, got ${page.title.length}`,
-  );
-  assert.ok(
-    titleLower.startsWith("high protein on a budget"),
-    "high protein on a budget title should lead with high protein on a budget",
-  );
-  assert.match(page.title, /Pinto/);
-  assert.match(page.title, /Bacon/);
-  assert.equal(
-    /57\.6g vs /.test(page.title),
-    false,
-    "high protein on a budget title should not be a raw gram-pair SERP",
-  );
-  assert.equal(
-    /^high protein on a budget: the complete guide$/.test(titleLower),
-    false,
-    "high protein on a budget title should not stay on the soft complete-guide SERP",
-  );
-  assert.equal(INDEX_KEEP_PATHS.has("high-protein-on-a-budget-complete-guide"), true);
-  assert.equal(INDEX_PRUNE_SLUGS.has("high-protein-on-a-budget-complete-guide"), false);
 });
 
 test("fiber on a budget title puts fiber-per-dollar grams in the SERP", () => {
-  const page = articleFrontmatter("how-to-eat-more-fiber-on-a-budget-complete-guide");
-  const titleLower = page.title.toLowerCase();
-
-  assert.equal(
-    page.title,
-    "How to Eat More Fiber on a Budget",
+  assertConsolidatedArticle(
+    "how-to-eat-more-fiber-on-a-budget-complete-guide",
+    "/what-30-grams-of-fiber-costs-per-day/",
   );
-  assert.equal(page.title.length, 33);
-  assert.ok(
-    page.title.length <= 60,
-    `fiber on a budget title should be ≤60 chars, got ${page.title.length}`,
-  );
-  assert.ok(
-    titleLower.startsWith("how to eat more fiber on a budget"),
-    "fiber on a budget title should lead with how to eat more fiber on a budget",
-  );
-  assert.equal(
-    /77\.8g vs /.test(page.title),
-    false,
-    "fiber on a budget title should not copy the fiber-per-dollar gram pair",
-  );
-  assert.equal(
-    /^how to eat more fiber on a budget: the complete guide$/.test(titleLower),
-    false,
-    "fiber on a budget title should not stay on the soft complete-guide SERP",
-  );
-  assert.equal(INDEX_KEEP_PATHS.has("how-to-eat-more-fiber-on-a-budget-complete-guide"), true);
-  assert.equal(INDEX_PRUNE_SLUGS.has("how-to-eat-more-fiber-on-a-budget-complete-guide"), false);
 });
 
 test("plant-based protein sources title puts protein-per-dollar grams in the SERP", () => {
@@ -2805,8 +2720,23 @@ test("eat healthy on a budget title puts protein-per-dollar grams in the SERP", 
     false,
     "eat healthy on a budget title should not stay on the soft complete-playbook SERP",
   );
-  assert.equal(INDEX_KEEP_PATHS.has("eat-healthy-on-a-budget-complete-playbook"), true);
-  assert.equal(INDEX_PRUNE_SLUGS.has("eat-healthy-on-a-budget-complete-playbook"), false);
+  assert.equal(INDEX_KEEP_PATHS.has("eat-healthy-on-a-budget-complete-playbook"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("eat-healthy-on-a-budget-complete-playbook"), true);
+  const playbookHtml = readFileSync(
+    join(ROOT, "dist/eat-healthy-on-a-budget-complete-playbook/index.html"),
+    "utf8",
+  );
+  assert.match(playbookHtml, /noindex,\s*follow/i);
+  assert.equal(
+    readdirSync(join(ROOT, "dist"))
+      .filter((name) => /^sitemap-.*\.xml$/.test(name))
+      .some((name) =>
+        readFileSync(join(ROOT, "dist", name), "utf8").includes(
+          "https://www.daily-life-hacks.com/eat-healthy-on-a-budget-complete-playbook/",
+        ),
+      ),
+    false,
+  );
 });
 
 test("usda thrifty food plan title puts the family weekly cost in the SERP", () => {
@@ -2865,8 +2795,23 @@ test("meal prep for beginners title puts the 8-meal 90-minute system in the SERP
     false,
     "meal prep for beginners title should not stay on the soft complete-system SERP",
   );
-  assert.equal(INDEX_KEEP_PATHS.has("meal-prep-for-beginners-complete-system"), true);
-  assert.equal(INDEX_PRUNE_SLUGS.has("meal-prep-for-beginners-complete-system"), false);
+  assert.equal(INDEX_KEEP_PATHS.has("meal-prep-for-beginners-complete-system"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("meal-prep-for-beginners-complete-system"), true);
+  const mealPrepHtml = readFileSync(
+    join(ROOT, "dist/meal-prep-for-beginners-complete-system/index.html"),
+    "utf8",
+  );
+  assert.match(mealPrepHtml, /noindex,\s*follow/i);
+  assert.equal(
+    readdirSync(join(ROOT, "dist"))
+      .filter((name) => /^sitemap-.*\.xml$/.test(name))
+      .some((name) =>
+        readFileSync(join(ROOT, "dist", name), "utf8").includes(
+          "https://www.daily-life-hacks.com/meal-prep-for-beginners-complete-system/",
+        ),
+      ),
+    false,
+  );
 });
 
 test("dried beans converter title puts the 15.5 oz can size in the SERP", () => {

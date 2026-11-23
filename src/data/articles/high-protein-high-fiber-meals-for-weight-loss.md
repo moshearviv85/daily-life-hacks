@@ -11,7 +11,7 @@ tags:
 image: /images/high-protein-high-fiber-meals-for-weight-loss-main.jpg
 imageAlt: Bowl of lentil stew with grilled chicken, roasted vegetables, and brown rice on a wooden table
 date: 2026-02-25
-dateModified: 2026-11-23
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -46,7 +46,7 @@ Protein is expensive for your body to break down. A higher-protein pattern [may 
 
 Separate, each one helps. Together, the gap between lunch and the snack drawer gets longer. I'm not going to put an hour count on that. Toast alone still clocks out early.
 
-If you want the shopping side of this, not just the plate math, start with our [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) and the companion [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/). Same grocery list energy. Different angle on the same cart.
+If you want the shopping side of this, not just the plate math, start with our [high protein on a budget guide](/protein-per-dollar-adjusted-for-quality/) and the companion [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/). Same grocery list energy. Different angle on the same cart.
 
 ## The power bowl formula that actually holds
 
@@ -80,7 +80,7 @@ None of these are trying to win a cooking show. They're trying to get you to 3 P
 
 The grocery industry loves selling weight-loss packaging. You don't need it. Dried beans, lentils, oats, eggs, chicken thighs, Greek yogurt, frozen vegetables, and brown rice do the job for less money and fewer weird ingredients.
 
-We ranked groceries by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/). Spoiler: the dry goods aisle keeps winning both contests. If your cart is full of fancy bars and empty of beans, you're paying retail for hunger management.
+We ranked groceries by [protein per dollar](/protein-per-dollar-adjusted-for-quality/) and [fiber per dollar](/what-30-grams-of-fiber-costs-per-day/). Spoiler: the dry goods aisle keeps winning both contests. If your cart is full of fancy bars and empty of beans, you're paying retail for hunger management.
 
 Canned beans count. Frozen vegetables count. Store-brand yogurt counts. The fancy version in the cart is optional. Fullness is not.
 

@@ -58,11 +58,11 @@ test("homepage leads with a visible grocery-dollar H1 and flagship study links",
   const mainStart = source.indexOf("<main");
   const hero = source.indexOf("<HeroSection");
   const fiberHref = source.indexOf(
-    'href="/fiber-per-dollar-cheapest-high-fiber-foods/"',
+    'href="/what-30-grams-of-fiber-costs-per-day/"',
     mainStart,
   );
   const proteinHref = source.indexOf(
-    'href="/protein-per-dollar-cheapest-protein-sources/"',
+    'href="/protein-per-dollar-adjusted-for-quality/"',
     mainStart,
   );
   assert.ok(mainStart !== -1 && hero !== -1, "homepage should render main before HeroSection");
@@ -106,7 +106,11 @@ test("one-dollar fiber page was consolidated and drops the 70.8 pinto snapshot",
   const redirects = await readFile("public/_redirects", "utf8");
   assert.match(
     redirects,
-    /^\/one-dollar-fiber-what-it-buys\/? \/fiber-per-dollar-cheapest-high-fiber-foods\/ 301$/m,
+    /^\/one-dollar-fiber-what-it-buys \/what-30-grams-of-fiber-costs-per-day\/ 301$/m,
+  );
+  assert.match(
+    redirects,
+    /^\/one-dollar-fiber-what-it-buys\/ \/what-30-grams-of-fiber-costs-per-day\/ 301$/m,
   );
   const derived = await readFile("public/data/one-dollar-fiber-what-it-buys-2026.csv", "utf8");
   const parent = await readFile("public/data/fiber-per-dollar-2026.csv", "utf8");
@@ -120,13 +124,21 @@ test("one-dollar fiber page was consolidated and drops the 70.8 pinto snapshot",
     assert.equal(parentRow.package_price_usd, row.package_price_usd, row.food);
   }
 
-  const fiberGuide = await readFile(
-    "src/data/articles/how-to-eat-more-fiber-on-a-budget-complete-guide.md",
+  assert.equal(
+    existsSync("src/data/articles/how-to-eat-more-fiber-on-a-budget-complete-guide.md"),
+    false,
+  );
+  assert.match(
+    redirects,
+    /^\/how-to-eat-more-fiber-on-a-budget-complete-guide \/what-30-grams-of-fiber-costs-per-day\/ 301$/m,
+  );
+  const fiberDay = await readFile(
+    "src/data/articles/what-30-grams-of-fiber-costs-per-day.md",
     "utf8",
   );
-  assert.doesNotMatch(fiberGuide, /70\.8/);
-  assert.match(fiberGuide, /41\.7/);
-  assert.match(fiberGuide, /\$0\.96/);
+  assert.doesNotMatch(fiberDay, /70\.8/);
+  assert.match(fiberDay, /41\.7/);
+  assert.match(fiberDay, /\$0\.96/);
 });
 
 test("recipes index advertises the scaler where people choose a recipe", async () => {

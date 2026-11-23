@@ -179,7 +179,7 @@ function keepArticles() {
 
 test("KEEP articles do not cite the pre-BLS pinto, black bean, navy, or quality-adjusted pinto figures", () => {
   const articles = keepArticles();
-  assert.ok(articles.length >= 9, "expected KEEP protein articles on disk");
+  assert.ok(articles.length >= 3, "expected KEEP protein articles on disk");
   for (const { slug, markdown } of articles) {
     for (const token of STALE_PROTEIN_TOKENS) {
       const pattern = new RegExp(`(?<!\\d)${token.replace(".", "\\.")}(?!\\d)`);
@@ -247,7 +247,7 @@ test("KEEP comparison tables lock protein-per-dollar cells to the live CSVs", ()
       }
     }
   }
-  assert.ok(checked >= 80, `expected to lock dozens of protein cells, checked ${checked}`);
+  assert.ok(checked >= 22, `expected to lock the remaining KEEP protein cells, checked ${checked}`);
 });
 
 test("complete-protein pair CSV still restates the parent protein-per-dollar rows", () => {
@@ -265,29 +265,19 @@ test("complete-protein pair CSV still restates the parent protein-per-dollar row
 });
 
 test("protein flagship five-dollar caption matches five times the CSV rows", () => {
-  const markdown = read(
-    "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
-  );
-  const pinto = Number(proteinRow("Pinto beans (dry)").protein_g_per_dollar);
-  const bacon = Number(proteinRow("Bacon").protein_g_per_dollar);
-  const pintoFive = String(Math.round(pinto * 5));
-  const baconFive = String(Math.round(bacon * 5));
-  assert.match(markdown, new RegExp(`${pintoFive} grams for dried pinto beans`));
-  assert.match(markdown, new RegExp(`${baconFive} grams for bacon`));
-  assert.match(
-    markdown,
-    new RegExp(`Five dollars of dry pinto beans buys ${pintoFive} grams`),
-  );
-  const lentilFive = String(
-    Math.round(Number(proteinRow("Brown lentils (dry)").protein_g_per_dollar) * 5),
+  const redirects = read("public/_redirects");
+  assert.equal(
+    existsSync(join(root, "src/data/articles/protein-per-dollar-cheapest-protein-sources.md")),
+    false,
   );
   assert.match(
-    markdown,
-    new RegExp(`from ${lentilFive} grams for dried brown lentils`),
+    redirects,
+    /^\/protein-per-dollar-cheapest-protein-sources \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
   );
-  assert.doesNotMatch(markdown, /from 288 grams for dried pinto beans down to/);
-  assert.doesNotMatch(markdown, /490 grams/);
-  assert.doesNotMatch(markdown, /46 grams for bacon/);
+  const quality = read("src/data/articles/protein-per-dollar-adjusted-for-quality.md");
+  assert.doesNotMatch(quality, /from 288 grams for dried pinto beans down to/);
+  assert.doesNotMatch(quality, /490 grams/);
+  assert.doesNotMatch(quality, /46 grams for bacon/);
   const chart = readFileSync(
     join(root, "public/images/protein-per-dollar-five-dollars.jpg"),
   );

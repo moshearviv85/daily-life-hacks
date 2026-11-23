@@ -12,7 +12,6 @@ tags:
 image: "/images/sourdough-discard-vs-active-starter-main.jpg"
 imageAlt: Two glass jars on a wooden counter. The left jar holds flatter sourdough discard with a layer of liquid on top. The right jar holds a bubbly starter risen into a dome.
 date: 2026-10-04
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:

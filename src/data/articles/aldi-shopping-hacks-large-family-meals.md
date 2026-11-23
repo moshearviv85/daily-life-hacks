@@ -13,7 +13,6 @@ tags:
 image: "/images/aldi-shopping-hacks-large-family-meals-main.jpg"
 imageAlt: A metal shopping cart is piled high with various groceries including fresh produce, meat, and pantry staples.
 date: 2026-04-28
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:

@@ -17,8 +17,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "../..");
 
 export const PROTEIN_CSV = "public/data/protein-per-dollar-2026.csv";
 export const FIBER_CSV = "public/data/fiber-per-dollar-2026.csv";
-export const PROTEIN_FLAGSHIP_HREF = "/protein-per-dollar-cheapest-protein-sources/";
-export const FIBER_FLAGSHIP_HREF = "/fiber-per-dollar-cheapest-high-fiber-foods/";
+export const PROTEIN_FLAGSHIP_HREF = "/protein-per-dollar-adjusted-for-quality/";
+export const FIBER_FLAGSHIP_HREF = "/what-30-grams-of-fiber-costs-per-day/";
 export const FOOD_VALUE_DB_HREF = "/food-value-database/";
 export const PRICE_MONTH_LABEL = "July 2026";
 
@@ -383,9 +383,6 @@ function buildCannedVsDry() {
 const builders = [
   buildCostco,
   buildBeansAndRice,
-  buildHighProtein,
-  buildMealPrep,
-  buildEatHealthy,
   buildLentilsVsChicken,
   buildCannedVsDry,
 ];
@@ -406,9 +403,9 @@ function assertRefreshSafety() {
       throw new Error(`meal-protein-cost: sourdough slug is not allowed: ${slug}`);
     }
   }
-  if (Object.keys(MEAL_PROTEIN_COST).length < 5 || Object.keys(MEAL_PROTEIN_COST).length > 8) {
+  if (Object.keys(MEAL_PROTEIN_COST).length < 4 || Object.keys(MEAL_PROTEIN_COST).length > 8) {
     throw new Error(
-      `meal-protein-cost: expected 5-8 refreshed slugs, got ${Object.keys(MEAL_PROTEIN_COST).length}`,
+      `meal-protein-cost: expected 4-8 refreshed slugs, got ${Object.keys(MEAL_PROTEIN_COST).length}`,
     );
   }
 }

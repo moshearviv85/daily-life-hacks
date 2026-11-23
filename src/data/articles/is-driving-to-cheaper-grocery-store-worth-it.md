@@ -91,7 +91,7 @@ The farther store usually gets more attractive as the basket grows, assuming the
 
 A $2 difference on one bag of rice won't carry a 30-mile trip. A $25 difference across a two-week cart might, and the line items that move a number that size are the dry goods you buy every week, not the endcap: here's where the real savings hide in a Walmart cart. This is why comparing one flashy sale item tells you almost nothing about the full trip.
 
-Build the week first. The [weekly food-cost planner](/tools/grocery-budget-calculator/) scales ten audited menus for your household, and the [healthy eating on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) gives you the larger shopping system. Then compare that actual list between stores.
+Build the week first. The [weekly food-cost planner](/tools/grocery-budget-calculator/) scales ten audited menus for your household, and the healthy eating on a budget playbook gives you the larger shopping system. Then compare that actual list between stores.
 
 For a practical test basket, use dinners you'd genuinely cook. Price the ingredients for [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/), the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/), and [one-pot chicken and rice](/easy-one-pot-chicken-and-rice-dinner/) at both stores. Those recipes share staples, so you're comparing a real week instead of assembling a laboratory cart containing seventeen unrelated sale items.
 

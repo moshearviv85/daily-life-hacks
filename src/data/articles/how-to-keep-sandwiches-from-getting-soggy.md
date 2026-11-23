@@ -11,6 +11,7 @@ image: "/images/how-to-keep-sandwiches-from-getting-soggy-main.jpg"
 imageAlt: A cross-section of a deli sandwich, showing a layer of spread protecting the bread from moist fillings like tomato and lettuce.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 quickAnswer: >-
   Spread fat edge to edge first, butter, mayo, pesto, even peanut butter. That thin
@@ -111,4 +112,4 @@ Night before is prep. Morning is the bag. Lunch is when the wet stuff finally me
 
 The deeper make-ahead move is the freezer. Freezing sandwiches helps them stay cold on the commute, and a frozen one thaws over the morning instead of sweating. One catch, straight from FSIS: for best quality, don't freeze sandwiches containing mayonnaise, lettuce, or tomatoes. Freeze the plain meat-and-cheese-on-buttered-bread version and add the wet stuff the morning you eat it.
 
-Packing a lunch shouldn't feel like a science experiment, but a few small adjustments go a long way. Fat as a barrier, wet stuff in the middle, two cold sources in the bag, and for the love of all things holy, let your toast cool down. You might actually look forward to that sandwich instead of eating it because it's there. And once your structure is sound, have some fun with the fillings; my favorite [egg sandwich add-ins and toppings](/healthy-egg-sandwich-add-ins-toppings/) are a good place to start.
+Packing a lunch shouldn't feel like a science experiment, but a few small adjustments go a long way. Fat as a barrier, wet stuff in the middle, two cold sources in the bag, and for the love of all things holy, let your toast cool down. You might actually look forward to that sandwich instead of eating it because it's there. And once your structure is sound, have some fun with the fillings; my favorite egg sandwich add-ins and toppings are a good place to start.

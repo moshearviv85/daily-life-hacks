@@ -11,7 +11,7 @@ tags:
 image: "/images/farro-lunch-bowl-roasted-vegetables-lemon-tahini-main.jpg"
 imageAlt: "Farro lunch bowl with roasted vegetables and lemon tahini sauce in a shallow bowl"
 date: 2026-04-23
-dateModified: 2026-11-23
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -72,13 +72,13 @@ This farro lunch bowl is my go-to when I want a meal prep lunch that isn't just 
 
 Also, it travels well. That matters. Nobody wants a lunch that turns into a wet, beige science project by noon.
 
-For the full Sunday-to-office setup around this bowl, the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) handles shopping, batch order, storage, and reheating before the containers start multiplying on their own.
+For the full Sunday-to-office setup around this bowl, the complete meal-prep system for beginners handles shopping, batch order, storage, and reheating before the containers start multiplying on their own.
 
 ## Why farro makes a great lunch bowl base
 
 Farro holds up in the fridge. It reheats without turning into paste. And it plays nice with strong flavors, like lemon and garlic, without getting bullied.
 
-If you've only done quinoa bowls, farro is a fun change. Same vibe. Better texture. Quinoa still earns pantry space, though it's worth knowing [what quinoa and whole wheat flour each cost per gram of fiber](/fiber-per-dollar-cheapest-high-fiber-foods/#grains) before you commit to another bag. Slightly more "I went to a cafe once and remembered what joy feels like."
+If you've only done quinoa bowls, farro is a fun change. Same vibe. Better texture. Quinoa still earns pantry space, though it's worth knowing [what quinoa and whole wheat flour each cost per gram of fiber](/what-30-grams-of-fiber-costs-per-day/#grains) before you commit to another bag. Slightly more "I went to a cafe once and remembered what joy feels like."
 
 ## Roasted vegetables that actually stay good as leftovers
 

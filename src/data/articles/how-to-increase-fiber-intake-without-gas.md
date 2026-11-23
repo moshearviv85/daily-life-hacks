@@ -11,7 +11,7 @@ tags:
 image: /images/how-to-increase-fiber-intake-without-gas-main.jpg
 imageAlt: Bowl of oats with fruit and nuts on a kitchen counter
 date: 2026-03-30
-dateModified: 2026-11-23
+dateModified: 2026-07-16
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -47,7 +47,7 @@ Before adding another scoop of beans, read the [practical guide to water and fib
 
 If you normally eat low fiber meals, a giant bean burrito is not a gentle step. It is a referendum.
 
-Try one swap at a time. Add vegetables to a meal you already eat, and the frozen bag counts, which is worth remembering when you see [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar). Switch one refined grain to a whole grain a few days a week. Add beans in quarter cup increments.
+Try one swap at a time. Add vegetables to a meal you already eat, and the frozen bag counts, which is worth remembering when you see how frozen and fresh vegetables compare on fiber per dollar. Switch one refined grain to a whole grain a few days a week. Add beans in quarter cup increments.
 ## Rule Two: Water Is Part of the Fiber System
 
 Fiber pulls water into the digestive tract. If you increase fiber and your water intake stays flat, you might feel off even if the foods are healthy.

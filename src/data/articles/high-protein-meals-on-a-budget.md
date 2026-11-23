@@ -51,7 +51,7 @@ Cost per gram of protein doesn't exist in USDA's database. You have to build it 
 
 The two at the top, and they're both legumes doing all the work. Split pea soup and beans with rice both land 30 grams of protein for about forty cents.
 
-That's not a trick of portion size. A 90 gram scoop of dry pinto beans is 19.3 grams of protein for $0.20, because dry pintos return 97.9 grams of protein per dollar. Nothing else in the store is close. We ranked all 49 foods in [protein per dollar](/protein-per-dollar-cheapest-protein-sources/), and the first seven places all went to dried legumes before a single animal product appeared.
+That's not a trick of portion size. A 90 gram scoop of dry pinto beans is 19.3 grams of protein for $0.20, because dry pintos return 97.9 grams of protein per dollar. Nothing else in the store is close. We ranked all 49 foods in [protein per dollar](/protein-per-dollar-adjusted-for-quality/), and the first seven places all went to dried legumes before a single animal product appeared.
 
 The practical version: keep one bag of dry beans and one bag of split peas in the house permanently. A 16 ounce bag of split peas is $1.42 and makes five bowls of soup. That's your protein floor, and it costs less than one coffee a week.
 
@@ -59,7 +59,7 @@ The practical version: keep one bag of dry beans and one bag of split peas in th
 
 Drumsticks, if you want meat on the plate. A pot of drumsticks with rice and frozen peas gives 34.8 grams of protein a serving for $0.88, which is the highest protein number on the whole table.
 
-People find this surprising because drumsticks look like the budget option and budget usually means worse. Bone-in drumsticks returned 50.3 grams of protein per dollar, more than double boneless skinless breast at 24.5, even after we accounted for the bone. The full cut-by-cut ranking is in [the cheapest meat for protein](/protein-per-dollar-cheapest-protein-sources/#meat).
+People find this surprising because drumsticks look like the budget option and budget usually means worse. Bone-in drumsticks returned 50.3 grams of protein per dollar, more than double boneless skinless breast at 24.5, even after we accounted for the bone. The full cut-by-cut ranking is in [the cheapest meat for protein](/protein-per-dollar-adjusted-for-quality/#meat).
 
 Pasta with a can of black beans is the no-thinking version at $0.70 and 27.1 grams. Boil pasta, drain a can, done. The packable versions of the same anchors are in cheap lunch ideas. And if you want the pot version scaled up for a table, cheap dinner ideas has the same plates costed by serving.
 
@@ -83,6 +83,6 @@ It doesn't tell you anything about calories, because our datasets don't carry a 
 
 The prices are single store shelf tags from July 2026, with US average prices for eggs, milk, beef, and chicken breast. Your zip code will differ, and your portions will differ from our 90 grams of dry legume and 60 grams of dry grain.
 
-What stays true is the order. The spread from $0.40 to $2.04 for identical protein is far too wide for a sale to close. Pick the anchor first, and the protein math takes care of itself. For the full system around it, [high protein on a budget](/high-protein-on-a-budget-complete-guide/) covers the shopping side.
+What stays true is the order. The spread from $0.40 to $2.04 for identical protein is far too wide for a sale to close. Pick the anchor first, and the protein math takes care of itself. For the full system around it, [high protein on a budget](/protein-per-dollar-adjusted-for-quality/) covers the shopping side.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/protein-quality-per-dollar-2026.csv -->

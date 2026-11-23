@@ -115,7 +115,7 @@ Prep the parts that create leverage:
 5. Make the chili, because it reheats well.
 6. Leave the fish uncooked until Thursday.
 
-That's component prep. The [meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) explains the larger method: prepare bases and flexible components, then assemble the meals that benefit from being fresh.
+That's component prep. The meal-prep system for beginners explains the larger method: prepare bases and flexible components, then assemble the meals that benefit from being fresh.
 
 You can also use the [recipe finder](/tools/recipe-finder/) to start with ingredients already in the kitchen. Search for beans, corn, cabbage, or rice and let the list of actual site recipes do the remembering. Your brain has other responsibilities.
 

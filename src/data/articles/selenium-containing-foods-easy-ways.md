@@ -11,7 +11,7 @@ tags:
 image: "/images/selenium-containing-foods-easy-ways-main.jpg"
 imageAlt: "Eggs fish Brazil nuts oats and chicken arranged on a kitchen counter"
 date: 2026-05-06
-dateModified: 2026-11-23
+dateModified: 2026-09-23
 author: "David Miller"
 quickAnswer: "The richest selenium foods are Brazil nuts, seafood, meat, poultry, eggs, and grains. Adults need 55 mcg a day and should stay under 400 mcg, per the NIH Office of Dietary Supplements. Three ounces of cooked yellowfin tuna delivers 92 mcg, a cup of cooked spaghetti 33 mcg, and one large egg 15 mcg. A single Brazil nut carries 68 to 91 mcg, so one nut alone covers the day."
 featured: false

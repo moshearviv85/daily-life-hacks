@@ -18,6 +18,7 @@ image: "/images/how-to-store-homemade-salad-dressing-safely-main.jpg"
 imageAlt: A clear glass bottle filled with golden salad dressing stands on a light wooden cutting board, surrounded by a lemon half and a garlic clove.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 faq:
@@ -36,7 +37,7 @@ How long homemade salad dressing lasts depends on the jar. A plain vinaigrette k
 
 Raw garlic or fresh herbs packed in oil, with no vinegar or other acid, isn't one of those quality windows. Oregon State University Extension says low-acid food in oil leaves an oxygen-free spot where Clostridium botulinum can grow, so refrigerate that jar and use it within 4 days, or freeze it. A splash of lemon isn't the tested fix.
 
-Store-bought Zesty Italian can sit in a pantry for a year and shrug. Your mason jar of lemon-garlic vinaigrette cannot. Homemade dressing is fresh, once-living ingredients with nothing holding the line behind them, unlike the bottled stuff packed with stabilizers and [more sugar than you'd guess](/hidden-sugars-popular-summer-salad-dressings/).
+Store-bought Zesty Italian can sit in a pantry for a year and shrug. Your mason jar of lemon-garlic vinaigrette cannot. Homemade dressing is fresh, once-living ingredients with nothing holding the line behind them, unlike the bottled stuff packed with stabilizers and more sugar than you'd guess.
 
 Most of the time this is a waste-and-taste question. Once in a while, specifically when raw garlic meets a lot of oil, it's an actual food safety question. Here's how to tell those apart.
 

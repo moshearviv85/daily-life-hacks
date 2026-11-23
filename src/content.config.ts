@@ -22,6 +22,11 @@ const articles = defineCollection({
     quickAnswer: z.string().optional(),
     date: z.coerce.date(),
     dateModified: z.coerce.date().optional(),
+    // Public modified day for schema, sitemap, feeds, and the visible Updated
+    // line. Set only for a changed number or claim, or a body change of at
+    // least 15%. Link, citation, title, author, caption, and template edits
+    // leave it unset so they do not move dateModified.
+    substantiveUpdate: z.coerce.date().optional(),
     publishAt: z.coerce.date().optional(),
     author: z.string().optional(),
     cluster: z.enum(CONTENT_CLUSTER_IDS).optional(),

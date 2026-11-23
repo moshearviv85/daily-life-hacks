@@ -11,7 +11,6 @@ tags:
 image: "/images/baking-sheet-liners-parchment-silicone-when-to-use-main.jpg"
 imageAlt: "Baking sheet half lined with parchment paper and half with a silicone baking mat"
 date: 2026-04-08
-dateModified: 2026-11-23
 author: "David Miller"
 quickAnswer: "Parchment is the default. It releases cleanly, browns bottoms well, and you throw it away. Reach for a silicone mat for sticky work like caramel and macarons. For cookies, King Arthur's side-by-side test found mats gave the least spread and foil the most. Neither liner has a universal heat limit. Reynolds rates its parchment to 425 degrees Fahrenheit and says never use it under a broiler or in a toaster oven. Published silicone ceilings run from 375 degrees on Wilton's bakeware chart to 500 degrees for King Arthur's mat, so check your brand. For broiling, line the pan with foil, never the oven floor."
 featured: false
@@ -40,7 +39,7 @@ Parchment paper is, in [Reynolds' own words](https://www.reynoldsbrands.com/tips
 
 Parchment is the workhorse of baking. Cookies, cakes, brownies. Line the bottom of a cake tin with it and the cake pops out instead of leaving half itself behind. Being thin matters too: a sheet of paper doesn't sit between your food and the hot pan the way a thick mat does.
 
-For messy savory roasting, parchment is brilliant. Sticky sweet potatoes, a glazed piece of salmon, whatever. It's exactly why the paper goes down first for this [sheet pan ginger tofu and broccoli with sticky glaze](/sheet-pan-ginger-tofu-broccoli-sticky-glaze/). When dinner's done, you throw the paper away and rinse the pan.
+For messy savory roasting, parchment is brilliant. Sticky sweet potatoes, a glazed piece of salmon, whatever. It's exactly why the paper goes down first for this sheet pan ginger tofu and broccoli with sticky glaze. When dinner's done, you throw the paper away and rinse the pan.
 
 The downside is that it's a consumable, and it has a real ceiling. [FDA's rule for paper in contact with food](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-176/section-176.170) does not publish a home-oven temperature for parchment. The number that matters is the one printed on the box you bought. If the box says to keep it off a broiler or an open flame, believe the box. I'm not going to paste one brand's printed ceiling as if it covered every roll.
 

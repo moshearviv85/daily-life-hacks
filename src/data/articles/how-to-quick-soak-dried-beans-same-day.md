@@ -6,7 +6,6 @@ tags: ["CookingTips", "BeanPrep", "KitchenHacks", "TimeSaving", "PantryStaples"]
 image: "/images/how-to-quick-soak-dried-beans-same-day-main.jpg"
 imageAlt: "Pot of dried beans soaking in water on a stovetop"
 date: 2026-04-07
-dateModified: 2026-11-23
 publishAt: 2026-04-07T00:00:00.000Z
 author: "David Miller"
 featured: false

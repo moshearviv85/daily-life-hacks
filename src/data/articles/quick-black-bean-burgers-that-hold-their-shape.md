@@ -81,7 +81,7 @@ Cumin is the obvious choice here, and I use a full teaspoon because I want that 
 
 Salt matters more than you'd think. Beans need a decent amount of salt to taste good-don't be shy. Half a teaspoon is my baseline for this recipe, and you can adjust up or down based on your preferences and what toppings you're adding.
 
-Some recipes call for additional add-ins like jalapeños, cilantro, or chipotle in adobo. These are all fine, but I kept this version simple so you can customize without fighting strong flavors you didn't intend to include. If you want heat, add a diced jalapeño or a teaspoon of chipotle sauce. If you want fresher flavor, stir in some chopped cilantro after mixing. That build-it-plain-then-customize approach is also the entire playbook for [cooking for picky adults](/cooking-for-picky-adults-simple-options/), so this recipe pulls double duty at a mixed table.
+Some recipes call for additional add-ins like jalapeños, cilantro, or chipotle in adobo. These are all fine, but I kept this version simple so you can customize without fighting strong flavors you didn't intend to include. If you want heat, add a diced jalapeño or a teaspoon of chipotle sauce. If you want fresher flavor, stir in some chopped cilantro after mixing. That build-it-plain-then-customize approach is also the entire playbook for cooking for picky adults, so this recipe pulls double duty at a mixed table.
 
 ## Forming and Cooking: The Details That Matter
 
@@ -133,7 +133,7 @@ You can also form the patties and freeze them raw. Place them on a tray, freeze 
 
 The base recipe is solid, but there's room to play around once you've made it a few times and understand how the mixture should feel.
 
-Want more texture? Add some corn, diced bell pepper, or chopped mushrooms. These add moisture, so you might need a bit more breadcrumbs to compensate. Frozen corn works fine here if you thaw and dry it first, and [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) is worth checking before you assume the fresh bin is the better deal.
+Want more texture? Add some corn, diced bell pepper, or chopped mushrooms. These add moisture, so you might need a bit more breadcrumbs to compensate. Frozen corn works fine here if you thaw and dry it first, and how frozen and fresh vegetables compare on fiber per dollar is worth checking before you assume the fresh bin is the better deal.
 
 Want more heat? Chipotle in adobo, diced jalapeños, or cayenne all work. Start small and taste as you go.
 

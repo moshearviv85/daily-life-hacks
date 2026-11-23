@@ -34,7 +34,7 @@ Plain popcorn is a blank canvas, which sounds elegant until you eat three handfu
 
 The best popcorn toppings bring salt, acidity, heat, or a little sweetness without requiring a caramel thermometer and a sink full of hardened sugar. Pop the corn, add just enough oil to make the seasoning stick, and choose a direction.
 
-Popcorn already sits comfortably in a budget snack rotation. Our [popcorn versus potato chips comparison](/popcorn-vs-potato-chips-fiber-comparison/) covers the ounce-for-ounce numbers. Kernels themselves buy 51.3 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). This page handles the far more urgent issue of making the bowl worth eating.
+Popcorn already sits comfortably in a budget snack rotation. Our [popcorn versus potato chips comparison](/popcorn-vs-potato-chips-fiber-comparison/) covers the ounce-for-ounce numbers. Kernels themselves buy 51.3 grams of fiber per dollar in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/). This page handles the far more urgent issue of making the bowl worth eating.
 
 ## How do you make popcorn seasoning stick?
 
@@ -62,13 +62,13 @@ Add seasoning in two rounds. Toss half through the bowl, taste, then add the res
 
 **7. Berry and cinnamon:** Crush freeze-dried raspberries or strawberries into a rough powder, then toss with cinnamon. The fruit brings tartness and color without adding moisture. Apple chips work too, though they need a determined rolling pin.
 
-If you're looking for a snack with more heft, these [no-bake fiber energy balls](/no-bake-high-fiber-energy-balls-recipe/) are built for the part of the afternoon when popcorn isn't going to negotiate with your hunger.
+If you're looking for a snack with more heft, these no-bake fiber energy balls are built for the part of the afternoon when popcorn isn't going to negotiate with your hunger.
 
 ## Which toppings add fiber to popcorn?
 
 Popcorn provides fiber on its own because the whole kernel is used. Ground flaxseed, chia seeds, crushed roasted chickpeas, and freeze-dried fruit can add more, but texture matters. A tablespoon of loose seeds mostly ends up under the popcorn unless you grind it or use enough oil to make it cling.
 
-Don't turn the bowl into a fiber stunt. Add one topping because it tastes good, then let the rest of the day include beans, grains, fruit, and vegetables like a normal meal plan. The [budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) shows where popcorn fits among foods that can carry more of the work.
+Don't turn the bowl into a fiber stunt. Add one topping because it tastes good, then let the rest of the day include beans, grains, fruit, and vegetables like a normal meal plan. The [budget fiber guide](/what-30-grams-of-fiber-costs-per-day/) shows where popcorn fits among foods that can carry more of the work.
 
 If you're comparing packaged popcorn or seasoning blends, use the Nutrition Facts panel rather than the loudest phrase on the front. The FDA sets the Daily Value for fiber at 28 grams on a 2,000-calorie diet, while individual calorie and nutrient needs vary. The [FDA dietary fiber guide](https://www.accessdata.fda.gov/scripts/InteractiveNutritionFactsLabel/assets/InteractiveNFL_DietaryFiber_October2021.pdf) explains how the grams and percent Daily Value appear on the label.
 

@@ -9,7 +9,6 @@ tags:
 image: "/images/healthy-sweet-tooth-snack-ideas-night-main.jpg"
 imageAlt: A glass bowl of plain Greek yogurt swirled with berry compote and topped with a sprinkle of nuts.
 date: 2026-04-28
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"
@@ -47,7 +46,7 @@ The goal isn't to starve yourself or pretend a stick of celery is a brownie. It'
 
 If you want something creamy that mimics the vibe of cheesecake or thick pudding, Greek yogurt is your best friend. It's packed with protein, which means you won't wake up an hour later looking for more food. The trick is to avoid the pre-sweetened "fruit on the bottom" cups that are basically dessert in disguise.
 
-Buy the plain stuff and add your own flavor. A teaspoon of honey and a dash of cinnamon goes a long way. If you're feeling fancy, stir in a spoonful of almond butter, or swirl in some [homemade chia raspberry jam](/high-fiber-raspberry-jam-recipe-chia/) for something that tastes suspiciously like dessert. The fat in the nut butter makes the snack feel much more indulgent than it actually is. It's a five-minute fix that solves the "I need something creamy" problem instantly.
+Buy the plain stuff and add your own flavor. A teaspoon of honey and a dash of cinnamon goes a long way. If you're feeling fancy, stir in a spoonful of almond butter, or swirl in some homemade chia raspberry jam for something that tastes suspiciously like dessert. The fat in the nut butter makes the snack feel much more indulgent than it actually is. It's a five-minute fix that solves the "I need something creamy" problem instantly.
 
 ## Why dark chocolate is a tactical win
 

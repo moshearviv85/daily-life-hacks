@@ -16,7 +16,7 @@ tags:
 image: /images/vegan-high-fiber-meal-prep-for-week-main.jpg
 imageAlt: "Five glass containers with roasted tofu quinoa broccoli and bell peppers"
 date: 2026-04-28
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -76,7 +76,7 @@ Run the three parts in parallel. Start the quinoa, get the vegetables onto one s
 
 Use two large pans. Crowding tofu and vegetables together traps steam, which means the tofu stays pale and the broccoli develops the emotional range of airport food. Give both room to brown.
 
-The [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) covers the wider routine, including shopping and storage. This recipe is the part where food actually enters the containers.
+The complete meal-prep system for beginners covers the wider routine, including shopping and storage. This recipe is the part where food actually enters the containers.
 
 ## What makes roasted tofu crisp instead of rubbery?
 

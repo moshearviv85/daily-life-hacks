@@ -8,7 +8,7 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/beans-double-win-fiber-protein-main.jpg"
 imageAlt: "A steaming bowl of simmered pinto beans surrounded by small bowls of black beans, lentils, and chickpeas"
 date: 2026-07-13
-dateModified: 2026-11-23
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "Which bean has the most protein and fiber per dollar?"
@@ -27,7 +27,7 @@ The per-dollar figure divides the FoodData Central protein or fiber per 100 gram
 
 Dry green split peas buy you 73.9 grams of protein and 71.0 grams of fiber for every dollar, a combined 144.9 grams ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients)). Dry pinto beans, the bag this ranking used to hand the trophy to, land at 57.6 grams of protein and 41.7 grams of fiber, 99.3 combined, from a $6.75 four pound bag ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients)). In this ten-food lineup, the peas take it.
 
-Here's where this came from. We ran two separate grocery studies, one ranking foods by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and one by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), and the dry goods aisle ran away with both. So this piece crosses the two datasets and scores 10 beans and lentils on the combined number: total grams of protein and fiber per dollar, added together. Simple math, slightly rude results.
+Here's where this came from. We ran two separate grocery studies, one ranking foods by [protein per dollar](/protein-per-dollar-adjusted-for-quality/) and one by [fiber per dollar](/what-30-grams-of-fiber-costs-per-day/), and the dry goods aisle ran away with both. So this piece crosses the two datasets and scores 10 beans and lentils on the combined number: total grams of protein and fiber per dollar, added together. Simple math, slightly rude results.
 
 | Food | Protein per $1 | Fiber per $1 | Combined per $1 | Package |
 |---|---|---|---|---|
@@ -50,7 +50,7 @@ The canned rows carry a fiber score now, and they still don't catch the dry bags
 
 ## Which beans deliver the most protein and fiber per dollar?
 
-Split peas, and the gap from first place to the last can is about 3.5x. The top of the table is all bags. Widen the lens past legumes and the dry goods aisle still runs [the full plant protein ranking](/protein-per-dollar-cheapest-protein-sources/#plant).
+Split peas, and the gap from first place to the last can is about 3.5x. The top of the table is all bags. Widen the lens past legumes and the dry goods aisle still runs [the full plant protein ranking](/protein-per-dollar-adjusted-for-quality/#plant).
 
 Split peas don't merely edge the pintos on fiber. They deliver 71.0 grams of fiber per dollar against 41.7, and a bag costs $1.42. That's the cheapest entry ticket on the whole list. If you've only ever met split peas in [a pot of split pea soup](/split-pea-soup-recipe-high-fiber/), that's still the correct move, it just happens to be a financially brilliant one too.
 
@@ -76,8 +76,8 @@ Chickpeas are the snack play. At 90.5 combined grams per dollar from a $1.64 bag
 
 Nutrient values come from USDA FoodData Central. Prices are July 2026 US figures: BLS average prices where a dried-bean series exists, and audited Walmart listings where it doesn't. The combined score is just protein grams per dollar plus fiber grams per dollar. No weighting, no adjustments, one addition problem.
 
-For scale: the FDA's Daily Values are 28 grams of fiber and 50 grams of protein ([FDA Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), [FDA Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels)). One dollar of dry pintos buys 41.7 grams of fiber, about one and a half times that fiber benchmark, and 57.6 grams of protein, a bit more than one labeling day ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients)). One dollar of split peas buys 71.0 grams of fiber, about two and a half times the fiber benchmark ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients)). Those DVs are label math, not personal targets, but they make the point. It's the same single-dollar lens we used on [the 15 cheapest fiber foods in the store](/fiber-per-dollar-cheapest-high-fiber-foods/#what-1-buys).
+For scale: the FDA's Daily Values are 28 grams of fiber and 50 grams of protein ([FDA Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), [FDA Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels)). One dollar of dry pintos buys 41.7 grams of fiber, about one and a half times that fiber benchmark, and 57.6 grams of protein, a bit more than one labeling day ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients)). One dollar of split peas buys 71.0 grams of fiber, about two and a half times the fiber benchmark ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients)). Those DVs are label math, not personal targets, but they make the point. It's the same single-dollar lens we used on [the 15 cheapest fiber foods in the store](/what-30-grams-of-fiber-costs-per-day/#what-1-buys).
 
-If you want to see what this looks like as an actual grocery week, the [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) builds the full plan, and [what 30 grams of fiber costs per day](/what-30-grams-of-fiber-costs-per-day/) runs the daily math. If you'd rather split the dollar between a bag of beans and a bag of grain, [the cheapest complete protein pairs](/cheapest-complete-protein-pairs/) scores 20 of those combinations. The beans will be waiting. They're shelf-stable like that.
+If you want to see what this looks like as an actual grocery week, the [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) builds the full plan, and [what 30 grams of fiber costs per day](/what-30-grams-of-fiber-costs-per-day/) runs the daily math. If you'd rather split the dollar between a bag of beans and a bag of grain, [the cheapest complete protein pairs](/cheapest-complete-protein-pairs/) scores 20 of those combinations. The beans will be waiting. They're shelf-stable like that.
 
 <!-- numbers-source: public/data/beans-double-win-fiber-protein-2026.csv -->

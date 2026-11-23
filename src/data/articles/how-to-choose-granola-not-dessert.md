@@ -77,6 +77,6 @@ Granola is dense. That's not a flaw, it's a feature, but it means a little goes 
 
 ## The homemade option (it's easier than you think)
 
-Three cups of rolled oats, a cup of mixed nuts, two tablespoons of oil, two tablespoons of maple syrup, a pinch of salt, and a teaspoon of cinnamon. Spread on a sheet pan. Bake at 325F for 20 to 25 minutes, stirring once halfway. Let it cool completely before you touch it (that's when it gets crunchy). Store in a jar. The cinnamon is doing more work than it looks like, because [warm spices make food read as sweeter than it is](/add-flavor-without-more-sugar-tricks/), which is how you get away with only two tablespoons of syrup.
+Three cups of rolled oats, a cup of mixed nuts, two tablespoons of oil, two tablespoons of maple syrup, a pinch of salt, and a teaspoon of cinnamon. Spread on a sheet pan. Bake at 325F for 20 to 25 minutes, stirring once halfway. Let it cool completely before you touch it (that's when it gets crunchy). Store in a jar. The cinnamon is doing more work than it looks like, because warm spices make food read as sweeter than it is, which is how you get away with only two tablespoons of syrup.
 
 Total sugar: whatever you added, which you control. That's the point.

@@ -57,7 +57,7 @@ That's the whole system. One pot, plus a small bag of raw cabbage or carrots tha
 
 Two reasons, and only one of them is obvious.
 
-The obvious one is packaging. A 4 pound bag of dry pinto beans works out to $0.219 per 100 grams. A 2 pound bag of black beans is $0.267. Same category of food, roughly 18 percent apart, purely on package size. Buying at the size you'll actually finish is the single cheapest decision in the store, and we ranked what those unit prices do to your protein in [protein per dollar](/protein-per-dollar-cheapest-protein-sources/).
+The obvious one is packaging. A 4 pound bag of dry pinto beans works out to $0.219 per 100 grams. A 2 pound bag of black beans is $0.267. Same category of food, roughly 18 percent apart, purely on package size. Buying at the size you'll actually finish is the single cheapest decision in the store, and we ranked what those unit prices do to your protein in [protein per dollar](/protein-per-dollar-adjusted-for-quality/).
 
 The less obvious one is that a pot of beans takes the same attention whether it holds two servings or six. You soak once, you simmer once, you wash one pot. Time isn't in our price data, but it's the reason people abandon cheap cooking, so it belongs in the decision. Batch cooking for beginners has the scheduling side, and how to meal plan on a budget has the pricing side.
 
@@ -69,7 +69,7 @@ USDA's Food Safety and Inspection Service advises using cooked leftovers within 
 
 Four servings is the sweet spot for most households. Two people eat it twice, a family of four eats it once, and either way it's gone inside the window. A ten serving pot for one person is how good intentions end up in the bin, and food you paid for and threw out costs full price and feeds nobody. There's more of that thinking in [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/).
 
-Cool things properly before they go in, especially rice. The safe method is in storing cooked grains for meal prep. Beyond four days, freeze it, and [freezer meal prep for beginners](/meal-prep-for-beginners-complete-system/#freezer-friendly-picks) covers the portioning.
+Cool things properly before they go in, especially rice. The safe method is in storing cooked grains for meal prep. Beyond four days, freeze it, and freezer meal prep for beginners covers the portioning.
 
 ## How do you keep leftovers from being the same meal four times?
 
@@ -77,7 +77,7 @@ Change the top, keep the bottom. This is the only trick that matters and it cost
 
 A pot of black beans is tacos on Monday with cabbage and lime. It's a rice bowl on Tuesday with hot sauce and a fried egg. It's soup on Wednesday with more water and a squeeze of lemon. Three meals, one pot, and the reason nobody complains is that the accompaniments changed even though the anchor didn't.
 
-Leftover rice is the most flexible thing in the fridge and the most commonly wasted, which is a strange combination. [Creative ideas for leftover rice](/how-to-use-leftover-rice-creative-ideas/) covers the ways it comes back to life.
+Leftover rice is the most flexible thing in the fridge and the most commonly wasted, which is a strange combination. Creative ideas for leftover rice covers the ways it comes back to life.
 
 ## What this doesn't measure
 

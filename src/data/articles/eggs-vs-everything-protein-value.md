@@ -6,7 +6,7 @@ tags: ["are eggs cheap protein", "eggs protein per dollar", "egg prices 2026", "
 image: "/images/eggs-vs-everything-protein-value-main.jpg"
 imageAlt: "A carton of brown eggs surrounded by bowls of beans, canned tuna, peanut butter, and chicken drumsticks"
 date: 2026-07-13
-dateModified: 2026-11-23
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "Are eggs the cheapest protein?"
@@ -23,7 +23,7 @@ faq:
 
 The per-dollar figure divides the FoodData Central protein or fiber per 100 grams by the July 2026 package price. The link is that nutrient record, not a price the lab published.
 
-Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, the July 2026 national average, which lands them 17th out of the 49 grocery foods in our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) ([FDC 171287](https://fdc.nal.usda.gov/food-details/171287/nutrients)). That's the whole story in one sentence: eggs are good value, not great value, and everything that beats them lives in the dry goods aisle. Here's the top of the ranking eggs didn't crack:
+Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, the July 2026 national average, which lands them 17th out of the 49 grocery foods in our [protein per dollar study](/protein-per-dollar-adjusted-for-quality/) ([FDC 171287](https://fdc.nal.usda.gov/food-details/171287/nutrients)). That's the whole story in one sentence: eggs are good value, not great value, and everything that beats them lives in the dry goods aisle. Here's the top of the ranking eggs didn't crack:
 
 | Rank | Food | Protein per $1 | Package | Price |
 |---|---|---|---|---|
@@ -46,9 +46,9 @@ Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, the July 2026 na
 
 ## What actually beats eggs on protein per dollar?
 
-Sixteen foods, and the theme is obvious: if it's dry and it sits on an unrefrigerated shelf, it probably wins. Every dried legume beats eggs, from red lentils at 56.0 grams per dollar up to brown lentils at 77.7 ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients), [FDC 174284](https://fdc.nal.usda.gov/food-details/174284/nutrients)). Whole wheat flour leads the study at 96.0, nearly three times the egg number ([FDC 168893](https://fdc.nal.usda.gov/food-details/168893/nutrients)). Those same dry bags lead the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) too. Whole wheat flour returns 77.8 grams of fiber per dollar there, and green split peas return 71.0 ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients), [FDC 168893](https://fdc.nal.usda.gov/food-details/168893/nutrients)). Eggs never made that table. We ranked the plant half of the store on its own in [the cheapest plant protein sources](/protein-per-dollar-cheapest-protein-sources/#plant), where the dry bags lead and the refrigerated products with "protein" printed on the label finish last. Both spaghettis (53.4 and 42.9), peanut butter (50.7), oats (46.6), dry roasted peanuts (39.8), brown rice (36.6), and pearled barley (36.3) all finish ahead too ([FDC 173904](https://fdc.nal.usda.gov/food-details/173904/nutrients), [FDC 174266](https://fdc.nal.usda.gov/food-details/174266/nutrients)). White rice, at 29.4, does not. Neither does a loaf of 100% whole wheat bread, at 20.1.
+Sixteen foods, and the theme is obvious: if it's dry and it sits on an unrefrigerated shelf, it probably wins. Every dried legume beats eggs, from red lentils at 56.0 grams per dollar up to brown lentils at 77.7 ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients), [FDC 174284](https://fdc.nal.usda.gov/food-details/174284/nutrients)). Whole wheat flour leads the study at 96.0, nearly three times the egg number ([FDC 168893](https://fdc.nal.usda.gov/food-details/168893/nutrients)). Those same dry bags lead the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) too. Whole wheat flour returns 77.8 grams of fiber per dollar there, and green split peas return 71.0 ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients), [FDC 168893](https://fdc.nal.usda.gov/food-details/168893/nutrients)). Eggs never made that table. We ranked the plant half of the store on its own in [the cheapest plant protein sources](/protein-per-dollar-adjusted-for-quality/#plant), where the dry bags lead and the refrigerated products with "protein" printed on the label finish last. Both spaghettis (53.4 and 42.9), peanut butter (50.7), oats (46.6), dry roasted peanuts (39.8), brown rice (36.6), and pearled barley (36.3) all finish ahead too ([FDC 173904](https://fdc.nal.usda.gov/food-details/173904/nutrients), [FDC 174266](https://fdc.nal.usda.gov/food-details/174266/nutrients)). White rice, at 29.4, does not. Neither does a loaf of 100% whole wheat bread, at 20.1.
 
-Exactly one meat cracks the list above eggs: bone-in chicken drumsticks at 50.3 grams per dollar, and that's after subtracting the bone ([FDC 172373](https://fdc.nal.usda.gov/food-details/172373/nutrients)). Everything else at the meat counter loses to the egg carton, which you can watch happen cut by cut in [the meat-only protein ranking](/protein-per-dollar-cheapest-protein-sources/#meat).
+Exactly one meat cracks the list above eggs: bone-in chicken drumsticks at 50.3 grams per dollar, and that's after subtracting the bone ([FDC 172373](https://fdc.nal.usda.gov/food-details/172373/nutrients)). Everything else at the meat counter loses to the egg carton, which you can watch happen cut by cut in [the meat-only protein ranking](/protein-per-dollar-adjusted-for-quality/#meat).
 
 ## What do eggs beat?
 
@@ -70,14 +70,14 @@ Eggs beat chicken breast (24.6) by roughly 40 percent per dollar ([FDC 171077](h
 
 ## So are eggs still worth buying for protein?
 
-Rank 17 undersells the convenience: eggs are the cheapest protein in this sample that asks almost nothing of the cook. A dozen holds about 75 grams of protein for $2.19, call it 18 cents an egg, [about 12.6 grams of protein in the standard two egg breakfast](/foods-highest-in-protein-per-100-grams/), and there's no soaking, no simmering, no cutting board. Skip the pan entirely and it's a different list, one that [peanut butter, canned beans, and the dairy tubs](/protein-per-dollar-cheapest-protein-sources/#no-cook) run instead. Beans beat eggs on paper; eggs beat beans at breakfast when you're barely awake and negotiating with the coffee maker.
+Rank 17 undersells the convenience: eggs are the cheapest protein in this sample that asks almost nothing of the cook. A dozen holds about 75 grams of protein for $2.19, call it 18 cents an egg, [about 12.6 grams of protein in the standard two egg breakfast](/foods-highest-in-protein-per-100-grams/), and there's no soaking, no simmering, no cutting board. Skip the pan entirely and it's a different list, one that [peanut butter, canned beans, and the dairy tubs](/protein-per-dollar-adjusted-for-quality/#no-cook) run instead. Beans beat eggs on paper; eggs beat beans at breakfast when you're barely awake and negotiating with the coffee maker.
 
-They're also hard to get bored of. A sheet pan breakfast hash feeds a table from one pan, [cauliflower fried rice with eggs](/how-to-use-leftover-rice-creative-ideas/) turns them into dinner, and a good [egg sandwich](/healthy-egg-sandwich-add-ins-toppings/) is the entire reason some of us get out of bed.
+They're also hard to get bored of. A sheet pan breakfast hash feeds a table from one pan, cauliflower fried rice with eggs turns them into dinner, and a good egg sandwich is the entire reason some of us get out of bed.
 
 ## How do you squeeze more value out of the egg habit?
 
 Pair eggs with the foods ranked above them instead of below them. Eggs over savory oatmeal puts the 34.4 next to oats at 46.6, and the egg sandwich on 100% whole wheat bread (20.1 grams of protein per dollar) is still a cheap breakfast ([FDC 171287](https://fdc.nal.usda.gov/food-details/171287/nutrients), [FDC 173904](https://fdc.nal.usda.gov/food-details/173904/nutrients)). The bread just doesn't beat the eggs on protein per dollar. Then let beans take a couple of dinners a week and the grocery math quietly improves without anyone feeling deprived.
 
-That's the honest verdict: eggs aren't the budget champion the internet says they are, but they're the best protein deal that comes with an off switch for effort. For the full strategy around these numbers, see our [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/), and for what a whole day costs, [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) runs the totals.
+That's the honest verdict: eggs aren't the budget champion the internet says they are, but they're the best protein deal that comes with an off switch for effort. For the full strategy around these numbers, see our [high protein on a budget guide](/protein-per-dollar-adjusted-for-quality/), and for what a whole day costs, [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) runs the totals.
 
 <!-- numbers-source: pipeline-data/derived-studies/eggs-vs-everything-protein-value.json -->

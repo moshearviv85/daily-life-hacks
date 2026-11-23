@@ -45,7 +45,7 @@ Fruit gets weird press. One week it's a health halo. The next week someone onlin
 
 Skin, seeds, and pulp give you something to chew, but food form matters more than a slogan. In a [randomized crossover study of 58 adults](https://pubmed.ncbi.nlm.nih.gov/19110020/), whole apple before lunch produced greater satiety and lower total meal energy intake than applesauce or apple juice. That's evidence for the tested meal, not a guarantee for every fruit or snack.
 
-If you want the grocery system behind cheap fiber staples beyond fruit, our [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) is the pillar. Fruit is one aisle. Beans and oats are the rest of the week.
+If you want the grocery system behind cheap fiber staples beyond fruit, our [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) is the pillar. Fruit is one aisle. Beans and oats are the rest of the week.
 
 ## Berries (raspberries, blackberries, strawberries)
 
@@ -113,7 +113,7 @@ Dried fruit is fruit with the water removed. That means more sugar and calories 
 
 Juice is even blurrier. You lose most of the fiber and keep the sweetness. If you like juice, treat it like a side, not a hydration strategy, and keep the glass small.
 
-When we priced fiber-dense groceries for the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), whole foods with intact fiber kept beating pretty packaged products. Fruit juice rarely wins that contest. An apple still does useful work.
+When we priced fiber-dense groceries for the [fiber per dollar study](/what-30-grams-of-fiber-costs-per-day/), whole foods with intact fiber kept beating pretty packaged products. Fruit juice rarely wins that contest. An apple still does useful work.
 
 ## Fruit next to meals, not only as a reward
 
@@ -151,4 +151,4 @@ Keep the bar boring on purpose. Boring is how fruit actually gets eaten.
 
 The useful high-fiber-fruit conversation is about choosing whole fruit, keeping portions visible, and building snacks that work for you. Berries, pears, apples with skin, kiwi, oranges, and bananas are practical options. None comes with a guaranteed fullness timer or weight-loss result.
 
-Use the [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) when you're building the rest of the cart around beans, oats, and cheap staples. Fruit is the easy win you can see. The pattern behind it is what changes over time.
+Use the [fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/) when you're building the rest of the cart around beans, oats, and cheap staples. Fruit is the easy win you can see. The pattern behind it is what changes over time.

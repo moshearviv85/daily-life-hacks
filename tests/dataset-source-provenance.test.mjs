@@ -446,8 +446,8 @@ test("TVP studies disclose the manufacturer-label source and derivative joined s
     {
       slug: "protein-per-dollar-cheapest-protein-sources",
       csv: "public/data/protein-per-dollar-2026.csv",
-      source:
-        "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
+      source: "src/content/datasets.ts",
+      htmlPath: "dist/data/protein-per-dollar-2026/index.html",
       derivative: false,
       expected: { exact: 39, proxy: 10, unresolved: 0 },
     },
@@ -462,9 +462,9 @@ test("TVP studies disclose the manufacturer-label source and derivative joined s
   const universalUsdaOnly =
     /\b(?:all|each|every)\b[^.]{0,160}\b(?:food|row|protein|nutrition)s?\b[^.]{0,160}\bUSDA\b/i;
 
-  for (const { slug, csv, source, derivative, expected } of studies) {
+  for (const { slug, csv, source, derivative, expected, htmlPath } of studies) {
     const counts = csvProductLabelCounts(csv);
-    const html = renderedArticle(slug);
+    const html = htmlPath ? read(htmlPath) : renderedArticle(slug);
     const main = visibleMain(html);
     const sourceMarkdown = read(source);
     const audit = derivative
@@ -563,11 +563,20 @@ test("guides derived from the 49-food protein study retain the TVP exception", (
     "public/data/protein-per-dollar-2026.csv",
   ).counts;
 
-  for (const slug of [
-    "eat-healthy-on-a-budget-complete-playbook",
-    "high-protein-on-a-budget-complete-guide",
-  ]) {
-    const main = visibleMain(renderedArticle(slug));
+  const redirects = read("public/_redirects");
+  assert.match(
+    redirects,
+    /^\/high-protein-on-a-budget-complete-guide \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
+  );
+  assert.match(
+    redirects,
+    /^\/high-protein-on-a-budget-complete-guide\/ \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
+  );
+
+  for (const slug of ["eat-healthy-on-a-budget-complete-playbook"]) {
+    const html = renderedArticle(slug);
+    const main = visibleMain(html);
+    assert.match(html, /noindex,\s*follow/i, slug);
     assert.match(main, new RegExp(`${counts.exact} exact USDA matches`, "i"), slug);
     assert.match(
       main,
@@ -786,8 +795,8 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
   const studies = [
     {
       slug: "fiber-per-dollar-cheapest-high-fiber-foods",
-      source:
-        "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
+      source: "src/content/datasets.ts",
+      landing: "dist/data/fiber-per-dollar-2026/index.html",
       csv: "public/data/fiber-per-dollar-2026.csv",
       // Exact counts stay exact here: this test IS the per-CSV status audit.
       // Post-T1 the fiber file resolves 42 rows to exact FDC records and 9 to
@@ -799,8 +808,8 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
     },
     {
       slug: "protein-per-dollar-cheapest-protein-sources",
-      source:
-        "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
+      source: "src/content/datasets.ts",
+      landing: "dist/data/protein-per-dollar-2026/index.html",
       csv: "public/data/protein-per-dollar-2026.csv",
       // T1 resolved every previously unresolved protein row: 39 exact FDC records
       // and 10 proxies, one of which (TVP) is a manufacturer label because USDA
@@ -819,7 +828,7 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
   for (const study of studies) {
     const audit = csvNutritionSourceAudit(study.csv);
     const source = read(study.source);
-    const rendered = visibleMain(renderedArticle(study.slug));
+    const rendered = visibleMain(read(study.landing));
     const publicClaims = `${source}\n${rendered}`;
 
     assert.deepEqual(audit.counts, study.counts, study.slug);
@@ -861,8 +870,8 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
     "public/data/fiber-per-dollar-2026.csv",
   );
   const fiberClaims = `${read(studies[0].source)}\n${visibleMain(
-    renderedArticle(studies[0].slug),
-  )}`;
+    read(studies[0].landing),
+  )}\n${read("src/data/articles/what-30-grams-of-fiber-costs-per-day.md")}`;
 
   // Popcorn kept unresolved status deliberately. Its 12.9 g per 100 g is DERIVED
   // from FDC 167959 (air-popped) by a popping-yield conversion to the as-sold
@@ -882,12 +891,18 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
 });
 
 test("popcorn form mismatch is not restated as a verified USDA winner in derived copy", () => {
+  const redirects = read("public/_redirects");
+  for (const [slug, target] of [
+    ["fiber-per-dollar-cheapest-high-fiber-foods", "/what-30-grams-of-fiber-costs-per-day/"],
+    ["how-to-eat-more-fiber-on-a-budget-complete-guide", "/what-30-grams-of-fiber-costs-per-day/"],
+  ]) {
+    assert.match(redirects, new RegExp(`^/${slug} ${target} 301$`, "m"), slug);
+    assert.match(redirects, new RegExp(`^/${slug}/ ${target} 301$`, "m"), slug);
+  }
   const affectedSources = [
     "src/data/articles/cheap-lunch-ideas-cost-per-box.md",
     "src/data/articles/eat-healthy-on-a-budget-complete-playbook.md",
-    "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
     "src/data/articles/popcorn-vs-potato-chips-fiber-comparison.md",
-    "src/data/articles/how-to-eat-more-fiber-on-a-budget-complete-guide.md",
   ];
   const prohibitedClaims = [
     /Plain popcorn kernels, at 57\.7 grams of fiber per dollar based on USDA/i,
@@ -1070,11 +1085,17 @@ test("flagship provenance metadata carries CSV-derived audit limits across every
       slug: "fiber-per-dollar-cheapest-high-fiber-foods",
       // Post-T1 per-CSV audit: 42 exact, 9 proxy, 2 deliberately unresolved.
       csv: "public/data/fiber-per-dollar-2026.csv",
+      landing: "dist/data/fiber-per-dollar-2026/index.html",
+      studyUrl: "https://www.daily-life-hacks.com/data/fiber-per-dollar-2026/",
+      writeUp: "/what-30-grams-of-fiber-costs-per-day/",
       expected: { exact: 42, proxy: 9, unresolved: 2 },
       extraClaim: null,
     },
     {
       slug: "protein-per-dollar-cheapest-protein-sources",
+      landing: "dist/data/protein-per-dollar-2026/index.html",
+      studyUrl: "https://www.daily-life-hacks.com/data/protein-per-dollar-2026/",
+      writeUp: "/protein-per-dollar-adjusted-for-quality/",
       // Post-T1 per-CSV audit: 39 exact, 10 proxy, nothing unresolved left.
       csv: "public/data/protein-per-dollar-2026.csv",
       expected: { exact: 39, proxy: 10, unresolved: 0 },
@@ -1094,17 +1115,21 @@ test("flagship provenance metadata carries CSV-derived audit limits across every
 
   for (const study of studies) {
     const audit = csvNutritionSourceAudit(study.csv);
-    const articleHtml = renderedArticle(study.slug);
-    const header = articleHeader(articleHtml);
-    const row = datasetCatalogRow(dataHtml, study.slug);
+    const articleHtml = read(study.landing);
+    const header =
+      articleHtml.match(/<div class="article-content[\s\S]*?<p>[\s\S]*?<\/p>/)?.[0] ?? "";
+    const row =
+      (visibleMain(dataHtml).match(/<tr\b[\s\S]*?<\/tr>/gi) ?? []).find((entry) =>
+        entry.includes(`data-dataset-id="${study.slug}"`),
+      ) ?? "";
     const articleDataset = jsonLdNodes(articleHtml).find(
       (node) => node["@type"] === "Dataset",
     );
     const catalogDataset = catalog.dataset.find(
-      (dataset) =>
-        dataset["@id"] ===
-        `https://www.daily-life-hacks.com/${study.slug}/#dataset`,
+      (dataset) => dataset["@id"] === `${study.studyUrl}#dataset`,
     );
+    assert.match(row, new RegExp(`href="${study.writeUp}"`), study.slug);
+    assert.doesNotMatch(row, new RegExp(`href="/${study.slug}/"`), study.slug);
     const statusClaim = statusClaimFor(audit.counts);
     const surfaces = {
       header,
@@ -1249,7 +1274,7 @@ test("public top-five verification claims match the CSV's documented source note
 test("Dataset measurementTechnique points both source classes to the corrected methodology", () => {
   const methodologyUrl = "https://www.daily-life-hacks.com/methodology/";
   const fastFood = renderedArticle("fast-food-protein-per-dollar-ranked");
-  const grocery = renderedArticle("fiber-per-dollar-cheapest-high-fiber-foods");
+  const grocery = read("dist/data/fiber-per-dollar-2026/index.html");
   const catalog = read("dist/data/index.html");
   const technique = `"measurementTechnique":"${methodologyUrl}"`;
 

@@ -8,7 +8,8 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/what-30-grams-of-fiber-costs-per-day-main.jpg"
 imageAlt: "Editorial illustration contrasting a pantry basket of oats, beans, and popcorn with an oversized restaurant receipt"
 date: 2026-07-08
-dateModified: 2026-07-30
+dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 faq:
   - question: "How much does it cost to eat 30 grams of fiber a day?"
@@ -25,7 +26,7 @@ faq:
 
 Hitting 30 grams of fiber in one day costs 62 cents if you build the day from the dry goods aisle, and $14.42 if you let restaurants do it for you. Same nutrient, same day, 23 times the price. That's the whole study in two sentences, and the rest of this article is the receipts.
 
-This is the third spreadsheet in the series. First we ranked 53 foods by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), then 49 foods by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/). Readers kept asking the practical follow-up: fine, beans win, but what does an actual *day* cost? So I priced five realistic ways to land at roughly 30 grams, meal by meal.
+This is the third spreadsheet in the series. First we ranked 53 foods by [fiber per dollar](/what-30-grams-of-fiber-costs-per-day/), then 49 foods by [protein per dollar](/protein-per-dollar-adjusted-for-quality/). Readers kept asking the practical follow-up: fine, beans win, but what does an actual *day* cost? So I priced five realistic ways to land at roughly 30 grams, meal by meal.
 
 ## How much does it cost to eat 30 grams of fiber in a day?
 
@@ -68,7 +69,7 @@ The lunch is a small bowl of [split pea soup](/split-pea-soup-recipe-high-fiber/
 
 ## Day 2: The no-cook convenience day ($1.74)
 
-Zero pots. The most demanding step is a microwave and a can opener, and it still clears 30 grams. We ran the same no-stove rule on the protein side in [the cheapest protein you don't have to cook](/protein-per-dollar-cheapest-protein-sources/#no-cook), where peanut butter and canned beans do most of the work.
+Zero pots. The most demanding step is a microwave and a can opener, and it still clears 30 grams. We ran the same no-stove rule on the protein side in [the cheapest protein you don't have to cook](/protein-per-dollar-adjusted-for-quality/#no-cook), where peanut butter and canned beans do most of the work.
 
 | Meal | Food + amount | Fiber | Cost |
 |---|---|---|---|
@@ -95,7 +96,7 @@ For the person whose cart is 80 percent plants and who has opinions about avocad
 | Dinner | 1 small sweet potato (150g) | 4.5 g | $0.32 |
 | **Total** | | **31.4 g** | **$4.18** |
 
-One detail worth staring at: the raspberry box is 59 percent of the day's entire cost. Berries were the bottom four of our original ranking, and they're doing it again here. Swapping half the fresh items for their freezer-aisle versions closes a lot of the gap, which is exactly what we found when we compared [frozen versus fresh produce](/frozen-vs-fresh-produce-when-to-buy/).
+One detail worth staring at: the raspberry box is 59 percent of the day's entire cost. Berries were the bottom four of our original ranking, and they're doing it again here. Swapping half the fresh items for their freezer-aisle versions closes a lot of the gap, which is exactly what we found when we compared frozen versus fresh produce.
 
 ## Day 4: The restaurant day ($14.42)
 
@@ -140,19 +141,57 @@ Two bucks. That's a completely normal day of food, no split-pea heroics required
 
 **The year math is where it gets loud.** At 365 days, the five plans cost about $226, $635, $726, $1,526, and $5,263 in fiber-carrying foods. The gap between eating your 30 grams from restaurants and eating them from a mixed grocery cart is about $4,500 a year, which is a used car, or a very nice vacation, or a lot of raspberries.
 
-The meal plans also hide a few aisle-level decisions. The [one-dollar fiber comparison](/fiber-per-dollar-cheapest-high-fiber-foods/#what-1-buys) shows which staples stretch a fixed bill furthest, while the [grain ranking](/fiber-per-dollar-cheapest-high-fiber-foods/#grains) and [produce ranking](/fiber-per-dollar-cheapest-high-fiber-foods/#produce) explain why oats and frozen vegetables keep appearing here. Breakfast and snacks needed their own audits too, because the [breakfast value table](/breakfast-staples-per-dollar/) and [snack cost ranking](/fiber-per-dollar-cheapest-high-fiber-foods/#snacks) expose where packaging charges extra for very ordinary food.
+The meal plans also hide a few aisle-level decisions. The [one-dollar fiber comparison](/what-30-grams-of-fiber-costs-per-day/#what-1-buys) shows which staples stretch a fixed bill furthest, while the [grain ranking](/what-30-grams-of-fiber-costs-per-day/#grains) and [produce ranking](/what-30-grams-of-fiber-costs-per-day/#produce) explain why oats and frozen vegetables keep appearing here. Breakfast and snacks needed their own audits too, because the [breakfast value table](/breakfast-staples-per-dollar/) and [snack cost ranking](/what-30-grams-of-fiber-costs-per-day/#snacks) expose where packaging charges extra for very ordinary food.
 
 Then there are beans, the spreadsheet's recurring houseguest. Our [canned versus dry bean math](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving) prices the convenience in the mixed day, and the [beans protein-and-fiber ranking](/beans-double-win-fiber-protein/) explains why either version earns space in the cart.
 
 ![Bar chart comparing the yearly cost of five ways to eat 30 grams of fiber daily, from $226 for dry goods to $5,263 for restaurant meals](/images/what-30-grams-of-fiber-costs-per-year.jpg)
 
+<a id="cheapest-fiber"></a>
+
+## What one dollar of fiber buys
+
+The day prices above reuse a 53-food ranking. This is the spread from the top of that list to fresh fruit:
+
+| Food | Fiber per $1 |
+|---|---|
+| Whole wheat flour | 77.8 g |
+| Green split peas (dry) | 71.0 g |
+| Popcorn kernels | 51.3 g |
+| Pinto beans (dry) | 41.7 g |
+| Rolled oats | 35.8 g |
+| Frozen green peas | 17.6 g |
+| Fresh broccoli crowns | 6.1 g |
+| Blueberries | 2.5 g |
+
+Popcorn stays unresolved rather than an exact USDA match. The kernel figure is converted from air-popped popcorn (FDC 167959) and lands at 51.3 grams per dollar. Every row is in the [fiber CSV](/data/fiber-per-dollar-2026.csv). Price and edible-fraction rules are on the [methodology page](/methodology/).
+
+<a id="dollar-fiber-day"></a>
+
+## Another dry-goods day, just under a dollar
+
+This basket is separate from the five days above. It clears about 37 grams for $0.96:
+
+| Meal | Food | Fiber (g) | Cost |
+|---|---|---|---|
+| Breakfast | Rolled oats, half a cup dry (40 g) | 4.0 | $0.11 |
+| Breakfast | One banana | 3.1 | $0.17 |
+| Lunch | Split pea soup, a third of a cup dry peas (65 g) | 14.4 | $0.20 |
+| Lunch | One carrot, tossed in the soup | 1.7 | $0.10 |
+| Snack | Popcorn, three tablespoons of kernels (30 g) | 3.9 | $0.08 |
+| Dinner | Pinto beans, a quarter cup dry (50 g) | 7.8 | $0.19 |
+| Dinner | Brown rice, a quarter cup dry | 1.8 | $0.11 |
+| **Total** | | **~37** | **$0.96** |
+
+The five day menus on this page stay in the [fiber day CSV](/data/fiber-day-cost-2026.csv). This extra menu uses the same audited prices as the [fiber CSV](/data/fiber-per-dollar-2026.csv). The method notes are on the [methodology page](/methodology/).
+
 ## How to actually use this
 
 Don't pick one day and marry it. Steal the structure instead:
 
-* **Let one dry-goods item anchor each day.** Oats at breakfast or beans at dinner drops any day's cost by more, per gram, than any other single swap, and those beans are buying protein on the same dollar, which is why they also top [the plant protein ranking](/protein-per-dollar-cheapest-protein-sources/#plant).
+* **Let one dry-goods item anchor each day.** Oats at breakfast or beans at dinner drops any day's cost by more, per gram, than any other single swap, and those beans are buying protein on the same dollar, which is why they also top [the plant protein ranking](/protein-per-dollar-adjusted-for-quality/#plant).
 * **Keep the no-cook day in your back pocket.** $1.74 and zero dishes is the honest answer for the weeks when cooking isn't happening.
 * **Treat the restaurant orders as emergency plays.** They're there for the days the drive-thru wins, not as a plan, and [the same menus ranked on protein per dollar](/fast-food-protein-per-dollar-ranked/) come out just as lopsided against the grocery aisle.
-* **Want the full system?** The [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) turns these numbers into shopping lists and weekly routines.
+* **Want one more cheap day?** The [under-a-dollar dry-goods menu](#dollar-fiber-day) is the short version.
 
 The whole study comes down to this: 30 grams of fiber is not expensive. It never was. The expensive part is paying someone else to open the can, and the drive-thru charges 23 times the dry goods aisle for the exact same nutrient. Now you know the exact markup.

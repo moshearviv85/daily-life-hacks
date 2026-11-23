@@ -68,7 +68,7 @@ It's basically a cheat code for risotto. Real risotto asks you to stand at the s
 
 I threw this together one night when a storm knocked out our power right after I had finished cooking. We ate it by flashlight, straight out of the skillet, and honestly, it was the best thing I had eaten all week. It's just a bowl of pure, savory comfort that relies on things you probably already have sitting in your pantry.
 
-If white beans have become your favorite way to make a cheap dinner feel substantial, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) gives you more ways to put the rest of the can to work.
+If white beans have become your favorite way to make a cheap dinner feel substantial, the [complete budget fiber guide](/what-30-grams-of-fiber-costs-per-day/) gives you more ways to put the rest of the can to work.
 
 ## Building the flavor foundation
 

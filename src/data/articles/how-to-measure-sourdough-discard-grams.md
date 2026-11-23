@@ -11,6 +11,7 @@ image: "/images/how-to-measure-sourdough-discard-grams-main.jpg"
 imageAlt: A digital kitchen scale weighing a glass bowl of sourdough discard in grams
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 faq:

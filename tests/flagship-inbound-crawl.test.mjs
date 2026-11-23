@@ -6,16 +6,31 @@ import { INDEX_KEEP_PATHS, INDEX_PRUNE_SLUGS } from "../src/content/index-prune.
 import { isGuideHubSpoke } from "../src/content/guideHubSpokes.js";
 
 const articleDirectory = join(process.cwd(), "src", "data", "articles");
-const fiberFlagship = "fiber-per-dollar-cheapest-high-fiber-foods";
-const proteinFlagship = "protein-per-dollar-cheapest-protein-sources";
+const fiberFlagship = "what-30-grams-of-fiber-costs-per-day";
+const proteinFlagship = "protein-per-dollar-adjusted-for-quality";
 const retiredProteinSlug = "protein-per-dollar-cheapest-high-protein-foods";
+const redirectedArticles = new Map([
+  ["protein-per-dollar-cheapest-protein-sources", `/${proteinFlagship}/`],
+  ["high-protein-on-a-budget-complete-guide", `/${proteinFlagship}/`],
+  ["fiber-per-dollar-cheapest-high-fiber-foods", `/${fiberFlagship}/`],
+  ["how-to-eat-more-fiber-on-a-budget-complete-guide", `/${fiberFlagship}/`],
+]);
+const collapsedLinkCounts = new Map([
+  [`beans-and-rice-complete-protein-meal|${proteinFlagship}`, 2],
+  [`high-protein-vs-high-fiber-satiety|${proteinFlagship}`, 2],
+  [`cheapest-complete-protein-pairs|${proteinFlagship}`, 3],
+  [`how-much-protein-for-breakfast|${proteinFlagship}`, 2],
+  [`high-fiber-popcorn-toppings-healthy|${fiberFlagship}`, 2],
+  [`comparing-fiber-content-different-pizza-crusts|${fiberFlagship}`, 2],
+  [`whole-wheat-vs-white-pasta-fiber|${fiberFlagship}`, 2],
+  [`how-much-protein-in-bagel-sandwich|${proteinFlagship}`, 2],
+]);
 
 const requiredLinks = [
   [fiberFlagship, proteinFlagship],
   ["costco-rotisserie-chicken-meal-ideas-dinner", proteinFlagship],
   ["beans-and-rice-complete-protein-meal", proteinFlagship],
   ["beans-and-rice-complete-protein-meal", fiberFlagship],
-  ["high-protein-on-a-budget-complete-guide", fiberFlagship],
   ["can-you-eat-rice-and-beans-everyday", proteinFlagship],
   ["can-you-eat-rice-and-beans-everyday", fiberFlagship],
   ["high-protein-vs-high-fiber-satiety", proteinFlagship],
@@ -23,7 +38,6 @@ const requiredLinks = [
   ["cheapest-complete-protein-pairs", proteinFlagship],
   ["cheapest-complete-protein-pairs", fiberFlagship],
   ["cottage-cheese-vs-greek-yogurt-protein-uses", proteinFlagship],
-  ["how-to-eat-more-fiber-on-a-budget-complete-guide", proteinFlagship],
   ["frozen-vs-fresh-produce-when-to-buy", fiberFlagship],
   ["how-to-eat-cheap-at-home", proteinFlagship],
   ["how-to-eat-cheap-at-home", fiberFlagship],
@@ -111,12 +125,26 @@ function hrefMatches(body, slug) {
 }
 
 test("ranking pages keep one honest in-body href to each required flagship", () => {
+  const redirects = readFileSync(join(process.cwd(), "public/_redirects"), "utf8");
+  const redirectCopy = readFileSync(
+    join(process.cwd(), "functions/site-redirects.js"),
+    "utf8",
+  );
+  for (const [slug, target] of redirectedArticles) {
+    assert.equal(existsSync(join(articleDirectory, `${slug}.md`)), false, slug);
+    for (const text of [redirects, redirectCopy]) {
+      assert.match(text, new RegExp(`^/${slug} ${target} 301$`, "m"), slug);
+      assert.match(text, new RegExp(`^/${slug}/ ${target} 301$`, "m"), slug);
+    }
+  }
+
   for (const [source, target] of requiredLinks) {
     const matches = hrefMatches(articleBody(source), target);
+    const expected = collapsedLinkCounts.get(`${source}|${target}`) ?? 1;
     assert.equal(
       matches.length,
-      1,
-      `${source} should link to /${target}/ exactly once`,
+      expected,
+      `${source} should link to /${target}/ ${expected} time(s)`,
     );
   }
 });
@@ -189,16 +217,8 @@ test("nutrition hub cites both flagships in the intro, not only article cards", 
   const headerEnd = source.indexOf("All nutrition articles");
   assert.ok(headerEnd > 0, "nutrition hub should keep the article-grid heading");
   const intro = source.slice(0, headerEnd);
-  assert.equal(
-    (intro.match(/href="\/fiber-per-dollar-cheapest-high-fiber-foods\/"/g) ?? [])
-      .length,
-    1,
-  );
-  assert.equal(
-    (intro.match(/href="\/protein-per-dollar-cheapest-protein-sources\/"/g) ?? [])
-      .length,
-    1,
-  );
+  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 2);
+  assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 1);
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 
@@ -244,25 +264,43 @@ const leftoverToolPages = [
 ];
 
 test("leftover tool pages cite each flagship once in the page source", () => {
+  const expected = {
+    "tools hub intro": [1, 1],
+    "dried beans converter": [1, 1],
+    "grocery budget calculator": [2, 1],
+    "recipe cost calculator": [1, 1],
+  };
   for (const [label, segments] of leftoverToolPages) {
     const source = pageSource(...segments);
+    const [fiberCount, proteinCount] = expected[label];
     assert.equal(
       htmlHrefMatches(source, fiberFlagship).length,
-      1,
-      `${label} should link to /${fiberFlagship}/ exactly once`,
+      fiberCount,
+      `${label} should link to /${fiberFlagship}/ ${fiberCount} time(s)`,
     );
     assert.equal(
       htmlHrefMatches(source, proteinFlagship).length,
-      1,
-      `${label} should link to /${proteinFlagship}/ exactly once`,
+      proteinCount,
+      `${label} should link to /${proteinFlagship}/ ${proteinCount} time(s)`,
     );
     assert.equal(source.includes(retiredProteinSlug), false);
   }
 });
 
 test("protein flagship keeps the per-gram section that replaced the standalone ranking", () => {
+  const redirects = readFileSync(join(process.cwd(), "public/_redirects"), "utf8");
+  assert.match(
+    redirects,
+    /^\/cheapest-protein-per-gram\/? \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
+  );
+  assert.match(
+    redirects,
+    /^\/protein-per-dollar-cheapest-protein-sources\/? \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
+  );
   const source = articleBody(proteinFlagship);
-  assert.match(source, /id="per-gram"/);
+  assert.match(source, /id="raw-ranking"/);
+  assert.match(source, /id="weekly-protein-cart"/);
+  assert.doesNotMatch(source, /id="full-ranking"/);
   assert.equal(source.includes("cheapest-protein-per-gram"), false);
   assert.equal(source.includes(retiredProteinSlug), false);
 });
@@ -307,13 +345,21 @@ test("guides hub spokes stay on KEEP paths and skip pruned slugs", () => {
 
   const requiredSpokes = [
     "plant-based-protein-sources-complete-guide",
-    "protein-per-dollar-cheapest-protein-sources",
-    "fiber-per-dollar-cheapest-high-fiber-foods",
+    "cheapest-complete-protein-pairs",
     "usda-thrifty-food-plan-weekly-cost",
   ];
   for (const slug of requiredSpokes) {
     assert.equal(INDEX_KEEP_PATHS.has(slug), true, slug);
     assert.equal(isGuideHubSpoke(slug), true, slug);
+  }
+  for (const slug of [
+    ...redirectedArticles.keys(),
+    "eat-healthy-on-a-budget-complete-playbook",
+    "meal-prep-for-beginners-complete-system",
+    fiberFlagship,
+    proteinFlagship,
+  ]) {
+    assert.equal(isGuideHubSpoke(slug), false, slug);
   }
   for (const slug of [
     "one-dollar-protein-what-it-buys",

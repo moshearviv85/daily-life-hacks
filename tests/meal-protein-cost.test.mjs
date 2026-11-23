@@ -96,11 +96,17 @@ const sourdoughSlugs = [
 ];
 
 test("refreshed slugs stay indexable and skip prune plus sourdough", () => {
-  assert.ok(refreshedSlugs.length >= 5 && refreshedSlugs.length <= 8);
+  assert.deepEqual(refreshedSlugs.sort(), [
+    "beans-and-rice-complete-protein-meal",
+    "canned-beans-vs-dried-beans-nutrition",
+    "costco-rotisserie-chicken-meal-ideas-dinner",
+    "protein-per-serving-beans-chicken-tofu-compared",
+  ]);
   assert.equal(INDEX_PRUNE_SLUGS.has("savory-oatmeal-bowls-with-eggs-and-avocado"), true);
   assert.equal(refreshedSlugs.includes("savory-oatmeal-bowls-with-eggs-and-avocado"), false);
-  assert.ok(refreshedSlugs.includes("beans-and-rice-complete-protein-meal"));
-  assert.ok(refreshedSlugs.includes("meal-prep-for-beginners-complete-system"));
+  assert.equal(refreshedSlugs.includes("meal-prep-for-beginners-complete-system"), false);
+  assert.equal(refreshedSlugs.includes("eat-healthy-on-a-budget-complete-playbook"), false);
+  assert.equal(refreshedSlugs.includes("high-protein-on-a-budget-complete-guide"), false);
 
   for (const slug of refreshedSlugs) {
     assert.equal(isIndexPruned(slug), false, `${slug} is pruned`);
@@ -154,14 +160,9 @@ test("derived meal totals recompute from study package prices", () => {
   const canned = proteinRow("Canned black beans");
   assert.equal(beans.derived.twoCanUsd, usd(packageCostUsd(canned, 2)));
   assert.equal(beans.derived.twoCanProteinG, aboutGrams(packageProteinG(canned) * 2));
-
-  const mealPrep = MEAL_PROTEIN_COST["meal-prep-for-beginners-complete-system"];
-  const drums = proteinRow("Chicken drumsticks (bone-in)");
-  const pintos = proteinRow("Pinto beans (dry)");
-  assert.equal(
-    mealPrep.derived.pairUsd,
-    usd(packageCostUsd(drums) + packageCostUsd(pintos)),
-  );
+  assert.equal(MEAL_PROTEIN_COST["meal-prep-for-beginners-complete-system"], undefined);
+  assert.equal(MEAL_PROTEIN_COST["high-protein-on-a-budget-complete-guide"], undefined);
+  assert.equal(MEAL_PROTEIN_COST["eat-healthy-on-a-budget-complete-playbook"], undefined);
 
   const lentils = MEAL_PROTEIN_COST["protein-per-serving-beans-chicken-tofu-compared"];
   const lentilRow = proteinRow("Brown lentils (dry)");
@@ -185,10 +186,11 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   assert.match(costcoCallout.highlight.value, /26\.7 g per \$1/);
   assert.match(costcoCallout.disclosure, /July 2026/);
   assert.equal(
-    (costco.match(/\]\(\/protein-per-dollar-cheapest-protein-sources\/\)/g) ?? []).length,
+    (costco.match(/\]\(\/protein-per-dollar-adjusted-for-quality\/\)/g) ?? []).length,
     1,
   );
   assert.doesNotMatch(costco, /fiber-per-dollar-cheapest-high-fiber-foods/);
+  assert.doesNotMatch(costco, /protein-per-dollar-cheapest-protein-sources/);
 
   const beans = read("src/data/articles/beans-and-rice-complete-protein-meal.md");
   const canned = proteinRow("Canned black beans");
@@ -202,19 +204,23 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   assert.match(beans, new RegExp(`${rice.protein_g_per_dollar} grams of protein per dollar`));
   assert.match(beans, new RegExp(`${cannedFiber.fiber_g_per_dollar} grams of fiber per dollar`));
   assert.equal(
-    (beans.match(/\]\(\/protein-per-dollar-cheapest-protein-sources\/\)/g) ?? []).length,
-    1,
+    (beans.match(/\]\(\/protein-per-dollar-adjusted-for-quality\/\)/g) ?? []).length,
+    2,
   );
   assert.equal(
-    (beans.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
+    (beans.match(/\]\(\/what-30-grams-of-fiber-costs-per-day\/\)/g) ?? []).length,
     1,
   );
   assert.doesNotMatch(beans, /maybe two dollars a plate/);
 
-  const highProtein = read("src/data/articles/high-protein-on-a-budget-complete-guide.md");
+  const redirects = read("public/_redirects");
   assert.equal(
-    (highProtein.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
-    1,
+    existsSync(join(root, "src/data/articles/high-protein-on-a-budget-complete-guide.md")),
+    false,
+  );
+  assert.match(
+    redirects,
+    /^\/high-protein-on-a-budget-complete-guide \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
   );
 
   const mealPrep = read("src/data/articles/meal-prep-for-beginners-complete-system.md");
@@ -229,7 +235,7 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   assert.match(mealPrep, /\$12\.21/);
 
   const playbook = read("src/data/articles/eat-healthy-on-a-budget-complete-playbook.md");
-  assert.match(playbook, /dateModified: 2026-11-23/);
+  assert.match(playbook, /dateModified: 2026-09-24/);
   assert.match(playbook, /57\.6 grams of protein/);
   assert.match(playbook, /9\.4/);
   assert.doesNotMatch(playbook, /97\.9/);
@@ -237,54 +243,48 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   const lentils = read("src/data/articles/protein-per-serving-beans-chicken-tofu-compared.md");
   assert.match(lentils, /id="cost-per-25-g"/);
   assert.equal(
-    (lentils.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
+    (lentils.match(/\]\(\/what-30-grams-of-fiber-costs-per-day\/\)/g) ?? []).length,
     1,
   );
 
   const cannedVsDry = read("src/data/articles/canned-beans-vs-dried-beans-nutrition.md");
   assert.match(cannedVsDry, /id="cost-per-serving"/);
   assert.equal(
-    (cannedVsDry.match(/\]\(\/fiber-per-dollar-cheapest-high-fiber-foods\/\)/g) ?? []).length,
+    (cannedVsDry.match(/\]\(\/what-30-grams-of-fiber-costs-per-day\/\)/g) ?? []).length,
     1,
   );
 });
 
 test("high-protein guide starter prices and callout follow the protein CSV", () => {
-  const highProtein = read("src/data/articles/high-protein-on-a-budget-complete-guide.md");
-  const pintos = proteinRow("Pinto beans (dry)");
-  const drums = proteinRow("Chicken drumsticks (bone-in)");
-  const eggs = proteinRow("Eggs (large)");
-  const pair = packageCostUsd(drums) + packageCostUsd(pintos);
-  const trio = pair + packageCostUsd(eggs);
-  const basket =
-    pair +
-    packageCostUsd(eggs, 2) +
-    packageCostUsd(proteinRow("Brown lentils (dry)")) +
-    packageCostUsd(proteinRow("Canned tuna (chunk light, in water)"), 2) +
-    packageCostUsd(proteinRow("Cottage cheese (4%)"));
-  const escapeUsd = (amount) => usd(amount).replaceAll("$", "\\$");
-
-  assert.match(highProtein, /dateModified: 2026-09-24/);
-  assert.match(
-    highProtein,
-    new RegExp(
-      `${escapeUsd(pair)} at the July 2026 study prices \\(${escapeUsd(packageCostUsd(drums))} plus ${escapeUsd(packageCostUsd(pintos))}\\)`,
-    ),
-  );
-  assert.match(highProtein, new RegExp(`reaches about ${escapeUsd(trio)}`));
-  assert.match(highProtein, new RegExp(`\\*\\*Total\\*\\* \\| \\*\\*${escapeUsd(basket)}\\*\\*`));
-  assert.match(
-    MEAL_PROTEIN_COST["high-protein-on-a-budget-complete-guide"].highlight.claim,
-    new RegExp(escapeUsd(packageCostUsd(pintos))),
-  );
+  const redirects = read("public/_redirects");
   assert.equal(
-    MEAL_PROTEIN_COST["high-protein-on-a-budget-complete-guide"].highlight.value,
-    `${pintos.protein_g_per_dollar} g vs ${proteinRow("Bacon").protein_g_per_dollar} g`,
+    existsSync(join(root, "src/data/articles/high-protein-on-a-budget-complete-guide.md")),
+    false,
   );
-  assert.doesNotMatch(
-    MEAL_PROTEIN_COST["high-protein-on-a-budget-complete-guide"].highlight.claim,
-    /\$20 backbone/,
+  assert.match(
+    redirects,
+    /^\/high-protein-on-a-budget-complete-guide\/ \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
   );
+  assert.equal(MEAL_PROTEIN_COST["high-protein-on-a-budget-complete-guide"], undefined);
+
+  const quality = read("src/data/articles/protein-per-dollar-adjusted-for-quality.md");
+  const cart = [
+    ["Chicken drumsticks (bone-in)", 1],
+    ["Pinto beans (dry)", 1],
+    ["Eggs (large)", 2],
+    ["Brown lentils (dry)", 1],
+    ["Canned tuna (chunk light, in water)", 2],
+    ["Cottage cheese (4%)", 1],
+  ];
+  let basket = 0;
+  for (const [food, count] of cart) {
+    const price = packageCostUsd(proteinRow(food), count);
+    basket += price;
+    assert.match(quality, new RegExp(usd(price).replaceAll("$", "\\$")), food);
+  }
+  assert.match(quality, new RegExp(usd(basket).replaceAll("$", "\\$")));
+  assert.match(quality, /id="weekly-protein-cart"/);
+  assert.doesNotMatch(quality, /\$20 backbone/);
 });
 
 test("sourdough pages stay free of protein and fiber flagship links", () => {
@@ -332,11 +332,11 @@ test("shared callout reuses StudyLead and stays wired on the article page", () =
     "meal-prep-for-beginners-complete-system",
   );
   assert.equal(
-    getMealProteinCost(
-      "src/data/articles/meal-prep-for-beginners-complete-system.md",
-    )?.slug,
-    "meal-prep-for-beginners-complete-system",
+    getMealProteinCost("src/data/articles/meal-prep-for-beginners-complete-system.md"),
+    null,
   );
+  assert.equal(getMealProteinCost("eat-healthy-on-a-budget-complete-playbook"), null);
+  assert.equal(getMealProteinCost("high-protein-on-a-budget-complete-guide"), null);
   assert.equal(
     getMealProteinCost(
       undefined,
@@ -346,18 +346,12 @@ test("shared callout reuses StudyLead and stays wired on the article page", () =
     "beans-and-rice-complete-protein-meal",
   );
   assert.ok(getMealProteinCost("beans-and-rice-complete-protein-meal"));
-  assert.ok(getMealProteinCost("meal-prep-for-beginners-complete-system"));
+  assert.equal(getMealProteinCost("meal-prep-for-beginners-complete-system"), null);
   assert.equal(
     MEAL_PROTEIN_COST["beans-and-rice-complete-protein-meal"].highlight.value,
     `${proteinRow("Canned black beans").protein_g_per_dollar} g per $1`,
   );
-  assert.equal(
-    MEAL_PROTEIN_COST["meal-prep-for-beginners-complete-system"].derived.pairUsd,
-    usd(
-      packageCostUsd(proteinRow("Chicken drumsticks (bone-in)")) +
-        packageCostUsd(proteinRow("Pinto beans (dry)")),
-    ),
-  );
+  assert.equal(MEAL_PROTEIN_COST["costco-rotisserie-chicken-meal-ideas-dinner"].fiberHref, null);
 
   for (const needle of [
     ".meal-protein-cost",
@@ -372,42 +366,32 @@ test("shared callout reuses StudyLead and stays wired on the article page", () =
     FIBER_FLAGSHIP_HREF,
   );
   assert.equal(
-    MEAL_PROTEIN_COST["costco-rotisserie-chicken-meal-ideas-dinner"].fiberHref,
-    null,
-  );
-  assert.equal(
-    MEAL_PROTEIN_COST["high-protein-on-a-budget-complete-guide"].dbHref,
+    MEAL_PROTEIN_COST["canned-beans-vs-dried-beans-nutrition"].dbHref,
     FOOD_VALUE_DB_HREF,
   );
+  assert.equal(Object.keys(MEAL_PROTEIN_COST).length, 4);
 });
 
 test("rendered beans-and-rice and meal-prep pages expose the callout when dist exists", () => {
-  const requiredLive = [
-    "beans-and-rice-complete-protein-meal",
-    "meal-prep-for-beginners-complete-system",
-  ];
-  const rendered = requiredLive.map((slug) => `dist/${slug}/index.html`);
-  const builtThisRefresh = rendered.every((path) => {
-    const full = join(root, path);
-    return (
-      existsSync(full) &&
-      read(path).includes('dateModified":"2026-09-06T00:00:00.000Z"')
-    );
-  });
-  if (!builtThisRefresh) {
+  const beans = "dist/beans-and-rice-complete-protein-meal/index.html";
+  const mealPrep = "dist/meal-prep-for-beginners-complete-system/index.html";
+  if (!existsSync(join(root, beans)) || !existsSync(join(root, mealPrep))) {
     return;
   }
 
-  for (const [slug, path] of requiredLive.map((slug, index) => [slug, rendered[index]])) {
-    const html = read(path);
-    assert.match(html, /class="[^"]*meal-protein-cost[^"]*"/);
-    assert.match(html, new RegExp(`data-meal-protein-cost="${slug}"`));
-    assert.match(html, /class="[^"]*study-pull-quote[^"]*"/);
-    assert.doesNotMatch(html, /href="\/protein-per-dollar-cheapest-protein-sources\/"/);
-    assert.doesNotMatch(html, /href="\/fiber-per-dollar-cheapest-high-fiber-foods\/"/);
-    assert.match(html, /July 2026/);
-    assert.match(html, /dateModified":"2026-09-06T00:00:00.000Z"/);
-    assert.doesNotMatch(html, /protein-per-dollar-cheapest-high-protein-foods/);
-    assert.doesNotMatch(html, /maybe two dollars a plate/);
-  }
+  const beansHtml = read(beans);
+  assert.match(beansHtml, /class="[^"]*meal-protein-cost[^"]*"/);
+  assert.match(beansHtml, /data-meal-protein-cost="beans-and-rice-complete-protein-meal"/);
+  assert.match(beansHtml, /class="[^"]*study-pull-quote[^"]*"/);
+  assert.doesNotMatch(beansHtml, /href="\/protein-per-dollar-cheapest-protein-sources\/"/);
+  assert.doesNotMatch(beansHtml, /href="\/fiber-per-dollar-cheapest-high-fiber-foods\/"/);
+  assert.match(beansHtml, /July 2026/);
+  assert.doesNotMatch(beansHtml, /protein-per-dollar-cheapest-high-protein-foods/);
+  assert.doesNotMatch(beansHtml, /maybe two dollars a plate/);
+
+  const mealPrepHtml = read(mealPrep);
+  assert.match(mealPrepHtml, /noindex,\s*follow/i);
+  assert.doesNotMatch(mealPrepHtml, /class="[^"]*meal-protein-cost[^"]*"/);
+  assert.doesNotMatch(mealPrepHtml, /href="\/protein-per-dollar-cheapest-protein-sources\/"/);
+  assert.doesNotMatch(mealPrepHtml, /href="\/fiber-per-dollar-cheapest-high-fiber-foods\/"/);
 });

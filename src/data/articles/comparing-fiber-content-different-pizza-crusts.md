@@ -11,7 +11,7 @@ tags:
 image: "/images/comparing-fiber-content-different-pizza-crusts-main.jpg"
 imageAlt: Three distinct pizza crust cross-sections are shown from above, revealing their varied textures and compositions.
 date: 2026-04-28
-dateModified: 2026-11-23
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 quickAnswer: "For the crust by itself, among the mainstream supermarket crusts in USDA's branded label data a serving runs roughly 1 to 5 grams of fiber depending on the base: about 1 gram for a plain refrigerated white-flour crust, 1 to 2 grams for cauliflower, 2 to 3 grams for whole wheat, and 5 grams for sprouted whole grain. Specialty high-fiber crusts built on wheat protein and oat fiber go well past that. For finished slices, USDA's FNDDS 2021-2023 data puts one large slice of cheese pizza on a regular restaurant crust at about 2.7 grams (2.3 g per 100 g), a thin-crust slice at about 2.0 grams, and a whole wheat crust slice at 4.2 to 5.1 grams, crust plus sauce and cheese together rather than the crust alone. Even the highest whole wheat slice stays under the 5.6 grams that would make a serving high in fiber by FDA's 20% Daily Value rule."
@@ -38,7 +38,7 @@ One large slice of cheese pizza on a regular restaurant crust has about 2.7 gram
 
 You know the drill on pizza night. Nobody's eating a salad, the box is open, and the only thing you control is what's under the cheese. The FDA's [Daily Value for fiber is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), so a regular slice is about 10 percent of a day, and NIH's MedlinePlus notes that [Americans average about 16 grams a day](https://medlineplus.gov/ency/article/002470.htm) against a 21 to 38 gram recommendation. Pizza isn't where you win that. It's where you stop losing ground.
 
-For the rest of the cart, our [guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) covers the foods that don't come under cheese.
+For the rest of the cart, our [guide to eating more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/) covers the foods that don't come under cheese.
 
 ## How much fiber is in a slice of pizza, by crust type
 
@@ -96,7 +96,7 @@ The vegetable was never going to carry it anyway. USDA puts raw cauliflower at 2
 ## What about chickpea, almond and sprouted-grain crusts?
 The raw materials look great on paper. Chickpea flour carries 10.8 grams of fiber per 100 grams in USDA's data (record 174288), four times white flour, and NIDDK lists [chickpeas among the better sources of fiber](https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition) alongside whole grains. Banza's crust [starts its ingredient list with chickpeas](https://www.eatbanza.com/products/plain-crust). Blanched almonds sit at 9.9 grams per 100 grams (record 170568).
 
-Here's the honest limitation. USDA has never lab-analyzed a national average for a finished legume, nut or sprouted-grain crust, so everything in FoodData Central here is whatever the manufacturer submitted off its own label. And a crust is never just its headline ingredient. Water, starch and fat go in too, which is why Banza's finished crust reports 6.2 grams per 100 grams even though chickpea flour alone tests at 10.8. The panel on the box beats any per-crust average. If legumes win you over, these [high fiber pasta alternatives](/high-fiber-pasta-alternatives/) pull the same trick with noodles.
+Here's the honest limitation. USDA has never lab-analyzed a national average for a finished legume, nut or sprouted-grain crust, so everything in FoodData Central here is whatever the manufacturer submitted off its own label. And a crust is never just its headline ingredient. Water, starch and fat go in too, which is why Banza's finished crust reports 6.2 grams per 100 grams even though chickpea flour alone tests at 10.8. The panel on the box beats any per-crust average. If legumes win you over, these high fiber pasta alternatives pull the same trick with noodles.
 
 ## Thick crust versus thin crust: which has more fiber?
 Per 100 grams they're twins: 2.3 grams for thin restaurant crust, 2.2 for thick. Per slice thick wins, about 2.9 against 2.0, purely on weight. A thick slice runs 132 grams, a thin one 86. So thin crust isn't a fiber downgrade or a health halo, it's less food, which is a calorie decision. The real loser is stuffed crust at 1.7 grams per 100 grams, because the cheese in the rim displaces dough.
@@ -106,4 +106,4 @@ Depends where you're standing. At a delivery counter whole wheat is the pick and
 
 Keep going down the specialty shelf and the numbers get strange. USDA's Branded Foods dataset also carries engineered high-fiber crusts, like ThinSlim Foods' at 24.7 grams per 100 grams, 14 grams in a quarter-crust serving (record 2585780). That's not flour doing the work. The ingredient list opens with wheat protein isolate and oat fiber, which is a different product category wearing a pizza costume.
 
-The bigger lever isn't the base at all. Using USDA values, half a cup of cooked broccoli adds about 2.6 grams of fiber, half a cup of artichoke hearts about 4.8, and a tablespoon of ground flaxseed about 1.9. Pile those on a white-flour pie and you'll beat a bare whole wheat one. If cost is the constraint, we ran the numbers on [which high-fiber foods give you the most fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), because the cheapest fiber in the store has never been in the pizza aisle. The flour under a whole wheat crust is a different column: whole wheat flour, USDA record 168893, leads the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) at 96.0 grams of protein per dollar.
+The bigger lever isn't the base at all. Using USDA values, half a cup of cooked broccoli adds about 2.6 grams of fiber, half a cup of artichoke hearts about 4.8, and a tablespoon of ground flaxseed about 1.9. Pile those on a white-flour pie and you'll beat a bare whole wheat one. If cost is the constraint, we ran the numbers on [which high-fiber foods give you the most fiber per dollar](/what-30-grams-of-fiber-costs-per-day/), because the cheapest fiber in the store has never been in the pizza aisle. The flour under a whole wheat crust is a different column: whole wheat flour, USDA record 168893, leads the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/) at 96.0 grams of protein per dollar.

@@ -27,7 +27,7 @@ I used to spend about twelve dollars a day on mediocre salads that left me hungr
 
 Learning how to prep high protein lunches for work isn't about becoming a fitness influencer or spending your entire Sunday weighing turkey breast on a digital scale. It's about making sure your brain doesn't shut down mid-meeting because your blood sugar decided to take a nap. If you can boil water and chop a cucumber, you can do this.
 
-For the full Sunday-to-office plan, the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) covers shopping, batch cooking, storage, and reheating without turning lunch into a second job.
+For the full Sunday-to-office plan, the complete meal-prep system for beginners covers shopping, batch cooking, storage, and reheating without turning lunch into a second job.
 
 ## Focus on the anchor protein first
 

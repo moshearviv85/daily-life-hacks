@@ -13,6 +13,7 @@ image: "/images/how-much-protein-in-bagel-sandwich-main.jpg"
 imageAlt: A sliced bagel sandwich filled with scrambled eggs, turkey bacon, and melted cheese, with steam rising from the filling.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "10 minutes"
@@ -59,7 +60,7 @@ I used to think bagels were just round pieces of guilt disguised as breakfast. T
 
 If you are trying to hit a specific daily goal, you probably want to know if that sandwich is doing the heavy lifting or just taking up space. It turns out the answer depends entirely on whether you're just slapping on some cream cheese or actually putting in the work with your fillings.
 
-For the rest of the day's meals, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) compares the inexpensive staples that can do more work than a heroic stack of deli meat.
+For the rest of the day's meals, the [complete high-protein budget guide](/protein-per-dollar-adjusted-for-quality/) compares the inexpensive staples that can do more work than a heroic stack of deli meat.
 
 ## How much protein is in a bagel sandwich?
 
@@ -75,7 +76,7 @@ If you opt for a whole wheat version, you might squeeze out an extra gram or two
 
 This is where the math actually starts to matter. To get into the "high protein" territory, you have to look at what's inside. A classic bacon, egg, and cheese is the standard, but the ratios are usually skewed toward the fat. 
 
-**Eggs:** One large egg adds about 6.3 grams of protein at [12.56 grams per 100 grams](https://fdc.nal.usda.gov/food-details/171287/nutrients). If you're making this at home, use two eggs to hit about 13 grams right out of the gate. If cost is part of the calculation, [eggs and Greek yogurt are worth pricing against each other](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) before you lock in a breakfast routine. In the full [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), eggs return 34.4 grams per dollar from that same record and plain nonfat Greek yogurt returns 27.5 from [10.19 grams per 100 grams](https://fdc.nal.usda.gov/food-details/170894/nutrients).
+**Eggs:** One large egg adds about 6.3 grams of protein at [12.56 grams per 100 grams](https://fdc.nal.usda.gov/food-details/171287/nutrients). If you're making this at home, use two eggs to hit about 13 grams right out of the gate. If cost is part of the calculation, [eggs and Greek yogurt are worth pricing against each other](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) before you lock in a breakfast routine. In the full [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/), eggs return 34.4 grams per dollar from that same record and plain nonfat Greek yogurt returns 27.5 from [10.19 grams per 100 grams](https://fdc.nal.usda.gov/food-details/170894/nutrients).
 **Cheese:** A 1 ounce cheddar slice adds about 6 grams at [22.87 grams per 100 grams](https://fdc.nal.usda.gov/food-details/173414/nutrients). It's a decent boost, though it comes with a side of saturated fat.
 **Meat:** This is the variable that changes everything. One cooked bacon slice is 11.5 grams and about 4 grams of protein at [33.92 grams per 100 grams](https://fdc.nal.usda.gov/food-details/168322/nutrients), so two slices are about 8 grams. Two ounces of prepackaged sliced turkey breast are also about 8 grams at [14.81 grams per 100 grams](https://fdc.nal.usda.gov/food-details/172941/nutrients). The old 12 to 15 gram turkey line was high for that record.
 

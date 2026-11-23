@@ -165,7 +165,7 @@ Cheapest full day in the data: Day 1: Rock-bottom dry goods at $0.62 for 31.9 g 
 That day beats the 28 g Daily Value: yes.
 
 Source: Daily Life Hacks Food Value Data (2026.1)
-Study:  https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/
+Study:  https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/
 Terms:  https://www.daily-life-hacks.com/data-reuse/
 ```
 

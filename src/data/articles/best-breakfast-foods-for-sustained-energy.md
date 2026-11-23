@@ -15,7 +15,7 @@ tags:
 image: /images/best-breakfast-foods-for-sustained-energy-main.jpg
 imageAlt: Breakfast plate with eggs, whole grain toast, and fruit
 date: 2026-03-15
-dateModified: 2026-11-23
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -89,7 +89,7 @@ Compare added sugar, fiber, and protein on cereal, yogurt, and bread labels. Ser
 
 Flavored yogurt may still fit your breakfast, but compare it with plain yogurt plus fruit. Granola varies even more. This guide to choosing granola that isn't dessert explains what to check before a decorative handful becomes half the bowl.
 
-If you're choosing between oats, eggs, yogurt, and cereal with a cartoon tiger on the box, our [breakfast staples per dollar ranking](/breakfast-staples-per-dollar/) shows what a dollar actually buys at breakfast. Two hard-boiled eggs are [about 13 grams of protein](https://fdc.nal.usda.gov/food-details/173424/nutrients), and they sit behind the dry lentils in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). A cup of cooked oatmeal is [4 grams of fiber](https://fdc.nal.usda.gov/food-details/173905/nutrients), which is why rolled oats show up in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
+If you're choosing between oats, eggs, yogurt, and cereal with a cartoon tiger on the box, our [breakfast staples per dollar ranking](/breakfast-staples-per-dollar/) shows what a dollar actually buys at breakfast. Two hard-boiled eggs are [about 13 grams of protein](https://fdc.nal.usda.gov/food-details/173424/nutrients), and they sit behind the dry lentils in the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/). A cup of cooked oatmeal is [4 grams of fiber](https://fdc.nal.usda.gov/food-details/173905/nutrients), which is why rolled oats show up in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/).
 
 ## Match breakfast to the morning ahead
 

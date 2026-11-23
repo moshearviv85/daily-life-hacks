@@ -78,7 +78,7 @@ Add cinnamon or cardamom if you want a warmer vibe. Add unsweetened cocoa powder
 
 If you want extra crunch, roll the outside in chopped nuts or toasted coconut. If you want less sugar, cut the chips and lean on vanilla and cinnamon instead.
 
-Kids tend to inhale these, by the way. If yours will happily eat oat balls but treat actual dinner like a hostage negotiation, these [high fiber dinner recipes for picky kids](/high-fiber-dinner-recipes-picky-kids/) run the same sneaky playbook at 6 PM.
+Kids tend to inhale these, by the way. If yours will happily eat oat balls but treat actual dinner like a hostage negotiation, these high fiber dinner recipes for picky kids run the same sneaky playbook at 6 PM.
 ## Portion Reality
 
 These are still calorie dense because nut butter is calorie dense. That is not a moral statement. It is just math.

@@ -10,7 +10,7 @@ tags:
 image: "/images/freezer-inventory-simple-system-main.jpg"
 imageAlt: "A well organized freezer with labeled containers and a simple whiteboard list on the fridge door"
 date: 2026-04-24
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 quickAnswer: "Keep masking tape and a marker beside the freezer. Label every package with the food name and freeze date, then add it to a whiteboard list grouped by raw ingredients and cooked meals. Erase items when used, place newer packages behind older ones, and check the freezer monthly while confirming it stays at 0°F or below."
 author: "David Miller"
 featured: false
@@ -57,7 +57,7 @@ Keep it categorized loosely. Draw a line down the middle. Put "Raw Meat/Ingredie
 
 If you have a bottom drawer freezer, things get buried fast. It's a fundamental law of physics that whatever you need will be at the very bottom, under three bags of frozen corn and a mystery roast.
 
-To fix this, get two or three sturdy plastic bins that fit inside your freezer. These become your zones. One bin is for frozen vegetables and fruit. One bin is for raw meat. One bin is for pre-cooked meals and leftovers. The vegetable bin usually holds the cheapest food in the freezer, which is the whole point of [the fiber-per-dollar case for frozen produce over fresh](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar). 
+To fix this, get two or three sturdy plastic bins that fit inside your freezer. These become your zones. One bin is for frozen vegetables and fruit. One bin is for raw meat. One bin is for pre-cooked meals and leftovers. The vegetable bin usually holds the cheapest food in the freezer, which is the whole point of the fiber-per-dollar case for frozen produce over fresh. 
 
 When you need a vegetable, you just lift the vegetable bin and look through it. You're no longer digging through a chaotic pile of loose bags. It sounds almost too simple to matter, but separating categories physically stops the freezer from turning into an archaeological dig.
 

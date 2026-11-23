@@ -50,7 +50,7 @@ The under-$10 family dinner is the standard promise online, and honestly it's a 
 
 All of them, with room left over. The most expensive pot on that list is $3.76, and it's the one with meat in it.
 
-That gap is the whole lesson. A four pound bag of dry pinto beans costs $3.97 and holds about twenty servings, so a bag covers five family dinners of beans for less than one pound of ground beef. Beef ran $6.75 a pound and returned 11.5 grams of protein per dollar against 97.9 for the pintos, a spread we measured across 49 foods in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/).
+That gap is the whole lesson. A four pound bag of dry pinto beans costs $3.97 and holds about twenty servings, so a bag covers five family dinners of beans for less than one pound of ground beef. Beef ran $6.75 a pound and returned 11.5 grams of protein per dollar against 97.9 for the pintos, a spread we measured across 49 foods in the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/).
 
 So the practical shortlist for a family week looks like this. One bean pot, one lentil pot, one pasta night, one chicken night. Four pots, roughly $10 total, and nobody eats the same thing twice. The same plates costed per person sit in cheap dinner ideas, and the pots that reheat best are in cheap healthy meals with leftovers. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is the only skill involved, and it's mostly waiting.
 
@@ -58,7 +58,7 @@ So the practical shortlist for a family week looks like this. One bean pot, one 
 
 Drumsticks, and it isn't close. Bone-in drumsticks returned 50.3 grams of protein per dollar, which is more than double chicken breast, so a $3.76 pot lands at 37.8 grams a serving.
 
-People assume the cheap cut is the compromise. It's the opposite. We ranked eleven cuts in [the cheapest meat for protein](/protein-per-dollar-cheapest-protein-sources/#meat) and boneless skinless breast finished sixth. Drumsticks won by a mile, and a family that likes drumsticks is a family with a much easier grocery bill.
+People assume the cheap cut is the compromise. It's the opposite. We ranked eleven cuts in [the cheapest meat for protein](/protein-per-dollar-adjusted-for-quality/#meat) and boneless skinless breast finished sixth. Drumsticks won by a mile, and a family that likes drumsticks is a family with a much easier grocery bill.
 
 Pasta with two cans of black beans is the runner up at 29.0 grams a serving for $2.94. Canned beans cost about 2.7 times more per gram than the same bean dry, but a can is $0.88 and needs no planning, which on a Wednesday is worth something.
 
@@ -68,7 +68,7 @@ Scale the pot, not the menu. Ingredients cost the same per gram whether you cook
 
 The jump only feels violent when the anchor is meat, because meat is where the per gram price is highest. A meat-anchored dinner for six costs half again as much as one for four in real money that you notice. A bean-anchored one doesn't.
 
-Bigger families also get the bulk advantage on packages that small households can't use up. A four pound bag of pintos is a burden for one person and an obvious buy for six. There's more of that logic in [how to stretch meals for large families](/how-to-stretch-meals-large-families/), and [cheap crockpot meals for large families](/cheap-crockpot-meals-large-families/) covers the hands-off version.
+Bigger families also get the bulk advantage on packages that small households can't use up. A four pound bag of pintos is a burden for one person and an obvious buy for six. There's more of that logic in how to stretch meals for large families, and [cheap crockpot meals for large families](/cheap-crockpot-meals-large-families/) covers the hands-off version.
 
 ## What do you do about the kid who won't eat beans?
 
@@ -76,7 +76,7 @@ Change the shape, not the budget. Beans in a bowl of soup are a hard sell. The s
 
 The slaw line matters here too. Cabbage is $0.78 a pound and adds crunch, which is the texture most kids are actually objecting to when they say they don't like something soft. Carrots at $1.58 for two pounds do the same job raw.
 
-If you want dinners built around this problem specifically, [high fiber dinner recipes for picky kids](/high-fiber-dinner-recipes-picky-kids/) is the version with recipes attached, and a pot of three bean chili tends to survive contact with a skeptical table.
+If you want dinners built around this problem specifically, high fiber dinner recipes for picky kids is the version with recipes attached, and a pot of three bean chili tends to survive contact with a skeptical table.
 
 ## What these pot prices leave out
 
@@ -84,6 +84,6 @@ Single store shelf prices from July 2026, plus US average prices for beef, eggs,
 
 Portions are also an argument, not a fact. We used 90 grams of dry legume and 60 grams of dry grain per adult serving. A hungry fifteen year old will eat more than that, and the fix costs pennies because the anchors are cheap.
 
-For the benchmark your whole family grocery bill should sit against, [what USDA says a family of four spends](/usda-thrifty-food-plan-weekly-cost/) has the official weekly number, and the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) turns these pots into a shopping system.
+For the benchmark your whole family grocery bill should sit against, [what USDA says a family of four spends](/usda-thrifty-food-plan-weekly-cost/) has the official weekly number, and the eat healthy on a budget playbook turns these pots into a shopping system.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/which-dried-beans-have-the-most-protein-main.jpg"
 imageAlt: "Small bowls of dry navy, black, pinto, and chickpea beans lined up on a wooden board"
 date: 2026-07-28
-dateModified: 2026-11-23
+dateModified: 2026-09-24
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -47,7 +47,7 @@ Protein and fiber in that table are the linked FoodData Central records, checked
 
 Barely. Navy beans beat pinto by [0.91 grams per 100 grams](https://fdc.nal.usda.gov/food-details/173745/nutrients). In a 90 gram portion that's about 0.8 grams of protein, which is less than a bite of toast.
 
-What does matter is which bag is cheapest per gram, and that's a different winner. Brown lentils lead this table on protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). Dry, they still have [24.63 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/172420/nutrients). The dollar column is shelf price divided into that FoodData Central protein, not a second lab result.
+What does matter is which bag is cheapest per gram, and that's a different winner. Brown lentils lead this table on protein per dollar in the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/). Dry, they still have [24.63 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/172420/nutrients). The dollar column is shelf price divided into that FoodData Central protein, not a second lab result.
 
 So if you're optimising, optimise on package size. The big bag of the boring bean beats the small bag of the impressive one every time.
 
@@ -57,7 +57,7 @@ Green split peas, and it isn't remotely close. [22.2 grams of fiber per 100 gram
 
 That's the bean shelf's genuine trump card. Split peas deliver [23.12 grams of protein and 22.2 grams of fiber](https://fdc.nal.usda.gov/food-details/172428/nutrients) in the same 100 grams, which is 79 percent of the FDA's [28 gram fiber Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). [Split pea soup](/split-pea-soup-recipe-high-fiber/) is a deeply unglamorous pot of food that happens to be one of the best-value things you can cook.
 
-Where every bean lands on both metrics at once is in [beans win twice](/beans-double-win-fiber-protein/), and the wider fiber ranking is [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/).
+Where every bean lands on both metrics at once is in [beans win twice](/beans-double-win-fiber-protein/), and the wider fiber ranking is [fiber per dollar](/what-30-grams-of-fiber-costs-per-day/).
 
 ## Are kidney beans high in protein?
 

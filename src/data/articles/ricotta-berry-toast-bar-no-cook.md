@@ -96,7 +96,7 @@ If you're serving more than one person, don't assemble every toast yourself. Tha
 
 Put the ricotta in a bowl. Set out the berries, honey, salt, and toppings. Keep the toast warm in a basket or on a sheet pan. Let everyone build their own.
 
-This also solves the picky-eater issue without a negotiation session. One person wants blueberries only. Someone else wants pistachios and too much honey. Fine. Their toast, their business. And if the picky eater at your table is a full-grown adult, this guide to [cooking for a non-adventurous eater](/cooking-for-picky-adults-simple-options/) applies the same no-negotiation logic to dinner.
+This also solves the picky-eater issue without a negotiation session. One person wants blueberries only. Someone else wants pistachios and too much honey. Fine. Their toast, their business. And if the picky eater at your table is a full-grown adult, this guide to cooking for a non-adventurous eater applies the same no-negotiation logic to dinner.
 
 ## Make it a snack plate
 

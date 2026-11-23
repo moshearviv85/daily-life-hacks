@@ -14,6 +14,7 @@ image: /images/quick-20-minute-high-fiber-meals-for-busy-days-main.jpg
 imageAlt: Colorful skillet meal with beans and vegetables on a wooden table
 date: 2026-03-30
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -73,7 +74,7 @@ Some nights you do not have a zen hour to chop a rainbow. You have twenty minute
 
 This recipe is not trying to win a chef competition. It is trying to get fiber and protein on the table before anyone asks for cereal. It's one 20 minute high fiber meal. Six more are next.
 
-If you need more dinners built for that exact level of chaos, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) turns beans, grains, and other cheap staples into an actual plan.
+If you need more dinners built for that exact level of chaos, the [complete budget fiber guide](/what-30-grams-of-fiber-costs-per-day/) turns beans, grains, and other cheap staples into an actual plan.
 
 ## Six more 20 minute high fiber meals
 

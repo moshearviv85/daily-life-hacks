@@ -42,6 +42,11 @@ if (!landingPath) {
 const pageUrl = `${siteUrl}${landingPath}`;
 const catalogId = `${siteUrl}/data/#catalog`;
 const studyPath = datasetStudyPath(dataset);
+const WRITE_UP: Record<string, string> = {
+  "fiber-per-dollar-cheapest-high-fiber-foods": "/what-30-grams-of-fiber-costs-per-day/",
+  "protein-per-dollar-cheapest-protein-sources": "/protein-per-dollar-adjusted-for-quality/",
+};
+const writeUp = WRITE_UP[dataset.id] ?? studyPath;
 const fileName = datasetCsvFileName(dataset);
 const citation = datasetCitationText(dataset, siteUrl);
 const title = `${dataset.alternateName ?? dataset.name} CSV`;
@@ -159,7 +164,7 @@ const linkStyle = "color: #F29B30;";
       >
         Hugging Face mirror
       </a>
-      <a href={studyPath} class={`${linkClass} text-sm`} style={linkStyle}>
+      <a href={writeUp} class={`${linkClass} text-sm`} style={linkStyle}>
         Study write-up
       </a>
       <a href="/data/" class={`${linkClass} text-sm`} style={linkStyle}>

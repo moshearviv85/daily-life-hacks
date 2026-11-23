@@ -9,6 +9,7 @@ image: "/images/healthy-blue-collar-lunch-ideas-men-main.jpg"
 imageAlt: A thick turkey and avocado sandwich in a lunchbox with an apple and a thermos.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "20 minutes"
@@ -69,7 +70,7 @@ If you want the kitchen version of the daily total, the [protein-per-day breakdo
 
 ## The Power of the Sheet Pan Roast
 
-If you want a lunch that actually sticks to your ribs, you have to stop thinking about "lunch food" and start thinking about "fuel." Roasting a big batch of meat and vegetables on Sunday night is the lowest effort way to handle the week. It takes about ten minutes of chopping and the oven does the rest while you're watching the game. If Sunday cooking still feels like a project, the [beginner meal prep system](/meal-prep-for-beginners-complete-system/) is two bases, two proteins, and about 90 minutes, which is enough food that Thursday isn't a drive-thru vote.
+If you want a lunch that actually sticks to your ribs, you have to stop thinking about "lunch food" and start thinking about "fuel." Roasting a big batch of meat and vegetables on Sunday night is the lowest effort way to handle the week. It takes about ten minutes of chopping and the oven does the rest while you're watching the game. If Sunday cooking still feels like a project, the beginner meal prep system is two bases, two proteins, and about 90 minutes, which is enough food that Thursday isn't a drive-thru vote.
 
 **Sweet potatoes:** These are a blue-collar gold mine because they have a lower glycemic index than white potatoes, meaning the energy might last longer.
 **Chicken thighs:** Don't bother with breasts; they get dry and sad when reheated. Thighs stay juicy even if you have to nuke them in a greasy breakroom microwave.
@@ -85,7 +86,7 @@ A massive flour tortilla can hold a lot more than you think. Load it with sliced
 
 None of these need a heat source. Every one is built to eat from a cooler at noon and still feel like a meal, not a snack you apologize for. The calories and protein are rough plate math from standard cooked portions and typical package servings, rounded. Your bread, your jerky, and that enormous deli bagel can move the total. When the label disagrees with me, believe the label.
 
-If you want the shopping side of a list like this, the [high-protein on a budget guide](/high-protein-on-a-budget-complete-guide/) is where the cart gets built. The boxes below are the cold versions.
+If you want the shopping side of a list like this, the [high-protein on a budget guide](/protein-per-dollar-adjusted-for-quality/) is where the cart gets built. The boxes below are the cold versions.
 
 1. **Cold sheet-pan steak box.** One serving of the flank steak, sweet potato, and green beans above, eaten cold. The recipe card puts that serving at 580 calories. Protein is about 40 grams if you used the flank. Chicken thighs land in the same neighborhood, a little richer if you left the skin on.
 2. **Chicken thigh wrap.** A 10-inch flour tortilla, 4 ounces cooked skinless thigh, 1/2 cup black beans, and 1/4 avocado, plus spinach and hot sauce. About 630 calories and about 45 grams of protein. Bigger burrito tortillas can add another 100 calories. Check the bag.

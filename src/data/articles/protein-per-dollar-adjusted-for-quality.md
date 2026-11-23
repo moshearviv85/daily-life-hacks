@@ -9,6 +9,7 @@ image: "/images/protein-per-dollar-adjusted-for-quality-main.jpg"
 imageAlt: "Overhead spread of budget high-quality proteins on a wooden table: pinto beans, lentils, rice and black beans, eggs, cheese, chickpeas, milk, and peanut butter"
 date: 2026-07-16
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 faq:
   - question: "What is the best protein per dollar after adjusting for quality?"
@@ -27,7 +28,7 @@ The per-dollar figure divides the FoodData Central protein or fiber per 100 gram
 
 Bone-in chicken drumsticks bought the most usable protein per dollar in our sample, 50.3 grams, even after we docked every food for protein quality ([FDC 172373](https://fdc.nal.usda.gov/food-details/172373/nutrients)). Brown lentils finished a step behind at 49.0. That's the headline, and it surprised me, because an earlier pass at this table had dried beans running away with it. The raw grams moved. The quality math didn't forgive the gap.
 
-A few weeks ago I ranked 49 grocery foods by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/). Whole wheat flour leads that list at 96.0 grams, and dried lentils still sit near the top ([FDC 168893](https://fdc.nal.usda.gov/food-details/168893/nutrients)). The pushback was fair. A gram of protein from beans isn't the same as a gram from eggs, because your body can't use all of it. So I took the audited numbers from that study, multiplied each by a published quality score, and rebuilt the ranking. Same prices, same grams, now weighted for what your body actually absorbs.
+A few weeks ago I ranked 49 grocery foods by [protein per dollar](/protein-per-dollar-adjusted-for-quality/). Whole wheat flour leads that list at 96.0 grams, and dried lentils still sit near the top ([FDC 168893](https://fdc.nal.usda.gov/food-details/168893/nutrients)). The pushback was fair. A gram of protein from beans isn't the same as a gram from eggs, because your body can't use all of it. So I took the audited numbers from that study, multiplied each by a published quality score, and rebuilt the ranking. Same prices, same grams, now weighted for what your body actually absorbs.
 
 ## What is the cheapest source of protein per dollar after adjusting for quality?
 
@@ -43,7 +44,7 @@ DIAAS stands for Digestible Indispensable Amino Acid Score, the current standard
 
 ## How we ran the quality adjustment
 
-Protein per dollar is pulled verbatim from the current 49-food study, the same audited rows behind [the plant protein ranking](/protein-per-dollar-cheapest-protein-sources/#plant). Each food's DIAAS is a published value, capped at 1.0 for the math so nothing scores a quality bonus above its raw grams. Quality-adjusted protein per dollar is just the two multiplied together, an estimate of usable protein per dollar.
+Protein per dollar is pulled verbatim from the current 49-food study, the same audited rows behind [the plant protein ranking](/protein-per-dollar-adjusted-for-quality/#plant). Each food's DIAAS is a published value, capped at 1.0 for the math so nothing scores a quality bonus above its raw grams. Quality-adjusted protein per dollar is just the two multiplied together, an estimate of usable protein per dollar.
 
 Every DIAAS value in the table carries a named source in the public CSV (Phillips 2017, Herreman 2020, Rutherfurd 2015, Mathai 2017, Burd 2019, FAO 2013). Those rows are not all the cooked-pulse scores from Nosworthy. Cooked navy, black, and pinto beans scored 0.57, 0.63, and 0.70 ([Nosworthy et al., 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC6024599/)). Cooked chickpeas, green lentils, and red lentils scored 0.67, 0.58, and 0.50 ([Nosworthy et al., 2017](https://pubmed.ncbi.nlm.nih.gov/28748078/)). The table's 0.83 chickpea and 0.63 lentil figures don't match those papers, so don't read them as Nosworthy. The full [quality-adjusted CSV is public](/data/protein-quality-per-dollar-2026.csv), one row per food with the score and its citation. One caveat: DIAAS values shift between studies depending on the reference pattern and cooking method, so read these as solid estimates, not lab constants for your exact groceries.
 
@@ -99,13 +100,46 @@ Beans are short on the sulfur amino acids, methionine and cysteine. Grains have 
 
 Pinto beans at 34.0 quality-adjusted grams still beat ground beef at 11.3 by about 3x ([FDC 174036](https://fdc.nal.usda.gov/food-details/174036/nutrients)). Brown lentils at 49.0 are a step behind drumsticks, not a different sport. The complaint is real. It just doesn't make the bean bag a bad buy.
 
+<a id="raw-ranking"></a>
+
+## The raw ranking, by aisle
+
+The quality table above covers 25 foods. The July 2026 raw ranking covers 49, measured as purchased. These are the aisle winners from that list:
+
+| Category | Best value | Protein per $1 |
+|---|---|---|
+| Legumes | Brown lentils (dry) | 77.7 g |
+| Meat and poultry | Chicken drumsticks (bone-in) | 50.3 g |
+| Eggs and dairy | Eggs (large) | 34.4 g |
+| Fish | Canned tuna (chunk light, in water) | 22.4 g |
+
+Whole wheat flour still leads the full raw list at 96.0 grams per dollar. Bacon finishes last at 9.4. The row-level prices and USDA matches are in the [protein CSV](/data/protein-per-dollar-2026.csv). Edible-portion and BLS rules are on the [methodology page](/methodology/).
+
+<a id="weekly-protein-cart"></a>
+
+## A $23 weekly protein cart
+
+Six items from that same raw dataset, priced as purchased:
+
+| Item | Price | Protein |
+|---|---|---|
+| Chicken drumsticks, 5 lb bag | $5.46 | ~275 g |
+| Pinto beans (dry), 4 lb bag | $6.75 | ~389 g |
+| Eggs, 2 dozen | $4.38 | ~151 g |
+| Brown lentils (dry), 16 oz bag | $1.44 | ~112 g |
+| Canned tuna, 2 cans | $1.96 | ~44 g |
+| Cottage cheese, 24 oz tub | $2.87 | ~76 g |
+| **Total** | **$22.86** | **~1,047 g** |
+
+Call it $23. Split across seven days, one person gets about 150 grams of protein a day from the basket. That is capacity, not a target. The same prices are in the [protein CSV](/data/protein-per-dollar-2026.csv), checked the way the [methodology page](/methodology/) describes.
+
 ## How to actually shop this
 
 You don't need a spreadsheet at the register.
 
 * **Let drumsticks or a whole bird be the default meat.** They buy more usable protein per dollar than breast, thighs, or any ground meat here.
-* **Keep lentils and beans as the cheap plant baseline.** Brown lentils are second on the adjusted list. A grain on the side handles the amino acids a single bag is light on. The same bags still do fiber work, which is the point of [beans scored on protein and fiber at once](/beans-double-win-fiber-protein/). On fiber alone, dry pintos return 41.7 grams per dollar and brown lentils 33.7 in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients)). A batch of [easy black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) or a pot of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) does the work.
-* **Let eggs and dairy do the no-cook lifting.** A plate of [rice and beans](/quick-20-minute-high-fiber-meals-for-busy-days/) with an egg on top is cheap, fast, and covers the amino acid gap in one move. [The rest of the stove-free lineup](/protein-per-dollar-cheapest-protein-sources/#no-cook) is peanut butter, canned beans, and the dairy tubs.
+* **Keep lentils and beans as the cheap plant baseline.** Brown lentils are second on the adjusted list. A grain on the side handles the amino acids a single bag is light on. The same bags still do fiber work, which is the point of [beans scored on protein and fiber at once](/beans-double-win-fiber-protein/). On fiber alone, dry pintos return 41.7 grams per dollar and brown lentils 33.7 in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients)). A batch of [easy black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) or a pot of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) does the work.
+* **Let eggs and dairy do the no-cook lifting.** A plate of [rice and beans](/quick-20-minute-high-fiber-meals-for-busy-days/) with an egg on top is cheap, fast, and covers the amino acid gap in one move. [The rest of the stove-free lineup](/protein-per-dollar-adjusted-for-quality/#no-cook) is peanut butter, canned beans, and the dairy tubs.
 * **Don't overpay for the middle.** Peanut butter, whole wheat bread, and ground beef buy less usable protein than the shelf numbers suggest.
 
-The one-sentence version: drumsticks take the quality-adjusted list at 50.3 grams, brown lentils are right behind at 49.0, and a bag of beans is still a long way from a bad protein buy ([FDC 172373](https://fdc.nal.usda.gov/food-details/172373/nutrients)). Want the shopping system instead of another table? The [high-protein budget guide](/high-protein-on-a-budget-complete-guide/) turns all of this into a cart.
+The one-sentence version: drumsticks take the quality-adjusted list at 50.3 grams, brown lentils are right behind at 49.0, and a bag of beans is still a long way from a bad protein buy ([FDC 172373](https://fdc.nal.usda.gov/food-details/172373/nutrients)). The [weekly protein cart](#weekly-protein-cart) is the six-item version of that sentence.

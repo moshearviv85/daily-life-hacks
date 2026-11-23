@@ -75,7 +75,7 @@ That's why I'd rather people learn the three slots than collect recipes. Recipes
 
 ## Which anchors give you the most for the money?
 
-Dry legumes, and it isn't remotely close. Dry pinto beans returned 97.9 grams of protein per dollar. Whole wheat flour returned 96.0. Ground beef returned 11.5. We ranked all 49 foods in [protein per dollar](/protein-per-dollar-cheapest-protein-sources/), and the first seven places went to dried legumes before a single animal product showed up.
+Dry legumes, and it isn't remotely close. Dry pinto beans returned 97.9 grams of protein per dollar. Whole wheat flour returned 96.0. Ground beef returned 11.5. We ranked all 49 foods in [protein per dollar](/protein-per-dollar-adjusted-for-quality/), and the first seven places went to dried legumes before a single animal product showed up.
 
 Peanut butter is the surprise at $0.14 a portion and 50.7 grams of protein per dollar, which makes it the cheapest anchor that needs no cooking whatsoever. Eggs at $0.37 for two are the convenience play rather than the value play, though 34.4 grams per dollar is still respectable.
 
@@ -87,7 +87,7 @@ Acid and crunch. Both are cheap, and their absence is the reason budget food get
 
 Cabbage is $0.26 for a generous portion and stays crisp for weeks. Carrots are $0.17 for 100 grams. A squeeze of citrus, a splash of vinegar, raw onion, hot sauce, toasted seeds. None of that shows up meaningfully on a receipt, and all of it changes the plate. There's a whole toolkit for this in [big flavor with less salt](/big-flavor-less-salt-citrus-herbs-umami-swaps/).
 
-Frozen vegetables handle the days you didn't shop. Frozen green peas returned 17.6 grams of fiber per dollar, better than every fresh fruit we priced, and we ran the whole comparison in [frozen versus fresh vegetables](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar). Fresh produce that rots in the drawer costs full price and delivers nothing.
+Frozen vegetables handle the days you didn't shop. Frozen green peas returned 17.6 grams of fiber per dollar, better than every fresh fruit we priced, and we ran the whole comparison in frozen versus fresh vegetables. Fresh produce that rots in the drawer costs full price and delivers nothing.
 
 ## What the plate rule doesn't cover
 
@@ -95,6 +95,6 @@ It covers protein and fiber, because those are the two nutrients our datasets ca
 
 Prices are single store shelf tags from July 2026, with US average figures for eggs, milk, and a few commodity items. Your store will differ. The gap between a $0.40 plate and a $1.56 plate is wide enough that the order survives a sale.
 
-Pick two anchors, two bases, and two vegetables this week and you've got more combinations than you'll get through. For the shopping system behind it, the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the cart, and [how to eat more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) handles the vegetable column in more depth.
+Pick two anchors, two bases, and two vegetables this week and you've got more combinations than you'll get through. For the shopping system behind it, the eat healthy on a budget playbook covers the cart, and [how to eat more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/) handles the vegetable column in more depth.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

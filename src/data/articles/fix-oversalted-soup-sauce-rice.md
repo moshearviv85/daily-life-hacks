@@ -9,7 +9,6 @@ tags:
 image: "/images/fix-oversalted-soup-sauce-rice-main.jpg"
 imageAlt: "A cook adjusting seasoning in a large pot of soup on a modern stove"
 date: 2026-04-24
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

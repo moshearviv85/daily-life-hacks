@@ -10,7 +10,7 @@ tags:
 image: "/images/high-fiber-raspberry-jam-recipe-chia-main.jpg"
 imageAlt: "A glass jar of homemade raspberry chia jam next to a slice of whole grain toast"
 date: 2026-04-26
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 author: "David Miller"
 quickAnswer: "Cook two cups of raspberries for four to five minutes, mash them, then remove the pan from the heat and stir in two tablespoons of chia seeds plus lemon and optional sweetener. Let the mixture stand for five minutes before chilling. This is a small-batch refrigerator spread, not a shelf-stable canned jam, so keep it cold and use it promptly."
 featured: false

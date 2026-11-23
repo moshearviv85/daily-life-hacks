@@ -9,7 +9,6 @@ tags:
 image: "/images/add-flavor-without-more-sugar-tricks-main.jpg"
 imageAlt: "Cinnamon sticks, vanilla beans, lemon zest, and cocoa powder arranged on a light countertop"
 date: 2026-04-16
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -55,7 +54,7 @@ Here's something that took me too long to learn. When a dish tastes flat, the an
 
 Roasted vegetables. Grain bowls. Grilled chicken. A simple soup. All of these get dramatically better with a hit of fresh citrus juice right before serving. But the real trick to add flavor without more sugar is the zest. The colored outer layer of the peel holds concentrated oils that deliver bright, intense flavor with zero tartness. Keep a microplane grater near your stove. Zest a lemon over pasta, over fish, over a pot of rice. It takes three seconds and changes the entire plate.
 
-Orange zest in a vinaigrette is another easy win, and making your own matters more than you'd think once you see the [hidden sugars in popular summer salad dressings](/hidden-sugars-popular-summer-salad-dressings/). Lime zest on black beans. Grapefruit zest in a yogurt bowl. Once you start, you'll wonder why you ever reached for the sugar jar first.
+Orange zest in a vinaigrette is another easy win, and making your own matters more than you'd think once you see the hidden sugars in popular summer salad dressings. Lime zest on black beans. Grapefruit zest in a yogurt bowl. Once you start, you'll wonder why you ever reached for the sugar jar first.
 
 ## Cocoa powder for when you want chocolate, not candy
 

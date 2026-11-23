@@ -13,7 +13,7 @@ tags:
 image: /images/high-fiber-quinoa-salad-for-lunch-prep-main.jpg
 imageAlt: Quinoa salad with vegetables in a meal prep container
 date: 2026-03-30
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 author: "David Miller"
 quickAnswer: "For quinoa salad that stays useful through lunch prep, cool the cooked quinoa before mixing, dry the vegetables well, and pack the lemon dressing separately. Put quinoa and chickpeas at the bottom, tomatoes in the middle, and cucumber on top. Refrigerate within two hours and use prepared leftovers within three to four days, following federal food-safety guidance."
 featured: false
@@ -71,7 +71,7 @@ Quinoa salad is one of those recipes that sounds like it belongs on a wellness p
 
 If your goal is fiber, you want more than lettuce and hope. You want whole grains, legumes, and vegetables that still taste good after a night in the fridge. Quinoa isn't the only grain that does that job.
 
-For the full plan around this one lunch, the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) handles shopping, batch cooking, storage, and reheating without lining up twelve identical containers like a cafeteria display.
+For the full plan around this one lunch, the complete meal-prep system for beginners handles shopping, batch cooking, storage, and reheating without lining up twelve identical containers like a cafeteria display.
 ## Why This Combination Holds
 
 Chickpeas add fiber and chew. Tomatoes add acid. Cucumber adds crunch if you don't salt it to death. Lemon dressing cuts richness from olive oil and keeps the flavor bright.
