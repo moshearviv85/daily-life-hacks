@@ -36,6 +36,25 @@ test("more than five dateModified edits fail unless the PR is a content refresh"
     ).changed.length,
     0,
   );
+  assert.deepEqual(
+    dateModifiedChurn(
+      [
+        {
+          path: "src/data/articles/removed.md",
+          before: "2026-07-20",
+          after: null,
+          deleted: true,
+        },
+        {
+          path: "src/data/articles/kept.md",
+          before: "2026-07-20",
+          after: "2026-11-23",
+        },
+      ],
+      [],
+    ).changed.map((entry) => entry.path),
+    ["src/data/articles/kept.md"],
+  );
 });
 
 // A pull request that changes dateModified in more than five articles still

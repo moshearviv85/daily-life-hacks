@@ -100,7 +100,7 @@ Eggs are the food I'd defend in court. At the [May 2026 BLS average price](https
 
 Dairy clusters tightly behind: whole milk at 28.5 grams per dollar, Greek yogurt at 27.5, cottage cheese at 26.3. The yogurt-versus-cottage-cheese question comes up constantly, so we wrote the [full comparison](/cottage-cheese-vs-greek-yogurt-protein-uses/); the short version is they're different tools, not competitors. If your breakfast decision is really yogurt or eggs, [we priced that one head to head](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) too. And a block of part-skim mozzarella scores 30, which quietly beats every fresh meat except drumsticks.
 
-This category is also where lunch gets solved. A [high protein bagel sandwich](/high-protein-bagel-sandwich-ideas-lunch/) built on eggs and cheese costs a fraction of the deli version, and if you're curious what the numbers actually look like, we [counted the protein in a bagel sandwich](/how-much-protein-in-bagel-sandwich/) layer by layer.
+This category is also where lunch gets solved. A [high protein bagel sandwich](/how-much-protein-in-bagel-sandwich/#high-protein-bagel-sandwich-ideas) built on eggs and cheese costs a fraction of the deli version, and the same page counts the protein layer by layer.
 
 The close-up rankings settle two arguments the big table can't: [eggs versus the other 48 foods](/eggs-vs-everything-protein-value/) shows exactly where convenience overtakes raw value, and the [dairy protein ranking](/protein-per-dollar-cheapest-protein-sources/#dairy) reveals why the plain gallon can beat a tub with louder packaging.
 

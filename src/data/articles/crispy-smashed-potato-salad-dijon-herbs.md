@@ -100,7 +100,7 @@ If you have leftovers, they will keep in the fridge for a few days. They won't b
 
 Vinaigrette does not make cooked potatoes shelf-stable. Keep the bowl refrigerated until serving, then return it to a cooler or refrigerator within two hours. When the outdoor temperature is above 90 degrees F, use a one-hour limit. A larger bowl of ice under the serving bowl buys useful chill time.
 
-For another portable salad with the same temperature rules, this [cold pasta salad guide](/how-to-pack-cold-pasta-salad-picnics/) covers containers, ice packs, and travel timing.
+For another portable salad with the same temperature rules, this [cold pasta salad guide](/easy-cold-summer-pasta-salad-potlucks/#how-to-pack-it-for-a-picnic) covers containers, ice packs, and travel timing.
 
 ## Re-crisp leftovers without burning the herbs
 

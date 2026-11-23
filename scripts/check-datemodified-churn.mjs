@@ -25,7 +25,11 @@ export function extractDateModified(markdown) {
 }
 
 export function dateModifiedChurn(entries, labels = []) {
-  const changed = entries.filter((entry) => entry.before !== entry.after);
+  // A deleted article takes its date with it. That is not a freshness bump
+  // on a page that is still live.
+  const changed = entries.filter(
+    (entry) => !entry.deleted && entry.before !== entry.after,
+  );
   const labeled = labels.some((label) => label.trim() === "content-refresh");
   return {
     changed,
@@ -98,11 +102,15 @@ function readWorking(path) {
 }
 
 function collectEntries(base) {
-  return changedArticlePaths(base).map((path) => ({
-    path,
-    before: extractDateModified(showAt(base, path)),
-    after: extractDateModified(readWorking(path)),
-  }));
+  return changedArticlePaths(base).map((path) => {
+    const afterSource = readWorking(path);
+    return {
+      path,
+      before: extractDateModified(showAt(base, path)),
+      after: extractDateModified(afterSource),
+      deleted: afterSource === null,
+    };
+  });
 }
 
 function report(result) {

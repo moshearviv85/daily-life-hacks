@@ -63,7 +63,7 @@ First, humidity itself isn't the villain. Free water is. Beth Mitcham of the UC 
 
 Second, temperature is the lever you actually control. Rhizopus rot won't grow below 41°F at all. Botrytis, the grey mold, keeps growing even at 32°F, just very slowly. The FDA says to store perishable produce like strawberries at 40°F or below, so run your fridge as cold as it goes without freezing and park the berries toward the back, not in the door.
 
-Expect the types to behave differently, too. At that optimum 32°F, measured from harvest, UC Davis gives blackberries and raspberries 2 to 5 days and blueberries 1 to 2 weeks. Your carton is already days into that clock before it reaches your kitchen and your fridge is warmer than 32°F, so read those numbers as ceilings, not promises. Keeping them visible helps you actually eat them, which is the whole idea behind a [grab-and-go snack drawer in the fridge](/grab-and-go-fridge-snack-drawer/).
+Expect the types to behave differently, too. At that optimum 32°F, measured from harvest, UC Davis gives blackberries and raspberries 2 to 5 days and blueberries 1 to 2 weeks. Your carton is already days into that clock before it reaches your kitchen and your fridge is warmer than 32°F, so read those numbers as ceilings, not promises. Keeping them visible helps you actually eat them, which is the whole idea behind a grab-and-go snack drawer in the fridge.
 
 ## Triage, and what to do with the fuzzy one
 

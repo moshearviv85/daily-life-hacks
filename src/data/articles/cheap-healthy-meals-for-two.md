@@ -60,7 +60,7 @@ The 16 ounce bags. Split peas, lentils, chickpeas, and a box of pasta all land b
 
 The 2 pound and 4 pound bags are the ones that need a decision. A 4 pound bag of pintos at $3.97 is ten dinners for two, and the unit price is unbeatable at 97.9 grams of protein per dollar. Buy it anyway. Cook half, freeze the cooked beans in portions, and the bag becomes a convenience item instead of a commitment.
 
-Cooked beans freeze well and so does cooked rice if you cool it properly first, which is covered in storing cooked grains for meal prep. A two person freezer is the thing that makes bulk prices work at small scale, and [freezer meal prep for beginners](/freezer-meal-prep-ideas-for-beginners/) has the containers-and-labels version.
+Cooked beans freeze well and so does cooked rice if you cool it properly first, which is covered in storing cooked grains for meal prep. A two person freezer is the thing that makes bulk prices work at small scale, and [freezer meal prep for beginners](/meal-prep-for-beginners-complete-system/#freezer-friendly-picks) has the containers-and-labels version.
 
 ## What does a week of cheap meals for two cost?
 

@@ -1,6 +1,6 @@
 /**
  * GSC 27 Aug 2026: 158 URLs were "Discovered – currently not indexed".
- * These 80 thin URLs stay live for humans (no 410, no delete) but must be
+ * These 87 thin URLs stay live for humans (no 410, no delete) but must be
  * `noindex, follow` and out of the sitemap so crawl budget concentrates on
  * the 25 KEEP money URLs (flagships + surviving studies + tools/hubs).
  *
@@ -21,6 +21,7 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "best-way-to-cook-ribs",
   "budget-meal-ideas-for-one",
   "budget-meal-ideas-philippines",
+  "camping-meal-hacks-large-families",
   "cheap-dinner-ideas-cost-per-serving",
   "cheap-dinner-ideas-for-a-family-of-4",
   "cheap-ground-beef-meals-large-families",
@@ -29,8 +30,10 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "cheap-healthy-meals-with-leftovers",
   "cheap-lunch-ideas-cost-per-box",
   "chicken-veggie-lettuce-wraps-peanut-sauce",
+  "cooking-for-picky-adults-simple-options",
   "crispy-roasted-chickpeas-high-fiber-snack",
   "crispy-smashed-potato-salad-dijon-herbs",
+  "cutting-board-basics-which-to-use",
   "does-leftover-pizza-need-to-be-refrigerated",
   "easy-cheap-healthy-meals",
   "easy-sandwich-bread-recipe-beginners",
@@ -39,6 +42,7 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "food-prep-guide-recipes",
   "food-prep-tips-to-save-time",
   "food-storage-temperature-rules",
+  "grab-and-go-fridge-snack-drawer",
   "grocery-budget-for-one-person-per-month",
   "grocery-shopping-list-for-healthy-eating-on-a-budget",
   "health-benefits-eating-soup-in-spring",
@@ -46,6 +50,7 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "healthy-fats-list-foods-to-eat-daily",
   "healthy-homemade-vegan-caesar-salad-dressing",
   "healthy-spring-vegetable-soup-recipes",
+  "healthy-sweet-tooth-snack-ideas-night",
   "hearty-vegetarian-chili-with-three-beans-and-corn",
   "high-fiber-avocado-toast-variations",
   "high-fiber-cauliflower-rice-recipes",
@@ -57,6 +62,7 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "how-much-oatmeal-is-a-serving",
   "how-much-protein-for-breakfast",
   "how-to-choose-granola-not-dessert",
+  "how-to-clean-blender-fast-no-scrub",
   "how-to-eat-cheap-at-home",
   "how-to-freeze-bananas-for-smoothies",
   "how-to-get-more-protein-at-breakfast",
@@ -68,6 +74,7 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "how-to-properly-store-cooked-grains-for-meal-prep",
   "how-to-read-nutrition-labels-for-beginners",
   "how-to-save-money-on-groceries-at-walmart",
+  "how-to-season-cast-iron-skillet-properly",
   "how-to-store-fresh-ginger",
   "how-to-store-fruits-and-vegetables-properly",
   "how-to-store-homemade-bread",
@@ -161,8 +168,8 @@ function assertPruneSafety() {
       `index-prune: KEEP/protected slug leaked into prune set: ${collisions.join(", ")}`,
     );
   }
-  if (INDEX_PRUNE_SLUGS.size !== 80) {
-    throw new Error(`index-prune: expected 80 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
+  if (INDEX_PRUNE_SLUGS.size !== 87) {
+    throw new Error(`index-prune: expected 87 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
   }
   if (INDEX_KEEP_PATHS.size !== 25) {
     throw new Error(`index-prune: expected 25 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);

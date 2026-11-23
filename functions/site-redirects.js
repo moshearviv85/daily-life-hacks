@@ -121,6 +121,12 @@ export const SITE_REDIRECT_SOURCE = `/free-meal-plan / 301
 /how-long-do-dried-beans-last/ /how-to-cook-dried-beans-from-scratch/ 301
 /sourdough-discard-nutrition-facts-health-benefits /how-to-measure-sourdough-discard-grams/#sourdough-discard-nutrition 301
 /sourdough-discard-nutrition-facts-health-benefits/ /how-to-measure-sourdough-discard-grams/#sourdough-discard-nutrition 301
+/high-protein-bagel-sandwich-ideas-lunch /how-much-protein-in-bagel-sandwich/#high-protein-bagel-sandwich-ideas 301
+/high-protein-bagel-sandwich-ideas-lunch/ /how-much-protein-in-bagel-sandwich/#high-protein-bagel-sandwich-ideas 301
+/how-to-pack-cold-pasta-salad-picnics /easy-cold-summer-pasta-salad-potlucks/#how-to-pack-it-for-a-picnic 301
+/how-to-pack-cold-pasta-salad-picnics/ /easy-cold-summer-pasta-salad-potlucks/#how-to-pack-it-for-a-picnic 301
+/freezer-meal-prep-ideas-for-beginners /meal-prep-for-beginners-complete-system/#freezer-friendly-picks 301
+/freezer-meal-prep-ideas-for-beginners/ /meal-prep-for-beginners-complete-system/#freezer-friendly-picks 301
 `;
 
 export function parseRedirectRules(source) {

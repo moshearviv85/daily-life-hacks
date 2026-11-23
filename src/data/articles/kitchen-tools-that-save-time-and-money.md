@@ -86,4 +86,4 @@ Maintenance is cheaper than replacing a neglected tool, but sentiment has limits
 
 Ask how often you will use it, where it will live, and whether a tool you already own performs the same job. A scale passes because it handles baking, portioning, and coffee while fitting in a drawer. A dedicated banana slicer has a much harder interview.
 
-For the basic board decision, this [cutting board guide](/cutting-board-basics-which-to-use/) compares wood and plastic by task and maintenance. If storage is the real obstacle, the small-kitchen organization guide helps decide what deserves the limited space.
+For the basic board decision, wood and plastic come down to the task and how you maintain the board. If storage is the real obstacle, the small-kitchen organization guide helps decide what deserves the limited space.
