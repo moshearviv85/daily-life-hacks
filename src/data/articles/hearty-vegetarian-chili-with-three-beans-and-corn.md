@@ -79,6 +79,8 @@ Pinto beans are the secret weapon. They're softer than the other two, almost but
 
 Drain and rinse all three. I know some recipes tell you to keep the liquid from the cans, and that's fine for some applications, but here you want control over your own sauce. Rinsing also removes that tinny taste that canned beans sometimes carry.
 
+This pot uses four 15-ounce cans. Each one is about 1 1/2 cups drained, about 1/2 cup+ dried. Together that's about 6 cups, one pound of dried beans, and a pound fills 3½ to 4 cans. If you're starting from the bag, the [dried beans to canned converter](/tools/dried-beans-to-canned-converter/) splits that pound back into cans before you soak. Keep the three varieties if you can. The converter measures quantity. It doesn't pick the bean.
+
 ## The Corn Question
 
 Corn in chili is one of those dividing lines. Some people think it doesn't belong. Those people are wrong, but they're allowed to be wrong.

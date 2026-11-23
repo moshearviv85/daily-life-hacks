@@ -129,6 +129,6 @@ Cool extra rice promptly in a shallow container. The [leftover rice guide](/how-
 
 ## Canned beans or dried beans both work
 
-Two rinsed 15-ounce cans keep this dinner fast. If you cooked beans from dry, use roughly three cups and add a little of their cooking liquid in place of broth. The [dried bean method](/how-to-cook-dried-beans-from-scratch/) gives you a larger batch for tacos, soup, and another round of rice bowls.
+Two rinsed 15-ounce cans keep this dinner fast. If you cooked beans from dry, use about 3 cups, because each can is about 1 1/2 cups drained, about 1/2 cup+ dried. The [dried beans to canned converter](/tools/dried-beans-to-canned-converter/) measures that swap, and a pound of dried beans cooks to about 6 cups, or 3½ to 4 cans. Add a little of the cooking liquid in place of broth. The [dried bean method](/how-to-cook-dried-beans-from-scratch/) gives you a larger batch for tacos, soup, and another round of rice bowls.
 
 Taste after the beans simmer. Add salt only as needed because canned beans and broth vary. Finish with lime or vinegar after the heat is off; that bright edge is what keeps an inexpensive bowl from tasting merely beige.

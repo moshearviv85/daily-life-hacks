@@ -1,9 +1,19 @@
 /**
- * Tested kitchen yield for a 15.5 oz can, plus a crowd count.
+ * Kitchen conversions for every page that states a dried-to-canned swap.
  *
- * Headline yield, from Milk Street's dried-vs-canned test of 11 varieties:
- *   1 can (15.5 oz) ≈ 1/2 cup dry ≈ 90-100 g dry ≈ 1 1/2 cups cooked, drained.
+ * America's Test Kitchen counts 1 lb dried as 3 or 4 cans.
+ * Minnesota WIC counts 1 lb dried as about 2 cups dry or about 6 cups cooked.
+ * The site uses one set from those two:
+ *   1 lb dried ≈ 6 cups cooked ≈ 3½ to 4 (15-oz) cans
+ *   1 (15-oz) can ≈ 1½ cups drained ≈ about ½ cup+ dried
+ *
+ * 6 cups cooked / 1½ cups per can = 4 cans, the top of that range.
+ * 2 cups dry / 3½ to 4 cans is about ½ cup, a little more at 3½ cans.
+ *
+ * The gram band (90-100 g) is Milk Street's weighed ½ cup across 11 varieties:
  * https://www.177milkstreet.com/stories/bean-counting-dried-vs-canned
+ * The scoop in the calculator uses that ½ cup, and the label says "about ½ cup+"
+ * so a pound stays 3½ to 4 cans.
  *
  * Crowd cans are rounded up so a pot for N people doesn't come up short.
  * Dry weight is the 90-100 g band for that many cans, not the protein-matched grams.
@@ -14,8 +24,15 @@
  *   soup   1/4 cup (beans in a mixed soup, not a bowl that is mostly beans)
  */
 
+export const CUPS_COOKED_PER_POUND = 6;
+export const CANS_PER_POUND_LOW = 3.5;
+export const CANS_PER_POUND_HIGH = 4;
+export const CANS_PER_DRY_POUND = "3½ to 4";
+export const DRY_CUPS_PER_POUND = "about 2";
 export const CUPS_COOKED_PER_CAN = 1.5;
+export const CUPS_DRAINED_PER_CAN = CUPS_COOKED_PER_CAN;
 export const CUPS_DRY_PER_CAN = 0.5;
+export const CUPS_DRY_PER_CAN_LABEL = "about ½ cup+";
 export const GRAMS_DRY_PER_CAN_LOW = 90;
 export const GRAMS_DRY_PER_CAN_HIGH = 100;
 export const GRAMS_DRY_PER_CAN_MID = 95;
@@ -38,9 +55,6 @@ export const MILK_STREET_YIELDS = [
   { variety: "Navy beans", cookedCupsPerCupDry: "2¾" },
   { variety: "Cannellini", cookedCupsPerCupDry: "3¼" },
 ];
-
-export const DRY_CUPS_PER_POUND = "2 to 2½";
-export const CANS_PER_DRY_POUND = "4 to 5";
 
 const FRACTIONS = [
   [0, ""],
@@ -69,6 +83,14 @@ export function formatCups(n) {
   if (whole === 0) return sign + (best.label || "0");
   if (!best.label) return sign + String(whole);
   return `${sign}${whole}${best.label}`;
+}
+
+/** "about ½ cup+" for one can, "about 1½ cups+" once the total passes 1 cup. */
+export function formatDryCupLabel(cans) {
+  const cups = cans * CUPS_DRY_PER_CAN;
+  const base = formatCups(cups);
+  const unit = cups > 1 ? "cups" : "cup";
+  return `about ${base} ${unit}+`;
 }
 
 export function formatGramRange(low, high) {

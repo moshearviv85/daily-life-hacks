@@ -8,7 +8,9 @@ import {
   CANS_PER_DRY_POUND,
   CROWD_HEADCOUNTS,
   CUPS_COOKED_PER_CAN,
+  CUPS_COOKED_PER_POUND,
   CUPS_DRY_PER_CAN,
+  CUPS_DRY_PER_CAN_LABEL,
   DISH_DEFAULTS,
   DRY_CUPS_PER_POUND,
   GRAMS_DRY_PER_CAN_HIGH,
@@ -19,6 +21,7 @@ import {
   crowdCost,
   crowdPlan,
   formatCups,
+  formatDryCupLabel,
   formatGramRange,
   formatLbRange,
   testedYield,
@@ -29,9 +32,10 @@ const PATH = "/tools/dried-beans-to-canned-converter/";
 /**
  * Two answers, on purpose.
  *
- * The headline yield is the tested kitchen measure: 1 can (15.5 oz) is about
- * 1/2 cup dry, 90-100 g, and 1 1/2 cups cooked and drained. Milk Street tested
- * 11 varieties. That is what you scoop when a recipe says "one can."
+ * The headline yield is the shared kitchen measure in bean-crowd-math.js:
+ * 1 can (15 oz) is about 1/2 cup+ dried and 1 1/2 cups drained, and 1 lb dried
+ * cooks to about 6 cups, or 3 1/2 to 4 cans. Milk Street's 90-100 g band is the
+ * weighed half cup behind that "about 1/2 cup+" label.
  *
  * The nutrition-matched grams are a second figure. Protein survives soaking,
  * cooking, and canning, so grams of dry bean that carry the same protein as
@@ -141,7 +145,8 @@ const schemas = [
     name: "Dried Beans to Canned Beans Converter",
     description,
     featureList: [
-      "Convert a 15.5 oz can to about 1/2 cup of dried beans",
+      "Convert a 15-oz can to about 1/2 cup+ of dried beans",
+      "Count 3 1/2 to 4 cans and about 6 cooked cups in a pound of dried beans",
       "Count cans and dry pounds for a crowd",
       "Compare the cost of dried beans against canned at real US grocery prices",
       "Show a nutrition-matched gram figure beside the tested kitchen yield",
@@ -160,8 +165,9 @@ const schemas = [
     </h1>
 
     <p class="text-lg mb-8" style="color: var(--text-color);">
-      1 can (15.5 oz) ≈ ½ cup dry ≈ 90 to 100 g dry ≈ 1½ cups cooked, drained.
-      The calculator below scales that for a crowd and prices the swap from our July 2026
+      1 can (15.5 oz) ≈ {CUPS_DRY_PER_CAN_LABEL} dried ≈ 1½ cups cooked, drained.
+      One pound of dried beans cooks to about {CUPS_COOKED_PER_POUND} cups, which is {CANS_PER_DRY_POUND} cans.
+      The calculator below scales one can for a crowd and prices the swap from our July 2026
       {" "}<a href="/protein-per-dollar-cheapest-protein-sources/" class="underline" style="color:#F29B30;">protein per dollar</a>
       {" "}and{" "}
       <a href="/fiber-per-dollar-cheapest-high-fiber-foods/" class="underline" style="color:#F29B30;">fiber per dollar</a>
@@ -216,7 +222,7 @@ const schemas = [
       <div id="bean-result" class="rounded-xl p-5" style="background: var(--page-bg); border: 1px solid var(--border-color);">
         <p class="text-sm font-bold uppercase tracking-widest mb-2" style="color:#F29B30;">The answer</p>
         <p class="text-2xl md:text-3xl font-bold mb-3" style="color: var(--heading-color);">
-          <span id="bean-cans-out">1</span> can (15.5 oz) ≈ <span id="bean-yield-cups">{formatCups(oneCanYield.cupsDry)}</span> cup dry ≈ <span id="bean-yield-grams">{formatGramRange(oneCanYield.gramsLow, oneCanYield.gramsHigh)}</span> g dry ≈ <span id="bean-yield-cooked">{formatCups(oneCanYield.cupsCooked)}</span> cups cooked, drained
+          <span id="bean-cans-out">1</span> can (15.5 oz) ≈ <span id="bean-yield-cups">{formatDryCupLabel(1)}</span> dried ≈ <span id="bean-yield-grams">{formatGramRange(oneCanYield.gramsLow, oneCanYield.gramsHigh)}</span> g dry ≈ <span id="bean-yield-cooked">{formatCups(oneCanYield.cupsCooked)}</span> cups cooked, drained
         </p>
         <p class="mb-4" style="color: var(--text-color);">
           That's the tested kitchen yield:
@@ -227,7 +233,7 @@ const schemas = [
           <span id="bean-dry-out">{defDry.short.toLowerCase()}</span>,
           about <strong><span id="bean-cups-out">{round(def.cups, 2)}</span> US cups</strong>,
           with the same <span id="bean-protein-out">{round(def.proteinTotal, 0)}</span> g of protein.
-          Use the ½ cup when you're cooking. Use the nutrition-matched grams when you want the protein to line up.
+          Use {CUPS_DRY_PER_CAN_LABEL} when you're cooking. Use the nutrition-matched grams when you want the protein to line up.
         </p>
         <dl class="grid sm:grid-cols-3 gap-3 text-sm">
           <div class="bean-stat">
@@ -250,7 +256,7 @@ const schemas = [
       </div>
 
       <p class="mt-4 text-sm" style="color: var(--muted-color);">
-        The nutrition-matched cups use 200 g of dry beans per US cup. The ½ cup headline is the tested volume, about 90 to 100 g, which is a little lighter than that 200 g cup.
+        The nutrition-matched cups use 200 g of dry beans per US cup. The {CUPS_DRY_PER_CAN_LABEL} headline is the tested volume, about 90 to 100 g, which is a little lighter than that 200 g cup.
       </p>
       </div>
 
@@ -361,8 +367,9 @@ const schemas = [
         How many cans are in 1 lb dry
       </h2>
       <p class="mb-4" style="color: var(--text-color);">
-        1 lb dry is about {DRY_CUPS_PER_POUND} cups dry, and at ½ cup dry per can that's about {CANS_PER_DRY_POUND} cans.
-        Milk Street's cooked yield changes by variety. The dry measure per can stays about ½ cup across the ones they tested, so the can count in a pound doesn't.
+        1 lb dried is {DRY_CUPS_PER_POUND} cups dry and cooks to about {CUPS_COOKED_PER_POUND} cups, which is {CANS_PER_DRY_POUND} (15-oz) cans.
+        One can is about {formatCups(CUPS_COOKED_PER_CAN)} cups drained, or {CUPS_DRY_PER_CAN_LABEL} dried.
+        Milk Street's cooked yield still changes by variety. The dry measure stays near ½ cup, a little over, across the ones they tested.
       </p>
       <div class="overflow-x-auto rounded-xl mb-4" style="border: 1px solid var(--border-color);">
         <table class="w-full text-sm" style="min-width: 560px; border-collapse: collapse;">
@@ -382,7 +389,7 @@ const schemas = [
               <tr style="border-bottom: 1px solid var(--border-color);">
                 <th scope="row" class="bean-td">{row.variety}</th>
                 <td class="bean-td bean-num">{row.cookedCupsPerCupDry}</td>
-                <td class="bean-td bean-num">½ cup (90 to 100 g)</td>
+                <td class="bean-td bean-num">{CUPS_DRY_PER_CAN_LABEL} (90 to 100 g)</td>
                 <td class="bean-td bean-num">{CANS_PER_DRY_POUND}</td>
               </tr>
             ))}
@@ -463,7 +470,7 @@ const schemas = [
 
       <h3 class="text-xl font-bold mt-6 mb-2" style="color: var(--heading-color);">Why we match on protein instead of guessing a ratio</h3>
       <p class="mb-4 leading-relaxed" style="color: var(--text-color);">
-        The headline answer is the tested yield, about ½ cup dry per can. The number in this section is a second figure, the nutrition-matched grams. Most charts stop at the half cup and never say where it came from. Protein doesn't disappear
+        The headline answer is the kitchen yield, {CUPS_DRY_PER_CAN_LABEL} per can and about 1½ cups cooked, drained. Milk Street's weighed scoop behind that label is about ½ cup dry. The number in this section is a second figure, the nutrition-matched grams. Most charts stop at the half cup and never say where it came from. Protein doesn't disappear
         when you soak, boil or can a bean, so it works as a tracer. One {defCan.pkg} of
         {" "}{defCan.short.toLowerCase()} carries {round(def.proteinTotal, 0)} g of protein.
         Dry {defDry.short.toLowerCase()} run {defDry.proteinPer100} g of protein per 100 g.
@@ -477,7 +484,7 @@ const schemas = [
         {" "}{round(fiberGramsPerCan(defCan, defDry), 0)} g rather than {round(def.grams, 0)} g.
         That gap isn't a mistake, it's USDA measuring fiber in canned and dry legumes with
         different methods. So treat the nutrition-matched grams as a working figure, not a lab result.
-        The cooking measure stays the ½ cup.
+        The cooking measure stays {CUPS_DRY_PER_CAN_LABEL}.
         For cooking it makes no difference. A pot of chili has never once cared about
         fifteen grams of dry bean.
       </p>
@@ -674,6 +681,11 @@ const schemas = [
         if (!best.label) return String(whole);
         return String(whole) + best.label;
       }
+      function formatDryCupLabel(cans) {
+        var cups = cans * CUPS_DRY_PER_CAN;
+        var unit = cups > 1 ? "cups" : "cup";
+        return "about " + formatCups(cups) + " " + unit + "+";
+      }
       function formatLb(low, high) {
         var lo = (Math.round(low * 10) / 10).toFixed(1);
         var hi = (Math.round(high * 10) / 10).toFixed(1);
@@ -708,7 +720,7 @@ const schemas = [
         var gramsHigh = cans * GRAMS_DRY_PER_CAN_HIGH;
 
         out.cans.textContent = String(cans);
-        out.yieldCups.textContent = formatCups(cans * CUPS_DRY_PER_CAN);
+        out.yieldCups.textContent = formatDryCupLabel(cans);
         out.yieldGrams.textContent = Math.round(gramsLow) + " to " + Math.round(gramsHigh);
         out.yieldCooked.textContent = formatCups(cans * CUPS_COOKED_PER_CAN);
         out.canned.textContent = can.short;
