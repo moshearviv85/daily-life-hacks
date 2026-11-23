@@ -222,7 +222,7 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 41, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 42, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
