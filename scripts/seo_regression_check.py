@@ -86,6 +86,9 @@ UTILITY_PAGES = [
     "/printables/bean-conversion-card/",
     "/printables/sourdough-discard-grams-cheat-sheet/",
     "/printables/weekly-grocery-budget-planner/",
+    "/tools/recipe-finder/",
+    "/tools/shopping-list-builder/",
+    "/tools/grocery-trip-savings-calculator/",
 ]
 
 SM_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"

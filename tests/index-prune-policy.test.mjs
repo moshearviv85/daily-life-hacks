@@ -6,9 +6,12 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 import {
   INDEX_KEEP_PATHS,
+  INDEX_NOINDEX_TOOL_PATHS,
   INDEX_PRUNE_SLUGS,
   INDEX_PROTECTED_SLUGS,
+  NOINDEX_FOLLOW,
   isIndexPruned,
+  noindexFollowFor,
 } from "../src/content/index-prune.js";
 
 const ROOT = fileURLToPath(new URL("../", import.meta.url));
@@ -21,9 +24,24 @@ function read(relative) {
 test("prune set is 87 unique article slugs and never overlaps KEEP or protected URLs", () => {
   assert.equal(INDEX_PRUNE_SLUGS.size, 87);
   assert.equal(isIndexPruned("can-you-refreeze-frozen-vegetables-after-thawing"), false);
-  assert.equal(INDEX_KEEP_PATHS.size, 23);
+  assert.equal(INDEX_KEEP_PATHS.size, 20);
   assert.equal(INDEX_KEEP_PATHS.has("guides"), false);
   assert.equal(INDEX_KEEP_PATHS.has("research"), false);
+  assert.equal(INDEX_NOINDEX_TOOL_PATHS.size, 3);
+  assert.equal(NOINDEX_FOLLOW, "noindex, follow");
+  for (const path of [
+    "tools/recipe-finder",
+    "tools/shopping-list-builder",
+    "tools/grocery-trip-savings-calculator",
+  ]) {
+    assert.equal(INDEX_KEEP_PATHS.has(path), false, `${path} must leave the KEEP list`);
+    assert.equal(INDEX_NOINDEX_TOOL_PATHS.has(path), true, `${path} missing from noindex tools`);
+    assert.equal(noindexFollowFor(path), "noindex, follow");
+    assert.equal(noindexFollowFor(`/${path}/`), "noindex, follow");
+  }
+  assert.equal(INDEX_NOINDEX_TOOL_PATHS.has("tools/grocery-budget-calculator"), false);
+  assert.equal(noindexFollowFor("tools/grocery-budget-calculator"), undefined);
+  assert.equal(INDEX_KEEP_PATHS.has("tools/grocery-unit-price-calculator"), true);
   assert.equal(isIndexPruned("cheap-dinner-ideas-cost-per-serving"), true);
   assert.equal(isIndexPruned("fiber-per-dollar-cheapest-high-fiber-foods"), false);
   assert.equal(isIndexPruned("popcorn-vs-potato-chips-fiber-comparison"), false);
@@ -52,8 +70,12 @@ test("article layout and sitemap config share the prune set", () => {
     articlePage,
     /const robotsMeta = \(!released \|\| isVariant \|\| indexPruned\) \? "noindex, follow" : undefined/,
   );
-  assert.match(sitemapConfig, /import \{ INDEX_PRUNE_SLUGS \} from '\.\/src\/content\/index-prune\.js'/);
+  assert.match(
+    sitemapConfig,
+    /import \{ INDEX_NOINDEX_TOOL_PATHS, INDEX_PRUNE_SLUGS \} from '\.\/src\/content\/index-prune\.js'/,
+  );
   assert.match(sitemapConfig, /for \(const slug of INDEX_PRUNE_SLUGS\) \{\s*addPath\(slug\);/s);
+  assert.match(sitemapConfig, /for \(const path of INDEX_NOINDEX_TOOL_PATHS\) \{\s*addPath\(path\);/s);
   assert.match(related, /isReleased\(a\) && !isIndexPruned\(a\.id\)/);
   assert.doesNotMatch(articlePage, /robots="noindex, nofollow"/);
 });
@@ -61,8 +83,17 @@ test("article layout and sitemap config share the prune set", () => {
 test("sitemap serialize drops a prune slug and keeps the fiber-per-dollar flagship", () => {
   const pruneUrl = `${SITE}/cheap-dinner-ideas-cost-per-serving/`;
   const keepUrl = `${SITE}/fiber-per-dollar-cheapest-high-fiber-foods/`;
+  const droppedTools = [...INDEX_NOINDEX_TOOL_PATHS].map((path) => `${SITE}/${path}/`);
+  const budgetTool = `${SITE}/tools/grocery-budget-calculator/`;
   const payload = JSON.stringify({
-    urls: [pruneUrl, keepUrl, `${SITE}/`, ...[...INDEX_KEEP_PATHS].map((path) => `${SITE}/${path}/`)],
+    urls: [
+      pruneUrl,
+      keepUrl,
+      `${SITE}/`,
+      budgetTool,
+      ...droppedTools,
+      ...[...INDEX_KEEP_PATHS].map((path) => `${SITE}/${path}/`),
+    ],
   });
   const result = spawnSync(process.execPath, [join(ROOT, "scripts/seo_config_bridge.mjs")], {
     input: payload,
@@ -81,4 +112,8 @@ test("sitemap serialize drops a prune slug and keeps the fiber-per-dollar flagsh
     const url = `${SITE}/${path}/`;
     assert.equal(parsed.results[url].excluded, false, `KEEP URL excluded from sitemap: ${path}`);
   }
+  for (const url of droppedTools) {
+    assert.equal(parsed.results[url].excluded, true, `noindex tool stayed in sitemap rules: ${url}`);
+  }
+  assert.equal(parsed.results[budgetTool].excluded, false);
 });

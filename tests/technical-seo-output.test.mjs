@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import {
   INDEX_KEEP_PATHS,
   INDEX_PRUNE_SLUGS,
@@ -464,6 +465,52 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
   for (const flagship of flagships) {
     assert.ok(!robotsFor(`${SITE}/${flagship.slug}/`).includes("noindex"));
   }
+});
+
+test("three utility tools render noindex, follow and are absent from sitemap XML", () => {
+  const dropped = [
+    "/tools/recipe-finder/",
+    "/tools/shopping-list-builder/",
+    "/tools/grocery-trip-savings-calculator/",
+  ];
+  const sitemapFiles = readdirSync(DIST).filter((name) => /^sitemap-.*\.xml$/.test(name));
+  assert.ok(sitemapFiles.length > 0, "expected dist/sitemap-*.xml");
+  const sitemapXml = sitemapFiles.map((name) => readFileSync(new URL(name, DIST), "utf8")).join("\n");
+  const hub = readFileSync(distHtmlFor(`${SITE}/tools/`), "utf8");
+
+  for (const path of dropped) {
+    const url = `${SITE}${path}`;
+    assert.equal(sitemapXml.includes(url), false, `${path} leaked into sitemap-*.xml`);
+    assert.ok(existsSync(distHtmlFor(url)), `${path} must stay reachable`);
+    assert.equal(robotsFor(url), "noindex, follow", path);
+    assert.match(hub, new RegExp(`href="${path.replaceAll("/", "\\/")}"`), `${path} dropped from /tools/`);
+  }
+
+  const toolsDir = fileURLToPath(new URL("tools/", DIST));
+  const toolPages = [];
+  function walkTools(dir) {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const full = join(dir, entry.name);
+      if (entry.isDirectory()) walkTools(full);
+      else if (entry.name === "index.html") toolPages.push(full);
+    }
+  }
+  walkTools(toolsDir);
+  assert.ok(toolPages.length > dropped.length, "expected the rest of the tool pages in dist");
+
+  for (const file of toolPages) {
+    const relative = file.slice(toolsDir.length);
+    const path = `/tools/${relative.replace(/index\.html$/, "")}`;
+    if (dropped.includes(path)) continue;
+    const url = `${SITE}${path}`;
+    assert.equal(sitemapXml.includes(url), true, `${path} missing from sitemap-*.xml`);
+    const robots = robotsFor(url);
+    assert.match(robots, /(^|, )index(,|$)/, `${path} lost its index directive: ${robots}`);
+    assert.match(robots, /follow/, `${path} lost follow`);
+    assert.doesNotMatch(robots, /noindex/, `${path} was noindexed`);
+  }
+  assert.equal(robotsFor(`${SITE}/tools/grocery-budget-calculator/`).includes("noindex"), false);
+  assert.equal(sitemapXml.includes(`${SITE}/tools/grocery-budget-calculator/`), true);
 });
 
 test("dataset CSV landings and printables are noindex, follow, and absent from the sitemap", () => {
