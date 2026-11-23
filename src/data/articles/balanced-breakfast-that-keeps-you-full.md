@@ -8,6 +8,7 @@ tags:
 image: "/images/balanced-breakfast-that-keeps-you-full-main.jpg"
 imageAlt: "A balanced breakfast plate with eggs toast and avocado next to coffee"
 date: 2026-04-08
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -31,25 +32,23 @@ Eating something is usually better than eating nothing, but a breakfast built en
 
 ## The missing pieces
 
-When you eat just a bagel or a bowl of plain cereal, your body digests it incredibly fast. Your blood sugar spikes, you get a quick burst of energy, and then you crash. That crash is the hunger returning with a vengeance.
+When you eat just a bagel or a bowl of plain cereal, it disappears fast and the hunger is back before the meeting ends.
 
-To slow down that process, you need two things: protein and fat. 
-
-Protein takes longer to digest. It sends signals to your brain that you're satisfied. Fat slows down the emptying of your stomach, keeping you comfortably full for hours. Fiber helps too, acting like a sponge that slows everything down and keeps your digestion steady. You don't need to cut out the bagel. You just need to invite some friends to the party.
+Protein and fat slow that down. Higher-protein meals can increase fullness compared with lower-protein meals ([Leidy et al., 2015](https://pmc.ncbi.nlm.nih.gov/articles/PMC4258944/)). Fiber helps too. You don't need to cut out the bagel. You just need to invite some friends to the party.
 
 ## The simple morning formula
 
 Don't overcomplicate this. You don't need a spreadsheet to make breakfast. Just aim for three components: a carbohydrate, a protein, and a little bit of fat or fiber. 
 
-If you want toast, great. That's your carbohydrate. Now add eggs for protein, since [two of them carry about 12.6 grams](/foods-highest-in-protein-per-100-grams/), and maybe a slice of avocado or a drizzle of olive oil for fat. If you're curious what that combo actually adds up to, here's the macronutrient breakdown of a healthy egg sandwich with real numbers. 
+If you want toast, great. That's your carbohydrate. Now add eggs for protein, since two large eggs are about 100 grams and carry about 12.6 grams of protein at [12.56 grams per 100 grams](https://fdc.nal.usda.gov/food-details/171287/nutrients), and maybe a slice of avocado or a drizzle of olive oil for fat. If you're curious what that combo actually adds up to, here's the macronutrient breakdown of a healthy egg sandwich with real numbers. 
 
-If you want oatmeal, perfect. Oats bring the carbs and the fiber. Old-fashioned rolled oats return 35.8 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Stir in a spoonful of peanut butter for fat and some Greek yogurt or milk for protein. It's a simple plug and play system. You just look at your plate and ask yourself what's missing.
+If you want oatmeal, perfect. Oats bring the carbs and the fiber. Old-fashioned rolled oats have [10.1 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/173904/nutrients), and that record divided into the July 2026 canister price is 35.8 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Stir in a spoonful of peanut butter for fat and some Greek yogurt or milk for protein. It's a simple plug and play system. You just look at your plate and ask yourself what's missing.
 
 ## Realistic examples for normal mornings
 
 Nobody's making a three course meal on a Tuesday. Here are a few ways to use the formula when you're rushing out the door.
 
-**The yogurt bowl:** Plain or low sugar yogurt gives you protein, and if breakfast is where a chunk of your grocery money goes, it's worth seeing [how eggs and Greek yogurt compare on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). Eggs return 34.4 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), and plain nonfat Greek yogurt returns 27.5. Toss in a handful of berries for fiber and some walnuts for fat. It takes thirty seconds to assemble.
+**The yogurt bowl:** Plain or low sugar yogurt gives you protein, and if breakfast is where a chunk of your grocery money goes, it's worth seeing [how eggs and Greek yogurt compare on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). Eggs return 34.4 grams of protein per dollar from [12.56 grams per 100 grams](https://fdc.nal.usda.gov/food-details/171287/nutrients) in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), and plain nonfat Greek yogurt returns 27.5 from [10.19 grams per 100 grams](https://fdc.nal.usda.gov/food-details/170894/nutrients). Toss in a handful of berries for fiber and some walnuts for fat. It takes thirty seconds to assemble.
 
 **The upgraded smoothie:** A banana and almond milk won't hold you over. Add a scoop of cottage cheese or a handful of hemp seeds for protein, and a spoonful of almond butter for fat. Plain peanut butter does the same job for less, which is the short version of [how peanut butter and almonds compare on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). It blends up just as fast but works twice as hard.
 

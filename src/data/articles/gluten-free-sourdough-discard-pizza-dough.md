@@ -12,7 +12,7 @@ tags:
 image: "/images/gluten-free-sourdough-discard-pizza-dough-main.jpg"
 imageAlt: A slice of gluten-free sourdough pizza with tomato sauce, mozzarella, and basil is being lifted from the whole pizza.
 date: 2026-04-28
-dateModified: 2026-07-18
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
@@ -44,7 +44,7 @@ faq:
   - question: "Why is my gluten free pizza dough so sticky?"
     answer: "Gluten free dough lacks the elastic protein structure of wheat, so it relies on hydration and binders like xanthan gum. It will naturally feel more like a thick paste or batter than a traditional dough ball. Avoid adding too much extra flour, or you will end up with a dry, cracker-like crust instead of a chewy one."
   - question: "How do I store leftover sourdough discard pizza dough?"
-    answer: "You can store the raw dough in an airtight container in the refrigerator for up to 3 days. The flavor actually improves as it sits. Alternatively, par-bake the crust for 5 minutes, let it cool completely, and freeze it wrapped tightly in plastic wrap for up to a month for a quick future dinner."
+    answer: "You can store the raw dough in an airtight container in the refrigerator for up to 3 days, which matches the leftover window at 40°F or below ([cold storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts)). The flavor can get tangier as it sits. Par-bake the crust, cool it, and freeze it if you want it later. Freezer times on that chart are quality, and food held at 0°F can be kept indefinitely. A month is a quality guess, not a safety date."
   - question: "Do I need a sourdough starter that is active?"
     answer: "No, this recipe specifically uses discard, which is the portion you normally throw away during feedings. Because the discard may not have much leavening power left, we add a small amount of instant yeast to ensure the pizza crust rises properly and stays airy rather than becoming a dense brick."
 ---
@@ -54,7 +54,7 @@ This gluten free sourdough discard pizza dough is the best way to stop the waste
 
 ## Why use discard in gluten free pizza?
 
-Gluten free flour blends can sometimes taste a bit flat or dusty. The fermented discard adds a depth of flavor that mimics a slow-risen traditional dough. It also helps with the texture. Since we aren't dealing with gluten, we need every bit of structural help we can get, and the acidity in the discard may help the starches in your flour blend set more effectively.
+Gluten free flour blends can sometimes taste a bit flat or dusty. The fermented discard adds a depth of flavor that mimics a slow-risen traditional dough. It also helps with the texture. Since we aren't dealing with gluten, we need every bit of structural help we can get, and the tang is flavor. Sourdough often lands around pH 4.0 to 4.8 ([Lau et al., 2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC8306212/)), and that acidity isn't an established clinical benefit ([D'Amico et al., 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC10399781/)).
 
 Most people think sourdough means waiting all day. By adding a little instant yeast to this gluten free sourdough discard pizza dough, we get the flavor of the old starter with the speed of a standard weeknight meal. It is the ultimate shortcut for people who have better things to do than watch dough not rise. It's the same idea behind my [same-day sourdough pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/), just adapted for GF flours.
 

@@ -12,6 +12,7 @@ tags:
 image: "/images/sourdough-discard-crackers-main.jpg"
 imageAlt: "Thin golden-brown sourdough discard crackers broken into small squares on parchment, with a glass jar of discard behind them."
 date: 2026-11-23
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -47,7 +48,7 @@ faq:
   - question: "Can you make sourdough discard crackers without a rolling pin?"
     answer: "Yes, but that's a different recipe. The no-roll sheet on the beginner discard page mixes 227 grams of discard with 57 grams of melted butter and salt, then spreads it on a pan. No flour in the dough. It bakes at 325F for about 65 minutes plus cooling. This page is the rolled dough, with 120 grams of flour, because a cracker you can stack is a different texture than a sheet you break apart."
   - question: "How long do sourdough discard crackers keep?"
-    answer: "King Arthur says to store them well wrapped at room temperature for up to a week, and to freeze them for longer. Cool them completely first. A warm cracker in a closed tin steams itself soft, which is a sad way to waste an hour. If they bend the next day, the center wasn't dry. A few minutes back in a 350F oven fixes a stale sheet better than a lecture."
+    answer: "Cool them completely, then keep them covered. [FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app) doesn't publish a homemade sourdough cracker line, so a week on the counter is a baker's quality guess, not a safety date. Freeze what you won't finish. [Food held at 0°F can be kept indefinitely](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts), and freezer times are quality. If they bend the next day, the center wasn't dry. A few minutes back in a 350F oven fixes a stale sheet better than a lecture."
   - question: "Why did my sourdough discard crackers turn out chewy?"
     answer: "The dough was too thick, or it came out before the middle dried. Edges brown first. Break one from the center. If it bends, keep baking and pull the done edges off the sheet if they're getting dark. An uneven roll gives you both problems on one pan. Next time, aim for 1/16 inch and don't skip the chill. Soft dough fights the pin and springs back thick."
   - question: "Is 120 grams of flour the same as King Arthur's cracker recipe?"
@@ -94,7 +95,7 @@ Everything-bagel seasoning is a poor fit for a long bake. It burns. Save it for 
 
 ## When the tin should close
 
-Cool them all the way. Then a tin or a jar, at room temperature, for up to a week. King Arthur says freeze what you won't finish. I freeze half, because an open tin on the counter is a suggestion, not a storage plan.
+Cool them all the way. Then a tin or a jar. [FoodKeeper](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app) doesn't give homemade crackers a week, so don't treat that as a federal date. Freeze what you won't finish. [Food at 0°F can be kept indefinitely](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts). I freeze half, because an open tin on the counter is a suggestion, not a storage plan.
 
 A bendy center means more oven, not a different recipe. Spread the done edges off the sheet and put the middle back in. Next time, roll more evenly.
 

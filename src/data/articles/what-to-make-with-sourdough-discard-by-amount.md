@@ -12,6 +12,7 @@ tags:
 image: "/images/what-to-make-with-sourdough-discard-by-amount-main.jpg"
 imageAlt: A jar of bubbly beige sourdough discard on a digital kitchen scale, with three glass bowls holding small, medium, and larger pools of the same batter.
 date: 2026-10-04
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:
@@ -88,4 +89,4 @@ If the recipe is asking the starter itself to lift a loaf, you're in a different
 
 Grams don't fix a jar you shouldn't bake with. Discard from a starter that isn't established yet doesn't belong in any row of this table. [When a new starter's discard is usable](/can-you-use-sourdough-discard-from-a-new-starter/) is a rise test, not a day on the calendar.
 
-A heavy jar that's been sitting unlabeled is the other miss. [How long discard lasts in the fridge](/how-long-does-sourdough-discard-last/), and when to freeze it, is the clock for the collection date. Mold, pink or orange streaks, or a rotten smell end the plan no matter what the scale says.
+A heavy jar that's been sitting unlabeled is the other miss. [How long discard lasts in the fridge](/how-long-does-sourdough-discard-last/), and when to freeze it, is the clock for the collection date. [FoodKeeper doesn't list sourdough discard](https://www.foodsafety.gov/keep-food-safe/foodkeeper-app). Mold, pink or orange streaks, or a rotten smell end the plan no matter what the scale says. Keep the jar at [40°F or below](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts).

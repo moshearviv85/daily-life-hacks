@@ -13,6 +13,7 @@ tags:
 image: /images/gut-friendly-high-fiber-smoothies-for-daily-wellness-main.jpg
 imageAlt: Blender jar with purple berry smoothie and fresh fruit nearby
 date: 2026-03-30
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -50,7 +51,7 @@ Start with liquid you like: milk, fortified soy milk, or water if you want it li
 
 Add frozen fruit for texture. Add a handful of greens if you want nutrients without a strong flavor.
 
-Add oats or chia for fiber. If you hate chia texture, grind chia in a spice grinder first or use ground flax.
+Add oats or chia for fiber. Rolled oats have [10.1 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/173904/nutrients), and dried chia has [34.4 grams per 100 grams](https://fdc.nal.usda.gov/food-details/170554/nutrients), about 4 grams in a 12 gram spoon. If you hate chia texture, grind chia in a spice grinder first or use ground flax.
 
 Add protein if you need the smoothie to carry you to lunch. Greek yogurt, silken tofu, or a spoon of peanut butter all work, depending on your goals and tolerance. Greek yogurt is the easy default, though [eggs and Greek yogurt sit in very different places on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) if the grocery bill is part of the decision.
 ## Two Blends Worth Repeating
@@ -60,14 +61,13 @@ Add protein if you need the smoothie to carry you to lunch. Greek yogurt, silken
 **Green mango:** frozen mango, spinach, chia soaked for five minutes, lime juice, water. This one tastes brighter than it looks.
 ## The Gas Conversation, Without Drama
 
-If you are new to more fiber, jumping straight to huge smoothies can feel loud in your gut. Start with smaller portions, drink water through the day, and add fiber gradually.
+If you're new to more fiber, jumping straight to huge smoothies can feel loud in your gut. Gut bacteria ferment that extra fiber, which is where the gas comes from ([Eswaran, Muir, and Chey, 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3705355/)). The [fiber Daily Value is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). Start with smaller portions, drink water through the day, and add fiber gradually.
 
 That is not scare talk. It is the difference between a habit that sticks and a habit that ends with you avoiding beans forever.
 ## Sweetness Without A Sugar Bomb
 
 Fruit already brings sweetness. If you still want more, try cinnamon or vanilla first before you pour in extra syrup.
 
-If you are watching blood sugar for medical reasons, talk with your clinician about what portions make sense for you. General tips here are for typical healthy adults, not a replacement for personal guidance.
 ## Reduced-Calorie and Lower-Sugar Versions (Without Killing the Taste)
 
 If you want a lighter smoothie, the fix is usually not “more willpower.” It is ingredient ratios.

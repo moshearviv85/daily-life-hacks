@@ -16,13 +16,13 @@ faq:
   - question: "How do I start meal prepping for the first time?"
     answer: "Start with one base and one protein, not a full week of food. Cook a pot of rice and a tray of chicken or meatballs on Sunday, portion them into containers, and see how the week goes. Once that feels easy, add a second base, a second protein, and two sauces. The biggest beginner mistake is prepping seven full meals before you know what you actually enjoy eating on a Wednesday."
   - question: "How long does meal prep last in the fridge?"
-    answer: "Cooked food is generally safe for 3 to 4 days in a fridge kept at 40 degrees F or below, which lines up with USDA guidance on leftovers. That covers cooked grains, cooked beans, roasted vegetables, and cooked meats. Hard-boiled eggs in the shell can go up to a week. If you want food for Friday, freeze a portion on Sunday instead of stretching the fridge timeline."
+    answer: "Cooked leftovers keep 3 to 4 days in a fridge at 40°F or below, and hard-boiled eggs in the shell keep up to 1 week ([cold storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts)). The chart doesn't give cooked rice its own longer fridge line. If you want food for Friday, freeze a portion on Sunday instead of stretching the timeline."
   - question: "Is meal prepping actually cheaper?"
     answer: "It often can be, especially when it replaces purchased lunches and uses lower-cost staples such as dried beans and rice. It isn't automatic. The savings disappear if you prep food you don't eat, which is why comparing the complete cost per serving matters more than buying a stack of matching containers."
   - question: "Do I have to meal prep on Sunday?"
     answer: "No. Sunday is popular because it front-loads the work week, but the system works on any day you reliably have 90 minutes. Some people split it: grains and sauces on Sunday, proteins on Wednesday. That midweek session also resets your fridge clock, so everything you eat Thursday and Friday was cooked within the safe 3 to 4 day window."
   - question: "Can you freeze meal prep instead of refrigerating it?"
-    answer: "Absolutely, and for anything past day four you should. Cooked grains, beans, meatballs, and most assembled meals freeze well in airtight containers. Frozen food stays safe indefinitely at 0 degrees F, though quality is best within about 2 to 3 months. Thaw overnight in the fridge, not on the counter."
+    answer: "For anything past the 3 to 4 day fridge window, yes. Frozen food stays safe indefinitely at 0°F, and the month counts are quality ([cold storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts)). Cooked meat or poultry is 2 to 6 months for quality. Soups and stews are 2 to 3 months. Thaw in the fridge, not on the counter ([freezing guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety))."
 ---
 
 The best meal prep system for beginners is two bases, two proteins, and two sauces cooked in about 90 minutes, giving you eight possible meal combinations instead of five identical lunches.
@@ -117,23 +117,23 @@ This is where the money goes, so pick proteins that are cheap, reheat well, and 
 The stuff between meals sinks more food budgets than the meals do. A vending machine run at 3 PM isn't a willpower failure, it's a prep failure.
 
 * **The snack drawer:** Set up a grab-and-go fridge snack drawer during the last fifteen minutes of your Sunday session. Washed fruit, cut vegetables, cheese, hard-boiled eggs. Eye level, front of the fridge.
-* **Breakfast:** Mornings are chaos, so prep them too. These make-ahead breakfasts without eggs survive four days in the fridge and thirty seconds of your attention.
+* **Breakfast:** Mornings are chaos, so prep them too. Cooked breakfasts follow the same [3 to 4 day fridge window](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts), then they need thirty seconds of your attention.
 * **The freezer backstop:** Some Sundays don't happen. Life. A stash of [freezer-friendly picks](#freezer-friendly-picks) is the insurance policy that keeps one skipped session from becoming a takeout week. Track that stash with the [simple freezer inventory system](/freezer-inventory-simple-system/), or it eventually becomes an archaeological site.
 
 ## How long does meal prep last in the fridge?
 
 Two things kill a week of prep: food that goes bad and food that goes boring. Both are solvable.
 
-On safety, the numbers are simple and worth taking seriously. Cooked food keeps 3 to 4 days in a fridge at 40 degrees F or below, per USDA guidance. That means a Sunday session covers you through Wednesday or Thursday. Anything meant for Friday should go in the freezer on Sunday and come down to the fridge Thursday night. Don't negotiate with the timeline; freeze instead.
+On safety, the numbers are simple and worth taking seriously. Cooked leftovers keep [3 to 4 days in a fridge at 40°F or below](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts). That means a Sunday session covers you through Wednesday or Thursday. Anything meant for Friday should go in the freezer on Sunday and come down to the fridge Thursday night. Don't negotiate with the timeline; freeze instead.
 
-| Component | Fridge (40 F or below) | Freezer (0 F) |
+| Component | Fridge (40°F or below) | Freezer (0°F) |
 |---|---|---|
-| Cooked grains and beans | 3 to 4 days | Safe indefinitely; best quality within 2 to 3 months |
-| Cooked meats (meatballs, shredded chicken) | 3 to 4 days | Safe indefinitely; best quality within 2 to 3 months |
-| Hard-boiled eggs, in the shell | Up to 1 week | - |
-| Assembled meals | 3 to 4 days | Safe indefinitely; best quality within 2 to 3 months |
+| Cooked meat or poultry | 3 to 4 days | Safe indefinitely; quality 2 to 6 months |
+| Soups and stews | 3 to 4 days | Safe indefinitely; quality 2 to 3 months |
+| Hard-boiled eggs, in the shell | Up to 1 week | Do not freeze |
+| Cooked grains and beans | 3 to 4 days | The chart has no separate rice row |
 
-*Storage windows per USDA food safety guidance for leftovers and frozen food.*
+Those rows are the [cold storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts). Freezer months are quality. Food held at 0°F can be kept indefinitely. Cooked plain rice and beans don't get their own freezer month on that chart, so this page won't invent one.
 
 On quality, most "meal prep tastes bad" complaints are really storage mistakes:
 
@@ -149,13 +149,13 @@ Some Sundays don't happen. The backup is a short list of meals that freeze flat,
 
 ### Dump bags you can freeze raw
 
-A dump bag is raw chicken or beans, a sauce, and a vegetable, sealed flat. You do no active cooking on prep day. Thaw raw meat bags in the refrigerator before they hit a slow cooker or a skillet. A slow cooker heats too gradually for a solid block of frozen meat.
+A dump bag is raw chicken or beans, a sauce, and a vegetable, sealed flat. You do no active cooking on prep day. [Thaw meat or poultry before it goes in a slow cooker](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/slow-cookers-and-food-safety), in the refrigerator, not on the counter. A slow cooker heats too gradually for a solid block of frozen meat.
 
-**Teriyaki chicken.** Chop 1.5 pounds of chicken breast or thighs into large chunks. Bag them with 1/2 cup low-sodium soy sauce, 1/4 cup brown sugar, 2 tablespoons minced garlic, 1 tablespoon sesame oil, and a bag of frozen broccoli. Squeeze the air out and freeze the bag flat. Thaw overnight in the refrigerator, then cook until the thickest piece hits 165 degrees F. Serve over rice.
+**Teriyaki chicken.** Chop 1.5 pounds of chicken breast or thighs into large chunks. Bag them with 1/2 cup low-sodium soy sauce, 1/4 cup brown sugar, 2 tablespoons minced garlic, 1 tablespoon sesame oil, and a bag of frozen broccoli. Squeeze the air out and freeze the bag flat. Thaw overnight in the refrigerator, then cook until the thickest piece hits [165°F](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart). Serve over rice.
 
 **Vegetarian chili.** One can of rinsed black beans, one can of rinsed kidney beans, a bag of frozen corn, one diced red pepper, and a 28-ounce can of crushed tomatoes. Add 2 tablespoons chili powder, 1 tablespoon cumin, and a pinch of salt. Seal it flat. Thaw overnight, then simmer 20 to 30 minutes until thick.
 
-**Fajita chicken.** Thin strips of raw chicken, two sliced bell peppers, one sliced onion, 3 tablespoons olive oil, 1 tablespoon cumin, 1 tablespoon smoked paprika, and a squeeze of lime. Massage the bag so the oil coats everything. Thaw overnight, drain the extra liquid, and cook in a hot skillet until the chicken hits 165 degrees F.
+**Fajita chicken.** Thin strips of raw chicken, two sliced bell peppers, one sliced onion, 3 tablespoons olive oil, 1 tablespoon cumin, 1 tablespoon smoked paprika, and a squeeze of lime. Massage the bag so the oil coats everything. Thaw overnight, drain the extra liquid, and cook in a hot skillet until the chicken hits [165°F](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart).
 
 ### Cooked meals that freeze in useful pieces
 
@@ -165,13 +165,13 @@ Chili, soup, and meatballs are the cooked picks. These [turkey meatballs for mea
 
 Write the meal name, the freeze date, how to thaw it, and the final safe temperature on the empty bag. Writing on a full, cold bag turns "teriyaki chicken" into a blue smear. Freeze bags flat on a sheet pan, then stand them up once they're solid. Keep raw meat kits on a lower shelf or in a bin so a torn bag can't leak onto bread.
 
-Move tomorrow's bag to a tray in the refrigerator the night before. If it's still icy at dinner, use the microwave defrost setting only when you'll cook the food immediately. Don't thaw raw meat on the counter. Cook chicken to 165 degrees F in the thickest piece, and check more than one piece in a slow cooker. The time changes with the appliance and how cold the bag still is. A thermometer beats pretending every slow cooker shares a brain.
+Move tomorrow's bag to a tray in the refrigerator the night before. If it's still icy at dinner, use the microwave defrost setting only when you'll cook the food immediately. [Don't thaw raw meat on the counter](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety). Cook chicken to [165°F](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart) in the thickest piece, and check more than one piece in a slow cooker. The time changes with the appliance and how cold the bag still is. A thermometer beats pretending every slow cooker shares a brain.
 
 If the freezer is already a pile of anonymous packages, use the [simple freezer inventory system](/freezer-inventory-simple-system/) before you add more. The meal only saves time if you can find it.
 
 ## Is meal prep actually cheaper?
 
-Meal prep gets sold as a health habit, but honestly, the money argument might be stronger. Take two ingredients in this guide at the prices from our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/): chicken drumsticks run $1.09 per pound in the 5 pound bag ($5.46), and dried pinto beans cost about 37 cents per 100 grams ($6.75 for the 4 lb bag at the July 2026 BLS dried-bean average). Those two Sunday packages are $12.21. That doesn't prove every packed lunch is cheaper. Sauces, produce, cooking losses, and food you don't eat still count, which is why the complete cost per serving matters more than one exciting line on a receipt.
+Meal prep gets sold as a health habit, but honestly, the money argument might be stronger. Take two ingredients in this guide at the prices from our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/): chicken drumsticks run $1.09 per pound in the 5 pound bag ($5.46) at [18.08 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/172373/nutrients), and dried pinto beans cost about 37 cents per 100 grams ($6.75 for the 4 lb bag at the July 2026 BLS dried-bean average) at [21.42 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/175199/nutrients). Those two Sunday packages are $12.21. That doesn't prove every packed lunch is cheaper. Sauces, produce, cooking losses, and food you don't eat still count, which is why the complete cost per serving matters more than one exciting line on a receipt.
 
 Those grocery figures use the source-and-price process documented on our [methodology page](/methodology/). Prices move, package sizes get weird, and the shelf label occasionally seems designed by a person who dislikes division. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles that comparison with the price in front of you.
 

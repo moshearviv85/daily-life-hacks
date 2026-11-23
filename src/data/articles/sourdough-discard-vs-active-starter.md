@@ -12,6 +12,7 @@ tags:
 image: "/images/sourdough-discard-vs-active-starter-main.jpg"
 imageAlt: Two glass jars on a wooden counter. The left jar holds flatter sourdough discard with a layer of liquid on top. The right jar holds a bubbly starter risen into a dome.
 date: 2026-10-04
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:
@@ -42,7 +43,7 @@ Ripe, on their [create guide](https://www.kingarthurbaking.com/learn/guides/sour
 | | Discard, unfed | Active, ripe starter |
 |---|---|---|
 | When it was fed | Removed before the feeding. King Arthur. | Fed, then doubled and very bubbly within 6 to 8 hours. King Arthur. |
-| Acidity and body | More acidic once it sits unfed, and thinner after it collapses. Pantry Mama and sourdoughstarter.com. | Sharply sour but clean when it's healthy. King Arthur. A neglected jar isn't this column. |
+| Acidity and body | More acidic once it sits unfed. Sourdough pH often lands around 4.0 to 4.8 ([Lau et al., 2021](https://pmc.ncbi.nlm.nih.gov/articles/PMC8306212/)). Clinical health benefits of that acidity aren't established ([D'Amico et al., 2023](https://pmc.ncbi.nlm.nih.gov/articles/PMC10399781/)). | Sharply sour but clean when it's healthy. King Arthur. A neglected jar isn't this column. |
 | Lift | Adds flavor, doesn't do much leavening. King Arthur. Usually not enough to fully leaven bread alone. Nordic Ware. | What King Arthur uses to raise bread without manufactured yeast. |
 | Best fit on this site | Pancakes with baking soda, crackers, baking-powder pizza crust. | A recipe that asks the starter to raise the dough. The same-day pizza here adds instant yeast instead. |
 

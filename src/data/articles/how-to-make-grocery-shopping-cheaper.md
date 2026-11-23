@@ -11,7 +11,7 @@ tags:
 image: /images/how-to-make-grocery-shopping-cheaper-main.jpg
 imageAlt: Shopper checking a grocery total on a phone while sitting in a cart aisle
 date: 2026-01-25
-dateModified: 2026-07-12
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -45,11 +45,11 @@ faq:
     meatless meals into your week or buying cheaper cuts that do well in slow cookers.
 ---
 
-Walking into a grocery store right now feels a bit like walking into a trap. You go in needing milk, eggs, and bread, and somehow you leave with a receipt for $140 and a bag of artisan sea salt caramel chips you did not need.
+Walking into a grocery store right now feels a bit like walking into a trap. You go in needing milk, eggs, and bread, and somehow you leave with a receipt you didn't plan and a bag of artisan sea salt caramel chips you did not need.
 
 Grocery stores are not designed for your convenience. They're psychological obstacle courses built to make you spend. The layout, the lighting, even the music are calibrated to slow you down and nudge your hand toward the endcap.
 
-If you're tired of staring at your bank statement every week, you have to change your approach. Figuring out how to make grocery shopping cheaper isn't about extreme couponing or driving to four different stores to save twelve cents on a can of soup. We ran the gas-and-miles math on the cheaper-store detour, because a bargain stops being a bargain when the round trip eats it. The rest is about outsmarting the store's design, buying the foods that actually deliver nutrition per dollar, and stopping the waste that quietly eats your budget after you get home.
+If you're tired of staring at your bank statement every week, you have to change your approach. Figuring out how to make grocery shopping cheaper isn't about extreme couponing or driving to four different stores for a few cents on a can of soup. We ran the gas-and-miles math on the cheaper-store detour, because a bargain stops being a bargain when the round trip eats it. The rest is about outsmarting the store's design, buying the foods that actually deliver nutrition per dollar, and stopping the waste that quietly eats your budget after you get home.
 
 For the bigger picture of building a cart that feeds you without draining the account, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) walks through the full system. If you want a yardstick for whether your total is actually high, [what the government says a cheap healthy week costs](/usda-thrifty-food-plan-weekly-cost/) is the benchmark most people have never seen. This article is the aisle-level playbook: what to do before you leave the house, what to ignore once you're inside, and which habits actually move the total.
 
@@ -86,11 +86,11 @@ Supermarkets charge massive premiums to food brands for eye-level placement. The
 
 When you need oats, pasta, or canned tomatoes, force yourself to look at the bottom shelf or the top shelf. That's where they hide the store-brand items. The ingredients are often nearly identical to the expensive brand at eye level. They're cheaper because they don't fund a Super Bowl ad.
 
-Store brands aren't a personality trait. They're usually the same factory with different ink on the label. Start with dry goods and canned goods, which is where the gap gets silly: [dry pinto beans buy 57.6 grams of protein per dollar](/protein-per-dollar-cheapest-protein-sources/) from a $6.75 four pound bag in our July 2026 sample, and the branded snack aisle isn't close. If you hate a specific store-brand item, swap that one back. Don't pay brand tax on every aisle as a default.
+Store brands aren't a personality trait. They're usually the same factory with different ink on the label. Start with dry goods and canned goods, which is where the gap gets silly: dry pinto beans buy 57.6 grams of protein per dollar from [21.42 grams per 100 grams](https://fdc.nal.usda.gov/food-details/175199/nutrients) and a $6.75 four pound bag in our July 2026 sample, which is the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). The branded snack aisle isn't close. [USDA still puts food waste at 30 to 40 percent of the supply](https://www.usda.gov/about-food/food-safety/food-loss-and-waste/food-waste-faqs), so the second jar you didn't need is its own tax. If you hate a specific store-brand item, swap that one back. Don't pay brand tax on every aisle as a default.
 
 ## Use the cost-per-ounce sticker like a grown-up
 
-Never trust the large, bold price tag alone. A massive box of cereal might be on "sale" for $5.00 while a smaller box is $3.50. Your brain grabs the bigger one and calls it a win.
+Never trust the large, bold price tag alone. A massive box on sale can still cost more per ounce than the smaller box next to it. Your brain grabs the bigger one and calls it a win.
 
 Always look at the tiny unit-price sticker on the shelf edge. Cost per ounce, cost per pound, cost per 100 grams. That number strips away the marketing and tells you how much actual food you're getting.
 
@@ -128,7 +128,7 @@ Also try one or two meatless meals a week that still feel substantial. Beans and
 
 Seasonal produce is usually cheaper and tastes better. Strawberries in January are a tax on nostalgia. Frozen fruit and vegetables are not a downgrade. They're often picked at peak ripeness and priced like they're still humble.
 
-Weekly store flyers are useful if you plan meals around what's already discounted, not if you invent six new recipes just because ground beef is $0.40 cheaper. Flip the flyer after you know your meal skeleton. Let the deals fill gaps. Don't let them rewrite the whole week.
+Weekly store flyers are useful if you plan meals around what's already discounted, not if you invent six new recipes just because ground beef is a little cheaper this week. Flip the flyer after you know your meal skeleton. Let the deals fill gaps. Don't let them rewrite the whole week.
 
 ## Do an "eat the pantry" week once a month
 

@@ -8,22 +8,24 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/beans-double-win-fiber-protein-main.jpg"
 imageAlt: "A steaming bowl of simmered pinto beans surrounded by small bowls of black beans, lentils, and chickpeas"
 date: 2026-07-13
-dateModified: 2026-09-24
+dateModified: 2026-11-23
 author: "David Miller"
 faq:
   - question: "Which bean has the most protein and fiber per dollar?"
-    answer: "Dry green split peas, at 73.9 grams of protein plus 71.0 grams of fiber per dollar, 144.9 grams combined, from a $1.42 sixteen ounce bag priced in July 2026. Brown lentils came second at 111.4 combined grams, and dry navy beans third at 101.0. Dry pinto beans landed at 99.3, from 57.6 grams of protein and 41.7 grams of fiber on a $6.75 four pound bag."
+    answer: "Dry green split peas, at 73.9 grams of protein plus 71.0 grams of fiber per dollar, 144.9 grams combined, from a $1.42 sixteen ounce bag priced in July 2026 ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients)). Brown lentils came second at 111.4 combined grams, and dry navy beans third at 101.0 ([FDC 173745](https://fdc.nal.usda.gov/food-details/173745/nutrients)). Dry pinto beans landed at 99.3, from 57.6 grams of protein and 41.7 grams of fiber on a $6.75 four pound bag ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients))."
   - question: "Are dried beans cheaper than canned beans?"
-    answer: "Cheaper per gram of protein. Dry pinto beans delivered 57.6 grams of protein per dollar, while canned black beans, the best canned option we scored, delivered 30.1. That's about 1.9 times the protein for the bag that asks you to soak."
+    answer: "Cheaper per gram of protein. Dry pinto beans delivered 57.6 grams of protein per dollar, while canned black beans, the best canned option we scored, delivered 30.1 ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients), [FDC 175188](https://fdc.nal.usda.gov/food-details/175188/nutrients)). That's about 1.9 times the protein for the bag that asks you to soak."
   - question: "What legume has the most fiber per dollar?"
-    answer: "In this group, green split peas at 71.0 grams of fiber per dollar. Dry pinto beans follow at 41.7, then dry black beans at 41.6. The split peas come from a $1.42 sixteen ounce bag and the pintos from a $6.75 four pound bag, both July 2026 prices."
+    answer: "In this group, green split peas at 71.0 grams of fiber per dollar ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients)). Dry pinto beans follow at 41.7, then dry black beans at 41.6 ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients), [FDC 173734](https://fdc.nal.usda.gov/food-details/173734/nutrients)). The split peas come from a $1.42 sixteen ounce bag and the pintos from a $6.75 four pound bag, both July 2026 prices."
   - question: "Are lentils as good a value as beans?"
-    answer: "On the combined score, brown lentils beat the true beans in this snapshot. They scored 77.7 grams of protein and 33.7 grams of fiber per dollar, 111.4 combined, second only to split peas. Red lentils landed at 81.3 combined. Lentils may still earn the spot in your rotation for speed, since they cook without soaking."
+    answer: "On the combined score, brown lentils beat the true beans in this snapshot. They scored 77.7 grams of protein and 33.7 grams of fiber per dollar, 111.4 combined, second only to split peas. Red lentils landed at 81.3 combined ([FDC 174284](https://fdc.nal.usda.gov/food-details/174284/nutrients)). Lentils may still earn the spot in your rotation for speed, since they cook without soaking."
   - question: "How much fiber does a dollar of beans buy?"
-    answer: "One dollar of dry pinto beans buys 41.7 grams of fiber, about one and a half times the FDA's 28 gram Daily Value. One dollar of green split peas buys 71.0 grams, about two and a half times that benchmark. The Daily Value is a labeling benchmark rather than a personal target."
+    answer: "One dollar of dry pinto beans buys 41.7 grams of fiber, about one and a half times the FDA's 28 gram Daily Value ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients), [FDA Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels)). One dollar of green split peas buys 71.0 grams, about two and a half times that benchmark ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients)). The Daily Value is a labeling benchmark rather than a personal target."
 ---
 
-Dry green split peas buy you 73.9 grams of protein and 71.0 grams of fiber for every dollar, a combined 144.9 grams. Dry pinto beans, the bag this ranking used to hand the trophy to, land at 57.6 grams of protein and 41.7 grams of fiber, 99.3 combined, from a $6.75 four pound bag. In this ten-food lineup, the peas take it.
+The per-dollar figure divides the FoodData Central protein or fiber per 100 grams by the July 2026 package price. The link is that nutrient record, not a price the lab published.
+
+Dry green split peas buy you 73.9 grams of protein and 71.0 grams of fiber for every dollar, a combined 144.9 grams ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients)). Dry pinto beans, the bag this ranking used to hand the trophy to, land at 57.6 grams of protein and 41.7 grams of fiber, 99.3 combined, from a $6.75 four pound bag ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients)). In this ten-food lineup, the peas take it.
 
 Here's where this came from. We ran two separate grocery studies, one ranking foods by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and one by [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/), and the dry goods aisle ran away with both. So this piece crosses the two datasets and scores 10 beans and lentils on the combined number: total grams of protein and fiber per dollar, added together. Simple math, slightly rude results.
 
@@ -40,7 +42,7 @@ Here's where this came from. We ran two separate grocery studies, one ranking fo
 | Canned kidney beans | 23.4 g | 19.3 g | 42.7 g | 15.5 oz can, $0.98 |
 | Canned chickpeas | 22.0 g | 19.7 g | 41.7 g | 15.5 oz can, $0.98 |
 
-Source: USDA FoodData Central + single-store and BLS prices, July 2026. Full methodology at [/methodology/](/methodology/).
+Source: [USDA FoodData Central](https://fdc.nal.usda.gov/) + single-store and BLS prices, July 2026. Full methodology at [/methodology/](/methodology/).
 
 ![Bar chart of beans and lentils ranked by combined protein and fiber grams per dollar](/images/beans-double-win-fiber-protein-chart.jpg)
 
@@ -56,9 +58,9 @@ Black beans take fourth at 99.6 combined grams per dollar, a hair ahead of the p
 
 ## Why do dry beans still beat the can?
 
-Dry pinto beans: 57.6 grams of protein per dollar. Canned black beans, the best can we scored: 30.1. The bag buys about 1.9 times the protein per dollar. You're paying for someone else to add water.
+Dry pinto beans: 57.6 grams of protein per dollar ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients)). Canned black beans, the best can we scored: 30.1 ([FDC 175188](https://fdc.nal.usda.gov/food-details/175188/nutrients)). The bag buys about 1.9 times the protein per dollar. You're paying for someone else to add water.
 
-Same story inside a single food. Dry chickpeas score 56.7 grams of protein per dollar; canned chickpeas score 22.0. That's over two and a half times the value for the version that asks you to plan ahead by one evening, and we ran that matchup bean by bean in [what the convenience of the can actually costs](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving), where every dry bag beat every can.
+Same story inside a single food. Dry chickpeas score 56.7 grams of protein per dollar; canned chickpeas score 22.0 ([FDC 173756](https://fdc.nal.usda.gov/food-details/173756/nutrients)). That's over two and a half times the value for the version that asks you to plan ahead by one evening, and we ran that matchup bean by bean in [what the convenience of the can actually costs](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving), where every dry bag beat every can.
 
 I'm not going to pretend cans are a mistake. A canned bean at 30.1 grams of protein per dollar is still a solid buy, [one can carries about 26.5 grams of protein](/canned-beans-vs-dried-beans-nutrition/), and some nights the can opener is the only kitchen skill you have left. Keep a few on the shelf. Just don't let them be the whole strategy when a $1.42 bag of split peas is doing 144.9 combined grams per dollar and a $6.75 bag of pintos is doing 99.3.
 
@@ -66,7 +68,7 @@ I'm not going to pretend cans are a mistake. A canned bean at 30.1 grams of prot
 
 Buy the split peas for the math, but cook whatever you'll actually eat, because a bag that sits in the pantry scores zero.
 
-Brown lentils are the gateway. No soaking, quick cooking, and at 111.4 combined grams per dollar they're second on this list and still well ahead of anything canned. Red lentils dissolve into sauces, which is why [a red lentil curry](/lentil-curry-high-fiber-vegan-dinner/) tastes rich without you doing anything fancy, and at 81.3 combined grams per dollar the indulgence is imaginary.
+Brown lentils are the gateway. No soaking, quick cooking, and at 111.4 combined grams per dollar they're second on this list and still well ahead of anything canned. Red lentils dissolve into sauces, which is why [a red lentil curry](/lentil-curry-high-fiber-vegan-dinner/) tastes rich without you doing anything fancy, and at 81.3 combined grams per dollar the indulgence is imaginary ([FDC 174284](https://fdc.nal.usda.gov/food-details/174284/nutrients)).
 
 Chickpeas are the snack play. At 90.5 combined grams per dollar from a $1.64 bag, roasted chickpeas are what I hand people who say they hate beans. Crunchy, salty, gone by Wednesday.
 
@@ -74,7 +76,7 @@ Chickpeas are the snack play. At 90.5 combined grams per dollar from a $1.64 bag
 
 Nutrient values come from USDA FoodData Central. Prices are July 2026 US figures: BLS average prices where a dried-bean series exists, and audited Walmart listings where it doesn't. The combined score is just protein grams per dollar plus fiber grams per dollar. No weighting, no adjustments, one addition problem.
 
-For scale: the FDA's Daily Values are 28 grams of fiber and 50 grams of protein. One dollar of dry pintos buys 41.7 grams of fiber, about one and a half times that fiber benchmark, and 57.6 grams of protein, a bit more than one labeling day. One dollar of split peas buys 71.0 grams of fiber, about two and a half times the fiber benchmark. Those DVs are label math, not personal targets, but they make the point. It's the same single-dollar lens we used on [the 15 cheapest fiber foods in the store](/fiber-per-dollar-cheapest-high-fiber-foods/#what-1-buys).
+For scale: the FDA's Daily Values are 28 grams of fiber and 50 grams of protein ([FDA Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), [FDA Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels)). One dollar of dry pintos buys 41.7 grams of fiber, about one and a half times that fiber benchmark, and 57.6 grams of protein, a bit more than one labeling day ([FDC 175199](https://fdc.nal.usda.gov/food-details/175199/nutrients)). One dollar of split peas buys 71.0 grams of fiber, about two and a half times the fiber benchmark ([FDC 172428](https://fdc.nal.usda.gov/food-details/172428/nutrients)). Those DVs are label math, not personal targets, but they make the point. It's the same single-dollar lens we used on [the 15 cheapest fiber foods in the store](/fiber-per-dollar-cheapest-high-fiber-foods/#what-1-buys).
 
 If you want to see what this looks like as an actual grocery week, the [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) builds the full plan, and [what 30 grams of fiber costs per day](/what-30-grams-of-fiber-costs-per-day/) runs the daily math. If you'd rather split the dollar between a bag of beans and a bag of grain, [the cheapest complete protein pairs](/cheapest-complete-protein-pairs/) scores 20 of those combinations. The beans will be waiting. They're shelf-stable like that.
 

@@ -10,7 +10,7 @@ tags:
 image: /images/high-fiber-pasta-alternatives-main.jpg
 imageAlt: Bowls of pasta with vegetables and tomato sauce
 date: 2026-03-30
-dateModified: 2026-07-16
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -43,7 +43,7 @@ The bad news is legume pastas behave differently. Treat them like their own ingr
 If you're rebuilding more than pasta night, the [budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) sorts out which pantry staples earn their shelf space without turning dinner into a spreadsheet.
 ## What is the best high fiber pasta alternative?
 
-Whole wheat pasta, if you want the swap to survive a family dinner. It carries 9.2 grams of fiber per 100 grams and delivers 35.4 grams of fiber per dollar in our [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), and it behaves like pasta. Chickpea and red lentil pasta carry more protein but cook and taste differently enough that they need a sauce built for them.
+Whole wheat pasta, if you want the swap to survive a family dinner. Dry whole-wheat pasta carries [9.2 grams of fiber and 13.9 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/169738/nutrients), and that fiber divided into the July 2026 box price is 35.4 grams per dollar in our [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). Enriched white pasta is [3.2 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/169736/nutrients). Chickpea flour, the closest FoodData Central stand-in for a chickpea noodle, is [10.8 grams of fiber and 22.4 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/174288/nutrients). The boxed pasta can differ from the flour, and it cooks differently enough that it needs a sauce built for it.
 
 ## Chickpea Pasta
 
