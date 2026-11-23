@@ -3,7 +3,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { extname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { INDEX_KEEP_PATHS, INDEX_PRUNE_SLUGS } from "../src/content/index-prune.js";
+import { INDEX_KEEP_PATHS, INDEX_NOINDEX_TOOL_PATHS, INDEX_PRUNE_SLUGS } from "../src/content/index-prune.js";
 import {
   aboutGrams,
   fiberRow,
@@ -2987,7 +2987,9 @@ test("grocery trip calculator title puts the sample cash savings in the SERP", (
     page.match(/const description = "([^"]+)"/)?.[1],
     "Compare grocery savings with gas, parking, transit, and travel time. See the real break-even savings before making the extra trip.",
   );
-  assert.equal(INDEX_KEEP_PATHS.has("tools/grocery-trip-savings-calculator"), true);
+  assert.equal(INDEX_KEEP_PATHS.has("tools/grocery-trip-savings-calculator"), false);
+  assert.equal(INDEX_NOINDEX_TOOL_PATHS.has("tools/grocery-trip-savings-calculator"), true);
+  assert.match(page, /robots=\{noindexFollowFor\("tools\/grocery-trip-savings-calculator"\)\}/);
   assert.equal(INDEX_PRUNE_SLUGS.has("tools/grocery-trip-savings-calculator"), false);
   assert.equal(INDEX_PRUNE_SLUGS.has("grocery-trip-savings-calculator"), false);
 });
@@ -3091,7 +3093,9 @@ test("recipe finder title puts the searchable recipe count in the SERP", () => {
     page.match(/const description = "([^"]+)"/)?.[1],
     "Enter the ingredients you have and find published recipes ranked by overlap, with the missing groceries shown before you open the recipe.",
   );
-  assert.equal(INDEX_KEEP_PATHS.has("tools/recipe-finder"), true);
+  assert.equal(INDEX_KEEP_PATHS.has("tools/recipe-finder"), false);
+  assert.equal(INDEX_NOINDEX_TOOL_PATHS.has("tools/recipe-finder"), true);
+  assert.match(page, /robots=\{noindexFollowFor\("tools\/recipe-finder"\)\}/);
   assert.equal(INDEX_PRUNE_SLUGS.has("tools/recipe-finder"), false);
   assert.equal(INDEX_PRUNE_SLUGS.has("recipe-finder"), false);
 });
@@ -3156,7 +3160,9 @@ test("shopping list builder title puts the recipe count in the SERP", () => {
   );
   assert.match(page, /!isIndexPruned\(article\.id\)/);
   assert.match(page, /<h1[^>]*>Several Recipes\. One List\. Nobody Needs Five Notes\.<\/h1>/);
-  assert.equal(INDEX_KEEP_PATHS.has("tools/shopping-list-builder"), true);
+  assert.equal(INDEX_KEEP_PATHS.has("tools/shopping-list-builder"), false);
+  assert.equal(INDEX_NOINDEX_TOOL_PATHS.has("tools/shopping-list-builder"), true);
+  assert.match(page, /robots=\{noindexFollowFor\("tools\/shopping-list-builder"\)\}/);
   assert.equal(INDEX_PRUNE_SLUGS.has("tools/shopping-list-builder"), false);
   assert.equal(INDEX_PRUNE_SLUGS.has("shopping-list-builder"), false);
 });

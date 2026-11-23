@@ -2,10 +2,16 @@
  * GSC 27 Aug 2026: 158 URLs were "Discovered – currently not indexed".
  * These 87 thin URLs stay live for humans (no 410, no delete) but must be
  * `noindex, follow` and out of the sitemap so crawl budget concentrates on
- * the 23 KEEP money URLs (flagships + surviving studies + tools/hubs).
+ * the 20 KEEP money URLs (flagships + surviving studies + tools/hubs).
+ *
+ * INDEX_NOINDEX_TOOL_PATHS is the same policy for tool pages that stay
+ * linked from /tools/ but must not be indexed. grocery-budget-calculator
+ * stays out of that set and remains indexable. /guides/ and /research/
+ * are retired with 301s and are not KEEP paths.
  *
  * Single source of truth for:
  *   - src/pages/[slug].astro robots meta + rich-result schema
+ *   - tool-page robots meta via noindexFollowFor()
  *   - astro.config.mjs sitemap exclusions
  *   - related-article and feed eligibility (same noindex policy as unreleased)
  */
@@ -118,14 +124,24 @@ export const INDEX_KEEP_PATHS = new Set([
   "tools",
   "tools/dried-beans-to-canned-converter",
   "tools/fiber-per-dollar-calculator",
-  "tools/grocery-trip-savings-calculator",
   "tools/grocery-unit-price-calculator",
   "tools/recipe-cost-calculator",
-  "tools/recipe-finder",
-  "tools/shopping-list-builder",
   "tools/sourdough-discard-calculator",
   "usda-thrifty-food-plan-weekly-cost",
 ]);
+
+/**
+ * Tool pages that stay reachable and linked from /tools/ but must render
+ * `noindex, follow` and stay out of the sitemap.
+ * Do not add tools/grocery-budget-calculator.
+ */
+export const INDEX_NOINDEX_TOOL_PATHS = new Set([
+  "tools/grocery-trip-savings-calculator",
+  "tools/recipe-finder",
+  "tools/shopping-list-builder",
+]);
+
+export const NOINDEX_FOLLOW = "noindex, follow";
 
 /**
  * Ranking or out-of-scope URLs that must never enter the prune set.
@@ -151,6 +167,11 @@ export function isIndexPruned(slug) {
   return INDEX_PRUNE_SLUGS.has(normalizeIndexPath(slug));
 }
 
+/** `noindex, follow` when the tool path is delisted; otherwise indexable. */
+export function noindexFollowFor(path) {
+  return INDEX_NOINDEX_TOOL_PATHS.has(normalizeIndexPath(path)) ? NOINDEX_FOLLOW : undefined;
+}
+
 function assertPruneSafety() {
   const collisions = [];
   for (const path of INDEX_KEEP_PATHS) {
@@ -161,6 +182,14 @@ function assertPruneSafety() {
   for (const slug of INDEX_PROTECTED_SLUGS) {
     if (INDEX_PRUNE_SLUGS.has(slug)) collisions.push(slug);
   }
+  for (const path of INDEX_NOINDEX_TOOL_PATHS) {
+    if (INDEX_KEEP_PATHS.has(path) || INDEX_PRUNE_SLUGS.has(path) || INDEX_PRUNE_SLUGS.has(path.split("/").pop())) {
+      collisions.push(path);
+    }
+  }
+  if (INDEX_NOINDEX_TOOL_PATHS.has("tools/grocery-budget-calculator")) {
+    collisions.push("tools/grocery-budget-calculator");
+  }
   if (collisions.length) {
     throw new Error(
       `index-prune: KEEP/protected slug leaked into prune set: ${collisions.join(", ")}`,
@@ -169,8 +198,13 @@ function assertPruneSafety() {
   if (INDEX_PRUNE_SLUGS.size !== 87) {
     throw new Error(`index-prune: expected 87 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
   }
-  if (INDEX_KEEP_PATHS.size !== 23) {
-    throw new Error(`index-prune: expected 23 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
+  if (INDEX_KEEP_PATHS.size !== 20) {
+    throw new Error(`index-prune: expected 20 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
+  }
+  if (INDEX_NOINDEX_TOOL_PATHS.size !== 3) {
+    throw new Error(
+      `index-prune: expected 3 noindex tool paths, got ${INDEX_NOINDEX_TOOL_PATHS.size}`,
+    );
   }
 }
 

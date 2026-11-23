@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 import rehypeArticleImages from './scripts/rehype-article-images.mjs';
 import rehypeRankingTables from './scripts/rehype-ranking-tables.mjs';
 import rehypeContextualFlagshipLinks from './scripts/rehype-contextual-flagship-links.mjs';
-import { INDEX_PRUNE_SLUGS } from './src/content/index-prune.js';
+import { INDEX_NOINDEX_TOOL_PATHS, INDEX_PRUNE_SLUGS } from './src/content/index-prune.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -81,6 +81,11 @@ function loadSitemapExclusions() {
   // GSC thin-URL prune: live pages, but not a sitemap discovery target.
   for (const slug of INDEX_PRUNE_SLUGS) {
     addPath(slug);
+  }
+
+  // Tool pages that stay linked from /tools/ but are noindex, follow.
+  for (const path of INDEX_NOINDEX_TOOL_PATHS) {
+    addPath(path);
   }
 
   // Dataset CSV landings and printables stay reachable for downloads and
