@@ -11,7 +11,7 @@ tags:
 image: /images/black-bean-brownies-hidden-fiber-dessert-main.jpg
 imageAlt: Stack of fudgy black bean brownies with melted chocolate chips on a wire cooling rack
 date: 2026-04-28
-dateModified: 2026-07-12
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -24,16 +24,17 @@ faq:
     guess "fudgy brownie" and never land on "legume." The rinse step matters more
     than people think.
 - question: How much fiber is in a black bean brownie compared to regular brownies?
-  answer: Traditional brownies often land under 1 gram of fiber per square. A black
-    bean version usually sits closer to 3 to 5 grams, depending on how big you cut
-    them and whether you fold in chocolate chips. That extra fiber may help you feel
-    satisfied longer after dessert, which is useful when the alternative is three
-    more cookies from the bag.
+  answer: A half cup of canned black beans, 120 grams, has about 8 grams of fiber.
+    Spread a full can across a pan and one square is only a fraction of that. I don't
+    have a FoodData Central record for this homemade square, so I'm not going to
+    quote 3 to 5 grams per piece. The beans are still the fiber the flour brownie
+    doesn't bring. Eat the square like dessert.
 - question: Can I freeze black bean brownies to eat later?
-  answer: Yes. Cool them completely, wrap individual squares in parchment, and stash
-    them in an airtight container or freezer bag for up to three months. Thaw on the
-    counter for about twenty minutes, or microwave a square for ten to fifteen seconds
-    if you want the chocolate soft again.
+  answer: Cool them completely, wrap individual squares, and freeze them if you
+    won't eat them soon. FoodSafety.gov doesn't publish a brownie line. Cooked
+    leftovers in general are a 3 to 4 day refrigerator food, and freezer times on
+    that chart are quality windows, not a three-month promise for this pan. Thaw
+    in the fridge, or microwave a square briefly if you want the chocolate soft.
 - question: What are some tips for getting the perfect fudgy texture?
   answer: Blend until there are no bean flecks left. Undercook them slightly so the
     center still looks a little soft when you pull the pan. Let them cool fully before
@@ -56,7 +57,7 @@ These are a real black bean brownies hidden fiber dessert situation: dense, choc
 
 Black beans aren't here for a morality lesson. They're here because their starch and moisture make brownies fudgy without a pile of melted butter. When you blend a rinsed can with cocoa, eggs, a little oil, and something sweet, you get a batter that behaves more like a thick chocolate pudding than a flour dough. Bake it, cool it, and the texture lands closer to a bakery square than a "healthy dessert" apology.
 
-A half-cup of canned black beans brings a few grams of fiber and a useful hit of protein. Spread that across a pan of brownies and you're not inventing a miracle snack. You're just making dessert that doesn't evaporate from your blood sugar the second you put the plate down. Regular brownies are mostly sugar and refined flour. These still have sugar. They're just less empty.
+A half cup of canned black beans is 120 grams, about 8 grams of fiber and about 7 grams of protein at [6.9 grams of fiber and 6.03 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/175188/nutrients). Spread a can across the pan and one square is a fraction of that, not a fiber strategy. These still have sugar. They're just less empty than a brownie built only on refined flour. Fiber may help a meal feel more substantial ([Howarth et al., 2001](https://pubmed.ncbi.nlm.nih.gov/11396693/)). It does not cancel dessert.
 
 The rinse is non-negotiable. Open the can, dump the beans into a colander, and run water until it stops looking like bean soup. That liquid is where a lot of the "why does this taste weird" energy lives. Skip the rinse and you've basically seasoned your brownies with canned bean juice. Don't do that to yourself.
 
@@ -106,7 +107,7 @@ If you're building a week of cheap fiber meals around beans, oats, cabbage, and 
 
 ## Storage, freezing, and the office brownie test
 
-Room temperature works for a day or two in an airtight container. Fridge keeps them about five days. They taste denser cold, which some people love and some people treat like a personal offense. Ten seconds in the microwave softens the chocolate again.
+Room temperature is a short hold in an airtight container. [FoodSafety.gov](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) doesn't list brownies. I don't borrow the 3 to 4 day leftover line and pretend it's this pan, and I don't invent a five-day fridge rule either. They taste denser cold, which some people love and some people treat like a personal offense. A few seconds in the microwave softens the chocolate again.
 
 Freeze leftovers in single squares. Future you, standing in front of the freezer at 9:40 PM, will act like past you was organized. Thaw on a plate. Or don't thaw. Cold fudgy brownies are still fudgy brownies.
 

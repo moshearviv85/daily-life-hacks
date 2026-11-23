@@ -16,7 +16,7 @@ tags:
 image: /images/kitchen-tools-that-save-time-and-money-main.jpg
 imageAlt: 'Essential kitchen tools on a counter: knife, cutting board, can opener'
 date: 2026-03-15
-dateModified: 2026-07-20
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -29,11 +29,13 @@ faq:
     heavy-duty sheet pans.
 - question: Do I need a full set of kitchen knives?
   answer: No. Buying a massive knife block is usually a waste of money. Most home
-    cooks only need one good chef's knife for 90% of tasks, plus maybe a small paring
+    cooks only need one good chef's knife for most tasks, plus maybe a small paring
     knife for finer work.
 - question: How does a good cutting board save money?
-  answer: A large, quality cutting board helps keep your knives from dulling prematurely.
-    Dull knives are dangerous, frustrating to use, and often lead people to give up
+  answer: A large, quality cutting board gives you room to work and gives you a
+    surface you can wash. FSIS says to use one board for produce and another for raw
+    meat, or wash the board thoroughly between them. A dull knife is slower. I'm not
+    going to call it a measured injury risk without a study. People also give up
     on prepping food and just order takeout instead.
 - question: Which kitchen tool should I upgrade first?
   answer: Upgrade the tool that causes trouble most often. For many cooks that is
@@ -51,10 +53,10 @@ What actually helps you in the kitchen is a very short list of reliable tools th
 
 One sharp, comfortable chef's knife does all the heavy lifting in a kitchen: chopping onions, slicing vegetables, and trimming meat. You do not need to buy a massive wooden block containing 14 different blades. 
 
-An 8-inch chef's blade that fits nicely in your hand is enough. Keep it sharp with a basic honing rod or an inexpensive manual sharpener. A dull knife is drastically slower, incredibly frustrating, and actually more dangerous than a sharp one because you have to force it through the food. This one single tool will likely save you more time than anything else you own.
+An 8-inch chef's blade that fits nicely in your hand is enough. Keep it sharp with a basic honing rod or an inexpensive manual sharpener. A dull knife is slower because you have to force it. This one single tool will likely save you more time than anything else you own.
 ## A Large, Stable Cutting Board
 
-A big cutting board gives you the physical room to prep your food without crowding everything into a tiny, stressful pile. Wood or a heavy plastic board that doesn't slide around on the counter is perfectly fine. 
+A big cutting board gives you the physical room to prep your food without crowding everything into a tiny, stressful pile. Wood or a heavy plastic board that doesn't slide around on the counter is perfectly fine. [FSIS says](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/cutting-boards) to keep raw meat off the board you just used for vegetables, or wash it with hot soapy water in between. 
 
 If you have the counter space, just leave it out so it's always ready to grab. That tiny psychological step can make the prospect of starting dinner feel significantly less like a massive chore. 
 ## A Can Opener That Actually Works
@@ -67,7 +69,7 @@ A basic manual one is cheap. If you find yourself fighting with your current one
 Eyeballing ingredients is perfectly fine for a lot of casual cooking, but when a recipe specifically calls for baking powder or you are actively trying to track your portions, you need something reliable. A basic metal set of measuring cups and spoons doesn't cost much, lasts forever, and keeps bad guesswork from ruining an entire batch. If you bake at all, a cheap digital scale earns its spot too; weighing something like [sourdough discard in grams](/how-to-measure-sourdough-discard-grams/) beats scraping sticky measuring cups every single time. That same scale gets a real workout with [gluten-free sourdough discard pizza dough](/gluten-free-sourdough-discard-pizza-dough/), where the flours punish loose measuring.
 ## A Sheet Pan (or Two)
 
-Heavy-duty metal sheet pans are for way more than just baking cookies. You can use them to roast vegetables, bake chicken thighs, and throw together incredibly easy one-pan dinners. 
+Heavy-duty metal sheet pans are for way more than just baking cookies. You can use them to roast vegetables, bake chicken thighs, and throw together incredibly easy one-pan dinners. Poultry is done at [165°F](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart), measured in the thickest part, not when the pan looks pretty. 
 
 They are incredibly easy to clean and they stack flat. Having two of them means you can easily roast two different trays of food at the exact same time, or keep one free for prep work while the other is busy in the oven.
 ## A Sturdy Strainer or Colander

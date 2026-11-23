@@ -11,7 +11,7 @@ tags:
 image: /images/how-much-protein-do-you-need-per-day-main.jpg
 imageAlt: Eggs, Greek yogurt, canned beans, and cooked chicken thighs arranged on a kitchen counter
 date: 2026-03-15
-dateModified: 2026-07-12
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -19,7 +19,7 @@ whatsHot: false
 mustRead: false
 faq:
 - question: How much protein do you need per day on average?
-  answer: A common baseline is about 0.36 grams of protein per pound of body weight, so a 150-pound person lands around 54 grams. That's a minimum for most adults, not a performance target. Many active adults aim closer to 0.5 to 0.8 grams per pound, which for the same person is roughly 75 to 120 grams.
+  answer: The National Academies set the adult protein RDA at 0.8 grams per kilogram of body weight, about 0.36 grams per pound, so a 150-pound adult lands around 54 grams. That's the RDA, not a training target. For people who exercise, the International Society of Sports Nutrition's position stand uses 1.4 to 2.0 grams per kilogram, about 95 to 136 grams at the same weight.
 - question: Do I need to track every gram of protein I eat?
   answer: For most people, no. Unless you're training for something specific or working with a clinician on a plan, you don't need a spreadsheet. Putting a solid protein source at breakfast, lunch, and dinner usually covers more ground than obsessing over a single daily total.
 - question: Can eating a lot of protein be a problem?
@@ -36,17 +36,17 @@ The useful answer sits in the middle, and it depends on your size, how much you 
 
 ## How much protein do you need per day?
 
-A common baseline is about 0.36 grams of protein per pound of body weight, which puts a 150-pound adult around 54 grams a day. That figure is a minimum, not a target. Adults who train, who are older, or who are eating in a calorie deficit often aim for 0.5 to 0.8 grams per pound, or roughly 75 to 120 grams at the same body weight.
+The adult protein RDA is [0.8 grams per kilogram of body weight](https://nap.nationalacademies.org/catalog/10490/dietary-reference-intakes-for-energy-carbohydrate-fiber-fat-fatty-acids-cholesterol-protein-and-amino-acids), about 0.36 grams per pound, which puts a 150-pound adult around 54 grams a day. That figure is the RDA, not a training target. Adults who train often use a higher range, and older adults have a separate one, both below.
 
-A common starting point is about 0.36 grams of protein per pound of body weight. That number is closer to a *minimum* for most adults than an ideal target for feeling full and recovering from workouts.
+A common starting point is that same [0.8 grams per kilogram](https://nap.nationalacademies.org/catalog/10490/dietary-reference-intakes-for-energy-carbohydrate-fiber-fat-fatty-acids-cholesterol-protein-and-amino-acids). It is closer to a *minimum* for most healthy adults than an ideal target for feeling full and recovering from workouts.
 
-For a 150-pound person, that baseline is roughly 54 grams a day. Fine if you're mostly sedentary and just trying to clear the deficiency bar. If you walk a lot, lift anything heavier than a grocery bag, are getting older, or care about holding onto muscle while eating in a calorie deficit, going higher often makes more sense.
+For a 150-pound person, that [0.8 grams per kilogram](https://nap.nationalacademies.org/catalog/10490/dietary-reference-intakes-for-energy-carbohydrate-fiber-fat-fatty-acids-cholesterol-protein-and-amino-acids) RDA is roughly 54 grams a day. Fine if you're mostly sedentary and just trying to clear the deficiency bar. If you walk a lot, lift anything heavier than a grocery bag, are getting older, or care about holding onto muscle while eating in a calorie deficit, going higher often makes more sense.
 
-A range of 0.5 to 0.8 grams per pound shows up a lot for people who exercise regularly. Same 150-pound person: somewhere around 75 to 120 grams. You don't need to nail the exact midpoint on day one. You need a range you can hit with food you already buy.
+For people who exercise, the [International Society of Sports Nutrition position stand](https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/) uses 1.4 to 2.0 grams of protein per kilogram per day. Same 150-pound person: about 95 to 136 grams, not the 0.5 to 0.8 grams per pound that floats around social media. You don't need to nail the exact midpoint on day one. You need a range you can hit with food you already buy.
 
 If you want the full shopping system behind this, read the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/). This article is the "how much" layer. That one is the cart.
 
-If the 50-gram number on Nutrition Facts labels is what's confusing you, our [fiber and protein Daily Value explainer](/fiber-protein-daily-values-explained/) shows where it came from and why it isn't a personalized target.
+If the [50-gram protein Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) on Nutrition Facts labels is what's confusing you, our [fiber and protein Daily Value explainer](/fiber-protein-daily-values-explained/) shows where it came from and why it isn't a personalized target.
 
 ## How many grams of protein are in common foods?
 
@@ -54,13 +54,13 @@ Here are the everyday portions worth memorizing. Actual packages vary, so read t
 
 | Portion | Protein |
 |---|---|
-| 3 ounces cooked chicken | around 25 grams |
-| 1 can tuna, drained | 20 to 25 grams |
-| 1 cup cottage cheese | 20-plus grams |
-| 1 cup cooked lentils | around 18 grams |
-| 1 cup Greek yogurt | 15 to 20 grams |
-| Half a block of firm tofu, cooked | 15 to 20 grams |
-| 2 eggs | about 12 grams |
+| 3 ounces roasted chicken breast | about 26 grams ([FDC 171477](https://fdc.nal.usda.gov/food-details/171477/nutrients)) |
+| 4 ounces drained light tuna | about 22 grams ([FDC 173709](https://fdc.nal.usda.gov/food-details/173709/nutrients)) |
+| 1 cup cottage cheese, 2% | about 24 grams ([FDC 172182](https://fdc.nal.usda.gov/food-details/172182/nutrients)) |
+| 1 cup cooked lentils | about 18 grams ([FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients)) |
+| 7 ounces plain low-fat Greek yogurt | about 20 grams ([FDC 170903](https://fdc.nal.usda.gov/food-details/170903/nutrients)) |
+| 1/2 cup firm tofu | about 22 grams ([FDC 172475](https://fdc.nal.usda.gov/food-details/172475/nutrients)) |
+| 2 large hard-boiled eggs | about 13 grams ([FDC 173424](https://fdc.nal.usda.gov/food-details/173424/nutrients)) |
 
 Stack two or three of those across a day and you stop living in "I hope I got enough" territory. Breakfast with Greek yogurt and eggs, lunch with leftover chicken and beans, dinner with lentils or fish, and you're usually in a respectable range without weighing every bite.
 
@@ -68,11 +68,11 @@ I used to under-eat protein by accident because my "healthy" days were toast, a 
 
 ## Does your protein target change with age or activity?
 
-Yes. The baseline moves up if you train, if you're losing weight, or if you're older. The 0.36 grams per pound figure is the floor for a sedentary adult; the 0.5 to 0.8 range is where most active people land, and older adults often do better spreading the same total across three meals instead of one large dinner.
+Yes. The baseline moves up if you train, if you're losing weight, or if you're older. The [0.8 grams per kilogram](https://nap.nationalacademies.org/catalog/10490/dietary-reference-intakes-for-energy-carbohydrate-fiber-fat-fatty-acids-cholesterol-protein-and-amino-acids) figure is the RDA for a healthy adult. Exercising adults are the group the [1.4 to 2.0 grams per kilogram](https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/) range was written for. For healthy older adults, a separate position paper uses at least [1.0 to 1.2 grams per kilogram](https://pubmed.ncbi.nlm.nih.gov/23867520/), about 68 to 82 grams at 150 pounds, spread across meals instead of one large dinner.
 
 **Just trying not to be deficient:** the lower baseline may be enough. Still put protein in more than one meal so you're not dumping it all at dinner.
 
-**Active, lifting, or trying to keep muscle while losing weight:** lean toward that 0.5 to 0.8 grams per pound zone. Consistency beats a perfect Monday and a bagel-only Thursday.
+**Active, lifting, or trying to keep muscle while losing weight:** lean toward that [1.4 to 2.0 grams per kilogram](https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/) zone. Consistency beats a perfect Monday and a bagel-only Thursday.
 
 **Mostly plant-based:** you can hit solid totals, but you have to be intentional. Beans, lentils, tofu, tempeh, Greek yogurt if you eat dairy, and eggs if they're in your rotation do the heavy lifting. A plate of vegetables alone is not a protein strategy, no matter how colorful the photo.
 
@@ -88,14 +88,14 @@ The internet sells protein like a personality. Then people buy expensive bars, s
 
 Common failure modes:
 
-- **All the protein lands at dinner.** Your morning is coffee and vibes. Your afternoon is a snack raid. Spreading intake usually helps hunger management more than one heroic steak.
+- **All the protein lands at dinner.** Your morning is coffee and vibes. Your afternoon is a snack raid. A higher-protein eating pattern [may reduce appetite](https://pubmed.ncbi.nlm.nih.gov/16002798/) more than one heroic steak, and spreading the food still has to happen at breakfast and lunch.
 - **You count the label but forget the meal.** A high-protein yogurt with a sleeve of cookies is still a snack situation.
 - **You chase novelty over staples.** Fancy packaged products cost more per gram than eggs and beans almost every time. We ranked that out in the [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/). Dry beans, eggs, dairy staples, and cheaper cuts keep winning.
 - **You ignore the rest of the plate.** Protein helps you feel fuller. Fiber, sleep, and total calories still matter. Protein is a tool, not a magic cape.
 
 ## What's the cheapest way to hit your protein target?
 
-Eggs, dried or canned beans and lentils, chicken thighs, Greek yogurt, cottage cheese and canned fish. Our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) ranked 49 grocery foods. Whole wheat flour led at 96.0 grams of protein per dollar, brown lentils delivered 77.7, and dry pinto beans 57.6, with eggs at 34.4 and chicken drumsticks at 50.3. You don't need a boutique butcher to hit how much protein you need per day.
+Eggs, dried or canned beans and lentils, chicken thighs, Greek yogurt, cottage cheese and canned fish. Our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) ranks the grocery cost. The foods themselves are ordinary: whole wheat flour has [13.21 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/168893/nutrients), dry brown lentils have [24.63](https://fdc.nal.usda.gov/food-details/172420/nutrients), and two large hard-boiled eggs have [about 13](https://fdc.nal.usda.gov/food-details/173424/nutrients). You don't need a boutique butcher to hit how much protein you need per day.
 
 **Cheap defaults that earn fridge space:**
 
@@ -114,10 +114,10 @@ If fiber is part of why you care about fullness, the same dry-goods aisle shows 
 
 This is a template, not a prescription. Adjust portions to your size and appetite.
 
-1. **Breakfast:** 1 cup Greek yogurt + 2 tablespoons peanut butter + berries (often 20 to 25 grams)
-2. **Lunch:** leftover chicken thigh bowl with rice and a scoop of black beans (often 35 to 45 grams)
-3. **Snack:** cottage cheese or a couple of hard-boiled eggs (often 12 to 20 grams)
-4. **Dinner:** lentil chili or tofu stir-fry with vegetables (often 20 to 30 grams)
+1. **Breakfast:** 7 ounces plain low-fat Greek yogurt ([about 20 grams](https://fdc.nal.usda.gov/food-details/170903/nutrients)) plus 2 tablespoons peanut butter ([about 7 grams](https://fdc.nal.usda.gov/food-details/172470/nutrients)) and berries. That's about 27 grams, not 20.
+2. **Lunch:** one raw skinless chicken thigh is [about 29 grams](https://fdc.nal.usda.gov/food-details/173627/nutrients) of protein before it ever hits the pan, a half cup of cooked black beans adds [about 8 grams](https://fdc.nal.usda.gov/food-details/173735/nutrients), and a cup of cooked white rice adds [about 4 grams](https://fdc.nal.usda.gov/food-details/168878/nutrients). Call the bowl about 40 grams.
+3. **Snack:** a cup of 2% cottage cheese is [about 24 grams](https://fdc.nal.usda.gov/food-details/172182/nutrients), or two large hard-boiled eggs are [about 13 grams](https://fdc.nal.usda.gov/food-details/173424/nutrients).
+4. **Dinner:** a cup of cooked lentils is [about 18 grams](https://fdc.nal.usda.gov/food-details/172421/nutrients). A half cup of firm tofu is [about 22 grams](https://fdc.nal.usda.gov/food-details/172475/nutrients). A "20 to 30 gram" dinner only shows up if the portion is bigger than one of those.
 
 Add the day up once so your eyes learn what "enough" looks like. Then stop living in the tracking app unless you enjoy it.
 

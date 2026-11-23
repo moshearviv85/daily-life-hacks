@@ -10,7 +10,7 @@ tags:
 image: "/images/freezer-inventory-simple-system-main.jpg"
 imageAlt: "A well organized freezer with labeled containers and a simple whiteboard list on the fridge door"
 date: 2026-04-24
-dateModified: 2026-07-20
+dateModified: 2026-11-23
 quickAnswer: "Keep masking tape and a marker beside the freezer. Label every package with the food name and freeze date, then add it to a whiteboard list grouped by raw ingredients and cooked meals. Erase items when used, place newer packages behind older ones, and check the freezer monthly while confirming it stays at 0°F or below."
 author: "David Miller"
 featured: false
@@ -71,11 +71,11 @@ When you freeze a new batch of sauce, don't just shove it in the front. Put it b
 
 Even with a good system, things slip through the cracks. Once a month, preferably before a big grocery trip, open the freezer and look at the board. Does the board match reality? 
 
-If you see something that has been there for months, check the label and decide whether the quality is still useful for the dish you have planned. Food held continuously at 0°F does not become unsafe simply because six months have passed, but freezer burn and odor changes can make it less appealing. Move older food into a clear “use next” zone and plan it into the week before discarding it.
+If you see something that has been there for months, check the label and decide whether the quality is still useful for the dish you have planned. [Food held continuously at 0°F can be kept indefinitely](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts). The chart's freezer times are quality, not safety deadlines. Soups and stews are listed at 2 to 3 months for quality, and cooked meat or poultry leftovers at 2 to 6 months. Six months does not make a 0°F soup unsafe. Freezer burn can still make it unpleasant. Move older food into a clear "use next" zone and plan it into the week before discarding it.
 
 ## Keep a freezer thermometer
 
-An inventory system cannot tell you whether the appliance stayed cold during a power interruption or after a door was left ajar. Keep an appliance thermometer where you can read it easily and confirm the freezer holds 0°F or below. If the temperature rises or food begins thawing, use current USDA guidance to decide what can be refrozen or cooked rather than guessing from the date alone.
+An inventory system cannot tell you whether the appliance stayed cold during a power interruption or after a door was left ajar. Keep an appliance thermometer where you can read it easily and confirm the freezer holds [0°F or below](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts). If the temperature rises or food begins thawing, use that chart rather than guessing from the date alone. Refrigerator leftovers on the same page are a 3 to 4 day food, which is why the freezer is the longer pause and the fridge is not.
 
 Check the thermometer during the monthly review and whenever packages feel softer than usual. Leave space around vents so cold air can circulate, and avoid packing a door shelf with items that must stay deeply frozen. Pair the inventory with these practical ways to [reduce food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/) so the list turns into meals rather than a record of forgotten food.
 

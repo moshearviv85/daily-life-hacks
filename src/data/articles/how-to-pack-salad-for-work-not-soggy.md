@@ -64,7 +64,7 @@ Spring mix is lovely for about nine minutes. After that, it starts behaving like
 
 Kale holds up well, especially if it's chopped small. Cabbage is nearly indestructible. Romaine gives you crunch and still feels like a classic salad. Shredded Brussels sprouts are great if you like a hearty texture and don't mind a little chew.
 
-Baby spinach is acceptable for same-day salads, but it wilts fast around dressing, tomatoes, or warm protein. Use it when you're packing in the morning and eating by noon. For multi-day meal prep, let cabbage do the heavy lifting. Cabbage was built for this nonsense. And if your greens went limp before you even packed them, you can usually [revive wilted lettuce and greens](/how-to-revive-wilted-lettuce-and-greens/) with ten minutes in ice water instead of tossing the bag.
+Baby spinach is acceptable for same-day salads, but it wilts fast around dressing, tomatoes, or warm protein. Use it when you're packing in the morning and eating by noon. For a chicken, tuna, egg, or ham salad, [FoodSafety.gov gives you 3 to 4 days in the refrigerator](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) at 40°F or below. Cabbage holds its texture better than spinach inside that window. It does not extend it. And if your greens went limp before you even packed them, you can usually [revive wilted lettuce and greens](/how-to-revive-wilted-lettuce-and-greens/) with ten minutes in ice water instead of tossing the bag.
 
 ## Keep wet and warm things under control
 
@@ -88,6 +88,6 @@ A work salad needs enough substance to carry you past 2 PM. Otherwise it's just 
 
 Add protein, grains, beans, or a hearty fat. Chicken, eggs, tuna, tofu, chickpeas, quinoa, farro, feta, avocado, and nuts all help. The goal isn't to make the salad enormous. The goal is to make it useful. And some weeks, skip the lettuce problem entirely: this [easy cold summer pasta salad](/easy-cold-summer-pasta-salad-potlucks/) shrugs off dressing and sits happily in the fridge for days.
 
-If you're using saucy protein, pack it separately or bury it in the middle layer away from the greens. Buffalo chicken directly on romaine at 8 AM is how lunch turns into a swamp.
+If you're using saucy protein, pack it separately or bury it in the middle layer away from the greens. Cooked chicken leftovers are also a [3 to 4 day refrigerator food](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts), same chart, same 40°F ceiling. Buffalo chicken directly on romaine at 8 AM is how lunch turns into a swamp.
 
 Pack salad for work with a little structure and it becomes a lunch you actually want to open. Dressing stays contained, greens stay crisp, and you get to skip the sad desk sandwich that costs $14 and somehow still leaves you hungry.

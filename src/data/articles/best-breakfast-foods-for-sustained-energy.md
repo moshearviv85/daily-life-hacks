@@ -15,7 +15,7 @@ tags:
 image: /images/best-breakfast-foods-for-sustained-energy-main.jpg
 imageAlt: Breakfast plate with eggs, whole grain toast, and fruit
 date: 2026-03-15
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -53,24 +53,24 @@ Pick one protein, one fiber-rich carbohydrate, and a little fat. Eggs, plain Gre
 
 ## Eggs: The Reliable Classic
 
-Eggs give you a solid hit of both protein and fat in one neat little package. They are also highly flexible: you can scramble them, hard-boil a batch for the week, fold them into an omelet, or fry one to put on toast. 
+Two large hard-boiled eggs are [about 13 grams of protein](https://fdc.nal.usda.gov/food-details/173424/nutrients). They are also highly flexible: you can scramble them, hard-boil a batch for the week, fold them into an omelet, or fry one to put on toast. A higher-protein breakfast pattern [may reduce appetite](https://pubmed.ncbi.nlm.nih.gov/16002798/) compared with a sweet one. That's a quieter morning, not a stimulant. 
 
 If you pair a couple of eggs with something like a slice of whole-grain bread or a handful of leftover roasted vegetables, you've constructed a breakfast that might actually keep you feeling full and mentally alert until lunch. There is no magic trick here, just a solid, structurally sound meal to start the day.
 ## Greek Yogurt and Cottage Cheese
 
-Both plain Greek yogurt and cottage cheese are naturally high in protein and very low in sugar, provided you buy the unflavored versions. 
+A 7-ounce container of plain low-fat Greek yogurt is [about 20 grams of protein](https://fdc.nal.usda.gov/food-details/170903/nutrients), and a cup of 2% cottage cheese is [about 24 grams](https://fdc.nal.usda.gov/food-details/172182/nutrients), provided you buy the unflavored versions.
 
-The flavored ones in the grocery store often contain as much sugar as a candy bar. Instead, buy it plain and add your own fresh fruit, a sprinkle of nuts, or a tiny drizzle of honey if you need a hint of sweetness. They are lightning-fast to prepare and require zero actual cooking, which is a massive help on mornings when you are rushing out the door.
+The flavored cups can carry a lot of added sugar. Read that line instead of guessing it matches a candy bar. Buy it plain and add your own fresh fruit, a sprinkle of nuts, or a tiny drizzle of honey if you need a hint of sweetness. They are lightning-fast to prepare and require zero actual cooking, which is a massive help on mornings when you are rushing out the door.
 ## Oatmeal (When Done Right)
 
-Plain rolled or steel-cut oats are full of dietary fiber and release their energy much more slowly compared to highly refined boxed cereals. The major catch with oatmeal is about what you put on top of it. 
+A cup of cooked oatmeal has [4 grams of fiber](https://fdc.nal.usda.gov/food-details/173905/nutrients) and about 6 grams of protein (234 grams at 1.7 grams of fiber and 2.54 grams of protein per 100 grams). That's the useful part. I'm not going to claim a glycemic number I didn't pull from a paper. The major catch with oatmeal is about what you put on top of it. 
 
 If you load the bowl up with three spoonfuls of brown sugar and a heavy pour of maple syrup, you are turning it back into a spike-and-crash meal. Try topping it with fresh berries, chopped nuts, a heavy pinch of cinnamon, or a spoonful of peanut butter instead. If you hate cooking in the morning, overnight oats are an excellent prep-ahead alternative.
 ## Whole Grains Paired With Protein
 
 Eating toast for breakfast is perfectly fine, as long as it's part of a bigger picture. A slice of whole-grain bread smeared with almond butter, or topped with scrambled eggs and a few slices of avocado, gives your body complex carbohydrates alongside protein and fat. 
 
-That combination of macronutrients may help some people stay satisfied longer. You aren't trying to avoid carbohydrates; you are giving the toast a supporting cast.
+That combination may help some people stay satisfied longer ([Howarth et al., 2001](https://pubmed.ncbi.nlm.nih.gov/11396693/)). You aren't trying to avoid carbohydrates; you are giving the toast a supporting cast. Two tablespoons of peanut butter add [about 7 grams of protein](https://fdc.nal.usda.gov/food-details/172470/nutrients).
 ## What You Might Want to Go Easy On
 
 Commercially sweetened cereals, massive bakery pastries, and juice-heavy smoothies can leave some people hungry again quickly because the meal contains little protein or fiber.
@@ -89,7 +89,7 @@ Compare added sugar, fiber, and protein on cereal, yogurt, and bread labels. Ser
 
 Flavored yogurt may still fit your breakfast, but compare it with plain yogurt plus fruit. Granola varies even more. This guide to choosing granola that isn't dessert explains what to check before a decorative handful becomes half the bowl.
 
-If you're choosing between oats, eggs, yogurt, and cereal with a cartoon tiger on the box, our [breakfast staples per dollar ranking](/breakfast-staples-per-dollar/) shows what a dollar actually buys at breakfast. Eggs land at 34 grams of protein per dollar in the wider [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), behind the dry lentils. Rolled oats return 35.8 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
+If you're choosing between oats, eggs, yogurt, and cereal with a cartoon tiger on the box, our [breakfast staples per dollar ranking](/breakfast-staples-per-dollar/) shows what a dollar actually buys at breakfast. Two hard-boiled eggs are [about 13 grams of protein](https://fdc.nal.usda.gov/food-details/173424/nutrients), and they sit behind the dry lentils in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). A cup of cooked oatmeal is [4 grams of fiber](https://fdc.nal.usda.gov/food-details/173905/nutrients), which is why rolled oats show up in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
 
 ## Match breakfast to the morning ahead
 

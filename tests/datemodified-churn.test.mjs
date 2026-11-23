@@ -75,7 +75,7 @@ test("this branch does not churn dateModified without a body edit", () => {
   );
   assert.ok(changed.length > DATEMODIFIED_FILE_LIMIT, result.stderr || result.stdout);
   for (const path of changed) {
-    const diff = spawnSync("git", ["diff", "-U0", "HEAD", "--", path], { encoding: "utf8" });
+    const diff = spawnSync("git", ["diff", "-U0", "origin/main", "--", path], { encoding: "utf8" });
     assert.equal(diff.status, 0, diff.stderr);
     const bodyLines = diff.stdout
       .split("\n")

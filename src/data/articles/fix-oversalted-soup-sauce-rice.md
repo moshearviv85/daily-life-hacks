@@ -9,6 +9,7 @@ tags:
 image: "/images/fix-oversalted-soup-sauce-rice-main.jpg"
 imageAlt: "A cook adjusting seasoning in a large pot of soup on a modern stove"
 date: 2026-04-24
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -42,7 +43,7 @@ So skip the potato. We have better methods.
 
 ## How to rescue oversalted soup
 
-If your soup is aggressively salty, the only true physical fix is dilution. You have to increase the total volume of the soup without adding more salt. 
+If your soup is aggressively salty, the only true physical fix is dilution. You have to increase the total volume of the soup without adding more salt. The FDA Daily Value is [2,300 milligrams of sodium](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). Dilution lowers how much of that lands in each bowl. It doesn't pull sodium out of the pot. 
 
 If it's a broth based soup, add more water or unsalted stock. Start with half a cup, stir, and taste. The catch here is that dilution weakens every flavor, not just the salt. You're watering down the garlic, the herbs, and the umami. You will likely need to add a splash of olive oil, a dash of pepper, or some fresh herbs to build the flavor profile back up.
 
@@ -54,7 +55,7 @@ Sauces are trickier because you usually can't just add water without ruining the
 
 If you have an oversalted tomato sauce or a rich stew, dairy is your best friend. Stirring in a splash of heavy cream, a dollop of unsweetened yogurt, or a spoonful of sour cream works wonders. The fat coats the tongue and blunts the sharp edge of the salt. 
 
-If it's a chunky stew, you can add bulk. Toss in some unsalted canned beans, extra chopped vegetables, or diced potatoes (to actually eat, not to act as a magic sponge). Adding more physical food means there is less salt per bite, and beans are the cheapest way to do it once you look at [what they cost against ground beef per gram of protein](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). 
+If it's a chunky stew, you can add bulk. Toss in some unsalted canned beans, extra chopped vegetables, or diced potatoes (to actually eat, not to act as a magic sponge). Adding more physical food means there is less salt per bite. Cooked black beans made without salt have [1 milligram of sodium per 100 grams](https://fdc.nal.usda.gov/food-details/173735/nutrients), so they dilute a salty stew instead of seasoning it again. Beans are also the cheapest way to add food once you look at [what they cost against ground beef per gram of protein](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). 
 
 ## What to do about oversalted rice or grains
 

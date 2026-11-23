@@ -16,7 +16,7 @@ image: /images/how-to-reduce-food-waste-at-home-easy-tips-main.jpg
 imageAlt: How to Reduce Food Waste at Home - a clear glass fridge container showing
   crisp brightly colored vegetables
 date: 2026-04-28
-dateModified: 2026-07-20
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -53,11 +53,11 @@ faq:
 ---
 We don't talk about the guilt associated with throwing out food enough. You buy a massive, gorgeous clamshell of fresh spinach on Sunday, determined that this is the week you eat salads every single day. By Friday, you pull it out of the fridge, and it has dissolved into a terrifying, murky puddle of dark green slime. You toss the entire five-dollar container into the trash feeling terrible about both the planet and your wallet. 
 
-The average household literally throws away hundreds, if not thousands, of dollars of perfectly good food every single year simply due to bad storage and lack of planning. If you want to know how to reduce food waste at home, you don't need to start a massive composting farm in your backyard. You just need to implement three extremely basic rules in your own kitchen. 
+A lot of what hits the trash is a storage and planning problem, not a moral failure. I'm not going to quote a dollar total I can't tie to a primary record. If you want to know how to reduce food waste at home, you don't need to start a massive composting farm in your backyard. You just need to implement three extremely basic rules in your own kitchen. 
 
 ## How do you stop wasting food at home?
 
-Four habits do most of the work: keep a clear "eat me first" bin at eye level in the fridge, freeze anything you won't get to in the next three days, learn what date labels actually mean, and run a five-minute inventory before you write the shopping list. The cheapest groceries in your house are the ones you already own.
+Four habits do most of the work: keep a clear "eat me first" bin at eye level in the fridge, freeze cooked leftovers you won't eat inside their [3 to 4 day refrigerator window](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts), learn what date labels actually mean, and run a five-minute inventory before you write the shopping list. The cheapest groceries in your house are the ones you already own.
 
 ## Rule 1: The "Eat Me First" Bin
 
@@ -79,9 +79,9 @@ The freezer is essentially a pause button on expiration dates. Most people sever
 
 Package dates are confusing because several phrases describe quality or store inventory rather than a universal safety deadline. That does not mean every old product is safe or that your nose can detect every hazard.
 
-*   **"Best By" / "Best Before":** This commonly describes expected quality. Check how the food was stored, look for spoilage, and use reliable storage guidance rather than assuming the date is a switch.
-*   **"Sell By":** This helps stores manage inventory. Refrigerated food still needs correct handling at home, and a sell-by date does not extend a safe storage window.
-*   **"Use By":** Follow this label carefully, especially on products with specific safety instructions. Infant formula is one category where the use-by date should not be stretched.
+*   **"Best By" / "Best Before":** [FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating) treats these as quality dates, not a safety switch. Check how the food was stored and look for spoilage.
+*   **"Sell By":** This helps stores manage inventory. Refrigerated food still needs the [cold storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts), and a sell-by date does not extend that window.
+*   **"Use By":** Follow this label carefully on products with a safety instruction. Infant formula is the one where the use-by date is not a suggestion.
 
 Figuring out how to reduce food waste at home means storing food correctly and making a decision before it becomes questionable. Smell and appearance can reveal spoilage, but they cannot prove safety. When handling was unsafe or you are genuinely unsure, throw it away. Planning helps just as much as storage. A basic food prep guide with recipes means every grocery item comes home with a job already assigned to it.
 

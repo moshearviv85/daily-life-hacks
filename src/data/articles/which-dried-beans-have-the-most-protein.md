@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/which-dried-beans-have-the-most-protein-main.jpg"
 imageAlt: "Small bowls of dry navy, black, pinto, and chickpea beans lined up on a wooden board"
 date: 2026-07-28
-dateModified: 2026-09-24
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -16,7 +16,7 @@ whatsHot: false
 mustRead: false
 faq:
   - question: "Which dried beans have the most protein?"
-    answer: "Among true beans, dry navy beans lead at 22.33 grams of protein per 100 grams, then black beans at 21.6 and pinto at 21.42. If you widen it to all dry pulses, brown lentils win at 24.63 grams and green split peas take 23.12. Chickpeas trail the group at 20.47."
+    answer: "Among true beans, dry navy beans lead at 22.33 grams of protein per 100 grams, then black beans at 21.6 and pinto at 21.42, all from USDA FoodData Central. If you widen it to all dry pulses, brown lentils win at 24.63 grams and green split peas take 23.12. Chickpeas trail the group at 20.47."
   - question: "How much protein is in dried beans per 100 g?"
     answer: "Between 20.47 and 22.33 grams for the true beans we priced, measured dry as sold. A 90 gram dry portion of navy beans works out to about 20.1 grams of protein, roughly 40 percent of the FDA's 50 gram Daily Value, for about 26 cents at July 2026 prices."
   - question: "Are kidney beans high in protein?"
@@ -27,58 +27,58 @@ faq:
     answer: "Per 100 grams of what's in your hand, yes, by roughly three and a half times, because canned beans carry water weight. Dry black beans are 21.6 grams per 100 grams and canned black beans 6.03. A whole 15.5 ounce can still holds about 26.5 grams of protein, so the can isn't weak, just wet."
 ---
 
-Among true dried beans, navy beans carry the most protein at 22.33 grams per 100 grams, followed by black at 21.6 and pinto at 21.42. Widen it to all dry pulses and [brown lentils](/foods-highest-in-protein-per-100-grams/) take it at 24.63, with green split peas at 23.12. Chickpeas come last of the group at 20.47.
+Among true dried beans, navy beans carry the most protein at [22.33 grams per 100 grams](https://fdc.nal.usda.gov/food-details/173745/nutrients), followed by black at [21.6](https://fdc.nal.usda.gov/food-details/173734/nutrients) and pinto at [21.42](https://fdc.nal.usda.gov/food-details/175199/nutrients). Widen it to all dry pulses and [brown lentils](https://fdc.nal.usda.gov/food-details/172420/nutrients) take it at 24.63 grams, with green split peas at [23.12](https://fdc.nal.usda.gov/food-details/172428/nutrients). Chickpeas come last of the group at [20.47](https://fdc.nal.usda.gov/food-details/173756/nutrients). The per-100-gram protein ranking of those same foods is also on [foods highest in protein per 100 grams](/foods-highest-in-protein-per-100-grams/).
 
-Top to bottom, the whole table spans about four grams, 4.2 to be exact, and among the true beans it's under a gram. Worth knowing before you drive across town for a specific bag.
+Top to bottom, [brown lentils at 24.63 grams](https://fdc.nal.usda.gov/food-details/172420/nutrients) minus [chickpeas at 20.47](https://fdc.nal.usda.gov/food-details/173756/nutrients) is 4.16 grams. Among the true beans, [navy at 22.33](https://fdc.nal.usda.gov/food-details/173745/nutrients) minus [pinto at 21.42](https://fdc.nal.usda.gov/food-details/175199/nutrients) is 0.91 grams. Worth knowing before you drive across town for a specific bag.
 
 | Dry pulse | Protein per 100 g | Fiber per 100 g | Price per 100 g | Protein per dollar |
 |---|---|---|---|---|
-| Brown lentils | 24.63 g | 10.7 g | $0.32 | 77.7 g |
-| Red lentils | 23.91 g | 10.8 g | $0.43 | 56.0 g |
-| Green split peas | 23.12 g | 22.2 g | $0.31 | 73.9 g |
-| Navy beans | 22.33 g | 15.3 g | $0.37 | 59.9 g |
-| Black beans | 21.60 g | 15.5 g | $0.37 | 58.0 g |
-| Pinto beans | 21.42 g | 15.5 g | $0.37 | 57.6 g |
-| Chickpeas | 20.47 g | 12.2 g | $0.36 | 56.7 g |
+| [Brown lentils](https://fdc.nal.usda.gov/food-details/172420/nutrients) | 24.63 g | 10.7 g | $0.32 | 77.7 g |
+| [Red lentils](https://fdc.nal.usda.gov/food-details/174284/nutrients) | 23.91 g | 10.8 g | $0.43 | 56.0 g |
+| [Green split peas](https://fdc.nal.usda.gov/food-details/172428/nutrients) | 23.12 g | 22.2 g | $0.31 | 73.9 g |
+| [Navy beans](https://fdc.nal.usda.gov/food-details/173745/nutrients) | 22.33 g | 15.3 g | $0.37 | 59.9 g |
+| [Black beans](https://fdc.nal.usda.gov/food-details/173734/nutrients) | 21.60 g | 15.5 g | $0.37 | 58.0 g |
+| [Pinto beans](https://fdc.nal.usda.gov/food-details/175199/nutrients) | 21.42 g | 15.5 g | $0.37 | 57.6 g |
+| [Chickpeas](https://fdc.nal.usda.gov/food-details/173756/nutrients) | 20.47 g | 12.2 g | $0.36 | 56.7 g |
 
-*Source: USDA FoodData Central + US store prices, July 2026. Full methodology at [/methodology/](/methodology/).*
+Protein and fiber in that table are the linked FoodData Central records, checked against the per-100-gram values. The prices are this site's July 2026 shelf check, spelled out at [/methodology/](/methodology/), not a USDA price.
 
 ## Does picking the highest-protein bean actually matter?
 
-Barely. Navy beans beat pinto by 0.91 grams per 100 grams. In a 90 gram portion that's a difference of about eight tenths of a gram of protein, which is less than a bite of toast.
+Barely. Navy beans beat pinto by [0.91 grams per 100 grams](https://fdc.nal.usda.gov/food-details/173745/nutrients). In a 90 gram portion that's about 0.8 grams of protein, which is less than a bite of toast.
 
-What does matter is which bag is cheapest per gram, and that's a different winner. Brown lentils, at 77.7 grams of protein per dollar from a $1.44 bag, lead this table and sit near the top of our [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). Pinto beans come in a four pound bag at $6.75, which works out to 37 cents per 100 grams and 57.6 grams of protein per dollar. Navy beans, denser but sold in a two pound bag at $3.38, return 59.9.
+What does matter is which bag is cheapest per gram, and that's a different winner. Brown lentils lead this table on protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). Dry, they still have [24.63 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/172420/nutrients). The dollar column is shelf price divided into that FoodData Central protein, not a second lab result.
 
 So if you're optimising, optimise on package size. The big bag of the boring bean beats the small bag of the impressive one every time.
 
 ## Which beans give you the most fiber?
 
-Green split peas, and it isn't remotely close. 22.2 grams of fiber per 100 grams against 15.5 for pinto and black, 15.3 for navy, 12.2 for chickpeas, and 10.7 for brown lentils.
+Green split peas, and it isn't remotely close. [22.2 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/172428/nutrients) against [15.5 for pinto](https://fdc.nal.usda.gov/food-details/175199/nutrients) and [black](https://fdc.nal.usda.gov/food-details/173734/nutrients), [15.3 for navy](https://fdc.nal.usda.gov/food-details/173745/nutrients), [12.2 for chickpeas](https://fdc.nal.usda.gov/food-details/173756/nutrients), and [10.7 for brown lentils](https://fdc.nal.usda.gov/food-details/172420/nutrients).
 
-That's the bean shelf's genuine trump card. Split peas deliver 23.12 grams of protein and 22.2 grams of fiber in the same 100 grams for 31 cents, which is nearly 80 percent of the FDA's 28 gram fiber Daily Value from a third of a dollar. [Split pea soup](/split-pea-soup-recipe-high-fiber/) is a deeply unglamorous pot of food that happens to be one of the best-value things you can cook.
+That's the bean shelf's genuine trump card. Split peas deliver [23.12 grams of protein and 22.2 grams of fiber](https://fdc.nal.usda.gov/food-details/172428/nutrients) in the same 100 grams, which is 79 percent of the FDA's [28 gram fiber Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). [Split pea soup](/split-pea-soup-recipe-high-fiber/) is a deeply unglamorous pot of food that happens to be one of the best-value things you can cook.
 
 Where every bean lands on both metrics at once is in [beans win twice](/beans-double-win-fiber-protein/), and the wider fiber ranking is [fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/).
 
 ## Are kidney beans high in protein?
 
-We priced kidney beans canned only, where they run 5.22 grams per 100 grams. That looks feeble next to the dry numbers, and it is, but only because a can is mostly liquid. A full 15.5 ounce can holds about 22.9 grams of protein, which is a real amount of food.
+We priced kidney beans canned only, where they run [5.22 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/173741/nutrients). That looks feeble next to the dry numbers, and it is, but only because a can is mostly liquid. A full 15.5 ounce can, 439 grams at that concentration, holds about 22.9 grams of protein, which is a real amount of food.
 
-Dry kidney beans aren't in our dataset, so I'm not going to quote a figure for them. What I'd expect from the family resemblance is something in the same band as the other true beans, and I'd rather tell you that plainly than dress up a guess as data.
+Dry kidney beans aren't in our priced dataset, so I'm not going to invent a dry figure for them.
 
-One practical note that has nothing to do with protein: dry kidney beans need a proper hard boil, not a gentle simmer from cold. That's covered in [how to cook dried beans from scratch](/how-to-cook-dried-beans-from-scratch/).
+One practical note that has nothing to do with protein: raw kidney beans carry phytohaemagglutinin. The [FDA says](https://www.fda.gov/food/chemical-contaminants-pesticides/natural-toxins-food) to soak them at least 5 hours and then boil them in fresh water for at least 30 minutes. A gentle simmer from cold is not that boil. The stovetop walk-through is in [how to cook dried beans from scratch](/how-to-cook-dried-beans-from-scratch/).
 
 ## Does bean protein count as much as meat protein?
 
-Not one for one. Common beans score 0.57 to 0.59 on DIAAS, the scale that adjusts for digestibility and for whichever amino acid runs short. Beans run short on the sulfur amino acids. Chickpeas do best of the pulses at 0.83, lentils sit at 0.63, and chicken and eggs land above 1.00.
+Not one for one. In cooked samples, navy beans scored a DIAAS of 0.57, black beans 0.63, and pinto beans 0.70, limited by the sulfur amino acids ([Nosworthy et al., 2018](https://pmc.ncbi.nlm.nih.gov/articles/PMC6024599/)). An earlier cooked-pulse comparison put chickpeas at 0.67, whole green lentils at 0.58, and split red lentils at 0.50 ([Nosworthy et al., 2017](https://pubmed.ncbi.nlm.nih.gov/28748078/)). The 0.83 chickpea figure and the 0.63 lentil figure don't match those papers, so they're gone.
 
-Even after the haircut the beans hold up against meat that costs more. Pinto beans return 34.0 quality-adjusted grams per dollar, against 24.6 for chicken breast. They do not top that ranking. Bone-in drumsticks do, at 50.3, with brown lentils at 49.0. The full re-ranking is [cheap protein adjusted for quality](/protein-per-dollar-adjusted-for-quality/).
+The dollar re-ranking that applies those scores is [cheap protein adjusted for quality](/protein-per-dollar-adjusted-for-quality/). I'm not going to repeat a quality-adjusted grams-per-dollar number here that was built on the old scores.
 
 The cheap fix has been sitting in kitchens for centuries. Legumes and grains complement each other's amino acid profiles, so beans with rice or beans with cornbread covers more ground than beans alone. The arithmetic on that pairing is in [the cheapest complete protein pairs](/cheapest-complete-protein-pairs/).
 
 ## Which bag should you actually buy?
 
-Brown lentils if you want the most protein per dollar you can put in a pot tonight. Split peas if you want fiber. Pinto beans if you want a big bag that still returns 57.6 grams of protein per dollar. Chickpeas if you want something you'll roast and eat by the handful, because crispy roasted chickpeas are the only one of these that works as a snack.
+Brown lentils if you want the most protein per dollar you can put in a pot tonight. Split peas if you want fiber, at [22.2 grams per 100 grams](https://fdc.nal.usda.gov/food-details/172428/nutrients). Pinto beans if you want the big bag, at [21.42 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/175199/nutrients). Chickpeas if you want something you'll roast and eat by the handful, because crispy roasted chickpeas are the only one of these that works as a snack.
 
-Black beans are the compromise I keep buying, at 21.6 grams of protein and 15.5 grams of fiber for 37 cents per 100 grams, mostly because they end up in [tacos](/easy-black-bean-tacos-weeknight-dinner/) and burgers without much argument. How much to put in the pot is worked out in [how much dried beans per person](/canned-beans-vs-dried-beans-nutrition/). A recipe written as one 15-ounce can is about 1 1/2 cups drained, about 1/2 cup+ dried, and a pound cooks to about 6 cups, or 3½ to 4 cans. The [dried beans to canned converter](/tools/dried-beans-to-canned-converter/) scales that when the pot is bigger than one can.
+Black beans are the compromise I keep buying, at [21.6 grams of protein and 15.5 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/173734/nutrients), mostly because they end up in [tacos](/easy-black-bean-tacos-weeknight-dinner/) and burgers without much argument. How much to put in the pot is worked out in [how much dried beans per person](/canned-beans-vs-dried-beans-nutrition/). A recipe written as one 15-ounce can is about 1 1/2 cups drained, about 1/2 cup+ dried, and a pound cooks to about 6 cups, or 3½ to 4 cans. The [dried beans to canned converter](/tools/dried-beans-to-canned-converter/) scales that when the pot is bigger than one can.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-quality-per-dollar-2026.csv -->

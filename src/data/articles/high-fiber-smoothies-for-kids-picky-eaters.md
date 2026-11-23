@@ -15,7 +15,7 @@ image: /images/high-fiber-smoothies-for-kids-picky-eaters-main.jpg
 imageAlt: High Fiber Smoothies for Kids Picky Eaters - colorful smoothie with berries
   and greens with spinach, fresh vegetables for natural nutrition
 date: 2026-02-16
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -57,9 +57,9 @@ One day, I just stared at a bunch of spinach in the fridge. And then at a banana
 
 ## Why Fiber is, Like, a Huge Deal for Little Humans
 
-Okay, fiber. It's not just for grown-ups reading cereal boxes. Kids need it too! It helps them feel full (so maybe fewer requests for snacks five minutes after lunch, a mom can dream), keeps their digestive system happy and regular (which is a relief for everyone involved, am I right?), and may even help with steadier blood sugar levels throughout the day, which could mean fewer of those wild sugar crashes and subsequent meltdowns that nobody signed up for. Most kids don't get enough. A lot of kids, actually. So finding fun ways to sneak it in, well, that's just good parenting. (Smoothies are just the opening move; these [high-fiber dinners for picky kids](/high-fiber-dinner-recipes-picky-kids/) carry the same strategy all the way to the dinner table.)
+Okay, fiber. It's not just for grown-ups reading cereal boxes. The National Academies Adequate Intake is [19 grams a day at ages 1 to 3 and 25 grams at ages 4 to 8](https://www.nationalacademies.org/cdn/materials/9fb9fae6-337c-4b7c-9821-2c81d1f65ad0). I'm not going to claim a smoothie hits that. A sudden jump can also mean gas, because gut bacteria ferment the extra fiber ([Eswaran et al., 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3705355/)). So finding a way to add a few grams without a fight, well, that's the parenting move. (Smoothies are just the opening move; these [high-fiber dinners for picky kids](/high-fiber-dinner-recipes-picky-kids/) carry the same strategy all the way to the dinner table.)
 
-And veggies, like spinach? They're packed with it, alongside a bunch of other vital nutrients. Fruit does the same job with far less resistance, and the fruits that carry the most fiber per bite are mostly ones kids already ask for. But how do you get a kid who'd rather eat dirt (and sometimes does, let's be honest) to consume a leafy green? Blend it till it's unrecognizable and tastes like a milkshake. Genius.
+And veggies, like spinach? A cup of raw spinach is only about 30 grams, which is under 1 gram of fiber at [2.2 grams per 100 grams](https://fdc.nal.usda.gov/food-details/168462/nutrients). Spinach is here because the flavor hides. The fiber is in the fruit and the seeds. The 126-gram banana serving is about 3 grams of fiber at [2.6 grams per 100 grams](https://fdc.nal.usda.gov/food-details/173944/nutrients). But how do you get a kid who'd rather eat dirt (and sometimes does, let's be honest) to consume a leafy green? Blend it till it's unrecognizable and tastes like a milkshake. Genius.
 
 ## The Stealthy Smoothie Strategy: Tips for Veggie Disappearance
 
@@ -69,7 +69,7 @@ Before we get to the recipes, a few pro-tips from someone who has battled many a
 
 **Frozen Fruit's Your Bestie:** Seriously. It makes the smoothie thick, cold, and eliminates the need for ice (which can water down the flavor). Berries, especially strawberries and raspberries, have a strong flavor that masks greens really well. Bananas are excellent for creaminess and sweetness. Frozen spinach and cauliflower blend in the same way, and they're usually the cheaper buy, which you can see in this comparison of [what frozen and fresh vegetables cost per gram of fiber](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar).
 
-**A Liquid Base That Works:** Almond milk, oat milk, or even regular dairy milk if that's your jam. Sometimes a little fruit juice (100%, no added sugar) can help, but don't overdo it. Water works too, but it's less creamy.
+**A Liquid Base That Works:** Almond milk, oat milk, or even regular dairy milk if that's your jam. Sometimes a little fruit juice with no added sugar can help, but don't overdo it. Water works too, but it's less creamy.
 
 **The Green of Choice:** Spinach is king here. It has a mild flavor and blends down to nothing. Kale is a bit stronger, so maybe save that for when they're hooked. You can really pile it in without much notice.
 
@@ -90,7 +90,7 @@ This is where it all began for us. A true classic. It's sweet, it's pink, and it
 * 1 ripe banana (the riper, the sweeter)
 * 1 cup frozen strawberries
 * ½ cup milk (almond, oat, or dairy)
-* Optional: 1-2 tablespoons plain yogurt for extra creaminess and probiotics
+* Optional: 1-2 tablespoons plain yogurt for extra creaminess
 * Optional: a tiny dash of vanilla extract (really helps with the flavor profile)
 
 **Instructions:**
@@ -117,4 +117,4 @@ So, they liked the first one? Great! Let's add a little more berry goodness. Thi
 3. Blend, blend, blend until everything is creamy and vibrant. Adjust milk for thickness.
 4. Serve it up. They'll be none the wiser. My kid calls this the "purple potion."
 
-That spoon of chia is doing more work than another handful of berries. Chia seeds return 33.1 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). The strawberries turning the first cup pink land at 2.7.
+That spoon of chia is doing more work than another handful of berries. Dried chia has [34.4 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/170554/nutrients), about 4 grams in a 12-gram spoon. A cup of strawberry halves is [about 3 grams](https://fdc.nal.usda.gov/food-details/167762/nutrients) (152 grams at 2.0 grams per 100 grams). Where those foods land on price is the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
