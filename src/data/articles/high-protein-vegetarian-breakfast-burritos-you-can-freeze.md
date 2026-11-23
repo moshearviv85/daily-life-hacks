@@ -64,7 +64,7 @@ The thing about breakfast burritos is that most of the ones you freeze turn into
 
 These burritos actually work. The key is understanding what happens to each component when you freeze it, then building the recipe around those realities instead of ignoring them. This isn't a healthy-ingredients-are-magic situation. It's just good prep technique applied consistently.
 
-For the larger prep plan around these burritos, the [complete meal-prep system for beginners](/meal-prep-for-beginners-complete-system/) covers batch size, storage, reheating, and the fine art of not turning your freezer into a warehouse.
+For the larger prep plan around these burritos, the complete meal-prep system for beginners covers batch size, storage, reheating, and the fine art of not turning your freezer into a warehouse.
 
 ## Why These Burritos Actually Freeze Well
 

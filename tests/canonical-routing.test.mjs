@@ -144,7 +144,7 @@ test("wrong protein flagship slug redirects to the live protein-per-dollar artic
     "https://www.daily-life-hacks.com/protein-per-dollar-cheapest-high-protein-foods",
   ];
   const target =
-    "https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/";
+    "https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/";
 
   for (const source of sources) {
     const assets = makeAssets(new Set());
@@ -802,8 +802,8 @@ test("consolidation URLs 301 to the target before a trailing-slash hop or asset 
     ["/kfc-protein-per-dollar", "/fast-food-protein-per-dollar-ranked/"],
     ["/kfc-protein-per-dollar/", "/fast-food-protein-per-dollar-ranked/"],
     ["/tofu-vs-chicken-protein-cost/", "/protein-per-serving-beans-chicken-tofu-compared/"],
-    ["/cheapest-protein-per-gram/", "/protein-per-dollar-cheapest-protein-sources/"],
-    ["/cheapest-protein-per-gram?utm_source=google", "/protein-per-dollar-cheapest-protein-sources/?utm_source=google"],
+    ["/cheapest-protein-per-gram/", "/protein-per-dollar-adjusted-for-quality/"],
+    ["/cheapest-protein-per-gram?utm_source=google", "/protein-per-dollar-adjusted-for-quality/?utm_source=google"],
   ];
 
   for (const [path, location] of cases) {
@@ -811,7 +811,7 @@ test("consolidation URLs 301 to the target before a trailing-slash hop or asset 
       new Set([
         "/fast-food-protein-per-dollar-ranked/",
         "/protein-per-serving-beans-chicken-tofu-compared/",
-        "/protein-per-dollar-cheapest-protein-sources/",
+        "/protein-per-dollar-adjusted-for-quality/",
         "/kfc-protein-per-dollar/",
       ]),
     );

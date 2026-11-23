@@ -31,7 +31,7 @@ I used to shop like that. Two, sometimes three trips a week. Each one felt small
 
 You don't need a color coded spreadsheet. You need a few practical habits that let you plan a week of dinners with fewer grocery runs and actually stick with it.
 
-For the full system behind those habits, the [complete healthy-eating-on-a-budget playbook](/eat-healthy-on-a-budget-complete-playbook/) ties the weekly plan to shopping, storage, and leftovers before Wednesday gets ideas.
+For the full system behind those habits, the complete healthy-eating-on-a-budget playbook ties the weekly plan to shopping, storage, and leftovers before Wednesday gets ideas.
 
 ## Think in shelf life, not recipes
 

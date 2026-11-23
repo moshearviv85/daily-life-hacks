@@ -51,7 +51,7 @@ const STATIC_TABLES = [
     perDollarCol: "fiber_g_per_dollar",
     per100Col: "fiber_g_per_100g",
     csv: "/data/fiber-per-dollar-2026.csv",
-    study: "/fiber-per-dollar-cheapest-high-fiber-foods/",
+    study: "/what-30-grams-of-fiber-costs-per-day/",
     rows: parseCsv("/data/fiber-per-dollar-2026.csv"),
   },
   {
@@ -60,7 +60,7 @@ const STATIC_TABLES = [
     perDollarCol: "protein_g_per_dollar",
     per100Col: "protein_g_per_100g",
     csv: "/data/protein-per-dollar-2026.csv",
-    study: "/protein-per-dollar-cheapest-protein-sources/",
+    study: "/protein-per-dollar-adjusted-for-quality/",
     rows: parseCsv("/data/protein-per-dollar-2026.csv"),
   },
 ];
@@ -1098,7 +1098,7 @@ const breadcrumbSchema = {
           .catch(function () {
             statusBox.innerHTML =
               "The data file didn't load. It's not you, it's the network. Refresh the page and it'll probably behave. " +
-              'If it keeps sulking, the full ranked table lives in <a href="/fiber-per-dollar-cheapest-high-fiber-foods/" class="underline" style="color:#F29B30;">the fiber per dollar study</a>.';
+              'If it keeps sulking, the full ranked table lives in <a href="/what-30-grams-of-fiber-costs-per-day/" class="underline" style="color:#F29B30;">the fiber per dollar study</a>.';
           });
       }
 

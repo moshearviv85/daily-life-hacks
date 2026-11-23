@@ -53,7 +53,7 @@ faq:
 ---
 I used to stand in the grocery aisle staring at the price of ribeye like it was a museum exhibit I couldn't afford to touch. When you have a house full of people who eat like they haven't seen food in a week, you stop looking at the fancy cuts and start looking for the heavy packs of chuck. Ground beef is the workhorse of the American kitchen, but if you aren't careful, you'll end up spending forty dollars on a single taco night.
 
-The secret to making cheap ground beef meals for large families isn't just buying the meat on sale. It's about what you put next to the meat. If you're just serving patties, you're going to go broke. If you're serving beef mixed with things that cost pennies, you're winning. Where you buy matters too. These [Aldi shopping hacks for large family meals](/aldi-shopping-hacks-large-family-meals/) are how I keep the per-pound price from ruining the whole plan.
+The secret to making cheap ground beef meals for large families isn't just buying the meat on sale. It's about what you put next to the meat. If you're just serving patties, you're going to go broke. If you're serving beef mixed with things that cost pennies, you're winning. Where you buy matters too. These Aldi shopping hacks for large family meals are how I keep the per-pound price from ruining the whole plan.
 
 When the family packs come in three different weights, the [grocery unit price calculator](/tools/grocery-unit-price-calculator/) does the per-pound comparison without making you stand there poking at your phone like the meat case assigned homework.
 
@@ -69,7 +69,7 @@ I usually aim for a 50/50 ratio of meat to "stuff." If I'm making a hash, I want
 
 ## One-Pot Wonders for High Volume
 
-When you're cooking for a crowd, the last thing you want is four different pans going at once. One-pot meals are the holy grail for tired parents. A massive skillet of "Poor Man's Skillet" (beef, cabbage, and onions) can feed a small army for under ten bucks. Cabbage is one of the cheapest vegetables per pound, and when it's sautéed in beef fat, it actually tastes like something people want to eat. That same per-pound thinking is worth applying in the freezer aisle, where [frozen and fresh vegetables land differently on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar).
+When you're cooking for a crowd, the last thing you want is four different pans going at once. One-pot meals are the holy grail for tired parents. A massive skillet of "Poor Man's Skillet" (beef, cabbage, and onions) can feed a small army for under ten bucks. Cabbage is one of the cheapest vegetables per pound, and when it's sautéed in beef fat, it actually tastes like something people want to eat. That same per-pound thinking is worth applying in the freezer aisle, where frozen and fresh vegetables land differently on fiber per dollar.
 
 You can also lean heavily into rice-based dishes. A beef and broccoli stir-fry uses very little meat because the rice and the bulky florets do the heavy lifting. I keep a 20-pound bag of jasmine rice in the pantry specifically for these nights. It's an insurance policy against a hungry teenager.
 
@@ -83,6 +83,6 @@ If you find yourself with a particularly greasy batch, toss in a few extra piece
 
 If you're actually cooking for a large family, "leftovers" might be a myth in your house. But if you do manage to have some, ground beef dishes usually taste better the next day. The spices have time to actually move into the meat rather than just sitting on the surface.
 
-I like to freeze ground beef in flat, one-pound squares. They thaw in about twenty minutes in a sink of warm water, which is a lifesaver when you realize at 5:00 PM that you forgot to take anything out of the freezer. Those same flat squares are what I pack for [camping trips with a large family](/camping-meal-hacks-large-families/), where a frozen block keeps the cooler cold on the drive up and turns into dinner on the second night. It also makes it easier to track exactly how much you're spending per meal, which helps when you're trying to stay on a strict budget.
+I like to freeze ground beef in flat, one-pound squares. They thaw in about twenty minutes in a sink of warm water, which is a lifesaver when you realize at 5:00 PM that you forgot to take anything out of the freezer. Those same flat squares are what I pack for camping trips with a large family, where a frozen block keeps the cooler cold on the drive up and turns into dinner on the second night. It also makes it easier to track exactly how much you're spending per meal, which helps when you're trying to stay on a strict budget.
 
 Keeping a large family fed doesn't require a culinary degree or a massive inheritance, just a willingness to use a lot of potatoes and a big enough skillet. Most of the time, the simplest meals are the ones that actually get eaten without a fight, which is the real victory at the end of a long day.

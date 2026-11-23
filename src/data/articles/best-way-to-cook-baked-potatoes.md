@@ -94,7 +94,7 @@ This is also why a sheet pan full of potatoes takes longer than four potatoes st
 
 ## Make baked potatoes pull their weight tomorrow
 
-Bake a few extra on purpose. Cold baked potatoes are excellent for a skillet breakfast: cube them, cook in a little oil until the edges crisp, then add eggs or leftover vegetables. Frozen vegetables work fine in that skillet since they're hitting high heat anyway, and [how frozen and fresh produce compare on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) is worth knowing before your next produce run. They also work in a fast soup or as the base for a loaded lunch with beans, cheese, and whatever is lurking in the refrigerator.
+Bake a few extra on purpose. Cold baked potatoes are excellent for a skillet breakfast: cube them, cook in a little oil until the edges crisp, then add eggs or leftover vegetables. Frozen vegetables work fine in that skillet since they're hitting high heat anyway, and how frozen and fresh produce compare on fiber per dollar is worth knowing before your next produce run. They also work in a fast soup or as the base for a loaded lunch with beans, cheese, and whatever is lurking in the refrigerator.
 
 For storage, cool them promptly, refrigerate in a covered container, and use them within a few days. Reheat whole potatoes in a 375 degree F oven or air fryer until hot through. The microwave is fine when you're in a hurry, but it turns that hard-won crisp skin into a damp handshake. Save it for the hash.
 

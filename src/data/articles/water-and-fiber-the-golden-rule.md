@@ -63,7 +63,7 @@ One randomized study followed 117 adults with functional constipation who were a
 
 That [1998 trial indexed by PubMed](https://pubmed.ncbi.nlm.nih.gov/9684123/) supports the idea that fluids may matter when fiber intake rises, at least for people similar to those studied. It doesn't prove that 2 liters is the right add-on for everybody. It also doesn't show that pouring more and more water on an unchanged diet solves every case. One study is evidence, not a universal plumbing code.
 
-The official advice stays refreshingly plain: eat fiber-containing foods, increase gradually, and get enough liquids. If you want the food side translated into actual groceries, our [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) shows 53 options using public data.
+The official advice stays refreshingly plain: eat fiber-containing foods, increase gradually, and get enough liquids. If you want the food side translated into actual groceries, our [fiber-per-dollar ranking](/what-30-grams-of-fiber-costs-per-day/) shows 53 options using public data.
 
 ## How can you add fiber without making the week miserable?
 

@@ -48,7 +48,7 @@ Three columns on a scrap of paper. Day, dinner, price. That's it, and it takes a
 
 The trick is that you only need prices for anchors, not for whole recipes. A 90 gram serving of dry pinto beans is $0.20. A 60 gram serving of dry rice is $0.09 to $0.12. Two eggs are $0.37. A can of tuna is $0.98. Learn eight of those numbers and you can price any dinner in your head, which is a genuinely useful party trick if you go to very boring parties. We costed ten plates that way in cheap dinner ideas.
 
-Then work backwards. If you want the week under a certain number, you don't cut portions, you swap anchors. Moving one dinner from ground beef to beans saves more than an entire week of coupon clipping, because beef returns 11.5 grams of protein per dollar against 97.9 for pintos. The full spread is in [protein per dollar](/protein-per-dollar-cheapest-protein-sources/).
+Then work backwards. If you want the week under a certain number, you don't cut portions, you swap anchors. Moving one dinner from ground beef to beans saves more than an entire week of coupon clipping, because beef returns 11.5 grams of protein per dollar against 97.9 for pintos. The full spread is in [protein per dollar](/protein-per-dollar-adjusted-for-quality/).
 
 ## What does a week of budget dinners actually cost?
 
@@ -62,7 +62,7 @@ Dinner isn't your whole grocery bill, though, and pretending otherwise is how me
 
 Planning decides. Prep cooks. You can do the first without ever doing the second, and if you only pick one, pick planning, because the money is decided at the shelf.
 
-Prep is what protects the plan from a bad Wednesday. If Wednesday's beans are already cooked and in the fridge, Wednesday's takeout impulse loses. If they aren't, it usually wins. That's the whole argument, and [meal prep for beginners](/meal-prep-for-beginners-complete-system/) has the system, while how to meal prep on a budget covers the solo version.
+Prep is what protects the plan from a bad Wednesday. If Wednesday's beans are already cooked and in the fridge, Wednesday's takeout impulse loses. If they aren't, it usually wins. That's the whole argument, and meal prep for beginners has the system, while how to meal prep on a budget covers the solo version.
 
 Overlap your ingredients on purpose and both jobs get easier. Plan two pots that reheat well and you've bought yourself four dinners, which is the math behind cheap healthy meals with leftovers. One bag of dry pintos covers Tuesday and half of Wednesday. One head of cabbage covers the tacos and a side salad. There's a whole method for this in one theme, five dinners, one grocery list.
 
@@ -72,7 +72,7 @@ Multiply the pot, keep the menu. A beans and rice pot at $0.38 a serving is abou
 
 What does change is package math. A four pound bag of pintos at $3.97 is twenty servings, which a single person will still be eating in November and a family of six will finish in five days. Shopping for one means either smaller bags at worse unit prices or a freezer strategy, a problem we worked through in budget meal ideas for one.
 
-For bigger households the advice inverts. Buy the big bag, buy the drumsticks in the five pound pack, and let [how to stretch meals for large families](/how-to-stretch-meals-large-families/) handle the rest.
+For bigger households the advice inverts. Buy the big bag, buy the drumsticks in the five pound pack, and let how to stretch meals for large families handle the rest.
 
 ## Where budget meal plans usually fall apart
 
@@ -82,6 +82,6 @@ Build in one lazy night on purpose. Pasta with a can of beans takes twelve minut
 
 The other leak is the produce you bought hopefully and threw out guiltily. Food you paid for and binned costs full price and feeds nobody, which is why [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/) does more for a budget than most shopping tricks. Plan fewer fresh items and give each one two jobs.
 
-These prices are single store shelf tags from July 2026 with US average prices on commodity items, and we publish no calorie figures because our datasets don't carry a calorie column. Read the totals as a comparison between plans, not a promise about your store. For the wider system, the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the cart this plan turns into.
+These prices are single store shelf tags from July 2026 with US average prices on commodity items, and we publish no calorie figures because our datasets don't carry a calorie column. Read the totals as a comparison between plans, not a promise about your store. For the wider system, the eat healthy on a budget playbook covers the cart this plan turns into.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

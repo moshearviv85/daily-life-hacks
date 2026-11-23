@@ -58,7 +58,7 @@ Leeks are the unsung heroes here. They provide a mild, onion-like base that does
 
 ## Keeping the prep time under control
 
-If a recipe takes more than thirty minutes on a Tuesday, I'm probably not making it. The beauty of these ingredients is that they cook incredibly fast. Asparagus takes about five minutes to soften, and frozen peas are basically ready the second they hit the hot liquid. The freezer aisle isn't a downgrade here either, and [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) is worth knowing before you pay for the fresh version out of habit. You aren't waiting for a pot of potatoes to finally give up the ghost and turn soft.
+If a recipe takes more than thirty minutes on a Tuesday, I'm probably not making it. The beauty of these ingredients is that they cook incredibly fast. Asparagus takes about five minutes to soften, and frozen peas are basically ready the second they hit the hot liquid. The freezer aisle isn't a downgrade here either, and how frozen and fresh vegetables compare on fiber per dollar is worth knowing before you pay for the fresh version out of habit. You aren't waiting for a pot of potatoes to finally give up the ghost and turn soft.
 
 **Pro-tip:** Use an immersion blender. Dragging a hot pot of soup to a countertop blender is a recipe for a kitchen disaster and a potential trip to the urgent care. Blending just half the soup gives you a creamy texture without the need for heavy cream, which keeps the meal feeling light. It's a simple trick that makes the soup look like you tried much harder than you actually did.
 

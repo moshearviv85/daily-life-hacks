@@ -147,7 +147,10 @@ test("flagship highlight and shortlist numbers match the published CSVs", () => 
     assert.match(config.disclosure, /not a food endorsement/i);
     assert.equal(config.rankingJump.href, `#${FLAGSHIP_RANKING_ANCHOR}`);
     assert.equal(config.rankingJump.label, "See the full ranking");
-    assert.match(config.nextStep.primary.href, /^\/(?:fiber|protein)-per-dollar-/);
+    assert.match(
+      config.nextStep.primary.href,
+      /^\/(?:what-30-grams-of-fiber-costs-per-day|protein-per-dollar-adjusted-for-quality)\/$/,
+    );
     assert.equal(config.nextStep.secondary.href, "/food-value-database/");
     assert.ok(config.emailCapture, `${slug} is missing study-specific email capture copy`);
     assert.match(config.emailCapture.title, /ranking updates/i);
@@ -182,95 +185,94 @@ test("flagship highlight and shortlist numbers match the published CSVs", () => 
 });
 
 test("flagship ranking tables lock food, rank, and grams-per-dollar to the live CSVs", () => {
-  const tables = [
-    {
-      slug: "protein-per-dollar-cheapest-protein-sources",
-      article: "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
-      csv: "public/data/protein-per-dollar-2026.csv",
-      header: "| Rank | Food | Protein (g per 100g) | Price per 100g | Protein per $1 |",
-      column: "protein_g_per_dollar",
-    },
-    {
-      slug: "fiber-per-dollar-cheapest-high-fiber-foods",
-      article: "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
-      csv: "public/data/fiber-per-dollar-2026.csv",
-      header: "| Rank | Food | Fiber (g per 100g) | Price per 100g | Fiber per $1 |",
-      column: "fiber_g_per_dollar",
-    },
-  ];
+  const redirects = read("public/_redirects");
+  for (const [slug, target] of [
+    ["protein-per-dollar-cheapest-protein-sources", "/protein-per-dollar-adjusted-for-quality/"],
+    ["fiber-per-dollar-cheapest-high-fiber-foods", "/what-30-grams-of-fiber-costs-per-day/"],
+  ]) {
+    assert.equal(existsSync(join(root, "src/data/articles", `${slug}.md`)), false, slug);
+    assert.match(redirects, new RegExp(`^/${slug} ${target} 301$`, "m"));
+    assert.match(redirects, new RegExp(`^/${slug}/ ${target} 301$`, "m"));
+  }
 
-  for (const table of tables) {
-    const rows = parseCsv(read(table.csv));
-    const markdown = read(table.article);
-    const start = markdown.indexOf(table.header);
-    assert.notEqual(start, -1, `${table.slug} missing ranking table`);
-    const lines = [];
-    for (const line of markdown.slice(start).split(/\r?\n/).slice(2)) {
-      if (!line.startsWith("|")) break;
-      lines.push(line);
-    }
-    assert.equal(lines.length, rows.length, `${table.slug} table length drifted from CSV`);
-    for (const [index, row] of rows.entries()) {
-      const cells = lines[index]
-        .slice(1, -1)
-        .split("|")
-        .map((cell) => cell.trim());
-      assert.equal(cells[0], row.rank, `${table.slug} rank ${row.rank}`);
-      assert.equal(cells[1], row.food, `${table.slug} food ${row.food}`);
-      assert.equal(
-        cells[4],
-        `${row[table.column]} g`,
-        `${table.slug} ${row.food} should show ${row[table.column]} g from the CSV`,
-      );
-    }
+  const proteinRows = parseCsv(read("public/data/protein-per-dollar-2026.csv"));
+  const proteinByFood = new Map(proteinRows.map((row) => [row.food, row]));
+  const protein = read("src/data/articles/protein-per-dollar-adjusted-for-quality.md");
+  assert.equal(
+    protein.includes("| Rank | Food | Protein (g per 100g) | Price per 100g | Protein per $1 |"),
+    false,
+    "the 49-row protein ranking was not moved onto the quality article",
+  );
+  const proteinHeader = "| Category | Best value | Protein per $1 |";
+  const proteinStart = protein.indexOf(proteinHeader);
+  assert.notEqual(proteinStart, -1, "quality article is missing the raw-ranking short table");
+  const proteinLines = [];
+  for (const line of protein.slice(proteinStart).split(/\r?\n/).slice(2)) {
+    if (!line.startsWith("|")) break;
+    proteinLines.push(line);
+  }
+  assert.equal(proteinLines.length, 4);
+  for (const line of proteinLines) {
+    const cells = line.slice(1, -1).split("|").map((cell) => cell.trim());
+    const row = proteinByFood.get(cells[1]);
+    assert.ok(row, `raw-ranking food missing from CSV: ${cells[1]}`);
+    assert.equal(cells[2], `${row.protein_g_per_dollar} g`, cells[1]);
+  }
+
+  const fiberRows = parseCsv(read("public/data/fiber-per-dollar-2026.csv"));
+  const fiberByFood = new Map(fiberRows.map((row) => [row.food, row]));
+  const fiberAliases = new Map([["Rolled oats", "Old-fashioned rolled oats"]]);
+  const fiber = read("src/data/articles/what-30-grams-of-fiber-costs-per-day.md");
+  assert.equal(
+    fiber.includes("| Rank | Food | Fiber (g per 100g) | Price per 100g | Fiber per $1 |"),
+    false,
+    "the 53-row fiber ranking was not moved onto the fiber-day article",
+  );
+  const fiberHeader = "| Food | Fiber per $1 |";
+  const fiberStart = fiber.indexOf(fiberHeader);
+  assert.notEqual(fiberStart, -1, "fiber-day article is missing the cheapest-fiber short table");
+  const fiberLines = [];
+  for (const line of fiber.slice(fiberStart).split(/\r?\n/).slice(2)) {
+    if (!line.startsWith("|")) break;
+    fiberLines.push(line);
+  }
+  assert.equal(fiberLines.length, 8);
+  for (const line of fiberLines) {
+    const cells = line.slice(1, -1).split("|").map((cell) => cell.trim());
+    const food = fiberAliases.get(cells[0]) ?? cells[0];
+    const row = fiberByFood.get(food);
+    assert.ok(row, `cheapest-fiber food missing from CSV: ${cells[0]}`);
+    assert.equal(cells[1], `${row.fiber_g_per_dollar} g`, cells[0]);
   }
 });
 
 test("protein flagship FAQ quotes the ranking table grams per dollar", () => {
-  const markdown = read(
-    "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
+  const redirects = read("public/_redirects");
+  assert.equal(
+    existsSync(join(root, "src/data/articles/protein-per-dollar-cheapest-protein-sources.md")),
+    false,
   );
+  assert.match(
+    redirects,
+    /^\/protein-per-dollar-cheapest-protein-sources \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
+  );
+  assert.match(
+    redirects,
+    /^\/protein-per-dollar-cheapest-protein-sources\/ \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
+  );
+  const markdown = read("src/data/articles/protein-per-dollar-adjusted-for-quality.md");
   const faq = markdown.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
-  assert.ok(faq.includes("question:"), "protein flagship is missing FAQ frontmatter");
-  const rows = parseCsv(read("public/data/protein-per-dollar-2026.csv"));
-  const grams = new Map(rows.map((row) => [row.food, row.protein_g_per_dollar]));
-  const quoted = [
-    "Whole wheat flour",
-    "Brown lentils (dry)",
-    "Red lentils (dry)",
-    "Peanut butter",
-    "Chicken drumsticks (bone-in)",
-    "Eggs (large)",
-    "Mozzarella (low-moisture part-skim)",
-    "Whole milk",
-    "Chicken thighs (boneless, skinless)",
-    "Rotisserie chicken (whole, cooked)",
-    "Chicken breast (boneless, skinless)",
-    "Tofu (extra firm)",
-    "Ground beef (80/20)",
-    "Bacon",
-  ];
-
-  for (const food of quoted) {
-    const value = grams.get(food);
-    assert.ok(value, `missing CSV row for ${food}`);
-    assert.match(
-      faq,
-      new RegExp(value.replace(".", "\\.")),
-      `FAQ should quote ${food} at ${value} g per dollar`,
-    );
-  }
-
-  assert.match(faq, /10\.0 grams of protein per 100 grams/);
-  assert.match(faq, /22\.5 grams raw/);
-  assert.doesNotMatch(faq, /lands at 51(?!\.)/);
-  assert.doesNotMatch(faq, /whole milk at 29(?!\.)/);
-  assert.doesNotMatch(faq, /mozzarella at 30(?!\.)/);
-  assert.doesNotMatch(faq, /thighs at 28(?!\.)/);
+  assert.ok(faq.includes("question:"), "quality article is missing FAQ frontmatter");
+  assert.match(faq, /50\.3/);
+  assert.match(faq, /49\.0/);
+  assert.match(faq, /57\.6/);
+  assert.match(faq, /34\.0/);
+  assert.doesNotMatch(markdown, /id="full-ranking"/);
   assert.doesNotMatch(read("src/pages/[slug].astro"), /"@type": "FAQPage"/);
   assert.match(read("src/pages/[slug].astro"), /Frequently Asked Questions/);
   assert.match(read("src/pages/[slug].astro"), /article\.data\.faq\.map/);
 });
+
 
 test("beans double-win FAQ quotes the combined CSV and stays indexable", () => {
   const markdown = read("src/data/articles/beans-double-win-fiber-protein.md");
@@ -315,155 +317,66 @@ test("beans double-win FAQ quotes the combined CSV and stays indexable", () => {
 });
 
 test("fiber flagship FAQ quotes the ranking table grams per dollar", () => {
-  const markdown = read(
-    "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
+  const redirects = read("public/_redirects");
+  assert.equal(
+    existsSync(join(root, "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md")),
+    false,
   );
+  assert.match(
+    redirects,
+    /^\/fiber-per-dollar-cheapest-high-fiber-foods \/what-30-grams-of-fiber-costs-per-day\/ 301$/m,
+  );
+  const markdown = read("src/data/articles/what-30-grams-of-fiber-costs-per-day.md");
   const faq = markdown.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
-  assert.ok(faq.includes("question:"), "fiber flagship is missing FAQ frontmatter");
-  const header = "| Rank | Food | Fiber (g per 100g) | Price per 100g | Fiber per $1 |";
-  const start = markdown.indexOf(header);
-  assert.notEqual(start, -1, "fiber flagship is missing its ranking table");
-  const tableGrams = new Map();
-  for (const line of markdown.slice(start).split(/\r?\n/).slice(2)) {
-    if (!line.startsWith("|")) break;
-    const cells = line
-      .slice(1, -1)
-      .split("|")
-      .map((cell) => cell.trim());
-    tableGrams.set(cells[1], cells[4].replace(/ g$/, ""));
-  }
-
-  const quoted = [
-    "Whole wheat flour",
-    "Green split peas (dry)",
-    "Pearled barley (dry)",
-    "Popcorn kernels",
-    "Pinto beans (dry)",
-    "Canned black beans",
-    "Bananas",
-    "Blueberries",
-  ];
-  for (const food of quoted) {
-    const grams = tableGrams.get(food);
-    assert.ok(grams, `missing table row for ${food}`);
-    assert.match(
-      faq,
-      new RegExp(grams.replace(".", "\\.")),
-      `FAQ should quote ${food} at ${grams} g per dollar`,
-    );
-  }
-
-  const rows = parseCsv(read("public/data/fiber-per-dollar-2026.csv"));
-  const csvGrams = new Map(rows.map((row) => [row.food, row.fiber_g_per_dollar]));
-  for (const food of quoted) {
-    assert.equal(
-      tableGrams.get(food),
-      csvGrams.get(food),
-      `${food} table grams drifted from fiber-per-dollar-2026.csv`,
-    );
-  }
-
+  assert.ok(faq.includes("question:"), "fiber-day article is missing FAQ frontmatter");
+  assert.match(markdown, /Popcorn stays unresolved/);
+  assert.match(markdown, /51\.3 grams per dollar/);
+  assert.doesNotMatch(faq, /77\.8/);
   assert.doesNotMatch(faq, /roughly 78/);
   assert.doesNotMatch(faq, /about 71 grams/);
-  assert.doesNotMatch(faq, /just under 12/);
   assert.doesNotMatch(faq, /97\.9/);
   assert.doesNotMatch(faq, /70\.8/);
+  assert.doesNotMatch(markdown, /id="full-ranking"/);
 });
+
 
 test("high-protein budget guide FAQ quotes its on-page protein table grams", () => {
-  const markdown = read("src/data/articles/high-protein-on-a-budget-complete-guide.md");
-  const faq = markdown.match(/^faq:\n([\s\S]*?)\n---\n/m)?.[1] ?? "";
-  assert.ok(faq.includes("question:"), "high-protein guide is missing FAQ frontmatter");
-  const header = "| Food | Protein per $1 |";
-  const start = markdown.indexOf(header);
-  assert.notEqual(start, -1, "high-protein guide is missing its protein table");
-  const tableGrams = new Map();
-  for (const line of markdown.slice(start).split(/\r?\n/).slice(2)) {
-    if (!line.startsWith("|")) break;
-    const cells = line
-      .slice(1, -1)
-      .split("|")
-      .map((cell) => cell.trim());
-    const grams = cells[1].replace(/ g$/, "");
-    tableGrams.set(cells[0], grams);
-  }
-
-  const quoted = [
-    "Pinto beans (dry)",
-    "Chicken drumsticks (bone-in)",
-    "Eggs (large)",
-    "Chicken breast (boneless, skinless)",
-    "Canned tuna (chunk light)",
-    "Ground beef (80/20)",
-  ];
-  for (const food of quoted) {
-    const grams = tableGrams.get(food);
-    assert.ok(grams, `missing table row for ${food}`);
-    assert.match(
-      faq,
-      new RegExp(grams.replace(".", "\\.")),
-      `FAQ should quote ${food} at ${grams} g per dollar`,
-    );
-  }
-
-  const rows = parseCsv(read("public/data/protein-per-dollar-2026.csv"));
-  const csvGrams = new Map(rows.map((row) => [row.food, row.protein_g_per_dollar]));
-  const legumes = rows.filter((row) => row.category === "Dried beans & lentils");
-  const legumeValues = legumes.map((row) => Number(row.protein_g_per_dollar));
-  const legumeMin = Math.min(...legumeValues).toFixed(1);
-  const legumeMax = Math.max(...legumeValues).toFixed(1);
-  const legumeRange = `between ${legumeMin} and ${legumeMax} grams of protein per dollar`;
-  assert.match(markdown, new RegExp(legumeRange.replaceAll(".", "\\.")));
-  assert.match(faq, new RegExp(legumeRange.replaceAll(".", "\\.")));
-  assert.doesNotMatch(faq, /between 56 and 98/);
-  assert.doesNotMatch(faq, /97\.9/);
-  assert.doesNotMatch(faq, /about 98/);
-  assert.doesNotMatch(faq, /about 34 grams/);
-  assert.doesNotMatch(faq, /about 50 grams/);
-  assert.doesNotMatch(faq, /about 22\.4/);
-
-  const csvName = {
-    "Rotisserie chicken": "Rotisserie chicken (whole, cooked)",
-    "Canned tuna (chunk light)": "Canned tuna (chunk light, in water)",
-  };
-  const tableValues = [];
-  for (const [tableFood, grams] of tableGrams) {
-    const sourceFood = csvName[tableFood] ?? tableFood;
-    const csvValue = csvGrams.get(sourceFood);
-    assert.ok(csvValue, `no CSV row for table food ${tableFood}`);
-    assert.equal(
-      grams,
-      csvValue,
-      `${tableFood} table grams drifted from protein-per-dollar-2026.csv`,
-    );
-    tableValues.push(Number(csvValue));
-  }
-  for (let index = 1; index < tableValues.length; index += 1) {
-    assert.ok(
-      tableValues[index] <= tableValues[index - 1],
-      "high-protein guide table should stay in descending CSV order",
-    );
-  }
-
-  const pinto = csvGrams.get("Pinto beans (dry)");
-  const bacon = csvGrams.get("Bacon");
-  const breast = csvGrams.get("Chicken breast (boneless, skinless)");
-  const beef = csvGrams.get("Ground beef (80/20)");
-  assert.match(markdown, /High Protein on a Budget: Pinto Beans Beat Bacon/);
-  assert.match(markdown, new RegExp(`pinto beans ${pinto}`));
-  assert.match(markdown, new RegExp(`bacon delivers ${bacon}|against ${bacon} for bacon|${bacon} for bacon`, "i"));
-  assert.match(faq, new RegExp(`dried pinto beans landed at ${pinto}`));
-  assert.match(faq, new RegExp(`chicken breast delivered ${breast}`));
-  assert.match(faq, new RegExp(`ground beef ${beef}`));
-  assert.match(
-    markdown,
-    new RegExp(
-      `\\| Pinto beans \\(dry\\), 4 lb bag \\| \\$${Number(
-        rows.find((row) => row.food === "Pinto beans (dry)").package_price_usd,
-      ).toFixed(2)} \\|`,
-    ),
+  const redirects = read("public/_redirects");
+  assert.equal(
+    existsSync(join(root, "src/data/articles/high-protein-on-a-budget-complete-guide.md")),
+    false,
   );
+  assert.match(
+    redirects,
+    /^\/high-protein-on-a-budget-complete-guide \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
+  );
+  assert.match(
+    redirects,
+    /^\/high-protein-on-a-budget-complete-guide\/ \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
+  );
+  const markdown = read("src/data/articles/protein-per-dollar-adjusted-for-quality.md");
+  const rows = parseCsv(read("public/data/protein-per-dollar-2026.csv"));
+  const byFood = new Map(rows.map((row) => [row.food, row]));
+  const cart = [
+    ["Chicken drumsticks (bone-in)", 1],
+    ["Pinto beans (dry)", 1],
+    ["Eggs (large)", 2],
+    ["Brown lentils (dry)", 1],
+    ["Canned tuna (chunk light, in water)", 2],
+    ["Cottage cheese (4%)", 1],
+  ];
+  let total = 0;
+  for (const [food, count] of cart) {
+    const price = Number(byFood.get(food).package_price_usd) * count;
+    total += price;
+    assert.match(markdown, new RegExp(`\\$${price.toFixed(2)}`), food);
+  }
+  assert.match(markdown, new RegExp(`\\*\\*\\$${total.toFixed(2)}\\*\\*`));
+  assert.match(markdown, /id="weekly-protein-cart"/);
+  assert.doesNotMatch(markdown, /\$20 backbone/);
+  assert.equal(Object.hasOwn(FLAGSHIP_ENGAGEMENT, "high-protein-on-a-budget-complete-guide"), false);
 });
+
 
 test("reusable pull-quote and jump components stay honest buttons and anchors", () => {
   const pullQuote = read("src/components/StudyPullQuote.astro");
@@ -520,28 +433,20 @@ test("article CSS covers pull quotes, ranking jump, and table stay-power", () =>
 });
 
 test("flagship articles keep one in-body jump to the ranking anchor", () => {
-  const protein = read(
-    "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
-  );
-  const fiber = read(
-    "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
-  );
-  const sourdough = read(
-    "src/data/articles/easy-sourdough-discard-recipes-beginners.md",
-  );
+  const protein = read("src/data/articles/protein-per-dollar-adjusted-for-quality.md");
+  const fiber = read("src/data/articles/what-30-grams-of-fiber-costs-per-day.md");
+  const sourdough = read("src/data/articles/easy-sourdough-discard-recipes-beginners.md");
 
-  for (const [name, source] of [
-    ["protein", protein],
-    ["fiber", fiber],
-  ]) {
-    const jumps = source.match(/\]\(#full-ranking\)/g) ?? [];
-    assert.equal(jumps.length, 1, `${name} should have one in-body #full-ranking link`);
-    assert.doesNotMatch(source, /protein-per-dollar-cheapest-high-protein-foods/);
-  }
-
+  assert.equal((protein.match(/\]\(#weekly-protein-cart\)/g) ?? []).length, 1);
+  assert.equal((fiber.match(/\]\(#dollar-fiber-day\)/g) ?? []).length, 1);
+  assert.doesNotMatch(protein, /#full-ranking/);
+  assert.doesNotMatch(fiber, /#full-ranking/);
+  assert.doesNotMatch(protein, /protein-per-dollar-cheapest-high-protein-foods/);
+  assert.doesNotMatch(fiber, /protein-per-dollar-cheapest-high-protein-foods/);
   assert.doesNotMatch(sourdough, /#full-ranking/);
   assert.doesNotMatch(sourdough, /study-pull-quote/);
 });
+
 
 test("rehype ranking plugin adds a live #full-ranking target and top-N rows", () => {
   const tree = rankingFixture([
@@ -591,46 +496,53 @@ function nodeHasHref(node, href) {
 }
 
 test("rendered flagship pages expose the jump target when dist exists", () => {
+  assert.equal(
+    existsSync(join(root, "dist/protein-per-dollar-cheapest-protein-sources/index.html")),
+    false,
+  );
+  assert.equal(
+    existsSync(join(root, "dist/fiber-per-dollar-cheapest-high-fiber-foods/index.html")),
+    false,
+  );
   const rendered = [
-    "dist/protein-per-dollar-cheapest-protein-sources/index.html",
-    "dist/fiber-per-dollar-cheapest-high-fiber-foods/index.html",
+    ["dist/protein-per-dollar-adjusted-for-quality/index.html", /id="raw-ranking"/, /id="weekly-protein-cart"/],
+    ["dist/what-30-grams-of-fiber-costs-per-day/index.html", /id="cheapest-fiber"/, /id="dollar-fiber-day"/],
   ];
-  if (!rendered.every((path) => existsSync(join(root, path)))) {
+  if (!rendered.every(([path]) => existsSync(join(root, path)))) {
     return;
   }
-
-  for (const path of rendered) {
+  for (const [path, ...needles] of rendered) {
     const html = read(path);
-    assert.match(html, /id="full-ranking"/);
-    assert.match(html, /class="[^"]*study-pull-quote[^"]*"/);
-    assert.match(html, /class="[^"]*study-ranking-jump[^"]*"/);
-    assert.match(html, /href="#full-ranking"/);
-    assert.match(html, /class="[^"]*ranking-table[^"]*"/);
-    assert.match(html, /id="rank-1"/);
-    assert.match(html, /class="[^"]*study-next-step[^"]*"/);
-    assert.match(html, /class="[^"]*study-email-capture[^"]*"/);
-    assert.match(html, /id="study-email-form"/);
-    assert.match(html, /href="\/food-value-database\/"/);
+    for (const needle of needles) assert.match(html, needle, path);
+    assert.doesNotMatch(html, /id="full-ranking"/);
     assert.doesNotMatch(html, /protein-per-dollar-cheapest-high-protein-foods/);
   }
 });
 
+
 test("inline study signup is limited to the two flagship slugs", () => {
   const slugPage = read("src/pages/[slug].astro");
-  const sourdough = read(
-    "src/data/articles/easy-sourdough-discard-recipes-beginners.md",
-  );
-  const protein = read(
-    "src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
-  );
-  const fiber = read(
-    "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
-  );
+  const sourdough = read("src/data/articles/easy-sourdough-discard-recipes-beginners.md");
+  const redirects = read("public/_redirects");
 
   assert.match(slugPage, /flagship\?\.emailCapture/);
+  assert.equal(
+    FLAGSHIP_ENGAGEMENT["protein-per-dollar-cheapest-protein-sources"].emailCapture.emailSegment,
+    "pillar-protein",
+  );
+  assert.equal(
+    FLAGSHIP_ENGAGEMENT["fiber-per-dollar-cheapest-high-fiber-foods"].emailCapture.emailSegment,
+    "pillar-fiber",
+  );
+  assert.equal(FLAGSHIP_ENGAGEMENT["protein-per-dollar-adjusted-for-quality"], undefined);
+  assert.equal(FLAGSHIP_ENGAGEMENT["what-30-grams-of-fiber-costs-per-day"], undefined);
   assert.doesNotMatch(sourdough, /study-email-capture|Email me ranking updates/);
-  assert.doesNotMatch(protein, /study-email-capture/);
-  assert.doesNotMatch(fiber, /study-email-capture/);
-  assert.match(protein, /Protein per Dollar: Flour, Then Lentils/);
-  assert.match(fiber, /Fiber per Dollar: Flour, Then Split Peas/);
+  assert.match(
+    redirects,
+    /^\/protein-per-dollar-cheapest-protein-sources\/ \/protein-per-dollar-adjusted-for-quality\/ 301$/m,
+  );
+  assert.match(
+    redirects,
+    /^\/fiber-per-dollar-cheapest-high-fiber-foods\/ \/what-30-grams-of-fiber-costs-per-day\/ 301$/m,
+  );
 });

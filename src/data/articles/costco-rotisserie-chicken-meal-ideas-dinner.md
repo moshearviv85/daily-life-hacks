@@ -154,4 +154,4 @@ Measure usable meat after removing bones and skin. Pack dinner-size portions in 
 
 Write the original purchase or cooking date on the container. “Eat it all week” isn't a good refrigerator plan. Freeze the later dinners now.
 
-To price the meal, enter your actual chicken and add-on costs in the [recipe cost calculator](/tools/recipe-cost-calculator/). Our [protein-per-dollar ranking](/protein-per-dollar-cheapest-protein-sources/) uses its own dated price sample; it isn't today's Costco receipt.
+To price the meal, enter your actual chicken and add-on costs in the [recipe cost calculator](/tools/recipe-cost-calculator/). Our [protein-per-dollar ranking](/protein-per-dollar-adjusted-for-quality/) uses its own dated price sample; it isn't today's Costco receipt.

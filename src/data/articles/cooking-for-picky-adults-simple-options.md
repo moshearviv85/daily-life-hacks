@@ -64,7 +64,7 @@ If someone's been eating plain pasta with butter for 30 years, handing them a Th
 
 Some practical entry points for cooking for picky adults with simple options:
 
-* **Roasted vegetables instead of raw.** Roasting makes carrots, sweet potatoes, and broccoli sweeter and softer. Many people who dislike raw vegetables are fine with roasted ones. Frozen florets roast fine straight from the bag, and it's worth seeing [how frozen and fresh compare on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) before you pay for fresh every week.
+* **Roasted vegetables instead of raw.** Roasting makes carrots, sweet potatoes, and broccoli sweeter and softer. Many people who dislike raw vegetables are fine with roasted ones. Frozen florets roast fine straight from the bag, and it's worth seeing how frozen and fresh compare on fiber per dollar before you pay for fresh every week.
 * **Mild spices first.** Garlic powder, onion powder, paprika, and Italian seasoning are low-risk flavor builders. Skip cumin, chili, and curry powder until trust is established.
 * **Sauces on the side.** Always. Let people dip, drizzle, or skip entirely. Control reduces anxiety.
 * **Blend it in.** Not in a sneaky way, but practically. Butternut squash blended into mac and cheese sauce, zucchini grated into meatloaf, or spinach blended into pesto are all moves that work if the texture stays familiar.

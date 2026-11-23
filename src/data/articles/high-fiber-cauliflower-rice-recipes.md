@@ -83,7 +83,7 @@ I used to treat cauliflower like the vegetable that showed up on platters and le
 
 Then I made a skillet of sesame fried cauliflower rice that tasted like takeout adjacent dinner instead of steamed regret. Not identical to rice. Not trying to be. Just savory, hot, and flexible enough that I stopped treating it like a punishment carb swap.
 
-High fiber cauliflower rice recipes work when you stop asking cauliflower to be a celebrity grain and start using it as a sponge for sauce, vegetables, beans, and whatever protein is already in the fridge. The fiber story gets better once you build the bowl. Cauliflower alone is fine. Cauliflower plus beans, peas, and a pile of vegetables is dinner. For cheap fiber shopping around those add-ins, use the [how to eat more fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/).
+High fiber cauliflower rice recipes work when you stop asking cauliflower to be a celebrity grain and start using it as a sponge for sauce, vegetables, beans, and whatever protein is already in the fridge. The fiber story gets better once you build the bowl. Cauliflower alone is fine. Cauliflower plus beans, peas, and a pile of vegetables is dinner. For cheap fiber shopping around those add-ins, use the [how to eat more fiber on a budget guide](/what-30-grams-of-fiber-costs-per-day/).
 
 ## What cauliflower rice is actually good at
 
@@ -91,7 +91,7 @@ It's mild. That sounds boring until you realize mild means it won't fight ginger
 
 A cup of cauliflower rice won't max out your fiber goal by itself. That's fine. The recipe below layers in frozen mixed vegetables and eggs for a fried-rice style skillet. From there, the high-fiber upgrades are obvious: stir in black beans, pile it into a bowl with chickpeas, or serve it under lentil chili. Those moves are where the grams show up.
 
-When we priced grocery staples for the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), beans and lentils crushed the rankings. Cauliflower is the vehicle. Beans are often the engine.
+When we priced grocery staples for the [fiber per dollar study](/what-30-grams-of-fiber-costs-per-day/), beans and lentils crushed the rankings. Cauliflower is the vehicle. Beans are often the engine.
 
 ## Fresh vs frozen, and why texture goes sideways
 
@@ -145,4 +145,4 @@ The point isn't a perfect streak. The point is having a default vegetable base t
 
 Cauliflower rice became useful in my kitchen when I stopped asking it to impersonate takeout rice perfectly and started asking it to carry flavor and fiber-friendly add-ins on a weeknight. Make the sesame skillet once. Then start stuffing beans into the leftovers. That's the whole method.
 
-For the grocery-side system that makes those beans and staples automatic, the [complete fiber budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) and the [fiber per dollar rankings](/fiber-per-dollar-cheapest-high-fiber-foods/) are the backup docs. The skillet is just Tuesday.
+For the grocery-side system that makes those beans and staples automatic, the [complete fiber budget guide](/what-30-grams-of-fiber-costs-per-day/) and the [fiber per dollar rankings](/what-30-grams-of-fiber-costs-per-day/) are the backup docs. The skillet is just Tuesday.

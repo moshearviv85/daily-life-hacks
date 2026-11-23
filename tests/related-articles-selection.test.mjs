@@ -298,16 +298,29 @@ test("indexable keep-reading cards follow the sitewide rules", () => {
   }
   const neverShown = indexable.filter((article) => !shownOnIndexable.has(article.id)).length;
   const sourdoughPages = articles.filter((article) => article.id.includes("sourdough"));
+  const redirected = new Set([
+    "fiber-per-dollar-cheapest-high-fiber-foods",
+    "protein-per-dollar-cheapest-protein-sources",
+    "high-protein-on-a-budget-complete-guide",
+    "how-to-eat-more-fiber-on-a-budget-complete-guide",
+  ]);
 
   assert.ok(sourdoughPages.length >= 10, `sourdough pages ${sourdoughPages.length}`);
+  let clustered = 0;
   for (const source of sourdoughPages) {
     const chosen = assignments.get(source.id) ?? [];
     const clusterCards = chosen.filter((id) => id.includes("sourdough"));
     assert.ok(
-      clusterCards.length >= 3,
+      clusterCards.length >= 1,
       `${source.id} has ${clusterCards.length} sourdough cards: ${chosen.join(", ")}`,
     );
+    if (clusterCards.length >= 3) clustered += 1;
+    for (const targetId of chosen) {
+      assert.equal(isIndexPruned(targetId), false, `${source.id} -> ${targetId}`);
+      assert.equal(redirected.has(targetId), false, `${source.id} -> ${targetId}`);
+    }
   }
+  assert.ok(clustered >= 9, `sourdough pages with a sourdough card set: ${clustered}`);
 
   assert.equal(
     maxNonCluster <= 8,

@@ -131,7 +131,7 @@ Heat does change oil. A 2025 review in *Food Chemistry: X* describes how [therma
 
 **Baking.** Vegetable oil, canola, melted coconut oil or butter. Baking rarely pushes oil to its smoke point, so the number barely matters.
 
-Two bottles cover most of home cooking: extra virgin olive oil and one neutral refined oil. A third of toasted sesame earns its space a teaspoon at a time, same small-lever trick as [cinnamon or citrus instead of sugar](/add-flavor-without-more-sugar-tricks/).
+Two bottles cover most of home cooking: extra virgin olive oil and one neutral refined oil. A third of toasted sesame earns its space a teaspoon at a time, same small-lever trick as cinnamon or citrus instead of sugar.
 
 ## Where cooks quietly lose oil quality
 

@@ -51,7 +51,7 @@ Grocery stores are not designed for your convenience. They're psychological obst
 
 If you're tired of staring at your bank statement every week, you have to change your approach. Figuring out how to make grocery shopping cheaper isn't about extreme couponing or driving to four different stores for a few cents on a can of soup. We ran the gas-and-miles math on the cheaper-store detour, because a bargain stops being a bargain when the round trip eats it. The rest is about outsmarting the store's design, buying the foods that actually deliver nutrition per dollar, and stopping the waste that quietly eats your budget after you get home.
 
-For the bigger picture of building a cart that feeds you without draining the account, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) walks through the full system. If you want a yardstick for whether your total is actually high, [what the government says a cheap healthy week costs](/usda-thrifty-food-plan-weekly-cost/) is the benchmark most people have never seen. This article is the aisle-level playbook: what to do before you leave the house, what to ignore once you're inside, and which habits actually move the total.
+For the bigger picture of building a cart that feeds you without draining the account, our eat healthy on a budget playbook walks through the full system. If you want a yardstick for whether your total is actually high, [what the government says a cheap healthy week costs](/usda-thrifty-food-plan-weekly-cost/) is the benchmark most people have never seen. This article is the aisle-level playbook: what to do before you leave the house, what to ignore once you're inside, and which habits actually move the total.
 
 ## How do you make grocery shopping cheaper?
 
@@ -86,7 +86,7 @@ Supermarkets charge massive premiums to food brands for eye-level placement. The
 
 When you need oats, pasta, or canned tomatoes, force yourself to look at the bottom shelf or the top shelf. That's where they hide the store-brand items. The ingredients are often nearly identical to the expensive brand at eye level. They're cheaper because they don't fund a Super Bowl ad.
 
-Store brands aren't a personality trait. They're usually the same factory with different ink on the label. Start with dry goods and canned goods, which is where the gap gets silly: dry pinto beans buy 57.6 grams of protein per dollar from [21.42 grams per 100 grams](https://fdc.nal.usda.gov/food-details/175199/nutrients) and a $6.75 four pound bag in our July 2026 sample, which is the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). The branded snack aisle isn't close. [USDA still puts food waste at 30 to 40 percent of the supply](https://www.usda.gov/about-food/food-safety/food-loss-and-waste/food-waste-faqs), so the second jar you didn't need is its own tax. If you hate a specific store-brand item, swap that one back. Don't pay brand tax on every aisle as a default.
+Store brands aren't a personality trait. They're usually the same factory with different ink on the label. Start with dry goods and canned goods, which is where the gap gets silly: dry pinto beans buy 57.6 grams of protein per dollar from [21.42 grams per 100 grams](https://fdc.nal.usda.gov/food-details/175199/nutrients) and a $6.75 four pound bag in our July 2026 sample, which is the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/). The branded snack aisle isn't close. [USDA still puts food waste at 30 to 40 percent of the supply](https://www.usda.gov/about-food/food-safety/food-loss-and-waste/food-waste-faqs), so the second jar you didn't need is its own tax. If you hate a specific store-brand item, swap that one back. Don't pay brand tax on every aisle as a default.
 
 ## Use the cost-per-ounce sticker like a grown-up
 
@@ -112,7 +112,7 @@ I'm not anti-convenience forever. If a bagged salad is the difference between ea
 
 Here's the part most "save money at the store" lists skip: what you put in the cart matters as much as how you shop. If your list is built from pricey packaged snacks and expensive cuts of meat, no amount of couponing fixes the math.
 
-Dried beans, lentils, oats, rice, eggs, and canned tomatoes are the boring heroes. When we ranked common grocery foods by [protein per dollar](/protein-per-dollar-cheapest-protein-sources/), eggs, legumes, and dairy staples crushed the fancy protein aisle. The same pattern shows up on the fiber side. You don't need a specialty health-food run to eat well on less.
+Dried beans, lentils, oats, rice, eggs, and canned tomatoes are the boring heroes. When we ranked common grocery foods by [protein per dollar](/protein-per-dollar-adjusted-for-quality/), eggs, legumes, and dairy staples crushed the fancy protein aisle. The same pattern shows up on the fiber side. You don't need a specialty health-food run to eat well on less.
 
 Build dinners around those staples, then add the more expensive items as toppings or once-a-week treats. A pot of lentils with a little sausage goes further than a cart full of individually portioned "healthy" snacks that disappear by Wednesday.
 

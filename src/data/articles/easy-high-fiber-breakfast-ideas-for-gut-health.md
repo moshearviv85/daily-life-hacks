@@ -52,7 +52,7 @@ We've all done it. Toast, coffee, maybe a pastry that looked responsible under b
 
 A high fiber breakfast won't transform your digestion overnight, and I'm not going to pretend a mason jar of oats is medical care. What it can do is give you a steadier morning: more bulk in the meal, fewer blood-sugar roller coasters, and food that may support more comfortable digestion for a lot of people. Food first. No powders. No miracle claims.
 
-Also, nobody has thirty quiet minutes to cook a fibrous feast at 6:30 AM. If you want easy high fiber breakfast ideas for gut health that survive a real weekday, they have to be fast, repeatable, and made from stuff you already buy at a normal grocery store. For the broader shopping strategy, our [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) covers how to hit higher fiber without turning breakfast into an expensive specialty aisle tour.
+Also, nobody has thirty quiet minutes to cook a fibrous feast at 6:30 AM. If you want easy high fiber breakfast ideas for gut health that survive a real weekday, they have to be fast, repeatable, and made from stuff you already buy at a normal grocery store. For the broader shopping strategy, our [complete guide to eating more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/) covers how to hit higher fiber without turning breakfast into an expensive specialty aisle tour.
 
 ## How much fiber should you eat at breakfast?
 
@@ -118,11 +118,11 @@ Freeze a few assembled burritos wrapped in foil if your mornings are consistentl
 
 ## What is the cheapest high-fiber breakfast?
 
-You do not need imported granola, specialty cereals, or anything marketed as a gut ritual. When we priced common foods for our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), oats, beans, lentils, and other dry goods crushed almost everything with a pretty package.
+You do not need imported granola, specialty cereals, or anything marketed as a gut ritual. When we priced common foods for our [fiber per dollar study](/what-30-grams-of-fiber-costs-per-day/), oats, beans, lentils, and other dry goods crushed almost everything with a pretty package.
 
 That matters for breakfast because the cheapest high-fiber foods are also the easiest to keep around. Rolled oats. Chia or flax. Frozen berries. Canned beans. Peanut butter. Whole grain bread. Build from that list and your morning routine stays affordable even when produce prices get dramatic.
 
-Frozen fruit counts, and so does the rest of the freezer aisle once you compare [fiber per dollar on frozen versus fresh vegetables](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar). Canned beans count. Store-brand oats count. If the fancy version never makes it into the cart, you did not fail breakfast.
+Frozen fruit counts, and so does the rest of the freezer aisle once you compare fiber per dollar on frozen versus fresh vegetables. Canned beans count. Store-brand oats count. If the fancy version never makes it into the cart, you did not fail breakfast.
 
 ## Water, pace, and not turning breakfast into a personality
 

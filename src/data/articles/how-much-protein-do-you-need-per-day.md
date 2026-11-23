@@ -44,7 +44,7 @@ For a 150-pound person, that [0.8 grams per kilogram](https://nap.nationalacadem
 
 For people who exercise, the [International Society of Sports Nutrition position stand](https://pmc.ncbi.nlm.nih.gov/articles/PMC5477153/) uses 1.4 to 2.0 grams of protein per kilogram per day. Same 150-pound person: about 95 to 136 grams, not the 0.5 to 0.8 grams per pound that floats around social media. You don't need to nail the exact midpoint on day one. You need a range you can hit with food you already buy.
 
-If you want the full shopping system behind this, read the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/). This article is the "how much" layer. That one is the cart.
+If you want the full shopping system behind this, read the [high protein on a budget guide](/protein-per-dollar-adjusted-for-quality/). This article is the "how much" layer. That one is the cart.
 
 If the [50-gram protein Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels) on Nutrition Facts labels is what's confusing you, our [fiber and protein Daily Value explainer](/fiber-protein-daily-values-explained/) shows where it came from and why it isn't a personalized target.
 
@@ -90,12 +90,12 @@ Common failure modes:
 
 - **All the protein lands at dinner.** Your morning is coffee and vibes. Your afternoon is a snack raid. A higher-protein eating pattern [may reduce appetite](https://pubmed.ncbi.nlm.nih.gov/16002798/) more than one heroic steak, and spreading the food still has to happen at breakfast and lunch.
 - **You count the label but forget the meal.** A high-protein yogurt with a sleeve of cookies is still a snack situation.
-- **You chase novelty over staples.** Fancy packaged products cost more per gram than eggs and beans almost every time. We ranked that out in the [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/). Dry beans, eggs, dairy staples, and cheaper cuts keep winning.
+- **You chase novelty over staples.** Fancy packaged products cost more per gram than eggs and beans almost every time. We ranked that out in the [protein per dollar study](/protein-per-dollar-adjusted-for-quality/). Dry beans, eggs, dairy staples, and cheaper cuts keep winning.
 - **You ignore the rest of the plate.** Protein helps you feel fuller. Fiber, sleep, and total calories still matter. Protein is a tool, not a magic cape.
 
 ## What's the cheapest way to hit your protein target?
 
-Eggs, dried or canned beans and lentils, chicken thighs, Greek yogurt, cottage cheese and canned fish. Our [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) ranks the grocery cost. The foods themselves are ordinary: whole wheat flour has [13.21 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/168893/nutrients), dry brown lentils have [24.63](https://fdc.nal.usda.gov/food-details/172420/nutrients), and two large hard-boiled eggs have [about 13](https://fdc.nal.usda.gov/food-details/173424/nutrients). You don't need a boutique butcher to hit how much protein you need per day.
+Eggs, dried or canned beans and lentils, chicken thighs, Greek yogurt, cottage cheese and canned fish. Our [protein per dollar study](/protein-per-dollar-adjusted-for-quality/) ranks the grocery cost. The foods themselves are ordinary: whole wheat flour has [13.21 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/168893/nutrients), dry brown lentils have [24.63](https://fdc.nal.usda.gov/food-details/172420/nutrients), and two large hard-boiled eggs have [about 13](https://fdc.nal.usda.gov/food-details/173424/nutrients). You don't need a boutique butcher to hit how much protein you need per day.
 
 **Cheap defaults that earn fridge space:**
 
@@ -146,4 +146,4 @@ If the number still feels abstract, ignore perfection. Put protein in the first 
 
 How much protein do you need per day? Enough to clear a sensible range for your size and activity, spread across meals you will actually cook. Start with the minimum math so you're not guessing. Move up if you train, if you're older, or if your current plates leave you hunting snacks by mid-afternoon.
 
-Buy the cheap staples. Cook them once. Repeat them. The [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) and the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) are there when you want the shopping side spelled out in dollars instead of vibes. Your job is simpler: stop treating protein like a weekend project and start treating it like eggs, beans, and leftovers that show up on purpose.
+Buy the cheap staples. Cook them once. Repeat them. The [high protein on a budget guide](/protein-per-dollar-adjusted-for-quality/) and the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/) are there when you want the shopping side spelled out in dollars instead of vibes. Your job is simpler: stop treating protein like a weekend project and start treating it like eggs, beans, and leftovers that show up on purpose.

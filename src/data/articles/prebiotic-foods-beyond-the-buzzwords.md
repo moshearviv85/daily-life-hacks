@@ -113,7 +113,7 @@ Here's the limitation nobody prints on a can. NCCIH, part of the National Instit
 
 Prebiotic sodas are everywhere, and I get the appeal. OLIPOP's own nutrition explainer says [each 12 fl oz can contains 6 to 9 grams of fiber](https://drinkolipop.com/blogs/digest/understanding-the-olipop-nutrition-label). That's genuine fiber; inulin does count on a Nutrition Facts panel today.
 
-The arithmetic is just unkind. At a typical $2 to $3 a can, 6 to 9 grams works out to roughly 2 to 4.5 grams of fiber per dollar. When we priced 53 grocery foods for our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dry pinto beans and split peas landed near 71 grams per dollar and bananas came in just under 12. And what the can delivers is an added fiber blend, not the fructans that come packaged inside the vegetable itself.
+The arithmetic is just unkind. At a typical $2 to $3 a can, 6 to 9 grams works out to roughly 2 to 4.5 grams of fiber per dollar. When we priced 53 grocery foods for our [fiber per dollar study](/what-30-grams-of-fiber-costs-per-day/), dry pinto beans and split peas landed near 71 grams per dollar and bananas came in just under 12. And what the can delivers is an added fiber blend, not the fructans that come packaged inside the vegetable itself.
 
 That doesn't make the soda evil. If it's replacing a regular soda, fine. Just don't let a can do a job your groceries already do for a fraction of the price, and the same goes for a homemade [gut health tea with peppermint or ginger](/gut-health-tea-peppermint-ginger/).
 

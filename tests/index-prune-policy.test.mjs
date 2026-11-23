@@ -22,9 +22,9 @@ function read(relative) {
 }
 
 test("prune set is 87 unique article slugs and never overlaps KEEP or protected URLs", () => {
-  assert.equal(INDEX_PRUNE_SLUGS.size, 87);
+  assert.equal(INDEX_PRUNE_SLUGS.size, 105);
   assert.equal(isIndexPruned("can-you-refreeze-frozen-vegetables-after-thawing"), false);
-  assert.equal(INDEX_KEEP_PATHS.size, 20);
+  assert.equal(INDEX_KEEP_PATHS.size, 14);
   assert.equal(INDEX_KEEP_PATHS.has("guides"), false);
   assert.equal(INDEX_KEEP_PATHS.has("research"), false);
   assert.equal(INDEX_NOINDEX_TOOL_PATHS.size, 3);

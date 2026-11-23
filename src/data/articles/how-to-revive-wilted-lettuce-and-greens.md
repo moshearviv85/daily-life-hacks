@@ -100,6 +100,6 @@ Two numbers worth taping inside the fridge door. The FDA says keep perishable pr
 
 Packing lunch? Keep dressing away from the leaves until you eat. The full system is in this guide to [packing salad for work without making it soggy](/how-to-pack-salad-for-work-not-soggy/), and it costs you one extra container instead of $14 for a desk salad that tastes like its own plastic lid.
 
-And if your produce drawer keeps turning into a small food-waste museum, use the [eat-healthy-on-a-budget playbook](/eat-healthy-on-a-budget-complete-playbook/) to plan what gets eaten first. The ice bath is a rescue tool. A visible plan is how you stop needing it every Thursday.
+And if your produce drawer keeps turning into a small food-waste museum, use the eat-healthy-on-a-budget playbook to plan what gets eaten first. The ice bath is a rescue tool. A visible plan is how you stop needing it every Thursday.
 
 <!-- sources: UCSD Community Health "Salad Greens" (5-10min soak; 7-day storage); Illinois Extension "Preparing Lettuce" (ice-water revival; 94.9% water; no home freezing/canning/drying); UC Davis Postharvest "Lettuce (Crisphead)" (water loss/wilting; RH>95%; Erwinia soft rot); FDA "Selecting and Serving Produce Safely" (40F; discard rotten; running-water wash; pre-washed exemption); ATK "Revive Wilted Vegetables" (30min soak). -->

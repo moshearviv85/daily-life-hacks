@@ -48,7 +48,7 @@ College food advice usually assumes you have a kitchen, a car, and forty minutes
 
 Everything in that table except the pasta, and even that works in a mug bowl if you're patient. The trick is buying foods that don't need technique.
 
-Oats need hot water. Canned beans need a rinse. Peanut butter, yogurt, cottage cheese, and tuna need nothing at all. That's five anchors and none of them require a stove, which is why they dominate our [no cook protein per dollar](/protein-per-dollar-cheapest-protein-sources/#no-cook) ranking. Peanut butter alone returns 50.7 grams of protein per dollar, and a $4.97 jar holds about 35 portions.
+Oats need hot water. Canned beans need a rinse. Peanut butter, yogurt, cottage cheese, and tuna need nothing at all. That's five anchors and none of them require a stove, which is why they dominate our [no cook protein per dollar](/protein-per-dollar-adjusted-for-quality/#no-cook) ranking. Peanut butter alone returns 50.7 grams of protein per dollar, and a $4.97 jar holds about 35 portions.
 
 Dry beans are the one thing I'd skip in a dorm. They're the best value in the whole store at 97.9 grams of protein per dollar, but they need an hour of simmering and a pot nobody will steal. If you've got a real kitchen in a shared apartment, [cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is where the money actually is.
 
@@ -68,7 +68,7 @@ Peanut butter, canned beans, and eggs, in that order for convenience. Eggs came 
 
 Greek yogurt is the one people overpay for and still get decent value from, at 27.5 grams per dollar for a $3.36 tub. Buy the plain 32 ounce tub, not the flavored cups. The cups are the same yogurt with sugar and a 300 percent markup on packaging, which is the most reliable rule in the dairy case.
 
-If you want the full ranking of what protein costs, [high protein on a budget](/high-protein-on-a-budget-complete-guide/) covers all 49 foods we priced and where each one lands.
+If you want the full ranking of what protein costs, [high protein on a budget](/protein-per-dollar-adjusted-for-quality/) covers all 49 foods we priced and where each one lands.
 
 ## How do you prep food in a dorm without a real kitchen?
 

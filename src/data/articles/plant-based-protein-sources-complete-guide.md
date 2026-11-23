@@ -43,7 +43,7 @@ faq:
 
 The most protein-dense plant foods by weight are dry brown lentils at 24.6 grams of protein per 100 grams, dry roasted peanuts at 24.4, dry green split peas at 23.1, peanut butter at 22.2, black beans at 21.6, almonds at 21.2, and dry pinto beans at 21.4. Tofu is the weakest of the well-known options at 10.0 grams per 100 grams.
 
-That surprises people, because tofu is the food with "plant protein" printed on the front of the box and pinto beans are the food in a paper sack on the bottom shelf. The ranking below comes out of our own [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), where we priced 49 grocery foods and divided protein by price. If grocery cost is the part nobody bothered to explain, the [complete high-protein budget guide](/high-protein-on-a-budget-complete-guide/) shows how these same staples stack up when your checking account gets a vote.
+That surprises people, because tofu is the food with "plant protein" printed on the front of the box and pinto beans are the food in a paper sack on the bottom shelf. The ranking below comes out of our own [protein per dollar study](/protein-per-dollar-adjusted-for-quality/), where we priced 49 grocery foods and divided protein by price. If grocery cost is the part nobody bothered to explain, the [complete high-protein budget guide](/protein-per-dollar-adjusted-for-quality/) shows how these same staples stack up when your checking account gets a vote.
 
 | Plant protein | Protein per 100g | Protein per $1 |
 |---|---|---|

@@ -266,7 +266,7 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 - **File:** [`data/fiber-per-dollar-2026.csv`](data/fiber-per-dollar-2026.csv)
 - **Rows:** 53 (header excluded) &nbsp;|&nbsp; **Size:** 13,368 bytes
 - **Chart:** [`charts/fiber-per-dollar-top-20-chart.jpg`](charts/fiber-per-dollar-top-20-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/>
+- **Study:** <https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -479,7 +479,7 @@ The flagship protein dataset. 49 foods ranked by grams of protein per US dollar 
 - **File:** [`data/protein-per-dollar-2026.csv`](data/protein-per-dollar-2026.csv)
 - **Rows:** 49 (header excluded) &nbsp;|&nbsp; **Size:** 15,314 bytes
 - **Chart:** [`charts/protein-per-dollar-top-20-chart.jpg`](charts/protein-per-dollar-top-20-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/>
+- **Study:** <https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/>
 
 | Field | Type | Description |
 |---|---|---|

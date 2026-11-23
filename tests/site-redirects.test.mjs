@@ -36,23 +36,27 @@ test("every consolidation source 301s to its plain target", () => {
     ["/canned-vs-dry-beans-cost/", "/canned-beans-vs-dried-beans-nutrition/"],
     ["/popcorn-vs-almonds-fiber-cost/", "/popcorn-vs-potato-chips-fiber-comparison/"],
     ["/frozen-vs-fresh-vegetables-fiber-cost/", "/frozen-vs-fresh-produce-when-to-buy/"],
-    ["/whole-wheat-flour-vs-quinoa-fiber-cost/", "/fiber-per-dollar-cheapest-high-fiber-foods/"],
-    ["/grains-fiber-per-dollar-ranked/", "/fiber-per-dollar-cheapest-high-fiber-foods/"],
-    ["/produce-fiber-per-dollar-ranked/", "/fiber-per-dollar-cheapest-high-fiber-foods/"],
-    ["/high-fiber-snacks-per-dollar/", "/fiber-per-dollar-cheapest-high-fiber-foods/"],
-    ["/one-dollar-fiber-what-it-buys/", "/fiber-per-dollar-cheapest-high-fiber-foods/"],
-    ["/dairy-protein-per-dollar-ranked/", "/protein-per-dollar-cheapest-protein-sources/"],
-    ["/meat-per-dollar-protein-ranked/", "/protein-per-dollar-cheapest-protein-sources/"],
-    ["/plant-protein-per-dollar-ranked/", "/protein-per-dollar-cheapest-protein-sources/"],
-    ["/no-cook-protein-per-dollar/", "/protein-per-dollar-cheapest-protein-sources/"],
-    ["/shelf-stable-pantry-per-dollar/", "/protein-per-dollar-cheapest-protein-sources/"],
-    ["/one-dollar-protein-what-it-buys/", "/protein-per-dollar-cheapest-protein-sources/"],
-    ["/cheapest-protein-per-gram/", "/protein-per-dollar-cheapest-protein-sources/"],
+    ["/whole-wheat-flour-vs-quinoa-fiber-cost/", "/what-30-grams-of-fiber-costs-per-day/"],
+    ["/grains-fiber-per-dollar-ranked/", "/what-30-grams-of-fiber-costs-per-day/"],
+    ["/produce-fiber-per-dollar-ranked/", "/what-30-grams-of-fiber-costs-per-day/"],
+    ["/high-fiber-snacks-per-dollar/", "/what-30-grams-of-fiber-costs-per-day/"],
+    ["/one-dollar-fiber-what-it-buys/", "/what-30-grams-of-fiber-costs-per-day/"],
+    ["/dairy-protein-per-dollar-ranked/", "/protein-per-dollar-adjusted-for-quality/"],
+    ["/meat-per-dollar-protein-ranked/", "/protein-per-dollar-adjusted-for-quality/"],
+    ["/plant-protein-per-dollar-ranked/", "/protein-per-dollar-adjusted-for-quality/"],
+    ["/no-cook-protein-per-dollar/", "/protein-per-dollar-adjusted-for-quality/"],
+    ["/shelf-stable-pantry-per-dollar/", "/protein-per-dollar-adjusted-for-quality/"],
+    ["/one-dollar-protein-what-it-buys/", "/protein-per-dollar-adjusted-for-quality/"],
+    ["/cheapest-protein-per-gram/", "/protein-per-dollar-adjusted-for-quality/"],
+    ["/protein-per-dollar-cheapest-protein-sources/", "/protein-per-dollar-adjusted-for-quality/"],
+    ["/high-protein-on-a-budget-complete-guide/", "/protein-per-dollar-adjusted-for-quality/"],
+    ["/fiber-per-dollar-cheapest-high-fiber-foods/", "/what-30-grams-of-fiber-costs-per-day/"],
+    ["/how-to-eat-more-fiber-on-a-budget-complete-guide/", "/what-30-grams-of-fiber-costs-per-day/"],
     ["/research/", "/data/"],
     ["/guides/", "/nutrition/"],
   ]);
 
-  assert.equal(expected.size, 28);
+  assert.equal(expected.size, 32);
   for (const [source, destination] of expected) {
     for (const pathname of [source, source.replace(/\/$/, "")]) {
       const match = matchSiteRedirect(pathname);

@@ -47,7 +47,7 @@ Why? Because water spots build up. Grime accumulates. A clean sink at night mean
 
 Ever tried to scrape a plate into the trash can while juggling a wet dish? It's a mess. Food bits drop on the floor, on the counter, sometimes even back into the clean side of the sink.
 
-Keep a small bowl, maybe a cereal bowl or a small mixing bowl, right next to your sink while you're clearing plates. All food scraps go into that bowl. When you're done clearing, you carry one bowl to the trash or compost. It's cleaner, faster, and keeps those stray bits out of your drain and off your floor. If most of what lands in that bowl is vegetable trimmings, buying more of your produce frozen cuts the prep mess down a lot, and [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) is worth a look before you assume fresh is the better buy. This is one of those kitchen hacks for sink management that just makes sense.
+Keep a small bowl, maybe a cereal bowl or a small mixing bowl, right next to your sink while you're clearing plates. All food scraps go into that bowl. When you're done clearing, you carry one bowl to the trash or compost. It's cleaner, faster, and keeps those stray bits out of your drain and off your floor. If most of what lands in that bowl is vegetable trimmings, buying more of your produce frozen cuts the prep mess down a lot, and how frozen and fresh vegetables compare on fiber per dollar is worth a look before you assume fresh is the better buy. This is one of those kitchen hacks for sink management that just makes sense.
 
 ## Don't Let the Sponge Become Part of the Problem
 

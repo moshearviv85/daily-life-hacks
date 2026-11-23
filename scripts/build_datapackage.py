@@ -271,6 +271,7 @@ DATASETS: dict[str, dict] = {
     },
     "fiber-per-dollar-2026.csv": {
         "title": "Fiber per Dollar: 53 Foods Ranked (2026)",
+        "study_path": "data/fiber-per-dollar-2026",
         "study": "fiber-per-dollar-cheapest-high-fiber-foods",
         "description": (
             "The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US "
@@ -380,6 +381,7 @@ DATASETS: dict[str, dict] = {
     },
     "protein-per-dollar-2026.csv": {
         "title": "Protein per Dollar: 49 Sources Ranked (2026)",
+        "study_path": "data/protein-per-dollar-2026",
         "study": "protein-per-dollar-cheapest-protein-sources",
         "description": (
             "The flagship protein dataset. 49 foods ranked by grams of protein per US dollar "

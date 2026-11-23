@@ -54,13 +54,13 @@ Between about fifty cents and a dollar fifty a person, if the anchor is a dry le
 
 Run the arithmetic yourself from the table. Beans and rice is $0.20 plus $0.12, so $0.32 before vegetables. Add a carrot, half an onion, and oil, and you're still under sixty cents. We costed ten of these plates in cheap dinner ideas, and the whole list runs from $0.28 to $1.88.
 
-The reason the range is so wide isn't portion size, it's the anchor. Ground beef costs $6.75 a pound and returns 11.5 grams of protein per dollar. Dry pintos return 97.9 in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). Pick the anchor and you've already picked the price of the meal.
+The reason the range is so wide isn't portion size, it's the anchor. Ground beef costs $6.75 a pound and returns 11.5 grams of protein per dollar. Dry pintos return 97.9 in the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/). Pick the anchor and you've already picked the price of the meal.
 
 ## What do you buy to eat cheap at home?
 
 The unglamorous corner of the store. Dry goods, canned goods, frozen vegetables, eggs. That's the list, and it's short on purpose.
 
-Whole wheat flour is the sleeper on that table at $0.08 a portion. It's also the top food in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), at 77.8 grams per dollar, which is a strange thing to say about flour until you remember it's just ground wheat. We ranked the full pantry in [cheap shelf stable protein](/protein-per-dollar-cheapest-protein-sources/#shelf-stable), and dry legumes take the first seven places.
+Whole wheat flour is the sleeper on that table at $0.08 a portion. It's also the top food in the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/), at 77.8 grams per dollar, which is a strange thing to say about flour until you remember it's just ground wheat. We ranked the full pantry in [cheap shelf stable protein](/protein-per-dollar-adjusted-for-quality/#shelf-stable), and dry legumes take the first seven places.
 
 Stock two anchors, two grains, one nut butter, and a bag of frozen vegetables. That's a kitchen that can make food on a Tuesday without a plan, using the three slot plate rule. If you want the version with a real shopping list attached, grocery shopping list for healthy eating on a budget lays it out.
 
@@ -84,6 +84,6 @@ The other leak is waste. Food you bought and threw out costs full price and feed
 
 Single store shelf prices from July 2026, with US average prices for eggs, milk, and a few commodity items. Your store and your month will differ. We don't publish calorie figures because our datasets have no calorie column, and we don't price oil, salt, spices, or electricity.
 
-What holds steady is the ranking. The spread between $0.08 and $1.88 a portion is far too wide for a sale to close, so the order of that table is the part worth memorizing. For the whole system around it, the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) turns these portions into a week.
+What holds steady is the ranking. The spread between $0.08 and $1.88 a portion is far too wide for a sale to close, so the order of that table is the part worth memorizing. For the whole system around it, the eat healthy on a budget playbook turns these portions into a week.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/fastfood-protein-per-dollar-2026.csv -->

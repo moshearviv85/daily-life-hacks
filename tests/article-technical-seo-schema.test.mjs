@@ -160,20 +160,8 @@ test("Dataset schema remains attached to its canonical article and CSV", () => {
 });
 
 test("fiber and protein flagships link the public Hugging Face dataset mirror", () => {
-  const fiber = readFileSync(
-    new URL(
-      "../src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
-      import.meta.url,
-    ),
-    "utf8",
-  );
-  const protein = readFileSync(
-    new URL(
-      "../src/data/articles/protein-per-dollar-cheapest-protein-sources.md",
-      import.meta.url,
-    ),
-    "utf8",
-  );
+  const redirects = readFileSync(new URL("../public/_redirects", import.meta.url), "utf8");
+  const dataHub = readFileSync(new URL("../src/pages/data/index.astro", import.meta.url), "utf8");
   const sourdough = readFileSync(
     new URL(
       "../src/data/articles/easy-sourdough-discard-recipes-beginners.md",
@@ -182,18 +170,19 @@ test("fiber and protein flagships link the public Hugging Face dataset mirror", 
     "utf8",
   );
 
-  for (const [name, source] of [
-    ["fiber flagship", fiber],
-    ["protein flagship", protein],
+  for (const [slug, target] of [
+    ["fiber-per-dollar-cheapest-high-fiber-foods", "/what-30-grams-of-fiber-costs-per-day/"],
+    ["protein-per-dollar-cheapest-protein-sources", "/protein-per-dollar-adjusted-for-quality/"],
   ]) {
-    assert.match(source, /\/data\/(?:fiber|protein)-per-dollar-2026\.csv/);
-    assert.match(
-      source,
-      new RegExp(huggingfaceDatasetUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
-      `${name} must link the Hugging Face mirror`,
-    );
-    assert.match(source, /mirror on Hugging Face \(CC-BY-4\.0\)/);
+    assert.match(redirects, new RegExp(`^/${slug} ${target} 301$`, "m"), slug);
+    assert.match(redirects, new RegExp(`^/${slug}/ ${target} 301$`, "m"), slug);
   }
+
+  assert.match(datasetsRegistry, /csv: "\/data\/fiber-per-dollar-2026\.csv"/);
+  assert.match(datasetsRegistry, /csv: "\/data\/protein-per-dollar-2026\.csv"/);
+  assert.match(dataHub, /href=\{dataset\.csv\}/);
+  assert.match(dataHub, /href=\{HUGGINGFACE_DATASET_URL\}/);
+  assert.match(dataHub, /mirror on Hugging Face \(CC-BY-4\.0\)/);
 
   assert.match(
     datasetsRegistry,

@@ -104,7 +104,7 @@ const STUDY_SLUG: Record<string, string> = {
   "eggs-vs-everything-protein-value-2026.csv": "eggs-vs-everything-protein-value",
   "fastfood-protein-per-dollar-2026.csv": "fast-food-protein-per-dollar-ranked",
   "fiber-day-cost-2026.csv": "what-30-grams-of-fiber-costs-per-day",
-  "fiber-per-dollar-2026.csv": "fiber-per-dollar-cheapest-high-fiber-foods",
+  "fiber-per-dollar-2026.csv": "data/fiber-per-dollar-2026",
   "grains-fiber-per-dollar-ranked-2026.csv": "grains-fiber-per-dollar-ranked",
   "high-fiber-snacks-per-dollar-2026.csv": "high-fiber-snacks-per-dollar",
   "meat-per-dollar-protein-ranked-2026.csv": "meat-per-dollar-protein-ranked",
@@ -114,7 +114,7 @@ const STUDY_SLUG: Record<string, string> = {
   "plant-protein-per-dollar-ranked-2026.csv": "plant-protein-per-dollar-ranked",
   "produce-fiber-per-dollar-ranked-2026.csv": "produce-fiber-per-dollar-ranked",
   "protein-day-cost-2026.csv": "what-50-grams-of-protein-costs-per-day",
-  "protein-per-dollar-2026.csv": "protein-per-dollar-cheapest-protein-sources",
+  "protein-per-dollar-2026.csv": "data/protein-per-dollar-2026",
   "protein-quality-per-dollar-2026.csv": "protein-per-dollar-adjusted-for-quality",
   "shelf-stable-pantry-per-dollar-2026.csv": "shelf-stable-pantry-per-dollar",
 };

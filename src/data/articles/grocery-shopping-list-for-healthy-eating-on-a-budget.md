@@ -85,7 +85,7 @@ This is where people blow their budgets. They buy highly perishable, incredibly 
 *   **Carrots and Onions:** These are the essential flavor builders for every single cheap meal you will ever make, and they cost pennies per pound. 
 *   **Frozen Spinach and Broccoli:** Don't be afraid of the frozen aisle. Frozen vegetables are convenient, easy to portion, and far less likely to wilt unseen in your crisper drawer.
 
-If cost is the tiebreaker, our [produce fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/#produce) compares fresh and frozen options without giving the fancy berry carton bonus points for looking photogenic.
+If cost is the tiebreaker, our [produce fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/#produce) compares fresh and frozen options without giving the fancy berry carton bonus points for looking photogenic.
 
 ## The Flavor Makers (Invest Here)
 

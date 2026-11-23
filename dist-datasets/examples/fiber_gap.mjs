@@ -146,5 +146,5 @@ console.log(
   `${cheapestDay[1].fiber >= DAILY_VALUE_G ? "yes" : "no"}.`
 );
 console.log("\nSource: Daily Life Hacks Food Value Data (2026.1)");
-console.log("Study:  https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/");
+console.log("Study:  https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/");
 console.log("Terms:  https://www.daily-life-hacks.com/data-reuse/");

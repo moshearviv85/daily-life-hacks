@@ -107,7 +107,7 @@ The nutrition table gives you a winner, but kitchens don't operate like spreadsh
 
 ## What does each cost per gram of fiber?
 
-The ounce-for-ounce nutrition comparison above makes air-popped popcorn the fiber winner over chips. Cost is a separate question, and the popcorn half of it is now settled. Our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/) puts a $2.28 two-pound bag of kernels at 51.3 grams of fiber per dollar, seventh out of the 53 foods we priced. That figure runs on a kernel-basis fiber value of 12.9 grams per 100 grams, converted from USDA's air-popped record, because USDA publishes no nutrition record for unpopped kernels at all.
+The ounce-for-ounce nutrition comparison above makes air-popped popcorn the fiber winner over chips. Cost is a separate question, and the popcorn half of it is now settled. Our [fiber per dollar study](/what-30-grams-of-fiber-costs-per-day/) puts a $2.28 two-pound bag of kernels at 51.3 grams of fiber per dollar, seventh out of the 53 foods we priced. That figure runs on a kernel-basis fiber value of 12.9 grams per 100 grams, converted from USDA's air-popped record, because USDA publishes no nutrition record for unpopped kernels at all.
 
 Chips? USDA counts an 8-ounce bag as 227 grams, and at 3.1 grams of fiber per 100 grams that whole bag holds about 7 grams of fiber. That's the entire bag, not a serving. Whatever you paid for it, 7 grams is what's in there.
 

@@ -50,7 +50,7 @@ Instead of five identical containers, cook three batches of flexible parts.
 
 Those three pieces become bowls, wraps, skillet hashes, and "I threw an egg on it" dinners all week. You're not locked into Monday-you's mood.
 
-For the bigger grocery strategy behind this, use the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/). This article is the solo execution layer. That one is the cart, and the monthly grocery budget for one person is the number the cart has to fit inside.
+For the bigger grocery strategy behind this, use the eat healthy on a budget playbook. This article is the solo execution layer. That one is the cart, and the monthly grocery budget for one person is the number the cart has to fit inside.
 
 ## The sauce box is the real variety engine
 
@@ -83,11 +83,11 @@ Learning how to meal prep on a budget for one person is mostly learning the illu
 Bulk only helps if you can freeze or finish it. Here's the solo-friendly version:
 
 - **Buy the family pack of chicken, cook or portion it the same day, freeze half in meal-sized bags.** Future-you gets Thursday protein without another store run.
-- **Dried beans and lentils beat most animal protein on cost.** We ranked that out in the [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/). A pot of lentils is lunch for days at pocket-change prices.
+- **Dried beans and lentils beat most animal protein on cost.** We ranked that out in the [protein per dollar study](/protein-per-dollar-adjusted-for-quality/). A pot of lentils is lunch for days at pocket-change prices.
 - **Frozen vegetables are not a compromise.** They're often cheaper, already chopped, and they don't guilt you from the crisper drawer.
 - **Store-brand yogurt, oats, rice, and canned tomatoes** do the heavy lifting. Novelty snacks do not.
 
-If fiber is part of why you're prepping (fullness, digestion, all that), the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) is the other half of the same shopping logic. Beans and oats keep showing up on both lists for a reason.
+If fiber is part of why you're prepping (fullness, digestion, all that), the [fiber per dollar ranking](/what-30-grams-of-fiber-costs-per-day/) is the other half of the same shopping logic. Beans and oats keep showing up on both lists for a reason.
 
 ## A realistic solo Sunday (about 75 minutes)
 
@@ -123,7 +123,7 @@ Freeze plain rice, cooked beans, cooked chicken, and chili-friendly leftovers. S
 
 ## What a cheap week can look like in dollars
 
-Prices vary, but the shape stays familiar. A few pounds of chicken thighs or a stack of tofu, a bag of rice, a couple cans or a bag of dried beans, frozen broccoli, oats, eggs, and two sauce ingredients can feed most of a week for well under what five restaurant lunches cost. The [budget playbook](/eat-healthy-on-a-budget-complete-playbook/) breaks down cart strategy in more depth. Your job here is simpler: cook the cheap stuff once, remix it all week.
+Prices vary, but the shape stays familiar. A few pounds of chicken thighs or a stack of tofu, a bag of rice, a couple cans or a bag of dried beans, frozen broccoli, oats, eggs, and two sauce ingredients can feed most of a week for well under what five restaurant lunches cost. The budget playbook breaks down cart strategy in more depth. Your job here is simpler: cook the cheap stuff once, remix it all week.
 
 Track one real week. Receipts don't lie. Vibes do.
 

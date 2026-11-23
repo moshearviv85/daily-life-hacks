@@ -2613,130 +2613,45 @@ test("complete protein pairs title puts rice-and-beans grams per dollar in the S
   );
 });
 
-test("fiber per dollar ranking title puts fiber grams per dollar in the SERP", () => {
-  const page = articleFrontmatter("fiber-per-dollar-cheapest-high-fiber-foods");
-  const titleLower = page.title.toLowerCase();
+function assertConsolidatedArticle(slug, target) {
+  assert.equal(existsSync(join(ROOT, "src/data/articles", `${slug}.md`)), false, slug);
+  assert.equal(existsSync(join(ROOT, "dist", slug, "index.html")), false, slug);
+  assert.equal(INDEX_KEEP_PATHS.has(slug), false, slug);
+  assert.equal(INDEX_PRUNE_SLUGS.has(slug), false, slug);
+  const redirects = readFileSync(join(ROOT, "public/_redirects"), "utf8");
+  const redirectCopy = readFileSync(join(ROOT, "functions/site-redirects.js"), "utf8");
+  for (const source of [redirects, redirectCopy]) {
+    assert.match(source, new RegExp(`^/${slug} ${target} 301$`, "m"), slug);
+    assert.match(source, new RegExp(`^/${slug}/ ${target} 301$`, "m"), slug);
+  }
+}
 
-  assert.equal(
-    page.title,
-    "Fiber per Dollar: Flour, Then Split Peas",
-  );
-  assert.equal(page.title.length, 40);
-  assert.ok(
-    page.title.length <= 60,
-    `fiber per dollar ranking title should be ≤60 chars, got ${page.title.length}`,
-  );
-  assert.ok(
-    titleLower.startsWith("fiber per dollar"),
-    "fiber per dollar ranking title should lead with fiber per dollar",
-  );
-  assert.match(page.title, /Flour/);
-  assert.match(page.title, /Split Peas/);
-  assert.equal(
-    /77\.8g/.test(page.title),
-    false,
-    "fiber per dollar ranking title should not stuff the raw gram pair",
-  );
-  assert.equal(
-    /^fiber per dollar: the cheapest high-fiber foods, ranked$/.test(titleLower),
-    false,
-    "fiber per dollar ranking title should not stay on the soft cheapest-foods-ranked SERP",
+test("fiber per dollar ranking title puts fiber grams per dollar in the SERP", () => {
+  assertConsolidatedArticle(
+    "fiber-per-dollar-cheapest-high-fiber-foods",
+    "/what-30-grams-of-fiber-costs-per-day/",
   );
 });
 
 test("protein per dollar ranking title puts protein grams per dollar in the SERP", () => {
-  const page = articleFrontmatter("protein-per-dollar-cheapest-protein-sources");
-  const titleLower = page.title.toLowerCase();
-
-  assert.equal(
-    page.title,
-    "Protein per Dollar: Flour, Then Lentils",
-  );
-  assert.equal(page.title.length, 39);
-  assert.ok(
-    page.title.length <= 60,
-    `protein per dollar ranking title should be ≤60 chars, got ${page.title.length}`,
-  );
-  assert.ok(
-    titleLower.startsWith("protein per dollar"),
-    "protein per dollar ranking title should lead with protein per dollar",
-  );
-  assert.match(page.title, /Flour/);
-  assert.match(page.title, /Lentils/);
-  assert.equal(
-    /96\.0g vs /.test(page.title),
-    false,
-    "protein per dollar ranking title should not be a raw gram-pair SERP",
-  );
-  assert.equal(
-    /^protein per dollar: the cheapest protein sources, ranked$/.test(titleLower),
-    false,
-    "protein per dollar ranking title should not stay on the soft cheapest-sources-ranked SERP",
+  assertConsolidatedArticle(
+    "protein-per-dollar-cheapest-protein-sources",
+    "/protein-per-dollar-adjusted-for-quality/",
   );
 });
 
 test("high protein on a budget title puts protein-per-dollar grams in the SERP", () => {
-  const page = articleFrontmatter("high-protein-on-a-budget-complete-guide");
-  const titleLower = page.title.toLowerCase();
-
-  assert.equal(
-    page.title,
-    "High Protein on a Budget: Pinto Beans Beat Bacon",
+  assertConsolidatedArticle(
+    "high-protein-on-a-budget-complete-guide",
+    "/protein-per-dollar-adjusted-for-quality/",
   );
-  assert.equal(page.title.length, 48);
-  assert.ok(
-    page.title.length <= 60,
-    `high protein on a budget title should be ≤60 chars, got ${page.title.length}`,
-  );
-  assert.ok(
-    titleLower.startsWith("high protein on a budget"),
-    "high protein on a budget title should lead with high protein on a budget",
-  );
-  assert.match(page.title, /Pinto/);
-  assert.match(page.title, /Bacon/);
-  assert.equal(
-    /57\.6g vs /.test(page.title),
-    false,
-    "high protein on a budget title should not be a raw gram-pair SERP",
-  );
-  assert.equal(
-    /^high protein on a budget: the complete guide$/.test(titleLower),
-    false,
-    "high protein on a budget title should not stay on the soft complete-guide SERP",
-  );
-  assert.equal(INDEX_KEEP_PATHS.has("high-protein-on-a-budget-complete-guide"), true);
-  assert.equal(INDEX_PRUNE_SLUGS.has("high-protein-on-a-budget-complete-guide"), false);
 });
 
 test("fiber on a budget title puts fiber-per-dollar grams in the SERP", () => {
-  const page = articleFrontmatter("how-to-eat-more-fiber-on-a-budget-complete-guide");
-  const titleLower = page.title.toLowerCase();
-
-  assert.equal(
-    page.title,
-    "How to Eat More Fiber on a Budget",
+  assertConsolidatedArticle(
+    "how-to-eat-more-fiber-on-a-budget-complete-guide",
+    "/what-30-grams-of-fiber-costs-per-day/",
   );
-  assert.equal(page.title.length, 33);
-  assert.ok(
-    page.title.length <= 60,
-    `fiber on a budget title should be ≤60 chars, got ${page.title.length}`,
-  );
-  assert.ok(
-    titleLower.startsWith("how to eat more fiber on a budget"),
-    "fiber on a budget title should lead with how to eat more fiber on a budget",
-  );
-  assert.equal(
-    /77\.8g vs /.test(page.title),
-    false,
-    "fiber on a budget title should not copy the fiber-per-dollar gram pair",
-  );
-  assert.equal(
-    /^how to eat more fiber on a budget: the complete guide$/.test(titleLower),
-    false,
-    "fiber on a budget title should not stay on the soft complete-guide SERP",
-  );
-  assert.equal(INDEX_KEEP_PATHS.has("how-to-eat-more-fiber-on-a-budget-complete-guide"), true);
-  assert.equal(INDEX_PRUNE_SLUGS.has("how-to-eat-more-fiber-on-a-budget-complete-guide"), false);
 });
 
 test("plant-based protein sources title puts protein-per-dollar grams in the SERP", () => {
@@ -2805,8 +2720,23 @@ test("eat healthy on a budget title puts protein-per-dollar grams in the SERP", 
     false,
     "eat healthy on a budget title should not stay on the soft complete-playbook SERP",
   );
-  assert.equal(INDEX_KEEP_PATHS.has("eat-healthy-on-a-budget-complete-playbook"), true);
-  assert.equal(INDEX_PRUNE_SLUGS.has("eat-healthy-on-a-budget-complete-playbook"), false);
+  assert.equal(INDEX_KEEP_PATHS.has("eat-healthy-on-a-budget-complete-playbook"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("eat-healthy-on-a-budget-complete-playbook"), true);
+  const playbookHtml = readFileSync(
+    join(ROOT, "dist/eat-healthy-on-a-budget-complete-playbook/index.html"),
+    "utf8",
+  );
+  assert.match(playbookHtml, /noindex,\s*follow/i);
+  assert.equal(
+    readdirSync(join(ROOT, "dist"))
+      .filter((name) => /^sitemap-.*\.xml$/.test(name))
+      .some((name) =>
+        readFileSync(join(ROOT, "dist", name), "utf8").includes(
+          "https://www.daily-life-hacks.com/eat-healthy-on-a-budget-complete-playbook/",
+        ),
+      ),
+    false,
+  );
 });
 
 test("usda thrifty food plan title puts the family weekly cost in the SERP", () => {
@@ -2865,8 +2795,23 @@ test("meal prep for beginners title puts the 8-meal 90-minute system in the SERP
     false,
     "meal prep for beginners title should not stay on the soft complete-system SERP",
   );
-  assert.equal(INDEX_KEEP_PATHS.has("meal-prep-for-beginners-complete-system"), true);
-  assert.equal(INDEX_PRUNE_SLUGS.has("meal-prep-for-beginners-complete-system"), false);
+  assert.equal(INDEX_KEEP_PATHS.has("meal-prep-for-beginners-complete-system"), false);
+  assert.equal(INDEX_PRUNE_SLUGS.has("meal-prep-for-beginners-complete-system"), true);
+  const mealPrepHtml = readFileSync(
+    join(ROOT, "dist/meal-prep-for-beginners-complete-system/index.html"),
+    "utf8",
+  );
+  assert.match(mealPrepHtml, /noindex,\s*follow/i);
+  assert.equal(
+    readdirSync(join(ROOT, "dist"))
+      .filter((name) => /^sitemap-.*\.xml$/.test(name))
+      .some((name) =>
+        readFileSync(join(ROOT, "dist", name), "utf8").includes(
+          "https://www.daily-life-hacks.com/meal-prep-for-beginners-complete-system/",
+        ),
+      ),
+    false,
+  );
 });
 
 test("dried beans converter title puts the 15.5 oz can size in the SERP", () => {

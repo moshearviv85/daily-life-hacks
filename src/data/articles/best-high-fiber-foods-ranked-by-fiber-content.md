@@ -29,7 +29,7 @@ faq:
 
 In our July 2026 US price study of 53 grocery foods, chia seeds led at 34.4 grams of fiber per 100 grams. Whole flaxseed followed at 27.3 grams and dry green split peas at 22.2. The 18.3-gram bran-flakes row uses a brand-specific USDA record as a proxy for a differently branded priced cereal. This is a bounded grocery comparison, not a claim about every food sold worldwide.
 
-This is the ranking by fiber content, not by price. We have [a separate ranking by cost](/fiber-per-dollar-cheapest-high-fiber-foods/), and the two lists disagree in useful ways. Here's the content version.
+This is the ranking by fiber content, not by price. We have [a separate ranking by cost](/what-30-grams-of-fiber-costs-per-day/), and the two lists disagree in useful ways. Here's the content version.
 
 | Food | Fiber per 100 g | USDA form / status | Category | Nutrition source |
 |---|---|---|---|---|
@@ -105,7 +105,7 @@ Produce plays a different game, and the honest winners are smaller than the head
 
 Avocado led our fresh list at 6.7 grams per 100 grams. Raspberries came in at 6.5, blackberries at 5.3, chopped kale at 4.1, brussels sprouts at 3.8. At the bottom, russet potatoes managed 1.3 and yellow onions 1.7. Blueberries, which get talked about like a superfood, finished the whole 53-food list near the floor at 2.4 grams per 100 grams.
 
-None of this makes produce pointless. It makes it a different tool. Berries and vegetables come with water and volume, which is exactly what beans don't, and eating a lot of them is easy in a way that eating a lot of dry bran is not. The full fresh breakdown is in [the cheapest high-fiber vegetables and fruits](/fiber-per-dollar-cheapest-high-fiber-foods/#produce), and if you want the fruit-only version, the best high fiber fruits covers it. A cooked cup is a different scoreboard.
+None of this makes produce pointless. It makes it a different tool. Berries and vegetables come with water and volume, which is exactly what beans don't, and eating a lot of them is easy in a way that eating a lot of dry bran is not. The full fresh breakdown is in [the cheapest high-fiber vegetables and fruits](/what-30-grams-of-fiber-costs-per-day/#produce), and if you want the fruit-only version, the best high fiber fruits covers it. A cooked cup is a different scoreboard.
 
 ## How much fiber is in a cup of cooked vegetables?
 
@@ -135,7 +135,7 @@ Here's where the content ranking and the cost ranking part ways, and it matters.
 
 In this 53-food study, chia seeds lead on fiber content and then land 13th on fiber per dollar, because a 32 ounce bag ran $9.44. Almonds have 12.5 grams per 100 grams and finish 36th on cost, at 8.8 grams of fiber per dollar. Within the same study, whole wheat flour ranks first on cost at 77.8 grams of fiber per dollar from a $3.12 five pound bag, despite sitting mid-pack on content at 10.7 grams per 100 grams.
 
-Dry green split peas place near the top of both rankings in this study: 22.2 grams per 100 grams and 71.0 grams per dollar, from a $1.42 bag. That's the closest thing to a free lunch on the shelf, and it becomes [split pea soup](/split-pea-soup-recipe-high-fiber/) with almost no technique required. The same bag is third in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), at 73.9 grams of protein per dollar. One pound, two spreadsheets. The popcorn row is unresolved rather than an exact match: USDA's 14.5 figure describes air-popped popcorn while the price came from unpopped kernels, so we converted it to a kernel basis and the row now reads 12.9 grams per 100 grams. That is honest arithmetic, not a published record, and we label it that way rather than quietly treating the two forms as interchangeable.
+Dry green split peas place near the top of both rankings in this study: 22.2 grams per 100 grams and 71.0 grams per dollar, from a $1.42 bag. That's the closest thing to a free lunch on the shelf, and it becomes [split pea soup](/split-pea-soup-recipe-high-fiber/) with almost no technique required. The same bag is third in the [protein per dollar ranking](/protein-per-dollar-adjusted-for-quality/), at 73.9 grams of protein per dollar. One pound, two spreadsheets. The popcorn row is unresolved rather than an exact match: USDA's 14.5 figure describes air-popped popcorn while the price came from unpopped kernels, so we converted it to a kernel basis and the row now reads 12.9 grams per 100 grams. That is honest arithmetic, not a published record, and we label it that way rather than quietly treating the two forms as interchangeable.
 
 The bill for a full day of it is [the grocery bill for about 30 grams](/what-30-grams-of-fiber-costs-per-day/).
 
@@ -143,10 +143,10 @@ The bill for a full day of it is [the grocery bill for about 30 grams](/what-30-
 
 Nobody eats bran by the spoonful twice, so the trick is hiding the heavyweights inside food you already like.
 
-The bran-flakes row at 18.3 grams per 100 grams needs no cooking, but it is a proxy: that exact value comes from a POST Bran Flakes USDA record while the price came from Great Value. Chia seeds work best as a texture ingredient: stirred into [savory breakfast bowls](/savory-chia-seed-recipes-breakfast/) or thickened into [a chia raspberry jam](/high-fiber-raspberry-jam-recipe-chia/) that quietly stacks two of the top foods on this list into one spoonful. Dry beans go where dry beans always go, which is [a pot on Sunday](/how-to-cook-dried-beans-from-scratch/) and then everywhere else all week.
+The bran-flakes row at 18.3 grams per 100 grams needs no cooking, but it is a proxy: that exact value comes from a POST Bran Flakes USDA record while the price came from Great Value. Chia seeds work best as a texture ingredient: stirred into [savory breakfast bowls](/savory-chia-seed-recipes-breakfast/) or thickened into a chia raspberry jam that quietly stacks two of the top foods on this list into one spoonful. Dry beans go where dry beans always go, which is [a pot on Sunday](/how-to-cook-dried-beans-from-scratch/) and then everywhere else all week.
 
 One thing worth saying before you go rearrange your pantry. If you're currently eating very little fiber, hitting 28 grams tomorrow tends to go badly. Build up over a couple of weeks and drink more water while you do it. We covered both in [how to increase fiber intake without gas](/how-to-increase-fiber-intake-without-gas/) and [the water and fiber rule](/water-and-fiber-the-golden-rule/).
 
-The list above is a shopping guide, not a scoring system. Pick two or three things from the top half of this 53-food list that you'd genuinely put in your mouth, and the daily number sorts itself out. Where all of this fits into a week of real meals is laid out in [how to eat more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/).
+The list above is a shopping guide, not a scoring system. Pick two or three things from the top half of this 53-food list that you'd genuinely put in your mouth, and the daily number sorts itself out. Where all of this fits into a week of real meals is laid out in [how to eat more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/).
 
 <!-- numbers-source: public/data/fiber-per-dollar-2026.csv, public/data/fiber-day-cost-2026.csv -->

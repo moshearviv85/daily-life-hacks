@@ -136,4 +136,4 @@ If the finished chicken is dry, check two things: cutlet thickness and final tem
 
 If the seasoning falls off, pat the chicken dry before adding the spice mixture and press it on with your fingertips. Don't pour a thick layer of oil over the seasoned surface; oil the pan instead. If the cutlets release water as they cook, they may have been crowded or still partly frozen in the center. Cook fewer pieces at once and thaw them fully in the refrigerator. Small fixes, but they separate browned chicken from four pale cutlets quietly boiling in their own disappointment.
 
-Slice the rested chicken for salads, tuck it into sandwiches, or serve it with roasted vegetables. If you're cooking several lunches at once, the [meal prep system for beginners](/meal-prep-for-beginners-complete-system/) shows how to reuse one batch without eating the same beige container five days straight.
+Slice the rested chicken for salads, tuck it into sandwiches, or serve it with roasted vegetables. If you're cooking several lunches at once, the meal prep system for beginners shows how to reuse one batch without eating the same beige container five days straight.

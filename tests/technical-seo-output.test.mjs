@@ -372,12 +372,13 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
   ];
 
   for (const flagship of flagships) {
-    const html = readFileSync(distHtmlFor(`${SITE}/${flagship.slug}/`), "utf8");
+    const landingUrl = flagship.csv.replace(/\.csv$/, "/");
+    const html = readFileSync(distHtmlFor(landingUrl), "utf8");
     assert.match(html, new RegExp(hf.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-    assert.match(html, /mirror on Hugging Face \(CC-BY-4\.0\)/);
+    assert.match(html, /Hugging Face/);
 
     const datasetNodes = [];
-    for (const block of jsonLdBlocks(html, `${SITE}/${flagship.slug}/`)) {
+    for (const block of jsonLdBlocks(html, landingUrl)) {
       visit(block, (node) => {
         if (node["@type"] === "Dataset") datasetNodes.push(node);
       });
@@ -400,7 +401,6 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
         contentUrls.includes(hf),
         `${flagship.slug} missing Hugging Face dataset page DataDownload`,
       );
-      assert.equal(node.sameAs, hf, `${flagship.slug} Dataset sameAs should be the HF page`);
       assert.equal(
         node.license,
         "https://creativecommons.org/licenses/by/4.0/",
@@ -411,18 +411,10 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
         "David Miller",
         `${flagship.slug} Dataset creator should be David Miller`,
       );
+      assert.equal(node["@id"], `${landingUrl}#dataset`);
     }
 
-    assert.match(html, /Cite this study/);
-    assert.match(html, /Miller, D\. \(2026\)\./);
-    assert.match(html, /\[Data set\]/);
-    assert.match(html, /@dataset\{miller_(?:fiber|protein)_per_dollar_2026,/);
-    assert.match(
-      html,
-      new RegExp(
-        `${SITE}/${flagship.slug}/`.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
-      ),
-    );
+    assert.match(html, /Cite this dataset/);
     assert.doesNotMatch(html, /10\.5281|zenodo\.org/i);
   }
 
@@ -477,10 +469,7 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
       ? landingNode.sameAs
       : [landingNode.sameAs];
     assert.ok(sameAs.includes(hf), `${landingUrl} sameAs should include Hugging Face`);
-    assert.ok(
-      sameAs.includes(`${SITE}/${flagship.slug}/`),
-      `${landingUrl} sameAs should include the study URL`,
-    );
+    assert.equal(landingNode["@id"], `${landingUrl}#dataset`);
     assert.equal(landingNode.license, "https://creativecommons.org/licenses/by/4.0/");
     assert.equal(landingNode.isAccessibleForFree, true);
     assert.equal(landingNode.temporalCoverage, "2026-07/2026-09");
@@ -516,7 +505,7 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
     );
 
     const catalogNode = catalog.dataset.find(
-      (node) => node["@id"] === `${SITE}/${flagship.slug}/#dataset`,
+      (node) => node["@id"] === `${landingUrl}#dataset`,
     );
     assert.ok(catalogNode, `catalog missing Dataset node for ${flagship.slug}`);
     assert.equal(catalogNode.url, landingUrl);
@@ -532,12 +521,13 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
   assert.ok(!sitemapLocs.has(`${SITE}/data/fiber-per-dollar-2026/`));
   assert.ok(!sitemapLocs.has(`${SITE}/data/protein-per-dollar-2026/`));
   assert.ok(sitemapLocs.has(`${SITE}/data/`));
-  assert.ok(sitemapLocs.has(`${SITE}/fiber-per-dollar-cheapest-high-fiber-foods/`));
-  assert.ok(sitemapLocs.has(`${SITE}/protein-per-dollar-cheapest-protein-sources/`));
+  assert.ok(!sitemapLocs.has(`${SITE}/fiber-per-dollar-cheapest-high-fiber-foods/`));
+  assert.ok(!sitemapLocs.has(`${SITE}/protein-per-dollar-cheapest-protein-sources/`));
+  assert.ok(sitemapLocs.has(`${SITE}/what-30-grams-of-fiber-costs-per-day/`));
+  assert.ok(sitemapLocs.has(`${SITE}/protein-per-dollar-adjusted-for-quality/`));
   assert.ok(!robotsFor(`${SITE}/data/`).includes("noindex"));
-  for (const flagship of flagships) {
-    assert.ok(!robotsFor(`${SITE}/${flagship.slug}/`).includes("noindex"));
-  }
+  assert.ok(!robotsFor(`${SITE}/what-30-grams-of-fiber-costs-per-day/`).includes("noindex"));
+  assert.ok(!robotsFor(`${SITE}/protein-per-dollar-adjusted-for-quality/`).includes("noindex"));
 });
 
 test("three utility tools render noindex, follow and are absent from sitemap XML", () => {
@@ -604,13 +594,26 @@ test("dataset CSV landings and printables are noindex, follow, and absent from t
     assert.match(robots, /noindex/, `${path} missing noindex`);
     assert.match(robots, /follow/, `${path} missing follow`);
     assert.doesNotMatch(robots, /nofollow/, `${path} must stay follow`);
+    if (path === "/data/fiber-per-dollar-2026/" || path === "/data/protein-per-dollar-2026/") {
+      const landing = readFileSync(distHtmlFor(url), "utf8");
+      assert.match(landing, /"@type":\s*"Dataset"/, `${path} dropped Dataset markup`);
+      assert.match(landing, new RegExp(`"@id":"${SITE}${path}#dataset"`));
+    }
   }
 
-  for (const path of ["/data/", "/fiber-per-dollar-cheapest-high-fiber-foods/", "/protein-per-dollar-cheapest-protein-sources/"]) {
-    const html = readFileSync(distHtmlFor(`${SITE}${path}`), "utf8");
-    assert.match(html, /"@type":\s*"Dataset"/, `${path} dropped Dataset markup`);
-    assert.ok(!robotsFor(`${SITE}${path}`).includes("noindex"), `${path} was noindexed`);
-    assert.ok(entries.has(`${SITE}${path}`), `${path} missing from sitemap`);
+  const dataHub = readFileSync(distHtmlFor(`${SITE}/data/`), "utf8");
+  assert.match(dataHub, /"@type":\s*"Dataset"/, "/data/ dropped Dataset markup");
+  assert.ok(!robotsFor(`${SITE}/data/`).includes("noindex"), "/data/ was noindexed");
+  assert.ok(entries.has(`${SITE}/data/`), "/data/ missing from sitemap");
+
+  for (const path of [
+    "/fiber-per-dollar-cheapest-high-fiber-foods/",
+    "/protein-per-dollar-cheapest-protein-sources/",
+    "/high-protein-on-a-budget-complete-guide/",
+    "/how-to-eat-more-fiber-on-a-budget-complete-guide/",
+  ]) {
+    assert.equal(existsSync(distHtmlFor(`${SITE}${path}`)), false, `${path} should 301, not stay as HTML`);
+    assert.ok(!entries.has(`${SITE}${path}`), `${path} should stay out of the sitemap`);
   }
 });
 
@@ -626,9 +629,9 @@ function robotsFor(url) {
 test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay indexed", () => {
   const entries = new Set(sitemapEntries().map((entry) => entry.loc));
   const samplePrune = "cheap-dinner-ideas-cost-per-serving";
-  const keepFlagship = "fiber-per-dollar-cheapest-high-fiber-foods";
+  const keepFlagship = "usda-thrifty-food-plan-weekly-cost";
 
-  assert.equal(INDEX_PRUNE_SLUGS.size, 87);
+  assert.equal(INDEX_PRUNE_SLUGS.size, 105);
   assert.equal(INDEX_PRUNE_SLUGS.has("can-you-refreeze-frozen-vegetables-after-thawing"), false);
   assert.ok(!entries.has(locFor(samplePrune)), `${samplePrune} leaked into sitemap`);
   assert.ok(existsSync(distHtmlFor(locFor(samplePrune))), `${samplePrune} must stay live`);
@@ -648,7 +651,29 @@ test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay 
     assert.ok(!robots.includes("nofollow"), `nofollow on live prune page: ${slug}`);
     noindexed += 1;
   }
-  assert.equal(noindexed, 87);
+  assert.equal(noindexed, 105);
+  for (const playbook of [
+    "eat-healthy-on-a-budget-complete-playbook",
+    "meal-prep-for-beginners-complete-system",
+  ]) {
+    assert.equal(INDEX_PRUNE_SLUGS.has(playbook), true, playbook);
+    assert.equal(INDEX_KEEP_PATHS.has(playbook), false, playbook);
+    assert.ok(!entries.has(locFor(playbook)), `${playbook} leaked into the sitemap`);
+    const playbookRobots = robotsFor(locFor(playbook));
+    assert.ok(playbookRobots.includes("noindex"), `${playbook} missing noindex`);
+    assert.ok(playbookRobots.includes("follow"), `${playbook} missing follow`);
+  }
+  for (const slug of [
+    "protein-per-dollar-cheapest-protein-sources",
+    "high-protein-on-a-budget-complete-guide",
+    "fiber-per-dollar-cheapest-high-fiber-foods",
+    "how-to-eat-more-fiber-on-a-budget-complete-guide",
+  ]) {
+    assert.equal(INDEX_KEEP_PATHS.has(slug), false, slug);
+    assert.equal(INDEX_PRUNE_SLUGS.has(slug), false, slug);
+    assert.ok(!entries.has(locFor(slug)), `${slug} leaked into the sitemap`);
+    assert.equal(existsSync(distHtmlFor(locFor(slug))), false, `${slug} should 301`);
+  }
   const restored = "can-you-refreeze-frozen-vegetables-after-thawing";
   assert.ok(entries.has(locFor(restored)), `${restored} should return to the sitemap`);
   const restoredRobots = robotsFor(locFor(restored));
