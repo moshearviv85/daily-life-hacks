@@ -134,7 +134,11 @@ test("doubling guide separates baking, preservation, and food-safety rules", () 
     article,
     /https:\/\/www\.fsis\.usda\.gov\/food-safety\/safe-food-handling-and-preparation\/food-safety-basics\/refrigeration/,
   );
-  assert.match(article, /dateModified: 2026-07-30/);
+  assert.match(article, /dateModified: 2026-11-23/);
+  assert.match(
+    article,
+    /https:\/\/uwyoextension\.org\/uwnutrition\/newsletters\/scaling-up-or-down\//,
+  );
 });
 
 test("doubling guide removes invented experience and unsupported absolutes", () => {
