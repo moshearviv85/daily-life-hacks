@@ -51,7 +51,7 @@ Anything with a bean or a lentil in it. Soup, stew, chili, a pot of beans with r
 
 What fails is anything crisp, anything dressed, and anything with a fried surface. Reheated fries are a punishment. A salad you dressed on Sunday is compost by Tuesday. So don't fight it: cook the sturdy thing in bulk and keep the crunchy part separate in a bag.
 
-That's the whole system. One pot, plus a small bag of raw cabbage or carrots that goes on top at the last second. Cabbage is $0.78 a pound, which makes it the cheapest texture money can buy. Yesterday's pot is also tomorrow's cheapest packed meal, a point we ran the numbers on in [cheap lunch ideas](/cheap-lunch-ideas-cost-per-box/).
+That's the whole system. One pot, plus a small bag of raw cabbage or carrots that goes on top at the last second. Cabbage is $0.78 a pound, which makes it the cheapest texture money can buy. Yesterday's pot is also tomorrow's cheapest packed meal, a point we ran the numbers on in cheap lunch ideas.
 
 ## Why does cooking a bigger pot cost less per serving?
 
@@ -59,7 +59,7 @@ Two reasons, and only one of them is obvious.
 
 The obvious one is packaging. A 4 pound bag of dry pinto beans works out to $0.219 per 100 grams. A 2 pound bag of black beans is $0.267. Same category of food, roughly 18 percent apart, purely on package size. Buying at the size you'll actually finish is the single cheapest decision in the store, and we ranked what those unit prices do to your protein in [protein per dollar](/protein-per-dollar-cheapest-protein-sources/).
 
-The less obvious one is that a pot of beans takes the same attention whether it holds two servings or six. You soak once, you simmer once, you wash one pot. Time isn't in our price data, but it's the reason people abandon cheap cooking, so it belongs in the decision. [Batch cooking for beginners](/batch-cooking-for-beginners-weekly-guide/) has the scheduling side, and [how to meal plan on a budget](/how-to-meal-plan-on-a-budget/) has the pricing side.
+The less obvious one is that a pot of beans takes the same attention whether it holds two servings or six. You soak once, you simmer once, you wash one pot. Time isn't in our price data, but it's the reason people abandon cheap cooking, so it belongs in the decision. Batch cooking for beginners has the scheduling side, and how to meal plan on a budget has the pricing side.
 
 Canned beans break the pattern in the other direction. Three cans of beans for a chili came to $3.72 against under two dollars for the dry version, because cans cost roughly 2.7 times more per gram of protein. We measured that gap in [canned versus dry beans](/canned-vs-dry-beans-cost/). Cans are for rescue nights, not for batch nights.
 
@@ -69,7 +69,7 @@ USDA's Food Safety and Inspection Service advises using cooked leftovers within 
 
 Four servings is the sweet spot for most households. Two people eat it twice, a family of four eats it once, and either way it's gone inside the window. A ten serving pot for one person is how good intentions end up in the bin, and food you paid for and threw out costs full price and feeds nobody. There's more of that thinking in [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/).
 
-Cool things properly before they go in, especially rice. The safe method is in [storing cooked grains for meal prep](/how-to-properly-store-cooked-grains-for-meal-prep/). Beyond four days, freeze it, and [freezer meal prep for beginners](/freezer-meal-prep-ideas-for-beginners/) covers the portioning.
+Cool things properly before they go in, especially rice. The safe method is in storing cooked grains for meal prep. Beyond four days, freeze it, and [freezer meal prep for beginners](/freezer-meal-prep-ideas-for-beginners/) covers the portioning.
 
 ## How do you keep leftovers from being the same meal four times?
 
@@ -83,6 +83,6 @@ Leftover rice is the most flexible thing in the fridge and the most commonly was
 
 These are single store shelf prices from July 2026, plus US average prices for chicken and a few commodity items. Oil, salt, spices, and electricity aren't priced, and we publish no calorie figures because our datasets don't carry a calorie column.
 
-The pot sizes are our assumption too: 90 grams of dry legume and 60 grams of dry grain per adult serving. Scale to your own appetites, and remember the cost moves almost linearly, so a bigger portion of a cheap anchor is still a cheap meal. For the family scale version of these pots, [cheap dinner ideas for a family of 4](/cheap-dinner-ideas-for-a-family-of-4/) has the same math at four servings.
+The pot sizes are our assumption too: 90 grams of dry legume and 60 grams of dry grain per adult serving. Scale to your own appetites, and remember the cost moves almost linearly, so a bigger portion of a cheap anchor is still a cheap meal. For the family scale version of these pots, cheap dinner ideas for a family of 4 has the same math at four servings.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

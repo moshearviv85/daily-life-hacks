@@ -82,6 +82,6 @@ Speed matters too. FSIS says to freeze food as fast as possible, never stack pac
 * **Leave headspace** in rigid containers so the food can expand without breaking the seal.
 * **Store at 0F or below.** NCHFP puts fruits and vegetables at roughly 8 to 12 months there.
 
-Once it's in, [a simple freezer inventory](/freezer-inventory-simple-system/) keeps it from becoming an archaeology project, and [how long frozen vegetables last](/how-long-do-frozen-vegetables-last-in-the-freezer/) covers the quality window in more detail. When it comes back out, [cook it from frozen](/how-to-cook-frozen-vegetables-without-the-mush/) rather than thawing it first.
+Once it's in, [a simple freezer inventory](/freezer-inventory-simple-system/) keeps it from becoming an archaeology project, and [how long frozen vegetables last](/can-you-refreeze-frozen-vegetables-after-thawing/) covers the quality window in more detail. When it comes back out, cook it from frozen rather than thawing it first.
 
 <!-- sources: NCHFP Blanching Vegetables and How Long Can I Store Frozen Foods; University of Minnesota Extension Blanching Vegetables; NDSU Extension FN187 Freezing Vegetables; USDA FSIS Freezing and Food Safety; Illinois Extension Freezer Storage -->

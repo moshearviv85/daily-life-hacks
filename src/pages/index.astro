@@ -10,6 +10,7 @@ import Footer from '../components/Footer.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import { isReleased, getReleaseTimestamp } from '../content/release';
+import { isIndexPruned } from '../content/index-prune.js';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -39,11 +40,14 @@ type Article = CollectionEntry<'articles'>;
 const hasShippedImage = (image: string) =>
   image.startsWith('http') ||
   existsSync(join(process.cwd(), 'public', image.replace(/^\/+/, '')));
-const releasedArticles = allArticles.filter((article: Article) => isReleased(article));
+const releasedArticles = allArticles
+  .filter((article: Article) => isReleased(article))
+  .filter((article: Article) => !isIndexPruned(article.id));
 const sorted = releasedArticles.sort(
   (a: Article, b: Article) => getReleaseTimestamp(b) - getReleaseTimestamp(a),
 );
 const releaseFeedRows = allArticles
+  .filter((article: Article) => !isIndexPruned(article.id))
   .map((article: Article) => ({
     slug: article.id,
     title: article.data.title,

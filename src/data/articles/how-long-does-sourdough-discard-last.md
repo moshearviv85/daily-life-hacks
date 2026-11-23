@@ -54,7 +54,7 @@ Plan the fridge jar for one week from the oldest discard in it. That sits at the
 
 The counter isn't a fifth column. King Arthur says leave it out only if you're using it that day. Pantry Mama says it gets very sour after a few days on the counter. sourdoughstarter.com says a day, maybe two, and calls 48 hours borderline. If you aren't baking today, put the lid on and refrigerate it.
 
-Those fridge and freezer set-points for the rest of the kitchen live in [food storage temperature rules](/food-storage-temperature-rules/). That page is about leftovers and groceries. It isn't a discard chart, and USDA's leftover times don't transfer to this jar.
+Those fridge and freezer set-points for the rest of the kitchen live in food storage temperature rules. That page is about leftovers and groceries. It isn't a discard chart, and USDA's leftover times don't transfer to this jar.
 
 ## Label the jar: a date system that actually works
 

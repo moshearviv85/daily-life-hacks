@@ -60,7 +60,7 @@ Longer than most people assume, and the FDA says so directly. A use by date is t
 
 What actually matters is the can. Swelling, leaks, punctures, deep rust, or a dent bad enough that the can won't stack or open normally are all reasons to throw it out rather than risk it. A scuffed label and a two year old date stamp are not.
 
-This is the quiet argument for keeping cans around at all. Canned black beans were the cheapest package in our [no-cook protein ranking](/no-cook-protein-per-dollar/) at 88 cents, and they hold that value for years in a cupboard, which almost nothing else in the store does. Dry beans hold even longer, and we went through that in [how long dried beans last](/how-long-do-dried-beans-last/).
+This is the quiet argument for keeping cans around at all. Canned black beans were the cheapest package in our [no-cook protein ranking](/no-cook-protein-per-dollar/) at 88 cents, and they hold that value for years in a cupboard, which almost nothing else in the store does. Dry beans hold even longer, and we went through that in [how long dried beans last](/how-to-cook-dried-beans-from-scratch/).
 
 ## How do you know when to throw them out?
 
@@ -72,9 +72,9 @@ The harder case is the can you're not sure about. The FDA is worth quoting on th
 
 Use it the same night. That's the only storage strategy that always works.
 
-Half a can of black beans is about 13.2 grams of protein for 44 cents, which is enough to turn a plate of rice into an actual meal. The whole can only cost 88 cents to begin with, and we broke down what that buys in [how much a can of beans costs](/how-much-is-a-can-of-beans/). Push it into [weeknight tacos](/easy-black-bean-tacos-weeknight-dinner/), fold it into eggs, or drop it cold onto a salad. Chickpea leftovers go into [homemade hummus](/high-fiber-hummus-recipe-homemade/), which also buys you another few days in a sealed container.
+Half a can of black beans is about 13.2 grams of protein for 44 cents, which is enough to turn a plate of rice into an actual meal. The whole can only cost 88 cents to begin with, and we broke down what that buys in [how much a can of beans costs](/canned-beans-vs-dried-beans-nutrition/). Push it into [weeknight tacos](/easy-black-bean-tacos-weeknight-dinner/), fold it into eggs, or drop it cold onto a salad. Chickpea leftovers go into [homemade hummus](/high-fiber-hummus-recipe-homemade/), which also buys you another few days in a sealed container.
 
-If the fridge window is going to run out, freeze it flat in its liquid at 0 degrees F. Thawed beans lose a little firmness, so they belong in [three bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) or a soup rather than in a salad where texture is the whole point.
+If the fridge window is going to run out, freeze it flat in its liquid at 0 degrees F. Thawed beans lose a little firmness, so they belong in three bean chili or a soup rather than in a salad where texture is the whole point.
 
 Beans are cheap enough that nobody's budget collapses over a wasted half can. It's still the easiest 44 cents in the kitchen to stop throwing away, and a covered container and a date on the lid handles it.
 

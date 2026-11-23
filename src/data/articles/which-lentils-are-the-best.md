@@ -77,6 +77,6 @@ Per 100 grams the two foods sit much closer together, and animal proteins carry 
 
 Brown lentils if you want the best protein per dollar and a pulse that behaves predictably. Green split peas if you want fiber and one very good soup. Red lentils if you want a sauce that thickens itself and you're fine paying for it.
 
-If you're stocking a cupboard from scratch, buy brown lentils and split peas, skip red for now, and add a bag of dry black beans. That's roughly $5 of food that goes a long way, and it keeps for a long time if you store it properly, which we covered in [how long dried beans last](/how-long-do-dried-beans-last/). The wider comparison across ten beans and pulses is in [the nutritional value of beans](/nutritional-value-of-beans-compared/), and where all this sits against canned convenience is in [canned beans versus dried beans nutrition](/canned-beans-vs-dried-beans-nutrition/).
+If you're stocking a cupboard from scratch, buy brown lentils and split peas, skip red for now, and add a bag of dry black beans. That's roughly $5 of food that goes a long way, and it keeps for a long time if you store it properly, which we covered in [how long dried beans last](/how-to-cook-dried-beans-from-scratch/). The wider comparison across ten beans and pulses is in the nutritional value of beans, and where all this sits against canned convenience is in [canned beans versus dried beans nutrition](/canned-beans-vs-dried-beans-nutrition/).
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

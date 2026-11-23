@@ -52,7 +52,7 @@ The ones with a dry legume doing the heavy lifting. That's the whole trick, and 
 
 Look at the top of the table and the bottom. Same shape of plate, same amount of protein, and the price moves by more than six times. It isn't the vegetables doing that. A 16 ounce bag of green split peas costs $1.42 and makes five dinners at $0.28 each. A pound of 80/20 ground beef costs $6.75 and gives you 11.5 grams of protein per dollar, which is the worst return in our whole [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/).
 
-So the shortlist writes itself. Split pea soup. Beans and rice. [Black bean tacos](/easy-black-bean-tacos-weeknight-dinner/). Lentil soup. A pot of navy beans with carrots. None of these need a recipe you'd bookmark, just [the three slot plate rule](/easy-cheap-healthy-meals/), and all cost less than a drive-through side.
+So the shortlist writes itself. Split pea soup. Beans and rice. [Black bean tacos](/easy-black-bean-tacos-weeknight-dinner/). Lentil soup. A pot of navy beans with carrots. None of these need a recipe you'd bookmark, just the three slot plate rule, and all cost less than a drive-through side.
 
 If dry beans feel like a commitment, they mostly aren't. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is about four minutes of work and a lot of waiting, and there's a [same day quick soak](/how-to-quick-soak-dried-beans-same-day/) for the nights you forgot.
 
@@ -66,7 +66,7 @@ That last one matters if your table wants meat. Bone-in drumsticks returned 50.3
 
 No, and if you try that you'll quit by Thursday. I've done it. Week three of pinto beans is where good intentions go to die.
 
-The fix isn't a more expensive anchor, it's a rotation. Split peas Monday, black beans Wednesday, lentils Friday, drumsticks Saturday. Four different anchors, four different flavor directions, and the weekly total barely moves. A pot of [three bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) and a night of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) taste nothing alike even though the receipt looks the same.
+The fix isn't a more expensive anchor, it's a rotation. Split peas Monday, black beans Wednesday, lentils Friday, drumsticks Saturday. Four different anchors, four different flavor directions, and the weekly total barely moves. A pot of three bean chili and a night of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) taste nothing alike even though the receipt looks the same.
 
 Then let one dinner a week be the expensive one on purpose. At $1.88 a serving the ground beef night is still cheaper than anything you'd order, and budgets that allow zero indulgence collapse by Sunday.
 
@@ -76,7 +76,7 @@ Texture and acid, mostly. A bowl of beans is a bowl of beans until you put somet
 
 Cabbage is the cheapest crunch in the produce aisle at $0.78 a pound, which is why the taco line in that table includes a slaw and still costs $0.41. Carrots run $1.58 for a two pound bag. A squeeze of lime, a spoon of yogurt, hot sauce, raw onion, toasted seeds on top. None of that moves the price much and all of it moves the plate.
 
-Frozen vegetables do the same job with no prep and no spoilage risk. Frozen green peas came in at 17.6 grams of fiber per dollar, better than every fresh fruit we priced. If you cook for a household, [cheap dinner ideas for a family of 4](/cheap-dinner-ideas-for-a-family-of-4/) prices the same plates by the pot, and [cheap healthy meals for two](/cheap-healthy-meals-for-two/) deals with the package problem.
+Frozen vegetables do the same job with no prep and no spoilage risk. Frozen green peas came in at 17.6 grams of fiber per dollar, better than every fresh fruit we priced. If you cook for a household, cheap dinner ideas for a family of 4 prices the same plates by the pot, and cheap healthy meals for two deals with the package problem.
 
 ## What this price list does not cover
 

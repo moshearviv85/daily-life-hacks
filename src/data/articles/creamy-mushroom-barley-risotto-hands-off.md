@@ -114,4 +114,4 @@ The barley is ready when the grains are tender but still pleasantly chewy. If th
 
 Serve it with a sharp green salad or roasted broccoli to break up the creamy texture. For extra protein, add a fried egg, shredded chicken, or white beans. Keep the topping simple because mushrooms, thyme, and Parmesan already have the microphone.
 
-If you want a faster one-pot version built around pasta, the [tomato orzo with white beans](/creamy-tomato-orzo-white-beans-one-pot/) reaches the table in about 30 minutes. For meal-prep storage, follow the [cooked-grain guide](/how-to-properly-store-cooked-grains-for-meal-prep/) and cool the barley promptly in shallow containers.
+If you want a faster one-pot version built around pasta, the [tomato orzo with white beans](/creamy-tomato-orzo-white-beans-one-pot/) reaches the table in about 30 minutes. For meal-prep storage, follow the cooked-grain guide and cool the barley promptly in shallow containers.

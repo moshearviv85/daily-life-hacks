@@ -62,7 +62,7 @@ Soft herbs are the ones with tender green stems. Think cilantro, parsley, basil,
 3. **The Tent:** Take a small plastic sandwich bag (or even the produce bag they came in) and loosely drape it over the top of the herbs like a little greenhouse tent. 
 4. **The Location:** Put cilantro and parsley right into the fridge. They can last two to three weeks like this. **Exception:** Basil hates the cold. Keep it in a flower-style jar, but leave the jar sitting out on your kitchen counter at room temperature.
 
-A jar of living cilantro and scallions also means weeknight stir fry gets its proper fresh finish. These [quick and easy stir-fry sauce recipes](/quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff/) handle the rest of the equation. 
+A jar of living cilantro and scallions also means weeknight stir fry gets its proper fresh finish. These quick and easy stir-fry sauce recipes handle the rest of the equation. 
 
 ## The Hard Herbs (The Damp Towel Method)
 
@@ -72,7 +72,7 @@ Hard herbs have tough, woody stems. This includes rosemary, thyme, sage, and ore
 2. **The Roll:** Lay the woody herbs flat on the damp paper towel and roll them up gently like a little burrito. 
 3. **The Seal:** Slide the wrapped herbs into a zip-lock bag or an airtight glass container and pop them in the crisper drawer. The tiny bit of moisture keeps them from drying out, but the plastic protects them from excessive fridge humidity. 
 
-Learning how to store fresh herbs to last longer changes the way you cook. You can finally garnish your tacos on a Friday with the same cilantro you bought on Monday! It also means herb-heavy dishes like this [high fiber bulgur tabbouleh salad](/tabbouleh-salad-high-fiber-bulgur/) stop feeling like a race against the crisper drawer.
+Learning how to store fresh herbs to last longer changes the way you cook. You can finally garnish your tacos on a Friday with the same cilantro you bought on Monday! It also means herb-heavy dishes like this high fiber bulgur tabbouleh salad stop feeling like a race against the crisper drawer.
 
 ## Should you wash herbs before storing them?
 
@@ -90,4 +90,4 @@ Basil is the exception worth remembering. Keep it at room temperature, out of ha
 
 Freezing preserves cooking flavor better than fresh texture. Chop parsley, cilantro, dill, or chives, pack them into an ice cube tray, cover with water or olive oil, and freeze. Transfer the solid cubes to a labeled bag. Drop them into soups, sauces, and skillets, not onto a finished salad where limp leaves have nowhere to hide.
 
-Rosemary and thyme can be frozen on their stems in a sealed bag. Once frozen, the leaves often strip away easily. For another small freezer habit that saves produce, use the tray method in this guide to [freezing bananas for smoothies](/how-to-freeze-bananas-for-smoothies/).
+Rosemary and thyme can be frozen on their stems in a sealed bag. Once frozen, the leaves often strip away easily. For another small freezer habit that saves produce, use the tray method in this guide to freezing bananas for smoothies.

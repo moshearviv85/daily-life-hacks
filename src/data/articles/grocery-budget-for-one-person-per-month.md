@@ -69,9 +69,9 @@ Between the floor and the benchmark there's a lot of room. [What a day of 50 gra
 
 Build a small rotation and shop it, rather than shopping by mood and hoping. Cooking for one is the format most recipes ignore, so a plan matters more than it does for a household where leftovers get eaten by somebody else.
 
-Three habits do most of the work. Buy shelf-stable staples in the largest package you'll finish. Cook in batches and freeze in single portions, which is the entire premise of [meal prepping on a budget for one person](/how-to-meal-prep-on-a-budget-for-one-person/). And give every perishable at least two planned meals before it goes in the cart, a rule we lean on in [the budget grocery list](/grocery-shopping-list-for-healthy-eating-on-a-budget/).
+Three habits do most of the work. Buy shelf-stable staples in the largest package you'll finish. Cook in batches and freeze in single portions, which is the entire premise of meal prepping on a budget for one person. And give every perishable at least two planned meals before it goes in the cart, a rule we lean on in the budget grocery list.
 
-If you want ideas that are actually sized for one, [budget meal ideas for one](/budget-meal-ideas-for-one/) is written for that problem specifically.
+If you want ideas that are actually sized for one, budget meal ideas for one is written for that problem specifically.
 
 ## What the benchmark leaves out
 
@@ -79,7 +79,7 @@ Two things, and they're the reason people conclude they're failing when they are
 
 First, USDA's number is food at home. No restaurants, no delivery fees, no coffee bought because the morning went sideways. If your $400 includes three takeout dinners, you are not overspending on groceries. You are spending on something else that happens to arrive on the same card statement.
 
-Second, it isn't your zip code. USDA reports a national average, and our own prices come from one store in one month, July 2026. Both are useful as a shape. Neither is a quote. If a cheaper store is a drive away, [we did the math on whether that drive pays](/is-driving-to-cheaper-grocery-store-worth-it/).
+Second, it isn't your zip code. USDA reports a national average, and our own prices come from one store in one month, July 2026. Both are useful as a shape. Neither is a quote. If a cheaper store is a drive away, we did the math on whether that drive pays.
 
 Use the $303 to $381 range the way you'd use a bathroom scale rather than a report card: a number to compare against yourself over time. The full system for pulling it down without eating badly is in [the eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/).
 

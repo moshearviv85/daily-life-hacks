@@ -52,7 +52,7 @@ Here's the thing nobody tells you when they say "just cook at home." The saving 
 
 Between about fifty cents and a dollar fifty a person, if the anchor is a dry legume. That's the honest range.
 
-Run the arithmetic yourself from the table. Beans and rice is $0.20 plus $0.12, so $0.32 before vegetables. Add a carrot, half an onion, and oil, and you're still under sixty cents. We costed ten of these plates in [cheap dinner ideas](/cheap-dinner-ideas-cost-per-serving/), and the whole list runs from $0.28 to $1.88.
+Run the arithmetic yourself from the table. Beans and rice is $0.20 plus $0.12, so $0.32 before vegetables. Add a carrot, half an onion, and oil, and you're still under sixty cents. We costed ten of these plates in cheap dinner ideas, and the whole list runs from $0.28 to $1.88.
 
 The reason the range is so wide isn't portion size, it's the anchor. Ground beef costs $6.75 a pound and returns 11.5 grams of protein per dollar. Dry pintos return 97.9 in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). Pick the anchor and you've already picked the price of the meal.
 
@@ -62,13 +62,13 @@ The unglamorous corner of the store. Dry goods, canned goods, frozen vegetables,
 
 Whole wheat flour is the sleeper on that table at $0.08 a portion. It's also the top food in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), at 77.8 grams per dollar, which is a strange thing to say about flour until you remember it's just ground wheat. We ranked the full pantry in [cheap shelf stable protein](/shelf-stable-pantry-per-dollar/), and dry legumes take the first seven places.
 
-Stock two anchors, two grains, one nut butter, and a bag of frozen vegetables. That's a kitchen that can make food on a Tuesday without a plan, using [the three slot plate rule](/easy-cheap-healthy-meals/). If you want the version with a real shopping list attached, [grocery shopping list for healthy eating on a budget](/grocery-shopping-list-for-healthy-eating-on-a-budget/) lays it out.
+Stock two anchors, two grains, one nut butter, and a bag of frozen vegetables. That's a kitchen that can make food on a Tuesday without a plan, using the three slot plate rule. If you want the version with a real shopping list attached, grocery shopping list for healthy eating on a budget lays it out.
 
 ## How do you eat cheap at home without eating the same thing forever?
 
 Cook bigger, and vary the seasoning instead of the ingredients. One pot of beans becomes three completely different dinners depending on what you put on it.
 
-A 16 ounce bag of split peas is $1.42 and makes about five servings. A four pound bag of pintos makes roughly twenty. So the practical rhythm isn't cooking every night, it's cooking twice and assembling the rest of the week. Cumin and lime one night, smoked paprika and vinegar the next, curry powder and yogurt after that. Pricing that week before you shop takes about six minutes, and [how to meal plan on a budget](/how-to-meal-plan-on-a-budget/) shows the three column version.
+A 16 ounce bag of split peas is $1.42 and makes about five servings. A four pound bag of pintos makes roughly twenty. So the practical rhythm isn't cooking every night, it's cooking twice and assembling the rest of the week. Cumin and lime one night, smoked paprika and vinegar the next, curry powder and yogurt after that. Pricing that week before you shop takes about six minutes, and how to meal plan on a budget shows the three column version.
 
 Dry beans do take time, though almost none of it is your time. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is four minutes of work and a couple of hours of ignoring a pot. Keep a few cans around for the nights when the plan falls apart. They cost about 2.7 times more per gram of protein than the same bean dry, which we measured in [canned versus dry beans](/canned-vs-dry-beans-cost/), and at $0.88 that's a fine price for a rescue.
 
@@ -76,7 +76,7 @@ Dry beans do take time, though almost none of it is your time. [Cooking dried be
 
 Per gram of nutrition, yes, and it isn't close. The single best protein deal we found across 30 fast food items returned 8.4 grams per dollar. Dry pinto beans return 97.9. That's roughly twelve to one, and we published the whole menu ranking in [fast food protein per dollar](/fast-food-protein-per-dollar-ranked/).
 
-But your grocery bill can still go up when you start cooking, and people panic about that. It usually means the spending moved rather than grew, because restaurant meals stopped showing on a card statement and started showing on a receipt. We worked through the accounting in [why your grocery bill went up after cooking more](/why-grocery-bill-went-up-after-cooking-more/).
+But your grocery bill can still go up when you start cooking, and people panic about that. It usually means the spending moved rather than grew, because restaurant meals stopped showing on a card statement and started showing on a receipt. We worked through the accounting in why your grocery bill went up after cooking more.
 
 The other leak is waste. Food you bought and threw out costs full price and feeds nobody, which is why the [reduce food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/) habits matter more than any coupon.
 

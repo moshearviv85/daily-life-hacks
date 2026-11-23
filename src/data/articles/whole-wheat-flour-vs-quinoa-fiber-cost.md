@@ -68,7 +68,7 @@ Barley. This is the useful part of the whole comparison.
 | Brown rice (dry) | 2 lb bag, $1.87 | 17.5 g |
 | Quinoa (dry) | 2 lb bag, $5.97 | 10.6 g |
 
-Pearled barley delivers 57.1 grams of fiber per dollar from a $1.24 bag, which is about 5.4 times what quinoa manages, and it does the same jobs. It goes chewy instead of fluffy, which is arguably better in a [hands-off mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/). Bulgur at 24.4 is even faster, since it mostly just soaks, and it's the whole point of a [proper tabbouleh](/tabbouleh-salad-high-fiber-bulgur/).
+Pearled barley delivers 57.1 grams of fiber per dollar from a $1.24 bag, which is about 5.4 times what quinoa manages, and it does the same jobs. It goes chewy instead of fluffy, which is arguably better in a [hands-off mushroom barley risotto](/creamy-mushroom-barley-risotto-hands-off/). Bulgur at 24.4 is even faster, since it mostly just soaks, and it's the whole point of a proper tabbouleh.
 
 Swap quinoa for barley in a grain bowl and almost nobody at the table notices. Your receipt does.
 
@@ -76,7 +76,7 @@ Swap quinoa for barley in a grain bowl and almost nobody at the table notices. Y
 
 If you like baking, the math is on your side. Flour at 77.8 grams of fiber per dollar against a $1.97 loaf of store bought 100% whole wheat at 17.3 is about a 4.5 times spread, and that's before you consider that homemade bread tastes like something.
 
-Start where the failure rate is lowest. A [simple sandwich loaf](/easy-sandwich-bread-recipe-beginners/) is mostly waiting, and [bran muffins that don't taste like penance](/high-fiber-bran-muffins-that-taste-good/) are a weeknight-sized commitment. If baking isn't your thing, buy barley and move on with your life.
+Start where the failure rate is lowest. A simple sandwich loaf is mostly waiting, and [bran muffins that don't taste like penance](/high-fiber-bran-muffins-that-taste-good/) are a weeknight-sized commitment. If baking isn't your thing, buy barley and move on with your life.
 
 The full grain bracket lives in our [grains fiber ranking](/grains-fiber-per-dollar-ranked/), and the [budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) turns all of this into an actual shopping list.
 

@@ -85,7 +85,7 @@ Here is a practical trick: wet your hands slightly with cold water before you st
 If your skillet is on the smaller side, do not crowd the pan. Cook them in two batches instead. Crowding the pan drops the temperature and causes the meat to steam rather than brown. You want that nice golden crust. They're done when they hit 165°F in the center. Give them a few minutes to rest off the heat so they don't fall apart when you move them.
 ## How to Actually Use Them
 
-The best part of this prep is the flexibility. Toss them with some jarred marinara and spaghetti for a classic dinner. Slice them in half and add them to a sub roll with a little sauce and a slice of provolone for lunch. Or, serve them over rice or quinoa with a side of steamed broccoli. If you batch-cook the grains too, make sure you [store cooked grains properly](/how-to-properly-store-cooked-grains-for-meal-prep/) so they last the whole week. 
+The best part of this prep is the flexibility. Toss them with some jarred marinara and spaghetti for a classic dinner. Slice them in half and add them to a sub roll with a little sauce and a slice of provolone for lunch. Or, serve them over rice or quinoa with a side of steamed broccoli. If you batch-cook the grains too, make sure you store cooked grains properly so they last the whole week. 
 
 They reheat really well in the microwave, or you can warm them in a skillet with a splash of water or sauce so they don't dry out. If you freeze a batch, just let them thaw in the fridge overnight before you reheat them. One cooking session, several different meals, and zero sad desk lunches.
 
@@ -103,10 +103,10 @@ For the oven, arrange the meatballs on a parchment-lined sheet pan with a little
 
 Pack four containers with a grain, a vegetable, and four to six meatballs, but change the sauce so Wednesday does not feel like Monday wearing a fake mustache. Marinara and pasta is obvious. Lemon, yogurt, and cucumber works with rice. Pesto and roasted vegetables make another solid combination.
 
-For a colder lunch, slice the meatballs and tuck them into a pita with shredded cabbage and mustard. The [high-protein lunch prep guide](/how-to-prep-high-protein-lunches-work/) has more ways to build the container without buying eight unrelated ingredients.
+For a colder lunch, slice the meatballs and tuck them into a pita with shredded cabbage and mustard. The high-protein lunch prep guide has more ways to build the container without buying eight unrelated ingredients.
 
 ## Cool and store them without drying them out
 
 Let the meatballs stop steaming, then refrigerate them promptly in shallow containers. Keep a little sauce with each portion when possible. Use refrigerated meatballs within four days, or freeze them in a single layer before moving them to a bag so they do not become one large turkey asteroid.
 
-Thaw frozen portions overnight in the refrigerator. Reheat covered with sauce or a spoonful of water until hot throughout. If you are storing cooked grains beside them, follow the cooling and container steps in the [cooked-grain meal prep guide](/how-to-properly-store-cooked-grains-for-meal-prep/).
+Thaw frozen portions overnight in the refrigerator. Reheat covered with sauce or a spoonful of water until hot throughout. If you are storing cooked grains beside them, follow the cooling and container steps in the cooked-grain meal prep guide.

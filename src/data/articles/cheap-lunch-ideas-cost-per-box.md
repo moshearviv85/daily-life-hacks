@@ -57,9 +57,9 @@ Tuna sits at $0.98 a can and gives 22.0 grams of protein, which is genuinely goo
 
 Whatever you cooked last night. That's not a dodge, it's the actual answer.
 
-Leftover split pea soup costs $0.28 a portion because a 16 ounce bag of dry peas is $1.42 and makes five of them. Leftover beans and rice runs $0.32 with 23.8 grams of protein. Neither of those requires a separate lunch plan, a separate shopping list, or a separate hour on Sunday. You just cook one extra portion of the [cheap dinners you were making anyway](/cheap-dinner-ideas-cost-per-serving/) and put it in a box before you sit down to eat.
+Leftover split pea soup costs $0.28 a portion because a 16 ounce bag of dry peas is $1.42 and makes five of them. Leftover beans and rice runs $0.32 with 23.8 grams of protein. Neither of those requires a separate lunch plan, a separate shopping list, or a separate hour on Sunday. You just cook one extra portion of the cheap dinners you were making anyway and put it in a box before you sit down to eat.
 
-The pots that reheat best are also the cheapest ones, which we costed in [cheap healthy meals with leftovers](/cheap-healthy-meals-with-leftovers/). Grains hold better than people think if you cool them properly, and the safe version is in [how to store cooked grains](/how-to-properly-store-cooked-grains-for-meal-prep/).
+The pots that reheat best are also the cheapest ones, which we costed in cheap healthy meals with leftovers. Grains hold better than people think if you cool them properly, and the safe version is in how to store cooked grains.
 
 ## Is packing lunch really cheaper than buying it?
 
@@ -75,7 +75,7 @@ A cheap lunch fails for one reason. It's the same brown container on Thursday th
 
 The second fix is texture. Something crunchy goes in a separate bag, not in the container. Cabbage at $0.78 a pound, carrots at $1.58 for two pounds, or 25 grams of popcorn kernels for six cents. Wet lettuce in a box on Wednesday is why people give up, which is the whole point of [packing a salad so it isn't soggy](/how-to-pack-salad-for-work-not-soggy/).
 
-If you want a repeatable system rather than a scramble, [prepping high protein lunches for work](/how-to-prep-high-protein-lunches-work/) covers the assembly line version.
+If you want a repeatable system rather than a scramble, prepping high protein lunches for work covers the assembly line version.
 
 ## What these lunch prices leave out
 

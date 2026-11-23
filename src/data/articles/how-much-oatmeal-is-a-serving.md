@@ -62,7 +62,7 @@ Depends on what else is on the table, and this is where most oatmeal advice goes
 
 One 60 gram bowl gives you about 16 percent of the FDA's 50 gram protein [Daily Value](/fiber-protein-daily-values-explained/) and about 22 percent of the 28 gram fiber Daily Value. If your morning ends with you rummaging in a drawer at ten, the fix usually isn't more oats. Doubling to 120 grams only takes protein to 15.8 grams, and you'd be eating a very large amount of porridge to get there.
 
-Adding something denser works better. Two tablespoons of peanut butter add 7.1 grams of protein for 14 cents, and swapping water for a cup of whole milk adds 7.7 grams for 26 cents. That takes a standard bowl to about 22.7 grams for roughly 57 cents. The full menu of add-ons and what each one costs is in [how to get more protein at breakfast](/how-to-get-more-protein-at-breakfast/).
+Adding something denser works better. Two tablespoons of peanut butter add 7.1 grams of protein for 14 cents, and swapping water for a cup of whole milk adds 7.7 grams for 26 cents. That takes a standard bowl to about 22.7 grams for roughly 57 cents. The full menu of add-ons and what each one costs is in how to get more protein at breakfast.
 
 ## What does a bowl of oatmeal actually cost?
 
@@ -76,8 +76,8 @@ The rest of the pantry ranked the same way, from oats down to almonds, is in [th
 
 I've eaten one most mornings for years, so I'm not neutral. What I can say from the numbers is that a single 60 gram serving covers about a fifth of the FDA fiber Daily Value from one cheap food, which could make hitting the rest of the day's fiber a lot less fiddly.
 
-The thing that kills the habit isn't nutrition, it's monotony. Rotate what goes on top: peanut butter one day, a chopped banana another, a fried egg and hot sauce when you want [something savory](/savory-oatmeal-bowls-with-eggs-and-avocado/). If oats aren't sticking at all, [chia pudding and the other make-ahead options](/make-ahead-breakfast-ideas-without-eggs/) cover similar ground.
+The thing that kills the habit isn't nutrition, it's monotony. Rotate what goes on top: peanut butter one day, a chopped banana another, a fried egg and hot sauce when you want something savory. If oats aren't sticking at all, chia pudding and the other make-ahead options cover similar ground.
 
-What's inside the grain, and how it stacks up against eggs, is in [how much protein is in oatmeal](/how-much-protein-in-oatmeal/).
+What's inside the grain, and how it stacks up against eggs, is in [how much protein is in oatmeal](/foods-highest-in-protein-per-100-grams/).
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/breakfast-staples-per-dollar-2026.csv -->

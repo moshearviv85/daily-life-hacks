@@ -66,15 +66,15 @@ One rule that isn't about cooking. The FDA advises throwing out cans that are [s
 
 Taste, mostly. The canning liquid is starchy and faintly metallic, and it will flatten whatever you put the beans into. Rinsing also washes away some of the sodium.
 
-The exception is when you want that starch. A can of chickpeas dumped in with its liquid will thicken a stew, and the same logic applies in [three bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) where the sauce benefits from the body. Otherwise, colander, cold water, thirty seconds.
+The exception is when you want that starch. A can of chickpeas dumped in with its liquid will thicken a stew, and the same logic applies in three bean chili where the sauce benefits from the body. Otherwise, colander, cold water, thirty seconds.
 
 Worth knowing: our gram figures describe the 439 gram net weight of the can as sold, liquid included. Drain and rinse and you'll eat somewhat less than the table says. Read those numbers as the ceiling rather than the plate.
 
 ## What to do with the can once it is open
 
-Get it into something. Cold beans go straight into [corn salsa with no cooking at all](/quick-black-bean-and-corn-salsa-no-cooking-required/), or onto a salad, or into a bowl with rice and hot sauce. Chickpeas become [homemade hummus](/high-fiber-hummus-recipe-homemade/) in the time it takes the food processor to stop rattling, or [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) if you want the snack version.
+Get it into something. Cold beans go straight into corn salsa with no cooking at all, or onto a salad, or into a bowl with rice and hot sauce. Chickpeas become [homemade hummus](/high-fiber-hummus-recipe-homemade/) in the time it takes the food processor to stop rattling, or crispy roasted chickpeas if you want the snack version.
 
-Whatever you don't use, move out of the can and into a covered container in the fridge, ideally within two hours of opening it. The can itself is not a storage vessel once the seal is broken. We laid out how long the leftovers actually keep in [how long opened canned beans last](/how-long-do-opened-canned-beans-last/), and what a can is worth against a bag of dry beans in [how much a can of beans costs](/how-much-is-a-can-of-beans/).
+Whatever you don't use, move out of the can and into a covered container in the fridge, ideally within two hours of opening it. The can itself is not a storage vessel once the seal is broken. We laid out how long the leftovers actually keep in [how long opened canned beans last](/canned-beans-vs-dried-beans-nutrition/), and what a can is worth against a bag of dry beans in how much a can of beans costs.
 
 A can of beans is the rare pantry item that asks nothing of you. No soak, no simmer, no plan. That's most of why it's worth keeping four of them behind the pasta.
 

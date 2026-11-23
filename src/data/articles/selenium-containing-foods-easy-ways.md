@@ -37,7 +37,7 @@ But selenium foods aren't strange. They're eggs, canned tuna, sardines, chicken,
 
 What makes selenium different is that it's one of the few nutrients where you can overshoot using nothing but food, and the food that does it sits in the bulk bin looking innocent. So this covers both directions: how to hit the number, and where the ceiling is.
 
-If you're planning food variety instead of chasing one nutrient, this guide to [zinc-containing foods for weekly meals](/zinc-containing-foods-weekly-meals/) uses the same normal-groceries approach.
+If you're planning food variety instead of chasing one nutrient, this guide to zinc-containing foods for weekly meals uses the same normal-groceries approach.
 
 ## How much selenium do you need a day?
 

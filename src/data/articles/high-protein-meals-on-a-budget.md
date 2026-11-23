@@ -61,7 +61,7 @@ Drumsticks, if you want meat on the plate. A pot of drumsticks with rice and fro
 
 People find this surprising because drumsticks look like the budget option and budget usually means worse. Bone-in drumsticks returned 50.3 grams of protein per dollar, more than double boneless skinless breast at 24.5, even after we accounted for the bone. The full cut-by-cut ranking is in [the cheapest meat for protein](/meat-per-dollar-protein-ranked/).
 
-Pasta with a can of black beans is the no-thinking version at $0.70 and 27.1 grams. Boil pasta, drain a can, done. The packable versions of the same anchors are in [cheap lunch ideas](/cheap-lunch-ideas-cost-per-box/). And if you want the pot version scaled up for a table, [cheap dinner ideas](/cheap-dinner-ideas-cost-per-serving/) has the same plates costed by serving.
+Pasta with a can of black beans is the no-thinking version at $0.70 and 27.1 grams. Boil pasta, drain a can, done. The packable versions of the same anchors are in cheap lunch ideas. And if you want the pot version scaled up for a table, cheap dinner ideas has the same plates costed by serving.
 
 ## Can you hit your protein target cheaply?
 

@@ -78,7 +78,7 @@ If the first cup is too weak, change one variable. Add one ginger slice or anoth
 
 You can also make two servings in a small saucepan. Use 24 ounces of water, 6 to 8 ginger coins, and 2 teaspoons of dried mint. Bring the water just to a boil, turn off the heat, add the ingredients, cover, and wait. Boiling the mint for ten minutes makes it dull. The plant has suffered enough.
 
-If you buy fresh ginger for this, store it properly or half of it turns into a wrinkled artifact in the crisper drawer. Our guide to [storing fresh ginger](/how-to-store-fresh-ginger/) covers the refrigerator and freezer options so one knob can supply several weeks of cups.
+If you buy fresh ginger for this, store it properly or half of it turns into a wrinkled artifact in the crisper drawer. Our guide to storing fresh ginger covers the refrigerator and freezer options so one knob can supply several weeks of cups.
 
 ## Fresh leaves, dried mint, or a tea bag?
 

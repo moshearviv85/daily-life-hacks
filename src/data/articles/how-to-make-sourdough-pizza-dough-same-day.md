@@ -108,7 +108,7 @@ No stone? Use a preheated sheet pan. Or stretch the dough on parchment, top it, 
 
 Broiler for the last minute can blister the top, but watch it like a hawk. "Just one more second" is how you invent charcoal garnish.
 
-If tomorrow's lunch survives tonight, refrigerate it within two hours. The full answer to [whether leftover pizza needs refrigeration](/does-leftover-pizza-need-to-be-refrigerated/) is less romantic than leaving the box on the counter, but much easier than arguing with food-safety guidance.
+If tomorrow's lunch survives tonight, refrigerate it within two hours. The full answer to whether leftover pizza needs refrigeration is less romantic than leaving the box on the counter, but much easier than arguing with food-safety guidance.
 
 ## Toppings that respect a weeknight
 

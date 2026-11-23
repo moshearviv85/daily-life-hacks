@@ -76,9 +76,9 @@ Realistically, monthly shopping means one big haul plus short runs for milk, egg
 
 By rotating the legume and changing the seasoning, not by finding thirty recipes.
 
-Same technique, different bag. Pintos become [chili](/hearty-vegetarian-chili-with-three-beans-and-corn/). Split peas become [soup](/split-pea-soup-recipe-high-fiber/). Lentils become [curry](/lentil-curry-high-fiber-vegan-dinner/) or [dal with rice](/simple-lunch-recipes-indian-veg/). The flour becomes [bread](/easy-sandwich-bread-recipe-beginners/) and the spaghetti becomes dinner in about the time it takes to boil the water. Nobody sitting at that table can tell you it all came out of the same $22.83 trip.
+Same technique, different bag. Pintos become chili. Split peas become [soup](/split-pea-soup-recipe-high-fiber/). Lentils become [curry](/lentil-curry-high-fiber-vegan-dinner/) or dal with rice. The flour becomes bread and the spaghetti becomes dinner in about the time it takes to boil the water. Nobody sitting at that table can tell you it all came out of the same $22.83 trip.
 
-Cook in batches while you're at it, because the marginal cost of a bigger pot is basically zero. [Batch cooking for beginners](/batch-cooking-for-beginners-weekly-guide/) covers the rhythm, and [storing cooked grains properly](/how-to-properly-store-cooked-grains-for-meal-prep/) stops the second half of the batch going to waste.
+Cook in batches while you're at it, because the marginal cost of a bigger pot is basically zero. Batch cooking for beginners covers the rhythm, and storing cooked grains properly stops the second half of the batch going to waste.
 
 ## Storage is the part that decides whether this works
 

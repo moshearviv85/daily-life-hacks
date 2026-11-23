@@ -111,7 +111,7 @@ If you make a smoothie for tomorrow:
 * Prep a freezer bag with frozen fruit plus oats or chia
 * Add liquid fresh when you blend (it tastes brighter and the texture stays better)
 
-Overripe bananas belong in those bags too. [Freeze them the right way](/how-to-freeze-bananas-for-smoothies/) and you'll always have a creamy base waiting.
+Overripe bananas belong in those bags too. Freeze them the right way and you'll always have a creamy base waiting.
 ## Three “Blend Templates” You Can Reuse
 
 Use these as starting points and adjust based on what you have:

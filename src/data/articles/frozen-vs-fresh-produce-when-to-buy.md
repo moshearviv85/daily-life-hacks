@@ -63,11 +63,11 @@ For anything that's going into a hot pan, a pot, a casserole, or a blender, froz
 * **Spinach and kale for cooking.** You're going to wilt it anyway. Frozen spinach is already blanched and compact. Less prep, less waste.
 * **Stir-fry vegetable mixes.** Broccoli, snap peas, carrots, and edamame ready to dump in a pan. Not gourmet. Extremely convenient, and the fastest route to a [high fiber stir fry](/high-fiber-stir-fry-vegetables/) on a weeknight.
 * **Peas and corn.** Frozen peas are often better than "fresh" peas from the store, which may have been sitting around for days. Frozen corn kernels are consistent and easy.
-* **Cauliflower rice.** If you're using it, frozen is already riced and ready to go for [high fiber cauliflower rice recipes](/high-fiber-cauliflower-rice-recipes/).
+* **Cauliflower rice.** If you're using it, frozen is already riced and ready to go for high fiber cauliflower rice recipes.
 
 The pattern here is simple: if you're cooking it, frozen is fine. If you're eating it raw, go fresh.
 
-The bag still gets the final vote. Our guide to [whether frozen vegetables need cooking](/do-you-have-to-cook-frozen-vegetables/) separates ready-to-eat products from bags that expect a real trip through the stove, because "frozen" isn't a food-safety instruction.
+The bag still gets the final vote. Our guide to [whether frozen vegetables need cooking](/can-you-refreeze-frozen-vegetables-after-thawing/) separates ready-to-eat products from bags that expect a real trip through the stove, because "frozen" isn't a food-safety instruction.
 
 ## Which one do you actually throw away more of?
 

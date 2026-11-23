@@ -95,7 +95,7 @@ The 28.93-gram rotisserie row is also labeled as a proxy because its USDA record
 
 Because eggs are mostly water. At 12.56 grams per 100 grams they sit 36th out of the 49 foods in our July 2026 study, below old-fashioned rolled oats at 13.15 and whole wheat flour at 13.21.
 
-That number surprises people who've been told eggs are the gold standard. Both things are true at once. Eggs aren't dense, but the protein they do carry is [complete](/which-foods-are-complete-proteins/), and a large egg at roughly 50 grams delivers about 6.3 grams for very little effort. We did the whole egg ladder in [how much protein is in two eggs](/how-much-protein-in-two-eggs/), and where they land on cost is in [are eggs the cheapest protein](/eggs-vs-everything-protein-value/).
+That number surprises people who've been told eggs are the gold standard. Both things are true at once. Eggs aren't dense, but the protein they do carry is [complete](/beans-and-rice-complete-protein-meal/), and a large egg at roughly 50 grams delivers about 6.3 grams for very little effort. We did the whole egg ladder in how much protein is in two eggs, and where they land on cost is in [are eggs the cheapest protein](/eggs-vs-everything-protein-value/).
 
 Greek yogurt at 10.19 and cottage cheese at 11.12 are in the same boat. Wet foods look weak on a per-100-gram chart. That doesn't make them bad buys, it makes the chart a partial picture.
 
@@ -105,7 +105,7 @@ Partly, and you deserve to know how. The form column now reports the form in the
 
 So when brown lentils beat chicken breast, that's 100 grams of dry lentils against 100 grams of raw chicken. Cook the lentils and they take on water, and the protein per 100 grams of the finished pot drops a long way. Cook the chicken and it loses water and climbs. Our dataset doesn't include cooked yields, so we're not going to invent them.
 
-What survives the caveat is the shopping math. A 16 ounce bag of [brown lentils](/how-much-protein-in-lentils/) is 454 grams, which is about 111.8 grams of protein for $1.44. That's the number that shows up on your receipt, and it doesn't care what happens in the pot. [Lentil curry](/lentil-curry-high-fiber-vegan-dinner/) is where a bag like that usually ends up in my kitchen.
+What survives the caveat is the shopping math. A 16 ounce bag of brown lentils is 454 grams, which is about 111.8 grams of protein for $1.44. That's the number that shows up on your receipt, and it doesn't care what happens in the pot. [Lentil curry](/lentil-curry-high-fiber-vegan-dinner/) is where a bag like that usually ends up in my kitchen.
 
 ## Which foods combined protein density and low price in this study?
 

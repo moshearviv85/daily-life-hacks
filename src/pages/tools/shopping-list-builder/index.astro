@@ -4,14 +4,17 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import { isReleased } from "../../../content/release";
+import { isIndexPruned } from "../../../content/index-prune.js";
 
-const recipes = (await getCollection("articles"))
+const publishedRecipeArticles = (await getCollection("articles"))
   .filter((article) =>
     isReleased(article) &&
     article.data.category === "recipes" &&
     Boolean(article.data.servings) &&
     Boolean(article.data.ingredients?.length)
-  )
+  );
+const recipes = publishedRecipeArticles
+  .filter((article) => !isIndexPruned(article.id))
   .map(({ id, data }) => ({
     slug: id.replace(/\.md$/, ""),
     title: data.title,
@@ -25,7 +28,7 @@ const recipes = (await getCollection("articles"))
 
 const recipeData = JSON.stringify(recipes).replace(/</g, "\\u003c");
 const title = "Shopping List Builder: 80 Recipes, One List";
-const description = `Choose from ${recipes.length} recipes, change the servings, and combine their ingredients into one printable shopping list.`;
+const description = `Choose from ${publishedRecipeArticles.length} recipes, change the servings, and combine their ingredients into one printable shopping list.`;
 const faqs = [
   ["How does the recipe shopping list builder work?", "Choose two or more recipes, set the servings for each one, and the tool scales their ingredient lists before combining safe matches."],
   ["Will the tool combine every repeated ingredient?", "No. It combines matching ingredients only when the quantity and unit are clear. Ambiguous lines stay separate because one confident-looking wrong onion is still a wrong onion."],
@@ -81,7 +84,7 @@ const breadcrumbSchema = {
     </nav>
 
     <div class="max-w-4xl mb-8">
-      <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">{recipes.length} real recipes. One grocery list.</p>
+      <p class="text-sm font-bold uppercase tracking-wider mb-3" style="color:#a85e00;">{publishedRecipeArticles.length} real recipes. One grocery list.</p>
       <h1 class="text-3xl md:text-5xl font-bold mb-4" style="color:var(--heading-color);">Several Recipes. One List. Nobody Needs Five Notes.</h1>
       <p class="text-lg leading-relaxed" style="color:var(--text-color);">
         Pick the recipes you're actually cooking and set the servings for each one. We'll scale the ingredients, combine the obvious matches, and leave questionable ones alone. A shopping list is no place for an algorithm to confidently turn cilantro into six cups of parsley.

@@ -87,9 +87,9 @@ We also hold no vitamin or mineral data. No iron, no folate, no potassium. Beans
 
 ## Which bean should you actually buy?
 
-Pinto beans if you want the best protein per dollar in the store. Green split peas if you want fiber and the least demanding pot in the aisle. Black beans if you want the most useful all rounder, dry at $2.42 or [canned at $0.88](/how-much-is-a-can-of-beans/) when the stove isn't happening.
+Pinto beans if you want the best protein per dollar in the store. Green split peas if you want fiber and the least demanding pot in the aisle. Black beans if you want the most useful all rounder, dry at $2.42 or [canned at $0.88](/canned-beans-vs-dried-beans-nutrition/) when the stove isn't happening.
 
-If it's between lentils, the difference is mostly price and texture, and we sorted that out in [which lentils are the best](/which-lentils-are-the-best/). If it's between cooking dry or opening a can, [canned beans need heating rather than cooking](/do-you-have-to-cook-canned-beans/), which changes the calculation on a Tuesday.
+If it's between lentils, the difference is mostly price and texture, and we sorted that out in which lentils are the best. If it's between cooking dry or opening a can, [canned beans need heating rather than cooking](/canned-beans-vs-dried-beans-nutrition/), which changes the calculation on a Tuesday.
 
 Ten beans, and the honest summary is that the differences between them matter less than whether they're in your cupboard at all. The wider version of that argument is our [guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/).
 

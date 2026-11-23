@@ -81,13 +81,13 @@ That doesn't mean you have to banish a donut from your life forever. But if you 
 
 Spoon plain Greek yogurt into a bowl, add rolled oats and berries, and stop there unless you genuinely want more ingredients. Spread peanut butter on whole-grain toast and eat a banana beside it. Reheat leftover beans, add a fried egg, and wrap both in a tortilla. None of these meals needs a sunrise photoshoot.
 
-For mornings without cooking, portion yogurt and oats the night before or keep boiled eggs ready in the refrigerator. The [savory oatmeal bowl guide](/savory-oatmeal-bowls-with-eggs-and-avocado/) is useful when sweet oatmeal has started to feel like mandatory breakfast wallpaper.
+For mornings without cooking, portion yogurt and oats the night before or keep boiled eggs ready in the refrigerator. The savory oatmeal bowl guide is useful when sweet oatmeal has started to feel like mandatory breakfast wallpaper.
 
 ## How to read the breakfast label
 
 Compare added sugar, fiber, and protein on cereal, yogurt, and bread labels. Serving sizes can be smaller than the amount you actually pour, so check the weight rather than assuming the front of the box has developed an honest personality.
 
-Flavored yogurt may still fit your breakfast, but compare it with plain yogurt plus fruit. Granola varies even more. This guide to [choosing granola that isn't dessert](/how-to-choose-granola-not-dessert/) explains what to check before a decorative handful becomes half the bowl.
+Flavored yogurt may still fit your breakfast, but compare it with plain yogurt plus fruit. Granola varies even more. This guide to choosing granola that isn't dessert explains what to check before a decorative handful becomes half the bowl.
 
 If you're choosing between oats, eggs, yogurt, and cereal with a cartoon tiger on the box, our [breakfast staples per dollar ranking](/breakfast-staples-per-dollar/) shows what a dollar actually buys at breakfast. Eggs land at 34 grams of protein per dollar in the wider [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), behind the dry lentils. Rolled oats return 35.8 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/).
 

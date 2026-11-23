@@ -150,7 +150,7 @@ If you're scaling dinner for a crowd, the [double-recipe seasoning guide](/how-t
 
 Check labels on broth, canned beans, sauces, and seasoning blends because brands vary. Compare equal serving sizes, then choose the product that fits the full dish. A lower-sodium broth still leaves room for Parmesan or soy sauce later; a salty broth plus both can corner you before tasting begins.
 
-Rinse canned beans when the recipe does not need the canning liquid. Measure soy sauce instead of circling the pan with the bottle. If label math is the annoying part, this [beginner nutrition-label guide](/how-to-read-nutrition-labels-for-beginners/) explains serving size and Percent Daily Value.
+Rinse canned beans when the recipe does not need the canning liquid. Measure soy sauce instead of circling the pan with the bottle. If label math is the annoying part, this beginner nutrition-label guide explains serving size and Percent Daily Value.
 
 ## Fix the balance before adding another pinch
 

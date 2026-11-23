@@ -99,7 +99,7 @@ If you pick up a loaf of bread claiming to be "Honey Wheat," but the ingredient 
 
 That means there's literally more high fructose corn syrup in that specific bread than actual honey, and the primary bulk is bleached white flour, not whole wheat. 
 
-Learning how to read nutrition labels for beginners is just learning how to see through the matrix of clever advertising. Trust the tiny black text on the back, and ignore the loud yelling on the front! And when you're scanning the fat line, remember that fat itself isn't the villain; this [healthy fats list of foods to eat daily](/healthy-fats-list-foods-to-eat-daily/) covers the ones actually worth keeping in your cart.
+Learning how to read nutrition labels for beginners is just learning how to see through the matrix of clever advertising. Trust the tiny black text on the back, and ignore the loud yelling on the front! And when you're scanning the fat line, remember that fat itself isn't the villain; this healthy fats list of foods to eat daily covers the ones actually worth keeping in your cart.
 
 ## Use Percent Daily Value for fast comparisons
 
@@ -111,4 +111,4 @@ Use the shortcut according to what you are comparing. You may want more fiber in
 
 Two granolas may use different serving sizes, such as one-third cup and two-thirds cup. Compare the same weight or the amount you genuinely pour. Otherwise the smaller printed serving wins by shrinking the ruler.
 
-The same issue appears with oils, sauces, and snacks. Check servings per container, multiply when necessary, and compare products in the same category. For a closer look at choosing a breakfast product, this [granola label guide](/how-to-choose-granola-not-dessert/) applies the process to a shelf where every bag claims to be wholesome.
+The same issue appears with oils, sauces, and snacks. Check servings per container, multiply when necessary, and compare products in the same category. For a closer look at choosing a breakfast product, this granola label guide applies the process to a shelf where every bag claims to be wholesome.

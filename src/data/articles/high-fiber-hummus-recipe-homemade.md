@@ -97,7 +97,7 @@ Paprika or sumac on top is optional. The olive oil drizzle isn't required either
 
 ## What can you do with extra chickpeas?
 
-If you have another can in the pantry, make [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) instead of letting it begin a six-month residency behind the pasta. For lunch, a scoop of hummus also works beside the beans and vegetables in this [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/). If you'd rather turn that can into dinner, it does more work in a [chickpea and cauliflower curry](/vegetarian-high-fiber-dinners-for-natural-relief/).
+If you have another can in the pantry, make crispy roasted chickpeas instead of letting it begin a six-month residency behind the pasta. For lunch, a scoop of hummus also works beside the beans and vegetables in this [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/). If you'd rather turn that can into dinner, it does more work in a [chickpea and cauliflower curry](/vegetarian-high-fiber-dinners-for-natural-relief/).
 
 You can swap in roasted red pepper, a little cayenne, or a drained sun-dried tomato once the base texture is right. Make the plain batch first. It's much easier to judge a variation when you're not also trying to figure out why the original hummus resembles drywall compound.
 

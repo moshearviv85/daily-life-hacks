@@ -80,8 +80,8 @@ If you have a cool dry corner, yes. The 4 pound bag of pinto beans at $3.97 retu
 
 The catch is honest. A 4 pound bag is a commitment. If you cook beans twice a month it will outlive the bag it came in, which is fine, but decant it and be realistic about the pace. Storage plans that assume a version of you who cooks beans on Sundays tend to underperform.
 
-Lentil bags are the easiest place to start, and the price difference between them is worth knowing before you fill a shelf, which we went through in [which lentils are the best](/which-lentils-are-the-best/). Green split peas are the sleeper here. At $1.42 a bag they carried about 101 grams of fiber, which is 71.0 grams of fiber per dollar against 52.0 for the $2.67 bag of navy beans, and they turn into [split pea soup](/split-pea-soup-recipe-high-fiber/) without any soaking at all. That's the bag I'd stock first.
+Lentil bags are the easiest place to start, and the price difference between them is worth knowing before you fill a shelf, which we went through in which lentils are the best. Green split peas are the sleeper here. At $1.42 a bag they carried about 101 grams of fiber, which is 71.0 grams of fiber per dollar against 52.0 for the $2.67 bag of navy beans, and they turn into [split pea soup](/split-pea-soup-recipe-high-fiber/) without any soaking at all. That's the bag I'd stock first.
 
-Beans keep. That's the entire feature. If you want the wider comparison of what a bag holds against what a can holds, we ran it in [canned beans versus dried beans nutrition](/canned-beans-vs-dried-beans-nutrition/), and the per 100 gram breakdown across ten beans is in [the nutritional value of beans](/nutritional-value-of-beans-compared/).
+Beans keep. That's the entire feature. If you want the wider comparison of what a bag holds against what a can holds, we ran it in [canned beans versus dried beans nutrition](/canned-beans-vs-dried-beans-nutrition/), and the per 100 gram breakdown across ten beans is in the nutritional value of beans.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

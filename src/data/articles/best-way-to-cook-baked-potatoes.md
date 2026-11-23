@@ -102,4 +102,4 @@ For storage, cool them promptly, refrigerate in a covered container, and use the
 
 Refrigerate extras once they've cooled, then reheat them in the oven or an air fryer when you want the skin crisp again. The microwave is faster, but the skin softens. That's fine if you're chopping the potato into breakfast hash, where crisp edges come from the skillet anyway.
 
-That's the method: dry Russets, oil, salt, high heat, no foil. Once you're buying potatoes by the bag, my [crispy smashed potato salad with Dijon and herbs](/crispy-smashed-potato-salad-dijon-herbs/) gives the extras a second job.
+That's the method: dry Russets, oil, salt, high heat, no foil. Once you're buying potatoes by the bag, my crispy smashed potato salad with Dijon and herbs gives the extras a second job.

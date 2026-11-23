@@ -48,7 +48,7 @@ Source: USDA FoodData Central + single-store prices, July 2026. Full methodology
 
 The winners are the unglamorous ones. Frozen green peas top the whole list, and a $2.32 bag keeps in the freezer until whenever you need it. Bagged whole carrots come in at 16.1 grams per dollar, $1.58 for two pounds, which makes them one of the few snacks that costs less than the vending machine and doesn't apologize for it. Carrots are the highest exact-source result in [our snack-only fiber ranking](/high-fiber-snacks-per-dollar/); the popcorn row above them is a proxy, because its USDA nutrition value is air-popped popcorn converted onto the unpopped-kernel basis we priced.
 
-Then there's green cabbage at 14.6 grams per dollar and $0.78 a pound. Cabbage is the produce section's best-kept secret: enormous, nearly indestructible in the fridge, and happy to become slaw, stir-fry, or a big pot of [cabbage soup](/fiber-rich-soup-for-weight-loss-cabbage/). Sweet potatoes follow at 13.9 grams per dollar, and if you want them before noon, this [sheet pan breakfast hash with eggs and sweet potatoes](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) is the move.
+Then there's green cabbage at 14.6 grams per dollar and $0.78 a pound. Cabbage is the produce section's best-kept secret: enormous, nearly indestructible in the fridge, and happy to become slaw, stir-fry, or a big pot of [cabbage soup](/fiber-rich-soup-for-weight-loss-cabbage/). Sweet potatoes follow at 13.9 grams per dollar, and if you want them before noon, this sheet pan breakfast hash with eggs and sweet potatoes is the move.
 
 ## Is frozen produce a better fiber deal than fresh?
 
@@ -60,7 +60,7 @@ The other frozen advantage doesn't show up in the table: nothing in the freezer 
 
 ## What fruit has the most fiber for the money?
 
-Bananas, at 11.6 grams per dollar, and it's mostly a price story: $0.65 a pound makes them the cheapest item in this entire ranking. Avocados surprised me at 10.4 grams per dollar. They have a reputation as a luxury purchase, but at $0.95 each they beat most of the produce section, and [avocado toast with beans and seeds](/high-fiber-avocado-toast-variations/) stretches one into a real meal.
+Bananas, at 11.6 grams per dollar, and it's mostly a price story: $0.65 a pound makes them the cheapest item in this entire ranking. Avocados surprised me at 10.4 grams per dollar. They have a reputation as a luxury purchase, but at $0.95 each they beat most of the produce section, and avocado toast with beans and seeds stretches one into a real meal.
 
 Pears come in at 8.0 grams per dollar and gala apples at 7.3. Pears are quietly one of the better whole-fruit fiber buys, and a [pear salad with walnuts](/pear-salad-with-walnuts-fiber-rich/) makes them feel like more than a lunchbox item. Navel oranges trail at 6.2.
 
@@ -68,7 +68,7 @@ Pears come in at 8.0 grams per dollar and gala apples at 7.3. Pears are quietly 
 
 By this math, yes. Raspberries manage 4.5 grams of fiber per dollar, blackberries 4.0, strawberries 3.4, and blueberries bring up the rear at 2.5. A $2.98 pint of blueberries is a lovely thing. It's just not a fiber purchase. The frozen peas at the top of this list deliver 7x what blueberries do per dollar, which is the kind of gap you can't close with good intentions.
 
-The middle of the table has honorable mentions worth knowing: bagged chopped kale at 7.5 grams per dollar (it shines in this [Tuscan white bean and kale soup](/tuscan-white-bean-kale-soup-stovetop/)), gala apples at 7.3, yellow onions at 7.1, Brussels sprouts at 7.0, and russet potatoes with skin at 6.6 and just $0.89 a pound.
+The middle of the table has honorable mentions worth knowing: bagged chopped kale at 7.5 grams per dollar (it shines in this Tuscan white bean and kale soup), gala apples at 7.3, yellow onions at 7.1, Brussels sprouts at 7.0, and russet potatoes with skin at 6.6 and just $0.89 a pound.
 
 Here's the honest takeaway: produce is where flavor and vitamins live, but even the best vegetable here can't touch dried beans and whole grains on fiber per dollar, and [the grain aisle has its own ranking](/grains-fiber-per-dollar-ranked/) if you want to see how far ahead it sits. Use this ranking to pick your produce smartly, check [what a single fiber dollar buys](/one-dollar-fiber-what-it-buys/) when the budget is tight, then let the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) show you how the whole cart fits together. Buy the peas, the carrots, and the cabbage. Buy the berries because you like them. Just know which purchase is doing which job.
 

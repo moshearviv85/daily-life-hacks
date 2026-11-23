@@ -27,7 +27,7 @@ faq:
     answer: "Per 100 grams of what's in your hand, yes, by roughly three and a half times, because canned beans carry water weight. Dry black beans are 21.6 grams per 100 grams and canned black beans 6.03. A whole 15.5 ounce can still holds about 26.5 grams of protein, so the can isn't weak, just wet."
 ---
 
-Among true dried beans, navy beans carry the most protein at 22.33 grams per 100 grams, followed by black at 21.6 and pinto at 21.42. Widen it to all dry pulses and [brown lentils](/how-much-protein-in-lentils/) take it at 24.63, with green split peas at 23.12. Chickpeas come last of the group at 20.47.
+Among true dried beans, navy beans carry the most protein at 22.33 grams per 100 grams, followed by black at 21.6 and pinto at 21.42. Widen it to all dry pulses and [brown lentils](/foods-highest-in-protein-per-100-grams/) take it at 24.63, with green split peas at 23.12. Chickpeas come last of the group at 20.47.
 
 Top to bottom, the whole table spans about four grams, 4.2 to be exact, and among the true beans it's under a gram. Worth knowing before you drive across town for a specific bag.
 
@@ -77,8 +77,8 @@ The cheap fix has been sitting in kitchens for centuries. Legumes and grains com
 
 ## Which bag should you actually buy?
 
-Brown lentils if you want the most protein per dollar you can put in a pot tonight. Split peas if you want fiber. Pinto beans if you want a big bag that still returns 57.6 grams of protein per dollar. Chickpeas if you want something you'll roast and eat by the handful, because [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) are the only one of these that works as a snack.
+Brown lentils if you want the most protein per dollar you can put in a pot tonight. Split peas if you want fiber. Pinto beans if you want a big bag that still returns 57.6 grams of protein per dollar. Chickpeas if you want something you'll roast and eat by the handful, because crispy roasted chickpeas are the only one of these that works as a snack.
 
-Black beans are the compromise I keep buying, at 21.6 grams of protein and 15.5 grams of fiber for 37 cents per 100 grams, mostly because they end up in [tacos](/easy-black-bean-tacos-weeknight-dinner/) and [burgers](/quick-black-bean-burgers-that-hold-their-shape/) without much argument. How much to put in the pot is worked out in [how much dried beans per person](/how-much-dried-beans-per-person/).
+Black beans are the compromise I keep buying, at 21.6 grams of protein and 15.5 grams of fiber for 37 cents per 100 grams, mostly because they end up in [tacos](/easy-black-bean-tacos-weeknight-dinner/) and burgers without much argument. How much to put in the pot is worked out in [how much dried beans per person](/canned-beans-vs-dried-beans-nutrition/).
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-quality-per-dollar-2026.csv -->

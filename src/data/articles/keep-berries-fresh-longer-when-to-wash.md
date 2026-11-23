@@ -38,7 +38,7 @@ University of Minnesota Extension puts it plainly. Unless the produce is visibly
 
 I used to rinse everything the second the groceries hit the counter. Resist that. Store them dry and unwashed, and when you want a handful of raspberries for your yogurt, rinse that handful and eat it. This is doubly true for blueberries, where that dusty silver-blue film is epicuticular wax. Researchers writing in *BMC Plant Biology* describe that waxy coating as something that "retards fruit desiccation and deterioration in storage" ([BMC Plant Biology, 2019](https://pmc.ncbi.nlm.nih.gov/articles/PMC6844065/)). Rubbing it off early is not helping you.
 
-Fresh berries also turn this [no-cook ricotta berry toast bar](/ricotta-berry-toast-bar-no-cook/) into a five-minute breakfast that looks like effort.
+Fresh berries also turn this no-cook ricotta berry toast bar into a five-minute breakfast that looks like effort.
 
 ## How to rinse them without wrecking them
 

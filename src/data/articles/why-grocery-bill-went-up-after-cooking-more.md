@@ -96,7 +96,7 @@ That can happen for familiar reasons:
 
 None of that means cooking at home doesn't work. It means the receipt needs a job description.
 
-Choose repeatable dinners with overlapping ingredients. [Black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) use pantry beans, tortillas, cabbage, salsa, and lime. The same groceries carry into a [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/). A batch of [three-bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) covers dinner and several lunches without requiring Thursday to begin from zero.
+Choose repeatable dinners with overlapping ingredients. [Black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) use pantry beans, tortillas, cabbage, salsa, and lime. The same groceries carry into a [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/). A batch of three-bean chili covers dinner and several lunches without requiring Thursday to begin from zero.
 
 That's what makes home cooking cheaper: ingredients become several eaten meals. A lonely bunch of cilantro purchased for one glamorous recipe isn't a system. It's a small green countdown clock.
 

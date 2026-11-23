@@ -87,6 +87,6 @@ This is the one place the numbers diverge. FSIS says temperatures below 85F are 
 
 Both rule out the same places: above or beside the stove, under the sink, in a damp garage, or anywhere with big temperature swings.
 
-For what those numbers mean in practice, [how long canned beans last](/how-long-do-canned-beans-last-after-the-best-by-date/) works through the pantry side, [how long leftovers last](/how-long-do-leftovers-last-in-the-fridge/) works through the fridge side, and [how long frozen vegetables last](/how-long-do-frozen-vegetables-last-in-the-freezer/) covers the freezer. [How to store fruits and vegetables](/how-to-store-fruits-and-vegetables-properly/) handles the produce drawer, which follows its own rules entirely.
+For what those numbers mean in practice, [how long canned beans last](/canned-beans-vs-dried-beans-nutrition/) works through the pantry side, how long leftovers last works through the fridge side, and [how long frozen vegetables last](/can-you-refreeze-frozen-vegetables-after-thawing/) covers the freezer. How to store fruits and vegetables handles the produce drawer, which follows its own rules entirely.
 
 <!-- sources: FDA Refrigerator Thermometers, Cold Facts about Food Safety; USDA FSIS Danger Zone 40F-140F; USDA FSIS Leftovers and Food Safety; USDA FSIS Shelf-Stable Food Safety; USDA FSIS Food Product Dating; USDA FoodSafety.gov Cold Food Storage Chart; Illinois Extension Refrigerator Storage and Emergency Food Supply -->

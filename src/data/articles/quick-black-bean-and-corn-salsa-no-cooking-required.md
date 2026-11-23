@@ -106,7 +106,7 @@ For a lighter meal, serve it over mixed greens as a salad topping. Add some avoc
 
 It also travels well, which makes it a solid contribution to a potluck or gathering. Make it in a bowl, bring it with a bag of tortilla chips, and you're not showing up empty-handed.
 
-And when the weather turns and cold salsa stops sounding like dinner, the same beans-and-corn combo goes warm in this [hearty vegetarian chili with three beans and corn](/hearty-vegetarian-chili-with-three-beans-and-corn/). Same pantry, opposite season.
+And when the weather turns and cold salsa stops sounding like dinner, the same beans-and-corn combo goes warm in this hearty vegetarian chili with three beans and corn. Same pantry, opposite season.
 
 ## Making It Ahead and Storing It
 

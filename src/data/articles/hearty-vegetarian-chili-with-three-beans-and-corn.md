@@ -87,7 +87,7 @@ The corn does three jobs. First, it adds sweetness that balances the acidity fro
 
 Fresh corn is great in July and August when the ears are sweet and in season. Cut the kernels off and add them during the last 15 minutes of cooking so they stay intact. But honestly, frozen corn is the move most of the year. It cooks up fine, it's consistently sweet, and it holds up better in a long simmer than fresh corn does, which can turn mushy. A cup of frozen corn, added during the last ten minutes, is the right call.
 
-Canned corn is fine in a pinch but tastes noticeably tinned. If that's what you have, use it, but keep the frozen kind in your freezer for next time. And whatever's left of the bag goes straight into a [quick black bean and corn salsa](/quick-black-bean-and-corn-salsa-no-cooking-required/), no cooking required.
+Canned corn is fine in a pinch but tastes noticeably tinned. If that's what you have, use it, but keep the frozen kind in your freezer for next time. And whatever's left of the bag goes straight into a quick black bean and corn salsa, no cooking required.
 
 ## Building Depth Without Meat
 

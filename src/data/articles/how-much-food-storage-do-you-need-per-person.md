@@ -72,7 +72,7 @@ One package of each comes to $22.09. That is not a two-week menu by itself, and 
 
 Long enough that the buying is the hard part, not the storing. USDA's [shelf-stable food chart](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/shelf-stable-food) gives low-acid canned goods, meaning beans, corn, carrots, peas, meat and soups, 2 to 5 years on the shelf. High-acid canned goods like tomatoes, fruit and juices get 12 to 18 months. Rice and dried pasta get 2 years.
 
-Dried beans are the outlier, and the range is wide. [MSU Extension](https://www.canr.msu.edu/news/dry_bean_storage) and [Utah State Extension](https://extension.usu.edu/preserve-the-harvest/dev/storing-dry-beans-1) both put beans in their original food-grade bag at about a year, and beans sealed in #10 cans or Mylar bags with the oxygen removed at 10 or more years. We broke that down in [how long dried beans last](/how-long-do-dried-beans-last/).
+Dried beans are the outlier, and the range is wide. [MSU Extension](https://www.canr.msu.edu/news/dry_bean_storage) and [Utah State Extension](https://extension.usu.edu/preserve-the-harvest/dev/storing-dry-beans-1) both put beans in their original food-grade bag at about a year, and beans sealed in #10 cans or Mylar bags with the oxygen removed at 10 or more years. We broke that down in [how long dried beans last](/how-to-cook-dried-beans-from-scratch/).
 
 ## How do you stop it rotting in place?
 
@@ -82,6 +82,6 @@ Illinois Extension recommends keeping non-perishable items in a cool dry locatio
 
 The habit that makes all of it work is boring: shop from the shelf, restock the shelf. Oldest at the front. If you never eat from it, the whole thing quietly expires while you feel prepared.
 
-For the temperatures behind all of this, [food storage temperature rules](/food-storage-temperature-rules/) has the numbers. For the pantry cans specifically, [how long canned beans last after the best by date](/how-long-do-canned-beans-last-after-the-best-by-date/) covers what the date does and does not mean. And if the goal is a cheaper grocery bill rather than an emergency shelf, [how to grocery shop for a month](/how-to-grocery-shop-for-a-month-on-a-budget/) is the more useful read.
+For the temperatures behind all of this, food storage temperature rules has the numbers. For the pantry cans specifically, [how long canned beans last after the best by date](/canned-beans-vs-dried-beans-nutrition/) covers what the date does and does not mean. And if the goal is a cheaper grocery bill rather than an emergency shelf, how to grocery shop for a month is the more useful read.
 
 <!-- sources: Illinois Extension Emergency Food Supply; University of Minnesota Extension Preparing a 2-Week Emergency Food Supply; USDA FSIS Shelf-Stable Food Safety; MSU Extension Dry Bean Storage; Utah State University Extension Storing Dry Beans. Cost numbers: public/data/shelf-stable-pantry-per-dollar-2026.csv -->

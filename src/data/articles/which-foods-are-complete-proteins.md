@@ -60,7 +60,7 @@ One thing to keep in proportion: a score of 0.59 doesn't mean beans are worthles
 
 Because nothing in the egg runs short, and almost all of it gets absorbed. That combination is what lands eggs at 1.13, above the reference line.
 
-It's the reason eggs turn up as the benchmark in nutrition writing, and it's genuinely earned. What it doesn't make eggs is protein-dense: at 12.56 grams per 100 grams they sit 36th of the 49 foods we priced, well behind dry lentils and peanuts. Quality and density are different questions and eggs win only one of them. The amounts are in [how much protein is in two eggs](/how-much-protein-in-two-eggs/) and the density ranking is in [foods highest in protein per 100 grams](/foods-highest-in-protein-per-100-grams/).
+It's the reason eggs turn up as the benchmark in nutrition writing, and it's genuinely earned. What it doesn't make eggs is protein-dense: at 12.56 grams per 100 grams they sit 36th of the 49 foods we priced, well behind dry lentils and peanuts. Quality and density are different questions and eggs win only one of them. The amounts are in how much protein is in two eggs and the density ranking is in [foods highest in protein per 100 grams](/foods-highest-in-protein-per-100-grams/).
 
 Dairy actually edges eggs out at 1.14, which covers milk, mozzarella, cheddar, cottage cheese, and Greek yogurt alike. Nobody puts that on a poster, but it's what the numbers say.
 
@@ -68,7 +68,7 @@ Dairy actually edges eggs out at 1.14, which covers milk, mozzarella, cheddar, c
 
 No, and it's the lowest score in the set at 0.43, limited by lysine. Same story for wheat at 0.45 and oats at 0.54, because cereal grains and peanuts share that particular gap.
 
-This does not make peanut butter a bad buy. It carries 22.21 grams of protein per 100 grams and returns 50.7 grams per dollar, tenth of 49 foods. It's just doing less per gram than the raw number suggests, which is why it drops to 21.8 quality-adjusted grams per dollar once the score is applied. The full peanut butter picture is in [how much protein is in peanut butter](/how-much-protein-in-peanut-butter/).
+This does not make peanut butter a bad buy. It carries 22.21 grams of protein per 100 grams and returns 50.7 grams per dollar, tenth of 49 foods. It's just doing less per gram than the raw number suggests, which is why it drops to 21.8 quality-adjusted grams per dollar once the score is applied. The full peanut butter picture is in [how much protein is in peanut butter](/foods-highest-in-protein-per-100-grams/).
 
 The lysine gap is also why peanut butter on white bread is two lysine-limited foods stacked on each other. Perfectly fine lunch. Just not the amino acid coverage it looks like.
 
@@ -76,7 +76,7 @@ The lysine gap is also why peanut butter on white bread is two lysine-limited fo
 
 Beans score 0.57 to 0.59, lentils 0.63, chickpeas 0.83. They're limited by the sulfur amino acids, which is the opposite gap from the grains.
 
-That opposition is the entire trick. Legumes and grains complement each other's amino acid profiles, so beans with rice, [lentils](/how-much-protein-in-lentils/) with bread, or [dal with rice](/simple-lunch-recipes-indian-veg/) covers ground that neither does alone. It's not a modern hack, it's most of the world's traditional cooking, and we priced it out properly in [the cheapest complete protein pairs](/cheapest-complete-protein-pairs/) and [beans and rice as a complete protein meal](/beans-and-rice-complete-protein-meal/).
+That opposition is the entire trick. Legumes and grains complement each other's amino acid profiles, so beans with rice, [lentils](/foods-highest-in-protein-per-100-grams/) with bread, or dal with rice covers ground that neither does alone. It's not a modern hack, it's most of the world's traditional cooking, and we priced it out properly in [the cheapest complete protein pairs](/cheapest-complete-protein-pairs/) and [beans and rice as a complete protein meal](/beans-and-rice-complete-protein-meal/).
 
 Soy is the plant exception at 0.90, which is why tofu, tempeh, and TVP get described as complete. It's the one legume that doesn't need a partner grain to hold up its end.
 

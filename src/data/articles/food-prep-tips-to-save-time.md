@@ -33,7 +33,7 @@ faq:
 ---
 Nobody wants to chop the same onion three nights in a row. By Wednesday, that isn't cooking. It's an administrative task with tears. Food prep works best when you handle a few repeat jobs once, then leave yourself enough flexibility to eat something different tomorrow.
 
-I've tried the Sunday marathon with twelve matching containers. By Thursday, one looked like lunch and the others looked like evidence. The better system is to front-load the jobs that slow you down: chopping, boiling grains, roasting one flexible protein, and mixing a sauce. My [food prep guide with recipes](/food-prep-guide-blog-recipes/) turns those jobs into a full weekly system.
+I've tried the Sunday marathon with twelve matching containers. By Thursday, one looked like lunch and the others looked like evidence. The better system is to front-load the jobs that slow you down: chopping, boiling grains, roasting one flexible protein, and mixing a sauce. My food prep guide with recipes turns those jobs into a full weekly system.
 
 ## Get your vegetables ready to go
 
@@ -81,6 +81,6 @@ Set a timer and stop at 60 minutes. Prep is supposed to return time to the week,
 
 ## Cool and label before the containers disappear
 
-Spread hot grains and roasted food in shallow containers so they cool quickly, then refrigerate promptly. Keep sauces and crisp toppings separate. Use the method in this [cooked-grain storage guide](/how-to-properly-store-cooked-grains-for-meal-prep/) for rice, quinoa, barley, and farro.
+Spread hot grains and roasted food in shallow containers so they cool quickly, then refrigerate promptly. Keep sauces and crisp toppings separate. Use the method in this cooked-grain storage guide for rice, quinoa, barley, and farro.
 
 Label freezer containers with the food and date before stacking them. "Red sauce" is useful. "Probably dinner" is not. Plan refrigerated components for the first few days and freeze the later portions before they spend a week waiting for attention.

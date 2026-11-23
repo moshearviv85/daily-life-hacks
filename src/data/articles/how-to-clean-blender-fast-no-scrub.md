@@ -63,7 +63,7 @@ When you finish pouring your drink, it's tempting to just drop the dirty pitcher
 
 Even if you absolutely don't have thirty seconds to run the cleaning cycle right then, at least fill the pitcher with warm water and leave it in the sink. Keeping the residue wet means it will easily wash out when you get home later. Just dumping water in the pitcher saves you five minutes of scrubbing later that night. 
 
-If dirty tools tend to pile up around that pitcher, use this [simple kitchen-sink reset](/kitchen-hacks-for-sink/) to keep one basin clear for rinsing and food prep.
+If dirty tools tend to pile up around that pitcher, use this simple kitchen-sink reset to keep one basin clear for rinsing and food prep.
 
 ## When to actually deep clean
 

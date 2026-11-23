@@ -56,7 +56,7 @@ This gluten free sourdough discard pizza dough is the best way to stop the waste
 
 Gluten free flour blends can sometimes taste a bit flat or dusty. The fermented discard adds a depth of flavor that mimics a slow-risen traditional dough. It also helps with the texture. Since we aren't dealing with gluten, we need every bit of structural help we can get, and the acidity in the discard may help the starches in your flour blend set more effectively.
 
-Most people think sourdough means waiting all day. By adding a little instant yeast to this gluten free sourdough discard pizza dough, we get the flavor of the old starter with the speed of a standard weeknight meal. It is the ultimate shortcut for people who have better things to do than watch dough not rise. It's the same idea behind my [same-day sourdough pizza dough](/how-to-make-sourdough-pizza-dough-same-day/), just adapted for GF flours.
+Most people think sourdough means waiting all day. By adding a little instant yeast to this gluten free sourdough discard pizza dough, we get the flavor of the old starter with the speed of a standard weeknight meal. It is the ultimate shortcut for people who have better things to do than watch dough not rise. It's the same idea behind my [same-day sourdough pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/), just adapted for GF flours.
 
 ## Handling the sticky dough situation
 

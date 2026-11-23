@@ -58,7 +58,7 @@ So let the dry pan get hot instead. How do you know it's ready? Use the water dr
 
 That's the Leidenfrost effect, and it comes with a number. Researchers at Northumbria, Durham and Nottingham Trent, writing in *Materials Letters* in 2016, timed water droplets on a heated plate and found [the onset of the levitating regime at 185°C plus or minus 5](https://irep.ntu.ac.uk/id/eprint/27746/1/PubSub5201_Newton.pdf), which is about 365°F. Their surface was polished stainless steel, and roughness moves that threshold, so read it as a ballpark for a seasoned cast iron pan rather than a promise. It's still useful: a pan that passes the test sits well above the 302°F your food's surface needs, with room to spare for the drop when cold food lands.
 
-Once the pan passes the water test, add your oil. Give it a few seconds. You'll see it shimmer and move fluidly across the bottom. Now add your food. You should hear a loud, aggressive sizzle. If it doesn't sizzle loudly, the pan wasn't ready. That sizzle is the whole difference between a juicy chop and a gray one, which is why the [best way to cook pork chops](/best-way-to-cook-pork-chops/) starts with this exact preheat.
+Once the pan passes the water test, add your oil. Give it a few seconds. You'll see it shimmer and move fluidly across the bottom. Now add your food. You should hear a loud, aggressive sizzle. If it doesn't sizzle loudly, the pan wasn't ready. That sizzle is the whole difference between a juicy chop and a gray one, which is why the best way to cook pork chops starts with this exact preheat.
 
 ## The nonstick exception
 
@@ -72,6 +72,6 @@ So with nonstick, the fat and the food go in cold, the burner comes on at medium
 
 Once you've preheated the pan, added the oil, and placed your food down, you have to execute the hardest step of all. You have to walk away.
 
-Don't poke it. Don't nudge it. Don't peek underneath after thirty seconds. Flip a piece of chicken before the crust has formed and it'll stick and tear. When the sear is done and the crust is golden brown, the food tends to release with very little resistance. That patience scales up to the expensive cuts too. The [best way to cook prime rib](/best-way-to-cook-prime-rib/) ends with a hard sear instead of starting with one, and a properly preheated pan is half that battle.
+Don't poke it. Don't nudge it. Don't peek underneath after thirty seconds. Flip a piece of chicken before the crust has formed and it'll stick and tear. When the sear is done and the crust is golden brown, the food tends to release with very little resistance. That patience scales up to the expensive cuts too. The best way to cook prime rib ends with a hard sear instead of starting with one, and a properly preheated pan is half that battle.
 
 Preheating a skillet requires zero special equipment and costs zero dollars. It just requires you to stand there for three minutes before you start cooking. It's the cheapest, easiest way to make your weeknight dinners look and taste like you actually know what you're doing.

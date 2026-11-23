@@ -106,4 +106,4 @@ For another portable salad with the same temperature rules, this [cold pasta sal
 
 Warm leftovers in a skillet over medium heat with a small splash of oil. Move the potatoes only after the underside has had time to brown. The herbs may darken, but the edges regain some of their crunch.
 
-If you know you will have leftovers, reserve a few roasted potatoes before dressing them. They reheat more cleanly and can become breakfast hash. For the whole-potato version, this [baked potato guide](/best-way-to-cook-baked-potatoes/) explains how to store and reheat extras.
+If you know you will have leftovers, reserve a few roasted potatoes before dressing them. They reheat more cleanly and can become breakfast hash. For the whole-potato version, this baked potato guide explains how to store and reheat extras.

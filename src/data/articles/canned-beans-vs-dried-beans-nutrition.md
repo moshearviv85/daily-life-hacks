@@ -78,9 +78,9 @@ A note on what's missing from the table. We priced canned kidney beans but not d
 
 Both, for different jobs.
 
-Bags for the cooking you plan. A 4 pound bag of pinto beans at $6.75 returns 57.6 grams of protein per dollar and feeds you for weeks, as long as you have somewhere to keep it. Brown lentils, at 77.7 grams from a $1.44 bag, buy more protein per dollar. We covered that in [how long dried beans last](/how-long-do-dried-beans-last/), and the sequence for getting a good pot out of it is in [how to cook dried beans from scratch](/how-to-cook-dried-beans-from-scratch/).
+Bags for the cooking you plan. A 4 pound bag of pinto beans at $6.75 returns 57.6 grams of protein per dollar and feeds you for weeks, as long as you have somewhere to keep it. Brown lentils, at 77.7 grams from a $1.44 bag, buy more protein per dollar. We covered that in how long dried beans last, and the sequence for getting a good pot out of it is in [how to cook dried beans from scratch](/how-to-cook-dried-beans-from-scratch/).
 
-Cans for the cooking you don't. At 88 cents, a can that needs no soak and [no cooking at all](/do-you-have-to-cook-canned-beans/) is still cheaper protein than almost anything else in the building. It only looks expensive standing next to the bag.
+Cans for the cooking you don't. At 88 cents, a can that needs no soak and no cooking at all is still cheaper protein than almost anything else in the building. It only looks expensive standing next to the bag.
 
 My cupboard runs about four cans and one big bag at any time, and I've stopped feeling clever about it. The dry beans win on paper. The cans win on Tuesdays.
 

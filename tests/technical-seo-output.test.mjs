@@ -473,7 +473,8 @@ test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay 
   const samplePrune = "cheap-dinner-ideas-cost-per-serving";
   const keepFlagship = "fiber-per-dollar-cheapest-high-fiber-foods";
 
-  assert.equal(INDEX_PRUNE_SLUGS.size, 106);
+  assert.equal(INDEX_PRUNE_SLUGS.size, 105);
+  assert.equal(INDEX_PRUNE_SLUGS.has("can-you-refreeze-frozen-vegetables-after-thawing"), false);
   assert.ok(!entries.has(locFor(samplePrune)), `${samplePrune} leaked into sitemap`);
   assert.ok(existsSync(distHtmlFor(locFor(samplePrune))), `${samplePrune} must stay live`);
   const pruneRobots = robotsFor(locFor(samplePrune));
@@ -492,7 +493,13 @@ test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay 
     assert.ok(!robots.includes("nofollow"), `nofollow on live prune page: ${slug}`);
     noindexed += 1;
   }
-  assert.equal(noindexed, 106);
+  assert.equal(noindexed, 105);
+  const restored = "can-you-refreeze-frozen-vegetables-after-thawing";
+  assert.ok(entries.has(locFor(restored)), `${restored} should return to the sitemap`);
+  const restoredRobots = robotsFor(locFor(restored));
+  assert.ok(restoredRobots.includes("index"), `${restored} missing index`);
+  assert.ok(!restoredRobots.includes("noindex"), `${restored} still noindexed`);
+  assert.ok(restoredRobots.includes("follow"), `${restored} missing follow`);
 
   assert.ok(entries.has(locFor(keepFlagship)), `${keepFlagship} missing from sitemap`);
   const keepRobots = robotsFor(locFor(keepFlagship));
@@ -540,4 +547,33 @@ test("food value database SERP copy leads with food value and grocery cost", () 
   assert.match(description, /July 2026 US prices plus USDA FoodData Central/);
   assert.match(description, /Not USDA-endorsed/);
   assert.ok(description.length <= 160, `clamped meta too long: ${description.length}`);
+});
+
+function pruneSlugFromHref(href) {
+  const value = String(href ?? "").trim();
+  if (!value || value.startsWith("#")) return null;
+  if (/^(?:mailto|tel|javascript|data):/i.test(value)) return null;
+  let target;
+  try {
+    target = new URL(value, `${SITE}/`);
+  } catch {
+    return null;
+  }
+  if (target.origin !== SITE) return null;
+  const slug = target.pathname.replace(/^\/+|\/+$/g, "");
+  if (!slug || slug.includes("/") || slug.includes(".")) return null;
+  return INDEX_PRUNE_SLUGS.has(slug) ? slug : null;
+}
+
+test("indexable sitemap pages do not link to pruned slugs", () => {
+  const failures = [];
+  for (const entry of sitemapEntries()) {
+    const html = readFileSync(distHtmlFor(entry.loc), "utf8");
+    for (const match of html.matchAll(/(?:href|url)\s*[=:]\s*(["'])([^"']+)\1/gi)) {
+      const slug = pruneSlugFromHref(match[2]);
+      if (!slug) continue;
+      failures.push(`${entry.loc} -> /${slug}/ via ${match[2]}`);
+    }
+  }
+  assert.deepEqual(failures, []);
 });

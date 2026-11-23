@@ -77,7 +77,7 @@ This sheet pan salmon and vegetables recipe is for the nights when flipping thin
 
 Salmon cooks fast and doesn't need much beyond olive oil, salt, and a little dried herb. Broccoli, zucchini, and cherry tomatoes roast happily at the same high heat. Salmon also shows up in our [plain-English selenium foods guide](/selenium-containing-foods-easy-ways/) alongside eggs, chicken, and beans. Dinner doesn't need a mineral-themed costume to count.
 
-Starting the vegetables 10 minutes early is what makes the timing work. The broccoli gets crispy edges right as the salmon finishes. Send everything in at once and you get raw vegetables or dry fish. The same staggering runs [one-pan lemon herb chicken and veggies](/quick-dinner-recipes/) when you want poultry.
+Starting the vegetables 10 minutes early is what makes the timing work. The broccoli gets crispy edges right as the salmon finishes. Send everything in at once and you get raw vegetables or dry fish. The same staggering runs one-pan lemon herb chicken and veggies when you want poultry.
 ## Picking the Right Salmon and Veggies
 
 Look for skin-on fillets. The skin shields the flesh from the hot metal, holds the fish together, and lifts away on the plate. Buy fillets of similar thickness so nobody gets a dry piece while someone else gets a raw one.
@@ -137,7 +137,7 @@ Asparagus, green beans, sliced bell peppers, and small cauliflower florets fit t
 
 Cut everything to a similar size and coat it lightly, not lavishly. Too much oil makes the tomatoes burst into a slick sauce that softens everything nearby.
 
-When salmon prices are having a moment, the [lemon-caper cod sheet-pan dinner](/baked-cod-lemon-capers-green-beans/) runs the same logic on a leaner fish, and these [weeknight fish tacos](/easy-weeknight-fish-tacos-with-cabbage-slaw/) stretch fish across four servings.
+When salmon prices are having a moment, the [lemon-caper cod sheet-pan dinner](/baked-cod-lemon-capers-green-beans/) runs the same logic on a leaner fish, and these weeknight fish tacos stretch fish across four servings.
 
 ## Store and reheat leftovers gently
 

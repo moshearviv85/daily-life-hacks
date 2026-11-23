@@ -66,7 +66,7 @@ Park bread away from the stove, dishwasher vent, and sunny windows. Heat and ste
 
 Cool homemade bread completely before you wrap it. Warm bread in a bag is a condensation machine. That one mistake creates soggy crust and faster mold more often than "wrong bag brand."
 
-For loaf-by-loaf tactics after baking day, [how to store homemade bread](/how-to-store-homemade-bread/) goes deeper on paper versus plastic versus freezing. This article is the anti-mold field guide. That one is the full storage map.
+For loaf-by-loaf tactics after baking day, how to store homemade bread goes deeper on paper versus plastic versus freezing. This article is the anti-mold field guide. That one is the full storage map.
 
 ## The freezer method that actually works
 
@@ -88,7 +88,7 @@ Grocery sandwich bread often lasts longer on the counter because of preservative
 
 Bakery boules and homemade sandwich loaves mold faster and stale differently. Crusty loaves hate sealed plastic overnight if you care about crust. Soft sandwich loaves hate open air if you care about softness. Match the wrap to the loaf.
 
-If you bake the [easy sandwich bread for beginners](/easy-sandwich-bread-recipe-beginners/), plan storage before the loaf comes out of the oven. Cool on a rack. Bag what you'll eat in two days. Freeze the rest the same night. Waiting until day four to "decide" is how mold wins.
+If you bake the easy sandwich bread for beginners, plan storage before the loaf comes out of the oven. Cool on a rack. Bag what you'll eat in two days. Freeze the rest the same night. Waiting until day four to "decide" is how mold wins.
 
 ## Humidity, seasons, and kitchen microclimates
 

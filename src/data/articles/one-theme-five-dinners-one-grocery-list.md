@@ -34,9 +34,9 @@ For this example, we're doing a taco-ish week. “Mexican-inspired” would soun
 |---|---|---|
 | Monday | [High-fiber burrito bowls](/high-fiber-burrito-bowl-meal-prep/) | Black beans, corn, peppers, salsa, lime, cilantro |
 | Tuesday | [Easy black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) | Black beans, tortillas, cabbage, salsa, lime, cilantro |
-| Wednesday | [Three-bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) | Beans, corn, peppers, lime, cilantro, spices |
-| Thursday | [Fish tacos with cabbage slaw](/easy-weeknight-fish-tacos-with-cabbage-slaw/) | Tortillas, cabbage, lime, cilantro, chili powder, cumin |
-| Friday | [Freezer breakfast burritos](/high-protein-vegetarian-breakfast-burritos-you-can-freeze/) | Tortillas, black beans, corn, peppers, salsa, cheese |
+| Wednesday | Three-bean chili | Beans, corn, peppers, lime, cilantro, spices |
+| Thursday | Fish tacos with cabbage slaw | Tortillas, cabbage, lime, cilantro, chili powder, cumin |
+| Friday | Freezer breakfast burritos | Tortillas, black beans, corn, peppers, salsa, cheese |
 
 That isn't one dinner wearing five fake mustaches. The bowl is built for meal prep, the tacos take 15 minutes, the chili is a pot of leftovers, the fish cooks fast, and Friday puts extra burritos in the freezer. Same grocery neighborhood. Different evenings.
 

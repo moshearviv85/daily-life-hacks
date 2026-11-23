@@ -73,7 +73,7 @@ The freezer is essentially a pause button on expiration dates. Most people sever
 
 *   **Dying Fruit:** If those bananas are going black, peel them, slice them into massive chunks, and freeze them flat on a tray for future smoothies. Half an avocado browns before you remember it exists, so [store cut avocados with the wrap pressed against the flesh](/best-way-to-store-avocados-to-stop-browning/) if you're saving it for tomorrow. 
 *   **Wilting Greens:** Limp but not slimy? An ice water soak can often [revive wilted lettuce and greens](/how-to-revive-wilted-lettuce-and-greens/) before you write them off. If your fresh spinach is past that point and just starting to look a tiny bit sad, stuff the entire remaining bag into the freezer. You can't use it for a crisp salad anymore, but it's perfect for throwing directly into soups, stews, or pasta sauces frozen.
-*   **Stale Bread:** Slice the entire loaf of bread the second you get it home and freeze it in a heavy-duty bag. Take out only exactly the slices you need to pop straight into the toaster. And if mold always beats staleness to your loaf, here's [how to keep bread fresh longer without mold](/how-to-keep-bread-fresh-longer-without-mold/). 
+*   **Stale Bread:** Slice the entire loaf of bread the second you get it home and freeze it in a heavy-duty bag. Take out only exactly the slices you need to pop straight into the toaster. And if mold always beats staleness to your loaf, here's [how to keep bread fresh longer without mold](/how-to-keep-sandwiches-from-getting-soggy/). 
 
 ## Rule 3: Read Date Labels Without Guessing
 
@@ -83,7 +83,7 @@ Package dates are confusing because several phrases describe quality or store in
 *   **"Sell By":** This helps stores manage inventory. Refrigerated food still needs correct handling at home, and a sell-by date does not extend a safe storage window.
 *   **"Use By":** Follow this label carefully, especially on products with specific safety instructions. Infant formula is one category where the use-by date should not be stretched.
 
-Figuring out how to reduce food waste at home means storing food correctly and making a decision before it becomes questionable. Smell and appearance can reveal spoilage, but they cannot prove safety. When handling was unsafe or you are genuinely unsure, throw it away. Planning helps just as much as storage. A basic [food prep guide with recipes](/food-prep-guide-recipes/) means every grocery item comes home with a job already assigned to it.
+Figuring out how to reduce food waste at home means storing food correctly and making a decision before it becomes questionable. Smell and appearance can reveal spoilage, but they cannot prove safety. When handling was unsafe or you are genuinely unsure, throw it away. Planning helps just as much as storage. A basic food prep guide with recipes means every grocery item comes home with a job already assigned to it.
 
 ## Measure the foods you routinely overcook
 

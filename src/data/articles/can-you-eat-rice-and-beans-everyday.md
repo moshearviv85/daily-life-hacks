@@ -46,7 +46,7 @@ Cents, which is the whole reason the question gets asked in the first place.
 
 In our day costing work, the bean and rice portion of one dinner ran 90 grams of dry pinto beans at $0.20 for 19.3 grams of protein, plus 60 grams of dry brown rice at $0.12 for 4.5 grams. Thirty two cents, 23.8 grams of protein. Run the same plate for fiber and 60 grams of pinto beans plus 50 grams of brown rice gave 11.1 grams of fiber for 23 cents.
 
-Those are ingredient costs, not a full day of eating, and they assume you cook from the bag. If you want the portion math per person laid out properly, we did that in [how much rice and beans per person per day](/how-much-rice-and-beans-per-person-per-day/).
+Those are ingredient costs, not a full day of eating, and they assume you cook from the bag. If you want the portion math per person laid out properly, we did that in how much rice and beans per person per day.
 
 ## Is rice and beans good for you?
 
@@ -80,6 +80,6 @@ Swap pinto for black beans and the whole bowl reads differently for nearly the s
 
 Cook once, eat three times. That's the only version of this that survives a real week, and the [budget playbook](/eat-healthy-on-a-budget-complete-playbook/) is built around the same idea.
 
-Rice and beans every day is a genuinely good deal and a genuinely narrow menu. Treated as the base of the plate rather than the whole plate, it holds up fine. If you want the bean side of it done properly, start with [what beans to use for red beans and rice](/what-beans-for-red-beans-and-rice/) and [how long a cooked pot can safely sit out](/how-long-can-rice-and-beans-sit-out/).
+Rice and beans every day is a genuinely good deal and a genuinely narrow menu. Treated as the base of the plate rather than the whole plate, it holds up fine. If you want the bean side of it done properly, start with what beans to use for red beans and rice and how long a cooked pot can safely sit out.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-day-cost-2026.csv, public/data/fiber-day-cost-2026.csv, public/data/cheapest-complete-protein-pairs-2026.csv, public/data/produce-fiber-per-dollar-ranked-2026.csv -->

@@ -49,7 +49,7 @@ One limit up front: our datasets include canned kidney beans but not small red b
 
 ## Can you use canned kidney beans?
 
-Yes, and for a weeknight it's the obvious call. Canned beans arrive already cooked, which is the whole reason a can sits on a shelf for years, and we went through the details in [do you have to cook canned beans](/do-you-have-to-cook-canned-beans/). Two cans, some rice, an onion, and you're most of the way there.
+Yes, and for a weeknight it's the obvious call. Canned beans arrive already cooked, which is the whole reason a can sits on a shelf for years, and we went through the details in [do you have to cook canned beans](/canned-beans-vs-dried-beans-nutrition/). Two cans, some rice, an onion, and you're most of the way there.
 
 The trade is texture. Canned beans are soft going in and softer coming out, so the pot never develops the body you get from beans simmered from dry. In a dish where the sauce is basically dissolved beans, that's more of a loss than usual. My workaround is to mash about a third of the can against the side of the pot before the rest goes in, which fakes the gravy well enough.
 
@@ -73,13 +73,13 @@ Pinto beans, first choice. They're soft, they break down willingly, and at 97.9 
 
 Black beans work and change the color of the plate, which some people mind and I don't. Navy beans work too and go further toward mush, so use them if you want the gravy and don't mind losing whole beans. All three take a normal soak and simmer with none of the kidney bean drama, and the method is in [how to cook dried beans from scratch](/how-to-cook-dried-beans-from-scratch/). Forgot to soak? [The same day quick soak](/how-to-quick-soak-dried-beans-same-day/) covers it.
 
-If you're building a bean cupboard rather than one dinner, the storage side is in [how long dried beans last](/how-long-do-dried-beans-last/).
+If you're building a bean cupboard rather than one dinner, the storage side is in [how long dried beans last](/how-to-cook-dried-beans-from-scratch/).
 
 ## What it costs to put on the table
 
 Not much, which has always been the point of this dish. The bean and rice portion of a similar plate came to about 32 cents per serving in our day costing work, and even the canned route keeps a dinner well under a dollar a head before the sausage and the vegetables.
 
-Rice and beans as a daily habit is a bigger question and we took it seriously in [can you eat rice and beans every day](/can-you-eat-rice-and-beans-everyday/). If you want the pantry version without the Louisiana accent, [beans and rice as a complete protein meal](/beans-and-rice-complete-protein-meal/) is the plainer recipe, and the leftovers question is covered in [how long rice and beans can sit out](/how-long-can-rice-and-beans-sit-out/).
+Rice and beans as a daily habit is a bigger question and we took it seriously in [can you eat rice and beans every day](/can-you-eat-rice-and-beans-everyday/). If you want the pantry version without the Louisiana accent, [beans and rice as a complete protein meal](/beans-and-rice-complete-protein-meal/) is the plainer recipe, and the leftovers question is covered in how long rice and beans can sit out.
 
 Red beans and rice is a dish built out of the cheapest ingredients in the store and a long afternoon. The bean you pick matters less than whether you cooked it properly.
 

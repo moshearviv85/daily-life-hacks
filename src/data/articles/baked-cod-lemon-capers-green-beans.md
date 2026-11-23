@@ -68,7 +68,7 @@ My sister hates cooking fish. She says it always smells up the kitchen. I made h
 
 Cod is the friendly neighbor of the seafood world. It is mild, it does not taste "fishy," and it happily absorbs whatever flavors you throw at it. 
 
-Because the fillets are usually pretty thick, they have a slightly larger margin of error than thin, delicate fish like sole. It flakes beautifully when it is done. It is also usually easier to find and more affordable than halibut, which makes it a solid choice for a random Wednesday night instead of waiting for a special occasion. Cod is also exactly what I reach for in these [easy weeknight fish tacos with cabbage slaw](/easy-weeknight-fish-tacos-with-cabbage-slaw/), so grab an extra fillet while you're at the counter.
+Because the fillets are usually pretty thick, they have a slightly larger margin of error than thin, delicate fish like sole. It flakes beautifully when it is done. It is also usually easier to find and more affordable than halibut, which makes it a solid choice for a random Wednesday night instead of waiting for a special occasion. Cod is also exactly what I reach for in these easy weeknight fish tacos with cabbage slaw, so grab an extra fillet while you're at the counter.
 
 ## The magic of the butter and caper sauce
 

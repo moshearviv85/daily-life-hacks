@@ -27,9 +27,9 @@ You know those nights when you're just cooking for yourself? It's easy to fall i
 
 I've been there. Staring at a recipe that serves four, trying to figure out how to halve everything and not end up with a microscopic portion or a week's worth of the same leftovers. The truth is, budget meal ideas for one are less about fancy recipes and more about smart shopping and a little bit of planning. You want to eat well, save money, and not feel like you're eating sad desk lunches, even if that desk is your kitchen counter.
 
-Before you build the list, the [grocery budget calculator](/tools/grocery-budget-calculator/) gives your week a real spending ceiling instead of the classic "I'll just be careful" plan, and [what one person actually spends on groceries in a month](/grocery-budget-for-one-person-per-month/) is the number to sanity-check it against.
+Before you build the list, the [grocery budget calculator](/tools/grocery-budget-calculator/) gives your week a real spending ceiling instead of the classic "I'll just be careful" plan, and what one person actually spends on groceries in a month is the number to sanity-check it against.
 
-If one person is actually a dorm room with a hot plate, use the [college-student version of this plan](/cheap-healthy-meals-for-college-students/). If you're feeding two, the [cheap meals for two guide](/cheap-healthy-meals-for-two/) handles the awkward half-packages and the nightly debate over who gets the last serving.
+If one person is actually a dorm room with a hot plate, use the college-student version of this plan. If you're feeding two, the cheap meals for two guide handles the awkward half-packages and the nightly debate over who gets the last serving.
 
 ## What are the cheapest meals to cook for one person?
 
@@ -101,4 +101,4 @@ Compare the amount you'll realistically eat, not the amount the warehouse wants 
 
 Keep one flexible meal at the end of the week for loose ends. Fried rice, soup, pasta, omelets, and tacos can absorb small amounts without looking like a plate of unrelated leftovers attending the same meeting.
 
-Cooking for one doesn't have to be a penalty. With a few smart moves, you can eat well, save money, and actually enjoy the process. It's about being efficient with your ingredients and creative with your leftovers, not about gourmet meals every night. And if you want proof that a tight budget can still eat really well, these [budget meal ideas from the Philippines](/budget-meal-ideas-philippines/) are a masterclass in stretching rice, eggs, and canned goods.
+Cooking for one doesn't have to be a penalty. With a few smart moves, you can eat well, save money, and actually enjoy the process. It's about being efficient with your ingredients and creative with your leftovers, not about gourmet meals every night. And if you want proof that a tight budget can still eat really well, these budget meal ideas from the Philippines are a masterclass in stretching rice, eggs, and canned goods.

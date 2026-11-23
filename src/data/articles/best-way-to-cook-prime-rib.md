@@ -147,4 +147,4 @@ Don't rely on cooking time alone. Roast weight, shape, starting temperature, and
 
 Also resist opening the oven repeatedly, covering the roast tightly during its rest, or spreading a thick wet paste over a damp surface. Those choices work against even heat and a dry crust. Pat dry, measure temperature, and give each stage room to do its one job.
 
-Confirm the center has reached at least 145°F, give it the USDA-recommended 3-minute rest, then slice against the grain. My [baked potato method](/best-way-to-cook-baked-potatoes/) handles the steakhouse side without stealing oven attention until the roast rests. If the guest list shrinks before you shop, the [pork tenderloin method](/best-way-to-cook-a-pork-tenderloin/) uses the same thermometer-first logic without buying eight pounds of dinner.
+Confirm the center has reached at least 145°F, give it the USDA-recommended 3-minute rest, then slice against the grain. My baked potato method handles the steakhouse side without stealing oven attention until the roast rests. If the guest list shrinks before you shop, the pork tenderloin method uses the same thermometer-first logic without buying eight pounds of dinner.
