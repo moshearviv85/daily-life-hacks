@@ -9,8 +9,8 @@ import {
   inferLegacyCluster,
 } from "../content/clusters";
 import {
+  assignRelatedArticles,
   resolveArticleCluster,
-  scoreRelatedCandidate,
 } from "../content/relatedArticleScoring.js";
 
 interface Props {
@@ -22,68 +22,61 @@ interface Props {
 
 const { article, count = 4 } = Astro.props;
 
-const normalizeTag = (tag: string) => tag.trim().toLowerCase();
-const currentTags = new Set(article.data.tags.map(normalizeTag));
-const currentHay = [article.data.title, ...article.data.tags, article.id]
-  .join(" ")
-  .toLowerCase();
-const currentResolution = resolveArticleCluster({
-  articleId: article.id,
-  explicitCluster: article.data.cluster,
-  explicitParentPillar: article.data.parentPillar,
-  clusters: CONTENT_CLUSTERS,
-  inferLegacy: inferLegacyCluster,
-  legacyText: currentHay,
-});
-const pillarSlugs = new Set<string>(
-  CONTENT_CLUSTERS.map((item) => item.parentPillar),
-);
-const preferredPillar =
-  currentResolution && !pillarSlugs.has(article.id)
-    ? currentResolution.cluster.parentPillar
-    : null;
-
 const allArticles = await getCollection("articles");
 
 /**
- * Eligible pool: canonical, released articles only.
+ * Eligible card targets: canonical, released articles only.
  * - getCollection only returns canonical entries; we link via entry.id.
  * - Pin destinations are runtime 301s (CP2 Phase B), never collection ids.
  * - isReleased filters out future-dated (publishAt) articles that are
  *   still noindexed.
  * - isIndexPruned filters the GSC thin-URL set (same noindex policy).
  * - The current article itself is excluded (no self-links).
+ * Noindex pages still render this section. Their cards count toward the
+ * sitewide appearance cap, and they cannot be card targets.
  */
-const candidates = allArticles.filter(
-  (a) => a.id !== article.id && isReleased(a) && !isIndexPruned(a.id),
+const eligibleTargets = allArticles.filter(
+  (a) => isReleased(a) && !isIndexPruned(a.id),
+);
+const eligibleTargetIds = new Set(eligibleTargets.map((a) => a.id));
+
+const pillarSlugs = new Set<string>(
+  CONTENT_CLUSTERS.map((item) => item.parentPillar),
+);
+const pillarByCluster = new Map(
+  CONTENT_CLUSTERS.map((item) => [item.id, item.parentPillar]),
 );
 
-const scored = candidates
-  .map((a) => {
-    const score = scoreRelatedCandidate({
-      candidateId: a.id,
-      candidateTags: a.data.tags,
-      candidateCategory: a.data.category,
-      currentTags,
-      currentCategory: article.data.category,
-      pillarSlugs,
-      preferredPillar,
-      currentIndexPruned: isIndexPruned(article.id),
-    });
-    if (score === null || score <= 0) return null;
-    return { entry: a, score };
-  })
-  .filter((item): item is NonNullable<typeof item> => item !== null);
-
-// Deterministic ordering: score desc, then newer release date, then slug A-Z.
-scored.sort((a, b) => {
-  if (b.score !== a.score) return b.score - a.score;
-  const dateDiff = getReleaseTimestamp(b.entry) - getReleaseTimestamp(a.entry);
-  if (dateDiff !== 0) return dateDiff;
-  return a.entry.id < b.entry.id ? -1 : 1;
+const records = allArticles.map((entry) => {
+  const hay = [entry.data.title, ...entry.data.tags, entry.id].join(" ").toLowerCase();
+  const resolution = resolveArticleCluster({
+    articleId: entry.id,
+    explicitCluster: entry.data.cluster,
+    explicitParentPillar: entry.data.parentPillar,
+    clusters: CONTENT_CLUSTERS,
+    inferLegacy: inferLegacyCluster,
+    legacyText: hay,
+  });
+  return {
+    id: entry.id,
+    tags: entry.data.tags,
+    category: entry.data.category,
+    title: entry.data.title,
+    clusterId: resolution?.cluster.id ?? null,
+    releaseTimestamp: getReleaseTimestamp(entry),
+    eligibleTarget: eligibleTargetIds.has(entry.id),
+  };
 });
 
-const related = scored.slice(0, count).map((item) => item.entry);
+const assignments = assignRelatedArticles(records, {
+  count,
+  pillarSlugs,
+  pillarByCluster,
+});
+const byId = new Map(allArticles.map((entry) => [entry.id, entry]));
+const related = (assignments.get(article.id) ?? [])
+  .map((id) => byId.get(id))
+  .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 ---
 
 {
