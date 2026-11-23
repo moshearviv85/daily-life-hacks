@@ -10,7 +10,7 @@ tags:
 image: "/images/cottage-cheese-vs-greek-yogurt-protein-uses-main.jpg"
 imageAlt: "A bowl of cottage cheese next to a bowl of Greek yogurt on a kitchen counter"
 date: 2026-04-20
-dateModified: 2026-10-01
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -55,6 +55,27 @@ Same foods, weighed. USDA SR Legacy lists 11.12 grams of protein per 100 grams f
 | Same yogurt, scaled to the 225 g small-curd cup | 10.19 g | 225 g, not a cup on this record | 22.9 g |
 
 Those portion grams are the per-100-gram number times the USDA weight, then rounded to one decimal. 11.12 across 225 grams is 25.02, shown as 25.0. Across 210 grams it's 23.35, shown as 23.4. The yogurt container is 10.19 across 170 grams, 17.32, shown as 17.3. The same 10.19 across 225 grams is 22.93, shown as 22.9, still under the small-curd cottage cheese cup. Half of that 225 gram cup is 112.5 grams, about 12.5 grams of protein, inside the 12 to 14 gram half-cup range above. The yogurt record simply doesn't call 225 grams a cup.
+
+## How does cottage cheese vs Greek yogurt protein compare by fat level?
+
+The half-cup answer above stays put. Fat level is what moves the per-100-gram and per-cup numbers ranking pages actually publish.
+
+These six rows are plain SR Legacy records: nonfat, 2%, and 4% cottage cheese, then plain nonfat, lowfat, and whole-milk Greek yogurt. The lowfat Greek yogurt row is the 2% tub. It lists 1.92 grams of fat per 100 grams, and USDA filed it as "lowfat" instead of printing 2% on the name.
+
+Calories, sodium, and calcium are per 100 grams, so a heavier cup can't pad those columns. Cottage cheese protein per cup uses the cup on that same record. Nonfat cottage cheese here is uncreamed dry curd, and its cup weighs 145 grams, not the 210 to 226 gram creamed cup. Plain Greek yogurt records still don't print a cup. That column scales the row's own protein to 245 grams, the 1 cup weight on the plain nonfat ([FDC 2705424](https://fdc.nal.usda.gov/food-details/2705424/nutrients)), plain lowfat ([FDC 2705423](https://fdc.nal.usda.gov/food-details/2705423/nutrients)), and plain whole-milk ([FDC 2705422](https://fdc.nal.usda.gov/food-details/2705422/nutrients)) survey records.
+
+The linked food pages round some protein figures to three significant figures. This table keeps the SR Legacy amounts, same as the 11.12 and 10.19 above. Cup protein is that amount times the gram weight, divided by 100, rounded to one decimal. Protein per 100 kcal is protein divided by calories, times 100, same rounding. 10.34 across 145 grams is 14.993, shown as 15.0. 10.45 across 226 grams is 23.617, shown as 23.6. The 4% cups stay 25.0 and 23.4. Across 245 grams, 10.19, 9.95, and 9.00 come out to 24.966, 24.378, and 22.05, shown as 25.0, 24.4, and 22.1.
+
+| Food | Protein per 100 g | Protein per 1 cup | Calories per 100 g | Protein per 100 kcal | Sodium per 100 g | Calcium per 100 g |
+|---|---:|---|---:|---:|---:|---:|
+| Cottage cheese, nonfat, uncreamed dry curd ([FDC 172181](https://fdc.nal.usda.gov/food-details/172181/nutrients)) | 10.34 g | 15.0 g (145 g cup) | 72 kcal | 14.4 g | 372 mg | 86 mg |
+| Cottage cheese, lowfat, 2% milkfat ([FDC 172182](https://fdc.nal.usda.gov/food-details/172182/nutrients)) | 10.45 g | 23.6 g (226 g cup) | 81 kcal | 12.9 g | 308 mg | 111 mg |
+| Cottage cheese, creamed, 4% milkfat ([FDC 172179](https://fdc.nal.usda.gov/food-details/172179/nutrients)) | 11.12 g | 25.0 g small curd (225 g); 23.4 g large curd (210 g) | 98 kcal | 11.3 g | 315 mg | 83 mg |
+| Greek yogurt, plain, nonfat ([FDC 170894](https://fdc.nal.usda.gov/food-details/170894/nutrients)) | 10.19 g | 25.0 g (245 g cup) | 59 kcal | 17.3 g | 36 mg | 110 mg |
+| Greek yogurt, plain, lowfat, about 2% ([FDC 170903](https://fdc.nal.usda.gov/food-details/170903/nutrients)) | 9.95 g | 24.4 g (245 g cup) | 73 kcal | 13.6 g | 34 mg | 115 mg |
+| Greek yogurt, plain, whole milk ([FDC 171304](https://fdc.nal.usda.gov/food-details/171304/nutrients)) | 9.00 g | 22.1 g (245 g cup) | 97 kcal | 9.3 g | 35 mg | 100 mg |
+
+Cottage cheese sits at 308 to 372 mg of sodium per 100 grams, and plain Greek yogurt sits at 34 to 36 mg, a gap of 272 to 338 mg, or 8.6 to 10.9 times the sodium at the same weight. Calcium is tighter, and it doesn't land the same way on every row: 2% cottage cheese holds 111 mg and stands with the Greek yogurts at 100 to 115 mg, while 4% and dry nonfat cottage cheese trail at 83 and 86 mg. Per calorie, plain nonfat Greek yogurt wins at 17.3 grams of protein per 100 kcal, and whole-milk Greek yogurt finishes last at 9.3.
 
 Let's look at the numbers. They're surprisingly similar. 
 
