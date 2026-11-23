@@ -907,7 +907,7 @@ const earlyPlan = flagship?.emailCapture
         dataset && datasetProvenance && (
           <p class="text-sm mt-2 leading-relaxed" style="color: var(--label-color);">
             Source: Daily Life Hacks {dataset.name} ({dataset.rows} rows,
-            prices observed {dataset.temporal}, United States).{" "}
+            {dataset.observationPhrase ?? `prices observed ${dataset.temporal}`}, United States).{" "}
             {
               datasetProvenance.nutritionSourceIsPrimary
                 ? "Primary nutrition source: "

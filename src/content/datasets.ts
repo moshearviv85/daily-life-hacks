@@ -54,6 +54,11 @@ export interface DatasetMeta {
    */
   temporalCoverage?: string;
   /**
+   * Replaces the default "prices observed {temporal}" credit when this
+   * dataset is not a price study. Example: "nutrition checked 2026-11-23".
+   */
+  observationPhrase?: string;
+  /**
    * Omitting provenance declares a grocery-only dataset and applies the USDA
    * default below. Restaurant and mixed datasets must provide an explicit class.
    */
@@ -479,6 +484,28 @@ export const DATASETS: Record<string, DatasetMeta> = {
       nutritionSource: "each chain's published nutrition data",
     },
   },
+  "high-fiber-fast-food-options-guide": {
+    name: "High-Fiber Fast Food Orders: 29 Items at 11 US Chains (2026)",
+    description:
+      "Twenty-nine U.S. fast-food orders with dietary fiber, calories, fiber per 100 kcal, protein, and sodium, each figure read from the chain's official nutrition page on November 23, 2026.",
+    csv: "/data/high-fiber-fast-food-2026.csv",
+    rows: 29,
+    variables: [
+      "dietary fiber (g)",
+      "calories",
+      "fiber per 100 kcal",
+      "protein (g)",
+      "sodium (mg)",
+    ],
+    temporal: "2026-11-23",
+    observationPhrase: "nutrition checked 2026-11-23",
+    provenance: {
+      nutritionSourceClass: "restaurant",
+      nutritionSource: "each chain's official nutrition page, linked per row",
+      sourceAuditSummary:
+        "Every row was read from the chain page or PDF named in official_url on 2026-11-23; summed builds are named in the item column, and items that could not be read from an official page were dropped",
+    },
+  },
 };
 
 /**
@@ -817,6 +844,7 @@ export const STUDY_DATASET_ORDER: string[] = [
   "bls-nutrition-per-dollar",
   "protein-per-dollar-adjusted-for-quality",
   "fast-food-protein-per-dollar-ranked",
+  "high-fiber-fast-food-options-guide",
   "eggs-vs-everything-protein-value",
   "shelf-stable-pantry-per-dollar",
   "produce-fiber-per-dollar-ranked",

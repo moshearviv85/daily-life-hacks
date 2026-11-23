@@ -74,7 +74,7 @@ Some nights you do not have a zen hour to chop a rainbow. You have twenty minute
 
 This recipe is not trying to win a chef competition. It is trying to get fiber and protein on the table before anyone asks for cereal. It's one 20 minute high fiber meal. Six more are next.
 
-If you need more dinners built for that exact level of chaos, the [complete budget fiber guide](/what-30-grams-of-fiber-costs-per-day/) turns beans, grains, and other cheap staples into an actual plan.
+If you need more dinners built for that exact level of chaos, the [complete budget fiber guide](/what-30-grams-of-fiber-costs-per-day/) turns beans, grains, and other cheap staples into an actual plan. When twenty minutes isn't available either, the [drive-thru orders with published fiber numbers](/high-fiber-fast-food-options-guide/) are the fallback.
 
 ## Six more 20 minute high fiber meals
 

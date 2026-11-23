@@ -107,7 +107,7 @@ test("cooked-cup heading answers which vegetable has the most fiber per cup", ()
 test("fast-food page links the vegetable question to the cooked-cup anchor", () => {
   assert.equal(field(fastFood, "title"), "High-Fiber Fast Food: Chipotle Leads at 25g");
   assert.equal(field(fastFood, "author"), "David Miller");
-  assert.equal(field(fastFood, "dateModified"), "2026-09-30");
+  assert.equal(field(fastFood, "dateModified"), "2026-11-23");
 
   const href = `/best-high-fiber-foods-ranked-by-fiber-content/#${ANCHOR}`;
   const links = [

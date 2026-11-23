@@ -261,6 +261,44 @@ DATASETS: dict[str, dict] = {
         ),
         "fields": {},
     },
+    "high-fiber-fast-food-2026.csv": {
+        "title": "High-Fiber Fast Food Orders (2026)",
+        "study": "high-fiber-fast-food-options-guide",
+        "description": (
+            "29 U.S. fast-food orders with dietary fiber, calories, fiber per 100 kcal, "
+            "protein, and sodium. Every figure was read from the chain's official nutrition "
+            "page or PDF on November 23, 2026. Summed builds are named in the item column. "
+            "Items that could not be read from an official page were left out."
+        ),
+        "fields": {
+            "fiber_g": (
+                "Dietary fiber in grams for the order, either the chain's published total "
+                "or the sum of the published components named in the item column."
+            ),
+            "calories": "Energy in kilocalories for that same published order.",
+            "fiber_per_100_kcal": (
+                "Dietary fiber grams divided by calories, times 100, rounded half up to "
+                "one decimal. It is computed from the fiber and calorie columns, not copied "
+                "from the chain."
+            ),
+            "protein_g": (
+                "Protein in grams for the order, either the chain's published total or the "
+                "sum of the published components named in the item column."
+            ),
+            "sodium_mg": (
+                "Sodium in milligrams for the order, either the chain's published total or "
+                "the sum of the published components named in the item column."
+            ),
+            "official_url": (
+                "The chain's official nutrition page or PDF the fiber, calorie, protein, "
+                "and sodium figures were read from."
+            ),
+            "checked_date": (
+                "ISO date the official page or PDF was read. Not the chain's print date, "
+                "which is recorded in the source column when the file states one."
+            ),
+        },
+    },
     "fiber-day-cost-2026.csv": {
         "title": "Cost of 30 Grams of Fiber per Day, Five Menus (2026)",
         "study": "what-30-grams-of-fiber-costs-per-day",

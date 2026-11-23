@@ -2082,11 +2082,11 @@ test("high fiber fast food title leads with the fast-food query", () => {
     "high fiber fast food title should not be the old best orders SERP",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-09-30$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(page.excerpt, /Chipotle veggie bowl 25g/);
   assert.match(page.excerpt, /Subway Veggie Patty Protein Bowl 19g/);
-  assert.match(page.excerpt, /Ten orders, 6 chains/);
+  assert.match(page.excerpt, /29 orders, 11 chains/);
   assert.ok(
     excerptLower.indexOf("chipotle veggie bowl 25g") <
       excerptLower.indexOf("subway veggie patty protein bowl 19g"),
@@ -3219,13 +3219,13 @@ test("api docs title puts the on-page dataset count in the SERP", () => {
       .matchAll(/"([a-z0-9-]+)"/g),
   ].map((match) => match[1]);
 
-  assert.equal(ids.length, 24);
+  assert.equal(ids.length, 25);
   assert.equal(order.length, ids.length);
   assert.deepEqual(new Set(order), new Set(ids));
   assert.match(page, /const datasetCount = STUDY_DATASETS\.length;/);
   assert.match(page, /dated rows across \{datasetCount\} datasets/);
   assert.match(page, /lists all \{datasetCount\} datasets/);
-  assert.equal(title, "Free Food Value API: 24 Datasets, No Key");
+  assert.equal(title, "Free Food Value API: 25 Datasets, No Key");
   assert.equal(title, `Free Food Value API: ${ids.length} Datasets, No Key`);
   assert.equal(title.length, 40);
   assert.ok(
@@ -3236,7 +3236,7 @@ test("api docs title puts the on-page dataset count in the SERP", () => {
     titleLower.startsWith("free food value api"),
     "api docs title should lead with free food value api",
   );
-  assert.match(title, /24 Datasets/);
+  assert.match(title, /25 Datasets/);
   assert.match(title, /No Key/);
   assert.equal(
     /^free food value api: no key, no limits, just attribution$/.test(titleLower),
@@ -3248,7 +3248,7 @@ test("api docs title puts the on-page dataset count in the SERP", () => {
   assert.match(page, /<h1[^>]*>\s*The Food Value API\s*<\/h1>/);
   assert.match(
     page,
-    /const description = `A free JSON API over \$\{datasetCount\} original food-cost datasets and \$\{TOTAL_DATA_ROWS\} priced rows, with documented USDA, restaurant-chain, product-label, and DIAAS sources\.`;/,
+    /const description = `A free JSON API over \$\{datasetCount\} original food datasets and \$\{TOTAL_DATA_ROWS\} rows, with documented USDA, restaurant-chain, product-label, and DIAAS sources\.`;/,
   );
   assert.equal(INDEX_KEEP_PATHS.has("api-docs"), true);
   assert.equal(INDEX_PRUNE_SLUGS.has("api-docs"), false);
