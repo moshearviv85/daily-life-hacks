@@ -38,6 +38,9 @@ test("more than five dateModified edits fail unless the PR is a content refresh"
   );
 });
 
+// A pull request that changes dateModified in more than five articles still
+// needs the content-refresh label. The CI script reads that label. This test
+// only rejects a date change that has no other edit in the same file.
 test("this branch does not churn dateModified without a body edit", () => {
   const result = spawnSync(process.execPath, ["scripts/check-datemodified-churn.mjs"], {
     encoding: "utf8",
