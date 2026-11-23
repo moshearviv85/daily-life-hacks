@@ -10,8 +10,8 @@ interface Props {
   kicker: string;
   highlight: Highlight;
   disclosure: string;
-  jumpHref: string;
-  jumpLabel: string;
+  jumpHref?: string;
+  jumpLabel?: string;
 }
 
 const { kicker, highlight, disclosure, jumpHref, jumpLabel } = Astro.props;
@@ -24,5 +24,7 @@ const { kicker, highlight, disclosure, jumpHref, jumpLabel } = Astro.props;
     claim={highlight.claim}
     disclosure={disclosure}
   />
-  <a class="study-ranking-jump" href={jumpHref}>{jumpLabel}</a>
+  {jumpHref && jumpLabel && (
+    <a class="study-ranking-jump" href={jumpHref}>{jumpLabel}</a>
+  )}
 </aside>

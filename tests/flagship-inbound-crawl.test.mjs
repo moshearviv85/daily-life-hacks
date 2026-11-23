@@ -242,15 +242,15 @@ test("nutrition hub cites both flagships in the intro, not only article cards", 
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 
-test("recipes hub cites both flagships in the intro, not only recipe cards", () => {
+test("recipes hub does not inject flagship links", () => {
   const source = pageSource("recipes", "index.astro");
   const headerEnd = source.indexOf("Cooking for two instead of six");
   assert.ok(headerEnd > 0, "recipes hub should keep the servings callout");
   const intro = source.slice(0, headerEnd);
-  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 1);
-  assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 1);
-  assert.equal(htmlHrefMatches(source, fiberFlagship).length, 1);
-  assert.equal(htmlHrefMatches(source, proteinFlagship).length, 1);
+  assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 0);
+  assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 0);
+  assert.equal(htmlHrefMatches(source, fiberFlagship).length, 0);
+  assert.equal(htmlHrefMatches(source, proteinFlagship).length, 0);
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 

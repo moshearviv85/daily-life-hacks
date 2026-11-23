@@ -306,7 +306,7 @@ test("shared callout reuses StudyLead and stays wired on the article page", () =
   assert.match(component, /class="meal-protein-cost"/);
   assert.match(component, /data-meal-protein-cost=\{mealCost\.slug\}/);
   assert.match(component, /StudyLead/);
-  assert.match(component, /jumpHref=\{mealCost\.proteinHref\}/);
+  assert.match(component, /jumpHref=\{showFlagshipLinks \? mealCost\.proteinHref : undefined\}/);
   assert.match(component, /href=\{link\.href\}/);
 
   const contentConfig = read("src/content.config.ts");
@@ -403,7 +403,8 @@ test("rendered beans-and-rice and meal-prep pages expose the callout when dist e
     assert.match(html, /class="[^"]*meal-protein-cost[^"]*"/);
     assert.match(html, new RegExp(`data-meal-protein-cost="${slug}"`));
     assert.match(html, /class="[^"]*study-pull-quote[^"]*"/);
-    assert.match(html, /href="\/protein-per-dollar-cheapest-protein-sources\/"/);
+    assert.doesNotMatch(html, /href="\/protein-per-dollar-cheapest-protein-sources\/"/);
+    assert.doesNotMatch(html, /href="\/fiber-per-dollar-cheapest-high-fiber-foods\/"/);
     assert.match(html, /July 2026/);
     assert.match(html, /dateModified":"2026-09-06T00:00:00.000Z"/);
     assert.doesNotMatch(html, /protein-per-dollar-cheapest-high-protein-foods/);

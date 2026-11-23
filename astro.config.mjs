@@ -7,6 +7,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import rehypeArticleImages from './scripts/rehype-article-images.mjs';
 import rehypeRankingTables from './scripts/rehype-ranking-tables.mjs';
+import rehypeContextualFlagshipLinks from './scripts/rehype-contextual-flagship-links.mjs';
 import { INDEX_PRUNE_SLUGS } from './src/content/index-prune.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -275,7 +276,7 @@ export default defineConfig({
   site: 'https://www.daily-life-hacks.com',
   trailingSlash: 'always',
   markdown: {
-    rehypePlugins: [rehypeArticleImages, rehypeRankingTables],
+    rehypePlugins: [rehypeArticleImages, rehypeRankingTables, rehypeContextualFlagshipLinks],
   },
   integrations: [
     sitemap({
