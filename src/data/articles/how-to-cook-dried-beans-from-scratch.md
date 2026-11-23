@@ -43,6 +43,12 @@ faq:
   answer: Old beans take longer, hard water can slow softening, and acidic ingredients
     added too early can keep skins firm. Continue simmering with enough hot water
     and add tomatoes or vinegar only after the centers are creamy.
+- question: How long do dried beans last?
+  answer: Kept dry, sealed, and out of the heat, they stay usable well past the
+    date on the bag. FDA and USDA treat those dates as quality, not safety,
+    except on infant formula. What changes with age is cooking time. Very old
+    beans can simmer for a long time and still keep a chalky center. Mold,
+    a musty smell, insects, or any dampness means the bag goes out.
 ---
 Canned beans are undeniably convenient, but buying a bag of dried beans costs significantly less money and allows you to control exactly how mushy they get and how much salt goes into them. 
 
@@ -88,3 +94,11 @@ Taste several beans before declaring the pot done. One bean can be tender while 
 Cool cooked beans promptly and refrigerate them in a covered container with enough liquid to keep them moist. Use them within four to five days. For freezing, portion beans and liquid into meal-size containers, leave expansion room, label them, and freeze for up to a few months for best quality.
 
 Thaw overnight in the refrigerator or reheat gently from frozen with a splash of water. The batch can become [15-minute black bean tacos](/easy-black-bean-tacos-weeknight-dinner/), soup, salad, or a rice bowl without opening another can.
+
+## How long dried beans last
+
+Kept dry, sealed, and cool, a bag of dried beans outlasts the date printed on it. [USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating) is blunt about those dates: except for infant formula, product dating isn't required by federal law, and a best-by date is about flavor and quality, not safety.
+
+What age actually changes is the pot. Beans keep drying out in the cupboard. A bag that's been around for a couple of years can simmer well past an hour and still show you a chalky center. A longer soak helps. A pressure cooker helps more. Sometimes they simply will not soften, and that's a texture problem, not a reason to taste something that smells wrong.
+
+Throw the bag out for mold, a musty smell, insects, or any sign it got damp. Time alone, with the beans still dry and clean, is not the same signal. Store them off the stove and out of a damp basement. Heat and humidity are what shorten the window, more than the variety name on the label. We don't have a storage-life test by bean type, so this page isn't going to invent one.

@@ -22,7 +22,15 @@ faq:
   - question: "Where did eggs rank in your 49-food study?"
     answer: "Large eggs ranked 36th of the 49 foods in our July 2026 study, at 12.56 g of protein per 100 g. A large egg is roughly 50 g, so it carries about 6.3 g. Eggs are convenient and complete, but this dataset did not place them among its most protein-dense entries by weight."
   - question: "Can this 49-food study show which serving has the most protein?"
-    answer: "No. The table compares 100 g of each listed form, not standardized servings. A 100 g portion of dry brown lentils carries about 24.6 g of protein, while 100 g of large eggs carries 12.56 g. Use the density table for equal-weight comparisons, not for a claim about every possible serving."
+    answer: "No. The density table compares 100 g of each listed form, not standardized servings. A 100 g portion of dry brown lentils carries about 24.6 g of protein, while 100 g of large eggs carries 12.56 g. A separate portion table on this page covers two eggs, two tablespoons of peanut butter, one cup of cooked lentils, and one cup of cooked oatmeal. Those four lines are not a re-rank of the 49 foods."
+  - question: "How much protein is in two eggs?"
+    answer: "About 12.6 grams. Two large eggs are about 100 grams of edible egg, and this study's USDA figure for whole raw egg is 12.56 grams of protein per 100 grams."
+  - question: "How much protein is in peanut butter?"
+    answer: "About 7.1 grams in 2 tablespoons. This study uses 22.21 grams of protein per 100 grams of peanut butter, and a tablespoon portion in that same work is 16 grams, so two tablespoons are 32 grams."
+  - question: "How much protein is in a cup of cooked lentils?"
+    answer: "About 17.9 grams in 1 cup (198 grams) of lentils cooked and boiled without salt, from USDA FoodData Central record 172421. That is the cooked cup, not the 24.63 grams per 100 grams of dry brown lentils in the density table."
+  - question: "How much protein is in a cup of cooked oatmeal?"
+    answer: "About 5.9 grams in 1 cup (234 grams) of regular or quick oats cooked with water and without salt, from USDA FoodData Central record 173905. Dry rolled oats in this study are a different row, 13.15 grams per 100 grams, because the water isn't in them yet."
   - question: "Was the protein-density leader also cheapest in your 49-food study?"
     answer: "No. In our 49-food dataset, the label-sourced TVP row leads the density column at 52.17 g per 100 g but ranks 30th on protein per dollar at 23.4 g per dollar. Whole wheat flour, which has an exact USDA match, leads the value ranking at 96.0 g per dollar. Density and price answer different questions."
 ---
@@ -119,6 +127,21 @@ In this study, the clearest density-and-value overlap is dry legumes, dry roaste
 
 Depends who's defining the serving, which is exactly why per-serving charts are so easy to game. A 100 gram portion of dry brown lentils is about 24.6 grams of protein, roughly 49 percent of the FDA's 50 gram [Daily Value](/fiber-protein-daily-values-explained/), for 32 cents. Two large eggs at the same 100 grams give 12.6.
 
-Nobody eats 100 grams of dry lentils at a sitting without cooking them into something, and nobody eats 100 grams of cheddar unless the night has gone sideways. Use the density column to know what you're buying and the portion sizes you actually cook to know what you're eating. How many grams a day that should add up to is a separate question, covered in [how much protein do you need per day](/how-much-protein-do-you-need-per-day/).
+Nobody eats 100 grams of dry lentils at a sitting without cooking them into something, and nobody eats 100 grams of cheddar unless the night has gone sideways. Use the density column to know what you're buying and the portion sizes you actually cook to know what you're eating.
+
+## Common portions
+
+These are not another ranking of the 49 foods. Two of them are portions of foods already in the study, weighed the way people eat them. The two cooked cups are USDA household measures, because this dataset doesn't include cooked yields and I'm not going to invent one.
+
+| Portion | Protein | Where the number comes from |
+|---|---|---|
+| 2 large eggs | 12.6 g | 100 g edible egg at 12.56 g per 100 g in this study |
+| 2 tablespoons peanut butter | 7.1 g | 32 g at 22.21 g per 100 g in this study |
+| 1 cup cooked lentils | 17.9 g | USDA FDC 172421, 1 cup (198 g), boiled without salt |
+| 1 cup cooked oatmeal | 5.9 g | USDA FDC 173905, 1 cup (234 g), oats cooked with water, no salt |
+
+Two eggs beat a cup of cooked oatmeal on protein and lose to a cup of cooked lentils. None of that changes who leads the dry 100 gram table. Density and a spoon are different questions, which is the whole point of keeping them in separate tables.
+
+How many grams a day that should add up to is a separate question, covered in [how much protein do you need per day](/how-much-protein-do-you-need-per-day/).
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv -->

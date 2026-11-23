@@ -36,7 +36,19 @@ faq:
     answer: "Yes, if the fiber counted on the Nutrition Facts label meets FDA's dietary-fiber definition and the product reaches the claim threshold. FDA includes intrinsic plant fiber plus specific isolated or synthetic fibers, with enforcement discretion for additional named fibers such as inulin."
   - question: "Should I only buy foods labeled 'good source of fiber'?"
     answer: "No. Plenty of naturally high-fiber foods like beans, lentils, and whole fruits don't carry front-of-package claims because they don't need them. The label is a marketing tool. The Nutrition Facts panel is more useful for comparing."
+  - question: "A food that is a good source of fiber contains how many grams per serving?"
+    answer: "About 2.8 to 5.3 grams per reference amount, which is 10 to 19 percent of the 28 gram Daily Value. Quizzes and textbooks still using the old 25 gram Daily Value usually want 2.5 grams. That older cutoff is not the current FDA rule."
+  - question: "What percent of the Daily Value is a good source of fiber?"
+    answer: "10 to 19 percent of the Daily Value per reference amount customarily consumed. That is the definition of good source, contains, and provides in 21 CFR 101.54(c)."
+  - question: "How many grams of fiber does a food need to be high in fiber or an excellent source?"
+    answer: "At least 5.6 grams per reference amount, which is 20 percent of the 28 gram Daily Value. 21 CFR 101.54(b) uses that 20 percent line for high, rich in, and excellent source. The old quiz answer, 5 grams, comes from 20 percent of the retired 25 gram Daily Value."
+  - question: "Is the Daily Value for fiber 25 grams or 28 grams?"
+    answer: "28 grams, since the 2016 label update. The old Daily Value was 25 grams, which is why a lot of quizzes still say a good source is 2.5 grams and a high-fiber food is 5 grams. Current labels use 2.8 grams and 5.6 grams for those same 10 percent and 20 percent lines."
 ---
+Good source means 10 to 19 percent of the Daily Value, about 2.8 to 5.3 grams of fiber per reference amount (the RACC, not whatever serving a brand prints). Excellent, high, or rich in means 20 percent or more, at least 5.6 grams. The Daily Value is 28 grams, and it has been since 2016. The old rule was 2.5 grams and 5 grams on a 25 gram Daily Value, which is the pair a lot of textbooks and quizzes still use.
+
+Those thresholds are [21 CFR 101.54(b) and (c)](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54). Paragraph (d) is the part almost nobody memorizes: if the food makes a fiber claim and it isn't low in total fat, the label has to disclose the total fat per labeled serving right next to the claim, in type at least half as big.
+
 On a U.S. food label, "good source of fiber" means one serving gives you 10 to 19 percent of the Daily Value for dietary fiber, and since [FDA lists the fiber DV as 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), that works out to 2.8 to 5.3 grams per serving. The tier above it, "high in fiber" or "excellent source of fiber," requires 20 percent of the DV or more, so at least 5.6 grams per serving. Both come straight from [FDA's nutrient content claim rule, 21 CFR 101.54](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54), and they apply when FDA-regulated food labels use those claims.
 
 That's the answer. Now the part the label doesn't mention.

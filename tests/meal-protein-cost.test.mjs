@@ -87,7 +87,6 @@ const sourdoughSlugs = [
   "easy-sourdough-discard-pizza-dough-no-yeast",
   "easy-sourdough-discard-recipes-beginners",
   "gluten-free-sourdough-discard-pizza-dough",
-  "how-to-make-sourdough-pizza-dough-same-day",
   "how-to-measure-sourdough-discard-grams",
   "what-to-make-with-sourdough-discard-by-amount",
   "can-you-use-sourdough-discard-from-a-new-starter",

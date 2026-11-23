@@ -95,15 +95,47 @@ Between the avocado, the hemp seeds, and the chia itself, this bowl quietly chec
 
 Packing it for work? Keep the toppings in a separate container. Nobody wants avocado that's been pressed against chia pudding since 7 AM.
 
-## A few flavor combos that don't feel weird
+## Fifteen savory ideas, with amounts
 
-The easiest way to get comfortable with savory chia is to think of it as a tiny grain bowl.
+The recipe card above is the one jar I'd repeat. These are the other fourteen, plus that jar counted as the avocado bowl, grouped the way you'd actually cook them. Unless a line says otherwise, the pudding base is the same: 3 tablespoons chia seeds and 1 cup of liquid, stirred twice, chilled at least 4 hours. Gel the seeds before they go anywhere near a spoon.
 
-For a Mediterranean-ish version, use almond milk, garlic powder, lemon juice, cherry tomatoes, cucumber, feta, parsley, and black pepper. It eats like a very lazy tabbouleh cousin.
+### Breakfast bowls
 
-For a breakfast taco angle, use broth, smoked paprika, avocado, salsa, scallions, and a fried or soft-boiled egg. Add crushed tortilla chips right before eating. I support this decision.
+1. **Avocado tomato bowl.** The card: almond milk or broth, garlic powder, smoked paprika, salt, then 1/4 cup halved cherry tomatoes, 1/2 small avocado, and 1 tablespoon hemp or sunflower seeds.
+2. **Egg and scallion.** Broth base. Top with 1 jammy egg and 2 tablespoons sliced scallions.
+3. **Black bean salsa.** Broth base, 1/2 cup rinsed black beans, 2 tablespoons salsa, and a squeeze of lime. Add the salsa at the table so the jar doesn't weep.
+4. **Cucumber and feta.** Almond-milk base, 1/4 cup diced cucumber (patted dry), 2 tablespoons crumbled feta, and lemon juice.
+5. **Smoked salmon.** Almond-milk base, about 1 ounce smoked salmon, a few dill fronds, and lemon. Salt the base lightly. The fish is already salty.
 
-For something closer to avocado toast, use almond milk, everything bagel seasoning, avocado, cherry tomatoes, chili flakes, and a squeeze of lemon. Same breakfast mood, fewer crumbs on your shirt.
+### Savory chia pudding
+
+6. **Curry.** Whisk 1/2 teaspoon curry powder into 1 cup low-sodium broth with the 3 tablespoons of chia. Finish with scallions.
+7. **Miso.** Whisk 1 teaspoon white miso into the cup of broth before the chia goes in. Don't boil it later or the miso tastes flat.
+
+### Chia crackers
+
+Stir 1/4 cup chia seeds with 1/2 cup water and let it gel about 10 minutes. Spread it thin on parchment. Bake at 300 degrees F until the sheet is dry and snaps, then break it into pieces. That base is three crackers, not three puddings.
+
+8. **Cheddar.** Fold 1/2 cup shredded cheddar into the gel before you spread it.
+9. **Everything seasoning.** Sprinkle 1 teaspoon everything seasoning over the wet sheet.
+10. **Sesame.** Stir in 1 tablespoon sesame seeds.
+
+### Chia-bound burgers and fritters
+
+Chia here is the glue, not the pudding. Let it sit in the mix for 5 minutes so it grabs before you fry.
+
+11. **Black bean patties.** Mash 1 rinsed 15-ounce can of black beans with 2 tablespoons chia seeds and 1 egg. Pan-fry as 4 small patties.
+12. **Zucchini fritters.** 1 cup grated zucchini, squeezed dry, plus 2 tablespoons chia and 1 egg. Pan-fry in a thin layer of oil.
+13. **Lentil fritters.** 1 cup cooked lentils, 1 tablespoon chia, and 1 egg. Same pan, same idea. The lentils are already soft, so don't add more liquid.
+
+### Chia dressing
+
+These gel in about 10 minutes. They are not a breakfast jar.
+
+14. **Lemon garlic.** 1 tablespoon chia, 1/4 cup lemon juice, 1/4 cup water, 1 minced garlic clove, and a pinch of salt.
+15. **Miso ginger.** 1 tablespoon chia, 1 teaspoon white miso, 1 teaspoon grated ginger, 1/4 cup water, and 1 teaspoon rice vinegar.
+
+The Mediterranean, taco, and everything-bagel bowls from the old short list are already in here: cucumber and feta, black bean salsa with an egg if you want the taco version, and the avocado bowl with everything seasoning instead of paprika. Same jars. Less guessing.
 
 ## Can you eat it warm?
 

@@ -18,7 +18,17 @@ faq:
   - question: "Is canned bean nutrition different from dried bean nutrition?"
     answer: "It is the same bean. The difference is water and price. Dry black beans carry 21.6 grams of protein per 100 grams against 6.0 grams for the canned version, because the canned beans have been cooked and are sitting in liquid. Per dollar the gap narrows but stays real, at 58.0 grams against 30.1."
   - question: "How many dried beans equal a can of beans?"
-    answer: "We will not give you a number, because our data cannot support one honestly. Matching a can of black beans on protein takes about 123 grams of dry beans; matching the same can on fiber takes about 195 grams. Those two answers disagree, which means we hold no reliable dry to cooked conversion. The bag itself is a better guide."
+    answer: "About 1/2 to 3/4 cup dried, roughly 90 to 125 grams. A drained 15-ounce can is about 1 1/2 cups, or about 9 ounces (255 grams). Milk Street's 11-bean test landed near 1/2 cup dried per can. Serious Eats' 1-pound test landed near 3/4 cup (4.5 ounces). Our own protein match for black beans is about 123 grams of dry beans per can, which sits inside that range. That is a kitchen yield, not a number our price CSVs can prove on their own."
+  - question: "How many cans are in a pound of dry beans?"
+    answer: "About 3 1/2 to 4 cans. One pound dried cooks into about 6 to 7 cups. A drained 15-ounce can is about 1 1/2 cups, so the pound covers roughly that many cans. The Bean Institute's chart uses 6 cups cooked and about 1.75 cups per can, which is the low end of the range. Serious Eats measured 6 1/2 to 7 cups cooked per pound."
+  - question: "How much is a can of beans?"
+    answer: "In our July 2026 prices, a 15.5 ounce can of store-brand black beans was $0.88. Canned kidney beans and canned chickpeas were $0.98. Those are the cans in the cost table on this page, not a national average for every brand."
+  - question: "Do you have to cook canned beans?"
+    answer: "No. Commercially canned beans are already heat-processed in the sealed can, which is why the can is shelf-stable. Heating is for temperature and flavor. Skip any can that is swollen, leaking, punctured, deeply rusted, or dented so badly it will not stack or open normally."
+  - question: "How long do opened canned beans last?"
+    answer: "Three to four days in the fridge, in a covered container, not in the open can. FoodSafety.gov puts refrigerated leftovers in that window. Get them into the fridge within 2 hours of opening, or within 1 hour if the room is above 90 degrees F."
+  - question: "How much protein is in a can of beans?"
+    answer: "A 15.5 ounce can of black beans, 439 grams including the liquid, carries about 26.5 grams of protein and about 30.3 grams of fiber at the USDA figures in this study. The same can size is about 22.9 grams of protein for kidney beans and about 21.6 grams for chickpeas. Draining and rinsing lowers what you actually eat, so treat these as the whole-can ceiling."
   - question: "Do you lose nutrients when beans are canned?"
     answer: "Our datasets cannot answer that properly. We hold protein and fiber, and on those two the canned figures per 100 grams are lower mostly because of added water rather than loss. We hold no vitamin or mineral data at all, so if you want to compare micronutrients, USDA FoodData Central is the place to look rather than us."
   - question: "Are dried beans healthier than canned beans?"
@@ -26,6 +36,8 @@ faq:
   - question: "Which beans give the most fiber per dollar?"
     answer: "Among the beans in this table, dry pinto beans returned 41.7 grams of fiber per dollar and dry black beans 41.6. On the canned side, canned black beans led at 34.4 grams per dollar. Green split peas, not in the head-to-head pairs, led the wider dry-legume fiber list at 71.0. Increasing fiber quickly can be uncomfortable, so building up over a couple of weeks could be easier on you."
 ---
+
+One 15-ounce can is about 1 1/2 cups drained, roughly 9 ounces or 255 grams. That replaces about 1/2 to 3/4 cup dried, roughly 90 to 125 grams. One pound dried cooks into about 6 to 7 cups, which is about 3 1/2 to 4 cans.
 
 Same bean. Different amount of water, and a very different price per gram. Dry black beans carry 21.6 grams of protein per 100 grams against 6.0 grams for the canned version, and they return 58.0 grams of protein per dollar against 30.1 for the can.
 
@@ -52,11 +64,46 @@ The columns that actually mean something are the last two, because a dollar is a
 
 ## How many dried beans equal a can?
 
-We're not going to tell you, and the reason is worth spelling out.
+About 1/2 to 3/4 cup dried, or roughly 90 to 125 grams, for one drained 15-ounce can.
 
-Run the conversion on protein and you get one answer: a can of black beans holds about 26.5 grams of protein, and matching that from the dry bag takes roughly 123 grams of dry beans. Run the same conversion on fiber and you get a different answer: the can holds about 30.3 grams of fiber, and matching that takes roughly 195 grams of dry beans.
+That range is a kitchen yield, measured by people who cooked the beans, not a ratio we reverse-engineered from our price files. [Milk Street cooked 11 varieties](https://www.177milkstreet.com/stories/bean-counting-dried-vs-canned) from 1 cup dried and found most 15 1/2-ounce cans, drained, were about 1 1/2 cups (about 9 1/2 ounces). Their rule of thumb was about 1/2 cup dried per can. [Serious Eats weighed six varieties](https://www.seriouseats.com/is-there-a-ratio-for-converting-between-dried) and found a drained 15-ounce can closer to 1 1/2 cups or 9 ounces, which they matched with about 3/4 cup (4.5 ounces) dried. One pound dried landed around 6 1/2 to 7 cups cooked in that test, and the [Bean Institute yield chart](https://beaninstitute.com/resources/cook-with-beans/dry-vs-canned/) uses 6 cups cooked per pound and about 1.75 cups drained per 15-ounce can. Put those together and a pound of dried beans is about 3 1/2 to 4 cans.
 
-Those two answers disagree by about 60 percent. That's your signal that we hold no reliable dry to cooked yield ratio, only nutrient content and prices, and that a clean sounding conversion built out of our numbers would be fiction. Plenty of sites will hand you a confident cup measurement. We priced groceries and read labels, so we'll stay in our lane and say the bag's own instructions are a better guide than we are.
+Our CSVs still cannot prove a cooked yield. Protein and fiber don't even agree with each other: a can of black beans holds about 26.5 grams of protein, and matching that from the dry bag takes roughly 123 grams, while matching the can's 30.3 grams of fiber takes roughly 195 grams. That 123 gram protein match does land inside the 90 to 125 gram kitchen range, which is reassuring, and it is not a cup of cooked beans. For a main-dish portion rather than a can swap, 90 grams of the dry pinto beans in this study is about 19.3 grams of protein.
+
+| Bean | Dried per 15-oz can | Cooked from 1 cup dried |
+|---|---|---|
+| Black | 1/2 to 3/4 cup (about 90-125 g) | 2 1/2 cups (Milk Street). Serious Eats: 1 lb cooked to 7 cups. |
+| Pinto | 1/2 to 3/4 cup (about 90-125 g) | 2 3/4 cups. Serious Eats: 1 lb cooked to 6 1/2 cups. |
+| Kidney | 1/2 to 3/4 cup (about 90-125 g) | 3 cups. Serious Eats: 1 lb red kidney cooked to 6 1/2 cups. |
+| Chickpea | 1/2 to 3/4 cup (about 90-125 g) | 2 3/4 cups. Serious Eats: 1 lb cooked to 7 cups. |
+| Navy | 1/2 to 3/4 cup (about 90-125 g) | 2 3/4 cups (Milk Street). Serious Eats did not test navy beans. |
+| Cannellini | 1/2 to 3/4 cup (about 90-125 g) | 3 1/4 cups. Serious Eats: 1 lb cooked to 6 1/2 cups. |
+
+The dried-per-can column is the shared range, not a separate lab result for each bean. The cooked-cups column is Milk Street's overnight-soak test. Serious Eats measured by the pound, and a pound is not the same number of dry cups for every bean, so those two tests will not collapse into one fake-precise cell.
+
+<p><a href="/tools/dried-beans-to-canned-converter/" style="display:inline-block;background:#F29B30;color:#fff;font-weight:700;padding:0.75rem 1rem;border-radius:0.7rem;text-decoration:none;">Open the dried-to-canned converter</a></p>
+
+The [converter](/tools/dried-beans-to-canned-converter/) answers a different question on purpose. It tells you how many grams of dry beans carry the same protein as the can, at the July 2026 prices, instead of pretending our spreadsheet measured a cooked cup.
+
+## Do you have to cook canned beans?
+
+No. The can already did it. Low-acid foods like beans are sealed and heat-processed, which is what [21 CFR 113](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-113) is about, and it's why an unopened can sits in a cupboard. Warm them if you want them hot. Five to ten minutes in a pan is plenty. A long simmer doesn't make them safer. It makes them mush.
+
+Rinse unless the recipe wants the starchy liquid. And don't open a can that's swollen, leaking, punctured, deeply rusted, or dented so badly it won't stack. [FDA's storage guidance](https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely) is the short version of that rule.
+
+## How long do opened canned beans last?
+
+Three to four days, in a covered container in the fridge, not in the open can. That's the leftover window on the [FoodSafety.gov cold storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts). The clock to get them cold is the usual one: within 2 hours, or within 1 hour if the room is above 90 degrees F.
+
+An open can is a bad container. No seal, a cut metal edge, and a top layer that dries out. Move the beans, liquid and all, into something with a lid.
+
+Unopened is a different clock. [USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/steps-keep-food-safe) puts low-acid canned foods, which includes beans, at 2 to 5 years on the shelf if the can stays sound and is stored cool, clean, and dry. A best-by date is a quality date, not a safety date. Except for infant formula, [FSIS says product dating isn't required by federal law and isn't an indicator of safety](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-product-dating). The can tells you more than the stamp. Bulging, leaking, heavy rust, or a deep dent on a seam means throw it out, and don't taste it to check.
+
+## How much protein is in a can of beans?
+
+About 26.5 grams in a 15.5 ounce can of black beans, using 6.03 grams of protein per 100 grams and the 439 gram net weight, liquid included. That's roughly 53 percent of the FDA's 50 gram Daily Value, and the same can carries about 30.3 grams of fiber. Kidney beans in that can size are about 22.9 grams of protein. Chickpeas are about 21.6. At the July 2026 prices in the cost table, those cans were $0.88, $0.98, and $0.98.
+
+Drain and rinse and you eat less than the whole-can number. Read 26.5 grams as the ceiling, not the plate. The wider per-100-gram comparison across the beans we actually priced is the table at the top of this page. We didn't price canned cannellini, canned pinto, or canned navy, so those three stay off the claim.
 
 ## Do you lose anything by buying the can?
 
@@ -95,7 +142,7 @@ A serving here is 15 grams of protein, so the can and the bag are buying the sam
 
 Both, for different jobs.
 
-Bags for the cooking you plan. A 4 pound bag of pinto beans at $6.75 returns 57.6 grams of protein per dollar and feeds you for weeks, as long as you have somewhere to keep it. Brown lentils, at 77.7 grams from a $1.44 bag, buy more protein per dollar. We covered that in how long dried beans last, and the sequence for getting a good pot out of it is in [how to cook dried beans from scratch](/how-to-cook-dried-beans-from-scratch/).
+Bags for the cooking you plan. A 4 pound bag of pinto beans at $6.75 returns 57.6 grams of protein per dollar and feeds you for weeks, as long as you have somewhere to keep it. Brown lentils, at 77.7 grams from a $1.44 bag, buy more protein per dollar. How long that bag stays useful is in [how long dried beans last](/how-to-cook-dried-beans-from-scratch/#how-long-dried-beans-last), and the sequence for getting a good pot out of it is in [how to cook dried beans from scratch](/how-to-cook-dried-beans-from-scratch/).
 
 Cans for the cooking you don't. At 88 cents, a can that needs no soak and no cooking at all is still cheaper protein than almost anything else in the building. It only looks expensive standing next to the bag.
 

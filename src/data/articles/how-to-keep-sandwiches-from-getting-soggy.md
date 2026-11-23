@@ -32,6 +32,10 @@ faq:
     answer: "A hard-sided container is generally superior to a plastic bag because it prevents the sandwich from being compressed, which can squeeze juices out of fillings and into the bread. For maximum freshness, wrap the sandwich tightly in parchment paper or beeswax wrap before placing it in the container. This helps maintain the structure and keeps the internal moisture contained."
   - question: "How far ahead can I make a sandwich?"
     answer: "USDA guidance says it is fine to build a bag lunch the night before as long as the packed lunch goes straight into the refrigerator. The limit that matters is holding time out of the fridge, not prep time: perishable food should not sit at room temperature for more than 2 hours, or 1 hour if it is above 90 degrees F. Pack an ice source in an insulated soft-sided bag so the sandwich stays cold until you eat it."
+  - question: "How do I pack a salad so it doesn't wilt by noon?"
+    answer: "Keep the dressing in its own leakproof cup. In a jar or tall container, put the heavy wet ingredients on the bottom, then the protein, and the dry greens on top. Let any cooked ingredients cool completely before you snap the lid on, or the steam drips back onto the lettuce."
+  - question: "How do you keep a loaf from molding before it becomes sandwiches?"
+    answer: "Don't refrigerate the loaf you still want soft. The fridge speeds staling. Keep the part you'll eat in the next couple of days in a cool spot, away from the stove and the dishwasher vent, and only wrap it after it has cooled completely. Slice and freeze the rest, then toast slices straight from the freezer."
 ---
 I've spent more time than I care to admit staring at a sad, damp pile of turkey and rye bread in the office breakroom. You spend ten minutes carefully layering a high-protein lunch, and by noon the bread has the structural integrity of a wet sponge. It makes you want to give up and buy a ten-dollar salad that won't even keep you full until three.
 
@@ -82,5 +86,23 @@ So pack an ice source. FSIS recommends an insulated soft-sided lunch bag with a 
 You don't have to do all this at 6:45 AM. FSIS says it's fine to prepare the food the night before as long as the packed lunch goes into the refrigerator until you leave. An overnight rest with the fat barrier already in place beats rushing the layering.
 
 The deeper make-ahead move is the freezer. Freezing sandwiches helps them stay cold on the commute, and a frozen one thaws over the morning instead of sweating. One catch, straight from FSIS: for best quality, don't freeze sandwiches containing mayonnaise, lettuce, or tomatoes. Freeze the plain meat-and-cheese-on-buttered-bread version and add the wet stuff the morning you eat it.
+
+Wrap the finished sandwich in parchment or beeswax, not a sealed plastic bag. The bag traps moisture against the crumb. Parchment holds the layers still and lets a little air move, which is the difference between a sandwich and a steam room.
+
+## Pack a salad jar the night before
+
+Salads fail for the same reason sandwiches do. Water finds the greens and stays there.
+
+The dressing never goes in the jar. A tiny leakproof cup, added when you eat, is the whole trick. If you're packing a tall container, the heaviest wet things go on the bottom: cucumbers, tomatoes, beans, carrots. Protein next. Dry leaves last, as far from that puddle as the lid allows. Dump it into a bowl at noon, then add the dressing.
+
+Dry the greens until a towel comes away bored. Wet lettuce starts wilting in the container before you leave the house. And if the chicken or the roasted vegetables are still warm, wait. A hot lid makes condensation, and that condensation drips onto the one ingredient you were trying to protect.
+
+## Bread that won't mold before lunch
+
+A sandwich strategy doesn't help if the loaf is fuzzy on Wednesday.
+
+Don't park the loaf in the fridge to "be safe." Cold air slows mold and speeds staling, so you trade a green spot for bread that toasts like cardboard. For the next couple of days, a cool counter or a bread box is enough, away from the stove, the sunny window, and the dishwasher vent. Cool the loaf all the way before you wrap it. Warm bread in a bag is a condensation machine.
+
+Anything you won't finish that soon, slice first and freeze. A frozen whole loaf is a bread boulder. Toast the slices from frozen. That's the loaf that still exists when you want a sandwich on Friday.
 
 Packing a lunch shouldn't feel like a science experiment, but a few small adjustments go a long way. Fat as a barrier, wet stuff in the middle, an ice pack in the bag, and for the love of all things holy, let your toast cool down. You might actually look forward to that sandwich instead of eating it because it's there. And once your structure is sound, have some fun with the fillings; my favorite [egg sandwich add-ins and toppings](/healthy-egg-sandwich-add-ins-toppings/) are a good place to start.

@@ -50,7 +50,7 @@ If you're using a deep container, the order in which you stack your ingredients 
 **Middle Layer:** Salami, hard cheeses, or olives.
 **Top Layer:** Fresh herbs, spinach, or cherry tomatoes.
 
-Keep the greens on top so they don't get crushed or wilted by the weight of the pasta. It's the same stacking logic behind [packing a lunch so sandwiches and salads stay crisp](/how-to-pack-lunch-crisp-sandwiches-salads/) on an ordinary workday. If you're using something particularly fragile like arugula, honestly, just bring it in a separate bag and throw it on at the end. Your sanity is worth the extra thirty seconds of effort.
+Keep the greens on top so they don't get crushed or wilted by the weight of the pasta. It's the same stacking logic behind [packing a lunch so sandwiches and salads stay crisp](/how-to-keep-sandwiches-from-getting-soggy/) on an ordinary workday. If you're using something particularly fragile like arugula, honestly, just bring it in a separate bag and throw it on at the end. Your sanity is worth the extra thirty seconds of effort.
 
 ## Cold chain management in the cooler
 The goal is to keep the salad at or below 40 degrees Fahrenheit. [USDA's outdoor food-safety guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/food-safety-while-hiking-camping) specifically includes pasta salads among the foods that belong in a cooler. It also gives the clock: no more than two hours above 40 degrees, or one hour when the air temperature is above 90 degrees Fahrenheit. A lukewarm bowl isn't just disappointing. It's now running on a deadline.

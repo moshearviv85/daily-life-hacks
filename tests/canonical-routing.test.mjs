@@ -249,7 +249,6 @@ test("GSC impression article URLs pass through as live canonical pages", async (
       "/how-to-quick-soak-dried-beans-same-day/",
       "/how-to-preheat-skillet-even-browning/",
       "/keep-berries-fresh-longer-when-to-wash/",
-      "/how-to-pack-lunch-crisp-sandwiches-salads/",
       "/plan-week-of-dinners-fewer-grocery-runs/",
     ]),
   );
@@ -263,7 +262,6 @@ test("GSC impression article URLs pass through as live canonical pages", async (
     "how-to-quick-soak-dried-beans-same-day",
     "how-to-preheat-skillet-even-browning",
     "keep-berries-fresh-longer-when-to-wash",
-    "how-to-pack-lunch-crisp-sandwiches-salads",
     "plan-week-of-dinners-fewer-grocery-runs",
   ]) {
     const response = await onRequest(

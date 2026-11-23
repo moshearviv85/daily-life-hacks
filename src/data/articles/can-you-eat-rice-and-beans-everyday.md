@@ -25,6 +25,14 @@ faq:
     answer: "We cannot answer that from our own data, because our 22 datasets cover protein, fiber, and price only. No vitamins, no minerals, no iron. What we can say is that adding cheap produce is not expensive: frozen green peas returned 17.6 grams of fiber per dollar and frozen green beans 10.8, so variety does not have to cost much."
   - question: "How much does a day of rice and beans cost?"
     answer: "Less than most people expect. The bean and rice portion of one dinner came to about $0.32 in our audited day costing, and a fiber focused version using 60 grams of dry pinto beans and 50 grams of dry brown rice came to $0.23 for 11.1 grams of fiber. Those are ingredient costs at July 2026 prices, not a full day of eating."
+  - question: "How much rice and beans per person per day?"
+    answer: "For a normal plate, about 1 to 2 cups of cooked rice and 1 to 2 cups of cooked beans. When rice and beans are the main calories, the World Food Programme and WHO emergency-ration examples use about 400 grams of dry cereal and 50 to 100 grams of dry pulses per person per day. The common line in those examples is 400 grams of cereal and 60 grams of pulses. A 2-to-1 dry ratio, rice to beans by weight, is the simpler storage math, and it is not the same thing as that ration."
+  - question: "How long can cooked rice and beans sit out?"
+    answer: "Two hours at room temperature, or 1 hour if the air is above 90 degrees F. USDA FSIS says perishable food has to be refrigerated within that window, in shallow containers so it cools fast, and refrigerated leftovers should be used within 3 to 4 days. Rice is the fussier half because Bacillus cereus spores can survive cooking and make a heat-stable toxin if the pot sits out."
+  - question: "What beans are used for red beans and rice?"
+    answer: "Small red beans, traditionally. Red kidney beans are the substitute most stores actually sell. Dry red kidney beans need a real boil: FDA says soak them at least 5 hours, discard the water, and boil them in fresh water for at least 30 minutes. Canned kidney beans are already cooked. A slow cooker is the wrong place to start with dry kidney beans."
+  - question: "How much lentils per person per day?"
+    answer: "On a normal plate where lentils are the main dish, about 100 grams dry. In our July 2026 data that is 24.6 grams of protein from brown lentils. If lentils are standing in for the beans in a rice-and-pulse ration, the same 60 to 100 gram dry range is the one the emergency-ration examples use for pulses."
 ---
 
 Yes, people do it, and the numbers behind it are better than the reputation. A dinner built from 90 grams of dry pinto beans and 60 grams of dry brown rice came to 23.8 grams of protein for about 32 cents in our audited day costing. That is roughly 48 percent of the FDA's 50 gram protein Daily Value from one very cheap plate.
@@ -46,7 +54,37 @@ Cents, which is the whole reason the question gets asked in the first place.
 
 In our day costing work, the bean and rice portion of one dinner ran 90 grams of dry pinto beans at $0.20 for 19.3 grams of protein, plus 60 grams of dry brown rice at $0.12 for 4.5 grams. Thirty two cents, 23.8 grams of protein. Run the same plate for fiber and 60 grams of pinto beans plus 50 grams of brown rice gave 11.1 grams of fiber for 23 cents.
 
-Those are ingredient costs, not a full day of eating, and they assume you cook from the bag. If you want the portion math per person laid out properly, we did that in how much rice and beans per person per day.
+Those are ingredient costs, not a full day of eating, and they assume you cook from the bag. The per-person portions, including the bigger ration, are in the next section.
+
+## How much rice and beans per person per day
+
+Two different questions get mashed into this one, and they have two different answers.
+
+For a normal dinner, cook about 1 to 2 cups of rice and 1 to 2 cups of beans per person. That's a plate, not a survival plan. The 90 grams of dry pinto beans plus 60 grams of dry brown rice in the section above is one of those plates: 23.8 grams of protein for about 32 cents.
+
+When the pot is the main source of calories, use dry weight and a published ration, not a dinner scoop. The UN handbook [Food and Nutrition Needs in Emergencies](https://iris.who.int/server/api/core/bitstreams/c6f336b9-0c36-4431-80fd-840c05344817/content), the planning guide used by the World Food Programme and WHO, gives five example full rations. Cereal runs 350 to 450 grams per person per day. Pulses run 50 to 100 grams. The line that shows up most often is 400 grams of cereal and 60 grams of pulses. One example uses 100 grams of pulses. That's where "about 400 grams of dry rice plus 60 to 100 grams of dry beans" comes from, and it assumes oil and a few other items are in the basket too. It is not a recommendation to eat only rice and beans.
+
+For storage math that isn't a full ration, keep about 2 parts dry rice to 1 part dry beans by weight. That's easier to shop than the 400-to-60 split, and it is a different job.
+
+This table uses the common example, 400 grams of dry rice and 60 grams of dry beans per person per day. A month is 30 days. If you shop the 100 gram pulse example instead, scale the bean column by 100/60.
+
+| People | Day, rice | Day, beans | Week, rice | Week, beans | 30 days, rice | 30 days, beans |
+|---|---|---|---|---|---|---|
+| 1 | 400 g | 60 g | 2.8 kg | 420 g | 12 kg | 1.8 kg |
+| 2 | 800 g | 120 g | 5.6 kg | 840 g | 24 kg | 3.6 kg |
+| 4 | 1.6 kg | 240 g | 11.2 kg | 1.68 kg | 48 kg | 7.2 kg |
+
+If the pulse is lentils, a main-dish portion in our July 2026 data is about 100 grams of dry brown lentils, which is 24.6 grams of protein. The 60 to 100 gram ration range still covers a lentil day when rice is doing the calorie work.
+
+Red beans and rice wants a specific bean. Small red beans are the traditional one. Red kidney beans are what most stores sell, and a 15.5 ounce can of them was $0.98 in this study, at 23.4 grams of protein per dollar. Dry red kidney beans are the one bean you don't just toss in a slow cooker. [FDA's natural-toxins page](https://www.fda.gov/food/chemical-contaminants-pesticides/natural-toxins-food) says soak them at least 5 hours, throw out the soak water, and boil them in fresh water for at least 30 minutes so the phytohaemagglutinin is destroyed. Canned kidney beans already had that heat treatment.
+
+## How long can cooked rice and beans sit out
+
+Two hours. One hour if the room is above 90 degrees F. [USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety) says leftovers have to be refrigerated within that window, and anything left out longer gets thrown out. The same page says to divide a big pot into shallow containers so it actually cools, instead of leaving a warm mass in the middle of the fridge. Use refrigerated leftovers within 3 to 4 days, and reheat to 165 degrees F.
+
+Rice is the half of the pot that gets people sick when it sits out. Bacillus cereus spores can survive cooking. If the rice stays in the danger zone, those spores can grow and make a toxin that reheating doesn't reliably destroy. A [CDC report on a fried-rice outbreak](https://www.cdc.gov/mmwr/preview/mmwrhtml/00025744.htm) is the plain-language version: the problem was holding cooked rice at room temperature. Beans don't get a free pass. They ride in the same pot, on the same clock.
+
+Cool it, cover it, and date the container. The fridge is doing temperature control, not a magic trick on a pot that sat through a movie.
 
 ## Is rice and beans good for you?
 
@@ -80,6 +118,6 @@ Swap pinto for black beans and the whole bowl reads differently for nearly the s
 
 Cook once, eat three times. That's the only version of this that survives a real week, and the [budget playbook](/eat-healthy-on-a-budget-complete-playbook/) is built around the same idea.
 
-Rice and beans every day is a genuinely good deal and a genuinely narrow menu. Treated as the base of the plate rather than the whole plate, it holds up fine. If you want the bean side of it done properly, start with what beans to use for red beans and rice and how long a cooked pot can safely sit out.
+Rice and beans every day is a genuinely good deal and a genuinely narrow menu. Treated as the base of the plate rather than the whole plate, it holds up fine. The portion table above is the amount. The sit-out rule above is the clock. Neither one is optional if this is going to be dinner more than once.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-day-cost-2026.csv, public/data/fiber-day-cost-2026.csv, public/data/cheapest-complete-protein-pairs-2026.csv, public/data/produce-fiber-per-dollar-ranked-2026.csv -->

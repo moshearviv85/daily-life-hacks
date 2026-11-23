@@ -42,6 +42,18 @@ faq:
   answer: Yes. Cool it quickly, portion it into flat freezer bags or containers,
     label it, and freeze. Reheat from frozen with a spoonful of water until the
     center reaches 165 degrees Fahrenheit.
+- question: How do you cool rice for fried rice?
+  answer: Spread the just-cooked rice on a sheet pan so the steam can leave,
+    then refrigerate it within an hour. USDA FSIS still draws the hard line at
+    2 hours, or 1 hour above 90 degrees F. Rice is a bad food to use the whole
+    window, because Bacillus cereus spores can survive cooking and make a toxin
+    if the rice sits out. Day-old rice fries cleaner because the surface has dried.
+- question: Can you make cauliflower fried rice with eggs?
+  answer: Yes. Rice a head of cauliflower or start with a frozen bag, scramble
+    3 eggs in 1 tablespoon of sesame oil and set them aside, then stir-fry the
+    cauliflower with garlic, ginger, 1/2 cup peas and carrots, and 3 tablespoons
+    soy sauce. Cook frozen cauliflower rice from frozen so it doesn't steam into
+    mush. The full variation is on this page.
 ---
 You made way too much rice. Again. 
 
@@ -68,11 +80,33 @@ Cold rice works surprisingly well as the base for a hearty salad. Toss it in a b
 
 The main rule of rice is food safety. [USDA's leftovers guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety) says to refrigerate leftovers within two hours and use refrigerated leftovers within three to four days. With just a tiny bit of effort, a massive container of extra rice stops being a guilt-inducing waste and becomes the easiest part of your meal prep.
 
-## Cool leftover rice quickly
+## How to cool rice for fried rice (and why day-old works)
 
-Don't leave a deep pot of rice on the counter while dinner, dishes, and television happen around it. Spread the extra rice in a shallow container so heat escapes faster, then refrigerate it within two hours. USDA recommends shallow containers for faster, more even cooling. A [CDC report on a fried-rice outbreak](https://www.cdc.gov/mmwr/preview/mmwrhtml/00025744.htm) also explains the rice-specific problem: *Bacillus cereus* spores may survive cooking, and holding cooked rice at room temperature gives the bacteria a chance to multiply. The refrigerator isn't a time machine.
+Fresh rice hits the pan wet, and the starch is still sticky. That's how you get porridge with soy sauce on it. Day-old rice has dried on the surface, so the grains fry instead of clumping. The fridge is a dehumidifier with a door.
 
-The full method is in this guide to cooling rice for fried rice. The short version is shallow, prompt, and cold. The refrigerator is doing temperature control, not performing a miracle on a steaming stockpot.
+If you didn't cook it yesterday, force the drying. Spread the rice in a thin layer on a sheet pan. Don't leave it in the pot. A deep pot stays hot in the middle long after the top looks fine. Get that pan into the fridge within an hour. [USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety) still draws the hard line at 2 hours, or 1 hour if the room is above 90 degrees F, and says to use shallow containers so the food actually cools. Rice shouldn't spend that whole window on the counter.
+
+The reason is Bacillus cereus. Spores can survive cooking. Held warm, they can grow and make a toxin that a second trip through the skillet doesn't reliably destroy. A [CDC report on a fried-rice outbreak](https://www.cdc.gov/mmwr/preview/mmwrhtml/00025744.htm) is the short version: the failure was holding cooked rice at room temperature. The refrigerator isn't a time machine.
+
+Long grain or jasmine behaves better than short-grain sushi rice, which wants to stick. Brown rice works too. The bran gives it something to hold onto.
+
+## Cauliflower fried rice with eggs
+
+Same skillet habit, no leftover rice required. This is one head of cauliflower, or a bag of frozen cauliflower rice, for 4 servings in about 25 minutes.
+
+- 1 large head cauliflower, riced (about 4 cups), or 1 bag frozen cauliflower rice
+- 2 tablespoons sesame oil, divided
+- 3 large eggs, lightly beaten
+- 1/2 cup frozen peas and carrots
+- 1/2 cup chopped green onions, whites and greens separated
+- 2 cloves garlic, minced
+- 1 tablespoon minced ginger
+- 3 tablespoons low-sodium soy sauce
+- 1 tablespoon rice vinegar
+
+Scramble the eggs in 1 tablespoon of the oil and pull them out. In the rest of the oil, soften the onion whites, peas, garlic, and ginger for about 2 minutes. Add the cauliflower and cook 5 to 7 minutes, stirring, until the moisture cooks off and it's tender without going soggy. Frozen cauliflower rice goes in still frozen. Thawing it first is how the pan turns into a puddle. Stir in the soy sauce and vinegar, then the eggs and the green onion tops. One more minute.
+
+Covering the pan is the other way to make it sad. The lid traps the steam you were trying to drive off. Denser vegetables can take the heat. Peas already in the mix are there for color, not for a crust.
 
 ## Reheat rice without drying it out
 

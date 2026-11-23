@@ -50,6 +50,8 @@ faq:
     answer: "No. This is a quick baking-powder crust that uses discard for flavor and waste reduction. It does not go through the long fermentation schedule of traditional sourdough pizza, so choose it for speed and texture rather than digestive claims."
   - question: "Why is my sourdough discard pizza dough tough?"
     answer: "Tough pizza dough usually happens from over-kneading or adding too much flour. Since this recipe doesn't rely on yeast development, you only need to knead it until the ingredients are fully incorporated. If you work the dough too long, the gluten becomes too tight, which results in a chewy or hard crust once it hits the oven heat."
+  - question: "Can you make sourdough discard pizza dough the same day?"
+    answer: "Yes. The crust on this page is ready in about 40 minutes with baking powder and no rise. If you want a chewier, yeasted crust the same day, mix discard with a teaspoon of instant yeast and give it about 3 hours, closer to 4 if you take the optional second rise. That hybrid is in the same-day section below."
 ---
 
 Pizza at the end of the day is a reasonable request. Remembering to start dough that morning is a separate skill. This sourdough discard pizza dough uses baking powder and a short rest, so there's no yeast rise to schedule.
@@ -87,7 +89,34 @@ After mixing, the dough should hold together without dry pockets. It can feel sl
 
 Roll the center thin and even, about 1/8 inch where practical. Leaving a thick lump in the middle while thinning the edges is how you get a pizza that's simultaneously burned and underdone. An impressive achievement, but an unhelpful one.
 
-This is a quick crust. Baking powder supplies the immediate lift. It doesn't need the long kneading or fermentation schedule of same-day sourdough pizza dough.
+This is a quick crust. Baking powder supplies the immediate lift. It doesn't need the long kneading or fermentation schedule below.
+
+## Same-day version (ready in about 3 hours)
+
+This is the other dough, for the night you want a real rise and you still decided at lunch. Discard brings the tang. A pinch of instant yeast keeps dinner on a Tuesday clock. Skip it if the 40-minute crust above is what you came for.
+
+Enough for two personal pizzas or one sheet-pan pizza:
+
+- 1 cup (about 240 g) unfed sourdough discard
+- 2 1/4 cups (about 280 g) bread flour or all-purpose flour, plus a little for dusting
+- 1/2 cup warm water (about 100 to 110 degrees F), plus 1 or 2 tablespoons if the dough feels stiff
+- 1 teaspoon instant yeast
+- 1 teaspoon sugar or honey
+- 1 1/4 teaspoons fine salt
+- 1 tablespoon olive oil, plus more for the bowl
+
+Bread flour gives you more chew. All-purpose still works. If the flour choice is about fiber, the [pizza crust comparison](/comparing-fiber-content-different-pizza-crusts/) puts white, whole wheat, chickpea, and cauliflower crusts on one scoreboard.
+
+1. Stir the warm water, sugar, and yeast. Add the discard, oil, and salt, then the flour, until the dough is shaggy.
+2. Knead 6 to 8 minutes, until it's smoother and elastic. A stand mixer with a dough hook needs about 5 minutes on low-medium. Dust a teaspoon at a time if it glues itself to the counter. If it cracks, wet your hands and keep going.
+3. Oil a bowl, cover the dough, and let it rise somewhere warm for 60 to 75 minutes, until it's roughly doubled. A turned-off oven with the light on is warm enough.
+4. Divide into two balls for personal pizzas, or keep one ball for a sheet pan. Cover and rest 15 to 20 minutes so it will stretch instead of snapping back.
+5. Optional: let the balls puff another 30 to 45 minutes while you heat the oven and prep toppings. Skip this and you're closer to 3 hours. Take it and you're closer to 4.
+6. Heat the oven to 500 degrees F if it can do that safely, or as hot as it goes. Preheat a stone, steel, or upside-down sheet pan for at least 45 minutes. Stretch by hand, sauce lightly, and bake 8 to 12 minutes, until the bottom has color and the cheese is bubbling.
+
+Cold discard from the fridge is fine here. You don't have to feed the starter first. Leftover dough keeps covered in the fridge up to 24 hours after the first rise. Let it sit out 20 to 30 minutes before you stretch it.
+
+Sauce stays thin on this one too. Too much liquid and a same-day crust steams. Refrigerate leftover pizza within 2 hours, or 1 hour above 90 degrees F, and reheat to 165 degrees F.
 
 ## How much sauce and cheese?
 

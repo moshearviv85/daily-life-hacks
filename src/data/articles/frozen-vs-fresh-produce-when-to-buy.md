@@ -85,7 +85,7 @@ For anything that's going into a hot pan, a pot, a casserole, or a blender, froz
 
 The pattern here is simple: if you're cooking it, frozen is fine. If you're eating it raw, go fresh.
 
-The bag still gets the final vote. Our guide to [whether frozen vegetables need cooking](/can-you-refreeze-frozen-vegetables-after-thawing/) separates ready-to-eat products from bags that expect a real trip through the stove, because "frozen" isn't a food-safety instruction.
+The bag still gets the final vote. Our guide to [refreezing thawed vegetables, and whether the bag needs cooking](/can-you-refreeze-frozen-vegetables-after-thawing/), is the one to read if a bag thawed in the fridge or sat out on the counter. Refreeze only when it still has ice crystals or it thawed in the refrigerator and is still at or below 40 degrees F. "Frozen" isn't a food-safety instruction by itself.
 
 ## Which one do you actually throw away more of?
 

@@ -42,8 +42,11 @@ Use the calculator above to convert your amount and see how much flour and water
 | 3/4 cup | 170 g |
 | 1 cup | 227 g |
 | 1 1/2 cups | 341 g |
+| 2 cups | 454 g |
 
-The starting point is [King Arthur Baking's starter conversion](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe), which uses 227 grams for one cup. The other rows are proportional amounts rounded to a whole gram.
+100 grams is about 0.44 cup (100 divided by 227).
+
+The starting point is [King Arthur Baking's starter conversion](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe), which uses 227 grams for one cup of starter. The other rows are proportional amounts rounded to a whole gram. Every row assumes stirred 100% hydration discard, equal weights of flour and water. A thicker or thinner starter will not hit these cups.
 
 This is a practical conversion, not an exact density for every jar. A bubbly starter fills more space than the same starter stirred flat. When a recipe supplies its own gram weight, follow that weight.
 
@@ -55,9 +58,22 @@ If the recipe calls for half a cup and supplies no weight, aim for 113 grams. If
 
 Stir before measuring by cup so large bubbles don't distort the amount. Stir before portioning from a separated jar too, so you're taking a representative mixture of flour and water rather than mostly liquid from the top.
 
+## Replace flour and water when you add discard to any recipe
+
+At 100% hydration, half the discard weight is flour and half is water. Subtract the flour half from the recipe's flour and the water half from the recipe's liquid, or the dough gets wetter and heavier than the author wrote.
+
+| Discard you add | Take this off the flour | Take this off the liquid |
+|---|---:|---:|
+| 50 g | 25 g | 25 g |
+| 100 g | 50 g | 50 g |
+| 113 g (1/2 cup) | 56.5 g | 56.5 g |
+| 227 g (1 cup) | 113.5 g | 113.5 g |
+
+That keeps the ingredient balance on paper. Acidity and fermentation still change how the dough behaves. It isn't a promise that any cake will bake the same.
+
 ## How much flour and water are in the discard?
 
-For **100% hydration discard**, divide its weight by two.
+For **100% hydration discard**, divide its weight by two. Same split as the table above.
 
 | Discard weight | Flour already present | Water already present |
 |---|---:|---:|

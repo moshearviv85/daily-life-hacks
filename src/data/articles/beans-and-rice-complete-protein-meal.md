@@ -108,6 +108,21 @@ When groceries feel like a luxury, a dinner you can price from a public CSV is a
 
 You don't need a massive grocery haul to make a substantial dinner. You need a few basic ingredients and the willingness to let them get to know each other in a skillet.
 
+## Complete protein foods
+
+"Complete" here means the food's DIAAS score is at or above 1.00, so no essential amino acid is the one running short. These six rows are the foods at that line in our 25-food quality set, plus soy, which is the closest plant food and the one people usually mean when they ask about a plant complete protein. The scores and the dollar math live in [protein per dollar adjusted for quality](/protein-per-dollar-adjusted-for-quality/).
+
+| Food | DIAAS | What that means at the table |
+|---|---|---|
+| Milk, cheese, yogurt, cottage cheese | 1.14 | Dairy clears the line. Mozzarella, milk, Greek yogurt, and cottage cheese in that set all sit at 1.14. |
+| Eggs | 1.13 | A large egg is a complete protein. Two of them are still only about 12.6 grams. |
+| Beef | 1.11 | Ground beef 80/20 in the quality set. |
+| Chicken | 1.08 | Drumsticks, thighs, and breast share this score in that set. |
+| Fish | 1.00 | Canned tuna in water is the fish row, right on the line. |
+| Soy (tofu, TVP) | 0.90 | Under 1.00, and still the plant food closest to it. |
+
+Beans alone don't make this table. They pair with the rice in the pot above, which is the practical version of the same idea: the legume and the grain cover different amino acids. You don't have to build a complete protein in one bite for it to matter across the day.
+
 ## Cook the rice for the schedule you have
 
 White rice fits the 35-minute recipe. Brown rice may take around 45 minutes, so start it earlier or use a batch you cooked ahead. Follow the package ratio because rice varieties are oddly committed to having different opinions about water.

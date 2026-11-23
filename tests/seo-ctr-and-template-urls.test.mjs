@@ -1180,61 +1180,6 @@ test("savory chia title leads with seed pudding and the on-page fiber", () => {
   );
 });
 
-test("packed lunch title leads with how to pack without soggy sandwiches", () => {
-  const page = articleFrontmatter("how-to-pack-lunch-crisp-sandwiches-salads");
-  const raw = readFileSync(
-    join(ROOT, "src/data/articles/how-to-pack-lunch-crisp-sandwiches-salads.md"),
-    "utf8",
-  );
-  const titleLower = page.title.toLowerCase();
-  const excerptLower = page.excerpt.toLowerCase();
-
-  assert.equal(
-    page.title,
-    "How to Pack Lunch Without Soggy Sandwiches or Wilted Salads",
-  );
-  assert.equal(page.title.length, 59);
-  assert.ok(
-    page.title.length <= 60,
-    `packed lunch title should be ≤60 chars, got ${page.title.length}`,
-  );
-  assert.ok(
-    titleLower.startsWith("how to pack lunch without soggy sandwiches"),
-    "packed lunch title should lead with how to pack lunch without soggy sandwiches",
-  );
-  assert.ok(
-    titleLower.indexOf("soggy sandwiches") < titleLower.indexOf("wilted salads"),
-    "packed lunch title should name soggy sandwiches before wilted salads",
-  );
-  assert.equal(
-    titleLower.startsWith("pack lunch without"),
-    false,
-    "packed lunch title should not use the old flat imperative SERP",
-  );
-  assert.equal(
-    /^how to pack lunch so sandwiches and salads stay crisp$/.test(titleLower),
-    false,
-    "packed lunch title should not be the old stay-crisp SERP",
-  );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
-
-  assert.match(page.excerpt, /pack lunch without/i);
-  assert.match(page.excerpt, /soggy sandwiches/i);
-  assert.match(page.excerpt, /wilted salads/i);
-  assert.ok(
-    page.excerpt.length <= 160,
-    `packed lunch meta too long: ${page.excerpt.length}`,
-  );
-  assert.ok(
-    excerptLower.indexOf("pack lunch without") === 0,
-    "packed lunch meta should put pack lunch without first",
-  );
-  assert.ok(
-    excerptLower.indexOf("soggy sandwiches") < excerptLower.indexOf("wilted salads"),
-    "packed lunch meta should keep soggy sandwiches before wilted salads",
-  );
-});
-
 test("food value database title leads with food value and grocery cost", () => {
   const page = readFileSync(join(ROOT, "src/pages/food-value-database/index.astro"), "utf8");
   const titleTemplate = page.match(/const title = `([^`]+)`/)?.[1] ?? "";
