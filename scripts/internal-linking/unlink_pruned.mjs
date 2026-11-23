@@ -20,8 +20,8 @@ const ARTICLES_DIR = path.join(ROOT, "src/data/articles");
 const SITE = "https://www.daily-life-hacks.com";
 
 const RETARGET = new Map([
-  ["cauliflower-fried-rice-with-eggs", "/how-to-use-leftover-rice-creative-ideas/"],
-  ["how-to-cool-rice-for-fried-rice", "/how-to-use-leftover-rice-creative-ideas/"],
+  ["cauliflower-fried-rice-with-eggs", "/high-fiber-stir-fry-vegetables/"],
+  ["how-to-cool-rice-for-fried-rice", "/can-you-eat-rice-and-beans-everyday/"],
   ["do-you-have-to-cook-canned-beans", "/canned-beans-vs-dried-beans-nutrition/"],
   ["how-long-do-canned-beans-last-after-the-best-by-date", "/canned-beans-vs-dried-beans-nutrition/"],
   ["how-long-do-opened-canned-beans-last", "/canned-beans-vs-dried-beans-nutrition/"],
