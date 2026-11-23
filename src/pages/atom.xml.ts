@@ -8,6 +8,7 @@ import {
   getFeedArticles,
 } from "../content/feed";
 import { isIndexPruned } from "../content/index-prune.js";
+import { AUTHOR_NAME, AUTHOR_URL, resolveAuthorName } from "../content/author";
 
 export const GET: APIRoute = async () => {
   const articles = (await getFeedArticles()).filter((article) => !isIndexPruned(article.id));
@@ -27,7 +28,9 @@ export const GET: APIRoute = async () => {
         article.data.publishAt ??
         article.data.date
       ).toISOString();
-      const author = article.data.author ?? "David Miller";
+      const author = resolveAuthorName(article.data.author);
+      const authorUri =
+        author === AUTHOR_NAME ? `\n    <uri>${AUTHOR_URL}</uri>` : "";
       const content = `<p><img src="${escapeXml(image)}" alt="${escapeXml(article.data.imageAlt ?? article.data.title)}" /></p><p>${escapeXml(article.data.excerpt)}</p><p><a href="${url}">Read the full article with the tables, numbers, and sources.</a></p>`;
 
       return `  <entry>
@@ -37,7 +40,7 @@ export const GET: APIRoute = async () => {
     <link rel="enclosure" type="image/jpeg" href="${escapeXml(image)}" />
     <published>${published}</published>
     <updated>${modified}</updated>
-    <author><name>${escapeXml(author)}</name></author>
+    <author><name>${escapeXml(author)}</name>${authorUri}</author>
     <category term="${escapeXml(article.data.category)}" />
     <summary>${escapeXml(article.data.excerpt)}</summary>
     <content type="html">${escapeXml(content)}</content>

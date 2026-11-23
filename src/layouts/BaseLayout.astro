@@ -1,6 +1,12 @@
 ---
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
+import {
+  AUTHOR_ID,
+  AUTHOR_JOB_TITLE,
+  AUTHOR_NAME,
+  AUTHOR_URL,
+} from "../content/author";
 
 interface Props {
   title: string;
@@ -12,6 +18,10 @@ interface Props {
   robots?: string;
   /** Open Graph type — articles only; everything else defaults to website. */
   ogType?: "article" | "website";
+  /** Visible byline. Emits `<meta name="author">` when set. */
+  author?: string;
+  /** Canonical profile URL for `<link rel="author">` and `article:author`. */
+  authorUrl?: string;
   /**
    * Emit the sitewide Organization + WebSite nodes. On by default.
    *
@@ -44,10 +54,10 @@ const ORGANIZATION_NODE = {
   sameAs: ["https://www.pinterest.com/DavidMiller615/"],
   founder: {
     "@type": "Person",
-    "@id": `${SITE_URL}/about/#david-miller`,
-    name: "David Miller",
-    url: `${SITE_URL}/about/`,
-    jobTitle: "Founder and Editor",
+    "@id": AUTHOR_ID,
+    name: AUTHOR_NAME,
+    url: AUTHOR_URL,
+    jobTitle: AUTHOR_JOB_TITLE,
   },
   publishingPrinciples: `${SITE_URL}/editorial-policy/`,
   contactPoint: {
@@ -94,6 +104,8 @@ const {
   robots = DEFAULT_ROBOTS,
   ogType = "website",
   siteGraph = true,
+  author,
+  authorUrl,
 } = Astro.props;
 
 /** Sitewide entity graph first, then whatever the page declared. */
@@ -280,6 +292,8 @@ const metaDescription =
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={metaDescription} />
+    {author && <meta name="author" content={author} />}
+    {authorUrl && <link rel="author" href={authorUrl} />}
     <link rel="canonical" href={canonicalURL} />
     <ClientRouter />
 
@@ -290,6 +304,9 @@ const metaDescription =
     <meta property="og:image" content={absoluteImage} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:site_name" content="Daily Life Hacks" />
+    {authorUrl && ogType === "article" && (
+      <meta property="article:author" content={authorUrl} />
+    )}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />

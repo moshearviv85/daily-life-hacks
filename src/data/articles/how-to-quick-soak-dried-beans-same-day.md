@@ -8,7 +8,7 @@ imageAlt: "Pot of dried beans soaking in water on a stovetop"
 date: 2026-04-07
 dateModified: 2026-11-23
 publishAt: 2026-04-07T00:00:00.000Z
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

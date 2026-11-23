@@ -6,7 +6,7 @@ tags: ["HormoneHealth", "EstrogenDetox", "HighFiber", "WomensWellness", "GutSupp
 image: "/images/high-fiber-foods-for-hormone-balance-main.jpg"
 imageAlt: "High Fiber Foods for Hormone Balance - appetizing bowl with colorful ingredients with fresh vegetables for hormone balance"
 date: 2026-01-15
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

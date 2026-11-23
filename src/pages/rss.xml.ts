@@ -8,6 +8,7 @@ import {
   getFeedArticles,
 } from "../content/feed";
 import { isIndexPruned } from "../content/index-prune.js";
+import { resolveAuthorName } from "../content/author";
 
 /**
  * RSS 2.0 feed with per-item enclosures + media:content.
@@ -32,7 +33,7 @@ export const GET: APIRoute = async () => {
       <content:encoded><![CDATA[<p><img src="${image}" alt="${a.data.imageAlt ?? a.data.title}" /></p><p>${a.data.excerpt}</p><p><a href="${url}">Read the full article with the data tables and sources.</a></p>]]></content:encoded>
       <pubDate>${pub}</pubDate>
       <category>${escapeXml(category)}</category>
-      <dc:creator>${escapeXml(a.data.author ?? "David Miller")}</dc:creator>
+      <dc:creator>${escapeXml(resolveAuthorName(a.data.author))}</dc:creator>
       <enclosure url="${escapeXml(image)}" type="image/jpeg" length="0" />
       <media:content url="${escapeXml(image)}" medium="image">
         <media:description type="plain">${escapeXml(a.data.imageAlt ?? a.data.title)}</media:description>

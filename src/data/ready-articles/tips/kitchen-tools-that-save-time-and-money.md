@@ -13,7 +13,7 @@ image: /images/kitchen-tools-that-save-time-and-money-main.jpg
 imageAlt: Kitchen Tools That Save Time and Money - a beautiful wooden cutting board
   holding a sharp chef's knife and a citrus squeezer
 date: 2026-02-27
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

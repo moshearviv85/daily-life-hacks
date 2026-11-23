@@ -631,6 +631,76 @@ test("food value database SERP copy leads with food value and grocery cost", () 
   assert.ok(description.length <= 160, `clamped meta too long: ${description.length}`);
 });
 
+test("David Miller author profile is indexable, in the sitemap, and used by article schema", () => {
+  const authorUrl = `${SITE}/author/david-miller/`;
+  const locs = new Set(sitemapEntries().map((entry) => entry.loc));
+  assert.ok(locs.has(authorUrl), "author profile missing from sitemap");
+
+  const html = readFileSync(distHtmlFor(authorUrl), "utf8");
+  const robots = metaContent(html, "robots") ?? "";
+  assert.ok(robots.includes("index"), "author profile missing index");
+  assert.ok(!robots.includes("noindex"), "author profile is noindex");
+  assert.equal(canonicalHref(html), authorUrl);
+  assert.equal(metaContent(html, "author"), "David Miller");
+  assert.match(html, /David Miller is a pen name/);
+
+  const people = [];
+  const profiles = [];
+  for (const block of jsonLdBlocks(html, authorUrl)) {
+    visit(block, (node) => {
+      if (node["@type"] === "Person") people.push(node);
+      if (node["@type"] === "ProfilePage") profiles.push(node);
+    });
+  }
+  assert.ok(profiles.length > 0, "author profile missing ProfilePage");
+  assert.ok(people.some((person) => person.name === "David Miller" && person.url === authorUrl));
+  assert.ok(people.every((person) => person.image == null), "author Person must not invent a photo");
+
+  for (const sample of [
+    `${SITE}/how-to-quick-soak-dried-beans-same-day/`,
+    `${SITE}/sheet-pan-salmon-and-vegetables-30-minutes/`,
+  ]) {
+    const articleHtml = readFileSync(distHtmlFor(sample), "utf8");
+    assert.equal(metaContent(articleHtml, "author"), "David Miller", sample);
+    assert.match(
+      articleHtml,
+      /href="\/author\/david-miller\/"[^>]*rel="author"/,
+      sample,
+    );
+    assert.match(
+      articleHtml,
+      /<link rel="author" href="https:\/\/www\.daily-life-hacks\.com\/author\/david-miller\/"/,
+      sample,
+    );
+    assert.doesNotMatch(articleHtml, /Daily Life Hacks Team/);
+    const authors = [];
+    for (const block of jsonLdBlocks(articleHtml, sample)) {
+      visit(block, (node) => {
+        if (node["@type"] === "Article" || node["@type"] === "Recipe") authors.push(node.author);
+      });
+    }
+    assert.ok(authors.length > 0, `${sample} missing Article or Recipe author`);
+    for (const author of authors) {
+      assert.equal(author?.["@type"], "Person", sample);
+      assert.equal(author?.name, "David Miller", sample);
+      assert.equal(author?.url, authorUrl, sample);
+    }
+  }
+
+  const feed = JSON.parse(read("dist/feed.json"));
+  assert.equal(feed.authors?.[0]?.name, "David Miller");
+  assert.equal(feed.authors?.[0]?.url, authorUrl);
+  assert.ok(feed.items.every((item) => item.authors?.[0]?.name === "David Miller"));
+
+  const atom = read("dist/atom.xml");
+  assert.match(atom, new RegExp(`<uri>${authorUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}</uri>`));
+  assert.doesNotMatch(atom, /Daily Life Hacks Team/);
+
+  const rss = read("dist/rss.xml");
+  assert.match(rss, /<dc:creator>David Miller<\/dc:creator>/);
+  assert.doesNotMatch(rss, /Daily Life Hacks Team/);
+});
+
 function pruneSlugFromHref(href) {
   const value = String(href ?? "").trim();
   if (!value || value.startsWith("#")) return null;
