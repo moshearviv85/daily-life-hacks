@@ -1,8 +1,9 @@
 name: Pinterest Auto-Poster
 
+# Auto-pinning paused 2026-11-23 by owner decision
 on:
-  schedule:
-    - cron: '*/30 * * * *'  # Every 30 min — catches ±30 min time jitter
+  # schedule:
+  #   - cron: '*/30 * * * *'  # Every 30 min — catches ±30 min time jitter
   workflow_dispatch:
     inputs:
       immediate:
