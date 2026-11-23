@@ -37,8 +37,9 @@ faq:
     cooking liquid will stay fresh in the refrigerator for about 4 to 5 days. They
     also freeze exceptionally well.
 - question: How much cooked beans does one pound make?
-  answer: One pound of dried beans usually yields about 5 to 6 cups cooked, depending
-    on the variety and age. Portion the extras with some cooking liquid before freezing.
+  answer: One pound of dried beans cooks to about 6 cups, about 3½ to 4 drained
+    15-ounce cans. One can is about 1 1/2 cups drained, or about 1/2 cup+ dried.
+    Portion the extras with some cooking liquid before freezing.
 - question: Why are my dried beans still hard?
   answer: Old beans take longer, hard water can slow softening, and acidic ingredients
     added too early can keep skins firm. Continue simmering with enough hot water
@@ -69,7 +70,7 @@ Once the beans are perfectly soft to your liking, add a generous amount of salt 
 
 If you plan to use these beans in a recipe that is already heavily seasoned (like a spicy chili), you can just leave the beans plain and season them later. 
 
-You will get significantly more food out of a $2 bag of dried beans than you ever will from $2 worth of cans, which is why dry beans keep clustering near the top of the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) and the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). You can cook a massive batch on a Sunday afternoon while you're doing other things around the house, stick them in the fridge, and use them all week in tacos, soups, and quick salads. A pot of three-bean vegetarian chili is the obvious first assignment for that Sunday batch. It's one of those minor kitchen skills that pays off constantly.
+You will get significantly more food out of a $2 bag of dried beans than you ever will from $2 worth of cans, which is why dry beans keep clustering near the top of the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) and the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). A pound of those dried beans cooks to about 6 cups, about 3½ to 4 drained 15-ounce cans, and one can is about 1 1/2 cups, or about 1/2 cup+ dried. When the recipe is written in cans, the [dried beans to canned converter](/tools/dried-beans-to-canned-converter/) turns it into the dry measure before you soak. You can cook a massive batch on a Sunday afternoon while you're doing other things around the house, stick them in the fridge, and use them all week in tacos, soups, and quick salads. A pot of three-bean vegetarian chili is the obvious first assignment for that Sunday batch. It's one of those minor kitchen skills that pays off constantly.
 
 ## Can you cook dried beans without soaking?
 

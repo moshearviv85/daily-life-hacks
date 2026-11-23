@@ -10,14 +10,14 @@ imageAlt: "A measuring bowl of dry black beans beside an opened can of black bea
 date: 2026-07-28
 dateModified: 2026-11-23
 author: "David Miller"
-quickAnswer: "One 15-oz can is about 1 1/2 cups drained (about 9 oz, or 255 g). That lines up with 1/2 to 3/4 cup dried, about 90 to 125 g. One pound of dried beans cooks to about 6 to 7 cups, which is roughly 3 1/2 to 4 cans. Our protein match for a priced 15.5 oz can of black beans is 123 g dry, inside that band."
+quickAnswer: "One 15-oz can is about 1 1/2 cups drained, about 1/2 cup+ dried. One pound of dried beans cooks to about 6 cups, which is roughly 3½ to 4 cans. Our protein match for a priced 15.5 oz can of black beans is 123 g dry, a little over 1/2 cup."
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
   - question: "How many cans of beans are in a pound of dry beans?"
-    answer: "About 3 1/2 to 4. One pound is 454 grams. The protein match for our 15.5 oz can of black beans is 123 grams of dry black beans, and 454 divided by 123 is about 3.7 cans. A pound of dried beans also cooks to about 6 to 7 cups, which is the same neighborhood as 3 1/2 to 4 drained cans."
+    answer: "About 3½ to 4. One pound cooks to about 6 cups, and one drained 15-oz can is about 1 1/2 cups, so 6 divided by 1 1/2 is 4 cans at the top of that range. The protein match for our 15.5 oz can of black beans is 123 grams of dry black beans, and 454 divided by 123 is about 3.7 cans, inside the same 3½ to 4."
   - question: "How much is a can of beans?"
     answer: "In our July 2026 store-brand sample, a 15.5 oz can of black beans was $0.88. Canned kidney beans and canned chickpeas were $0.98 each. Those are shelf prices for the cans we priced, not a national average, and name-brand or organic cans cost more without changing the protein in the bean."
   - question: "Do you have to cook canned beans?"
@@ -53,20 +53,20 @@ The columns that actually mean something are the last two, because a dollar is a
 
 ## How many dried beans equal a can?
 
-One 15-ounce can is about 1 1/2 cups once you drain it, roughly 9 ounces or 255 grams of beans. That drained can replaces about 1/2 to 3/4 cup of dried beans, 90 to 125 grams. One pound of dried beans, 454 grams, cooks to about 6 to 7 cups, which is about 3 1/2 to 4 cans. [USA Pulses](https://www.usapulses.org/) puts a cup of dried beans at about 3 cups cooked for the common beans, and our converter treats a cup of dry beans as 200 grams.
+One 15-ounce can is about 1 1/2 cups once you drain it. That drained can replaces about 1/2 cup+ of dried beans. One pound of dried beans cooks to about 6 cups, which is about 3½ to 4 cans. [America's Test Kitchen](https://www.americastestkitchen.com/how-tos/5691-cooking-canned-and-dried-beans) counts a pound as 3 or 4 cans, and [Minnesota WIC](https://www.health.state.mn.us/docs/people/wic/localagency/nutrition/fpchange/tips/beans.pdf) counts that pound as about 2 cups dry or 6 cups cooked. [USA Pulses](https://www.usapulses.org/) puts a cup of dried beans at about 3 cups cooked for the common beans, and our converter treats a cup of dry beans as 200 grams.
 
-The protein tracer and the fiber tracer still disagree, and that disagreement is real. A can of black beans holds about 26.5 grams of protein, so matching it from dry black beans at 21.6 grams per 100 grams takes 123 grams. The same can holds about 30.3 grams of fiber, and matching that takes about 195 grams, because USDA measures fiber differently in the canned and dry records. The 123 gram protein match sits inside the 90 to 125 gram kitchen band. The fiber match does not. Use the kitchen band to fill a pot. Use the protein grams when you care about the nutrient, not the volume.
+The protein tracer and the fiber tracer still disagree, and that disagreement is real. A can of black beans holds about 26.5 grams of protein, so matching it from dry black beans at 21.6 grams per 100 grams takes 123 grams, about 0.61 cup. The same can holds about 30.3 grams of fiber, and matching that takes about 195 grams, because USDA measures fiber differently in the canned and dry records. The 123 gram protein match sits with the kitchen figure, about 1/2 cup+. The fiber match does not. Use the kitchen measure to fill a pot. Use the protein grams when the nutrient is the point.
 
 | Bean | Dried per 15.5 oz can | Cooked cups from 1 cup dried |
 |---|---|---|
 | Black | 123 g dry, 0.61 cup, protein match to our canned black row | about 3 |
-| Pinto | 1/2 to 3/4 cup (90 to 125 g). No canned pinto in the study. Dry pinto is 21.42 g protein per 100 g | about 3 |
-| Kidney | 1/2 to 3/4 cup (90 to 125 g). The canned kidney row holds 22.9 g protein. We did not price dry kidney beans | about 3 |
+| Pinto | about 1/2 cup+. No canned pinto in the study. Dry pinto is 21.42 g protein per 100 g | about 3 |
+| Kidney | about 1/2 cup+. The canned kidney row holds 22.9 g protein. We did not price dry kidney beans | about 3 |
 | Chickpea | 106 g dry, 0.53 cup, protein match to our canned chickpea row | closer to 2 |
-| Navy | 1/2 to 3/4 cup (90 to 125 g). No canned navy in the study. Dry navy is 22.33 g protein per 100 g | about 3 |
-| Cannellini | 1/2 to 3/4 cup (90 to 125 g). Not a separate row. Treat it like navy or kidney | about 3 |
+| Navy | about 1/2 cup+. No canned navy in the study. Dry navy is 22.33 g protein per 100 g | about 3 |
+| Cannellini | about 1/2 cup+. Not a separate row. Treat it like navy or kidney | about 3 |
 
-Cups of dry beans use the converter's 200 grams per US cup. Cooked yield for black, pinto, kidney, navy, and cannellini follows the common-bean rule of about 3 cups cooked from 1 cup dried. Chickpeas come out closer to 2 cups. We priced canned black, kidney, and chickpeas only, so pinto, navy, and cannellini stay on the kitchen band instead of a made-up can.
+Cups of dry beans use the converter's 200 grams per US cup. Cooked yield for black, pinto, kidney, navy, and cannellini follows the common-bean rule of about 3 cups cooked from 1 cup dried. Chickpeas come out closer to 2 cups. A pound still lands near 6 cups cooked, about 3½ to 4 cans. We priced canned black, kidney, and chickpeas only, so pinto, navy, and cannellini stay on that kitchen measure.
 
 [Open the dried beans to canned converter](/tools/dried-beans-to-canned-converter/)
 

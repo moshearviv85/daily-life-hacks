@@ -79,6 +79,6 @@ The cheap fix has been sitting in kitchens for centuries. Legumes and grains com
 
 Brown lentils if you want the most protein per dollar you can put in a pot tonight. Split peas if you want fiber. Pinto beans if you want a big bag that still returns 57.6 grams of protein per dollar. Chickpeas if you want something you'll roast and eat by the handful, because crispy roasted chickpeas are the only one of these that works as a snack.
 
-Black beans are the compromise I keep buying, at 21.6 grams of protein and 15.5 grams of fiber for 37 cents per 100 grams, mostly because they end up in [tacos](/easy-black-bean-tacos-weeknight-dinner/) and burgers without much argument. How much to put in the pot is worked out in [how much dried beans per person](/canned-beans-vs-dried-beans-nutrition/).
+Black beans are the compromise I keep buying, at 21.6 grams of protein and 15.5 grams of fiber for 37 cents per 100 grams, mostly because they end up in [tacos](/easy-black-bean-tacos-weeknight-dinner/) and burgers without much argument. How much to put in the pot is worked out in [how much dried beans per person](/canned-beans-vs-dried-beans-nutrition/). A recipe written as one 15-ounce can is about 1 1/2 cups drained, about 1/2 cup+ dried, and a pound cooks to about 6 cups, or 3½ to 4 cans. The [dried beans to canned converter](/tools/dried-beans-to-canned-converter/) scales that when the pot is bigger than one can.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-quality-per-dollar-2026.csv -->
