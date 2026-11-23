@@ -24,7 +24,8 @@ const BEFORE_DATE_RESTORE = "84702a37";
  * table #239, savory chia #240, the protein table #245, the beans table #243,
  * the sandwich page #247, other >=15% rewrites since 94167b6, and the two
  * ranking-study targets expanded by the prune/301 work, plus the recipe
- * cards whose published calorie figure was replaced by the USDA total.
+ * cards whose published calorie figure was replaced by the USDA total, plus
+ * the yogurt fiber answer added the same day.
  */
 const SUBSTANTIVE_SLUGS = new Set([
   "air-fryer-salmon-bites-garlic-honey-glaze",
@@ -43,6 +44,7 @@ const SUBSTANTIVE_SLUGS = new Set([
   "healthy-homemade-dumpling-wrapper-recipe",
   "high-fiber-bran-muffins-that-taste-good",
   "high-fiber-gluten-free-bread-recipe",
+  "high-fiber-yogurt-parfait-for-breakfast",
   "how-much-protein-in-bagel-sandwich",
   "how-to-double-recipe-seasoning-without-guessing",
   "how-to-keep-sandwiches-from-getting-soggy",
@@ -219,20 +221,21 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-assert.equal(stillToday.length, 40, `pages still on ${TODAY}`);
+  assert.equal(stillToday.length, 41, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
+  // The yogurt fiber answer is the extra 2026-11-23 page on this branch.
   assert.equal(restored.length, 62, "pages restored off 2026-11-23");
 });
 
 test("restored and substantive pages render the honest Updated day", () => {
   const cases = [
-    ["eat-healthy-on-a-budget-complete-playbook", "2026-09-24"],
+    // eat-healthy is noindex, so it does not emit Article JSON-LD.
+    ["artichoke-recipes-for-gut-health", "2026-09-23"],
     ["cottage-cheese-vs-greek-yogurt-protein-uses", TODAY],
     ["what-30-grams-of-fiber-costs-per-day", TODAY],
     ["protein-per-dollar-adjusted-for-quality", TODAY],
     ["how-to-keep-sandwiches-from-getting-soggy", TODAY],
-    ["artichoke-recipes-for-gut-health", "2026-09-23"],
   ];
   const built = cases.every(([slug]) => existsSync(join(ROOT, "dist", slug, "index.html")));
   if (!built) return;
