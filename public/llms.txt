@@ -22,6 +22,11 @@ These are original analyses, not aggregated from other publishers. Nutrition val
 - Fiber per Dollar Calculator (interactive tool on the same dataset): https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/
 - All tools: https://www.daily-life-hacks.com/tools/
 
+## Tools
+
+- Sourdough discard calculator (add discard to a recipe, feeding ratios, cups to grams): https://www.daily-life-hacks.com/tools/sourdough-discard-calculator/
+- Dried beans to canned converter (tested 1/2 cup yield, plus a crowd count): https://www.daily-life-hacks.com/tools/dried-beans-to-canned-converter/
+
 ## Datasets (public CSV, free to reuse)
 
 - Fiber per dollar raw data: https://www.daily-life-hacks.com/data/fiber-per-dollar-2026.csv
