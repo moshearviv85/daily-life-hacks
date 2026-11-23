@@ -84,6 +84,21 @@ For example, adding 100 grams of this discard to a recipe contributes 50 grams o
 
 A starter at another hydration needs different math: **flour = discard weight ÷ (1 + hydration ÷ 100)**. Water is the remaining weight. A 150-gram starter at 50% hydration contains 100 grams flour and 50 grams water. The calculator on this page stays at 100% hydration deliberately. For any other hydration, a feeding ratio, or the cup conversion in one place, use the [sourdough discard calculator](/tools/sourdough-discard-calculator/).
 
+<h2 id="sourdough-discard-nutrition">Sourdough discard nutrition (per 100 g, ¼, ½ and 1 cup)</h2>
+
+Apps don't agree on discard calories, and they shouldn't. One is counting all-purpose flour. Another is counting whole wheat. A third never asked how wet the starter was. If an app won't name the flour or the hydration, it isn't measuring your jar. It's measuring a jar it made up.
+
+This table is one specific case. It's 100% hydration, so every 100 g of discard is 50 g of flour and 50 g of water, and the water counts as zero. The flour figures are USDA FoodData Central SR Legacy: enriched unbleached all-purpose, [FDC 168936](https://fdc.nal.usda.gov/food-details/168936/nutrients) (364 kcal, 76.31 g carbohydrate, 10.33 g protein, 2.7 g fiber, 0.98 g fat per 100 g), and whole-grain wheat flour, [FDC 168893](https://fdc.nal.usda.gov/food-details/168893/nutrients) (340 kcal, 71.97 g carbohydrate, 13.21 g protein, 10.7 g fiber, 2.5 g fat per 100 g). The cup rows use this page's 57 g, 113 g, and 227 g weights. Each cell is half of the matching flour record, rounded to the nearest calorie and the nearest 0.1 g.
+
+| Amount | All-purpose kcal | Whole-wheat kcal | All-purpose carbs | Whole-wheat carbs | All-purpose protein | Whole-wheat protein | All-purpose fiber | Whole-wheat fiber | All-purpose fat | Whole-wheat fat |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 100 g | 182 | 170 | 38.2 g | 36.0 g | 5.2 g | 6.6 g | 1.4 g | 5.4 g | 0.5 g | 1.3 g |
+| 1/4 cup (57 g) | 104 | 97 | 21.7 g | 20.5 g | 2.9 g | 3.8 g | 0.8 g | 3.0 g | 0.3 g | 0.7 g |
+| 1/2 cup (113 g) | 206 | 192 | 43.1 g | 40.7 g | 5.8 g | 7.5 g | 1.5 g | 6.0 g | 0.6 g | 1.4 g |
+| 1 cup (227 g) | 413 | 386 | 86.6 g | 81.7 g | 11.7 g | 15.0 g | 3.1 g | 12.1 g | 1.1 g | 2.8 g |
+
+A stiff starter at 50% hydration is two-thirds flour, so 100 g of this all-purpose discard is about 243 kcal instead of 182.
+
 ## Scale a recipe to the jar you have
 
 Divide the discard you have by the amount the recipe requests. That's your batch multiplier.

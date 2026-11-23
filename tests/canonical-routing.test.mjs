@@ -164,7 +164,11 @@ test("high-impression aliases redirect to canonical articles", async () => {
   const cases = [
     [
       "https://www.daily-life-hacks.com/sourdough-discard-nutrition-facts-health-benefits/",
-      "https://www.daily-life-hacks.com/easy-sourdough-discard-recipes-beginners/",
+      "https://www.daily-life-hacks.com/how-to-measure-sourdough-discard-grams/#sourdough-discard-nutrition",
+    ],
+    [
+      "https://www.daily-life-hacks.com/sourdough-discard-nutrition-facts-health-benefits",
+      "https://www.daily-life-hacks.com/how-to-measure-sourdough-discard-grams/#sourdough-discard-nutrition",
     ],
     [
       "https://www.daily-life-hacks.com/rotisserie-chicken-nutrition-facts-sodium-content/",
