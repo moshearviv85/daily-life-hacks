@@ -59,8 +59,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2133,
-      "hash": "sha256:e6b8d64d2bd96a5cddc5c902aee70b72c916ff1b397b2967ddb99b2abde0453b",
+      "bytes": 3453,
+      "hash": "sha256:5e2f42c4f6d003bc6c0bc7a50d7929937330db7b02b2da8044ecd14b0fca124f",
       "sources": [
         {
           "title": "Daily Life Hacks study: Animal Protein per Dollar, Ranked (2026)",
@@ -105,6 +105,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -122,8 +132,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1140,
-      "hash": "sha256:f0daab4cd3f17211175776b6562373592a75508b1049d40a84aa8aa2425963c4",
+      "bytes": 1778,
+      "hash": "sha256:2e9a2a68654abbf76e8bcfebb30de8b0e3ef9aba9f2c930287b25f57050c2617",
       "sources": [
         {
           "title": "Daily Life Hacks study: Beans Ranked by Fiber and Protein per Dollar (2026)",
@@ -178,6 +188,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -195,8 +215,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 25400,
-      "hash": "sha256:7d12c2705b369189d05f440c9aaf297278f438bb7bbc4e2a0b9aba1dbc875e8f",
+      "bytes": 30471,
+      "hash": "sha256:395e0fb129f6f3df06db0783b4fdeb5a1a22696aa89c77398d28cd25854377ec",
       "sources": [
         {
           "title": "Daily Life Hacks study: BLS Nutrition per Dollar, Latest Month by Region",
@@ -311,6 +331,11 @@
             "name": "value_source",
             "type": "string",
             "description": "Where the nutrient values came from: a full-precision value already audited in a Daily Life Hacks flagship CSV, or the USDA portal endpoint, which rounds to three significant figures."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -328,8 +353,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 896,
-      "hash": "sha256:bfc00a5f6baf75ac2fef3aa347f089c5e0a7744224c36edf13f50d19fa43c641",
+      "bytes": 1472,
+      "hash": "sha256:a6a3185cefa4229c4bd4ad286ae301d428fc6cd7f624a45f1847bc23a367cfde",
       "sources": [
         {
           "title": "Daily Life Hacks study: Breakfast Staples by Nutrition per Dollar (2026)",
@@ -384,6 +409,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -401,8 +436,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 997,
-      "hash": "sha256:495799f5825823e9e7b374923a6f5fad7c1e8494fed59d7fa035666c64db2414",
+      "bytes": 1635,
+      "hash": "sha256:4ab3237104aedf1e35404da96ded79ace154d4da7dba0e18716dac0d4ca93da4",
       "sources": [
         {
           "title": "Daily Life Hacks study: Canned vs Dry Beans, Cost Compared (2026)",
@@ -447,6 +482,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -464,8 +509,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2946,
-      "hash": "sha256:2aba120772ba003ffa2fc2c5aa1d1e5082457cd8ee8cbd550b748fd3aa0f7225",
+      "bytes": 3004,
+      "hash": "sha256:fa0470d2e4df80454fb0ed554180ad0e5343938039d86b6939853cbf28d3bb0a",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cheapest Complete-Protein Pairings (2026)",
@@ -510,6 +555,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "The two audited single-food rows the pairing score was derived from, with each one's protein per dollar."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -527,8 +582,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 564,
-      "hash": "sha256:3873193c2d0ec3e8dbbc78fbb6d2960a53165a9c9e3c84cfc3f6cf19ef2534cc",
+      "bytes": 954,
+      "hash": "sha256:1a26982aa4a52e8d5accd981e18e2f6a711c3b36fcd0faadc606983ab5a70724",
       "sources": [
         {
           "title": "Daily Life Hacks study: Dairy and Egg Protein per Dollar, Ranked (2026)",
@@ -573,6 +628,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -590,8 +655,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 4766,
-      "hash": "sha256:c539500ce1b806f4154dee365f9b7bd14613be14e4a3d8fd6df4dd9787a7f114",
+      "bytes": 7762,
+      "hash": "sha256:bcdf2c51968cf0403772dc5baf5c51169566599b92cdf8fc7ae4fdfd424d6036",
       "sources": [
         {
           "title": "Daily Life Hacks study: Eggs vs Every Other Protein Source (2026)",
@@ -636,6 +701,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -653,8 +728,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 5623,
-      "hash": "sha256:a3ab9dc1c05734f536fc3d366822e46d23a9c68b211225dc7d29c9c478f4a99c",
+      "bytes": 5701,
+      "hash": "sha256:d439457543e9858a588d46ad1f8ae8d7658b95947e2d8ac5c83a73494276f4b6",
       "sources": [
         {
           "title": "Daily Life Hacks study: Fast Food Protein per Dollar (2026)",
@@ -704,6 +779,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -721,8 +806,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 3041,
-      "hash": "sha256:0ede410b2df3cd80db41bf044e62576924386f301f2dbcca385c7ab06f5cf250",
+      "bytes": 4493,
+      "hash": "sha256:f65c5d0575746a9e078d38dc85a4fee1cee8926b5677edf9ede006c30065f2da",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cost of 30 Grams of Fiber per Day, Five Menus (2026)",
@@ -772,6 +857,16 @@
             "name": "basis",
             "type": "string",
             "description": "The parent dataset row the price and nutrient value were taken from."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -789,8 +884,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 19117,
-      "hash": "sha256:66ba68b9ca69dcfb901a32c4bf9b5bbfa78e3777493c1daf4e07371868de2228",
+      "bytes": 22303,
+      "hash": "sha256:2737623b603509f77acb4b1350129b97fca7745dc486d22158aa415327ed363d",
       "sources": [
         {
           "title": "Daily Life Hacks study: Fiber per Dollar: 53 Foods Ranked (2026)",
@@ -895,6 +990,16 @@
             "name": "nutrition_source_note",
             "type": "string",
             "description": "Row-specific disclosure for proxy and unresolved matches, including the exact ambiguity or mismatch."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -912,8 +1017,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 773,
-      "hash": "sha256:899a7226a545197e0f1aca94c4a46a50d00cbb5425ebbbf9ced7b74efe217bc3",
+      "bytes": 1413,
+      "hash": "sha256:04e6177cd4c8076fc8d581f28d593a45acead94982aca07100d42c5b8f75b16f",
       "sources": [
         {
           "title": "Daily Life Hacks study: Grains Ranked by Fiber per Dollar (2026)",
@@ -958,6 +1063,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -975,8 +1090,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 663,
-      "hash": "sha256:8261f22ce793d54e7422381e4b0f2c667703eaf4a192dd9910e8fbbe73c454ca",
+      "bytes": 1243,
+      "hash": "sha256:a082d85d4571372c6f9f8c3660efb1ca6fa9f816357858dfbdad5791e3804d52",
       "sources": [
         {
           "title": "Daily Life Hacks study: High-Fiber Snacks Ranked by Cost (2026)",
@@ -1021,6 +1136,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1038,8 +1163,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1228,
-      "hash": "sha256:0252750e1f10cb11085b90a7a60b813c301691ead5434ad4bd99143d2d8e84ef",
+      "bytes": 1928,
+      "hash": "sha256:6cceea431a6f84cb723b445baff4285cf506d11efc12df97b56d0fa97fde5100",
       "sources": [
         {
           "title": "Daily Life Hacks study: Meat per Dollar: 11 Cuts Ranked by Protein Value (2026)",
@@ -1084,6 +1209,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1101,8 +1236,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1472,
-      "hash": "sha256:34d17d8394c6f171e38339b5c9b4a7cb36f2d72a3aef2cb81db178db496168c0",
+      "bytes": 2420,
+      "hash": "sha256:2052abcec10290f7314024d5ee5e3c6e9f309ae5a5de399a082d02b0deec508f",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cheapest Protein That Needs No Cooking (2026)",
@@ -1147,6 +1282,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1164,8 +1309,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1103,
-      "hash": "sha256:fe0ef71821ccdb753072abfcdee6d043ff04a2584916136d596c166c102a2160",
+      "bytes": 1991,
+      "hash": "sha256:a9d667f34e2f35b1b23284c7ff31ae1c5871acf3037f109c1865a93e06e2e4ba",
       "sources": [
         {
           "title": "Daily Life Hacks study: What One Dollar of Fiber Buys (2026)",
@@ -1210,6 +1355,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1227,8 +1382,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1511,
-      "hash": "sha256:993c3e8e1da5220db6963c881a2ff71db6500f1c230d5ec61e2fed52f32064f5",
+      "bytes": 2459,
+      "hash": "sha256:ba9c099a0c3e051c9a30ffbe2522c4ca4c381796292ea662a657e66ccd91e7a7",
       "sources": [
         {
           "title": "Daily Life Hacks study: What One Dollar of Protein Buys (2026)",
@@ -1273,6 +1428,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1290,8 +1455,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1749,
-      "hash": "sha256:55bf59611ab5e426d192f06ce999f2d9352e2937f3482df21694a67213caef85",
+      "bytes": 2823,
+      "hash": "sha256:b272b189ad0cc37887e500bcd4a590811130e16b088643432d023f4c7d8a8dbb",
       "sources": [
         {
           "title": "Daily Life Hacks study: Plant Protein per Dollar: 18 Sources Ranked (2026)",
@@ -1336,6 +1501,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1353,8 +1528,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 1464,
-      "hash": "sha256:a66f5bb5d1ceecac895fee9e8b1807f3abb6ea77a30160108926ea6b4472b8af",
+      "bytes": 2786,
+      "hash": "sha256:225c06320782a1d701ccab24ff699cbf86b7d722f2e81b195285a3831d67d3d1",
       "sources": [
         {
           "title": "Daily Life Hacks study: Fruits and Vegetables Ranked by Fiber per Dollar (2026)",
@@ -1399,6 +1574,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1416,8 +1601,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2787,
-      "hash": "sha256:f8d625925bb365c014f159ba20e1dd0c06890c6b2f3ff3b3f5d1bcd6e878eeec",
+      "bytes": 3923,
+      "hash": "sha256:1427d45d2454bbfaf6bae189ab7e1b984cc02654629c373e355f14d9436b2fb6",
       "sources": [
         {
           "title": "Daily Life Hacks study: Cost of 50 Grams of Protein per Day, Five Menus (2026)",
@@ -1467,6 +1652,16 @@
             "name": "basis",
             "type": "string",
             "description": "The parent dataset row the price and nutrient value were taken from."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1484,8 +1679,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 20808,
-      "hash": "sha256:407acffa2ea1d864e1fda1d215aa12acb6b73559666ec871d2073ee9c156171f",
+      "bytes": 23804,
+      "hash": "sha256:1041acbdf4fa62584899cc62da516bed1d6237f288d73db01ad1590a49d43c29",
       "sources": [
         {
           "title": "Daily Life Hacks study: Protein per Dollar: 49 Sources Ranked (2026)",
@@ -1590,6 +1785,16 @@
             "name": "nutrition_source_note",
             "type": "string",
             "description": "Row-specific disclosure for proxy and unresolved matches, including the exact ambiguity or mismatch."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1607,8 +1812,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 3177,
-      "hash": "sha256:29307248173622b93e449764c68965db64d4f7eb61675e9f1d5aa39638cd4671",
+      "bytes": 4685,
+      "hash": "sha256:5176311110a366056305ae0454b8c1dd5fb073723156a77732ddb0679310aa41",
       "sources": [
         {
           "title": "Daily Life Hacks study: Protein per Dollar Adjusted for Quality, DIAAS (2026)",
@@ -1663,6 +1868,16 @@
             "name": "notes",
             "type": "string",
             "description": "Free-text note on the amino acid profile or the proxy food used for scoring."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1680,8 +1895,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 2584,
-      "hash": "sha256:bc1beb24facf0771ab6f1e4317016b6d682d35ceb104f172409d6ab6ba0243b3",
+      "bytes": 4276,
+      "hash": "sha256:d17cd9f6baaebb9786fd98b4da6ed63da81f0d30db8f0182419a5b6e242a52fc",
       "sources": [
         {
           "title": "Daily Life Hacks study: The Shelf-Stable Pantry, Ranked by Protein per Dollar (2026)",
@@ -1726,6 +1941,16 @@
             "name": "price_basis",
             "type": "string",
             "description": "Source and observation date for the price, plus any USDA refuse percentage applied."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [
@@ -1743,8 +1968,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 14468,
-      "hash": "sha256:189c1e716eec39d695041f83b656fa00bc70853c997d3569f3673420e0c80b7b",
+      "bytes": 17960,
+      "hash": "sha256:e76fe00484e6d099d3618546555942b159b3e49ca74abc9c1c5bed571b82f0a6",
       "sources": [
         {
           "title": "Daily Life Hacks study: The Sodium Index: 56 Budget Staples (2026)",
@@ -1849,6 +2074,16 @@
             "name": "nutrition_source_description",
             "type": "string",
             "description": "Food description from the linked authoritative record, preserved verbatim for auditability."
+          },
+          {
+            "name": "fdc_id",
+            "type": "string",
+            "description": "USDA FoodData Central numeric record ID when one record was determinable for the row. Blank when no unique FoodData Central ID was established."
+          },
+          {
+            "name": "source_url",
+            "type": "string",
+            "description": "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no FoodData Central ID."
           }
         ],
         "missingValues": [

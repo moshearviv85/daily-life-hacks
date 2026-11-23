@@ -560,6 +560,18 @@ const robotsMeta = (!released || isVariant || indexPruned) ? "noindex, follow" :
 const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : undefined;
 /** Rating UI ships only with a published Recipe node. Pruned and unreleased recipes stay bare. */
 const showRatingWidget = Boolean(isRecipe && publishedSchemas);
+/**
+ * Bing already ranks these near the top. The direct answer has to be the
+ * first paragraph inside <article>, immediately under the H1.
+ */
+const ANSWER_FIRST_SLUGS = new Set([
+  "can-you-refreeze-frozen-vegetables-after-thawing",
+  "good-source-of-fiber-label-meaning",
+  "healthy-egg-sandwich-add-ins-toppings",
+  "how-to-measure-sourdough-discard-grams",
+  "selenium-containing-foods-easy-ways",
+]);
+const answerFirst = ANSWER_FIRST_SLUGS.has(article.id);
 ---
 
 <BaseLayout
@@ -664,6 +676,72 @@ const showRatingWidget = Boolean(isRecipe && publishedSchemas);
     })()}
 
     <!-- Article Header -->
+    {
+      answerFirst && (
+        <article>
+          <header class="mb-8">
+            <a
+              href={`/${article.data.category}/`}
+              class="inline-block px-3 py-1 text-xs font-bold rounded uppercase tracking-widest mb-4 text-white hover:opacity-90"
+              style="background-color: #F29B30;"
+            >
+              {article.data.category}
+            </a>
+            <div
+              class="text-sm mb-4 flex items-center gap-2"
+              style="color: var(--label-color);"
+            >
+            {
+              article.data.author && (
+                <>
+                  <a
+                    href="/about/"
+                    rel="author"
+                    class="font-medium text-[var(--text-color)] hover:text-[#F29B30] transition-colors"
+                  >
+                    {article.data.author}
+                  </a>
+                  <span>•</span>
+                </>
+              )
+            }
+            <span>
+              Published <time datetime={isoDay(releaseDate)}>{publishedLabel}</time>
+            </span>
+            {
+              wasUpdated && (
+                <>
+                  <span>&bull;</span>
+                  <span>
+                    Updated{" "}
+                    <time datetime={isoDay(modifiedDateObj)} class="font-medium">
+                      {modifiedLabel}
+                    </time>
+                  </span>
+                </>
+              )
+            }
+          </div>
+            <h1
+              class="text-3xl md:text-4xl font-bold leading-tight mb-4"
+              style="color: var(--heading-color);"
+            >
+              {article.data.title}
+            </h1>
+          </header>
+          <div class="article-content order-[20]">
+            <Content />
+          </div>
+          {
+            article.id === "how-to-measure-sourdough-discard-grams" && (
+              <KitchenCalculator kind="discard" />
+            )
+          }
+        </article>
+      )
+    }
+    {
+      !answerFirst && (
     <header class="mb-8">
       <a
         href={`/${article.data.category}/`}
@@ -776,6 +854,8 @@ const showRatingWidget = Boolean(isRecipe && publishedSchemas);
         )
       }
     </header>
+      )
+    }
 
     {
       flagship?.emailCapture && (
@@ -792,7 +872,7 @@ const showRatingWidget = Boolean(isRecipe && publishedSchemas);
     }
 
     <!-- Quick Answer Block -->
-    {article.data.quickAnswer && !flagship && (
+    {article.data.quickAnswer && !flagship && !answerFirst && (
       <div class="mb-8 rounded-xl border-l-4 border-[#F29B30] p-5" style="background-color: var(--input-bg);">
         <h2 class="text-lg font-bold mb-2" style="color: var(--heading-color);">Here's the Deal</h2>
         <p class="leading-relaxed" style="color: var(--text-color);">{article.data.quickAnswer}</p>
@@ -925,11 +1005,13 @@ const showRatingWidget = Boolean(isRecipe && publishedSchemas);
     }
 
     <!-- Article Content -->
-    {['how-to-measure-sourdough-discard-grams', 'easy-sourdough-discard-recipes-beginners'].includes(article.id) && <KitchenCalculator kind="discard" />}
+    {!answerFirst && ['how-to-measure-sourdough-discard-grams', 'easy-sourdough-discard-recipes-beginners'].includes(article.id) && <KitchenCalculator kind="discard" />}
     {article.id === 'protein-per-serving-beans-chicken-tofu-compared' && <KitchenCalculator kind="protein" />}
-    <div class="article-content order-[20]">
-      <Content />
-    </div>
+    {!answerFirst && (
+      <div class="article-content order-[20]">
+        <Content />
+      </div>
+    )}
 
     {
       flagship && (

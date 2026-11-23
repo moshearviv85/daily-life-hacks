@@ -1,23 +1,23 @@
-food,category,value,package,package_price_usd,price_basis
-Frozen green peas,Frozen vegetables,17.6,32 oz bag,2.32,Walmart GV
-"Carrots (whole, bagged)",Fresh vegetables,16.1,2 lb bag,1.58,Walmart
-Green cabbage,Fresh vegetables,14.6,per lb,0.78,Walmart
-Sweet potatoes,Fresh vegetables,13.9,per lb,0.98,Walmart
-Bananas,Fresh fruit,11.6,per lb,0.65,BLS US avg July 2026 (APU0000711211)
-Frozen green beans,Frozen vegetables,10.8,32 oz bag,2.18,Walmart GV
-Avocado,Fresh fruit,10.4,each (~7 oz),0.95,Walmart
-Frozen broccoli florets,Frozen vegetables,9.5,32 oz bag,2.87,Walmart GV
-Frozen chopped spinach,Frozen vegetables,8.4,12 oz bag,1.18,Walmart GV
-Frozen shelled edamame,Frozen vegetables,8.3,12 oz bag,2.12,Walmart GV
-Pears,Fresh fruit,8.0,per lb,1.58,Walmart
-Chopped kale (bagged),Fresh vegetables,7.5,16 oz bag,2.48,Walmart
-Apples (gala),Fresh fruit,7.3,per lb,1.28,Walmart
-Yellow onions,Fresh vegetables,7.1,per lb,1.09,Walmart
-Brussels sprouts,Fresh vegetables,7.0,per lb,2.48,Walmart
-Russet potatoes (with skin),Fresh vegetables,6.3,per lb,0.94,BLS US avg July 2026 (APU0000712112)
-Fresh broccoli crowns,Fresh vegetables,6.1,per lb,1.94,Walmart
-Oranges (navel),Fresh fruit,4.7,per lb,1.54,BLS US avg June 2026 (APU0000711311)
-Raspberries,Fresh fruit,4.5,6 oz box,2.48,Walmart
-Blackberries,Fresh fruit,4.0,6 oz box,2.28,Walmart
-Strawberries,Fresh fruit,2.7,16 oz box,3.21,BLS US avg July 2026 (APU0000711415)
-Blueberries,Fresh fruit,2.5,pint (11 oz),2.98,Walmart
+food,category,value,package,package_price_usd,price_basis,fdc_id,source_url
+Frozen green peas,Frozen vegetables,17.6,32 oz bag,2.32,Walmart GV,170016,https://fdc.nal.usda.gov/food-details/170016/nutrients
+"Carrots (whole, bagged)",Fresh vegetables,16.1,2 lb bag,1.58,Walmart,170393,https://fdc.nal.usda.gov/food-details/170393/nutrients
+Green cabbage,Fresh vegetables,14.6,per lb,0.78,Walmart,169975,https://fdc.nal.usda.gov/food-details/169975/nutrients
+Sweet potatoes,Fresh vegetables,13.9,per lb,0.98,Walmart,168482,https://fdc.nal.usda.gov/food-details/168482/nutrients
+Bananas,Fresh fruit,11.6,per lb,0.65,BLS US avg July 2026 (APU0000711211),173944,https://fdc.nal.usda.gov/food-details/173944/nutrients
+Frozen green beans,Frozen vegetables,10.8,32 oz bag,2.18,Walmart GV,169962,https://fdc.nal.usda.gov/food-details/169962/nutrients
+Avocado,Fresh fruit,10.4,each (~7 oz),0.95,Walmart,171705,https://fdc.nal.usda.gov/food-details/171705/nutrients
+Frozen broccoli florets,Frozen vegetables,9.5,32 oz bag,2.87,Walmart GV,169968,https://fdc.nal.usda.gov/food-details/169968/nutrients
+Frozen chopped spinach,Frozen vegetables,8.4,12 oz bag,1.18,Walmart GV,169287,https://fdc.nal.usda.gov/food-details/169287/nutrients
+Frozen shelled edamame,Frozen vegetables,8.3,12 oz bag,2.12,Walmart GV,,
+Pears,Fresh fruit,8.0,per lb,1.58,Walmart,169118,https://fdc.nal.usda.gov/food-details/169118/nutrients
+Chopped kale (bagged),Fresh vegetables,7.5,16 oz bag,2.48,Walmart,168421,https://fdc.nal.usda.gov/food-details/168421/nutrients
+Apples (gala),Fresh fruit,7.3,per lb,1.28,Walmart,168204,https://fdc.nal.usda.gov/food-details/168204/nutrients
+Yellow onions,Fresh vegetables,7.1,per lb,1.09,Walmart,170000,https://fdc.nal.usda.gov/food-details/170000/nutrients
+Brussels sprouts,Fresh vegetables,7.0,per lb,2.48,Walmart,170383,https://fdc.nal.usda.gov/food-details/170383/nutrients
+Russet potatoes (with skin),Fresh vegetables,6.3,per lb,0.94,BLS US avg July 2026 (APU0000712112),170027,https://fdc.nal.usda.gov/food-details/170027/nutrients
+Fresh broccoli crowns,Fresh vegetables,6.1,per lb,1.94,Walmart,170379,https://fdc.nal.usda.gov/food-details/170379/nutrients
+Oranges (navel),Fresh fruit,4.7,per lb,1.54,BLS US avg June 2026 (APU0000711311),169917,https://fdc.nal.usda.gov/food-details/169917/nutrients
+Raspberries,Fresh fruit,4.5,6 oz box,2.48,Walmart,167755,https://fdc.nal.usda.gov/food-details/167755/nutrients
+Blackberries,Fresh fruit,4.0,6 oz box,2.28,Walmart,173946,https://fdc.nal.usda.gov/food-details/173946/nutrients
+Strawberries,Fresh fruit,2.7,16 oz box,3.21,BLS US avg July 2026 (APU0000711415),167762,https://fdc.nal.usda.gov/food-details/167762/nutrients
+Blueberries,Fresh fruit,2.5,pint (11 oz),2.98,Walmart,171711,https://fdc.nal.usda.gov/food-details/171711/nutrients

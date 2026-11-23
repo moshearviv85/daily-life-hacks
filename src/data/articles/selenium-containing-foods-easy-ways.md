@@ -11,7 +11,7 @@ tags:
 image: "/images/selenium-containing-foods-easy-ways-main.jpg"
 imageAlt: "Eggs fish Brazil nuts oats and chicken arranged on a kitchen counter"
 date: 2026-05-06
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 quickAnswer: "The richest selenium foods are Brazil nuts, seafood, meat, poultry, eggs, and grains. Adults need 55 mcg a day and should stay under 400 mcg, per the NIH Office of Dietary Supplements. Three ounces of cooked yellowfin tuna delivers 92 mcg, a cup of cooked spaghetti 33 mcg, and one large egg 15 mcg. A single Brazil nut carries 68 to 91 mcg, so one nut alone covers the day."
 featured: false
@@ -30,6 +30,17 @@ faq:
   - question: "Is selenium deficiency common in the United States?"
     answer: "No. The NIH Office of Dietary Supplements says selenium intakes in North America, even in low-selenium regions, run well above the RDA, largely because food travels across a wide geographic area before it reaches your cart. Selenium is a mineral most Americans are already covering by accident."
 ---
+
+Adults need 55 mcg of selenium a day and should stay under 400 mcg, per the [NIH Office of Dietary Supplements](https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/). Three ounces of cooked yellowfin tuna has 92 mcg, one large egg has 15 mcg, and one Brazil nut has 68 to 91 mcg. One nut covers the day. A one-ounce handful does not.
+
+| Figure | Amount | Source |
+|---|---|---|
+| Adult daily need | 55 mcg | [NIH ODS](https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/) |
+| Adult daily ceiling | 400 mcg | [NIH ODS](https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/) |
+| Yellowfin tuna, cooked, 3 oz | 92 mcg | [NIH ODS](https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/) |
+| Egg, hard-boiled, 1 large | 15 mcg | [NIH ODS](https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/) |
+| One Brazil nut | 68 to 91 mcg | [NIH ODS](https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/) |
+| Brazil nuts, 1 oz (6 to 8 nuts) | 544 mcg | [NIH ODS](https://ods.od.nih.gov/factsheets/Selenium-HealthProfessional/), average from USDA FoodData Central |
 
 Selenium sounds like something that belongs on a lab label, not a grocery list. I get it. The name doesn't exactly scream Tuesday dinner.
 
