@@ -34,6 +34,7 @@ function buildTrackingMetadata({
   base_slug,
   variant_slug,
   email_segment,
+  placement,
 }) {
   const trackingMetadata = {
     referrer,
@@ -46,6 +47,7 @@ function buildTrackingMetadata({
   if (base_slug) trackingMetadata.base_slug = base_slug;
   if (variant_slug) trackingMetadata.variant_slug = variant_slug;
   if (email_segment) trackingMetadata.email_segment = email_segment;
+  if (placement) trackingMetadata.placement = placement;
 
   return trackingMetadata;
 }
@@ -262,6 +264,7 @@ export async function onRequestPost(context) {
       base_slug,
       variant_slug,
       email_segment,
+      placement,
     } = bodyResult.value;
 
     if (!email || !email.includes("@")) {
@@ -294,6 +297,7 @@ export async function onRequestPost(context) {
       base_slug,
       variant_slug,
       email_segment,
+      placement,
     });
 
     await logSignupEvent(env, {

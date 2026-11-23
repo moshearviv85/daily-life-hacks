@@ -584,6 +584,8 @@ test("dataset CSV landings and printables are noindex, follow, and absent from t
     "/printables/bean-conversion-card/",
     "/printables/sourdough-discard-grams-cheat-sheet/",
     "/printables/weekly-grocery-budget-planner/",
+    "/printables/smoke-point-chart/",
+    "/printables/fridge-life-card/",
   ];
 
   for (const path of paths) {
@@ -826,4 +828,30 @@ test("indexable sitemap pages do not link to pruned slugs", () => {
     }
   }
   assert.deepEqual(failures, []);
+});
+
+test("matched top landing pages render one early signup and keep the end form", () => {
+  const samples = [
+    ["/cooking-oils-smoke-points-best-uses/", "oils"],
+    ["/how-to-store-homemade-salad-dressing-safely/", "storage"],
+    ["/costco-rotisserie-chicken-meal-ideas-dinner/", "budget"],
+    ["/high-fiber-bran-muffins-that-taste-good/", "fiber"],
+    ["/easy-sourdough-discard-recipes-beginners/", "sourdough"],
+    ["/canned-beans-vs-dried-beans-nutrition/", "beans"],
+  ];
+  for (const [path, offer] of samples) {
+    const html = readFileSync(distHtmlFor(`${SITE}${path}`), "utf8");
+    const early = html.match(/data-signup-placement="early"/g) || [];
+    const forms = html.match(/<form\b/gi) || [];
+    assert.equal(early.length, 1, `${path} early forms`);
+    assert.ok(forms.length <= 2 && forms.length >= 1, `${path} form count ${forms.length}`);
+    assert.match(html, new RegExp(`data-signup-offer="${offer}"`));
+    assert.match(html, /data-signup-placement="inline"/);
+    assert.doesNotMatch(html, /NewsletterPopup|id="popup-email"/);
+  }
+
+  const selenium = readFileSync(distHtmlFor(`${SITE}/selenium-containing-foods-easy-ways/`), "utf8");
+  assert.doesNotMatch(selenium, /data-signup-placement="early"/);
+  assert.match(selenium, /data-signup-offer="generic"/);
+  assert.match(selenium, /data-signup-placement="inline"/);
 });

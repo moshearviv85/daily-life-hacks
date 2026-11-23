@@ -11,6 +11,7 @@ import rehypeContextualFlagshipLinks from './scripts/rehype-contextual-flagship-
 import rehypeAffiliateLinks from './scripts/rehype-affiliate-links.mjs';
 import { affiliateLinksEnabled } from './src/content/affiliate-policy.mjs';
 import { stampHeroDirectory } from './scripts/lib/ai-image-iptc.mjs';
+import rehypeEarlySignup from './scripts/rehype-early-signup.mjs';
 import { INDEX_NOINDEX_TOOL_PATHS, INDEX_PRUNE_SLUGS } from './src/content/index-prune.js';
 import { publicModifiedDay } from './src/content/modified-date.mjs';
 
@@ -100,6 +101,8 @@ function loadSitemapExclusions() {
     '/printables/bean-conversion-card',
     '/printables/sourdough-discard-grams-cheat-sheet',
     '/printables/weekly-grocery-budget-planner',
+    '/printables/smoke-point-chart',
+    '/printables/fridge-life-card',
   ]) {
     addPath(path);
   }
@@ -321,6 +324,7 @@ const articleRehypePlugins = [
   rehypeArticleImages,
   rehypeRankingTables,
   rehypeContextualFlagshipLinks,
+  rehypeEarlySignup,
 ];
 // Off unless AFFILIATE_LINKS_ENABLED is explicitly true. An empty addition
 // keeps the markdown pipeline identical to a build without affiliate links.

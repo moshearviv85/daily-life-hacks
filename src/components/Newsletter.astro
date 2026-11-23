@@ -1,4 +1,14 @@
 ---
+import {
+  EARLY_BUTTON_STYLE,
+  EARLY_HEADING_STYLE,
+  EARLY_INPUT_STYLE,
+  EARLY_PITCH_STYLE,
+  EARLY_SECTION_STYLE,
+  SIGNUP_OFFERS,
+  SR_ONLY_STYLE,
+} from "../content/signup-offers.mjs";
+
 interface Props {
   /** When embedded on an article page, pass Kit/D1 context (same visible UI as homepage). */
   articleCategory?: string;
@@ -7,11 +17,14 @@ interface Props {
    * fiber: 7-day high-fiber meal plan.
    * sourdough: discard grams cheat sheet.
    * beans: dried-to-canned conversion card.
+   * oils: smoke point chart.
+   * storage: fridge life card.
+   * budget: $60 week meal plan.
    * generic: weekly newsletter, no extra printable promised.
    */
-  variant?: "fiber" | "sourdough" | "beans" | "generic";
-  /** inline: end of an article. footer: the single sitewide band. */
-  placement?: "inline" | "footer";
+  variant?: "fiber" | "sourdough" | "beans" | "oils" | "storage" | "budget" | "generic";
+  /** early: compact, mid-article. inline: end of an article. footer: the sitewide band. */
+  placement?: "early" | "inline" | "footer";
 }
 
 const {
@@ -21,158 +34,149 @@ const {
   placement = "footer",
 } = Astro.props;
 
-const offers = {
-  fiber: {
-    badge: "Free Meal Plan",
-    heading: "Get the Free 7-Day High-Fiber Meal Plan",
-    pitch:
-      "A printable week of meals that keep you full, with a grocery list included. Subscribe and it's yours, plus our best recipes and kitchen tips every week.",
-    buttonLabel: "Send Me the Meal Plan",
-    successText: "Hang on one second, your meal plan is on the next page.",
-  },
-  sourdough: {
-    badge: "Free Cheat Sheet",
-    heading: "Get the Sourdough Discard Grams Cheat Sheet",
-    pitch:
-      "One printable page for the sticky cup. A stirred cup of 100% hydration discard is 227 grams, and half a cup is 113. The sheet also splits that weight into the flour and water already in the jar. Subscribe and it's yours, plus one email a week.",
-    buttonLabel: "Send Me the Cheat Sheet",
-    successText: "Hang on one second. The gram cheat sheet is on the next page.",
-  },
-  beans: {
-    badge: "Free Card",
-    heading: "Get the Bean Conversion Card",
-    pitch:
-      "One printable page for the swap you actually make. One pound dried cooks to about 6 cups, which is 3½ to 4 cans. A 15-ounce can is about 1½ cups drained. Subscribe and it's yours, plus one email a week.",
-    buttonLabel: "Send Me the Card",
-    successText: "Hang on one second. The conversion card is on the next page.",
-  },
-  generic: {
-    badge: "Free Newsletter",
-    heading: "Get Weekly Nutrition, Recipes & Life Hacks",
-    pitch:
-      "Get our best healthy recipes, nutrition advice, and practical life hacks delivered to your inbox every week.",
-    buttonLabel: "Subscribe Free",
-    successText: "You're in. One second.",
-  },
-} as const;
-
-const offerCopy = offers[variant] ?? offers.generic;
+const offerCopy = SIGNUP_OFFERS[variant] ?? SIGNUP_OFFERS.generic;
 const inline = placement === "inline";
-const signupSource = inline ? "inline" : "footer";
+const early = placement === "early";
 ---
 
-<section
-  id="newsletter"
-  data-signup-offer={variant}
-  data-signup-placement={placement}
-  class:list={[
-    "transition-colors duration-300",
-    inline ? "mt-12 mb-2 rounded-2xl px-4 py-8 sm:px-8" : "py-8 mt-4 mb-0",
-  ]}
-  style={
-    inline
-      ? "background-color: var(--newsletter-bg); border: 1px solid var(--newsletter-border);"
-      : "background-color: var(--newsletter-bg); border-top: 1px solid var(--newsletter-border);"
-  }
->
-  <div class="max-w-2xl mx-auto px-4 text-center">
-    <div
-      class="inline-block mb-4 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest text-white"
-      style="background-color: #F29B30;"
+{
+  early ? (
+    <section
+      id="early-newsletter"
+      data-signup-form="true"
+      data-signup-offer={variant}
+      data-signup-placement="early"
+      data-signup-category={articleCategory}
+      data-signup-base-slug={articleBaseSlug}
+      style={EARLY_SECTION_STYLE}
     >
-      {offerCopy.badge}
-    </div>
-
-    <h2
-      class:list={[
-        "font-bold mb-3",
-        inline ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl md:text-5xl",
-      ]}
-      style="color: var(--heading-color);"
-    >
-      {offerCopy.heading}
-    </h2>
-    <p class="text-lg mb-5" style="color: var(--muted-color);">
-      {offerCopy.pitch}<br />No spam, only interesting things. Unsubscribe anytime.
-    </p>
-
-    <!-- Subscribe Form -->
-    <form id="footer-newsletter-form" class="max-w-md mx-auto space-y-3">
-      <label for="footer-email" class="sr-only">Email address</label>
-      <input
-        id="footer-email"
-        name="email"
-        type="email"
-        autocomplete="email"
-        inputmode="email"
-        placeholder="Enter your email"
-        required
-        class="w-full px-5 py-3.5 rounded-xl text-base focus:ring-2 focus:ring-[#F29B30] outline-none transition-all"
-        style="color: var(--text-color); background-color: var(--input-bg); border: 1px solid var(--border-color);"
-      />
-      <label class="flex items-start gap-2 text-left cursor-pointer">
+      <h2 style={EARLY_HEADING_STYLE}>{offerCopy.heading}</h2>
+      <p style={EARLY_PITCH_STYLE}>{offerCopy.earlyPitch || offerCopy.pitch}</p>
+      <form id="early-newsletter-form" style="margin:0;">
+        <label for="early-email" style={SR_ONLY_STYLE}>Email address</label>
         <input
-          id="footer-consent"
-          name="consent"
-          type="checkbox"
+          id="early-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          inputmode="email"
+          placeholder="Enter your email"
           required
-          class="mt-1 accent-[#F29B30] shrink-0"
+          style={EARLY_INPUT_STYLE}
         />
-        <span class="text-xs leading-snug" style="color: var(--muted-color);">
-          I agree to receive email newsletters and accept the
-          <a href="/privacy/" class="underline hover:text-[#F29B30]">Privacy Policy</a>.
-          You can unsubscribe at any time.
-        </span>
-      </label>
-      <button
-        id="footer-submit-btn"
-        type="submit"
-        class="w-full py-3.5 px-6 font-bold text-white rounded-xl transition-transform hover:scale-[1.02] shadow-md text-base"
-        style="background-color: #F29B30;"
-      >
-        {offerCopy.buttonLabel}
-      </button>
-    </form>
-
-    <!-- Success Message -->
-    <div id="footer-success" class="hidden max-w-md mx-auto py-6" role="status" aria-live="polite">
-      <div
-        class="inline-flex items-center justify-center w-12 h-12 mb-3 rounded-full bg-green-100 text-green-500"
-      >
-        <svg
-          class="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 13l4 4L19 7"></path>
-        </svg>
+        <label for="early-consent" style="display:flex;gap:0.5rem;align-items:flex-start;margin:0.65rem 0;font-size:0.75rem;line-height:1.35;color:var(--muted-color);">
+          <input id="early-consent" name="consent" type="checkbox" required style="margin-top:0.15rem;accent-color:#F29B30;" />
+          <span>
+            I agree to receive email newsletters and accept the
+            <a href="/privacy/" style="color:inherit;">Privacy Policy</a>.
+            You can unsubscribe at any time.
+          </span>
+        </label>
+        <button id="early-submit-btn" type="submit" style={EARLY_BUTTON_STYLE}>{offerCopy.buttonLabel}</button>
+      </form>
+      <div id="early-success" data-signup-success="true" hidden role="status">
+        <p style={EARLY_PITCH_STYLE}>{offerCopy.successText}</p>
       </div>
-      <p class="text-xl font-bold" style="color: var(--heading-color);">
-        You're in!
-      </p>
-      <p class="text-sm" style="color: var(--muted-color);">
-        {offerCopy.successText}
-      </p>
-    </div>
-  </div>
-</section>
+    </section>
+  ) : (
+    <section
+      id="newsletter"
+      data-signup-form="true"
+      data-signup-offer={variant}
+      data-signup-placement={placement}
+      data-signup-category={articleCategory}
+      data-signup-base-slug={articleBaseSlug}
+      class:list={[
+        "transition-colors duration-300",
+        inline ? "mt-12 mb-2 rounded-2xl px-4 py-8 sm:px-8" : "py-8 mt-4 mb-0",
+      ]}
+      style={
+        inline
+          ? "background-color: var(--newsletter-bg); border: 1px solid var(--newsletter-border);"
+          : "background-color: var(--newsletter-bg); border-top: 1px solid var(--newsletter-border);"
+      }
+    >
+      <div class="max-w-2xl mx-auto px-4 text-center">
+        <div
+          class="inline-block mb-4 px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-widest text-white"
+          style="background-color: #F29B30;"
+        >
+          {offerCopy.badge}
+        </div>
 
-<script define:vars={{ articleCategory, articleBaseSlug, offer: variant, signupSource }}>
+        <h2
+          class:list={[
+            "font-bold mb-3",
+            inline ? "text-2xl sm:text-3xl" : "text-3xl sm:text-4xl md:text-5xl",
+          ]}
+          style="color: var(--heading-color);"
+        >
+          {offerCopy.heading}
+        </h2>
+        <p class="text-lg mb-5" style="color: var(--muted-color);">
+          {offerCopy.pitch}<br />No spam, only interesting things. Unsubscribe anytime.
+        </p>
+
+        <form id="footer-newsletter-form" class="max-w-md mx-auto space-y-3">
+          <label for="footer-email" class="sr-only">Email address</label>
+          <input
+            id="footer-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            inputmode="email"
+            placeholder="Enter your email"
+            required
+            class="w-full px-5 py-3.5 rounded-xl text-base focus:ring-2 focus:ring-[#F29B30] outline-none transition-all"
+            style="color: var(--text-color); background-color: var(--input-bg); border: 1px solid var(--border-color);"
+          />
+          <label class="flex items-start gap-2 text-left cursor-pointer">
+            <input
+              id="footer-consent"
+              name="consent"
+              type="checkbox"
+              required
+              class="mt-1 accent-[#F29B30] shrink-0"
+            />
+            <span class="text-xs leading-snug" style="color: var(--muted-color);">
+              I agree to receive email newsletters and accept the
+              <a href="/privacy/" class="underline hover:text-[#F29B30]">Privacy Policy</a>.
+              You can unsubscribe at any time.
+            </span>
+          </label>
+          <button
+            id="footer-submit-btn"
+            type="submit"
+            class="w-full py-3.5 px-6 font-bold text-white rounded-xl transition-transform hover:scale-[1.02] shadow-md text-base"
+            style="background-color: #F29B30;"
+          >
+            {offerCopy.buttonLabel}
+          </button>
+        </form>
+
+        <div id="footer-success" data-signup-success="true" hidden class="max-w-md mx-auto py-6" role="status" aria-live="polite">
+          <div
+            class="inline-flex items-center justify-center w-12 h-12 mb-3 rounded-full bg-green-100 text-green-500"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <p class="text-xl font-bold" style="color: var(--heading-color);">You're in!</p>
+          <p class="text-sm" style="color: var(--muted-color);">{offerCopy.successText}</p>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<script>
   function getStoredSignupContext() {
     try {
       const raw = sessionStorage.getItem("newsletter_signup_context");
       if (!raw) return {};
-
       const parsed = JSON.parse(raw);
-      if (parsed.page && parsed.page !== window.location.pathname) {
-        return {};
-      }
-
+      if (parsed.page && parsed.page !== window.location.pathname) return {};
       return {
         category: parsed.category || "",
         base_slug: parsed.base_slug || "",
@@ -184,95 +188,108 @@ const signupSource = inline ? "inline" : "footer";
     }
   }
 
-  function redirectToThankYou(source, context) {
+  function redirectToThankYou(source, context, offer) {
     const params = new URLSearchParams({ source });
     if (context.category) params.set("category", context.category);
     if (context.email_segment) params.set("segment", context.email_segment);
     if (offer) params.set("offer", offer);
-
     try {
       sessionStorage.removeItem("newsletter_signup_context");
     } catch {
       // Ignore storage cleanup failures.
     }
-
     window.location.href = `/thank-you?${params.toString()}`;
   }
 
-  function setupFooterForm() {
-    const form = document.getElementById("footer-newsletter-form");
-    const emailInput = document.getElementById(
-      "footer-email",
-    );
-    const submitBtn = document.getElementById(
-      "footer-submit-btn",
-    );
-    const successEl = document.getElementById("footer-success");
+  function setupSignupForms() {
+    document.querySelectorAll("[data-signup-form]").forEach((section) => {
+      if (!(section instanceof HTMLElement)) return;
+      if (section.dataset.signupBound === "1") return;
+      const form = section.querySelector("form");
+      const emailInput = section.querySelector('input[type="email"]');
+      const submitBtn = section.querySelector('button[type="submit"]');
+      const successEl = section.querySelector("[data-signup-success]");
+      if (!(form instanceof HTMLFormElement) || !(emailInput instanceof HTMLInputElement)) return;
+      if (!(submitBtn instanceof HTMLButtonElement)) return;
+      section.dataset.signupBound = "1";
 
-    if (!form) return;
+      const placement = section.dataset.signupPlacement || "footer";
+      const offer = section.dataset.signupOffer || "";
+      const signupSource = placement === "footer" ? "footer" : "inline";
 
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if (!emailInput || !emailInput.value) return;
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!emailInput.value) return;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Subscribing...";
 
-      submitBtn.disabled = true;
-      submitBtn.innerText = "Subscribing...";
+        try {
+          fetch("/api/event", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              event_type: "signup_started",
+              source: signupSource,
+              page: window.location.pathname,
+              metadata: {
+                location:
+                  placement === "early"
+                    ? "article-early"
+                    : placement === "inline"
+                      ? "article-end"
+                      : "footer-newsletter",
+                offer,
+                placement,
+              },
+            }),
+          }).catch(() => {});
 
-      try {
-        fetch("/api/event", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            event_type: "signup_started",
-            source: signupSource,
-            page: window.location.pathname,
-            metadata: {
-              location: signupSource === "inline" ? "article-end" : "footer-newsletter",
-              offer,
-            },
-          }),
-        }).catch(() => {});
+          const signupContext = getStoredSignupContext();
+          const mergedCategory = signupContext.category || section.dataset.signupCategory || "";
+          const mergedBaseSlug = signupContext.base_slug || section.dataset.signupBaseSlug || "";
+          const res = await fetch("/api/subscribe", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email: emailInput.value,
+              source: signupSource,
+              placement,
+              page: window.location.pathname,
+              ...signupContext,
+              category: mergedCategory,
+              base_slug: mergedBaseSlug,
+            }),
+          });
 
-        const signupContext = getStoredSignupContext();
-        const mergedCategory = signupContext.category || articleCategory || "";
-        const mergedBaseSlug = signupContext.base_slug || articleBaseSlug || "";
-        const res = await fetch("/api/subscribe", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: emailInput.value,
-            source: signupSource,
-            page: window.location.pathname,
-            ...signupContext,
-            category: mergedCategory,
-            base_slug: mergedBaseSlug,
-          }),
-        });
-
-        if (res.ok) {
-          try {
-            localStorage.setItem("dlh_subscribed", "1");
-          } catch {
-            // Non-fatal: only used to stop the popup nagging subscribers.
+          if (res.ok) {
+            try {
+              localStorage.setItem("dlh_subscribed", "1");
+            } catch {
+              // Non-fatal: only used to stop the popup nagging subscribers.
+            }
+            form.hidden = true;
+            if (successEl instanceof HTMLElement) successEl.hidden = false;
+            setTimeout(
+              () =>
+                redirectToThankYou(
+                  signupSource,
+                  { ...signupContext, category: mergedCategory, base_slug: mergedBaseSlug },
+                  offer,
+                ),
+              250,
+            );
+          } else {
+            submitBtn.textContent = "Try Again";
+            submitBtn.disabled = false;
           }
-          form.classList.add("hidden");
-          successEl?.classList.remove("hidden");
-          const thankYouContext = {
-            ...signupContext,
-            category: mergedCategory,
-            base_slug: mergedBaseSlug,
-          };
-          setTimeout(() => redirectToThankYou(signupSource, thankYouContext), 250);
-        } else {
-          submitBtn.innerText = "Try Again";
+        } catch {
+          submitBtn.textContent = "Try Again";
           submitBtn.disabled = false;
         }
-      } catch {
-        submitBtn.innerText = "Try Again";
-        submitBtn.disabled = false;
-      }
+      });
     });
   }
 
-  document.addEventListener("astro:page-load", setupFooterForm);
+  document.addEventListener("astro:page-load", setupSignupForms);
+  setupSignupForms();
 </script>
