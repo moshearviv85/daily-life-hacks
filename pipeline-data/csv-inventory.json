@@ -488,5 +488,25 @@
    "price_location",
    "audit_note"
   ]
+ },
+ {
+  "file": "high-fiber-fast-food-2026.csv",
+  "rows": 29,
+  "fields": [
+   "chain",
+   "item",
+   "fiber_g",
+   "calories",
+   "fiber_per_100_kcal",
+   "protein_g",
+   "sodium_mg",
+   "source",
+   "official_url",
+   "checked_date",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
+  ]
  }
 ]

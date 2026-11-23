@@ -9,8 +9,8 @@ test("public, API, and standalone data packages reconcile exactly", () => {
   const result = validateDataFoundation();
 
   assert.deepEqual(result.errors, []);
-  assert.equal(result.datasetCount, 24);
-  assert.equal(result.rowCount, 622);
+  assert.equal(result.datasetCount, 25);
+  assert.equal(result.rowCount, 651);
   assert.equal(result.dataVersion, "2026.3");
 });
 

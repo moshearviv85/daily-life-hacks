@@ -1322,6 +1322,109 @@
       "rowCount": 11
     },
     {
+      "name": "high-fiber-fast-food-2026",
+      "path": "data/high-fiber-fast-food-2026.csv",
+      "profile": "tabular-data-resource",
+      "title": "High-Fiber Fast Food Orders (2026)",
+      "description": "29 U.S. fast-food orders with dietary fiber, calories, fiber per 100 kcal, protein, and sodium. Every figure was read from the chain's official nutrition page or PDF on November 23, 2026. Summed builds are named in the item column. Items that could not be read from an official page were left out.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "bytes": 7362,
+      "hash": "sha256:1cc5552e9a6b8aca4694f83bc92fe2245f313cba36ec2c1bee2dc99cbb736429",
+      "sources": [
+        {
+          "title": "Daily Life Hacks study: High-Fiber Fast Food Orders (2026)",
+          "path": "https://www.daily-life-hacks.com/high-fiber-fast-food-options-guide/"
+        }
+      ],
+      "licenses": [
+        {
+          "name": "CC-BY-4.0",
+          "path": "https://creativecommons.org/licenses/by/4.0/",
+          "title": "Creative Commons Attribution 4.0 International"
+        }
+      ],
+      "schema": {
+        "fields": [
+          {
+            "name": "chain",
+            "type": "string",
+            "description": "Fast food chain the menu item belongs to."
+          },
+          {
+            "name": "item",
+            "type": "string",
+            "description": "Menu item name as the chain publishes it."
+          },
+          {
+            "name": "fiber_g",
+            "type": "number",
+            "description": "Dietary fiber in grams for the order, either the chain's published total or the sum of the published components named in the item column."
+          },
+          {
+            "name": "calories",
+            "type": "integer",
+            "description": "Energy in kilocalories for that same published order."
+          },
+          {
+            "name": "fiber_per_100_kcal",
+            "type": "number",
+            "description": "Dietary fiber grams divided by calories, times 100, rounded half up to one decimal. It is computed from the fiber and calorie columns, not copied from the chain."
+          },
+          {
+            "name": "protein_g",
+            "type": "number",
+            "description": "Protein in grams for the order, either the chain's published total or the sum of the published components named in the item column."
+          },
+          {
+            "name": "sodium_mg",
+            "type": "integer",
+            "description": "Sodium in milligrams for the order, either the chain's published total or the sum of the published components named in the item column."
+          },
+          {
+            "name": "source",
+            "type": "string",
+            "description": "Where the nutrition figure came from, including the independent re-verification."
+          },
+          {
+            "name": "official_url",
+            "type": "string",
+            "description": "The chain's official nutrition page or PDF the fiber, calorie, protein, and sodium figures were read from."
+          },
+          {
+            "name": "checked_date",
+            "type": "string",
+            "description": "ISO date the official page or PDF was read. Not the chain's print date, which is recorded in the source column when the file states one."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
+          }
+        ],
+        "missingValues": [
+          ""
+        ]
+      },
+      "rowCount": 29
+    },
+    {
       "name": "high-fiber-snacks-per-dollar-2026",
       "path": "data/high-fiber-snacks-per-dollar-2026.csv",
       "profile": "tabular-data-resource",

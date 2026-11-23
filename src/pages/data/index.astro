@@ -67,14 +67,14 @@ const datasets = STUDY_DATASETS.map((dataset) => ({
 }));
 
 const title = `Free Food Cost Datasets: ${datasets.length} CSVs, ${TOTAL_DATA_ROWS} Rows`;
-const description = `Download all ${datasets.length} of our original food cost datasets as raw CSV. ${TOTAL_DATA_ROWS} priced rows with nutrition sourced mainly from USDA, plus documented restaurant-chain, product-label, and research inputs. Free to reuse with credit.`;
+const description = `Download all ${datasets.length} of our original food datasets as raw CSV. ${TOTAL_DATA_ROWS} rows with nutrition sourced mainly from USDA, plus documented restaurant-chain, product-label, and research inputs. Free to reuse with credit.`;
 
 const catalogSchema = {
   "@context": "https://schema.org",
   "@type": "DataCatalog",
   "@id": catalogId,
   name: "Daily Life Hacks Food Cost Data Catalog",
-  description: `Original, dated datasets pricing the nutrition value of American groceries and fast-food menus. ${datasets.length} public CSV files cover ${TOTAL_DATA_ROWS} priced rows. Grocery rows generally use USDA FoodData Central; three datasets carry a TVP value sourced to the manufacturer label, since USDA publishes no record for it. Restaurant rows use the chains' published nutrition data; mixed menu-plan datasets combine USDA and restaurant sources. The protein-quality dataset names its additional row-level literature and institutional sources.`,
+  description: `Original, dated datasets on the nutrition value of American groceries and fast-food menus. ${datasets.length} public CSV files cover ${TOTAL_DATA_ROWS} rows. Grocery rows generally use USDA FoodData Central; three datasets carry a TVP value sourced to the manufacturer label, since USDA publishes no record for it. Restaurant rows use the chains' published nutrition data; mixed menu-plan datasets combine USDA and restaurant sources. The protein-quality dataset names its additional row-level literature and institutional sources.`,
   url: pageUrl,
   inLanguage: "en-US",
   isAccessibleForFree: true,
@@ -159,7 +159,7 @@ const linkStyle = "color: #F29B30;";
     </h1>
     <p class="text-lg mb-8" style="color: var(--muted-color);">
       Every ranking on this site runs on a spreadsheet. Here are all of them, {TOTAL_DATA_ROWS} rows
-      of priced food data, in raw CSV. No email required, and no gate.
+      of food data, in raw CSV. No email required, and no gate.
     </p>
 
     <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">

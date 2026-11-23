@@ -94,8 +94,8 @@ export function validateDataFoundation() {
   const publicByName = new Map(publicResources.map((resource) => [resource.name, resource]));
   const distByName = new Map(distResources.map((resource) => [resource.name, resource]));
 
-  if (publicResources.length !== 24) {
-    errors.push(`public datapackage has ${publicResources.length} resources, expected 24`);
+  if (publicResources.length !== 25) {
+    errors.push(`public datapackage has ${publicResources.length} resources, expected 25`);
   }
   if (distResources.length !== publicResources.length) {
     errors.push(
@@ -183,8 +183,8 @@ export function validateDataFoundation() {
     }
   }
 
-  if (rowTotal !== 622) {
-    errors.push(`CSV row total is ${rowTotal}, expected 622`);
+  if (rowTotal !== 651) {
+    errors.push(`CSV row total is ${rowTotal}, expected 651`);
   }
   if (apiIndex.dataset_count !== publicResources.length) {
     errors.push(

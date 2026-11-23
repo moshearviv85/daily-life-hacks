@@ -16,8 +16,8 @@ const siteUrl = "https://www.daily-life-hacks.com";
 const pageUrl = `${siteUrl}/api-docs/`;
 const datasetCount = STUDY_DATASETS.length;
 
-const title = "Free Food Value API: 24 Datasets, No Key";
-const description = `A free JSON API over ${datasetCount} original food-cost datasets and ${TOTAL_DATA_ROWS} priced rows, with documented USDA, restaurant-chain, product-label, and DIAAS sources.`;
+const title = "Free Food Value API: 25 Datasets, No Key";
+const description = `A free JSON API over ${datasetCount} original food datasets and ${TOTAL_DATA_ROWS} rows, with documented USDA, restaurant-chain, product-label, and DIAAS sources.`;
 
 const organization = {
   "@type": "Organization",
@@ -44,7 +44,7 @@ const schemas = [
     "@type": "WebAPI",
     "@id": `${pageUrl}#api`,
     name: "Daily Life Hacks Food Value API",
-    description: `Free, keyless JSON API over ${datasetCount} food-cost datasets covering ${TOTAL_DATA_ROWS} priced rows. Grocery nutrition generally uses USDA FoodData Central, restaurant rows use chain-published nutrition, three datasets carry a TVP value sourced to the manufacturer label because USDA publishes no record for it, and DIAAS rows cite literature or the FAO 2013 report.`,
+    description: `Free, keyless JSON API over ${datasetCount} food datasets covering ${TOTAL_DATA_ROWS} rows. Grocery nutrition generally uses USDA FoodData Central, restaurant rows use chain-published nutrition, three datasets carry a TVP value sourced to the manufacturer label because USDA publishes no record for it, and DIAAS rows cite literature or the FAO 2013 report.`,
     documentation: pageUrl,
     termsOfService: DATA_TERMS_URL,
     isAccessibleForFree: true,

@@ -152,6 +152,6 @@ The bran-flakes row at 18.3 grams per 100 grams needs no cooking, but it is a pr
 
 One thing worth saying before you go rearrange your pantry. If you're currently eating very little fiber, hitting 28 grams tomorrow tends to go badly. Build up over a couple of weeks and drink more water while you do it. We covered both in [how to increase fiber intake without gas](/how-to-increase-fiber-intake-without-gas/) and [the water and fiber rule](/water-and-fiber-the-golden-rule/).
 
-The list above is a shopping guide, not a scoring system. Pick two or three things from the top half of this 53-food list that you'd genuinely put in your mouth, and the daily number sorts itself out. Where all of this fits into a week of real meals is laid out in [how to eat more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/).
+The list above is a shopping guide, not a scoring system. Pick two or three things from the top half of this 53-food list that you'd genuinely put in your mouth, and the daily number sorts itself out. A counter order is not on this per-100-gram list. [Fast food orders with the most fiber](/high-fiber-fast-food-options-guide/) are checked against each chain's nutrition page. Where all of this fits into a week of real meals is laid out in [how to eat more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/).
 
 <!-- numbers-source: public/data/fiber-per-dollar-2026.csv, public/data/fiber-day-cost-2026.csv -->
