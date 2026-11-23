@@ -157,7 +157,7 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
     false,
     "protein title should not be the old flat three-way gram SERP",
   );
-  assert.match(proteinRaw, /^dateModified: 2026-09-23$/m);
+  assert.match(proteinRaw, /^dateModified: 2026-11-23$/m);
   assert.match(protein.excerpt, /26-35g/);
   assert.match(protein.excerpt, /15g/);
   assert.match(protein.excerpt, /8-20g/);
@@ -1211,7 +1211,7 @@ test("artichoke recipe title leads with the macrobiotic steam method", () => {
     false,
     "artichoke title should not be the old gut-health SERP",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(artichoke.excerpt, /[Mm]acrobiotic artichoke recipe/);
   assert.match(artichoke.excerpt, /steam/i);
@@ -1597,7 +1597,7 @@ test("cauliflower pizza crust title leads with is it high in fiber", () => {
     false,
     "cauliflower crust title should not spend the SERP on that actually gets crispy",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(page.excerpt, /about 5\.8g fiber per quarter-crust/i);
   assert.match(page.excerpt, /1-2g per serving/);
@@ -1908,7 +1908,7 @@ test("indian salad dressing title leads with 5-minute yogurt-mint and tamarind",
     "indian salad dressing title should not be the old healthy homemade stack",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
   assert.match(
     raw,
     /^excerpt: "Indian-inspired salad dressings you whisk in 5 minutes flat\. Yogurt-mint, tamarind and chaat masala, all cheaper and brighter than bottled ranch\."$/m,
@@ -2355,7 +2355,7 @@ test("bagel sandwich lunch title leads with 10-12g protein per bagel", () => {
     /Some brands use pea protein or extra gluten to get the count up to 10 or 12 grams per bagel\./,
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-10-02$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.equal(
     page.excerpt,

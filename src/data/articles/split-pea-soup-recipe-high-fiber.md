@@ -11,7 +11,7 @@ tags:
 image: /images/split-pea-soup-recipe-high-fiber-main.jpg
 imageAlt: Thick green split pea soup in a white bowl with carrots, celery, and parsley on top
 date: 2026-04-28
-dateModified: 2026-07-26
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -83,7 +83,7 @@ People ask how much fiber in a cup of split pea soup because the label math is w
 
 Dried split peas are fiber dense before they ever hit the pot. As they soften, they thicken the broth, so a ladle of finished soup carries more plant material than a thin vegetable broth. This recipe starts with about 44 grams of fiber in the peas alone. The vegetables bring the pot to roughly 51 grams. Divide that by an eight-cup finished pot and you get about 6 grams per cup, or close to 13 grams in a two-cup bowl.
 
-We ranked common foods by cost in the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/). Dried legumes keep embarrassing almost everything with a pretty package. Split peas belong in that same boring-hero category. You're not buying fiber theater. You're buying a bag of peas.
+Split peas belong in the boring-hero category. You're not buying fiber theater. You're buying a bag of peas.
 
 Increase fiber gradually if your baseline diet is mostly white bread and takeout. Jumping from almost none to a giant bowl every night is how people decide legumes are the enemy. One bowl, water nearby, done.
 
@@ -157,7 +157,7 @@ Don't overcomplicate a dish whose whole personality is "peas got soft and delici
 
 One pot of split pea soup covers multiple lunches. Pair it with oatmeal breakfasts, bean chili later in the week, and fruit with the skin on, and your fiber average stops looking tragic without you turning into a person who talks about "macros" at parties.
 
-The [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) maps the grocery pattern. The [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) explains why a bag of split peas keeps showing up in that conversation. This pot is the Tuesday execution.
+The [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) maps the grocery pattern. This pot is the Tuesday execution.
 
 Make it once when the weather turns mean. Freeze half. Eat the rest with bread and zero apologies. Thick, cheap, and quietly loaded with fiber. That's the whole pitch for this split pea soup recipe.
 

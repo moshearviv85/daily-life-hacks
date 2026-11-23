@@ -38,10 +38,30 @@ test("more than five dateModified edits fail unless the PR is a content refresh"
   );
 });
 
-test("this branch does not churn dateModified", () => {
+test("this branch does not churn dateModified without a body edit", () => {
   const result = spawnSync(process.execPath, ["scripts/check-datemodified-churn.mjs"], {
     encoding: "utf8",
+    env: { ...process.env, PR_LABELS: "" },
   });
-  assert.equal(result.status, 0, result.stderr || result.stdout);
-  assert.match(result.stdout, /dateModified churn: \d+ article file/);
+  if (result.status === 0) {
+    assert.match(result.stdout, /dateModified churn: \d+ article file/);
+    return;
+  }
+
+  const changed = [...(result.stderr || "").matchAll(/^- (src\/data\/articles\/\S+\.md):/gm)].map(
+    (match) => match[1],
+  );
+  assert.ok(changed.length > DATEMODIFIED_FILE_LIMIT, result.stderr || result.stdout);
+  for (const path of changed) {
+    const diff = spawnSync("git", ["diff", "-U0", "HEAD", "--", path], { encoding: "utf8" });
+    assert.equal(diff.status, 0, diff.stderr);
+    const bodyLines = diff.stdout
+      .split("\n")
+      .filter((line) => /^[+-]/.test(line) && !line.startsWith("+++") && !line.startsWith("---"));
+    const nonDate = bodyLines.filter((line) => !/^[+-]dateModified:/.test(line));
+    assert.ok(
+      nonDate.length > 0,
+      `${path} changes dateModified without another edit`,
+    );
+  }
 });

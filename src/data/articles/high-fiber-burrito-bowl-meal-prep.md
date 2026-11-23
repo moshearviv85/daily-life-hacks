@@ -10,7 +10,7 @@ tags:
 image: "/images/high-fiber-burrito-bowl-meal-prep-main.jpg"
 imageAlt: "Four glass meal prep containers filled with quinoa black beans corn and salsa"
 date: 2026-04-08
-dateModified: 2026-07-17
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -64,7 +64,7 @@ For the Sunday-to-Friday plan behind this bowl, the [complete meal-prep system f
 
 ## The foundation of a good bowl
 
-The secret to a meal prep bowl that doesn't suck is structure. You need a sturdy base. We're using quinoa here because it cooks fast and has a slightly nutty flavor that works great with Mexican spices. Plus, it brings extra fiber and protein to the party, though quinoa isn't the cheapest way to buy fiber, as [the comparison with whole wheat flour](/fiber-per-dollar-cheapest-high-fiber-foods/#grains) makes clear. The 53-food version of that question is the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). If you hate quinoa, brown rice is totally fine.
+The secret to a meal prep bowl that doesn't suck is structure. You need a sturdy base. We're using quinoa here because it cooks fast and has a slightly nutty flavor that works great with Mexican spices. Plus, it brings extra fiber and protein to the party, though quinoa isn't the cheapest way to buy fiber. If you hate quinoa, brown rice is totally fine.
 
 Then we load it up with black beans and corn. Beans are the undisputed champions of the high fiber world. They're cheap, they fill you up, and they soak up whatever flavor you throw at them. A little taco seasoning turns a plain can of beans into the best part of the meal. If eating the same bowl five days running sounds grim, this lentil-and-quinoa bowl plan is built to bend when the week changes on you.
 

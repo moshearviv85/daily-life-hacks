@@ -16,7 +16,7 @@ tags:
 image: /images/easy-black-bean-tacos-weeknight-dinner-main.jpg
 imageAlt: Black bean tacos on corn tortillas with toppings
 date: 2026-03-15
-dateModified: 2026-07-20
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -68,7 +68,7 @@ Tacos don't have to automatically mean browning ground beef or chopping a mounta
 You open a couple of cans, warm the beans with a few standard pantry spices, and set out some tortillas. The entire operation goes from the cupboard to the table in about 15 minutes. It's not fussy, it's not complicated, and it gets the job done perfectly.
 ## Why Black Beans Belong in Tacos
 
-Black beans are an unsung hero of the pantry. They are incredibly cheap, shelf-stable, and bring a heavy dose of both protein and fiber to the table: [a single 15.5 ounce can runs about 26.5 grams of protein](/canned-beans-vs-dried-beans-nutrition/), so two cans feed a table without anyone missing the beef. The dry bag is cheaper still, which is why beans keep clustering near the top of the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) and the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). 
+Black beans are an unsung hero of the pantry. They are incredibly cheap, shelf-stable, and bring a heavy dose of both protein and fiber to the table: [a single 15.5 ounce can runs about 26.5 grams of protein](/canned-beans-vs-dried-beans-nutrition/), so two cans feed a table without anyone missing the beef. The dry bag is cheaper still. 
 
 The real trick here is mashing about half of the beans right in the skillet while they heat up. This gives you a mixture that is thick and creamy enough to actually stay inside the tortilla, but still has enough whole beans to provide texture. You aren't trying to make authentic, slow-cooked refried beans from scratch; you're just heating and seasoning them quickly. The cumin and chili powder do all the heavy lifting for the flavor profile.
 ## Keeping the Meal Flexible

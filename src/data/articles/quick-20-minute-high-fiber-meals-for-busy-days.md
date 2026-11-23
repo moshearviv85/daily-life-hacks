@@ -71,7 +71,7 @@ Some nights you do not have a zen hour to chop a rainbow. You have twenty minute
 
 This recipe is not trying to win a chef competition. It is trying to get fiber and protein on the table before anyone asks for cereal. It's one 20 minute high fiber meal. Six more are next.
 
-If you need more dinners built for that exact level of chaos, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) turns beans, grains, and other cheap staples into an actual plan. The can in this skillet is already priced. Canned black beans return 34.4 grams of fiber per dollar in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) and 30.1 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/).
+If you need more dinners built for that exact level of chaos, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) turns beans, grains, and other cheap staples into an actual plan.
 
 ## Six more 20 minute high fiber meals
 

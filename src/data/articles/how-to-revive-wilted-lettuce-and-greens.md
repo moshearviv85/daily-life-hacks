@@ -11,7 +11,7 @@ image: /images/how-to-revive-wilted-lettuce-and-greens-main.jpg
 imageAlt: Wilted lettuce being lowered into a bowl of ice water before it is dried
 quickAnswer: "Pull the leaves apart, soak them in a bowl of ice water for 5 to 10 minutes, then dry them completely in a salad spinner. Sturdy romaine can take up to 15. Use revived leaves the same day, because the soak puts water back in, it doesn't reset the clock. And know the difference. Limp is a quality problem. Slimy, mushy, or sour-smelling is rot rather than wilt, and the FDA says to throw away any produce that looks rotten."
 date: 2026-02-09
-dateModified: 2026-08-01
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -73,8 +73,6 @@ The method works best on greens that are limp but otherwise sound:
 - Kale and chard may need closer to 10 or 15 minutes.
 - Spinach and arugula are delicate, so check them at 5 minutes.
 - Parsley and cilantro can recover well after you trim the stem ends.
-
-Kale is the only green on that list in the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/). A 16 ounce bag of chopped kale returns 7.5 grams of fiber per dollar.
 
 Spring mix is the unreliable roommate here. Some leaves recover while others already crossed into mush. Sort it before soaking, then dry it gently.
 
