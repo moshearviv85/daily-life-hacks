@@ -15,7 +15,7 @@ tags:
 image: /images/how-to-use-leftover-rice-creative-ideas-main.jpg
 imageAlt: Bowl of fried rice made from leftover rice
 date: 2026-03-15
-dateModified: 2026-07-29
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -46,6 +46,16 @@ faq:
 You made way too much rice. Again. 
 
 Instead of shoving the container to the back of the fridge to let it slowly turn into a science experiment, you can easily turn it into a new meal with minimal effort. Because leftover rice is already fully cooked, it acts as the ultimate head start for dinner. It's ready to go straight into soups, salads, and skillets. Here are some highly practical ways to actually use it before it goes bad.
+## How to cool rice for fried rice (and why day-old works)
+
+Spread the just-cooked rice on a sheet pan in a thin layer. The grains steam off moisture instead of sitting in a warm pile, which is why day-old rice fries instead of clumping. Get that pan into the fridge within an hour. USDA's general leftovers limit is still two hours, and one hour above 90F, but rice is the food that earns the shorter habit.
+
+[FDA's Bad Bug Book](https://www.fda.gov/food/foodborne-pathogens/bad-bug-book-second-edition) describes Bacillus cereus illness from a toxin that forms in rice and other starchy foods left warm after cooking. A [CDC report on a fried-rice outbreak](https://www.cdc.gov/mmwr/preview/mmwrhtml/00025744.htm) makes the same point: spores can survive cooking, and room-temperature holding is when the bacteria multiply. Shallow, cold, and prompt. Then break the clumps with your fingers before they hit the pan.
+
+### Cauliflower fried rice, when you have no rice left
+
+Same skillet, different grain. Heat 1 tablespoon sesame oil, scramble 2 eggs, and set them aside. Add another tablespoon of oil, 2 sliced scallions, 1 teaspoon minced garlic, and 1 teaspoon grated ginger. Dump in a 12-ounce bag of frozen cauliflower rice straight from the freezer. Do not thaw it, and do not cover the pan. Cook 5 to 7 minutes over medium-high heat until the water is gone, then stir in 1 tablespoon soy sauce and the eggs. Frozen cauliflower that sat out to thaw is how this turns into wet cabbage. Covering the pan does the same thing.
+
 ## The Classic: Fried Rice
 
 This is the undisputed champion of leftover rice. In fact, cold, day-old rice works significantly better for this than fresh rice because it's slightly dried out, meaning it won't turn into a sticky, mushy paste in the pan. 

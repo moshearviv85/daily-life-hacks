@@ -16,7 +16,7 @@ tags:
 image: /images/how-to-cook-dried-beans-from-scratch-main.jpg
 imageAlt: Pot of cooked beans with herbs
 date: 2026-03-15
-dateModified: 2026-07-20
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -82,6 +82,14 @@ Soaking is a scheduling tool, not a moral achievement. If you remember the night
 Add half an onion, a few garlic cloves, a bay leaf, or sturdy herb stems while the beans simmer. Skip a complicated spice cabinet raid on the first batch. Beans absorb flavors slowly, and one onion plus enough salt does more useful work than twelve dusty jars competing for attention.
 
 Taste several beans before declaring the pot done. One bean can be tender while its stubborn neighbor still has a chalky center. When most are creamy throughout, turn off the heat and let them sit in the seasoned liquid for 15 minutes.
+
+## How long dried beans last
+
+The date on the bag is a quality date, not a safety date. [FDA's storage guidance](https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely) says a use-by date is the maker's call on best flavor, and a food can go past it and still be fine. Dried beans are mostly the water already removed, which is why a sealed bag in a cool cupboard outlasts the stamp.
+
+What actually ruins them is moisture, heat, and bugs. Clumping, a musty smell, visible mold, pinholes, or anything moving means the bag goes out. Beans are too cheap to negotiate with mold. Beans that are only old and dull are a cooking problem, not a trash problem. They take longer to soften, so give them more time at a lazy simmer and don't declare the pot done off one tender bean.
+
+Keep the bag sealed, or dump it into a jar with a tight lid, away from the stove. A four-pound bag of pinto beans in this study is 1,814 grams for $6.75, about 389 grams of protein if you use the 21.42 grams per 100 grams row. That number doesn't expire when the printed date does. The beans just ask for more patience on the stove.
 
 ## Store beans with their cooking liquid
 

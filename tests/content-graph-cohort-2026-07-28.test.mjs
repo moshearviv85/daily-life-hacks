@@ -10,7 +10,7 @@ const links = [
   ["big-flavor-less-salt-citrus-herbs-umami-swaps", "how-to-double-recipe-seasoning-without-guessing"],
   ["sheet-pan-salmon-and-vegetables-30-minutes", "selenium-containing-foods-easy-ways"],
   ["crispy-roasted-chickpeas-high-fiber-snack", "healthy-alternatives-potato-chips-snacking"],
-  ["how-to-make-sourdough-pizza-dough-same-day", "comparing-fiber-content-different-pizza-crusts"],
+  ["easy-sourdough-discard-pizza-dough-no-yeast", "comparing-fiber-content-different-pizza-crusts"],
   ["cheap-crockpot-meals-large-families", "best-low-cost-protein-sources-large-families"],
   ["sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes", "baking-sheet-liners-parchment-silicone-when-to-use"],
 ];

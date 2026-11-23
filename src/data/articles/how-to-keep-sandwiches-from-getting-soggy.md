@@ -10,7 +10,7 @@ tags:
 image: "/images/how-to-keep-sandwiches-from-getting-soggy-main.jpg"
 imageAlt: A cross-section of a deli sandwich, showing a layer of spread protecting the bread from moist fillings like tomato and lettuce.
 date: 2026-04-28
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 quickAnswer: >-
   Spread fat edge to edge first, butter, mayo, pesto, even peanut butter. That thin
@@ -70,6 +70,14 @@ So let that bread get stone-cold before you assemble. Use a wire rack if you hav
 A soft, fluffy white sandwich loaf is designed to be eaten immediately. It doesn't have the density to hold up against moisture for more than an hour or two.
 
 If your sandwich is going to sit in a lunch box, use something with more structural integrity. Sourdough, ciabatta, or a dense multi-grain loaf can handle a little moisture without falling apart, and most of the [high-protein breads worth putting in a sandwich](/best-high-protein-breads-healthy-sandwiches/) sit in that same dense category. Tighter crumb, sturdier crust, natural defense. It takes more chewing, but you won't be eating lunch with a fork because the bread dissolved.
+
+## Pack the salad jar, and the lunch box, the night before
+
+The sandwich rules above are the lunch-box version too. Build it the night before, fat barrier already on, and put the packed lunch in the fridge until you leave. FSIS is fine with that. What it is not fine with is mayo, lettuce, or tomato frozen inside the sandwich. Freeze meat and cheese on buttered bread if you want a thawing ice pack, and add the wet stuff in the morning.
+
+A salad jar is the same moisture problem, stacked instead of spread. Dressing stays in its own cup until you eat. In the jar, the heavy wet things go on the bottom: cucumbers, tomatoes, beans, carrots. Protein next. Leaves on top, and only if they're actually dry. Warm chicken under a snapped lid turns into rain on the lettuce, so cool it first. The longer version for a work salad is [packing salad so it isn't soggy](/how-to-pack-salad-for-work-not-soggy/).
+
+Bread that won't mold is a different problem from bread that won't go soggy. Don't refrigerate the loaf you still want to eat soft. Cold speeds staling. For two to four days, keep it on the counter in a bread box, paper, or a bag with the extra air pressed out, away from the stove and the dishwasher steam. Cool homemade bread completely before you wrap it, or the bag fogs and the crust goes damp. Anything you won't finish this week gets sliced and frozen.
 
 ## Keep the sandwich cold, not just dry
 

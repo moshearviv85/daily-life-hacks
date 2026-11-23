@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/foods-highest-in-protein-per-100-grams-main.jpg"
 imageAlt: "Bags of dry lentils, peanuts, and beans lined up beside a block of cheese and a pack of chicken breast on a counter"
 date: 2026-07-28
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -95,7 +95,7 @@ The 28.93-gram rotisserie row is also labeled as a proxy because its USDA record
 
 Because eggs are mostly water. At 12.56 grams per 100 grams they sit 36th out of the 49 foods in our July 2026 study, below old-fashioned rolled oats at 13.15 and whole wheat flour at 13.21.
 
-That number surprises people who've been told eggs are the gold standard. Both things are true at once. Eggs aren't dense, but the protein they do carry is [complete](/beans-and-rice-complete-protein-meal/), and a large egg at roughly 50 grams delivers about 6.3 grams for very little effort. We did the whole egg ladder in how much protein is in two eggs, and where they land on cost is in [are eggs the cheapest protein](/eggs-vs-everything-protein-value/).
+That number surprises people who've been told eggs are the gold standard. Both things are true at once. Eggs aren't dense, but the protein they do carry is [complete](/beans-and-rice-complete-protein-meal/), and a large egg at roughly 50 grams delivers about 6.3 grams for very little effort. The portions people actually eat are in the table below, and where eggs land on cost is in [are eggs the cheapest protein](/eggs-vs-everything-protein-value/).
 
 Greek yogurt at 10.19 and cottage cheese at 11.12 are in the same boat. Wet foods look weak on a per-100-gram chart. That doesn't make them bad buys, it makes the chart a partial picture.
 
@@ -114,6 +114,19 @@ Whole wheat flour led our 49-food value ranking at 96.0 grams of protein per dol
 Meanwhile cheddar sits high on density at 22.87 grams and returns just 18.1 grams per dollar, because it costs $1.27 per 100 grams. Sardines are dense and pricey. Almonds at 21.15 grams per 100 grams return 14.8 per dollar, which is one of the worst deals in the set.
 
 In this study, the clearest density-and-value overlap is dry legumes, dry roasted peanuts, and peanut butter at 22.21 grams per 100 grams. Dry green split peas, at 23.12 grams of protein per 100 grams in this table, are also the cook-and-eat leader on the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) at 71.0 grams of fiber per dollar. Density and the other nutrient's price tag agree on that bag. The full plant-side list is in [the cheapest plant protein ranking](/protein-per-dollar-cheapest-protein-sources/#plant), and the shopping version of all of it lives in [our high protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
+
+## Common portions, not 100 gram slabs
+
+The ranking above is per 100 grams of the food as we priced it. These are the portions people mean when they ask.
+
+| What you actually eat | Protein | Where the number comes from |
+|---|---:|---|
+| 2 large eggs (about 100 g edible) | 12.6 g | 12.56 g per 100 g in this study, FDC 171287 |
+| 2 tablespoons peanut butter (about 32 g) | 7.1 g | 22.21 g per 100 g in this study, FDC 174266 |
+| 1 cup cooked lentils | about 18 g | USDA cooked lentils, [FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients). Not the dry 24.63 g row |
+| 1 cup cooked oatmeal (234 g) | about 5.9 g | Same cooked rolled-oats record as our fiber cup, [FDC 173905](https://fdc.nal.usda.gov/food-details/173905/nutrients), 2.54 g protein per 100 g |
+
+Two eggs beat a bowl of oats at breakfast. A cup of cooked lentils beats both, and it is also mostly water, which is why it looks nothing like the dry lentil row at 24.63 grams per 100 grams. Peanut butter's 7.1 grams is a spoon, not a meal. The study still does not invent cooked yields for the dry rows. These four lines are the portions, cited on their own.
 
 ## Why this 49-food study does not rank servings
 

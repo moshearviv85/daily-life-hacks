@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { extname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
@@ -266,7 +266,7 @@ test("canned beans vs dried beans nutrition title puts protein grams per 100g in
     false,
     "nutrition beans title should not lead with canned beans or dry beans",
   );
-  assert.match(raw, /^dateModified: 2026-09-24$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(beans.excerpt, /[Dd]ried beans vs canned beans/);
   assert.match(beans.excerpt, /21\.6 g/);
@@ -1085,7 +1085,7 @@ test("soggy sandwich title locks the fat barrier differentiator", () => {
     "sandwich title should not be the old generic SERP",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(page.excerpt, /^How to keep sandwiches from getting soggy/i);
   assert.match(page.excerpt, /soggy/i);
@@ -1159,7 +1159,7 @@ test("savory chia title leads with seed pudding and the on-page fiber", () => {
     "savory chia title should not be the old seed recipes for breakfast SERP",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-09-25$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
   assert.match(raw, /clears 16 grams of fiber/);
 
   assert.match(page.excerpt, /^Savory chia seed recipes/i);
@@ -1180,58 +1180,15 @@ test("savory chia title leads with seed pudding and the on-page fiber", () => {
   );
 });
 
-test("packed lunch title leads with how to pack without soggy sandwiches", () => {
-  const page = articleFrontmatter("how-to-pack-lunch-crisp-sandwiches-salads");
-  const raw = readFileSync(
-    join(ROOT, "src/data/articles/how-to-pack-lunch-crisp-sandwiches-salads.md"),
-    "utf8",
-  );
-  const titleLower = page.title.toLowerCase();
-  const excerptLower = page.excerpt.toLowerCase();
-
-  assert.equal(
-    page.title,
-    "How to Pack Lunch Without Soggy Sandwiches or Wilted Salads",
-  );
-  assert.equal(page.title.length, 59);
-  assert.ok(
-    page.title.length <= 60,
-    `packed lunch title should be ≤60 chars, got ${page.title.length}`,
-  );
-  assert.ok(
-    titleLower.startsWith("how to pack lunch without soggy sandwiches"),
-    "packed lunch title should lead with how to pack lunch without soggy sandwiches",
-  );
-  assert.ok(
-    titleLower.indexOf("soggy sandwiches") < titleLower.indexOf("wilted salads"),
-    "packed lunch title should name soggy sandwiches before wilted salads",
+test("packed lunch URL 301s onto the soggy sandwich article", () => {
+  const redirects = readFileSync(join(ROOT, "public/_redirects"), "utf8");
+  assert.match(
+    redirects,
+    /^\/how-to-pack-lunch-crisp-sandwiches-salads\/? \/how-to-keep-sandwiches-from-getting-soggy\/ 301$/m,
   );
   assert.equal(
-    titleLower.startsWith("pack lunch without"),
+    existsSync(join(ROOT, "src/data/articles/how-to-pack-lunch-crisp-sandwiches-salads.md")),
     false,
-    "packed lunch title should not use the old flat imperative SERP",
-  );
-  assert.equal(
-    /^how to pack lunch so sandwiches and salads stay crisp$/.test(titleLower),
-    false,
-    "packed lunch title should not be the old stay-crisp SERP",
-  );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
-
-  assert.match(page.excerpt, /pack lunch without/i);
-  assert.match(page.excerpt, /soggy sandwiches/i);
-  assert.match(page.excerpt, /wilted salads/i);
-  assert.ok(
-    page.excerpt.length <= 160,
-    `packed lunch meta too long: ${page.excerpt.length}`,
-  );
-  assert.ok(
-    excerptLower.indexOf("pack lunch without") === 0,
-    "packed lunch meta should put pack lunch without first",
-  );
-  assert.ok(
-    excerptLower.indexOf("soggy sandwiches") < excerptLower.indexOf("wilted salads"),
-    "packed lunch meta should keep soggy sandwiches before wilted salads",
   );
 });
 
@@ -1367,7 +1324,7 @@ test("rice and beans everyday title puts cost and protein grams in the SERP", ()
     false,
     "rice and beans title should not lead with the old Is It Healthy SERP",
   );
-  assert.match(raw, /^dateModified: 2026-09-24$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(rice.excerpt, /is it healthy to eat rice and beans every day/i);
   assert.match(rice.excerpt, /protein and fiber/i);
@@ -1657,7 +1614,7 @@ test("protein density title leads with highest protein foods per 100g", () => {
     false,
     "protein density title should not be the old 49-food study SERP",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(page.excerpt, /[Ff]oods highest in protein/);
   assert.match(page.excerpt, /52\.17g/);

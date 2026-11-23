@@ -16,7 +16,7 @@ tags:
 image: "/images/easy-sourdough-discard-pizza-dough-no-yeast-main.jpg"
 imageAlt: A close-up, top-down view of a golden-brown pizza crust with airy edges on a wooden surface.
 date: 2026-04-28
-dateModified: 2026-09-14
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "25 minutes"
@@ -87,7 +87,21 @@ After mixing, the dough should hold together without dry pockets. It can feel sl
 
 Roll the center thin and even, about 1/8 inch where practical. Leaving a thick lump in the middle while thinning the edges is how you get a pizza that's simultaneously burned and underdone. An impressive achievement, but an unhelpful one.
 
-This is a quick crust. Baking powder supplies the immediate lift. It doesn't need the long kneading or fermentation schedule of same-day sourdough pizza dough.
+This is a quick crust. Baking powder supplies the immediate lift. It doesn't need the rise in the same-day version below.
+
+## Same-day version (ready in about 3 hours)
+
+Use this when you want a chewier rim and you can start about three hours before dinner. It's a hybrid: discard for the tang, a pinch of instant yeast for the clock. The no-yeast crust above is the 40-minute pan. This one actually rises.
+
+Enough for two personal pizzas or one sheet-pan pizza.
+
+1. Stir 1/2 cup warm water (about 100 to 110F) with 1 teaspoon sugar and 1 teaspoon instant yeast. Add 1 cup discard (about 240 grams), 1 tablespoon olive oil, and 1 1/4 teaspoons fine salt. Stir in 2 1/4 cups bread flour or all-purpose flour (about 280 grams) until the dough is shaggy. Add 1 to 2 tablespoons more water only if it feels stiff.
+2. Knead 6 to 8 minutes, until smoother. A stand mixer with a dough hook needs about 5 minutes on low. Dust a teaspoon of flour at a time if it glues itself to the counter. If it cracks, wet your hands and keep going.
+3. Oil a bowl, cover the dough, and let it rise somewhere warm for 60 to 75 minutes, until roughly doubled. A turned-off oven with the light on works.
+4. Divide into two balls, cover, and rest 15 to 20 minutes so the gluten relaxes. If you have the time, give the balls another 30 to 45 minutes while the oven heats.
+5. Heat the oven to 500F, or as hot as it safely goes, with a stone, steel, or upside-down sheet pan inside for at least 45 minutes. Stretch from the center, leave a thicker rim, sauce lightly, and bake 8 to 12 minutes until the bottom spots brown and the cheese bubbles.
+
+If the dough snaps back, cover it and wait 15 minutes. Cold discard is fine. You don't have to feed the starter first, because the instant yeast is doing the rise. If the flour choice is about fiber, the [pizza crust comparison](/comparing-fiber-content-different-pizza-crusts/) puts white, whole wheat, chickpea, and cauliflower crusts on one scoreboard.
 
 ## How much sauce and cheese?
 

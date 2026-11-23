@@ -10,32 +10,31 @@ tags:
 image: "/images/good-source-of-fiber-label-meaning-main.jpg"
 imageAlt: "Close up of a nutrition facts label on a food package with fiber highlighted"
 quickAnswer: >-
-  On a U.S. label, "good source of fiber" is a regulated phrase, not marketing
-  mush. It means a standard FDA reference portion carries 10 to 19 percent of
-  fiber's 28 gram Daily Value, so 2.8 to 5.3 grams. FDA scores it against that
-  reference amount rather than whatever serving the brand prints, so a company
-  cannot shrink the serving into a claim. "High in fiber" or "excellent source"
-  needs 20 percent or more, at least 5.6 grams. That's all it promises. It says nothing
-  about added sugar, and if you see a total fat figure printed right next to the
-  claim, that's the FDA making the brand admit the food isn't low fat.
+  Good source of fiber means 10 to 19 percent of the Daily Value per reference
+  amount, which is 2.8 to 5.3 grams on the current 28 gram DV. Quiz keys sometimes
+  print 5.5 grams as the last tenth before the high-fiber line. Excellent source,
+  high, or rich in means 20 percent or more, at least 5.6 grams. The old textbook
+  rule of 2.5 grams and 5 grams used the pre-2016 25 gram Daily Value. If the food
+  is not low fat, 21 CFR 101.54(d) makes the label disclose total fat next to the
+  fiber claim.
 date: 2026-04-25
-dateModified: 2026-09-22
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: "What does 'good source of fiber' mean on a food label?"
-    answer: "In the U.S., it means one serving contains 10 to 19 percent of the Daily Value for fiber, which works out to roughly 2.8 to 5.3 grams per serving based on the 28g DV. The FDA regulates this specific phrase under 21 CFR 101.54."
-  - question: "Does 3 grams of fiber per serving count as a good source?"
-    answer: "Yes. Three grams is about 11 percent of the 28 gram Daily Value, which clears the FDA's 10 percent floor for a 'good source' claim. It's a legitimate claim, just not a huge amount of fiber on its own."
-  - question: "What is the difference between 'good source' and 'excellent source' of fiber?"
-    answer: "An 'excellent source' (or 'high in') claim means 20 percent or more of the Daily Value per serving, so at least about 5.6 grams. 'Good source' is the tier below that, at 10 to 19 percent."
-  - question: "Can a food with added fiber use the 'good source' claim?"
-    answer: "Yes, if the fiber counted on the Nutrition Facts label meets FDA's dietary-fiber definition and the product reaches the claim threshold. FDA includes intrinsic plant fiber plus specific isolated or synthetic fibers, with enforcement discretion for additional named fibers such as inulin."
-  - question: "Should I only buy foods labeled 'good source of fiber'?"
-    answer: "No. Plenty of naturally high-fiber foods like beans, lentils, and whole fruits don't carry front-of-package claims because they don't need them. The label is a marketing tool. The Nutrition Facts panel is more useful for comparing."
+  - question: "Quiz: a label says good source of fiber. How many grams is that?"
+    answer: "10 to 19 percent of the Daily Value per reference amount customarily consumed, under 21 CFR 101.54(c). On the 28 gram fiber DV in use since 2016, that is 2.8 to 5.3 grams. Some quiz keys print 5.5 grams as the last tenth before 5.6. Three grams clears it, at about 11 percent. The brand cannot shrink the printed serving to sneak into the claim."
+  - question: "Quiz: what is the minimum for high, excellent source, or rich in fiber?"
+    answer: "20 percent of the Daily Value or more, under 21 CFR 101.54(b). On the 28 gram DV that is at least 5.6 grams per reference amount. High, rich in, and excellent source are the same tier. Good source, contains, and provides are the tier below, at 10 to 19 percent."
+  - question: "Quiz: a textbook says good source is 2.5 grams and high is 5 grams. Which rule is that?"
+    answer: "The old one. Those gram cuts are 10 percent and 20 percent of the pre-2016 25 gram fiber Daily Value, and they still show up in textbooks and quizzes. Current labels use 28 grams, so the cuts are 2.8 grams and 5.6 grams. If the question says 5 grams with no date, check which Daily Value it assumes."
+  - question: "Quiz: can a food that is not low in fat still say good source of fiber?"
+    answer: "Yes, but 21 CFR 101.54(d) makes the label disclose total fat per serving right next to the claim, in type at least half as big, if the food is not low fat. The line that says contains 9 grams of total fat per serving is that required disclosure, not a bonus fact from the brand."
+  - question: "Quiz: does 3 grams of fiber per serving count as a good source?"
+    answer: "Yes. Three grams is about 11 percent of the 28 gram Daily Value, which clears the 10 percent floor in 21 CFR 101.54(c). It is a real claim and a modest amount of fiber. Beans, lentils, and fruit often beat it without a front-of-package badge."
 ---
 On a U.S. food label, "good source of fiber" means one serving gives you 10 to 19 percent of the Daily Value for dietary fiber, and since [FDA lists the fiber DV as 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), that works out to 2.8 to 5.3 grams per serving. The tier above it, "high in fiber" or "excellent source of fiber," requires 20 percent of the DV or more, so at least 5.6 grams per serving. Both come straight from [FDA's nutrient content claim rule, 21 CFR 101.54](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54), and they apply when FDA-regulated food labels use those claims.
 

@@ -12,7 +12,7 @@ image: "/images/savory-chia-seed-recipes-breakfast-main.jpg"
 imageAlt: "Green savory chia pudding in a rustic bowl with avocado, cherry tomatoes, and chili flakes"
 quickAnswer: "Savory chia is the same overnight jar, minus the maple syrup. Whisk 3 tablespoons chia seeds into 1 cup unsweetened almond milk or low-sodium broth with garlic powder, smoked paprika, and salt. Stir again after five minutes, chill at least four hours, then top with avocado, cherry tomatoes, and hemp seeds. USDA puts one ounce of dried chia at 9.8 grams of fiber, about 35 percent of the FDA's 28-gram Daily Value. Keep the base at 40°F or below and make 4 days your ceiling. Never eat the seeds dry."
 date: 2026-04-28
-dateModified: 2026-09-25
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -95,15 +95,39 @@ Between the avocado, the hemp seeds, and the chia itself, this bowl quietly chec
 
 Packing it for work? Keep the toppings in a separate container. Nobody wants avocado that's been pressed against chia pudding since 7 AM.
 
-## A few flavor combos that don't feel weird
+## Fifteen savory ways to use the same jar
 
-The easiest way to get comfortable with savory chia is to think of it as a tiny grain bowl.
+The recipe card is the base: 3 tablespoons chia (about 36 grams) and 1 cup liquid, gelled at least 4 hours. Everything below is a different way to spend that jar. Quantities are for one serving unless I say otherwise.
 
-For a Mediterranean-ish version, use almond milk, garlic powder, lemon juice, cherry tomatoes, cucumber, feta, parsley, and black pepper. It eats like a very lazy tabbouleh cousin.
+### Breakfast bowls
 
-For a breakfast taco angle, use broth, smoked paprika, avocado, salsa, scallions, and a fried or soft-boiled egg. Add crushed tortilla chips right before eating. I support this decision.
+* **Tomato-avocado bowl:** the recipe card as written, plus a squeeze of lemon. 1/2 small avocado and 1/4 cup halved cherry tomatoes.
+* **Jammy egg bowl:** the set jar, 1 jammy egg, and a pinch of chili flakes. Salt the egg, not the chia again.
+* **Everything bagel bowl:** almond milk base, 1 teaspoon everything seasoning, 1/2 avocado, and a squeeze of lemon.
+* **Breakfast taco bowl:** broth base, 1/4 teaspoon smoked paprika, 2 tablespoons salsa, 1 scallion, and crushed tortilla chips added at the table.
 
-For something closer to avocado toast, use almond milk, everything bagel seasoning, avocado, cherry tomatoes, chili flakes, and a squeeze of lemon. Same breakfast mood, fewer crumbs on your shirt.
+### Savory chia pudding, curry and miso
+
+* **Miso pudding:** whisk 1 teaspoon white miso into the cup of warm broth before the chia goes in. Top with 1/4 cup sliced cucumber.
+* **Curry pudding:** 1/2 teaspoon curry powder and 1/4 teaspoon garlic powder in 1 cup broth. Finish with 2 tablespoons plain yogurt and cilantro.
+* **Lemon-dill pudding:** almond milk, 1 teaspoon lemon juice, 1 tablespoon chopped dill, and 2 tablespoons crumbled feta.
+
+### Chia crackers
+
+* **Salted crackers:** stir 1/2 cup chia seeds with 1 cup water and 1/2 teaspoon salt. Spread thin on parchment, rest 10 minutes, and bake at 300F for about 40 minutes, flipping once, until dry and snap-able.
+* **Sesame crackers:** same batter, plus 2 tablespoons sesame seeds and 1/4 teaspoon garlic powder.
+* **Everything crackers:** same batter, plus 1 tablespoon everything seasoning. Break the sheet into pieces after it cools.
+
+### Chia-bound burgers and fritters
+
+* **Bean burgers:** mash 1 can of rinsed black beans with 2 tablespoons ground chia stirred into 6 tablespoons water. Rest 5 minutes, form 4 patties, and pan-fry in a slick of oil until browned.
+* **Zucchini fritters:** 2 cups grated zucchini, squeezed dry, 1 egg, 2 tablespoons ground chia, 2 tablespoons flour, and 1/4 teaspoon salt. Pan-fry 4 flat cakes.
+* **Salmon cakes:** 1 can of drained salmon, 1 egg, 1 tablespoon ground chia, 2 tablespoons minced onion. Pan-fry until the edges crisp.
+
+### Chia dressing
+
+* **Lemon dressing:** whisk 1 teaspoon chia seeds into 2 tablespoons lemon juice, 2 tablespoons olive oil, and a pinch of salt. Wait 10 minutes so it thickens, then pour it on a salad.
+* **Mustard dressing:** 1 teaspoon chia, 1 tablespoon Dijon, 1 tablespoon water, 2 tablespoons olive oil. Same 10-minute wait. It clings instead of running off the leaves.
 
 ## Can you eat it warm?
 

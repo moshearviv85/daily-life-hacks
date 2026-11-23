@@ -8,23 +8,24 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/canned-beans-vs-dried-beans-nutrition-main.jpg"
 imageAlt: "A measuring bowl of dry black beans beside an opened can of black beans on a kitchen scale"
 date: 2026-07-28
-dateModified: 2026-09-24
+dateModified: 2026-11-23
 author: "David Miller"
+quickAnswer: "One 15-oz can is about 1 1/2 cups drained (about 9 oz, or 255 g). That lines up with 1/2 to 3/4 cup dried, about 90 to 125 g. One pound of dried beans cooks to about 6 to 7 cups, which is roughly 3 1/2 to 4 cans. Our protein match for a priced 15.5 oz can of black beans is 123 g dry, inside that band."
 featured: false
 editorsPick: false
 whatsHot: false
 mustRead: false
 faq:
-  - question: "Is canned bean nutrition different from dried bean nutrition?"
-    answer: "It is the same bean. The difference is water and price. Dry black beans carry 21.6 grams of protein per 100 grams against 6.0 grams for the canned version, because the canned beans have been cooked and are sitting in liquid. Per dollar the gap narrows but stays real, at 58.0 grams against 30.1."
-  - question: "How many dried beans equal a can of beans?"
-    answer: "We will not give you a number, because our data cannot support one honestly. Matching a can of black beans on protein takes about 123 grams of dry beans; matching the same can on fiber takes about 195 grams. Those two answers disagree, which means we hold no reliable dry to cooked conversion. The bag itself is a better guide."
-  - question: "Do you lose nutrients when beans are canned?"
-    answer: "Our datasets cannot answer that properly. We hold protein and fiber, and on those two the canned figures per 100 grams are lower mostly because of added water rather than loss. We hold no vitamin or mineral data at all, so if you want to compare micronutrients, USDA FoodData Central is the place to look rather than us."
-  - question: "Are dried beans healthier than canned beans?"
-    answer: "They are cheaper per gram of protein and fiber, which is a different claim. Dry black beans returned 58.0 grams of protein per dollar against 30.1 canned. Canned beans also carry added sodium in most cases, and rinsing removes some of it. Both forms may support a higher fiber intake, which many American diets fall short on."
-  - question: "Which beans give the most fiber per dollar?"
-    answer: "Among the beans in this table, dry pinto beans returned 41.7 grams of fiber per dollar and dry black beans 41.6. On the canned side, canned black beans led at 34.4 grams per dollar. Green split peas, not in the head-to-head pairs, led the wider dry-legume fiber list at 71.0. Increasing fiber quickly can be uncomfortable, so building up over a couple of weeks could be easier on you."
+  - question: "How many cans of beans are in a pound of dry beans?"
+    answer: "About 3 1/2 to 4. One pound is 454 grams. The protein match for our 15.5 oz can of black beans is 123 grams of dry black beans, and 454 divided by 123 is about 3.7 cans. A pound of dried beans also cooks to about 6 to 7 cups, which is the same neighborhood as 3 1/2 to 4 drained cans."
+  - question: "How much is a can of beans?"
+    answer: "In our July 2026 store-brand sample, a 15.5 oz can of black beans was $0.88. Canned kidney beans and canned chickpeas were $0.98 each. Those are shelf prices for the cans we priced, not a national average, and name-brand or organic cans cost more without changing the protein in the bean."
+  - question: "Do you have to cook canned beans?"
+    answer: "No. Canned beans are already cooked. Low-acid foods like beans are heat-processed in the sealed can under FDA's rule for hermetically sealed containers, 21 CFR 113. Rinse them and eat them cold, or heat them 5 to 10 minutes if you want them hot. Heat is a flavor choice. Throw out a can that is swollen, leaking, or deeply rusted."
+  - question: "How long do opened canned beans last?"
+    answer: "Three to four days in the fridge, in a covered container, not in the opened can. FoodSafety.gov gives refrigerated leftovers that window. The FDA's two-hour rule still applies after you open the can: refrigerate within two hours, or one hour if the room is above 90F. A sour smell, slime, mold, or fizz means it goes out."
+  - question: "How much protein is in a can of beans?"
+    answer: "A 15.5 oz can, 439 grams including the liquid, holds about 26.5 grams of protein for black beans, 22.9 grams for kidney beans, and 21.6 grams for chickpeas. Black beans also hold about 30.3 grams of fiber in that same whole-can figure. Drain and rinse and the plate is a bit under those totals, because some of the 439 grams is liquid."
 ---
 
 Same bean. Different amount of water, and a very different price per gram. Dry black beans carry 21.6 grams of protein per 100 grams against 6.0 grams for the canned version, and they return 58.0 grams of protein per dollar against 30.1 for the can.
@@ -52,11 +53,24 @@ The columns that actually mean something are the last two, because a dollar is a
 
 ## How many dried beans equal a can?
 
-We're not going to tell you, and the reason is worth spelling out.
+One 15-ounce can is about 1 1/2 cups once you drain it, roughly 9 ounces or 255 grams of beans. That drained can replaces about 1/2 to 3/4 cup of dried beans, 90 to 125 grams. One pound of dried beans, 454 grams, cooks to about 6 to 7 cups, which is about 3 1/2 to 4 cans. [USA Pulses](https://www.usapulses.org/) puts a cup of dried beans at about 3 cups cooked for the common beans, and our converter treats a cup of dry beans as 200 grams.
 
-Run the conversion on protein and you get one answer: a can of black beans holds about 26.5 grams of protein, and matching that from the dry bag takes roughly 123 grams of dry beans. Run the same conversion on fiber and you get a different answer: the can holds about 30.3 grams of fiber, and matching that takes roughly 195 grams of dry beans.
+The protein tracer and the fiber tracer still disagree, and that disagreement is real. A can of black beans holds about 26.5 grams of protein, so matching it from dry black beans at 21.6 grams per 100 grams takes 123 grams. The same can holds about 30.3 grams of fiber, and matching that takes about 195 grams, because USDA measures fiber differently in the canned and dry records. The 123 gram protein match sits inside the 90 to 125 gram kitchen band. The fiber match does not. Use the kitchen band to fill a pot. Use the protein grams when you care about the nutrient, not the volume.
 
-Those two answers disagree by about 60 percent. That's your signal that we hold no reliable dry to cooked yield ratio, only nutrient content and prices, and that a clean sounding conversion built out of our numbers would be fiction. Plenty of sites will hand you a confident cup measurement. We priced groceries and read labels, so we'll stay in our lane and say the bag's own instructions are a better guide than we are.
+| Bean | Dried per 15.5 oz can | Cooked cups from 1 cup dried |
+|---|---|---|
+| Black | 123 g dry, 0.61 cup, protein match to our canned black row | about 3 |
+| Pinto | 1/2 to 3/4 cup (90 to 125 g). No canned pinto in the study. Dry pinto is 21.42 g protein per 100 g | about 3 |
+| Kidney | 1/2 to 3/4 cup (90 to 125 g). The canned kidney row holds 22.9 g protein. We did not price dry kidney beans | about 3 |
+| Chickpea | 106 g dry, 0.53 cup, protein match to our canned chickpea row | closer to 2 |
+| Navy | 1/2 to 3/4 cup (90 to 125 g). No canned navy in the study. Dry navy is 22.33 g protein per 100 g | about 3 |
+| Cannellini | 1/2 to 3/4 cup (90 to 125 g). Not a separate row. Treat it like navy or kidney | about 3 |
+
+Cups of dry beans use the converter's 200 grams per US cup. Cooked yield for black, pinto, kidney, navy, and cannellini follows the common-bean rule of about 3 cups cooked from 1 cup dried. Chickpeas come out closer to 2 cups. We priced canned black, kidney, and chickpeas only, so pinto, navy, and cannellini stay on the kitchen band instead of a made-up can.
+
+[Open the dried beans to canned converter](/tools/dried-beans-to-canned-converter/)
+
+A 15.5 oz can of black beans was $0.88 in the July 2026 sample. Kidney beans and chickpeas were $0.98. You do not have to cook them. The can was already heat-processed. Rinse and eat, or warm them for 5 to 10 minutes. Once the can is open, move the beans to a covered container and eat them within 3 to 4 days. [FoodSafety.gov's cold storage chart](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) is the leftovers window, and the opened can is a bad fridge. An unopened can of beans is a low-acid canned food. [USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/shelf-stable-food) puts that group at 2 to 5 years for quality if the can stays intact, cool, and dry. The best-by date is quality, not a safety switch. A bulging, leaking, or deeply dented can goes in the trash unopened.
 
 ## Do you lose anything by buying the can?
 
@@ -95,7 +109,7 @@ A serving here is 15 grams of protein, so the can and the bag are buying the sam
 
 Both, for different jobs.
 
-Bags for the cooking you plan. A 4 pound bag of pinto beans at $6.75 returns 57.6 grams of protein per dollar and feeds you for weeks, as long as you have somewhere to keep it. Brown lentils, at 77.7 grams from a $1.44 bag, buy more protein per dollar. We covered that in how long dried beans last, and the sequence for getting a good pot out of it is in [how to cook dried beans from scratch](/how-to-cook-dried-beans-from-scratch/).
+Bags for the cooking you plan. A 4 pound bag of pinto beans at $6.75 returns 57.6 grams of protein per dollar and feeds you for weeks, as long as you have somewhere to keep it. Brown lentils, at 77.7 grams from a $1.44 bag, buy more protein per dollar. A 90 gram dry portion is a main-dish serving for one person, about 19 grams of protein from pinto beans. The sequence for getting a good pot out of the bag, and how long the dry beans keep, is in [how to cook dried beans from scratch](/how-to-cook-dried-beans-from-scratch/).
 
 Cans for the cooking you don't. At 88 cents, a can that needs no soak and no cooking at all is still cheaper protein than almost anything else in the building. It only looks expensive standing next to the bag.
 

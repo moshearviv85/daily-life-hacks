@@ -18,8 +18,8 @@ function read(relative) {
   return readFileSync(join(ROOT, relative), "utf8");
 }
 
-test("prune set is 105 unique article slugs and never overlaps KEEP or protected URLs", () => {
-  assert.equal(INDEX_PRUNE_SLUGS.size, 105);
+test("prune set is 80 unique article slugs and never overlaps KEEP or protected URLs", () => {
+  assert.equal(INDEX_PRUNE_SLUGS.size, 80);
   assert.equal(isIndexPruned("can-you-refreeze-frozen-vegetables-after-thawing"), false);
   assert.equal(INDEX_KEEP_PATHS.size, 25);
   assert.equal(isIndexPruned("cheap-dinner-ideas-cost-per-serving"), true);
