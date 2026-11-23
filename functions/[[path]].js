@@ -1,3 +1,5 @@
+import { matchSiteRedirect } from "./site-redirects.js";
+
 function detectTrafficSource(request, url) {
   const utmSource = (url.searchParams.get("utm_source") || "").toLowerCase();
   const referrer = (request.headers.get("Referer") || "").toLowerCase();
@@ -259,6 +261,23 @@ export async function onRequest(context) {
 
   const legacyPath = normalizeLegacyPath(originalPathname);
   const fullPathSlug = path.slice(1); // Remove leading slash
+
+  // public/_redirects does not run for these paths. _routes.json includes
+  // "/*", so this function owns the request, and env.ASSETS.fetch follows a
+  // _redirects 301 and returns the destination document as HTTP 200. Emit the
+  // redirect here, before the trailing-slash hop, so both forms land on the
+  // target in one 301. Sitemap rules still 301 at the edge because /sitemap*
+  // is excluded from the function.
+  if (request.method === "GET" || request.method === "HEAD") {
+    const siteRedirect = matchSiteRedirect(originalPathname);
+    if (siteRedirect) {
+      const location = buildCanonicalUrl(siteRedirect.destination, url.search);
+      if (new URL(location).pathname !== originalPathname) {
+        return Response.redirect(location, siteRedirect.status);
+      }
+    }
+  }
+
   const hasLegacyRule =
     LEGACY_PERMANENT_REDIRECTS.has(legacyPath) ||
     isLegacyGonePath(legacyPath) ||

@@ -11,6 +11,7 @@
     "verify:routing": "node scripts/verify-routing.mjs",
     "verify:technical-seo": "node --test tests/technical-seo-output.test.mjs",
     "verify:internal-links": "node scripts/verify-internal-links.mjs",
+    "verify:live-redirects": "node scripts/check-live-redirects.mjs",
     "verify:pin-destinations": "node scripts/verify-pin-destinations.mjs",
     "audit:routing": "node scripts/audit-routing.mjs",
     "migrate:pin-destinations": "node scripts/migrate-pin-destinations.mjs",

@@ -766,3 +766,53 @@ test("non-www versioned URLs keep usable KV routes ahead of fallback routing", a
     },
   ]);
 });
+
+test("consolidation URLs 301 to the target before a trailing-slash hop or asset rewrite", async () => {
+  const cases = [
+    ["/kfc-protein-per-dollar", "/fast-food-protein-per-dollar-ranked/"],
+    ["/kfc-protein-per-dollar/", "/fast-food-protein-per-dollar-ranked/"],
+    ["/tofu-vs-chicken-protein-cost/", "/protein-per-serving-beans-chicken-tofu-compared/"],
+    ["/cheapest-protein-per-gram/", "/protein-per-dollar-cheapest-protein-sources/"],
+    ["/cheapest-protein-per-gram?utm_source=google", "/protein-per-dollar-cheapest-protein-sources/?utm_source=google"],
+  ];
+
+  for (const [path, location] of cases) {
+    const assets = makeAssets(
+      new Set([
+        "/fast-food-protein-per-dollar-ranked/",
+        "/protein-per-serving-beans-chicken-tofu-compared/",
+        "/protein-per-dollar-cheapest-protein-sources/",
+        "/kfc-protein-per-dollar/",
+      ]),
+    );
+    const response = await onRequest(
+      makeContext(`https://www.daily-life-hacks.com${path}`, { ASSETS: assets }),
+    );
+    assert.equal(response.status, 301, path);
+    assert.equal(
+      response.headers.get("location"),
+      `https://www.daily-life-hacks.com${location}`,
+      path,
+    );
+    assert.deepEqual(assets.calls, [], path);
+  }
+});
+
+test("older _redirects HTML rules 301 from the function, including splats", async () => {
+  const cases = [
+    ["/free-meal-plan/", "https://www.daily-life-hacks.com/"],
+    ["/free-meal-plan", "https://www.daily-life-hacks.com/"],
+    ["/meal-plan/foo/", "https://www.daily-life-hacks.com/"],
+    ["/meal-plan/foo", "https://www.daily-life-hacks.com/"],
+    ["/sitemap.xml", "https://www.daily-life-hacks.com/sitemap-index.xml"],
+  ];
+
+  for (const [path, location] of cases) {
+    const assets = makeAssets(new Set(["/", "/meal-plan/foo/", "/free-meal-plan/"]));
+    const response = await onRequest(
+      makeContext(`https://www.daily-life-hacks.com${path}`, { ASSETS: assets }),
+    );
+    assert.equal(response.status, 301, path);
+    assert.equal(response.headers.get("location"), location, path);
+  }
+});
