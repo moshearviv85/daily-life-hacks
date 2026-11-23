@@ -14,6 +14,16 @@ const articles = allArticles
     .filter((article: any) => article.data.category === "recipes")
     .sort((a: any, b: any) => getReleaseTimestamp(b) - getReleaseTimestamp(a));
 
+const noYeastHub = allArticles.find(
+    (article: any) =>
+        article.id === "sourdough-discard-recipes-no-yeast" &&
+        isReleased(article) &&
+        !isIndexPruned(article.id),
+);
+const listedArticles = noYeastHub
+    ? [noYeastHub, ...articles.filter((article: any) => article.id !== noYeastHub.id)]
+    : articles;
+
 const BATCH_SIZE = 12;
 const title = "Easy Recipes With Adjustable Servings | Daily Life Hacks";
 const description =
@@ -24,9 +34,9 @@ const itemListSchema = {
     "@type": "ItemList",
     "@id": `${categoryUrl}#item-list`,
     name: "Easy Recipes With Adjustable Servings",
-    numberOfItems: articles.length,
+    numberOfItems: listedArticles.length,
     itemListOrder: "https://schema.org/ItemListOrderDescending",
-    itemListElement: articles.map((article: any, index: number) => ({
+    itemListElement: listedArticles.map((article: any, index: number) => ({
         "@type": "ListItem",
         position: index + 1,
         name: article.data.title,
@@ -115,7 +125,7 @@ const collectionPageSchema = {
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
         >
             {
-                articles.map((article: any, i: number) => (
+                listedArticles.map((article: any, i: number) => (
                     <div
                         class="article-item"
                         data-index={i}
