@@ -183,6 +183,76 @@ class NotifyIndexNowTests(unittest.TestCase):
                 notify_indexnow.load_sitemap_urls(root),
             )
 
+    def test_redirect_and_removed_urls_are_eligible_when_the_build_confirms_them(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            (root / "sitemap-0.xml").write_text(
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                "<url><loc>https://www.daily-life-hacks.com/stay/</loc></url>"
+                "</urlset>",
+                encoding="utf-8",
+            )
+            (root / "_redirects").write_text(
+                "/old-path /stay/ 301\n/old-path/ /stay/ 301\n",
+                encoding="utf-8",
+            )
+            gone = root / "gone"
+            gone.mkdir()
+            (gone / "index.html").write_text(
+                '<html><head><meta name="robots" content="noindex, follow"></head></html>',
+                encoding="utf-8",
+            )
+            reasons = root / "reasons.json"
+            reasons.write_text(
+                json.dumps(
+                    {
+                        "submitted": [
+                            {"url": "https://www.daily-life-hacks.com/old-path/", "reason": "redirected"},
+                            {"url": "https://www.daily-life-hacks.com/gone/", "reason": "removed"},
+                            {"url": "https://www.daily-life-hacks.com/missing/", "reason": "removed"},
+                            {"url": "https://www.daily-life-hacks.com/still-live/", "reason": "removed"},
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            live = root / "still-live"
+            live.mkdir()
+            (live / "index.html").write_text(
+                '<html><head><meta name="robots" content="index, follow"></head></html>',
+                encoding="utf-8",
+            )
+            log_path = root / "report.json"
+            status = notify_indexnow.main(
+                [
+                    "--urls",
+                    "https://www.daily-life-hacks.com/old-path/",
+                    "https://www.daily-life-hacks.com/gone/",
+                    "https://www.daily-life-hacks.com/missing/",
+                    "https://www.daily-life-hacks.com/still-live/",
+                    "--sitemap-dir",
+                    str(root),
+                    "--reasons-file",
+                    str(reasons),
+                    "--log-file",
+                    str(log_path),
+                    "--dry-run",
+                ]
+            )
+
+            self.assertEqual(status, 1)
+            report = json.loads(log_path.read_text(encoding="utf-8"))
+            self.assertEqual(
+                report["submitted"],
+                [
+                    {"url": "https://www.daily-life-hacks.com/gone/", "reason": "removed"},
+                    {"url": "https://www.daily-life-hacks.com/missing/", "reason": "removed"},
+                    {"url": "https://www.daily-life-hacks.com/old-path/", "reason": "redirected"},
+                ],
+            )
+            rejected = {item["url"] for item in report["rejected_explicit_urls"]}
+            self.assertEqual(rejected, {"https://www.daily-life-hacks.com/still-live/"})
+
     def test_rejected_explicit_url_fails_loudly(self):
         plan = notify_indexnow.build_plan(
             changed_paths=[],

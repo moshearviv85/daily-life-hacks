@@ -1,10 +1,12 @@
 """Notify IndexNow about canonical HTML pages changed by a production deploy.
 
-The script deliberately fails closed: a URL is eligible only when it can be
-derived from a changed page source (or supplied explicitly) *and* appears in
-the sitemap produced by the same build. Assets, redirects, noindex pages,
-future-dated articles, tag pages, and duplicate URL variants never reach the
-IndexNow request.
+The script deliberately fails closed. A URL is eligible when it can be derived
+from a changed page source (or supplied explicitly) and appears in the sitemap
+produced by the same build. The sitemap-diff workflow may also name a URL as
+`redirected` or `removed`: a redirect is eligible only when `dist/_redirects`
+contains that source, and a removal is eligible only when the built page is
+missing or noindex (a 410 or a pruned URL). Assets, future-dated articles, tag
+pages, and duplicate URL variants never reach the IndexNow request.
 
 Examples:
   py -3 scripts/notify-indexnow.py --base HEAD^ --head HEAD --dry-run
@@ -16,6 +18,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
@@ -162,11 +165,83 @@ def load_sitemap_urls(sitemap_dir: Path) -> set[str]:
     return urls
 
 
+def load_redirect_source_urls(dist_dir: Path) -> set[str]:
+    """Canonical source URLs of every concrete line in dist/_redirects."""
+    path = dist_dir / "_redirects"
+    if not path.is_file():
+        return set()
+    urls: set[str] = set()
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#"):
+            continue
+        source = line.split()[0]
+        url = canonicalize_url(source)
+        if url:
+            urls.add(url)
+    return urls
+
+
+def html_path_for_url(dist_dir: Path, url: str) -> Path:
+    path = urlsplit(url).path
+    if path in {"", "/"}:
+        return dist_dir / "index.html"
+    return dist_dir / path.strip("/") / "index.html"
+
+
+def is_removed_target(dist_dir: Path, url: str) -> bool:
+    """A URL IndexNow may recrawl as gone: no HTML, or HTML that is noindex.
+
+    An indexable page that simply failed to make the sitemap stays rejected.
+    """
+    path = html_path_for_url(dist_dir, url)
+    if not path.is_file():
+        return True
+    text = path.read_text(encoding="utf-8", errors="replace")
+    robots = re.search(
+        r"<meta\b[^>]*\bname=(['\"])robots\1[^>]*>",
+        text,
+        re.IGNORECASE,
+    )
+    if robots is None:
+        robots = re.search(
+            r"<meta\b[^>]*\bcontent=(['\"])[^'\"]*noindex[^'\"]*\1[^>]*>",
+            text,
+            re.IGNORECASE,
+        )
+        return robots is not None and re.search(r"\bname=(['\"])robots\1", robots.group(0), re.IGNORECASE) is not None
+    return "noindex" in robots.group(0).lower()
+
+
+def load_reason_map(path: Path | None) -> dict[str, str]:
+    if path is None or not path.is_file():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    items = data.get("submitted") if isinstance(data, dict) else data
+    if not isinstance(items, list):
+        return {}
+    reasons: dict[str, str] = {}
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        url = canonicalize_url(str(item.get("url") or ""))
+        reason = item.get("reason")
+        if url and isinstance(reason, str):
+            reasons[url] = reason
+    return reasons
+
+
 def build_plan(
     *,
     changed_paths: Iterable[str],
     explicit_urls: Iterable[str],
     sitemap_urls: set[str],
+    reasons: dict[str, str] | None = None,
+    redirect_urls: set[str] | None = None,
+    removed_urls: set[str] | None = None,
 ) -> dict:
     candidates: list[dict[str, str]] = []
     ignored_sources: list[str] = []
@@ -193,24 +268,40 @@ def build_plan(
                 }
             )
 
+    reason_map = reasons or {}
+    redirect_urls = redirect_urls or set()
+    removed_urls = removed_urls or set()
     eligible: list[str] = []
     seen: set[str] = set()
+    eligible_reasons: dict[str, str] = {}
     for candidate in candidates:
         url = candidate["url"]
         if url in seen:
             skipped.append({"url": url, "source": candidate["source"], "reason": "duplicate"})
             continue
         seen.add(url)
-        if url not in sitemap_urls:
-            skipped.append(
-                {
-                    "url": url,
-                    "source": candidate["source"],
-                    "reason": "not in built sitemap (unreleased, noindex, redirect, or missing)",
-                }
-            )
+        reason = reason_map.get(url)
+        if url in sitemap_urls:
+            eligible.append(url)
+            eligible_reasons[url] = reason or "sitemap"
             continue
-        eligible.append(url)
+        # Removed and redirected URLs are not in the sitemap. They are eligible
+        # only when the diff script named the reason and the build confirms it.
+        if reason == "redirected" and url in redirect_urls:
+            eligible.append(url)
+            eligible_reasons[url] = "redirected"
+            continue
+        if reason == "removed" and url in removed_urls:
+            eligible.append(url)
+            eligible_reasons[url] = "removed"
+            continue
+        skipped.append(
+            {
+                "url": url,
+                "source": candidate["source"],
+                "reason": "not in built sitemap (unreleased, noindex, redirect, or missing)",
+            }
+        )
 
     # A URL the operator asked for by hand and did not get is a failure, not a
     # footnote. Only duplicates are benign.
@@ -222,6 +313,10 @@ def build_plan(
 
     return {
         "eligible_urls": sorted(eligible),
+        "submitted": [
+            {"url": url, "reason": eligible_reasons.get(url, "sitemap")}
+            for url in sorted(eligible)
+        ],
         "skipped": skipped,
         "rejected_explicit_urls": rejected_explicit,
         "ignored_source_paths": sorted(ignored_sources),
@@ -270,6 +365,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--head", default="HEAD", help="Git diff head (default: HEAD)")
     parser.add_argument("--urls", nargs="*", default=[], help="Explicit site URL paths")
     parser.add_argument("--sitemap-dir", type=Path, default=REPO_ROOT / "dist")
+    parser.add_argument(
+        "--reasons-file",
+        type=Path,
+        help="JSON from indexnow-sitemap-diff.py naming why each URL is submitted.",
+    )
     parser.add_argument("--log-file", type=Path)
     parser.add_argument("--dry-run", action="store_true", help="Plan and log without HTTP calls")
     return parser.parse_args(argv)
@@ -280,10 +380,20 @@ def main(argv: list[str] | None = None) -> int:
     try:
         changed_paths = [] if args.urls else get_changed_paths(args.base, args.head)
         sitemap_urls = load_sitemap_urls(args.sitemap_dir)
+        reasons = load_reason_map(args.reasons_file)
+        redirect_urls = load_redirect_source_urls(args.sitemap_dir)
+        removed_urls = {
+            url
+            for url, reason in reasons.items()
+            if reason == "removed" and is_removed_target(args.sitemap_dir, url)
+        }
         plan = build_plan(
             changed_paths=changed_paths,
             explicit_urls=args.urls,
             sitemap_urls=sitemap_urls,
+            reasons=reasons,
+            redirect_urls=redirect_urls,
+            removed_urls=removed_urls,
         )
     except (FileNotFoundError, RuntimeError, ET.ParseError) as error:
         report = {

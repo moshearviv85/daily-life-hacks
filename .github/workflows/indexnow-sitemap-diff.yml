@@ -15,10 +15,20 @@
 #      exactly what happened to the 9 comparison articles on 2026-07-26.
 #   3. Force-pushes / merges, where `github.event.before` is not a useful base.
 #
-# This workflow is state-based rather than event-based: it compares the sitemap
-# the current build produces against a cached snapshot of the last sitemap that
-# was successfully submitted. Nothing can be lost by a failed run, because the
-# snapshot only advances after a successful submission.
+# This workflow is state-based rather than event-based: it compares the built
+# pages against a cached snapshot of the last site that was successfully
+# submitted. A URL is submitted when it is new, its main-content sha256 changed,
+# or its sitemap lastmod moved forward. A dateModified that only moved backward
+# is not a change; the content hash is the source of truth. Removed (410 /
+# noindex) URLs and new 301 sources are submitted too. lastmod is day-granular,
+# so same-day body edits are caught by the content hash. Keep Reading, build
+# hashes, nonces, and publish dates are not part of that hash.
+#
+# At most 60 URLs go out per run. The rest stay in .indexnow/queue.json in the
+# same cache and drain on the next successful run, or via workflow_dispatch
+# input drain_queue_only. The snapshot and the queue advance together only
+# after submission succeeds, so a failed run retries instead of dropping URLs.
+# A cold start (no snapshot) still submits nothing.
 #
 # It triggers on `workflow_run` after Deploy Cloudflare Pages *succeeds*, so it
 # covers push, scheduled and manual deploys alike, and it can never submit a
@@ -40,6 +50,10 @@ on:
         description: "Plan only, make no IndexNow request"
         type: boolean
         default: true
+      drain_queue_only:
+        description: "Submit the persisted queue only; do not detect new changes"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -89,22 +103,28 @@ jobs:
           restore-keys: |
             indexnow-sitemap-
 
-      - name: Diff sitemap against the last submitted snapshot
+      - name: Diff built pages against the last submitted snapshot
         id: diff
+        env:
+          DRAIN: ${{ inputs.drain_queue_only && '--drain-queue-only' || '' }}
         run: |
           python scripts/indexnow-sitemap-diff.py \
             --sitemap-dir dist \
             --snapshot .indexnow/sitemap-snapshot.json \
+            --queue .indexnow/queue.json \
+            --baseline scripts/indexnow-content-baseline.json \
             --output .indexnow/changed-urls.txt \
-            --log-file indexnow-diff-report.json
+            --reasons .indexnow/changed-urls.json \
+            --log-file indexnow-diff-report.json \
+            $DRAIN
           COUNT=$(wc -l < .indexnow/changed-urls.txt | tr -d ' ')
           echo "count=$COUNT" >> "$GITHUB_OUTPUT"
           echo "Candidate URLs: $COUNT"
 
-      # notify-indexnow.py stays the single audited submission path: it
-      # re-checks every URL against the sitemap this build produced, rejects
-      # anything non-canonical, and now exits non-zero if a URL handed to it is
-      # dropped rather than skipping it silently.
+      # notify-indexnow.py stays the single audited submission path. Sitemap
+      # URLs must be in this build's sitemap. Redirect sources must match
+      # dist/_redirects. Removed URLs must be missing or noindex. A URL the
+      # diff handed over and the checker drops fails the run.
       - name: Submit to IndexNow
         if: steps.diff.outputs.count != '0'
         env:
@@ -115,18 +135,25 @@ jobs:
           python scripts/notify-indexnow.py \
             $DRY_RUN \
             --sitemap-dir dist \
+            --reasons-file .indexnow/changed-urls.json \
             --log-file indexnow-submission-report.json \
             --urls "${URLS[@]}"
 
-      # Only reached when submission succeeded, so a failed submission is
-      # retried on the next deploy instead of being silently dropped.
-      - name: Advance the snapshot
+      # Snapshot and queue advance together, and only after submission
+      # succeeded. A partial batch (more than 60 changes) leaves the remainder
+      # in the queue instead of aborting. A failed submission retries next run.
+      - name: Advance the snapshot and queue
         if: success() && !inputs.dry_run
+        env:
+          DRAIN: ${{ inputs.drain_queue_only && '--drain-queue-only' || '' }}
         run: |
           python scripts/indexnow-sitemap-diff.py \
             --sitemap-dir dist \
             --snapshot .indexnow/sitemap-snapshot.json \
-            --write-snapshot
+            --queue .indexnow/queue.json \
+            --baseline scripts/indexnow-content-baseline.json \
+            --write-snapshot \
+            $DRAIN
 
       - name: Save sitemap snapshot
         if: success() && !inputs.dry_run

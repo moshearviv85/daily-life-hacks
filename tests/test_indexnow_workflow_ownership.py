@@ -31,6 +31,10 @@ class IndexNowWorkflowOwnershipTests(unittest.TestCase):
         self.assertIn("Upload IndexNow reports", text)
         self.assertIn("indexnow-diff-report.json", text)
         self.assertIn("indexnow-submission-report.json", text)
+        self.assertIn("drain_queue_only", text)
+        self.assertIn(".indexnow/queue.json", text)
+        self.assertIn("scripts/indexnow-content-baseline.json", text)
+        self.assertNotIn("Refusing to submit", text)
 
     def test_deploy_workflow_keeps_live_verification_without_submission(self):
         text = DEPLOY_WORKFLOW.read_text(encoding="utf-8")
