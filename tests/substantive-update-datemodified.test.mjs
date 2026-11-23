@@ -1,0 +1,236 @@
+import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
+import test from "node:test";
+
+import {
+  SHARED_DATEMODIFIED_LIMIT,
+  extractFrontmatterField,
+  publicModifiedDay,
+  sharedDateModifiedWithoutSubstantiveUpdate,
+} from "../src/content/modified-date.mjs";
+
+const ROOT = new URL("..", import.meta.url).pathname;
+const ARTICLES = join(ROOT, "src/data/articles");
+const BASELINE = "94167b6";
+const TODAY = "2026-11-23";
+
+/**
+ * Pages whose body actually changed on 2026-11-23: merges #234, the cottage
+ * table #239, savory chia #240, the protein table #245, the beans table #243,
+ * the sandwich page #247, other >=15% rewrites since 94167b6, and the two
+ * ranking-study targets expanded by the prune/301 work.
+ */
+const SUBSTANTIVE_SLUGS = new Set([
+  "best-high-fiber-foods-ranked-by-fiber-content",
+  "canned-beans-vs-dried-beans-nutrition",
+  "costco-rotisserie-chicken-meal-ideas-dinner",
+  "cottage-cheese-vs-greek-yogurt-protein-uses",
+  "easy-cold-summer-pasta-salad-potlucks",
+  "foods-highest-in-protein-per-100-grams",
+  "gut-health-tea-peppermint-ginger",
+  "healthy-blue-collar-lunch-ideas-men",
+  "high-fiber-bran-muffins-that-taste-good",
+  "high-fiber-gluten-free-bread-recipe",
+  "how-much-protein-in-bagel-sandwich",
+  "how-to-double-recipe-seasoning-without-guessing",
+  "how-to-keep-sandwiches-from-getting-soggy",
+  "how-to-measure-sourdough-discard-grams",
+  "how-to-store-homemade-salad-dressing-safely",
+  "lentil-curry-high-fiber-vegan-dinner",
+  "meal-prep-for-beginners-complete-system",
+  "prebiotic-foods-beyond-the-buzzwords",
+  "protein-per-dollar-adjusted-for-quality",
+  "protein-per-serving-beans-chicken-tofu-compared",
+  "quick-20-minute-high-fiber-meals-for-busy-days",
+  "savory-chia-seed-recipes-breakfast",
+  "sourdough-discard-recipes-no-yeast",
+  "what-30-grams-of-fiber-costs-per-day",
+]);
+
+function gitShow(rev, path) {
+  try {
+    return execFileSync("git", ["show", `${rev}:${path}`], {
+      cwd: ROOT,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+  } catch {
+    return null;
+  }
+}
+
+function readArticles() {
+  return readdirSync(ARTICLES)
+    .filter((name) => name.endsWith(".md"))
+    .map((name) => {
+      const slug = name.replace(/\.md$/, "");
+      const path = `src/data/articles/${name}`;
+      const markdown = readFileSync(join(ARTICLES, name), "utf8");
+      const baseline = gitShow(BASELINE, path);
+      return {
+        slug,
+        path,
+        markdown,
+        title: extractFrontmatterField(markdown, "title"),
+        author: extractFrontmatterField(markdown, "author"),
+        dateModified: extractFrontmatterField(markdown, "dateModified"),
+        substantiveUpdate: extractFrontmatterField(markdown, "substantiveUpdate"),
+        baselineModified: baseline
+          ? extractFrontmatterField(baseline, "dateModified")
+          : null,
+        mainTitle: null,
+        mainAuthor: null,
+      };
+    });
+}
+
+test("more than 10 articles sharing one dateModified without substantiveUpdate fails", () => {
+  const shared = Array.from({ length: SHARED_DATEMODIFIED_LIMIT + 1 }, (_, index) => ({
+    slug: `example-${index}`,
+    dateModified: "2026-11-23",
+  }));
+  const violations = sharedDateModifiedWithoutSubstantiveUpdate(shared);
+  assert.equal(violations.length, 1);
+  assert.equal(violations[0].date, "2026-11-23");
+  assert.equal(violations[0].count, SHARED_DATEMODIFIED_LIMIT + 1);
+
+  assert.deepEqual(
+    sharedDateModifiedWithoutSubstantiveUpdate(shared.slice(0, SHARED_DATEMODIFIED_LIMIT)),
+    [],
+  );
+  assert.deepEqual(
+    sharedDateModifiedWithoutSubstantiveUpdate(
+      shared.map((article) => ({ ...article, substantiveUpdate: "2026-11-23" })),
+    ),
+    [],
+  );
+});
+
+test("public modified day follows substantiveUpdate, then dateModified, then date", () => {
+  const markdown = `---
+title: "Example"
+date: 2026-04-28
+dateModified: 2026-07-20
+substantiveUpdate: 2026-11-23
+---
+body
+`;
+  assert.equal(publicModifiedDay(markdown), "2026-11-23");
+  assert.equal(
+    publicModifiedDay(markdown.replace(/^substantiveUpdate:.*\n/m, "")),
+    "2026-07-20",
+  );
+  assert.equal(publicModifiedDay("---\ndate: 2026-04-28\n---\n"), "2026-04-28");
+});
+
+test("article template and sitemap read substantiveUpdate before dateModified", () => {
+  const page = readFileSync(join(ROOT, "src/pages/[slug].astro"), "utf8");
+  const config = readFileSync(join(ROOT, "astro.config.mjs"), "utf8");
+  const feed = readFileSync(join(ROOT, "src/content/feed.ts"), "utf8");
+  assert.match(page, /pickModifiedDate\(\s*article\.data\.substantiveUpdate,\s*article\.data\.dateModified,/);
+  assert.match(config, /publicModifiedDay\(content\)/);
+  assert.match(feed, /article\.data\.substantiveUpdate \?\?\s*article\.data\.dateModified/);
+});
+
+test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", () => {
+  const articles = readArticles();
+  const today = [];
+  const restored = [];
+  for (const article of articles) {
+    const onMain = gitShow("origin/main", article.path);
+    if (onMain) {
+      assert.equal(
+        article.title,
+        extractFrontmatterField(onMain, "title"),
+        `${article.slug} title changed`,
+      );
+      assert.equal(
+        article.author,
+        extractFrontmatterField(onMain, "author"),
+        `${article.slug} author changed`,
+      );
+    }
+    assert.equal(article.author ?? "David Miller", "David Miller", `${article.slug} author`);
+    if (SUBSTANTIVE_SLUGS.has(article.slug)) {
+      assert.equal(article.dateModified, TODAY, article.slug);
+      assert.equal(article.substantiveUpdate, TODAY, `${article.slug} substantiveUpdate`);
+      today.push(article.slug);
+      continue;
+    }
+    assert.equal(
+      article.substantiveUpdate,
+      null,
+      `${article.slug} has substantiveUpdate without a real content change`,
+    );
+    assert.equal(
+      article.dateModified,
+      article.baselineModified,
+      `${article.slug} dateModified should be the 94167b6 value`,
+    );
+    if (article.dateModified === TODAY) today.push(article.slug);
+    else if (article.baselineModified !== TODAY && article.dateModified !== TODAY) {
+      // restored, or never bumped
+    }
+  }
+  assert.equal(today.filter((slug) => SUBSTANTIVE_SLUGS.has(slug)).length, SUBSTANTIVE_SLUGS.size);
+
+  const bumpedSinceBaseline = articles.filter(
+    (article) => article.dateModified !== article.baselineModified,
+  );
+  assert.deepEqual(
+    bumpedSinceBaseline.map((article) => article.slug).sort(),
+    [...SUBSTANTIVE_SLUGS].filter((slug) => {
+      const article = articles.find((item) => item.slug === slug);
+      return article.dateModified !== article.baselineModified;
+    }).sort(),
+  );
+
+  // Dates already clustered at 94167b6 stay. Anything moved since then needs
+  // substantiveUpdate, and no new day may be shared by more than 10 articles
+  // that lack it.
+  const introduced = articles.filter(
+    (article) => article.dateModified && article.dateModified !== article.baselineModified,
+  );
+  assert.deepEqual(sharedDateModifiedWithoutSubstantiveUpdate(introduced), []);
+
+  const stillToday = articles.filter((article) => article.dateModified === TODAY);
+  const todayWithoutField = stillToday.filter((article) => !article.substantiveUpdate);
+  assert.ok(
+    todayWithoutField.length <= SHARED_DATEMODIFIED_LIMIT,
+    `2026-11-23 without substantiveUpdate: ${todayWithoutField.map((article) => article.slug).join(", ")}`,
+  );
+  restored.push(
+    ...articles.filter(
+      (article) =>
+        article.baselineModified !== TODAY &&
+        article.dateModified !== TODAY &&
+        gitShow("origin/main", article.path) &&
+        extractFrontmatterField(gitShow("origin/main", article.path), "dateModified") === TODAY,
+    ),
+  );
+  assert.equal(stillToday.length, 33, `pages still on ${TODAY}`);
+  assert.equal(restored.length, 62, "pages restored off 2026-11-23");
+});
+
+test("restored and substantive pages render the honest Updated day", () => {
+  const cases = [
+    ["eat-healthy-on-a-budget-complete-playbook", "2026-09-24"],
+    ["cottage-cheese-vs-greek-yogurt-protein-uses", TODAY],
+    ["what-30-grams-of-fiber-costs-per-day", TODAY],
+    ["protein-per-dollar-adjusted-for-quality", TODAY],
+    ["how-to-keep-sandwiches-from-getting-soggy", TODAY],
+    ["artichoke-recipes-for-gut-health", "2026-09-23"],
+  ];
+  const built = cases.every(([slug]) => existsSync(join(ROOT, "dist", slug, "index.html")));
+  if (!built) return;
+  for (const [slug, day] of cases) {
+    const html = readFileSync(join(ROOT, "dist", slug, "index.html"), "utf8");
+    assert.match(html, new RegExp(`"dateModified":"${day}T00:00:00.000Z"`), slug);
+    assert.match(html, new RegExp(`<time datetime="${day}"`), slug);
+    if (day !== TODAY) {
+      assert.equal(html.includes('"dateModified":"2026-11-23T'), false, slug);
+    }
+  }
+});

@@ -13,7 +13,6 @@ tags:
 image: "/images/how-to-stretch-meals-large-families-main.jpg"
 imageAlt: An overhead shot of a large, rustic wooden table filled with a colorful, abundant family-style meal, including a central casserole dish and various side dishes.
 date: 2026-04-28
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:

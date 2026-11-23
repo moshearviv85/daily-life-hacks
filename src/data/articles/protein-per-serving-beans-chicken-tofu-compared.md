@@ -15,6 +15,7 @@ image: "/images/protein-per-serving-beans-chicken-tofu-compared-main.jpg"
 imageAlt: "Plate with chicken tofu beans and grains arranged as protein portion examples"
 date: 2026-04-07
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 publishAt: 2026-04-09T00:00:00.000Z
 author: "David Miller"
 featured: false

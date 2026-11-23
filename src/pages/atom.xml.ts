@@ -5,6 +5,7 @@ import {
   FEED_DESCRIPTION,
   FEED_SITE,
   FEED_TITLE,
+  articleModifiedDate,
   getFeedArticles,
 } from "../content/feed";
 import { isIndexPruned } from "../content/index-prune.js";
@@ -12,22 +13,14 @@ import { AUTHOR_NAME, AUTHOR_URL, resolveAuthorName } from "../content/author";
 
 export const GET: APIRoute = async () => {
   const articles = (await getFeedArticles()).filter((article) => !isIndexPruned(article.id));
-  const updated =
-    articles[0]?.data.dateModified ??
-    articles[0]?.data.publishAt ??
-    articles[0]?.data.date ??
-    new Date();
+  const updated = articles[0] ? articleModifiedDate(articles[0]) : new Date();
 
   const entries = articles
     .map((article) => {
       const url = `${FEED_SITE}/${article.id}/`;
       const image = absoluteFeedImage(article.data.image);
       const published = (article.data.publishAt ?? article.data.date).toISOString();
-      const modified = (
-        article.data.dateModified ??
-        article.data.publishAt ??
-        article.data.date
-      ).toISOString();
+      const modified = articleModifiedDate(article).toISOString();
       const author = resolveAuthorName(article.data.author);
       const authorUri =
         author === AUTHOR_NAME ? `\n    <uri>${AUTHOR_URL}</uri>` : "";

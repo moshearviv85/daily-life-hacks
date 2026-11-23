@@ -13,7 +13,7 @@ tags:
 image: "/images/healthy-egg-sandwich-add-ins-toppings-main.jpg"
 imageAlt: A healthy egg sandwich is cut in half, stacked with egg, arugula, and avocado, on a kitchen counter.
 date: 2026-04-28
-dateModified: 2026-11-23
+dateModified: 2026-09-23
 author: "David Miller"
 quickAnswer: "Build a better egg sandwich by choosing one creamy layer, one crisp vegetable, and one sharp accent. Try avocado with arugula and pickled onion, hummus with cucumber and hot sauce, or pesto with tomato and spinach. Toast the bread firmly, keep wet ingredients away from it, and cook the eggs thoroughly for a sandwich that holds together."
 featured: false

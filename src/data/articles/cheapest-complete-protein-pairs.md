@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/cheapest-complete-protein-pairs-main.jpg"
 imageAlt: "A plate of rice and beans with cilantro, with sacks of dry rice and pinto beans in the background"
 date: 2026-07-13
-dateModified: 2026-11-23
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "What is the cheapest complete protein combination?"

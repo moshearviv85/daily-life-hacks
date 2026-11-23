@@ -13,6 +13,7 @@ imageAlt: Homemade peppermint and ginger tea steeping in a glass mug on a kitche
 quickAnswer: "Peppermint ginger tea is 1 cup of water, a 1-inch piece of fresh ginger sliced and bruised, and 1 tablespoon of fresh peppermint or one tea bag. Simmer the ginger 5 to 7 minutes, take it off the heat, add the mint, and steep covered 5 to 7 minutes, then strain. It's caffeine-free and about 10 to 20 cents a cup. On gut health, be honest. IBS trials used enteric-coated peppermint-oil capsules, not tea. If you get reflux, mint can make heartburn worse, so skip it. Refrigerate strained tea up to 3 days."
 date: 2026-02-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

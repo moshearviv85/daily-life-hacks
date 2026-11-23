@@ -11,6 +11,7 @@ image: "/images/cottage-cheese-vs-greek-yogurt-protein-uses-main.jpg"
 imageAlt: "A bowl of cottage cheese next to a bowl of Greek yogurt on a kitchen counter"
 date: 2026-04-20
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

@@ -18,6 +18,7 @@ image: "/images/how-to-store-homemade-salad-dressing-safely-main.jpg"
 imageAlt: A clear glass bottle filled with golden salad dressing stands on a light wooden cutting board, surrounded by a lemon half and a garlic clove.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 faq:

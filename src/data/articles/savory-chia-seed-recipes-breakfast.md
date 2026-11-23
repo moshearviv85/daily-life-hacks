@@ -13,6 +13,7 @@ imageAlt: "Green savory chia pudding in a rustic bowl with avocado, cherry tomat
 quickAnswer: "Savory chia is the same overnight jar, minus the maple syrup. Whisk 3 tablespoons chia seeds into 1 cup unsweetened almond milk or low-sodium broth with garlic powder, smoked paprika, and salt. Stir again after five minutes, chill at least four hours, then top with avocado, cherry tomatoes, and hemp seeds. USDA puts one ounce of dried chia at 9.8 grams of fiber, about 35 percent of the FDA's 28-gram Daily Value. Keep the base at 40°F or below and make 4 days your ceiling. Never eat the seeds dry."
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

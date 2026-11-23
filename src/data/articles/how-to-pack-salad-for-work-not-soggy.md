@@ -11,7 +11,6 @@ tags:
 image: "/images/how-to-pack-salad-for-work-not-soggy-main.jpg"
 imageAlt: "Layered salad in a clear container with dressing at the bottom and greens on top"
 date: 2026-04-29
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

@@ -11,7 +11,7 @@ tags:
 image: "/images/hidden-sugars-popular-summer-salad-dressings-main.jpg"
 imageAlt: A close-up photograph shows a healthy green salad in a wooden bowl with a thick, glossy red salad dressing being poured over it.
 date: 2026-04-28
-dateModified: 2026-11-23
+dateModified: 2026-07-28
 author: "David Miller"
 featured: false
 faq:

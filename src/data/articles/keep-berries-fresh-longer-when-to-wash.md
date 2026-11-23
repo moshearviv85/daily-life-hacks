@@ -6,7 +6,6 @@ tags: ["KitchenHacks", "FoodStorage", "ReduceWaste", "ProduceTips", "MealPrep"]
 image: "/images/keep-berries-fresh-longer-when-to-wash-main.jpg"
 imageAlt: "Fresh berries stored in lined glass containers in a refrigerator"
 date: 2026-04-07
-dateModified: 2026-11-23
 publishAt: 2026-04-07T00:00:00.000Z
 author: "David Miller"
 featured: false

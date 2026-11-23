@@ -8,7 +8,6 @@ tags:
 image: "/images/balanced-breakfast-that-keeps-you-full-main.jpg"
 imageAlt: "A balanced breakfast plate with eggs toast and avocado next to coffee"
 date: 2026-04-08
-dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

@@ -11,7 +11,7 @@ tags:
 image: /images/fiber-rich-soup-for-weight-loss-cabbage-main.jpg
 imageAlt: Pot of tomato cabbage soup with cannellini beans and carrots on a stove
 date: 2026-02-13
-dateModified: 2026-11-23
+dateModified: 2026-07-12
 author: "David Miller"
 featured: false
 editorsPick: false

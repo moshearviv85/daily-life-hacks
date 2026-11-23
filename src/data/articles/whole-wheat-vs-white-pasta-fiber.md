@@ -10,7 +10,7 @@ tags:
 image: /images/whole-wheat-vs-white-pasta-fiber-main.jpg
 imageAlt: Dry whole wheat penne next to white penne on a kitchen counter for a fiber comparison
 date: 2026-04-28
-dateModified: 2026-11-23
+dateModified: 2026-07-13
 author: "David Miller"
 featured: false
 editorsPick: false

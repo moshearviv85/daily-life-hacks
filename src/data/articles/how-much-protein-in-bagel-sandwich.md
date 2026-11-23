@@ -13,6 +13,7 @@ image: "/images/how-much-protein-in-bagel-sandwich-main.jpg"
 imageAlt: A sliced bagel sandwich filled with scrambled eggs, turkey bacon, and melted cheese, with steam rising from the filling.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "10 minutes"

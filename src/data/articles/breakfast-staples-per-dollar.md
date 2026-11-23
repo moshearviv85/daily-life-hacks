@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/breakfast-staples-per-dollar-main.jpg"
 imageAlt: "A breakfast table with steaming oatmeal topped with banana, fried eggs, peanut butter, and a glass of milk"
 date: 2026-07-13
-dateModified: 2026-11-23
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "What is the cheapest high protein breakfast?"

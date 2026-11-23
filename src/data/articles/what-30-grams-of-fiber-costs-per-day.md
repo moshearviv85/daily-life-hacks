@@ -8,7 +8,8 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/what-30-grams-of-fiber-costs-per-day-main.jpg"
 imageAlt: "Editorial illustration contrasting a pantry basket of oats, beans, and popcorn with an oversized restaurant receipt"
 date: 2026-07-08
-dateModified: 2026-07-30
+dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 faq:
   - question: "How much does it cost to eat 30 grams of fiber a day?"

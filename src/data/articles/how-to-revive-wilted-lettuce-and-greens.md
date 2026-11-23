@@ -11,7 +11,7 @@ image: /images/how-to-revive-wilted-lettuce-and-greens-main.jpg
 imageAlt: Wilted lettuce being lowered into a bowl of ice water before it is dried
 quickAnswer: "Pull the leaves apart, soak them in a bowl of ice water for 5 to 10 minutes, then dry them completely in a salad spinner. Sturdy romaine can take up to 15. Use revived leaves the same day, because the soak puts water back in, it doesn't reset the clock. And know the difference. Limp is a quality problem. Slimy, mushy, or sour-smelling is rot rather than wilt, and the FDA says to throw away any produce that looks rotten."
 date: 2026-02-09
-dateModified: 2026-11-23
+dateModified: 2026-08-01
 author: "David Miller"
 featured: false
 editorsPick: false

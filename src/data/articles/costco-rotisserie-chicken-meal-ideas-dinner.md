@@ -13,6 +13,7 @@ image: "/images/costco-rotisserie-chicken-meal-ideas-dinner-main.jpg"
 imageAlt: Pulled rotisserie chicken and fresh vegetables are arranged on a light wooden cutting board.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"

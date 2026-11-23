@@ -20,15 +20,31 @@ body
   assert.equal(extractDateModified("---\ndate: 2026-04-28\n---\n"), null);
 });
 
-test("more than five dateModified edits fail unless the PR is a content refresh", () => {
-  const entries = Array.from({ length: DATEMODIFIED_FILE_LIMIT + 1 }, (_, index) => ({
+test("more than five dateModified advances fail unless the PR is a content refresh with substantiveUpdate", () => {
+  const advanced = (index, substantive) => ({
     path: `src/data/articles/example-${index}.md`,
     before: "2026-07-20",
     after: "2026-11-01",
-  }));
+    beforePublic: "2026-07-20",
+    afterPublic: "2026-11-01",
+    afterSubstantive: substantive ? "2026-11-01" : null,
+  });
+  const entries = Array.from({ length: DATEMODIFIED_FILE_LIMIT + 1 }, (_, index) =>
+    advanced(index, false),
+  );
+  const stamped = entries.map((entry, index) => advanced(index, true));
   assert.equal(dateModifiedChurn(entries, []).ok, false);
-  assert.equal(dateModifiedChurn(entries.slice(0, DATEMODIFIED_FILE_LIMIT), []).ok, true);
-  assert.equal(dateModifiedChurn(entries, ["content-refresh"]).ok, true);
+  assert.equal(dateModifiedChurn(entries, ["content-refresh"]).ok, false);
+  assert.equal(dateModifiedChurn(stamped, []).ok, false);
+  assert.equal(dateModifiedChurn(stamped, ["content-refresh"]).ok, true);
+  assert.equal(
+    dateModifiedChurn(stamped.slice(0, DATEMODIFIED_FILE_LIMIT), []).ok,
+    true,
+  );
+  assert.equal(
+    dateModifiedChurn(entries.slice(0, DATEMODIFIED_FILE_LIMIT), []).ok,
+    false,
+  );
   assert.equal(
     dateModifiedChurn(
       [{ path: "src/data/articles/a.md", before: "2026-07-20", after: "2026-07-20" }],
@@ -46,9 +62,19 @@ test("more than five dateModified edits fail unless the PR is a content refresh"
           deleted: true,
         },
         {
+          path: "src/data/articles/restored.md",
+          before: "2026-11-23",
+          after: "2026-07-20",
+          beforePublic: "2026-11-23",
+          afterPublic: "2026-07-20",
+        },
+        {
           path: "src/data/articles/kept.md",
           before: "2026-07-20",
           after: "2026-11-23",
+          beforePublic: "2026-07-20",
+          afterPublic: "2026-11-23",
+          afterSubstantive: "2026-11-23",
         },
       ],
       [],

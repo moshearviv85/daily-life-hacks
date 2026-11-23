@@ -5,6 +5,7 @@ import {
   FEED_DESCRIPTION,
   FEED_SITE,
   FEED_TITLE,
+  articleModifiedDate,
   getFeedArticles,
 } from "../content/feed";
 import { isIndexPruned } from "../content/index-prune.js";
@@ -16,7 +17,7 @@ export const GET: APIRoute = async () => {
     const url = `${FEED_SITE}/${article.id}/`;
     const image = absoluteFeedImage(article.data.image);
     const published = article.data.publishAt ?? article.data.date;
-    const modified = article.data.dateModified ?? published;
+    const modified = articleModifiedDate(article);
     const author = resolveAuthorName(article.data.author);
 
     return {

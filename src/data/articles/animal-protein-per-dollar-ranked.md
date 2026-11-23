@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/animal-protein-per-dollar-ranked-main.jpg"
 imageAlt: "A table spread with roasted drumsticks, brown eggs, a glass of milk, canned sardines, and cheese"
 date: 2026-07-13
-dateModified: 2026-11-23
+dateModified: 2026-09-24
 author: "David Miller"
 faq:
   - question: "What is the cheapest animal protein?"

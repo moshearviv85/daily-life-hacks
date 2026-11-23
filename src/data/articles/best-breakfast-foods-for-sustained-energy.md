@@ -15,7 +15,7 @@ tags:
 image: /images/best-breakfast-foods-for-sustained-energy-main.jpg
 imageAlt: Breakfast plate with eggs, whole grain toast, and fruit
 date: 2026-03-15
-dateModified: 2026-11-23
+dateModified: 2026-09-23
 author: "David Miller"
 featured: false
 editorsPick: false

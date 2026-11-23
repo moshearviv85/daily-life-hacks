@@ -229,7 +229,7 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   assert.match(mealPrep, /\$12\.21/);
 
   const playbook = read("src/data/articles/eat-healthy-on-a-budget-complete-playbook.md");
-  assert.match(playbook, /dateModified: 2026-11-23/);
+  assert.match(playbook, /dateModified: 2026-09-24/);
   assert.match(playbook, /57\.6 grams of protein/);
   assert.match(playbook, /9\.4/);
   assert.doesNotMatch(playbook, /97\.9/);

@@ -18,6 +18,7 @@ image: "/images/easy-cold-summer-pasta-salad-potlucks-main.jpg"
 imageAlt: A close-up of a cold pasta salad, with bowtie pasta, cherry tomatoes, mozzarella balls, and green herbs in a serving bowl.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"

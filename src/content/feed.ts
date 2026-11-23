@@ -1,6 +1,17 @@
 import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import { isReleased } from "./release";
 import { isIndexPruned } from "./index-prune.js";
+
+/** Public modified day. substantiveUpdate wins; link-only edits do not move it. */
+export function articleModifiedDate(article: CollectionEntry<"articles">): Date {
+  return (
+    article.data.substantiveUpdate ??
+    article.data.dateModified ??
+    article.data.publishAt ??
+    article.data.date
+  );
+}
 
 export const FEED_SITE = "https://www.daily-life-hacks.com";
 export const FEED_TITLE = "Daily Life Hacks";
@@ -24,10 +35,6 @@ export function absoluteFeedImage(image: string): string {
 export async function getFeedArticles() {
   return (await getCollection("articles"))
     .filter((article) => isReleased(article) && !isIndexPruned(article.id))
-    .sort((a, b) => {
-      const aDate = (a.data.dateModified ?? a.data.publishAt ?? a.data.date).valueOf();
-      const bDate = (b.data.dateModified ?? b.data.publishAt ?? b.data.date).valueOf();
-      return bDate - aDate;
-    })
+    .sort((a, b) => articleModifiedDate(b).valueOf() - articleModifiedDate(a).valueOf())
     .slice(0, FEED_MAX_ITEMS);
 }

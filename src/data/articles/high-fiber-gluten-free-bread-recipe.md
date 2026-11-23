@@ -13,6 +13,7 @@ image: "/images/high-fiber-gluten-free-bread-recipe-main.jpg"
 imageAlt: "Slices of hearty high fiber gluten free bread on a wooden cutting board"
 date: 2026-04-08
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

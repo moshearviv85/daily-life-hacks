@@ -16,7 +16,7 @@ image: /images/how-to-store-fresh-herbs-to-last-longer-main.jpg
 imageAlt: How to Store Fresh Herbs to Last Longer - fresh cilantro standing upright
   in a glass jar of water
 date: 2026-02-18
-dateModified: 2026-11-23
+dateModified: 2026-07-20
 author: "David Miller"
 featured: false
 editorsPick: false

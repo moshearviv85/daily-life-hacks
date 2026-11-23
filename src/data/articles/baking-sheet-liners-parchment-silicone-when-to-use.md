@@ -11,7 +11,6 @@ tags:
 image: "/images/baking-sheet-liners-parchment-silicone-when-to-use-main.jpg"
 imageAlt: "Baking sheet half lined with parchment paper and half with a silicone baking mat"
 date: 2026-04-08
-dateModified: 2026-11-23
 author: "David Miller"
 quickAnswer: "Parchment is the default. It releases cleanly, browns bottoms well, and you throw it away. Reach for a silicone mat for sticky work like caramel and macarons. For cookies, King Arthur's side-by-side test found mats gave the least spread and foil the most. Neither liner has a universal heat limit. Reynolds rates its parchment to 425 degrees Fahrenheit and says never use it under a broiler or in a toaster oven. Published silicone ceilings run from 375 degrees on Wilton's bakeware chart to 500 degrees for King Arthur's mat, so check your brand. For broiling, line the pan with foil, never the oven floor."
 featured: false
