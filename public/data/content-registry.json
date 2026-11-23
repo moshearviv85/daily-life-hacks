@@ -3392,91 +3392,6 @@
         }
       }
     },
-    "how-to-keep-bread-fresh-longer-without-mold": {
-      "article": {
-        "base_slug": "how-to-keep-bread-fresh-longer-without-mold",
-        "category": "tips",
-        "canonical_url": "https://www.daily-life-hacks.com/how-to-keep-bread-fresh-longer-without-mold",
-        "content_path": "src/data/articles/how-to-keep-bread-fresh-longer-without-mold.md",
-        "image": "/images/how-to-keep-bread-fresh-longer-without-mold-main.jpg",
-        "image_alt": "How to Keep Bread Fresh Longer Without Mold - a rustic loaf of artisan bread",
-        "title": "How to Keep Bread Fresh Longer Without Mold",
-        "excerpt": "Tired of finding fuzzy green spots on your favorite loaf? Learn exactly how",
-        "status": "IMAGES_READY",
-        "legal_risk_level": "normal",
-        "offer_id": "kitchen-checklist"
-      },
-      "variants": {
-        "v1": {
-          "variant_id": "v1",
-          "url_slug": "how-to-keep-bread-fresh-longer-without-mold",
-          "title": "How to Keep Bread Fresh Longer Without Mold",
-          "description": "Buying good bread shouldn't mean rushing to eat it in two days. Here is how to keep bread fresh longer without mold taking over your loaf. #MealPrep #KitchenTips #HealthyEating #FoodStorage #BudgetMeals #MealPrepSunday #CleanEating #HealthyLifestyle",
-          "intro_paragraph": "How to Keep Bread Fresh Longer Without Mold is one of those practical wins that can make everyday cooking feel simpler, less wasteful, and easier to repeat.",
-          "search_intent": "problem-solving",
-          "audience_angle": "save-time-and-money",
-          "cta_variant": "Get the kitchen checklist",
-          "email_segment": "tips-storage",
-          "board": "Healthy Meal Prep & Kitchen Tips",
-          "pin_image": "/images/pins/how-to-keep-bread-fresh-longer-without-mold_v1.jpg",
-          "destination_url": "https://www.daily-life-hacks.com/how-to-keep-bread-fresh-longer-without-mold",
-          "scheduled_count": 1,
-          "publish_ready": true,
-          "blocked_reasons": []
-        },
-        "v2": {
-          "variant_id": "v2",
-          "url_slug": "how-to-keep-bread-fresh-longer-without-mold-tips",
-          "title": "How to Keep Bread Fresh Longer Without Mold Tips",
-          "description": "Buying good bread shouldn't mean rushing to eat it in two days. Here is how to keep bread fresh longer without mold taking over your loaf. #MealPrep #KitchenTips #HealthyEating #FoodStorage #BudgetMeals #MealPrepSunday #CleanEating #HealthyLifestyle",
-          "intro_paragraph": "How to Keep Bread Fresh Longer Without Mold Tips is one of those practical wins that can make everyday cooking feel simpler, less wasteful, and easier to repeat.",
-          "search_intent": "problem-solving",
-          "audience_angle": "save-time-and-money",
-          "cta_variant": "Get the kitchen checklist",
-          "email_segment": "tips-storage",
-          "board": "Healthy Meal Prep & Kitchen Tips",
-          "pin_image": "/images/pins/how-to-keep-bread-fresh-longer-without-mold_v2.jpg",
-          "destination_url": "https://www.daily-life-hacks.com/how-to-keep-bread-fresh-longer-without-mold-tips",
-          "scheduled_count": 1,
-          "publish_ready": true,
-          "blocked_reasons": []
-        },
-        "v3": {
-          "variant_id": "v3",
-          "url_slug": "best-how-to-keep-bread-fresh-longer-without-mold",
-          "title": "Best How to Keep Bread Fresh Longer Without Mold",
-          "description": "Buying good bread shouldn't mean rushing to eat it in two days. Here is how to keep bread fresh longer without mold taking over your loaf. #MealPrep #KitchenTips #HealthyEating #FoodStorage #BudgetMeals #MealPrepSunday #CleanEating #HealthyLifestyle",
-          "intro_paragraph": "Best How to Keep Bread Fresh Longer Without Mold is one of those practical wins that can make everyday cooking feel simpler, less wasteful, and easier to repeat.",
-          "search_intent": "problem-solving",
-          "audience_angle": "save-time-and-money",
-          "cta_variant": "Get the kitchen checklist",
-          "email_segment": "tips-storage",
-          "board": "Healthy Meal Prep & Kitchen Tips",
-          "pin_image": "/images/pins/how-to-keep-bread-fresh-longer-without-mold_v3.jpg",
-          "destination_url": "https://www.daily-life-hacks.com/best-how-to-keep-bread-fresh-longer-without-mold",
-          "scheduled_count": 1,
-          "publish_ready": true,
-          "blocked_reasons": []
-        },
-        "v4": {
-          "variant_id": "v4",
-          "url_slug": "how-to-keep-bread-fresh-longer-without-mold-guide",
-          "title": "How to Keep Bread Fresh Longer Without Mold Guide",
-          "description": "Buying good bread shouldn't mean rushing to eat it in two days. Here is how to keep bread fresh longer without mold taking over your loaf. #MealPrep #KitchenTips #HealthyEating #FoodStorage #BudgetMeals #MealPrepSunday #CleanEating #HealthyLifestyle",
-          "intro_paragraph": "How to Keep Bread Fresh Longer Without Mold Guide is one of those practical wins that can make everyday cooking feel simpler, less wasteful, and easier to repeat.",
-          "search_intent": "problem-solving",
-          "audience_angle": "save-time-and-money",
-          "cta_variant": "Get the kitchen checklist",
-          "email_segment": "tips-storage",
-          "board": "Healthy Meal Prep & Kitchen Tips",
-          "pin_image": "/images/pins/how-to-keep-bread-fresh-longer-without-mold_v4.jpg",
-          "destination_url": "https://www.daily-life-hacks.com/how-to-keep-bread-fresh-longer-without-mold-guide",
-          "scheduled_count": 1,
-          "publish_ready": true,
-          "blocked_reasons": []
-        }
-      }
-    },
     "how-to-reduce-food-waste-at-home-easy-tips": {
       "article": {
         "base_slug": "how-to-reduce-food-waste-at-home-easy-tips",
@@ -4817,6 +4732,91 @@
           "pin_image": "/images/pins/balanced-breakfast-that-keeps-you-full_v5.jpg",
           "destination_url": "https://www.daily-life-hacks.com/balanced-breakfast-that-keeps-you-full-v5",
           "scheduled_count": 0,
+          "publish_ready": true,
+          "blocked_reasons": []
+        }
+      }
+    },
+    "how-to-keep-sandwiches-from-getting-soggy": {
+      "article": {
+        "base_slug": "how-to-keep-sandwiches-from-getting-soggy",
+        "category": "tips",
+        "canonical_url": "https://www.daily-life-hacks.com/how-to-keep-sandwiches-from-getting-soggy",
+        "content_path": "src/data/articles/how-to-keep-sandwiches-from-getting-soggy.md",
+        "image": "/images/how-to-keep-sandwiches-from-getting-soggy-main.jpg",
+        "image_alt": "A cross-section of a deli sandwich, showing a layer of spread protecting the bread from moist fillings like tomato and lettuce.",
+        "title": "How to Keep Sandwiches From Getting Soggy (Fat Barrier First)",
+        "excerpt": "How to keep sandwiches from getting soggy: fat barrier edge to edge, dry-to-wet stacking, blot tomatoes, and pack it cold so lunch stays firm.",
+        "status": "IMAGES_READY",
+        "legal_risk_level": "normal",
+        "offer_id": "kitchen-checklist"
+      },
+      "variants": {
+        "v1": {
+          "variant_id": "v1",
+          "url_slug": "how-to-keep-bread-fresh-longer-without-mold",
+          "title": "How to Keep Bread Fresh Longer Without Mold",
+          "description": "Buying good bread shouldn't mean rushing to eat it in two days. Here is how to keep bread fresh longer without mold taking over your loaf. #MealPrep #KitchenTips #HealthyEating #FoodStorage #BudgetMeals #MealPrepSunday #CleanEating #HealthyLifestyle",
+          "intro_paragraph": "How to Keep Bread Fresh Longer Without Mold is one of those practical wins that can make everyday cooking feel simpler, less wasteful, and easier to repeat.",
+          "search_intent": "problem-solving",
+          "audience_angle": "save-time-and-money",
+          "cta_variant": "Get the kitchen checklist",
+          "email_segment": "tips-storage",
+          "board": "Healthy Meal Prep & Kitchen Tips",
+          "pin_image": "/images/pins/how-to-keep-bread-fresh-longer-without-mold_v1.jpg",
+          "destination_url": "https://www.daily-life-hacks.com/how-to-keep-bread-fresh-longer-without-mold",
+          "scheduled_count": 1,
+          "publish_ready": true,
+          "blocked_reasons": []
+        },
+        "v2": {
+          "variant_id": "v2",
+          "url_slug": "how-to-keep-bread-fresh-longer-without-mold-tips",
+          "title": "How to Keep Bread Fresh Longer Without Mold Tips",
+          "description": "Buying good bread shouldn't mean rushing to eat it in two days. Here is how to keep bread fresh longer without mold taking over your loaf. #MealPrep #KitchenTips #HealthyEating #FoodStorage #BudgetMeals #MealPrepSunday #CleanEating #HealthyLifestyle",
+          "intro_paragraph": "How to Keep Bread Fresh Longer Without Mold Tips is one of those practical wins that can make everyday cooking feel simpler, less wasteful, and easier to repeat.",
+          "search_intent": "problem-solving",
+          "audience_angle": "save-time-and-money",
+          "cta_variant": "Get the kitchen checklist",
+          "email_segment": "tips-storage",
+          "board": "Healthy Meal Prep & Kitchen Tips",
+          "pin_image": "/images/pins/how-to-keep-bread-fresh-longer-without-mold_v2.jpg",
+          "destination_url": "https://www.daily-life-hacks.com/how-to-keep-bread-fresh-longer-without-mold-tips",
+          "scheduled_count": 1,
+          "publish_ready": true,
+          "blocked_reasons": []
+        },
+        "v3": {
+          "variant_id": "v3",
+          "url_slug": "best-how-to-keep-bread-fresh-longer-without-mold",
+          "title": "Best How to Keep Bread Fresh Longer Without Mold",
+          "description": "Buying good bread shouldn't mean rushing to eat it in two days. Here is how to keep bread fresh longer without mold taking over your loaf. #MealPrep #KitchenTips #HealthyEating #FoodStorage #BudgetMeals #MealPrepSunday #CleanEating #HealthyLifestyle",
+          "intro_paragraph": "Best How to Keep Bread Fresh Longer Without Mold is one of those practical wins that can make everyday cooking feel simpler, less wasteful, and easier to repeat.",
+          "search_intent": "problem-solving",
+          "audience_angle": "save-time-and-money",
+          "cta_variant": "Get the kitchen checklist",
+          "email_segment": "tips-storage",
+          "board": "Healthy Meal Prep & Kitchen Tips",
+          "pin_image": "/images/pins/how-to-keep-bread-fresh-longer-without-mold_v3.jpg",
+          "destination_url": "https://www.daily-life-hacks.com/best-how-to-keep-bread-fresh-longer-without-mold",
+          "scheduled_count": 1,
+          "publish_ready": true,
+          "blocked_reasons": []
+        },
+        "v4": {
+          "variant_id": "v4",
+          "url_slug": "how-to-keep-bread-fresh-longer-without-mold-guide",
+          "title": "How to Keep Bread Fresh Longer Without Mold Guide",
+          "description": "Buying good bread shouldn't mean rushing to eat it in two days. Here is how to keep bread fresh longer without mold taking over your loaf. #MealPrep #KitchenTips #HealthyEating #FoodStorage #BudgetMeals #MealPrepSunday #CleanEating #HealthyLifestyle",
+          "intro_paragraph": "How to Keep Bread Fresh Longer Without Mold Guide is one of those practical wins that can make everyday cooking feel simpler, less wasteful, and easier to repeat.",
+          "search_intent": "problem-solving",
+          "audience_angle": "save-time-and-money",
+          "cta_variant": "Get the kitchen checklist",
+          "email_segment": "tips-storage",
+          "board": "Healthy Meal Prep & Kitchen Tips",
+          "pin_image": "/images/pins/how-to-keep-bread-fresh-longer-without-mold_v4.jpg",
+          "destination_url": "https://www.daily-life-hacks.com/how-to-keep-bread-fresh-longer-without-mold-guide",
+          "scheduled_count": 1,
           "publish_ready": true,
           "blocked_reasons": []
         }

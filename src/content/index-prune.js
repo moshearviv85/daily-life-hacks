@@ -1,6 +1,6 @@
 /**
  * GSC 27 Aug 2026: 158 URLs were "Discovered – currently not indexed".
- * These 105 thin URLs stay live for humans (no 410, no delete) but must be
+ * These 80 thin URLs stay live for humans (no 410, no delete) but must be
  * `noindex, follow` and out of the sitemap so crawl budget concentrates on
  * the 25 KEEP money URLs (flagships + surviving studies + tools/hubs).
  *
@@ -21,7 +21,6 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "best-way-to-cook-ribs",
   "budget-meal-ideas-for-one",
   "budget-meal-ideas-philippines",
-  "cauliflower-fried-rice-with-eggs",
   "cheap-dinner-ideas-cost-per-serving",
   "cheap-dinner-ideas-for-a-family-of-4",
   "cheap-ground-beef-meals-large-families",
@@ -32,8 +31,6 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "chicken-veggie-lettuce-wraps-peanut-sauce",
   "crispy-roasted-chickpeas-high-fiber-snack",
   "crispy-smashed-potato-salad-dijon-herbs",
-  "do-you-have-to-cook-canned-beans",
-  "do-you-have-to-cook-frozen-vegetables",
   "does-leftover-pizza-need-to-be-refrigerated",
   "easy-cheap-healthy-meals",
   "easy-sandwich-bread-recipe-beginners",
@@ -55,34 +52,15 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "high-fiber-meal-prep-ideas-for-busy-weeks-2026",
   "high-protein-meals-on-a-budget",
   "high-protein-vegetarian-breakfast-burritos-you-can-freeze",
-  "how-long-can-rice-and-beans-sit-out",
-  "how-long-do-canned-beans-last-after-the-best-by-date",
-  "how-long-do-dried-beans-last",
-  "how-long-do-frozen-vegetables-last-in-the-freezer",
   "how-long-do-leftovers-last-in-the-fridge",
-  "how-long-do-opened-canned-beans-last",
-  "how-much-dried-beans-per-person",
   "how-much-food-storage-do-you-need-per-person",
-  "how-much-is-a-can-of-beans",
-  "how-much-lentils-per-person-per-day",
   "how-much-oatmeal-is-a-serving",
   "how-much-protein-for-breakfast",
-  "how-much-protein-in-a-can-of-beans",
-  "how-much-protein-in-lentils",
-  "how-much-protein-in-oatmeal",
-  "how-much-protein-in-peanut-butter",
-  "how-much-protein-in-two-eggs",
-  "how-much-rice-and-beans-per-person-per-day",
   "how-to-choose-granola-not-dessert",
-  "how-to-cook-frozen-vegetables-without-the-mush",
-  "how-to-cool-rice-for-fried-rice",
   "how-to-eat-cheap-at-home",
   "how-to-freeze-bananas-for-smoothies",
-  "how-to-freeze-fresh-vegetables-at-home",
   "how-to-get-more-protein-at-breakfast",
   "how-to-grocery-shop-for-a-month-on-a-budget",
-  "how-to-keep-bread-fresh-longer-without-mold",
-  "how-to-make-sourdough-pizza-dough-same-day",
   "how-to-meal-plan-on-a-budget",
   "how-to-meal-prep-on-a-budget-for-one-person",
   "how-to-organize-a-small-kitchen-on-a-budget",
@@ -98,7 +76,6 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "low-cost-protein-meal-hacks-families",
   "macronutrient-breakdown-healthy-egg-sandwich",
   "make-ahead-breakfast-ideas-without-eggs",
-  "nutritional-value-of-beans-compared",
   "one-theme-five-dinners-one-grocery-list",
   "quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff",
   "quick-black-bean-and-corn-salsa-no-cooking-required",
@@ -111,8 +88,6 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "simple-lunch-recipes-indian-veg",
   "tabbouleh-salad-high-fiber-bulgur",
   "tuscan-white-bean-kale-soup-stovetop",
-  "what-beans-for-red-beans-and-rice",
-  "which-foods-are-complete-proteins",
   "which-lentils-are-the-best",
   "why-grocery-bill-went-up-after-cooking-more",
   "zinc-containing-foods-weekly-meals",
@@ -186,8 +161,8 @@ function assertPruneSafety() {
       `index-prune: KEEP/protected slug leaked into prune set: ${collisions.join(", ")}`,
     );
   }
-  if (INDEX_PRUNE_SLUGS.size !== 105) {
-    throw new Error(`index-prune: expected 105 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
+  if (INDEX_PRUNE_SLUGS.size !== 80) {
+    throw new Error(`index-prune: expected 80 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
   }
   if (INDEX_KEEP_PATHS.size !== 25) {
     throw new Error(`index-prune: expected 25 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);

@@ -48,7 +48,7 @@ Finding healthy blue collar lunch ideas for men isn't about eating a salad and p
 
 ## Why the Standard Sandwich Fails
 
-The classic ham and cheese on white bread is a staple for a reason: it's easy. But by the time noon rolls around, that bread is usually a damp sponge and the thin slices of meat aren't doing much for your hunger. If you are burning 3,000 calories a day swinging a hammer or hauling gear, a flimsy sandwich is a joke. And if sogginess is the main enemy, here's [how to pack a lunch so sandwiches and salads stay crisp](/how-to-pack-lunch-crisp-sandwiches-salads/) until the whistle blows.
+The classic ham and cheese on white bread is a staple for a reason: it's easy. But by the time noon rolls around, that bread is usually a damp sponge and the thin slices of meat aren't doing much for your hunger. If you are burning 3,000 calories a day swinging a hammer or hauling gear, a flimsy sandwich is a joke. And if sogginess is the main enemy, here's [how to keep a packed sandwich from going soggy](/how-to-keep-sandwiches-from-getting-soggy/) until the whistle blows.
 
 Switching to denser breads or even thick tortillas can help, but the real trick is the filling. You want a protein-to-carb ratio that keeps your blood sugar from spiking and crashing. Using leftovers from a heavy dinner, like sliced steak or a properly cooked pork tenderloin, is a much better move than relying on processed deli meat that is mostly water and salt.
 

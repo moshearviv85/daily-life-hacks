@@ -473,7 +473,7 @@ test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay 
   const samplePrune = "cheap-dinner-ideas-cost-per-serving";
   const keepFlagship = "fiber-per-dollar-cheapest-high-fiber-foods";
 
-  assert.equal(INDEX_PRUNE_SLUGS.size, 105);
+  assert.equal(INDEX_PRUNE_SLUGS.size, 80);
   assert.equal(INDEX_PRUNE_SLUGS.has("can-you-refreeze-frozen-vegetables-after-thawing"), false);
   assert.ok(!entries.has(locFor(samplePrune)), `${samplePrune} leaked into sitemap`);
   assert.ok(existsSync(distHtmlFor(locFor(samplePrune))), `${samplePrune} must stay live`);
@@ -493,7 +493,7 @@ test("GSC thin-URL prune is noindex and absent from the sitemap; KEEP URLs stay 
     assert.ok(!robots.includes("nofollow"), `nofollow on live prune page: ${slug}`);
     noindexed += 1;
   }
-  assert.equal(noindexed, 105);
+  assert.equal(noindexed, 80);
   const restored = "can-you-refreeze-frozen-vegetables-after-thawing";
   assert.ok(entries.has(locFor(restored)), `${restored} should return to the sitemap`);
   const restoredRobots = robotsFor(locFor(restored));

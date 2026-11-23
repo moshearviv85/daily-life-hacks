@@ -8,7 +8,7 @@ parentPillar: "high-protein-on-a-budget-complete-guide"
 image: "/images/can-you-eat-rice-and-beans-everyday-main.jpg"
 imageAlt: "A bowl of pinto beans over brown rice with lime wedges and cilantro on a kitchen table"
 date: 2026-07-28
-dateModified: 2026-09-24
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -46,7 +46,29 @@ Cents, which is the whole reason the question gets asked in the first place.
 
 In our day costing work, the bean and rice portion of one dinner ran 90 grams of dry pinto beans at $0.20 for 19.3 grams of protein, plus 60 grams of dry brown rice at $0.12 for 4.5 grams. Thirty two cents, 23.8 grams of protein. Run the same plate for fiber and 60 grams of pinto beans plus 50 grams of brown rice gave 11.1 grams of fiber for 23 cents.
 
-Those are ingredient costs, not a full day of eating, and they assume you cook from the bag. If you want the portion math per person laid out properly, we did that in how much rice and beans per person per day.
+Those are ingredient costs, not a full day of eating, and they assume you cook from the bag. The per-person amounts, including a full day when the bowl is most of the calories, are below.
+
+## How much rice and beans per person per day
+
+For a normal plate, cook 1 to 2 cups of rice and 1 to 2 cups of beans per person. That's a side plus a main, not every calorie you eat. The $0.32 dinner above is the smaller end of that: 90 grams of dry pinto beans and 60 grams of dry brown rice.
+
+When rice and beans are the day's calories, the planning basket used by the [World Food Programme](https://www.wfp.org/food-assistance) and UNHCR puts cereal near 400 grams and pulses near 60 grams per person per day, with some operations closer to 100 grams of pulses. A practical dry shopping ratio is 2 parts rice to 1 part beans by weight. On a 400 gram rice day, that 2:1 ratio is 200 grams of beans, which is more beans than the 60 to 100 gram pulse line and a heartier plate.
+
+| People | One day, dry rice / dry beans | One week | 30 days |
+|---|---|---|---|
+| 1 | 400 g / 200 g | 2.8 kg / 1.4 kg | 12 kg / 6 kg |
+| 2 | 800 g / 400 g | 5.6 kg / 2.8 kg | 24 kg / 12 kg |
+| 4 | 1.6 kg / 800 g | 11.2 kg / 5.6 kg | 48 kg / 24 kg |
+
+That table is the 2:1 dry ratio. If you want the thinner WFP pulse line instead, keep the rice and cut the beans to 60 to 100 grams per person per day. Lentils are the no-soak version of the same job: 100 grams of dry brown lentils is a main-dish portion and about 24.6 grams of protein from our brown lentil row.
+
+Small red beans are the traditional bean for red beans and rice. Red kidney beans are what most stores actually sell. A canned kidney bean is already cooked, so it skips the raw-bean rule. Dry red kidney beans do not. [FDA's Bad Bug Book](https://www.fda.gov/food/foodborne-pathogens/bad-bug-book-second-edition) says raw or undercooked kidney beans contain phytohaemagglutinin, and as few as four or five raw beans can make you sick. Soak at least 5 hours, discard the soak water, and boil in fresh water for at least 30 minutes. A slow cooker does not get hot enough to do that job. Pinto, black, or navy beans skip that lectin problem and take a normal simmer.
+
+## How long can cooked rice and beans sit out
+
+Two hours at room temperature. One hour if the room is above 90F. That is the FDA and [USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/danger-zone-40f-140f) limit for perishable food, and a pot of rice and beans is perishable the moment it leaves the boil.
+
+The rice is the part to watch. [FDA's Bad Bug Book](https://www.fda.gov/food/foodborne-pathogens/bad-bug-book-second-edition) describes Bacillus cereus illness from a toxin that forms in starchy foods, rice included, when cooked rice sits warm. Cool the pot in shallow containers, not in the pot it cooked in, and get it into the fridge inside that window. [FoodSafety.gov](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) then gives refrigerated leftovers 3 to 4 days. Freeze the rest at 0F if the week is longer than that.
 
 ## Is rice and beans good for you?
 
@@ -80,6 +102,6 @@ Swap pinto for black beans and the whole bowl reads differently for nearly the s
 
 Cook once, eat three times. That's the only version of this that survives a real week, and the [budget playbook](/eat-healthy-on-a-budget-complete-playbook/) is built around the same idea.
 
-Rice and beans every day is a genuinely good deal and a genuinely narrow menu. Treated as the base of the plate rather than the whole plate, it holds up fine. If you want the bean side of it done properly, start with what beans to use for red beans and rice and how long a cooked pot can safely sit out.
+Rice and beans every day is a genuinely good deal and a genuinely narrow menu. Treated as the base of the plate rather than the whole plate, it holds up fine. Cool the pot, change the bean once in a while, and it stays dinner instead of a dare.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-day-cost-2026.csv, public/data/fiber-day-cost-2026.csv, public/data/cheapest-complete-protein-pairs-2026.csv, public/data/produce-fiber-per-dollar-ranked-2026.csv -->

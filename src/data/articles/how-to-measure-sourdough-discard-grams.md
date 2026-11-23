@@ -10,7 +10,7 @@ tags:
 image: "/images/how-to-measure-sourdough-discard-grams-main.jpg"
 imageAlt: A digital kitchen scale weighing a glass bowl of sourdough discard in grams
 date: 2026-04-28
-dateModified: 2026-09-14
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:
@@ -25,6 +25,25 @@ faq:
   - question: Can you measure cold sourdough discard straight from the fridge?
     answer: Yes. Put the bowl on a digital scale, press tare, and add the cold discard until you reach the recipe's gram amount. Temperature changes how easily it pours, but it doesn't change the target weight.
 ---
+
+| US volume | Discard weight |
+|---|---:|
+| 1/4 cup | 57 g |
+| 1/3 cup | 76 g |
+| 1/2 cup | 113 g |
+| 3/4 cup | 170 g |
+| 1 cup | 227 g |
+| 2 cups | 454 g |
+
+One hundred grams is about 0.44 cup. These weights assume stirred 100% hydration discard, the same cup [King Arthur Baking](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe) uses at 227 grams. A bubbly, unstirred jar takes up more space, so the scale still wins.
+
+| Discard you add | Flour to remove | Liquid to remove |
+|---|---:|---:|
+| 100 g | 50 g | 50 g |
+| 113 g (1/2 cup) | 56 g | 56 g |
+| 227 g (1 cup) | 113 g | 113 g |
+
+At 100% hydration, half the discard's weight is flour and half is water. Take those amounts out of the recipe's flour and liquid or the dough gets wetter and heavier than the author wrote.
 
 Half a cup of sourdough discard is about **113 grams**, and one cup is about **227 grams**. If you're holding a sticky measuring cup over the sink, the scale is the easier option.
 

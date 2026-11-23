@@ -16,7 +16,7 @@ tags:
 image: "/images/beans-and-rice-complete-protein-meal-main.jpg"
 imageAlt: "A hearty bowl of black beans and rice garnished with fresh cilantro and lime"
 date: 2026-04-08
-dateModified: 2026-09-06
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -72,6 +72,19 @@ If you want the rest of the cheap-protein playbook, the [complete high-protein b
 People throw the phrase "complete protein" around a lot. Here's the deal, without the science lecture. Proteins are built from amino acids. Your body needs a bunch of them. Beans are missing a few. Rice is missing a few. But put them together? Boom. They cover each other's blind spots. 
 
 You don't even have to eat them in the exact same bite, but honestly, why wouldn't you? The texture of soft beans over slightly chewy rice is basically perfect.
+
+Beans and rice together are complementary. These six are complete on their own, from the same July 2026 protein study.
+
+| Food | Why it counts | Protein |
+|---|---|---|
+| Eggs | Complete animal protein | 12.56 g per 100 g, about 12.6 g in 2 large eggs |
+| Chicken breast, raw | Complete animal protein | 22.5 g per 100 g |
+| Sardines, canned, drained | Complete, and the can is the portion | 24.62 g per 100 g |
+| Greek yogurt, plain nonfat | Complete dairy protein | 10.19 g per 100 g |
+| Cottage cheese, 4% | Complete dairy protein | 11.12 g per 100 g |
+| Tofu, extra firm | Soy is a complete plant protein | 9.98 g per 100 g |
+
+A bean by itself is not on that list. Neither is rice. The pair is how you cover the amino acids those two miss.
 
 We priced 20 legume-and-grain combinations in our [cheapest complete protein pairs ranking](/cheapest-complete-protein-pairs/), because "beans are cheap" is useful and the receipt is better.
 

@@ -249,7 +249,6 @@ test("GSC impression article URLs pass through as live canonical pages", async (
       "/how-to-quick-soak-dried-beans-same-day/",
       "/how-to-preheat-skillet-even-browning/",
       "/keep-berries-fresh-longer-when-to-wash/",
-      "/how-to-pack-lunch-crisp-sandwiches-salads/",
       "/plan-week-of-dinners-fewer-grocery-runs/",
     ]),
   );
@@ -263,7 +262,6 @@ test("GSC impression article URLs pass through as live canonical pages", async (
     "how-to-quick-soak-dried-beans-same-day",
     "how-to-preheat-skillet-even-browning",
     "keep-berries-fresh-longer-when-to-wash",
-    "how-to-pack-lunch-crisp-sandwiches-salads",
     "plan-week-of-dinners-fewer-grocery-runs",
   ]) {
     const response = await onRequest(
@@ -275,6 +273,27 @@ test("GSC impression article URLs pass through as live canonical pages", async (
     assert.equal(response.status, 200);
     assert.equal(response.headers.get("location"), null);
     assert.notEqual(response.headers.get("x-robots-tag"), "noindex, follow");
+  }
+});
+
+test("merged demand pages 301 to the expanded article", async () => {
+  const cases = [
+    ["how-to-pack-lunch-crisp-sandwiches-salads", "/how-to-keep-sandwiches-from-getting-soggy/"],
+    ["how-to-keep-bread-fresh-longer-without-mold", "/how-to-keep-sandwiches-from-getting-soggy/"],
+    ["how-much-dried-beans-per-person", "/canned-beans-vs-dried-beans-nutrition/"],
+    ["how-long-do-dried-beans-last", "/how-to-cook-dried-beans-from-scratch/"],
+    ["which-foods-are-complete-proteins", "/beans-and-rice-complete-protein-meal/"],
+    ["cauliflower-fried-rice-with-eggs", "/how-to-use-leftover-rice-creative-ideas/"],
+    ["how-to-make-sourdough-pizza-dough-same-day", "/easy-sourdough-discard-pizza-dough-no-yeast/"],
+    ["do-you-have-to-cook-frozen-vegetables", "/can-you-refreeze-frozen-vegetables-after-thawing/"],
+  ];
+
+  for (const [slug, target] of cases) {
+    const response = await onRequest(
+      makeContext(`https://www.daily-life-hacks.com/${slug}/`, { ASSETS: makeAssets(new Set()) }),
+    );
+    assert.equal(response.status, 301, slug);
+    assert.equal(response.headers.get("location"), `https://www.daily-life-hacks.com${target}`);
   }
 });
 
