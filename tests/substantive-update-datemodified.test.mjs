@@ -4,6 +4,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 
+import { isIndexPruned } from "../src/content/index-prune.js";
 import {
   SHARED_DATEMODIFIED_LIMIT,
   extractFrontmatterField,
@@ -15,6 +16,9 @@ const ROOT = new URL("..", import.meta.url).pathname;
 const ARTICLES = join(ROOT, "src/data/articles");
 const BASELINE = "94167b6";
 const TODAY = "2026-11-23";
+// #250 and #252 merged back to back, so origin/main already has the restored
+// dates. 84702a37 is main immediately before that restoration (#250).
+const BEFORE_DATE_RESTORE = "84702a37";
 
 /**
  * Pages whose body actually changed on 2026-11-23: merges #234, the cottage
@@ -202,13 +206,11 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
     `2026-11-23 without substantiveUpdate: ${todayWithoutField.map((article) => article.slug).join(", ")}`,
   );
   restored.push(
-    ...articles.filter(
-      (article) =>
-        article.baselineModified !== TODAY &&
-        article.dateModified !== TODAY &&
-        gitShow("origin/main", article.path) &&
-        extractFrontmatterField(gitShow("origin/main", article.path), "dateModified") === TODAY,
-    ),
+    ...articles.filter((article) => {
+      if (article.baselineModified === TODAY || article.dateModified === TODAY) return false;
+      const before = gitShow(BEFORE_DATE_RESTORE, article.path);
+      return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
+    }),
   );
   assert.equal(stillToday.length, 33, `pages still on ${TODAY}`);
   assert.equal(restored.length, 62, "pages restored off 2026-11-23");
@@ -227,7 +229,10 @@ test("restored and substantive pages render the honest Updated day", () => {
   if (!built) return;
   for (const [slug, day] of cases) {
     const html = readFileSync(join(ROOT, "dist", slug, "index.html"), "utf8");
-    assert.match(html, new RegExp(`"dateModified":"${day}T00:00:00.000Z"`), slug);
+    // #250 drops article JSON-LD on pruned pages. The visible Updated day stays.
+    if (!isIndexPruned(slug)) {
+      assert.match(html, new RegExp(`"dateModified":"${day}T00:00:00.000Z"`), slug);
+    }
     assert.match(html, new RegExp(`<time datetime="${day}"`), slug);
     if (day !== TODAY) {
       assert.equal(html.includes('"dateModified":"2026-11-23T'), false, slug);
