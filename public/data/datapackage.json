@@ -1330,8 +1330,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "bytes": 7198,
-      "hash": "sha256:9ef2ab4d3092d24324cb6d390e07d16eb555d56ce30c0df465b3f9314c9ed9e1",
+      "bytes": 7362,
+      "hash": "sha256:1cc5552e9a6b8aca4694f83bc92fe2245f313cba36ec2c1bee2dc99cbb736429",
       "sources": [
         {
           "title": "Daily Life Hacks study: High-Fiber Fast Food Orders (2026)",
@@ -1396,6 +1396,26 @@
             "name": "checked_date",
             "type": "string",
             "description": "ISO date the official page or PDF was read. Not the chain's print date, which is recorded in the source column when the file states one."
+          },
+          {
+            "name": "priced_month",
+            "type": "string",
+            "description": "Price observation month as YYYY-MM when that row's own price text records one. Blank when the file does not record a month for the row."
+          },
+          {
+            "name": "retailer",
+            "type": "string",
+            "description": "Retailer or price survey named on the row, such as Walmart, Walmart Great Value, BLS, or a restaurant chain. Blank when the row does not name one."
+          },
+          {
+            "name": "price_location",
+            "type": "string",
+            "description": "Geographic scope written on the row, such as a BLS area name, US average, or national. Blank when the row records no place. No store or ZIP is filled in."
+          },
+          {
+            "name": "audit_note",
+            "type": "string",
+            "description": "Short note already present in the row's price text, such as an audit cross-reference or a USDA refuse adjustment. Blank when the row has no extra note."
           }
         ],
         "missingValues": [

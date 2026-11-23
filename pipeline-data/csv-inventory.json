@@ -502,7 +502,11 @@
    "sodium_mg",
    "source",
    "official_url",
-   "checked_date"
+   "checked_date",
+   "priced_month",
+   "retailer",
+   "price_location",
+   "audit_note"
   ]
  }
 ]

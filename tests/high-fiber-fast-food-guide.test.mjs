@@ -137,6 +137,10 @@ test("the public CSV matches the article table row for row", () => {
     "source",
     "official_url",
     "checked_date",
+    "priced_month",
+    "retailer",
+    "price_location",
+    "audit_note",
   ]);
   assert.equal(body.length, table.length);
 
