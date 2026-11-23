@@ -2,16 +2,11 @@
 title: "Homemade Salad Dressing Fridge Life: 2 Weeks, 1 Week, or 3–4 Days"
 excerpt: "Refrigerate oil and vinegar dressing. Vinaigrette lasts up to 2 weeks; fresh garlic or herbs, 1 week; creamy mayo or dairy, 3-4 days. Garlic-in-oil: 4 days."
 quickAnswer: >-
-  How long homemade salad dressing keeps depends entirely on what's in it.
-  A simple vinaigrette holds up to 2 weeks refrigerated; add fresh onion, herbs,
-  or citrus juice and it's about 1 week. Creamy mayo or dairy dressings get 3 to
-  4 days. No federal chart lists homemade dressing, so treat those three as
-  quality windows drawn from the closest published references. Two cases are
-  safety limits, not quality windows: raw-egg dressing like classic Caesar or
-  aioli should be a same-day job, because USDA advises against eating raw eggs
-  at all and allows 24 hours only for dishes you then cook to 160°F; and raw
-  garlic or fresh herbs in oil with no added acid needs 40°F or below for no
-  more than 4 days, or the freezer.
+  How long homemade salad dressing lasts depends on the jar. A plain vinaigrette
+  keeps up to 2 weeks refrigerated. Fresh garlic or herbs bring that to about 1
+  week. Dairy, buttermilk, and mayo-based dressings last 3 to 4 days. Raw egg
+  dressing is a same-day job. Opened store-bought dressing keeps about 1 to 3
+  months in the fridge.
 category: tips
 tags:
 - homemade salad dressing
@@ -22,7 +17,7 @@ tags:
 image: "/images/how-to-store-homemade-salad-dressing-safely-main.jpg"
 imageAlt: A clear glass bottle filled with golden salad dressing stands on a light wooden cutting board, surrounded by a lemon half and a garlic clove.
 date: 2026-04-28
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 faq:
@@ -37,7 +32,9 @@ faq:
   - question: "Can you make homemade Caesar dressing with raw egg?"
     answer: "You can, but USDA advises against it. Classic Caesar and homemade aioli are built on raw egg yolk, and USDA's Food Safety and Inspection Service advises everyone against eating raw or undercooked egg yolks and whites or products containing raw or undercooked eggs, naming Caesar salad and homemade mayonnaise specifically. FSIS says to cook dishes containing raw eggs immediately, or refrigerate and cook them within 24 hours, which is far tighter than the 3-to-4-day window for other creamy dressings. If you want it uncooked, FSIS points to pasteurized in-shell eggs or egg products, which may be used safely without cooking, or heating the eggs with the liquid ingredients to 160°F before combining."
 ---
-Refrigerate homemade salad dressing. A simple vinaigrette holds up to 2 weeks in the fridge; add fresh onion, herbs, or citrus juice and it's about 1 week. Creamy mayo or dairy dressings get 3 to 4 days. Raw-egg Caesar is a same-day job, and raw garlic in oil with no acid is 4 days at 40°F or below, or the freezer.
+How long homemade salad dressing lasts depends on the jar. A plain vinaigrette keeps up to 2 weeks refrigerated. Fresh garlic or herbs bring that to about 1 week. Dairy, buttermilk, and mayo-based dressings last 3 to 4 days. Raw egg dressing is a same-day job. Opened store-bought dressing keeps about 1 to 3 months in the fridge.
+
+Raw garlic or fresh herbs packed in oil, with no vinegar or other acid, isn't one of those quality windows. Oregon State University Extension says low-acid food in oil leaves an oxygen-free spot where Clostridium botulinum can grow, so refrigerate that jar and use it within 4 days, or freeze it. A splash of lemon isn't the tested fix.
 
 Store-bought Zesty Italian can sit in a pantry for a year and shrug. Your mason jar of lemon-garlic vinaigrette cannot. Homemade dressing is fresh, once-living ingredients with nothing holding the line behind them, unlike the bottled stuff packed with stabilizers and [more sugar than you'd guess](/hidden-sugars-popular-summer-salad-dressings/).
 
@@ -45,16 +42,16 @@ Most of the time this is a waste-and-taste question. Once in a while, specifical
 
 ## How long does homemade salad dressing last?
 
-| Dressing type | Keep it | Where the number comes from |
+| Dressing type | Fridge life | Where the number comes from |
 |---|---|---|
-| Plain vinaigrette (oil, vinegar, dried herbs and spices) | Up to 2 weeks | [Cooperative Extension: simple vinaigrettes keep up to 2 weeks refrigerated](https://ask.extension.org/kb/faq.php?id=292098) |
-| Vinaigrette with fresh garlic, shallots, onion, or fresh herbs | Up to 1 week | Same Extension answer, for dressings "made with fresh ingredients, like onions and herbs" |
-| Citrus-forward dressing with fresh lemon or lime juice | Up to 1 week | [Same Extension answer](https://ask.extension.org/kb/faq.php?id=292098): the dressing in that question contained lemon juice, and it is the "fresh ingredients" case assigned 1 week |
-| Creamy dressing (mayo, sour cream, yogurt, buttermilk) | 3 to 4 days | Closest mayo-bound comparison: [FoodSafety.gov gives 3 to 4 days](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts) for egg, chicken, ham, tuna, and macaroni salads; [USDA's own page says 3 to 5](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/refrigeration) |
-| Raw-egg dressing (classic Caesar, homemade mayo or aioli) | Same day, or use pasteurized eggs | [USDA FSIS advises against foods with raw or undercooked eggs](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/eggs/shell-eggs-farm-table), naming Caesar salad and homemade mayonnaise |
-| Raw garlic or fresh herbs in oil, no added acid (infused oil, garlic confit, pesto) | 4 days, fridge only, or freeze | [Oregon State University Extension](https://extension.oregonstate.edu/catalog/pub/sp-50-701-herbs-vegetables-oil) and the [National Center for Home Food Preservation](https://nchfp.uga.edu/how/freeze/vegetable/freezing-garlic-in-oil/) |
+| Vinaigrette (oil, vinegar, dried herbs and spices) | Up to 2 weeks | Ask Extension, through Cooperative Extension: simple vinaigrettes can be kept refrigerated for up to 2 weeks ([the answer](https://ask.extension.org/kb/faq.php?id=292098)) |
+| With fresh garlic or herbs | Up to 1 week | The same Ask Extension answer gives up to 1 week for dressings made with fresh ingredients, like onions and herbs. University of Maine Extension's basic oil-and-acid card also says use within 7 days ([Make Your Own: Salad Dressing](https://extension.umaine.edu/food-health/efnep/make-your-own/salad-dressing/)) |
+| Dairy or buttermilk | 3 to 4 days | University of Maine Cooperative Extension's ranch card is mayonnaise plus buttermilk, yogurt, or sour cream, and it says use leftovers within 4 days ([Ranch Salad Dressing](https://extension.umaine.edu/food-health/recipes/ranch-salad-dressing/)). There isn't a separate extension line for buttermilk alone, so this row uses that 4-day card |
+| Mayo-based | 3 to 4 days | That same Maine ranch card is half mayonnaise and says 4 days. FoodSafety.gov gives 3 to 4 days for egg, chicken, tuna, and macaroni salads, the closest mayo-bound federal comparison ([cold food storage charts](https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts)). Opened commercial mayonnaise is a different product and a longer clock |
+| With raw egg | Same day, or use pasteurized eggs | USDA FSIS advises against foods with raw or undercooked eggs and names Caesar salad and homemade mayonnaise ([Shell eggs from farm to table](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/eggs/shell-eggs-farm-table)). Cook them right away, or refrigerate and cook within 24 hours. Pasteurized in-shell eggs are the exception FSIS allows without cooking |
+| Store-bought, opened | 1 to 3 months | University of Nebraska-Lincoln Extension lists commercial bottled dressing at 1 to 3 months in the refrigerator after opening, and the footnote treats it as a quality window ([Home Food Storage](https://food.unl.edu/free-resource/food-storage/), updated 2026). New Mexico State University Extension Guide E-118, revised April 2025, lists the same 1 to 3 months ([Storing Food Safely](https://pubs.nmsu.edu/_e/E118/index.html)). Iowa State University Extension says 1 to 3 months after opening ([condiment list](https://blogs.extension.iastate.edu/wellness/2019/05/21/refrigerated-condiment-safety-tips/)). Follow a shorter date if the label gives you one |
 
-Worth being honest about the limits: the federal cold-storage chart doesn't list homemade salad dressing at all, so those rows lean on the closest published references. Read the top four as quality windows. The raw-egg row and the garlic-in-oil row are the two safety limits.
+Worth being honest about the limits. No federal chart lists homemade salad dressing, so the homemade rows use the closest extension and USDA references. Read the vinaigrette, fresh garlic or herbs, dairy, mayo, and opened store-bought rows as quality windows. The raw-egg row is a safety limit. Garlic packed in oil with no acid is the other safety limit, and it isn't a row here because that jar isn't a dressing. University of Maine's basic card says 7 days even for a simple mix, so the 2-week line is the upper end Ask Extension gives a plain vinaigrette with dried herbs, not a dare.
 
 The pattern is simple. More acid buys you time. More fresh, once-living ingredients takes it away. Oil, red wine vinegar, and dried oregano coasts for two weeks. A ranch with fresh dill and buttermilk is on a much shorter clock.
 
