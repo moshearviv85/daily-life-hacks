@@ -10,9 +10,8 @@ tags:
 - fiber
 image: /images/high-fiber-bran-muffins-that-taste-good-main.jpg
 imageAlt: Golden bran muffins with raisins cooling on a wire rack beside a jar of honey
-quickAnswer: "Soak wheat bran and oat bran in buttermilk for 10 minutes, then mix with whole wheat flour, honey, oil, eggs, and raisins. Bake at 400 degrees F for 18 to 22 minutes. The original batch makes 12 large muffins, estimated at 5.9 g fiber and 293 calories each."
 date: 2026-04-28
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -90,6 +89,21 @@ The amounts come from summing ingredients and dividing by the actual muffin coun
 
 For the original batch, the flour estimate uses about 180 grams whole wheat flour, 87 grams wheat bran, and 47 grams oat bran. Those weights are more repeatable than densely packed scoops.
 
+## A large bakery muffin and a standard homemade one
+
+Those 293 calories are one twelfth of this batter. USDA publishes a different pair, and the size is the whole plot.
+
+A large commercial blueberry muffin, 3 1/4 inches across and 2 3/4 inches tall, weighs 139 grams. The standard homemade muffin on the plain-recipe record weighs 57 grams. Fiber lands in the same place. Calories don't.
+
+| Muffin | USDA portion | Calories | Fiber | Record |
+|---|---|---:|---:|---|
+| Large bakery blueberry | 1 large, 139 g | 521 | 1.5 g | [FDC 172765](https://fdc.nal.usda.gov/food-details/172765/nutrients) |
+| Standard homemade plain | 1 muffin, 57 g | 169 | 1.5 g | [FDC 172764](https://fdc.nal.usda.gov/food-details/172764/nutrients) |
+
+Same 1.5 grams of fiber. The bakery muffin spends about 350 extra calories to get there. The taller paper liner is doing a lot of work.
+
+Those rows scale each record's per-100-gram values by USDA's own portion weight. The commercial record is 375 calories and 1.1 grams of fiber per 100 grams, and the sample behind that density includes mini-muffins. The large weight is a separate line on the same record. The homemade blueberry recipe record, [FDC 172768](https://fdc.nal.usda.gov/food-details/172768/nutrients), lists 162 calories for a 57 gram muffin and leaves fiber blank, so the plain recipe muffin is the homemade row with a fiber value: 2.7 grams per 100 grams.
+
 ## Ingredient swaps that change the result
 
 | Change to the original batch | What to expect |
@@ -103,6 +117,43 @@ For the original batch, the flour estimate uses about 180 grams whole wheat flou
 If you don't have buttermilk, put 1 tablespoon lemon juice or vinegar in a measuring jug and add milk to reach 1 1/2 cups. Rest for five minutes before soaking the bran. The flavor and thickness won't be identical.
 
 The full recipe has both sugar and honey. Whole wheat flour doesn't turn it into a low-sugar breakfast: the original large muffin has an estimated 19.9 grams of added sugars.
+
+## High fiber muffin recipes from the same batter
+
+Four more batches, still 12 large muffins, still the 10-minute soak. Wheat bran stays in every one. Pull that and you've baked a different cake.
+
+| Variation | What changes in the 12 large muffin batch | Fiber each | Calories each |
+|---|---|---:|---:|
+| Oat bran-blueberry | Oat bran goes from 1/2 cup to 1 cup. Raisins come out. 1 cup raw blueberries goes in. | 6.2 g | 274 |
+| Pumpkin-flax | Add 1 cup canned pumpkin and 4 tablespoons ground flaxseed. Drop 2 tablespoons of the oil. | 7.1 g | 292 |
+| Apple-wheat bran | Raisins come out. Add 1 cup sliced gala apple, skin on, and 1/2 cup wheat bran. | 6.6 g | 267 |
+| Banana-chia | Add 1 cup mashed banana and 1 ounce dried chia to the soak. Use 1 cup buttermilk instead of 1 1/2 cups. | 7.2 g | 317 |
+
+The extra oat bran is the fiber in the blueberry row, and you still land at 6.2 grams. Pumpkin is mostly water. The flax is why that row moves to 7.1. The apple row loses the raisins, which were doing real work, so the extra half cup of wheat bran is the replacement. Banana plus an ounce of chia is the sweet one, and it's the calorie jump.
+
+Bake 15 smaller muffins and every cell shrinks. The gram weights behind the table are in the note at the bottom.
+
+### The 8 gram batch
+
+This is the one I mix when I want the fiber to start with an 8. Same oven. Same 12 large cups. The move is more wheat bran in the soak, plus one teaspoon of ground flax with the flour, and enough extra buttermilk that the batter still looks like batter.
+
+- 2 1/2 cups wheat bran
+- 1/2 cup oat bran
+- 1 1/2 cups whole wheat flour, spooned and leveled
+- 1/2 cup granulated sugar
+- 2 teaspoons baking soda
+- 1/2 teaspoon salt
+- 2 1/4 cups buttermilk
+- 1/2 cup honey
+- 1/2 cup vegetable oil
+- 2 large eggs, lightly beaten
+- 1 teaspoon vanilla extract
+- 1 cup raisins
+- 1 teaspoon ground flaxseed
+
+Soak the wheat bran and oat bran in the buttermilk for 10 minutes. Whisk the flax in with the flour. Everything else follows the original steps, including 400 degrees F and the toothpick check at 18 minutes. The sum is 8.0 grams of fiber and 311 calories per large muffin. Split the batter into more cups and that 8.0 no longer applies.
+
+The banana row is where an ounce of chia belongs. USDA's chia record publishes that 1 ounce portion, and an ounce of chia in this already-thirsty batter is how you get a doorstop. Flax has a teaspoon measure. Use that.
 
 ## Mix briefly, then check the oven early
 
@@ -130,4 +181,6 @@ Thaw and warm gently. If a muffin is a little dry, split and toast it rather tha
 
 For another way to use baking ingredients already in the kitchen, try the [sourdough discard pancakes](/easy-sourdough-discard-recipes-beginners/). For the grocery side, the [fiber-per-dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) compares the foods behind the recipes. Whole wheat flour, the flour in this batter, leads the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) at 96.0 grams of protein per dollar.
 
-*Nutrition method: estimates use USDA FoodData Central SR Legacy records for wheat bran (169722), oat bran (168872), whole-grain flour (168893), all-purpose flour (168894), raisins (168165), honey (169640), sugar (169655), and lowfat buttermilk (170874), plus eggs, oil, baking soda, and salt. [USDA's dietary fiber table](https://www.nal.usda.gov/sites/default/files/page-files/Total_Dietary_Fiber.pdf) provides the fiber values. Optional cinnamon and other substitutions are excluded. These are calculations, not a lab analysis of the baked muffins.*
+*Nutrition method: estimates use USDA FoodData Central SR Legacy records for wheat bran (169722), oat bran (168872), whole-grain flour (168893), all-purpose flour (168894), raisins (168165), honey (169640), sugar (169655), and lowfat buttermilk (170874), plus eggs (171287), soybean oil (171411), and vanilla extract (173471). [USDA's dietary fiber table](https://www.nal.usda.gov/sites/default/files/page-files/Total_Dietary_Fiber.pdf) provides the fiber values. Optional cinnamon and other substitutions are excluded. These are calculations, not a lab analysis of the baked muffins.*
+
+*The published 5.9 g and 293 calorie figures match this gram weight: wheat bran 58 g per cup, oat bran 94 g per cup, whole wheat flour 120 g per cup, sugar 200 g per cup, buttermilk 245 g per cup, honey 339 g per cup, soybean oil 218 g per cup, a large egg 50 g, raisins at the not-packed cup of 145 g, and vanilla extract 4.2 g per teaspoon. Variation rows use those weights plus blueberries 148 g per cup (171711), canned pumpkin 245 g per cup (168450), ground flaxseed 7 g per tablespoon and 2.5 g per teaspoon (169414), gala apple slices 109 g per cup (168204), mashed banana 225 g per cup (173944), and chia 28.35 g per ounce (170554). The pumpkin row drops 2 tablespoons of oil at 13.6 g each. The bakery table scales FDC 172765 (375 kcal and 1.1 g fiber per 100 g) to 139 g, and FDC 172764 (296 kcal and 2.7 g fiber per 100 g) to 57 g. Fiber in the new rows is rounded to one decimal. Calories are the batch sum divided by 12 and rounded to the nearest calorie.*
