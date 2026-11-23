@@ -89,7 +89,7 @@ test("primary article schemas retain canonical, image, language, and date signal
 
 test("Dataset schema remains attached to its canonical article and CSV", () => {
   const datasetBlock = articlePage.match(
-    /if \(dataset\) \{([\s\S]*?)\r?\n\}\r?\n\r?\n\/\*\*[\s\S]*?Embeddable chart/,
+    /if \(dataset\) \{([\s\S]*?)\r?\n\}\r?\n\r?\n\/\*\*[\s\S]*?Copy-ready APA/,
   );
 
   assert.ok(datasetBlock, "Dataset schema block must remain present");

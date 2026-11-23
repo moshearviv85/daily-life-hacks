@@ -20,7 +20,6 @@ import {
   HUGGINGFACE_DATASET_URL,
   datasetDistributions,
   describeDatasetProvenance,
-  findChartInBody,
   flagshipBibtexKey,
   getDatasetProvenance,
   studyCitation,
@@ -41,6 +40,7 @@ import StudyCite from "../components/StudyCite.astro";
 import MealProteinCost from "../components/MealProteinCost.astro";
 import KitchenCalculator from "../components/KitchenCalculator.astro";
 import { newsletterSignupForArticle } from "../content/newsletter-variant.mjs";
+import { contextualFlagshipLinkAllowed } from "../content/contextual-flagship-links.mjs";
 
 function inlineMd(text: string): string {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
@@ -101,6 +101,10 @@ const isRecipe =
   (!isCatalogRecipe &&
     hasRecipeFields &&
     Boolean(article.data.recipeCategory?.trim()));
+const showFlagshipLinks = contextualFlagshipLinkAllowed({
+  category: article.data.category,
+  tags: article.data.tags,
+});
 
 /**
  * Google lists `recipeCategory` and `recipeCuisine` as recommended Recipe
@@ -416,21 +420,7 @@ if (dataset) {
 }
 
 /**
- * Embeddable chart (growth method #18). Data studies with a chart get a
- * standalone /embed/{slug}/ page plus a copy-paste snippet here.
- *
- * The snippet deliberately keeps the credit `<a>` OUTSIDE the iframe: iframe
- * `src` passes no link equity, the visible anchor does. Do not "simplify"
- * the snippet by dropping the paragraph.
- */
-const chart = dataset ? findChartInBody(article.body ?? "") : null;
-const embedUrl = `${siteUrl}/embed/${article.id}/`;
-const embedSnippet = chart
-  ? `<iframe src="${embedUrl}" width="100%" height="520" style="border:0" loading="lazy" title="${dataset!.name.replace(/"/g, "&quot;")}"></iframe>\n<p>Chart: <a href="${articleUrl}">Daily Life Hacks</a> - free to reuse with credit</p>`
-  : null;
-
-/**
- * Copy-ready APA and BibTeX on the two flagships (growth method #3); other
+ * Copy-ready APA and BibTeX on the two flagships; other
  * study pages keep the shorter dataset credit line.
  *
  * People already want to cite the numbers; without a ready string they invent a
@@ -469,64 +459,6 @@ const citationCopyScript = `(function(){
       box.focus();
       box.select();
       try { document.execCommand("copy"); done(); } catch (e) {}
-    };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(box.value).then(done, fallback);
-    } else {
-      fallback();
-    }
-  });
-})();`;
-
-const embedCopyScript = `(function(){
-  var btn = document.getElementById("embed-copy-btn");
-  var box = document.getElementById("embed-snippet");
-  var block = document.getElementById("embed-block");
-  var status = document.getElementById("embed-copy-status");
-  var datasetId = ${JSON.stringify(article.id)};
-  if (!btn || !box || !block) return;
-
-  function trackCopy() {
-    if (typeof window.gtag !== "function") return;
-    window.gtag("event", "chart_embed_code_copied", {
-      dataset_id: datasetId,
-      interaction_type: "copy_code",
-      source_page: location.pathname
-    });
-  }
-
-  // The chart is rendered from markdown, so the block cannot be authored next
-  // to it server-side. Move it there on load; without JS it stays at the end
-  // of the article, which is still a valid place for it.
-  var chart = document.querySelector('.article-content img[src*="-chart.jpg"]');
-  if (chart) {
-    var anchor = chart.closest("figure, p") || chart;
-    if (anchor.parentNode) {
-      anchor.parentNode.insertBefore(block, anchor.nextSibling);
-      block.classList.add("mb-8");
-    }
-  }
-
-  btn.addEventListener("click", function () {
-    var label = btn.textContent;
-    var done = function () {
-      btn.textContent = "Copied";
-      if (status) status.textContent = "Embed code copied.";
-      trackCopy();
-      setTimeout(function () { btn.textContent = label; }, 2000);
-    };
-    var fallback = function () {
-      box.focus();
-      box.select();
-      try {
-        if (document.execCommand("copy")) {
-          done();
-        } else if (status) {
-          status.textContent = "Copy failed. Select the code and copy it manually.";
-        }
-      } catch (e) {
-        if (status) status.textContent = "Copy failed. Select the code and copy it manually.";
-      }
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(box.value).then(done, fallback);
@@ -834,7 +766,7 @@ const newsletterSignup = newsletterSignupForArticle({
       {
         !flagship && mealCost && (
           <div class="mt-5">
-            <MealProteinCost mealCost={mealCost} />
+            <MealProteinCost mealCost={mealCost} showFlagshipLinks={showFlagshipLinks} />
           </div>
         )
       }
@@ -869,7 +801,12 @@ const newsletterSignup = newsletterSignupForArticle({
               <>{datasetProvenance.sourceAuditSummary}. </>
             )}
             Full{" "}
-            <a href="/methodology/" class="underline">methodology</a> and the{" "}
+            {showFlagshipLinks ? (
+              <a href="/methodology/" class="underline">methodology</a>
+            ) : (
+              "methodology"
+            )}{" "}
+            and the{" "}
             <a href={dataset.csv} class="underline">raw CSV</a> are public.
           </p>
         )
@@ -1133,70 +1070,19 @@ const newsletterSignup = newsletterSignupForArticle({
             <a href="/data/" class="text-xs underline" style="color: var(--muted-color);">
               All datasets
             </a>
-            <a href="/methodology/" class="text-xs underline" style="color: var(--muted-color);">
-              License terms
-            </a>
+            {showFlagshipLinks ? (
+              <a href="/methodology/" class="text-xs underline" style="color: var(--muted-color);">
+                License terms
+              </a>
+            ) : (
+              <span class="text-xs" style="color: var(--muted-color);">License terms</span>
+            )}
           </div>
         </aside>
       )
     }
 
     {citationText && <script is:inline set:html={citationCopyScript} />}
-
-    <!-- Embed this chart (method #18: passive attribution links) -->
-    {
-      embedSnippet && (
-        <details id="embed-block" class="order-[22] mt-8 rounded-xl border border-[var(--border-color)] bg-[var(--card-bg)] overflow-hidden">
-          <summary class="flex justify-between items-center gap-3 cursor-pointer list-none p-4 text-sm font-medium text-[var(--heading-color)] hover:bg-[var(--input-bg)] transition-colors">
-            <span class="flex items-center gap-2">
-              <span class="text-[#F29B30]">●</span> Embed this chart on your site
-            </span>
-            <span class="text-xs font-normal" style="color: var(--muted-color);">
-              free with credit
-            </span>
-          </summary>
-          <div class="p-4 pt-0">
-            <p class="text-sm mb-3" style="color: var(--muted-color);">
-              Copy the code below. It includes the chart and a credit line back to
-              this study — please keep both.
-            </p>
-            <textarea
-              readonly
-              rows="4"
-              id="embed-snippet"
-              class="w-full rounded-lg border border-[var(--border-color)] p-3 font-mono text-xs leading-relaxed"
-              style="background-color: var(--input-bg); color: var(--text-color); resize: vertical;"
-              onclick="this.select()"
-              aria-label="Embed code for this chart"
-            >{embedSnippet}</textarea>
-            <div class="mt-3 flex flex-wrap items-center gap-3">
-              <button
-                type="button"
-                id="embed-copy-btn"
-                class="px-4 py-2 rounded-lg text-sm font-medium bg-[#F29B30] text-white hover:opacity-90 transition-opacity"
-              >
-                Copy embed code
-              </button>
-              <span id="embed-copy-status" class="sr-only" role="status" aria-live="polite"></span>
-              <a
-                href={`/embed/${article.id}/`}
-                class="text-sm underline"
-                style="color: var(--muted-color);"
-                target="_blank"
-                rel="noopener"
-              >
-                Preview the embed
-              </a>
-              <span class="text-xs" style="color: var(--muted-color);">
-                Licensed free to reuse with credit
-              </span>
-            </div>
-          </div>
-        </details>
-      )
-    }
-
-    {embedSnippet && <script is:inline set:html={embedCopyScript} />}
 
     <!-- Tags -->
     {

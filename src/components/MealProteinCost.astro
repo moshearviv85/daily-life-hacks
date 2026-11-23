@@ -1,5 +1,6 @@
 ---
 import StudyLead from "./StudyLead.astro";
+import { isContextualFlagshipHref } from "../content/contextual-flagship-links.mjs";
 
 interface Highlight {
   value: string;
@@ -22,9 +23,11 @@ interface MealCost {
 
 interface Props {
   mealCost: MealCost;
+  /** False on recipes, tips, and nutrition pages without a budget tag. */
+  showFlagshipLinks?: boolean;
 }
 
-const { mealCost } = Astro.props;
+const { mealCost, showFlagshipLinks = true } = Astro.props;
 const extraLinks = [
   mealCost.fiberHref && mealCost.fiberLabel
     ? { href: mealCost.fiberHref, label: mealCost.fiberLabel }
@@ -32,7 +35,7 @@ const extraLinks = [
   mealCost.dbHref && mealCost.dbLabel
     ? { href: mealCost.dbHref, label: mealCost.dbLabel }
     : null,
-].filter(Boolean);
+].filter(Boolean).filter((link) => showFlagshipLinks || !isContextualFlagshipHref(link.href));
 ---
 
 <aside
@@ -44,8 +47,8 @@ const extraLinks = [
     kicker={mealCost.kicker}
     highlight={mealCost.highlight}
     disclosure={mealCost.disclosure}
-    jumpHref={mealCost.proteinHref}
-    jumpLabel={mealCost.proteinLabel}
+    jumpHref={showFlagshipLinks ? mealCost.proteinHref : undefined}
+    jumpLabel={showFlagshipLinks ? mealCost.proteinLabel : undefined}
   />
   {
     mealCost.lines?.length ? (

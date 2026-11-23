@@ -57,7 +57,7 @@ test("published datasets have a CSV, and article studies keep an embeddable char
 test("embed pages stay noindex, canonicalized, and frameable only on the scoped route", () => {
   assert.match(embedSource, /<meta name="robots" content="noindex"\s*\/>/);
   assert.match(embedSource, /<link rel="canonical" href=\{articleUrl\}\s*\/>/);
-  assert.match(embedSource, /target="_blank" rel="noopener"/);
+  assert.match(embedSource, /target="_blank" rel="noopener nofollow"/);
   assert.match(embedSource, /alt=\{chart\.alt \|\| chartTitle\}/);
 
   assert.match(
@@ -74,31 +74,12 @@ test("embed pages stay noindex, canonicalized, and frameable only on the scoped 
   );
 });
 
-test("study pages provide a visible outside-iframe credit and accessible copy UX", () => {
-  assert.match(
-    articleSource,
-    /<\/iframe>\\n<p>Chart: <a href="\$\{articleUrl\}">Daily Life Hacks<\/a> - free to reuse with credit<\/p>/,
-  );
-  assert.match(articleSource, /aria-label="Embed code for this chart"/);
-  assert.match(articleSource, /id="embed-copy-btn"/);
-  assert.match(
-    articleSource,
-    /id="embed-copy-status" class="sr-only" role="status" aria-live="polite"/,
-  );
-  assert.match(articleSource, /href=\{`\/embed\/\$\{article\.id\}\/`\}/);
-});
-
-test("successful embed-code copies emit anonymous, dataset-scoped analytics", () => {
-  const analyticsCall =
-    articleSource.match(
-      /window\.gtag\("event", "chart_embed_code_copied", \{[\s\S]*?\}\);/,
-    )?.[0] ?? "";
-
-  assert.match(analyticsCall, /dataset_id: datasetId/);
-  assert.match(analyticsCall, /interaction_type: "copy_code"/);
-  assert.match(analyticsCall, /source_page: location\.pathname/);
-  assert.doesNotMatch(
-    analyticsCall,
-    /box\.value|search|query|chartTitle|dataset\.name/,
-  );
+test("article pages no longer ship the embed-with-credit widget", () => {
+  assert.doesNotMatch(articleSource, /id="embed-block"/);
+  assert.doesNotMatch(articleSource, /id="embed-snippet"/);
+  assert.doesNotMatch(articleSource, /id="embed-copy-btn"/);
+  assert.doesNotMatch(articleSource, /free with credit/);
+  assert.doesNotMatch(articleSource, /please keep both/);
+  assert.doesNotMatch(articleSource, /chart_embed_code_copied/);
+  assert.doesNotMatch(articleSource, /<!--[^>]*method #/);
 });
