@@ -1,5 +1,5 @@
 ---
-title: "16-17g Fiber: Chia Pudding Enough for Breakfast"
+title: "Is Chia Pudding Enough for Breakfast? 16g Fiber"
 excerpt: "Tired of the same breakfast loop? These chia pudding variations - chocolate, berry, mango, vanilla - are high fiber, make-ahead, and actually filling"
 category: nutrition
 tags:

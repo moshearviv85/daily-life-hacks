@@ -1,5 +1,5 @@
 ---
-title: Fiber Rich Soup for Weight Loss Cabbage
+title: "High-Fiber Cabbage and Bean Soup"
 excerpt: "This cabbage soup isn't the sad diet broth you remember. It's tomato-rich, bean-loaded, and fiber-heavy enough to actually keep you full."
 category: recipes
 tags:

@@ -1,5 +1,5 @@
 ---
-title: Healthy Sweet Tooth Snack Ideas for Night
+title: "Sweet Snacks for a Late-Night Craving"
 excerpt: Stop fighting the 9 PM sugar craving. These low-effort, healthy sweet tooth snack ideas for night will satisfy you without the sugar crash.
 category: recipes
 tags:

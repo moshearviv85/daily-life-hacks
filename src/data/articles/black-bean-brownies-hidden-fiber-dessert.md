@@ -1,5 +1,5 @@
 ---
-title: Black Bean Brownies Hidden Fiber Dessert
+title: "Black Bean Brownies With Real Fiber"
 excerpt: "Black bean brownies sound weird until you taste them. Fudgy chocolate squares with real fiber, no bean flavor, and zero bakery drama."
 category: nutrition
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "Homemade Salad Dressing Fridge Life: 2 Weeks, 1 Week, or 3–4 Days"
+title: "Homemade Dressing Fridge Life: 2 Weeks, 1 Week, 3-4 Days"
 excerpt: "Refrigerate oil and vinegar dressing. Vinaigrette lasts up to 2 weeks; fresh garlic or herbs, 1 week; creamy mayo or dairy, 3-4 days. Garlic-in-oil: 4 days."
 quickAnswer: >-
   How long homemade salad dressing lasts depends on the jar. A plain vinaigrette

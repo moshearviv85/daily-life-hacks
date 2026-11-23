@@ -1,5 +1,5 @@
 ---
-title: "How Long Does Sourdough Discard Last? A 1-Week Rule and When to Freeze"
+title: "How Long Does Sourdough Discard Last? About a Week"
 excerpt: 'How long does sourdough discard last in the fridge? Plan on one week from the oldest date, then bake or freeze. That week is a planning window, not a safety date.'
 quickAnswer: "Plan to use refrigerated discard within a week of the oldest date on the jar. That's a planning window, not a safety limit and not a promise that day eight is ruined. King Arthur says several weeks. Nordic Ware says 7 to 10 days. If you won't bake this week, freeze measured portions. Throw the jar out for mold, pink or orange, or a rotten smell, whatever the date says."
 category: tips

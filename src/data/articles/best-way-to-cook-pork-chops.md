@@ -1,5 +1,5 @@
 ---
-title: The Best Way to Cook Pork Chops, Period
+title: "How to Cook Pork Chops to 145°F"
 excerpt: Sear 1-inch pork chops, baste them with garlic-herb butter, and stop at 145°F for a browned crust without a dry center.
 quickAnswer: "Pat 1-inch pork chops dry, season them, and sear them in a hot heavy skillet for 3 to 4 minutes per side. Lower the heat, add butter, garlic, and herbs, then baste until the thickest part reaches 145°F. Rest the chops for at least 5 minutes before serving so the juices stay in the meat."
 category: recipes

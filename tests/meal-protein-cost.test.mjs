@@ -176,7 +176,7 @@ test("article bodies lock the new highlight numbers and honest flagship links", 
   const costco = read("src/data/articles/costco-rotisserie-chicken-meal-ideas-dinner.md");
   const costcoCallout = MEAL_PROTEIN_COST["costco-rotisserie-chicken-meal-ideas-dinner"];
   assert.match(costco, /dateModified: 2026-11-23/);
-  assert.match(costco, /\$5\.97 Costco Rotisserie Chicken: ~160g Protein/);
+  assert.match(costco, /title: "Costco Rotisserie Chicken: \$5\.97 and ~160g Protein"/);
   assert.match(costco, /about 160 grams of edible protein after bone and skin/);
   assert.match(costco, /\$1\.49/);
   assert.match(costco, /40 grams/);

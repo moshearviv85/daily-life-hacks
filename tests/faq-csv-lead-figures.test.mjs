@@ -106,7 +106,7 @@ test("breakfast FAQ quotes combined lead figures from its CSV", () => {
   const title = markdown.match(/^title: "(.*)"$/m)?.[1] ?? "";
   assert.equal(
     title,
-    `Cheapest Breakfast: Flour ${flourCombined}g vs Oats ${oatsCombined}g Combined`,
+    "Cheapest Breakfast per Dollar: Flour, Then Oats",
   );
 
   assert.match(faq, new RegExp(`${escapeRegExp(flourCombined)} grams combined`));
@@ -193,7 +193,7 @@ test("eggs FAQ quotes protein lead figures from its CSV", () => {
 
   const { markdown, faq } = faqBlock("eggs-vs-everything-protein-value");
   const title = markdown.match(/^title: "(.*)"$/m)?.[1] ?? "";
-  assert.equal(title, `Are Eggs the Cheapest Protein? Flour ${flour}g vs Eggs ${eggs}g`);
+  assert.equal(title, "Are Eggs the Cheapest Protein? Flour Leads");
   assert.equal(title.toLowerCase().includes("combined"), false);
 
   assert.match(faq, /Sixteen foods/);

@@ -1,5 +1,5 @@
 ---
-title: "Eat Healthy on a Budget: Pinto 57.6g vs Bacon 9.4g"
+title: "Eat Healthy on a Budget for About $60 a Week"
 excerpt: "A dollar of dry pinto beans buys 57.6g of protein; a dollar of bacon buys 9.4. The full budget system: data-picked staples, batch cooking, a real $60 week."
 category: "tips"
 tags: ["eat healthy on a budget", "budget meal planning", "cheap healthy food", "grocery budget", "budget cooking"]

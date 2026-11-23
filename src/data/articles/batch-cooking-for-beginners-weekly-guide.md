@@ -1,5 +1,5 @@
 ---
-title: Batch Cooking for Beginners Weekly Guide
+title: "Batch Cooking for Beginners: A Sunday Plan"
 excerpt: Exhausted by weeknight cooking? Master the Sunday system with this ridiculously
   straightforward batch cooking for beginners weekly guide.
 category: tips

@@ -1,5 +1,5 @@
 ---
-title: "Chipotle 25g, Subway 19g: High-Fiber Fast Food"
+title: "High-Fiber Fast Food: Chipotle Leads at 25g"
 excerpt: "Highest-fiber fast food we checked: Chipotle veggie bowl 25g, Subway Veggie Patty Protein Bowl 19g. Ten orders, 6 chains, official nutrition dated July 2026."
 category: nutrition
 tags:

@@ -1,5 +1,5 @@
 ---
-title: "5-7g Protein per Slice: High Protein Breads for Sandwiches"
+title: "High-Protein Bread for Sandwiches: 5-7g a Slice"
 excerpt: "5 to 7 grams of protein per slice, sometimes. Most sprouted loaves are about 5 grams, so a sandwich is about 10 grams before you open the fridge."
 category: nutrition
 tags:

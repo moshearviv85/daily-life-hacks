@@ -1,5 +1,5 @@
 ---
-title: "Cheapest Animal Protein: Drumsticks 50.3g vs Eggs 34.4g"
+title: "Cheapest Animal Protein: Drumsticks, Then Eggs"
 excerpt: "Chicken drumsticks top 21 animal proteins at 50.3 g per dollar. Eggs hit 34.4, milk 28.5, and bacon trails at 9.4. July 2026 prices."
 category: "nutrition"
 tags: ["cheapest animal protein", "animal protein per dollar", "budget protein", "eggs vs meat protein", "grocery data"]
