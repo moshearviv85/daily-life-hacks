@@ -2,31 +2,39 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import {
+  AUTHOR_DESCRIPTION,
+  AUTHOR_ID,
+  AUTHOR_JOB_TITLE,
+  AUTHOR_KNOWS_ABOUT,
+  AUTHOR_NAME,
+  AUTHOR_PAGE_ID,
+  AUTHOR_PATH,
+  AUTHOR_URL,
+} from "../content/author";
 
 const title = "About | Daily Life Hacks";
 const description = "Who's behind Daily Life Hacks. No drama, no miracle stories. Just practical food and a guy who's done with 14-step recipes.";
 
 /**
  * Organization + WebSite come from BaseLayout's sitewide graph, so this page
- * only defines what is unique to it: the ProfilePage wrapper, the Person node
- * that every article's `author` points at by @id, and the founder edge back
- * onto the shared Organization node.
+ * only defines what is unique to it: the AboutPage wrapper and the founder
+ * edge back onto the shared Organization node.
  *
- * ProfilePage (not AboutPage) is the type Google currently documents for a page
- * whose main entity is one person. Both are valid; ProfilePage is the one in
- * the current rich-results gallery.
+ * The Person profile itself lives at /author/david-miller/. This page points
+ * at that same @id so the about page and the author page describe one person.
  */
 const aboutSchema = [
   {
     '@context': 'https://schema.org',
-    '@type': ['AboutPage', 'ProfilePage'],
+    '@type': 'AboutPage',
     '@id': 'https://www.daily-life-hacks.com/about/#webpage',
     name: 'About Daily Life Hacks',
     url: 'https://www.daily-life-hacks.com/about/',
     description,
     inLanguage: 'en-US',
     mainEntity: {
-      '@id': 'https://www.daily-life-hacks.com/about/#david-miller',
+      '@id': AUTHOR_ID,
     },
     breadcrumb: { '@id': 'https://www.daily-life-hacks.com/about/#breadcrumb' },
     isPartOf: { '@id': 'https://www.daily-life-hacks.com/#website' },
@@ -48,20 +56,20 @@ const aboutSchema = [
     name: 'Daily Life Hacks',
     url: 'https://www.daily-life-hacks.com/',
     /** The one edge this page adds to the sitewide Organization node. */
-    founder: { '@id': 'https://www.daily-life-hacks.com/about/#david-miller' },
+    founder: { '@id': AUTHOR_ID },
     publishingPrinciples: 'https://www.daily-life-hacks.com/editorial-policy/',
   },
   {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    '@id': 'https://www.daily-life-hacks.com/about/#david-miller',
-    name: 'David Miller',
-    url: 'https://www.daily-life-hacks.com/about/',
-    mainEntityOfPage: { '@id': 'https://www.daily-life-hacks.com/about/#webpage' },
-    jobTitle: 'Founder and Editor',
+    '@id': AUTHOR_ID,
+    name: AUTHOR_NAME,
+    url: AUTHOR_URL,
+    mainEntityOfPage: { '@id': AUTHOR_PAGE_ID },
+    jobTitle: AUTHOR_JOB_TITLE,
     worksFor: { '@id': 'https://www.daily-life-hacks.com/#organization' },
-    knowsAbout: ['Grocery Cost Research', 'USDA Food Data', 'Budget Cooking', 'Meal Prep'],
-    description: 'Pen name of the founder and editor of Daily Life Hacks, used for privacy and disclosed as such on this page. Publishes grocery cost studies, practical recipes, and food tools with public source data. Not a chef, registered dietitian, or medical professional. Daily Life Hacks is the publisher of record for all data studies.',
+    knowsAbout: [...AUTHOR_KNOWS_ABOUT],
+    description: AUTHOR_DESCRIPTION,
   },
 ];
 ---
@@ -106,7 +114,7 @@ const aboutSchema = [
 
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">Who writes and checks this</h2>
       <p>
-        I write and edit Daily Life Hacks. David Miller is a pen name. I use it for privacy, the same way plenty of writers do, and I'd rather say so plainly than let you assume otherwise. It changes nothing about the work: <strong>Daily Life Hacks is the publisher of record</strong> for every data study on this site, and the datasets are published under the site's name rather than a byline. I'm not a chef, registered dietitian, or medical professional either, and I won't borrow one of those titles because it looks good under a headshot. For nutrition numbers, I go back to primary sources such as USDA FoodData Central, FDA guidance, and Bureau of Labor Statistics price data. For original cost studies, I publish the calculation rows and the price basis so you can inspect the work instead of taking my word for it.
+        I write and edit Daily Life Hacks. David Miller is a pen name. I use it for privacy, the same way plenty of writers do, and I'd rather say so plainly than let you assume otherwise. It changes nothing about the work: <strong>Daily Life Hacks is the publisher of record</strong> for every data study on this site, and the datasets are published under the site's name rather than a byline. I'm not a chef, registered dietitian, or medical professional either, and I won't borrow one of those titles because it looks good under a headshot. For nutrition numbers, I go back to primary sources such as USDA FoodData Central, FDA guidance, and Bureau of Labor Statistics price data. For original cost studies, I publish the calculation rows and the price basis so you can inspect the work instead of taking my word for it. The articles are listed on the <a href={AUTHOR_PATH} class="underline" style="color: #F29B30;">author page</a>.
       </p>
       <p>
         The <a href="/methodology/" class="underline" style="color: #F29B30;">research methodology</a> explains the source hierarchy, calculation rules, limitations, refresh schedule, and correction process. The <a href="/editorial-policy/" class="underline" style="color: #F29B30;">editorial standards</a> explain how recipes, explainers, tools, automation, and updates are handled. If a claim needs clinical interpretation or personal medical advice, this site isn't the final stop. That's a job for a qualified healthcare professional who knows you, not a guy with a grocery spreadsheet.
@@ -121,7 +129,9 @@ const aboutSchema = [
       </p>
 
       <p class="mt-10">If you made it this far, you have more patience than I do.</p>
-      <p class="font-semibold text-xl" style="color: var(--heading-color);">David Miller</p>
+      <p class="font-semibold text-xl" style="color: var(--heading-color);">
+        <a href={AUTHOR_PATH} rel="author" class="underline" style="color: #F29B30;">{AUTHOR_NAME}</a>
+      </p>
     </div>
   </main>
   <Footer />

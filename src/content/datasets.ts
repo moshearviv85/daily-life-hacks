@@ -534,12 +534,16 @@ export function datasetDistributions(dataset: DatasetMeta, siteUrl: string) {
 
 export const DATASET_SITE_URL = "https://www.daily-life-hacks.com";
 
-/** Pen name already used on /about/. Flagship Dataset `creator` points here. */
+/**
+ * Pen name. Flagship Dataset `creator` points at the author profile.
+ * Kept inline because scripts/build-api-index.mjs evaluates this file as a
+ * data URL and cannot resolve a relative import. Match src/content/author.ts.
+ */
 export const DATASET_PERSON_CREATOR = {
   "@type": "Person" as const,
-  "@id": `${DATASET_SITE_URL}/about/#david-miller`,
+  "@id": "https://www.daily-life-hacks.com/author/david-miller/#person",
   name: "David Miller",
-  url: `${DATASET_SITE_URL}/about/`,
+  url: "https://www.daily-life-hacks.com/author/david-miller/",
   jobTitle: "Founder and Editor",
 };
 

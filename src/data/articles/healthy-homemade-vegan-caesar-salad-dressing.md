@@ -1,5 +1,5 @@
 ---
-title: Healthy Homemade Vegan Caesar Salad Dressing
+title: "Homemade Vegan Caesar Salad Dressing"
 excerpt: Skip the bottled stuff and the raw eggs. This creamy vegan Caesar dressing uses simple pantry staples to get that classic tangy flavor without the dairy.
 category: recipes
 tags:

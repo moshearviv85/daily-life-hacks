@@ -442,6 +442,32 @@ test("legacy garbage and removed supplement-adjacent URLs return gone", async ()
   }
 });
 
+test("David Miller author profile is served instead of the WordPress author 410", async () => {
+  const assets = makeAssets(new Set(["/author/david-miller/"]));
+
+  const response = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/author/david-miller/", {
+      ASSETS: assets,
+    }),
+  );
+
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("location"), null);
+  assert.notEqual(response.headers.get("x-robots-tag"), "noindex, follow");
+  assert.match(await response.text(), /\/author\/david-miller\//);
+
+  const bare = await onRequest(
+    makeContext("https://www.daily-life-hacks.com/author/david-miller", {
+      ASSETS: assets,
+    }),
+  );
+  assert.equal(bare.status, 301);
+  assert.equal(
+    bare.headers.get("location"),
+    "https://www.daily-life-hacks.com/author/david-miller/",
+  );
+});
+
 test("live dashboard page is not treated as a gone WordPress leftover", async () => {
   const assets = makeAssets(new Set(["/dashboard/"]));
 

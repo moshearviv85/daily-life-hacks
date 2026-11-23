@@ -1,5 +1,5 @@
 ---
-title: Healthy Alternatives to Potato Chips for Snacking
+title: "What to Eat Instead of Potato Chips"
 excerpt: "Per ounce, plain chips run 149 calories and 0.9g fiber. Air-popped popcorn runs 108 and 4.1g. Here's which swaps change the numbers and which ones don't."
 category: nutrition
 tags:

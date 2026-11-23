@@ -449,7 +449,9 @@ test("high-protein budget guide FAQ quotes its on-page protein table grams", () 
   const bacon = csvGrams.get("Bacon");
   const breast = csvGrams.get("Chicken breast (boneless, skinless)");
   const beef = csvGrams.get("Ground beef (80/20)");
-  assert.match(markdown, new RegExp(`Pinto ${pinto}g vs Bacon ${bacon}g`));
+  assert.match(markdown, /High Protein on a Budget: Pinto Beans Beat Bacon/);
+  assert.match(markdown, new RegExp(`pinto beans ${pinto}`));
+  assert.match(markdown, new RegExp(`bacon delivers ${bacon}|against ${bacon} for bacon|${bacon} for bacon`, "i"));
   assert.match(faq, new RegExp(`dried pinto beans landed at ${pinto}`));
   assert.match(faq, new RegExp(`chicken breast delivered ${breast}`));
   assert.match(faq, new RegExp(`ground beef ${beef}`));
@@ -629,6 +631,6 @@ test("inline study signup is limited to the two flagship slugs", () => {
   assert.doesNotMatch(sourdough, /study-email-capture|Email me ranking updates/);
   assert.doesNotMatch(protein, /study-email-capture/);
   assert.doesNotMatch(fiber, /study-email-capture/);
-  assert.match(protein, /Protein per \$: Whole Wheat Flour 96\.0g vs Lentils 77\.7g/);
-  assert.match(fiber, /Fiber per Dollar: Whole Wheat Flour 77\.8g, Split Peas 71\.0g/);
+  assert.match(protein, /Protein per Dollar: Flour, Then Lentils/);
+  assert.match(fiber, /Fiber per Dollar: Flour, Then Split Peas/);
 });

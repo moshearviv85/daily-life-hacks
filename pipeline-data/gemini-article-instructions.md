@@ -49,7 +49,7 @@ image: "/images/SLUG-main.jpg"
 imageAlt: "Description of the main image for accessibility"
 date: 2026-02-24
 publishAt: 2026-02-24T00:00:00.000Z
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false
@@ -101,7 +101,7 @@ steps:
   - For batches, schedule one article per day:
     - First article: **today** at `T00:00:00.000Z`
     - Next articles: +1 day each (tomorrow, next day, etc.)
-- `author` is always `"Daily Life Hacks Team"`.
+- `author` is always `"David Miller"`.
 - All four flags (featured, editorsPick, whatsHot, mustRead) are always `false`.
 - `faq` is required for ALL categories. It must contain exactly **5** Q&As.
   - Make questions specific and practical (what people actually type into Google).
@@ -267,7 +267,7 @@ image: "/images/split-pea-soup-recipe-high-fiber-main.jpg"
 imageAlt: "Split Pea Soup Recipe High Fiber - appetizing bowl with colorful ingredients"
 date: 2025-12-26
 publishAt: 2026-02-24T00:00:00.000Z
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false
@@ -310,7 +310,7 @@ image: "/images/simple-balanced-breakfast-ideas-main.jpg"
 imageAlt: "Simple balanced breakfast with yogurt fruit and oats on a kitchen counter"
 date: 2026-02-24
 publishAt: 2026-02-24T00:00:00.000Z
-author: "Daily Life Hacks Team"
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

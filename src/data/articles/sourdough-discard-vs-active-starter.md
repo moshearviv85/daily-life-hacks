@@ -1,5 +1,5 @@
 ---
-title: "Sourdough Discard vs Active Starter: Which One a Recipe Needs"
+title: "Sourdough Discard vs Active Starter: Which to Use"
 excerpt: 'Sourdough discard vs starter is a timing question. Discard is the unfed portion you removed. Active starter is the fed jar after it rises. Recipes need one or the other.'
 quickAnswer: "They're the same culture at two different moments. Discard is the unfed portion you remove before a feeding. Active, or ripe, starter is the portion you just fed, once it's bubbly and has doubled. Discard suits batters lifted by baking soda, baking powder, or the oven. Bread that rises on the starter needs it active, or a recipe that adds commercial yeast."
 category: tips

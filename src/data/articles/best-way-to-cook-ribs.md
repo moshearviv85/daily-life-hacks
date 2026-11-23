@@ -1,5 +1,5 @@
 ---
-title: The Best Way to Cook Ribs, Hands Down
+title: "How to Cook Ribs in 3 Hours 30 Minutes"
 excerpt: 'The best way to cook ribs: 3 hours 30 minutes low and slow, then a short blast of heat for the bark. No dry ribs and no guessing at the timer.'
 category: recipes
 tags:

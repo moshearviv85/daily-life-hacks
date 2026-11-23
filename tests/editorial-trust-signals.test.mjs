@@ -12,17 +12,22 @@ const contactPage = read("src/pages/contact.astro");
 const methodologyPage = read("src/pages/methodology.astro");
 const editorialPage = read("src/pages/editorial-policy.astro");
 const footer = read("src/components/Footer.astro");
+const authorModule = read("src/content/author.ts");
 
 test("site and article schemas expose one canonical publishing-principles URL", () => {
   assert.match(
     baseLayout,
     /publishingPrinciples: `\$\{SITE_URL\}\/editorial-policy\/`/,
   );
+  assert.match(authorModule, /AUTHOR_JOB_TITLE = "Founder and Editor"/);
+  assert.match(authorModule, /AUTHOR_URL = `\$\{AUTHOR_SITE_URL\}\$\{AUTHOR_PATH\}`/);
   assert.match(
     baseLayout,
-    /founder: \{[\s\S]*?"@type": "Person"[\s\S]*?"@id": `\$\{SITE_URL\}\/about\/#david-miller`[\s\S]*?jobTitle: "Founder and Editor"/,
+    /founder: \{[\s\S]*?"@type": "Person"[\s\S]*?"@id": AUTHOR_ID[\s\S]*?url: AUTHOR_URL[\s\S]*?jobTitle: AUTHOR_JOB_TITLE/,
   );
-  assert.match(aboutPage, /jobTitle: 'Founder and Editor'/);
+  assert.match(aboutPage, /jobTitle: AUTHOR_JOB_TITLE/);
+  assert.match(aboutPage, /url: AUTHOR_URL/);
+  assert.match(aboutPage, /href=\{AUTHOR_PATH\}/);
   assert.equal(
     [...articlePage.matchAll(/publishingPrinciples: `\$\{siteUrl\}\/editorial-policy\/`/g)].length,
     2,

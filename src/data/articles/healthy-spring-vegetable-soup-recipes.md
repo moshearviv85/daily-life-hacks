@@ -1,5 +1,5 @@
 ---
-title: Healthy Spring Vegetable Soup Recipes for Busy Weeknights
+title: "Spring Vegetable Soup in About 30 Minutes"
 excerpt: Skip the heavy winter stews for these healthy spring vegetable soup recipes that use seasonal greens and take less than thirty minutes to prep.
 category: recipes
 tags:

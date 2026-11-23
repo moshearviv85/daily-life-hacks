@@ -1,5 +1,5 @@
 ---
-title: What to Make With 100, 227, or 500 Grams of Sourdough Discard
+title: "What to Make With 100 to 500g of Sourdough Discard"
 excerpt: 'What to do with 100 grams of sourdough discard, a full cup, or a lot of it: match the jar to a recipe that already prints that weight.'
 quickAnswer: 'Weigh the jar. About 100 grams is a small muffin batter. 113 grams is one skillet flatbread on this site, and 227 grams is one cup, enough for pancakes, crackers, or a thin pizza crust. 500 grams is a published crepe batch. 1,000 grams is a published waffle batch.'
 category: tips

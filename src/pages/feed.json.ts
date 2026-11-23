@@ -8,6 +8,7 @@ import {
   getFeedArticles,
 } from "../content/feed";
 import { isIndexPruned } from "../content/index-prune.js";
+import { AUTHOR_NAME, AUTHOR_URL, resolveAuthorName } from "../content/author";
 
 export const GET: APIRoute = async () => {
   const articles = (await getFeedArticles()).filter((article) => !isIndexPruned(article.id));
@@ -16,7 +17,7 @@ export const GET: APIRoute = async () => {
     const image = absoluteFeedImage(article.data.image);
     const published = article.data.publishAt ?? article.data.date;
     const modified = article.data.dateModified ?? published;
-    const author = article.data.author ?? "David Miller";
+    const author = resolveAuthorName(article.data.author);
 
     return {
       id: url,
@@ -27,7 +28,10 @@ export const GET: APIRoute = async () => {
       image,
       date_published: published.toISOString(),
       date_modified: modified.toISOString(),
-      authors: [{ name: author }],
+      authors:
+        author === AUTHOR_NAME
+          ? [{ name: author, url: AUTHOR_URL }]
+          : [{ name: author }],
       tags: [article.data.category, ...article.data.tags],
       attachments: [
         {
@@ -49,7 +53,7 @@ export const GET: APIRoute = async () => {
       icon: `${FEED_SITE}/icon-192.png`,
       favicon: `${FEED_SITE}/favicon.ico`,
       language: "en-US",
-      authors: [{ name: "David Miller", url: `${FEED_SITE}/about/` }],
+      authors: [{ name: AUTHOR_NAME, url: AUTHOR_URL }],
       items,
     }),
     {

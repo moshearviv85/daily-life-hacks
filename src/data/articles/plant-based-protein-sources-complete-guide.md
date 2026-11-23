@@ -1,5 +1,5 @@
 ---
-title: "Plant-Based Protein: Lentils 77.7g vs Tempeh 13.2g"
+title: "Plant-Based Protein per Dollar: Lentils, Then Tempeh"
 excerpt: A dollar of dry brown lentils buys 77.7g of protein. Tempeh buys 13.2g. Every
   major plant-based protein source, ranked by protein per 100g and per dollar.
 category: nutrition
