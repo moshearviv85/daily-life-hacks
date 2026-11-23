@@ -43,7 +43,7 @@ That's the answer. Now the part the label doesn't mention.
 
 I stood in the cereal aisle for way too long last week. Two boxes, almost the same price, both screaming about fiber. One said "good source of fiber." The other said "made with whole grains." I flipped them over: 3 grams per serving vs 1 gram. Same aisle, same promises, very different math. That messiness follows whole grains around, and we ran the numbers on [oatmeal vs grits](/oatmeal-vs-grits-fiber-content/) too.
 
-Front-of-package claims are marketing. That's not cynical, that's just how packaging works. But "good source of fiber" is one of the regulated ones, which means it has rules behind it. Knowing them saves you from granola bars that are basically cookies with a health halo, which is why we wrote a separate guide on [choosing a granola that isn't secretly dessert](/how-to-choose-granola-not-dessert/).
+Front-of-package claims are marketing. That's not cynical, that's just how packaging works. But "good source of fiber" is one of the regulated ones, which means it has rules behind it. Knowing them saves you from granola bars that are basically cookies with a health halo, which is why we wrote a separate guide on choosing a granola that isn't secretly dessert.
 
 Once you've decoded the box, the [complete budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) covers the foods that don't arrive wearing a billboard.
 
@@ -74,13 +74,13 @@ These aren't opinion numbers. Section 101.54 sets the thresholds, and the 28 gra
 
 Don't ignore the claim. It's a reasonable starting filter, but a first question, not the final answer.
 
-* **Flip the box.** Check the Nutrition Facts panel for total dietary fiber per serving. Compare products using that number, not the front-of-package claim. If the whole panel still reads like tax paperwork, our [beginner's guide to reading nutrition labels](/how-to-read-nutrition-labels-for-beginners/) walks through it line by line.
+* **Flip the box.** Check the Nutrition Facts panel for total dietary fiber per serving. Compare products using that number, not the front-of-package claim. If the whole panel still reads like tax paperwork, our beginner's guide to reading nutrition labels walks through it line by line.
 * **Look at the ingredient list.** If the first few ingredients are whole grains, beans, nuts, or vegetables, the fiber is probably coming from the food itself. If you see chicory root extract or inulin halfway down, the product may be leaning on added fiber to hit the claim.
 * **Check added sugars.** A "good source of fiber" cereal with 14 grams of added sugar per serving is a cereal that happens to have some fiber. Context matters.
 
 ## Foods that don't need the label (and why that matters)
 
-A can of black beans has about 8 grams of fiber per half-cup serving. A medium pear has about 5.5 grams, and there are plenty more numbers like that in our [list of the best high fiber fruits](/best-high-fiber-fruits-for-weight-loss-list/). A cup of cooked lentils? Roughly 15 grams, per [USDA FoodData Central](https://fdc.nal.usda.gov/food-details/172421/nutrients). None of these carry a flashy front label. They don't need one. They're also the cheapest fiber in the store: in our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried beans and lentils crushed every packaged product with a claim on the front. The same unlabeled bags sit near the top of the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) too. A cereal box has to shout. A bag of lentils doesn't.
+A can of black beans has about 8 grams of fiber per half-cup serving. A medium pear has about 5.5 grams, and there are plenty more numbers like that in our list of the best high fiber fruits. A cup of cooked lentils? Roughly 15 grams, per [USDA FoodData Central](https://fdc.nal.usda.gov/food-details/172421/nutrients). None of these carry a flashy front label. They don't need one. They're also the cheapest fiber in the store: in our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), dried beans and lentils crushed every packaged product with a claim on the front. The same unlabeled bags sit near the top of the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) too. A cereal box has to shout. A bag of lentils doesn't.
 
 The "good source of fiber" claim mostly appears on packaged foods competing for your attention. Whole foods like fruits, vegetables, legumes, and whole grains are naturally high in fiber without a marketing budget.
 

@@ -52,7 +52,7 @@ The same short list that works for everyone, just doubled. Split pea soup is $0.
 
 The one that suits two people best is the can of beans, oddly. Half a can is a serving, so one can is exactly one dinner for two with nothing left rattling around the fridge. Canned beans cost about 2.7 times more per gram of protein than dry, a gap we measured in [canned versus dry beans](/canned-vs-dry-beans-cost/), but at $0.88 for a dinner that needs no planning, that premium is defensible on a Tuesday.
 
-Save the dry beans for the weekend, when you can start a pot and forget about it. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is four minutes of work and a lot of ignoring a stove, and the full costed list is over in [cheap dinner ideas](/cheap-dinner-ideas-cost-per-serving/).
+Save the dry beans for the weekend, when you can start a pot and forget about it. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is four minutes of work and a lot of ignoring a stove, and the full costed list is over in cheap dinner ideas.
 
 ## Which packages actually fit a two person household?
 
@@ -60,7 +60,7 @@ The 16 ounce bags. Split peas, lentils, chickpeas, and a box of pasta all land b
 
 The 2 pound and 4 pound bags are the ones that need a decision. A 4 pound bag of pintos at $3.97 is ten dinners for two, and the unit price is unbeatable at 97.9 grams of protein per dollar. Buy it anyway. Cook half, freeze the cooked beans in portions, and the bag becomes a convenience item instead of a commitment.
 
-Cooked beans freeze well and so does cooked rice if you cool it properly first, which is covered in [storing cooked grains for meal prep](/how-to-properly-store-cooked-grains-for-meal-prep/). A two person freezer is the thing that makes bulk prices work at small scale, and [freezer meal prep for beginners](/freezer-meal-prep-ideas-for-beginners/) has the containers-and-labels version.
+Cooked beans freeze well and so does cooked rice if you cool it properly first, which is covered in storing cooked grains for meal prep. A two person freezer is the thing that makes bulk prices work at small scale, and [freezer meal prep for beginners](/freezer-meal-prep-ideas-for-beginners/) has the containers-and-labels version.
 
 ## What does a week of cheap meals for two cost?
 
@@ -68,7 +68,7 @@ Roughly $7.40 for seven dinners, if six of them are anchored on a dry legume and
 
 Where two people do lose money is on fresh produce. A bunch of anything is usually more than two people eat before it turns, which is why frozen vegetables punch above their reputation here. Frozen green peas returned 17.6 grams of fiber per dollar and don't develop opinions about how long they've been in the drawer.
 
-If you want to price your own week before shopping, [how to meal plan on a budget](/how-to-meal-plan-on-a-budget/) walks through the three column version that takes about six minutes.
+If you want to price your own week before shopping, how to meal plan on a budget walks through the three column version that takes about six minutes.
 
 ## How do you avoid eating the same pot for four days?
 
@@ -76,12 +76,12 @@ Change the top, not the bottom. This is the single skill that makes cooking for 
 
 A pot of pinto beans is about $0.79 of beans and four servings. That's two dinners, not four, which is already manageable. Make them different dinners: tacos with cabbage and lime on Monday, a rice bowl with hot sauce and a fried egg on Wednesday. Same beans, and nobody at the table clocks it as leftovers.
 
-Two person households actually have it easier than solo cooks here, because a pot for four is two shared dinners rather than four identical solo lunches. Which pots survive reheating is the subject of [cheap healthy meals with leftovers](/cheap-healthy-meals-with-leftovers/). Anyone cooking alone runs into a harder version of the same problem, which is the whole subject of [budget meal ideas for one](/budget-meal-ideas-for-one/).
+Two person households actually have it easier than solo cooks here, because a pot for four is two shared dinners rather than four identical solo lunches. Which pots survive reheating is the subject of cheap healthy meals with leftovers. Anyone cooking alone runs into a harder version of the same problem, which is the whole subject of budget meal ideas for one.
 
 ## What this leaves out
 
 Single store shelf prices from July 2026, plus US average prices for eggs, milk, and a few commodity items. No oil, salt, or spices priced. No calorie figures either, because our datasets don't carry a calorie column, so nothing here says whether a serving is the right size for either of you.
 
-Serving sizes are our assumption, not a rule: 90 grams of dry legume, 60 grams of dry grain. Two adults with different appetites will land somewhere else, and the fix costs pennies because the anchors are cheap. For the benchmark to check your whole bill against, [grocery budget for one person per month](/grocery-budget-for-one-person-per-month/) has the per person figures, and the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the full system.
+Serving sizes are our assumption, not a rule: 90 grams of dry legume, 60 grams of dry grain. Two adults with different appetites will land somewhere else, and the fix costs pennies because the anchors are cheap. For the benchmark to check your whole bill against, grocery budget for one person per month has the per person figures, and the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) covers the full system.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

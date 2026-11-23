@@ -49,9 +49,9 @@ You don't need a new breakfast. You need one more thing on the plate you already
 
 Peanut butter, by cost per gram. Two tablespoons is 7.1 grams for 14 cents, which works out to about two cents a gram. Toast is close behind and oats are right there with it.
 
-The reason is straightforward: peanut butter returns 50.7 grams of protein per dollar across our whole [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), tenth of 49 foods. Eggs return 34.4. Greek yogurt returns 27.5. The jar is quietly better value than the carton, which is not what the marketing on either would have you believe. Full numbers in [how much protein is in peanut butter](/how-much-protein-in-peanut-butter/).
+The reason is straightforward: peanut butter returns 50.7 grams of protein per dollar across our whole [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), tenth of 49 foods. Eggs return 34.4. Greek yogurt returns 27.5. The jar is quietly better value than the carton, which is not what the marketing on either would have you believe. Full numbers in [how much protein is in peanut butter](/foods-highest-in-protein-per-100-grams/).
 
-Peanut butter has a catch worth naming. It scores 0.43 on the DIAAS quality scale, limited by lysine, so a gram of its protein does less work than a gram of egg protein. That's covered properly in [which foods are complete proteins](/which-foods-are-complete-proteins/). For an add-on rather than the anchor of the meal, I'd still take the fourteen cents.
+Peanut butter has a catch worth naming. It scores 0.43 on the DIAAS quality scale, limited by lysine, so a gram of its protein does less work than a gram of egg protein. That's covered properly in [which foods are complete proteins](/beans-and-rice-complete-protein-meal/). For an add-on rather than the anchor of the meal, I'd still take the fourteen cents.
 
 ## How do you get more protein into oatmeal?
 
@@ -59,7 +59,7 @@ Stop making it with water. That's the single change with the best return.
 
 A cup of whole milk instead adds 7.7 grams of protein for 26 cents and it makes the bowl taste like something rather than like a punishment. Add two tablespoons of peanut butter on top and a 60 gram bowl goes from 7.9 grams to about 22.7 grams for roughly 57 cents. That's a genuinely solid breakfast for less than the tax on a coffee.
 
-If you'd rather go savory, two eggs on top of the same bowl takes it to 20.5 grams and adds nothing sweet at all. [Savory oatmeal bowls with eggs](/savory-oatmeal-bowls-with-eggs-and-avocado/) reads like a dare and eats like a normal breakfast. The base numbers for the bowl itself are in [how much protein is in oatmeal](/how-much-protein-in-oatmeal/).
+If you'd rather go savory, two eggs on top of the same bowl takes it to 20.5 grams and adds nothing sweet at all. Savory oatmeal bowls with eggs reads like a dare and eats like a normal breakfast. The base numbers for the bowl itself are in [how much protein is in oatmeal](/foods-highest-in-protein-per-100-grams/).
 
 ## What if you don't eat eggs?
 
@@ -67,7 +67,7 @@ Then dairy and beans are doing the work, and both do it well.
 
 A 170 gram single-serve tub of plain nonfat Greek yogurt is 17.3 grams for 63 cents, which is the biggest single-item protein hit in our breakfast dataset. Cottage cheese at 113 grams gives 12.6 grams for 48 cents and behaves better in savory directions than people expect. Whole milk returns 29.1 grams of protein per dollar, which beats both yogurt and cottage cheese on value even though nobody thinks of milk as a protein food. The dairy aisle ranked properly is [the cheapest dairy protein](/dairy-protein-per-dollar-ranked/).
 
-Beans are the other route. Half a can of black beans is 13.3 grams for 44 cents and it's the only item on this page bringing serious fiber with it. That's the basis of [a sheet pan breakfast hash](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/), and the whole no-eggs playbook is in [make-ahead breakfast ideas without eggs](/make-ahead-breakfast-ideas-without-eggs/).
+Beans are the other route. Half a can of black beans is 13.3 grams for 44 cents and it's the only item on this page bringing serious fiber with it. That's the basis of a sheet pan breakfast hash, and the whole no-eggs playbook is in make-ahead breakfast ideas without eggs.
 
 ## What about the fiber nobody mentions?
 
@@ -81,6 +81,6 @@ Whole wheat flour is the outright champion of the breakfast aisle on both metric
 
 A quarter of the FDA's 50 gram Daily Value is 12.5 grams, and a breakfast in the 20 to 30 gram range is what most people mean when they say high protein. Two eggs and a bowl of oats is 20.5. Yogurt and peanut butter is 24.4. Oats made with milk plus peanut butter is 22.7.
 
-None of those needs a plan, a subscription, or a Sunday afternoon. They need one extra item in the cart. Where the grams should land and why is worked out in [how much protein for breakfast](/how-much-protein-for-breakfast/), and if you're rebuilding the whole shop rather than one meal, [high protein on a budget](/high-protein-on-a-budget-complete-guide/) is the cart-level version.
+None of those needs a plan, a subscription, or a Sunday afternoon. They need one extra item in the cart. Where the grams should land and why is worked out in how much protein for breakfast, and if you're rebuilding the whole shop rather than one meal, [high protein on a budget](/high-protein-on-a-budget-complete-guide/) is the cart-level version.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/protein-day-cost-2026.csv, public/data/breakfast-staples-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

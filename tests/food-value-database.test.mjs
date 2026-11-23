@@ -93,10 +93,10 @@ test("directory links to sources, methodology, downloads, studies, and measured 
     "/foods-highest-in-protein-per-100-grams/",
     "/which-dried-beans-have-the-most-protein/",
     "/canned-beans-vs-dried-beans-nutrition/",
-    "/how-much-protein-in-oatmeal/",
   ]) {
     assert.match(page, new RegExp(`href="${href.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`));
   }
+  assert.doesNotMatch(page, /how-much-protein-in-oatmeal/);
   assert.match(page, /HUGGINGFACE_DATASET_URL/);
   assert.match(page, /mirror on Hugging Face \(CC-BY-4\.0\)/);
   assert.equal(coreRows.every((row) => row.price_basis && row.fields.price_per_100g_usd), true);

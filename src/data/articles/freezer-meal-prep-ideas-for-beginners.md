@@ -89,7 +89,7 @@ This isn't a slow cooker meal; this is for incredibly fast, sizzling stovetop di
 *   Massage the bag heavily so the oil and spices coat all the raw chicken and veggies perfectly. 
 *   **To cook:** Thaw overnight in the refrigerator, drain excess liquid, then cook in a hot cast-iron skillet until the chicken reaches 165 degrees F.
 
-These freezer meal prep ideas for beginners reduce the 5 PM dinner panic. You're outsourcing one decision to your freezer. And it doesn't stop at dinner: [freezing overripe bananas for smoothies](/how-to-freeze-bananas-for-smoothies/) turns almost-trash into breakfast.
+These freezer meal prep ideas for beginners reduce the 5 PM dinner panic. You're outsourcing one decision to your freezer. And it doesn't stop at dinner: freezing overripe bananas for smoothies turns almost-trash into breakfast.
 
 ## Start with two meals, not twelve
 

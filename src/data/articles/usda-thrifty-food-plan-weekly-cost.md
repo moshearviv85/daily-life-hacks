@@ -56,7 +56,7 @@ You can push the math one step further. At 3 meals a day, $235 averages about $2
 
 USDA also adjusts for household size. It suggests adding 20% for 1 person, 10% for 2, and 5% for 3. Four people get no adjustment. Households of 5 or 6 subtract 5%, while 7 or more subtract 10%.
 
-That makes sense once you've cooked for one. A bottle of oil doesn't become one quarter of the price, and cilantro remains a full bunch even when half is planning to liquefy in the crisper drawer. Run that 20% adjustment all the way out and you get [the monthly grocery budget USDA implies for one adult](/grocery-budget-for-one-person-per-month/), somewhere between $303 and $381.
+That makes sense once you've cooked for one. A bottle of oil doesn't become one quarter of the price, and cilantro remains a full bunch even when half is planning to liquefy in the crisper drawer. Run that 20% adjustment all the way out and you get the monthly grocery budget USDA implies for one adult, somewhere between $303 and $381.
 
 ## What does one week at $235 actually look like?
 
@@ -68,7 +68,7 @@ At June 2021 prices, protein foods and vegetables each took roughly one quarter 
 
 ![Bar chart showing the USDA Thrifty Food Plan 2021 market basket cost shares for six food categories](/images/usda-thrifty-food-plan-cost-shares.jpg)
 
-In an actual kitchen, this is a week built from repeatable parts. Oats can become [savory oatmeal bowls with eggs and avocado](/savory-oatmeal-bowls-with-eggs-and-avocado/). Legumes and grains can become [beans and rice](/beans-and-rice-complete-protein-meal/) or a pot of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/). Poultry and grains can meet in an [easy one-pot chicken and rice dinner](/easy-one-pot-chicken-and-rice-dinner/).
+In an actual kitchen, this is a week built from repeatable parts. Oats can become savory oatmeal bowls with eggs and avocado. Legumes and grains can become [beans and rice](/beans-and-rice-complete-protein-meal/) or a pot of [lentil curry](/lentil-curry-high-fiber-vegan-dinner/). Poultry and grains can meet in an [easy one-pot chicken and rice dinner](/easy-one-pot-chicken-and-rice-dinner/).
 
 The basket gives you ingredients. It doesn't chop the onion or stop somebody from rejecting lentils after you cooked a full pot. That's the gap between a food plan and Tuesday night.
 

@@ -54,7 +54,7 @@ About 122 grams dry, for roughly 39 cents. That's the number people want when th
 
 Two other landmarks worth keeping in your head. 100 grams dry clears about 49 percent of the FDA's 50 gram protein [Daily Value](/fiber-protein-daily-values-explained/). Just over 200 grams dry would cover the full 50, for about 64 cents, though I've never met anyone who wanted to eat that in one sitting.
 
-Red lentils cost more for the same job. You'd need roughly 125 grams for 30 grams of protein, and at 43 cents per 100 grams that's about 54 cents instead of 39. The full breakdown of which lentil carries what is in [how much protein is in lentils](/how-much-protein-in-lentils/).
+Red lentils cost more for the same job. You'd need roughly 125 grams for 30 grams of protein, and at 43 cents per 100 grams that's about 54 cents instead of 39. The full breakdown of which lentil carries what is in [how much protein is in lentils](/foods-highest-in-protein-per-100-grams/).
 
 ## How much lentils can you eat per day?
 
@@ -70,12 +70,12 @@ A 16 ounce bag is 454 grams: 111.8 grams of protein, 48.6 grams of fiber, $1.44.
 
 Put that next to the rest of the store. That's 77.7 grams of protein per dollar, fourth of the 49 foods in our [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). Chicken breast returns 24.5. Ground beef 80/20 returns 11.5. A bag of lentils is one of the few things in a grocery store where the cheap option is also the dense one.
 
-Buy two bags. They keep in a jar for a very long time, they don't need soaking, and they turn into [curry](/lentil-curry-high-fiber-vegan-dinner/) or [dal and rice](/simple-lunch-recipes-indian-veg/) faster than most dinners you'd order instead.
+Buy two bags. They keep in a jar for a very long time, they don't need soaking, and they turn into [curry](/lentil-curry-high-fiber-vegan-dinner/) or dal and rice faster than most dinners you'd order instead.
 
 ## How much do lentils stretch when they're cooked?
 
 More than you'd guess, and I'm going to be straight about the limits of what we measured. Our dataset weighs and prices lentils dry, the way they come off the shelf, so every number on this page is a dry-weight number. We don't have cooked yields, and I'm not going to make some up to fill a table.
 
-The practical version: a 100 gram dry portion looks alarmingly small in the measuring cup and turns into a full bowl in the pot. Scale by the dry weight, not by what the pan looks like before the water goes in. Same rule applies to [dried beans per person](/how-much-dried-beans-per-person/), where the swell factor catches even more people out.
+The practical version: a 100 gram dry portion looks alarmingly small in the measuring cup and turns into a full bowl in the pot. Scale by the dry weight, not by what the pan looks like before the water goes in. Same rule applies to [dried beans per person](/canned-beans-vs-dried-beans-nutrition/), where the swell factor catches even more people out.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

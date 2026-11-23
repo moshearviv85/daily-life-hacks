@@ -64,7 +64,7 @@ Two attributed workarounds exist, and they aren't the same move.
 
 King Arthur says you can make some breads with unfed starter, and that it's best if the starter was fed at least once in the past week. A neglected starter won't make great bread. That's their caveat, on the discard article, not a promise that any loaf recipe will accept a month-old jar.
 
-The other workaround is commercial yeast. Nordic Ware says discard can be used in bread recipes that include additional yeast. This site's [same-day sourdough pizza dough](/how-to-make-sourdough-pizza-dough-same-day/) is that hybrid. Cold discard for flavor, instant yeast for the rise, in about three to four hours. The page also says an active, bubbly starter can give a lighter lift, and that you don't have to feed first if the yeast is in the bowl.
+The other workaround is commercial yeast. Nordic Ware says discard can be used in bread recipes that include additional yeast. This site's [same-day sourdough pizza dough](/easy-sourdough-discard-pizza-dough-no-yeast/) is that hybrid. Cold discard for flavor, instant yeast for the rise, in about three to four hours. The page also says an active, bubbly starter can give a lighter lift, and that you don't have to feed first if the yeast is in the bowl.
 
 ## Can you turn discard back into a starter?
 

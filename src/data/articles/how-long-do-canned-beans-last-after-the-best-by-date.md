@@ -69,10 +69,10 @@ Two years of a garage summer will age a can faster than five years in a hall clo
 
 For convenience, cans are excellent. For value, dry beans win by a distance that surprises people every time.
 
-In our July 2026 price sample, canned black beans delivered 30.1 grams of protein per dollar, canned kidney beans 23.4, and canned chickpeas 22.0. Dry pinto beans delivered 97.9. That's about three times more protein per dollar for the bag, which is the whole argument in [canned vs dry beans on cost](/canned-vs-dry-beans-cost/), and the same reason [dried beans anchor a cheap pantry](/how-much-food-storage-do-you-need-per-person/).
+In our July 2026 price sample, canned black beans delivered 30.1 grams of protein per dollar, canned kidney beans 23.4, and canned chickpeas 22.0. Dry pinto beans delivered 97.9. That's about three times more protein per dollar for the bag, which is the whole argument in [canned vs dry beans on cost](/canned-vs-dry-beans-cost/), and the same reason dried beans anchor a cheap pantry.
 
 *Cost figures: USDA FoodData Central nutrient values plus single-store US prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 
-Cans still earn shelf space for the nights you have no plan. Just rotate them, oldest at the front, and know that once you open one the clock changes entirely. [Opened canned beans in the fridge](/how-long-do-opened-canned-beans-last/) covers what happens next, and [how long dried beans last](/how-long-do-dried-beans-last/) covers the bag version of this question.
+Cans still earn shelf space for the nights you have no plan. Just rotate them, oldest at the front, and know that once you open one the clock changes entirely. [Opened canned beans in the fridge](/canned-beans-vs-dried-beans-nutrition/) covers what happens next, and [how long dried beans last](/how-to-cook-dried-beans-from-scratch/) covers the bag version of this question.
 
 <!-- sources: USDA FSIS Shelf-Stable Food Safety; USDA FSIS Food Product Dating; Utah State University Extension Storing Canned Goods; Illinois Extension Emergency Food Supply. Cost numbers: public/data/canned-vs-dry-beans-cost-2026.csv -->

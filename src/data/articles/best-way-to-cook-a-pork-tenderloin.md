@@ -61,7 +61,7 @@ faq:
 ---
 Pork tenderloin is one of those cuts that promises a lot but often delivers, well, dry disappointment. It's lean, it cooks fast, and it can go from perfectly juicy to sawdust in about 30 seconds if you're not paying attention. But when it's done right? It's tender, flavorful, and feels a lot fancier than the minimal effort it actually takes.
 
-The trick, like with most good things in life, is a combination of high heat and knowing when to quit. You want a good sear for flavor and color, then a quick finish in the oven to cook it through without drying it out. No fancy brine. No complicated technique. Just a thermometer and decent timing. It's the same sear-then-finish logic behind my [pork chops method](/best-way-to-cook-pork-chops/), adapted for a lean little log of meat.
+The trick, like with most good things in life, is a combination of high heat and knowing when to quit. You want a good sear for flavor and color, then a quick finish in the oven to cook it through without drying it out. No fancy brine. No complicated technique. Just a thermometer and decent timing. It's the same sear-then-finish logic behind my pork chops method, adapted for a lean little log of meat.
 
 ## Why Searing Then Roasting Works
 
@@ -116,7 +116,7 @@ Slice the pork only after its rest, then spoon the sauce over the medallions. If
 
 The pork spends only 10-15 minutes in the oven, so choose sides that won't demand a separate hour of negotiations. Thin green beans, asparagus, or broccoli can roast at 400°F on a second pan while the pork cooks and rests. Cut dense vegetables such as potatoes or carrots small and start them 20-25 minutes earlier.
 
-Rice, couscous, a crisp salad, or any of the [quicker stand-ins for white rice](/healthy-alternatives-white-rice-dinner/) also work because they don't compete for oven space. The practical move is to start the starch first, prep the pork while it cooks, and assemble anything cold during the rest. That 5-10 minute pause isn't dead time. It's when you finish the sauce, move vegetables to a bowl, and pretend the kitchen always looked this organized.
+Rice, couscous, a crisp salad, or any of the quicker stand-ins for white rice also work because they don't compete for oven space. The practical move is to start the starch first, prep the pork while it cooks, and assemble anything cold during the rest. That 5-10 minute pause isn't dead time. It's when you finish the sauce, move vegetables to a bowl, and pretend the kitchen always looked this organized.
 
 ## Store and Reheat Pork Tenderloin Without Drying It Out
 
@@ -134,4 +134,4 @@ The second mistake is leaving the silver skin in place. It won't melt during thi
 
 The third mistake is chasing the clock instead of the temperature. Ten minutes in one oven can behave like 14 in another. Tenderloin thickness matters more than the number printed on the package, and carryover heat isn't a license to pull pork far below the safe target. Measure 145°F in the center, rest it, and let the method be boringly reliable.
 
-For a larger dinner, the same thermometer-first thinking matters even more. My [reverse-sear prime rib method](/best-way-to-cook-prime-rib/) takes longer, costs considerably more, and gives you even less reason to guess. For this tenderloin, slice only what you're serving and refrigerate the rest promptly so tomorrow's sandwich still has a chance.
+For a larger dinner, the same thermometer-first thinking matters even more. My reverse-sear prime rib method takes longer, costs considerably more, and gives you even less reason to guess. For this tenderloin, slice only what you're serving and refrigerate the rest promptly so tomorrow's sandwich still has a chance.

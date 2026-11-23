@@ -42,13 +42,13 @@ The protein itself is a coin flip. Peanut butter carries 22.21 grams per 100 gra
 
 It narrows it, and this is the part peanut butter's fans skip. Protein quality gets scored with DIAAS, which tracks how much of a protein your body can actually use. Peanut butter scores 0.43, which is low, because peanuts run short on lysine. Run that through the price and the 50.7 drops to roughly 21.8 grams of quality-adjusted protein per dollar.
 
-We don't have an audited almond score in our dataset, so I'm not going to invent one to make the comparison tidier. What I'd say instead: at 14.8 grams per dollar before any quality adjustment, almonds are already the more expensive option by a wide margin, and no plausible score flips that. Think of peanut butter as a cheap protein booster rather than the backbone of your protein for the day. Two tablespoons on toast next to eggs or beans is the right use, and [that serving carries about 7.1 grams of protein](/how-much-protein-in-peanut-butter/), which is a booster, not a backbone.
+We don't have an audited almond score in our dataset, so I'm not going to invent one to make the comparison tidier. What I'd say instead: at 14.8 grams per dollar before any quality adjustment, almonds are already the more expensive option by a wide margin, and no plausible score flips that. Think of peanut butter as a cheap protein booster rather than the backbone of your protein for the day. Two tablespoons on toast next to eggs or beans is the right use, and [that serving carries about 7.1 grams of protein](/foods-highest-in-protein-per-100-grams/), which is a booster, not a backbone.
 
 ## Are whole peanuts even better value?
 
 You'd think so. They aren't. Dry roasted peanuts came in at 39.8 grams of protein per dollar at $2.78 for a 16 ounce jar, behind peanut butter's 50.7, even though the peanuts carry more protein per 100 grams at 24.35 versus 22.21. The 40 ounce jar just wins on scale. Sunflower seed kernels finished at 31.7 grams per dollar for $2.98, which makes them the sleeper of the nuts and seeds group.
 
-None of these need cooking, which is a real advantage that per-dollar math doesn't capture. Peanut butter turns into dinner faster than most protein: whisk it into a [stir-fry sauce](/quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff/), thin it for [lettuce wraps with peanut sauce](/chicken-veggie-lettuce-wraps-peanut-sauce/), or roll it into [oat and flax energy balls](/no-bake-high-fiber-energy-balls-recipe/) that live in the freezer and cost pennies each.
+None of these need cooking, which is a real advantage that per-dollar math doesn't capture. Peanut butter turns into dinner faster than most protein: whisk it into a stir-fry sauce, thin it for lettuce wraps with peanut sauce, or roll it into [oat and flax energy balls](/no-bake-high-fiber-energy-balls-recipe/) that live in the freezer and cost pennies each.
 
 ## When are almonds still the right buy?
 

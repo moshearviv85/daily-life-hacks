@@ -57,7 +57,7 @@ This is a real time-saver if you use grated ginger a lot.
 *   **Store:** Pop the frozen ginger cubes out of the tray and transfer them to a freezer bag or airtight container.
 *   **Use:** Just drop a cube or two directly into your cooking. It thaws almost instantly in a hot pan. Each cube is usually about a tablespoon, which is handy for most recipes.
 
-For best flavor, use the frozen ginger over the next several months. Label the bag, because a frozen beige chunk becomes surprisingly mysterious by week twelve. A frozen stash also gets these [quick stir-fry sauces](/quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff/) into a pan without a grocery run.
+For best flavor, use the frozen ginger over the next several months. Label the bag, because a frozen beige chunk becomes surprisingly mysterious by week twelve. A frozen stash also gets these quick stir-fry sauces into a pan without a grocery run.
 
 ## Know when ginger is finished
 

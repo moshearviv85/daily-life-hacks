@@ -36,7 +36,7 @@ This isn't a "quit sugar forever" lecture. I'm not here for that. It's about bui
 
 Cinnamon doesn't contain sugar. It's ground tree bark. But your brain has spent years connecting that warm, spicy smell to cinnamon rolls, apple pie, and French toast. So when you shake it onto plain oatmeal or black coffee, your brain fills in the gap. It assumes sweetness is coming, even though it isn't.
 
-That mental shortcut is genuinely useful. I dumped a heavy coat of cinnamon on my morning yogurt one day out of desperation and couldn't believe how much less I missed the honey drizzle. The same trick rescues plain granola, which matters because half the boxes at the store are candy in disguise. Here's [how to choose a granola that isn't secretly dessert](/how-to-choose-granola-not-dessert/) if you want to check yours. It also works on roasted sweet potatoes, sliced apples, and even butternut squash soup.
+That mental shortcut is genuinely useful. I dumped a heavy coat of cinnamon on my morning yogurt one day out of desperation and couldn't believe how much less I missed the honey drizzle. The same trick rescues plain granola, which matters because half the boxes at the store are candy in disguise. Here's how to choose a granola that isn't secretly dessert if you want to check yours. It also works on roasted sweet potatoes, sliced apples, and even butternut squash soup.
 
 If you want to get specific, Ceylon cinnamon has a slightly softer, more delicate flavor than the common Cassia type. Both work. Use whichever one you have.
 

@@ -60,7 +60,7 @@ Dry pinto beans: 57.6 grams of protein per dollar. Canned black beans, the best 
 
 Same story inside a single food. Dry chickpeas score 56.7 grams of protein per dollar; canned chickpeas score 22.0. That's over two and a half times the value for the version that asks you to plan ahead by one evening, and we ran that matchup bean by bean in [what the convenience of the can actually costs](/canned-vs-dry-beans-cost/), where every dry bag beat every can.
 
-I'm not going to pretend cans are a mistake. A canned bean at 30.1 grams of protein per dollar is still a solid buy, [one can carries about 26.5 grams of protein](/how-much-protein-in-a-can-of-beans/), and some nights the can opener is the only kitchen skill you have left. Keep a few on the shelf. Just don't let them be the whole strategy when a $1.42 bag of split peas is doing 144.9 combined grams per dollar and a $6.75 bag of pintos is doing 99.3.
+I'm not going to pretend cans are a mistake. A canned bean at 30.1 grams of protein per dollar is still a solid buy, [one can carries about 26.5 grams of protein](/canned-beans-vs-dried-beans-nutrition/), and some nights the can opener is the only kitchen skill you have left. Keep a few on the shelf. Just don't let them be the whole strategy when a $1.42 bag of split peas is doing 144.9 combined grams per dollar and a $6.75 bag of pintos is doing 99.3.
 
 ## Which bean should you actually cook first?
 
@@ -68,7 +68,7 @@ Buy the split peas for the math, but cook whatever you'll actually eat, because 
 
 Brown lentils are the gateway. No soaking, quick cooking, and at 111.4 combined grams per dollar they're second on this list and still well ahead of anything canned. Red lentils dissolve into sauces, which is why [a red lentil curry](/lentil-curry-high-fiber-vegan-dinner/) tastes rich without you doing anything fancy, and at 81.3 combined grams per dollar the indulgence is imaginary.
 
-Chickpeas are the snack play. At 90.5 combined grams per dollar from a $1.64 bag, [roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) are what I hand people who say they hate beans. Crunchy, salty, gone by Wednesday.
+Chickpeas are the snack play. At 90.5 combined grams per dollar from a $1.64 bag, roasted chickpeas are what I hand people who say they hate beans. Crunchy, salty, gone by Wednesday.
 
 ## How did we calculate these numbers?
 

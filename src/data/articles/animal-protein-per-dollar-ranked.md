@@ -56,13 +56,13 @@ Below the table: canned tuna at 22.4, canned pink salmon at 21.6, frozen tilapia
 
 They do, and this is the part people don't expect. Look at the top of the table again: after drumsticks, the next three spots belong to the dairy case. Eggs at 34.4 grams per dollar, mozzarella at 30.1, whole milk at 28.5. Boneless chicken thighs are the next meat, at 27.7, just under the gallon.
 
-Chicken breast, the default "I'm eating healthy" purchase, sits at 24.6. That means a $2.19 dozen of eggs, a $3.36 tub of Greek yogurt, and a $2.87 tub of cottage cheese all quietly outscore it. Your fridge staples are doing more work than the meat counter, and the [dairy case broken out on its own](/dairy-protein-per-dollar-ranked/) makes that even harder to argue with. Eggs also happen to be the most flexible item on this list; a [loaded egg sandwich](/healthy-egg-sandwich-add-ins-toppings/) or a [savory oatmeal bowl with eggs](/savory-oatmeal-bowls-with-eggs-and-avocado/) turns them into an actual meal instead of a sad snack.
+Chicken breast, the default "I'm eating healthy" purchase, sits at 24.6. That means a $2.19 dozen of eggs, a $3.36 tub of Greek yogurt, and a $2.87 tub of cottage cheese all quietly outscore it. Your fridge staples are doing more work than the meat counter, and the [dairy case broken out on its own](/dairy-protein-per-dollar-ranked/) makes that even harder to argue with. Eggs also happen to be the most flexible item on this list; a [loaded egg sandwich](/healthy-egg-sandwich-add-ins-toppings/) or a savory oatmeal bowl with eggs turns them into an actual meal instead of a sad snack.
 
 ## Where does fish land in the ranking?
 
 Middle of the pack, every single time. Canned chunk light tuna leads the fish at 22.4 grams of protein per dollar, and honestly the $0.98 can is one of the most underrated things in the store. It also shows up near the top of [the protein you can eat without turning on the stove](/no-cook-protein-per-dollar/). Canned pink salmon follows at 21.6, frozen tilapia at 20.9, and sardines at 20.2.
 
-Notice what that means: the cheapest fish still loses to cottage cheese. Fish earns its cart spot on flavor and variety, not on protein math. Tilapia's case gets a lot stronger when it becomes [weeknight fish tacos with cabbage slaw](/easy-weeknight-fish-tacos-with-cabbage-slaw/), and a rotisserie bird at 26.7 grams per dollar stretches even further with these [rotisserie chicken dinner ideas](/costco-rotisserie-chicken-meal-ideas-dinner/).
+Notice what that means: the cheapest fish still loses to cottage cheese. Fish earns its cart spot on flavor and variety, not on protein math. Tilapia's case gets a lot stronger when it becomes weeknight fish tacos with cabbage slaw, and a rotisserie bird at 26.7 grams per dollar stretches even further with these [rotisserie chicken dinner ideas](/costco-rotisserie-chicken-meal-ideas-dinner/).
 
 ## What's at the bottom, and why?
 

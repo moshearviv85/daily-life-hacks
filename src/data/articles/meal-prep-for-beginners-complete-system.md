@@ -73,7 +73,7 @@ Components fix this because assembly takes two minutes and the combinations feel
 
 One more benefit nobody mentions: components survive contact with reality. If Tuesday dinner plans change, a container of pre-assembled pasta bake is now a problem. A container of plain cooked rice is not. It just waits.
 
-If choosing the components is where your brain leaves the meeting, use a [one-theme, five-dinner plan](/one-theme-five-dinners-one-grocery-list/). It repeats the beans, tortillas, cabbage, corn, lime, and salsa while changing the actual dinner. Same grocery list, fewer one-recipe ingredients, and nobody has to eat one sad container five days in a row.
+If choosing the components is where your brain leaves the meeting, use a one-theme, five-dinner plan. It repeats the beans, tortillas, cabbage, corn, lime, and salsa while changing the actual dinner. Same grocery list, fewer one-recipe ingredients, and nobody has to eat one sad container five days in a row.
 
 ## How do you meal prep for the week in 90 minutes?
 
@@ -81,9 +81,9 @@ The trick to finishing in 90 minutes isn't speed. It's parallelism. The oven, th
 
 1. **Minutes 0 to 10: start the slow stuff.** Oven to 425 degrees F. Rice or another grain goes on the stove first because it needs zero attention once it's simmering. If beans are on the menu, canned ones just need a rinse; if you've graduated to [cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/), you did that earlier in the weekend because they're a project, not a task.
 2. **Minutes 10 to 25: chop and load the oven.** Cut vegetables for roasting, oil and season them, sheet pan in. If a protein bakes, like meatballs, shape those now and slide them onto a second rack. The oven is now cooking two things while you stand there doing nothing to either of them.
-3. **Minutes 25 to 50: second base and second protein.** Potatoes on the second oven rack after the vegetables come out, or a second grain on the stove. If a rotisserie chicken is your protein shortcut, this is when you shred it. This window is where beginners stall, so keep the [batch cooking weekly guide](/batch-cooking-for-beginners-weekly-guide/) open the first few Sundays until the rhythm sticks.
+3. **Minutes 25 to 50: second base and second protein.** Potatoes on the second oven rack after the vegetables come out, or a second grain on the stove. If a rotisserie chicken is your protein shortcut, this is when you shred it. This window is where beginners stall, so keep the batch cooking weekly guide open the first few Sundays until the rhythm sticks.
 4. **Minutes 50 to 70: sauces and small stuff.** Sauces are five-minute jobs: whisk a vinaigrette, blend a peanut sauce, stir yogurt into something. Wash and prep snack vegetables and fruit while the last tray finishes.
-5. **Minutes 70 to 90: cool, portion, label.** Spread hot food out so it cools fast instead of steaming itself in a sealed container. Rice especially needs this, and there's a right way to do it, covered in our guide to [cooling rice properly](/how-to-cool-rice-for-fried-rice/), which also happens to set you up for great fried rice later in the week. Then portion into containers, write the date on a piece of tape, and you're done.
+5. **Minutes 70 to 90: cool, portion, label.** Spread hot food out so it cools fast instead of steaming itself in a sealed container. Rice especially needs this, and there's a right way to do it, covered in our guide to [cooling rice properly](/how-to-use-leftover-rice-creative-ideas/), which also happens to set you up for great fried rice later in the week. Then portion into containers, write the date on a piece of tape, and you're done.
 
 Write the date every time. Future-you, holding a mystery container on Thursday, will need it.
 
@@ -91,16 +91,16 @@ Write the date every time. Future-you, holding a mystery container on Thursday, 
 
 You don't need new recipes every week. You need a rotation of reliable components in three buckets: bases, proteins, and grab-and-go extras. Here's the menu, with the full guide for each one.
 
-If you're cooking for one, keep the same structure and shrink the batches. The [budget meal guide for one person](/budget-meal-ideas-for-one/) is useful here because a freezer portion beats eating the same pot until you begin resenting it personally.
+If you're cooking for one, keep the same structure and shrink the batches. The budget meal guide for one person is useful here because a freezer portion beats eating the same pot until you begin resenting it personally.
 
 ### Bases and batch basics
 
 Bases are the cheap, boring foundation that makes everything else work. Rice, quinoa, roasted potatoes, pasta, beans. Cook them plain so they stay flexible.
 
-* **Grains:** Rice is the workhorse. Cook a big batch, cool it right, and half of it becomes [fried rice](/how-to-cool-rice-for-fried-rice/) on Thursday, which is the single best trick for making day-four prep feel like a brand new meal.
+* **Grains:** Rice is the workhorse. Cook a big batch, cool it right, and half of it becomes [fried rice](/how-to-use-leftover-rice-creative-ideas/) on Thursday, which is the single best trick for making day-four prep feel like a brand new meal.
 * **Beans:** Canned works fine forever. But [dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) cost roughly a third as much per cooked cup and taste noticeably better, so it's worth learning once.
-* **The batching habit itself:** If the parallel-cooking workflow above feels chaotic, the [batch cooking for beginners guide](/batch-cooking-for-beginners-weekly-guide/) breaks it into an even gentler on-ramp.
-* **The weekend version:** Prefer to spread the work across Saturday and Sunday instead of one sprint? The [weekend food prep playbook](/food-prep-guide-blog-recipes/) lays out that slower rhythm.
+* **The batching habit itself:** If the parallel-cooking workflow above feels chaotic, the batch cooking for beginners guide breaks it into an even gentler on-ramp.
+* **The weekend version:** Prefer to spread the work across Saturday and Sunday instead of one sprint? The weekend food prep playbook lays out that slower rhythm.
 
 ### Proteins
 
@@ -108,7 +108,7 @@ This is where the money goes, so pick proteins that are cheap, reheat well, and 
 
 * **Turkey meatballs** are my top recommendation for beginners. They bake hands-off while you do other things, they reheat like champs, and the [healthy turkey meatball meal prep recipe](/healthy-turkey-meatballs-meal-prep/) makes enough for the whole week.
 * **Rotisserie chicken** is the legal cheat code. One [Costco rotisserie chicken stretches into multiple dinners](/costco-rotisserie-chicken-meal-ideas-dinner/), and shredding it takes ten minutes of the workflow instead of forty.
-* **Work lunches** deserve their own strategy, because office lighting is where sad prep goes to die. The [high-protein work lunch guide](/how-to-prep-high-protein-lunches-work/) covers combinations that hold up until noon, while the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) gives you one complete batch to copy before you start improvising. Change the servings above its ingredient list and the amounts scale with you, whether you're feeding one person or the office refrigerator.
+* **Work lunches** deserve their own strategy, because office lighting is where sad prep goes to die. The high-protein work lunch guide covers combinations that hold up until noon, while the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) gives you one complete batch to copy before you start improvising. Change the servings above its ingredient list and the amounts scale with you, whether you're feeding one person or the office refrigerator.
 * **Shopping by the numbers:** When you're deciding which protein to buy, we ran the actual math. The [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) compares 49 grocery foods on cost, and the winners will probably surprise you. Dried beans embarrassed almost everything with a face. Two decisions come up every single week, so we priced them separately: [chicken thighs against breast](/chicken-thighs-vs-breast-protein-cost/) and [ground beef against beans](/ground-beef-vs-beans-protein-cost/).
 
 ### Grab-and-go
@@ -116,7 +116,7 @@ This is where the money goes, so pick proteins that are cheap, reheat well, and 
 The stuff between meals sinks more food budgets than the meals do. A vending machine run at 3 PM isn't a willpower failure, it's a prep failure.
 
 * **The snack drawer:** Set up a [grab-and-go fridge snack drawer](/grab-and-go-fridge-snack-drawer/) during the last fifteen minutes of your Sunday session. Washed fruit, cut vegetables, cheese, hard-boiled eggs. Eye level, front of the fridge.
-* **Breakfast:** Mornings are chaos, so prep them too. These [make-ahead breakfasts without eggs](/make-ahead-breakfast-ideas-without-eggs/) survive four days in the fridge and thirty seconds of your attention.
+* **Breakfast:** Mornings are chaos, so prep them too. These make-ahead breakfasts without eggs survive four days in the fridge and thirty seconds of your attention.
 * **The freezer backstop:** Some Sundays don't happen. Life. A stash of [freezer meals for beginners](/freezer-meal-prep-ideas-for-beginners/) is the insurance policy that keeps one skipped session from becoming a takeout week. Track that stash with the [simple freezer inventory system](/freezer-inventory-simple-system/), or it eventually becomes an archaeological site.
 
 ## How long does meal prep last in the fridge?
@@ -136,7 +136,7 @@ On safety, the numbers are simple and worth taking seriously. Cooked food keeps 
 
 On quality, most "meal prep tastes bad" complaints are really storage mistakes:
 
-* **Produce dies first when it's stored wrong.** Half of it has strong opinions about where it lives. The guide to [storing fruits and vegetables properly](/how-to-store-fruits-and-vegetables-properly/) covers what goes in the fridge, what stays on the counter, and what to keep apart.
+* **Produce dies first when it's stored wrong.** Half of it has strong opinions about where it lives. The guide to storing fruits and vegetables properly covers what goes in the fridge, what stays on the counter, and what to keep apart.
 * **Sogginess is an engineering problem.** Wet things touching dry things, solved by barriers and packing order. It's why we have separate guides for [sandwiches that don't get soggy](/how-to-keep-sandwiches-from-getting-soggy/), [packing salad for work](/how-to-pack-salad-for-work-not-soggy/), and [cold pasta salad that travels](/how-to-pack-cold-pasta-salad-picnics/). The one-line version: dressing and sauce stay separate until eating time, which the component system already does for you.
 * **The freezer needs a system too.** A freezer where nothing can be found is just a very cold junk drawer. These [freezer organization tips](/freezer-organization-tips-large-family-meals/) scale down fine even if you're not feeding six people.
 

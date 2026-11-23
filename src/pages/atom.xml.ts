@@ -7,9 +7,10 @@ import {
   FEED_TITLE,
   getFeedArticles,
 } from "../content/feed";
+import { isIndexPruned } from "../content/index-prune.js";
 
 export const GET: APIRoute = async () => {
-  const articles = await getFeedArticles();
+  const articles = (await getFeedArticles()).filter((article) => !isIndexPruned(article.id));
   const updated =
     articles[0]?.data.dateModified ??
     articles[0]?.data.publishAt ??

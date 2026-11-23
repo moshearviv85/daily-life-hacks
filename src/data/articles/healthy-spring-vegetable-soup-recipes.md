@@ -52,7 +52,7 @@ Finding healthy spring vegetable soup recipes that don't taste like hot grass is
 
 ## Why seasonal greens matter for your routine
 
-The transition from heavy winter comfort food to lighter fare doesn't have to be a whole thing. Using spring vegetables like asparagus and leeks is a low-effort way to get more fiber into your family's diet without making a big production out of it. These vegetables are often more affordable this time of year, which is a nice bonus when the grocery bill is already climbing. We've made the [full case for keeping soup going into spring](/health-benefits-eating-soup-in-spring/) if you need more convincing.
+The transition from heavy winter comfort food to lighter fare doesn't have to be a whole thing. Using spring vegetables like asparagus and leeks is a low-effort way to get more fiber into your family's diet without making a big production out of it. These vegetables are often more affordable this time of year, which is a nice bonus when the grocery bill is already climbing. We've made the full case for keeping soup going into spring if you need more convincing.
 
 Leeks are the unsung heroes here. They provide a mild, onion-like base that doesn't overpower the delicate flavor of the greens. If you've never cooked with them, just make sure you wash them thoroughly after slicing, as dirt loves to hide in those layers. It's a small price to pay for a flavor that's much more sophisticated than a standard yellow onion.
 

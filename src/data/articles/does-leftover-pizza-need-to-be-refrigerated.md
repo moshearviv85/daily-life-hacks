@@ -70,6 +70,6 @@ To 165F, checked with a thermometer. FSIS says to reheat leftovers to that tempe
 
 You can also go straight from frozen. FSIS says it's safe to reheat frozen leftovers without thawing, in the oven or microwave, and that it simply takes longer.
 
-For everything else in the container drawer, [how long leftovers last in the fridge](/how-long-do-leftovers-last-in-the-fridge/) has the full USDA chart including cooked meat, soups, and rice. The temperature targets that make those numbers work sit in [food storage temperature rules](/food-storage-temperature-rules/). And if the pizza is one of several containers going quietly stale back there, [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/) is the habit fix rather than the rule fix.
+For everything else in the container drawer, how long leftovers last in the fridge has the full USDA chart including cooked meat, soups, and rice. The temperature targets that make those numbers work sit in food storage temperature rules. And if the pizza is one of several containers going quietly stale back there, [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/) is the habit fix rather than the rule fix.
 
 <!-- sources: USDA FoodSafety.gov Cold Food Storage Chart; USDA FSIS Leftovers and Food Safety; USDA FSIS Danger Zone 40F-140F; USDA FSIS Food Product Dating; FDA Refrigerator Thermometers, Cold Facts about Food Safety; Illinois Extension Refrigerator Storage -->

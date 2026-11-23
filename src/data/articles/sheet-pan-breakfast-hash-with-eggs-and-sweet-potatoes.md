@@ -104,7 +104,7 @@ Protein add-ins are straightforward. Pre-cooked bacon bits or chopped cooked sau
 
 For a vegetarian version that still has some weight, add a handful of black beans during the last five minutes of roasting. They warm through without getting mushy. Feta cheese crumbles added in the last two minutes gives you that salty, tangy element that balances the sweet potato.
 
-If you're cooking for someone who doesn't eat eggs, this same vegetable base works great with canned chickpeas instead, and there are more [make-ahead breakfast ideas without eggs](/make-ahead-breakfast-ideas-without-eggs/) if that's a permanent situation in your house. Season them the same way, roast them until crispy, and serve with hot sauce and avocado.
+If you're cooking for someone who doesn't eat eggs, this same vegetable base works great with canned chickpeas instead, and there are more make-ahead breakfast ideas without eggs if that's a permanent situation in your house. Season them the same way, roast them until crispy, and serve with hot sauce and avocado.
 
 ## Common Mistakes That Ruin This Dish
 

@@ -51,7 +51,7 @@ Shop the dry goods aisle before you shop anywhere else. It's the least interesti
 
 Look at the spread in that table. The top of the list and the bottom of the list are in the same building, sold by the same company, under the same house brand. The difference is entirely what you put in the cart. Our full [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/) ranked 49 foods and the first seven places all went to dried legumes. The [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) did the same thing with whole wheat flour and split peas on top.
 
-The practical move is boring and it works: pick two or three anchors from the top of that table, then build the week around them. A four pound bag of pintos is roughly $4 and it becomes [chili](/hearty-vegetarian-chili-with-three-beans-and-corn/), [burrito bowls](/high-fiber-burrito-bowl-meal-prep/), and lunch for days. If dry beans feel like a project, they aren't. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is mostly waiting.
+The practical move is boring and it works: pick two or three anchors from the top of that table, then build the week around them. A four pound bag of pintos is roughly $4 and it becomes chili, [burrito bowls](/high-fiber-burrito-bowl-meal-prep/), and lunch for days. If dry beans feel like a project, they aren't. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is mostly waiting.
 
 ## How much are canned beans at Walmart?
 
@@ -59,13 +59,13 @@ We logged $0.88 for a 15.5 ounce can of Great Value black beans, and $0.98 each 
 
 Dry black beans returned 81.0 grams of protein per dollar. Canned black beans returned 30.1. Same bean, about 2.7 times the price per gram, because you're paying somebody to soak them, cook them, and ship the water. We broke the whole comparison out in [canned versus dry beans](/canned-vs-dry-beans-cost/).
 
-That doesn't mean cans are a mistake. At under a dollar, a can of black beans is still one of the cheapest things in the store, and it turns into [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) or [corn salsa](/quick-black-bean-and-corn-salsa-no-cooking-required/) with no cooking at all. Keep a few for the nights when the plan collapses. Just don't let the cans become the default.
+That doesn't mean cans are a mistake. At under a dollar, a can of black beans is still one of the cheapest things in the store, and it turns into [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) or corn salsa with no cooking at all. Keep a few for the nights when the plan collapses. Just don't let the cans become the default.
 
 ## Which Walmart aisles quietly waste your money?
 
 The ones that look healthiest. Almonds are a fine food and they landed near the bottom of both rankings, at 14.8 grams of protein and 8.8 grams of fiber per dollar. Blueberries closed out the fiber list at 2.5 grams per dollar for a $2.98 pint. Quinoa, the grain everyone assumes is the responsible choice, came in at 10.6 grams of fiber per dollar against 77.8 for whole wheat flour.
 
-None of that makes those foods bad. It makes them garnish rather than foundation. If your cart is mostly garnish, the receipt gets long and the fridge still looks empty by Thursday. That mismatch is usually what's behind a [grocery bill that keeps climbing](/why-grocery-bill-went-up-after-cooking-more/).
+None of that makes those foods bad. It makes them garnish rather than foundation. If your cart is mostly garnish, the receipt gets long and the fridge still looks empty by Thursday. That mismatch is usually what's behind a grocery bill that keeps climbing.
 
 ## How do you save money on groceries but still eat healthy?
 
@@ -77,7 +77,7 @@ Then spend your fresh-produce money on purpose instead of on hope. Buy the two o
 
 Worth saying plainly, because a number with no caveat is a number you shouldn't trust. These are prices from one store in one month. Forty of the 49 rows in our protein dataset and 51 of the 53 fiber rows are Walmart shelf prices; the rest use BLS US average prices for commodity items like eggs, milk, chicken breast, and bananas, because a single store tag isn't a fair national read on those.
 
-We also haven't priced a Walmart+ membership, delivery fees, or pickup slots, so this article can't tell you whether the subscription pays for itself. And a cheaper store somewhere else may still beat this cart, which is a math problem we worked through in [is driving to a cheaper grocery store worth it](/is-driving-to-cheaper-grocery-store-worth-it/).
+We also haven't priced a Walmart+ membership, delivery fees, or pickup slots, so this article can't tell you whether the subscription pays for itself. And a cheaper store somewhere else may still beat this cart, which is a math problem we worked through in is driving to a cheaper grocery store worth it.
 
 What the data does say is stable and useful: the order of the list barely moves when prices move, because the gap between 97.9 and 14.8 is far too wide for a sale to close. Anchor the cart at the top of that table, keep a few cans for emergencies, and the rest is just shopping. For the full system, the [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) puts these same numbers to work across a whole week.
 

@@ -91,7 +91,7 @@ Blue cheese is my first choice because its salty bite stands up to the pears. Go
 
 Pecans can replace walnuts with no drama. Pistachios work if that's what you have, but chop them roughly so they don't all migrate to the bottom of the bowl. Dried cranberries or pomegranate seeds add tartness, although the salad doesn't need them to function.
 
-If the mustardy dressing is the part you keep thinking about, the [crispy smashed potato salad with Dijon and herbs](/crispy-smashed-potato-salad-dijon-herbs/) uses the same sharp idea in a much heartier bowl.
+If the mustardy dressing is the part you keep thinking about, the crispy smashed potato salad with Dijon and herbs uses the same sharp idea in a much heartier bowl.
 
 ## Can you make pear salad ahead of time?
 

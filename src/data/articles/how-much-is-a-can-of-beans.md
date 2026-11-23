@@ -66,16 +66,16 @@ About 26.5 grams of protein and 30.3 grams of fiber from the black beans, which 
 
 That fiber number is the one nobody expects, and it puts canned black beans ahead of every fresh fruit and vegetable we priced in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). If you're currently nowhere near 28 grams a day, a whole can at once is a jump your gut may notice, so build up gradually.
 
-We broke the per can gram totals down properly in [how much protein is in a can of beans](/how-much-protein-in-a-can-of-beans/), and the wider per 100 gram picture across ten beans is in [the nutritional value of beans](/nutritional-value-of-beans-compared/).
+We broke the per can gram totals down properly in [how much protein is in a can of beans](/canned-beans-vs-dried-beans-nutrition/), and the wider per 100 gram picture across ten beans is in the nutritional value of beans.
 
 ## Which can is the best value?
 
 Black beans, on every measure we have. Cheapest can, most protein per dollar at 30.1 grams, most fiber per dollar at 34.4 grams. That's a clean sweep, and it happens to be the most useful bean in a home kitchen anyway.
 
-Kidney beans and chickpeas both landed at $0.98 with slightly lower returns, 23.4 and 22.0 grams of protein per dollar. The gap is real but it's small enough that you should buy the bean your recipe wants. Chickpeas become [hummus](/high-fiber-hummus-recipe-homemade/) and [roasted chickpea snacks](/crispy-roasted-chickpeas-high-fiber-snack/). Kidney beans are chili beans, which is why they show up in [three bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/). Black beans go into everything else.
+Kidney beans and chickpeas both landed at $0.98 with slightly lower returns, 23.4 and 22.0 grams of protein per dollar. The gap is real but it's small enough that you should buy the bean your recipe wants. Chickpeas become [hummus](/high-fiber-hummus-recipe-homemade/) and roasted chickpea snacks. Kidney beans are chili beans, which is why they show up in three bean chili. Black beans go into everything else.
 
 Three cans is what we audited and three cans is what we'll claim. Canned cannellini, canned pinto, canned navy: we didn't price them, so we don't know.
 
-If you want to know whether the can even needs heating before you eat it, that's [a separate question with a short answer](/do-you-have-to-cook-canned-beans/). And the wider map of where beans sit against meat, dairy, and everything else lives in our [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
+If you want to know whether the can even needs heating before you eat it, that's [a separate question with a short answer](/canned-beans-vs-dried-beans-nutrition/). And the wider map of where beans sit against meat, dairy, and everything else lives in our [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/canned-vs-dry-beans-cost-2026.csv -->

@@ -71,7 +71,7 @@ Five blocks, in this order: bulk carbohydrates (rice, oats, pasta), dry and cann
 
 ## The Core Strategy: Bulk Carbs and Beans
 
-Your primary source of calories and dense nutrition should come from the cheapest aisles in the store: the dry bulk section. None of it spoils, which is why it's the one layer you can buy a month at a time; [eight of those staples run about $22.83](/how-to-grocery-shop-for-a-month-on-a-budget/). 
+Your primary source of calories and dense nutrition should come from the cheapest aisles in the store: the dry bulk section. None of it spoils, which is why it's the one layer you can buy a month at a time; eight of those staples run about $22.83. 
 
 *   **Brown Rice and Quinoa:** A massive five-pound bag of brown rice costs maybe four dollars and will provide the incredibly filling base for twenty different meals. 
 *   **Dry Beans and Lentils:** Stop buying cans if you're heavily restricting your budget. A bag of dry lentils costs nothing, provides massive amounts of protein and fiber, and absorbs whatever cheap spices you throw at it. Beans and lentils anchor our entire [plant-based protein sources guide](/plant-based-protein-sources-complete-guide/) for exactly this reason. 
@@ -89,7 +89,7 @@ If cost is the tiebreaker, our [produce fiber per dollar ranking](/produce-fiber
 
 ## The Flavor Makers (Invest Here)
 
-If you're basing your meals off intensely cheap items like beans, rice, and cabbage, you must invest a tiny bit of your budget into making them taste phenomenal. This is the difference between eating like a budget master and eating like a depressed college student, which is its own [whole category of cheap cooking](/cheap-healthy-meals-for-college-students/) when the kitchen is a microwave and a hot plate.
+If you're basing your meals off intensely cheap items like beans, rice, and cabbage, you must invest a tiny bit of your budget into making them taste phenomenal. This is the difference between eating like a budget master and eating like a depressed college student, which is its own whole category of cheap cooking when the kitchen is a microwave and a hot plate.
 
 ## Add two or three flexible proteins
 
@@ -139,4 +139,4 @@ Leave ten percent of the grocery budget unassigned. That gives you room for a re
 
 Track the total as you shop, either in your phone calculator or the store app. The [grocery budget calculator](/tools/grocery-budget-calculator/) helps set the weekly number before the first item goes into the cart.
 
-Building a useful grocery list is less about finding one perfect collection of foods and more about buying ingredients that cooperate. Cooking for a household of one? These [budget meal ideas for one](/budget-meal-ideas-for-one/) show how the same strategy scales down. Once the list itself is solid, these ways to [make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/) help with store-level choices that don't involve clipping a single coupon.
+Building a useful grocery list is less about finding one perfect collection of foods and more about buying ingredients that cooperate. Cooking for a household of one? These budget meal ideas for one show how the same strategy scales down. Once the list itself is solid, these ways to [make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/) help with store-level choices that don't involve clipping a single coupon.

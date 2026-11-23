@@ -7,6 +7,7 @@ import {
   FEED_TITLE,
   getFeedArticles,
 } from "../content/feed";
+import { isIndexPruned } from "../content/index-prune.js";
 
 /**
  * RSS 2.0 feed with per-item enclosures + media:content.
@@ -15,7 +16,7 @@ import {
  * Note: /feed is a legacy WordPress path returning 410, so this lives at /rss.xml.
  */
 export const GET: APIRoute = async () => {
-  const articles = await getFeedArticles();
+  const articles = (await getFeedArticles()).filter((article) => !isIndexPruned(article.id));
 
   const items = articles
     .map((a) => {

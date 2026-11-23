@@ -65,13 +65,13 @@ The catch with rotisserie is always the second half of the bird that dries out i
 
 Look at rows 8 through 11 and it gets uncomfortable. A 1 lb roll of 93/7 ground turkey costs $5.46. That is the exact price of the entire 5 lb bag of drumsticks, and it delivers 15.6 grams of protein per dollar to the drumsticks' 50.3. Ground beef does worse: 11.3 grams per dollar for 80/20, and the leaner 93/7 actually drops to 11.2 because the price jumps to $8.42 per pound.
 
-None of this means never buy ground meat. Tacos exist. It means think of it as flavor, not as your protein workhorse, and stretch it with beans and rice like these [cheap ground beef meals for large families](/cheap-ground-beef-meals-large-families/) do. The beans doing the stretching are the real protein: dry brown lentils carry about seven times the protein per dollar that 80/20 beef does, and [the full plant protein ranking](/plant-protein-per-dollar-ranked/) shows how far down that same list tofu and tempeh actually sit. Ground turkey pulls the same trick in [make-ahead turkey meatballs](/healthy-turkey-meatballs-meal-prep/): one roll, a full week of lunches.
+None of this means never buy ground meat. Tacos exist. It means think of it as flavor, not as your protein workhorse, and stretch it with beans and rice like these cheap ground beef meals for large families do. The beans doing the stretching are the real protein: dry brown lentils carry about seven times the protein per dollar that 80/20 beef does, and [the full plant protein ranking](/plant-protein-per-dollar-ranked/) shows how far down that same list tofu and tempeh actually sit. Ground turkey pulls the same trick in [make-ahead turkey meatballs](/healthy-turkey-meatballs-meal-prep/): one roll, a full week of lunches.
 
 And bacon at 9.4 grams per dollar? Bacon is a condiment wearing a protein costume. Buy it for the smell, not the macros.
 
 ## How should you actually shop this list?
 
-My honest playbook: drumsticks or a whole bird for the cheap bulk, boneless thighs for lazy weeknights, and boneless pork shoulder at 25.2 grams per dollar ($3.14 a pound) when you want something that isn't chicken. Pork loin chops at 23.0 are a respectable fallback, especially if you [cook pork chops properly](/best-way-to-cook-pork-chops/) instead of turning them into shoe leather.
+My honest playbook: drumsticks or a whole bird for the cheap bulk, boneless thighs for lazy weeknights, and boneless pork shoulder at 25.2 grams per dollar ($3.14 a pound) when you want something that isn't chicken. Pork loin chops at 23.0 are a respectable fallback, especially if you cook pork chops properly instead of turning them into shoe leather.
 
 If you want the full picture beyond the meat case, the [wider animal protein ranking](/animal-protein-per-dollar-ranked/) sets these cuts against eggs, dairy, and canned fish, and [what 50 grams of protein costs per day](/what-50-grams-of-protein-costs-per-day/) turns these numbers into an actual daily budget. For the whole strategy, start with the [high-protein on a budget guide](/high-protein-on-a-budget-complete-guide/).
 

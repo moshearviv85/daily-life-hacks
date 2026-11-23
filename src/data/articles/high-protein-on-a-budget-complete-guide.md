@@ -88,7 +88,7 @@ Every dried legume in the study landed between 56 and 78 grams of protein per do
 
 The practical objection is always the same: dried beans take forever. Fair, but forever is mostly unattended pot time, and there are two fixes. Learn the basic routine once with our guide to [cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/), and when you didn't plan ahead last night, the [same-day quick soak](/how-to-quick-soak-dried-beans-same-day/) gets you from bag to pot in about an hour. Cook a big batch on Sunday, freeze half, and dried beans start behaving like convenience food.
 
-Canned beans are the honest middle ground. They score lower per dollar because you're paying for water and a can, but they're still miles ahead of most meat, and a shelf of them is what stands between you and ordering pizza on a Wednesday. Our roundup of [low-cost protein meal hacks for families](/low-cost-protein-meal-hacks-families/) leans on them heavily, and if you're feeding a crowd, the guide to [low-cost protein for large families](/best-low-cost-protein-sources-large-families/) does the portion math.
+Canned beans are the honest middle ground. They score lower per dollar because you're paying for water and a can, but they're still miles ahead of most meat, and a shelf of them is what stands between you and ordering pizza on a Wednesday. Our roundup of low-cost protein meal hacks for families leans on them heavily, and if you're feeding a crowd, the guide to [low-cost protein for large families](/best-low-cost-protein-sources-large-families/) does the portion math.
 
 And a quiet word for peanut butter: at 50.7 grams of protein per dollar it outscores every meat in this sample. The jar in your pantry has been a protein bargain this whole time, and against the nut everyone treats as the premium option, [peanut butter versus almonds on protein cost](/peanut-butter-vs-almonds-protein-cost/) is a rout.
 
@@ -96,7 +96,7 @@ And a quiet word for peanut butter: at 50.7 grams of protein per dollar it outsc
 
 Yes, second only to chicken drumsticks among animal foods here. Eggs deliver 34.4 grams of protein per dollar at $2.19 a dozen, part-skim mozzarella 30.1, whole milk 28.5, Greek yogurt 27.5 and 4% cottage cheese 26.3. All of them beat every fresh meat in the sample except drumsticks.
 
-Eggs are the food I'd defend in court. At the [May 2026 BLS average price](https://data.bls.gov/timeseries/APU0000708111) of $2.19 a dozen, they deliver about 34 grams of protein per dollar, second among the animal foods in this sample. A dozen holds roughly 75 grams of protein, cooks a dozen different ways, and never asks you to plan ahead. Scrambled at 7 AM, boiled on a salad at noon, folded into [freezer breakfast burritos](/high-protein-vegetarian-breakfast-burritos-you-can-freeze/) on Sunday. The workhorse label is earned.
+Eggs are the food I'd defend in court. At the [May 2026 BLS average price](https://data.bls.gov/timeseries/APU0000708111) of $2.19 a dozen, they deliver about 34 grams of protein per dollar, second among the animal foods in this sample. A dozen holds roughly 75 grams of protein, cooks a dozen different ways, and never asks you to plan ahead. Scrambled at 7 AM, boiled on a salad at noon, folded into freezer breakfast burritos on Sunday. The workhorse label is earned.
 
 Dairy clusters tightly behind: whole milk at 28.5 grams per dollar, Greek yogurt at 27.5, cottage cheese at 26.3. The yogurt-versus-cottage-cheese question comes up constantly, so we wrote the [full comparison](/cottage-cheese-vs-greek-yogurt-protein-uses/); the short version is they're different tools, not competitors. If your breakfast decision is really yogurt or eggs, [we priced that one head to head](/eggs-vs-greek-yogurt-protein-cost/) too. And a block of part-skim mozzarella scores 30, which quietly beats every fresh meat except drumsticks.
 
@@ -122,7 +122,7 @@ It's mid-table, but it earns its shelf. Chunk light tuna in water delivers 22.4 
 
 Canned fish will never top a per-dollar ranking, but that's the wrong lens for it. Chunk light tuna delivers 22.4 grams of protein per dollar, and a 98-cent can holds about 22 grams of protein with zero cooking, zero refrigeration, and a shelf life measured in years. It's the protein equivalent of a spare tire.
 
-Canned pink salmon scores 21.6 and sardines 20.2, so the whole canned fish shelf clusters around the same value as boneless chicken. The difference is what happens at noon on a workday: the can wins because it's already there. Tuna salad, salmon patties, sardines on toast if you're brave. Our system for [prepping high-protein work lunches](/how-to-prep-high-protein-lunches-work/) keeps a couple of cans in the rotation for exactly the days when the prep didn't happen.
+Canned pink salmon scores 21.6 and sardines 20.2, so the whole canned fish shelf clusters around the same value as boneless chicken. The difference is what happens at noon on a workday: the can wins because it's already there. Tuna salad, salmon patties, sardines on toast if you're brave. Our system for prepping high-protein work lunches keeps a couple of cans in the rotation for exactly the days when the prep didn't happen.
 
 ## Is tofu a cheap source of protein?
 

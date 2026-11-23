@@ -53,7 +53,7 @@ The fix is older than the research. Legumes and grains complement each other's a
 
 Usually the argument for paying more per gram is that meat saves you time. Not here. Brown lentils simmer in about 20 to 25 minutes with no soaking, which is roughly what a chicken breast needs in the oven. Call it a tie.
 
-What lentils do ask for is flavor. A plain simmered lentil is a sad thing, and I say that as someone who eats them twice a week. Toast your spices in the oil first. A [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) or a pot of [dal and rice](/simple-lunch-recipes-indian-veg/) costs about the same as a single chicken breast and feeds four people, which is the actual point of the 3.2x.
+What lentils do ask for is flavor. A plain simmered lentil is a sad thing, and I say that as someone who eats them twice a week. Toast your spices in the oil first. A [lentil curry](/lentil-curry-high-fiber-vegan-dinner/) or a pot of dal and rice costs about the same as a single chicken breast and feeds four people, which is the actual point of the 3.2x.
 
 ## When is chicken breast still the right buy?
 

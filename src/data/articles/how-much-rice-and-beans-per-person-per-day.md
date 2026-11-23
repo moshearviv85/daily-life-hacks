@@ -68,7 +68,7 @@ The pairing also does something the two foods don't do separately. Legumes and g
 
 White rice is cheaper and it cooks faster. Long grain white came in at $0.149 per 100 grams against $0.206 for brown, with 7.13 grams of protein per 100 grams versus brown's 7.54. Swap it in and the daily cost drops from $0.64 to about $0.57.
 
-What we can't tell you is the fiber cost of that swap, because our fiber dataset doesn't include white rice. Brown rice contributes 3.6 grams of fiber per 100 grams, so the 4.3 grams in the daily portion would come off the total and you'd be relying on the beans for the rest. The beans carry 27.9 of the 32.2 grams anyway, so you'd still clear the 28 gram Daily Value. Buy the one you'll actually cook, and if you go brown, [cooking it ahead and storing it properly](/how-to-properly-store-cooked-grains-for-meal-prep/) removes the only annoying part.
+What we can't tell you is the fiber cost of that swap, because our fiber dataset doesn't include white rice. Brown rice contributes 3.6 grams of fiber per 100 grams, so the 4.3 grams in the daily portion would come off the total and you'd be relying on the beans for the rest. The beans carry 27.9 of the 32.2 grams anyway, so you'd still clear the 28 gram Daily Value. Buy the one you'll actually cook, and if you go brown, cooking it ahead and storing it properly removes the only annoying part.
 
 ## What this daily portion does not tell you
 

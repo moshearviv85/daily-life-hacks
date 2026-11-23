@@ -74,7 +74,7 @@ For actual snacking, dry roasted peanuts at 13.7 grams per dollar are the quiet 
 
 Kernels for volume, peanuts for portability, almonds when you specifically want almonds. That's the whole system.
 
-Popcorn covers the big-bowl nights, and it takes seasoning well enough that you never have to eat it plain. If your snacking problem is the evening rather than the workday, we went deep on [late night snack ideas](/healthy-sweet-tooth-snack-ideas-night/) and on [popcorn toppings that aren't just butter](/high-fiber-popcorn-toppings-healthy/). For crunch that isn't a nut or a grain at all, [roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/) land in similar territory for similar money.
+Popcorn covers the big-bowl nights, and it takes seasoning well enough that you never have to eat it plain. If your snacking problem is the evening rather than the workday, we went deep on [late night snack ideas](/healthy-sweet-tooth-snack-ideas-night/) and on [popcorn toppings that aren't just butter](/high-fiber-popcorn-toppings-healthy/). For crunch that isn't a nut or a grain at all, roasted chickpeas land in similar territory for similar money.
 
 The wider snack ranking lives in our [high fiber snacks per dollar](/high-fiber-snacks-per-dollar/) breakdown, and if you're rebuilding the whole grocery list around this, the [budget fiber guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) is the place to start. Popcorn's other famous matchup, [against potato chips](/popcorn-vs-potato-chips-fiber-comparison/), goes about how you'd expect.
 

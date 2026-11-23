@@ -72,7 +72,7 @@ At the very bottom sit fresh blueberries at 2.5 grams per dollar, and price isn'
 
 One more number worth knowing: dry pinto beans buy 41.7 grams of fiber per dollar and canned black beans buy 34.4. Canned is still a genuinely good middle option, and if the only thing keeping you from dry beans is the overnight soak, the [same-day quick soak method](/how-to-quick-soak-dried-beans-same-day/) deletes that excuse in about an hour.
 
-Want to run your own matchups? The [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/) compares any two foods and does the nutrient math for you. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles the other question that tiny shelf labels make unnecessarily annoying: which package is actually cheaper per ounce. And if you're rebuilding the whole grocery run, not just the fiber part, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) and this [budget shopping list](/grocery-shopping-list-for-healthy-eating-on-a-budget/) cover the rest of the cart.
+Want to run your own matchups? The [Fiber per Dollar Calculator](/tools/fiber-per-dollar-calculator/) compares any two foods and does the nutrient math for you. The [grocery unit price calculator](/tools/grocery-unit-price-calculator/) handles the other question that tiny shelf labels make unnecessarily annoying: which package is actually cheaper per ounce. And if you're rebuilding the whole grocery run, not just the fiber part, our [eat healthy on a budget playbook](/eat-healthy-on-a-budget-complete-playbook/) and this budget shopping list cover the rest of the cart.
 
 ## What does a full day of 30 grams of fiber cost?
 
@@ -137,7 +137,7 @@ Popcorn kernels lead the snack rows outright at 51.3 grams of fiber per dollar, 
 
 Popcorn can still be an inexpensive whole-grain snack, and the [popcorn topping ideas](/high-fiber-popcorn-toppings-healthy/) keep it from becoming a butter delivery system. The [popcorn vs potato chips comparison](/popcorn-vs-potato-chips-fiber-comparison/) supports the ounce-for-ounce fiber difference for air-popped popcorn, while the [popcorn against almonds](/popcorn-vs-almonds-fiber-cost/) page puts kernels at about 5.8 times the fiber per dollar of almonds.
 
-Two more that earn their shelf space: [crispy roasted chickpeas](/crispy-roasted-chickpeas-high-fiber-snack/), which turn a 33.8-grams-per-dollar dry good into something with chip-style crunch, and [no-bake energy balls](/no-bake-high-fiber-energy-balls-recipe/) for the 3 PM moment when you'd otherwise raid the vending machine.
+Two more that earn their shelf space: crispy roasted chickpeas, which turn a 33.8-grams-per-dollar dry good into something with chip-style crunch, and [no-bake energy balls](/no-bake-high-fiber-energy-balls-recipe/) for the 3 PM moment when you'd otherwise raid the vending machine.
 
 ## Why do people quit high-fiber eating?
 

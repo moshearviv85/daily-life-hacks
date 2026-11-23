@@ -1,6 +1,6 @@
 /**
  * GSC 27 Aug 2026: 158 URLs were "Discovered – currently not indexed".
- * These 106 thin URLs stay live for humans (no 410, no delete) but must be
+ * These 105 thin URLs stay live for humans (no 410, no delete) but must be
  * `noindex, follow` and out of the sitemap so crawl budget concentrates on
  * the 51 KEEP money URLs (flagships + per-dollar cluster + tools/hubs).
  *
@@ -21,7 +21,6 @@ export const INDEX_PRUNE_SLUGS = new Set([
   "best-way-to-cook-ribs",
   "budget-meal-ideas-for-one",
   "budget-meal-ideas-philippines",
-  "can-you-refreeze-frozen-vegetables-after-thawing",
   "cauliflower-fried-rice-with-eggs",
   "cheap-dinner-ideas-cost-per-serving",
   "cheap-dinner-ideas-for-a-family-of-4",
@@ -213,8 +212,8 @@ function assertPruneSafety() {
       `index-prune: KEEP/protected slug leaked into prune set: ${collisions.join(", ")}`,
     );
   }
-  if (INDEX_PRUNE_SLUGS.size !== 106) {
-    throw new Error(`index-prune: expected 106 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
+  if (INDEX_PRUNE_SLUGS.size !== 105) {
+    throw new Error(`index-prune: expected 105 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
   }
   if (INDEX_KEEP_PATHS.size !== 51) {
     throw new Error(`index-prune: expected 51 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);

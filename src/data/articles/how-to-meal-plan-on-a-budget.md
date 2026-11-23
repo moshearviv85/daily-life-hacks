@@ -46,7 +46,7 @@ Most meal planning advice is about deciding what to eat. That part's easy. The p
 
 Three columns on a scrap of paper. Day, dinner, price. That's it, and it takes about six minutes.
 
-The trick is that you only need prices for anchors, not for whole recipes. A 90 gram serving of dry pinto beans is $0.20. A 60 gram serving of dry rice is $0.09 to $0.12. Two eggs are $0.37. A can of tuna is $0.98. Learn eight of those numbers and you can price any dinner in your head, which is a genuinely useful party trick if you go to very boring parties. We costed ten plates that way in [cheap dinner ideas](/cheap-dinner-ideas-cost-per-serving/).
+The trick is that you only need prices for anchors, not for whole recipes. A 90 gram serving of dry pinto beans is $0.20. A 60 gram serving of dry rice is $0.09 to $0.12. Two eggs are $0.37. A can of tuna is $0.98. Learn eight of those numbers and you can price any dinner in your head, which is a genuinely useful party trick if you go to very boring parties. We costed ten plates that way in cheap dinner ideas.
 
 Then work backwards. If you want the week under a certain number, you don't cut portions, you swap anchors. Moving one dinner from ground beef to beans saves more than an entire week of coupon clipping, because beef returns 11.5 grams of protein per dollar against 97.9 for pintos. The full spread is in [protein per dollar](/protein-per-dollar-cheapest-protein-sources/).
 
@@ -62,15 +62,15 @@ Dinner isn't your whole grocery bill, though, and pretending otherwise is how me
 
 Planning decides. Prep cooks. You can do the first without ever doing the second, and if you only pick one, pick planning, because the money is decided at the shelf.
 
-Prep is what protects the plan from a bad Wednesday. If Wednesday's beans are already cooked and in the fridge, Wednesday's takeout impulse loses. If they aren't, it usually wins. That's the whole argument, and [meal prep for beginners](/meal-prep-for-beginners-complete-system/) has the system, while [how to meal prep on a budget](/how-to-meal-prep-on-a-budget-for-one-person/) covers the solo version.
+Prep is what protects the plan from a bad Wednesday. If Wednesday's beans are already cooked and in the fridge, Wednesday's takeout impulse loses. If they aren't, it usually wins. That's the whole argument, and [meal prep for beginners](/meal-prep-for-beginners-complete-system/) has the system, while how to meal prep on a budget covers the solo version.
 
-Overlap your ingredients on purpose and both jobs get easier. Plan two pots that reheat well and you've bought yourself four dinners, which is the math behind [cheap healthy meals with leftovers](/cheap-healthy-meals-with-leftovers/). One bag of dry pintos covers Tuesday and half of Wednesday. One head of cabbage covers the tacos and a side salad. There's a whole method for this in [one theme, five dinners, one grocery list](/one-theme-five-dinners-one-grocery-list/).
+Overlap your ingredients on purpose and both jobs get easier. Plan two pots that reheat well and you've bought yourself four dinners, which is the math behind cheap healthy meals with leftovers. One bag of dry pintos covers Tuesday and half of Wednesday. One head of cabbage covers the tacos and a side salad. There's a whole method for this in one theme, five dinners, one grocery list.
 
 ## How do you plan for 2, 4, or 6 people?
 
 Multiply the pot, keep the menu. A beans and rice pot at $0.38 a serving is about $1.52 for four and $2.28 for six, so headcount changes the total without changing the plan.
 
-What does change is package math. A four pound bag of pintos at $3.97 is twenty servings, which a single person will still be eating in November and a family of six will finish in five days. Shopping for one means either smaller bags at worse unit prices or a freezer strategy, a problem we worked through in [budget meal ideas for one](/budget-meal-ideas-for-one/).
+What does change is package math. A four pound bag of pintos at $3.97 is twenty servings, which a single person will still be eating in November and a family of six will finish in five days. Shopping for one means either smaller bags at worse unit prices or a freezer strategy, a problem we worked through in budget meal ideas for one.
 
 For bigger households the advice inverts. Buy the big bag, buy the drumsticks in the five pound pack, and let [how to stretch meals for large families](/how-to-stretch-meals-large-families/) handle the rest.
 

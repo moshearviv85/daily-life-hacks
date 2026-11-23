@@ -56,7 +56,7 @@ The arithmetic is almost suspiciously tidy:
 
 That replaced the older 25g value. The useful part here is the common denominator. A can of beans and a box of cereal can be compared without each manufacturer inventing a flattering definition of "a lot."
 
-A pot of [split pea soup](/split-pea-soup-recipe-high-fiber/) and [savory oatmeal bowls](/savory-oatmeal-bowls-with-eggs-and-avocado/) use the low-cost staples that lead our fiber data. Neither recipe has to land on exactly 28g like it's parking in a narrow garage. They show the label math after it leaves the box.
+A pot of [split pea soup](/split-pea-soup-recipe-high-fiber/) and savory oatmeal bowls use the low-cost staples that lead our fiber data. Neither recipe has to land on exactly 28g like it's parking in a narrow garage. They show the label math after it leaves the box.
 
 ## Where does 50 grams of protein come from?
 
@@ -66,7 +66,7 @@ The protein Daily Value starts with 10% of the 2,000-calorie reference. Ten perc
 
 FDA considered changing the value in 2016 and kept it at 50g. The number fit the percentage range the agency reviewed and worked as a general label reference. Again, *label reference*. It isn't generated after the eggs interview you about your lifestyle.
 
-[Beans and rice](/beans-and-rice-complete-protein-meal/) can spread protein across an inexpensive batch, while [high-protein vegetarian breakfast burritos](/high-protein-vegetarian-breakfast-burritos-you-can-freeze/) turn similar ingredients into freezer food. They aren't legal definitions. They're a better picture than a lonely 50 on a label.
+[Beans and rice](/beans-and-rice-complete-protein-meal/) can spread protein across an inexpensive batch, while high-protein vegetarian breakfast burritos turn similar ingredients into freezer food. They aren't legal definitions. They're a better picture than a lonely 50 on a label.
 
 ![Bar chart showing how FDA derives the 28g fiber and 50g protein Daily Values](/images/fiber-protein-daily-value-formulas.jpg)
 

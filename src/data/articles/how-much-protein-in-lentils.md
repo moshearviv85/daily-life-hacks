@@ -43,7 +43,7 @@ The bag on your shelf is doing more than you think.
 
 Brown, by a whisker. 24.63 grams per 100 grams against 23.91 for red. That's a difference of about seven tenths of a gram, which is nothing, so pick on price and texture instead of chasing the number.
 
-On price it isn't close either. Brown lentils are $1.44 for a 16 ounce bag against $1.94 for the same 454 grams of red, which is why brown return 77.7 grams of protein per dollar and red only 56.0. The full buying comparison is [which lentils are the best](/which-lentils-are-the-best/).
+On price it isn't close either. Brown lentils are $1.44 for a 16 ounce bag against $1.94 for the same 454 grams of red, which is why brown return 77.7 grams of protein per dollar and red only 56.0. The full buying comparison is which lentils are the best.
 
 Texture is the real deciding factor. Brown lentils hold their shape and behave in a salad or a pot of soup. Red lentils disintegrate into something thick and creamy in about twenty minutes, which is exactly what you want in [a lentil curry](/lentil-curry-high-fiber-vegan-dinner/) and exactly what you don't want if you were hoping for distinct little discs.
 
@@ -53,7 +53,7 @@ Because our dataset measures every food the way you buy it. Lentils are dry, mea
 
 Cook the lentils and they soak up water, so the protein per 100 grams of the finished pot drops well below 24.63. Cook a chicken breast and it loses water and climbs above 22.5. We don't have cooked yields in our data, so I'm not going to hand you a converted figure and pretend it's measured.
 
-What that means practically: the dry number is a shopping number. It tells you what's in the bag you're paying for, which is exactly what you want when you're standing in the aisle. If you want the meat comparison run out properly, that's [which lentils are the best](/which-lentils-are-the-best/) and [lentils vs chicken breast](/lentils-vs-chicken-breast-protein-cost/).
+What that means practically: the dry number is a shopping number. It tells you what's in the bag you're paying for, which is exactly what you want when you're standing in the aisle. If you want the meat comparison run out properly, that's which lentils are the best and [lentils vs chicken breast](/lentils-vs-chicken-breast-protein-cost/).
 
 ## Are lentils high in fiber too?
 
@@ -75,8 +75,8 @@ The classic fix costs nothing. Legumes and grains complement each other's amino 
 
 Cook a pot on a day you're already in the kitchen. A 16 ounce bag holds 454 grams, which is about 111.8 grams of protein and 48.6 grams of fiber for $1.44, and it will not go bad while you figure out what to do with it.
 
-Brown lentils go in soup, in chili, into a pan with browned onions and a fried egg on top. Red lentils go into [a dal with rice](/simple-lunch-recipes-indian-veg/) or thickened into curry. Neither needs soaking, which is the main reason lentils get cooked in my house more often than [dried beans](/how-to-cook-dried-beans-from-scratch/) do.
+Brown lentils go in soup, in chili, into a pan with browned onions and a fried egg on top. Red lentils go into a dal with rice or thickened into curry. Neither needs soaking, which is the main reason lentils get cooked in my house more often than [dried beans](/how-to-cook-dried-beans-from-scratch/) do.
 
-How much to put in the pot per person is the next question, and it has a real answer: [how much lentils per person, per day](/how-much-lentils-per-person-per-day/).
+How much to put in the pot per person is the next question, and it has a real answer: [how much lentils per person, per day](/can-you-eat-rice-and-beans-everyday/).
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-quality-per-dollar-2026.csv -->

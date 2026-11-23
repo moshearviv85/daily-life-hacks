@@ -4,6 +4,7 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import { getCollection } from "astro:content";
 import { isReleased } from "../../../content/release";
+import { isIndexPruned } from "../../../content/index-prune.js";
 
 const title = "Recipe Finder by Ingredients: 80 Recipes";
 const description = "Enter the ingredients you have and find published recipes ranked by overlap, with the missing groceries shown before you open the recipe.";
@@ -11,6 +12,7 @@ const description = "Enter the ingredients you have and find published recipes r
 const allArticles = await getCollection("articles");
 const recipes = allArticles
   .filter((article: any) => isReleased(article))
+  .filter((article: any) => !isIndexPruned(article.id))
   .filter((article: any) => article.data.category === "recipes")
   .filter((article: any) => article.data.ingredients?.length && article.data.servings)
   .map((article: any) => ({

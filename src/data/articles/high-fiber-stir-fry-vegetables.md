@@ -74,7 +74,7 @@ Choose vegetables based on how quickly they cook. Broccoli, carrots, and caulifl
 
 This recipe uses broccoli, peppers, and snap peas because their timing is easy to manage. The broccoli gets a three-minute lead, the peppers soften around the edges, and the peas stay crisp. You get three distinct textures instead of one unified vegetable shrug.
 
-Cut everything before the pan gets hot. Stir-frying moves quickly, and garlic won't wait politely while you hunt for the rice vinegar. If you want a different flavor profile, choose one of these [quick stir-fry sauces](/quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff/) before cooking.
+Cut everything before the pan gets hot. Stir-frying moves quickly, and garlic won't wait politely while you hunt for the rice vinegar. If you want a different flavor profile, choose one of these quick stir-fry sauces before cooking.
 
 ## How do you keep stir-fry vegetables crisp?
 

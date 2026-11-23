@@ -51,13 +51,13 @@ Push that through the price and pinto beans land around 34.0 grams of quality-ad
 
 This is beef's real argument, and it's a good one. Ground beef browns in about eight minutes. Dry pintos want an overnight soak and an hour or two on the stove, and if you forget the soak on a Tuesday you're eating something else.
 
-Two ways around it. Cook a huge pot on Sunday, because dry beans freeze fine and the labor is identical whether you make one pound or four. Or buy the can and accept a smaller win: canned black beans delivered 30.1 grams of protein per dollar at 88 cents a can, still about 2.7 times ground beef. A [pot of three-bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) or a tray of [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) gets dinner done on can time, not soak time.
+Two ways around it. Cook a huge pot on Sunday, because dry beans freeze fine and the labor is identical whether you make one pound or four. Or buy the can and accept a smaller win: canned black beans delivered 30.1 grams of protein per dollar at 88 cents a can, still about 2.7 times ground beef. A pot of three-bean chili or a tray of [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) gets dinner done on can time, not soak time.
 
 ## When is ground beef still the right buy?
 
 When texture is doing a job that beans can't do. Nothing makes a bean taste like a smashburger, and pretending otherwise is how people end up hating budget cooking. Beef also delivers complete protein in a small, dense package, which matters when appetite runs out before the protein target does. Dry beans triple in volume on the stove, so hitting a big protein number from beans means eating a genuinely big bowl.
 
-The move most families land on isn't all-or-nothing. Cut the beef by half and let beans fill the pan. [Cheap ground beef meals for a big table](/cheap-ground-beef-meals-large-families/) stretch a lot further with a can of beans in the skillet, and [black bean burgers that hold together](/quick-black-bean-burgers-that-hold-their-shape/) cover the nights when nobody's counting anyway. You keep the flavor you're paying for and quietly stop paying for all of it.
+The move most families land on isn't all-or-nothing. Cut the beef by half and let beans fill the pan. Cheap ground beef meals for a big table stretch a lot further with a can of beans in the skillet, and black bean burgers that hold together cover the nights when nobody's counting anyway. You keep the flavor you're paying for and quietly stop paying for all of it.
 
 Beef sits near the bottom of the 49 foods we priced, and its leaner sibling is barely different: 93/7 came in at 11.2 grams per dollar at $8.42 a pound. If protein per dollar is the goal, the beans aisle was never a compromise. The [full protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) has all 49 foods, and the [high protein on a budget guide](/high-protein-on-a-budget-complete-guide/) covers how to actually build a week around them.
 

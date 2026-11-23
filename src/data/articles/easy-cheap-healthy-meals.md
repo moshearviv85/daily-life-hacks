@@ -71,7 +71,7 @@ Cook the anchor, cook the base, put something raw and something sharp on top. Th
 
 Same beans and rice, three directions. Cumin, lime, and raw cabbage is a taco bowl. Turmeric, onion, and a spoon of yogurt is a curry. Smoked paprika, vinegar, and a fried egg is something else entirely. The anchor never changed and the bill never moved.
 
-That's why I'd rather people learn the three slots than collect recipes. Recipes make you buy one ingredient for one dish. Slots make you buy staples that cover twenty dishes, which is the same argument as [how to eat cheap at home](/how-to-eat-cheap-at-home/). If you want the assembled versions with prices, [cheap dinner ideas](/cheap-dinner-ideas-cost-per-serving/) and [cheap lunch ideas](/cheap-lunch-ideas-cost-per-box/) have them costed out.
+That's why I'd rather people learn the three slots than collect recipes. Recipes make you buy one ingredient for one dish. Slots make you buy staples that cover twenty dishes, which is the same argument as how to eat cheap at home. If you want the assembled versions with prices, cheap dinner ideas and cheap lunch ideas have them costed out.
 
 ## Which anchors give you the most for the money?
 
@@ -79,7 +79,7 @@ Dry legumes, and it isn't remotely close. Dry pinto beans returned 97.9 grams of
 
 Peanut butter is the surprise at $0.14 a portion and 50.7 grams of protein per dollar, which makes it the cheapest anchor that needs no cooking whatsoever. Eggs at $0.37 for two are the convenience play rather than the value play, though 34.4 grams per dollar is still respectable.
 
-Drumsticks are the meat that survives this test, at 50.3 grams of protein per dollar. If the table wants chicken, that's the cut. For the full protein-focused version of these plates, [high protein meals on a budget](/high-protein-meals-on-a-budget/) prices each one per 30 grams.
+Drumsticks are the meat that survives this test, at 50.3 grams of protein per dollar. If the table wants chicken, that's the cut. For the full protein-focused version of these plates, high protein meals on a budget prices each one per 30 grams.
 
 ## What makes a cheap plate taste like a meal?
 

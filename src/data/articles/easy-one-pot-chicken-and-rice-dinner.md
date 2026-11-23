@@ -88,7 +88,7 @@ Please, do not skip rinsing the rice. It takes 30 seconds and keeps the grains f
 
 If the rice still looks a bit wet when your timer goes off, don't panic. Just put the lid back on and let it sit off the heat for another 5 minutes. The residual steam will finish the job.
 
-Leftovers keep well in the fridge for a few days. They reheat nicely in the microwave-just add a tiny splash of water or broth to loosen things up. It's a real dinner with minimal cleanup, which is exactly what a weeknight needs. When even 45 minutes is more than the evening has, these [30-minute family dinners](/quick-dinner-recipes-for-family/) run on the same one-skillet logic.
+Leftovers keep well in the fridge for a few days. They reheat nicely in the microwave-just add a tiny splash of water or broth to loosen things up. It's a real dinner with minimal cleanup, which is exactly what a weeknight needs. When even 45 minutes is more than the evening has, these 30-minute family dinners run on the same one-skillet logic.
 
 ## Brown the chicken without crowding the pot
 
@@ -106,7 +106,7 @@ Use a dry measuring cup for the rice and a liquid cup for the broth if you have 
 
 Pan shape matters. A very wide skillet loses moisture faster than a Dutch oven. If the rice is still firm when the liquid is gone, add a quarter cup of hot broth or water, cover, and cook for another three to five minutes. If it is tender but slightly wet, rest it off the heat with the lid on.
 
-For leftover rice safety and texture, use the cooling method in this [fried-rice prep guide](/how-to-cool-rice-for-fried-rice/). The same shallow-container rule applies here.
+For leftover rice safety and texture, use the cooling method in this [fried-rice prep guide](/how-to-use-leftover-rice-creative-ideas/). The same shallow-container rule applies here.
 
 ## When to add vegetables
 

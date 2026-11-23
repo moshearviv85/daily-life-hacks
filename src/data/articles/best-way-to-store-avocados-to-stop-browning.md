@@ -50,7 +50,7 @@ faq:
 ---
 Avocados are a luxury item these days. You spend decent money on them, nurture them on the counter for three days waiting for that exact perfect moment of ripeness, and then you cut one open only to eat half. You wrap the other half in plastic wrap, put it in the fridge, and by the next morning? It looks like literal brown mush. 
 
-The oxidation process of an avocado is ruthless. As soon as the flesh hits the air, it starts breaking down. Luckily, there are a few genuinely effective tricks, and I am going to show you the absolute best way to store avocados to stop browning. The effort is worth it, too, because avocados sit near the top of my [list of healthy fats worth eating daily](/healthy-fats-list-foods-to-eat-daily/).
+The oxidation process of an avocado is ruthless. As soon as the flesh hits the air, it starts breaking down. Luckily, there are a few genuinely effective tricks, and I am going to show you the absolute best way to store avocados to stop browning. The effort is worth it, too, because avocados sit near the top of my list of healthy fats worth eating daily.
 
 ## Trick #1: The Onion Method (The Best Option)
 
@@ -97,7 +97,7 @@ Keep hard, unripe avocados on the counter. To speed ripening, put one in a paper
 
 Once the avocado yields slightly to gentle pressure near the stem, move it to the refrigerator. The cold slows further ripening and can buy you several days. Don't squeeze the middle repeatedly at the store or at home. That leaves bruised spots that look like mysterious internal damage later.
 
-For a broader produce routine, this [fruit and vegetable storage guide](/how-to-store-fruits-and-vegetables-properly/) separates counter foods from refrigerator foods and explains which items should not share a drawer.
+For a broader produce routine, this fruit and vegetable storage guide separates counter foods from refrigerator foods and explains which items should not share a drawer.
 
 ## The safest method for a cut avocado
 
@@ -119,4 +119,4 @@ Yes, but thawed avocado is softer. Freeze it for blended or mashed uses, not for
 
 Thaw the bag overnight in the refrigerator. Use the avocado in guacamole, sauces, or smoothies where the softer texture will not matter. If you need clean slices for a salad, buy another avocado. The freezer cannot negotiate with cell structure.
 
-Avocado is only useful when it gets eaten. This [healthy fats food list](/healthy-fats-list-foods-to-eat-daily/) has several cheaper options for the weeks when avocados cost more than the rest of lunch combined, and this guide to [keeping berries fresh](/keep-berries-fresh-longer-when-to-wash/) handles the other produce item that likes to expire on its own schedule.
+Avocado is only useful when it gets eaten. This healthy fats food list has several cheaper options for the weeks when avocados cost more than the rest of lunch combined, and this guide to [keeping berries fresh](/keep-berries-fresh-longer-when-to-wash/) handles the other produce item that likes to expire on its own schedule.

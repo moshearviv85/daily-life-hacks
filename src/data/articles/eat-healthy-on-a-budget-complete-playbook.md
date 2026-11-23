@@ -83,21 +83,21 @@ Shop the dry goods aisle first, bring a list built from the staples rather than 
 
 Cheap staples don't help if the rest of your cart undoes them. The shopping side of the playbook is a handful of habits that compound.
 
-Start with a list built around the staples, not around cravings. Our [budget grocery shopping list](/grocery-shopping-list-for-healthy-eating-on-a-budget/) is the template I'd hand a friend: it's organized by store section, dry goods first, and it front-loads the foods that scored well in the data.
+Start with a list built around the staples, not around cravings. Our budget grocery shopping list is the template I'd hand a friend: it's organized by store section, dry goods first, and it front-loads the foods that scored well in the data.
 
 Then plan the week before you enter the store. [Planning a full week of dinners](/plan-week-of-dinners-fewer-grocery-runs/) cuts you down to one shopping trip, and fewer trips is the single most underrated money saver, because every "quick stop for milk" comes home with four other things. For the trip itself, [how to make grocery shopping cheaper](/how-to-make-grocery-shopping-cheaper/) covers the store-level tactics: unit prices, store brands, and the shelf games worth knowing.
 
-If the cheaper store is farther away, run the trip before you run the car. The guide to [whether a cheaper grocery store is worth the drive](/is-driving-to-cheaper-grocery-store-worth-it/) counts fuel, fees, and optional travel time instead of letting a $7 sale volunteer your entire Saturday morning.
+If the cheaper store is farther away, run the trip before you run the car. The guide to whether a cheaper grocery store is worth the drive counts fuel, fees, and optional travel time instead of letting a $7 sale volunteer your entire Saturday morning.
 
 Before you write the list, run a real week through the [weekly food-cost planner](/tools/grocery-budget-calculator/). It scales the ten audited fiber and protein menus for your household, so you're starting with food quantities and a tracked subtotal instead of a small cloud of guilt following you through aisle seven.
 
-And compare the whole food budget, not one louder receipt. [Your grocery bill can rise after you start cooking more](/why-grocery-bill-went-up-after-cooking-more/) while takeout, work lunches, and delivery fall by much more. The supermarket isn't automatically guilty just because it printed the longest piece of paper.
+And compare the whole food budget, not one louder receipt. Your grocery bill can rise after you start cooking more while takeout, work lunches, and delivery fall by much more. The supermarket isn't automatically guilty just because it printed the longest piece of paper.
 
 Three more moves that pay for themselves:
 
-* **Pick the right store.** If there's an Aldi near you, our [Aldi shopping hacks](/aldi-shopping-hacks-large-family-meals/) breakdown shows how far a cart stretches there, and if it's a Walmart, [the Great Value dry goods are where the per-dollar winners hide](/how-to-save-money-on-groceries-at-walmart/).
+* **Pick the right store.** If there's an Aldi near you, our [Aldi shopping hacks](/aldi-shopping-hacks-large-family-meals/) breakdown shows how far a cart stretches there, and if it's a Walmart, the Great Value dry goods are where the per-dollar winners hide.
 * **Buy frozen on purpose.** In our data, frozen green peas delivered nearly three times the fiber per dollar of fresh broccoli. [Frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/) covers when each one wins, and [the frozen versus fresh fiber-per-dollar breakdown](/frozen-vs-fresh-vegetables-fiber-cost/) shows how wide the gap gets.
-* **Read the label, not the front of the box.** The front is marketing. The back is math. [How to read nutrition labels](/how-to-read-nutrition-labels-for-beginners/) takes five minutes to learn and saves you from paying premium prices for oats with a mascot.
+* **Read the label, not the front of the box.** The front is marketing. The back is math. How to read nutrition labels takes five minutes to learn and saves you from paying premium prices for oats with a mascot.
 
 ## How do you cook cheap staples so they get eaten?
 
@@ -105,7 +105,7 @@ Cook once and eat three times. One weekend session that produces a pot of beans,
 
 Here's the honest catch with budget staples: a bag of dried pintos is 37 cents per 100 grams and also completely inedible at 6 PM on a Tuesday. Cheap ingredients demand a system, because the whole reason takeout wins is that it's ready and your pintos aren't.
 
-The fix is cooking once and eating three times. [Batch cooking for beginners](/batch-cooking-for-beginners-weekly-guide/) is the full weekly method, and its big sibling, the [meal prep complete system](/meal-prep-for-beginners-complete-system/), turns it into a routine you can run on autopilot. The short version: one cooking session on the weekend produces a pot of beans, a batch of grains, and one big main, and suddenly weeknights are assembly instead of cooking. Open the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) or [turkey meatball meal prep](/healthy-turkey-meatballs-meal-prep/) and change the servings above the ingredient list before you shop. The amounts scale automatically, because multiplying eleven ingredients by 1.5 is not anyone's preferred Sunday hobby.
+The fix is cooking once and eating three times. Batch cooking for beginners is the full weekly method, and its big sibling, the [meal prep complete system](/meal-prep-for-beginners-complete-system/), turns it into a routine you can run on autopilot. The short version: one cooking session on the weekend produces a pot of beans, a batch of grains, and one big main, and suddenly weeknights are assembly instead of cooking. Open the [high-fiber burrito bowl](/high-fiber-burrito-bowl-meal-prep/) or [turkey meatball meal prep](/healthy-turkey-meatballs-meal-prep/) and change the servings above the ingredient list before you shop. The amounts scale automatically, because multiplying eleven ingredients by 1.5 is not anyone's preferred Sunday hobby.
 
 For the beans specifically, [cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is easier than its reputation, and the [same-day quick soak](/how-to-quick-soak-dried-beans-same-day/) kills the "I forgot to soak them" excuse. A slow cooker makes the whole thing hands-off; these [cheap crockpot meals](/cheap-crockpot-meals-large-families/) are built around exactly the ingredients that topped our rankings.
 
@@ -113,7 +113,7 @@ A few workhorse meals worth having on rotation:
 
 * **[Beans and rice](/beans-and-rice-complete-protein-meal/):** the classic pairing where the legume and the grain cover each other's amino acid gaps. Costs almost nothing, keeps you full.
 * **[One pot chicken and rice](/easy-one-pot-chicken-and-rice-dinner/):** drumstick-friendly, one pan to wash, and it reheats better than it has any right to.
-* **[Low-cost protein meal hacks](/low-cost-protein-meal-hacks-families/):** the tricks for making eggs, canned fish, and beans feel like dinner instead of a compromise.
+* **Low-cost protein meal hacks:** the tricks for making eggs, canned fish, and beans feel like dinner instead of a compromise.
 
 And when the pot looks a little small for the table, [how to stretch meals](/how-to-stretch-meals-large-families/) covers the honorable ways to make eight servings out of six.
 
@@ -123,7 +123,7 @@ Keep an eat-first shelf, store produce properly, revive what droops instead of b
 
 The average American household throws out hundreds of dollars of food a year, which means the cheapest groceries in your house are the ones already in your fridge. Waste prevention isn't a side note to budget eating. It's a third of it.
 
-The foundation is [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/): eat-first shelves, honest leftover habits, and actually seeing what you own before you shop. Storage does the boring heavy lifting; [storing fruits and vegetables properly](/how-to-store-fruits-and-vegetables-properly/) can add days to produce that would otherwise turn into compost with a receipt attached.
+The foundation is [reducing food waste at home](/how-to-reduce-food-waste-at-home-easy-tips/): eat-first shelves, honest leftover habits, and actually seeing what you own before you shop. Storage does the boring heavy lifting; storing fruits and vegetables properly can add days to produce that would otherwise turn into compost with a receipt attached.
 
 Even the losses aren't always losses. [Wilted lettuce and greens can usually be revived](/how-to-revive-wilted-lettuce-and-greens/) with ice water and ten minutes, and [leftover rice](/how-to-use-leftover-rice-creative-ideas/) is arguably better the second day, when it fries properly instead of steaming into mush.
 
@@ -149,7 +149,7 @@ None of these are character flaws. They're system gaps, and every one of them ha
 
 About $28 buys the backbone for two adults: a 4 lb bag of pinto beans at $6.75, split peas at $1.42, a 5 lb bag of chicken drumsticks at $5.46, two dozen eggs at $4.38, a gallon of milk at $4.31, and roughly $6.00 of oats, rice and pasta. The other $32 buys produce and flexibility.
 
-Here's roughly how I'd sketch a week for two adults on $60, using the same prices from our studies. If you're feeding one, halving it won't quite work, because packages don't shrink to fit; [what a single person actually spends per month](/grocery-budget-for-one-person-per-month/) explains the gap. The backbone costs about $28:
+Here's roughly how I'd sketch a week for two adults on $60, using the same prices from our studies. If you're feeding one, halving it won't quite work, because packages don't shrink to fit; what a single person actually spends per month explains the gap. The backbone costs about $28:
 
 | Item | Price | What it delivers |
 |---|---|---|

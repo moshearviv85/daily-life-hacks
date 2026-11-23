@@ -69,7 +69,7 @@ A bit. USDA data puts it at 5.0 grams of fiber per 100 grams, so those two table
 
 That's real but small. In the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) peanut butter landed 30th of 53 at 11.4 grams per dollar, which is fine company but a long way behind whole wheat flour at 77.8. Nobody should be eating peanut butter for fiber. They should be eating it because it makes fiber-heavy food taste better, which is a completely legitimate job.
 
-That's the actual use case. Peanut butter on [whole grain toast with beans and seeds](/high-fiber-avocado-toast-variations/) does the flavor work while the bread and the beans do the fiber work. Stirred into [no-bake oat and flax energy balls](/no-bake-high-fiber-energy-balls-recipe/), it binds the whole thing together and adds 7 grams of protein per couple of spoons. Whisked into [a peanut sauce for lettuce wraps](/chicken-veggie-lettuce-wraps-peanut-sauce/), it turns a plate of vegetables into something people finish.
+That's the actual use case. Peanut butter on whole grain toast with beans and seeds does the flavor work while the bread and the beans do the fiber work. Stirred into [no-bake oat and flax energy balls](/no-bake-high-fiber-energy-balls-recipe/), it binds the whole thing together and adds 7 grams of protein per couple of spoons. Whisked into a peanut sauce for lettuce wraps, it turns a plate of vegetables into something people finish.
 
 ## How to get more protein out of the jar
 

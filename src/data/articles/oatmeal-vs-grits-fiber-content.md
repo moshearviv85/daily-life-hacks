@@ -52,7 +52,7 @@ Against the FDA's [28-gram Daily Value](https://www.fda.gov/food/nutrition-facts
 
 One warning about dry numbers, because this is where most comparison articles quietly fall apart. USDA's own dry-grits records don't agree with each other: [white enriched grits](https://fdc.nal.usda.gov/food-details/171654/nutrients) list 4.6 grams per 100 grams while [yellow grits](https://fdc.nal.usda.gov/food-details/171670/nutrients) list 1.6. Same product category, triple the spread. The cooked-cup values are far more consistent, so that's the comparison worth trusting.
 
-The phrase *one cup cooked* deserves suspicion too. Grits can be served almost pourable or firm enough to hold a spoon upright, and water changes the volume, not the fiber. If breakfast starts with the dry container, [how much oatmeal counts as a serving](/how-much-oatmeal-is-a-serving/) gives you the gram weight before the measuring cup starts freelancing.
+The phrase *one cup cooked* deserves suspicion too. Grits can be served almost pourable or firm enough to hold a spoon upright, and water changes the volume, not the fiber. If breakfast starts with the dry container, how much oatmeal counts as a serving gives you the gram weight before the measuring cup starts freelancing.
 
 ## Why do oats beat corn here?
 

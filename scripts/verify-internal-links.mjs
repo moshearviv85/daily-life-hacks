@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { INDEX_PRUNE_SLUGS, normalizeIndexPath } from "../src/content/index-prune.js";
 import { buildRenderedArticleLinkGraph } from "./lib/rendered-article-link-graph.mjs";
 
 const ROOT = process.cwd();
@@ -71,6 +72,46 @@ function shouldIgnoreHref(href) {
   if (!value || value.startsWith("#")) return true;
   if (/^(?:mailto|tel|javascript|data):/i.test(value)) return true;
   return false;
+}
+
+function decodeXml(value) {
+  return value
+    .replaceAll("&amp;", "&")
+    .replaceAll("&quot;", '"')
+    .replaceAll("&apos;", "'");
+}
+
+function sitemapPathnames() {
+  const xmlPath = path.join(DIST_DIR, "sitemap-0.xml");
+  if (!fs.existsSync(xmlPath)) {
+    fail("Missing dist/sitemap-0.xml. Run \"npm run build\" before this check.");
+  }
+  const paths = new Set();
+  const xml = fs.readFileSync(xmlPath, "utf8");
+  for (const match of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+    try {
+      paths.add(new URL(decodeXml(match[1])).pathname);
+    } catch {
+      // Ignore a malformed sitemap location; the technical SEO tests cover the XML.
+    }
+  }
+  return paths;
+}
+
+function pruneSlugFromHref(href, baseUrl) {
+  const value = href.trim();
+  if (!value || value.startsWith("#")) return null;
+  if (/^(?:mailto|tel|javascript|data):/i.test(value)) return null;
+  let target;
+  try {
+    target = new URL(value, baseUrl);
+  } catch {
+    return null;
+  }
+  if (target.origin !== SITE_ORIGIN) return null;
+  const slug = normalizeIndexPath(target.pathname);
+  if (!slug || slug.includes("/") || slug.includes(".")) return null;
+  return INDEX_PRUNE_SLUGS.has(slug) ? slug : null;
 }
 
 function isIgnoredPath(pathname) {
@@ -156,6 +197,32 @@ function main() {
     process.exit(1);
   }
 
+  const sitemapPaths = sitemapPathnames();
+  const pruneLinkFailures = [];
+  for (const { filePath, html, canonicalPath } of documents) {
+    const pagePath = canonicalPath || "/";
+    if (!sitemapPaths.has(pagePath)) continue;
+    const source = path.relative(DIST_DIR, filePath).replaceAll("\\", "/");
+    const sourceUrl = new URL(pagePath, SITE_ORIGIN);
+    for (const match of html.matchAll(/(?:href|url)\s*[=:]\s*(["'])([^"']+)\1/gi)) {
+      const slug = pruneSlugFromHref(match[2], sourceUrl);
+      if (!slug) continue;
+      pruneLinkFailures.push({ source, href: match[2], slug });
+    }
+  }
+  if (pruneLinkFailures.length) {
+    console.error(
+      `[verify-internal-links] Found ${pruneLinkFailures.length} link(s) from indexable sitemap pages to INDEX_PRUNE_SLUGS:`,
+    );
+    for (const failure of pruneLinkFailures.slice(0, 50)) {
+      console.error(`- ${failure.source}: href="${failure.href}" (${failure.slug})`);
+    }
+    if (pruneLinkFailures.length > 50) {
+      console.error(`- ...and ${pruneLinkFailures.length - 50} more`);
+    }
+    process.exit(1);
+  }
+
   const articleGraph = buildRenderedArticleLinkGraph(documents);
   const weakRendered = articleGraph.rows.filter((row) => row.mainInbound <= 1);
   const zeroContextual = articleGraph.rows.filter((row) => row.contextualInbound === 0);
@@ -176,7 +243,7 @@ function main() {
   }
 
   console.log(
-    `[verify-internal-links] OK: checked ${internalAnchorsChecked} internal anchor(s) across ${htmlFiles.length} HTML file(s); indexable canonical targets=${indexableCanonicalPaths.size}`,
+    `[verify-internal-links] OK: checked ${internalAnchorsChecked} internal anchor(s) across ${htmlFiles.length} HTML file(s); indexable canonical targets=${indexableCanonicalPaths.size}; sitemap pages with no pruned-slug links=${sitemapPaths.size}`,
   );
   console.log(
     `[verify-internal-links] Article graph: ${articleGraph.articleCount} indexable article(s); rendered orphans=0; rendered inbound <=1=${weakRendered.length}; contextual inbound=0=${zeroContextual.length}`,

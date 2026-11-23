@@ -73,6 +73,6 @@ So a refrozen bag of green beans is safe and softer. That's a soup ingredient no
 
 If you'd rather not deal with the question at all, cook the thawed vegetables and freeze the finished dish. FSIS says after cooking raw foods which were previously frozen, it is safe to freeze the cooked foods, which is the whole logic behind [freezer meal prep](/freezer-meal-prep-ideas-for-beginners/).
 
-For the underlying storage times, [how long frozen vegetables last](/how-long-do-frozen-vegetables-last-in-the-freezer/) covers the 8 to 12 month quality window, and [food storage temperature rules](/food-storage-temperature-rules/) covers the 40F and 0F targets that make all of this work. If it's cooked food rather than a vegetable bag you're weighing up, [how long leftovers last](/how-long-do-leftovers-last-in-the-fridge/) is the one you want.
+For the underlying storage times, how long frozen vegetables last covers the 8 to 12 month quality window, and food storage temperature rules covers the 40F and 0F targets that make all of this work. If it's cooked food rather than a vegetable bag you're weighing up, how long leftovers last is the one you want.
 
 <!-- sources: USDA FSIS Freezing and Food Safety; USDA FSIS Danger Zone 40F-140F; USDA FSIS Leftovers and Food Safety -->

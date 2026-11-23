@@ -46,7 +46,7 @@ Per 100 grams, yes. Oats are 13.15 and eggs are 12.56. Per bowl, no, and this is
 
 Nobody eats 100 grams of dry oats. A normal bowl is 60 grams, which lands at 7.9 grams of protein. Two eggs are also about 100 grams, and they land at 12.6. So the eggs win the breakfast most people actually eat while losing the chart.
 
-The reason is water. Eggs are mostly water and oats are bone dry until you cook them, so any per-100-gram comparison quietly rewards the dry thing. We laid the whole ranking out with that caveat attached in [foods highest in protein per 100 grams](/foods-highest-in-protein-per-100-grams/), and the egg side is in [how much protein is in two eggs](/how-much-protein-in-two-eggs/).
+The reason is water. Eggs are mostly water and oats are bone dry until you cook them, so any per-100-gram comparison quietly rewards the dry thing. We laid the whole ranking out with that caveat attached in [foods highest in protein per 100 grams](/foods-highest-in-protein-per-100-grams/), and the egg side is in how much protein is in two eggs.
 
 The useful conclusion isn't that one beats the other. It's that a bowl of oats on its own is a sixth of your day's protein, and treating it as a protein breakfast is optimistic.
 
@@ -78,8 +78,8 @@ If you want the fiber-versus-fiber comparison against the other classic hot cere
 
 Add things that carry protein instead of things that carry topping.
 
-Two tablespoons of peanut butter add 7.1 grams for 14 cents. Swapping the water for a cup of whole milk adds 7.7 grams for 26 cents. Do both and a 60 gram bowl goes from 7.9 grams to about 22.7 grams of protein for roughly 57 cents, which is a genuinely respectable breakfast and still under a dollar. The peanut butter numbers in full are in [how much protein is in peanut butter](/how-much-protein-in-peanut-butter/).
+Two tablespoons of peanut butter add 7.1 grams for 14 cents. Swapping the water for a cup of whole milk adds 7.7 grams for 26 cents. Do both and a 60 gram bowl goes from 7.9 grams to about 22.7 grams of protein for roughly 57 cents, which is a genuinely respectable breakfast and still under a dollar. The peanut butter numbers in full are in [how much protein is in peanut butter](/foods-highest-in-protein-per-100-grams/).
 
-Two eggs alongside takes the same bowl to 20.5 grams. Sounds odd until you've had [a savory oatmeal bowl with an egg on it](/savory-oatmeal-bowls-with-eggs-and-avocado/), and then it doesn't. How many grams the meal should be aiming at is worked out in [how much protein for breakfast](/how-much-protein-for-breakfast/), and the portion question has its own page: [how much oatmeal is a serving](/how-much-oatmeal-is-a-serving/).
+Two eggs alongside takes the same bowl to 20.5 grams. Sounds odd until you've had a savory oatmeal bowl with an egg on it, and then it doesn't. How many grams the meal should be aiming at is worked out in how much protein for breakfast, and the portion question has its own page: how much oatmeal is a serving.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/breakfast-staples-per-dollar-2026.csv -->

@@ -53,7 +53,7 @@ The beans aren't the problem here. The rice is.
 
 FDA's [Bad Bug Book](https://www.fda.gov/food/foodborne-pathogens/bad-bug-book-second-edition) describes two forms of Bacillus cereus illness. The second one comes from a toxin the bacterium forms in the food itself, and FDA notes it most often affects rice and other starchy foods, causing nausea and vomiting within a half hour to 6 hours. FDA's own consumer advice on it is straightforward: one of the most important things you can do is keep food refrigerated at 40 degrees F or lower, because at higher temperatures B. cereus can form spores.
 
-This is why leftover rice has a reputation that leftover beans don't. It isn't superstition and it isn't a reason to stop making rice. It's a reason to cool it fast, which is the same habit that makes [good fried rice](/how-to-cool-rice-for-fried-rice/) possible in the first place.
+This is why leftover rice has a reputation that leftover beans don't. It isn't superstition and it isn't a reason to stop making rice. It's a reason to cool it fast, which is the same habit that makes [good fried rice](/how-to-use-leftover-rice-creative-ideas/) possible in the first place.
 
 ## How long do rice and beans last in the fridge?
 
@@ -61,7 +61,7 @@ Three to four days. [FoodSafety.gov advises using refrigerated leftovers within 
 
 Shallow containers, not the pot. A deep pot of hot food put straight in the fridge can spend hours getting to a safe temperature in the middle, and in the meantime it warms everything around it. Split it into flat containers, lid them once they stop steaming, and label them. A pot of leftovers with no date on it becomes a guessing game by Wednesday, and guessing is how good food gets thrown out.
 
-Same logic as the canned side of things, which we covered in [how long opened canned beans last](/how-long-do-opened-canned-beans-last/).
+Same logic as the canned side of things, which we covered in [how long opened canned beans last](/canned-beans-vs-dried-beans-nutrition/).
 
 ## Can you freeze rice and beans?
 
@@ -75,8 +75,8 @@ Spread it out. Depth is the enemy, not volume.
 
 Tip the pot into a couple of wide dishes or a sheet pan and the same food that would take three hours to cool takes twenty minutes. Rice cools especially fast this way because it's mostly surface. Then lid it and refrigerate it. Do not leave the sheet pan out to cool completely first, since that's how a twenty minute plan quietly becomes a two hour one.
 
-For a batch cook that's meant to last the week, cool and portion in one motion straight off the stove. That's the version that actually survives contact with a real Sunday, and it's how the routine in [meal prep on a budget for one person](/how-to-meal-prep-on-a-budget-for-one-person/) is built.
+For a batch cook that's meant to last the week, cool and portion in one motion straight off the stove. That's the version that actually survives contact with a real Sunday, and it's how the routine in meal prep on a budget for one person is built.
 
-One pot of rice and beans is $1.28 of food and about 95 grams of protein. Losing that to a forgotten stovetop isn't a disaster, it's just annoying, and a shallow container fixes it. If you're planning to eat this often, we went through the daily version in [can you eat rice and beans every day](/can-you-eat-rice-and-beans-everyday/) and the bean choice in [what beans to use for red beans and rice](/what-beans-for-red-beans-and-rice/).
+One pot of rice and beans is $1.28 of food and about 95 grams of protein. Losing that to a forgotten stovetop isn't a disaster, it's just annoying, and a shallow container fixes it. If you're planning to eat this often, we went through the daily version in [can you eat rice and beans every day](/can-you-eat-rice-and-beans-everyday/) and the bean choice in what beans to use for red beans and rice.
 
 <!-- numbers-source: public/data/protein-day-cost-2026.csv, public/data/protein-per-dollar-2026.csv -->

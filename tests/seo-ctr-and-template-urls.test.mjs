@@ -4125,11 +4125,12 @@ test("shopping list builder title puts the recipe count in the SERP", () => {
     false,
     "shopping list builder title should not stay on the soft scale-and-combine SERP",
   );
-  assert.match(page, /\{recipes\.length\} real recipes\. One grocery list\./);
+  assert.match(page, /\{publishedRecipeArticles\.length\} real recipes\. One grocery list\./);
   assert.match(
     page,
-    /Choose from \$\{recipes\.length\} recipes, change the servings, and combine their ingredients into one printable shopping list\./,
+    /Choose from \$\{publishedRecipeArticles\.length\} recipes, change the servings, and combine their ingredients into one printable shopping list\./,
   );
+  assert.match(page, /!isIndexPruned\(article\.id\)/);
   assert.match(page, /<h1[^>]*>Several Recipes\. One List\. Nobody Needs Five Notes\.<\/h1>/);
   assert.equal(INDEX_KEEP_PATHS.has("tools/shopping-list-builder"), true);
   assert.equal(INDEX_PRUNE_SLUGS.has("tools/shopping-list-builder"), false);

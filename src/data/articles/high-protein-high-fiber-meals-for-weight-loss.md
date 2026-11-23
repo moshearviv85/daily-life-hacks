@@ -93,7 +93,7 @@ Here's a realistic rotation if you cook a few times and reuse leftovers hard:
 - **Dinner:** Sheet-pan chicken and vegetables over sweet potato, or lentil stew.
 - **Repeat with sauces swapped:** peanut-lime one day, lemon-tahini the next, salsa and hot sauce when you can't be bothered.
 
-You're not meal-prepping a personality. You're stacking leftovers so Tuesday dinner already exists. If you want the solo-household version of that system, the component method in our [budget meal prep for one](/how-to-meal-prep-on-a-budget-for-one-person/) guide is the same idea with less waste.
+You're not meal-prepping a personality. You're stacking leftovers so Tuesday dinner already exists. If you want the solo-household version of that system, the component method in our budget meal prep for one guide is the same idea with less waste.
 
 ## Portions that stay human
 

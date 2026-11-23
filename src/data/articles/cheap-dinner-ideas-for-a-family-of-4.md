@@ -52,7 +52,7 @@ All of them, with room left over. The most expensive pot on that list is $3.76, 
 
 That gap is the whole lesson. A four pound bag of dry pinto beans costs $3.97 and holds about twenty servings, so a bag covers five family dinners of beans for less than one pound of ground beef. Beef ran $6.75 a pound and returned 11.5 grams of protein per dollar against 97.9 for the pintos, a spread we measured across 49 foods in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/).
 
-So the practical shortlist for a family week looks like this. One bean pot, one lentil pot, one pasta night, one chicken night. Four pots, roughly $10 total, and nobody eats the same thing twice. The same plates costed per person sit in [cheap dinner ideas](/cheap-dinner-ideas-cost-per-serving/), and the pots that reheat best are in [cheap healthy meals with leftovers](/cheap-healthy-meals-with-leftovers/). [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is the only skill involved, and it's mostly waiting.
+So the practical shortlist for a family week looks like this. One bean pot, one lentil pot, one pasta night, one chicken night. Four pots, roughly $10 total, and nobody eats the same thing twice. The same plates costed per person sit in cheap dinner ideas, and the pots that reheat best are in cheap healthy meals with leftovers. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is the only skill involved, and it's mostly waiting.
 
 ## Which cheap family dinner gives the most protein?
 
@@ -76,7 +76,7 @@ Change the shape, not the budget. Beans in a bowl of soup are a hard sell. The s
 
 The slaw line matters here too. Cabbage is $0.78 a pound and adds crunch, which is the texture most kids are actually objecting to when they say they don't like something soft. Carrots at $1.58 for two pounds do the same job raw.
 
-If you want dinners built around this problem specifically, [high fiber dinner recipes for picky kids](/high-fiber-dinner-recipes-picky-kids/) is the version with recipes attached, and a pot of [three bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) tends to survive contact with a skeptical table.
+If you want dinners built around this problem specifically, [high fiber dinner recipes for picky kids](/high-fiber-dinner-recipes-picky-kids/) is the version with recipes attached, and a pot of three bean chili tends to survive contact with a skeptical table.
 
 ## What these pot prices leave out
 

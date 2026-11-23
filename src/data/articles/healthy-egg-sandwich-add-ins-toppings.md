@@ -50,7 +50,7 @@ faq:
 ---
 The average Tuesday morning usually involves me staring into the fridge, wondering if a third cup of coffee counts as a food group. If you're tired of the same rubbery egg on a white roll, it's time to look at what else is in your crisper drawer.
 
-Making a better breakfast isn't about some massive lifestyle overhaul. It's about grabbing the bag of spinach before it turns into green slime in the back of the fridge. You want something that tastes like a real meal and survives the trip from plate to mouth. We ran the [full macronutrient breakdown on an egg sandwich](/macronutrient-breakdown-healthy-egg-sandwich/) if you want to compare a specific build.
+Making a better breakfast isn't about some massive lifestyle overhaul. It's about grabbing the bag of spinach before it turns into green slime in the back of the fridge. You want something that tastes like a real meal and survives the trip from plate to mouth. We ran the full macronutrient breakdown on an egg sandwich if you want to compare a specific build.
 
 ## Green stuff that isn't just decoration
 

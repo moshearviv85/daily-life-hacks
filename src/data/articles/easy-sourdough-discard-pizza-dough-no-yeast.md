@@ -87,7 +87,7 @@ After mixing, the dough should hold together without dry pockets. It can feel sl
 
 Roll the center thin and even, about 1/8 inch where practical. Leaving a thick lump in the middle while thinning the edges is how you get a pizza that's simultaneously burned and underdone. An impressive achievement, but an unhelpful one.
 
-This is a quick crust. Baking powder supplies the immediate lift. It doesn't need the long kneading or fermentation schedule of [same-day sourdough pizza dough](/how-to-make-sourdough-pizza-dough-same-day/).
+This is a quick crust. Baking powder supplies the immediate lift. It doesn't need the long kneading or fermentation schedule of same-day sourdough pizza dough.
 
 ## How much sauce and cheese?
 

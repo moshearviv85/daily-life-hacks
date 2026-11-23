@@ -80,4 +80,4 @@ This is probably the most important rule for any sheet pan meal. If you pile eve
 
 And parchment paper? Not strictly necessary, but it makes cleanup so much easier. You just pull it off the pan and toss it, which is exactly the kind of tiny choice that makes weeknight cooking feel less annoying.
 
-This recipe is not trying to win a chef competition. It's trying to get fiber and protein on the table before anyone asks for cereal. It's simple, it's tasty, and it gets the job done. And if the rotation needs a break from poultry entirely, the [best way to cook pork chops](/best-way-to-cook-pork-chops/) runs on the same low-effort, high-payoff energy.
+This recipe is not trying to win a chef competition. It's trying to get fiber and protein on the table before anyone asks for cereal. It's simple, it's tasty, and it gets the job done. And if the rotation needs a break from poultry entirely, the best way to cook pork chops runs on the same low-effort, high-payoff energy.

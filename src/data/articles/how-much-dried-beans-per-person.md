@@ -55,7 +55,7 @@ Then weigh out about 123 grams of dry black beans per can and you'll land in the
 
 One honest limit. That's a protein equivalence, not a cooked-volume equivalence. Our dataset weighs beans as sold, dry, and we don't measure cooked yields, so I'm not going to tell you how many cups 123 grams turns into. Weigh, cook, eyeball the pot against what a can looks like, and adjust next time.
 
-The nutrition side of the same swap, including what the canning liquid does to the fiber column, is worked out properly in [canned beans vs dried beans nutrition](/canned-beans-vs-dried-beans-nutrition/) and [how much protein is in a can of beans](/how-much-protein-in-a-can-of-beans/).
+The nutrition side of the same swap, including what the canning liquid does to the fiber column, is worked out properly in [canned beans vs dried beans nutrition](/canned-beans-vs-dried-beans-nutrition/) and how much protein is in a can of beans.
 
 ## Is cooking dry beans worth the trouble?
 
@@ -71,6 +71,6 @@ A four pound bag of pinto beans is 1814 grams for $3.97, so about 20 portions at
 
 Twenty cents a portion is the number to keep. Nothing else in the store does that. Chicken breast at 24.5 grams of protein per dollar would need about 79 cents to deliver the same 19.3 grams, and ground beef 80/20 would need about $1.68.
 
-Where beans sit against everything else on the shelf is in [the cheapest plant protein ranking](/plant-protein-per-dollar-ranked/), and which bag carries the most protein per gram is in [which dried beans have the most protein](/which-dried-beans-have-the-most-protein/). Once they're cooked, they turn into [three-bean chili](/hearty-vegetarian-chili-with-three-beans-and-corn/) or [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) without much negotiation.
+Where beans sit against everything else on the shelf is in [the cheapest plant protein ranking](/plant-protein-per-dollar-ranked/), and which bag carries the most protein per gram is in [which dried beans have the most protein](/which-dried-beans-have-the-most-protein/). Once they're cooked, they turn into three-bean chili or [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) without much negotiation.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-day-cost-2026.csv -->

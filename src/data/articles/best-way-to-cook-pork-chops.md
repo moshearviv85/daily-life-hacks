@@ -52,7 +52,7 @@ faq:
 ---
 There are a lot of ways to cook a pork chop, but let's be honest, most of them result in something dry, tough, and generally disappointing. You expect juicy, flavorful, and tender, and you get a hockey puck. It's a common kitchen tragedy, one that I've personally experienced more times than I care to admit. But it doesn't have to be that way.
 
-The reliable move is a high-heat sear for the crust, followed by a lower-heat butter baste while the center catches up. This isn't a restaurant stunt. It's simply a way to control two jobs that want different temperatures. When you've got a whole afternoon instead of twenty minutes, my [oven ribs method](/best-way-to-cook-ribs/) is the weekend version of the same idea.
+The reliable move is a high-heat sear for the crust, followed by a lower-heat butter baste while the center catches up. This isn't a restaurant stunt. It's simply a way to control two jobs that want different temperatures. When you've got a whole afternoon instead of twenty minutes, my oven ribs method is the weekend version of the same idea.
 
 The key here is temperature control and not rushing the process. You want a good sear, but you don't want to burn the outside before the inside is cooked. And that resting period at the end? Non-negotiable if you want to keep all those precious juices inside the chop where they belong.
 
@@ -140,4 +140,4 @@ If the crust is pale, the chop was damp, the pan wasn't hot enough, or the skill
 
 If the garlic burns, add it later. The cloves need the lower-heat basting stage, not the initial sear. If the butter vanishes immediately into a brown foam, pull the pan off the burner for 20 seconds and lower the heat.
 
-If your package contains one long tenderloin instead of four chops, don't force this timing onto it. Use the [sear-and-roast pork tenderloin method](/best-way-to-cook-a-pork-tenderloin/) instead. Different shape, different clock. The thermometer remains the adult in the room.
+If your package contains one long tenderloin instead of four chops, don't force this timing onto it. Use the sear-and-roast pork tenderloin method instead. Different shape, different clock. The thermometer remains the adult in the room.

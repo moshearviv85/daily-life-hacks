@@ -1,4 +1,6 @@
 ---
+import { isIndexPruned } from "../content/index-prune.js";
+
 interface ArticleSummary {
   slug: string;
   title: string;
@@ -14,7 +16,8 @@ interface Props {
   articles: ArticleSummary[];
 }
 
-const { articles } = Astro.props;
+const { articles: sourceArticles } = Astro.props;
+const articles = sourceArticles.filter((article) => !isIndexPruned(article.slug));
 const articlesJson = JSON.stringify(articles);
 ---
 

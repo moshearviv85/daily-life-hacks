@@ -47,21 +47,21 @@ Quick fine print: eggs and dairy come from the protein study only, and the fruit
 
 ## Which breakfast staple gives you the most nutrition per dollar?
 
-Flour, with the usual asterisk. Nobody eats flour for breakfast. Flour becomes breakfast, in pancakes, in [a loaf of sandwich bread you baked yourself](/easy-sandwich-bread-recipe-beginners/), in anything your grandmother would recognize. If you bake even occasionally, that $3.12 bag is quietly the most nutritious thing in your pantry per dollar, and it finishes second only to dry pinto beans in [the wider ranking of what one protein dollar buys](/one-dollar-protein-what-it-buys/). If you don't, skip to the oats.
+Flour, with the usual asterisk. Nobody eats flour for breakfast. Flour becomes breakfast, in pancakes, in a loaf of sandwich bread you baked yourself, in anything your grandmother would recognize. If you bake even occasionally, that $3.12 bag is quietly the most nutritious thing in your pantry per dollar, and it finishes second only to dry pinto beans in [the wider ranking of what one protein dollar buys](/one-dollar-protein-what-it-buys/). If you don't, skip to the oats.
 
-Oats are the real winner for people who want breakfast, not a project. At 82.4 combined grams per dollar, the canister beats peanut butter's 62.1 and lands more than ten times higher than the apples sitting next to it in the cart. Peanut butter's consolation prize is that it wins [the ranking of protein you don't have to cook](/no-cook-protein-per-dollar/) outright, though [a realistic two tablespoon serving only lands 7.1 grams of protein](/how-much-protein-in-peanut-butter/), so the per-dollar win needs a spoon to collect it.
+Oats are the real winner for people who want breakfast, not a project. At 82.4 combined grams per dollar, the canister beats peanut butter's 62.1 and lands more than ten times higher than the apples sitting next to it in the cart. Peanut butter's consolation prize is that it wins [the ranking of protein you don't have to cook](/no-cook-protein-per-dollar/) outright, though [a realistic two tablespoon serving only lands 7.1 grams of protein](/foods-highest-in-protein-per-100-grams/), so the per-dollar win needs a spoon to collect it.
 
 ## Is oatmeal actually the cheapest healthy breakfast?
 
 For something you can pour into a pot and forget about, yes. Oats deliver 46.6 grams of protein and 35.8 grams of fiber per dollar. Nothing else on this list balances the two like that, and $3.36 buys you a canister that lasts weeks.
 
-The move that makes oats feel like food instead of penance is going savory. [Savory oatmeal with eggs and avocado](/savory-oatmeal-bowls-with-eggs-and-avocado/) reads like a cafe order and costs like a pantry staple. And if morning-you refuses to cook at all, [no-bake oat and flax energy balls](/no-bake-high-fiber-energy-balls-recipe/) let night-before-you turn the number two food on this table into something you grab on the way out.
+The move that makes oats feel like food instead of penance is going savory. Savory oatmeal with eggs and avocado reads like a cafe order and costs like a pantry staple. And if morning-you refuses to cook at all, [no-bake oat and flax energy balls](/no-bake-high-fiber-energy-balls-recipe/) let night-before-you turn the number two food on this table into something you grab on the way out.
 
 ## Are eggs, milk, and yogurt still worth buying?
 
 Yes, just know what they're for. Eggs at $2.19 a dozen score 34.4 grams of protein per dollar, the best animal number at the breakfast table and second only to bone-in drumsticks once you widen the frame to [every animal protein ranked by cost](/animal-protein-per-dollar-ranked/). Whole milk rides behind at 28.5, and a $4.31 gallon is still one of the most casually underrated things in the store. Greek yogurt at 27.5 and cottage cheese at 26.3 round out the dairy case, close enough to each other that you should just buy the one you like.
 
-None of them bring fiber to the table, though. That's why the smart breakfast isn't eggs or oats, it's eggs and something from the top of the list. [A sheet pan breakfast hash with eggs](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) is that idea in one pan.
+None of them bring fiber to the table, though. That's why the smart breakfast isn't eggs or oats, it's eggs and something from the top of the list. A sheet pan breakfast hash with eggs is that idea in one pan.
 
 ## Why did fruit land at the bottom?
 

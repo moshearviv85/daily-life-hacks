@@ -56,11 +56,11 @@ Dry beans are the one thing I'd skip in a dorm. They're the best value in the wh
 
 Stop buying meals and start buying anchors. This is the single change that moves the number.
 
-A meal costs whatever the store charges for a meal. An anchor costs a fraction of that and turns into six meals. Rolled oats are $0.17 a portion. Rice is $0.09. Canned beans are $0.44 for half a can. Buy four of those, plus eggs and a jar of peanut butter, and you can eat for a week without deciding anything in advance. [The three slot plate rule](/easy-cheap-healthy-meals/) is the whole method in one paragraph.
+A meal costs whatever the store charges for a meal. An anchor costs a fraction of that and turns into six meals. Rolled oats are $0.17 a portion. Rice is $0.09. Canned beans are $0.44 for half a can. Buy four of those, plus eggs and a jar of peanut butter, and you can eat for a week without deciding anything in advance. The three slot plate rule is the whole method in one paragraph.
 
 Then be ruthless about the two aisles that quietly eat student money: single serve anything, and fresh produce you won't get to. Frozen vegetables solve the second problem. Frozen green peas returned 17.6 grams of fiber per dollar, better than any fresh fruit we priced, and they don't rot while you're at the library.
 
-For the wider version of this system, [how to eat cheap at home](/how-to-eat-cheap-at-home/) has the full portion cost table.
+For the wider version of this system, how to eat cheap at home has the full portion cost table.
 
 ## What is the cheapest high protein food for a student?
 
@@ -74,14 +74,14 @@ If you want the full ranking of what protein costs, [high protein on a budget](/
 
 Batch the one thing you can batch, and assemble the rest. A pot of rice on Sunday, a container of it in the fridge, and every canned bean you own becomes a meal in ninety seconds.
 
-Keep it to two containers, not seven. Solo cooking fails from boredom faster than from cost, which is the same failure mode we wrote about in [budget meal ideas for one](/budget-meal-ideas-for-one/). Hot sauce, lime, and a bag of shredded cabbage make the same bowl feel like a different meal three days running.
+Keep it to two containers, not seven. Solo cooking fails from boredom faster than from cost, which is the same failure mode we wrote about in budget meal ideas for one. Hot sauce, lime, and a bag of shredded cabbage make the same bowl feel like a different meal three days running.
 
-And pack lunch on class days. A packed tuna sandwich costs $1.16 against roughly ten dollars for the campus version, which is the kind of gap that pays for a textbook by midterms. There are more of those in [cheap lunch ideas](/cheap-lunch-ideas-cost-per-box/).
+And pack lunch on class days. A packed tuna sandwich costs $1.16 against roughly ten dollars for the campus version, which is the kind of gap that pays for a textbook by midterms. There are more of those in cheap lunch ideas.
 
 ## What this doesn't solve
 
 These are shelf prices from one store in July 2026, with US average prices for eggs, milk, and bananas. Campus stores charge more. We don't publish calorie figures, because our datasets don't carry a calorie column, so nothing here tells you whether a given day adds up to enough food for you.
 
-It also assumes you can store things. If your fridge is a shoebox, lean harder on the shelf stable half of the table and shop smaller, more often. For the monthly context, [grocery budget for one person per month](/grocery-budget-for-one-person-per-month/) has the benchmark numbers to check yourself against.
+It also assumes you can store things. If your fridge is a shoebox, lean harder on the shelf stable half of the table and shop smaller, more often. For the monthly context, grocery budget for one person per month has the benchmark numbers to check yourself against.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv -->

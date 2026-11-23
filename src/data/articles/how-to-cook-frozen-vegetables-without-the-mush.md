@@ -40,7 +40,7 @@ So the bag arrives pre-softened. Add the ice crystals melting into steam, add a 
 
 Shorter than you think, and by feel rather than by clock. NDSU's guidance is to cook only until tender, in a small amount of water or with steam. That's it. There's no universal minute count because a bag of peas and a bag of Brussels sprouts are not the same object.
 
-When the package gives cooking directions, use them. That's not just a quality thing. [Illinois Extension](https://extension.illinois.edu/blogs/be-smart-eat-well-get-healthy/2017-04-11-cook-frozen-vegetables) points out that frozen vegetables have been linked to Listeria recalls, that Listeria is killed by heat, and that heating food to 155F will kill the bacteria. Which is a long way of saying: don't stir a raw handful into a cold pasta salad and call it done. We went deeper on that in [do you have to cook frozen vegetables](/do-you-have-to-cook-frozen-vegetables/).
+When the package gives cooking directions, use them. That's not just a quality thing. [Illinois Extension](https://extension.illinois.edu/blogs/be-smart-eat-well-get-healthy/2017-04-11-cook-frozen-vegetables) points out that frozen vegetables have been linked to Listeria recalls, that Listeria is killed by heat, and that heating food to 155F will kill the bacteria. Which is a long way of saying: don't stir a raw handful into a cold pasta salad and call it done. We went deeper on that in [do you have to cook frozen vegetables](/can-you-refreeze-frozen-vegetables-after-thawing/).
 
 ## What is the easiest way to steam frozen vegetables?
 
@@ -68,6 +68,6 @@ For the price, yes. In our July 2026 price check, frozen green peas delivered 17
 
 *Cost figures: USDA FoodData Central nutrient values plus single-store US prices, July 2026. Full methodology at [/methodology/](/methodology/).*
 
-If you want crunch that a bag can't give you, [fresh stir fry vegetables](/high-fiber-stir-fry-vegetables/) are still the answer. And if the bag in question has been in there since a previous administration, [how long frozen vegetables last](/how-long-do-frozen-vegetables-last-in-the-freezer/) covers whether it's worth cooking at all.
+If you want crunch that a bag can't give you, [fresh stir fry vegetables](/high-fiber-stir-fry-vegetables/) are still the answer. And if the bag in question has been in there since a previous administration, [how long frozen vegetables last](/can-you-refreeze-frozen-vegetables-after-thawing/) covers whether it's worth cooking at all.
 
 <!-- sources: NDSU Extension FN187 Freezing Vegetables; NCHFP Blanching Vegetables and Thawing and Preparing Foods for Serving; Illinois Extension Cook Frozen Vegetables; FDA Refrigerator Thermometers, Cold Facts about Food Safety. Cost numbers: public/data/produce-fiber-per-dollar-ranked-2026.csv -->

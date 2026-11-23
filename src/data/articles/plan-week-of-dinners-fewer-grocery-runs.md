@@ -39,15 +39,15 @@ Most meal planning advice starts with recipes. Pick five, make a list, go buy it
 
 Organize your week by perishability instead. Fish, fresh herbs, and leafy greens go on Monday and Tuesday. That's when they're at their best. Midweek is for the hardy crew: carrots, cabbage, potatoes, broccoli, cauliflower. These can sit in the crisper for five or six days without drama. By Thursday and Friday, you're leaning on the pantry and freezer. Canned beans, frozen shrimp, dried pasta, eggs.
 
-This shelf life cascade means nothing goes bad before you get to it. It also means Friday's dinner doesn't require a sad emergency trip because the spinach turned to soup. Push the same logic out a few weeks and [one monthly haul covers the shelf-stable layer for about $23](/how-to-grocery-shop-for-a-month-on-a-budget/), leaving the short runs for perishables only.
+This shelf life cascade means nothing goes bad before you get to it. It also means Friday's dinner doesn't require a sad emergency trip because the spinach turned to soup. Push the same logic out a few weeks and one monthly haul covers the shelf-stable layer for about $23, leaving the short runs for perishables only.
 
 ## Overlap your ingredients on purpose
 
 Here's the part most people skip. If you plan five unrelated dinners, your shopping list has thirty different ingredients and you'll use half of each. A head of cabbage. A single lemon. A quarter cup of sour cream.
 
-Instead, choose two or three anchor ingredients and use them across multiple nights. Roast a big batch of chicken thighs on Sunday. Monday they're on a salad. Wednesday they go into quesadillas. Friday they're chopped into fried rice with whatever vegetables survived the week. If you'd rather anchor the week with a lazy weekend project, the [best way to cook ribs](/best-way-to-cook-ribs/) gives you Sunday dinner plus leftover meat that slides into sandwiches and fried rice for days.
+Instead, choose two or three anchor ingredients and use them across multiple nights. Roast a big batch of chicken thighs on Sunday. Monday they're on a salad. Wednesday they go into quesadillas. Friday they're chopped into fried rice with whatever vegetables survived the week. If you'd rather anchor the week with a lazy weekend project, the best way to cook ribs gives you Sunday dinner plus leftover meat that slides into sandwiches and fried rice for days.
 
-Same logic applies to grains and vegetables. Cook a pot of rice once, eat it three ways. Buy one big bag of broccoli and split it between a stir fry and a sheet pan dinner. Overlapping ingredients is how you plan a week of dinners with fewer grocery runs without eating the exact same plate every night. The flavors change even when the base stays similar. If you need candidates for those anchor nights, these [quick dinner recipes](/quick-dinner-recipes/) slot straight into the rotation.
+Same logic applies to grains and vegetables. Cook a pot of rice once, eat it three ways. Buy one big bag of broccoli and split it between a stir fry and a sheet pan dinner. Overlapping ingredients is how you plan a week of dinners with fewer grocery runs without eating the exact same plate every night. The flavors change even when the base stays similar. If you need candidates for those anchor nights, these quick dinner recipes slot straight into the rotation.
 
 ## Keep one emergency meal on permanent standby
 

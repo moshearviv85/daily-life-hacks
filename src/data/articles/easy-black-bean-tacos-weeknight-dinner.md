@@ -68,7 +68,7 @@ Tacos don't have to automatically mean browning ground beef or chopping a mounta
 You open a couple of cans, warm the beans with a few standard pantry spices, and set out some tortillas. The entire operation goes from the cupboard to the table in about 15 minutes. It's not fussy, it's not complicated, and it gets the job done perfectly.
 ## Why Black Beans Belong in Tacos
 
-Black beans are an unsung hero of the pantry. They are incredibly cheap, shelf-stable, and bring a heavy dose of both protein and fiber to the table: [a single 15.5 ounce can runs about 26.5 grams of protein](/how-much-protein-in-a-can-of-beans/), so two cans feed a table without anyone missing the beef. The dry bag is cheaper still, which is why beans keep clustering near the top of the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) and the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). 
+Black beans are an unsung hero of the pantry. They are incredibly cheap, shelf-stable, and bring a heavy dose of both protein and fiber to the table: [a single 15.5 ounce can runs about 26.5 grams of protein](/canned-beans-vs-dried-beans-nutrition/), so two cans feed a table without anyone missing the beef. The dry bag is cheaper still, which is why beans keep clustering near the top of the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) and the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/). 
 
 The real trick here is mashing about half of the beans right in the skillet while they heat up. This gives you a mixture that is thick and creamy enough to actually stay inside the tortilla, but still has enough whole beans to provide texture. You aren't trying to make authentic, slow-cooked refried beans from scratch; you're just heating and seasoning them quickly. The cumin and chili powder do all the heavy lifting for the flavor profile.
 ## Keeping the Meal Flexible
@@ -104,7 +104,7 @@ If your tortillas are fragile, double them only when you need to. Two tortillas 
 
 You don't need seven little restaurant bowls. Put shredded cabbage in one bowl, open the salsa jar, cut a lime into wedges, and call the job finished. Pickled onions are excellent if you already have them. Crumbled cheese or a spoonful of crema makes the tacos richer, while chopped cilantro adds freshness for the people who don't think it tastes like soap.
 
-For a brighter topping that takes five minutes, make this [black bean and corn salsa](/quick-black-bean-and-corn-salsa-no-cooking-required/). It turns the tacos into a fuller dinner and uses the same lime, onion, and cilantro you probably already pulled out.
+For a brighter topping that takes five minutes, make this black bean and corn salsa. It turns the tacos into a fuller dinner and uses the same lime, onion, and cilantro you probably already pulled out.
 
 Keep wet toppings off the tacos until the last second. A warm tortilla can handle thick beans. It cannot survive ten minutes under watery salsa while everyone finds a charger and wanders back to the table.
 

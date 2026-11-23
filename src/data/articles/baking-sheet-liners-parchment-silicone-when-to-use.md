@@ -84,7 +84,7 @@ If you're trying to catch a drip, GE's own allowance is to put a sheet on a lowe
 
 ## Making the choice simple
 
-Use parchment for almost all baking. Cookies, cakes, breads like this [high-fiber gluten-free loaf that holds together](/high-fiber-gluten-free-bread-recipe/), and roasting vegetables when you want easy cleanup and browning. Definitely use it for this [sheet pan breakfast hash with eggs and sweet potatoes](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/), because nobody wants to scrub baked egg off bare metal. Keep it at or under your brand's rating, and keep it away from the broiler.
+Use parchment for almost all baking. Cookies, cakes, breads like this [high-fiber gluten-free loaf that holds together](/high-fiber-gluten-free-bread-recipe/), and roasting vegetables when you want easy cleanup and browning. Definitely use it for this sheet pan breakfast hash with eggs and sweet potatoes, because nobody wants to scrub baked egg off bare metal. Keep it at or under your brand's rating, and keep it away from the broiler.
 
 Use a silicone mat for sticky jobs and for cookies you want thick and round. Candy, caramel, macarons, kneading, rolling.
 

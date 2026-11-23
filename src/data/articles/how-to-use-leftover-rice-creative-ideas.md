@@ -50,7 +50,7 @@ Instead of shoving the container to the back of the fridge to let it slowly turn
 
 This is the undisputed champion of leftover rice. In fact, cold, day-old rice works significantly better for this than fresh rice because it's slightly dried out, meaning it won't turn into a sticky, mushy paste in the pan. 
 
-Heat a little oil in a wide pan, toss in whatever random vegetables you need to get rid of, maybe scramble an egg in the corner, and then throw in the cold rice with a splash of soy sauce. You do not need an authentic wok to pull this off. A large skillet and high heat are more than enough. The real secret is [preheating the skillet properly](/how-to-preheat-skillet-even-browning/) so the rice crisps instead of steaming into a clump. Toss in some leftover chicken or tofu if you have it. Dinner is done in 10 minutes. Rice-heavy cooking is the backbone of budget cuisines all over the world, and these [budget meal ideas from the Philippines](/budget-meal-ideas-philippines/) show just how far one pot of rice can stretch.
+Heat a little oil in a wide pan, toss in whatever random vegetables you need to get rid of, maybe scramble an egg in the corner, and then throw in the cold rice with a splash of soy sauce. You do not need an authentic wok to pull this off. A large skillet and high heat are more than enough. The real secret is [preheating the skillet properly](/how-to-preheat-skillet-even-browning/) so the rice crisps instead of steaming into a clump. Toss in some leftover chicken or tofu if you have it. Dinner is done in 10 minutes. Rice-heavy cooking is the backbone of budget cuisines all over the world, and these budget meal ideas from the Philippines show just how far one pot of rice can stretch.
 ## Bulk Up a Soup
 
 If you are making a simple broth-based soup, dropping a scoop of leftover rice right into the pot makes it instantly heartier. Add it to some chicken broth with chopped carrots and celery. Let it simmer just long enough to heat through. You can even stir a beaten egg directly into the hot broth at the very end for a quick, filling egg-drop style soup that feels comforting and uses up your leftovers effortlessly.
@@ -72,7 +72,7 @@ The main rule of rice is food safety. [USDA's leftovers guidance](https://www.fs
 
 Don't leave a deep pot of rice on the counter while dinner, dishes, and television happen around it. Spread the extra rice in a shallow container so heat escapes faster, then refrigerate it within two hours. USDA recommends shallow containers for faster, more even cooling. A [CDC report on a fried-rice outbreak](https://www.cdc.gov/mmwr/preview/mmwrhtml/00025744.htm) also explains the rice-specific problem: *Bacillus cereus* spores may survive cooking, and holding cooked rice at room temperature gives the bacteria a chance to multiply. The refrigerator isn't a time machine.
 
-The full method is in this guide to [cooling rice for fried rice](/how-to-cool-rice-for-fried-rice/). The short version is shallow, prompt, and cold. The refrigerator is doing temperature control, not performing a miracle on a steaming stockpot.
+The full method is in this guide to cooling rice for fried rice. The short version is shallow, prompt, and cold. The refrigerator is doing temperature control, not performing a miracle on a steaming stockpot.
 
 ## Reheat rice without drying it out
 
@@ -84,6 +84,6 @@ Reheat only the portion you will eat. For fried rice, the skillet heat and const
 
 Pack cooled rice flat in freezer bags, press out the air, and label the amount and date. Flat bags freeze quickly and stack without creating the freezer equivalent of unstable geology. One- and two-cup portions are useful for fried rice, soup, or a side dish.
 
-Reheat from frozen with a little water, or thaw overnight in the refrigerator. If rice appears often in your weekly prep, the [cooked-grain storage guide](/how-to-properly-store-cooked-grains-for-meal-prep/) covers quinoa, barley, and farro too.
+Reheat from frozen with a little water, or thaw overnight in the refrigerator. If rice appears often in your weekly prep, the cooked-grain storage guide covers quinoa, barley, and farro too.
 
 <!-- sources: USDA FSIS, "Leftovers and Food Safety," https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety (2-hour refrigeration limit; 3-4 refrigerated days; 165 F reheating); CDC MMWR, "Bacillus cereus Food Poisoning Associated with Fried Rice at Two Child Day Care Centers -- Virginia, 1993," https://www.cdc.gov/mmwr/preview/mmwrhtml/00025744.htm (B. cereus spores may survive cooking; room-temperature holding permits growth) -->

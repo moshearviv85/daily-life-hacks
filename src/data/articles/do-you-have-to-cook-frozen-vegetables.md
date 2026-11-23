@@ -34,7 +34,7 @@ Only partly. The step is blanching, and the [National Center for Home Food Prese
 
 [University of Minnesota Extension](https://extension.umn.edu/preserving-and-preparing/how-blanch-vegetables-safe-preservation) is more direct about the safety half: fresh vegetables should be blanched before freezing to kill bacteria that might be on them, and many bacteria are destroyed at the temperature of boiling water or steam.
 
-Look at the times, though. NCHFP's blanching table, which we walk through in [how to freeze fresh vegetables at home](/how-to-freeze-fresh-vegetables-at-home/), gives 3 minutes for green beans, 1.5 minutes for green peas, 2 minutes for sliced carrots. That is not dinner. That is a quick scald designed to switch off enzymes, and it's why the same guidance says frozen vegetables need less cooking time than fresh ones rather than none at all.
+Look at the times, though. NCHFP's blanching table, which we walk through in [how to freeze fresh vegetables at home](/can-you-refreeze-frozen-vegetables-after-thawing/), gives 3 minutes for green beans, 1.5 minutes for green peas, 2 minutes for sliced carrots. That is not dinner. That is a quick scald designed to switch off enzymes, and it's why the same guidance says frozen vegetables need less cooking time than fresh ones rather than none at all.
 
 ## Why does freezing not make them safe to eat as is?
 
@@ -58,14 +58,14 @@ None of this is a reason to avoid the freezer aisle. It's a reason to run the ba
 
 Almost nothing, except for the cold dishes.
 
-Hot uses are already fine. Soup, chili, stir fry, a sheet pan, a casserole, anything that hits real heat. That covers most of what a bag of frozen vegetables is for, and [cooking them without the mush](/how-to-cook-frozen-vegetables-without-the-mush/) is the harder problem.
+Hot uses are already fine. Soup, chili, stir fry, a sheet pan, a casserole, anything that hits real heat. That covers most of what a bag of frozen vegetables is for, and [cooking them without the mush](/can-you-refreeze-frozen-vegetables-after-thawing/) is the harder problem.
 
-The uses to fix are the cold ones. Frozen peas stirred straight into a pasta salad. Frozen corn scattered over a [black bean salsa](/quick-black-bean-and-corn-salsa-no-cooking-required/). Frozen edamame thrown in a grain bowl to defrost on the way to work. All of those want a two-minute cook and a cool-down first.
+The uses to fix are the cold ones. Frozen peas stirred straight into a pasta salad. Frozen corn scattered over a black bean salsa. Frozen edamame thrown in a grain bowl to defrost on the way to work. All of those want a two-minute cook and a cool-down first.
 
 * **Microwave for two minutes, spread on a plate, chill.** Fastest fix, works for peas, corn, and edamame.
 * **Boil for a minute, then ice water.** Better color, one more pot to wash.
 * **Read the bag.** If a package says the product is ready to eat, that's the manufacturer taking responsibility. Most vegetable bags carry cooking directions instead.
 
-And if the bag has been sitting on the counter thawing while you decided, that's a separate call. FSIS says to handle thawed items like any perishable food, and we walk through the refreezing rules in [can you refreeze frozen vegetables after thawing](/can-you-refreeze-frozen-vegetables-after-thawing/). For how long the unopened bag was good in the first place, [frozen vegetable shelf life](/how-long-do-frozen-vegetables-last-in-the-freezer/) has the storage numbers, and [frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/) covers when each version earns its place in the cart.
+And if the bag has been sitting on the counter thawing while you decided, that's a separate call. FSIS says to handle thawed items like any perishable food, and we walk through the refreezing rules in [can you refreeze frozen vegetables after thawing](/can-you-refreeze-frozen-vegetables-after-thawing/). For how long the unopened bag was good in the first place, frozen vegetable shelf life has the storage numbers, and [frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/) covers when each version earns its place in the cart.
 
 <!-- sources: NCHFP Blanching Vegetables; University of Minnesota Extension Blanching Vegetables; USDA FSIS Freezing and Food Safety; Illinois Extension Cook Frozen Vegetables; FDA Refrigerator Thermometers, Cold Facts about Food Safety -->

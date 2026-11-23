@@ -45,11 +45,11 @@ Which also means the result is fragile. Eggs are priced here at the July 2026 na
 
 The yogurt does, which is the fact that surprises people.
 
-A dozen large eggs comes to about 600 grams of edible egg, so at 12.56 grams per 100 grams you're bringing home roughly 75 grams of protein for $2.19, or [about 12.6 grams in the two egg version of breakfast](/how-much-protein-in-two-eggs/). That's about a day and a half of the FDA's 50 gram Daily Value. The 32 ounce tub of Greek yogurt holds 907 grams at 10.19 grams per 100 grams, which is about 92 grams of protein for $3.36.
+A dozen large eggs comes to about 600 grams of edible egg, so at 12.56 grams per 100 grams you're bringing home roughly 75 grams of protein for $2.19, or [about 12.6 grams in the two egg version of breakfast](/foods-highest-in-protein-per-100-grams/). That's about a day and a half of the FDA's 50 gram Daily Value. The 32 ounce tub of Greek yogurt holds 907 grams at 10.19 grams per 100 grams, which is about 92 grams of protein for $3.36.
 
 So the tub wins on total protein and loses on efficiency. If you're buying for the week rather than optimizing per dollar, one tub covers more meals than one carton. If you're counting every dollar, the carton is the better rate.
 
-Eggs do have one advantage the numbers hide: they turn into dinner. A [sheet pan breakfast hash with eggs and sweet potatoes](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) or a pan of [cauliflower fried rice with eggs](/cauliflower-fried-rice-with-eggs/) is a real meal built on 40 cents of protein. Yogurt mostly stays yogurt.
+Eggs do have one advantage the numbers hide: they turn into dinner. A sheet pan breakfast hash with eggs and sweet potatoes or a pan of [cauliflower fried rice with eggs](/how-to-use-leftover-rice-creative-ideas/) is a real meal built on 40 cents of protein. Yogurt mostly stays yogurt.
 
 ## When is Greek yogurt the better buy?
 
@@ -57,7 +57,7 @@ When you need protein without a stove.
 
 That's not a small category. Yogurt is protein you can eat at a desk, in a car, or at 6 AM before your hands work properly. A [high fiber yogurt parfait](/high-fiber-yogurt-parfait-for-breakfast/) takes 90 seconds and no pan. Eggs need heat, a skillet, and cleanup, and the whole 1.3 times advantage evaporates the moment you skip breakfast because you couldn't face the frying pan.
 
-Yogurt also does jobs eggs can't. It thickens sauces, it stands in for sour cream, it goes savory with cucumber and lemon or sweet with berries. If you keep a [no-cook ricotta and berry toast bar](/ricotta-berry-toast-bar-no-cook/) style breakfast in rotation, yogurt slides right in.
+Yogurt also does jobs eggs can't. It thickens sauces, it stands in for sour cream, it goes savory with cucumber and lemon or sweet with berries. If you keep a no-cook ricotta and berry toast bar style breakfast in rotation, yogurt slides right in.
 
 The tiebreaker isn't the ranking. It's which container is empty at the end of the week.
 

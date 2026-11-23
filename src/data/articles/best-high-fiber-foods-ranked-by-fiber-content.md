@@ -103,7 +103,7 @@ Produce plays a different game, and the honest winners are smaller than the head
 
 Avocado led our fresh list at 6.7 grams per 100 grams. Raspberries came in at 6.5, blackberries at 5.3, chopped kale at 4.1, brussels sprouts at 3.8. At the bottom, russet potatoes managed 1.3 and yellow onions 1.7. Blueberries, which get talked about like a superfood, finished the whole 53-food list near the floor at 2.4 grams per 100 grams.
 
-None of this makes produce pointless. It makes it a different tool. Berries and vegetables come with water and volume, which is exactly what beans don't, and eating a lot of them is easy in a way that eating a lot of dry bran is not. The full fresh breakdown is in [the cheapest high-fiber vegetables and fruits](/produce-fiber-per-dollar-ranked/), and if you want the fruit-only version, [the best high fiber fruits](/best-high-fiber-fruits-for-weight-loss-list/) covers it.
+None of this makes produce pointless. It makes it a different tool. Berries and vegetables come with water and volume, which is exactly what beans don't, and eating a lot of them is easy in a way that eating a lot of dry bran is not. The full fresh breakdown is in [the cheapest high-fiber vegetables and fruits](/produce-fiber-per-dollar-ranked/), and if you want the fruit-only version, the best high fiber fruits covers it.
 
 ## Which foods combined fiber and low price in this study?
 

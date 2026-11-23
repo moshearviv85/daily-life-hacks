@@ -129,7 +129,7 @@ Homemade sandwich bread stales faster than the grocery foam brick. That's normal
 
 Day one and two: airtight bag or bread box at room temperature. Keep it away from the sunny window and the stove.
 
-Past day three: freeze. Slice first. Pull what you need. Toast from frozen. For the full storage playbook, use [how to store homemade bread](/how-to-store-homemade-bread/). If mold is your recurring villain, [keeping bread fresh longer without mold](/how-to-keep-bread-fresh-longer-without-mold/) covers the fridge myth and the freezer method in more detail.
+Past day three: freeze. Slice first. Pull what you need. Toast from frozen. For the full storage playbook, use how to store homemade bread. If mold is your recurring villain, [keeping bread fresh longer without mold](/how-to-keep-sandwiches-from-getting-soggy/) covers the fridge myth and the freezer method in more detail.
 
 Never refrigerate the loaf "to keep it fresh." The fridge speeds staling. Soft bread turns dry and sad in a hurry. Counter for a couple days. Freezer after that.
 

@@ -68,9 +68,9 @@ Worth flagging where that price comes from. Most prices on this site are Walmart
 
 Nothing worth counting. Eggs don't appear in our 53-food [fiber dataset](/fiber-per-dollar-cheapest-high-fiber-foods/) at all, because there's no fiber in them to rank.
 
-That's the actual argument for what goes on the plate next to them. Two eggs plus a 60 gram bowl of rolled oats takes the meal from 12.6 grams of protein to about 20.5, and adds 6.1 grams of fiber that the eggs can't provide. [Savory oatmeal bowls with eggs](/savory-oatmeal-bowls-with-eggs-and-avocado/) is that combination done properly, and it sounds strange until you try it once.
+That's the actual argument for what goes on the plate next to them. Two eggs plus a 60 gram bowl of rolled oats takes the meal from 12.6 grams of protein to about 20.5, and adds 6.1 grams of fiber that the eggs can't provide. Savory oatmeal bowls with eggs is that combination done properly, and it sounds strange until you try it once.
 
-Two slices of whole wheat toast add 6.5 grams of protein and 3.1 grams of fiber for about 18 cents, which is the cheapest upgrade available to an egg sandwich. Half a can of black beans adds 13.3 grams of protein and a serious fiber contribution for around 44 cents, and turns two eggs into [a breakfast hash](/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes/) that actually holds until lunch.
+Two slices of whole wheat toast add 6.5 grams of protein and 3.1 grams of fiber for about 18 cents, which is the cheapest upgrade available to an egg sandwich. Half a can of black beans adds 13.3 grams of protein and a serious fiber contribution for around 44 cents, and turns two eggs into a breakfast hash that actually holds until lunch.
 
 ## How to get the most out of a carton
 

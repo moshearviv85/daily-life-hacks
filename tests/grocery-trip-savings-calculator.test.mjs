@@ -33,7 +33,8 @@ test("grocery trip calculator has canonical structured data and supporting links
   assert.match(source, /"@type": "FAQPage"/);
   assert.match(source, /href="\/tools\/grocery-unit-price-calculator\/"/);
   assert.match(source, /href="\/tools\/grocery-budget-calculator\/"/);
-  assert.match(source, /href="\/is-driving-to-cheaper-grocery-store-worth-it\/"/);
+  assert.doesNotMatch(source, /is-driving-to-cheaper-grocery-store-worth-it/);
+  assert.match(source, /full grocery-trip guide/);
 });
 
 test("tools hub promotes the grocery trip calculator", async () => {

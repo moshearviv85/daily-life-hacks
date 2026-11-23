@@ -48,7 +48,7 @@ Check the ingredient list for the "ose" family: sucrose, glucose, and maltose. A
 
 ## Better options for your summer bowl
 
-You don't have to eat dry lettuce to avoid the sugar trap. Creamy dressings like Ranch, Caesar, and Blue Cheese are actually quite low in sugar because they rely on fat for flavor, and a [homemade vegan Caesar](/healthy-homemade-vegan-caesar-salad-dressing/) keeps that trade in your hands instead of a factory's. While they are higher in calories, they won't give you the sugar crash that a sweet vinaigrette might. It is a trade-off that usually keeps you full longer.
+You don't have to eat dry lettuce to avoid the sugar trap. Creamy dressings like Ranch, Caesar, and Blue Cheese are actually quite low in sugar because they rely on fat for flavor, and a homemade vegan Caesar keeps that trade in your hands instead of a factory's. While they are higher in calories, they won't give you the sugar crash that a sweet vinaigrette might. It is a trade-off that usually keeps you full longer.
 
 If you want to stick with a clear dressing, look for Greek or traditional Italian. These usually lead with soybean or olive oil and vinegar, using herbs like oregano and garlic for the heavy lifting instead of sweeteners. They provide that zingy hit of acid that makes a summer salad refreshing without making your teeth ache.
 

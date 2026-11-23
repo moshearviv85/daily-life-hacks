@@ -34,7 +34,7 @@ A high-fiber yogurt parfait is a bookkeeping problem more than a recipe problem.
 
 That gap is the whole article. Most parfait recipes quote a single fiber number and then hand you a granola whose label serving is 1/4 cup, which is not the amount anyone pours.
 
-If granola's joining the jar, use this [guide to choosing granola that isn't dessert](/how-to-choose-granola-not-dessert/) before breakfast quietly turns into a cookie with yogurt underneath it.
+If granola's joining the jar, use this guide to choosing granola that isn't dessert before breakfast quietly turns into a cookie with yogurt underneath it.
 
 ## How much fiber is in a yogurt parfait?
 
