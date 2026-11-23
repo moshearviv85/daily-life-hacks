@@ -29,6 +29,13 @@ import { join } from "node:path";
 import { buildArticleToc } from "../content/article-toc.mjs";
 import { getFlagshipEngagement } from "../content/flagship-engagement.mjs";
 import {
+  AUTHOR_ID,
+  AUTHOR_NAME,
+  AUTHOR_PATH,
+  AUTHOR_URL,
+  resolveAuthorName,
+} from "../content/author";
+import {
   MEAL_PROTEIN_COST,
   getMealProteinCost,
   normalizeMealProteinCostSlug,
@@ -241,19 +248,20 @@ const publisherSchema = {
   },
 };
 
-const authorName = article.data.author ?? "David Miller";
-const articleAuthor = authorName === "Daily Life Hacks Team"
-  ? {
-      "@type": "Organization",
-      name: authorName,
-      url: `${siteUrl}/about/`,
-    }
-  : {
-      "@type": "Person",
-      "@id": `${siteUrl}/about/#david-miller`,
-      name: authorName,
-      url: `${siteUrl}/about/`,
-    };
+const authorName = resolveAuthorName(article.data.author);
+const authorHref = authorName === AUTHOR_NAME ? AUTHOR_PATH : "/about/";
+const articleAuthor =
+  authorName === AUTHOR_NAME
+    ? {
+        "@type": "Person",
+        "@id": AUTHOR_ID,
+        name: AUTHOR_NAME,
+        url: AUTHOR_URL,
+      }
+    : {
+        "@type": "Person",
+        name: authorName,
+      };
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -534,6 +542,8 @@ const newsletterSignup = newsletterSignupForArticle({
   jsonLd={publishedSchemas}
   robots={robotsMeta}
   ogType="article"
+  author={authorName}
+  authorUrl={authorName === AUTHOR_NAME ? AUTHOR_URL : undefined}
 >
   <Header />
   <main
@@ -643,20 +653,16 @@ const newsletterSignup = newsletterSignupForArticle({
               class="text-sm mb-4 flex items-center gap-2"
               style="color: var(--label-color);"
             >
-            {
-              article.data.author && (
-                <>
-                  <a
-                    href="/about/"
-                    rel="author"
-                    class="font-medium text-[var(--text-color)] hover:text-[#F29B30] transition-colors"
-                  >
-                    {article.data.author}
-                  </a>
-                  <span>•</span>
-                </>
-              )
-            }
+            <>
+              <a
+                href={authorHref}
+                rel="author"
+                class="font-medium text-[var(--text-color)] hover:text-[#F29B30] transition-colors"
+              >
+                {authorName}
+              </a>
+              <span>•</span>
+            </>
             <span>
               Published <time datetime={isoDay(releaseDate)}>{publishedLabel}</time>
             </span>
@@ -718,20 +724,16 @@ const newsletterSignup = newsletterSignupForArticle({
         class="text-sm mt-3 flex items-center gap-2"
         style="color: var(--label-color);"
       >
-        {
-          article.data.author && (
-            <>
-              <a
-                href="/about/"
-                rel="author"
-                class="font-medium text-[var(--text-color)] hover:text-[#F29B30] transition-colors"
-              >
-                {article.data.author}
-              </a>
-              <span>•</span>
-            </>
-          )
-        }
+        <>
+          <a
+            href={authorHref}
+            rel="author"
+            class="font-medium text-[var(--text-color)] hover:text-[#F29B30] transition-colors"
+          >
+            {authorName}
+          </a>
+          <span>•</span>
+        </>
         <span>
           Published <time datetime={isoDay(releaseDate)}>{publishedLabel}</time>
         </span>

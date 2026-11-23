@@ -111,7 +111,10 @@ const LEGACY_GONE_PATHS = new Set([
   "sample-page/feed",
   "usual-excuses-made-by-high-conflict-parents",
   "admin/*",
-  "author/*",
+  // WordPress /author/ and /author/admin/ stay gone. The live profile
+  // /author/david-miller/ is intentionally absent from this set.
+  "author",
+  "author/admin",
   "blog",
   "category/*",
   "comments/*",

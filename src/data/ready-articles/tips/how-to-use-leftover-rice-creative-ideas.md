@@ -13,7 +13,7 @@ image: /images/how-to-use-leftover-rice-creative-ideas-main.jpg
 imageAlt: How to Use Leftover Rice with Creative Ideas - a vibrant bowl of vegetable
   fried rice and crispy rice cakes
 date: 2026-02-27
-author: Daily Life Hacks Team
+author: "David Miller"
 featured: false
 editorsPick: false
 whatsHot: false

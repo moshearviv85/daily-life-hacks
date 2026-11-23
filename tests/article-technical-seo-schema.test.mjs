@@ -18,12 +18,24 @@ const huggingfaceDatasetUrl =
   "https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar";
 
 test("Article and Recipe schemas share the visible author and organization publisher", () => {
-  assert.match(articlePage, /const authorName = article\.data\.author \?\? "David Miller"/);
+  const authorModule = readFileSync(
+    new URL("../src/content/author.ts", import.meta.url),
+    "utf8",
+  );
+  assert.match(authorModule, /export const AUTHOR_NAME = "David Miller"/);
+  assert.match(authorModule, /\/author\/david-miller\//);
+  assert.match(authorModule, /Daily Life Hacks Team/);
+  assert.match(articlePage, /const authorName = resolveAuthorName\(article\.data\.author\)/);
+  assert.match(articlePage, /const authorHref = authorName === AUTHOR_NAME \? AUTHOR_PATH : "\/about\/"/);
   assert.match(
     articlePage,
-    /"@type": "Person",[\s\S]*?"@id": `\$\{siteUrl\}\/about\/#david-miller`/,
+    /"@type": "Person",[\s\S]*?"@id": AUTHOR_ID,[\s\S]*?name: AUTHOR_NAME,[\s\S]*?url: AUTHOR_URL/,
   );
-  assert.match(articlePage, /name: authorName,[\s\S]*?url: `\$\{siteUrl\}\/about\/`/);
+  assert.doesNotMatch(
+    articlePage,
+    /Daily Life Hacks Team/,
+    "The team fallback belongs in resolveAuthorName, not a second Organization author",
+  );
   assert.equal(
     [...articlePage.matchAll(/author: articleAuthor/g)].length,
     2,
@@ -34,16 +46,12 @@ test("Article and Recipe schemas share the visible author and organization publi
     3,
     "Recipe, Article, and Dataset must use the same publisher entity",
   );
-  assert.match(
-    articlePage,
-    /authorName === "Daily Life Hacks Team"[\s\S]*?"@type": "Organization"[\s\S]*?name: authorName/,
-  );
   assert.match(articlePage, /"@id": `\$\{siteUrl\}\/#organization`/);
   assert.match(articlePage, /logo: \{[\s\S]*?"@type": "ImageObject"[\s\S]*?logo\.png/);
-  assert.match(
-    articlePage,
-    /<a[\s\S]*?href="\/about\/"[\s\S]*?rel="author"[\s\S]*?\{article\.data\.author\}[\s\S]*?<\/a>/,
-    "The visible byline must resolve to the same author page as the Person schema",
+  assert.equal(
+    [...articlePage.matchAll(/href=\{authorHref\}[\s\S]*?rel="author"[\s\S]*?\{authorName\}/g)].length,
+    2,
+    "Both visible bylines must use the same author name and profile URL",
   );
 });
 
@@ -211,6 +219,10 @@ test("flagship CSV landing pages exist and catalog Dataset helpers stay distinct
   assert.match(datasetsRegistry, /export function buildDatasetSchema/);
   assert.match(datasetsRegistry, /export function datasetDistributionPath/);
   assert.match(datasetsRegistry, /name: "David Miller"/);
+  assert.match(
+    datasetsRegistry,
+    /url: "https:\/\/www\.daily-life-hacks\.com\/author\/david-miller\/"/,
+  );
   assert.match(datasetsRegistry, /creditText: DATASET_CREDIT_TEXT/);
   assert.match(datasetsRegistry, /temporalCoverage: "2026-07\/2026-09"/);
   assert.match(

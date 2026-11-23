@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+import { formatReleaseDate, getReleaseDate, getReleaseTimestamp, isReleased } from "../../content/release";
+import { isIndexPruned } from "../../content/index-prune.js";
+import {
+  AUTHOR_DESCRIPTION,
+  AUTHOR_ID,
+  AUTHOR_JOB_TITLE,
+  AUTHOR_KNOWS_ABOUT,
+  AUTHOR_NAME,
+  AUTHOR_PAGE_ID,
+  AUTHOR_SITE_URL,
+  AUTHOR_URL,
+  resolveAuthorName,
+} from "../../content/author";
+
+const title = "David Miller | Daily Life Hacks";
+const description =
+  "David Miller is the pen name behind Daily Life Hacks. He publishes grocery cost research and nutrition-per-dollar studies with the calculation rows.";
+
+const articles = (await getCollection("articles"))
+  .filter((article) => isReleased(article))
+  .filter((article) => !isIndexPruned(article.id))
+  .filter((article) => resolveAuthorName(article.data.author) === AUTHOR_NAME)
+  .sort((a, b) => getReleaseTimestamp(b) - getReleaseTimestamp(a));
+
+const authorSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": AUTHOR_PAGE_ID,
+    url: AUTHOR_URL,
+    name: AUTHOR_NAME,
+    description,
+    inLanguage: "en-US",
+    mainEntity: { "@id": AUTHOR_ID },
+    breadcrumb: { "@id": `${AUTHOR_URL}#breadcrumb` },
+    isPartOf: { "@id": `${AUTHOR_SITE_URL}/#website` },
+    publisher: { "@id": `${AUTHOR_SITE_URL}/#organization` },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${AUTHOR_URL}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${AUTHOR_SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: AUTHOR_NAME, item: AUTHOR_URL },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": AUTHOR_ID,
+    name: AUTHOR_NAME,
+    url: AUTHOR_URL,
+    mainEntityOfPage: { "@id": AUTHOR_PAGE_ID },
+    jobTitle: AUTHOR_JOB_TITLE,
+    description: AUTHOR_DESCRIPTION,
+    worksFor: { "@id": `${AUTHOR_SITE_URL}/#organization` },
+    knowsAbout: [...AUTHOR_KNOWS_ABOUT],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${AUTHOR_URL}#articles`,
+    name: `Articles by ${AUTHOR_NAME}`,
+    numberOfItems: articles.length,
+    itemListOrder: "https://schema.org/ItemListOrderDescending",
+    itemListElement: articles.map((article, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: article.data.title,
+      url: `${AUTHOR_SITE_URL}/${article.id}/`,
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  jsonLd={authorSchema}
+  author={AUTHOR_NAME}
+  authorUrl={AUTHOR_URL}
+>
+  <Header />
+  <main class="max-w-3xl mx-auto px-4 py-12 md:py-16">
+    <nav class="text-sm mb-6" style="color: var(--muted-color);" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-[#F29B30] transition-colors">Home</a>
+      <span class="mx-1">/</span>
+      <span style="color: var(--text-color);">{AUTHOR_NAME}</span>
+    </nav>
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-8" style="color: var(--heading-color);">
+      {AUTHOR_NAME}
+    </h1>
+
+    <div class="article-content space-y-6 text-lg" style="color: var(--text-color);">
+      <p>
+        David Miller is a pen name. I use it for privacy, the same way plenty of writers do, and I'd rather say so plainly than let you assume otherwise.
+      </p>
+      <p>
+        I write and edit Daily Life Hacks. I'm not a chef, registered dietitian, or medical professional, and I won't borrow one of those titles. <strong>Daily Life Hacks is the publisher of record</strong> for every data study on this site. The datasets are published under the site's name rather than a byline.
+      </p>
+      <p>
+        What I actually publish is grocery cost research. Pick a nutrient, usually protein or fiber, pull the grams from USDA FoodData Central, and divide by what the edible amount costs. Bureau of Labor Statistics average prices when that item is tracked. A dated shelf price when it isn't. That's the nutrition-per-dollar method: the rows and the price basis go on the page, so you can check the ranking instead of taking the byline's word for it.
+      </p>
+      <p>
+        The <a href="/methodology/" class="underline" style="color: #F29B30;">methodology</a> is the rulebook, including the unit conversions and the part where a bone-in price gets the refuse percentage pulled out. The <a href="/about/" class="underline" style="color: #F29B30;">about page</a> is the longer version of who this site is for. The studies themselves live on the <a href="/data/" class="underline" style="color: #F29B30;">data page</a>. If a number looks wrong, <a href="/contact/" class="underline" style="color: #F29B30;">send the page and the figure</a>.
+      </p>
+
+      <h2 id="articles" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        Articles ({articles.length})
+      </h2>
+      <ul class="space-y-3 list-none pl-0">
+        {
+          articles.map((article) => {
+            const published = getReleaseDate(article);
+            return (
+              <li class="border-b pb-3" style="border-color: var(--border-color);">
+                <a
+                  href={`/${article.id}/`}
+                  class="font-semibold hover:text-[#F29B30] transition-colors"
+                  style="color: var(--heading-color);"
+                >
+                  {article.data.title}
+                </a>
+                <p class="text-sm mt-1" style="color: var(--label-color);">
+                  <span class="capitalize">{article.data.category}</span>
+                  <span> · </span>
+                  <time datetime={published.toISOString().slice(0, 10)}>
+                    {formatReleaseDate(published)}
+                  </time>
+                </p>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

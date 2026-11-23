@@ -756,7 +756,7 @@ def build_package() -> tuple[dict, list[str]]:
             },
             {
                 "title": "David Miller",
-                "path": f"{SITE}/about/",
+                "path": f"{SITE}/author/david-miller/",
                 "role": "author",
                 "organization": "Daily Life Hacks",
             },
