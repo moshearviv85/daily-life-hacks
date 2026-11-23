@@ -1033,7 +1033,7 @@ test("bran muffin title leads with high fiber bran muffins", () => {
     page.excerpt.length <= 160,
     `bran muffin meta too long: ${page.excerpt.length}`,
   );
-  assert.match(raw, /^date: 2025-12-28$/m);
+  assert.match(raw, /^date: 2026-04-28$/m);
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 });
 
@@ -2162,7 +2162,7 @@ test("high fiber fast food title leads with Chipotle 25g and Subway 19g", () => 
     false,
     "high fiber fast food title should not be the old best orders SERP",
   );
-  assert.match(raw, /^date: 2026-01-21$/m);
+  assert.match(raw, /^date: 2026-04-28$/m);
   assert.match(raw, /^dateModified: 2026-09-30$/m);
 
   assert.match(page.excerpt, /Chipotle veggie bowl 25g/);
