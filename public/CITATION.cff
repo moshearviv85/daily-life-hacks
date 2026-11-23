@@ -1,0 +1,61 @@
+cff-version: 1.2.0
+message: >-
+  If you use this data, cite the organizational author below and link to
+  https://www.daily-life-hacks.com/methodology/ so readers can check the
+  priced month and the row-level sources. The original Daily Life Hacks
+  selection, arrangement, calculations, field descriptions, and explanatory
+  material are licensed under Creative Commons Attribution 4.0 International.
+  Upstream facts and third-party material keep their own status and terms.
+  Full scope: https://www.daily-life-hacks.com/data-reuse/
+title: Daily Life Hacks Food Value Data
+type: dataset
+version: "2026.3"
+date-released: "2026-07-31"
+abstract: >-
+  US grocery prices paired with USDA nutrient values, covering fiber per
+  dollar, protein per dollar, protein quality adjusted with DIAAS, daily menu
+  costing, and category rankings. Nutrient values come from USDA FoodData
+  Central where a row names an FDC id. Prices are US national figures: BLS
+  Average Price data where the item is tracked, retailer listings otherwise.
+  The priced month recorded across those price_basis fields is July 2026.
+  Rankings are as-purchased, with USDA refuse removed where the row says so.
+  The original Daily Life Hacks contribution is licensed under Creative
+  Commons Attribution 4.0 International. Source facts and third-party material
+  are not relicensed.
+license: CC-BY-4.0
+authors:
+  - name: Daily Life Hacks
+    website: "https://www.daily-life-hacks.com"
+contact:
+  - name: Daily Life Hacks
+    website: "https://www.daily-life-hacks.com/contact/"
+url: "https://www.daily-life-hacks.com/methodology/"
+keywords:
+  - food prices
+  - nutrition
+  - protein per dollar
+  - fiber per dollar
+  - grocery costs
+  - food economics
+  - USDA FoodData Central
+  - BLS average prices
+  - budget nutrition
+identifiers:
+  - type: url
+    value: "https://www.daily-life-hacks.com/methodology/"
+    description: Methodology, priced-month rules, and correction policy.
+  - type: url
+    value: "https://www.daily-life-hacks.com/data/"
+    description: Dataset catalog listing every published CSV.
+references:
+  - type: database
+    title: FoodData Central
+    authors:
+      - name: >-
+          U.S. Department of Agriculture, Agricultural Research Service
+    url: "https://fdc.nal.usda.gov/"
+  - type: database
+    title: Consumer Price Index Average Price Data
+    authors:
+      - name: "U.S. Bureau of Labor Statistics"
+    url: "https://www.bls.gov/cpi/data.htm"

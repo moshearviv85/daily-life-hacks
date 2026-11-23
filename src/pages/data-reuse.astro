@@ -2,7 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { DATA_LICENSE_URL, HUGGINGFACE_DATASET_URL } from "../content/datasets";
+import {
+  DATA_LICENSE_URL,
+  DATA_VERSION,
+  HUGGINGFACE_DATASET_URL,
+  ZENODO_DOI,
+} from "../content/datasets";
 
 const siteUrl = "https://www.daily-life-hacks.com";
 const pageUrl = `${siteUrl}/data-reuse/`;
@@ -38,6 +43,8 @@ const schemas = [
 ];
 
 const linkStyle = "color: #F29B30;";
+const zenodoDoi = ZENODO_DOI.trim();
+const doiUrl = /^10\.\d{4,}\/\S+$/.test(zenodoDoi) ? `https://doi.org/${zenodoDoi}` : "";
 ---
 
 <BaseLayout title={title} description={description} canonicalURL={pageUrl} jsonLd={schemas}>
@@ -157,7 +164,29 @@ const linkStyle = "color: #F29B30;";
           <a href="/methodology/" class="underline" style={linkStyle}>Methodology</a>
           explains how the calculations were built and where the inputs came from.
         </li>
+        <li>
+          <a href="/CITATION.cff" class="underline" style={linkStyle}>CITATION.cff</a>
+          is the machine-readable citation for the collection. The author is the organization Daily Life Hacks.
+        </li>
       </ul>
+
+      <h2 id="how-to-cite" class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
+        How to cite
+      </h2>
+      <p>
+        Cite the collection as an organizational dataset. Use the methodology page, which is the stable description of the priced month and the row-level sources.
+      </p>
+      <pre><code>Daily Life Hacks. (2026). Daily Life Hacks Food Value Data (Version {DATA_VERSION}) [Data set]. https://www.daily-life-hacks.com/methodology/</code></pre>
+      {
+        doiUrl ? (
+          <p>
+            DOI:{" "}
+            <a href={doiUrl} class="underline" style={linkStyle} rel="noopener" target="_blank">
+              {zenodoDoi}
+            </a>
+          </p>
+        ) : null
+      }
 
       <h2 class="text-2xl font-bold mt-10 mb-4" style="color: var(--heading-color);">
         No warranty
