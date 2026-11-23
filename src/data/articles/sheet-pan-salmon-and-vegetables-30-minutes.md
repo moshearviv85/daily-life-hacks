@@ -100,6 +100,8 @@ This sheet pan salmon and vegetables recipe is for the nights when flipping thin
 
 Salmon cooks fast and doesn't need much beyond olive oil, salt, and a little dried herb. Broccoli, zucchini, and cherry tomatoes roast happily at the same high heat. Salmon also shows up in our [plain-English selenium foods guide](/selenium-containing-foods-easy-ways/) alongside eggs, chicken, and beans. Dinner doesn't need a mineral-themed costume to count.
 
+If the pan starts smoking, check [smoke points for roasting oils](/cooking-oils-smoke-points-best-uses/) before you blame the salmon.
+
 Starting the vegetables 10 minutes early is what makes the timing work. The broccoli gets crispy edges right as the salmon finishes. Send everything in at once and you get raw vegetables or dry fish. The same staggering runs one-pan lemon herb chicken and veggies when you want poultry.
 ## Picking the Right Salmon and Veggies
 

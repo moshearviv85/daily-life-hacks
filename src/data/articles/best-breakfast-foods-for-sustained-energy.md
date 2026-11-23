@@ -79,9 +79,9 @@ That doesn't mean you have to banish a donut from your life forever. But if you 
 
 ## Breakfast combinations that take five minutes
 
-Spoon plain Greek yogurt into a bowl, add rolled oats and berries, and stop there unless you genuinely want more ingredients. Spread peanut butter on whole-grain toast and eat a banana beside it. Reheat leftover beans, add a fried egg, and wrap both in a tortilla. None of these meals needs a sunrise photoshoot.
+Spoon plain Greek yogurt into a bowl, add rolled oats and berries, and stop there unless you genuinely want more ingredients. The fiber isn't the yogurt. [Yogurt parfait fiber breakdown](/high-fiber-yogurt-parfait-for-breakfast/) counts the oats, berries, and seeds. Spread peanut butter on whole-grain toast and eat a banana beside it. Reheat leftover beans, add a fried egg, and wrap both in a tortilla. None of these meals needs a sunrise photoshoot.
 
-For mornings without cooking, portion yogurt and oats the night before or keep boiled eggs ready in the refrigerator. The savory oatmeal bowl guide is useful when sweet oatmeal has started to feel like mandatory breakfast wallpaper.
+For mornings without cooking, portion yogurt and oats the night before or keep boiled eggs ready in the refrigerator. The savory oatmeal bowl guide is useful when sweet oatmeal has started to feel like mandatory breakfast wallpaper. If you want seeds instead of oats, [savory chia breakfast bowls](/savory-chia-seed-recipes-breakfast/) skip the sweet default.
 
 ## How to read the breakfast label
 

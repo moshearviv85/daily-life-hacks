@@ -56,7 +56,7 @@ Also, nobody has thirty quiet minutes to cook a fibrous feast at 6:30 AM. If you
 
 ## How much fiber should you eat at breakfast?
 
-There is no official breakfast quota. The FDA's fiber Daily Value is [28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), and the National Academies Adequate Intake is [25 grams for women 19 to 50 and 38 grams for men](https://www.nationalacademies.org/cdn/materials/9fb9fae6-337c-4b7c-9821-2c81d1f65ad0). About 9 grams at breakfast is a third of that Daily Value, which already beats a muffin.
+There is no official breakfast quota. The FDA's fiber Daily Value is [28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), and the National Academies Adequate Intake is [25 grams for women 19 to 50 and 38 grams for men](https://www.nationalacademies.org/cdn/materials/9fb9fae6-337c-4b7c-9821-2c81d1f65ad0). About 9 grams at breakfast is a third of that Daily Value, which already beats a bakery muffin. Sunday's [weekend bran muffins you can grab on the way out](/high-fiber-bran-muffins-that-taste-good/) are the batch that clears it.
 
 A cup of cooked oatmeal is [4 grams of fiber](https://fdc.nal.usda.gov/food-details/173905/nutrients) (234 grams at 1.7 grams per 100 grams). Dried chia is [34.4 grams of fiber per 100 grams](https://fdc.nal.usda.gov/food-details/170554/nutrients), so a 12-gram spoon is about 4 grams, not 5. A cup of raspberries is [8 grams](https://fdc.nal.usda.gov/food-details/167755/nutrients) (123 grams at 6.5 grams per 100 grams). Stack oatmeal with the berries and you're at 12.
 
@@ -110,7 +110,7 @@ Portion it into jars so grab-and-go is literal. If the texture freaks you out, b
 
 ## A breakfast burrito that secretly has beans in it
 
-Savory breakfasts are allowed. Scramble two eggs with a handful of spinach, warm half a cup of black beans, and wrap it in a whole wheat tortilla with salsa. The beans are the fiber. A cup of cooked black beans weighs 172 grams, so a half cup is about 7.5 grams of fiber at [8.7 grams per 100 grams](https://fdc.nal.usda.gov/food-details/173735/nutrients). The tortilla has to earn anything beyond that on its own label. Calling the whole wrap 8 to 10 grams was the tortilla doing unpaid work.
+Savory breakfasts are allowed. For a savory chia take, see [savory chia breakfasts without the pudding](/savory-chia-seed-recipes-breakfast/). Scramble two eggs with a handful of spinach, warm half a cup of black beans, and wrap it in a whole wheat tortilla with salsa. The beans are the fiber. A cup of cooked black beans weighs 172 grams, so a half cup is about 7.5 grams of fiber at [8.7 grams per 100 grams](https://fdc.nal.usda.gov/food-details/173735/nutrients). The tortilla has to earn anything beyond that on its own label. Calling the whole wrap 8 to 10 grams was the tortilla doing unpaid work.
 
 Beans at breakfast sound weird until you try them once. Then they just taste like a burrito you made at home for a fraction of the cafe price. Keep a can of black beans in the pantry for exactly this purpose. The savory soybean breakfast that isn't a burrito is [natto, sticky fermented soybeans](/natto-japanese-fermented-soybeans-gut-health/).
 

@@ -96,7 +96,7 @@ If the mustardy dressing is the part you keep thinking about, the crispy smashed
 
 ## Can you make pear salad ahead of time?
 
-You can do most of the work early. Toast the walnuts, crumble the cheese, and mix the dressing up to two days ahead. Store each part separately in the refrigerator, with the cooled walnuts in a dry container.
+You can do most of the work early. Toast the walnuts, crumble the cheese, and mix the dressing up to two days ahead. Two days is this salad's plan. [How long a whisked vinaigrette keeps](/how-to-store-homemade-salad-dressing-safely/) is the broader fridge clock, and it depends on what's in the jar. Store each part separately in the refrigerator, with the cooled walnuts in a dry container.
 
 Wait to slice the pears and dress the greens until you're ready to eat. If you must cut the fruit early, coat the slices with a little lemon juice and refrigerate them in a sealed container. The color may still change slightly, but they won't look like they spent the afternoon in a waiting room.
 

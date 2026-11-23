@@ -101,7 +101,7 @@ If they fall apart when you cut them, wait. Warm black bean brownies cut like we
 
 One brownie isn't a fiber strategy. A can of beans showing up in dessert *and* dinner is. When we priced staples for the [fiber per dollar study](/what-30-grams-of-fiber-costs-per-day/), dried and canned beans kept embarrassing almost everything with a pretty package. Using beans in a dessert you already wanted is just another way to stop treating fiber like a separate project.
 
-That said, don't eat half the pan because "fiber." Calories still count. Chocolate chips still count. The win is that a square of this may keep you from hunting for a second dessert twenty minutes later, not that you've canceled dessert physics.
+That said, don't eat half the pan because "fiber." Calories still count. Chocolate chips still count. The win is that a square of this may keep you from hunting for a second dessert twenty minutes later, not that you've canceled dessert physics. If that hunt turns salty, [salty crunch that isn't another chocolate square](/healthy-alternatives-potato-chips-snacking/) is the other drawer.
 
 If you're building a week of cheap fiber meals around beans, oats, cabbage, and other unglamorous winners, start with the [complete guide to eating more fiber on a budget](/what-30-grams-of-fiber-costs-per-day/). These brownies are the "I still want chocolate" chapter of that same idea.
 

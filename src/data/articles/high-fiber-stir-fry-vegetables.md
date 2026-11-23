@@ -79,7 +79,7 @@ Cut everything before the pan gets hot. Stir-frying moves quickly, and garlic wo
 
 ## How do you keep stir-fry vegetables crisp?
 
-Use the widest pan you own and heat it before adding the oil. The vegetables need contact with hot metal. If you pile four cups of broccoli into a small skillet, they'll steam in their own water and emerge with the posture of boiled laundry.
+Use the widest pan you own and heat it before adding the oil. The oil has to survive that empty hot pan. [Neutral oils with a high smoke point](/cooking-oils-smoke-points-best-uses/) won't fill the kitchen with smoke before the broccoli goes in. The vegetables need contact with hot metal. If you pile four cups of broccoli into a small skillet, they'll steam in their own water and emerge with the posture of boiled laundry.
 
 Cook in two batches if the vegetables can't sit mostly in one layer. Give the first batch a little color, move it to a plate, then cook the second. Yes, it creates one extra plate. That's still better than spending ten minutes chopping vegetables only to turn them into cafeteria garnish.
 

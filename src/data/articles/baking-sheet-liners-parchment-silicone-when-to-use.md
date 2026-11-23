@@ -69,7 +69,7 @@ Foil deserves a mention even though it isn't really a baking liner. Standard foi
 
 While we're here, kill the shiny-side myth. Reynolds says plainly that "both sides of aluminum foil reflect heat and heat foods at virtually identical rates," and the difference in appearance "is due to manufacturing, not functionality."
 
-What foil is genuinely good for is direct broiler heat, the job parchment packaging usually refuses. Brush a little oil on the foil first, because plain foil is not a nonstick surface. Chicken under that broiler is still done at [165°F](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart), not when the skin looks dramatic.
+What foil is genuinely good for is direct broiler heat, the job parchment packaging usually refuses. Brush a little oil on the foil first, because plain foil is not a nonstick surface. A finishing oil will smoke before the chicken colors. [Oils that survive broiler heat](/cooking-oils-smoke-points-best-uses/) stay quiet up there. Chicken under that broiler is still done at [165°F](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart), not when the skin looks dramatic.
 
 ## Don't line the oven itself
 

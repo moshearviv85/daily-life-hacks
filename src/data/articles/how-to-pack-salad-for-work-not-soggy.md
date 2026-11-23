@@ -39,7 +39,7 @@ You can pack salad for work without ending up with a wet pile of lunch sadness. 
 
 You have two reliable methods.
 
-The first is the separate dressing method. Pack the dry salad in a wide container and bring dressing in a small leakproof jar. This is the most foolproof setup. Pour, close the lid, shake, eat. Done.
+The first is the separate dressing method. Pack the dry salad in a wide container and bring dressing in a small leakproof jar. This is the most foolproof setup. Pour, close the lid, shake, eat. Done. That side jar has its own clock. [How long that side jar of dressing stays safe](/how-to-store-homemade-salad-dressing-safely/) depends on vinaigrette versus dairy.
 
 The second is the tall stack method. This is the mason jar salad approach, though any tall container works. Dressing goes at the bottom, sturdy ingredients sit above it, and greens stay at the top where they can pretend nothing bad is happening below.
 

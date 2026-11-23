@@ -72,6 +72,8 @@ If you don't have onions on hand, you need to create a physical barrier between 
 2. Press a piece of plastic wrap tightly against the flesh so there are no air bubbles whatsoever. 
 3. Store it in the fridge. The oil acts like a sealant, physically blocking the air from touching the delicate fruit. 
 
+Avocado oil does that job cold. For the pan, [avocado oil's smoke point and best uses](/cooking-oils-smoke-points-best-uses/) says how hot that bottle can get.
+
 ## Trick #3: The Lemon Juice Acid Wash
 
 If you have already mashed the avocado up to make guacamole, the onion trick won't work. Instead, you have to use acid. 

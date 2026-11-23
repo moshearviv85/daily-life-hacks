@@ -70,7 +70,7 @@ You don't need twelve recipes. You need a short list that hits both numbers and 
 
 **Tofu stir-fry with broccoli and brown rice.** Press the tofu, get a real sear, don't steam it into sadness. Frozen broccoli is fine. The rice is the fiber base; the tofu and any edamame you throw in cover protein.
 
-**Savory oatmeal with egg and greens.** People treat oatmeal like dessert-only. Wrong. Cook oats in broth, wilt spinach, top with a fried egg and chili crisp. Weird the first time. Normal by Thursday.
+**Savory oatmeal with egg and greens.** People treat oatmeal like dessert-only. Wrong. Chia can take that savory shift too. [Savory chia breakfasts with real protein](/savory-chia-seed-recipes-breakfast/) skip the pot of oats. Cook oats in broth, wilt spinach, top with a fried egg and chili crisp. Weird the first time. Normal by Thursday.
 
 **Chickpea salad with tuna or cottage cheese.** Canned chickpeas, chopped cucumber, lemon, olive oil. Add a can of tuna or a scoop of cottage cheese if you want the protein louder. No stove required.
 
