@@ -12,6 +12,7 @@ image: "/images/cheap-chicken-casserole-meals-large-families-main.jpg"
 imageAlt: Golden chicken and rice casserole in a glass 9x13 dish with a browned cracker topping
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

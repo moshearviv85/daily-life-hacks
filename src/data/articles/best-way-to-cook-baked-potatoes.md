@@ -11,6 +11,7 @@ image: "/images/best-way-to-cook-baked-potatoes-main.jpg"
 imageAlt: A perfectly baked russet potato is split open on a wooden board with melting butter and chives inside.
 date: 2026-05-31
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"

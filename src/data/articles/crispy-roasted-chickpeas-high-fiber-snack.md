@@ -18,6 +18,7 @@ image: /images/crispy-roasted-chickpeas-high-fiber-snack-main.jpg
 imageAlt: Bowl of golden roasted chickpeas with spices
 date: 2026-03-30
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

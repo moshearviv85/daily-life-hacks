@@ -16,6 +16,7 @@ image: "/images/air-fryer-salmon-bites-garlic-honey-glaze-main.jpg"
 imageAlt: "Sticky glazed air fryer salmon bites served over a bowl of rice with sesame seeds"
 date: 2026-04-08
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false

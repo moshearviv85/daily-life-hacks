@@ -11,6 +11,7 @@ image: "/images/healthy-homemade-dumpling-wrapper-recipe-main.jpg"
 imageAlt: A pair of hands folds a round, thin sheet of dough around a dumpling filling on a lightly floured wooden surface.
 date: 2026-04-28
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 quickAnswer: >-
   Mix whole-wheat pastry flour or a half whole-wheat blend with warm water and

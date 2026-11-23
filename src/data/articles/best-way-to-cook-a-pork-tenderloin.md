@@ -14,6 +14,7 @@ image: "/images/best-way-to-cook-a-pork-tenderloin-main.jpg"
 imageAlt: Slices of golden-brown pork tenderloin are fanned out on a white platter, garnished with rosemary and chives.
 date: 2026-06-03
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"

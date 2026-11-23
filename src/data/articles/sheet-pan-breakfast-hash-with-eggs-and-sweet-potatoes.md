@@ -12,6 +12,7 @@ image: "/images/sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes-main.jpg"
 imageAlt: A sheet pan filled with golden roasted sweet potato cubes and fried eggs topped with fresh rosemary, shot from above in bright natural light.
 date: 2026-06-17
 dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "15 min"
