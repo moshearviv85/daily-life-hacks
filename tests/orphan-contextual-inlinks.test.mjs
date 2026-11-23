@@ -316,7 +316,6 @@ test("link edits keep dateModified and add at most 40 words per article", () => 
       `${path} changed frontmatter besides the title and the David Miller author fix`,
     );
     const delta = wordCount(splitArticle(after).body) - wordCount(splitArticle(before).body);
-    const diff = git(["diff", "-U0", "origin/main", "--", path]);
     const addsSection = diff.split("\n").some((line) => /^\+\s*## /.test(line));
     // A new H2 is a content section, not a PR-44 link edit.
     if (!addsSection) {
