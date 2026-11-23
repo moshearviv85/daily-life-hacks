@@ -8,7 +8,7 @@ parentPillar: "how-to-eat-more-fiber-on-a-budget-complete-guide"
 image: "/images/best-high-fiber-foods-ranked-by-fiber-content-main.jpg"
 imageAlt: "Bowls of chia seeds, flaxseed, dry split peas, bran flakes, and dry black beans arranged in order on a wooden board"
 date: 2026-07-27
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -103,7 +103,29 @@ Produce plays a different game, and the honest winners are smaller than the head
 
 Avocado led our fresh list at 6.7 grams per 100 grams. Raspberries came in at 6.5, blackberries at 5.3, chopped kale at 4.1, brussels sprouts at 3.8. At the bottom, russet potatoes managed 1.3 and yellow onions 1.7. Blueberries, which get talked about like a superfood, finished the whole 53-food list near the floor at 2.4 grams per 100 grams.
 
-None of this makes produce pointless. It makes it a different tool. Berries and vegetables come with water and volume, which is exactly what beans don't, and eating a lot of them is easy in a way that eating a lot of dry bran is not. The full fresh breakdown is in [the cheapest high-fiber vegetables and fruits](/fiber-per-dollar-cheapest-high-fiber-foods/#produce), and if you want the fruit-only version, the best high fiber fruits covers it.
+None of this makes produce pointless. It makes it a different tool. Berries and vegetables come with water and volume, which is exactly what beans don't, and eating a lot of them is easy in a way that eating a lot of dry bran is not. The full fresh breakdown is in [the cheapest high-fiber vegetables and fruits](/fiber-per-dollar-cheapest-high-fiber-foods/#produce), and if you want the fruit-only version, the best high fiber fruits covers it. A cooked cup is a different scoreboard.
+
+## How much fiber is in a cup of cooked vegetables?
+
+Dry split peas pack 22.2 grams into 100 grams because they're dry. A cup is how these vegetables actually get eaten, and boiling lets you pack more of them into it. Every row below is boiled and drained without salt, except the sweet potato (baked, flesh only) and the acorn squash (boiled, then mashed). Fiber is that record's grams per 100 grams times USDA's cup weight, rounded to one decimal.
+
+| Vegetable | 1 cup cooked | Fiber | Record |
+|---|---|---:|---|
+| Artichoke hearts | 168 g | 9.6 g | [FDC 168386](https://fdc.nal.usda.gov/food-details/168386/nutrients) |
+| Green peas | 160 g | 8.8 g | [FDC 170420](https://fdc.nal.usda.gov/food-details/170420/nutrients) |
+| Collard greens, chopped | 190 g | 7.6 g | [FDC 170407](https://fdc.nal.usda.gov/food-details/170407/nutrients) |
+| Sweet potato, baked, flesh only | 200 g | 6.6 g | [FDC 168483](https://fdc.nal.usda.gov/food-details/168483/nutrients) |
+| Acorn squash, mashed | 245 g | 6.4 g | [FDC 169294](https://fdc.nal.usda.gov/food-details/169294/nutrients) |
+| Parsnips, sliced | 156 g | 5.6 g | [FDC 170009](https://fdc.nal.usda.gov/food-details/170009/nutrients) |
+| Broccoli, chopped | 156 g | 5.1 g | [FDC 169967](https://fdc.nal.usda.gov/food-details/169967/nutrients) |
+| Turnip greens, chopped | 144 g | 5.0 g | [FDC 170466](https://fdc.nal.usda.gov/food-details/170466/nutrients) |
+| Carrots, sliced | 156 g | 4.7 g | [FDC 170394](https://fdc.nal.usda.gov/food-details/170394/nutrients) |
+| Spinach | 180 g | 4.3 g | [FDC 168463](https://fdc.nal.usda.gov/food-details/168463/nutrients) |
+| Brussels sprouts | 156 g | 4.1 g | [FDC 169971](https://fdc.nal.usda.gov/food-details/169971/nutrients) |
+
+USDA lists artichoke hearts, parsnips, broccoli, carrots, and fresh Brussels sprouts as a half cup. Those cup weights are the half cup doubled: 84 g, 78 g, 78 g, 78 g, and 78 g. Green peas, collards, sweet potato flesh, acorn squash, turnip greens, and spinach publish a 1 cup weight directly.
+
+A medium cooked artichoke on the same record weighs 120 grams and carries 6.8 grams of fiber. The cup row is the hearts. Frozen Brussels sprouts are a separate record. Boiled from frozen, [FDC 169973](https://fdc.nal.usda.gov/food-details/169973/nutrients) lists 4.1 grams of fiber per 100 grams and a 1 cup weight of 155 grams, which is 6.4 grams per cup. The table keeps the fresh boiled sprout so the row matches the other fresh vegetables.
 
 ## Which foods combined fiber and low price in this study?
 

@@ -206,7 +206,7 @@ test("answer-first titles and excerpts keep the on-page USDA numbers", () => {
     false,
     "fiber ranking title should not be the old three-food comma-list SERP",
   );
-  assert.match(fiberRaw, /^dateModified: 2026-09-23$/m);
+  assert.match(fiberRaw, /^dateModified: 2026-11-23$/m);
   assert.match(fiberFoods.excerpt, /[Bb]est high-fiber foods/);
   assert.match(fiberFoods.excerpt, /34\.4g/);
   assert.match(fiberFoods.excerpt, /27\.3g/);
@@ -970,7 +970,7 @@ test("bran muffin title leads with high fiber bran muffins", () => {
     `bran muffin meta too long: ${page.excerpt.length}`,
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 });
 
 test("soggy sandwich title locks the fat barrier differentiator", () => {
