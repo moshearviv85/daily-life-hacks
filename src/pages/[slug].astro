@@ -50,7 +50,11 @@ import StudyNextStep from "../components/StudyNextStep.astro";
 import StudyCite from "../components/StudyCite.astro";
 import MealProteinCost from "../components/MealProteinCost.astro";
 import KitchenCalculator from "../components/KitchenCalculator.astro";
-import { newsletterSignupForArticle } from "../content/newsletter-variant.mjs";
+import {
+  ANSWER_FIRST_SLUGS,
+  earlySignupPlan,
+  newsletterSignupForArticle,
+} from "../content/newsletter-variant.mjs";
 import { contextualFlagshipLinkAllowed } from "../content/contextual-flagship-links.mjs";
 import { pickModifiedDate } from "../content/modified-date.mjs";
 
@@ -576,15 +580,6 @@ const showRatingWidget = Boolean(isCatalogRecipe && isRecipe && publishedSchemas
  * Bing already ranks these near the top. The direct answer has to be the
  * first paragraph inside <article>, immediately under the H1.
  */
-const ANSWER_FIRST_SLUGS = new Set([
-  "can-you-refreeze-frozen-vegetables-after-thawing",
-  "comparing-fiber-content-different-pizza-crusts",
-  "good-source-of-fiber-label-meaning",
-  "healthy-egg-sandwich-add-ins-toppings",
-  "high-fiber-gluten-free-bread-recipe",
-  "how-to-measure-sourdough-discard-grams",
-  "selenium-containing-foods-easy-ways",
-]);
 const answerFirst = ANSWER_FIRST_SLUGS.has(article.id);
 const newsletterSignup = newsletterSignupForArticle({
   slug: article.id,
@@ -593,6 +588,18 @@ const newsletterSignup = newsletterSignupForArticle({
   cluster: article.data.cluster,
   parentPillar: article.data.parentPillar,
 });
+const earlyPlan = flagship?.emailCapture
+  ? null
+  : earlySignupPlan({
+      slug: article.id,
+      title: article.data.title,
+      tags: article.data.tags,
+      cluster: article.data.cluster,
+      parentPillar: article.data.parentPillar,
+      body: article.body ?? "",
+      hasQuickAnswer: Boolean(article.data.quickAnswer),
+      answerFirst,
+    });
 ---
 
 <BaseLayout
@@ -906,6 +913,14 @@ const newsletterSignup = newsletterSignupForArticle({
       <div class="mb-8 rounded-xl border-l-4 border-[#F29B30] p-5" style="background-color: var(--input-bg);">
         <p class="leading-relaxed" style="color: var(--text-color);">{article.data.quickAnswer}</p>
       </div>
+    )}
+    {earlyPlan?.where === "after-quick-answer" && (
+      <Newsletter
+        variant={earlyPlan.variant}
+        placement="early"
+        articleCategory={article.data.category}
+        articleBaseSlug={article.id}
+      />
     )}
 
     <!-- Rating Preview: published Recipe pages only. Article pages must not carry aggregateRating. -->
@@ -1260,9 +1275,9 @@ const newsletterSignup = newsletterSignupForArticle({
     }
 
     <!--
-      One signup on the article. Flagship studies already render StudyEmailCapture,
-      so they do not get a second form here. Every other article gets the topic
-      offer at the end of the body, and the site footer stays bare.
+      The end form stays. A second, compact form is added earlier only when
+      earlyPlan says so. Flagship studies already render StudyEmailCapture,
+      so they do not get either form. The site footer stays bare.
     -->
     {
       !flagship?.emailCapture && (

@@ -203,3 +203,43 @@ test("rejected bodies do not call Kit", async (t) => {
   assert.equal(response.status, 400);
   assert.equal(called, false);
 });
+
+test("placement=early is stored and is not forwarded as a new Kit field", async (t) => {
+  const originalFetch = globalThis.fetch;
+  t.after(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  const fetches = [];
+  globalThis.fetch = async (url, init) => {
+    fetches.push({ url: String(url), init });
+    if (String(url) === "https://api.kit.com/v4/subscribers") {
+      return Response.json({ subscriber: { id: 41, state: "active" } });
+    }
+    return Response.json({ ok: true });
+  };
+
+  const db = makeDb();
+  const response = await post(
+    JSON.stringify({
+      email: "early-reader@example.com",
+      source: "inline",
+      placement: "early",
+      page: "/cooking-oils-smoke-points-best-uses/",
+      category: "nutrition",
+      base_slug: "cooking-oils-smoke-points-best-uses",
+    }),
+    { env: { KIT_API_KEY: "kit-test-key", DB: db } },
+  );
+
+  assert.equal(response.status, 200);
+  const kitBody = JSON.parse(fetches[0].init.body);
+  assert.equal(kitBody.fields.Placement, undefined);
+  assert.equal(kitBody.email_address, "early-reader@example.com");
+
+  const funnelInsert = db.calls.find((call) => call.sql.includes("INSERT INTO funnel_events"));
+  assert.ok(funnelInsert);
+  const metadata = JSON.parse(funnelInsert.params[3]);
+  assert.equal(metadata.placement, "early");
+  assert.equal(metadata.page, "/cooking-oils-smoke-points-best-uses/");
+});

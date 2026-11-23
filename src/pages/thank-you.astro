@@ -189,6 +189,78 @@ const magnets = [
         </div>
       </div>
 
+      <div data-offer-panel="oils" hidden>
+        <div
+          class="rounded-[2rem] p-8 md:p-10 text-center"
+          style="background-color: rgba(242, 155, 48, 0.08); border: 2px solid #F29B30;"
+        >
+          <p class="text-sm font-bold uppercase tracking-[0.2em] mb-3" style="color: #F29B30;">Your download</p>
+          <h2 class="text-2xl md:text-3xl font-black mb-4" style="color: var(--heading-color); letter-spacing: -0.02em;">Smoke Point Chart</h2>
+          <p class="text-base max-w-xl mx-auto mb-6" style="color: var(--muted-color); line-height: 1.6;">
+            The same 22 lab readings as the cooking-oil page. Palm at 489°F, coconut at 385°F, olive from 347°F to 464°F.
+          </p>
+          <a
+            href="/downloads/smoke-point-chart.pdf"
+            download="smoke-point-chart.pdf"
+            data-lead-magnet-download="true"
+            class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-lg font-bold transition-transform hover:-translate-y-1"
+            style="background-color: #F29B30; color: #fff; box-shadow: 0 4px 14px rgba(165, 106, 34, 0.4);"
+          >
+            Download the chart
+          </a>
+          <p class="mt-4 text-sm" style="color: var(--muted-color);">
+            <a href="/printables/smoke-point-chart/" class="underline">Open the same chart on the web</a>
+          </p>
+        </div>
+      </div>
+
+      <div data-offer-panel="storage" hidden>
+        <div
+          class="rounded-[2rem] p-8 md:p-10 text-center"
+          style="background-color: rgba(242, 155, 48, 0.08); border: 2px solid #F29B30;"
+        >
+          <p class="text-sm font-bold uppercase tracking-[0.2em] mb-3" style="color: #F29B30;">Your download</p>
+          <h2 class="text-2xl md:text-3xl font-black mb-4" style="color: var(--heading-color); letter-spacing: -0.02em;">Fridge Life Card</h2>
+          <p class="text-base max-w-xl mx-auto mb-6" style="color: var(--muted-color); line-height: 1.6;">
+            Vinaigrette up to 2 weeks, creamy dressing 3 to 4 days, leftovers 3 to 4 days, and the 2-hour rule. Each line names the page it came from.
+          </p>
+          <a
+            href="/downloads/fridge-life-card.pdf"
+            download="fridge-life-card.pdf"
+            data-lead-magnet-download="true"
+            class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-lg font-bold transition-transform hover:-translate-y-1"
+            style="background-color: #F29B30; color: #fff; box-shadow: 0 4px 14px rgba(165, 106, 34, 0.4);"
+          >
+            Download the card
+          </a>
+          <p class="mt-4 text-sm" style="color: var(--muted-color);">
+            <a href="/printables/fridge-life-card/" class="underline">Open the same card on the web</a>
+          </p>
+        </div>
+      </div>
+
+      <div data-offer-panel="budget" hidden>
+        <div
+          class="rounded-[2rem] p-8 md:p-10 text-center"
+          style="background-color: rgba(242, 155, 48, 0.08); border: 2px solid #F29B30;"
+        >
+          <p class="text-sm font-bold uppercase tracking-[0.2em] mb-3" style="color: #F29B30;">Your download</p>
+          <h2 class="text-2xl md:text-3xl font-black mb-4" style="color: var(--heading-color); letter-spacing: -0.02em;">$60 Week Meal Plan</h2>
+          <p class="text-base max-w-xl mx-auto mb-6" style="color: var(--muted-color); line-height: 1.6;">
+            The $60 week meal plan PDF. A tight grocery week, ready to print.
+          </p>
+          <a
+            href="/downloads/60-dollar-week-meal-plan.pdf"
+            download="60-dollar-week-meal-plan.pdf"
+            data-lead-magnet-download="true"
+            class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-lg font-bold transition-transform hover:-translate-y-1"
+            style="background-color: #F29B30; color: #fff; box-shadow: 0 4px 14px rgba(165, 106, 34, 0.4);"
+          >
+            Download the meal plan
+          </a>
+        </div>
+      </div>
+
       <p id="thank-you-magnet-note" class="text-sm text-center" style="color: var(--muted-color);">
         The PDF is ready now. The two guides stay online when you want the full
         price math and meal-prep system.
@@ -251,7 +323,34 @@ const magnets = [
     (function () {
       var params = new URLSearchParams(window.location.search);
       var offer = params.get("offer");
-      if (offer !== "sourdough" && offer !== "beans") return;
+      var copy = {
+        sourdough: {
+          lead: "The gram cheat sheet is right below. A stirred cup of 100% hydration discard is 227 grams, and half a cup is 113. Print it once and stop scraping a sticky cup over the sink.",
+          note: "The cheat sheet is one page. The discard calculator on the site does the same gram math if you'd rather type a number than print it.",
+          step: "A welcome note shows up in a minute or two. The cheat sheet on this page doesn't wait on that email. Check spam if the note is hiding.",
+        },
+        beans: {
+          lead: "The conversion card is right below. One pound of dried beans cooks to about 6 cups, which is 3½ to 4 cans. A 15-ounce can is about 1½ cups drained.",
+          note: "The card is one page. The dried-beans converter on the site uses these same figures when the pot is bigger than the card.",
+          step: "A welcome note shows up in a minute or two. The conversion card on this page doesn't wait on that email. Check spam if the note is hiding.",
+        },
+        oils: {
+          lead: "The smoke point chart is right below. Same 22 lab readings as the cooking-oil page, including palm at 489°F and coconut at 385°F.",
+          note: "The PDF is the chart. The web sheet is the same rows if you'd rather print from the browser.",
+          step: "A welcome note shows up in a minute or two. The chart on this page doesn't wait on that email. Check spam if the note is hiding.",
+        },
+        storage: {
+          lead: "The fridge life card is right below. Vinaigrette up to 2 weeks, creamy dressing 3 to 4 days, leftovers 3 to 4 days, and the 2-hour rule.",
+          note: "Every number on the card is copied from a page already on the site, with that page named on the row.",
+          step: "A welcome note shows up in a minute or two. The card on this page doesn't wait on that email. Check spam if the note is hiding.",
+        },
+        budget: {
+          lead: "The $60 week meal plan is right below. It's the PDF we already publish for a tight grocery week.",
+          note: "The file downloads now. The budget playbook stays on the site when you want the longer version.",
+          step: "A welcome note shows up in a minute or two. It has the meal plan link again. Check spam if the note is hiding.",
+        },
+      };
+      if (!copy[offer]) return;
 
       document.querySelectorAll("[data-offer-panel]").forEach(function (panel) {
         panel.hidden = panel.getAttribute("data-offer-panel") !== offer;
@@ -260,27 +359,9 @@ const magnets = [
       var lead = document.getElementById("thank-you-lead");
       var note = document.getElementById("thank-you-magnet-note");
       var step = document.getElementById("thank-you-step-email");
-      if (offer === "sourdough") {
-        if (lead) {
-          lead.textContent = "The gram cheat sheet is right below. A stirred cup of 100% hydration discard is 227 grams, and half a cup is 113. Print it once and stop scraping a sticky cup over the sink.";
-        }
-        if (note) {
-          note.textContent = "The cheat sheet is one page. The discard calculator on the site does the same gram math if you'd rather type a number than print it.";
-        }
-        if (step) {
-          step.textContent = "A welcome note shows up in a minute or two. The cheat sheet on this page doesn't wait on that email. Check spam if the note is hiding.";
-        }
-      } else {
-        if (lead) {
-          lead.textContent = "The conversion card is right below. One pound of dried beans cooks to about 6 cups, which is 3½ to 4 cans. A 15-ounce can is about 1½ cups drained.";
-        }
-        if (note) {
-          note.textContent = "The card is one page. The dried-beans converter on the site uses these same figures when the pot is bigger than the card.";
-        }
-        if (step) {
-          step.textContent = "A welcome note shows up in a minute or two. The conversion card on this page doesn't wait on that email. Check spam if the note is hiding.";
-        }
-      }
+      if (lead) lead.textContent = copy[offer].lead;
+      if (note) note.textContent = copy[offer].note;
+      if (step) step.textContent = copy[offer].step;
     })();
   </script>
 

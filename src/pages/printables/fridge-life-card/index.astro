@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { FRIDGE_LIFE_SECTIONS } from "../../../content/lead-magnet-data.mjs";
+
+const title = "Fridge Life Card";
+const description =
+  "Fridge times copied from the dressing, sandwich, leftovers, berry, herb, and avocado pages already on the site.";
+const pageUrl = "https://www.daily-life-hacks.com/printables/fridge-life-card/";
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    name: title,
+    description,
+    url: pageUrl,
+    inLanguage: "en-US",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+  },
+];
+---
+
+<BaseLayout title={title} description={description} robots="noindex, follow" jsonLd={schemas}>
+  <Header />
+  <main class="sheet-wrap">
+    <article class="sheet">
+      <p class="kicker">Printable. Cited numbers only.</p>
+      <h1>Fridge Life Card</h1>
+      <p class="lede">
+        Nothing here was rounded into a new number. Each block names the page it was copied from.
+      </p>
+      <p class="print-row no-print">
+        <a href="/downloads/fridge-life-card.pdf" download="fridge-life-card.pdf">Download the PDF</a>
+        <button type="button" onclick="window.print()">Print this page</button>
+      </p>
+      {FRIDGE_LIFE_SECTIONS.map((section) => (
+        <section>
+          <h2>{section.title}</h2>
+          <p class="note">
+            Source: <a href={section.path}>{section.path}</a>
+          </p>
+          {section.rows.length > 0 && (
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Item</th>
+                  <th scope="col">Fridge life</th>
+                </tr>
+              </thead>
+              <tbody>
+                {section.rows.map(([label, value]) => (
+                  <tr>
+                    <th scope="row">{label}</th>
+                    <td>{value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+          <ul>
+            {section.notes.map((note) => <li>{note}</li>)}
+          </ul>
+        </section>
+      ))}
+    </article>
+  </main>
+  <Footer signup="none" />
+  <style>
+    .sheet-wrap { background: #f4f1ea; padding: 2rem 1rem 3rem; }
+    .sheet { max-width: 720px; margin: 0 auto; background: #fff; color: #1c1915; border: 1px solid #e4d8c4; border-radius: 12px; padding: 1.75rem 1.5rem 1.25rem; }
+    .kicker { margin: 0 0 0.35rem; color: #a85e00; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    h1 { margin: 0 0 0.6rem; font-size: 1.85rem; line-height: 1.1; }
+    h2 { margin: 1.1rem 0 0.25rem; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; color: #a85e00; }
+    .lede, .note, li { font-size: 0.92rem; line-height: 1.45; }
+    a, button { color: #a85e00; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin-top: 0.4rem; }
+    th, td { text-align: left; padding: 0.28rem 0.4rem; border-bottom: 1px solid #eadfce; vertical-align: top; }
+    thead th { font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: #6b5b45; }
+    .print-row { display: flex; gap: 0.75rem; align-items: center; margin: 0.8rem 0 1rem; }
+    button, .print-row a { background: #F29B30; color: #fff; border: 0; border-radius: 999px; padding: 0.7rem 1.1rem; font-weight: 800; text-decoration: none; }
+    @media print {
+      .sheet-wrap { background: #fff; padding: 0; }
+      .sheet { max-width: none; border: 0; box-shadow: none; padding: 0; }
+      .no-print, header, footer { display: none !important; }
+      a { color: inherit; text-decoration: none; }
+      @page { size: letter; margin: 0.5in; }
+    }
+  </style>
+</BaseLayout>
