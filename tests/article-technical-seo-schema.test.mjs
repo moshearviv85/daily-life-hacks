@@ -87,6 +87,15 @@ test("primary article schemas retain canonical, image, language, and date signal
     "Recipe, Article, and WebPage must use the same language signal",
   );
   assert.match(articlePage, /thumbnailUrl: hasArticleImage \? imageUrl : undefined/);
+  assert.match(articlePage, /const AI_HERO_CREDIT = "Illustration generated with AI"/);
+  assert.match(articlePage, /creditText: AI_HERO_CREDIT/);
+  assert.match(articlePage, /contentUrl: imageUrl/);
+  assert.match(articlePage, /<figcaption[\s\S]*?\{AI_HERO_CREDIT\}[\s\S]*?<\/figcaption>/);
+  assert.doesNotMatch(
+    articlePage,
+    /digitalSourceType\s*:/,
+    "do not emit an IPTC digital source type the HTML build cannot write into the image file",
+  );
   assert.match(
     articlePage,
     /Published <time datetime=\{isoDay\(releaseDate\)\}>\{publishedLabel\}<\/time>/,

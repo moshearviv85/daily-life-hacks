@@ -218,8 +218,31 @@ const hasIngredientsImage = existsSync(
   join(process.cwd(), "public", ingredientsImagePath.replace(/^\/+/, "")),
 );
 const ingredientsImageUrl = `${siteUrl}${ingredientsImagePath}`;
+/**
+ * `{slug}-main.jpg` heroes come from the Imagen pipeline
+ * (scripts/generate-site-media.py). A data chart used as a hero, and any
+ * future owner photograph on a different path, is not labeled as AI.
+ * IPTC DigitalSourceType lives in the image file. This HTML build does not
+ * write it, so it is not invented here.
+ */
+const AI_HERO_CREDIT = "Illustration generated with AI";
+const aiGeneratedHero =
+  hasArticleImage &&
+  !article.data.image.startsWith("http") &&
+  /(?:^|\/)[^/]+-main\.jpg$/.test(article.data.image);
+const aiHeroImageObject = aiGeneratedHero
+  ? {
+      "@type": "ImageObject",
+      "@id": `${articleUrl}#primary-image`,
+      url: imageUrl,
+      contentUrl: imageUrl,
+      caption: AI_HERO_CREDIT,
+      creditText: AI_HERO_CREDIT,
+      description: `${AI_HERO_CREDIT}.`,
+    }
+  : undefined;
 const structuredImageUrls = [
-  ...(hasArticleImage ? [imageUrl] : []),
+  ...(aiHeroImageObject ? [aiHeroImageObject] : hasArticleImage ? [imageUrl] : []),
   ...(hasIngredientsImage ? [ingredientsImageUrl] : []),
 ];
 const modifiedDateObj = article.data.dateModified ?? releaseDate;
@@ -372,9 +395,13 @@ const webPageSchema = {
   datePublished: publishedDate,
   dateModified: modifiedDate,
   breadcrumb: { "@id": breadcrumbId },
-  primaryImageOfPage: structuredImageUrls.length
-    ? { "@type": "ImageObject", url: structuredImageUrls[0] }
-    : undefined,
+  primaryImageOfPage: aiHeroImageObject
+    ? aiHeroImageObject
+    : hasArticleImage
+      ? { "@type": "ImageObject", url: imageUrl }
+      : hasIngredientsImage
+        ? { "@type": "ImageObject", url: ingredientsImageUrl }
+        : undefined,
   mainEntity: { "@id": articleEntityId },
   /** Resolves because BaseLayout emits the #website node on every page. */
   isPartOf: { "@id": `${siteUrl}/#website` },
@@ -603,37 +630,47 @@ const newsletterSignup = newsletterSignupForArticle({
       const featuredDesc = `${article.data.title} - ${article.data.excerpt} | Daily Life Hacks`;
       const featuredPinBuilderUrl = `https://www.pinterest.com/pin-builder/?media=${encodeURIComponent(featuredMediaUrl)}&url=${encodeURIComponent(featuredPageUrl)}&is_video=false&description=${encodeURIComponent(featuredDesc)}&method=bookmarklet`;
       return (
-        <div class="relative mb-8 group rounded-2xl overflow-hidden shadow-md">
-          <OptImage
-            src={article.data.image}
-            alt={article.data.imageAlt}
-            width={768}
-            height={432}
-            sizes="(max-width: 768px) 100vw, 768px"
-            fetchpriority="high"
-            loading="eager"
-            decoding="sync"
-            data-pin-description={featuredDesc}
-            data-pin-url={featuredPageUrl}
-            data-pin-media={featuredMediaUrl}
-            data-pin-nopin="true"
-            class="w-full aspect-video object-cover"
-          />
-          <a
-            href={featuredPinBuilderUrl}
-            target="_blank"
-            rel="noopener nofollow"
-            aria-label="Save to Pinterest"
-            title="Save to Pinterest"
-            class="dlh-pin-save absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold text-white shadow-md hover:shadow-lg transition-all duration-200"
-            style="background-color: #E60023;"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
-              <path d="M12 0a12 12 0 0 0-4.37 23.17c-.1-.94-.2-2.4.04-3.43.22-.93 1.4-5.94 1.4-5.94s-.36-.72-.36-1.78c0-1.67.97-2.92 2.17-2.92 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 4-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.26 3.78-5.52 0-2.88-2.07-4.9-5.03-4.9-3.43 0-5.44 2.57-5.44 5.23 0 1.04.4 2.15.9 2.76.1.11.11.21.08.33l-.34 1.37c-.05.22-.17.27-.4.16-1.48-.7-2.4-2.86-2.4-4.6 0-3.75 2.72-7.19 7.84-7.19 4.12 0 7.32 2.94 7.32 6.87 0 4.09-2.58 7.39-6.17 7.39-1.2 0-2.33-.62-2.72-1.36l-.74 2.83c-.27 1.04-1 2.34-1.49 3.14A12 12 0 1 0 12 0Z"/>
-            </svg>
-            <span>Save</span>
-          </a>
-        </div>
+        <figure class="mb-8">
+          <div class="relative group rounded-2xl overflow-hidden shadow-md">
+            <OptImage
+              src={article.data.image}
+              alt={article.data.imageAlt}
+              width={768}
+              height={432}
+              sizes="(max-width: 768px) 100vw, 768px"
+              fetchpriority="high"
+              loading="eager"
+              decoding="sync"
+              data-pin-description={featuredDesc}
+              data-pin-url={featuredPageUrl}
+              data-pin-media={featuredMediaUrl}
+              data-pin-nopin="true"
+              class="w-full aspect-video object-cover"
+            />
+            <a
+              href={featuredPinBuilderUrl}
+              target="_blank"
+              rel="noopener nofollow"
+              aria-label="Save to Pinterest"
+              title="Save to Pinterest"
+              class="dlh-pin-save absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold text-white shadow-md hover:shadow-lg transition-all duration-200"
+              style="background-color: #E60023;"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
+                <path d="M12 0a12 12 0 0 0-4.37 23.17c-.1-.94-.2-2.4.04-3.43.22-.93 1.4-5.94 1.4-5.94s-.36-.72-.36-1.78c0-1.67.97-2.92 2.17-2.92 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 4-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.26 3.78-5.52 0-2.88-2.07-4.9-5.03-4.9-3.43 0-5.44 2.57-5.44 5.23 0 1.04.4 2.15.9 2.76.1.11.11.21.08.33l-.34 1.37c-.05.22-.17.27-.4.16-1.48-.7-2.4-2.86-2.4-4.6 0-3.75 2.72-7.19 7.84-7.19 4.12 0 7.32 2.94 7.32 6.87 0 4.09-2.58 7.39-6.17 7.39-1.2 0-2.33-.62-2.72-1.36l-.74 2.83c-.27 1.04-1 2.34-1.49 3.14A12 12 0 1 0 12 0Z"/>
+              </svg>
+              <span>Save</span>
+            </a>
+          </div>
+          {aiGeneratedHero && (
+            <figcaption
+              class="mt-2 text-xs leading-snug"
+              style="color: var(--muted-color);"
+            >
+              {AI_HERO_CREDIT}
+            </figcaption>
+          )}
+        </figure>
       );
     })()}
 
