@@ -97,22 +97,53 @@ Between the avocado, the hemp seeds, and the chia itself, this bowl quietly chec
 
 Packing it for work? Keep the toppings in a separate container. Nobody wants avocado that's been pressed against chia pudding since 7 AM.
 
-## Fifteen savory ways to use the same jar
+## Four savory chia jars, in grams
 
-The recipe card is the base: 3 tablespoons chia (about 36 grams) and 1 cup liquid, gelled at least 4 hours. Everything below is a different way to spend that jar. Quantities are for one serving unless I say otherwise.
+The recipe card is the tomato and avocado bowl. These four are different jars. Every amount is a weight. A spoonful is how you end up with a dry clump at the bottom. One serving each. Stir, wait 5 minutes, stir again, then cover and chill at 40°F or below until the seeds are fully gelled. Don't eat them dry.
 
-### Breakfast bowls
+### Miso cucumber chia
 
-* **Tomato-avocado bowl:** the recipe card as written, plus a squeeze of lemon. 1/2 small avocado and 1/4 cup halved cherry tomatoes.
-* **Jammy egg bowl:** the set jar, 1 jammy egg, and a pinch of chili flakes. Salt the egg, not the chia again.
-* **Everything bagel bowl:** almond milk base, 1 teaspoon everything seasoning, 1/2 avocado, and a squeeze of lemon.
-* **Breakfast taco bowl:** broth base, 1/4 teaspoon smoked paprika, 2 tablespoons salsa, 1 scallion, and crushed tortilla chips added at the table.
+Whisk the miso into the broth while it's warm enough to dissolve, then stir in the chia.
 
-### Savory chia pudding, curry and miso
+* **Chia seeds:** 30 g
+* **Liquid:** 200 g low-sodium vegetable broth
+* **Savory add-ins:** 15 g white miso, 40 g thinly sliced cucumber, 2 g toasted sesame seeds
+* **Prep / soak:** 5 minutes, then 4 hours in the fridge
+* **Serving:** Lay the cucumber and sesame on the cold jar so the cucumber stays crisp.
 
-* **Miso pudding:** whisk 1 teaspoon white miso into the cup of warm broth before the chia goes in. Top with 1/4 cup sliced cucumber.
-* **Curry pudding:** 1/2 teaspoon curry powder and 1/4 teaspoon garlic powder in 1 cup broth. Finish with 2 tablespoons plain yogurt and cilantro.
-* **Lemon-dill pudding:** almond milk, 1 teaspoon lemon juice, 1 tablespoon chopped dill, and 2 tablespoons crumbled feta.
+### Curry yogurt chia
+
+Stir the curry powder and garlic powder into the broth before the chia. Keep the yogurt and cilantro off until you eat.
+
+* **Chia seeds:** 30 g
+* **Liquid:** 200 g low-sodium vegetable broth
+* **Savory add-ins:** 1 g curry powder, 1 g garlic powder, 30 g plain yogurt, 4 g cilantro leaves
+* **Prep / soak:** 5 minutes, then 4 hours in the fridge
+* **Serving:** Spoon the yogurt and cilantro on after it sets, or the yogurt sinks and the jar looks like soup.
+
+### Jammy egg chili chia
+
+Whisk the salt into the milk with the chia. Boil the egg 7 minutes, then drop it in ice water and peel it.
+
+* **Chia seeds:** 36 g
+* **Liquid:** 240 g unsweetened almond milk
+* **Savory add-ins:** 1 g kosher salt, 50 g peeled jammy egg, 1 g chili flakes
+* **Prep / soak:** 12 minutes, including the egg, then 4 hours in the fridge for the chia
+* **Serving:** Halve the egg over the set jar and add the chili at the table so the yolk stays runny.
+
+### Lemon dill feta chia
+
+Stir the lemon juice into the milk, then the chia. Keep the dill and feta out of the jar.
+
+* **Chia seeds:** 30 g
+* **Liquid:** 220 g unsweetened almond milk and 15 g lemon juice
+* **Savory add-ins:** 3 g chopped dill, 20 g crumbled feta
+* **Prep / soak:** 5 minutes, then 4 hours in the fridge
+* **Serving:** Fold the feta and dill in right before you eat. Feta that sits in the jar overnight goes rubbery.
+
+## Crackers, patties, and a dressing
+
+The jars above are breakfast. These use chia as a binder or a thickener, so the amounts change and you aren't waiting four hours.
 
 ### Chia crackers
 
