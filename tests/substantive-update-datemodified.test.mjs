@@ -15,6 +15,9 @@ const ROOT = new URL("..", import.meta.url).pathname;
 const ARTICLES = join(ROOT, "src/data/articles");
 const BASELINE = "94167b6";
 const TODAY = "2026-11-23";
+// #250 and #252 merged back to back, so origin/main already has the restored
+// dates. 84702a37 is main immediately before that restoration (#250).
+const BEFORE_DATE_RESTORE = "84702a37";
 
 /**
  * Pages whose body actually changed on 2026-11-23: merges #234, the cottage
@@ -202,18 +205,16 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
     `2026-11-23 without substantiveUpdate: ${todayWithoutField.map((article) => article.slug).join(", ")}`,
   );
   restored.push(
-    ...articles.filter(
-      (article) =>
-        article.baselineModified !== TODAY &&
-        article.dateModified !== TODAY &&
-        gitShow("origin/main", article.path) &&
-        extractFrontmatterField(gitShow("origin/main", article.path), "dateModified") === TODAY,
-    ),
+    ...articles.filter((article) => {
+      if (article.baselineModified === TODAY || article.dateModified === TODAY) return false;
+      const before = gitShow(BEFORE_DATE_RESTORE, article.path);
+      return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
+    }),
   );
   assert.equal(stillToday.length, 33, `pages still on ${TODAY}`);
-  // #252 already restored those 62 pages on main. Later branches should
-  // not move dateModified again, so origin/main and this tree agree.
-  assert.equal(restored.length, 0, "pages restored off 2026-11-23");
+  // Measured against 84702a37, not origin/main. #252 is already on main, so
+  // a comparison with origin/main is 0 and cannot see a later re-bump.
+  assert.equal(restored.length, 62, "pages restored off 2026-11-23");
 });
 
 test("restored and substantive pages render the honest Updated day", () => {
