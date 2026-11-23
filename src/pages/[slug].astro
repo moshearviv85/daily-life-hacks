@@ -525,22 +525,9 @@ const embedCopyScript = `(function(){
   });
 })();`;
 
-if (article.data.faq && article.data.faq.length > 0) {
-  allSchemas.push({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "@id": `${articleUrl}#faq`,
-    isPartOf: { "@id": webPageId },
-    mainEntity: article.data.faq.map((item: any) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  });
-}
+// Visible FAQ HTML stays below. FAQPage JSON-LD is not emitted: Google
+// retired FAQ rich results for sites like this, and a sitewide FAQPage node
+// was a mass-template fingerprint.
 
 const flagshipLeadHighlight = flagship?.highlights.find(
   (highlight) => highlight.place === "lead",
@@ -571,6 +558,8 @@ const indexPruned = isIndexPruned(article.id);
 const robotsMeta = (!released || isVariant || indexPruned) ? "noindex, follow" : undefined;
 /** Do not advertise rich-result entities for hidden or non-canonical pages. */
 const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : undefined;
+/** Rating UI ships only with a published Recipe node. Pruned and unreleased recipes stay bare. */
+const showRatingWidget = Boolean(isRecipe && publishedSchemas);
 ---
 
 <BaseLayout
@@ -810,7 +799,8 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
       </div>
     )}
 
-    <!-- Rating Preview -->
+    <!-- Rating Preview: published Recipe pages only. Article pages must not carry aggregateRating. -->
+    {showRatingWidget && (
     <section
       id="rating-widget"
       class="mb-8 rounded-xl border p-4"
@@ -871,7 +861,7 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
           class="text-sm font-medium leading-relaxed"
           style="color: var(--muted-color); display: none;"
         >
-          Yeah, this is a little awkward. No ratings yet. People probably rushed to make this and forgot to come back. Do us a solid, drop a quick rating, and help the next hungry person skip the guesswork.
+          Made this? Rate it.
         </p>
         <noscript>
           <p class="text-sm leading-relaxed" style="color: var(--muted-color);">
@@ -880,6 +870,7 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
         </noscript>
       </div>
     </section>
+    )}
 
     {
       isRecipe && (
@@ -1222,46 +1213,13 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
   </main>
   <Footer />
 
+  {showRatingWidget && (
   <script is:inline>
-    function setupReleaseGate() {
-      const main = document.querySelector("main[data-release-root='true']");
-      const releaseContent = document.getElementById("release-content");
-      const releaseNotice = document.getElementById("release-notice");
-      const releaseAt = main?.getAttribute("data-release-at");
-
-      if (!main || !releaseContent || !releaseAt) return;
-
-      // Staging / Pages preview hosts may unlock scheduled content for review.
-      // Production never accepts a client-side password bypass.
-      const host = window.location.hostname || "";
-      const isNonProdHost =
-        host.includes("pages.dev") ||
-        host.startsWith("staging.") ||
-        host === "localhost" ||
-        host === "127.0.0.1";
-
-      if (isNonProdHost) {
-        releaseContent.style.display = "";
-        if (releaseNotice) {
-          releaseNotice.innerHTML =
-            '<p style="font-size:.8rem;color:#F29B30;font-weight:600">Staging preview — not yet published on production</p>';
-          releaseNotice.style.padding = ".4rem .75rem";
-        }
-        return;
-      }
-
-      if (Date.now() >= new Date(releaseAt).getTime()) {
-        releaseContent.style.display = "";
-        releaseNotice?.classList.add("hidden");
-      } else {
-        releaseContent.style.display = "none";
-        releaseNotice?.classList.remove("hidden");
-      }
-    }
-
     function setupRatingWidget() {
       const widget = document.getElementById("rating-widget");
       if (!widget) return;
+      // Self-serving reviews on Article are not eligible. Recipes only.
+      if (widget.getAttribute("data-schema-type") !== "Recipe") return;
 
       const slug = widget.getAttribute("data-slug");
       if (!slug) return;
@@ -1313,8 +1271,10 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
         const avg = Number(snapshot?.average ?? 0);
         const pageUrl = widget.getAttribute("data-article-url") || "";
         const title = widget.getAttribute("data-article-title") || "";
-        const schemaType = widget.getAttribute("data-schema-type") || "Article";
+        const schemaType = widget.getAttribute("data-schema-type") || "";
         const schemaId = widget.getAttribute("data-schema-id") || "";
+
+        if (schemaType !== "Recipe") return;
 
         if (
           count < MIN_RATING_COUNT_FOR_JSONLD ||
@@ -1366,8 +1326,7 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
           if (orphan) orphan.remove();
           if (copy) {
             copy.style.display = "";
-            copy.textContent =
-              "Yeah, this is a little awkward. No ratings yet. People probably rushed to make this and forgot to come back. Do us a solid, drop a quick rating, and help the next hungry person skip the guesswork.";
+            copy.textContent = "Made this? Rate it.";
           }
           return;
         }
@@ -1461,6 +1420,47 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
       loadSnapshot();
     }
 
+    document.addEventListener("astro:page-load", setupRatingWidget);
+  </script>
+  )}
+
+  <script is:inline>
+    function setupReleaseGate() {
+      const main = document.querySelector("main[data-release-root='true']");
+      const releaseContent = document.getElementById("release-content");
+      const releaseNotice = document.getElementById("release-notice");
+      const releaseAt = main?.getAttribute("data-release-at");
+
+      if (!main || !releaseContent || !releaseAt) return;
+
+      // Staging / Pages preview hosts may unlock scheduled content for review.
+      // Production never accepts a client-side password bypass.
+      const host = window.location.hostname || "";
+      const isNonProdHost =
+        host.includes("pages.dev") ||
+        host.startsWith("staging.") ||
+        host === "localhost" ||
+        host === "127.0.0.1";
+
+      if (isNonProdHost) {
+        releaseContent.style.display = "";
+        if (releaseNotice) {
+          releaseNotice.innerHTML =
+            '<p style="font-size:.8rem;color:#F29B30;font-weight:600">Staging preview — not yet published on production</p>';
+          releaseNotice.style.padding = ".4rem .75rem";
+        }
+        return;
+      }
+
+      if (Date.now() >= new Date(releaseAt).getTime()) {
+        releaseContent.style.display = "";
+        releaseNotice?.classList.add("hidden");
+      } else {
+        releaseContent.style.display = "none";
+        releaseNotice?.classList.remove("hidden");
+      }
+    }
+
     function setupMidArticleImage() {
       const content = document.querySelector(".article-content");
       const main = document.querySelector("main[data-base-slug]");
@@ -1492,7 +1492,6 @@ const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : u
     }
 
     document.addEventListener("astro:page-load", setupReleaseGate);
-    document.addEventListener("astro:page-load", setupRatingWidget);
     document.addEventListener("astro:page-load", setupMidArticleImage);
   </script>
 </BaseLayout>

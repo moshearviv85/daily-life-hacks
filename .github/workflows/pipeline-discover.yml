@@ -1,8 +1,9 @@
 name: Pipeline Discover
 
 on:
-  schedule:
-    - cron: '0 6 * * 1'  # Every Monday at 06:00 UTC
+  # Scheduled discovery is frozen until the site recovers (SEO PR-5).
+  # schedule:
+  #   - cron: '0 6 * * 1'  # Every Monday at 06:00 UTC
   workflow_dispatch:
     inputs:
       limit:

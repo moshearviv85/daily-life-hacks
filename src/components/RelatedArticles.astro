@@ -68,6 +68,7 @@ const scored = candidates
       currentCategory: article.data.category,
       pillarSlugs,
       preferredPillar,
+      currentIndexPruned: isIndexPruned(article.id),
     });
     if (score === null || score <= 0) return null;
     return { entry: a, score };

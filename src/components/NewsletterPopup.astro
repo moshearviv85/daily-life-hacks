@@ -171,10 +171,59 @@
         </div>
     </div>
 
+    <style>
+        @media (max-width: 767px) {
+            #newsletter-popup {
+                display: none !important;
+            }
+        }
+    </style>
+
     <script is:inline>
-        // Logic to show/hide popup
-        const POPUP_DELAY = 12000; // 12 seconds
+        // Show only after 60% scroll on the second pageview, and never under 768px.
+        const POPUP_SCROLL_RATIO = 0.6;
+        const POPUP_MIN_PAGEVIEWS = 2;
+        const POPUP_MIN_WIDTH = 768;
+        const POPUP_PAGEVIEW_KEY = "dlh_popup_pageviews";
         const SUPPRESS_DAYS = 7; // Don't show again for 7 days if closed
+
+        function popupMayOpen(state) {
+            const scrollRatio = Number(state && state.scrollRatio) || 0;
+            const pageviews = Number(state && state.pageviews) || 0;
+            const viewportWidth = Number(state && state.viewportWidth) || 0;
+            return (
+                scrollRatio >= POPUP_SCROLL_RATIO &&
+                pageviews >= POPUP_MIN_PAGEVIEWS &&
+                viewportWidth >= POPUP_MIN_WIDTH
+            );
+        }
+
+        function recordSessionPageview() {
+            try {
+                const next = (Number(sessionStorage.getItem(POPUP_PAGEVIEW_KEY)) || 0) + 1;
+                sessionStorage.setItem(POPUP_PAGEVIEW_KEY, String(next));
+                return next;
+            } catch {
+                return 1;
+            }
+        }
+
+        function currentScrollRatio() {
+            const el = document.documentElement;
+            const viewport = window.innerHeight || 0;
+            const scrollable = (el.scrollHeight || 0) - viewport;
+            if (scrollable <= 0) return 1;
+            const scrolled = window.scrollY || window.pageYOffset || 0;
+            return scrolled / scrollable;
+        }
+
+        function currentPageviews() {
+            try {
+                return Number(sessionStorage.getItem(POPUP_PAGEVIEW_KEY)) || 0;
+            } catch {
+                return 0;
+            }
+        }
 
         let popup;
         let popupContent;
@@ -183,8 +232,6 @@
         let titleEl;
         let descEl;
         let tagEl;
-        let showTimeout;
-
         function getStoredSignupContext() {
             try {
                 const raw = sessionStorage.getItem("newsletter_signup_context");
@@ -300,13 +347,15 @@
             }
         }
 
-        function handleExitIntent(e) {
-            if (e.clientY <= 0) {
-                // Re-check suppression after navigation or a reader's dismissal.
-                showPopup();
-                document.removeEventListener("mouseleave", handleExitIntent);
-                clearTimeout(showTimeout);
-            }
+        function tryShowFromTrigger() {
+            if (shouldSuppressPopup()) return;
+            if (!popupMayOpen({
+                scrollRatio: currentScrollRatio(),
+                pageviews: currentPageviews(),
+                viewportWidth: window.innerWidth || 0,
+            })) return;
+            showPopup();
+            window.removeEventListener("scroll", tryShowFromTrigger);
         }
 
         function customizeForRecipe() {
@@ -328,6 +377,9 @@
         }
 
         function initPopup() {
+            const pageviews = recordSessionPageview();
+            const viewportWidth = window.innerWidth || 0;
+            if (viewportWidth < POPUP_MIN_WIDTH) return;
             if (shouldSuppressPopup()) return;
 
             const path = window.location.pathname;
@@ -337,8 +389,9 @@
                 customizeForNutrition();
             }
 
-            showTimeout = setTimeout(showPopup, POPUP_DELAY);
-            document.addEventListener("mouseleave", handleExitIntent);
+            if (pageviews < POPUP_MIN_PAGEVIEWS) return;
+            window.addEventListener("scroll", tryShowFromTrigger, { passive: true });
+            tryShowFromTrigger();
         }
 
         async function handleSubscribe(e) {
@@ -413,9 +466,7 @@
             const form = document.getElementById("popup-form");
             if (form) form.addEventListener("submit", handleSubscribe);
 
-            clearTimeout(showTimeout);
-            document.removeEventListener("mouseleave", handleExitIntent);
-
+            window.removeEventListener("scroll", tryShowFromTrigger);
             initPopup();
         }
 

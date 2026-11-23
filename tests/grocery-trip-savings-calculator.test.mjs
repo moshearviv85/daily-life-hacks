@@ -30,7 +30,8 @@ test("grocery trip calculator has canonical structured data and supporting links
   const source = await readFile(pagePath, "utf8");
   assert.match(source, /https:\/\/www\.daily-life-hacks\.com\/tools\/grocery-trip-savings-calculator\//);
   assert.match(source, /"@type": "WebApplication"/);
-  assert.match(source, /"@type": "FAQPage"/);
+  assert.doesNotMatch(source, /"@type": "FAQPage"/);
+  assert.match(source, /<details><summary>/);
   assert.match(source, /href="\/tools\/grocery-unit-price-calculator\/"/);
   assert.match(source, /href="\/tools\/grocery-budget-calculator\/"/);
   assert.doesNotMatch(source, /is-driving-to-cheaper-grocery-store-worth-it/);

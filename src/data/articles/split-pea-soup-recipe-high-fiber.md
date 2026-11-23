@@ -10,7 +10,7 @@ tags:
 - legumes
 image: /images/split-pea-soup-recipe-high-fiber-main.jpg
 imageAlt: Thick green split pea soup in a white bowl with carrots, celery, and parsley on top
-date: 2026-01-16
+date: 2026-04-28
 dateModified: 2026-07-26
 author: "David Miller"
 featured: false

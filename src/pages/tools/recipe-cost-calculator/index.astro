@@ -24,21 +24,6 @@ const schemas = [
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      ["How do I price part of a package?", "Divide the amount you used by the package size, then multiply by the package price. Eight ounces from a 32-ounce, $4 bag costs $1."],
-      ["Can the calculator convert cups to fluid ounces?", "Yes. It converts common volume units, weight units, and counts. It can't reliably convert cups of flour to ounces by weight because ingredients have different densities."],
-      ["What should I enter for servings?", "Enter the number of portions you actually serve. Real plates beat optimistic label math."],
-      ["What does the waste buffer do?", "It adds your chosen percentage to the ingredient subtotal. A $10 subtotal with a 5% buffer becomes $10.50."],
-      ["How are your published food costs checked?", "Read our methodology for the sourcing and calculation rules used in Daily Life Hacks studies."],
-    ].map(([name, text]) => ({
-      "@type": "Question",
-      name,
-      acceptedAnswer: { "@type": "Answer", text },
-    })),
-  },
 ];
 const breadcrumbSchema = {
   "@context": "https://schema.org",

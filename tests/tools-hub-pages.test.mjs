@@ -14,7 +14,8 @@ test("new calculator pages expose the required search and privacy signals", asyn
   for (const relative of pages) {
     const source = await readFile(path.join(root, relative), "utf8");
     assert.match(source, /"@type": "WebApplication"/, relative);
-    assert.match(source, /"@type": "FAQPage"/, relative);
+    assert.doesNotMatch(source, /"@type": "FAQPage"/, relative);
+    assert.match(source, /<details><summary>/, relative);
     assert.match(source, /applicationCategory/, relative);
     assert.match(source, /browser tab/, relative);
     assert.match(source, /href="\/methodology\/"/, relative);
@@ -23,26 +24,21 @@ test("new calculator pages expose the required search and privacy signals", asyn
   }
 });
 
-test("FAQ schema matches the five questions and answers visible on each tool", async () => {
-  const normalize = (value) =>
-    value.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
-
+test("visible FAQ stays on each tool and FAQPage schema stays off", async () => {
   for (const relative of pages) {
     const source = await readFile(path.join(root, relative), "utf8");
+    assert.doesNotMatch(source, /"@type": "FAQPage"/, relative);
     if (relative.includes("grocery-budget-calculator")) {
       assert.match(source, /const faqs = \[/);
-      assert.match(source, /mainEntity: faqs\.map/);
       assert.match(source, /\{faqs\.map\(\(\[question, answer\]\)/);
+      const faqBlock = source.match(/const faqs = \[(.*?)\];/s)?.[1] ?? "";
+      assert.equal((faqBlock.match(/^\s*\["/gm) ?? []).length, 5, relative);
       continue;
     }
-    const schemaBlock = source.match(/mainEntity:\s*\[(.*?)\]\.map/s)?.[1] ?? "";
-    const schemaEntries = [...schemaBlock.matchAll(/\["([^"]+)", "([^"]+)"\]/g)]
-      .map((match) => [match[1], normalize(match[2])]);
-    const visibleEntries = [...source.matchAll(/<details><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/gs)]
-      .map((match) => [normalize(match[1]), normalize(match[2])]);
-
-    assert.equal(schemaEntries.length, 5, `${relative} schema FAQ count`);
-    assert.deepEqual(schemaEntries, visibleEntries, `${relative} FAQ mismatch`);
+    const visibleEntries = [
+      ...source.matchAll(/<details><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/gs),
+    ];
+    assert.equal(visibleEntries.length, 5, `${relative} visible FAQ count`);
   }
 });
 

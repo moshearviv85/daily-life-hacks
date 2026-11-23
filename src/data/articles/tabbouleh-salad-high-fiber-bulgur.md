@@ -10,7 +10,7 @@ tags:
 - salad
 image: /images/tabbouleh-salad-high-fiber-bulgur-main.jpg
 imageAlt: Tabbouleh salad with bulgur, parsley, tomatoes, cucumber, and mint
-date: 2026-01-14
+date: 2026-04-28
 dateModified: 2026-07-20
 author: "David Miller"
 quickAnswer: "For tabbouleh that tastes like herbs instead of grain filler, use fine bulgur, dry the parsley and mint thoroughly, and chop the vegetables small. Soak the bulgur in boiling water for 20 to 25 minutes, cool it, then toss everything with lemon and olive oil. A 30-minute refrigerator rest gives the grain time to absorb the dressing."

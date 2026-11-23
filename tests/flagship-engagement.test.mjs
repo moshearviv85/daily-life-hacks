@@ -267,11 +267,9 @@ test("protein flagship FAQ quotes the ranking table grams per dollar", () => {
   assert.doesNotMatch(faq, /whole milk at 29(?!\.)/);
   assert.doesNotMatch(faq, /mozzarella at 30(?!\.)/);
   assert.doesNotMatch(faq, /thighs at 28(?!\.)/);
-  assert.match(read("src/pages/[slug].astro"), /"@type": "FAQPage"/);
-  assert.match(
-    read("src/pages/[slug].astro"),
-    /acceptedAnswer:\s*\{\s*"@type": "Answer",\s*text: item\.answer/,
-  );
+  assert.doesNotMatch(read("src/pages/[slug].astro"), /"@type": "FAQPage"/);
+  assert.match(read("src/pages/[slug].astro"), /Frequently Asked Questions/);
+  assert.match(read("src/pages/[slug].astro"), /article\.data\.faq\.map/);
 });
 
 test("beans double-win FAQ quotes the combined CSV and stays indexable", () => {
@@ -308,7 +306,8 @@ test("beans double-win FAQ quotes the combined CSV and stays indexable", () => {
   assert.doesNotMatch(faq, /70\.8/);
   assert.doesNotMatch(faq, /168\.7/);
   assert.doesNotMatch(markdown, /97\.9|70\.8|168\.7|\$3\.97/);
-  assert.match(read("src/pages/[slug].astro"), /"@type": "FAQPage"/);
+  assert.doesNotMatch(read("src/pages/[slug].astro"), /"@type": "FAQPage"/);
+  assert.match(read("src/pages/[slug].astro"), /Frequently Asked Questions/);
   assert.match(
     read("src/pages/[slug].astro"),
     /publishedSchemas = released && !isVariant && !indexPruned \? allSchemas/,

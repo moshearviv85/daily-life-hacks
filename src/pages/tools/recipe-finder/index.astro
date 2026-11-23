@@ -58,11 +58,6 @@ const schemas = [
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })),
-  },
 ];
 
 const recipeJson = JSON.stringify(recipes).replace(/</g, "\\u003c");

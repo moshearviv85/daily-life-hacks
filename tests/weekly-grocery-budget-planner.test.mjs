@@ -18,7 +18,8 @@ test("landing page exposes the PDF, structured data, and private telemetry", () 
   const page = fs.readFileSync(landingPath, "utf8");
   assert.match(page, /weekly-grocery-budget-planner\.pdf/);
   assert.match(page, /"@type": "DigitalDocument"/);
-  assert.match(page, /"@type": "FAQPage"/);
+  assert.doesNotMatch(page, /"@type": "FAQPage"/);
+  assert.match(page, /<details>/);
   assert.match(page, /data-printable-download/);
   assert.match(page, /printable_download/);
   assert.doesNotMatch(page, /email_address|user_id|budget_value/);

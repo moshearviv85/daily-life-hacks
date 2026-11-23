@@ -1,17 +1,21 @@
 name: Monthly Grocery Price Watch
 
-# Generates a monthly "Price Watch" report from official BLS Average Price data:
-# which staple foods moved nationally and what it would do to the per-dollar rankings.
-# The published ranking CSVs are NOT touched — they stay on one consistent price basis
-# (Walmart shelf prices, re-audited quarterly). Mixing BLS national averages into a
-# Walmart-priced ranking would shift ranks because of the source switch, not reality.
-# BLS publishes the previous month's AP data around mid-month, so we run on the 20th.
-# The report lands as a PR so the owner sees it (and it doubles as newsletter material).
+# Manual BLS refresh for the existing per-dollar datasets.
+# Scheduled publishing is frozen (SEO PR-5). A dispatch updates numbers inside
+# the existing CSV files and does not create article files. The monthly report
+# file is written only when the create_files input is true.
 
 on:
-  schedule:
-    - cron: '0 9 20 * *'   # 09:00 UTC on the 20th of every month
-  workflow_dispatch:        # manual trigger from dashboard
+  # Scheduled Price Watch PRs are frozen until the site recovers (SEO PR-5).
+  # schedule:
+  #   - cron: '0 9 20 * *'   # 09:00 UTC on the 20th of every month
+  workflow_dispatch:
+    inputs:
+      create_files:
+        description: 'Write the monthly report file. Off by default. Never creates article files.'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -33,45 +37,63 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Generate Price Watch report from BLS
+      - name: Update numbers in existing datasets
         env:
           BLS_API_KEY: ${{ secrets.BLS_API_KEY }}   # optional — script works without it
-        run: python scripts/update-price-index.py --report-only
+          CREATE_FILES: ${{ inputs.create_files }}
+        run: |
+          ARGS=()
+          if [ "$CREATE_FILES" = "true" ]; then
+            ARGS+=(--create-files)
+          fi
+          python scripts/update-price-index.py "${ARGS[@]}"
+          if [ -n "$(git status --porcelain -- src/data/articles)" ]; then
+            echo "update-price-index modified article files. That is not allowed." >&2
+            git status --porcelain -- src/data/articles >&2
+            exit 1
+          fi
 
-      - name: Detect report
+      - name: Detect dataset changes
         id: diff
         run: |
           echo "month=$(date -u +%Y-%m)" >> "$GITHUB_OUTPUT"
-          if [ -n "$(git status --porcelain -- 'pipeline-data/index-update-report-*.md')" ]; then
+          if [ -n "$(git status --porcelain -- public/data/fiber-per-dollar-2026.csv public/data/protein-per-dollar-2026.csv pipeline-data/index-update-report-*.md)" ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "No new report this month — nothing to open a PR for."
+            echo "No number changes in existing datasets."
           fi
 
-      - name: Commit report to branch and open PR
+      - name: Commit number updates and open PR
         if: steps.diff.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_PAT != '' && secrets.GH_PAT || github.token }}
+          CREATE_FILES: ${{ inputs.create_files }}
         run: |
           MONTH="${{ steps.diff.outputs.month }}"
           BRANCH="price-watch-$MONTH"
-          REPORT="pipeline-data/index-update-report-$MONTH.md"
 
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git checkout -B "$BRANCH"
-          git add -- "$REPORT"
-          git commit -m "chore(data): monthly BLS price watch report $MONTH"
+          git add -- public/data/fiber-per-dollar-2026.csv public/data/protein-per-dollar-2026.csv
+          if [ "$CREATE_FILES" = "true" ]; then
+            git add -- pipeline-data/index-update-report-*.md
+          fi
+          if git diff --cached --name-only | grep -E '^src/data/articles/'; then
+            echo "Refusing to commit new or modified article files." >&2
+            exit 1
+          fi
+          git commit -m "chore(data): refresh existing price-index numbers $MONTH"
           git push -f origin "$BRANCH"
 
           {
             echo "Monthly grocery Price Watch from official U.S. government (BLS) price data."
             echo ""
-            echo "**This does NOT change the live site or the rankings.** It archives the month's report. Merge it to keep the record; the interesting price moves below are ready-made material for the newsletter and social posts."
+            echo "This updates numbers inside the existing per-dollar datasets. It does not create article files."
             echo ""
-            cat "$REPORT"
+            git diff --cached --stat HEAD~1 || true
           } > /tmp/pr-body.md
 
           gh pr create --base main --head "$BRANCH" \

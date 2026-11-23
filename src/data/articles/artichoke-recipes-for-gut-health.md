@@ -10,7 +10,7 @@ tags:
 - steaming
 image: /images/artichoke-recipes-for-gut-health-main.jpg
 imageAlt: "Steamed whole artichokes served with a small bowl of lemon garlic dip"
-date: 2026-01-22
+date: 2026-04-28
 dateModified: 2026-09-23
 author: "David Miller"
 quickAnswer: "Trim one inch from the top of each artichoke, snip the sharp leaf tips, rub cut surfaces with lemon, and steam stem-side up for 25 to 35 minutes. A center leaf should pull free easily and the base should feel tender. Artichokes provide fiber, but one serving isn't a treatment for digestive symptoms, and individual tolerance varies."
