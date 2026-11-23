@@ -78,6 +78,18 @@ function loadSitemapExclusions() {
     addPath(slug);
   }
 
+  // Dataset CSV landings and printables stay reachable for downloads and
+  // signup thank-you flows. They are noindex, follow and not sitemap targets.
+  for (const path of [
+    '/data/fiber-per-dollar-2026',
+    '/data/protein-per-dollar-2026',
+    '/printables/bean-conversion-card',
+    '/printables/sourdough-discard-grams-cheat-sheet',
+    '/printables/weekly-grocery-budget-planner',
+  ]) {
+    addPath(path);
+  }
+
   return excluded;
 }
 

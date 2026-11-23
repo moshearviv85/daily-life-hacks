@@ -3263,7 +3263,8 @@ test("weekly grocery budget planner title puts the page count and week length in
     page.match(/const description = "([^"]+)"/)?.[1],
     "Download a free two-page grocery budget planner with a seven-day meal plan, pantry check, shopping list, and checkout math.",
   );
-  assert.equal(INDEX_KEEP_PATHS.has("printables/weekly-grocery-budget-planner"), true);
+  assert.equal(INDEX_KEEP_PATHS.has("printables/weekly-grocery-budget-planner"), false);
+  assert.match(page, /robots="noindex, follow"/);
   assert.equal(INDEX_PRUNE_SLUGS.has("printables/weekly-grocery-budget-planner"), false);
   assert.equal(INDEX_PRUNE_SLUGS.has("weekly-grocery-budget-planner"), false);
 });

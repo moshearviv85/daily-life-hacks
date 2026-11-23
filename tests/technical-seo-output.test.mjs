@@ -378,7 +378,7 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
   assert.ok(catalog, "rendered /data/ should include a DataCatalog node");
   assert.equal(catalog.isAccessibleForFree, true);
   assert.equal(catalog.license, "https://creativecommons.org/licenses/by/4.0/");
-  assert.equal(catalog.creditText, "Credit Daily Life Hacks with a link. Licensed under CC BY 4.0.");
+  assert.equal(catalog.creditText, "Daily Life Hacks. Licensed under CC BY 4.0.");
   assert.ok(Array.isArray(catalog.keywords));
   assert.ok(catalog.keywords.includes("Hugging Face"));
   assert.ok(catalog.keywords.includes("fiber per dollar"));
@@ -455,8 +455,43 @@ test("fiber and protein flagships publish the Hugging Face dataset mirror in HTM
   }
 
   const sitemapLocs = new Set(sitemapEntries().map((entry) => entry.loc));
-  assert.ok(sitemapLocs.has(`${SITE}/data/fiber-per-dollar-2026/`));
-  assert.ok(sitemapLocs.has(`${SITE}/data/protein-per-dollar-2026/`));
+  assert.ok(!sitemapLocs.has(`${SITE}/data/fiber-per-dollar-2026/`));
+  assert.ok(!sitemapLocs.has(`${SITE}/data/protein-per-dollar-2026/`));
+  assert.ok(sitemapLocs.has(`${SITE}/data/`));
+  assert.ok(sitemapLocs.has(`${SITE}/fiber-per-dollar-cheapest-high-fiber-foods/`));
+  assert.ok(sitemapLocs.has(`${SITE}/protein-per-dollar-cheapest-protein-sources/`));
+  assert.ok(!robotsFor(`${SITE}/data/`).includes("noindex"));
+  for (const flagship of flagships) {
+    assert.ok(!robotsFor(`${SITE}/${flagship.slug}/`).includes("noindex"));
+  }
+});
+
+test("dataset CSV landings and printables are noindex, follow, and absent from the sitemap", () => {
+  const entries = new Set(sitemapEntries().map((entry) => entry.loc));
+  const paths = [
+    "/data/fiber-per-dollar-2026/",
+    "/data/protein-per-dollar-2026/",
+    "/printables/bean-conversion-card/",
+    "/printables/sourdough-discard-grams-cheat-sheet/",
+    "/printables/weekly-grocery-budget-planner/",
+  ];
+
+  for (const path of paths) {
+    const url = `${SITE}${path}`;
+    assert.ok(!entries.has(url), `${path} leaked into the sitemap`);
+    assert.ok(existsSync(distHtmlFor(url)), `${path} must stay reachable`);
+    const robots = robotsFor(url);
+    assert.match(robots, /noindex/, `${path} missing noindex`);
+    assert.match(robots, /follow/, `${path} missing follow`);
+    assert.doesNotMatch(robots, /nofollow/, `${path} must stay follow`);
+  }
+
+  for (const path of ["/data/", "/fiber-per-dollar-cheapest-high-fiber-foods/", "/protein-per-dollar-cheapest-protein-sources/"]) {
+    const html = readFileSync(distHtmlFor(`${SITE}${path}`), "utf8");
+    assert.match(html, /"@type":\s*"Dataset"/, `${path} dropped Dataset markup`);
+    assert.ok(!robotsFor(`${SITE}${path}`).includes("noindex"), `${path} was noindexed`);
+    assert.ok(entries.has(`${SITE}${path}`), `${path} missing from sitemap`);
+  }
 });
 
 function locFor(path) {

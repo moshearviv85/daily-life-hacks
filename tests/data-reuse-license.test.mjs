@@ -12,6 +12,8 @@ test("reuse page gives a scoped CC BY grant and copy-ready attribution", () => {
   assert.match(page, /third-party content remain the property/);
   assert.match(page, /Data and calculations: Daily Life Hacks/);
   assert.match(page, /Changes: \[describe changes or "none"\]/);
+  assert.match(page, /Attribute Daily Life Hacks and the CC BY 4\.0 license/);
+  assert.doesNotMatch(page, /useful link|link back|backlink|Please credit Daily Life Hacks with a link/i);
   assert.match(page, /rel="license noopener"/);
   assert.match(page, /HUGGINGFACE_DATASET_URL/);
   assert.match(page, /mirrors the fiber and protein flagship CSVs/);

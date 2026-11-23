@@ -114,6 +114,7 @@ const linkStyle = "color: #F29B30;";
   title={title}
   description={description}
   canonicalURL={pageUrl}
+  robots="noindex, follow"
   jsonLd={[webPageSchema, datasetSchema, breadcrumbSchema]}
 >
   <Header />
@@ -176,7 +177,7 @@ const linkStyle = "color: #F29B30;";
         <a href={DATA_LICENSE_URL} class={linkClass} style={linkStyle} rel="license noopener" target="_blank">
           CC BY 4.0
         </a>.
-        Credit Daily Life Hacks, link back to the study, and say if you changed the material. The
+        Attribute Daily Life Hacks and the CC BY 4.0 license, and say if you changed the material. The
         exact scope is on the
         <a href="/data-reuse/" class={linkClass} style={linkStyle}>data reuse page</a>.
       </p>
@@ -189,7 +190,7 @@ const linkStyle = "color: #F29B30;";
       </ul>
 
       <p class="text-base">
-        Point at the study, not the naked CSV. The caveats live there.
+        The caveats live on the study page, not in the CSV.
       </p>
     </div>
 

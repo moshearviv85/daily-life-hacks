@@ -551,7 +551,7 @@ export const DATASET_ORGANIZATION = {
 };
 
 export const DATASET_CREDIT_TEXT =
-  "Credit Daily Life Hacks with a link. Licensed under CC BY 4.0.";
+  "Daily Life Hacks. Licensed under CC BY 4.0.";
 
 export function datasetCsvFileName(
   dataset: Pick<DatasetMeta, "csv">,
@@ -650,7 +650,7 @@ export function datasetCitationText(
 ): string {
   const year = DATA_RELEASE_DATE.slice(0, 4);
   const studyUrl = `${siteUrl}${datasetStudyPath(dataset)}`;
-  return `Daily Life Hacks. "${dataset.name}." ${year}. ${studyUrl}. Please credit Daily Life Hacks with a link.`;
+  return `Daily Life Hacks. "${dataset.name}." ${year}. ${studyUrl}. Licensed under CC BY 4.0.`;
 }
 
 type DatasetSchemaOptions = {

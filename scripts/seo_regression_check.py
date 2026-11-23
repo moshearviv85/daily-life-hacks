@@ -81,6 +81,11 @@ UTILITY_PAGES = [
     "/privacy/",
     "/terms/",
     "/disclaimer/",
+    "/data/fiber-per-dollar-2026/",
+    "/data/protein-per-dollar-2026/",
+    "/printables/bean-conversion-card/",
+    "/printables/sourdough-discard-grams-cheat-sheet/",
+    "/printables/weekly-grocery-budget-planner/",
 ]
 
 SM_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
