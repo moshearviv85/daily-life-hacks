@@ -36,9 +36,14 @@ faq:
   - question: "Quiz: does 3 grams of fiber per serving count as a good source?"
     answer: "Yes. Three grams is about 11 percent of the 28 gram Daily Value, which clears the 10 percent floor in 21 CFR 101.54(c). It is a real claim and a modest amount of fiber. Beans, lentils, and fruit often beat it without a front-of-package badge."
 ---
-On a U.S. food label, "good source of fiber" means one serving gives you 10 to 19 percent of the Daily Value for dietary fiber, and since [FDA lists the fiber DV as 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), that works out to 2.8 to 5.3 grams per serving. The tier above it, "high in fiber" or "excellent source of fiber," requires 20 percent of the DV or more, so at least 5.6 grams per serving. Both come straight from [FDA's nutrient content claim rule, 21 CFR 101.54](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54), and they apply when FDA-regulated food labels use those claims.
+On a U.S. label, "good source of fiber" means 10 to 19 percent of the [28 gram Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), or 2.8 to 5.3 grams per reference amount. "High," "excellent source," and "rich in" need 20 percent, at least 5.6 grams. Both cuts come from [FDA's 21 CFR 101.54](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-D/section-101.54).
 
-That's the answer. Now the part the label doesn't mention.
+| What the package says | What the FDA requires per reference amount |
+|---|---|
+| "Good source of fiber", "Contains fiber", "Provides fiber" | 10 to 19% of the Daily Value: 2.8 to 5.3 grams |
+| "High in fiber", "Excellent source of fiber", "Rich in fiber" | 20% DV or more: at least 5.6 grams |
+| "More fiber" or "Added fiber" | At least 10% DV (2.8 grams) more than the food it's compared to |
+| "Made with whole grains" | It's not one of the fiber claims in 21 CFR 101.54, so the phrase doesn't establish a fiber minimum |
 
 I stood in the cereal aisle for way too long last week. Two boxes, almost the same price, both screaming about fiber. One said "good source of fiber." The other said "made with whole grains." I flipped them over: 3 grams per serving vs 1 gram. Same aisle, same promises, very different math. That messiness follows whole grains around, and we ran the numbers on [oatmeal vs grits](/oatmeal-vs-grits-fiber-content/) too.
 
@@ -48,16 +53,7 @@ Once you've decoded the box, the [complete budget fiber guide](/how-to-eat-more-
 
 ## What does the FDA require for each fiber claim?
 
-The whole system fits in one table:
-
-| What the package says | What the FDA requires per reference amount |
-|---|---|
-| "Good source of fiber", "Contains fiber", "Provides fiber" | 10 to 19% of the Daily Value: 2.8 to 5.3 grams |
-| "High in fiber", "Excellent source of fiber", "Rich in fiber" | 20% DV or more: at least 5.6 grams |
-| "More fiber" or "Added fiber" | At least 10% DV (2.8 grams) more than the food it's compared to |
-| "Made with whole grains" | It's not one of the fiber claims in 21 CFR 101.54, so the phrase doesn't establish a fiber minimum |
-
-These aren't opinion numbers. Section 101.54 sets the thresholds, and the 28 gram Daily Value is written into [FDA's labeling regulations](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9). Two footnotes. If a guide quotes 2.5 grams for "good source" and 5 grams for "high," it's using the old 25 gram Daily Value from before the 2016 label overhaul. And meat and poultry answer to USDA, not FDA, though [USDA's parallel rule](https://www.ecfr.gov/current/title-9/chapter-III/subchapter-A/part-317/subpart-B/section-317.354) uses the same 10 to 19 percent and 20 percent cutoffs. [FDA's whole-grain guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements) handles those statements separately, so "made with whole grains" isn't a secret fiber claim wearing a wheat-colored jacket. Our [plain-English guide to the fiber and protein Daily Values](/fiber-protein-daily-values-explained/) follows the rest of the federal paperwork so you don't have to.
+The gram cuts are in the table under the title. These aren't opinion numbers. Section 101.54 sets the thresholds, and the 28 gram Daily Value is written into [FDA's labeling regulations](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9). Two footnotes. If a guide quotes 2.5 grams for "good source" and 5 grams for "high," it's using the old 25 gram Daily Value from before the 2016 label overhaul. And meat and poultry answer to USDA, not FDA, though [USDA's parallel rule](https://www.ecfr.gov/current/title-9/chapter-III/subchapter-A/part-317/subpart-B/section-317.354) uses the same 10 to 19 percent and 20 percent cutoffs. [FDA's whole-grain guidance](https://www.fda.gov/regulatory-information/search-fda-guidance-documents/draft-guidance-industry-and-fda-staff-whole-grain-label-statements) handles those statements separately, so "made with whole grains" isn't a secret fiber claim wearing a wheat-colored jacket. Our [plain-English guide to the fiber and protein Daily Values](/fiber-protein-daily-values-explained/) follows the rest of the federal paperwork so you don't have to.
 
 ## What the label leaves out
 

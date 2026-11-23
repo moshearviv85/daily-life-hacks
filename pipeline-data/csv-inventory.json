@@ -8,7 +8,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -22,7 +24,9 @@
    "fiber_g_per_dollar",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -48,7 +52,8 @@
    "fiber_g_per_100g",
    "protein_g_per_dollar",
    "fiber_g_per_dollar",
-   "value_source"
+   "value_source",
+   "source_url"
   ]
  },
  {
@@ -62,7 +67,9 @@
    "fiber_g_per_dollar",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -74,7 +81,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -86,7 +95,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -98,7 +109,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -110,7 +123,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -123,7 +138,9 @@
    "price_usd",
    "protein_g_per_dollar",
    "source",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -136,7 +153,9 @@
    "grams_used",
    "fiber_g",
    "cost_usd",
-   "basis"
+   "basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -160,7 +179,9 @@
    "nutrition_source_url",
    "nutrition_source_description",
    "nutrition_source_form",
-   "nutrition_source_note"
+   "nutrition_source_note",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -172,7 +193,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -184,7 +207,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -196,7 +221,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -208,7 +235,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -220,7 +249,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -232,7 +263,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -244,7 +277,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -256,7 +291,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -269,7 +306,9 @@
    "grams_used",
    "protein_g",
    "cost_usd",
-   "basis"
+   "basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -293,7 +332,9 @@
    "nutrition_source_url",
    "nutrition_source_description",
    "nutrition_source_form",
-   "nutrition_source_note"
+   "nutrition_source_note",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -307,7 +348,9 @@
    "diaas_method",
    "diaas_source",
    "adjusted_g_per_dollar",
-   "notes"
+   "notes",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -319,7 +362,9 @@
    "value",
    "package",
    "package_price_usd",
-   "price_basis"
+   "price_basis",
+   "fdc_id",
+   "source_url"
   ]
  },
  {
@@ -343,7 +388,9 @@
    "nutrition_source_type",
    "nutrition_source_id",
    "nutrition_source_url",
-   "nutrition_source_description"
+   "nutrition_source_description",
+   "fdc_id",
+   "source_url"
   ]
  }
 ]

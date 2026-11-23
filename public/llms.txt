@@ -15,12 +15,21 @@ Daily Life Hacks is a food and nutrition site run by David Miller. The content f
 
 ## Original Data Studies
 
-These are original analyses, not aggregated from other publishers. Nutrition values come from USDA FoodData Central. Prices come from BLS Average Price data and dated Walmart national listings. All values use an as-purchased basis with USDA edible-fraction (refuse) adjustments. The current public CSVs expose the ranking inputs and price basis, but they do not yet include a FoodData Central ID, source URL, or observation date for every row. Full methodology and limitations: https://www.daily-life-hacks.com/methodology/
+These are original analyses, not aggregated from other publishers. Nutrition values come from USDA FoodData Central. Prices come from BLS Average Price data and dated Walmart national listings. All values use an as-purchased basis with USDA edible-fraction (refuse) adjustments. Every public CSV has an `fdc_id` column and a `source_url` column. `source_url` is the public FoodData Central food-details page for that id (`https://fdc.nal.usda.gov/food-details/{fdc_id}/nutrients`). A cell is left blank when no single FoodData Central record was determinable. Full methodology and limitations: https://www.daily-life-hacks.com/methodology/
 
 - Fiber per Dollar study (53 foods ranked): https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/
 - Protein per Dollar study (49 sources ranked): https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/
 - Fiber per Dollar Calculator (interactive tool on the same dataset): https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/
 - All tools: https://www.daily-life-hacks.com/tools/
+
+## Sourdough discard
+
+- Easy sourdough discard recipes for beginners: https://www.daily-life-hacks.com/easy-sourdough-discard-recipes-beginners/
+- Sourdough discard recipes, no yeast: https://www.daily-life-hacks.com/sourdough-discard-recipes-no-yeast/
+- Sourdough discard crackers: https://www.daily-life-hacks.com/sourdough-discard-crackers/
+- Easy sourdough discard pizza dough, no yeast: https://www.daily-life-hacks.com/easy-sourdough-discard-pizza-dough-no-yeast/
+- How long sourdough discard lasts: https://www.daily-life-hacks.com/how-long-does-sourdough-discard-last/
+- How to measure sourdough discard in grams: https://www.daily-life-hacks.com/how-to-measure-sourdough-discard-grams/
 
 ## Tools
 
@@ -35,7 +44,9 @@ These are original analyses, not aggregated from other publishers. Nutrition val
 - Protein per Dollar dataset page: https://www.daily-life-hacks.com/data/protein-per-dollar-2026/
 - Hugging Face mirror (fiber and protein flagships): https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar
 
-Each ranking CSV includes every food, nutrient value, package and price inputs, edible-fraction adjustment, price basis, and calculated per-dollar value used in the corresponding study. The current exports do not include a USDA source ID or source URL for every row.
+Each ranking CSV includes every food, nutrient value, package and price inputs, edible-fraction adjustment, price basis, and calculated per-dollar value used in the corresponding study, plus `fdc_id` and `source_url` when a single FoodData Central record was determinable.
+
+Blank `fdc_id` cells are intentional. Unpopped popcorn kernels stay blank because the fiber study could not tie them to a published FoodData Central record, and the same blank follows that row into the fiber rankings. Textured vegetable protein stays blank because that row is a manufacturer label, not a FoodData Central record. Frozen shelled edamame stays blank on the fiber study and the produce fiber ranking because that fiber row is unresolved; the protein files do carry FDC 168410 for the same food. Complete-protein pair rows stay blank because each row is two foods. Fast-food menu items stay blank because their numbers come from chain nutrition pages. Restaurant lines in the day-cost menus (Starbucks, Wendy's, Taco Bell, and McDonald's) stay blank for the same reason.
 
 ## Data Verification
 

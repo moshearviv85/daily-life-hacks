@@ -13,7 +13,7 @@ tags:
 image: "/images/healthy-egg-sandwich-add-ins-toppings-main.jpg"
 imageAlt: A healthy egg sandwich is cut in half, stacked with egg, arugula, and avocado, on a kitchen counter.
 date: 2026-04-28
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 quickAnswer: "Build a better egg sandwich by choosing one creamy layer, one crisp vegetable, and one sharp accent. Try avocado with arugula and pickled onion, hummus with cucumber and hot sauce, or pesto with tomato and spinach. Toast the bread firmly, keep wet ingredients away from it, and cook the eggs thoroughly for a sandwich that holds together."
 featured: false
@@ -48,6 +48,14 @@ faq:
   - question: "Can I make healthy egg sandwiches ahead of time?"
     answer: "Yes. Refrigerate cooked egg components promptly and use them within three to four days. Toast the bread and add avocado, tomato, or greens shortly before eating so the sandwich doesn't get soggy."
 ---
+
+Build the sandwich from one creamy layer, one crisp vegetable, and one sharp accent: avocado with arugula and pickled onion, hummus with cucumber, or pesto with tomato. Toast the bread, keep wet toppings off it, and cook the eggs until the white and yolk are firm. [USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/eggs/shell-eggs-farm-table) lists 160°F for egg dishes.
+
+| Number | What it's for | Source |
+|---|---|---|
+| 160°F | Egg dishes, cooked until the white and yolk are firm | [USDA FSIS, shell eggs](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/eggs/shell-eggs-farm-table) |
+| 3 to 4 days | Cooked egg kept in the fridge, bread toasted at serving | [USDA FSIS, leftovers](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/leftovers-and-food-safety) |
+
 The average Tuesday morning usually involves me staring into the fridge, wondering if a third cup of coffee counts as a food group. If you're tired of the same rubbery egg on a white roll, it's time to look at what else is in your crisper drawer.
 
 Making a better breakfast isn't about some massive lifestyle overhaul. It's about grabbing the bag of spinach before it turns into green slime in the back of the fridge. You want something that tastes like a real meal and survives the trip from plate to mouth. We ran the full macronutrient breakdown on an egg sandwich if you want to compare a specific build.
@@ -86,6 +94,6 @@ If your sandwich tastes like cardboard, you probably forgot the seasoning. A pla
 
 ## Cook and pack the egg safely
 
-For a fully cooked sandwich, keep the egg in the pan until the white and yolk are firm. USDA's [shell egg safety guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/eggs/shell-eggs-farm-table) recommends cooking eggs thoroughly and lists 160°F for egg dishes. If you're packing the sandwich, cool the cooked egg promptly, refrigerate it, and add avocado or tomato shortly before eating so the bread doesn't become breakfast wallpaper. Packed that way an egg sandwich travels fine, and it sits comfortably alongside other [lunches meant to hold up through a long shift](/healthy-blue-collar-lunch-ideas-men/).
+Cool the cooked egg promptly, and add avocado or tomato right before you eat so the bread doesn't turn into breakfast wallpaper. The 160°F line and the 3-to-4-day fridge window are in the table under the title. Packed that way an egg sandwich travels fine, and it sits comfortably alongside other [lunches meant to hold up through a long shift](/healthy-blue-collar-lunch-ideas-men/).
 
 You don't need a culinary degree or an hour of prep time to stop eating boring breakfasts. Most of these additions take less than sixty seconds to pull from the fridge and throw onto a plate. The bread matters too, so if you want a sturdier base, we ranked the [best high protein breads for sandwiches](/best-high-protein-breads-healthy-sandwiches/). Start with one or two and see what actually sticks. The best sandwich is the one you look forward to eating and can pick up without wearing half of it.

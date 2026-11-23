@@ -460,6 +460,14 @@ FIELD_DESCRIPTIONS: dict[str, str] = {
     "nutrition_source_url": (
         "Direct authoritative record URL, or the current manufacturer page for the unresolved TVP label row."
     ),
+    "fdc_id": (
+        "USDA FoodData Central numeric record ID when one record was determinable for the row. "
+        "Blank when no unique FoodData Central ID was established."
+    ),
+    "source_url": (
+        "Public USDA FoodData Central food-details page for fdc_id. Blank when that row has no "
+        "FoodData Central ID."
+    ),
     "nutrition_source_description": (
         "Food description from the linked authoritative record, preserved verbatim for auditability."
     ),

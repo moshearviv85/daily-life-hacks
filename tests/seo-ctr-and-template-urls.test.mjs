@@ -1813,7 +1813,7 @@ test("selenium foods title leads with how much you need", () => {
     false,
     "selenium foods title should not be the old three-clause comma stack",
   );
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(page.excerpt, /Brazil nuts/);
   assert.match(page.excerpt, /400 mcg/);
@@ -2000,7 +2000,7 @@ test("egg sandwich add-ins title leads with add-ins and toppings", () => {
     "egg sandwich add-ins title should not be the old healthy taste-good SERP",
   );
   assert.match(raw, /^date: 2026-04-28$/m);
-  assert.match(raw, /^dateModified: 2026-09-23$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 });
 
 test("high fiber smoothies title leads with high fiber smoothies for picky kids", () => {

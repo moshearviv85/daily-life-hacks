@@ -26,32 +26,9 @@ faq:
     answer: Yes. Put the bowl on a digital scale, press tare, and add the cold discard until you reach the recipe's gram amount. Temperature changes how easily it pours, but it doesn't change the target weight.
 ---
 
+One cup of stirred 100% hydration sourdough discard weighs about 227 grams, and half a cup weighs about 113 grams. A quarter cup is about 57 grams. [King Arthur Baking](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe) uses that 227 gram cup. A bubbly, unstirred jar takes more space, so put the bowl on a scale, press tare, and weigh it.
+
 | US volume | Discard weight |
-|---|---:|
-| 1/4 cup | 57 g |
-| 1/3 cup | 76 g |
-| 1/2 cup | 113 g |
-| 3/4 cup | 170 g |
-| 1 cup | 227 g |
-| 2 cups | 454 g |
-
-One hundred grams is about 0.44 cup. These weights assume stirred 100% hydration discard, the same cup [King Arthur Baking](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe) uses at 227 grams. A bubbly, unstirred jar takes up more space, so the scale still wins.
-
-| Discard you add | Flour to remove | Liquid to remove |
-|---|---:|---:|
-| 100 g | 50 g | 50 g |
-| 113 g (1/2 cup) | 56 g | 56 g |
-| 227 g (1 cup) | 113 g | 113 g |
-
-At 100% hydration, half the discard's weight is flour and half is water. Take those amounts out of the recipe's flour and liquid or the dough gets wetter and heavier than the author wrote.
-
-Half a cup of sourdough discard is about **113 grams**, and one cup is about **227 grams**. If you're holding a sticky measuring cup over the sink, the scale is the easier option.
-
-Use the calculator above to convert your amount and see how much flour and water it contains. The cup conversion assumes a stirred starter; the flour-and-water calculation assumes **100% hydration**, or equal weights of each.
-
-## Sourdough discard cups to grams
-
-| US volume | Approximate discard weight |
 |---|---:|
 | 2 tablespoons | 28 g |
 | 1/4 cup | 57 g |
@@ -61,8 +38,25 @@ Use the calculator above to convert your amount and see how much flour and water
 | 3/4 cup | 170 g |
 | 1 cup | 227 g |
 | 1 1/2 cups | 341 g |
+| 2 cups | 454 g |
 
-The starting point is [King Arthur Baking's starter conversion](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe), which uses 227 grams for one cup. The other rows are proportional amounts rounded to a whole gram.
+One hundred grams is about 0.44 cup. These weights assume stirred 100% hydration discard. A bubbly, unstirred jar takes up more space, so the scale still wins.
+
+| Discard you add | Flour to remove | Liquid to remove |
+|---|---:|---:|
+| 100 g | 50 g | 50 g |
+| 113 g (1/2 cup) | 56 g | 56 g |
+| 227 g (1 cup) | 113 g | 113 g |
+
+At 100% hydration, half the discard's weight is flour and half is water. Take those amounts out of the recipe's flour and liquid or the dough gets wetter and heavier than the author wrote.
+
+If you're holding a sticky measuring cup over the sink, the scale is the easier option. The cup weights are in the table under the title, including 113 grams for half a cup and 227 grams for a full cup.
+
+Use the calculator on this page to convert your amount and see how much flour and water it contains. The cup conversion assumes a stirred starter; the flour-and-water calculation assumes **100% hydration**, or equal weights of each.
+
+## Sourdough discard cups to grams
+
+The starting point is [King Arthur Baking's starter conversion](https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe), which uses 227 grams for one cup. The other rows in the table under the title are proportional amounts rounded to a whole gram.
 
 This is a practical conversion, not an exact density for every jar. A bubbly starter fills more space than the same starter stirred flat. When a recipe supplies its own gram weight, follow that weight.
 
@@ -88,7 +82,7 @@ For **100% hydration discard**, divide its weight by two.
 
 For example, adding 100 grams of this discard to a recipe contributes 50 grams of flour and 50 grams of water. Subtracting those from the recipe preserves the ingredient balance on paper, but acidity and fermentation still affect the result. It isn't a promise that any cake or cookie recipe will behave the same.
 
-A starter at another hydration needs different math: **flour = discard weight ÷ (1 + hydration ÷ 100)**. Water is the remaining weight. A 150-gram starter at 50% hydration contains 100 grams flour and 50 grams water. The calculator above stays at 100% hydration deliberately. For any other hydration, a feeding ratio, or the cup conversion in one place, use the [sourdough discard calculator](/tools/sourdough-discard-calculator/).
+A starter at another hydration needs different math: **flour = discard weight ÷ (1 + hydration ÷ 100)**. Water is the remaining weight. A 150-gram starter at 50% hydration contains 100 grams flour and 50 grams water. The calculator on this page stays at 100% hydration deliberately. For any other hydration, a feeding ratio, or the cup conversion in one place, use the [sourdough discard calculator](/tools/sourdough-discard-calculator/).
 
 ## Scale a recipe to the jar you have
 

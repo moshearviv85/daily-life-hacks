@@ -1,28 +1,28 @@
-food,category,value,package,package_price_usd,price_basis
-Whole wheat flour,Grains & pantry,96.0,5 lb bag,3.12,"Walmart GV (fiber study, audited)"
-Brown lentils (dry),Dried beans & lentils,77.7,16 oz bag,1.44,"Walmart GV (fiber study, audited)"
-Green split peas (dry),Dried beans & lentils,73.9,16 oz bag,1.42,"Walmart GV (fiber study, audited)"
-Navy beans (dry),Dried beans & lentils,59.9,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233)
-Black beans (dry),Dried beans & lentils,58.0,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233)
-Pinto beans (dry),Dried beans & lentils,57.6,4 lb bag,6.75,BLS US avg July 2026 (APU0000714233)
-Chickpeas (dry),Dried beans & lentils,56.7,16 oz bag,1.64,"Walmart (fiber study, audited)"
-Red lentils (dry),Dried beans & lentils,56.0,16 oz bag,1.94,"Walmart (fiber study, audited)"
-Whole wheat spaghetti,Grains & pantry,53.4,16 oz box,1.18,"Walmart GV (fiber study, audited)"
-Peanut butter,Nuts & seeds,50.7,40 oz jar,4.97,"Walmart GV (fiber study, audited)"
-Old-fashioned rolled oats,Grains & pantry,46.6,42 oz canister,3.36,"Walmart GV (fiber study, audited)"
-"Spaghetti (regular, dry)",Grains & pantry,42.9,16 oz box,1.38,BLS US avg July 2026 (APU0000701322)
-Dry roasted peanuts,Nuts & seeds,39.8,16 oz jar,2.78,"Walmart GV (fiber study, audited)"
-Brown rice (dry),Grains & pantry,36.6,2 lb bag,1.87,"Walmart GV (fiber study, audited)"
-Pearled barley (dry),Grains & pantry,36.3,16 oz bag,1.24,"Walmart GV (fiber study, audited)"
-Sunflower seed kernels,Nuts & seeds,31.7,16 oz bag,2.98,"Walmart (fiber study, audited)"
-Canned black beans,Canned beans,30.1,15.5 oz can,0.88,"Walmart GV (fiber study, audited)"
-"White rice (long grain, dry)",Grains & pantry,29.4,5 lb bag,5.50,BLS US avg July 2026 (APU0000701312)
-Canned kidney beans,Canned beans,23.4,15.5 oz can,0.98,"Walmart GV (fiber study, audited)"
-"Canned tuna (chunk light, in water)",Fish (canned & frozen),22.4,5 oz can (113 g drained),0.98,Walmart GV Jul 2026
-Canned chickpeas,Canned beans,22.0,15.5 oz can,0.98,"Walmart GV (fiber study, audited)"
-Canned pink salmon,Fish (canned & frozen),21.6,14.75 oz can,3.8,Walmart GV Jul 2026
-Quinoa (dry),Grains & pantry,21.5,2 lb bag,5.97,"Walmart GV (fiber study, audited)"
-Frozen tilapia fillets,Fish (canned & frozen),20.9,4 lb bag,17.47,Walmart GV Jul 2026
-"Sardines (canned in oil, drained)",Fish (canned & frozen),20.2,3.75 oz can (92 g drained),1.12,Walmart Jul 2026
-100% whole wheat bread,Grains & pantry,20.1,20 oz loaf,3.52,BLS US avg May 2026 (APU0000702212)
-Almonds,Nuts & seeds,14.8,16 oz bag,6.47,"Walmart GV (fiber study, audited)"
+food,category,value,package,package_price_usd,price_basis,fdc_id,source_url
+Whole wheat flour,Grains & pantry,96.0,5 lb bag,3.12,"Walmart GV (fiber study, audited)",168893,https://fdc.nal.usda.gov/food-details/168893/nutrients
+Brown lentils (dry),Dried beans & lentils,77.7,16 oz bag,1.44,"Walmart GV (fiber study, audited)",172420,https://fdc.nal.usda.gov/food-details/172420/nutrients
+Green split peas (dry),Dried beans & lentils,73.9,16 oz bag,1.42,"Walmart GV (fiber study, audited)",172428,https://fdc.nal.usda.gov/food-details/172428/nutrients
+Navy beans (dry),Dried beans & lentils,59.9,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233),173745,https://fdc.nal.usda.gov/food-details/173745/nutrients
+Black beans (dry),Dried beans & lentils,58.0,2 lb bag,3.38,BLS US avg July 2026 (APU0000714233),173734,https://fdc.nal.usda.gov/food-details/173734/nutrients
+Pinto beans (dry),Dried beans & lentils,57.6,4 lb bag,6.75,BLS US avg July 2026 (APU0000714233),175199,https://fdc.nal.usda.gov/food-details/175199/nutrients
+Chickpeas (dry),Dried beans & lentils,56.7,16 oz bag,1.64,"Walmart (fiber study, audited)",173756,https://fdc.nal.usda.gov/food-details/173756/nutrients
+Red lentils (dry),Dried beans & lentils,56.0,16 oz bag,1.94,"Walmart (fiber study, audited)",174284,https://fdc.nal.usda.gov/food-details/174284/nutrients
+Whole wheat spaghetti,Grains & pantry,53.4,16 oz box,1.18,"Walmart GV (fiber study, audited)",169738,https://fdc.nal.usda.gov/food-details/169738/nutrients
+Peanut butter,Nuts & seeds,50.7,40 oz jar,4.97,"Walmart GV (fiber study, audited)",174266,https://fdc.nal.usda.gov/food-details/174266/nutrients
+Old-fashioned rolled oats,Grains & pantry,46.6,42 oz canister,3.36,"Walmart GV (fiber study, audited)",173904,https://fdc.nal.usda.gov/food-details/173904/nutrients
+"Spaghetti (regular, dry)",Grains & pantry,42.9,16 oz box,1.38,BLS US avg July 2026 (APU0000701322),169736,https://fdc.nal.usda.gov/food-details/169736/nutrients
+Dry roasted peanuts,Nuts & seeds,39.8,16 oz jar,2.78,"Walmart GV (fiber study, audited)",174262,https://fdc.nal.usda.gov/food-details/174262/nutrients
+Brown rice (dry),Grains & pantry,36.6,2 lb bag,1.87,"Walmart GV (fiber study, audited)",169703,https://fdc.nal.usda.gov/food-details/169703/nutrients
+Pearled barley (dry),Grains & pantry,36.3,16 oz bag,1.24,"Walmart GV (fiber study, audited)",170284,https://fdc.nal.usda.gov/food-details/170284/nutrients
+Sunflower seed kernels,Nuts & seeds,31.7,16 oz bag,2.98,"Walmart (fiber study, audited)",170562,https://fdc.nal.usda.gov/food-details/170562/nutrients
+Canned black beans,Canned beans,30.1,15.5 oz can,0.88,"Walmart GV (fiber study, audited)",175188,https://fdc.nal.usda.gov/food-details/175188/nutrients
+"White rice (long grain, dry)",Grains & pantry,29.4,5 lb bag,5.50,BLS US avg July 2026 (APU0000701312),168877,https://fdc.nal.usda.gov/food-details/168877/nutrients
+Canned kidney beans,Canned beans,23.4,15.5 oz can,0.98,"Walmart GV (fiber study, audited)",173741,https://fdc.nal.usda.gov/food-details/173741/nutrients
+"Canned tuna (chunk light, in water)",Fish (canned & frozen),22.4,5 oz can (113 g drained),0.98,Walmart GV Jul 2026,173709,https://fdc.nal.usda.gov/food-details/173709/nutrients
+Canned chickpeas,Canned beans,22.0,15.5 oz can,0.98,"Walmart GV (fiber study, audited)",175206,https://fdc.nal.usda.gov/food-details/175206/nutrients
+Canned pink salmon,Fish (canned & frozen),21.6,14.75 oz can,3.8,Walmart GV Jul 2026,173690,https://fdc.nal.usda.gov/food-details/173690/nutrients
+Quinoa (dry),Grains & pantry,21.5,2 lb bag,5.97,"Walmart GV (fiber study, audited)",168874,https://fdc.nal.usda.gov/food-details/168874/nutrients
+Frozen tilapia fillets,Fish (canned & frozen),20.9,4 lb bag,17.47,Walmart GV Jul 2026,175176,https://fdc.nal.usda.gov/food-details/175176/nutrients
+"Sardines (canned in oil, drained)",Fish (canned & frozen),20.2,3.75 oz can (92 g drained),1.12,Walmart Jul 2026,175139,https://fdc.nal.usda.gov/food-details/175139/nutrients
+100% whole wheat bread,Grains & pantry,20.1,20 oz loaf,3.52,BLS US avg May 2026 (APU0000702212),172688,https://fdc.nal.usda.gov/food-details/172688/nutrients
+Almonds,Nuts & seeds,14.8,16 oz bag,6.47,"Walmart GV (fiber study, audited)",170567,https://fdc.nal.usda.gov/food-details/170567/nutrients

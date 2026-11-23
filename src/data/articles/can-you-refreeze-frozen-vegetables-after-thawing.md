@@ -27,8 +27,6 @@ faq:
 
 If the bag thawed in the refrigerator, you can refreeze it. If it thawed on the counter for more than two hours, you can't. That's the whole rule, and it comes straight from USDA's [freezing and food safety guidance](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety), which draws the line by where the food sat rather than by how it looks or smells.
 
-I know the temptation. The peas look fine. They're still cold. Cold is not the standard.
-
 | Situation | Safe to refreeze? | Source |
 |---|---|---|
 | Thawed in the refrigerator | Yes, with quality loss | [USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/freezing-and-food-safety) |
@@ -39,6 +37,8 @@ I know the temptation. The peas look fine. They're still cold. Cold is not the s
 | Warmer than 40F for more than 2 hours | No, discard | USDA FSIS |
 
 *Source: USDA Food Safety and Inspection Service, Freezing and Food Safety, last updated August 2024.*
+
+I know the temptation. The peas look fine. They're still cold. Cold is not the standard.
 
 ## Can you refreeze vegetables that thawed in the fridge?
 
