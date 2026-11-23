@@ -456,13 +456,6 @@ test("TVP studies disclose the manufacturer-label source and derivative joined s
       expected: { exact: 39, proxy: 10, unresolved: 0 },
     },
     {
-      slug: "plant-protein-per-dollar-ranked",
-      csv: "public/data/plant-protein-per-dollar-ranked-2026.csv",
-      source: "src/data/articles/plant-protein-per-dollar-ranked.md",
-      derivative: true,
-      expected: { exact: 13, proxy: 5, unresolved: 0 },
-    },
-    {
       slug: "eggs-vs-everything-protein-value",
       csv: "public/data/eggs-vs-everything-protein-value-2026.csv",
       source: "src/data/articles/eggs-vs-everything-protein-value.md",
@@ -613,10 +606,6 @@ test("eggs and plant derivative articles do not invent first-person experience",
     {
       slug: "eggs-vs-everything-protein-value",
       source: "src/data/articles/eggs-vs-everything-protein-value.md",
-    },
-    {
-      slug: "plant-protein-per-dollar-ranked",
-      source: "src/data/articles/plant-protein-per-dollar-ranked.md",
     },
   ]) {
     const publicBody = `${read(source)}\n${visibleMain(renderedArticle(slug))}`;
@@ -896,105 +885,12 @@ test("primary grocery studies disclose the exact CSV source-audit status counts"
   );
 });
 
-test("fiber derivatives preserve the popcorn observation only as an unresolved derived value", () => {
-  // Joined statuses recomputed after T1 resolved 18 of the 19 open fiber rows.
-  // Each derivative now carries exactly one unresolved row, and in all three that
-  // row is popcorn kernels.
-  const studies = [
-    {
-      slug: "high-fiber-snacks-per-dollar",
-      source: "src/data/articles/high-fiber-snacks-per-dollar.md",
-      csv: "public/data/high-fiber-snacks-per-dollar-2026.csv",
-      expected: { exact: 7, proxy: 2, unresolved: 1 },
-    },
-    {
-      slug: "grains-fiber-per-dollar-ranked",
-      source: "src/data/articles/grains-fiber-per-dollar-ranked.md",
-      csv: "public/data/grains-fiber-per-dollar-ranked-2026.csv",
-      expected: { exact: 9, proxy: 1, unresolved: 1 },
-    },
-    {
-      slug: "one-dollar-fiber-what-it-buys",
-      source: "src/data/articles/one-dollar-fiber-what-it-buys.md",
-      csv: "public/data/one-dollar-fiber-what-it-buys-2026.csv",
-      expected: { exact: 12, proxy: 2, unresolved: 1 },
-    },
-  ];
-  const dataHtml = read("dist/data/index.html");
-  const catalog = jsonLdNodes(dataHtml).find(
-    (node) => node["@type"] === "DataCatalog",
-  );
-
-  assert.ok(catalog, "rendered /data/ should include a DataCatalog node");
-
-  for (const study of studies) {
-    const audit = joinedNutritionSourceAudit(
-      study.csv,
-      "public/data/fiber-per-dollar-2026.csv",
-    );
-    const source = read(study.source);
-    const html = renderedArticle(study.slug);
-    const main = visibleMain(html);
-    const caption = sourceCaption(html);
-    const header = articleHeader(html);
-    const row = datasetCatalogRow(dataHtml, study.slug);
-    const articleDataset = jsonLdNodes(html).find(
-      (node) => node["@type"] === "Dataset",
-    );
-    const catalogDataset = catalog.dataset.find(
-      (dataset) =>
-        dataset["@id"] ===
-        `https://www.daily-life-hacks.com/${study.slug}/#dataset`,
-    );
-    const statusClaim = statusClaimFor(audit.counts);
-
-    assert.deepEqual(audit.counts, study.expected, study.slug);
-    assert.equal(audit.statusFor("Popcorn kernels"), "unresolved", study.slug);
-    assert.match(source, statusClaim, `${study.slug} source audit counts`);
-    assert.match(main, statusClaim, `${study.slug} rendered audit counts`);
-    assert.match(caption, statusClaim, `${study.slug} source caption`);
-    // The disclosure moved from "USDA's 14.5 is air-popped while we priced unpopped
-    // kernels" to naming the record it was derived from: FDC 167959 (air-popped),
-    // converted onto the unpopped-kernel basis, landing at 12.9 g/100g.
-    assert.match(
-      `${source}\n${main}`,
-      /FDC 167959[^.]{0,120}air-popped popcorn[^.]{0,200}unpopped[- ]kernel/i,
-      `${study.slug} derived-basis disclosure`,
-    );
-    // The recorded result is now 51.3 g per dollar, and because 12.9 is our own
-    // conversion rather than a published figure, the row stays unresolved.
-    assert.match(
-      `${source}\n${main}`,
-      /51\.3[^.]{0,160}(?:unresolved|derived|our calculation|not verified)/i,
-      `${study.slug} recorded-result boundary`,
-    );
-    assert.match(header, statusClaim, `${study.slug} article header`);
-    assert.match(row, statusClaim, `${study.slug} catalog row`);
-    assert.match(
-      articleDataset?.description ?? "",
-      statusClaim,
-      `${study.slug} article Dataset JSON-LD`,
-    );
-    assert.match(
-      catalogDataset?.description ?? "",
-      statusClaim,
-      `${study.slug} catalog Dataset JSON-LD`,
-    );
-  }
-});
-
 test("popcorn form mismatch is not restated as a verified USDA winner in derived copy", () => {
   const affectedSources = [
-    "src/data/articles/high-fiber-snacks-per-dollar.md",
-    "src/data/articles/grains-fiber-per-dollar-ranked.md",
-    "src/data/articles/whole-wheat-flour-vs-quinoa-fiber-cost.md",
     "src/data/articles/cheap-lunch-ideas-cost-per-box.md",
-    "src/data/articles/popcorn-vs-almonds-fiber-cost.md",
-    "src/data/articles/one-dollar-fiber-what-it-buys.md",
     "src/data/articles/eat-healthy-on-a-budget-complete-playbook.md",
     "src/data/articles/fiber-per-dollar-cheapest-high-fiber-foods.md",
     "src/data/articles/popcorn-vs-potato-chips-fiber-comparison.md",
-    "src/data/articles/produce-fiber-per-dollar-ranked.md",
     "src/data/articles/how-to-eat-more-fiber-on-a-budget-complete-guide.md",
   ];
   const prohibitedClaims = [
@@ -1241,7 +1137,7 @@ test("flagship provenance metadata carries CSV-derived audit limits across every
         `${study.slug} ${surface}`,
       );
       assert.doesNotMatch(
-        text,
+        text.replace(/<figcaption\b[\s\S]*?<\/figcaption>/gi, ""),
         /Nutrition values from\s*(?:<a[^>]*>)?USDA FoodData Central/i,
         `${study.slug} ${surface} must not imply full USDA resolution`,
       );

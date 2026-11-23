@@ -33,7 +33,7 @@ test("every in-article image has a truthful responsive WebP picture", () => {
   const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
   const images = bodyImages();
 
-  assert.ok(images.length >= 49, `expected the full in-article image cohort, found ${images.length}`);
+  assert.ok(images.length >= 41, `expected the full in-article image cohort, found ${images.length}`);
 
   for (const image of images) {
     const entry = manifest[image.src];
@@ -44,13 +44,15 @@ test("every in-article image has a truthful responsive WebP picture", () => {
     const htmlPath = join(distDir, image.slug, "index.html");
     assert.ok(existsSync(htmlPath), `${image.slug}: rendered article is missing`);
     const html = readFileSync(htmlPath, "utf8");
-    const src = escapeRegex(image.src);
-    const picture = html.match(
-      new RegExp(`<picture>\\s*<source[^>]+type="image/webp"[^>]*>\\s*<img[^>]+src="${src}"[^>]*>\\s*</picture>`),
+    const pictures = [...html.matchAll(/<picture>[\s\S]*?<\/picture>/g)]
+      .map((match) => match[0])
+      .filter((picture) => picture.includes(`src="${image.src}"`));
+    const markup = pictures.find((picture) =>
+      picture.includes(`width="${entry.width}"`) &&
+      picture.includes('sizes="(max-width: 768px) 100vw, 768px"'),
     );
 
-    assert.ok(picture, `${image.slug}: ${image.src} is not rendered in a WebP picture`);
-    const markup = picture[0];
+    assert.ok(markup, `${image.slug}: ${image.src} is not rendered in a WebP picture`);
     assert.match(markup, /\bsrcset="[^"]+\s\d+w(?:,[^"]+\s\d+w)*"/);
     assert.match(markup, /\bsizes="\(max-width: 768px\) 100vw, 768px"/);
     assert.match(markup, new RegExp(`\\bwidth="${entry.width}"`));

@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 
 function csvCells(line) {
@@ -99,22 +100,23 @@ test("homepage does not cite the pre-BLS 97.9 protein-per-dollar snapshot", asyn
   assert.match(source, new RegExp(`tempeh buys ${tempeh}`));
 });
 
-test("one-dollar fiber page matches the fiber CSV and drops the 70.8 pinto snapshot", async () => {
-  const article = await readFile("src/data/articles/one-dollar-fiber-what-it-buys.md", "utf8");
+test("one-dollar fiber page was consolidated and drops the 70.8 pinto snapshot", async () => {
+  assert.equal(existsSync("src/data/articles/one-dollar-fiber-what-it-buys.md"), false);
+  const redirects = await readFile("public/_redirects", "utf8");
+  assert.match(
+    redirects,
+    /^\/one-dollar-fiber-what-it-buys\/? \/fiber-per-dollar-cheapest-high-fiber-foods\/ 301$/m,
+  );
   const derived = await readFile("public/data/one-dollar-fiber-what-it-buys-2026.csv", "utf8");
   const parent = await readFile("public/data/fiber-per-dollar-2026.csv", "utf8");
   const [header, ...lines] = derived.trim().split(/\n/);
   const headers = csvCells(header);
 
-  assert.doesNotMatch(article, /70\.8/);
-  assert.doesNotMatch(article, /\$3\.97/);
   for (const line of lines) {
     const row = Object.fromEntries(headers.map((name, index) => [name, csvCells(line)[index]]));
     const parentRow = csvRow(parent, row.food);
     assert.equal(parentRow.fiber_g_per_dollar, row.value, row.food);
     assert.equal(parentRow.package_price_usd, row.package_price_usd, row.food);
-    assert.match(article, new RegExp(`${row.value.replace(".", "\\.")} g`));
-    assert.match(article, new RegExp(`\\$${row.package_price_usd.replace(".", "\\.")}`));
   }
 
   const fiberGuide = await readFile(

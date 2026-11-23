@@ -27,21 +27,24 @@ const csvPaths = [
   ...datasetBlock.matchAll(/^\s+csv:\s*"([^"]+)",/gm),
 ].map((match) => match[1]);
 
-test("all 22 published datasets have an article, CSV, and embeddable chart", () => {
-  assert.equal(datasetSlugs.length, 22);
-  assert.equal(new Set(datasetSlugs).size, 22);
-  assert.equal(csvPaths.length, 22);
-  assert.equal(new Set(csvPaths).size, 22);
+test("published datasets have a CSV, and article studies keep an embeddable chart", () => {
+  assert.equal(datasetSlugs.length, csvPaths.length);
+  assert.equal(new Set(datasetSlugs).size, datasetSlugs.length);
+  assert.equal(new Set(csvPaths).size, csvPaths.length);
+  assert.ok(datasetSlugs.length >= 22);
 
+  let articleStudies = 0;
   for (const slug of datasetSlugs) {
     const articlePath = path.join(root, "src", "data", "articles", `${slug}.md`);
-    assert.ok(fs.existsSync(articlePath), `missing article for ${slug}`);
+    if (!fs.existsSync(articlePath)) continue;
+    articleStudies += 1;
     assert.match(
       fs.readFileSync(articlePath, "utf8"),
       /!\[[^\]]+\]\(\/images\/[^)\s]*-chart\.jpg\)/,
       `missing accessible chart image for ${slug}`,
     );
   }
+  assert.ok(articleStudies >= 10, `expected surviving study articles, found ${articleStudies}`);
 
   for (const csvPath of csvPaths) {
     assert.ok(
