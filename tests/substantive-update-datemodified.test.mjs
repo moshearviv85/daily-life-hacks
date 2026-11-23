@@ -211,7 +211,9 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
     ),
   );
   assert.equal(stillToday.length, 33, `pages still on ${TODAY}`);
-  assert.equal(restored.length, 62, "pages restored off 2026-11-23");
+  // #252 already restored those 62 pages on main. Later branches should
+  // not move dateModified again, so origin/main and this tree agree.
+  assert.equal(restored.length, 0, "pages restored off 2026-11-23");
 });
 
 test("restored and substantive pages render the honest Updated day", () => {
@@ -227,8 +229,11 @@ test("restored and substantive pages render the honest Updated day", () => {
   if (!built) return;
   for (const [slug, day] of cases) {
     const html = readFileSync(join(ROOT, "dist", slug, "index.html"), "utf8");
-    assert.match(html, new RegExp(`"dateModified":"${day}T00:00:00.000Z"`), slug);
     assert.match(html, new RegExp(`<time datetime="${day}"`), slug);
+    // Pruned pages stay noindex and omit rich-result JSON-LD.
+    if (!html.includes("noindex")) {
+      assert.match(html, new RegExp(`"dateModified":"${day}T00:00:00.000Z"`), slug);
+    }
     if (day !== TODAY) {
       assert.equal(html.includes('"dateModified":"2026-11-23T'), false, slug);
     }

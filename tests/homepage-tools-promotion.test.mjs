@@ -145,15 +145,16 @@ test("recipes index advertises the scaler where people choose a recipe", async (
   const source = await readFile("src/pages/recipes/index.astro", "utf8");
   assert.match(source, /Easy Recipes With Adjustable Servings/);
   assert.match(source, /change the servings inside the ingredient card/);
-  assert.match(source, /All \{articles\.length\} recipes scale/);
+  assert.match(source, /All \{alphabetical\.length\} recipes scale/);
 });
 
-test("recipes index links the finder and combined shopping list", async () => {
+test("recipes index links the tools page once and drops the noindexed tool promos", async () => {
   const source = await readFile("src/pages/recipes/index.astro", "utf8");
-  assert.match(source, /href="\/tools\/recipe-finder\/"/);
-  assert.match(source, /href="\/tools\/shopping-list-builder\/"/);
-  assert.match(source, /You've Got Ingredients\. Let's Find Dinner\./);
-  assert.match(source, /Make One Shopping List, Not Five/);
+  assert.equal(source.includes('href="/tools/recipe-finder/"'), false);
+  assert.equal(source.includes('href="/tools/shopping-list-builder/"'), false);
+  assert.equal(source.includes("You've Got Ingredients. Let's Find Dinner."), false);
+  assert.equal(source.includes("Make One Shopping List, Not Five"), false);
+  assert.equal((source.match(/href="\/tools\/"/g) ?? []).length, 1);
 });
 
 test("weekly planner cannot quietly become a 35-day week", async () => {

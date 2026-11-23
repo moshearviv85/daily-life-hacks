@@ -2,173 +2,88 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import ArticleCard from "../../components/ArticleCard.astro";
+import CategoryTopicHub from "../../components/CategoryTopicHub.astro";
 import { getCollection } from "astro:content";
-import { isReleased, getReleaseTimestamp } from "../../content/release";
-import { isIndexPruned } from "../../content/index-prune.js";
+import { isReleased } from "../../content/release";
+import {
+  CATEGORY_HUB_BY_CATEGORY,
+  assembleHub,
+  itemListSchema,
+} from "../../content/category-hubs";
 
+const hub = CATEGORY_HUB_BY_CATEGORY.get("recipes")!;
 const allArticles = await getCollection("articles");
-const articles = allArticles
-    .filter((article: any) => isReleased(article))
-    .filter((article: any) => !isIndexPruned(article.id))
-    .filter((article: any) => article.data.category === "recipes")
-    .sort((a: any, b: any) => getReleaseTimestamp(b) - getReleaseTimestamp(a));
+const records = allArticles
+  .filter((article) => isReleased(article))
+  .map((article) => ({
+    slug: article.id,
+    title: article.data.title,
+    category: article.data.category,
+  }));
+const { topics, alphabetical } = assembleHub(hub, records);
 
-const noYeastHub = allArticles.find(
-    (article: any) =>
-        article.id === "sourdough-discard-recipes-no-yeast" &&
-        isReleased(article) &&
-        !isIndexPruned(article.id),
-);
-const listedArticles = noYeastHub
-    ? [noYeastHub, ...articles.filter((article: any) => article.id !== noYeastHub.id)]
-    : articles;
-
-const BATCH_SIZE = 12;
 const title = "Easy Recipes With Adjustable Servings | Daily Life Hacks";
-const description =
-    "Practical recipes with ingredient amounts you can scale for the number of people you're feeding, plus meal prep ideas built for real kitchens.";
+const description = hub.intro;
 const categoryUrl = "https://www.daily-life-hacks.com/recipes/";
-const itemListSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "@id": `${categoryUrl}#item-list`,
-    name: "Easy Recipes With Adjustable Servings",
-    numberOfItems: listedArticles.length,
-    itemListOrder: "https://schema.org/ItemListOrderDescending",
-    itemListElement: listedArticles.map((article: any, index: number) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        name: article.data.title,
-        url: `https://www.daily-life-hacks.com/${article.id}/`,
-    })),
-};
+const listName = "Easy Recipes With Adjustable Servings";
+const itemList = itemListSchema(`${categoryUrl}#item-list`, listName, alphabetical);
+const topicLists = topics.map((topic) =>
+  itemListSchema(`${categoryUrl}#${topic.id}`, topic.title, topic.articles),
+);
 const collectionPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: "Easy Recipes With Adjustable Servings",
-    url: categoryUrl,
-    description,
-    isPartOf: {
-        "@type": "WebSite",
-        name: "Daily Life Hacks",
-        url: "https://www.daily-life-hacks.com/",
-    },
-    mainEntity: { "@id": `${categoryUrl}#item-list` },
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: listName,
+  url: categoryUrl,
+  description,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Daily Life Hacks",
+    url: "https://www.daily-life-hacks.com/",
+  },
+  mainEntity: { "@id": `${categoryUrl}#item-list` },
 };
 ---
 
-<BaseLayout
-    title={title}
-    description={description}
-    jsonLd={[collectionPageSchema, itemListSchema]}
->
-    <Header />
-    <div class="max-w-6xl mx-auto px-4 py-12">
-        <header class="mb-12 text-center">
-            <h1
-                class="text-4xl md:text-5xl font-bold mb-4 text-[var(--heading-color)]"
-            >
-                Recipes
-            </h1>
-            <p
-                class="text-xl max-w-2xl mx-auto"
-                style="color: var(--muted-color);"
-            >
-                {description}
-            </p>
-            <p
-                class="mt-5 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto"
-                style="color: var(--text-color);"
-            >
-                A lot of these dinners start with the same cheap pantry foods we already ranked.
-                Beans, chickpeas, and oats keep showing up in the bowls because the grocery math already said they should.
-            </p>
-            <p
-                class="mt-4 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto"
-                style="color: var(--text-color);"
-            >
-                Four pots live further down this page.
-                {" "}
-                <a href="/split-pea-soup-recipe-high-fiber/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">Split pea soup</a>
-                {" "}and{" "}
-                <a href="/fiber-rich-soup-for-weight-loss-cabbage/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">cabbage soup for a high-fiber bowl</a>
-                {" "}are the spoon dinners.
-                {" "}
-                <a href="/creamy-mushroom-barley-risotto-hands-off/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">The hands-off barley pot</a>
-                {" "}is the grain you can lid and leave, and{" "}
-                <a href="/high-fiber-stir-fry-vegetables/" class="font-bold underline underline-offset-4 decoration-[#F29B30]" style="color:#F29B30;">the fast vegetable stir-fry</a>
-                {" "}is the 22-minute pan.
-            </p>
-        </header>
+<BaseLayout title={title} description={description} jsonLd={[collectionPageSchema, itemList, ...topicLists]}>
+  <Header />
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <header class="mb-12 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[var(--heading-color)]">
+        Recipes
+      </h1>
+      <p class="text-xl max-w-2xl mx-auto" style="color: var(--muted-color);">
+        {description}
+      </p>
+    </header>
 
-        <aside class="mb-10 rounded-2xl p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3" style="background:rgba(242,155,48,.09);border:1px solid rgba(242,155,48,.35);">
-            <div>
-                <h2 class="text-xl font-bold mb-1" style="color:var(--heading-color);">Cooking for two instead of six?</h2>
-                <p style="color:var(--text-color);">Open any recipe and change the servings inside the ingredient card. The cups, cans, and tablespoons update before dinner turns into a fraction worksheet.</p>
-            </div>
-            <span class="shrink-0 rounded-full px-4 py-2 text-sm font-bold text-white" style="background:#F29B30;">All {articles.length} recipes scale</span>
-        </aside>
+    <aside
+      class="mb-10 rounded-2xl p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3"
+      style="background:rgba(242,155,48,.09);border:1px solid rgba(242,155,48,.35);"
+    >
+      <div>
+        <h2 class="text-xl font-bold mb-1" style="color:var(--heading-color);">
+          Cooking for two instead of six?
+        </h2>
+        <p style="color:var(--text-color);">
+          Open any recipe and change the servings inside the ingredient card. The cups, cans, and tablespoons update before dinner turns into a fraction worksheet.
+        </p>
+      </div>
+      <span class="shrink-0 rounded-full px-4 py-2 text-sm font-bold text-white" style="background:#F29B30;">
+        All {alphabetical.length} recipes scale
+      </span>
+    </aside>
 
-        <section class="mb-10 grid md:grid-cols-2 gap-4" aria-label="Recipe planning tools">
-            <a href="/tools/recipe-finder/" class="rounded-2xl p-5 transition-transform hover:-translate-y-0.5" style="background:var(--card-bg);border:1px solid var(--border-color);">
-                <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#F29B30;">Start with the ingredients</p>
-                <h2 class="text-xl font-bold mb-2" style="color:var(--heading-color);">You've Got Ingredients. Let's Find Dinner.</h2>
-                <p style="color:var(--text-color);">Tell us what's already in the kitchen. We'll rank the closest recipes and show what you'd still need, because half an onion isn't a plan.</p>
-            </a>
-            <a href="/tools/shopping-list-builder/" class="rounded-2xl p-5 transition-transform hover:-translate-y-0.5" style="background:var(--card-bg);border:1px solid var(--border-color);">
-                <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color:#F29B30;">Plan several recipes</p>
-                <h2 class="text-xl font-bold mb-2" style="color:var(--heading-color);">Make One Shopping List, Not Five</h2>
-                <p style="color:var(--text-color);">Choose the recipes, change the servings, and get one printable checklist instead of a small archive of notes.</p>
-            </a>
-        </section>
+    <p class="mb-10 text-base sm:text-lg leading-relaxed max-w-3xl" style="color: var(--text-color);">
+      Discard grams, dried-bean conversions, and recipe cost each have a calculator on the
+      <a
+        href="/tools/"
+        class="font-bold underline underline-offset-4 decoration-[#F29B30]"
+        style="color:#F29B30;"
+      >tools page</a>.
+    </p>
 
-        <div
-            id="articles-grid"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
-        >
-            {
-                listedArticles.map((article: any, i: number) => (
-                    <div
-                        class="article-item"
-                        data-index={i}
-                        style={i >= BATCH_SIZE ? "display:none" : ""}
-                    >
-                        <ArticleCard
-                            title={article.data.title}
-                            excerpt={article.data.excerpt}
-                            image={article.data.image}
-                            imageAlt={article.data.imageAlt}
-                            category={article.data.category}
-                            slug={article.id}
-                            date={article.data.date}
-                            fillHeight={true}
-                        />
-                    </div>
-                ))
-            }
-        </div>
-
-        {
-            articles.length === 0 && (
-                <div class="text-center py-12">
-                    <p class="text-lg" style="color: var(--label-color);">
-                        No recipes found yet. Check back soon!
-                    </p>
-                </div>
-            )
-        }
-
-        <div id="load-sentinel" class="h-4"></div>
-        <div
-            id="loading-spinner"
-            class="hidden text-center py-6 text-sm"
-            style="color: var(--muted-color);"
-        >
-            Loading more...
-        </div>
-    </div>
-    <Footer />
+    <CategoryTopicHub topics={topics} articles={alphabetical} />
+  </div>
+  <Footer />
 </BaseLayout>
-
-<!-- Infinite scroll handled by shared script in BaseLayout -->

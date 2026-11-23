@@ -1,0 +1,78 @@
+---
+import type { ResolvedTopic } from "../content/category-hubs";
+
+interface LinkItem {
+  slug: string;
+  title: string;
+}
+
+interface Props {
+  topics: ResolvedTopic[];
+  articles: LinkItem[];
+}
+
+const { topics, articles } = Astro.props;
+
+const topicLinkClass =
+  "font-bold underline underline-offset-4 decoration-[#F29B30]";
+const azLinkClass = "text-sm underline underline-offset-2 decoration-[#F29B30]/70";
+---
+
+<div id="topic-sections">
+  {
+    topics.map((topic) => (
+      <section class="mb-10 pb-10 border-b" style="border-color: var(--border-color);" aria-labelledby={topic.id}>
+        <h2 id={topic.id} class="text-2xl font-bold mb-3 text-[var(--heading-color)]">
+          {topic.title}
+        </h2>
+        <p class="text-base sm:text-lg leading-relaxed max-w-3xl mb-4" style="color: var(--text-color);">
+          {topic.intro}
+        </p>
+        <ol class="list-decimal pl-5 max-w-3xl space-y-2" style="color: var(--text-color);">
+          {topic.articles.map((article, index) => (
+            <li class={index === 0 ? "mb-1" : undefined}>
+              {index === 0 && (
+                <span
+                  class="block text-xs font-bold uppercase tracking-[0.18em] mb-1"
+                  style="color: #F29B30;"
+                >
+                  Start here
+                </span>
+              )}
+              <a
+                href={`/${article.slug}/`}
+                class={topicLinkClass}
+                style="color:#F29B30;"
+              >
+                {article.title}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))
+  }
+</div>
+
+<section aria-labelledby="all-articles">
+  <h2 id="all-articles" class="text-2xl font-bold mb-4 text-[var(--heading-color)]">
+    All articles, A to Z ({articles.length})
+  </h2>
+  {
+    articles.length === 0 ? (
+      <p class="text-lg" style="color: var(--label-color);">
+        Nothing in this section yet. Check back soon.
+      </p>
+    ) : (
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-1.5">
+        {articles.map((article) => (
+          <li>
+            <a href={`/${article.slug}/`} class={azLinkClass} style="color: var(--heading-color);">
+              {article.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</section>
