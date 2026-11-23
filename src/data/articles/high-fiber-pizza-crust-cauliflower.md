@@ -24,6 +24,8 @@ totalTime: 55 minutes
 servings: 4
 calories: 185
 difficulty: Easy
+recipeCuisine: "Italian"
+recipeName: "Cauliflower Crust Pizza"
 ingredients:
 - About 2 pounds trimmed cauliflower florets, washed
 - 1/2 cup almond flour

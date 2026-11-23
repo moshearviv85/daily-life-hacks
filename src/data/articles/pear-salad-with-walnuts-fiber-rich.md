@@ -28,6 +28,7 @@ totalTime: 35 minutes
 servings: 4
 calories: 380
 difficulty: Easy
+recipeCuisine: "American"
 ingredients:
 - 2 ripe but firm pears (e.g., Anjou, Bosc), cored and thinly sliced
 - 4 cups mixed greens (spring mix, arugula, or baby spinach)

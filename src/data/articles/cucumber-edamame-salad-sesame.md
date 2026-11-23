@@ -27,6 +27,7 @@ totalTime: "15 minutes"
 servings: 4
 calories: 185
 difficulty: "Easy"
+recipeCuisine: "Japanese"
 ingredients:
   - "2 large English cucumbers, or 5 Persian cucumbers"
   - "1 1/2 cups shelled edamame (thawed if frozen)"

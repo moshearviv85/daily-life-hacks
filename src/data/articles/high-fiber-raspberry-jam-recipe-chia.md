@@ -23,6 +23,7 @@ totalTime: "10 minutes"
 servings: 8
 calories: 35
 difficulty: "Easy"
+recipeCuisine: "American"
 ingredients:
   - "2 cups raspberries (fresh or frozen)"
   - "2 tbsp chia seeds"

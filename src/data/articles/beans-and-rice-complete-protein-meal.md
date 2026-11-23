@@ -28,6 +28,8 @@ totalTime: "35 minutes"
 servings: 4
 calories: 320
 difficulty: "Easy"
+recipeCuisine: "American"
+recipeName: "Black Beans and Rice"
 ingredients:
   - "1 cup uncooked brown rice or white rice"
   - "1 tbsp olive oil"

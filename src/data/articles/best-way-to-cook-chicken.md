@@ -21,6 +21,7 @@ totalTime: "20-25 minutes"
 servings: 4
 calories: 250
 difficulty: "Easy"
+recipeCuisine: "American"
 ingredients:
   - "1.5 lbs boneless, skinless chicken breasts"
   - "1 tbsp olive oil"

@@ -25,6 +25,7 @@ totalTime: 45 minutes
 servings: 4
 calories: 410
 difficulty: Easy
+recipeCuisine: "Indian"
 ingredients:
 - 1 tablespoon olive oil
 - 1 large yellow onion, diced

@@ -21,6 +21,7 @@ totalTime: "2 hours"
 servings: 2
 calories: 310
 difficulty: "Medium"
+recipeCuisine: "Italian"
 ingredients:
   - "1 cup (approx 200g) gluten free sourdough discard, unfed"
   - "1/2 cup warm water (110°F)"

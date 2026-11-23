@@ -24,6 +24,7 @@ totalTime: "40 minutes"
 servings: 4
 calories: 300
 difficulty: "Easy"
+recipeCuisine: "Asian"
 ingredients:
   - "1 (14 oz) block extra firm tofu"
   - "2 tbsp low-sodium soy sauce"

@@ -25,6 +25,7 @@ servings: 1
 calories: 5
 difficulty: "Easy"
 recipeCategory: "Beverage"
+recipeCuisine: "American"
 ingredients:
   - "1 cup water"
   - "1-inch piece fresh ginger, sliced and bruised"

@@ -19,6 +19,7 @@ totalTime: "5 minutes"
 servings: 4
 calories: 85
 difficulty: "Easy"
+recipeCuisine: "Indian"
 ingredients:
   - 3 tbsp extra virgin olive oil
   - 1 tbsp apple cider vinegar or lemon juice

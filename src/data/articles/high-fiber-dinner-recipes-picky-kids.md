@@ -20,6 +20,8 @@ totalTime: "40 minutes"
 servings: 6
 calories: 530
 difficulty: "Easy"
+recipeCuisine: "American"
+recipeName: "Cheesy Turkey Pasta with Cauliflower and Chili Beans"
 ingredients:
   - 1 lb lean ground turkey
   - 1 bag (12 oz) frozen riced cauliflower

@@ -26,6 +26,7 @@ totalTime: "25 minutes"
 servings: 8
 calories: 310
 difficulty: "Easy"
+recipeCuisine: "American"
 ingredients:
   - 1 lb rotini or fusilli pasta
   - 1 pint cherry tomatoes, halved

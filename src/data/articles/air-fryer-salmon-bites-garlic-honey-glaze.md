@@ -27,6 +27,7 @@ totalTime: "18 minutes"
 servings: 3
 calories: 320
 difficulty: "Easy"
+recipeCuisine: "American"
 ingredients:
   - "1 lb salmon fillets, skin removed and cut into 1-inch cubes"
   - "1 tbsp olive oil"

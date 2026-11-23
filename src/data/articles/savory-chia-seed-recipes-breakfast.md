@@ -24,6 +24,8 @@ totalTime: "4 hours"
 servings: 1
 calories: 360
 difficulty: "Easy"
+recipeCuisine: "American"
+recipeName: "Savory Chia Seed Pudding with Tomato and Avocado"
 ingredients:
   - "3 tbsp chia seeds (about 36 g)"
   - "1 cup unsweetened almond milk or low-sodium vegetable broth"

@@ -34,6 +34,7 @@ faq:
     answer: "A simple lemon yogurt sauce works if you eat dairy. If you want dairy free, try a hummus based sauce thinned with lemon and water."
   - question: "What roasted vegetables work best for meal prep bowls?"
     answer: "Ones that hold their texture: sweet potato, cauliflower, broccoli, carrots, bell pepper, zucchini, and red onion. Roast them hot so they brown instead of steaming."
+recipeCuisine: "Mediterranean"
 ingredients:
   - "1 cup dry farro"
   - "3 cups water"

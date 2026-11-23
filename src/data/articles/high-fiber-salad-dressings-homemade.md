@@ -23,6 +23,8 @@ totalTime: 5 minutes
 servings: 4
 calories: 180
 difficulty: Easy
+recipeCuisine: "Middle Eastern"
+recipeName: "Lemon Tahini Dressing"
 ingredients:
 - 1/2 cup tahini (ensure it's well-stirred, creamy stuff)
 - 1/4 cup fresh lemon juice (about 2 lemons, squeezed hard)

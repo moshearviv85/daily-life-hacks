@@ -27,6 +27,7 @@ totalTime: 22 minutes
 servings: 4
 calories: 180
 difficulty: Easy
+recipeCuisine: "Asian"
 ingredients:
 - 4 cups broccoli florets, bite-sized
 - 2 cups fresh snap peas, trimmed

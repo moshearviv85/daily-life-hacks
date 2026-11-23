@@ -23,6 +23,7 @@ totalTime: "35 minutes"
 servings: 4
 calories: 345
 difficulty: "Easy"
+recipeCuisine: "Indian"
 ingredients:
   - "1 tbsp coconut oil or olive oil"
   - "1 large yellow onion, diced"

@@ -27,6 +27,7 @@ totalTime: "30 minutes"
 servings: 4
 calories: 285
 difficulty: "Easy"
+recipeCuisine: "Mediterranean"
 ingredients:
   - "4 cod fillets (about 6 oz each)"
   - "1 lb fresh green beans, trimmed"

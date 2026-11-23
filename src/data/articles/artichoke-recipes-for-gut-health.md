@@ -24,6 +24,7 @@ totalTime: 35 minutes
 servings: 4
 calories: 240
 difficulty: Easy
+recipeCuisine: "American"
 ingredients:
 - 4 medium globe artichokes
 - 1 lemon, halved

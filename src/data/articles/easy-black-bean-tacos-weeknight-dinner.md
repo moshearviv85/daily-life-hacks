@@ -28,6 +28,7 @@ totalTime: 15 minutes
 servings: 4
 calories: 320
 difficulty: Easy
+recipeCuisine: "Mexican"
 ingredients:
 - 2 (15 oz) cans black beans, drained and rinsed
 - 1/2 tsp ground cumin
