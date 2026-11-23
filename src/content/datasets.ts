@@ -99,6 +99,24 @@ export function describeDatasetProvenance(
 export const DATA_VERSION = "2026.3";
 export const DATA_RELEASE_DATE = "2026-09-05";
 
+/**
+ * Grocery snapshot month named most often in `price_basis` (BLS "July 2026",
+ * Walmart "Jul 2026"). Citation `date-released` uses this priced month.
+ * The file publish day stays `DATA_RELEASE_DATE`.
+ */
+export const DATA_PRICED_MONTH = "2026-07";
+
+/**
+ * Zenodo DOI for the public dataset release. Empty until the owner publishes
+ * a deposit. Callers must not render a placeholder.
+ */
+export const ZENODO_DOI = "";
+
+/** #250 folded the fiber pillar and its aisle cuts into this live page. */
+export const FIBER_RANKING_STUDY = "/what-30-grams-of-fiber-costs-per-day/";
+/** #250 folded the protein pillar and its aisle cuts into this live page. */
+export const PROTEIN_RANKING_STUDY = "/protein-per-dollar-adjusted-for-quality/";
+
 export const DATASETS: Record<string, DatasetMeta> = {
   "animal-protein-per-dollar-ranked": {
     name: "Every Animal Protein in Our Study, Ranked by Cost (21 foods, 2026)",
@@ -178,7 +196,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "Six dairy products ranked by protein grams per dollar, covering milk, Greek yogurt, cottage cheese and cheddar at 2026 US prices.",
     csv: "/data/dairy-protein-per-dollar-ranked-2026.csv",
-    studyUrl: "/data/dairy-protein-per-dollar-ranked-2026.csv",
+    studyUrl: PROTEIN_RANKING_STUDY,
     rows: 6,
     variables: ["protein grams per dollar", "package price (USD)"],
     temporal: "2026",
@@ -207,7 +225,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "Eleven grains and grain products ranked by fiber grams per dollar, from oats and barley through bread, at 2026 US national prices.",
     csv: "/data/grains-fiber-per-dollar-ranked-2026.csv",
-    studyUrl: "/data/grains-fiber-per-dollar-ranked-2026.csv",
+    studyUrl: FIBER_RANKING_STUDY,
     rows: 11,
     variables: ["fiber grams per dollar", "package price (USD)"],
     temporal: "2026",
@@ -253,7 +271,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "Ten snack foods ranked by fiber grams per dollar, covering popcorn, roasted chickpeas, dried fruit and other grab-and-go options.",
     csv: "/data/high-fiber-snacks-per-dollar-2026.csv",
-    studyUrl: "/data/high-fiber-snacks-per-dollar-2026.csv",
+    studyUrl: FIBER_RANKING_STUDY,
     rows: 10,
     variables: ["fiber grams per dollar", "package price (USD)"],
     temporal: "2026",
@@ -273,7 +291,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "Eleven cuts of meat ranked by protein grams per dollar, adjusted for bone and trim waste, at 2026 US national grocery prices.",
     csv: "/data/meat-per-dollar-protein-ranked-2026.csv",
-    studyUrl: "/data/meat-per-dollar-protein-ranked-2026.csv",
+    studyUrl: PROTEIN_RANKING_STUDY,
     rows: 11,
     variables: ["protein grams per dollar", "package price (USD)"],
     temporal: "2026",
@@ -283,7 +301,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "Fifteen protein foods that need no cooking at all, ranked by protein grams per dollar for anyone without a working kitchen.",
     csv: "/data/no-cook-protein-per-dollar-2026.csv",
-    studyUrl: "/data/no-cook-protein-per-dollar-2026.csv",
+    studyUrl: PROTEIN_RANKING_STUDY,
     rows: 15,
     variables: ["protein grams per dollar", "package price (USD)"],
     temporal: "2026",
@@ -293,7 +311,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "Fifteen foods showing how many grams of fiber a single dollar buys, converted from package prices into one comparable unit.",
     csv: "/data/one-dollar-fiber-what-it-buys-2026.csv",
-    studyUrl: "/data/one-dollar-fiber-what-it-buys-2026.csv",
+    studyUrl: FIBER_RANKING_STUDY,
     rows: 15,
     variables: ["fiber grams per dollar", "package price (USD)"],
     temporal: "2026",
@@ -313,7 +331,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "Fifteen foods showing how many grams of protein a single dollar buys, converted from package prices into one comparable unit.",
     csv: "/data/one-dollar-protein-what-it-buys-2026.csv",
-    studyUrl: "/data/one-dollar-protein-what-it-buys-2026.csv",
+    studyUrl: PROTEIN_RANKING_STUDY,
     rows: 15,
     variables: ["protein grams per dollar", "package price (USD)"],
     temporal: "2026",
@@ -323,7 +341,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "Eighteen plant protein sources ranked by protein grams per dollar, covering beans, lentils, tofu, nuts, seeds and meat substitutes.",
     csv: "/data/plant-protein-per-dollar-ranked-2026.csv",
-    studyUrl: "/data/plant-protein-per-dollar-ranked-2026.csv",
+    studyUrl: PROTEIN_RANKING_STUDY,
     rows: 18,
     variables: ["protein grams per dollar", "package price (USD)"],
     temporal: "2026",
@@ -343,7 +361,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "Twenty-two fruits and vegetables ranked by fiber grams per dollar after edible-fraction adjustment for peels, pits, rinds and other waste.",
     csv: "/data/produce-fiber-per-dollar-ranked-2026.csv",
-    studyUrl: "/data/produce-fiber-per-dollar-ranked-2026.csv",
+    studyUrl: FIBER_RANKING_STUDY,
     rows: 22,
     variables: ["fiber grams per dollar", "package price (USD)"],
     temporal: "2026",
@@ -353,7 +371,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "Twenty-seven shelf-stable pantry foods ranked by protein grams per dollar, covering canned, dried and jarred items that need no refrigeration.",
     csv: "/data/shelf-stable-pantry-per-dollar-2026.csv",
-    studyUrl: "/data/shelf-stable-pantry-per-dollar-2026.csv",
+    studyUrl: PROTEIN_RANKING_STUDY,
     rows: 27,
     variables: ["protein grams per dollar", "package price (USD)"],
     temporal: "2026",
@@ -364,7 +382,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "The full Fiber per Dollar Index: 53 high-fiber foods ranked by dietary fiber grams per dollar, with package prices, edible fractions and price per 100g.",
     csv: "/data/fiber-per-dollar-2026.csv",
-    studyUrl: "/data/fiber-per-dollar-2026/",
+    studyUrl: FIBER_RANKING_STUDY,
     huggingfaceMirror: true,
     rows: 53,
     variables: ["dietary fiber (g per 100g)", "price (USD)", "fiber grams per dollar"],
@@ -385,7 +403,7 @@ export const DATASETS: Record<string, DatasetMeta> = {
     description:
       "The full Protein per Dollar Index: 49 protein sources ranked by protein grams per dollar, with package prices, edible fractions and price per 100g.",
     csv: "/data/protein-per-dollar-2026.csv",
-    studyUrl: "/data/protein-per-dollar-2026/",
+    studyUrl: PROTEIN_RANKING_STUDY,
     huggingfaceMirror: true,
     rows: 49,
     variables: ["protein (g per 100g)", "price (USD)", "protein grams per dollar"],
@@ -590,6 +608,25 @@ export function datasetStudyPath(
   return dataset.studyUrl ?? `/${dataset.id}/`;
 }
 
+/**
+ * Stable Dataset `@id`. Several CSVs share one ranking page after the #250
+ * redirects, so the id cannot be the shared study URL. A dataset that still
+ * owns its article keeps that URL. Flagship mirrors keep their `/data/{stem}/`
+ * landing. Everything else uses a fragment on the catalog.
+ */
+export function datasetSchemaId(
+  dataset: DatasetMeta & { id: string },
+  siteUrl: string = DATASET_SITE_URL,
+): string {
+  const studyPath = datasetStudyPath(dataset).split("#")[0];
+  if (studyPath === `/${dataset.id}/`) {
+    return `${siteUrl}${studyPath}#dataset`;
+  }
+  const landing = datasetDistributionPath(dataset);
+  if (landing) return `${siteUrl}${landing}#dataset`;
+  return `${siteUrl}/data/#${dataset.id}`;
+}
+
 const FLAGSHIP_DATASET_KEYWORDS: Record<string, string[]> = {
   "fiber-per-dollar-cheapest-high-fiber-foods": [
     "fiber per dollar",
@@ -681,7 +718,7 @@ export function buildDatasetSchema({
   inlineCatalog = false,
 }: DatasetSchemaOptions) {
   const studyUrl = `${siteUrl}${datasetStudyPath(dataset)}`;
-  const datasetId = `${studyUrl}#dataset`;
+  const datasetId = datasetSchemaId(dataset, siteUrl);
   const landingPath = datasetDistributionPath(dataset);
   const landingUrl = landingPath ? `${siteUrl}${landingPath}` : undefined;
   const sameAs = datasetSameAs(

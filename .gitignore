@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# generated dataset release bundle (npm run build:dataset-release)
+dataset-release/
+
 # generated optimized images (built from public/images/*-main.jpg)
 public/images/opt/
 # generated types

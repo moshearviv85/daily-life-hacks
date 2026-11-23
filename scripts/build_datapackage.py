@@ -195,6 +195,7 @@ DATASETS: dict[str, dict] = {
     },
     "canned-vs-dry-beans-cost-2026.csv": {
         "title": "Canned vs Dry Beans, Cost Compared (2026)",
+        "study_path": "canned-beans-vs-dried-beans-nutrition",
         "study": "canned-vs-dry-beans-cost",
         "description": (
             "10 rows pairing dry beans and lentils against the canned version of the same "
@@ -232,6 +233,7 @@ DATASETS: dict[str, dict] = {
     },
     "dairy-protein-per-dollar-ranked-2026.csv": {
         "title": "Dairy and Egg Protein per Dollar, Ranked (2026)",
+        "study_path": "protein-per-dollar-adjusted-for-quality",
         "study": "dairy-protein-per-dollar-ranked",
         "description": (
             "6 dairy-case staples (eggs, milk, cottage cheese, Greek yogurt, mozzarella and "
@@ -271,7 +273,7 @@ DATASETS: dict[str, dict] = {
     },
     "fiber-per-dollar-2026.csv": {
         "title": "Fiber per Dollar: 53 Foods Ranked (2026)",
-        "study_path": "data/fiber-per-dollar-2026",
+        "study_path": "what-30-grams-of-fiber-costs-per-day",
         "study": "fiber-per-dollar-cheapest-high-fiber-foods",
         "description": (
             "The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US "
@@ -295,6 +297,7 @@ DATASETS: dict[str, dict] = {
     },
     "grains-fiber-per-dollar-ranked-2026.csv": {
         "title": "Grains Ranked by Fiber per Dollar (2026)",
+        "study_path": "what-30-grams-of-fiber-costs-per-day",
         "study": "grains-fiber-per-dollar-ranked",
         "description": (
             "11 grains and grain products (whole wheat flour, popcorn, oats, barley, brown "
@@ -304,6 +307,7 @@ DATASETS: dict[str, dict] = {
     },
     "high-fiber-snacks-per-dollar-2026.csv": {
         "title": "High-Fiber Snacks Ranked by Cost (2026)",
+        "study_path": "what-30-grams-of-fiber-costs-per-day",
         "study": "high-fiber-snacks-per-dollar",
         "description": (
             "10 snackable foods ranked by grams of dietary fiber per US dollar, limited to "
@@ -313,6 +317,7 @@ DATASETS: dict[str, dict] = {
     },
     "meat-per-dollar-protein-ranked-2026.csv": {
         "title": "Meat per Dollar: 11 Cuts Ranked by Protein Value (2026)",
+        "study_path": "protein-per-dollar-adjusted-for-quality",
         "study": "meat-per-dollar-protein-ranked",
         "description": (
             "11 cuts of meat and poultry ranked by grams of protein per US dollar. Bone-in "
@@ -323,6 +328,7 @@ DATASETS: dict[str, dict] = {
     },
     "no-cook-protein-per-dollar-2026.csv": {
         "title": "Cheapest Protein That Needs No Cooking (2026)",
+        "study_path": "protein-per-dollar-adjusted-for-quality",
         "study": "no-cook-protein-per-dollar",
         "description": (
             "15 protein sources that need no cooking at all, ranked by grams of protein per "
@@ -332,6 +338,7 @@ DATASETS: dict[str, dict] = {
     },
     "one-dollar-fiber-what-it-buys-2026.csv": {
         "title": "What One Dollar of Fiber Buys (2026)",
+        "study_path": "what-30-grams-of-fiber-costs-per-day",
         "study": "one-dollar-fiber-what-it-buys",
         "description": (
             "15 foods showing what a single US dollar buys in grams of dietary fiber, ranked "
@@ -341,6 +348,7 @@ DATASETS: dict[str, dict] = {
     },
     "one-dollar-protein-what-it-buys-2026.csv": {
         "title": "What One Dollar of Protein Buys (2026)",
+        "study_path": "protein-per-dollar-adjusted-for-quality",
         "study": "one-dollar-protein-what-it-buys",
         "description": (
             "15 foods showing what a single US dollar buys in grams of protein, ranked from "
@@ -350,6 +358,7 @@ DATASETS: dict[str, dict] = {
     },
     "plant-protein-per-dollar-ranked-2026.csv": {
         "title": "Plant Protein per Dollar: 18 Sources Ranked (2026)",
+        "study_path": "protein-per-dollar-adjusted-for-quality",
         "study": "plant-protein-per-dollar-ranked",
         "description": (
             "18 plant protein sources (dried beans and lentils, grains, nuts, seeds and soy "
@@ -359,6 +368,7 @@ DATASETS: dict[str, dict] = {
     },
     "produce-fiber-per-dollar-ranked-2026.csv": {
         "title": "Fruits and Vegetables Ranked by Fiber per Dollar (2026)",
+        "study_path": "what-30-grams-of-fiber-costs-per-day",
         "study": "produce-fiber-per-dollar-ranked",
         "description": (
             "22 fresh, frozen and dried fruits and vegetables ranked by grams of dietary "
@@ -381,7 +391,7 @@ DATASETS: dict[str, dict] = {
     },
     "protein-per-dollar-2026.csv": {
         "title": "Protein per Dollar: 49 Sources Ranked (2026)",
-        "study_path": "data/protein-per-dollar-2026",
+        "study_path": "protein-per-dollar-adjusted-for-quality",
         "study": "protein-per-dollar-cheapest-protein-sources",
         "description": (
             "The flagship protein dataset. 49 foods ranked by grams of protein per US dollar "
@@ -403,6 +413,7 @@ DATASETS: dict[str, dict] = {
     },
     "shelf-stable-pantry-per-dollar-2026.csv": {
         "title": "The Shelf-Stable Pantry, Ranked by Protein per Dollar (2026)",
+        "study_path": "protein-per-dollar-adjusted-for-quality",
         "study": "shelf-stable-pantry-per-dollar",
         "description": (
             "27 shelf-stable pantry foods ranked by grams of protein per US dollar. Nothing "

@@ -10,8 +10,8 @@ message: >-
   https://www.daily-life-hacks.com/data-reuse/
 title: Daily Life Hacks Food Value Data
 type: dataset
-version: "2026.1"
-date-released: "2026-07-26"
+version: "2026.3"
+date-released: "2026-07-31"
 abstract: >-
   Twenty-two datasets (474 rows) of US grocery prices paired with USDA nutrient
   values, covering fiber per dollar, protein per dollar, protein quality
@@ -25,18 +25,14 @@ abstract: >-
   Commons Attribution 4.0 International. Source facts and third-party material
   aren't relicensed. Full scope is published at
   https://www.daily-life-hacks.com/data-reuse/
-license: "https://creativecommons.org/licenses/by/4.0/"
+license: CC-BY-4.0
 authors:
-  - given-names: David
-    family-names: Miller
-    affiliation: Daily Life Hacks
-    website: "https://www.daily-life-hacks.com/about/"
   - name: Daily Life Hacks
     website: "https://www.daily-life-hacks.com"
 contact:
   - name: Daily Life Hacks
     website: "https://www.daily-life-hacks.com/contact/"
-url: "https://www.daily-life-hacks.com/data/"
+url: "https://www.daily-life-hacks.com/methodology/"
 keywords:
   - food prices
   - nutrition
@@ -49,11 +45,11 @@ keywords:
   - budget nutrition
 identifiers:
   - type: url
-    value: "https://www.daily-life-hacks.com/data/"
-    description: Dataset landing page listing every published CSV.
-  - type: url
     value: "https://www.daily-life-hacks.com/methodology/"
     description: Full methodology, sourcing rules and correction policy.
+  - type: url
+    value: "https://www.daily-life-hacks.com/data/"
+    description: Dataset landing page listing every published CSV.
   - type: other
     value: "https://www.daily-life-hacks.com/data/datapackage.json"
     description: >-

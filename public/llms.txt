@@ -1,73 +1,36 @@
 # Daily Life Hacks
 
-> Practical nutrition tips, easy healthy recipes, and kitchen hacks for everyday life. Food-first, no supplements, no drama. Also home to original, publicly auditable grocery nutrition economics data: which foods deliver the most fiber and protein per dollar in the US.
+> Practical nutrition tips, easy healthy recipes, and kitchen hacks for everyday life. Food-first, no supplements, no drama. Also home to original grocery nutrition economics data: which foods deliver the most fiber and protein per dollar in the US.
 
-## About
+## Key facts
 
-Daily Life Hacks is a food and nutrition site run by David Miller. The content focuses on simple, repeatable meals and science-backed nutrition advice for busy people. American audience, English only. The site also publishes original data studies on grocery nutrition economics, with every dataset released as a public CSV.
+Each line quotes one number from the CSV named on that line. The source phrase is the `price_basis`, chain source, or FoodData Central id stored on that row. The study link is the live page (the two old flagship URLs now redirect).
 
-## Topics
+- Dry pinto beans: 57.6 g protein per $1, BLS US average July 2026 (APU0000714233), FDC 175199. CSV: https://www.daily-life-hacks.com/data/protein-per-dollar-2026.csv Study: https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/
+- Dry pinto beans: 41.7 g fiber per $1, BLS US average July 2026 (APU0000714233), FDC 175199. CSV: https://www.daily-life-hacks.com/data/fiber-per-dollar-2026.csv Study: https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/
+- Chia seeds: 34.4 g fiber per 100 g, FDC 170554, price basis Walmart GV. CSV: https://www.daily-life-hacks.com/data/fiber-per-dollar-2026.csv Study: https://www.daily-life-hacks.com/best-high-fiber-foods-ranked-by-fiber-content/
+- Bone-in chicken drumsticks: 50.3 g protein per $1 after a 33% USDA refuse adjustment, Walmart Jul 2026, FDC 172373. CSV: https://www.daily-life-hacks.com/data/animal-protein-per-dollar-ranked-2026.csv Study: https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/
+- Large eggs: 34.4 g protein per $1, BLS US average July 2026 (APU0000708111), FDC 171287. CSV: https://www.daily-life-hacks.com/data/dairy-protein-per-dollar-ranked-2026.csv Study: https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/
+- Frozen green peas: 17.6 g fiber per $1, FDC 170016, price basis Walmart GV. CSV: https://www.daily-life-hacks.com/data/produce-fiber-per-dollar-ranked-2026.csv Study: https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/
+- Old-fashioned rolled oats: 35.8 g fiber per $1, FDC 173904, price basis Walmart GV. CSV: https://www.daily-life-hacks.com/data/grains-fiber-per-dollar-ranked-2026.csv Study: https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/
+- Chipotle High Protein Cup (4 oz chicken): 32 g protein, $3.82, 8.4 g protein per $1. Source: chipotle.com US nutrition facts. Price basis: Chipotle's published national weighted average at launch, Dec 2025 press release. CSV: https://www.daily-life-hacks.com/data/fastfood-protein-per-dollar-2026.csv Study: https://www.daily-life-hacks.com/fast-food-protein-per-dollar-ranked/
+- Almonds: 1 mg sodium per 100 g and 0.7 mg sodium per $1, FDC 170567, price basis Walmart GV. CSV: https://www.daily-life-hacks.com/data/sodium-per-dollar-2026.csv Study: https://www.daily-life-hacks.com/low-sodium-budget-foods-ranked/
+- Rock-bottom fiber day, rolled oats at breakfast: 6.1 g fiber and $0.17, FDC 173904. CSV: https://www.daily-life-hacks.com/data/fiber-day-cost-2026.csv Study: https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/
+- Mixed protein day, two large eggs: 12.6 g protein and $0.37, FDC 171287. CSV: https://www.daily-life-hacks.com/data/protein-day-cost-2026.csv Study: https://www.daily-life-hacks.com/what-50-grams-of-protein-costs-per-day/
+- Bone-in chicken drumsticks, quality-adjusted: 50.3 g usable protein per $1 after a DIAAS of 1.08 capped at 1.00 (Burd et al. 2019), FDC 172373. CSV: https://www.daily-life-hacks.com/data/protein-quality-per-dollar-2026.csv Study: https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/
+- TVP: 52.17 g protein per 100 g and 23.4 g protein per $1, Walmart/Bob's Red Mill Jul 2026. No FDC id. The row is the manufacturer label. CSV: https://www.daily-life-hacks.com/data/protein-per-dollar-2026.csv Study: https://www.daily-life-hacks.com/foods-highest-in-protein-per-100-grams/
+- All-purpose white flour, U.S. city average: 87.17 g protein per $1 on 2026-10-01, FDC 168894. CSV: https://www.daily-life-hacks.com/data/bls-nutrition-per-dollar-latest.csv Study: https://www.daily-life-hacks.com/methodology/
 
-- Nutrition: gut health, fiber, protein, healthy fats, reading food labels
-- Recipes: quick weeknight dinners, meal prep, one-pot meals, air fryer recipes, sourdough
-- Tips: kitchen organization, food storage, grocery shopping on a budget, cooking basics
-- Data studies: fiber per dollar, protein per dollar, grocery price tracking
-
-## Original Data Studies
-
-These are original analyses, not aggregated from other publishers. Nutrition values come from USDA FoodData Central. Prices come from BLS Average Price data and dated Walmart national listings. All values use an as-purchased basis with USDA edible-fraction (refuse) adjustments. Every public CSV has an `fdc_id` column and a `source_url` column. `source_url` is the public FoodData Central food-details page for that id (`https://fdc.nal.usda.gov/food-details/{fdc_id}/nutrients`). A cell is left blank when no single FoodData Central record was determinable. Full methodology and limitations: https://www.daily-life-hacks.com/methodology/
-
-- Fiber per Dollar study (53 foods ranked): https://www.daily-life-hacks.com/fiber-per-dollar-cheapest-high-fiber-foods/
-- Protein per Dollar study (49 sources ranked): https://www.daily-life-hacks.com/protein-per-dollar-cheapest-protein-sources/
-- Fiber per Dollar Calculator (interactive tool on the same dataset): https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/
-- All tools: https://www.daily-life-hacks.com/tools/
-
-## Sourdough discard
-
-- Easy sourdough discard recipes for beginners: https://www.daily-life-hacks.com/easy-sourdough-discard-recipes-beginners/
-- Sourdough discard recipes, no yeast: https://www.daily-life-hacks.com/sourdough-discard-recipes-no-yeast/
-- Sourdough discard crackers: https://www.daily-life-hacks.com/sourdough-discard-crackers/
-- Easy sourdough discard pizza dough, no yeast: https://www.daily-life-hacks.com/easy-sourdough-discard-pizza-dough-no-yeast/
-- How long sourdough discard lasts: https://www.daily-life-hacks.com/how-long-does-sourdough-discard-last/
-- How to measure sourdough discard in grams: https://www.daily-life-hacks.com/how-to-measure-sourdough-discard-grams/
+Full methodology: https://www.daily-life-hacks.com/methodology/
+Catalog: https://www.daily-life-hacks.com/data/
+Cite the collection: https://www.daily-life-hacks.com/CITATION.cff
 
 ## Tools
 
-- Sourdough discard calculator (add discard to a recipe, feeding ratios, cups to grams): https://www.daily-life-hacks.com/tools/sourdough-discard-calculator/
-- Dried beans to canned converter (tested 1/2 cup yield, plus a crowd count): https://www.daily-life-hacks.com/tools/dried-beans-to-canned-converter/
-
-## Datasets (public CSV, free to reuse)
-
-- Fiber per dollar raw data: https://www.daily-life-hacks.com/data/fiber-per-dollar-2026.csv
-- Fiber per Dollar dataset page: https://www.daily-life-hacks.com/data/fiber-per-dollar-2026/
-- Protein per dollar raw data: https://www.daily-life-hacks.com/data/protein-per-dollar-2026.csv
-- Protein per Dollar dataset page: https://www.daily-life-hacks.com/data/protein-per-dollar-2026/
-- Hugging Face mirror (fiber and protein flagships): https://huggingface.co/datasets/moshiko123/daily-life-hacks-grocery-nutrition-per-dollar
-
-Each ranking CSV includes every food, nutrient value, package and price inputs, edible-fraction adjustment, price basis, and calculated per-dollar value used in the corresponding study, plus `fdc_id` and `source_url` when a single FoodData Central record was determinable.
-
-Blank `fdc_id` cells are intentional. Unpopped popcorn kernels stay blank because the fiber study could not tie them to a published FoodData Central record, and the same blank follows that row into the fiber rankings. Textured vegetable protein stays blank because that row is a manufacturer label, not a FoodData Central record. Frozen shelled edamame stays blank on the fiber study and the produce fiber ranking because that fiber row is unresolved; the protein files do carry FDC 168410 for the same food. Complete-protein pair rows stay blank because each row is two foods. Fast-food menu items stay blank because their numbers come from chain nutrition pages. Restaurant lines in the day-cost menus (Starbucks, Wendy's, Taco Bell, and McDonald's) stay blank for the same reason.
-
-## Data Verification
-
-Published nutrition figures are checked against USDA FoodData Central, while prices use BLS Average Price data where available and dated retailer listings for other items. The public CSVs let readers inspect the calculations and price basis, subject to the source-detail limitations above. Prices are scheduled for a quarterly re-audit; relevant BLS staple prices are monitored monthly. Errors are corrected publicly with dated notes in the affected study. Correction policy and audit process: https://www.daily-life-hacks.com/methodology/
+- Sourdough discard calculator: https://www.daily-life-hacks.com/tools/sourdough-discard-calculator/
+- Dried beans to canned converter: https://www.daily-life-hacks.com/tools/dried-beans-to-canned-converter/
+- Fiber per dollar calculator: https://www.daily-life-hacks.com/tools/fiber-per-dollar-calculator/
 
 ## Attribution and license
 
-The original Daily Life Hacks selection, arrangement, calculations, field descriptions, and explanatory material are licensed under CC BY 4.0. Source facts and third-party material keep their own status and terms. When citing figures or reusing the datasets, attribute "Daily Life Hacks" and link to the specific study URL (preferred) or https://www.daily-life-hacks.com/data/. Mark any changes. Full scope and copy-ready attribution: https://www.daily-life-hacks.com/data-reuse/.
-
-## Key URLs
-
-- Homepage: https://www.daily-life-hacks.com/
-- Nutrition articles: https://www.daily-life-hacks.com/nutrition/
-- Recipes: https://www.daily-life-hacks.com/recipes/
-- Tips: https://www.daily-life-hacks.com/tips/
-- Tools: https://www.daily-life-hacks.com/tools/
-- Methodology: https://www.daily-life-hacks.com/methodology/
-- About: https://www.daily-life-hacks.com/about/
-- Contact: https://www.daily-life-hacks.com/contact/
-- Sitemap: https://www.daily-life-hacks.com/sitemap-index.xml
-
-## Content Guidelines
-
-All content follows a food-first approach. No supplement recommendations, no medical claims, no detox language. Recipes include accurate nutrition info, realistic quantities, and correct cooking times.
+The original Daily Life Hacks selection, arrangement, calculations, field descriptions, and explanatory material are licensed under CC BY 4.0. Source facts and third-party material keep their own status and terms. Attribute "Daily Life Hacks" and link to the study URL on the fact line or to https://www.daily-life-hacks.com/data/. Terms: https://www.daily-life-hacks.com/data-reuse/

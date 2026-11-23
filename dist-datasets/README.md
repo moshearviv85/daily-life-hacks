@@ -46,7 +46,7 @@ Six rules. They're the whole reason this data is worth reusing.
 
 **6. Corrections are public and dated.** On July 4 2026 an adversarial audit of the fiber study caught six values that needed fixing. They were fixed, the affected foods were re-ranked, and a correction note went into the article. That audit is now a standard pre-publish step. Nothing gets quietly swapped.
 
-The person doing this is David Miller, who runs the site. He's not a registered dietitian or a medical professional, and this data is built to make grocery math inspectable, not to hand anybody personal nutrition advice.
+Daily Life Hacks publishes this dataset as an organization. It is not a medical practice, and the files are built to make grocery math inspectable, not to hand anybody personal nutrition advice.
 
 ---
 
@@ -144,7 +144,7 @@ The per-file field schemas below are generated from `datapackage.json`, which is
 - **File:** [`data/canned-vs-dry-beans-cost-2026.csv`](data/canned-vs-dry-beans-cost-2026.csv)
 - **Rows:** 10 (header excluded) &nbsp;|&nbsp; **Size:** 1,005 bytes
 - **Chart:** [`charts/canned-vs-dry-beans-cost-chart.jpg`](charts/canned-vs-dry-beans-cost-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/canned-vs-dry-beans-cost/>
+- **Study:** <https://www.daily-life-hacks.com/canned-beans-vs-dried-beans-nutrition/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -184,7 +184,7 @@ The per-file field schemas below are generated from `datapackage.json`, which is
 - **File:** [`data/dairy-protein-per-dollar-ranked-2026.csv`](data/dairy-protein-per-dollar-ranked-2026.csv)
 - **Rows:** 6 (header excluded) &nbsp;|&nbsp; **Size:** 568 bytes
 - **Chart:** [`charts/dairy-protein-per-dollar-ranked-chart.jpg`](charts/dairy-protein-per-dollar-ranked-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/dairy-protein-per-dollar-ranked/>
+- **Study:** <https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -298,7 +298,7 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 - **File:** [`data/grains-fiber-per-dollar-ranked-2026.csv`](data/grains-fiber-per-dollar-ranked-2026.csv)
 - **Rows:** 11 (header excluded) &nbsp;|&nbsp; **Size:** 761 bytes
 - **Chart:** [`charts/grains-fiber-per-dollar-ranked-chart.jpg`](charts/grains-fiber-per-dollar-ranked-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/grains-fiber-per-dollar-ranked/>
+- **Study:** <https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -318,7 +318,7 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 - **File:** [`data/high-fiber-snacks-per-dollar-2026.csv`](data/high-fiber-snacks-per-dollar-2026.csv)
 - **Rows:** 10 (header excluded) &nbsp;|&nbsp; **Size:** 648 bytes
 - **Chart:** [`charts/high-fiber-snacks-per-dollar-chart.jpg`](charts/high-fiber-snacks-per-dollar-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/high-fiber-snacks-per-dollar/>
+- **Study:** <https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -338,7 +338,7 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 - **File:** [`data/meat-per-dollar-protein-ranked-2026.csv`](data/meat-per-dollar-protein-ranked-2026.csv)
 - **Rows:** 11 (header excluded) &nbsp;|&nbsp; **Size:** 1,234 bytes
 - **Chart:** [`charts/meat-per-dollar-protein-ranked-chart.jpg`](charts/meat-per-dollar-protein-ranked-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/meat-per-dollar-protein-ranked/>
+- **Study:** <https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -358,7 +358,7 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 - **File:** [`data/no-cook-protein-per-dollar-2026.csv`](data/no-cook-protein-per-dollar-2026.csv)
 - **Rows:** 15 (header excluded) &nbsp;|&nbsp; **Size:** 1,486 bytes
 - **Chart:** [`charts/no-cook-protein-per-dollar-chart.jpg`](charts/no-cook-protein-per-dollar-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/no-cook-protein-per-dollar/>
+- **Study:** <https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -378,7 +378,7 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 - **File:** [`data/one-dollar-fiber-what-it-buys-2026.csv`](data/one-dollar-fiber-what-it-buys-2026.csv)
 - **Rows:** 15 (header excluded) &nbsp;|&nbsp; **Size:** 1,041 bytes
 - **Chart:** [`charts/one-dollar-fiber-what-it-buys-chart.jpg`](charts/one-dollar-fiber-what-it-buys-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/one-dollar-fiber-what-it-buys/>
+- **Study:** <https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -398,7 +398,7 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 - **File:** [`data/one-dollar-protein-what-it-buys-2026.csv`](data/one-dollar-protein-what-it-buys-2026.csv)
 - **Rows:** 15 (header excluded) &nbsp;|&nbsp; **Size:** 1,490 bytes
 - **Chart:** [`charts/one-dollar-protein-what-it-buys-chart.jpg`](charts/one-dollar-protein-what-it-buys-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/one-dollar-protein-what-it-buys/>
+- **Study:** <https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -418,7 +418,7 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 - **File:** [`data/plant-protein-per-dollar-ranked-2026.csv`](data/plant-protein-per-dollar-ranked-2026.csv)
 - **Rows:** 18 (header excluded) &nbsp;|&nbsp; **Size:** 1,765 bytes
 - **Chart:** [`charts/plant-protein-per-dollar-ranked-chart.jpg`](charts/plant-protein-per-dollar-ranked-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/plant-protein-per-dollar-ranked/>
+- **Study:** <https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -438,7 +438,7 @@ The flagship fiber dataset. 53 foods ranked by grams of dietary fiber per US dol
 - **File:** [`data/produce-fiber-per-dollar-ranked-2026.csv`](data/produce-fiber-per-dollar-ranked-2026.csv)
 - **Rows:** 22 (header excluded) &nbsp;|&nbsp; **Size:** 1,377 bytes
 - **Chart:** [`charts/produce-fiber-per-dollar-ranked-chart.jpg`](charts/produce-fiber-per-dollar-ranked-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/produce-fiber-per-dollar-ranked/>
+- **Study:** <https://www.daily-life-hacks.com/what-30-grams-of-fiber-costs-per-day/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -533,7 +533,7 @@ The flagship protein dataset. 49 foods ranked by grams of protein per US dollar 
 - **File:** [`data/shelf-stable-pantry-per-dollar-2026.csv`](data/shelf-stable-pantry-per-dollar-2026.csv)
 - **Rows:** 27 (header excluded) &nbsp;|&nbsp; **Size:** 2,575 bytes
 - **Chart:** [`charts/shelf-stable-pantry-per-dollar-chart.jpg`](charts/shelf-stable-pantry-per-dollar-chart.jpg)
-- **Study:** <https://www.daily-life-hacks.com/shelf-stable-pantry-per-dollar/>
+- **Study:** <https://www.daily-life-hacks.com/protein-per-dollar-adjusted-for-quality/>
 
 | Field | Type | Description |
 |---|---|---|
@@ -580,18 +580,18 @@ Machine-readable version: [`CITATION.cff`](CITATION.cff). GitHub renders a "Cite
 
 **APA**
 
-> Miller, D. (2026). *Daily Life Hacks Food Value Data* (Version 2026.1) \[Data set\]. Daily Life Hacks. https://www.daily-life-hacks.com/data/
+> Daily Life Hacks. (2026). *Daily Life Hacks Food Value Data* (Version 2026.3) \[Data set\]. https://www.daily-life-hacks.com/methodology/
 
 **BibTeX**
 
 ```bibtex
 @dataset{dailylifehacks_food_value_2026,
-  author    = {Miller, David},
+  author    = {{Daily Life Hacks}},
   title     = {Daily Life Hacks Food Value Data},
   year      = {2026},
-  version   = {2026.1},
+  version   = {2026.3},
   publisher = {Daily Life Hacks},
-  url       = {https://www.daily-life-hacks.com/data/}
+  url       = {https://www.daily-life-hacks.com/methodology/}
 }
 ```
 

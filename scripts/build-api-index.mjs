@@ -265,8 +265,9 @@ async function main() {
       // for. Same terms as the index-level declaration.
       license: "CC BY 4.0",
       license_url: DATA_LICENSE_URL,
-      // studyUrl keeps Dataset citations on /data/ or /methodology/ when the
-      // old study article now redirects. article_slug still resolves ?dataset=.
+      // studyUrl is the live write-up. Redirected pillars point at the ranking
+      // pages from #250, not at the old slugs. article_slug still resolves
+      // ?dataset= for clients that copied the dataset id.
       study_url: meta?.studyUrl
         ? `${SITE}${meta.studyUrl}`
         : articleSlug
