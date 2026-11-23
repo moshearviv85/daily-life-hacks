@@ -78,7 +78,7 @@ const magnets = [
       <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tight" style="color: var(--heading-color); line-height: 1.1;">
         Welcome to the club.
       </h1>
-      <p class="text-xl md:text-2xl font-medium max-w-2xl mx-auto" style="color: var(--muted-color); line-height: 1.5;">
+      <p id="thank-you-lead" class="text-xl md:text-2xl font-medium max-w-2xl mx-auto" style="color: var(--muted-color); line-height: 1.5;">
         Your meal plan is right below, no waiting on an email for it. We're the
         people who price out what eating well actually costs, so that's what
         lands in your inbox: real numbers, and recipes that survive a Tuesday.
@@ -92,51 +92,104 @@ const magnets = [
     </section>
 
     <section class="space-y-6 mb-12">
-      {
-        magnets.map((magnet) => (
-          <div
-            class="rounded-[2rem] p-8 md:p-10 text-center"
-            style={
-              magnet.primary
-                ? "background-color: rgba(242, 155, 48, 0.08); border: 2px solid #F29B30;"
-                : "background-color: var(--card-bg); border: 1px solid var(--border-color);"
-            }
-          >
-            <p
-              class="text-sm font-bold uppercase tracking-[0.2em] mb-3"
-              style="color: #F29B30;"
-            >
-              {magnet.eyebrow}
-            </p>
-            <h2
-              class="text-2xl md:text-3xl font-black mb-4"
-              style="color: var(--heading-color); letter-spacing: -0.02em;"
-            >
-              {magnet.title}
-            </h2>
-            <p
-              class="text-base max-w-xl mx-auto mb-6"
-              style="color: var(--muted-color); line-height: 1.6;"
-            >
-              {magnet.body}
-            </p>
-            <a
-              href={magnet.href}
-              download={magnet.download ? "7-day-high-fiber-meal-plan.pdf" : undefined}
-              data-lead-magnet-download={magnet.download ? "true" : undefined}
-              class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-lg font-bold transition-transform hover:-translate-y-1"
+      <div data-offer-panel="fiber">
+        {
+          magnets.map((magnet) => (
+            <div
+              class="rounded-[2rem] p-8 md:p-10 text-center mb-6"
               style={
                 magnet.primary
-                  ? "background-color: #F29B30; color: #fff; box-shadow: 0 4px 14px rgba(165, 106, 34, 0.4);"
-                  : "color: #F29B30; background-color: transparent; border: 2px solid #F29B30;"
+                  ? "background-color: rgba(242, 155, 48, 0.08); border: 2px solid #F29B30;"
+                  : "background-color: var(--card-bg); border: 1px solid var(--border-color);"
               }
             >
-              {magnet.cta}
-            </a>
-          </div>
-        ))
-      }
-      <p class="text-sm text-center" style="color: var(--muted-color);">
+              <p
+                class="text-sm font-bold uppercase tracking-[0.2em] mb-3"
+                style="color: #F29B30;"
+              >
+                {magnet.eyebrow}
+              </p>
+              <h2
+                class="text-2xl md:text-3xl font-black mb-4"
+                style="color: var(--heading-color); letter-spacing: -0.02em;"
+              >
+                {magnet.title}
+              </h2>
+              <p
+                class="text-base max-w-xl mx-auto mb-6"
+                style="color: var(--muted-color); line-height: 1.6;"
+              >
+                {magnet.body}
+              </p>
+              <a
+                href={magnet.href}
+                download={magnet.download ? "7-day-high-fiber-meal-plan.pdf" : undefined}
+                data-lead-magnet-download={magnet.download ? "true" : undefined}
+                class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-lg font-bold transition-transform hover:-translate-y-1"
+                style={
+                  magnet.primary
+                    ? "background-color: #F29B30; color: #fff; box-shadow: 0 4px 14px rgba(165, 106, 34, 0.4);"
+                    : "color: #F29B30; background-color: transparent; border: 2px solid #F29B30;"
+                }
+              >
+                {magnet.cta}
+              </a>
+            </div>
+          ))
+        }
+      </div>
+
+      <div data-offer-panel="sourdough" hidden>
+        <div
+          class="rounded-[2rem] p-8 md:p-10 text-center"
+          style="background-color: rgba(242, 155, 48, 0.08); border: 2px solid #F29B30;"
+        >
+          <p class="text-sm font-bold uppercase tracking-[0.2em] mb-3" style="color: #F29B30;">
+            Your download
+          </p>
+          <h2 class="text-2xl md:text-3xl font-black mb-4" style="color: var(--heading-color); letter-spacing: -0.02em;">
+            Sourdough Discard Grams Cheat Sheet
+          </h2>
+          <p class="text-base max-w-xl mx-auto mb-6" style="color: var(--muted-color); line-height: 1.6;">
+            One page. A stirred cup of 100% hydration discard is 227 grams, and half a cup is 113. The flour and water already in the jar are on the sheet.
+          </p>
+          <a
+            href="/printables/sourdough-discard-grams-cheat-sheet/"
+            data-lead-magnet-download="true"
+            class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-lg font-bold transition-transform hover:-translate-y-1"
+            style="background-color: #F29B30; color: #fff; box-shadow: 0 4px 14px rgba(165, 106, 34, 0.4);"
+          >
+            Open the cheat sheet
+          </a>
+        </div>
+      </div>
+
+      <div data-offer-panel="beans" hidden>
+        <div
+          class="rounded-[2rem] p-8 md:p-10 text-center"
+          style="background-color: rgba(242, 155, 48, 0.08); border: 2px solid #F29B30;"
+        >
+          <p class="text-sm font-bold uppercase tracking-[0.2em] mb-3" style="color: #F29B30;">
+            Your download
+          </p>
+          <h2 class="text-2xl md:text-3xl font-black mb-4" style="color: var(--heading-color); letter-spacing: -0.02em;">
+            Bean Conversion Card
+          </h2>
+          <p class="text-base max-w-xl mx-auto mb-6" style="color: var(--muted-color); line-height: 1.6;">
+            One page. One pound dried cooks to about 6 cups, which is 3½ to 4 cans. A 15-ounce can is about 1½ cups drained.
+          </p>
+          <a
+            href="/printables/bean-conversion-card/"
+            data-lead-magnet-download="true"
+            class="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-lg font-bold transition-transform hover:-translate-y-1"
+            style="background-color: #F29B30; color: #fff; box-shadow: 0 4px 14px rgba(165, 106, 34, 0.4);"
+          >
+            Open the conversion card
+          </a>
+        </div>
+      </div>
+
+      <p id="thank-you-magnet-note" class="text-sm text-center" style="color: var(--muted-color);">
         The PDF is ready now. The two guides stay online when you want the full
         price math and meal-prep system.
       </p>
@@ -149,7 +202,7 @@ const magnets = [
         <div>
           <div class="text-4xl mb-4 font-black" style="color: #F29B30;">1</div>
           <h3 class="text-xl font-bold mb-2" style="color: var(--heading-color);">A welcome email, in a minute or two</h3>
-          <p class="text-base" style="color: var(--muted-color); line-height: 1.6;">
+          <p id="thank-you-step-email" class="text-base" style="color: var(--muted-color); line-height: 1.6;">
             It has the meal plan link in it, so you can find the PDF again after
             you close this tab. Check spam if it's hiding.
           </p>
@@ -194,12 +247,50 @@ const magnets = [
 
   <Footer signup="none" />
 
+  <script is:inline>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var offer = params.get("offer");
+      if (offer !== "sourdough" && offer !== "beans") return;
+
+      document.querySelectorAll("[data-offer-panel]").forEach(function (panel) {
+        panel.hidden = panel.getAttribute("data-offer-panel") !== offer;
+      });
+
+      var lead = document.getElementById("thank-you-lead");
+      var note = document.getElementById("thank-you-magnet-note");
+      var step = document.getElementById("thank-you-step-email");
+      if (offer === "sourdough") {
+        if (lead) {
+          lead.textContent = "The gram cheat sheet is right below. A stirred cup of 100% hydration discard is 227 grams, and half a cup is 113. Print it once and stop scraping a sticky cup over the sink.";
+        }
+        if (note) {
+          note.textContent = "The cheat sheet is one page. The discard calculator on the site does the same gram math if you'd rather type a number than print it.";
+        }
+        if (step) {
+          step.textContent = "A welcome note shows up in a minute or two. The cheat sheet on this page doesn't wait on that email. Check spam if the note is hiding.";
+        }
+      } else {
+        if (lead) {
+          lead.textContent = "The conversion card is right below. One pound of dried beans cooks to about 6 cups, which is 3½ to 4 cans. A 15-ounce can is about 1½ cups drained.";
+        }
+        if (note) {
+          note.textContent = "The card is one page. The dried-beans converter on the site uses these same figures when the pot is bigger than the card.";
+        }
+        if (step) {
+          step.textContent = "A welcome note shows up in a minute or two. The conversion card on this page doesn't wait on that email. Check spam if the note is hiding.";
+        }
+      }
+    })();
+  </script>
+
   <script define:vars={{ source, category, segment }}>
     function setupLeadMagnetTracking() {
       document.querySelectorAll("[data-lead-magnet-download]").forEach((link) => {
         if (link.getAttribute("data-event-bound") === "true") return;
         link.setAttribute("data-event-bound", "true");
         link.addEventListener("click", () => {
+          const asset = link.getAttribute("href") || "/downloads/7-day-high-fiber-meal-plan.pdf";
           fetch("/api/event", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -211,7 +302,7 @@ const magnets = [
               category,
               email_segment: segment,
               metadata: {
-                asset: "/downloads/7-day-high-fiber-meal-plan.pdf",
+                asset,
               },
             }),
           }).catch(() => {});

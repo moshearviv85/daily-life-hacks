@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Newsletter from "../components/Newsletter.astro";
 import RecipeMetaBar from "../components/RecipeMetaBar.astro";
 import RecipeServingScaler from "../components/RecipeServingScaler.astro";
 import RelatedArticles from "../components/RelatedArticles.astro";
@@ -1278,6 +1279,22 @@ const newsletterSignup = newsletterSignupForArticle({
       )
     }
 
+    <!--
+      One signup on the article. Flagship studies already render StudyEmailCapture,
+      so they do not get a second form here. Every other article gets the topic
+      offer at the end of the body, and the site footer stays bare.
+    -->
+    {
+      !flagship?.emailCapture && (
+        <Newsletter
+          variant={newsletterSignup}
+          placement="inline"
+          articleCategory={article.data.category}
+          articleBaseSlug={article.id}
+        />
+      )
+    }
+
     <!-- Related Articles -->
     <div class="order-[48]">
       <RelatedArticles article={article} />
@@ -1295,11 +1312,7 @@ const newsletterSignup = newsletterSignupForArticle({
     </div>
     </div>
   </main>
-  <Footer
-    signup={newsletterSignup}
-    articleCategory={article.data.category}
-    articleBaseSlug={article.id}
-  />
+  <Footer signup="none" />
 
   {showRatingWidget && (
   <script is:inline>

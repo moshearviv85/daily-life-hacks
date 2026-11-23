@@ -133,7 +133,7 @@ const linkStyle = "color: #F29B30;";
       {dataset.name}
     </h1>
     <p class="text-lg mb-8" style="color: var(--muted-color);">
-      {dataset.rows} rows. Free CSV. No signup. The write-up with the caveats lives on the study
+      {dataset.rows} rows. Free CSV. No email required. The write-up with the caveats lives on the study
       page; this page is the file, the license, and the citation.
     </p>
 
@@ -240,5 +240,5 @@ const linkStyle = "color: #F29B30;";
     </aside>
   </main>
   <script is:inline set:html={citationCopyScript} />
-  <Footer signup="none" />
+  <Footer signup="generic" />
 </BaseLayout>

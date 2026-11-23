@@ -1,0 +1,147 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { CUP_GRAMS } from "../../../lib/sourdough-discard-math.js";
+
+const title = "Sourdough Discard Grams Cheat Sheet";
+const description =
+  "Stirred 100% hydration sourdough discard: 1 cup is 227 grams, 1/2 cup is 113, plus the flour and water already in the jar.";
+const pageUrl = "https://www.daily-life-hacks.com/printables/sourdough-discard-grams-cheat-sheet/";
+
+/**
+ * Published cup chart from /how-to-measure-sourdough-discard-grams/.
+ * King Arthur's cup is 227 g. The other rows are that cup, rounded to a gram.
+ * Half of 227 is 113.5, and the article rounds the half-cup line to 113.
+ */
+const cupRows = [
+  ["2 tablespoons", "28 g"],
+  ["1/4 cup", "57 g"],
+  ["1/3 cup", "76 g"],
+  ["1/2 cup", "113 g"],
+  ["2/3 cup", "151 g"],
+  ["3/4 cup", "170 g"],
+  ["1 cup", `${CUP_GRAMS} g`],
+  ["1 1/2 cups", "341 g"],
+  ["2 cups", "454 g"],
+];
+
+const splitRows = [
+  ["50 g", "25 g", "25 g"],
+  ["100 g", "50 g", "50 g"],
+  ["113 g", "56.5 g", "56.5 g"],
+  ["200 g", "100 g", "100 g"],
+  ["227 g", "113.5 g", "113.5 g"],
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    name: title,
+    description,
+    url: pageUrl,
+    inLanguage: "en-US",
+    isPartOf: { "@id": "https://www.daily-life-hacks.com/#website" },
+    publisher: { "@id": "https://www.daily-life-hacks.com/#organization" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.daily-life-hacks.com/" },
+      { "@type": "ListItem", position: 2, name: "Tools", item: "https://www.daily-life-hacks.com/tools/" },
+      { "@type": "ListItem", position: 3, name: title, item: pageUrl },
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={schemas}>
+  <Header />
+  <main class="sheet-wrap">
+    <article class="sheet">
+      <p class="kicker">Printable. One page.</p>
+      <h1>Sourdough Discard Grams Cheat Sheet</h1>
+      <p class="lede">
+        Stirred 100% hydration discard. A bubbly, unstirred jar takes more space, so put the bowl on the scale, press tare, and pour.
+        The cup line starts at King Arthur's {CUP_GRAMS} gram cup. The other rows are that cup, rounded to a whole gram, the same chart as the
+        <a href="/how-to-measure-sourdough-discard-grams/">discard grams guide</a>.
+      </p>
+
+      <h2>Cups to grams</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">US volume</th>
+            <th scope="col">Discard weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cupRows.map(([volume, grams]) => (
+            <tr>
+              <th scope="row">{volume}</th>
+              <td>{grams}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="note">100 grams is about 0.44 cup. Half of {CUP_GRAMS} is 113.5, and the half-cup line above is the published 113 gram round.</p>
+
+      <h2>Flour and water already in the jar</h2>
+      <p class="note">At 100% hydration, half the weight is flour and half is water. Take those grams out of the recipe's flour and liquid.</p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Discard</th>
+            <th scope="col">Flour</th>
+            <th scope="col">Water</th>
+          </tr>
+        </thead>
+        <tbody>
+          {splitRows.map(([discard, flour, water]) => (
+            <tr>
+              <th scope="row">{discard}</th>
+              <td>{flour}</td>
+              <td>{water}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="note">
+        Another hydration: flour = discard weight ÷ (1 + hydration ÷ 100). Water is the rest.
+        A 150 gram starter at 50% hydration is 100 grams flour and 50 grams water.
+        The <a href="/tools/sourdough-discard-calculator/">discard calculator</a> runs the same split.
+      </p>
+
+      <p class="print-row no-print">
+        <button type="button" onclick="window.print()">Print this page</button>
+      </p>
+    </article>
+  </main>
+  <Footer signup="none" />
+
+  <style>
+    .sheet-wrap { background: #f4f1ea; padding: 2rem 1rem 3rem; }
+    .sheet { max-width: 720px; margin: 0 auto; background: #fff; color: #1c1915; border: 1px solid #e4d8c4; border-radius: 12px; padding: 1.75rem 1.5rem 1.25rem; box-shadow: 0 12px 32px rgba(28, 25, 21, 0.06); }
+    .kicker { margin: 0 0 0.35rem; color: #a85e00; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    h1 { margin: 0 0 0.6rem; font-size: 1.85rem; line-height: 1.1; letter-spacing: -0.03em; }
+    h2 { margin: 1.1rem 0 0.4rem; font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; color: #a85e00; }
+    .lede, .note { margin: 0.35rem 0 0.6rem; font-size: 0.92rem; line-height: 1.45; }
+    a { color: #a85e00; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; padding: 0.28rem 0.4rem; border-bottom: 1px solid #eadfce; }
+    thead th { font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: #6b5b45; }
+    td, tbody th { font-variant-numeric: tabular-nums; }
+    .print-row { margin: 1rem 0 0; }
+    button { background: #F29B30; color: #fff; border: 0; border-radius: 999px; padding: 0.7rem 1.1rem; font-weight: 800; cursor: pointer; }
+    @media print {
+      .sheet-wrap { background: #fff; padding: 0; }
+      .sheet { max-width: none; border: 0; border-radius: 0; box-shadow: none; padding: 0; }
+      .no-print, header, footer { display: none !important; }
+      a { color: inherit; text-decoration: none; }
+      @page { size: letter; margin: 0.5in; }
+    }
+  </style>
+</BaseLayout>
