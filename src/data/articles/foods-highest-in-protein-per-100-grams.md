@@ -107,6 +107,33 @@ So when brown lentils beat chicken breast, that's 100 grams of dry lentils again
 
 What survives the caveat is the shopping math. A 16 ounce bag of brown lentils is 454 grams, which is about 111.8 grams of protein for $1.44. That's the number that shows up on your receipt, and it doesn't care what happens in the pot. [Lentil curry](/lentil-curry-high-fiber-vegan-dinner/) is where a bag like that usually ends up in my kitchen.
 
+## Highest-protein common foods per 100 g, as eaten
+
+The 49-row table is a shopping list. Dry lentils, raw chicken, and a can you can eat with a fork all share it. Handy at the store. A bad picture if you wanted the plate. These 14 rows are the form you eat, or the form the package already is. Every number is the linked USDA FoodData Central record, matched to a tenth of a gram. Seitan isn't here. FoodData Central publishes no seitan entry, so that row got dropped instead of guessed.
+
+Dry versus cooked is the whole trick. Brown lentils in the priced study are 24.63 grams per 100 grams dry ([FDC 172420](https://fdc.nal.usda.gov/food-details/172420/nutrients)), 24.6 grams to a tenth. Boil them and [FDC 172421](https://fdc.nal.usda.gov/food-details/172421/nutrients) is 9.02 grams per 100 grams, about 9 grams, because the pot is mostly water. Raw chicken breast is 22.5 grams in the study. Roasted, the meat-only breast below is 31.02. Water left. The scoops people actually eat are in [Common portions, not 100 gram slabs](#common-portions-not-100-gram-slabs).
+
+Parmesan is the dense end, at 35.75 grams. A hard cheese barely has water left in it. Jerky is beef dried on purpose, at 33.2, and the roasted meats sit around 30. Egg whites at 10.9 and nonfat Greek yogurt at 10.19 aren't weak. They're wet. Your breakfast doesn't care. Firm tofu here is the calcium-sulfate record at 17.27 grams, not the extra-firm nigari row at 9.98. Don't average them.
+
+| Food | Protein g/100 g | Form | FDC ID |
+|---|---:|---|---|
+| Parmesan, hard | 35.75 | as sold | [170848](https://fdc.nal.usda.gov/food-details/170848/nutrients) |
+| Beef jerky, chopped and formed | 33.2 | as sold | [167536](https://fdc.nal.usda.gov/food-details/167536/nutrients) |
+| Chicken breast, meat only, roasted | 31.02 | cooked | [171477](https://fdc.nal.usda.gov/food-details/171477/nutrients) |
+| Beef top sirloin, lean only, broiled | 30.29 | cooked | [168635](https://fdc.nal.usda.gov/food-details/168635/nutrients) |
+| Turkey breast, meat only, roasted | 30.13 | cooked | [171496](https://fdc.nal.usda.gov/food-details/171496/nutrients) |
+| Pumpkin seed kernels, roasted, without salt | 29.84 | as sold | [170557](https://fdc.nal.usda.gov/food-details/170557/nutrients) |
+| Swiss cheese | 26.96 | as sold | [171251](https://fdc.nal.usda.gov/food-details/171251/nutrients) |
+| Shrimp, cooked | 23.98 | cooked | [175180](https://fdc.nal.usda.gov/food-details/175180/nutrients) |
+| Tempeh | 20.29 | as sold | [174272](https://fdc.nal.usda.gov/food-details/174272/nutrients) |
+| Light tuna, canned in water, drained | 19.44 | as sold | [173709](https://fdc.nal.usda.gov/food-details/173709/nutrients) |
+| Firm tofu, prepared with calcium sulfate | 17.27 | as sold | [172475](https://fdc.nal.usda.gov/food-details/172475/nutrients) |
+| Egg white, raw, fresh | 10.9 | as sold | [172183](https://fdc.nal.usda.gov/food-details/172183/nutrients) |
+| Greek yogurt, plain, nonfat | 10.19 | as sold | [170894](https://fdc.nal.usda.gov/food-details/170894/nutrients) |
+| Lentils, cooked, boiled, without salt | 9.02 | cooked | [172421](https://fdc.nal.usda.gov/food-details/172421/nutrients) |
+
+These rows are not cooked conversions of the priced packages. The study above still doesn't invent those. Rotisserie chicken stays a whole-bird proxy. This roasted breast is a different USDA record: meat only, no skin, no price. Shop from the first table. Use this one when the question is what 100 grams looks like once it's actually dinner.
+
 ## Which foods combined protein density and low price in this study?
 
 Whole wheat flour led our 49-food value ranking at 96.0 grams of protein per dollar. Dry brown lentils sit second at 77.7, then dry split peas at 73.9. Dry navy beans and dry black beans, now priced on the BLS dried-beans-any-type average, land at 59.9 and 58.0. That still puts four dry legumes in this study's top five value seats, just not the first one.
