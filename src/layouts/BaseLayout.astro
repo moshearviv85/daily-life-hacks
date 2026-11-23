@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
-import NewsletterPopup from "../components/NewsletterPopup.astro";
 
 interface Props {
   title: string;
@@ -410,7 +409,6 @@ const metaDescription =
     style="background-color: var(--page-bg); color: var(--text-color);"
   >
     <slot />
-    <NewsletterPopup />
 
     <!-- Pinterest: custom Save overlay handles pin creation; SDK removed to avoid mobile issues -->
     <script is:inline>

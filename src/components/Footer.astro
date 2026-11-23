@@ -1,6 +1,33 @@
 ---
+import Newsletter from "./Newsletter.astro";
+
+interface Props {
+  /**
+   * One email form per page.
+   * fiber: 7-day meal plan. generic: weekly newsletter. none: no form.
+   */
+  signup?: "fiber" | "generic" | "none";
+  articleCategory?: string;
+  articleBaseSlug?: string;
+}
+
+const {
+  signup = "generic",
+  articleCategory = "",
+  articleBaseSlug = "",
+} = Astro.props;
 const year = new Date().getFullYear();
 ---
+
+{
+  signup !== "none" && (
+    <Newsletter
+      variant={signup}
+      articleCategory={articleCategory}
+      articleBaseSlug={articleBaseSlug}
+    />
+  )
+}
 
 <!-- Minimal Footer - no gap from newsletter -->
 <footer
