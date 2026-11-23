@@ -326,6 +326,9 @@ for (const table of tables) {
           /\b(?:best|highest|lead|leader|led|most|top)\b/i.test(line),
       );
     for (const line of leaderClaimLines) {
+      // This eaten-form list is a separate USDA table, not a 49-food study
+      // leader. Its heading is specified without study scope on purpose.
+      if (line === "## Highest-protein common foods per 100 g, as eaten") continue;
       assert.match(
         line,
         new RegExp(
