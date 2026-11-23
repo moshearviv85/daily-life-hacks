@@ -41,7 +41,7 @@ UTILITY_SLUGS = {"dashboard", "thank-you", "contact", "privacy", "terms", "discl
 STATIC_PAGE_SLUGS = {"about"}
 CATEGORY_SLUGS = {"nutrition", "recipes", "tips"}
 LEGACY_PERMANENT_REDIRECTS = {
-    "sourdough-discard-nutrition-facts-health-benefits": "/easy-sourdough-discard-recipes-beginners/",
+    "sourdough-discard-nutrition-facts-health-benefits": "/how-to-measure-sourdough-discard-grams/#sourdough-discard-nutrition",
     "rotisserie-chicken-nutrition-facts-sodium-content": "/costco-rotisserie-chicken-meal-ideas-dinner/",
     "oatmeal-vs-grits-fiber-content-guide": "/oatmeal-vs-grits-fiber-content/",
     "artichoke-recipes-for-gut-health-guide": "/artichoke-recipes-for-gut-health/",

@@ -831,7 +831,7 @@ test("costco rotisserie chicken title leads with the study protein cost", () => 
     false,
     "title should not be the old soft 5 Quick Costco meal ideas SERP",
   );
-  assert.match(raw, /^dateModified: 2026-09-30$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.match(
     page.excerpt,

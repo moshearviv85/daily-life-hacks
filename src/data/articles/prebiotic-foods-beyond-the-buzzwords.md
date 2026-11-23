@@ -12,7 +12,7 @@ image: "/images/prebiotic-foods-beyond-the-buzzwords-main.jpg"
 imageAlt: "Garlic onions bananas oats and beans arranged on a kitchen counter"
 quickAnswer: "Prebiotic foods are plant foods carrying fibers that gut bacteria selectively use. The two most-investigated classes are inulin-type fructans, found in garlic, onions, leeks, asparagus, wheat, and slightly green bananas, and galactooligosaccharides. Trials testing isolated inulin-type fructans have dosed 1.3 to 30 grams a day, averaging about 12, more than a normal day of these foods delivers, and the clearest bowel-frequency effects came from the shorter-chain fructans rather than long-chain inulin."
 date: 2026-05-02
-dateModified: 2026-07-30
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -57,6 +57,29 @@ Two things most lists get wrong.
 First, wheat belongs there. USDA researchers estimating where Americans actually get inulin and oligofructose found [wheat supplied about 70 percent and onions about 25 percent](https://pubmed.ncbi.nlm.nih.gov/10395608/) of the total, averaging 2.6 g of inulin and 2.5 g of oligofructose per day. Chicory root is far more concentrated. Bread is what people eat.
 
 Second, the tidy per-food gram counts for inulin are shakier than they look. A feasibility study of inulin intakes noted that "the specific contribution of inulin is uncertain" in national food databases, partly because [inulin is hard to measure alongside other fiber components](https://pmc.ncbi.nlm.nih.gov/articles/PMC12621174/). Artichokes are genuinely dense in it; we covered [whether artichoke is good for your stomach](/artichoke-recipes-for-gut-health/) separately.
+
+## Inulin and oligofructose in a real serving
+
+[Moshfegh and colleagues](https://pubmed.ncbi.nlm.nih.gov/10395608/) published the USDA estimates behind that 2.6 g and 2.5 g average (Journal of Nutrition, 1999). Their table gives a range per 100 g, then a midpoint, for inulin and for oligofructose. Oligofructose is the shorter fructan people also call FOS. I used the midpoints, scaled to a USDA household weight. The ranges are wide, especially for onion, so a cell is a ballpark for the food in that paper. It isn't an assay of the bulb on your counter.
+
+| Food | Typical serving | Approx. inulin + oligofructose |
+|---|---|---:|
+| Chicory root, raw | 1 root, 60 g ([FDC 169993](https://fdc.nal.usda.gov/food-details/169993/nutrients)) | 38.70 g (24.96 g inulin, 13.74 g oligofructose) |
+| Jerusalem artichoke, raw | 1 cup slices, 150 g ([FDC 169236](https://fdc.nal.usda.gov/food-details/169236/nutrients)) | 47.25 g (27.0 g inulin, 20.25 g oligofructose) |
+| Garlic, raw | 1 clove, 3 g ([FDC 169230](https://fdc.nal.usda.gov/food-details/169230/nutrients)) | 0.53 g (0.38 g inulin, 0.15 g oligofructose) |
+| Onion, raw | 1 medium, 110 g ([FDC 170000](https://fdc.nal.usda.gov/food-details/170000/nutrients)) | 9.46 g (4.73 g inulin, 4.73 g oligofructose) |
+| Leek, raw | 1 leek, 89 g ([FDC 169246](https://fdc.nal.usda.gov/food-details/169246/nutrients)) | 10.41 g (5.785 g inulin, 4.628 g oligofructose) |
+| Asparagus, raw | 4 medium spears, 64 g ([FDC 168389](https://fdc.nal.usda.gov/food-details/168389/nutrients)) | 3.2 g (1.6 g inulin, 1.6 g oligofructose) |
+| Banana, raw, including one that's still green | 1 medium, 118 g ([FDC 173944](https://fdc.nal.usda.gov/food-details/173944/nutrients)) | 1.18 g (0.59 g inulin, 0.59 g oligofructose) |
+| Barley, pearled, cooked | 1 cup, 157 g ([FDC 170285](https://fdc.nal.usda.gov/food-details/170285/nutrients)) | 0.628 g (0.314 g inulin, 0.314 g oligofructose) |
+| Oats | a bowl of oatmeal | Beta-glucan, a different fiber |
+| Potatoes or rice, cooked then cooled | a leftover plate | Resistant starch, a different fiber |
+
+A clove of garlic is seasoning. It isn't a 5 g project. Chicory root and a cup of Jerusalem artichoke are showing off, and you aren't eating either one like an apple.
+
+About 5 g a day is already the survey average: 2.6 g of inulin plus 2.5 g of oligofructose. Wheat and onions did most of that. If your day is light on both, 100 g of raw asparagus is 5 g at the midpoint, 2.5 g of each. That's a little over six medium spears. Half a medium raw onion, 55 g, is about 4.7 g combined. Cooking moves the concentration. The same paper's cooked-onion midpoint is 3.0 g inulin and 3.0 g oligofructose per 100 g, and boiled asparagus is 1.7 g of each per 100 g. The banana row is the paper's raw banana. It doesn't publish a separate green-banana fructan number. Oats and cooled potatoes or rice are in the table so they don't get counted as inulin.
+
+Garlic, leek, onion, and asparagus are on [Monash University's high-FODMAP vegetable examples](https://www.monashfodmap.com/about-fodmap-and-ibs/high-and-low-fodmap-foods/), and barley breads sit with the higher-FODMAP grains on that same list. Oats and plain potato are in the lower examples. If those vegetables already bother you, the big rows here are the wrong place to hunt a number. This site doesn't have a separate IBS article.
 
 ## How much do you actually need
 

@@ -20,7 +20,7 @@ const CANONICAL_ORIGIN = "https://www.daily-life-hacks.com";
 const SEARCH_GARBAGE_PARAMS = new Set(["s"]);
 
 const LEGACY_PERMANENT_REDIRECTS = new Map([
-  ["sourdough-discard-nutrition-facts-health-benefits", "/easy-sourdough-discard-recipes-beginners/"],
+  ["sourdough-discard-nutrition-facts-health-benefits", "/how-to-measure-sourdough-discard-grams/#sourdough-discard-nutrition"],
   ["rotisserie-chicken-nutrition-facts-sodium-content", "/costco-rotisserie-chicken-meal-ideas-dinner/"],
   ["oatmeal-vs-grits-fiber-content-guide", "/oatmeal-vs-grits-fiber-content/"],
   ["protein-per-dollar-cheapest-high-protein-foods", "/protein-per-dollar-cheapest-protein-sources/"],

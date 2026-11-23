@@ -119,6 +119,8 @@ export const SITE_REDIRECT_SOURCE = `/free-meal-plan / 301
 /which-foods-are-complete-proteins/ /beans-and-rice-complete-protein-meal/ 301
 /how-long-do-dried-beans-last /how-to-cook-dried-beans-from-scratch/ 301
 /how-long-do-dried-beans-last/ /how-to-cook-dried-beans-from-scratch/ 301
+/sourdough-discard-nutrition-facts-health-benefits /how-to-measure-sourdough-discard-grams/#sourdough-discard-nutrition 301
+/sourdough-discard-nutrition-facts-health-benefits/ /how-to-measure-sourdough-discard-grams/#sourdough-discard-nutrition 301
 `;
 
 export function parseRedirectRules(source) {
