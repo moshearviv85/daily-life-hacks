@@ -12,7 +12,7 @@ tags:
 image: "/images/best-way-to-cook-chicken-main.jpg"
 imageAlt: Sliced golden-brown chicken breast on a wooden cutting board with fresh herbs and steam rising.
 date: 2026-05-19
-dateModified: 2026-07-20
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "5 minutes"
@@ -61,7 +61,7 @@ If you want to turn this skillet chicken into dinner without opening six more ta
 
 Most people mess up chicken breast by trying to cook a thick, uneven piece all at once. What happens? The outside dries out and gets tough while the inside slowly catches up. Or you undercook it because you’re scared of the former. Neither is a good time.
 
-My method fixes this. We’re going to thin out the chicken, season it simply, and cook it hot and fast. This ensures even cooking and a beautiful sear without turning it into a rubbery disc. No fancy equipment needed, just a good skillet and about five minutes of actual effort. This isn't trying to win a chef competition; it's trying to get protein on the table before anyone asks for cereal. Breast is the default here because it slices cleanly into cutlets, but boneless thighs take the same seasoning and the same thermometer, and [the two cuts don't land in the same place on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g).
+My method fixes this. We’re going to thin out the chicken, season it simply, and cook it hot and fast. This ensures even cooking and a beautiful sear without turning it into a rubbery disc. No fancy equipment needed, just a good skillet and about five minutes of actual effort. This isn't trying to win a chef competition; it's trying to get protein on the table before anyone asks for cereal. Breast is the default here because it slices cleanly into cutlets, but boneless thighs take the same seasoning and the same thermometer.
 
 ## How to Slice Chicken Breasts Into Cutlets
 

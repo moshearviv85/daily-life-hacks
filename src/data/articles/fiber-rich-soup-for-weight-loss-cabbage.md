@@ -11,7 +11,7 @@ tags:
 image: /images/fiber-rich-soup-for-weight-loss-cabbage-main.jpg
 imageAlt: Pot of tomato cabbage soup with cannellini beans and carrots on a stove
 date: 2026-02-13
-dateModified: 2026-07-12
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -98,7 +98,7 @@ Soluble fiber from the beans and insoluble fiber from the cabbage both show up h
 
 One head of green cabbage is usually a couple of dollars. A can of beans is about a dollar. Crushed tomatoes and broth are pantry regulars if you cook soup even occasionally. You've just built four servings of a fiber-heavy meal for less than many people spend on one mediocre takeout salad.
 
-When we ranked foods for the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), beans and other dry-goods staples kept winning. Cabbage isn't the absolute champion on a grams-per-dollar spreadsheet, but it is one of the cheapest ways to add volume to a pot. Volume matters when the goal is feeling full, not just collecting fiber points.
+Cabbage isn't the cheapest vegetable you can throw in a pot, but it is one of the cheapest ways to add volume. Volume matters when the goal is feeling full, not just collecting fiber points.
 
 Calories in this recipe land around 380 per serving with the beans included. That's a meal. If someone sold you cabbage soup as a near-zero-calorie cleanse, they were selling you boredom, not dinner.
 
@@ -142,6 +142,6 @@ It is not a cleanse. It is not a seven-day cabbage-only challenge. It is not goi
 
 What it can do is give you a high-volume, high-fiber, low-drama meal that costs pocket change per bowl and may help you stay full longer than a sad side salad. Pair it with the rest of a normal day of food. Eat it for lunch with fruit afterward. Eat it for dinner with toast. Skip the part where you announce a detox to group chat.
 
-If you're rebuilding the grocery cart around fiber that doesn't wreck the budget, the [complete fiber-on-a-budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) and the [fiber per dollar breakdown](/fiber-per-dollar-cheapest-high-fiber-foods/) cover the shopping side while this pot covers Tuesday night.
+If you're rebuilding the grocery cart around fiber that doesn't wreck the budget, the [complete fiber-on-a-budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) covers the shopping side while this pot covers Tuesday night.
 
 That's the upgrade. Same vegetable that starred in the diet-soup nightmare. Completely different outcome. One pot, real flavor, beans in the mix, and leftovers that don't feel like a penalty.

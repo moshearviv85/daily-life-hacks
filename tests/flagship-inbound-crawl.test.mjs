@@ -12,9 +12,7 @@ const retiredProteinSlug = "protein-per-dollar-cheapest-high-protein-foods";
 
 const requiredLinks = [
   [fiberFlagship, proteinFlagship],
-  ["savory-chia-seed-recipes-breakfast", fiberFlagship],
   ["costco-rotisserie-chicken-meal-ideas-dinner", proteinFlagship],
-  ["how-to-keep-sandwiches-from-getting-soggy", proteinFlagship],
   ["beans-and-rice-complete-protein-meal", proteinFlagship],
   ["beans-and-rice-complete-protein-meal", fiberFlagship],
   ["high-protein-on-a-budget-complete-guide", fiberFlagship],
@@ -22,28 +20,15 @@ const requiredLinks = [
   ["can-you-eat-rice-and-beans-everyday", fiberFlagship],
   ["high-protein-vs-high-fiber-satiety", proteinFlagship],
   ["high-protein-vs-high-fiber-satiety", fiberFlagship],
-  ["vegan-high-fiber-meal-prep-for-week", fiberFlagship],
-  ["high-fiber-burrito-bowl-meal-prep", fiberFlagship],
   ["cheapest-complete-protein-pairs", proteinFlagship],
   ["cheapest-complete-protein-pairs", fiberFlagship],
   ["cottage-cheese-vs-greek-yogurt-protein-uses", proteinFlagship],
   ["how-to-eat-more-fiber-on-a-budget-complete-guide", proteinFlagship],
-  ["lentil-curry-high-fiber-vegan-dinner", fiberFlagship],
   ["frozen-vs-fresh-produce-when-to-buy", fiberFlagship],
-  ["easy-black-bean-tacos-weeknight-dinner", proteinFlagship],
-  ["easy-black-bean-tacos-weeknight-dinner", fiberFlagship],
-  ["how-to-cook-dried-beans-from-scratch", proteinFlagship],
-  ["how-to-cook-dried-beans-from-scratch", fiberFlagship],
-  ["high-fiber-quinoa-salad-for-lunch-prep", fiberFlagship],
-  ["high-protein-bagel-sandwich-ideas-lunch", proteinFlagship],
   ["how-to-eat-cheap-at-home", proteinFlagship],
   ["how-to-eat-cheap-at-home", fiberFlagship],
-  ["how-to-quick-soak-dried-beans-same-day", proteinFlagship],
-  ["how-to-quick-soak-dried-beans-same-day", fiberFlagship],
   ["hearty-vegetarian-chili-with-three-beans-and-corn", proteinFlagship],
   ["hearty-vegetarian-chili-with-three-beans-and-corn", fiberFlagship],
-  ["high-fiber-hummus-recipe-homemade", proteinFlagship],
-  ["high-fiber-hummus-recipe-homemade", fiberFlagship],
   ["how-much-oatmeal-is-a-serving", proteinFlagship],
   ["how-much-oatmeal-is-a-serving", fiberFlagship],
   ["how-much-protein-for-breakfast", proteinFlagship],
@@ -62,12 +47,6 @@ const requiredLinks = [
   ["fast-food-protein-per-dollar-ranked", fiberFlagship],
   ["canned-beans-vs-dried-beans-nutrition", fiberFlagship],
   ["canned-beans-vs-dried-beans-nutrition", proteinFlagship],
-  ["how-to-keep-sandwiches-from-getting-soggy", fiberFlagship],
-  ["savory-chia-seed-recipes-breakfast", proteinFlagship],
-  ["high-fiber-bran-muffins-that-taste-good", fiberFlagship],
-  ["high-fiber-bran-muffins-that-taste-good", proteinFlagship],
-  ["artichoke-recipes-for-gut-health", fiberFlagship],
-  ["artichoke-recipes-for-gut-health", proteinFlagship],
   ["comparing-fiber-content-different-pizza-crusts", fiberFlagship],
   ["comparing-fiber-content-different-pizza-crusts", proteinFlagship],
   ["high-fiber-fast-food-options-guide", fiberFlagship],
@@ -80,32 +59,22 @@ const requiredLinks = [
   ["whole-wheat-vs-white-pasta-fiber", proteinFlagship],
   ["gut-health-tea-peppermint-ginger", fiberFlagship],
   ["high-fiber-smoothies-for-kids-picky-eaters", fiberFlagship],
-  ["high-fiber-pizza-crust-cauliflower", proteinFlagship],
   ["prune-juice-alternatives-for-constipation", proteinFlagship],
   ["chia-pudding-variations-for-breakfast", proteinFlagship],
   ["protein-per-dollar-adjusted-for-quality", fiberFlagship],
   ["cottage-cheese-vs-greek-yogurt-protein-uses", fiberFlagship],
-  ["how-to-store-homemade-salad-dressing-safely", fiberFlagship],
-  ["how-to-pack-salad-for-work-not-soggy", fiberFlagship],
-  ["how-to-pack-salad-for-work-not-soggy", proteinFlagship],
-  ["keep-berries-fresh-longer-when-to-wash", fiberFlagship],
   ["30-day-high-fiber-challenge-meal-plan", proteinFlagship],
-  ["how-to-revive-wilted-lettuce-and-greens", fiberFlagship],
   ["eggs-vs-everything-protein-value", fiberFlagship],
-  ["high-fiber-gluten-free-bread-recipe", fiberFlagship],
   ["best-breakfast-foods-for-sustained-energy", fiberFlagship],
-  ["high-protein-bagel-sandwich-ideas-lunch", fiberFlagship],
   ["how-much-protein-in-bagel-sandwich", proteinFlagship],
   ["balanced-breakfast-that-keeps-you-full", proteinFlagship],
   ["balanced-breakfast-that-keeps-you-full", fiberFlagship],
-  ["quick-20-minute-high-fiber-meals-for-busy-days", proteinFlagship],
-  ["quick-20-minute-high-fiber-meals-for-busy-days", fiberFlagship],
 ];
 
 // Re-checked 2026-09-29 against the live articles and the July 2026 CSVs.
-// Salad dressing links fiber once, above: the close already points at the
-// high-fiber dressing jars, and chia seeds (the teaspoon those jars start
-// with) are an exact row at 33.1 g per dollar. Protein stays off that page.
+// Salad dressing no longer quotes the fiber-per-dollar row for chia.
+// The close still points at the high-fiber dressing jars. Protein stays
+// off that page.
 // Yogurt is a 3-to-4-day fridge ingredient, and "dairy proteins" is the
 // broken emulsion, not a price.
 // Smoke-point oils are not rows in either ranking. Peanut, sunflower,
@@ -114,19 +83,10 @@ const requiredLinks = [
 // study, chips were never priced, and a pinch of hard cheese is not a
 // protein-study row. Eggs, yogurt, and milk on the tea and smoothie pages
 // stay flavor or texture, not a protein price.
-// Berry storage links fiber once, above: raspberries, blackberries,
-// strawberries, and blueberries are exact rows at 4.5, 4.0, 2.7, and 2.5
-// grams per dollar. The yogurt line is a handful of raspberries, and none
-// of the berries are protein-study rows.
-// Wilted lettuce links fiber once via kale, the only green on that page
-// in the study (bagged chopped kale, 7.5 grams per dollar). Lettuce,
-// chard, arugula, and herbs are not rows, and nothing on the page is a
-// protein-study food.
-// Re-checked 2026-10-02. Gluten-free seed bread credits the loaf to fiber
-// and fat. Psyllium is not a study row, and peanut butter there is a
-// topping, not a protein price. The bagel-sandwich protein page's whole
-// wheat line is an extra gram or two of protein. A bagel is not the
-// 100% whole wheat loaf, so fiber stays off that page.
+// Berry storage, wilted lettuce, salad dressing, gluten-free bread, and
+// the bagel lunch page no longer cite the per-dollar studies. Those
+// sentences were off the page topic, so the flagship hrefs went with them.
+// Protein stays off the berry, lettuce, dressing, and gluten-free pages.
 const unfitFlagshipLinks = [
   ["how-to-store-homemade-salad-dressing-safely", proteinFlagship],
   ["cooking-oils-smoke-points-best-uses", fiberFlagship],

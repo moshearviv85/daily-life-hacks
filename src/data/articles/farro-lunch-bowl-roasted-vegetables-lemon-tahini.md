@@ -11,7 +11,7 @@ tags:
 image: "/images/farro-lunch-bowl-roasted-vegetables-lemon-tahini-main.jpg"
 imageAlt: "Farro lunch bowl with roasted vegetables and lemon tahini sauce in a shallow bowl"
 date: 2026-04-23
-dateModified: 2026-07-16
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -141,7 +141,7 @@ If you're microwaving at work, keep sauce on the side. Heat the grain and vegeta
 
 This farro lunch bowl is already hearty, but you can push it further:
 
-* Add leftover chicken, salmon, or tofu. If you're picking between the first and the last, [how tofu and chicken compare on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) settles it on price.
+* Add leftover chicken, salmon, or tofu.
 * Top with a fried egg if you're eating at home.
 * Add a handful of feta or goat cheese if you want extra richness.
 * Add sliced cucumber and cherry tomatoes right before eating for a cold crunch.

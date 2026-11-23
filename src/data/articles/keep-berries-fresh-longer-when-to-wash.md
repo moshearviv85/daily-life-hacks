@@ -6,6 +6,7 @@ tags: ["KitchenHacks", "FoodStorage", "ReduceWaste", "ProduceTips", "MealPrep"]
 image: "/images/keep-berries-fresh-longer-when-to-wash-main.jpg"
 imageAlt: "Fresh berries stored in lined glass containers in a refrigerator"
 date: 2026-04-07
+dateModified: 2026-11-23
 publishAt: 2026-04-07T00:00:00.000Z
 author: "David Miller"
 featured: false
@@ -26,7 +27,7 @@ faq:
    answer: "Discard that berry rather than cutting around it. USDA FSIS puts soft, high-moisture fruits and vegetables in the discard column because they can be contaminated below the surface. Don't sniff it, bag it before it goes in the trash, and check the berries it was touching, since mold spreads quickly in produce."
 ---
 
-Buying fresh berries feels like a small luxury. You stand in the grocery store looking at those vibrant red strawberries and deep blue blueberries, and you picture yourself eating them all week. Then you put them in the fridge. Two days later you open the door and half of them are wearing a fuzzy sweater of mold. It's frustrating. You spent good money, and now you're throwing it in the trash. That money wasn't buying cheap fiber. Strawberries, blueberries, raspberries, and blackberries all sit at the bottom of the [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/): raspberries 4.5 grams per dollar, blackberries 4.0, strawberries 2.7, blueberries 2.5.
+Buying fresh berries feels like a small luxury. You stand in the grocery store looking at those vibrant red strawberries and deep blue blueberries, and you picture yourself eating them all week. Then you put them in the fridge. Two days later you open the door and half of them are wearing a fuzzy sweater of mold. It's frustrating. You spent good money, and now you're throwing it in the trash.
 
 Most berry advice online blames moisture and stops there. Moisture matters, but it isn't the whole story, and the single most-repeated berry hack on the internet is a lot thinner than it looks once you check it. So here's what the food safety agencies and the postharvest researchers actually say.
 
@@ -70,6 +71,6 @@ Take ten seconds when you unpack. Pull out anything bruised, squished, or leakin
 
 If you find actual mold, don't negotiate with it. USDA FSIS puts soft, high-moisture fruits and vegetables squarely in the discard column, because they "can be contaminated below the surface," so cutting an inch around the fuzzy spot works on a block of cheddar and not on a strawberry ([USDA FSIS](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/molds-food-are-they-dangerous)). The same page tells you not to sniff it, to bag or wrap it before it goes in the trash, and to check the nearby items it touched, since mold spreads quickly in fruits and vegetables. The FDA says the same thing in fewer words: throw away any produce that looks rotten.
 
-If they're softening and you know you won't finish them, don't wait for the fuzz. Freeze them. They won't be great raw anymore, but they're ideal for smoothies, baking, or cooking down into a quick stovetop jam. The freezer isn't a downgrade, which is also the point of [comparing frozen and fresh vegetables on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar), and frozen berries work beautifully in these [gut-friendly smoothie blends](/gut-friendly-high-fiber-smoothies-for-daily-wellness/) because they chill the drink without watering it down.
+If they're softening and you know you won't finish them, don't wait for the fuzz. Freeze them. They won't be great raw anymore, but they're ideal for smoothies, baking, or cooking down into a quick stovetop jam. The freezer isn't a downgrade, and frozen berries work beautifully in these [gut-friendly smoothie blends](/gut-friendly-high-fiber-smoothies-for-daily-wellness/) because they chill the drink without watering it down.
 
 Keeping berries fresh longer isn't a magic trick. Wash them late, run the fridge cold, give them humidity without puddles, and pull the bad ones early. It's a small habit, but when you stop throwing away half your groceries, it feels like a pretty big win.

@@ -11,7 +11,7 @@ tags:
 image: /images/high-fiber-pizza-crust-cauliflower-main.jpg
 imageAlt: Crispy golden cauliflower pizza crust topped with tomato sauce, mozzarella, and basil
 date: 2026-04-28
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 author: "David Miller"
 quickAnswer: "Store-bought cauliflower pizza crust carries about 1 to 2 grams of fiber per serving. Three supermarket crusts in USDA's Branded Foods label data report 1.8 to 4.2 grams per 100 grams, and a serving is only 48 to 63 grams, so all three land at 1 or 2 grams, next to 1 gram for a plain refrigerated white-flour crust. This homemade crust runs higher, about 5.8 grams per quarter-crust serving and roughly 23 grams in the full untopped crust, because one quarter starts from about 227 grams of raw cauliflower at 2 grams of fiber per 100 grams plus about 14 grams of almond flour at 9.3, with no rice or tapioca starch diluting it. That figure is ingredient arithmetic on USDA values, not a lab analysis of a finished crust."
 featured: false
@@ -210,7 +210,7 @@ Serving size is the other half of the trick. A quarter of this crust starts from
 
 Worth some perspective before anyone gets excited. FDA's [Daily Value for fiber is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels), and the same page calls 20 percent of a Daily Value "high" for a nutrient, which puts the bar at 5.6 grams a serving. This crust sits just past it. A 1 to 2 gram store crust sits at 4 to 7 percent. And NIH's MedlinePlus notes that [Americans average about 16 grams of fiber a day](https://medlineplus.gov/ency/article/002470.htm) against a 21 to 38 gram recommendation, so no single dinner settles this.
 
-When you're standing in the aisle, ignore the vegetable photo and turn the box around. Check the serving size in grams, fiber per serving, and the first several ingredients. Compare equal weights: divide fiber grams by serving grams and multiply by 100. It's not exciting math, but neither is paying extra for a green box that delivers the same fiber as white bread. The same question applies to the rest of the pantry, which is why it's worth seeing where [whole wheat flour and quinoa land against each other on fiber per dollar](/fiber-per-dollar-cheapest-high-fiber-foods/#grains) before you decide which bag is the smart buy. If you want the whole grocery list, not just flour versus quinoa, the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/) is the 53-food version of that same question. Whole wheat flour, the bag that comparison is built on, also leads the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/) at 96.0 grams.
+When you're standing in the aisle, ignore the vegetable photo and turn the box around. Check the serving size in grams, fiber per serving, and the first several ingredients. Compare equal weights: divide fiber grams by serving grams and multiply by 100. It's not exciting math, but neither is paying extra for a green box that delivers the same fiber as white bread.
 
 Also check whether the panel covers the crust alone or a topped pizza. Cheese and meat add weight without adding fiber, so fiber per serving can look lower on a complete pizza than on a crust-only label. For the full side-by-side, including what finished slices actually measure, see our guide to [fiber in different pizza crusts](/comparing-fiber-content-different-pizza-crusts/).
 
@@ -220,7 +220,7 @@ Fiber is one factor, not the only score. Taste, price, allergens, preparation ti
 
 One quarter of the crust is the stated serving, but a lightly topped quarter with a substantial side salad makes a different meal from a cheese-heavy half crust eaten over the sink. Both have happened in real kitchens.
 
-For more fiber without overloading the crust, put the extra food beside it. A chopped salad with chickpeas, a tray of roasted broccoli, or a simple white bean and tomato salad can round out the plate, and if you're roasting from a freezer bag rather than the produce aisle, [here's how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar). These sides may also help the meal feel more substantial without asking the cauliflower base to carry six toppings and a personal dream.
+For more fiber without overloading the crust, put the extra food beside it. A chopped salad with chickpeas, a tray of roasted broccoli, or a simple white bean and tomato salad can round out the plate. These sides may also help the meal feel more substantial without asking the cauliflower base to carry six toppings and a personal dream.
 
 If you're feeding people who are skeptical of cauliflower crust, don't introduce it with a speech about how they won't notice the difference. They'll notice. This has a toasted cauliflower and Parmesan flavor, and that's fine. Serve it crisp, top it thoughtfully, and call it cauliflower crust. Food tends to do better when it isn't forced to wear a fake mustache.
 

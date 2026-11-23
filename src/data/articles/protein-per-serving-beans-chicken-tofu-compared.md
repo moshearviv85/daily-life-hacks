@@ -14,7 +14,7 @@ tags: ["ProteinGuide", "MealPlanning", "PantryStaples", "BalancedMeals", "Nutrit
 image: "/images/protein-per-serving-beans-chicken-tofu-compared-main.jpg"
 imageAlt: "Plate with chicken tofu beans and grains arranged as protein portion examples"
 date: 2026-04-07
-dateModified: 2026-09-23
+dateModified: 2026-11-23
 publishAt: 2026-04-09T00:00:00.000Z
 author: "David Miller"
 featured: false
@@ -47,6 +47,23 @@ faq:
 ---
 
 Cooked USDA servings put chicken breast at 26 to 35 grams of protein for 3 to 4 ounces, a cup of black beans at about 15 grams, and tofu at 8 to 20 grams for the same 3 to 4 ounces. That's the comparison. The rest is the named records, the raw-versus-cooked trap, and why tofu swings so hard.
+
+## USDA reference values (per 100 g)
+
+These are the FoodData Central records for roasted chicken breast, cooked black beans, cooked pinto beans, and firm tofu. The per-100 g columns are the published SR Legacy amounts. Each serving row multiplies those amounts by the gram weight and rounds energy to the nearest kcal and the other nutrients to two decimals.
+
+| USDA description | FDC | Basis | kcal | Protein | Fat | Carbs | Fiber |
+|---|---|---|---:|---:|---:|---:|---:|
+| Chicken, broilers or fryers, breast, meat only, cooked, roasted | [171477](https://fdc.nal.usda.gov/food-details/171477/nutrients) | 100 g | 165 | 31.0 g | 3.57 g | 0 g | 0 g |
+| Chicken, broilers or fryers, breast, meat only, cooked, roasted | [171477](https://fdc.nal.usda.gov/food-details/171477/nutrients) | 3 oz (85 g) | 140 | 26.35 g | 3.03 g | 0 g | 0 g |
+| Beans, black, mature seeds, cooked, boiled, without salt | [173735](https://fdc.nal.usda.gov/food-details/173735/nutrients) | 100 g | 132 | 8.86 g | 0.54 g | 23.7 g | 8.7 g |
+| Beans, black, mature seeds, cooked, boiled, without salt | [173735](https://fdc.nal.usda.gov/food-details/173735/nutrients) | 1/2 cup (86 g) | 114 | 7.62 g | 0.46 g | 20.38 g | 7.48 g |
+| Beans, pinto, mature seeds, cooked, boiled, without salt | [175200](https://fdc.nal.usda.gov/food-details/175200/nutrients) | 100 g | 143 | 9.01 g | 0.65 g | 26.2 g | 9.0 g |
+| Beans, pinto, mature seeds, cooked, boiled, without salt | [175200](https://fdc.nal.usda.gov/food-details/175200/nutrients) | 1/2 cup (85.5 g) | 122 | 7.70 g | 0.56 g | 22.40 g | 7.70 g |
+| Tofu, raw, firm, prepared with calcium sulfate | [172475](https://fdc.nal.usda.gov/food-details/172475/nutrients) | 100 g | 144 | 17.3 g | 8.72 g | 2.78 g | 2.3 g |
+| Tofu, raw, firm, prepared with calcium sulfate | [172475](https://fdc.nal.usda.gov/food-details/172475/nutrients) | 1/2 cup (126 g) | 181 | 21.80 g | 10.99 g | 3.50 g | 2.90 g |
+
+Chicken and the beans are cooked weights. Raw boneless skinless chicken breast is a different record, [22.5 grams of protein per 100 grams](https://fdc.nal.usda.gov/food-details/171077/nutrients), because roasting drives off water. The tofu row is raw firm tofu set with calcium sulfate, which is the block you buy. Three ounces is 85 grams, scaled from the per-100 g row, because this chicken record's own portions are a half breast at 86 grams, a chopped cup at 140 grams, and one unit from a pound of ready-to-cook chicken at 52 grams. A half cup of beans is half the 1-cup weight USDA lists (172 grams for black beans, 171 grams for pinto beans). The tofu half cup is USDA's own 126-gram portion.
 
 Protein math is the kind of thing people swear they do "in their head." Then they eat toast for lunch and wonder why they are hunting for snacks at 3 p.m.
 
