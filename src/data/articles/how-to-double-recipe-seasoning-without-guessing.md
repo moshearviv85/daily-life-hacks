@@ -19,7 +19,7 @@ tags:
 image: "/images/how-to-double-recipe-seasoning-without-guessing-main.jpg"
 imageAlt: "Two identical bowls of soup showing recipe doubling"
 date: 2026-04-28
-dateModified: 2026-07-30
+dateModified: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -41,13 +41,50 @@ For most savory dishes, double the bulk ingredients but start herbs, spices, and
 
 That 1.5x figure isn't kitchen folklore. [Mississippi State University Extension recommends increasing herbs and spices by 1.5x when doubling](https://happyhealthy.extension.msstate.edu/node/45), and [Heart Foundation NZ gives the same starting point for spices and salt](https://www.heartfoundation.org.nz/documents/food-industry/hospitality-hub/recipe-adaptation-guidelines.pdf). Heart Foundation NZ adds the step people skip: taste or assess afterward. A starting point, not a law for every recipe.
 
+## Seasoning multipliers from a 1.5x batch to 4x
+
+Numbers in the cells are what you multiply the **original** amount by. A 2x batch of salt starts near 1.5x the teaspoon in the recipe, not 2x.
+
+| Ingredient | x1.5 | x2 | x3 | x4 |
+|---|---|---|---|---|
+| Salt | ~1.25x, then taste | ~1.5x, then taste | ~2.25x, then taste | ~3x, then taste |
+| Ground spices | ~1.25x, then taste | ~1.5x, then taste | ~2.25x, then taste | ~3x, then taste |
+| Chili, cayenne, heat | ~1.25x or less | ~1.5x or less | ~2.25x or less | ~3x or less |
+| Garlic and onion powder | ~1.25x, then taste | ~1.5x, then taste | ~2.25x, then taste | ~3x, then taste |
+| Fresh herbs | 1.5x | close to 2x | close to 3x | close to 4x |
+| Extracts | ~1.25x | ~1.5x | ~2.25x | ~3x |
+| Baking soda or powder | 1.5x | 2x | 3x | 4x |
+| Oil for sautéing | keep the original | don't double it | enough to coat the pan | enough to coat the pan |
+| Liquid in braises | 1.5x | 1.7x to 1.8x | 2.55x to 2.7x | 3.4x to 3.6x |
+
+Base ingredients scale fully. Meat, vegetables, grains, beans, and the tomatoes go with the batch: x2 means twice the beef. Salt and strong spices don't. [University of Wyoming Extension says you'll likely need to increase the seasonings by an extra 50 percent in a doubled recipe](https://uwyoextension.org/uwnutrition/newsletters/scaling-up-or-down/), then taste. That's the ~1.5x start, about three quarters of a blind double. Fresh herbs are milder, so they can sit closer to a full double. Garlic powder, onion powder, chili, cayenne, and extracts stay with the strong column. You can add them. You can't scoop them back out.
+
+Leavening scales in line with the batch when a formula has already been tested at that size. Baking soda and baking powder move with the flour, on the straight multiple in the table, not with the salt rule. Heart Foundation NZ still suggests trying 1.5x leaveners when you double for foodservice, then assessing the result. A home cake or loaf that hasn't been tested bigger is safer as separate batches. That part is below.
+
+Sautéing fat doesn't get the multiplier. Wyoming's line is that there's no need to double the butter or oil used for sautéing or browning. Use enough to coat the pan you actually put on the burner. A bigger pot sometimes wants another teaspoon. It doesn't want a second glug just because the beef doubled.
+
+Braise liquid gets a trim once you're at x2 or more. Cut about 10 to 15 percent off the full multiple. A larger pot throws off less steam per cup of food, so the full pour finishes thinner than the recipe you liked. At x2 that means about 1.7x to 1.8x the original liquid. Hold the rest in a measuring cup and add it only if the pot looks dry.
+
+### A chili doubled to x2
+
+Say the single pot is 1 pound of ground beef, 1 chopped onion, two 15-ounce cans of beans, one 15-ounce can of tomatoes, 1 teaspoon salt, 1 tablespoon chili powder, 1/4 teaspoon cayenne, 1 teaspoon garlic powder, 1/4 cup chopped cilantro, 1 tablespoon oil, and 1 cup of broth.
+
+At x2 the beef, onion, beans, and tomatoes all double: 2 pounds, 2 onions, 4 cans of beans, 2 cans of tomatoes. Salt starts at 1 1/2 teaspoons. Chili powder starts at 1 1/2 tablespoons. Cayenne starts at 3/8 teaspoon, or less if the original already made someone reach for the milk. Garlic powder starts at 1 1/2 teaspoons. Cilantro can go to 1/2 cup. Leave the oil at 1 tablespoon unless the pot is actually dry. Broth starts around 1 3/4 cups, not a full 2. Taste the salt and the heat after the beef is cooked through, then finish in pinches.
+
+### Past x4, make another batch
+
+Stop at four times the original recipe. [University of Wyoming Extension says not to go further than a multiple of four, and to make several batches if you need more](https://uwyoextension.org/uwnutrition/newsletters/scaling-up-or-down/). Heart Foundation NZ draws the same line. A stockpot the size of a cooler cooks unevenly, and the seasoning guesses get worse.
+
+If the point of the bigger batch is the grocery list or the price, use the tools for the bulk and this table for the loud ingredients. The [shopping list builder](/tools/shopping-list-builder/) scales a recipe's lines by servings, and the [recipe cost calculator](/tools/recipe-cost-calculator/) prices what actually hit the pot. Both multiply the number you type. Neither knows that cayenne isn't chicken.
+
 ## The doubling cheat sheet
 
 | Part of the recipe | Double-batch start | What to do next |
 |---|---:|---|
 | Meat, vegetables, grains, beans | 2x | Use a roomier pan; cook to doneness cues |
 | Broth or water in soups, stews, and sauces | Up to 2x as an initial ceiling | Reserve some; add it as needed to match the original consistency |
-| Dried or fresh herbs and ground spices | 1.5x | Taste at the end, raise in small steps |
+| Dried herbs and ground spices | 1.5x | Taste at the end, raise in small steps |
+| Fresh herbs | Close to 2x | Milder than dried; the multiplier table above has the other batch sizes |
 | Salt | 1.5x | Count sodium from broth, canned food, cheese, sauces |
 | Cayenne, red pepper flakes, hot sauce | 1.5x or less | You can add heat, you can't subtract it |
 | Vinegar, lemon juice, finishing acids | 1.5x | Add the rest after the dish reduces |
@@ -76,7 +113,7 @@ Cook food fully before tasting anything with raw meat, poultry, seafood, or eggs
 
 ## What doubles cleanly in a savory recipe?
 
-Solids begin at 2x. One pound of chicken becomes two. Liquid needs a checkpoint instead: if the original uses two cups of broth, four cups is the double-batch ceiling, not an instruction to pour every drop into the pot. Reserve some, add it as the food cooks, and stop when the consistency matches the original. [Heart Foundation NZ notes that a larger pot's lower surface-area-to-volume ratio can slow reduction and may require less added liquid or a more concentrated stock](https://www.heartfoundation.org.nz/documents/food-industry/hospitality-hub/recipe-adaptation-guidelines.pdf). No single holdback percentage fits every pot.
+Solids begin at 2x. One pound of chicken becomes two. Liquid needs a checkpoint instead: if the original uses two cups of broth, four cups is the double-batch ceiling, not an instruction to pour every drop into the pot. Reserve some, add it as the food cooks, and stop when the consistency matches the original. [Heart Foundation NZ notes that a larger pot's lower surface-area-to-volume ratio can slow reduction and may require less added liquid or a more concentrated stock](https://www.heartfoundation.org.nz/documents/food-industry/hospitality-hub/recipe-adaptation-guidelines.pdf). For a braise, the practical start at x2 and up is about 10 to 15 percent under a full multiple. That's a trim for less evaporation per cup, not a law for every saucepan.
 
 The equipment ceiling is a safety question, not a flavor one. Colorado State University Extension says to [fill a slow cooker no less than half full and no more than two-thirds full](https://extension.colostate.edu/resource/crockpot-and-slow-cooker-food-safety/) for safe and even heat distribution. For electric pressure cookers, CSU Extension says to [stay below the two-thirds "MAX FILL" line, and half full for expanding ingredients like beans or pasta](https://extension.colostate.edu/resource/how-to-convert-slow-cooker-recipes-for-electric-pressure-cooking/). A double batch that doesn't fit is two batches.
 
@@ -108,6 +145,7 @@ Shelf-stable canning is the hard stop. The [National Center for Home Food Preser
 
 ## Sources checked
 
+* [University of Wyoming Extension: Scaling Up Or Down](https://uwyoextension.org/uwnutrition/newsletters/scaling-up-or-down/)
 * [MSU Extension: herbs and spices](https://happyhealthy.extension.msstate.edu/node/45)
 * [Heart Foundation NZ: *Recipe Adaptation Guidelines*](https://www.heartfoundation.org.nz/documents/food-industry/hospitality-hub/recipe-adaptation-guidelines.pdf)
 * [CSU Extension: slow cookers](https://extension.colostate.edu/resource/crockpot-and-slow-cooker-food-safety/)
@@ -117,6 +155,6 @@ Shelf-stable canning is the hard stop. The [National Center for Home Food Preser
 * [USDA FSIS: refrigeration](https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/refrigeration)
 * [NCHFP: pickling basics](https://nchfp.uga.edu/how/pickle/general-information-pickling/general-information-on-pickling/)
 
-*Sources and live links checked July 30, 2026.*
+*Sources and live links checked November 23, 2026.*
 
 Double the bulk, start the strong stuff at 1.5x, taste when it's safe. If it still tastes flat, [reach for acid, herbs, browning, or umami before more salt](/big-flavor-less-salt-citrus-herbs-umami-swaps/). Beats turning the salt jar into a panic button.

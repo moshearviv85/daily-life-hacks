@@ -87,10 +87,20 @@ const formattedReleaseDate = article.data.publishAt
   : null;
 const publishedDate = releaseDate.toISOString();
 
+const isCatalogRecipe = article.data.category === "recipes";
+const hasRecipeFields = Boolean(
+  article.data.ingredients?.length && article.data.steps?.length,
+);
+/**
+ * Catalog recipes use category "recipes". A nutrition article can opt into the
+ * same card and Recipe node with recipeCategory plus ingredients and steps.
+ * That opt-in stays out of the recipe-count tools and the rating widget.
+ */
 const isRecipe =
-  article.data.category === "recipes" &&
-  article.data.ingredients &&
-  article.data.steps;
+  (isCatalogRecipe && article.data.ingredients && article.data.steps) ||
+  (!isCatalogRecipe &&
+    hasRecipeFields &&
+    Boolean(article.data.recipeCategory?.trim()));
 
 /**
  * Google lists `recipeCategory` and `recipeCuisine` as recommended Recipe
@@ -560,7 +570,7 @@ const robotsMeta = (!released || isVariant || indexPruned) ? "noindex, follow" :
 /** Do not advertise rich-result entities for hidden or non-canonical pages. */
 const publishedSchemas = released && !isVariant && !indexPruned ? allSchemas : undefined;
 /** Rating UI ships only with a published Recipe node. Pruned and unreleased recipes stay bare. */
-const showRatingWidget = Boolean(isRecipe && publishedSchemas);
+const showRatingWidget = Boolean(isCatalogRecipe && isRecipe && publishedSchemas);
 /**
  * Bing already ranks these near the top. The direct answer has to be the
  * first paragraph inside <article>, immediately under the H1.
