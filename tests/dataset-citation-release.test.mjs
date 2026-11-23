@@ -81,6 +81,8 @@ test("CITATION.cff names the organization and no person", () => {
   assert.match(cff, /name: Daily Life Hacks/);
   assert.doesNotMatch(cff, /given-names|family-names|David|Miller/);
   assert.match(read("src/pages/data-reuse.astro"), /href="\/CITATION\.cff"/);
+  const routes = JSON.parse(read("public/_routes.json"));
+  assert.ok(routes.exclude.includes("/CITATION.cff"));
   assert.match(read("src/pages/data-reuse.astro"), /dateModified: "2026-07-29"/);
 });
 

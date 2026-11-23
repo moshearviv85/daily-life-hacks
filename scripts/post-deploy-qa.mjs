@@ -126,6 +126,9 @@ export function internalLinkTargets(html, pageUrl) {
       continue;
     }
     if (!SITE_HOSTS.has(url.hostname)) continue;
+    // Cloudflare Email Obfuscation rewrites mailto links to /cdn-cgi/l/email-protection.
+    // That path is reserved and 404s on GET. It is not a site URL.
+    if (url.pathname === "/cdn-cgi" || url.pathname.startsWith("/cdn-cgi/")) continue;
     if (ASSET_EXT.test(url.pathname)) continue;
     targets.push(linkedUrl(url.href, pageUrl));
   }
