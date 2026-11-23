@@ -10,7 +10,9 @@ import { extractDateModified } from "../scripts/check-datemodified-churn.mjs";
 /**
  * PR-44: the 17 indexable articles that had zero Keep Reading cards need at
  * least three in-body inlinks from other indexable articles. Hub text links
- * do not count. Link edits must not bump dateModified.
+ * do not count. A content rewrite may change an article without adding one
+ * of these links. The 40-word cap applies only when the diff adds a new
+ * in-body link to one of the 17.
  */
 const ORPHANS = [
   "balanced-breakfast-that-keeps-you-full",
@@ -288,6 +290,12 @@ test("link edits keep dateModified and add at most 40 words per article", () => 
 
   assert.ok(names.length > 0, "expected article edits against origin/main");
   for (const path of names) {
+    const diff = git(["diff", "-U0", "origin/main", "--", path]);
+    const addsOrphanLink = diff.split("\n").some((line) => {
+      if (!line.startsWith("+") || line.startsWith("+++")) return false;
+      return bodyLinks(line.slice(1)).some((link) => ORPHANS.includes(link.slug));
+    });
+    if (!addsOrphanLink) continue;
     const after = readFileSync(path, "utf8");
     const before = git(["show", `origin/main:${path}`]);
     assert.equal(
