@@ -63,7 +63,7 @@ Add protein if you need the smoothie to carry you to lunch. Greek yogurt, silken
 
 If you're new to more fiber, jumping straight to huge smoothies can feel loud in your gut. Gut bacteria ferment that extra fiber, which is where the gas comes from ([Eswaran, Muir, and Chey, 2013](https://pmc.ncbi.nlm.nih.gov/articles/PMC3705355/)). The [fiber Daily Value is 28 grams](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels). Start with smaller portions, drink water through the day, and add fiber gradually.
 
-That is not scare talk. It is the difference between a habit that sticks and a habit that ends with you avoiding beans forever.
+That is not scare talk. It is the difference between a habit that sticks and a habit that ends with you avoiding beans forever. Skip a glass of prune juice and use [food in place of prune juice](/prune-juice-alternatives-for-constipation/). A [warm peppermint-ginger mug](/gut-health-tea-peppermint-ginger/) beside the blender counts as the water.
 ## Sweetness Without A Sugar Bomb
 
 Fruit already brings sweetness. If you still want more, try cinnamon or vanilla first before you pour in extra syrup.

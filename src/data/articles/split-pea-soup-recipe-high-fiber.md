@@ -157,7 +157,7 @@ Don't overcomplicate a dish whose whole personality is "peas got soft and delici
 
 ## Where this fits in a high-fiber week
 
-One pot of split pea soup covers multiple lunches. Pair it with oatmeal breakfasts, bean chili later in the week, and fruit with the skin on, and your fiber average stops looking tragic without you turning into a person who talks about "macros" at parties.
+One pot of split pea soup covers multiple lunches. Pair it with oatmeal breakfasts, bean chili later in the week, and fruit with the skin on, and your fiber average stops looking tragic without you turning into a person who talks about "macros" at parties. The cabbage pot in that same week is [cabbage soup beside the split peas](/fiber-rich-soup-for-weight-loss-cabbage/).
 
 The [fiber on a budget guide](/how-to-eat-more-fiber-on-a-budget-complete-guide/) maps the grocery pattern. This pot is the Tuesday execution.
 

@@ -66,7 +66,7 @@ Start checking them around the 45-minute mark. Scoop one out, let it cool for a 
 *Crucial rule:* Wait to add acidic ingredients such as canned tomatoes, vinegar, or citrus until the beans are tender. Salt can go into the soaking or cooking water and helps season the beans from within.
 ## Step Three: Season and Store
 
-Once the beans are perfectly soft to your liking, add a generous amount of salt and stir it in. If you want, you can also toss in a smashed clove of garlic, half an onion, or a bay leaf while they simmer to build up the flavor of the broth. 
+Once the beans are perfectly soft to your liking, add a generous amount of salt and stir it in. If you want, you can also toss in a smashed clove of garlic, half an onion, or a bay leaf while they simmer to build up the flavor of the broth. If that generous salt turns the pot into seawater, use [what to do when the bean pot is too salty](/fix-oversalted-soup-sauce-rice/). 
 
 If you plan to use these beans in a recipe that is already heavily seasoned (like a spicy chili), you can just leave the beans plain and season them later. 
 

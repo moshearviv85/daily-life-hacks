@@ -89,7 +89,7 @@ One thing to get straight before the table. This ranks foods by protein density,
 
 The TVP row led our July 2026 comparison at 52.17 grams, with an asterisk that is worth reading. The current Bob's Red Mill page lists 12 grams in a 23 gram serving, which is 52.17 grams per 100 grams, and that label is now the row's source. USDA FoodData Central publishes no textured vegetable protein record at all, so there is nothing to cross-check it against and the table marks the row a proxy rather than an exact match.
 
-The 28.93-gram rotisserie row is also labeled as a proxy because its USDA record covers roasted chicken meat only, while a whole bird supplied the price and edible-yield math. Among exact food-and-form matches in our 49-food study, dry brown lentils led at 24.63 grams and drained canned sardines followed at 24.62. The next entries cluster tightly, and the gap between raw chicken breast and dry black beans is about one gram.
+The 28.93-gram rotisserie row is also labeled as a proxy because its USDA record covers roasted chicken meat only, while a whole bird supplied the price and edible-yield math. Among exact food-and-form matches in our 49-food study, dry brown lentils led at 24.63 grams and drained canned sardines followed at 24.62. The next entries cluster tightly, and the gap between raw chicken breast and dry black beans is about one gram. Sardines at 24.62 grams, and the tuna row further down, are also the easy [selenium foods that don't need a special aisle](/selenium-containing-foods-easy-ways/).
 
 ## Why do eggs rank so low on protein per 100 grams?
 

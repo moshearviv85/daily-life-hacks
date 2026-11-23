@@ -95,11 +95,15 @@ Keep the breakfast and lunch habits that still feel useful. At dinner, add one f
 
 Start with a portion you know you can finish comfortably. More isn't automatically better, especially if the first two weeks already changed your intake substantially. Split peas in that soup are doing two jobs. Green split peas return 73.9 grams of protein per dollar in the [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/), and the old-fashioned rolled oats from week one return 46.6.
 
+When the plate has to carry protein and fiber together, use [meals built for protein and fiber together](/high-protein-high-fiber-meals-for-weight-loss/).
+
 ## Week Four: Build a routine you can repeat
 
 The last nine days aren't a fiber Olympics. Look back at the meals that were easy, affordable, and comfortable, then repeat them. Keep two breakfasts, two lunches, and three dinners in rotation. That gives you enough variety without turning Sunday into a meal-prep hostage situation.
 
 A sample rotation might be oatmeal and berries or whole-grain toast and fruit for breakfast; lentil soup or a chickpea wrap for lunch; and bean chili, whole-wheat pasta, or roasted vegetables with brown rice for dinner. Frozen vegetables and canned beans count, and before you assume the produce aisle is the better buy, look at [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar). The wider staple ranking is our [fiber per dollar study](/fiber-per-dollar-cheapest-high-fiber-foods/), where dried beans and oats keep beating pretty produce. Rinsing canned beans can improve the flavor and removes some of the packing liquid, but it doesn't make them morally superior groceries.
+
+The grocery bill for landing near 30 grams in one day is [what a 30-gram fiber day costs](/what-30-grams-of-fiber-costs-per-day/).
 
 Use the Nutrition Facts label when packaged foods are involved. The [FDA lists 28 grams as the Daily Value for fiber](https://www.accessdata.fda.gov/scripts/InteractiveNutritionFactsLabel/assets/InteractiveNFL_DietaryFiber_October2021.pdf) on a 2,000-calorie diet, while noting that individual needs can differ. Treat that number as context, not a finish line you have to cross before bed.
 
