@@ -1,6 +1,6 @@
 ---
 title: "Low Sodium on a Budget: 56 Cheap Staples, Measured"
-excerpt: "We put sodium numbers on every food in our audited price basket. The cheapest foods turned out to be the lowest in sodium, and five processed items carry almost the whole load."
+excerpt: "26 of 56 cheap staples have under 10 mg sodium per 100 g: flour 2 mg, tofu 4 mg, split peas 5 mg. The salt sits in processed picks like bread at 455 mg."
 category: "nutrition"
 tags: ["low sodium foods", "sodium in canned beans", "low sodium on a budget", "how much sodium in bread", "grocery data"]
 cluster: "weekly-budget-shopping"

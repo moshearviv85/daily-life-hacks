@@ -724,10 +724,12 @@ test("food value database SERP copy leads with food value and grocery cost", () 
   assert.match(title, /Grocery Cost/);
   assert.equal(title.includes("Compare"), false);
   assert.match(html, /"dateModified":"2026-09-24"/);
-  assert.match(description, /^Nutrition per dollar for 79 grocery foods/);
-  assert.match(description, /protein and fiber per \$1/);
-  assert.match(description, /July 2026 US prices plus USDA FoodData Central/);
-  assert.match(description, /Not USDA-endorsed/);
+  assert.equal(
+    description,
+    "Protein and fiber per dollar for 79 grocery foods in one searchable table. July 2026 US prices, USDA FoodData Central nutrition, free CSV download.",
+  );
+  assert.equal(description.includes("Not USDA-endorsed"), false);
+  assert.match(html, /Not USDA-endorsed/);
   assert.ok(description.length <= 160, `clamped meta too long: ${description.length}`);
 });
 
@@ -799,6 +801,65 @@ test("David Miller author profile is indexable, in the sitemap, and used by arti
   const rss = read("dist/rss.xml");
   assert.match(rss, /<dc:creator>David Miller<\/dc:creator>/);
   assert.doesNotMatch(rss, /Daily Life Hacks Team/);
+});
+
+test("per-100g index pages cite the #258 dataset records without a second Dataset node", () => {
+  const pages = [
+    {
+      slug: "foods-highest-in-protein-per-100-grams",
+      csv: "/data/protein-per-dollar-2026.csv",
+      datasetKey: "protein-per-dollar-cheapest-protein-sources",
+      datasetId: `${SITE}/data/protein-per-dollar-2026/#dataset`,
+      stat: "TVP led the same study at 52.17 g on a label proxy",
+      excerpt:
+        "Foods highest in protein per 100g: TVP 52.17g (label proxy). Exact USDA matches: dry brown lentils 24.63g, drained sardines 24.62g. 49-food July 2026 study.",
+    },
+    {
+      slug: "best-high-fiber-foods-ranked-by-fiber-content",
+      csv: "/data/fiber-per-dollar-2026.csv",
+      datasetKey: "fiber-per-dollar-cheapest-high-fiber-foods",
+      datasetId: `${SITE}/data/fiber-per-dollar-2026/#dataset`,
+      stat: "chia seeds had the most fiber per 100 g at 34.4 g",
+      excerpt:
+        "Best high-fiber foods ranked by fiber per 100g: chia seeds 34.4g, whole flaxseed 27.3g, dry split peas 22.2g. USDA dry weight, 53-food study, not servings.",
+    },
+  ];
+
+  for (const page of pages) {
+    const url = `${SITE}/${page.slug}/`;
+    const html = readFileSync(distHtmlFor(url), "utf8");
+    const description = metaContent(html, "description") ?? "";
+    assert.equal(description, page.excerpt, `${page.slug} meta description`);
+    assert.ok(html.includes(page.excerpt), `${page.slug} dek should equal the excerpt`);
+    assert.ok(html.includes(page.stat), `${page.slug} quotable stat`);
+    assert.match(html, /Cite this dataset/);
+    assert.doesNotMatch(html, /Cite this study/);
+    assert.match(html, new RegExp(`href="${page.csv.replaceAll("/", "\\/")}"[^>]*\\sdownload`));
+    assert.match(html, /Download the CSV/);
+    assert.match(html, new RegExp(`data-dataset-id="${page.datasetKey}"`));
+    assert.match(html, /David Miller/);
+
+    const articles = [];
+    const datasets = [];
+    for (const block of jsonLdBlocks(html, url)) {
+      visit(block, (node) => {
+        if (node["@type"] === "Article") articles.push(node);
+        if (node["@type"] === "Dataset") datasets.push(node);
+      });
+    }
+    assert.equal(datasets.length, 0, `${page.slug} should not emit a Dataset node`);
+    assert.equal(articles.length, 1, `${page.slug} should have one Article node`);
+    assert.equal(articles[0].isBasedOn?.["@id"], page.datasetId);
+    assert.equal(articles[0].author?.name, "David Miller");
+    assert.equal(articles[0].dateModified?.slice(0, 10), "2026-11-23");
+
+    const lastmod = sitemapEntries().find((entry) => entry.loc === url)?.lastmod ?? "";
+    assert.equal(
+      lastmod.slice(0, 10),
+      "2026-11-23",
+      `${page.slug} lastmod should stay on the existing public day`,
+    );
+  }
 });
 
 function pruneSlugFromHref(href) {

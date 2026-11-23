@@ -761,11 +761,14 @@ test("high-protein high-fiber meals title leads with the 30–40g protein templa
   );
   assert.match(raw, /^dateModified: 2026-09-23$/m);
 
-  assert.match(page.excerpt, /^High protein high fiber meals for weight loss/i);
+  assert.equal(
+    page.excerpt,
+    "Build each plate on 30-40 g protein and a cup of beans, lentils, or whole grains. A cup of cooked lentils alone gives about 16 g fiber and 18 g protein.",
+  );
+  assert.ok(page.excerpt.length < 160, `meals excerpt is ${page.excerpt.length} characters`);
   assert.ok(
-    excerptLower.indexOf("high protein high fiber meals for weight loss") <
-      excerptLower.indexOf("diet salad"),
-    "meta should put the meals query before the salad hook",
+    excerptLower.indexOf("30-40 g") < excerptLower.indexOf("16 g fiber"),
+    "meta should put the plate target before the lentil cup",
   );
 });
 
@@ -1157,10 +1160,12 @@ test("food value database title leads with food value and grocery cost", () => {
     "food value page dateModified should be the title refresh, not the dataset release date",
   );
 
-  assert.match(description, /^Nutrition per dollar for \$\{foods\.length\} grocery foods/);
-  assert.match(description, /protein and fiber per \$1/);
-  assert.match(description, /July 2026 US prices plus USDA FoodData Central/);
-  assert.match(description, /Not USDA-endorsed/);
+  assert.match(
+    description,
+    /^Protein and fiber per dollar for \$\{foods\.length\} grocery foods in one searchable table\. July 2026 US prices, USDA FoodData Central nutrition, free CSV download\.$/,
+  );
+  assert.equal(description.includes("Not USDA-endorsed"), false);
+  assert.match(page, /Not USDA-endorsed/);
 });
 
 test("artichoke recipe title leads with the steam-until-leaves method", () => {

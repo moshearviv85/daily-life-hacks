@@ -127,10 +127,12 @@ test("title and meta lead with food value grocery cost database intent", () => {
   assert.ok(renderedTitle.length <= 60, `title too long for SERP: ${renderedTitle.length}`);
   assert.match(page, /const dateModified = "2026-09-24";/);
 
-  assert.match(renderedDescription, /^Nutrition per dollar for \d+ grocery foods/);
-  assert.match(renderedDescription, /protein and fiber per \$1/);
-  assert.match(renderedDescription, /July 2026 US prices plus USDA FoodData Central/);
-  assert.match(renderedDescription, /Not USDA-endorsed/);
+  assert.equal(
+    renderedDescription,
+    "Protein and fiber per dollar for 79 grocery foods in one searchable table. July 2026 US prices, USDA FoodData Central nutrition, free CSV download.",
+  );
+  assert.equal(renderedDescription.includes("Not USDA-endorsed"), false);
+  assert.match(page, /Not USDA-endorsed/);
   assert.ok(
     renderedDescription.length <= 160,
     `meta exceeds BaseLayout clamp: ${renderedDescription.length}`,

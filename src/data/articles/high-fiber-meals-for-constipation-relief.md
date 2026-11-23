@@ -1,6 +1,6 @@
 ---
 title: "High Fiber Foods for Constipation: Start Here"
-excerpt: "These high-fiber meals use oats, beans, fruit, vegetables, and liquids as a gradual food-first approach to occasional constipation."
+excerpt: "Food-first meals for occasional constipation: oats, chia pudding, beans, and soft cooked vegetables, added slowly with fluids as NIDDK advises."
 category: nutrition
 tags:
 - high fiber meals

@@ -1,6 +1,6 @@
 ---
 title: "Lentil Curry: A High-Fiber Vegan Dinner"
-excerpt: "This lentil curry high fiber vegan dinner is rich, warming, and done in one pot. It uses red lentils so you don't have to wait an hour for them to soften."
+excerpt: "One-pot red lentil curry in 35 minutes, no soaking. Serves 4 at 475 calories each. Lentils carry 15.6 g fiber per cooked cup (USDA). Reheats well."
 category: "recipes"
 tags:
 - high fiber

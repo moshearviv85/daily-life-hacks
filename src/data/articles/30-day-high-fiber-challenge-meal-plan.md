@@ -1,7 +1,6 @@
 ---
 title: 30 Day High Fiber Challenge Meal Plan
-excerpt: Try this realistic 30 day high fiber challenge meal plan with gradual changes
-  using oats, beans, fruit, vegetables, and a practical weekly structure.
+excerpt: "A 4-week fiber plan: swap breakfast in week 1, add a lunch add-in in week 2, beans or grains at dinner in week 3, then lock it in. Go slow, drink water."
 category: nutrition
 tags:
 - high fiber

@@ -84,6 +84,8 @@ One thing to get straight before the table. This ranks foods by protein density,
 | Canned chickpeas | 4.92 g | Mature seeds, canned, solids and liquids | $0.223 | [FDC 175206](https://api.nal.usda.gov/fdc/v1/food/175206?api_key=DEMO_KEY) · proxy |
 | Whole milk | 3.15 g | Whole, 3.25% milkfat, with added vitamin D | $0.11 | [FDC 171265](https://api.nal.usda.gov/fdc/v1/food/171265?api_key=DEMO_KEY) |
 
+In our July 2026 study of 49 foods, dry brown lentils (24.63 g) and drained sardines (24.62 g) had the most protein per 100 g among exact USDA matches. TVP led the same study at 52.17 g on a label proxy. [USDA FoodData Central](https://fdc.nal.usda.gov/) doesn't publish a textured vegetable protein record, and the July 2026 prices are in the [49-row CSV](/data/protein-per-dollar-2026.csv).
+
 *Provenance checked July 30, 2026: 39 rows have an exact USDA FoodData Central food-and-form match and 10 use a proxy with the mismatch disclosed. No rows remain unresolved. The [49-row raw CSV](/data/protein-per-dollar-2026.csv) contains the official description, record URL, form, status, and row-specific note. See the full [/methodology/](/methodology/).*
 
 ## Which food led protein per 100 grams in our 49-food study?
