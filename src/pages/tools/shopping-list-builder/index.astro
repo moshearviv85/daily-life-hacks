@@ -27,7 +27,7 @@ const recipes = publishedRecipeArticles
   .sort((a, b) => a.title.localeCompare(b.title));
 
 const recipeData = JSON.stringify(recipes).replace(/</g, "\\u003c");
-const title = "Shopping List Builder: 80 Recipes, One List";
+const title = "Shopping List Builder: 81 Recipes, One List";
 const description = `Choose from ${publishedRecipeArticles.length} recipes, change the servings, and combine their ingredients into one printable shopping list.`;
 const faqs = [
   ["How does the recipe shopping list builder work?", "Choose two or more recipes, set the servings for each one, and the tool scales their ingredient lists before combining safe matches."],

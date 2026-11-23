@@ -32,6 +32,8 @@ The dairy aisle has gotten aggressive. It used to just be milk and a few tubs of
 
 When it comes to picking a powerhouse protein base, the cottage cheese vs Greek yogurt debate is the one that trips people up the most. They look similar, they sit next to each other on the shelf, and they both boast massive protein numbers. So which one should you actually buy? The short answer is both, because they do different jobs in your kitchen.
 
+Which has more protein? Per 100 grams, 4% cottage cheese does: 11.12 grams, against 10.19 grams for plain nonfat Greek yogurt.
+
 When the tubs come in different sizes and both are wearing sale stickers, the [grocery unit price calculator](/tools/grocery-unit-price-calculator/) settles the cheaper-per-ounce question before aisle math starts lying to you.
 
 ## Which has more protein, cottage cheese or Greek yogurt?
@@ -42,6 +44,17 @@ Cottage cheese, but barely. A half cup of cottage cheese carries about 12 to 14 
 |---|---|---|
 | Cottage cheese (4%) | 12 to 14 g | 26.3 g |
 | Greek yogurt (plain, nonfat) | 10 to 12 g | 27.5 g |
+
+Same foods, weighed. USDA SR Legacy lists 11.12 grams of protein per 100 grams for creamed cottage cheese ([FDC 172179](https://fdc.nal.usda.gov/food-details/172179/nutrients)) and 10.19 grams per 100 grams for plain nonfat Greek yogurt ([FDC 170894](https://fdc.nal.usda.gov/food-details/170894/nutrients)). Cottage cheese still has more at an equal weight. A cup isn't one number, because USDA publishes two cottage-cheese cups and no cup at all for this yogurt.
+
+| | Protein per 100 g | Portion USDA publishes | Protein in that portion |
+|---|---:|---|---:|
+| Cottage cheese, 4%, small curd, not packed | 11.12 g | 1 cup, 225 g | 25.0 g |
+| Cottage cheese, 4%, large curd, not packed | 11.12 g | 1 cup, 210 g | 23.4 g |
+| Greek yogurt, plain, nonfat | 10.19 g | 1 container, 170 g | 17.3 g |
+| Same yogurt, scaled to the 225 g small-curd cup | 10.19 g | 225 g, not a cup on this record | 22.9 g |
+
+Those portion grams are the per-100-gram number times the USDA weight, then rounded to one decimal. 11.12 across 225 grams is 25.02, shown as 25.0. Across 210 grams it's 23.35, shown as 23.4. The yogurt container is 10.19 across 170 grams, 17.32, shown as 17.3. The same 10.19 across 225 grams is 22.93, shown as 22.9, still under the small-curd cottage cheese cup. Half of that 225 gram cup is 112.5 grams, about 12.5 grams of protein, inside the 12 to 14 gram half-cup range above. The yogurt record simply doesn't call 225 grams a cup.
 
 Let's look at the numbers. They're surprisingly similar. 
 
