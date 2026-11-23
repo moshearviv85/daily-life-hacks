@@ -2275,7 +2275,7 @@ test("cottage cheese vs Greek yogurt title leads with half-cup protein grams", (
   assert.match(raw, /\| Cottage cheese \(4%\) \| 12 to 14 g \| 26\.3 g \|/);
   assert.match(raw, /\| Greek yogurt \(plain, nonfat\) \| 10 to 12 g \| 27\.5 g \|/);
   assert.match(raw, /^date: 2026-04-20$/m);
-  assert.match(raw, /^dateModified: 2026-10-01$/m);
+  assert.match(raw, /^dateModified: 2026-11-23$/m);
 
   assert.equal(
     page.excerpt,
