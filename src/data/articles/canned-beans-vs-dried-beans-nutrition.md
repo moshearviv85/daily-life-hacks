@@ -53,7 +53,14 @@ The columns that actually mean something are the last two, because a dollar is a
 
 ## How many dried beans equal a can?
 
-One 15-ounce can is about 1 1/2 cups once you drain it. That drained can replaces about 1/2 cup+ of dried beans. One pound of dried beans cooks to about 6 cups, which is about 3½ to 4 cans. [America's Test Kitchen](https://www.americastestkitchen.com/how-tos/5691-cooking-canned-and-dried-beans) counts a pound as 3 or 4 cans, and [Minnesota WIC](https://www.health.state.mn.us/docs/people/wic/localagency/nutrition/fpchange/tips/beans.pdf) counts that pound as about 2 cups dry or 6 cups cooked. [USA Pulses](https://www.usapulses.org/) puts a cup of dried beans at about 3 cups cooked for the common beans, and our converter treats a cup of dry beans as 200 grams.
+| Start with | Equals |
+|---|---|
+| 1 can (15 to 15.5 oz) | about 1 1/2 cups drained, about 1/2 cup+ dry (about 90 to 100 g) |
+| 1 cup dry (about 200 g) | about 3 cups cooked, about 2 cans |
+| 1 pound dry | about 6 cups cooked, about 3½ to 4 cans |
+| Black bean protein, one 15.5 oz can vs cooked from dry | about 26.5 g in the can, and a bit under that after you drain and rinse ([FDC 175188](https://fdc.nal.usda.gov/food-details/175188/nutrients)). The dry match is 123 g, about 0.61 cup, at 21.6 g per 100 g ([FDC 173734](https://fdc.nal.usda.gov/food-details/173734/nutrients)). |
+
+One 15-ounce can is about 1 1/2 cups once you drain it. That drained can replaces about 1/2 cup+ of dried beans. One pound of dried beans cooks to about 6 cups, which is about 3½ to 4 cans. [America's Test Kitchen](https://www.americastestkitchen.com/how-tos/5691-cooking-canned-and-dried-beans) counts a pound as 3 or 4 cans, and [Minnesota WIC](https://www.health.state.mn.us/docs/people/wic/localagency/nutrition/fpchange/tips/beans.pdf) counts that pound as about 2 cups dry or 6 cups cooked. [USA Pulses](https://www.usapulses.org/) puts a cup of dried beans at about 3 cups cooked for the common beans, and our converter treats a cup of dry beans as 200 grams, with that 1/2 cup+ at about 90 to 100 g.
 
 The protein tracer and the fiber tracer still disagree, and that disagreement is real. A can of black beans holds about 26.5 grams of protein, so matching it from dry black beans at 21.6 grams per 100 grams takes 123 grams, about 0.61 cup. The same can holds about 30.3 grams of fiber, and matching that takes about 195 grams, because USDA measures fiber differently in the canned and dry records. The 123 gram protein match sits with the kitchen figure, about 1/2 cup+. The fiber match does not. Use the kitchen measure to fill a pot. Use the protein grams when the nutrient is the point.
 
