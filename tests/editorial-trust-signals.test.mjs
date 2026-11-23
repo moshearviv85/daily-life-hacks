@@ -41,7 +41,8 @@ test("editorial page names ownership, source rules, automation, and correction s
   assert.match(editorialPage, /Software and AI tools may help/);
   assert.match(editorialPage, /If a factual error changes a number/);
   assert.match(editorialPage, /page URL, the exact sentence or number/);
-  assert.match(editorialPage, /dateModified: "2026-07-29"/);
+  assert.match(editorialPage, /dateModified: "2026-11-23"/);
+  assert.match(editorialPage, /Recipe calorie corrections, November 23, 2026/);
 });
 
 test("trust policy is reachable from persistent and relevant site surfaces", () => {

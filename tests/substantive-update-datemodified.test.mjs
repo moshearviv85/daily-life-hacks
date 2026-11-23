@@ -23,17 +23,24 @@ const BEFORE_DATE_RESTORE = "84702a37";
  * Pages whose body actually changed on 2026-11-23: merges #234, the cottage
  * table #239, savory chia #240, the protein table #245, the beans table #243,
  * the sandwich page #247, other >=15% rewrites since 94167b6, and the two
- * ranking-study targets expanded by the prune/301 work.
+ * ranking-study targets expanded by the prune/301 work, plus the recipe
+ * cards whose published calorie figure was replaced by the USDA total.
  */
 const SUBSTANTIVE_SLUGS = new Set([
+  "air-fryer-salmon-bites-garlic-honey-glaze",
   "best-high-fiber-foods-ranked-by-fiber-content",
+  "best-way-to-cook-a-pork-tenderloin",
+  "best-way-to-cook-baked-potatoes",
   "canned-beans-vs-dried-beans-nutrition",
+  "cheap-chicken-casserole-meals-large-families",
   "costco-rotisserie-chicken-meal-ideas-dinner",
+  "crispy-roasted-chickpeas-high-fiber-snack",
   "cottage-cheese-vs-greek-yogurt-protein-uses",
   "easy-cold-summer-pasta-salad-potlucks",
   "foods-highest-in-protein-per-100-grams",
   "gut-health-tea-peppermint-ginger",
   "healthy-blue-collar-lunch-ideas-men",
+  "healthy-homemade-dumpling-wrapper-recipe",
   "high-fiber-bran-muffins-that-taste-good",
   "high-fiber-gluten-free-bread-recipe",
   "how-much-protein-in-bagel-sandwich",
@@ -48,6 +55,7 @@ const SUBSTANTIVE_SLUGS = new Set([
   "protein-per-serving-beans-chicken-tofu-compared",
   "quick-20-minute-high-fiber-meals-for-busy-days",
   "savory-chia-seed-recipes-breakfast",
+  "sheet-pan-breakfast-hash-with-eggs-and-sweet-potatoes",
   "sourdough-discard-recipes-no-yeast",
   "what-30-grams-of-fiber-costs-per-day",
 ]);
@@ -211,7 +219,7 @@ test("2026-11-23 stays only on substantive updates; other bumps match 94167b6", 
       return Boolean(before) && extractFrontmatterField(before, "dateModified") === TODAY;
     }),
   );
-  assert.equal(stillToday.length, 33, `pages still on ${TODAY}`);
+assert.equal(stillToday.length, 40, `pages still on ${TODAY}`);
   // Measured against 84702a37, not origin/main. #252 is already on main, so
   // a comparison with origin/main is 0 and cannot see a later re-bump.
   assert.equal(restored.length, 62, "pages restored off 2026-11-23");

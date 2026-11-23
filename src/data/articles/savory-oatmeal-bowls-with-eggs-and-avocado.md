@@ -19,6 +19,16 @@ cookTime: "10 min"
 totalTime: "15 min"
 servings: 2
 calories: 420
+ingredientsGrams:
+  - item: "1 cup old-fashioned rolled oats"
+    grams: 81
+    fdcId: 173904
+  - item: "2 large eggs"
+    grams: 100
+    fdcId: 171287
+  - item: "1 ripe avocado"
+    grams: 201
+    fdcId: 171705
 difficulty: Easy
 ingredients:
   - "1 cup old-fashioned rolled oats"

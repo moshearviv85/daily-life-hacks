@@ -22,6 +22,31 @@ cookTime: 45 minutes
 totalTime: 55 minutes
 servings: 4
 calories: 250
+ingredientsGrams:
+  - item: "1 tbsp olive oil"
+    grams: 13.5
+    fdcId: 171413
+  - item: "1 large yellow onion, chopped"
+    grams: 150
+    fdcId: 170000
+  - item: "2 carrots, chopped"
+    grams: 122
+    fdcId: 170393
+  - item: "2 celery stalks, chopped"
+    grams: 80
+    fdcId: 169988
+  - item: "2 cloves garlic, minced"
+    grams: 6
+    fdcId: 169230
+  - item: "1 cup dried green split peas, rinsed"
+    grams: 196
+    fdcId: 172428
+  - item: "6 cups vegetable broth (or chicken broth)"
+    grams: 1326
+    fdcId: 171583
+  - item: "1 tsp dried thyme"
+    grams: 1
+    fdcId: 170938
 difficulty: Easy
 recipeCuisine: "American"
 recipeName: "Green Split Pea Soup"

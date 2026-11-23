@@ -26,6 +26,31 @@ cookTime: "15 minutes"
 totalTime: "30 minutes"
 servings: 4
 calories: 285
+ingredientsGrams:
+  - item: "4 cod fillets (about 6 oz each)"
+    grams: 680.39
+    fdcId: 171955
+  - item: "1 lb fresh green beans, trimmed"
+    grams: 453.59
+    fdcId: 169961
+  - item: "2 tbsp olive oil, divided"
+    grams: 27
+    fdcId: 171413
+  - item: "2 tbsp unsalted butter, melted"
+    grams: 28.4
+    fdcId: 173430
+  - item: "1 large lemon (half juiced, half thinly sliced)"
+    grams: 58
+    fdcId: 167746
+  - item: "2 tbsp capers, drained"
+    grams: 17.2
+    fdcId: 172238
+  - item: "3 garlic cloves, minced"
+    grams: 9
+    fdcId: 169230
+  - item: "1/2 tsp dried oregano"
+    grams: 0.5
+    fdcId: 171328
 difficulty: "Easy"
 recipeCuisine: "Mediterranean"
 ingredients:

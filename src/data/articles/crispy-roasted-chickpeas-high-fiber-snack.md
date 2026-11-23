@@ -17,7 +17,8 @@ tags:
 image: /images/crispy-roasted-chickpeas-high-fiber-snack-main.jpg
 imageAlt: Bowl of golden roasted chickpeas with spices
 date: 2026-03-30
-dateModified: 2026-07-28
+dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -27,7 +28,26 @@ prepTime: 10 minutes
 cookTime: 30 minutes
 totalTime: 40 minutes
 servings: 4
-calories: 130
+calories: 238
+ingredientsGrams:
+  - item: "2 (15 oz) cans chickpeas, drained and rinsed"
+    grams: 508
+    fdcId: 173801
+  - item: "2 tbsp olive oil"
+    grams: 27
+    fdcId: 171413
+  - item: "1 tsp smoked paprika"
+    grams: 2.3
+    fdcId: 171329
+  - item: "1/2 tsp garlic powder"
+    grams: 1.55
+    fdcId: 171325
+  - item: "1/2 tsp salt"
+    grams: 3
+    fdcId: 173468
+  - item: "1/4 tsp black pepper"
+    grams: 0.57
+    fdcId: 170931
 difficulty: Easy
 ingredients:
 - 2 (15 oz) cans chickpeas, drained and rinsed

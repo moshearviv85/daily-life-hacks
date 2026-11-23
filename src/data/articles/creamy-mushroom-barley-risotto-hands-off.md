@@ -26,6 +26,37 @@ cookTime: "45 minutes"
 totalTime: "55 minutes"
 servings: 4
 calories: 320
+ingredientsGrams:
+  - item: "2 tbsp olive oil, divided"
+    grams: 27
+    fdcId: 171413
+  - item: "1 small yellow onion, finely diced"
+    grams: 70
+    fdcId: 170000
+  - item: "16 oz cremini or button mushrooms, sliced"
+    grams: 453.59
+    fdcId: 168434
+  - item: "3 cloves garlic, minced"
+    grams: 9
+    fdcId: 169230
+  - item: "1 cup pearl barley, rinsed"
+    grams: 200
+    fdcId: 170284
+  - item: "4 cups vegetable broth or chicken broth, warmed"
+    grams: 884
+    fdcId: 171583
+  - item: "1 tsp dried thyme"
+    grams: 1
+    fdcId: 170938
+  - item: "1/2 tsp salt (adjust to taste)"
+    grams: 3
+    fdcId: 173468
+  - item: "1/4 tsp black pepper"
+    grams: 0.57
+    fdcId: 170931
+  - item: "1/2 cup grated Parmesan cheese"
+    grams: 50
+    fdcId: 171247
 difficulty: "Easy"
 recipeCuisine: "Italian"
 ingredients:

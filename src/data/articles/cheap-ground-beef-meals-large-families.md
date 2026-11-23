@@ -20,6 +20,34 @@ cookTime: "25 minutes"
 totalTime: "40 minutes"
 servings: 8
 calories: 380
+ingredientsGrams:
+  - item: "2 lbs ground beef (80/20 or 85/15)"
+    grams: 904
+    fdcId: 171796
+  - item: "4 large russet potatoes, peeled and diced small"
+    grams: 1476
+    fdcId: 170027
+  - item: "1 large yellow onion, diced"
+    grams: 150
+    fdcId: 170000
+  - item: "2 cloves garlic, minced"
+    grams: 6
+    fdcId: 169230
+  - item: "1 tbsp vegetable oil"
+    grams: 13.6
+    fdcId: 171411
+  - item: "1 tsp salt"
+    grams: 6
+    fdcId: 173468
+  - item: "1/2 tsp black pepper"
+    grams: 1.15
+    fdcId: 170931
+  - item: "1 tsp smoked paprika"
+    grams: 2.3
+    fdcId: 171329
+  - item: "1 cup beef broth"
+    grams: 240
+    fdcId: 171538
 difficulty: "Easy"
 ingredients:
   - "2 lbs ground beef (80/20 or 85/15)"

@@ -13,14 +13,43 @@ tags:
 image: "/images/best-way-to-cook-a-pork-tenderloin-main.jpg"
 imageAlt: Slices of golden-brown pork tenderloin are fanned out on a white platter, garnished with rosemary and chives.
 date: 2026-06-03
-dateModified: 2026-07-20
+dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 prepTime: "15 minutes"
 cookTime: "25 minutes"
 totalTime: "40 minutes"
 servings: 4
-calories: 320
+calories: 241
+ingredientsGrams:
+  - item: "1 (1 to 1.5 lb) pork tenderloin"
+    grams: 566.99
+    fdcId: 168249
+  - item: "1 tbsp olive oil"
+    grams: 13.5
+    fdcId: 171413
+  - item: "1 tsp smoked paprika"
+    grams: 2.3
+    fdcId: 171329
+  - item: "1/2 tsp garlic powder"
+    grams: 1.55
+    fdcId: 171325
+  - item: "1/2 tsp onion powder"
+    grams: 1.2
+    fdcId: 171327
+  - item: "1/2 tsp dried thyme"
+    grams: 0.5
+    fdcId: 170938
+  - item: "1/4 tsp cayenne pepper (optional, for a little heat)"
+    grams: 0.45
+    fdcId: 170932
+  - item: "1/2 tsp black pepper"
+    grams: 1.15
+    fdcId: 170931
+  - item: "2 tbsp unsalted butter"
+    grams: 28.4
+    fdcId: 173430
 difficulty: Easy
 ingredients:
   - 1 (1 to 1.5 lb) pork tenderloin

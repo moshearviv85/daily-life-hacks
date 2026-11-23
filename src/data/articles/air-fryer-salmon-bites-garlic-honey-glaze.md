@@ -15,7 +15,8 @@ tags:
 image: "/images/air-fryer-salmon-bites-garlic-honey-glaze-main.jpg"
 imageAlt: "Sticky glazed air fryer salmon bites served over a bowl of rice with sesame seeds"
 date: 2026-04-08
-dateModified: 2026-07-20
+dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -25,7 +26,29 @@ prepTime: "10 minutes"
 cookTime: "8 minutes"
 totalTime: "18 minutes"
 servings: 3
-calories: 320
+calories: 404
+ingredientsGrams:
+  - item: "1 lb salmon fillets, skin removed and cut into 1-inch cubes"
+    grams: 453.33
+    fdcId: 175167
+  - item: "1 tbsp olive oil"
+    grams: 13.5
+    fdcId: 171413
+  - item: "1/2 tsp paprika"
+    grams: 1.15
+    fdcId: 171329
+  - item: "1/2 tsp garlic powder"
+    grams: 1.55
+    fdcId: 171325
+  - item: "2 tbsp honey"
+    grams: 42
+    fdcId: 169640
+  - item: "1 tbsp soy sauce or tamari"
+    grams: 16
+    fdcId: 174277
+  - item: "1 clove garlic, minced"
+    grams: 3
+    fdcId: 169230
 difficulty: "Easy"
 recipeCuisine: "American"
 ingredients:

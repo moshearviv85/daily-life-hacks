@@ -24,6 +24,28 @@ cookTime: 5 minutes
 totalTime: 15 minutes
 servings: 2
 calories: 340
+ingredientsGrams:
+  - item: "2 slices whole grain or sprouted bread"
+    grams: 64
+    fdcId: 172688
+  - item: "1 ripe avocado"
+    grams: 201
+    fdcId: 171705
+  - item: "1/2 tsp salt"
+    grams: 3
+    fdcId: 173468
+  - item: "1/2 tsp black pepper"
+    grams: 1.15
+    fdcId: 170931
+  - item: "1/2 cup canned black beans, rinsed and lightly mashed"
+    grams: 120
+    fdcId: 175238
+  - item: "2 tbsp hemp seeds or pumpkin seeds"
+    grams: 20
+    fdcId: 170148
+  - item: "1/2 cup cherry tomatoes, halved"
+    grams: 74.5
+    fdcId: 170457
 difficulty: Easy
 ingredients:
 - 2 slices whole grain or sprouted bread

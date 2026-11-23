@@ -20,6 +20,25 @@ cookTime: "30 minutes"
 totalTime: "2 hours 45 minutes"
 servings: 12
 calories: 160
+ingredientsGrams:
+  - item: "3 cups all-purpose flour (plus more for dusting)"
+    grams: 375
+    fdcId: 168894
+  - item: "2 1/4 tsp active dry yeast (one packet)"
+    grams: 9
+    fdcId: 175043
+  - item: "1 tbsp granulated sugar"
+    grams: 12.6
+    fdcId: 169655
+  - item: "1 1/2 tsp salt"
+    grams: 9
+    fdcId: 173468
+  - item: "2 tbsp unsalted butter, melted"
+    grams: 28.4
+    fdcId: 173430
+  - item: "1 tbsp vegetable oil (for the bowl)"
+    grams: 13.6
+    fdcId: 171411
 difficulty: "Easy"
 ingredients:
   - "3 cups all-purpose flour (plus more for dusting)"

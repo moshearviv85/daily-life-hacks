@@ -21,6 +21,28 @@ cookTime: "8 hours"
 totalTime: "8 hours 40 minutes"
 servings: 12
 calories: 395
+ingredientsGrams:
+  - item: "2 lbs dried pinto beans, rinsed and picked over"
+    grams: 907.18
+    fdcId: 175199
+  - item: "1 lb smoked sausage, fully thawed and sliced into rounds"
+    grams: 453.59
+    fdcId: 174584
+  - item: "1 large yellow onion, diced"
+    grams: 150
+    fdcId: 170000
+  - item: "3 cloves garlic, minced"
+    grams: 9
+    fdcId: 169230
+  - item: "1 tbsp chili powder"
+    grams: 8
+    fdcId: 171319
+  - item: "8 cups low-sodium chicken broth or water"
+    grams: 1992
+    fdcId: 174536
+  - item: "1 tsp salt, plus more to taste"
+    grams: 6
+    fdcId: 173468
 difficulty: "Easy"
 recipeCuisine: "American"
 recipeName: "Slow Cooker Pinto Beans and Smoked Sausage"

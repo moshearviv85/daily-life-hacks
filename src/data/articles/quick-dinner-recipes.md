@@ -20,6 +20,37 @@ cookTime: "20 minutes"
 totalTime: "30 minutes"
 servings: 4
 calories: 420
+ingredientsGrams:
+  - item: "1.5 lbs boneless, skinless chicken breasts or thighs, cut into 1-inch pieces"
+    grams: 678
+    fdcId: 171077
+  - item: "1 lb small potatoes (like creamer or baby Yukon Golds), quartered"
+    grams: 453.59
+    fdcId: 170029
+  - item: "1 lb broccoli florets"
+    grams: 453.59
+    fdcId: 170379
+  - item: "1 red bell pepper, cored and chopped into 1-inch pieces"
+    grams: 119
+    fdcId: 170108
+  - item: "3 tbsp olive oil"
+    grams: 40.5
+    fdcId: 171413
+  - item: "2 cloves garlic, minced"
+    grams: 6
+    fdcId: 169230
+  - item: "1 tsp dried oregano"
+    grams: 1
+    fdcId: 171328
+  - item: "1/2 tsp dried thyme"
+    grams: 0.5
+    fdcId: 170938
+  - item: "1/4 tsp red pepper flakes (optional, for a little kick)"
+    grams: 0.45
+    fdcId: 170932
+  - item: "Juice of 1 lemon"
+    grams: 48
+    fdcId: 167747
 difficulty: "Easy"
 ingredients:
   - "1.5 lbs boneless, skinless chicken breasts or thighs, cut into 1-inch pieces"

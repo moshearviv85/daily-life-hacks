@@ -11,7 +11,8 @@ tags:
 image: "/images/cheap-chicken-casserole-meals-large-families-main.jpg"
 imageAlt: Golden chicken and rice casserole in a glass 9x13 dish with a browned cracker topping
 date: 2026-04-28
-dateModified: 2026-07-12
+dateModified: 2026-11-23
+substantiveUpdate: 2026-11-23
 author: "David Miller"
 featured: false
 editorsPick: false
@@ -21,7 +22,38 @@ prepTime: "15 minutes"
 cookTime: "35 minutes"
 totalTime: "50 minutes"
 servings: 8
-calories: 410
+calories: 489
+ingredientsGrams:
+  - item: "3 cups cooked chicken, shredded or diced"
+    grams: 420
+    fdcId: 171477
+  - item: "4 cups cooked white rice"
+    grams: 632
+    fdcId: 168878
+  - item: "2 cans (10.5 oz) condensed cream of chicken soup"
+    grams: 297.67
+    fdcId: 171146
+  - item: "1 cup sour cream"
+    grams: 230
+    fdcId: 171257
+  - item: "1/2 cup milk"
+    grams: 122
+    fdcId: 171265
+  - item: "1 tsp garlic powder"
+    grams: 3.1
+    fdcId: 171325
+  - item: "1/2 tsp onion powder"
+    grams: 1.2
+    fdcId: 171327
+  - item: "2 cups shredded cheddar cheese"
+    grams: 226
+    fdcId: 173414
+  - item: "1 cup crushed buttery crackers"
+    grams: 52
+    fdcId: 174982
+  - item: "4 tbsp unsalted butter, melted"
+    grams: 56.8
+    fdcId: 173430
 difficulty: "Easy"
 recipeCuisine: "American"
 recipeName: "Chicken and Rice Casserole"

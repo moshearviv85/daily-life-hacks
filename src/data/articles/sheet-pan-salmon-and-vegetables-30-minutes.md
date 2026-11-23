@@ -27,6 +27,28 @@ cookTime: 20 minutes
 totalTime: 30 minutes
 servings: 4
 calories: 445
+ingredientsGrams:
+  - item: "4 (5 to 6 oz) skin-on salmon fillets"
+    grams: 623.69
+    fdcId: 175167
+  - item: "1 lb broccoli florets"
+    grams: 453.59
+    fdcId: 170379
+  - item: "1 medium zucchini, cut into 1/2-inch half-moons"
+    grams: 196
+    fdcId: 169291
+  - item: "1 pint cherry tomatoes"
+    grams: 298
+    fdcId: 170457
+  - item: "2 tbsp olive oil"
+    grams: 27
+    fdcId: 171413
+  - item: "1/2 tsp garlic powder"
+    grams: 1.55
+    fdcId: 171325
+  - item: "1/2 tsp dried dill or thyme"
+    grams: 0.5
+    fdcId: 171322
 difficulty: Easy
 recipeCuisine: "American"
 ingredients:

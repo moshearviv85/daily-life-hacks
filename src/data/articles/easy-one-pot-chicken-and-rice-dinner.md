@@ -27,6 +27,34 @@ cookTime: 35 minutes
 totalTime: 45 minutes
 servings: 4
 calories: 420
+ingredientsGrams:
+  - item: "1 tbsp olive oil"
+    grams: 13.5
+    fdcId: 171413
+  - item: "1 lb boneless, skinless chicken thighs, cut into bite-size pieces"
+    grams: 452
+    fdcId: 173627
+  - item: "1 medium onion, diced"
+    grams: 110
+    fdcId: 170000
+  - item: "2 cloves garlic, minced"
+    grams: 6
+    fdcId: 169230
+  - item: "1 cup long-grain white rice, rinsed"
+    grams: 185
+    fdcId: 168877
+  - item: "2 cups chicken broth"
+    grams: 498
+    fdcId: 174536
+  - item: "1/2 tsp dried thyme"
+    grams: 0.5
+    fdcId: 170938
+  - item: "1/2 tsp paprika"
+    grams: 1.15
+    fdcId: 171329
+  - item: "1 cup frozen peas (optional, add in last 5 min)"
+    grams: 134
+    fdcId: 170016
 difficulty: Easy
 recipeCuisine: "American"
 ingredients:

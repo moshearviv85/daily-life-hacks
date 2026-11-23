@@ -1,0 +1,596 @@
+[
+  {
+    "slug": "artichoke-recipes-for-gut-health",
+    "title": "How to Steam Artichokes Until Leaves Pull Free",
+    "unmapped": [
+      {
+        "item": "1/2 teaspoon Dijon mustard",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "beans-and-rice-complete-protein-meal",
+    "title": "Are Beans and Rice a Complete Protein Meal?",
+    "unmapped": [
+      {
+        "item": "2 (15 oz) cans black beans, rinsed and drained",
+        "reason": "no FDC gram weight for can of Beans, black, mature seeds, canned, low sodium"
+      }
+    ]
+  },
+  {
+    "slug": "best-way-to-cook-pork-chops",
+    "title": "How to Cook Pork Chops to 145°F",
+    "unmapped": [
+      {
+        "item": "4 bone-in pork chops, 1-inch thick (about 1.5 lbs total)",
+        "reason": "bone-in or rack weight is not the edible weight on this FDC cut"
+      },
+      {
+        "item": "2 sprigs fresh rosemary or thyme",
+        "reason": "no FDC gram weight for sprig of Rosemary, fresh"
+      }
+    ]
+  },
+  {
+    "slug": "best-way-to-cook-prime-rib",
+    "title": "The Best Way to Cook Prime Rib With a Reverse Sear",
+    "unmapped": [
+      {
+        "item": "1 (6-8 lb) bone-in prime rib roast",
+        "reason": "bone-in or rack weight is not the edible weight on this FDC cut"
+      }
+    ]
+  },
+  {
+    "slug": "best-way-to-cook-ribs",
+    "title": "How to Cook Ribs in 3 Hours 30 Minutes",
+    "unmapped": [
+      {
+        "item": "2 racks (about 2.5-3 lbs each) pork baby back ribs",
+        "reason": "bone-in or rack weight is not the edible weight on this FDC cut"
+      }
+    ]
+  },
+  {
+    "slug": "chicken-veggie-lettuce-wraps-peanut-sauce",
+    "title": "Chicken and Veggie Lettuce Wraps With Quick Peanut Sauce",
+    "unmapped": [
+      {
+        "item": "1 tbsp rice vinegar",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "costco-rotisserie-chicken-meal-ideas-dinner",
+    "title": "Costco Rotisserie Chicken: $5.97 and ~160g Protein",
+    "unmapped": [
+      {
+        "item": "3 cups shredded cooked rotisserie chicken, skin and bones removed",
+        "reason": "no FDC gram weight for cup of Chicken, broilers or fryers, rotisserie, original seasoning, breast, meat only, cooked"
+      }
+    ]
+  },
+  {
+    "slug": "creamy-tomato-orzo-white-beans-one-pot",
+    "title": "Creamy Tomato Orzo With White Beans (One Pot)",
+    "unmapped": [
+      {
+        "item": "1 cup dry orzo pasta",
+        "reason": "ambiguous FDC portions: cup penne = 95 g; cup elbows = 122 g; cup rotini = 96 g; cup shells = 64 g; cup lasagna = 90 g; cup farfalle = 81 g; cup spaghetti = 91 g"
+      },
+      {
+        "item": "1 (15 oz) can cannellini beans or great northern beans, rinsed",
+        "reason": "no FDC gram weight for can of Beans, white, mature seeds, canned"
+      }
+    ]
+  },
+  {
+    "slug": "crispy-smashed-potato-salad-dijon-herbs",
+    "title": "Crispy Smashed Potato Salad With Dijon and Herbs",
+    "unmapped": [
+      {
+        "item": "1 tbsp Dijon mustard",
+        "reason": "no FDC food matched the line"
+      },
+      {
+        "item": "1 small shallot, finely minced",
+        "reason": "no FDC gram weight for small of Shallots, raw"
+      }
+    ]
+  },
+  {
+    "slug": "cucumber-edamame-salad-sesame",
+    "title": "Japanese-Inspired Cucumber and Edamame Salad With Sesame",
+    "unmapped": [
+      {
+        "item": "2 tbsp rice vinegar",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "easy-black-bean-tacos-weeknight-dinner",
+    "title": "Easy Black Bean Tacos for a Weeknight Dinner",
+    "unmapped": [
+      {
+        "item": "2 (15 oz) cans black beans, drained and rinsed",
+        "reason": "no FDC gram weight for can of Beans, black, mature seeds, canned, low sodium"
+      }
+    ]
+  },
+  {
+    "slug": "easy-cold-summer-pasta-salad-potlucks",
+    "title": "Easy Cold Summer Pasta Salad for Potlucks",
+    "unmapped": [
+      {
+        "item": "1 can (6 oz) sliced black olives, drained",
+        "reason": "no FDC gram weight for can of Olives, ripe, canned (small-extra large)"
+      }
+    ]
+  },
+  {
+    "slug": "easy-sourdough-discard-recipes-beginners",
+    "title": "Easy Sourdough Discard Recipes for Beginners",
+    "unmapped": [
+      {
+        "item": "1 cup sourdough starter discard, stirred, 100% hydration",
+        "reason": "discard line has no gram weight"
+      }
+    ]
+  },
+  {
+    "slug": "easy-weeknight-fish-tacos-with-cabbage-slaw",
+    "title": "Easy Weeknight Fish Tacos with Cabbage Slaw",
+    "unmapped": [
+      {
+        "item": "1 chipotle pepper in adobo, minced, plus 1 tsp adobo sauce",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "farro-lunch-bowl-roasted-vegetables-lemon-tahini",
+    "title": "Farro Lunch Bowl With Roasted Vegetables and Lemon Tahini",
+    "unmapped": [
+      {
+        "item": "1 cup dry farro",
+        "reason": "no FDC food matched the line"
+      },
+      {
+        "item": "1 medium sweet potato, peeled and cut into 3/4 inch cubes",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "fiber-rich-soup-for-weight-loss-cabbage",
+    "title": "High-Fiber Cabbage and Bean Soup",
+    "unmapped": [
+      {
+        "item": "1 (15 oz) can cannellini beans, rinsed and drained",
+        "reason": "no FDC gram weight for can of Beans, white, mature seeds, canned"
+      }
+    ]
+  },
+  {
+    "slug": "food-prep-guide-blog-recipes",
+    "title": "Sheet-Pan Chicken and Vegetables for Meal Prep",
+    "unmapped": [
+      {
+        "item": "1 sweet potato, peeled and diced",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "food-prep-guide-recipes",
+    "title": "Chicken and Quinoa Meal Prep Bowls",
+    "unmapped": [
+      {
+        "item": "1 yellow bell pepper, cored and chopped",
+        "reason": "no FDC gram weight for count of Peppers, sweet, yellow, raw"
+      }
+    ]
+  },
+  {
+    "slug": "gluten-free-sourdough-discard-pizza-dough",
+    "title": "Gluten Free Sourdough Discard Pizza Dough",
+    "unmapped": [
+      {
+        "item": "1 cup (approx 200g) gluten free sourdough discard, unfed",
+        "reason": "gluten-free discard has no FDC food"
+      },
+      {
+        "item": "1 1/2 cups gluten free all-purpose flour blend (with xanthan gum)",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "gut-health-tea-peppermint-ginger",
+    "title": "Peppermint and Ginger Tea in 10 Minutes",
+    "unmapped": [
+      {
+        "item": "1-inch piece fresh ginger, sliced and bruised",
+        "reason": "no FDC gram weight for count of Ginger root, raw"
+      }
+    ]
+  },
+  {
+    "slug": "healthy-blue-collar-lunch-ideas-men",
+    "title": "Blue-Collar Lunches That Actually Fill You Up",
+    "unmapped": [
+      {
+        "item": "2 large sweet potatoes, cubed",
+        "reason": "no FDC gram weight for large of Sweet potato, raw, unprepared (Includes foods for USDA's Food Distribution Program)"
+      }
+    ]
+  },
+  {
+    "slug": "healthy-egg-sandwich-add-ins-toppings",
+    "title": "Egg Sandwich Add-Ins and Toppings",
+    "unmapped": [
+      {
+        "item": "1 pinch red pepper flakes",
+        "reason": "no FDC gram weight for count of Spices, pepper, red or cayenne"
+      },
+      {
+        "item": "1 slice tomato",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "healthy-homemade-vegan-caesar-salad-dressing",
+    "title": "Homemade Vegan Caesar Salad Dressing",
+    "unmapped": [
+      {
+        "item": "1/2 cup raw cashews, soaked in hot water for 15 minutes",
+        "reason": "no FDC gram weight for cup of Nuts, cashew nuts, raw"
+      },
+      {
+        "item": "1 teaspoon Dijon mustard",
+        "reason": "no FDC food matched the line"
+      },
+      {
+        "item": "1/2 teaspoon nutritional yeast",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "healthy-spring-vegetable-soup-recipes",
+    "title": "Spring Vegetable Soup in About 30 Minutes",
+    "unmapped": [
+      {
+        "item": "1 bunch asparagus, woody ends trimmed, cut into 1-inch pieces",
+        "reason": "no FDC gram weight for count of Asparagus, raw"
+      }
+    ]
+  },
+  {
+    "slug": "healthy-sweet-tooth-snack-ideas-night",
+    "title": "Sweet Snacks for a Late-Night Craving",
+    "unmapped": [
+      {
+        "item": "1/2 cup plain Greek yogurt",
+        "reason": "no FDC gram weight for cup of Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)"
+      },
+      {
+        "item": "1 dash ground cinnamon",
+        "reason": "no FDC gram weight for count of Spices, cinnamon, ground"
+      }
+    ]
+  },
+  {
+    "slug": "hearty-vegetarian-chili-with-three-beans-and-corn",
+    "title": "Hearty Vegetarian Chili with Three Beans and Corn",
+    "unmapped": [
+      {
+        "item": "1 can (15 oz) black beans, drained and rinsed",
+        "reason": "no FDC gram weight for can of Beans, black, mature seeds, canned, low sodium"
+      }
+    ]
+  },
+  {
+    "slug": "high-fiber-burrito-bowl-meal-prep",
+    "title": "High Fiber Burrito Bowl Meal Prep for a Better Work Lunch",
+    "unmapped": [
+      {
+        "item": "1 (15 oz) can black beans, rinsed and drained",
+        "reason": "no FDC gram weight for can of Beans, black, mature seeds, canned, low sodium"
+      }
+    ]
+  },
+  {
+    "slug": "high-fiber-cauliflower-rice-recipes",
+    "title": "High Fiber Cauliflower Rice Recipes Guide",
+    "unmapped": [
+      {
+        "item": "1 cup mixed frozen vegetables (peas, carrots, corn)",
+        "reason": "no FDC gram weight for cup of Vegetables, mixed, frozen, unprepared"
+      },
+      {
+        "item": "1 tbsp rice vinegar",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "high-fiber-dinner-recipes-picky-kids",
+    "title": "High Fiber Dinner Recipes for Picky Kids",
+    "unmapped": [
+      {
+        "item": "1 can (15 oz) mild chili beans, slightly mashed",
+        "reason": "no FDC food matched the line"
+      },
+      {
+        "item": "2 cups whole wheat rotini pasta",
+        "reason": "ambiguous FDC portions: cup penne = 95 g; cup elbows = 122 g; cup rotini = 96 g; cup shells = 64 g; cup lasagne = 90 g; cup farfalle = 81 g; cup spaghetti = 91 g"
+      }
+    ]
+  },
+  {
+    "slug": "high-fiber-gluten-free-bread-recipe",
+    "title": "High-Fiber Gluten-Free Bread That Holds Together",
+    "unmapped": [
+      {
+        "item": "1 cup sunflower seeds",
+        "reason": "ambiguous FDC portions: cup = 140 g; cup, with hulls, edible yield = 46 g"
+      },
+      {
+        "item": "2 tbsp chia seeds",
+        "reason": "no FDC gram weight for tablespoon of Seeds, chia seeds, dried"
+      },
+      {
+        "item": "4 tbsp psyllium husk powder",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "high-fiber-meal-prep-ideas-for-busy-weeks-2026",
+    "title": "High Fiber Meal Prep Bowls for Busy Weeks",
+    "unmapped": [
+      {
+        "item": "1 bay leaf",
+        "reason": "no FDC gram weight for count of Spices, bay leaf"
+      }
+    ]
+  },
+  {
+    "slug": "high-fiber-quinoa-salad-for-lunch-prep",
+    "title": "High Fiber Quinoa Salad for Lunch Prep",
+    "unmapped": [
+      {
+        "item": "1 tsp Dijon mustard",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "high-fiber-raspberry-jam-recipe-chia",
+    "title": "High Fiber Raspberry Jam Recipe Using Chia Seeds",
+    "unmapped": [
+      {
+        "item": "2 tbsp chia seeds",
+        "reason": "no FDC gram weight for tablespoon of Seeds, chia seeds, dried"
+      }
+    ]
+  },
+  {
+    "slug": "high-fiber-stir-fry-vegetables",
+    "title": "Vegetables for Stir-Fry (And How to Keep Them Crisp)",
+    "unmapped": [
+      {
+        "item": "1 inch fresh ginger, grated",
+        "reason": "no FDC gram weight for count of Ginger root, raw"
+      },
+      {
+        "item": "2 tablespoons rice vinegar",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "high-protein-vegetarian-breakfast-burritos-you-can-freeze",
+    "title": "High Protein Vegetarian Breakfast Burritos You Can Freeze",
+    "unmapped": [
+      {
+        "item": "1 can black beans (15 oz), drained and rinsed",
+        "reason": "no FDC gram weight for can of Beans, black, mature seeds, canned, low sodium"
+      }
+    ]
+  },
+  {
+    "slug": "how-much-protein-in-bagel-sandwich",
+    "title": "How Much Protein is in a Bagel Sandwich",
+    "unmapped": [
+      {
+        "item": "2 tbsp Greek yogurt (plain, non-fat)",
+        "reason": "no FDC gram weight for tablespoon of Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)"
+      },
+      {
+        "item": "1 tsp Dijon mustard",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "make-ahead-breakfast-ideas-without-eggs",
+    "title": "Make Ahead Breakfast Ideas Without Eggs",
+    "unmapped": [
+      {
+        "item": "2 cups milk of choice",
+        "reason": "no FDC food matched the line"
+      },
+      {
+        "item": "1/2 cup Greek yogurt",
+        "reason": "no FDC gram weight for cup of Yogurt, Greek, plain, nonfat (Includes foods for USDA's Food Distribution Program)"
+      },
+      {
+        "item": "2 tbsp chia seeds",
+        "reason": "no FDC gram weight for tablespoon of Seeds, chia seeds, dried"
+      }
+    ]
+  },
+  {
+    "slug": "pear-salad-with-walnuts-fiber-rich",
+    "title": "Pear and Walnut Salad With Blue Cheese",
+    "unmapped": [
+      {
+        "item": "1 teaspoon Dijon mustard",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "quick-20-minute-high-fiber-meals-for-busy-days",
+    "title": "20-Minute High Fiber Rice and Beans Meals",
+    "unmapped": [
+      {
+        "item": "1 (15 oz) can black beans, drained and rinsed",
+        "reason": "no FDC gram weight for can of Beans, black, mature seeds, canned, low sodium"
+      }
+    ]
+  },
+  {
+    "slug": "quick-and-easy-stir-fry-sauce-recipes-no-bottled-stuff",
+    "title": "Five Stir-Fry Sauces From the Pantry",
+    "unmapped": [
+      {
+        "item": "1 tablespoon rice vinegar",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "quick-black-bean-and-corn-salsa-no-cooking-required",
+    "title": "Quick No-Cook Black Bean and Corn Salsa",
+    "unmapped": [
+      {
+        "item": "2 cans (15 oz each) black beans, drained and rinsed",
+        "reason": "no FDC gram weight for can of Beans, black, mature seeds, canned, low sodium"
+      },
+      {
+        "item": "1 can (15 oz) corn kernels, drained, or 1 cup frozen corn thawed",
+        "reason": "ambiguous FDC portions: can (303 x 406) = 298 g; can (12 oz) yields = 211 g"
+      },
+      {
+        "item": "1 jalapeño, seeded and minced (leave seeds in if you want heat)",
+        "reason": "no FDC gram weight for count of Peppers, jalapeno, raw"
+      }
+    ]
+  },
+  {
+    "slug": "quick-black-bean-burgers-that-hold-their-shape",
+    "title": "Quick Black Bean Burgers That Actually Hold Together",
+    "unmapped": [
+      {
+        "item": "2 cans (30 oz total) black beans, drained and rinsed",
+        "reason": "no FDC gram weight for can of Beans, black, mature seeds, canned, low sodium"
+      }
+    ]
+  },
+  {
+    "slug": "quick-dinner-recipes-for-family",
+    "title": "Quick Dinner Ideas for the Family, Ready in 30 Minutes",
+    "unmapped": [
+      {
+        "item": "1 (15 oz) can black beans, rinsed and drained",
+        "reason": "no FDC gram weight for can of Beans, black, mature seeds, canned, low sodium"
+      },
+      {
+        "item": "1 (15 oz) can corn, drained",
+        "reason": "ambiguous FDC portions: can (303 x 406) = 298 g; can (12 oz) yields = 211 g"
+      }
+    ]
+  },
+  {
+    "slug": "ricotta-berry-toast-bar-no-cook",
+    "title": "Ricotta and Berry Toast Bar",
+    "unmapped": [
+      {
+        "item": "1 tbsp chia seeds, hemp hearts, or chopped pistachios",
+        "reason": "no FDC gram weight for tablespoon of Seeds, chia seeds, dried"
+      }
+    ]
+  },
+  {
+    "slug": "sheet-pan-ginger-tofu-broccoli-sticky-glaze",
+    "title": "Sheet Pan Ginger Tofu and Broccoli",
+    "unmapped": [
+      {
+        "item": "2 tbsp rice vinegar",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "simple-lunch-recipes-indian-veg",
+    "title": "One-Pot Dal and Rice",
+    "unmapped": [
+      {
+        "item": "1 inch ginger, grated",
+        "reason": "no FDC gram weight for count of Ginger root, raw"
+      }
+    ]
+  },
+  {
+    "slug": "sourdough-discard-crackers",
+    "title": "Sourdough Discard Crackers, Rolled Thin",
+    "unmapped": [
+      {
+        "item": "2 tablespoons dried herbs, optional, or one of the variations below",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "stuffed-portobello-mushrooms-quinoa-spinach-feta",
+    "title": "Stuffed Portobello Mushrooms With Quinoa and Feta",
+    "unmapped": [
+      {
+        "item": "4 large portobello mushroom caps",
+        "reason": "no FDC gram weight for large of Mushrooms, portabella, raw"
+      },
+      {
+        "item": "1/2 cup jarred roasted red peppers, chopped",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  },
+  {
+    "slug": "tabbouleh-salad-high-fiber-bulgur",
+    "title": "Fresh Tabbouleh Salad With Bulgur and Herbs",
+    "unmapped": [
+      {
+        "item": "3-4 ripe Roma tomatoes, finely diced",
+        "reason": "no FDC gram weight for count of Tomatoes, red, ripe, raw, year round average"
+      }
+    ]
+  },
+  {
+    "slug": "tuscan-white-bean-kale-soup-stovetop",
+    "title": "Tuscan White Bean and Kale Soup (Simple Stovetop Version)",
+    "unmapped": [
+      {
+        "item": "2 (15 oz) cans cannellini beans, drained and rinsed",
+        "reason": "no FDC gram weight for can of Beans, white, mature seeds, canned"
+      }
+    ]
+  },
+  {
+    "slug": "vegan-high-fiber-meal-prep-for-week",
+    "title": "Five-Day Vegan Meal Prep With Crispy Tofu and Quinoa",
+    "unmapped": [
+      {
+        "item": "1 tablespoon rice vinegar",
+        "reason": "no FDC food matched the line"
+      }
+    ]
+  }
+]

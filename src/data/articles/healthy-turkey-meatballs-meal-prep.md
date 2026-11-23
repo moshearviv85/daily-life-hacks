@@ -27,6 +27,34 @@ cookTime: 20 minutes
 totalTime: 35 minutes
 servings: 4
 calories: 280
+ingredientsGrams:
+  - item: "1 lb ground turkey (93% lean)"
+    grams: 453
+    fdcId: 172850
+  - item: "1/2 cup breadcrumbs"
+    grams: 54
+    fdcId: 174928
+  - item: "1 large egg, lightly beaten"
+    grams: 50
+    fdcId: 171287
+  - item: "2 cloves garlic, minced"
+    grams: 6
+    fdcId: 169230
+  - item: "2 tbsp chopped fresh parsley (or 1 tsp dried)"
+    grams: 7.6
+    fdcId: 170416
+  - item: "1/2 tsp dried oregano"
+    grams: 0.5
+    fdcId: 171328
+  - item: "1/4 tsp salt"
+    grams: 1.5
+    fdcId: 173468
+  - item: "1/4 tsp black pepper"
+    grams: 0.57
+    fdcId: 170931
+  - item: "1 tbsp olive oil for cooking"
+    grams: 13.5
+    fdcId: 171413
 difficulty: Easy
 recipeCuisine: "American"
 ingredients:
