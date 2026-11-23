@@ -442,7 +442,7 @@ const flagshipCitation =
     : null;
 const citationText =
   dataset && !flagshipCitation
-    ? `Daily Life Hacks. "${dataset.name}." ${citationYear}. ${articleUrl}. Please credit Daily Life Hacks with a link.`
+    ? `Daily Life Hacks. "${dataset.name}." ${citationYear}. ${articleUrl}. Licensed under CC BY 4.0.`
     : null;
 
 const citationCopyScript = `(function(){
@@ -900,11 +900,6 @@ const newsletterSignup = newsletterSignupForArticle({
         >
           Made this? Rate it.
         </p>
-        <noscript>
-          <p class="text-sm leading-relaxed" style="color: var(--muted-color);">
-            Ratings need JavaScript, so the stars stay off until then. The study above does not.
-          </p>
-        </noscript>
       </div>
     </section>
     )}
@@ -1019,7 +1014,7 @@ const newsletterSignup = newsletterSignupForArticle({
             </span>
           </div>
           <p class="mt-1 text-xs" style="color: var(--muted-color);">
-            Free to reuse, including commercially. Just keep the credit and the link.
+            Free to reuse, including commercially. Attribute Daily Life Hacks and the CC BY 4.0 license.
           </p>
           <p
             class="mt-3 rounded-lg border p-3 font-mono text-xs leading-relaxed"

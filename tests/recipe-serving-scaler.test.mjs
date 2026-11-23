@@ -51,4 +51,9 @@ test("serving changes update visible recipe yield and emit no entered value", as
   assert.match(component, /interaction_type:'servings_changed'/);
   assert.doesNotMatch(component, /requested_servings|serving_value|entered_value/);
   assert.match(component, /astro:page-load/);
+  assert.match(component, /data-serving-note/);
+  assert.match(component, /hidden/);
+  assert.doesNotMatch(component, /Cooking time may change for a much larger or smaller batch/);
+  assert.match(component, /current===base\)\{note\.hidden=true/);
+  assert.match(component, /batchTimeNote\(\)/);
 });
