@@ -59,7 +59,7 @@ It depends whether you're asking about density or money, and the two give differ
 
 By density, brown lentils lead at 24.63 grams per 100 grams, with red lentils and split peas right behind. By dollar, pinto beans lead everything at 97.9 grams per dollar, which is the top figure in our entire 49 food [protein per dollar ranking](/protein-per-dollar-cheapest-protein-sources/). Pinto beans aren't the densest bean. They come in a 4 pound bag for $3.97, and that's what wins.
 
-That's the pattern across most of our work. Package size and shelf price move the per dollar number far more than nutrient content does. The full plant side of that is in [the cheapest plant proteins ranked](/plant-protein-per-dollar-ranked/).
+That's the pattern across most of our work. Package size and shelf price move the per dollar number far more than nutrient content does. The full plant side of that is in [the cheapest plant proteins ranked](/protein-per-dollar-cheapest-protein-sources/#plant).
 
 ## Which beans have the most fiber?
 

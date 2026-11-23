@@ -179,7 +179,7 @@ function keepArticles() {
 
 test("KEEP articles do not cite the pre-BLS pinto, black bean, navy, or quality-adjusted pinto figures", () => {
   const articles = keepArticles();
-  assert.ok(articles.length >= 15, "expected KEEP protein articles on disk");
+  assert.ok(articles.length >= 9, "expected KEEP protein articles on disk");
   for (const { slug, markdown } of articles) {
     for (const token of STALE_PROTEIN_TOKENS) {
       const pattern = new RegExp(`(?<!\\d)${token.replace(".", "\\.")}(?!\\d)`);

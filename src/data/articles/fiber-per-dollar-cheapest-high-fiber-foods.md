@@ -115,7 +115,7 @@ The full dataset is public. You can download the raw CSV [here](/data/fiber-per-
 
 ## What are the cheapest high-fiber foods per dollar?
 
-**The dry goods aisle is running the table.** Eleven of the top twelve foods are dried beans, peas, or whole grains, and the same bags run [the plant protein ranking](/plant-protein-per-dollar-ranked/) and [the pantry-only protein table](/shelf-stable-pantry-per-dollar/) on our other spreadsheet. Whole wheat flour technically wins the whole list at 77.8 grams of fiber per dollar, but flour is an ingredient, not dinner (more on that below). Among foods you can actually cook and eat, dry split peas take the crown at 71.0 grams of fiber per dollar, roughly 16 times more than fresh raspberries and 28 times more than blueberries. One $1.42 bag of split peas holds around 101 grams of fiber. For context, the [FDA lists 28 grams as the Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels); our [Daily Value explainer](/fiber-protein-daily-values-explained/) shows where that number came from and what it does not mean. That single dollar-and-change bag contains about three and a half Daily Values. That's a comparison, not a suggestion to eat the bag in three days. If you've never cooked split peas, our [split pea soup recipe](/split-pea-soup-recipe-high-fiber/) is the easy on-ramp.
+**The dry goods aisle is running the table.** Eleven of the top twelve foods are dried beans, peas, or whole grains, and the same bags run [the plant protein ranking](/protein-per-dollar-cheapest-protein-sources/#plant) and [the pantry-only protein table](/protein-per-dollar-cheapest-protein-sources/#shelf-stable) on our other spreadsheet. Whole wheat flour technically wins the whole list at 77.8 grams of fiber per dollar, but flour is an ingredient, not dinner (more on that below). Among foods you can actually cook and eat, dry split peas take the crown at 71.0 grams of fiber per dollar, roughly 16 times more than fresh raspberries and 28 times more than blueberries. One $1.42 bag of split peas holds around 101 grams of fiber. For context, the [FDA lists 28 grams as the Daily Value](https://www.fda.gov/food/nutrition-facts-label/daily-value-nutrition-and-supplement-facts-labels); our [Daily Value explainer](/fiber-protein-daily-values-explained/) shows where that number came from and what it does not mean. That single dollar-and-change bag contains about three and a half Daily Values. That's a comparison, not a suggestion to eat the bag in three days. If you've never cooked split peas, our [split pea soup recipe](/split-pea-soup-recipe-high-fiber/) is the easy on-ramp.
 
 **Dry beans still beat canned, but the gap is no longer a 2x poster.** Dry pinto beans came in at 41.7 grams of fiber per dollar on the BLS dried-beans-any-type average; canned black beans, 34.4. Canned is still a genuinely good deal, and I keep a shelf of them for lazy nights. Split peas, which BLS does not track, remain the cook-and-eat winner at 71.0. If the soaking step is the only thing stopping you, the [same-day quick-soak method](/how-to-quick-soak-dried-beans-same-day/) removes the excuse.
 
@@ -125,7 +125,7 @@ The full dataset is public. You can download the raw CSV [here](/data/fiber-per-
 
 **Berries are a luxury good, fiber-wise.** The bottom four spots are all berries. Raspberries look impressive at 6.5 grams of fiber per 100 grams, but at $2.48 for a 6 ounce clamshell, you're paying boutique prices. Five dollars buys 355 grams of fiber as split peas or 12 grams as blueberries.
 
-The full table is useful, but a 53-row ranking is not how anyone shops unless they bring a clipboard to Walmart. The tighter cuts make the decisions clearer: see [what one fiber dollar buys](/one-dollar-fiber-what-it-buys/) when the budget is fixed, then compare the [grain aisle](/grains-fiber-per-dollar-ranked/), [produce aisle](/produce-fiber-per-dollar-ranked/), [breakfast staples](/breakfast-staples-per-dollar/), and [high-fiber snacks](/high-fiber-snacks-per-dollar/) on their own terms. Beans earned two separate audits because they're doing two jobs at once: the [canned versus dry cost gap](/canned-vs-dry-beans-cost/) measures the convenience markup, while the [protein and fiber ranking](/beans-double-win-fiber-protein/) shows why they keep winning both spreadsheets. The protein-side twin of this ranking is the [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), and [what a single protein dollar buys](/one-dollar-protein-what-it-buys/) is the tighter cut of that same table.
+The full table is useful, but a 53-row ranking is not how anyone shops unless they bring a clipboard to Walmart. The tighter cuts make the decisions clearer: see [what one fiber dollar buys](/fiber-per-dollar-cheapest-high-fiber-foods/#what-1-buys) when the budget is fixed, then compare the [grain aisle](/fiber-per-dollar-cheapest-high-fiber-foods/#grains), [produce aisle](/fiber-per-dollar-cheapest-high-fiber-foods/#produce), [breakfast staples](/breakfast-staples-per-dollar/), and [high-fiber snacks](/fiber-per-dollar-cheapest-high-fiber-foods/#snacks) on their own terms. Beans earned two separate audits because they're doing two jobs at once: the [canned versus dry cost gap](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving) measures the convenience markup, while the [protein and fiber ranking](/beans-double-win-fiber-protein/) shows why they keep winning both spreadsheets. The protein-side twin of this ranking is the [protein per dollar study](/protein-per-dollar-cheapest-protein-sources/), and [what a single protein dollar buys](/protein-per-dollar-cheapest-protein-sources/#what-1-buys) is the tighter cut of that same table.
 
 ![Bar chart comparing how many total grams of fiber five dollars buys across ten common foods, from 355 grams for split peas down to 12 grams for blueberries](/images/fiber-per-dollar-five-dollars.jpg)
 
@@ -139,6 +139,92 @@ And ranking low doesn't make a food bad. Berries, avocados, and Brussels sprouts
 
 ![Bar chart of median fiber per dollar by grocery category, with dried beans and peas far ahead of whole grains, canned goods, and fresh produce](/images/fiber-per-dollar-by-category.jpg)
 
+<h2 id="grains">Grains</h2>
+
+Whole wheat flour leads this grain cut at 77.8 grams of fiber per dollar. Dry quinoa sits at 10.6. Same 53-food list, about 7.3 times the fiber for the flour dollar, and flour only counts if you bake. Pearled barley, at 57.1, is the grain you can boil tonight. Popcorn kernels at 51.3 stay unresolved: that number is our kernel-basis conversion, not a USDA record for unpopped corn. Store-bought whole wheat bread is the expensive end of the cut, at 9.7 grams per dollar.
+
+| Food | Fiber per $1 |
+|---|---|
+| Whole wheat flour | 77.8 g |
+| Pearled barley (dry) | 57.1 g |
+| Popcorn kernels | 51.3 g |
+| Old-fashioned rolled oats | 35.8 g |
+| Whole wheat spaghetti | 35.4 g |
+| Bran flakes cereal | 30.1 g |
+| Bulgur wheat (dry) | 24.4 g |
+| Oat bran (dry) | 22.5 g |
+| Brown rice (dry) | 17.5 g |
+| Quinoa (dry) | 10.6 g |
+| 100% whole wheat bread | 9.7 g |
+
+<h2 id="produce">Produce</h2>
+
+Frozen green peas lead the produce cut at 17.6 grams of fiber per dollar. Bagged carrots are the best fresh row at 16.1. Blueberries finish last at 2.5. These 22 rows are the produce filter of the 53-food table above, not a second price survey.
+
+| Food | Fiber per $1 |
+|---|---|
+| Frozen green peas | 17.6 g |
+| Carrots (whole, bagged) | 16.1 g |
+| Green cabbage | 14.6 g |
+| Sweet potatoes | 13.9 g |
+| Bananas | 11.6 g |
+| Frozen green beans | 10.8 g |
+| Avocado | 10.4 g |
+| Frozen broccoli florets | 9.5 g |
+| Frozen chopped spinach | 8.4 g |
+| Frozen shelled edamame | 8.3 g |
+| Pears | 8.0 g |
+| Chopped kale (bagged) | 7.5 g |
+| Apples (gala) | 7.3 g |
+| Yellow onions | 7.1 g |
+| Brussels sprouts | 7.0 g |
+| Russet potatoes (with skin) | 6.3 g |
+| Fresh broccoli crowns | 6.1 g |
+| Oranges (navel) | 4.7 g |
+| Raspberries | 4.5 g |
+| Blackberries | 4.0 g |
+| Strawberries | 2.7 g |
+| Blueberries | 2.5 g |
+
+<h2 id="snacks">Snacks</h2>
+
+Popcorn kernels lead the snack filter at 51.3 grams of fiber per dollar. Raisins finish it at 6.3. Almonds land at 8.8, which is a lot of money for a snack you were hoping would count as fiber.
+
+| Food | Fiber per $1 |
+|---|---|
+| Popcorn kernels | 51.3 g |
+| Carrots (whole, bagged) | 16.1 g |
+| Dry roasted peanuts | 13.7 g |
+| Sunflower seed kernels | 13.1 g |
+| Bananas | 11.6 g |
+| Peanut butter | 11.4 g |
+| Almonds | 8.8 g |
+| Prunes (dried plums) | 8.1 g |
+| Apples (gala) | 7.3 g |
+| Raisins | 6.3 g |
+
+<h2 id="what-1-buys">What $1 buys</h2>
+
+One dollar buys 77.8 grams of fiber as whole wheat flour and 28.5 grams as whole flaxseed, the floor of this 15-food cut. Split peas, at 71.0, are what you cook and eat. These rows are the top of the same 53-food table.
+
+| Food | Fiber per $1 |
+|---|---|
+| Whole wheat flour | 77.8 g |
+| Green split peas (dry) | 71.0 g |
+| Pearled barley (dry) | 57.1 g |
+| Popcorn kernels | 51.3 g |
+| Pinto beans (dry) | 41.7 g |
+| Black beans (dry) | 41.6 g |
+| Navy beans (dry) | 41.1 g |
+| Old-fashioned rolled oats | 35.8 g |
+| Whole wheat spaghetti | 35.4 g |
+| Canned black beans | 34.4 g |
+| Chickpeas (dry) | 33.8 g |
+| Brown lentils (dry) | 33.7 g |
+| Chia seeds | 33.1 g |
+| Bran flakes cereal | 30.1 g |
+| Whole flaxseed | 28.5 g |
+
 ## How to actually use this
 
 Don't overhaul anything. Just let the top of the table cover the boring baseline, cheap and on autopilot, and spend your remaining grocery money on whatever you actually crave.
@@ -148,7 +234,7 @@ Don't overhaul anything. Just let the top of the table cover the boring baseline
 * **Let frozen peas be your emergency vegetable.** Ninety seconds in the microwave, 17.6 grams per dollar, zero chopping.
 * **Buy berries because you love them.** Just don't buy them as a fiber strategy.
 
-If you want to turn the ranking into actual meals, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) handles the shopping routine. The follow-up study on [what 30 grams of fiber costs in a day](/what-30-grams-of-fiber-costs-per-day/) shows five ways to use the same dataset, from dry goods to drive-thru food. For the rest of the cart, our healthy eating on a budget shopping list pairs well with this table.
+If you want to turn the ranking into actual meals, the [complete guide to eating more fiber on a budget](/how-to-eat-more-fiber-on-a-budget-complete-guide/) handles the shopping routine. A [fiber-rich cabbage soup](/fiber-rich-soup-for-weight-loss-cabbage/) is the weeknight pot that spends the cheap end of this table. The follow-up study on [what 30 grams of fiber costs in a day](/what-30-grams-of-fiber-costs-per-day/) shows five ways to use the same dataset, from dry goods to drive-thru food. For the rest of the cart, our healthy eating on a budget shopping list pairs well with this table.
 
 One more thing this table turned out to be right about by accident. When we later ran [sodium across the same priced basket](/low-sodium-budget-foods-ranked/), the foods at the top here came back at 2 to 12 mg of sodium per 100 g. Whole wheat flour, the fiber winner, is the lowest-sodium grain in the study. Cheapest and least salty are the same shelf.
 

@@ -60,7 +60,7 @@ If dry beans feel like a commitment, they mostly aren't. [Cooking dried beans fr
 
 Almost all of them, once you scale the pot. Cooking four servings of pinto beans and brown rice priced out at $1.52 for the whole pot. Black bean tacos for four came to $2.00. A pot of lentil soup for four ran $2.02, and drumsticks with rice and frozen peas hit $3.76.
 
-That last one matters if your table wants meat. Bone-in drumsticks returned 50.3 grams of protein per dollar, double what boneless breast returns, which we broke down in [chicken thighs versus breast](/chicken-thighs-vs-breast-protein-cost/). The cheap cut isn't a compromise. It's just less photogenic. Canned beans are the softer spot, costing roughly 2.7 times more per gram of protein than the identical bean dry.
+That last one matters if your table wants meat. Bone-in drumsticks returned 50.3 grams of protein per dollar, double what boneless breast returns, which we broke down in [chicken thighs versus breast](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). The cheap cut isn't a compromise. It's just less photogenic. Canned beans are the softer spot, costing roughly 2.7 times more per gram of protein than the identical bean dry.
 
 ## Do cheap dinner ideas have to be beans every night?
 

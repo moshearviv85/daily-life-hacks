@@ -98,11 +98,11 @@ export interface ChainPage {
 }
 
 const P = {
-  mcdonalds: "/mcdonalds-protein-per-dollar/",
-  kfc: "/kfc-protein-per-dollar/",
-  tacoBell: "/taco-bell-protein-per-dollar/",
-  chipotle: "/chipotle-protein-per-dollar/",
-  wendys: "/wendys-protein-per-dollar/",
+  mcdonalds: "/fast-food-protein-per-dollar-ranked/#mcdonalds",
+  kfc: "/fast-food-protein-per-dollar-ranked/#kfc",
+  tacoBell: "/fast-food-protein-per-dollar-ranked/#taco-bell",
+  chipotle: "/fast-food-protein-per-dollar-ranked/#chipotle",
+  wendys: "/fast-food-protein-per-dollar-ranked/#wendys",
 } as const;
 
 export const CHAIN_PAGES: Record<string, ChainPage> = {

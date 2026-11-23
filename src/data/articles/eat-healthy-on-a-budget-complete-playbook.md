@@ -96,7 +96,7 @@ And compare the whole food budget, not one louder receipt. Your grocery bill can
 Three more moves that pay for themselves:
 
 * **Pick the right store.** If there's an Aldi near you, our [Aldi shopping hacks](/aldi-shopping-hacks-large-family-meals/) breakdown shows how far a cart stretches there, and if it's a Walmart, the Great Value dry goods are where the per-dollar winners hide.
-* **Buy frozen on purpose.** In our data, frozen green peas delivered nearly three times the fiber per dollar of fresh broccoli. [Frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/) covers when each one wins, and [the frozen versus fresh fiber-per-dollar breakdown](/frozen-vs-fresh-vegetables-fiber-cost/) shows how wide the gap gets.
+* **Buy frozen on purpose.** In our data, frozen green peas delivered nearly three times the fiber per dollar of fresh broccoli. [Frozen vs fresh produce](/frozen-vs-fresh-produce-when-to-buy/) covers when each one wins, and [the frozen versus fresh fiber-per-dollar breakdown](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) shows how wide the gap gets.
 * **Read the label, not the front of the box.** The front is marketing. The back is math. How to read nutrition labels takes five minutes to learn and saves you from paying premium prices for oats with a mascot.
 
 ## How do you cook cheap staples so they get eaten?
@@ -161,7 +161,7 @@ Here's roughly how I'd sketch a week for two adults on $60, using the same price
 | Oats, rice, and whole wheat spaghetti | ~$6.00 | Every breakfast and dinner base for the week |
 | **Total** | **~$28** | The backbone of the whole week |
 
-The remaining $32 buys produce and flexibility: bananas, cabbage, carrots, onions, a couple bags of frozen vegetables, canned tomatoes, peanut butter, bread, and a block of cheese. Peanut butter earns that slot on the numbers, and [peanut butter against almonds on protein cost](/peanut-butter-vs-almonds-protein-cost/) explains why the fancier nut doesn't make the list.
+The remaining $32 buys produce and flexibility: bananas, cabbage, carrots, onions, a couple bags of frozen vegetables, canned tomatoes, peanut butter, bread, and a block of cheese. Peanut butter earns that slot on the numbers, and [peanut butter against almonds on protein cost](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) explains why the fancier nut doesn't make the list.
 
 The day-to-day looks something like this:
 

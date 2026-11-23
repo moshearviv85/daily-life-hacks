@@ -61,7 +61,7 @@ The nutrition side of the same swap, including what the canning liquid does to t
 
 On money, obviously yes. The 123 grams of dry black beans that match a can cost about 33 cents against 88 cents for the can. That's roughly 2.7 times the price to skip a soak and a simmer.
 
-Across the whole dataset the gap is wider. Dry pinto beans return [97.9 grams of protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and canned black beans return 30.1. Those same bags also sit near the top of the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), which is why a 90-gram portion is doing two jobs. We ran the full comparison across ten beans in [canned vs dry beans](/canned-vs-dry-beans-cost/), and the answer holds in every direction.
+Across the whole dataset the gap is wider. Dry pinto beans return [97.9 grams of protein per dollar](/protein-per-dollar-cheapest-protein-sources/) and canned black beans return 30.1. Those same bags also sit near the top of the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), which is why a 90-gram portion is doing two jobs. We ran the full comparison across ten beans in [canned vs dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving), and the answer holds in every direction.
 
 On time, it depends on the week. A can opens in four seconds and a bag of dry beans wants a soak and an hour. What makes dry beans workable is cooking a big batch once, which is the whole point of [cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/), and there's a same-day route in [the quick soak method](/how-to-quick-soak-dried-beans-same-day/) for the nights you forgot.
 
@@ -71,6 +71,6 @@ A four pound bag of pinto beans is 1814 grams for $3.97, so about 20 portions at
 
 Twenty cents a portion is the number to keep. Nothing else in the store does that. Chicken breast at 24.5 grams of protein per dollar would need about 79 cents to deliver the same 19.3 grams, and ground beef 80/20 would need about $1.68.
 
-Where beans sit against everything else on the shelf is in [the cheapest plant protein ranking](/plant-protein-per-dollar-ranked/), and which bag carries the most protein per gram is in [which dried beans have the most protein](/which-dried-beans-have-the-most-protein/). Once they're cooked, they turn into three-bean chili or [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) without much negotiation.
+Where beans sit against everything else on the shelf is in [the cheapest plant protein ranking](/protein-per-dollar-cheapest-protein-sources/#plant), and which bag carries the most protein per gram is in [which dried beans have the most protein](/which-dried-beans-have-the-most-protein/). Once they're cooked, they turn into three-bean chili or [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) without much negotiation.
 
 <!-- numbers-source: public/data/protein-per-dollar-2026.csv, public/data/fiber-per-dollar-2026.csv, public/data/protein-day-cost-2026.csv -->

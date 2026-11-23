@@ -87,7 +87,7 @@ Acid and crunch. Both are cheap, and their absence is the reason budget food get
 
 Cabbage is $0.26 for a generous portion and stays crisp for weeks. Carrots are $0.17 for 100 grams. A squeeze of citrus, a splash of vinegar, raw onion, hot sauce, toasted seeds. None of that shows up meaningfully on a receipt, and all of it changes the plate. There's a whole toolkit for this in [big flavor with less salt](/big-flavor-less-salt-citrus-herbs-umami-swaps/).
 
-Frozen vegetables handle the days you didn't shop. Frozen green peas returned 17.6 grams of fiber per dollar, better than every fresh fruit we priced, and we ran the whole comparison in [frozen versus fresh vegetables](/frozen-vs-fresh-vegetables-fiber-cost/). Fresh produce that rots in the drawer costs full price and delivers nothing.
+Frozen vegetables handle the days you didn't shop. Frozen green peas returned 17.6 grams of fiber per dollar, better than every fresh fruit we priced, and we ran the whole comparison in [frozen versus fresh vegetables](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar). Fresh produce that rots in the drawer costs full price and delivers nothing.
 
 ## What the plate rule doesn't cover
 

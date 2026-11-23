@@ -92,13 +92,13 @@ Three ounces of cooked yellowfin tuna delivers 92 mcg, about a day and two third
 
 Canned tuna is the practical pick. Cheap, shelf-stable, and lunch in about four minutes if you've got bread, crackers, or a sad bag of greens that needs a purpose.
 
-Eggs are the breakfast shortcut. One large hard-boiled egg is 15 mcg, so two eggs plus a slice of whole wheat bread (8 mcg) puts you around 38 mcg, roughly 70 percent of the day before 8 AM. Eggs pull the same weight on the grocery bill, which is what [the eggs against Greek yogurt comparison on protein per dollar](/eggs-vs-greek-yogurt-protein-cost/) is really measuring.
+Eggs are the breakfast shortcut. One large hard-boiled egg is 15 mcg, so two eggs plus a slice of whole wheat bread (8 mcg) puts you around 38 mcg, roughly 70 percent of the day before 8 AM. Eggs pull the same weight on the grocery bill, which is what [the eggs against Greek yogurt comparison on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) is really measuring.
 
 ## Do meat, dairy, and grains count?
 
 More than most lists admit. NIH says the major food sources of selenium in American diets are breads, grains, meat, poultry, seafood, and eggs. Not Brazil nuts. Bread and chicken.
 
-A cup of cooked spaghetti carries 33 mcg, which beats an egg and beats 3 ounces of roasted chicken. Turkey brings 26 mcg per 3 ounces, a broiled pork chop 37, a bottom round steak 37. Thighs are usually the better buy at the counter anyway, and [the price gap between thighs and breast per gram of protein](/chicken-thighs-vs-breast-protein-cost/) is wider than most people assume.
+A cup of cooked spaghetti carries 33 mcg, which beats an egg and beats 3 ounces of roasted chicken. Turkey brings 26 mcg per 3 ounces, a broiled pork chop 37, a bottom round steak 37. Thighs are usually the better buy at the counter anyway, and [the price gap between thighs and breast per gram of protein](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g) is wider than most people assume.
 
 Dairy pitches in quietly: a cup of 1% cottage cheese is 20 mcg, plain low fat yogurt 8, 1% milk 6.
 

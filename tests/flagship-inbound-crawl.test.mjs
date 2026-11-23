@@ -18,16 +18,12 @@ const requiredLinks = [
   ["beans-and-rice-complete-protein-meal", proteinFlagship],
   ["beans-and-rice-complete-protein-meal", fiberFlagship],
   ["high-protein-on-a-budget-complete-guide", fiberFlagship],
-  ["lentils-vs-chicken-breast-protein-cost", fiberFlagship],
-  ["canned-vs-dry-beans-cost", fiberFlagship],
   ["can-you-eat-rice-and-beans-everyday", proteinFlagship],
   ["can-you-eat-rice-and-beans-everyday", fiberFlagship],
   ["high-protein-vs-high-fiber-satiety", proteinFlagship],
   ["high-protein-vs-high-fiber-satiety", fiberFlagship],
   ["vegan-high-fiber-meal-prep-for-week", fiberFlagship],
   ["high-fiber-burrito-bowl-meal-prep", fiberFlagship],
-  ["plant-protein-per-dollar-ranked", proteinFlagship],
-  ["plant-protein-per-dollar-ranked", fiberFlagship],
   ["cheapest-complete-protein-pairs", proteinFlagship],
   ["cheapest-complete-protein-pairs", fiberFlagship],
   ["cottage-cheese-vs-greek-yogurt-protein-uses", proteinFlagship],
@@ -40,10 +36,6 @@ const requiredLinks = [
   ["how-to-cook-dried-beans-from-scratch", fiberFlagship],
   ["high-fiber-quinoa-salad-for-lunch-prep", fiberFlagship],
   ["high-protein-bagel-sandwich-ideas-lunch", proteinFlagship],
-  ["one-dollar-fiber-what-it-buys", proteinFlagship],
-  ["one-dollar-fiber-what-it-buys", fiberFlagship],
-  ["high-fiber-snacks-per-dollar", proteinFlagship],
-  ["high-fiber-snacks-per-dollar", fiberFlagship],
   ["how-to-eat-cheap-at-home", proteinFlagship],
   ["how-to-eat-cheap-at-home", fiberFlagship],
   ["do-you-have-to-cook-canned-beans", proteinFlagship],
@@ -54,10 +46,6 @@ const requiredLinks = [
   ["hearty-vegetarian-chili-with-three-beans-and-corn", fiberFlagship],
   ["high-fiber-hummus-recipe-homemade", proteinFlagship],
   ["high-fiber-hummus-recipe-homemade", fiberFlagship],
-  ["protein-per-dollar-cheapest-protein-sources", "cheapest-protein-per-gram"],
-  ["chicken-thighs-vs-breast-protein-cost", "cheapest-protein-per-gram"],
-  ["one-dollar-protein-what-it-buys", proteinFlagship],
-  ["one-dollar-protein-what-it-buys", "one-dollar-fiber-what-it-buys"],
   ["how-much-dried-beans-per-person", proteinFlagship],
   ["how-much-dried-beans-per-person", fiberFlagship],
   ["how-much-oatmeal-is-a-serving", proteinFlagship],
@@ -77,8 +65,6 @@ const requiredLinks = [
   ["foods-highest-in-protein-per-100-grams", fiberFlagship],
   ["protein-per-serving-beans-chicken-tofu-compared", fiberFlagship],
   ["fast-food-protein-per-dollar-ranked", fiberFlagship],
-  ["chicken-thighs-vs-breast-protein-cost", fiberFlagship],
-  ["tofu-vs-chicken-protein-cost", fiberFlagship],
   ["canned-beans-vs-dried-beans-nutrition", fiberFlagship],
   ["canned-beans-vs-dried-beans-nutrition", proteinFlagship],
   ["how-to-keep-sandwiches-from-getting-soggy", fiberFlagship],
@@ -322,10 +308,10 @@ test("leftover tool pages cite each flagship once in the page source", () => {
   }
 });
 
-test("KEEP grocery protein-per-gram ranking cites the fiber flagship once", () => {
-  const source = pageSource("cheapest-protein-per-gram.astro");
-  assert.equal(htmlHrefMatches(source, fiberFlagship).length, 1);
-  assert.equal(htmlHrefMatches(source, proteinFlagship).length, 1);
+test("protein flagship keeps the per-gram section that replaced the standalone ranking", () => {
+  const source = articleBody(proteinFlagship);
+  assert.match(source, /id="per-gram"/);
+  assert.equal(source.includes("cheapest-protein-per-gram"), false);
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 
@@ -335,7 +321,11 @@ test("guides hub cites both flagships above the fold, plus dataset landings", ()
   assert.ok(headerEnd > 0, "guides hub should keep the cluster list");
   const intro = source.slice(0, headerEnd);
   assert.equal(htmlHrefMatches(intro, fiberFlagship).length, 1);
-  assert.equal(htmlHrefMatches(intro, "cheapest-protein-per-gram").length, 1);
+  assert.equal(
+    (intro.match(/href="\/protein-per-dollar-cheapest-protein-sources\/#per-gram"/g) ?? [])
+      .length,
+    1,
+  );
   assert.equal(htmlHrefMatches(intro, proteinFlagship).length, 0);
   assert.equal(
     (intro.match(/href="\/data\/fiber-per-dollar-2026\/"/g) ?? []).length,
@@ -348,67 +338,51 @@ test("guides hub cites both flagships above the fold, plus dataset landings", ()
   assert.equal(intro.includes("HUGGINGFACE_DATASET_URL"), true);
   assert.equal(source.includes('../../content/datasets'), true);
   assert.equal(htmlHrefMatches(intro, "one-dollar-fiber-what-it-buys").length, 0);
-  assert.equal(htmlHrefMatches(source, "one-dollar-fiber-what-it-buys").length, 1);
-  assert.equal(htmlHrefMatches(source, "cheapest-protein-per-gram").length, 1);
+  assert.equal(
+    (source.match(/href="\/fiber-per-dollar-cheapest-high-fiber-foods\/#what-1-buys"/g) ?? [])
+      .length,
+    1,
+  );
+  assert.equal(htmlHrefMatches(source, "cheapest-protein-per-gram").length, 0);
   assert.equal(source.includes(retiredProteinSlug), false);
   assert.match(source, /isGuideHubSpoke\(article\.id\)/);
   assert.doesNotMatch(source, /\.slice\(0,\s*8\)/);
 });
 
-const keepChainPages = [
-  "chipotle-protein-per-dollar",
-  "kfc-protein-per-dollar",
-  "mcdonalds-protein-per-dollar",
-  "taco-bell-protein-per-dollar",
-  "wendys-protein-per-dollar",
-];
+const chainAnchors = ["chipotle", "kfc", "mcdonalds", "taco-bell", "wendys"];
 
-test("research and statistics hubs link each KEEP chain page once", () => {
-  for (const slug of keepChainPages) {
-    assert.equal(INDEX_KEEP_PATHS.has(slug), true, slug);
-    assert.equal(INDEX_PRUNE_SLUGS.has(slug), false, slug);
-  }
-
+test("research and statistics hubs link each chain section on the fast-food study once", () => {
   for (const segments of [
     ["research", "index.astro"],
     ["statistics", "index.astro"],
   ]) {
     const source = pageSource(...segments);
-    for (const slug of keepChainPages) {
+    for (const anchor of chainAnchors) {
       assert.equal(
-        htmlHrefMatches(source, slug).length,
+        (source.match(new RegExp(`href="/fast-food-protein-per-dollar-ranked/#${anchor}"`, "g")) ?? [])
+          .length,
         1,
-        `${segments.join("/")} should link /${slug}/ once`,
+        `${segments.join("/")} should link #${anchor} once`,
       );
     }
   }
 });
 
-test("homepage lead links each KEEP chain page and the plant-protein guide once", () => {
+test("homepage lead links each chain section and the plant-protein guide once", () => {
   const source = pageSource("index.astro");
   const mainStart = source.indexOf("<main");
   const hero = source.indexOf("<HeroSection");
   assert.ok(mainStart !== -1 && hero > mainStart, "homepage lead should sit above HeroSection");
   const lead = source.slice(mainStart, hero);
-  const homepageKeepLinks = [
-    ...keepChainPages,
-    "plant-based-protein-sources-complete-guide",
-  ];
-
-  for (const slug of homepageKeepLinks) {
-    assert.equal(INDEX_KEEP_PATHS.has(slug), true, slug);
-    assert.equal(INDEX_PRUNE_SLUGS.has(slug), false, slug);
-    assert.equal(
-      htmlHrefMatches(lead, slug).length,
-      1,
-      `homepage lead should link /${slug}/ once`,
-    );
-    assert.equal(
-      htmlHrefMatches(source, slug).length,
-      1,
-      `homepage should link /${slug}/ once`,
-    );
+  for (const anchor of chainAnchors) {
+    const pattern = new RegExp(`href="/fast-food-protein-per-dollar-ranked/#${anchor}"`, "g");
+    assert.equal((lead.match(pattern) ?? []).length, 1, `homepage lead #${anchor}`);
+    assert.equal((source.match(pattern) ?? []).length, 1, `homepage #${anchor}`);
   }
+  const plant = "plant-based-protein-sources-complete-guide";
+  assert.equal(INDEX_KEEP_PATHS.has(plant), true);
+  assert.equal(htmlHrefMatches(lead, plant).length, 1);
+  assert.equal(htmlHrefMatches(source, plant).length, 1);
 });
 
 test("guides hub spokes stay on KEEP paths and skip pruned slugs", () => {
@@ -420,6 +394,13 @@ test("guides hub spokes stay on KEEP paths and skip pruned slugs", () => {
     "plant-based-protein-sources-complete-guide",
     "protein-per-dollar-cheapest-protein-sources",
     "fiber-per-dollar-cheapest-high-fiber-foods",
+    "usda-thrifty-food-plan-weekly-cost",
+  ];
+  for (const slug of requiredSpokes) {
+    assert.equal(INDEX_KEEP_PATHS.has(slug), true, slug);
+    assert.equal(isGuideHubSpoke(slug), true, slug);
+  }
+  for (const slug of [
     "one-dollar-protein-what-it-buys",
     "produce-fiber-per-dollar-ranked",
     "popcorn-vs-almonds-fiber-cost",
@@ -428,11 +409,8 @@ test("guides hub spokes stay on KEEP paths and skip pruned slugs", () => {
     "high-fiber-snacks-per-dollar",
     "tofu-vs-chicken-protein-cost",
     "shelf-stable-pantry-per-dollar",
-    "usda-thrifty-food-plan-weekly-cost",
-  ];
-  for (const slug of requiredSpokes) {
-    assert.equal(INDEX_KEEP_PATHS.has(slug), true, slug);
-    assert.equal(isGuideHubSpoke(slug), true, slug);
+  ]) {
+    assert.equal(isGuideHubSpoke(slug), false, slug);
   }
 
   assert.equal(isGuideHubSpoke("how-much-protein-in-lentils"), false);
@@ -546,26 +524,13 @@ test("data reuse page cites both flagship studies once", () => {
   assert.equal(source.includes(retiredProteinSlug), false);
 });
 
-test("KEEP chain protein pages inherit one grocery flagship href from ChainLimits", () => {
+test("ChainLimits still cites the protein flagship once for the shared fast-food library", () => {
   const limits = pageSource("_lib", "ChainLimits.astro");
   assert.equal(htmlHrefMatches(limits, proteinFlagship).length, 1);
   assert.equal(htmlHrefMatches(limits, fiberFlagship).length, 0);
   assert.equal(limits.includes(retiredProteinSlug), false);
-
-  const chainPages = [
-    ["chipotle-protein-per-dollar.astro"],
-    ["kfc-protein-per-dollar.astro"],
-    ["mcdonalds-protein-per-dollar.astro"],
-    ["taco-bell-protein-per-dollar.astro"],
-    ["wendys-protein-per-dollar.astro"],
-  ];
-  for (const segments of chainPages) {
-    const source = pageSource(...segments);
-    assert.equal(
-      htmlHrefMatches(source, proteinFlagship).length,
-      0,
-      `${segments[0]} should inherit the grocery flagship href from ChainLimits, not duplicate it`,
-    );
-    assert.equal(source.includes(retiredProteinSlug), false);
+  const fastFood = articleBody("fast-food-protein-per-dollar-ranked");
+  for (const anchor of chainAnchors) {
+    assert.match(fastFood, new RegExp(`id="${anchor}"`));
   }
 });

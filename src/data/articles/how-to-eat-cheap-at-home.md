@@ -60,7 +60,7 @@ The reason the range is so wide isn't portion size, it's the anchor. Ground beef
 
 The unglamorous corner of the store. Dry goods, canned goods, frozen vegetables, eggs. That's the list, and it's short on purpose.
 
-Whole wheat flour is the sleeper on that table at $0.08 a portion. It's also the top food in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), at 77.8 grams per dollar, which is a strange thing to say about flour until you remember it's just ground wheat. We ranked the full pantry in [cheap shelf stable protein](/shelf-stable-pantry-per-dollar/), and dry legumes take the first seven places.
+Whole wheat flour is the sleeper on that table at $0.08 a portion. It's also the top food in the [fiber per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/), at 77.8 grams per dollar, which is a strange thing to say about flour until you remember it's just ground wheat. We ranked the full pantry in [cheap shelf stable protein](/protein-per-dollar-cheapest-protein-sources/#shelf-stable), and dry legumes take the first seven places.
 
 Stock two anchors, two grains, one nut butter, and a bag of frozen vegetables. That's a kitchen that can make food on a Tuesday without a plan, using the three slot plate rule. If you want the version with a real shopping list attached, grocery shopping list for healthy eating on a budget lays it out.
 
@@ -70,7 +70,7 @@ Cook bigger, and vary the seasoning instead of the ingredients. One pot of beans
 
 A 16 ounce bag of split peas is $1.42 and makes about five servings. A four pound bag of pintos makes roughly twenty. So the practical rhythm isn't cooking every night, it's cooking twice and assembling the rest of the week. Cumin and lime one night, smoked paprika and vinegar the next, curry powder and yogurt after that. Pricing that week before you shop takes about six minutes, and how to meal plan on a budget shows the three column version.
 
-Dry beans do take time, though almost none of it is your time. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is four minutes of work and a couple of hours of ignoring a pot. Keep a few cans around for the nights when the plan falls apart. They cost about 2.7 times more per gram of protein than the same bean dry, which we measured in [canned versus dry beans](/canned-vs-dry-beans-cost/), and at $0.88 that's a fine price for a rescue.
+Dry beans do take time, though almost none of it is your time. [Cooking dried beans from scratch](/how-to-cook-dried-beans-from-scratch/) is four minutes of work and a couple of hours of ignoring a pot. Keep a few cans around for the nights when the plan falls apart. They cost about 2.7 times more per gram of protein than the same bean dry, which we measured in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving), and at $0.88 that's a fine price for a rescue.
 
 ## Is eating at home always cheaper than eating out?
 

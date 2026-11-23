@@ -70,7 +70,7 @@ Seventeen cents for the oats. Thirty-one cents with peanut butter. Forty-three c
 
 Compare that to the same bowl bought as a flavoured instant packet or across a counter, and the canister starts to look like one of the better arguments in the grocery store. Our dataset doesn't price instant packets, so I'm not going to put a number on the markup, but you can read the shelf tags yourself and the direction is not subtle.
 
-The rest of the pantry ranked the same way, from oats down to almonds, is in [the cheapest shelf-stable protein](/shelf-stable-pantry-per-dollar/).
+The rest of the pantry ranked the same way, from oats down to almonds, is in [the cheapest shelf-stable protein](/protein-per-dollar-cheapest-protein-sources/#shelf-stable).
 
 ## Is a daily bowl of oats a reasonable habit?
 

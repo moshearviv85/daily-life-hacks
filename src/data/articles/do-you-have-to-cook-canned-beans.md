@@ -44,7 +44,7 @@ Those canned rows are the convenience slice of the [protein per dollar ranking](
 
 Yes, and the reason is the whole point of a can. Low acid foods like beans are sealed and then heat processed under [the FDA's thermal processing rule for hermetically sealed containers](https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-113). That heat step is what lets a can sit in a cupboard for years without a refrigerator anywhere near it.
 
-So when you open a can, you are opening a cooked bean sitting in the water it cooked in. That is also the honest reason a can costs more per gram than a bag. Dry black beans returned 81.0 grams of protein per dollar in our July 2026 pricing. The canned version returned 30.1. You are paying somebody else to do the soaking and then paying to ship the cooking water home. The full spread across every bean we checked both ways is in [canned versus dry beans](/canned-vs-dry-beans-cost/).
+So when you open a can, you are opening a cooked bean sitting in the water it cooked in. That is also the honest reason a can costs more per gram than a bag. Dry black beans returned 81.0 grams of protein per dollar in our July 2026 pricing. The canned version returned 30.1. You are paying somebody else to do the soaking and then paying to ship the cooking water home. The full spread across every bean we checked both ways is in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving).
 
 ## How long should you cook canned beans?
 
@@ -56,7 +56,7 @@ The one time I'd argue for real heat is when you want texture. Beans crisped in 
 
 ## Can you eat canned beans straight from the can?
 
-Yes, and honestly this is one of the more useful facts in a grocery store. In our [no-cook protein ranking](/no-cook-protein-per-dollar/), an 88 cent can of black beans is the cheapest package on the list, and it returns 30.1 grams of protein per dollar. Twenty-six grams of protein, about 53 percent of the FDA's 50 gram Daily Value, with no stove involved.
+Yes, and honestly this is one of the more useful facts in a grocery store. In our [no-cook protein ranking](/protein-per-dollar-cheapest-protein-sources/#no-cook), an 88 cent can of black beans is the cheapest package on the list, and it returns 30.1 grams of protein per dollar. Twenty-six grams of protein, about 53 percent of the FDA's 50 gram Daily Value, with no stove involved.
 
 The fiber number is the one that surprises people. That same can holds roughly 30.3 grams of fiber, past the whole 28 gram Daily Value, which is more than most people get in a day from anything. If you're not used to that, one full can in a sitting can be uncomfortable. Ramp up slowly, and read [how to increase fiber intake without gas](/how-to-increase-fiber-intake-without-gas/) before you commit to a can a day.
 

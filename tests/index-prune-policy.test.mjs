@@ -21,7 +21,7 @@ function read(relative) {
 test("prune set is 105 unique article slugs and never overlaps KEEP or protected URLs", () => {
   assert.equal(INDEX_PRUNE_SLUGS.size, 105);
   assert.equal(isIndexPruned("can-you-refreeze-frozen-vegetables-after-thawing"), false);
-  assert.equal(INDEX_KEEP_PATHS.size, 51);
+  assert.equal(INDEX_KEEP_PATHS.size, 25);
   assert.equal(isIndexPruned("cheap-dinner-ideas-cost-per-serving"), true);
   assert.equal(isIndexPruned("fiber-per-dollar-cheapest-high-fiber-foods"), false);
   assert.equal(isIndexPruned("popcorn-vs-potato-chips-fiber-comparison"), false);

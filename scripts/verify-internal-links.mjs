@@ -81,6 +81,30 @@ function decodeXml(value) {
     .replaceAll("&apos;", "'");
 }
 
+function redirectSources() {
+  const redirectsPath = path.join(ROOT, "public", "_redirects");
+  if (!fs.existsSync(redirectsPath)) return [];
+  const rules = [];
+  for (const rawLine of fs.readFileSync(redirectsPath, "utf8").split(/\n/)) {
+    const line = rawLine.trim();
+    if (!line || line.startsWith("#")) continue;
+    const parts = line.split(/\s+/);
+    if (parts.length < 3 || parts[parts.length - 1] !== "301") continue;
+    rules.push(parts[0]);
+  }
+  return rules;
+}
+
+function pathnameMatchesRedirect(pathname, source) {
+  if (source.includes("*")) {
+    const prefix = source.slice(0, source.indexOf("*"));
+    return pathname.startsWith(prefix);
+  }
+  const normalized = source.endsWith("/") ? source : `${source}/`;
+  const bare = normalized.replace(/\/+$/, "") || "/";
+  return pathname === normalized || pathname === bare || pathname === source;
+}
+
 function sitemapPathnames() {
   const xmlPath = path.join(DIST_DIR, "sitemap-0.xml");
   if (!fs.existsSync(xmlPath)) {
@@ -242,8 +266,44 @@ function main() {
     process.exit(1);
   }
 
+  const redirectRules = redirectSources();
+  const redirectLinkFailures = [];
+  for (const { filePath, html, canonicalPath } of documents) {
+    const source = path.relative(DIST_DIR, filePath).replaceAll("\\", "/");
+    const sourceUrl = new URL(canonicalPath || "/", SITE_ORIGIN);
+    for (const match of html.matchAll(/(?:href|url)\s*[=:]\s*(["'])([^"']+)\1/gi)) {
+      const href = match[2].trim();
+      if (!href || href.startsWith("#")) continue;
+      if (/^(?:mailto|tel|javascript|data):/i.test(href)) continue;
+      let target;
+      try {
+        target = new URL(href, sourceUrl);
+      } catch {
+        continue;
+      }
+      if (target.origin !== SITE_ORIGIN) continue;
+      const rule = redirectRules.find((sourcePath) =>
+        pathnameMatchesRedirect(target.pathname, sourcePath),
+      );
+      if (!rule) continue;
+      redirectLinkFailures.push({ source, href, rule });
+    }
+  }
+  if (redirectLinkFailures.length) {
+    console.error(
+      `[verify-internal-links] Found ${redirectLinkFailures.length} link(s) to a 301 source in public/_redirects:`,
+    );
+    for (const failure of redirectLinkFailures.slice(0, 50)) {
+      console.error(`- ${failure.source}: href="${failure.href}" (redirect ${failure.rule})`);
+    }
+    if (redirectLinkFailures.length > 50) {
+      console.error(`- ...and ${redirectLinkFailures.length - 50} more`);
+    }
+    process.exit(1);
+  }
+
   console.log(
-    `[verify-internal-links] OK: checked ${internalAnchorsChecked} internal anchor(s) across ${htmlFiles.length} HTML file(s); indexable canonical targets=${indexableCanonicalPaths.size}; sitemap pages with no pruned-slug links=${sitemapPaths.size}`,
+    `[verify-internal-links] OK: checked ${internalAnchorsChecked} internal anchor(s) across ${htmlFiles.length} HTML file(s); indexable canonical targets=${indexableCanonicalPaths.size}; sitemap pages with no pruned-slug links=${sitemapPaths.size}; 301 sources with no inbound links=${redirectRules.length}`,
   );
   console.log(
     `[verify-internal-links] Article graph: ${articleGraph.articleCount} indexable article(s); rendered orphans=0; rendered inbound <=1=${weakRendered.length}; contextual inbound=0=${zeroContextual.length}`,

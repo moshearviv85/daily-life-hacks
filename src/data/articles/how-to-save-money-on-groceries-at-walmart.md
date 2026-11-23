@@ -57,7 +57,7 @@ The practical move is boring and it works: pick two or three anchors from the to
 
 We logged $0.88 for a 15.5 ounce can of Great Value black beans, and $0.98 each for kidney beans and chickpeas. That's genuinely cheap food. It's also the single clearest example of the convenience tax in the whole store.
 
-Dry black beans returned 81.0 grams of protein per dollar. Canned black beans returned 30.1. Same bean, about 2.7 times the price per gram, because you're paying somebody to soak them, cook them, and ship the water. We broke the whole comparison out in [canned versus dry beans](/canned-vs-dry-beans-cost/).
+Dry black beans returned 81.0 grams of protein per dollar. Canned black beans returned 30.1. Same bean, about 2.7 times the price per gram, because you're paying somebody to soak them, cook them, and ship the water. We broke the whole comparison out in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving).
 
 That doesn't mean cans are a mistake. At under a dollar, a can of black beans is still one of the cheapest things in the store, and it turns into [black bean tacos](/easy-black-bean-tacos-weeknight-dinner/) or corn salsa with no cooking at all. Keep a few for the nights when the plan collapses. Just don't let the cans become the default.
 
@@ -69,7 +69,7 @@ None of that makes those foods bad. It makes them garnish rather than foundation
 
 ## How do you save money on groceries but still eat healthy?
 
-Let the freezer case do the heavy lifting. Great Value frozen green peas ran $2.32 for a 32 ounce bag, which works out to 20.4 grams of protein and 17.6 grams of fiber per dollar. That beat every fresh fruit we priced on fiber per dollar, and it doesn't rot in the crisper drawer while you feel guilty about it. We ran the fresh comparison in [frozen versus fresh vegetables](/frozen-vs-fresh-vegetables-fiber-cost/), and the full produce list sits in [the cheapest high-fiber vegetables and fruits](/produce-fiber-per-dollar-ranked/).
+Let the freezer case do the heavy lifting. Great Value frozen green peas ran $2.32 for a 32 ounce bag, which works out to 20.4 grams of protein and 17.6 grams of fiber per dollar. That beat every fresh fruit we priced on fiber per dollar, and it doesn't rot in the crisper drawer while you feel guilty about it. We ran the fresh comparison in [frozen versus fresh vegetables](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar), and the full produce list sits in [the cheapest high-fiber vegetables and fruits](/fiber-per-dollar-cheapest-high-fiber-foods/#produce).
 
 Then spend your fresh-produce money on purpose instead of on hope. Buy the two or three things you'll genuinely eat this week, give each of them at least two planned meals, and let frozen cover the rest. Fiber that stays in the bag doesn't count.
 

@@ -66,19 +66,19 @@ Source: USDA FoodData Central + single-store prices, July 2026. Full methodology
 
 Dry beans and lentils run 20 to 25 grams of protein per 100 grams before you cook them, which puts them level with almonds and ahead of tempeh. Dry brown lentils lead at 24.6 grams per 100 grams. Canned black beans read lower at 6.0 grams per 100 grams only because roughly two thirds of the can is water.
 
-Lentils are the easy on-ramp because they don't need soaking. Throw them into soups, use them as a base for tacos, mix them into grain bowls, or stir them into pasta sauce. Canned beans are perfectly fine and save a ton of time; give them a quick rinse to cut the sodium. Cooking from dry on a Sunday will carry you most of the week, and the price gap is real: a $0.88 can of black beans buys 30.1 grams of protein per dollar, while the dry bag buys 58.0. We priced that gap bean by bean in [canned versus dry beans](/canned-vs-dry-beans-cost/). Beans also carry serious fiber, which may help keep you full longer.
+Lentils are the easy on-ramp because they don't need soaking. Throw them into soups, use them as a base for tacos, mix them into grain bowls, or stir them into pasta sauce. Canned beans are perfectly fine and save a ton of time; give them a quick rinse to cut the sodium. Cooking from dry on a Sunday will carry you most of the week, and the price gap is real: a $0.88 can of black beans buys 30.1 grams of protein per dollar, while the dry bag buys 58.0. We priced that gap bean by bean in [canned versus dry beans](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving). Beans also carry serious fiber, which may help keep you full longer.
 
 ## Do tofu and tempeh have more protein than beans?
 
 Tempeh roughly ties dry beans at 20.3 grams of protein per 100 grams. Tofu does not come close, at 10.0 grams per 100 grams, less than half of dry lentils. Per dollar the gap is wider still: tofu delivers 13.6 grams per dollar and tempeh 13.2, against 77.7 for dry brown lentils and 57.6 for dry pinto beans.
 
-None of that makes them bad food. Extra-firm tofu holds up to frying, baking and stir-fries in a way a bean never will, and tempeh has a firmer bite and a nuttier taste. Both are flavor sponges that taste like whatever you cook them in, so try two or three preparations before you decide. Just buy them because you want to eat them, not because you think they're the protein bargain of the aisle. We ran the head-to-head in [tofu vs chicken](/tofu-vs-chicken-protein-cost/).
+None of that makes them bad food. Extra-firm tofu holds up to frying, baking and stir-fries in a way a bean never will, and tempeh has a firmer bite and a nuttier taste. Both are flavor sponges that taste like whatever you cook them in, so try two or three preparations before you decide. Just buy them because you want to eat them, not because you think they're the protein bargain of the aisle. We ran the head-to-head in [tofu vs chicken](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g).
 
 ## Are nuts and seeds a good source of plant protein?
 
 By weight, yes. Dry roasted peanuts carry 24.4 grams of protein per 100 grams and almonds 21.2, both ahead of dry pinto beans. By price they split hard: peanuts deliver 39.8 grams of protein per dollar and peanut butter 50.7, while almonds manage only 14.8. Sunflower seed kernels land in between at 31.7.
 
-So peanuts are the value pick and almonds are the splurge. We put the two side by side in [peanut butter vs almonds](/peanut-butter-vs-almonds-protein-cost/). Nuts and seeds are also easy to use badly, since they're calorie-dense enough that a handful while you cook turns into a meal you didn't notice eating. Stir them into oatmeal, scatter them on salads, blend them into sauces.
+So peanuts are the value pick and almonds are the splurge. We put the two side by side in [peanut butter vs almonds](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). Nuts and seeds are also easy to use badly, since they're calorie-dense enough that a handful while you cook turns into a meal you didn't notice eating. Stir them into oatmeal, scatter them on salads, blend them into sauces.
 
 ## Which whole grains actually add protein?
 

@@ -122,7 +122,7 @@ Nobody eats like Day 1 forever, and nobody should eat like Day 4 forever unless 
 | Drink | Whole milk, 1 cup (244g) | 7.7 g | $0.26 |
 | **Total** | | **51.7 g** | **$1.51** |
 
-A buck fifty. That's a recognizable day of food, no split-pea heroics required, and the beans, bread, and peanut butter bring more than one nutrient to the table. Swapping that half can for dry beans would shave the total further, since [dry black beans return 58.0 grams of protein per dollar against 30.1 for the can](/canned-vs-dry-beans-cost/), about 1.9 times the protein for the money, but then you're back to planning ahead by an evening.
+A buck fifty. That's a recognizable day of food, no split-pea heroics required, and the beans, bread, and peanut butter bring more than one nutrient to the table. Swapping that half can for dry beans would shave the total further, since [dry black beans return 58.0 grams of protein per dollar against 30.1 for the can](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving), about 1.9 times the protein for the money, but then you're back to planning ahead by an evening.
 
 ## What the five days actually say
 
@@ -134,9 +134,9 @@ A buck fifty. That's a recognizable day of food, no split-pea heroics required, 
 
 **The year math is where it gets loud.** At 365 days, the five plans cost about $299, $552, $749, $1,011, and $3,639 in protein-carrying foods. The gap between getting your 50 grams from a daily fast-food run and getting them from a mixed grocery cart is about $3,000 a year, which is a decent used appliance, a flight somewhere good, or a whole lot of pinto beans.
 
-The five days are broad scenarios, so we also pulled apart the aisles behind them. The [animal protein ranking](/animal-protein-per-dollar-ranked/) and [meat counter ranking](/meat-per-dollar-protein-ranked/) explain why the cheapest cut isn't always the one printed on a fitness meal plan. The [dairy protein table](/dairy-protein-per-dollar-ranked/) does the same for milk, yogurt, and cottage cheese, while the [plant protein ranking](/plant-protein-per-dollar-ranked/) keeps beans, tofu, and lentils in their own fair comparison.
+The five days are broad scenarios, so we also pulled apart the aisles behind them. The [animal protein ranking](/animal-protein-per-dollar-ranked/) and [meat counter ranking](/protein-per-dollar-cheapest-protein-sources/#meat) explain why the cheapest cut isn't always the one printed on a fitness meal plan. The [dairy protein table](/protein-per-dollar-cheapest-protein-sources/#dairy) does the same for milk, yogurt, and cottage cheese, while the [plant protein ranking](/protein-per-dollar-cheapest-protein-sources/#plant) keeps beans, tofu, and lentils in their own fair comparison.
 
-Convenience needs its own receipt. Compare [one dollar of protein](/one-dollar-protein-what-it-buys/) with the [no-cook ranking](/no-cook-protein-per-dollar/) and [shelf-stable pantry ranking](/shelf-stable-pantry-per-dollar/) to see what you pay for skipping pans and refrigeration. We also tested [eggs against the rest of the grocery store](/eggs-vs-everything-protein-value/) and ranked the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/), because a carton or a bag of beans eventually has to become a meal.
+Convenience needs its own receipt. Compare [one dollar of protein](/protein-per-dollar-cheapest-protein-sources/#what-1-buys) with the [no-cook ranking](/protein-per-dollar-cheapest-protein-sources/#no-cook) and [shelf-stable pantry ranking](/protein-per-dollar-cheapest-protein-sources/#shelf-stable) to see what you pay for skipping pans and refrigeration. We also tested [eggs against the rest of the grocery store](/eggs-vs-everything-protein-value/) and ranked the [cheapest complete protein pairs](/cheapest-complete-protein-pairs/), because a carton or a bag of beans eventually has to become a meal.
 
 ![Bar chart comparing the yearly cost of five ways to eat 50 grams of protein daily, from $299 for dry goods to $3,639 for daily fast food](/images/what-50-grams-of-protein-costs-per-year.jpg)
 

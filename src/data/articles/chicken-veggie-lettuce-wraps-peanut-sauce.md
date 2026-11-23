@@ -87,7 +87,7 @@ If you have a random zucchini or half a head of cabbage sitting in the crisper d
 
 You could eat the chicken filling on its own and be perfectly happy. But the peanut sauce is the reason you'll make this recipe twice in one week, and it quietly stacks protein on top of the chicken, because [two tablespoons of peanut butter carry about 7.1 grams](/foods-highest-in-protein-per-100-grams/).
 
-It's a dead simple mix of creamy peanut butter, soy sauce, rice vinegar, and warm water to thin it out. A single jar stretches across a lot of dinners, which is why [peanut butter and almonds land so far apart on protein per dollar](/peanut-butter-vs-almonds-protein-cost/). If you like heat, a squeeze of sriracha balances the richness of the peanut butter beautifully.
+It's a dead simple mix of creamy peanut butter, soy sauce, rice vinegar, and warm water to thin it out. A single jar stretches across a lot of dinners, which is why [peanut butter and almonds land so far apart on protein per dollar](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). If you like heat, a squeeze of sriracha balances the richness of the peanut butter beautifully.
 
 Natural peanut butter requires a little more whisking to come together, and you might need an extra splash of water to get a drizzling consistency. You want it thick enough to cling to the chicken, but thin enough to pour off a spoon. The same after-cooking approach saves the honey-soy glaze on these [air fryer salmon bites](/air-fryer-salmon-bites-garlic-honey-glaze/), where the sauce goes on once the fish is out of the basket instead of burning in the heat.
 

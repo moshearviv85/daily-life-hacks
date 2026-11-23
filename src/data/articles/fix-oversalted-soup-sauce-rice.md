@@ -54,7 +54,7 @@ Sauces are trickier because you usually can't just add water without ruining the
 
 If you have an oversalted tomato sauce or a rich stew, dairy is your best friend. Stirring in a splash of heavy cream, a dollop of unsweetened yogurt, or a spoonful of sour cream works wonders. The fat coats the tongue and blunts the sharp edge of the salt. 
 
-If it's a chunky stew, you can add bulk. Toss in some unsalted canned beans, extra chopped vegetables, or diced potatoes (to actually eat, not to act as a magic sponge). Adding more physical food means there is less salt per bite, and beans are the cheapest way to do it once you look at [what they cost against ground beef per gram of protein](/ground-beef-vs-beans-protein-cost/). 
+If it's a chunky stew, you can add bulk. Toss in some unsalted canned beans, extra chopped vegetables, or diced potatoes (to actually eat, not to act as a magic sponge). Adding more physical food means there is less salt per bite, and beans are the cheapest way to do it once you look at [what they cost against ground beef per gram of protein](/protein-per-serving-beans-chicken-tofu-compared/#cost-per-25-g). 
 
 ## What to do about oversalted rice or grains
 

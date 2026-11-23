@@ -2,7 +2,8 @@
  * Backwards-compatible pillar helpers.
  *
  * Cluster ownership lives in clusters.ts. Keep this module as a small adapter
- * so older imports cannot create a second registry.
+ * so older imports cannot create a second registry. Deleted per-dollar spokes
+ * are not listed here; they were never a second registry.
  */
 import {
   CONTENT_CLUSTERS,

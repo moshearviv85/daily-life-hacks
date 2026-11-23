@@ -55,7 +55,7 @@ Now the part everybody gets backwards. The internet insists cookies spread more 
 
 Where I still reach for parchment is crisp bottoms, since a mat is thicker than a sheet of paper. That's a preference call rather than a rule, because King Arthur's testers got browned bottoms on the mat too.
 
-For roasting vegetables, silicone is rarely my choice. Vegetables release water as they cook, and frozen ones release even more, which matters if you stock the freezer after reading up on [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/). That water tends to pool on the mat instead of hitting hot metal, and pooled water means steaming instead of caramelizing.
+For roasting vegetables, silicone is rarely my choice. Vegetables release water as they cook, and frozen ones release even more, which matters if you stock the freezer after reading up on [how frozen and fresh vegetables compare on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar). That water tends to pool on the mat instead of hitting hot metal, and pooled water means steaming instead of caramelizing.
 
 ## What the heat ratings actually say
 

@@ -44,7 +44,7 @@ What changes with age is not safety. It's cooking time, and sometimes patience.
 
 Longer than the bag implies. The FDA is direct about what those dates mean: [a use by date is the manufacturer's recommendation for best flavor or quality, and it is not a food safety date](https://www.fda.gov/consumers/consumer-updates/are-you-storing-food-safely). At some point past it a product may shift in taste, color, texture, or nutrient content while still being fine to eat.
 
-Dried beans are about as forgiving as food gets on this front, because almost all the water is already gone and bacteria need water to do anything. That's the same property that makes them the backbone of our [shelf stable pantry ranking](/shelf-stable-pantry-per-dollar/).
+Dried beans are about as forgiving as food gets on this front, because almost all the water is already gone and bacteria need water to do anything. That's the same property that makes them the backbone of our [shelf stable pantry ranking](/protein-per-dollar-cheapest-protein-sources/#shelf-stable).
 
 So I don't throw out beans because of a date. I throw them out because of what I find when I open the bag.
 
@@ -76,7 +76,7 @@ Heat is the quiet enemy. The cupboard above the stove is the worst place in the 
 
 ## Is a big bag worth it?
 
-If you have a cool dry corner, yes. The 4 pound bag of pinto beans at $3.97 returned 97.9 grams of protein per dollar, the best figure in our entire 49 food ranking, and it stayed the best across [the plant protein rankings](/plant-protein-per-dollar-ranked/) too. Buying that in a 1 pound bag costs you more per gram for no reason other than the packaging.
+If you have a cool dry corner, yes. The 4 pound bag of pinto beans at $3.97 returned 97.9 grams of protein per dollar, the best figure in our entire 49 food ranking, and it stayed the best across [the plant protein rankings](/protein-per-dollar-cheapest-protein-sources/#plant) too. Buying that in a 1 pound bag costs you more per gram for no reason other than the packaging.
 
 The catch is honest. A 4 pound bag is a commitment. If you cook beans twice a month it will outlive the bag it came in, which is fine, but decant it and be realistic about the pace. Storage plans that assume a version of you who cooks beans on Sundays tend to underperform.
 

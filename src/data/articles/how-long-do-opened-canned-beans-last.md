@@ -44,7 +44,7 @@ Three to four days, same as any cooked leftover. Get them in there fast. The FDA
 
 Keep the fridge at or below 40 degrees F while you're at it. The FDA is blunt that this is the single most useful thing you can do about spoilage bacteria, and a cheap appliance thermometer will tell you more about your fridge than the dial on the back wall will.
 
-If you're at the point where half cans keep dying, the real fix is buying differently. Dry beans cook in the amount you decide, which is part of why they returned 81.0 grams of protein per dollar against 30.1 for the canned version in [our canned versus dry comparison](/canned-vs-dry-beans-cost/).
+If you're at the point where half cans keep dying, the real fix is buying differently. Dry beans cook in the amount you decide, which is part of why they returned 81.0 grams of protein per dollar against 30.1 for the canned version in [our canned versus dry comparison](/canned-beans-vs-dried-beans-nutrition/#cost-per-serving).
 
 ## Can you store canned beans in the can?
 
@@ -60,7 +60,7 @@ Longer than most people assume, and the FDA says so directly. A use by date is t
 
 What actually matters is the can. Swelling, leaks, punctures, deep rust, or a dent bad enough that the can won't stack or open normally are all reasons to throw it out rather than risk it. A scuffed label and a two year old date stamp are not.
 
-This is the quiet argument for keeping cans around at all. Canned black beans were the cheapest package in our [no-cook protein ranking](/no-cook-protein-per-dollar/) at 88 cents, and they hold that value for years in a cupboard, which almost nothing else in the store does. Dry beans hold even longer, and we went through that in [how long dried beans last](/how-to-cook-dried-beans-from-scratch/).
+This is the quiet argument for keeping cans around at all. Canned black beans were the cheapest package in our [no-cook protein ranking](/protein-per-dollar-cheapest-protein-sources/#no-cook) at 88 cents, and they hold that value for years in a cupboard, which almost nothing else in the store does. Dry beans hold even longer, and we went through that in [how long dried beans last](/how-to-cook-dried-beans-from-scratch/).
 
 ## How do you know when to throw them out?
 

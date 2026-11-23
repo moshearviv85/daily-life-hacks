@@ -2,7 +2,7 @@
  * GSC 27 Aug 2026: 158 URLs were "Discovered – currently not indexed".
  * These 105 thin URLs stay live for humans (no 410, no delete) but must be
  * `noindex, follow` and out of the sitemap so crawl budget concentrates on
- * the 51 KEEP money URLs (flagships + per-dollar cluster + tools/hubs).
+ * the 25 KEEP money URLs (flagships + surviving studies + tools/hubs).
  *
  * Single source of truth for:
  *   - src/pages/[slug].astro robots meta + rich-result schema
@@ -121,45 +121,21 @@ export const INDEX_PRUNE_SLUGS = new Set([
 /** Pathnames (no leading slash) that must stay indexable and in the sitemap. */
 export const INDEX_KEEP_PATHS = new Set([
   "api-docs",
-  "canned-vs-dry-beans-cost",
   "cheapest-complete-protein-pairs",
-  "cheapest-protein-per-gram",
-  "chicken-thighs-vs-breast-protein-cost",
-  "chipotle-protein-per-dollar",
-  "dairy-protein-per-dollar-ranked",
   "data-reuse",
   "eat-healthy-on-a-budget-complete-playbook",
   "editorial-policy",
-  "eggs-vs-greek-yogurt-protein-cost",
   "fiber-per-dollar-cheapest-high-fiber-foods",
-  "frozen-vs-fresh-vegetables-fiber-cost",
-  "grains-fiber-per-dollar-ranked",
-  "ground-beef-vs-beans-protein-cost",
   "guides",
-  "high-fiber-snacks-per-dollar",
   "high-protein-on-a-budget-complete-guide",
   "how-to-eat-more-fiber-on-a-budget-complete-guide",
-  "kfc-protein-per-dollar",
-  "lentils-vs-chicken-breast-protein-cost",
-  "mcdonalds-protein-per-dollar",
   "meal-prep-for-beginners-complete-system",
-  "meat-per-dollar-protein-ranked",
   "methodology",
-  "no-cook-protein-per-dollar",
-  "one-dollar-fiber-what-it-buys",
-  "one-dollar-protein-what-it-buys",
-  "peanut-butter-vs-almonds-protein-cost",
   "plant-based-protein-sources-complete-guide",
-  "plant-protein-per-dollar-ranked",
-  "popcorn-vs-almonds-fiber-cost",
   "printables/weekly-grocery-budget-planner",
-  "produce-fiber-per-dollar-ranked",
   "protein-per-dollar-cheapest-protein-sources",
   "research",
-  "shelf-stable-pantry-per-dollar",
   "statistics",
-  "taco-bell-protein-per-dollar",
-  "tofu-vs-chicken-protein-cost",
   "tools",
   "tools/dried-beans-to-canned-converter",
   "tools/fiber-per-dollar-calculator",
@@ -169,8 +145,6 @@ export const INDEX_KEEP_PATHS = new Set([
   "tools/recipe-finder",
   "tools/shopping-list-builder",
   "usda-thrifty-food-plan-weekly-cost",
-  "wendys-protein-per-dollar",
-  "whole-wheat-flour-vs-quinoa-fiber-cost",
 ]);
 
 /**
@@ -215,8 +189,8 @@ function assertPruneSafety() {
   if (INDEX_PRUNE_SLUGS.size !== 105) {
     throw new Error(`index-prune: expected 105 prune slugs, got ${INDEX_PRUNE_SLUGS.size}`);
   }
-  if (INDEX_KEEP_PATHS.size !== 51) {
-    throw new Error(`index-prune: expected 51 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
+  if (INDEX_KEEP_PATHS.size !== 25) {
+    throw new Error(`index-prune: expected 25 KEEP paths, got ${INDEX_KEEP_PATHS.size}`);
   }
 }
 

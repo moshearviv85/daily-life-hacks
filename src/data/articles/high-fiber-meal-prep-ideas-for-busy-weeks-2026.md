@@ -92,7 +92,7 @@ If you are new to more fiber, ramp slowly so your digestion has time to adjust. 
 
 Roast a sheet pan of vegetables while lentils simmer. Cook quinoa in a rice cooker while you chop. Use pre washed greens if that is what gets you to eat them.
 
-If you hate chopping, buy frozen mixed vegetables and roast them straight from the bag. It is not cheating. It is survival, and the [frozen versus fresh comparison on fiber per dollar](/frozen-vs-fresh-vegetables-fiber-cost/) is worth reading before anyone feels guilty about the shortcut.
+If you hate chopping, buy frozen mixed vegetables and roast them straight from the bag. It is not cheating. It is survival, and the [frozen versus fresh comparison on fiber per dollar](/frozen-vs-fresh-produce-when-to-buy/#fiber-per-dollar) is worth reading before anyone feels guilty about the shortcut.
 ## Make It Feel Less Boring
 
 Change the sauce, not the whole plan. One day add salsa. Another day add a lemon yogurt drizzle. Another day add a spoon of pesto. Same containers, different mood.

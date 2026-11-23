@@ -70,7 +70,7 @@ The variety problem is the one that actually ends these experiments. Nobody quit
 
 The other thing worth flagging is the fiber ramp. Eating this every day is a large jump in fiber for most people, and going from a low intake to 25 or 30 grams overnight is uncomfortable. Build up across a couple of weeks instead, and read [how to increase fiber intake without gas](/how-to-increase-fiber-intake-without-gas/) before you commit to a bowl a night.
 
-Adding produce doesn't blow up the budget either. Frozen green peas returned 17.6 grams of fiber per dollar and frozen green beans 10.8, both from our [produce fiber ranking](/produce-fiber-per-dollar-ranked/). A bag of frozen vegetables stirred into the pot costs almost nothing and changes the plate.
+Adding produce doesn't blow up the budget either. Frozen green peas returned 17.6 grams of fiber per dollar and frozen green beans 10.8, both from our [produce fiber ranking](/fiber-per-dollar-cheapest-high-fiber-foods/#produce). A bag of frozen vegetables stirred into the pot costs almost nothing and changes the plate.
 
 ## How to eat it every day without hating it
 

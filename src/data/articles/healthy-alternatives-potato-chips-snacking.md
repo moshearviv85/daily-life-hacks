@@ -83,7 +83,7 @@ On fiber and protein, yes, and it isn't close. Half a cup of cooked chickpeas, 8
 
 Sometimes the chip craving is just a salt craving, and a handful of almonds shuts it down faster than a bag of Lay's. Salted dry roasted almonds run 167 calories an ounce, more than chips, with 3.1 grams of fiber and 66 mg of sodium. You're trading calories for fiber and a snack that's harder to inhale by the fistful.
 
-Watch the seeds, though. Dry roasted salted sunflower kernels carry 183 mg of sodium per ounce, more than the 148 mg in the chips you're replacing. Roasted salted pumpkin seeds are gentler at 72 mg, but their 1.8 grams of fiber per ounce is less than half what the same weight of popcorn brings. Buy the unsalted version and salt the bowl yourself. It's cheaper too, and our [high-fiber snacks per dollar ranking](/high-fiber-snacks-per-dollar/) compares popcorn, chickpeas, nuts and the rest of the 3 PM suspects.
+Watch the seeds, though. Dry roasted salted sunflower kernels carry 183 mg of sodium per ounce, more than the 148 mg in the chips you're replacing. Roasted salted pumpkin seeds are gentler at 72 mg, but their 1.8 grams of fiber per ounce is less than half what the same weight of popcorn brings. Buy the unsalted version and salt the bowl yourself. It's cheaper too, and our [high-fiber snacks per dollar ranking](/fiber-per-dollar-cheapest-high-fiber-foods/#snacks) compares popcorn, chickpeas, nuts and the rest of the 3 PM suspects.
 
 Sunflower seeds still in the shell are my pick when you need to keep your hands busy. Getting to the seed takes effort, which blocks the mindless shoveling a bowl of chips invites.
 
